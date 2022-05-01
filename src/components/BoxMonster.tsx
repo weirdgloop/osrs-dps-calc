@@ -1,7 +1,7 @@
 import MonsterSkills from './monster/MonsterSkills';
 import MonsterOffensive from './monster/MonsterOffensive';
 import MonsterDefensive from './monster/MonsterDefensive';
-import {Monster} from '../types/Monster';
+import {Monster} from '@/types/Monster';
 import {useState} from 'react';
 
 const monsters: {
@@ -56,7 +56,9 @@ export default function BoxMonster() {
           }
         </select>
         <MonsterSkills monster={selectedMonster} />
+        <hr className={'mt-3 bg-gray-200 h-0.5 border-0'} />
         <MonsterOffensive monster={selectedMonster} />
+        <hr className={'mt-3 bg-gray-200 h-0.5 border-0'} />
         <MonsterDefensive monster={selectedMonster} />
       </div>
     </div>

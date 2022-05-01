@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import hitpoints from '../../public/img/hitpoints.png';
-import attack from '../../public/img/attack.png';
-import strength from '../../public/img/strength.png';
-import defence from '../../public/img/defence.png';
-import magic from '../../public/img/magic.png';
-import ranged from '../../public/img/ranged.png';
-import {Monster, MonsterCombat} from '../../types/Monster';
+import hitpoints from '@/img/hitpoints.png';
+import attack from '@/img/attack.png';
+import strength from '@/img/strength.png';
+import defence from '@/img/defence.png';
+import magic from '@/img/magic.png';
+import ranged from '@/img/ranged.png';
+import {Monster, MonsterCombat} from '@/types/Monster';
 import {useEffect, useState} from 'react';
 
 interface MonsterSkillsProps {

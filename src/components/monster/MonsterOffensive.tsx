@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import attack from '../../public/img/attack.png';
-import strength from '../../public/img/strength.png';
-import magic from '../../public/img/magic.png';
-import magicStrength from '../../public/img/magic_strength.png';
-import ranged from '../../public/img/ranged.png';
-import rangedStrength from '../../public/img/ranged_strength.png';
-import {Monster, MonsterOffensive as MonsterOffensiveType} from '../../types/Monster';
+import attack from '@/img/attack.png';
+import strength from '@/img/strength.png';
+import magic from '@/img/magic.png';
+import magicStrength from '@/img/magic_strength.png';
+import ranged from '@/img/ranged.png';
+import rangedStrength from '@/img/ranged_strength.png';
+import {Monster, MonsterOffensive as MonsterOffensiveType} from '@/types/Monster';
 import {useEffect, useState} from 'react';
 
 interface MonsterOffensiveProps {

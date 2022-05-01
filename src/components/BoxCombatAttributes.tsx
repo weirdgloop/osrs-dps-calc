@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import Offensive from './attributes/Offensive';
 import Defensive from './attributes/Defensive';
 import OtherBonuses from './attributes/OtherBonuses';
@@ -14,8 +12,11 @@ export default function BoxCombatAttributes() {
       </div>
       <div className={'bg-gray-300 rounded mt-2 p-4'}>
         <Offensive />
+        <hr className={'mt-3 bg-gray-200 h-0.5 border-0'} />
         <Defensive />
+        <hr className={'mt-3 bg-gray-200 h-0.5 border-0'} />
         <OtherBonuses />
+        <hr className={'mt-3 bg-gray-200 h-0.5 border-0'} />
         <h4 className={'font-bold text-center mt-3'}>
           Attack speed
         </h4>

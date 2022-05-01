@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import magic from '../../public/img/magic.png';
-import ranged from '../../public/img/ranged.png';
-import dagger from '../../public/img/dagger.png';
-import scimitar from '../../public/img/scimitar.png';
-import warhammer from '../../public/img/warhammer.png';
-import {Monster, MonsterDefensive as MonsterDefensiveType} from '../../types/Monster';
+import magic from '@/img/magic.png';
+import ranged from '@/img/ranged.png';
+import dagger from '@/img/dagger.png';
+import scimitar from '@/img/scimitar.png';
+import warhammer from '@/img/warhammer.png';
+import {Monster, MonsterDefensive as MonsterDefensiveType} from '@/types/Monster';
 import {useEffect, useState} from 'react';
 
 interface MonsterDefensiveProps {
