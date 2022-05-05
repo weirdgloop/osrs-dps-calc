@@ -18,7 +18,7 @@ export default function Skills() {
         Skills
       </h4>
       <div className={'flex items-center mt-2'}>
-        <input type={'text'} className={'rounded w-full text-center mt-auto'} placeholder={'Username'} value={username} onChange={(e) => setUsername(e.currentTarget.value)} />
+        <input type={'text'} className={'rounded w-full mt-auto'} placeholder={'Username'} value={username} onChange={(e) => setUsername(e.currentTarget.value)} />
         <button type={'button'} className={'bg-gray-800 hover:bg-gray-700 text-white font-semibold py-2 px-2 ml-1 rounded'}>
           Lookup
         </button>

@@ -11,25 +11,25 @@ export default function OtherBonuses() {
         Other bonuses
       </h4>
       <div className={'flex gap-2 mt-3 text-center items-end'}>
-        <div className={'grow rounded bg-gray-200 p-2 shadow'}>
+        <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={strength} alt={'Strength'}  />
           </div>
           <input type={'number'} className={'rounded w-full text-center'} />
         </div>
-        <div className={'grow rounded bg-gray-200 p-2 shadow'}>
+        <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={rangedStrength} alt={'Ranged Strength'}  />
           </div>
           <input type={'number'} className={'rounded w-full text-center'} />
         </div>
-        <div className={'grow rounded bg-gray-200 p-2 shadow'}>
+        <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={magicStrength} alt={'Magic Strength'}  />
           </div>
           <input type={'number'} className={'rounded w-full text-center'} />
         </div>
-        <div className={'grow rounded bg-gray-200 p-2 shadow'}>
+        <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={prayer} alt={'Prayer'}  />
           </div>

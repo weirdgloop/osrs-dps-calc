@@ -4,7 +4,7 @@ import OtherBonuses from './attributes/OtherBonuses';
 
 export default function BoxCombatAttributes() {
   return (
-    <div className={''}>
+    <div className={'col-span-2'}>
       <div className={'bg-gray-600 rounded p-4 text-white'}>
         <h3 className={'text-center font-semibold'}>
           Combat Attributes

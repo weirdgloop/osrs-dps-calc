@@ -38,7 +38,7 @@ export default function BoxMonster() {
   const [selectedMonster, setSelectedMonster] = useState<Monster | undefined>();
 
   return (
-    <div className={''}>
+    <div className={'col-span-2'}>
       <div className={'bg-gray-600 rounded p-4 text-white'}>
         <h3 className={'text-center font-semibold'}>
           Monster

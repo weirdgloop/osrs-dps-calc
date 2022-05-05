@@ -26,7 +26,7 @@ export default function BoxPlayerInputs() {
   }
 
   return (
-    <div className={'basis-full lg:basis-1/2'}>
+    <div className={'col-span-1'}>
       <div className={'bg-gray-600 rounded p-4 text-white'}>
         <h3 className={'text-center font-semibold'}>
           Inputs
@@ -41,10 +41,10 @@ export default function BoxPlayerInputs() {
             <Image src={skills} alt={'Skills'} />
           </div>
           <div className={'grow cursor-pointer'} onClick={() => setSelected('equipment')} data-tip="Equipment">
-            <Image src={equipment} alt={'Worn Equipment'} />
+            <Image src={equipment} alt={'Equipment'} />
           </div>
-          <div className={'grow cursor-pointer'} onClick={() => setSelected('potions')} data-tip="Potions">
-            <Image src={potion} alt={'Potions'} />
+          <div className={'grow cursor-pointer'} onClick={() => setSelected('potions')} data-tip="Buffs">
+            <Image src={potion} alt={'Buffs'} />
           </div>
           <div className={'grow cursor-pointer'} onClick={() => setSelected('prayer')} data-tip="Prayer">
             <Image src={prayer} alt={'Prayer'} />

@@ -32,31 +32,31 @@ export default function MonsterDefensive(props: MonsterDefensiveProps) {
         Defensive bonuses
       </h4>
       <div className={'flex gap-2 mt-3 text-center items-end'}>
-        <div className={'grow rounded bg-gray-200 p-2 shadow'}>
+        <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={dagger} alt={'Dagger'}  />
           </div>
           <input type={'number'} className={'rounded w-full text-center'} value={defensive.stab} />
         </div>
-        <div className={'grow rounded bg-gray-200 p-2 shadow'}>
+        <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={scimitar} alt={'Scimitar'}  />
           </div>
           <input type={'number'} className={'rounded w-full text-center'} value={defensive.slash} />
         </div>
-        <div className={'grow rounded bg-gray-200 p-2 shadow'}>
+        <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={warhammer} alt={'Warhammer'}  />
           </div>
           <input type={'number'} className={'rounded w-full text-center'} value={defensive.crush} />
         </div>
-        <div className={'grow rounded bg-gray-200 p-2 shadow'}>
+        <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={magic} alt={'Magic'}  />
           </div>
           <input type={'number'} className={'rounded w-full text-center'} value={defensive.magic} />
         </div>
-        <div className={'grow rounded bg-gray-200 p-2 shadow'}>
+        <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={ranged} alt={'Ranged'}  />
           </div>

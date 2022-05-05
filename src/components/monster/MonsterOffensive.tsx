@@ -34,37 +34,37 @@ export default function MonsterOffensive(props: MonsterOffensiveProps) {
         Offensive bonuses
       </h4>
       <div className={'flex gap-2 mt-3 text-center items-end'}>
-        <div className={'grow rounded bg-gray-200 p-2 shadow'}>
+        <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={attack} alt={'Attack'}  />
           </div>
           <input type={'number'} className={'rounded w-full text-center mt-auto'} value={offensive.attack} />
         </div>
-        <div className={'grow rounded bg-gray-200 p-2 shadow'}>
+        <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={strength} alt={'Strength'}  />
           </div>
           <input type={'number'} className={'rounded w-full text-center mt-auto'} value={offensive.strength} />
         </div>
-        <div className={'grow rounded bg-gray-200 p-2 shadow'}>
+        <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={magic} alt={'Magic'}  />
           </div>
           <input type={'number'} className={'rounded w-full text-center mt-auto'} value={offensive.magic} />
         </div>
-        <div className={'grow rounded bg-gray-200 p-2 shadow'}>
+        <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={magicStrength} alt={'Magic Strength'}  />
           </div>
           <input type={'number'} className={'rounded w-full text-center mt-auto'} value={offensive.magic_str} />
         </div>
-        <div className={'grow rounded bg-gray-200 p-2 shadow'}>
+        <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={ranged} alt={'Ranged'}  />
           </div>
           <input type={'number'} className={'rounded w-full text-center mt-auto'} value={offensive.ranged} />
         </div>
-        <div className={'grow rounded bg-gray-200 p-2 shadow'}>
+        <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={rangedStrength} alt={'Ranged Strength'}  />
           </div>

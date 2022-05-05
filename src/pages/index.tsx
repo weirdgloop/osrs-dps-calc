@@ -5,6 +5,7 @@ import BoxCombatAttributes from '../components/BoxCombatAttributes';
 import BoxMonster from '../components/BoxMonster';
 import ReactTooltip from 'react-tooltip';
 import {useEffect, useState} from 'react';
+import BoxResults from '@/components/BoxResults';
 
 const Home: NextPage = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -22,11 +23,12 @@ const Home: NextPage = () => {
       {/* Main container */}
       <div className={'max-w-7xl mx-auto mt-4'}>
         {/* Container for tiles */}
-        <div className={'flex flex-wrap lg:flex-nowrap gap-4 flex-row'}>
+        <div className={'grid grid-cols-1 lg:grid-cols-5 gap-4'}>
           <BoxPlayerInputs />
           <BoxCombatAttributes />
           <BoxMonster />
         </div>
+        <BoxResults />
       </div>
       {isMounted && <ReactTooltip place={'top'} effect={'solid'}  />}
     </div>
