@@ -6,7 +6,7 @@ import defence from '@/img/defence.png';
 import magic from '@/img/magic.png';
 import ranged from '@/img/ranged.png';
 import {Monster, MonsterCombat} from '@/types/Monster';
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 interface MonsterSkillsProps {
   monster?: Monster
@@ -30,7 +30,7 @@ export default function MonsterSkills(props: MonsterSkillsProps) {
 
   return (
     <>
-      <h4 className={'font-bold text-center'}>
+      <h4 className={`font-bold font-mono`}>
         Skills
       </h4>
       <div className={'flex gap-2 mt-3 text-center items-end'}>
@@ -38,37 +38,37 @@ export default function MonsterSkills(props: MonsterSkillsProps) {
           <div className={'flex justify-center mb-2'}>
             <Image src={hitpoints} alt={'Hitpoints'}  />
           </div>
-          <input type={'number'} className={'rounded w-full text-center mt-auto'} value={skills.hp} />
+          <input type={'number'} className={'form-control w-full text-center mt-auto'} value={skills.hp} />
         </div>
         <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={attack} alt={'Attack'}  />
           </div>
-          <input type={'number'} className={'rounded w-full text-center mt-auto'} value={skills.attack} />
+          <input type={'number'} className={'form-control w-full text-center mt-auto'} value={skills.attack} />
         </div>
         <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={strength} alt={'Strength'}  />
           </div>
-          <input type={'number'} className={'rounded w-full text-center mt-auto'} value={skills.strength} />
+          <input type={'number'} className={'form-control w-full text-center mt-auto'} value={skills.strength} />
         </div>
         <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={defence} alt={'Defence'}  />
           </div>
-          <input type={'number'} className={'rounded w-full text-center mt-auto'} value={skills.defence} />
+          <input type={'number'} className={'form-control w-full text-center mt-auto'} value={skills.defence} />
         </div>
         <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={magic} alt={'Magic'}  />
           </div>
-          <input type={'number'} className={'rounded w-full text-center mt-auto'} value={skills.magic} />
+          <input type={'number'} className={'form-control w-full text-center mt-auto'} value={skills.magic} />
         </div>
         <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={ranged} alt={'Ranged'}  />
           </div>
-          <input type={'number'} className={'rounded w-full text-center mt-auto'} value={skills.ranged} />
+          <input type={'number'} className={'form-control w-full text-center mt-auto'} value={skills.ranged} />
         </div>
       </div>
     </>

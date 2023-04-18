@@ -5,7 +5,7 @@ import dagger from '@/img/dagger.png';
 import scimitar from '@/img/scimitar.png';
 import warhammer from '@/img/warhammer.png';
 import {Monster, MonsterDefensive as MonsterDefensiveType} from '@/types/Monster';
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 interface MonsterDefensiveProps {
   monster?: Monster
@@ -28,7 +28,7 @@ export default function MonsterDefensive(props: MonsterDefensiveProps) {
 
   return (
     <>
-      <h4 className={'font-bold text-center mt-3'}>
+      <h4 className={`font-bold font-mono`}>
         Defensive bonuses
       </h4>
       <div className={'flex gap-2 mt-3 text-center items-end'}>
@@ -36,31 +36,31 @@ export default function MonsterDefensive(props: MonsterDefensiveProps) {
           <div className={'flex justify-center mb-2'}>
             <Image src={dagger} alt={'Dagger'}  />
           </div>
-          <input type={'number'} className={'rounded w-full text-center'} value={defensive.stab} />
+          <input type={'number'} className={'form-control w-full text-center'} value={defensive.stab} />
         </div>
         <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={scimitar} alt={'Scimitar'}  />
           </div>
-          <input type={'number'} className={'rounded w-full text-center'} value={defensive.slash} />
+          <input type={'number'} className={'form-control w-full text-center'} value={defensive.slash} />
         </div>
         <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={warhammer} alt={'Warhammer'}  />
           </div>
-          <input type={'number'} className={'rounded w-full text-center'} value={defensive.crush} />
+          <input type={'number'} className={'form-control w-full text-center'} value={defensive.crush} />
         </div>
         <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={magic} alt={'Magic'}  />
           </div>
-          <input type={'number'} className={'rounded w-full text-center'} value={defensive.magic} />
+          <input type={'number'} className={'form-control w-full text-center'} value={defensive.magic} />
         </div>
         <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={ranged} alt={'Ranged'}  />
           </div>
-          <input type={'number'} className={'rounded w-full text-center'} value={defensive.ranged} />
+          <input type={'number'} className={'form-control w-full text-center'} value={defensive.ranged} />
         </div>
       </div>
     </>

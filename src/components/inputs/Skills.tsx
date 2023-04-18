@@ -1,5 +1,5 @@
-import {useState} from 'react';
-import Image from 'next/image';
+import React, {useState} from 'react';
+import Image, {StaticImageData} from 'next/image';
 
 import attack from '@/img/attack.png'
 import strength from '@/img/strength.png';
@@ -8,86 +8,95 @@ import ranged from '@/img/ranged.png';
 import magic from '@/img/magic.png';
 import hitpoints from '@/img/hitpoints.png';
 import prayer from '@/img/prayer.png';
+import {observer} from 'mobx-react-lite';
+import {useStore} from '../../state/state';
+import {classNames} from '../../utils';
+import {Skill} from '@/lib/enums/Skill';
+import NumberInput from '@/components/generic/NumberInput';
 
-export default function Skills() {
-  const [username, setUsername] = useState('');
+interface SkillInputProps {
+  name: Skill;
+  image: string | StaticImageData;
+}
+
+const SkillInput: React.FC<SkillInputProps> = observer((props) => {
+  const store = useStore();
+  const {playerSkills} = store;
+  const {name, image} = props;
+
+  return (
+    <div className={'flex items-center justify-between'}>
+      <div className={'basis-60 text-gray-300 flex'}>
+        <div className={'basis-8'}>
+          <Image src={image} alt={name} />
+        </div>
+        <div>
+          {name}
+        </div>
+      </div>
+      <div>
+        <NumberInput
+          required
+          min={1}
+          max={99}
+          value={playerSkills[name]}
+          onChange={(v) => {
+            store.setPlayerSkills({...playerSkills, [name]: v});
+          }}
+        />
+      </div>
+    </div>
+  )
+})
+
+const UsernameLookup: React.FC = () => {
+  const store = useStore();
+  const {username} = store;
 
   return (
     <>
-      <h4 className={'font-bold text-center'}>
-        Skills
-      </h4>
-      <div className={'flex items-center mt-2'}>
-        <input type={'text'} className={'rounded w-full mt-auto'} placeholder={'Username'} value={username} onChange={(e) => setUsername(e.currentTarget.value)} />
-        <button type={'button'} className={'bg-gray-800 hover:bg-gray-700 text-white font-semibold py-2 px-2 ml-1 rounded'}>
-          Lookup
-        </button>
-      </div>
-      <table className={'table-auto w-full mt-2'}>
-        <tr>
-          <td className={'w-5 align-bottom'}>
-            <Image src={attack} alt={'Attack'} />
-          </td>
-          <td>Attack</td>
-          <td className={'w-1/3 text-right'}>
-            <input type={'text'} className={'w-3/4 h-8 rounded'} />
-          </td>
-        </tr>
-        <tr>
-          <td className={'w-5 align-bottom'}>
-            <Image src={strength} alt={'Strength'} />
-          </td>
-          <td>Strength</td>
-          <td className={'w-1/3 text-right'}>
-            <input type={'text'} className={'w-3/4 h-8 rounded'} />
-          </td>
-        </tr>
-        <tr>
-          <td className={'w-5 align-bottom'}>
-            <Image src={defence} alt={'Defence'} />
-          </td>
-          <td>Defence</td>
-          <td className={'w-1/3 text-right'}>
-            <input type={'text'} className={'w-3/4 h-8 rounded'} />
-          </td>
-        </tr>
-        <tr>
-          <td className={'w-5 align-bottom'}>
-            <Image src={hitpoints} alt={'Hitpoints'} />
-          </td>
-          <td>Hitpoints</td>
-          <td className={'w-1/3 text-right'}>
-            <input type={'text'} className={'w-3/4 h-8 rounded'} />
-          </td>
-        </tr>
-        <tr>
-          <td className={'w-5 align-bottom'}>
-            <Image src={ranged} alt={'Ranged'} />
-          </td>
-          <td>Ranged</td>
-          <td className={'w-1/3 text-right'}>
-            <input type={'text'} className={'w-3/4 h-8 rounded'} />
-          </td>
-        </tr>
-        <tr>
-          <td className={'w-5 align-bottom'}>
-            <Image src={magic} alt={'Magic'} />
-          </td>
-          <td>Magic</td>
-          <td className={'w-1/3 text-right'}>
-            <input type={'text'} className={'w-3/4 h-8 rounded'} />
-          </td>
-        </tr>
-        <tr>
-          <td className={'w-5 align-bottom'}>
-            <Image src={prayer} alt={'Prayer'} />
-          </td>
-          <td>Prayer</td>
-          <td className={'w-1/3 text-right'}>
-            <input type={'text'} className={'w-3/4 h-8 rounded'} />
-          </td>
-        </tr>
-      </table>
+      <input
+        type={'text'}
+        className={'form-control rounded w-full mt-auto'}
+        placeholder={'Username'}
+        value={username}
+        onChange={(e) => store.setUsername(e.currentTarget.value)}
+      />
+      <button type={'button'} className={classNames(
+        'ml-1 text-white bg-gray-700 hover:bg-gray-600 hover:text-white',
+        'px-3 py-1 rounded text-sm font-mono'
+      )}>
+        Lookup
+      </button>
     </>
   )
 }
+
+const Skills = observer(() => {
+  const store = useStore();
+
+  return (
+    <div className={'mt-4'}>
+      <h4 className={`font-bold font-mono`}>
+        Skills
+      </h4>
+      <p className={'text-sm'}>
+        Input your username to fetch your stats, or enter them manually.
+      </p>
+      <div className={'flex items-center mt-3'}>
+        <UsernameLookup />
+      </div>
+      <div className={'flex flex-col gap-1 mt-4'}>
+        <SkillInput name={Skill.ATTACK} image={attack} />
+        <SkillInput name={Skill.STRENGTH} image={strength} />
+        <SkillInput name={Skill.DEFENCE} image={defence} />
+        <SkillInput name={Skill.HITPOINTS} image={hitpoints} />
+        <SkillInput name={Skill.RANGED} image={ranged} />
+        <SkillInput name={Skill.MAGIC} image={magic} />
+        <SkillInput name={Skill.PRAYER} image={prayer} />
+      </div>
+    </div>
+  )
+})
+
+export default Skills;

@@ -1,42 +1,40 @@
 import Image from 'next/image';
 
 import {PRAYERS} from '@/lib/constants';
-import {useState} from 'react';
+import {observer} from 'mobx-react-lite';
+import {useStore} from '../../state/state';
+import fonts from '../../fonts';
+import React from 'react';
 
-export default function Prayers() {
-  const [selectedPrayers, setSelectedPrayers] = useState<string[]>([]);
+const Prayers = observer(() => {
+  const store = useStore();
 
   const onPrayerClick = (name: string) => {
-    let prayers = [...selectedPrayers];
-    const existing = prayers.findIndex((p) => p === name);
-
-    if (existing > -1) {
-      prayers.splice(existing, 1);
-    } else {
-      prayers.push(name);
-    }
-
-    setSelectedPrayers(
-      Array.from(new Set(prayers))
-    );
+    store.togglePlayerPrayer(name);
   }
 
   return (
-    <>
-      <h4 className={'font-bold text-center'}>
+    <div className={'mt-4'}>
+      <h4 className={`font-bold ${fonts.jbm.className}`}>
         Prayers
       </h4>
-      <div className={'flex flex-wrap gap-2 mt-3 text-center items-center justify-center'}>
+      <div className={'flex flex-wrap gap-5 mt-3 items-center justify-center'}>
         {
           Object.entries(PRAYERS).map(([name, info], i) => {
-            return <div key={i} style={{
-              flex: '0 0 20%'
-            }} onClick={() => onPrayerClick(name)} className={`cursor-pointer ${selectedPrayers.includes(name) ? 'rounded bg-yellow-200 shadow' : ''}`}>
+            return <div
+              data-tooltip-id={'tooltip'}
+              data-tooltip-content={name}
+              key={i}
+              onClick={() => onPrayerClick(name)}
+              className={`cursor-pointer ${store.playerPrayers.includes(name) ? 'rounded bg-yellow-200 shadow' : ''}`}
+            >
               <Image src={info.img} alt={name} />
             </div>
           })
         }
       </div>
-    </>
+    </div>
   )
-}
+})
+
+export default Prayers;

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Black demon (level 172)",
+    "image": "https://oldschool.runescape.wiki/images/Black_demon.png?5ecf8",
+    "combat": {
+      "hp": 157,
+      "attack": 145,
+      "strength": 148,
+      "defence": 152,
+      "magic": 1,
+      "ranged": 1
+    },
+    "offensive": {
+      "attack": 0,
+      "strength": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -10,
+      "ranged": 0
+    },
+    "attributes": ["Demon"]
+  }
+]

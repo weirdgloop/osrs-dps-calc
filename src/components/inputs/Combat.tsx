@@ -1,44 +1,42 @@
-import Image from 'next/image';
-import chop from '@/img/styles/chop.png';
-import lunge from '@/img/styles/lunge.png';
-import slash from '@/img/styles/slash.png';
-import block from '@/img/styles/block.png';
-import {useState} from 'react';
+import {observer} from 'mobx-react-lite';
+import {useStore} from '../../state/state';
+import React from 'react';
+import HelpLink from '@/components/HelpLink';
+import {CombatStyle as CombatStyleEnum} from '@/lib/enums/CombatStyle';
 
-export default function Combat() {
-  const [cbStyle, setCbStyle] = useState('Chop');
+interface CombatStyleProps {
+  name: CombatStyleEnum;
+}
+
+const CombatStyle: React.FC<CombatStyleProps> = observer((props) => {
+  const store = useStore();
+  const {name} = props;
 
   return (
-    <>
-      <h4 className={'font-bold text-center'}>
-        Combat style
+    <button className={`p-2 bg-darker-900 transition-[background] rounded text-center ${store.combatStyle === name ? 'bg-dracula-300 text-black' : 'hover:bg-darker-800'}`} onClick={() => store.setCombatStyle(name)}>
+      {name}
+    </button>
+  )
+})
+
+const Combat: React.FC = () => {
+  return (
+    <div className={'mt-4'}>
+      <h4 className={`font-bold font-mono`}>
+        Combat style <HelpLink href={'https://oldschool.runescape.wiki/w/Combat_Options'} />
       </h4>
-      <div className={'flex gap-2 mt-3 text-center items-center'}>
+      <p className={'text-sm'}>
+        Select the style that you are using.
+      </p>
+      <div className={'grid grid-cols-2 gap-2 mt-4'}>
         {
-          [
-            ['Chop', chop],
-            ['Lunge', lunge]
-          ].map((s) => (
-            <div key={s[0].toString()} className={`grow rounded bg-gray-200 p-2 shadow cursor-pointer hover:bg-gray-50 ${cbStyle === s[0] ? 'ring-2 ring-amber-500' : ''}`} onClick={() => setCbStyle(s[0].toString())}>
-              <Image src={s[1]} alt={s[0].toString()}  />
-              <span className={'text-sm block'}>{s[0].toString()}</span>
-            </div>
-          ))
+          Object.values(CombatStyleEnum).map((s, i) => {
+            return <CombatStyle key={i} name={s} />
+          })
         }
       </div>
-      <div className={'flex gap-2 mt-3 text-center items-center'}>
-        {
-          [
-            ['Slash', slash],
-            ['Block', block]
-          ].map((s) => (
-            <div key={s[0] as string} className={`grow rounded bg-gray-200 p-2 shadow cursor-pointer hover:bg-gray-50 ${cbStyle === s[0] ? 'ring-2 ring-amber-500' : ''}`} onClick={() => setCbStyle(s[0].toString())}>
-              <Image src={s[1]} alt={s[0] as string}  />
-              <span className={'text-sm block'}>{s[0] as string}</span>
-            </div>
-          ))
-        }
-      </div>
-    </>
+    </div>
   )
 }
+
+export default Combat;

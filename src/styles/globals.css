@@ -4,10 +4,15 @@
 
 html,
 body {
+  @apply bg-darker-900;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body {
+  min-height: 100vh;
 }
 
 a {
@@ -25,4 +30,30 @@ a {
     -webkit-appearance: none;
     margin: 0;
   }
+}
+
+.form-control {
+  @apply bg-darker-900;
+  @apply border-gray-600;
+  @apply font-mono;
+  @apply text-sm;
+  @apply rounded;
+  padding: .25em .5em;
+}
+
+.form-control:invalid {
+  @apply text-red;
+  @apply border-red;
+}
+
+input.form-control[type=number] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+#tooltip {
+  @apply bg-darker-700;
+  @apply text-sm;
+  @apply p-2;
 }

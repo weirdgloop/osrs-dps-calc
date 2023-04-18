@@ -1,3 +1,5 @@
+import {MonsterAttribute} from '@/lib/enums/MonsterAttribute';
+
 export interface MonsterCombat {
   hp: number,
   attack: number,
@@ -25,7 +27,10 @@ export interface MonsterDefensive {
 }
 
 export interface Monster {
+  name: string;
+  image: string;
   combat: MonsterCombat,
   offensive: MonsterOffensive,
-  defensive: MonsterDefensive
+  defensive: MonsterDefensive,
+  attributes: MonsterAttribute[]
 }

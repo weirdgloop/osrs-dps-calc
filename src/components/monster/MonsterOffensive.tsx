@@ -6,7 +6,7 @@ import magicStrength from '@/img/magic_strength.png';
 import ranged from '@/img/ranged.png';
 import rangedStrength from '@/img/ranged_strength.png';
 import {Monster, MonsterOffensive as MonsterOffensiveType} from '@/types/Monster';
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 interface MonsterOffensiveProps {
   monster?: Monster
@@ -30,7 +30,7 @@ export default function MonsterOffensive(props: MonsterOffensiveProps) {
 
   return (
     <>
-      <h4 className={'font-bold text-center mt-3'}>
+      <h4 className={`font-bold font-mono`}>
         Offensive bonuses
       </h4>
       <div className={'flex gap-2 mt-3 text-center items-end'}>
@@ -38,37 +38,37 @@ export default function MonsterOffensive(props: MonsterOffensiveProps) {
           <div className={'flex justify-center mb-2'}>
             <Image src={attack} alt={'Attack'}  />
           </div>
-          <input type={'number'} className={'rounded w-full text-center mt-auto'} value={offensive.attack} />
+          <input type={'number'} className={'form-control w-full text-center mt-auto'} value={offensive.attack} />
         </div>
         <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={strength} alt={'Strength'}  />
           </div>
-          <input type={'number'} className={'rounded w-full text-center mt-auto'} value={offensive.strength} />
+          <input type={'number'} className={'form-control w-full text-center mt-auto'} value={offensive.strength} />
         </div>
         <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={magic} alt={'Magic'}  />
           </div>
-          <input type={'number'} className={'rounded w-full text-center mt-auto'} value={offensive.magic} />
+          <input type={'number'} className={'form-control w-full text-center mt-auto'} value={offensive.magic} />
         </div>
         <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={magicStrength} alt={'Magic Strength'}  />
           </div>
-          <input type={'number'} className={'rounded w-full text-center mt-auto'} value={offensive.magic_str} />
+          <input type={'number'} className={'form-control w-full text-center mt-auto'} value={offensive.magic_str} />
         </div>
         <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={ranged} alt={'Ranged'}  />
           </div>
-          <input type={'number'} className={'rounded w-full text-center mt-auto'} value={offensive.ranged} />
+          <input type={'number'} className={'form-control w-full text-center mt-auto'} value={offensive.ranged} />
         </div>
         <div className={'grow p-2'}>
           <div className={'flex justify-center mb-2'}>
             <Image src={rangedStrength} alt={'Ranged Strength'}  />
           </div>
-          <input type={'number'} className={'rounded w-full text-center mt-auto'} value={offensive.ranged_str} />
+          <input type={'number'} className={'form-control w-full text-center mt-auto'} value={offensive.ranged_str} />
         </div>
       </div>
     </>
