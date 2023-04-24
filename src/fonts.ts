@@ -1,27 +1,13 @@
-import localFont from 'next/font/local';
+import { PT_Serif, IBM_Plex_Sans } from 'next/font/google'
 
-const rsFont = localFont({
-  src: [
-    {
-      path: './public/fonts/runescape.ttf',
-      weight: '400',
-      style: 'normal'
-    },
-    {
-      path: './public/fonts/runescape_bold.ttf',
-      weight: '500',
-      style: 'normal'
-    }
-  ]
-})
+export const pts = PT_Serif({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  variable: '--font-pts'
+});
 
-const jbm = localFont({
-  src: [
-    {
-      path: './public/fonts/JetBrainsMono[wght].ttf',
-    }
-  ],
-  variable: '--font-jbm'
-})
-
-export default {rsFont, jbm};
+export const ibm = IBM_Plex_Sans({
+  weight: ['100', '200', '300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-ibm'
+});

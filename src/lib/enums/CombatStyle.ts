@@ -1,6 +1,13 @@
 export enum CombatStyle {
-  CHOP = 'Chop',
-  LUNGE = 'Lunge',
-  SLASH = 'Slash',
-  BLOCK = 'Block'
+  CHOP,
+  LUNGE,
+  SLASH,
+  BLOCK
+}
+
+export const CombatStyleMap = {
+  [CombatStyle.CHOP]: 'Chop',
+  [CombatStyle.LUNGE]: 'Lunge',
+  [CombatStyle.SLASH]: 'Slash',
+  [CombatStyle.BLOCK]: 'Block'
 }

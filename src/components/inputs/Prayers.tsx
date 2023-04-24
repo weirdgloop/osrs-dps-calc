@@ -1,34 +1,30 @@
 import Image from 'next/image';
 
-import {PRAYERS} from '@/lib/constants';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '../../state/state';
-import fonts from '../../fonts';
 import React from 'react';
+import {PrayerMap} from '@/lib/enums/Prayer';
 
 const Prayers = observer(() => {
   const store = useStore();
-
-  const onPrayerClick = (name: string) => {
-    store.togglePlayerPrayer(name);
-  }
+  const {player} = store;
 
   return (
-    <div className={'mt-4'}>
-      <h4 className={`font-bold ${fonts.jbm.className}`}>
+    <div className={'px-6 mt-4'}>
+      <h4 className={`font-bold font-serif`}>
         Prayers
       </h4>
-      <div className={'flex flex-wrap gap-5 mt-3 items-center justify-center'}>
+      <div className={'flex flex-wrap gap-2 mt-3 items-center justify-center'}>
         {
-          Object.entries(PRAYERS).map(([name, info], i) => {
+          Object.entries(PrayerMap).map(([k, v], i) => {
             return <div
-              data-tooltip-id={'tooltip'}
-              data-tooltip-content={name}
               key={i}
-              onClick={() => onPrayerClick(name)}
-              className={`cursor-pointer ${store.playerPrayers.includes(name) ? 'rounded bg-yellow-200 shadow' : ''}`}
+              data-tooltip-id={'tooltip'}
+              data-tooltip-content={v.name}
+              onClick={() => store.togglePlayerPrayer(k)}
+              className={`cursor-pointer w-10 ${player.prayers.includes(k) ? 'rounded bg-yellow-200 shadow' : ''}`}
             >
-              <Image src={info.img} alt={name} />
+              <Image src={v.image} alt={v.name} />
             </div>
           })
         }

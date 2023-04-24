@@ -11,22 +11,23 @@ import prayer from '@/img/prayer.png';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '../../state/state';
 import {classNames} from '../../utils';
-import {Skill} from '@/lib/enums/Skill';
 import NumberInput from '@/components/generic/NumberInput';
+import {PlayerSkills} from '@/types/State';
 
 interface SkillInputProps {
-  name: Skill;
+  name: string;
+  field: keyof PlayerSkills;
   image: string | StaticImageData;
 }
 
 const SkillInput: React.FC<SkillInputProps> = observer((props) => {
   const store = useStore();
-  const {playerSkills} = store;
-  const {name, image} = props;
+  const {player} = store;
+  const {name, field, image} = props;
 
   return (
     <div className={'flex items-center justify-between'}>
-      <div className={'basis-60 text-gray-300 flex'}>
+      <div className={'basis-60 flex items-center text-sm'}>
         <div className={'basis-8'}>
           <Image src={image} alt={name} />
         </div>
@@ -39,9 +40,13 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
           required
           min={1}
           max={99}
-          value={playerSkills[name]}
+          value={player.skills[field]}
           onChange={(v) => {
-            store.setPlayerSkills({...playerSkills, [name]: v});
+            store.updatePlayer({
+              skills: {
+                [field]: v
+              }
+            })
           }}
         />
       </div>
@@ -50,8 +55,7 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
 })
 
 const UsernameLookup: React.FC = () => {
-  const store = useStore();
-  const {username} = store;
+  const [username, setUsername] = useState('');
 
   return (
     <>
@@ -60,11 +64,11 @@ const UsernameLookup: React.FC = () => {
         className={'form-control rounded w-full mt-auto'}
         placeholder={'Username'}
         value={username}
-        onChange={(e) => store.setUsername(e.currentTarget.value)}
+        onChange={(e) => setUsername(e.currentTarget.value)}
       />
       <button type={'button'} className={classNames(
-        'ml-1 text-white bg-gray-700 hover:bg-gray-600 hover:text-white',
-        'px-3 py-1 rounded text-sm font-mono'
+        'ml-1 text-white bg-btns-200 hover:bg-btns-100',
+        'px-3 py-1 rounded text-sm font-serif'
       )}>
         Lookup
       </button>
@@ -73,27 +77,25 @@ const UsernameLookup: React.FC = () => {
 }
 
 const Skills = observer(() => {
-  const store = useStore();
-
   return (
-    <div className={'mt-4'}>
-      <h4 className={`font-bold font-mono`}>
+    <div className={'px-6 mt-4'}>
+      <h4 className={`font-bold font-serif`}>
         Skills
       </h4>
-      <p className={'text-sm'}>
+      <p className={'text-xs'}>
         Input your username to fetch your stats, or enter them manually.
       </p>
       <div className={'flex items-center mt-3'}>
         <UsernameLookup />
       </div>
       <div className={'flex flex-col gap-1 mt-4'}>
-        <SkillInput name={Skill.ATTACK} image={attack} />
-        <SkillInput name={Skill.STRENGTH} image={strength} />
-        <SkillInput name={Skill.DEFENCE} image={defence} />
-        <SkillInput name={Skill.HITPOINTS} image={hitpoints} />
-        <SkillInput name={Skill.RANGED} image={ranged} />
-        <SkillInput name={Skill.MAGIC} image={magic} />
-        <SkillInput name={Skill.PRAYER} image={prayer} />
+        <SkillInput name={'Attack'} field={'atk'} image={attack} />
+        <SkillInput name={'Strength'} field={'str'} image={strength} />
+        <SkillInput name={'Defence'} field={'def'} image={defence} />
+        <SkillInput name={'Hitpoints'} field={'hp'} image={hitpoints} />
+        <SkillInput name={'Ranged'} field={'ranged'} image={ranged} />
+        <SkillInput name={'Magic'} field={'magic'} image={magic} />
+        <SkillInput name={'Prayer'} field={'prayer'} image={prayer} />
       </div>
     </div>
   )

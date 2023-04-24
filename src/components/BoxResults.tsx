@@ -21,9 +21,9 @@ const StatDisplay: React.FC<PropsWithChildren<StatDisplay>> = (props) => {
 
 export default function BoxResults() {
   return (
-    <div className={'my-4 bg-[#1a1b24] text-white rounded shadow'}>
-      <div className={'px-6 py-4 border-b-green border-b rounded rounded-bl-none rounded-br-none'}>
-        <h1 className={`font-mono text-xl tracking-tight font-bold`}>Result</h1>
+    <div className={'my-4 bg-tile rounded shadow'}>
+      <div className={'px-6 py-4 border-b-body-400 border-b rounded rounded-bl-none rounded-br-none'}>
+        <h1 className={`font-serif text-xl tracking-tight font-bold`}>Result</h1>
       </div>
       <div className={'p-6'}>
         <StatDisplay name={'Max hit'}>

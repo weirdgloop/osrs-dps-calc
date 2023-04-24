@@ -4,7 +4,7 @@
 
 html,
 body {
-  @apply bg-darker-900;
+  background: #d0bd97;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -33,17 +33,28 @@ a {
 }
 
 .form-control {
-  @apply bg-darker-900;
-  @apply border-gray-600;
-  @apply font-mono;
+  @apply bg-body-100;
+  @apply border-body-500;
   @apply text-sm;
   @apply rounded;
   padding: .25em .5em;
+  transition: background-color 0.25s, color 0.25s, border 0.25s;
+}
+
+.form-control[type=number] {
+  @apply font-mono;
 }
 
 .form-control:invalid {
-  @apply text-red;
-  @apply border-red;
+  @apply bg-red-100;
+  @apply text-red-400;
+  @apply border-red-400;
+}
+
+.form-control:disabled {
+  @apply bg-gray-200;
+  @apply cursor-not-allowed;
+  @apply opacity-50;
 }
 
 input.form-control[type=number] {
@@ -53,7 +64,28 @@ input.form-control[type=number] {
 }
 
 #tooltip {
-  @apply bg-darker-700;
+  @apply bg-btns-300;
+  @apply opacity-100;
   @apply text-sm;
   @apply p-2;
+}
+
+.select-input input {
+  box-shadow: none !important;
+}
+
+.select-option {
+  cursor: pointer !important;
+}
+
+.select-option.selected {
+  @apply bg-body-500;
+}
+
+.select-option.selected .monster-version {
+  @apply text-white;
+}
+
+.equipment-select-menu {
+  width: 350px !important;
 }

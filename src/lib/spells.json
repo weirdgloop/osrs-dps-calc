@@ -1,0 +1,536 @@
+[
+  {
+    "name": "Bind",
+    "image": "Bind.png",
+    "max_hit": 0,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Blood Barrage",
+    "image": "Blood Barrage.png",
+    "max_hit": 29,
+    "spellbook": "ancient"
+  },
+  {
+    "name": "Blood Blitz",
+    "image": "Blood Blitz.png",
+    "max_hit": 25,
+    "spellbook": "ancient"
+  },
+  {
+    "name": "Blood Burst",
+    "image": "Blood Burst.png",
+    "max_hit": 21,
+    "spellbook": "ancient"
+  },
+  {
+    "name": "Blood Rush",
+    "image": "Blood Rush.png",
+    "max_hit": 15,
+    "spellbook": "ancient"
+  },
+  {
+    "name": "Boost Potion Share",
+    "image": "Boost Potion Share.png",
+    "max_hit": 0,
+    "spellbook": "lunar"
+  },
+  {
+    "name": "Charge",
+    "image": "Charge.png",
+    "max_hit": 0,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Claws of Guthix",
+    "image": "Claws of Guthix.png",
+    "max_hit": 0,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Confuse",
+    "image": "Confuse.png",
+    "max_hit": 0,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Crumble Undead",
+    "image": "Crumble Undead.png",
+    "max_hit": 15,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Cure Group",
+    "image": "Cure Group.png",
+    "max_hit": 0,
+    "spellbook": "lunar"
+  },
+  {
+    "name": "Cure Me",
+    "image": "Cure Me.png",
+    "max_hit": 0,
+    "spellbook": "lunar"
+  },
+  {
+    "name": "Cure Other",
+    "image": "Cure Other.png",
+    "max_hit": 0,
+    "spellbook": "lunar"
+  },
+  {
+    "name": "Curse",
+    "image": "Curse.png",
+    "max_hit": 0,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Dark Demonbane",
+    "image": "Dark Demonbane.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Dark Lure",
+    "image": "Dark Lure.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Dream",
+    "image": "Dream.png",
+    "max_hit": 0,
+    "spellbook": "lunar"
+  },
+  {
+    "name": "Earth Blast",
+    "image": "Earth Blast.png",
+    "max_hit": 15,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Earth Bolt",
+    "image": "Earth Bolt.png",
+    "max_hit": 11,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Earth Strike",
+    "image": "Earth Strike.png",
+    "max_hit": 6,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Earth Surge",
+    "image": "Earth Surge.png",
+    "max_hit": 23,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Earth Wave",
+    "image": "Earth Wave.png",
+    "max_hit": 19,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Energy Transfer",
+    "image": "Energy Transfer.png",
+    "max_hit": 0,
+    "spellbook": "lunar"
+  },
+  {
+    "name": "Enfeeble",
+    "image": "Enfeeble.png",
+    "max_hit": 0,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Entangle",
+    "image": "Entangle.png",
+    "max_hit": 5,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Fire Blast",
+    "image": "Fire Blast.png",
+    "max_hit": 16,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Fire Bolt",
+    "image": "Fire Bolt.png",
+    "max_hit": 12,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Fire Strike",
+    "image": "Fire Strike.png",
+    "max_hit": 8,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Fire Surge",
+    "image": "Fire Surge.png",
+    "max_hit": 24,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Fire Wave",
+    "image": "Fire Wave.png",
+    "max_hit": 20,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Flames of Zamorak",
+    "image": "Flames of Zamorak.png",
+    "max_hit": 0,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Ghostly Grasp",
+    "image": "Ghostly Grasp.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Greater Corruption",
+    "image": "Greater Corruption.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Heal Group",
+    "image": "Heal Group.png",
+    "max_hit": 0,
+    "spellbook": "lunar"
+  },
+  {
+    "name": "Heal Other",
+    "image": "Heal Other.png",
+    "max_hit": 0,
+    "spellbook": "lunar"
+  },
+  {
+    "name": "Iban Blast",
+    "image": "Iban Blast.png",
+    "max_hit": 25,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Ice Barrage",
+    "image": "Ice Barrage.png",
+    "max_hit": 30,
+    "spellbook": "ancient"
+  },
+  {
+    "name": "Ice Blitz",
+    "image": "Ice Blitz.png",
+    "max_hit": 26,
+    "spellbook": "ancient"
+  },
+  {
+    "name": "Ice Burst",
+    "image": "Ice Burst.png",
+    "max_hit": 22,
+    "spellbook": "ancient"
+  },
+  {
+    "name": "Ice Rush",
+    "image": "Ice Rush.png",
+    "max_hit": 16,
+    "spellbook": "ancient"
+  },
+  {
+    "name": "Inferior Demonbane",
+    "image": "Inferior Demonbane.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Lesser Corruption",
+    "image": "Lesser Corruption.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Magic Dart",
+    "image": "Magic Dart.png",
+    "max_hit": 0,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Mark of Darkness",
+    "image": "Mark of Darkness.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Monster Examine",
+    "image": "Monster Examine.png",
+    "max_hit": 0,
+    "spellbook": "lunar"
+  },
+  {
+    "name": "Resurrect Ghost (beta)",
+    "image": "Resurrect Ghost.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Resurrect Greater Ghost",
+    "image": "Resurrect Greater Ghost.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Resurrect Greater Skeleton",
+    "image": "Resurrect Greater Skeleton.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Resurrect Greater Zombie",
+    "image": "Resurrect Greater Zombie.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Resurrect Lesser Ghost",
+    "image": "Resurrect Lesser Ghost.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Resurrect Lesser Skeleton",
+    "image": "Resurrect Lesser Skeleton.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Resurrect Lesser Zombie",
+    "image": "Resurrect Lesser Zombie.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Resurrect Skeleton (beta)",
+    "image": "Resurrect Skeleton.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Resurrect Superior Ghost",
+    "image": "Resurrect Superior Ghost.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Resurrect Superior Skeleton",
+    "image": "Resurrect Superior Skeleton.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Resurrect Superior Zombie",
+    "image": "Resurrect Superior Zombie.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Resurrect Zombie (beta)",
+    "image": "Resurrect Zombie.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Saradomin Strike",
+    "image": "Saradomin Strike.png",
+    "max_hit": 0,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Shadow Barrage",
+    "image": "Shadow Barrage.png",
+    "max_hit": 28,
+    "spellbook": "ancient"
+  },
+  {
+    "name": "Shadow Blitz",
+    "image": "Shadow Blitz.png",
+    "max_hit": 24,
+    "spellbook": "ancient"
+  },
+  {
+    "name": "Shadow Burst",
+    "image": "Shadow Burst.png",
+    "max_hit": 18,
+    "spellbook": "ancient"
+  },
+  {
+    "name": "Shadow Rush",
+    "image": "Shadow Rush.png",
+    "max_hit": 14,
+    "spellbook": "ancient"
+  },
+  {
+    "name": "Skeletal Grasp",
+    "image": "Skeletal Grasp.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Smoke Barrage",
+    "image": "Smoke Barrage.png",
+    "max_hit": 27,
+    "spellbook": "ancient"
+  },
+  {
+    "name": "Smoke Blitz",
+    "image": "Smoke Blitz.png",
+    "max_hit": 23,
+    "spellbook": "ancient"
+  },
+  {
+    "name": "Smoke Burst",
+    "image": "Smoke Burst.png",
+    "max_hit": 17,
+    "spellbook": "ancient"
+  },
+  {
+    "name": "Smoke Rush",
+    "image": "Smoke Rush.png",
+    "max_hit": 13,
+    "spellbook": "ancient"
+  },
+  {
+    "name": "Snare",
+    "image": "Snare.png",
+    "max_hit": 3,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Stat Restore Pot Share",
+    "image": "Stat Restore Pot Share.png",
+    "max_hit": 0,
+    "spellbook": "lunar"
+  },
+  {
+    "name": "Stat Spy",
+    "image": "Stat Spy.png",
+    "max_hit": 0,
+    "spellbook": "lunar"
+  },
+  {
+    "name": "Stun",
+    "image": "Stun.png",
+    "max_hit": 0,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Superior Demonbane",
+    "image": "Superior Demonbane.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Tele Block",
+    "image": "Tele Block.png",
+    "max_hit": 0,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Undead Grasp",
+    "image": "Undead Grasp.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Vengeance",
+    "image": "Vengeance.png",
+    "max_hit": 0,
+    "spellbook": "lunar"
+  },
+  {
+    "name": "Vengeance Other",
+    "image": "Vengeance Other.png",
+    "max_hit": 0,
+    "spellbook": "lunar"
+  },
+  {
+    "name": "Vulnerability",
+    "image": "Vulnerability.png",
+    "max_hit": 0,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Ward of Arceuus",
+    "image": "Ward of Arceuus.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Water Blast",
+    "image": "Water Blast.png",
+    "max_hit": 14,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Water Bolt",
+    "image": "Water Bolt.png",
+    "max_hit": 10,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Water Strike",
+    "image": "Water Strike.png",
+    "max_hit": 4,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Water Surge",
+    "image": "Water Surge.png",
+    "max_hit": 22,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Water Wave",
+    "image": "Water Wave.png",
+    "max_hit": 18,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Weaken",
+    "image": "Weaken.png",
+    "max_hit": 0,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Wind Blast",
+    "image": "Wind Blast.png",
+    "max_hit": 13,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Wind Bolt",
+    "image": "Wind Bolt.png",
+    "max_hit": 9,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Wind Strike",
+    "image": "Wind Strike.png",
+    "max_hit": 2,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Wind Surge",
+    "image": "Wind Surge.png",
+    "max_hit": 21,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Wind Wave",
+    "image": "Wind Wave.png",
+    "max_hit": 17,
+    "spellbook": "standard"
+  }
+]
