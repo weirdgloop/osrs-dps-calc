@@ -1,18 +1,19 @@
 import React, {useState} from 'react';
 import Image, {StaticImageData} from 'next/image';
 
-import attack from '@/img/attack.png'
-import strength from '@/img/strength.png';
-import defence from '@/img/defence.png';
-import ranged from '@/img/ranged.png';
-import magic from '@/img/magic.png';
-import hitpoints from '@/img/hitpoints.png';
-import prayer from '@/img/prayer.png';
+import attack from '@/img/bonuses/attack.png'
+import strength from '@/img/bonuses/strength.png';
+import defence from '@/img/bonuses/defence.png';
+import ranged from '@/img/bonuses/ranged.png';
+import magic from '@/img/bonuses/magic.png';
+import hitpoints from '@/img/bonuses/hitpoints.png';
+import prayer from '@/img/tabs/prayer.png';
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../state/state';
+import {useStore} from '../../state';
 import {classNames} from '../../utils';
 import NumberInput from '@/components/generic/NumberInput';
-import {PlayerSkills} from '@/types/State';
+
+import {PlayerSkills} from '@/types/Player';
 
 interface SkillInputProps {
   name: string;

@@ -1,8 +1,9 @@
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../state/state';
+import {useStore} from '../../state';
 import React from 'react';
 import HelpLink from '@/components/HelpLink';
-import {PlayerCombatStyle} from '@/types/State';
+
+import {PlayerCombatStyle} from '@/types/Player';
 
 interface CombatStyleProps {
   style: PlayerCombatStyle;

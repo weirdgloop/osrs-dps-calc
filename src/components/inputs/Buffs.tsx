@@ -4,7 +4,7 @@ import Image, {StaticImageData} from 'next/image';
 import {Potion as PotionEnum, PotionMap} from '@/lib/enums/Potion';
 
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../state/state';
+import {useStore} from '../../state';
 
 interface PotionProps {
   name: PotionEnum;

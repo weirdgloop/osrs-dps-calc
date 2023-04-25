@@ -1,11 +1,11 @@
 import React from 'react';
 import equipment from '@/lib/equipment.json';
-import {useStore} from '../state/state';
+import {useStore} from '../state';
 import {observer} from 'mobx-react-lite';
 import WindowedSelect, {FormatOptionLabelMeta} from 'react-windowed-select';
-import {EquipmentPiece} from '@/types/State';
 import {getWikiImage} from '@/lib/utilities';
 import {EquipmentCategory} from '@/lib/enums/EquipmentCategory';
+import {EquipmentPiece} from '@/types/Player';
 
 interface EquipmentOption {
   label: string;

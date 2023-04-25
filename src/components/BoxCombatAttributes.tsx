@@ -1,17 +1,17 @@
 import React, {useEffect, useState} from 'react';
-import dagger from '@/img/dagger.png';
-import scimitar from '@/img/scimitar.png';
-import warhammer from '@/img/warhammer.png';
-import magic from '@/img/magic.png';
-import ranged from '@/img/ranged.png';
-import strength from '@/img/strength.png';
-import rangedStrength from '@/img/ranged_strength.png';
-import magicStrength from '@/img/magic_strength.png';
-import prayer from '@/img/prayer.png';
+import dagger from '@/img/bonuses/dagger.png';
+import scimitar from '@/img/bonuses/scimitar.png';
+import warhammer from '@/img/bonuses/warhammer.png';
+import magic from '@/img/bonuses/magic.png';
+import ranged from '@/img/bonuses/ranged.png';
+import strength from '@/img/bonuses/strength.png';
+import rangedStrength from '@/img/bonuses/ranged_strength.png';
+import magicStrength from '@/img/bonuses/magic_strength.png';
+import prayer from '@/img/tabs/prayer.png';
 import AttributeInput from '@/components/inputs/AttributeInput';
 import HelpLink from '@/components/HelpLink';
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../state/state';
+import {useStore} from '../state';
 
 const Offensive: React.FC = observer(() => {
   const store = useStore();

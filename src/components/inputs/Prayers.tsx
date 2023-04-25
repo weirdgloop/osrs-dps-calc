@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../state/state';
+import {useStore} from '../../state';
 import React from 'react';
 import {PrayerMap} from '@/lib/enums/Prayer';
 

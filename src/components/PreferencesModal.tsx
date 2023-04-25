@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
-import {Dialog, Switch} from '@headlessui/react';
+import React from 'react';
+import {Dialog} from '@headlessui/react';
 import {classNames} from '../utils';
 import Toggle from '@/components/generic/Toggle';
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../state/state';
+import {useStore} from '../state';
 
 const PreferencesModal: React.FC = observer(() => {
   const store = useStore();

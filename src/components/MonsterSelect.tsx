@@ -1,9 +1,10 @@
 import React from 'react';
 import monsters from '@/lib/monsters.json';
-import {useStore} from '../state/state';
+import {useStore} from '../state';
 import {observer} from 'mobx-react-lite';
 import WindowedSelect, {FormatOptionLabelMeta} from 'react-windowed-select';
-import {Monster} from '@/types/State';
+
+import {Monster} from '@/types/Monster';
 
 interface MonsterOption {
   label: string;

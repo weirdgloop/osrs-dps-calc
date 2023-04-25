@@ -1,10 +1,10 @@
 import React from 'react';
 import EquipmentSelect from '@/components/EquipmentSelect';
-import {PlayerEquipment} from '@/types/State';
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../state/state';
+import {useStore} from '../../state';
 import {getWikiImage} from '@/lib/utilities';
 import {IconTrashX} from '@tabler/icons-react';
+import {PlayerEquipment} from '@/types/Player';
 
 interface EquipmentGridSlotProps {
   slot: keyof PlayerEquipment;

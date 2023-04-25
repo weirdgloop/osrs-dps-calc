@@ -3,7 +3,7 @@ import 'react-tooltip/dist/react-tooltip.css';
 import 'react-toastify/dist/ReactToastify.css';
 import type { AppProps } from 'next/app';
 import TopBar from '../components/TopBar';
-import {GlobalState, StoreProvider} from '../state/state';
+import {GlobalState, StoreProvider} from '../state';
 import {ibm, pts} from '../fonts';
 
 const store = new GlobalState();

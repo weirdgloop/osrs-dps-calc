@@ -7,7 +7,7 @@ import {Tooltip} from 'react-tooltip';
 import React, {useEffect, useState} from 'react';
 import BoxResults from '@/components/BoxResults';
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../state/state';
+import {useStore} from '../state';
 import {calculateCombatLevel} from '@/lib/utilities';
 import PreferencesModal from '@/components/PreferencesModal';
 import {ToastContainer} from 'react-toastify';

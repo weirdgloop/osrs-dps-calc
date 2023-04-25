@@ -1,4 +1,5 @@
-import {EquipmentPiece, Monster, Player} from '@/types/State';
+import {EquipmentPiece, Player} from '@/types/Player';
+import {Monster} from '@/types/Monster';
 
 class CombatCalc {
   private player: Player;

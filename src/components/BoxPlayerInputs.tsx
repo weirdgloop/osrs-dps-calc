@@ -1,9 +1,9 @@
 import Image, {StaticImageData} from 'next/image';
-import combat from '@/img/combat.png';
-import skills from '@/img/skills.png';
-import equipment from '@/img/equipment.png';
-import potion from '@/img/potion.png';
-import prayer from '@/img/prayer.png';
+import combat from '@/img/tabs/combat.png';
+import skills from '@/img/tabs/skills.png';
+import equipment from '@/img/tabs/equipment.png';
+import potion from '@/img/tabs/potion.png';
+import prayer from '@/img/tabs/prayer.png';
 import React, {useState} from 'react';
 import Combat from '@/components/inputs/Combat';
 import Skills from '@/components/inputs/Skills';

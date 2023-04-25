@@ -1,4 +1,4 @@
-import {PlayerSkills} from '@/types/State';
+import {PlayerSkills} from '@/types/Player';
 
 /**
  * Calculates a player's combat level using their skills

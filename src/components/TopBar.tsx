@@ -2,7 +2,7 @@ import Link from 'next/link';
 import {classNames} from '../utils';
 import Image from 'next/image';
 import hitsplat from '@/img/hitsplat.webp';
-import {useStore} from '../state/state';
+import {useStore} from '../state';
 
 export default function TopBar() {
   const store = useStore();

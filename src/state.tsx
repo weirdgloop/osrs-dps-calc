@@ -3,11 +3,13 @@ import React, {createContext, useContext} from 'react';
 import {PartialDeep} from 'type-fest';
 import {Potion} from '@/lib/enums/Potion';
 import * as localforage from 'localforage';
-import {EquipmentPiece, Monster, Player, PlayerEquipment, Preferences, State, UI} from '@/types/State';
+import {Preferences, State, UI} from '@/types/State';
 import {Prayer} from '@/lib/enums/Prayer';
 import merge from 'lodash.merge';
 import {EquipmentCategory, getCombatStylesForCategory} from '@/lib/enums/EquipmentCategory';
 import {toast} from 'react-toastify';
+import {EquipmentPiece, Player, PlayerEquipment} from '@/types/Player';
+import {Monster} from '@/types/Monster';
 
 const emptyEquipmentSlot: EquipmentPiece = {
   name: '',
