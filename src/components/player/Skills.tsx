@@ -10,10 +10,11 @@ import hitpoints from '@/img/bonuses/hitpoints.png';
 import prayer from '@/img/tabs/prayer.png';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '../../state';
-import {classNames} from '../../utils';
+import {fetchPlayerSkills} from '../../utils';
 import NumberInput from '@/components/generic/NumberInput';
 
 import {PlayerSkills} from '@/types/Player';
+import {toast} from 'react-toastify';
 
 interface SkillInputProps {
   name: string;
@@ -67,10 +68,26 @@ const UsernameLookup: React.FC = () => {
         value={username}
         onChange={(e) => setUsername(e.currentTarget.value)}
       />
-      <button type={'button'} className={classNames(
-        'ml-1 text-white bg-btns-200 hover:bg-btns-100',
-        'px-3 py-1 rounded text-sm font-serif'
-      )}>
+      <button
+        disabled={!username}
+        type={'button'}
+        className={'ml-1 text-sm btn'}
+        onClick={async () => {
+          try {
+            const res = await toast.promise(
+              fetchPlayerSkills(username),
+              {
+                pending: `Fetching player skills...`,
+                success: `Done fetching player skills!`,
+                error: `Error fetching player skills`
+              },
+              {
+                toastId: 'skills-fetch'
+              }
+            )
+          } catch (e) {}
+        }}
+      >
         Lookup
       </button>
     </>

@@ -33,8 +33,8 @@ a {
 }
 
 .form-control {
-  @apply bg-body-100;
-  @apply border-body-500;
+  /*@apply bg-body-100;*/
+  @apply border-body-400;
   @apply text-sm;
   @apply rounded;
   padding: .25em .5em;
@@ -88,4 +88,19 @@ input.form-control[type=number] {
 
 .equipment-select-menu {
   width: 350px !important;
+}
+
+.btn {
+  @apply bg-btns-200;
+  @apply hover:bg-btns-100;
+  @apply text-white;
+  @apply rounded;
+  @apply px-3;
+  @apply py-1;
+  transition: background-color 0.5s;
+}
+
+button.btn:disabled {
+  @apply bg-gray-300;
+  @apply cursor-not-allowed;
 }

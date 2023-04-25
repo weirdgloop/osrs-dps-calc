@@ -4,14 +4,16 @@ import skills from '@/img/tabs/skills.png';
 import equipment from '@/img/tabs/equipment.png';
 import potion from '@/img/tabs/potion.png';
 import prayer from '@/img/tabs/prayer.png';
+import spells from '@/img/tabs/spells.png';
 import React, {useState} from 'react';
-import Combat from '@/components/inputs/Combat';
-import Skills from '@/components/inputs/Skills';
-import Prayers from '@/components/inputs/Prayers';
-import Equipment from '@/components/inputs/Equipment';
-import Buffs from '@/components/inputs/Buffs';
+import Combat from '@/components/player/Combat';
+import Skills from '@/components/player/Skills';
+import Prayers from '@/components/player/Prayers';
+import Equipment from '@/components/player/Equipment';
+import Buffs from '@/components/player/Buffs';
+import Spells from '@/components/player/Spells';
 
-type SelectedInputType = 'combat' | 'skills' | 'equipment' | 'buffs' | 'prayer';
+type SelectedInputType = 'combat' | 'skills' | 'equipment' | 'buffs' | 'prayer' | 'spells';
 
 interface InputNavItemProps {
   name: string;
@@ -49,16 +51,19 @@ export default function BoxPlayerInputs() {
         return <Prayers />
       case 'buffs':
         return <Buffs />
+      case 'spells':
+        return <Spells />
     }
   }
 
   return (
-    <div className={'grow md:border-r border-gray-300'}>
-      <div className={'flex justify-center text-center items-center bg-body-100 px-4 py-[1.5em] gap-1 border-b border-gray-300'}>
+    <div className={'grow md:border-r border-body-400'}>
+      <div className={'flex justify-center text-center items-center bg-body-100 px-4 py-[1.5em] gap-1 border-b border-body-400  '}>
         <InputNavItem name={'Combat'} isActive={selected === 'combat'} image={combat} onClick={() => setSelected('combat')} />
         <InputNavItem name={'Skills'} isActive={selected === 'skills'} image={skills} onClick={() => setSelected('skills')} />
         <InputNavItem name={'Equipment'} isActive={selected === 'equipment'} image={equipment} onClick={() => setSelected('equipment')} />
         <InputNavItem name={'Buffs'} isActive={selected === 'buffs'} image={potion} onClick={() => setSelected('buffs')} />
+        <InputNavItem name={'Spells'} isActive={selected === 'spells'} image={spells} onClick={() => setSelected('spells')} />
         <InputNavItem name={'Prayer'} isActive={selected === 'prayer'} image={prayer} onClick={() => setSelected('prayer')} />
       </div>
       <div className={'mb-6'}>

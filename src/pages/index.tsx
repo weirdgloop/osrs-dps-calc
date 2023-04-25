@@ -17,8 +17,8 @@ const PlayerContainer: React.FC = observer(() => {
   const {player} = store;
 
   return (
-    <div className={'bg-tile md:basis-1/4 basis-auto flex-initial rounded-lg text-black shadow flex flex-col'}>
-      <div className={'px-6 py-4 border-b-body-400 border-b rounded rounded-bl-none rounded-br-none flex justify-between items-center'}>
+    <div className={'bg-tile md:basis-1/4 basis-auto flex-initial md:rounded-lg text-black shadow-lg flex flex-col'}>
+      <div className={'px-6 py-4 border-b-body-400 border-b md:rounded md:rounded-bl-none md:rounded-br-none flex justify-between items-center'}>
         <h1 className={`font-serif text-xl tracking-tight font-bold`}>Player</h1>
         <span className={'text-gray-500 font-bold font-serif text-sm'}>Level {calculateCombatLevel(player.skills)}</span>
       </div>
@@ -48,11 +48,11 @@ const Home: NextPage = () => {
         <title>OSRS DPS Calculator</title>
       </Head>
       {/* Main container */}
-      <div className={'max-w-[1200px] mx-auto my-8'}>
+      <div className={'max-w-[1200px] mx-auto md:my-8'}>
         <div className={'flex gap-4 flex-wrap'}>
           <PlayerContainer />
-          <div className={'bg-tile flex-1 rounded-lg text-black shadow'}>
-            <div className={'px-6 py-4 border-b-body-400 border-b rounded rounded-bl-none rounded-br-none'}>
+          <div className={'bg-tile flex-1 md:rounded-lg text-black shadow-lg'}>
+            <div className={'px-6 py-4 border-b-body-400 border-b md:rounded md:rounded-bl-none md:rounded-br-none'}>
               <h1 className={`font-serif text-xl tracking-tight font-bold`}>Monster</h1>
             </div>
             <div className={'p-6'}>

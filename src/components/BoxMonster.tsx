@@ -1,5 +1,5 @@
 import React from 'react';
-import AttributeInput from '@/components/inputs/AttributeInput';
+import AttributeInput from '@/components/player/AttributeInput';
 import dagger from '@/img/bonuses/dagger.png';
 import scimitar from '@/img/bonuses/scimitar.png';
 import warhammer from '@/img/bonuses/warhammer.png';

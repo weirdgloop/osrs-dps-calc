@@ -8,7 +8,7 @@ import strength from '@/img/bonuses/strength.png';
 import rangedStrength from '@/img/bonuses/ranged_strength.png';
 import magicStrength from '@/img/bonuses/magic_strength.png';
 import prayer from '@/img/tabs/prayer.png';
-import AttributeInput from '@/components/inputs/AttributeInput';
+import AttributeInput from '@/components/player/AttributeInput';
 import HelpLink from '@/components/HelpLink';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '../state';
@@ -19,7 +19,7 @@ const Offensive: React.FC = observer(() => {
 
   return (
     <div className={'w-[95px]'}>
-      <p className={'text-sm text-gray-400'}>Offensive</p>
+      <p className={'text-sm text-gray-500'}>Offensive</p>
       <div className={'flex flex-col gap-2 mt-3 text-center items-end'}>
         <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Dagger'} image={dagger} value={player.offensive.stab} onChange={(v) => store.updatePlayerCombatAttributes({offensive: {stab: v}})} />
         <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Scimitar'} image={scimitar} value={player.offensive.slash} onChange={(v) => store.updatePlayerCombatAttributes({offensive: {slash: v}})} />
@@ -37,7 +37,7 @@ const Defensive: React.FC = observer(() => {
 
   return (
     <div className={'w-[95px]'}>
-      <p className={'text-sm text-gray-400'}>Defensive</p>
+      <p className={'text-sm text-gray-500'}>Defensive</p>
       <div className={'flex flex-col gap-2 mt-3 text-center items-end'}>
         <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Dagger'} image={dagger} value={player.defensive.stab} onChange={(v) => store.updatePlayerCombatAttributes({defensive: {stab: v}})} />
         <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Scimitar'} image={scimitar} value={player.defensive.slash} onChange={(v) => store.updatePlayerCombatAttributes({defensive: {slash: v}})} />
@@ -55,7 +55,7 @@ const OtherBonuses: React.FC = observer(() => {
 
   return (
     <div className={'w-[95px]'}>
-      <p className={'text-sm text-gray-400'}>Other</p>
+      <p className={'text-sm text-gray-500'}>Other</p>
       <div className={'flex flex-col gap-2 mt-3 text-center items-end'}>
         <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Strength'} image={strength} value={player.bonuses.str} onChange={(v) => store.updatePlayerCombatAttributes({bonuses: {strength: v}})} />
         <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Ranged Strength'} image={rangedStrength} value={player.bonuses.ranged_str} onChange={(v) => store.updatePlayerCombatAttributes({bonuses: {ranged_str: v}})} />
@@ -95,12 +95,12 @@ const AttackSpeedProgressBar: React.FC<AttackSpeedProgressBarProps> = (props) =>
 
   return (
     <>
-      <div className="mt-2 w-full bg-body-200 rounded-full">
+      <div className="mt-2 w-full bg-body-500 rounded-full">
         <div className={`${determineSpeedBg()} transition-[width,background] text-xs font-medium text-black text-center p-0.5 leading-none rounded-full`}
              style={{width: `${speedPerc}%`}}>{speed}s
         </div>
       </div>
-      <div className={'mt-1 mb-4 flex justify-between text-xs text-gray-400'}>
+      <div className={'mt-1 mb-4 flex justify-between text-xs text-gray-500'}>
         <p>Fast</p>
         <p>Slow</p>
       </div>
@@ -112,8 +112,8 @@ export default function BoxCombatAttributes() {
   const [atkSpeed, setAtkSpeed] = useState(2.4);
 
   return (
-    <div className={'grow bg-gray-200 text-black rounded-br'}>
-      <div className={'px-6 py-4 border-b border-gray-300'}>
+    <div className={'grow bg-body-100 text-black rounded-br'}>
+      <div className={'px-6 py-4 border-b border-body-400'}>
         <h4 className={'font-serif font-bold'}>Bonuses</h4>
         <p className={'text-xs'}>
           These values are determined by your equipment and stats. You usually do not need to set them manually.

@@ -21,7 +21,7 @@ const StatDisplay: React.FC<PropsWithChildren<StatDisplay>> = (props) => {
 
 export default function BoxResults() {
   return (
-    <div className={'my-4 bg-tile rounded shadow'}>
+    <div className={'my-4 bg-tile rounded shadow-lg'}>
       <div className={'px-6 py-4 border-b-body-400 border-b rounded rounded-bl-none rounded-br-none'}>
         <h1 className={`font-serif text-xl tracking-tight font-bold`}>Result</h1>
       </div>
