@@ -12,7 +12,9 @@ export interface Preferences {
 }
 
 export interface State {
-  player: Player;
+  loadouts: Player[];
+  selectedLoadout: number;
+
   monster: Monster;
   ui: UI;
   prefs: Preferences;

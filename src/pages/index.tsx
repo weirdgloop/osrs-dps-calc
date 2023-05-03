@@ -11,15 +11,28 @@ import {useStore} from '../state';
 import {calculateCombatLevel} from '@/lib/utilities';
 import PreferencesModal from '@/components/PreferencesModal';
 import {ToastContainer} from 'react-toastify';
-import {IconAlertTriangle} from '@tabler/icons-react';
+import {IconCircleMinus, IconCirclePlus} from '@tabler/icons-react';
 
 const PlayerContainer: React.FC = observer(() => {
   const store = useStore();
-  const {player} = store;
+  const {player, selectedLoadout, createLoadout, deleteLoadout, canCreateLoadout, canRemoveLoadout} = store;
 
   return (
     <div className={'bg-tile md:basis-1/4 basis-auto flex-initial md:rounded-lg text-black shadow-lg flex flex-col'}>
-      <div className={'px-6 py-4 border-b-body-400 border-b md:rounded md:rounded-bl-none md:rounded-br-none flex justify-between items-center'}>
+      <div className={'px-6 py-2 md:rounded md:rounded-b-none text-sm font-bold font-serif flex justify-between items-center bg-btns-400 text-white rounded-t border-b-4 border-body-500'}>
+        <div>
+          Loadout <span className={'text-body-200'}>{selectedLoadout + 1}</span>
+        </div>
+        <div className={'flex text-body-200'}>
+          <button disabled={!canCreateLoadout} onClick={() => createLoadout(true)} className={'disabled:cursor-not-allowed disabled:text-btns-100'}>
+            <IconCirclePlus />
+          </button>
+          <button disabled={!canRemoveLoadout} onClick={() => deleteLoadout(selectedLoadout)} className={'disabled:cursor-not-allowed disabled:text-btns-100'}>
+            <IconCircleMinus />
+          </button>
+        </div>
+      </div>
+      <div className={'px-6 py-4 border-b-body-400 border-b flex justify-between items-center'}>
         <h1 className={`font-serif text-xl tracking-tight font-bold`}>Player</h1>
         <span className={'text-gray-500 font-bold font-serif text-sm'}>Level {calculateCombatLevel(player.skills)}</span>
       </div>

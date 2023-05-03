@@ -45,8 +45,8 @@ const generateInitialEquipment = () => {
   return equipment as PlayerEquipment;
 }
 
-class GlobalState implements State {
-  player: Player = {
+const generateEmptyPlayer: () => Player = () => {
+  return {
     style: getCombatStylesForCategory(EquipmentCategory.NONE)[0],
     skills: {
       atk: 1,
@@ -93,7 +93,9 @@ class GlobalState implements State {
       spellbook: 'standard',
     }
   }
+}
 
+class GlobalState implements State {
   monster: Monster = {
     name: '',
     size: 0,
@@ -123,9 +125,16 @@ class GlobalState implements State {
     attributes: []
   }
 
+  loadouts: Player[] = [
+    generateEmptyPlayer()
+  ]
+
+  selectedLoadout = 0;
+
   ui: UI = {
     showPreferencesModal: false,
   }
+
   prefs: Preferences = {
     allowEditingPlayerStats: false,
     allowEditingMonsterStats: false,
@@ -133,7 +142,14 @@ class GlobalState implements State {
   }
 
   constructor() {
-    makeAutoObservable(this);
+    makeAutoObservable(this, {}, {autoBind: true});
+  }
+
+  /**
+   * Get the currently selected player (loadout)
+   */
+  get player() {
+    return this.loadouts[this.selectedLoadout];
   }
 
   /**
@@ -142,20 +158,6 @@ class GlobalState implements State {
    */
   get availableCombatStyles() {
     return getCombatStylesForCategory(this.player.equipment.weapon.category);
-  }
-
-  /**
-   * Get any warnings we need to surface on the UI, based on the equipment.
-   * Not in use right now, but may be added in the future
-   */
-  get warnings() {
-    let warnings = [];
-
-    if (MAGIC_WEAPONS.includes(this.player.equipment.weapon.category) && !this.player.spell.name) {
-      warnings.push(UIWarning.MAGIC_WEAPON_NO_SPELL);
-    }
-
-    return warnings;
   }
 
   /**
@@ -262,7 +264,7 @@ class GlobalState implements State {
       )
     }
 
-    this.player = merge(this.player, player);
+    this.loadouts[this.selectedLoadout] = merge(this.player, player);
   }
 
   /**
@@ -283,6 +285,37 @@ class GlobalState implements State {
         [slot]: emptyEquipmentSlot
       }
     })
+  }
+
+  setSelectedLoadout(ix: number) {
+    this.selectedLoadout = ix;
+  }
+
+  deleteLoadout(ix: number) {
+    // Sanity check to ensure we can never have less than one loadout
+    if (this.loadouts.length === 1) return;
+
+    this.loadouts = this.loadouts.filter((p, i) => i !== ix);
+    // If the selected loadout index is equal to or over the index we just remove, shift it down by one
+    if (this.selectedLoadout >= ix) {
+      this.selectedLoadout = this.selectedLoadout - 1;
+    }
+  }
+
+  get canCreateLoadout() {
+    return (this.loadouts.length < 5);
+  }
+
+  get canRemoveLoadout() {
+    return (this.loadouts.length > 1);
+  }
+
+  createLoadout(selected?: boolean) {
+    // Do not allow creating a loadout if we're over the limit
+    if (!this.canCreateLoadout) return;
+
+    this.loadouts.push(generateEmptyPlayer());
+    if (selected) this.selectedLoadout = (this.loadouts.length - 1);
   }
 }
 
