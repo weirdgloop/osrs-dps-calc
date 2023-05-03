@@ -23,6 +23,7 @@
     "react-toastify": "^9.1.2",
     "react-tooltip": "^5.11.1",
     "react-windowed-select": "^5.1.0",
+    "recharts": "^2.5.0",
     "tailwind-dracula": "^1.1.0"
   },
   "devDependencies": {

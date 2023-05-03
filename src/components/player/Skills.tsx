@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {createRef, useEffect, useRef, useState} from 'react';
 import Image, {StaticImageData} from 'next/image';
 
 import attack from '@/img/bonuses/attack.png'
@@ -15,6 +15,7 @@ import NumberInput from '@/components/generic/NumberInput';
 
 import {PlayerSkills} from '@/types/Player';
 import {toast} from 'react-toastify';
+import localforage from 'localforage';
 
 interface SkillInputProps {
   name: string;
@@ -56,8 +57,27 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
   )
 })
 
-const UsernameLookup: React.FC = () => {
+const UsernameLookup: React.FC = observer(() => {
+  const shouldRemember = useStore().prefs.rememberUsername;
   const [username, setUsername] = useState('');
+  const btn = useRef<HTMLButtonElement | null>();
+
+  useEffect(() => {
+    // When the username changes, set it in the browser storage, if the preference is enabled.
+    if (shouldRemember) {
+      localforage.setItem('dps-calc-username', username).catch(() => {});
+    }
+  }, [shouldRemember, username]);
+
+  useEffect(() => {
+    // On first mount, if the "remember username" preference is enabled, try & load the username from the store.
+    if (shouldRemember) {
+      localforage.getItem('dps-calc-username').then((u) => {
+        // Set the username
+        setUsername(u as string);
+      }).catch(() => {});
+    }
+  }, []);
 
   return (
     <>
@@ -69,6 +89,7 @@ const UsernameLookup: React.FC = () => {
         onChange={(e) => setUsername(e.currentTarget.value)}
       />
       <button
+        ref={btn}
         disabled={!username}
         type={'button'}
         className={'ml-1 text-sm btn'}
@@ -92,7 +113,7 @@ const UsernameLookup: React.FC = () => {
       </button>
     </>
   )
-}
+})
 
 const Skills = observer(() => {
   return (

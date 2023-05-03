@@ -11,6 +11,7 @@ import {useStore} from '../state';
 import {calculateCombatLevel} from '@/lib/utilities';
 import PreferencesModal from '@/components/PreferencesModal';
 import {ToastContainer} from 'react-toastify';
+import {IconAlertTriangle} from '@tabler/icons-react';
 
 const PlayerContainer: React.FC = observer(() => {
   const store = useStore();
@@ -30,7 +31,7 @@ const PlayerContainer: React.FC = observer(() => {
   )
 })
 
-const Home: NextPage = () => {
+const Home: NextPage = observer(() => {
   const store = useStore();
   const [isMounted, setIsMounted] = useState(false);
 
@@ -60,15 +61,34 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
+        {/*{*/}
+        {/*  (store.warnings.length > 0) && (*/}
+        {/*    <div className={'my-4 px-6 py-4 bg-orange-400 text-white rounded shadow-lg text-sm'}>*/}
+        {/*      <div className={'flex gap-2 items-center'}>*/}
+        {/*        <div><IconAlertTriangle /></div>*/}
+        {/*        <div className={'font-bold'}>*/}
+        {/*          There may be issues with your build:*/}
+        {/*        </div>*/}
+        {/*      </div>*/}
+        {/*      <div className={'mt-1'}>*/}
+        {/*        <ul className={'list-inside list-disc'}>*/}
+        {/*          {*/}
+        {/*            store.warnings.map((msg, i) => {*/}
+        {/*              return <li key={i}>{msg}</li>*/}
+        {/*            })*/}
+        {/*          }*/}
+        {/*        </ul>*/}
+        {/*      </div>*/}
+        {/*    </div>*/}
+        {/*  )*/}
+        {/*}*/}
         <BoxResults />
       </div>
-      {isMounted && <Tooltip
-        id={'tooltip'}
-      />}
+      {isMounted && <Tooltip id={'tooltip'} />}
       <ToastContainer hideProgressBar={true} draggable={false} limit={3} closeButton={false} className={'text-sm'} />
       <PreferencesModal />
     </div>
   )
-}
+})
 
 export default Home;

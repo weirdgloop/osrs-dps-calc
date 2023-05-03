@@ -63,8 +63,8 @@ export default function BoxPlayerInputs() {
         <InputNavItem name={'Skills'} isActive={selected === 'skills'} image={skills} onClick={() => setSelected('skills')} />
         <InputNavItem name={'Equipment'} isActive={selected === 'equipment'} image={equipment} onClick={() => setSelected('equipment')} />
         <InputNavItem name={'Buffs'} isActive={selected === 'buffs'} image={potion} onClick={() => setSelected('buffs')} />
-        <InputNavItem name={'Spells'} isActive={selected === 'spells'} image={spells} onClick={() => setSelected('spells')} />
         <InputNavItem name={'Prayer'} isActive={selected === 'prayer'} image={prayer} onClick={() => setSelected('prayer')} />
+        <InputNavItem name={'Spells'} isActive={selected === 'spells'} image={spells} onClick={() => setSelected('spells')} />
       </div>
       <div className={'mb-6'}>
         {renderSelected()}

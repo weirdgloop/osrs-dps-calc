@@ -9,7 +9,7 @@ export default function TopBar() {
 
   return (
       <>
-        <div className="mx-auto px-3 sm:px-6 lg:px-8 bg-btns-400 shadow">
+        <div className="mx-auto px-3 sm:px-6 lg:px-8 bg-btns-400 shadow border-b-4 border-body-500">
           <div className="relative flex items-center justify-between h-16">
             <div className="flex-1 flex items-center justify-between">
               <div className="flex-shrink-0 flex items-center gap-2 select-none">

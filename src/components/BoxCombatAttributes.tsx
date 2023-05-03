@@ -15,17 +15,17 @@ import {useStore} from '../state';
 
 const Offensive: React.FC = observer(() => {
   const store = useStore();
-  const {player, prefs} = store;
+  const {prefs, equipmentBonuses} = store;
 
   return (
     <div className={'w-[95px]'}>
       <p className={'text-sm text-gray-500'}>Offensive</p>
       <div className={'flex flex-col gap-2 mt-3 text-center items-end'}>
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Dagger'} image={dagger} value={player.offensive.stab} onChange={(v) => store.updatePlayerCombatAttributes({offensive: {stab: v}})} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Scimitar'} image={scimitar} value={player.offensive.slash} onChange={(v) => store.updatePlayerCombatAttributes({offensive: {slash: v}})} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Warhammer'} image={warhammer} value={player.offensive.crush} onChange={(v) => store.updatePlayerCombatAttributes({offensive: {crush: v}})} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Magic'} image={magic} value={player.offensive.magic} onChange={(v) => store.updatePlayerCombatAttributes({offensive: {magic: v}})} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Ranged'} image={ranged} value={player.offensive.ranged} onChange={(v) => store.updatePlayerCombatAttributes({offensive: {ranged: v}})} />
+        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Dagger'} image={dagger} value={equipmentBonuses.offensive.stab} onChange={(v) => store.updatePlayerCombatAttributes({offensive: {stab: v}})} />
+        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Scimitar'} image={scimitar} value={equipmentBonuses.offensive.slash} onChange={(v) => store.updatePlayerCombatAttributes({offensive: {slash: v}})} />
+        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Warhammer'} image={warhammer} value={equipmentBonuses.offensive.crush} onChange={(v) => store.updatePlayerCombatAttributes({offensive: {crush: v}})} />
+        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Magic'} image={magic} value={equipmentBonuses.offensive.magic} onChange={(v) => store.updatePlayerCombatAttributes({offensive: {magic: v}})} />
+        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Ranged'} image={ranged} value={equipmentBonuses.offensive.ranged} onChange={(v) => store.updatePlayerCombatAttributes({offensive: {ranged: v}})} />
       </div>
     </div>
   )

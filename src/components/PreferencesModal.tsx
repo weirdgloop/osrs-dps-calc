@@ -4,6 +4,7 @@ import {classNames} from '../utils';
 import Toggle from '@/components/generic/Toggle';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '../state';
+import {IconTool} from '@tabler/icons-react';
 
 const PreferencesModal: React.FC = observer(() => {
   const store = useStore();
@@ -16,13 +17,14 @@ const PreferencesModal: React.FC = observer(() => {
 
   return (
     <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
-      <div className="fixed inset-0 bg-black/90" aria-hidden="true" />
+      <div className="fixed inset-0 bg-black/75" aria-hidden="true" />
       <div className={'fixed inset-0 flex items-center justify-center p-4'}>
-        <Dialog.Panel className={'w-full max-w-lg rounded-xl bg-darker-900 text-white'}>
-          <Dialog.Title className={'font-serif text-xl p-4 bg-darker-800 rounded-t-xl text-center font-extrabold'}>
+        <Dialog.Panel className={'w-full max-w-lg rounded-xl bg-body-100 text-black shadow-xl'}>
+          <Dialog.Title className={'py-3 text-md bg-btns-300 rounded-t-lg text-center text-white font-serif'}>
+            <IconTool className={'inline-block'} size={20} />{' '}
             Preferences
           </Dialog.Title>
-          <div className={'p-4 max-w-xl mt-2 mx-auto'}>
+          <div className={'px-4 py-2 max-w-xl mt-2 mx-auto'}>
             <h2 className={'font-serif mb-2'}>Interface</h2>
             <Toggle checked={prefs.allowEditingPlayerStats} setChecked={(c) => {
               store.updatePreferences({allowEditingPlayerStats: c});
@@ -31,13 +33,15 @@ const PreferencesModal: React.FC = observer(() => {
               store.updatePreferences({allowEditingMonsterStats: c});
             }} label={'Allow editing monster stats'} />
             <h2 className={'font-serif mb-2 mt-4'}>Persistence</h2>
-            <Toggle checked={true} setChecked={() => {}} label={'Remember username across sessions'} />
+            <Toggle checked={prefs.rememberUsername} setChecked={(c) => {
+              store.updatePreferences({rememberUsername: c})
+            }} label={'Remember username across sessions'} />
           </div>
-          <div className={'mt-6 p-4 border-t border-darker-600 flex justify-end'}>
+          <div className={'mt-3 p-4 border-t border-body-300 flex justify-end'}>
             <button
               className={classNames(
-                'text-black bg-dracula hover:bg-dracula-200',
-                'px-3 py-2 rounded-md text-sm font-medium'
+                'btn',
+                'text-sm'
               )}
 
               onClick={() => setIsOpen(false)}

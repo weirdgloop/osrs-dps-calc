@@ -8,6 +8,7 @@ export interface UI {
 export interface Preferences {
   allowEditingPlayerStats: boolean;
   allowEditingMonsterStats: boolean;
+  rememberUsername: boolean;
 }
 
 export interface State {

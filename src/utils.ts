@@ -13,7 +13,7 @@ const API_PROXY = 'https://oldschool.runescape.wiki/cors/'
  */
 export const fetchPlayerSkills = async (username: string) => {
   const res = await axios.get<string>(`${API_PROXY}/m=hiscore_oldschool/index_lite.ws?player=${username.replaceAll(' ', '_')}`);
-  let skills: PlayerSkills = {atk: 0, def: 0, hp: 0, magic: 0, prayer: 0, str: 0, ranged: 0};
+  let skills: PlayerSkills;
 
   // The Hiscores API returns in a CSV format, rather than JSON, so we need to do some manual parsing here
   let rawData = res.data.split(' ');

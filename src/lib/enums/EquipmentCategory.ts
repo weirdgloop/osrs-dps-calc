@@ -38,6 +38,14 @@ export enum EquipmentCategory {
   WHIP = 'Whip',
 }
 
+export const MAGIC_WEAPONS = [
+  EquipmentCategory.STAFF,
+  EquipmentCategory.POWERED_WAND,
+  EquipmentCategory.POWERED_STAFF,
+  EquipmentCategory.BLADED_STAFF,
+  EquipmentCategory.POLESTAFF
+]
+
 /**
  * Returns the available combat styles when provided an equipment category.
  * @param style

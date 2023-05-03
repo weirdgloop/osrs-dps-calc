@@ -104,3 +104,11 @@ button.btn:disabled {
   @apply bg-gray-300;
   @apply cursor-not-allowed;
 }
+
+.recharts-xAxis, .recharts-yAxis {
+  @apply font-mono;
+}
+
+.recharts-cartesian-axis-ticks {
+  @apply text-sm;
+}

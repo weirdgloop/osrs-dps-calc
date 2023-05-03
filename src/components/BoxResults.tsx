@@ -1,15 +1,18 @@
 import React, {PropsWithChildren} from 'react';
+import HitDistribution from '@/components/results/HitDistribution';
+import {observer} from 'mobx-react-lite';
+import {useStore} from '../state';
 
 interface StatDisplay {
-  name: string;
+  name: string | JSX.Element;
 }
 
 const StatDisplay: React.FC<PropsWithChildren<StatDisplay>> = (props) => {
   const {name, children} = props;
   return (
-    <div className={'flex gap-4'}>
+    <div className={'flex gap-4 px-6 justify-between'}>
       <div className={'basis-60'}>
-        <h3 className={'font-semibold'}>{name}</h3>
+        <h3 className={'font-bold'}>{name}</h3>
       </div>
       <div className={'font-mono'}>
         {children}
@@ -19,29 +22,48 @@ const StatDisplay: React.FC<PropsWithChildren<StatDisplay>> = (props) => {
   )
 }
 
-export default function BoxResults() {
+const BoxResults = observer(() => {
+  const store = useStore();
+
   return (
-    <div className={'my-4 bg-tile rounded shadow-lg'}>
-      <div className={'px-6 py-4 border-b-body-400 border-b rounded rounded-bl-none rounded-br-none'}>
-        <h1 className={`font-serif text-xl tracking-tight font-bold`}>Result</h1>
-      </div>
-      <div className={'p-6'}>
-        <StatDisplay name={'Max hit'}>
-          <p>43</p>
-        </StatDisplay>
-        <StatDisplay name={'Accuracy'}>
-          <p>82.75%</p>
-        </StatDisplay>
-        <StatDisplay name={'Damage per second (DPS)'}>
-          <p>5.9304</p>
-        </StatDisplay>
-        <StatDisplay name={'Average time-to-kill (TTK)'}>
-          <p>56.25 seconds</p>
-        </StatDisplay>
-        <StatDisplay name={'Average damage taken'}>
-          <p>18.71</p>
-        </StatDisplay>
+    <div className={'my-4'}>
+      <div className={'flex gap-4'}>
+        <div className={'grow bg-tile rounded shadow-lg'}>
+          <div className={'px-6 py-4 bg-btns-400 text-white rounded-t border-b-4 border-body-500'}>
+            <h3 className={'font-serif font-bold'}>Stats</h3>
+          </div>
+          <div className={'py-4 text-sm'}>
+            <StatDisplay name={'Max hit'}>
+              <p>43</p>
+            </StatDisplay>
+            <StatDisplay name={'Accuracy'}>
+              <p>82.75%</p>
+            </StatDisplay>
+            <StatDisplay name={'Damage per second (DPS)'}>
+              <p className={'text-orange-500 font-bold'}>5.9304</p>
+            </StatDisplay>
+            <StatDisplay name={'Average time-to-kill (TTK)'}>
+              <p>56.25 seconds</p>
+            </StatDisplay>
+            <StatDisplay name={'Average damage taken'}>
+              <p>18.71</p>
+            </StatDisplay>
+          </div>
+        </div>
+        <div className={'grow bg-tile rounded shadow-lg basis-1/3'}>
+          <div className={'px-6 py-4 bg-btns-400 text-white rounded-t border-b-4 border-body-500'}>
+            <h3 className={'font-serif font-bold'}>Hit Distribution</h3>
+          </div>
+          <div className={'px-6 py-4'}>
+            <p className={'text-xs mb-4 text-gray-500'}>
+              This chart shows the probabilities of dealing specific damage to the monster.
+            </p>
+            <HitDistribution />
+          </div>
+        </div>
       </div>
     </div>
   )
-}
+})
+
+export default BoxResults;
