@@ -16,7 +16,7 @@ const CombatStyle: React.FC<CombatStyleProps> = observer((props) => {
 
   return (
     <button
-      className={`text-sm p-2 px-6 text-left transition-[background] first:border-t border-b text-black border-body-200 ${player.style.name === style.name ? 'bg-btns-400 text-white' : 'bg-gray-100 hover:bg-gray-200'}`}
+      className={`text-sm p-2 px-6 text-left transition-[background] first:border-t border-b text-black border-body-200 ${player.style.name === style.name ? 'bg-orange-800 text-white' : 'bg-gray-100 hover:bg-gray-200'}`}
       onClick={() => store.updatePlayer({style})}
     >
       <div className={'font-bold font-serif'}>

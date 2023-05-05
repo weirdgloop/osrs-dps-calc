@@ -18,7 +18,7 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, pa
             <strong>{label}</strong> damage
           </p>
           <p className={'text-gray-400'}>
-            <span className={`${isZeroDmg ? 'text-blue' : 'text-red'} font-bold`}>{(payload[0].value * 100).toFixed(2).toString() + '%'}</span>
+            <span className={`${isZeroDmg ? 'text-blue' : 'text-red'} font-bold`}>{((payload[0].value! as number) * 100).toFixed(2).toString() + '%'}</span>
           </p>
         </div>
       </div>
@@ -48,10 +48,6 @@ const HitDistribution: React.FC = () => {
       <ResponsiveContainer width={'100%'} height={200}>
         <BarChart
           data={data}
-          // margin={{
-          //   left: 10,
-          //   bottom: 25,
-          // }}
         >
           <CartesianGrid strokeDasharray="5 3" />
           <XAxis

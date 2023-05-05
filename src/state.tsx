@@ -6,11 +6,10 @@ import * as localforage from 'localforage';
 import {Preferences, State, UI} from '@/types/State';
 import {Prayer} from '@/lib/enums/Prayer';
 import merge from 'lodash.merge';
-import {EquipmentCategory, getCombatStylesForCategory, MAGIC_WEAPONS} from '@/lib/enums/EquipmentCategory';
+import {EquipmentCategory, getCombatStylesForCategory} from '@/lib/enums/EquipmentCategory';
 import {toast} from 'react-toastify';
 import {EquipmentPiece, Player, PlayerBonuses, PlayerDefensive, PlayerEquipment, PlayerOffensive} from '@/types/Player';
 import {Monster} from '@/types/Monster';
-import {UIWarning} from '@/lib/enums/UIWarning';
 
 const emptyEquipmentSlot: EquipmentPiece = {
   name: '',
@@ -172,25 +171,24 @@ class GlobalState implements State {
       defensive: PlayerDefensive
     } = {
       bonuses: {
-        // For the first loop of the reduce() function, `acc` will be an object, subsequent loops will be a number.
-        str: eq.reduce((acc: EquipmentPiece | number, curr: EquipmentPiece) => (typeof acc === 'number' ? acc : acc.offensive.str) + curr.offensive.str),
-        magic_str: eq.reduce((acc: EquipmentPiece | number, curr: EquipmentPiece) => (typeof acc === 'number' ? acc : acc.offensive.magic_str) + curr.offensive.magic_str),
-        ranged_str: eq.reduce((acc: EquipmentPiece | number, curr: EquipmentPiece) => (typeof acc === 'number' ? acc : acc.offensive.ranged_str) + curr.offensive.ranged_str),
-        prayer: eq.reduce((acc: EquipmentPiece | number, curr: EquipmentPiece) => (typeof acc === 'number' ? acc : acc.defensive.prayer) + curr.defensive.prayer),
+        str: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.str, 0),
+        magic_str: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.magic_str, 0),
+        ranged_str: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.ranged_str, 0),
+        prayer: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.prayer, 0),
       },
       offensive: {
-        slash: eq.reduce((acc: EquipmentPiece | number, curr: EquipmentPiece) => (typeof acc === 'number' ? acc : acc.offensive.slash) + curr.offensive.slash),
-        stab: eq.reduce((acc: EquipmentPiece | number, curr: EquipmentPiece) => (typeof acc === 'number' ? acc : acc.offensive.stab) + curr.offensive.stab),
-        crush: eq.reduce((acc: EquipmentPiece | number, curr: EquipmentPiece) => (typeof acc === 'number' ? acc : acc.offensive.crush) + curr.offensive.crush),
-        ranged: eq.reduce((acc: EquipmentPiece | number, curr: EquipmentPiece) => (typeof acc === 'number' ? acc : acc.offensive.ranged) + curr.offensive.ranged),
-        magic: eq.reduce((acc: EquipmentPiece | number, curr: EquipmentPiece) => (typeof acc === 'number' ? acc : acc.offensive.magic) + curr.offensive.magic),
+        slash: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.slash, 0),
+        stab: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.stab, 0),
+        crush: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.crush, 0),
+        ranged: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.ranged, 0),
+        magic: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.magic, 0),
       },
       defensive: {
-        slash: eq.reduce((acc: EquipmentPiece | number, curr: EquipmentPiece) => (typeof acc === 'number' ? acc : acc.defensive.slash) + curr.defensive.slash),
-        stab: eq.reduce((acc: EquipmentPiece | number, curr: EquipmentPiece) => (typeof acc === 'number' ? acc : acc.defensive.stab) + curr.defensive.stab),
-        crush: eq.reduce((acc: EquipmentPiece | number, curr: EquipmentPiece) => (typeof acc === 'number' ? acc : acc.defensive.crush) + curr.defensive.crush),
-        ranged: eq.reduce((acc: EquipmentPiece | number, curr: EquipmentPiece) => (typeof acc === 'number' ? acc : acc.defensive.ranged) + curr.defensive.ranged),
-        magic: eq.reduce((acc: EquipmentPiece | number, curr: EquipmentPiece) => (typeof acc === 'number' ? acc : acc.defensive.magic) + curr.defensive.magic),
+        slash: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.slash, 0),
+        stab: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.stab, 0),
+        crush: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.crush, 0),
+        ranged: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.ranged, 0),
+        magic: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.magic, 0),
       }
     };
 

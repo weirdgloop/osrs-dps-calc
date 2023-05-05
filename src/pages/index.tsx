@@ -24,10 +24,22 @@ const PlayerContainer: React.FC = observer(() => {
           Loadout <span className={'text-body-200'}>{selectedLoadout + 1}</span>
         </div>
         <div className={'flex text-body-200'}>
-          <button disabled={!canCreateLoadout} onClick={() => createLoadout(true)} className={'disabled:cursor-not-allowed disabled:text-btns-100'}>
+          <button
+            disabled={!canCreateLoadout}
+            onClick={() => createLoadout(true)}
+            className={'disabled:cursor-not-allowed disabled:text-btns-100'}
+            data-tooltip-id={'tooltip'}
+            data-tooltip-content={'Add new loadout'}
+          >
             <IconCirclePlus />
           </button>
-          <button disabled={!canRemoveLoadout} onClick={() => deleteLoadout(selectedLoadout)} className={'disabled:cursor-not-allowed disabled:text-btns-100'}>
+          <button
+            disabled={!canRemoveLoadout}
+            onClick={() => deleteLoadout(selectedLoadout)}
+            className={'disabled:cursor-not-allowed disabled:text-btns-100'}
+            data-tooltip-id={'tooltip'}
+            data-tooltip-content={'Remove loadout'}
+          >
             <IconCircleMinus />
           </button>
         </div>
