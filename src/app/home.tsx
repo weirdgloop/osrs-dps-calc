@@ -1,8 +1,10 @@
+'use client';
+
 import type { NextPage } from 'next'
 import Head from 'next/head';
-import BoxPlayerInputs from '../components/BoxPlayerInputs';
-import BoxCombatAttributes from '../components/BoxCombatAttributes';
-import BoxMonster from '../components/BoxMonster';
+import BoxPlayerInputs from '@/components/BoxPlayerInputs';
+import BoxCombatAttributes from '@/components/BoxCombatAttributes';
+import BoxMonster from '@/components/BoxMonster';
 import {Tooltip} from 'react-tooltip';
 import React, {useEffect, useState} from 'react';
 import BoxResults from '@/components/BoxResults';
@@ -11,7 +13,7 @@ import {useStore} from '../state';
 import {calculateCombatLevel} from '@/lib/utilities';
 import PreferencesModal from '@/components/PreferencesModal';
 import {ToastContainer} from 'react-toastify';
-import {IconArrowDown, IconChevronDown, IconCircleMinus, IconCirclePlus} from '@tabler/icons-react';
+import {IconChevronDown, IconCircleMinus, IconCirclePlus} from '@tabler/icons-react';
 import Select from '@/components/generic/Select';
 
 const LoadoutSelect: React.FC<{getToggleButtonProps: () => any}> = observer((props) => {
@@ -83,12 +85,8 @@ const PlayerContainer: React.FC = observer(() => {
 
 const Home: NextPage = observer(() => {
   const store = useStore();
-  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    // Needed for rendering tooltips while using SSR
-    setIsMounted(true);
-
     // Load preferences from browser storage if there are any
     store.loadPreferences();
   }, [])
@@ -134,7 +132,7 @@ const Home: NextPage = observer(() => {
         {/*}*/}
         {/*<BoxResults />*/}
       </div>
-      {isMounted && <Tooltip id={'tooltip'} />}
+      <Tooltip id={'tooltip'} />
       <ToastContainer hideProgressBar={true} draggable={false} limit={3} closeButton={false} className={'text-sm'} />
       <PreferencesModal />
     </div>

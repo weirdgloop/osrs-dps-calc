@@ -1,9 +1,9 @@
 import React from 'react';
-import SpellSelect from '@/components/SpellSelect';
-import Toggle from '@/components/generic/Toggle';
+import SpellSelect from '../SpellSelect';
+import Toggle from '../generic/Toggle';
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../state';
-import Select from '@/components/generic/Select';
+import {useStore} from '../../../state';
+import Select from '../generic/Select';
 
 const Spells: React.FC = observer(() => {
   const store = useStore();
@@ -24,7 +24,6 @@ const Spells: React.FC = observer(() => {
           )
         }
       </div>
-      <Select items={[{label: 'test', value: 0}]} />
     </div>
   )
 })

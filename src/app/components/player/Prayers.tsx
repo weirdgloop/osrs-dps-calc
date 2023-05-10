@@ -1,7 +1,7 @@
 import Image, {StaticImageData} from 'next/image';
 
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../state';
+import {useStore} from '../../../state';
 import React from 'react';
 import {Prayer, PrayerMap} from '@/lib/enums/Prayer';
 import {IconCircleCheckFilled} from '@tabler/icons-react';

@@ -1,6 +1,5 @@
-import Link from 'next/link';
-import {classNames} from '../utils';
-import {useStore} from '../state';
+import {classNames} from '../../utils';
+import {useStore} from '../../state';
 import {IconTool} from '@tabler/icons-react';
 import wiki from '@/img/Wiki@2x.webp';
 

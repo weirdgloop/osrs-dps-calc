@@ -8,10 +8,10 @@ import strength from '@/img/bonuses/strength.png';
 import rangedStrength from '@/img/bonuses/ranged_strength.png';
 import magicStrength from '@/img/bonuses/magic_strength.png';
 import prayer from '@/img/tabs/prayer.png';
-import AttributeInput from '@/components/player/AttributeInput';
-import HelpLink from '@/components/HelpLink';
+import AttributeInput from './player/AttributeInput';
+import HelpLink from './HelpLink';
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../state';
+import {useStore} from '../../state';
 
 const Offensive: React.FC = observer(() => {
   const store = useStore();

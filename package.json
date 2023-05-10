@@ -19,11 +19,11 @@
     "lodash.merge": "^4.6.2",
     "mobx": "^6.5.0",
     "mobx-react-lite": "^3.3.0",
-    "next": "^13.3.0",
+    "next": "^13.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-toastify": "^9.1.2",
-    "react-tooltip": "^5.11.1",
+    "react-tooltip": "^5.11.2",
     "react-window": "^1.8.9",
     "recharts": "^2.5.0",
     "tailwind-dracula": "^1.1.0"

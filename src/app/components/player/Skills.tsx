@@ -9,9 +9,9 @@ import magic from '@/img/bonuses/magic.png';
 import hitpoints from '@/img/bonuses/hitpoints.png';
 import prayer from '@/img/tabs/prayer.png';
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../state';
-import {fetchPlayerSkills} from '../../utils';
-import NumberInput from '@/components/generic/NumberInput';
+import {useStore} from '../../../state';
+import {fetchPlayerSkills} from '../../../utils';
+import NumberInput from '../generic/NumberInput';
 
 import {PlayerSkills} from '@/types/Player';
 import {toast} from 'react-toastify';

@@ -1,10 +1,10 @@
 import React from 'react';
-import Toggle from '@/components/generic/Toggle';
+import Toggle from '../generic/Toggle';
 import Image, {StaticImageData} from 'next/image';
 import {Potion as PotionEnum, PotionMap} from '@/lib/enums/Potion';
 
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../state';
+import {useStore} from '../../../state';
 
 interface PotionProps {
   name: PotionEnum;
@@ -20,7 +20,7 @@ const Potion: React.FC<PotionProps> = observer((props) => {
     <div
       className={`w-10 flex justify-center cursor-pointer`}
       data-tooltip-id={'tooltip'}
-      data-tooltip-content={name}
+      data-tooltip-content={name.toString()}
       onClick={() => store.togglePlayerPotion(name)}
     >
       <Image className={`${player.buffs.potions.includes(name) ? 'filter drop-shadow-[0_0_5px_#000]' : ''}`} src={img} alt={name} />

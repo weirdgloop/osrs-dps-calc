@@ -1,9 +1,9 @@
 import React from 'react';
 import {Dialog} from '@headlessui/react';
-import {classNames} from '../utils';
-import Toggle from '@/components/generic/Toggle';
+import {classNames} from '../../utils';
+import Toggle from './generic/Toggle';
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../state';
+import {useStore} from '../../state';
 import {IconTool} from '@tabler/icons-react';
 
 const PreferencesModal: React.FC = observer(() => {

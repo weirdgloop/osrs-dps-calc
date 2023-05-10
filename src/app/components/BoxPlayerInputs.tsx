@@ -6,12 +6,12 @@ import potion from '@/img/tabs/potion.png';
 import prayer from '@/img/tabs/prayer.png';
 import spells from '@/img/tabs/spells.png';
 import React, {useState} from 'react';
-import Combat from '@/components/player/Combat';
-import Skills from '@/components/player/Skills';
-import Prayers from '@/components/player/Prayers';
-import Equipment from '@/components/player/Equipment';
-import Buffs from '@/components/player/Buffs';
-import Spells from '@/components/player/Spells';
+import Combat from './player/Combat';
+import Skills from './player/Skills';
+import Prayers from './player/Prayers';
+import Equipment from './player/Equipment';
+import Buffs from './player/Buffs';
+import Spells from './player/Spells';
 
 type SelectedInputType = 'combat' | 'skills' | 'equipment' | 'buffs' | 'prayer' | 'spells';
 

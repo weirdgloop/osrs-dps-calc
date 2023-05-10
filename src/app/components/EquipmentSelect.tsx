@@ -1,11 +1,11 @@
 import React from 'react';
 import equipment from '@/lib/equipment.json';
-import {useStore} from '../state';
+import {useStore} from '../../state';
 import {observer} from 'mobx-react-lite';
 import {getWikiImage} from '@/lib/utilities';
 import {EquipmentCategory} from '@/lib/enums/EquipmentCategory';
 import {EquipmentPiece} from '@/types/Player';
-import Combobox from '@/components/generic/Combobox';
+import Combobox from './generic/Combobox';
 
 interface EquipmentOption {
   label: string;

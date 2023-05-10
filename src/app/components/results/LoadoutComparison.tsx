@@ -9,7 +9,7 @@ import {
 } from 'recharts';
 import Select from 'react-select';
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../state';
+import {useStore} from '../../../state';
 
 enum YAxisType {
   MONSTER_DEF,
