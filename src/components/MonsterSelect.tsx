@@ -2,24 +2,15 @@ import React from 'react';
 import monsters from '@/lib/monsters.json';
 import {useStore} from '../state';
 import {observer} from 'mobx-react-lite';
-import WindowedSelect, {FormatOptionLabelMeta} from 'react-windowed-select';
 
 import {Monster} from '@/types/Monster';
+import Combobox from '@/components/generic/Combobox';
 
 interface MonsterOption {
   label: string;
   value: number;
   version: string;
   monster: Monster;
-}
-
-const MonsterOptionLabel = (data: MonsterOption, meta: FormatOptionLabelMeta<unknown>) => {
-  return (
-    <div className={'flex items-center gap-0'}>
-      <div>{data.label}</div>
-      {data.version && <div className={'monster-version relative top-[1px] text-xs text-gray-400'}>#{data.version}</div>}
-    </div>
-  )
 }
 
 const MonsterSelect: React.FC = observer(() => {
@@ -63,20 +54,27 @@ const MonsterSelect: React.FC = observer(() => {
   })
 
   return (
-    <WindowedSelect
-      options={options}
-      windowThreshold={50}
-      placeholder={'Select monster...'}
-      classNames={{
-        control: () => 'text-sm',
-        option: (state) => `select-option ${state.isSelected ? 'selected' : ''} text-xs`,
-        input: () => 'select-input'
-      }}
-      formatOptionLabel={(data, meta) => MonsterOptionLabel(data as MonsterOption, meta)}
-      onChange={(v) => {
-        store.updateMonster((v as MonsterOption).monster);
-      }}
-    />
+  <Combobox
+    className={'w-full'}
+    items={options}
+    placeholder={'Select monster...'}
+    onSelectedItemChange={(item) => {
+      if (item) {
+        const val = item as MonsterOption;
+        store.updateMonster(val.monster)
+      }
+    }}
+    CustomItemComponent={({item, itemString}) => {
+      let i = item as MonsterOption;
+
+      return (
+        <div className={'flex items-center gap-0'}>
+          <div>{i.label}</div>
+          {i.version && <div className={'monster-version relative top-[1px] text-xs text-gray-400'}>#{i.version}</div>}
+        </div>
+      )
+    }}
+  />
   )
 })
 

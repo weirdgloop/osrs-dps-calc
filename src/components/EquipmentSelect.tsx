@@ -2,10 +2,10 @@ import React from 'react';
 import equipment from '@/lib/equipment.json';
 import {useStore} from '../state';
 import {observer} from 'mobx-react-lite';
-import WindowedSelect, {FormatOptionLabelMeta} from 'react-windowed-select';
 import {getWikiImage} from '@/lib/utilities';
 import {EquipmentCategory} from '@/lib/enums/EquipmentCategory';
 import {EquipmentPiece} from '@/types/Player';
+import Combobox from '@/components/generic/Combobox';
 
 interface EquipmentOption {
   label: string;
@@ -13,20 +13,6 @@ interface EquipmentOption {
   version: string;
   slot: string;
   equipment: EquipmentPiece;
-}
-
-const EquipmentOptionLabel = (data: EquipmentOption, meta: FormatOptionLabelMeta<unknown>) => {
-  return (
-    <div className={'flex items-center gap-2'}>
-      <div className={'basis-4 flex justify-center'}>
-        <img className={'max-h-[20px]'} src={getWikiImage(data.equipment.image)} alt={''} />
-      </div>
-      <div>
-        {data.label}
-        {data.version && <span className={'monster-version text-xs text-gray-400'}>#{data.version}</span>}
-      </div>
-    </div>
-  )
 }
 
 const EquipmentSelect: React.FC = observer(() => {
@@ -65,25 +51,37 @@ const EquipmentSelect: React.FC = observer(() => {
   })
 
   return (
-    <WindowedSelect
-      options={options}
-      windowThreshold={50}
-      placeholder={'Add equipment...'}
-      closeMenuOnSelect={false}
-      classNames={{
-        control: () => 'text-sm',
-        menu: () => 'equipment-select-menu',
-        option: (state) => `select-option ${state.isSelected ? 'selected' : ''} text-xs`,
-        input: () => 'select-input'
+    <Combobox
+      className={'w-full'}
+      items={options}
+      resetAfterSelect={true}
+      placeholder={'Search for equipment...'}
+      onSelectedItemChange={(item) => {
+        if (item) {
+          const val = item as EquipmentOption;
+          store.updatePlayer({
+            equipment: {
+              [val.slot]: val.equipment
+            }
+          })
+        }
       }}
-      formatOptionLabel={(data, meta) => EquipmentOptionLabel(data as EquipmentOption, meta)}
-      onChange={(v) => {
-        const val = v as EquipmentOption;
-        store.updatePlayer({
-          equipment: {
-            [val.slot]: val.equipment
-          }
-        });
+      CustomItemComponent={({item, itemString}) => {
+        let i = item as EquipmentOption;
+
+        return (
+          <div className={'flex items-center gap-2'}>
+            {i.equipment.image && (
+              <div className={'basis-4 flex justify-center'}>
+                <img className={'max-h-[20px]'} src={getWikiImage(i.equipment.image)} alt={''} />
+              </div>
+            )}
+            <div className={'flex items-center gap-0'}>
+              <div>{itemString}</div>
+              {i.version && <div className={'monster-version relative top-[1px] text-xs text-gray-400'}>#{i.version}</div>}
+            </div>
+          </div>
+        )
       }}
     />
   )

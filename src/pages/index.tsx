@@ -107,7 +107,7 @@ const Home: NextPage = observer(() => {
         {/*    </div>*/}
         {/*  )*/}
         {/*}*/}
-        <BoxResults />
+        {/*<BoxResults />*/}
       </div>
       {isMounted && <Tooltip id={'tooltip'} />}
       <ToastContainer hideProgressBar={true} draggable={false} limit={3} closeButton={false} className={'text-sm'} />

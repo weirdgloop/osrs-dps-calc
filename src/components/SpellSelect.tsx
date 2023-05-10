@@ -2,27 +2,14 @@ import React from 'react';
 import spell from '@/lib/spells.json';
 import {useStore} from '../state';
 import {observer} from 'mobx-react-lite';
-import WindowedSelect, {FormatOptionLabelMeta} from 'react-windowed-select';
 import {getWikiImage} from '@/lib/utilities';
 import {Spell, Spellbook} from '@/types/Spell';
+import Combobox from '@/components/generic/Combobox';
 
 interface SpellOption {
   label: string;
   value: number;
   spell: Spell;
-}
-
-const SpellOptionLabel = (data: SpellOption, meta: FormatOptionLabelMeta<unknown>) => {
-  return (
-    <div className={'flex items-center gap-2'}>
-      <div className={'basis-4 flex justify-center'}>
-        <img className={'max-h-[20px]'} src={getWikiImage(data.spell.image)} alt={''} />
-      </div>
-      <div>
-        {data.label}
-      </div>
-    </div>
-  )
 }
 
 const SpellSelect: React.FC = observer(() => {
@@ -42,24 +29,35 @@ const SpellSelect: React.FC = observer(() => {
   })
 
   return (
-    <WindowedSelect
-      options={options}
-      windowThreshold={50}
-      placeholder={'Select spell...'}
-      classNames={{
-        control: () => 'text-sm',
-        menu: () => 'spell-select-menu',
-        option: (state) => `select-option ${state.isSelected ? 'selected' : ''} text-xs`,
-        input: () => 'select-input'
-      }}
-      formatOptionLabel={(data, meta) => SpellOptionLabel(data as SpellOption, meta)}
-      onChange={(v) => {
-        const val = v as SpellOption;
+  <Combobox
+    className={'w-full'}
+    items={options}
+    placeholder={'Select spell...'}
+    onSelectedItemChange={(item) => {
+      if (item) {
+        const val = item as SpellOption;
         store.updatePlayer({
           spell: val.spell
-        });
-      }}
-    />
+        })
+      }
+    }}
+    CustomItemComponent={({item, itemString}) => {
+      let i = item as SpellOption;
+
+      return (
+        <div className={'flex items-center gap-2'}>
+          {i.spell.image && (
+            <div className={'basis-4 flex justify-center'}>
+              <img className={'max-h-[20px]'} src={getWikiImage(i.spell.image)} alt={''} />
+            </div>
+          )}
+          <div className={'flex items-center gap-0'}>
+            <div>{itemString}</div>
+          </div>
+        </div>
+      )
+    }}
+  />
   )
 })
 
