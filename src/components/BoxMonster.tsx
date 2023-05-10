@@ -110,7 +110,7 @@ const BoxMonster: React.FC = observer(() => {
         <div className={'grow-0 flex items-center'}>
           <div>
             <Image
-              className={'max-w-[150px] max-h-[300px] w-auto h-auto'}
+              className={'max-w-[100px] max-h-[300px] w-auto h-auto'}
               height={100}
               width={200}
               src={

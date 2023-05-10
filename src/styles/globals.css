@@ -35,6 +35,7 @@ a {
 .form-control {
   /*@apply bg-body-100;*/
   @apply border-body-400;
+  @apply border;
   @apply text-sm;
   @apply rounded;
   padding: .25em .5em;

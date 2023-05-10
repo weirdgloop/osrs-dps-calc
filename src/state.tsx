@@ -4,7 +4,7 @@ import {PartialDeep} from 'type-fest';
 import {Potion} from '@/lib/enums/Potion';
 import * as localforage from 'localforage';
 import {Preferences, State, UI} from '@/types/State';
-import {Prayer} from '@/lib/enums/Prayer';
+import {Prayer, PrayerMap} from '@/lib/enums/Prayer';
 import merge from 'lodash.merge';
 import {EquipmentCategory, getCombatStylesForCategory} from '@/lib/enums/EquipmentCategory';
 import {toast} from 'react-toastify';
@@ -245,46 +245,11 @@ class GlobalState implements State {
     } else {
       // If we're toggling on a new prayer, let's do some checks to ensure that some prayers cannot be enabled alongside it
       let newPrayers = [...this.player.prayers];
+      let incompats = PrayerMap[prayer].incompatibleWith;
 
-      // If we enable any of these specific prayers, remove any related prayers from the existing array
-      switch (prayer) {
-        case Prayer.BURST_OF_STRENGTH:
-        case Prayer.SUPERHUMAN_STRENGTH:
-        case Prayer.ULTIMATE_STRENGTH:
-          newPrayers = newPrayers.filter((p) => ![
-            Prayer.BURST_OF_STRENGTH, Prayer.SUPERHUMAN_STRENGTH, Prayer.ULTIMATE_STRENGTH, Prayer.CHIVALRY, Prayer.PIETY
-          ].includes(p))
-          break;
-        case Prayer.CLARITY_OF_THOUGHT:
-        case Prayer.IMPROVED_REFLEXES:
-        case Prayer.INCREDIBLE_REFLEXES:
-          newPrayers = newPrayers.filter((p) => ![
-            Prayer.CLARITY_OF_THOUGHT, Prayer.IMPROVED_REFLEXES, Prayer.INCREDIBLE_REFLEXES, Prayer.CHIVALRY, Prayer.PIETY
-          ].includes(p))
-          break;
-        case Prayer.CHIVALRY:
-        case Prayer.PIETY:
-          newPrayers = newPrayers.filter((p) => ![
-            Prayer.BURST_OF_STRENGTH, Prayer.SUPERHUMAN_STRENGTH, Prayer.ULTIMATE_STRENGTH, Prayer.CHIVALRY, Prayer.PIETY,
-            Prayer.IMPROVED_REFLEXES, Prayer.CLARITY_OF_THOUGHT, Prayer.INCREDIBLE_REFLEXES
-          ].includes(p))
-          break;
-        case Prayer.SHARP_EYE:
-        case Prayer.HAWK_EYE:
-        case Prayer.EAGLE_EYE:
-        case Prayer.RIGOUR:
-          newPrayers = newPrayers.filter((p) => ![
-            Prayer.SHARP_EYE, Prayer.HAWK_EYE, Prayer.EAGLE_EYE, Prayer.RIGOUR
-          ].includes(p))
-          break;
-        case Prayer.MYSTIC_WILL:
-        case Prayer.MYSTIC_MIGHT:
-        case Prayer.MYSTIC_LORE:
-        case Prayer.AUGURY:
-          newPrayers = newPrayers.filter((p) => ![
-            Prayer.MYSTIC_WILL, Prayer.MYSTIC_MIGHT, Prayer.MYSTIC_LORE, Prayer.AUGURY
-          ].includes(p))
-          break;
+      if (incompats) {
+        // Filter out any already-enabled prayer that is incompatible with this new one
+        newPrayers = newPrayers.filter((p) => !incompats.includes(p));
       }
 
       this.player.prayers = [...newPrayers, prayer];
@@ -339,8 +304,8 @@ class GlobalState implements State {
     if (this.loadouts.length === 1) return;
 
     this.loadouts = this.loadouts.filter((p, i) => i !== ix);
-    // If the selected loadout index is equal to or over the index we just remove, shift it down by one
-    if (this.selectedLoadout >= ix) {
+    // If the selected loadout index is equal to or over the index we just remove, shift it down by one, else add one
+    if ((this.selectedLoadout >= ix) && ix !== 0) {
       this.selectedLoadout = this.selectedLoadout - 1;
     }
   }

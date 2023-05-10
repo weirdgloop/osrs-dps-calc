@@ -1,31 +1,37 @@
-import {useCombobox, UseComboboxGetItemPropsOptions} from 'downshift';
-import React, {createRef, useEffect, useState} from 'react';
+import {
+  GetPropsCommonOptions,
+  useSelect,
+  UseSelectGetItemPropsOptions,
+  UseSelectGetToggleButtonPropsOptions
+} from 'downshift';
+import React, {createRef} from 'react';
 import {FixedSizeList as List} from 'react-window';
 import {motion, AnimatePresence} from 'framer-motion';
 
-// TODO: change ComboboxItem to use TS generics
-type ComboboxItem = {label: string, value: any};
+// TODO: change SelectItem to use TS generics
+type SelectItem = {label: string, value: any};
 
-const itemToString = (i: ComboboxItem | null) => (i ? i.label : '')
+const itemToString = (i: SelectItem | null) => (i ? i.label : '')
 
-interface IComboboxProps {
-  items: ComboboxItem[];
+interface ISelectProps {
+  items: SelectItem[];
   placeholder?: string;
-  onSelectedItemChange?: (item: ComboboxItem | null | undefined) => void;
+  onSelectedItemChange?: (item: SelectItem | null | undefined) => void;
   resetAfterSelect?: boolean;
   className?: string;
-  CustomItemComponent?: React.FC<{item: ComboboxItem, itemString: string}>;
+  CustomSelectComponent?: React.FC<{getToggleButtonProps: (options?: UseSelectGetToggleButtonPropsOptions | undefined, otherOptions?: GetPropsCommonOptions | undefined) => any}>
+  CustomItemComponent?: React.FC<{item: SelectItem, itemString: string}>;
 }
 
 interface IItemRendererProps {
   index: number;
   style: any;
   data: {
-    items: ComboboxItem[];
-    getItemProps: (options: UseComboboxGetItemPropsOptions<any>) => any;
+    items: SelectItem[];
+    getItemProps: (options: UseSelectGetItemPropsOptions<any>) => any;
     highlightedIndex: number;
     selectedItem: any;
-    CustomItemComponent?: React.FC<{item: ComboboxItem, itemString: string}>;
+    CustomItemComponent?: React.FC<{item: SelectItem, itemString: string}>;
   }
 }
 
@@ -67,54 +73,34 @@ const ItemRenderer: React.FC<IItemRendererProps> = (props) => {
 }
 
 /**
- * Generic combobox component for us to use.
- *
- * I originally tried to use react-select to handle this, but it didn't work
- * well with a large dataset, like the monsters.json. So, we instead use the downshift library to build a headless
- * combobox component, and add all the necessary styling ourselves.
+ * Generic select component for us to use.
  *
  * @param props
  * @constructor
  */
-const Combobox: React.FC<IComboboxProps> = (props) => {
+const Select: React.FC<ISelectProps> = (props) => {
   const {
     items,
     onSelectedItemChange,
     resetAfterSelect,
     placeholder,
     className,
-    CustomItemComponent,
+    CustomSelectComponent,
+    CustomItemComponent
   } = props;
   const menuRef = createRef<HTMLDivElement>();
 
-  const [inputValue, setInputValue] = useState<string | undefined>('');
-  const [filteredItems, setFilteredItems] = useState<any[]>([]);
-
-  useEffect(() => {
-    let newFilteredItems: ComboboxItem[] = items;
-
-    // When the input value changes, change the filtered items
-    if (inputValue) {
-      const iv = inputValue.toLowerCase();
-      newFilteredItems = items.filter((v) => v.label.toLowerCase().includes(iv));
-    }
-
-    setFilteredItems(newFilteredItems);
-  }, [inputValue, items]);
-
   const {
-    getInputProps,
     getItemProps,
     getMenuProps,
+    getToggleButtonProps,
     highlightedIndex,
     selectedItem,
     isOpen,
     selectItem,
-  } = useCombobox({
-    items: filteredItems,
-    inputValue,
+  } = useSelect({
+    items,
     itemToString,
-    onInputValueChange: ({inputValue: newValue}) => setInputValue(newValue),
     onSelectedItemChange: ({selectedItem}) => {
       if (onSelectedItemChange) onSelectedItemChange(selectedItem);
       if (resetAfterSelect) selectItem(null);
@@ -123,14 +109,24 @@ const Combobox: React.FC<IComboboxProps> = (props) => {
 
   return (
     <div>
-      <input className={`form-control ${className}`} {...getInputProps({open: isOpen, type: 'text', placeholder: (placeholder || 'Search...')})} />
+      {(() => {
+        if (CustomSelectComponent) {
+          return <CustomSelectComponent getToggleButtonProps={getToggleButtonProps} />
+        } else {
+          return (
+            <div className={`bg-white cursor-pointer form-control ${className}`} {...getToggleButtonProps()}>
+              {selectedItem ? selectedItem.label : (placeholder || 'Select...')}
+            </div>
+          )
+        }
+      })()}
       <AnimatePresence>
-        {!isOpen || !filteredItems.length ? null : (
+        {!isOpen || !items.length ? null : (
           <motion.div
             initial={{opacity: 0}}
             animate={{opacity: 1}}
             exit={{opacity: 0}}
-            className={'absolute bg-white rounded shadow-xl mt-1 border border-gray-300 z-10'}
+            className={'absolute bg-white rounded shadow-xl mt-1 border border-gray-300 z-10 text-black font-normal font-sans'}
             {...getMenuProps({
               ref: menuRef
             })}
@@ -138,10 +134,10 @@ const Combobox: React.FC<IComboboxProps> = (props) => {
             <List
               itemSize={30}
               height={200}
-              itemCount={filteredItems.length}
+              itemCount={items.length}
               width={300}
               itemData={{
-                items: filteredItems,
+                items,
                 getItemProps,
                 highlightedIndex,
                 selectedItem,
@@ -157,4 +153,4 @@ const Combobox: React.FC<IComboboxProps> = (props) => {
   )
 }
 
-export default Combobox;
+export default Select;

@@ -54,27 +54,27 @@ const MonsterSelect: React.FC = observer(() => {
   })
 
   return (
-  <Combobox
-    className={'w-full'}
-    items={options}
-    placeholder={'Select monster...'}
-    onSelectedItemChange={(item) => {
-      if (item) {
-        const val = item as MonsterOption;
-        store.updateMonster(val.monster)
-      }
-    }}
-    CustomItemComponent={({item, itemString}) => {
-      let i = item as MonsterOption;
+    <Combobox
+      className={'w-full'}
+      items={options}
+      placeholder={'Select monster...'}
+      onSelectedItemChange={(item) => {
+        if (item) {
+          const val = item as MonsterOption;
+          store.updateMonster(val.monster)
+        }
+      }}
+      CustomItemComponent={({item, itemString}) => {
+        let i = item as MonsterOption;
 
-      return (
-        <div className={'flex items-center gap-0'}>
-          <div>{i.label}</div>
-          {i.version && <div className={'monster-version relative top-[1px] text-xs text-gray-400'}>#{i.version}</div>}
-        </div>
-      )
-    }}
-  />
+        return (
+          <div className={'flex items-center gap-0'}>
+            <div>{i.label}</div>
+            {i.version && <div className={'monster-version relative top-[1px] text-xs text-gray-400'}>#{i.version}</div>}
+          </div>
+        )
+      }}
+    />
   )
 })
 

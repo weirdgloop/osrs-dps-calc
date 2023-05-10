@@ -2,7 +2,6 @@ import React, {PropsWithChildren, useState} from 'react';
 import HitDistribution from '@/components/results/HitDistribution';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '../state';
-import Select, {MultiValue} from 'react-select';
 import LoadoutComparison from '@/components/results/LoadoutComparison';
 
 enum AdditionalDataTypes {
@@ -99,7 +98,7 @@ const BoxResults = observer(() => {
                 <h3 className={'font-serif font-bold'}>Loadout comparison</h3>
               </div>
               <div className={'px-6 py-4'}>
-                <LoadoutComparison />
+                {/*<LoadoutComparison />*/}
               </div>
             </div>
           )

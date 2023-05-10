@@ -11,7 +11,26 @@ import {useStore} from '../state';
 import {calculateCombatLevel} from '@/lib/utilities';
 import PreferencesModal from '@/components/PreferencesModal';
 import {ToastContainer} from 'react-toastify';
-import {IconCircleMinus, IconCirclePlus} from '@tabler/icons-react';
+import {IconArrowDown, IconChevronDown, IconCircleMinus, IconCirclePlus} from '@tabler/icons-react';
+import Select from '@/components/generic/Select';
+
+const LoadoutSelect: React.FC<{getToggleButtonProps: () => any}> = observer((props) => {
+  const store = useStore();
+  const {selectedLoadout} = store;
+  const {getToggleButtonProps} = props;
+
+  return (
+    <div
+      {...getToggleButtonProps()}
+      className={'flex gap-1 bg-[#3e2816] justify-center items-center cursor-pointer border border-body-500 shadow rounded px-2 py-1 relative left-[-8px]'}
+    >
+      <div>
+        Loadout <span className={'text-body-200'}>{selectedLoadout + 1}</span>
+      </div>
+      <IconChevronDown className={'inline-block w-5 text-gray-300 relative'} />
+    </div>
+  )
+})
 
 const PlayerContainer: React.FC = observer(() => {
   const store = useStore();
@@ -20,9 +39,15 @@ const PlayerContainer: React.FC = observer(() => {
   return (
     <div className={'bg-tile md:basis-1/4 basis-auto flex-initial md:rounded-lg text-black shadow-lg flex flex-col'}>
       <div className={'px-6 py-2 md:rounded md:rounded-b-none text-sm font-bold font-serif flex justify-between items-center bg-btns-400 text-white rounded-t border-b-4 border-body-500'}>
-        <div>
-          Loadout <span className={'text-body-200'}>{selectedLoadout + 1}</span>
-        </div>
+        <Select
+          items={store.loadouts.map((l, ix) => (
+            {label: `Loadout ${ix + 1}`, value: ix}
+          ))}
+          CustomSelectComponent={LoadoutSelect}
+          onSelectedItemChange={(i) => {
+            if (i) store.setSelectedLoadout(i?.value);
+          }}
+        />
         <div className={'flex text-body-200'}>
           <button
             disabled={!canCreateLoadout}
