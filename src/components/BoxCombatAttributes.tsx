@@ -115,9 +115,6 @@ export default function BoxCombatAttributes() {
     <div className={'grow bg-body-100 text-black rounded-br'}>
       <div className={'px-6 py-4 border-b border-body-400'}>
         <h4 className={'font-serif font-bold'}>Bonuses</h4>
-        <p className={'text-xs'}>
-          These values are determined by your equipment and stats. You usually do not need to set them manually.
-        </p>
       </div>
       <div className={'p-6'}>
         <div className={'flex gap-4'}>
@@ -131,15 +128,6 @@ export default function BoxCombatAttributes() {
           </h4>
 
           <AttackSpeedProgressBar speed={atkSpeed} />
-
-          {/*<div className={'mt-1'}>*/}
-          {/*  <input type={'number'} placeholder={'0'} className={'form-control w-16'} defaultValue={atkSpeed} onChange={(evt) => {*/}
-          {/*    const parsed = parseFloat(evt.currentTarget.value);*/}
-          {/*    if (!isNaN(parsed)) {*/}
-          {/*      setAtkSpeed(parsed);*/}
-          {/*    }*/}
-          {/*  }} />*/}
-          {/*</div>*/}
         </div>
       </div>
     </div>

@@ -37,7 +37,7 @@ const InputNavItem: React.FC<InputNavItemProps> = (props) => {
 }
 
 export default function BoxPlayerInputs() {
-  const [selected, setSelected] = useState<SelectedInputType>('combat');
+  const [selected, setSelected] = useState<SelectedInputType>('equipment');
 
   const renderSelected = () => {
     switch (selected) {

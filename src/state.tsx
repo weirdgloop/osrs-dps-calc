@@ -240,9 +240,54 @@ class GlobalState implements State {
   togglePlayerPrayer(prayer: Prayer) {
     const isToggled = this.player.prayers.includes(prayer);
     if (isToggled) {
+      // If we're toggling off an existing prayer, just filter it out from the array
       this.player.prayers = this.player.prayers.filter((p) => p !== prayer);
     } else {
-      this.player.prayers = [...this.player.prayers, prayer];
+      // If we're toggling on a new prayer, let's do some checks to ensure that some prayers cannot be enabled alongside it
+      let newPrayers = [...this.player.prayers];
+
+      // If we enable any of these specific prayers, remove any related prayers from the existing array
+      switch (prayer) {
+        case Prayer.BURST_OF_STRENGTH:
+        case Prayer.SUPERHUMAN_STRENGTH:
+        case Prayer.ULTIMATE_STRENGTH:
+          newPrayers = newPrayers.filter((p) => ![
+            Prayer.BURST_OF_STRENGTH, Prayer.SUPERHUMAN_STRENGTH, Prayer.ULTIMATE_STRENGTH, Prayer.CHIVALRY, Prayer.PIETY
+          ].includes(p))
+          break;
+        case Prayer.CLARITY_OF_THOUGHT:
+        case Prayer.IMPROVED_REFLEXES:
+        case Prayer.INCREDIBLE_REFLEXES:
+          newPrayers = newPrayers.filter((p) => ![
+            Prayer.CLARITY_OF_THOUGHT, Prayer.IMPROVED_REFLEXES, Prayer.INCREDIBLE_REFLEXES, Prayer.CHIVALRY, Prayer.PIETY
+          ].includes(p))
+          break;
+        case Prayer.CHIVALRY:
+        case Prayer.PIETY:
+          newPrayers = newPrayers.filter((p) => ![
+            Prayer.BURST_OF_STRENGTH, Prayer.SUPERHUMAN_STRENGTH, Prayer.ULTIMATE_STRENGTH, Prayer.CHIVALRY, Prayer.PIETY,
+            Prayer.IMPROVED_REFLEXES, Prayer.CLARITY_OF_THOUGHT, Prayer.INCREDIBLE_REFLEXES
+          ].includes(p))
+          break;
+        case Prayer.SHARP_EYE:
+        case Prayer.HAWK_EYE:
+        case Prayer.EAGLE_EYE:
+        case Prayer.RIGOUR:
+          newPrayers = newPrayers.filter((p) => ![
+            Prayer.SHARP_EYE, Prayer.HAWK_EYE, Prayer.EAGLE_EYE, Prayer.RIGOUR
+          ].includes(p))
+          break;
+        case Prayer.MYSTIC_WILL:
+        case Prayer.MYSTIC_MIGHT:
+        case Prayer.MYSTIC_LORE:
+        case Prayer.AUGURY:
+          newPrayers = newPrayers.filter((p) => ![
+            Prayer.MYSTIC_WILL, Prayer.MYSTIC_MIGHT, Prayer.MYSTIC_LORE, Prayer.AUGURY
+          ].includes(p))
+          break;
+      }
+
+      this.player.prayers = [...newPrayers, prayer];
     }
   }
 
