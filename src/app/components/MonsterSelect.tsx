@@ -57,7 +57,8 @@ const MonsterSelect: React.FC = observer(() => {
     <Combobox
       className={'w-full'}
       items={options}
-      placeholder={'Select monster...'}
+      placeholder={'Search for monster...'}
+      resetAfterSelect={true}
       onSelectedItemChange={(item) => {
         if (item) {
           const val = item as MonsterOption;

@@ -17,8 +17,8 @@ const Toggle: React.FC<ToggleProps> = (props) => {
           checked={checked}
           onChange={setChecked}
           className={`${
-            checked ? 'bg-btns-400' : 'bg-gray-400'
-          } relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-btns-400 focus:ring-offset-2`}
+            checked ? 'bg-green-500' : 'bg-gray-400'
+          } relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2`}
         >
           <span
             className={`${

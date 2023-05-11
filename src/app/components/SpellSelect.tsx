@@ -32,7 +32,7 @@ const SpellSelect: React.FC = observer(() => {
   <Combobox
     className={'w-full'}
     items={options}
-    placeholder={'Select spell...'}
+    placeholder={'Search for spell...'}
     onSelectedItemChange={(item) => {
       if (item) {
         const val = item as SpellOption;

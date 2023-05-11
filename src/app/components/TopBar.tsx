@@ -1,6 +1,6 @@
 import {classNames} from '../../utils';
 import {useStore} from '../../state';
-import {IconTool} from '@tabler/icons-react';
+import {IconSettings, IconTool} from '@tabler/icons-react';
 import wiki from '@/img/Wiki@2x.webp';
 
 export default function TopBar() {
@@ -19,14 +19,14 @@ export default function TopBar() {
                 <div className="flex space-x-2">
                   <button
                     className={classNames(
-                      'flex items-center gap-1 text-black bg-deepgray-100 hover:bg-body-100',
+                      'flex items-center gap-1 text-white border border-body-500 bg-[#3e2816] transition-all hover:scale-105',
                       'px-3 py-2 rounded-md text-sm font-medium'
                     )}
                     onClick={() => {
                       store.updateUIState({showPreferencesModal: true});
                     }}
                   >
-                    <IconTool size={20} />
+                    <IconSettings size={20} />
                   </button>
                 </div>
               </div>

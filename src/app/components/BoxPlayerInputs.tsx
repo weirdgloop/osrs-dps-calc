@@ -26,7 +26,7 @@ const InputNavItem: React.FC<InputNavItemProps> = (props) => {
   const {name, image, onClick, isActive} = props;
   return (
     <div
-      className={`flex flex-initial w-10 h-10 cursor-pointer justify-center items-center rounded transition-[background] ${isActive ? ' bg-tile' : 'bg-body-400'}`}
+      className={`flex flex-initial shadow w-10 h-10 cursor-pointer justify-center items-center rounded transition-[background] ${isActive ? ' bg-tile' : 'bg-body-400'}`}
       onClick={onClick}
       data-tooltip-id={'tooltip'}
       data-tooltip-content={name}

@@ -6,14 +6,14 @@ import BoxPlayerInputs from '@/components/BoxPlayerInputs';
 import BoxCombatAttributes from '@/components/BoxCombatAttributes';
 import BoxMonster from '@/components/BoxMonster';
 import {Tooltip} from 'react-tooltip';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import BoxResults from '@/components/BoxResults';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '../state';
 import {calculateCombatLevel} from '@/lib/utilities';
 import PreferencesModal from '@/components/PreferencesModal';
 import {ToastContainer} from 'react-toastify';
-import {IconChevronDown, IconCircleMinus, IconCirclePlus} from '@tabler/icons-react';
+import {IconChevronDown, IconPlus, IconTrash} from '@tabler/icons-react';
 import Select from '@/components/generic/Select';
 
 const LoadoutSelect: React.FC<{getToggleButtonProps: () => any}> = observer((props) => {
@@ -50,7 +50,7 @@ const PlayerContainer: React.FC = observer(() => {
             if (i) store.setSelectedLoadout(i?.value);
           }}
         />
-        <div className={'flex text-body-200'}>
+        <div className={'flex gap-0.5 text-body-200'}>
           <button
             disabled={!canCreateLoadout}
             onClick={() => createLoadout(true)}
@@ -58,7 +58,7 @@ const PlayerContainer: React.FC = observer(() => {
             data-tooltip-id={'tooltip'}
             data-tooltip-content={'Add new loadout'}
           >
-            <IconCirclePlus />
+            <IconPlus />
           </button>
           <button
             disabled={!canRemoveLoadout}
@@ -67,7 +67,7 @@ const PlayerContainer: React.FC = observer(() => {
             data-tooltip-id={'tooltip'}
             data-tooltip-content={'Remove loadout'}
           >
-            <IconCircleMinus />
+            <IconTrash />
           </button>
         </div>
       </div>
@@ -85,11 +85,12 @@ const PlayerContainer: React.FC = observer(() => {
 
 const Home: NextPage = observer(() => {
   const store = useStore();
+  const {monster} = store;
 
   useEffect(() => {
     // Load preferences from browser storage if there are any
     store.loadPreferences();
-  }, [])
+  }, [store])
 
   return (
     <div>
@@ -101,8 +102,10 @@ const Home: NextPage = observer(() => {
         <div className={'flex gap-4 flex-wrap'}>
           <PlayerContainer />
           <div className={'bg-tile flex-1 md:rounded-lg text-black shadow-lg'}>
-            <div className={'px-6 py-4 border-b-body-400 border-b md:rounded md:rounded-bl-none md:rounded-br-none'}>
-              <h1 className={`font-serif text-xl tracking-tight font-bold`}>Monster</h1>
+            <div className={'px-6 py-4 border-b-body-400 border-b md:rounded md:rounded-bl-none md:rounded-br-none flex justify-between items-center'}>
+              <h1 className={`font-serif text-xl tracking-tight font-bold`}>
+                {monster.name ? monster.name : 'Monster'}
+              </h1>
             </div>
             <div className={'p-6'}>
               <BoxMonster />
