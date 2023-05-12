@@ -318,11 +318,11 @@ class GlobalState implements State {
     return (this.loadouts.length > 1);
   }
 
-  createLoadout(selected?: boolean) {
+  createLoadout(selected?: boolean, cloneIndex?: number) {
     // Do not allow creating a loadout if we're over the limit
     if (!this.canCreateLoadout) return;
 
-    this.loadouts.push(generateEmptyPlayer());
+    this.loadouts.push((cloneIndex !== undefined) ? toJS(this.loadouts[cloneIndex]) : generateEmptyPlayer());
     if (selected) this.selectedLoadout = (this.loadouts.length - 1);
   }
 }

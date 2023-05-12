@@ -3,7 +3,7 @@ import {observer} from "mobx-react-lite";
 import {useStore} from "@/state";
 import Select from "@/app/components/generic/Select";
 import LoadoutSelect from "@/app/components/player/LoadoutSelect";
-import {IconPlus, IconTrash} from "@tabler/icons-react";
+import {IconClipboardCopy, IconPlus, IconTrash} from "@tabler/icons-react";
 import {calculateCombatLevel} from "@/utils";
 import PlayerInnerContainer from "@/app/components/player/PlayerInnerContainer";
 import Bonuses from "@/app/components/player/Bonuses";
@@ -35,6 +35,15 @@ const PlayerContainer: React.FC = observer(() => {
                         data-tooltip-content={'Add new loadout'}
                     >
                         <IconPlus/>
+                    </button>
+                    <button
+                        disabled={!canCreateLoadout}
+                        onClick={() => createLoadout(true, selectedLoadout)}
+                        className={'disabled:cursor-not-allowed disabled:text-btns-100'}
+                        data-tooltip-id={'tooltip'}
+                        data-tooltip-content={'Clone loadout'}
+                    >
+                        <IconClipboardCopy/>
                     </button>
                     <button
                         disabled={!canRemoveLoadout}
