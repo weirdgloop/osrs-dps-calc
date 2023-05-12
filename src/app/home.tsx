@@ -10,6 +10,7 @@ import {useStore} from '@/state';
 import PreferencesModal from '@/app/components/PreferencesModal';
 import {ToastContainer} from 'react-toastify';
 import PlayerContainer from "@/app/components/player/PlayerContainer";
+import ResultsContainer from "@/app/components/results/ResultsContainer";
 
 const Home: NextPage = observer(() => {
   const store = useStore();
@@ -30,7 +31,7 @@ const Home: NextPage = observer(() => {
           <PlayerContainer />
           <MonsterContainer />
         </div>
-        {/*<BoxResults />*/}
+        <ResultsContainer />
       </div>
       <Tooltip id={'tooltip'} />
       <ToastContainer hideProgressBar={true} draggable={false} limit={3} closeButton={false} className={'text-sm'} />

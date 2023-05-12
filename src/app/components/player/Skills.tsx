@@ -61,7 +61,7 @@ const UsernameLookup: React.FC = observer(() => {
     const store = useStore();
     const shouldRemember = store.prefs.rememberUsername;
     const [username, setUsername] = useState('');
-    const btn = useRef<HTMLButtonElement | null>();
+    const btn = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
         // When the username changes, set it in the browser storage, if the preference is enabled.

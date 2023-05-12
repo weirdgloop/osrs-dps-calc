@@ -18,6 +18,7 @@ const PlayerContainer: React.FC = observer(() => {
             <div
                 className={'px-6 py-2 md:rounded md:rounded-b-none text-sm font-bold font-serif flex justify-between items-center bg-btns-400 text-white rounded-t border-b-4 border-body-500'}>
                 <Select
+                    id={'loadout-select'}
                     items={store.loadouts.map((l, ix) => (
                         {label: `Loadout ${ix + 1}`, value: ix}
                     ))}

@@ -4,9 +4,8 @@ import {
   UseSelectGetItemPropsOptions,
   UseSelectGetToggleButtonPropsOptions
 } from 'downshift';
-import React, {createRef} from 'react';
+import React, {useEffect} from 'react';
 import {FixedSizeList as List} from 'react-window';
-import {motion, AnimatePresence} from 'framer-motion';
 
 // TODO: change SelectItem to use TS generics
 type SelectItem = {label: string, value: any};
@@ -14,6 +13,8 @@ type SelectItem = {label: string, value: any};
 const itemToString = (i: SelectItem | null) => (i ? i.label : '')
 
 interface ISelectProps {
+  id: string;
+  value?: SelectItem;
   items: SelectItem[];
   placeholder?: string;
   onSelectedItemChange?: (item: SelectItem | null | undefined) => void;
@@ -81,6 +82,8 @@ const ItemRenderer: React.FC<IItemRendererProps> = (props) => {
  */
 const Select: React.FC<ISelectProps> = (props) => {
   const {
+    id,
+    value,
     items,
     onSelectedItemChange,
     resetAfterSelect,
@@ -90,7 +93,6 @@ const Select: React.FC<ISelectProps> = (props) => {
     CustomSelectComponent,
     CustomItemComponent
   } = props;
-  const menuRef = createRef<HTMLDivElement>();
 
   const {
     getItemProps,
@@ -101,6 +103,7 @@ const Select: React.FC<ISelectProps> = (props) => {
     isOpen,
     selectItem,
   } = useSelect({
+    id,
     items,
     itemToString,
     onSelectedItemChange: ({selectedItem}) => {
@@ -108,6 +111,12 @@ const Select: React.FC<ISelectProps> = (props) => {
       if (resetAfterSelect) selectItem(null);
     }
   });
+
+  useEffect(() => {
+    if (value !== undefined) {
+      selectItem(value);
+    }
+  }, [selectItem, value]);
 
   return (
     <div className={'relative'}>
@@ -122,18 +131,12 @@ const Select: React.FC<ISelectProps> = (props) => {
           )
         }
       })()}
-      <AnimatePresence>
+      <div
+          className={`absolute bg-white rounded shadow-xl mt-1 border border-gray-300 z-10 text-black font-normal transition-opacity ${(isOpen && items.length) ? 'opacity-100' : 'opacity-0'} ${menuClassName}`}
+          style={{fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif'}}
+          {...getMenuProps()}
+      >
         {!isOpen || !items.length ? null : (
-          <motion.div
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            exit={{opacity: 0}}
-            className={`absolute bg-white rounded shadow-xl mt-1 border border-gray-300 z-10 text-black font-normal ${menuClassName}`}
-            style={{fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif'}}
-            {...getMenuProps({
-              ref: menuRef
-            })}
-          >
             <List
               itemSize={32}
               height={(items.length < 10 ? items.length * 32 : 200)}
@@ -149,9 +152,8 @@ const Select: React.FC<ISelectProps> = (props) => {
             >
               {ItemRenderer}
             </List>
-          </motion.div>
         )}
-      </AnimatePresence>
+      </div>
     </div>
   )
 }

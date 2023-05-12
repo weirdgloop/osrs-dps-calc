@@ -55,6 +55,7 @@ const MonsterSelect: React.FC = observer(() => {
 
   return (
     <Combobox
+      id={'monster-select'}
       className={'w-full'}
       items={options}
       placeholder={'Search for monster...'}

@@ -3,6 +3,7 @@ import HitDistribution from './HitDistribution';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
 import LoadoutComparison from './LoadoutComparison';
+import MultiSelect from "@/app/components/generic/MultiSelect";
 
 enum AdditionalDataTypes {
   HIT_DISTRIBUTION,
@@ -32,9 +33,9 @@ const BoxResults = observer(() => {
   const store = useStore();
   const [additionalData, setAdditionalData] = useState<AdditionalDataTypes[]>([]);
 
-  const additionalDropdownChange = (c: MultiValue<{label: string, value: AdditionalDataTypes}>) => {
-    setAdditionalData(c.map((d) => d.value));
-  }
+  // const additionalDropdownChange = (c: MultiValue<{label: string, value: AdditionalDataTypes}>) => {
+  //   setAdditionalData(c.map((d) => d.value));
+  // }
 
   return (
     <div className={'my-4'}>
@@ -62,17 +63,18 @@ const BoxResults = observer(() => {
           </div>
           <div className={'px-6 my-6 border-t pt-4 border-body-400'}>
             <h3 className={'font-serif font-bold mb-2'}>Additional outputs and graphs</h3>
-            <Select
-              isMulti={true}
-              className={'text-sm'}
-              options={[{
+            <MultiSelect
+              id={'results-outputs'}
+              items={[{
                 label: 'Hit distribution graph',
                 value: AdditionalDataTypes.HIT_DISTRIBUTION
               }, {
                 label: 'Loadout comparison graph',
                 value: AdditionalDataTypes.LOADOUT_COMPARISON
               }]}
-              onChange={additionalDropdownChange}
+              onSelectedItemChange={(it) => {
+                if (it) setAdditionalData(it.map((i) => i.value));
+              }}
             />
           </div>
         </div>
@@ -95,10 +97,10 @@ const BoxResults = observer(() => {
           additionalData.includes(AdditionalDataTypes.LOADOUT_COMPARISON) && (
             <div className={'grow bg-tile rounded shadow-lg'}>
               <div className={'px-6 py-4 bg-btns-400 text-white rounded-t border-b-4 border-body-500'}>
-                <h3 className={'font-serif font-bold'}>Loadout comparison</h3>
+                <h3 className={'font-serif font-bold'}>Loadout Comparison</h3>
               </div>
               <div className={'px-6 py-4'}>
-                {/*<LoadoutComparison />*/}
+                <LoadoutComparison />
               </div>
             </div>
           )

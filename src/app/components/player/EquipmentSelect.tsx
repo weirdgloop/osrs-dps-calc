@@ -52,6 +52,7 @@ const EquipmentSelect: React.FC = observer(() => {
 
   return (
     <Combobox
+      id={'equipment-select'}
       className={'w-full'}
       items={options}
       resetAfterSelect={true}

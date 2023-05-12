@@ -7,9 +7,9 @@ import {
   ResponsiveContainer,
   LineChart, Legend, Line
 } from 'recharts';
-import Select from 'react-select';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
+import Select from "@/app/components/generic/Select";
 
 enum YAxisType {
   MONSTER_DEF,
@@ -37,8 +37,8 @@ const LoadoutComparison: React.FC = observer(() => {
   const store = useStore();
   const {loadouts} = store;
 
-  const [xAxisType, setXAxisType] = useState<{ label: string, value: XAxisType } | null>(XAxisOptions[0]);
-  const [yAxisType, setYAxisType] = useState<{ label: string, value: YAxisType } | null>(YAxisOptions[0]);
+  const [xAxisType, setXAxisType] = useState<{ label: string, value: XAxisType } | null | undefined>(XAxisOptions[0]);
+  const [yAxisType, setYAxisType] = useState<{ label: string, value: YAxisType } | null | undefined>(YAxisOptions[0]);
 
   const data = useMemo(() => {
     const x = xAxisType?.value;
@@ -92,19 +92,23 @@ const LoadoutComparison: React.FC = observer(() => {
         <div className={'basis-1/2'}>
           <h3 className={'font-serif font-bold mb-2'}>Y axis</h3>
           <Select
-            className={'text-sm'}
-            value={yAxisType}
-            options={YAxisOptions}
-            onChange={(v) => setYAxisType(v)}
+            id={'loadout-comparison-y'}
+            items={YAxisOptions}
+            value={yAxisType || undefined}
+            onSelectedItemChange={(i) => {
+              setYAxisType(i)
+            }}
           />
         </div>
         <div className={'basis-1/2'}>
           <h3 className={'font-serif font-bold mb-2'}>X axis</h3>
           <Select
-            className={'text-sm'}
-            value={xAxisType}
-            options={XAxisOptions}
-            onChange={(v) => setXAxisType(v)}
+            id={'loadout-comparison-x'}
+            items={XAxisOptions}
+            value={xAxisType || undefined}
+            onSelectedItemChange={(i) => {
+              setXAxisType(i)
+            }}
           />
         </div>
       </div>

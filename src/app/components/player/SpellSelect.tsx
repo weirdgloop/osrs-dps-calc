@@ -30,6 +30,7 @@ const SpellSelect: React.FC = observer(() => {
 
   return (
   <Combobox
+    id={'spell-select'}
     className={'w-full'}
     items={options}
     placeholder={'Search for spell...'}

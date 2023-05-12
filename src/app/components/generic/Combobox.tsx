@@ -1,7 +1,6 @@
 import {useCombobox, UseComboboxGetItemPropsOptions} from 'downshift';
-import React, {createRef, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {FixedSizeList as List} from 'react-window';
-import {motion, AnimatePresence} from 'framer-motion';
 
 // TODO: change ComboboxItem to use TS generics
 type ComboboxItem = {label: string, value: any};
@@ -9,6 +8,7 @@ type ComboboxItem = {label: string, value: any};
 const itemToString = (i: ComboboxItem | null) => (i ? i.label : '')
 
 interface IComboboxProps {
+  id: string;
   items: ComboboxItem[];
   placeholder?: string;
   onSelectedItemChange?: (item: ComboboxItem | null | undefined) => void;
@@ -78,6 +78,7 @@ const ItemRenderer: React.FC<IItemRendererProps> = (props) => {
  */
 const Combobox: React.FC<IComboboxProps> = (props) => {
   const {
+    id,
     items,
     onSelectedItemChange,
     resetAfterSelect,
@@ -85,8 +86,6 @@ const Combobox: React.FC<IComboboxProps> = (props) => {
     className,
     CustomItemComponent,
   } = props;
-  const menuRef = createRef<HTMLDivElement>();
-
   const [inputValue, setInputValue] = useState<string | undefined>('');
   const [filteredItems, setFilteredItems] = useState<any[]>([]);
 
@@ -111,6 +110,7 @@ const Combobox: React.FC<IComboboxProps> = (props) => {
     isOpen,
     selectItem,
   } = useCombobox({
+    id,
     items: filteredItems,
     inputValue,
     itemToString,
@@ -124,17 +124,11 @@ const Combobox: React.FC<IComboboxProps> = (props) => {
   return (
     <div>
       <input className={`form-control ${className}`} {...getInputProps({open: isOpen, type: 'text', placeholder: (placeholder || 'Search...')})} />
-      <AnimatePresence>
+      <div
+          className={`absolute bg-white rounded shadow-xl mt-1 border border-gray-300 z-10 transition-opacity ${(isOpen && filteredItems.length) ? 'opacity-100' : 'opacity-0'}`}
+          {...getMenuProps()}
+      >
         {!isOpen || !filteredItems.length ? null : (
-          <motion.div
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            exit={{opacity: 0}}
-            className={'absolute bg-white rounded shadow-xl mt-1 border border-gray-300 z-10'}
-            {...getMenuProps({
-              ref: menuRef
-            })}
-          >
             <List
               itemSize={32}
               height={(filteredItems.length < 10 ? filteredItems.length * 32 : 200)}
@@ -150,9 +144,8 @@ const Combobox: React.FC<IComboboxProps> = (props) => {
             >
               {ItemRenderer}
             </List>
-          </motion.div>
         )}
-      </AnimatePresence>
+      </div>
     </div>
   )
 }
