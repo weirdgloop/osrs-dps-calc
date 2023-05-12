@@ -19,6 +19,7 @@ interface ISelectProps {
   onSelectedItemChange?: (item: SelectItem | null | undefined) => void;
   resetAfterSelect?: boolean;
   className?: string;
+  menuClassName?: string;
   CustomSelectComponent?: React.FC<{getToggleButtonProps: (options?: UseSelectGetToggleButtonPropsOptions | undefined, otherOptions?: GetPropsCommonOptions | undefined) => any}>
   CustomItemComponent?: React.FC<{item: SelectItem, itemString: string}>;
 }
@@ -85,6 +86,7 @@ const Select: React.FC<ISelectProps> = (props) => {
     resetAfterSelect,
     placeholder,
     className,
+    menuClassName,
     CustomSelectComponent,
     CustomItemComponent
   } = props;
@@ -108,7 +110,7 @@ const Select: React.FC<ISelectProps> = (props) => {
   });
 
   return (
-    <div>
+    <div className={'relative'}>
       {(() => {
         if (CustomSelectComponent) {
           return <CustomSelectComponent getToggleButtonProps={getToggleButtonProps} />
@@ -126,14 +128,15 @@ const Select: React.FC<ISelectProps> = (props) => {
             initial={{opacity: 0}}
             animate={{opacity: 1}}
             exit={{opacity: 0}}
-            className={'absolute bg-white rounded shadow-xl mt-1 border border-gray-300 z-10 text-black font-normal font-sans'}
+            className={`absolute bg-white rounded shadow-xl mt-1 border border-gray-300 z-10 text-black font-normal ${menuClassName}`}
+            style={{fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif'}}
             {...getMenuProps({
               ref: menuRef
             })}
           >
             <List
-              itemSize={30}
-              height={200}
+              itemSize={32}
+              height={(items.length < 10 ? items.length * 32 : 200)}
               itemCount={items.length}
               width={300}
               itemData={{

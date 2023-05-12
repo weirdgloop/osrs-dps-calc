@@ -71,11 +71,9 @@ const EquipmentSelect: React.FC = observer(() => {
 
         return (
           <div className={'flex items-center gap-2'}>
-            {i.equipment.image && (
-              <div className={'basis-4 flex justify-center'}>
-                <img className={'max-h-[20px]'} src={getWikiImage(i.equipment.image)} alt={''} />
-              </div>
-            )}
+            <div className={'basis-4 flex justify-center max-h-[20px] w-auto'}>
+              {i.equipment.image && (<img className={''} src={getWikiImage(i.equipment.image)} alt={''} />)}
+            </div>
             <div className={'flex items-center gap-0'}>
               <div>{itemString}</div>
               {i.version && <div className={'monster-version relative top-[1px] text-xs text-gray-400'}>#{i.version}</div>}

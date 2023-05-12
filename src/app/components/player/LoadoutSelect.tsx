@@ -11,7 +11,7 @@ const LoadoutSelect: React.FC<{ getToggleButtonProps: () => any }> = observer((p
     return (
         <div
             {...getToggleButtonProps()}
-            className={'flex gap-1 bg-[#3e2816] justify-center items-center cursor-pointer border border-body-500 shadow rounded px-2 py-1 relative left-[-8px]'}
+            className={'flex gap-1 bg-[#3e2816] hover:border-white transition-colors justify-center items-center cursor-pointer border border-body-500 shadow rounded px-2 py-1 relative left-[-8px]'}
         >
             <div>
                 Loadout <span className={'text-body-200'}>{selectedLoadout + 1}</span>

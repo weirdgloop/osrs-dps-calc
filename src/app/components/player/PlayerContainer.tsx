@@ -22,6 +22,7 @@ const PlayerContainer: React.FC = observer(() => {
                         {label: `Loadout ${ix + 1}`, value: ix}
                     ))}
                     CustomSelectComponent={LoadoutSelect}
+                    menuClassName={'left-[-8px]'}
                     onSelectedItemChange={(i) => {
                         if (i) store.setSelectedLoadout(i?.value);
                     }}
@@ -30,7 +31,7 @@ const PlayerContainer: React.FC = observer(() => {
                     <button
                         disabled={!canCreateLoadout}
                         onClick={() => createLoadout(true)}
-                        className={'disabled:cursor-not-allowed disabled:text-btns-100'}
+                        className={'disabled:cursor-not-allowed disabled:text-btns-100 hover:text-green transition-colors'}
                         data-tooltip-id={'tooltip'}
                         data-tooltip-content={'Add new loadout'}
                     >
@@ -39,7 +40,7 @@ const PlayerContainer: React.FC = observer(() => {
                     <button
                         disabled={!canCreateLoadout}
                         onClick={() => createLoadout(true, selectedLoadout)}
-                        className={'disabled:cursor-not-allowed disabled:text-btns-100'}
+                        className={'disabled:cursor-not-allowed disabled:text-btns-100 hover:text-orange transition-colors'}
                         data-tooltip-id={'tooltip'}
                         data-tooltip-content={'Clone loadout'}
                     >
@@ -48,7 +49,7 @@ const PlayerContainer: React.FC = observer(() => {
                     <button
                         disabled={!canRemoveLoadout}
                         onClick={() => deleteLoadout(selectedLoadout)}
-                        className={'disabled:cursor-not-allowed disabled:text-btns-100'}
+                        className={'disabled:cursor-not-allowed disabled:text-btns-100 hover:text-red transition-colors'}
                         data-tooltip-id={'tooltip'}
                         data-tooltip-content={'Remove loadout'}
                     >

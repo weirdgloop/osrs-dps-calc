@@ -3,7 +3,7 @@ import EquipmentSelect from './EquipmentSelect';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
 import {getWikiImage} from '@/utils';
-import {IconTrashX} from '@tabler/icons-react';
+import {IconTrash} from '@tabler/icons-react';
 import {PlayerEquipment} from '@/types/Player';
 
 interface EquipmentGridSlotProps {
@@ -19,7 +19,7 @@ const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => 
 
   return (
     <div
-      className={`flex justify-center items-center h-[40px] w-[40px] bg-body-100 border border-body-300 rounded ${!isEmpty ? 'cursor-pointer' : ''}`}
+      className={`flex justify-center items-center h-[40px] w-[40px] bg-body-100 border border-body-300 transition-colors rounded ${!isEmpty ? 'cursor-pointer hover:border-red' : ''}`}
       data-slot={slot}
       data-tooltip-id={'tooltip'}
       data-tooltip-content={currentSlot.name}
@@ -83,7 +83,7 @@ const Equipment: React.FC = observer(() => {
               }
             }}
           >
-            <IconTrashX className={'w-[20px] text-body-500'} />
+            <IconTrash className={'w-[20px] text-body-500 hover:text-red transition-colors'} />
           </button>
         </div>
       </div>

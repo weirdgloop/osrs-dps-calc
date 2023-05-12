@@ -21,8 +21,8 @@ const PreferencesModal: React.FC = observer(() => {
         <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
           <div className="fixed inset-0 bg-black/90" aria-hidden="true" />
           <div className={'fixed inset-0 flex items-center justify-center p-4'}>
-            <Dialog.Panel className={'w-full max-w-lg rounded-xl bg-body-100 text-black shadow-xl'}>
-              <Dialog.Title className={'py-3 text-md bg-btns-300 rounded-t-lg text-center text-white font-serif'}>
+            <Dialog.Panel className={'w-full max-w-lg rounded-xl bg-white text-black shadow-xl'}>
+              <Dialog.Title className={'py-3 text-md bg-gray-600 rounded-t-lg text-center text-white font-serif'}>
                 Preferences
               </Dialog.Title>
               <div className={'px-4 py-2 max-w-xl mt-2 mx-auto'}>
@@ -38,7 +38,7 @@ const PreferencesModal: React.FC = observer(() => {
                   store.updatePreferences({rememberUsername: c})
                 }} label={'Remember username across sessions'} />
               </div>
-              <div className={'mt-3 p-4 border-t border-body-300 flex justify-end'}>
+              <div className={'mt-3 p-4 border-t border-gray-300 flex justify-end'}>
                 <button
                   className={classNames(
                     'btn',
