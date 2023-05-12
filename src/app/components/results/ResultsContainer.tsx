@@ -1,8 +1,8 @@
 import React, {PropsWithChildren, useState} from 'react';
-import HitDistribution from './results/HitDistribution';
+import HitDistribution from './HitDistribution';
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../state';
-import LoadoutComparison from './results/LoadoutComparison';
+import {useStore} from '@/state';
+import LoadoutComparison from './LoadoutComparison';
 
 enum AdditionalDataTypes {
   HIT_DISTRIBUTION,

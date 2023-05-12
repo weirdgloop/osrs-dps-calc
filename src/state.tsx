@@ -1,12 +1,12 @@
 import {makeAutoObservable, toJS} from 'mobx';
 import React, {createContext, useContext} from 'react';
 import {PartialDeep} from 'type-fest';
-import {Potion} from '@/lib/enums/Potion';
+import {Potion} from './enums/Potion';
 import * as localforage from 'localforage';
 import {Preferences, State, UI} from '@/types/State';
-import {Prayer, PrayerMap} from '@/lib/enums/Prayer';
+import {Prayer, PrayerMap} from './enums/Prayer';
 import merge from 'lodash.merge';
-import {EquipmentCategory, getCombatStylesForCategory} from '@/lib/enums/EquipmentCategory';
+import {EquipmentCategory, getCombatStylesForCategory} from './enums/EquipmentCategory';
 import {toast} from 'react-toastify';
 import {EquipmentPiece, Player, PlayerBonuses, PlayerDefensive, PlayerEquipment, PlayerOffensive} from '@/types/Player';
 import {Monster} from '@/types/Monster';

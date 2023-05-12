@@ -1,10 +1,10 @@
 import React from 'react';
 import monsters from '@/lib/monsters.json';
-import {useStore} from '../../state';
+import {useStore} from '@/state';
 import {observer} from 'mobx-react-lite';
 
 import {Monster} from '@/types/Monster';
-import Combobox from './generic/Combobox';
+import Combobox from '../generic/Combobox';
 
 interface MonsterOption {
   label: string;
@@ -65,7 +65,7 @@ const MonsterSelect: React.FC = observer(() => {
           store.updateMonster(val.monster)
         }
       }}
-      CustomItemComponent={({item, itemString}) => {
+      CustomItemComponent={({item}) => {
         let i = item as MonsterOption;
 
         return (

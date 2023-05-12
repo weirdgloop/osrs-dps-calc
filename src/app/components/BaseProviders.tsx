@@ -1,12 +1,12 @@
 'use client';
 
 import React, {PropsWithChildren} from 'react';
-import {StoreProvider} from '../../state';
-import {ibm, pts} from '../../fonts';
-import bg from '@/img/bg.png';
+import {StoreProvider} from '@/state';
+import {ibm, pts} from '@/fonts';
+import bg from '@/public/img/bg.png';
 import TopBar from './TopBar';
 
-import {GlobalState} from '../../state';
+import {GlobalState} from '@/state';
 const store = new GlobalState();
 
 const BaseProviders: React.FC<PropsWithChildren> = (props) => {

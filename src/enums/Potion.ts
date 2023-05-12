@@ -1,16 +1,16 @@
 import {StaticImageData} from 'next/image';
-import Ancient from '@/img/potions/Ancient brew.png';
-import Attack from '@/img/potions/Attack.png';
-import Forgotten from '@/img/potions/Forgotten brew.png';
-import Imbued from '@/img/potions/Imbued heart.png';
-import Magic from '@/img/potions/Magic.png';
-import Overload from '@/img/potions/Overload.png';
-import Ranging from '@/img/potions/Ranging.png';
-import Saturated from '@/img/potions/Saturated heart.png';
-import Salts from '@/img/potions/Smelling salts.png';
-import Strength from '@/img/potions/Strength.png';
-import SuperAttack from '@/img/potions/Super attack.png';
-import SuperStrength from '@/img/potions/Super strength.png';
+import Ancient from '@/public/img/potions/Ancient brew.png';
+import Attack from '@/public/img/potions/Attack.png';
+import Forgotten from '@/public/img/potions/Forgotten brew.png';
+import Imbued from '@/public/img/potions/Imbued heart.png';
+import Magic from '@/public/img/potions/Magic.png';
+import Overload from '@/public/img/potions/Overload.png';
+import Ranging from '@/public/img/potions/Ranging.png';
+import Saturated from '@/public/img/potions/Saturated heart.png';
+import Salts from '@/public/img/potions/Smelling salts.png';
+import Strength from '@/public/img/potions/Strength.png';
+import SuperAttack from '@/public/img/potions/Super attack.png';
+import SuperStrength from '@/public/img/potions/Super strength.png';
 
 export enum Potion {
   ANCIENT,

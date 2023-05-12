@@ -1,5 +1,5 @@
 import React, {PropsWithChildren} from 'react';
-import '../styles/globals.css';
+import '../globals.css';
 import 'react-tooltip/dist/react-tooltip.css';
 import 'react-toastify/dist/ReactToastify.css';
 import {Metadata} from 'next';

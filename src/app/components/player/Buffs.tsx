@@ -1,13 +1,13 @@
 import React from 'react';
 import Toggle from '../generic/Toggle';
 import Image, {StaticImageData} from 'next/image';
-import {Potion, PotionMap} from '@/lib/enums/Potion';
+import {Potion, PotionMap} from '@/enums/Potion';
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../../state';
+import {useStore} from '@/state';
 import {IconCircleCheckFilled} from "@tabler/icons-react";
-import slayer from '@/img/misc/slayer.webp';
-import skull from '@/img/misc/skull.webp';
-import diary from '@/img/misc/diary.png';
+import slayer from '@/public/img/misc/slayer.webp';
+import skull from '@/public/img/misc/skull.webp';
+import diary from '@/public/img/misc/diary.png';
 
 interface IBuffItemProps {
     potion: Potion;
@@ -70,7 +70,7 @@ const Buffs: React.FC = observer(() => {
       </h4>
         <div className={'grid grid-cols-4 gap-y-4 mt-4 w-48 m-auto items-center justify-center'}>
         {
-          Object.entries(PotionMap).map(([k, v], i) => {
+          Object.entries(PotionMap).map(([k, v]) => {
               return <BuffItem key={k} potion={parseInt(k)} name={v.name} image={v.image} />
           })
         }

@@ -1,9 +1,8 @@
 import React from 'react';
-import SpellSelect from '../SpellSelect';
+import SpellSelect from './SpellSelect';
 import Toggle from '../generic/Toggle';
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../../state';
-import Select from '../generic/Select';
+import {useStore} from '@/state';
 
 const Spells: React.FC = observer(() => {
   const store = useStore();

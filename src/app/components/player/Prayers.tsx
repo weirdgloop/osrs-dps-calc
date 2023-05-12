@@ -1,9 +1,9 @@
 import Image, {StaticImageData} from 'next/image';
 
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../../state';
+import {useStore} from '@/state';
 import React from 'react';
-import {Prayer, PrayerMap} from '@/lib/enums/Prayer';
+import {Prayer, PrayerMap} from '@/enums/Prayer';
 import {IconCircleCheckFilled} from '@tabler/icons-react';
 
 interface IPrayerItemProps {
@@ -33,9 +33,8 @@ const PrayerItem: React.FC<IPrayerItemProps> = observer((props) => {
   )
 })
 
-const Prayers = observer(() => {
+const Prayers: React.FC = observer(() => {
   const store = useStore();
-  const {player} = store;
 
   return (
     <div className={'px-6 mt-4'}>
@@ -44,7 +43,7 @@ const Prayers = observer(() => {
       </h4>
       <div className={'grid grid-cols-4 gap-y-4 mt-4 w-48 m-auto items-center justify-center'}>
         {
-          Object.entries(PrayerMap).map(([k, v], i) => {
+          Object.entries(PrayerMap).map(([k, v]) => {
             return <PrayerItem key={k} prayer={parseInt(k)} name={v.name} image={v.image} />
           })
         }

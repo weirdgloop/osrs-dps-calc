@@ -1,17 +1,17 @@
 import React, {useEffect, useState} from 'react';
-import dagger from '@/img/bonuses/dagger.png';
-import scimitar from '@/img/bonuses/scimitar.png';
-import warhammer from '@/img/bonuses/warhammer.png';
-import magic from '@/img/bonuses/magic.png';
-import ranged from '@/img/bonuses/ranged.png';
-import strength from '@/img/bonuses/strength.png';
-import rangedStrength from '@/img/bonuses/ranged_strength.png';
-import magicStrength from '@/img/bonuses/magic_strength.png';
-import prayer from '@/img/tabs/prayer.png';
-import AttributeInput from './player/AttributeInput';
-import HelpLink from './HelpLink';
+import dagger from '@/public/img/bonuses/dagger.png';
+import scimitar from '@/public/img/bonuses/scimitar.png';
+import warhammer from '@/public/img/bonuses/warhammer.png';
+import magic from '@/public/img/bonuses/magic.png';
+import ranged from '@/public/img/bonuses/ranged.png';
+import strength from '@/public/img/bonuses/strength.png';
+import rangedStrength from '@/public/img/bonuses/ranged_strength.png';
+import magicStrength from '@/public/img/bonuses/magic_strength.png';
+import prayer from '@/public/img/tabs/prayer.png';
+import AttributeInput from '../generic/AttributeInput';
+import HelpLink from '../HelpLink';
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../state';
+import {useStore} from '@/state';
 
 const Offensive: React.FC = observer(() => {
   const store = useStore();
@@ -33,7 +33,7 @@ const Offensive: React.FC = observer(() => {
 
 const Defensive: React.FC = observer(() => {
   const store = useStore();
-  const {player, prefs, equipmentBonuses} = store;
+  const {prefs, equipmentBonuses} = store;
 
   return (
     <div className={'w-[95px]'}>
@@ -51,7 +51,7 @@ const Defensive: React.FC = observer(() => {
 
 const OtherBonuses: React.FC = observer(() => {
   const store = useStore();
-  const {player, prefs, equipmentBonuses} = store;
+  const {prefs, equipmentBonuses} = store;
 
   return (
     <div className={'w-[95px]'}>
@@ -108,8 +108,8 @@ const AttackSpeedProgressBar: React.FC<AttackSpeedProgressBarProps> = (props) =>
   )
 }
 
-export default function BoxCombatAttributes() {
-  const [atkSpeed, setAtkSpeed] = useState(2.4);
+const Bonuses: React.FC = () => {
+  const [atkSpeed] = useState(2.4);
 
   return (
     <div className={'grow bg-body-100 text-black rounded-br'}>
@@ -133,3 +133,5 @@ export default function BoxCombatAttributes() {
     </div>
   )
 }
+
+export default Bonuses;

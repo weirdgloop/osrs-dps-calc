@@ -1,17 +1,17 @@
 import Image, {StaticImageData} from 'next/image';
-import combat from '@/img/tabs/combat.png';
-import skills from '@/img/tabs/skills.png';
-import equipment from '@/img/tabs/equipment.png';
-import potion from '@/img/tabs/potion.png';
-import prayer from '@/img/tabs/prayer.png';
-import spells from '@/img/tabs/spells.png';
+import combat from '@/public/img/tabs/combat.png';
+import skills from '@/public/img/tabs/skills.png';
+import equipment from '@/public/img/tabs/equipment.png';
+import potion from '@/public/img/tabs/potion.png';
+import prayer from '@/public/img/tabs/prayer.png';
+import spells from '@/public/img/tabs/spells.png';
 import React, {useState} from 'react';
-import Combat from './player/Combat';
-import Skills from './player/Skills';
-import Prayers from './player/Prayers';
-import Equipment from './player/Equipment';
-import Buffs from './player/Buffs';
-import Spells from './player/Spells';
+import Combat from './Combat';
+import Skills from './Skills';
+import Prayers from './Prayers';
+import Equipment from './Equipment';
+import Buffs from './Buffs';
+import Spells from './Spells';
 
 type SelectedInputType = 'combat' | 'skills' | 'equipment' | 'buffs' | 'prayer' | 'spells';
 
@@ -36,7 +36,7 @@ const InputNavItem: React.FC<InputNavItemProps> = (props) => {
   )
 }
 
-export default function BoxPlayerInputs() {
+export default function PlayerInnerContainer() {
   const [selected, setSelected] = useState<SelectedInputType>('equipment');
 
   const renderSelected = () => {

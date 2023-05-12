@@ -1,8 +1,8 @@
 import React from 'react';
-import EquipmentSelect from '../EquipmentSelect';
+import EquipmentSelect from './EquipmentSelect';
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../../state';
-import {getWikiImage} from '@/lib/utilities';
+import {useStore} from '@/state';
+import {getWikiImage} from '@/utils';
 import {IconTrashX} from '@tabler/icons-react';
 import {PlayerEquipment} from '@/types/Player';
 

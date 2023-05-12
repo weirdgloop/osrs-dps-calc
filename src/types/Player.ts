@@ -1,6 +1,6 @@
-import {EquipmentCategory} from '@/lib/enums/EquipmentCategory';
-import {Prayer} from '@/lib/enums/Prayer';
-import {Potion} from '@/lib/enums/Potion';
+import {EquipmentCategory} from '@/enums/EquipmentCategory';
+import {Prayer} from '@/enums/Prayer';
+import {Potion} from '@/enums/Potion';
 import {Spell} from '@/types/Spell';
 
 export interface PlayerSkills {

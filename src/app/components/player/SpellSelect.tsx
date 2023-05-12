@@ -1,10 +1,10 @@
 import React from 'react';
 import spell from '@/lib/spells.json';
-import {useStore} from '../../state';
+import {useStore} from '@/state';
 import {observer} from 'mobx-react-lite';
-import {getWikiImage} from '@/lib/utilities';
+import {getWikiImage} from '@/utils';
 import {Spell, Spellbook} from '@/types/Spell';
-import Combobox from './generic/Combobox';
+import Combobox from '../generic/Combobox';
 
 interface SpellOption {
   label: string;

@@ -45,7 +45,9 @@ def getEquipmentData():
             'format': 'json',
             'query': '[[Equipment slot::+]]|?' + '|?'.join(REQUIRED_PRINTOUTS) + '|limit=500|offset=' + str(offset)
         }
-        r = requests.get(API_BASE + '?' + urllib.parse.urlencode(query))
+        r = requests.get(API_BASE + '?' + urllib.parse.urlencode(query), headers={
+            'User-Agent': 'osrs-dps-calc (https://github.com/weirdgloop/osrs-dps-calc)'
+        })
         data = r.json()
 
         if 'query' not in data or 'results' not in data['query']:

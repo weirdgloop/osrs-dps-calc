@@ -21,21 +21,9 @@
     "baseUrl": ".",
     "useDefineForClassFields": true,
     "paths": {
-      "@/components/*": [
-        "src/app/components/*"
+      "@/*": [
+        "src/*"
       ],
-      "@/img/*": [
-        "src/public/img/*"
-      ],
-      "@/styles/*": [
-        "src/styles/*"
-      ],
-      "@/types/*": [
-        "src/types/*"
-      ],
-      "@/lib/*": [
-        "src/lib/*"
-      ]
     },
     "plugins": [
       {

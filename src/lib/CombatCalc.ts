@@ -1,7 +1,7 @@
 import {EquipmentPiece, Player} from '@/types/Player';
 import {Monster} from '@/types/Monster';
 
-class CombatCalc {
+export default class CombatCalc {
   private player: Player;
   private monster: Monster;
 

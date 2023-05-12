@@ -1,8 +1,8 @@
 import React from 'react';
 import {BarChart, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer, Bar, TooltipProps} from 'recharts';
 import {NameType, ValueType} from 'recharts/types/component/DefaultTooltipContent';
-import hitsplat from '@/img/hitsplat.webp';
-import zero_hitsplat from '@/img/zero_hitsplat.png';
+import hitsplat from '@/public/img/hitsplat.webp';
+import zero_hitsplat from '@/public/img/zero_hitsplat.png';
 
 const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
