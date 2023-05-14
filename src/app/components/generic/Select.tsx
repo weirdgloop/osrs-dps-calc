@@ -4,7 +4,7 @@ import {
   UseSelectGetItemPropsOptions,
   UseSelectGetToggleButtonPropsOptions
 } from 'downshift';
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {FixedSizeList as List} from 'react-window';
 
 // TODO: change SelectItem to use TS generics
@@ -94,6 +94,8 @@ const Select: React.FC<ISelectProps> = (props) => {
     CustomItemComponent
   } = props;
 
+  const menuRef = useRef<HTMLElement>(null);
+
   const {
     getItemProps,
     getMenuProps,
@@ -106,6 +108,20 @@ const Select: React.FC<ISelectProps> = (props) => {
     id,
     items,
     itemToString,
+    onIsOpenChange: ({isOpen}) => {
+      if (isOpen) {
+        // When the menu opens, detect where it is on the page
+        const pos = menuRef.current?.getBoundingClientRect();
+        if (pos) {
+          // If it's near the bottom of the viewport, open it "upwards" instead of downwards
+          if (pos.bottom > ((window.innerHeight || document.documentElement.clientHeight) / 1.5)) {
+            menuRef.current?.classList.add('bottom-[100%]');
+          } else {
+            menuRef.current?.classList.remove('bottom-[100%]');
+          }
+        }
+      }
+    },
     onSelectedItemChange: ({selectedItem}) => {
       if (onSelectedItemChange) onSelectedItemChange(selectedItem);
       if (resetAfterSelect) selectItem(null);
@@ -134,7 +150,9 @@ const Select: React.FC<ISelectProps> = (props) => {
       <div
           className={`absolute bg-white rounded shadow-xl mt-1 border border-gray-300 z-10 text-black font-normal transition-opacity ${(isOpen && items.length) ? 'opacity-100' : 'opacity-0'} ${menuClassName}`}
           style={{fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif'}}
-          {...getMenuProps()}
+          {...getMenuProps({
+            ref: menuRef
+          })}
       >
         {!isOpen || !items.length ? null : (
             <List
