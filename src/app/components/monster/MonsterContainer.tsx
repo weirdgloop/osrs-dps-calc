@@ -32,15 +32,7 @@ const PresetAttributeButton: React.FC<PresetAttributeButtonProps> = observer((pr
   const isSelected = monster.attributes.includes(attr);
 
   return (
-    <button disabled={!prefs.allowEditingMonsterStats} className={`rounded px-1 transition-[background,color] ${isSelected ? 'bg-blue-600 text-white' : 'bg-body-100 hover:bg-body-200'}`} onClick={() => {
-      if (isSelected) {
-        // If this attribute is already selected, de-select it
-        store.updateMonster({attributes: store.monster.attributes.filter((a) => a !== attr)});
-      } else {
-        // If it is not selected, select it
-        store.updateMonster({attributes: [...store.monster.attributes, attr]});
-      }
-    }}>
+    <button disabled={!prefs.allowEditingMonsterStats} className={`rounded px-1 transition-[background,color] ${isSelected ? 'bg-blue-600 text-white' : 'bg-body-100 hover:enabled:bg-body-200'}`} onClick={() => store.toggleMonsterAttribute(attr)}>
       {attr}
     </button>
   )
@@ -70,7 +62,7 @@ const MonsterContainer: React.FC = observer(() => {
               <div className={'flex gap-4'}>
                 <div className={'w-[95px]'}>
                   <p className={'text-sm text-gray-400'}>Skills</p>
-                  <div className={'flex flex-col gap-2 mt-3 text-center items-end'}>
+                  <div className={'flex flex-col gap-2 mt-3 text-center'}>
                     <AttributeInput name={'Hitpoints'} disabled={!prefs.allowEditingMonsterStats} image={hitpoints} value={monster.skills.hp} onChange={(v) => store.updateMonster({skills: {hp: v}})} />
                     <AttributeInput name={'Attack'} disabled={!prefs.allowEditingMonsterStats} image={attack} value={monster.skills.atk} onChange={(v) => store.updateMonster({skills: {atk: v}})}  />
                     <AttributeInput name={'Strength'} disabled={!prefs.allowEditingMonsterStats} image={strength} value={monster.skills.str} onChange={(v) => store.updateMonster({skills: {str: v}})}  />
@@ -81,7 +73,7 @@ const MonsterContainer: React.FC = observer(() => {
                 </div>
                 <div className={'w-[95px]'}>
                   <p className={'text-sm text-gray-400'}>Offensive</p>
-                  <div className={'flex flex-col gap-2 mt-3 text-center items-end'}>
+                  <div className={'flex flex-col gap-2 mt-3 text-center'}>
                     <AttributeInput name={'Attack'} disabled={!prefs.allowEditingMonsterStats} image={attack} value={monster.offensive.atk} onChange={(v) => store.updateMonster({offensive: {atk: v}})}  />
                     <AttributeInput name={'Strength'} disabled={!prefs.allowEditingMonsterStats} image={strength} value={monster.offensive.str} onChange={(v) => store.updateMonster({offensive: {str: v}})} />
                     <AttributeInput name={'Magic'} disabled={!prefs.allowEditingMonsterStats} image={magic} value={monster.offensive.magic} onChange={(v) => store.updateMonster({offensive: {magic: v}})} />
@@ -92,7 +84,7 @@ const MonsterContainer: React.FC = observer(() => {
                 </div>
                 <div className={'w-[95px]'}>
                   <p className={'text-sm text-gray-400'}>Defensive</p>
-                  <div className={'flex flex-col gap-2 mt-3 text-center items-end'}>
+                  <div className={'flex flex-col gap-2 mt-3 text-center'}>
                     <AttributeInput name={'Stab'} disabled={!prefs.allowEditingMonsterStats} image={dagger} value={monster.defensive.stab} onChange={(v) => store.updateMonster({defensive: {stab: v}})} />
                     <AttributeInput name={'Slash'} disabled={!prefs.allowEditingMonsterStats} image={scimitar} value={monster.defensive.slash} onChange={(v) => store.updateMonster({defensive: {slash: v}})} />
                     <AttributeInput name={'Crush'} disabled={!prefs.allowEditingMonsterStats} image={warhammer} value={monster.defensive.crush} onChange={(v) => store.updateMonster({defensive: {crush: v}})} />

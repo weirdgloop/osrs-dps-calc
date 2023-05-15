@@ -33,10 +33,6 @@ const PreferencesModal: React.FC = observer(() => {
                 <Toggle checked={prefs.allowEditingMonsterStats} setChecked={(c) => {
                   store.updatePreferences({allowEditingMonsterStats: c});
                 }} label={'Allow editing monster stats'} />
-                <h2 className={'font-serif mb-2 mt-4'}>Persistence</h2>
-                <Toggle checked={prefs.rememberUsername} setChecked={(c) => {
-                  store.updatePreferences({rememberUsername: c})
-                }} label={'Remember username across sessions'} />
               </div>
               <div className={'mt-3 p-4 border-t border-gray-300 flex justify-end'}>
                 <button

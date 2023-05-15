@@ -5,11 +5,12 @@ import {Potion} from './enums/Potion';
 import * as localforage from 'localforage';
 import {Preferences, State, UI} from '@/types/State';
 import {Prayer, PrayerMap} from './enums/Prayer';
-import merge from 'lodash.merge';
+import merge from 'lodash.mergewith';
 import {EquipmentCategory, getCombatStylesForCategory} from './enums/EquipmentCategory';
 import {toast} from 'react-toastify';
 import {EquipmentPiece, Player, PlayerBonuses, PlayerDefensive, PlayerEquipment, PlayerOffensive} from '@/types/Player';
 import {Monster} from '@/types/Monster';
+import {MonsterAttribute} from "@/enums/MonsterAttribute";
 
 const emptyEquipmentSlot: EquipmentPiece = {
   name: '',
@@ -257,6 +258,19 @@ class GlobalState implements State {
   }
 
   /**
+   * Toggle a monster attribute.
+   * @param attr
+   */
+  toggleMonsterAttribute(attr: MonsterAttribute) {
+    const isToggled = this.monster.attributes.includes(attr);
+    if (isToggled) {
+      this.monster.attributes = this.monster.attributes.filter((a) => a !== attr);
+    } else {
+      this.monster.attributes = [...this.monster.attributes, attr];
+    }
+  }
+
+  /**
    * Update the player state.
    * @param player
    */
@@ -280,7 +294,12 @@ class GlobalState implements State {
    * @param monster
    */
   updateMonster(monster: PartialDeep<Monster>) {
-    this.monster = merge(this.monster, monster);
+    this.monster = merge(this.monster, monster, (obj, src) => {
+      // This check is to ensure that empty arrays always override existing arrays, even if they have values.
+      if (Array.isArray(src) && src.length === 0) {
+        return src;
+      }
+    });
   }
 
   /**

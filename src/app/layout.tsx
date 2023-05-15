@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "See how your gear stacks up against Old School RuneScape's monsters using the OSRS Wiki's damage-per-second calculator.",
 };
 
-export const RootLayout: React.FC<PropsWithChildren> = (props) => {
+const RootLayout: React.FC<PropsWithChildren> = (props) => {
   const {children} = props;
 
   return (

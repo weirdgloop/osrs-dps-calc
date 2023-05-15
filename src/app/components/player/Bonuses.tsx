@@ -20,12 +20,12 @@ const Offensive: React.FC = observer(() => {
   return (
     <div className={'w-[95px]'}>
       <p className={'text-sm text-gray-500'}>Offensive</p>
-      <div className={'flex flex-col gap-2 mt-3 text-center items-end'}>
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Dagger'} image={dagger} value={equipmentBonuses.offensive.stab} onChange={(v) => store.updatePlayerCombatAttributes({offensive: {stab: v}})} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Scimitar'} image={scimitar} value={equipmentBonuses.offensive.slash} onChange={(v) => store.updatePlayerCombatAttributes({offensive: {slash: v}})} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Warhammer'} image={warhammer} value={equipmentBonuses.offensive.crush} onChange={(v) => store.updatePlayerCombatAttributes({offensive: {crush: v}})} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Magic'} image={magic} value={equipmentBonuses.offensive.magic} onChange={(v) => store.updatePlayerCombatAttributes({offensive: {magic: v}})} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Ranged'} image={ranged} value={equipmentBonuses.offensive.ranged} onChange={(v) => store.updatePlayerCombatAttributes({offensive: {ranged: v}})} />
+      <div className={'flex flex-col gap-2 mt-3 text-center'}>
+        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Dagger'} image={dagger} value={equipmentBonuses.offensive.stab} />
+        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Scimitar'} image={scimitar} value={equipmentBonuses.offensive.slash} />
+        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Warhammer'} image={warhammer} value={equipmentBonuses.offensive.crush} />
+        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Magic'} image={magic} value={equipmentBonuses.offensive.magic} />
+        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Ranged'} image={ranged} value={equipmentBonuses.offensive.ranged} />
       </div>
     </div>
   )
@@ -38,12 +38,12 @@ const Defensive: React.FC = observer(() => {
   return (
     <div className={'w-[95px]'}>
       <p className={'text-sm text-gray-500'}>Defensive</p>
-      <div className={'flex flex-col gap-2 mt-3 text-center items-end'}>
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Dagger'} image={dagger} value={equipmentBonuses.defensive.stab} onChange={(v) => store.updatePlayerCombatAttributes({defensive: {stab: v}})} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Scimitar'} image={scimitar} value={equipmentBonuses.defensive.slash} onChange={(v) => store.updatePlayerCombatAttributes({defensive: {slash: v}})} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Warhammer'} image={warhammer} value={equipmentBonuses.defensive.crush} onChange={(v) => store.updatePlayerCombatAttributes({defensive: {crush: v}})} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Magic'} image={magic} value={equipmentBonuses.defensive.magic} onChange={(v) => store.updatePlayerCombatAttributes({defensive: {magic: v}})} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Ranged'} image={ranged} value={equipmentBonuses.defensive.ranged} onChange={(v) => store.updatePlayerCombatAttributes({defensive: {ranged: v}})} />
+      <div className={'flex flex-col gap-2 mt-3 text-center'}>
+        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Dagger'} image={dagger} value={equipmentBonuses.defensive.stab} />
+        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Scimitar'} image={scimitar} value={equipmentBonuses.defensive.slash} />
+        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Warhammer'} image={warhammer} value={equipmentBonuses.defensive.crush} />
+        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Magic'} image={magic} value={equipmentBonuses.defensive.magic} />
+        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Ranged'} image={ranged} value={equipmentBonuses.defensive.ranged} />
       </div>
     </div>
   )
@@ -56,11 +56,11 @@ const OtherBonuses: React.FC = observer(() => {
   return (
     <div className={'w-[95px]'}>
       <p className={'text-sm text-gray-500'}>Other</p>
-      <div className={'flex flex-col gap-2 mt-3 text-center items-end'}>
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Strength'} image={strength} value={equipmentBonuses.bonuses.str} onChange={(v) => store.updatePlayerCombatAttributes({bonuses: {strength: v}})} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Ranged Strength'} image={rangedStrength} value={equipmentBonuses.bonuses.ranged_str} onChange={(v) => store.updatePlayerCombatAttributes({bonuses: {ranged_str: v}})} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Magic Strength'} image={magicStrength} value={equipmentBonuses.bonuses.magic_str} onChange={(v) => store.updatePlayerCombatAttributes({bonuses: {magic_str: v}})} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Prayer'} image={prayer} value={equipmentBonuses.bonuses.prayer} onChange={(v) => store.updatePlayerCombatAttributes({bonuses: {prayer: v}})} />
+      <div className={'flex flex-col gap-2 mt-3 text-center'}>
+        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Strength'} image={strength} value={equipmentBonuses.bonuses.str} />
+        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Ranged Strength'} image={rangedStrength} value={equipmentBonuses.bonuses.ranged_str} />
+        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Magic Strength'} image={magicStrength} value={equipmentBonuses.bonuses.magic_str} />
+        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Prayer'} image={prayer} value={equipmentBonuses.bonuses.prayer} />
       </div>
     </div>
   )
