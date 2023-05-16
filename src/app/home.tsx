@@ -26,7 +26,7 @@ const Home: NextPage = observer(() => {
         <title>OSRS DPS Calculator</title>
       </Head>
       {/* Main container */}
-      <div className={'max-w-[1200px] mx-auto md:my-8'}>
+      <div className={'max-w-[1200px] mx-auto sm:my-8'}>
         <div className={'flex gap-4 flex-wrap'}>
           <PlayerContainer />
           <MonsterContainer />

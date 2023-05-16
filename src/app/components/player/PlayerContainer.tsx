@@ -14,9 +14,9 @@ const PlayerContainer: React.FC = observer(() => {
 
     return (
         <div
-            className={'bg-tile md:basis-1/4 basis-auto flex-initial md:rounded-lg text-black shadow-lg flex flex-col'}>
+            className={'bg-tile md:basis-1/4 mx-auto sm:rounded-lg text-black shadow-lg flex flex-col'}>
             <div
-                className={'px-6 py-2 md:rounded md:rounded-b-none text-sm font-bold font-serif flex justify-between items-center bg-btns-400 text-white rounded-t border-b-4 border-body-500'}>
+                className={'px-6 py-2 sm:rounded sm:rounded-b-none text-sm font-bold font-serif flex justify-between items-center bg-btns-400 text-white border-b-4 border-body-500'}>
                 <Select
                     id={'loadout-select'}
                     items={store.loadouts.map((l, ix) => (

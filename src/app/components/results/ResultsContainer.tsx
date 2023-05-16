@@ -80,7 +80,7 @@ const BoxResults = observer(() => {
         </div>
         {
           additionalData.includes(AdditionalDataTypes.HIT_DISTRIBUTION) && (
-            <div className={'grow bg-tile rounded shadow-lg'}>
+            <div className={'grow bg-tile rounded shadow-lg max-w-[100vw]'}>
               <div className={'px-6 py-4 bg-btns-400 text-white rounded-t border-b-4 border-body-500'}>
                 <h3 className={'font-serif font-bold'}>Hit Distribution</h3>
               </div>
@@ -95,7 +95,7 @@ const BoxResults = observer(() => {
         }
         {
           additionalData.includes(AdditionalDataTypes.LOADOUT_COMPARISON) && (
-            <div className={'grow bg-tile rounded shadow-lg'}>
+            <div className={'grow bg-tile rounded shadow-lg max-w-[100vw]'}>
               <div className={'px-6 py-4 bg-btns-400 text-white rounded-t border-b-4 border-body-500'}>
                 <h3 className={'font-serif font-bold'}>Loadout Comparison</h3>
               </div>

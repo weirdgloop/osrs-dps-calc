@@ -51,7 +51,7 @@ const MonsterContainer: React.FC = observer(() => {
       </div>
       <div className={'p-6'}>
         <div className={'mb-4'}>
-          <div className={'flex gap-8 flex-wrap'}>
+          <div className={'flex gap-8 flex-wrap justify-center'}>
             <div>
               <div className={'mb-4'}>
                 <MonsterSelect />
@@ -106,7 +106,7 @@ const MonsterContainer: React.FC = observer(() => {
                 </div>
               </div>
             </div>
-            <div className={'grow-0 flex items-center'}>
+            <div className={'flex items-center justify-center'}>
               <div>
                 <Image
                     className={'max-w-[100px] max-h-[300px] w-auto h-auto'}

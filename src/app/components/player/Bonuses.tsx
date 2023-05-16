@@ -117,7 +117,7 @@ const Bonuses: React.FC = () => {
         <h4 className={'font-serif font-bold'}>Bonuses</h4>
       </div>
       <div className={'p-6'}>
-        <div className={'flex gap-4'}>
+        <div className={'flex gap-4 justify-center'}>
           <Offensive />
           <Defensive />
           <OtherBonuses />
