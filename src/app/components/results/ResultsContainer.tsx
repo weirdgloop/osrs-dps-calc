@@ -1,9 +1,11 @@
 import React, {PropsWithChildren, useState} from 'react';
-import HitDistribution from './HitDistribution';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
-import LoadoutComparison from './LoadoutComparison';
 import MultiSelect from "@/app/components/generic/MultiSelect";
+import dynamic from "next/dynamic";
+
+const HitDistribution = dynamic(() => import('@/app/components/results/HitDistribution'));
+const LoadoutComparison = dynamic(() => import('@/app/components/results/LoadoutComparison'));
 
 enum AdditionalDataTypes {
   HIT_DISTRIBUTION,

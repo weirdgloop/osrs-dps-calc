@@ -6,11 +6,15 @@ import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
 import {motion, AnimatePresence} from 'framer-motion';
 
-const PreferencesModal: React.FC = observer(() => {
+interface IPreferencesModalProps {
+  isOpen: boolean;
+}
+
+const PreferencesModal: React.FC<IPreferencesModalProps> = observer((props) => {
+  const {isOpen} = props;
   const store = useStore();
   const {ui, prefs} = store;
 
-  const isOpen = ui.showPreferencesModal;
   const setIsOpen = (open: boolean) => {
     store.updateUIState({showPreferencesModal: open});
   }

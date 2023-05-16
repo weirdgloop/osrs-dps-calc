@@ -1,19 +1,22 @@
 'use client';
 
-import type {NextPage} from 'next'
+import type {NextPage} from 'next';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import MonsterContainer from '@/app/components/monster/MonsterContainer';
 import {Tooltip} from 'react-tooltip';
 import React, {useEffect} from 'react';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
-import PreferencesModal from '@/app/components/PreferencesModal';
 import {ToastContainer} from 'react-toastify';
 import PlayerContainer from "@/app/components/player/PlayerContainer";
 import ResultsContainer from "@/app/components/results/ResultsContainer";
 
+const PreferencesModal = dynamic(() => import('@/app/components/PreferencesModal'));
+
 const Home: NextPage = observer(() => {
   const store = useStore();
+  const {showPreferencesModal} = store.ui;
 
   useEffect(() => {
     // Load preferences from browser storage if there are any
@@ -35,7 +38,7 @@ const Home: NextPage = observer(() => {
       </div>
       <Tooltip id={'tooltip'} />
       <ToastContainer hideProgressBar={true} draggable={false} limit={3} closeButton={false} className={'text-sm'} />
-      <PreferencesModal />
+        {showPreferencesModal && <PreferencesModal isOpen={showPreferencesModal} />}
     </div>
   )
 })
