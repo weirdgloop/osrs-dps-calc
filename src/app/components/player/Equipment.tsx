@@ -6,14 +6,27 @@ import {getWikiImage} from '@/utils';
 import {IconTrash} from '@tabler/icons-react';
 import {PlayerEquipment} from '@/types/Player';
 
+import head from '@/public/img/slots/head.png';
+import cape from '@/public/img/slots/cape.png';
+import neck from '@/public/img/slots/neck.png';
+import ammo from '@/public/img/slots/ammo.png';
+import weapon from '@/public/img/slots/weapon.png';
+import body from '@/public/img/slots/body.png';
+import shield from '@/public/img/slots/shield.png';
+import legs from '@/public/img/slots/legs.png';
+import hands from '@/public/img/slots/hands.png';
+import feet from '@/public/img/slots/feet.png';
+import ring from '@/public/img/slots/ring.png';
+
 interface EquipmentGridSlotProps {
   slot: keyof PlayerEquipment;
+  placeholder?: string;
 }
 
 const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => {
   const store = useStore();
   const {equipment} = store.player;
-  const {slot} = props;
+  const {slot, placeholder} = props;
   const currentSlot = equipment[slot];
   const isEmpty = !currentSlot.name;
 
@@ -27,9 +40,13 @@ const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => 
         if (!isEmpty) store.clearEquipmentSlot(slot);
       }}
     >
-      {currentSlot.image &&
-        <img src={getWikiImage(currentSlot.image)} alt={currentSlot.name} />
-      }
+      {currentSlot.image ? (
+          <img src={getWikiImage(currentSlot.image)} alt={currentSlot.name} />
+      ) : (
+          placeholder && (
+              <img className={'opacity-30'} src={placeholder} alt={slot} />
+          )
+      )}
     </div>
   )
 })
@@ -38,25 +55,25 @@ const EquipmentGrid: React.FC = () => {
   return (
     <>
       <div className={'flex justify-center'}>
-        <EquipmentGridSlot slot={'head'} />
+        <EquipmentGridSlot slot={'head'} placeholder={head.src} />
       </div>
       <div className={'mt-2 flex justify-center gap-2'}>
-        <EquipmentGridSlot slot={'cape'} />
-        <EquipmentGridSlot slot={'neck'} />
-        <EquipmentGridSlot slot={'ammo'} />
+        <EquipmentGridSlot slot={'cape'} placeholder={cape.src} />
+        <EquipmentGridSlot slot={'neck'} placeholder={neck.src} />
+        <EquipmentGridSlot slot={'ammo'} placeholder={ammo.src} />
       </div>
       <div className={'mt-2 flex justify-center gap-6'}>
-        <EquipmentGridSlot slot={'weapon'} />
-        <EquipmentGridSlot slot={'body'} />
-        <EquipmentGridSlot slot={'shield'} />
+        <EquipmentGridSlot slot={'weapon'} placeholder={weapon.src} />
+        <EquipmentGridSlot slot={'body'} placeholder={body.src} />
+        <EquipmentGridSlot slot={'shield'} placeholder={shield.src} />
       </div>
       <div className={'mt-2 flex justify-center'}>
-        <EquipmentGridSlot slot={'legs'} />
+        <EquipmentGridSlot slot={'legs'} placeholder={legs.src} />
       </div>
       <div className={'mt-2 flex justify-center gap-6'}>
-        <EquipmentGridSlot slot={'hands'} />
-        <EquipmentGridSlot slot={'feet'} />
-        <EquipmentGridSlot slot={'ring'} />
+        <EquipmentGridSlot slot={'hands'} placeholder={hands.src} />
+        <EquipmentGridSlot slot={'feet'} placeholder={feet.src} />
+        <EquipmentGridSlot slot={'ring'} placeholder={ring.src} />
       </div>
     </>
   )
