@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import monsters from '@/lib/monsters.json';
 import {useStore} from '@/state';
 import {observer} from 'mobx-react-lite';
@@ -16,7 +16,7 @@ interface MonsterOption {
 const MonsterSelect: React.FC = observer(() => {
   const store = useStore();
 
-  const options: MonsterOption[] = monsters.map((m, i) => {
+  const options: MonsterOption[] = useMemo(() => monsters.map((m, i) => {
     return {
       label: `${m.name}`,
       value: i,
@@ -51,7 +51,7 @@ const MonsterSelect: React.FC = observer(() => {
         attributes: m.attributes
       }
     }
-  })
+  }), [])
 
   return (
     <Combobox

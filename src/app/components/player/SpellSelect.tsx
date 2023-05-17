@@ -5,6 +5,7 @@ import {observer} from 'mobx-react-lite';
 import {getWikiImage} from '@/utils';
 import {Spell, Spellbook} from '@/types/Spell';
 import Combobox from '../generic/Combobox';
+import LazyImage from "@/app/components/generic/LazyImage";
 
 interface SpellOption {
   label: string;
@@ -48,8 +49,8 @@ const SpellSelect: React.FC = observer(() => {
       return (
         <div className={'flex items-center gap-2'}>
           {i.spell.image && (
-            <div className={'basis-4 flex justify-center'}>
-              <img className={'max-h-[20px]'} src={getWikiImage(i.spell.image)} alt={''} />
+            <div className={'basis-4 flex justify-center h-[20px] w-auto'}>
+              <LazyImage responsive={true} src={getWikiImage(i.spell.image)} alt={''} />
             </div>
           )}
           <div className={'flex items-center gap-0'}>

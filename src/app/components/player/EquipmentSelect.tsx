@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import equipment from '@/lib/equipment.json';
 import {useStore} from '@/state';
 import {observer} from 'mobx-react-lite';
@@ -6,6 +6,7 @@ import {getWikiImage} from '@/utils';
 import {EquipmentCategory} from '@/enums/EquipmentCategory';
 import {EquipmentPiece} from '@/types/Player';
 import Combobox from '../generic/Combobox';
+import LazyImage from "@/app/components/generic/LazyImage";
 
 interface EquipmentOption {
   label: string;
@@ -18,7 +19,7 @@ interface EquipmentOption {
 const EquipmentSelect: React.FC = observer(() => {
   const store = useStore();
 
-  const options: EquipmentOption[] = equipment.map((e, i) => {
+  const options: EquipmentOption[] = useMemo(() => equipment.map((e, i) => {
     return {
       label: `${e.name}`,
       value: i,
@@ -48,7 +49,7 @@ const EquipmentSelect: React.FC = observer(() => {
         }
       }
     }
-  })
+  }), [])
 
   return (
     <Combobox
@@ -72,12 +73,12 @@ const EquipmentSelect: React.FC = observer(() => {
 
         return (
           <div className={'flex items-center gap-2'}>
-            <div className={'basis-4 flex justify-center max-h-[20px] w-auto'}>
-              {i.equipment.image && (<img className={''} src={getWikiImage(i.equipment.image)} alt={''} />)}
+            <div className={'basis-4 flex justify-center h-[20px] w-auto'}>
+              {i.equipment.image && (<LazyImage responsive={true} src={getWikiImage(i.equipment.image)} alt={''} />)}
             </div>
-            <div className={'flex items-center gap-0'}>
-              <div>{itemString}</div>
-              {i.version && <div className={'monster-version relative top-[1px] text-xs text-gray-400'}>#{i.version}</div>}
+            <div>
+              {itemString}
+              {i.version && <span className={'monster-version text-xs text-gray-400'}>#{i.version}</span>}
             </div>
           </div>
         )
