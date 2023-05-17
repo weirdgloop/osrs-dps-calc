@@ -20,7 +20,7 @@ const PreferencesModal: React.FC<IPreferencesModalProps> = observer((props) => {
 
   return (
     <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
-      <div className="fixed inset-0 bg-black/90" aria-hidden="true" />
+      <div className="fixed inset-0 bg-black/60" aria-hidden="true" />
       <div className={'fixed inset-0 flex items-center justify-center p-4'}>
         <Dialog.Panel className={'w-full max-w-lg rounded-xl bg-white text-black shadow-xl'}>
           <Dialog.Title className={'py-3 text-md bg-gray-600 rounded-t-lg text-center text-white font-serif select-none'}>
