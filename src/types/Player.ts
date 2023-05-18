@@ -35,6 +35,7 @@ export interface EquipmentPiece {
     stab: number;
     prayer: number;
   }
+  isTwoHanded: boolean;
 }
 
 export interface PlayerEquipment {

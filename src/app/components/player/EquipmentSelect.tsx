@@ -46,7 +46,8 @@ const EquipmentSelect: React.FC = observer(() => {
           slash: e.defensive[3],
           stab: e.defensive[4],
           prayer: e.defensive[5]
-        }
+        },
+        isTwoHanded: (e.slot === '2h'),
       }
     }
   }), [])
@@ -61,6 +62,10 @@ const EquipmentSelect: React.FC = observer(() => {
       onSelectedItemChange={(item) => {
         if (item) {
           const val = item as EquipmentOption;
+
+          // Special handling for 2h weapons
+          if (val.slot === '2h') val.slot = 'weapon';
+
           store.updatePlayer({
             equipment: {
               [val.slot]: val.equipment
