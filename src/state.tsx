@@ -283,9 +283,6 @@ class GlobalState implements State {
     ) {
       // If the weapon slot category was changed, we should reset the player's selected combat style to the first one that exists.
       player.style = getCombatStylesForCategory(player.equipment.weapon.category)[0];
-      toast(<div>The available combat styles have changed. We&apos;ve selected the first available style for this weapon.</div>,
-        {toastId: 'weapon-category-changed', type: 'info'}
-      )
     }
 
     // Special handling for if a shield is equipped, and we're using a two-handed weapon
