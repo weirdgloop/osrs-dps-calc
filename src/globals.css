@@ -66,10 +66,13 @@ input.form-control[type=number] {
 }
 
 #tooltip {
-  @apply bg-btns-300;
+  @apply bg-black;
   @apply opacity-100;
-  @apply text-sm;
-  @apply p-2;
+  @apply text-xs;
+  @apply p-1;
+  @apply px-2;
+  max-width: 100vw;
+
 }
 
 .select-input input {

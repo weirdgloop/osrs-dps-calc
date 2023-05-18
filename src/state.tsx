@@ -134,6 +134,7 @@ class GlobalState implements State {
 
   ui: UI = {
     showPreferencesModal: false,
+    potionsScrollPosition: 0
   }
 
   prefs: Preferences = {

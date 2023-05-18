@@ -57,7 +57,7 @@ export default function PlayerInnerContainer() {
   }
 
   return (
-    <div className={'grow sm:border-r border-body-400'}>
+    <div className={'grow sm:border-r border-body-400 min-h-[490px]'}>
       <div className={'flex justify-center text-center items-center bg-body-100 px-4 py-[1.5em] gap-1 border-b border-body-400  '}>
         <InputNavItem name={'Combat'} isActive={selected === 'combat'} image={combat} onClick={() => setSelected('combat')} />
         <InputNavItem name={'Skills'} isActive={selected === 'skills'} image={skills} onClick={() => setSelected('skills')} />
