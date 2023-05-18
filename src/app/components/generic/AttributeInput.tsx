@@ -1,5 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import Image, {StaticImageData} from 'next/image';
+import NumberInput from "@/app/components/generic/NumberInput";
 
 interface AttributeInputProps {
   name: string;
@@ -11,11 +12,6 @@ interface AttributeInputProps {
 
 const AttributeInput: React.FC<AttributeInputProps> = (props) => {
   const {name, image, onChange, value, disabled} = props;
-  const [internalValue, setInternalValue] = useState(value.toString());
-
-  useEffect(() => {
-      setInternalValue(value.toString());
-  }, [value]);
 
   return (
     <div className={'flex items-center'}>
@@ -29,12 +25,11 @@ const AttributeInput: React.FC<AttributeInputProps> = (props) => {
                       {value}
                   </div>
               ) : (
-                  <input type={'number'} className={'form-control rounded w-full mt-auto'} onChange={(evt) => {
-                      setInternalValue(evt.currentTarget.value);
-                      if (evt.currentTarget.validity.valid && onChange) {
-                          onChange(evt.currentTarget.valueAsNumber);
-                      }
-                  }} value={internalValue} />
+                  <NumberInput
+                    className={'form-control w-full rounded mt-auto'}
+                    onChange={onChange}
+                    value={value.toString()}
+                  />
               )
           }
       </div>

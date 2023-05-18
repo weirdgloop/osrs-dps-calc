@@ -2,11 +2,11 @@ import React, {useEffect, useState} from 'react';
 
 interface NumberInputProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'onChange'> {
   onChange?: (v: number) => void;
-  value?: number;
+  value?: string;
 }
 
 const NumberInput: React.FC<NumberInputProps> = (props) => {
-  const [value, setValue] = useState<number>();
+  const [value, setValue] = useState<string>();
   const {onChange} = props;
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const NumberInput: React.FC<NumberInputProps> = (props) => {
       onChange={(evt) => {
         const valueAsNum = evt.currentTarget.valueAsNumber;
         // Always update the value of this component locally
-        setValue(valueAsNum);
+        setValue(evt.currentTarget.value);
 
         // If it's a valid number (passes local HTML validation), call our onChange
         if (evt.currentTarget.validity.valid && onChange) {

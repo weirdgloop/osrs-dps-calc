@@ -30,7 +30,7 @@ const PreferencesModal: React.FC<IPreferencesModalProps> = observer((props) => {
             <h2 className={'font-serif mb-2 select-none'}>Interface</h2>
             <Toggle checked={prefs.allowEditingPlayerStats} setChecked={(c) => {
               store.updatePreferences({allowEditingPlayerStats: c});
-            }} label={'Allow editing player stats'} />
+            }} label={'Allow editing player bonuses'} />
             <Toggle checked={prefs.allowEditingMonsterStats} setChecked={(c) => {
               store.updatePreferences({allowEditingMonsterStats: c});
             }} label={'Allow editing monster stats'} />
