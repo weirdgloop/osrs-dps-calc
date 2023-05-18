@@ -23,8 +23,8 @@ enum XAxisType {
 }
 
 const XAxisOptions = [
-  {label: 'Time-to-kill', value: XAxisType.TTK},
   {label: 'Damage-per-second', value: XAxisType.DPS},
+  {label: 'Time-to-kill', value: XAxisType.TTK},
   {label: 'Damage taken', value: XAxisType.DAMAGE_TAKEN}
 ]
 

@@ -66,25 +66,25 @@ const BoxResults = observer(() => {
           <p>18.71</p>
         </StatDisplay>
       </div>
-      <div className={'max-w-xl mx-auto bg-gray-700 md:rounded p-4 shadow mb-4'}>
-        <h3 className={'font-bold mb-2 text-white text-sm'}>
-            <IconChartBar className={'inline-block mr-1'} />
-            Toggle additional data and graphs
-        </h3>
-        <MultiSelect
-            id={'results-outputs'}
-            items={[{
-              label: 'Hit distribution graph',
-              value: AdditionalDataTypes.HIT_DISTRIBUTION
-            }, {
-              label: 'Loadout comparison graph',
-              value: AdditionalDataTypes.LOADOUT_COMPARISON
-            }]}
-            onSelectedItemChange={(it) => {
-              if (it) setAdditionalData(it.map((i) => i.value));
-            }}
-        />
-      </div>
+      {/*<div className={'max-w-xl mx-auto bg-gray-700 md:rounded p-4 shadow mb-4'}>*/}
+      {/*  <h3 className={'font-bold mb-2 text-white text-sm'}>*/}
+      {/*      <IconChartBar className={'inline-block mr-1'} />*/}
+      {/*      Toggle additional data and graphs*/}
+      {/*  </h3>*/}
+      {/*  <MultiSelect*/}
+      {/*      id={'results-outputs'}*/}
+      {/*      items={[{*/}
+      {/*        label: 'Hit distribution graph',*/}
+      {/*        value: AdditionalDataTypes.HIT_DISTRIBUTION*/}
+      {/*      }, {*/}
+      {/*        label: 'Loadout comparison graph',*/}
+      {/*        value: AdditionalDataTypes.LOADOUT_COMPARISON*/}
+      {/*      }]}*/}
+      {/*      onSelectedItemChange={(it) => {*/}
+      {/*        if (it) setAdditionalData(it.map((i) => i.value));*/}
+      {/*      }}*/}
+      {/*  />*/}
+      {/*</div>*/}
       <div className={'flex gap-4 flex-wrap'}>
         {
           additionalData.includes(AdditionalDataTypes.HIT_DISTRIBUTION) && (
