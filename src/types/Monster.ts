@@ -1,4 +1,4 @@
-import {CombatStyleType} from '@/types/Player';
+import {CombatStyleType} from "@/types/PlayerCombatStyle";
 
 export interface Monster {
   name: string;

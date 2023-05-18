@@ -1,4 +1,4 @@
-import {PlayerCombatStyle} from '@/types/Player';
+import {PlayerCombatStyle} from "@/types/PlayerCombatStyle";
 
 /**
  * The category of the weapon being used.

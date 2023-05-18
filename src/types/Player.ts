@@ -2,6 +2,7 @@ import {EquipmentCategory} from '@/enums/EquipmentCategory';
 import {Prayer} from '@/enums/Prayer';
 import {Potion} from '@/enums/Potion';
 import {Spell} from '@/types/Spell';
+import {PlayerCombatStyle} from "@/types/PlayerCombatStyle";
 
 export interface PlayerSkills {
   atk: number;
@@ -101,11 +102,3 @@ export interface Player {
   spell: Spell
 }
 
-// The available types of combat styles. These directly translate into defensive bonuses for monsters too.
-export type CombatStyleType = 'slash' | 'crush' | 'stab' | 'magic' | 'ranged';
-
-export interface PlayerCombatStyle {
-  name: string,
-  type: CombatStyleType,
-  stance: string,
-}
