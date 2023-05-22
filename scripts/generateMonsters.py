@@ -58,7 +58,7 @@ def main():
         po = v['printouts']
         monster = {
             'id': getPrintoutValue(po['NPC ID']),
-            'name': getPrintoutValue(po['Name']) or '',
+            'name': k.rsplit('#', 1)[0] or '',
             'version': getPrintoutValue(po['Version anchor']) or '',
             'image': '' if not po['Image'] else po['Image'][0]['fulltext'].replace('File:', ''),
             'level': getPrintoutValue(po['Combat level']) or 0,

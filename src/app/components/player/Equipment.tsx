@@ -3,7 +3,6 @@ import EquipmentSelect from './EquipmentSelect';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
 import {getWikiImage} from '@/utils';
-import {IconTrash} from '@tabler/icons-react';
 import {PlayerEquipment} from '@/types/Player';
 
 import head from '@/public/img/slots/head.png';
@@ -79,30 +78,13 @@ const EquipmentGrid: React.FC = () => {
   )
 }
 
-const Equipment: React.FC = observer(() => {
-  const store = useStore();
-  const {equipment} = store.player;
-
+const Equipment: React.FC = () => {
   return (
     <div className={'px-6 mt-4'}>
       <div className={'flex justify-between'}>
         <h4 className={`font-bold font-serif flex justify-between`}>
           Equipment
         </h4>
-        <div>
-          <button
-            className={'text-sm'}
-            data-tooltip-id={'tooltip'}
-            data-tooltip-content={'Clear'}
-            onClick={() => {
-              for (let k of Object.keys(equipment)) {
-                store.clearEquipmentSlot(k as keyof PlayerEquipment);
-              }
-            }}
-          >
-            <IconTrash className={'w-[20px] text-body-500 hover:text-red transition-colors'} />
-          </button>
-        </div>
       </div>
       <div className={'mt-4'}>
         <EquipmentGrid />
@@ -113,6 +95,6 @@ const Equipment: React.FC = observer(() => {
     </div>
 
   )
-})
+}
 
 export default Equipment;

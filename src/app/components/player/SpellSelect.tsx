@@ -35,6 +35,7 @@ const SpellSelect: React.FC = observer(() => {
     className={'w-full'}
     items={options}
     placeholder={'Search for spell...'}
+    blurAfterSelect={true}
     onSelectedItemChange={(item) => {
       if (item) {
         const val = item as SpellOption;

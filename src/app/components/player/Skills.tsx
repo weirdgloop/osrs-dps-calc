@@ -43,7 +43,7 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
                     required
                     min={1}
                     max={99}
-                    value={player.skills[field]}
+                    value={player.skills[field].toString()}
                     onChange={(v) => {
                         store.updatePlayer({
                             skills: {
@@ -66,8 +66,7 @@ const UsernameLookup: React.FC = observer(() => {
     useEffect(() => {
         // When the username changes, set it in the browser storage, if the preference is enabled.
         if (shouldRemember) {
-            localforage.setItem('dps-calc-username', username).catch(() => {
-            });
+            localforage.setItem('dps-calc-username', username).catch(() => {});
         }
     }, [shouldRemember, username]);
 
@@ -77,9 +76,9 @@ const UsernameLookup: React.FC = observer(() => {
             localforage.getItem('dps-calc-username').then((u) => {
                 // Set the username
                 setUsername(u as string);
-            }).catch(() => {
-            });
+            }).catch(() => {});
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -90,6 +89,11 @@ const UsernameLookup: React.FC = observer(() => {
                 placeholder={'Username'}
                 value={username}
                 onChange={(e) => setUsername(e.currentTarget.value)}
+                onKeyUp={(e) => {
+                    if (e.key === 'Enter') {
+                        btn.current?.click();
+                    }
+                }}
             />
             <button
                 ref={btn}

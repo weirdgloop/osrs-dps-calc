@@ -11,26 +11,26 @@ import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
 import Select from "@/app/components/generic/Select";
 
-enum YAxisType {
+enum XAxisType {
   MONSTER_DEF,
   BASE_LEVEL,
 }
 
-enum XAxisType {
+enum YAxisType {
   TTK,
   DPS,
   DAMAGE_TAKEN
 }
 
 const XAxisOptions = [
-  {label: 'Damage-per-second', value: XAxisType.DPS},
-  {label: 'Time-to-kill', value: XAxisType.TTK},
-  {label: 'Damage taken', value: XAxisType.DAMAGE_TAKEN}
+  {label: 'Monster defence level', value: XAxisType.MONSTER_DEF},
+  {label: 'Player base levels', value: XAxisType.BASE_LEVEL},
 ]
 
 const YAxisOptions = [
-  {label: 'Monster defence level', value: YAxisType.MONSTER_DEF},
-  {label: 'Player base levels', value: YAxisType.BASE_LEVEL}
+  {label: 'Damage-per-second', value: YAxisType.DPS},
+  {label: 'Time-to-kill', value: YAxisType.TTK},
+  {label: 'Damage taken', value: YAxisType.DAMAGE_TAKEN}
 ]
 
 const LoadoutComparison: React.FC = observer(() => {

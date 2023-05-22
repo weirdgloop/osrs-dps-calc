@@ -60,6 +60,7 @@ const MonsterSelect: React.FC = observer(() => {
       items={options}
       placeholder={'Search for monster...'}
       resetAfterSelect={true}
+      blurAfterSelect={true}
       onSelectedItemChange={(item) => {
         if (item) {
           const val = item as MonsterOption;
@@ -70,10 +71,10 @@ const MonsterSelect: React.FC = observer(() => {
         let i = item as MonsterOption;
 
         return (
-          <div className={'flex items-center gap-0'}>
-            <div>{i.label}</div>
-            {i.version && <div className={'monster-version relative top-[1px] text-xs text-gray-400'}>#{i.version}</div>}
-          </div>
+            <div>
+              {i.label}
+              {i.version && <span className={'monster-version text-xs text-gray-400'}>#{i.version}</span>}
+            </div>
         )
       }}
     />

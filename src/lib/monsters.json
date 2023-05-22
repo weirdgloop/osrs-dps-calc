@@ -787,7 +787,7 @@
   },
   {
     "id": 6327,
-    "name": "Agrith Naar (hard)",
+    "name": "Agrith Naar",
     "version": "Hard",
     "image": "Agrith Naar.png",
     "level": 196,
@@ -853,7 +853,7 @@
   },
   {
     "id": 6308,
-    "name": "Agrith-Na-Na (hard)",
+    "name": "Agrith-Na-Na",
     "version": "Hard",
     "image": "Agrith-Na-Na.png",
     "level": 235,
@@ -1020,7 +1020,7 @@
   },
   {
     "id": 1559,
-    "name": "Air Wizard",
+    "name": "Air wizard",
     "version": "",
     "image": "Air wizard.png",
     "level": 13,
@@ -1490,7 +1490,7 @@
   },
   {
     "id": 10666,
-    "name": "Rubble",
+    "name": "Ancient Guardian",
     "version": "Rubble",
     "image": "Rubble (Ancient Guardian).png",
     "level": 25,
@@ -2253,7 +2253,7 @@
   },
   {
     "id": 6438,
-    "name": "Animated steel armour",
+    "name": "Animated steel armour (Tarn's Lair)",
     "version": "",
     "image": "Animated steel armour (Tarn's Lair).png",
     "level": 53,
@@ -2664,7 +2664,7 @@
   },
   {
     "id": 3301,
-    "name": "Archer",
+    "name": "Archer (Ardougne)",
     "version": "",
     "image": "Archer (Ardougne).png",
     "level": 37,
@@ -2697,7 +2697,7 @@
   },
   {
     "id": 4096,
-    "name": "Archer",
+    "name": "Archer (Burthorpe)",
     "version": "",
     "image": "Archer (Burthorpe).png",
     "level": 42,
@@ -2730,7 +2730,7 @@
   },
   {
     "id": 9246,
-    "name": "Arianwyn (hard)",
+    "name": "Arianwyn",
     "version": "",
     "image": "Arianwyn (Song of the Elves).png",
     "level": 378,
@@ -2862,7 +2862,7 @@
   },
   {
     "id": 6331,
-    "name": "Arrg (hard)",
+    "name": "Arrg",
     "version": "Hard",
     "image": "Arrg.png",
     "level": 210,
@@ -2965,7 +2965,7 @@
     "version": "",
     "image": "Artio.png",
     "level": 320,
-    "speed": 4,
+    "speed": 5,
     "size": 3,
     "skills": [
       250,
@@ -3324,7 +3324,7 @@
   },
   {
     "id": 10940,
-    "name": "Assassin",
+    "name": "Assassin (A Kingdom Divided)",
     "version": "",
     "image": "Assassin (A Kingdom Divided, 1).png",
     "level": 132,
@@ -3394,7 +3394,7 @@
   },
   {
     "id": 1283,
-    "name": "Asyn Shadow",
+    "name": "Asyn Shade",
     "version": "Shadow",
     "image": "Asyn Shadow.png",
     "level": 100,
@@ -3430,7 +3430,7 @@
   },
   {
     "id": 5632,
-    "name": "Asyn shadow",
+    "name": "Asyn shadow (Temple Trekking)",
     "version": "",
     "image": "Asyn Shade.png",
     "level": 110,
@@ -4458,7 +4458,7 @@
   },
   {
     "id": null,
-    "name": "Baby blue dragon",
+    "name": "Baby blue dragon (20th Anniversary event)",
     "version": "",
     "image": "Baby blue dragon (20th Anniversary event).png",
     "level": 0,
@@ -4596,7 +4596,7 @@
   },
   {
     "id": null,
-    "name": "Baby dragon",
+    "name": "Baby dragon (unused)",
     "version": "",
     "image": "Baby dragon (unused).png",
     "level": 48,
@@ -4800,7 +4800,7 @@
   },
   {
     "id": 137,
-    "name": "Baby red dragon",
+    "name": "Baby red dragon (Construction)",
     "version": "",
     "image": "Baby red dragon (Construction) built.png",
     "level": 65,
@@ -5039,7 +5039,7 @@
   },
   {
     "id": 695,
-    "name": "Bandit",
+    "name": "Bandit (Bandit Camp)",
     "version": "Level 57",
     "image": "Bandit (Bandit Camp).png",
     "level": 57,
@@ -5072,7 +5072,7 @@
   },
   {
     "id": 690,
-    "name": "Bandit",
+    "name": "Bandit (Bandit Camp)",
     "version": "Level 74",
     "image": "Bandit (Bandit Camp).png",
     "level": 74,
@@ -5105,7 +5105,7 @@
   },
   {
     "id": 736,
-    "name": "Bandit",
+    "name": "Bandit (Pollnivneach)",
     "version": "Bearded",
     "image": "Bandit (Pollnivneach, bearded).png",
     "level": 41,
@@ -5138,7 +5138,7 @@
   },
   {
     "id": 734,
-    "name": "Bandit",
+    "name": "Bandit (Pollnivneach)",
     "version": "No beard",
     "image": "Bandit (Pollnivneach, no beard).png",
     "level": 56,
@@ -5171,7 +5171,7 @@
   },
   {
     "id": 11063,
-    "name": "Bandit",
+    "name": "Bandit (Shayzien)",
     "version": "",
     "image": "Bandit (Shayzien).png",
     "level": 22,
@@ -5372,7 +5372,7 @@
   },
   {
     "id": 10984,
-    "name": "Barbarian",
+    "name": "Barbarian (Barbarian Camp)",
     "version": "Level 10 (2h sword)",
     "image": "Barbarian (Acelin).png",
     "level": 10,
@@ -5405,7 +5405,7 @@
   },
   {
     "id": 10985,
-    "name": "Barbarian",
+    "name": "Barbarian (Barbarian Camp)",
     "version": "Level 10 (greataxe)",
     "image": "Barbarian (Adelino).png",
     "level": 10,
@@ -5438,7 +5438,7 @@
   },
   {
     "id": 10987,
-    "name": "Barbarian",
+    "name": "Barbarian (Barbarian Camp)",
     "version": "Level 10 (spear)",
     "image": "Barbarian (Gutrune).png",
     "level": 10,
@@ -5471,7 +5471,7 @@
   },
   {
     "id": 10986,
-    "name": "Barbarian",
+    "name": "Barbarian (Barbarian Camp)",
     "version": "Level 15",
     "image": "Barbarian (Aitan).png",
     "level": 15,
@@ -5504,7 +5504,7 @@
   },
   {
     "id": 10988,
-    "name": "Barbarian",
+    "name": "Barbarian (Barbarian Camp)",
     "version": "Level 9",
     "image": "Barbarian (Sieglinde).png",
     "level": 9,
@@ -5570,7 +5570,7 @@
   },
   {
     "id": null,
-    "name": "Barbarian woman",
+    "name": "Barbarian woman (historical)",
     "version": "",
     "image": "Barbarian woman (historical).png",
     "level": 8,
@@ -6230,7 +6230,7 @@
   },
   {
     "id": 1126,
-    "name": "Barrelchest (hard)",
+    "name": "Barrelchest",
     "version": "Hard",
     "image": "Barrelchest.png",
     "level": 380,
@@ -7288,7 +7288,7 @@
   },
   {
     "id": 4934,
-    "name": "Black Knight",
+    "name": "Black Knight (Wanted!)",
     "version": "",
     "image": "Black Knight (Wanted!).png",
     "level": 32,
@@ -7321,7 +7321,7 @@
   },
   {
     "id": 6299,
-    "name": "Black Knight Titan (hard)",
+    "name": "Black Knight Titan",
     "version": "Hard",
     "image": "Black Knight Titan.png",
     "level": 210,
@@ -7585,7 +7585,7 @@
   },
   {
     "id": 2912,
-    "name": "Black chinchompa",
+    "name": "Black chinchompa (Hunter)",
     "version": "",
     "image": "Black chinchompa (Hunter).png",
     "level": 2,
@@ -7618,7 +7618,7 @@
   },
   {
     "id": null,
-    "name": "Black demon",
+    "name": "Black demon (20th Anniversary event)",
     "version": "",
     "image": "Black demon (20th Anniversary event).png",
     "level": 0,
@@ -7651,7 +7651,7 @@
   },
   {
     "id": 6295,
-    "name": "Black demon (hard)",
+    "name": "Black demon (The Grand Tree)",
     "version": "Hard",
     "image": "Black demon (hard) (The Grand Tree).png",
     "level": 292,
@@ -7686,7 +7686,7 @@
   },
   {
     "id": 1432,
-    "name": "Black demon",
+    "name": "Black demon (The Grand Tree)",
     "version": "Normal",
     "image": "Black demon (The Grand Tree).png",
     "level": 172,
@@ -7861,7 +7861,7 @@
   },
   {
     "id": null,
-    "name": "Black dragon",
+    "name": "Black dragon (20th Anniversary event)",
     "version": "",
     "image": "Black dragon (20th Anniversary event).png",
     "level": 0,
@@ -8001,7 +8001,7 @@
   },
   {
     "id": 1545,
-    "name": "Black knight",
+    "name": "Black knight (Port Sarim Jail)",
     "version": "",
     "image": "Black knight (Port Sarim Jail).png",
     "level": 33,
@@ -8504,7 +8504,7 @@
   },
   {
     "id": null,
-    "name": "Blue dragon",
+    "name": "Blue dragon (20th Anniversary event)",
     "version": "",
     "image": "Blue dragon (20th Anniversary event).png",
     "level": 0,
@@ -8998,7 +8998,7 @@
   },
   {
     "id": 10692,
-    "name": "Rubble",
+    "name": "Body Golem",
     "version": "Rubble",
     "image": "Rubble (Body Golem).png",
     "level": 50,
@@ -9097,7 +9097,7 @@
   },
   {
     "id": 3508,
-    "name": "Bouncer",
+    "name": "Bouncer (ghost)",
     "version": "",
     "image": "Bouncer (ghost).png",
     "level": 160,
@@ -9130,7 +9130,7 @@
   },
   {
     "id": 6293,
-    "name": "Bouncer (hard)",
+    "name": "Bouncer",
     "version": "Hard",
     "image": "Bouncer.png",
     "level": 244,
@@ -10639,7 +10639,7 @@
   },
   {
     "id": 6437,
-    "name": "Cave goblin",
+    "name": "Cave goblin (monster)",
     "version": "Backpack",
     "image": "Cave goblin (monster, backpack).png",
     "level": 3,
@@ -10672,7 +10672,7 @@
   },
   {
     "id": 6435,
-    "name": "Cave goblin",
+    "name": "Cave goblin (monster)",
     "version": "Beige",
     "image": "Cave goblin (monster, beige).png",
     "level": 3,
@@ -10705,7 +10705,7 @@
   },
   {
     "id": 6434,
-    "name": "Cave goblin",
+    "name": "Cave goblin (monster)",
     "version": "Blue",
     "image": "Cave goblin (monster, blue).png",
     "level": 3,
@@ -10738,7 +10738,7 @@
   },
   {
     "id": 6436,
-    "name": "Cave goblin",
+    "name": "Cave goblin (monster)",
     "version": "Brown",
     "image": "Cave goblin (monster, brown).png",
     "level": 3,
@@ -11167,7 +11167,7 @@
   },
   {
     "id": 493,
-    "name": "Whirlpool",
+    "name": "Cave kraken",
     "version": "Whirlpool",
     "image": "Whirlpool (cave kraken).png",
     "level": 127,
@@ -11501,7 +11501,7 @@
   },
   {
     "id": 10690,
-    "name": "Rubble",
+    "name": "Chaos Golem",
     "version": "Rubble",
     "image": "Rubble (Chaos Golem).png",
     "level": 70,
@@ -11765,7 +11765,7 @@
   },
   {
     "id": 3316,
-    "name": "Chicken",
+    "name": "Chicken (Tutorial Island)",
     "version": "",
     "image": "Chicken (Tutorial Island).png",
     "level": 3,
@@ -11897,7 +11897,7 @@
   },
   {
     "id": 2910,
-    "name": "Chinchompa",
+    "name": "Chinchompa (Hunter)",
     "version": "",
     "image": "Chinchompa (Hunter).png",
     "level": 1,
@@ -11996,7 +11996,7 @@
   },
   {
     "id": 6292,
-    "name": "Chronozon (hard)",
+    "name": "Chronozon",
     "version": "Hard",
     "image": "Chronozon.png",
     "level": 297,
@@ -12662,7 +12662,7 @@
   },
   {
     "id": 7996,
-    "name": "Corrupt Lizardman (hard)",
+    "name": "Corrupt Lizardman",
     "version": "Hard",
     "image": "Corrupt Lizardman.png",
     "level": 152,
@@ -13058,7 +13058,7 @@
   },
   {
     "id": 6332,
-    "name": "Count Draynor (hard)",
+    "name": "Count Draynor",
     "version": "Hard",
     "image": "Count Draynor.png",
     "level": 177,
@@ -13128,7 +13128,7 @@
   },
   {
     "id": 6340,
-    "name": "Cow (hard)",
+    "name": "Cow (Nightmare Zone)",
     "version": "Hard",
     "image": "Cow (hard) (Nightmare Zone).png",
     "level": 170,
@@ -13161,7 +13161,7 @@
   },
   {
     "id": 6401,
-    "name": "Cow",
+    "name": "Cow (Nightmare Zone)",
     "version": "Normal",
     "image": "Cow (Nightmare Zone).png",
     "level": 2,
@@ -13940,7 +13940,7 @@
   },
   {
     "id": 11705,
-    "name": "Crocodile",
+    "name": "Crocodile (Tombs of Amascut)",
     "version": "",
     "image": "Crocodile (Tombs of Amascut).png",
     "level": 71,
@@ -15031,7 +15031,7 @@
   },
   {
     "id": 6307,
-    "name": "Culinaromancer (hard)",
+    "name": "Culinaromancer",
     "version": "Hard",
     "image": "Culinaromancer.png",
     "level": 209,
@@ -15427,7 +15427,7 @@
   },
   {
     "id": 140,
-    "name": "Dagannoth",
+    "name": "Dagannoth (Construction)",
     "version": "",
     "image": "Dagannoth built.png",
     "level": 135,
@@ -15460,7 +15460,7 @@
   },
   {
     "id": 976,
-    "name": "Dagannoth",
+    "name": "Dagannoth (Horror from the Deep)",
     "version": "",
     "image": "Dagannoth.png",
     "level": 100,
@@ -15493,7 +15493,7 @@
   },
   {
     "id": 2259,
-    "name": "Dagannoth",
+    "name": "Dagannoth (Waterbirth Island)",
     "version": "Level 88",
     "image": "Dagannoth.png",
     "level": 88,
@@ -15526,7 +15526,7 @@
   },
   {
     "id": 3185,
-    "name": "Dagannoth",
+    "name": "Dagannoth (Waterbirth Island)",
     "version": "Level 90",
     "image": "Dagannoth.png",
     "level": 90,
@@ -15790,7 +15790,7 @@
   },
   {
     "id": 6300,
-    "name": "Dagannoth mother (hard)",
+    "name": "Dagannoth mother",
     "version": "Hard",
     "image": "Dagannoth mother white.png",
     "level": 201,
@@ -16089,7 +16089,7 @@
   },
   {
     "id": 1134,
-    "name": "Damis (hard)",
+    "name": "Damis",
     "version": "First form (hard)",
     "image": "Damis first form.png",
     "level": 200,
@@ -16155,7 +16155,7 @@
   },
   {
     "id": 1135,
-    "name": "Damis (hard)",
+    "name": "Damis",
     "version": "Second form (hard)",
     "image": "Damis.png",
     "level": 272,
@@ -17124,7 +17124,7 @@
   },
   {
     "id": 142,
-    "name": "Demon",
+    "name": "Demon (Construction)",
     "version": "",
     "image": "Demon (Construction).png",
     "level": 82,
@@ -17554,41 +17554,8 @@
     "attributes": []
   },
   {
-    "id": 3544,
-    "name": "Desert snake",
-    "version": "",
-    "image": "Desert snake.png",
-    "level": 5,
-    "speed": 4,
-    "size": 1,
-    "skills": [
-      4,
-      3,
-      6,
-      1,
-      1,
-      5
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 6311,
-    "name": "Dessourt (hard)",
+    "name": "Dessourt",
     "version": "Hard",
     "image": "Dessourt.png",
     "level": 217,
@@ -17654,7 +17621,7 @@
   },
   {
     "id": 1128,
-    "name": "Dessous (hard)",
+    "name": "Dessous",
     "version": "Hard",
     "image": "Dessous.png",
     "level": 217,
@@ -17927,7 +17894,7 @@
   },
   {
     "id": 302,
-    "name": "Donny the Lad",
+    "name": "Donny the lad",
     "version": "",
     "image": "Donny the lad.png",
     "level": 34,
@@ -18361,7 +18328,7 @@
   {
     "id": 2865,
     "name": "Dungeon rat",
-    "version": "Large",
+    "version": "Doesn't drop tail",
     "image": "Dungeon rat.png",
     "level": 12,
     "speed": 4,
@@ -18394,11 +18361,44 @@
   {
     "id": 3607,
     "name": "Dungeon rat",
-    "version": "Small",
+    "version": "",
     "image": "Dungeon rat.png",
     "level": 12,
     "speed": 4,
     "size": 1,
+    "skills": [
+      10,
+      10,
+      12,
+      1,
+      1,
+      10
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 2866,
+    "name": "Dungeon rat",
+    "version": "Standard",
+    "image": "Dungeon rat.png",
+    "level": 12,
+    "speed": 4,
+    "size": 2,
     "skills": [
       10,
       10,
@@ -19053,7 +19053,7 @@
   },
   {
     "id": 1558,
-    "name": "Earth Wizard",
+    "name": "Earth wizard",
     "version": "",
     "image": "Earth wizard.png",
     "level": 13,
@@ -19482,7 +19482,7 @@
   },
   {
     "id": 6118,
-    "name": "Elvarg (hard)",
+    "name": "Elvarg",
     "version": "Hard",
     "image": "Elvarg.png",
     "level": 214,
@@ -19647,7 +19647,7 @@
   },
   {
     "id": 5534,
-    "name": "Whirlpool",
+    "name": "Enormous Tentacle",
     "version": "Whirlpool",
     "image": "Whirlpool.png",
     "level": 0,
@@ -19880,7 +19880,7 @@
   },
   {
     "id": 9247,
-    "name": "Essyllt (hard)",
+    "name": "Essyllt",
     "version": "",
     "image": "Essyllt (Song of the Elves).png",
     "level": 395,
@@ -20012,7 +20012,7 @@
   },
   {
     "id": 6306,
-    "name": "Evil Chicken (hard)",
+    "name": "Evil Chicken (Recipe for Disaster)",
     "version": "Hard",
     "image": "Evil Chicken.png",
     "level": 286,
@@ -20045,7 +20045,7 @@
   },
   {
     "id": 1870,
-    "name": "Evil Chicken",
+    "name": "Evil Chicken (Recipe for Disaster)",
     "version": "Normal",
     "image": "Evil Chicken.png",
     "level": 159,
@@ -20245,7 +20245,7 @@
   },
   {
     "id": 4115,
-    "name": "Fareed (hard)",
+    "name": "Fareed",
     "version": "Hard",
     "image": "Fareed.png",
     "level": 299,
@@ -21164,7 +21164,7 @@
   },
   {
     "id": 1285,
-    "name": "Fiyr Shadow",
+    "name": "Fiyr Shade",
     "version": "Shadow",
     "image": "Fiyr Shadow.png",
     "level": 120,
@@ -21200,7 +21200,7 @@
   },
   {
     "id": 6309,
-    "name": "Flambeed (hard)",
+    "name": "Flambeed",
     "version": "Hard",
     "image": "Flambeed.png",
     "level": 238,
@@ -21336,7 +21336,7 @@
   },
   {
     "id": 10696,
-    "name": "Rubble",
+    "name": "Flawed Golem",
     "version": "Rubble",
     "image": "Rubble (Flawed Golem).png",
     "level": 13,
@@ -21369,7 +21369,7 @@
   },
   {
     "id": 2498,
-    "name": "Flesh crawler",
+    "name": "Flesh Crawler",
     "version": "Level 28",
     "image": "Flesh Crawler.png",
     "level": 28,
@@ -21402,7 +21402,7 @@
   },
   {
     "id": 2499,
-    "name": "Flesh crawler",
+    "name": "Flesh Crawler",
     "version": "Level 35",
     "image": "Flesh Crawler.png",
     "level": 35,
@@ -21435,7 +21435,7 @@
   },
   {
     "id": 2500,
-    "name": "Flesh crawler",
+    "name": "Flesh Crawler",
     "version": "Level 41",
     "image": "Flesh Crawler.png",
     "level": 41,
@@ -21567,7 +21567,7 @@
   },
   {
     "id": 11193,
-    "name": "Flower",
+    "name": "Flower (A Night at the Theatre)",
     "version": "",
     "image": "Flower (A Night at the Theatre).png",
     "level": 0,
@@ -21699,7 +21699,7 @@
   },
   {
     "id": 10523,
-    "name": "Forgotten Soul",
+    "name": "Forgotten Soul (Soul Wars)",
     "version": "Level 46",
     "image": "Forgotten Soul.png",
     "level": 46,
@@ -21734,7 +21734,7 @@
   },
   {
     "id": 10525,
-    "name": "Forgotten Soul",
+    "name": "Forgotten Soul (Soul Wars)",
     "version": "Level 76",
     "image": "Forgotten Soul (2).png",
     "level": 76,
@@ -22545,9 +22545,42 @@
     "attributes": []
   },
   {
+    "id": 1543,
+    "name": "Gargoyle",
+    "version": "Basement",
+    "image": "Gargoyle.png",
+    "level": 111,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      75,
+      107,
+      105,
+      1,
+      1,
+      105
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      20,
+      20,
+      20,
+      20
+    ],
+    "attributes": []
+  },
+  {
     "id": 412,
     "name": "Gargoyle",
-    "version": "",
+    "version": "Upstairs",
     "image": "Gargoyle.png",
     "level": 111,
     "speed": 4,
@@ -22579,7 +22612,7 @@
   },
   {
     "id": 6312,
-    "name": "Gelatinnoth Mother (hard)",
+    "name": "Gelatinnoth Mother",
     "version": "Hard",
     "image": "Gelatinnoth Mother (air).png",
     "level": 201,
@@ -22950,7 +22983,7 @@
   },
   {
     "id": 5370,
-    "name": "Ghost",
+    "name": "Ghost (Grave of Scorpius)",
     "version": "",
     "image": "Ghost (Grave of Scorpius).png",
     "level": 24,
@@ -22986,7 +23019,7 @@
   },
   {
     "id": 3975,
-    "name": "Ghost",
+    "name": "Ghost (Melzar's Maze)",
     "version": "1",
     "image": "Ghost (Melzar's Maze).png",
     "level": 19,
@@ -23022,7 +23055,7 @@
   },
   {
     "id": 3976,
-    "name": "Ghost",
+    "name": "Ghost (Melzar's Maze)",
     "version": "2",
     "image": "Ghost (Melzar's Maze, 2).png",
     "level": 19,
@@ -23058,7 +23091,7 @@
   },
   {
     "id": 3977,
-    "name": "Ghost",
+    "name": "Ghost (Melzar's Maze)",
     "version": "3",
     "image": "Ghost (Melzar's Maze, 3).png",
     "level": 19,
@@ -23094,7 +23127,7 @@
   },
   {
     "id": 3978,
-    "name": "Ghost",
+    "name": "Ghost (Melzar's Maze)",
     "version": "4",
     "image": "Ghost (Melzar's Maze, 4).png",
     "level": 19,
@@ -23130,7 +23163,7 @@
   },
   {
     "id": 3979,
-    "name": "Ghost",
+    "name": "Ghost (Melzar's Maze)",
     "version": "5",
     "image": "Ghost (Melzar's Maze, 5).png",
     "level": 19,
@@ -23475,7 +23508,7 @@
   },
   {
     "id": 6323,
-    "name": "Giant Roc (hard)",
+    "name": "Giant Roc",
     "version": "Hard",
     "image": "Giant Roc.png",
     "level": 257,
@@ -23607,7 +23640,7 @@
   },
   {
     "id": 1127,
-    "name": "Giant Scarab (hard)",
+    "name": "Giant Scarab",
     "version": "Hard",
     "image": "Giant Scarab.png",
     "level": 316,
@@ -23904,7 +23937,7 @@
   },
   {
     "id": 4799,
-    "name": "Giant Lobster",
+    "name": "Giant lobster",
     "version": "",
     "image": "Giant lobster.png",
     "level": 45,
@@ -23937,7 +23970,7 @@
   },
   {
     "id": 2994,
-    "name": "Giant lobster",
+    "name": "Giant lobster (Ghosts Ahoy)",
     "version": "",
     "image": "Giant lobster (Ghosts Ahoy).png",
     "level": 32,
@@ -23998,6 +24031,105 @@
       0,
       2,
       2
+    ],
+    "attributes": []
+  },
+  {
+    "id": 3314,
+    "name": "Giant rat (Tutorial Island)",
+    "version": "Unused, 1",
+    "image": "Giant rat (Tutorial Island, 2).png",
+    "level": 3,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      1,
+      1,
+      3,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      -100,
+      0,
+      -100,
+      -100,
+      -100
+    ],
+    "attributes": []
+  },
+  {
+    "id": 3315,
+    "name": "Giant rat (Tutorial Island)",
+    "version": "Unused, 2",
+    "image": "Giant rat (Tutorial Island, 3).png",
+    "level": 3,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      1,
+      1,
+      3,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      -100,
+      0,
+      -100,
+      -100,
+      -100
+    ],
+    "attributes": []
+  },
+  {
+    "id": 3313,
+    "name": "Giant rat (Tutorial Island)",
+    "version": "Used",
+    "image": "Giant rat (Tutorial Island, 1).png",
+    "level": 3,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      1,
+      1,
+      3,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      -100,
+      0,
+      -100,
+      -100,
+      -100
     ],
     "attributes": []
   },
@@ -24101,39 +24233,6 @@
     "attributes": []
   },
   {
-    "id": 3313,
-    "name": "Giant rat",
-    "version": "Tutorial Island",
-    "image": "Giant rat.png",
-    "level": 3,
-    "speed": 4,
-    "size": 2,
-    "skills": [
-      1,
-      1,
-      3,
-      1,
-      1,
-      1
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      -100,
-      0,
-      -100,
-      -100,
-      -100
-    ],
-    "attributes": []
-  },
-  {
     "id": 7392,
     "name": "Giant rockslug",
     "version": "",
@@ -24168,7 +24267,7 @@
   },
   {
     "id": 680,
-    "name": "Giant skeleton",
+    "name": "Giant skeleton (Shadow Dungeon)",
     "version": "1",
     "image": "Giant skeleton (Shadow Dungeon).png",
     "level": 80,
@@ -24203,7 +24302,7 @@
   },
   {
     "id": 681,
-    "name": "Giant skeleton",
+    "name": "Giant skeleton (Shadow Dungeon)",
     "version": "2",
     "image": "Giant skeleton (Shadow Dungeon, 2).png",
     "level": 80,
@@ -24238,7 +24337,7 @@
   },
   {
     "id": 6440,
-    "name": "Giant skeleton",
+    "name": "Giant skeleton (Tarn's Lair)",
     "version": "",
     "image": "Giant skeleton (Tarn's Lair).png",
     "level": 100,
@@ -24504,7 +24603,7 @@
   },
   {
     "id": 6297,
-    "name": "Glod (hard)",
+    "name": "Glod",
     "version": "Hard",
     "image": "Glod.png",
     "level": 276,
@@ -25201,7 +25300,7 @@
   },
   {
     "id": 662,
-    "name": "Goblin",
+    "name": "Goblin (Goblin Village)",
     "version": "Green",
     "image": "Goblin (green).png",
     "level": 5,
@@ -25234,7 +25333,7 @@
   },
   {
     "id": 655,
-    "name": "Goblin",
+    "name": "Goblin (Goblin Village)",
     "version": "Red",
     "image": "Goblin (red).png",
     "level": 5,
@@ -25267,7 +25366,7 @@
   },
   {
     "id": 2246,
-    "name": "Goblin",
+    "name": "Goblin (God Wars Dungeon)",
     "version": "Level 12",
     "image": "Goblin (level 12).png",
     "level": 12,
@@ -25300,7 +25399,7 @@
   },
   {
     "id": 2247,
-    "name": "Goblin",
+    "name": "Goblin (God Wars Dungeon)",
     "version": "Level 12 (banner)",
     "image": "Goblin (level 12, banner).png",
     "level": 12,
@@ -25333,7 +25432,7 @@
   },
   {
     "id": 2249,
-    "name": "Goblin",
+    "name": "Goblin (God Wars Dungeon)",
     "version": "Level 13",
     "image": "Goblin (level 13, GWD).png",
     "level": 13,
@@ -25366,7 +25465,7 @@
   },
   {
     "id": 2248,
-    "name": "Goblin",
+    "name": "Goblin (God Wars Dungeon)",
     "version": "Level 15",
     "image": "Goblin (level 15).png",
     "level": 15,
@@ -25399,7 +25498,7 @@
   },
   {
     "id": 2245,
-    "name": "Goblin",
+    "name": "Goblin (God Wars Dungeon)",
     "version": "Level 17",
     "image": "Goblin (level 17).png",
     "level": 17,
@@ -25432,7 +25531,7 @@
   },
   {
     "id": 2486,
-    "name": "Goblin",
+    "name": "Goblin (Vault of War)",
     "version": "Level 11",
     "image": "Goblin (level 11).png",
     "level": 11,
@@ -25465,7 +25564,7 @@
   },
   {
     "id": 2485,
-    "name": "Goblin",
+    "name": "Goblin (Vault of War)",
     "version": "Level 13",
     "image": "Goblin (level 13, SoS).png",
     "level": 13,
@@ -25498,7 +25597,7 @@
   },
   {
     "id": 2487,
-    "name": "Goblin",
+    "name": "Goblin (Vault of War)",
     "version": "Level 16",
     "image": "Goblin (level 16).png",
     "level": 16,
@@ -25531,7 +25630,7 @@
   },
   {
     "id": 2488,
-    "name": "Goblin",
+    "name": "Goblin (Vault of War)",
     "version": "Level 25",
     "image": "Goblin (level 25).png",
     "level": 25,
@@ -25564,7 +25663,7 @@
   },
   {
     "id": 2484,
-    "name": "Goblin",
+    "name": "Goblin (Vault of War)",
     "version": "Level 5",
     "image": "Goblin (level 5, Stronghold).png",
     "level": 5,
@@ -25597,7 +25696,7 @@
   },
   {
     "id": 677,
-    "name": "Goblin",
+    "name": "Goblin (historical)",
     "version": "Green (original)",
     "image": "Goblin (green) (historical v1).png",
     "level": 5,
@@ -25630,7 +25729,7 @@
   },
   {
     "id": 3048,
-    "name": "Goblin",
+    "name": "Goblin (historical)",
     "version": "Green (updated)",
     "image": "Goblin (green) (historical v3).png",
     "level": 5,
@@ -25663,7 +25762,7 @@
   },
   {
     "id": 678,
-    "name": "Goblin",
+    "name": "Goblin (historical)",
     "version": "Red (original)",
     "image": "Goblin (red) (historical v1).png",
     "level": 5,
@@ -25696,7 +25795,7 @@
   },
   {
     "id": 3047,
-    "name": "Goblin",
+    "name": "Goblin (historical)",
     "version": "Red (updated)",
     "image": "Goblin (red) (historical v3).png",
     "level": 5,
@@ -26125,7 +26224,7 @@
   },
   {
     "id": 2836,
-    "name": "Golem",
+    "name": "Golem (unused NPC)",
     "version": "",
     "image": "Golem (unused).png",
     "level": 55,
@@ -26257,7 +26356,7 @@
   },
   {
     "id": 1637,
-    "name": "Gourmet Impling",
+    "name": "Gourmet impling",
     "version": "",
     "image": "Gourmet impling.png",
     "level": 0,
@@ -26395,7 +26494,7 @@
   },
   {
     "id": 7552,
-    "name": "Great Olm (Left claw)",
+    "name": "Great Olm",
     "version": "Left claw",
     "image": "Great Olm.png",
     "level": 750,
@@ -26431,7 +26530,7 @@
   },
   {
     "id": 7555,
-    "name": "Great Olm (Left claw)",
+    "name": "Great Olm",
     "version": "Left claw (Challenge Mode)",
     "image": "Great Olm.png",
     "level": 750,
@@ -26467,7 +26566,7 @@
   },
   {
     "id": 7550,
-    "name": "Great Olm (Right claw)",
+    "name": "Great Olm",
     "version": "Right claw",
     "image": "Great Olm.png",
     "level": 549,
@@ -26503,7 +26602,7 @@
   },
   {
     "id": 7553,
-    "name": "Great Olm (Right claw)",
+    "name": "Great Olm",
     "version": "Right claw (Challenge Mode)",
     "image": "Great Olm.png",
     "level": 549,
@@ -26609,7 +26708,7 @@
   },
   {
     "id": 12108,
-    "name": "Greater Skeleton Hellhound",
+    "name": "Greater Skeleton Hellhound (Calvar'ion)",
     "version": "",
     "image": "Greater Skeleton Hellhound (Calvar'ion).png",
     "level": 139,
@@ -26642,7 +26741,7 @@
   },
   {
     "id": 6614,
-    "name": "Greater Skeleton Hellhound",
+    "name": "Greater Skeleton Hellhound (Vet'ion)",
     "version": "",
     "image": "Greater Skeleton Hellhound (Vet'ion).png",
     "level": 231,
@@ -26712,7 +26811,7 @@
   },
   {
     "id": null,
-    "name": "Greater demon",
+    "name": "Greater demon (20th Anniversary event)",
     "version": "",
     "image": "Greater demon (20th Anniversary event).png",
     "level": 0,
@@ -27093,7 +27192,7 @@
   },
   {
     "id": 11989,
-    "name": "Grizzly bear",
+    "name": "Grizzly bear (Escape Caves)",
     "version": "",
     "image": "Grizzly bear (Escape Caves).png",
     "level": 83,
@@ -27324,7 +27423,7 @@
   },
   {
     "id": 5141,
-    "name": "Guard",
+    "name": "Guard (Another Slice of H.A.M.)",
     "version": "",
     "image": "Guard (Another Slice of H.A.M.).png",
     "level": 22,
@@ -27357,7 +27456,7 @@
   },
   {
     "id": 4099,
-    "name": "Guard",
+    "name": "Guard (Burthorpe)",
     "version": "Black beard",
     "image": "Guard (Burthorpe).png",
     "level": 37,
@@ -27390,7 +27489,7 @@
   },
   {
     "id": 4100,
-    "name": "Guard",
+    "name": "Guard (Burthorpe)",
     "version": "Grey beard",
     "image": "Guard (Burthorpe, grey).png",
     "level": 37,
@@ -27423,7 +27522,7 @@
   },
   {
     "id": 2316,
-    "name": "Guard",
+    "name": "Guard (Cave goblin)",
     "version": "Bone club",
     "image": "Guard (Cave goblin with bone club).png",
     "level": 26,
@@ -27456,7 +27555,7 @@
   },
   {
     "id": 2317,
-    "name": "Guard",
+    "name": "Guard (Cave goblin)",
     "version": "Bone spear",
     "image": "Guard (Cave goblin with bone spear).png",
     "level": 24,
@@ -27489,7 +27588,7 @@
   },
   {
     "id": 6576,
-    "name": "Guard",
+    "name": "Guard (Deadman Mode)",
     "version": "Catherby",
     "image": "Guard (Deadman Mode, Catherby).png",
     "level": 1337,
@@ -27522,7 +27621,7 @@
   },
   {
     "id": 6579,
-    "name": "Guard",
+    "name": "Guard (Deadman Mode)",
     "version": "East Ardougne",
     "image": "Guard (Deadman Mode, East Ardougne).png",
     "level": 1337,
@@ -27555,7 +27654,7 @@
   },
   {
     "id": 6581,
-    "name": "Guard",
+    "name": "Guard (Deadman Mode)",
     "version": "Falador",
     "image": "Guard (Deadman Mode, Falador).png",
     "level": 1337,
@@ -27588,7 +27687,7 @@
   },
   {
     "id": 6700,
-    "name": "Guard",
+    "name": "Guard (Deadman Mode)",
     "version": "Fremennik Isles",
     "image": "Guard (Deadman Mode, Fremennik Isles).png",
     "level": 1337,
@@ -27621,7 +27720,7 @@
   },
   {
     "id": 6574,
-    "name": "Gnome guard",
+    "name": "Guard (Deadman Mode)",
     "version": "Gnome guard",
     "image": "Gnome guard (Deadman Mode).png",
     "level": 1337,
@@ -27654,7 +27753,7 @@
   },
   {
     "id": 3361,
-    "name": "Kourend guard",
+    "name": "Guard (Deadman Mode)",
     "version": "Kourend Castle",
     "image": "Kourend guard (Deadman Mode).png",
     "level": 1337,
@@ -27687,7 +27786,7 @@
   },
   {
     "id": 6583,
-    "name": "Guard",
+    "name": "Guard (Deadman Mode)",
     "version": "Lumbridge",
     "image": "Guard (Deadman Mode, Lumbridge).png",
     "level": 1337,
@@ -27720,7 +27819,7 @@
   },
   {
     "id": 6698,
-    "name": "Ghost guard",
+    "name": "Guard (Deadman Mode)",
     "version": "Port Phasmatys",
     "image": "Ghost guard (Deadman Mode).png",
     "level": 1337,
@@ -27753,7 +27852,7 @@
   },
   {
     "id": 6595,
-    "name": "Prifddinas guard",
+    "name": "Guard (Deadman Mode)",
     "version": "Prifddinas",
     "image": "Prifddinas guard (Deadman Mode).png",
     "level": 1337,
@@ -27786,7 +27885,7 @@
   },
   {
     "id": 6702,
-    "name": "Guard",
+    "name": "Guard (Deadman Mode)",
     "version": "Rellekka",
     "image": "Guard (Deadman Mode, Rellekka).png",
     "level": 1337,
@@ -27819,7 +27918,7 @@
   },
   {
     "id": 6575,
-    "name": "Guard",
+    "name": "Guard (Deadman Mode)",
     "version": "Seers' Village",
     "image": "Guard (Deadman Mode, Seers' Village).png",
     "level": 1337,
@@ -27852,7 +27951,7 @@
   },
   {
     "id": 6699,
-    "name": "Guard",
+    "name": "Guard (Deadman Mode)",
     "version": "Sophanem",
     "image": "Guard (Deadman Mode, Sophanem).png",
     "level": 1337,
@@ -27885,7 +27984,7 @@
   },
   {
     "id": 6582,
-    "name": "Guard",
+    "name": "Guard (Deadman Mode)",
     "version": "Varrock",
     "image": "Guard (Deadman Mode, Varrock).png",
     "level": 1337,
@@ -27918,7 +28017,7 @@
   },
   {
     "id": 6701,
-    "name": "Guard",
+    "name": "Guard (Deadman Mode)",
     "version": "Void Knights' Outpost",
     "image": "Guard (Deadman Mode, Void Knights' Outpost).png",
     "level": 1337,
@@ -27951,7 +28050,7 @@
   },
   {
     "id": 6580,
-    "name": "Guard",
+    "name": "Guard (Deadman Mode)",
     "version": "Yanille",
     "image": "Guard (Deadman Mode, Yanille).png",
     "level": 1337,
@@ -27984,7 +28083,7 @@
   },
   {
     "id": 995,
-    "name": "Guard",
+    "name": "Guard (Death to the Dorgeshuun)",
     "version": "",
     "image": "Guard (Death to the Dorgeshuun).png",
     "level": 22,
@@ -28017,7 +28116,7 @@
   },
   {
     "id": 4665,
-    "name": "Guard",
+    "name": "Guard (Desert Mining Camp)",
     "version": "Bald",
     "image": "Guard (Desert Mining Camp) (bald).png",
     "level": 45,
@@ -28050,7 +28149,7 @@
   },
   {
     "id": 4661,
-    "name": "Guard",
+    "name": "Guard (Desert Mining Camp)",
     "version": "Bronze helm",
     "image": "Guard (Desert Mining Camp) (bronze helm).png",
     "level": 45,
@@ -28083,7 +28182,7 @@
   },
   {
     "id": 4660,
-    "name": "Guard",
+    "name": "Guard (Desert Mining Camp)",
     "version": "Brown hair",
     "image": "Guard (Desert Mining Camp).png",
     "level": 45,
@@ -28116,7 +28215,7 @@
   },
   {
     "id": 4664,
-    "name": "Guard",
+    "name": "Guard (Desert Mining Camp)",
     "version": "Coif",
     "image": "Guard (Desert Mining Camp) (coif).png",
     "level": 45,
@@ -28149,7 +28248,7 @@
   },
   {
     "id": 4662,
-    "name": "Guard",
+    "name": "Guard (Desert Mining Camp)",
     "version": "Iron helm",
     "image": "Guard (Desert Mining Camp) (iron helm).png",
     "level": 45,
@@ -28182,7 +28281,7 @@
   },
   {
     "id": 3283,
-    "name": "Guard",
+    "name": "Guard (Doric's hut)",
     "version": "",
     "image": "Guard (Doric's hut).png",
     "level": 19,
@@ -28215,7 +28314,7 @@
   },
   {
     "id": 4522,
-    "name": "Guard",
+    "name": "Guard (H.A.M. storeroom)",
     "version": "",
     "image": "Guard (Death to the Dorgeshuun).png",
     "level": 22,
@@ -28248,7 +28347,7 @@
   },
   {
     "id": 397,
-    "name": "Guard",
+    "name": "Guard (Hosidius)",
     "version": "Bow",
     "image": "Guard (Hosidius, bow).png",
     "level": 22,
@@ -28281,7 +28380,7 @@
   },
   {
     "id": 399,
-    "name": "Guard",
+    "name": "Guard (Hosidius)",
     "version": "Staff",
     "image": "Guard (Hosidius, staff).png",
     "level": 19,
@@ -28314,7 +28413,7 @@
   },
   {
     "id": 1546,
-    "name": "Guard",
+    "name": "Guard (Port Sarim Jail)",
     "version": "1",
     "image": "Guard (Port Sarim, 1).png",
     "level": 21,
@@ -28347,7 +28446,7 @@
   },
   {
     "id": 1547,
-    "name": "Guard",
+    "name": "Guard (Port Sarim Jail)",
     "version": "2",
     "image": "Guard (Port Sarim, 2).png",
     "level": 21,
@@ -28380,7 +28479,7 @@
   },
   {
     "id": 1548,
-    "name": "Guard",
+    "name": "Guard (Port Sarim Jail)",
     "version": "3",
     "image": "Guard (Port Sarim, 3).png",
     "level": 21,
@@ -28413,7 +28512,7 @@
   },
   {
     "id": 1549,
-    "name": "Guard",
+    "name": "Guard (Port Sarim Jail)",
     "version": "4",
     "image": "Guard (Port Sarim, 4).png",
     "level": 21,
@@ -28446,7 +28545,7 @@
   },
   {
     "id": 1550,
-    "name": "Guard",
+    "name": "Guard (Port Sarim Jail)",
     "version": "5",
     "image": "Guard (Port Sarim, 5).png",
     "level": 21,
@@ -28479,7 +28578,7 @@
   },
   {
     "id": 9182,
-    "name": "Guard",
+    "name": "Guard (Prifddinas)",
     "version": "1",
     "image": "Guard (Prifddinas, 1).png",
     "level": 108,
@@ -28512,7 +28611,7 @@
   },
   {
     "id": 9183,
-    "name": "Guard",
+    "name": "Guard (Prifddinas)",
     "version": "2",
     "image": "Guard (Prifddinas, 2).png",
     "level": 108,
@@ -28545,7 +28644,7 @@
   },
   {
     "id": 9184,
-    "name": "Guard",
+    "name": "Guard (Prifddinas)",
     "version": "3",
     "image": "Guard (Prifddinas, 3).png",
     "level": 108,
@@ -28578,7 +28677,7 @@
   },
   {
     "id": 9185,
-    "name": "Guard",
+    "name": "Guard (Prifddinas)",
     "version": "4",
     "image": "Guard (Prifddinas, 4).png",
     "level": 108,
@@ -28611,7 +28710,7 @@
   },
   {
     "id": 9186,
-    "name": "Guard",
+    "name": "Guard (Prifddinas)",
     "version": "5",
     "image": "Guard (Prifddinas, 5).png",
     "level": 108,
@@ -28644,7 +28743,7 @@
   },
   {
     "id": 9187,
-    "name": "Guard",
+    "name": "Guard (Prifddinas)",
     "version": "6",
     "image": "Guard (Prifddinas, 6).png",
     "level": 108,
@@ -28677,7 +28776,7 @@
   },
   {
     "id": 9188,
-    "name": "Guard",
+    "name": "Guard (Prifddinas)",
     "version": "7",
     "image": "Guard (Prifddinas, 7).png",
     "level": 108,
@@ -28710,7 +28809,7 @@
   },
   {
     "id": 9191,
-    "name": "Guard",
+    "name": "Guard (Prifddinas)",
     "version": "8",
     "image": "Guard (Prifddinas, 8).png",
     "level": 108,
@@ -28743,7 +28842,7 @@
   },
   {
     "id": 6056,
-    "name": "Guard",
+    "name": "Guard (Ranging Guild)",
     "version": "",
     "image": "Guard (Ranging Guild).png",
     "level": 37,
@@ -28776,7 +28875,7 @@
   },
   {
     "id": 11094,
-    "name": "Guard",
+    "name": "Guard (Shayzien)",
     "version": "",
     "image": "Guard (Shayzien).png",
     "level": 21,
@@ -28809,7 +28908,7 @@
   },
   {
     "id": 5185,
-    "name": "Guard",
+    "name": "Guard (dwarf)",
     "version": "",
     "image": "Guard (dwarf).png",
     "level": 10,
@@ -28842,7 +28941,7 @@
   },
   {
     "id": null,
-    "name": "Guard",
+    "name": "Guard (unused)",
     "version": "",
     "image": "Guard (unused).png",
     "level": 22,
@@ -28908,7 +29007,7 @@
   },
   {
     "id": 131,
-    "name": "Guard dog",
+    "name": "Guard dog (Construction)",
     "version": "",
     "image": "Guard dog (Construction).png",
     "level": 44,
@@ -29865,7 +29964,7 @@
   },
   {
     "id": 7570,
-    "name": "Guardian",
+    "name": "Guardian (Chambers of Xeric)",
     "version": "Challenge Mode",
     "image": "Guardian (Chambers of Xeric, female).png",
     "level": 0,
@@ -29900,7 +29999,7 @@
   },
   {
     "id": 7569,
-    "name": "Guardian",
+    "name": "Guardian (Chambers of Xeric)",
     "version": "Normal",
     "image": "Guardian (Chambers of Xeric, female).png",
     "level": 0,
@@ -30269,7 +30368,7 @@
   },
   {
     "id": 3678,
-    "name": "Halla",
+    "name": "Halla (Miscellania)",
     "version": "",
     "image": "Halla (Miscellania).png",
     "level": 1,
@@ -30401,7 +30500,7 @@
   },
   {
     "id": 5644,
-    "name": "Head",
+    "name": "Head (Temple Trekking)",
     "version": "",
     "image": "Head (Temple Trekking).png",
     "level": 140,
@@ -30533,7 +30632,7 @@
   },
   {
     "id": 10492,
-    "name": "Headless Beast (hard)",
+    "name": "Headless Beast",
     "version": "Hard",
     "image": "Headless Beast.png",
     "level": 233,
@@ -30603,7 +30702,7 @@
   },
   {
     "id": 135,
-    "name": "Hellhound",
+    "name": "Hellhound (Construction)",
     "version": "",
     "image": "Hellhound (Construction) built.png",
     "level": 122,
@@ -30906,7 +31005,7 @@
   },
   {
     "id": 11192,
-    "name": "Hespori",
+    "name": "Hespori (A Night at the Theatre)",
     "version": "",
     "image": "Hespori (A Night at the Theatre).png",
     "level": 302,
@@ -31005,7 +31104,7 @@
   },
   {
     "id": 7261,
-    "name": "Hill Giant",
+    "name": "Hill Giant (Dark)",
     "version": "",
     "image": "Hill Giant (Dark).png",
     "level": 28,
@@ -31038,7 +31137,7 @@
   },
   {
     "id": 10374,
-    "name": "Hill Giant",
+    "name": "Hill Giant (Giants' Plateau)",
     "version": "Brassard",
     "image": "Hill Giant (Giants' Plateau, 1).png",
     "level": 28,
@@ -31071,7 +31170,7 @@
   },
   {
     "id": 10375,
-    "name": "Hill Giant",
+    "name": "Hill Giant (Giants' Plateau)",
     "version": "Hammer",
     "image": "Hill Giant (Giants' Plateau, 2).png",
     "level": 28,
@@ -31104,7 +31203,7 @@
   },
   {
     "id": 10376,
-    "name": "Hill Giant",
+    "name": "Hill Giant (Giants' Plateau)",
     "version": "Singlet",
     "image": "Hill Giant (Giants' Plateau, 3).png",
     "level": 28,
@@ -31368,7 +31467,7 @@
   },
   {
     "id": 132,
-    "name": "Hobgoblin",
+    "name": "Hobgoblin guard",
     "version": "",
     "image": "Hobgoblin guard.png",
     "level": 54,
@@ -31799,7 +31898,7 @@
   },
   {
     "id": 9466,
-    "name": "Husk",
+    "name": "Husk (Phosani's Nightmare)",
     "version": "Magic",
     "image": "Husk (magic).png",
     "level": 104,
@@ -31832,7 +31931,7 @@
   },
   {
     "id": 9467,
-    "name": "Husk",
+    "name": "Husk (Phosani's Nightmare)",
     "version": "Ranged",
     "image": "Husk (ranged).png",
     "level": 104,
@@ -32032,7 +32131,7 @@
   },
   {
     "id": 6294,
-    "name": "Ice Troll King (hard)",
+    "name": "Ice Troll King",
     "version": "Hard",
     "image": "Ice Troll King.png",
     "level": 213,
@@ -32933,7 +33032,7 @@
   },
   {
     "id": null,
-    "name": "Imp",
+    "name": "Imp (unused)",
     "version": "",
     "image": "Imp (unused).png",
     "level": 3,
@@ -33578,7 +33677,7 @@
   },
   {
     "id": 7949,
-    "name": "Corsair Traitor",
+    "name": "Ithoi the Navigator",
     "version": "",
     "image": "Ithoi the Navigator.png",
     "level": 35,
@@ -33611,7 +33710,7 @@
   },
   {
     "id": 7948,
-    "name": "Corsair Traitor (hard)",
+    "name": "Ithoi the Navigator",
     "version": "",
     "image": "Ithoi the Navigator.png",
     "level": 103,
@@ -34270,6 +34369,237 @@
     "attributes": []
   },
   {
+    "id": 441,
+    "name": "Jelly",
+    "version": "Dark",
+    "image": "Jelly (dark).png",
+    "level": 78,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      45,
+      120,
+      75,
+      45,
+      1,
+      45
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 11245,
+    "name": "Jelly",
+    "version": "Dark (w)",
+    "image": "Jelly (Wilderness Slayer Cave, dark).png",
+    "level": 78,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      45,
+      120,
+      75,
+      45,
+      1,
+      45
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 442,
+    "name": "Jelly",
+    "version": "Green",
+    "image": "Jelly (green).png",
+    "level": 78,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      45,
+      120,
+      75,
+      45,
+      1,
+      45
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 438,
+    "name": "Jelly",
+    "version": "Grey",
+    "image": "Jelly (grey).png",
+    "level": 78,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      45,
+      120,
+      75,
+      45,
+      1,
+      45
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 11242,
+    "name": "Jelly",
+    "version": "Grey (w)",
+    "image": "Jelly (Wilderness Slayer Cave, grey).png",
+    "level": 78,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      45,
+      120,
+      75,
+      45,
+      1,
+      45
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 440,
+    "name": "Jelly",
+    "version": "Olive",
+    "image": "Jelly (olive).png",
+    "level": 78,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      45,
+      120,
+      75,
+      45,
+      1,
+      45
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 11244,
+    "name": "Jelly",
+    "version": "Olive (w)",
+    "image": "Jelly (Wilderness Slayer Cave, olive).png",
+    "level": 78,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      45,
+      120,
+      75,
+      45,
+      1,
+      45
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
     "id": 437,
     "name": "Jelly",
     "version": "Regular",
@@ -34305,8 +34635,74 @@
   {
     "id": 11241,
     "name": "Jelly",
-    "version": "Wilderness Slayer Cave",
-    "image": "Jelly.png",
+    "version": "Regular (w)",
+    "image": "Jelly (Wilderness Slayer Cave).png",
+    "level": 78,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      45,
+      120,
+      75,
+      45,
+      1,
+      45
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 439,
+    "name": "Jelly",
+    "version": "Tan",
+    "image": "Jelly (tan).png",
+    "level": 78,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      45,
+      120,
+      75,
+      45,
+      1,
+      45
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 11243,
+    "name": "Jelly",
+    "version": "Tan (w)",
+    "image": "Jelly (Wilderness Slayer Cave, tan).png",
     "level": 78,
     "speed": 4,
     "size": 1,
@@ -34636,7 +35032,7 @@
   },
   {
     "id": 6321,
-    "name": "Jungle demon (hard)",
+    "name": "Jungle Demon",
     "version": "Hard",
     "image": "Jungle Demon.png",
     "level": 327,
@@ -34671,7 +35067,7 @@
   },
   {
     "id": 1443,
-    "name": "Jungle demon",
+    "name": "Jungle Demon",
     "version": "Normal",
     "image": "Jungle Demon.png",
     "level": 195,
@@ -34937,7 +35333,7 @@
   },
   {
     "id": 5243,
-    "name": "Jungle spider",
+    "name": "Jungle spider (Ape Atoll)",
     "version": "",
     "image": "Jungle spider (Ape Atoll).png",
     "level": 37,
@@ -35353,7 +35749,7 @@
   },
   {
     "id": 138,
-    "name": "Kalphite Soldier",
+    "name": "Kalphite soldier (Construction)",
     "version": "",
     "image": "Kalphite soldier (Construction).png",
     "level": 85,
@@ -35419,7 +35815,7 @@
   },
   {
     "id": 1129,
-    "name": "Kamil (hard)",
+    "name": "Kamil",
     "version": "Hard",
     "image": "Kamil.png",
     "level": 273,
@@ -35485,7 +35881,7 @@
   },
   {
     "id": 6310,
-    "name": "Karamel (hard)",
+    "name": "Karamel",
     "version": "Hard",
     "image": "Karamel.png",
     "level": 186,
@@ -35951,7 +36347,7 @@
   },
   {
     "id": 6329,
-    "name": "Khazard warlord (hard)",
+    "name": "Khazard warlord",
     "version": "Hard",
     "image": "Khazard warlord.png",
     "level": 192,
@@ -36218,7 +36614,7 @@
   },
   {
     "id": 7267,
-    "name": "Sandy Boulder",
+    "name": "King Sand Crab",
     "version": "Hidden",
     "image": "Sandy Boulder.png",
     "level": 107,
@@ -36284,7 +36680,7 @@
   },
   {
     "id": null,
-    "name": "King Scorpion",
+    "name": "King Scorpion (20th Anniversary event)",
     "version": "",
     "image": "King Scorpion (20th Anniversary event).png",
     "level": 0,
@@ -36317,7 +36713,7 @@
   },
   {
     "id": null,
-    "name": "King black dragon",
+    "name": "King black dragon (20th Anniversary event)",
     "version": "",
     "image": "King black dragon (20th Anniversary event).png",
     "level": 0,
@@ -36385,7 +36781,7 @@
   },
   {
     "id": 8851,
-    "name": "Knight of Ardougne",
+    "name": "Knight of Ardougne (Song of the Elves)",
     "version": "Level 27",
     "image": "Knight of Ardougne.png",
     "level": 27,
@@ -36418,7 +36814,7 @@
   },
   {
     "id": 8852,
-    "name": "Knight of Ardougne",
+    "name": "Knight of Ardougne (Song of the Elves)",
     "version": "Level 53",
     "image": "Knight of Ardougne.png",
     "level": 53,
@@ -36451,7 +36847,7 @@
   },
   {
     "id": 3300,
-    "name": "Knight of Ardougne",
+    "name": "Knight of Ardougne (unused)",
     "version": "",
     "image": "Knight of Ardougne (unused).png",
     "level": 46,
@@ -37078,7 +37474,7 @@
   },
   {
     "id": 496,
-    "name": "Whirlpool",
+    "name": "Kraken",
     "version": "Whirlpool",
     "image": "Whirlpool.png",
     "level": 0,
@@ -37617,7 +38013,7 @@
   },
   {
     "id": null,
-    "name": "Lesser demon",
+    "name": "Lesser demon (20th Anniversary event)",
     "version": "",
     "image": "Lesser demon (20th Anniversary event).png",
     "level": 0,
@@ -37650,7 +38046,7 @@
   },
   {
     "id": 3982,
-    "name": "Lesser demon",
+    "name": "Lesser demon (Melzar's Maze)",
     "version": "",
     "image": "Lesser demon (Melzar's Maze).png",
     "level": 82,
@@ -37924,7 +38320,7 @@
   },
   {
     "id": null,
-    "name": "Lizard man",
+    "name": "Lizard man (20th Anniversary event)",
     "version": "",
     "image": "Lizard man (20th Anniversary event).png",
     "level": 0,
@@ -38023,7 +38419,7 @@
   },
   {
     "id": 7573,
-    "name": "Lizardman shaman",
+    "name": "Lizardman shaman (Chambers of Xeric)",
     "version": "Challenge Mode",
     "image": "Lizardman shaman (1).png",
     "level": 0,
@@ -38058,7 +38454,7 @@
   },
   {
     "id": 7573,
-    "name": "Lizardman shaman",
+    "name": "Lizardman shaman (Chambers of Xeric)",
     "version": "Normal",
     "image": "Lizardman shaman (1).png",
     "level": 0,
@@ -38261,7 +38657,7 @@
   },
   {
     "id": 1276,
-    "name": "Loar Shadow",
+    "name": "Loar Shade",
     "version": "Shadow",
     "image": "Loar Shadow.png",
     "level": 40,
@@ -38894,7 +39290,7 @@
   },
   {
     "id": null,
-    "name": "Mammoth",
+    "name": "Mammoth (unused NPC)",
     "version": "",
     "image": "Mammoth.png",
     "level": 41,
@@ -38960,7 +39356,7 @@
   },
   {
     "id": null,
-    "name": "Man",
+    "name": "Man (Canifis)",
     "version": "Blue",
     "image": "Man (Canifis, 2).png",
     "level": 24,
@@ -38993,7 +39389,7 @@
   },
   {
     "id": null,
-    "name": "Man",
+    "name": "Man (Canifis)",
     "version": "Green",
     "image": "Man (Canifis, 3).png",
     "level": 24,
@@ -39026,7 +39422,7 @@
   },
   {
     "id": null,
-    "name": "Man",
+    "name": "Man (Canifis)",
     "version": "Red",
     "image": "Man (Canifis, 1).png",
     "level": 24,
@@ -39059,7 +39455,7 @@
   },
   {
     "id": 1118,
-    "name": "Man",
+    "name": "Man (level 4)",
     "version": "Normal",
     "image": "Man (West Ardougne) 3.png",
     "level": 4,
@@ -39092,7 +39488,7 @@
   },
   {
     "id": 1138,
-    "name": "Man",
+    "name": "Man (level 4)",
     "version": "Unused",
     "image": "Man (Biohazard, unused).png",
     "level": 4,
@@ -39653,7 +40049,7 @@
   },
   {
     "id": 2120,
-    "name": "Market Guard",
+    "name": "Market Guard (Draynor)",
     "version": "Draynor Bank Robbery",
     "image": "Market Guard (Draynor).png",
     "level": 20,
@@ -39686,7 +40082,7 @@
   },
   {
     "id": 5732,
-    "name": "Market Guard",
+    "name": "Market Guard (Draynor)",
     "version": "Normal",
     "image": "Market Guard (Draynor).png",
     "level": 20,
@@ -39818,7 +40214,7 @@
   },
   {
     "id": 6320,
-    "name": "Me (hard)",
+    "name": "Me",
     "version": "NMZ (hard)",
     "image": "Me.png",
     "level": 201,
@@ -40249,7 +40645,7 @@
   },
   {
     "id": 10694,
-    "name": "Rubble",
+    "name": "Mind Golem",
     "version": "Rubble",
     "image": "Rubble (Mind Golem).png",
     "level": 30,
@@ -40681,7 +41077,7 @@
   },
   {
     "id": 2848,
-    "name": "Monkey",
+    "name": "Monkey (monster)",
     "version": "Common",
     "image": "Monkey.png",
     "level": 3,
@@ -40714,7 +41110,7 @@
   },
   {
     "id": 1038,
-    "name": "Monkey",
+    "name": "Monkey (monster)",
     "version": "Mos Le'Harmless",
     "image": "Monkey (Mos Le'Harmless).png",
     "level": 3,
@@ -40813,7 +41209,7 @@
   },
   {
     "id": 5271,
-    "name": "Monkey Guard",
+    "name": "Monkey Guard (ninja)",
     "version": "",
     "image": "Monkey Guard (ninja).png",
     "level": 149,
@@ -41017,7 +41413,7 @@
   },
   {
     "id": 9287,
-    "name": "Monstrous Basilisk",
+    "name": "Monstrous Basilisk (The Fremennik Exiles)",
     "version": "",
     "image": "Monstrous Basilisk (The Fremennik Exiles).png",
     "level": 135,
@@ -41149,7 +41545,7 @@
   },
   {
     "id": 6325,
-    "name": "Moss Guardian (hard)",
+    "name": "Moss Guardian",
     "version": "Hard",
     "image": "Moss Guardian.png",
     "level": 182,
@@ -41314,7 +41710,7 @@
   },
   {
     "id": 8736,
-    "name": "Moss Giant",
+    "name": "Moss giant",
     "version": "Level 84",
     "image": "Moss Giant (level 84).png",
     "level": 84,
@@ -41545,7 +41941,7 @@
   },
   {
     "id": 8846,
-    "name": "Mourner",
+    "name": "Mourner (Song of the Elves)",
     "version": "Level 106",
     "image": "Mourner (Song of the Elves, level 106).png",
     "level": 106,
@@ -41578,7 +41974,7 @@
   },
   {
     "id": 8844,
-    "name": "Mourner",
+    "name": "Mourner (Song of the Elves)",
     "version": "Level 24",
     "image": "Mourner (Song of the Elves).png",
     "level": 24,
@@ -41611,7 +42007,7 @@
   },
   {
     "id": 8845,
-    "name": "Mourner",
+    "name": "Mourner (Song of the Elves)",
     "version": "Level 51",
     "image": "Mourner (Song of the Elves).png",
     "level": 51,
@@ -41644,7 +42040,7 @@
   },
   {
     "id": 9008,
-    "name": "Mourner",
+    "name": "Mourner (boss)",
     "version": "",
     "image": "Mourner (level 13).png",
     "level": 13,
@@ -42489,7 +42885,7 @@
   },
   {
     "id": 6339,
-    "name": "Nazastarool (hard)",
+    "name": "Nazastarool",
     "version": "Ghost (hard)",
     "image": "Nazastarool (Ghost).png",
     "level": 181,
@@ -42557,7 +42953,7 @@
   },
   {
     "id": 6338,
-    "name": "Nazastarool (hard)",
+    "name": "Nazastarool",
     "version": "Skeleton (hard)",
     "image": "Nazastarool (Skeleton).png",
     "level": 153,
@@ -42623,7 +43019,7 @@
   },
   {
     "id": 6337,
-    "name": "Nazastarool (hard)",
+    "name": "Nazastarool",
     "version": "Zombie (hard)",
     "image": "Nazastarool.png",
     "level": 176,
@@ -42794,7 +43190,7 @@
   },
   {
     "id": 1025,
-    "name": "Necromancer",
+    "name": "Necromancer (Necromancer Tower)",
     "version": "",
     "image": "Necromancer (Necromancer Tower).png",
     "level": 26,
@@ -42893,7 +43289,7 @@
   },
   {
     "id": 6318,
-    "name": "Nezikchened (hard)",
+    "name": "Nezikchened",
     "version": "",
     "image": "Nezikchened.png",
     "level": 295,
@@ -43288,9 +43684,174 @@
     "attributes": []
   },
   {
+    "id": 10820,
+    "name": "Nylocas Matomenos",
+    "version": "Entry Mode Maiden",
+    "image": "Nylocas Matomenos.png",
+    "level": 68,
+    "speed": -1,
+    "size": 2,
+    "skills": [
+      100,
+      100,
+      0,
+      100,
+      100,
+      100
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 10845,
+    "name": "Nylocas Matomenos",
+    "version": "Entry Mode Verzik",
+    "image": "Nylocas Matomenos.png",
+    "level": 68,
+    "speed": -1,
+    "size": 2,
+    "skills": [
+      100,
+      100,
+      0,
+      100,
+      100,
+      100
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 10828,
+    "name": "Nylocas Matomenos",
+    "version": "Hard Mode Maiden",
+    "image": "Nylocas Matomenos.png",
+    "level": 138,
+    "speed": -1,
+    "size": 2,
+    "skills": [
+      100,
+      100,
+      0,
+      100,
+      100,
+      100
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 10862,
+    "name": "Nylocas Matomenos",
+    "version": "Hard Mode Verzik",
+    "image": "Nylocas Matomenos.png",
+    "level": 138,
+    "speed": -1,
+    "size": 2,
+    "skills": [
+      100,
+      100,
+      0,
+      100,
+      100,
+      100
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
     "id": 8366,
     "name": "Nylocas Matomenos",
-    "version": "",
+    "version": "Normal Mode Maiden",
+    "image": "Nylocas Matomenos.png",
+    "level": 115,
+    "speed": -1,
+    "size": 2,
+    "skills": [
+      100,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 8385,
+    "name": "Nylocas Matomenos",
+    "version": "Normal Mode Verzik",
     "image": "Nylocas Matomenos.png",
     "level": 115,
     "speed": -1,
@@ -43586,7 +44147,7 @@
   },
   {
     "id": 11750,
-    "name": "Obelisk",
+    "name": "Obelisk (Tombs of Amascut)",
     "version": "",
     "image": "Obelisk (Tombs of Amascut, phase 2).png",
     "level": 0,
@@ -44279,7 +44840,7 @@
   },
   {
     "id": null,
-    "name": "Orc",
+    "name": "Orc (20th Anniversary event)",
     "version": "",
     "image": "Orc (20th Anniversary event).png",
     "level": 0,
@@ -44312,7 +44873,7 @@
   },
   {
     "id": null,
-    "name": "Orc",
+    "name": "Orc (historical)",
     "version": "",
     "image": "Orc (historical).png",
     "level": 20,
@@ -44613,7 +45174,7 @@
   },
   {
     "id": 8850,
-    "name": "Paladin",
+    "name": "Paladin (Song of the Elves)",
     "version": "Level 121",
     "image": "Paladin.png",
     "level": 121,
@@ -44646,7 +45207,7 @@
   },
   {
     "id": 8849,
-    "name": "Paladin",
+    "name": "Paladin (Song of the Elves)",
     "version": "Level 49",
     "image": "Paladin.png",
     "level": 49,
@@ -44943,7 +45504,7 @@
   },
   {
     "id": 9468,
-    "name": "Parasite",
+    "name": "Parasite (Phosani's Nightmare)",
     "version": "Level 129",
     "image": "Parasite.png",
     "level": 129,
@@ -44976,7 +45537,7 @@
   },
   {
     "id": 9469,
-    "name": "Parasite",
+    "name": "Parasite (Phosani's Nightmare)",
     "version": "Level 91",
     "image": "Parasite (2).png",
     "level": 91,
@@ -46398,7 +46959,7 @@
   },
   {
     "id": 2063,
-    "name": "Penguin",
+    "name": "Penguin (monster)",
     "version": "",
     "image": "Ping.png",
     "level": 2,
@@ -46979,7 +47540,7 @@
   },
   {
     "id": 1279,
-    "name": "Phrin Shadow",
+    "name": "Phrin Shade",
     "version": "Shadow",
     "image": "Phrin Shadow.png",
     "level": 60,
@@ -47345,7 +47906,7 @@
   },
   {
     "id": 11990,
-    "name": "Poison spider",
+    "name": "Poison spider (Escape Caves)",
     "version": "",
     "image": "Poison spider (Escape Caves).png",
     "level": 48,
@@ -47512,7 +48073,7 @@
   },
   {
     "id": 1742,
-    "name": "Portal",
+    "name": "Portal (Pest Control)",
     "version": "Blue",
     "image": "Blue Portal.png",
     "level": 0,
@@ -47545,7 +48106,7 @@
   },
   {
     "id": 1739,
-    "name": "Portal",
+    "name": "Portal (Pest Control)",
     "version": "Purple",
     "image": "Pink Portal.png",
     "level": 0,
@@ -47578,7 +48139,7 @@
   },
   {
     "id": 1740,
-    "name": "Portal",
+    "name": "Portal (Pest Control)",
     "version": "Red",
     "image": "Red Portal.png",
     "level": 0,
@@ -47611,7 +48172,7 @@
   },
   {
     "id": 1741,
-    "name": "Portal",
+    "name": "Portal (Pest Control)",
     "version": "Yellow",
     "image": "Yellow Portal.png",
     "level": 0,
@@ -47885,7 +48446,7 @@
   },
   {
     "id": 5776,
-    "name": "Queen Spawn",
+    "name": "Queen spawn",
     "version": "",
     "image": "Queen spawn.png",
     "level": 63,
@@ -47918,7 +48479,7 @@
   },
   {
     "id": 9118,
-    "name": "Rabbit",
+    "name": "Rabbit (Prifddinas)",
     "version": "",
     "image": "Rabbit (Prifddinas).png",
     "level": 2,
@@ -48083,7 +48644,7 @@
   },
   {
     "id": 3674,
-    "name": "Ragnar",
+    "name": "Ragnar (Miscellania)",
     "version": "",
     "image": "Ragnar (Miscellania).png",
     "level": 1,
@@ -49120,7 +49681,7 @@
   },
   {
     "id": 7018,
-    "name": "Reanimated Goblin",
+    "name": "Reanimated goblin",
     "version": "",
     "image": "Reanimated goblin.png",
     "level": 0,
@@ -49485,7 +50046,7 @@
   },
   {
     "id": null,
-    "name": "Red dragon",
+    "name": "Red dragon (20th Anniversary event)",
     "version": "",
     "image": "Red dragon (20th Anniversary event).png",
     "level": 0,
@@ -50265,7 +50826,7 @@
   },
   {
     "id": 6736,
-    "name": "River Troll",
+    "name": "River troll",
     "version": "Level 120",
     "image": "River troll.png",
     "level": 120,
@@ -50298,7 +50859,7 @@
   },
   {
     "id": 6732,
-    "name": "River Troll",
+    "name": "River troll",
     "version": "Level 14",
     "image": "River troll.png",
     "level": 14,
@@ -50331,7 +50892,7 @@
   },
   {
     "id": 6737,
-    "name": "River Troll",
+    "name": "River troll",
     "version": "Level 159",
     "image": "River troll.png",
     "level": 159,
@@ -50364,7 +50925,7 @@
   },
   {
     "id": 6733,
-    "name": "River Troll",
+    "name": "River troll",
     "version": "Level 29",
     "image": "River troll.png",
     "level": 29,
@@ -50397,7 +50958,7 @@
   },
   {
     "id": 6734,
-    "name": "River Troll",
+    "name": "River troll",
     "version": "Level 49",
     "image": "River troll.png",
     "level": 49,
@@ -50430,7 +50991,7 @@
   },
   {
     "id": 6735,
-    "name": "River Troll",
+    "name": "River troll",
     "version": "Level 79",
     "image": "River troll.png",
     "level": 79,
@@ -50500,7 +51061,7 @@
   },
   {
     "id": 1281,
-    "name": "Riyl Shadow",
+    "name": "Riyl Shade",
     "version": "Shadow",
     "image": "Riyl Shadow.png",
     "level": 80,
@@ -50536,7 +51097,7 @@
   },
   {
     "id": 5631,
-    "name": "Riyl shadow",
+    "name": "Riyl shadow (Temple Trekking)",
     "version": "",
     "image": "Riyl Shade.png",
     "level": 80,
@@ -50605,7 +51166,7 @@
   },
   {
     "id": 925,
-    "name": "Rock",
+    "name": "Rock (Troll)",
     "version": "",
     "image": "Rock.png",
     "level": 111,
@@ -50671,7 +51232,7 @@
   },
   {
     "id": 101,
-    "name": "Rocks",
+    "name": "Rock Crab",
     "version": "Hidden",
     "image": "Rock crab (hidden).png",
     "level": 13,
@@ -50704,7 +51265,7 @@
   },
   {
     "id": 6729,
-    "name": "Rock Golem",
+    "name": "Rock Golem (monster)",
     "version": "Level 120",
     "image": "Rock Golem (monster).png",
     "level": 120,
@@ -50739,7 +51300,7 @@
   },
   {
     "id": 6725,
-    "name": "Rock Golem",
+    "name": "Rock Golem (monster)",
     "version": "Level 14",
     "image": "Rock Golem (monster).png",
     "level": 14,
@@ -50774,7 +51335,7 @@
   },
   {
     "id": 6730,
-    "name": "Rock Golem",
+    "name": "Rock Golem (monster)",
     "version": "Level 159",
     "image": "Rock Golem (monster).png",
     "level": 159,
@@ -50809,7 +51370,7 @@
   },
   {
     "id": 6726,
-    "name": "Rock Golem",
+    "name": "Rock Golem (monster)",
     "version": "Level 29",
     "image": "Rock Golem (monster).png",
     "level": 29,
@@ -50844,7 +51405,7 @@
   },
   {
     "id": 6727,
-    "name": "Rock Golem",
+    "name": "Rock Golem (monster)",
     "version": "Level 49",
     "image": "Rock Golem (monster).png",
     "level": 49,
@@ -50879,7 +51440,7 @@
   },
   {
     "id": 6728,
-    "name": "Rock Golem",
+    "name": "Rock Golem (monster)",
     "version": "Level 79",
     "image": "Rock Golem (monster).png",
     "level": 79,
@@ -50947,7 +51508,7 @@
   },
   {
     "id": 5945,
-    "name": "Rock",
+    "name": "Rock lobster",
     "version": "Hidden",
     "image": "Rock (rock lobster).png",
     "level": 127,
@@ -51313,7 +51874,7 @@
   },
   {
     "id": 8027,
-    "name": "Rune dragon",
+    "name": "Rune dragon (Construction)",
     "version": "",
     "image": "Rune dragon (Construction) built.png",
     "level": 380,
@@ -51515,7 +52076,7 @@
   },
   {
     "id": 5936,
-    "name": "Sandy rocks",
+    "name": "Sand Crab",
     "version": "Hidden",
     "image": "Sandy rocks.png",
     "level": 15,
@@ -51548,7 +52109,7 @@
   },
   {
     "id": 7894,
-    "name": "Sand Snake (hard)",
+    "name": "Sand Snake",
     "version": "Hard",
     "image": "Sand Snake.png",
     "level": 154,
@@ -51713,7 +52274,7 @@
   },
   {
     "id": 11697,
-    "name": "Scarab",
+    "name": "Scarab (Tombs of Amascut)",
     "version": "",
     "image": "Scarab (Tombs of Amascut).png",
     "level": 56,
@@ -51851,7 +52412,7 @@
   },
   {
     "id": 11484,
-    "name": "Scarab Swarm",
+    "name": "Scarab Swarm (Beneath Cursed Sands)",
     "version": "",
     "image": "Scarab Swarm (Beneath Cursed Sands).png",
     "level": 98,
@@ -51884,7 +52445,7 @@
   },
   {
     "id": 11723,
-    "name": "Scarab Swarm",
+    "name": "Scarab Swarm (Tombs of Amascut)",
     "version": "",
     "image": "Scarab Swarm (Tombs of Amascut).png",
     "level": 8,
@@ -51917,7 +52478,7 @@
   },
   {
     "id": 4192,
-    "name": "Scarab swarm",
+    "name": "Scarab Swarm",
     "version": "Normal",
     "image": "Scarab swarm.png",
     "level": 98,
@@ -51952,7 +52513,7 @@
   },
   {
     "id": 1782,
-    "name": "Scarab swarm",
+    "name": "Scarab Swarm",
     "version": "Pyramid Plunder",
     "image": "Scarab swarm.png",
     "level": 98,
@@ -52226,7 +52787,7 @@
   },
   {
     "id": 6616,
-    "name": "Scorpia's offspring",
+    "name": "Scorpia's offspring (monster)",
     "version": "",
     "image": "Scorpia's offspring (monster).png",
     "level": 15,
@@ -52259,7 +52820,7 @@
   },
   {
     "id": null,
-    "name": "Scorpion",
+    "name": "Scorpion (20th Anniversary event)",
     "version": "",
     "image": "Scorpion (20th Anniversary event).png",
     "level": 0,
@@ -52793,7 +53354,7 @@
   },
   {
     "id": 11073,
-    "name": "Sergeant",
+    "name": "Sergeant (Shayzien)",
     "version": "",
     "image": "Sergeant (Shayzien).png",
     "level": 84,
@@ -52925,7 +53486,7 @@
   },
   {
     "id": 4104,
-    "name": "Servant",
+    "name": "Servant (Burthorpe)",
     "version": "",
     "image": "Servant (Burthorpe).png",
     "level": 5,
@@ -52958,7 +53519,7 @@
   },
   {
     "id": 5633,
-    "name": "Shade",
+    "name": "Shade (Temple Trekking)",
     "version": "",
     "image": "Fiyr Shade.png",
     "level": 140,
@@ -54305,7 +54866,7 @@
   },
   {
     "id": 5237,
-    "name": "Skeleton",
+    "name": "Skeleton (Ape Atoll)",
     "version": "",
     "image": "Skeleton (Ape Atoll).png",
     "level": 142,
@@ -54340,7 +54901,7 @@
   },
   {
     "id": 1688,
-    "name": "Skeleton",
+    "name": "Skeleton (Barrows)",
     "version": "Armed round shield",
     "image": "Skeleton (Barrows, 4).png",
     "level": 77,
@@ -54375,7 +54936,7 @@
   },
   {
     "id": 1687,
-    "name": "Skeleton",
+    "name": "Skeleton (Barrows)",
     "version": "Square shield",
     "image": "Skeleton (Barrows, 3).png",
     "level": 77,
@@ -54410,7 +54971,7 @@
   },
   {
     "id": 1685,
-    "name": "Skeleton",
+    "name": "Skeleton (Barrows)",
     "version": "Unarmed",
     "image": "Skeleton (Barrows).png",
     "level": 77,
@@ -54445,7 +55006,7 @@
   },
   {
     "id": 1686,
-    "name": "Skeleton",
+    "name": "Skeleton (Barrows)",
     "version": "Unarmed round shield",
     "image": "Skeleton (Barrows, 2).png",
     "level": 77,
@@ -54479,8 +55040,43 @@
     ]
   },
   {
+    "id": 7265,
+    "name": "Skeleton (Catacombs of Kourend)",
+    "version": "",
+    "image": "Skeleton (Catacombs of Kourend).png",
+    "level": 22,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      15,
+      17,
+      29,
+      1,
+      1,
+      18
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      -5,
+      0,
+      5,
+      5,
+      5
+    ],
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
     "id": 3565,
-    "name": "Skeleton",
+    "name": "Skeleton (Draynor Manor)",
     "version": "",
     "image": "Skeleton (Draynor Manor).png",
     "level": 22,
@@ -54515,7 +55111,7 @@
   },
   {
     "id": 3972,
-    "name": "Skeleton",
+    "name": "Skeleton (Melzar's Maze)",
     "version": "1",
     "image": "Skeleton (Melzar's Maze).png",
     "level": 22,
@@ -54550,7 +55146,7 @@
   },
   {
     "id": 3973,
-    "name": "Skeleton",
+    "name": "Skeleton (Melzar's Maze)",
     "version": "2",
     "image": "Skeleton (Melzar's Maze, 2).png",
     "level": 22,
@@ -54585,7 +55181,7 @@
   },
   {
     "id": 3974,
-    "name": "Skeleton",
+    "name": "Skeleton (Melzar's Maze)",
     "version": "3",
     "image": "Skeleton (Melzar's Maze, 3).png",
     "level": 22,
@@ -54620,7 +55216,7 @@
   },
   {
     "id": 8072,
-    "name": "Skeleton",
+    "name": "Skeleton (Shayzien Crypts)",
     "version": "Magic",
     "image": "Skeleton Mage (lv 16).png",
     "level": 132,
@@ -54655,7 +55251,7 @@
   },
   {
     "id": 8070,
-    "name": "Skeleton",
+    "name": "Skeleton (Shayzien Crypts)",
     "version": "Melee",
     "image": "Skeleton (9).png",
     "level": 132,
@@ -54690,7 +55286,7 @@
   },
   {
     "id": 8071,
-    "name": "Skeleton",
+    "name": "Skeleton (Shayzien Crypts)",
     "version": "Range",
     "image": "Skeleton (3).png",
     "level": 132,
@@ -54725,7 +55321,7 @@
   },
   {
     "id": 6448,
-    "name": "Skeleton",
+    "name": "Skeleton (Tarn's Lair)",
     "version": "Level 40",
     "image": "Skeleton (Tarn's Lair, 7).png",
     "level": 40,
@@ -54760,7 +55356,7 @@
   },
   {
     "id": 6446,
-    "name": "Skeleton",
+    "name": "Skeleton (Tarn's Lair)",
     "version": "Level 42 (Hammer)",
     "image": "Skeleton (Tarn's Lair, 5).png",
     "level": 42,
@@ -54795,7 +55391,7 @@
   },
   {
     "id": 6444,
-    "name": "Skeleton",
+    "name": "Skeleton (Tarn's Lair)",
     "version": "Level 42 (Sword)",
     "image": "Skeleton (Tarn's Lair, 3).png",
     "level": 42,
@@ -54830,7 +55426,7 @@
   },
   {
     "id": 6445,
-    "name": "Skeleton",
+    "name": "Skeleton (Tarn's Lair)",
     "version": "Level 59",
     "image": "Skeleton (Tarn's Lair, 4).png",
     "level": 59,
@@ -54865,7 +55461,7 @@
   },
   {
     "id": 6447,
-    "name": "Skeleton",
+    "name": "Skeleton (Tarn's Lair)",
     "version": "Level 63",
     "image": "Skeleton (Tarn's Lair, 6).png",
     "level": 63,
@@ -54900,7 +55496,7 @@
   },
   {
     "id": 6467,
-    "name": "Skeleton",
+    "name": "Skeleton (Tarn's Lair)",
     "version": "Level 72",
     "image": "Skeleton (Tarn's Lair, 8).png",
     "level": 72,
@@ -54935,7 +55531,7 @@
   },
   {
     "id": 6442,
-    "name": "Skeleton",
+    "name": "Skeleton (Tarn's Lair)",
     "version": "Level 77",
     "image": "Skeleton (Tarn's Lair).png",
     "level": 77,
@@ -54970,7 +55566,7 @@
   },
   {
     "id": 6443,
-    "name": "Skeleton",
+    "name": "Skeleton (Tarn's Lair)",
     "version": "Level 81",
     "image": "Skeleton (Tarn's Lair, 2).png",
     "level": 81,
@@ -55005,7 +55601,7 @@
   },
   {
     "id": 6468,
-    "name": "Skeleton",
+    "name": "Skeleton (Tarn's Lair)",
     "version": "Level 87",
     "image": "Skeleton (Tarn's Lair, 9).png",
     "level": 87,
@@ -55040,7 +55636,7 @@
   },
   {
     "id": 924,
-    "name": "Skeleton",
+    "name": "Skeleton (The Restless Ghost)",
     "version": "",
     "image": "Skeleton (The Restless Ghost).png",
     "level": 13,
@@ -55075,7 +55671,7 @@
   },
   {
     "id": 6441,
-    "name": "Skeleton",
+    "name": "Skeleton (mage)",
     "version": "",
     "image": "Skeleton Mage (lv 16).png",
     "level": 94,
@@ -55145,7 +55741,7 @@
   },
   {
     "id": 12107,
-    "name": "Skeleton Hellhound",
+    "name": "Skeleton Hellhound (Calvar'ion)",
     "version": "",
     "image": "Skeleton Hellhound (Calvar'ion).png",
     "level": 115,
@@ -55178,7 +55774,7 @@
   },
   {
     "id": 6613,
-    "name": "Skeleton Hellhound",
+    "name": "Skeleton Hellhound (Vet'ion)",
     "version": "",
     "image": "Skeleton Hellhound (Vet'ion).png",
     "level": 194,
@@ -55213,7 +55809,7 @@
   },
   {
     "id": 6326,
-    "name": "Skeleton Hellhound (hard)",
+    "name": "Skeleton Hellhound",
     "version": "Hard",
     "image": "Skeleton Hellhound.png",
     "level": 198,
@@ -55528,7 +56124,7 @@
   },
   {
     "id": 130,
-    "name": "Skeleton",
+    "name": "Skeleton guard",
     "version": "",
     "image": "Skeleton guard.png",
     "level": 22,
@@ -56047,7 +56643,7 @@
   },
   {
     "id": 774,
-    "name": "Skraeling",
+    "name": "Skraeling (Etceteria)",
     "version": "Battleaxe",
     "image": "Skraeling (battleaxe).png",
     "level": 2,
@@ -56080,7 +56676,7 @@
   },
   {
     "id": 773,
-    "name": "Skraeling",
+    "name": "Skraeling (Etceteria)",
     "version": "Sword",
     "image": "Skraeling (sword).png",
     "level": 2,
@@ -56113,7 +56709,7 @@
   },
   {
     "id": 3684,
-    "name": "Skraeling",
+    "name": "Skraeling (Miscellania)",
     "version": "Brown shirt",
     "image": "Skraeling (Brown shirt).png",
     "level": 2,
@@ -56146,7 +56742,7 @@
   },
   {
     "id": 3686,
-    "name": "Skraeling",
+    "name": "Skraeling (Miscellania)",
     "version": "Green shirt",
     "image": "Skraeling (Green shirt).png",
     "level": 2,
@@ -56179,7 +56775,7 @@
   },
   {
     "id": 6324,
-    "name": "Slagilith (hard)",
+    "name": "Slagilith",
     "version": "Hard",
     "image": "Slagilith.png",
     "level": 202,
@@ -56280,7 +56876,7 @@
   },
   {
     "id": 9470,
-    "name": "Sleepwalker",
+    "name": "Sleepwalker (Phosani's Nightmare)",
     "version": "",
     "image": "Sleepwalker (Phosani's Nightmare).png",
     "level": 3,
@@ -56313,7 +56909,7 @@
   },
   {
     "id": 9446,
-    "name": "Sleepwalker",
+    "name": "Sleepwalker (monster)",
     "version": "1",
     "image": "Sleepwalker (1).png",
     "level": 3,
@@ -56346,7 +56942,7 @@
   },
   {
     "id": 9447,
-    "name": "Sleepwalker",
+    "name": "Sleepwalker (monster)",
     "version": "2",
     "image": "Sleepwalker (2).png",
     "level": 3,
@@ -56379,7 +56975,7 @@
   },
   {
     "id": 9448,
-    "name": "Sleepwalker",
+    "name": "Sleepwalker (monster)",
     "version": "3",
     "image": "Sleepwalker (3).png",
     "level": 3,
@@ -56412,7 +57008,7 @@
   },
   {
     "id": 9449,
-    "name": "Sleepwalker",
+    "name": "Sleepwalker (monster)",
     "version": "4",
     "image": "Sleepwalker (4).png",
     "level": 3,
@@ -56445,7 +57041,7 @@
   },
   {
     "id": 9450,
-    "name": "Sleepwalker",
+    "name": "Sleepwalker (monster)",
     "version": "5",
     "image": "Sleepwalker (5).png",
     "level": 3,
@@ -56478,7 +57074,7 @@
   },
   {
     "id": 9451,
-    "name": "Sleepwalker",
+    "name": "Sleepwalker (monster)",
     "version": "6",
     "image": "Sleepwalker (6).png",
     "level": 3,
@@ -56742,7 +57338,7 @@
   },
   {
     "id": 5244,
-    "name": "Snake",
+    "name": "Snake (Ape Atoll)",
     "version": "",
     "image": "Snake (Ape Atoll).png",
     "level": 24,
@@ -56775,7 +57371,7 @@
   },
   {
     "id": 1037,
-    "name": "Snake",
+    "name": "Snake (Mos Le'Harmless)",
     "version": "",
     "image": "Snake (Mos Le'Harmless).png",
     "level": 35,
@@ -56788,6 +57384,39 @@
       1,
       1,
       25
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 3544,
+    "name": "Snake (desert)",
+    "version": "",
+    "image": "Snake (desert).png",
+    "level": 5,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      4,
+      3,
+      6,
+      1,
+      1,
+      5
     ],
     "offensive": [
       0,
@@ -56940,7 +57569,7 @@
   },
   {
     "id": 4086,
-    "name": "Soldier",
+    "name": "Soldier (Burthorpe)",
     "version": "",
     "image": "Soldier (Burthorpe).png",
     "level": 48,
@@ -56973,7 +57602,7 @@
   },
   {
     "id": 11072,
-    "name": "Soldier",
+    "name": "Soldier (Shayzien)",
     "version": "",
     "image": "Soldier (Shayzien).png",
     "level": 21,
@@ -57006,7 +57635,7 @@
   },
   {
     "id": 5421,
-    "name": "Soldier",
+    "name": "Soldier (Yanille)",
     "version": "",
     "image": "Soldier (Yanille).png",
     "level": 28,
@@ -57501,7 +58130,7 @@
   },
   {
     "id": 10437,
-    "name": "Sourhog",
+    "name": "Sourhog (A Porcine of Interest)",
     "version": "",
     "image": "Sourhog.png",
     "level": 37,
@@ -57567,7 +58196,7 @@
   },
   {
     "id": 8056,
-    "name": "Spawn",
+    "name": "Spawn (Dragon Slayer II)",
     "version": "",
     "image": "Spawn (Dragon Slayer II).png",
     "level": 100,
@@ -57699,7 +58328,7 @@
   },
   {
     "id": 5238,
-    "name": "Spider",
+    "name": "Spider (Ape Atoll)",
     "version": "",
     "image": "Spider (Ape Atoll).png",
     "level": 1,
@@ -57732,7 +58361,7 @@
   },
   {
     "id": 8137,
-    "name": "Spider",
+    "name": "Spider (Ungael)",
     "version": "",
     "image": "Spider (Ungael).png",
     "level": 35,
@@ -57765,7 +58394,7 @@
   },
   {
     "id": 11176,
-    "name": "Spider",
+    "name": "Spider (araxyte)",
     "version": "Level 123",
     "image": "Spider (araxyte, lv 123).png",
     "level": 123,
@@ -57798,7 +58427,7 @@
   },
   {
     "id": 11175,
-    "name": "Spider",
+    "name": "Spider (araxyte)",
     "version": "Level 87",
     "image": "Spider (araxyte, lv 87).png",
     "level": 87,
@@ -58295,7 +58924,7 @@
   },
   {
     "id": 5946,
-    "name": "Suspicious water",
+    "name": "Spinolyp",
     "version": "Suspicious water",
     "image": "Placeholder.png",
     "level": 34,
@@ -58468,7 +59097,7 @@
   },
   {
     "id": 11292,
-    "name": "Spiritual Mage",
+    "name": "Spiritual mage",
     "version": "Zaros",
     "image": "Spiritual Mage (Zaros).png",
     "level": 182,
@@ -58643,7 +59272,7 @@
   },
   {
     "id": 11291,
-    "name": "Spiritual Ranger",
+    "name": "Spiritual ranger",
     "version": "Zaros",
     "image": "Spiritual Ranger (Zaros).png",
     "level": 158,
@@ -58818,7 +59447,7 @@
   },
   {
     "id": 11290,
-    "name": "Spiritual Warrior",
+    "name": "Spiritual warrior",
     "version": "Zaros",
     "image": "Spiritual Warrior (Zaros).png",
     "level": 158,
@@ -59152,7 +59781,7 @@
   },
   {
     "id": 139,
-    "name": "Steel dragon",
+    "name": "Steel dragon (Construction)",
     "version": "",
     "image": "Steel dragon (Construction) built.png",
     "level": 246,
@@ -59829,7 +60458,7 @@
   },
   {
     "id": 8299,
-    "name": "Swampy log",
+    "name": "Swamp Crab",
     "version": "Hidden",
     "image": "Swampy log.png",
     "level": 55,
@@ -59928,7 +60557,7 @@
   },
   {
     "id": 5616,
-    "name": "Swamp Snake",
+    "name": "Swamp snake",
     "version": "Level 109",
     "image": "Swamp snake (Level 109).png",
     "level": 109,
@@ -59961,7 +60590,7 @@
   },
   {
     "id": 5617,
-    "name": "Swamp Snake",
+    "name": "Swamp snake",
     "version": "Level 139",
     "image": "Swamp snake (Level 139).png",
     "level": 139,
@@ -59994,7 +60623,7 @@
   },
   {
     "id": 5615,
-    "name": "Swamp Snake",
+    "name": "Swamp snake",
     "version": "Level 80",
     "image": "Swamp snake.png",
     "level": 80,
@@ -60095,7 +60724,7 @@
   },
   {
     "id": 6291,
-    "name": "Tanglefoot (hard)",
+    "name": "Tanglefoot",
     "version": "Hard",
     "image": "Tanglefoot.png",
     "level": 199,
@@ -60260,7 +60889,7 @@
   },
   {
     "id": 4757,
-    "name": "Tarik",
+    "name": "Tarik (Nardah)",
     "version": "",
     "image": "Tarik (Nardah).png",
     "level": 21,
@@ -60328,7 +60957,7 @@
   },
   {
     "id": 6477,
-    "name": "Mutant tarn",
+    "name": "Tarn",
     "version": "",
     "image": "Mutant tarn.png",
     "level": 69,
@@ -60361,7 +60990,7 @@
   },
   {
     "id": 7543,
-    "name": "Tekton (enraged)",
+    "name": "Tekton",
     "version": "Enraged",
     "image": "Tekton (enraged).png",
     "level": 0,
@@ -60396,7 +61025,7 @@
   },
   {
     "id": 7544,
-    "name": "Tekton (enraged)",
+    "name": "Tekton",
     "version": "Enraged (Challenge Mode)",
     "image": "Tekton (enraged).png",
     "level": 0,
@@ -60600,7 +61229,7 @@
   },
   {
     "id": 5912,
-    "name": "Tentacle",
+    "name": "Tentacle (Abyssal Sire)",
     "version": "",
     "image": "Tentacle (Abyssal Sire, stunned).png",
     "level": 0,
@@ -60635,7 +61264,7 @@
   },
   {
     "id": 5643,
-    "name": "Tentacle",
+    "name": "Tentacle (Temple Trekking)",
     "version": "",
     "image": "Tentacle (Temple Trekking).png",
     "level": 99,
@@ -60868,7 +61497,7 @@
   },
   {
     "id": 6120,
-    "name": "The Everlasting (hard)",
+    "name": "The Everlasting",
     "version": "Hard",
     "image": "The Everlasting.png",
     "level": 365,
@@ -60967,7 +61596,7 @@
   },
   {
     "id": 6119,
-    "name": "The Inadequacy (hard)",
+    "name": "The Inadequacy",
     "version": "Hard",
     "image": "The Inadequacy.png",
     "level": 600,
@@ -61066,7 +61695,7 @@
   },
   {
     "id": 6322,
-    "name": "The Kendal (hard)",
+    "name": "The Kendal",
     "version": "Hard",
     "image": "The Kendal.png",
     "level": 210,
@@ -61429,7 +62058,7 @@
   },
   {
     "id": 6121,
-    "name": "The Untouchable (hard)",
+    "name": "The Untouchable",
     "version": "Hard",
     "image": "The Untouchable.png",
     "level": 440,
@@ -61901,8 +62530,8 @@
       1,
       5,
       25,
-      0,
-      0,
+      1,
+      1,
       1
     ],
     "offensive": [
@@ -62023,7 +62652,7 @@
   },
   {
     "id": 3682,
-    "name": "Thora",
+    "name": "Thora (Miscellania)",
     "version": "",
     "image": "Thora (Miscellania).png",
     "level": 2,
@@ -62155,7 +62784,7 @@
   },
   {
     "id": 4135,
-    "name": "Thrower troll",
+    "name": "Thrower troll (Trollheim)",
     "version": "",
     "image": "Thrower Troll.png",
     "level": 68,
@@ -62221,7 +62850,7 @@
   },
   {
     "id": 141,
-    "name": "Tok-Xil",
+    "name": "Tok-Xil (Construction)",
     "version": "",
     "image": "Tok-Xil (Construction).png",
     "level": 135,
@@ -63086,7 +63715,7 @@
   },
   {
     "id": 8529,
-    "name": "Trapped Soul (hard)",
+    "name": "Trapped Soul",
     "version": "Hard",
     "image": "Trapped Soul.png",
     "level": 101,
@@ -63156,7 +63785,7 @@
   },
   {
     "id": 6319,
-    "name": "Tree spirit (hard)",
+    "name": "Tree spirit (Lost City)",
     "version": "Hard",
     "image": "Tree spirit (Lost City).png",
     "level": 199,
@@ -63192,7 +63821,7 @@
   },
   {
     "id": 1163,
-    "name": "Tree spirit",
+    "name": "Tree spirit (Lost City)",
     "version": "Normal",
     "image": "Tree spirit (Lost City).png",
     "level": 101,
@@ -63461,7 +64090,7 @@
   },
   {
     "id": 6298,
-    "name": "Treus Dayth (hard)",
+    "name": "Treus Dayth",
     "version": "",
     "image": "Treus Dayth.png",
     "level": 194,
@@ -63661,7 +64290,7 @@
   },
   {
     "id": null,
-    "name": "Troll",
+    "name": "Troll (20th Anniversary event)",
     "version": "",
     "image": "Troll (20th Anniversary event).png",
     "level": 0,
@@ -63694,7 +64323,7 @@
   },
   {
     "id": 133,
-    "name": "Troll",
+    "name": "Troll (Construction)",
     "version": "",
     "image": "Troll built.png",
     "level": 91,
@@ -63727,7 +64356,7 @@
   },
   {
     "id": null,
-    "name": "Troll",
+    "name": "Troll (historical)",
     "version": "",
     "image": "Troll.png",
     "level": 69,
@@ -64635,7 +65264,7 @@
   },
   {
     "id": 2154,
-    "name": "TzHaar-Mej",
+    "name": "TzHaar-Mej (monster)",
     "version": "",
     "image": "TzHaar-Mej.png",
     "level": 103,
@@ -65894,7 +66523,7 @@
   },
   {
     "id": 6143,
-    "name": "Urium Shadow",
+    "name": "Urium Shade",
     "version": "Shadow",
     "image": "Urium Shadow.png",
     "level": 140,
@@ -66729,7 +67358,7 @@
   },
   {
     "id": 12000,
-    "name": "Venenatis' Spiderling",
+    "name": "Venenatis' Spiderling (monster)",
     "version": "",
     "image": "Venenatis' Spiderling.png",
     "level": 12,
@@ -67899,7 +68528,7 @@
   },
   {
     "id": 475,
-    "name": "Hole in the wall",
+    "name": "Wall beast",
     "version": "Hole",
     "image": "Hole in the wall.png",
     "level": 49,
@@ -68031,7 +68660,7 @@
   },
   {
     "id": 3950,
-    "name": "Warrior",
+    "name": "Warrior (Rellekka)",
     "version": "",
     "image": "Warrior (Rellekka).png",
     "level": 48,
@@ -68064,7 +68693,7 @@
   },
   {
     "id": 11926,
-    "name": "Warrior",
+    "name": "Warrior (Thieving)",
     "version": "Apricot",
     "image": "Warrior (Thieving, apricot).png",
     "level": 24,
@@ -68097,7 +68726,7 @@
   },
   {
     "id": 11929,
-    "name": "Warrior",
+    "name": "Warrior (Thieving)",
     "version": "Bald",
     "image": "Warrior (Thieving, bald).png",
     "level": 24,
@@ -68130,7 +68759,7 @@
   },
   {
     "id": 3260,
-    "name": "Warrior",
+    "name": "Warrior (Thieving)",
     "version": "Blond",
     "image": "Warrior (Thieving, blond).png",
     "level": 24,
@@ -68163,7 +68792,7 @@
   },
   {
     "id": 11927,
-    "name": "Warrior",
+    "name": "Warrior (Thieving)",
     "version": "Brown",
     "image": "Warrior (Thieving, brown).png",
     "level": 24,
@@ -68196,7 +68825,7 @@
   },
   {
     "id": 11928,
-    "name": "Warrior",
+    "name": "Warrior (Thieving)",
     "version": "Goatee",
     "image": "Warrior (Thieving, goatee).png",
     "level": 24,
@@ -68229,7 +68858,7 @@
   },
   {
     "id": 11925,
-    "name": "Warrior",
+    "name": "Warrior (Thieving)",
     "version": "Wind braids",
     "image": "Warrior (Thieving, wind braids).png",
     "level": 24,
@@ -68295,7 +68924,7 @@
   },
   {
     "id": null,
-    "name": "Watchman",
+    "name": "Watchman (random event)",
     "version": "Draynor Bank Robbery",
     "image": "Watchman (Draynor Bank Robbery).png",
     "level": 253,
@@ -68328,7 +68957,7 @@
   },
   {
     "id": null,
-    "name": "Watchman",
+    "name": "Watchman (random event)",
     "version": "Random event",
     "image": "Watchman (historical).png",
     "level": 0,
@@ -69289,7 +69918,7 @@
   },
   {
     "id": 4114,
-    "name": "White Knight",
+    "name": "White Knight (Burthorpe)",
     "version": "",
     "image": "White Knight (partisan, male).png",
     "level": 36,
@@ -69819,7 +70448,7 @@
   },
   {
     "id": 515,
-    "name": "Witch",
+    "name": "Witch (monster)",
     "version": "Al Kharid",
     "image": "Witch (unused 2).png",
     "level": 25,
@@ -69852,7 +70481,7 @@
   },
   {
     "id": 514,
-    "name": "Witch",
+    "name": "Witch (monster)",
     "version": "Draynor Manor",
     "image": "Witch (unused 1).png",
     "level": 25,
@@ -69885,7 +70514,7 @@
   },
   {
     "id": null,
-    "name": "Witch",
+    "name": "Witch (monster)",
     "version": "Draynor Manor updated",
     "image": "Witch (historical).png",
     "level": 25,
@@ -69918,7 +70547,7 @@
   },
   {
     "id": 3998,
-    "name": "Witch's experiment (third form)",
+    "name": "Witch's experiment",
     "version": "Bear",
     "image": "Witch's experiment (third form).png",
     "level": 42,
@@ -69951,7 +70580,7 @@
   },
   {
     "id": 6335,
-    "name": "Witch's experiment (third form) (hard)",
+    "name": "Witch's experiment",
     "version": "Bear (hard)",
     "image": "Witch's experiment (third form).png",
     "level": 90,
@@ -70017,7 +70646,7 @@
   },
   {
     "id": 6333,
-    "name": "Witch's experiment (hard)",
+    "name": "Witch's experiment",
     "version": "Skavid (hard)",
     "image": "Witch's experiment.png",
     "level": 47,
@@ -70050,7 +70679,7 @@
   },
   {
     "id": 3997,
-    "name": "Witch's experiment (second form)",
+    "name": "Witch's experiment",
     "version": "Spider",
     "image": "Witch's experiment (second form).png",
     "level": 30,
@@ -70083,7 +70712,7 @@
   },
   {
     "id": 6334,
-    "name": "Witch's experiment (second form) (hard)",
+    "name": "Witch's experiment",
     "version": "Spider (hard)",
     "image": "Witch's experiment (second form).png",
     "level": 77,
@@ -70116,7 +70745,7 @@
   },
   {
     "id": 3999,
-    "name": "Witch's experiment (fourth form)",
+    "name": "Witch's experiment",
     "version": "Wolf",
     "image": "Witch's experiment (fourth form).png",
     "level": 53,
@@ -70149,7 +70778,7 @@
   },
   {
     "id": 6336,
-    "name": "Witch's experiment (fourth form) (hard)",
+    "name": "Witch's experiment",
     "version": "Wolf (hard)",
     "image": "Witch's experiment (fourth form).png",
     "level": 103,
@@ -70215,7 +70844,7 @@
   },
   {
     "id": 10522,
-    "name": "Wolf",
+    "name": "Wolf (Soul Wars)",
     "version": "",
     "image": "Wolf (Soul Wars).png",
     "level": 79,
@@ -70611,7 +71240,7 @@
   },
   {
     "id": null,
-    "name": "Woman",
+    "name": "Woman (Canifis)",
     "version": "Purple",
     "image": "Woman (Canifis, 1).png",
     "level": 24,
@@ -70644,7 +71273,7 @@
   },
   {
     "id": null,
-    "name": "Woman",
+    "name": "Woman (Canifis)",
     "version": "Red",
     "image": "Woman (Canifis, 3).png",
     "level": 24,
@@ -70677,7 +71306,7 @@
   },
   {
     "id": null,
-    "name": "Woman",
+    "name": "Woman (Canifis)",
     "version": "Yellow",
     "image": "Woman (Canifis, 2).png",
     "level": 24,
@@ -70710,7 +71339,7 @@
   },
   {
     "id": 1140,
-    "name": "Woman",
+    "name": "Woman (West Ardougne)",
     "version": "Level 12",
     "image": "Woman (West Ardougne, level 12).png",
     "level": 12,
@@ -70743,7 +71372,7 @@
   },
   {
     "id": 1142,
-    "name": "Woman",
+    "name": "Woman (West Ardougne)",
     "version": "Level 14",
     "image": "Woman (West Ardougne, level 14).png",
     "level": 14,
@@ -70776,7 +71405,7 @@
   },
   {
     "id": 1119,
-    "name": "Woman",
+    "name": "Woman (West Ardougne)",
     "version": "Level 3 (1)",
     "image": "Woman (West Ardougne, level 3, 1).png",
     "level": 3,
@@ -70809,7 +71438,7 @@
   },
   {
     "id": 1131,
-    "name": "Woman",
+    "name": "Woman (West Ardougne)",
     "version": "Level 3 (2)",
     "image": "Woman (West Ardougne, level 3, 2).png",
     "level": 3,
@@ -70842,7 +71471,7 @@
   },
   {
     "id": 1141,
-    "name": "Woman",
+    "name": "Woman (West Ardougne)",
     "version": "Level 3 (3)",
     "image": "Woman (West Ardougne, level 3, 3).png",
     "level": 3,
@@ -70875,7 +71504,7 @@
   },
   {
     "id": 1130,
-    "name": "Woman",
+    "name": "Woman (West Ardougne)",
     "version": "Level 4 (1)",
     "image": "Woman (West Ardougne, level 4, 1).png",
     "level": 4,
@@ -70908,7 +71537,7 @@
   },
   {
     "id": 1139,
-    "name": "Woman",
+    "name": "Woman (West Ardougne)",
     "version": "Level 4 (2)",
     "image": "Woman (West Ardougne, level 4, 2).png",
     "level": 4,
@@ -70941,7 +71570,7 @@
   },
   {
     "id": 3268,
-    "name": "Woman",
+    "name": "Woman (historical)",
     "version": "",
     "image": "Woman (historical).png",
     "level": 2,
@@ -71506,7 +72135,7 @@
   },
   {
     "id": 3679,
-    "name": "Yrsa",
+    "name": "Yrsa (Miscellania)",
     "version": "",
     "image": "Yrsa (Miscellania).png",
     "level": 1,
@@ -72170,7 +72799,7 @@
   },
   {
     "id": 64,
-    "name": "Zombie",
+    "name": "Zombie (Entrana Dungeon)",
     "version": "1",
     "image": "Zombie (Level 25).png",
     "level": 25,
@@ -72205,7 +72834,7 @@
   },
   {
     "id": 65,
-    "name": "Zombie",
+    "name": "Zombie (Entrana Dungeon)",
     "version": "2",
     "image": "Zombie (Level 25, 2).png",
     "level": 25,
@@ -72240,7 +72869,7 @@
   },
   {
     "id": 66,
-    "name": "Zombie",
+    "name": "Zombie (Entrana Dungeon)",
     "version": "3",
     "image": "Zombie (Level 25, 3).png",
     "level": 25,
@@ -72275,7 +72904,7 @@
   },
   {
     "id": 67,
-    "name": "Zombie",
+    "name": "Zombie (Entrana Dungeon)",
     "version": "4",
     "image": "Zombie (Level 25, 4).png",
     "level": 25,
@@ -72310,7 +72939,7 @@
   },
   {
     "id": 68,
-    "name": "Zombie",
+    "name": "Zombie (Entrana Dungeon)",
     "version": "5",
     "image": "Zombie (Level 25, 5).png",
     "level": 25,
@@ -72345,7 +72974,7 @@
   },
   {
     "id": 3980,
-    "name": "Zombie",
+    "name": "Zombie (Melzar's Maze)",
     "version": "",
     "image": "Zombie (Level 24, 6).png",
     "level": 24,
@@ -72380,7 +73009,7 @@
   },
   {
     "id": 6741,
-    "name": "Zombie",
+    "name": "Zombie (Sepulchre of Death)",
     "version": "",
     "image": "Zombie (Sepulchre of Death).png",
     "level": 159,
@@ -72415,7 +73044,7 @@
   },
   {
     "id": 8069,
-    "name": "Zombie",
+    "name": "Zombie (Shayzien Crypts)",
     "version": "Magic",
     "image": "Zombie (Shayzien Crypts, Magic).png",
     "level": 132,
@@ -72450,7 +73079,7 @@
   },
   {
     "id": 8067,
-    "name": "Zombie",
+    "name": "Zombie (Shayzien Crypts)",
     "version": "Melee",
     "image": "Zombie (Shayzien Crypts, Melee).png",
     "level": 132,
@@ -72485,7 +73114,7 @@
   },
   {
     "id": 8068,
-    "name": "Zombie",
+    "name": "Zombie (Shayzien Crypts)",
     "version": "Range",
     "image": "Zombie (Shayzien Crypts, Range).png",
     "level": 132,
@@ -72520,7 +73149,7 @@
   },
   {
     "id": 6465,
-    "name": "Zombie",
+    "name": "Zombie (Tarn's Lair)",
     "version": "Level 100",
     "image": "Zombie (Tarn's Lair, Level 100).png",
     "level": 100,
@@ -72555,7 +73184,7 @@
   },
   {
     "id": 6449,
-    "name": "Zombie",
+    "name": "Zombie (Tarn's Lair)",
     "version": "Level 40",
     "image": "Zombie (Tarn's Lair, Level 40).png",
     "level": 40,
@@ -72590,7 +73219,7 @@
   },
   {
     "id": 6450,
-    "name": "Zombie",
+    "name": "Zombie (Tarn's Lair)",
     "version": "Level 42",
     "image": "Zombie (Tarn's Lair, Level 42).png",
     "level": 42,
@@ -72625,7 +73254,7 @@
   },
   {
     "id": 6451,
-    "name": "Zombie",
+    "name": "Zombie (Tarn's Lair)",
     "version": "Level 47",
     "image": "Zombie (Tarn's Lair, Level 47).png",
     "level": 47,
@@ -72660,7 +73289,7 @@
   },
   {
     "id": 6452,
-    "name": "Zombie",
+    "name": "Zombie (Tarn's Lair)",
     "version": "Level 50",
     "image": "Zombie (Tarn's Lair, Level 50).png",
     "level": 50,
@@ -72695,7 +73324,7 @@
   },
   {
     "id": 6453,
-    "name": "Zombie",
+    "name": "Zombie (Tarn's Lair)",
     "version": "Level 56",
     "image": "Zombie (Tarn's Lair, Level 56).png",
     "level": 56,
@@ -72730,7 +73359,7 @@
   },
   {
     "id": 6454,
-    "name": "Zombie",
+    "name": "Zombie (Tarn's Lair)",
     "version": "Level 61",
     "image": "Zombie (Tarn's Lair, Level 61).png",
     "level": 61,
@@ -72765,7 +73394,7 @@
   },
   {
     "id": 6455,
-    "name": "Zombie",
+    "name": "Zombie (Tarn's Lair)",
     "version": "Level 67",
     "image": "Zombie (Tarn's Lair, Level 67).png",
     "level": 67,
@@ -72800,7 +73429,7 @@
   },
   {
     "id": 6456,
-    "name": "Zombie",
+    "name": "Zombie (Tarn's Lair)",
     "version": "Level 70",
     "image": "Zombie (Tarn's Lair, Level 70).png",
     "level": 70,
@@ -72835,7 +73464,7 @@
   },
   {
     "id": 6457,
-    "name": "Zombie",
+    "name": "Zombie (Tarn's Lair)",
     "version": "Level 72",
     "image": "Zombie (Tarn's Lair, Level 72).png",
     "level": 72,
@@ -72870,7 +73499,7 @@
   },
   {
     "id": 6458,
-    "name": "Zombie",
+    "name": "Zombie (Tarn's Lair)",
     "version": "Level 76",
     "image": "Zombie (Tarn's Lair, Level 76).png",
     "level": 76,
@@ -72905,7 +73534,7 @@
   },
   {
     "id": 6459,
-    "name": "Zombie",
+    "name": "Zombie (Tarn's Lair)",
     "version": "Level 80",
     "image": "Zombie (Tarn's Lair, Level 80).png",
     "level": 80,
@@ -72940,7 +73569,7 @@
   },
   {
     "id": 6466,
-    "name": "Zombie",
+    "name": "Zombie (Tarn's Lair)",
     "version": "Level 81",
     "image": "Zombie (Tarn's Lair, Level 81).png",
     "level": 81,
@@ -72975,7 +73604,7 @@
   },
   {
     "id": 6460,
-    "name": "Zombie",
+    "name": "Zombie (Tarn's Lair)",
     "version": "Level 85",
     "image": "Zombie (Tarn's Lair, Level 85).png",
     "level": 85,
@@ -73010,7 +73639,7 @@
   },
   {
     "id": 6461,
-    "name": "Zombie",
+    "name": "Zombie (Tarn's Lair)",
     "version": "Level 86",
     "image": "Zombie (Tarn's Lair, Level 86).png",
     "level": 86,
@@ -73045,7 +73674,7 @@
   },
   {
     "id": 6462,
-    "name": "Zombie",
+    "name": "Zombie (Tarn's Lair)",
     "version": "Level 90",
     "image": "Zombie (Tarn's Lair, Level 90).png",
     "level": 90,
@@ -73080,7 +73709,7 @@
   },
   {
     "id": 6463,
-    "name": "Zombie",
+    "name": "Zombie (Tarn's Lair)",
     "version": "Level 95",
     "image": "Zombie (Tarn's Lair, Level 95).png",
     "level": 95,
@@ -73115,7 +73744,7 @@
   },
   {
     "id": 6464,
-    "name": "Zombie",
+    "name": "Zombie (Tarn's Lair)",
     "version": "Level 98",
     "image": "Zombie (Tarn's Lair, Level 98).png",
     "level": 98,
@@ -73150,7 +73779,7 @@
   },
   {
     "id": 5647,
-    "name": "Zombie",
+    "name": "Zombie (Temple Trekking)",
     "version": "",
     "image": "Zombie (Temple Trekking).png",
     "level": 23,
@@ -73185,7 +73814,7 @@
   },
   {
     "id": 880,
-    "name": "Zombie",
+    "name": "Zombie (Zogre Flesh Eaters)",
     "version": "",
     "image": "Zombie (Zogre Flesh Eaters).png",
     "level": 39,

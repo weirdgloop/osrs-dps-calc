@@ -13,6 +13,7 @@ interface IComboboxProps {
   placeholder?: string;
   onSelectedItemChange?: (item: ComboboxItem | null | undefined) => void;
   resetAfterSelect?: boolean;
+  blurAfterSelect?: boolean;
   className?: string;
   CustomItemComponent?: React.FC<{item: ComboboxItem, itemString: string}>;
 }
@@ -45,12 +46,14 @@ const Combobox: React.FC<IComboboxProps> = (props) => {
     items,
     onSelectedItemChange,
     resetAfterSelect,
+    blurAfterSelect,
     placeholder,
     className,
     CustomItemComponent,
   } = props;
   const [inputValue, setInputValue] = useState<string | undefined>('');
   const [filteredItems, setFilteredItems] = useState<any[]>([]);
+  const inputRef = useRef<HTMLInputElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
 
   // Virtualisation
@@ -145,12 +148,13 @@ const Combobox: React.FC<IComboboxProps> = (props) => {
     onSelectedItemChange: ({selectedItem}) => {
       if (onSelectedItemChange) onSelectedItemChange(selectedItem);
       if (resetAfterSelect) reset();
+      if (blurAfterSelect) inputRef.current?.blur();
     }
   });
 
   return (
     <div>
-      <input className={`form-control ${className}`} {...getInputProps({open: isOpen, type: 'text', placeholder: (placeholder || 'Search...')})} />
+      <input className={`form-control ${className}`} {...getInputProps({ref: inputRef, open: isOpen, type: 'text', placeholder: (placeholder || 'Search...')})} />
       <div
           className={`absolute bg-white rounded shadow-xl mt-1 border border-gray-300 z-10 transition-opacity ${(isOpen && filteredItems.length) ? 'opacity-100' : 'opacity-0'}`}
           {...getMenuProps({

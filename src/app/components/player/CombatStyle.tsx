@@ -6,6 +6,8 @@ import {IconCircleCheck, IconCircleCheckFilled} from "@tabler/icons-react";
 import LazyImage from "@/app/components/generic/LazyImage";
 import {CombatStyleMap, PlayerCombatStyle} from "@/types/PlayerCombatStyle";
 import {StaticImageData} from "next/image";
+import {toJS} from "mobx";
+import isEqual from 'lodash.isequal';
 
 interface CombatStyleProps {
     style: PlayerCombatStyle;
@@ -19,19 +21,28 @@ export const CombatStyle: React.FC<CombatStyleProps> = observer((props) => {
     const [hovering, setHovering] = useState(false);
     const [styleImage, setStyleImage] = useState<string | null>(null);
 
-    const active = player.style.name === style.name;
+    const active = isEqual(toJS(player.style), style);
 
     useEffect(() => {
         // Import the combat style image dynamically using the path, because there are a lot of them
         const getStyleImage = async () => {
-            const path = CombatStyleMap[player.equipment.weapon.category][style.name];
-            console.log('path', path);
+            let path = CombatStyleMap[player.equipment.weapon.category][style.name];
+
+            if (style.type === 'magic' && style.stance === 'Defensive Autocast') {
+                path = {image: 'styles/760'};
+            } else if (style.type === 'magic' && style.stance === 'Autocast') {
+                path = {image: 'tabs/spells'};
+            } else if (path !== undefined) {
+                path = {image: `styles/${path.image}`};
+            }
+
             if (path === undefined) {
                 setStyleImage('');
                 return;
             }
+
             try {
-                const r: StaticImageData = (await import(`@/public/img/styles/${path.image}.png`)).default;
+                const r: StaticImageData = (await import(`@/public/img/${path.image}.png`)).default;
                 setStyleImage(r ? r.src : '');
             } catch (e) {
                 setStyleImage('');
@@ -39,7 +50,7 @@ export const CombatStyle: React.FC<CombatStyleProps> = observer((props) => {
         }
 
         getStyleImage();
-    }, [style.name, player.equipment.weapon.category]);
+    }, [style, player.equipment.weapon.category]);
 
     return (
         <button
@@ -48,7 +59,7 @@ export const CombatStyle: React.FC<CombatStyleProps> = observer((props) => {
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
         >
-            <div className={'h-[15px] w-[15px]'}>
+            <div className={'h-[15px] w-[15px] flex justify-center'}>
                 {styleImage && <LazyImage responsive={true} src={styleImage} />}
             </div>
             <div>
