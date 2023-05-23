@@ -4,7 +4,7 @@ import {PartialDeep} from 'type-fest';
 import {Potion} from './enums/Potion';
 import * as localforage from 'localforage';
 import {Preferences, State, UI} from '@/types/State';
-import {Prayer, PrayerMap} from './enums/Prayer';
+import {ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, Prayer, PrayerMap} from './enums/Prayer';
 import merge from 'lodash.mergewith';
 import {EquipmentCategory, getCombatStylesForCategory} from './enums/EquipmentCategory';
 import {toast} from 'react-toastify';
@@ -248,11 +248,20 @@ class GlobalState implements State {
     } else {
       // If we're toggling on a new prayer, let's do some checks to ensure that some prayers cannot be enabled alongside it
       let newPrayers = [...this.player.prayers];
-      let incompats = PrayerMap[prayer].incompatibleWith;
 
-      if (incompats) {
-        // Filter out any already-enabled prayer that is incompatible with this new one
-        newPrayers = newPrayers.filter((p) => !incompats.includes(p));
+      // If this is a defensive prayer, disable all other defensive prayers
+      if (DEFENSIVE_PRAYERS.includes(prayer)) newPrayers = newPrayers.filter((p) => !DEFENSIVE_PRAYERS.includes(p));
+
+      // If this is an offensive prayer...
+      if (OFFENSIVE_PRAYERS.includes(prayer)) {
+        newPrayers = newPrayers.filter((p) => {
+          // If this is a "brain" prayer, it can only be paired with arm prayers
+          if (BRAIN_PRAYERS.includes(prayer)) return !OFFENSIVE_PRAYERS.includes(p) || ARM_PRAYERS.includes(p);
+          // If this is an "arm" prayer, it can only be paired with brain prayers
+          if (ARM_PRAYERS.includes(prayer)) return !OFFENSIVE_PRAYERS.includes(p) || BRAIN_PRAYERS.includes(p);
+          // Otherwise, there are no offensive prayers it can be paired with, disable them all
+          return !OFFENSIVE_PRAYERS.includes(p);
+        })
       }
 
       this.player.prayers = [...newPrayers, prayer];

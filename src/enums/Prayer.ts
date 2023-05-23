@@ -35,197 +35,87 @@ export enum Prayer {
   AUGURY,
 }
 
-export const PrayerMap: {[k in Prayer]: {name: string, image: StaticImageData, incompatibleWith: Prayer[]}} = {
+export const DEFENSIVE_PRAYERS = [
+  Prayer.CHIVALRY, Prayer.PIETY, Prayer.RIGOUR, Prayer.AUGURY
+]
+
+export const OFFENSIVE_PRAYERS = [
+  Prayer.BURST_OF_STRENGTH, Prayer.CLARITY_OF_THOUGHT, Prayer.SHARP_EYE, Prayer.MYSTIC_WILL, Prayer.SUPERHUMAN_STRENGTH,
+  Prayer.IMPROVED_REFLEXES, Prayer.HAWK_EYE, Prayer.MYSTIC_LORE, Prayer.ULTIMATE_STRENGTH, Prayer.INCREDIBLE_REFLEXES,
+  Prayer.EAGLE_EYE, Prayer.MYSTIC_MIGHT, Prayer.CHIVALRY, Prayer.PIETY, Prayer.RIGOUR, Prayer.AUGURY
+]
+
+export const BRAIN_PRAYERS = [
+  Prayer.CLARITY_OF_THOUGHT, Prayer.IMPROVED_REFLEXES, Prayer.INCREDIBLE_REFLEXES
+]
+
+export const ARM_PRAYERS = [
+  Prayer.BURST_OF_STRENGTH, Prayer.SUPERHUMAN_STRENGTH, Prayer.ULTIMATE_STRENGTH
+]
+
+export const PrayerMap: {[k in Prayer]: {name: string, image: StaticImageData}} = {
   [Prayer.BURST_OF_STRENGTH]: {
     name: 'Burst of Strength',
     image: BurstOfStrength,
-    incompatibleWith: [
-      Prayer.SUPERHUMAN_STRENGTH,
-      Prayer.ULTIMATE_STRENGTH,
-      Prayer.CHIVALRY,
-      Prayer.PIETY
-    ]
   },
   [Prayer.CLARITY_OF_THOUGHT]: {
     name: 'Clarity of Thought',
     image: ClarityOfThought,
-    incompatibleWith: [
-      Prayer.IMPROVED_REFLEXES,
-      Prayer.INCREDIBLE_REFLEXES,
-      Prayer.CHIVALRY,
-      Prayer.PIETY
-    ]
   },
   [Prayer.SHARP_EYE]: {
     name: 'Sharp Eye',
     image: SharpEye,
-    incompatibleWith: [
-      Prayer.HAWK_EYE,
-      Prayer.EAGLE_EYE,
-      Prayer.RIGOUR,
-      Prayer.AUGURY,
-    ]
   },
   [Prayer.MYSTIC_WILL]: {
     name: 'Mystic Will',
     image: MysticWill,
-    incompatibleWith: [
-      Prayer.MYSTIC_LORE,
-      Prayer.MYSTIC_MIGHT,
-      Prayer.RIGOUR,
-      Prayer.AUGURY,
-    ]
   },
   [Prayer.SUPERHUMAN_STRENGTH]: {
     name: 'Superhuman Strength',
     image: SuperhumanStrength,
-    incompatibleWith: [
-      Prayer.BURST_OF_STRENGTH,
-      Prayer.ULTIMATE_STRENGTH,
-      Prayer.CHIVALRY,
-      Prayer.PIETY
-    ]
   },
   [Prayer.IMPROVED_REFLEXES]: {
     name: 'Improved Reflexes',
     image: ImprovedReflexes,
-    incompatibleWith: [
-      Prayer.CLARITY_OF_THOUGHT,
-      Prayer.INCREDIBLE_REFLEXES,
-      Prayer.CHIVALRY,
-      Prayer.PIETY
-    ]
   },
   [Prayer.HAWK_EYE]: {
     name: 'Hawk Eye',
     image: HawkEye,
-    incompatibleWith: [
-      Prayer.SHARP_EYE,
-      Prayer.EAGLE_EYE,
-      Prayer.RIGOUR,
-      Prayer.AUGURY,
-    ]
   },
   [Prayer.MYSTIC_LORE]: {
     name: 'Mystic Lore',
     image: MysticLore,
-    incompatibleWith: [
-      Prayer.MYSTIC_WILL,
-      Prayer.MYSTIC_MIGHT,
-      Prayer.RIGOUR,
-      Prayer.AUGURY,
-    ]
   },
   [Prayer.ULTIMATE_STRENGTH]: {
     name: 'Ultimate Strength',
     image: UltimateStrength,
-    incompatibleWith: [
-      Prayer.BURST_OF_STRENGTH,
-      Prayer.SUPERHUMAN_STRENGTH,
-      Prayer.CHIVALRY,
-      Prayer.PIETY
-    ]
   },
   [Prayer.INCREDIBLE_REFLEXES]: {
     name: 'Incredible Reflexes',
     image: IncredibleReflexes,
-    incompatibleWith: [
-      Prayer.CLARITY_OF_THOUGHT,
-      Prayer.IMPROVED_REFLEXES,
-      Prayer.CHIVALRY,
-      Prayer.PIETY
-    ]
   },
   [Prayer.EAGLE_EYE]: {
     name: 'Eagle Eye',
     image: EagleEye,
-    incompatibleWith: [
-      Prayer.SHARP_EYE,
-      Prayer.HAWK_EYE,
-      Prayer.RIGOUR,
-      Prayer.AUGURY,
-    ]
   },
   [Prayer.MYSTIC_MIGHT]: {
     name: 'Mystic Might',
     image: MysticMight,
-    incompatibleWith: [
-      Prayer.MYSTIC_WILL,
-      Prayer.MYSTIC_LORE,
-      Prayer.RIGOUR,
-      Prayer.AUGURY,
-    ]
   },
   [Prayer.CHIVALRY]: {
     name: 'Chivalry',
     image: Chivalry,
-    incompatibleWith: [
-      Prayer.BURST_OF_STRENGTH,
-      Prayer.SUPERHUMAN_STRENGTH,
-      Prayer.ULTIMATE_STRENGTH,
-      Prayer.CLARITY_OF_THOUGHT,
-      Prayer.IMPROVED_REFLEXES,
-      Prayer.INCREDIBLE_REFLEXES,
-      Prayer.PIETY,
-      Prayer.RIGOUR,
-      Prayer.AUGURY,
-    ]
   },
   [Prayer.PIETY]: {
     name: 'Piety',
     image: Piety,
-    incompatibleWith: [
-      Prayer.BURST_OF_STRENGTH,
-      Prayer.SUPERHUMAN_STRENGTH,
-      Prayer.ULTIMATE_STRENGTH,
-      Prayer.CLARITY_OF_THOUGHT,
-      Prayer.IMPROVED_REFLEXES,
-      Prayer.INCREDIBLE_REFLEXES,
-      Prayer.CHIVALRY,
-      Prayer.RIGOUR,
-      Prayer.AUGURY,
-    ]
   },
   [Prayer.RIGOUR]: {
     name: 'Rigour',
     image: Rigour,
-    incompatibleWith: [
-      Prayer.BURST_OF_STRENGTH,
-      Prayer.SUPERHUMAN_STRENGTH,
-      Prayer.ULTIMATE_STRENGTH,
-      Prayer.CLARITY_OF_THOUGHT,
-      Prayer.IMPROVED_REFLEXES,
-      Prayer.INCREDIBLE_REFLEXES,
-      Prayer.PIETY,
-      Prayer.CHIVALRY,
-      Prayer.SHARP_EYE,
-      Prayer.HAWK_EYE,
-      Prayer.EAGLE_EYE,
-      Prayer.MYSTIC_WILL,
-      Prayer.MYSTIC_MIGHT,
-      Prayer.MYSTIC_LORE,
-      Prayer.AUGURY,
-    ]
   },
   [Prayer.AUGURY]: {
     name: 'Augury',
     image: Augury,
-    incompatibleWith: [
-      Prayer.BURST_OF_STRENGTH,
-      Prayer.SUPERHUMAN_STRENGTH,
-      Prayer.ULTIMATE_STRENGTH,
-      Prayer.CLARITY_OF_THOUGHT,
-      Prayer.IMPROVED_REFLEXES,
-      Prayer.INCREDIBLE_REFLEXES,
-      Prayer.PIETY,
-      Prayer.CHIVALRY,
-      Prayer.SHARP_EYE,
-      Prayer.HAWK_EYE,
-      Prayer.EAGLE_EYE,
-      Prayer.MYSTIC_WILL,
-      Prayer.MYSTIC_MIGHT,
-      Prayer.MYSTIC_LORE,
-      Prayer.RIGOUR,
-    ]
   }
 }
