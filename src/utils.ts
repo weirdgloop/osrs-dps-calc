@@ -5,7 +5,7 @@ export const classNames = (...classes: string[]) => {
   return classes.filter(Boolean).join(' ')
 }
 
-const API_PROXY = 'https://oldschool.runescape.wiki/cors/'
+const API_PROXY = 'https://oldschool.runescape.wiki/cors'
 
 /**
  * Fetch a player's skills (using the Hiscores API)
@@ -16,7 +16,7 @@ export const fetchPlayerSkills = async (username: string) => {
   let skills: PlayerSkills;
 
   // The Hiscores API returns in a CSV format, rather than JSON, so we need to do some manual parsing here
-  let rawData = res.data.split(' ');
+  let rawData = res.data.split('\n');
   let skillData = rawData.map((v) => {
     let d = v.split(',');
     return {rank: parseInt(d[0]), level: parseInt(d[1]), xp: parseInt(d[2])};

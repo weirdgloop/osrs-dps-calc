@@ -2,6 +2,7 @@
   "name": "osrs-dps",
   "version": "0.1.0",
   "private": true,
+  "author": "Jayden Bailey (https://weirdgloop.org)",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -61,6 +61,7 @@ const UsernameLookup: React.FC = observer(() => {
     const store = useStore();
     const shouldRemember = store.prefs.rememberUsername;
     const [username, setUsername] = useState('');
+    const [btnDisabled, setBtnDisabled] = useState(false);
     const btn = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
@@ -97,16 +98,17 @@ const UsernameLookup: React.FC = observer(() => {
             />
             <button
                 ref={btn}
-                disabled={!username}
+                disabled={!username || btnDisabled}
                 type={'button'}
                 className={'ml-1 text-sm btn'}
                 onClick={async () => {
+                    setBtnDisabled(true);
                     try {
                         const res = await toast.promise(
                             fetchPlayerSkills(username),
                             {
                                 pending: `Fetching player skills...`,
-                                success: `Done fetching player skills!`,
+                                success: `Successfully fetched player skills for ${username}!`,
                                 error: `Error fetching player skills`
                             },
                             {
@@ -115,7 +117,10 @@ const UsernameLookup: React.FC = observer(() => {
                         )
 
                         if (res) store.updatePlayer({skills: res});
-                    } catch (e) {}
+                    } catch (e) {
+                      console.error(e);
+                    }
+                    setBtnDisabled(false);
                 }}
             >
                 Lookup

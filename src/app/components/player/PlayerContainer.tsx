@@ -16,22 +16,22 @@ const LoadoutActionButtons: React.FC = observer(() => {
       <div className={'flex gap-0.5 text-body-200 mr-4'}>
           <button
               disabled={!canCreateLoadout}
-              onClick={() => createLoadout(true)}
+              onClick={() => createLoadout(true, selectedLoadout)}
               className={'disabled:cursor-not-allowed disabled:text-btns-100 hover:text-green transition-colors'}
               data-tooltip-id={'tooltip'}
               data-tooltip-content={'Add new loadout'}
           >
               <IconPlus/>
           </button>
-          <button
-              disabled={!canCreateLoadout}
-              onClick={() => createLoadout(true, selectedLoadout)}
-              className={'disabled:cursor-not-allowed disabled:text-btns-100 hover:text-orange transition-colors'}
-              data-tooltip-id={'tooltip'}
-              data-tooltip-content={'Clone loadout'}
-          >
-              <IconClipboardCopy/>
-          </button>
+          {/*<button*/}
+          {/*    disabled={!canCreateLoadout}*/}
+          {/*    onClick={() => createLoadout(true, selectedLoadout)}*/}
+          {/*    className={'disabled:cursor-not-allowed disabled:text-btns-100 hover:text-orange transition-colors'}*/}
+          {/*    data-tooltip-id={'tooltip'}*/}
+          {/*    data-tooltip-content={'Clone loadout'}*/}
+          {/*>*/}
+          {/*    <IconClipboardCopy/>*/}
+          {/*</button>*/}
           <button
               disabled={!canRemoveLoadout}
               onClick={() => deleteLoadout(selectedLoadout)}

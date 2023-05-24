@@ -3,7 +3,7 @@ import React from "react";
 const Footer: React.FC = () => {
   return (
     <div className={'border-t-8 border-body-500 py-4 px-4 items-center text-xs bg-btns-300 text-body-300'}>
-      <div className={'max-w-7xl mx-auto flex justify-between'}>
+      <div className={'max-w-7xl mx-auto flex gap-4 justify-between flex-wrap'}>
         <div>
           &copy; {new Date().getFullYear()} <a href={'https://weirdgloop.org'}>Weird Gloop</a> &#183;{' '}
           <a href={'https://github.com/weirdgloop/osrs-dps-calc'}>Contribute on GitHub</a>
