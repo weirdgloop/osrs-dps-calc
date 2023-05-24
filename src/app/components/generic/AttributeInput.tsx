@@ -7,11 +7,12 @@ interface AttributeInputProps {
   image: string | StaticImageData;
   value: number;
   disabled?: boolean;
+  className?: string;
   onChange?: (v: number) => void;
 }
 
 const AttributeInput: React.FC<AttributeInputProps> = (props) => {
-  const {name, image, onChange, value, disabled} = props;
+  const {name, image, className, onChange, value, disabled} = props;
 
   return (
     <div className={'flex items-center'}>
@@ -26,7 +27,7 @@ const AttributeInput: React.FC<AttributeInputProps> = (props) => {
                   </div>
               ) : (
                   <NumberInput
-                    className={'form-control w-full rounded mt-auto'}
+                    className={`form-control w-full rounded mt-auto ${className}`}
                     onChange={onChange}
                     value={value.toString()}
                   />

@@ -15,17 +15,51 @@ import {useStore} from '@/state';
 
 const Offensive: React.FC = observer(() => {
   const store = useStore();
-  const {prefs, equipmentBonuses} = store;
+  const {prefs, player, equipmentBonuses} = store;
 
   return (
     <div className={'w-[95px]'}>
       <p className={'text-sm text-gray-500'}>Offensive</p>
       <div className={'flex flex-col gap-2 mt-3 text-center'}>
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Dagger'} image={dagger} value={equipmentBonuses.offensive.stab} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Scimitar'} image={scimitar} value={equipmentBonuses.offensive.slash} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Warhammer'} image={warhammer} value={equipmentBonuses.offensive.crush} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Magic'} image={magic} value={equipmentBonuses.offensive.magic} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Ranged'} image={ranged} value={equipmentBonuses.offensive.ranged} />
+        <AttributeInput
+          disabled={!prefs.allowEditingPlayerStats}
+          name={'Dagger'}
+          image={dagger}
+          value={player.offensive.stab}
+          className={`${(player.offensive.stab !== equipmentBonuses.offensive.stab) ? 'bg-yellow-200' : ''}`}
+          onChange={(v) => store.updatePlayer({offensive: {stab: v}})}
+        />
+        <AttributeInput
+          disabled={!prefs.allowEditingPlayerStats}
+          name={'Scimitar'} image={scimitar}
+          value={player.offensive.slash}
+          className={`${(player.offensive.slash !== equipmentBonuses.offensive.slash) ? 'bg-yellow-200' : ''}`}
+          onChange={(v) => store.updatePlayer({offensive: {slash: v}})}
+        />
+        <AttributeInput
+          disabled={!prefs.allowEditingPlayerStats}
+          name={'Warhammer'}
+          image={warhammer}
+          value={player.offensive.crush}
+          className={`${(player.offensive.crush !== equipmentBonuses.offensive.crush) ? 'bg-yellow-200' : ''}`}
+          onChange={(v) => store.updatePlayer({offensive: {crush: v}})}
+        />
+        <AttributeInput
+          disabled={!prefs.allowEditingPlayerStats}
+          name={'Magic'}
+          image={magic}
+          value={player.offensive.magic}
+          className={`${(player.offensive.magic !== equipmentBonuses.offensive.magic) ? 'bg-yellow-200' : ''}`}
+          onChange={(v) => store.updatePlayer({offensive: {magic: v}})}
+        />
+        <AttributeInput
+          disabled={!prefs.allowEditingPlayerStats}
+          name={'Ranged'}
+          image={ranged}
+          value={player.offensive.ranged}
+          className={`${(player.offensive.ranged !== equipmentBonuses.offensive.ranged) ? 'bg-yellow-200' : ''}`}
+          onChange={(v) => store.updatePlayer({offensive: {ranged: v}})}
+        />
       </div>
     </div>
   )
@@ -33,17 +67,52 @@ const Offensive: React.FC = observer(() => {
 
 const Defensive: React.FC = observer(() => {
   const store = useStore();
-  const {prefs, equipmentBonuses} = store;
+  const {prefs, player, equipmentBonuses} = store;
 
   return (
     <div className={'w-[95px]'}>
       <p className={'text-sm text-gray-500'}>Defensive</p>
       <div className={'flex flex-col gap-2 mt-3 text-center'}>
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Dagger'} image={dagger} value={equipmentBonuses.defensive.stab} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Scimitar'} image={scimitar} value={equipmentBonuses.defensive.slash} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Warhammer'} image={warhammer} value={equipmentBonuses.defensive.crush} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Magic'} image={magic} value={equipmentBonuses.defensive.magic} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Ranged'} image={ranged} value={equipmentBonuses.defensive.ranged} />
+        <AttributeInput
+          disabled={!prefs.allowEditingPlayerStats}
+          name={'Dagger'}
+          image={dagger}
+          value={player.defensive.stab}
+          className={`${(player.defensive.stab !== equipmentBonuses.defensive.stab) ? 'bg-yellow-200' : ''}`}
+          onChange={(v) => store.updatePlayer({defensive: {stab: v}})}
+        />
+        <AttributeInput
+          disabled={!prefs.allowEditingPlayerStats}
+          name={'Scimitar'}
+          image={scimitar}
+          value={player.defensive.slash}
+          className={`${(player.defensive.slash !== equipmentBonuses.defensive.slash) ? 'bg-yellow-200' : ''}`}
+          onChange={(v) => store.updatePlayer({defensive: {slash: v}})}
+        />
+        <AttributeInput
+          disabled={!prefs.allowEditingPlayerStats}
+          name={'Warhammer'}
+          image={warhammer}
+          value={player.defensive.crush}
+          className={`${(player.defensive.crush !== equipmentBonuses.defensive.crush) ? 'bg-yellow-200' : ''}`}
+          onChange={(v) => store.updatePlayer({defensive: {crush: v}})}
+        />
+        <AttributeInput
+          disabled={!prefs.allowEditingPlayerStats}
+          name={'Magic'}
+          image={magic}
+          value={player.defensive.magic}
+          className={`${(player.defensive.magic !== equipmentBonuses.defensive.magic) ? 'bg-yellow-200' : ''}`}
+          onChange={(v) => store.updatePlayer({defensive: {magic: v}})}
+        />
+        <AttributeInput
+          disabled={!prefs.allowEditingPlayerStats}
+          name={'Ranged'}
+          image={ranged}
+          value={player.defensive.ranged}
+          className={`${(player.defensive.ranged !== equipmentBonuses.defensive.ranged) ? 'bg-yellow-200' : ''}`}
+          onChange={(v) => store.updatePlayer({defensive: {ranged: v}})}
+        />
       </div>
     </div>
   )
@@ -51,16 +120,44 @@ const Defensive: React.FC = observer(() => {
 
 const OtherBonuses: React.FC = observer(() => {
   const store = useStore();
-  const {prefs, equipmentBonuses} = store;
+  const {prefs, player, equipmentBonuses} = store;
 
   return (
     <div className={'w-[95px]'}>
       <p className={'text-sm text-gray-500'}>Other</p>
       <div className={'flex flex-col gap-2 mt-3 text-center'}>
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Strength'} image={strength} value={equipmentBonuses.bonuses.str} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Ranged Strength'} image={rangedStrength} value={equipmentBonuses.bonuses.ranged_str} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Magic Strength'} image={magicStrength} value={equipmentBonuses.bonuses.magic_str} />
-        <AttributeInput disabled={!prefs.allowEditingPlayerStats} name={'Prayer'} image={prayer} value={equipmentBonuses.bonuses.prayer} />
+        <AttributeInput
+          disabled={!prefs.allowEditingPlayerStats}
+          name={'Strength'}
+          image={strength}
+          value={player.bonuses.str}
+          className={`${(player.bonuses.str !== equipmentBonuses.bonuses.str) ? 'bg-yellow-200' : ''}`}
+          onChange={(v) => store.updatePlayer({bonuses: {str: v}})}
+        />
+        <AttributeInput
+          disabled={!prefs.allowEditingPlayerStats}
+          name={'Ranged Strength'}
+          image={rangedStrength}
+          value={player.bonuses.ranged_str}
+          className={`${(player.bonuses.ranged_str !== equipmentBonuses.bonuses.ranged_str) ? 'bg-yellow-200' : ''}`}
+          onChange={(v) => store.updatePlayer({bonuses: {ranged_str: v}})}
+        />
+        <AttributeInput
+          disabled={!prefs.allowEditingPlayerStats}
+          name={'Magic Strength'}
+          image={magicStrength}
+          value={player.bonuses.magic_str}
+          className={`${(player.bonuses.magic_str !== equipmentBonuses.bonuses.magic_str) ? 'bg-yellow-200' : ''}`}
+          onChange={(v) => store.updatePlayer({bonuses: {magic_str: v}})}
+        />
+        <AttributeInput
+          disabled={!prefs.allowEditingPlayerStats}
+          name={'Prayer'}
+          image={prayer}
+          value={player.bonuses.prayer}
+          className={`${(player.bonuses.prayer !== equipmentBonuses.bonuses.prayer) ? 'bg-yellow-200' : ''}`}
+          onChange={(v) => store.updatePlayer({bonuses: {prayer: v}})}
+        />
       </div>
     </div>
   )

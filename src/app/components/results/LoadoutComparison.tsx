@@ -62,7 +62,7 @@ const LoadoutComparison: React.FC = observer(() => {
 
     for (let i=0; i < loadouts.length; i++) {
       let colour = strokeColours.shift() || 'red';
-      lines.push(<Line type="monotone" dataKey={`Loadout ${i+1}`} stroke={colour} />);
+      lines.push(<Line key={i} type="monotone" dataKey={`Loadout ${i+1}`} stroke={colour} />);
       strokeColours.push(colour);
     }
     return lines;

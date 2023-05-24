@@ -4,13 +4,43 @@ import {PartialDeep} from 'type-fest';
 import {Potion} from './enums/Potion';
 import * as localforage from 'localforage';
 import {Preferences, State, UI} from '@/types/State';
-import {ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, Prayer, PrayerMap} from './enums/Prayer';
+import {ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, Prayer} from './enums/Prayer';
 import merge from 'lodash.mergewith';
 import {EquipmentCategory, getCombatStylesForCategory} from './enums/EquipmentCategory';
-import {toast} from 'react-toastify';
 import {EquipmentPiece, Player, PlayerBonuses, PlayerDefensive, PlayerEquipment, PlayerOffensive} from '@/types/Player';
 import {Monster} from '@/types/Monster';
 import {MonsterAttribute} from "@/enums/MonsterAttribute";
+
+const calculateEquipmentBonuses = (eq: EquipmentPiece[]) => {
+  let b: {
+    bonuses: PlayerBonuses,
+    offensive: PlayerOffensive,
+    defensive: PlayerDefensive
+  } = {
+    bonuses: {
+      str: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.str, 0),
+      magic_str: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.magic_str, 0),
+      ranged_str: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.ranged_str, 0),
+      prayer: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.prayer, 0),
+    },
+    offensive: {
+      slash: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.slash, 0),
+      stab: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.stab, 0),
+      crush: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.crush, 0),
+      ranged: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.ranged, 0),
+      magic: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.magic, 0),
+    },
+    defensive: {
+      slash: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.slash, 0),
+      stab: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.stab, 0),
+      crush: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.crush, 0),
+      ranged: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.ranged, 0),
+      magic: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.magic, 0),
+    }
+  };
+
+  return b;
+}
 
 const emptyEquipmentSlot: EquipmentPiece = {
   name: '',
@@ -163,39 +193,11 @@ class GlobalState implements State {
   }
 
   /**
-   * Return the calculated player bonuses, based on the equipment.
+   * Return the player's worn equipment bonuses. This is NOT the same as the player's current bonuses overall.
+   * For that, interpret the values in `store.player` for the current loadout.
    */
   get equipmentBonuses() {
-    const eq = Object.values(toJS(this.player.equipment));
-
-    let b: {
-      bonuses: PlayerBonuses,
-      offensive: PlayerOffensive,
-      defensive: PlayerDefensive
-    } = {
-      bonuses: {
-        str: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.str, 0),
-        magic_str: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.magic_str, 0),
-        ranged_str: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.ranged_str, 0),
-        prayer: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.prayer, 0),
-      },
-      offensive: {
-        slash: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.slash, 0),
-        stab: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.stab, 0),
-        crush: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.crush, 0),
-        ranged: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.ranged, 0),
-        magic: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.magic, 0),
-      },
-      defensive: {
-        slash: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.slash, 0),
-        stab: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.stab, 0),
-        crush: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.crush, 0),
-        ranged: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.ranged, 0),
-        magic: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.magic, 0),
-      }
-    };
-
-    return b;
+    return calculateEquipmentBonuses(Object.values(toJS(this.player.equipment)));
   }
 
   updateUIState(ui: PartialDeep<UI>) {
@@ -214,6 +216,13 @@ class GlobalState implements State {
   updatePreferences(pref: PartialDeep<Preferences>) {
     // Update local state store
     this.prefs = Object.assign(this.prefs, pref);
+
+    if (pref.allowEditingPlayerStats === false) {
+      // Reset player bonuses to their worn equipment
+      this.player.bonuses = this.equipmentBonuses.bonuses;
+      this.player.offensive = this.equipmentBonuses.offensive;
+      this.player.defensive = this.equipmentBonuses.defensive;
+    }
 
     // Save to browser storage
     localforage.setItem('dps-calc-prefs', toJS(this.prefs)).catch((e) => {
