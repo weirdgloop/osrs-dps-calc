@@ -12,6 +12,16 @@ export interface Preferences {
   rememberUsername: boolean;
 }
 
+export interface Calculator {
+  npcDefRoll: number,
+  playerMagicHit: number,
+  playerMagicAttack: number,
+  playerMeleeHit: number,
+  playerMeleeAttack: number,
+  playerRangedHit: number,
+  playerRangedAttack: number
+}
+
 export interface State {
   loadouts: Player[];
   selectedLoadout: number;

@@ -3,7 +3,7 @@ import React, {createContext, useContext} from 'react';
 import {PartialDeep} from 'type-fest';
 import {Potion} from './enums/Potion';
 import * as localforage from 'localforage';
-import {Preferences, State, UI} from '@/types/State';
+import {Calculator, Preferences, State, UI} from '@/types/State';
 import {ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, Prayer} from './enums/Prayer';
 import merge from 'lodash.mergewith';
 import {EquipmentCategory, getCombatStylesForCategory} from './enums/EquipmentCategory';
@@ -173,6 +173,16 @@ class GlobalState implements State {
     rememberUsername: true,
   }
 
+  calc: Calculator = {
+    npcDefRoll: 0,
+    playerMagicAttack: 0,
+    playerMagicHit: 0,
+    playerMeleeAttack: 0,
+    playerMeleeHit: 0,
+    playerRangedAttack: 0,
+    playerRangedHit: 0
+  }
+
   constructor() {
     makeAutoObservable(this, {}, {autoBind: true});
   }
@@ -202,6 +212,10 @@ class GlobalState implements State {
 
   updateUIState(ui: PartialDeep<UI>) {
     this.ui = Object.assign(this.ui, ui);
+  }
+
+  updateCalculator(calc: PartialDeep<Calculator>) {
+    this.calc = Object.assign(this.calc, calc);
   }
 
   loadPreferences() {

@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import MonsterContainer from '@/app/components/monster/MonsterContainer';
 import {Tooltip} from 'react-tooltip';
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
 import {ToastContainer} from 'react-toastify';
@@ -14,12 +14,52 @@ import ResultsContainer from "@/app/components/results/ResultsContainer";
 import {IconChartBar} from "@tabler/icons-react";
 import HitDistribution from "@/app/components/results/HitDistribution";
 import LoadoutComparison from "@/app/components/results/LoadoutComparison";
+import {RecomputeValuesRequest, WorkerRequestType, WorkerResponses, WorkerResponseType} from "@/types/WorkerData";
+import {reaction, toJS} from "mobx";
+import {Player} from "@/types/Player";
+import {Monster} from "@/types/Monster";
 
 const PreferencesModal = dynamic(() => import('@/app/components/PreferencesModal'));
 
 const Home: NextPage = observer(() => {
   const store = useStore();
   const {showPreferencesModal} = store.ui;
+
+  const workerRef = useRef<Worker>();
+
+  const doWorkerRecompute = (p: Player, m: Monster) => {
+    if (workerRef.current) {
+      workerRef.current?.postMessage(JSON.stringify({
+        type: WorkerRequestType.RECOMPUTE_VALUES,
+        data: {
+          player: p,
+          monster: m
+        }
+      } as RecomputeValuesRequest))
+    }
+  }
+
+  useEffect(() => {
+    // When the page loads, set up the worker and be ready to interpret the responses
+    workerRef.current = new Worker(new URL('../worker.ts', import.meta.url));
+    workerRef.current.onmessage = (evt: MessageEvent<string>) => {
+      const data = JSON.parse(evt.data) as WorkerResponses;
+
+      // Depending on the response type, do things...
+      switch (data.type) {
+        case WorkerResponseType.COMPUTED_VALUES:
+          store.updateCalculator(data.data);
+          break;
+        default:
+          break;
+      }
+    }
+
+    return () => {
+      // Terminate the worker when we un-mount this component
+      workerRef.current?.terminate();
+    }
+  }, []);
 
   useEffect(() => {
     // Load preferences from browser storage if there are any
@@ -34,6 +74,18 @@ const Home: NextPage = observer(() => {
       defensive: store.equipmentBonuses.defensive
     })
   }, [store, store.equipmentBonuses]);
+
+  useEffect(() => {
+    // When any of store.player or store.monster changes, run a re-compute of the calculator
+    const r1 = reaction(() => toJS(store.player), (data) => { doWorkerRecompute(data, store.monster) })
+    const r2 = reaction(() => toJS(store.monster), (data) => { doWorkerRecompute(store.player, data) })
+
+    return () => {
+      r1();
+      r2();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div>
