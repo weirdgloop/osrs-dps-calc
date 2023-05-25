@@ -45,8 +45,6 @@ const StatDisplay: React.FC<PropsWithChildren<StatDisplay>> = (props) => {
 }
 
 const BoxResults = observer(() => {
-  const [additionalData, setAdditionalData] = useState<AdditionalDataTypes[]>([]);
-
   return (
     <div className={'my-4'}>
       <div className={'pb-4 text-sm flex gap-2 flex-wrap'}>
@@ -65,54 +63,6 @@ const BoxResults = observer(() => {
         <StatDisplay name={'Average damage taken'} icon={<IconHeartMinus />}>
           <p>18.71</p>
         </StatDisplay>
-      </div>
-      {/*<div className={'max-w-xl mx-auto bg-gray-700 md:rounded p-4 shadow mb-4'}>*/}
-      {/*  <h3 className={'font-bold mb-2 text-white text-sm'}>*/}
-      {/*      <IconChartBar className={'inline-block mr-1'} />*/}
-      {/*      Toggle additional data and graphs*/}
-      {/*  </h3>*/}
-      {/*  <MultiSelect*/}
-      {/*      id={'results-outputs'}*/}
-      {/*      items={[{*/}
-      {/*        label: 'Hit distribution graph',*/}
-      {/*        value: AdditionalDataTypes.HIT_DISTRIBUTION*/}
-      {/*      }, {*/}
-      {/*        label: 'Loadout comparison graph',*/}
-      {/*        value: AdditionalDataTypes.LOADOUT_COMPARISON*/}
-      {/*      }]}*/}
-      {/*      onSelectedItemChange={(it) => {*/}
-      {/*        if (it) setAdditionalData(it.map((i) => i.value));*/}
-      {/*      }}*/}
-      {/*  />*/}
-      {/*</div>*/}
-      <div className={'flex gap-4 flex-wrap'}>
-        {
-          additionalData.includes(AdditionalDataTypes.HIT_DISTRIBUTION) && (
-            <div className={'grow bg-tile md:rounded shadow-lg max-w-[100vw]'}>
-              <div className={'px-6 py-4 bg-gray-700 text-white md:rounded-t border-b-4 border-gray-300'}>
-                <h3 className={'font-serif font-bold'}>Hit Distribution</h3>
-              </div>
-              <div className={'px-6 py-4'}>
-                <p className={'text-xs mb-4 text-gray-500'}>
-                  This graph shows the probabilities of dealing specific damage to the monster.
-                </p>
-                <HitDistribution />
-              </div>
-            </div>
-          )
-        }
-        {
-          additionalData.includes(AdditionalDataTypes.LOADOUT_COMPARISON) && (
-            <div className={'grow bg-tile md:rounded shadow-lg max-w-[100vw]'}>
-              <div className={'px-6 py-4 bg-gray-700 text-white md:rounded-t border-b-4 border-gray-300'}>
-                <h3 className={'font-serif font-bold'}>Loadout Comparison</h3>
-              </div>
-              <div className={'px-6 py-4'}>
-                <LoadoutComparison />
-              </div>
-            </div>
-          )
-        }
       </div>
     </div>
   )

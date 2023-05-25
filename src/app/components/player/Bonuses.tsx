@@ -12,6 +12,7 @@ import AttributeInput from '../generic/AttributeInput';
 import HelpLink from '../HelpLink';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
+import HitDistribution from "@/app/components/results/HitDistribution";
 
 const Offensive: React.FC = observer(() => {
   const store = useStore();
@@ -210,23 +211,27 @@ const Bonuses: React.FC = () => {
 
   return (
     <div className={'grow bg-body-100 text-black rounded-br'}>
-      <div className={'px-6 py-4 border-b border-body-400'}>
+      <div className={'px-6 py-2 border-b border-body-400'}>
         <h4 className={'font-serif font-bold'}>Bonuses</h4>
       </div>
-      <div className={'p-6'}>
+      <div className={'px-6 py-4'}>
         <div className={'flex gap-4 justify-center'}>
           <Offensive />
           <Defensive />
           <OtherBonuses />
         </div>
-        <div className={'mt-6'}>
-          <h4 className={`font-bold font-serif`}>
-            Attack speed <HelpLink href={'https://oldschool.runescape.wiki/w/Attack_speed'} />
-          </h4>
-
-          <AttackSpeedProgressBar speed={atkSpeed} />
-        </div>
       </div>
+      <div className={'px-6 py-2 border-y border-body-400'}>
+        <h4 className={'font-serif font-bold'}>Hit Distribution</h4>
+      </div>
+        <div className={'mt-2 px-2'}>
+          {/*<h4 className={`font-bold font-serif`}>*/}
+          {/*  Attack speed <HelpLink href={'https://oldschool.runescape.wiki/w/Attack_speed'} />*/}
+          {/*</h4>*/}
+
+          {/*<AttackSpeedProgressBar speed={atkSpeed} />*/}
+          <HitDistribution />
+        </div>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {BarChart, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer, Bar, TooltipProps} from 'recharts';
 import {NameType, ValueType} from 'recharts/types/component/DefaultTooltipContent';
 import hitsplat from '@/public/img/hitsplat.webp';
@@ -29,25 +29,23 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, pa
 }
 
 const HitDistribution: React.FC = () => {
-  const data = [
-    {name: 0, chance: 0.1002},
-    {name: 1, chance: 0.001},
-    {name: 2, chance: 0.002},
-    {name: 3, chance: 0.00042},
-    {name: 4, chance: 0.01232},
-    {name: 5, chance: 0.02321},
-    {name: 6, chance: 0.03},
-    {name: 7, chance: 0.001},
-    {name: 8, chance: 0.0042},
-    {name: 9, chance: 0.00123},
-    {name: 10, chance: 0.003}
-  ]
+  const data = useCallback(() => {
+    let d = [];
+    for (let i=0; i < 80; i++) {
+      const min = Math.ceil(0);
+      const max = Math.floor(1);
+      const num =  Math.random() * (max - min) + min;
+
+      d.push({name: i, chance: num});
+    }
+    return d;
+  }, []);
 
   return (
     <>
-      <ResponsiveContainer width={'100%'} height={200}>
+      <ResponsiveContainer width={'100%'} height={150}>
         <BarChart
-          data={data}
+          data={data()}
         >
           <CartesianGrid strokeDasharray="5 3" />
           <XAxis

@@ -12,7 +12,6 @@ import {ToastContainer} from 'react-toastify';
 import PlayerContainer from "@/app/components/player/PlayerContainer";
 import ResultsContainer from "@/app/components/results/ResultsContainer";
 import {IconChartBar} from "@tabler/icons-react";
-import HitDistribution from "@/app/components/results/HitDistribution";
 import LoadoutComparison from "@/app/components/results/LoadoutComparison";
 import {RecomputeValuesRequest, WorkerRequestType, WorkerResponses, WorkerResponseType} from "@/types/WorkerData";
 import {reaction, toJS} from "mobx";
@@ -107,17 +106,6 @@ const Home: NextPage = observer(() => {
                     <IconChartBar className={'inline-block mr-1'} />
                     Additional data and graphs
                 </h1>
-                <div className={'grow bg-tile md:rounded shadow-lg max-w-[100vw] my-4 text-black'}>
-                    <div className={'px-6 py-4 bg-btns-200 text-white md:rounded-t border-b-4 border-body-300'}>
-                        <h3 className={'font-serif font-bold'}>Hit Distribution</h3>
-                    </div>
-                    <div className={'px-6 py-4'}>
-                        <p className={'text-xs mb-4 text-gray-500'}>
-                            This graph shows the probabilities of dealing specific damage to the monster.
-                        </p>
-                        <HitDistribution />
-                    </div>
-                </div>
                 <div className={'grow bg-tile md:rounded shadow-lg max-w-[100vw] my-4 text-black'}>
                     <div className={'px-6 py-4 bg-btns-200 text-white md:rounded-t border-b-4 border-body-300'}>
                         <h3 className={'font-serif font-bold'}>Loadout Comparison</h3>
