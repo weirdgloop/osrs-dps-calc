@@ -136,14 +136,19 @@ const Combobox: React.FC<IComboboxProps> = (props) => {
     selectedItem,
     isOpen,
       reset,
+    setHighlightedIndex
   } = useCombobox({
     id,
     items: filteredItems,
     inputValue,
     itemToString,
+    onIsOpenChange: () => {
+      setHighlightedIndex(0);
+    },
     onInputValueChange: ({inputValue: newValue}) => {
       setInputValue(newValue);
       listRef.current?.scrollToItem(0);
+      setHighlightedIndex(0);
     },
     onSelectedItemChange: ({selectedItem}) => {
       if (onSelectedItemChange) onSelectedItemChange(selectedItem);
