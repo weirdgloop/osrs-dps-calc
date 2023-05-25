@@ -1,9 +1,7 @@
 import React from "react";
 import {observer} from "mobx-react-lite";
 import {useStore} from "@/state";
-import Select from "@/app/components/generic/Select";
-import LoadoutSelect from "@/app/components/player/LoadoutSelect";
-import {IconClipboardCopy, IconPlus, IconTrash} from "@tabler/icons-react";
+import {IconPlus, IconTrash} from "@tabler/icons-react";
 import {calculateCombatLevel} from "@/utils";
 import PlayerInnerContainer from "@/app/components/player/PlayerInnerContainer";
 import Bonuses from "@/app/components/player/Bonuses";
@@ -60,7 +58,7 @@ const PlayerContainer: React.FC = observer(() => {
                         return (
                             <button
                                 key={ix}
-                                className={`min-w-[40px] text-left first:rounded-tl px-6 py-1 first:border-l-0 border-l-2 last:border-r-2 border-body-400 transition-colors ${selectedLoadout === ix ? 'bg-orange-400' : 'bg-btns-400'}`}
+                                className={`min-w-[40px] text-left first:md:rounded-tl px-6 py-1 first:border-l-0 border-l-2 last:border-r-2 border-body-400 transition-colors ${selectedLoadout === ix ? 'bg-orange-400' : 'bg-btns-400'}`}
                                 onClick={() => {store.setSelectedLoadout(ix)}}
                             >
                                 {ix + 1}

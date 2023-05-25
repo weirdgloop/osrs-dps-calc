@@ -117,7 +117,7 @@ const Home: NextPage = observer(() => {
             </div>
         </div>
       <Tooltip id={'tooltip'} />
-      <ToastContainer hideProgressBar={true} draggable={false} limit={3} closeButton={false} className={'text-sm'} />
+      <ToastContainer position={'bottom-right'} hideProgressBar={true} draggable={false} limit={3} closeButton={false} className={'text-sm'} />
         {showPreferencesModal && <PreferencesModal isOpen={showPreferencesModal} />}
     </div>
   )
