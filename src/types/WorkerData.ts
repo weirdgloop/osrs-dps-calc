@@ -31,12 +31,8 @@ export interface ComputedValuesResponse {
   type: WorkerResponseType.COMPUTED_VALUES,
   data: {
     npcDefRoll: number,
-    playerMagicHit: number,
-    playerMagicAttack: number,
-    playerMeleeHit: number,
-    playerMeleeAttack: number,
-    playerRangedHit: number,
-    playerRangedAttack: number
+    maxHit: number,
+    maxAttackRoll: number
   }
 }
 

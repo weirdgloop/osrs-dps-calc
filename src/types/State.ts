@@ -14,12 +14,8 @@ export interface Preferences {
 
 export interface Calculator {
   npcDefRoll: number,
-  playerMagicHit: number,
-  playerMagicAttack: number,
-  playerMeleeHit: number,
-  playerMeleeAttack: number,
-  playerRangedHit: number,
-  playerRangedAttack: number
+  maxHit: number,
+  maxAttackRoll: number
 }
 
 export interface State {

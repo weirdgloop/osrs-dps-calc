@@ -175,12 +175,8 @@ class GlobalState implements State {
 
   calc: Calculator = {
     npcDefRoll: 0,
-    playerMagicAttack: 0,
-    playerMagicHit: 0,
-    playerMeleeAttack: 0,
-    playerMeleeHit: 0,
-    playerRangedAttack: 0,
-    playerRangedHit: 0
+    maxHit: 0,
+    maxAttackRoll: 0
   }
 
   constructor() {

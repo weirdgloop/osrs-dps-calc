@@ -16,14 +16,11 @@ import CombatCalc from "@/lib/CombatCalc";
  */
 const computeValues = (p: Player, m: Monster) => {
   let calc = new CombatCalc(p, m);
+
   return {
     npcDefRoll: calc.getNPCDefenceRoll(),
-    playerMagicHit: calc.getPlayerMaxMagicHit(),
-    playerMagicAttack: calc.getPlayerMaxMagicAttackRoll(),
-    playerMeleeHit: calc.getPlayerMaxMeleeHit(),
-    playerMeleeAttack: calc.getPlayerMaxMeleeAttackRoll(),
-    playerRangedHit: calc.getPlayerMaxRangedHit(),
-    playerRangedAttack: calc.getPlayerMaxRangedAttackRoll()
+    maxHit: calc.getMaxHit(),
+    maxAttackRoll: calc.getMaxAttackRoll()
   }
 }
 

@@ -20,9 +20,9 @@ export default class CombatCalc {
    * function will return a boolean indicating whether ANY of the provided items are equipped.
    * @param item
    */
-  public wearing(item: string): boolean;
-  public wearing(items: string[]): boolean;
-  public wearing(item: unknown): unknown {
+  private wearing(item: string): boolean;
+  private wearing(items: string[]): boolean;
+  private wearing(item: unknown): unknown {
     if (Array.isArray(item)) {
       return (item as string[]).some((i) => this.allEquippedItems.includes(i));
     } else if (typeof item === 'string') {
@@ -34,7 +34,7 @@ export default class CombatCalc {
    * Simple utility function for checking if ALL passed items are equipped.
    * @param items
    */
-  public wearingAll(items: string[]) {
+  private wearingAll(items: string[]) {
     return items.every((i) => this.allEquippedItems.includes(i));
   }
 
@@ -82,6 +82,9 @@ export default class CombatCalc {
     return ['Saradomin Strike', 'Claws of Guthix', 'Flames of Zamorak'].includes(this.player.spell.name);
   }
 
+  /**
+   * Get the NPC defence roll for this loadout, which is based on the player's current combat style
+   */
   public getNPCDefenceRoll(): number {
     const effectiveLevel = this.monster.skills.def + 9;
     let defenceRoll = effectiveLevel * (this.monster.defensive[this.player.style.type] + 64);
@@ -93,7 +96,7 @@ export default class CombatCalc {
     return defenceRoll;
   }
 
-  public getPlayerMaxMeleeAttackRoll(): number {
+  private getPlayerMaxMeleeAttackRoll(): number {
     const style = this.player.style;
 
     let effectiveLevel = this.player.skills.atk * 1; // TODO: make this * getPrayerBoost(atk)
@@ -165,7 +168,7 @@ export default class CombatCalc {
   /**
    * Get the player's max melee hit
    */
-  public getPlayerMaxMeleeHit(): number {
+  private getPlayerMaxMeleeHit(): number {
     const style = this.player.style;
 
     let effectiveLevel = this.player.skills.str * 1; // TODO: make this * getPrayerBoost(str)
@@ -254,7 +257,7 @@ export default class CombatCalc {
     return maxHit;
   }
 
-  public getPlayerMaxRangedAttackRoll() {
+  private getPlayerMaxRangedAttackRoll() {
     const style = this.player.style;
 
     let effectiveLevel = this.player.skills.ranged * 1; // TODO: make this * getPrayerBoost(ranged)
@@ -310,7 +313,7 @@ export default class CombatCalc {
   /**
    * Get the player's max ranged hit
    */
-  public getPlayerMaxRangedHit() {
+  private getPlayerMaxRangedHit() {
     const style = this.player.style;
 
     let effectiveLevel = this.player.skills.ranged * 1; // TODO: make this * getPrayerBoost(ranged)
@@ -356,7 +359,7 @@ export default class CombatCalc {
     return maxHit;
   }
 
-  public getPlayerMaxMagicAttackRoll() {
+  private getPlayerMaxMagicAttackRoll() {
     const style = this.player.style;
 
     let effectiveLevel = this.player.skills.magic * 1; // TODO: make this * getPrayerBoost(ranged)
@@ -403,7 +406,7 @@ export default class CombatCalc {
   /**
    * Get the player's max magic hit
    */
-  public getPlayerMaxMagicHit() {
+  private getPlayerMaxMagicHit() {
     let maxHit = 0;
     let magicLevel = this.player.skills.magic; // should be the boosted level?
     const spell = this.player.spell;
@@ -485,5 +488,39 @@ export default class CombatCalc {
     if (blackMaskBonus) maxHit = Math.trunc(maxHit * 23/20);
 
     return maxHit;
+  }
+
+  /**
+   * Get the max hit for this loadout, which is based on the player's current combat style
+   */
+  public getMaxHit() {
+    const style = this.player.style.type;
+    switch (style) {
+      case 'crush':
+      case 'slash':
+      case 'stab':
+        return this.getPlayerMaxMeleeHit();
+      case 'ranged':
+        return this.getPlayerMaxRangedHit();
+      case 'magic':
+        return this.getPlayerMaxMagicHit();
+    }
+  }
+
+  /**
+   * Get the max attack roll for this loadout, which is based on the player's current combat style
+   */
+  public getMaxAttackRoll() {
+    const style = this.player.style.type;
+    switch (style) {
+      case 'crush':
+      case 'slash':
+      case 'stab':
+        return this.getPlayerMaxMeleeAttackRoll();
+      case 'ranged':
+        return this.getPlayerMaxRangedAttackRoll();
+      case 'magic':
+        return this.getPlayerMaxMagicAttackRoll();
+    }
   }
 }

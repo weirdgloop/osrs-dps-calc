@@ -48,6 +48,7 @@ const Home: NextPage = observer(() => {
       switch (data.type) {
         case WorkerResponseType.COMPUTED_VALUES:
           store.updateCalculator(data.data);
+          console.debug('New computed values:', data.data);
           break;
         default:
           break;
