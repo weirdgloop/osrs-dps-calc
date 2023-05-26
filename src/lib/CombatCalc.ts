@@ -186,7 +186,7 @@ export default class CombatCalc {
       effectiveLevel = Math.trunc(effectiveLevel * 11/10);
     }
 
-    let maxHit = (effectiveLevel * this.player.bonuses.str); // should this be (.str) or (.melee_str)?
+    let maxHit = Math.trunc((effectiveLevel * (this.player.bonuses.str + 64) + 320) / 640); // should this be (.str) or (.melee_str)?
     let baseDmg = maxHit;
 
     // Specific bonuses that are applied from equipment
