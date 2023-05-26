@@ -179,9 +179,13 @@ class GlobalState implements State {
   }
 
   calc: Calculator = {
-    npcDefRoll: 0,
-    maxHit: 0,
-    maxAttackRoll: 0
+    loadouts: [
+      {
+        npcDefRoll: 0,
+        maxHit: 0,
+        maxAttackRoll: 0
+      }
+    ]
   }
 
   constructor() {

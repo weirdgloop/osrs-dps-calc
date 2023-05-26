@@ -15,9 +15,11 @@ export interface Preferences {
 }
 
 export interface Calculator {
-  npcDefRoll: number,
-  maxHit: number,
-  maxAttackRoll: number
+  loadouts: {
+    npcDefRoll: number,
+    maxHit: number,
+    maxAttackRoll: number
+  }[]
 }
 
 export interface State {

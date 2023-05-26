@@ -27,12 +27,12 @@ const Home: NextPage = observer(() => {
 
   const workerRef = useRef<Worker>();
 
-  const doWorkerRecompute = (p: Player, m: Monster) => {
+  const doWorkerRecompute = (p: Player[], m: Monster) => {
     if (workerRef.current) {
       workerRef.current?.postMessage(JSON.stringify({
         type: WorkerRequestType.RECOMPUTE_VALUES,
         data: {
-          player: p,
+          loadouts: p,
           monster: m
         }
       } as RecomputeValuesRequest))
@@ -48,8 +48,7 @@ const Home: NextPage = observer(() => {
       // Depending on the response type, do things...
       switch (data.type) {
         case WorkerResponseType.COMPUTED_VALUES:
-          store.updateCalculator(data.data);
-          console.debug('New computed values:', data.data);
+          store.updateCalculator({loadouts: data.data});
           break;
         default:
           break;
@@ -86,8 +85,8 @@ const Home: NextPage = observer(() => {
 
   useEffect(() => {
     // When any of store.player or store.monster changes, run a re-compute of the calculator
-    const r1 = reaction(() => toJS(store.player), (data) => { doWorkerRecompute(data, store.monster) })
-    const r2 = reaction(() => toJS(store.monster), (data) => { doWorkerRecompute(store.player, data) })
+    const r1 = reaction(() => toJS(store.loadouts), (data) => { doWorkerRecompute(data, store.monster) })
+    const r2 = reaction(() => toJS(store.monster), (data) => { doWorkerRecompute(store.loadouts, data) })
 
     return () => {
       r1();

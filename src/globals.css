@@ -119,3 +119,48 @@ button.btn:disabled {
 a {
   text-decoration: underline;
 }
+
+table {
+  @apply w-full;
+  @apply text-left;
+  @apply text-sm;
+}
+
+th, td {
+  @apply border;
+  @apply border-body-500;
+  @apply font-normal;
+}
+
+thead {
+  @apply border-b-4;
+  @apply border-orange-300;
+}
+
+thead th {
+  @apply font-bold;
+  @apply text-center;
+}
+
+thead th:not(:first-child) {
+  @apply bg-btns-400;
+  @apply text-white;
+}
+
+th {
+  @apply px-2;
+  @apply py-1;
+}
+
+tbody tr {
+  @apply bg-body-200;
+}
+
+tbody tr:nth-child(even) {
+  @apply bg-body-100;
+}
+
+tbody th:first-child {
+  @apply text-white;
+  @apply font-bold;
+}

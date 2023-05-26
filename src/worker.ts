@@ -10,18 +10,23 @@ import {Monster} from "@/types/Monster";
 import CombatCalc from "@/lib/CombatCalc";
 
 /**
- * Method for computing the calculator values based on a given Player and Monster object
- * @param p
+ * Method for computing the calculator values based on given loadouts and Monster object
+ * @param loadouts
  * @param m
  */
-const computeValues = (p: Player, m: Monster) => {
-  let calc = new CombatCalc(p, m);
+const computeValues = (loadouts: Player[], m: Monster) => {
+  let res = [];
 
-  return {
-    npcDefRoll: calc.getNPCDefenceRoll(),
-    maxHit: calc.getMaxHit(),
-    maxAttackRoll: calc.getMaxAttackRoll()
+  for (let [i, p] of loadouts.entries()) {
+    let calc = new CombatCalc(p, m);
+    res.push({
+      npcDefRoll: calc.getNPCDefenceRoll(),
+      maxHit: calc.getMaxHit(),
+      maxAttackRoll: calc.getMaxAttackRoll()
+    })
   }
+
+  return res;
 }
 
 self.onmessage = (e: MessageEvent<string>) => {
@@ -31,7 +36,7 @@ self.onmessage = (e: MessageEvent<string>) => {
   // Interpret the incoming request, and action it accordingly
   switch (data.type) {
     case WorkerRequestType.RECOMPUTE_VALUES:
-      res = {type: WorkerResponseType.COMPUTED_VALUES, data: computeValues(data.data.player, data.data.monster)} as ComputedValuesResponse;
+      res = {type: WorkerResponseType.COMPUTED_VALUES, data: computeValues(data.data.loadouts, data.data.monster)} as ComputedValuesResponse;
       break;
     default:
       console.debug(`Unknown data type sent to worker: ${data.type}`);

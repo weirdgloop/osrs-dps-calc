@@ -12,7 +12,7 @@ export enum WorkerRequestType {
 export interface RecomputeValuesRequest {
   type: WorkerRequestType.RECOMPUTE_VALUES,
   data: {
-    player: Player,
+    loadouts: Player[],
     monster: Monster
   }
 }
@@ -33,7 +33,7 @@ export interface ComputedValuesResponse {
     npcDefRoll: number,
     maxHit: number,
     maxAttackRoll: number
-  }
+  }[]
 }
 
 export type WorkerResponses = ComputedValuesResponse;
