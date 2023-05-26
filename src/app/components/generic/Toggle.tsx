@@ -5,10 +5,11 @@ interface ToggleProps {
   checked: boolean;
   setChecked: (checked: boolean) => void;
   label: string | JSX.Element;
+  help?: string;
 }
 
 const Toggle: React.FC<ToggleProps> = (props) => {
-  const {checked, setChecked, label} = props;
+  const {checked, setChecked, label, help} = props;
 
   return (
     <Switch.Group>
@@ -26,7 +27,12 @@ const Toggle: React.FC<ToggleProps> = (props) => {
             } inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
           />
         </Switch>
-        <Switch.Label className="ml-2">{label}</Switch.Label>
+        <Switch.Label className="ml-2">{label} {help && <span
+          title={help}
+          className={'cursor-help ml-1 text-gray-500 transition-[background] bg-body-200 hover:bg-body-300 px-1 rounded no-underline'}
+        >
+          ?
+        </span>}</Switch.Label>
       </div>
     </Switch.Group>
   )

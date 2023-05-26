@@ -3,6 +3,7 @@ import '../globals.css';
 import 'react-tooltip/dist/react-tooltip.css';
 import 'react-toastify/dist/ReactToastify.css';
 import {Metadata} from 'next';
+import {ibm, pts} from "@/fonts";
 
 export const metadata: Metadata = {
   title: 'OSRS DPS Calculator',
@@ -13,7 +14,7 @@ const RootLayout: React.FC<PropsWithChildren> = (props) => {
   const {children} = props;
 
   return (
-    <html lang={'en'}>
+    <html lang={'en'} className={`${pts.variable} ${ibm.variable}`}>
       <body>
         {children}
       </body>

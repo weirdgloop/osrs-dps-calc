@@ -7,9 +7,6 @@ body {
   padding: 0;
   margin: 0;
   background: url('./public/img/bg.png'), #cdba94;
-}
-
-main {
   @apply font-sans;
 }
 

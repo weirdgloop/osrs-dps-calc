@@ -1,23 +1,12 @@
-import React, {PropsWithChildren, useState} from 'react';
+import React, {PropsWithChildren} from 'react';
 import {observer} from 'mobx-react-lite';
-import MultiSelect from "@/app/components/generic/MultiSelect";
-import dynamic from "next/dynamic";
 import {
-    IconChartBar,
     IconClockHour3,
     IconEye,
     IconHeartMinus,
     IconSword,
     IconTimeline
 } from "@tabler/icons-react";
-
-const HitDistribution = dynamic(() => import('@/app/components/results/HitDistribution'));
-const LoadoutComparison = dynamic(() => import('@/app/components/results/LoadoutComparison'));
-
-enum AdditionalDataTypes {
-  HIT_DISTRIBUTION,
-  LOADOUT_COMPARISON,
-}
 
 interface StatDisplay {
   name: string | JSX.Element;

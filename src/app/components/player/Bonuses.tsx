@@ -9,7 +9,6 @@ import rangedStrength from '@/public/img/bonuses/ranged_strength.png';
 import magicStrength from '@/public/img/bonuses/magic_strength.png';
 import prayer from '@/public/img/tabs/prayer.png';
 import AttributeInput from '../generic/AttributeInput';
-import HelpLink from '../HelpLink';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
 import HitDistribution from "@/app/components/results/HitDistribution";
@@ -206,7 +205,9 @@ const AttackSpeedProgressBar: React.FC<AttackSpeedProgressBarProps> = (props) =>
   )
 }
 
-const Bonuses: React.FC = () => {
+const Bonuses: React.FC = observer(() => {
+  const store = useStore();
+  const {prefs} = store;
   const [atkSpeed] = useState(2.4);
 
   return (
@@ -221,19 +222,18 @@ const Bonuses: React.FC = () => {
           <OtherBonuses />
         </div>
       </div>
-      <div className={'px-6 py-2 border-y border-body-400'}>
-        <h4 className={'font-serif font-bold'}>Hit Distribution</h4>
-      </div>
-        <div className={'mt-2 px-2'}>
-          {/*<h4 className={`font-bold font-serif`}>*/}
-          {/*  Attack speed <HelpLink href={'https://oldschool.runescape.wiki/w/Attack_speed'} />*/}
-          {/*</h4>*/}
-
-          {/*<AttackSpeedProgressBar speed={atkSpeed} />*/}
-          <HitDistribution />
-        </div>
+      {prefs.showHitDistribution && (
+        <>
+          <div className={'px-6 py-2 border-y border-body-400'}>
+            <h4 className={'font-serif font-bold'}>Hit Distribution</h4>
+          </div>
+          <div className={'mt-2 px-2'}>
+            <HitDistribution />
+          </div>
+        </>
+      )}
     </div>
   )
-}
+})
 
 export default Bonuses;

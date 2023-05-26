@@ -10,6 +10,8 @@ import {EquipmentCategory, getCombatStylesForCategory} from './enums/EquipmentCa
 import {EquipmentPiece, Player, PlayerBonuses, PlayerDefensive, PlayerEquipment, PlayerOffensive} from '@/types/Player';
 import {Monster} from '@/types/Monster';
 import {MonsterAttribute} from "@/enums/MonsterAttribute";
+import {toast} from "react-toastify";
+import {fetchPlayerSkills} from "@/utils";
 
 const calculateEquipmentBonuses = (eq: EquipmentPiece[]) => {
   let b: {
@@ -78,6 +80,7 @@ const generateInitialEquipment = () => {
 
 const generateEmptyPlayer: () => Player = () => {
   return {
+    username: '',
     style: getCombatStylesForCategory(EquipmentCategory.NONE)[0],
     skills: {
       atk: 1,
@@ -164,13 +167,15 @@ class GlobalState implements State {
 
   ui: UI = {
     showPreferencesModal: false,
-    potionsScrollPosition: 0
+    potionsScrollPosition: 0,
   }
 
   prefs: Preferences = {
     allowEditingPlayerStats: false,
     allowEditingMonsterStats: false,
     rememberUsername: true,
+    showHitDistribution: false,
+    showLoadoutComparison: false
   }
 
   calc: Calculator = {
@@ -221,6 +226,28 @@ class GlobalState implements State {
       console.error(e);
       // TODO maybe some handling here
     })
+  }
+
+  async fetchCurrentPlayerSkills() {
+    const username = this.player.username;
+
+    try {
+      const res = await toast.promise(
+        fetchPlayerSkills(username),
+        {
+          pending: `Fetching player skills...`,
+          success: `Successfully fetched player skills for ${username}!`,
+          error: `Error fetching player skills`
+        },
+        {
+          toastId: 'skills-fetch'
+        }
+      )
+
+      if (res) this.updatePlayer({skills: res});
+    } catch (e) {
+      console.error(e);
+    }
   }
 
   updatePreferences(pref: PartialDeep<Preferences>) {

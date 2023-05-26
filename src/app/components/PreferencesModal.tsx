@@ -23,17 +23,28 @@ const PreferencesModal: React.FC<IPreferencesModalProps> = observer((props) => {
       <div className="fixed inset-0 bg-black/60" aria-hidden="true" />
       <div className={'fixed inset-0 flex items-center justify-center p-4'}>
         <Dialog.Panel className={'w-full max-w-lg rounded-xl bg-white text-black shadow-xl'}>
-          <Dialog.Title className={'py-3 text-md bg-gray-600 rounded-t-lg text-center text-white font-serif select-none'}>
+          <Dialog.Title className={'py-3 text-md bg-btns-300 font-bold rounded-t-lg text-center text-white font-serif select-none'}>
             Preferences
           </Dialog.Title>
           <div className={'px-4 py-2 max-w-xl mt-2 mx-auto'}>
-            <h2 className={'font-serif mb-2 select-none'}>Interface</h2>
-            <Toggle checked={prefs.allowEditingPlayerStats} setChecked={(c) => {
-              store.updatePreferences({allowEditingPlayerStats: c});
-            }} label={'Allow editing player bonuses'} />
-            <Toggle checked={prefs.allowEditingMonsterStats} setChecked={(c) => {
-              store.updatePreferences({allowEditingMonsterStats: c});
-            }} label={'Allow editing monster stats'} />
+            <div>
+              <h2 className={'font-serif font-bold mb-2 select-none'}>Interface</h2>
+              <Toggle checked={prefs.allowEditingPlayerStats} setChecked={(c) => {
+                store.updatePreferences({allowEditingPlayerStats: c});
+              }} label={'Enable editing player bonuses'} help={'This will allow you to override the values provided by your equipment.'} />
+              <Toggle checked={prefs.allowEditingMonsterStats} setChecked={(c) => {
+                store.updatePreferences({allowEditingMonsterStats: c});
+              }} label={'Enable editing monster stats'} />
+            </div>
+            <div className={'mt-4'}>
+              <h2 className={'font-serif font-bold mb-2 select-none'}>Additional outputs</h2>
+              <Toggle checked={prefs.showHitDistribution} setChecked={(c) => {
+                store.updatePreferences({showHitDistribution: c});
+              }} label={'Show hit distribution graph'} />
+              <Toggle checked={prefs.showLoadoutComparison} setChecked={(c) => {
+                store.updatePreferences({showLoadoutComparison: c});
+              }} label={'Show loadout comparison graph'} />
+            </div>
           </div>
           <div className={'mt-3 p-4 border-t border-gray-300 flex justify-end'}>
             <button

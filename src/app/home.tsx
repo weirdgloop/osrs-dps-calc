@@ -17,6 +17,7 @@ import {RecomputeValuesRequest, WorkerRequestType, WorkerResponses, WorkerRespon
 import {reaction, toJS} from "mobx";
 import {Player} from "@/types/Player";
 import {Monster} from "@/types/Monster";
+import localforage from "localforage";
 
 const PreferencesModal = dynamic(() => import('@/app/components/PreferencesModal'));
 
@@ -59,12 +60,20 @@ const Home: NextPage = observer(() => {
       // Terminate the worker when we un-mount this component
       workerRef.current?.terminate();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     // Load preferences from browser storage if there are any
     store.loadPreferences();
-  }, [store]);
+
+    // Load username from browser storage if there is one
+    localforage.getItem('dps-calc-username').then((u) => {
+      store.updatePlayer({username: u as string});
+      store.fetchCurrentPlayerSkills();
+    }).catch(() => {});
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     // When equipment bonuses change, set the current equipment bonuses as the player's bonuses.
@@ -107,14 +116,20 @@ const Home: NextPage = observer(() => {
                     <IconChartBar className={'inline-block mr-1'} />
                     Additional data and graphs
                 </h1>
-                <div className={'grow bg-tile md:rounded shadow-lg max-w-[100vw] my-4 text-black'}>
+              {
+                store.prefs.showLoadoutComparison ? (
+                  <div className={'grow bg-tile md:rounded shadow-lg max-w-[100vw] my-4 text-black'}>
                     <div className={'px-6 py-4 bg-btns-200 text-white md:rounded-t border-b-4 border-body-300'}>
-                        <h3 className={'font-serif font-bold'}>Loadout Comparison</h3>
+                      <h3 className={'font-serif font-bold'}>Loadout Comparison</h3>
                     </div>
                     <div className={'px-6 py-4'}>
-                        <LoadoutComparison />
+                      <LoadoutComparison />
                     </div>
-                </div>
+                  </div>
+                ) : (
+                  <p className={'text-sm'}>You can enable additional outputs by <button className={'underline'} onClick={() => store.updateUIState({showPreferencesModal: true})}>changing your preferences</button>.</p>
+                )
+              }
             </div>
         </div>
       <Tooltip id={'tooltip'} />

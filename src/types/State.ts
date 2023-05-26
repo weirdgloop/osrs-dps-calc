@@ -10,6 +10,8 @@ export interface Preferences {
   allowEditingPlayerStats: boolean;
   allowEditingMonsterStats: boolean;
   rememberUsername: boolean;
+  showHitDistribution: boolean;
+  showLoadoutComparison: boolean;
 }
 
 export interface Calculator {

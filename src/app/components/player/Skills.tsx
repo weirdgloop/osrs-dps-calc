@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
 import Image, {StaticImageData} from 'next/image';
 
 import attack from '@/public/img/bonuses/attack.png'
@@ -10,11 +10,9 @@ import hitpoints from '@/public/img/bonuses/hitpoints.png';
 import prayer from '@/public/img/tabs/prayer.png';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
-import {fetchPlayerSkills} from '@/utils';
 import NumberInput from '../generic/NumberInput';
 
 import {PlayerSkills} from '@/types/Player';
-import {toast} from 'react-toastify';
 import localforage from 'localforage';
 
 interface SkillInputProps {
@@ -59,28 +57,10 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
 
 const UsernameLookup: React.FC = observer(() => {
     const store = useStore();
+    const {username} = store.player;
     const shouldRemember = store.prefs.rememberUsername;
-    const [username, setUsername] = useState('');
     const [btnDisabled, setBtnDisabled] = useState(false);
     const btn = useRef<HTMLButtonElement>(null);
-
-    useEffect(() => {
-        // When the username changes, set it in the browser storage, if the preference is enabled.
-        if (shouldRemember) {
-            localforage.setItem('dps-calc-username', username).catch(() => {});
-        }
-    }, [shouldRemember, username]);
-
-    useEffect(() => {
-        // On first mount, if the "remember username" preference is enabled, try & load the username from the store.
-        if (shouldRemember) {
-            localforage.getItem('dps-calc-username').then((u) => {
-                // Set the username
-                setUsername(u as string);
-            }).catch(() => {});
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
 
     return (
         <>
@@ -89,7 +69,12 @@ const UsernameLookup: React.FC = observer(() => {
                 className={'form-control rounded w-full mt-auto'}
                 placeholder={'Username'}
                 value={username}
-                onChange={(e) => setUsername(e.currentTarget.value)}
+                onChange={(e) => {
+                  store.updatePlayer({username: e.currentTarget.value});
+                  if (shouldRemember) {
+                    localforage.setItem('dps-calc-username', e.currentTarget.value).catch(() => {});
+                  }
+                }}
                 onKeyUp={(e) => {
                     if (e.key === 'Enter') {
                         btn.current?.click();
@@ -103,23 +88,7 @@ const UsernameLookup: React.FC = observer(() => {
                 className={'ml-1 text-sm btn'}
                 onClick={async () => {
                     setBtnDisabled(true);
-                    try {
-                        const res = await toast.promise(
-                            fetchPlayerSkills(username),
-                            {
-                                pending: `Fetching player skills...`,
-                                success: `Successfully fetched player skills for ${username}!`,
-                                error: `Error fetching player skills`
-                            },
-                            {
-                                toastId: 'skills-fetch'
-                            }
-                        )
-
-                        if (res) store.updatePlayer({skills: res});
-                    } catch (e) {
-                      console.error(e);
-                    }
+                    await store.fetchCurrentPlayerSkills();
                     setBtnDisabled(false);
                 }}
             >

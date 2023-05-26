@@ -2,7 +2,6 @@
 
 import React, {PropsWithChildren} from 'react';
 import {StoreProvider} from '@/state';
-import {ibm, pts} from '@/fonts';
 import TopBar from './TopBar';
 
 import {GlobalState} from '@/state';
@@ -14,7 +13,7 @@ const BaseProviders: React.FC<PropsWithChildren> = (props) => {
 
   return (
     <StoreProvider store={store}>
-      <main className={`${pts.variable} ${ibm.variable}`}>
+      <main>
         <TopBar />
         {children}
         <Footer />
