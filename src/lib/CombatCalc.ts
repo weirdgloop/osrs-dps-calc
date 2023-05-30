@@ -12,7 +12,7 @@ export default class CombatCalc {
     this.player = player;
     this.monster = monster;
 
-    this.allEquippedItems = Object.values(player.equipment).flat(1).map((eq: EquipmentPiece) => eq.name);
+    this.allEquippedItems = Object.values(player.equipment).filter((v) => v !== null).flat(1).map((eq: EquipmentPiece) => eq.name);
   }
 
   /**

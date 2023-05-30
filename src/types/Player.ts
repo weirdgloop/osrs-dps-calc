@@ -16,41 +16,33 @@ export interface PlayerSkills {
 
 export interface EquipmentPiece {
   name: string;
+  id: number;
+  version: string;
+  slot: string;
   image: string;
+  speed: number;
   category: EquipmentCategory;
-  offensive: {
-    crush: number;
-    magic_str: number;
-    magic: number;
-    ranged: number;
-    ranged_str: number;
-    slash: number;
-    stab: number;
-    str: number;
-  },
-  defensive: {
-    crush: number;
-    magic: number;
-    ranged: number;
-    slash: number;
-    stab: number;
-    prayer: number;
-  }
+  offensive: number[],
+  defensive: number[],
   isTwoHanded: boolean;
 }
 
+/**
+ * Each slot is represented by an item ID. We've used a string rather than a number here to represent the IDs in case
+ * we have to use strings in the future (for arbitrary, non-ID values).
+ */
 export interface PlayerEquipment {
-  head: EquipmentPiece;
-  cape: EquipmentPiece;
-  neck: EquipmentPiece;
-  ammo: EquipmentPiece;
-  weapon: EquipmentPiece;
-  body: EquipmentPiece;
-  shield: EquipmentPiece;
-  legs: EquipmentPiece;
-  hands: EquipmentPiece;
-  feet: EquipmentPiece;
-  ring: EquipmentPiece;
+  head: string | null;
+  cape: string | null;
+  neck: string | null;
+  ammo: string | null;
+  weapon: string | null;
+  body: string | null;
+  shield: string | null;
+  legs: string | null;
+  hands: string | null;
+  feet: string | null;
+  ring: string | null;
 }
 
 export interface PlayerBonuses {
@@ -101,5 +93,24 @@ export interface Player {
     chargeSpell: boolean;
   }
   spell: Spell
+}
+
+/**
+ * A loadout object with computed values, passed to and from the worker
+ */
+export interface PlayerComputed extends Omit<Player, 'equipment'> {
+  equipment: {
+    head: EquipmentPiece | null;
+    cape: EquipmentPiece | null;
+    neck: EquipmentPiece | null;
+    ammo: EquipmentPiece | null;
+    weapon: EquipmentPiece | null;
+    body: EquipmentPiece | null;
+    shield: EquipmentPiece | null;
+    legs: EquipmentPiece | null;
+    hands: EquipmentPiece | null;
+    feet: EquipmentPiece | null;
+    ring: EquipmentPiece | null;
+  }
 }
 

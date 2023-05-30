@@ -18,6 +18,7 @@ import {reaction, toJS} from "mobx";
 import {Player} from "@/types/Player";
 import {Monster} from "@/types/Monster";
 import localforage from "localforage";
+import {getEquipmentForLoadout} from "@/utils";
 
 const PreferencesModal = dynamic(() => import('@/app/components/PreferencesModal'));
 
@@ -29,10 +30,17 @@ const Home: NextPage = observer(() => {
 
   const doWorkerRecompute = (p: Player[], m: Monster) => {
     if (workerRef.current) {
+      const loadouts = p.map((i) => {
+        return {
+          ...i,
+          equipment: getEquipmentForLoadout(i)
+        }
+      });
+
       workerRef.current?.postMessage(JSON.stringify({
         type: WorkerRequestType.RECOMPUTE_VALUES,
         data: {
-          loadouts: p,
+          loadouts,
           monster: m
         }
       } as RecomputeValuesRequest))

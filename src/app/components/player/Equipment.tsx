@@ -24,22 +24,21 @@ interface EquipmentGridSlotProps {
 
 const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => {
   const store = useStore();
-  const {equipment} = store.player;
   const {slot, placeholder} = props;
-  const currentSlot = equipment[slot];
-  const isEmpty = !currentSlot.name;
+  const currentSlot = store.equipmentData[slot];
+  const isEmpty = !currentSlot;
 
   return (
     <div
       className={`flex justify-center items-center h-[40px] w-[40px] bg-body-100 border border-body-300 transition-colors rounded ${!isEmpty ? 'cursor-pointer hover:border-red' : ''}`}
       data-slot={slot}
       data-tooltip-id={'tooltip'}
-      data-tooltip-content={currentSlot.name}
+      data-tooltip-content={currentSlot?.name}
       onClick={() => {
         if (!isEmpty) store.clearEquipmentSlot(slot);
       }}
     >
-      {currentSlot.image ? (
+      {currentSlot?.image ? (
           <img src={getWikiImage(currentSlot.image)} alt={currentSlot.name} />
       ) : (
           placeholder && (

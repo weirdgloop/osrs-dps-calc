@@ -11,7 +11,7 @@ import {EquipmentPiece, Player, PlayerBonuses, PlayerDefensive, PlayerEquipment,
 import {Monster} from '@/types/Monster';
 import {MonsterAttribute} from "@/enums/MonsterAttribute";
 import {toast} from "react-toastify";
-import {fetchPlayerSkills} from "@/utils";
+import {fetchPlayerSkills, getEquipment, getEquipmentForLoadout} from "@/utils";
 
 const calculateEquipmentBonuses = (eq: EquipmentPiece[]) => {
   let b: {
@@ -20,60 +20,35 @@ const calculateEquipmentBonuses = (eq: EquipmentPiece[]) => {
     defensive: PlayerDefensive
   } = {
     bonuses: {
-      str: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.str, 0),
-      magic_str: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.magic_str, 0),
-      ranged_str: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.ranged_str, 0),
-      prayer: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.prayer, 0),
+      str: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive[7], 0),
+      magic_str: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive[1], 0),
+      ranged_str: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive[4], 0),
+      prayer: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive[5], 0),
     },
     offensive: {
-      slash: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.slash, 0),
-      stab: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.stab, 0),
-      crush: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.crush, 0),
-      ranged: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.ranged, 0),
-      magic: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive.magic, 0),
+      slash: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive[5], 0),
+      stab: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive[6], 0),
+      crush: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive[0], 0),
+      ranged: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive[3], 0),
+      magic: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive[2], 0),
     },
     defensive: {
-      slash: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.slash, 0),
-      stab: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.stab, 0),
-      crush: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.crush, 0),
-      ranged: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.ranged, 0),
-      magic: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive.magic, 0),
+      slash: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive[3], 0),
+      stab: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive[4], 0),
+      crush: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive[0], 0),
+      ranged: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive[2], 0),
+      magic: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive[1], 0),
     }
   };
 
   return b;
 }
 
-const emptyEquipmentSlot: EquipmentPiece = {
-  name: '',
-  image: '',
-  category: EquipmentCategory.NONE,
-  offensive: {
-    crush: 0,
-    magic_str: 0,
-    magic: 0,
-    ranged: 0,
-    ranged_str: 0,
-    slash: 0,
-    stab: 0,
-    str: 0
-  },
-  defensive: {
-    crush: 0,
-    magic: 0,
-    ranged: 0,
-    slash: 0,
-    stab: 0,
-    prayer: 0
-  },
-  isTwoHanded: false
-}
-
 const generateInitialEquipment = () => {
   let slots = ['head', 'cape', 'neck', 'ammo', 'weapon', 'body', 'shield', 'legs', 'hands', 'feet', 'ring'];
   let equipment: {[k: string]: any} = {};
   for (let s of slots) {
-    equipment[s] = emptyEquipmentSlot;
+    equipment[s] = null;
   }
   return equipment as PlayerEquipment;
 }
@@ -200,11 +175,19 @@ class GlobalState implements State {
   }
 
   /**
+   * Returns the data for the currently equipped items
+   */
+  get equipmentData() {
+    return getEquipmentForLoadout(this.player);
+  }
+
+  /**
    * Get the available combat styles for the currently equipped weapon
    * @see https://oldschool.runescape.wiki/w/Combat_Options
    */
   get availableCombatStyles() {
-    return getCombatStylesForCategory(this.player.equipment.weapon.category);
+    const cat = this.player.equipment.weapon ? getEquipment(this.player.equipment.weapon).category : EquipmentCategory.NONE;
+    return getCombatStylesForCategory(cat);
   }
 
   /**
@@ -212,7 +195,9 @@ class GlobalState implements State {
    * For that, interpret the values in `store.player` for the current loadout.
    */
   get equipmentBonuses() {
-    return calculateEquipmentBonuses(Object.values(toJS(this.player.equipment)));
+    return calculateEquipmentBonuses(Object.values(this.equipmentData).filter((v) => {
+      return v !== null;
+    }) as EquipmentPiece[]);
   }
 
   updateUIState(ui: PartialDeep<UI>) {
@@ -336,21 +321,28 @@ class GlobalState implements State {
    * @param player
    */
   updatePlayer(player: PartialDeep<Player>) {
-    if (
-      (player.equipment?.weapon?.category !== undefined) &&
-      (player.equipment.weapon.category !== this.player.equipment.weapon.category)
-    ) {
-      // If the weapon slot category was changed, we should reset the player's selected combat style to the first one that exists.
-      player.style = getCombatStylesForCategory(player.equipment.weapon.category)[0];
+    const currentWeapon = this.equipmentData.weapon;
+    const newWeapon = player.equipment?.weapon ? getEquipment(player.equipment.weapon) : {} as EquipmentPiece;
+
+    if (newWeapon !== undefined) {
+      const oldWeaponCat = currentWeapon?.category || EquipmentCategory.NONE;
+      const newWeaponCat = newWeapon.category || EquipmentCategory.NONE;
+      if ((newWeaponCat !== undefined) && (newWeaponCat !== oldWeaponCat)) {
+        // If the weapon slot category was changed, we should reset the player's selected combat style to the first one that exists.
+        player.style = getCombatStylesForCategory(newWeaponCat)[0];
+      }
     }
 
+    const currentShield = this.equipmentData.shield;
+    const newShield = player.equipment?.shield ? getEquipment(player.equipment.shield) : {} as EquipmentPiece;
+
     // Special handling for if a shield is equipped, and we're using a two-handed weapon
-    if (player.equipment?.shield && player.equipment?.shield?.name !== '' && this.loadouts[this.selectedLoadout].equipment.weapon.isTwoHanded) {
-      player = {...player, equipment: {...player.equipment, weapon: emptyEquipmentSlot}};
+    if (player.equipment?.shield && newShield.name !== '' && currentWeapon?.isTwoHanded) {
+      player = {...player, equipment: {...player.equipment, weapon: null}};
     }
     // ...and vice-versa
-    if (player.equipment?.weapon && player.equipment?.weapon?.isTwoHanded && this.loadouts[this.selectedLoadout].equipment.shield.name !== '') {
-      player = {...player, equipment: {...player.equipment, shield: emptyEquipmentSlot}};
+    if (player.equipment?.weapon && newWeapon?.isTwoHanded && currentShield?.name !== '') {
+      player = {...player, equipment: {...player.equipment, shield: null}};
     }
 
     this.loadouts[this.selectedLoadout] = merge(this.player, player);
@@ -376,7 +368,7 @@ class GlobalState implements State {
   clearEquipmentSlot(slot: keyof PlayerEquipment ) {
     this.updatePlayer({
       equipment: {
-        [slot]: emptyEquipmentSlot
+        [slot]: null
       }
     })
   }

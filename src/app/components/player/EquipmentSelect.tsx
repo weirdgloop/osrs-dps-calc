@@ -3,14 +3,13 @@ import equipment from '@/lib/equipment.json';
 import {useStore} from '@/state';
 import {observer} from 'mobx-react-lite';
 import {getWikiImage} from '@/utils';
-import {EquipmentCategory} from '@/enums/EquipmentCategory';
 import {EquipmentPiece} from '@/types/Player';
 import Combobox from '../generic/Combobox';
 import LazyImage from "@/app/components/generic/LazyImage";
 
 interface EquipmentOption {
   label: string;
-  value: number;
+  value: string;
   version: string;
   slot: string;
   equipment: EquipmentPiece;
@@ -19,35 +18,14 @@ interface EquipmentOption {
 const EquipmentSelect: React.FC = observer(() => {
   const store = useStore();
 
-  const options: EquipmentOption[] = useMemo(() => equipment.map((e, i) => {
+  const options: EquipmentOption[] = useMemo(() => Object.entries(equipment).map(([k, v]) => {
     return {
-      label: `${e.name}`,
-      value: i,
-      version: e.version || '',
-      slot: e.slot,
+      label: `${v.name}`,
+      value: k,
+      version: v.version || '',
+      slot: v.slot,
       equipment: {
-        name: e.name,
-        image: e.image,
-        category: e.style as EquipmentCategory,
-        offensive: {
-          crush: e.offensive[0],
-          magic_str: e.offensive[1],
-          magic: e.offensive[2],
-          ranged: e.offensive[3],
-          ranged_str: e.offensive[4],
-          slash: e.offensive[5],
-          stab: e.offensive[6],
-          str: e.offensive[7]
-        },
-        defensive: {
-          crush: e.defensive[0],
-          magic: e.defensive[1],
-          ranged: e.defensive[2],
-          slash: e.defensive[3],
-          stab: e.defensive[4],
-          prayer: e.defensive[5]
-        },
-        isTwoHanded: (e.slot === '2h'),
+        ...(v as EquipmentPiece)
       }
     }
   }), [])
@@ -63,12 +41,9 @@ const EquipmentSelect: React.FC = observer(() => {
         if (item) {
           const val = item as EquipmentOption;
 
-          // Special handling for 2h weapons
-          if (val.slot === '2h') val.slot = 'weapon';
-
           store.updatePlayer({
             equipment: {
-              [val.slot]: val.equipment
+              [val.equipment.slot]: val.value
             }
           })
         }

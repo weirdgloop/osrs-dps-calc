@@ -1,4 +1,4 @@
-import {Player} from "@/types/Player";
+import {PlayerComputed} from "@/types/Player";
 import {Monster} from "@/types/Monster";
 
 /**
@@ -12,7 +12,7 @@ export enum WorkerRequestType {
 export interface RecomputeValuesRequest {
   type: WorkerRequestType.RECOMPUTE_VALUES,
   data: {
-    loadouts: Player[],
+    loadouts: PlayerComputed[],
     monster: Monster
   }
 }

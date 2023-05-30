@@ -43,7 +43,7 @@ def getEquipmentData():
         query = {
             'action': 'ask',
             'format': 'json',
-            'query': '[[Equipment slot::+]]|?' + '|?'.join(REQUIRED_PRINTOUTS) + '|limit=500|offset=' + str(offset)
+            'query': '[[Equipment slot::+]][[Item ID::+]]|?' + '|?'.join(REQUIRED_PRINTOUTS) + '|limit=500|offset=' + str(offset)
         }
         r = requests.get(API_BASE + '?' + urllib.parse.urlencode(query), headers={
             'User-Agent': 'osrs-dps-calc (https://github.com/weirdgloop/osrs-dps-calc)'
@@ -75,7 +75,7 @@ def main():
     wiki_data = getEquipmentData()
 
     # Convert the data into our own JSON structure
-    data = []
+    data = {}
 
     # Loop over the equipment data from the wiki
     for k, v in wiki_data.items():
@@ -88,11 +88,12 @@ def main():
         po = v['printouts']
         equipment = {
             'name': k.rsplit('#', 1)[0],
+            'id': getPrintoutValue(po['Item ID']),
             'version': getPrintoutValue(po['Version anchor']) or '',
             'slot': getPrintoutValue(po['Equipment slot']) or '',
             'image': '' if not po['Image'] else po['Image'][0]['fulltext'].replace('File:', ''),
             'speed': getPrintoutValue(po['Weapon attack speed']) or 0,
-            'style': getPrintoutValue(po['Combat style']) or '',
+            'category': getPrintoutValue(po['Combat style']) or '',
             'offensive': [
                 getPrintoutValue(po['Crush attack bonus']) or 0,
                 getPrintoutValue(po['Magic Damage bonus']) or 0,
@@ -111,8 +112,14 @@ def main():
                 getPrintoutValue(po['Stab defence bonus']) or 0,
                 getPrintoutValue(po['Prayer bonus']) or 0
             ],
+            'isTwoHanded': False
         }
-        data.append(equipment)
+
+        if equipment['slot'] == '2h':
+            equipment['slot'] = 'weapon'
+            equipment['isTwoHanded'] = True
+
+        data[equipment['id']] = equipment
 
     print('Total equipment: ' + str(len(data)))
 

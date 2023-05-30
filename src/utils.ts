@@ -1,11 +1,40 @@
 import axios from 'axios';
-import {PlayerSkills} from '@/types/Player';
+import {EquipmentPiece, Player, PlayerSkills} from '@/types/Player';
+import equipment from '@/lib/equipment.json';
 
 export const classNames = (...classes: string[]) => {
   return classes.filter(Boolean).join(' ')
 }
 
 const API_PROXY = 'https://oldschool.runescape.wiki/cors'
+
+/**
+ * Get an equipment piece by key from the equipment JSON
+ * @param key
+ */
+export const getEquipment = (key: string) => {
+  return equipment[key as keyof typeof equipment] as EquipmentPiece;
+}
+
+/**
+ * Get all equipment data for a loadout
+ */
+export const getEquipmentForLoadout = (loadout: Player) => {
+  const data: {[k in keyof typeof loadout.equipment]: EquipmentPiece | null} = {
+    head: loadout.equipment.head ? getEquipment(loadout.equipment.head) : null,
+    body: loadout.equipment.body ? getEquipment(loadout.equipment.body) : null,
+    neck: loadout.equipment.neck ? getEquipment(loadout.equipment.neck) : null,
+    cape: loadout.equipment.cape ? getEquipment(loadout.equipment.cape) : null,
+    ammo: loadout.equipment.ammo ? getEquipment(loadout.equipment.ammo) : null,
+    hands: loadout.equipment.hands ? getEquipment(loadout.equipment.hands) : null,
+    feet: loadout.equipment.feet ? getEquipment(loadout.equipment.feet) : null,
+    legs: loadout.equipment.legs ? getEquipment(loadout.equipment.legs) : null,
+    ring: loadout.equipment.ring ? getEquipment(loadout.equipment.ring) : null,
+    weapon: loadout.equipment.weapon ? getEquipment(loadout.equipment.weapon) : null,
+    shield: loadout.equipment.shield ? getEquipment(loadout.equipment.shield) : null,
+  }
+  return data;
+}
 
 /**
  * Fetch a player's skills (using the Hiscores API)
