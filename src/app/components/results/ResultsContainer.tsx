@@ -1,4 +1,4 @@
-import React, {PropsWithChildren} from 'react';
+import React from 'react';
 import {observer} from 'mobx-react-lite';
 import {
   IconClockHour3, IconDice,
@@ -7,33 +7,7 @@ import {
   IconSword,
   IconTimeline
 } from "@tabler/icons-react";
-import LoadoutComparison from "@/app/components/results/LoadoutComparison";
 import {useStore} from "@/state";
-
-interface StatDisplay {
-  name: string | JSX.Element;
-  icon?: JSX.Element;
-}
-
-const StatDisplay: React.FC<PropsWithChildren<StatDisplay>> = (props) => {
-  const {icon, name, children} = props;
-  return (
-    <div className={'grow bg-white shadow md:rounded items-center justify-center flex flex-col text-center min-h-[85px]'}>
-      <div className={'py-2 bg-btns-400 border-b-2 border-body-500 text-white md:rounded-t w-full'}>
-        <h3 className={'font-bold text-md select-none flex justify-center gap-1'}>
-          <div className={'inline-block'}>{icon}</div>
-          <div>{name}</div>
-        </h3>
-      </div>
-      <div className={'p-2 flex justify-center items-center grow'}>
-        <div className={'font-mono'}>
-          {children}
-        </div>
-      </div>
-    </div>
-
-  )
-}
 
 const ResultsTable = observer(() => {
   const store = useStore();
@@ -43,9 +17,9 @@ const ResultsTable = observer(() => {
 
   const renderRows = () => {
     let r: React.ReactNode[] = [];
-    for (let [i, l] of store.loadouts.entries()) {
+    for (let i of store.loadouts.keys()) {
       r.push(
-        <tr>
+        <tr key={i}>
           <th
             className={`cursor-pointer transition-colors ${selectedLoadout === i ? 'bg-orange-400' : 'bg-btns-400'}`}
             onClick={() => store.setSelectedLoadout(i)}
