@@ -45,7 +45,7 @@ const LoadoutActionButtons: React.FC = observer(() => {
 
 const PlayerContainer: React.FC = observer(() => {
     const store = useStore();
-    const {loadouts, player, selectedLoadout, createLoadout, deleteLoadout, canCreateLoadout, canRemoveLoadout} = store;
+    const {loadouts, player, selectedLoadout} = store;
 
     return (
         <div

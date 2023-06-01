@@ -100,7 +100,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
-    require('tailwind-dracula')(),
     require('@headlessui/tailwindcss')({prefix: 'ui'})
   ],
 }
