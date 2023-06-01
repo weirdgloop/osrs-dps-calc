@@ -6,12 +6,12 @@ interface NumberInputProps extends Omit<React.DetailedHTMLProps<React.InputHTMLA
 }
 
 const NumberInput: React.FC<NumberInputProps> = (props) => {
-  const [value, setValue] = useState<string>();
+  const [value, setValue] = useState<string>(props.value || '');
   const {onChange} = props;
 
   useEffect(() => {
     // If a new value is passed in as a prop, update the state of this component
-    setValue(props.value);
+    setValue(props.value || '');
   }, [props.value]);
 
   return (
