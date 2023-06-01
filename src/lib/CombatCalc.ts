@@ -1,18 +1,18 @@
-import {EquipmentPiece, Player} from '@/types/Player';
+import {EquipmentPiece, PlayerComputed} from '@/types/Player';
 import {Monster} from '@/types/Monster';
 
 export default class CombatCalc {
-  private player: Player;
+  private player: PlayerComputed;
   private monster: Monster;
 
   // Array of the names of all equipped items (for quick checks)
   private allEquippedItems: string[];
 
-  constructor(player: Player, monster: Monster) {
+  constructor(player: PlayerComputed, monster: Monster) {
     this.player = player;
     this.monster = monster;
 
-    this.allEquippedItems = Object.values(player.equipment).filter((v) => v !== null).flat(1).map((eq: EquipmentPiece) => eq.name);
+    this.allEquippedItems = Object.values(player.equipment).filter((v) => v !== null).flat(1).map((eq: EquipmentPiece | null) => eq?.name || '');
   }
 
   /**

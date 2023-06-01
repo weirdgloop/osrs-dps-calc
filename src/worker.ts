@@ -5,7 +5,7 @@ import {
   WorkerResponses,
   WorkerResponseType
 } from "@/types/WorkerData";
-import {Player} from "@/types/Player";
+import {PlayerComputed} from "@/types/Player";
 import {Monster} from "@/types/Monster";
 import CombatCalc from "@/lib/CombatCalc";
 
@@ -14,7 +14,7 @@ import CombatCalc from "@/lib/CombatCalc";
  * @param loadouts
  * @param m
  */
-const computeValues = (loadouts: Player[], m: Monster) => {
+const computeValues = (loadouts: PlayerComputed[], m: Monster) => {
   let res = [];
 
   for (let [i, p] of loadouts.entries()) {
