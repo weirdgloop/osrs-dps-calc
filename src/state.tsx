@@ -3,7 +3,7 @@ import React, {createContext, useContext} from 'react';
 import {PartialDeep} from 'type-fest';
 import {Potion} from './enums/Potion';
 import * as localforage from 'localforage';
-import {Calculator, Preferences, State, UI} from '@/types/State';
+import {Calculator, ImportableData, Preferences, State, UI} from '@/types/State';
 import {ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, Prayer} from './enums/Prayer';
 import merge from 'lodash.mergewith';
 import {EquipmentCategory, getCombatStylesForCategory} from './enums/EquipmentCategory';
@@ -11,7 +11,7 @@ import {EquipmentPiece, Player, PlayerBonuses, PlayerDefensive, PlayerEquipment,
 import {Monster} from '@/types/Monster';
 import {MonsterAttribute} from "@/enums/MonsterAttribute";
 import {toast} from "react-toastify";
-import {fetchPlayerSkills, getEquipment, getEquipmentForLoadout} from "@/utils";
+import {fetchPlayerSkills, fetchShortlinkData, getEquipment, getEquipmentForLoadout} from "@/utils";
 
 const calculateEquipmentBonuses = (eq: EquipmentPiece[]) => {
   let b: {
@@ -143,6 +143,7 @@ class GlobalState implements State {
   ui: UI = {
     showPreferencesModal: false,
     potionsScrollPosition: 0,
+    blockSharing: false
   }
 
   prefs: Preferences = {
@@ -196,7 +197,7 @@ class GlobalState implements State {
    */
   get equipmentBonuses() {
     return calculateEquipmentBonuses(Object.values(this.equipmentData).filter((v) => {
-      return v !== null;
+      return (v !== null && v !== undefined);
     }) as EquipmentPiece[]);
   }
 
@@ -206,6 +207,30 @@ class GlobalState implements State {
 
   updateCalculator(calc: PartialDeep<Calculator>) {
     this.calc = Object.assign(this.calc, calc);
+  }
+
+  async loadShortlink(linkId: string) {
+    let data: ImportableData;
+    try {
+      data = await fetchShortlinkData(linkId);
+    } catch (e) {
+      toast.error('Failed to load shared data.', {toastId: 'shortlink-fail'})
+      return;
+    }
+
+    /**
+     * For future reference: if we ever change the schema of the loadouts or the monster object,
+     * then some of the JSON data we store for shortlinks will be incorrect. We can handle those instances here, as
+     * a sort of "on-demand migration".
+     *
+     * Also: the reason we're merging the objects below is that we're trying our hardest not to cause the app to
+     * error if the JSON data is bad. To achieve that, we do a deep merge of the loadouts and monster objects so that
+     * the existing data still remains.
+     */
+
+    this.selectedLoadout = data.selectedLoadout;
+    this.loadouts = merge(this.loadouts, data.loadouts);
+    this.monster = merge(this.monster, data.monster);
   }
 
   loadPreferences() {
@@ -269,6 +294,7 @@ class GlobalState implements State {
     } else {
       this.player.buffs.potions = [...this.player.buffs.potions, potion];
     }
+    this.updateUIState({blockSharing: false});
   }
 
   /**
@@ -301,6 +327,7 @@ class GlobalState implements State {
 
       this.player.prayers = [...newPrayers, prayer];
     }
+    this.updateUIState({blockSharing: false});
   }
 
   /**
@@ -314,6 +341,7 @@ class GlobalState implements State {
     } else {
       this.monster.attributes = [...this.monster.attributes, attr];
     }
+    this.updateUIState({blockSharing: false});
   }
 
   /**
@@ -346,6 +374,7 @@ class GlobalState implements State {
     }
 
     this.loadouts[this.selectedLoadout] = merge(this.player, player);
+    this.updateUIState({blockSharing: false});
   }
 
   /**
@@ -359,6 +388,7 @@ class GlobalState implements State {
         return src;
       }
     });
+    this.updateUIState({blockSharing: false});
   }
 
   /**
@@ -386,6 +416,7 @@ class GlobalState implements State {
     if ((this.selectedLoadout >= ix) && ix !== 0) {
       this.selectedLoadout = this.selectedLoadout - 1;
     }
+    this.updateUIState({blockSharing: false});
   }
 
   get canCreateLoadout() {
@@ -402,6 +433,7 @@ class GlobalState implements State {
 
     this.loadouts.push((cloneIndex !== undefined) ? toJS(this.loadouts[cloneIndex]) : generateEmptyPlayer());
     if (selected) this.selectedLoadout = (this.loadouts.length - 1);
+    this.updateUIState({blockSharing: false});
   }
 }
 

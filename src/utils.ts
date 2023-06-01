@@ -1,11 +1,13 @@
 import axios from 'axios';
 import {EquipmentPiece, Player, PlayerSkills} from '@/types/Player';
 import equipment from '@/lib/equipment.json';
+import {ImportableData} from "@/types/State";
 
 export const classNames = (...classes: string[]) => {
   return classes.filter(Boolean).join(' ')
 }
 
+const SHORTLINK_API = 'https://dps.osrs.wiki/shortlink'
 const API_PROXY = 'https://oldschool.runescape.wiki/cors'
 
 /**
@@ -62,6 +64,20 @@ export const fetchPlayerSkills = async (username: string) => {
   }
 
   return skills;
+}
+
+export const fetchShortlinkData = async (linkId: string): Promise<ImportableData> => {
+  const res = await axios.get<{data: ImportableData}>(`${SHORTLINK_API}?id=${linkId}`);
+  return res.data.data;
+}
+
+export const generateShortlink = async (data: ImportableData): Promise<string> => {
+  const res = await axios.post(SHORTLINK_API, data, {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  return res.data.data;
 }
 
 /**

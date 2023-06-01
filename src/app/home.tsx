@@ -1,7 +1,6 @@
 'use client';
 
 import type {NextPage} from 'next';
-import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import MonsterContainer from '@/app/components/monster/MonsterContainer';
 import {Tooltip} from 'react-tooltip';
@@ -19,11 +18,12 @@ import {Player} from "@/types/Player";
 import {Monster} from "@/types/Monster";
 import localforage from "localforage";
 import {getEquipmentForLoadout} from "@/utils";
-
-const PreferencesModal = dynamic(() => import('@/app/components/PreferencesModal'));
+import {useSearchParams} from "next/navigation";
+import PreferencesModal from "@/app/components/PreferencesModal";
 
 const Home: NextPage = observer(() => {
   const store = useStore();
+  const searchParams = useSearchParams();
   const {showPreferencesModal} = store.ui;
 
   const workerRef = useRef<Worker>();
@@ -73,12 +73,6 @@ const Home: NextPage = observer(() => {
   useEffect(() => {
     // Load preferences from browser storage if there are any
     store.loadPreferences();
-
-    // Load username from browser storage if there is one
-    localforage.getItem('dps-calc-username').then((u) => {
-      store.updatePlayer({username: u as string});
-      store.fetchCurrentPlayerSkills();
-    }).catch(() => {});
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -102,6 +96,21 @@ const Home: NextPage = observer(() => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    const id = searchParams.get('id');
+    if (id) {
+      // If there was a share ID provided, load the data for it into the calculator
+      store.loadShortlink(id);
+    } else {
+      // Else, load username from browser storage if there is one and lookup stats
+      localforage.getItem('dps-calc-username').then((u) => {
+        store.updatePlayer({username: u as string});
+        store.fetchCurrentPlayerSkills();
+      }).catch(() => {});
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
   return (
     <div>
@@ -141,7 +150,7 @@ const Home: NextPage = observer(() => {
         </div>
       <Tooltip id={'tooltip'} />
       <ToastContainer position={'bottom-right'} hideProgressBar={true} draggable={false} limit={3} closeButton={false} className={'text-sm'} />
-        {showPreferencesModal && <PreferencesModal isOpen={showPreferencesModal} />}
+      {showPreferencesModal && <PreferencesModal isOpen={showPreferencesModal} />}
     </div>
   )
 })
