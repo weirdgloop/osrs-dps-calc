@@ -143,6 +143,7 @@ class GlobalState implements State {
   ui: UI = {
     showPreferencesModal: false,
     potionsScrollPosition: 0,
+    username: '',
     blockSharing: false
   }
 
@@ -243,7 +244,7 @@ class GlobalState implements State {
   }
 
   async fetchCurrentPlayerSkills() {
-    const username = this.player.username;
+    const username = this.ui.username;
 
     try {
       const res = await toast.promise(

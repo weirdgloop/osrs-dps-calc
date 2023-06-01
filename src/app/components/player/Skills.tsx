@@ -57,7 +57,7 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
 
 const UsernameLookup: React.FC = observer(() => {
     const store = useStore();
-    const {username} = store.player;
+    const {username} = store.ui;
     const shouldRemember = store.prefs.rememberUsername;
     const [btnDisabled, setBtnDisabled] = useState(false);
     const btn = useRef<HTMLButtonElement>(null);
@@ -70,7 +70,7 @@ const UsernameLookup: React.FC = observer(() => {
                 placeholder={'Username'}
                 value={username}
                 onChange={(e) => {
-                  store.updatePlayer({username: e.currentTarget.value});
+                  store.updateUIState({username: e.currentTarget.value});
                   if (shouldRemember) {
                     localforage.setItem('dps-calc-username', e.currentTarget.value).catch(() => {});
                   }

@@ -105,7 +105,7 @@ const Home: NextPage = observer(() => {
     } else {
       // Else, load username from browser storage if there is one and lookup stats
       localforage.getItem('dps-calc-username').then((u) => {
-        store.updatePlayer({username: u as string});
+        store.updateUIState({username: u as string});
         store.fetchCurrentPlayerSkills();
       }).catch(() => {});
     }

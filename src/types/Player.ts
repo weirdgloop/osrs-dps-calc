@@ -69,7 +69,6 @@ export interface PlayerOffensive {
 }
 
 export interface Player {
-  username: string;
   style: PlayerCombatStyle;
   skills: PlayerSkills;
   equipment: PlayerEquipment;

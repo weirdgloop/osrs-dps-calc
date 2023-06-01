@@ -4,6 +4,7 @@ import {Monster} from '@/types/Monster';
 export interface UI {
   showPreferencesModal: boolean;
   potionsScrollPosition: number;
+  username: string;
 
   /**
    * This is used to indicate when the calculator has not changed since creating a share link, so another one
