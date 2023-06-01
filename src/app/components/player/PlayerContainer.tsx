@@ -19,7 +19,7 @@ const LoadoutActionButtons: React.FC = observer(() => {
               data-tooltip-id={'tooltip'}
               data-tooltip-content={'Add new loadout'}
           >
-              <IconPlus/>
+              <IconPlus aria-label={'Add new loadout'} />
           </button>
           {/*<button*/}
           {/*    disabled={!canCreateLoadout}*/}
@@ -37,7 +37,7 @@ const LoadoutActionButtons: React.FC = observer(() => {
               data-tooltip-id={'tooltip'}
               data-tooltip-content={'Remove loadout'}
           >
-              <IconTrash/>
+              <IconTrash aria-label={'Remove loadout'} />
           </button>
       </div>
   )

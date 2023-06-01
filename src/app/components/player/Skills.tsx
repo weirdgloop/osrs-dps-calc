@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useId, useRef, useState} from 'react';
 import Image, {StaticImageData} from 'next/image';
 
 import attack from '@/public/img/bonuses/attack.png'
@@ -25,6 +25,7 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
     const store = useStore();
     const {player} = store;
     const {name, field, image} = props;
+    const id = useId();
 
     return (
         <div className={'flex items-center justify-between'}>
@@ -32,12 +33,13 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
                 <div className={'basis-8'}>
                     <Image src={image} alt={name}/>
                 </div>
-                <div>
+                <label htmlFor={id}>
                     {name}
-                </div>
+                </label>
             </div>
             <div>
                 <NumberInput
+                    id={id}
                     required
                     min={1}
                     max={99}

@@ -55,7 +55,7 @@ const TopBar: React.FC = observer(() => {
                       store.updateUIState({showPreferencesModal: true});
                     }}
                   >
-                    <IconSettings size={20} />
+                    <IconSettings size={20} aria-label={'Preferences'} />
                   </button>
                   <button
                     disabled={blockSharing}
@@ -67,7 +67,7 @@ const TopBar: React.FC = observer(() => {
                     )}
                     onClick={generateShareLink}
                   >
-                    <IconShare2 size={20} />
+                    <IconShare2 size={20} aria-label={'Share'} />
                   </button>
                 </div>
               </div>
