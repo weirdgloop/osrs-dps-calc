@@ -11,9 +11,8 @@ import Skills from './Skills';
 import Prayers from './Prayers';
 import Equipment from './Equipment';
 import Buffs from './Buffs';
-import Spells from './Spells';
 
-type SelectedInputType = 'combat' | 'skills' | 'equipment' | 'buffs' | 'prayer' | 'spells';
+type SelectedInputType = 'combat' | 'skills' | 'equipment' | 'buffs' | 'prayer';
 
 interface InputNavItemProps {
   name: string;
@@ -51,8 +50,6 @@ export default function PlayerInnerContainer() {
         return <Prayers />
       case 'buffs':
         return <Buffs />
-      case 'spells':
-        return <Spells />
     }
   }
 
@@ -64,7 +61,6 @@ export default function PlayerInnerContainer() {
         <InputNavItem name={'Equipment'} isActive={selected === 'equipment'} image={equipment} onClick={() => setSelected('equipment')} />
         <InputNavItem name={'Buffs'} isActive={selected === 'buffs'} image={potion} onClick={() => setSelected('buffs')} />
         <InputNavItem name={'Prayer'} isActive={selected === 'prayer'} image={prayer} onClick={() => setSelected('prayer')} />
-        <InputNavItem name={'Spells'} isActive={selected === 'spells'} image={spells} onClick={() => setSelected('spells')} />
       </div>
       <div className={'mb-6'}>
         {renderSelected()}

@@ -30,37 +30,38 @@ const SpellSelect: React.FC = observer(() => {
   })
 
   return (
-  <Combobox
-    id={'spell-select'}
-    className={'w-full'}
-    items={options}
-    placeholder={'Search for spell...'}
-    blurAfterSelect={true}
-    onSelectedItemChange={(item) => {
-      if (item) {
-        const val = item as SpellOption;
-        store.updatePlayer({
-          spell: val.spell
-        })
-      }
-    }}
-    CustomItemComponent={({item, itemString}) => {
-      let i = item as SpellOption;
+    <Combobox
+      id={'spell-select'}
+      value={store.player.spell.name}
+      className={'w-full'}
+      items={options}
+      placeholder={'Search for spell...'}
+      blurAfterSelect={true}
+      onSelectedItemChange={(item) => {
+        if (item) {
+          const val = item as SpellOption;
+          store.updatePlayer({
+            spell: val.spell
+          })
+        }
+      }}
+      CustomItemComponent={({item, itemString}) => {
+        let i = item as SpellOption;
 
-      return (
-        <div className={'flex items-center gap-2'}>
-          {i.spell.image && (
-            <div className={'basis-4 flex justify-center h-[20px] w-auto'}>
-              <LazyImage responsive={true} src={getWikiImage(i.spell.image)} alt={''} />
+        return (
+          <div className={'flex items-center gap-2'}>
+            {i.spell.image && (
+              <div className={'basis-4 flex justify-center h-[20px] w-auto'}>
+                <LazyImage responsive={true} src={getWikiImage(i.spell.image)} alt={''} />
+              </div>
+            )}
+            <div className={'flex items-center gap-0'}>
+              <div>{itemString}</div>
             </div>
-          )}
-          <div className={'flex items-center gap-0'}>
-            <div>{itemString}</div>
           </div>
-        </div>
-      )
-    }}
-  />
+        )
+      }}
+    />
   )
 })
 

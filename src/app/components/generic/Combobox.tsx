@@ -9,6 +9,7 @@ const itemToString = (i: ComboboxItem | null) => (i ? i.label : '')
 
 interface IComboboxProps {
   id: string;
+  value?: string;
   items: ComboboxItem[];
   placeholder?: string;
   onSelectedItemChange?: (item: ComboboxItem | null | undefined) => void;
@@ -43,6 +44,7 @@ interface IItemRendererProps {
 const Combobox: React.FC<IComboboxProps> = (props) => {
   const {
     id,
+    value,
     items,
     onSelectedItemChange,
     resetAfterSelect,
@@ -51,7 +53,7 @@ const Combobox: React.FC<IComboboxProps> = (props) => {
     className,
     CustomItemComponent,
   } = props;
-  const [inputValue, setInputValue] = useState<string | undefined>('');
+  const [inputValue, setInputValue] = useState<string | undefined>(value);
   const [filteredItems, setFilteredItems] = useState<any[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
