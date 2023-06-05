@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import {observer} from 'mobx-react-lite';
 import {
   IconClockHour3, IconDice,
@@ -15,44 +15,49 @@ const ResultsTable = observer(() => {
 
   // TODO: change this to actually show results, this is just proof-of-concept
 
-  const renderRows = () => {
-    let r: React.ReactNode[] = [];
-    for (let i of store.loadouts.keys()) {
-      r.push(
-        <tr key={i}>
-          <th
-            className={`cursor-pointer transition-colors ${selectedLoadout === i ? 'bg-orange-400' : 'bg-btns-400'}`}
-            onClick={() => store.setSelectedLoadout(i)}
-          >Loadout {i + 1}</th>
-          <th className={'text-center font-mono'}>{calc.loadouts[i] ? calc.loadouts[i].maxHit : ''}</th>
-          <th className={'text-center font-mono'}>5.9304</th>
-          <th className={'text-center font-mono'}>82.75<span className={'text-gray-500'}>%</span></th>
-          <th className={'text-center font-mono'}>56.25<span className={'text-gray-500'}>s</span></th>
-          <th className={'text-center font-mono'}>18.71</th>
-          <th className={'text-center font-mono'}>{calc.loadouts[i] ? calc.loadouts[i].maxAttackRoll : ''}</th>
-          <th className={'text-center font-mono'}>{calc.loadouts[i] ? calc.loadouts[i].npcDefRoll : ''}</th>
-        </tr>
-      )
-    }
-    return r;
-  }
-
   return (
-    <table className={'min-w-[880px]'}>
+    <table className={'min-w-[300px] w-auto mx-auto'}>
       <thead>
       <tr>
         <th className={'border-0'}></th>
-        <th><IconSword className={'inline-block'} /> Max hit</th>
-        <th><IconTimeline className={'inline-block'} /> DPS</th>
-        <th><IconEye className={'inline-block'} /> Accuracy</th>
-        <th><IconClockHour3 className={'inline-block'} /> Avg. TTK</th>
-        <th><IconHeartMinus className={'inline-block'} /> Avg. dmg taken</th>
-        <th><IconDice className={'inline-block'} /> Attack roll</th>
-        <th><IconShield className={'inline-block'} /> NPC def roll</th>
+        {store.loadouts.map((_, i) => (
+          <th
+            key={i}
+            className={`text-center cursor-pointer transition-colors ${selectedLoadout === i ? 'bg-orange-400' : 'bg-btns-400'}`}
+            onClick={() => store.setSelectedLoadout(i)}
+          >Loadout {i + 1}</th>
+        ))}
       </tr>
       </thead>
       <tbody>
-        {renderRows()}
+        <tr>
+          <th className={'bg-btns-400 w-48'}><IconSword className={'inline-block'} /> Max hit</th>
+          {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{l.maxHit}</th>)}
+        </tr>
+        <tr>
+          <th className={'bg-btns-400'}><IconTimeline className={'inline-block'} /> DPS</th>
+          {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{/* TODO */}</th>)}
+        </tr>
+        <tr>
+          <th className={'bg-btns-400'}><IconEye className={'inline-block'} /> Accuracy</th>
+          {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{/* TODO */}</th>)}
+        </tr>
+        <tr>
+          <th className={'bg-btns-400'}><IconClockHour3 className={'inline-block'} /> Avg. TTK</th>
+          {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{/* TODO */}</th>)}
+        </tr>
+        <tr>
+          <th className={'bg-btns-400'}><IconHeartMinus className={'inline-block'} /> Avg. dmg taken</th>
+          {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{/* TODO */}</th>)}
+        </tr>
+        <tr>
+          <th className={'bg-btns-400'}><IconDice className={'inline-block'} /> Attack roll</th>
+          {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{l.maxAttackRoll}</th>)}
+        </tr>
+        <tr>
+          <th className={'bg-btns-400'}><IconShield className={'inline-block'} /> NPC def roll</th>
+          {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{l.npcDefRoll}</th>)}
+        </tr>
       </tbody>
     </table>
   )
@@ -61,12 +66,8 @@ const ResultsTable = observer(() => {
 const BoxResults = observer(() => {
   return (
     <div className={'my-4'}>
-      <div className={'grow bg-tile md:rounded shadow-lg max-w-[100vw] my-4 text-black'}>
-        <div className={'px-4 py-4'}>
-          <div className={'overflow-x-scroll'}>
-            <ResultsTable />
-          </div>
-        </div>
+      <div className={'mx-2 overflow-x-scroll'}>
+        <ResultsTable />
       </div>
     </div>
   )

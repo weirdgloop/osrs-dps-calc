@@ -139,11 +139,9 @@ thead {
 
 thead th {
   @apply font-bold;
-  @apply text-center;
 }
 
 thead th:not(:first-child) {
-  @apply bg-btns-400;
   @apply text-white;
 }
 
@@ -154,10 +152,6 @@ th {
 
 tbody tr {
   @apply bg-body-200;
-}
-
-tbody tr:nth-child(even) {
-  @apply bg-body-100;
 }
 
 tbody th:first-child {
