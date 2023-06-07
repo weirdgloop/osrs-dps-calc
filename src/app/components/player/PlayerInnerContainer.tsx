@@ -4,7 +4,6 @@ import skills from '@/public/img/tabs/skills.png';
 import equipment from '@/public/img/tabs/equipment.png';
 import potion from '@/public/img/tabs/potion.png';
 import prayer from '@/public/img/tabs/prayer.png';
-import spells from '@/public/img/tabs/spells.png';
 import React, {useState} from 'react';
 import Combat from './Combat';
 import Skills from './Skills';
@@ -55,7 +54,7 @@ export default function PlayerInnerContainer() {
 
   return (
     <div className={'grow sm:border-r border-body-400 min-h-[490px]'}>
-      <div className={'flex justify-center text-center items-center bg-body-100 px-4 py-[1.5em] gap-1 border-b border-body-400  '}>
+      <div className={'flex justify-center text-center items-center bg-body-100 px-8 py-[1.5em] gap-1 border-b border-body-400'}>
         <InputNavItem name={'Combat'} isActive={selected === 'combat'} image={combat} onClick={() => setSelected('combat')} />
         <InputNavItem name={'Skills'} isActive={selected === 'skills'} image={skills} onClick={() => setSelected('skills')} />
         <InputNavItem name={'Equipment'} isActive={selected === 'equipment'} image={equipment} onClick={() => setSelected('equipment')} />

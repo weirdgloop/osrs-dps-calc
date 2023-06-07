@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import AttributeInput from '../generic/AttributeInput';
 import dagger from '@/public/img/bonuses/dagger.png';
 import scimitar from '@/public/img/bonuses/scimitar.png';
@@ -43,7 +43,7 @@ const MonsterContainer: React.FC = observer(() => {
   const {monster, prefs} = store;
 
   return (
-    <div className={'bg-tile md:rounded-lg text-black shadow-lg'}>
+    <div className={'bg-tile basis-full mx-auto lg:basis-auto sm:rounded-lg text-black shadow-lg'}>
       <div className={'px-6 py-4 border-b-body-400 border-b md:rounded md:rounded-bl-none md:rounded-br-none flex justify-between items-center'}>
         <h1 className={`font-serif text-xl tracking-tight font-bold`}>
           {monster.name ? monster.name : 'Monster'}
