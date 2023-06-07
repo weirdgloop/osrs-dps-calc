@@ -32,7 +32,7 @@ const PresetAttributeButton: React.FC<PresetAttributeButtonProps> = observer((pr
   const isSelected = monster.attributes.includes(attr);
 
   return (
-    <button disabled={!prefs.allowEditingMonsterStats} className={`rounded px-1 transition-[background,color] ${isSelected ? 'bg-blue-600 text-white' : 'bg-body-100 opacity-50 hover:enabled:bg-body-200'}`} onClick={() => store.toggleMonsterAttribute(attr)}>
+    <button disabled={!prefs.allowEditingMonsterStats} className={`rounded px-1 transition-[background,color] ${isSelected ? 'bg-blue-600 text-white' : 'bg-body-100 dark:bg-dark-200 opacity-50 dark:opacity-25 hover:enabled:bg-body-200 dark:hover:enabled:bg-dark-200'}`} onClick={() => store.toggleMonsterAttribute(attr)}>
       {attr}
     </button>
   )
@@ -43,8 +43,8 @@ const MonsterContainer: React.FC = observer(() => {
   const {monster, prefs} = store;
 
   return (
-    <div className={'bg-tile basis-full mx-auto lg:basis-auto sm:rounded-lg text-black shadow-lg'}>
-      <div className={'px-6 py-4 border-b-body-400 border-b md:rounded md:rounded-bl-none md:rounded-br-none flex justify-between items-center'}>
+    <div className={'bg-tile dark:bg-dark-300 basis-full mx-auto lg:basis-auto sm:rounded-lg text-black dark:text-white shadow-lg'}>
+      <div className={'px-6 py-4 border-b-body-400 dark:border-b-dark-200 border-b md:rounded md:rounded-bl-none md:rounded-br-none flex justify-between items-center'}>
         <h1 className={`font-serif text-xl tracking-tight font-bold`}>
           {monster.name ? monster.name : 'Monster'}
         </h1>
@@ -61,7 +61,7 @@ const MonsterContainer: React.FC = observer(() => {
               </h4>
               <div className={'flex gap-4'}>
                 <div className={'w-[95px]'}>
-                  <p className={'text-sm text-gray-400'}>Skills</p>
+                  <p className={'text-sm text-gray-400 dark:text-gray-300'}>Skills</p>
                   <div className={'flex flex-col gap-2 mt-3 text-center'}>
                     <AttributeInput name={'Hitpoints'} disabled={!prefs.allowEditingMonsterStats} image={hitpoints} value={monster.skills.hp} onChange={(v) => store.updateMonster({skills: {hp: v}})} />
                     <AttributeInput name={'Attack'} disabled={!prefs.allowEditingMonsterStats} image={attack} value={monster.skills.atk} onChange={(v) => store.updateMonster({skills: {atk: v}})}  />
@@ -72,7 +72,7 @@ const MonsterContainer: React.FC = observer(() => {
                   </div>
                 </div>
                 <div className={'w-[95px]'}>
-                  <p className={'text-sm text-gray-400'}>Offensive</p>
+                  <p className={'text-sm text-gray-400 dark:text-gray-300'}>Offensive</p>
                   <div className={'flex flex-col gap-2 mt-3 text-center'}>
                     <AttributeInput name={'Attack'} disabled={!prefs.allowEditingMonsterStats} image={attack} value={monster.offensive.atk} onChange={(v) => store.updateMonster({offensive: {atk: v}})}  />
                     <AttributeInput name={'Strength'} disabled={!prefs.allowEditingMonsterStats} image={strength} value={monster.offensive.str} onChange={(v) => store.updateMonster({offensive: {str: v}})} />
@@ -83,7 +83,7 @@ const MonsterContainer: React.FC = observer(() => {
                   </div>
                 </div>
                 <div className={'w-[95px]'}>
-                  <p className={'text-sm text-gray-400'}>Defensive</p>
+                  <p className={'text-sm text-gray-400 dark:text-gray-300'}>Defensive</p>
                   <div className={'flex flex-col gap-2 mt-3 text-center'}>
                     <AttributeInput name={'Stab'} disabled={!prefs.allowEditingMonsterStats} image={dagger} value={monster.defensive.stab} onChange={(v) => store.updateMonster({defensive: {stab: v}})} />
                     <AttributeInput name={'Slash'} disabled={!prefs.allowEditingMonsterStats} image={scimitar} value={monster.defensive.slash} onChange={(v) => store.updateMonster({defensive: {slash: v}})} />

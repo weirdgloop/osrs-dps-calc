@@ -94,6 +94,15 @@ module.exports = {
           300: '#949eaa',
           400: '#5d6773',
           500: '#444e5a'
+        },
+        dark: {
+          100: '#071022', // @portage
+          200: '#596e96', // @waikawa-grey
+          300: '#313e59', // @pickled-bluewood
+          400: '#222e45', // @cloud-burst
+          500: '#172136', // @big-stone
+          600: '#071022', // @dark-body
+          700: '#98a2b6',
         }
       }
     },

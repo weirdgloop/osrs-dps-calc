@@ -107,7 +107,7 @@ const Combobox: React.FC<IComboboxProps> = (props) => {
     return (
         <div
             className={
-              `px-3 py-2 leading-none items-center text-sm cursor-pointer ${(highlightedIndex === props.index) ? 'bg-gray-200' : ''}`
+              `px-3 py-2 leading-none items-center text-sm cursor-pointer ${(highlightedIndex === props.index) ? 'bg-gray-200 dark:bg-dark-200' : ''}`
             }
             {...getItemProps({
               index: props.index,
@@ -163,7 +163,7 @@ const Combobox: React.FC<IComboboxProps> = (props) => {
     <div>
       <input className={`form-control ${className}`} {...getInputProps({ref: inputRef, open: isOpen, type: 'text', placeholder: (placeholder || 'Search...')})} />
       <div
-          className={`absolute bg-white rounded shadow-xl mt-1 border border-gray-300 z-10 transition-opacity ${(isOpen && filteredItems.length) ? 'opacity-100' : 'opacity-0'}`}
+          className={`absolute bg-white rounded dark:bg-dark-400 dark:border-dark-200 dark:text-white shadow-xl mt-1 border border-gray-300 z-10 transition-opacity ${(isOpen && filteredItems.length) ? 'opacity-100' : 'opacity-0'}`}
           {...getMenuProps({
             ref: menuRef
           })}

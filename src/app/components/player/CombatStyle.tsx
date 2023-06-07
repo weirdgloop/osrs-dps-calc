@@ -55,7 +55,7 @@ export const CombatStyle: React.FC<CombatStyleProps> = observer((props) => {
 
     return (
         <button
-            className={`flex gap-4 items-center text-sm p-2 px-6 text-left transition-[background] first:border-t border-b text-black border-body-200 bg-gray-100 hover:bg-gray-200`}
+            className={`flex gap-4 items-center text-sm p-2 px-6 text-left transition-[background] first:border-t border-b text-black border-body-200 dark:border-dark-400 bg-gray-100 dark:bg-dark-500 dark:text-white hover:bg-gray-200 dark:hover:bg-dark-400`}
             onClick={() => store.updatePlayer({style})}
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
@@ -73,7 +73,7 @@ export const CombatStyle: React.FC<CombatStyleProps> = observer((props) => {
             </div>
             {(hovering || active) && (
                 <div className={'ml-auto'}>
-                    {active ? <IconCircleCheckFilled className={'text-green-400'}/> :
+                    {active ? <IconCircleCheckFilled className={'text-green-400 dark:text-green-200'}/> :
                         <IconCircleCheck className={'text-gray-300'}/>}
                 </div>
             )}

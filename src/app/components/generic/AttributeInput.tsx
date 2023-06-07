@@ -22,7 +22,7 @@ const AttributeInput: React.FC<AttributeInputProps> = (props) => {
       <div className={'basis-12'}>
           {
               disabled ? (
-                  <div className={'w-full font-mono text-left py-[.25em] px-[.5em] text-sm border border-zinc-400 rounded cursor-not-allowed'}>
+                  <div className={'w-full font-mono text-left py-[.25em] px-[.5em] text-sm border border-zinc-400 dark:border-dark-200 rounded cursor-not-allowed'}>
                       {value}
                   </div>
               ) : (

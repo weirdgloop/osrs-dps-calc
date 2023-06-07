@@ -19,7 +19,7 @@ const Offensive: React.FC = observer(() => {
 
   return (
     <div className={'w-[95px]'}>
-      <p className={'text-sm text-gray-500'}>Offensive</p>
+      <p className={'text-sm text-gray-500 dark:text-gray-300'}>Offensive</p>
       <div className={'flex flex-col gap-2 mt-3 text-center'}>
         <AttributeInput
           disabled={!prefs.allowEditingPlayerStats}
@@ -71,7 +71,7 @@ const Defensive: React.FC = observer(() => {
 
   return (
     <div className={'w-[95px]'}>
-      <p className={'text-sm text-gray-500'}>Defensive</p>
+      <p className={'text-sm text-gray-500 dark:text-gray-300'}>Defensive</p>
       <div className={'flex flex-col gap-2 mt-3 text-center'}>
         <AttributeInput
           disabled={!prefs.allowEditingPlayerStats}
@@ -124,7 +124,7 @@ const OtherBonuses: React.FC = observer(() => {
 
   return (
     <div className={'w-[95px]'}>
-      <p className={'text-sm text-gray-500'}>Other</p>
+      <p className={'text-sm text-gray-500 dark:text-gray-300'}>Other</p>
       <div className={'flex flex-col gap-2 mt-3 text-center'}>
         <AttributeInput
           disabled={!prefs.allowEditingPlayerStats}
@@ -211,8 +211,8 @@ const Bonuses: React.FC = observer(() => {
   const [atkSpeed] = useState(2.4);
 
   return (
-    <div className={'grow bg-body-100 text-black rounded-br'}>
-      <div className={'px-6 py-2 border-b border-body-400'}>
+    <div className={'grow bg-body-100 dark:bg-dark-400 text-black dark:text-white rounded-br'}>
+      <div className={'px-6 py-2 border-b border-body-400 dark:border-dark-200'}>
         <h4 className={'font-serif font-bold'}>Bonuses</h4>
       </div>
       <div className={'px-6 py-4'}>
@@ -224,7 +224,7 @@ const Bonuses: React.FC = observer(() => {
       </div>
       {prefs.showHitDistribution && (
         <>
-          <div className={'px-6 py-2 border-y border-body-400'}>
+          <div className={'px-6 py-2 border-y border-body-400 dark:border-dark-200'}>
             <h4 className={'font-serif font-bold'}>Hit Distribution</h4>
           </div>
           <div className={'mt-2 px-2'}>

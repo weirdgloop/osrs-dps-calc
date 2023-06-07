@@ -51,7 +51,7 @@ const ItemRenderer: React.FC<IItemRendererProps> = (props) => {
   return (
     <div
       className={
-        `px-3 py-2 leading-none items-center text-sm cursor-pointer ${(highlightedIndex === props.index) ? 'bg-gray-200' : ''}`
+        `px-3 py-2 leading-none items-center text-sm cursor-pointer ${(highlightedIndex === props.index) ? 'bg-gray-200 dark:bg-dark-200' : ''}`
       }
       {...getItemProps({
         index: props.index,
@@ -148,7 +148,7 @@ const Select: React.FC<ISelectProps> = (props) => {
         }
       })()}
       <div
-          className={`absolute bg-white rounded shadow-xl mt-1 border border-gray-300 z-10 text-black font-normal transition-opacity ${(isOpen && items.length) ? 'opacity-100' : 'opacity-0'} ${menuClassName}`}
+          className={`absolute bg-white dark:bg-dark-400 dark:border-dark-200 dark:text-white rounded shadow-xl mt-1 border border-gray-300 z-10 text-black font-normal transition-opacity ${(isOpen && items.length) ? 'opacity-100' : 'opacity-0'} ${menuClassName}`}
           style={{fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif'}}
           {...getMenuProps({
             ref: menuRef

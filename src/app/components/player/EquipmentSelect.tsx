@@ -58,7 +58,7 @@ const EquipmentSelect: React.FC = observer(() => {
             </div>
             <div>
               {itemString}
-              {i.version && <span className={'monster-version text-xs text-gray-400'}>#{i.version}</span>}
+              {i.version && <span className={'monster-version text-xs text-gray-400 dark:text-gray-300'}>#{i.version}</span>}
             </div>
           </div>
         )

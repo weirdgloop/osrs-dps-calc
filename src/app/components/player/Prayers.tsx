@@ -26,7 +26,7 @@ const PrayerItem: React.FC<IPrayerItemProps> = observer((props) => {
       className={`cursor-pointer w-[28px] h-[23px] flex justify-center items-center`}
     >
       <div className={'relative'}>
-        {active && <IconCircleCheckFilled className={'filter drop-shadow absolute top-[-10px] left-[-12px] text-green-400 w-5'} />}
+        {active && <IconCircleCheckFilled className={'filter drop-shadow absolute top-[-10px] left-[-12px] text-green-400 dark:text-green-200 w-5'} />}
         <Image src={image} alt={name} />
       </div>
     </div>

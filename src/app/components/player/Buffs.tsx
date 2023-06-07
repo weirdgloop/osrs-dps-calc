@@ -30,7 +30,7 @@ const BuffItem: React.FC<IBuffItemProps> = observer((props) => {
             data-tooltip-content={tooltip}
             data-tooltip-place={'right'}
             onClick={() => store.togglePlayerPotion(potion)}
-            className={`w-full px-4 py-1 first:mt-0 first:border-0 border-t flex gap-4 items-center`}
+            className={`w-full px-4 py-1 first:mt-0 first:border-0 border-t dark:border-dark-200 flex gap-4 items-center`}
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
         >
@@ -42,7 +42,7 @@ const BuffItem: React.FC<IBuffItemProps> = observer((props) => {
             </div>
             <div className={'ml-auto h-6'}>
                 {(hovering || active) && (
-                    active ? <IconCircleCheckFilled className={'text-green-400 w-4'}/> :
+                    active ? <IconCircleCheckFilled className={'text-green-400 dark:text-green-200 w-4'}/> :
                         <IconCircleCheck className={'text-gray-300 w-4'}/>
                 )}
             </div>
@@ -93,7 +93,7 @@ const Buffs: React.FC = observer(() => {
       </h4>
         <div
             ref={potionsScrollContainer}
-            className={'h-[11.5rem] mt-2 bg-white rounded border border-gray-300 overflow-y-scroll'}
+            className={'h-[11.5rem] mt-2 bg-white dark:bg-dark-400 dark:border-dark-200 rounded border border-gray-300 overflow-y-scroll'}
             onScroll={(evt) => {
                 store.updateUIState({potionsScrollPosition: evt.currentTarget.scrollTop});
             }}

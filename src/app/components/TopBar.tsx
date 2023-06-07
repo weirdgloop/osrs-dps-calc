@@ -35,7 +35,7 @@ const TopBar: React.FC = observer(() => {
 
   return (
       <>
-        <div className="mx-auto px-3 sm:px-6 lg:px-8 bg-btns-400 shadow border-b-4 border-body-500">
+        <div className="mx-auto px-3 sm:px-6 lg:px-8 bg-btns-400 dark:bg-dark-500 shadow border-b-4 border-body-500 dark:border-dark-200">
           <div className="relative flex items-center justify-between h-16">
             <div className="flex-1 flex items-center justify-between">
               <div className="flex-shrink-0 flex items-center gap-2 select-none">
@@ -48,7 +48,7 @@ const TopBar: React.FC = observer(() => {
                     data-tooltip-id={'tooltip'}
                     data-tooltip-content={'Preferences'}
                     className={classNames(
-                      'flex items-center gap-1 text-white border border-body-500 bg-[#3e2816] transition-all hover:scale-105',
+                      'flex items-center gap-1 text-white border border-body-500 bg-[#3e2816] dark:bg-dark-300 dark:border-dark-200 transition-all hover:scale-105',
                       'px-3 py-2 rounded-md text-sm font-medium'
                     )}
                     onClick={() => {
@@ -62,7 +62,7 @@ const TopBar: React.FC = observer(() => {
                     data-tooltip-id={'tooltip'}
                     data-tooltip-content={'Share'}
                     className={classNames(
-                      'disabled:opacity-30 flex items-center gap-1 text-white border border-body-500 bg-[#3e2816] transition-all hover:scale-105',
+                      'disabled:opacity-30 flex items-center gap-1 text-white border border-body-500 bg-[#3e2816] dark:bg-dark-300 dark:border-dark-200 transition-all hover:scale-105',
                       'px-3 py-2 rounded-md text-sm font-medium'
                     )}
                     onClick={generateShareLink}

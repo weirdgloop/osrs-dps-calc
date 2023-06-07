@@ -23,7 +23,7 @@ const ResultsTable = observer(() => {
         {store.loadouts.map((_, i) => (
           <th
             key={i}
-            className={`text-center cursor-pointer transition-colors ${selectedLoadout === i ? 'bg-orange-400' : 'bg-btns-400'}`}
+            className={`text-center cursor-pointer transition-colors ${selectedLoadout === i ? 'bg-orange-400 dark:bg-orange-700' : 'bg-btns-400 dark:bg-dark-300'}`}
             onClick={() => store.setSelectedLoadout(i)}
           >Loadout {i + 1}</th>
         ))}
@@ -31,31 +31,31 @@ const ResultsTable = observer(() => {
       </thead>
       <tbody>
         <tr>
-          <th className={'bg-btns-400 w-40'}><IconSword className={'inline-block'} /> Max hit</th>
+          <th className={'bg-btns-400 dark:bg-dark-400 w-40'}><IconSword className={'inline-block'} /> Max hit</th>
           {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{l.maxHit}</th>)}
         </tr>
         <tr>
-          <th className={'bg-btns-400'}><IconTimeline className={'inline-block'} /> DPS</th>
+          <th className={'bg-btns-400 dark:bg-dark-400'}><IconTimeline className={'inline-block'} /> DPS</th>
           {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{/* TODO */}</th>)}
         </tr>
         <tr>
-          <th className={'bg-btns-400'}><IconEye className={'inline-block'} /> Accuracy</th>
+          <th className={'bg-btns-400 dark:bg-dark-400'}><IconEye className={'inline-block'} /> Accuracy</th>
           {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{/* TODO */}</th>)}
         </tr>
         <tr>
-          <th className={'bg-btns-400'}><IconClockHour3 className={'inline-block'} /> Avg. TTK</th>
+          <th className={'bg-btns-400 dark:bg-dark-400'}><IconClockHour3 className={'inline-block'} /> Avg. TTK</th>
           {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{/* TODO */}</th>)}
         </tr>
         <tr>
-          <th className={'bg-btns-400'}><IconHeartMinus className={'inline-block'} /> Avg. dmg taken</th>
+          <th className={'bg-btns-400 dark:bg-dark-400'}><IconHeartMinus className={'inline-block'} /> Avg. dmg taken</th>
           {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{/* TODO */}</th>)}
         </tr>
         <tr>
-          <th className={'bg-btns-400'}><IconDice className={'inline-block'} /> Attack roll</th>
+          <th className={'bg-btns-400 dark:bg-dark-400'}><IconDice className={'inline-block'} /> Attack roll</th>
           {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{l.maxAttackRoll}</th>)}
         </tr>
         <tr>
-          <th className={'bg-btns-400'}><IconShield className={'inline-block'} /> NPC def roll</th>
+          <th className={'bg-btns-400 dark:bg-dark-400'}><IconShield className={'inline-block'} /> NPC def roll</th>
           {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{l.npcDefRoll}</th>)}
         </tr>
       </tbody>

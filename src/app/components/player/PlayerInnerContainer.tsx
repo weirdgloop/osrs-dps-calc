@@ -24,7 +24,7 @@ const InputNavItem: React.FC<InputNavItemProps> = (props) => {
   const {name, image, onClick, isActive} = props;
   return (
     <button
-      className={`flex flex-initial shadow w-10 h-10 cursor-pointer justify-center items-center rounded transition-[background] ${isActive ? ' bg-tile' : 'bg-body-400'}`}
+      className={`flex flex-initial shadow w-10 h-10 cursor-pointer justify-center items-center rounded transition-[background] ${isActive ? ' bg-tile dark:bg-dark-700' : 'bg-body-400 dark:bg-dark-200'}`}
       onClick={onClick}
       data-tooltip-id={'tooltip'}
       data-tooltip-content={name}
@@ -53,8 +53,8 @@ export default function PlayerInnerContainer() {
   }
 
   return (
-    <div className={'grow sm:border-r border-body-400 min-h-[490px]'}>
-      <div className={'flex justify-center text-center items-center bg-body-100 px-8 py-[1.5em] gap-1 border-b border-body-400'}>
+    <div className={'grow sm:border-r border-body-400 dark:border-dark-200 min-h-[490px]'}>
+      <div className={'flex justify-center text-center items-center bg-body-100 dark:bg-dark-400 dark:border-dark-200 px-8 py-[1.5em] gap-1 border-b border-body-400'}>
         <InputNavItem name={'Combat'} isActive={selected === 'combat'} image={combat} onClick={() => setSelected('combat')} />
         <InputNavItem name={'Skills'} isActive={selected === 'skills'} image={skills} onClick={() => setSelected('skills')} />
         <InputNavItem name={'Equipment'} isActive={selected === 'equipment'} image={equipment} onClick={() => setSelected('equipment')} />

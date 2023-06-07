@@ -73,7 +73,7 @@ const MonsterSelect: React.FC = observer(() => {
         return (
             <div>
               {i.label}
-              {i.version && <span className={'monster-version text-xs text-gray-400'}>#{i.version}</span>}
+              {i.version && <span className={'monster-version text-xs text-gray-400 dark:text-gray-300'}>#{i.version}</span>}
             </div>
         )
       }}
