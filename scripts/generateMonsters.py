@@ -1,14 +1,21 @@
 """
-    Script to generate a monsters.json of all the monsters on the OSRS Wiki.
-    The JSON file is placed in the current working directory.
+    Script to generate a monsters.json of all the monsters on the OSRS Wiki, and downloads images for each of them.
+    The JSON file is placed in ../src/lib/monsters.json
+
+    The images are placed in ../cdn/monsters/. This directory is NOT included in the Next.js app bundle, and should
+    be deployed separately to our file storage solution.
+
     Written for Python 3.9.
 """
+import os.path
 
 import requests
 import json
 
-FILE_NAME = 'monsters.json'
-API_BASE = 'https://oldschool.runescape.wiki/api.php'
+FILE_NAME = '../src/lib/monsters.json'
+WIKI_BASE = 'https://oldschool.runescape.wiki'
+API_BASE = WIKI_BASE + '/api.php'
+IMG_PATH = '../cdn/monsters/'
 
 def getMonsterData():
     monsters = {}
@@ -46,6 +53,7 @@ def main():
 
     # Convert the data into our own JSON structure
     data = []
+    required_imgs = []
 
     # Loop over the monsters data from the wiki
     for k, v in wiki_data.items():
@@ -90,12 +98,43 @@ def main():
             'attributes': po['Monster attribute'] or []
         }
         data.append(monster)
+        if not monster['image'] == '':
+            required_imgs.append(monster['image'])
 
     print('Total monsters: ' + str(len(data)))
 
+    # Save the JSON
     with open(FILE_NAME, 'w') as f:
         print('Saving to JSON at file: ' + FILE_NAME)
         json.dump(data, f, ensure_ascii=False, indent=2)
+
+    success_img_dls = 0
+    failed_img_dls = 0
+    skipped_img_dls = 0
+    required_imgs = set(required_imgs)
+
+    # Fetch all the images from the wiki and store them for local serving
+    for idx, img in enumerate(required_imgs):
+        if os.path.isfile(IMG_PATH + img):
+            skipped_img_dls += 1
+            continue
+
+        print(f'({idx}/{len(required_imgs)}) Fetching image: {img}')
+        r = requests.get(WIKI_BASE + '/w/Special:Filepath/' + img, headers={
+            'User-Agent': 'osrs-dps-calc (https://github.com/weirdgloop/osrs-dps-calc)'
+        })
+        if r.status_code == 200:
+            with open(IMG_PATH + img, 'wb') as f:
+                f.write(r.content)
+                print('Saved image: ' + img)
+                success_img_dls += 1
+        else:
+            print('Unable to save image: ' + img)
+            failed_img_dls += 1
+
+    print('Total images saved: ' + str(success_img_dls))
+    print('Total images skipped (already exists): ' + str(skipped_img_dls))
+    print('Total images failed to save: ' + str(failed_img_dls))
 
 
 main()

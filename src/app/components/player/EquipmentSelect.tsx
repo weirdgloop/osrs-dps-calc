@@ -2,7 +2,7 @@ import React, {useMemo} from 'react';
 import equipment from '@/lib/equipment.json';
 import {useStore} from '@/state';
 import {observer} from 'mobx-react-lite';
-import {getWikiImage} from '@/utils';
+import {getCdnImage} from '@/utils';
 import {EquipmentPiece} from '@/types/Player';
 import Combobox from '../generic/Combobox';
 import LazyImage from "@/app/components/generic/LazyImage";
@@ -54,7 +54,7 @@ const EquipmentSelect: React.FC = observer(() => {
         return (
           <div className={'flex items-center gap-2'}>
             <div className={'basis-4 flex justify-center h-[20px] w-auto'}>
-              {i.equipment.image && (<LazyImage responsive={true} src={getWikiImage(i.equipment.image)} alt={''} />)}
+              {i.equipment.image && (<LazyImage responsive={true} src={i.equipment.image ? getCdnImage(`equipment/${i.equipment.image}`) : undefined} alt={''} />)}
             </div>
             <div>
               {itemString}

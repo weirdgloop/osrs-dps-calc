@@ -99,3 +99,7 @@ export const calculateCombatLevel = (s: PlayerSkills) => {
 export const getWikiImage = (filename: string) => {
   return `https://oldschool.runescape.wiki/images/${filename.replaceAll(' ', '_')}?11111`
 }
+
+export const getCdnImage = (filename: string) => {
+  return `https://dps.osrs.wiki/cdn/${filename}`
+}

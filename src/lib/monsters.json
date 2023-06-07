@@ -1729,12 +1729,12 @@
     "version": "Level 40",
     "image": "Angry bear (level 40).png",
     "level": 40,
-    "speed": 0,
+    "speed": 4,
     "size": 2,
     "skills": [
       0,
       0,
-      0,
+      200,
       0,
       0,
       0
@@ -1795,12 +1795,12 @@
     "version": "Level 45",
     "image": "Angry giant rat (level 45, 1).png",
     "level": 45,
-    "speed": 0,
+    "speed": 4,
     "size": 1,
     "skills": [
       0,
       0,
-      50,
+      200,
       0,
       0,
       0
@@ -1861,12 +1861,12 @@
     "version": "Level 45",
     "image": "Angry goblin.png",
     "level": 45,
-    "speed": 0,
+    "speed": 4,
     "size": 1,
     "skills": [
       0,
       0,
-      50,
+      200,
       0,
       0,
       0
@@ -1927,12 +1927,12 @@
     "version": "Level 45",
     "image": "Angry unicorn.png",
     "level": 45,
-    "speed": 0,
+    "speed": 4,
     "size": 2,
     "skills": [
       0,
       0,
-      50,
+      200,
       0,
       0,
       0
@@ -10173,7 +10173,9 @@
       128,
       130
     ],
-    "attributes": []
+    "attributes": [
+      "undead"
+    ]
   },
   {
     "id": 11993,
@@ -10206,7 +10208,9 @@
       128,
       130
     ],
-    "attributes": []
+    "attributes": [
+      "undead"
+    ]
   },
   {
     "id": 1383,
@@ -44057,7 +44061,7 @@
     "skills": [
       160,
       50,
-      1800,
+      1440,
       20,
       140,
       140
@@ -47001,7 +47005,7 @@
     "skills": [
       100,
       80,
-      1600,
+      1280,
       120,
       72,
       180
@@ -55110,6 +55114,181 @@
     ]
   },
   {
+    "id": 10717,
+    "name": "Skeleton (Forthos Ruin)",
+    "version": "1",
+    "image": "Skeleton (Forthos Ruin, 1).png",
+    "level": 25,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      24,
+      24,
+      17,
+      1,
+      1,
+      24
+    ],
+    "offensive": [
+      15,
+      0,
+      0,
+      0,
+      0,
+      14
+    ],
+    "defensive": [
+      -1,
+      1,
+      4,
+      11,
+      9
+    ],
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 10718,
+    "name": "Skeleton (Forthos Ruin)",
+    "version": "2",
+    "image": "Skeleton (Forthos Ruin, 2).png",
+    "level": 25,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      24,
+      24,
+      17,
+      1,
+      1,
+      24
+    ],
+    "offensive": [
+      15,
+      0,
+      0,
+      0,
+      0,
+      14
+    ],
+    "defensive": [
+      -1,
+      1,
+      4,
+      11,
+      9
+    ],
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 10719,
+    "name": "Skeleton (Forthos Ruin)",
+    "version": "3",
+    "image": "Skeleton (Forthos Ruin, 3).png",
+    "level": 25,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      24,
+      24,
+      17,
+      1,
+      1,
+      24
+    ],
+    "offensive": [
+      15,
+      0,
+      0,
+      0,
+      0,
+      14
+    ],
+    "defensive": [
+      -1,
+      1,
+      4,
+      11,
+      9
+    ],
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 10720,
+    "name": "Skeleton (Forthos Ruin)",
+    "version": "4",
+    "image": "Skeleton (Forthos Ruin, 4).png",
+    "level": 25,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      24,
+      24,
+      17,
+      1,
+      1,
+      24
+    ],
+    "offensive": [
+      15,
+      0,
+      0,
+      0,
+      0,
+      14
+    ],
+    "defensive": [
+      -1,
+      1,
+      4,
+      11,
+      9
+    ],
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 10721,
+    "name": "Skeleton (Forthos Ruin)",
+    "version": "5",
+    "image": "Skeleton (Forthos Ruin, 5).png",
+    "level": 25,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      24,
+      24,
+      17,
+      1,
+      1,
+      24
+    ],
+    "offensive": [
+      15,
+      0,
+      0,
+      0,
+      0,
+      14
+    ],
+    "defensive": [
+      -1,
+      1,
+      4,
+      11,
+      9
+    ],
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
     "id": 3972,
     "name": "Skeleton (Melzar's Maze)",
     "version": "1",
@@ -55314,6 +55493,251 @@
       20,
       10,
       15
+    ],
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 2521,
+    "name": "Skeleton (Stronghold of Security)",
+    "version": "1",
+    "image": "Skeleton (Stronghold of Security, 1).png",
+    "level": 60,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      50,
+      40,
+      70,
+      1,
+      1,
+      50
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      -5,
+      0,
+      35,
+      35,
+      35
+    ],
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 2522,
+    "name": "Skeleton (Stronghold of Security)",
+    "version": "2",
+    "image": "Skeleton (Stronghold of Security, 2).png",
+    "level": 60,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      50,
+      40,
+      70,
+      1,
+      1,
+      50
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      -5,
+      0,
+      35,
+      35,
+      35
+    ],
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 2523,
+    "name": "Skeleton (Stronghold of Security)",
+    "version": "3",
+    "image": "Skeleton (Stronghold of Security, 3).png",
+    "level": 60,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      50,
+      40,
+      70,
+      1,
+      1,
+      50
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      -5,
+      0,
+      35,
+      35,
+      35
+    ],
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 2520,
+    "name": "Skeleton (Stronghold of Security)",
+    "version": "4",
+    "image": "Skeleton (Stronghold of Security, 4).png",
+    "level": 68,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      60,
+      60,
+      70,
+      1,
+      1,
+      50
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      -5,
+      0,
+      35,
+      35,
+      35
+    ],
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 2524,
+    "name": "Skeleton (Stronghold of Security)",
+    "version": "5",
+    "image": "Skeleton (Stronghold of Security, 5).png",
+    "level": 85,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      74,
+      74,
+      77,
+      1,
+      1,
+      74
+    ],
+    "offensive": [
+      15,
+      0,
+      0,
+      0,
+      0,
+      14
+    ],
+    "defensive": [
+      20,
+      5,
+      70,
+      31,
+      79
+    ],
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 2525,
+    "name": "Skeleton (Stronghold of Security)",
+    "version": "6",
+    "image": "Skeleton (Stronghold of Security, 6).png",
+    "level": 85,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      74,
+      74,
+      77,
+      1,
+      1,
+      74
+    ],
+    "offensive": [
+      15,
+      0,
+      0,
+      0,
+      0,
+      14
+    ],
+    "defensive": [
+      20,
+      5,
+      70,
+      31,
+      79
+    ],
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 2526,
+    "name": "Skeleton (Stronghold of Security)",
+    "version": "7",
+    "image": "Skeleton (Stronghold of Security, 7).png",
+    "level": 85,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      74,
+      74,
+      77,
+      1,
+      1,
+      74
+    ],
+    "offensive": [
+      15,
+      0,
+      0,
+      0,
+      0,
+      14
+    ],
+    "defensive": [
+      20,
+      5,
+      70,
+      31,
+      79
     ],
     "attributes": [
       "undead"
@@ -56428,111 +56852,6 @@
       4,
       11,
       9
-    ],
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 2521,
-    "name": "Skeleton",
-    "version": "Level 60",
-    "image": "Skeleton (2).png",
-    "level": 60,
-    "speed": 4,
-    "size": 1,
-    "skills": [
-      50,
-      40,
-      70,
-      1,
-      1,
-      50
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      -5,
-      0,
-      35,
-      35,
-      35
-    ],
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 2520,
-    "name": "Skeleton",
-    "version": "Level 68",
-    "image": "Skeleton.png",
-    "level": 68,
-    "speed": 4,
-    "size": 1,
-    "skills": [
-      60,
-      60,
-      70,
-      1,
-      1,
-      50
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      -5,
-      0,
-      35,
-      35,
-      35
-    ],
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 2524,
-    "name": "Skeleton",
-    "version": "Level 85",
-    "image": "Skeleton (5).png",
-    "level": 85,
-    "speed": 4,
-    "size": 1,
-    "skills": [
-      74,
-      74,
-      77,
-      1,
-      1,
-      74
-    ],
-    "offensive": [
-      15,
-      0,
-      0,
-      0,
-      0,
-      14
-    ],
-    "defensive": [
-      20,
-      5,
-      70,
-      31,
-      79
     ],
     "attributes": [
       "undead"
@@ -57974,7 +58293,7 @@
     "skills": [
       180,
       150,
-      2800,
+      2240,
       150,
       150,
       140
@@ -61869,7 +62188,7 @@
     "skills": [
       140,
       80,
-      2500,
+      2000,
       140,
       140,
       140
@@ -67462,6 +67781,204 @@
     "name": "Verzik Vitur",
     "version": "",
     "image": "Verzik Vitur.png",
+    "level": 367,
+    "speed": 12,
+    "size": 5,
+    "skills": [
+      180,
+      10,
+      1200,
+      180,
+      180,
+      150
+    ],
+    "offensive": [
+      0,
+      140,
+      32,
+      32,
+      50,
+      0
+    ],
+    "defensive": [
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "attributes": []
+  },
+  {
+    "id": 8372,
+    "name": "Verzik Vitur",
+    "version": "",
+    "image": "Verzik Vitur (flying).png",
+    "level": 416,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      200,
+      120,
+      1600,
+      180,
+      180,
+      150
+    ],
+    "offensive": [
+      0,
+      50,
+      32,
+      32,
+      50,
+      0
+    ],
+    "defensive": [
+      40,
+      40,
+      180,
+      20,
+      40
+    ],
+    "attributes": []
+  },
+  {
+    "id": 8374,
+    "name": "Verzik Vitur",
+    "version": "",
+    "image": "Verzik Vitur (final form).png",
+    "level": 459,
+    "speed": 7,
+    "size": 7,
+    "skills": [
+      180,
+      120,
+      2400,
+      180,
+      180,
+      200
+    ],
+    "offensive": [
+      32,
+      5,
+      20,
+      20,
+      5,
+      46
+    ],
+    "defensive": [
+      30,
+      60,
+      100,
+      10,
+      30
+    ],
+    "attributes": []
+  },
+  {
+    "id": 8369,
+    "name": "Verzik Vitur",
+    "version": "",
+    "image": "Verzik Vitur.png",
+    "level": 1040,
+    "speed": 12,
+    "size": 5,
+    "skills": [
+      400,
+      20,
+      2000,
+      400,
+      400,
+      400
+    ],
+    "offensive": [
+      0,
+      150,
+      80,
+      80,
+      80,
+      0
+    ],
+    "defensive": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "attributes": []
+  },
+  {
+    "id": 8372,
+    "name": "Verzik Vitur",
+    "version": "",
+    "image": "Verzik Vitur (flying).png",
+    "level": 1265,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      400,
+      200,
+      3250,
+      400,
+      400,
+      400
+    ],
+    "offensive": [
+      0,
+      80,
+      80,
+      80,
+      80,
+      0
+    ],
+    "defensive": [
+      100,
+      70,
+      250,
+      60,
+      100
+    ],
+    "attributes": []
+  },
+  {
+    "id": 8374,
+    "name": "Verzik Vitur",
+    "version": "",
+    "image": "Verzik Vitur (final form).png",
+    "level": 1520,
+    "speed": 7,
+    "size": 7,
+    "skills": [
+      400,
+      150,
+      3250,
+      300,
+      300,
+      400
+    ],
+    "offensive": [
+      80,
+      5,
+      80,
+      80,
+      5,
+      30
+    ],
+    "defensive": [
+      70,
+      100,
+      230,
+      30,
+      70
+    ],
+    "attributes": []
+  },
+  {
+    "id": 8369,
+    "name": "Verzik Vitur",
+    "version": "",
+    "image": "Verzik Vitur.png",
     "level": 1040,
     "speed": 12,
     "size": 5,
@@ -71913,7 +72430,7 @@
     "skills": [
       1,
       100,
-      4300,
+      3400,
       80,
       50,
       1

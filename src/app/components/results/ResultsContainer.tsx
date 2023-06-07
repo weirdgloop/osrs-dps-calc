@@ -31,7 +31,7 @@ const ResultsTable = observer(() => {
       </thead>
       <tbody>
         <tr>
-          <th className={'bg-btns-400 w-48'}><IconSword className={'inline-block'} /> Max hit</th>
+          <th className={'bg-btns-400 w-40'}><IconSword className={'inline-block'} /> Max hit</th>
           {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{l.maxHit}</th>)}
         </tr>
         <tr>

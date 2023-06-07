@@ -13700,14 +13700,14 @@
     "speed": 6,
     "category": "Spiked",
     "offensive": [
-      92,
+      102,
       0,
       0,
       0,
       0,
       10,
       -2,
-      100
+      110
     ],
     "defensive": [
       0,
@@ -28223,6 +28223,90 @@
     ],
     "isTwoHanded": false
   },
+  "26695": {
+    "name": "Centurion cuirass",
+    "id": 26695,
+    "version": "Broken",
+    "slot": "body",
+    "image": "Centurion cuirass (broken).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      -40,
+      0,
+      0,
+      0,
+      0,
+      4
+    ],
+    "defensive": [
+      70,
+      -10,
+      7,
+      91,
+      72,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "26722": {
+    "name": "Centurion cuirass",
+    "id": 26722,
+    "version": "Locked",
+    "slot": "body",
+    "image": "Centurion cuirass (l).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      -40,
+      0,
+      0,
+      0,
+      0,
+      4
+    ],
+    "defensive": [
+      70,
+      -10,
+      7,
+      91,
+      72,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "26721": {
+    "name": "Centurion cuirass",
+    "id": 26721,
+    "version": "Normal",
+    "slot": "body",
+    "image": "Centurion cuirass.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      -40,
+      0,
+      0,
+      0,
+      0,
+      4
+    ],
+    "defensive": [
+      70,
+      -10,
+      7,
+      91,
+      72,
+      0
+    ],
+    "isTwoHanded": false
+  },
   "21439": {
     "name": "Champion's cape",
     "id": 21439,
@@ -42699,6 +42783,118 @@
     ],
     "isTwoHanded": false
   },
+  "28021": {
+    "name": "Dragon dagger (cr)",
+    "id": 28021,
+    "version": "Poison",
+    "slot": "weapon",
+    "image": "Dragon dagger (p)(cr).png",
+    "speed": 4,
+    "category": "Stab Sword",
+    "offensive": [
+      -4,
+      0,
+      1,
+      0,
+      0,
+      25,
+      40,
+      40
+    ],
+    "defensive": [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28023": {
+    "name": "Dragon dagger (cr)",
+    "id": 28023,
+    "version": "Poison+",
+    "slot": "weapon",
+    "image": "Dragon dagger (p+)(cr).png",
+    "speed": 4,
+    "category": "Stab Sword",
+    "offensive": [
+      -4,
+      0,
+      1,
+      0,
+      0,
+      25,
+      40,
+      40
+    ],
+    "defensive": [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28025": {
+    "name": "Dragon dagger (cr)",
+    "id": 28025,
+    "version": "Poison++",
+    "slot": "weapon",
+    "image": "Dragon dagger (p++)(cr).png",
+    "speed": 4,
+    "category": "Stab Sword",
+    "offensive": [
+      -4,
+      0,
+      1,
+      0,
+      0,
+      25,
+      40,
+      40
+    ],
+    "defensive": [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28019": {
+    "name": "Dragon dagger (cr)",
+    "id": 28019,
+    "version": "Unpoisoned",
+    "slot": "weapon",
+    "image": "Dragon dagger (cr).png",
+    "speed": 4,
+    "category": "Stab Sword",
+    "offensive": [
+      -4,
+      0,
+      1,
+      0,
+      0,
+      25,
+      40,
+      40
+    ],
+    "defensive": [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
   "1231": {
     "name": "Dragon dagger",
     "id": 1231,
@@ -44574,6 +44770,118 @@
       0
     ],
     "isTwoHanded": false
+  },
+  "28043": {
+    "name": "Dragon spear (cr)",
+    "id": 28043,
+    "version": "Poison",
+    "slot": "weapon",
+    "image": "Dragon spear (p)(cr).png",
+    "speed": 4,
+    "category": "Spear",
+    "offensive": [
+      55,
+      0,
+      0,
+      0,
+      0,
+      55,
+      55,
+      60
+    ],
+    "defensive": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28045": {
+    "name": "Dragon spear (cr)",
+    "id": 28045,
+    "version": "Poison+",
+    "slot": "weapon",
+    "image": "Dragon spear (p+)(cr).png",
+    "speed": 4,
+    "category": "Spear",
+    "offensive": [
+      55,
+      0,
+      0,
+      0,
+      0,
+      55,
+      55,
+      60
+    ],
+    "defensive": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28047": {
+    "name": "Dragon spear (cr)",
+    "id": 28047,
+    "version": "Poison++",
+    "slot": "weapon",
+    "image": "Dragon spear (p++)(cr).png",
+    "speed": 4,
+    "category": "Spear",
+    "offensive": [
+      55,
+      0,
+      0,
+      0,
+      0,
+      55,
+      55,
+      60
+    ],
+    "defensive": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28041": {
+    "name": "Dragon spear (cr)",
+    "id": 28041,
+    "version": "Unpoisoned",
+    "slot": "weapon",
+    "image": "Dragon spear (cr).png",
+    "speed": 4,
+    "category": "Spear",
+    "offensive": [
+      55,
+      0,
+      0,
+      0,
+      0,
+      55,
+      55,
+      60
+    ],
+    "defensive": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      0
+    ],
+    "isTwoHanded": true
   },
   "3176": {
     "name": "Dragon spear",
@@ -46675,6 +46983,62 @@
     ],
     "isTwoHanded": false
   },
+  "27004": {
+    "name": "Elite void robe (or)",
+    "id": 27004,
+    "version": "Locked",
+    "slot": "legs",
+    "image": "Elite void robe (or).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      30,
+      30,
+      30,
+      30,
+      30,
+      3
+    ],
+    "isTwoHanded": false
+  },
+  "26471": {
+    "name": "Elite void robe (or)",
+    "id": 26471,
+    "version": "Normal",
+    "slot": "legs",
+    "image": "Elite void robe (or).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      30,
+      30,
+      30,
+      30,
+      30,
+      3
+    ],
+    "isTwoHanded": false
+  },
   "20471": {
     "name": "Elite void robe",
     "id": 20471,
@@ -46755,6 +47119,62 @@
       30,
       30,
       30,
+      3
+    ],
+    "isTwoHanded": false
+  },
+  "27003": {
+    "name": "Elite void top (or)",
+    "id": 27003,
+    "version": "Locked",
+    "slot": "body",
+    "image": "Elite void top (or).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      45,
+      45,
+      45,
+      45,
+      45,
+      3
+    ],
+    "isTwoHanded": false
+  },
+  "26469": {
+    "name": "Elite void top (or)",
+    "id": 26469,
+    "version": "Normal",
+    "slot": "body",
+    "image": "Elite void top (or).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      45,
+      45,
+      45,
+      45,
+      45,
       3
     ],
     "isTwoHanded": false
@@ -54455,6 +54875,1854 @@
       12,
       15,
       10,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "27461": {
+    "name": "Graceful boots (Adventurer)",
+    "id": 27461,
+    "version": "Worn",
+    "slot": "feet",
+    "image": "Graceful boots (Adventurer).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "21078": {
+    "name": "Graceful boots (Agility Arena)",
+    "id": 21078,
+    "version": "Worn",
+    "slot": "feet",
+    "image": "Graceful boots (Agility Arena).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13590": {
+    "name": "Graceful boots (Arceuus)",
+    "id": 13590,
+    "version": "Worn",
+    "slot": "feet",
+    "image": "Graceful boots (Arceuus).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "24760": {
+    "name": "Graceful boots (Hallowed)",
+    "id": 24760,
+    "version": "Worn",
+    "slot": "feet",
+    "image": "Graceful boots (Hallowed).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13638": {
+    "name": "Graceful boots (Hosidius)",
+    "id": 13638,
+    "version": "Worn",
+    "slot": "feet",
+    "image": "Graceful boots (Hosidius).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13678": {
+    "name": "Graceful boots (Kourend)",
+    "id": 13678,
+    "version": "Worn",
+    "slot": "feet",
+    "image": "Graceful boots (Kourend).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13614": {
+    "name": "Graceful boots (Lovakengj)",
+    "id": 13614,
+    "version": "Worn",
+    "slot": "feet",
+    "image": "Graceful boots (Lovakengj).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13602": {
+    "name": "Graceful boots (Piscarilius)",
+    "id": 13602,
+    "version": "Worn",
+    "slot": "feet",
+    "image": "Graceful boots (Piscarilius).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13626": {
+    "name": "Graceful boots (Shayzien)",
+    "id": 13626,
+    "version": "Worn",
+    "slot": "feet",
+    "image": "Graceful boots (Shayzien).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "25086": {
+    "name": "Graceful boots (Trailblazer)",
+    "id": 25086,
+    "version": "Worn",
+    "slot": "feet",
+    "image": "Graceful boots (Trailblazer).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "11861": {
+    "name": "Graceful boots",
+    "id": 11861,
+    "version": "Worn",
+    "slot": "feet",
+    "image": "Graceful boots.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "27449": {
+    "name": "Graceful cape (Adventurer)",
+    "id": 27449,
+    "version": "Worn",
+    "slot": "cape",
+    "image": "Graceful cape (Adventurer).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "21066": {
+    "name": "Graceful cape (Agility Arena)",
+    "id": 21066,
+    "version": "Worn",
+    "slot": "cape",
+    "image": "Graceful cape (Agility Arena).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13582": {
+    "name": "Graceful cape (Arceuus)",
+    "id": 13582,
+    "version": "Worn",
+    "slot": "cape",
+    "image": "Graceful cape (Arceuus).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "24748": {
+    "name": "Graceful cape (Hallowed)",
+    "id": 24748,
+    "version": "Worn",
+    "slot": "cape",
+    "image": "Graceful cape (Hallowed).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13630": {
+    "name": "Graceful cape (Hosidius)",
+    "id": 13630,
+    "version": "Worn",
+    "slot": "cape",
+    "image": "Graceful cape (Hosidius).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13670": {
+    "name": "Graceful cape (Kourend)",
+    "id": 13670,
+    "version": "Worn",
+    "slot": "cape",
+    "image": "Graceful cape (Kourend).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13606": {
+    "name": "Graceful cape (Lovakengj)",
+    "id": 13606,
+    "version": "Worn",
+    "slot": "cape",
+    "image": "Graceful cape (Lovakengj).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13594": {
+    "name": "Graceful cape (Piscarilius)",
+    "id": 13594,
+    "version": "Worn",
+    "slot": "cape",
+    "image": "Graceful cape (Piscarilius).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13618": {
+    "name": "Graceful cape (Shayzien)",
+    "id": 13618,
+    "version": "Worn",
+    "slot": "cape",
+    "image": "Graceful cape (Shayzien).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "25074": {
+    "name": "Graceful cape (Trailblazer)",
+    "id": 25074,
+    "version": "Worn",
+    "slot": "cape",
+    "image": "Graceful cape (Trailblazer).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "11853": {
+    "name": "Graceful cape",
+    "id": 11853,
+    "version": "Worn",
+    "slot": "cape",
+    "image": "Graceful cape.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "27458": {
+    "name": "Graceful gloves (Adventurer)",
+    "id": 27458,
+    "version": "Worn",
+    "slot": "hands",
+    "image": "Graceful gloves (Adventurer).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "21075": {
+    "name": "Graceful gloves (Agility Arena)",
+    "id": 21075,
+    "version": "Worn",
+    "slot": "hands",
+    "image": "Graceful gloves (Agility Arena).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13588": {
+    "name": "Graceful gloves (Arceuus)",
+    "id": 13588,
+    "version": "Worn",
+    "slot": "hands",
+    "image": "Graceful gloves (Arceuus).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "24757": {
+    "name": "Graceful gloves (Hallowed)",
+    "id": 24757,
+    "version": "Worn",
+    "slot": "hands",
+    "image": "Graceful gloves (Hallowed).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13636": {
+    "name": "Graceful gloves (Hosidius)",
+    "id": 13636,
+    "version": "Worn",
+    "slot": "hands",
+    "image": "Graceful gloves (Hosidius).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13676": {
+    "name": "Graceful gloves (Kourend)",
+    "id": 13676,
+    "version": "Worn",
+    "slot": "hands",
+    "image": "Graceful gloves (Kourend).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13612": {
+    "name": "Graceful gloves (Lovakengj)",
+    "id": 13612,
+    "version": "Worn",
+    "slot": "hands",
+    "image": "Graceful gloves (Lovakengj).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13600": {
+    "name": "Graceful gloves (Piscarilius)",
+    "id": 13600,
+    "version": "Worn",
+    "slot": "hands",
+    "image": "Graceful gloves (Piscarilius).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13624": {
+    "name": "Graceful gloves (Shayzien)",
+    "id": 13624,
+    "version": "Worn",
+    "slot": "hands",
+    "image": "Graceful gloves (Shayzien).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "25083": {
+    "name": "Graceful gloves (Trailblazer)",
+    "id": 25083,
+    "version": "Worn",
+    "slot": "hands",
+    "image": "Graceful gloves (Trailblazer).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "11859": {
+    "name": "Graceful gloves",
+    "id": 11859,
+    "version": "Worn",
+    "slot": "hands",
+    "image": "Graceful gloves.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "27446": {
+    "name": "Graceful hood (Adventurer)",
+    "id": 27446,
+    "version": "Worn",
+    "slot": "head",
+    "image": "Graceful hood (Adventurer).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "21063": {
+    "name": "Graceful hood (Agility Arena)",
+    "id": 21063,
+    "version": "Worn",
+    "slot": "head",
+    "image": "Graceful hood (Agility Arena).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13580": {
+    "name": "Graceful hood (Arceuus)",
+    "id": 13580,
+    "version": "Worn",
+    "slot": "head",
+    "image": "Graceful hood (Arceuus).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "24745": {
+    "name": "Graceful hood (Hallowed)",
+    "id": 24745,
+    "version": "Worn",
+    "slot": "head",
+    "image": "Graceful hood (Hallowed).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13628": {
+    "name": "Graceful hood (Hosidius)",
+    "id": 13628,
+    "version": "Worn",
+    "slot": "head",
+    "image": "Graceful hood (Hosidius).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13668": {
+    "name": "Graceful hood (Kourend)",
+    "id": 13668,
+    "version": "Worn",
+    "slot": "head",
+    "image": "Graceful hood (Kourend).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13604": {
+    "name": "Graceful hood (Lovakengj)",
+    "id": 13604,
+    "version": "Worn",
+    "slot": "head",
+    "image": "Graceful hood (Lovakengj).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13592": {
+    "name": "Graceful hood (Piscarilius)",
+    "id": 13592,
+    "version": "Worn",
+    "slot": "head",
+    "image": "Graceful hood (Piscarilius).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13616": {
+    "name": "Graceful hood (Shayzien)",
+    "id": 13616,
+    "version": "Worn",
+    "slot": "head",
+    "image": "Graceful hood (Shayzien).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "25071": {
+    "name": "Graceful hood (Trailblazer)",
+    "id": 25071,
+    "version": "Worn",
+    "slot": "head",
+    "image": "Graceful hood (Trailblazer).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "11851": {
+    "name": "Graceful hood",
+    "id": 11851,
+    "version": "Worn",
+    "slot": "head",
+    "image": "Graceful hood.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "27455": {
+    "name": "Graceful legs (Adventurer)",
+    "id": 27455,
+    "version": "Worn",
+    "slot": "legs",
+    "image": "Graceful legs (Adventurer).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "21072": {
+    "name": "Graceful legs (Agility Arena)",
+    "id": 21072,
+    "version": "Worn",
+    "slot": "legs",
+    "image": "Graceful legs (Agility Arena).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13586": {
+    "name": "Graceful legs (Arceuus)",
+    "id": 13586,
+    "version": "Worn",
+    "slot": "legs",
+    "image": "Graceful legs (Arceuus).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "24754": {
+    "name": "Graceful legs (Hallowed)",
+    "id": 24754,
+    "version": "Worn",
+    "slot": "legs",
+    "image": "Graceful legs (Hallowed).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13634": {
+    "name": "Graceful legs (Hosidius)",
+    "id": 13634,
+    "version": "Worn",
+    "slot": "legs",
+    "image": "Graceful legs (Hosidius).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13674": {
+    "name": "Graceful legs (Kourend)",
+    "id": 13674,
+    "version": "Worn",
+    "slot": "legs",
+    "image": "Graceful legs (Kourend).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13610": {
+    "name": "Graceful legs (Lovakengj)",
+    "id": 13610,
+    "version": "Worn",
+    "slot": "legs",
+    "image": "Graceful legs (Lovakengj).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13598": {
+    "name": "Graceful legs (Piscarilius)",
+    "id": 13598,
+    "version": "Worn",
+    "slot": "legs",
+    "image": "Graceful legs (Piscarilius).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13622": {
+    "name": "Graceful legs (Shayzien)",
+    "id": 13622,
+    "version": "Worn",
+    "slot": "legs",
+    "image": "Graceful legs (Shayzien).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "25080": {
+    "name": "Graceful legs (Trailblazer)",
+    "id": 25080,
+    "version": "Worn",
+    "slot": "legs",
+    "image": "Graceful legs (Trailblazer).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "11857": {
+    "name": "Graceful legs",
+    "id": 11857,
+    "version": "Worn",
+    "slot": "legs",
+    "image": "Graceful legs.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "27452": {
+    "name": "Graceful top (Adventurer)",
+    "id": 27452,
+    "version": "Worn",
+    "slot": "body",
+    "image": "Graceful top (Adventurer).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "21069": {
+    "name": "Graceful top (Agility Arena)",
+    "id": 21069,
+    "version": "Worn",
+    "slot": "body",
+    "image": "Graceful top (Agility Arena).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13584": {
+    "name": "Graceful top (Arceuus)",
+    "id": 13584,
+    "version": "Worn",
+    "slot": "body",
+    "image": "Graceful top (Arceuus).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "24751": {
+    "name": "Graceful top (Hallowed)",
+    "id": 24751,
+    "version": "Worn",
+    "slot": "body",
+    "image": "Graceful top (Hallowed).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13632": {
+    "name": "Graceful top (Hosidius)",
+    "id": 13632,
+    "version": "Worn",
+    "slot": "body",
+    "image": "Graceful top (Hosidius).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13672": {
+    "name": "Graceful top (Kourend)",
+    "id": 13672,
+    "version": "Worn",
+    "slot": "body",
+    "image": "Graceful top (Kourend).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13608": {
+    "name": "Graceful top (Lovakengj)",
+    "id": 13608,
+    "version": "Worn",
+    "slot": "body",
+    "image": "Graceful top (Lovakengj).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13596": {
+    "name": "Graceful top (Piscarilius)",
+    "id": 13596,
+    "version": "Worn",
+    "slot": "body",
+    "image": "Graceful top (Piscarilius).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "13620": {
+    "name": "Graceful top (Shayzien)",
+    "id": 13620,
+    "version": "Worn",
+    "slot": "body",
+    "image": "Graceful top (Shayzien).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "25077": {
+    "name": "Graceful top (Trailblazer)",
+    "id": 25077,
+    "version": "Worn",
+    "slot": "body",
+    "image": "Graceful top (Trailblazer).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "11855": {
+    "name": "Graceful top",
+    "id": 11855,
+    "version": "Worn",
+    "slot": "body",
+    "image": "Graceful top.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
       0
     ],
     "isTwoHanded": false
@@ -92063,6 +94331,90 @@
     ],
     "isTwoHanded": false
   },
+  "26782": {
+    "name": "Salve amulet(ei)",
+    "id": 26782,
+    "version": "Emir's Arena",
+    "slot": "neck",
+    "image": "Salve amulet(ei).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      3,
+      0,
+      0,
+      3,
+      3,
+      3
+    ],
+    "isTwoHanded": false
+  },
+  "12018": {
+    "name": "Salve amulet(ei)",
+    "id": 12018,
+    "version": "Nightmare Zone",
+    "slot": "neck",
+    "image": "Salve amulet(ei).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      3,
+      0,
+      0,
+      3,
+      3,
+      3
+    ],
+    "isTwoHanded": false
+  },
+  "25278": {
+    "name": "Salve amulet(ei)",
+    "id": 25278,
+    "version": "Soul Wars",
+    "slot": "neck",
+    "image": "Salve amulet(ei).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      3,
+      0,
+      0,
+      3,
+      3,
+      3
+    ],
+    "isTwoHanded": false
+  },
   "26763": {
     "name": "Salve amulet(i)",
     "id": 26763,
@@ -100262,6 +102614,62 @@
       0,
       0,
       2,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "10073": {
+    "name": "Spotted cape",
+    "id": 10073,
+    "version": "Worn",
+    "slot": "cape",
+    "image": "Spotted cape.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      1,
+      0,
+      2,
+      1,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "10074": {
+    "name": "Spottier cape",
+    "id": 10074,
+    "version": "Worn",
+    "slot": "cape",
+    "image": "Spottier cape.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      1,
+      0,
+      2,
+      1,
       0,
       0
     ],
@@ -114407,6 +116815,62 @@
     ],
     "isTwoHanded": false
   },
+  "27002": {
+    "name": "Void knight gloves (or)",
+    "id": 27002,
+    "version": "Locked",
+    "slot": "hands",
+    "image": "Void knight gloves (or).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      6,
+      4,
+      6,
+      6,
+      6,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "26467": {
+    "name": "Void knight gloves (or)",
+    "id": 26467,
+    "version": "Normal",
+    "slot": "hands",
+    "image": "Void knight gloves (or).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      6,
+      4,
+      6,
+      6,
+      6,
+      0
+    ],
+    "isTwoHanded": false
+  },
   "20475": {
     "name": "Void knight gloves",
     "id": 20475,
@@ -114575,6 +117039,62 @@
     ],
     "isTwoHanded": false
   },
+  "27001": {
+    "name": "Void knight robe (or)",
+    "id": 27001,
+    "version": "Locked",
+    "slot": "legs",
+    "image": "Void knight robe (or).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      30,
+      30,
+      30,
+      30,
+      30,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "26465": {
+    "name": "Void knight robe (or)",
+    "id": 26465,
+    "version": "Normal",
+    "slot": "legs",
+    "image": "Void knight robe (or).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      30,
+      30,
+      30,
+      30,
+      30,
+      0
+    ],
+    "isTwoHanded": false
+  },
   "20469": {
     "name": "Void knight robe",
     "id": 20469,
@@ -114655,6 +117175,62 @@
       30,
       30,
       30,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "27000": {
+    "name": "Void knight top (or)",
+    "id": 27000,
+    "version": "Locked",
+    "slot": "body",
+    "image": "Void knight top (or).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      45,
+      45,
+      45,
+      45,
+      45,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "26463": {
+    "name": "Void knight top (or)",
+    "id": 26463,
+    "version": "Normal",
+    "slot": "body",
+    "image": "Void knight top (or).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      45,
+      45,
+      45,
+      45,
+      45,
       0
     ],
     "isTwoHanded": false
@@ -114743,6 +117319,62 @@
     ],
     "isTwoHanded": false
   },
+  "27005": {
+    "name": "Void mage helm (or)",
+    "id": 27005,
+    "version": "Locked",
+    "slot": "head",
+    "image": "Void mage helm (or).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "26473": {
+    "name": "Void mage helm (or)",
+    "id": 26473,
+    "version": "Normal",
+    "slot": "head",
+    "image": "Void mage helm (or).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      0
+    ],
+    "isTwoHanded": false
+  },
   "20477": {
     "name": "Void mage helm",
     "id": 20477,
@@ -114827,6 +117459,62 @@
     ],
     "isTwoHanded": false
   },
+  "27007": {
+    "name": "Void melee helm (or)",
+    "id": 27007,
+    "version": "Locked",
+    "slot": "head",
+    "image": "Void melee helm (or).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "26477": {
+    "name": "Void melee helm (or)",
+    "id": 26477,
+    "version": "Normal",
+    "slot": "head",
+    "image": "Void melee helm (or).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      0
+    ],
+    "isTwoHanded": false
+  },
   "20481": {
     "name": "Void melee helm",
     "id": 20481,
@@ -114889,6 +117577,62 @@
     "version": "Normal",
     "slot": "head",
     "image": "Void melee helm.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "27006": {
+    "name": "Void ranger helm (or)",
+    "id": 27006,
+    "version": "Locked",
+    "slot": "head",
+    "image": "Void ranger helm (or).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "26475": {
+    "name": "Void ranger helm (or)",
+    "id": 26475,
+    "version": "Normal",
+    "slot": "head",
+    "image": "Void ranger helm (or).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -118995,6 +121739,286 @@
       0,
       0,
       0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "26697": {
+    "name": "Wristbands of the arena (i)",
+    "id": 26697,
+    "version": "Broken",
+    "slot": "hands",
+    "image": "Hardened wristbands of the arena (broken).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      15,
+      0,
+      7,
+      13,
+      0,
+      13,
+      14,
+      12
+    ],
+    "defensive": [
+      12,
+      6,
+      12,
+      12,
+      12,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "26729": {
+    "name": "Wristbands of the arena (i)",
+    "id": 26729,
+    "version": "Charged",
+    "slot": "hands",
+    "image": "Wristbands of the arena (ic).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      15,
+      0,
+      7,
+      13,
+      0,
+      13,
+      14,
+      12
+    ],
+    "defensive": [
+      12,
+      6,
+      12,
+      12,
+      12,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "26730": {
+    "name": "Wristbands of the arena (i)",
+    "id": 26730,
+    "version": "Charged and Locked",
+    "slot": "hands",
+    "image": "Wristbands of the arena (ilc).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      15,
+      0,
+      7,
+      13,
+      0,
+      13,
+      14,
+      12
+    ],
+    "defensive": [
+      12,
+      6,
+      12,
+      12,
+      12,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "26728": {
+    "name": "Wristbands of the arena (i)",
+    "id": 26728,
+    "version": "Locked",
+    "slot": "hands",
+    "image": "Wristbands of the arena (il).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      15,
+      0,
+      7,
+      13,
+      0,
+      13,
+      14,
+      12
+    ],
+    "defensive": [
+      12,
+      6,
+      12,
+      12,
+      12,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "26727": {
+    "name": "Wristbands of the arena (i)",
+    "id": 26727,
+    "version": "Normal",
+    "slot": "hands",
+    "image": "Wristbands of the arena (i).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      15,
+      0,
+      7,
+      13,
+      0,
+      13,
+      14,
+      12
+    ],
+    "defensive": [
+      12,
+      6,
+      12,
+      12,
+      12,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "26696": {
+    "name": "Wristbands of the arena",
+    "id": 26696,
+    "version": "Broken",
+    "slot": "hands",
+    "image": "Wristbands of the arena (broken).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      12,
+      0,
+      6,
+      12,
+      0,
+      12,
+      12,
+      12
+    ],
+    "defensive": [
+      12,
+      6,
+      12,
+      12,
+      12,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "26725": {
+    "name": "Wristbands of the arena",
+    "id": 26725,
+    "version": "Charged",
+    "slot": "hands",
+    "image": "Wristbands of the arena (c).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      12,
+      0,
+      6,
+      12,
+      0,
+      12,
+      12,
+      12
+    ],
+    "defensive": [
+      12,
+      6,
+      12,
+      12,
+      12,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "26726": {
+    "name": "Wristbands of the arena",
+    "id": 26726,
+    "version": "Charged and Locked",
+    "slot": "hands",
+    "image": "Wristbands of the arena (cl).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      12,
+      0,
+      6,
+      12,
+      0,
+      12,
+      12,
+      12
+    ],
+    "defensive": [
+      12,
+      6,
+      12,
+      12,
+      12,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "26724": {
+    "name": "Wristbands of the arena",
+    "id": 26724,
+    "version": "Locked",
+    "slot": "hands",
+    "image": "Wristbands of the arena (l).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      12,
+      0,
+      6,
+      12,
+      0,
+      12,
+      12,
+      12
+    ],
+    "defensive": [
+      12,
+      6,
+      12,
+      12,
+      12,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "26723": {
+    "name": "Wristbands of the arena",
+    "id": 26723,
+    "version": "Normal",
+    "slot": "hands",
+    "image": "Wristbands of the arena.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      12,
+      0,
+      6,
+      12,
+      0,
+      12,
+      12,
+      12
+    ],
+    "defensive": [
+      12,
+      6,
+      12,
+      12,
+      12,
       0
     ],
     "isTwoHanded": false

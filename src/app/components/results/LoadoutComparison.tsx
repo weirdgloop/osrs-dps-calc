@@ -90,17 +90,6 @@ const LoadoutComparison: React.FC = observer(() => {
       </ResponsiveContainer>
       <div className={'my-4 flex gap-4 max-w-lg m-auto'}>
         <div className={'basis-1/2'}>
-          <h3 className={'font-serif font-bold mb-2'}>Y axis</h3>
-          <Select
-            id={'loadout-comparison-y'}
-            items={YAxisOptions}
-            value={yAxisType || undefined}
-            onSelectedItemChange={(i) => {
-              setYAxisType(i)
-            }}
-          />
-        </div>
-        <div className={'basis-1/2'}>
           <h3 className={'font-serif font-bold mb-2'}>X axis</h3>
           <Select
             id={'loadout-comparison-x'}
@@ -108,6 +97,17 @@ const LoadoutComparison: React.FC = observer(() => {
             value={xAxisType || undefined}
             onSelectedItemChange={(i) => {
               setXAxisType(i)
+            }}
+          />
+        </div>
+        <div className={'basis-1/2'}>
+          <h3 className={'font-serif font-bold mb-2'}>Y axis</h3>
+          <Select
+            id={'loadout-comparison-y'}
+            items={YAxisOptions}
+            value={yAxisType || undefined}
+            onSelectedItemChange={(i) => {
+              setYAxisType(i)
             }}
           />
         </div>

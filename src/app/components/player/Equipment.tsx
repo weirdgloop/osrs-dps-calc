@@ -2,7 +2,7 @@ import React from 'react';
 import EquipmentSelect from './EquipmentSelect';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
-import {getWikiImage} from '@/utils';
+import {getCdnImage, getWikiImage} from '@/utils';
 import {PlayerEquipment} from '@/types/Player';
 
 import head from '@/public/img/slots/head.png';
@@ -39,7 +39,7 @@ const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => 
       }}
     >
       {currentSlot?.image ? (
-          <img src={getWikiImage(currentSlot.image)} alt={currentSlot.name} />
+          <img src={getCdnImage(`equipment/${currentSlot.image}`)} alt={currentSlot.name} />
       ) : (
           placeholder && (
               <img className={'opacity-30'} src={placeholder} alt={slot} />

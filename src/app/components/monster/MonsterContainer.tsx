@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import AttributeInput from '../generic/AttributeInput';
 import dagger from '@/public/img/bonuses/dagger.png';
 import scimitar from '@/public/img/bonuses/scimitar.png';
@@ -18,7 +18,7 @@ import MonsterSelect from './MonsterSelect';
 import {useStore} from '@/state';
 import {observer} from 'mobx-react-lite';
 import {MonsterAttribute} from '@/enums/MonsterAttribute';
-import {getWikiImage} from '@/utils';
+import {getCdnImage} from '@/utils';
 
 interface PresetAttributeButtonProps {
   attr: MonsterAttribute;
@@ -43,7 +43,7 @@ const MonsterContainer: React.FC = observer(() => {
   const {monster, prefs} = store;
 
   return (
-    <div className={'bg-tile flex-1 md:rounded-lg text-black shadow-lg'}>
+    <div className={'bg-tile md:rounded-lg text-black shadow-lg'}>
       <div className={'px-6 py-4 border-b-body-400 border-b md:rounded md:rounded-bl-none md:rounded-br-none flex justify-between items-center'}>
         <h1 className={`font-serif text-xl tracking-tight font-bold`}>
           {monster.name ? monster.name : 'Monster'}
@@ -113,7 +113,7 @@ const MonsterContainer: React.FC = observer(() => {
                     height={100}
                     width={200}
                     src={
-                      store.monster.image ? getWikiImage(store.monster.image) : noMonster
+                      store.monster.image ? getCdnImage(`monsters/${store.monster.image}`) : noMonster
                     }
                     alt={store.monster.name || 'Unknown'}
                 />
