@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
 body {
   padding: 0;
   margin: 0;
@@ -171,6 +170,7 @@ th {
 tbody tr {
   @apply bg-body-200;
   @apply dark:bg-dark-700;
+  @apply dark:text-black;
 }
 
 tbody th:first-child {

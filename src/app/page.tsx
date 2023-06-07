@@ -1,10 +1,7 @@
 import Home from './home';
-import BaseProviders from './components/BaseProviders';
 
 const Page = () => {
-  return <BaseProviders>
-    <Home />
-  </BaseProviders>
+  return <Home />
 }
 
 export default Page;

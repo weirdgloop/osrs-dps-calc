@@ -6,6 +6,7 @@ import TopBar from './TopBar';
 
 import {GlobalState} from '@/state';
 import Footer from "@/app/components/Footer";
+import {ThemeProvider} from "next-themes";
 const store = new GlobalState();
 
 const BaseProviders: React.FC<PropsWithChildren> = (props) => {
@@ -13,11 +14,13 @@ const BaseProviders: React.FC<PropsWithChildren> = (props) => {
 
   return (
     <StoreProvider store={store}>
-      <main>
-        <TopBar />
-        {children}
-        <Footer />
-      </main>
+        <ThemeProvider enableSystem={true} attribute={'class'}>
+            <main>
+                <TopBar />
+                {children}
+                <Footer />
+            </main>
+        </ThemeProvider>
     </StoreProvider>
   )
 }

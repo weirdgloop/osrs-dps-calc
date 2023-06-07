@@ -4,6 +4,7 @@ import 'react-tooltip/dist/react-tooltip.css';
 import 'react-toastify/dist/ReactToastify.css';
 import {Metadata} from 'next';
 import {ibm, pts} from "@/fonts";
+import BaseProviders from "@/app/components/BaseProviders";
 
 export const metadata: Metadata = {
   title: 'OSRS DPS Calculator',
@@ -14,9 +15,13 @@ const RootLayout: React.FC<PropsWithChildren> = (props) => {
   const {children} = props;
 
   return (
-    <html lang={'en'} className={`${pts.variable} ${ibm.variable}`}>
+      // We are suppressing hydration warnings here so that react-themes works correctly.
+      // See https://github.com/pacocoursey/next-themes/issues/152#issuecomment-1364280564
+    <html suppressHydrationWarning={true} lang={'en'} className={`${pts.variable} ${ibm.variable}`}>
       <body>
-        {children}
+          <BaseProviders>
+            {children}
+          </BaseProviders>
       </body>
     </html>
   )

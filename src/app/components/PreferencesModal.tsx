@@ -4,6 +4,7 @@ import {classNames} from '@/utils';
 import Toggle from './generic/Toggle';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
+import {useTheme} from "next-themes";
 
 interface IPreferencesModalProps {
   isOpen: boolean;
@@ -11,6 +12,7 @@ interface IPreferencesModalProps {
 
 const PreferencesModal: React.FC<IPreferencesModalProps> = observer((props) => {
   const {isOpen} = props;
+  const {resolvedTheme, setTheme} = useTheme();
   const store = useStore();
   const {prefs} = store;
 
@@ -29,6 +31,9 @@ const PreferencesModal: React.FC<IPreferencesModalProps> = observer((props) => {
           <div className={'px-4 py-2 max-w-xl mt-2 mx-auto'}>
             <div>
               <h2 className={'font-serif font-bold mb-2 select-none'}>Interface</h2>
+              <Toggle checked={resolvedTheme === 'dark'} setChecked={(c) => {
+                setTheme(c ? 'dark' : 'light');
+              }} label={'Dark mode'} />
               <Toggle checked={prefs.allowEditingPlayerStats} setChecked={(c) => {
                 store.updatePreferences({allowEditingPlayerStats: c});
               }} label={'Enable editing player bonuses'} help={'This will allow you to override the values provided by your equipment.'} />
