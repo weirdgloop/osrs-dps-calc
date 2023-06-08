@@ -1,7 +1,6 @@
 'use client';
 
 import type {NextPage} from 'next';
-import Head from 'next/head';
 import MonsterContainer from '@/app/components/monster/MonsterContainer';
 import {Tooltip} from 'react-tooltip';
 import React, {Suspense, useEffect, useRef} from 'react';
@@ -97,9 +96,6 @@ const Home: NextPage = observer(() => {
 
   return (
     <div>
-      <Head>
-        <title>OSRS DPS Calculator</title>
-      </Head>
       <Suspense>
         <InitialLoad />
       </Suspense>
