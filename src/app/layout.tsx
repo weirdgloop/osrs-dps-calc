@@ -4,7 +4,7 @@ import 'react-tooltip/dist/react-tooltip.css';
 import 'react-toastify/dist/ReactToastify.css';
 import {Metadata} from 'next';
 import {ibm, pts} from "@/fonts";
-import BaseProviders from "@/app/components/BaseProviders";
+import ClientProviders from "@/app/components/ClientProviders";
 
 export const metadata: Metadata = {
   title: 'OSRS DPS Calculator',
@@ -19,9 +19,9 @@ const RootLayout: React.FC<PropsWithChildren> = (props) => {
       // See https://github.com/pacocoursey/next-themes/issues/152#issuecomment-1364280564
     <html suppressHydrationWarning={true} lang={'en'} className={`${pts.variable} ${ibm.variable}`}>
       <body>
-          <BaseProviders>
-            {children}
-          </BaseProviders>
+        <ClientProviders>
+          {children}
+        </ClientProviders>
       </body>
     </html>
   )

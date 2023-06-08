@@ -4,7 +4,7 @@ import type {NextPage} from 'next';
 import Head from 'next/head';
 import MonsterContainer from '@/app/components/monster/MonsterContainer';
 import {Tooltip} from 'react-tooltip';
-import React, {useEffect, useRef} from 'react';
+import React, {Suspense, useEffect, useRef} from 'react';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
 import {ToastContainer} from 'react-toastify';
@@ -16,14 +16,12 @@ import {RecomputeValuesRequest, WorkerRequestType, WorkerResponses, WorkerRespon
 import {reaction, toJS} from "mobx";
 import {Player} from "@/types/Player";
 import {Monster} from "@/types/Monster";
-import localforage from "localforage";
 import {getEquipmentForLoadout} from "@/utils";
-import {useSearchParams} from "next/navigation";
 import PreferencesModal from "@/app/components/PreferencesModal";
+import InitialLoad from "@/app/components/InitialLoad";
 
 const Home: NextPage = observer(() => {
   const store = useStore();
-  const searchParams = useSearchParams();
   const {showPreferencesModal} = store.ui;
 
   const workerRef = useRef<Worker>();
@@ -97,26 +95,14 @@ const Home: NextPage = observer(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    const id = searchParams.get('id');
-    if (id) {
-      // If there was a share ID provided, load the data for it into the calculator
-      store.loadShortlink(id);
-    } else {
-      // Else, load username from browser storage if there is one and lookup stats
-      localforage.getItem('dps-calc-username').then((u) => {
-        store.updateUIState({username: u as string});
-        if (u !== '') store.fetchCurrentPlayerSkills();
-      }).catch(() => {});
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchParams]);
-
   return (
     <div>
       <Head>
         <title>OSRS DPS Calculator</title>
       </Head>
+      <Suspense>
+        <InitialLoad />
+      </Suspense>
       {/* Main container */}
       <div className={'max-w-[1200px] mx-auto sm:my-8'}>
         <div className={'flex gap-2 flex-wrap'}>
