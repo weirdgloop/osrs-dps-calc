@@ -45,6 +45,7 @@ jobs:
           path: out/
 
   deploy:
+    runs-on: ubuntu-latest
     env:
       GCS_BUCKET: ${{ secrets.GCS_BUCKET }}
     needs: build
