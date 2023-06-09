@@ -3,7 +3,6 @@ const shouldAnalyse = process.env.ANALYSE === 'true';
 
 let nextConfig = {
   output: 'export',
-  basePath: '/osrs-dps-calc',
   reactStrictMode: true,
   images: {
     unoptimized: true,
