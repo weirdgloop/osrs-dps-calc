@@ -1,9 +1,12 @@
 name: Main
 
 on:
+  # Push to any branch
   push:
-    branches: [ main ]
-  workflow_dispatch:
+  # PR to main branch
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -34,3 +37,30 @@ jobs:
         run: yarn
       - name: Build project
         run: yarn build
+      - uses: actions/upload-artifact@v3
+        # We only need to upload an artifact if this is a push to the main branch
+        if: github.ref == 'refs/heads/main'
+        with:
+          name: output
+          path: out/
+
+  deploy:
+    env:
+      GCS_BUCKET: ${{ secrets.GCS_BUCKET }}
+    needs: build
+    # Ensure that we only deploy when pushing to the main branch
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: output
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+      - name: 'Setup Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v1'
+      - name: 'Sync build output to GCS bucket'
+        run: |-
+          gsutil -m rsync -r out gs://$GCS_BUCKET
