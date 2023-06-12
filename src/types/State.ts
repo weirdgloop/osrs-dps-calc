@@ -22,12 +22,14 @@ export interface Preferences {
   showLoadoutComparison: boolean;
 }
 
+export interface CalculatedLoadout {
+  npcDefRoll: number,
+  maxHit: number,
+  maxAttackRoll: number
+}
+
 export interface Calculator {
-  loadouts: {
-    npcDefRoll: number,
-    maxHit: number,
-    maxAttackRoll: number
-  }[]
+  loadouts: CalculatedLoadout[]
 }
 
 /**

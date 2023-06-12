@@ -1,13 +1,29 @@
-import React, {useMemo} from 'react';
+import React, {PropsWithChildren} from 'react';
 import {observer} from 'mobx-react-lite';
 import {
-  IconClockHour3, IconDice,
-  IconEye,
-  IconHeartMinus, IconShield,
+  IconDice,
+  IconShield,
   IconSword,
-  IconTimeline
 } from "@tabler/icons-react";
 import {useStore} from "@/state";
+import {CalculatedLoadout} from "@/types/State";
+
+interface IResultRowProps {
+  calcKey: keyof CalculatedLoadout;
+}
+
+const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props) => {
+  const store = useStore();
+  const {children, calcKey} = props;
+  const {calc} = store;
+
+  return (
+    <tr>
+      <th className={'bg-btns-400 dark:bg-dark-400 w-40'}>{children}</th>
+      {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{l[calcKey] || ''}</th>)}
+    </tr>
+  )
+})
 
 const ResultsTable: React.FC = observer(() => {
   const store = useStore();
@@ -30,34 +46,9 @@ const ResultsTable: React.FC = observer(() => {
       </tr>
       </thead>
       <tbody>
-        <tr>
-          <th className={'bg-btns-400 dark:bg-dark-400 w-40'}><IconSword className={'inline-block'} /> Max hit</th>
-          {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{l.maxHit}</th>)}
-        </tr>
-        <tr>
-          <th className={'bg-btns-400 dark:bg-dark-400'}><IconTimeline className={'inline-block'} /> DPS</th>
-          {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{/* TODO */}</th>)}
-        </tr>
-        <tr>
-          <th className={'bg-btns-400 dark:bg-dark-400'}><IconEye className={'inline-block'} /> Accuracy</th>
-          {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{/* TODO */}</th>)}
-        </tr>
-        <tr>
-          <th className={'bg-btns-400 dark:bg-dark-400'}><IconClockHour3 className={'inline-block'} /> Avg. TTK</th>
-          {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{/* TODO */}</th>)}
-        </tr>
-        <tr>
-          <th className={'bg-btns-400 dark:bg-dark-400'}><IconHeartMinus className={'inline-block'} /> Avg. dmg taken</th>
-          {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{/* TODO */}</th>)}
-        </tr>
-        <tr>
-          <th className={'bg-btns-400 dark:bg-dark-400'}><IconDice className={'inline-block'} /> Attack roll</th>
-          {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{l.maxAttackRoll}</th>)}
-        </tr>
-        <tr>
-          <th className={'bg-btns-400 dark:bg-dark-400'}><IconShield className={'inline-block'} /> NPC def roll</th>
-          {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{l.npcDefRoll}</th>)}
-        </tr>
+        <ResultRow calcKey={'maxHit'}><IconSword className={'inline-block'} /> Max hit</ResultRow>
+        <ResultRow calcKey={'maxAttackRoll'}><IconDice className={'inline-block'} /> Attack roll</ResultRow>
+        <ResultRow calcKey={'npcDefRoll'}><IconShield className={'inline-block'} /> NPC def roll</ResultRow>
       </tbody>
     </table>
   )
