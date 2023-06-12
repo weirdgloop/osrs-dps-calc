@@ -22,7 +22,7 @@ const InitialLoad: React.FC = () => {
       // Else, load username from browser storage if there is one and lookup stats
       localforage.getItem('dps-calc-username').then((u) => {
         store.updateUIState({username: u as string});
-        if (u !== '') store.fetchCurrentPlayerSkills();
+        if (u) store.fetchCurrentPlayerSkills();
       }).catch(() => {});
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
