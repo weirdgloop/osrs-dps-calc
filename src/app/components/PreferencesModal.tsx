@@ -36,7 +36,7 @@ const PreferencesModal: React.FC<IPreferencesModalProps> = observer((props) => {
               }} label={'Dark mode'} />
               <Toggle checked={prefs.allowEditingPlayerStats} setChecked={(c) => {
                 store.updatePreferences({allowEditingPlayerStats: c});
-              }} label={'Enable editing player bonuses'} help={'This will allow you to override the values provided by your equipment.'} />
+              }} label={'Enable editing player bonuses'} />
               <Toggle checked={prefs.allowEditingMonsterStats} setChecked={(c) => {
                 store.updatePreferences({allowEditingMonsterStats: c});
               }} label={'Enable editing monster stats'} />
