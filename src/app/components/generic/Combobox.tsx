@@ -53,7 +53,7 @@ const Combobox: React.FC<IComboboxProps> = (props) => {
     className,
     CustomItemComponent,
   } = props;
-  const [inputValue, setInputValue] = useState<string | undefined>(value);
+  const [inputValue, setInputValue] = useState<string>(value || '');
   const [filteredItems, setFilteredItems] = useState<any[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -148,7 +148,7 @@ const Combobox: React.FC<IComboboxProps> = (props) => {
       setHighlightedIndex(0);
     },
     onInputValueChange: ({inputValue: newValue}) => {
-      setInputValue(newValue);
+      setInputValue(newValue || '');
       listRef.current?.scrollToItem(0);
       setHighlightedIndex(0);
     },
