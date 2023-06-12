@@ -173,6 +173,7 @@ const Combobox: React.FC<IComboboxProps> = (props) => {
                 ref={listRef}
               itemSize={getRowHeight}
               height={(filteredItems.length < 10 ? filteredItems.length * 36 : 200)}
+                estimatedItemSize={35}
               itemCount={filteredItems.length}
               width={300}
               itemData={{
