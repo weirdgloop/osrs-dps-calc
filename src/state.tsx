@@ -229,6 +229,10 @@ class GlobalState implements State {
      * the existing data still remains.
      */
 
+    this.updateImportedData(data);
+  }
+
+  updateImportedData(data: ImportableData) {
     this.selectedLoadout = data.selectedLoadout;
     this.loadouts = merge(this.loadouts, data.loadouts);
     this.monster = merge(this.monster, data.monster);
