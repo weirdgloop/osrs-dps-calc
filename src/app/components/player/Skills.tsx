@@ -69,7 +69,7 @@ const UsernameLookup: React.FC = observer(() => {
             <input
                 type={'text'}
                 className={'form-control rounded w-full mt-auto'}
-                placeholder={'Username'}
+                placeholder={'RuneScape name'}
                 value={username}
                 onChange={(e) => {
                   store.updateUIState({username: e.currentTarget.value});
