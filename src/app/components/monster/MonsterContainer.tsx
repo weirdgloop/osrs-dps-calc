@@ -19,24 +19,7 @@ import {useStore} from '@/state';
 import {observer} from 'mobx-react-lite';
 import {MonsterAttribute} from '@/enums/MonsterAttribute';
 import {getCdnImage} from '@/utils';
-
-interface PresetAttributeButtonProps {
-  attr: MonsterAttribute;
-}
-
-const PresetAttributeButton: React.FC<PresetAttributeButtonProps> = observer((props) => {
-  const store = useStore();
-  const {monster, prefs} = store;
-  const {attr} = props;
-
-  const isSelected = monster.attributes.includes(attr);
-
-  return (
-    <button disabled={!prefs.allowEditingMonsterStats} className={`rounded px-1 transition-[background,color] ${isSelected ? 'bg-blue-600 text-white' : 'bg-body-100 dark:bg-dark-200 opacity-50 dark:opacity-25 hover:enabled:bg-body-200 dark:hover:enabled:bg-dark-200'}`} onClick={() => store.toggleMonsterAttribute(attr)}>
-      {attr}
-    </button>
-  )
-})
+import PresetAttributeButton from "@/app/components/monster/PresetAttributeButton";
 
 const MonsterContainer: React.FC = observer(() => {
   const store = useStore();

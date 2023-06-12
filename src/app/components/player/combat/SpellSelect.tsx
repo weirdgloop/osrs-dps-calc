@@ -4,7 +4,7 @@ import {useStore} from '@/state';
 import {observer} from 'mobx-react-lite';
 import {getWikiImage} from '@/utils';
 import {Spell, Spellbook} from '@/types/Spell';
-import Combobox from '../generic/Combobox';
+import Combobox from '@/app/components/generic/Combobox';
 import LazyImage from "@/app/components/generic/LazyImage";
 
 interface SpellOption {

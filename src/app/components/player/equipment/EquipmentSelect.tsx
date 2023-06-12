@@ -4,7 +4,7 @@ import {useStore} from '@/state';
 import {observer} from 'mobx-react-lite';
 import {getCdnImage} from '@/utils';
 import {EquipmentPiece} from '@/types/Player';
-import Combobox from '../generic/Combobox';
+import Combobox from '../../generic/Combobox';
 import LazyImage from "@/app/components/generic/LazyImage";
 
 interface EquipmentOption {

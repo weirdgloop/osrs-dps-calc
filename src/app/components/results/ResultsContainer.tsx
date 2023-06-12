@@ -9,7 +9,7 @@ import {
 } from "@tabler/icons-react";
 import {useStore} from "@/state";
 
-const ResultsTable = observer(() => {
+const ResultsTable: React.FC = observer(() => {
   const store = useStore();
   const {selectedLoadout, calc} = store;
 
@@ -63,7 +63,7 @@ const ResultsTable = observer(() => {
   )
 })
 
-const BoxResults = observer(() => {
+const ResultsContainer = observer(() => {
   return (
     <div className={'my-4'}>
       <div className={'mx-2 overflow-x-scroll'}>
@@ -73,4 +73,4 @@ const BoxResults = observer(() => {
   )
 })
 
-export default BoxResults;
+export default ResultsContainer;

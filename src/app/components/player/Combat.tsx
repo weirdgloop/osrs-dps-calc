@@ -2,8 +2,8 @@ import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
 import React from 'react';
 import HelpLink from '../HelpLink';
-import {CombatStyle} from "@/app/components/player/CombatStyle";
-import SpellSelect from "@/app/components/player/SpellSelect";
+import CombatStyle from "@/app/components/player/combat/CombatStyle";
+import SpellSelect from "@/app/components/player/combat/SpellSelect";
 import Toggle from "@/app/components/generic/Toggle";
 
 const Combat: React.FC = observer(() => {

@@ -14,7 +14,7 @@ interface CombatStyleProps {
     style: PlayerCombatStyle;
 }
 
-export const CombatStyle: React.FC<CombatStyleProps> = observer((props) => {
+const CombatStyle: React.FC<CombatStyleProps> = observer((props) => {
     const store = useStore();
     const {player} = store;
     const {style} = props;
@@ -80,3 +80,5 @@ export const CombatStyle: React.FC<CombatStyleProps> = observer((props) => {
         </button>
     )
 })
+
+export default CombatStyle;
