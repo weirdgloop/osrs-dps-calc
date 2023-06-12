@@ -82,6 +82,8 @@ input.form-control[type=number] {
   @apply px-2;
   max-width: 100vw;
 
+  @apply invisible;
+  @apply sm:visible;
 }
 
 .select-input input {
