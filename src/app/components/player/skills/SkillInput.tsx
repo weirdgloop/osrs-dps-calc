@@ -33,7 +33,7 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
           required
           min={1}
           max={99}
-          value={player.skills[field].toString()}
+          value={player.skills[field]}
           onChange={(v) => {
             store.updatePlayer({
               skills: {
