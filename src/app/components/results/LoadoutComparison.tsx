@@ -57,7 +57,7 @@ const LoadoutComparison: React.FC = observer(() => {
   }, [xAxisType, yAxisType]);
 
   const generateLines = () => {
-    let lines: JSX.Element[] = [];
+    let lines: React.ReactNode[] = [];
     let strokeColours = ['red', 'blue', 'purple', 'green', 'sienna'];
 
     for (let i=0; i < loadouts.length; i++) {
