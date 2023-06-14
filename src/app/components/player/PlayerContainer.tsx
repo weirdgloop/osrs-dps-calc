@@ -21,7 +21,7 @@ const PlayerContainer: React.FC = observer(() => {
                         return (
                             <button
                                 key={ix}
-                                className={`min-w-[40px] text-left first:md:rounded-tl px-6 py-1 first:border-l-0 border-l-2 last:border-r-2 border-body-400 dark:border-dark-500 transition-colors ${selectedLoadout === ix ? 'bg-orange-400 dark:bg-orange-900' : 'bg-btns-400 dark:bg-dark-400'}`}
+                                className={`min-w-[40px] text-left first:md:rounded-tl px-6 py-1 first:border-l-0 border-l-2 last:border-r-2 border-body-400 dark:border-dark-200 transition-colors ${selectedLoadout === ix ? 'bg-orange-400 dark:bg-orange-700' : 'bg-btns-400 dark:bg-dark-400'}`}
                                 onClick={() => {store.setSelectedLoadout(ix)}}
                             >
                                 {ix + 1}

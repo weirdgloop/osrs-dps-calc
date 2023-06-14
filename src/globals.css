@@ -82,8 +82,8 @@ input.form-control[type=number] {
   @apply px-2;
   max-width: 100vw;
 
-  @apply invisible;
-  @apply sm:visible;
+  @apply hidden;
+  @apply block;
 }
 
 .select-input input {
@@ -123,6 +123,8 @@ input.form-control[type=number] {
 button.btn:disabled {
   @apply bg-gray-300;
   @apply cursor-not-allowed;
+  @apply dark:bg-gray-500;
+  @apply dark:border-gray-400;
 }
 
 .recharts-xAxis, .recharts-yAxis {

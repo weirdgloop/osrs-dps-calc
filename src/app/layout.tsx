@@ -1,6 +1,5 @@
 import React, {PropsWithChildren} from 'react';
 import '../globals.css';
-import 'react-tooltip/dist/react-tooltip.css';
 import 'react-toastify/dist/ReactToastify.css';
 import {Metadata} from 'next';
 import {ibm, pts} from "@/fonts";

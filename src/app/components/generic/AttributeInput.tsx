@@ -29,7 +29,7 @@ const AttributeInput: React.FC<AttributeInputProps> = (props) => {
                   <NumberInput
                     className={`form-control w-full rounded mt-auto ${className}`}
                     onChange={onChange}
-                    value={value.toString()}
+                    value={value}
                   />
               )
           }
