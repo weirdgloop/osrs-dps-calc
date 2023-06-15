@@ -17,10 +17,7 @@ import {Monster} from "@/types/Monster";
 import {getEquipmentForLoadout} from "@/utils";
 import PreferencesModal from "@/app/components/PreferencesModal";
 import InitialLoad from "@/app/components/InitialLoad";
-import dynamic from "next/dynamic";
-import Spinner from "@/app/components/Spinner";
-
-const LoadoutComparison = dynamic(() => import('@/app/components/results/LoadoutComparison'), {loading: Spinner});
+import LoadoutComparison from "@/app/components/results/LoadoutComparison";
 
 const Home: NextPage = observer(() => {
   const store = useStore();

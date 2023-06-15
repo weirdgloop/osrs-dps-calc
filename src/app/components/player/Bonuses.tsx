@@ -4,10 +4,7 @@ import {useStore} from '@/state';
 import Offensive from "@/app/components/player/bonuses/Offensive";
 import Defensive from "@/app/components/player/bonuses/Defensive";
 import OtherBonuses from "@/app/components/player/bonuses/OtherBonuses";
-import dynamic from "next/dynamic";
-import Spinner from "@/app/components/Spinner";
-
-const HitDistribution = dynamic(() => import('@/app/components/results/HitDistribution'), {loading: () => <div className={'text-center mt-2'}><Spinner /></div>});
+import HitDistribution from "@/app/components/results/HitDistribution";
 
 const Bonuses: React.FC = observer(() => {
   const store = useStore();

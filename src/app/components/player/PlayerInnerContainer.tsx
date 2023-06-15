@@ -5,15 +5,11 @@ import potion from '@/public/img/tabs/potion.png';
 import prayer from '@/public/img/tabs/prayer.png';
 import React, {useState} from 'react';
 import PlayerTab from "@/app/components/player/PlayerTab";
-import dynamic from "next/dynamic";
-import Spinner from "@/app/components/Spinner";
 import Equipment from './Equipment';
-
-// Dynamically import the other tabs, because they're only displayed on user click and it's wasteful otherwise
-const Combat = dynamic(() => import('./Combat'), {loading: () => <div className={'text-center mt-2'}><Spinner /></div>});
-const Skills = dynamic(() => import('./Skills'), {loading: () => <div className={'text-center mt-2'}><Spinner /></div>});
-const Prayers = dynamic(() => import('./Prayers'), {loading: () => <div className={'text-center mt-2'}><Spinner /></div>});
-const Buffs = dynamic(() => import('./Buffs'), {loading: () => <div className={'text-center mt-2'}><Spinner /></div>});
+import Combat from './Combat';
+import Skills from './Skills';
+import Prayers from './Prayers';
+import Buffs from './Buffs';
 
 type SelectedInputType = 'combat' | 'skills' | 'equipment' | 'buffs' | 'prayer';
 
