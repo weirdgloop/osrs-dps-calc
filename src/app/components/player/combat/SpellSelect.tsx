@@ -30,7 +30,7 @@ const SpellSelect: React.FC = observer(() => {
   })
 
   return (
-    <Combobox
+    <Combobox<SpellOption>
       id={'spell-select'}
       value={store.player.spell.name}
       className={'w-full'}
@@ -39,20 +39,17 @@ const SpellSelect: React.FC = observer(() => {
       blurAfterSelect={true}
       onSelectedItemChange={(item) => {
         if (item) {
-          const val = item as SpellOption;
           store.updatePlayer({
-            spell: val.spell
+            spell: item.spell
           })
         }
       }}
       CustomItemComponent={({item, itemString}) => {
-        let i = item as SpellOption;
-
         return (
           <div className={'flex items-center gap-2'}>
-            {i.spell.image && (
+            {item.spell.image && (
               <div className={'basis-4 flex justify-center h-[20px] w-auto'}>
-                <LazyImage responsive={true} src={getWikiImage(i.spell.image)} alt={''} />
+                <LazyImage responsive={true} src={getWikiImage(item.spell.image)} alt={''} />
               </div>
             )}
             <div className={'flex items-center gap-0'}>

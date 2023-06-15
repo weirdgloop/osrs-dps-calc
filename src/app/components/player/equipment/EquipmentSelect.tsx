@@ -31,7 +31,7 @@ const EquipmentSelect: React.FC = observer(() => {
   }), [])
 
   return (
-    <Combobox
+    <Combobox<EquipmentOption>
       id={'equipment-select'}
       className={'w-full'}
       items={options}
@@ -39,26 +39,22 @@ const EquipmentSelect: React.FC = observer(() => {
       placeholder={'Search for equipment...'}
       onSelectedItemChange={(item) => {
         if (item) {
-          const val = item as EquipmentOption;
-
           store.updatePlayer({
             equipment: {
-              [val.equipment.slot]: val.value
+              [item.equipment.slot]: item.value
             }
           })
         }
       }}
       CustomItemComponent={({item, itemString}) => {
-        let i = item as EquipmentOption;
-
         return (
           <div className={'flex items-center gap-2'}>
             <div className={'basis-4 flex justify-center h-[20px] w-auto'}>
-              {i.equipment.image && (<LazyImage responsive={true} src={i.equipment.image ? getCdnImage(`equipment/${i.equipment.image}`) : undefined} alt={''} />)}
+              {item.equipment.image && (<LazyImage responsive={true} src={item.equipment.image ? getCdnImage(`equipment/${item.equipment.image}`) : undefined} alt={''} />)}
             </div>
             <div>
               {itemString}
-              {i.version && <span className={'monster-version text-xs text-gray-400 dark:text-gray-300'}>#{i.version}</span>}
+              {item.version && <span className={'monster-version text-xs text-gray-400 dark:text-gray-300'}>#{item.version}</span>}
             </div>
           </div>
         )

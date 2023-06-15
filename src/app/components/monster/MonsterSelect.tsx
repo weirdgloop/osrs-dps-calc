@@ -54,7 +54,7 @@ const MonsterSelect: React.FC = observer(() => {
   }), [])
 
   return (
-    <Combobox
+    <Combobox<MonsterOption>
       id={'monster-select'}
       className={'w-full'}
       items={options}
@@ -63,12 +63,11 @@ const MonsterSelect: React.FC = observer(() => {
       blurAfterSelect={true}
       onSelectedItemChange={(item) => {
         if (item) {
-          const val = item as MonsterOption;
-          store.updateMonster(val.monster)
+          store.updateMonster(item.monster)
         }
       }}
       CustomItemComponent={({item}) => {
-        let i = item as MonsterOption;
+        let i = item;
 
         return (
             <div>

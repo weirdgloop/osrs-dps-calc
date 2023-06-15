@@ -7,71 +7,33 @@ import {
 import React, {useEffect, useRef} from 'react';
 import {FixedSizeList as List} from 'react-window';
 
-// TODO: change SelectItem to use TS generics
 type SelectItem = {label: string, value: any};
 
-const itemToString = (i: SelectItem | null) => (i ? i.label : '')
+const itemToString = <T extends SelectItem>(i: T | null) => (i ? i.label : '')
 
-interface ISelectProps {
+interface ISelectProps<T> {
   id: string;
-  value?: SelectItem;
-  items: SelectItem[];
+  value?: T;
+  items: T[];
   placeholder?: string;
-  onSelectedItemChange?: (item: SelectItem | null | undefined) => void;
+  onSelectedItemChange?: (item: T | null | undefined) => void;
   resetAfterSelect?: boolean;
   className?: string;
   menuClassName?: string;
   CustomSelectComponent?: React.FC<{getToggleButtonProps: (options?: UseSelectGetToggleButtonPropsOptions | undefined, otherOptions?: GetPropsCommonOptions | undefined) => any}>
-  CustomItemComponent?: React.FC<{item: SelectItem, itemString: string}>;
+  CustomItemComponent?: React.FC<{item: T, itemString: string}>;
 }
 
-interface IItemRendererProps {
+interface IItemRendererProps<T> {
   index: number;
   style: any;
   data: {
-    items: SelectItem[];
+    items: T[];
     getItemProps: (options: UseSelectGetItemPropsOptions<any>) => any;
     highlightedIndex: number;
     selectedItem: any;
-    CustomItemComponent?: React.FC<{item: SelectItem, itemString: string}>;
+    CustomItemComponent?: React.FC<{item: T, itemString: string}>;
   }
-}
-
-/**
- * Component for rendering each individual combobox item.
- *
- * @param props
- * @constructor
- */
-const ItemRenderer: React.FC<IItemRendererProps> = (props) => {
-  const {items, getItemProps, highlightedIndex, selectedItem, CustomItemComponent} = props.data;
-  const item = items[props.index];
-  const itemString = itemToString(item);
-
-  return (
-    <div
-      className={
-        `px-3 py-2 leading-none items-center text-sm cursor-pointer ${(highlightedIndex === props.index) ? 'bg-gray-200 dark:bg-dark-200' : ''}`
-      }
-      {...getItemProps({
-        index: props.index,
-        item
-      })}
-      style={props.style}
-    >
-      {(() => {
-        if (CustomItemComponent) {
-          return <CustomItemComponent item={item} itemString={itemString} />
-        } else {
-          return (
-            <div>
-              {itemString}
-            </div>
-          )
-        }
-      })()}
-    </div>
-  )
 }
 
 /**
@@ -80,7 +42,7 @@ const ItemRenderer: React.FC<IItemRendererProps> = (props) => {
  * @param props
  * @constructor
  */
-const Select: React.FC<ISelectProps> = (props) => {
+const Select = <T extends SelectItem>(props: ISelectProps<T>) => {
   const {
     id,
     value,
@@ -93,6 +55,43 @@ const Select: React.FC<ISelectProps> = (props) => {
     CustomSelectComponent,
     CustomItemComponent
   } = props;
+
+  /**
+   * Component for rendering each individual combobox item.
+   *
+   * @param props
+   * @constructor
+   */
+  const ItemRenderer: React.FC<IItemRendererProps<T>> = (props) => {
+    const {items, getItemProps, highlightedIndex, selectedItem, CustomItemComponent} = props.data;
+    const item = items[props.index];
+    const itemString = itemToString(item);
+
+    return (
+      <div
+        className={
+          `px-3 py-2 leading-none items-center text-sm cursor-pointer ${(highlightedIndex === props.index) ? 'bg-gray-200 dark:bg-dark-200' : ''}`
+        }
+        {...getItemProps({
+          index: props.index,
+          item
+        })}
+        style={props.style}
+      >
+        {(() => {
+          if (CustomItemComponent) {
+            return <CustomItemComponent item={item} itemString={itemString} />
+          } else {
+            return (
+              <div>
+                {itemString}
+              </div>
+            )
+          }
+        })()}
+      </div>
+    )
+  }
 
   const menuRef = useRef<HTMLElement>(null);
 
@@ -161,7 +160,7 @@ const Select: React.FC<ISelectProps> = (props) => {
               itemCount={items.length}
               width={300}
               itemData={{
-                items,
+                items: items,
                 getItemProps,
                 highlightedIndex,
                 selectedItem,

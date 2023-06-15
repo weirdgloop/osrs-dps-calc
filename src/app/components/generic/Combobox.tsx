@@ -2,32 +2,31 @@ import {useCombobox, UseComboboxGetItemPropsOptions} from 'downshift';
 import React, {useEffect, useRef, useState} from 'react';
 import {VariableSizeList as List} from 'react-window';
 
-// TODO: change ComboboxItem to use TS generics
 type ComboboxItem = {label: string, value: any};
 
-const itemToString = (i: ComboboxItem | null) => (i ? i.label : '')
+const itemToString = <T extends ComboboxItem>(i: T | null) => (i ? i.label : '')
 
-interface IComboboxProps {
+interface IComboboxProps<T> {
   id: string;
   value?: string;
-  items: ComboboxItem[];
+  items: T[];
   placeholder?: string;
-  onSelectedItemChange?: (item: ComboboxItem | null | undefined) => void;
+  onSelectedItemChange?: (item: T | null | undefined) => void;
   resetAfterSelect?: boolean;
   blurAfterSelect?: boolean;
   className?: string;
-  CustomItemComponent?: React.FC<{item: ComboboxItem, itemString: string}>;
+  CustomItemComponent?: React.FC<{item: T, itemString: string}>;
 }
 
-interface IItemRendererProps {
+interface IItemRendererProps<T> {
   index: number;
   style: any;
   data: {
-    items: ComboboxItem[];
+    items: T[];
     getItemProps: (options: UseComboboxGetItemPropsOptions<any>) => any;
     highlightedIndex: number;
     selectedItem: any;
-    CustomItemComponent?: React.FC<{item: ComboboxItem, itemString: string}>;
+    CustomItemComponent?: React.FC<{item: T, itemString: string}>;
   }
 }
 
@@ -41,7 +40,7 @@ interface IItemRendererProps {
  * @param props
  * @constructor
  */
-const Combobox: React.FC<IComboboxProps> = (props) => {
+const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
   const {
     id,
     value,
@@ -72,7 +71,7 @@ const Combobox: React.FC<IComboboxProps> = (props) => {
   }
 
   useEffect(() => {
-    let newFilteredItems: ComboboxItem[] = items;
+    let newFilteredItems: T[] = items;
 
     // When the input value changes, change the filtered items
     if (inputValue) {
@@ -89,7 +88,7 @@ const Combobox: React.FC<IComboboxProps> = (props) => {
    * @param props
    * @constructor
    */
-  const ItemRenderer: React.FC<IItemRendererProps> = (props) => {
+  const ItemRenderer: React.FC<IItemRendererProps<T>> = (props) => {
     const {index} = props;
     const {items, getItemProps, highlightedIndex, CustomItemComponent} = props.data;
     const item = items[props.index];
@@ -172,7 +171,7 @@ const Combobox: React.FC<IComboboxProps> = (props) => {
             <List
                 ref={listRef}
               itemSize={getRowHeight}
-              height={(filteredItems.length < 10 ? filteredItems.length * 36 : 200)}
+              height={(filteredItems.length < 10 ? filteredItems.length * 29 : 200)}
                 estimatedItemSize={35}
               itemCount={filteredItems.length}
               width={300}
