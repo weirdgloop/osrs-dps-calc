@@ -11,10 +11,10 @@ const Equipment: React.FC = () => {
         </h4>
       </div>
       <div className={'mt-4'}>
-        <EquipmentGrid />
+        <EquipmentSelect />
       </div>
       <div className={'mt-6'}>
-        <EquipmentSelect />
+        <EquipmentGrid />
       </div>
     </div>
 

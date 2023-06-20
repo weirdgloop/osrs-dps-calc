@@ -18,7 +18,7 @@ const Offensive: React.FC = observer(() => {
       <div className={'flex flex-col gap-2 mt-3 text-center'}>
         <AttributeInput
           disabled={!prefs.allowEditingPlayerStats}
-          name={'Dagger'}
+          name={'Stab'}
           image={dagger}
           value={player.offensive.stab}
           className={`${(player.offensive.stab !== equipmentBonuses.offensive.stab) ? 'bg-yellow-200' : ''}`}
@@ -26,14 +26,15 @@ const Offensive: React.FC = observer(() => {
         />
         <AttributeInput
           disabled={!prefs.allowEditingPlayerStats}
-          name={'Scimitar'} image={scimitar}
+          name={'Slash'}
+          image={scimitar}
           value={player.offensive.slash}
           className={`${(player.offensive.slash !== equipmentBonuses.offensive.slash) ? 'bg-yellow-200' : ''}`}
           onChange={(v) => store.updatePlayer({offensive: {slash: v}})}
         />
         <AttributeInput
           disabled={!prefs.allowEditingPlayerStats}
-          name={'Warhammer'}
+          name={'Crush'}
           image={warhammer}
           value={player.offensive.crush}
           className={`${(player.offensive.crush !== equipmentBonuses.offensive.crush) ? 'bg-yellow-200' : ''}`}

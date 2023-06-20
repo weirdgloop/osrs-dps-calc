@@ -51,7 +51,7 @@ const Buffs: React.FC = observer(() => {
       </h4>
         <div
             ref={potionsScrollContainer}
-            className={'h-[11.5rem] mt-2 bg-white dark:bg-dark-400 dark:border-dark-200 rounded border border-gray-300 overflow-y-scroll'}
+            className={'h-[11.5rem] mt-2 bg-white dark:bg-dark-500 dark:border-dark-200 rounded border border-gray-300 overflow-y-scroll'}
             onScroll={(evt) => {
                 store.updateUIState({potionsScrollPosition: evt.currentTarget.scrollTop});
             }}

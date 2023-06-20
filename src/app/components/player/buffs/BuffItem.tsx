@@ -26,7 +26,7 @@ const BuffItem: React.FC<IBuffItemProps> = observer((props) => {
       data-tooltip-content={tooltip}
       data-tooltip-place={'right'}
       onClick={() => store.togglePlayerPotion(potion)}
-      className={`w-full px-4 py-1 first:mt-0 first:border-0 border-t dark:border-dark-200 flex gap-4 items-center`}
+      className={`w-full px-4 py-1 first:mt-0 first:border-0 border-t dark:border-dark-200 flex gap-4 items-center hover:bg-gray-200 dark:hover:bg-dark-400`}
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
     >
