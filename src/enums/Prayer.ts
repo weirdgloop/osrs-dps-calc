@@ -14,18 +14,6 @@ import Chivalry from '@/public/img/prayers/Chivalry.png';
 import Piety from '@/public/img/prayers/Piety.png';
 import Rigour from '@/public/img/prayers/Rigour.png';
 import Augury from '@/public/img/prayers/Augury.png';
-import AncientStrength from '@/public/img/prayers/Ancient_Strength.webp';
-import AncientSight from '@/public/img/prayers/Ancient_Sight.webp';
-import AncientWill from '@/public/img/prayers/Ancient_Will.webp';
-import Rebuke from '@/public/img/prayers/Rebuke.webp';
-import Decimate from '@/public/img/prayers/Decimate.webp';
-import Annihilate from '@/public/img/prayers/Annihilate.webp';
-import Vaporise from '@/public/img/prayers/Vaporise.webp';
-import FumusVow from '@/public/img/prayers/Fumus_Vow.webp';
-import UmbrasVow from '@/public/img/prayers/Umbras_Vow.webp';
-import CruorsVow from '@/public/img/prayers/Cruors_Vow.webp';
-import GlaciesVow from '@/public/img/prayers/Glacies_Vow.webp';
-import Intensify from '@/public/img/prayers/Intensify.webp';
 import {StaticImageData} from 'next/image';
 
 export enum Prayer {
@@ -45,18 +33,6 @@ export enum Prayer {
   PIETY,
   RIGOUR,
   AUGURY,
-  ANCIENT_STRENGTH,
-  ANCIENT_SIGHT,
-  ANCIENT_WILL,
-  REBUKE,
-  DECIMATE,
-  ANNIHILATE,
-  VAPORISE,
-  FUMUS_VOW,
-  UMBRAS_VOW,
-  CRUORS_VOW,
-  GLACIES_VOW,
-  INTENSIFY
 }
 
 export const DEFENSIVE_PRAYERS = [
@@ -75,40 +51,6 @@ export const BRAIN_PRAYERS = [
 
 export const ARM_PRAYERS = [
   Prayer.BURST_OF_STRENGTH, Prayer.SUPERHUMAN_STRENGTH, Prayer.ULTIMATE_STRENGTH
-]
-
-export const STANDARD_PRAYERS = [
-  Prayer.BURST_OF_STRENGTH,
-  Prayer.CLARITY_OF_THOUGHT,
-  Prayer.SHARP_EYE,
-  Prayer.MYSTIC_WILL,
-  Prayer.SUPERHUMAN_STRENGTH,
-  Prayer.IMPROVED_REFLEXES,
-  Prayer.HAWK_EYE,
-  Prayer.MYSTIC_LORE,
-  Prayer.ULTIMATE_STRENGTH,
-  Prayer.INCREDIBLE_REFLEXES,
-  Prayer.EAGLE_EYE,
-  Prayer.MYSTIC_MIGHT,
-  Prayer.CHIVALRY,
-  Prayer.PIETY,
-  Prayer.RIGOUR,
-  Prayer.AUGURY,
-]
-
-export const RUINOUS_PRAYERS = [
-  Prayer.ANCIENT_STRENGTH,
-  Prayer.ANCIENT_SIGHT,
-  Prayer.ANCIENT_WILL,
-  Prayer.REBUKE,
-  Prayer.DECIMATE,
-  Prayer.ANNIHILATE,
-  Prayer.VAPORISE,
-  Prayer.FUMUS_VOW,
-  Prayer.UMBRAS_VOW,
-  Prayer.CRUORS_VOW,
-  Prayer.GLACIES_VOW,
-  Prayer.INTENSIFY
 ]
 
 export const PrayerMap: {[k in Prayer]: {name: string, image: StaticImageData}} = {
@@ -175,53 +117,5 @@ export const PrayerMap: {[k in Prayer]: {name: string, image: StaticImageData}} 
   [Prayer.AUGURY]: {
     name: 'Augury',
     image: Augury,
-  },
-  [Prayer.ANCIENT_STRENGTH]: {
-    name: 'Ancient Strength',
-    image: AncientStrength
-  },
-  [Prayer.ANCIENT_SIGHT]: {
-    name: 'Ancient Sight',
-    image: AncientSight
-  },
-  [Prayer.ANCIENT_WILL]: {
-    name: 'Ancient Will',
-    image: AncientWill
-  },
-  [Prayer.REBUKE]: {
-    name: 'Rebuke',
-    image: Rebuke
-  },
-  [Prayer.DECIMATE]: {
-    name: 'Decimate',
-    image: Decimate
-  },
-  [Prayer.ANNIHILATE]: {
-    name: 'Annihilate',
-    image: Annihilate
-  },
-  [Prayer.VAPORISE]: {
-    name: 'Vaporise',
-    image: Vaporise
-  },
-  [Prayer.FUMUS_VOW]: {
-    name: 'Fumus\' Vow',
-    image: FumusVow
-  },
-  [Prayer.UMBRAS_VOW]: {
-    name: 'Umbra\'s Vow',
-    image: UmbrasVow
-  },
-  [Prayer.CRUORS_VOW]: {
-    name: 'Cruor\'s Vow',
-    image: CruorsVow
-  },
-  [Prayer.GLACIES_VOW]: {
-    name: 'Glacie\'s Vow',
-    image: GlaciesVow
-  },
-  [Prayer.INTENSIFY]: {
-    name: 'Intensify',
-    image: Intensify
   }
 }
