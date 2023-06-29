@@ -11,6 +11,7 @@ import strength from '@/public/img/bonuses/strength.png';
 import defence from '@/public/img/bonuses/defence.png';
 import magicStrength from '@/public/img/bonuses/magic_strength.png';
 import rangedStrength from '@/public/img/bonuses/ranged_strength.png';
+import toaRaidLevel from '@/public/img/toa_raidlevel.webp';
 import Image from 'next/image';
 import noMonster from '@/public/img/no_monster.png';
 import HelpLink from '../HelpLink';
@@ -20,13 +21,15 @@ import {observer} from 'mobx-react-lite';
 import {MonsterAttribute} from '@/enums/MonsterAttribute';
 import {getCdnImage} from '@/utils';
 import PresetAttributeButton from "@/app/components/monster/PresetAttributeButton";
+import NumberInput from "@/app/components/generic/NumberInput";
+import {TOMBS_OF_AMASCUT_MONSTER_IDS} from "@/constants";
 
 const MonsterContainer: React.FC = observer(() => {
   const store = useStore();
   const {monster, prefs} = store;
 
   return (
-    <div className={'bg-tile dark:bg-dark-300 basis-full mx-auto lg:basis-auto sm:rounded-lg text-black dark:text-white shadow-lg'}>
+    <div className={'bg-tile dark:bg-dark-300 max-w-[540px] mx-auto lg:basis-auto sm:rounded-lg text-black dark:text-white shadow-lg'}>
       <div className={'px-6 py-4 border-b-body-400 dark:border-b-dark-200 border-b md:rounded md:rounded-bl-none md:rounded-br-none flex justify-between items-center'}>
         <h1 className={`font-serif text-xl tracking-tight font-bold`}>
           {monster.name ? monster.name : 'Monster'}
@@ -35,7 +38,7 @@ const MonsterContainer: React.FC = observer(() => {
       <div className={'p-6'}>
         <div className={'mb-4'}>
           <div className={'flex gap-8 flex-wrap justify-center'}>
-            <div>
+            <div className={'basis-1/4'}>
               <div className={'mb-4'}>
                 <MonsterSelect />
               </div>
@@ -88,6 +91,24 @@ const MonsterContainer: React.FC = observer(() => {
                   }
                 </div>
               </div>
+              {(monster.id && TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id)) && (
+                <div className={'mt-4'}>
+                  <h4 className={'font-bold font-serif'}>
+                    <img src={toaRaidLevel.src} alt={''} className={'inline-block'} />{' '}
+                    Tombs of Amascut raid level
+                  </h4>
+                  <p className={'text-xs text-gray-400'}>You can set your raid level here to change how this monster&apos;s health and other stats are calculated. <span className={'font-bold'}>(0-600)</span></p>
+                  <div className={'mt-2'}>
+                    <NumberInput
+                      value={monster.invocationLevel}
+                      min={0}
+                      max={600}
+                      step={5}
+                      onChange={(v) => store.updateMonster({invocationLevel: v})}
+                    />
+                  </div>
+                </div>
+              )}
             </div>
             <div className={'flex items-center justify-center'}>
               <div>

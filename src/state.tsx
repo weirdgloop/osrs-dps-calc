@@ -106,6 +106,7 @@ const generateEmptyPlayer: () => Player = () => {
 
 class GlobalState implements State {
   monster: Monster = {
+    id: null,
     name: '',
     size: 0,
     skills: {
@@ -131,7 +132,8 @@ class GlobalState implements State {
       slash: 0,
       stab: 0,
     },
-    attributes: []
+    attributes: [],
+    invocationLevel: 0
   }
 
   loadouts: Player[] = [

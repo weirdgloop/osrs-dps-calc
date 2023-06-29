@@ -22,6 +22,7 @@ const MonsterSelect: React.FC = observer(() => {
       value: i,
       version: m.version || '',
       monster: {
+        id: m.id || null,
         name: m.name,
         image: m.image,
         size: m.size,
@@ -48,7 +49,8 @@ const MonsterSelect: React.FC = observer(() => {
           slash: m.defensive[3],
           stab: m.defensive[4]
         },
-        attributes: m.attributes
+        attributes: m.attributes,
+        invocationLevel: 0
       }
     }
   }), [])

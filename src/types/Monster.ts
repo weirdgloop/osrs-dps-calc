@@ -1,6 +1,7 @@
 import {CombatStyleType} from "@/types/PlayerCombatStyle";
 
 export interface Monster {
+  id: number | null;
   name: string;
   image?: string;
   size: number;
@@ -27,7 +28,7 @@ export interface Monster {
    * Invocation level for Tombs of Amascut
    * @see https://oldschool.runescape.wiki/w/Tombs_of_Amascut#Invocations_and_Raid_Level
    */
-  invocationLevel?: number;
+  invocationLevel: number;
   /**
    * The attributes the monster has
    * @see https://oldschool.runescape.wiki/w/Monster_attribute
