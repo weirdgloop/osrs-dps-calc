@@ -356,28 +356,30 @@ class GlobalState implements State {
    * @param player
    */
   updatePlayer(player: PartialDeep<Player>) {
-    const currentWeapon = this.equipmentData.weapon;
-    const newWeapon = player.equipment?.weapon ? getEquipment(player.equipment.weapon) : {} as EquipmentPiece;
+    if (Object.hasOwn(player.equipment || {}, 'weapon')) {
+      const currentWeapon = this.equipmentData.weapon;
+      const newWeapon = player.equipment?.weapon ? getEquipment(player.equipment.weapon) : {} as EquipmentPiece;
 
-    if (newWeapon !== undefined) {
-      const oldWeaponCat = currentWeapon?.category || EquipmentCategory.NONE;
-      const newWeaponCat = newWeapon.category || EquipmentCategory.NONE;
-      if ((newWeaponCat !== undefined) && (newWeaponCat !== oldWeaponCat)) {
-        // If the weapon slot category was changed, we should reset the player's selected combat style to the first one that exists.
-        player.style = getCombatStylesForCategory(newWeaponCat)[0];
+      if (newWeapon !== undefined) {
+        const oldWeaponCat = currentWeapon?.category || EquipmentCategory.NONE;
+        const newWeaponCat = newWeapon.category || EquipmentCategory.NONE;
+        if ((newWeaponCat !== undefined) && (newWeaponCat !== oldWeaponCat)) {
+          // If the weapon slot category was changed, we should reset the player's selected combat style to the first one that exists.
+          player.style = getCombatStylesForCategory(newWeaponCat)[0];
+        }
       }
-    }
 
-    const currentShield = this.equipmentData.shield;
-    const newShield = player.equipment?.shield ? getEquipment(player.equipment.shield) : {} as EquipmentPiece;
+      const currentShield = this.equipmentData.shield;
+      const newShield = player.equipment?.shield ? getEquipment(player.equipment.shield) : {} as EquipmentPiece;
 
-    // Special handling for if a shield is equipped, and we're using a two-handed weapon
-    if (player.equipment?.shield && newShield.name !== '' && currentWeapon?.isTwoHanded) {
-      player = {...player, equipment: {...player.equipment, weapon: null}};
-    }
-    // ...and vice-versa
-    if (player.equipment?.weapon && newWeapon?.isTwoHanded && currentShield?.name !== '') {
-      player = {...player, equipment: {...player.equipment, shield: null}};
+      // Special handling for if a shield is equipped, and we're using a two-handed weapon
+      if (player.equipment?.shield && newShield.name !== '' && currentWeapon?.isTwoHanded) {
+        player = {...player, equipment: {...player.equipment, weapon: null}};
+      }
+      // ...and vice-versa
+      if (player.equipment?.weapon && newWeapon?.isTwoHanded && currentShield?.name !== '') {
+        player = {...player, equipment: {...player.equipment, shield: null}};
+      }
     }
 
     this.loadouts[this.selectedLoadout] = merge(this.player, player);
