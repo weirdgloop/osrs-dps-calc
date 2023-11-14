@@ -1,5 +1,5 @@
 import React from 'react';
-import spell from '@/lib/spells.json';
+import spell from '../../../../../cdn/json/spells.json';
 import {useStore} from '@/state';
 import {observer} from 'mobx-react-lite';
 import {getWikiImage} from '@/utils';

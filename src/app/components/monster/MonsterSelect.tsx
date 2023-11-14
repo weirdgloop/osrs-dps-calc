@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import monsters from '@/lib/monsters.json';
+import monsters from '../../../../cdn/json/monsters.json';
 import {useStore} from '@/state';
 import {observer} from 'mobx-react-lite';
 

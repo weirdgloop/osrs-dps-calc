@@ -1,0 +1,19 @@
+FROM python:3-alpine AS scraper
+
+RUN mkdir -p /workspace/scripts /workspace/cdn /workspace/src
+COPY . /workspace
+WORKDIR /workspace/scripts
+
+RUN pip install -r requirements.txt
+CMD ["sh", "-c", "python generateEquipment.py && python generateMonsters.py"]
+
+
+
+FROM node:20-buster AS webapp
+
+RUN mkdir -p /workspace
+WORKDIR /workspace
+COPY . /workspace
+
+RUN yarn install
+CMD ["yarn", "dev"]

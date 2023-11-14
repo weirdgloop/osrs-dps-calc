@@ -36,3 +36,4 @@ yarn-error.log*
 
 scripts/*.json
 .idea/
+/cdn

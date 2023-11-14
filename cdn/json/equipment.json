@@ -531,6 +531,34 @@
     ],
     "isTwoHanded": false
   },
+  "28226": {
+    "name": "3rd age felling axe",
+    "id": 28226,
+    "version": "",
+    "slot": "weapon",
+    "image": "3rd age felling axe.png",
+    "speed": 5,
+    "category": "Axe",
+    "offensive": [
+      32,
+      0,
+      0,
+      0,
+      0,
+      38,
+      -2,
+      42
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
   "10350": {
     "name": "3rd age full helmet",
     "id": 10350,
@@ -2994,6 +3022,34 @@
       0
     ],
     "isTwoHanded": false
+  },
+  "28211": {
+    "name": "Adamant felling axe",
+    "id": 28211,
+    "version": "",
+    "slot": "weapon",
+    "image": "Adamant felling axe.png",
+    "speed": 5,
+    "category": "Axe",
+    "offensive": [
+      15,
+      0,
+      0,
+      0,
+      0,
+      17,
+      -2,
+      19
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "isTwoHanded": true
   },
   "2539": {
     "name": "Adamant fire arrow",
@@ -7926,7 +7982,7 @@
   "1706": {
     "name": "Amulet of glory",
     "id": 1706,
-    "version": "(1)",
+    "version": "1",
     "slot": "neck",
     "image": "Amulet of glory(1).png",
     "speed": 0,
@@ -7954,7 +8010,7 @@
   "1708": {
     "name": "Amulet of glory",
     "id": 1708,
-    "version": "(2)",
+    "version": "2",
     "slot": "neck",
     "image": "Amulet of glory(2).png",
     "speed": 0,
@@ -7982,7 +8038,7 @@
   "1710": {
     "name": "Amulet of glory",
     "id": 1710,
-    "version": "(3)",
+    "version": "3",
     "slot": "neck",
     "image": "Amulet of glory(3).png",
     "speed": 0,
@@ -8010,7 +8066,7 @@
   "1712": {
     "name": "Amulet of glory",
     "id": 1712,
-    "version": "(4)",
+    "version": "4",
     "slot": "neck",
     "image": "Amulet of glory(4).png",
     "speed": 0,
@@ -8038,7 +8094,7 @@
   "11976": {
     "name": "Amulet of glory",
     "id": 11976,
-    "version": "(5)",
+    "version": "5",
     "slot": "neck",
     "image": "Amulet of glory(5).png",
     "speed": 0,
@@ -8066,7 +8122,7 @@
   "11978": {
     "name": "Amulet of glory",
     "id": 11978,
-    "version": "(6)",
+    "version": "6",
     "slot": "neck",
     "image": "Amulet of glory(6).png",
     "speed": 0,
@@ -10248,11 +10304,11 @@
     "isTwoHanded": false
   },
   "26551": {
-    "name": "Arcane grimoire",
+    "name": "Arcane grimoire (Shattered Relics League)",
     "id": 26551,
     "version": "",
     "slot": "shield",
-    "image": "Arcane grimoire.png",
+    "image": "Arcane grimoire (Shattered Relics League).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -14391,6 +14447,34 @@
     ],
     "isTwoHanded": false
   },
+  "28316": {
+    "name": "Bellator ring",
+    "id": 28316,
+    "version": "",
+    "slot": "ring",
+    "image": "Bellator ring.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      0,
+      6
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
   "11282": {
     "name": "Beret mask",
     "id": 11282,
@@ -15958,6 +16042,34 @@
       0
     ],
     "isTwoHanded": false
+  },
+  "28205": {
+    "name": "Black felling axe",
+    "id": 28205,
+    "version": "",
+    "slot": "weapon",
+    "image": "Black felling axe.png",
+    "speed": 5,
+    "category": "Axe",
+    "offensive": [
+      8,
+      0,
+      0,
+      0,
+      0,
+      10,
+      -2,
+      12
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "isTwoHanded": true
   },
   "2476": {
     "name": "Black flowers",
@@ -19123,10 +19235,66 @@
     ],
     "isTwoHanded": false
   },
-  "25489": {
+  "28238": {
     "name": "Blood ancient sceptre",
-    "id": 25489,
-    "version": "",
+    "id": 28238,
+    "version": "Broken",
+    "slot": "weapon",
+    "image": "Blood ancient sceptre (broken).png",
+    "speed": 4,
+    "category": "Staff",
+    "offensive": [
+      50,
+      5,
+      20,
+      0,
+      0,
+      -1,
+      20,
+      60
+    ],
+    "defensive": [
+      1,
+      15,
+      0,
+      3,
+      2,
+      -1
+    ],
+    "isTwoHanded": false
+  },
+  "28473": {
+    "name": "Blood ancient sceptre",
+    "id": 28473,
+    "version": "Locked",
+    "slot": "weapon",
+    "image": "Blood ancient sceptre.png",
+    "speed": 4,
+    "category": "Staff",
+    "offensive": [
+      50,
+      5,
+      20,
+      0,
+      0,
+      -1,
+      20,
+      60
+    ],
+    "defensive": [
+      1,
+      15,
+      0,
+      3,
+      2,
+      -1
+    ],
+    "isTwoHanded": false
+  },
+  "28260": {
+    "name": "Blood ancient sceptre",
+    "id": 28260,
+    "version": "Normal",
     "slot": "weapon",
     "image": "Blood ancient sceptre.png",
     "speed": 4,
@@ -19246,7 +19414,7 @@
     "offensive": [
       0,
       0,
-      18,
+      21,
       0,
       0,
       0,
@@ -19358,7 +19526,7 @@
     "offensive": [
       0,
       0,
-      13,
+      16,
       0,
       0,
       0,
@@ -23911,6 +24079,34 @@
     ],
     "isTwoHanded": false
   },
+  "28196": {
+    "name": "Bronze felling axe",
+    "id": 28196,
+    "version": "",
+    "slot": "weapon",
+    "image": "Bronze felling axe.png",
+    "speed": 5,
+    "category": "Axe",
+    "offensive": [
+      2,
+      0,
+      0,
+      0,
+      0,
+      4,
+      -2,
+      5
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
   "942": {
     "name": "Bronze fire arrow",
     "id": 942,
@@ -24660,7 +24856,7 @@
     "defensive": [
       2,
       -1,
-      4,
+      3,
       4,
       3,
       0
@@ -27672,14 +27868,14 @@
     "speed": 4,
     "category": "Blunt",
     "offensive": [
-      -50,
+      -100,
       0,
       0,
       0,
       0,
       -100,
       -100,
-      -10
+      -100
     ],
     "defensive": [
       0,
@@ -30239,6 +30435,34 @@
     ],
     "isTwoHanded": true
   },
+  "28601": {
+    "name": "Cobweb cape",
+    "id": 28601,
+    "version": "",
+    "slot": "cape",
+    "image": "Cobweb cape.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
   "1169": {
     "name": "Coif",
     "id": 1169,
@@ -30771,6 +30995,34 @@
     ],
     "isTwoHanded": false
   },
+  "28537": {
+    "name": "Corrupted armadyl godsword",
+    "id": 28537,
+    "version": "",
+    "slot": "weapon",
+    "image": "Corrupted armadyl godsword.png",
+    "speed": 6,
+    "category": "2h Sword",
+    "offensive": [
+      64,
+      0,
+      0,
+      0,
+      0,
+      106,
+      0,
+      106
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      7
+    ],
+    "isTwoHanded": true
+  },
   "23821": {
     "name": "Corrupted axe",
     "id": 23821,
@@ -30907,7 +31159,7 @@
       0,
       0,
       0,
-      1
+      2
     ],
     "isTwoHanded": true
   },
@@ -30964,6 +31216,34 @@
       0,
       0,
       3
+    ],
+    "isTwoHanded": true
+  },
+  "28534": {
+    "name": "Corrupted dragon claws",
+    "id": 28534,
+    "version": "",
+    "slot": "weapon",
+    "image": "Corrupted dragon claws.png",
+    "speed": 4,
+    "category": "Claw",
+    "offensive": [
+      -4,
+      0,
+      0,
+      0,
+      0,
+      46,
+      33,
+      45
+    ],
+    "defensive": [
+      6,
+      0,
+      0,
+      21,
+      11,
+      0
     ],
     "isTwoHanded": true
   },
@@ -31527,6 +31807,62 @@
     ],
     "isTwoHanded": false
   },
+  "28543": {
+    "name": "Corrupted scythe of vitur",
+    "id": 28543,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Corrupted scythe of vitur.png",
+    "speed": 5,
+    "category": "Scythe",
+    "offensive": [
+      24,
+      0,
+      -6,
+      0,
+      0,
+      88,
+      56,
+      60
+    ],
+    "defensive": [
+      8,
+      0,
+      0,
+      7,
+      -2,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28545": {
+    "name": "Corrupted scythe of vitur",
+    "id": 28545,
+    "version": "Uncharged",
+    "slot": "weapon",
+    "image": "Corrupted scythe of vitur (uncharged).png",
+    "speed": 5,
+    "category": "Scythe",
+    "offensive": [
+      8,
+      0,
+      -6,
+      0,
+      0,
+      60,
+      40,
+      40
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      5,
+      -2,
+      0
+    ],
+    "isTwoHanded": true
+  },
   "23853": {
     "name": "Corrupted staff (attuned)",
     "id": 23853,
@@ -31620,13 +31956,13 @@
     "speed": 0,
     "category": "",
     "offensive": [
-      4,
+      6,
       0,
       -6,
       -2,
       0,
-      3,
-      3,
+      1,
+      1,
       2
     ],
     "defensive": [
@@ -31648,13 +31984,13 @@
     "speed": 0,
     "category": "",
     "offensive": [
-      7,
+      14,
       0,
       -30,
       -15,
       0,
-      5,
-      5,
+      2,
+      2,
       4
     ],
     "defensive": [
@@ -31676,13 +32012,13 @@
     "speed": 0,
     "category": "",
     "offensive": [
-      5,
+      10,
       0,
       -26,
       -13,
       0,
-      3,
-      3,
+      1,
+      1,
       2
     ],
     "defensive": [
@@ -31695,6 +32031,90 @@
     ],
     "isTwoHanded": false
   },
+  "28547": {
+    "name": "Corrupted tumeken's shadow",
+    "id": 28547,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Corrupted tumeken's shadow.png",
+    "speed": 5,
+    "category": "Powered Staff",
+    "offensive": [
+      0,
+      0,
+      35,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      20,
+      0,
+      0,
+      0,
+      1
+    ],
+    "isTwoHanded": true
+  },
+  "28549": {
+    "name": "Corrupted tumeken's shadow",
+    "id": 28549,
+    "version": "Uncharged",
+    "slot": "weapon",
+    "image": "Corrupted tumeken's shadow (uncharged).png",
+    "speed": 5,
+    "category": "Powered Staff",
+    "offensive": [
+      0,
+      0,
+      35,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      20,
+      0,
+      0,
+      0,
+      1
+    ],
+    "isTwoHanded": true
+  },
+  "28540": {
+    "name": "Corrupted twisted bow",
+    "id": 28540,
+    "version": "",
+    "slot": "weapon",
+    "image": "Corrupted twisted bow.png",
+    "speed": 6,
+    "category": "Bow",
+    "offensive": [
+      0,
+      0,
+      0,
+      56,
+      2,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
   "27842": {
     "name": "Corrupted vesta's chainbody (bh)",
     "id": 27842,
@@ -31704,13 +32124,13 @@
     "speed": 0,
     "category": "",
     "offensive": [
-      8,
+      4,
       0,
       -28,
       -14,
       0,
-      8,
-      8,
+      14,
+      14,
       5
     ],
     "defensive": [
@@ -31732,13 +32152,13 @@
     "speed": 0,
     "category": "",
     "offensive": [
-      6,
+      3,
       0,
       -24,
       -12,
       0,
-      6,
-      6,
+      10,
+      10,
       2
     ],
     "defensive": [
@@ -31747,6 +32167,34 @@
       22,
       20,
       22,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28531": {
+    "name": "Corrupted voidwaker",
+    "id": 28531,
+    "version": "",
+    "slot": "weapon",
+    "image": "Corrupted voidwaker.png",
+    "speed": 4,
+    "category": "Slash Sword",
+    "offensive": [
+      -2,
+      0,
+      4,
+      0,
+      0,
+      64,
+      56,
+      64
+    ],
+    "defensive": [
+      0,
+      2,
+      0,
+      1,
+      0,
       0
     ],
     "isTwoHanded": false
@@ -31761,7 +32209,7 @@
     "category": "",
     "offensive": [
       0,
-      0,
+      1,
       5,
       -1,
       0,
@@ -31789,7 +32237,7 @@
     "category": "",
     "offensive": [
       0,
-      0,
+      2,
       18,
       -6,
       0,
@@ -31817,7 +32265,7 @@
     "category": "",
     "offensive": [
       0,
-      0,
+      3,
       25,
       -8,
       0,
@@ -33231,7 +33679,7 @@
       0,
       0,
       0,
-      1
+      2
     ],
     "isTwoHanded": true
   },
@@ -34158,6 +34606,62 @@
       0
     ],
     "isTwoHanded": false
+  },
+  "28220": {
+    "name": "Crystal felling axe",
+    "id": 28220,
+    "version": "Active",
+    "slot": "weapon",
+    "image": "Crystal felling axe.png",
+    "speed": 7,
+    "category": "Axe",
+    "offensive": [
+      51,
+      0,
+      0,
+      0,
+      0,
+      60,
+      -3,
+      67
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28223": {
+    "name": "Crystal felling axe",
+    "id": 28223,
+    "version": "Inactive",
+    "slot": "weapon",
+    "image": "Crystal felling axe (inactive).png",
+    "speed": 7,
+    "category": "Axe",
+    "offensive": [
+      51,
+      0,
+      0,
+      0,
+      0,
+      60,
+      -3,
+      67
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "isTwoHanded": true
   },
   "24000": {
     "name": "Crystal grail",
@@ -37108,14 +37612,14 @@
     "speed": 4,
     "category": "Blunt",
     "offensive": [
+      -100,
       0,
       0,
       0,
       0,
-      0,
-      0,
-      0,
-      0
+      -100,
+      -100,
+      -100
     ],
     "defensive": [
       0,
@@ -37133,7 +37637,7 @@
     "version": "",
     "slot": "weapon",
     "image": "Cursed goblin staff.png",
-    "speed": 5,
+    "speed": 4,
     "category": "Staff",
     "offensive": [
       0,
@@ -43287,6 +43791,34 @@
     ],
     "isTwoHanded": false
   },
+  "28217": {
+    "name": "Dragon felling axe",
+    "id": 28217,
+    "version": "",
+    "slot": "weapon",
+    "image": "Dragon felling axe.png",
+    "speed": 7,
+    "category": "Axe",
+    "offensive": [
+      51,
+      0,
+      0,
+      0,
+      0,
+      60,
+      -3,
+      67
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
   "11222": {
     "name": "Dragon fire arrow",
     "id": 11222,
@@ -46121,7 +46653,7 @@
     "version": "",
     "slot": "weapon",
     "image": "Easter blaster.png",
-    "speed": 5,
+    "speed": -1,
     "category": "Blaster",
     "offensive": [
       0,
@@ -48187,6 +48719,34 @@
     ],
     "isTwoHanded": false
   },
+  "22517": {
+    "name": "Escape crystal",
+    "id": 22517,
+    "version": "",
+    "slot": "ring",
+    "image": "Escape crystal.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
   "13235": {
     "name": "Eternal boots",
     "id": 13235,
@@ -48827,6 +49387,34 @@
       0,
       1,
       0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28672": {
+    "name": "Fancier boots",
+    "id": 28672,
+    "version": "",
+    "slot": "feet",
+    "image": "Fancier boots.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      -3,
+      -1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      3,
+      0,
+      0,
+      2,
+      1,
       0
     ],
     "isTwoHanded": false
@@ -50707,6 +51295,202 @@
     ],
     "isTwoHanded": false
   },
+  "28143": {
+    "name": "Forestry basket",
+    "id": 28143,
+    "version": "Closed",
+    "slot": "cape",
+    "image": "Forestry basket.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28145": {
+    "name": "Forestry basket",
+    "id": 28145,
+    "version": "Open",
+    "slot": "cape",
+    "image": "Open forestry basket.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28175": {
+    "name": "Forestry boots",
+    "id": 28175,
+    "version": "",
+    "slot": "feet",
+    "image": "Forestry boots.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28173": {
+    "name": "Forestry hat",
+    "id": 28173,
+    "version": "",
+    "slot": "head",
+    "image": "Forestry hat.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28136": {
+    "name": "Forestry kit",
+    "id": 28136,
+    "version": "",
+    "slot": "cape",
+    "image": "Forestry kit.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28171": {
+    "name": "Forestry legs",
+    "id": 28171,
+    "version": "",
+    "slot": "legs",
+    "image": "Forestry legs.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28169": {
+    "name": "Forestry top",
+    "id": 28169,
+    "version": "",
+    "slot": "body",
+    "image": "Forestry top.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
   "8863": {
     "name": "Four barrels",
     "id": 8863,
@@ -51802,7 +52586,7 @@
   "3867": {
     "name": "Games necklace",
     "id": 3867,
-    "version": "(1)",
+    "version": "1",
     "slot": "neck",
     "image": "Games necklace.png",
     "speed": 0,
@@ -51830,7 +52614,7 @@
   "3865": {
     "name": "Games necklace",
     "id": 3865,
-    "version": "(2)",
+    "version": "2",
     "slot": "neck",
     "image": "Games necklace.png",
     "speed": 0,
@@ -51858,7 +52642,7 @@
   "3863": {
     "name": "Games necklace",
     "id": 3863,
-    "version": "(3)",
+    "version": "3",
     "slot": "neck",
     "image": "Games necklace.png",
     "speed": 0,
@@ -51886,7 +52670,7 @@
   "3861": {
     "name": "Games necklace",
     "id": 3861,
-    "version": "(4)",
+    "version": "4",
     "slot": "neck",
     "image": "Games necklace.png",
     "speed": 0,
@@ -51914,7 +52698,7 @@
   "3859": {
     "name": "Games necklace",
     "id": 3859,
-    "version": "(5)",
+    "version": "5",
     "slot": "neck",
     "image": "Games necklace.png",
     "speed": 0,
@@ -51942,7 +52726,7 @@
   "3857": {
     "name": "Games necklace",
     "id": 3857,
-    "version": "(6)",
+    "version": "6",
     "slot": "neck",
     "image": "Games necklace.png",
     "speed": 0,
@@ -51970,7 +52754,7 @@
   "3855": {
     "name": "Games necklace",
     "id": 3855,
-    "version": "(7)",
+    "version": "7",
     "slot": "neck",
     "image": "Games necklace.png",
     "speed": 0,
@@ -51998,7 +52782,7 @@
   "3853": {
     "name": "Games necklace",
     "id": 3853,
-    "version": "(8)",
+    "version": "8",
     "slot": "neck",
     "image": "Games necklace(8).png",
     "speed": 0,
@@ -63092,14 +63876,14 @@
     "speed": 4,
     "category": "Blunt",
     "offensive": [
-      -50,
+      -100,
       0,
       0,
       0,
       0,
       -100,
       -100,
-      -10
+      -100
     ],
     "defensive": [
       0,
@@ -63307,10 +64091,66 @@
     ],
     "isTwoHanded": false
   },
-  "25490": {
+  "28242": {
     "name": "Ice ancient sceptre",
-    "id": 25490,
-    "version": "",
+    "id": 28242,
+    "version": "Broken",
+    "slot": "weapon",
+    "image": "Ice ancient sceptre (broken).png",
+    "speed": 4,
+    "category": "Staff",
+    "offensive": [
+      50,
+      5,
+      20,
+      0,
+      0,
+      -1,
+      20,
+      60
+    ],
+    "defensive": [
+      1,
+      15,
+      0,
+      3,
+      2,
+      -1
+    ],
+    "isTwoHanded": false
+  },
+  "28474": {
+    "name": "Ice ancient sceptre",
+    "id": 28474,
+    "version": "Locked",
+    "slot": "weapon",
+    "image": "Ice ancient sceptre.png",
+    "speed": 4,
+    "category": "Staff",
+    "offensive": [
+      50,
+      5,
+      20,
+      0,
+      0,
+      -1,
+      20,
+      60
+    ],
+    "defensive": [
+      1,
+      15,
+      0,
+      3,
+      2,
+      -1
+    ],
+    "isTwoHanded": false
+  },
+  "28262": {
+    "name": "Ice ancient sceptre",
+    "id": 28262,
+    "version": "Normal",
     "slot": "weapon",
     "image": "Ice ancient sceptre.png",
     "speed": 4,
@@ -66218,6 +67058,34 @@
       0
     ],
     "isTwoHanded": false
+  },
+  "28199": {
+    "name": "Iron felling axe",
+    "id": 28199,
+    "version": "",
+    "slot": "weapon",
+    "image": "Iron felling axe.png",
+    "speed": 5,
+    "category": "Axe",
+    "offensive": [
+      3,
+      0,
+      0,
+      0,
+      0,
+      5,
+      -2,
+      7
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "isTwoHanded": true
   },
   "2533": {
     "name": "Iron fire arrow",
@@ -71259,6 +72127,62 @@
     ],
     "isTwoHanded": false
   },
+  "28140": {
+    "name": "Log basket",
+    "id": 28140,
+    "version": "Closed",
+    "slot": "cape",
+    "image": "Log basket.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28142": {
+    "name": "Log basket",
+    "id": 28142,
+    "version": "Open",
+    "slot": "cape",
+    "image": "Open log basket.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
   "10159": {
     "name": "Long kebbit bolts",
     "id": 10159,
@@ -71510,6 +72434,34 @@
       0
     ],
     "isTwoHanded": false
+  },
+  "28128": {
+    "name": "Love crossbow",
+    "id": 28128,
+    "version": "",
+    "slot": "weapon",
+    "image": "Love crossbow.png",
+    "speed": 3,
+    "category": "Blunt",
+    "offensive": [
+      -50,
+      0,
+      0,
+      0,
+      0,
+      -100,
+      -100,
+      -20
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
   },
   "7140": {
     "name": "Lucky cutlass",
@@ -72295,6 +73247,34 @@
     ],
     "isTwoHanded": false
   },
+  "28426": {
+    "name": "Magic lantern",
+    "id": 28426,
+    "version": "",
+    "slot": "shield",
+    "image": "Magic lantern.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
   "859": {
     "name": "Magic longbow",
     "id": 859,
@@ -72532,6 +73512,34 @@
       0,
       -5,
       -5,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28313": {
+    "name": "Magus ring",
+    "id": 28313,
+    "version": "",
+    "slot": "ring",
+    "image": "Magus ring.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      2,
+      15,
+      0,
       0,
       0,
       0,
@@ -75178,6 +76186,34 @@
       0
     ],
     "isTwoHanded": false
+  },
+  "28208": {
+    "name": "Mithril felling axe",
+    "id": 28208,
+    "version": "",
+    "slot": "weapon",
+    "image": "Mithril felling axe.png",
+    "speed": 5,
+    "category": "Axe",
+    "offensive": [
+      10,
+      0,
+      0,
+      0,
+      0,
+      12,
+      -2,
+      13
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "isTwoHanded": true
   },
   "2537": {
     "name": "Mithril fire arrow",
@@ -79976,14 +81012,14 @@
     "speed": 4,
     "category": "Blunt",
     "offensive": [
-      -50,
+      -100,
       0,
       0,
       0,
       0,
       -100,
       -100,
-      -10
+      -100
     ],
     "defensive": [
       0,
@@ -80004,14 +81040,14 @@
     "speed": 4,
     "category": "Blunt",
     "offensive": [
-      -50,
+      -100,
       0,
       0,
       0,
       0,
       -100,
       -100,
-      -10
+      -100
     ],
     "defensive": [
       0,
@@ -82235,6 +83271,34 @@
     ],
     "isTwoHanded": true
   },
+  "28655": {
+    "name": "Petal garland",
+    "id": 28655,
+    "version": "",
+    "slot": "neck",
+    "image": "Petal garland.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
   "26948": {
     "name": "Pharaoh's sceptre",
     "id": 26948,
@@ -82268,7 +83332,7 @@
     "id": 26945,
     "version": "Uncharged",
     "slot": "weapon",
-    "image": "Pharaoh's sceptre.png",
+    "image": "Pharaoh's sceptre (uncharged).png",
     "speed": 4,
     "category": "Polestaff",
     "offensive": [
@@ -82299,6 +83363,118 @@
     "image": "Phasmatys flag.png",
     "speed": 4,
     "category": "Banner",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28618": {
+    "name": "Pheasant boots",
+    "id": 28618,
+    "version": "",
+    "slot": "feet",
+    "image": "Pheasant boots.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28616": {
+    "name": "Pheasant cape",
+    "id": 28616,
+    "version": "",
+    "slot": "cape",
+    "image": "Pheasant cape.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28620": {
+    "name": "Pheasant hat",
+    "id": 28620,
+    "version": "",
+    "slot": "head",
+    "image": "Pheasant hat.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28622": {
+    "name": "Pheasant legs",
+    "id": 28622,
+    "version": "",
+    "slot": "legs",
+    "image": "Pheasant legs.png",
+    "speed": 0,
+    "category": "",
     "offensive": [
       0,
       0,
@@ -83382,6 +84558,34 @@
       0
     ],
     "isTwoHanded": true
+  },
+  "28126": {
+    "name": "Poet's jacket",
+    "id": 28126,
+    "version": "",
+    "slot": "body",
+    "image": "Poet's jacket.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
   },
   "10067": {
     "name": "Polar camo legs",
@@ -85203,6 +86407,258 @@
     ],
     "isTwoHanded": true
   },
+  "28119": {
+    "name": "Rainbow jumper",
+    "id": 28119,
+    "version": "Asexual",
+    "slot": "body",
+    "image": "Colourful jumper (asexual).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28118": {
+    "name": "Rainbow jumper",
+    "id": 28118,
+    "version": "Bisexual",
+    "slot": "body",
+    "image": "Colourful jumper (bisexual).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28125": {
+    "name": "Rainbow jumper",
+    "id": 28125,
+    "version": "Gay",
+    "slot": "body",
+    "image": "Colourful jumper (gay).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28123": {
+    "name": "Rainbow jumper",
+    "id": 28123,
+    "version": "Genderqueer",
+    "slot": "body",
+    "image": "Colourful jumper (genderqueer).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28124": {
+    "name": "Rainbow jumper",
+    "id": 28124,
+    "version": "Lesbian",
+    "slot": "body",
+    "image": "Colourful jumper (lesbian).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28122": {
+    "name": "Rainbow jumper",
+    "id": 28122,
+    "version": "Non-binary",
+    "slot": "body",
+    "image": "Colourful jumper (non-binary).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28121": {
+    "name": "Rainbow jumper",
+    "id": 28121,
+    "version": "Pansexual",
+    "slot": "body",
+    "image": "Colourful jumper (pansexual).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28116": {
+    "name": "Rainbow jumper",
+    "id": 28116,
+    "version": "Pride",
+    "slot": "body",
+    "image": "Rainbow jumper.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28120": {
+    "name": "Rainbow jumper",
+    "id": 28120,
+    "version": "Transgender",
+    "slot": "body",
+    "image": "Colourful jumper (transgender).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
   "11863": {
     "name": "Rainbow partyhat",
     "id": 11863,
@@ -85231,12 +86687,236 @@
     ],
     "isTwoHanded": false
   },
+  "28109": {
+    "name": "Rainbow scarf",
+    "id": 28109,
+    "version": "Asexual",
+    "slot": "neck",
+    "image": "Colourful scarf (asexual).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28108": {
+    "name": "Rainbow scarf",
+    "id": 28108,
+    "version": "Bisexual",
+    "slot": "neck",
+    "image": "Colourful scarf (bisexual).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28115": {
+    "name": "Rainbow scarf",
+    "id": 28115,
+    "version": "Gay",
+    "slot": "neck",
+    "image": "Colourful scarf (gay).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28113": {
+    "name": "Rainbow scarf",
+    "id": 28113,
+    "version": "Genderqueer",
+    "slot": "neck",
+    "image": "Colourful scarf (genderqueer).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28114": {
+    "name": "Rainbow scarf",
+    "id": 28114,
+    "version": "Lesbian",
+    "slot": "neck",
+    "image": "Colourful scarf (lesbian).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28112": {
+    "name": "Rainbow scarf",
+    "id": 28112,
+    "version": "Non-binary",
+    "slot": "neck",
+    "image": "Colourful scarf (non-binary).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28111": {
+    "name": "Rainbow scarf",
+    "id": 28111,
+    "version": "Pansexual",
+    "slot": "neck",
+    "image": "Colourful scarf (pansexual).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
   "21314": {
     "name": "Rainbow scarf",
     "id": 21314,
-    "version": "",
+    "version": "Pride",
     "slot": "neck",
     "image": "Rainbow scarf.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28110": {
+    "name": "Rainbow scarf",
+    "id": 28110,
+    "version": "Transgender",
+    "slot": "neck",
+    "image": "Colourful scarf (transgender).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -87112,7 +88792,7 @@
     "id": 6465,
     "version": "Activated",
     "slot": "ring",
-    "image": "Ring of charos (a).png",
+    "image": "Ring of charos(a).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -87751,6 +89431,62 @@
     ],
     "isTwoHanded": false
   },
+  "28327": {
+    "name": "Ring of shadows",
+    "id": 28327,
+    "version": "Charged",
+    "slot": "ring",
+    "image": "Ring of shadows.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      4,
+      0,
+      5,
+      4,
+      0,
+      4,
+      4,
+      2
+    ],
+    "defensive": [
+      0,
+      5,
+      0,
+      0,
+      0,
+      2
+    ],
+    "isTwoHanded": false
+  },
+  "28329": {
+    "name": "Ring of shadows",
+    "id": 28329,
+    "version": "Uncharged",
+    "slot": "ring",
+    "image": "Ring of shadows (uncharged).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      4,
+      0,
+      5,
+      4,
+      0,
+      4,
+      4,
+      2
+    ],
+    "defensive": [
+      0,
+      5,
+      0,
+      0,
+      0,
+      2
+    ],
+    "isTwoHanded": false
+  },
   "6583": {
     "name": "Ring of stone",
     "id": 6583,
@@ -88056,118 +89792,6 @@
       1,
       1,
       8
-    ],
-    "isTwoHanded": false
-  },
-  "25485": {
-    "name": "Ring of true blood",
-    "id": 25485,
-    "version": "",
-    "slot": "ring",
-    "image": "Ring of true blood.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      12
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  "25486": {
-    "name": "Ring of true ice",
-    "id": 25486,
-    "version": "",
-    "slot": "ring",
-    "image": "Ring of true ice.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      2,
-      15,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  "25488": {
-    "name": "Ring of true shadow",
-    "id": 25488,
-    "version": "",
-    "slot": "ring",
-    "image": "Ring of true shadow.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      12,
-      0,
-      4
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  "25487": {
-    "name": "Ring of true smoke",
-    "id": 25487,
-    "version": "",
-    "slot": "ring",
-    "image": "Ring of true smoke.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      10,
-      2,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "isTwoHanded": false
   },
@@ -90774,6 +92398,34 @@
       0
     ],
     "isTwoHanded": false
+  },
+  "28214": {
+    "name": "Rune felling axe",
+    "id": 28214,
+    "version": "",
+    "slot": "weapon",
+    "image": "Rune felling axe.png",
+    "speed": 5,
+    "category": "Axe",
+    "offensive": [
+      24,
+      0,
+      0,
+      0,
+      0,
+      26,
+      -2,
+      29
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "isTwoHanded": true
   },
   "2541": {
     "name": "Rune fire arrow",
@@ -94779,6 +96431,90 @@
     ],
     "isTwoHanded": true
   },
+  "28254": {
+    "name": "Sanguine torva full helm",
+    "id": 28254,
+    "version": "",
+    "slot": "head",
+    "image": "Sanguine torva full helm.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      -5,
+      -5,
+      0,
+      0,
+      0,
+      8
+    ],
+    "defensive": [
+      62,
+      -2,
+      57,
+      60,
+      59,
+      1
+    ],
+    "isTwoHanded": false
+  },
+  "28256": {
+    "name": "Sanguine torva platebody",
+    "id": 28256,
+    "version": "",
+    "slot": "body",
+    "image": "Sanguine torva platebody.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      -18,
+      -14,
+      0,
+      0,
+      0,
+      6
+    ],
+    "defensive": [
+      117,
+      -11,
+      142,
+      111,
+      117,
+      1
+    ],
+    "isTwoHanded": false
+  },
+  "28258": {
+    "name": "Sanguine torva platelegs",
+    "id": 28258,
+    "version": "",
+    "slot": "legs",
+    "image": "Sanguine torva platelegs.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      -24,
+      -11,
+      0,
+      0,
+      0,
+      4
+    ],
+    "defensive": [
+      79,
+      -9,
+      102,
+      78,
+      87,
+      1
+    ],
+    "isTwoHanded": false
+  },
   "22323": {
     "name": "Sanguinesti staff",
     "id": 22323,
@@ -96879,10 +98615,66 @@
     ],
     "isTwoHanded": false
   },
-  "25492": {
+  "28244": {
     "name": "Shadow ancient sceptre",
-    "id": 25492,
-    "version": "",
+    "id": 28244,
+    "version": "Broken",
+    "slot": "weapon",
+    "image": "Shadow ancient sceptre (broken).png",
+    "speed": 4,
+    "category": "Staff",
+    "offensive": [
+      50,
+      5,
+      20,
+      0,
+      0,
+      -1,
+      20,
+      60
+    ],
+    "defensive": [
+      1,
+      15,
+      0,
+      3,
+      2,
+      -1
+    ],
+    "isTwoHanded": false
+  },
+  "28476": {
+    "name": "Shadow ancient sceptre",
+    "id": 28476,
+    "version": "Locked",
+    "slot": "weapon",
+    "image": "Shadow ancient sceptre.png",
+    "speed": 4,
+    "category": "Staff",
+    "offensive": [
+      50,
+      5,
+      20,
+      0,
+      0,
+      -1,
+      20,
+      60
+    ],
+    "defensive": [
+      1,
+      15,
+      0,
+      3,
+      2,
+      -1
+    ],
+    "isTwoHanded": false
+  },
+  "28266": {
+    "name": "Shadow ancient sceptre",
+    "id": 28266,
+    "version": "Normal",
     "slot": "weapon",
     "image": "Shadow ancient sceptre.png",
     "speed": 4,
@@ -100939,10 +102731,66 @@
     ],
     "isTwoHanded": false
   },
-  "25491": {
+  "28240": {
     "name": "Smoke ancient sceptre",
-    "id": 25491,
-    "version": "",
+    "id": 28240,
+    "version": "Broken",
+    "slot": "weapon",
+    "image": "Smoke ancient sceptre (broken).png",
+    "speed": 4,
+    "category": "Staff",
+    "offensive": [
+      50,
+      5,
+      20,
+      0,
+      0,
+      -1,
+      20,
+      60
+    ],
+    "defensive": [
+      1,
+      15,
+      0,
+      3,
+      2,
+      -1
+    ],
+    "isTwoHanded": false
+  },
+  "28475": {
+    "name": "Smoke ancient sceptre",
+    "id": 28475,
+    "version": "Locked",
+    "slot": "weapon",
+    "image": "Smoke ancient sceptre.png",
+    "speed": 4,
+    "category": "Staff",
+    "offensive": [
+      50,
+      5,
+      20,
+      0,
+      0,
+      -1,
+      20,
+      60
+    ],
+    "defensive": [
+      1,
+      15,
+      0,
+      3,
+      2,
+      -1
+    ],
+    "isTwoHanded": false
+  },
+  "28264": {
+    "name": "Smoke ancient sceptre",
+    "id": 28264,
+    "version": "Normal",
     "slot": "weapon",
     "image": "Smoke ancient sceptre.png",
     "speed": 4,
@@ -101639,9 +103487,9 @@
     ],
     "isTwoHanded": false
   },
-  "25484": {
+  "28338": {
     "name": "Soulreaper axe",
-    "id": 25484,
+    "id": 28338,
     "version": "",
     "slot": "weapon",
     "image": "Soulreaper axe.png",
@@ -101655,7 +103503,7 @@
       0,
       134,
       28,
-      115
+      121
     ],
     "defensive": [
       0,
@@ -101748,6 +103596,146 @@
       55,
       53,
       3
+    ],
+    "isTwoHanded": false
+  },
+  "28603": {
+    "name": "Spider hat",
+    "id": 28603,
+    "version": "Common",
+    "slot": "head",
+    "image": "Spider hat.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28611": {
+    "name": "Spider hat",
+    "id": 28611,
+    "version": "Old",
+    "slot": "head",
+    "image": "Spider hat (Old).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28609": {
+    "name": "Spider hat",
+    "id": 28609,
+    "version": "Sarachnis",
+    "slot": "head",
+    "image": "Spider hat (Sarachnis).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28605": {
+    "name": "Spider hat",
+    "id": 28605,
+    "version": "Venenatis",
+    "slot": "head",
+    "image": "Spider hat (Venenatis).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28607": {
+    "name": "Spider hat",
+    "id": 28607,
+    "version": "Verzik",
+    "slot": "head",
+    "image": "Spider hat (Verzik).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "isTwoHanded": false
   },
@@ -103132,13 +105120,13 @@
     "speed": 0,
     "category": "",
     "offensive": [
-      5,
+      6,
       0,
       -6,
       -2,
       0,
-      3,
-      3,
+      1,
+      1,
       3
     ],
     "defensive": [
@@ -103188,13 +105176,13 @@
     "speed": 0,
     "category": "",
     "offensive": [
-      7,
+      14,
       0,
       -38,
       -17,
       0,
-      5,
-      5,
+      2,
+      2,
       5
     ],
     "defensive": [
@@ -103203,7 +105191,7 @@
       105,
       97,
       102,
-      1
+      3
     ],
     "isTwoHanded": false
   },
@@ -103244,13 +105232,13 @@
     "speed": 0,
     "category": "",
     "offensive": [
-      5,
+      10,
       0,
       -30,
       -12,
       0,
-      3,
-      3,
+      1,
+      1,
       3
     ],
     "defensive": [
@@ -103259,7 +105247,7 @@
       95,
       71,
       73,
-      1
+      3
     ],
     "isTwoHanded": false
   },
@@ -104242,6 +106230,34 @@
       0
     ],
     "isTwoHanded": false
+  },
+  "28202": {
+    "name": "Steel felling axe",
+    "id": 28202,
+    "version": "",
+    "slot": "weapon",
+    "image": "Steel felling axe.png",
+    "speed": 5,
+    "category": "Axe",
+    "offensive": [
+      6,
+      0,
+      0,
+      0,
+      0,
+      8,
+      -2,
+      9
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "isTwoHanded": true
   },
   "2535": {
     "name": "Steel fire arrow",
@@ -113763,6 +115779,34 @@
     ],
     "isTwoHanded": false
   },
+  "28630": {
+    "name": "Twitcher's gloves",
+    "id": 28630,
+    "version": "",
+    "slot": "hands",
+    "image": "Twitcher's gloves.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
   "8861": {
     "name": "Two barrels",
     "id": 8861,
@@ -114375,6 +116419,34 @@
       10,
       10,
       11,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28307": {
+    "name": "Ultor ring",
+    "id": 28307,
+    "version": "",
+    "slot": "ring",
+    "image": "Ultor ring.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      12
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
       0
     ],
     "isTwoHanded": false
@@ -114994,6 +117066,34 @@
       0
     ],
     "isTwoHanded": true
+  },
+  "28310": {
+    "name": "Venator ring",
+    "id": 28310,
+    "version": "",
+    "slot": "ring",
+    "image": "Venator ring.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      10,
+      2,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
   },
   "4992": {
     "name": "Verac's brassard",
@@ -115844,13 +117944,13 @@
     "speed": 0,
     "category": "",
     "offensive": [
-      9,
+      4,
       0,
       -32,
       -15,
       0,
-      9,
-      9,
+      14,
+      14,
       6
     ],
     "defensive": [
@@ -115984,13 +118084,13 @@
     "speed": 0,
     "category": "",
     "offensive": [
-      7,
+      3,
       0,
       -30,
       -12,
       0,
-      7,
-      7,
+      10,
+      10,
       3
     ],
     "defensive": [
@@ -116741,7 +118841,7 @@
     "category": "",
     "offensive": [
       0,
-      0,
+      1,
       8,
       -3,
       0,
@@ -116769,7 +118869,7 @@
     "category": "",
     "offensive": [
       0,
-      0,
+      1,
       26,
       -9,
       0,
@@ -116797,7 +118897,7 @@
     "category": "",
     "offensive": [
       0,
-      0,
+      1,
       35,
       -11,
       0,
@@ -118999,6 +121099,62 @@
     ],
     "isTwoHanded": false
   },
+  "28585": {
+    "name": "Warped sceptre",
+    "id": 28585,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Warped sceptre.png",
+    "speed": 4,
+    "category": "Powered Staff",
+    "offensive": [
+      0,
+      0,
+      12,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      1,
+      12,
+      0,
+      3,
+      2,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28583": {
+    "name": "Warped sceptre",
+    "id": 28583,
+    "version": "Uncharged",
+    "slot": "weapon",
+    "image": "Warped sceptre (uncharged).png",
+    "speed": 4,
+    "category": "Powered Staff",
+    "offensive": [
+      0,
+      0,
+      12,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      1,
+      12,
+      0,
+      3,
+      2,
+      0
+    ],
+    "isTwoHanded": false
+  },
   "3753": {
     "name": "Warrior helm",
     "id": 3753,
@@ -119173,6 +121329,34 @@
     "version": "",
     "slot": "head",
     "image": "Water tiara.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28671": {
+    "name": "Web cloak",
+    "id": 28671,
+    "version": "",
+    "slot": "cape",
+    "image": "Web cloak.png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -124301,7 +126485,7 @@
     "category": "",
     "offensive": [
       0,
-      0,
+      1,
       8,
       -2,
       0,
@@ -124357,7 +126541,7 @@
     "category": "",
     "offensive": [
       0,
-      0,
+      2,
       25,
       -7,
       0,
@@ -124413,7 +126597,7 @@
     "category": "",
     "offensive": [
       0,
-      0,
+      3,
       35,
       -10,
       0,

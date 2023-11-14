@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {EquipmentPiece, Player, PlayerSkills} from '@/types/Player';
-import equipment from '@/lib/equipment.json';
+import equipment from '../cdn/json/equipment.json';
 import {ImportableData} from "@/types/State";
 
 export const classNames = (...classes: string[]) => {

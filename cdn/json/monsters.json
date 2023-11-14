@@ -278,6 +278,39 @@
     ]
   },
   {
+    "id": 12372,
+    "name": "Abyssal antibody",
+    "version": "",
+    "image": "Abyssal antibody.png",
+    "level": 30,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      1,
+      1,
+      50,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
     "id": 7241,
     "name": "Abyssal demon",
     "version": "Catacombs of Kourend",
@@ -449,6 +482,105 @@
     "attributes": []
   },
   {
+    "id": 12393,
+    "name": "Abyssal leech (The Scar)",
+    "version": "Level 32",
+    "image": "Abyssal leech (The Scar).png",
+    "level": 32,
+    "speed": 2,
+    "size": 1,
+    "skills": [
+      50,
+      1,
+      50,
+      1,
+      1,
+      10
+    ],
+    "offensive": [
+      5,
+      0,
+      0,
+      0,
+      0,
+      10
+    ],
+    "defensive": [
+      10,
+      50,
+      10,
+      50,
+      50
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12366,
+    "name": "Abyssal leech (The Scar)",
+    "version": "Level 46",
+    "image": "Abyssal leech (The Scar, lv 46).png",
+    "level": 46,
+    "speed": 2,
+    "size": 1,
+    "skills": [
+      1,
+      1,
+      30,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12391,
+    "name": "Abyssal leech (The Scar)",
+    "version": "Level 54",
+    "image": "Abyssal leech (The Scar).png",
+    "level": 54,
+    "speed": 2,
+    "size": 1,
+    "skills": [
+      120,
+      30,
+      20,
+      1,
+      1,
+      10
+    ],
+    "offensive": [
+      100,
+      0,
+      0,
+      0,
+      0,
+      10
+    ],
+    "defensive": [
+      100,
+      50,
+      10,
+      50,
+      50
+    ],
+    "attributes": []
+  },
+  {
     "id": 7533,
     "name": "Abyssal portal",
     "version": "Challenge Mode",
@@ -541,6 +673,72 @@
       0,
       0,
       10
+    ],
+    "defensive": [
+      10,
+      75,
+      75,
+      75,
+      75
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12392,
+    "name": "Abyssal walker (The Scar)",
+    "version": "Level 109",
+    "image": "Abyssal walker (The Scar).png",
+    "level": 109,
+    "speed": 5,
+    "size": 0,
+    "skills": [
+      20,
+      95,
+      120,
+      1,
+      1,
+      150
+    ],
+    "offensive": [
+      5,
+      0,
+      0,
+      0,
+      0,
+      10
+    ],
+    "defensive": [
+      10,
+      75,
+      75,
+      75,
+      75
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12394,
+    "name": "Abyssal walker (The Scar)",
+    "version": "Level 90",
+    "image": "Abyssal walker (The Scar).png",
+    "level": 90,
+    "speed": 5,
+    "size": 0,
+    "skills": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "defensive": [
       10,
@@ -783,7 +981,9 @@
       0,
       0
     ],
-    "attributes": []
+    "attributes": [
+      "kalphite"
+    ]
   },
   {
     "id": 6327,
@@ -1454,6 +1654,41 @@
       0
     ],
     "attributes": []
+  },
+  {
+    "id": 12336,
+    "name": "Ancient Guardian (Desert Treasure II)",
+    "version": "",
+    "image": "Ancient Guardian (Desert Treasure II).png",
+    "level": 153,
+    "speed": 5,
+    "size": 3,
+    "skills": [
+      180,
+      100,
+      100,
+      100,
+      0,
+      110
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      20,
+      10,
+      50,
+      40,
+      50
+    ],
+    "attributes": [
+      "golem"
+    ]
   },
   {
     "id": 10654,
@@ -2660,7 +2895,9 @@
       250,
       15
     ],
-    "attributes": []
+    "attributes": [
+      "kalphite"
+    ]
   },
   {
     "id": 3301,
@@ -2971,7 +3208,7 @@
       250,
       150,
       450,
-      1,
+      90,
       120,
       270
     ],
@@ -5542,7 +5779,7 @@
     "image": "Barbarian Warlord.png",
     "level": 91,
     "speed": 6,
-    "size": 0,
+    "size": 1,
     "skills": [
       90,
       50,
@@ -7295,27 +7532,27 @@
     "speed": 5,
     "size": 1,
     "skills": [
-      0,
-      0,
+      25,
+      25,
       42,
-      0,
-      0,
-      0
+      1,
+      1,
+      25
     ],
     "offensive": [
+      18,
       0,
       0,
       0,
       0,
-      0,
-      0
+      16
     ],
     "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
+      70,
+      -11,
+      72,
+      76,
+      73
     ],
     "attributes": []
   },
@@ -10110,7 +10347,7 @@
     "attributes": []
   },
   {
-    "id": 6503,
+    "id": 6609,
     "name": "Callisto",
     "version": "",
     "image": "Callisto.png",
@@ -10121,7 +10358,7 @@
       350,
       225,
       1000,
-      1,
+      140,
       200,
       300
     ],
@@ -10139,6 +10376,39 @@
       50,
       130,
       150
+    ],
+    "attributes": []
+  },
+  {
+    "id": 6503,
+    "name": "Callisto (PvM Arena)",
+    "version": "",
+    "image": "Callisto (PvM Arena).png",
+    "level": 470,
+    "speed": 4,
+    "size": 5,
+    "skills": [
+      350,
+      440,
+      255,
+      1,
+      1,
+      370
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      175,
+      900,
+      230,
+      104,
+      135
     ],
     "attributes": []
   },
@@ -10515,12 +10785,45 @@
     "version": "",
     "image": "Cave abomination.png",
     "level": 206,
-    "speed": 0,
+    "speed": 4,
     "size": 2,
     "skills": [
       230,
       142,
       130,
+      230,
+      1,
+      195
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12454,
+    "name": "Cave abomination (Deadman: Apocalypse)",
+    "version": "",
+    "image": "Cave abomination (Deadman Apocalypse).png",
+    "level": 361,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      230,
+      142,
+      750,
       230,
       1,
       195
@@ -11343,7 +11646,7 @@
     "image": "Champion of Scabaras.png",
     "level": 379,
     "speed": 4,
-    "size": 0,
+    "size": 1,
     "skills": [
       160,
       160,
@@ -11372,7 +11675,7 @@
   {
     "id": 2054,
     "name": "Chaos Elemental",
-    "version": "Normal",
+    "version": "",
     "image": "Chaos Elemental.png",
     "level": 305,
     "speed": 4,
@@ -11404,8 +11707,8 @@
   },
   {
     "id": 6505,
-    "name": "Chaos Elemental",
-    "version": "PvM Arena",
+    "name": "Chaos Elemental (PvM Arena)",
+    "version": "",
     "image": "Chaos Elemental.png",
     "level": 305,
     "speed": 4,
@@ -12436,7 +12739,7 @@
   {
     "id": 2205,
     "name": "Commander Zilyana",
-    "version": "Normal",
+    "version": "",
     "image": "Commander Zilyana.png",
     "level": 596,
     "speed": 2,
@@ -12467,9 +12770,42 @@
     "attributes": []
   },
   {
+    "id": 12445,
+    "name": "Commander Zilyana (Deadman: Apocalypse)",
+    "version": "",
+    "image": "Commander Zilyana (Deadman Apocalypse).png",
+    "level": 596,
+    "speed": 2,
+    "size": 2,
+    "skills": [
+      280,
+      300,
+      500,
+      300,
+      250,
+      196
+    ],
+    "offensive": [
+      195,
+      0,
+      200,
+      0,
+      0,
+      20
+    ],
+    "defensive": [
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "attributes": []
+  },
+  {
     "id": 6493,
-    "name": "Commander Zilyana",
-    "version": "PvM Arena",
+    "name": "Commander Zilyana (PvM Arena)",
+    "version": "",
     "image": "Commander Zilyana.png",
     "level": 596,
     "speed": 2,
@@ -13910,6 +14246,39 @@
     "attributes": []
   },
   {
+    "id": 12369,
+    "name": "Crimson sanguisphera",
+    "version": "",
+    "image": "Crimson sanguisphera.png",
+    "level": 34,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      1,
+      1,
+      20,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
     "id": 4184,
     "name": "Crocodile",
     "version": "",
@@ -15133,42 +15502,9 @@
     "attributes": []
   },
   {
-    "id": 2137,
-    "name": "Cyclops",
-    "version": "Level 106 (Warriors' Guild Basement)",
-    "image": "Cyclops (level 56, 2).png",
-    "level": 106,
-    "speed": 4,
-    "size": 2,
-    "skills": [
-      95,
-      55,
-      150,
-      1,
-      1,
-      75
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 2097,
-    "name": "Cyclops",
-    "version": "Level 56 (Ardougne Zoo)",
+    "name": "Cyclops (Ardougne Zoo)",
+    "version": "",
     "image": "Cyclops.png",
     "level": 56,
     "speed": 4,
@@ -15200,8 +15536,8 @@
   },
   {
     "id": 7271,
-    "name": "Cyclops",
-    "version": "Level 56 (Catacombs)",
+    "name": "Cyclops (Catacombs of Kourend)",
+    "version": "Level 56",
     "image": "Cyclops (level 56, 4).png",
     "level": 56,
     "speed": 4,
@@ -15232,42 +15568,9 @@
     "attributes": []
   },
   {
-    "id": 2463,
-    "name": "Cyclops",
-    "version": "Level 56 (Warriors' Guild)",
-    "image": "Cyclops.png",
-    "level": 56,
-    "speed": 4,
-    "size": 2,
-    "skills": [
-      47,
-      26,
-      75,
-      1,
-      1,
-      50
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 7270,
-    "name": "Cyclops",
-    "version": "Level 76 (Catacombs)",
+    "name": "Cyclops (Catacombs of Kourend)",
+    "version": "Level 76",
     "image": "Cyclops (level 76, 2).png",
     "level": 76,
     "speed": 4,
@@ -15298,28 +15601,28 @@
     "attributes": []
   },
   {
-    "id": 2464,
-    "name": "Cyclops",
-    "version": "Level 76 (Warriors' Guild)",
-    "image": "Cyclops (level 76, 1).png",
-    "level": 76,
-    "speed": 4,
+    "id": 2236,
+    "name": "Cyclops (God Wars Dungeon)",
+    "version": "Grey",
+    "image": "Cyclops (GWD, 2).png",
+    "level": 81,
+    "speed": 6,
     "size": 2,
     "skills": [
-      65,
-      35,
-      100,
+      60,
+      48,
+      110,
       1,
       1,
-      65
+      70
     ],
     "offensive": [
+      22,
       0,
       0,
       0,
       0,
-      0,
-      0
+      30
     ],
     "defensive": [
       0,
@@ -15332,8 +15635,8 @@
   },
   {
     "id": 2235,
-    "name": "Cyclops",
-    "version": "Level 81 (God Wars Dungeon)",
+    "name": "Cyclops (God Wars Dungeon)",
+    "version": "Teal",
     "image": "Cyclops (GWD).png",
     "level": 81,
     "speed": 6,
@@ -15353,6 +15656,105 @@
       0,
       0,
       30
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 2137,
+    "name": "Cyclops",
+    "version": "Level 106",
+    "image": "Cyclops (level 56, 2).png",
+    "level": 106,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      95,
+      55,
+      150,
+      1,
+      1,
+      75
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 2463,
+    "name": "Cyclops",
+    "version": "Level 56",
+    "image": "Cyclops.png",
+    "level": 56,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      47,
+      26,
+      75,
+      1,
+      1,
+      50
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 2464,
+    "name": "Cyclops",
+    "version": "Level 76",
+    "image": "Cyclops (level 76, 1).png",
+    "level": 76,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      65,
+      35,
+      100,
+      1,
+      1,
+      65
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "defensive": [
       0,
@@ -15564,7 +15966,7 @@
   {
     "id": 2266,
     "name": "Dagannoth Prime",
-    "version": "Normal",
+    "version": "",
     "image": "Dagannoth Prime.png",
     "level": 303,
     "speed": 4,
@@ -15595,9 +15997,42 @@
     "attributes": []
   },
   {
+    "id": 12442,
+    "name": "Dagannoth Prime (Deadman: Apocalypse)",
+    "version": "",
+    "image": "Dagannoth Prime (Deadman Apocalypse).png",
+    "level": 417,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      255,
+      255,
+      750,
+      255,
+      0,
+      255
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      255,
+      255,
+      10,
+      255,
+      255
+    ],
+    "attributes": []
+  },
+  {
     "id": 6497,
-    "name": "Dagannoth Prime",
-    "version": "PvM Arena",
+    "name": "Dagannoth Prime (PvM Arena)",
+    "version": "",
     "image": "Dagannoth Prime.png",
     "level": 303,
     "speed": 4,
@@ -15630,7 +16065,7 @@
   {
     "id": 2267,
     "name": "Dagannoth Rex",
-    "version": "Normal",
+    "version": "",
     "image": "Dagannoth Rex.png",
     "level": 303,
     "speed": 4,
@@ -15661,9 +16096,42 @@
     "attributes": []
   },
   {
+    "id": 12439,
+    "name": "Dagannoth Rex (Deadman: Apocalypse)",
+    "version": "",
+    "image": "Dagannoth Rex (Deadman Apocalypse).png",
+    "level": 417,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      255,
+      255,
+      750,
+      0,
+      255,
+      255
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      255,
+      10,
+      255,
+      255,
+      255
+    ],
+    "attributes": []
+  },
+  {
     "id": 6498,
-    "name": "Dagannoth Rex",
-    "version": "PvM Arena",
+    "name": "Dagannoth Rex (PvM Arena)",
+    "version": "",
     "image": "Dagannoth Rex.png",
     "level": 303,
     "speed": 4,
@@ -15696,7 +16164,7 @@
   {
     "id": 2265,
     "name": "Dagannoth Supreme",
-    "version": "Normal",
+    "version": "",
     "image": "Dagannoth Supreme.png",
     "level": 303,
     "speed": 4,
@@ -15727,9 +16195,42 @@
     "attributes": []
   },
   {
+    "id": 12441,
+    "name": "Dagannoth Supreme (Deadman: Apocalypse)",
+    "version": "",
+    "image": "Dagannoth Supreme (Deadman Apocalypse).png",
+    "level": 385,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      255,
+      128,
+      750,
+      255,
+      255,
+      255
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      10,
+      255,
+      550,
+      10,
+      10
+    ],
+    "attributes": []
+  },
+  {
     "id": 6496,
-    "name": "Dagannoth Supreme",
-    "version": "PvM Arena",
+    "name": "Dagannoth Supreme (PvM Arena)",
+    "version": "",
     "image": "Dagannoth Supreme.png",
     "level": 303,
     "speed": 4,
@@ -16024,7 +16525,7 @@
     "attributes": []
   },
   {
-    "id": 8280,
+    "id": 9774,
     "name": "Damien Leucurte",
     "version": "",
     "image": "Damien Leucurte.png",
@@ -17360,6 +17861,39 @@
     "attributes": []
   },
   {
+    "id": 12450,
+    "name": "Derwen (Deadman: Apocalypse)",
+    "version": "",
+    "image": "Derwen (Deadman Apocalypse).png",
+    "level": 235,
+    "speed": 6,
+    "size": 3,
+    "skills": [
+      250,
+      100,
+      320,
+      180,
+      1,
+      150
+    ],
+    "offensive": [
+      0,
+      80,
+      80,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      200,
+      -60,
+      200,
+      200,
+      200
+    ],
+    "attributes": []
+  },
+  {
     "id": 459,
     "name": "Desert Lizard",
     "version": "Green",
@@ -17741,6 +18275,41 @@
       100,
       100,
       100,
+      1,
+      1,
+      100
+    ],
+    "offensive": [
+      0,
+      0,
+      -58,
+      -18,
+      0,
+      105
+    ],
+    "defensive": [
+      244,
+      -11,
+      249,
+      250,
+      252
+    ],
+    "attributes": [
+      "spectral"
+    ]
+  },
+  {
+    "id": 12447,
+    "name": "Dharok the Wretched (Deadman: Apocalypse)",
+    "version": "",
+    "image": "Dharok the Wretched (Deadman Apocalypse).png",
+    "level": 666,
+    "speed": 7,
+    "size": 2,
+    "skills": [
+      100,
+      100,
+      200,
       1,
       1,
       100
@@ -18328,6 +18897,321 @@
       0
     ],
     "attributes": []
+  },
+  {
+    "id": 12166,
+    "name": "Duke Sucellus",
+    "version": "Asleep",
+    "image": "Duke Sucellus (asleep).png",
+    "level": 1099,
+    "speed": 5,
+    "size": 7,
+    "skills": [
+      435,
+      316,
+      1540,
+      465,
+      0,
+      500
+    ],
+    "offensive": [
+      200,
+      32,
+      150,
+      0,
+      0,
+      38
+    ],
+    "defensive": [
+      190,
+      440,
+      320,
+      65,
+      255
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12191,
+    "name": "Duke Sucellus",
+    "version": "Awake",
+    "image": "Duke Sucellus.png",
+    "level": 1099,
+    "speed": 5,
+    "size": 7,
+    "skills": [
+      435,
+      316,
+      1540,
+      465,
+      0,
+      500
+    ],
+    "offensive": [
+      200,
+      32,
+      150,
+      0,
+      0,
+      38
+    ],
+    "defensive": [
+      190,
+      440,
+      320,
+      65,
+      255
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12192,
+    "name": "Duke Sucellus",
+    "version": "Defeated",
+    "image": "Duke Sucellus (defeated).png",
+    "level": 1099,
+    "speed": 5,
+    "size": 7,
+    "skills": [
+      435,
+      316,
+      1540,
+      465,
+      0,
+      500
+    ],
+    "offensive": [
+      200,
+      32,
+      150,
+      0,
+      0,
+      38
+    ],
+    "defensive": [
+      190,
+      440,
+      320,
+      65,
+      255
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12166,
+    "name": "Duke Sucellus",
+    "version": "Asleep",
+    "image": "Duke Sucellus (asleep).png",
+    "level": 758,
+    "speed": 5,
+    "size": 7,
+    "skills": [
+      300,
+      275,
+      440,
+      310,
+      0,
+      345
+    ],
+    "offensive": [
+      200,
+      32,
+      150,
+      0,
+      0,
+      38
+    ],
+    "defensive": [
+      190,
+      440,
+      320,
+      65,
+      255
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12191,
+    "name": "Duke Sucellus",
+    "version": "Awake",
+    "image": "Duke Sucellus.png",
+    "level": 758,
+    "speed": 5,
+    "size": 7,
+    "skills": [
+      300,
+      275,
+      440,
+      310,
+      0,
+      345
+    ],
+    "offensive": [
+      200,
+      32,
+      150,
+      0,
+      0,
+      38
+    ],
+    "defensive": [
+      190,
+      440,
+      320,
+      65,
+      255
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12192,
+    "name": "Duke Sucellus",
+    "version": "Defeated",
+    "image": "Duke Sucellus (defeated).png",
+    "level": 758,
+    "speed": 5,
+    "size": 7,
+    "skills": [
+      300,
+      275,
+      440,
+      310,
+      0,
+      345
+    ],
+    "offensive": [
+      200,
+      32,
+      150,
+      0,
+      0,
+      38
+    ],
+    "defensive": [
+      190,
+      440,
+      320,
+      65,
+      255
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12193,
+    "name": "Duke Sucellus",
+    "version": "Asleep",
+    "image": "Duke Sucellus (asleep).png",
+    "level": 538,
+    "speed": 6,
+    "size": 7,
+    "skills": [
+      250,
+      215,
+      200,
+      230,
+      0,
+      280
+    ],
+    "offensive": [
+      200,
+      10,
+      150,
+      0,
+      0,
+      16
+    ],
+    "defensive": [
+      160,
+      400,
+      300,
+      30,
+      210
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12195,
+    "name": "Duke Sucellus",
+    "version": "Awake",
+    "image": "Duke Sucellus.png",
+    "level": 538,
+    "speed": 6,
+    "size": 7,
+    "skills": [
+      250,
+      215,
+      200,
+      230,
+      0,
+      280
+    ],
+    "offensive": [
+      200,
+      10,
+      150,
+      0,
+      0,
+      16
+    ],
+    "defensive": [
+      160,
+      400,
+      300,
+      30,
+      210
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12196,
+    "name": "Duke Sucellus",
+    "version": "Defeated",
+    "image": "Duke Sucellus (defeated).png",
+    "level": 538,
+    "speed": 6,
+    "size": 7,
+    "skills": [
+      250,
+      215,
+      200,
+      230,
+      0,
+      280
+    ],
+    "offensive": [
+      200,
+      10,
+      150,
+      0,
+      0,
+      16
+    ],
+    "defensive": [
+      160,
+      400,
+      300,
+      30,
+      210
+    ],
+    "attributes": [
+      "demon"
+    ]
   },
   {
     "id": 2865,
@@ -20081,6 +20965,72 @@
     "attributes": []
   },
   {
+    "id": 1241,
+    "name": "Evil Creature",
+    "version": "Izzie",
+    "image": "Evil Creature.png",
+    "level": 1,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 1244,
+    "name": "Evil Creature",
+    "version": "Standard",
+    "image": "Evil Creature.png",
+    "level": 1,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
     "id": 625,
     "name": "Evil spirit",
     "version": "",
@@ -21304,6 +22254,41 @@
     ]
   },
   {
+    "id": 12453,
+    "name": "Flaming pyrelord (Deadman: Apocalyse)",
+    "version": "",
+    "image": "Flaming pyrelord (Deadman Apocalypse).png",
+    "level": 363,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      150,
+      250,
+      750,
+      1,
+      1,
+      200
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      18,
+      150,
+      18,
+      18,
+      18
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
     "id": 10695,
     "name": "Flawed Golem",
     "version": "Golem",
@@ -21637,7 +22622,7 @@
   },
   {
     "id": 7238,
-    "name": "Forester",
+    "name": "Forester (Woodcutting Guild)",
     "version": "Normal",
     "image": "Forester.png",
     "level": 15,
@@ -21670,7 +22655,7 @@
   },
   {
     "id": 3296,
-    "name": "Forester",
+    "name": "Forester (Woodcutting Guild)",
     "version": "Unused",
     "image": "Forester (unused).png",
     "level": 15,
@@ -21972,6 +22957,138 @@
       0,
       0,
       0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 5825,
+    "name": "Frenzied ice troll female",
+    "version": "",
+    "image": "Frenzied ice troll female.png",
+    "level": 82,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      80,
+      40,
+      80,
+      1,
+      1,
+      80
+    ],
+    "offensive": [
+      60,
+      0,
+      0,
+      0,
+      0,
+      60
+    ],
+    "defensive": [
+      30,
+      0,
+      0,
+      60,
+      30
+    ],
+    "attributes": []
+  },
+  {
+    "id": 5826,
+    "name": "Frenzied ice troll grunt",
+    "version": "",
+    "image": "Frenzied ice troll grunt.png",
+    "level": 102,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      100,
+      60,
+      80,
+      1,
+      1,
+      100
+    ],
+    "offensive": [
+      60,
+      0,
+      0,
+      0,
+      0,
+      60
+    ],
+    "defensive": [
+      30,
+      0,
+      0,
+      60,
+      30
+    ],
+    "attributes": []
+  },
+  {
+    "id": 5824,
+    "name": "Frenzied ice troll male",
+    "version": "",
+    "image": "Frenzied ice troll male.png",
+    "level": 82,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      80,
+      40,
+      80,
+      1,
+      1,
+      80
+    ],
+    "offensive": [
+      60,
+      0,
+      0,
+      0,
+      0,
+      60
+    ],
+    "defensive": [
+      30,
+      0,
+      0,
+      60,
+      30
+    ],
+    "attributes": []
+  },
+  {
+    "id": 5823,
+    "name": "Frenzied ice troll runt",
+    "version": "",
+    "image": "Frenzied ice troll runt.png",
+    "level": 74,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      60,
+      70,
+      60,
+      1,
+      1,
+      70
+    ],
+    "offensive": [
+      60,
+      0,
+      0,
+      0,
+      0,
+      60
+    ],
+    "defensive": [
+      30,
+      0,
+      0,
+      60,
+      30
     ],
     "attributes": []
   },
@@ -22716,7 +23833,7 @@
   {
     "id": 2215,
     "name": "General Graardor",
-    "version": "Normal",
+    "version": "",
     "image": "General Graardor.png",
     "level": 624,
     "speed": 6,
@@ -22747,9 +23864,42 @@
     "attributes": []
   },
   {
+    "id": 12444,
+    "name": "General Graardor (Deadman: Apocalypse)",
+    "version": "",
+    "image": "General Graardor (Deadman Apocalypse).png",
+    "level": 624,
+    "speed": 6,
+    "size": 4,
+    "skills": [
+      280,
+      250,
+      1000,
+      80,
+      350,
+      350
+    ],
+    "offensive": [
+      120,
+      0,
+      0,
+      100,
+      40,
+      43
+    ],
+    "defensive": [
+      90,
+      201,
+      90,
+      90,
+      90
+    ],
+    "attributes": []
+  },
+  {
     "id": 6494,
-    "name": "General Graardor",
-    "version": "PvM Arena",
+    "name": "General Graardor (PvM Arena)",
+    "version": "",
     "image": "General Graardor.png",
     "level": 624,
     "speed": 6,
@@ -23020,6 +24170,39 @@
       "spectral",
       "undead"
     ]
+  },
+  {
+    "id": 12254,
+    "name": "Ghost (Lassar Undercity)",
+    "version": "",
+    "image": "Ghost (Lassar Undercity).png",
+    "level": 105,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      100,
+      150,
+      25,
+      1,
+      1,
+      90
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
   },
   {
     "id": 3975,
@@ -23447,7 +24630,7 @@
   {
     "id": 5779,
     "name": "Giant Mole",
-    "version": "Normal",
+    "version": "",
     "image": "Giant Mole.png",
     "level": 230,
     "speed": 4,
@@ -23479,8 +24662,8 @@
   },
   {
     "id": 6499,
-    "name": "Giant Mole",
-    "version": "PvM Arena",
+    "name": "Giant Mole (PvM Arena)",
+    "version": "",
     "image": "Giant Mole.png",
     "level": 230,
     "speed": 4,
@@ -23673,7 +24856,9 @@
       99,
       70
     ],
-    "attributes": []
+    "attributes": [
+      "kalphite"
+    ]
   },
   {
     "id": 797,
@@ -23706,7 +24891,9 @@
       99,
       70
     ],
-    "attributes": []
+    "attributes": [
+      "kalphite"
+    ]
   },
   {
     "id": 1101,
@@ -23936,6 +25123,39 @@
       0,
       0,
       0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12452,
+    "name": "Giant goblin",
+    "version": "",
+    "image": "Giant goblin.png",
+    "level": 347,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      150,
+      250,
+      750,
+      1,
+      1,
+      150
+    ],
+    "offensive": [
+      120,
+      0,
+      0,
+      0,
+      0,
+      43
+    ],
+    "defensive": [
+      -15,
+      -15,
+      -15,
+      -15,
+      -15
     ],
     "attributes": []
   },
@@ -26195,9 +27415,9 @@
   },
   {
     "id": 9051,
-    "name": "Golem",
+    "name": "Golem (Zalcano)",
     "version": "",
-    "image": "Golem.png",
+    "image": "Golem (Zalcano).png",
     "level": 64,
     "speed": -1,
     "size": 1,
@@ -26790,6 +28010,41 @@
       300,
       240,
       400,
+      1,
+      1,
+      260
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      50,
+      0,
+      50,
+      50,
+      50
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12451,
+    "name": "Greater abyssal demon (Deadman: Apocalypse)",
+    "version": "",
+    "image": "Greater abyssal demon (Deadman Apocalypse).png",
+    "level": 429,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      300,
+      240,
+      750,
       1,
       1,
       260
@@ -28053,6 +29308,39 @@
     "attributes": []
   },
   {
+    "id": 12460,
+    "name": "Guard (Deadman Mode)",
+    "version": "Warriors' Guild",
+    "image": "Guard (Deadman Mode, Warriors' Guild).png",
+    "level": 1337,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      800,
+      300,
+      800,
+      1,
+      1,
+      400
+    ],
+    "offensive": [
+      60,
+      0,
+      0,
+      0,
+      0,
+      7
+    ],
+    "defensive": [
+      7,
+      0,
+      8,
+      9,
+      8
+    ],
+    "attributes": []
+  },
+  {
     "id": 6580,
     "name": "Guard (Deadman Mode)",
     "version": "Yanille",
@@ -28091,15 +29379,15 @@
     "version": "",
     "image": "Guard (Death to the Dorgeshuun).png",
     "level": 22,
-    "speed": 0,
+    "speed": 4,
     "size": 1,
     "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      16,
+      12,
+      30,
+      1,
+      1,
+      20
     ],
     "offensive": [
       0,
@@ -28112,9 +29400,9 @@
     "defensive": [
       0,
       0,
-      0,
-      0,
-      0
+      7,
+      7,
+      7
     ],
     "attributes": []
   },
@@ -28318,7 +29606,7 @@
   },
   {
     "id": 4522,
-    "name": "Guard (H.A.M. storeroom)",
+    "name": "Guard (H.A.M. Storerooms)",
     "version": "",
     "image": "Guard (Death to the Dorgeshuun).png",
     "level": 22,
@@ -30503,9 +31791,42 @@
     "attributes": []
   },
   {
+    "id": 5645,
+    "name": "Head (Temple Trekking)",
+    "version": "Submerged",
+    "image": "Head (Temple Trekking, submerged).png",
+    "level": 140,
+    "speed": 10,
+    "size": 1,
+    "skills": [
+      73,
+      75,
+      150,
+      50,
+      50,
+      186
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
     "id": 5644,
     "name": "Head (Temple Trekking)",
-    "version": "",
+    "version": "Visible",
     "image": "Head (Temple Trekking).png",
     "level": 140,
     "speed": 10,
@@ -32404,9 +33725,9 @@
     "attributes": []
   },
   {
-    "id": 1876,
+    "id": 5830,
     "name": "Ice troll female",
-    "version": "",
+    "version": "Variant 1",
     "image": "Ice troll female.png",
     "level": 82,
     "speed": 4,
@@ -32437,20 +33758,20 @@
     "attributes": []
   },
   {
-    "id": 5826,
-    "name": "Ice troll grunt",
-    "version": "Ice Troll Caves",
-    "image": "Ice troll grunt.png",
-    "level": 102,
+    "id": 1876,
+    "name": "Ice troll female",
+    "version": "Variant 2",
+    "image": "Ice troll female.png",
+    "level": 82,
     "speed": 4,
     "size": 1,
     "skills": [
-      100,
-      60,
+      80,
+      40,
       80,
       1,
       1,
-      100
+      80
     ],
     "offensive": [
       60,
@@ -32472,7 +33793,7 @@
   {
     "id": 1877,
     "name": "Ice troll grunt",
-    "version": "Regular",
+    "version": "",
     "image": "Ice troll grunt.png",
     "level": 100,
     "speed": 4,
@@ -32503,9 +33824,9 @@
     "attributes": []
   },
   {
-    "id": 1875,
+    "id": 5829,
     "name": "Ice troll male",
-    "version": "",
+    "version": "Variant 1",
     "image": "Ice troll male.png",
     "level": 82,
     "speed": 4,
@@ -32536,7 +33857,40 @@
     "attributes": []
   },
   {
-    "id": 1874,
+    "id": 1875,
+    "name": "Ice troll male",
+    "version": "Variant 2",
+    "image": "Ice troll male.png",
+    "level": 82,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      80,
+      40,
+      80,
+      1,
+      1,
+      80
+    ],
+    "offensive": [
+      60,
+      0,
+      0,
+      0,
+      0,
+      60
+    ],
+    "defensive": [
+      30,
+      0,
+      0,
+      60,
+      30
+    ],
+    "attributes": []
+  },
+  {
+    "id": 5828,
     "name": "Ice troll runt",
     "version": "Variant 1",
     "image": "Ice troll runt.png",
@@ -32569,42 +33923,9 @@
     "attributes": []
   },
   {
-    "id": 5823,
+    "id": 1874,
     "name": "Ice troll runt",
     "version": "Variant 2",
-    "image": "Ice troll runt.png",
-    "level": 74,
-    "speed": 4,
-    "size": 1,
-    "skills": [
-      60,
-      70,
-      60,
-      1,
-      1,
-      70
-    ],
-    "offensive": [
-      60,
-      0,
-      0,
-      0,
-      0,
-      60
-    ],
-    "defensive": [
-      30,
-      0,
-      0,
-      60,
-      30
-    ],
-    "attributes": []
-  },
-  {
-    "id": 5828,
-    "name": "Ice troll runt",
-    "version": "Variant 3",
     "image": "Ice troll runt.png",
     "level": 74,
     "speed": 4,
@@ -32638,7 +33959,7 @@
     "id": 650,
     "name": "Ice troll",
     "version": "Level 120",
-    "image": "Ice troll.png",
+    "image": "Ice troll (level 120, 1).png",
     "level": 120,
     "speed": 4,
     "size": 1,
@@ -32671,7 +33992,7 @@
     "id": 651,
     "name": "Ice troll",
     "version": "Level 121",
-    "image": "Ice troll.png",
+    "image": "Ice troll (level 121, 1).png",
     "level": 121,
     "speed": 4,
     "size": 1,
@@ -32704,7 +34025,7 @@
     "id": 649,
     "name": "Ice troll",
     "version": "Level 123",
-    "image": "Ice troll.png",
+    "image": "Ice Troll (level 123).png",
     "level": 123,
     "speed": 4,
     "size": 1,
@@ -32737,7 +34058,7 @@
     "id": 648,
     "name": "Ice troll",
     "version": "Level 124",
-    "image": "Ice troll.png",
+    "image": "Ice Troll (level 124).png",
     "level": 124,
     "speed": 4,
     "size": 1,
@@ -34142,6 +35463,39 @@
     "attributes": []
   },
   {
+    "id": 12455,
+    "name": "Jal-ImKot (Deadman: Apocalypse)",
+    "version": "",
+    "image": "Jal-ImKot (Deadman Apocalypse).png",
+    "level": 240,
+    "speed": 4,
+    "size": 4,
+    "skills": [
+      210,
+      120,
+      750,
+      120,
+      220,
+      290
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      40
+    ],
+    "defensive": [
+      65,
+      30,
+      50,
+      65,
+      65
+    ],
+    "attributes": []
+  },
+  {
     "id": 7708,
     "name": "Jal-MejJak",
     "version": "",
@@ -34769,6 +36123,39 @@
     "attributes": []
   },
   {
+    "id": 12064,
+    "name": "Jhallan",
+    "version": "",
+    "image": "Jhallan.png",
+    "level": 491,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      250,
+      250,
+      1500,
+      250,
+      0,
+      250
+    ],
+    "offensive": [
+      30,
+      0,
+      30,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      200,
+      300,
+      200,
+      200,
+      200
+    ],
+    "attributes": []
+  },
+  {
     "id": 3356,
     "name": "Jogre Champion",
     "version": "",
@@ -34897,6 +36284,39 @@
       0,
       0,
       0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 9289,
+    "name": "The Jormungand",
+    "version": "",
+    "image": "The Jormungand.png",
+    "level": 363,
+    "speed": 5,
+    "size": 5,
+    "skills": [
+      214,
+      214,
+      600,
+      214,
+      214,
+      214
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      10,
+      50,
+      50,
+      50,
+      50
     ],
     "attributes": []
   },
@@ -35402,9 +36822,42 @@
     "attributes": []
   },
   {
+    "id": 12449,
+    "name": "Justiciar Zachariah (Deadman: Apocalypse)",
+    "version": "",
+    "image": "Justiciar Zachariah (Deadman Apocalypse).png",
+    "level": 348,
+    "speed": 6,
+    "size": 3,
+    "skills": [
+      500,
+      100,
+      320,
+      180,
+      1,
+      250
+    ],
+    "offensive": [
+      200,
+      80,
+      80,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      200,
+      -60,
+      200,
+      200,
+      200
+    ],
+    "attributes": []
+  },
+  {
     "id": 3129,
     "name": "K'ril Tsutsaroth",
-    "version": "Normal",
+    "version": "",
     "image": "K'ril Tsutsaroth.png",
     "level": 650,
     "speed": 6,
@@ -35437,9 +36890,42 @@
     ]
   },
   {
+    "id": 12446,
+    "name": "K'ril Tsutsaroth (Deadman: Apocalypse)",
+    "version": "",
+    "image": "K'ril Tsutsaroth (Deadman Apocalypse).png",
+    "level": 650,
+    "speed": 6,
+    "size": 5,
+    "skills": [
+      340,
+      270,
+      1000,
+      200,
+      1,
+      300
+    ],
+    "offensive": [
+      160,
+      0,
+      0,
+      0,
+      0,
+      31
+    ],
+    "defensive": [
+      80,
+      130,
+      80,
+      80,
+      80
+    ],
+    "attributes": []
+  },
+  {
     "id": 6495,
-    "name": "K'ril Tsutsaroth",
-    "version": "PvM Arena",
+    "name": "K'ril Tsutsaroth (PvM Arena)",
+    "version": "",
     "image": "K'ril Tsutsaroth.png",
     "level": 650,
     "speed": 6,
@@ -35571,6 +37057,76 @@
       50,
       25,
       25
+    ],
+    "attributes": [
+      "kalphite"
+    ]
+  },
+  {
+    "id": 6501,
+    "name": "Kalphite Queen (PvM Arena)",
+    "version": "Airborne",
+    "image": "Kalphite Queen 2nd form.png",
+    "level": 333,
+    "speed": 4,
+    "size": 5,
+    "skills": [
+      300,
+      300,
+      255,
+      150,
+      1,
+      300
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      100,
+      10,
+      10,
+      100,
+      100
+    ],
+    "attributes": [
+      "kalphite"
+    ]
+  },
+  {
+    "id": 6500,
+    "name": "Kalphite Queen (PvM Arena)",
+    "version": "Crawling",
+    "image": "Kalphite Queen.png",
+    "level": 333,
+    "speed": 4,
+    "size": 5,
+    "skills": [
+      300,
+      300,
+      255,
+      150,
+      1,
+      300
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      10,
+      100,
+      100,
+      50,
+      50
     ],
     "attributes": [
       "kalphite"
@@ -35985,6 +37541,74 @@
     ]
   },
   {
+    "id": 12256,
+    "name": "Kasonde",
+    "version": "",
+    "image": "Kasonde.png",
+    "level": 231,
+    "speed": 3,
+    "size": 1,
+    "skills": [
+      190,
+      90,
+      240,
+      90,
+      190,
+      190
+    ],
+    "offensive": [
+      40,
+      0,
+      0,
+      50,
+      0,
+      0
+    ],
+    "defensive": [
+      30,
+      250,
+      50,
+      30,
+      30
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12331,
+    "name": "Kasonde the Craven",
+    "version": "",
+    "image": "Kasonde the Craven.png",
+    "level": 221,
+    "speed": 3,
+    "size": 1,
+    "skills": [
+      200,
+      120,
+      200,
+      120,
+      200,
+      200
+    ],
+    "offensive": [
+      40,
+      0,
+      0,
+      50,
+      4,
+      4
+    ],
+    "defensive": [
+      30,
+      250,
+      50,
+      30,
+      30
+    ],
+    "attributes": [
+      "spectral"
+    ]
+  },
+  {
     "id": 1494,
     "name": "Kebbit",
     "version": "",
@@ -36150,6 +37774,76 @@
       0
     ],
     "attributes": []
+  },
+  {
+    "id": 12329,
+    "name": "Ketla the Unworthy",
+    "version": "Regular",
+    "image": "Ketla the Unworthy.png",
+    "level": 236,
+    "speed": 3,
+    "size": 1,
+    "skills": [
+      0,
+      130,
+      200,
+      130,
+      160,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      80,
+      6,
+      0
+    ],
+    "defensive": [
+      80,
+      200,
+      70,
+      30,
+      60
+    ],
+    "attributes": [
+      "spectral"
+    ]
+  },
+  {
+    "id": 12330,
+    "name": "Ketla the Unworthy",
+    "version": "Shadow Clone",
+    "image": "Ketla the Unworthy (shadow).png",
+    "level": 236,
+    "speed": 3,
+    "size": 1,
+    "skills": [
+      0,
+      130,
+      1,
+      130,
+      160,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      80,
+      6,
+      0
+    ],
+    "defensive": [
+      80,
+      200,
+      70,
+      30,
+      60
+    ],
+    "attributes": [
+      "spectral"
+    ]
   },
   {
     "id": 1208,
@@ -36484,6 +38178,77 @@
   {
     "id": 239,
     "name": "King Black Dragon",
+    "version": "",
+    "image": "King Black Dragon.png",
+    "level": 276,
+    "speed": 4,
+    "size": 5,
+    "skills": [
+      240,
+      240,
+      240,
+      240,
+      1,
+      240
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      90,
+      80,
+      70,
+      90,
+      70
+    ],
+    "attributes": [
+      "dragon",
+      "fiery"
+    ]
+  },
+  {
+    "id": 12440,
+    "name": "King Black Dragon (Deadman: Apocalypse)",
+    "version": "",
+    "image": "King Black Dragon (Deadman Apocalypse).png",
+    "level": 278,
+    "speed": 4,
+    "size": 5,
+    "skills": [
+      240,
+      240,
+      250,
+      240,
+      1,
+      240
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      90,
+      80,
+      70,
+      90,
+      70
+    ],
+    "attributes": [
+      "dragon"
+    ]
+  },
+  {
+    "id": 6502,
+    "name": "King Black Dragon (PvM Arena)",
     "version": "",
     "image": "King Black Dragon.png",
     "level": 276,
@@ -37543,9 +39308,42 @@
     "attributes": []
   },
   {
+    "id": 12443,
+    "name": "Kree'arra (Deadman: Apocalypse)",
+    "version": "",
+    "image": "Kree'arra (Deadman Apocalypse).png",
+    "level": 580,
+    "speed": 6,
+    "size": 5,
+    "skills": [
+      300,
+      260,
+      350,
+      200,
+      380,
+      200
+    ],
+    "offensive": [
+      136,
+      0,
+      0,
+      120,
+      50,
+      12
+    ],
+    "defensive": [
+      180,
+      200,
+      200,
+      180,
+      180
+    ],
+    "attributes": []
+  },
+  {
     "id": 6492,
-    "name": "Kree'arra",
-    "version": "PvM Arena",
+    "name": "Kree'arra (PvM Arena)",
+    "version": "",
     "image": "Kree'arra.png",
     "level": 580,
     "speed": 3,
@@ -37576,7 +39374,7 @@
     "attributes": []
   },
   {
-    "id": 8279,
+    "id": 9773,
     "name": "Kroy",
     "version": "",
     "image": "Kroy.png",
@@ -38084,6 +39882,181 @@
     ]
   },
   {
+    "id": 12376,
+    "name": "Lesser demon (The Scar)",
+    "version": "Level 39",
+    "image": "Lesser demon (level 39).png",
+    "level": 39,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      1,
+      30,
+      40,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12389,
+    "name": "Lesser demon (The Scar)",
+    "version": "Level 82",
+    "image": "Lesser demon (level 82, Scar).png",
+    "level": 82,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      68,
+      71,
+      79,
+      1,
+      1,
+      70
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      100,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": null,
+    "name": "Lesser demon (The Scar)",
+    "version": "Level 94 (mage)",
+    "image": "Lesser demon (level 94, mage).png",
+    "level": 94,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      110,
+      110,
+      80,
+      110,
+      110,
+      110
+    ],
+    "offensive": [
+      100,
+      0,
+      100,
+      2,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": null,
+    "name": "Lesser demon (The Scar)",
+    "version": "Level 94 (melee)",
+    "image": "Lesser demon (level 94, melee).png",
+    "level": 94,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      110,
+      110,
+      80,
+      110,
+      110,
+      110
+    ],
+    "offensive": [
+      100,
+      0,
+      100,
+      100,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12365,
+    "name": "Lesser demon (The Scar)",
+    "version": "Level 94 (ranged)",
+    "image": "Lesser demon (level 94, ranged).png",
+    "level": 94,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      110,
+      110,
+      80,
+      110,
+      110,
+      110
+    ],
+    "offensive": [
+      100,
+      0,
+      100,
+      100,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
     "id": 2005,
     "name": "Lesser demon",
     "version": "Level 82",
@@ -38253,6 +40226,105 @@
       -21,
       -21,
       -21
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12214,
+    "name": "The Leviathan",
+    "version": "Awakened",
+    "image": "The Leviathan.png",
+    "level": 1157,
+    "speed": 0,
+    "size": 7,
+    "skills": [
+      525,
+      287,
+      2700,
+      280,
+      280,
+      630
+    ],
+    "offensive": [
+      200,
+      58,
+      160,
+      300,
+      26,
+      22
+    ],
+    "defensive": [
+      230,
+      280,
+      50,
+      190,
+      260
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12214,
+    "name": "The Leviathan",
+    "version": "Post-Quest",
+    "image": "The Leviathan.png",
+    "level": 798,
+    "speed": 0,
+    "size": 7,
+    "skills": [
+      300,
+      250,
+      900,
+      160,
+      160,
+      360
+    ],
+    "offensive": [
+      200,
+      58,
+      160,
+      300,
+      26,
+      22
+    ],
+    "defensive": [
+      230,
+      280,
+      50,
+      190,
+      260
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12215,
+    "name": "The Leviathan",
+    "version": "Quest",
+    "image": "The Leviathan.png",
+    "level": 593,
+    "speed": 0,
+    "size": 7,
+    "skills": [
+      250,
+      200,
+      720,
+      130,
+      130,
+      270
+    ],
+    "offensive": [
+      170,
+      36,
+      130,
+      230,
+      10,
+      14
+    ],
+    "defensive": [
+      180,
+      220,
+      30,
+      150,
+      200
     ],
     "attributes": []
   },
@@ -38793,7 +40865,9 @@
       90,
       90
     ],
-    "attributes": []
+    "attributes": [
+      "kalphite"
+    ]
   },
   {
     "id": 800,
@@ -38826,7 +40900,9 @@
       90,
       90
     ],
-    "attributes": []
+    "attributes": [
+      "kalphite"
+    ]
   },
   {
     "id": 796,
@@ -38859,7 +40935,9 @@
       90,
       50
     ],
-    "attributes": []
+    "attributes": [
+      "kalphite"
+    ]
   },
   {
     "id": 801,
@@ -38892,7 +40970,9 @@
       90,
       50
     ],
-    "attributes": []
+    "attributes": [
+      "kalphite"
+    ]
   },
   {
     "id": 7792,
@@ -39293,6 +41373,39 @@
     "attributes": []
   },
   {
+    "id": 12456,
+    "name": "Malevolent Mage (Deadman: Apocalypse)",
+    "version": "",
+    "image": "Malevolent Mage (Deadman Apocalypse).png",
+    "level": 286,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      1,
+      150,
+      500,
+      255,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      300,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
     "id": null,
     "name": "Mammoth (unused NPC)",
     "version": "",
@@ -39454,6 +41567,39 @@
       0,
       0,
       0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 3298,
+    "name": "Man (East Ardougne)",
+    "version": "",
+    "image": "Man (East Ardougne).png",
+    "level": 2,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      1,
+      1,
+      7,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      -21,
+      -21,
+      -21,
+      -21,
+      -21
     ],
     "attributes": []
   },
@@ -39660,39 +41806,6 @@
     "name": "Man",
     "version": "Blue Moon Inn",
     "image": "Man (Blue Moon Inn).png",
-    "level": 2,
-    "speed": 4,
-    "size": 1,
-    "skills": [
-      1,
-      1,
-      7,
-      1,
-      1,
-      1
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      -21,
-      -21,
-      -21,
-      -21,
-      -21
-    ],
-    "attributes": []
-  },
-  {
-    "id": 3298,
-    "name": "Man",
-    "version": "Cavalier",
-    "image": "Man (cavalier).png",
     "level": 2,
     "speed": 4,
     "size": 1,
@@ -40250,6 +42363,39 @@
     "attributes": []
   },
   {
+    "id": 11420,
+    "name": "Medium Barrier",
+    "version": "",
+    "image": "Placeholder.png",
+    "level": 0,
+    "speed": 0,
+    "size": 0,
+    "skills": [
+      1,
+      0,
+      100,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
     "id": 823,
     "name": "Melzar the Mad",
     "version": "",
@@ -40609,6 +42755,39 @@
       -21,
       -21,
       -21
+    ],
+    "attributes": []
+  },
+  {
+    "id": 8633,
+    "name": "The Mimic",
+    "version": "",
+    "image": "The Mimic.png",
+    "level": 186,
+    "speed": 3,
+    "size": 5,
+    "skills": [
+      185,
+      120,
+      230,
+      60,
+      1,
+      120
+    ],
+    "offensive": [
+      135,
+      0,
+      180,
+      0,
+      0,
+      48
+    ],
+    "defensive": [
+      150,
+      30,
+      145,
+      165,
+      160
     ],
     "attributes": []
   },
@@ -41146,7 +43325,7 @@
     "attributes": []
   },
   {
-    "id": 5272,
+    "id": 5273,
     "name": "Monkey Archer",
     "version": "Ape Atoll gate",
     "image": "Monkey Archer.png",
@@ -41179,7 +43358,7 @@
     "attributes": []
   },
   {
-    "id": 5273,
+    "id": 5272,
     "name": "Monkey Archer",
     "version": "Marim",
     "image": "Monkey Archer.png",
@@ -41548,42 +43727,9 @@
     "attributes": []
   },
   {
-    "id": 6325,
+    "id": 891,
     "name": "Moss Guardian",
-    "version": "Hard",
-    "image": "Moss Guardian.png",
-    "level": 182,
-    "speed": 6,
-    "size": 2,
-    "skills": [
-      165,
-      60,
-      240,
-      1,
-      1,
-      165
-    ],
-    "offensive": [
-      66,
-      0,
-      0,
-      0,
-      0,
-      62
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 6386,
-    "name": "Moss Guardian",
-    "version": "Nightmare Zone",
+    "version": "",
     "image": "Moss Guardian.png",
     "level": 84,
     "speed": 6,
@@ -41614,10 +43760,43 @@
     "attributes": []
   },
   {
-    "id": 891,
-    "name": "Moss Guardian",
-    "version": "Normal",
-    "image": "Moss Guardian.png",
+    "id": 6325,
+    "name": "Moss Guardian (Nightmare Zone)",
+    "version": "Hard Mode",
+    "image": "Moss Guardian (Nightmare Zone).png",
+    "level": 182,
+    "speed": 6,
+    "size": 2,
+    "skills": [
+      165,
+      60,
+      240,
+      1,
+      1,
+      165
+    ],
+    "offensive": [
+      66,
+      0,
+      0,
+      0,
+      0,
+      62
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 6386,
+    "name": "Moss Guardian (Nightmare Zone)",
+    "version": "Normal Mode",
+    "image": "Moss Guardian (Nightmare Zone).png",
     "level": 84,
     "speed": 6,
     "size": 2,
@@ -42482,6 +44661,72 @@
     ]
   },
   {
+    "id": 12464,
+    "name": "Mutated Terrorbird",
+    "version": "",
+    "image": "Mutated Terrorbird.png",
+    "level": 178,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      90,
+      40,
+      320,
+      110,
+      75,
+      150
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      400,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      62,
+      50,
+      50
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12465,
+    "name": "Mutated Tortoise",
+    "version": "",
+    "image": "Mutated Tortoise.png",
+    "level": 247,
+    "speed": 4,
+    "size": 4,
+    "skills": [
+      130,
+      120,
+      440,
+      90,
+      0,
+      170
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      60,
+      50,
+      50
+    ],
+    "attributes": []
+  },
+  {
     "id": 7561,
     "name": "Muttadile",
     "version": "Large",
@@ -42684,6 +44929,39 @@
       50,
       5,
       5
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12297,
+    "name": "Mysterious Figure",
+    "version": "",
+    "image": "Mysterious Figure.png",
+    "level": 271,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      120,
+      120,
+      450,
+      120,
+      120,
+      120
+    ],
+    "offensive": [
+      80,
+      25,
+      80,
+      80,
+      25,
+      25
+    ],
+    "defensive": [
+      60,
+      30,
+      20,
+      40,
+      20
     ],
     "attributes": []
   },
@@ -43391,6 +45669,72 @@
     "attributes": []
   },
   {
+    "id": 12459,
+    "name": "Night beast (Deadman: Apocalypse)",
+    "version": "",
+    "image": "Night beast (Deadman Apocalypse).png",
+    "level": 362,
+    "speed": 4,
+    "size": 4,
+    "skills": [
+      270,
+      220,
+      500,
+      300,
+      1,
+      290
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      200,
+      190,
+      100,
+      80,
+      75
+    ],
+    "attributes": []
+  },
+  {
+    "id": 9425,
+    "name": "The Nightmare",
+    "version": "",
+    "image": "The Nightmare.png",
+    "level": 814,
+    "speed": 6,
+    "size": 5,
+    "skills": [
+      150,
+      150,
+      2400,
+      150,
+      150,
+      150
+    ],
+    "offensive": [
+      140,
+      64,
+      140,
+      140,
+      64,
+      128
+    ],
+    "defensive": [
+      40,
+      600,
+      600,
+      180,
+      120
+    ],
+    "attributes": []
+  },
+  {
     "id": 2629,
     "name": "Nikita",
     "version": "",
@@ -43830,7 +46174,7 @@
     "skills": [
       100,
       100,
-      100,
+      0,
       100,
       100,
       100
@@ -43863,7 +46207,7 @@
     "skills": [
       100,
       100,
-      200,
+      0,
       100,
       100,
       100
@@ -44156,7 +46500,7 @@
     "image": "Obelisk (Tombs of Amascut, phase 2).png",
     "level": 0,
     "speed": 4,
-    "size": 0,
+    "size": 3,
     "skills": [
       200,
       100,
@@ -44348,6 +46692,39 @@
     "attributes": []
   },
   {
+    "id": 4382,
+    "name": "Ogre shaman (Swan Song)",
+    "version": "",
+    "image": "Ogre shaman (Swan Song).png",
+    "level": 113,
+    "speed": 0,
+    "size": 2,
+    "skills": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
     "id": 4383,
     "name": "Ogre shaman",
     "version": "1",
@@ -44517,39 +46894,6 @@
     "name": "Ogre shaman",
     "version": "6",
     "image": "Ogre shaman 6.png",
-    "level": 113,
-    "speed": 4,
-    "size": 2,
-    "skills": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 4382,
-    "name": "Ogre shaman",
-    "version": "Historical",
-    "image": "Ogre shaman (unused).png",
     "level": 113,
     "speed": 4,
     "size": 2,
@@ -45067,6 +47411,39 @@
       0,
       0,
       -21
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 11424,
+    "name": "Overcharged Barrier",
+    "version": "",
+    "image": "Placeholder.png",
+    "level": 0,
+    "speed": 0,
+    "size": 0,
+    "skills": [
+      1,
+      0,
+      400,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "defensive": [
       0,
@@ -46995,6 +49372,41 @@
     "attributes": []
   },
   {
+    "id": 12333,
+    "name": "Persten the Deceitful",
+    "version": "",
+    "image": "Persten the Deceitful.png",
+    "level": 264,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      0,
+      130,
+      200,
+      250,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      15,
+      40,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      70,
+      200,
+      20,
+      70,
+      70
+    ],
+    "attributes": [
+      "spectral"
+    ]
+  },
+  {
     "id": 10812,
     "name": "Pestilent Bloat",
     "version": "Entry",
@@ -48076,6 +50488,41 @@
     ]
   },
   {
+    "id": 12448,
+    "name": "Porazdir (Deadman: Apocalypse)",
+    "version": "",
+    "image": "Porazdir (Deadman Apocalypse).png",
+    "level": 235,
+    "speed": 6,
+    "size": 3,
+    "skills": [
+      250,
+      100,
+      320,
+      180,
+      1,
+      150
+    ],
+    "offensive": [
+      0,
+      80,
+      80,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      200,
+      -60,
+      200,
+      200,
+      200
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
     "id": 1742,
     "name": "Portal (Pest Control)",
     "version": "Blue",
@@ -48643,6 +51090,39 @@
       20,
       25,
       18
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12370,
+    "name": "Radiant sanguisphera",
+    "version": "",
+    "image": "Radiant sanguisphera.png",
+    "level": 34,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      1,
+      1,
+      20,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "attributes": []
   },
@@ -49815,7 +52295,9 @@
       -42,
       -42
     ],
-    "attributes": []
+    "attributes": [
+      "demon"
+    ]
   },
   {
     "id": 7032,
@@ -49848,7 +52330,9 @@
       25,
       25
     ],
-    "attributes": []
+    "attributes": [
+      "kalphite"
+    ]
   },
   {
     "id": 7021,
@@ -52178,6 +54662,138 @@
     "attributes": []
   },
   {
+    "id": null,
+    "name": "RuneScape:Sandbox",
+    "version": "A",
+    "image": "",
+    "level": 10,
+    "speed": 0,
+    "size": 0,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": null,
+    "name": "RuneScape:Sandbox",
+    "version": "B",
+    "image": "",
+    "level": 20,
+    "speed": 0,
+    "size": 0,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": null,
+    "name": "RuneScape:Sandbox/4",
+    "version": "A",
+    "image": "",
+    "level": 10,
+    "speed": 0,
+    "size": 0,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": null,
+    "name": "RuneScape:Sandbox/4",
+    "version": "B",
+    "image": "",
+    "level": 20,
+    "speed": 0,
+    "size": 0,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
     "id": 8713,
     "name": "Sarachnis",
     "version": "",
@@ -52484,7 +55100,7 @@
     "id": 4192,
     "name": "Scarab Swarm",
     "version": "Normal",
-    "image": "Scarab swarm.png",
+    "image": "Scarab Swarm.png",
     "level": 98,
     "speed": 1,
     "size": 1,
@@ -52519,7 +55135,7 @@
     "id": 1782,
     "name": "Scarab Swarm",
     "version": "Pyramid Plunder",
-    "image": "Scarab swarm.png",
+    "image": "Scarab Swarm.png",
     "level": 98,
     "speed": 1,
     "size": 1,
@@ -52554,7 +55170,7 @@
     "id": 729,
     "name": "Scarabs",
     "version": "",
-    "image": "Scarab swarm.png",
+    "image": "Scarabs.png",
     "level": 92,
     "speed": 1,
     "size": 1,
@@ -52583,6 +55199,356 @@
     ],
     "attributes": [
       "kalphite"
+    ]
+  },
+  {
+    "id": 12386,
+    "name": "Scarred black demon",
+    "version": "",
+    "image": "Scarred black demon.png",
+    "level": 176,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      145,
+      152,
+      157,
+      1,
+      1,
+      160
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      -10,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12373,
+    "name": "Scarred greater demon",
+    "version": "Level 113",
+    "image": "Scarred greater demon (level 113).png",
+    "level": 113,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      90,
+      40,
+      180,
+      1,
+      1,
+      90
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      -10,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12388,
+    "name": "Scarred greater demon",
+    "version": "Level 95",
+    "image": "Scarred greater demon (lv 95).png",
+    "level": 95,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      76,
+      81,
+      87,
+      1,
+      1,
+      88
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      -10,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12374,
+    "name": "Scarred hellhound",
+    "version": "",
+    "image": "Scarred hellhound.png",
+    "level": 101,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      105,
+      50,
+      25,
+      1,
+      1,
+      104
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12377,
+    "name": "Scarred imp",
+    "version": "",
+    "image": "Scarred imp.png",
+    "level": 19,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      1,
+      50,
+      25,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12360,
+    "name": "Scarred lesser demon",
+    "version": "Level 121 (mage)",
+    "image": "Scarred lesser demon (level 121, mage).png",
+    "level": 121,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      110,
+      110,
+      100,
+      110,
+      110,
+      110
+    ],
+    "offensive": [
+      100,
+      0,
+      100,
+      100,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12362,
+    "name": "Scarred lesser demon",
+    "version": "Level 121 (melee)",
+    "image": "Scarred lesser demon (level 121, melee).png",
+    "level": 121,
+    "speed": 3,
+    "size": 2,
+    "skills": [
+      110,
+      110,
+      100,
+      110,
+      110,
+      110
+    ],
+    "offensive": [
+      100,
+      0,
+      100,
+      100,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12364,
+    "name": "Scarred lesser demon",
+    "version": "Level 121 (ranged)",
+    "image": "Scarred lesser demon (level 121, ranged).png",
+    "level": 121,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      110,
+      110,
+      100,
+      110,
+      110,
+      110
+    ],
+    "offensive": [
+      100,
+      0,
+      100,
+      100,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12378,
+    "name": "Scarred lesser demon",
+    "version": "Level 121 (summoning circle)",
+    "image": "Scarred lesser demon (level 121, summoning circle).png",
+    "level": 121,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      120,
+      90,
+      70,
+      1,
+      1,
+      148
+    ],
+    "offensive": [
+      66,
+      0,
+      0,
+      0,
+      0,
+      12
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12390,
+    "name": "Scarred lesser demon",
+    "version": "Level 85",
+    "image": "Scarred lesser demon (level 85).png",
+    "level": 85,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      68,
+      71,
+      79,
+      1,
+      1,
+      80
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "demon"
     ]
   },
   {
@@ -53291,6 +56257,39 @@
     "attributes": []
   },
   {
+    "id": 9609,
+    "name": "Seagull (Icyene Graveyard)",
+    "version": "",
+    "image": "Seagull (Icyene Graveyard).png",
+    "level": 3,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      1,
+      1,
+      10,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      -47,
+      0,
+      0,
+      0,
+      0,
+      -42
+    ],
+    "defensive": [
+      -42,
+      -42,
+      -42,
+      -42,
+      -42
+    ],
+    "attributes": []
+  },
+  {
     "id": 1338,
     "name": "Seagull",
     "version": "Level 2",
@@ -53677,6 +56676,39 @@
       1,
       1,
       54
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12248,
+    "name": "Shadow Keeper",
+    "version": "",
+    "image": "Shadow Keeper.png",
+    "level": 131,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      140,
+      100,
+      100,
+      100,
+      1,
+      110
     ],
     "offensive": [
       0,
@@ -58181,7 +61213,9 @@
       250,
       15
     ],
-    "attributes": []
+    "attributes": [
+      "kalphite"
+    ]
   },
   {
     "id": 4930,
@@ -59285,7 +62319,7 @@
     "skills": [
       1,
       111,
-      0,
+      86,
       150,
       1,
       1
@@ -59830,7 +62864,9 @@
       250,
       15
     ],
-    "attributes": []
+    "attributes": [
+      "kalphite"
+    ]
   },
   {
     "id": 7794,
@@ -60543,6 +63579,369 @@
     "attributes": []
   },
   {
+    "id": 12288,
+    "name": "Strangled Bear",
+    "version": "",
+    "image": "Strangled Bear.png",
+    "level": 197,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      0,
+      0,
+      100,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12289,
+    "name": "Strangled Boar",
+    "version": "",
+    "image": "Strangled Boar.png",
+    "level": 166,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      0,
+      0,
+      40,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12290,
+    "name": "Strangled Lynx",
+    "version": "",
+    "image": "Strangled Lynx.png",
+    "level": 182,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      0,
+      0,
+      50,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12268,
+    "name": "Strangled",
+    "version": "Strangled 1",
+    "image": "Strangled (1).png",
+    "level": 138,
+    "speed": 0,
+    "size": 1,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12269,
+    "name": "Strangled",
+    "version": "Strangled 2",
+    "image": "Strangled (2).png",
+    "level": 138,
+    "speed": 0,
+    "size": 1,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12270,
+    "name": "Strangled",
+    "version": "Strangled 3",
+    "image": "Strangled (3).png",
+    "level": 138,
+    "speed": 0,
+    "size": 1,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12271,
+    "name": "Strangled",
+    "version": "Strangled 4",
+    "image": "Strangled (4).png",
+    "level": 138,
+    "speed": 0,
+    "size": 1,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12272,
+    "name": "Strangled",
+    "version": "Strangled 1",
+    "image": "Strangled (5).png",
+    "level": 149,
+    "speed": 0,
+    "size": 1,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12273,
+    "name": "Strangled",
+    "version": "Strangled 2",
+    "image": "Strangled (6).png",
+    "level": 149,
+    "speed": 0,
+    "size": 1,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12274,
+    "name": "Strangled",
+    "version": "Strangled 3",
+    "image": "Strangled (7).png",
+    "level": 149,
+    "speed": 0,
+    "size": 1,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 11422,
+    "name": "Strong Barrier",
+    "version": "",
+    "image": "Placeholder.png",
+    "level": 0,
+    "speed": 0,
+    "size": 0,
+    "skills": [
+      1,
+      0,
+      200,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
     "id": 11273,
     "name": "Strongbones",
     "version": "",
@@ -60642,6 +64041,39 @@
     "attributes": []
   },
   {
+    "id": 12458,
+    "name": "Sulphur Lizard (Deadman: Apocalypse)",
+    "version": "",
+    "image": "Sulphur Lizard (Deadman Apocalypse).png",
+    "level": 257,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      150,
+      75,
+      500,
+      1,
+      1,
+      200
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      25,
+      0,
+      15,
+      25,
+      15
+    ],
+    "attributes": []
+  },
+  {
     "id": 69,
     "name": "Summoned Zombie",
     "version": "",
@@ -60679,8 +64111,206 @@
   {
     "id": 787,
     "name": "Suqah",
-    "version": "",
-    "image": "Suqah.png",
+    "version": "1",
+    "image": "Suqah (1).png",
+    "level": 111,
+    "speed": 6,
+    "size": 2,
+    "skills": [
+      95,
+      95,
+      105,
+      1,
+      1,
+      95
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      70,
+      90,
+      50,
+      70,
+      50
+    ],
+    "attributes": []
+  },
+  {
+    "id": 788,
+    "name": "Suqah",
+    "version": "2",
+    "image": "Suqah (2).png",
+    "level": 111,
+    "speed": 6,
+    "size": 2,
+    "skills": [
+      95,
+      95,
+      105,
+      1,
+      1,
+      95
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      70,
+      90,
+      50,
+      70,
+      50
+    ],
+    "attributes": []
+  },
+  {
+    "id": 789,
+    "name": "Suqah",
+    "version": "3",
+    "image": "Suqah (3).png",
+    "level": 111,
+    "speed": 6,
+    "size": 2,
+    "skills": [
+      95,
+      95,
+      105,
+      1,
+      1,
+      95
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      70,
+      90,
+      50,
+      70,
+      50
+    ],
+    "attributes": []
+  },
+  {
+    "id": 790,
+    "name": "Suqah",
+    "version": "4",
+    "image": "Suqah (4).png",
+    "level": 111,
+    "speed": 6,
+    "size": 2,
+    "skills": [
+      95,
+      95,
+      105,
+      1,
+      1,
+      95
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      70,
+      90,
+      50,
+      70,
+      50
+    ],
+    "attributes": []
+  },
+  {
+    "id": 791,
+    "name": "Suqah",
+    "version": "5",
+    "image": "Suqah (5).png",
+    "level": 111,
+    "speed": 6,
+    "size": 2,
+    "skills": [
+      95,
+      95,
+      105,
+      1,
+      1,
+      95
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      70,
+      90,
+      50,
+      70,
+      50
+    ],
+    "attributes": []
+  },
+  {
+    "id": 792,
+    "name": "Suqah",
+    "version": "6",
+    "image": "Suqah (6).png",
+    "level": 111,
+    "speed": 6,
+    "size": 2,
+    "skills": [
+      95,
+      95,
+      105,
+      1,
+      1,
+      95
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      70,
+      90,
+      50,
+      70,
+      50
+    ],
+    "attributes": []
+  },
+  {
+    "id": 793,
+    "name": "Suqah",
+    "version": "7",
+    "image": "Suqah (7).png",
     "level": 111,
     "speed": 6,
     "size": 2,
@@ -61555,12 +65185,47 @@
     "speed": 4,
     "size": 9,
     "skills": [
+      200,
+      1,
+      255,
+      1,
+      1,
+      200
+    ],
+    "offensive": [
+      50,
       0,
+      0,
+      0,
+      0,
+      30
+    ],
+    "defensive": [
       0,
       0,
       0,
       0,
       0
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 5646,
+    "name": "Tentacle (Temple Trekking)",
+    "version": "Submerged",
+    "image": "Tentacle (Temple Trekking, submerged).png",
+    "level": 99,
+    "speed": 6,
+    "size": 1,
+    "skills": [
+      115,
+      75,
+      75,
+      50,
+      115,
+      76
     ],
     "offensive": [
       0,
@@ -61577,14 +65242,12 @@
       0,
       0
     ],
-    "attributes": [
-      "demon"
-    ]
+    "attributes": []
   },
   {
     "id": 5643,
     "name": "Tentacle (Temple Trekking)",
-    "version": "",
+    "version": "Visible",
     "image": "Tentacle (Temple Trekking).png",
     "level": 99,
     "speed": 6,
@@ -61881,6 +65544,41 @@
     "attributes": []
   },
   {
+    "id": 12328,
+    "name": "The Forsaken Assassin",
+    "version": "",
+    "image": "The Forsaken Assassin.png",
+    "level": 252,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      160,
+      160,
+      200,
+      140,
+      160,
+      140
+    ],
+    "offensive": [
+      66,
+      0,
+      0,
+      66,
+      12,
+      12
+    ],
+    "defensive": [
+      80,
+      200,
+      50,
+      30,
+      60
+    ],
+    "attributes": [
+      "spectral"
+    ]
+  },
+  {
     "id": 3476,
     "name": "The Illusive",
     "version": "",
@@ -61976,39 +65674,6 @@
       0,
       0,
       0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 9289,
-    "name": "The Jormungand",
-    "version": "",
-    "image": "The Jormungand.png",
-    "level": 363,
-    "speed": 5,
-    "size": 5,
-    "skills": [
-      214,
-      214,
-      600,
-      214,
-      214,
-      214
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      50,
-      50,
-      50,
-      50
     ],
     "attributes": []
   },
@@ -62273,72 +65938,6 @@
       0,
       0,
       0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 8633,
-    "name": "The Mimic",
-    "version": "",
-    "image": "The Mimic.png",
-    "level": 186,
-    "speed": 3,
-    "size": 5,
-    "skills": [
-      185,
-      120,
-      230,
-      60,
-      1,
-      120
-    ],
-    "offensive": [
-      135,
-      0,
-      180,
-      0,
-      0,
-      48
-    ],
-    "defensive": [
-      150,
-      30,
-      145,
-      165,
-      160
-    ],
-    "attributes": []
-  },
-  {
-    "id": 9425,
-    "name": "The Nightmare",
-    "version": "",
-    "image": "The Nightmare.png",
-    "level": 814,
-    "speed": 6,
-    "size": 5,
-    "skills": [
-      150,
-      150,
-      2400,
-      150,
-      150,
-      150
-    ],
-    "offensive": [
-      140,
-      64,
-      140,
-      140,
-      64,
-      128
-    ],
-    "defensive": [
-      40,
-      600,
-      600,
-      180,
-      120
     ],
     "attributes": []
   },
@@ -63771,7 +67370,7 @@
     "version": "Level 142",
     "image": "Tortured gorilla.png",
     "level": 142,
-    "speed": 4,
+    "speed": 6,
     "size": 2,
     "skills": [
       180,
@@ -65782,7 +69381,7 @@
   {
     "id": 3127,
     "name": "TzTok-Jad",
-    "version": "Normal",
+    "version": "",
     "image": "TzTok-Jad.png",
     "level": 702,
     "speed": 8,
@@ -65814,8 +69413,8 @@
   },
   {
     "id": 6506,
-    "name": "TzTok-Jad",
-    "version": "PvM Arena",
+    "name": "TzTok-Jad (PvM Arena)",
+    "version": "",
     "image": "TzTok-Jad.png",
     "level": 702,
     "speed": 8,
@@ -67573,6 +71172,105 @@
     ]
   },
   {
+    "id": 12223,
+    "name": "Vardorvis",
+    "version": "Awakened",
+    "image": "Vardorvis.png",
+    "level": 1136,
+    "speed": 5,
+    "size": 2,
+    "skills": [
+      420,
+      0,
+      1400,
+      215,
+      0,
+      0
+    ],
+    "offensive": [
+      190,
+      0,
+      0,
+      0,
+      0,
+      10
+    ],
+    "defensive": [
+      85,
+      580,
+      580,
+      65,
+      215
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12223,
+    "name": "Vardorvis",
+    "version": "Post-Quest",
+    "image": "Vardorvis.png",
+    "level": 784,
+    "speed": 5,
+    "size": 2,
+    "skills": [
+      280,
+      0,
+      700,
+      215,
+      0,
+      0
+    ],
+    "offensive": [
+      190,
+      0,
+      0,
+      0,
+      0,
+      10
+    ],
+    "defensive": [
+      85,
+      580,
+      580,
+      65,
+      215
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12224,
+    "name": "Vardorvis",
+    "version": "Quest",
+    "image": "Vardorvis.png",
+    "level": 572,
+    "speed": 5,
+    "size": 2,
+    "skills": [
+      260,
+      0,
+      500,
+      180,
+      0,
+      0
+    ],
+    "offensive": [
+      185,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      50,
+      560,
+      560,
+      25,
+      150
+    ],
+    "attributes": []
+  },
+  {
     "id": 7566,
     "name": "Vasa Nistirio",
     "version": "Challenge Mode",
@@ -67643,7 +71341,7 @@
     ]
   },
   {
-    "id": 6504,
+    "id": 6610,
     "name": "Venenatis",
     "version": "",
     "image": "Venenatis.png",
@@ -67672,6 +71370,39 @@
       150,
       100,
       100
+    ],
+    "attributes": []
+  },
+  {
+    "id": 6504,
+    "name": "Venenatis (PvM Arena)",
+    "version": "",
+    "image": "Venenatis (PvM Arena).png",
+    "level": 464,
+    "speed": 0,
+    "size": 4,
+    "skills": [
+      470,
+      490,
+      255,
+      150,
+      1,
+      490
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      260,
+      850,
+      100,
+      260,
+      260
     ],
     "attributes": []
   },
@@ -67777,11 +71508,11 @@
     ]
   },
   {
-    "id": 8369,
+    "id": 10830,
     "name": "Verzik Vitur",
-    "version": "",
+    "version": "Phase 1",
     "image": "Verzik Vitur.png",
-    "level": 367,
+    "level": 425,
     "speed": 12,
     "size": 5,
     "skills": [
@@ -67810,11 +71541,11 @@
     "attributes": []
   },
   {
-    "id": 8372,
+    "id": 10833,
     "name": "Verzik Vitur",
-    "version": "",
+    "version": "Phase 2",
     "image": "Verzik Vitur (flying).png",
-    "level": 416,
+    "level": 488,
     "speed": 4,
     "size": 3,
     "skills": [
@@ -67843,11 +71574,11 @@
     "attributes": []
   },
   {
-    "id": 8374,
+    "id": 10835,
     "name": "Verzik Vitur",
-    "version": "",
+    "version": "Phase 3",
     "image": "Verzik Vitur (final form).png",
-    "level": 459,
+    "level": 512,
     "speed": 7,
     "size": 7,
     "skills": [
@@ -67876,9 +71607,9 @@
     "attributes": []
   },
   {
-    "id": 8369,
+    "id": 10847,
     "name": "Verzik Vitur",
-    "version": "",
+    "version": "Phase 1",
     "image": "Verzik Vitur.png",
     "level": 1040,
     "speed": 12,
@@ -67909,9 +71640,9 @@
     "attributes": []
   },
   {
-    "id": 8372,
+    "id": 10850,
     "name": "Verzik Vitur",
-    "version": "",
+    "version": "Phase 2",
     "image": "Verzik Vitur (flying).png",
     "level": 1265,
     "speed": 4,
@@ -67942,9 +71673,9 @@
     "attributes": []
   },
   {
-    "id": 8374,
+    "id": 10852,
     "name": "Verzik Vitur",
-    "version": "",
+    "version": "Phase 3",
     "image": "Verzik Vitur (final form).png",
     "level": 1520,
     "speed": 7,
@@ -67977,7 +71708,7 @@
   {
     "id": 8369,
     "name": "Verzik Vitur",
-    "version": "",
+    "version": "Phase 1",
     "image": "Verzik Vitur.png",
     "level": 1040,
     "speed": 12,
@@ -68010,7 +71741,7 @@
   {
     "id": 8372,
     "name": "Verzik Vitur",
-    "version": "",
+    "version": "Phase 2",
     "image": "Verzik Vitur (flying).png",
     "level": 1265,
     "speed": 4,
@@ -68043,7 +71774,7 @@
   {
     "id": 8374,
     "name": "Verzik Vitur",
-    "version": "",
+    "version": "Phase 3",
     "image": "Verzik Vitur (final form).png",
     "level": 1520,
     "speed": 7,
@@ -68350,6 +72081,39 @@
     "attributes": []
   },
   {
+    "id": 12457,
+    "name": "Vitreous warped Jelly (Deadman: Apocalypse)",
+    "version": "",
+    "image": "Vitreous warped Jelly (Deadman Apocalypse).png",
+    "level": 333,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      200,
+      250,
+      500,
+      180,
+      1,
+      250
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
     "id": 3963,
     "name": "Viyeldi",
     "version": "",
@@ -68379,6 +72143,138 @@
       0,
       0,
       0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 2950,
+    "name": "Void Knight (Pest Control)",
+    "version": "1",
+    "image": "Void Knight (Pest Control, 1).png",
+    "level": 0,
+    "speed": -1,
+    "size": 0,
+    "skills": [
+      0,
+      50,
+      200,
+      50,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "attributes": []
+  },
+  {
+    "id": 2951,
+    "name": "Void Knight (Pest Control)",
+    "version": "2",
+    "image": "Void Knight (Pest Control, 2).png",
+    "level": 0,
+    "speed": -1,
+    "size": 0,
+    "skills": [
+      0,
+      50,
+      200,
+      50,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "attributes": []
+  },
+  {
+    "id": 2952,
+    "name": "Void Knight (Pest Control)",
+    "version": "3",
+    "image": "Void Knight (Pest Control, 3).png",
+    "level": 0,
+    "speed": -1,
+    "size": 0,
+    "skills": [
+      0,
+      50,
+      200,
+      50,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "attributes": []
+  },
+  {
+    "id": 2953,
+    "name": "Void Knight (Pest Control)",
+    "version": "4",
+    "image": "Void Knight (Pest Control, 4).png",
+    "level": 0,
+    "speed": -1,
+    "size": 0,
+    "skills": [
+      0,
+      50,
+      200,
+      50,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      100,
+      100,
+      100,
+      100,
+      100
     ],
     "attributes": []
   },
@@ -68448,8 +72344,8 @@
     ],
     "attributes": [
       "dragon",
-      "undead",
-      "fiery"
+      "fiery",
+      "undead"
     ]
   },
   {
@@ -68485,8 +72381,8 @@
     ],
     "attributes": [
       "dragon",
-      "undead",
-      "fiery"
+      "fiery",
+      "undead"
     ]
   },
   {
@@ -68976,7 +72872,7 @@
     ]
   },
   {
-    "id": 8251,
+    "id": 8252,
     "name": "Vyrewatch",
     "version": "Level 87",
     "image": "Vyrewatch.png",
@@ -69172,6 +73068,105 @@
       0,
       0,
       0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12499,
+    "name": "Warped Terrorbird",
+    "version": "Level 138",
+    "image": "Warped Terrorbird (lv 138).png",
+    "level": 138,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      80,
+      60,
+      200,
+      160,
+      70,
+      150
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      160,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      62,
+      50,
+      50
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12491,
+    "name": "Warped Terrorbird",
+    "version": "Level 96",
+    "image": "Warped Terrorbird (lv 96).png",
+    "level": 96,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      60,
+      20,
+      150,
+      60,
+      40,
+      90
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      240,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      62,
+      50,
+      50
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12490,
+    "name": "Warped Tortoise",
+    "version": "",
+    "image": "Warped Tortoise.png",
+    "level": 121,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      78,
+      78,
+      200,
+      50,
+      0,
+      106
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      60,
+      50,
+      50
     ],
     "attributes": []
   },
@@ -69640,6 +73635,39 @@
     "attributes": [
       "demon"
     ]
+  },
+  {
+    "id": 11418,
+    "name": "Weak Barrier",
+    "version": "",
+    "image": "Placeholder.png",
+    "level": 0,
+    "speed": 0,
+    "size": 0,
+    "skills": [
+      1,
+      0,
+      50,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
   },
   {
     "id": 5211,
@@ -70434,6 +74462,105 @@
     "attributes": []
   },
   {
+    "id": 12204,
+    "name": "The Whisperer",
+    "version": "Awakened",
+    "image": "The Whisperer.png",
+    "level": 1146,
+    "speed": 10,
+    "size": 3,
+    "skills": [
+      378,
+      300,
+      2700,
+      225,
+      243,
+      378
+    ],
+    "offensive": [
+      140,
+      58,
+      190,
+      160,
+      70,
+      30
+    ],
+    "defensive": [
+      220,
+      10,
+      300,
+      300,
+      180
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12204,
+    "name": "The Whisperer",
+    "version": "Post-Quest",
+    "image": "The Whisperer.png",
+    "level": 791,
+    "speed": 10,
+    "size": 3,
+    "skills": [
+      280,
+      250,
+      900,
+      180,
+      180,
+      280
+    ],
+    "offensive": [
+      140,
+      58,
+      190,
+      160,
+      70,
+      30
+    ],
+    "defensive": [
+      220,
+      10,
+      300,
+      300,
+      180
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12206,
+    "name": "The Whisperer",
+    "version": "Quest",
+    "image": "The Whisperer.png",
+    "level": 587,
+    "speed": 10,
+    "size": 3,
+    "skills": [
+      240,
+      200,
+      660,
+      130,
+      130,
+      250
+    ],
+    "offensive": [
+      100,
+      54,
+      180,
+      140,
+      66,
+      10
+    ],
+    "defensive": [
+      220,
+      10,
+      300,
+      300,
+      180
+    ],
+    "attributes": []
+  },
+  {
     "id": 4114,
     "name": "White Knight (Burthorpe)",
     "version": "",
@@ -70813,6 +74940,39 @@
       1,
       1,
       31
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12335,
+    "name": "Wighted Leech",
+    "version": "",
+    "image": "Wighted Leech.png",
+    "level": 96,
+    "speed": 2,
+    "size": 1,
+    "skills": [
+      1,
+      1,
+      5,
+      1,
+      1,
+      1
     ],
     "offensive": [
       0,
@@ -72251,6 +76411,39 @@
     "attributes": []
   },
   {
+    "id": 11053,
+    "name": "Woman",
+    "version": "Shayzien",
+    "image": "Woman (Shayzien).png",
+    "level": 2,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      1,
+      1,
+      7,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      -21,
+      -21,
+      -21,
+      -21,
+      -21
+    ],
+    "attributes": []
+  },
+  {
     "id": 3015,
     "name": "Woman",
     "version": "Varrock",
@@ -72886,7 +77079,7 @@
   {
     "id": 9049,
     "name": "Zalcano",
-    "version": "Shielded",
+    "version": "Armoured",
     "image": "Zalcano.png",
     "level": 336,
     "speed": 5,
@@ -72920,7 +77113,7 @@
     "id": 9050,
     "name": "Zalcano",
     "version": "Weakened",
-    "image": "Zalcano.png",
+    "image": "Zalcano (weakened).png",
     "level": 336,
     "speed": 0,
     "size": 5,
@@ -75899,7 +80092,7 @@
     ]
   },
   {
-    "id": null,
+    "id": 2501,
     "name": "Zombie",
     "version": "Level 30",
     "image": "Zombie (Level 30).png",
@@ -75934,7 +80127,7 @@
     ]
   },
   {
-    "id": 2501,
+    "id": 2504,
     "name": "Zombie",
     "version": "Level 44",
     "image": "Zombie (Level 44).png",
@@ -75969,7 +80162,7 @@
     ]
   },
   {
-    "id": 2504,
+    "id": 2507,
     "name": "Zombie",
     "version": "Level 53",
     "image": "Zombie (Level 53).png",
@@ -76004,7 +80197,7 @@
     ]
   },
   {
-    "id": 2507,
+    "id": 7486,
     "name": "Zombie",
     "version": "Level 56",
     "image": "Zombie (Level 56).png",
@@ -76039,7 +80232,7 @@
     ]
   },
   {
-    "id": 7486,
+    "id": 7485,
     "name": "Zombie",
     "version": "Level 70",
     "image": "Zombie (Level 70).png",
@@ -76074,7 +80267,7 @@
     ]
   },
   {
-    "id": 7485,
+    "id": 7488,
     "name": "Zombie",
     "version": "Level 72",
     "image": "Zombie (Level 72).png",
@@ -76109,7 +80302,7 @@
     ]
   },
   {
-    "id": 7488,
+    "id": 7487,
     "name": "Zombie",
     "version": "Level 76",
     "image": "Zombie (Level 76).png",

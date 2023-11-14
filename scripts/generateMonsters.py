@@ -12,7 +12,7 @@ import os.path
 import requests
 import json
 
-FILE_NAME = '../src/lib/monsters.json'
+FILE_NAME = '../cdn/json/monsters.json'
 WIKI_BASE = 'https://oldschool.runescape.wiki'
 API_BASE = WIKI_BASE + '/api.php'
 IMG_PATH = '../cdn/monsters/'

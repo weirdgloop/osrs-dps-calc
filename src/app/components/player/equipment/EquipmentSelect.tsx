@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import equipment from '@/lib/equipment.json';
+import equipment from '../../../../../cdn/json/equipment.json';
 import {useStore} from '@/state';
 import {observer} from 'mobx-react-lite';
 import {getCdnImage} from '@/utils';

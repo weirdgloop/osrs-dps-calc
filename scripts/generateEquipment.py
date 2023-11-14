@@ -12,7 +12,7 @@ import requests
 import json
 import urllib.parse
 
-FILE_NAME = '../src/lib/equipment.json'
+FILE_NAME = '../cdn/json/equipment.json'
 WIKI_BASE = 'https://oldschool.runescape.wiki'
 API_BASE = WIKI_BASE + '/api.php'
 IMG_PATH = '../cdn/equipment/'
