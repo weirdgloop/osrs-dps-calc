@@ -203,23 +203,15 @@ export class HitDistribution {
 
 }
 
-export enum AttackDistributionMode {
-    UNIFIED,
-    DISPARATE,
-}
-
 export class AttackDistribution {
 
     public static readonly EMPTY: AttackDistribution = new AttackDistribution(
-        AttackDistributionMode.UNIFIED,
         [HitDistribution.EMPTY],
     );
 
-    private readonly mode: AttackDistributionMode;
     private readonly dists: HitDistribution[];
 
-    constructor(mode: AttackDistributionMode, dists: HitDistribution[]) {
-        this.mode = mode;
+    constructor(dists: HitDistribution[]) {
         this.dists = dists;
     }
 
@@ -249,33 +241,32 @@ export class AttackDistribution {
             ? this.dists[0]
             : this.dists.reduce((d1, d2) => d1.zip(d2));
 
-        return dist.cumulative()
-            .hits
-            .sort((a, b) => a.getSum() - b.getSum())
-            .map(h => ({name: h.getSum(), chance: h.probability}));
+        const hitMap = new Map<number, number>();
+        dist.cumulative().hits.forEach(h => hitMap.set(h.getSum(), h.probability));
+
+        const ret: HistogramEntry[] = [];
+        for (let i = 0; i <= dist.getMax(); i++) {
+            const prob = hitMap.get(i);
+            if (prob === undefined) {
+                ret.push({name: i, chance: 0});
+            } else {
+                ret.push({name: i, chance: prob});
+            }
+        }
+        
+        return ret;
     }
 
     public getMax(): number {
-        const maxes = this.dists.map(d => d.getMax());
-        if (this.mode === AttackDistributionMode.UNIFIED) {
-            return sum(maxes);
-        } else {
-            return max(maxes) as number;
-        }
+        return max(this.dists.map(d => d.getMax())) || 0;
     }
 
     public getExpectedDamage(): number {
-        const expectedValues = this.dists.map(d => d.expectedHit());
-        if (this.mode === AttackDistributionMode.UNIFIED) {
-            return sum(expectedValues);
-        } else {
-            return max(expectedValues) as number;
-        }
+        return max(this.dists.map(d => d.expectedHit())) || 0;
     }
 
     private map(m: (d: HitDistribution) => HitDistribution) {
         return new AttackDistribution(
-            this.mode,
             this.dists.map(m)
         );
     }

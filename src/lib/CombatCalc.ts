@@ -1,6 +1,6 @@
 import {EquipmentPiece, PlayerComputed} from '@/types/Player';
 import {Monster} from '@/types/Monster';
-import {AttackDistribution, AttackDistributionMode, HitDistribution} from "@/lib/HitDist";
+import {AttackDistribution, HitDistribution, WeightedHit} from "@/lib/HitDist";
 
 const DEFAULT_ATTACK_SPEED = 4;
 const SECONDS_PER_TICK = 0.6;
@@ -90,6 +90,10 @@ export default class CombatCalc {
 
   private isWearingScythe(): boolean {
     return this.wearing('Scythe of vitur') || this.allEquippedItems.some((ei) => ei.includes('of vitur'));
+  }
+
+  private isWearingKeris(): boolean {
+    return this.allEquippedItems.some((ei) => ei.includes('Keris'));
   }
   
   private isUsingGodSpell(): boolean {
@@ -205,7 +209,7 @@ export default class CombatCalc {
     }
 
     let maxHit = Math.trunc((effectiveLevel * (this.player.bonuses.str + 64) + 320) / 640); // should this be (.str) or (.melee_str)?
-    let baseDmg = maxHit;
+    const baseDmg = maxHit;
 
     // Specific bonuses that are applied from equipment
     const mattrs = this.monster.attributes;
@@ -231,6 +235,9 @@ export default class CombatCalc {
     }
     if (this.wearing('Dragon hunter lance') && mattrs.includes('draconic')) {
       maxHit = Math.trunc(maxHit * 6/5);
+    }
+    if (this.isWearingKeris() && mattrs.includes('kalphite')) {
+      maxHit = Math.trunc(maxHit * 133/100);
     }
     if (this.wearing('Barronite mace') && mattrs.includes('golem')) {
       maxHit = Math.trunc(maxHit * 6/5);
@@ -568,37 +575,51 @@ export default class CombatCalc {
     
     return hitChance;
   }
-
+  
   public getDistribution(): AttackDistribution {
     if (this.memoizedDist !== undefined) {
       return this.memoizedDist;
     }
+    
+    return this.memoizedDist = this.getDistributionImpl();
+  }
 
+  private getDistributionImpl(): AttackDistribution {
+    const mattrs = this.monster.attributes;
     const acc = this.getHitChance();
     const max = this.getMaxHit();
     
-    // todo other dists (fang, keris, etc)
+    const standardDistribution = HitDistribution.linear(acc, 0, max);
+
     if (this.isWearingFang()) {
-      return new AttackDistribution(
-          AttackDistributionMode.UNIFIED,
+      return this.memoizedDist = new AttackDistribution(
           [HitDistribution.linear(acc, Math.floor(max * 3 / 20), Math.floor(max * 17 / 20))],
       )
     }
     
     if (this.isWearingScythe()) {
       const dists: HitDistribution[] = [];
-      for (let i = 0; i < Math.min(Math.max(this.monster.size, 1), 3); i++) {
+      for (let i = 1; i < Math.min(Math.max(this.monster.size, 1), 3); i++) {
         console.log(i + " => " + max + " / " + Math.pow(2, i) + " = " + Math.floor(max / Math.pow(2, i)));
         dists.push(HitDistribution.linear(acc, 0, Math.floor(max / (Math.pow(2, i)))));
       }
-      return new AttackDistribution(
-          AttackDistributionMode.UNIFIED,
-          dists,
-      );
+      return new AttackDistribution(dists);
+    }
+
+    if (this.isWearingKeris() && mattrs.includes('kalphite')) {
+      return new AttackDistribution([
+        new HitDistribution([
+          ...standardDistribution.scale(50.0 / 51.0).hits,
+          ...standardDistribution.hits
+              .map(h => new WeightedHit(
+                  h.probability / 51.0,
+                  h.getHitsplats().map(s => s * 3)),
+              )
+        ])
+      ])
     }
     
     return this.memoizedDist = new AttackDistribution(
-        AttackDistributionMode.UNIFIED,
         [HitDistribution.linear(this.getHitChance(), 0, this.getMaxHit())],
     );
   }
