@@ -619,8 +619,8 @@ export default class CombatCalc {
       ])
     }
     
-    return this.memoizedDist = new AttackDistribution(
-        [HitDistribution.linear(this.getHitChance(), 0, this.getMaxHit())],
+    return new AttackDistribution(
+        [standardDistribution],
     );
   }
 
