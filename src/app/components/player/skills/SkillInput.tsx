@@ -28,6 +28,7 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
         </label>
       </div>
       <div>
+        <div>
         <NumberInput
           id={id}
           required
@@ -42,6 +43,23 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
             })
           }}
         />
+      </div>
+        <div>
+        <NumberInput
+          id={id}
+          required
+          min={-100}
+          max={100}
+          value={player.boosts[field]}
+          onChange={(v) => {
+            store.updatePlayer({
+              boosts: {
+                [field]: v
+              }
+            })
+          }}
+        />
+      </div>
       </div>
     </div>
   )

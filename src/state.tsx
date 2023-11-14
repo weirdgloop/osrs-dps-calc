@@ -66,6 +66,15 @@ const generateEmptyPlayer: () => Player = () => {
       ranged: 1,
       str: 1,
     },
+    boosts: {
+      atk: 0,
+      def: 0,
+      hp: 0,
+      magic: 0,
+      prayer: 0,
+      ranged: 0,
+      str: 0,
+    },
     equipment: generateInitialEquipment(),
     prayers: [],
     bonuses: {
@@ -162,7 +171,10 @@ class GlobalState implements State {
       {
         npcDefRoll: 0,
         maxHit: 0,
-        maxAttackRoll: 0
+        maxAttackRoll: 0,
+        accuracy: 0,
+        dps: 0,
+        dist: [],
       }
     ]
   }

@@ -1,5 +1,8 @@
 import {EquipmentPiece, PlayerComputed} from '@/types/Player';
 import {Monster} from '@/types/Monster';
+import {AttackDistribution, AttackDistributionMode, HitDistribution} from "@/lib/HitDist";
+
+const DEFAULT_ATTACK_SPEED = 4;
 
 export default class CombatCalc {
   private player: PlayerComputed;
@@ -7,6 +10,8 @@ export default class CombatCalc {
 
   // Array of the names of all equipped items (for quick checks)
   private allEquippedItems: string[];
+
+  private memoizedDist: AttackDistribution | undefined = undefined;
 
   constructor(player: PlayerComputed, monster: Monster) {
     this.player = player;
@@ -78,6 +83,14 @@ export default class CombatCalc {
     return this.wearing('Crystal bow') || this.allEquippedItems.some((ei) => ei.includes('Bow of faerdhinen'));
   }
 
+  private isWearingFang(): boolean {
+    return this.wearing(["Osmumten's fang", "Osmumten's fang (or)"]);
+  }
+
+  private isWearingScythe(): boolean {
+    return this.wearing('Scythe of vitur') || this.allEquippedItems.some((ei) => ei.includes('of vitur'));
+  }
+  
   private isUsingGodSpell(): boolean {
     return ['Saradomin Strike', 'Claws of Guthix', 'Flames of Zamorak'].includes(this.player.spell.name);
   }
@@ -99,7 +112,9 @@ export default class CombatCalc {
   private getPlayerMaxMeleeAttackRoll(): number {
     const style = this.player.style;
 
-    let effectiveLevel = this.player.skills.atk * 1; // TODO: make this * getPrayerBoost(atk)
+    const boostedLevel = this.player.skills.atk + this.player.boosts.atk;
+    const prayerBonus = 1.0; // todo
+    let effectiveLevel = Math.trunc(boostedLevel * prayerBonus);
 
     if (style.stance === 'Accurate') {
       effectiveLevel += 3;
@@ -171,7 +186,9 @@ export default class CombatCalc {
   private getPlayerMaxMeleeHit(): number {
     const style = this.player.style;
 
-    let effectiveLevel = this.player.skills.str * 1; // TODO: make this * getPrayerBoost(str)
+    const boostedLevel = this.player.skills.str + this.player.boosts.str;
+    const prayerBonus = 1.0; // todo
+    let effectiveLevel = Math.trunc(boostedLevel * prayerBonus);
 
     if (style.stance === 'Aggressive') {
       effectiveLevel += 3;
@@ -260,7 +277,9 @@ export default class CombatCalc {
   private getPlayerMaxRangedAttackRoll() {
     const style = this.player.style;
 
-    let effectiveLevel = this.player.skills.ranged * 1; // TODO: make this * getPrayerBoost(ranged)
+    const boostedLevel = this.player.skills.ranged + this.player.boosts.ranged;
+    const prayerBonus = 1.0; // todo
+    let effectiveLevel = Math.trunc(boostedLevel * prayerBonus);
 
     if (style.stance === 'Accurate') {
       effectiveLevel += 3;
@@ -316,7 +335,9 @@ export default class CombatCalc {
   private getPlayerMaxRangedHit() {
     const style = this.player.style;
 
-    let effectiveLevel = this.player.skills.ranged * 1; // TODO: make this * getPrayerBoost(ranged)
+    const boostedLevel = this.player.skills.ranged + this.player.boosts.ranged;
+    const prayerBonus = 1.0; // todo
+    let effectiveLevel = Math.trunc(boostedLevel * prayerBonus);
 
     if (style.stance === 'Accurate') {
       effectiveLevel += 3;
@@ -362,7 +383,9 @@ export default class CombatCalc {
   private getPlayerMaxMagicAttackRoll() {
     const style = this.player.style;
 
-    let effectiveLevel = this.player.skills.magic * 1; // TODO: make this * getPrayerBoost(ranged)
+    const boostedLevel = this.player.skills.magic + this.player.boosts.magic;
+    const prayerBonus = 1.0; // todo
+    let effectiveLevel = Math.trunc(boostedLevel * prayerBonus);
 
     if (style.stance === 'Accurate') {
       effectiveLevel += 2;
@@ -408,7 +431,7 @@ export default class CombatCalc {
    */
   private getPlayerMaxMagicHit() {
     let maxHit = 0;
-    let magicLevel = this.player.skills.magic; // should be the boosted level?
+    let magicLevel = this.player.skills.magic + this.player.boosts.magic;
     const spell = this.player.spell;
 
     // Specific bonuses that are applied from equipment
@@ -522,5 +545,65 @@ export default class CombatCalc {
       case 'magic':
         return this.getPlayerMaxMagicAttackRoll();
     }
+  }
+
+  public getHitChance() {
+    const atk = this.getMaxAttackRoll();
+    const def = this.getNPCDefenceRoll();
+
+    const hitChance = (atk > def)
+        ? 1 - ((def + 2) / (2 * (atk + 1)))
+        : atk / (2 * (def + 1));
+    
+      if (this.isWearingFang()) {
+          if (this.monster.attributes.includes('toa')) {
+              return (atk > def)
+                  ? 1 - (def + 2) * (2 * def + 3) / (atk + 1) / (atk + 1) / 6
+                  : atk * (4 * atk + 5) / 6 / (atk + 1) / (def + 1);
+          } else {
+              return 1 - Math.pow(1 - hitChance, 2);
+          }
+      }
+    
+    return hitChance;
+  }
+
+  public getDistribution(): AttackDistribution {
+    if (this.memoizedDist !== undefined) {
+      return this.memoizedDist;
+    }
+
+    const acc = this.getHitChance();
+    const max = this.getMaxHit();
+    
+    // todo other dists (fang, keris, etc)
+    if (this.isWearingFang()) {
+      return new AttackDistribution(
+          AttackDistributionMode.UNIFIED,
+          [HitDistribution.linear(acc, Math.floor(max * 3 / 20), Math.floor(max * 17 / 20))],
+      )
+    }
+    
+    if (this.isWearingScythe()) {
+      const dists: HitDistribution[] = [];
+      for (let i = 0; i < Math.min(Math.max(this.monster.size, 1), 3); i++) {
+        console.log(i + " => " + max + " / " + Math.pow(2, i) + " = " + Math.floor(max / Math.pow(2, i)));
+        dists.push(HitDistribution.linear(acc, 0, Math.floor(max / (Math.pow(2, i)))));
+      }
+      return new AttackDistribution(
+          AttackDistributionMode.UNIFIED,
+          dists,
+      );
+    }
+    
+    return this.memoizedDist = new AttackDistribution(
+        AttackDistributionMode.UNIFIED,
+        [HitDistribution.linear(this.getHitChance(), 0, this.getMaxHit())],
+    );
+  }
+
+  public getDps() {
+    return this.getDistribution().getExpectedDamage() / 
+        (this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED);
   }
 }

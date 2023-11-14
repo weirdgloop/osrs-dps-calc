@@ -71,6 +71,7 @@ export interface PlayerOffensive {
 export interface Player {
   style: PlayerCombatStyle;
   skills: PlayerSkills;
+  boosts: PlayerSkills;
   equipment: PlayerEquipment;
   prayers: Prayer[];
   bonuses: PlayerBonuses;

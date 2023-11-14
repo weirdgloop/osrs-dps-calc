@@ -12,6 +12,19 @@ interface IResultRowProps {
   calcKey: keyof CalculatedLoadout;
 }
 
+const calcKeyToString = (loadout: CalculatedLoadout, calcKey: keyof CalculatedLoadout): string => {
+    switch (calcKey) {
+        case "accuracy":
+            return (loadout[calcKey] * 100).toFixed(2) + '%';
+
+        case "dps":
+            return loadout[calcKey].toFixed(3);
+            
+        default:
+            return "" + loadout[calcKey];
+    }
+}
+
 const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props) => {
   const store = useStore();
   const {children, calcKey} = props;
@@ -20,16 +33,14 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
   return (
     <tr>
       <th className={'bg-btns-400 dark:bg-dark-400 w-40'}>{children}</th>
-      {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{l[calcKey] || ''}</th>)}
+      {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{calcKeyToString(l, calcKey)}</th>)}
     </tr>
   )
 })
 
 const ResultsTable: React.FC = observer(() => {
   const store = useStore();
-  const {selectedLoadout, calc} = store;
-
-  // TODO: change this to actually show results, this is just proof-of-concept
+  const {selectedLoadout} = store;
 
   return (
     <table className={'min-w-[300px] w-auto mx-auto'}>
@@ -49,6 +60,8 @@ const ResultsTable: React.FC = observer(() => {
         <ResultRow calcKey={'maxHit'}><IconSword className={'inline-block'} /> Max hit</ResultRow>
         <ResultRow calcKey={'maxAttackRoll'}><IconDice className={'inline-block'} /> Attack roll</ResultRow>
         <ResultRow calcKey={'npcDefRoll'}><IconShield className={'inline-block'} /> NPC def roll</ResultRow>
+        <ResultRow calcKey={'accuracy'}><IconShield className={'inline-block'} /> Accuracy</ResultRow>
+        <ResultRow calcKey={'dps'}><IconShield className={'inline-block'} /> DPS</ResultRow>
       </tbody>
     </table>
   )

@@ -1,5 +1,6 @@
 import {PlayerComputed} from "@/types/Player";
 import {Monster} from "@/types/Monster";
+import {CalculatedLoadout} from "@/types/State";
 
 /**
  * Requests
@@ -29,11 +30,7 @@ export enum WorkerResponseType {
 
 export interface ComputedValuesResponse {
   type: WorkerResponseType.COMPUTED_VALUES,
-  data: {
-    npcDefRoll: number,
-    maxHit: number,
-    maxAttackRoll: number
-  }[]
+  data: CalculatedLoadout[]
 }
 
 export type WorkerResponses = ComputedValuesResponse;

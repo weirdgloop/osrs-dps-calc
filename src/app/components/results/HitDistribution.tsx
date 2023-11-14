@@ -1,8 +1,9 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import {BarChart, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer, Bar, TooltipProps} from 'recharts';
 import {NameType, ValueType} from 'recharts/types/component/DefaultTooltipContent';
 import hitsplat from '@/public/img/hitsplat.webp';
 import zero_hitsplat from '@/public/img/zero_hitsplat.png';
+import {HistogramEntry} from "@/types/State";
 
 const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
@@ -28,24 +29,12 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, pa
   return null;
 }
 
-const HitDistribution: React.FC = () => {
-  const data = useCallback(() => {
-    let d = [];
-    for (let i=0; i < 80; i++) {
-      const min = Math.ceil(0);
-      const max = Math.floor(1);
-      const num =  Math.random() * (max - min) + min;
-
-      d.push({name: i, chance: num});
-    }
-    return d;
-  }, []);
-
+const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = ({dist}) => {
   return (
     <>
       <ResponsiveContainer width={'100%'} height={150}>
         <BarChart
-          data={data()}
+          data={dist}
         >
           <CartesianGrid strokeDasharray="5 3" />
           <XAxis

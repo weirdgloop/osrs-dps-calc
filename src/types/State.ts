@@ -22,10 +22,18 @@ export interface Preferences {
   showLoadoutComparison: boolean;
 }
 
+export interface HistogramEntry {
+  name: any,
+  chance: number,
+}
+
 export interface CalculatedLoadout {
   npcDefRoll: number,
   maxHit: number,
-  maxAttackRoll: number
+  maxAttackRoll: number,
+  accuracy: number,
+  dps: number,
+  dist: HistogramEntry[],
 }
 
 export interface Calculator {

@@ -8,6 +8,7 @@ import {
 import {PlayerComputed} from "@/types/Player";
 import {Monster} from "@/types/Monster";
 import CombatCalc from "@/lib/CombatCalc";
+import {CalculatedLoadout} from "@/types/State";
 
 /**
  * Method for computing the calculator values based on given loadouts and Monster object
@@ -15,14 +16,17 @@ import CombatCalc from "@/lib/CombatCalc";
  * @param m
  */
 const computeValues = (loadouts: PlayerComputed[], m: Monster) => {
-  let res = [];
+  let res: CalculatedLoadout[] = [];
 
-  for (let [i, p] of loadouts.entries()) {
+  for (let [_, p] of loadouts.entries()) {
     let calc = new CombatCalc(p, m);
     res.push({
       npcDefRoll: calc.getNPCDefenceRoll(),
-      maxHit: calc.getMaxHit(),
-      maxAttackRoll: calc.getMaxAttackRoll()
+      maxHit: calc.getDistribution().getMax(),
+      maxAttackRoll: calc.getMaxAttackRoll(),
+      accuracy: calc.getHitChance(),
+      dps: calc.getDps(),
+      dist: calc.getDistribution().asHistogram(),
     })
   }
 
