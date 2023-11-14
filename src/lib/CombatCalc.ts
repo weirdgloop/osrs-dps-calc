@@ -3,6 +3,7 @@ import {Monster} from '@/types/Monster';
 import {AttackDistribution, AttackDistributionMode, HitDistribution} from "@/lib/HitDist";
 
 const DEFAULT_ATTACK_SPEED = 4;
+const SECONDS_PER_TICK = 0.6;
 
 export default class CombatCalc {
   private player: PlayerComputed;
@@ -602,8 +603,12 @@ export default class CombatCalc {
     );
   }
 
-  public getDps() {
+  public getDpt() {
     return this.getDistribution().getExpectedDamage() / 
         (this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED);
+  }
+
+  public getDps() {
+    return this.getDpt() / SECONDS_PER_TICK;
   }
 }
