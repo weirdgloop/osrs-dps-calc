@@ -109,7 +109,8 @@ const generateEmptyPlayer: () => Player = () => {
       image: '',
       max_hit: 0,
       spellbook: 'standard',
-    }
+    },
+    trailblazerRelics: [],
   }
 }
 

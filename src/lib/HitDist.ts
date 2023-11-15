@@ -217,7 +217,7 @@ export class AttackDistribution {
         [HitDistribution.EMPTY],
     );
 
-    private readonly dists: HitDistribution[];
+    readonly dists: HitDistribution[];
 
     constructor(dists: HitDistribution[]) {
         this.dists = dists;

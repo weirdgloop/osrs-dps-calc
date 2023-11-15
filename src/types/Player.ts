@@ -3,6 +3,7 @@ import {Prayer} from '@/enums/Prayer';
 import {Potion} from '@/enums/Potion';
 import {Spell} from '@/types/Spell';
 import {PlayerCombatStyle} from "@/types/PlayerCombatStyle";
+import {TrailblazerRelic} from "@/enums/TrailblazerRelic";
 
 export interface PlayerSkills {
   atk: number;
@@ -93,6 +94,7 @@ export interface Player {
     chargeSpell: boolean;
   }
   spell: Spell
+  trailblazerRelics: TrailblazerRelic[];
 }
 
 /**

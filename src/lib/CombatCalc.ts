@@ -1,9 +1,10 @@
 import {EquipmentPiece, PlayerComputed} from '@/types/Player';
 import {Monster} from '@/types/Monster';
-import {AttackDistribution, HitDistribution} from "@/lib/HitDist";
+import {AttackDistribution, HitDistribution, WeightedHit} from "@/lib/HitDist";
 import {isFireSpell} from "@/types/Spell";
 import {PrayerMap} from "@/enums/Prayer";
 import {sum} from "d3-array";
+import {TrailblazerRelic} from "@/enums/TrailblazerRelic";
 
 const DEFAULT_ATTACK_SPEED = 4;
 const SECONDS_PER_TICK = 0.6;
@@ -185,6 +186,10 @@ export default class CombatCalc {
       attackRoll = Math.trunc(attackRoll * (200 + inqPieces) / 200)
     }
 
+    if (this.player.trailblazerRelics.includes(TrailblazerRelic.BRAWLERS_RESOLVE)) {
+      attackRoll = Math.trunc(attackRoll * 3 / 2);
+    }
+
     return attackRoll;
   }
 
@@ -337,6 +342,10 @@ export default class CombatCalc {
       attackRoll = Math.trunc(attackRoll * (20 + crystalPieces) / 20);
     }
 
+    if (this.player.trailblazerRelics.includes(TrailblazerRelic.ARCHERS_EMBRACE)) {
+      attackRoll = attackRoll * 2;
+    }
+
     return attackRoll;
   }
 
@@ -434,6 +443,10 @@ export default class CombatCalc {
       attackRoll = Math.trunc(attackRoll * 11/10);
     }
 
+    if (this.player.trailblazerRelics.includes(TrailblazerRelic.SUPERIOR_SORCERER)) {
+      attackRoll = Math.trunc(attackRoll * 11 / 4);
+    }
+
     return attackRoll;
   }
 
@@ -520,6 +533,10 @@ export default class CombatCalc {
     maxHit = Math.trunc(maxHit * (1000 + magicDmgBonus) / 1000);
 
     if (blackMaskBonus) maxHit = Math.trunc(maxHit * 23/20);
+    
+    if (this.player.trailblazerRelics.includes(TrailblazerRelic.SUPERIOR_SORCERER)) {
+      maxHit = Math.trunc(maxHit * 6 / 5);
+    }
 
     return maxHit;
   }
@@ -617,6 +634,10 @@ export default class CombatCalc {
     const standardHitDist = HitDistribution.linear(acc, 0, max);
     let dist = new AttackDistribution([standardHitDist]);
 
+    if (this.player.trailblazerRelics.includes(TrailblazerRelic.SOUL_STEALER)) {
+      dist = new AttackDistribution([HitDistribution.linear(acc, Math.trunc(max / 10), max)]);
+    }
+
     if (this.isWearingFang()) {
       dist = new AttackDistribution(
           [HitDistribution.linear(acc, Math.floor(max * 3 / 20), Math.floor(max * 17 / 20))],
@@ -625,13 +646,14 @@ export default class CombatCalc {
     
     if (this.isWearingScythe()) {
       const hits: HitDistribution[] = [];
-      for (let i = 1; i < Math.min(Math.max(this.monster.size, 1), 3); i++) {
+      for (let i = 0; i < Math.min(Math.max(this.monster.size, 1), 3); i++) {
         hits.push(HitDistribution.linear(acc, 0, Math.floor(max / (Math.pow(2, i)))));
       }
       dist = new AttackDistribution(hits);
     }
 
-    if (this.isWearingKeris() && mattrs.includes('kalphite')) {
+    if (true) {
+    // if (this.isWearingKeris() && mattrs.includes('kalphite')) {
       dist = new AttackDistribution([
         new HitDistribution([
           ...standardHitDist.scaleProbability(50.0 / 51.0).hits,
@@ -643,13 +665,72 @@ export default class CombatCalc {
     if (this.wearing('Tome of fire') && isFireSpell(this.player.spell)) {
       dist = dist.scaleDamage(3, 2);
     }
+
+    if (['stab', 'slash', 'crush'].includes(this.player.style.type) &&
+        this.player.trailblazerRelics.includes(TrailblazerRelic.BRAWLERS_RESOLVE)) {
+      const newDist = new AttackDistribution([]);
+      for (let d of dist.dists) {
+        newDist.addDist(d.scaleProbability(9.0 / 10.0));
+        newDist.addDist(d.scaleProbability(1.0 / 10.0).scaleDamage(2));
+      }
+      dist = newDist;
+    }
+    
+    if (this.player.style.type === 'ranged' &&
+        this.player.trailblazerRelics.includes(TrailblazerRelic.ARCHERS_EMBRACE)) {
+      const newDist = new AttackDistribution(dist.dists);
+      for (let d of dist.dists) {
+        d = d.scaleProbability(1.0 / 10.0);
+        d.addHit(new WeightedHit(0.9, [0]));
+      }
+      dist = newDist;
+    }
     
     return dist;
   }
 
+  public getAttackSpeed(): number {
+    const speed = this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;
+
+    if (this.player.trailblazerRelics.length !== 0) {
+      return this.getRelicAttackSpeed(speed);
+    }
+
+    return speed;
+  }
+
+  private getRelicAttackSpeed(speed: number): number {
+    switch (this.player.style.type) {
+      case "stab":
+      case "slash":
+      case "crush":
+        if (!this.player.trailblazerRelics.includes(TrailblazerRelic.BRAWLERS_RESOLVE)) {
+          return speed;
+        }
+        break;
+
+      case "ranged":
+        if (!this.player.trailblazerRelics.includes(TrailblazerRelic.ARCHERS_EMBRACE)) {
+          return speed;
+        }
+        break;
+
+      case "magic":
+        if (!this.player.trailblazerRelics.includes(TrailblazerRelic.SUPERIOR_SORCERER)) {
+          return speed;
+        }
+        break;
+    }
+
+    if (speed >= 4) {
+      return Math.floor(speed / 2);
+    } else {
+      return Math.ceil(speed / 2)
+    }
+  }
+
   public getDpt() {
-    return this.getDistribution().getExpectedDamage() / 
-        (this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED);
+    return this.getDistribution().getExpectedDamage() / this.getAttackSpeed();
   }
 
   public getDps() {
