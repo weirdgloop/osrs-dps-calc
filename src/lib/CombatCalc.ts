@@ -76,6 +76,10 @@ export default class CombatCalc {
     return this.wearing('Black mask (i)');
   }
 
+  private isWearingSmokeStaff(): boolean {
+    return this.wearing(['Smoke battlestaff', 'Mystic smoke staff']);
+  }
+
   private isWearingTzhaarWeapon(): boolean {
     return this.wearing(["Tzhaar-ket-em", "Tzhaar-ket-om", "Tzhaar-ket-om (t)", "Toktz-xil-ak", "Toktz-xil-ek"]);
   }
@@ -439,7 +443,7 @@ export default class CombatCalc {
     if (this.wearing(["Thammaron's sceptre", "Accursed sceptre"]) && buffs.inWilderness) {
       attackRoll = Math.trunc(attackRoll * 3/2);
     }
-    if (this.wearing('Mystic smoke staff') && this.player.spell.spellbook === 'standard') {
+    if (this.isWearingSmokeStaff() && this.player.spell.spellbook === 'standard') {
       attackRoll = Math.trunc(attackRoll * 11/10);
     }
 
@@ -517,7 +521,7 @@ export default class CombatCalc {
     if (this.isWearingEliteMagicVoid()) {
       magicDmgBonus = magicDmgBonus + 25;
     }
-    if (this.wearing('Mystic smoke staff') && spell.spellbook === 'standard') {
+    if (this.isWearingSmokeStaff() && spell.spellbook === 'standard') {
       magicDmgBonus = magicDmgBonus + 100;
     }
 
