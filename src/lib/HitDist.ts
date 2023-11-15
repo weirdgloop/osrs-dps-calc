@@ -56,7 +56,7 @@ export class WeightedHit {
     public transform(t: HitTransformer): HitDistribution {
         if (this.hitsplats.length == 1) {
             return t(this.hitsplats[0])
-                .scale(this.probability);
+                .scaleProbability(this.probability);
         }
 
         // recursively zip first hitsplat with remaining hitsplats
@@ -121,9 +121,17 @@ export class HitDistribution {
         return d;
     }
 
-    public scale(factor: number): HitDistribution {
+    public scaleProbability(factor: number): HitDistribution {
         return new HitDistribution(this.hits
             .map(h => h.scale(factor)));
+    }
+
+    public scaleDamage(factor: number, divisor: number = 1): HitDistribution {
+        return new HitDistribution(this.hits
+            .map(h => new WeightedHit(
+                h.probability,
+                h.getHitsplats().map(s => Math.trunc(s * factor / divisor))
+            )));
     }
 
     public flatten(): HitDistribution {
@@ -232,8 +240,12 @@ export class AttackDistribution {
         return this.map(d => d.flatten());
     }
 
-    public scale(factor: number): AttackDistribution {
-        return this.map(d => d.scale(factor));
+    public scaleProbability(factor: number): AttackDistribution {
+        return this.map(d => d.scaleProbability(factor));
+    }
+
+    public scaleDamage(factor: number, divisor: number = 1) {
+        return this.map(d => d.scaleDamage(factor, divisor));
     }
 
     public asHistogram(): HistogramEntry[] {

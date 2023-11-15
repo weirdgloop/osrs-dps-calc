@@ -1,6 +1,9 @@
 import {EquipmentPiece, PlayerComputed} from '@/types/Player';
 import {Monster} from '@/types/Monster';
-import {AttackDistribution, HitDistribution, WeightedHit} from "@/lib/HitDist";
+import {AttackDistribution, HitDistribution} from "@/lib/HitDist";
+import {isFireSpell} from "@/types/Spell";
+import {PrayerMap} from "@/enums/Prayer";
+import {sum} from "d3-array";
 
 const DEFAULT_ATTACK_SPEED = 4;
 const SECONDS_PER_TICK = 0.6;
@@ -118,7 +121,7 @@ export default class CombatCalc {
     const style = this.player.style;
 
     const boostedLevel = this.player.skills.atk + this.player.boosts.atk;
-    const prayerBonus = 1.0; // todo
+    const prayerBonus = this.getPrayerBonus(true);
     let effectiveLevel = Math.trunc(boostedLevel * prayerBonus);
 
     if (style.stance === 'Accurate') {
@@ -192,7 +195,7 @@ export default class CombatCalc {
     const style = this.player.style;
 
     const boostedLevel = this.player.skills.str + this.player.boosts.str;
-    const prayerBonus = 1.0; // todo
+    const prayerBonus = this.getPrayerBonus(false);
     let effectiveLevel = Math.trunc(boostedLevel * prayerBonus);
 
     if (style.stance === 'Aggressive') {
@@ -286,7 +289,7 @@ export default class CombatCalc {
     const style = this.player.style;
 
     const boostedLevel = this.player.skills.ranged + this.player.boosts.ranged;
-    const prayerBonus = 1.0; // todo
+    const prayerBonus = this.getPrayerBonus(true);
     let effectiveLevel = Math.trunc(boostedLevel * prayerBonus);
 
     if (style.stance === 'Accurate') {
@@ -344,7 +347,7 @@ export default class CombatCalc {
     const style = this.player.style;
 
     const boostedLevel = this.player.skills.ranged + this.player.boosts.ranged;
-    const prayerBonus = 1.0; // todo
+    const prayerBonus = this.getPrayerBonus(false);
     let effectiveLevel = Math.trunc(boostedLevel * prayerBonus);
 
     if (style.stance === 'Accurate') {
@@ -392,7 +395,7 @@ export default class CombatCalc {
     const style = this.player.style;
 
     const boostedLevel = this.player.skills.magic + this.player.boosts.magic;
-    const prayerBonus = 1.0; // todo
+    const prayerBonus = this.getPrayerBonus(true);
     let effectiveLevel = Math.trunc(boostedLevel * prayerBonus);
 
     if (style.stance === 'Accurate') {
@@ -521,10 +524,31 @@ export default class CombatCalc {
     return maxHit;
   }
 
+  private getPrayerBonus(accuracy: boolean): number {
+    let prayers = this.player.prayers.map(p => PrayerMap[p]);
+    switch (this.player.style.type) {
+      case "stab":
+      case "slash":
+      case "crush":
+        prayers = prayers.filter(p => p.combatStyle === "melee");
+        break;
+
+      case "ranged":
+        prayers = prayers.filter(p => p.combatStyle === "ranged");
+        break;
+        
+      case "magic":
+        prayers = prayers.filter(p => p.combatStyle === "magic");
+        break;
+    }
+    
+    return 1 + sum(prayers.map(p => accuracy ? p.factorAccuracy : p.factorStrength));
+  }
+
   /**
    * Get the max hit for this loadout, which is based on the player's current combat style
    */
-  public getMaxHit() {
+  private getMaxHit() {
     const style = this.player.style.type;
     switch (style) {
       case 'crush':
@@ -589,39 +613,38 @@ export default class CombatCalc {
     const acc = this.getHitChance();
     const max = this.getMaxHit();
     
-    const standardDistribution = HitDistribution.linear(acc, 0, max);
+    // standard linear
+    const standardHitDist = HitDistribution.linear(acc, 0, max);
+    let dist = new AttackDistribution([standardHitDist]);
 
     if (this.isWearingFang()) {
-      return this.memoizedDist = new AttackDistribution(
+      dist = new AttackDistribution(
           [HitDistribution.linear(acc, Math.floor(max * 3 / 20), Math.floor(max * 17 / 20))],
       )
     }
     
     if (this.isWearingScythe()) {
-      const dists: HitDistribution[] = [];
+      const hits: HitDistribution[] = [];
       for (let i = 1; i < Math.min(Math.max(this.monster.size, 1), 3); i++) {
-        console.log(i + " => " + max + " / " + Math.pow(2, i) + " = " + Math.floor(max / Math.pow(2, i)));
-        dists.push(HitDistribution.linear(acc, 0, Math.floor(max / (Math.pow(2, i)))));
+        hits.push(HitDistribution.linear(acc, 0, Math.floor(max / (Math.pow(2, i)))));
       }
-      return new AttackDistribution(dists);
+      dist = new AttackDistribution(hits);
     }
 
     if (this.isWearingKeris() && mattrs.includes('kalphite')) {
-      return new AttackDistribution([
+      dist = new AttackDistribution([
         new HitDistribution([
-          ...standardDistribution.scale(50.0 / 51.0).hits,
-          ...standardDistribution.hits
-              .map(h => new WeightedHit(
-                  h.probability / 51.0,
-                  h.getHitsplats().map(s => s * 3)),
-              )
+          ...standardHitDist.scaleProbability(50.0 / 51.0).hits,
+          ...standardHitDist.scaleProbability(1.0 / 51.0).scaleDamage(3).hits,
         ])
       ])
     }
+  
+    if (this.wearing('Tome of fire') && isFireSpell(this.player.spell)) {
+      dist = dist.scaleDamage(3, 2);
+    }
     
-    return new AttackDistribution(
-        [standardDistribution],
-    );
+    return dist;
   }
 
   public getDpt() {
