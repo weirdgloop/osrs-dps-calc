@@ -656,8 +656,7 @@ export default class CombatCalc {
       dist = new AttackDistribution(hits);
     }
 
-    if (true) {
-    // if (this.isWearingKeris() && mattrs.includes('kalphite')) {
+    if (this.isWearingKeris() && mattrs.includes('kalphite')) {
       dist = new AttackDistribution([
         new HitDistribution([
           ...standardHitDist.scaleProbability(50.0 / 51.0).hits,
