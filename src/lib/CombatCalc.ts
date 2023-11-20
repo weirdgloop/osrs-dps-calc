@@ -103,6 +103,10 @@ export default class CombatCalc {
   private isWearingKeris(): boolean {
     return this.allEquippedItems.some((ei) => ei.includes('Keris'));
   }
+
+  private isWearingAhrims(): boolean { // todo
+    return this.wearingAll(["Ahrim's staff", "Ahrim's hood", "Ahrim's robetop", "Ahrim's robeskirt"])
+  }
   
   private isUsingGodSpell(): boolean {
     return ['Saradomin Strike', 'Claws of Guthix', 'Flames of Zamorak'].includes(this.player.spell.name);
@@ -112,7 +116,11 @@ export default class CombatCalc {
    * Get the NPC defence roll for this loadout, which is based on the player's current combat style
    */
   public getNPCDefenceRoll(): number {
-    const effectiveLevel = this.monster.skills.def + 9;
+    let effectiveLevel = this.player.style.type === "magic" 
+        ? this.monster.skills.magic
+        : this.monster.skills.def;
+    
+    effectiveLevel += 9;
     let defenceRoll = effectiveLevel * (this.monster.defensive[this.player.style.type] + 64);
 
     if (this.monster.invocationLevel) {
