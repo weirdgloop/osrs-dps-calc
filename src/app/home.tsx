@@ -108,28 +108,28 @@ const Home: NextPage = observer(() => {
         <ResultsContainer />
       </div>
         {/* Additional graphs and stuff */}
-        <div className={'bg-btns-100 dark:bg-dark-300 border-t-8 border-body-500 dark:border-dark-200 text-white px-4'}>
-            <div className={'max-w-[1200px] mx-auto py-6'}>
-                <h1 className={'font-bold mb-2 text-white text-xl font-serif'}>
-                    <IconChartBar className={'inline-block mr-1'} />
-                    Additional data and graphs
-                </h1>
-              {
-                store.prefs.showLoadoutComparison ? (
-                  <div className={'grow bg-tile dark:bg-dark-500 md:rounded shadow-lg max-w-[100vw] my-4 text-black'}>
-                    <div className={'px-6 py-4 bg-btns-200 dark:bg-dark-400 dark:border-dark-200 text-white md:rounded-t border-b-4 border-body-300'}>
-                      <h3 className={'font-serif font-bold'}>Loadout Comparison</h3>
-                    </div>
-                    <div className={'px-6 py-4'}>
-                      <LoadoutComparison />
-                    </div>
-                  </div>
-                ) : (
-                  <p className={'text-sm'}>You can enable additional outputs by <button className={'underline'} onClick={() => store.updateUIState({showPreferencesModal: true})}>changing your preferences</button>.</p>
-                )
-              }
-            </div>
-        </div>
+        {/*<div className={'bg-btns-100 dark:bg-dark-300 border-t-8 border-body-500 dark:border-dark-200 text-white px-4'}>*/}
+        {/*    <div className={'max-w-[1200px] mx-auto py-6'}>*/}
+        {/*        <h1 className={'font-bold mb-2 text-white text-xl font-serif'}>*/}
+        {/*            <IconChartBar className={'inline-block mr-1'} />*/}
+        {/*            Additional data and graphs*/}
+        {/*        </h1>*/}
+        {/*      {*/}
+        {/*        store.prefs.showLoadoutComparison ? (*/}
+        {/*          <div className={'grow bg-tile dark:bg-dark-500 md:rounded shadow-lg max-w-[100vw] my-4 text-black'}>*/}
+        {/*            <div className={'px-6 py-4 bg-btns-200 dark:bg-dark-400 dark:border-dark-200 text-white md:rounded-t border-b-4 border-body-300'}>*/}
+        {/*              <h3 className={'font-serif font-bold'}>Loadout Comparison</h3>*/}
+        {/*            </div>*/}
+        {/*            <div className={'px-6 py-4'}>*/}
+        {/*              <LoadoutComparison />*/}
+        {/*            </div>*/}
+        {/*          </div>*/}
+        {/*        ) : (*/}
+        {/*          <p className={'text-sm'}>You can enable additional outputs by <button className={'underline'} onClick={() => store.updateUIState({showPreferencesModal: true})}>changing your preferences</button>.</p>*/}
+        {/*        )*/}
+        {/*      }*/}
+        {/*    </div>*/}
+        {/*</div>*/}
       <Tooltip id={'tooltip'} />
       <ToastContainer position={'bottom-right'} hideProgressBar={true} draggable={false} limit={3} closeButton={false} className={'text-sm'} />
       {showPreferencesModal && <PreferencesModal isOpen={showPreferencesModal} />}
