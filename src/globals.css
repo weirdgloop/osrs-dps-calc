@@ -173,7 +173,7 @@ th {
 
 tbody tr {
   @apply bg-body-200;
-  @apply dark:bg-dark-700;
+  @apply dark:bg-dark-100;
   @apply dark:text-black;
 }
 

@@ -8,7 +8,7 @@ export const LoadoutActionButtons: React.FC = observer(() => {
   const {selectedLoadout, createLoadout, deleteLoadout, canCreateLoadout, canRemoveLoadout} = store;
 
   return (
-    <div className={'flex gap-0.5 text-body-200 dark:text-dark-700 mr-4'}>
+    <div className={'flex gap-0.5 text-body-200 dark:text-dark-100 mr-4'}>
       <button
         disabled={!canCreateLoadout}
         onClick={() => createLoadout(true, selectedLoadout)}

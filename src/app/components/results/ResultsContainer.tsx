@@ -19,7 +19,7 @@ const calcKeyToString = (loadout: CalculatedLoadout, calcKey: keyof CalculatedLo
 
         case "dps":
             return loadout[calcKey].toFixed(3);
-            
+
         default:
             return "" + loadout[calcKey];
     }

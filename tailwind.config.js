@@ -97,12 +97,12 @@ module.exports = {
           500: '#444e5a'
         },
         dark: {
-          100: '#071022', // @portage
-          200: '#596e96', // @waikawa-grey
-          300: '#313e59', // @pickled-bluewood
-          400: '#222e45', // @cloud-burst
-          500: '#172136', // @big-stone
-          600: '#071022', // @dark-body
+          100: '#b79d7e', // @portage
+          200: '#736559', // @waikawa-grey
+          300: '#3e362f', // @pickled-bluewood
+          400: '#312a25', // @cloud-burst
+          500: '#28221d', // @big-stone
+          600: '#1b1612', // @dark-body
           700: '#98a2b6',
         }
       }
