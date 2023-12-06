@@ -57,7 +57,7 @@ export type PrayerCombatStyle = 'magic' | 'ranged' | 'melee';
 export interface PrayerData {
   name: string,
   image: StaticImageData,
-  combatStyle: 'magic' | 'ranged' | 'melee',
+  combatStyle: PrayerCombatStyle,
   factorAccuracy: number,
   factorStrength: number,
 }

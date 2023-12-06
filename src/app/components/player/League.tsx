@@ -4,10 +4,11 @@ import {TrailblazerRelic, TrailblazerRelicMap} from "@/enums/TrailblazerRelic";
 import HelpLink from "@/app/components/HelpLink";
 import GridItem from "@/app/components/generic/GridItem";
 import {useStore} from "@/state";
+import {RuinousPower, RuinousPowerMap} from "@/enums/RuinousPower";
 
 const League: React.FC = observer(() => {
   const store = useStore();
-  const {trailblazerRelics} = store.player;
+  const {trailblazerRelics, ruinousPowers} = store.player;
 
   return (
     <div className={'px-6 mt-4'}>
@@ -32,6 +33,20 @@ const League: React.FC = observer(() => {
         <h4 className={`font-bold font-serif`}>
           Ruinous Powers <HelpLink href={'https://oldschool.runescape.wiki/w/Ruinous_Powers'} />
         </h4>
+      </div>
+      <div className={'grid grid-cols-4 gap-y-4 mt-4 w-48 m-auto items-center justify-center'}>
+        {
+          Object.entries(RuinousPowerMap).map(([k, v]) => {
+            return <GridItem
+              key={k}
+              item={parseInt(k)}
+              name={v.name}
+              image={v.image}
+              active={ruinousPowers.includes(parseInt(k))}
+              onClick={(r: RuinousPower) => store.togglePlayerRuinousPower(r)}
+            />
+          })
+        }
       </div>
     </div>
   )

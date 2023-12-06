@@ -13,6 +13,7 @@ import {MonsterAttribute} from "@/enums/MonsterAttribute";
 import {toast} from "react-toastify";
 import {fetchPlayerSkills, fetchShortlinkData, getEquipment, getEquipmentForLoadout} from "@/utils";
 import {TrailblazerRelic} from "@/enums/TrailblazerRelic";
+import {RuinousPower} from "@/enums/RuinousPower";
 
 const calculateEquipmentBonuses = (eq: EquipmentPiece[]) => {
   let b: {
@@ -112,6 +113,7 @@ const generateEmptyPlayer: () => Player = () => {
       spellbook: 'standard',
     },
     trailblazerRelics: [],
+    ruinousPowers: []
   }
 }
 
@@ -375,6 +377,20 @@ class GlobalState implements State {
       this.player.trailblazerRelics = this.player.trailblazerRelics.filter((r) => r !== relic);
     } else {
       this.player.trailblazerRelics = [...this.player.trailblazerRelics, relic];
+    }
+    this.updateUIState({blockSharing: false});
+  }
+
+  /**
+   * Toggle a Ruinous Power prayer.
+   * @param power
+   */
+  togglePlayerRuinousPower(power: RuinousPower) {
+    const isToggled = this.player.ruinousPowers.includes(power);
+    if (isToggled) {
+      this.player.ruinousPowers = this.player.ruinousPowers.filter((r) => r !== power);
+    } else {
+      this.player.ruinousPowers = [...this.player.ruinousPowers, power];
     }
     this.updateUIState({blockSharing: false});
   }
