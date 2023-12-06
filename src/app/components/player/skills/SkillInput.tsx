@@ -27,39 +27,39 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
           {name}
         </label>
       </div>
-      <div>
+      <div className={'flex gap-1'}>
         <div>
-        <NumberInput
-          id={id}
-          required
-          min={1}
-          max={99}
-          value={player.skills[field]}
-          onChange={(v) => {
-            store.updatePlayer({
-              skills: {
-                [field]: v
-              }
-            })
-          }}
-        />
-      </div>
+          <NumberInput
+            id={id}
+            required
+            min={1}
+            max={99}
+            value={player.skills[field]}
+            onChange={(v) => {
+              store.updatePlayer({
+                skills: {
+                  [field]: v
+                }
+              })
+            }}
+          />
+        </div>
         <div>
-        <NumberInput
-          id={id}
-          required
-          min={-100}
-          max={100}
-          value={player.boosts[field]}
-          onChange={(v) => {
-            store.updatePlayer({
-              boosts: {
-                [field]: v
-              }
-            })
-          }}
-        />
-      </div>
+          <NumberInput
+            id={id}
+            required
+            min={-100}
+            max={100}
+            value={player.boosts[field]}
+            onChange={(v) => {
+              store.updatePlayer({
+                boosts: {
+                  [field]: v
+                }
+              })
+            }}
+          />
+        </div>
       </div>
     </div>
   )
