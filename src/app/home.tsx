@@ -67,9 +67,40 @@ const Home: NextPage = observer(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const globalKeyDownHandler = (e: KeyboardEvent) => {
+    // We only handle events that occur outside <input>, <textarea>, etc
+    if (e.target !== document.body) return;
+
+    switch (e.key) {
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+        // Handle quickly switching between loadouts (max 5)
+        const key = parseInt(e.key) - 1;
+        if (store.loadouts[key] !== undefined) {
+          store.setSelectedLoadout(key);
+        }
+        break
+      default:
+        return true;
+    }
+
+    // If we get here, we've handled the event, so prevent it bubbling
+    e.preventDefault();
+  }
+
   useEffect(() => {
     // Load preferences from browser storage if there are any
     store.loadPreferences();
+
+    // Setup global event handling
+    document.addEventListener('keydown', globalKeyDownHandler);
+
+    return () => {
+      document.removeEventListener('keydown', globalKeyDownHandler);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
