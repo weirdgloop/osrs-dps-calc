@@ -12,6 +12,7 @@ import {Monster} from '@/types/Monster';
 import {MonsterAttribute} from "@/enums/MonsterAttribute";
 import {toast} from "react-toastify";
 import {fetchPlayerSkills, fetchShortlinkData, getEquipment, getEquipmentForLoadout} from "@/utils";
+import {TrailblazerRelic} from "@/enums/TrailblazerRelic";
 
 const calculateEquipmentBonuses = (eq: EquipmentPiece[]) => {
   let b: {
@@ -360,6 +361,20 @@ class GlobalState implements State {
       this.monster.attributes = this.monster.attributes.filter((a) => a !== attr);
     } else {
       this.monster.attributes = [...this.monster.attributes, attr];
+    }
+    this.updateUIState({blockSharing: false});
+  }
+
+  /**
+   * Toggle a Trailblazer League relic.
+   * @param relic
+   */
+  togglePlayerTrailblazerRelic(relic: TrailblazerRelic) {
+    const isToggled = this.player.trailblazerRelics.includes(relic);
+    if (isToggled) {
+      this.player.trailblazerRelics = this.player.trailblazerRelics.filter((r) => r !== relic);
+    } else {
+      this.player.trailblazerRelics = [...this.player.trailblazerRelics, relic];
     }
     this.updateUIState({blockSharing: false});
   }
