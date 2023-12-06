@@ -330,6 +330,12 @@ class GlobalState implements State {
       // If we're toggling off an existing prayer, just filter it out from the array
       this.player.prayers = this.player.prayers.filter((p) => p !== prayer);
     } else {
+      // If there are Ruinous Powers, disable them.
+      if (this.player.ruinousPowers.length > 0) {
+        this.player.ruinousPowers = [];
+        toast.info('Switched to the normal prayer book', {toastId: 'prayer-switch'});
+      }
+
       // If we're toggling on a new prayer, let's do some checks to ensure that some prayers cannot be enabled alongside it
       let newPrayers = [...this.player.prayers];
 
@@ -390,6 +396,12 @@ class GlobalState implements State {
     if (isToggled) {
       this.player.ruinousPowers = this.player.ruinousPowers.filter((r) => r !== power);
     } else {
+      // If there are normal prayers, disable them.
+      if (this.player.prayers.length > 0) {
+        this.player.prayers = [];
+        toast.info('Switched to the Ruinous Powers prayer book', {toastId: 'prayer-switch'});
+      }
+
       this.player.ruinousPowers = [...this.player.ruinousPowers, power];
     }
     this.updateUIState({blockSharing: false});
