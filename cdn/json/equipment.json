@@ -19095,6 +19095,62 @@
     ],
     "isTwoHanded": false
   },
+  "28688": {
+    "name": "Blazing blowpipe",
+    "id": 28688,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Blazing blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "offensive": [
+      0,
+      0,
+      0,
+      30,
+      20,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28687": {
+    "name": "Blazing blowpipe",
+    "id": 28687,
+    "version": "Empty",
+    "slot": "weapon",
+    "image": "Blazing blowpipe (empty).png",
+    "speed": 3,
+    "category": "Thrown",
+    "offensive": [
+      0,
+      0,
+      0,
+      30,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
   "10491": {
     "name": "Blessed axe",
     "id": 10491,
@@ -42223,6 +42279,34 @@
     ],
     "isTwoHanded": false
   },
+  "28682": {
+    "name": "Dinh's blazing bulwark",
+    "id": 28682,
+    "version": "",
+    "slot": "weapon",
+    "image": "Dinh's blazing bulwark.png",
+    "speed": 5,
+    "category": "Bulwark",
+    "offensive": [
+      124,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      38
+    ],
+    "defensive": [
+      109,
+      -10,
+      148,
+      109,
+      106,
+      0
+    ],
+    "isTwoHanded": true
+  },
   "21015": {
     "name": "Dinh's bulwark",
     "id": 21015,
@@ -54465,6 +54549,34 @@
     "version": "",
     "slot": "neck",
     "image": "Glarial's amulet.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28765": {
+    "name": "Globetrotter pendant",
+    "id": 28765,
+    "version": "",
+    "slot": "neck",
+    "image": "Globetrotter pendant.png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -91587,6 +91699,34 @@
     ],
     "isTwoHanded": false
   },
+  "28775": {
+    "name": "Ruinous powers (item)",
+    "id": 28775,
+    "version": "",
+    "slot": "shield",
+    "image": "Ruinous powers (item).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1
+    ],
+    "isTwoHanded": false
+  },
   "1319": {
     "name": "Rune 2h sword",
     "id": 1319,
@@ -95653,6 +95793,62 @@
     "version": "",
     "slot": "head",
     "image": "Sagacious spectacles.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28773": {
+    "name": "Sage's axe",
+    "id": 28773,
+    "version": "",
+    "slot": "weapon",
+    "image": "Sage's axe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28771": {
+    "name": "Sage's greaves",
+    "id": 28771,
+    "version": "",
+    "slot": "feet",
+    "image": "Sage's greaves.png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -113180,7 +113376,7 @@
     "id": 25114,
     "version": "",
     "slot": "weapon",
-    "image": "Trailblazer harpoon.png",
+    "image": "Trailblazer harpoon (Trailblazer League 2020).png",
     "speed": 5,
     "category": "Stab Sword",
     "offensive": [
@@ -113366,6 +113562,594 @@
       0,
       0,
       1,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28755": {
+    "name": "Trailblazer reloaded adamant trophy",
+    "id": 28755,
+    "version": "",
+    "slot": "weapon",
+    "image": "Trailblazer reloaded adamant trophy.png",
+    "speed": 4,
+    "category": "Blunt",
+    "offensive": [
+      -50,
+      0,
+      0,
+      0,
+      0,
+      -100,
+      -100,
+      -10
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28702": {
+    "name": "Trailblazer reloaded banner",
+    "id": 28702,
+    "version": "",
+    "slot": "weapon",
+    "image": "Trailblazer reloaded banner.png",
+    "speed": 4,
+    "category": "Banner",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28721": {
+    "name": "Trailblazer reloaded boots (t1)",
+    "id": 28721,
+    "version": "",
+    "slot": "feet",
+    "image": "Trailblazer reloaded boots (t1).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28733": {
+    "name": "Trailblazer reloaded boots (t2)",
+    "id": 28733,
+    "version": "",
+    "slot": "feet",
+    "image": "Trailblazer reloaded boots (t2).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28745": {
+    "name": "Trailblazer reloaded boots (t3)",
+    "id": 28745,
+    "version": "",
+    "slot": "feet",
+    "image": "Trailblazer reloaded boots (t3).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28763": {
+    "name": "Trailblazer reloaded bronze trophy",
+    "id": 28763,
+    "version": "",
+    "slot": "weapon",
+    "image": "Trailblazer reloaded bronze trophy.png",
+    "speed": 4,
+    "category": "Blunt",
+    "offensive": [
+      -50,
+      0,
+      0,
+      0,
+      0,
+      -100,
+      -100,
+      -10
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28751": {
+    "name": "Trailblazer reloaded dragon trophy",
+    "id": 28751,
+    "version": "",
+    "slot": "weapon",
+    "image": "Trailblazer reloaded dragon trophy.png",
+    "speed": 4,
+    "category": "Blunt",
+    "offensive": [
+      -50,
+      0,
+      0,
+      0,
+      0,
+      -100,
+      -100,
+      -10
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28712": {
+    "name": "Trailblazer reloaded headband (t1)",
+    "id": 28712,
+    "version": "",
+    "slot": "head",
+    "image": "Trailblazer reloaded headband (t1).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28724": {
+    "name": "Trailblazer reloaded headband (t2)",
+    "id": 28724,
+    "version": "",
+    "slot": "head",
+    "image": "Trailblazer reloaded headband (t2).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28736": {
+    "name": "Trailblazer reloaded headband (t3)",
+    "id": 28736,
+    "version": "",
+    "slot": "head",
+    "image": "Trailblazer reloaded headband (t3).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28761": {
+    "name": "Trailblazer reloaded iron trophy",
+    "id": 28761,
+    "version": "",
+    "slot": "weapon",
+    "image": "Trailblazer reloaded iron trophy.png",
+    "speed": 4,
+    "category": "Blunt",
+    "offensive": [
+      -50,
+      0,
+      0,
+      0,
+      0,
+      -100,
+      -100,
+      -10
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28757": {
+    "name": "Trailblazer reloaded mithril trophy",
+    "id": 28757,
+    "version": "",
+    "slot": "weapon",
+    "image": "Trailblazer reloaded mithril trophy.png",
+    "speed": 4,
+    "category": "Blunt",
+    "offensive": [
+      -50,
+      0,
+      0,
+      0,
+      0,
+      -100,
+      -100,
+      -10
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28753": {
+    "name": "Trailblazer reloaded rune trophy",
+    "id": 28753,
+    "version": "",
+    "slot": "weapon",
+    "image": "Trailblazer reloaded rune trophy.png",
+    "speed": 4,
+    "category": "Blunt",
+    "offensive": [
+      -50,
+      0,
+      0,
+      0,
+      0,
+      -100,
+      -100,
+      -10
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28759": {
+    "name": "Trailblazer reloaded steel trophy",
+    "id": 28759,
+    "version": "",
+    "slot": "weapon",
+    "image": "Trailblazer reloaded steel trophy.png",
+    "speed": 4,
+    "category": "Blunt",
+    "offensive": [
+      -50,
+      0,
+      0,
+      0,
+      0,
+      -100,
+      -100,
+      -10
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28715": {
+    "name": "Trailblazer reloaded top (t1)",
+    "id": 28715,
+    "version": "",
+    "slot": "body",
+    "image": "Trailblazer reloaded top (t1).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28727": {
+    "name": "Trailblazer reloaded top (t2)",
+    "id": 28727,
+    "version": "",
+    "slot": "body",
+    "image": "Trailblazer reloaded top (t2).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28739": {
+    "name": "Trailblazer reloaded top (t3)",
+    "id": 28739,
+    "version": "",
+    "slot": "body",
+    "image": "Trailblazer reloaded top (t3).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28748": {
+    "name": "Trailblazer reloaded torch",
+    "id": 28748,
+    "version": "",
+    "slot": "weapon",
+    "image": "Trailblazer reloaded torch.png",
+    "speed": 4,
+    "category": "Spiked",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28718": {
+    "name": "Trailblazer reloaded trousers (t1)",
+    "id": 28718,
+    "version": "",
+    "slot": "legs",
+    "image": "Trailblazer reloaded trousers (t1).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28730": {
+    "name": "Trailblazer reloaded trousers (t2)",
+    "id": 28730,
+    "version": "",
+    "slot": "legs",
+    "image": "Trailblazer reloaded trousers (t2).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  "28742": {
+    "name": "Trailblazer reloaded trousers (t3)",
+    "id": 28742,
+    "version": "",
+    "slot": "legs",
+    "image": "Trailblazer reloaded trousers (t3).png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
       0,
       0
     ],
