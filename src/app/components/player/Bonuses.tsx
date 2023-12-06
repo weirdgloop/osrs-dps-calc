@@ -28,7 +28,7 @@ const Bonuses: React.FC = observer(() => {
             <h4 className={'font-serif font-bold'}>Hit Distribution</h4>
           </div>
           <div className={'mt-2 px-2'}>
-            <HitDistribution dist={store.calc.loadouts[store.selectedLoadout].dist} />
+            <HitDistribution dist={store.calc.loadouts[store.selectedLoadout]?.dist} />
           </div>
         </>
       )}
