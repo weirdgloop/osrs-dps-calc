@@ -1,27 +1,27 @@
 import Image, {StaticImageData} from "next/image";
 import React from "react";
 import {observer} from "mobx-react-lite";
-import {useStore} from "@/state";
 import {IconCircleCheckFilled} from "@tabler/icons-react";
-import {TrailblazerRelic} from "@/enums/TrailblazerRelic";
 
-interface ITrailblazerRelicItemProps {
-  relic: TrailblazerRelic;
+interface IGridItemProps {
+  item: any;
   name: string;
   image: string | StaticImageData;
+  onClick: (item: any) => void;
+  active: boolean;
 }
 
-const TrailblazerRelicItem: React.FC<ITrailblazerRelicItemProps> = observer((props) => {
-  const {relic, name, image} = props;
-  const store = useStore();
-  const {trailblazerRelics} = store.player;
-  const active = trailblazerRelics.includes(relic);
+/**
+ * Reusable component for clickable cells of certain grids, such as the Prayer grid.
+ */
+const GridItem: React.FC<IGridItemProps> = observer((props) => {
+  const {item, name, image, active, onClick} = props;
 
   return (
     <div
       data-tooltip-id={'tooltip'}
       data-tooltip-content={name}
-      onClick={() => store.togglePlayerTrailblazerRelic(relic)}
+      onClick={() => onClick(item)}
       className={`cursor-pointer w-[28px] h-[23px] flex justify-center items-center`}
     >
       <div className={'relative'}>
@@ -33,4 +33,4 @@ const TrailblazerRelicItem: React.FC<ITrailblazerRelicItemProps> = observer((pro
   )
 })
 
-export default TrailblazerRelicItem;
+export default GridItem;
