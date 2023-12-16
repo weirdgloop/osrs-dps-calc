@@ -1,9 +1,10 @@
 import React from 'react';
-import {BarChart, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer, Bar, TooltipProps} from 'recharts';
+import {BarChart, XAxis, YAxis, Tooltip, ResponsiveContainer, Bar, TooltipProps} from 'recharts';
 import {NameType, ValueType} from 'recharts/types/component/DefaultTooltipContent';
 import hitsplat from '@/public/img/hitsplat.webp';
 import zero_hitsplat from '@/public/img/zero_hitsplat.png';
 import {HistogramEntry} from "@/types/State";
+import {useTheme} from "next-themes";
 
 const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
@@ -30,6 +31,9 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, pa
 }
 
 const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = ({dist}) => {
+  const {resolvedTheme} = useTheme();
+  const isDark = resolvedTheme === 'dark';
+
   return (
     <>
       <ResponsiveContainer width={'100%'} height={150}>
@@ -50,7 +54,10 @@ const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = ({dist}) => {
             }}
             width={35}
           />
-          <Tooltip content={(props) => <CustomTooltip {...props} />} />
+          <Tooltip
+            content={(props) => <CustomTooltip {...props} />}
+            cursor={{ fill: isDark ? '#3c3226' : '#b0aa9a' }}
+          />
           <Bar dataKey="chance" fill="tan" />
         </BarChart>
       </ResponsiveContainer>
