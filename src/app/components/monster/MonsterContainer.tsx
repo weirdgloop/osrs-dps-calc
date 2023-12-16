@@ -30,7 +30,7 @@ const MonsterContainer: React.FC = observer(() => {
 
   return (
     <div className={'bg-tile dark:bg-dark-300 max-w-[520px] mx-auto lg:basis-auto sm:rounded-lg text-black dark:text-white shadow-lg'}>
-      <div className={'px-6 py-4 border-b-body-400 dark:border-b-dark-200 border-b md:rounded md:rounded-bl-none md:rounded-br-none flex justify-between items-center'}>
+      <div className={'px-6 py-4 border-b-body-400 dark:border-b-dark-200 border-b md:rounded md:rounded-bl-none md:rounded-br-none flex justify-between items-center bg-body-100 dark:bg-dark-400'}>
         <h1 className={`font-serif text-xl tracking-tight font-bold`}>
           {monster.name ? monster.name : 'Monster'}
         </h1>
