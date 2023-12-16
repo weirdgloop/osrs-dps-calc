@@ -36,7 +36,6 @@ const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = ({dist}) => {
         <BarChart
           data={dist}
         >
-          <CartesianGrid strokeDasharray="5 3" />
           <XAxis
             // label={{ value: 'damage', position: 'bottom' }}
             dataKey="name"
