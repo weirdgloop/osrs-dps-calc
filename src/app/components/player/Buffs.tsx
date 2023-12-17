@@ -46,12 +46,19 @@ const Buffs: React.FC = observer(() => {
             </>
         } />
       </div>
-      <h4 className={'font-bold font-serif'}>
-        Potions
-      </h4>
-        <div
-            ref={potionsScrollContainer}
-            className={'h-[11.5rem] mt-2 bg-white dark:bg-dark-500 dark:border-dark-200 rounded border border-gray-300 overflow-y-scroll'}
+      <div className={'flex justify-between'}>
+        <h4 className={'font-bold font-serif'}>
+          Potions
+        </h4>
+        {player.buffs.potions.length > 0 &&
+          <div>
+            <span className={'text-xs bg-green-500 px-1 rounded text-white'}>{player.buffs.potions.length} active</span>
+          </div>
+        }
+      </div>
+      <div
+        ref={potionsScrollContainer}
+        className={'h-[11.5rem] mt-2 bg-white dark:bg-dark-500 dark:border-dark-200 rounded border border-gray-300 overflow-y-scroll'}
             onScroll={(evt) => {
                 store.updateUIState({potionsScrollPosition: evt.currentTarget.scrollTop});
             }}
