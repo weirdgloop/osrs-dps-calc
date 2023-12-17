@@ -34,6 +34,7 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
             required
             min={1}
             max={99}
+            title={`Your ${name} level`}
             value={player.skills[field]}
             onChange={(v) => {
               store.updatePlayer({
@@ -50,6 +51,7 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
             required
             min={-100}
             max={100}
+            title={`Your ${name} bonuses`}
             value={player.boosts[field]}
             onChange={(v) => {
               store.updatePlayer({
