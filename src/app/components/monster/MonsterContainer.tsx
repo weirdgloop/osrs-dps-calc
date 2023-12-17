@@ -23,6 +23,7 @@ import {getCdnImage} from '@/utils';
 import PresetAttributeButton from "@/app/components/monster/PresetAttributeButton";
 import NumberInput from "@/app/components/generic/NumberInput";
 import {TOMBS_OF_AMASCUT_MONSTER_IDS} from "@/constants";
+import {IconExternalLink} from "@tabler/icons-react";
 
 const MonsterContainer: React.FC = observer(() => {
   const store = useStore();
@@ -34,16 +35,28 @@ const MonsterContainer: React.FC = observer(() => {
         <h1 className={`font-serif text-xl tracking-tight font-bold`}>
           {monster.name ? monster.name : 'Monster'}
         </h1>
+        <div>
+          {monster.id && (
+            <a
+              className={'text-gray-500 dark:text-gray-400 dark:hover:text-gray-300 hover:text-gray-400'}
+              href={`https://oldschool.runescape.wiki/w/Special:Lookup?type=npc&id=${monster.id}`}
+              target={'_blank'}
+              title={'Open wiki page'}
+            >
+              <IconExternalLink size={20}/>
+            </a>
+          )}
+        </div>
       </div>
       <div className={'p-6'}>
         <div className={'mb-4'}>
           <div className={'flex gap-8 flex-wrap justify-center'}>
             <div className={'basis-1/4'}>
               <div className={'mb-4'}>
-                <MonsterSelect />
+                <MonsterSelect/>
               </div>
               <h4 className={`font-bold font-serif`}>
-                Stats
+              Stats
               </h4>
               <div className={'flex gap-4'}>
                 <div className={'w-[95px]'}>
