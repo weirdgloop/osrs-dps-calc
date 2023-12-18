@@ -39,9 +39,9 @@ const PreferencesModal: React.FC<IPreferencesModalProps> = observer((props) => {
         <Toggle checked={prefs.showHitDistribution} setChecked={(c) => {
           store.updatePreferences({showHitDistribution: c});
         }} label={'Show hit distribution graph'} />
-        {/*<Toggle checked={prefs.showLoadoutComparison} setChecked={(c) => {*/}
-        {/*  store.updatePreferences({showLoadoutComparison: c});*/}
-        {/*}} label={'Show loadout comparison graph'} />*/}
+        <Toggle checked={prefs.showLoadoutComparison} setChecked={(c) => {
+          store.updatePreferences({showLoadoutComparison: c});
+        }} label={'Show loadout comparison graph'} />
       </div>
     </Modal>
   )
