@@ -201,7 +201,6 @@ const LoadoutComparison: React.FC = observer(() => {
       });
       lines.push(entry);
     }
-    console.log(lines);
     return lines;
   }, [xAxisType, yAxisType, monster, loadouts]);
 
