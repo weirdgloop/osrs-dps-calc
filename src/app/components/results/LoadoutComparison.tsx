@@ -10,6 +10,10 @@ import {
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
 import Select from "@/app/components/generic/Select";
+import CombatCalc from "@/lib/CombatCalc";
+import {PlayerComputed} from "@/types/Player";
+import {getEquipmentForLoadout} from "@/utils";
+import {Monster} from "@/types/Monster";
 
 enum XAxisType {
   MONSTER_DEF,
@@ -17,9 +21,9 @@ enum XAxisType {
 }
 
 enum YAxisType {
-  TTK,
+  // TTK,
   DPS,
-  DAMAGE_TAKEN
+  // DAMAGE_TAKEN
 }
 
 const XAxisOptions = [
@@ -27,15 +31,63 @@ const XAxisOptions = [
   {label: 'Player base levels', value: XAxisType.BASE_LEVEL},
 ]
 
+function* inputRange(
+    xAxisType: XAxisType,
+    loadouts: PlayerComputed[],
+    monster: Monster,
+): Generator<{
+  xValue: number,
+  loadouts: PlayerComputed[],
+  monster: Monster,
+}> {
+  
+  switch (xAxisType) {
+    case XAxisType.BASE_LEVEL:
+    case XAxisType.MONSTER_DEF:
+      for (let newDef = monster.skills.def; newDef >= 0; newDef--) {
+        yield {
+          xValue: newDef,
+          loadouts: loadouts,
+          monster: {
+            ...monster,
+            skills: {
+              ...monster.skills,
+              def: newDef,
+            },
+          },
+        };
+      }
+      return;
+
+    default:
+      throw new Error(`unimplemented xAxisType ${xAxisType}`);
+  }
+  
+}
+
 const YAxisOptions = [
   {label: 'Damage-per-second', value: YAxisType.DPS},
-  {label: 'Time-to-kill', value: YAxisType.TTK},
-  {label: 'Damage taken', value: YAxisType.DAMAGE_TAKEN}
+  // {label: 'Time-to-kill', value: YAxisType.TTK},
+  // {label: 'Damage taken', value: YAxisType.DAMAGE_TAKEN}
 ]
+
+const getOutput = (
+    yAxisType: YAxisType,
+    loadout: PlayerComputed,
+    monster: Monster,
+): number => {
+  switch (yAxisType) {
+    case YAxisType.DPS:
+      return new CombatCalc(loadout, monster).getDps();
+      
+    default:
+      throw new Error(`Unimplemented yAxisType ${yAxisType}`);
+  }
+}
 
 const LoadoutComparison: React.FC = observer(() => {
   const store = useStore();
-  const {loadouts} = store;
+  const {loadouts, monster} = store;
 
   const [xAxisType, setXAxisType] = useState<{ label: string, value: XAxisType } | null | undefined>(XAxisOptions[0]);
   const [yAxisType, setYAxisType] = useState<{ label: string, value: YAxisType } | null | undefined>(YAxisOptions[0]);
@@ -43,18 +95,28 @@ const LoadoutComparison: React.FC = observer(() => {
   const data = useMemo(() => {
     const x = xAxisType?.value;
     const y = yAxisType?.value;
+    if (x === undefined || y === undefined) {
+      return [];
+    }
 
-    // When the X axis type or Y axis type changes, re-calculate the data
-    // TODO @cook (e.g (if x === XAxisType.TTK) { doSomething; }
-    return [
-      {name: 0, 'Loadout 1': 1, 'Loadout 2': 5, 'Loadout 3': 2, 'Loadout 4': 4, 'Loadout 5': 1},
-      {name: 1, 'Loadout 1': 7, 'Loadout 2': 9, 'Loadout 3': 12, 'Loadout 4': 2, 'Loadout 5': 10},
-      {name: 2, 'Loadout 1': 3, 'Loadout 2': 1, 'Loadout 3': 13, 'Loadout 4': 6, 'Loadout 5': 12},
-      {name: 3, 'Loadout 1': 4, 'Loadout 2': 2, 'Loadout 3': 4, 'Loadout 4': 8, 'Loadout 5': 14},
-      {name: 4, 'Loadout 1': 8, 'Loadout 2': 10, 'Loadout 3': 8, 'Loadout 4': 3, 'Loadout 5': 0},
-      {name: 5, 'Loadout 1': 2, 'Loadout 2': 14, 'Loadout 3': 3, 'Loadout 4': 3, 'Loadout 5': 2},
-    ]
-  }, [xAxisType, yAxisType]);
+    const computedLoadouts = loadouts.map(p => {
+      return {
+        ...p,
+        equipment: getEquipmentForLoadout(p),
+      }
+    });
+
+    const lines: { name: number, [lKey: string]: number }[] = [];
+    for (let input of inputRange(x, computedLoadouts, monster)) {
+      const entry: typeof lines[0] = {name: input.xValue};
+      input.loadouts.forEach((l, i) => {
+        entry[`Loadout ${i+1}`] = getOutput(y, l, input.monster);
+      });
+      lines.push(entry);
+    }
+    console.log(lines);
+    return lines;
+  }, [xAxisType, yAxisType, monster, loadouts]);
 
   const generateLines = () => {
     let lines: React.ReactNode[] = [];
@@ -76,6 +138,7 @@ const LoadoutComparison: React.FC = observer(() => {
         >
           <CartesianGrid strokeDasharray="5 3" />
           <XAxis
+            allowDecimals={true}
             dataKey="name"
             stroke="#777777"
           />
