@@ -17,7 +17,11 @@ import {Monster} from "@/types/Monster";
 
 enum XAxisType {
   MONSTER_DEF,
-  BASE_LEVEL,
+  MONSTER_MAGIC,
+  PLAYER_ATTACK_LEVEL,
+  PLAYER_STRENGTH_LEVEL,
+  PLAYER_RANGED_LEVEL,
+  PLAYER_MAGIC_LEVEL,
 }
 
 enum YAxisType {
@@ -28,7 +32,11 @@ enum YAxisType {
 
 const XAxisOptions = [
   {label: 'Monster defence level', value: XAxisType.MONSTER_DEF},
-  {label: 'Player base levels', value: XAxisType.BASE_LEVEL},
+  {label: 'Monster magic level', value: XAxisType.MONSTER_MAGIC},
+  {label: 'Player attack level', value: XAxisType.PLAYER_ATTACK_LEVEL},
+  {label: 'Player strength level', value: XAxisType.PLAYER_STRENGTH_LEVEL},
+  {label: 'Player ranged level', value: XAxisType.PLAYER_RANGED_LEVEL},
+  {label: 'Player magic level', value: XAxisType.PLAYER_MAGIC_LEVEL},
 ]
 
 function* inputRange(
@@ -42,7 +50,6 @@ function* inputRange(
 }> {
   
   switch (xAxisType) {
-    case XAxisType.BASE_LEVEL:
     case XAxisType.MONSTER_DEF:
       for (let newDef = monster.skills.def; newDef >= 0; newDef--) {
         yield {
@@ -55,6 +62,86 @@ function* inputRange(
               def: newDef,
             },
           },
+        };
+      }
+      return;
+    
+    case XAxisType.MONSTER_MAGIC:
+      for (let newMagic = monster.skills.magic; newMagic >= 0; newMagic--) {
+        yield {
+          xValue: newMagic,
+          loadouts: loadouts,
+          monster: {
+            ...monster,
+            skills: {
+              ...monster.skills,
+              magic: newMagic,
+            },
+          },
+        };
+      }
+      return;
+    
+    case XAxisType.PLAYER_ATTACK_LEVEL:
+      for (let newAttack = 0; newAttack <= 125; newAttack++) {
+        yield {
+          xValue: newAttack,
+          loadouts: loadouts.map(l => ({
+            ...l,
+            skills: {
+              ...l.skills,
+              atk: newAttack,
+            },
+          })),
+          monster: monster,
+        };
+      }
+      return;
+    
+    case XAxisType.PLAYER_STRENGTH_LEVEL:
+      for (let newStrength = 0; newStrength <= 125; newStrength++) {
+        yield {
+          xValue: newStrength,
+          loadouts: loadouts.map(l => ({
+            ...l,
+            skills: {
+              ...l.skills,
+              str: newStrength,
+            },
+          })),
+          monster: monster,
+        };
+      }
+      return;
+    
+    case XAxisType.PLAYER_RANGED_LEVEL:
+      for (let newRanged = 0; newRanged <= 125; newRanged++) {
+        yield {
+          xValue: newRanged,
+          loadouts: loadouts.map(l => ({
+            ...l,
+            skills: {
+              ...l.skills,
+              ranged: newRanged,
+            },
+          })),
+          monster: monster,
+        };
+      }
+      return;
+    
+    case XAxisType.PLAYER_MAGIC_LEVEL:
+      for (let newMagic = 0; newMagic <= 125; newMagic++) {
+        yield {
+          xValue: newMagic,
+          loadouts: loadouts.map(l => ({
+            ...l,
+            skills: {
+              ...l.skills,
+              magic: newMagic,
+            },
+          })),
+          monster: monster,
         };
       }
       return;
