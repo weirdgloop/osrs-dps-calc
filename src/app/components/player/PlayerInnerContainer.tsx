@@ -36,7 +36,7 @@ const PlayerInnerContainer: React.FC = () => {
   }
 
   return (
-    <div className={'grow sm:border-r border-body-400 dark:border-dark-200 min-h-[490px]'}>
+    <div className={'grow sm:border-r border-body-400 dark:border-dark-200 min-h-[530px]'}>
       <div className={'flex justify-center text-center items-center bg-body-100 dark:bg-dark-400 dark:border-dark-200 px-4 py-[1.25em] gap-1 border-b border-body-400'}>
         <PlayerTab name={'Combat'} isActive={selected === 'combat'} image={combat} onClick={() => setSelected('combat')} />
         <PlayerTab name={'Skills'} isActive={selected === 'skills'} image={skills} onClick={() => setSelected('skills')} />

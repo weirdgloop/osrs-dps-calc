@@ -2,7 +2,6 @@ import {Potion} from "@/enums/Potion";
 import {StaticImageData} from "next/image";
 import React, {useState} from "react";
 import {observer} from "mobx-react-lite";
-import {useStore} from "@/state";
 import LazyImage from "@/app/components/generic/LazyImage";
 import {IconCircleCheck, IconCircleCheckFilled} from "@tabler/icons-react";
 
@@ -10,22 +9,17 @@ interface IBuffItemProps {
   potion: Potion;
   name: string;
   image: StaticImageData;
-  tooltip?: string;
+  active: boolean;
+  setActive: (p: Potion) => void;
 }
 
 const BuffItem: React.FC<IBuffItemProps> = observer((props) => {
-  const {potion, name, tooltip, image} = props;
-  const store = useStore();
+  const {potion, name, image, active, setActive} = props;
   const [hovering, setHovering] = useState(false);
-  const {buffs} = store.player;
-  const active = buffs.potions.includes(potion);
 
   return (
     <button
-      data-tooltip-id={'tooltip'}
-      data-tooltip-content={tooltip}
-      data-tooltip-place={'right'}
-      onClick={() => store.togglePlayerPotion(potion)}
+      onClick={() => setActive(potion)}
       className={`w-full px-4 py-1 first:mt-0 first:border-0 border-t dark:border-dark-200 flex gap-4 items-center hover:bg-gray-200 dark:hover:bg-dark-400`}
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}

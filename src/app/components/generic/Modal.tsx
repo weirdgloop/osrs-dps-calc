@@ -1,16 +1,17 @@
-import React, {PropsWithChildren} from "react";
+import React, {PropsWithChildren, ReactNode} from "react";
 import {Dialog} from "@headlessui/react";
 import {classNames} from "@/utils";
 
 interface IModalProps {
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
-  title: string | React.ReactNode;
+  title: string | ReactNode;
   hideCloseButton?: boolean;
+  footerChildren?: ReactNode;
 }
 
 const Modal: React.FC<PropsWithChildren<IModalProps>> = (props) => {
-  const {isOpen, setIsOpen, title, children, hideCloseButton} = props;
+  const {isOpen, setIsOpen, title, children, hideCloseButton, footerChildren} = props;
 
   return (
     <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
@@ -23,7 +24,7 @@ const Modal: React.FC<PropsWithChildren<IModalProps>> = (props) => {
           <div className={'px-4 py-2 max-w-xl mt-2 mx-auto'}>
             {children}
           </div>
-          <div className={'mt-3 p-4 border-t border-gray-300 dark:border-dark-200 flex justify-end'}>
+          <div className={'mt-3 p-4 border-t border-gray-300 dark:border-dark-200 flex gap-2 justify-between'}>
             {!hideCloseButton && (
               <button
                 className={classNames(
@@ -36,6 +37,7 @@ const Modal: React.FC<PropsWithChildren<IModalProps>> = (props) => {
                 Close
               </button>
             )}
+            {footerChildren}
           </div>
         </Dialog.Panel>
       </div>
