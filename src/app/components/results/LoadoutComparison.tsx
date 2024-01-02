@@ -51,8 +51,11 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, pa
           </p>
           {
             payload.map((p) => {
-              return <div key={p.name} className={'flex justify-between w-28'}>
-                {p.name}
+              return <div key={p.name} className={'flex justify-between w-32'}>
+                <div className={'flex items-center gap-1'}>
+                  <span className={'w-3 h-3 inline-block border border-gray-400 rounded-lg'} style={{backgroundColor: p.color}} />
+                  {p.name}
+                </div>
                 <span className={'text-gray-400 font-bold'}>{p.value}</span>
               </div>
             })
@@ -272,7 +275,7 @@ const LoadoutComparison: React.FC = observer(() => {
           <Tooltip
             content={(props) => <CustomTooltip {...props} />}
           />
-          <Legend />
+          <Legend wrapperStyle={{fontSize: '.9em'}} />
           {generateLines()}
         </LineChart>
       </ResponsiveContainer>

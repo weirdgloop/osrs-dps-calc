@@ -3,7 +3,6 @@ import skills from '@/public/img/tabs/skills.png';
 import equipment from '@/public/img/tabs/equipment.png';
 import potion from '@/public/img/tabs/potion.png';
 import prayer from '@/public/img/tabs/prayer.png';
-import tbzr from '@/public/img/tabs/tbzr.webp';
 import React, {useState} from 'react';
 import PlayerTab from "@/app/components/player/PlayerTab";
 import Equipment from './Equipment';
