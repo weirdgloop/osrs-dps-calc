@@ -1,4 +1,4 @@
-import React, {PropsWithChildren} from 'react';
+import React, {PropsWithChildren, useMemo} from 'react';
 import {observer} from 'mobx-react-lite';
 import {
   IconDice,
@@ -12,16 +12,14 @@ interface IResultRowProps {
   calcKey: keyof CalculatedLoadout;
 }
 
-const calcKeyToString = (loadout: CalculatedLoadout, calcKey: keyof CalculatedLoadout): string => {
+const calcKeyToString = (value: number, calcKey: keyof CalculatedLoadout): string => {
     switch (calcKey) {
         case "accuracy":
-            return (loadout[calcKey] * 100).toFixed(2) + '%';
-
+            return (value * 100).toFixed(2) + '%';
         case "dps":
-            return loadout[calcKey].toFixed(3);
-
+            return value.toFixed(3);
         default:
-            return "" + loadout[calcKey];
+            return "" + value;
     }
 }
 
@@ -30,10 +28,19 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
   const {children, calcKey} = props;
   const {calc} = store;
 
+  const cells = useMemo(() => {
+    let highestValue = calc.loadouts.reduce((prev, curr) => (prev[calcKey] > curr[calcKey]) ? prev : curr)[calcKey] as number;
+
+    return calc.loadouts.map((l, i) => {
+      const value = l[calcKey] as number;
+      return <th className={`text-center ${((calc.loadouts.length > 1) && highestValue === value) ? 'font-bold' : ''}`} key={i}>{calcKeyToString(value, calcKey)}</th>
+    })
+  }, [calc.loadouts, calcKey])
+
   return (
     <tr>
       <th className={'bg-btns-400 dark:bg-dark-400 w-40'}>{children}</th>
-      {calc.loadouts.map((l, i) => <th className={'text-center'} key={i}>{calcKeyToString(l, calcKey)}</th>)}
+      {cells}
     </tr>
   )
 })
