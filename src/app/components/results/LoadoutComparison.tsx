@@ -262,10 +262,12 @@ const LoadoutComparison: React.FC = observer(() => {
             allowDecimals={true}
             dataKey="name"
             stroke="#777777"
+            interval={'equidistantPreserveStart'}
           />
           <YAxis
             stroke="#777777"
             domain={[0, 'dataMax']}
+            interval={'equidistantPreserveStart'}
           />
           <Tooltip
             content={(props) => <CustomTooltip {...props} />}
