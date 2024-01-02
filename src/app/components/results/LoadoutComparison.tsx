@@ -77,7 +77,7 @@ function* inputRange(
 
   switch (xAxisType) {
     case XAxisType.MONSTER_DEF:
-      for (let newDef = monster.skills.def; newDef >= 0; newDef--) {
+      for (let newDef = 0; newDef <= monster.skills.def; newDef++) {
         yield {
           xValue: newDef,
           loadouts: loadouts,
@@ -93,7 +93,7 @@ function* inputRange(
       return;
 
     case XAxisType.MONSTER_MAGIC:
-      for (let newMagic = monster.skills.magic; newMagic >= 0; newMagic--) {
+      for (let newMagic = 0; newMagic <= monster.skills.magic; newMagic++) {
         yield {
           xValue: newMagic,
           loadouts: loadouts,
