@@ -70,7 +70,7 @@ const ResultsTable: React.FC = observer(() => {
 const ResultsContainer = observer(() => {
   return (
     <div className={'my-4'}>
-      <div className={'mx-2 overflow-x-scroll'}>
+      <div className={'mx-2 overflow-x-auto'}>
         <ResultsTable />
       </div>
     </div>
