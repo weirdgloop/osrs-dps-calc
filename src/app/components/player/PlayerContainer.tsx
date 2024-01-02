@@ -12,7 +12,7 @@ const PlayerContainer: React.FC = observer(() => {
 
     return (
         <div
-            className={'bg-tile md:basis-1/4 mx-auto sm:rounded-lg dark:bg-dark-300 text-black dark:text-white shadow-lg flex flex-col'}>
+            className={'bg-tile md:basis-1/2 mx-auto sm:rounded-lg dark:bg-dark-300 text-black dark:text-white shadow-lg flex flex-col'}>
             <div
                 className={'sm:rounded sm:rounded-b-none text-sm font-bold font-serif flex justify-between items-center bg-btns-400 dark:bg-dark-400 text-white border-b-4 border-orange-300 dark:border-orange-700'}
             >
