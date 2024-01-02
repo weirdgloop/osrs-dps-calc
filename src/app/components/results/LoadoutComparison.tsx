@@ -5,7 +5,7 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
-  LineChart, Legend, Line
+  LineChart, Legend, Line, TooltipProps
 } from 'recharts';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
@@ -14,6 +14,7 @@ import CombatCalc from "@/lib/CombatCalc";
 import {PlayerComputed} from "@/types/Player";
 import {getEquipmentForLoadout} from "@/utils";
 import {Monster} from "@/types/Monster";
+import {NameType, ValueType} from "recharts/types/component/DefaultTooltipContent";
 
 enum XAxisType {
   MONSTER_DEF,
@@ -39,16 +40,42 @@ const XAxisOptions = [
   {label: 'Player magic level', value: XAxisType.PLAYER_MAGIC_LEVEL},
 ]
 
+const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, payload, label }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className={'bg-white shadow rounded p-2 text-sm text-black flex items-center gap-2'}>
+        <div>
+          <p>
+            <strong>Level {label}</strong>
+          </p>
+          {
+            payload.map((p) => {
+              return <div key={p.name}>
+                <p>
+                  {p.name} - {' '}
+                  <span className={'text-gray-400 font-bold'}>{p.value}</span>
+                </p>
+              </div>
+            })
+          }
+        </div>
+      </div>
+    );
+  }
+
+  return null;
+}
+
 function* inputRange(
-    xAxisType: XAxisType,
-    loadouts: PlayerComputed[],
+  xAxisType: XAxisType,
+  loadouts: PlayerComputed[],
     monster: Monster,
 ): Generator<{
   xValue: number,
   loadouts: PlayerComputed[],
   monster: Monster,
 }> {
-  
+
   switch (xAxisType) {
     case XAxisType.MONSTER_DEF:
       for (let newDef = monster.skills.def; newDef >= 0; newDef--) {
@@ -65,7 +92,7 @@ function* inputRange(
         };
       }
       return;
-    
+
     case XAxisType.MONSTER_MAGIC:
       for (let newMagic = monster.skills.magic; newMagic >= 0; newMagic--) {
         yield {
@@ -81,7 +108,7 @@ function* inputRange(
         };
       }
       return;
-    
+
     case XAxisType.PLAYER_ATTACK_LEVEL:
       for (let newAttack = 0; newAttack <= 125; newAttack++) {
         yield {
@@ -97,7 +124,7 @@ function* inputRange(
         };
       }
       return;
-    
+
     case XAxisType.PLAYER_STRENGTH_LEVEL:
       for (let newStrength = 0; newStrength <= 125; newStrength++) {
         yield {
@@ -113,7 +140,7 @@ function* inputRange(
         };
       }
       return;
-    
+
     case XAxisType.PLAYER_RANGED_LEVEL:
       for (let newRanged = 0; newRanged <= 125; newRanged++) {
         yield {
@@ -129,7 +156,7 @@ function* inputRange(
         };
       }
       return;
-    
+
     case XAxisType.PLAYER_MAGIC_LEVEL:
       for (let newMagic = 0; newMagic <= 125; newMagic++) {
         yield {
@@ -149,7 +176,7 @@ function* inputRange(
     default:
       throw new Error(`unimplemented xAxisType ${xAxisType}`);
   }
-  
+
 }
 
 const YAxisOptions = [
@@ -166,7 +193,7 @@ const getOutput = (
   switch (yAxisType) {
     case YAxisType.DPS:
       return new CombatCalc(loadout, monster).getDps();
-      
+
     default:
       throw new Error(`Unimplemented yAxisType ${yAxisType}`);
   }
@@ -193,11 +220,11 @@ const LoadoutComparison: React.FC = observer(() => {
       }
     });
 
-    const lines: { name: number, [lKey: string]: number }[] = [];
+    const lines: { name: number, [lKey: string]: string | number }[] = [];
     for (let input of inputRange(x, computedLoadouts, monster)) {
       const entry: typeof lines[0] = {name: input.xValue};
       input.loadouts.forEach((l, i) => {
-        entry[`Loadout ${i+1}`] = getOutput(y, l, input.monster);
+        entry[`Loadout ${i+1}`] = getOutput(y, l, input.monster).toFixed(2);
       });
       lines.push(entry);
     }
@@ -206,11 +233,11 @@ const LoadoutComparison: React.FC = observer(() => {
 
   const generateLines = () => {
     let lines: React.ReactNode[] = [];
-    let strokeColours = ['red', 'blue', 'purple', 'green', 'sienna'];
+    let strokeColours = ['cyan', 'yellow', 'lime', 'orange', 'pink'];
 
     for (let i=0; i < loadouts.length; i++) {
       let colour = strokeColours.shift() || 'red';
-      lines.push(<Line key={i} type="monotone" dataKey={`Loadout ${i+1}`} stroke={colour} />);
+      lines.push(<Line key={i} type="monotone" dataKey={`Loadout ${i+1}`} stroke={colour} dot={false} />);
       strokeColours.push(colour);
     }
     return lines;
@@ -222,7 +249,6 @@ const LoadoutComparison: React.FC = observer(() => {
         <LineChart
           data={data}
         >
-          <CartesianGrid strokeDasharray="5 3" />
           <XAxis
             allowDecimals={true}
             dataKey="name"
@@ -232,7 +258,9 @@ const LoadoutComparison: React.FC = observer(() => {
             stroke="#777777"
             domain={[0, 'dataMax']}
           />
-          <Tooltip />
+          <Tooltip
+            content={(props) => <CustomTooltip {...props} />}
+          />
           <Legend />
           {generateLines()}
         </LineChart>
