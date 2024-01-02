@@ -1,6 +1,5 @@
-import React, {useMemo, useState} from 'react';
+import React, {useCallback, useMemo, useState} from 'react';
 import {
-  CartesianGrid,
   XAxis,
   YAxis,
   Tooltip,
@@ -15,6 +14,8 @@ import {PlayerComputed} from "@/types/Player";
 import {getEquipmentForLoadout} from "@/utils";
 import {Monster} from "@/types/Monster";
 import {NameType, ValueType} from "recharts/types/component/DefaultTooltipContent";
+import {toJS} from "mobx";
+import {useTheme} from "next-themes";
 
 enum XAxisType {
   MONSTER_DEF,
@@ -50,11 +51,9 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, pa
           </p>
           {
             payload.map((p) => {
-              return <div key={p.name}>
-                <p>
-                  {p.name} - {' '}
-                  <span className={'text-gray-400 font-bold'}>{p.value}</span>
-                </p>
+              return <div key={p.name} className={'flex justify-between w-28'}>
+                {p.name}
+                <span className={'text-gray-400 font-bold'}>{p.value}</span>
               </div>
             })
           }
@@ -180,7 +179,7 @@ function* inputRange(
 }
 
 const YAxisOptions = [
-  {label: 'Damage-per-second', value: YAxisType.DPS},
+  {label: 'Player damage-per-second', value: YAxisType.DPS},
   // {label: 'Time-to-kill', value: YAxisType.TTK},
   // {label: 'Damage taken', value: YAxisType.DAMAGE_TAKEN}
 ]
@@ -201,7 +200,11 @@ const getOutput = (
 
 const LoadoutComparison: React.FC = observer(() => {
   const store = useStore();
-  const {loadouts, monster} = store;
+  const loadouts = toJS(store.loadouts);
+  const monster = toJS(store.monster);
+
+  const {resolvedTheme} = useTheme();
+  const isDark = resolvedTheme === 'dark';
 
   const [xAxisType, setXAxisType] = useState<{ label: string, value: XAxisType } | null | undefined>(XAxisOptions[0]);
   const [yAxisType, setYAxisType] = useState<{ label: string, value: YAxisType } | null | undefined>(YAxisOptions[0]);
@@ -231,9 +234,14 @@ const LoadoutComparison: React.FC = observer(() => {
     return lines;
   }, [xAxisType, yAxisType, monster, loadouts]);
 
-  const generateLines = () => {
+  const generateLines = useCallback(() => {
     let lines: React.ReactNode[] = [];
-    let strokeColours = ['cyan', 'yellow', 'lime', 'orange', 'pink'];
+
+    const strokeColours =
+      isDark ?
+        ['cyan', 'yellow', 'lime', 'orange', 'pink'] :
+        ['blue', 'chocolate', 'green', 'sienna', 'purple']
+    ;
 
     for (let i=0; i < loadouts.length; i++) {
       let colour = strokeColours.shift() || 'red';
@@ -241,7 +249,8 @@ const LoadoutComparison: React.FC = observer(() => {
       strokeColours.push(colour);
     }
     return lines;
-  }
+
+  }, [loadouts, isDark])
 
   return (
     <>
