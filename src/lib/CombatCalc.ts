@@ -107,7 +107,7 @@ export default class CombatCalc {
   private isWearingAhrims(): boolean { // todo
     return this.wearingAll(["Ahrim's staff", "Ahrim's hood", "Ahrim's robetop", "Ahrim's robeskirt"])
   }
-  
+
   private isUsingGodSpell(): boolean {
     return ['Saradomin Strike', 'Claws of Guthix', 'Flames of Zamorak'].includes(this.player.spell.name);
   }
@@ -116,10 +116,10 @@ export default class CombatCalc {
    * Get the NPC defence roll for this loadout, which is based on the player's current combat style
    */
   public getNPCDefenceRoll(): number {
-    let effectiveLevel = this.player.style.type === "magic" 
+    let effectiveLevel = this.player.style.type === "magic"
         ? this.monster.skills.magic
         : this.monster.skills.def;
-    
+
     effectiveLevel += 9;
     let defenceRoll = effectiveLevel * (this.monster.defensive[this.player.style.type] + 64);
 
@@ -175,7 +175,7 @@ export default class CombatCalc {
       attackRoll = Math.trunc(attackRoll * 6/5);
     }
     if (this.wearing('Keris partisan of breaching') && mattrs.includes('kalphite')) {
-      attackRoll = Math.trunc(attackRoll * 133/100);
+      attackRoll = Math.trunc(attackRoll * 133/100); // https://twitter.com/JagexAsh/status/1704107285381787952
     }
     if (this.wearing(['Blisterwood flail', 'Blisterwood sickle']) && mattrs.includes('vampyre')) {
       attackRoll = Math.trunc(attackRoll * 21/20);
@@ -498,6 +498,8 @@ export default class CombatCalc {
       maxHit = Math.trunc(magicLevel / 6 - 1);
     } else if (this.wearing("Tumeken's shadow")) {
       maxHit = Math.trunc(magicLevel / 3 + 1);
+    } else if (this.wearing('Warped sceptre')) {
+      maxHit = Math.trunc((8 * magicLevel + 96) / 37);
     } else if (this.wearing(['Crystal staff (basic)', 'Corrupted staff (basic)'])) {
       maxHit = 23;
     } else if (this.wearing(['Crystal staff (attuned)', 'Corrupted staff (attuned)'])) {
@@ -545,7 +547,7 @@ export default class CombatCalc {
     maxHit = Math.trunc(maxHit * (1000 + magicDmgBonus) / 1000);
 
     if (blackMaskBonus) maxHit = Math.trunc(maxHit * 23/20);
-    
+
     if (this.player.trailblazerRelics.includes(TrailblazerRelic.SUPERIOR_SORCERER)) {
       maxHit = Math.trunc(maxHit * 6 / 5);
     }
@@ -565,12 +567,12 @@ export default class CombatCalc {
       case "ranged":
         prayers = prayers.filter(p => p.combatStyle === "ranged");
         break;
-        
+
       case "magic":
         prayers = prayers.filter(p => p.combatStyle === "magic");
         break;
     }
-    
+
     return 1 + sum(prayers.map(p => accuracy ? p.factorAccuracy : p.factorStrength));
   }
 
@@ -615,7 +617,7 @@ export default class CombatCalc {
     const hitChance = (atk > def)
         ? 1 - ((def + 2) / (2 * (atk + 1)))
         : atk / (2 * (def + 1));
-    
+
       if (this.isWearingFang()) {
           if (this.monster.attributes.includes('toa')) {
               return (atk > def)
@@ -625,15 +627,15 @@ export default class CombatCalc {
               return 1 - Math.pow(1 - hitChance, 2);
           }
       }
-    
+
     return hitChance;
   }
-  
+
   public getDistribution(): AttackDistribution {
     if (this.memoizedDist !== undefined) {
       return this.memoizedDist;
     }
-    
+
     return this.memoizedDist = this.getDistributionImpl();
   }
 
@@ -641,7 +643,7 @@ export default class CombatCalc {
     const mattrs = this.monster.attributes;
     const acc = this.getHitChance();
     const max = this.getMaxHit();
-    
+
     // standard linear
     const standardHitDist = HitDistribution.linear(acc, 0, max);
     let dist = new AttackDistribution([standardHitDist]);
@@ -655,7 +657,7 @@ export default class CombatCalc {
           [HitDistribution.linear(acc, Math.floor(max * 3 / 20), Math.floor(max * 17 / 20))],
       )
     }
-    
+
     if (this.isWearingScythe()) {
       const hits: HitDistribution[] = [];
       for (let i = 0; i < Math.min(Math.max(this.monster.size, 1), 3); i++) {
@@ -672,7 +674,7 @@ export default class CombatCalc {
         ])
       ])
     }
-  
+
     if (this.wearing('Tome of fire') && isFireSpell(this.player.spell)) {
       dist = dist.scaleDamage(3, 2);
     }
@@ -686,7 +688,7 @@ export default class CombatCalc {
       }
       dist = newDist;
     }
-    
+
     if (this.player.style.type === 'ranged' &&
         this.player.trailblazerRelics.includes(TrailblazerRelic.ARCHERS_EMBRACE)) {
       const newDist = new AttackDistribution(dist.dists);
@@ -696,7 +698,7 @@ export default class CombatCalc {
       }
       dist = newDist;
     }
-    
+
     return dist;
   }
 
