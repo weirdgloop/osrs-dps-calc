@@ -1,5 +1,5 @@
 import React from 'react';
-import {BarChart, XAxis, YAxis, Tooltip, ResponsiveContainer, Bar, TooltipProps} from 'recharts';
+import {BarChart, XAxis, YAxis, Tooltip, ResponsiveContainer, Bar, TooltipProps, CartesianGrid} from 'recharts';
 import {NameType, ValueType} from 'recharts/types/component/DefaultTooltipContent';
 import hitsplat from '@/public/img/hitsplat.webp';
 import zero_hitsplat from '@/public/img/zero_hitsplat.png';
@@ -55,6 +55,7 @@ const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = ({dist}) => {
             width={35}
             interval={'equidistantPreserveStart'}
           />
+          <CartesianGrid stroke="gray" strokeDasharray="5 5"/>
           <Tooltip
             content={(props) => <CustomTooltip {...props} />}
             cursor={{ fill: isDark ? '#3c3226' : '#b0aa9a' }}

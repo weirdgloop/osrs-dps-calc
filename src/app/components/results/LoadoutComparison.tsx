@@ -4,7 +4,7 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
-  LineChart, Legend, Line, TooltipProps
+  LineChart, Legend, Line, TooltipProps, CartesianGrid
 } from 'recharts';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
@@ -272,6 +272,7 @@ const LoadoutComparison: React.FC = observer(() => {
             domain={[0, 'dataMax']}
             interval={'equidistantPreserveStart'}
           />
+          <CartesianGrid stroke="gray" strokeDasharray="5 5"/>
           <Tooltip
             content={(props) => <CustomTooltip {...props} />}
           />
