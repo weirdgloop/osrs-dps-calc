@@ -114,6 +114,9 @@ const Home: NextPage = observer(() => {
   }, [store, store.equipmentBonuses]);
 
   useEffect(() => {
+    // On first load of this component, compute the calculator.
+    doWorkerRecompute(store.loadouts, store.monster);
+
     // When any of store.player or store.monster changes, run a re-compute of the calculator
     const r1 = reaction(() => toJS(store.loadouts), (data) => { doWorkerRecompute(data, store.monster) })
     const r2 = reaction(() => toJS(store.monster), (data) => { doWorkerRecompute(store.loadouts, data) })
