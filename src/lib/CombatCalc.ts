@@ -757,25 +757,32 @@ export default class CombatCalc {
   }
 
   /**
-   * Returns the time-to-kill calculation.
+   * Returns the average hits-to-kill calculation.
    */
-  public getTtk() {
+  public getHtk() {
     const dist = this.getDistribution();
     const hist = dist.asHistogram();
     const max = dist.getMax();
 
-    let ttk = new Float64Array(this.monster.skills.hp + 1); // 0 hits left to do if hp = 0
+    let htk = new Float64Array(this.monster.skills.hp + 1); // 0 hits left to do if hp = 0
 
     for (let hp = 1; hp <= this.monster.skills.hp; hp++) {
       let val = 1.0; // takes at least one hit
       for (let hit = 1; hit <= Math.min(hp, max); hit++) {
         let p = hist[hit];
-        val += p.chance * ttk[hp - hit];
+        val += p.chance * htk[hp - hit];
       }
 
-      ttk[hp] = val / (1 - hist[0].chance);
+      htk[hp] = val / (1 - hist[0].chance);
     }
 
-    return ttk[this.monster.skills.hp];
+    return htk[this.monster.skills.hp];
+  }
+
+  /**
+   * Returns the average time-to-kill (in seconds) calculation.
+   */
+  public getTtk() {
+    return this.getHtk() * this.getAttackSpeed() * SECONDS_PER_TICK;
   }
 }
