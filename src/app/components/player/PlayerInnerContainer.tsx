@@ -1,7 +1,7 @@
 import combat from '@/public/img/tabs/combat.png';
 import skills from '@/public/img/tabs/skills.png';
 import equipment from '@/public/img/tabs/equipment.png';
-import potion from '@/public/img/tabs/potion.png';
+import hybrid from '@/public/img/tabs/hybrid.webp';
 import prayer from '@/public/img/tabs/prayer.png';
 import React, {useState} from 'react';
 import PlayerTab from "@/app/components/player/PlayerTab";
@@ -37,7 +37,7 @@ const PlayerInnerContainer: React.FC = () => {
         <PlayerTab name={'Combat'} isActive={selected === 'combat'} image={combat} onClick={() => setSelected('combat')} />
         <PlayerTab name={'Skills'} isActive={selected === 'skills'} image={skills} onClick={() => setSelected('skills')} />
         <PlayerTab name={'Equipment'} isActive={selected === 'equipment'} image={equipment} onClick={() => setSelected('equipment')} />
-        <PlayerTab name={'Buffs'} isActive={selected === 'buffs'} image={potion} onClick={() => setSelected('buffs')} />
+        <PlayerTab name={'Buffs'} isActive={selected === 'buffs'} image={hybrid} onClick={() => setSelected('buffs')} />
         <PlayerTab name={'Prayer'} isActive={selected === 'prayer'} image={prayer} onClick={() => setSelected('prayer')} />
       </div>
       <div className={'mb-6'}>

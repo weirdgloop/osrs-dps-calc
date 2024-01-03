@@ -35,6 +35,9 @@ const Buffs: React.FC = observer(() => {
             </>
         } />
       </div>
+      <div className={'mt-2'}>
+        <p className={'text-xs dark:text-gray-300 text-gray-400'}>Equipment buffs are applied automatically.</p>
+      </div>
     </div>
 
   )
