@@ -65,10 +65,11 @@ const ResultsTable: React.FC = observer(() => {
       </thead>
       <tbody>
         <ResultRow calcKey={'maxHit'}><IconSword className={'inline-block'} /> Max hit</ResultRow>
+        <ResultRow calcKey={'dps'}><IconSword className={'inline-block'} /> DPS</ResultRow>
+        <ResultRow calcKey={'ttk'}><IconSword className={'inline-block'} /> Time-to-kill </ResultRow>
         <ResultRow calcKey={'maxAttackRoll'}><IconDice className={'inline-block'} /> Attack roll</ResultRow>
         <ResultRow calcKey={'npcDefRoll'}><IconShield className={'inline-block'} /> NPC def roll</ResultRow>
         <ResultRow calcKey={'accuracy'}><IconShield className={'inline-block'} /> Accuracy</ResultRow>
-        <ResultRow calcKey={'dps'}><IconShield className={'inline-block'} /> DPS</ResultRow>
       </tbody>
     </table>
   )

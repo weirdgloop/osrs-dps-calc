@@ -26,6 +26,7 @@ const computeValues = (loadouts: PlayerComputed[], m: Monster) => {
       maxAttackRoll: calc.getMaxAttackRoll(),
       accuracy: calc.getHitChance(),
       dps: calc.getDps(),
+      ttk: calc.getTtk(),
       dist: calc.getDistribution().asHistogram(),
     })
   }

@@ -5,6 +5,7 @@ import {isFireSpell} from "@/types/Spell";
 import {PrayerMap} from "@/enums/Prayer";
 import {sum} from "d3-array";
 import {TrailblazerRelic} from "@/enums/TrailblazerRelic";
+import range from 'lodash.range';
 
 const DEFAULT_ATTACK_SPEED = 4;
 const SECONDS_PER_TICK = 0.6;
@@ -742,11 +743,53 @@ export default class CombatCalc {
     }
   }
 
+  /**
+   * Returns the expected damage per tick, based on the player's attack speed.
+   */
   public getDpt() {
     return this.getDistribution().getExpectedDamage() / this.getAttackSpeed();
   }
 
+  /**
+   * Returns the damage-per-second calculation, which is the damage-per-tick divided by the number of seconds per tick.
+   */
   public getDps() {
     return this.getDpt() / SECONDS_PER_TICK;
   }
+
+  /**
+   * Returns the time-to-kill calculation.
+   */
+  public getTtk() {
+    const dist = this.getDistribution();
+    const hist = dist.asHistogram();
+
+    let ttk = [0.0]; // 0 hits left to do if hp = 0
+
+    for (const hp of range(1, this.monster.skills.hp + 1)) {
+      let val = 1.0; // takes at least one hit
+      for (const hit of range(1, Math.min(hp, dist.getMax()))) {
+        let p = hist[hit];
+        val += p.chance * ttk[hp - hit];
+      }
+
+      ttk.push(val / (1 - hist[0].chance));
+    }
+
+    return ttk[this.monster.skills.hp];
+  }
 }
+
+/**
+ * def time_to_kill(starting_hp, hit_dist):
+ *     max_hit = len(hit_dist) - 1
+ *     ttk = [0.0] # 0 hits left to do if hp = 0
+ *     for hp in range(1, starting_hp + 1):
+ *         val = 1.0 # takes at least one hit
+ *         for hit in range(1, min(hp, max_hit + 1)):
+ *             p = hit_dist[hit]
+ *             val += p * ttk[hp - hit]
+ *
+ *         ttk.append(val/(1-hit_dist[0]))
+ *     return ttk[hp]
+ */

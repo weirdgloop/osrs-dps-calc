@@ -32,6 +32,7 @@ export interface CalculatedLoadout {
   maxAttackRoll: number,
   accuracy: number,
   dps: number,
+  ttk: number,
   dist: HistogramEntry[],
 }
 
