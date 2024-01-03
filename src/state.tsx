@@ -292,7 +292,7 @@ class GlobalState implements State {
     // Update local state store
     this.prefs = Object.assign(this.prefs, pref);
 
-    if (pref.allowEditingPlayerStats === false) {
+    if (!this.prefs.allowEditingPlayerStats) {
       // Reset player bonuses to their worn equipment
       this.player.bonuses = this.equipmentBonuses.bonuses;
       this.player.offensive = this.equipmentBonuses.offensive;
