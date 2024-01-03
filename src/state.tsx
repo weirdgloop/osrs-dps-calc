@@ -119,16 +119,17 @@ const generateEmptyPlayer: () => Player = () => {
 
 class GlobalState implements State {
   monster: Monster = {
-    id: null,
-    name: '',
-    size: 0,
+    id: 415,
+    name: 'Abyssal demon',
+    image: 'Abyssal demon.png',
+    size: 1,
     skills: {
-      atk: 0,
-      def: 0,
-      hp: 0,
-      magic: 0,
-      ranged: 0,
-      str: 0,
+      atk: 97,
+      def: 135,
+      hp: 150,
+      magic: 1,
+      ranged: 1,
+      str: 67,
     },
     offensive: {
       atk: 0,
@@ -139,13 +140,13 @@ class GlobalState implements State {
       str: 0,
     },
     defensive: {
-      crush: 0,
+      crush: 20,
       magic: 0,
-      ranged: 0,
-      slash: 0,
-      stab: 0,
+      ranged: 20,
+      slash: 20,
+      stab: 20,
     },
-    attributes: [],
+    attributes: ['demon'],
     invocationLevel: 0
   }
 
