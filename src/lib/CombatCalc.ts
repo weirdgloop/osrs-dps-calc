@@ -768,7 +768,7 @@ export default class CombatCalc {
 
     for (const hp of range(1, this.monster.skills.hp + 1)) {
       let val = 1.0; // takes at least one hit
-      for (const hit of range(1, Math.min(hp, dist.getMax()))) {
+      for (const hit of range(1, Math.min(hp, dist.getMax() + 1))) {
         let p = hist[hit];
         val += p.chance * ttk[hp - hit];
       }
@@ -779,17 +779,3 @@ export default class CombatCalc {
     return ttk[this.monster.skills.hp];
   }
 }
-
-/**
- * def time_to_kill(starting_hp, hit_dist):
- *     max_hit = len(hit_dist) - 1
- *     ttk = [0.0] # 0 hits left to do if hp = 0
- *     for hp in range(1, starting_hp + 1):
- *         val = 1.0 # takes at least one hit
- *         for hit in range(1, min(hp, max_hit + 1)):
- *             p = hit_dist[hit]
- *             val += p * ttk[hp - hit]
- *
- *         ttk.append(val/(1-hit_dist[0]))
- *     return ttk[hp]
- */

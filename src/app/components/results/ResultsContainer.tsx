@@ -14,12 +14,14 @@ interface IResultRowProps {
 
 const calcKeyToString = (value: number, calcKey: keyof CalculatedLoadout): string => {
     switch (calcKey) {
-        case "accuracy":
-            return (value * 100).toFixed(2) + '%';
-        case "dps":
-            return value.toFixed(3);
-        default:
-            return "" + value;
+      case "accuracy":
+        return (value * 100).toFixed(2) + '%';
+      case "dps":
+        return value.toFixed(3);
+      case 'ttk':
+        return value.toFixed(3) + 's';
+      default:
+          return "" + value;
     }
 }
 
@@ -66,7 +68,7 @@ const ResultsTable: React.FC = observer(() => {
       <tbody>
         <ResultRow calcKey={'maxHit'}><IconSword className={'inline-block'} /> Max hit</ResultRow>
         <ResultRow calcKey={'dps'}><IconSword className={'inline-block'} /> DPS</ResultRow>
-        <ResultRow calcKey={'ttk'}><IconSword className={'inline-block'} /> Time-to-kill </ResultRow>
+        <ResultRow calcKey={'ttk'}><IconSword className={'inline-block'} /> Avg. TTK </ResultRow>
         <ResultRow calcKey={'maxAttackRoll'}><IconDice className={'inline-block'} /> Attack roll</ResultRow>
         <ResultRow calcKey={'npcDefRoll'}><IconShield className={'inline-block'} /> NPC def roll</ResultRow>
         <ResultRow calcKey={'accuracy'}><IconShield className={'inline-block'} /> Accuracy</ResultRow>

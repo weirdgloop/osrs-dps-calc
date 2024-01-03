@@ -177,6 +177,7 @@ class GlobalState implements State {
         maxAttackRoll: 0,
         accuracy: 0,
         dps: 0,
+        ttk: 0,
         dist: [],
       }
     ]
