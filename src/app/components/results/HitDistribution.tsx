@@ -60,7 +60,7 @@ const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = ({dist}) => {
             content={(props) => <CustomTooltip {...props} />}
             cursor={{ fill: isDark ? '#3c3226' : '#b0aa9a' }}
           />
-          <Bar dataKey="chance" fill="tan" />
+          <Bar dataKey="chance" fill="tan" animationDuration={500} />
         </BarChart>
       </ResponsiveContainer>
     </>

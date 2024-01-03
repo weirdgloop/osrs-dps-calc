@@ -15,7 +15,6 @@ const PreferencesModal: React.FC<IPreferencesModalProps> = observer((props) => {
   const store = useStore();
   const {prefs} = store;
 
-
   return (
     <Modal
         isOpen={isOpen}

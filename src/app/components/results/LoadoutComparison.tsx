@@ -228,7 +228,7 @@ const LoadoutComparison: React.FC = observer(() => {
 
     const lines: { name: number, [lKey: string]: string | number }[] = [];
     for (let input of inputRange(x, computedLoadouts, monster)) {
-      const entry: typeof lines[0] = {name: input.xValue};
+      const entry: typeof lines[0] = {name: input.xValue,};
       input.loadouts.forEach((l, i) => {
         entry[`Loadout ${i+1}`] = getOutput(y, l, input.monster).toFixed(2);
       });
@@ -248,7 +248,14 @@ const LoadoutComparison: React.FC = observer(() => {
 
     for (let i=0; i < loadouts.length; i++) {
       let colour = strokeColours.shift() || 'red';
-      lines.push(<Line key={i} type="monotone" dataKey={`Loadout ${i+1}`} stroke={colour} dot={false} />);
+      lines.push(<Line
+        key={i}
+        type="monotone"
+        dataKey={`Loadout ${i+1}`}
+        stroke={colour}
+        dot={false}
+        animationDuration={500}
+      />);
       strokeColours.push(colour);
     }
     return lines;

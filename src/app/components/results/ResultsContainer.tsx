@@ -10,6 +10,7 @@ import {CalculatedLoadout} from "@/types/State";
 
 interface IResultRowProps {
   calcKey: keyof CalculatedLoadout;
+  title?: string;
 }
 
 const calcKeyToString = (value: number, calcKey: keyof CalculatedLoadout): string => {
@@ -27,7 +28,7 @@ const calcKeyToString = (value: number, calcKey: keyof CalculatedLoadout): strin
 
 const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props) => {
   const store = useStore();
-  const {children, calcKey} = props;
+  const {children, calcKey, title} = props;
   const {calc} = store;
 
   const cells = useMemo(() => {
@@ -48,7 +49,7 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
 
   return (
     <tr>
-      <th className={'bg-btns-400 dark:bg-dark-400 w-40'}>{children}</th>
+      <th className={'bg-btns-400 dark:bg-dark-400 w-40 select-none'} title={title}>{children}</th>
       {cells}
     </tr>
   )
@@ -73,12 +74,24 @@ const ResultsTable: React.FC = observer(() => {
       </tr>
       </thead>
       <tbody>
-        <ResultRow calcKey={'maxHit'}><IconSword className={'inline-block'} /> Max hit</ResultRow>
-        <ResultRow calcKey={'dps'}><IconSword className={'inline-block'} /> DPS</ResultRow>
-        <ResultRow calcKey={'ttk'}><IconSword className={'inline-block'} /> Avg. TTK </ResultRow>
-        <ResultRow calcKey={'maxAttackRoll'}><IconDice className={'inline-block'} /> Attack roll</ResultRow>
-        <ResultRow calcKey={'npcDefRoll'}><IconShield className={'inline-block'} /> NPC def roll</ResultRow>
-        <ResultRow calcKey={'accuracy'}><IconShield className={'inline-block'} /> Accuracy</ResultRow>
+        <ResultRow calcKey={'maxHit'} title={'The maximum hit that you will deal to the monster'}>
+          <IconSword className={'inline-block'} /> Max hit
+        </ResultRow>
+        <ResultRow calcKey={'dps'} title={'The average damage you will deal per-second'}>
+          <IconSword className={'inline-block'} /> DPS
+        </ResultRow>
+        <ResultRow calcKey={'ttk'} title={'The average time (in seconds) it will take to defeat the monster'}>
+          <IconSword className={'inline-block'} /> Avg. TTK
+        </ResultRow>
+        <ResultRow calcKey={'maxAttackRoll'} title={'The maximum attack roll based on your current gear (higher is better!)'}>
+          <IconDice className={'inline-block'} /> Attack roll
+        </ResultRow>
+        <ResultRow calcKey={'npcDefRoll'} title={"The NPC's defense roll (lower is better!)"}>
+          <IconShield className={'inline-block'} /> NPC def roll
+        </ResultRow>
+        <ResultRow calcKey={'accuracy'} title={'How accurate you are against the monster'}>
+          <IconShield className={'inline-block'} /> Accuracy
+        </ResultRow>
       </tbody>
     </table>
   )

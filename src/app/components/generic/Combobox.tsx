@@ -160,7 +160,7 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
 
   return (
     <div>
-      <input className={`form-control ${className}`} {...getInputProps({ref: inputRef, open: isOpen, type: 'text', placeholder: (placeholder || 'Search...')})} />
+      <input className={`form-control cursor-pointer ${className}`} {...getInputProps({ref: inputRef, open: isOpen, type: 'text', placeholder: (placeholder || 'Search...')})} />
       <div
           className={`absolute bg-white rounded dark:bg-dark-400 dark:border-dark-200 dark:text-white shadow-xl mt-1 border border-gray-300 z-10 transition-opacity ${(isOpen && filteredItems.length) ? 'opacity-100' : 'opacity-0'}`}
           {...getMenuProps({
