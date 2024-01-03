@@ -31,7 +31,14 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
   const {calc} = store;
 
   const cells = useMemo(() => {
-    let highestValue = calc.loadouts.reduce((prev, curr) => (prev[calcKey] > curr[calcKey]) ? prev : curr)[calcKey] as number;
+    let highestValue = calc.loadouts.reduce((prev, curr) => {
+      if (calcKey === 'ttk') {
+        // The lower number is better here
+        return (prev[calcKey] < curr[calcKey]) ? prev : curr;
+      } else {
+        return (prev[calcKey] > curr[calcKey]) ? prev : curr;
+      }
+    })[calcKey] as number;
 
     return calc.loadouts.map((l, i) => {
       const value = l[calcKey] as number;
