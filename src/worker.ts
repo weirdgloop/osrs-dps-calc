@@ -28,6 +28,7 @@ const computeValues = (loadouts: PlayerComputed[], m: Monster) => {
       dps: calc.getDps(),
       ttk: calc.getTtk(),
       dist: calc.getDistribution().asHistogram(),
+      ttkDist: calc.getTtkDistribution(),
     })
   }
 

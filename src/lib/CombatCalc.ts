@@ -5,9 +5,13 @@ import {isFireSpell} from "@/types/Spell";
 import {PrayerMap} from "@/enums/Prayer";
 import {sum} from "d3-array";
 import {TrailblazerRelic} from "@/enums/TrailblazerRelic";
+import {HistogramEntry} from "@/types/State";
 
 const DEFAULT_ATTACK_SPEED = 4;
 const SECONDS_PER_TICK = 0.6;
+
+const TTK_DIST_MAX_ITER_ROUNDS = 1000;
+const TTK_DIST_EPSILON = 0.0001;
 
 export default class CombatCalc {
   private player: PlayerComputed;
@@ -784,5 +788,66 @@ export default class CombatCalc {
    */
   public getTtk() {
     return this.getHtk() * this.getAttackSpeed() * SECONDS_PER_TICK;
+  }
+  
+  public getTtkDistribution(): HistogramEntry[] {
+    const dist = this.getDistribution().asSingleHitplat();
+ 
+    // distribution of health values at current iter step
+    // we don't need to track the 0-health state, but using +1 here removes the need for -1s later on
+    let hps = new Float64Array(this.monster.skills.hp + 1);
+    hps[this.monster.skills.hp] = 1.0;
+    
+    // output map, will be converted at the end
+    let ttks = new Map<number, number>();
+
+    // sum of non-zero-health probabilities
+    let epsilon = 1.0;
+    
+    // 1. until the amount of hp values remaining above zero is more than our desired epsilon accuracy,
+    //    or we reach the maximum iteration rounds
+    for (let i = 1; i < (TTK_DIST_MAX_ITER_ROUNDS + 1) && epsilon > TTK_DIST_EPSILON; i++) {
+      // 2. track the sum total of probability-paths that reach zero on this iteration
+      let delta = 0.0;
+      
+      const nextHps = new Float64Array(this.monster.skills.hp + 1);
+      
+      // 3. for each damage amount possible,
+      for (let h of dist.hits) {
+        let dmgProb = h.probability;
+        let dmg = h.getHitsplats()[0]; // guaranteed to be length 1 from asSingleHitsplat
+        
+        // 4. for each possible hp value, 
+        for (let [hp, hpProb] of hps.entries()) {
+          // 5. the chance of this path being reached is the previous chance of landing here * the chance of hitting this amount
+          const chanceOfAction = dmgProb * hpProb;
+          if (chanceOfAction === 0) continue;
+          
+          const newHp = hp - dmg;
+          
+          // 6. if the hp we are about to arrive at is <= 0, the npc is killed, the iteration count is hits done,
+          //    and we add this probability path into the delta 
+          if (newHp <= 0) {
+            ttks.set(i, (ttks.get(i) || 0) + chanceOfAction);
+            delta += chanceOfAction;
+          } 
+          
+          // 7. otherwise, we add the chance of this path to the next iteration's hp value
+          else {
+            nextHps[newHp] += chanceOfAction;
+          }
+        }
+      }
+      
+      // 8. update counters and repeat
+      epsilon -= delta;
+      hps = nextHps;
+    }
+    
+    const ret: HistogramEntry[] = [];
+    for (let [ttk, prob] of ttks.entries()) {
+      ret.push({name: ttk * this.getAttackSpeed() * SECONDS_PER_TICK, chance: prob})
+    }
+    return ret;
   }
 }

@@ -155,6 +155,9 @@ export class HitDistribution {
         return d;
     }
 
+    /**
+     * Converts multi-hits into a single cumulative damage total.
+     */
     public cumulative(): HitDistribution {
         const d = new HitDistribution([]);
         const acc = new Map<number, number>();
@@ -248,13 +251,23 @@ export class AttackDistribution {
         return this.map(d => d.scaleDamage(factor, divisor));
     }
 
+    public getMax(): number {
+        return max(this.dists.map(d => d.getMax())) || 0;
+    }
+
+    public getExpectedDamage(): number {
+        return max(this.dists.map(d => d.expectedHit())) || 0;
+    }
+
+    public asSingleHitplat(): HitDistribution {
+        return this.dists.reduce((prev, curr) => prev.zip(curr)).cumulative();
+    }
+
     public asHistogram(): HistogramEntry[] {
-        const dist = (this.dists.length === 1)
-            ? this.dists[0]
-            : this.dists.reduce((d1, d2) => d1.zip(d2));
+        const dist = this.asSingleHitplat();
 
         const hitMap = new Map<number, number>();
-        dist.cumulative().hits.forEach(h => hitMap.set(h.getSum(), h.probability));
+        dist.hits.forEach(h => hitMap.set(h.getSum(), h.probability));
 
         const ret: HistogramEntry[] = [];
         for (let i = 0; i <= dist.getMax(); i++) {
@@ -267,14 +280,6 @@ export class AttackDistribution {
         }
 
         return ret;
-    }
-
-    public getMax(): number {
-        return max(this.dists.map(d => d.getMax())) || 0;
-    }
-
-    public getExpectedDamage(): number {
-        return max(this.dists.map(d => d.expectedHit())) || 0;
     }
 
     private map(m: (d: HitDistribution) => HitDistribution) {
