@@ -280,8 +280,8 @@ const LoadoutComparison: React.FC = observer(() => {
           {generateLines()}
         </LineChart>
       </ResponsiveContainer>
-      <div className={'my-4 flex gap-4 max-w-lg m-auto dark:text-white'}>
-        <div className={'basis-1/2'}>
+      <div className={'my-4 flex flex-wrap md:flex-nowrap gap-4 max-w-lg m-auto dark:text-white'}>
+        <div className={'basis-full md:basis-1/2'}>
           <h3 className={'font-serif font-bold mb-2'}>X axis</h3>
           <Select
             id={'loadout-comparison-x'}
@@ -292,7 +292,7 @@ const LoadoutComparison: React.FC = observer(() => {
             }}
           />
         </div>
-        <div className={'basis-1/2'}>
+        <div className={'basis-full md:basis-1/2'}>
           <h3 className={'font-serif font-bold mb-2'}>Y axis</h3>
           <Select
             id={'loadout-comparison-y'}
