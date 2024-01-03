@@ -184,8 +184,8 @@ export const getCombatStylesForCategory = (style: EquipmentCategory): PlayerComb
     case EquipmentCategory.NONE:
     case EquipmentCategory.UNARMED:
       return [
-        {name: 'Kick', type: 'crush', stance: 'Aggressive'},
         {name: 'Punch', type: 'crush', stance: 'Accurate'},
+        {name: 'Kick', type: 'crush', stance: 'Aggressive'},
         {name: 'Block', type: 'crush', stance: 'Defensive'}
       ];
     case EquipmentCategory.SCYTHE:
