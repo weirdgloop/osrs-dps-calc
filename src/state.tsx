@@ -180,6 +180,7 @@ class GlobalState implements State {
         dps: 0,
         ttk: 0,
         dist: [],
+        ttkDist: [],
       }
     ]
   }

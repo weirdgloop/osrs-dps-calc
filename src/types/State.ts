@@ -34,6 +34,7 @@ export interface CalculatedLoadout {
   dps: number,
   ttk: number,
   dist: HistogramEntry[],
+  ttkDist: HistogramEntry[], // we might want to make this lazy, it can get very slow
 }
 
 export interface Calculator {
