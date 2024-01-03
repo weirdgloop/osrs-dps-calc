@@ -184,6 +184,8 @@ class GlobalState implements State {
     ]
   }
 
+  worker: Worker | null = null
+
   constructor() {
     makeAutoObservable(this, {}, {autoBind: true});
   }
@@ -227,6 +229,10 @@ class GlobalState implements State {
 
   updateCalculator(calc: PartialDeep<Calculator>) {
     this.calc = Object.assign(this.calc, calc);
+  }
+
+  setWorker(worker: Worker | null) {
+    this.worker = worker;
   }
 
   async loadShortlink(linkId: string) {

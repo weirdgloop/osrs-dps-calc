@@ -23,10 +23,8 @@ const Home: NextPage = observer(() => {
   const store = useStore();
   const {showPreferencesModal} = store.ui;
 
-  const workerRef = useRef<Worker>();
-
   const doWorkerRecompute = (p: Player[], m: Monster) => {
-    if (workerRef.current) {
+    if (store.worker) {
       const loadouts = p.map((i) => {
         return {
           ...i,
@@ -34,7 +32,7 @@ const Home: NextPage = observer(() => {
         }
       });
 
-      workerRef.current?.postMessage(JSON.stringify({
+      store.worker.postMessage(JSON.stringify({
         type: WorkerRequestType.RECOMPUTE_VALUES,
         data: {
           loadouts,
@@ -46,8 +44,8 @@ const Home: NextPage = observer(() => {
 
   useEffect(() => {
     // When the page loads, set up the worker and be ready to interpret the responses
-    workerRef.current = new Worker(new URL('../worker.ts', import.meta.url));
-    workerRef.current.onmessage = (evt: MessageEvent<string>) => {
+    const worker = new Worker(new URL('../worker.ts', import.meta.url));
+    worker.onmessage = (evt: MessageEvent<string>) => {
       const data = JSON.parse(evt.data) as WorkerResponses;
 
       // Depending on the response type, do things...
@@ -59,10 +57,12 @@ const Home: NextPage = observer(() => {
           break;
       }
     }
+    store.setWorker(worker);
 
     return () => {
       // Terminate the worker when we un-mount this component
-      workerRef.current?.terminate();
+      worker?.terminate();
+      store.setWorker(null);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
