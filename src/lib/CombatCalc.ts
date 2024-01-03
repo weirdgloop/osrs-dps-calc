@@ -5,7 +5,6 @@ import {isFireSpell} from "@/types/Spell";
 import {PrayerMap} from "@/enums/Prayer";
 import {sum} from "d3-array";
 import {TrailblazerRelic} from "@/enums/TrailblazerRelic";
-import range from 'lodash.range';
 
 const DEFAULT_ATTACK_SPEED = 4;
 const SECONDS_PER_TICK = 0.6;
@@ -763,17 +762,18 @@ export default class CombatCalc {
   public getTtk() {
     const dist = this.getDistribution();
     const hist = dist.asHistogram();
+    const max = dist.getMax();
 
-    let ttk = [0.0]; // 0 hits left to do if hp = 0
+    let ttk = new Float64Array(this.monster.skills.hp + 1); // 0 hits left to do if hp = 0
 
-    for (const hp of range(1, this.monster.skills.hp + 1)) {
+    for (let hp = 1; hp <= this.monster.skills.hp; hp++) {
       let val = 1.0; // takes at least one hit
-      for (const hit of range(1, Math.min(hp, dist.getMax() + 1))) {
+      for (let hit = 1; hit <= Math.min(hp, max); hit++) {
         let p = hist[hit];
         val += p.chance * ttk[hp - hit];
       }
 
-      ttk.push(val / (1 - hist[0].chance));
+      ttk[hp] = val / (1 - hist[0].chance);
     }
 
     return ttk[this.monster.skills.hp];

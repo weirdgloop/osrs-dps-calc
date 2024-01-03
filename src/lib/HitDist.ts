@@ -265,7 +265,7 @@ export class AttackDistribution {
                 ret.push({name: i, chance: prob});
             }
         }
-        
+
         return ret;
     }
 
