@@ -53,6 +53,7 @@ const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = ({dist}) => {
               return Math.floor(v * 100).toString() + '%';
             }}
             width={35}
+            interval={'equidistantPreserveStart'}
           />
           <Tooltip
             content={(props) => <CustomTooltip {...props} />}
