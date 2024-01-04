@@ -116,9 +116,7 @@ const Home: NextPage = observer(() => {
   }, [store, store.equipmentBonuses]);
 
   useEffect(() => {
-    // On first load of this component, compute the calculator.
     const recompute = () => doWorkerRecompute(store.loadouts, store.monster, store.prefs.showTtkComparison);
-    recompute();
 
     // When a calculator input changes, trigger a re-compute on the worker
     const triggers: ((r: IReactionPublic) => any)[] = [
@@ -126,8 +124,8 @@ const Home: NextPage = observer(() => {
       () => toJS(store.monster),
       () => toJS(store.prefs.showTtkComparison),
     ];
-    const reactions = triggers.map(t => reaction(t, recompute))
-    
+    const reactions = triggers.map(t => reaction(t, recompute, {fireImmediately: true}))
+
     return () => {
       for (let r of reactions) {
         r();
@@ -180,10 +178,10 @@ const Home: NextPage = observer(() => {
                   </div>
                 ) : <></>
               }
-              { 
+              {
                 (!store.prefs.showLoadoutComparison && store.prefs.showTtkComparison) ? (
                   <p className={'text-sm'}>You can enable additional outputs by <button className={'underline'} onClick={() => store.updateUIState({showPreferencesModal: true})}>changing your preferences</button>.</p>
-                ) : <></> 
+                ) : <></>
               }
             </div>
         </div>

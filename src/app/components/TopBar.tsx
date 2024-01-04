@@ -10,10 +10,8 @@ import {observer} from "mobx-react-lite";
 
 const TopBar: React.FC = observer(() => {
   const store = useStore();
-  const {blockSharing} = store.ui;
 
   const generateShareLink = async () => {
-    store.updateUIState({blockSharing: true});
     // Get the data we need from the internal store
     const data: ImportableData = {
       loadouts: toJS(store.loadouts),
@@ -29,7 +27,6 @@ const TopBar: React.FC = observer(() => {
     } catch (e) {
       // Failed...
       toast.error('Could not create share link. Please try again later.');
-      store.updateUIState({blockSharing: false});
     }
   }
 
@@ -58,7 +55,6 @@ const TopBar: React.FC = observer(() => {
                     <IconSettings size={20} aria-label={'Preferences'} />
                   </button>
                   <button
-                    disabled={blockSharing}
                     data-tooltip-id={'tooltip'}
                     data-tooltip-content={'Share'}
                     className={classNames(

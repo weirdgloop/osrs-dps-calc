@@ -1,13 +1,21 @@
-import {makeAutoObservable, toJS} from 'mobx';
+import {IReactionPublic, makeAutoObservable, reaction, toJS} from 'mobx';
 import React, {createContext, useContext} from 'react';
 import {PartialDeep} from 'type-fest';
-import {Potion} from './enums/Potion';
+import {Potion, PotionMap} from './enums/Potion';
 import * as localforage from 'localforage';
 import {Calculator, ImportableData, Preferences, State, UI} from '@/types/State';
 import {ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, Prayer} from './enums/Prayer';
 import merge from 'lodash.mergewith';
 import {EquipmentCategory, getCombatStylesForCategory} from './enums/EquipmentCategory';
-import {EquipmentPiece, Player, PlayerBonuses, PlayerDefensive, PlayerEquipment, PlayerOffensive} from '@/types/Player';
+import {
+  EquipmentPiece,
+  Player,
+  PlayerBonuses,
+  PlayerDefensive,
+  PlayerEquipment,
+  PlayerOffensive,
+  PlayerSkills
+} from '@/types/Player';
 import {Monster} from '@/types/Monster';
 import {MonsterAttribute} from "@/enums/MonsterAttribute";
 import {toast} from "react-toastify";
@@ -159,7 +167,6 @@ class GlobalState implements State {
   ui: UI = {
     showPreferencesModal: false,
     username: '',
-    blockSharing: false
   }
 
   prefs: Preferences = {
@@ -190,6 +197,30 @@ class GlobalState implements State {
 
   constructor() {
     makeAutoObservable(this, {}, {autoBind: true});
+
+    const recomputeBoosts = () => {
+      // Re-compute the player's boost values.
+      let boosts: PlayerSkills = {atk: 0, def: 0, hp: 0, magic: 0, prayer: 0, ranged: 0, str: 0}
+
+      for (let p of this.player.buffs.potions) {
+        let result = PotionMap[p].calculateFn(this.player.skills);
+        for (let k of Object.keys(result)) {
+          let r = result[k as keyof typeof result] as number;
+          if (r > boosts[k as keyof typeof boosts]) {
+            // If this skill's boost is higher than what it already is, then change it
+            boosts[k as keyof typeof boosts] = result[k as keyof typeof result] as number;
+          }
+        }
+      }
+
+      this.updatePlayer({boosts: boosts});
+    };
+
+    const triggers: ((r: IReactionPublic) => any)[] = [
+      () => toJS(this.player.skills),
+      () => toJS(this.player.buffs.potions),
+    ];
+    triggers.map(t => reaction(t, recomputeBoosts, {fireImmediately: true}));
   }
 
   /**
@@ -224,6 +255,11 @@ class GlobalState implements State {
       return (v !== null && v !== undefined);
     }) as EquipmentPiece[]);
   }
+
+  /**
+   * Return the player's skill bonuses.
+   * @param ui
+   */
 
   updateUIState(ui: PartialDeep<UI>) {
     this.ui = Object.assign(this.ui, ui);
@@ -326,7 +362,6 @@ class GlobalState implements State {
     } else {
       this.player.buffs.potions = [...this.player.buffs.potions, potion];
     }
-    this.updateUIState({blockSharing: false});
   }
 
   /**
@@ -365,7 +400,6 @@ class GlobalState implements State {
 
       this.player.prayers = [...newPrayers, prayer];
     }
-    this.updateUIState({blockSharing: false});
   }
 
   /**
@@ -379,7 +413,6 @@ class GlobalState implements State {
     } else {
       this.monster.attributes = [...this.monster.attributes, attr];
     }
-    this.updateUIState({blockSharing: false});
   }
 
   /**
@@ -393,7 +426,6 @@ class GlobalState implements State {
     } else {
       this.player.trailblazerRelics = [...this.player.trailblazerRelics, relic];
     }
-    this.updateUIState({blockSharing: false});
   }
 
   /**
@@ -413,7 +445,6 @@ class GlobalState implements State {
 
       this.player.ruinousPowers = [...this.player.ruinousPowers, power];
     }
-    this.updateUIState({blockSharing: false});
   }
 
   /**
@@ -448,7 +479,6 @@ class GlobalState implements State {
     }
 
     this.loadouts[this.selectedLoadout] = merge(this.player, player);
-    this.updateUIState({blockSharing: false});
   }
 
   /**
@@ -462,7 +492,6 @@ class GlobalState implements State {
         return src;
       }
     });
-    this.updateUIState({blockSharing: false});
   }
 
   /**
@@ -490,7 +519,6 @@ class GlobalState implements State {
     if ((this.selectedLoadout >= ix) && ix !== 0) {
       this.selectedLoadout = this.selectedLoadout - 1;
     }
-    this.updateUIState({blockSharing: false});
   }
 
   get canCreateLoadout() {
@@ -507,7 +535,6 @@ class GlobalState implements State {
 
     this.loadouts.push((cloneIndex !== undefined) ? toJS(this.loadouts[cloneIndex]) : generateEmptyPlayer());
     if (selected) this.selectedLoadout = (this.loadouts.length - 1);
-    this.updateUIState({blockSharing: false});
   }
 }
 

@@ -18,23 +18,22 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
   const id = useId();
 
   return (
-    <div className={'flex items-center justify-between'}>
-      <div className={'basis-60 flex items-center text-sm'}>
-        <div className={'basis-8'}>
-          <Image src={image} alt={name}/>
-        </div>
-        <label htmlFor={id}>
-          {name}
-        </label>
+    <>
+      <div className={'text-sm'}>
+        <Image src={image} alt={name}/>
       </div>
-      <div className={'flex gap-1'}>
+      <div className={'flex justify-center items-center'}>
+        <div className={'text-sm font-mono w-8 text-right'}>
+          {player.skills[field] + player.boosts[field]}/
+        </div>
         <div>
           <NumberInput
+            className={'form-control w-12'}
             id={id}
             required
             min={1}
-            max={99}
-            title={`Your ${name} level`}
+            max={199}
+            title={`Your base ${name} level`}
             value={player.skills[field]}
             onChange={(v) => {
               store.updatePlayer({
@@ -45,25 +44,8 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
             }}
           />
         </div>
-        <div>
-          <NumberInput
-            id={id}
-            required
-            min={-100}
-            max={100}
-            title={`Your ${name} bonuses`}
-            value={player.boosts[field]}
-            onChange={(v) => {
-              store.updatePlayer({
-                boosts: {
-                  [field]: v
-                }
-              })
-            }}
-          />
-        </div>
       </div>
-    </div>
+    </>
   )
 })
 

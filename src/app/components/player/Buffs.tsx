@@ -12,9 +12,6 @@ const Buffs: React.FC = observer(() => {
 
   return (
     <div className={'px-6 mt-4'}>
-      <h4 className={`font-bold font-serif`}>
-        Buffs
-      </h4>
       <div className={'mt-2 mb-4'}>
         <Toggle checked={player.buffs.onSlayerTask} setChecked={(c) => store.updatePlayer({buffs: {onSlayerTask: c}})} label={
             <>

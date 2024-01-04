@@ -10,10 +10,7 @@ const Prayers: React.FC = observer(() => {
 
   return (
     <div className={'px-6 mt-4'}>
-      <h4 className={`font-bold font-serif`}>
-        Prayers
-      </h4>
-      <div className={'grid grid-cols-4 gap-y-4 mt-4 w-48 m-auto items-center justify-center'}>
+      <div className={'grid grid-cols-4 gap-y-4 mt-6 w-48 m-auto items-center justify-center'}>
         {
           Object.entries(PrayerMap).map(([k, v]) => {
             return <GridItem

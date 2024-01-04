@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import attack from '@/public/img/bonuses/attack.png'
 import strength from '@/public/img/bonuses/strength.png';
@@ -10,27 +10,21 @@ import prayer from '@/public/img/tabs/prayer.png';
 import {observer} from 'mobx-react-lite';
 import UsernameLookup from "@/app/components/player/skills/UsernameLookup";
 import SkillInput from "@/app/components/player/skills/SkillInput";
-import BonusesCalculatorModal from "@/app/components/player/skills/BonusesCalculatorModal";
+import {Potion, PotionMap} from "@/enums/Potion";
+import BuffItem from "@/app/components/player/buffs/BuffItem";
+import {useStore} from "@/state";
 
 const Skills: React.FC = observer(() => {
-  const [showBonusesCalculator, setShowBonusesCalculator] = useState(false);
+  const store = useStore();
+  const {player} = store;
 
   return (
     <div className={'px-6 mt-4'}>
-      <h4 className={`font-bold font-serif`}>
-        Skills
-      </h4>
-      <p className={'text-xs'}>
-        Input your username to fetch your stats, or enter them manually.
-      </p>
       <div className={'flex items-center mt-3'}>
         <UsernameLookup/>
       </div>
       <div className={'mt-4'}>
-        <p className={'text-xs text-right mb-1 p-0 text-gray-400 dark:text-gray-300'}>
-          &#8630; Bonuses
-        </p>
-        <div className={'flex flex-col gap-1'}>
+        <div className={'grid items-center'} style={{gridTemplateColumns: '.5fr 2fr .5fr 2fr'}}>
           <SkillInput name={'Attack'} field={'atk'} image={attack}/>
           <SkillInput name={'Strength'} field={'str'} image={strength}/>
           <SkillInput name={'Defence'} field={'def'} image={defence}/>
@@ -40,15 +34,28 @@ const Skills: React.FC = observer(() => {
           <SkillInput name={'Prayer'} field={'prayer'} image={prayer}/>
         </div>
       </div>
-      <div className={'mt-4 text-xs text-right'}>
-        <button
-          className={'btn'}
-          onClick={() => setShowBonusesCalculator(true)}
-        >
-          Calculate bonuses
-        </button>
+      <h4 className={`mt-4 font-bold font-serif`}>
+        Boosts
+      </h4>
+      <div
+        className={'h-[11.5rem] mt-2 bg-white dark:bg-dark-500 dark:border-dark-200 rounded border border-gray-300 overflow-y-scroll'}
+      >
+        {
+          Object.entries(PotionMap).map(([k, v]) => {
+            const potion: Potion = parseInt(k);
+            const isActive = player.buffs.potions.includes(potion);
+
+            return <BuffItem
+              key={k}
+              potion={potion}
+              name={v.name}
+              image={v.image}
+              active={isActive}
+              setActive={store.togglePlayerPotion}
+            />
+          })
+        }
       </div>
-      <BonusesCalculatorModal isOpen={showBonusesCalculator} setIsOpen={setShowBonusesCalculator} />
     </div>
   )
 })

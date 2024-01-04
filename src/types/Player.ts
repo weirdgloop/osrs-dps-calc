@@ -72,7 +72,15 @@ export interface PlayerOffensive {
 
 export interface Player {
   style: PlayerCombatStyle;
+  /**
+   * The player's base skill levels. These are their skill levels before any boosts (for example, from potions)
+   * are applied.
+   */
   skills: PlayerSkills;
+  /**
+   * These are the values for each skill that should be added to each of the "skills" property's values to compute
+   * the player's "current" skill levels.
+   */
   boosts: PlayerSkills;
   equipment: PlayerEquipment;
   prayers: Prayer[];
@@ -80,6 +88,12 @@ export interface Player {
   defensive: PlayerDefensive;
   offensive: PlayerOffensive;
   buffs: {
+    /**
+     * This property should only be used to display the UI state, and should not be used in calculator code.
+     *
+     * Instead, use the "boosts" value of the Player interface, which contains the computed value that should be
+     * added to each of the "skills" values to make the player's "current" skill levels.
+     */
     potions: Potion[];
     onSlayerTask: boolean;
     inWilderness: boolean;
