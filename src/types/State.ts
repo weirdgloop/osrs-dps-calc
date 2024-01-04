@@ -35,7 +35,7 @@ export interface CalculatedLoadout {
   dps: number,
   ttk: number,
   dist: HistogramEntry[],
-  ttkDist: HistogramEntry[],
+  ttkDist?: Map<number, number>,
 }
 
 export interface Calculator {

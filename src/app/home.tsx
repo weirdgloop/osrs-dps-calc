@@ -3,7 +3,7 @@
 import type {NextPage} from 'next';
 import MonsterContainer from '@/app/components/monster/MonsterContainer';
 import {Tooltip} from 'react-tooltip';
-import React, {Suspense, useEffect, useRef} from 'react';
+import React, {Suspense, useEffect} from 'react';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
 import {ToastContainer} from 'react-toastify';
@@ -14,10 +14,11 @@ import {RecomputeValuesRequest, WorkerRequestType, WorkerResponses, WorkerRespon
 import {IReactionPublic, reaction, toJS} from "mobx";
 import {Player} from "@/types/Player";
 import {Monster} from "@/types/Monster";
-import {getEquipmentForLoadout} from "@/utils";
+import {getEquipmentForLoadout, WORKER_JSON_REPLACER, WORKER_JSON_REVIVER} from "@/utils";
 import PreferencesModal from "@/app/components/PreferencesModal";
 import InitialLoad from "@/app/components/InitialLoad";
 import LoadoutComparison from "@/app/components/results/LoadoutComparison";
+import TtkComparison from "@/app/components/results/TtkComparison";
 
 const Home: NextPage = observer(() => {
   const store = useStore();
@@ -39,7 +40,7 @@ const Home: NextPage = observer(() => {
           monster: m,
           includeTtkDist: ttkDist,
         }
-      } as RecomputeValuesRequest))
+      } as RecomputeValuesRequest, WORKER_JSON_REPLACER))
     }
   }
 
@@ -47,7 +48,7 @@ const Home: NextPage = observer(() => {
     // When the page loads, set up the worker and be ready to interpret the responses
     const worker = new Worker(new URL('../worker.ts', import.meta.url));
     worker.onmessage = (evt: MessageEvent<string>) => {
-      const data = JSON.parse(evt.data) as WorkerResponses;
+      const data = JSON.parse(evt.data, WORKER_JSON_REVIVER) as WorkerResponses;
 
       // Depending on the response type, do things...
       switch (data.type) {
@@ -165,9 +166,24 @@ const Home: NextPage = observer(() => {
                       <LoadoutComparison />
                     </div>
                   </div>
-                ) : (
+                ) : <></>
+              }
+              {
+                store.prefs.showTtkComparison ? (
+                  <div className={'grow bg-tile dark:bg-dark-500 md:rounded shadow-lg max-w-[100vw] my-4 text-black'}>
+                    <div className={'px-6 py-4 bg-btns-200 dark:bg-dark-400 dark:border-dark-200 text-white md:rounded-t border-b-4 border-body-300'}>
+                      <h3 className={'font-serif font-bold'}>Time-to-Kill Comparison</h3>
+                    </div>
+                    <div className={'px-6 py-4'}>
+                      <TtkComparison />
+                    </div>
+                  </div>
+                ) : <></>
+              }
+              { 
+                (!store.prefs.showLoadoutComparison && store.prefs.showTtkComparison) ? (
                   <p className={'text-sm'}>You can enable additional outputs by <button className={'underline'} onClick={() => store.updateUIState({showPreferencesModal: true})}>changing your preferences</button>.</p>
-                )
+                ) : <></> 
               }
             </div>
         </div>
