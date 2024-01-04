@@ -85,11 +85,11 @@ export default class CombatCalc {
   }
 
   private isWearingBlackMask(): boolean {
-    return this.wearing('Black mask');
+    return this.isWearingImbuedBlackMask() || this.wearing(['Black mask', 'Slayer helmet']);
   }
 
   private isWearingImbuedBlackMask(): boolean {
-    return this.wearing('Black mask (i)');
+    return this.wearing(['Black mask (i)', 'Slayer helmet (i)']);
   }
 
   private isWearingSmokeStaff(): boolean {
@@ -403,6 +403,15 @@ export default class CombatCalc {
 
     // Specific bonuses that are applied from equipment
     const mattrs = this.monster.attributes;
+    const buffs = this.player.buffs;
+
+    if (this.wearing('Salve amulet(ei)') && mattrs.includes('undead')) {
+      maxHit = Math.trunc(maxHit * 6/5);
+    } else if (this.wearing('Salve amulet(i)') && mattrs.includes('undead')) {
+      maxHit = Math.trunc(maxHit * 7/6);
+    } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
+      maxHit = Math.trunc(maxHit * 23/20);
+    }
 
     if (this.wearing('Twisted bow')) {
       let cap = 250;
