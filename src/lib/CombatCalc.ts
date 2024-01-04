@@ -12,18 +12,31 @@ const SECONDS_PER_TICK = 0.6;
 const TTK_DIST_MAX_ITER_ROUNDS = 1000;
 const TTK_DIST_EPSILON = 0.0001;
 
+export interface CalcOpts {
+  overrides?: {
+    accuracy?: number,
+  }
+}
+
+const DEFAULT_OPTS: CalcOpts = {};
+
 export default class CombatCalc {
   private player: PlayerComputed;
   private monster: Monster;
+  private opts: CalcOpts;
 
   // Array of the names of all equipped items (for quick checks)
   private allEquippedItems: string[];
 
   private memoizedDist: AttackDistribution | undefined = undefined;
 
-  constructor(player: PlayerComputed, monster: Monster) {
+  constructor(player: PlayerComputed, monster: Monster, opts: Partial<CalcOpts> = {}) {
     this.player = player;
     this.monster = monster;
+    this.opts = {
+      ...DEFAULT_OPTS,
+      ...opts,
+    }
 
     this.allEquippedItems = Object.values(player.equipment).filter((v) => v !== null).flat(1).map((eq: EquipmentPiece | null) => eq?.name || '');
   }
@@ -614,6 +627,10 @@ export default class CombatCalc {
   }
 
   public getHitChance() {
+    if (this.opts.overrides?.accuracy) {
+      return this.opts.overrides.accuracy;
+    }
+
     const atk = this.getMaxAttackRoll();
     const def = this.getNPCDefenceRoll();
 
