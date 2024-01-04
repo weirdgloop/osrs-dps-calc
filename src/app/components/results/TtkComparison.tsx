@@ -58,13 +58,14 @@ const XAxisOptions = [
 
 const TtkComparison: React.FC = observer(() => {
   const store = useStore();
-  const loadouts = toJS(store.calc.loadouts);
+  const loadouts = toJS(store.loadouts);
+  const calcResults = toJS(store.calc.loadouts);
 
   const {resolvedTheme} = useTheme();
   const isDark = resolvedTheme === 'dark';
 
   const [xAxisType, setXAxisType] = useState<{ label: string, value: XAxisType } | null | undefined>(XAxisOptions[0]);
-  
+
   // worth noting that if the worker is behind, 
   // ttkDist may not yet be computed for a specific loadout
   // we should not assume it is populated here
@@ -75,11 +76,11 @@ const TtkComparison: React.FC = observer(() => {
         : (x: number) => x.toString();
 
     const lines: { name: string, [lKey: string]: string | number }[] = [];
-    const uniqueTtks = sort(union(...loadouts.map(l => l.ttkDist?.keys() || [])));
-    
+    const uniqueTtks = sort(union(...calcResults.map(l => l.ttkDist?.keys() || [])));
+
     for (let ttk of uniqueTtks) {
       const entry: typeof lines[0] = {name: xLabeller(ttk)};
-      loadouts.forEach((l, i) => {
+      calcResults.forEach((l, i) => {
         const v = l.ttkDist?.get(ttk);
         if (v) {
           entry[`Loadout ${i+1}`] = v.toFixed(4);
@@ -88,25 +89,25 @@ const TtkComparison: React.FC = observer(() => {
       lines.push(entry);
     }
     return lines;
-  }, [xAxisType, loadouts]);
+  }, [xAxisType, calcResults]);
 
   const generateLines = useCallback(() => {
     let lines: React.ReactNode[] = [];
 
     const strokeColours =
-      isDark ?
-        ['cyan', 'yellow', 'lime', 'orange', 'pink'] :
-        ['blue', 'chocolate', 'green', 'sienna', 'purple']
+        isDark ?
+            ['cyan', 'yellow', 'lime', 'orange', 'pink'] :
+            ['blue', 'chocolate', 'green', 'sienna', 'purple']
     ;
 
-    for (let i=0; i < loadouts.length; i++) {
+    for (let i=0; i < calcResults.length; i++) {
       let colour = strokeColours.shift() || 'red';
-      lines.push(<Line key={i} type="monotone" dataKey={`Loadout ${i+1}`} stroke={colour} dot={false} />);
+      lines.push(<Line key={i} type="monotone" dataKey={`Loadout ${i+1}`} stroke={colour} dot={false} connectNulls={true} />);
       strokeColours.push(colour);
     }
     return lines;
 
-  }, [data, isDark])
+  }, [loadouts, isDark])
 
   return (
       <>
