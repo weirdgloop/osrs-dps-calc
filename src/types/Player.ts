@@ -1,6 +1,5 @@
 import {EquipmentCategory} from '@/enums/EquipmentCategory';
 import {Prayer} from '@/enums/Prayer';
-import {Potion} from '@/enums/Potion';
 import {Spell} from '@/types/Spell';
 import {PlayerCombatStyle} from "@/types/PlayerCombatStyle";
 import {TrailblazerRelic} from "@/enums/TrailblazerRelic";
@@ -80,7 +79,6 @@ export interface Player {
   defensive: PlayerDefensive;
   offensive: PlayerOffensive;
   buffs: {
-    potions: Potion[];
     onSlayerTask: boolean;
     inWilderness: boolean;
     /**

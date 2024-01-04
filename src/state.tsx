@@ -1,7 +1,6 @@
 import {makeAutoObservable, toJS} from 'mobx';
 import React, {createContext, useContext} from 'react';
 import {PartialDeep} from 'type-fest';
-import {Potion} from './enums/Potion';
 import * as localforage from 'localforage';
 import {Calculator, ImportableData, Preferences, State, UI} from '@/types/State';
 import {ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, Prayer} from './enums/Prayer';
@@ -100,7 +99,6 @@ const generateEmptyPlayer: () => Player = () => {
       ranged: 0,
     },
     buffs: {
-      potions: [],
       onSlayerTask: false,
       inWilderness: false,
       kandarinDiary: false,
@@ -313,20 +311,6 @@ class GlobalState implements State {
       // TODO something that isn't this
       alert('Could not persist preferences to browser. Make sure our site has permission to do this.');
     })
-  }
-
-  /**
-   * Toggle a potion, with logic to remove from or add to the potions array depending on if it is already in there.
-   * @param potion
-   */
-  togglePlayerPotion(potion: Potion) {
-    const isToggled = this.player.buffs.potions.includes(potion);
-    if (isToggled) {
-      this.player.buffs.potions = this.player.buffs.potions.filter((p) => p !== potion);
-    } else {
-      this.player.buffs.potions = [...this.player.buffs.potions, potion];
-    }
-    this.updateUIState({blockSharing: false});
   }
 
   /**
