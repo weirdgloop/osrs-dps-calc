@@ -14,7 +14,8 @@ export interface RecomputeValuesRequest {
   type: WorkerRequestType.RECOMPUTE_VALUES,
   data: {
     loadouts: PlayerComputed[],
-    monster: Monster
+    monster: Monster,
+    includeTtkDist: boolean,
   }
 }
 

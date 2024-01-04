@@ -14,8 +14,9 @@ import {CalculatedLoadout} from "@/types/State";
  * Method for computing the calculator values based on given loadouts and Monster object
  * @param loadouts
  * @param m
+ * @param includeTtkDist
  */
-const computeValues = (loadouts: PlayerComputed[], m: Monster) => {
+const computeValues = (loadouts: PlayerComputed[], m: Monster, includeTtkDist: boolean) => {
   let res: CalculatedLoadout[] = [];
 
   for (let [_, p] of loadouts.entries()) {
@@ -28,7 +29,7 @@ const computeValues = (loadouts: PlayerComputed[], m: Monster) => {
       dps: calc.getDps(),
       ttk: calc.getTtk(),
       dist: calc.getDistribution().asHistogram(),
-      ttkDist: calc.getTtkDistribution(),
+      ttkDist: includeTtkDist ? calc.getTtkDistribution() : [], // this one can sometimes be quite expensive
     })
   }
 
@@ -42,7 +43,7 @@ self.onmessage = (e: MessageEvent<string>) => {
   // Interpret the incoming request, and action it accordingly
   switch (data.type) {
     case WorkerRequestType.RECOMPUTE_VALUES:
-      res = {type: WorkerResponseType.COMPUTED_VALUES, data: computeValues(data.data.loadouts, data.data.monster)} as ComputedValuesResponse;
+      res = {type: WorkerResponseType.COMPUTED_VALUES, data: computeValues(data.data.loadouts, data.data.monster, data.data.includeTtkDist)} as ComputedValuesResponse;
       break;
     default:
       console.debug(`Unknown data type sent to worker: ${data.type}`);

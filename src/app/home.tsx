@@ -11,7 +11,7 @@ import PlayerContainer from "@/app/components/player/PlayerContainer";
 import ResultsContainer from "@/app/components/results/ResultsContainer";
 import {IconChartBar} from "@tabler/icons-react";
 import {RecomputeValuesRequest, WorkerRequestType, WorkerResponses, WorkerResponseType} from "@/types/WorkerData";
-import {reaction, toJS} from "mobx";
+import {IReactionPublic, reaction, toJS} from "mobx";
 import {Player} from "@/types/Player";
 import {Monster} from "@/types/Monster";
 import {getEquipmentForLoadout} from "@/utils";
@@ -23,7 +23,7 @@ const Home: NextPage = observer(() => {
   const store = useStore();
   const {showPreferencesModal} = store.ui;
 
-  const doWorkerRecompute = (p: Player[], m: Monster) => {
+  const doWorkerRecompute = (p: Player[], m: Monster, ttkDist: boolean) => {
     if (store.worker) {
       const loadouts = p.map((i) => {
         return {
@@ -36,7 +36,8 @@ const Home: NextPage = observer(() => {
         type: WorkerRequestType.RECOMPUTE_VALUES,
         data: {
           loadouts,
-          monster: m
+          monster: m,
+          includeTtkDist: ttkDist,
         }
       } as RecomputeValuesRequest))
     }
@@ -115,15 +116,21 @@ const Home: NextPage = observer(() => {
 
   useEffect(() => {
     // On first load of this component, compute the calculator.
-    doWorkerRecompute(store.loadouts, store.monster);
+    const recompute = () => doWorkerRecompute(store.loadouts, store.monster, store.prefs.showTtkComparison);
+    recompute();
 
-    // When any of store.player or store.monster changes, run a re-compute of the calculator
-    const r1 = reaction(() => toJS(store.loadouts), (data) => { doWorkerRecompute(data, store.monster) })
-    const r2 = reaction(() => toJS(store.monster), (data) => { doWorkerRecompute(store.loadouts, data) })
-
+    // When a calculator input changes, trigger a re-compute on the worker
+    const triggers: ((r: IReactionPublic) => any)[] = [
+      () => toJS(store.loadouts),
+      () => toJS(store.monster),
+      () => toJS(store.prefs.showTtkComparison),
+    ];
+    const reactions = triggers.map(t => reaction(t, recompute))
+    
     return () => {
-      r1();
-      r2();
+      for (let r of reactions) {
+        r();
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

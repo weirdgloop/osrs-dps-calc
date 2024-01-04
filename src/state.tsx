@@ -167,7 +167,8 @@ class GlobalState implements State {
     allowEditingMonsterStats: false,
     rememberUsername: true,
     showHitDistribution: false,
-    showLoadoutComparison: false
+    showLoadoutComparison: false,
+    showTtkComparison: false,
   }
 
   calc: Calculator = {
