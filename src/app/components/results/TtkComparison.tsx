@@ -14,27 +14,31 @@ import {toJS} from "mobx";
 import {useTheme} from "next-themes";
 import {sort, union} from "d3-array";
 
-const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, payload, label }) => {
+export interface CustomTooltipProps extends TooltipProps<ValueType, NameType> {
+  xAxisOption: typeof XAxisOptions[any],
+}
+
+const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload, label, xAxisOption }) => {
   if (active && payload && payload.length) {
     return (
-      <div className={'bg-white shadow rounded p-2 text-sm text-black flex items-center gap-2'}>
-        <div>
-          <p>
-            <strong>{label} seconds</strong>
-          </p>
-          {
-            payload.map((p) => {
-              return <div key={p.name} className={'flex justify-between w-32'}>
-                <div className={'flex items-center gap-1'}>
-                  <span className={'w-3 h-3 inline-block border border-gray-400 rounded-lg'} style={{backgroundColor: p.color}} />
-                  {p.name}
+        <div className={'bg-white shadow rounded p-2 text-sm text-black flex items-center gap-2'}>
+          <div>
+            <p>
+              <strong>{label} {xAxisOption.label}</strong>
+            </p>
+            {
+              payload.map((p) => {
+                return <div key={p.name} className={'flex justify-between w-32'}>
+                  <div className={'flex items-center gap-1'}>
+                    <span className={'w-3 h-3 inline-block border border-gray-400 rounded-lg'} style={{backgroundColor: p.color}} />
+                    {p.name}
+                  </div>
+                  <span className={'text-gray-400 font-bold'}>{p.value}</span>
                 </div>
-                <span className={'text-gray-400 font-bold'}>{p.value}</span>
-              </div>
-            })
-          }
+              })
+            }
+          </div>
         </div>
-      </div>
     );
   }
 
@@ -123,7 +127,7 @@ const TtkComparison: React.FC = observer(() => {
             />
             <CartesianGrid stroke="gray" strokeDasharray="5 5"/>
             <Tooltip
-                content={(props) => <CustomTooltip {...props} />}
+                content={(props) => <CustomTooltip {...props} xAxisOption={xAxisType || XAxisOptions[0]} />}
             />
             <Legend wrapperStyle={{fontSize: '.9em'}}/>
             {generateLines()}
