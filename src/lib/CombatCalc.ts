@@ -5,7 +5,6 @@ import {isFireSpell} from "@/types/Spell";
 import {PrayerMap} from "@/enums/Prayer";
 import {sum} from "d3-array";
 import {TrailblazerRelic} from "@/enums/TrailblazerRelic";
-import {HistogramEntry} from "@/types/State";
 
 const DEFAULT_ATTACK_SPEED = 4;
 const SECONDS_PER_TICK = 0.6;
@@ -789,8 +788,14 @@ export default class CombatCalc {
   public getTtk() {
     return this.getHtk() * this.getAttackSpeed() * SECONDS_PER_TICK;
   }
-  
-  public getTtkDistribution(): HistogramEntry[] {
+
+  /**
+   * Returns a distribution of times-to-kill (in ticks) to probabilities.
+   * Because the result will not be densely populated (unless attack speed is 1), 
+   * it is an object where keys are tick counts and values are probabilities.
+   */
+  public getTtkDistribution(): Map<number, number> {
+    const speed = this.getAttackSpeed();
     const dist = this.getDistribution().asSingleHitplat();
  
     // distribution of health values at current iter step
@@ -806,7 +811,7 @@ export default class CombatCalc {
     
     // 1. until the amount of hp values remaining above zero is more than our desired epsilon accuracy,
     //    or we reach the maximum iteration rounds
-    for (let i = 1; i < (TTK_DIST_MAX_ITER_ROUNDS + 1) && epsilon > TTK_DIST_EPSILON; i++) {
+    for (let hit = 0; hit < (TTK_DIST_MAX_ITER_ROUNDS + 1) && epsilon > TTK_DIST_EPSILON; hit++) {
       // 2. track the sum total of probability-paths that reach zero on this iteration
       let delta = 0.0;
       
@@ -828,7 +833,8 @@ export default class CombatCalc {
           // 6. if the hp we are about to arrive at is <= 0, the npc is killed, the iteration count is hits done,
           //    and we add this probability path into the delta 
           if (newHp <= 0) {
-            ttks.set(i, (ttks.get(i) || 0) + chanceOfAction);
+            const tick = hit * speed + 1;
+            ttks.set(tick, (ttks.get(tick) || 0) + chanceOfAction);
             delta += chanceOfAction;
           } 
           
@@ -844,10 +850,6 @@ export default class CombatCalc {
       hps = nextHps;
     }
     
-    const ret: HistogramEntry[] = [];
-    for (let [ttk, prob] of ttks.entries()) {
-      ret.push({name: ttk * this.getAttackSpeed() * SECONDS_PER_TICK, chance: prob})
-    }
-    return ret;
+    return ttks;
   }
 }

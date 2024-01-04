@@ -167,7 +167,8 @@ class GlobalState implements State {
     allowEditingMonsterStats: false,
     rememberUsername: true,
     showHitDistribution: false,
-    showLoadoutComparison: false
+    showLoadoutComparison: false,
+    showTtkComparison: false,
   }
 
   calc: Calculator = {
@@ -180,7 +181,7 @@ class GlobalState implements State {
         dps: 0,
         ttk: 0,
         dist: [],
-        ttkDist: [],
+        ttkDist: undefined,
       }
     ]
   }

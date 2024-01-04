@@ -103,3 +103,22 @@ export const getWikiImage = (filename: string) => {
 export const getCdnImage = (filename: string) => {
   return `https://dps.osrs.wiki/cdn/${filename}`
 }
+
+export const WORKER_JSON_REPLACER: (key: string, value: any) => any = (k, v) => {
+  if (v instanceof Map) {
+    return {
+      _dataType: 'Map',
+      m: Array.from(v),
+    };
+  } else {
+    return v;
+  }
+}
+
+export const WORKER_JSON_REVIVER: (key: string, value: any) => any = (k, v) => {
+  if (typeof v === 'object' && v?._dataType === 'Map') {
+    return new Map(v.m);
+  } else {
+    return v;
+  }
+}

@@ -7,9 +7,10 @@ import {
 } from "@tabler/icons-react";
 import {useStore} from "@/state";
 import {CalculatedLoadout} from "@/types/State";
+import {max, min} from "d3-array";
 
 interface IResultRowProps {
-  calcKey: keyof CalculatedLoadout;
+  calcKey: keyof Omit<CalculatedLoadout, 'ttkDist'>;
   title?: string;
 }
 
@@ -32,14 +33,8 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
   const {calc} = store;
 
   const cells = useMemo(() => {
-    let highestValue = calc.loadouts.reduce((prev, curr) => {
-      if (calcKey === 'ttk') {
-        // The lower number is better here
-        return (prev[calcKey] < curr[calcKey]) ? prev : curr;
-      } else {
-        return (prev[calcKey] > curr[calcKey]) ? prev : curr;
-      }
-    })[calcKey] as number;
+    const aggregator = calcKey === 'ttk' ? min : max;
+    let highestValue = aggregator(calc.loadouts, l => l[calcKey] as number);
 
     return calc.loadouts.map((l, i) => {
       const value = l[calcKey] as number;

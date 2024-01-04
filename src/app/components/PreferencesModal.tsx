@@ -41,6 +41,9 @@ const PreferencesModal: React.FC<IPreferencesModalProps> = observer((props) => {
         <Toggle checked={prefs.showLoadoutComparison} setChecked={(c) => {
           store.updatePreferences({showLoadoutComparison: c});
         }} label={'Show loadout comparison graph'} />
+        <Toggle checked={prefs.showTtkComparison} setChecked={(c) => {
+          store.updatePreferences({showTtkComparison: c});
+        }} label={'Show time-to-kill comparison graph'} />
       </div>
     </Modal>
   )
