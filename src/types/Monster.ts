@@ -28,7 +28,19 @@ export interface Monster {
    * Invocation level for Tombs of Amascut
    * @see https://oldschool.runescape.wiki/w/Tombs_of_Amascut#Invocations_and_Raid_Level
    */
-  invocationLevel: number;
+  toaInvocationLevel: number;
+  /**
+   * Path level for Tombs of Amascut
+   * @see https://oldschool.runescape.wiki/w/Tombs_of_Amascut#Invocations_and_Raid_Level
+   */
+  toaPathLevel: number;
+  /**
+   * Party size for ToB/CoX/ToA
+   * TODO CoX formulas not yet known
+   * @see https://oldschool.runescape.wiki/w/Theatre_of_Blood/Strategies
+   * @see https://oldschool.runescape.wiki/w/Tombs_of_Amascut#Mechanics
+   */
+  partySize: number;
   /**
    * The attributes the monster has
    * @see https://oldschool.runescape.wiki/w/Monster_attribute

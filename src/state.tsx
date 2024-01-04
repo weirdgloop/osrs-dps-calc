@@ -29,6 +29,7 @@ import {
 import {TrailblazerRelic} from "@/enums/TrailblazerRelic";
 import {RuinousPower} from "@/enums/RuinousPower";
 import {RecomputeValuesRequest, WorkerRequestType} from "@/types/WorkerData";
+import {scaledMonster} from "@/lib/MonsterScaling";
 
 const calculateEquipmentBonuses = (eq: EquipmentPiece[]) => {
   let b: {
@@ -162,7 +163,9 @@ class GlobalState implements State {
       stab: 20,
     },
     attributes: ['demon'],
-    invocationLevel: 0
+    toaInvocationLevel: 0,
+    toaPathLevel: 0,
+    partySize: 1,
   }
 
   loadouts: Player[] = [
@@ -552,12 +555,14 @@ class GlobalState implements State {
           equipment: getEquipmentForLoadout(i)
         }
       });
+      
+      const m = this.prefs.advancedMode ? this.monster : scaledMonster(this.monster);
 
       this.worker.postMessage(JSON.stringify({
         type: WorkerRequestType.RECOMPUTE_VALUES,
         data: {
           loadouts,
-          monster: this.monster,
+          monster: m,
           calcOpts: {
             includeTtkDist: this.prefs.showTtkComparison,
           },

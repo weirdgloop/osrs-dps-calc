@@ -10,7 +10,7 @@ interface MonsterOption {
   label: string;
   value: number;
   version: string;
-  monster: Monster;
+  monster: Partial<Monster>;
 }
 
 const MonsterSelect: React.FC = observer(() => {
@@ -50,7 +50,6 @@ const MonsterSelect: React.FC = observer(() => {
           stab: m.defensive[4]
         },
         attributes: m.attributes,
-        invocationLevel: 0
       }
     }
   }), [])
