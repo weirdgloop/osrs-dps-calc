@@ -30,7 +30,7 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, pa
   return null;
 }
 
-const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = ({dist}) => {
+const HitDistribution: React.FC<{ dist: HistogramEntry[], nonZeros: boolean }> = ({dist, nonZeros}) => {
   const {resolvedTheme} = useTheme();
   const isDark = resolvedTheme === 'dark';
 
@@ -38,7 +38,7 @@ const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = ({dist}) => {
     <>
       <ResponsiveContainer width={'100%'} height={150}>
         <BarChart
-          data={dist}
+          data={nonZeros ? dist.slice(1) : dist}
         >
           <XAxis
             // label={{ value: 'damage', position: 'bottom' }}
