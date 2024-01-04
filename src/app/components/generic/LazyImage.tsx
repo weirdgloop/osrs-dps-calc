@@ -9,13 +9,7 @@ interface ILazyImageProps extends React.HTMLProps<HTMLImageElement> {
 }
 
 const LazyImage: React.FC<ILazyImageProps> = (props) => {
-    if (!props) {
-        // todo i have no idea how this happens,
-        // but there's an undefined-props call on first click of the equipment search
-        return <></>;
-    }
-    
-    const {responsive, showSpinner} = props;
+    const {responsive, showSpinner, ...imgProps} = props;
     const [loading, setLoading] = useState(true);
 
     return <>
@@ -25,7 +19,7 @@ const LazyImage: React.FC<ILazyImageProps> = (props) => {
             </div>
         )}
         <img
-            {...props}
+            {...imgProps}
             className={`${responsive ? 'max-h-full max-w-full object-contain' : ''} ${(showSpinner && loading) ? 'hidden' : 'visible'}`}
             onLoad={() => setLoading(false)}
         />
