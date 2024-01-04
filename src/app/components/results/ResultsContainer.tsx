@@ -15,16 +15,21 @@ interface IResultRowProps {
 }
 
 const calcKeyToString = (value: number, calcKey: keyof CalculatedLoadout): string => {
-    switch (calcKey) {
-      case "accuracy":
-        return (value * 100).toFixed(2) + '%';
-      case "dps":
-        return value.toFixed(3);
-      case 'ttk':
-        return value.toFixed(3) + 's';
-      default:
-          return "" + value;
-    }
+  if (!value) {
+    // if the value has not yet been populated by the worker
+    return "";
+  }
+  
+  switch (calcKey) {
+    case "accuracy":
+      return (value * 100).toFixed(2) + '%';
+    case "dps":
+      return value.toFixed(3);
+    case 'ttk':
+      return value.toFixed(3) + 's';
+    default:
+        return "" + value;
+  }
 }
 
 const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props) => {
