@@ -6,14 +6,15 @@ interface ToggleProps {
   setChecked: (checked: boolean) => void;
   label: string | React.ReactNode;
   help?: string;
+  className?: string;
 }
 
 const Toggle: React.FC<ToggleProps> = (props) => {
-  const {checked, setChecked, label, help} = props;
+  const {checked, setChecked, label, help, className} = props;
 
   return (
     <Switch.Group>
-      <div className="flex items-center text-sm mb-1.5">
+      <div className={`flex items-center text-sm mb-1.5 ${className}`}>
         <Switch
           checked={checked}
           onChange={setChecked}

@@ -15,9 +15,11 @@ const PresetAttributeButton: React.FC<PresetAttributeButtonProps> = observer((pr
   const isSelected = monster.attributes.includes(attr);
 
   return (
-    <button disabled={!prefs.allowEditingMonsterStats}
-            className={`rounded px-1 transition-[background,color] ${isSelected ? 'bg-blue-600 text-white' : 'bg-body-100 dark:bg-dark-200 opacity-50 dark:opacity-25 hover:enabled:bg-body-200 dark:hover:enabled:bg-dark-200'}`}
-            onClick={() => store.toggleMonsterAttribute(attr)}>
+    <button
+      disabled={!prefs.advancedMode}
+      className={`rounded px-1 transition-[background,color] ${isSelected ? 'bg-blue-600 text-white' : 'bg-body-100 dark:bg-dark-200 opacity-50 dark:opacity-25 hover:enabled:bg-body-200 dark:hover:enabled:bg-dark-200'}`}
+      onClick={() => store.toggleMonsterAttribute(attr)}
+    >
       {attr}
     </button>
   )

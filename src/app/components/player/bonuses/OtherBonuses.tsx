@@ -16,7 +16,7 @@ const OtherBonuses: React.FC = observer(() => {
       <p className={'text-sm text-gray-500 dark:text-gray-300'}>Other</p>
       <div className={'flex flex-col gap-2 mt-3 text-center'}>
         <AttributeInput
-          disabled={!prefs.allowEditingPlayerStats}
+          disabled={!prefs.advancedMode}
           name={'Strength'}
           image={strength}
           value={player.bonuses.str}
@@ -24,7 +24,7 @@ const OtherBonuses: React.FC = observer(() => {
           onChange={(v) => store.updatePlayer({bonuses: {str: v}})}
         />
         <AttributeInput
-          disabled={!prefs.allowEditingPlayerStats}
+          disabled={!prefs.advancedMode}
           name={'Ranged Strength'}
           image={rangedStrength}
           value={player.bonuses.ranged_str}
@@ -32,7 +32,7 @@ const OtherBonuses: React.FC = observer(() => {
           onChange={(v) => store.updatePlayer({bonuses: {ranged_str: v}})}
         />
         <AttributeInput
-          disabled={!prefs.allowEditingPlayerStats}
+          disabled={!prefs.advancedMode}
           name={'Magic Strength'}
           image={magicStrength}
           value={player.bonuses.magic_str}
@@ -40,7 +40,7 @@ const OtherBonuses: React.FC = observer(() => {
           onChange={(v) => store.updatePlayer({bonuses: {magic_str: v}})}
         />
         <AttributeInput
-          disabled={!prefs.allowEditingPlayerStats}
+          disabled={!prefs.advancedMode}
           name={'Prayer'}
           image={prayer}
           value={player.bonuses.prayer}

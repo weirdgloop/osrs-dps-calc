@@ -62,33 +62,33 @@ const MonsterContainer: React.FC = observer(() => {
                 <div className={'w-[95px]'}>
                   <p className={'text-sm text-gray-400 dark:text-gray-300'}>Skills</p>
                   <div className={'flex flex-col gap-2 mt-3 text-center'}>
-                    <AttributeInput name={'Hitpoints'} disabled={!prefs.allowEditingMonsterStats} image={hitpoints} value={monster.skills.hp} onChange={(v) => store.updateMonster({skills: {hp: v}})} />
-                    <AttributeInput name={'Attack'} disabled={!prefs.allowEditingMonsterStats} image={attack} value={monster.skills.atk} onChange={(v) => store.updateMonster({skills: {atk: v}})}  />
-                    <AttributeInput name={'Strength'} disabled={!prefs.allowEditingMonsterStats} image={strength} value={monster.skills.str} onChange={(v) => store.updateMonster({skills: {str: v}})}  />
-                    <AttributeInput name={'Defence'} disabled={!prefs.allowEditingMonsterStats} image={defence} value={monster.skills.def} onChange={(v) => store.updateMonster({skills: {def: v}})}  />
-                    <AttributeInput name={'Magic'} disabled={!prefs.allowEditingMonsterStats} image={magic} value={monster.skills.magic} onChange={(v) => store.updateMonster({skills: {magic: v}})}  />
-                    <AttributeInput name={'Ranged'} disabled={!prefs.allowEditingMonsterStats} image={ranged} value={monster.skills.ranged} onChange={(v) => store.updateMonster({skills: {ranged: v}})}  />
+                    <AttributeInput name={'Hitpoints'} disabled={!prefs.advancedMode} image={hitpoints} value={monster.skills.hp} onChange={(v) => store.updateMonster({skills: {hp: v}})} />
+                    <AttributeInput name={'Attack'} disabled={!prefs.advancedMode} image={attack} value={monster.skills.atk} onChange={(v) => store.updateMonster({skills: {atk: v}})}  />
+                    <AttributeInput name={'Strength'} disabled={!prefs.advancedMode} image={strength} value={monster.skills.str} onChange={(v) => store.updateMonster({skills: {str: v}})}  />
+                    <AttributeInput name={'Defence'} disabled={!prefs.advancedMode} image={defence} value={monster.skills.def} onChange={(v) => store.updateMonster({skills: {def: v}})}  />
+                    <AttributeInput name={'Magic'} disabled={!prefs.advancedMode} image={magic} value={monster.skills.magic} onChange={(v) => store.updateMonster({skills: {magic: v}})}  />
+                    <AttributeInput name={'Ranged'} disabled={!prefs.advancedMode} image={ranged} value={monster.skills.ranged} onChange={(v) => store.updateMonster({skills: {ranged: v}})}  />
                   </div>
                 </div>
                 <div className={'w-[95px]'}>
                   <p className={'text-sm text-gray-400 dark:text-gray-300'}>Offensive</p>
                   <div className={'flex flex-col gap-2 mt-3 text-center'}>
-                    <AttributeInput name={'Attack'} disabled={!prefs.allowEditingMonsterStats} image={attack} value={monster.offensive.atk} onChange={(v) => store.updateMonster({offensive: {atk: v}})}  />
-                    <AttributeInput name={'Strength'} disabled={!prefs.allowEditingMonsterStats} image={strength} value={monster.offensive.str} onChange={(v) => store.updateMonster({offensive: {str: v}})} />
-                    <AttributeInput name={'Magic'} disabled={!prefs.allowEditingMonsterStats} image={magic} value={monster.offensive.magic} onChange={(v) => store.updateMonster({offensive: {magic: v}})} />
-                    <AttributeInput name={'Magic Strength'} disabled={!prefs.allowEditingMonsterStats} image={magicStrength} value={monster.offensive.magic_str} onChange={(v) => store.updateMonster({offensive: {magic_str: v}})} />
-                    <AttributeInput name={'Ranged'} disabled={!prefs.allowEditingMonsterStats} image={ranged} value={monster.offensive.ranged} onChange={(v) => store.updateMonster({offensive: {ranged: v}})} />
-                    <AttributeInput name={'Ranged Strength'} disabled={!prefs.allowEditingMonsterStats} image={rangedStrength} value={monster.offensive.ranged_str} onChange={(v) => store.updateMonster({offensive: {ranged_str: v}})} />
+                    <AttributeInput name={'Attack'} disabled={!prefs.advancedMode} image={attack} value={monster.offensive.atk} onChange={(v) => store.updateMonster({offensive: {atk: v}})}  />
+                    <AttributeInput name={'Strength'} disabled={!prefs.advancedMode} image={strength} value={monster.offensive.str} onChange={(v) => store.updateMonster({offensive: {str: v}})} />
+                    <AttributeInput name={'Magic'} disabled={!prefs.advancedMode} image={magic} value={monster.offensive.magic} onChange={(v) => store.updateMonster({offensive: {magic: v}})} />
+                    <AttributeInput name={'Magic Strength'} disabled={!prefs.advancedMode} image={magicStrength} value={monster.offensive.magic_str} onChange={(v) => store.updateMonster({offensive: {magic_str: v}})} />
+                    <AttributeInput name={'Ranged'} disabled={!prefs.advancedMode} image={ranged} value={monster.offensive.ranged} onChange={(v) => store.updateMonster({offensive: {ranged: v}})} />
+                    <AttributeInput name={'Ranged Strength'} disabled={!prefs.advancedMode} image={rangedStrength} value={monster.offensive.ranged_str} onChange={(v) => store.updateMonster({offensive: {ranged_str: v}})} />
                   </div>
                 </div>
                 <div className={'w-[95px]'}>
                   <p className={'text-sm text-gray-400 dark:text-gray-300'}>Defensive</p>
                   <div className={'flex flex-col gap-2 mt-3 text-center'}>
-                    <AttributeInput name={'Stab'} disabled={!prefs.allowEditingMonsterStats} image={dagger} value={monster.defensive.stab} onChange={(v) => store.updateMonster({defensive: {stab: v}})} />
-                    <AttributeInput name={'Slash'} disabled={!prefs.allowEditingMonsterStats} image={scimitar} value={monster.defensive.slash} onChange={(v) => store.updateMonster({defensive: {slash: v}})} />
-                    <AttributeInput name={'Crush'} disabled={!prefs.allowEditingMonsterStats} image={warhammer} value={monster.defensive.crush} onChange={(v) => store.updateMonster({defensive: {crush: v}})} />
-                    <AttributeInput name={'Magic'} disabled={!prefs.allowEditingMonsterStats} image={magic} value={monster.defensive.magic} onChange={(v) => store.updateMonster({defensive: {magic: v}})}  />
-                    <AttributeInput name={'Ranged'} disabled={!prefs.allowEditingMonsterStats} image={ranged} value={monster.defensive.ranged} onChange={(v) => store.updateMonster({defensive: {ranged: v}})}  />
+                    <AttributeInput name={'Stab'} disabled={!prefs.advancedMode} image={dagger} value={monster.defensive.stab} onChange={(v) => store.updateMonster({defensive: {stab: v}})} />
+                    <AttributeInput name={'Slash'} disabled={!prefs.advancedMode} image={scimitar} value={monster.defensive.slash} onChange={(v) => store.updateMonster({defensive: {slash: v}})} />
+                    <AttributeInput name={'Crush'} disabled={!prefs.advancedMode} image={warhammer} value={monster.defensive.crush} onChange={(v) => store.updateMonster({defensive: {crush: v}})} />
+                    <AttributeInput name={'Magic'} disabled={!prefs.advancedMode} image={magic} value={monster.defensive.magic} onChange={(v) => store.updateMonster({defensive: {magic: v}})}  />
+                    <AttributeInput name={'Ranged'} disabled={!prefs.advancedMode} image={ranged} value={monster.defensive.ranged} onChange={(v) => store.updateMonster({defensive: {ranged: v}})}  />
                   </div>
                 </div>
               </div>

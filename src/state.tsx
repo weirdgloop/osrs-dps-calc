@@ -177,8 +177,7 @@ class GlobalState implements State {
   }
 
   prefs: Preferences = {
-    allowEditingPlayerStats: false,
-    allowEditingMonsterStats: false,
+    advancedMode: false,
     rememberUsername: true,
     showHitDistribution: false,
     showLoadoutComparison: false,
@@ -344,7 +343,7 @@ class GlobalState implements State {
     // Update local state store
     this.prefs = Object.assign(this.prefs, pref);
 
-    if (!this.prefs.allowEditingPlayerStats) {
+    if (pref && pref.hasOwnProperty('advancedMode')) {
       // Reset player bonuses to their worn equipment
       this.player.bonuses = this.equipmentBonuses.bonuses;
       this.player.offensive = this.equipmentBonuses.offensive;
@@ -544,7 +543,7 @@ class GlobalState implements State {
     this.loadouts.push((cloneIndex !== undefined) ? toJS(this.loadouts[cloneIndex]) : generateEmptyPlayer());
     if (selected) this.selectedLoadout = (this.loadouts.length - 1);
   }
-  
+
   doWorkerRecompute() {
     if (this.worker) {
       const loadouts = this.loadouts.map((i) => {
