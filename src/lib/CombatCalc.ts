@@ -120,8 +120,8 @@ export default class CombatCalc {
     return this.allEquippedItems.some((ei) => ei.includes('Keris'));
   }
 
-  private isWearingAhrims(): boolean { // todo
-    return this.wearingAll(["Ahrim's staff", "Ahrim's hood", "Ahrim's robetop", "Ahrim's robeskirt"])
+  private isWearingAhrims(): boolean {
+    return this.wearingAll(["Ahrim's staff", "Ahrim's hood", "Ahrim's robetop", "Ahrim's robeskirt", "Amulet of the damned"])
   }
 
   private isUsingGodSpell(): boolean {
@@ -697,6 +697,10 @@ export default class CombatCalc {
 
     if (this.wearing('Tome of fire') && isFireSpell(this.player.spell)) {
       dist = dist.scaleDamage(3, 2);
+    }
+
+    if (this.isWearingAhrims()) {
+      dist = dist.scaleDamage(13, 10);
     }
 
     if (['stab', 'slash', 'crush'].includes(this.player.style.type) &&
