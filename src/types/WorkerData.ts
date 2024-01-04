@@ -10,12 +10,16 @@ export enum WorkerRequestType {
   RECOMPUTE_VALUES
 }
 
+export interface WorkerCalcOpts {
+  includeTtkDist: boolean,
+}
+
 export interface RecomputeValuesRequest {
   type: WorkerRequestType.RECOMPUTE_VALUES,
   data: {
     loadouts: PlayerComputed[],
     monster: Monster,
-    includeTtkDist: boolean,
+    calcOpts: WorkerCalcOpts,
   }
 }
 

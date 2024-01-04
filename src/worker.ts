@@ -1,5 +1,6 @@
 import {
   ComputedValuesResponse,
+  WorkerCalcOpts,
   WorkerRequests,
   WorkerRequestType,
   WorkerResponses,
@@ -15,9 +16,9 @@ import {WORKER_JSON_REPLACER, WORKER_JSON_REVIVER} from "@/utils";
  * Method for computing the calculator values based on given loadouts and Monster object
  * @param loadouts
  * @param m
- * @param includeTtkDist
+ * @param calcOpts
  */
-const computeValues = (loadouts: PlayerComputed[], m: Monster, includeTtkDist: boolean) => {
+const computeValues = (loadouts: PlayerComputed[], m: Monster, calcOpts: WorkerCalcOpts) => {
   let res: CalculatedLoadout[] = [];
 
   for (let [_, p] of loadouts.entries()) {
@@ -29,8 +30,8 @@ const computeValues = (loadouts: PlayerComputed[], m: Monster, includeTtkDist: b
       accuracy: calc.getHitChance(),
       dps: calc.getDps(),
       ttk: calc.getTtk(),
-      dist: calc.getDistribution().asHistogram(),
-      ttkDist: includeTtkDist ? calc.getTtkDistribution() : undefined, // this one can sometimes be quite expensive
+      hitDist: calc.getDistribution().asHistogram(),
+      ttkDist: calcOpts.includeTtkDist ? calc.getTtkDistribution() : undefined, // this one can sometimes be quite expensive
     })
   }
 
@@ -44,7 +45,7 @@ self.onmessage = (e: MessageEvent<string>) => {
   // Interpret the incoming request, and action it accordingly
   switch (data.type) {
     case WorkerRequestType.RECOMPUTE_VALUES:
-      res = {type: WorkerResponseType.COMPUTED_VALUES, data: computeValues(data.data.loadouts, data.data.monster, data.data.includeTtkDist)} as ComputedValuesResponse;
+      res = {type: WorkerResponseType.COMPUTED_VALUES, data: computeValues(data.data.loadouts, data.data.monster, data.data.calcOpts)} as ComputedValuesResponse;
       break;
     default:
       console.debug(`Unknown data type sent to worker: ${data.type}`);

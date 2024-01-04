@@ -13,6 +13,7 @@ export interface Preferences {
   showHitDistribution: boolean;
   showLoadoutComparison: boolean;
   showTtkComparison: boolean;
+  hitDistsHideZeros: boolean;
 }
 
 export interface HistogramEntry {
@@ -27,7 +28,7 @@ export interface CalculatedLoadout {
   accuracy: number,
   dps: number,
   ttk: number,
-  dist: HistogramEntry[],
+  hitDist: HistogramEntry[],
   ttkDist?: Map<number, number>,
 }
 

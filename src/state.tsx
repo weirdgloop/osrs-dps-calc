@@ -19,9 +19,16 @@ import {
 import {Monster} from '@/types/Monster';
 import {MonsterAttribute} from "@/enums/MonsterAttribute";
 import {toast} from "react-toastify";
-import {fetchPlayerSkills, fetchShortlinkData, getEquipment, getEquipmentForLoadout} from "@/utils";
+import {
+  fetchPlayerSkills,
+  fetchShortlinkData,
+  getEquipment,
+  getEquipmentForLoadout,
+  WORKER_JSON_REPLACER
+} from "@/utils";
 import {TrailblazerRelic} from "@/enums/TrailblazerRelic";
 import {RuinousPower} from "@/enums/RuinousPower";
+import {RecomputeValuesRequest, WorkerRequestType} from "@/types/WorkerData";
 
 const calculateEquipmentBonuses = (eq: EquipmentPiece[]) => {
   let b: {
@@ -176,6 +183,7 @@ class GlobalState implements State {
     showHitDistribution: false,
     showLoadoutComparison: false,
     showTtkComparison: false,
+    hitDistsHideZeros: false,
   }
 
   calc: Calculator = {
@@ -187,7 +195,7 @@ class GlobalState implements State {
         accuracy: 0,
         dps: 0,
         ttk: 0,
-        dist: [],
+        hitDist: [],
         ttkDist: undefined,
       }
     ]
@@ -535,6 +543,28 @@ class GlobalState implements State {
 
     this.loadouts.push((cloneIndex !== undefined) ? toJS(this.loadouts[cloneIndex]) : generateEmptyPlayer());
     if (selected) this.selectedLoadout = (this.loadouts.length - 1);
+  }
+  
+  doWorkerRecompute() {
+    if (this.worker) {
+      const loadouts = this.loadouts.map((i) => {
+        return {
+          ...i,
+          equipment: getEquipmentForLoadout(i)
+        }
+      });
+
+      this.worker.postMessage(JSON.stringify({
+        type: WorkerRequestType.RECOMPUTE_VALUES,
+        data: {
+          loadouts,
+          monster: this.monster,
+          calcOpts: {
+            includeTtkDist: this.prefs.showTtkComparison,
+          },
+        }
+      } as RecomputeValuesRequest, WORKER_JSON_REPLACER))
+    }
   }
 }
 

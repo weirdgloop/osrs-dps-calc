@@ -10,11 +10,9 @@ import {ToastContainer} from 'react-toastify';
 import PlayerContainer from "@/app/components/player/PlayerContainer";
 import ResultsContainer from "@/app/components/results/ResultsContainer";
 import {IconChartBar} from "@tabler/icons-react";
-import {RecomputeValuesRequest, WorkerRequestType, WorkerResponses, WorkerResponseType} from "@/types/WorkerData";
+import {WorkerResponses, WorkerResponseType} from "@/types/WorkerData";
 import {IReactionPublic, reaction, toJS} from "mobx";
-import {Player} from "@/types/Player";
-import {Monster} from "@/types/Monster";
-import {getEquipmentForLoadout, WORKER_JSON_REPLACER, WORKER_JSON_REVIVER} from "@/utils";
+import {WORKER_JSON_REVIVER} from "@/utils";
 import PreferencesModal from "@/app/components/PreferencesModal";
 import InitialLoad from "@/app/components/InitialLoad";
 import LoadoutComparison from "@/app/components/results/LoadoutComparison";
@@ -23,26 +21,6 @@ import TtkComparison from "@/app/components/results/TtkComparison";
 const Home: NextPage = observer(() => {
   const store = useStore();
   const {showPreferencesModal} = store.ui;
-
-  const doWorkerRecompute = (p: Player[], m: Monster, ttkDist: boolean) => {
-    if (store.worker) {
-      const loadouts = p.map((i) => {
-        return {
-          ...i,
-          equipment: getEquipmentForLoadout(i)
-        }
-      });
-
-      store.worker.postMessage(JSON.stringify({
-        type: WorkerRequestType.RECOMPUTE_VALUES,
-        data: {
-          loadouts,
-          monster: m,
-          includeTtkDist: ttkDist,
-        }
-      } as RecomputeValuesRequest, WORKER_JSON_REPLACER))
-    }
-  }
 
   useEffect(() => {
     // When the page loads, set up the worker and be ready to interpret the responses
@@ -116,13 +94,14 @@ const Home: NextPage = observer(() => {
   }, [store, store.equipmentBonuses]);
 
   useEffect(() => {
-    const recompute = () => doWorkerRecompute(store.loadouts, store.monster, store.prefs.showTtkComparison);
+    const recompute = () => store.doWorkerRecompute();
 
     // When a calculator input changes, trigger a re-compute on the worker
     const triggers: ((r: IReactionPublic) => any)[] = [
       () => toJS(store.loadouts),
       () => toJS(store.monster),
       () => toJS(store.prefs.showTtkComparison),
+      () => toJS(store.prefs.hitDistsHideZeros),
     ];
     const reactions = triggers.map(t => reaction(t, recompute, {fireImmediately: true}))
 

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
 import Offensive from "@/app/components/player/bonuses/Offensive";
@@ -10,8 +10,6 @@ import Toggle from "@/app/components/generic/Toggle";
 const Bonuses: React.FC = observer(() => {
   const store = useStore();
   const {prefs} = store;
-
-  const [nonZeros, setNonZeros] = useState(false)
 
   return (
     <div className={'grow bg-body-100 dark:bg-dark-400 text-black dark:text-white rounded-br'}>
@@ -30,11 +28,13 @@ const Bonuses: React.FC = observer(() => {
           <div className={'px-6 py-2 border-y border-body-400 dark:border-dark-200'}>
             <div className={'flex justify-between items-center'}>
               <h4 className={'font-serif font-bold'}>Hit Distribution</h4>
-              <Toggle checked={nonZeros} setChecked={(c) => setNonZeros(c)} label={"Hide 0s"}/>
+              <Toggle checked={prefs.hitDistsHideZeros} 
+                      setChecked={(c) => store.updatePreferences({hitDistsHideZeros: c})} 
+                      label={"Hide 0s"}/>
             </div>
           </div>
           <div className={'mt-2 px-2'}>
-            <HitDistribution dist={store.calc.loadouts[store.selectedLoadout]?.dist} nonZeros={nonZeros}/>
+            <HitDistribution dist={store.calc.loadouts[store.selectedLoadout]?.hitDist}/>
           </div>
         </>
       )}

@@ -5,6 +5,7 @@ import hitsplat from '@/public/img/hitsplat.webp';
 import zero_hitsplat from '@/public/img/zero_hitsplat.png';
 import {HistogramEntry} from "@/types/State";
 import {useTheme} from "next-themes";
+import {useStore} from "@/state";
 
 const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
@@ -30,7 +31,11 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, pa
   return null;
 }
 
-const HitDistribution: React.FC<{ dist: HistogramEntry[], nonZeros: boolean }> = ({dist, nonZeros}) => {
+const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = ({dist}) => {
+  const store = useStore();
+  const {prefs} = store;
+  const data = prefs.hitDistsHideZeros ? dist.slice(1) : dist;
+  
   const {resolvedTheme} = useTheme();
   const isDark = resolvedTheme === 'dark';
 
@@ -38,7 +43,7 @@ const HitDistribution: React.FC<{ dist: HistogramEntry[], nonZeros: boolean }> =
     <>
       <ResponsiveContainer width={'100%'} height={150}>
         <BarChart
-          data={nonZeros ? dist.slice(1) : dist}
+          data={data}
         >
           <XAxis
             // label={{ value: 'damage', position: 'bottom' }}
