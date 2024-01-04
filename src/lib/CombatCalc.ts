@@ -795,6 +795,7 @@ export default class CombatCalc {
    * it is an object where keys are tick counts and values are probabilities.
    */
   public getTtkDistribution(): Map<number, number> {
+    const speed = this.getAttackSpeed();
     const dist = this.getDistribution().asSingleHitplat();
  
     // distribution of health values at current iter step
@@ -810,7 +811,7 @@ export default class CombatCalc {
     
     // 1. until the amount of hp values remaining above zero is more than our desired epsilon accuracy,
     //    or we reach the maximum iteration rounds
-    for (let tick = 1; tick < (TTK_DIST_MAX_ITER_ROUNDS + 1) && epsilon > TTK_DIST_EPSILON; tick++) {
+    for (let hit = 0; hit < (TTK_DIST_MAX_ITER_ROUNDS + 1) && epsilon > TTK_DIST_EPSILON; hit++) {
       // 2. track the sum total of probability-paths that reach zero on this iteration
       let delta = 0.0;
       
@@ -832,6 +833,7 @@ export default class CombatCalc {
           // 6. if the hp we are about to arrive at is <= 0, the npc is killed, the iteration count is hits done,
           //    and we add this probability path into the delta 
           if (newHp <= 0) {
+            const tick = hit * speed + 1;
             ttks.set(tick, (ttks.get(tick) || 0) + chanceOfAction);
             delta += chanceOfAction;
           } 
