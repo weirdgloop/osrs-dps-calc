@@ -5,7 +5,7 @@ import localforage from "localforage";
 
 const UsernameLookup: React.FC = observer(() => {
   const store = useStore();
-  const {username} = store.ui;
+  const username = store.ui.username || '';
   const shouldRemember = store.prefs.rememberUsername;
   const [btnDisabled, setBtnDisabled] = useState(false);
   const btn = useRef<HTMLButtonElement>(null);
