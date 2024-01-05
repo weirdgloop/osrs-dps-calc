@@ -66,7 +66,7 @@ const TtkComparison: React.FC = observer(() => {
 
   const [xAxisType, setXAxisType] = useState<{ label: string, value: XAxisType } | null | undefined>(XAxisOptions[0]);
 
-  // worth noting that if the worker is behind, 
+  // worth noting that if the worker is behind,
   // ttkDist may not yet be computed for a specific loadout
   // we should not assume it is populated here
   const data = useMemo(() => {
@@ -135,7 +135,7 @@ const TtkComparison: React.FC = observer(() => {
           </LineChart>
         </ResponsiveContainer>
         <div className={'my-4 flex gap-4 max-w-lg m-auto dark:text-white'}>
-          <div className={'basis-1/2'}>
+          <div className={'basis-full md:basis-1/2'}>
             <h3 className={'font-serif font-bold mb-2'}>X axis</h3>
             <Select
                 id={'loadout-comparison-x'}

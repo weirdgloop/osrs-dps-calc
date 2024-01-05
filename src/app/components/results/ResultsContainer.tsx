@@ -100,7 +100,7 @@ const ResultsContainer = observer(() => {
   const {prefs} = store;
 
   return (
-    <div className={'grow md:mt-9 flex flex-col'}>
+    <div className={'grow basis-1/4 md:mt-9 flex flex-col'}>
       <div
         className={'sm:rounded shadow-lg bg-body-100 dark:bg-dark-400'}>
         <div

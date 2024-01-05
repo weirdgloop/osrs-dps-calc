@@ -11,7 +11,7 @@ const Combat: React.FC = observer(() => {
   const styles = store.availableCombatStyles;
 
   return (
-    <div className={'mt-4'}>
+    <div>
       <div className={'flex flex-col my-4'}>
         {
           styles.map((s, i) => {

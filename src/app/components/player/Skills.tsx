@@ -19,8 +19,8 @@ const Skills: React.FC = observer(() => {
   const {player} = store;
 
   return (
-    <div className={'px-4 mt-4'}>
-      <div className={'flex items-center mt-3'}>
+    <div className={'px-4 mt-4 flex flex-col mb-6 grow'}>
+      <div className={'flex items-center'}>
         <UsernameLookup/>
       </div>
       <div className={'mt-4'}>
@@ -38,7 +38,7 @@ const Skills: React.FC = observer(() => {
         Boosts
       </h4>
       <div
-        className={'h-[11.5rem] mt-2 bg-white dark:bg-dark-500 dark:border-dark-200 rounded border border-gray-300 overflow-y-scroll'}
+        className={'grow h-48 mt-2 bg-white dark:bg-dark-500 dark:border-dark-200 rounded border border-gray-300 overflow-y-scroll'}
       >
         {
           Object.entries(PotionMap).map(([k, v]) => {

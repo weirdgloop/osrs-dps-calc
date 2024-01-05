@@ -5,7 +5,7 @@ import Bonuses from "@/app/components/player/Bonuses";
 
 const Equipment: React.FC = () => {
   return (
-    <div className={'px-4 mt-4'}>
+    <div className={'px-4'}>
       <div className={'mt-4'}>
         <EquipmentSelect />
       </div>
