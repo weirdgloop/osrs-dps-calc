@@ -93,9 +93,10 @@ def main():
             continue
 
         po = v['printouts']
+        item_id = getPrintoutValue(po['Item ID'])
         equipment = {
             'name': k.rsplit('#', 1)[0],
-            'id': getPrintoutValue(po['Item ID']),
+            'id': item_id,
             'version': getPrintoutValue(po['Version anchor']) or '',
             'slot': getPrintoutValue(po['Equipment slot']) or '',
             'image': '' if not po['Image'] else po['Image'][0]['fulltext'].replace('File:', ''),
@@ -122,11 +123,21 @@ def main():
             'isTwoHanded': False
         }
 
+        # Handle 2H weapons
         if equipment['slot'] == '2h':
             equipment['slot'] = 'weapon'
             equipment['isTwoHanded'] = True
 
-        data[equipment['id']] = equipment
+        # Handle toxic/blazing blowpipe special case
+        toxic_variants = ['Adamant', 'Amethyst', 'Black', 'Bronze', 'Dragon', 'Iron', 'Mithril', 'Rune', 'Steel']
+        if item_id == 12926 or item_id == 28688:
+            for variant in toxic_variants:
+                new_equipment = equipment.copy()
+                new_equipment['name'] = new_equipment['name'] + ' (%s)' % variant
+                data['%s_%s' % (item_id, variant.lower())] = new_equipment
+        else:
+            data[item_id] = equipment
+
         if not equipment['image'] == '':
             required_imgs.append(equipment['image'])
 

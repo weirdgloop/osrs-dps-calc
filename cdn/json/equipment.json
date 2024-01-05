@@ -19067,8 +19067,232 @@
     ],
     "isTwoHanded": false
   },
-  "28688": {
-    "name": "Blazing blowpipe",
+  "28688_adamant": {
+    "name": "Blazing blowpipe (Adamant)",
+    "id": 28688,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Blazing blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "offensive": [
+      0,
+      0,
+      0,
+      30,
+      20,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28688_amethyst": {
+    "name": "Blazing blowpipe (Amethyst)",
+    "id": 28688,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Blazing blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "offensive": [
+      0,
+      0,
+      0,
+      30,
+      20,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28688_black": {
+    "name": "Blazing blowpipe (Black)",
+    "id": 28688,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Blazing blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "offensive": [
+      0,
+      0,
+      0,
+      30,
+      20,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28688_bronze": {
+    "name": "Blazing blowpipe (Bronze)",
+    "id": 28688,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Blazing blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "offensive": [
+      0,
+      0,
+      0,
+      30,
+      20,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28688_dragon": {
+    "name": "Blazing blowpipe (Dragon)",
+    "id": 28688,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Blazing blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "offensive": [
+      0,
+      0,
+      0,
+      30,
+      20,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28688_iron": {
+    "name": "Blazing blowpipe (Iron)",
+    "id": 28688,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Blazing blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "offensive": [
+      0,
+      0,
+      0,
+      30,
+      20,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28688_mithril": {
+    "name": "Blazing blowpipe (Mithril)",
+    "id": 28688,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Blazing blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "offensive": [
+      0,
+      0,
+      0,
+      30,
+      20,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28688_rune": {
+    "name": "Blazing blowpipe (Rune)",
+    "id": 28688,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Blazing blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "offensive": [
+      0,
+      0,
+      0,
+      30,
+      20,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "28688_steel": {
+    "name": "Blazing blowpipe (Steel)",
     "id": 28688,
     "version": "Charged",
     "slot": "weapon",
@@ -113035,8 +113259,232 @@
     ],
     "isTwoHanded": false
   },
-  "12926": {
-    "name": "Toxic blowpipe",
+  "12926_adamant": {
+    "name": "Toxic blowpipe (Adamant)",
+    "id": 12926,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Toxic blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "offensive": [
+      0,
+      0,
+      0,
+      30,
+      20,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "12926_amethyst": {
+    "name": "Toxic blowpipe (Amethyst)",
+    "id": 12926,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Toxic blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "offensive": [
+      0,
+      0,
+      0,
+      30,
+      20,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "12926_black": {
+    "name": "Toxic blowpipe (Black)",
+    "id": 12926,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Toxic blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "offensive": [
+      0,
+      0,
+      0,
+      30,
+      20,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "12926_bronze": {
+    "name": "Toxic blowpipe (Bronze)",
+    "id": 12926,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Toxic blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "offensive": [
+      0,
+      0,
+      0,
+      30,
+      20,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "12926_dragon": {
+    "name": "Toxic blowpipe (Dragon)",
+    "id": 12926,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Toxic blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "offensive": [
+      0,
+      0,
+      0,
+      30,
+      20,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "12926_iron": {
+    "name": "Toxic blowpipe (Iron)",
+    "id": 12926,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Toxic blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "offensive": [
+      0,
+      0,
+      0,
+      30,
+      20,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "12926_mithril": {
+    "name": "Toxic blowpipe (Mithril)",
+    "id": 12926,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Toxic blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "offensive": [
+      0,
+      0,
+      0,
+      30,
+      20,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "12926_rune": {
+    "name": "Toxic blowpipe (Rune)",
+    "id": 12926,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Toxic blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "offensive": [
+      0,
+      0,
+      0,
+      30,
+      20,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  "12926_steel": {
+    "name": "Toxic blowpipe (Steel)",
     "id": 12926,
     "version": "Charged",
     "slot": "weapon",
