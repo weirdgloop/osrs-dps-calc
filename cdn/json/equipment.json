@@ -10219,34 +10219,6 @@
     ],
     "isTwoHanded": false
   },
-  "12892": {
-    "name": "Antisanta mask",
-    "id": 12892,
-    "version": "",
-    "slot": "head",
-    "image": "Antisanta mask.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
   "12894": {
     "name": "Antisanta pantaloons",
     "id": 12894,
@@ -64595,6 +64567,34 @@
     ],
     "isTwoHanded": false
   },
+  "28786": {
+    "name": "Icy jumper",
+    "id": 28786,
+    "version": "",
+    "slot": "body",
+    "image": "Icy jumper.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
   "23603": {
     "name": "Imbued guthix cape (Last Man Standing)",
     "id": 23603,
@@ -103571,6 +103571,34 @@
     ],
     "isTwoHanded": false
   },
+  "28788": {
+    "name": "Snowglobe helmet",
+    "id": 28788,
+    "version": "",
+    "slot": "head",
+    "image": "Snowglobe helmet.png",
+    "speed": 0,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
   "26314": {
     "name": "Snowman ring",
     "id": 26314,
@@ -113711,19 +113739,19 @@
     "name": "Trailblazer reloaded bronze trophy",
     "id": 28763,
     "version": "",
-    "slot": "weapon",
+    "slot": "shield",
     "image": "Trailblazer reloaded bronze trophy.png",
-    "speed": 4,
-    "category": "Blunt",
+    "speed": 0,
+    "category": "",
     "offensive": [
-      -50,
       0,
       0,
       0,
       0,
-      -100,
-      -100,
-      -10
+      0,
+      0,
+      0,
+      0
     ],
     "defensive": [
       0,
@@ -113733,7 +113761,7 @@
       0,
       0
     ],
-    "isTwoHanded": true
+    "isTwoHanded": false
   },
   "28751": {
     "name": "Trailblazer reloaded dragon trophy",
@@ -113851,19 +113879,19 @@
     "name": "Trailblazer reloaded iron trophy",
     "id": 28761,
     "version": "",
-    "slot": "weapon",
+    "slot": "shield",
     "image": "Trailblazer reloaded iron trophy.png",
-    "speed": 4,
-    "category": "Blunt",
+    "speed": 0,
+    "category": "",
     "offensive": [
-      -50,
       0,
       0,
       0,
       0,
-      -100,
-      -100,
-      -10
+      0,
+      0,
+      0,
+      0
     ],
     "defensive": [
       0,
@@ -113873,25 +113901,25 @@
       0,
       0
     ],
-    "isTwoHanded": true
+    "isTwoHanded": false
   },
   "28757": {
     "name": "Trailblazer reloaded mithril trophy",
     "id": 28757,
     "version": "",
-    "slot": "weapon",
+    "slot": "shield",
     "image": "Trailblazer reloaded mithril trophy.png",
-    "speed": 4,
-    "category": "Blunt",
+    "speed": 0,
+    "category": "",
     "offensive": [
-      -50,
       0,
       0,
       0,
       0,
-      -100,
-      -100,
-      -10
+      0,
+      0,
+      0,
+      0
     ],
     "defensive": [
       0,
@@ -113901,7 +113929,7 @@
       0,
       0
     ],
-    "isTwoHanded": true
+    "isTwoHanded": false
   },
   "28753": {
     "name": "Trailblazer reloaded rune trophy",
@@ -113935,19 +113963,19 @@
     "name": "Trailblazer reloaded steel trophy",
     "id": 28759,
     "version": "",
-    "slot": "weapon",
+    "slot": "shield",
     "image": "Trailblazer reloaded steel trophy.png",
-    "speed": 4,
-    "category": "Blunt",
+    "speed": 0,
+    "category": "",
     "offensive": [
-      -50,
       0,
       0,
       0,
       0,
-      -100,
-      -100,
-      -10
+      0,
+      0,
+      0,
+      0
     ],
     "defensive": [
       0,
@@ -113957,7 +113985,7 @@
       0,
       0
     ],
-    "isTwoHanded": true
+    "isTwoHanded": false
   },
   "28715": {
     "name": "Trailblazer reloaded top (t1)",

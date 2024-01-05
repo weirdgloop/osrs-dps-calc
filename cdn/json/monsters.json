@@ -426,7 +426,7 @@
     "skills": [
       30,
       30,
-      55,
+      50,
       1,
       1,
       90
@@ -753,7 +753,7 @@
     "id": 9573,
     "name": "Acidic Bloodveld",
     "version": "",
-    "image": "Acidic Bloodveld.png",
+    "image": "Acidic Bloodveld (Christmas).png",
     "level": 56,
     "speed": 4,
     "size": 1,
@@ -8637,10 +8637,1038 @@
     "attributes": []
   },
   {
+    "id": 12561,
+    "name": "Bloodthirst rockslug",
+    "version": "",
+    "image": "Bloodthirst rockslug.png",
+    "level": 86,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12566,
+    "name": "Bloodthirsty Basilisk Sentinel",
+    "version": "",
+    "image": "Bloodthirsty Basilisk Sentinel.png",
+    "level": 537,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      411,
+      274,
+      780,
+      411,
+      1,
+      411
+    ],
+    "offensive": [
+      12,
+      12,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      10,
+      50,
+      10,
+      50,
+      50
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12568,
+    "name": "Bloodthirsty Bloodveld",
+    "version": "",
+    "image": "Bloodthirsty Bloodveld.png",
+    "level": 303,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      285,
+      85,
+      435,
+      1,
+      1,
+      217
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12562,
+    "name": "Bloodthirsty Cockathrice",
+    "version": "",
+    "image": "Bloodthirsty Cockathrice.png",
+    "level": 133,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      94,
+      78,
+      142,
+      1,
+      1,
+      117
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      20,
+      0,
+      20,
+      20
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12539,
+    "name": "Bloodthirsty Crawler",
+    "version": "",
+    "image": "Bloodthirsty Crawler.png",
+    "level": 68,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12586,
+    "name": "Bloodthirsty Drake",
+    "version": "",
+    "image": "Bloodthirsty Drake.png",
+    "level": 576,
+    "speed": 4,
+    "size": 5,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "dragon"
+    ]
+  },
+  {
+    "id": 12588,
+    "name": "Bloodthirsty Hydra",
+    "version": "",
+    "image": "Bloodthirsty Hydra.png",
+    "level": 309,
+    "speed": 6,
+    "size": 5,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "dragon"
+    ]
+  },
+  {
+    "id": 12564,
+    "name": "Bloodthirsty Infernal pyrelord",
+    "version": "",
+    "image": "Bloodthirsty Infernal pyrelord.png",
+    "level": 201,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      186,
+      68,
+      276,
+      1,
+      1,
+      144
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      18,
+      0,
+      18,
+      18,
+      18
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12570,
+    "name": "Bloodthirsty Jelly",
+    "version": "",
+    "image": "Bloodthirsty Jelly.png",
+    "level": 309,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      255,
+      220,
+      285,
+      225,
+      1,
+      225
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12567,
+    "name": "Bloodthirsty Mage",
+    "version": "",
+    "image": "Bloodthirsty Mage.png",
+    "level": 162,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12582,
+    "name": "Bloodthirsty Nechryarch",
+    "version": "",
+    "image": "Bloodthirsty Nechryarch.png",
+    "level": 450,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      465,
+      140,
+      480,
+      1,
+      1,
+      390
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      30,
+      0,
+      30,
+      30,
+      30
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12580,
+    "name": "Bloodthirsty Night beast",
+    "version": "",
+    "image": "Bloodthirsty Night beast.png",
+    "level": 561,
+    "speed": 4,
+    "size": 4,
+    "skills": [
+      405,
+      220,
+      825,
+      450,
+      1,
+      435
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      200,
+      190,
+      200,
+      80,
+      75
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12574,
+    "name": "Bloodthirsty Repugnant spectre",
+    "version": "",
+    "image": "Bloodthirsty Repugnant spectre.png",
+    "level": 335,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "spectral",
+      "undead"
+    ]
+  },
+  {
+    "id": 12585,
+    "name": "Bloodthirsty Shadow Wyrm",
+    "version": "Attacking",
+    "image": "Bloodthirsty Shadow Wyrm (attacking).png",
+    "level": 400,
+    "speed": 4,
+    "size": 5,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "dragon"
+    ]
+  },
+  {
+    "id": 12584,
+    "name": "Bloodthirsty Shadow Wyrm",
+    "version": "Idle",
+    "image": "Bloodthirsty Shadow Wyrm.png",
+    "level": 400,
+    "speed": 4,
+    "size": 5,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "dragon"
+    ]
+  },
+  {
+    "id": 12582,
+    "name": "Bloodthirsty Turoth",
+    "version": "",
+    "image": "Bloodthirsty Turoth.png",
+    "level": 366,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      306,
+      154,
+      292,
+      1,
+      1,
+      420
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      40,
+      0,
+      0,
+      40,
+      0
+    ],
+    "attributes": [
+      "leafy"
+    ]
+  },
+  {
+    "id": 12572,
+    "name": "Bloodthirsty abomination",
+    "version": "",
+    "image": "Bloodthirsty abomination.png",
+    "level": 206,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12581,
+    "name": "Bloodthirsty abyssal demon",
+    "version": "",
+    "image": "Bloodthirsty abyssal demon.png",
+    "level": 513,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      450,
+      240,
+      600,
+      1,
+      1,
+      390
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      50,
+      0,
+      50,
+      50,
+      50
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12540,
+    "name": "Bloodthirsty banshee",
+    "version": "",
+    "image": "Bloodthirsty banshee.png",
+    "level": 70,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "spectral",
+      "undead"
+    ]
+  },
+  {
+    "id": 12565,
+    "name": "Bloodthirsty basilisk",
+    "version": "",
+    "image": "Bloodthirsty basilisk.png",
+    "level": 202,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      132,
+      130,
+      255,
+      1,
+      1,
+      147
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      35,
+      0,
+      35,
+      35
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12575,
+    "name": "Bloodthirsty choke devil",
+    "version": "",
+    "image": "Bloodthirsty choke devil.png",
+    "level": 396,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12578,
+    "name": "Bloodthirsty gargoyle",
+    "version": "",
+    "image": "Bloodthirsty gargoyle.png",
+    "level": 349,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12538,
+    "name": "Bloodthirsty hand",
+    "version": "",
+    "image": "Bloodthirsty hand.png",
+    "level": 45,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 12576,
+    "name": "Bloodthirsty kurask",
+    "version": "",
+    "image": "Bloodthirsty kurask.png",
+    "level": 295,
+    "speed": 4,
+    "size": 5,
+    "skills": [
+      285,
+      250,
+      405,
+      1,
+      1,
+      480
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      5,
+      0,
+      0,
+      50,
+      0
+    ],
+    "attributes": [
+      "leafy"
+    ]
+  },
+  {
+    "id": 12569,
+    "name": "Bloodthirsty mutated Bloodveld",
+    "version": "",
+    "image": "Bloodthirsty mutated Bloodveld.png",
+    "level": 417,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      375,
+      130,
+      615,
+      1,
+      1,
+      285
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12563,
+    "name": "Bloodthirsty pyrelord",
+    "version": "",
+    "image": "Bloodthirsty pyrelord.png",
+    "level": 145,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      147,
+      52,
+      187,
+      1,
+      1,
+      97
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      18,
+      0,
+      18,
+      18,
+      18
+    ],
+    "attributes": [
+      "demon"
+    ]
+  },
+  {
+    "id": 12577,
+    "name": "Bloodthirsty smoke devil",
+    "version": "",
+    "image": "Bloodthirsty smoke devil.png",
+    "level": 420,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      360,
+      390,
+      360,
+      1,
+      420,
+      345
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      850,
+      80,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12573,
+    "name": "Bloodthirsty spectre",
+    "version": "",
+    "image": "Bloodthirsty spectre.png",
+    "level": 253,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "spectral",
+      "undead"
+    ]
+  },
+  {
+    "id": 12542,
+    "name": "Bloodthirsty twisted banshee",
+    "version": "",
+    "image": "Bloodthirsty twisted banshee.png",
+    "level": 144,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "spectral",
+      "undead"
+    ]
+  },
+  {
+    "id": 12571,
+    "name": "Bloodthirsty warped Jelly",
+    "version": "",
+    "image": "Bloodthirsty warped Jelly.png",
+    "level": 241,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      200,
+      250,
+      220,
+      180,
+      1,
+      180
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
     "id": 3138,
     "name": "Bloodveld",
     "version": "God Wars",
-    "image": "Bloodveld (God Wars Dungeon).png",
+    "image": "Bloodveld (God Wars Dungeon, Christmas).png",
     "level": 81,
     "speed": 4,
     "size": 2,
@@ -8675,7 +9703,7 @@
     "id": 484,
     "name": "Bloodveld",
     "version": "Standard",
-    "image": "Bloodveld.png",
+    "image": "Bloodveld (Christmas).png",
     "level": 76,
     "speed": 4,
     "size": 2,
@@ -11608,7 +12636,7 @@
     "id": 5862,
     "name": "Cerberus",
     "version": "",
-    "image": "Cerberus.png",
+    "image": "Cerberus (Christmas).png",
     "level": 318,
     "speed": 6,
     "size": 5,
@@ -12971,7 +13999,7 @@
     "id": 319,
     "name": "Corporeal Beast",
     "version": "",
-    "image": "Corporeal Beast.png",
+    "image": "Corporeal Beast (Christmas).png",
     "level": 785,
     "speed": 4,
     "size": 5,
@@ -14282,7 +15310,7 @@
     "id": 4184,
     "name": "Crocodile",
     "version": "",
-    "image": "Crocodile.png",
+    "image": "Crocodile (Christmas).png",
     "level": 63,
     "speed": 4,
     "size": 2,
@@ -19940,6 +20968,39 @@
     "attributes": []
   },
   {
+    "id": null,
+    "name": "Earth warrior (RuneScape 2 Beta)",
+    "version": "",
+    "image": "Earth warrior (RuneScape 2 Beta).png",
+    "level": 45,
+    "speed": 0,
+    "size": 1,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
     "id": 1558,
     "name": "Earth wizard",
     "version": "",
@@ -23936,7 +24997,7 @@
     "image": "General Khazard.png",
     "level": 142,
     "speed": 4,
-    "size": 1,
+    "size": 2,
     "skills": [
       75,
       80,
@@ -24631,7 +25692,7 @@
     "id": 5779,
     "name": "Giant Mole",
     "version": "",
-    "image": "Giant Mole.png",
+    "image": "Giant Mole (Christmas).png",
     "level": 230,
     "speed": 4,
     "size": 3,
@@ -30532,7 +31593,7 @@
     "id": 3254,
     "name": "Guard",
     "version": "Edgeville 1",
-    "image": "Guard (Edgeville).png",
+    "image": "Guard (Edgeville, 1, Christmas).png",
     "level": 21,
     "speed": 4,
     "size": 1,
@@ -30565,7 +31626,7 @@
     "id": 11922,
     "name": "Guard",
     "version": "Edgeville 2",
-    "image": "Guard (Edgeville, 2).png",
+    "image": "Guard (Edgeville, 2, Christmas).png",
     "level": 21,
     "speed": 4,
     "size": 1,
@@ -30598,7 +31659,7 @@
     "id": 11923,
     "name": "Guard",
     "version": "Edgeville 3",
-    "image": "Guard (Edgeville, 3).png",
+    "image": "Guard (Edgeville, 3, Christmas).png",
     "level": 21,
     "speed": 4,
     "size": 1,
@@ -30631,7 +31692,7 @@
     "id": 11924,
     "name": "Guard",
     "version": "Edgeville 4",
-    "image": "Guard (Edgeville, 4).png",
+    "image": "Guard (Edgeville, 4, Christmas).png",
     "level": 21,
     "speed": 4,
     "size": 1,
@@ -30664,7 +31725,7 @@
     "id": 3271,
     "name": "Guard",
     "version": "Falador (battleaxe, 1)",
-    "image": "Guard (Falador, battleaxe).png",
+    "image": "Guard (Falador, battleaxe, 1, Christmas).png",
     "level": 19,
     "speed": 6,
     "size": 1,
@@ -30697,7 +31758,7 @@
     "id": 11946,
     "name": "Guard",
     "version": "Falador (battleaxe, 2)",
-    "image": "Guard (Falador, battleaxe, 2).png",
+    "image": "Guard (Falador, battleaxe, 2, Christmas).png",
     "level": 19,
     "speed": 6,
     "size": 1,
@@ -30730,7 +31791,7 @@
     "id": 3270,
     "name": "Guard",
     "version": "Falador (crossbow, 1)",
-    "image": "Guard (Falador, crossbow).png",
+    "image": "Guard (Falador, crossbow, 1, Christmas).png",
     "level": 22,
     "speed": 6,
     "size": 1,
@@ -30763,7 +31824,7 @@
     "id": 11945,
     "name": "Guard",
     "version": "Falador (crossbow, 2)",
-    "image": "Guard (Falador, crossbow, 2).png",
+    "image": "Guard (Falador, crossbow, 2, Christmas).png",
     "level": 22,
     "speed": 6,
     "size": 1,
@@ -30796,7 +31857,7 @@
     "id": 11947,
     "name": "Guard",
     "version": "Falador (longbow, 1)",
-    "image": "Guard (Falador, longbow).png",
+    "image": "Guard (Falador, longbow, 1, Christmas).png",
     "level": 22,
     "speed": 6,
     "size": 1,
@@ -30829,7 +31890,7 @@
     "id": 3273,
     "name": "Guard",
     "version": "Falador (longbow, 2)",
-    "image": "Guard (Falador, longbow 2).png",
+    "image": "Guard (Falador, longbow, 2, Christmas).png",
     "level": 22,
     "speed": 6,
     "size": 1,
@@ -30862,7 +31923,7 @@
     "id": 3274,
     "name": "Guard",
     "version": "Falador (longbow, 3)",
-    "image": "Guard (Falador, longbow 3).png",
+    "image": "Guard (Falador, longbow, 3, Christmas).png",
     "level": 22,
     "speed": 6,
     "size": 1,
@@ -30895,7 +31956,7 @@
     "id": 3269,
     "name": "Guard",
     "version": "Falador (sword, 1)",
-    "image": "Guard (Falador, sword).png",
+    "image": "Guard (Falador, sword, 1, Christmas).png",
     "level": 21,
     "speed": 4,
     "size": 1,
@@ -30928,7 +31989,7 @@
     "id": 11942,
     "name": "Guard",
     "version": "Falador (sword, 2)",
-    "image": "Guard (Falador, sword, 2).png",
+    "image": "Guard (Falador, sword, 2, Christmas).png",
     "level": 21,
     "speed": 4,
     "size": 1,
@@ -30961,7 +32022,7 @@
     "id": 11943,
     "name": "Guard",
     "version": "Falador (sword, 3)",
-    "image": "Guard (Falador, sword, 3).png",
+    "image": "Guard (Falador, sword, 3, Christmas).png",
     "level": 21,
     "speed": 4,
     "size": 1,
@@ -30994,7 +32055,7 @@
     "id": 11944,
     "name": "Guard",
     "version": "Falador (sword, 4)",
-    "image": "Guard (Falador, sword, 4).png",
+    "image": "Guard (Falador, sword, 4, Christmas).png",
     "level": 21,
     "speed": 4,
     "size": 1,
@@ -33546,7 +34607,7 @@
     ],
     "defensive": [
       110,
-      60,
+      40,
       140,
       70,
       70
@@ -33582,7 +34643,7 @@
     ],
     "defensive": [
       110,
-      60,
+      40,
       140,
       70,
       70
@@ -34424,7 +35485,7 @@
   {
     "id": 3134,
     "name": "Imp",
-    "version": "GWD",
+    "version": "God Wars",
     "image": "Imp (GWD).png",
     "level": 7,
     "speed": 4,
@@ -34460,7 +35521,7 @@
     "id": 5007,
     "name": "Imp",
     "version": "Regular",
-    "image": "Imp.png",
+    "image": "Imp (Christmas).png",
     "level": 2,
     "speed": 4,
     "size": 1,
@@ -35565,7 +36626,7 @@
     "id": 7691,
     "name": "Jal-Nib",
     "version": "",
-    "image": "Jal-Nib.png",
+    "image": "Jal-Nib (Christmas).png",
     "level": 32,
     "speed": 4,
     "size": 1,
@@ -38179,7 +39240,7 @@
     "id": 239,
     "name": "King Black Dragon",
     "version": "",
-    "image": "King Black Dragon.png",
+    "image": "King Black Dragon (Christmas).png",
     "level": 276,
     "speed": 4,
     "size": 5,
@@ -39212,7 +40273,7 @@
     "id": 494,
     "name": "Kraken",
     "version": "Kraken",
-    "image": "Kraken.png",
+    "image": "Kraken (Christmas).png",
     "level": 291,
     "speed": 4,
     "size": 4,
@@ -39252,7 +40313,7 @@
     "skills": [
       1,
       1,
-      0,
+      255,
       1,
       1,
       1
@@ -41442,7 +42503,7 @@
     "id": 6604,
     "name": "Mammoth",
     "version": "",
-    "image": "Mammoth.png",
+    "image": "Mammoth (Christmas).png",
     "level": 80,
     "speed": 4,
     "size": 3,
@@ -41673,7 +42734,7 @@
     "id": 3109,
     "name": "Man",
     "version": "Backpack",
-    "image": "Man (backpack).png",
+    "image": "Man (backpack, Christmas).png",
     "level": 2,
     "speed": 4,
     "size": 1,
@@ -41706,7 +42767,7 @@
     "id": 3110,
     "name": "Man",
     "version": "Backpack (Musa Point)",
-    "image": "Man (backpack).png",
+    "image": "Man (backpack, Christmas).png",
     "level": 2,
     "speed": 4,
     "size": 1,
@@ -41772,7 +42833,7 @@
     "id": 3106,
     "name": "Man",
     "version": "Blue",
-    "image": "Man (blue).png",
+    "image": "Man (blue, Christmas).png",
     "level": 2,
     "speed": 4,
     "size": 1,
@@ -41838,7 +42899,7 @@
     "id": 3108,
     "name": "Man",
     "version": "Green",
-    "image": "Man.png",
+    "image": "Man (green, Christmas).png",
     "level": 2,
     "speed": 4,
     "size": 1,
@@ -41904,7 +42965,7 @@
     "id": 3264,
     "name": "Man",
     "version": "Light blue",
-    "image": "Man (light blue).png",
+    "image": "Man (light blue, Christmas).png",
     "level": 2,
     "speed": 4,
     "size": 1,
@@ -41970,7 +43031,7 @@
     "id": 3107,
     "name": "Man",
     "version": "Red",
-    "image": "Man (red).png",
+    "image": "Man (red, Christmas).png",
     "level": 2,
     "speed": 4,
     "size": 1,
@@ -44486,6 +45547,39 @@
     "attributes": []
   },
   {
+    "id": null,
+    "name": "Mummy (historical)",
+    "version": "",
+    "image": "Mummy (historical).png",
+    "level": 47,
+    "speed": 0,
+    "size": 1,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
     "id": 720,
     "name": "Mummy",
     "version": "Level 103",
@@ -44629,7 +45723,7 @@
     "id": 7276,
     "name": "Mutated Bloodveld",
     "version": "",
-    "image": "Mutated Bloodveld.png",
+    "image": "Mutated Bloodveld (Christmas).png",
     "level": 123,
     "speed": 4,
     "size": 2,
@@ -44744,11 +45838,11 @@
     ],
     "offensive": [
       88,
-      0,
+      -8,
       0,
       82,
-      63,
-      74
+      47,
+      55
     ],
     "defensive": [
       60,
@@ -44779,11 +45873,11 @@
     ],
     "offensive": [
       88,
-      0,
+      -8,
       0,
       82,
-      63,
-      74
+      47,
+      55
     ],
     "defensive": [
       60,
@@ -44814,11 +45908,11 @@
     ],
     "offensive": [
       71,
-      0,
+      -8,
       0,
       83,
-      75,
-      64
+      56,
+      48
     ],
     "defensive": [
       50,
@@ -44849,11 +45943,11 @@
     ],
     "offensive": [
       71,
-      0,
+      -8,
       0,
       83,
-      75,
-      64
+      56,
+      48
     ],
     "defensive": [
       50,
@@ -45705,7 +46799,7 @@
     "id": 9425,
     "name": "The Nightmare",
     "version": "",
-    "image": "The Nightmare.png",
+    "image": "The Nightmare (Christmas).png",
     "level": 814,
     "speed": 6,
     "size": 5,
@@ -49410,7 +50504,7 @@
     "id": 10812,
     "name": "Pestilent Bloat",
     "version": "Entry",
-    "image": "Pestilent Bloat.png",
+    "image": "Pestilent Bloat (Christmas, Santa hat).png",
     "level": 312,
     "speed": 1,
     "size": 5,
@@ -49445,7 +50539,7 @@
     "id": 10813,
     "name": "Pestilent Bloat",
     "version": "Hard",
-    "image": "Pestilent Bloat.png",
+    "image": "Pestilent Bloat (Christmas, Santa hat).png",
     "level": 1044,
     "speed": 1,
     "size": 5,
@@ -49480,7 +50574,7 @@
     "id": 8359,
     "name": "Pestilent Bloat",
     "version": "Normal",
-    "image": "Pestilent Bloat.png",
+    "image": "Pestilent Bloat (Christmas, Santa hat).png",
     "level": 870,
     "speed": 1,
     "size": 5,
@@ -49888,7 +50982,7 @@
     "id": 9416,
     "name": "Phosani's Nightmare",
     "version": "",
-    "image": "The Nightmare.png",
+    "image": "The Nightmare (idle).png",
     "level": 1024,
     "speed": 6,
     "size": 5,
@@ -54462,6 +55556,39 @@
     "attributes": []
   },
   {
+    "id": null,
+    "name": "SAS Member",
+    "version": "",
+    "image": "SAS Member (RuneScape 2 Beta).png",
+    "level": 11,
+    "speed": 0,
+    "size": 1,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
     "id": 304,
     "name": "Salarin the twisted",
     "version": "",
@@ -54643,72 +55770,6 @@
       1,
       1,
       20
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "RuneScape:Sandbox",
-    "version": "A",
-    "image": "",
-    "level": 10,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "RuneScape:Sandbox",
-    "version": "B",
-    "image": "",
-    "level": 20,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "offensive": [
       0,
@@ -55345,7 +56406,7 @@
     "id": 12377,
     "name": "Scarred imp",
     "version": "",
-    "image": "Scarred imp.png",
+    "image": "Scarred imp (Christmas).png",
     "level": 19,
     "speed": 4,
     "size": 1,
@@ -56893,6 +57954,39 @@
       38,
       31,
       43
+    ],
+    "attributes": []
+  },
+  {
+    "id": null,
+    "name": "Shadow warrior (RuneScape 2 Beta)",
+    "version": "",
+    "image": "Shadow warrior (RuneScape 2 Beta).png",
+    "level": 48,
+    "speed": 0,
+    "size": 1,
+    "skills": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "attributes": []
   },
@@ -69316,7 +70410,7 @@
     "id": 7706,
     "name": "TzKal-Zuk",
     "version": "Enraged",
-    "image": "TzKal-Zuk.png",
+    "image": "TzKal-Zuk (Christmas).png",
     "level": 1400,
     "speed": 7,
     "size": 7,
@@ -69349,7 +70443,7 @@
     "id": 7706,
     "name": "TzKal-Zuk",
     "version": "Normal",
-    "image": "TzKal-Zuk.png",
+    "image": "TzKal-Zuk (Christmas).png",
     "level": 1400,
     "speed": 10,
     "size": 7,
@@ -69382,7 +70476,7 @@
     "id": 3127,
     "name": "TzTok-Jad",
     "version": "",
-    "image": "TzTok-Jad.png",
+    "image": "TzTok-Jad (Christmas).png",
     "level": 702,
     "speed": 8,
     "size": 5,
@@ -69483,7 +70577,7 @@
     "version": "",
     "image": "Ulfric.png",
     "level": 100,
-    "speed": 6,
+    "speed": 4,
     "size": 1,
     "skills": [
       100,
@@ -69542,6 +70636,39 @@
       25,
       100,
       100
+    ],
+    "attributes": []
+  },
+  {
+    "id": 10623,
+    "name": "Unbound JalTok-Jad",
+    "version": "",
+    "image": "JalTok-Jad.png",
+    "level": 1350,
+    "speed": 8,
+    "size": 5,
+    "skills": [
+      1125,
+      600,
+      700,
+      637,
+      765,
+      1530
+    ],
+    "offensive": [
+      0,
+      75,
+      100,
+      80,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "attributes": []
   },
@@ -71297,7 +72424,7 @@
     "defensive": [
       50,
       400,
-      60,
+      40,
       190,
       170
     ],
@@ -71332,7 +72459,7 @@
     "defensive": [
       50,
       400,
-      60,
+      40,
       190,
       170
     ],
@@ -71813,20 +72940,20 @@
     "speed": 4,
     "size": 3,
     "skills": [
-      0,
-      0,
-      0,
-      0,
+      225,
+      60,
+      150,
+      60,
       1,
-      0
+      225
     ],
     "offensive": [
       0,
       0,
       0,
       0,
-      0,
-      0
+      -8,
+      -8
     ],
     "defensive": [
       0,
@@ -71860,8 +72987,8 @@
       0,
       0,
       0,
-      0,
-      0
+      -8,
+      -8
     ],
     "defensive": [
       0,
@@ -71895,8 +73022,8 @@
       0,
       0,
       0,
-      0,
-      0
+      -8,
+      -8
     ],
     "defensive": [
       0,
@@ -71930,8 +73057,8 @@
       0,
       0,
       0,
-      0,
-      0
+      -8,
+      -8
     ],
     "defensive": [
       0,
@@ -72315,7 +73442,7 @@
     "id": 8058,
     "name": "Vorkath",
     "version": "Dragon Slayer II",
-    "image": "Vorkath.png",
+    "image": "Vorkath (Christmas).png",
     "level": 392,
     "speed": 5,
     "size": 7,
@@ -72352,7 +73479,7 @@
     "id": 8059,
     "name": "Vorkath",
     "version": "Post-quest",
-    "image": "Vorkath.png",
+    "image": "Vorkath (Christmas).png",
     "level": 732,
     "speed": 5,
     "size": 7,
@@ -76249,7 +77376,7 @@
     "id": 3268,
     "name": "Woman (historical)",
     "version": "",
-    "image": "Woman (historical).png",
+    "image": "Woman (historical, Christmas).png",
     "level": 2,
     "speed": 4,
     "size": 1,
@@ -76282,7 +77409,7 @@
     "id": 3112,
     "name": "Woman",
     "version": "Brown",
-    "image": "Woman (brown).png",
+    "image": "Woman (brown, Christmas).png",
     "level": 2,
     "speed": 4,
     "size": 1,
@@ -76348,7 +77475,7 @@
     "id": 3111,
     "name": "Woman",
     "version": "Purple",
-    "image": "Woman.png",
+    "image": "Woman (purple, Christmas).png",
     "level": 2,
     "speed": 4,
     "size": 1,
@@ -76381,7 +77508,7 @@
     "id": 3113,
     "name": "Woman",
     "version": "Red",
-    "image": "Woman (red).png",
+    "image": "Woman (red, Christmas).png",
     "level": 2,
     "speed": 4,
     "size": 1,
@@ -80443,7 +81570,7 @@
     "id": 2043,
     "name": "Zulrah",
     "version": "Magma",
-    "image": "Zulrah (magma).png",
+    "image": "Zulrah (magma, Christmas).png",
     "level": 725,
     "speed": 3,
     "size": 5,
@@ -80476,7 +81603,7 @@
     "id": 2042,
     "name": "Zulrah",
     "version": "Serpentine",
-    "image": "Zulrah (serpentine).png",
+    "image": "Zulrah (serpentine, Christmas).png",
     "level": 725,
     "speed": 3,
     "size": 5,
@@ -80509,7 +81636,7 @@
     "id": 2044,
     "name": "Zulrah",
     "version": "Tanzanite",
-    "image": "Zulrah (tanzanite).png",
+    "image": "Zulrah (tanzanite, Christmas).png",
     "level": 725,
     "speed": 3,
     "size": 5,
