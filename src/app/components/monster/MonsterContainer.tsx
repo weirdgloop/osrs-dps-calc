@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import AttributeInput from '../generic/AttributeInput';
 import dagger from '@/public/img/bonuses/dagger.png';
 import scimitar from '@/public/img/bonuses/scimitar.png';
@@ -30,42 +30,140 @@ import {
 } from "@/constants";
 import {IconExternalLink} from "@tabler/icons-react";
 import {scaledMonster} from "@/lib/MonsterScaling";
+import {Monster} from "@/types/Monster";
+import LazyImage from "@/app/components/generic/LazyImage";
+
+interface ITombsOfAmascutMonsterContainerProps {
+  monster: Monster;
+  isPathMonster?: boolean;
+}
+
+const TombsOfAmascutMonsterContainer: React.FC<ITombsOfAmascutMonsterContainerProps> = (props) => {
+  const store = useStore();
+  const {monster, isPathMonster} = props;
+
+  return (
+    <>
+      <div className={'mt-4'}>
+        <h4 className={'font-bold font-serif'}>
+          <img src={toaRaidLevel.src} alt={''} className={'inline-block'}/>{' '}
+          ToA raid level
+        </h4>
+        <p className={'text-xs text-gray-400'}>Note: The raid level defense bonus affects the defense max roll, not the
+          defensive stats.</p>
+        <div className={'mt-2'}>
+          <NumberInput
+            value={monster.toaInvocationLevel}
+            min={0}
+            max={600}
+            step={5}
+            onChange={(v) => store.updateMonster({toaInvocationLevel: v})}
+          />
+        </div>
+      </div>
+      {isPathMonster && (
+        <div className={'mt-4'}>
+          <h4 className={'font-bold font-serif'}>
+            <img src={toaRaidLevel.src} alt={''} className={'inline-block'}/>{' '}
+            ToA path level
+          </h4>
+          <div className={'mt-2'}>
+            <NumberInput
+              value={monster.toaPathLevel}
+              min={0}
+              max={6}
+              step={1}
+              onChange={(v) => store.updateMonster({toaPathLevel: v})}
+            />
+          </div>
+        </div>
+      )}
+    </>
+  )
+}
 
 const MonsterContainer: React.FC = observer(() => {
   const store = useStore();
   const {monster, prefs} = store;
 
-  // don't automatically update the stat inputs if manual editing is on
+  // Don't automatically update the stat inputs if manual editing is on
   const displayMonster = prefs.advancedMode ? monster : scaledMonster(monster);
 
-  return (
-    <div className={'bg-tile dark:bg-dark-300 max-w-[520px] mx-auto lg:basis-auto sm:rounded-lg text-black dark:text-white shadow-lg'}>
-      <div className={'px-6 py-4 border-b-body-400 dark:border-b-dark-200 border-b md:rounded md:rounded-bl-none md:rounded-br-none flex justify-between items-center bg-body-100 dark:bg-dark-400'}>
-        <h1 className={`font-serif text-xl tracking-tight font-bold`}>
-          {monster.name ? monster.name : 'Monster'}
-        </h1>
-        <div>
-          {monster.id && (
-            <a
-              className={'text-gray-500 dark:text-gray-400 dark:hover:text-gray-300 hover:text-gray-400'}
-              href={`https://oldschool.runescape.wiki/w/Special:Lookup?type=npc&id=${monster.id}`}
-              target={'_blank'}
-              title={'Open wiki page'}
-            >
-              <IconExternalLink size={20}/>
-            </a>
-          )}
+  const extraMonsterOptions = useMemo(() => {
+    // Determine whether we need to show any extra monster option components
+    let comps: React.ReactNode[] = [];
+
+    if ((TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id || 0))) {
+      comps.push(
+        <TombsOfAmascutMonsterContainer
+          monster={monster}
+          isPathMonster={(TOMBS_OF_AMASCUT_PATH_MONSTER_IDS.includes(monster.id || 0))}
+        />
+      )
+    }
+
+    if ((PARTY_SIZE_REQUIRED_MONSTER_IDS.includes(monster.id || 0))) {
+      comps.push(
+        <div className={'mt-4'}>
+          <h4 className={'font-bold font-serif'}>
+            <img src={raidsIcon.src} alt={''} className={'inline-block'}/>{' '}
+            Party size
+          </h4>
+          <div className={'mt-2'}>
+            <NumberInput
+              value={monster.partySize}
+              min={1}
+              max={100}
+              step={1}
+              onChange={(v) => store.updateMonster({partySize: v})}
+            />
+          </div>
         </div>
+      )
+    }
+
+    return comps;
+  }, [monster.id]);
+
+  return (
+    <div
+      className={'bg-tile dark:bg-dark-300 max-w-[520px] mx-auto lg:basis-auto sm:rounded-lg text-black dark:text-white shadow-lg'}>
+      <div
+        className={'px-6 py-4 border-b-body-400 dark:border-b-dark-200 border-b md:rounded md:rounded-bl-none md:rounded-br-none flex justify-between items-center bg-body-100 dark:bg-dark-400'}>
+        <div className={'flex items-center gap-2'}>
+          <div className={'w-10 h-10'}>
+            <LazyImage
+              responsive={true}
+              src={
+                store.monster.image ? getCdnImage(`monsters/${store.monster.image}`) : undefined
+              }
+              alt={store.monster.name || 'Unknown'}
+            />
+          </div>
+          <h1 className={`font-serif text-xl tracking-tight font-bold`}>
+            {monster.name ? monster.name : 'Monster'}
+          </h1>
+        </div>
+        {monster.id && (
+          <a
+            className={'text-gray-500 dark:text-gray-400 dark:hover:text-gray-300 hover:text-gray-400'}
+            href={`https://oldschool.runescape.wiki/w/Special:Lookup?type=npc&id=${monster.id}`}
+            target={'_blank'}
+            title={'Open wiki page'}
+          >
+            <IconExternalLink size={20}/>
+          </a>
+        )}
       </div>
       <div className={'p-6'}>
         <div className={'mb-4'}>
           <div className={'flex gap-8 flex-wrap justify-center'}>
             <div className={'basis-1/4'}>
               <div className={'mb-4'}>
-                <MonsterSelect/>
+                <MonsterSelect />
               </div>
               <h4 className={`font-bold font-serif`}>
-              Stats
+                Stats
               </h4>
               <div className={'flex gap-4'}>
                 <div className={'w-[95px]'}>
@@ -113,73 +211,16 @@ const MonsterContainer: React.FC = observer(() => {
                   }
                 </div>
               </div>
-              {(TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id || 0)) && (
-                <div className={'mt-4'}>
-                  <h4 className={'font-bold font-serif'}>
-                    <img src={toaRaidLevel.src} alt={''} className={'inline-block'}/>{' '}
-                    ToA raid level
-                  </h4>
-                  <p className={'text-xs text-gray-400'}>Note: The raid level defense bonus affects the defense max roll, not the defensive stats.</p>
-                  <div className={'mt-2'}>
-                    <NumberInput
-                      value={monster.toaInvocationLevel}
-                      min={0}
-                      max={600}
-                      step={5}
-                      onChange={(v) => store.updateMonster({toaInvocationLevel: v})}
-                    />
-                  </div>
-                </div>
-              )}
-              {(TOMBS_OF_AMASCUT_PATH_MONSTER_IDS.includes(monster.id || 0)) && (
-                <div className={'mt-4'}>
-                  <h4 className={'font-bold font-serif'}>
-                    <img src={toaRaidLevel.src} alt={''} className={'inline-block'}/>{' '}
-                    ToA path level
-                  </h4>
-                  <div className={'mt-2'}>
-                    <NumberInput
-                      value={monster.toaPathLevel}
-                      min={0}
-                      max={6}
-                      step={1}
-                      onChange={(v) => store.updateMonster({toaPathLevel: v})}
-                    />
-                  </div>
-                </div>
-              )}
-              {(PARTY_SIZE_REQUIRED_MONSTER_IDS.includes(monster.id || 0)) && (
-                <div className={'mt-4'}>
-                  <h4 className={'font-bold font-serif'}>
-                    <img src={raidsIcon.src} alt={''} className={'inline-block'}/>{' '}
-                    Party size
-                  </h4>
-                  <div className={'mt-2'}>
-                    <NumberInput
-                      value={monster.partySize}
-                      min={1}
-                      max={100}
-                      step={1}
-                      onChange={(v) => store.updateMonster({partySize: v})}
-                    />
-                  </div>
-                </div>
-              )}
-            </div>
-            <div className={'flex items-center justify-center'}>
               <div>
-                <Image
-                    className={'max-w-[100px] max-h-[300px] w-auto h-auto'}
-                    height={100}
-                    width={200}
-                    src={
-                      store.monster.image ? getCdnImage(`monsters/${store.monster.image}`) : noMonster
-                    }
-                    alt={store.monster.name || 'Unknown'}
-                />
+
               </div>
             </div>
           </div>
+          {(extraMonsterOptions.length > 0) && (
+            <div className={'mt-4 pt-[0.1em] px-4 pb-4 bg-dark-400 rounded'}>
+              {extraMonsterOptions}
+            </div>
+          )}
         </div>
       </div>
     </div>
