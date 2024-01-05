@@ -33,7 +33,7 @@ const PlayerContainer: React.FC = observer(() => {
             <button
               disabled={!canCreateLoadout}
               onClick={() => createLoadout(true, selectedLoadout)}
-              className={'disabled:cursor-not-allowed text-body-200 dark:text-dark-100 disabled:text-btns-100 dark:disabled:text-dark-500 hover:text-green transition-colors'}
+              className={'disabled:cursor-not-allowed text-body-500 dark:text-dark-100 disabled:text-body-200 dark:disabled:text-dark-500 hover:text-green transition-colors'}
               data-tooltip-id={'tooltip'}
               data-tooltip-content={'Add new loadout'}
             >
@@ -53,7 +53,7 @@ const PlayerContainer: React.FC = observer(() => {
               <button
                 disabled={!canRemoveLoadout}
                 onClick={() => deleteLoadout(selectedLoadout)}
-                className={'disabled:cursor-not-allowed text-body-200 dark:text-dark-100 disabled:text-btns-100 dark:disabled:text-dark-500 hover:text-red transition-colors'}
+                className={'disabled:cursor-not-allowed text-body-500 dark:text-dark-100 disabled:text-btns-100 dark:disabled:text-dark-500 hover:text-red transition-colors'}
                 data-tooltip-id={'tooltip'}
                 data-tooltip-content={'Remove loadout'}
               >

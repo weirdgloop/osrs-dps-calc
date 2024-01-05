@@ -41,7 +41,7 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
 
     return calc.loadouts.map((l, i) => {
       const value = l[calcKey] as number;
-      return <th className={`text-center border-r last:border-0 ${((calc.loadouts.length > 1) && bestValue === value) ? 'text-green-200' : 'text-body-200'}`} key={i}>{calcKeyToString(value, calcKey)}</th>
+      return <th className={`text-center border-r last:border-0 ${((calc.loadouts.length > 1) && bestValue === value) ? 'dark:text-green-200 text-green-800' : 'dark:text-body-200 text-black'}`} key={i}>{calcKeyToString(value, calcKey)}</th>
     })
   }, [calc.loadouts, calcKey])
 
@@ -139,7 +139,7 @@ const ResultsContainer = observer(() => {
           </div>
         )
       }
-      <div className={'text-xs my-3 mx-1 text-body-200 text-center'}>
+      <div className={'text-xs my-3 mx-1 text-dark-300 dark:text-body-200 text-center'}>
         To display additional output graphs,{' '}
         <a href={'#'} onClick={() => store.updateUIState({showPreferencesModal: true})}>change your preferences</a>.
       </div>
