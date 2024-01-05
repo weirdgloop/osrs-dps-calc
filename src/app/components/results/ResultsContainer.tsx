@@ -41,13 +41,13 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
 
     return calc.loadouts.map((l, i) => {
       const value = l[calcKey] as number;
-      return <th className={`text-center border-r last:border-0 ${((calc.loadouts.length > 1) && bestValue === value) ? 'dark:text-green-200 text-green-800' : 'dark:text-body-200 text-black'}`} key={i}>{calcKeyToString(value, calcKey)}</th>
+      return <th className={`text-center w-28 border-r ${((calc.loadouts.length > 1) && bestValue === value) ? 'dark:text-green-200 text-green-800' : 'dark:text-body-200 text-black'}`} key={i}>{calcKeyToString(value, calcKey)}</th>
     })
   }, [calc.loadouts, calcKey])
 
   return (
     <tr>
-      <th className={'px-4 border-r bg-btns-400 dark:bg-dark-400 w-28 select-none'} title={title}>{children}</th>
+      <th className={'w-32 px-4 border-r bg-btns-400 dark:bg-dark-400 select-none'} title={title}>{children}</th>
       {cells}
     </tr>
   )

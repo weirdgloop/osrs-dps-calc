@@ -139,7 +139,7 @@ a {
 }
 
 table {
-  @apply w-full;
+  @apply w-fit;
   @apply text-left;
   @apply text-sm;
 }
