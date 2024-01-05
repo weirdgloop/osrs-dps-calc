@@ -9,10 +9,12 @@ interface AttributeInputProps {
   disabled?: boolean;
   className?: string;
   onChange?: (v: number) => void;
+  min?: number;
+  max?: number;
 }
 
 const AttributeInput: React.FC<AttributeInputProps> = (props) => {
-  const {name, image, className, onChange, value, disabled} = props;
+  const {name, image, className, min, max, onChange, value, disabled} = props;
 
   return (
     <div className={'flex items-center'}>
@@ -29,6 +31,8 @@ const AttributeInput: React.FC<AttributeInputProps> = (props) => {
                   <NumberInput
                     className={`form-control w-full rounded mt-auto ${className}`}
                     onChange={onChange}
+                    min={min}
+                    max={max}
                     value={value}
                   />
               )
