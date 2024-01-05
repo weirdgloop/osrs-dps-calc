@@ -28,7 +28,7 @@ jobs:
           path: |
             ${{ steps.yarn-cache-dir-path.outputs.dir }}
             ${{ github.workspace }}/.next/cache
-          # Generate a new cache whenever packages or source files change.
+          # Generate a new acche whenever packages or source files change.
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
@@ -66,6 +66,11 @@ jobs:
       - name: 'Sync build output to GCS bucket'
         run: |-
           gsutil -m rsync -r out gs://$GCS_BUCKET
+      - uses: actions/checkout@v4
+        with:
+          path: 'cdn'
+          sparse-checkout: 'cdn'
+          sparse-checkout-cone-mode: false
       - name: 'Sync CDN assets to GCS bucket'
         run: |-
           gsutil -m rsync -r cdn gs://$GCS_BUCKET/cdn
