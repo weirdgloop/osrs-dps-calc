@@ -6,7 +6,7 @@ import slayer from '@/public/img/misc/slayer.webp';
 import skull from '@/public/img/misc/skull.webp';
 import diary from '@/public/img/misc/diary.png';
 
-const Buffs: React.FC = observer(() => {
+const ExtraOptions: React.FC = observer(() => {
   const store = useStore();
   const {player} = store;
 
@@ -40,4 +40,4 @@ const Buffs: React.FC = observer(() => {
   )
 })
 
-export default Buffs;
+export default ExtraOptions;

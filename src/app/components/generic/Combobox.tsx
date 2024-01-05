@@ -14,6 +14,7 @@ interface IComboboxProps<T> {
   onSelectedItemChange?: (item: T | null | undefined) => void;
   resetAfterSelect?: boolean;
   blurAfterSelect?: boolean;
+  keepOpenAfterSelect?: boolean;
   className?: string;
   CustomItemComponent?: React.FC<{item: T, itemString: string}>;
 }
@@ -136,16 +137,14 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     highlightedIndex,
     selectedItem,
     isOpen,
-      reset,
+    reset,
     setHighlightedIndex
   } = useCombobox({
     id,
     items: filteredItems,
     inputValue,
     itemToString,
-    onIsOpenChange: () => {
-      setHighlightedIndex(0);
-    },
+    defaultIsOpen: props.keepOpenAfterSelect,
     onInputValueChange: ({inputValue: newValue}) => {
       setInputValue(newValue || '');
       listRef.current?.scrollToItem(0);
@@ -169,10 +168,10 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
       >
         {!isOpen || !filteredItems.length ? null : (
             <List
-                ref={listRef}
+              ref={listRef}
               itemSize={getRowHeight}
               height={(filteredItems.length < 10 ? filteredItems.length * 29 : 200)}
-                estimatedItemSize={35}
+              estimatedItemSize={35}
               itemCount={filteredItems.length}
               width={300}
               itemData={{
