@@ -71,6 +71,11 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     rowHeights.current = {...rowHeights.current, [ix]: height};
   }
 
+  // When the passed value prop changes, also change the input value
+  useEffect(() => {
+    if (value) setInputValue(value);
+  }, [value]);
+
   useEffect(() => {
     let newFilteredItems: T[] = items;
 
@@ -138,7 +143,7 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     selectedItem,
     isOpen,
     reset,
-    setHighlightedIndex
+    setHighlightedIndex,
   } = useCombobox({
     id,
     items: filteredItems,
