@@ -121,7 +121,7 @@ const ResultsContainer = observer(() => {
               className={'px-4 py-3.5 border-b-body-400 dark:border-b-dark-200 border-b md:rounded md:rounded-bl-none md:rounded-br-none flex justify-between items-center'}
             >
               <h1 className={`font-serif text-lg tracking-tight font-bold`}>
-                Hit Distribution
+                Hit Distribution (Loadout {store.selectedLoadout + 1})
               </h1>
               <div>
                 <Toggle
