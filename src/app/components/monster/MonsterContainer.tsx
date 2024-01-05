@@ -123,7 +123,7 @@ const MonsterContainer: React.FC = observer(() => {
   }, [monster.id]);
 
   return (
-    <div className={'grow basis-4 flex flex-col'}>
+    <div className={'basis-4 flex flex-col grow md:grow-0'}>
       <div className={'px-2 md:px-0'}>
         <MonsterSelect />
       </div>
