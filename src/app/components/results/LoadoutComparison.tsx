@@ -254,7 +254,7 @@ const LoadoutComparison: React.FC = observer(() => {
         dataKey={`Loadout ${i+1}`}
         stroke={colour}
         dot={false}
-        animationDuration={500}
+        isAnimationActive={false}
       />);
       strokeColours.push(colour);
     }

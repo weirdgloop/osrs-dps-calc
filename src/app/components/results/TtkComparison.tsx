@@ -102,7 +102,7 @@ const TtkComparison: React.FC = observer(() => {
 
     for (let i=0; i < calcResults.length; i++) {
       let colour = strokeColours.shift() || 'red';
-      lines.push(<Line key={i} type="monotone" dataKey={`Loadout ${i+1}`} stroke={colour} dot={false} connectNulls={true} />);
+      lines.push(<Line key={i} isAnimationActive={false} type="monotone" dataKey={`Loadout ${i+1}`} stroke={colour} dot={false} connectNulls={true} />);
       strokeColours.push(colour);
     }
     return lines;

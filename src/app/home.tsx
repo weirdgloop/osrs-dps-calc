@@ -118,7 +118,7 @@ const Home: NextPage = observer(() => {
         <InitialLoad />
       </Suspense>
       {/* Main container */}
-      <div className={'max-w-[1420px] mx-auto sm:my-8'}>
+      <div className={'max-w-[1420px] mx-auto my-8'}>
         <div className={'flex gap-2 flex-wrap justify-center'}>
           <PlayerContainer />
           <MonsterContainer />

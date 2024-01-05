@@ -42,7 +42,7 @@ const PlayerContainer: React.FC = observer(() => {
           </div>
         </div>
         <div
-          className={'bg-tile sm:rounded-b-lg dark:bg-dark-300 text-black dark:text-white shadow-lg flex flex-col min-h-[700px]'}>
+          className={'bg-tile sm:rounded-b-lg dark:bg-dark-300 text-black dark:text-white shadow-lg flex flex-col'}>
           <div
             className={'px-5 py-3 border-b-body-400 dark:border-b-dark-200 border-b flex justify-between items-center font-serif'}>
             <div>

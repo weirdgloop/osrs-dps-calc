@@ -35,7 +35,7 @@ const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = ({dist}) => {
   const store = useStore();
   const {prefs} = store;
   const data = prefs.hitDistsHideZeros ? dist.slice(1) : dist;
-  
+
   const {resolvedTheme} = useTheme();
   const isDark = resolvedTheme === 'dark';
 
@@ -65,7 +65,7 @@ const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = ({dist}) => {
             content={(props) => <CustomTooltip {...props} />}
             cursor={{ fill: isDark ? '#3c3226' : '#b0aa9a' }}
           />
-          <Bar dataKey="chance" fill="tan" animationDuration={500} />
+          <Bar dataKey="chance" fill="tan" isAnimationActive={false} />
         </BarChart>
       </ResponsiveContainer>
     </>

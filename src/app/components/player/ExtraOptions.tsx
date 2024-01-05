@@ -11,7 +11,7 @@ const ExtraOptions: React.FC = observer(() => {
   const {player} = store;
 
   return (
-    <div className={'px-6 mt-4'}>
+    <div className={'px-6 my-4'}>
       <div className={'mt-2 mb-4'}>
         <Toggle checked={player.buffs.onSlayerTask} setChecked={(c) => store.updatePlayer({buffs: {onSlayerTask: c}})} label={
             <>
@@ -31,9 +31,6 @@ const ExtraOptions: React.FC = observer(() => {
                 Kandarin Hard Diary
             </>
         } />
-      </div>
-      <div className={'mt-2'}>
-        <p className={'text-xs dark:text-gray-300 text-gray-400'}>Equipment buffs are applied automatically.</p>
       </div>
     </div>
 

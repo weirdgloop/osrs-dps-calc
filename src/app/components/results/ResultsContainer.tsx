@@ -65,7 +65,7 @@ const ResultsTable: React.FC = observer(() => {
         {store.loadouts.map((_, i) => (
           <th
             key={i}
-            className={`text-center border-r last:border-0 font-bold font-serif cursor-pointer transition-colors ${selectedLoadout === i ? 'bg-orange-400 dark:bg-orange-700' : 'bg-btns-400 dark:bg-dark-300'}`}
+            className={`text-center w-28 border-r font-bold font-serif cursor-pointer transition-colors ${selectedLoadout === i ? 'bg-orange-400 dark:bg-orange-700' : 'bg-btns-400 dark:bg-dark-300'}`}
             onClick={() => store.setSelectedLoadout(i)}
           >{i + 1}</th>
         ))}

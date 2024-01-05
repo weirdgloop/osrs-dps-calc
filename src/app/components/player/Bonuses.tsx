@@ -9,7 +9,7 @@ const Bonuses: React.FC = observer(() => {
   const store = useStore();
 
   return (
-    <div className={'px-4 mt-4'}>
+    <div className={'px-4 my-4'}>
       <h4 className={'font-serif font-bold'}>Bonuses</h4>
       <div className={'py-1'}>
         <div className={'flex gap-4 justify-center'}>
