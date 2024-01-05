@@ -66,3 +66,6 @@ jobs:
       - name: 'Sync build output to GCS bucket'
         run: |-
           gsutil -m rsync -r out gs://$GCS_BUCKET
+      - name: 'Sync CDN assets to GCS bucket'
+        run: |-
+          gsutil -m rsync -r cdn gs://$GCS_BUCKET/cdn
