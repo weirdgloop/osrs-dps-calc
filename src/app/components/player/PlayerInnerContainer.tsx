@@ -1,7 +1,7 @@
 import combat from '@/public/img/tabs/combat.png';
 import skills from '@/public/img/tabs/skills.png';
 import equipment from '@/public/img/tabs/equipment.png';
-import hybrid from '@/public/img/tabs/hybrid.webp';
+import options from '@/public/img/tabs/options.webp';
 import prayer from '@/public/img/tabs/prayer.png';
 import React, {useState} from 'react';
 import PlayerTab from "@/app/components/player/PlayerTab";
@@ -38,7 +38,7 @@ const PlayerInnerContainer: React.FC = () => {
         <PlayerTab name={'Skills'} isActive={selected === 'skills'} image={skills} onClick={() => setSelected('skills')} />
         <PlayerTab name={'Equipment'} isActive={selected === 'equipment'} image={equipment} onClick={() => setSelected('equipment')} />
         <PlayerTab name={'Prayer'} isActive={selected === 'prayer'} image={prayer} onClick={() => setSelected('prayer')} />
-        <PlayerTab name={'Extra options'} isActive={selected === 'options'} image={hybrid} onClick={() => setSelected('options')} />
+        <PlayerTab name={'Extra options'} isActive={selected === 'options'} image={options} onClick={() => setSelected('options')} />
       </div>
       {renderSelected()}
     </div>
