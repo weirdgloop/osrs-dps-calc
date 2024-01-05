@@ -30,6 +30,12 @@
     "spellbook": "standard"
   },
   {
+    "name": "Dark Demonbane",
+    "image": "Dark Demonbane.png",
+    "max_hit": 43.5,
+    "spellbook": "arceuus"
+  },
+  {
     "name": "Earth Blast",
     "image": "Earth Blast.png",
     "max_hit": 15,
@@ -126,6 +132,12 @@
     "spellbook": "ancient"
   },
   {
+    "name": "Inferior Demonbane",
+    "image": "Inferior Demonbane.png",
+    "max_hit": 16,
+    "spellbook": "arceuus"
+  },
+  {
     "name": "Saradomin Strike",
     "image": "Saradomin Strike.png",
     "max_hit": 0,
@@ -178,6 +190,12 @@
     "image": "Smoke Rush.png",
     "max_hit": 13,
     "spellbook": "ancient"
+  },
+  {
+    "name": "Superior Demonbane",
+    "image": "Superior Demonbane.png",
+    "max_hit": 36,
+    "spellbook": "arceuus"
   },
   {
     "name": "Water Blast",

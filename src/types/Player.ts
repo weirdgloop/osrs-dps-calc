@@ -107,6 +107,11 @@ export interface Player {
      * @see https://oldschool.runescape.wiki/w/Charge
      */
     chargeSpell: boolean;
+    /**
+     * Whether the Mark of Darkness spell buff is being used, which boosts the effect of Arceuus spells.
+     * @see https://oldschool.runescape.wiki/w/Mark_of_Darkness
+     */
+    markOfDarknessSpell: boolean;
   }
   spell: Spell
   trailblazerRelics: TrailblazerRelic[];

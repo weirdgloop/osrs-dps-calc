@@ -121,6 +121,7 @@ const generateEmptyPlayer: () => Player = () => {
       inWilderness: false,
       kandarinDiary: false,
       chargeSpell: false,
+      markOfDarknessSpell: false
     },
     spell: {
       name: '',
