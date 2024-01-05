@@ -10,7 +10,7 @@ const PlayerContainer: React.FC = observer(() => {
     const {loadouts, prefs, player, selectedLoadout, canCreateLoadout, canRemoveLoadout, createLoadout, deleteLoadout} = store;
 
     return (
-      <div className={'flex flex-col w-full md:w-[350px]'}>
+      <div className={'flex flex-col w-[350px]'}>
         <div
           className={'sm:rounded sm:rounded-b-none text-sm font-bold font-serif flex gap-2 items-center bg-transparent text-white border-b-4 border-orange-300 dark:border-orange-700'}
         >

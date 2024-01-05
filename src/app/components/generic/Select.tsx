@@ -93,7 +93,7 @@ const Select = <T extends SelectItem>(props: ISelectProps<T>) => {
     )
   }
 
-  const menuRef = useRef<HTMLElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const {
     getItemProps,

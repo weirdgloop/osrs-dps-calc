@@ -107,7 +107,7 @@ const TtkComparison: React.FC = observer(() => {
     }
     return lines;
 
-  }, [loadouts, isDark])
+  }, [isDark, calcResults.length])
 
   return (
       <>

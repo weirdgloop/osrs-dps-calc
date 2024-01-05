@@ -88,7 +88,7 @@ const MultiSelect: React.FC<ISelectProps> = (props) => {
         CustomItemComponent
     } = props;
 
-    const menuRef = useRef<HTMLElement>(null);
+    const menuRef = useRef<HTMLDivElement>(null);
 
     const {
         getSelectedItemProps,
