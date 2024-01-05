@@ -5,16 +5,17 @@ import {CalculatedLoadout} from "@/types/State";
 import {max, min} from "d3-array";
 import Toggle from "@/app/components/generic/Toggle";
 import HitDistribution from "@/app/components/results/HitDistribution";
+import Spinner from "@/app/components/Spinner";
 
 interface IResultRowProps {
   calcKey: keyof Omit<CalculatedLoadout, 'ttkDist'>;
   title?: string;
 }
 
-const calcKeyToString = (value: number, calcKey: keyof CalculatedLoadout): string => {
+const calcKeyToString = (value: number, calcKey: keyof CalculatedLoadout): string | React.ReactNode => {
   if (!value) {
     // if the value has not yet been populated by the worker
-    return "";
+    return <Spinner className={'w-3'} />;
   }
 
   switch (calcKey) {
@@ -25,7 +26,7 @@ const calcKeyToString = (value: number, calcKey: keyof CalculatedLoadout): strin
     case 'ttk':
       return value.toFixed(3) + 's';
     default:
-        return "" + value;
+      return "" + value;
   }
 }
 

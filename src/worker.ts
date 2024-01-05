@@ -18,7 +18,7 @@ import {WORKER_JSON_REPLACER, WORKER_JSON_REVIVER} from "@/utils";
  * @param m
  * @param calcOpts
  */
-const computeValues = (loadouts: PlayerComputed[], m: Monster, calcOpts: WorkerCalcOpts) => {
+const computeValues = async (loadouts: PlayerComputed[], m: Monster, calcOpts: WorkerCalcOpts) => {
   let res: CalculatedLoadout[] = [];
 
   for (let [_, p] of loadouts.entries()) {
@@ -38,14 +38,15 @@ const computeValues = (loadouts: PlayerComputed[], m: Monster, calcOpts: WorkerC
   return res;
 }
 
-self.onmessage = (e: MessageEvent<string>) => {
+self.onmessage = async (e: MessageEvent<string>) => {
   const data = JSON.parse(e.data, WORKER_JSON_REVIVER) as WorkerRequests;
   let res: WorkerResponses;
 
   // Interpret the incoming request, and action it accordingly
   switch (data.type) {
     case WorkerRequestType.RECOMPUTE_VALUES:
-      res = {type: WorkerResponseType.COMPUTED_VALUES, data: computeValues(data.data.loadouts, data.data.monster, data.data.calcOpts)} as ComputedValuesResponse;
+      let calculatedLoadouts = await computeValues(data.data.loadouts, data.data.monster, data.data.calcOpts)
+      res = {type: WorkerResponseType.COMPUTED_VALUES, data: calculatedLoadouts} as ComputedValuesResponse;
       break;
     default:
       console.debug(`Unknown data type sent to worker: ${data.type}`);

@@ -204,6 +204,7 @@ class GlobalState implements State {
   }
 
   worker: Worker | null = null
+  workerRecomputeTimer: number | null = null
 
   constructor() {
     makeAutoObservable(this, {}, {autoBind: true});
@@ -548,27 +549,33 @@ class GlobalState implements State {
   }
 
   doWorkerRecompute() {
-    if (this.worker) {
-      const loadouts = this.loadouts.map((i) => {
-        return {
-          ...i,
-          equipment: getEquipmentForLoadout(i)
-        }
-      });
-      
-      const m = this.prefs.advancedMode ? this.monster : scaledMonster(this.monster);
-
-      this.worker.postMessage(JSON.stringify({
-        type: WorkerRequestType.RECOMPUTE_VALUES,
-        data: {
-          loadouts,
-          monster: m,
-          calcOpts: {
-            includeTtkDist: this.prefs.showTtkComparison,
-          },
-        }
-      } as RecomputeValuesRequest, WORKER_JSON_REPLACER))
+    if (this.workerRecomputeTimer) {
+      window.clearTimeout(this.workerRecomputeTimer);
     }
+
+    this.workerRecomputeTimer = window.setTimeout(() => {
+      if (this.worker) {
+        const loadouts = this.loadouts.map((i) => {
+          return {
+            ...i,
+            equipment: getEquipmentForLoadout(i)
+          }
+        });
+
+        const m = this.prefs.advancedMode ? this.monster : scaledMonster(this.monster);
+
+        this.worker.postMessage(JSON.stringify({
+          type: WorkerRequestType.RECOMPUTE_VALUES,
+          data: {
+            loadouts,
+            monster: m,
+            calcOpts: {
+              includeTtkDist: this.prefs.showTtkComparison,
+            },
+          }
+        } as RecomputeValuesRequest, WORKER_JSON_REPLACER))
+      }
+    }, 250)
   }
 }
 
