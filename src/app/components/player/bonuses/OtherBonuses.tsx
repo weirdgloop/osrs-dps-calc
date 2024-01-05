@@ -14,7 +14,7 @@ const OtherBonuses: React.FC = observer(() => {
   return (
     <div className={'w-[95px]'}>
       <p className={'text-sm text-gray-500 dark:text-gray-300'}>Other</p>
-      <div className={'flex flex-col gap-2 mt-3 text-center'}>
+      <div className={'flex flex-col gap-1 mt-3 text-center'}>
         <AttributeInput
           disabled={!prefs.advancedMode}
           name={'Strength'}

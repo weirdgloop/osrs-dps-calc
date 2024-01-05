@@ -9,7 +9,7 @@ const Prayers: React.FC = observer(() => {
   const {prayers} = store.player;
 
   return (
-    <div className={'px-6 mt-4'}>
+    <div className={'px-4 mt-4'}>
       <div className={'grid grid-cols-4 gap-y-4 mt-6 w-48 m-auto items-center justify-center'}>
         {
           Object.entries(PrayerMap).map(([k, v]) => {

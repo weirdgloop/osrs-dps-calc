@@ -145,20 +145,15 @@ table {
 }
 
 th, td {
-  @apply border;
   @apply border-body-500;
   @apply dark:border-dark-200;
   @apply font-normal;
 }
 
 thead {
-  @apply border-b-4;
+  @apply border-b;
   @apply border-orange-300;
-  @apply dark:border-orange-700;
-}
-
-thead th {
-  @apply font-bold;
+  @apply dark:border-b-dark-200;
 }
 
 thead th:not(:first-child) {
@@ -170,13 +165,16 @@ th {
   @apply py-1;
 }
 
-tbody tr {
-  @apply bg-body-200;
-  @apply dark:bg-dark-100;
-  @apply dark:text-black;
+tbody tr:not(tr:last-child) {
+  @apply border-b;
+  @apply border-dark-200;
+}
+
+tbody tr:last-child th:first-child {
+  @apply rounded-bl-lg;
+  @apply pb-2;
 }
 
 tbody th:first-child {
   @apply text-white;
-  @apply font-bold;
 }

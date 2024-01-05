@@ -19,7 +19,7 @@ const Combat: React.FC = observer(() => {
           })
         }
       </div>
-      <div className={'px-6'}>
+      <div className={'px-4'}>
         <h4 className={`font-bold font-serif`}>
           Spell
         </h4>

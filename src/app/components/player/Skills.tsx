@@ -19,12 +19,12 @@ const Skills: React.FC = observer(() => {
   const {player} = store;
 
   return (
-    <div className={'px-6 mt-4'}>
+    <div className={'px-4 mt-4'}>
       <div className={'flex items-center mt-3'}>
         <UsernameLookup/>
       </div>
       <div className={'mt-4'}>
-        <div className={'grid items-center'} style={{gridTemplateColumns: '.5fr 2fr .5fr 2fr'}}>
+        <div className={'grid items-center gap-x-2'} style={{gridTemplateColumns: '.5fr 2fr .5fr 2fr'}}>
           <SkillInput name={'Attack'} field={'atk'} image={attack}/>
           <SkillInput name={'Strength'} field={'str'} image={strength}/>
           <SkillInput name={'Defence'} field={'def'} image={defence}/>

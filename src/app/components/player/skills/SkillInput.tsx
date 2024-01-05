@@ -19,7 +19,7 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
 
   return (
     <>
-      <div className={'text-sm'}>
+      <div className={'text-sm flex justify-center'}>
         <Image src={image} alt={name}/>
       </div>
       <div className={'flex justify-center items-center'}>

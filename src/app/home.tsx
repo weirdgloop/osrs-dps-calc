@@ -9,7 +9,6 @@ import {useStore} from '@/state';
 import {ToastContainer} from 'react-toastify';
 import PlayerContainer from "@/app/components/player/PlayerContainer";
 import ResultsContainer from "@/app/components/results/ResultsContainer";
-import {IconChartBar} from "@tabler/icons-react";
 import {WorkerResponses, WorkerResponseType} from "@/types/WorkerData";
 import {IReactionPublic, reaction, toJS} from "mobx";
 import {WORKER_JSON_REVIVER} from "@/utils";
@@ -119,28 +118,30 @@ const Home: NextPage = observer(() => {
         <InitialLoad />
       </Suspense>
       {/* Main container */}
-      <div className={'max-w-[1200px] mx-auto sm:my-8'}>
+      <div className={'max-w-[1420px] mx-auto sm:my-8'}>
         <div className={'flex gap-2 flex-wrap'}>
           <PlayerContainer />
           <MonsterContainer />
+          <ResultsContainer />
         </div>
-        <ResultsContainer />
       </div>
-        {/* Additional graphs and stuff */}
-        <div className={'bg-btns-100 dark:bg-dark-300 border-t-8 border-body-500 dark:border-dark-200 text-white px-4'}>
-            <div className={'max-w-[1200px] mx-auto py-6'}>
-                <h1 className={'font-bold mb-2 text-white text-xl font-serif'}>
-                    <IconChartBar className={'inline-block mr-1'} />
-                    Additional data and graphs
-                </h1>
+      {/* Additional graphs and stuff */}
+      {
+        (
+          store.prefs.showLoadoutComparison
+          || store.prefs.showTtkComparison
+        ) && (
+          <div className={'bg-btns-100 dark:bg-dark-300 border-t-8 border-body-500 dark:border-dark-200 text-white px-4'}>
+            <div className={'max-w-[1420px] mx-auto py-6'}>
               {
                 store.prefs.showLoadoutComparison ? (
                   <div className={'grow bg-tile dark:bg-dark-500 md:rounded shadow-lg max-w-[100vw] my-4 text-black'}>
-                    <div className={'px-6 py-4 bg-btns-200 dark:bg-dark-400 dark:border-dark-200 text-white md:rounded-t border-b-4 border-body-300'}>
+                    <div
+                      className={'px-6 py-4 bg-btns-200 dark:bg-dark-400 dark:border-dark-200 text-white md:rounded-t border-b-4 border-body-300'}>
                       <h3 className={'font-serif font-bold'}>Loadout Comparison</h3>
                     </div>
                     <div className={'px-6 py-4'}>
-                      <LoadoutComparison />
+                      <LoadoutComparison/>
                     </div>
                   </div>
                 ) : <></>
@@ -148,25 +149,24 @@ const Home: NextPage = observer(() => {
               {
                 store.prefs.showTtkComparison ? (
                   <div className={'grow bg-tile dark:bg-dark-500 md:rounded shadow-lg max-w-[100vw] my-4 text-black'}>
-                    <div className={'px-6 py-4 bg-btns-200 dark:bg-dark-400 dark:border-dark-200 text-white md:rounded-t border-b-4 border-body-300'}>
+                    <div
+                      className={'px-6 py-4 bg-btns-200 dark:bg-dark-400 dark:border-dark-200 text-white md:rounded-t border-b-4 border-body-300'}>
                       <h3 className={'font-serif font-bold'}>Time-to-Kill Comparison</h3>
                     </div>
                     <div className={'px-6 py-4'}>
-                      <TtkComparison />
+                      <TtkComparison/>
                     </div>
                   </div>
                 ) : <></>
               }
-              {
-                (!store.prefs.showLoadoutComparison && store.prefs.showTtkComparison) ? (
-                  <p className={'text-sm'}>You can enable additional outputs by <button className={'underline'} onClick={() => store.updateUIState({showPreferencesModal: true})}>changing your preferences</button>.</p>
-                ) : <></>
-              }
             </div>
-        </div>
-      <Tooltip id={'tooltip'} />
-      <ToastContainer position={'bottom-right'} hideProgressBar={true} draggable={false} limit={3} closeButton={false} className={'text-sm'} />
-      <PreferencesModal isOpen={showPreferencesModal} />
+          </div>
+        )
+      }
+      <Tooltip id={'tooltip'}/>
+      <ToastContainer position={'bottom-right'} hideProgressBar={true} draggable={false} limit={3} closeButton={false}
+                      className={'text-sm'}/>
+      <PreferencesModal isOpen={showPreferencesModal}/>
     </div>
   )
 })

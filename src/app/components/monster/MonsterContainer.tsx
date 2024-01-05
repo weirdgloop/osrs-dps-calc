@@ -13,14 +13,12 @@ import magicStrength from '@/public/img/bonuses/magic_strength.png';
 import rangedStrength from '@/public/img/bonuses/ranged_strength.png';
 import toaRaidLevel from '@/public/img/toa_raidlevel.webp';
 import raidsIcon from '@/public/img/raids_icon.webp';
-import Image from 'next/image';
-import noMonster from '@/public/img/no_monster.png';
 import HelpLink from '../HelpLink';
 import MonsterSelect from './MonsterSelect';
 import {useStore} from '@/state';
 import {observer} from 'mobx-react-lite';
 import {MonsterAttribute} from '@/enums/MonsterAttribute';
-import {getCdnImage} from '@/utils';
+import {getCdnImage, truncateText} from '@/utils';
 import PresetAttributeButton from "@/app/components/monster/PresetAttributeButton";
 import NumberInput from "@/app/components/generic/NumberInput";
 import {
@@ -49,8 +47,6 @@ const TombsOfAmascutMonsterContainer: React.FC<ITombsOfAmascutMonsterContainerPr
           <img src={toaRaidLevel.src} alt={''} className={'inline-block'}/>{' '}
           ToA raid level
         </h4>
-        <p className={'text-xs text-gray-400'}>Note: The raid level defense bonus affects the defense max roll, not the
-          defensive stats.</p>
         <div className={'mt-2'}>
           <NumberInput
             value={monster.toaInvocationLevel}
@@ -123,15 +119,16 @@ const MonsterContainer: React.FC = observer(() => {
     }
 
     return comps;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [monster.id]);
 
   return (
     <div
-      className={'bg-tile dark:bg-dark-300 max-w-[520px] mx-auto lg:basis-auto sm:rounded-lg text-black dark:text-white shadow-lg'}>
+      className={'bg-tile dark:bg-dark-300 md:mt-9 lg:basis-auto sm:rounded-lg text-black dark:text-white shadow-lg grow md:grow-0'}>
       <div
-        className={'px-6 py-4 border-b-body-400 dark:border-b-dark-200 border-b md:rounded md:rounded-bl-none md:rounded-br-none flex justify-between items-center bg-body-100 dark:bg-dark-400'}>
+        className={'px-6 py-2 border-b-body-400 dark:border-b-dark-200 border-b md:rounded md:rounded-bl-none md:rounded-br-none flex justify-between items-center bg-body-100 dark:bg-dark-400'}>
         <div className={'flex items-center gap-2'}>
-          <div className={'w-10 h-10'}>
+          <div className={'w-10 h-10 flex'}>
             <LazyImage
               responsive={true}
               src={
@@ -140,8 +137,8 @@ const MonsterContainer: React.FC = observer(() => {
               alt={store.monster.name || 'Unknown'}
             />
           </div>
-          <h1 className={`font-serif text-xl tracking-tight font-bold`}>
-            {monster.name ? monster.name : 'Monster'}
+          <h1 className={`font-serif tracking-tight font-bold`}>
+            {monster.name ? truncateText(monster.name, 22) : 'Monster'}
           </h1>
         </div>
         {monster.id && (
@@ -155,16 +152,13 @@ const MonsterContainer: React.FC = observer(() => {
           </a>
         )}
       </div>
-      <div className={'p-6'}>
+      <div className={'py-6 px-6'}>
         <div className={'mb-4'}>
           <div className={'flex gap-8 flex-wrap justify-center'}>
-            <div className={'basis-1/4'}>
+            <div className={'w-72'}>
               <div className={'mb-4'}>
                 <MonsterSelect />
               </div>
-              <h4 className={`font-bold font-serif`}>
-                Stats
-              </h4>
               <div className={'flex gap-4'}>
                 <div className={'w-[95px]'}>
                   <p className={'text-sm text-gray-400 dark:text-gray-300'}>Skills</p>
@@ -203,7 +197,7 @@ const MonsterContainer: React.FC = observer(() => {
                 <h4 className={`font-bold font-serif`}>
                   Attributes <HelpLink href={'https://oldschool.runescape.wiki/w/Monster_attribute'} />
                 </h4>
-                <div className={'mt-2 text-sm flex flex-wrap gap-1.5 w-80'}>
+                <div className={'mt-2 text-sm flex flex-wrap gap-1.5'}>
                   {
                     Object.values(MonsterAttribute).map((attr, idx) => {
                       return <PresetAttributeButton key={idx} attr={attr} />
@@ -211,16 +205,13 @@ const MonsterContainer: React.FC = observer(() => {
                   }
                 </div>
               </div>
-              <div>
-
-              </div>
+              {(extraMonsterOptions.length > 0) && (
+                <div className={'mt-4 grid grid-cols-2 gap-x-2'}>
+                  {extraMonsterOptions}
+                </div>
+              )}
             </div>
           </div>
-          {(extraMonsterOptions.length > 0) && (
-            <div className={'mt-4 pt-[0.1em] px-4 pb-4 bg-dark-400 rounded'}>
-              {extraMonsterOptions}
-            </div>
-          )}
         </div>
       </div>
     </div>

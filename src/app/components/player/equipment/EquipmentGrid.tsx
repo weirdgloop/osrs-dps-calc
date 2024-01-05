@@ -18,20 +18,20 @@ const EquipmentGrid: React.FC = () => {
       <div className={'flex justify-center'}>
         <EquipmentGridSlot slot={'head'} placeholder={head.src}/>
       </div>
-      <div className={'mt-2 flex justify-center gap-2'}>
+      <div className={'mt-1 flex justify-center gap-2'}>
         <EquipmentGridSlot slot={'cape'} placeholder={cape.src}/>
         <EquipmentGridSlot slot={'neck'} placeholder={neck.src}/>
         <EquipmentGridSlot slot={'ammo'} placeholder={ammo.src}/>
       </div>
-      <div className={'mt-2 flex justify-center gap-6'}>
+      <div className={'mt-1 flex justify-center gap-6'}>
         <EquipmentGridSlot slot={'weapon'} placeholder={weapon.src}/>
         <EquipmentGridSlot slot={'body'} placeholder={body.src}/>
         <EquipmentGridSlot slot={'shield'} placeholder={shield.src}/>
       </div>
-      <div className={'mt-2 flex justify-center'}>
+      <div className={'mt-1 flex justify-center'}>
         <EquipmentGridSlot slot={'legs'} placeholder={legs.src}/>
       </div>
-      <div className={'mt-2 flex justify-center gap-6'}>
+      <div className={'mt-1 flex justify-center gap-6'}>
         <EquipmentGridSlot slot={'hands'} placeholder={hands.src}/>
         <EquipmentGridSlot slot={'feet'} placeholder={feet.src}/>
         <EquipmentGridSlot slot={'ring'} placeholder={ring.src}/>
