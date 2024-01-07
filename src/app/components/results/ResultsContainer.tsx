@@ -133,7 +133,7 @@ const ResultsContainer = observer(() => {
             </div>
             <div>
               <div className={'mt-2 px-2'}>
-                <HitDistribution dist={store.calc.loadouts[store.selectedLoadout]?.hitDist}/>
+                <HitDistribution dist={store.calc.loadouts[store.selectedLoadout]?.hitDist || []}/>
               </div>
             </div>
           </div>
