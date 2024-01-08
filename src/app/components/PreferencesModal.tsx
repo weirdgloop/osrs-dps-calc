@@ -13,7 +13,6 @@ interface IPreferencesModalProps {
 
 const PreferencesModal: React.FC<IPreferencesModalProps> = observer((props) => {
   const {isOpen} = props;
-  const {resolvedTheme, setTheme} = useTheme();
   const store = useStore();
   const {prefs} = store;
 
@@ -28,9 +27,6 @@ const PreferencesModal: React.FC<IPreferencesModalProps> = observer((props) => {
       >
         <div>
           <h2 className={'font-serif font-bold mb-2 select-none'}>Interface</h2>
-          <Toggle checked={resolvedTheme === 'dark'} setChecked={(c) => {
-            setTheme(c ? 'dark' : 'light');
-          }} label={'Dark mode'} />
           <Toggle checked={prefs.advancedMode} setChecked={(c) => {
             if (prefs.advancedMode) {
               store.updatePreferences({advancedMode: false});

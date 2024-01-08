@@ -1,15 +1,18 @@
 import {classNames, generateShortlink} from '@/utils';
 import {useStore} from '@/state';
-import {IconSettings, IconShare2} from '@tabler/icons-react';
+import {IconMoon, IconSettings, IconShare2, IconSun} from '@tabler/icons-react';
 import wiki from '@/public/img/Wiki@2x.webp';
 import React from "react";
 import {ImportableData} from "@/types/State";
 import {toJS} from "mobx";
 import {toast} from "react-toastify";
 import {observer} from "mobx-react-lite";
+import {useTheme} from "next-themes";
 
 const TopBar: React.FC = observer(() => {
   const store = useStore();
+  const {resolvedTheme, setTheme} = useTheme();
+  const isDark = resolvedTheme === 'dark';
 
   const generateShareLink = async () => {
     // Get the data we need from the internal store
@@ -40,30 +43,38 @@ const TopBar: React.FC = observer(() => {
                 <span className={'font-bold font-serif text-white'}>DPS Calculator</span>
               </div>
               <div className="block ml-6">
-                <div className="flex space-x-2">
+                <div className="flex border border-body-500 bg-[#3e2816] dark:bg-dark-300 dark:border-dark-200 text-body-200 py-2 px-2.5 rounded-md text-sm font-medium space-x-4">
+                  <button
+                    data-tooltip-id={'tooltip'}
+                    data-tooltip-content={`Toggle ${isDark ? 'light' : 'dark'} mode`}
+                    className='transition-all hover:scale-105 hover:text-white'
+                    onClick={() => {
+                      setTheme(isDark ? 'light' : 'dark');
+                    }}
+                  >
+                    {isDark ? (
+                      <IconSun size={20} aria-label={'Toggle light mode'}/>
+                    ) : (
+                      <IconMoon size={20} aria-label={'Toggle dark mode'}/>
+                    )}
+                  </button>
                   <button
                     data-tooltip-id={'tooltip'}
                     data-tooltip-content={'Preferences'}
-                    className={classNames(
-                      'flex items-center gap-1 text-white border border-body-500 bg-[#3e2816] dark:bg-dark-300 dark:border-dark-200 transition-all hover:scale-105',
-                      'px-3 py-2 rounded-md text-sm font-medium'
-                    )}
+                    className='transition-all hover:scale-105 hover:text-white'
                     onClick={() => {
                       store.updateUIState({showPreferencesModal: true});
                     }}
                   >
-                    <IconSettings size={20} aria-label={'Preferences'} />
+                    <IconSettings size={20} aria-label={'Preferences'}/>
                   </button>
                   <button
                     data-tooltip-id={'tooltip'}
                     data-tooltip-content={'Share'}
-                    className={classNames(
-                      'disabled:opacity-30 flex items-center gap-1 text-white border border-body-500 bg-[#3e2816] dark:bg-dark-300 dark:border-dark-200 transition-all hover:scale-105',
-                      'px-3 py-2 rounded-md text-sm font-medium'
-                    )}
+                    className='transition-all hover:scale-105 hover:text-white'
                     onClick={generateShareLink}
                   >
-                    <IconShare2 size={20} aria-label={'Share'} />
+                    <IconShare2 size={20} aria-label={'Share'}/>
                   </button>
                 </div>
               </div>
