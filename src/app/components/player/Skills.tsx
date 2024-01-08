@@ -24,7 +24,7 @@ const Skills: React.FC = observer(() => {
         <UsernameLookup/>
       </div>
       <div className={'mt-4'}>
-        <div className={'grid items-center gap-x-2'} style={{gridTemplateColumns: '.5fr 2fr .5fr 2fr'}}>
+        <div className={'grid items-center gap-x-2'} style={{gridTemplateColumns: '2fr 2fr 2fr 2fr'}}>
           <SkillInput name={'Attack'} field={'atk'} image={attack}/>
           <SkillInput name={'Strength'} field={'str'} image={strength}/>
           <SkillInput name={'Defence'} field={'def'} image={defence}/>
