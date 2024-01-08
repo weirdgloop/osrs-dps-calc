@@ -20,7 +20,6 @@ import ShareModal from "@/app/components/ShareModal";
 
 const Home: NextPage = observer(() => {
   const store = useStore();
-  const {showPreferencesModal} = store.ui;
 
   useEffect(() => {
     // When the page loads, set up the worker and be ready to interpret the responses

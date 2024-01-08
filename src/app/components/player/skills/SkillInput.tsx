@@ -44,7 +44,7 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
               />/
             </div>
           ) : (
-            <>{player.skills[field] + player.boosts[field]}/</>
+            <span title={`Your current ${name} level`}>{player.skills[field] + player.boosts[field]}/</span>
           )}
         </div>
         <div className={'w-12'}>

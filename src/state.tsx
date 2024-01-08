@@ -24,8 +24,6 @@ import {
   fetchShortlinkData,
   WORKER_JSON_REPLACER
 } from "@/utils";
-import {TrailblazerRelic} from "@/enums/TrailblazerRelic";
-import {RuinousPower} from "@/enums/RuinousPower";
 import {RecomputeValuesRequest, WorkerRequestType} from "@/types/WorkerData";
 import {scaledMonster} from "@/lib/MonsterScaling";
 
@@ -146,9 +144,7 @@ const generateEmptyPlayer: () => Player = () => {
       image: '',
       max_hit: 0,
       spellbook: 'standard',
-    },
-    trailblazerRelics: [],
-    ruinousPowers: []
+    }
   }
 }
 
@@ -405,12 +401,6 @@ class GlobalState implements State {
       // If we're toggling off an existing prayer, just filter it out from the array
       this.player.prayers = this.player.prayers.filter((p) => p !== prayer);
     } else {
-      // If there are Ruinous Powers, disable them.
-      if (this.player.ruinousPowers.length > 0) {
-        this.player.ruinousPowers = [];
-        toast.info('Switched to the normal prayer book', {toastId: 'prayer-switch'});
-      }
-
       // If we're toggling on a new prayer, let's do some checks to ensure that some prayers cannot be enabled alongside it
       let newPrayers = [...this.player.prayers];
 
@@ -443,38 +433,6 @@ class GlobalState implements State {
       this.monster.attributes = this.monster.attributes.filter((a) => a !== attr);
     } else {
       this.monster.attributes = [...this.monster.attributes, attr];
-    }
-  }
-
-  /**
-   * Toggle a Trailblazer League relic.
-   * @param relic
-   */
-  togglePlayerTrailblazerRelic(relic: TrailblazerRelic) {
-    const isToggled = this.player.trailblazerRelics.includes(relic);
-    if (isToggled) {
-      this.player.trailblazerRelics = this.player.trailblazerRelics.filter((r) => r !== relic);
-    } else {
-      this.player.trailblazerRelics = [...this.player.trailblazerRelics, relic];
-    }
-  }
-
-  /**
-   * Toggle a Ruinous Power prayer.
-   * @param power
-   */
-  togglePlayerRuinousPower(power: RuinousPower) {
-    const isToggled = this.player.ruinousPowers.includes(power);
-    if (isToggled) {
-      this.player.ruinousPowers = this.player.ruinousPowers.filter((r) => r !== power);
-    } else {
-      // If there are normal prayers, disable them.
-      if (this.player.prayers.length > 0) {
-        this.player.prayers = [];
-        toast.info('Switched to the Ruinous Powers prayer book', {toastId: 'prayer-switch'});
-      }
-
-      this.player.ruinousPowers = [...this.player.ruinousPowers, power];
     }
   }
 

@@ -3,8 +3,6 @@ import {Prayer} from '@/enums/Prayer';
 import {Potion} from '@/enums/Potion';
 import {Spell} from '@/types/Spell';
 import {PlayerCombatStyle} from "@/types/PlayerCombatStyle";
-import {TrailblazerRelic} from "@/enums/TrailblazerRelic";
-import {RuinousPower} from "@/enums/RuinousPower";
 
 export interface PlayerSkills {
   atk: number;
@@ -114,6 +112,4 @@ export interface Player {
     markOfDarknessSpell: boolean;
   }
   spell: Spell
-  trailblazerRelics: TrailblazerRelic[];
-  ruinousPowers: RuinousPower[];
 }

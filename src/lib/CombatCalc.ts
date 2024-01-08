@@ -4,7 +4,6 @@ import {AttackDistribution, HitDistribution, WeightedHit} from "@/lib/HitDist";
 import {isFireSpell} from "@/types/Spell";
 import {PrayerMap} from "@/enums/Prayer";
 import {sum} from "d3-array";
-import {TrailblazerRelic} from "@/enums/TrailblazerRelic";
 
 const DEFAULT_ATTACK_SPEED = 4;
 const SECONDS_PER_TICK = 0.6;
@@ -214,10 +213,6 @@ export default class CombatCalc {
       attackRoll = Math.trunc(attackRoll * (200 + inqPieces) / 200)
     }
 
-    if (this.player.trailblazerRelics.includes(TrailblazerRelic.BRAWLERS_RESOLVE)) {
-      attackRoll = Math.trunc(attackRoll * 3 / 2);
-    }
-
     return attackRoll;
   }
 
@@ -370,10 +365,6 @@ export default class CombatCalc {
       attackRoll = Math.trunc(attackRoll * (20 + crystalPieces) / 20);
     }
 
-    if (this.player.trailblazerRelics.includes(TrailblazerRelic.ARCHERS_EMBRACE)) {
-      attackRoll = attackRoll * 2;
-    }
-
     return attackRoll;
   }
 
@@ -480,10 +471,6 @@ export default class CombatCalc {
       attackRoll = Math.trunc(attackRoll * 11/10);
     }
 
-    if (this.player.trailblazerRelics.includes(TrailblazerRelic.SUPERIOR_SORCERER)) {
-      attackRoll = Math.trunc(attackRoll * 11 / 4);
-    }
-
     return attackRoll;
   }
 
@@ -572,10 +559,6 @@ export default class CombatCalc {
     maxHit = Math.trunc(maxHit * (1000 + magicDmgBonus) / 1000);
 
     if (blackMaskBonus) maxHit = Math.trunc(maxHit * 23/20);
-
-    if (this.player.trailblazerRelics.includes(TrailblazerRelic.SUPERIOR_SORCERER)) {
-      maxHit = Math.trunc(maxHit * 6 / 5);
-    }
 
     return maxHit;
   }
@@ -677,10 +660,6 @@ export default class CombatCalc {
     const standardHitDist = HitDistribution.linear(acc, 0, max);
     let dist = new AttackDistribution([standardHitDist]);
 
-    if (this.player.trailblazerRelics.includes(TrailblazerRelic.SOUL_STEALER)) {
-      dist = new AttackDistribution([HitDistribution.linear(acc, Math.trunc(max / 10), max)]);
-    }
-
     if (this.isWearingFang()) {
       dist = new AttackDistribution(
           [HitDistribution.linear(acc, Math.floor(max * 3 / 20), Math.floor(max * 17 / 20))],
@@ -712,67 +691,11 @@ export default class CombatCalc {
       dist = dist.scaleDamage(13, 10);
     }
 
-    if (['stab', 'slash', 'crush'].includes(this.player.style.type) &&
-        this.player.trailblazerRelics.includes(TrailblazerRelic.BRAWLERS_RESOLVE)) {
-      const newDist = new AttackDistribution([]);
-      for (let d of dist.dists) {
-        newDist.addDist(d.scaleProbability(9.0 / 10.0));
-        newDist.addDist(d.scaleProbability(1.0 / 10.0).scaleDamage(2));
-      }
-      dist = newDist;
-    }
-
-    if (this.player.style.type === 'ranged' &&
-        this.player.trailblazerRelics.includes(TrailblazerRelic.ARCHERS_EMBRACE)) {
-      const newDist = new AttackDistribution(dist.dists);
-      for (let d of dist.dists) {
-        d = d.scaleProbability(1.0 / 10.0);
-        d.addHit(new WeightedHit(0.9, [0]));
-      }
-      dist = newDist;
-    }
-
     return dist;
   }
 
   public getAttackSpeed(): number {
-    const speed = this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;
-
-    if (this.player.trailblazerRelics.length !== 0) {
-      return this.getRelicAttackSpeed(speed);
-    }
-
-    return speed;
-  }
-
-  private getRelicAttackSpeed(speed: number): number {
-    switch (this.player.style.type) {
-      case "stab":
-      case "slash":
-      case "crush":
-        if (!this.player.trailblazerRelics.includes(TrailblazerRelic.BRAWLERS_RESOLVE)) {
-          return speed;
-        }
-        break;
-
-      case "ranged":
-        if (!this.player.trailblazerRelics.includes(TrailblazerRelic.ARCHERS_EMBRACE)) {
-          return speed;
-        }
-        break;
-
-      case "magic":
-        if (!this.player.trailblazerRelics.includes(TrailblazerRelic.SUPERIOR_SORCERER)) {
-          return speed;
-        }
-        break;
-    }
-
-    if (speed >= 4) {
-      return Math.floor(speed / 2);
-    } else {
-      return Math.ceil(speed / 2)
-    }
+    return this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;;
   }
 
   /**
@@ -821,65 +744,65 @@ export default class CombatCalc {
 
   /**
    * Returns a distribution of times-to-kill (in ticks) to probabilities.
-   * Because the result will not be densely populated (unless attack speed is 1), 
+   * Because the result will not be densely populated (unless attack speed is 1),
    * it is an object where keys are tick counts and values are probabilities.
    */
   public getTtkDistribution(): Map<number, number> {
     const speed = this.getAttackSpeed();
     const dist = this.getDistribution().asSingleHitplat();
- 
+
     // distribution of health values at current iter step
     // we don't need to track the 0-health state, but using +1 here removes the need for -1s later on
     let hps = new Float64Array(this.monster.skills.hp + 1);
     hps[this.monster.skills.hp] = 1.0;
-    
+
     // output map, will be converted at the end
     let ttks = new Map<number, number>();
 
     // sum of non-zero-health probabilities
     let epsilon = 1.0;
-    
+
     // 1. until the amount of hp values remaining above zero is more than our desired epsilon accuracy,
     //    or we reach the maximum iteration rounds
     for (let hit = 0; hit < (TTK_DIST_MAX_ITER_ROUNDS + 1) && epsilon > TTK_DIST_EPSILON; hit++) {
       // 2. track the sum total of probability-paths that reach zero on this iteration
       let delta = 0.0;
-      
+
       const nextHps = new Float64Array(this.monster.skills.hp + 1);
-      
+
       // 3. for each damage amount possible,
       for (let h of dist.hits) {
         let dmgProb = h.probability;
         let dmg = h.getHitsplats()[0]; // guaranteed to be length 1 from asSingleHitsplat
-        
-        // 4. for each possible hp value, 
+
+        // 4. for each possible hp value,
         for (let [hp, hpProb] of hps.entries()) {
           // 5. the chance of this path being reached is the previous chance of landing here * the chance of hitting this amount
           const chanceOfAction = dmgProb * hpProb;
           if (chanceOfAction === 0) continue;
-          
+
           const newHp = hp - dmg;
-          
+
           // 6. if the hp we are about to arrive at is <= 0, the npc is killed, the iteration count is hits done,
-          //    and we add this probability path into the delta 
+          //    and we add this probability path into the delta
           if (newHp <= 0) {
             const tick = hit * speed + 1;
             ttks.set(tick, (ttks.get(tick) || 0) + chanceOfAction);
             delta += chanceOfAction;
-          } 
-          
+          }
+
           // 7. otherwise, we add the chance of this path to the next iteration's hp value
           else {
             nextHps[newHp] += chanceOfAction;
           }
         }
       }
-      
+
       // 8. update counters and repeat
       epsilon -= delta;
       hps = nextHps;
     }
-    
+
     return ttks;
   }
 }
