@@ -14,25 +14,6 @@ const TopBar: React.FC = observer(() => {
   const {resolvedTheme, setTheme} = useTheme();
   const isDark = resolvedTheme === 'dark';
 
-  const generateShareLink = async () => {
-    // Get the data we need from the internal store
-    const data: ImportableData = {
-      loadouts: toJS(store.loadouts),
-      monster: toJS(store.monster),
-      selectedLoadout: store.selectedLoadout
-    }
-
-    // Make an API call to generate a share link
-    try {
-      const linkId = await generateShortlink(data);
-      await navigator.clipboard.writeText(`https://dps.osrs.wiki/?id=${linkId}`);
-      toast.success(`Copied share link to the clipboard!`);
-    } catch (e) {
-      // Failed...
-      toast.error('Could not create share link. Please try again later.');
-    }
-  }
-
   return (
       <>
         <div className="mx-auto px-3 sm:px-6 lg:px-8 bg-btns-400 dark:bg-dark-500 shadow border-b-4 border-body-500 dark:border-dark-200">
@@ -72,7 +53,9 @@ const TopBar: React.FC = observer(() => {
                     data-tooltip-id={'tooltip'}
                     data-tooltip-content={'Share'}
                     className='transition-all hover:scale-105 hover:text-white'
-                    onClick={generateShareLink}
+                    onClick={() => {
+                      store.updateUIState({showShareModal: true});
+                    }}
                   >
                     <IconShare2 size={20} aria-label={'Share'}/>
                   </button>

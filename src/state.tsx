@@ -195,6 +195,7 @@ class GlobalState implements State {
 
   ui: UI = {
     showPreferencesModal: false,
+    showShareModal: false,
     username: '',
   }
 

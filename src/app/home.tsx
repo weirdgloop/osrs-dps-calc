@@ -16,6 +16,7 @@ import PreferencesModal from "@/app/components/PreferencesModal";
 import InitialLoad from "@/app/components/InitialLoad";
 import LoadoutComparison from "@/app/components/results/LoadoutComparison";
 import TtkComparison from "@/app/components/results/TtkComparison";
+import ShareModal from "@/app/components/ShareModal";
 
 const Home: NextPage = observer(() => {
   const store = useStore();
@@ -166,7 +167,8 @@ const Home: NextPage = observer(() => {
       <Tooltip id={'tooltip'}/>
       <ToastContainer position={'bottom-right'} hideProgressBar={true} draggable={false} limit={3} closeButton={false}
                       className={'text-sm'}/>
-      <PreferencesModal isOpen={showPreferencesModal}/>
+      <PreferencesModal />
+      <ShareModal />
     </div>
   )
 })

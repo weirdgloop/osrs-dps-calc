@@ -7,21 +7,16 @@ import Modal from "@/app/components/generic/Modal";
 import power from '@/public/img/misc/power.webp';
 import LazyImage from "@/app/components/generic/LazyImage";
 
-interface IPreferencesModalProps {
-  isOpen: boolean;
-}
-
-const PreferencesModal: React.FC<IPreferencesModalProps> = observer((props) => {
-  const {isOpen} = props;
+const PreferencesModal: React.FC = observer((props) => {
   const store = useStore();
-  const {prefs} = store;
+  const {prefs, ui} = store;
 
   const [advancedIsOpen, setAdvancedIsOpen] = useState(false);
 
   return (
     <>
       <Modal
-        isOpen={isOpen}
+        isOpen={ui.showPreferencesModal}
         setIsOpen={(b) => store.updateUIState({showPreferencesModal: b})}
         title={'Preferences'}
       >

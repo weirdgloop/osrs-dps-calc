@@ -6,6 +6,7 @@ import {Monster} from '@/types/Monster';
  */
 export interface UI {
   showPreferencesModal: boolean;
+  showShareModal: boolean;
   username: string;
 }
 

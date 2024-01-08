@@ -75,6 +75,10 @@ export const getCdnImage = (filename: string) => {
   return `https://dps.osrs.wiki/cdn/${filename}`
 }
 
+export const isDevServer = () => {
+  return process.env.NODE_ENV === 'development';
+}
+
 export const truncateText = (text: string, length: number) => {
   if (text.length <= length) {
     return text;
