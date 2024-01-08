@@ -1,4 +1,4 @@
-import {EquipmentPiece, PlayerComputed} from '@/types/Player';
+import {EquipmentPiece, Player} from '@/types/Player';
 import {Monster} from '@/types/Monster';
 import {AttackDistribution, HitDistribution, WeightedHit} from "@/lib/HitDist";
 import {isFireSpell} from "@/types/Spell";
@@ -21,7 +21,7 @@ export interface CalcOpts {
 const DEFAULT_OPTS: CalcOpts = {};
 
 export default class CombatCalc {
-  private player: PlayerComputed;
+  private player: Player;
   private monster: Monster;
   private opts: CalcOpts;
 
@@ -30,7 +30,7 @@ export default class CombatCalc {
 
   private memoizedDist: AttackDistribution | undefined = undefined;
 
-  constructor(player: PlayerComputed, monster: Monster, opts: Partial<CalcOpts> = {}) {
+  constructor(player: Player, monster: Monster, opts: Partial<CalcOpts> = {}) {
     this.player = player;
     this.monster = monster;
     this.opts = {

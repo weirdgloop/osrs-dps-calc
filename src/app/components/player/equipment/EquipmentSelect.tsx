@@ -6,6 +6,7 @@ import {getCdnImage} from '@/utils';
 import {EquipmentPiece} from '@/types/Player';
 import Combobox from '../../generic/Combobox';
 import LazyImage from "@/app/components/generic/LazyImage";
+import {cross} from "d3-array";
 
 interface EquipmentOption {
   label: string;
@@ -15,20 +16,71 @@ interface EquipmentOption {
   equipment: EquipmentPiece;
 }
 
+const BLOWPIPE_IDS: string[] = [
+  "12926", // regular
+  "28688", // blazing
+];
+
+const DART_IDS: string[] = [
+  "806", // bronze
+  "807", // iron
+  "808", // steel
+  "809", // mithril
+  "810", // adamant
+  "811", // rune
+  "3093", // black
+  "11230", // dragon
+  "25849", // amethyst
+];
+
 const EquipmentSelect: React.FC = observer(() => {
   const store = useStore();
 
-  const options: EquipmentOption[] = useMemo(() => Object.entries(equipment).map(([k, v]) => {
-    return {
-      label: `${v.name}`,
-      value: k,
-      version: v.version || '',
-      slot: v.slot,
-      equipment: {
-        ...(v as EquipmentPiece)
+  const options: EquipmentOption[] = useMemo(() => {
+    const blowpipeEntries: EquipmentOption[] = [];
+    const dartEntries: EquipmentOption[] = [];
+
+    const entries: EquipmentOption[] = [];
+    Object.entries(equipment).forEach(([k, v]) => {
+      let e: EquipmentOption = {
+        label: `${v.name}`,
+        value: k,
+        version: v.version || '',
+        slot: v.slot,
+        equipment: {
+          ...(v as EquipmentPiece)
+        }
+      };
+
+      if (BLOWPIPE_IDS.includes(e.value)) {
+        blowpipeEntries.push(e);
+      } else if (DART_IDS.includes(e.value)) {
+        dartEntries.push(e);
+        entries.push(e);
+      } else {
+        entries.push(e);
       }
-    }
-  }), [])
+    });
+
+    cross(blowpipeEntries, dartEntries).forEach(([blowpipe, dart]) => {
+      const newStrength = blowpipe.equipment.offensive[4] + dart.equipment.offensive[4];
+      entries.push({
+        ...blowpipe,
+        label: `${blowpipe.label} (${dart.label.split(' ', 2)[0]})`,
+        value: `${blowpipe.value}_${dart.value}`,
+        equipment: {
+          ...blowpipe.equipment,
+          offensive: [
+            ...blowpipe.equipment.offensive.slice(0, 4),
+            newStrength,
+            ...blowpipe.equipment.offensive.slice(5),
+          ],
+        }
+      });
+    });
+
+    return entries;
+  }, [])
 
   return (
     <Combobox<EquipmentOption>
@@ -41,7 +93,7 @@ const EquipmentSelect: React.FC = observer(() => {
         if (item) {
           store.updatePlayer({
             equipment: {
-              [item.equipment.slot]: item.value
+              [item.equipment.slot]: item.equipment
             }
           })
         }

@@ -10,8 +10,7 @@ import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
 import Select from "@/app/components/generic/Select";
 import CombatCalc from "@/lib/CombatCalc";
-import {PlayerComputed} from "@/types/Player";
-import {getEquipmentForLoadout} from "@/utils";
+import {Player} from "@/types/Player";
 import {Monster} from "@/types/Monster";
 import {NameType, ValueType} from "recharts/types/component/DefaultTooltipContent";
 import {toJS} from "mobx";
@@ -70,11 +69,11 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, pa
 
 function* inputRange(
   xAxisType: XAxisType,
-  loadouts: PlayerComputed[],
+  loadouts: Player[],
     monster: Monster,
 ): Generator<{
   xValue: number,
-  loadouts: PlayerComputed[],
+  loadouts: Player[],
   monster: Monster,
 }> {
 
@@ -189,7 +188,7 @@ const YAxisOptions = [
 
 const getOutput = (
     yAxisType: YAxisType,
-    loadout: PlayerComputed,
+    loadout: Player,
     monster: Monster,
 ): number => {
   switch (yAxisType) {
@@ -219,15 +218,8 @@ const LoadoutComparison: React.FC = observer(() => {
       return [];
     }
 
-    const computedLoadouts = loadouts.map(p => {
-      return {
-        ...p,
-        equipment: getEquipmentForLoadout(p),
-      }
-    });
-
     const lines: { name: number, [lKey: string]: string | number }[] = [];
-    for (let input of inputRange(x, computedLoadouts, monster)) {
+    for (let input of inputRange(x, loadouts, monster)) {
       const entry: typeof lines[0] = {name: input.xValue,};
       input.loadouts.forEach((l, i) => {
         entry[`Loadout ${i+1}`] = getOutput(y, l, input.monster).toFixed(2);

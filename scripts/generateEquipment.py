@@ -128,15 +128,7 @@ def main():
             equipment['slot'] = 'weapon'
             equipment['isTwoHanded'] = True
 
-        # Handle toxic/blazing blowpipe special case
-        toxic_variants = ['Adamant', 'Amethyst', 'Black', 'Bronze', 'Dragon', 'Iron', 'Mithril', 'Rune', 'Steel']
-        if item_id == 12926 or item_id == 28688:
-            for variant in toxic_variants:
-                new_equipment = equipment.copy()
-                new_equipment['name'] = new_equipment['name'] + ' (%s)' % variant
-                data['%s_%s' % (item_id, variant.lower())] = new_equipment
-        else:
-            data[item_id] = equipment
+        data[item_id] = equipment
 
         if not equipment['image'] == '':
             required_imgs.append(equipment['image'])

@@ -22,8 +22,6 @@ import {toast} from "react-toastify";
 import {
   fetchPlayerSkills,
   fetchShortlinkData,
-  getEquipment,
-  getEquipmentForLoadout,
   WORKER_JSON_REPLACER
 } from "@/utils";
 import {TrailblazerRelic} from "@/enums/TrailblazerRelic";
@@ -32,34 +30,54 @@ import {RecomputeValuesRequest, WorkerRequestType} from "@/types/WorkerData";
 import {scaledMonster} from "@/lib/MonsterScaling";
 
 const calculateEquipmentBonuses = (eq: EquipmentPiece[]) => {
-  let b: {
+  const seed: {
     bonuses: PlayerBonuses,
     offensive: PlayerOffensive,
-    defensive: PlayerDefensive
+    defensive: PlayerDefensive,
   } = {
     bonuses: {
-      str: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive[7], 0),
-      magic_str: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive[1], 0),
-      ranged_str: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive[4], 0),
-      prayer: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive[5], 0),
+      str: 0,
+      magic_str: 0,
+      ranged_str: 0,
+      prayer: 0,
     },
     offensive: {
-      slash: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive[5], 0),
-      stab: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive[6], 0),
-      crush: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive[0], 0),
-      ranged: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive[3], 0),
-      magic: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.offensive[2], 0),
+      slash: 0,
+      stab: 0,
+      crush: 0,
+      ranged: 0,
+      magic: 0,
     },
     defensive: {
-      slash: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive[3], 0),
-      stab: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive[4], 0),
-      crush: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive[0], 0),
-      ranged: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive[2], 0),
-      magic: eq.reduce((acc: number, curr: EquipmentPiece) => acc + curr.defensive[1], 0),
-    }
+      slash: 0,
+      stab: 0,
+      crush: 0,
+      ranged: 0,
+      magic: 0,
+    },
   };
-
-  return b;
+  return eq.reduce((acc, piece) => ({
+    bonuses: {
+      str: acc.bonuses.str + piece.offensive[7],
+      magic_str: acc.bonuses.magic_str + piece.offensive[1],
+      ranged_str: acc.bonuses.ranged_str + piece.offensive[4],
+      prayer: acc.bonuses.prayer + piece.offensive[5],
+    },
+    offensive: {
+      slash: acc.offensive.slash + piece.offensive[5],
+      stab: acc.offensive.stab + piece.offensive[6],
+      crush: acc.offensive.crush + piece.offensive[0],
+      ranged: acc.offensive.ranged + piece.offensive[3],
+      magic: acc.offensive.magic + piece.offensive[2],
+    },
+    defensive: {
+      slash: acc.defensive.slash + piece.defensive[3],
+      stab: acc.defensive.stab + piece.defensive[4],
+      crush: acc.defensive.crush + piece.defensive[0],
+      ranged: acc.defensive.ranged + piece.defensive[2],
+      magic: acc.defensive.magic + piece.defensive[1],
+    },
+  }), seed);
 }
 
 const generateInitialEquipment = () => {
@@ -232,7 +250,7 @@ class GlobalState implements State {
       () => toJS(this.player.skills),
       () => toJS(this.player.buffs.potions),
     ];
-    triggers.map(t => reaction(t, recomputeBoosts, {fireImmediately: true}));
+    triggers.map(t => reaction(t, recomputeBoosts, {fireImmediately: false}));
   }
 
   /**
@@ -246,7 +264,7 @@ class GlobalState implements State {
    * Returns the data for the currently equipped items
    */
   get equipmentData() {
-    return getEquipmentForLoadout(this.player);
+    return this.player.equipment;
   }
 
   /**
@@ -254,7 +272,7 @@ class GlobalState implements State {
    * @see https://oldschool.runescape.wiki/w/Combat_Options
    */
   get availableCombatStyles() {
-    const cat = this.player.equipment.weapon ? getEquipment(this.player.equipment.weapon).category : EquipmentCategory.NONE;
+    const cat = this.player.equipment.weapon?.category || EquipmentCategory.NONE;
     return getCombatStylesForCategory(cat);
   }
 
@@ -466,7 +484,7 @@ class GlobalState implements State {
   updatePlayer(player: PartialDeep<Player>) {
     if (Object.hasOwn(player.equipment || {}, 'weapon')) {
       const currentWeapon = this.equipmentData.weapon;
-      const newWeapon = player.equipment?.weapon ? getEquipment(player.equipment.weapon) : {} as EquipmentPiece;
+      const newWeapon = player.equipment?.weapon;
 
       if (newWeapon !== undefined) {
         const oldWeaponCat = currentWeapon?.category || EquipmentCategory.NONE;
@@ -478,15 +496,15 @@ class GlobalState implements State {
       }
 
       const currentShield = this.equipmentData.shield;
-      const newShield = player.equipment?.shield ? getEquipment(player.equipment.shield) : {} as EquipmentPiece;
+      const newShield = player.equipment?.shield;
 
       // Special handling for if a shield is equipped, and we're using a two-handed weapon
-      if (player.equipment?.shield && newShield.name !== '' && currentWeapon?.isTwoHanded) {
-        player = {...player, equipment: {...player.equipment, weapon: null}};
+      if (player.equipment?.shield && newShield !== undefined && currentWeapon?.isTwoHanded) {
+        player = {...player, equipment: {...player.equipment, weapon: undefined}};
       }
       // ...and vice-versa
       if (player.equipment?.weapon && newWeapon?.isTwoHanded && currentShield?.name !== '') {
-        player = {...player, equipment: {...player.equipment, shield: null}};
+        player = {...player, equipment: {...player.equipment, shield: undefined}};
       }
     }
 
@@ -556,19 +574,12 @@ class GlobalState implements State {
 
     this.workerRecomputeTimer = window.setTimeout(() => {
       if (this.worker) {
-        const loadouts = this.loadouts.map((i) => {
-          return {
-            ...i,
-            equipment: getEquipmentForLoadout(i)
-          }
-        });
-
         const m = this.prefs.advancedMode ? this.monster : scaledMonster(this.monster);
 
         this.worker.postMessage(JSON.stringify({
           type: WorkerRequestType.RECOMPUTE_VALUES,
           data: {
-            loadouts,
+            loadouts: this.loadouts,
             monster: m,
             calcOpts: {
               includeTtkDist: this.prefs.showTtkComparison,

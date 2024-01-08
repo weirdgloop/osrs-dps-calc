@@ -6,7 +6,7 @@ import {
   WorkerResponses,
   WorkerResponseType
 } from "@/types/WorkerData";
-import {PlayerComputed} from "@/types/Player";
+import {Player} from "@/types/Player";
 import {Monster} from "@/types/Monster";
 import CombatCalc from "@/lib/CombatCalc";
 import {CalculatedLoadout} from "@/types/State";
@@ -18,7 +18,7 @@ import {WORKER_JSON_REPLACER, WORKER_JSON_REVIVER} from "@/utils";
  * @param m
  * @param calcOpts
  */
-const computeValues = async (loadouts: PlayerComputed[], m: Monster, calcOpts: WorkerCalcOpts) => {
+const computeValues = async (loadouts: Player[], m: Monster, calcOpts: WorkerCalcOpts) => {
   let res: CalculatedLoadout[] = [];
 
   for (let [_, p] of loadouts.entries()) {

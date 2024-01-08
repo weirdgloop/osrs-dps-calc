@@ -1,4 +1,4 @@
-import {PlayerComputed} from "@/types/Player";
+import {Player} from "@/types/Player";
 import {Monster} from "@/types/Monster";
 import {CalculatedLoadout} from "@/types/State";
 
@@ -17,7 +17,7 @@ export interface WorkerCalcOpts {
 export interface RecomputeValuesRequest {
   type: WorkerRequestType.RECOMPUTE_VALUES,
   data: {
-    loadouts: PlayerComputed[],
+    loadouts: Player[],
     monster: Monster,
     calcOpts: WorkerCalcOpts,
   }

@@ -34,17 +34,17 @@ export interface EquipmentPiece {
  * we have to use strings in the future (for arbitrary, non-ID values).
  */
 export interface PlayerEquipment {
-  head: string | null;
-  cape: string | null;
-  neck: string | null;
-  ammo: string | null;
-  weapon: string | null;
-  body: string | null;
-  shield: string | null;
-  legs: string | null;
-  hands: string | null;
-  feet: string | null;
-  ring: string | null;
+  head?: EquipmentPiece;
+  cape?: EquipmentPiece;
+  neck?: EquipmentPiece;
+  ammo?: EquipmentPiece;
+  weapon?: EquipmentPiece;
+  body?: EquipmentPiece;
+  shield?: EquipmentPiece;
+  legs?: EquipmentPiece;
+  hands?: EquipmentPiece;
+  feet?: EquipmentPiece;
+  ring?: EquipmentPiece;
 }
 
 export interface PlayerBonuses {
@@ -117,23 +117,3 @@ export interface Player {
   trailblazerRelics: TrailblazerRelic[];
   ruinousPowers: RuinousPower[];
 }
-
-/**
- * A loadout object with computed values, passed to and from the worker
- */
-export interface PlayerComputed extends Omit<Player, 'equipment'> {
-  equipment: {
-    head: EquipmentPiece | null;
-    cape: EquipmentPiece | null;
-    neck: EquipmentPiece | null;
-    ammo: EquipmentPiece | null;
-    weapon: EquipmentPiece | null;
-    body: EquipmentPiece | null;
-    shield: EquipmentPiece | null;
-    legs: EquipmentPiece | null;
-    hands: EquipmentPiece | null;
-    feet: EquipmentPiece | null;
-    ring: EquipmentPiece | null;
-  }
-}
-
