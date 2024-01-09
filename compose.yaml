@@ -34,6 +34,6 @@ services:
       watch:
         - action: sync
           path: ./src
-          target: /srv/src
+          target: /workspace/src
         - action: rebuild
           path: ./package.json
