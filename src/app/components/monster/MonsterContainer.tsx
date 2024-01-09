@@ -94,6 +94,7 @@ const MonsterContainer: React.FC = observer(() => {
     if ((TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id || 0))) {
       comps.push(
         <TombsOfAmascutMonsterContainer
+          key={'toa'}
           monster={monster}
           isPathMonster={(TOMBS_OF_AMASCUT_PATH_MONSTER_IDS.includes(monster.id || 0))}
         />
@@ -102,7 +103,7 @@ const MonsterContainer: React.FC = observer(() => {
 
     if ((PARTY_SIZE_REQUIRED_MONSTER_IDS.includes(monster.id || 0))) {
       comps.push(
-        <div className={'mt-4'}>
+        <div className={'mt-4'} key={'party-size'}>
           <h4 className={'font-bold font-serif'}>
             <img src={raidsIcon.src} alt={''} className={'inline-block'}/>{' '}
             Party size
@@ -122,10 +123,10 @@ const MonsterContainer: React.FC = observer(() => {
 
     if ((COX_MONSTER_IDS.includes(monster.id || 0))) {
       comps.push(
-        <div className={'mt-4'}>
+        <div className={'mt-4'} key={'cox-cb'}>
           <h4 className={'font-bold font-serif'}>
             <img src={raidsIcon.src} alt={''} className={'inline-block'}/>{' '}
-            Party's highest combat level
+            Party&apos;s highest combat level
           </h4>
           <div className={'mt-2'}>
             <NumberInput
@@ -142,10 +143,10 @@ const MonsterContainer: React.FC = observer(() => {
 
     if ((GUARDIAN_IDS.includes(monster.id || 0))) {
       comps.push(
-        <div className={'mt-4'}>
+        <div className={'mt-4'} key={'cox-guardian'}>
           <h4 className={'font-bold font-serif'}>
             <img src={mining.src} alt={''} className={'inline-block'}/>{' '}
-            Party's average mining level
+            Party&apos;s average mining level
           </h4>
           <div className={'mt-2'}>
             <NumberInput
@@ -283,7 +284,7 @@ const MonsterContainer: React.FC = observer(() => {
                   </div>
                 </div>
                 {(extraMonsterOptions.length > 0) && (
-                  <div className={'mt-4 grid grid-cols-2 gap-x-2'}>
+                  <div className={'mt-4 flex flex-wrap gap-x-4'}>
                     {extraMonsterOptions}
                   </div>
                 )}
