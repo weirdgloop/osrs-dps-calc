@@ -1,6 +1,6 @@
 import {EquipmentPiece, Player} from '@/types/Player';
 import {Monster} from '@/types/Monster';
-import {AttackDistribution, HitDistribution, WeightedHit} from "@/lib/HitDist";
+import {AttackDistribution, HitDistribution} from "@/lib/HitDist";
 import {isFireSpell} from "@/types/Spell";
 import {PrayerMap} from "@/enums/Prayer";
 import {sum} from "d3-array";
@@ -464,6 +464,14 @@ export default class CombatCalc {
       attackRoll = Math.trunc(attackRoll * 23/20);
     }
 
+    if (this.player.spell.name.includes('Demonbane') && mattrs.includes('demon')) {
+      if (this.player.buffs.markOfDarknessSpell) {
+        attackRoll = Math.trunc(attackRoll * 28 / 20);
+      } else {
+        // still retains a 20% accuracy buff without mark
+        attackRoll = Math.trunc(attackRoll * 24 / 20);
+      }
+    }
     if (this.wearing(["Thammaron's sceptre", "Accursed sceptre"]) && buffs.inWilderness) {
       attackRoll = Math.trunc(attackRoll * 3/2);
     }
@@ -559,6 +567,10 @@ export default class CombatCalc {
     maxHit = Math.trunc(maxHit * (1000 + magicDmgBonus) / 1000);
 
     if (blackMaskBonus) maxHit = Math.trunc(maxHit * 23/20);
+
+    if (this.player.buffs.markOfDarknessSpell && this.player.spell.name.includes('Demonbane') && mattrs.includes('demon')) {
+      maxHit = Math.trunc(maxHit * 25/20);
+    }
 
     return maxHit;
   }
@@ -695,7 +707,7 @@ export default class CombatCalc {
   }
 
   public getAttackSpeed(): number {
-    return this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;;
+    return this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;
   }
 
   /**
