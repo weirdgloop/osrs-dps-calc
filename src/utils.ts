@@ -79,13 +79,6 @@ export const isDevServer = () => {
   return process.env.NODE_ENV === 'development';
 }
 
-export const truncateText = (text: string, length: number) => {
-  if (text.length <= length) {
-    return text;
-  }
-  return text.substring(0, length) + '\u2026'
-}
-
 export const WORKER_JSON_REPLACER: (key: string, value: any) => any = (k, v) => {
   if (v instanceof Map) {
     return {

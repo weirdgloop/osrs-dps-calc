@@ -19,7 +19,7 @@ import MonsterSelect from './MonsterSelect';
 import {useStore} from '@/state';
 import {observer} from 'mobx-react-lite';
 import {MonsterAttribute} from '@/enums/MonsterAttribute';
-import {getCdnImage, truncateText} from '@/utils';
+import {getCdnImage} from '@/utils';
 import PresetAttributeButton from "@/app/components/monster/PresetAttributeButton";
 import NumberInput from "@/app/components/generic/NumberInput";
 import {
@@ -185,7 +185,7 @@ const MonsterContainer: React.FC = observer(() => {
               />
             </div>
             <h1 className={`font-serif tracking-tight font-bold`}>
-              {monster.name ? truncateText(monster.name, 22) : 'Monster'}
+              {monster.name ? monster.name : 'Monster'}
             </h1>
           </div>
           {monster.id && (
