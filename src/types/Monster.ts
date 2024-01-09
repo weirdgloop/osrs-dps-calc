@@ -25,6 +25,11 @@ export interface Monster {
     [k in CombatStyleType]: number;
   }
   /**
+   * Whether the monster is from the Chambers of Xeric: Challenge Mode.
+   * Not exposed as a UI option.
+   */
+  isFromCoxCm: boolean;
+  /**
    * Invocation level for Tombs of Amascut
    * @see https://oldschool.runescape.wiki/w/Tombs_of_Amascut#Invocations_and_Raid_Level
    */
@@ -35,8 +40,20 @@ export interface Monster {
    */
   toaPathLevel: number;
   /**
+   * Max combat level of the party for Chambers of Xeric.
+   */
+  partyMaxCombatLevel: number;
+  /**
+   * Average mining level of the party for Chambers of Xeric.
+   */
+  partyAvgMiningLevel: number;
+  /**
+   * Highest hitpoints level of the party for Chambers of Xeric.
+   */
+  partyMaxHpLevel: number;
+  /**
    * Party size for ToB/CoX/ToA
-   * TODO CoX formulas not yet known
+   * @see https://github.com/weirdgloop/osrs-dps-calc/issues/29
    * @see https://oldschool.runescape.wiki/w/Theatre_of_Blood/Strategies
    * @see https://oldschool.runescape.wiki/w/Tombs_of_Amascut#Mechanics
    */

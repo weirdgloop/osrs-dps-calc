@@ -1,5 +1,6 @@
 import {Monster} from "@/types/Monster";
 import {
+  COX_MONSTER_IDS,
   TOB_EM_MONSTER_IDS,
   TOB_MONSTER_IDS,
   TOMBS_OF_AMASCUT_MONSTER_IDS,
@@ -66,7 +67,13 @@ export const scaledMonster: (m: Monster) => Monster = m => {
     }
   }
   
-  // todo cox
+  if (COX_MONSTER_IDS.includes(m.id || 0)) {
+    const cmb = Math.min(126, Math.max(3, m.partyMaxCombatLevel));
+    const hp = Math.min(99, Math.max(1, m.partyMaxHpLevel));
+    const min = Math.min(99, Math.max(1, m.partyAvgMiningLevel));
+    const ps = Math.min(100, Math.max(1, m.partySize));
+    const cm = m.isFromCoxCm;
+  }
   
   return m;
 }

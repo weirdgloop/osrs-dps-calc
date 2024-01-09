@@ -9,6 +9,7 @@ import hitpoints from '@/public/img/bonuses/hitpoints.png';
 import attack from '@/public/img/bonuses/attack.png';
 import strength from '@/public/img/bonuses/strength.png';
 import defence from '@/public/img/bonuses/defence.png';
+import mining from '@/public/img/bonuses/mining.png';
 import magicStrength from '@/public/img/bonuses/magic_strength.png';
 import rangedStrength from '@/public/img/bonuses/ranged_strength.png';
 import toaRaidLevel from '@/public/img/toa_raidlevel.webp';
@@ -22,6 +23,7 @@ import {getCdnImage, truncateText} from '@/utils';
 import PresetAttributeButton from "@/app/components/monster/PresetAttributeButton";
 import NumberInput from "@/app/components/generic/NumberInput";
 import {
+  COX_MONSTER_IDS, GUARDIAN_IDS,
   PARTY_SIZE_REQUIRED_MONSTER_IDS,
   TOMBS_OF_AMASCUT_MONSTER_IDS,
   TOMBS_OF_AMASCUT_PATH_MONSTER_IDS
@@ -112,6 +114,46 @@ const MonsterContainer: React.FC = observer(() => {
               max={100}
               step={1}
               onChange={(v) => store.updateMonster({partySize: v})}
+            />
+          </div>
+        </div>
+      )
+    }
+
+    if ((COX_MONSTER_IDS.includes(monster.id || 0))) {
+      comps.push(
+        <div className={'mt-4'}>
+          <h4 className={'font-bold font-serif'}>
+            <img src={raidsIcon.src} alt={''} className={'inline-block'}/>{' '}
+            Party's highest combat level
+          </h4>
+          <div className={'mt-2'}>
+            <NumberInput
+              value={monster.partyAvgMiningLevel}
+              min={3}
+              max={126}
+              step={1}
+              onChange={(v) => store.updateMonster({partyMaxCombatLevel: v})}
+            />
+          </div>
+        </div>
+      )
+    }
+
+    if ((GUARDIAN_IDS.includes(monster.id || 0))) {
+      comps.push(
+        <div className={'mt-4'}>
+          <h4 className={'font-bold font-serif'}>
+            <img src={mining.src} alt={''} className={'inline-block'}/>{' '}
+            Party's average mining level
+          </h4>
+          <div className={'mt-2'}>
+            <NumberInput
+              value={monster.partyAvgMiningLevel}
+              min={1}
+              max={99}
+              step={1}
+              onChange={(v) => store.updateMonster({partyAvgMiningLevel: v})}
             />
           </div>
         </div>

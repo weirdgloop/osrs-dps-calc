@@ -50,6 +50,7 @@ const MonsterSelect: React.FC = observer(() => {
           stab: m.defensive[4]
         },
         attributes: m.attributes,
+        isFromCoxCm: m.version.includes('Challenge Mode'),
       }
     }
   }), [])

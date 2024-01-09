@@ -62,8 +62,57 @@ export const TOB_EM_MONSTER_IDS = [
   10837, 10841, 10842, 10843, 10844, 10845 // verzik web + nylos
 ];
 
+/**
+ * IDs of Tekton from the Chambers of Xeric. 
+ * Separated due to different defence scaling rules.
+ */
+export const TEKTON_IDS = [
+  7540, 7543, // reg
+  7544, 7545, // cm
+];
+
+/**
+ * IDs of Guardians from the Chambers of Xeric. 
+ * Separated due to different health scaling rules.
+ */
+export const GUARDIAN_IDS = [
+  7569, 7571, // reg
+  7570, 7572, // cm
+];
+
+/**
+ * IDs of the Great Olm from the Chambers of Xeric. 
+ * Separated due to different health, offence, and defence scaling rules.
+ */
+export const OLM_IDS = [
+  7550, 7551, 7552, // reg
+  7553, 7554, 7555, // cm
+];
+
+/**
+ * IDs of monsters found in the Chambers of Xeric.
+ * Note that Scavengers are not scaled, and so are not included here.
+ */
+export const COX_MONSTER_IDS = [
+  ...TEKTON_IDS,
+  ...GUARDIAN_IDS,
+  ...OLM_IDS,
+  7584, 7585, // ice demon
+  7573, 7574, // shamans
+  7527, 7528, 7529, // vanguard
+  7530, 7531, 7532, // vespula
+  7538, 7539, // vespine soldier
+  7533, // abyssal portal
+  7559, 7560, // tightrope ranger, mager
+  7566, 7567, // vasa
+  7568, // vasa crystal
+  7604, 7605, 7606, // mystics
+  7561, 7562, 7563, // muttadiles
+];
+
 export const PARTY_SIZE_REQUIRED_MONSTER_IDS = [
   ...TOMBS_OF_AMASCUT_MONSTER_IDS,
   ...TOB_MONSTER_IDS,
   ...TOB_EM_MONSTER_IDS,
+  ...COX_MONSTER_IDS,
 ];

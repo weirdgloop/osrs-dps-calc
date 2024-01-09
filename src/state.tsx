@@ -178,8 +178,12 @@ class GlobalState implements State {
       stab: 20,
     },
     attributes: ['demon'],
+    isFromCoxCm: false,
     toaInvocationLevel: 0,
     toaPathLevel: 0,
+    partyMaxCombatLevel: 126,
+    partyAvgMiningLevel: 99,
+    partyMaxHpLevel: 99,
     partySize: 1,
   }
 
