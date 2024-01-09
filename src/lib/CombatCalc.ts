@@ -43,7 +43,7 @@ export default class CombatCalc {
   /**
    * Simple utility function for checking if an item name is equipped. If an array of string is passed instead, this
    * function will return a boolean indicating whether ANY of the provided items are equipped.
-   * @param item
+   * @param item - item name
    */
   private wearing(item: string): boolean;
   private wearing(items: string[]): boolean;
@@ -57,72 +57,152 @@ export default class CombatCalc {
 
   /**
    * Simple utility function for checking if ALL passed items are equipped.
-   * @param items
+   * @param items - array of item names
    */
   private wearingAll(items: string[]) {
     return items.every((i) => this.allEquippedItems.includes(i));
   }
 
+  /**
+   * Whether the player is using either a slash, crush, or stab combat style.
+   */
+  private isUsingMeleeStyle(): boolean {
+    return ['slash', 'crush', 'stab'].includes(this.player.style.type);
+  }
+
+  /**
+   * Whether the player is wearing the full melee void set.
+   * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
+   */
   private isWearingMeleeVoid(): boolean {
     return this.wearingAll(['Void melee helm', 'Void knight top', 'Void knight robe', 'Void knight gloves']);
   }
 
+  /**
+   * Whether the player is wearing the full elite ranged void set.
+   * @see https://oldschool.runescape.wiki/w/Elite_Void_Knight_equipment
+   */
   private isWearingEliteRangedVoid(): boolean {
     return this.wearingAll(['Void ranged helm', 'Elite void top', 'Elite void robe', 'Void knight gloves']);
   }
 
+  /**
+   * Whether the player is wearing the full elite magic void set.
+   * @see https://oldschool.runescape.wiki/w/Elite_Void_Knight_equipment
+   */
   private isWearingEliteMagicVoid(): boolean {
     return this.wearingAll(['Void magic helm', 'Elite void top', 'Elite void robe', 'Void knight gloves']);
   }
 
+  /**
+   * Whether the player is wearing the full ranged void set.
+   * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
+   */
   private isWearingRangedVoid(): boolean {
     return this.wearingAll(['Void ranger helm', 'Void knight top', 'Void knight robe', 'Void knight gloves']);
   }
 
+  /**
+   * Whether the player is wearing the full magic void set.
+   * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
+   */
   private isWearingMagicVoid(): boolean {
     return this.wearingAll(['Void magic helm', 'Void knight top', 'Void knight robe', 'Void knight gloves']);
   }
 
+  /**
+   * Whether the player is wearing any item that acts as a black mask for the purpose of its effect.
+   * @see https://oldschool.runescape.wiki/w/Black_mask
+   */
   private isWearingBlackMask(): boolean {
     return this.isWearingImbuedBlackMask() || this.wearing(['Black mask', 'Slayer helmet']);
   }
 
+  /**
+   * Whether the player is wearing any item that acts as an imbued black mask for the purpose of its effect.
+   * @see https://oldschool.runescape.wiki/w/Black_mask_(i)
+   */
   private isWearingImbuedBlackMask(): boolean {
     return this.wearing(['Black mask (i)', 'Slayer helmet (i)']);
   }
 
+  /**
+   * Whether the player is using a smoke battlestaff or mystic smoke staff.
+   * @see https://oldschool.runescape.wiki/w/Smoke_battlestaff
+   */
   private isWearingSmokeStaff(): boolean {
     return this.wearing(['Smoke battlestaff', 'Mystic smoke staff']);
   }
 
+  /**
+   * Whether the player is using a Tzhaar weapon.
+   * @see https://oldschool.runescape.wiki/w/Obsidian_equipment
+   */
   private isWearingTzhaarWeapon(): boolean {
     return this.wearing(["Tzhaar-ket-em", "Tzhaar-ket-om", "Tzhaar-ket-om (t)", "Toktz-xil-ak", "Toktz-xil-ek"]);
   }
 
+  /**
+   * Whether the player is wearing the entire set of obsidian armour.
+   * @see https://oldschool.runescape.wiki/w/Obsidian_equipment
+   */
   private isWearingObsidian(): boolean {
     return this.wearingAll(['Obsidian helmet', 'Obsidian platelegs', 'Obsidian platebody']);
   }
 
+  /**
+   * Whether the player is using an item that acts as a crystal bow for the purpose of its effect.
+   * @see https://oldschool.runescape.wiki/w/Crystal_bow
+   */
   private isWearingCrystalBow(): boolean {
     return this.wearing('Crystal bow') || this.allEquippedItems.some((ei) => ei.includes('Bow of faerdhinen'));
   }
 
+  /**
+   * Whether the player is using any variant of Osmumten's fang.
+   * @see https://oldschool.runescape.wiki/w/Osmumten%27s_fang
+   */
   private isWearingFang(): boolean {
     return this.wearing(["Osmumten's fang", "Osmumten's fang (or)"]);
   }
 
+  /**
+   * Whether the player is using any variant of the scythe of vitur.
+   * @see https://oldschool.runescape.wiki/w/Scythe_of_vitur
+   */
   private isWearingScythe(): boolean {
     return this.wearing('Scythe of vitur') || this.allEquippedItems.some((ei) => ei.includes('of vitur'));
   }
 
+  /**
+   * Whether the player is using the Keris dagger.
+   * @see https://oldschool.runescape.wiki/w/Keris
+   */
   private isWearingKeris(): boolean {
     return this.allEquippedItems.some((ei) => ei.includes('Keris'));
   }
+
+  /**
+   * Whether the player is wearing the entire Dharok the Wretched's equipment set.
+   * @see https://oldschool.runescape.wiki/w/Dharok_the_Wretched%27s_equipment
+   */
+  private isWearingDharok(): boolean {
+    return this.wearingAll(["Dharok's helm", "Dharok's platebody", "Dharok's platelegs", "Dharok's greataxe"])
+  }
+
+  /**
+   * Whether the player is wearing the entire Ahrim the Blighted's equipment set.
+   * @see https://oldschool.runescape.wiki/w/Ahrim_the_Blighted%27s_equipment
+   */
 
   private isWearingAhrims(): boolean {
     return this.wearingAll(["Ahrim's staff", "Ahrim's hood", "Ahrim's robetop", "Ahrim's robeskirt", "Amulet of the damned"])
   }
 
+  /**
+   * Whether the player is using a combat spell from the Mage Arena.
+   * @see https://oldschool.runescape.wiki/w/God_spells
+   */
   private isUsingGodSpell(): boolean {
     return ['Saradomin Strike', 'Claws of Guthix', 'Flames of Zamorak'].includes(this.player.spell.name);
   }
@@ -577,20 +657,12 @@ export default class CombatCalc {
 
   private getPrayerBonus(accuracy: boolean): number {
     let prayers = this.player.prayers.map(p => PrayerMap[p]);
-    switch (this.player.style.type) {
-      case "stab":
-      case "slash":
-      case "crush":
-        prayers = prayers.filter(p => p.combatStyle === "melee");
-        break;
-
-      case "ranged":
-        prayers = prayers.filter(p => p.combatStyle === "ranged");
-        break;
-
-      case "magic":
-        prayers = prayers.filter(p => p.combatStyle === "magic");
-        break;
+    if (this.isUsingMeleeStyle()) {
+      prayers = prayers.filter(p => p.combatStyle === "melee");
+    } else if (this.player.style.type === 'ranged') {
+      prayers = prayers.filter(p => p.combatStyle === "ranged");
+    } else if (this.player.style.type === 'magic') {
+      prayers = prayers.filter(p => p.combatStyle === "magic");
     }
 
     return 1 + sum(prayers.map(p => accuracy ? p.factorAccuracy : p.factorStrength));
@@ -601,16 +673,15 @@ export default class CombatCalc {
    */
   private getMaxHit() {
     const style = this.player.style.type;
-    switch (style) {
-      case 'crush':
-      case 'slash':
-      case 'stab':
-        return this.getPlayerMaxMeleeHit();
-      case 'ranged':
-        return this.getPlayerMaxRangedHit();
-      case 'magic':
-        return this.getPlayerMaxMagicHit();
+    if (this.isUsingMeleeStyle()) {
+      return this.getPlayerMaxMeleeHit();
+    } else if (style === 'ranged') {
+      return this.getPlayerMaxRangedHit();
+    } else if (style === 'magic') {
+      return this.getPlayerMaxMagicHit();
     }
+
+    return 0;
   }
 
   /**
@@ -618,16 +689,15 @@ export default class CombatCalc {
    */
   public getMaxAttackRoll() {
     const style = this.player.style.type;
-    switch (style) {
-      case 'crush':
-      case 'slash':
-      case 'stab':
-        return this.getPlayerMaxMeleeAttackRoll();
-      case 'ranged':
-        return this.getPlayerMaxRangedAttackRoll();
-      case 'magic':
-        return this.getPlayerMaxMagicAttackRoll();
+    if (this.isUsingMeleeStyle()) {
+      return this.getPlayerMaxMeleeAttackRoll();
+    } else if (style === 'ranged') {
+      return this.getPlayerMaxRangedAttackRoll();
+    } else if (style === 'magic') {
+      return this.getPlayerMaxMagicAttackRoll();
     }
+
+    return 0;
   }
 
   public getHitChance() {
@@ -706,6 +776,9 @@ export default class CombatCalc {
     return dist;
   }
 
+  /**
+   * Returns the player's attack speed.
+   */
   public getAttackSpeed(): number {
     return this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;
   }
