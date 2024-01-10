@@ -755,6 +755,12 @@ export default class CombatCalc {
       ])
     }
 
+    if (this.isWearingDharok()) {
+      const max = this.player.skills.hp;
+      const curr = this.player.skills.hp + this.player.boosts.hp;
+      dist = dist.scaleDamage(10000 + (max - curr) * max, 10000);
+    }
+
     if (this.isWearingScythe()) {
       const hits: HitDistribution[] = [];
       for (let i = 0; i < Math.min(Math.max(this.monster.size, 1), 3); i++) {
