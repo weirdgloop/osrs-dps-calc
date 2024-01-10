@@ -87,7 +87,7 @@ const generateInitialEquipment = () => {
   return equipment as PlayerEquipment;
 }
 
-const generateEmptyPlayer: () => Player = () => {
+export const generateEmptyPlayer: () => Player = () => {
   return {
     username: '',
     style: getCombatStylesForCategory(EquipmentCategory.NONE)[0],
