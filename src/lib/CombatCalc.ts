@@ -758,9 +758,11 @@ export default class CombatCalc {
     
     if (this.wearing('Gadderhammer') && mattrs.includes('shade')) {
       dist = new AttackDistribution([
-        standardHitDist.scaleProbability(0.95).scaleDamage(5, 4),
-        standardHitDist.scaleProbability(0.05).scaleDamage(2)
-      ])
+        new HitDistribution([
+          ...standardHitDist.scaleProbability(0.95).scaleDamage(5, 4).hits,
+          ...standardHitDist.scaleProbability(0.05).scaleDamage(2).hits
+        ]),
+      ]);
     }
 
     if (this.isWearingDharok()) {
@@ -774,7 +776,7 @@ export default class CombatCalc {
         new HitDistribution([
           ...standardHitDist.scaleProbability(0.75).hits,
           ...HitDistribution.linear(1.0, 1, max + 1).scaleProbability(0.25).hits,
-        ])
+        ]),
       ]);
     }
 
