@@ -280,7 +280,7 @@ class GlobalState implements State {
       return (v !== null && v !== undefined);
     }) as EquipmentPiece[]);
   }
-  
+
   recalculateEquipmentBonusesFromGear() {
     const newBonuses = this.equipmentBonuses;
     this.updatePlayer({
@@ -454,7 +454,7 @@ class GlobalState implements State {
 
       if (newWeapon !== undefined) {
         const oldWeaponCat = currentWeapon?.category || EquipmentCategory.NONE;
-        const newWeaponCat = newWeapon.category || EquipmentCategory.NONE;
+        const newWeaponCat = newWeapon?.category || EquipmentCategory.NONE;
         if ((newWeaponCat !== undefined) && (newWeaponCat !== oldWeaponCat)) {
           // If the weapon slot category was changed, we should reset the player's selected combat style to the first one that exists.
           player.style = getCombatStylesForCategory(newWeaponCat)[0];
