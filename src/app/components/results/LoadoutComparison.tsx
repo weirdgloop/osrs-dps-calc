@@ -1,10 +1,14 @@
 import React, {useCallback, useMemo, useState} from 'react';
 import {
-  XAxis,
-  YAxis,
-  Tooltip,
+  CartesianGrid,
+  Legend,
+  Line,
+  LineChart,
   ResponsiveContainer,
-  LineChart, Legend, Line, TooltipProps, CartesianGrid
+  Tooltip,
+  TooltipProps,
+  XAxis,
+  YAxis
 } from 'recharts';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
@@ -215,18 +219,27 @@ const LoadoutComparison: React.FC = observer(() => {
     const x = xAxisType?.value;
     const y = yAxisType?.value;
     if (x === undefined || y === undefined) {
-      return [];
+      return {
+        max: 1,
+        lines: [],
+      };
     }
 
+    let max = 1;
     const lines: { name: number, [lKey: string]: string | number }[] = [];
     for (let input of inputRange(x, loadouts, monster)) {
       const entry: typeof lines[0] = {name: input.xValue,};
       input.loadouts.forEach((l, i) => {
-        entry[`Loadout ${i+1}`] = getOutput(y, l, input.monster).toFixed(2);
+        const v = getOutput(y, l, input.monster);
+        entry[`Loadout ${i+1}`] = v.toFixed(2);
+        max = Math.max(max, v);
       });
       lines.push(entry);
     }
-    return lines;
+    return {
+      max,
+      lines,
+    };
   }, [xAxisType, yAxisType, monster, loadouts]);
 
   const generateLines = useCallback(() => {
@@ -258,7 +271,7 @@ const LoadoutComparison: React.FC = observer(() => {
     <>
       <ResponsiveContainer width={'100%'} height={200}>
         <LineChart
-          data={data}
+          data={data.lines}
         >
           <XAxis
             allowDecimals={true}
@@ -268,7 +281,7 @@ const LoadoutComparison: React.FC = observer(() => {
           />
           <YAxis
             stroke="#777777"
-            domain={[0, 'dataMax']}
+            domain={[0, data.max]}
             interval={'equidistantPreserveStart'}
           />
           <CartesianGrid stroke="gray" strokeDasharray="5 5"/>
