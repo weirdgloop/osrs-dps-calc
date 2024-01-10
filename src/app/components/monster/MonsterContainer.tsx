@@ -158,7 +158,7 @@ const MonsterContainer: React.FC = observer(() => {
       )
 
       comps.push(
-        <div className={'mt-4'} key={'cox-cb'}>
+        <div className={'mt-4'} key={'cox-hp'}>
           <h4 className={'font-bold font-serif'}>
             <img src={raidsIcon.src} alt={''} className={'inline-block'}/>{' '}
             Party&apos;s highest HP level
