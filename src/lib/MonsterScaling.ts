@@ -12,6 +12,7 @@ import {
   TOMBS_OF_AMASCUT_MONSTER_IDS,
   TOMBS_OF_AMASCUT_PATH_MONSTER_IDS
 } from "@/constants";
+import {MonsterAttribute} from "@/enums/MonsterAttribute";
 
 export const scaledMonster: (m: Monster) => Monster = m => {
   const mId = m.id || 0;
@@ -75,7 +76,7 @@ export const scaledMonster: (m: Monster) => Monster = m => {
     }
   }
   
-  if (m.attributes.includes('xerician')) {
+  if (m.attributes.includes(MonsterAttribute.XERICIAN)) {
     const cmb = Math.min(126, Math.max(3, m.partyMaxCombatLevel));
     const hp = Math.min(99, Math.max(1, m.partyMaxHpLevel));
     const min = Math.min(99, Math.max(1, m.partyAvgMiningLevel));

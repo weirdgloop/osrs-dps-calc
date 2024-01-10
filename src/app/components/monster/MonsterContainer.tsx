@@ -104,7 +104,7 @@ const MonsterContainer: React.FC = observer(() => {
       )
     }
 
-    if (monster.attributes.includes('xerician')) {
+    if (monster.attributes.includes(MonsterAttribute.XERICIAN)) {
       comps.push(
         <div className={'mt-4'} key={'cox-cm'}>
           <h4 className={'font-bold font-serif'}>
@@ -118,7 +118,7 @@ const MonsterContainer: React.FC = observer(() => {
       )
     }
 
-    if ((PARTY_SIZE_REQUIRED_MONSTER_IDS.includes(monster.id || 0)) || monster.attributes.includes('xerician')) {
+    if ((PARTY_SIZE_REQUIRED_MONSTER_IDS.includes(monster.id || 0)) || monster.attributes.includes(MonsterAttribute.XERICIAN)) {
       comps.push(
         <div className={'mt-4'} key={'party-size'}>
           <h4 className={'font-bold font-serif'}>
@@ -138,7 +138,7 @@ const MonsterContainer: React.FC = observer(() => {
       )
     }
 
-    if (monster.attributes.includes('xerician')) {
+    if (monster.attributes.includes(MonsterAttribute.XERICIAN)) {
       comps.push(
         <div className={'mt-4'} key={'cox-cb'}>
           <h4 className={'font-bold font-serif'}>

@@ -5,6 +5,7 @@ import {observer} from 'mobx-react-lite';
 
 import {Monster} from '@/types/Monster';
 import Combobox from '../generic/Combobox';
+import {MonsterAttribute} from "@/enums/MonsterAttribute";
 
 interface MonsterOption {
   label: string;
@@ -49,7 +50,7 @@ const MonsterSelect: React.FC = observer(() => {
           slash: m.defensive[3],
           stab: m.defensive[4]
         },
-        attributes: m.attributes,
+        attributes: m.attributes as MonsterAttribute[],
       }
     }
   }), [])

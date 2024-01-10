@@ -4,6 +4,8 @@ import {AttackDistribution, HitDistribution, WeightedHit} from "@/lib/HitDist";
 import {isFireSpell} from "@/types/Spell";
 import {PrayerMap} from "@/enums/Prayer";
 import {sum} from "d3-array";
+import {isVampyre, MonsterAttribute} from "@/enums/MonsterAttribute";
+import {TOMBS_OF_AMASCUT_MONSTER_IDS} from "@/constants";
 
 const DEFAULT_ATTACK_SPEED = 4;
 const SECONDS_PER_TICK = 0.6;
@@ -268,9 +270,9 @@ export default class CombatCalc {
     const buffs = this.player.buffs;
 
     // These bonuses do not stack with each other
-    if (this.wearing(['Salve amulet (e), Salve amulet(ei)']) && mattrs.includes('undead')) {
+    if (this.wearing(['Salve amulet (e), Salve amulet(ei)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
       attackRoll = Math.trunc(attackRoll * 6/5);
-    } else if (this.wearing(['Salve amulet', 'Salve amulet(i)']) && mattrs.includes('undead')) {
+    } else if (this.wearing(['Salve amulet', 'Salve amulet(i)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
       attackRoll = Math.trunc(attackRoll * 7/6);
     } else if (this.isWearingBlackMask() && buffs.onSlayerTask) {
       attackRoll = Math.trunc(attackRoll * 7/6);
@@ -279,16 +281,16 @@ export default class CombatCalc {
     if (this.wearing(["Viggora's chainmace", 'Ursine chainmace']) && buffs.inWilderness) {
       attackRoll = Math.trunc(attackRoll * 3/2);
     }
-    if (this.wearing('Arclight') && mattrs.includes('demonic')) {
+    if (this.wearing('Arclight') && mattrs.includes(MonsterAttribute.DEMON)) {
       attackRoll = Math.trunc(attackRoll * 17/10);
     }
-    if (this.wearing('Dragon hunter lance') && mattrs.includes('draconic')) {
+    if (this.wearing('Dragon hunter lance') && mattrs.includes(MonsterAttribute.DRAGON)) {
       attackRoll = Math.trunc(attackRoll * 6/5);
     }
-    if (this.wearing('Keris partisan of breaching') && mattrs.includes('kalphite')) {
+    if (this.wearing('Keris partisan of breaching') && mattrs.includes(MonsterAttribute.DRAGON)) {
       attackRoll = Math.trunc(attackRoll * 133/100); // https://twitter.com/JagexAsh/status/1704107285381787952
     }
-    if (this.wearing(['Blisterwood flail', 'Blisterwood sickle']) && mattrs.includes('vampyre')) {
+    if (this.wearing(['Blisterwood flail', 'Blisterwood sickle']) && isVampyre(mattrs)) {
       attackRoll = Math.trunc(attackRoll * 21/20);
     }
     if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {
@@ -343,15 +345,15 @@ export default class CombatCalc {
     const buffs = this.player.buffs;
 
     // These bonuses do not stack with each other
-    if (this.wearing(['Salve amulet (e)', 'Salve amulet(ei)']) && mattrs.includes('undead')) {
+    if (this.wearing(['Salve amulet (e)', 'Salve amulet(ei)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
       maxHit = Math.trunc(maxHit * 6/5);
-    } else if (this.wearing(['Salve amulet', 'Salve amulet(i)']) && mattrs.includes('undead')) {
+    } else if (this.wearing(['Salve amulet', 'Salve amulet(i)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
       maxHit = Math.trunc(maxHit * 7/6);
     } else if (this.isWearingBlackMask() && buffs.onSlayerTask) {
       maxHit = Math.trunc(maxHit * 7/6);
     }
 
-    if (this.wearing('Arclight') && mattrs.includes('demonic')) {
+    if (this.wearing('Arclight') && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = Math.trunc(maxHit * 17/10);
     }
     if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {
@@ -360,31 +362,31 @@ export default class CombatCalc {
     if (this.isWearingTzhaarWeapon() && this.wearing('Berserker necklace')) {
       maxHit = Math.trunc(maxHit * 6/5);
     }
-    if (this.wearing('Dragon hunter lance') && mattrs.includes('draconic')) {
+    if (this.wearing('Dragon hunter lance') && mattrs.includes(MonsterAttribute.DRAGON)) {
       maxHit = Math.trunc(maxHit * 6/5);
     }
-    if (this.isWearingKeris() && mattrs.includes('kalphite')) {
+    if (this.isWearingKeris() && mattrs.includes(MonsterAttribute.KALPHITE)) {
       maxHit = Math.trunc(maxHit * 133/100);
     }
-    if (this.wearing('Barronite mace') && mattrs.includes('golem')) {
+    if (this.wearing('Barronite mace') && mattrs.includes(MonsterAttribute.GOLEM)) {
       maxHit = Math.trunc(maxHit * 6/5);
     }
     if (this.wearing(["Viggora's chainmace", 'Ursine chainmace']) && buffs.inWilderness) {
       maxHit = Math.trunc(maxHit * 3/2);
     }
-    if (this.wearing(['Silverlight', 'Darklight', 'Silverlight (dyed)']) && mattrs.includes('demonic')) {
+    if (this.wearing(['Silverlight', 'Darklight', 'Silverlight (dyed)']) && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = Math.trunc(maxHit * 8/5);
     }
-    if (this.wearing('Blisterwood flail') && mattrs.includes('vampyre')) {
+    if (this.wearing('Blisterwood flail') && isVampyre(mattrs)) {
       maxHit = Math.trunc(maxHit * 5/4);
     }
-    if (this.wearing('Blisterwood sickle') && mattrs.includes('vampyre')) {
+    if (this.wearing('Blisterwood sickle') && isVampyre(mattrs)) {
       maxHit = Math.trunc(maxHit * 23/20);
     }
-    if (this.wearing('Ivandis flail') && mattrs.includes('vampyre')) {
+    if (this.wearing('Ivandis flail') && isVampyre(mattrs)) {
       maxHit = Math.trunc(maxHit * 6/5);
     }
-    if (this.wearing('Leaf-bladed battleaxe') && mattrs.includes('leafy')) {
+    if (this.wearing('Leaf-bladed battleaxe') && mattrs.includes(MonsterAttribute.LEAFY)) {
       maxHit = Math.trunc(maxHit * 47/40);
     }
     if (this.wearing('Colossal blade')) {
@@ -432,9 +434,9 @@ export default class CombatCalc {
     const mattrs = this.monster.attributes;
     const buffs = this.player.buffs;
 
-    if (this.wearing('Salve amulet(ei)') && mattrs.includes('undead')) {
+    if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       attackRoll = Math.trunc(attackRoll * 6/5);
-    } else if (this.wearing('Salve amulet(i)') && mattrs.includes('undead')) {
+    } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       attackRoll = Math.trunc(attackRoll * 7/6);
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
       attackRoll = Math.trunc(attackRoll * 23/20);
@@ -442,7 +444,7 @@ export default class CombatCalc {
 
     if (this.wearing('Twisted bow')) {
       let cap = 250;
-      if (mattrs.includes('raids')) cap = 350;
+      if (mattrs.includes(MonsterAttribute.XERICIAN)) cap = 350;
 
       let tbowMagic = Math.max(this.monster.skills.magic, this.monster.offensive.magic);
       let m = Math.trunc(Math.min(tbowMagic, cap) * 3/10);
@@ -492,9 +494,9 @@ export default class CombatCalc {
     const mattrs = this.monster.attributes;
     const buffs = this.player.buffs;
 
-    if (this.wearing('Salve amulet(ei)') && mattrs.includes('undead')) {
+    if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       maxHit = Math.trunc(maxHit * 6/5);
-    } else if (this.wearing('Salve amulet(i)') && mattrs.includes('undead')) {
+    } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       maxHit = Math.trunc(maxHit * 7/6);
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
       maxHit = Math.trunc(maxHit * 23/20);
@@ -502,7 +504,7 @@ export default class CombatCalc {
 
     if (this.wearing('Twisted bow')) {
       let cap = 250;
-      if (mattrs.includes('raids')) cap = 350;
+      if (mattrs.includes(MonsterAttribute.XERICIAN)) cap = 350;
 
       let tbowMagic = Math.max(this.monster.skills.magic, this.monster.offensive.magic);
       let m = Math.trunc(Math.min(tbowMagic, cap) * 3/10);
@@ -547,20 +549,20 @@ export default class CombatCalc {
     let magicBonus = this.player.offensive.magic;
 
     if (this.wearing("Tumeken's shadow")) {
-      magicBonus = magicBonus * (mattrs.includes('toa') ? 4 : 3);
+      magicBonus = magicBonus * (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id || 0) ? 4 : 3);
     }
 
     let attackRoll = effectiveLevel * (magicBonus + 64);
 
-    if (this.wearing('Salve amulet(ei)') && mattrs.includes('undead')) {
+    if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       attackRoll = Math.trunc(attackRoll * 6/5);
-    } else if (this.wearing('Salve amulet(i)') && mattrs.includes('undead')) {
+    } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       attackRoll = Math.trunc(attackRoll * 23/20);
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
       attackRoll = Math.trunc(attackRoll * 23/20);
     }
 
-    if (this.player.spell.name.includes('Demonbane') && mattrs.includes('demon')) {
+    if (this.player.spell.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
       if (this.player.buffs.markOfDarknessSpell) {
         attackRoll = Math.trunc(attackRoll * 28 / 20);
       } else {
@@ -641,7 +643,7 @@ export default class CombatCalc {
 
     let magicDmgBonus = this.player.bonuses.magic_str * 10; // is magic_str correct here?
     if (this.wearing("Tumeken's shadow")) {
-      magicDmgBonus = magicDmgBonus * (mattrs.includes('toa') ? 4 : 3);
+      magicDmgBonus = magicDmgBonus * (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id || 0) ? 4 : 3);
     }
 
     if (this.isWearingEliteMagicVoid()) {
@@ -652,9 +654,9 @@ export default class CombatCalc {
     }
 
     let blackMaskBonus = false;
-    if (this.wearing('Salve amulet(ei)') && mattrs.includes('undead')) {
+    if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       magicDmgBonus = magicDmgBonus + 200;
-    } else if (this.wearing('Salve amulet(i)') && mattrs.includes('undead')) {
+    } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       magicDmgBonus = magicDmgBonus + 150;
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
       blackMaskBonus = true;
@@ -664,7 +666,7 @@ export default class CombatCalc {
 
     if (blackMaskBonus) maxHit = Math.trunc(maxHit * 23/20);
 
-    if (this.player.buffs.markOfDarknessSpell && this.player.spell.name.includes('Demonbane') && mattrs.includes('demon')) {
+    if (this.player.buffs.markOfDarknessSpell && this.player.spell.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = Math.trunc(maxHit * 25/20);
     }
 
@@ -729,7 +731,7 @@ export default class CombatCalc {
         : atk / (2 * (def + 1));
 
       if (this.isWearingFang()) {
-          if (this.monster.attributes.includes('toa')) {
+          if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id || 0)) {
               return (atk > def)
                   ? 1 - (def + 2) * (2 * def + 3) / (atk + 1) / (atk + 1) / 6
                   : atk * (4 * atk + 5) / 6 / (atk + 1) / (def + 1);
@@ -764,7 +766,7 @@ export default class CombatCalc {
       )
     }
     
-    if (this.wearing('Gadderhammer') && mattrs.includes('shade')) {
+    if (this.wearing('Gadderhammer') && mattrs.includes(MonsterAttribute.SHADE)) {
       dist = new AttackDistribution([
         new HitDistribution([
           ...standardHitDist.scaleProbability(0.95).scaleDamage(5, 4).hits,
@@ -808,7 +810,7 @@ export default class CombatCalc {
       dist = new AttackDistribution(hits);
     }
 
-    if (this.isWearingKeris() && mattrs.includes('kalphite')) {
+    if (this.isWearingKeris() && mattrs.includes(MonsterAttribute.KALPHITE)) {
       dist = new AttackDistribution([
         new HitDistribution([
           ...standardHitDist.scaleProbability(50.0 / 51.0).hits,

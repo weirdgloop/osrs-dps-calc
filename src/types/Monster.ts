@@ -1,4 +1,5 @@
 import {CombatStyleType} from "@/types/PlayerCombatStyle";
+import {MonsterAttribute} from "@/enums/MonsterAttribute";
 
 export interface Monster {
   id: number | null;
@@ -62,5 +63,5 @@ export interface Monster {
    * The attributes the monster has
    * @see https://oldschool.runescape.wiki/w/Monster_attribute
    */
-  attributes: string[];
+  attributes: MonsterAttribute[];
 }

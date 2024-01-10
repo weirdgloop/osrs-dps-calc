@@ -7,20 +7,11 @@ import {Calculator, ImportableData, Preferences, State, UI} from '@/types/State'
 import {ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, Prayer} from './enums/Prayer';
 import merge from 'lodash.mergewith';
 import {EquipmentCategory, getCombatStylesForCategory} from './enums/EquipmentCategory';
-import {
-  EquipmentPiece,
-  Player,
-  PlayerEquipment,
-  PlayerSkills
-} from '@/types/Player';
+import {EquipmentPiece, Player, PlayerEquipment, PlayerSkills} from '@/types/Player';
 import {Monster} from '@/types/Monster';
 import {MonsterAttribute} from "@/enums/MonsterAttribute";
 import {toast} from "react-toastify";
-import {
-  fetchPlayerSkills,
-  fetchShortlinkData,
-  WORKER_JSON_REPLACER
-} from "@/utils";
+import {fetchPlayerSkills, fetchShortlinkData, WORKER_JSON_REPLACER} from "@/utils";
 import {RecomputeValuesRequest, WorkerRequestType} from "@/types/WorkerData";
 import {scaledMonster} from "@/lib/MonsterScaling";
 
@@ -171,7 +162,7 @@ class GlobalState implements State {
       slash: 20,
       stab: 20,
     },
-    attributes: ['demon'],
+    attributes: [MonsterAttribute.DEMON],
     isFromCoxCm: false,
     toaInvocationLevel: 0,
     toaPathLevel: 0,
