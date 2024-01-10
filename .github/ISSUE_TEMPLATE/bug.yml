@@ -1,0 +1,47 @@
+name: Bug Report
+description: File a bug report
+labels: ["bug", "triage"]
+body:
+  - type: textarea
+    id: what-went-wrong
+    attributes:
+      label: What went wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: what-went-wrong
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: false
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: What browsers are you seeing the problem on?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: devices
+    attributes:
+      label: What device(s) are you seeing the problem on?
+      multiple: true
+      options:
+        - Windows
+        - macOS
+        - iOS
+        - Android
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Any other information
+      description: If you have any further information, enter it here.

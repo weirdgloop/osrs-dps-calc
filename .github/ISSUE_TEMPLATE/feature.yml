@@ -1,0 +1,17 @@
+name: Feature Request
+description: Request a new feature
+labels: ["feature request", "triage"]
+body:
+  - type: textarea
+    id: feature
+    attributes:
+      label: What feature would you like to see?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: If you are requesting new calculator functionality, please add any evidence that you have for the relevant calculations here, if any.
+    validations:
+      required: false
