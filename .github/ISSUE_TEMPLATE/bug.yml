@@ -9,7 +9,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: what-went-wrong
+    id: what-was-expected
     attributes:
       label: What did you expect to happen?
     validations:
@@ -45,3 +45,5 @@ body:
     attributes:
       label: Any other information
       description: If you have any further information, enter it here.
+    validations:
+      required: false
