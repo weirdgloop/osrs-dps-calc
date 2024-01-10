@@ -1,6 +1,6 @@
 import {EquipmentPiece, Player} from '@/types/Player';
 import {Monster} from '@/types/Monster';
-import {AttackDistribution, HitDistribution} from "@/lib/HitDist";
+import {AttackDistribution, HitDistribution, WeightedHit} from "@/lib/HitDist";
 import {isFireSpell} from "@/types/Spell";
 import {PrayerMap} from "@/enums/Prayer";
 import {sum} from "d3-array";
@@ -196,6 +196,14 @@ export default class CombatCalc {
    */
   private isWearingVeracs(): boolean {
     return this.wearingAll(["Verac's helm", "Verac's brassard", "Verac's plateskirt", "Verac's flail"])
+  }
+
+  /**
+   * Whether the player is wearing the entire Karil the Tainted's equipment set.
+   * @see https://oldschool.runescape.wiki/w/Karil_the_Tainted%27s_equipment
+   */
+  private isWearingKarils(): boolean {
+    return this.wearingAll(["Karil's coif", "Karil's leathertop", "Karil's leatherskirt", "Karil's crossbow", "Amulet of the damned"])
   }
 
   /**
@@ -776,6 +784,18 @@ export default class CombatCalc {
         new HitDistribution([
           ...standardHitDist.scaleProbability(0.75).hits,
           ...HitDistribution.linear(1.0, 1, max + 1).scaleProbability(0.25).hits,
+        ]),
+      ]);
+    }
+
+    if (this.isWearingKarils()) {
+      dist = new AttackDistribution([
+        standardHitDist.scaleProbability(0.75),
+        new HitDistribution([
+          ...standardHitDist.hits.map(h => new WeightedHit(
+            h.probability * 0.25, // 25% chance to
+            [...h.getHitsplats(), ...h.getHitsplats().map(s => Math.trunc(s / 2))] // deal a second hitsplat of half damage
+          )),
         ]),
       ]);
     }
