@@ -85,11 +85,13 @@ const Home: NextPage = observer(() => {
 
   useEffect(() => {
     // When equipment bonuses change, set the current equipment bonuses as the player's bonuses.
-    store.updatePlayer({
-      bonuses: store.equipmentBonuses.bonuses,
-      offensive: store.equipmentBonuses.offensive,
-      defensive: store.equipmentBonuses.defensive
-    })
+    if (!store.prefs.advancedMode) {
+      store.updatePlayer({
+        bonuses: store.equipmentBonuses.bonuses,
+        offensive: store.equipmentBonuses.offensive,
+        defensive: store.equipmentBonuses.defensive
+      })
+    }
   }, [store, store.equipmentBonuses]);
 
   useEffect(() => {
