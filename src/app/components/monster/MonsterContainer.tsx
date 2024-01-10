@@ -24,7 +24,7 @@ import {getCdnImage} from '@/utils';
 import PresetAttributeButton from "@/app/components/monster/PresetAttributeButton";
 import NumberInput from "@/app/components/generic/NumberInput";
 import {
-  COX_MONSTER_IDS, GUARDIAN_IDS,
+  GUARDIAN_IDS,
   PARTY_SIZE_REQUIRED_MONSTER_IDS,
   TOMBS_OF_AMASCUT_MONSTER_IDS,
   TOMBS_OF_AMASCUT_PATH_MONSTER_IDS
@@ -118,7 +118,7 @@ const MonsterContainer: React.FC = observer(() => {
       )
     }
 
-    if ((PARTY_SIZE_REQUIRED_MONSTER_IDS.includes(monster.id || 0))) {
+    if ((PARTY_SIZE_REQUIRED_MONSTER_IDS.includes(monster.id || 0)) || monster.attributes.includes('xerician')) {
       comps.push(
         <div className={'mt-4'} key={'party-size'}>
           <h4 className={'font-bold font-serif'}>
@@ -138,7 +138,7 @@ const MonsterContainer: React.FC = observer(() => {
       )
     }
 
-    if ((COX_MONSTER_IDS.includes(monster.id || 0))) {
+    if (monster.attributes.includes('xerician')) {
       comps.push(
         <div className={'mt-4'} key={'cox-cb'}>
           <h4 className={'font-bold font-serif'}>

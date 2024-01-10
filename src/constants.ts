@@ -81,38 +81,50 @@ export const GUARDIAN_IDS = [
 ];
 
 /**
+ * IDs of the Great Olm's head from the Chambers of Xeric.
+ * Separated due to different health scaling rules.
+ */
+export const OLM_HEAD_IDS = [
+  7551, // reg
+  7554, // cm
+];
+
+/**
  * IDs of the Great Olm from the Chambers of Xeric. 
  * Separated due to different health, offence, and defence scaling rules.
  */
 export const OLM_IDS = [
-  7550, 7551, 7552, // reg
-  7553, 7554, 7555, // cm
+  ...OLM_HEAD_IDS,
+  7550, 7552, // reg
+  7553, 7555, // cm
 ];
 
 /**
- * IDs of monsters found in the Chambers of Xeric.
- * Note that Scavengers are not scaled, and so are not included here.
+ * IDs of Scavenger beasts from the Chambers of Xeric.
+ * Separated due to different health scaling rules.
  */
-export const COX_MONSTER_IDS = [
-  ...TEKTON_IDS,
-  ...GUARDIAN_IDS,
-  ...OLM_IDS,
-  7584, 7585, // ice demon
-  7573, 7574, // shamans
-  7527, 7528, 7529, // vanguard
-  7530, 7531, 7532, // vespula
-  7538, 7539, // vespine soldier
-  7533, // abyssal portal
-  7559, 7560, // tightrope ranger, mager
-  7566, 7567, // vasa
-  7568, // vasa crystal
-  7604, 7605, 7606, // mystics
-  7561, 7562, 7563, // muttadiles
+export const SCAVENGER_BEAST_IDS = [
+  7548, 7549
+];
+
+/**
+ * IDs of Vespula's Abyssal portal from the Chambers of Xeric.
+ * Separated due to different offence scaling rules.
+ */
+export const ABYSSAL_PORTAL_IDS = [
+  7533,
+];
+
+/**
+ * IDs of Vasa's Glowing crystal from the Chambers of Xeric.
+ * Separated due to different health and defence scaling rules.
+ */
+export const GLOWING_CRYSTAL_IDS = [
+  7568,
 ];
 
 export const PARTY_SIZE_REQUIRED_MONSTER_IDS = [
   ...TOMBS_OF_AMASCUT_MONSTER_IDS,
   ...TOB_MONSTER_IDS,
   ...TOB_EM_MONSTER_IDS,
-  ...COX_MONSTER_IDS,
 ];
