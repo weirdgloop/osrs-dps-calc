@@ -191,6 +191,14 @@ export default class CombatCalc {
   }
 
   /**
+   * Whether the player is wearing the entire Verac the Defiled's equipment set.
+   * @see https://oldschool.runescape.wiki/w/Verac_the_Defiled%27s_equipment
+   */
+  private isWearingVeracs(): boolean {
+    return this.wearingAll(["Verac's helm", "Verac's brassard", "Verac's plateskirt", "Verac's flail"])
+  }
+
+  /**
    * Whether the player is wearing the entire Ahrim the Blighted's equipment set.
    * @see https://oldschool.runescape.wiki/w/Ahrim_the_Blighted%27s_equipment
    */
@@ -750,15 +758,26 @@ export default class CombatCalc {
     
     if (this.wearing('Gadderhammer') && mattrs.includes('shade')) {
       dist = new AttackDistribution([
-        standardHitDist.scaleProbability(0.95).scaleDamage(5, 4),
-        standardHitDist.scaleProbability(0.05).scaleDamage(2)
-      ])
+        new HitDistribution([
+          ...standardHitDist.scaleProbability(0.95).scaleDamage(5, 4).hits,
+          ...standardHitDist.scaleProbability(0.05).scaleDamage(2).hits
+        ]),
+      ]);
     }
 
     if (this.isWearingDharok()) {
       const max = this.player.skills.hp;
       const curr = this.player.skills.hp + this.player.boosts.hp;
       dist = dist.scaleDamage(10000 + (max - curr) * max, 10000);
+    }
+
+    if (this.isWearingVeracs()) {
+      dist = new AttackDistribution([
+        new HitDistribution([
+          ...standardHitDist.scaleProbability(0.75).hits,
+          ...HitDistribution.linear(1.0, 1, max + 1).scaleProbability(0.25).hits,
+        ]),
+      ]);
     }
 
     if (this.isWearingScythe()) {
