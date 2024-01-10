@@ -21,7 +21,7 @@ const Defensive: React.FC = observer(() => {
           name={'Stab'}
           image={dagger}
           value={player.defensive.stab}
-          className={`${(player.defensive.stab !== equipmentBonuses.defensive.stab) ? 'bg-yellow-200' : ''}`}
+          className={`${(player.defensive.stab !== equipmentBonuses.defensive.stab) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
           onChange={(v) => store.updatePlayer({defensive: {stab: v}})}
         />
         <AttributeInput
@@ -29,7 +29,7 @@ const Defensive: React.FC = observer(() => {
           name={'Slash'}
           image={scimitar}
           value={player.defensive.slash}
-          className={`${(player.defensive.slash !== equipmentBonuses.defensive.slash) ? 'bg-yellow-200' : ''}`}
+          className={`${(player.defensive.slash !== equipmentBonuses.defensive.slash) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
           onChange={(v) => store.updatePlayer({defensive: {slash: v}})}
         />
         <AttributeInput
@@ -37,7 +37,7 @@ const Defensive: React.FC = observer(() => {
           name={'Crush'}
           image={warhammer}
           value={player.defensive.crush}
-          className={`${(player.defensive.crush !== equipmentBonuses.defensive.crush) ? 'bg-yellow-200' : ''}`}
+          className={`${(player.defensive.crush !== equipmentBonuses.defensive.crush) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
           onChange={(v) => store.updatePlayer({defensive: {crush: v}})}
         />
         <AttributeInput
@@ -45,7 +45,7 @@ const Defensive: React.FC = observer(() => {
           name={'Magic'}
           image={magic}
           value={player.defensive.magic}
-          className={`${(player.defensive.magic !== equipmentBonuses.defensive.magic) ? 'bg-yellow-200' : ''}`}
+          className={`${(player.defensive.magic !== equipmentBonuses.defensive.magic) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
           onChange={(v) => store.updatePlayer({defensive: {magic: v}})}
         />
         <AttributeInput
@@ -53,7 +53,7 @@ const Defensive: React.FC = observer(() => {
           name={'Ranged'}
           image={ranged}
           value={player.defensive.ranged}
-          className={`${(player.defensive.ranged !== equipmentBonuses.defensive.ranged) ? 'bg-yellow-200' : ''}`}
+          className={`${(player.defensive.ranged !== equipmentBonuses.defensive.ranged) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
           onChange={(v) => store.updatePlayer({defensive: {ranged: v}})}
         />
       </div>
