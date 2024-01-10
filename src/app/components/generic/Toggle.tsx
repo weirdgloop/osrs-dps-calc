@@ -4,7 +4,7 @@ import {Switch} from '@headlessui/react';
 interface ToggleProps {
   checked: boolean;
   setChecked: (checked: boolean) => void;
-  label: string | React.ReactNode;
+  label?: string | React.ReactNode;
   help?: string;
   className?: string;
 }

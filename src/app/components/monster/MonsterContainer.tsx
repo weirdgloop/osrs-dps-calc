@@ -14,6 +14,7 @@ import magicStrength from '@/public/img/bonuses/magic_strength.png';
 import rangedStrength from '@/public/img/bonuses/ranged_strength.png';
 import toaRaidLevel from '@/public/img/toa_raidlevel.webp';
 import raidsIcon from '@/public/img/raids_icon.webp';
+import coxCmIcon from '@/public/img/cox_challenge_mode.png';
 import HelpLink from '../HelpLink';
 import MonsterSelect from './MonsterSelect';
 import {useStore} from '@/state';
@@ -32,6 +33,8 @@ import {IconExternalLink} from "@tabler/icons-react";
 import {scaledMonster} from "@/lib/MonsterScaling";
 import {Monster} from "@/types/Monster";
 import LazyImage from "@/app/components/generic/LazyImage";
+import Toggle from "@/app/components/generic/Toggle";
+import {toJS} from "mobx";
 
 interface ITombsOfAmascutMonsterContainerProps {
   monster: Monster;
@@ -101,6 +104,20 @@ const MonsterContainer: React.FC = observer(() => {
       )
     }
 
+    if (monster.attributes.includes('xerician')) {
+      comps.push(
+        <div className={'mt-4'} key={'cox-cm'}>
+          <h4 className={'font-bold font-serif'}>
+            <img src={coxCmIcon.src} alt={''} className={'inline-block'}/>{' '}
+            Challenge Mode
+          </h4>
+          <div className={'mt-2'}>
+            <Toggle checked={monster.isFromCoxCm} setChecked={(c) => store.updateMonster({isFromCoxCm: c})} />
+          </div>
+        </div>
+      )
+    }
+
     if ((PARTY_SIZE_REQUIRED_MONSTER_IDS.includes(monster.id || 0))) {
       comps.push(
         <div className={'mt-4'} key={'party-size'}>
@@ -130,11 +147,29 @@ const MonsterContainer: React.FC = observer(() => {
           </h4>
           <div className={'mt-2'}>
             <NumberInput
-              value={monster.partyAvgMiningLevel}
+              value={monster.partyMaxCombatLevel}
               min={3}
               max={126}
               step={1}
               onChange={(v) => store.updateMonster({partyMaxCombatLevel: v})}
+            />
+          </div>
+        </div>
+      )
+
+      comps.push(
+        <div className={'mt-4'} key={'cox-cb'}>
+          <h4 className={'font-bold font-serif'}>
+            <img src={raidsIcon.src} alt={''} className={'inline-block'}/>{' '}
+            Party&apos;s highest HP level
+          </h4>
+          <div className={'mt-2'}>
+            <NumberInput
+              value={monster.partyMaxHpLevel}
+              min={1}
+              max={99}
+              step={1}
+              onChange={(v) => store.updateMonster({partyMaxHpLevel: v})}
             />
           </div>
         </div>
@@ -163,7 +198,7 @@ const MonsterContainer: React.FC = observer(() => {
 
     return comps;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [monster.id]);
+  }, [toJS(monster)]);
 
   return (
     <div className={'basis-4 flex flex-col grow md:grow-0'}>

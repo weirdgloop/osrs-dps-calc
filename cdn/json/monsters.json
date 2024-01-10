@@ -583,41 +583,6 @@
   {
     "id": 7533,
     "name": "Abyssal portal",
-    "version": "Challenge Mode",
-    "image": "Abyssal portal.png",
-    "level": 0,
-    "speed": 2,
-    "size": 4,
-    "skills": [
-      1,
-      264,
-      370,
-      264,
-      1,
-      1
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      60,
-      140,
-      0,
-      0
-    ],
-    "attributes": [
-      "xerician"
-    ]
-  },
-  {
-    "id": 7533,
-    "name": "Abyssal portal",
     "version": "Normal",
     "image": "Abyssal portal.png",
     "level": 0,
@@ -8812,27 +8777,27 @@
     "speed": 4,
     "size": 5,
     "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      405,
+      200,
+      945,
+      450,
+      360,
+      420
     ],
     "offensive": [
       0,
       0,
       0,
       0,
-      0,
-      0
+      40,
+      12
     ],
     "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
+      100,
+      20,
+      150,
+      100,
+      60
     ],
     "attributes": [
       "dragon"
@@ -8843,16 +8808,16 @@
     "name": "Bloodthirsty Hydra",
     "version": "",
     "image": "Bloodthirsty Hydra.png",
-    "level": 309,
+    "level": 501,
     "speed": 6,
     "size": 5,
     "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      1,
+      100,
+      1125,
+      375,
+      375,
+      1
     ],
     "offensive": [
       0,
@@ -8863,11 +8828,11 @@
       0
     ],
     "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
+      200,
+      200,
+      20,
+      200,
+      100
     ],
     "attributes": [
       "dragon"
@@ -9087,27 +9052,27 @@
     "speed": 4,
     "size": 5,
     "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      450,
+      125,
+      480,
+      240,
+      187,
+      270
     ],
     "offensive": [
       0,
+      30,
       0,
       0,
       0,
-      0,
-      0
+      30
     ],
     "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
+      100,
+      50,
+      20,
+      100,
+      20
     ],
     "attributes": [
       "dragon"
@@ -9122,27 +9087,27 @@
     "speed": 4,
     "size": 5,
     "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      450,
+      125,
+      480,
+      240,
+      187,
+      270
     ],
     "offensive": [
       0,
+      30,
       0,
       0,
       0,
-      0,
-      0
+      30
     ],
     "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
+      100,
+      50,
+      20,
+      100,
+      20
     ],
     "attributes": [
       "dragon"
@@ -9636,16 +9601,16 @@
     "name": "Bloodthirsty warped Jelly",
     "version": "",
     "image": "Bloodthirsty warped Jelly.png",
-    "level": 241,
+    "level": 361,
     "speed": 4,
     "size": 3,
     "skills": [
-      200,
+      300,
       250,
-      220,
-      180,
+      330,
+      270,
       1,
-      180
+      270
     ],
     "offensive": [
       0,
@@ -18287,41 +18252,6 @@
   {
     "id": 7560,
     "name": "Deathly mage",
-    "version": "Challenge Mode",
-    "image": "Deathly mage.png",
-    "level": 0,
-    "speed": 4,
-    "size": 1,
-    "skills": [
-      1,
-      232,
-      180,
-      315,
-      1,
-      1
-    ],
-    "offensive": [
-      0,
-      0,
-      120,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": [
-      "xerician"
-    ]
-  },
-  {
-    "id": 7560,
-    "name": "Deathly mage",
     "version": "Normal",
     "image": "Deathly mage.png",
     "level": 0,
@@ -18341,41 +18271,6 @@
       120,
       0,
       0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": [
-      "xerician"
-    ]
-  },
-  {
-    "id": 7559,
-    "name": "Deathly ranger",
-    "version": "Challenge Mode",
-    "image": "Deathly ranger.png",
-    "level": 0,
-    "speed": 4,
-    "size": 1,
-    "skills": [
-      1,
-      232,
-      180,
-      232,
-      315,
-      1
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      120,
-      70,
       0
     ],
     "defensive": [
@@ -26988,41 +26883,6 @@
   {
     "id": 7568,
     "name": "Glowing crystal",
-    "version": "Challenge Mode",
-    "image": "Glowing crystal.png",
-    "level": 0,
-    "speed": 4,
-    "size": 4,
-    "skills": [
-      1,
-      100,
-      120,
-      150,
-      1,
-      1
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      180,
-      0,
-      0,
-      180,
-      -5
-    ],
-    "attributes": [
-      "xerician"
-    ]
-  },
-  {
-    "id": 7568,
-    "name": "Glowing crystal",
     "version": "Normal",
     "image": "Glowing crystal.png",
     "level": 0,
@@ -32316,41 +32176,6 @@
     "attributes": []
   },
   {
-    "id": 7570,
-    "name": "Guardian (Chambers of Xeric)",
-    "version": "Challenge Mode",
-    "image": "Guardian (Chambers of Xeric, female).png",
-    "level": 0,
-    "speed": 4,
-    "size": 0,
-    "skills": [
-      210,
-      150,
-      375,
-      1,
-      1,
-      210
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      20
-    ],
-    "defensive": [
-      -10,
-      0,
-      0,
-      180,
-      80
-    ],
-    "attributes": [
-      "xerician"
-    ]
-  },
-  {
     "id": 7569,
     "name": "Guardian (Chambers of Xeric)",
     "version": "Normal",
@@ -34580,42 +34405,6 @@
       45
     ],
     "attributes": []
-  },
-  {
-    "id": 7585,
-    "name": "Ice demon",
-    "version": "Challenge Mode",
-    "image": "Ice demon.png",
-    "level": 0,
-    "speed": 3,
-    "size": 2,
-    "skills": [
-      1,
-      240,
-      210,
-      585,
-      585,
-      1
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      110,
-      40,
-      140,
-      70,
-      70
-    ],
-    "attributes": [
-      "demon",
-      "xerician"
-    ]
   },
   {
     "id": 7584,
@@ -41553,41 +41342,6 @@
       -10
     ],
     "attributes": []
-  },
-  {
-    "id": 7573,
-    "name": "Lizardman shaman (Chambers of Xeric)",
-    "version": "Challenge Mode",
-    "image": "Lizardman shaman (1).png",
-    "level": 0,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      195,
-      315,
-      285,
-      195,
-      195,
-      195
-    ],
-    "offensive": [
-      58,
-      0,
-      0,
-      56,
-      49,
-      52
-    ],
-    "defensive": [
-      150,
-      160,
-      0,
-      160,
-      102
-    ],
-    "attributes": [
-      "xerician"
-    ]
   },
   {
     "id": 7573,
@@ -56613,41 +56367,6 @@
     ]
   },
   {
-    "id": 7549,
-    "name": "Scavenger beast",
-    "version": "Challenge Mode",
-    "image": "Corrupted scavenger.png",
-    "level": 0,
-    "speed": 4,
-    "size": 2,
-    "skills": [
-      180,
-      67,
-      45,
-      1,
-      1,
-      180
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": [
-      "xerician"
-    ]
-  },
-  {
     "id": 7548,
     "name": "Scavenger beast",
     "version": "Normal",
@@ -58748,42 +58467,6 @@
       0
     ],
     "attributes": []
-  },
-  {
-    "id": 7604,
-    "name": "Skeletal Mystic",
-    "version": "Challenge Mode",
-    "image": "Skeletal mystic (1).png",
-    "level": 0,
-    "speed": 4,
-    "size": 2,
-    "skills": [
-      210,
-      280,
-      240,
-      210,
-      1,
-      210
-    ],
-    "offensive": [
-      85,
-      38,
-      40,
-      0,
-      0,
-      50
-    ],
-    "defensive": [
-      115,
-      140,
-      115,
-      155,
-      155
-    ],
-    "attributes": [
-      "undead",
-      "xerician"
-    ]
   },
   {
     "id": 7604,
@@ -72400,41 +72083,6 @@
   {
     "id": 7566,
     "name": "Vasa Nistirio",
-    "version": "Challenge Mode",
-    "image": "Vasa Nistirio.png",
-    "level": 0,
-    "speed": 3,
-    "size": 5,
-    "skills": [
-      1,
-      262,
-      450,
-      345,
-      345,
-      1
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      100,
-      0,
-      0
-    ],
-    "defensive": [
-      50,
-      400,
-      40,
-      190,
-      170
-    ],
-    "attributes": [
-      "xerician"
-    ]
-  },
-  {
-    "id": 7566,
-    "name": "Vasa Nistirio",
     "version": "Normal",
     "image": "Vasa Nistirio.png",
     "level": 0,
@@ -72934,41 +72582,6 @@
   {
     "id": 7538,
     "name": "Vespine soldier",
-    "version": "Challenge Mode",
-    "image": "Vespine soldier.png",
-    "level": 0,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      225,
-      60,
-      150,
-      60,
-      1,
-      225
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      -8,
-      -8
-    ],
-    "defensive": [
-      0,
-      30,
-      0,
-      0,
-      0
-    ],
-    "attributes": [
-      "xerician"
-    ]
-  },
-  {
-    "id": 7538,
-    "name": "Vespine soldier",
     "version": "Normal",
     "image": "Vespine soldier.png",
     "level": 0,
@@ -72994,41 +72607,6 @@
       0,
       30,
       0,
-      0,
-      0
-    ],
-    "attributes": [
-      "xerician"
-    ]
-  },
-  {
-    "id": 7530,
-    "name": "Vespula",
-    "version": "Challenge Mode",
-    "image": "Vespula.png",
-    "level": 0,
-    "speed": 3,
-    "size": 5,
-    "skills": [
-      225,
-      132,
-      288,
-      132,
-      225,
-      225
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      -8,
-      -8
-    ],
-    "defensive": [
-      0,
-      70,
-      60,
       0,
       0
     ],

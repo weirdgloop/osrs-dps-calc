@@ -58,16 +58,24 @@ def main():
     # Loop over the monsters data from the wiki
     for k, v in wiki_data.items():
         print('Processing ' + k)
+
         # Sanity check: make sure that this monster has printouts from SMW
         if 'printouts' not in v:
             print(k + ' is missing SMW printouts - skipping.')
             continue
 
         po = v['printouts']
+        version = getPrintoutValue(po['Version anchor']) or ''
+
+        # If this is a CoX monster Challenge Mode variant, remove it. This will be handled by the calculator UI.
+        if version == 'Challenge Mode':
+            print(k + ' is a CoX CM variant - skipping.')
+            continue
+
         monster = {
             'id': getPrintoutValue(po['NPC ID']),
             'name': k.rsplit('#', 1)[0] or '',
-            'version': getPrintoutValue(po['Version anchor']) or '',
+            'version': version,
             'image': '' if not po['Image'] else po['Image'][0]['fulltext'].replace('File:', ''),
             'level': getPrintoutValue(po['Combat level']) or 0,
             'speed': getPrintoutValue(po['Attack speed']) or 0,
