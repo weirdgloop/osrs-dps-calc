@@ -10,10 +10,7 @@ import {EquipmentCategory, getCombatStylesForCategory} from './enums/EquipmentCa
 import {
   EquipmentPiece,
   Player,
-  PlayerBonuses,
-  PlayerDefensive,
   PlayerEquipment,
-  PlayerOffensive,
   PlayerSkills
 } from '@/types/Player';
 import {Monster} from '@/types/Monster';
@@ -27,12 +24,9 @@ import {
 import {RecomputeValuesRequest, WorkerRequestType} from "@/types/WorkerData";
 import {scaledMonster} from "@/lib/MonsterScaling";
 
-const calculateEquipmentBonuses = (eq: EquipmentPiece[]) => {
-  const seed: {
-    bonuses: PlayerBonuses,
-    offensive: PlayerOffensive,
-    defensive: PlayerDefensive,
-  } = {
+type EquipmentBonuses = Pick<Player, 'bonuses' | 'offensive' | 'defensive'>
+const calculateEquipmentBonuses = (eq: EquipmentPiece[]): EquipmentBonuses => {
+  const seed: EquipmentBonuses = {
     bonuses: {
       str: 0,
       magic_str: 0,
@@ -281,7 +275,7 @@ class GlobalState implements State {
    * Return the player's worn equipment bonuses. This is NOT the same as the player's current bonuses overall.
    * For that, interpret the values in `store.player` for the current loadout.
    */
-  get equipmentBonuses() {
+  get equipmentBonuses(): EquipmentBonuses {
     return calculateEquipmentBonuses(Object.values(this.equipmentData).filter((v) => {
       return (v !== null && v !== undefined);
     }) as EquipmentPiece[]);
