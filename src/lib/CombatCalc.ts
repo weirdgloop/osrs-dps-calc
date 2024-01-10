@@ -747,6 +747,13 @@ export default class CombatCalc {
           [HitDistribution.linear(acc, Math.floor(max * 3 / 20), Math.floor(max * 17 / 20))],
       )
     }
+    
+    if (this.wearing('Gadderhammer') && mattrs.includes('shade')) {
+      dist = new AttackDistribution([
+        standardHitDist.scaleProbability(0.95).scaleDamage(5, 4),
+        standardHitDist.scaleProbability(0.05).scaleDamage(2)
+      ])
+    }
 
     if (this.isWearingScythe()) {
       const hits: HitDistribution[] = [];
