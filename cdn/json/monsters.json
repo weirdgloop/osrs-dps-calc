@@ -28602,42 +28602,6 @@
     ]
   },
   {
-    "id": 7554,
-    "name": "Great Olm",
-    "version": "Head (Challenge Mode)",
-    "image": "Great Olm.png",
-    "level": 1043,
-    "speed": 4,
-    "size": 5,
-    "skills": [
-      375,
-      225,
-      800,
-      375,
-      375,
-      375
-    ],
-    "offensive": [
-      0,
-      0,
-      60,
-      60,
-      0,
-      0
-    ],
-    "defensive": [
-      200,
-      200,
-      50,
-      200,
-      200
-    ],
-    "attributes": [
-      "dragon",
-      "xerician"
-    ]
-  },
-  {
     "id": 7552,
     "name": "Great Olm",
     "version": "Left claw",
@@ -28674,42 +28638,6 @@
     ]
   },
   {
-    "id": 7555,
-    "name": "Great Olm",
-    "version": "Left claw (Challenge Mode)",
-    "image": "Great Olm.png",
-    "level": 750,
-    "speed": 4,
-    "size": 5,
-    "skills": [
-      375,
-      262,
-      600,
-      262,
-      375,
-      375
-    ],
-    "offensive": [
-      0,
-      0,
-      60,
-      60,
-      0,
-      0
-    ],
-    "defensive": [
-      50,
-      200,
-      200,
-      50,
-      50
-    ],
-    "attributes": [
-      "dragon",
-      "xerician"
-    ]
-  },
-  {
     "id": 7550,
     "name": "Great Olm",
     "version": "Right claw",
@@ -28724,42 +28652,6 @@
       87,
       250,
       250
-    ],
-    "offensive": [
-      0,
-      0,
-      60,
-      60,
-      0,
-      0
-    ],
-    "defensive": [
-      200,
-      50,
-      200,
-      200,
-      200
-    ],
-    "attributes": [
-      "dragon",
-      "xerician"
-    ]
-  },
-  {
-    "id": 7553,
-    "name": "Great Olm",
-    "version": "Right claw (Challenge Mode)",
-    "image": "Great Olm.png",
-    "level": 549,
-    "speed": 4,
-    "size": 5,
-    "skills": [
-      375,
-      262,
-      600,
-      130,
-      375,
-      375
     ],
     "offensive": [
       0,
@@ -45610,41 +45502,6 @@
     ]
   },
   {
-    "id": 7561,
-    "name": "Muttadile",
-    "version": "Large (Challenge Mode)",
-    "image": "Muttadile.png",
-    "level": 0,
-    "speed": 4,
-    "size": 5,
-    "skills": [
-      375,
-      330,
-      375,
-      375,
-      375,
-      375
-    ],
-    "offensive": [
-      88,
-      -8,
-      0,
-      82,
-      47,
-      55
-    ],
-    "defensive": [
-      60,
-      75,
-      0,
-      82,
-      -5
-    ],
-    "attributes": [
-      "xerician"
-    ]
-  },
-  {
     "id": 7562,
     "name": "Muttadile",
     "version": "Small",
@@ -45659,41 +45516,6 @@
       1,
       150,
       150
-    ],
-    "offensive": [
-      71,
-      -8,
-      0,
-      83,
-      56,
-      48
-    ],
-    "defensive": [
-      50,
-      60,
-      0,
-      72,
-      -5
-    ],
-    "attributes": [
-      "xerician"
-    ]
-  },
-  {
-    "id": 7562,
-    "name": "Muttadile",
-    "version": "Small (Challenge Mode)",
-    "image": "Muttadile.png",
-    "level": 0,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      225,
-      207,
-      375,
-      1,
-      225,
-      225
     ],
     "offensive": [
       71,
@@ -65750,41 +65572,6 @@
     ]
   },
   {
-    "id": 7544,
-    "name": "Tekton",
-    "version": "Enraged (Challenge Mode)",
-    "image": "Tekton (enraged).png",
-    "level": 0,
-    "speed": 3,
-    "size": 4,
-    "skills": [
-      585,
-      246,
-      450,
-      246,
-      1,
-      585
-    ],
-    "offensive": [
-      64,
-      0,
-      0,
-      0,
-      0,
-      30
-    ],
-    "defensive": [
-      180,
-      0,
-      0,
-      290,
-      280
-    ],
-    "attributes": [
-      "xerician"
-    ]
-  },
-  {
     "id": 7540,
     "name": "Tekton",
     "version": "Normal",
@@ -65799,41 +65586,6 @@
       205,
       1,
       390
-    ],
-    "offensive": [
-      64,
-      0,
-      0,
-      0,
-      0,
-      20
-    ],
-    "defensive": [
-      105,
-      0,
-      0,
-      165,
-      155
-    ],
-    "attributes": [
-      "xerician"
-    ]
-  },
-  {
-    "id": 7545,
-    "name": "Tekton",
-    "version": "Normal (Challenge Mode)",
-    "image": "Tekton.png",
-    "level": 0,
-    "speed": 3,
-    "size": 4,
-    "skills": [
-      585,
-      246,
-      450,
-      246,
-      1,
-      585
     ],
     "offensive": [
       64,
@@ -71702,41 +71454,6 @@
     ]
   },
   {
-    "id": 7529,
-    "name": "Vanguard",
-    "version": "Magic (Challenge Mode)",
-    "image": "Vanguard (magic).png",
-    "level": 0,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      225,
-      240,
-      280,
-      225,
-      225,
-      225
-    ],
-    "offensive": [
-      0,
-      25,
-      40,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      400,
-      110,
-      50,
-      340,
-      315
-    ],
-    "attributes": [
-      "xerician"
-    ]
-  },
-  {
     "id": 7527,
     "name": "Vanguard",
     "version": "Melee",
@@ -71751,41 +71468,6 @@
       150,
       150,
       150
-    ],
-    "offensive": [
-      20,
-      0,
-      0,
-      0,
-      0,
-      10
-    ],
-    "defensive": [
-      150,
-      20,
-      400,
-      150,
-      150
-    ],
-    "attributes": [
-      "xerician"
-    ]
-  },
-  {
-    "id": 7527,
-    "name": "Vanguard",
-    "version": "Melee (Challenge Mode)",
-    "image": "Vanguard (melee).png",
-    "level": 0,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      225,
-      240,
-      280,
-      225,
-      225,
-      225
     ],
     "offensive": [
       20,
@@ -71856,41 +71538,6 @@
       150,
       150,
       150
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      40,
-      25,
-      0
-    ],
-    "defensive": [
-      100,
-      400,
-      300,
-      60,
-      55
-    ],
-    "attributes": [
-      "xerician"
-    ]
-  },
-  {
-    "id": 7528,
-    "name": "Vanguard",
-    "version": "Ranged (Challenge Mode)",
-    "image": "Vanguard (ranged).png",
-    "level": 0,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      225,
-      240,
-      280,
-      225,
-      225,
-      225
     ],
     "offensive": [
       0,

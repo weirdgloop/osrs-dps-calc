@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "analyse": "ANALYSE=true next build",
-    "test": "jest"
+    "test": "jest",
+    "cdn-docker": "docker compose run --rm data-scraper"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.14",

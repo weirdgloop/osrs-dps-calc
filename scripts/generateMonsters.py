@@ -68,7 +68,7 @@ def main():
         version = getPrintoutValue(po['Version anchor']) or ''
 
         # If this is a CoX monster Challenge Mode variant, remove it. This will be handled by the calculator UI.
-        if version == 'Challenge Mode':
+        if 'Challenge Mode' in version:
             print(k + ' is a CoX CM variant - skipping.')
             continue
 
