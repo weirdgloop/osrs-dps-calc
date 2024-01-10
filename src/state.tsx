@@ -280,6 +280,15 @@ class GlobalState implements State {
       return (v !== null && v !== undefined);
     }) as EquipmentPiece[]);
   }
+  
+  recalculateEquipmentBonusesFromGear() {
+    const newBonuses = this.equipmentBonuses;
+    this.updatePlayer({
+      bonuses: newBonuses.bonuses,
+      offensive: newBonuses.offensive,
+      defensive: newBonuses.defensive
+    });
+  }
 
   /**
    * Return the player's skill bonuses.
