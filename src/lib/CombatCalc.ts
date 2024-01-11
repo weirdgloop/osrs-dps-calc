@@ -448,7 +448,7 @@ export default class CombatCalc {
 
       let tbowMagic = Math.max(this.monster.skills.magic, this.monster.offensive.magic);
       let m = Math.trunc(Math.min(tbowMagic, cap) * 3/10);
-      let tbowMod = Math.trunc(Math.min(140, (140 + (m*10-10)/100 - (m-100)^2/100)));
+      let tbowMod = Math.trunc(Math.min(140, (140 + (m*10-10)/100 - Math.pow(m-100, 2)/100)));
       attackRoll = Math.trunc(attackRoll * tbowMod / 100);
     }
     if (this.wearing(["Craw's bow", "Webweaver bow"]) && buffs.inWilderness) {
@@ -508,7 +508,7 @@ export default class CombatCalc {
 
       let tbowMagic = Math.max(this.monster.skills.magic, this.monster.offensive.magic);
       let m = Math.trunc(Math.min(tbowMagic, cap) * 3/10);
-      let tbowMod = Math.trunc(Math.min(250, 250 + (m*10-14)/100 - (m-140)^2/100));
+      let tbowMod = Math.trunc(Math.min(250, 250 + (m*10-14)/100 - Math.pow(m-140, 2)/100));
       maxHit = Math.trunc(maxHit * tbowMod / 100);
     }
     if (this.wearing(["Craw's bow", "Webweaver bow"]) && buffs.inWilderness) {
