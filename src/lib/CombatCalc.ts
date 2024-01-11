@@ -266,12 +266,21 @@ export default class CombatCalc {
     ])
   }
 
-  /**
-   * Whether the player is using a combat spell from the Mage Arena.
-   * @see https://oldschool.runescape.wiki/w/God_spells
-   */
-  private isUsingGodSpell(): boolean {
-    return ['Saradomin Strike', 'Claws of Guthix', 'Flames of Zamorak'].includes(this.player.spell.name);
+  private isChargeSpellApplicable(): boolean {
+    if (!this.player.buffs.chargeSpell) {
+      return false;
+    }
+
+    switch (this.player.spell.name) {
+      case 'Saradomin Strike':
+        return this.wearing(['Saradomin cape', 'Imbued saradomin cape', 'Saradomin max cape', 'Imbued saradomin max cape']);
+      case 'Claws of Guthix':
+        return this.wearing(['Guthix cape', 'Imbued guthix cape', 'Guthix max cape', 'Imbued guthix max cape']);
+      case 'Flames of Zamorak':
+        return this.wearing(['Zamorak cape', 'Imbued zamorak cape', 'Zamorak max cape', 'Imbued zamorak max cape']);
+      default:
+        return false;
+    }
   }
 
   /**
@@ -699,7 +708,7 @@ export default class CombatCalc {
     if (this.wearing('Chaos gauntlets') && spell.name.toLowerCase().includes('bolt')) {
       maxHit = maxHit + 3;
     }
-    if (buffs.chargeSpell && this.isUsingGodSpell()) {
+    if (this.isChargeSpellApplicable()) {
       maxHit = maxHit + 10;
     }
 
