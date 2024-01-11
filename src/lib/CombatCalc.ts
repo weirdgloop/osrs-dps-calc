@@ -328,7 +328,7 @@ export default class CombatCalc {
     const buffs = this.player.buffs;
 
     // These bonuses do not stack with each other
-    if (this.wearing(['Salve amulet (e), Salve amulet(ei)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
+    if (this.wearing(['Salve amulet (e)', 'Salve amulet(ei)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
       attackRoll = Math.trunc(attackRoll * 6/5);
     } else if (this.wearing(['Salve amulet', 'Salve amulet(i)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
       attackRoll = Math.trunc(attackRoll * 7/6);
