@@ -7,7 +7,13 @@ export interface Spell {
 
 export function isFireSpell(spell?: Spell): boolean {
   return spell !== undefined &&
-      ['Fire Blast', 'Fire Bolt', 'Fire Strike', 'Fire Surge']
+      ['Fire Strike', 'Fire Bolt', 'Fire Blast', 'Fire Wave', 'Fire Surge']
+          .includes(spell.name);
+}
+
+export function isWaterSpell(spell?: Spell): boolean {
+  return spell !== undefined &&
+      ['Water Strike', 'Water Bolt', 'Water Blast', 'Water Wave', 'Water Surge']
           .includes(spell.name);
 }
 
