@@ -24,7 +24,7 @@ const calcKeyToString = (value: number, calcKey: keyof CalculatedLoadout): strin
     case "dps":
       return value.toFixed(3);
     case 'ttk':
-      return value.toFixed(3) + 's';
+      return value.toFixed(1) + 's';
     default:
       return "" + value;
   }
