@@ -13,7 +13,7 @@ interface IResultRowProps {
 }
 
 const calcKeyToString = (value: number, calcKey: keyof CalculatedLoadout): string | React.ReactNode => {
-  if (!value) {
+  if (value === undefined || value === null) {
     // if the value has not yet been populated by the worker
     return <Spinner className={'w-3'} />;
   }
@@ -24,7 +24,9 @@ const calcKeyToString = (value: number, calcKey: keyof CalculatedLoadout): strin
     case "dps":
       return value.toFixed(3);
     case 'ttk':
-      return value.toFixed(1) + 's';
+      return value === 0
+        ? '-----'
+        : value.toFixed(1) + 's';
     default:
       return "" + value;
   }

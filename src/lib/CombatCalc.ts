@@ -645,6 +645,10 @@ export default class CombatCalc {
     let maxHit = 0;
     let magicLevel = this.player.skills.magic + this.player.boosts.magic;
     const spell = this.player.spell;
+    
+    if (spell.max_hit === 0) {
+      return 0;
+    }
 
     // Specific bonuses that are applied from equipment
     const mattrs = this.monster.attributes;
@@ -959,6 +963,9 @@ export default class CombatCalc {
     const dist = this.getDistribution();
     const hist = dist.asHistogram();
     const max = dist.getMax();
+    if (max === 0) {
+      return 0;
+    }
 
     let htk = new Float64Array(this.monster.skills.hp + 1); // 0 hits left to do if hp = 0
 
