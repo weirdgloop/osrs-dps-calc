@@ -27,6 +27,13 @@ export const VERZIK_P1_IDS = [
   10847, 10848, 10849 // hmt
 ];
 
+export const VERZIK_IDS = [
+  ...VERZIK_P1_IDS,
+  10833, 10834, 10835, // verzik entry mode
+  8372, 8373, 8374, // verzik normal mode
+  10850, 10851, 10852, // verzik hard mode
+];
+
 /** IDs of monsters that are present in Theatre of Blood **/
 export const TOB_MONSTER_IDS = [
   ...VERZIK_P1_IDS,
@@ -149,12 +156,9 @@ export const FRAGMENT_OF_SEREN_IDS = [
  * IDs of monsters that calculate their magical defence using the defence stat.
  * https://twitter.com/JagexAsh/status/1689566945635438592
  **/
-export const ICE_DEMON_STYLE_DEF_IDS = [
+export const USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS = [
   ...ICE_DEMON_IDS,
-  ...VERZIK_P1_IDS,
-  10833, 10834, 10835, // verzik entry mode
-  8372, 8373, 8374, // verzik normal mode
-  10850, 10851, 10852, // verzik hard mode
+  ...VERZIK_IDS,
   ...FRAGMENT_OF_SEREN_IDS,
   11709, 11712, // baboon brawler
   9118 // rabbit (prifddinas)
