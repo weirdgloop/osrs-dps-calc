@@ -9,14 +9,14 @@ export function flatLimitTransformer(max: number): HitTransformer {
     );
 }
 
-export function linearMinTransformer(max: number): HitTransformer {
+export function linearMinTransformer(max: number, offset: number = 0): HitTransformer {
     return (h) => {
         const d = new HitDistribution([]);
         const prob = 1.0 / (max + 1);
         for (let i = 0; i <= max; i++) {
             d.addHit(new WeightedHit(
                 prob,
-                [Math.min(h, i)]
+                [Math.min(h, i + offset)]
             ));
         }
         return d.flatten();
