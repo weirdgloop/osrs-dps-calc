@@ -903,6 +903,11 @@ export default class CombatCalc {
   }
 
   applyLimiters(dist: AttackDistribution): AttackDistribution {
+    // we apply this here instead of at the top of getDistributionImpl just in case of multi-hits
+    if (this.isImmune()) {
+      return new AttackDistribution([new HitDistribution([new WeightedHit(1.0, [0])])]);
+    }
+    
     if (this.monster.name === 'Zulrah') {
       dist = dist.transform(flatLimitTransformer(50));
     }
@@ -919,6 +924,11 @@ export default class CombatCalc {
     }
 
     return dist;
+  }
+  
+  isImmune(): boolean {
+    // todo
+    return false;
   }
 
   /**
@@ -980,6 +990,9 @@ export default class CombatCalc {
   public getTtkDistribution(): Map<number, number> {
     const speed = this.getAttackSpeed();
     const dist = this.getDistribution().asSingleHitplat();
+    if (dist.expectedHit() === 0) {
+      return new Map<number, number>();
+    }
 
     // distribution of health values at current iter step
     // we don't need to track the 0-health state, but using +1 here removes the need for -1s later on
