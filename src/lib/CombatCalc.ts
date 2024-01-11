@@ -1,11 +1,17 @@
 import {EquipmentPiece, Player} from '@/types/Player';
 import {Monster} from '@/types/Monster';
-import {AttackDistribution, HitDistribution, WeightedHit} from "@/lib/HitDist";
+import {
+  AttackDistribution,
+  flatLimitTransformer,
+  HitDistribution,
+  linearMinTransformer,
+  WeightedHit
+} from "@/lib/HitDist";
 import {isBindSpell, isFireSpell, isWaterSpell} from "@/types/Spell";
 import {PrayerMap} from "@/enums/Prayer";
 import {sum} from "d3-array";
 import {isVampyre, MonsterAttribute} from "@/enums/MonsterAttribute";
-import {TOMBS_OF_AMASCUT_MONSTER_IDS} from "@/constants";
+import {TOMBS_OF_AMASCUT_MONSTER_IDS, VERZIK_P1_IDS} from "@/constants";
 
 const DEFAULT_ATTACK_SPEED = 4;
 const SECONDS_PER_TICK = 0.6;
@@ -218,6 +224,32 @@ export default class CombatCalc {
   }
 
   /**
+   * Whether the player is wearing a silver weapon.
+   * @see https://oldschool.runescape.wiki/w/Silver_weaponry
+   */
+
+  private isWearingSilverWeapon(): boolean {
+    return this.wearing([
+      'Blessed axe', 
+      'Ivandis flail', 
+      'Blisterwood flail', 
+      'Silver sickle', 
+      'Silver sickle (b)', 
+      'Emerald sickle',
+      'Emerald sickle (b)',
+      'Enchanted emerald sickle (b)',
+      'Ruby sickle (b)',
+      'Enchanted ruby sickle (b)',
+      'Blisterwood sickle',
+      'Silverlight',
+      'Darklight',
+      'Arclight',
+      'Rod of ivandis',
+      'Wolfbane',
+    ])
+  }
+
+  /**
    * Whether the player is using a combat spell from the Mage Arena.
    * @see https://oldschool.runescape.wiki/w/God_spells
    */
@@ -386,7 +418,7 @@ export default class CombatCalc {
     if (this.wearing('Ivandis flail') && isVampyre(mattrs)) {
       maxHit = Math.trunc(maxHit * 6/5);
     }
-    if (this.wearing("Efaritay's aid") && isVampyre(mattrs)) {
+    if ((this.wearing("Efaritay's aid") || this.isWearingSilverWeapon()) && mattrs.includes(MonsterAttribute.VAMPYRE_1)) {
       maxHit = Math.trunc(maxHit * 11/10); // todo should this be before/after the vampyrebane weapons above?
     }
     if (this.wearing('Leaf-bladed battleaxe') && mattrs.includes(MonsterAttribute.LEAFY)) {
@@ -729,6 +761,10 @@ export default class CombatCalc {
       return this.opts.overrides.accuracy;
     }
 
+    if (VERZIK_P1_IDS.includes(this.monster.id || 0) && this.wearing('Dawnbringer')) {
+      return 1.0;
+    }
+
     const atk = this.getMaxAttackRoll();
     const def = this.getNPCDefenceRoll();
 
@@ -841,6 +877,25 @@ export default class CombatCalc {
           ...standardHitDist.scaleProbability(0.25).scaleDamage(13, 10).hits,
         ]),
       ]);
+    }
+
+    return this.applyLimiters(dist);
+  }
+
+  applyLimiters(dist: AttackDistribution): AttackDistribution {
+    if (this.monster.name === 'Zulrah') {
+      dist = dist.transform(flatLimitTransformer(50));
+    }
+    if (this.monster.name === 'Fragment of Seren') {
+      // todo should this be if (hit > 24) { hit = randominc(2) + 22 }
+      dist = dist.transform(linearMinTransformer(2, 22));
+    }
+    if (VERZIK_P1_IDS.includes(this.monster.id || 0) && !this.wearing('Dawnbringer')) {
+      const limit = this.isUsingMeleeStyle() ? 10 : 3;
+      dist = dist.transform(linearMinTransformer(limit));
+    }
+    if (this.monster.attributes.includes(MonsterAttribute.VAMPYRE_2) && this.wearing("Efaritay's aid") && !this.isWearingSilverWeapon()) {
+      dist = dist.transform(flatLimitTransformer(10));
     }
 
     return dist;

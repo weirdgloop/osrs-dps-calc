@@ -21,7 +21,8 @@ import {WORKER_JSON_REPLACER, WORKER_JSON_REVIVER} from "@/utils";
 const computeValues = async (loadouts: Player[], m: Monster, calcOpts: WorkerCalcOpts) => {
   let res: CalculatedLoadout[] = [];
 
-  for (let [_, p] of loadouts.entries()) {
+  for (let [i, p] of loadouts.entries()) {
+    const start = new Date().getTime();
     let calc = new CombatCalc(p, m);
     res.push({
       npcDefRoll: calc.getNPCDefenceRoll(),
@@ -32,7 +33,12 @@ const computeValues = async (loadouts: Player[], m: Monster, calcOpts: WorkerCal
       ttk: calc.getTtk(),
       hitDist: calc.getDistribution().asHistogram(),
       ttkDist: calcOpts.includeTtkDist ? calc.getTtkDistribution() : undefined, // this one can sometimes be quite expensive
-    })
+    });
+    const end = new Date().getTime();
+    
+    if (end - start >= 1000) {
+      console.warn(`Loadout ${i + 1} took ${end - start}ms to calculate!`);
+    }
   }
 
   return res;
