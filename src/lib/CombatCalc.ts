@@ -287,7 +287,7 @@ export default class CombatCalc {
     if (this.wearing('Dragon hunter lance') && mattrs.includes(MonsterAttribute.DRAGON)) {
       attackRoll = Math.trunc(attackRoll * 6/5);
     }
-    if (this.wearing('Keris partisan of breaching') && mattrs.includes(MonsterAttribute.DRAGON)) {
+    if (this.wearing('Keris partisan of breaching') && mattrs.includes(MonsterAttribute.KALPHITE)) {
       attackRoll = Math.trunc(attackRoll * 133/100); // https://twitter.com/JagexAsh/status/1704107285381787952
     }
     if (this.wearing(['Blisterwood flail', 'Blisterwood sickle']) && isVampyre(mattrs)) {
