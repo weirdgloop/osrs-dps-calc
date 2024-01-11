@@ -761,8 +761,9 @@ export default class CombatCalc {
     let dist = new AttackDistribution([standardHitDist]);
 
     if (this.isWearingFang()) {
+      const shrink = Math.trunc(max * 3 / 20);
       dist = new AttackDistribution(
-          [HitDistribution.linear(acc, Math.floor(max * 3 / 20), Math.floor(max * 17 / 20))],
+          [HitDistribution.linear(acc, shrink, max - shrink)],
       )
     }
     
