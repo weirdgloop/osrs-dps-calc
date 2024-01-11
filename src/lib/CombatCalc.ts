@@ -824,7 +824,12 @@ export default class CombatCalc {
     }
 
     if (this.isWearingAhrims()) {
-      dist = dist.scaleDamage(13, 10);
+      dist = new AttackDistribution([
+        new HitDistribution([
+          ...standardHitDist.scaleProbability(0.75).hits,
+          ...standardHitDist.scaleProbability(0.25).scaleDamage(13, 10).hits,
+        ]),
+      ]);
     }
 
     return dist;
