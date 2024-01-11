@@ -386,6 +386,9 @@ export default class CombatCalc {
     if (this.wearing('Ivandis flail') && isVampyre(mattrs)) {
       maxHit = Math.trunc(maxHit * 6/5);
     }
+    if (this.wearing("Efaritay's aid") && isVampyre(mattrs)) {
+      maxHit = Math.trunc(maxHit * 11/10); // todo should this be before/after the vampyrebane weapons above?
+    }
     if (this.wearing('Leaf-bladed battleaxe') && mattrs.includes(MonsterAttribute.LEAFY)) {
       maxHit = Math.trunc(maxHit * 47/40);
     }
