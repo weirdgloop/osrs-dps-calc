@@ -9,14 +9,14 @@ export function flatLimitTransformer(max: number): HitTransformer {
     );
 }
 
-export function linearMinTransformer(max: number): HitTransformer {
+export function linearMinTransformer(max: number, offset: number = 0): HitTransformer {
     return (h) => {
         const d = new HitDistribution([]);
         const prob = 1.0 / (max + 1);
         for (let i = 0; i <= max; i++) {
             d.addHit(new WeightedHit(
                 prob,
-                [Math.min(h, i)]
+                [Math.min(h, i + offset)]
             ));
         }
         return d.flatten();
@@ -118,7 +118,7 @@ export class HitDistribution {
                 d.addHit(transformed);
             }
         }
-        return d;
+        return d.flatten();
     }
 
     public scaleProbability(factor: number): HitDistribution {
@@ -252,11 +252,11 @@ export class AttackDistribution {
     }
 
     public getMax(): number {
-        return max(this.dists.map(d => d.getMax())) || 0;
+        return sum(this.dists.map(d => d.getMax())) || 0;
     }
 
     public getExpectedDamage(): number {
-        return max(this.dists.map(d => d.expectedHit())) || 0;
+        return sum(this.dists.map(d => d.expectedHit())) || 0;
     }
 
     public asSingleHitplat(): HitDistribution {

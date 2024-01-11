@@ -21,8 +21,15 @@ export const TOMBS_OF_AMASCUT_MONSTER_IDS = [
   11746, 11748, 11753, 11754, 11755, 11759, 11761, 11763, // elidinis warden
 ];
 
+export const VERZIK_P1_IDS = [
+  10830, 10831, 10832, // em
+  8369, 8370, 8371, // norm
+  10847, 10848, 10849 // hmt
+];
+
 /** IDs of monsters that are present in Theatre of Blood **/
 export const TOB_MONSTER_IDS = [
+  ...VERZIK_P1_IDS,
   // normal
   8360, 8361, 8362, 8363, 8364, 8365, // maiden 
   8366, 8367, // maiden crab + blood spawn 
@@ -31,7 +38,7 @@ export const TOB_MONSTER_IDS = [
   8355, 8356, 8357, // nylo boss 
   10864, 10865, // sote 
   8339, 8340, // xarpus
-  8369, 8370, 8371, 8372, 8373, 8374, // verzik 
+  8372, 8373, 8374, // verzik 
   8376, 8381, 8382, 8383, 8384, 8385, // verzik web + nylos 
   
   // hmt
@@ -43,7 +50,7 @@ export const TOB_MONSTER_IDS = [
   10808, 10809, 10810, // nylo boss 
   10867, 10868, // sote 
   10770, 10771, 10772, // xarpus (i think there's an extra one here because of its different p3 behaviour?)
-  10847, 10848, 10849, 10850, 10851, 10852, // verzik
+  10850, 10851, 10852, // verzik
   10854, 10858, 10859, 10860, 10861, 10862 // verzik web + nylos 
 ];
 
@@ -58,7 +65,7 @@ export const TOB_EM_MONSTER_IDS = [
   10787, 10788, 10789, // nylo boss 
   10864, 10865, // sote 
   10767, 10768, // xarpus 
-  10830, 10831, 10832, 10833, 10834, 10835, // verzik 
+  10833, 10834, 10835, // verzik 
   10837, 10841, 10842, 10843, 10844, 10845 // verzik web + nylos
 ];
 
