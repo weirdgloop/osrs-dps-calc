@@ -139,14 +139,14 @@ export const ICE_DEMON_IDS = [
 ];
 
 /**
- * IDs of the Fragment of Seren
+ * IDs of the Fragment of Seren.
  */
 export const FRAGMENT_OF_SEREN_IDS = [
   8917, 8918, 8919, 8920
 ];
 
 /**
- * IDs of monsters that calculate their magical defence using the defence stat
+ * IDs of monsters that calculate their magical defence using the defence stat.
  * https://twitter.com/JagexAsh/status/1689566945635438592
  **/
 export const ICE_DEMON_STYLE_DEF_IDS = [
