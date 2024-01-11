@@ -11,6 +11,7 @@ import os.path
 
 import requests
 import json
+import re
 
 FILE_NAME = '../cdn/json/monsters.json'
 WIKI_BASE = 'https://oldschool.runescape.wiki'
@@ -72,6 +73,10 @@ def main():
             print(k + ' is a CoX CM variant - skipping.')
             continue
 
+        # Skip monsters that aren't in the main namespace on the wiki
+        if re.match("^([A-z]*):", k):
+            continue
+
         monster = {
             'id': getPrintoutValue(po['NPC ID']),
             'name': k.rsplit('#', 1)[0] or '',
@@ -105,6 +110,11 @@ def main():
             ],
             'attributes': po['Monster attribute'] or []
         }
+
+        # Skip monsters that don't have an ID
+        if monster['id'] is None:
+            continue
+
         data.append(monster)
         if not monster['image'] == '':
             required_imgs.append(monster['image'])

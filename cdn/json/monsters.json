@@ -4659,39 +4659,6 @@
     ]
   },
   {
-    "id": null,
-    "name": "Baby blue dragon (20th Anniversary event)",
-    "version": "",
-    "image": "Baby blue dragon (20th Anniversary event).png",
-    "level": 0,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 241,
     "name": "Baby blue dragon",
     "version": "1",
@@ -4795,39 +4762,6 @@
     "attributes": [
       "dragon"
     ]
-  },
-  {
-    "id": null,
-    "name": "Baby dragon (unused)",
-    "version": "",
-    "image": "Baby dragon (unused).png",
-    "level": 48,
-    "speed": 0,
-    "size": 2,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
   },
   {
     "id": 5194,
@@ -5767,39 +5701,6 @@
       10,
       20,
       15
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Barbarian woman (historical)",
-    "version": "",
-    "image": "Barbarian woman (historical).png",
-    "level": 8,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "attributes": []
   },
@@ -7819,39 +7720,6 @@
     "attributes": []
   },
   {
-    "id": null,
-    "name": "Black demon (20th Anniversary event)",
-    "version": "",
-    "image": "Black demon (20th Anniversary event).png",
-    "level": 0,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 6295,
     "name": "Black demon (The Grand Tree)",
     "version": "Hard",
@@ -8060,39 +7928,6 @@
     "attributes": [
       "demon"
     ]
-  },
-  {
-    "id": null,
-    "name": "Black dragon (20th Anniversary event)",
-    "version": "",
-    "image": "Black dragon (20th Anniversary event).png",
-    "level": 0,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
   },
   {
     "id": 252,
@@ -9714,39 +9549,6 @@
       1,
       1,
       20
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Blue dragon (20th Anniversary event)",
-    "version": "",
-    "image": "Blue dragon (20th Anniversary event).png",
-    "level": 0,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "offensive": [
       0,
@@ -13559,138 +13361,6 @@
       0,
       31,
       39
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Colossal Chocco Chicken",
-    "version": "Blue",
-    "image": "Chocolate Chicken (2018 Easter event, blue).png",
-    "level": 0,
-    "speed": 4,
-    "size": 0,
-    "skills": [
-      40,
-      70,
-      0,
-      0,
-      0,
-      99
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Colossal Chocco Chicken",
-    "version": "Green",
-    "image": "Chocolate Chicken (2018 Easter event, green).png",
-    "level": 0,
-    "speed": 4,
-    "size": 0,
-    "skills": [
-      40,
-      70,
-      0,
-      0,
-      0,
-      99
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Colossal Chocco Chicken",
-    "version": "Rainbow",
-    "image": "Colossal Chocco Chicken.png",
-    "level": 0,
-    "speed": 4,
-    "size": 0,
-    "skills": [
-      40,
-      70,
-      0,
-      0,
-      0,
-      99
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Colossal Chocco Chicken",
-    "version": "Red",
-    "image": "Chocolate Chicken (2018 Easter event, red).png",
-    "level": 0,
-    "speed": 4,
-    "size": 0,
-    "skills": [
-      40,
-      70,
-      0,
-      0,
-      0,
-      99
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "attributes": []
   },
@@ -18584,105 +18254,6 @@
     "attributes": []
   },
   {
-    "id": null,
-    "name": "Demon of Balance",
-    "version": "",
-    "image": "Demon of Balance.png",
-    "level": 202,
-    "speed": 4,
-    "size": 0,
-    "skills": [
-      150,
-      100,
-      320,
-      80,
-      1,
-      150
-    ],
-    "offensive": [
-      0,
-      0,
-      80,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      200,
-      25,
-      200,
-      200,
-      200
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Demon of Darkness",
-    "version": "",
-    "image": "Demon of Darkness.png",
-    "level": 202,
-    "speed": 4,
-    "size": 0,
-    "skills": [
-      150,
-      100,
-      320,
-      80,
-      1,
-      150
-    ],
-    "offensive": [
-      0,
-      0,
-      80,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      200,
-      25,
-      200,
-      200,
-      200
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Demon of Light",
-    "version": "",
-    "image": "Demon of Light.png",
-    "level": 202,
-    "speed": 4,
-    "size": 0,
-    "skills": [
-      150,
-      100,
-      320,
-      80,
-      1,
-      150
-    ],
-    "offensive": [
-      0,
-      0,
-      80,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      200,
-      25,
-      200,
-      200,
-      200
-    ],
-    "attributes": []
-  },
-  {
     "id": 7144,
     "name": "Demonic gorilla",
     "version": "",
@@ -20236,39 +19807,6 @@
     "attributes": []
   },
   {
-    "id": null,
-    "name": "Durial321",
-    "version": "",
-    "image": "Durial321.png",
-    "level": 115,
-    "speed": 4,
-    "size": 1,
-    "skills": [
-      95,
-      88,
-      9500,
-      94,
-      80,
-      98
-    ],
-    "offensive": [
-      95,
-      0,
-      47,
-      -12,
-      0,
-      105
-    ],
-    "defensive": [
-      162,
-      69,
-      88,
-      134,
-      148
-    ],
-    "attributes": []
-  },
-  {
     "id": 7851,
     "name": "Dusk",
     "version": "First form",
@@ -20859,39 +20397,6 @@
       30,
       40,
       30
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Earth warrior (RuneScape 2 Beta)",
-    "version": "",
-    "image": "Earth warrior (RuneScape 2 Beta).png",
-    "level": 45,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "attributes": []
   },
@@ -24754,39 +24259,6 @@
     "attributes": []
   },
   {
-    "id": null,
-    "name": "General Danknuck",
-    "version": "",
-    "image": "General Danknuck.png",
-    "level": 90,
-    "speed": 4,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      200,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 2215,
     "name": "General Graardor",
     "version": "",
@@ -28038,171 +27510,6 @@
     "attributes": []
   },
   {
-    "id": null,
-    "name": "Goblin lieutenant",
-    "version": "Blue",
-    "image": "Goblin lieutenant (blue).png",
-    "level": 75,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Goblin lieutenant",
-    "version": "Red",
-    "image": "Goblin lieutenant (red).png",
-    "level": 75,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Goblin raider",
-    "version": "Level 30",
-    "image": "",
-    "level": 30,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Goblin raider",
-    "version": "Level 4",
-    "image": "",
-    "level": 4,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Goblin raider",
-    "version": "Level 50",
-    "image": "",
-    "level": 50,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 3046,
     "name": "Goblin",
     "version": "Level 13",
@@ -28882,39 +28189,6 @@
     ]
   },
   {
-    "id": null,
-    "name": "Greater demon (20th Anniversary event)",
-    "version": "",
-    "image": "Greater demon (20th Anniversary event).png",
-    "level": 0,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 7245,
     "name": "Greater demon",
     "version": "Level 100",
@@ -29088,39 +28362,6 @@
     "attributes": [
       "demon"
     ]
-  },
-  {
-    "id": null,
-    "name": "Green Guard",
-    "version": "",
-    "image": "Green Guard.png",
-    "level": 19,
-    "speed": 4,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      22,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
   },
   {
     "id": 260,
@@ -31041,39 +30282,6 @@
       3,
       4,
       3
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Guard (unused)",
-    "version": "",
-    "image": "Guard (unused).png",
-    "level": 22,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "attributes": []
   },
@@ -35079,39 +34287,6 @@
       1,
       1,
       40
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Imp (unused)",
-    "version": "",
-    "image": "Imp (unused).png",
-    "level": 3,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "offensive": [
       0,
@@ -39190,72 +38365,6 @@
     "attributes": []
   },
   {
-    "id": null,
-    "name": "King Scorpion (20th Anniversary event)",
-    "version": "",
-    "image": "King Scorpion (20th Anniversary event).png",
-    "level": 0,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "King black dragon (20th Anniversary event)",
-    "version": "",
-    "image": "King black dragon (20th Anniversary event).png",
-    "level": 0,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 7405,
     "name": "King kurask",
     "version": "",
@@ -40556,39 +39665,6 @@
     ]
   },
   {
-    "id": null,
-    "name": "Lesser demon (20th Anniversary event)",
-    "version": "",
-    "image": "Lesser demon (20th Anniversary event).png",
-    "level": 0,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 3982,
     "name": "Lesser demon (Melzar's Maze)",
     "version": "",
@@ -40678,76 +39754,6 @@
       0,
       0,
       0,
-      100,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": [
-      "demon"
-    ]
-  },
-  {
-    "id": null,
-    "name": "Lesser demon (The Scar)",
-    "version": "Level 94 (mage)",
-    "image": "Lesser demon (level 94, mage).png",
-    "level": 94,
-    "speed": 4,
-    "size": 2,
-    "skills": [
-      110,
-      110,
-      80,
-      110,
-      110,
-      110
-    ],
-    "offensive": [
-      100,
-      0,
-      100,
-      2,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": [
-      "demon"
-    ]
-  },
-  {
-    "id": null,
-    "name": "Lesser demon (The Scar)",
-    "version": "Level 94 (melee)",
-    "image": "Lesser demon (level 94, melee).png",
-    "level": 94,
-    "speed": 4,
-    "size": 2,
-    "skills": [
-      110,
-      110,
-      80,
-      110,
-      110,
-      110
-    ],
-    "offensive": [
-      100,
-      0,
-      100,
       100,
       0,
       0
@@ -41133,39 +40139,6 @@
       5,
       15,
       5
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Lizard man (20th Anniversary event)",
-    "version": "",
-    "image": "Lizard man (20th Anniversary event).png",
-    "level": 0,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "attributes": []
   },
@@ -42113,39 +41086,6 @@
     "attributes": []
   },
   {
-    "id": null,
-    "name": "Mammoth (unused NPC)",
-    "version": "",
-    "image": "Mammoth.png",
-    "level": 41,
-    "speed": 0,
-    "size": 3,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 6604,
     "name": "Mammoth",
     "version": "",
@@ -42160,105 +41100,6 @@
       1,
       1,
       60
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Man (Canifis)",
-    "version": "Blue",
-    "image": "Man (Canifis, 2).png",
-    "level": 24,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Man (Canifis)",
-    "version": "Green",
-    "image": "Man (Canifis, 3).png",
-    "level": 24,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Man (Canifis)",
-    "version": "Red",
-    "image": "Man (Canifis, 1).png",
-    "level": 24,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "offensive": [
       0,
@@ -45193,39 +44034,6 @@
     "attributes": []
   },
   {
-    "id": null,
-    "name": "Mummy (historical)",
-    "version": "",
-    "image": "Mummy (historical).png",
-    "level": 47,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 720,
     "name": "Mummy",
     "version": "Level 103",
@@ -47857,72 +46665,6 @@
     "attributes": []
   },
   {
-    "id": null,
-    "name": "Orc (20th Anniversary event)",
-    "version": "",
-    "image": "Orc (20th Anniversary event).png",
-    "level": 0,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Orc (historical)",
-    "version": "",
-    "image": "Orc (historical).png",
-    "level": 20,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 2237,
     "name": "Ork",
     "version": "",
@@ -48142,39 +46884,6 @@
     ],
     "offensive": [
       50,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Painted Goblin",
-    "version": "",
-    "image": "Painted Goblin.png",
-    "level": 11,
-    "speed": 4,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      15,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
       0,
       0,
       0,
@@ -53203,39 +51912,6 @@
     "attributes": []
   },
   {
-    "id": null,
-    "name": "Red dragon (20th Anniversary event)",
-    "version": "",
-    "image": "Red dragon (20th Anniversary event).png",
-    "level": 0,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 247,
     "name": "Red dragon",
     "version": "1",
@@ -55132,39 +53808,6 @@
     "attributes": []
   },
   {
-    "id": null,
-    "name": "SAS Member",
-    "version": "",
-    "image": "SAS Member (RuneScape 2 Beta).png",
-    "level": 11,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 304,
     "name": "Salarin the twisted",
     "version": "",
@@ -55346,72 +53989,6 @@
       1,
       1,
       20
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "RuneScape:Sandbox/4",
-    "version": "A",
-    "image": "",
-    "level": 10,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "RuneScape:Sandbox/4",
-    "version": "B",
-    "image": "",
-    "level": 20,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "offensive": [
       0,
@@ -56224,41 +54801,6 @@
     ]
   },
   {
-    "id": null,
-    "name": "Scavenger runt",
-    "version": "",
-    "image": "Corrupted scavenger.png",
-    "level": 0,
-    "speed": 4,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": [
-      "xerician"
-    ]
-  },
-  {
     "id": 5918,
     "name": "Scion",
     "version": "",
@@ -56384,39 +54926,6 @@
     "defensive": [
       0,
       -40,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Scorpion (20th Anniversary event)",
-    "version": "",
-    "image": "Scorpion (20th Anniversary event).png",
-    "level": 0,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
       0,
       0,
       0
@@ -57495,39 +56004,6 @@
       38,
       31,
       43
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Shadow warrior (RuneScape 2 Beta)",
-    "version": "",
-    "image": "Shadow warrior (RuneScape 2 Beta).png",
-    "level": 48,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "attributes": []
   },
@@ -61182,39 +59658,6 @@
       0,
       600,
       44,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Smokedevil",
-    "version": "",
-    "image": "Smokedevil (unused).png",
-    "level": 93,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
       0,
       0
     ],
@@ -65607,39 +64050,6 @@
     ]
   },
   {
-    "id": null,
-    "name": "RuneScape:Templates",
-    "version": "",
-    "image": "",
-    "level": 0,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 7620,
     "name": "Temple Guardian",
     "version": "",
@@ -68736,39 +67146,6 @@
     "attributes": []
   },
   {
-    "id": null,
-    "name": "Troll (20th Anniversary event)",
-    "version": "",
-    "image": "Troll (20th Anniversary event).png",
-    "level": 0,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 133,
     "name": "Troll (Construction)",
     "version": "",
@@ -68798,39 +67175,6 @@
       200,
       25,
       25
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Troll (historical)",
-    "version": "",
-    "image": "Troll.png",
-    "level": 69,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "attributes": []
   },
@@ -69911,7 +68255,7 @@
     "id": 3127,
     "name": "TzTok-Jad",
     "version": "",
-    "image": "TzTok-Jad (Christmas).png",
+    "image": "TzTok-Jad.png",
     "level": 702,
     "speed": 8,
     "size": 5,
@@ -70071,39 +68415,6 @@
       25,
       100,
       100
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Unbound JalTok-Jad",
-    "version": "",
-    "image": "JalTok-Jad.png",
-    "level": 1350,
-    "speed": 8,
-    "size": 5,
-    "skills": [
-      1125,
-      600,
-      700,
-      637,
-      765,
-      1530
-    ],
-    "offensive": [
-      0,
-      75,
-      100,
-      80,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "attributes": []
   },
@@ -70880,39 +69191,6 @@
       1,
       1,
       26
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Unusual Chicken",
-    "version": "",
-    "image": "Unusual Chicken.png",
-    "level": 1,
-    "speed": 4,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      3,
-      0,
-      0,
-      0
     ],
     "offensive": [
       0,
@@ -73787,72 +72065,6 @@
     "attributes": []
   },
   {
-    "id": null,
-    "name": "Watchman (random event)",
-    "version": "Draynor Bank Robbery",
-    "image": "Watchman (Draynor Bank Robbery).png",
-    "level": 253,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Watchman (random event)",
-    "version": "Random event",
-    "image": "Watchman (historical).png",
-    "level": 0,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 1370,
     "name": "Water elemental",
     "version": "",
@@ -75542,39 +73754,6 @@
     "attributes": []
   },
   {
-    "id": null,
-    "name": "Witch (monster)",
-    "version": "Draynor Manor updated",
-    "image": "Witch (historical).png",
-    "level": 25,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      10,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 3998,
     "name": "Witch's experiment",
     "version": "Bear",
@@ -76051,303 +74230,6 @@
       1,
       1,
       55
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Wolfman",
-    "version": "Blue",
-    "image": "Wolfman (2).png",
-    "level": 88,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Wolfman",
-    "version": "Green",
-    "image": "Wolfman (3).png",
-    "level": 88,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Wolfman",
-    "version": "Red",
-    "image": "Wolfman (1).png",
-    "level": 88,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Wolfwoman",
-    "version": "Purple",
-    "image": "Wolfwoman (1).png",
-    "level": 88,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Wolfwoman",
-    "version": "Red",
-    "image": "Wolfwoman (3).png",
-    "level": 88,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Wolfwoman",
-    "version": "Yellow",
-    "image": "Wolfwoman (2).png",
-    "level": 88,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Woman (Canifis)",
-    "version": "Purple",
-    "image": "Woman (Canifis, 1).png",
-    "level": 24,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Woman (Canifis)",
-    "version": "Red",
-    "image": "Woman (Canifis, 3).png",
-    "level": 24,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": null,
-    "name": "Woman (Canifis)",
-    "version": "Yellow",
-    "image": "Woman (Canifis, 2).png",
-    "level": 24,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "offensive": [
       0,
