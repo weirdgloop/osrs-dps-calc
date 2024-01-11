@@ -23,6 +23,14 @@ export function linearMinTransformer(max: number, offset: number = 0): HitTransf
     }
 }
 
+export function divisionTransformer(divisor: number, minimum: number = 0): HitTransformer {
+    return (h) => new HitDistribution(
+      h === 0
+        ? [new WeightedHit(1.0, [0])]
+        : [new WeightedHit(1.0, [Math.max(minimum, Math.trunc(h / divisor))])]
+    );
+}
+
 export class WeightedHit {
     readonly probability: number;
     private readonly hitsplats: number[];
