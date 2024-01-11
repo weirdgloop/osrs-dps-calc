@@ -14,11 +14,13 @@ import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
 import Select from "@/app/components/generic/Select";
 import CombatCalc from "@/lib/CombatCalc";
-import {Player} from "@/types/Player";
+import {Player, PlayerSkills} from "@/types/Player";
 import {Monster} from "@/types/Monster";
 import {NameType, ValueType} from "recharts/types/component/DefaultTooltipContent";
 import {toJS} from "mobx";
 import {useTheme} from "next-themes";
+import {max} from "d3-array";
+import {keys} from "@/utils";
 
 enum XAxisType {
   MONSTER_DEF,
@@ -27,6 +29,7 @@ enum XAxisType {
   PLAYER_STRENGTH_LEVEL,
   PLAYER_RANGED_LEVEL,
   PLAYER_MAGIC_LEVEL,
+  STAT_DECAY_RESTORE,
 }
 
 enum YAxisType {
@@ -42,6 +45,7 @@ const XAxisOptions = [
   {label: 'Player strength level', value: XAxisType.PLAYER_STRENGTH_LEVEL},
   {label: 'Player ranged level', value: XAxisType.PLAYER_RANGED_LEVEL},
   {label: 'Player magic level', value: XAxisType.PLAYER_MAGIC_LEVEL},
+  {label: 'Player stat decay', value: XAxisType.STAT_DECAY_RESTORE},
 ]
 
 const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, payload, label }) => {
@@ -173,6 +177,28 @@ function* inputRange(
               magic: newMagic,
             },
           })),
+          monster: monster,
+        };
+      }
+      return;
+
+    case XAxisType.STAT_DECAY_RESTORE:
+      const limit = max(loadouts, l => max(keys(l.boosts) as (keyof PlayerSkills)[], k => Math.abs(l.boosts[k]))) || 0;
+      for (let restore = 0; restore <= limit; restore++) {
+        yield {
+          xValue: restore,
+          loadouts: loadouts.map(l => {
+            const newBoosts: PlayerSkills = {...l.boosts};
+            keys(newBoosts).forEach(k => {
+              const v = newBoosts[k];
+              newBoosts[k] = Math.sign(v) * (Math.abs(v) - restore);
+            });
+            
+            return {
+              ...l,
+              boosts: newBoosts,
+            };
+          }),
           monster: monster,
         };
       }
