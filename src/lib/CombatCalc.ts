@@ -651,21 +651,15 @@ export default class CombatCalc {
    * Get the player's max magic hit
    */
   private getPlayerMaxMagicHit() {
-    let maxHit = 0;
+    let maxHit: number;
     let magicLevel = this.player.skills.magic + this.player.boosts.magic;
     const spell = this.player.spell;
-    
-    if (spell.max_hit === 0) {
-      return 0;
-    }
 
     // Specific bonuses that are applied from equipment
     const mattrs = this.monster.attributes;
     const buffs = this.player.buffs;
 
-    if (spell.max_hit) {
-      maxHit = spell.max_hit;
-    } else if (spell.name === 'Magic Dart') {
+    if (spell.name === 'Magic Dart') {
       if (this.wearing("Slayer's staff (e)") && buffs.onSlayerTask) {
         maxHit = Math.trunc(13 + magicLevel / 6);
       } else {
@@ -703,6 +697,14 @@ export default class CombatCalc {
       maxHit = Math.trunc((magicLevel * (77 + 64) + 320) / 640);
     } else if (this.wearing('Black salamander')) {
       maxHit = Math.trunc((magicLevel * (92 + 64) + 320) / 640);
+    } else {
+      maxHit = spell.max_hit || 0;
+    }
+
+    if (maxHit === 0) {
+      // at this point either they've selected a 0-dmg spell
+      // or they picked a staff-casting option without choosing a spell
+      return 0;
     }
 
     if (this.wearing('Chaos gauntlets') && spell.name.toLowerCase().includes('bolt')) {
