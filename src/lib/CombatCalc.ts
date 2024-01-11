@@ -451,7 +451,7 @@ export default class CombatCalc {
       let tbowMod = Math.trunc(Math.min(140, (140 + (m*10-10)/100 - (m-100)^2/100)));
       attackRoll = Math.trunc(attackRoll * tbowMod / 100);
     }
-    if (this.wearing("Craw's bow") && buffs.inWilderness) {
+    if (this.wearing(["Craw's bow", "Webweaver bow"]) && buffs.inWilderness) {
       attackRoll = Math.trunc(attackRoll * 3/2);
     }
     if (this.wearing('Dragon hunter crossbow')) {
@@ -511,7 +511,7 @@ export default class CombatCalc {
       let tbowMod = Math.trunc(Math.min(250, 250 + (m*10-14)/100 - (m-140)^2/100));
       maxHit = Math.trunc(maxHit * tbowMod / 100);
     }
-    if (this.wearing("Craw's bow")) {
+    if (this.wearing(["Craw's bow", "Webweaver bow"]) && buffs.inWilderness) {
       maxHit = Math.trunc(maxHit * 3/2);
     }
     if (this.wearing('Dragon hunter crossbow')) {
