@@ -11,7 +11,7 @@ import {isBindSpell, isFireSpell, isWaterSpell} from "@/types/Spell";
 import {PrayerMap} from "@/enums/Prayer";
 import {sum} from "d3-array";
 import {isVampyre, MonsterAttribute} from "@/enums/MonsterAttribute";
-import {TOMBS_OF_AMASCUT_MONSTER_IDS, VERZIK_P1_IDS} from "@/constants";
+import {ICE_DEMON_STYLE_DEF_IDS, TOMBS_OF_AMASCUT_MONSTER_IDS, VERZIK_P1_IDS} from "@/constants";
 
 const DEFAULT_ATTACK_SPEED = 4;
 const SECONDS_PER_TICK = 0.6;
@@ -261,7 +261,7 @@ export default class CombatCalc {
    * Get the NPC defence roll for this loadout, which is based on the player's current combat style
    */
   public getNPCDefenceRoll(): number {
-    let effectiveLevel = this.player.style.type === "magic"
+    let effectiveLevel = this.player.style.type === "magic" && !ICE_DEMON_STYLE_DEF_IDS.includes(this.monster.id || 0)
         ? this.monster.skills.magic
         : this.monster.skills.def;
 
