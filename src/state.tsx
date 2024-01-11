@@ -457,11 +457,11 @@ class GlobalState implements State {
 
       // Special handling for if a shield is equipped, and we're using a two-handed weapon
       if (player.equipment?.shield && newShield !== undefined && currentWeapon?.isTwoHanded) {
-        player = {...player, equipment: {...player.equipment, weapon: undefined}};
+        player = {...player, equipment: {...player.equipment, weapon: null}};
       }
       // ...and vice-versa
       if (player.equipment?.weapon && newWeapon?.isTwoHanded && currentShield?.name !== '') {
-        player = {...player, equipment: {...player.equipment, shield: undefined}};
+        player = {...player, equipment: {...player.equipment, shield: null}};
       }
     }
 

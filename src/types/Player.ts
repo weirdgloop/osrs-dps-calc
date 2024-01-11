@@ -32,17 +32,17 @@ export interface EquipmentPiece {
  * we have to use strings in the future (for arbitrary, non-ID values).
  */
 export interface PlayerEquipment {
-  head?: EquipmentPiece;
-  cape?: EquipmentPiece;
-  neck?: EquipmentPiece;
-  ammo?: EquipmentPiece;
-  weapon?: EquipmentPiece;
-  body?: EquipmentPiece;
-  shield?: EquipmentPiece;
-  legs?: EquipmentPiece;
-  hands?: EquipmentPiece;
-  feet?: EquipmentPiece;
-  ring?: EquipmentPiece;
+  head: EquipmentPiece | null;
+  cape: EquipmentPiece | null;
+  neck: EquipmentPiece | null;
+  ammo: EquipmentPiece | null;
+  weapon: EquipmentPiece | null;
+  body: EquipmentPiece | null;
+  shield: EquipmentPiece | null;
+  legs: EquipmentPiece | null;
+  hands: EquipmentPiece | null;
+  feet: EquipmentPiece | null;
+  ring: EquipmentPiece | null;
 }
 
 export interface PlayerBonuses {
