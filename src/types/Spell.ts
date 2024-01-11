@@ -17,5 +17,11 @@ export function isWaterSpell(spell?: Spell): boolean {
           .includes(spell.name);
 }
 
+export function isBindSpell(spell?: Spell): boolean {
+  return spell !== undefined &&
+    ['Bind', 'Snare', 'Entangle'] // todo bind isn't actually added yet, but future-proofing
+      .includes(spell.name);
+}
+
 // The available spellbooks
 export type Spellbook = 'standard' | 'ancient' | 'lunar' | 'arceuus';

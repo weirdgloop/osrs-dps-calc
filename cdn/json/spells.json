@@ -66,6 +66,12 @@
     "spellbook": "standard"
   },
   {
+    "name": "Entangle",
+    "image": "Entangle.png",
+    "max_hit": 5,
+    "spellbook": "standard"
+  },
+  {
     "name": "Fire Blast",
     "image": "Fire Blast.png",
     "max_hit": 16,
@@ -190,6 +196,12 @@
     "image": "Smoke Rush.png",
     "max_hit": 13,
     "spellbook": "ancient"
+  },
+  {
+    "name": "Snare",
+    "image": "Snare.png",
+    "max_hit": 3,
+    "spellbook": "standard"
   },
   {
     "name": "Superior Demonbane",

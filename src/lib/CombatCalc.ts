@@ -1,7 +1,7 @@
 import {EquipmentPiece, Player} from '@/types/Player';
 import {Monster} from '@/types/Monster';
 import {AttackDistribution, HitDistribution, WeightedHit} from "@/lib/HitDist";
-import {isFireSpell, isWaterSpell} from "@/types/Spell";
+import {isBindSpell, isFireSpell, isWaterSpell} from "@/types/Spell";
 import {PrayerMap} from "@/enums/Prayer";
 import {sum} from "d3-array";
 import {isVampyre, MonsterAttribute} from "@/enums/MonsterAttribute";
@@ -579,7 +579,7 @@ export default class CombatCalc {
     if (this.isWearingSmokeStaff() && this.player.spell.spellbook === 'standard') {
       attackRoll = Math.trunc(attackRoll * 11/10);
     }
-    if (this.wearing('Tome of water') && isWaterSpell(this.player.spell)) { // todo does this go here?
+    if (this.wearing('Tome of water') && (isWaterSpell(this.player.spell) || isBindSpell(this.player.spell))) { // todo does this go here?
       attackRoll = Math.trunc(attackRoll * 6/5);
     }
 
