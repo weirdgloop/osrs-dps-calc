@@ -84,7 +84,7 @@ def main():
     wiki_data = getEquipmentData()
 
     # Convert the data into our own JSON structure
-    data = {}
+    data = []
     required_imgs = []
 
     # Loop over the equipment data from the wiki
@@ -136,12 +136,13 @@ def main():
             continue
 
         # Append the current equipment item to the calc's equipment list
-        data[item_id] = equipment
+        data.append(equipment)
 
         if not equipment['image'] == '':
             required_imgs.append(equipment['image'])
 
     print('Total equipment: ' + str(len(data)))
+    data.sort(key=lambda d: d.get('name'))
 
     with open(FILE_NAME, 'w') as f:
         print('Saving to JSON at file: ' + FILE_NAME)

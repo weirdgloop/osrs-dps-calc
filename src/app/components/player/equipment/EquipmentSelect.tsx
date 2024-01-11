@@ -41,10 +41,10 @@ const EquipmentSelect: React.FC = observer(() => {
     const dartEntries: EquipmentOption[] = [];
 
     const entries: EquipmentOption[] = [];
-    Object.entries(equipment).forEach(([k, v]) => {
+    for (let v of equipment) {
       let e: EquipmentOption = {
         label: `${v.name}`,
-        value: k,
+        value: v.id.toString(),
         version: v.version || '',
         slot: v.slot,
         equipment: {
@@ -60,7 +60,7 @@ const EquipmentSelect: React.FC = observer(() => {
       } else {
         entries.push(e);
       }
-    });
+    }
 
     cross(blowpipeEntries, dartEntries).forEach(([blowpipe, dart]) => {
       const newStrength = blowpipe.equipment.offensive[4] + dart.equipment.offensive[4];
