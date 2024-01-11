@@ -433,6 +433,11 @@ export default class CombatCalc {
 
     let attackRoll = effectiveLevel * (this.player.offensive.ranged + 64);
 
+    if (this.isWearingCrystalBow()) {
+      let crystalPieces = (this.wearing('Crystal helm') ? 1 : 0) + (this.wearing('Crystal legs') ? 2 : 0) + (this.wearing('Crystal body') ? 3 : 0);
+      attackRoll = Math.trunc(attackRoll * (20 + crystalPieces) / 20);
+    }
+
     // Specific bonuses that are applied from equipment
     const mattrs = this.monster.attributes;
     const buffs = this.player.buffs;
@@ -457,13 +462,9 @@ export default class CombatCalc {
     if (this.wearing(["Craw's bow", "Webweaver bow"]) && buffs.inWilderness) {
       attackRoll = Math.trunc(attackRoll * 3/2);
     }
-    if (this.wearing('Dragon hunter crossbow')) {
+    if (this.wearing('Dragon hunter crossbow') && mattrs.includes(MonsterAttribute.DRAGON)) {
       // TODO: https://twitter.com/JagexAsh/status/1647928422843273220 for max_hit seems to be additive now
       attackRoll = Math.trunc(attackRoll * 13/10);
-    }
-    if (this.isWearingCrystalBow()) {
-      let crystalPieces = (this.wearing('Crystal helm') ? 1 : 0) + (this.wearing('Crystal legs') ? 2 : 0) + (this.wearing('Crystal body') ? 3 : 0);
-      attackRoll = Math.trunc(attackRoll * (20 + crystalPieces) / 20);
     }
 
     return attackRoll;
@@ -492,11 +493,17 @@ export default class CombatCalc {
     }
 
     let maxHit = Math.trunc((effectiveLevel * (this.player.bonuses.ranged_str + 64) + 320) / 640);
+    
+    // tested this in-game, slayer helmet (i) + crystal legs + crystal body + bowfa, on accurate, no rigour, 99 ranged
+    // max hit is 36, but would be 37 if placed after slayer helm
+    if (this.isWearingCrystalBow()) {
+      let crystalPieces = (this.wearing('Crystal helm') ? 1 : 0) + (this.wearing('Crystal legs') ? 2 : 0) + (this.wearing('Crystal body') ? 3 : 0);
+      maxHit = Math.trunc(maxHit * (40 + crystalPieces) / 40);
+    }
 
     // Specific bonuses that are applied from equipment
     const mattrs = this.monster.attributes;
     const buffs = this.player.buffs;
-
     if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       maxHit = Math.trunc(maxHit * 6/5);
     } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
@@ -517,13 +524,9 @@ export default class CombatCalc {
     if (this.wearing(["Craw's bow", "Webweaver bow"]) && buffs.inWilderness) {
       maxHit = Math.trunc(maxHit * 3/2);
     }
-    if (this.wearing('Dragon hunter crossbow')) {
+    if (this.wearing('Dragon hunter crossbow') && mattrs.includes(MonsterAttribute.DRAGON)) {
       // TODO: https://twitter.com/JagexAsh/status/1647928422843273220 for max_hit seems to be additive now
       maxHit = Math.trunc(maxHit * 5/4);
-    }
-    if (this.isWearingCrystalBow()) {
-      let crystalPieces = (this.wearing('Crystal helm') ? 1 : 0) + (this.wearing('Crystal legs') ? 2 : 0) + (this.wearing('Crystal body') ? 3 : 0);
-      maxHit = Math.trunc(maxHit * (40 + crystalPieces) / 40);
     }
 
     return maxHit;
