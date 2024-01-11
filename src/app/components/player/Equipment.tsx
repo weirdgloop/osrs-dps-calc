@@ -7,10 +7,10 @@ const Equipment: React.FC = () => {
   return (
     <div className={'px-4'}>
       <div className={'mt-4'}>
-        <EquipmentSelect />
+        <EquipmentGrid/>
       </div>
       <div className={'mt-4'}>
-        <EquipmentGrid />
+        <EquipmentSelect />
       </div>
       <div>
         <Bonuses/>

@@ -88,7 +88,7 @@ const EquipmentSelect: React.FC = observer(() => {
       className={'w-full'}
       items={options}
       resetAfterSelect={true}
-      placeholder={'Search for equipment...'}
+      placeholder={'Search for equipment to wear...'}
       onSelectedItemChange={(item) => {
         if (item) {
           store.updatePlayer({
