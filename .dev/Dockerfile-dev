@@ -1,7 +1,7 @@
 FROM python:3-alpine AS scraper
 
-RUN mkdir -p /workspace/scripts /workspace/cdn /workspace/src
-COPY . /workspace
+RUN mkdir -p /workspace/scripts /workspace/cdn
+COPY ./scripts/* /workspace/scripts
 WORKDIR /workspace/scripts
 
 RUN --mount=type=cache,target=/root/.cache/pip \

@@ -10,7 +10,7 @@
     "lint": "next lint",
     "analyse": "ANALYSE=true next build",
     "test": "jest",
-    "cdn-docker": "docker compose run --rm data-scraper"
+    "cdn-docker": "docker compose build data-scraper && docker compose run --rm data-scraper"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.14",
