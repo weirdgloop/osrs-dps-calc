@@ -247,11 +247,13 @@ const LoadoutComparison: React.FC = observer(() => {
     if (x === undefined || y === undefined) {
       return {
         max: 1,
+        min: 0,
         lines: [],
       };
     }
 
-    let max = 1;
+    let max = 0;
+    let min = 100;
     const lines: { name: number, [lKey: string]: string | number }[] = [];
     for (let input of inputRange(x, loadouts, monster)) {
       const entry: typeof lines[0] = {name: input.xValue,};
@@ -259,11 +261,13 @@ const LoadoutComparison: React.FC = observer(() => {
         const v = getOutput(y, l, input.monster);
         entry[`Loadout ${i+1}`] = v.toFixed(2);
         max = Math.max(max, v);
+        min = Math.min(min, v);
       });
       lines.push(entry);
     }
     return {
-      max,
+      max: max === 0 ? 1 : Math.ceil(max),
+      min: min === 100 ? 0 : Math.floor(min),
       lines,
     };
   }, [xAxisType, yAxisType, monster, loadouts]);
@@ -307,7 +311,7 @@ const LoadoutComparison: React.FC = observer(() => {
           />
           <YAxis
             stroke="#777777"
-            domain={[0, data.max]}
+            domain={[data.min, data.max]}
             interval={'equidistantPreserveStart'}
           />
           <CartesianGrid stroke="gray" strokeDasharray="5 5"/>
