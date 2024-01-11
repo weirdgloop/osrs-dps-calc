@@ -44,7 +44,7 @@ const calculateEquipmentBonuses = (eq: EquipmentPiece[]): EquipmentBonuses => {
       str: acc.bonuses.str + piece.offensive[7],
       magic_str: acc.bonuses.magic_str + piece.offensive[1],
       ranged_str: acc.bonuses.ranged_str + piece.offensive[4],
-      prayer: acc.bonuses.prayer + piece.offensive[5],
+      prayer: acc.bonuses.prayer + piece.defensive[5],
     },
     offensive: {
       slash: acc.offensive.slash + piece.offensive[5],
