@@ -1,5 +1,11 @@
 [
   {
+    "name": "Bind",
+    "image": "Bind.png",
+    "max_hit": 0,
+    "spellbook": "standard"
+  },
+  {
     "name": "Blood Barrage",
     "image": "Blood Barrage.png",
     "max_hit": 29,
@@ -30,9 +36,33 @@
     "spellbook": "standard"
   },
   {
+    "name": "Confuse",
+    "image": "Confuse.png",
+    "max_hit": 0,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Crumble Undead",
+    "image": "Crumble Undead.png",
+    "max_hit": 15,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Curse",
+    "image": "Curse.png",
+    "max_hit": 0,
+    "spellbook": "standard"
+  },
+  {
     "name": "Dark Demonbane",
     "image": "Dark Demonbane.png",
     "max_hit": 30,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Dark Lure",
+    "image": "Dark Lure.png",
+    "max_hit": 0,
     "spellbook": "arceuus"
   },
   {
@@ -63,6 +93,12 @@
     "name": "Earth Wave",
     "image": "Earth Wave.png",
     "max_hit": 19,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Enfeeble",
+    "image": "Enfeeble.png",
+    "max_hit": 0,
     "spellbook": "standard"
   },
   {
@@ -108,6 +144,18 @@
     "spellbook": "standard"
   },
   {
+    "name": "Ghostly Grasp",
+    "image": "Ghostly Grasp.png",
+    "max_hit": 12,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Greater Corruption",
+    "image": "Greater Corruption.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
     "name": "Iban Blast",
     "image": "Iban Blast.png",
     "max_hit": 25,
@@ -144,6 +192,18 @@
     "spellbook": "arceuus"
   },
   {
+    "name": "Lesser Corruption",
+    "image": "Lesser Corruption.png",
+    "max_hit": 0,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Magic Dart",
+    "image": "Magic Dart.png",
+    "max_hit": 0,
+    "spellbook": "standard"
+  },
+  {
     "name": "Saradomin Strike",
     "image": "Saradomin Strike.png",
     "max_hit": 20,
@@ -172,6 +232,12 @@
     "image": "Shadow Rush.png",
     "max_hit": 14,
     "spellbook": "ancient"
+  },
+  {
+    "name": "Skeletal Grasp",
+    "image": "Skeletal Grasp.png",
+    "max_hit": 17,
+    "spellbook": "arceuus"
   },
   {
     "name": "Smoke Barrage",
@@ -204,10 +270,34 @@
     "spellbook": "standard"
   },
   {
+    "name": "Stun",
+    "image": "Stun.png",
+    "max_hit": 0,
+    "spellbook": "standard"
+  },
+  {
     "name": "Superior Demonbane",
     "image": "Superior Demonbane.png",
     "max_hit": 23,
     "spellbook": "arceuus"
+  },
+  {
+    "name": "Tele Block",
+    "image": "Tele Block.png",
+    "max_hit": 0,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Undead Grasp",
+    "image": "Undead Grasp.png",
+    "max_hit": 24,
+    "spellbook": "arceuus"
+  },
+  {
+    "name": "Vulnerability",
+    "image": "Vulnerability.png",
+    "max_hit": 0,
+    "spellbook": "standard"
   },
   {
     "name": "Water Blast",
@@ -237,6 +327,12 @@
     "name": "Water Wave",
     "image": "Water Wave.png",
     "max_hit": 18,
+    "spellbook": "standard"
+  },
+  {
+    "name": "Weaken",
+    "image": "Weaken.png",
+    "max_hit": 0,
     "spellbook": "standard"
   },
   {

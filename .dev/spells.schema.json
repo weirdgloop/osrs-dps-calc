@@ -1,0 +1,28 @@
+{
+  "title": "Root",
+  "type": "array",
+  "items": {
+    "title": "Spell",
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Spell name",
+        "type": "string"
+      },
+      "image": {
+        "title": "Spell image URL, accessible by https://oldschool.runescape.wiki/images/$value",
+        "type": "string"
+      },
+      "max_hit": {
+        "title": "Spell base max hit",
+        "type": "number"
+      },
+      "spellbook": {
+        "title": "Spellbook containing the spell",
+        "type": "string",
+        "enum": ["standard", "ancient", "lunar", "arceuus"]
+      }
+    },
+    "required": ["name", "max_hit", "spellbook"]
+  }
+}
