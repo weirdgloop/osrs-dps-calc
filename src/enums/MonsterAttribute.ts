@@ -19,5 +19,5 @@ export const isVampyre = (attr: string | string[]): boolean => {
   if (Array.isArray(attr)) {
     return attr.some(a => isVampyre(a));
   }
-  return ['vampyre1', 'vampyre2', 'vampyre3'].includes(attr);
+  return ([MonsterAttribute.VAMPYRE_1, MonsterAttribute.VAMPYRE_2, MonsterAttribute.VAMPYRE_3] as string[]).includes(attr);
 }
