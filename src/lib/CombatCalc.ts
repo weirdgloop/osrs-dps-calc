@@ -732,11 +732,11 @@ export default class CombatCalc {
 
       if (this.isWearingFang()) {
           if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id || 0)) {
-              return (atk > def)
-                  ? 1 - (def + 2) * (2 * def + 3) / (atk + 1) / (atk + 1) / 6
-                  : atk * (4 * atk + 5) / 6 / (atk + 1) / (def + 1);
+            return 1 - Math.pow(1 - hitChance, 2);
           } else {
-              return 1 - Math.pow(1 - hitChance, 2);
+            return (atk > def)
+              ? 1 - (def + 2) * (2 * def + 3) / (atk + 1) / (atk + 1) / 6
+              : atk * (4 * atk + 5) / 6 / (atk + 1) / (def + 1);
           }
       }
 
