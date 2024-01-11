@@ -357,7 +357,7 @@ export default class CombatCalc {
       maxHit = Math.trunc(maxHit * 17/10);
     }
     if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {
-      maxHit = Math.trunc(baseDmg / 10); // TODO: confirm that this is the appropriate place
+      maxHit = Math.trunc(baseDmg * 11/10); // TODO: confirm that this is the appropriate place
     }
     if (this.isWearingTzhaarWeapon() && this.wearing('Berserker necklace')) {
       maxHit = Math.trunc(maxHit * 6/5);
