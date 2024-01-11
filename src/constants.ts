@@ -27,6 +27,13 @@ export const VERZIK_P1_IDS = [
   10847, 10848, 10849 // hmt
 ];
 
+export const VERZIK_IDS = [
+  ...VERZIK_P1_IDS,
+  10833, 10834, 10835, // verzik entry mode
+  8372, 8373, 8374, // verzik normal mode
+  10850, 10851, 10852, // verzik hard mode
+];
+
 /** IDs of monsters that are present in Theatre of Blood **/
 export const TOB_MONSTER_IDS = [
   ...VERZIK_P1_IDS,
@@ -128,6 +135,33 @@ export const ABYSSAL_PORTAL_IDS = [
  */
 export const GLOWING_CRYSTAL_IDS = [
   7568,
+];
+
+/**
+ * IDs of the Ice demon from the Chambers of Xeric.
+ */
+export const ICE_DEMON_IDS = [
+  7584, // reg
+  7585, // cm
+];
+
+/**
+ * IDs of the Fragment of Seren.
+ */
+export const FRAGMENT_OF_SEREN_IDS = [
+  8917, 8918, 8919, 8920
+];
+
+/**
+ * IDs of monsters that calculate their magical defence using the defence stat.
+ * https://twitter.com/JagexAsh/status/1689566945635438592
+ **/
+export const USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS = [
+  ...ICE_DEMON_IDS,
+  ...VERZIK_IDS,
+  ...FRAGMENT_OF_SEREN_IDS,
+  11709, 11712, // baboon brawler
+  9118 // rabbit (prifddinas)
 ];
 
 export const PARTY_SIZE_REQUIRED_MONSTER_IDS = [
