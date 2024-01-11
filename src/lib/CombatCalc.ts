@@ -236,7 +236,7 @@ export default class CombatCalc {
     effectiveLevel += 9;
     let defenceRoll = effectiveLevel * (this.monster.defensive[this.player.style.type] + 64);
 
-    if (this.monster.toaInvocationLevel) {
+    if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id || 0) && this.monster.toaInvocationLevel) {
       defenceRoll = Math.trunc(defenceRoll * (250 + this.monster.toaInvocationLevel) / 250);
     }
 
