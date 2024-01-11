@@ -143,7 +143,7 @@ export const PrayerMap: {[k in Prayer]: PrayerData} = {
   [Prayer.MYSTIC_MIGHT]: {
     name: 'Mystic Might',
     image: MysticMight,
-    combatStyle: "ranged",
+    combatStyle: "magic",
     factorAccuracy: 0.15,
     factorStrength: 0,
   },
@@ -171,7 +171,7 @@ export const PrayerMap: {[k in Prayer]: PrayerData} = {
   [Prayer.AUGURY]: {
     name: 'Augury',
     image: Augury,
-    combatStyle: "ranged",
+    combatStyle: "magic",
     factorAccuracy: 0.25,
     factorStrength: 0,
   }
