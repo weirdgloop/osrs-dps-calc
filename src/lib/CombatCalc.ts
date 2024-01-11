@@ -85,7 +85,7 @@ export default class CombatCalc {
    * @see https://oldschool.runescape.wiki/w/Elite_Void_Knight_equipment
    */
   private isWearingEliteRangedVoid(): boolean {
-    return this.wearingAll(['Void ranged helm', 'Elite void top', 'Elite void robe', 'Void knight gloves']);
+    return this.wearingAll(['Void ranger helm', 'Elite void top', 'Elite void robe', 'Void knight gloves']);
   }
 
   /**
@@ -93,7 +93,7 @@ export default class CombatCalc {
    * @see https://oldschool.runescape.wiki/w/Elite_Void_Knight_equipment
    */
   private isWearingEliteMagicVoid(): boolean {
-    return this.wearingAll(['Void magic helm', 'Elite void top', 'Elite void robe', 'Void knight gloves']);
+    return this.wearingAll(['Void mage helm', 'Elite void top', 'Elite void robe', 'Void knight gloves']);
   }
 
   /**
@@ -109,7 +109,7 @@ export default class CombatCalc {
    * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
    */
   private isWearingMagicVoid(): boolean {
-    return this.wearingAll(['Void magic helm', 'Void knight top', 'Void knight robe', 'Void knight gloves']);
+    return this.wearingAll(['Void mage helm', 'Void knight top', 'Void knight robe', 'Void knight gloves']);
   }
 
   /**
