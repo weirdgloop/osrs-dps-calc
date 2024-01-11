@@ -41,6 +41,7 @@ REQUIRED_PRINTOUTS = [
     'Combat style'
 ]
 
+
 def getEquipmentData():
     equipment = {}
     offset = 0
@@ -69,12 +70,14 @@ def getEquipmentData():
             offset = data['query-continue-offset']
     return equipment
 
+
 def getPrintoutValue(prop):
     # SMW printouts are all arrays, so ensure that the array is not empty
     if not prop:
         return None
     else:
         return prop[0]
+
 
 def main():
     # Grab the equipment info using SMW, including all the relevant printouts
@@ -128,6 +131,11 @@ def main():
             equipment['slot'] = 'weapon'
             equipment['isTwoHanded'] = True
 
+        # Prune items with all 0 stat bonuses
+        if all(statbonus == 0 for statbonus in equipment['offensive']) and all(statbonus == 0 for statbonus in equipment['defensive']):
+            continue
+
+        # Append the current equipment item to the calc's equipment list
         data[item_id] = equipment
 
         if not equipment['image'] == '':
@@ -166,7 +174,6 @@ def main():
     print('Total images saved: ' + str(success_img_dls))
     print('Total images skipped (already exists): ' + str(skipped_img_dls))
     print('Total images failed to save: ' + str(failed_img_dls))
-
 
 
 main()
