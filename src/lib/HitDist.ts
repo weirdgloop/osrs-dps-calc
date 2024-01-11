@@ -118,7 +118,7 @@ export class HitDistribution {
                 d.addHit(transformed);
             }
         }
-        return d;
+        return d.flatten();
     }
 
     public scaleProbability(factor: number): HitDistribution {
