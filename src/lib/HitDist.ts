@@ -252,11 +252,11 @@ export class AttackDistribution {
     }
 
     public getMax(): number {
-        return max(this.dists.map(d => d.getMax())) || 0;
+        return sum(this.dists.map(d => d.getMax())) || 0;
     }
 
     public getExpectedDamage(): number {
-        return max(this.dists.map(d => d.expectedHit())) || 0;
+        return sum(this.dists.map(d => d.expectedHit())) || 0;
     }
 
     public asSingleHitplat(): HitDistribution {
