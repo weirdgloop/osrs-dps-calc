@@ -14,11 +14,13 @@ import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
 import Select from "@/app/components/generic/Select";
 import CombatCalc from "@/lib/CombatCalc";
-import {Player} from "@/types/Player";
+import {Player, PlayerSkills} from "@/types/Player";
 import {Monster} from "@/types/Monster";
 import {NameType, ValueType} from "recharts/types/component/DefaultTooltipContent";
 import {toJS} from "mobx";
 import {useTheme} from "next-themes";
+import {max} from "d3-array";
+import {keys} from "@/utils";
 
 enum XAxisType {
   MONSTER_DEF,
@@ -27,6 +29,7 @@ enum XAxisType {
   PLAYER_STRENGTH_LEVEL,
   PLAYER_RANGED_LEVEL,
   PLAYER_MAGIC_LEVEL,
+  STAT_DECAY_RESTORE,
 }
 
 enum YAxisType {
@@ -42,6 +45,7 @@ const XAxisOptions = [
   {label: 'Player strength level', value: XAxisType.PLAYER_STRENGTH_LEVEL},
   {label: 'Player ranged level', value: XAxisType.PLAYER_RANGED_LEVEL},
   {label: 'Player magic level', value: XAxisType.PLAYER_MAGIC_LEVEL},
+  {label: 'Player stat decay', value: XAxisType.STAT_DECAY_RESTORE},
 ]
 
 const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, payload, label }) => {
@@ -178,6 +182,28 @@ function* inputRange(
       }
       return;
 
+    case XAxisType.STAT_DECAY_RESTORE:
+      const limit = max(loadouts, l => max(keys(l.boosts) as (keyof PlayerSkills)[], k => Math.abs(l.boosts[k]))) || 0;
+      for (let restore = 0; restore <= limit; restore++) {
+        yield {
+          xValue: restore,
+          loadouts: loadouts.map(l => {
+            const newBoosts: PlayerSkills = {...l.boosts};
+            keys(newBoosts).forEach(k => {
+              const v = newBoosts[k];
+              newBoosts[k] = Math.sign(v) * (Math.abs(v) - restore);
+            });
+            
+            return {
+              ...l,
+              boosts: newBoosts,
+            };
+          }),
+          monster: monster,
+        };
+      }
+      return;
+
     default:
       throw new Error(`unimplemented xAxisType ${xAxisType}`);
   }
@@ -221,11 +247,13 @@ const LoadoutComparison: React.FC = observer(() => {
     if (x === undefined || y === undefined) {
       return {
         max: 1,
+        min: 0,
         lines: [],
       };
     }
 
-    let max = 1;
+    let max = 0;
+    let min = 100;
     const lines: { name: number, [lKey: string]: string | number }[] = [];
     for (let input of inputRange(x, loadouts, monster)) {
       const entry: typeof lines[0] = {name: input.xValue,};
@@ -233,11 +261,13 @@ const LoadoutComparison: React.FC = observer(() => {
         const v = getOutput(y, l, input.monster);
         entry[`Loadout ${i+1}`] = v.toFixed(2);
         max = Math.max(max, v);
+        min = Math.min(min, v);
       });
       lines.push(entry);
     }
     return {
-      max,
+      max: max === 0 ? 1 : Math.ceil(max),
+      min: min === 100 ? 0 : Math.floor(min),
       lines,
     };
   }, [xAxisType, yAxisType, monster, loadouts]);
@@ -281,7 +311,7 @@ const LoadoutComparison: React.FC = observer(() => {
           />
           <YAxis
             stroke="#777777"
-            domain={[0, data.max]}
+            domain={[data.min, data.max]}
             interval={'equidistantPreserveStart'}
           />
           <CartesianGrid stroke="gray" strokeDasharray="5 5"/>

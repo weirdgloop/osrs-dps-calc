@@ -97,3 +97,7 @@ export const WORKER_JSON_REVIVER: (key: string, value: any) => any = (k, v) => {
     return v;
   }
 }
+
+export const keys = <T extends {}>(o: T): (keyof T)[]  => {
+  return Object.keys(o) as (keyof T)[];
+}
