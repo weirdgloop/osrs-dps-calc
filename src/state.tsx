@@ -323,7 +323,7 @@ class GlobalState implements State {
   updateImportedData(data: ImportableData) {
     this.selectedLoadout = data.selectedLoadout;
     this.loadouts = merge(this.loadouts, data.loadouts);
-    this.monster = merge(this.monster, data.monster);
+    this.updateMonster(data.monster);
   }
 
   loadPreferences() {
