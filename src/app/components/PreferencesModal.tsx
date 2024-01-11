@@ -2,12 +2,11 @@ import React, {useState} from 'react';
 import Toggle from './generic/Toggle';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
-import {useTheme} from "next-themes";
 import Modal from "@/app/components/generic/Modal";
 import power from '@/public/img/misc/power.webp';
 import LazyImage from "@/app/components/generic/LazyImage";
 
-const PreferencesModal: React.FC = observer((props) => {
+const PreferencesModal: React.FC = observer(() => {
   const store = useStore();
   const {prefs, ui} = store;
 
@@ -22,7 +21,7 @@ const PreferencesModal: React.FC = observer((props) => {
       >
         <div>
           <h2 className={'font-serif font-bold mb-2 select-none'}>Interface</h2>
-          <Toggle checked={prefs.manualMode} setChecked={(c) => {
+          <Toggle checked={prefs.manualMode} setChecked={() => {
             if (prefs.manualMode) {
               store.updatePreferences({manualMode: false});
             } else {
