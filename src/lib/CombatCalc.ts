@@ -950,7 +950,11 @@ export default class CombatCalc {
    * Returns the player's attack speed.
    */
   public getAttackSpeed(): number {
-    return this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;
+    let attackSpeed = this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED; 
+    if (this.player.style.stance === 'Rapid') {
+      attackSpeed -= 1;
+    }
+    return attackSpeed;
   }
 
   /**

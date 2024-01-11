@@ -130,9 +130,9 @@ export const getCombatStylesForCategory = (style: EquipmentCategory): PlayerComb
       ]
     case EquipmentCategory.CHINCHOMPA:
       return [
-        {name: 'Short fuse', type: 'ranged', stance: 'Short fuse'},
-        {name: 'Medium fuse', type: 'ranged', stance: 'Medium fuse'},
-        {name: 'Long fuse', type: 'ranged', stance: 'Long fuse'},
+        {name: 'Short fuse', type: 'ranged', stance: 'Accurate'},
+        {name: 'Medium fuse', type: 'ranged', stance: 'Rapid'},
+        {name: 'Long fuse', type: 'ranged', stance: 'Longrange'},
       ]
     case EquipmentCategory.CLAW:
       return [
