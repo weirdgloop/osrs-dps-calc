@@ -185,7 +185,7 @@ class GlobalState implements State {
   }
 
   prefs: Preferences = {
-    advancedMode: false,
+    manualMode: false,
     rememberUsername: true,
     showHitDistribution: false,
     showLoadoutComparison: false,
@@ -361,7 +361,7 @@ class GlobalState implements State {
     // Update local state store
     this.prefs = Object.assign(this.prefs, pref);
 
-    if (pref && pref.hasOwnProperty('advancedMode')) {
+    if (pref && pref.hasOwnProperty('manualMode')) {
       // Reset player bonuses to their worn equipment
       this.player.bonuses = this.equipmentBonuses.bonuses;
       this.player.offensive = this.equipmentBonuses.offensive;
@@ -531,7 +531,7 @@ class GlobalState implements State {
 
     this.workerRecomputeTimer = window.setTimeout(() => {
       if (this.worker) {
-        const m = this.prefs.advancedMode ? this.monster : scaledMonster(this.monster);
+        const m = this.prefs.manualMode ? this.monster : scaledMonster(this.monster);
 
         this.worker.postMessage(JSON.stringify({
           type: WorkerRequestType.RECOMPUTE_VALUES,

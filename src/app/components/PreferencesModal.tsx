@@ -11,7 +11,7 @@ const PreferencesModal: React.FC = observer((props) => {
   const store = useStore();
   const {prefs, ui} = store;
 
-  const [advancedIsOpen, setAdvancedIsOpen] = useState(false);
+  const [advancedIsOpen, setManualIsOpen] = useState(false);
 
   return (
     <>
@@ -22,13 +22,13 @@ const PreferencesModal: React.FC = observer((props) => {
       >
         <div>
           <h2 className={'font-serif font-bold mb-2 select-none'}>Interface</h2>
-          <Toggle checked={prefs.advancedMode} setChecked={(c) => {
-            if (prefs.advancedMode) {
-              store.updatePreferences({advancedMode: false});
+          <Toggle checked={prefs.manualMode} setChecked={(c) => {
+            if (prefs.manualMode) {
+              store.updatePreferences({manualMode: false});
             } else {
-              setAdvancedIsOpen(true);
+              setManualIsOpen(true);
             }
-          }} label={'Advanced mode'} />
+          }} label={'Manual mode'} />
         </div>
         <div className={'mt-4'}>
           <h2 className={'font-serif font-bold mb-2 select-none'}>Additional outputs</h2>
@@ -44,25 +44,25 @@ const PreferencesModal: React.FC = observer((props) => {
         </div>
         <Modal
           isOpen={advancedIsOpen}
-          setIsOpen={setAdvancedIsOpen}
-          title={'Advanced mode'}
+          setIsOpen={setManualIsOpen}
+          title={'Manual mode'}
           hideCloseButton={true}
           footerChildren={
             <>
               <button
                 className={'btn text-sm'}
-                onClick={() => setAdvancedIsOpen(false)}
+                onClick={() => setManualIsOpen(false)}
               >
                 No, keep disabled
               </button>
               <button
                 className={'btn text-sm'}
                 onClick={() => {
-                  store.updatePreferences({advancedMode: true});
-                  setAdvancedIsOpen(false);
+                  store.updatePreferences({manualMode: true});
+                  setManualIsOpen(false);
                 }}
               >
-                Enable advanced mode
+                Enable manual mode
               </button>
             </>
           }
@@ -71,11 +71,14 @@ const PreferencesModal: React.FC = observer((props) => {
             <div>
               <LazyImage src={power.src} width={100} />
             </div>
-            <p className={'text-sm'}>
-              Advanced mode is intended for <strong>power users</strong>. Enabling it will allow you to edit various
-              player stats, equipment bonuses, and monster stats manually. This may cause the calculator to exhibit
-              unexpected behaviour. Are you sure you want to turn this on?
-            </p>
+            <div className={'text-sm'}>
+              <p>
+                Manual mode allows you to edit various player stats, equipment bonuses, and monster stats manually.
+                This is <strong>likely</strong> to cause the calculator to exhibit unexpected behaviour.
+                We recommend keeping it off if you don&apos;t know what you&apos;re doing.
+              </p>
+              <p className={'mt-2'}>Are you sure you want to turn this on?</p>
+            </div>
           </div>
         </Modal>
       </Modal>

@@ -85,7 +85,7 @@ const Home: NextPage = observer(() => {
 
   useEffect(() => {
     // When equipment bonuses change, set the current equipment bonuses as the player's bonuses.
-    if (!store.prefs.advancedMode) {
+    if (!store.prefs.manualMode) {
       store.recalculateEquipmentBonusesFromGear();
     }
   }, [store, store.equipmentBonuses]);

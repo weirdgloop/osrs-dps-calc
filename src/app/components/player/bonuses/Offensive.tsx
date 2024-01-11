@@ -17,7 +17,7 @@ const Offensive: React.FC = observer(() => {
       <p className={'text-sm text-gray-500 dark:text-gray-300'}>Offensive</p>
       <div className={'flex flex-col gap-1 mt-3 text-center'}>
         <AttributeInput
-          disabled={!prefs.advancedMode}
+          disabled={!prefs.manualMode}
           name={'Stab'}
           image={dagger}
           value={player.offensive.stab}
@@ -25,7 +25,7 @@ const Offensive: React.FC = observer(() => {
           onChange={(v) => store.updatePlayer({offensive: {stab: v}})}
         />
         <AttributeInput
-          disabled={!prefs.advancedMode}
+          disabled={!prefs.manualMode}
           name={'Slash'}
           image={scimitar}
           value={player.offensive.slash}
@@ -33,7 +33,7 @@ const Offensive: React.FC = observer(() => {
           onChange={(v) => store.updatePlayer({offensive: {slash: v}})}
         />
         <AttributeInput
-          disabled={!prefs.advancedMode}
+          disabled={!prefs.manualMode}
           name={'Crush'}
           image={warhammer}
           value={player.offensive.crush}
@@ -41,7 +41,7 @@ const Offensive: React.FC = observer(() => {
           onChange={(v) => store.updatePlayer({offensive: {crush: v}})}
         />
         <AttributeInput
-          disabled={!prefs.advancedMode}
+          disabled={!prefs.manualMode}
           name={'Magic'}
           image={magic}
           value={player.offensive.magic}
@@ -49,7 +49,7 @@ const Offensive: React.FC = observer(() => {
           onChange={(v) => store.updatePlayer({offensive: {magic: v}})}
         />
         <AttributeInput
-          disabled={!prefs.advancedMode}
+          disabled={!prefs.manualMode}
           name={'Ranged'}
           image={ranged}
           value={player.offensive.ranged}

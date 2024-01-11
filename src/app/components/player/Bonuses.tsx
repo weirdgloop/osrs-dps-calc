@@ -7,13 +7,13 @@ import OtherBonuses from "@/app/components/player/bonuses/OtherBonuses";
 
 const Bonuses: React.FC = observer(() => {
   const store = useStore();
-  const {advancedMode} = store.prefs;
+  const {manualMode} = store.prefs;
 
   return (
     <div className={'px-4 my-4'}>
       <div className={'flex justify-between items-center gap-2'}>
         <h4 className={'font-serif font-bold'}>Bonuses</h4>
-        {advancedMode && (
+        {manualMode && (
           <button className={'text-xs underline'} onClick={() => store.recalculateEquipmentBonusesFromGear()}>
             Calculate from equipment
           </button>

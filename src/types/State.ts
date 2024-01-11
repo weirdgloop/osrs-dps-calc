@@ -15,7 +15,7 @@ export interface UI {
  * saved locally and persist between sessions.
  */
 export interface Preferences {
-  advancedMode: boolean;
+  manualMode: boolean;
   rememberUsername: boolean;
   showHitDistribution: boolean;
   showLoadoutComparison: boolean;
