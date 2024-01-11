@@ -53,14 +53,11 @@ export default class CombatCalc {
    * function will return a boolean indicating whether ANY of the provided items are equipped.
    * @param item - item name
    */
-  private wearing(item: string): boolean;
-  private wearing(items: string[]): boolean;
-  private wearing(item: unknown): unknown {
+  private wearing(item: string | string[]): boolean {
     if (Array.isArray(item)) {
       return (item as string[]).some((i) => this.allEquippedItems.includes(i));
-    } else if (typeof item === 'string') {
-      return this.allEquippedItems.includes(item);
     }
+    return this.allEquippedItems.includes(item);
   }
 
   /**
@@ -79,11 +76,31 @@ export default class CombatCalc {
   }
 
   /**
+   * Whether the player is wearing the full void set, excluding the helmet.
+   * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
+   */
+  private isWearingVoidRobes(): boolean {
+    return this.wearing(['Void knight top', 'Void knight top (or)', 'Elite void top', 'Elite void top (or)']) &&
+      this.wearing(['Void knight robe', 'Void knight robe (or)', 'Elite void robe', 'Elite void robe (or)']) &&
+      this.wearing('Void knight gloves');
+  }
+
+  /**
+   * Whether the player is wearing the full elite void set, excluding the helmet. 
+   * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
+   */
+  private isWearingEliteVoidRobes(): boolean {
+    return this.wearing(['Elite void top', 'Elite void top (or)']) &&
+      this.wearing(['Elite void robe', 'Elite void robe (or)']) &&
+      this.wearing('Void knight gloves');
+  }
+
+  /**
    * Whether the player is wearing the full melee void set.
    * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
    */
   private isWearingMeleeVoid(): boolean {
-    return this.wearingAll(['Void melee helm', 'Void knight top', 'Void knight robe', 'Void knight gloves']);
+    return this.isWearingVoidRobes() && this.wearing(['Void melee helm', 'Void melee helm (or)']);
   }
 
   /**
@@ -91,7 +108,7 @@ export default class CombatCalc {
    * @see https://oldschool.runescape.wiki/w/Elite_Void_Knight_equipment
    */
   private isWearingEliteRangedVoid(): boolean {
-    return this.wearingAll(['Void ranger helm', 'Elite void top', 'Elite void robe', 'Void knight gloves']);
+    return this.isWearingEliteVoidRobes() && this.wearing(['Void ranger helm', 'Void ranger helm (or)']);
   }
 
   /**
@@ -99,7 +116,7 @@ export default class CombatCalc {
    * @see https://oldschool.runescape.wiki/w/Elite_Void_Knight_equipment
    */
   private isWearingEliteMagicVoid(): boolean {
-    return this.wearingAll(['Void mage helm', 'Elite void top', 'Elite void robe', 'Void knight gloves']);
+    return this.isWearingEliteVoidRobes() && this.wearing(['Void mage helm', 'Void mage helm (or)']);
   }
 
   /**
@@ -107,7 +124,7 @@ export default class CombatCalc {
    * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
    */
   private isWearingRangedVoid(): boolean {
-    return this.wearingAll(['Void ranger helm', 'Void knight top', 'Void knight robe', 'Void knight gloves']);
+    return this.isWearingVoidRobes() && this.wearing(['Void ranger helm', 'Void ranger helm (or)']);
   }
 
   /**
@@ -115,7 +132,7 @@ export default class CombatCalc {
    * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
    */
   private isWearingMagicVoid(): boolean {
-    return this.wearingAll(['Void mage helm', 'Void knight top', 'Void knight robe', 'Void knight gloves']);
+    return this.isWearingVoidRobes() && this.wearing(['Void mage helm', 'Void mage helm (or)']);
   }
 
   /**
