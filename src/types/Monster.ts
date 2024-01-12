@@ -2,7 +2,7 @@ import {CombatStyleType} from "@/types/PlayerCombatStyle";
 import {MonsterAttribute} from "@/enums/MonsterAttribute";
 
 export interface Monster {
-  id: number | null;
+  id: number;
   name: string;
   image?: string;
   size: number;

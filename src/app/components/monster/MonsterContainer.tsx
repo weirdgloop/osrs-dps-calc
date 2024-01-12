@@ -94,12 +94,12 @@ const MonsterContainer: React.FC = observer(() => {
     // Determine whether we need to show any extra monster option components
     let comps: React.ReactNode[] = [];
 
-    if ((TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id || 0))) {
+    if ((TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id))) {
       comps.push(
         <TombsOfAmascutMonsterContainer
           key={'toa'}
           monster={monster}
-          isPathMonster={(TOMBS_OF_AMASCUT_PATH_MONSTER_IDS.includes(monster.id || 0))}
+          isPathMonster={(TOMBS_OF_AMASCUT_PATH_MONSTER_IDS.includes(monster.id))}
         />
       )
     }
@@ -118,7 +118,7 @@ const MonsterContainer: React.FC = observer(() => {
       )
     }
 
-    if ((PARTY_SIZE_REQUIRED_MONSTER_IDS.includes(monster.id || 0)) || monster.attributes.includes(MonsterAttribute.XERICIAN)) {
+    if ((PARTY_SIZE_REQUIRED_MONSTER_IDS.includes(monster.id)) || monster.attributes.includes(MonsterAttribute.XERICIAN)) {
       comps.push(
         <div className={'mt-4'} key={'party-size'}>
           <h4 className={'font-bold font-serif'}>
@@ -176,7 +176,7 @@ const MonsterContainer: React.FC = observer(() => {
       )
     }
 
-    if ((GUARDIAN_IDS.includes(monster.id || 0))) {
+    if ((GUARDIAN_IDS.includes(monster.id))) {
       comps.push(
         <div className={'mt-4'} key={'cox-guardian'}>
           <h4 className={'font-bold font-serif'}>

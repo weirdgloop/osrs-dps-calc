@@ -381,14 +381,14 @@ export default class CombatCalc {
    * Get the NPC defence roll for this loadout, which is based on the player's current combat style
    */
   public getNPCDefenceRoll(): number {
-    let effectiveLevel = this.player.style.type === "magic" && !USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS.includes(this.monster.id || 0)
+    let effectiveLevel = this.player.style.type === "magic" && !USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS.includes(this.monster.id)
         ? this.monster.skills.magic
         : this.monster.skills.def;
 
     effectiveLevel += 9;
     let defenceRoll = effectiveLevel * (this.monster.defensive[this.player.style.type] + 64);
 
-    if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id || 0) && this.monster.toaInvocationLevel) {
+    if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) && this.monster.toaInvocationLevel) {
       defenceRoll = Math.trunc(defenceRoll * (250 + this.monster.toaInvocationLevel) / 250);
     }
 
@@ -707,7 +707,7 @@ export default class CombatCalc {
     let magicBonus = this.player.offensive.magic;
 
     if (this.wearing("Tumeken's shadow")) {
-      magicBonus = magicBonus * (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id || 0) ? 4 : 3);
+      magicBonus = magicBonus * (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) ? 4 : 3);
     }
 
     let attackRoll = effectiveLevel * (magicBonus + 64);
@@ -810,7 +810,7 @@ export default class CombatCalc {
 
     let magicDmgBonus = this.player.bonuses.magic_str * 10; // is magic_str correct here?
     if (this.wearing("Tumeken's shadow")) {
-      magicDmgBonus = magicDmgBonus * (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id || 0) ? 4 : 3);
+      magicDmgBonus = magicDmgBonus * (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) ? 4 : 3);
     }
 
     if (this.isWearingEliteMagicVoid()) {
@@ -890,7 +890,7 @@ export default class CombatCalc {
       return this.opts.overrides.accuracy;
     }
 
-    if (VERZIK_P1_IDS.includes(this.monster.id || 0) && this.wearing('Dawnbringer')) {
+    if (VERZIK_P1_IDS.includes(this.monster.id) && this.wearing('Dawnbringer')) {
       return 1.0;
     }
 
@@ -902,7 +902,7 @@ export default class CombatCalc {
         : atk / (2 * (def + 1));
 
       if (this.isWearingFang()) {
-          if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id || 0)) {
+          if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)) {
             return 1 - Math.pow(1 - hitChance, 2);
           } else {
             return (atk > def)
@@ -1028,20 +1028,20 @@ export default class CombatCalc {
       // https://twitter.com/JagexAsh/status/1699360516488011950
       dist = dist.transform(divisionTransformer(7, 1));
     }
-    if (VERZIK_P1_IDS.includes(this.monster.id || 0) && !this.wearing('Dawnbringer')) {
+    if (VERZIK_P1_IDS.includes(this.monster.id) && !this.wearing('Dawnbringer')) {
       const limit = this.isUsingMeleeStyle() ? 10 : 3;
       dist = dist.transform(linearMinTransformer(limit));
     }
-    if (TEKTON_IDS.includes(this.monster.id || 0) && this.player.style.type === 'magic') {
+    if (TEKTON_IDS.includes(this.monster.id) && this.player.style.type === 'magic') {
       dist = dist.transform(divisionTransformer(5, 1));
     }
-    if (GLOWING_CRYSTAL_IDS.includes(this.monster.id || 0) && this.player.style.type === 'magic') {
+    if (GLOWING_CRYSTAL_IDS.includes(this.monster.id) && this.player.style.type === 'magic') {
       dist = dist.transform(divisionTransformer(3));
     }
-    if ((OLM_MELEE_HAND_IDS.includes(this.monster.id || 0) || OLM_HEAD_IDS.includes(this.monster.id || 0)) && this.player.style.type === 'magic') {
+    if ((OLM_MELEE_HAND_IDS.includes(this.monster.id) || OLM_HEAD_IDS.includes(this.monster.id)) && this.player.style.type === 'magic') {
       dist = dist.transform(divisionTransformer(3));
     }
-    if ((OLM_MAGE_HAND_IDS.includes(this.monster.id || 0) || OLM_MELEE_HAND_IDS.includes(this.monster.id || 0)) && this.player.style.type === 'ranged') {
+    if ((OLM_MAGE_HAND_IDS.includes(this.monster.id) || OLM_MELEE_HAND_IDS.includes(this.monster.id)) && this.player.style.type === 'ranged') {
       dist = dist.transform(divisionTransformer(3));
     }
     if (this.monster.attributes.includes(MonsterAttribute.VAMPYRE_2) && this.wearing("Efaritay's aid") && !this.isWearingSilverWeapon()) {
@@ -1055,7 +1055,7 @@ export default class CombatCalc {
   }
 
   isImmune(): boolean {
-    const monsterId = this.monster.id || 0;
+    const monsterId = this.monster.id;
     const styleType = this.player.style.type;
 
     if (IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS.includes(monsterId) && styleType === 'magic') {

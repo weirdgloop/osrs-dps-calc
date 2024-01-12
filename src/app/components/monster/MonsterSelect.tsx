@@ -23,7 +23,7 @@ const MonsterSelect: React.FC = observer(() => {
       value: i,
       version: m.version || '',
       monster: {
-        id: m.id || null,
+        id: m.id,
         name: m.name,
         image: m.image,
         size: m.size,

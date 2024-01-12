@@ -32,7 +32,7 @@ import {
 import {MonsterAttribute} from "@/enums/MonsterAttribute";
 
 export const scaledMonster: (m: Monster) => Monster = m => {
-  const mId = m.id || 0;
+  const mId = m.id;
 
   // toa multiplies rolled values, not stats, except for hp
   if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(mId)) {
