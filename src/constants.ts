@@ -1,24 +1,103 @@
+export const AKKHA_IDS = [
+  11789, 11790, 11791, 11792, 11793, 11794, 11795, 11796,
+];
+
+export const AKKHA_SHADOW_IDS = [
+  11797, 11798, 11799,
+];
+
+export const BABA_IDS = [
+  11778, 11779, 11780,
+];
+
+export const STANDARD_BABOON_SMALL_IDS = [
+  11709, 11710, 11711,
+];
+
+export const STANDARD_BABOON_LARGE_IDS = [
+  11712, 11713, 11714
+];
+
+export const BABOON_SHAMAN_IDS = [
+  11715,
+];
+
+export const VOLATILE_BABOON_IDS = [
+  11716,
+];
+
+export const CURSED_BABOON_IDS = [
+  11717,
+];
+
+export const BABOON_THRALL_IDS = [
+  11718,
+];
+
+export const APMEKEN_BABOON_IDS = [
+  ...STANDARD_BABOON_SMALL_IDS,
+  ...STANDARD_BABOON_LARGE_IDS,
+  ...BABOON_SHAMAN_IDS,
+  ...VOLATILE_BABOON_IDS,
+  ...CURSED_BABOON_IDS,
+  ...BABOON_THRALL_IDS,
+];
+
+export const KEPHRI_SHIELDED_IDS = [
+  11719,
+];
+// ^v todo these two might be swapped ^v
+export const KEPHRI_UNSHIELDED_IDS = [
+  11721,
+];
+
+export const KEPHRI_OVERLORD_IDS = [
+  11724, 11725, 11726,
+];
+
+export const ZEBAK_IDS = [
+  11730, 11732, 11733,
+];
+
+export const TOA_OBELISK_IDS = [
+  11750, 11751, 11752,
+];
+
+export const P2_WARDEN_IDS = [
+  11753, 11754, 11755, // elidinis
+  11756, 11757, 11758, // tumeken
+];
+
+export const P3_WARDEN_IDS = [
+  11761, 11763, // elidinis
+  11762, 11764, // tumeken
+];
+
+export const TOA_CORE_IDS = [
+  11770, 11771,
+];
+
 /**
  * IDs of monsters that are present in Tombs of Amascut and are affected by path level.
- * TODO does this affect minions? I assumed yes.
  */
 export const TOMBS_OF_AMASCUT_PATH_MONSTER_IDS = [
-  11789, 11790, 11791, 11792, 11793, 11794, 11795, 11796, // akkha
-  11797, 11798, 11799, // akkha shadows
-  11781, 11709, 11712, 11711, 11714, 11715, 11718, 11710, 11713, 11716, 11717, // apmeken monkeys
-  11778, 11779, 11780, // ba-ba
-  11719, 11720, 11721, 11722, // kephri
-  11697, 11723, 11723, 11724, 11725, 11726, 11727, // kephri minions
-  11705, // crondis tree croc
-  11730, 11732, 11733, // zebak
+  ...AKKHA_IDS,
+  ...AKKHA_SHADOW_IDS,
+  ...BABA_IDS,
+  ...APMEKEN_BABOON_IDS,
+  ...KEPHRI_SHIELDED_IDS,
+  ...KEPHRI_UNSHIELDED_IDS,
+  ...KEPHRI_OVERLORD_IDS,
+  ...ZEBAK_IDS,
 ];
 
 /** IDs of monsters that are present in Tombs of Amascut **/
 export const TOMBS_OF_AMASCUT_MONSTER_IDS = [
   ...TOMBS_OF_AMASCUT_PATH_MONSTER_IDS,
-  11750, 11751, 11752, // obelisk (wardens)
-  11747, 11749, 11756, 11757, 11758, 11760, 11762, 11764, // tumeken warden
-  11746, 11748, 11753, 11754, 11755, 11759, 11761, 11763, // elidinis warden
+  ...TOA_OBELISK_IDS,
+  ...P2_WARDEN_IDS,
+  ...TOA_CORE_IDS,
+  ...P3_WARDEN_IDS,
 ];
 
 export const VERZIK_P1_IDS = [
