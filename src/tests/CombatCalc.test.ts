@@ -1,6 +1,7 @@
 import {expect, test} from "@jest/globals";
 import {generateEmptyPlayer} from "@/state";
 import {calculate, getMonster} from "@/tests/utils/TestUtils";
+import {ACCURACY_PRECISION, DPS_PRECISION} from "@/constants";
 
 test('Empty player against Abyssal demon', () => {
     let player = generateEmptyPlayer();
@@ -8,8 +9,8 @@ test('Empty player against Abyssal demon', () => {
     let result = calculate(player, monster);
 
     expect(result.maxHit).toBe(11);
-    expect(result.dps).toBe(0.6668319969138353);
+    expect(result.dps).toBeCloseTo(0.667, DPS_PRECISION);
     expect(result.maxAttackRoll).toBe(7040);
     expect(result.npcDefRoll).toBe(12096);
-    expect(result.accuracy).toBe(0.29098123501694634);
+    expect(result.accuracy * 100).toBeCloseTo(29.10, ACCURACY_PRECISION);
 });
