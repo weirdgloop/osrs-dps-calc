@@ -104,13 +104,29 @@ export const OLM_HEAD_IDS = [
 ];
 
 /**
+ * IDs of the Great Olm's melee hand from the Chambers of Xeric.
+ */
+const OLM_MELEE_HAND_IDS = [
+  7552, // reg
+  7555, // cm
+];
+
+/**
+ * IDs of the Great Olm's mage hand from the Chambers of Xeric.
+ */
+const OLM_MAGE_HAND_IDS = [
+  7550, // reg
+  7553, // cm
+];
+
+/**
  * IDs of the Great Olm from the Chambers of Xeric.
  * Separated due to different health, offence, and defence scaling rules.
  */
 export const OLM_IDS = [
   ...OLM_HEAD_IDS,
-  7550, 7552, // reg
-  7553, 7555, // cm
+  ...OLM_MELEE_HAND_IDS,
+  ...OLM_MAGE_HAND_IDS,
 ];
 
 /**
@@ -162,6 +178,50 @@ export const USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS = [
   ...FRAGMENT_OF_SEREN_IDS,
   11709, 11712, // baboon brawler
   9118 // rabbit (prifddinas)
+];
+
+/**
+ * IDs of Dusk.
+ */
+const DUSK_IDS = [
+  7851, 7854, 7855, 7882, 7883, 7886, // dusk first form
+  7887, 7888, 7889, // dusk second form
+];
+
+/**
+ * Monsters immune to melee damage.
+ */
+export const IMMUNE_TO_MELEE_DAMAGE_NPC_IDS = [
+  494, // kraken
+  ...ABYSSAL_PORTAL_IDS,
+  7706, // zuk
+  7708, // Jal-MejJak
+  12214, 12215, 12219, // leviathan
+  7852, 7853, 7884, 7885, // dawn
+  ...OLM_MAGE_HAND_IDS,
+  ...OLM_HEAD_IDS,
+  2042, 2043, 2044, // zulrah
+];
+
+export const IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDs = [
+  3169, 3170, 3171, 3172, 3173, 3174, 3175, 3176, 3177, 3178, 3179, 3180, 3181, 3182, 3183, // aviansie
+  7037, // reanimated aviansie
+];
+
+/**
+ * Monsters immune to ranged damage.
+ */
+export const IMMUNE_TO_RANGED_DAMAGE_NPC_IDS = [
+  ...TEKTON_IDS,
+  ...DUSK_IDS,
+  ...GLOWING_CRYSTAL_IDS,
+];
+
+/**
+ * Monsters immune to magic damage.
+ */
+export const IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS = [
+  ...DUSK_IDS,
 ];
 
 export const PARTY_SIZE_REQUIRED_MONSTER_IDS = [

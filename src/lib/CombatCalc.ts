@@ -1,4 +1,5 @@
 import {EquipmentPiece, Player} from '@/types/Player';
+import { CombatStyleType } from '@/types/PlayerCombatStyle';
 import {Monster} from '@/types/Monster';
 import {
   AttackDistribution,
@@ -11,7 +12,17 @@ import {isBindSpell, isFireSpell, isWaterSpell} from "@/types/Spell";
 import {PrayerMap} from "@/enums/Prayer";
 import {sum} from "d3-array";
 import {isVampyre, MonsterAttribute} from "@/enums/MonsterAttribute";
-import {USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS, TOMBS_OF_AMASCUT_MONSTER_IDS, VERZIK_P1_IDS} from "@/constants";
+import {
+  GUARDIAN_IDS,
+  IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS,
+  IMMUNE_TO_MELEE_DAMAGE_NPC_IDS,
+  IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDs,
+  IMMUNE_TO_RANGED_DAMAGE_NPC_IDS,
+  TOMBS_OF_AMASCUT_MONSTER_IDS,
+  USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
+  VERZIK_P1_IDS,
+} from "@/constants";
+import { EquipmentCategory } from '@/enums/EquipmentCategory';
 
 const DEFAULT_ATTACK_SPEED = 4;
 const SECONDS_PER_TICK = 0.6;
@@ -264,6 +275,49 @@ export default class CombatCalc {
       'Rod of ivandis',
       'Wolfbane',
     ])
+  }
+
+  /**
+   * Whether the player is wearing an Ivandis weapon--that is, a weapon capable of harming Tier 3 Vampyres.
+   * @see https://oldschool.runescape.wiki/w/Silver_weaponry
+   */
+  private isWearingIvandisWeapon(): boolean {
+    return this.wearing([
+      'Ivandis flail',
+      'Blisterwood sickle',
+      'Blisterwood flail',
+    ]);
+  }
+
+  /**
+   * Whether the player is wearing a leaf-bladed weapon capable of harming leafy monsters.
+   * @see https://oldschool.runescape.wiki/w/Leafy_(attribute)
+   */
+  private isWearingLeafBladedWeapon(): boolean {
+    if (this.wearing([
+      'Leaf-bladed battleaxe',
+      'Leaf-bladed spear',
+      'Leaf-bladed sword',
+    ])) {
+      return true;
+    }
+
+    if (this.wearing('Slayer\'s staff') && this.player.spell.name === 'Magic Dart') {
+      return true;
+    }
+
+    if (
+      this.wearing([
+        'Broad arrows',
+        'Broad bolts',
+        'Amethyst broad bolts',
+      ])
+        && this.player.style.type === 'ranged'
+    ) {
+      return true;
+    }
+
+    return false;
   }
 
   private isChargeSpellApplicable(): boolean {
@@ -942,7 +996,33 @@ export default class CombatCalc {
   }
 
   isImmune(): boolean {
-    // todo
+    const monsterId = this.monster.id || 0;
+    const styleType = this.player.style.type;
+
+    if (IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS.includes(monsterId) && styleType === 'magic') {
+      return true;
+    }
+    if (IMMUNE_TO_RANGED_DAMAGE_NPC_IDS.includes(monsterId) && styleType === 'ranged') {
+      return true;
+    }
+    if (IMMUNE_TO_MELEE_DAMAGE_NPC_IDS.includes(monsterId) && this.isUsingMeleeStyle()) {
+      return true;
+    }
+    if (IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDs.includes(monsterId)
+      && this.isUsingMeleeStyle()
+      && this.player.equipment.weapon?.category !== EquipmentCategory.SALAMANDER) {
+      return true;
+    }
+    if (this.monster.attributes.includes(MonsterAttribute.VAMPYRE_3) && !this.isWearingIvandisWeapon()) {
+      return true;
+    }
+    if (GUARDIAN_IDS.includes(monsterId) && this.player.equipment.weapon?.category !== EquipmentCategory.PICKAXE) {
+      return true;
+    }
+    if (this.monster.attributes.includes(MonsterAttribute.LEAFY) && !this.isWearingLeafBladedWeapon()) {
+      return true;
+    }
+
     return false;
   }
 
