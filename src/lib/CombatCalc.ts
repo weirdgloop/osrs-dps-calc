@@ -263,6 +263,11 @@ export default class CombatCalc {
    */
 
   private isWearingSilverWeapon(): boolean {
+    if (this.player.equipment.ammo?.name.startsWith('Silver bolts')
+      && this.player.style.type === 'ranged') {
+      return true;
+    }
+
     return this.wearing([
       'Blessed axe',
       'Ivandis flail',
