@@ -927,7 +927,7 @@ export default class CombatCalc {
       dist = dist.transform(flatLimitTransformer(50));
     }
     if (this.monster.name === 'Fragment of Seren') {
-      // todo should this be if (hit > 24) { hit = randominc(2) + 22 }
+      // https://twitter.com/JagexAsh/status/1375037874559721474
       dist = dist.transform(linearMinTransformer(2, 22));
     }
     if (VERZIK_P1_IDS.includes(this.monster.id || 0) && !this.wearing('Dawnbringer')) {
