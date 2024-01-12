@@ -3,6 +3,7 @@ import { CombatStyleType } from '@/types/PlayerCombatStyle';
 import {Monster} from '@/types/Monster';
 import {
   AttackDistribution,
+  divisionTransformer,
   flatLimitTransformer,
   HitDistribution,
   linearMinTransformer,
@@ -13,11 +14,16 @@ import {PrayerMap} from "@/enums/Prayer";
 import {sum} from "d3-array";
 import {isVampyre, MonsterAttribute} from "@/enums/MonsterAttribute";
 import {
+  GLOWING_CRYSTAL_IDS,
   GUARDIAN_IDS,
   IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS,
   IMMUNE_TO_MELEE_DAMAGE_NPC_IDS,
   IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDs,
   IMMUNE_TO_RANGED_DAMAGE_NPC_IDS,
+  OLM_HEAD_IDS,
+  OLM_MAGE_HAND_IDS,
+  OLM_MELEE_HAND_IDS,
+  TEKTON_IDS,
   TOMBS_OF_AMASCUT_MONSTER_IDS,
   USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
   VERZIK_P1_IDS,
@@ -314,6 +320,36 @@ export default class CombatCalc {
       ])
         && this.player.style.type === 'ranged'
     ) {
+      return true;
+    }
+
+    return false;
+  }
+
+  /**
+   * Whether the player is wearing a weapon capable of dealing full damage to the Corporeal Beast.
+   * @see https://oldschool.runescape.wiki/w/Corpbane_weapons
+   * @todo Handle ruby bolt procs separately (non-procs do half damage, but procs deal full damage)
+   */
+  private isWearingCorpbaneWeapon(): boolean {
+    const { weapon } = this.player.equipment;
+    if (!weapon) {
+      return false;
+    }
+
+    if (this.isWearingFang()) {
+      return true;
+    }
+
+    if (weapon.name.endsWith('halberd')) {
+      return true;
+    }
+
+    if (weapon.name.includes('spear')) {
+      return true;
+    }
+
+    if (this.player.style.type === 'magic') {
       return true;
     }
 
@@ -984,12 +1020,31 @@ export default class CombatCalc {
       // https://twitter.com/JagexAsh/status/1375037874559721474
       dist = dist.transform(linearMinTransformer(2, 22));
     }
+    if (this.monster.name === 'Kraken' && this.player.style.type === 'ranged') {
+      // https://twitter.com/JagexAsh/status/1699360516488011950
+      dist = dist.transform(divisionTransformer(7, 1));
+    }
     if (VERZIK_P1_IDS.includes(this.monster.id || 0) && !this.wearing('Dawnbringer')) {
       const limit = this.isUsingMeleeStyle() ? 10 : 3;
       dist = dist.transform(linearMinTransformer(limit));
     }
+    if (TEKTON_IDS.includes(this.monster.id || 0) && this.player.style.type === 'magic') {
+      dist = dist.transform(divisionTransformer(5, 1));
+    }
+    if (GLOWING_CRYSTAL_IDS.includes(this.monster.id || 0) && this.player.style.type === 'magic') {
+      dist = dist.transform(divisionTransformer(3));
+    }
+    if ((OLM_MELEE_HAND_IDS.includes(this.monster.id || 0) || OLM_HEAD_IDS.includes(this.monster.id || 0)) && this.player.style.type === 'magic') {
+      dist = dist.transform(divisionTransformer(3));
+    }
+    if ((OLM_MAGE_HAND_IDS.includes(this.monster.id || 0) || OLM_MELEE_HAND_IDS.includes(this.monster.id || 0)) && this.player.style.type === 'ranged') {
+      dist = dist.transform(divisionTransformer(3));
+    }
     if (this.monster.attributes.includes(MonsterAttribute.VAMPYRE_2) && this.wearing("Efaritay's aid") && !this.isWearingSilverWeapon()) {
       dist = dist.transform(flatLimitTransformer(10));
+    }
+    if (this.monster.name === 'Corporeal Beast' && !this.isWearingCorpbaneWeapon()) {
+      dist = dist.transform(divisionTransformer(2));
     }
 
     return dist;

@@ -106,7 +106,7 @@ export const OLM_HEAD_IDS = [
 /**
  * IDs of the Great Olm's melee hand from the Chambers of Xeric.
  */
-const OLM_MELEE_HAND_IDS = [
+export const OLM_MELEE_HAND_IDS = [
   7552, // reg
   7555, // cm
 ];
@@ -114,7 +114,7 @@ const OLM_MELEE_HAND_IDS = [
 /**
  * IDs of the Great Olm's mage hand from the Chambers of Xeric.
  */
-const OLM_MAGE_HAND_IDS = [
+export const OLM_MAGE_HAND_IDS = [
   7550, // reg
   7553, // cm
 ];
