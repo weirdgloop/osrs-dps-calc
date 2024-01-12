@@ -1,7 +1,9 @@
 import {EquipmentPiece, Player} from '@/types/Player';
+import { CombatStyleType } from '@/types/PlayerCombatStyle';
 import {Monster} from '@/types/Monster';
 import {
   AttackDistribution,
+  divisionTransformer,
   flatLimitTransformer,
   HitDistribution,
   linearMinTransformer,
@@ -11,7 +13,22 @@ import {isBindSpell, isFireSpell, isWaterSpell} from "@/types/Spell";
 import {PrayerMap} from "@/enums/Prayer";
 import {sum} from "d3-array";
 import {isVampyre, MonsterAttribute} from "@/enums/MonsterAttribute";
-import {USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS, TOMBS_OF_AMASCUT_MONSTER_IDS, VERZIK_P1_IDS} from "@/constants";
+import {
+  GLOWING_CRYSTAL_IDS,
+  GUARDIAN_IDS,
+  IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS,
+  IMMUNE_TO_MELEE_DAMAGE_NPC_IDS,
+  IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDs,
+  IMMUNE_TO_RANGED_DAMAGE_NPC_IDS,
+  OLM_HEAD_IDS,
+  OLM_MAGE_HAND_IDS,
+  OLM_MELEE_HAND_IDS,
+  TEKTON_IDS,
+  TOMBS_OF_AMASCUT_MONSTER_IDS,
+  USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
+  VERZIK_P1_IDS,
+} from "@/constants";
+import { EquipmentCategory } from '@/enums/EquipmentCategory';
 
 const DEFAULT_ATTACK_SPEED = 4;
 const SECONDS_PER_TICK = 0.6;
@@ -86,7 +103,7 @@ export default class CombatCalc {
   }
 
   /**
-   * Whether the player is wearing the full elite void set, excluding the helmet. 
+   * Whether the player is wearing the full elite void set, excluding the helmet.
    * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
    */
   private isWearingEliteVoidRobes(): boolean {
@@ -246,12 +263,17 @@ export default class CombatCalc {
    */
 
   private isWearingSilverWeapon(): boolean {
+    if (this.player.equipment.ammo?.name.startsWith('Silver bolts')
+      && this.player.style.type === 'ranged') {
+      return true;
+    }
+
     return this.wearing([
-      'Blessed axe', 
-      'Ivandis flail', 
-      'Blisterwood flail', 
-      'Silver sickle', 
-      'Silver sickle (b)', 
+      'Blessed axe',
+      'Ivandis flail',
+      'Blisterwood flail',
+      'Silver sickle',
+      'Silver sickle (b)',
       'Emerald sickle',
       'Emerald sickle (b)',
       'Enchanted emerald sickle (b)',
@@ -264,6 +286,79 @@ export default class CombatCalc {
       'Rod of ivandis',
       'Wolfbane',
     ])
+  }
+
+  /**
+   * Whether the player is wearing an Ivandis weapon--that is, a weapon capable of harming Tier 3 Vampyres.
+   * @see https://oldschool.runescape.wiki/w/Silver_weaponry
+   */
+  private isWearingIvandisWeapon(): boolean {
+    return this.wearing([
+      'Ivandis flail',
+      'Blisterwood sickle',
+      'Blisterwood flail',
+    ]);
+  }
+
+  /**
+   * Whether the player is wearing a leaf-bladed weapon capable of harming leafy monsters.
+   * @see https://oldschool.runescape.wiki/w/Leafy_(attribute)
+   */
+  private isWearingLeafBladedWeapon(): boolean {
+    if (this.wearing([
+      'Leaf-bladed battleaxe',
+      'Leaf-bladed spear',
+      'Leaf-bladed sword',
+    ])) {
+      return true;
+    }
+
+    if (this.wearing('Slayer\'s staff') && this.player.spell.name === 'Magic Dart') {
+      return true;
+    }
+
+    if (
+      this.wearing([
+        'Broad arrows',
+        'Broad bolts',
+        'Amethyst broad bolts',
+      ])
+        && this.player.style.type === 'ranged'
+    ) {
+      return true;
+    }
+
+    return false;
+  }
+
+  /**
+   * Whether the player is wearing a weapon capable of dealing full damage to the Corporeal Beast.
+   * @see https://oldschool.runescape.wiki/w/Corpbane_weapons
+   * @todo Handle ruby bolt procs separately (non-procs do half damage, but procs deal full damage)
+   */
+  private isWearingCorpbaneWeapon(): boolean {
+    const { weapon } = this.player.equipment;
+    if (!weapon) {
+      return false;
+    }
+
+    if (this.isWearingFang()) {
+      return true;
+    }
+
+    if (weapon.name.endsWith('halberd')) {
+      return true;
+    }
+
+    if (weapon.name.includes('spear')) {
+      return true;
+    }
+
+    if (this.player.style.type === 'magic') {
+      return true;
+    }
+
+    return false;
   }
 
   private isChargeSpellApplicable(): boolean {
@@ -551,7 +646,7 @@ export default class CombatCalc {
     }
 
     let maxHit = Math.trunc((effectiveLevel * (this.player.bonuses.ranged_str + 64) + 320) / 640);
-    
+
     // tested this in-game, slayer helmet (i) + crystal legs + crystal body + bowfa, on accurate, no rigour, 99 ranged
     // max hit is 36, but would be 37 if placed after slayer helm
     if (this.isWearingCrystalBow()) {
@@ -843,7 +938,7 @@ export default class CombatCalc {
           [HitDistribution.linear(acc, shrink, max - shrink)],
       )
     }
-    
+
     if (this.wearing('Gadderhammer') && mattrs.includes(MonsterAttribute.SHADE)) {
       dist = new AttackDistribution([
         new HitDistribution([
@@ -922,7 +1017,7 @@ export default class CombatCalc {
     if (this.isImmune()) {
       return new AttackDistribution([new HitDistribution([new WeightedHit(1.0, [0])])]);
     }
-    
+
     if (this.monster.name === 'Zulrah') {
       dist = dist.transform(flatLimitTransformer(50));
     }
@@ -930,19 +1025,64 @@ export default class CombatCalc {
       // https://twitter.com/JagexAsh/status/1375037874559721474
       dist = dist.transform(linearMinTransformer(2, 22));
     }
+    if (this.monster.name === 'Kraken' && this.player.style.type === 'ranged') {
+      // https://twitter.com/JagexAsh/status/1699360516488011950
+      dist = dist.transform(divisionTransformer(7, 1));
+    }
     if (VERZIK_P1_IDS.includes(this.monster.id || 0) && !this.wearing('Dawnbringer')) {
       const limit = this.isUsingMeleeStyle() ? 10 : 3;
       dist = dist.transform(linearMinTransformer(limit));
     }
+    if (TEKTON_IDS.includes(this.monster.id || 0) && this.player.style.type === 'magic') {
+      dist = dist.transform(divisionTransformer(5, 1));
+    }
+    if (GLOWING_CRYSTAL_IDS.includes(this.monster.id || 0) && this.player.style.type === 'magic') {
+      dist = dist.transform(divisionTransformer(3));
+    }
+    if ((OLM_MELEE_HAND_IDS.includes(this.monster.id || 0) || OLM_HEAD_IDS.includes(this.monster.id || 0)) && this.player.style.type === 'magic') {
+      dist = dist.transform(divisionTransformer(3));
+    }
+    if ((OLM_MAGE_HAND_IDS.includes(this.monster.id || 0) || OLM_MELEE_HAND_IDS.includes(this.monster.id || 0)) && this.player.style.type === 'ranged') {
+      dist = dist.transform(divisionTransformer(3));
+    }
     if (this.monster.attributes.includes(MonsterAttribute.VAMPYRE_2) && this.wearing("Efaritay's aid") && !this.isWearingSilverWeapon()) {
       dist = dist.transform(flatLimitTransformer(10));
+    }
+    if (this.monster.name === 'Corporeal Beast' && !this.isWearingCorpbaneWeapon()) {
+      dist = dist.transform(divisionTransformer(2));
     }
 
     return dist;
   }
-  
+
   isImmune(): boolean {
-    // todo
+    const monsterId = this.monster.id || 0;
+    const styleType = this.player.style.type;
+
+    if (IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS.includes(monsterId) && styleType === 'magic') {
+      return true;
+    }
+    if (IMMUNE_TO_RANGED_DAMAGE_NPC_IDS.includes(monsterId) && styleType === 'ranged') {
+      return true;
+    }
+    if (IMMUNE_TO_MELEE_DAMAGE_NPC_IDS.includes(monsterId) && this.isUsingMeleeStyle()) {
+      return true;
+    }
+    if (IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDs.includes(monsterId)
+      && this.isUsingMeleeStyle()
+      && this.player.equipment.weapon?.category !== EquipmentCategory.SALAMANDER) {
+      return true;
+    }
+    if (this.monster.attributes.includes(MonsterAttribute.VAMPYRE_3) && !this.isWearingIvandisWeapon()) {
+      return true;
+    }
+    if (GUARDIAN_IDS.includes(monsterId) && this.player.equipment.weapon?.category !== EquipmentCategory.PICKAXE) {
+      return true;
+    }
+    if (this.monster.attributes.includes(MonsterAttribute.LEAFY) && !this.isWearingLeafBladedWeapon()) {
+      return true;
+    }
+
     return false;
   }
 
@@ -950,7 +1090,7 @@ export default class CombatCalc {
    * Returns the player's attack speed.
    */
   public getAttackSpeed(): number {
-    let attackSpeed = this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED; 
+    let attackSpeed = this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;
     if (this.player.style.stance === 'Rapid') {
       attackSpeed -= 1;
     }
