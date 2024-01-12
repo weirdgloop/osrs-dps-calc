@@ -86,7 +86,7 @@ export default class CombatCalc {
   }
 
   /**
-   * Whether the player is wearing the full elite void set, excluding the helmet. 
+   * Whether the player is wearing the full elite void set, excluding the helmet.
    * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
    */
   private isWearingEliteVoidRobes(): boolean {
@@ -247,11 +247,11 @@ export default class CombatCalc {
 
   private isWearingSilverWeapon(): boolean {
     return this.wearing([
-      'Blessed axe', 
-      'Ivandis flail', 
-      'Blisterwood flail', 
-      'Silver sickle', 
-      'Silver sickle (b)', 
+      'Blessed axe',
+      'Ivandis flail',
+      'Blisterwood flail',
+      'Silver sickle',
+      'Silver sickle (b)',
       'Emerald sickle',
       'Emerald sickle (b)',
       'Enchanted emerald sickle (b)',
@@ -551,7 +551,7 @@ export default class CombatCalc {
     }
 
     let maxHit = Math.trunc((effectiveLevel * (this.player.bonuses.ranged_str + 64) + 320) / 640);
-    
+
     // tested this in-game, slayer helmet (i) + crystal legs + crystal body + bowfa, on accurate, no rigour, 99 ranged
     // max hit is 36, but would be 37 if placed after slayer helm
     if (this.isWearingCrystalBow()) {
@@ -843,7 +843,7 @@ export default class CombatCalc {
           [HitDistribution.linear(acc, shrink, max - shrink)],
       )
     }
-    
+
     if (this.wearing('Gadderhammer') && mattrs.includes(MonsterAttribute.SHADE)) {
       dist = new AttackDistribution([
         new HitDistribution([
@@ -922,7 +922,7 @@ export default class CombatCalc {
     if (this.isImmune()) {
       return new AttackDistribution([new HitDistribution([new WeightedHit(1.0, [0])])]);
     }
-    
+
     if (this.monster.name === 'Zulrah') {
       dist = dist.transform(flatLimitTransformer(50));
     }
@@ -940,7 +940,7 @@ export default class CombatCalc {
 
     return dist;
   }
-  
+
   isImmune(): boolean {
     // todo
     return false;
@@ -950,7 +950,7 @@ export default class CombatCalc {
    * Returns the player's attack speed.
    */
   public getAttackSpeed(): number {
-    let attackSpeed = this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED; 
+    let attackSpeed = this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;
     if (this.player.style.stance === 'Rapid') {
       attackSpeed -= 1;
     }
