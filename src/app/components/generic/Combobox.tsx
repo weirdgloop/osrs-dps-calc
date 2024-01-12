@@ -175,7 +175,7 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
             <List
               ref={listRef}
               itemSize={getRowHeight}
-              height={(filteredItems.length < 10 ? filteredItems.length * 29 : 200)}
+              height={(filteredItems.length < 6 ? filteredItems.length * 35 : 200)}
               estimatedItemSize={35}
               itemCount={filteredItems.length}
               width={300}
