@@ -131,8 +131,15 @@ def main():
             equipment['slot'] = 'weapon'
             equipment['isTwoHanded'] = True
 
-        # Prune items with all 0 stat bonuses
-        if all(statbonus == 0 for statbonus in equipment['offensive']) and all(statbonus == 0 for statbonus in equipment['defensive']):
+        # Prune...
+        if (
+            # ...items with all 0 stat bonuses
+            all(statbonus == 0 for statbonus in equipment['offensive']) and all(statbonus == 0 for statbonus in equipment['defensive'])
+            # ...items that are broken variants
+            or equipment['version'] == 'Broken'
+            # ...items from LMS (PvP only mode)
+            or '(Last Man Standing)' in equipment['name']
+        ):
             continue
 
         # Append the current equipment item to the calc's equipment list

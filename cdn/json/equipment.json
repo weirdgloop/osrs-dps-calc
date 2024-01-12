@@ -1064,34 +1064,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Abyssal whip (Last Man Standing)",
-    "id": 20405,
-    "version": "",
-    "slot": "weapon",
-    "image": "Abyssal whip (Last Man Standing).png",
-    "speed": 4,
-    "category": "Whip",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      82,
-      0,
-      82
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Abyssal whip (or)",
     "id": 26482,
     "version": "",
@@ -2017,34 +1989,6 @@
   },
   {
     "name": "Adamant defender",
-    "id": 20459,
-    "version": "Broken",
-    "slot": "shield",
-    "image": "Adamant defender (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      11,
-      0,
-      -3,
-      -2,
-      0,
-      12,
-      13,
-      4
-    ],
-    "defensive": [
-      11,
-      -3,
-      -2,
-      12,
-      13,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Adamant defender",
     "id": 24141,
     "version": "Locked",
     "slot": "shield",
@@ -2273,34 +2217,6 @@
     "version": "",
     "slot": "hands",
     "image": "Adamant gloves.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      7,
-      0,
-      4,
-      7,
-      0,
-      7,
-      7,
-      7
-    ],
-    "defensive": [
-      7,
-      4,
-      7,
-      7,
-      7,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Adamant gloves (Last Man Standing)",
-    "id": 20582,
-    "version": "",
-    "slot": "hands",
-    "image": "Adamant gloves (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -5096,34 +5012,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Ahrim's robeskirt (Last Man Standing)",
-    "id": 20599,
-    "version": "",
-    "slot": "legs",
-    "image": "Ahrim's robeskirt (Last Man Standing).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      22,
-      -7,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      36,
-      22,
-      0,
-      30,
-      33,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Ahrim's robetop",
     "id": 4868,
     "version": "100",
@@ -5264,34 +5152,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Ahrim's robetop (Last Man Standing)",
-    "id": 20598,
-    "version": "",
-    "slot": "body",
-    "image": "Ahrim's robetop (Last Man Standing).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      30,
-      -10,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      63,
-      30,
-      0,
-      37,
-      52,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Ahrim's staff",
     "id": 4862,
     "version": "100",
@@ -5409,34 +5269,6 @@
     "version": "Undamaged",
     "slot": "weapon",
     "image": "Ahrim's staff.png",
-    "speed": 6,
-    "category": "Staff",
-    "offensive": [
-      65,
-      5,
-      15,
-      0,
-      0,
-      -1,
-      12,
-      68
-    ],
-    "defensive": [
-      2,
-      15,
-      0,
-      5,
-      3,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ahrim's staff (Last Man Standing)",
-    "id": 23653,
-    "version": "",
-    "slot": "weapon",
-    "image": "Ahrim's staff (Last Man Standing).png",
     "speed": 6,
     "category": "Staff",
     "offensive": [
@@ -6104,34 +5936,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Amulet of fury (Last Man Standing)",
-    "id": 23640,
-    "version": "",
-    "slot": "neck",
-    "image": "Amulet of fury (Last Man Standing).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      10,
-      0,
-      10,
-      10,
-      0,
-      10,
-      10,
-      8
-    ],
-    "defensive": [
-      15,
-      15,
-      15,
-      15,
-      15,
-      5
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Amulet of fury (or)",
     "id": 12436,
     "version": "",
@@ -6333,34 +6137,6 @@
     "version": "Uncharged",
     "slot": "neck",
     "image": "Amulet of glory.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      10,
-      0,
-      10,
-      10,
-      0,
-      10,
-      10,
-      6
-    ],
-    "defensive": [
-      3,
-      3,
-      3,
-      3,
-      3,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Amulet of glory (Last Man Standing)",
-    "id": 20586,
-    "version": "",
-    "slot": "neck",
-    "image": "Amulet of glory (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -6664,34 +6440,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Amulet of power (Last Man Standing)",
-    "id": 20585,
-    "version": "",
-    "slot": "neck",
-    "image": "Amulet of power (Last Man Standing).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      6,
-      0,
-      6,
-      6,
-      0,
-      6,
-      6,
-      6
-    ],
-    "defensive": [
-      6,
-      6,
-      6,
-      6,
-      6,
-      1
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Amulet of power (t)",
     "id": 23354,
     "version": "",
@@ -6893,34 +6641,6 @@
     "version": "",
     "slot": "head",
     "image": "Ancestral hat.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      2,
-      8,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      13,
-      5,
-      0,
-      11,
-      12,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ancestral hat (Last Man Standing)",
-    "id": 25518,
-    "version": "",
-    "slot": "head",
-    "image": "Ancestral hat (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -7446,34 +7166,6 @@
       8
     ],
     "isTwoHanded": true
-  },
-  {
-    "name": "Ancient halo",
-    "id": 24153,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Ancient halo (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      11,
-      -1,
-      12,
-      11,
-      3
-    ],
-    "isTwoHanded": false
   },
   {
     "name": "Ancient halo",
@@ -8848,34 +8540,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Armadyl crossbow (Last Man Standing)",
-    "id": 23611,
-    "version": "",
-    "slot": "weapon",
-    "image": "Armadyl crossbow (Last Man Standing).png",
-    "speed": 6,
-    "category": "Crossbow",
-    "offensive": [
-      0,
-      0,
-      0,
-      100,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      1
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Armadyl crozier",
     "id": 12263,
     "version": "",
@@ -9044,34 +8708,6 @@
     "isTwoHanded": true
   },
   {
-    "name": "Armadyl godsword (Last Man Standing)",
-    "id": 20593,
-    "version": "",
-    "slot": "weapon",
-    "image": "Armadyl godsword (Last Man Standing).png",
-    "speed": 6,
-    "category": "2h Sword",
-    "offensive": [
-      80,
-      0,
-      0,
-      0,
-      0,
-      132,
-      0,
-      132
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      8
-    ],
-    "isTwoHanded": true
-  },
-  {
     "name": "Armadyl godsword (or)",
     "id": 20368,
     "version": "",
@@ -9098,34 +8734,6 @@
       8
     ],
     "isTwoHanded": true
-  },
-  {
-    "name": "Armadyl halo",
-    "id": 24147,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Armadyl halo (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      11,
-      -1,
-      12,
-      11,
-      3
-    ],
-    "isTwoHanded": false
   },
   {
     "name": "Armadyl halo",
@@ -9465,34 +9073,6 @@
   },
   {
     "name": "Assembler max cape",
-    "id": 21916,
-    "version": "Broken",
-    "slot": "cape",
-    "image": "Assembler max cape (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      8,
-      2,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      1,
-      8,
-      2,
-      1,
-      1,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Assembler max cape",
     "id": 24135,
     "version": "Locked",
     "slot": "cape",
@@ -9661,34 +9241,6 @@
   },
   {
     "name": "Ava's assembler",
-    "id": 21914,
-    "version": "Broken",
-    "slot": "cape",
-    "image": "Ava's assembler (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      8,
-      2,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      1,
-      8,
-      2,
-      1,
-      1,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ava's assembler",
     "id": 24222,
     "version": "Locked",
     "slot": "cape",
@@ -9767,34 +9319,6 @@
       0,
       0,
       0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Avernic defender",
-    "id": 22441,
-    "version": "Broken",
-    "slot": "shield",
-    "image": "Avernic defender (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      28,
-      0,
-      -5,
-      -4,
-      0,
-      29,
-      30,
-      8
-    ],
-    "defensive": [
-      28,
-      -5,
-      -4,
-      29,
-      30,
       0
     ],
     "isTwoHanded": false
@@ -10277,34 +9801,6 @@
   },
   {
     "name": "Bandos halo",
-    "id": 24149,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Bandos halo (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      11,
-      -1,
-      12,
-      11,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Bandos halo",
     "id": 24197,
     "version": "Locked",
     "slot": "head",
@@ -10612,34 +10108,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Bandos tassets (Last Man Standing)",
-    "id": 23646,
-    "version": "",
-    "slot": "legs",
-    "image": "Bandos tassets (Last Man Standing).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -7,
-      0,
-      0,
-      0,
-      2
-    ],
-    "defensive": [
-      66,
-      -4,
-      93,
-      63,
-      71,
-      1
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Bandos tassets (or)",
     "id": 26719,
     "version": "",
@@ -10750,34 +10218,6 @@
       0
     ],
     "isTwoHanded": false
-  },
-  {
-    "name": "Barrelchest anchor",
-    "id": 10888,
-    "version": "Broken",
-    "slot": "weapon",
-    "image": "Barrelchest anchor (broken).png",
-    "speed": 6,
-    "category": "Spiked",
-    "offensive": [
-      92,
-      0,
-      0,
-      0,
-      0,
-      10,
-      -2,
-      100
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": true
   },
   {
     "name": "Barrelchest anchor",
@@ -10897,34 +10337,6 @@
     "version": "",
     "slot": "hands",
     "image": "Barrows gloves.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      12,
-      0,
-      6,
-      12,
-      0,
-      12,
-      12,
-      12
-    ],
-    "defensive": [
-      12,
-      6,
-      12,
-      12,
-      12,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Barrows gloves (Last Man Standing)",
-    "id": 23593,
-    "version": "",
-    "slot": "hands",
-    "image": "Barrows gloves (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -11289,34 +10701,6 @@
     "version": "",
     "slot": "ring",
     "image": "Berserker ring.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      4
-    ],
-    "defensive": [
-      4,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Berserker ring (Last Man Standing)",
-    "id": 23595,
-    "version": "",
-    "slot": "ring",
-    "image": "Berserker ring (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -11765,34 +11149,6 @@
     "version": "",
     "slot": "body",
     "image": "Black d'hide body.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -15,
-      30,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      45,
-      45,
-      50,
-      38,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Black d'hide body (Last Man Standing)",
-    "id": 20423,
-    "version": "",
-    "slot": "body",
-    "image": "Black d'hide body (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -12287,34 +11643,6 @@
       0,
       0,
       0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Black defender",
-    "id": 20455,
-    "version": "Broken",
-    "slot": "shield",
-    "image": "Black defender (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      7,
-      0,
-      -3,
-      -2,
-      0,
-      8,
-      9,
-      2
-    ],
-    "defensive": [
-      7,
-      -3,
-      -2,
-      8,
-      9,
       0
     ],
     "isTwoHanded": false
@@ -15120,34 +14448,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Blessed spirit shield (Last Man Standing)",
-    "id": 23642,
-    "version": "",
-    "slot": "shield",
-    "image": "Blessed spirit shield (Last Man Standing).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      73,
-      2,
-      52,
-      55,
-      53,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Blisterwood flail",
     "id": 24699,
     "version": "",
@@ -15200,34 +14500,6 @@
       2,
       1,
       5
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Blood ancient sceptre",
-    "id": 28238,
-    "version": "Broken",
-    "slot": "weapon",
-    "image": "Blood ancient sceptre (broken).png",
-    "speed": 4,
-    "category": "Staff",
-    "offensive": [
-      50,
-      5,
-      20,
-      0,
-      0,
-      -1,
-      20,
-      60
-    ],
-    "defensive": [
-      1,
-      15,
-      0,
-      3,
-      2,
-      -1
     ],
     "isTwoHanded": false
   },
@@ -17221,34 +16493,6 @@
   },
   {
     "name": "Brassica halo",
-    "id": 24155,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Brassica halo (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      11,
-      -1,
-      12,
-      11,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Brassica halo",
     "id": 24206,
     "version": "Locked",
     "slot": "head",
@@ -18111,34 +17355,6 @@
       0,
       0,
       0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Bronze defender",
-    "id": 20449,
-    "version": "Broken",
-    "slot": "shield",
-    "image": "Bronze defender (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      1,
-      0,
-      -3,
-      -2,
-      0,
-      2,
-      3,
-      0
-    ],
-    "defensive": [
-      1,
-      -3,
-      -2,
-      2,
-      3,
       0
     ],
     "isTwoHanded": false
@@ -20665,34 +19881,6 @@
   },
   {
     "name": "Calamity breeches",
-    "id": 26692,
-    "version": "Broken",
-    "slot": "legs",
-    "image": "Calamity breeches (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      2,
-      0,
-      5,
-      8,
-      0,
-      2,
-      2,
-      0
-    ],
-    "defensive": [
-      8,
-      8,
-      8,
-      5,
-      4,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Calamity breeches",
     "id": 26756,
     "version": "Locked",
     "slot": "legs",
@@ -20743,34 +19931,6 @@
       8,
       5,
       4,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Calamity chest",
-    "id": 26689,
-    "version": "Broken",
-    "slot": "body",
-    "image": "Calamity chest (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      4,
-      0,
-      8,
-      11,
-      0,
-      4,
-      4,
-      0
-    ],
-    "defensive": [
-      10,
-      12,
-      10,
-      7,
-      6,
       0
     ],
     "isTwoHanded": false
@@ -21113,34 +20273,6 @@
   },
   {
     "name": "Centurion cuirass",
-    "id": 26695,
-    "version": "Broken",
-    "slot": "body",
-    "image": "Centurion cuirass (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -40,
-      0,
-      0,
-      0,
-      0,
-      4
-    ],
-    "defensive": [
-      70,
-      -10,
-      7,
-      91,
-      72,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Centurion cuirass",
     "id": 26722,
     "version": "Locked",
     "slot": "body",
@@ -21369,34 +20501,6 @@
     "version": "",
     "slot": "feet",
     "image": "Climbing boots.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      2
-    ],
-    "defensive": [
-      2,
-      0,
-      0,
-      2,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Climbing boots (Last Man Standing)",
-    "id": 20578,
-    "version": "",
-    "slot": "feet",
-    "image": "Climbing boots (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -27832,34 +26936,6 @@
     "isTwoHanded": true
   },
   {
-    "name": "Dark bow (Last Man Standing)",
-    "id": 20408,
-    "version": "",
-    "slot": "weapon",
-    "image": "Dark bow (Last Man Standing).png",
-    "speed": 9,
-    "category": "Bow",
-    "offensive": [
-      0,
-      0,
-      0,
-      95,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
     "name": "Dark bow (bh)",
     "id": 27853,
     "version": "",
@@ -28169,34 +27245,6 @@
   },
   {
     "name": "Decorative armour (gold platebody)",
-    "id": 20485,
-    "version": "Broken",
-    "slot": "body",
-    "image": "Decorative armour (broken) (gold platebody).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -30,
-      -15,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      55,
-      -6,
-      63,
-      63,
-      65,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative armour (gold platebody)",
     "id": 24158,
     "version": "Locked",
     "slot": "body",
@@ -28253,34 +27301,6 @@
   },
   {
     "name": "Decorative armour (gold platelegs)",
-    "id": 20487,
-    "version": "Broken",
-    "slot": "legs",
-    "image": "Decorative armour (broken) (gold platelegs).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      29,
-      -4,
-      31,
-      31,
-      33,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative armour (gold platelegs)",
     "id": 24159,
     "version": "Locked",
     "slot": "legs",
@@ -28313,34 +27333,6 @@
     "version": "Normal",
     "slot": "legs",
     "image": "Decorative armour (gold platelegs).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      29,
-      -4,
-      31,
-      31,
-      33,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative armour (gold plateskirt)",
-    "id": 20493,
-    "version": "Broken",
-    "slot": "legs",
-    "image": "Decorative armour (broken) (gold plateskirt).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -28421,34 +27413,6 @@
   },
   {
     "name": "Decorative armour (magic hat)",
-    "id": 20499,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Decorative armour (broken) (magic hat).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      4,
-      4,
-      4,
-      4,
-      4,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative armour (magic hat)",
     "id": 24165,
     "version": "Locked",
     "slot": "head",
@@ -28499,34 +27463,6 @@
       4,
       4,
       4,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative armour (magic legs)",
-    "id": 20497,
-    "version": "Broken",
-    "slot": "legs",
-    "image": "Decorative armour (broken) (magic legs).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      15,
-      15,
-      15,
-      15,
-      15,
       0
     ],
     "isTwoHanded": false
@@ -28589,34 +27525,6 @@
   },
   {
     "name": "Decorative armour (magic top)",
-    "id": 20495,
-    "version": "Broken",
-    "slot": "body",
-    "image": "Decorative armour (broken) (magic top).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      20,
-      20,
-      20,
-      20,
-      20,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative armour (magic top)",
     "id": 24163,
     "version": "Locked",
     "slot": "body",
@@ -28667,34 +27575,6 @@
       20,
       20,
       20,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative armour (quiver)",
-    "id": 20505,
-    "version": "Broken",
-    "slot": "cape",
-    "image": "Decorative armour (broken) (quiver).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      4,
-      4,
-      4,
-      4,
-      4,
       0
     ],
     "isTwoHanded": false
@@ -28757,34 +27637,6 @@
   },
   {
     "name": "Decorative armour (ranged legs)",
-    "id": 20503,
-    "version": "Broken",
-    "slot": "legs",
-    "image": "Decorative armour (broken) (ranged legs).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      15,
-      15,
-      15,
-      15,
-      15,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative armour (ranged legs)",
     "id": 24167,
     "version": "Locked",
     "slot": "legs",
@@ -28835,34 +27687,6 @@
       15,
       15,
       15,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative armour (ranged top)",
-    "id": 20501,
-    "version": "Broken",
-    "slot": "body",
-    "image": "Decorative armour (broken) (ranged top).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      20,
-      20,
-      20,
-      20,
-      20,
       0
     ],
     "isTwoHanded": false
@@ -29093,34 +27917,6 @@
   },
   {
     "name": "Decorative boots (gold)",
-    "id": 25155,
-    "version": "Broken",
-    "slot": "feet",
-    "image": "Decorative boots (broken) (gold).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -3,
-      -1,
-      0,
-      0,
-      0,
-      1
-    ],
-    "defensive": [
-      12,
-      0,
-      0,
-      11,
-      10,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative boots (gold)",
     "id": 25173,
     "version": "Locked",
     "slot": "feet",
@@ -29227,34 +28023,6 @@
       0,
       9,
       8,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative full helm (gold)",
-    "id": 25157,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Decorative full helm (broken) (gold).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      16,
-      -1,
-      19,
-      21,
-      19,
       0
     ],
     "isTwoHanded": false
@@ -29373,34 +28141,6 @@
   },
   {
     "name": "Decorative helm (gold)",
-    "id": 20489,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Decorative helm (broken) (gold).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -3,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      13,
-      -1,
-      14,
-      15,
-      14,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative helm (gold)",
     "id": 24160,
     "version": "Locked",
     "slot": "head",
@@ -29513,34 +28253,6 @@
   },
   {
     "name": "Decorative shield (gold)",
-    "id": 20491,
-    "version": "Broken",
-    "slot": "shield",
-    "image": "Decorative shield (broken) (gold).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -8,
-      -3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      29,
-      -1,
-      29,
-      31,
-      27,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative shield (gold)",
     "id": 24161,
     "version": "Locked",
     "slot": "shield",
@@ -29647,34 +28359,6 @@
       20,
       22,
       18,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative sword (gold)",
-    "id": 20483,
-    "version": "Broken",
-    "slot": "weapon",
-    "image": "Decorative sword (broken) (gold).png",
-    "speed": 5,
-    "category": "Slash Sword",
-    "offensive": [
-      -2,
-      0,
-      0,
-      0,
-      0,
-      29,
-      20,
-      31
-    ],
-    "defensive": [
-      2,
-      0,
-      0,
-      3,
-      0,
       0
     ],
     "isTwoHanded": false
@@ -30100,34 +28784,6 @@
     "isTwoHanded": true
   },
   {
-    "name": "Dharok's greataxe (Last Man Standing)",
-    "id": 25516,
-    "version": "",
-    "slot": "weapon",
-    "image": "Dharok's greataxe (Last Man Standing).png",
-    "speed": 7,
-    "category": "Axe",
-    "offensive": [
-      95,
-      0,
-      -4,
-      0,
-      0,
-      103,
-      -4,
-      105
-    ],
-    "defensive": [
-      0,
-      0,
-      -1,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
     "name": "Dharok's helm",
     "id": 4880,
     "version": "100",
@@ -30245,34 +28901,6 @@
     "version": "Undamaged",
     "slot": "head",
     "image": "Dharok's helm.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -3,
-      -1,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      44,
-      -1,
-      51,
-      48,
-      45,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dharok's helm (Last Man Standing)",
-    "id": 23639,
-    "version": "",
-    "slot": "head",
-    "image": "Dharok's helm (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -30436,34 +29064,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Dharok's platebody (Last Man Standing)",
-    "id": 25515,
-    "version": "",
-    "slot": "body",
-    "image": "Dharok's platebody (Last Man Standing).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -30,
-      -10,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      107,
-      -6,
-      132,
-      120,
-      122,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Dharok's platelegs",
     "id": 4898,
     "version": "100",
@@ -30604,34 +29204,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Dharok's platelegs (Last Man Standing)",
-    "id": 23633,
-    "version": "",
-    "slot": "legs",
-    "image": "Dharok's platelegs (Last Man Standing).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      83,
-      -4,
-      92,
-      82,
-      85,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Diamond bolts",
     "id": 9340,
     "version": "",
@@ -30662,34 +29234,6 @@
   {
     "name": "Diamond bolts (e)",
     "id": 9243,
-    "version": "",
-    "slot": "ammo",
-    "image": "Diamond bolts (e) 5.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      105,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Diamond bolts (e) (Last Man Standing)",
-    "id": 23649,
     "version": "",
     "slot": "ammo",
     "image": "Diamond bolts (e) 5.png",
@@ -31029,34 +29573,6 @@
     "version": "Unpoisoned",
     "slot": "ammo",
     "image": "Dragon arrow 5.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      60,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dragon arrow (Last Man Standing)",
-    "id": 20389,
-    "version": "",
-    "slot": "ammo",
-    "image": "Dragon arrow (Last Man Standing) 1.png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -31556,34 +30072,6 @@
     "isTwoHanded": true
   },
   {
-    "name": "Dragon claws (Last Man Standing)",
-    "id": 20784,
-    "version": "",
-    "slot": "weapon",
-    "image": "Dragon claws (Last Man Standing).png",
-    "speed": 4,
-    "category": "Claw",
-    "offensive": [
-      -4,
-      0,
-      0,
-      0,
-      0,
-      57,
-      41,
-      56
-    ],
-    "defensive": [
-      7,
-      0,
-      0,
-      26,
-      13,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
     "name": "Dragon claws (cr)",
     "id": 28039,
     "version": "",
@@ -31785,34 +30273,6 @@
     "version": "Unpoisoned",
     "slot": "weapon",
     "image": "Dragon dagger.png",
-    "speed": 4,
-    "category": "Stab Sword",
-    "offensive": [
-      -4,
-      0,
-      1,
-      0,
-      0,
-      25,
-      40,
-      40
-    ],
-    "defensive": [
-      0,
-      1,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dragon dagger (Last Man Standing)",
-    "id": 20407,
-    "version": "",
-    "slot": "weapon",
-    "image": "Dragon dagger (Last Man Standing).png",
     "speed": 4,
     "category": "Stab Sword",
     "offensive": [
@@ -32061,34 +30521,6 @@
   },
   {
     "name": "Dragon defender",
-    "id": 20463,
-    "version": "Broken",
-    "slot": "shield",
-    "image": "Dragon defender (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      23,
-      0,
-      -3,
-      -2,
-      0,
-      24,
-      25,
-      6
-    ],
-    "defensive": [
-      23,
-      -3,
-      -2,
-      24,
-      25,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dragon defender",
     "id": 24143,
     "version": "Locked",
     "slot": "shield",
@@ -32121,34 +30553,6 @@
     "version": "Normal",
     "slot": "shield",
     "image": "Dragon defender.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      23,
-      0,
-      -3,
-      -2,
-      0,
-      24,
-      25,
-      6
-    ],
-    "defensive": [
-      23,
-      -3,
-      -2,
-      24,
-      25,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dragon defender (Last Man Standing)",
-    "id": 23597,
-    "version": "",
-    "slot": "shield",
-    "image": "Dragon defender (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -32849,34 +31253,6 @@
     "version": "Unpoisoned",
     "slot": "ammo",
     "image": "Dragon javelin.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      150,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dragon javelin (Last Man Standing)",
-    "id": 23648,
-    "version": "",
-    "slot": "ammo",
-    "image": "Dragon javelin (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -35084,34 +33460,6 @@
     "isTwoHanded": true
   },
   {
-    "name": "Elder maul (Last Man Standing)",
-    "id": 21205,
-    "version": "",
-    "slot": "weapon",
-    "image": "Elder maul (Last Man Standing).png",
-    "speed": 6,
-    "category": "Blunt",
-    "offensive": [
-      135,
-      0,
-      -4,
-      0,
-      0,
-      0,
-      0,
-      147
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
     "name": "Elder maul (or)",
     "id": 27100,
     "version": "",
@@ -35309,34 +33657,6 @@
   },
   {
     "name": "Elite calamity breeches",
-    "id": 26694,
-    "version": "Broken",
-    "slot": "legs",
-    "image": "Elite calamity breeches (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      4,
-      0,
-      11,
-      14,
-      0,
-      4,
-      4,
-      0
-    ],
-    "defensive": [
-      44,
-      24,
-      44,
-      43,
-      44,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Elite calamity breeches",
     "id": 26760,
     "version": "Locked",
     "slot": "legs",
@@ -35387,34 +33707,6 @@
       44,
       43,
       44,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Elite calamity chest",
-    "id": 26691,
-    "version": "Broken",
-    "slot": "body",
-    "image": "Elite calamity chest (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      6,
-      0,
-      16,
-      21,
-      0,
-      6,
-      6,
-      0
-    ],
-    "defensive": [
-      66,
-      36,
-      64,
-      63,
-      66,
       0
     ],
     "isTwoHanded": false
@@ -35472,34 +33764,6 @@
       63,
       66,
       0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Elite void robe",
-    "id": 20471,
-    "version": "Broken",
-    "slot": "legs",
-    "image": "Elite void robe (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      30,
-      30,
-      30,
-      30,
-      30,
-      3
     ],
     "isTwoHanded": false
   },
@@ -35611,34 +33875,6 @@
       30,
       30,
       30,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Elite void top",
-    "id": 20467,
-    "version": "Broken",
-    "slot": "body",
-    "image": "Elite void top (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      45,
-      45,
-      45,
-      45,
-      45,
       3
     ],
     "isTwoHanded": false
@@ -36069,34 +34305,6 @@
     "version": "",
     "slot": "feet",
     "image": "Eternal boots.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      8,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      5,
-      8,
-      5,
-      5,
-      5,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Eternal boots (Last Man Standing)",
-    "id": 23644,
-    "version": "",
-    "slot": "feet",
-    "image": "Eternal boots (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -36625,34 +34833,6 @@
   },
   {
     "name": "Fighter hat",
-    "id": 20507,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Fighter hat (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      5,
-      0,
-      -7,
-      -7,
-      0,
-      5,
-      5,
-      0
-    ],
-    "defensive": [
-      26,
-      -3,
-      28,
-      29,
-      27,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Fighter hat",
     "id": 24173,
     "version": "Locked",
     "slot": "head",
@@ -36703,34 +34883,6 @@
       28,
       29,
       27,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Fighter torso",
-    "id": 20513,
-    "version": "Broken",
-    "slot": "body",
-    "image": "Fighter torso (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -40,
-      0,
-      0,
-      0,
-      0,
-      4
-    ],
-    "defensive": [
-      62,
-      -10,
-      67,
-      85,
-      62,
       0
     ],
     "isTwoHanded": false
@@ -36933,34 +35085,6 @@
   },
   {
     "name": "Fire cape",
-    "id": 20445,
-    "version": "Broken",
-    "slot": "cape",
-    "image": "Fire cape (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      1,
-      0,
-      1,
-      1,
-      0,
-      1,
-      1,
-      4
-    ],
-    "defensive": [
-      11,
-      11,
-      11,
-      11,
-      11,
-      2
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Fire cape",
     "id": 24223,
     "version": "Locked",
     "slot": "cape",
@@ -36993,34 +35117,6 @@
     "version": "Normal",
     "slot": "cape",
     "image": "Fire cape.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      1,
-      0,
-      1,
-      1,
-      0,
-      1,
-      1,
-      4
-    ],
-    "defensive": [
-      11,
-      11,
-      11,
-      11,
-      11,
-      2
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Fire max cape",
-    "id": 20447,
-    "version": "Broken",
-    "slot": "cape",
-    "image": "Fire max cape (broken).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -38668,34 +36764,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Ghrazi rapier (Last Man Standing)",
-    "id": 23628,
-    "version": "",
-    "slot": "weapon",
-    "image": "Ghrazi rapier (Last Man Standing).png",
-    "speed": 4,
-    "category": "Stab Sword",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      55,
-      94,
-      89
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Giant boulder",
     "id": 25314,
     "version": "",
@@ -39933,34 +38001,6 @@
     "version": "Ornate handle",
     "slot": "weapon",
     "image": "Granite maul (ornate handle).png",
-    "speed": 7,
-    "category": "Blunt",
-    "offensive": [
-      81,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      79
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
-    "name": "Granite maul (Last Man Standing)",
-    "id": 20557,
-    "version": "",
-    "slot": "weapon",
-    "image": "Granite maul (Last Man Standing).png",
     "speed": 7,
     "category": "Blunt",
     "offensive": [
@@ -41580,34 +39620,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Guthan's helm (Last Man Standing)",
-    "id": 23638,
-    "version": "",
-    "slot": "head",
-    "image": "Guthan's helm (Last Man Standing).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      54,
-      -1,
-      62,
-      58,
-      55,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Guthan's platebody",
     "id": 4916,
     "version": "100",
@@ -42164,34 +40176,6 @@
       32,
       30,
       1
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Guthix halo",
-    "id": 20541,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Guthix halo (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      11,
-      -1,
-      12,
-      11,
-      3
     ],
     "isTwoHanded": false
   },
@@ -43233,34 +41217,6 @@
   },
   {
     "name": "Healer hat",
-    "id": 20511,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Healer hat (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      -5,
-      0,
-      6,
-      -5,
-      0,
-      -5,
-      -5,
-      0
-    ],
-    "defensive": [
-      10,
-      7,
-      0,
-      8,
-      6,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Healer hat",
     "id": 24172,
     "version": "Locked",
     "slot": "head",
@@ -43321,34 +41277,6 @@
     "version": "",
     "slot": "weapon",
     "image": "Heavy ballista.png",
-    "speed": 7,
-    "category": "Crossbow",
-    "offensive": [
-      0,
-      0,
-      0,
-      125,
-      15,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
-    "name": "Heavy ballista (Last Man Standing)",
-    "id": 23630,
-    "version": "",
-    "slot": "weapon",
-    "image": "Heavy ballista (Last Man Standing).png",
     "speed": 7,
     "category": "Crossbow",
     "offensive": [
@@ -43433,34 +41361,6 @@
     "version": "",
     "slot": "head",
     "image": "Helm of neitiznot.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      3
-    ],
-    "defensive": [
-      34,
-      3,
-      30,
-      29,
-      31,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Helm of neitiznot (Last Man Standing)",
-    "id": 23591,
-    "version": "",
-    "slot": "head",
-    "image": "Helm of neitiznot (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -44325,34 +42225,6 @@
   },
   {
     "name": "Iban's staff",
-    "id": 1410,
-    "version": "Broken",
-    "slot": "weapon",
-    "image": "Iban's staff (broken).png",
-    "speed": 5,
-    "category": "Staff",
-    "offensive": [
-      40,
-      0,
-      10,
-      0,
-      0,
-      -1,
-      10,
-      50
-    ],
-    "defensive": [
-      1,
-      10,
-      0,
-      3,
-      2,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Iban's staff",
     "id": 1409,
     "version": "Regular",
     "slot": "weapon",
@@ -44404,34 +42276,6 @@
       3,
       2,
       0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ice ancient sceptre",
-    "id": 28242,
-    "version": "Broken",
-    "slot": "weapon",
-    "image": "Ice ancient sceptre (broken).png",
-    "speed": 4,
-    "category": "Staff",
-    "offensive": [
-      50,
-      5,
-      20,
-      0,
-      0,
-      -1,
-      20,
-      60
-    ],
-    "defensive": [
-      1,
-      15,
-      0,
-      3,
-      2,
-      -1
     ],
     "isTwoHanded": false
   },
@@ -44549,34 +42393,6 @@
   },
   {
     "name": "Imbued guthix cape",
-    "id": 24240,
-    "version": "Broken",
-    "slot": "cape",
-    "image": "Imbued guthix cape (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      2,
-      15,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      3,
-      15,
-      0,
-      3,
-      3,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued guthix cape",
     "id": 24249,
     "version": "Locked",
     "slot": "cape",
@@ -44609,62 +42425,6 @@
     "version": "Normal",
     "slot": "cape",
     "image": "Imbued guthix cape.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      2,
-      15,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      3,
-      15,
-      0,
-      3,
-      3,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued guthix cape (Last Man Standing)",
-    "id": 23603,
-    "version": "",
-    "slot": "cape",
-    "image": "Imbued guthix cape (Last Man Standing).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      2,
-      15,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      3,
-      15,
-      0,
-      3,
-      3,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued guthix max cape",
-    "id": 24242,
-    "version": "Broken",
-    "slot": "cape",
-    "image": "Imbued guthix max cape (broken).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -44745,34 +42505,6 @@
   },
   {
     "name": "Imbued saradomin cape",
-    "id": 24236,
-    "version": "Broken",
-    "slot": "cape",
-    "image": "Imbued saradomin cape (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      2,
-      15,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      3,
-      15,
-      0,
-      3,
-      3,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued saradomin cape",
     "id": 24248,
     "version": "Locked",
     "slot": "cape",
@@ -44805,62 +42537,6 @@
     "version": "Normal",
     "slot": "cape",
     "image": "Imbued saradomin cape.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      2,
-      15,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      3,
-      15,
-      0,
-      3,
-      3,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued saradomin cape (Last Man Standing)",
-    "id": 23607,
-    "version": "",
-    "slot": "cape",
-    "image": "Imbued saradomin cape (Last Man Standing).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      2,
-      15,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      3,
-      15,
-      0,
-      3,
-      3,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued saradomin max cape",
-    "id": 24238,
-    "version": "Broken",
-    "slot": "cape",
-    "image": "Imbued saradomin max cape (broken).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -44941,34 +42617,6 @@
   },
   {
     "name": "Imbued zamorak cape",
-    "id": 24244,
-    "version": "Broken",
-    "slot": "cape",
-    "image": "Imbued zamorak cape (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      2,
-      15,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      3,
-      15,
-      0,
-      3,
-      3,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued zamorak cape",
     "id": 24250,
     "version": "Locked",
     "slot": "cape",
@@ -45001,62 +42649,6 @@
     "version": "Normal",
     "slot": "cape",
     "image": "Imbued zamorak cape.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      2,
-      15,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      3,
-      15,
-      0,
-      3,
-      3,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued zamorak cape (Last Man Standing)",
-    "id": 23605,
-    "version": "",
-    "slot": "cape",
-    "image": "Imbued zamorak cape (Last Man Standing).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      2,
-      15,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      3,
-      15,
-      0,
-      3,
-      3,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued zamorak max cape",
-    "id": 24246,
-    "version": "Broken",
-    "slot": "cape",
-    "image": "Imbued zamorak max cape (broken).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -45249,34 +42841,6 @@
   },
   {
     "name": "Infernal cape",
-    "id": 21287,
-    "version": "Broken",
-    "slot": "cape",
-    "image": "Infernal cape (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      4,
-      0,
-      1,
-      1,
-      0,
-      4,
-      4,
-      8
-    ],
-    "defensive": [
-      12,
-      12,
-      12,
-      12,
-      12,
-      2
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Infernal cape",
     "id": 24224,
     "version": "Locked",
     "slot": "cape",
@@ -45309,34 +42873,6 @@
     "version": "Normal",
     "slot": "cape",
     "image": "Infernal cape.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      4,
-      0,
-      1,
-      1,
-      0,
-      4,
-      4,
-      8
-    ],
-    "defensive": [
-      12,
-      12,
-      12,
-      12,
-      12,
-      2
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Infernal cape (Last Man Standing)",
-    "id": 23622,
-    "version": "",
-    "slot": "cape",
-    "image": "Infernal cape (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -45468,34 +43004,6 @@
       1,
       0,
       0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Infernal max cape",
-    "id": 21289,
-    "version": "Broken",
-    "slot": "cape",
-    "image": "Infernal max cape (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      4,
-      0,
-      1,
-      1,
-      0,
-      4,
-      4,
-      8
-    ],
-    "defensive": [
-      12,
-      12,
-      12,
-      12,
-      12,
-      2
     ],
     "isTwoHanded": false
   },
@@ -46699,34 +44207,6 @@
       0,
       0,
       0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Iron defender",
-    "id": 20451,
-    "version": "Broken",
-    "slot": "shield",
-    "image": "Iron defender (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      3,
-      0,
-      -3,
-      -2,
-      0,
-      4,
-      5,
-      0
-    ],
-    "defensive": [
-      3,
-      -3,
-      -2,
-      4,
-      5,
       0
     ],
     "isTwoHanded": false
@@ -49336,34 +46816,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Karil's leathertop (Last Man Standing)",
-    "id": 23632,
-    "version": "",
-    "slot": "body",
-    "image": "Karil's leathertop (Last Man Standing).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -15,
-      30,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      50,
-      65,
-      57,
-      42,
-      47,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Katana",
     "id": 12357,
     "version": "",
@@ -49812,62 +47264,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Kodai wand (Last Man Standing)",
-    "id": 23626,
-    "version": "",
-    "slot": "weapon",
-    "image": "Kodai wand (Last Man Standing).png",
-    "speed": 4,
-    "category": "Staff",
-    "offensive": [
-      0,
-      15,
-      28,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      3,
-      20,
-      0,
-      3,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Koriff's coif",
-    "id": 26700,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Koriff's coif (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      -60,
-      0,
-      -60,
-      18,
-      0,
-      -60,
-      -60,
-      0
-    ],
-    "defensive": [
-      -25,
-      20,
-      0,
-      -25,
-      -25,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Koriff's coif",
     "id": 26742,
     "version": "Locked",
@@ -49925,34 +47321,6 @@
   },
   {
     "name": "Koriff's cowl",
-    "id": 26699,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Koriff's cowl (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      -40,
-      0,
-      -40,
-      14,
-      0,
-      -40,
-      -40,
-      0
-    ],
-    "defensive": [
-      -15,
-      15,
-      0,
-      -15,
-      -15,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Koriff's cowl",
     "id": 26740,
     "version": "Locked",
     "slot": "head",
@@ -50003,34 +47371,6 @@
       0,
       -15,
       -15,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Koriff's headband",
-    "id": 26698,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Koriff's headband (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      -20,
-      0,
-      -20,
-      10,
-      0,
-      -20,
-      -20,
-      0
-    ],
-    "defensive": [
-      -10,
-      10,
-      0,
-      -10,
-      -10,
       0
     ],
     "isTwoHanded": false
@@ -50680,34 +48020,6 @@
     "isTwoHanded": true
   },
   {
-    "name": "Light ballista (Last Man Standing)",
-    "id": 27188,
-    "version": "",
-    "slot": "weapon",
-    "image": "Light ballista (Last Man Standing).png",
-    "speed": 7,
-    "category": "Crossbow",
-    "offensive": [
-      0,
-      0,
-      0,
-      110,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
     "name": "Light infinity bottoms",
     "id": 12421,
     "version": "",
@@ -51324,34 +48636,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Mage's book (Last Man Standing)",
-    "id": 23652,
-    "version": "",
-    "slot": "shield",
-    "image": "Mage's book (Last Man Standing).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      15,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      15,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Magic cape",
     "id": 9763,
     "version": "Trimmed",
@@ -51773,34 +49057,6 @@
   },
   {
     "name": "Maoma's full helm",
-    "id": 26687,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Maoma's full helm (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      8,
-      0,
-      -40,
-      -40,
-      0,
-      8,
-      8,
-      2
-    ],
-    "defensive": [
-      0,
-      -15,
-      15,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Maoma's full helm",
     "id": 26746,
     "version": "Locked",
     "slot": "head",
@@ -51857,34 +49113,6 @@
   },
   {
     "name": "Maoma's great helm",
-    "id": 26688,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Maoma's great helm (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      10,
-      0,
-      -60,
-      -60,
-      0,
-      10,
-      10,
-      4
-    ],
-    "defensive": [
-      0,
-      -25,
-      25,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Maoma's great helm",
     "id": 26748,
     "version": "Locked",
     "slot": "head",
@@ -51933,34 +49161,6 @@
       0,
       -25,
       25,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Maoma's med helm",
-    "id": 26686,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Maoma's med helm (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      6,
-      0,
-      -20,
-      -20,
-      0,
-      6,
-      6,
-      1
-    ],
-    "defensive": [
-      0,
-      -10,
-      10,
       0,
       0,
       0
@@ -52249,34 +49449,6 @@
   },
   {
     "name": "Masori assembler",
-    "id": 27359,
-    "version": "Broken",
-    "slot": "cape",
-    "image": "Masori assembler (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      8,
-      2,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      1,
-      8,
-      2,
-      1,
-      1,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Masori assembler",
     "id": 27376,
     "version": "Locked",
     "slot": "cape",
@@ -52309,34 +49481,6 @@
     "version": "Normal",
     "slot": "cape",
     "image": "Masori assembler.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      8,
-      2,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      1,
-      8,
-      2,
-      1,
-      1,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Masori assembler max cape",
-    "id": 27361,
-    "version": "Broken",
-    "slot": "cape",
-    "image": "Masori assembler max cape (broken).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -53587,34 +50731,6 @@
       0,
       0,
       0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Mithril defender",
-    "id": 20457,
-    "version": "Broken",
-    "slot": "shield",
-    "image": "Mithril defender (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      8,
-      0,
-      -3,
-      -2,
-      0,
-      9,
-      10,
-      3
-    ],
-    "defensive": [
-      8,
-      -3,
-      -2,
-      9,
-      10,
       0
     ],
     "isTwoHanded": false
@@ -55524,34 +52640,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Morrigan's javelin (Last Man Standing)",
-    "id": 23619,
-    "version": "",
-    "slot": "weapon",
-    "image": "Morrigan's javelin (Last Man Standing).png",
-    "speed": 6,
-    "category": "Thrown",
-    "offensive": [
-      0,
-      0,
-      0,
-      105,
-      145,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Morrigan's javelin (bh)",
     "id": 27916,
     "version": "Activated",
@@ -56812,34 +53900,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Mystic robe bottom (Last Man Standing)",
-    "id": 20426,
-    "version": "",
-    "slot": "legs",
-    "image": "Mystic robe bottom (Last Man Standing).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      15,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      15,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Mystic robe bottom (dark)",
     "id": 4103,
     "version": "",
@@ -56957,34 +54017,6 @@
     "version": "",
     "slot": "body",
     "image": "Mystic robe top.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      20,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      20,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Mystic robe top (Last Man Standing)",
-    "id": 20425,
-    "version": "",
-    "slot": "body",
-    "image": "Mystic robe top (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -57825,34 +54857,6 @@
     "version": "",
     "slot": "neck",
     "image": "Occult necklace.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      10,
-      12,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      2
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Occult necklace (Last Man Standing)",
-    "id": 23654,
-    "version": "",
-    "slot": "neck",
-    "image": "Occult necklace (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -58823,34 +55827,6 @@
       2,
       3,
       0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Penance skirt",
-    "id": 20515,
-    "version": "Broken",
-    "slot": "legs",
-    "image": "Penance skirt (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -10,
-      15,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      28,
-      19,
-      26,
-      21,
-      26,
       0
     ],
     "isTwoHanded": false
@@ -60111,34 +57087,6 @@
       0,
       2,
       1,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ranger hat",
-    "id": 20509,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Ranger hat (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      -5,
-      0,
-      -5,
-      6,
-      0,
-      -5,
-      -5,
-      0
-    ],
-    "defensive": [
-      11,
-      5,
-      8,
-      10,
-      7,
       0
     ],
     "isTwoHanded": false
@@ -62748,34 +59696,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Rune crossbow (Last Man Standing)",
-    "id": 23601,
-    "version": "",
-    "slot": "weapon",
-    "image": "Rune crossbow (Last Man Standing).png",
-    "speed": 6,
-    "category": "Crossbow",
-    "offensive": [
-      0,
-      0,
-      0,
-      90,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Rune crossbow (or)",
     "id": 26486,
     "version": "",
@@ -63023,34 +59943,6 @@
       0,
       0,
       0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Rune defender",
-    "id": 20461,
-    "version": "Broken",
-    "slot": "shield",
-    "image": "Rune defender (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      18,
-      0,
-      -3,
-      -2,
-      0,
-      19,
-      20,
-      5
-    ],
-    "defensive": [
-      18,
-      -3,
-      -2,
-      19,
-      20,
       0
     ],
     "isTwoHanded": false
@@ -65296,34 +62188,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Rune platelegs (Last Man Standing)",
-    "id": 20422,
-    "version": "",
-    "slot": "legs",
-    "image": "Rune platelegs (Last Man Standing).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      47,
-      -4,
-      49,
-      49,
-      51,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Rune platelegs (g)",
     "id": 2617,
     "version": "",
@@ -66165,34 +63029,6 @@
   },
   {
     "name": "Runner hat",
-    "id": 24531,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Runner hat (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      1,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Runner hat",
     "id": 24533,
     "version": "Locked",
     "slot": "head",
@@ -66243,34 +63079,6 @@
       30,
       32,
       30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Saika's hood",
-    "id": 26701,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Saika's hood (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      -20,
-      0,
-      10,
-      -2,
-      0,
-      -20,
-      -20,
-      0
-    ],
-    "defensive": [
-      10,
-      0,
-      -10,
-      10,
-      10,
       0
     ],
     "isTwoHanded": false
@@ -66333,34 +63141,6 @@
   },
   {
     "name": "Saika's shroud",
-    "id": 26703,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Saika's shroud (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      -60,
-      0,
-      18,
-      -60,
-      0,
-      -60,
-      -60,
-      0
-    ],
-    "defensive": [
-      20,
-      0,
-      -25,
-      20,
-      20,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Saika's shroud",
     "id": 26736,
     "version": "Locked",
     "slot": "head",
@@ -66411,34 +63191,6 @@
       -25,
       20,
       20,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Saika's veil",
-    "id": 26702,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Saika's veil (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      -40,
-      0,
-      14,
-      -40,
-      0,
-      -40,
-      -40,
-      0
-    ],
-    "defensive": [
-      15,
-      0,
-      -15,
-      15,
-      15,
       0
     ],
     "isTwoHanded": false
@@ -67537,34 +64289,6 @@
   },
   {
     "name": "Saradomin halo",
-    "id": 20537,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Saradomin halo (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      11,
-      -1,
-      12,
-      11,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Saradomin halo",
     "id": 24169,
     "version": "Locked",
     "slot": "head",
@@ -68236,62 +64960,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Seers ring (i) (Last Man Standing)",
-    "id": 23624,
-    "version": "",
-    "slot": "ring",
-    "image": "Seers ring (i) (Last Man Standing).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      12,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      12,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Seren halo",
-    "id": 24151,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Seren halo (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      11,
-      -1,
-      12,
-      11,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Seren halo",
     "id": 24200,
     "version": "Locked",
@@ -68484,34 +65152,6 @@
       0,
       0,
       5
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Shadow ancient sceptre",
-    "id": 28244,
-    "version": "Broken",
-    "slot": "weapon",
-    "image": "Shadow ancient sceptre (broken).png",
-    "speed": 4,
-    "category": "Staff",
-    "offensive": [
-      50,
-      5,
-      20,
-      0,
-      0,
-      -1,
-      20,
-      60
-    ],
-    "defensive": [
-      1,
-      15,
-      0,
-      3,
-      2,
-      -1
     ],
     "isTwoHanded": false
   },
@@ -70365,34 +67005,6 @@
   },
   {
     "name": "Smoke ancient sceptre",
-    "id": 28240,
-    "version": "Broken",
-    "slot": "weapon",
-    "image": "Smoke ancient sceptre (broken).png",
-    "speed": 4,
-    "category": "Staff",
-    "offensive": [
-      50,
-      5,
-      20,
-      0,
-      0,
-      -1,
-      20,
-      60
-    ],
-    "defensive": [
-      1,
-      15,
-      0,
-      3,
-      2,
-      -1
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Smoke ancient sceptre",
     "id": 28475,
     "version": "Locked",
     "slot": "weapon",
@@ -70756,34 +67368,6 @@
     "isTwoHanded": true
   },
   {
-    "name": "Spear (Last Man Standing)",
-    "id": 20397,
-    "version": "",
-    "slot": "weapon",
-    "image": "Spear (Last Man Standing).png",
-    "speed": 7,
-    "category": "Polearm",
-    "offensive": [
-      0,
-      0,
-      -4,
-      0,
-      0,
-      18,
-      22,
-      20
-    ],
-    "defensive": [
-      4,
-      0,
-      0,
-      2,
-      -1,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
     "name": "Spectral spirit shield",
     "id": 12821,
     "version": "",
@@ -71069,34 +67653,6 @@
     "version": "",
     "slot": "shield",
     "image": "Spirit shield.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      50,
-      1,
-      45,
-      41,
-      39,
-      1
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Spirit shield (Last Man Standing)",
-    "id": 23599,
-    "version": "",
-    "slot": "shield",
-    "image": "Spirit shield (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -71568,34 +68124,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Staff of the dead (Last Man Standing)",
-    "id": 23613,
-    "version": "",
-    "slot": "weapon",
-    "image": "Staff of the dead (Last Man Standing).png",
-    "speed": 4,
-    "category": "Bladed Staff",
-    "offensive": [
-      0,
-      15,
-      17,
-      0,
-      0,
-      70,
-      55,
-      72
-    ],
-    "defensive": [
-      3,
-      17,
-      0,
-      3,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Staff of water",
     "id": 1383,
     "version": "",
@@ -71909,34 +68437,6 @@
     "version": "",
     "slot": "weapon",
     "image": "Statius's warhammer.png",
-    "speed": 5,
-    "category": "Blunt",
-    "offensive": [
-      123,
-      0,
-      0,
-      0,
-      0,
-      -4,
-      -4,
-      114
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Statius's warhammer (Last Man Standing)",
-    "id": 23620,
-    "version": "",
-    "slot": "weapon",
-    "image": "Statius's warhammer (Last Man Standing).png",
     "speed": 5,
     "category": "Blunt",
     "offensive": [
@@ -72711,34 +69211,6 @@
       0,
       0,
       0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Steel defender",
-    "id": 20453,
-    "version": "Broken",
-    "slot": "shield",
-    "image": "Steel defender (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      5,
-      0,
-      -3,
-      -2,
-      0,
-      6,
-      7,
-      1
-    ],
-    "defensive": [
-      5,
-      -3,
-      -2,
-      6,
-      7,
       0
     ],
     "isTwoHanded": false
@@ -75293,34 +71765,6 @@
   },
   {
     "name": "Superior calamity breeches",
-    "id": 26693,
-    "version": "Broken",
-    "slot": "legs",
-    "image": "Superior calamity breeches (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      3,
-      0,
-      8,
-      11,
-      0,
-      3,
-      3,
-      0
-    ],
-    "defensive": [
-      36,
-      20,
-      32,
-      34,
-      32,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Superior calamity breeches",
     "id": 26758,
     "version": "Locked",
     "slot": "legs",
@@ -75371,34 +71815,6 @@
       32,
       34,
       32,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Superior calamity chest",
-    "id": 26690,
-    "version": "Broken",
-    "slot": "body",
-    "image": "Superior calamity chest (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      5,
-      0,
-      12,
-      16,
-      0,
-      5,
-      5,
-      0
-    ],
-    "defensive": [
-      54,
-      28,
-      48,
-      51,
-      47,
       0
     ],
     "isTwoHanded": false
@@ -78176,34 +74592,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Torag's helm (Last Man Standing)",
-    "id": 23637,
-    "version": "",
-    "slot": "head",
-    "image": "Torag's helm (Last Man Standing).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      54,
-      -1,
-      62,
-      58,
-      55,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Torag's platebody",
     "id": 4964,
     "version": "100",
@@ -78461,34 +74849,6 @@
     "version": "Undamaged",
     "slot": "legs",
     "image": "Torag's platelegs.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      83,
-      -4,
-      92,
-      82,
-      85,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Torag's platelegs (Last Man Standing)",
-    "id": 23634,
-    "version": "",
-    "slot": "legs",
-    "image": "Torag's platelegs (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -81536,34 +77896,6 @@
     "isTwoHanded": true
   },
   {
-    "name": "Verac's flail (Last Man Standing)",
-    "id": 27189,
-    "version": "",
-    "slot": "weapon",
-    "image": "Verac's flail (Last Man Standing).png",
-    "speed": 5,
-    "category": "Spiked",
-    "offensive": [
-      82,
-      0,
-      0,
-      0,
-      0,
-      -2,
-      68,
-      72
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      6
-    ],
-    "isTwoHanded": true
-  },
-  {
     "name": "Verac's helm",
     "id": 4976,
     "version": "100",
@@ -81681,34 +78013,6 @@
     "version": "Undamaged",
     "slot": "head",
     "image": "Verac's helm.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      54,
-      0,
-      56,
-      58,
-      55,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Verac's helm (Last Man Standing)",
-    "id": 23636,
-    "version": "",
-    "slot": "head",
-    "image": "Verac's helm (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -81872,34 +78176,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Verac's plateskirt (Last Man Standing)",
-    "id": 23635,
-    "version": "",
-    "slot": "legs",
-    "image": "Verac's plateskirt (Last Man Standing).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      83,
-      0,
-      84,
-      82,
-      85,
-      4
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Vesta's blighted longsword",
     "id": 24617,
     "version": "Active",
@@ -82017,34 +78293,6 @@
     "version": "",
     "slot": "weapon",
     "image": "Vesta's longsword.png",
-    "speed": 5,
-    "category": "Slash Sword",
-    "offensive": [
-      -2,
-      0,
-      0,
-      0,
-      0,
-      121,
-      106,
-      118
-    ],
-    "defensive": [
-      3,
-      0,
-      0,
-      4,
-      1,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Vesta's longsword (Last Man Standing)",
-    "id": 23615,
-    "version": "",
-    "slot": "weapon",
-    "image": "Vesta's longsword (Last Man Standing).png",
     "speed": 5,
     "category": "Slash Sword",
     "offensive": [
@@ -82349,34 +78597,6 @@
   },
   {
     "name": "Void knight gloves",
-    "id": 20475,
-    "version": "Broken",
-    "slot": "hands",
-    "image": "Void knight gloves (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      6,
-      4,
-      6,
-      6,
-      6,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Void knight gloves",
     "id": 24182,
     "version": "Locked",
     "slot": "hands",
@@ -82489,34 +78709,6 @@
   },
   {
     "name": "Void knight mace",
-    "id": 20473,
-    "version": "Broken",
-    "slot": "weapon",
-    "image": "Void knight mace (broken).png",
-    "speed": 5,
-    "category": "Staff",
-    "offensive": [
-      41,
-      0,
-      8,
-      0,
-      0,
-      0,
-      22,
-      38
-    ],
-    "defensive": [
-      2,
-      2,
-      2,
-      2,
-      2,
-      6
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Void knight mace",
     "id": 24181,
     "version": "Locked",
     "slot": "weapon",
@@ -82568,34 +78760,6 @@
       2,
       2,
       6
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Void knight robe",
-    "id": 20469,
-    "version": "Broken",
-    "slot": "legs",
-    "image": "Void knight robe (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      30,
-      30,
-      30,
-      30,
-      30,
-      0
     ],
     "isTwoHanded": false
   },
@@ -82707,34 +78871,6 @@
       30,
       30,
       30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Void knight top",
-    "id": 20465,
-    "version": "Broken",
-    "slot": "body",
-    "image": "Void knight top (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      45,
-      45,
-      45,
-      45,
-      45,
       0
     ],
     "isTwoHanded": false
@@ -82853,34 +78989,6 @@
   },
   {
     "name": "Void mage helm",
-    "id": 20477,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Void mage helm (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      6,
-      6,
-      6,
-      6,
-      6,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Void mage helm",
     "id": 24183,
     "version": "Locked",
     "slot": "head",
@@ -82993,34 +79101,6 @@
   },
   {
     "name": "Void melee helm",
-    "id": 20481,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Void melee helm (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      6,
-      6,
-      6,
-      6,
-      6,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Void melee helm",
     "id": 24185,
     "version": "Locked",
     "slot": "head",
@@ -83109,34 +79189,6 @@
     "version": "Normal",
     "slot": "head",
     "image": "Void melee helm (or).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      6,
-      6,
-      6,
-      6,
-      6,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Void ranger helm",
-    "id": 20479,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Void ranger helm (broken).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -83524,67 +79576,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Voidwaker (Last Man Standing)",
-    "id": 27869,
-    "version": "",
-    "slot": "weapon",
-    "image": "Voidwaker (Last Man Standing).png",
-    "speed": 4,
-    "category": "Slash Sword",
-    "offensive": [
-      -2,
-      0,
-      5,
-      0,
-      0,
-      80,
-      70,
-      80
-    ],
-    "defensive": [
-      0,
-      2,
-      0,
-      1,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Volatile nightmare staff",
     "id": 24424,
     "version": "",
     "slot": "weapon",
     "image": "Volatile nightmare staff.png",
-    "speed": 5,
-    "category": "Staff",
-    "offensive": [
-      0,
-      15,
-      16,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      14,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Volatile nightmare staff (Last Man Standing)",
-    "id": 25517,
-    "version": "",
-    "slot": "weapon",
-    "image": "Volatile nightmare staff (Last Man Standing).png",
     "speed": 5,
     "category": "Staff",
     "offensive": [
@@ -85765,34 +81761,6 @@
   },
   {
     "name": "Wristbands of the arena",
-    "id": 26696,
-    "version": "Broken",
-    "slot": "hands",
-    "image": "Wristbands of the arena (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      12,
-      0,
-      6,
-      12,
-      0,
-      12,
-      12,
-      12
-    ],
-    "defensive": [
-      12,
-      6,
-      12,
-      12,
-      12,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Wristbands of the arena",
     "id": 26725,
     "version": "Charged",
     "slot": "hands",
@@ -85891,34 +81859,6 @@
       0,
       12,
       12,
-      12
-    ],
-    "defensive": [
-      12,
-      6,
-      12,
-      12,
-      12,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Wristbands of the arena (i)",
-    "id": 26697,
-    "version": "Broken",
-    "slot": "hands",
-    "image": "Hardened wristbands of the arena (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      15,
-      0,
-      7,
-      13,
-      0,
-      13,
-      14,
       12
     ],
     "defensive": [
@@ -86885,34 +82825,6 @@
   },
   {
     "name": "Zamorak halo",
-    "id": 20539,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Zamorak halo (broken).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      11,
-      -1,
-      12,
-      11,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Zamorak halo",
     "id": 24170,
     "version": "Locked",
     "slot": "head",
@@ -87813,34 +83725,6 @@
     "version": "",
     "slot": "weapon",
     "image": "Zuriel's staff.png",
-    "speed": 5,
-    "category": "Staff",
-    "offensive": [
-      65,
-      10,
-      18,
-      0,
-      0,
-      -1,
-      13,
-      72
-    ],
-    "defensive": [
-      4,
-      18,
-      0,
-      7,
-      5,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Zuriel's staff (Last Man Standing)",
-    "id": 23617,
-    "version": "",
-    "slot": "weapon",
-    "image": "Zuriel's staff (Last Man Standing).png",
     "speed": 5,
     "category": "Staff",
     "offensive": [
