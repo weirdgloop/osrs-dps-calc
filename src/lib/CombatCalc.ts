@@ -1,5 +1,4 @@
 import {EquipmentPiece, Player} from '@/types/Player';
-import { CombatStyleType } from '@/types/PlayerCombatStyle';
 import {Monster} from '@/types/Monster';
 import {
   AttackDistribution,
@@ -1019,7 +1018,7 @@ export default class CombatCalc {
     }
 
     if (this.monster.name === 'Zulrah') {
-      dist = dist.transform(flatLimitTransformer(50));
+      dist = dist.transform(linearMinTransformer(5, 45));
     }
     if (this.monster.name === 'Fragment of Seren') {
       // https://twitter.com/JagexAsh/status/1375037874559721474
