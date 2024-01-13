@@ -1213,4 +1213,10 @@ export default class CombatCalc {
 
     return ttks;
   }
+
+  public static distIsCurrentHpDependent(loadout: Player, monster: Monster): boolean {
+    // todo use this for ttk dist as well #81
+    // todo ruby bolts
+    return monster.name === 'Vardorvis';
+  }
 }

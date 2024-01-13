@@ -21,10 +21,12 @@ import {toJS} from "mobx";
 import {useTheme} from "next-themes";
 import {max} from "d3-array";
 import {keys} from "@/utils";
+import {scaledMonster} from "@/lib/MonsterScaling";
 
 enum XAxisType {
   MONSTER_DEF,
   MONSTER_MAGIC,
+  MONSTER_HP,
   PLAYER_ATTACK_LEVEL,
   PLAYER_STRENGTH_LEVEL,
   PLAYER_RANGED_LEVEL,
@@ -41,6 +43,7 @@ enum YAxisType {
 const XAxisOptions = [
   {label: 'Monster defence level', value: XAxisType.MONSTER_DEF},
   {label: 'Monster magic level', value: XAxisType.MONSTER_MAGIC},
+  {label: 'Monster HP', value: XAxisType.MONSTER_HP},
   {label: 'Player attack level', value: XAxisType.PLAYER_ATTACK_LEVEL},
   {label: 'Player strength level', value: XAxisType.PLAYER_STRENGTH_LEVEL},
   {label: 'Player ranged level', value: XAxisType.PLAYER_RANGED_LEVEL},
@@ -78,7 +81,7 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, pa
 function* inputRange(
   xAxisType: XAxisType,
   loadouts: Player[],
-    monster: Monster,
+  baseMonster: Monster,
 ): Generator<{
   xValue: number,
   loadouts: Player[],
@@ -87,14 +90,14 @@ function* inputRange(
 
   switch (xAxisType) {
     case XAxisType.MONSTER_DEF:
-      for (let newDef = 0; newDef <= monster.skills.def; newDef++) {
+      for (let newDef = baseMonster.skills.def; newDef >= 0; newDef--) {
         yield {
           xValue: newDef,
           loadouts: loadouts,
           monster: {
-            ...monster,
+            ...baseMonster,
             skills: {
-              ...monster.skills,
+              ...baseMonster.skills,
               def: newDef,
             },
           },
@@ -103,17 +106,32 @@ function* inputRange(
       return;
 
     case XAxisType.MONSTER_MAGIC:
-      for (let newMagic = 0; newMagic <= monster.skills.magic; newMagic++) {
+      for (let newMagic = baseMonster.skills.magic; newMagic >= 0; newMagic--) {
         yield {
           xValue: newMagic,
           loadouts: loadouts,
           monster: {
-            ...monster,
+            ...baseMonster,
             skills: {
-              ...monster.skills,
+              ...baseMonster.skills,
               magic: newMagic,
             },
           },
+        };
+      }
+      return;
+
+    case XAxisType.MONSTER_HP:
+      const shouldScale = loadouts.some(l => CombatCalc.distIsCurrentHpDependent(l, baseMonster));
+      for (let newHp = baseMonster.skills.hp; newHp >= 0; newHp--) {
+        const m: Monster = {
+          ...baseMonster,
+          monsterCurrentHp: newHp,
+        };
+        yield {
+          xValue: newHp,
+          loadouts: loadouts,
+          monster: shouldScale ? scaledMonster(m) : m,
         };
       }
       return;
@@ -129,7 +147,7 @@ function* inputRange(
               atk: newAttack,
             },
           })),
-          monster: monster,
+          monster: baseMonster,
         };
       }
       return;
@@ -145,7 +163,7 @@ function* inputRange(
               str: newStrength,
             },
           })),
-          monster: monster,
+          monster: baseMonster,
         };
       }
       return;
@@ -161,7 +179,7 @@ function* inputRange(
               ranged: newRanged,
             },
           })),
-          monster: monster,
+          monster: baseMonster,
         };
       }
       return;
@@ -177,7 +195,7 @@ function* inputRange(
               magic: newMagic,
             },
           })),
-          monster: monster,
+          monster: baseMonster,
         };
       }
       return;
@@ -199,7 +217,7 @@ function* inputRange(
               boosts: newBoosts,
             };
           }),
-          monster: monster,
+          monster: baseMonster,
         };
       }
       return;

@@ -35,6 +35,7 @@ import {Monster} from "@/types/Monster";
 import LazyImage from "@/app/components/generic/LazyImage";
 import Toggle from "@/app/components/generic/Toggle";
 import {toJS} from "mobx";
+import CombatCalc from "@/lib/CombatCalc";
 
 interface ITombsOfAmascutMonsterContainerProps {
   monster: Monster;
@@ -85,7 +86,7 @@ const TombsOfAmascutMonsterContainer: React.FC<ITombsOfAmascutMonsterContainerPr
 
 const MonsterContainer: React.FC = observer(() => {
   const store = useStore();
-  const {monster, prefs} = store;
+  const {loadouts, monster, prefs} = store;
 
   // Don't automatically update the stat inputs if manual editing is on
   const displayMonster = prefs.manualMode ? monster : scaledMonster(monster);
@@ -196,7 +197,7 @@ const MonsterContainer: React.FC = observer(() => {
       )
     }
 
-    if (monster.name === 'Vardorvis') {
+    if (loadouts.some(l => CombatCalc.distIsCurrentHpDependent(l, monster))) {
       comps.push(
         <div className={'mt-4'} key={'cox-guardian'}>
           <h4 className={'font-bold font-serif'}>
@@ -218,7 +219,7 @@ const MonsterContainer: React.FC = observer(() => {
 
     return comps;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [toJS(monster)]);
+  }, [toJS(loadouts), toJS(monster)]);
 
   return (
     <div className={'basis-4 flex flex-col grow md:grow-0'}>
