@@ -196,6 +196,26 @@ const MonsterContainer: React.FC = observer(() => {
       )
     }
 
+    if (monster.name === 'Vardorvis') {
+      comps.push(
+        <div className={'mt-4'} key={'cox-guardian'}>
+          <h4 className={'font-bold font-serif'}>
+            <img src={hitpoints.src} alt={''} className={'inline-block'}/>{' '}
+            Monster&apos;s Current HP
+          </h4>
+          <div className={'mt-2'}>
+            <NumberInput
+              value={monster.monsterCurrentHp}
+              min={0}
+              max={monster.skills.hp}
+              step={1}
+              onChange={(v) => store.updateMonster({monsterCurrentHp: v})}
+            />
+          </div>
+        </div>
+      )
+    }
+
     return comps;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [toJS(monster)]);

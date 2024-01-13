@@ -21,7 +21,10 @@ const MonsterSelect: React.FC = observer(() => {
       label: `${m.name}`,
       value: i,
       version: m.version || '',
-      monster: m
+      monster: {
+        ...m,
+        monsterCurrentHp: m.skills.hp,
+      },
     }
   }), [availableMonsters])
 

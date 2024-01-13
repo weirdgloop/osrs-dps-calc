@@ -61,6 +61,10 @@ export interface Monster {
    */
   partySize: number;
   /**
+   * The monster's current HP, for effects like Ruby bolt (e), or Vardorvis defence.
+   */
+  monsterCurrentHp: number;
+  /**
    * The attributes the monster has
    * @see https://oldschool.runescape.wiki/w/Monster_attribute
    */

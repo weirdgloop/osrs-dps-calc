@@ -164,7 +164,6 @@ class GlobalState implements State {
       slash: 20,
       stab: 20,
     },
-    attributes: [MonsterAttribute.DEMON],
     isFromCoxCm: false,
     toaInvocationLevel: 0,
     toaPathLevel: 0,
@@ -172,6 +171,8 @@ class GlobalState implements State {
     partyAvgMiningLevel: 99,
     partyMaxHpLevel: 99,
     partySize: 1,
+    monsterCurrentHp: 150,
+    attributes: [MonsterAttribute.DEMON],
   }
 
   loadouts: Player[] = [

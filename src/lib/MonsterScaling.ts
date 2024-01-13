@@ -30,9 +30,42 @@ import {
   ZEBAK_IDS
 } from "@/constants";
 import {MonsterAttribute} from "@/enums/MonsterAttribute";
+import {lerp} from "@/utils";
 
 export const scaledMonster: (m: Monster) => Monster = m => {
   const mId = m.id;
+
+  // vard's strength and defence scale linearly throughout the fight based on hp
+  if (m.name === 'Vardorvis') {
+    let vardRanges = {
+      maxHp: 700,
+      str: [270, 360],
+      def: [215, 145],
+    };
+    if (m.version === 'Quest') {
+      vardRanges = {
+        maxHp: 500,
+        str: [210, 280],
+        def: [180, 130],
+      };
+    } else if (m.version === 'Awakened') {
+      vardRanges = {
+        maxHp: 1400,
+        str: [391, 522],
+        def: [268, 181],
+      };
+    }
+    
+    const currHp = isFinite(m.monsterCurrentHp) ? m.monsterCurrentHp : vardRanges.maxHp;
+    return {
+      ...m,
+      skills: {
+        ...m.skills,
+        str: lerp(currHp, vardRanges.maxHp, 0, vardRanges.str[0], vardRanges.str[1]),
+        def: lerp(currHp, vardRanges.maxHp, 0, vardRanges.def[0], vardRanges.def[1]),
+      }
+    }
+  }
 
   // toa multiplies rolled values, not stats, except for hp
   if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(mId)) {
