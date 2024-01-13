@@ -1,7 +1,6 @@
 import {
   GetPropsCommonOptions,
   useSelect,
-  UseSelectGetItemPropsOptions,
   UseSelectGetToggleButtonPropsOptions
 } from 'downshift';
 import React, {useEffect, useRef} from 'react';
@@ -116,7 +115,7 @@ const Select = <T extends SelectItem>(props: ISelectProps<T>) => {
             ref: menuRef
           })}
       >
-        {!items.length ? null : (
+        {!isOpen || !items.length ? null : (
           <Virtuoso
             ref={virtuosoRef}
             style={{ height: 200, width: 300 }}

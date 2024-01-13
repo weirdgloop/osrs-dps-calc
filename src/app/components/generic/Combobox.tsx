@@ -109,7 +109,7 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
             ref: menuRef
           })}
       >
-        {!filteredItems.length ? null : (
+        {!isOpen || !filteredItems.length ? null : (
             <Virtuoso
               ref={virtuosoRef}
               style={{ height: 200, width: 300 }}
