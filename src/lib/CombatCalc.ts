@@ -1052,6 +1052,9 @@ export default class CombatCalc {
       dist = dist.transform(divisionTransformer(2));
     }
 
+    // now also cap hits indiscriminately by the monster's max health, in case it is higher
+    dist = dist.transform(flatLimitTransformer(this.monster.skills.hp));
+
     return dist;
   }
 
