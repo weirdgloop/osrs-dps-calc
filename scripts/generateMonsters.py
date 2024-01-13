@@ -111,8 +111,17 @@ def main():
             'attributes': po['Monster attribute'] or []
         }
 
-        # Skip monsters that don't have an ID
-        if monster['id'] is None:
+        # Prune...
+        if (
+            # ...monsters that don't have an ID
+            monster['id'] is None
+            # ...monsters that are historical
+            or '(historical)' in str.lower(monster['name'])
+            # ...monsters from the PvM arena
+            or '(pvm arena)' in str.lower(monster['name'])
+            # ...monsters from DMM Apocalypse
+            or '(deadman: apocalypse)' in str.lower(monster['name'])
+        ):
             continue
 
         data.append(monster)

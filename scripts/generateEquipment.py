@@ -138,7 +138,9 @@ def main():
             # ...items that are broken variants
             or equipment['version'] == 'Broken'
             # ...items from LMS (PvP only mode)
-            or '(Last Man Standing)' in equipment['name']
+            or '(last man standing)' in str.lower(equipment['name'])
+            # ...items that are historical
+            or '(historical)' in str.lower(equipment['name'])
         ):
             continue
 

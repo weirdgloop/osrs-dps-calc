@@ -11175,39 +11175,6 @@
     "attributes": []
   },
   {
-    "id": 6503,
-    "name": "Callisto (PvM Arena)",
-    "version": "",
-    "image": "Callisto (PvM Arena).png",
-    "level": 470,
-    "speed": 4,
-    "size": 5,
-    "skills": [
-      350,
-      440,
-      255,
-      1,
-      1,
-      370
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      175,
-      900,
-      230,
-      104,
-      135
-    ],
-    "attributes": []
-  },
-  {
     "id": 11994,
     "name": "Calvar'ion",
     "version": "Enraged",
@@ -11586,39 +11553,6 @@
       230,
       142,
       130,
-      230,
-      1,
-      195
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12454,
-    "name": "Cave abomination (Deadman: Apocalypse)",
-    "version": "",
-    "image": "Cave abomination (Deadman Apocalypse).png",
-    "level": 361,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      230,
-      142,
-      750,
       230,
       1,
       195
@@ -12470,39 +12404,6 @@
   {
     "id": 2054,
     "name": "Chaos Elemental",
-    "version": "",
-    "image": "Chaos Elemental.png",
-    "level": 305,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      270,
-      270,
-      250,
-      270,
-      270,
-      270
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      70,
-      70,
-      70,
-      70,
-      70
-    ],
-    "attributes": []
-  },
-  {
-    "id": 6505,
-    "name": "Chaos Elemental (PvM Arena)",
     "version": "",
     "image": "Chaos Elemental.png",
     "level": 305,
@@ -13402,72 +13303,6 @@
   {
     "id": 2205,
     "name": "Commander Zilyana",
-    "version": "",
-    "image": "Commander Zilyana.png",
-    "level": 596,
-    "speed": 2,
-    "size": 2,
-    "skills": [
-      280,
-      300,
-      255,
-      300,
-      250,
-      196
-    ],
-    "offensive": [
-      195,
-      0,
-      200,
-      0,
-      0,
-      20
-    ],
-    "defensive": [
-      100,
-      100,
-      100,
-      100,
-      100
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12445,
-    "name": "Commander Zilyana (Deadman: Apocalypse)",
-    "version": "",
-    "image": "Commander Zilyana (Deadman Apocalypse).png",
-    "level": 596,
-    "speed": 2,
-    "size": 2,
-    "skills": [
-      280,
-      300,
-      500,
-      300,
-      250,
-      196
-    ],
-    "offensive": [
-      195,
-      0,
-      200,
-      0,
-      0,
-      20
-    ],
-    "defensive": [
-      100,
-      100,
-      100,
-      100,
-      100
-    ],
-    "attributes": []
-  },
-  {
-    "id": 6493,
-    "name": "Commander Zilyana (PvM Arena)",
     "version": "",
     "image": "Commander Zilyana.png",
     "level": 596,
@@ -16660,72 +16495,6 @@
     "attributes": []
   },
   {
-    "id": 12442,
-    "name": "Dagannoth Prime (Deadman: Apocalypse)",
-    "version": "",
-    "image": "Dagannoth Prime (Deadman Apocalypse).png",
-    "level": 417,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      255,
-      255,
-      750,
-      255,
-      0,
-      255
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      255,
-      255,
-      10,
-      255,
-      255
-    ],
-    "attributes": []
-  },
-  {
-    "id": 6497,
-    "name": "Dagannoth Prime (PvM Arena)",
-    "version": "",
-    "image": "Dagannoth Prime.png",
-    "level": 303,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      255,
-      255,
-      255,
-      255,
-      0,
-      255
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      255,
-      255,
-      10,
-      255,
-      255
-    ],
-    "attributes": []
-  },
-  {
     "id": 2267,
     "name": "Dagannoth Rex",
     "version": "",
@@ -16759,140 +16528,8 @@
     "attributes": []
   },
   {
-    "id": 12439,
-    "name": "Dagannoth Rex (Deadman: Apocalypse)",
-    "version": "",
-    "image": "Dagannoth Rex (Deadman Apocalypse).png",
-    "level": 417,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      255,
-      255,
-      750,
-      0,
-      255,
-      255
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      255,
-      10,
-      255,
-      255,
-      255
-    ],
-    "attributes": []
-  },
-  {
-    "id": 6498,
-    "name": "Dagannoth Rex (PvM Arena)",
-    "version": "",
-    "image": "Dagannoth Rex.png",
-    "level": 303,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      255,
-      255,
-      255,
-      0,
-      255,
-      255
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      255,
-      10,
-      255,
-      255,
-      255
-    ],
-    "attributes": []
-  },
-  {
     "id": 2265,
     "name": "Dagannoth Supreme",
-    "version": "",
-    "image": "Dagannoth Supreme.png",
-    "level": 303,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      255,
-      128,
-      255,
-      255,
-      255,
-      255
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      255,
-      550,
-      10,
-      10
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12441,
-    "name": "Dagannoth Supreme (Deadman: Apocalypse)",
-    "version": "",
-    "image": "Dagannoth Supreme (Deadman Apocalypse).png",
-    "level": 385,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      255,
-      128,
-      750,
-      255,
-      255,
-      255
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      255,
-      550,
-      10,
-      10
-    ],
-    "attributes": []
-  },
-  {
-    "id": 6496,
-    "name": "Dagannoth Supreme (PvM Arena)",
     "version": "",
     "image": "Dagannoth Supreme.png",
     "level": 303,
@@ -18355,39 +17992,6 @@
     "attributes": []
   },
   {
-    "id": 12450,
-    "name": "Derwen (Deadman: Apocalypse)",
-    "version": "",
-    "image": "Derwen (Deadman Apocalypse).png",
-    "level": 235,
-    "speed": 6,
-    "size": 3,
-    "skills": [
-      250,
-      100,
-      320,
-      180,
-      1,
-      150
-    ],
-    "offensive": [
-      0,
-      80,
-      80,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      200,
-      -60,
-      200,
-      200,
-      200
-    ],
-    "attributes": []
-  },
-  {
     "id": 459,
     "name": "Desert Lizard",
     "version": "Green",
@@ -18769,41 +18373,6 @@
       100,
       100,
       100,
-      1,
-      1,
-      100
-    ],
-    "offensive": [
-      0,
-      0,
-      -58,
-      -18,
-      0,
-      105
-    ],
-    "defensive": [
-      244,
-      -11,
-      249,
-      250,
-      252
-    ],
-    "attributes": [
-      "spectral"
-    ]
-  },
-  {
-    "id": 12447,
-    "name": "Dharok the Wretched (Deadman: Apocalypse)",
-    "version": "",
-    "image": "Dharok the Wretched (Deadman Apocalypse).png",
-    "level": 666,
-    "speed": 7,
-    "size": 2,
-    "skills": [
-      100,
-      100,
-      200,
       1,
       1,
       100
@@ -24292,72 +23861,6 @@
     "attributes": []
   },
   {
-    "id": 12444,
-    "name": "General Graardor (Deadman: Apocalypse)",
-    "version": "",
-    "image": "General Graardor (Deadman Apocalypse).png",
-    "level": 624,
-    "speed": 6,
-    "size": 4,
-    "skills": [
-      280,
-      250,
-      1000,
-      80,
-      350,
-      350
-    ],
-    "offensive": [
-      120,
-      0,
-      0,
-      100,
-      40,
-      43
-    ],
-    "defensive": [
-      90,
-      201,
-      90,
-      90,
-      90
-    ],
-    "attributes": []
-  },
-  {
-    "id": 6494,
-    "name": "General Graardor (PvM Arena)",
-    "version": "",
-    "image": "General Graardor.png",
-    "level": 624,
-    "speed": 6,
-    "size": 4,
-    "skills": [
-      280,
-      250,
-      255,
-      80,
-      350,
-      350
-    ],
-    "offensive": [
-      120,
-      0,
-      0,
-      100,
-      40,
-      43
-    ],
-    "defensive": [
-      90,
-      298,
-      90,
-      90,
-      90
-    ],
-    "attributes": []
-  },
-  {
     "id": 3510,
     "name": "General Khazard",
     "version": "",
@@ -25058,39 +24561,6 @@
   {
     "id": 5779,
     "name": "Giant Mole",
-    "version": "",
-    "image": "Giant Mole.png",
-    "level": 230,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      200,
-      200,
-      200,
-      200,
-      1,
-      200
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      100,
-      80,
-      60,
-      80,
-      60
-    ],
-    "attributes": []
-  },
-  {
-    "id": 6499,
-    "name": "Giant Mole (PvM Arena)",
     "version": "",
     "image": "Giant Mole.png",
     "level": 230,
@@ -27312,138 +26782,6 @@
     "attributes": []
   },
   {
-    "id": 677,
-    "name": "Goblin (historical)",
-    "version": "Green (original)",
-    "image": "Goblin (green) (historical v1).png",
-    "level": 5,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 3048,
-    "name": "Goblin (historical)",
-    "version": "Green (updated)",
-    "image": "Goblin (green) (historical v3).png",
-    "level": 5,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 678,
-    "name": "Goblin (historical)",
-    "version": "Red (original)",
-    "image": "Goblin (red) (historical v1).png",
-    "level": 5,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 3047,
-    "name": "Goblin (historical)",
-    "version": "Red (updated)",
-    "image": "Goblin (red) (historical v3).png",
-    "level": 5,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 3353,
     "name": "Goblin Champion",
     "version": "",
@@ -28130,41 +27468,6 @@
       300,
       240,
       400,
-      1,
-      1,
-      260
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      50,
-      0,
-      50,
-      50,
-      50
-    ],
-    "attributes": [
-      "demon"
-    ]
-  },
-  {
-    "id": 12451,
-    "name": "Greater abyssal demon (Deadman: Apocalypse)",
-    "version": "",
-    "image": "Greater abyssal demon (Deadman Apocalypse).png",
-    "level": 429,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      300,
-      240,
-      750,
       1,
       1,
       260
@@ -35380,39 +34683,6 @@
     "attributes": []
   },
   {
-    "id": 12455,
-    "name": "Jal-ImKot (Deadman: Apocalypse)",
-    "version": "",
-    "image": "Jal-ImKot (Deadman Apocalypse).png",
-    "level": 240,
-    "speed": 4,
-    "size": 4,
-    "skills": [
-      210,
-      120,
-      750,
-      120,
-      220,
-      290
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      40
-    ],
-    "defensive": [
-      65,
-      30,
-      50,
-      65,
-      65
-    ],
-    "attributes": []
-  },
-  {
     "id": 7708,
     "name": "Jal-MejJak",
     "version": "",
@@ -36739,109 +36009,8 @@
     "attributes": []
   },
   {
-    "id": 12449,
-    "name": "Justiciar Zachariah (Deadman: Apocalypse)",
-    "version": "",
-    "image": "Justiciar Zachariah (Deadman Apocalypse).png",
-    "level": 348,
-    "speed": 6,
-    "size": 3,
-    "skills": [
-      500,
-      100,
-      320,
-      180,
-      1,
-      250
-    ],
-    "offensive": [
-      200,
-      80,
-      80,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      200,
-      -60,
-      200,
-      200,
-      200
-    ],
-    "attributes": []
-  },
-  {
     "id": 3129,
     "name": "K'ril Tsutsaroth",
-    "version": "",
-    "image": "K'ril Tsutsaroth.png",
-    "level": 650,
-    "speed": 6,
-    "size": 5,
-    "skills": [
-      340,
-      270,
-      255,
-      200,
-      1,
-      300
-    ],
-    "offensive": [
-      160,
-      0,
-      0,
-      0,
-      0,
-      31
-    ],
-    "defensive": [
-      80,
-      130,
-      80,
-      80,
-      80
-    ],
-    "attributes": [
-      "demon"
-    ]
-  },
-  {
-    "id": 12446,
-    "name": "K'ril Tsutsaroth (Deadman: Apocalypse)",
-    "version": "",
-    "image": "K'ril Tsutsaroth (Deadman Apocalypse).png",
-    "level": 650,
-    "speed": 6,
-    "size": 5,
-    "skills": [
-      340,
-      270,
-      1000,
-      200,
-      1,
-      300
-    ],
-    "offensive": [
-      160,
-      0,
-      0,
-      0,
-      0,
-      31
-    ],
-    "defensive": [
-      80,
-      130,
-      80,
-      80,
-      80
-    ],
-    "attributes": []
-  },
-  {
-    "id": 6495,
-    "name": "K'ril Tsutsaroth (PvM Arena)",
     "version": "",
     "image": "K'ril Tsutsaroth.png",
     "level": 650,
@@ -36974,76 +36143,6 @@
       50,
       25,
       25
-    ],
-    "attributes": [
-      "kalphite"
-    ]
-  },
-  {
-    "id": 6501,
-    "name": "Kalphite Queen (PvM Arena)",
-    "version": "Airborne",
-    "image": "Kalphite Queen 2nd form.png",
-    "level": 333,
-    "speed": 4,
-    "size": 5,
-    "skills": [
-      300,
-      300,
-      255,
-      150,
-      1,
-      300
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      100,
-      10,
-      10,
-      100,
-      100
-    ],
-    "attributes": [
-      "kalphite"
-    ]
-  },
-  {
-    "id": 6500,
-    "name": "Kalphite Queen (PvM Arena)",
-    "version": "Crawling",
-    "image": "Kalphite Queen.png",
-    "level": 333,
-    "speed": 4,
-    "size": 5,
-    "skills": [
-      300,
-      300,
-      255,
-      150,
-      1,
-      300
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      100,
-      100,
-      50,
-      50
     ],
     "attributes": [
       "kalphite"
@@ -38129,77 +37228,6 @@
     ]
   },
   {
-    "id": 12440,
-    "name": "King Black Dragon (Deadman: Apocalypse)",
-    "version": "",
-    "image": "King Black Dragon (Deadman Apocalypse).png",
-    "level": 278,
-    "speed": 4,
-    "size": 5,
-    "skills": [
-      240,
-      240,
-      250,
-      240,
-      1,
-      240
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      90,
-      80,
-      70,
-      90,
-      70
-    ],
-    "attributes": [
-      "dragon"
-    ]
-  },
-  {
-    "id": 6502,
-    "name": "King Black Dragon (PvM Arena)",
-    "version": "",
-    "image": "King Black Dragon.png",
-    "level": 276,
-    "speed": 4,
-    "size": 5,
-    "skills": [
-      240,
-      240,
-      240,
-      240,
-      1,
-      240
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      90,
-      80,
-      70,
-      90,
-      70
-    ],
-    "attributes": [
-      "dragon",
-      "fiery"
-    ]
-  },
-  {
     "id": 4163,
     "name": "King Roald",
     "version": "",
@@ -39129,72 +38157,6 @@
     "id": 3162,
     "name": "Kree'arra",
     "version": "Normal",
-    "image": "Kree'arra.png",
-    "level": 580,
-    "speed": 3,
-    "size": 5,
-    "skills": [
-      300,
-      260,
-      255,
-      200,
-      380,
-      200
-    ],
-    "offensive": [
-      136,
-      0,
-      0,
-      120,
-      50,
-      12
-    ],
-    "defensive": [
-      180,
-      200,
-      200,
-      180,
-      180
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12443,
-    "name": "Kree'arra (Deadman: Apocalypse)",
-    "version": "",
-    "image": "Kree'arra (Deadman Apocalypse).png",
-    "level": 580,
-    "speed": 6,
-    "size": 5,
-    "skills": [
-      300,
-      260,
-      350,
-      200,
-      380,
-      200
-    ],
-    "offensive": [
-      136,
-      0,
-      0,
-      120,
-      50,
-      12
-    ],
-    "defensive": [
-      180,
-      200,
-      200,
-      180,
-      180
-    ],
-    "attributes": []
-  },
-  {
-    "id": 6492,
-    "name": "Kree'arra (PvM Arena)",
-    "version": "",
     "image": "Kree'arra.png",
     "level": 580,
     "speed": 3,
@@ -41046,39 +40008,6 @@
     "defensive": [
       0,
       0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12456,
-    "name": "Malevolent Mage (Deadman: Apocalypse)",
-    "version": "",
-    "image": "Malevolent Mage (Deadman Apocalypse).png",
-    "level": 286,
-    "speed": 4,
-    "size": 1,
-    "skills": [
-      1,
-      150,
-      500,
-      255,
-      1,
-      1
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      300,
       0,
       0,
       0
@@ -45141,39 +44070,6 @@
       200,
       190,
       200,
-      80,
-      75
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12459,
-    "name": "Night beast (Deadman: Apocalypse)",
-    "version": "",
-    "image": "Night beast (Deadman Apocalypse).png",
-    "level": 362,
-    "speed": 4,
-    "size": 4,
-    "skills": [
-      270,
-      220,
-      500,
-      300,
-      1,
-      290
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      200,
-      190,
-      100,
       80,
       75
     ],
@@ -49836,41 +48732,6 @@
     "name": "Porazdir",
     "version": "",
     "image": "Porazdir.png",
-    "level": 235,
-    "speed": 6,
-    "size": 3,
-    "skills": [
-      250,
-      100,
-      320,
-      180,
-      1,
-      150
-    ],
-    "offensive": [
-      0,
-      80,
-      80,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      200,
-      -60,
-      200,
-      200,
-      200
-    ],
-    "attributes": [
-      "demon"
-    ]
-  },
-  {
-    "id": 12448,
-    "name": "Porazdir (Deadman: Apocalypse)",
-    "version": "",
-    "image": "Porazdir (Deadman Apocalypse).png",
     "level": 235,
     "speed": 6,
     "size": 3,
@@ -63083,39 +61944,6 @@
     "attributes": []
   },
   {
-    "id": 12458,
-    "name": "Sulphur Lizard (Deadman: Apocalypse)",
-    "version": "",
-    "image": "Sulphur Lizard (Deadman Apocalypse).png",
-    "level": 257,
-    "speed": 4,
-    "size": 2,
-    "skills": [
-      150,
-      75,
-      500,
-      1,
-      1,
-      200
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      25,
-      0,
-      15,
-      25,
-      15
-    ],
-    "attributes": []
-  },
-  {
     "id": 69,
     "name": "Summoned Zombie",
     "version": "",
@@ -68285,39 +67113,6 @@
     "attributes": []
   },
   {
-    "id": 6506,
-    "name": "TzTok-Jad (PvM Arena)",
-    "version": "",
-    "image": "TzTok-Jad.png",
-    "level": 702,
-    "speed": 8,
-    "size": 5,
-    "skills": [
-      640,
-      480,
-      250,
-      480,
-      960,
-      960
-    ],
-    "offensive": [
-      0,
-      0,
-      60,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 4652,
     "name": "Ugthanki",
     "version": "",
@@ -70074,39 +68869,6 @@
     "attributes": []
   },
   {
-    "id": 6504,
-    "name": "Venenatis (PvM Arena)",
-    "version": "",
-    "image": "Venenatis (PvM Arena).png",
-    "level": 464,
-    "speed": 0,
-    "size": 4,
-    "skills": [
-      470,
-      490,
-      255,
-      150,
-      1,
-      490
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      260,
-      850,
-      100,
-      260,
-      260
-    ],
-    "attributes": []
-  },
-  {
     "id": 12000,
     "name": "Venenatis' Spiderling (monster)",
     "version": "",
@@ -70692,39 +69454,6 @@
       180,
       1,
       180
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12457,
-    "name": "Vitreous warped Jelly (Deadman: Apocalypse)",
-    "version": "",
-    "image": "Vitreous warped Jelly (Deadman Apocalypse).png",
-    "level": 333,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      200,
-      250,
-      500,
-      180,
-      1,
-      250
     ],
     "offensive": [
       0,
@@ -74476,39 +73205,6 @@
       0,
       0,
       0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 3268,
-    "name": "Woman (historical)",
-    "version": "",
-    "image": "Woman (historical).png",
-    "level": 2,
-    "speed": 4,
-    "size": 1,
-    "skills": [
-      1,
-      1,
-      7,
-      1,
-      1,
-      1
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      -21,
-      -21,
-      -21,
-      -21,
-      -21
     ],
     "attributes": []
   },
