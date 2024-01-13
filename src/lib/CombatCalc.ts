@@ -28,6 +28,7 @@ import {
   VERZIK_P1_IDS,
 } from "@/constants";
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
+import {scaledMonster} from "@/lib/MonsterScaling";
 
 const DEFAULT_ATTACK_SPEED = 4;
 const SECONDS_PER_TICK = 0.6;
@@ -1153,6 +1154,8 @@ export default class CombatCalc {
    * it is an object where keys are tick counts and values are probabilities.
    */
   public getTtkDistribution(): Map<number, number> {
+    const recalcDistOnHp = CombatCalc.distIsCurrentHpDependent(this.player, this.monster);
+
     const speed = this.getAttackSpeed();
     const dist = this.getDistribution().asSingleHitplat();
     if (dist.expectedHit() === 0) {
@@ -1170,6 +1173,10 @@ export default class CombatCalc {
     // sum of non-zero-health probabilities
     let epsilon = 1.0;
 
+    // if the hit dist depends on hp, we'll have to recalculate it each time, so cache the results to not repeat work
+    const hpHitDists = new Map<number, HitDistribution>();
+    hpHitDists.set(this.monster.skills.hp, dist);
+
     // 1. until the amount of hp values remaining above zero is more than our desired epsilon accuracy,
     //    or we reach the maximum iteration rounds
     for (let hit = 0; hit < (TTK_DIST_MAX_ITER_ROUNDS + 1) && epsilon > TTK_DIST_EPSILON; hit++) {
@@ -1178,13 +1185,23 @@ export default class CombatCalc {
 
       const nextHps = new Float64Array(this.monster.skills.hp + 1);
 
-      // 3. for each damage amount possible,
-      for (let h of dist.hits) {
-        let dmgProb = h.probability;
-        let dmg = h.getHitsplats()[0]; // guaranteed to be length 1 from asSingleHitsplat
+      // 3. for each possible hp value,
+      for (let [hp, hpProb] of hps.entries()) {
+        // this is a bit of a hack, but idk if there's a better way
+        let currDist: HitDistribution = dist;
+        if (recalcDistOnHp) {
+          let cachedDist = hpHitDists.get(hp);
+          if (!cachedDist) {
+            hpHitDists.set(hp, cachedDist = this.distAtHp(hp));
+          }
+          currDist = cachedDist;
+        }
+        
+        // 4. for each damage amount possible,
+        for (let h of currDist.hits) {
+          let dmgProb = h.probability;
+          let dmg = h.getHitsplats()[0]; // guaranteed to be length 1 from asSingleHitsplat
 
-        // 4. for each possible hp value,
-        for (let [hp, hpProb] of hps.entries()) {
           // 5. the chance of this path being reached is the previous chance of landing here * the chance of hitting this amount
           const chanceOfAction = dmgProb * hpProb;
           if (chanceOfAction === 0) continue;
@@ -1212,6 +1229,21 @@ export default class CombatCalc {
     }
 
     return ttks;
+  }
+
+  distAtHp(hp: number): HitDistribution {
+    if (!CombatCalc.distIsCurrentHpDependent(this.player, this.monster) || hp === this.monster.monsterCurrentHp) {
+      return this.getDistribution().asSingleHitplat();
+    }
+
+    return new CombatCalc(
+      this.player,
+      scaledMonster({
+        ...this.monster,
+        monsterCurrentHp: hp,
+      }),
+      this.opts,
+    ).getDistribution().asSingleHitplat();
   }
 
   public static distIsCurrentHpDependent(loadout: Player, monster: Monster): boolean {
