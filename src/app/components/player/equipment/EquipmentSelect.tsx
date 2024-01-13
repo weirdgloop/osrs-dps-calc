@@ -1,5 +1,4 @@
 import React, {useMemo} from 'react';
-import equipment from '../../../../../cdn/json/equipment.json';
 import {useStore} from '@/state';
 import {observer} from 'mobx-react-lite';
 import {getCdnImage} from '@/utils';
@@ -41,15 +40,13 @@ const EquipmentSelect: React.FC = observer(() => {
     const dartEntries: EquipmentOption[] = [];
 
     const entries: EquipmentOption[] = [];
-    for (let v of equipment) {
+    for (let v of store.availableEquipment) {
       let e: EquipmentOption = {
         label: `${v.name}`,
         value: v.id.toString(),
         version: v.version || '',
         slot: v.slot,
-        equipment: {
-          ...(v as EquipmentPiece)
-        }
+        equipment: v
       };
 
       if (BLOWPIPE_IDS.includes(e.value)) {
@@ -80,7 +77,7 @@ const EquipmentSelect: React.FC = observer(() => {
     });
 
     return entries;
-  }, [])
+  }, [store.availableEquipment])
 
   return (
     <Combobox<EquipmentOption>
@@ -88,7 +85,7 @@ const EquipmentSelect: React.FC = observer(() => {
       className={'w-full'}
       items={options}
       resetAfterSelect={true}
-      placeholder={'Search for equipment to wear...'}
+      placeholder={'Search for equipment...'}
       onSelectedItemChange={(item) => {
         if (item) {
           store.updatePlayer({
