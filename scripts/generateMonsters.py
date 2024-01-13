@@ -124,6 +124,18 @@ def main():
         ):
             continue
 
+        # vard's defence and str change throughout the fight and the ask query doesn't pull that field properly
+        if monster['name'] == 'Vardorvis':
+            if monster['version'] == 'Post-Quest':
+                monster['skills'][1] = 215
+                monster['skills'][5] = 270
+            elif monster['version'] == 'Awakened':
+                monster['skills'][1] = 268
+                monster['skills'][5] = 391
+            elif monster['version'] == 'Quest':
+                monster['skills'][1] = 180
+                monster['skills'][5] = 210
+
         data.append(monster)
         if not monster['image'] == '':
             required_imgs.append(monster['image'])
