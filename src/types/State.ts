@@ -1,4 +1,4 @@
-import {Player} from '@/types/Player';
+import {EquipmentPiece, Player} from '@/types/Player';
 import {Monster} from '@/types/Monster';
 
 /**
@@ -65,4 +65,16 @@ export interface ImportableData {
 export interface State extends ImportableData {
   ui: UI;
   prefs: Preferences;
+  calc: Calculator;
+  worker: Worker | null;
+
+  /**
+   * All available equipment that a player can equip.
+   */
+  availableEquipment: EquipmentPiece[];
+
+  /**
+   * All monsters that a player can fight.
+   */
+  availableMonsters: Monster[];
 }

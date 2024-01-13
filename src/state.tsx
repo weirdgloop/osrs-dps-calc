@@ -14,6 +14,8 @@ import {toast} from "react-toastify";
 import {fetchPlayerSkills, fetchShortlinkData, WORKER_JSON_REPLACER} from "@/utils";
 import {RecomputeValuesRequest, WorkerRequestType} from "@/types/WorkerData";
 import {scaledMonster} from "@/lib/MonsterScaling";
+import equipment from '../cdn/json/equipment.json';
+import {getMonsters} from "@/lib/Monsters";
 
 type EquipmentBonuses = Pick<Player, 'bonuses' | 'offensive' | 'defensive'>
 const calculateEquipmentBonuses = (eq: EquipmentPiece[]): EquipmentBonuses => {
@@ -210,6 +212,9 @@ class GlobalState implements State {
 
   worker: Worker | null = null
   workerRecomputeTimer: number | null = null
+
+  availableEquipment = equipment.map((v) => v as EquipmentPiece)
+  availableMonsters = getMonsters();
 
   constructor() {
     makeAutoObservable(this, {}, {autoBind: true});

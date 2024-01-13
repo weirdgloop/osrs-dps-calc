@@ -1,20 +1,20 @@
-import {getMonsterOptions} from "@/lib/MonsterOptions";
+import {getMonsters} from "@/lib/Monsters";
 import {Monster} from "@/types/Monster";
 import {Player} from "@/types/Player";
 import CombatCalc from "@/lib/CombatCalc";
 
-let monsterOptions = getMonsterOptions();
+let monsters = getMonsters();
 
-export function getMonster(label: string, version: string): Monster {
-    const monsterOption = monsterOptions.find((option) =>
-        option.label === label && option.version === version
+export function getMonster(name: string, version: string): Monster {
+    const monsterOption = monsters.find((option) =>
+        option.name === name && option.version === version
     );
 
     if (!monsterOption) {
-        throw new Error(`Monster not found for label '${label}' and version '${version}'`);
+        throw new Error(`Monster not found for name '${name}' and version '${version}'`);
     }
 
-    return <Monster>monsterOption.monster;
+    return <Monster>monsterOption;
 };
 
 export function calculate(player: Player, monster: Monster) {

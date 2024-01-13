@@ -5,6 +5,7 @@ export interface Monster {
   id: number;
   name: string;
   image?: string;
+  version?: string;
   size: number;
   skills: {
     atk: number;
