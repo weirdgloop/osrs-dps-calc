@@ -13,9 +13,9 @@ const EquipmentPresets: React.FC = () => {
     {label: 'Dharok\'s equipment', value: EquipmentPreset.DHAROKS},
     {label: 'Max Melee', value: EquipmentPreset.MAX_MELEE},
     {label: 'Max Ranged', value: EquipmentPreset.MAX_RANGED},
+    {label: 'Verac\'s equipment', value: EquipmentPreset.VERACS},
     {label: 'Void (Melee)', value: EquipmentPreset.VOID_MELEE},
     {label: 'Void (Ranged)', value: EquipmentPreset.VOID_RANGED},
-    {label: 'Verac\'s equipment', value: EquipmentPreset.VERACS},
   ]
 
   const onSelect = useCallback((v: {label: string, value: EquipmentPreset} | null | undefined) => {
@@ -32,13 +32,14 @@ const EquipmentPresets: React.FC = () => {
             head: findItemById(4880), // Dharok's helm
             cape: findItemById(21295), // Infernal cape
             neck: findItemById(19553), // Amulet of torture
+            ammo: findItemById(22947), // Rada's blessing 4
+            weapon: findItemById(4718), // Dharok's greataxe
             body: findItemById(4892), // Dharok's platebody
+            shield: null,
             legs: findItemById(4898), // Dharok's platelegs
             hands: findItemById(22981), // Ferocious gloves
             feet: findItemById(13239), // Primordial boots
             ring: findItemById(28307), // Ultor ring
-            ammo: null,
-            shield: null
           }
         }
         break;
@@ -49,13 +50,12 @@ const EquipmentPresets: React.FC = () => {
             head: findItemById(26382), // Torva full helm
             cape: findItemById(21295), // Infernal cape
             neck: findItemById(19553), // Amulet of torture
+            ammo: findItemById(22947), // Rada's blessing 4
             body: findItemById(26384), // Torva platebody
             legs: findItemById(26386), // Torva platelegs
             hands: findItemById(22981), // Ferocious gloves
             feet: findItemById(13239), // Primordial boots
             ring: findItemById(28307), // Ultor ring
-            ammo: null,
-            shield: null
           }
         }
         break;
@@ -66,13 +66,12 @@ const EquipmentPresets: React.FC = () => {
             head: findItemById(27235), // Masori mask (f)
             cape: findItemById(22109), // Ava's assembler
             neck: findItemById(19547), // Necklace of anguish
+            ammo: findItemById(11212), // Dragon arrow
             body: findItemById(27238), // Masori body (f)
             legs: findItemById(27241), // Masori chaps (f)
             hands: findItemById(26235), // Zaryte vambraces
             feet: findItemById(13237), // Pegasian boots
             ring: findItemById(28310), // Venator ring
-            ammo: findItemById(11212), // Dragon arrow
-            shield: null
           }
         }
         break;
@@ -81,15 +80,14 @@ const EquipmentPresets: React.FC = () => {
         newPlayer = {
           equipment: {
             head: findItemById(11665), // Void melee helm
-            cape: null,
-            neck: null,
+            cape: findItemById(21295), // Infernal cape
+            neck: findItemById(19553), // Amulet of torture
+            ammo: findItemById(22947), // Rada's blessing 4
             body: findItemById(13072), // Elite void top
             legs: findItemById(13073), // Elite void robe
             hands: findItemById(8842), // Void knight gloves
-            feet: null,
-            ring: null,
-            ammo: null,
-            shield: null
+            feet: findItemById(13239), // Primordial boots
+            ring: findItemById(28307), // Ultor ring
           }
         }
         break;
@@ -98,15 +96,14 @@ const EquipmentPresets: React.FC = () => {
         newPlayer = {
           equipment: {
             head: findItemById(11664), // Void ranger helm
-            cape: null,
-            neck: null,
+            cape: findItemById(22109), // Ava's assembler
+            neck: findItemById(19547), // Necklace of anguish
+            ammo: findItemById(11212), // Dragon arrow
             body: findItemById(13072), // Elite void top
             legs: findItemById(13073), // Elite void robe
             hands: findItemById(8842), // Void knight gloves
-            feet: null,
-            ring: null,
-            ammo: null,
-            shield: null
+            feet: findItemById(13237), // Pegasian boots
+            ring: findItemById(28310), // Venator ring
           }
         }
         break;
@@ -115,15 +112,16 @@ const EquipmentPresets: React.FC = () => {
         newPlayer = {
           equipment: {
             head: findItemById(4976), // Verac's helm
-            cape: null,
-            neck: null,
+            cape: findItemById(21295), // Infernal cape
+            neck: findItemById(19553), // Amulet of torture
+            ammo: findItemById(22947), // Rada's blessing 4
+            weapon: findItemById(4755), // Verac's flail
             body: findItemById(4988), // Verac's brassard
+            shield: null,
             legs: findItemById(4994), // Verac's plateskirt
-            hands: findItemById(7462), // Barrows gloves
-            feet: null,
-            ring: null,
-            ammo: null,
-            shield: null
+            hands: findItemById(22981), // Ferocious gloves
+            feet: findItemById(13239), // Primordial boots
+            ring: findItemById(28307), // Ultor ring
           }
         }
         break;
