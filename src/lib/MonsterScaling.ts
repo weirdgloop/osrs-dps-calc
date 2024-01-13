@@ -1,58 +1,83 @@
 import {Monster} from "@/types/Monster";
 import {
   ABYSSAL_PORTAL_IDS,
+  AKKHA_IDS,
+  AKKHA_SHADOW_IDS,
+  BABA_IDS,
+  BABOON_SHAMAN_IDS,
+  BABOON_THRALL_IDS,
+  CURSED_BABOON_IDS,
   GLOWING_CRYSTAL_IDS,
   GUARDIAN_IDS,
+  KEPHRI_OVERLORD_IDS,
+  KEPHRI_SHIELDED_IDS,
+  KEPHRI_UNSHIELDED_IDS,
   OLM_HEAD_IDS,
   OLM_IDS,
+  P2_WARDEN_IDS,
+  P3_WARDEN_IDS,
   SCAVENGER_BEAST_IDS,
+  STANDARD_BABOON_LARGE_IDS,
+  STANDARD_BABOON_SMALL_IDS,
   TEKTON_IDS,
+  TOA_CORE_IDS,
+  TOA_OBELISK_IDS,
   TOB_EM_MONSTER_IDS,
   TOB_MONSTER_IDS,
   TOMBS_OF_AMASCUT_MONSTER_IDS,
-  TOMBS_OF_AMASCUT_PATH_MONSTER_IDS
+  TOMBS_OF_AMASCUT_PATH_MONSTER_IDS,
+  VOLATILE_BABOON_IDS,
+  ZEBAK_IDS
 } from "@/constants";
 import {MonsterAttribute} from "@/enums/MonsterAttribute";
 
 export const scaledMonster: (m: Monster) => Monster = m => {
-  const mId = m.id || 0;
-  
+  const mId = m.id;
+
   // toa multiplies rolled values, not stats, except for hp
   if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(mId)) {
-    const invoHp = Math.trunc(m.skills.hp * (250 + m.toaInvocationLevel) / 250);
-    
-    const partySize = Math.min(8, Math.max(1, m.partySize));
-    let partyFactor = 10;
-    if (partySize >= 2) {
-      partyFactor += 9 * (Math.max(2, partySize) - 1);
+    const values = getToaScalingValues(mId);
+    if (!values) {
+      // either doesn't scale or isn't implemented
+      return m;
     }
-    if (partySize >= 4) {
-      partyFactor += 6 * (partySize - 3);
-    }
-    const partyHp = Math.trunc(invoHp * partyFactor / 10);
-    
-    let pathHp = partyHp;
+
+    const invoFactor = TOA_CORE_IDS.includes(mId) ? m.toaInvocationLevel : 4 * m.toaInvocationLevel;
+
+    let pathLevelFactor = 0;
     if (TOMBS_OF_AMASCUT_PATH_MONSTER_IDS.includes(mId)) {
       const pathLevel = Math.min(6, Math.max(0, m.toaPathLevel));
-      let pathLevelFactor = 10;
       if (pathLevel >= 1) {
-        pathLevelFactor += 8;
+        pathLevelFactor += 30;
+        pathLevelFactor += 50 * m.toaPathLevel;
       }
-      if (pathLevel >= 2) {
-        pathLevelFactor += 5 * (m.toaPathLevel - 1);
-      }
-      pathHp = Math.trunc(partyHp * pathLevelFactor / 10);
     }
-    
+
+    const partySize = Math.min(8, Math.max(1, m.partySize));
+    let partyFactor = 0;
+    if (partySize >= 2) {
+      partyFactor += 9 * Math.min(2, partySize - 1);
+    }
+    if (partySize >= 400) {
+      partyFactor += 6 * (partySize - 3);
+    }
+
+    const newHp = Math.trunc(
+      values.base *
+      (1000 + invoFactor) *
+      (100 + pathLevelFactor) *
+      (10 + partyFactor) /
+      (1000 * 100 * 10)
+    ) * values.factor;
     return {
       ...m,
       skills: {
         ...m.skills,
-        hp: pathHp,
+        hp: newHp,
       }
     }
   }
-  
+
   // tob only scales hp and nothing else
   if (TOB_MONSTER_IDS.includes(mId)) {
     const partySize = Math.min(5, Math.max(3, m.partySize));
@@ -64,7 +89,7 @@ export const scaledMonster: (m: Monster) => Monster = m => {
       }
     }
   }
-  
+
   if (TOB_EM_MONSTER_IDS.includes(mId)) {
     const partySize = Math.min(5, Math.max(1, m.partySize));
     return {
@@ -75,7 +100,7 @@ export const scaledMonster: (m: Monster) => Monster = m => {
       }
     }
   }
-  
+
   if (m.attributes.includes(MonsterAttribute.XERICIAN)) {
     const cmb = Math.min(126, Math.max(3, m.partyMaxCombatLevel));
     const hp = Math.min(99, Math.max(1, m.partyMaxHpLevel));
@@ -84,7 +109,7 @@ export const scaledMonster: (m: Monster) => Monster = m => {
     const cm = m.isFromCoxCm;
 
     const sqrt = (x: number) => Math.trunc(Math.sqrt(x));
-    
+
     // olm does everything differently
     if (OLM_IDS.includes(mId)) {
       const olmHp = () => (OLM_HEAD_IDS.includes(mId) ? 400 : 300) * (ps - Math.trunc(ps / 8) * 3 + 1);
@@ -103,7 +128,7 @@ export const scaledMonster: (m: Monster) => Monster = m => {
         },
       };
     }
-    
+
     const scaleHp = (base: number) => {
       if (SCAVENGER_BEAST_IDS.includes(mId)) { // no scaling
         return base;
@@ -140,6 +165,141 @@ export const scaledMonster: (m: Monster) => Monster = m => {
       },
     };
   }
-  
+
   return m;
+}
+
+interface ToaScalingValues {
+  base: number,
+  factor: number,
+}
+
+const getToaScalingValues = (id: number): ToaScalingValues | undefined => {
+  if (AKKHA_IDS.includes(id)) {
+    return {
+      base: 40,
+      factor: 10,
+    }
+  }
+
+  if (AKKHA_SHADOW_IDS.includes(id)) {
+    return {
+      base: 14,
+      factor: 5,
+    }
+  }
+
+  if (BABA_IDS.includes(id)) {
+    return {
+      base: 38,
+      factor: 10,
+    }
+  }
+
+  if (STANDARD_BABOON_SMALL_IDS.includes(id)) {
+    return {
+      base: 4,
+      factor: 1,
+    }
+  }
+
+  if (STANDARD_BABOON_LARGE_IDS.includes(id)) {
+    return {
+      base: 6,
+      factor: 1,
+    }
+  }
+
+  if (BABOON_SHAMAN_IDS.includes(id)) {
+    return {
+      base: 16,
+      factor: 1,
+    }
+  }
+
+  if (VOLATILE_BABOON_IDS.includes(id)) {
+    return {
+      base: 8,
+      factor: 1,
+    }
+  }
+
+  if (CURSED_BABOON_IDS.includes(id)) {
+    return {
+      base: 10,
+      factor: 1,
+    }
+  }
+
+  if (BABOON_THRALL_IDS.includes(id)) {
+    return {
+      base: 2,
+      factor: 1,
+    }
+  }
+
+  if (BABOON_THRALL_IDS.includes(id)) {
+    return {
+      base: 2,
+      factor: 1,
+    }
+  }
+
+  if (KEPHRI_SHIELDED_IDS.includes(id)) {
+    return {
+      base: 15,
+      factor: 10,
+    }
+  }
+
+  if (KEPHRI_UNSHIELDED_IDS.includes(id)) {
+    return {
+      base: 16,
+      factor: 5,
+    }
+  }
+
+  if (KEPHRI_OVERLORD_IDS.includes(id)) {
+    return {
+      base: 40,
+      factor: 1,
+    }
+  }
+
+  if (ZEBAK_IDS.includes(id)) {
+    return {
+      base: 58,
+      factor: 10,
+    }
+  }
+
+  if (TOA_OBELISK_IDS.includes(id)) {
+    return {
+      base: 26,
+      factor: 10,
+    }
+  }
+
+  if (P2_WARDEN_IDS.includes(id)) {
+    return {
+      base: 28,
+      factor: 5,
+    }
+  }
+
+  if (TOA_CORE_IDS.includes(id)) {
+    return {
+      base: 450,
+      factor: 10,
+    }
+  }
+
+  if (P3_WARDEN_IDS.includes(id)) {
+    return {
+      base: 88,
+      factor: 10,
+    }
+  }
+
+  return undefined;
 }
