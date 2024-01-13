@@ -84,7 +84,8 @@ const EquipmentSelect: React.FC = observer(() => {
       id={'equipment-select'}
       className={'w-full'}
       items={options}
-      resetAfterSelect={true}
+      keepOpenAfterSelect={true}
+      keepPositionAfterSelect={true}
       placeholder={'Search for equipment...'}
       onSelectedItemChange={(item) => {
         if (item) {

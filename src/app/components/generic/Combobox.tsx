@@ -15,6 +15,7 @@ interface IComboboxProps<T> {
   resetAfterSelect?: boolean;
   blurAfterSelect?: boolean;
   keepOpenAfterSelect?: boolean;
+  keepPositionAfterSelect?: boolean;
   className?: string;
   CustomItemComponent?: React.FC<{item: T, itemString: string}>;
 }
@@ -37,6 +38,7 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     onSelectedItemChange,
     resetAfterSelect,
     blurAfterSelect,
+    keepPositionAfterSelect,
     placeholder,
     className,
     CustomItemComponent,
@@ -95,7 +97,24 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
       ) {
         virtuosoRef.current.scrollIntoView({index: changes.highlightedIndex});
       }
-    }
+    },
+    stateReducer: (state, actionAndChanges) => {
+      const { changes, type } = actionAndChanges;
+
+      if (keepPositionAfterSelect) {
+        switch (type) {
+          case useCombobox.stateChangeTypes.InputKeyDownEnter:
+          case useCombobox.stateChangeTypes.ItemClick:
+            return {
+              ...changes,
+              inputValue: inputValue, // Keep the input value the same
+              highlightedIndex: state.highlightedIndex // Keep the highlighted index the same
+            };
+        }
+      }
+
+      return changes;
+    },
   });
 
   const virtuosoRef = React.useRef<VirtuosoHandle>(null)
