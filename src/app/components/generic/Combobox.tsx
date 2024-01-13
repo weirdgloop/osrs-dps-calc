@@ -39,6 +39,7 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     resetAfterSelect,
     blurAfterSelect,
     keepPositionAfterSelect,
+    keepOpenAfterSelect,
     placeholder,
     className,
     CustomItemComponent,
@@ -78,7 +79,6 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     items: filteredItems,
     inputValue,
     itemToString,
-    defaultIsOpen: props.keepOpenAfterSelect,
     onInputValueChange: ({inputValue: newValue}) => {
       setInputValue(newValue || '');
       setHighlightedIndex(0);
@@ -99,16 +99,27 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
       }
     },
     stateReducer: (state, actionAndChanges) => {
-      const { changes, type } = actionAndChanges;
+      let { changes, type } = actionAndChanges;
 
       if (keepPositionAfterSelect) {
         switch (type) {
           case useCombobox.stateChangeTypes.InputKeyDownEnter:
           case useCombobox.stateChangeTypes.ItemClick:
-            return {
+            changes = {
               ...changes,
               inputValue: inputValue, // Keep the input value the same
               highlightedIndex: state.highlightedIndex // Keep the highlighted index the same
+            };
+        }
+      }
+
+      if (keepOpenAfterSelect) {
+        switch (type) {
+          case useCombobox.stateChangeTypes.InputKeyDownEnter:
+          case useCombobox.stateChangeTypes.ItemClick:
+            changes = {
+              ...changes,
+              isOpen: true
             };
         }
       }
