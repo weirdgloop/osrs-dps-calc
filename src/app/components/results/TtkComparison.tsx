@@ -1,10 +1,14 @@
 import React, {useCallback, useMemo, useState} from 'react';
 import {
-  XAxis,
-  YAxis,
-  Tooltip,
+  CartesianGrid,
+  Legend,
+  Line,
+  LineChart,
   ResponsiveContainer,
-  LineChart, Legend, Line, TooltipProps, CartesianGrid
+  Tooltip,
+  TooltipProps,
+  XAxis,
+  YAxis
 } from 'recharts';
 import {observer} from 'mobx-react-lite';
 import {useStore} from '@/state';
@@ -12,7 +16,7 @@ import Select from "@/app/components/generic/Select";
 import {NameType, ValueType} from "recharts/types/component/DefaultTooltipContent";
 import {toJS} from "mobx";
 import {useTheme} from "next-themes";
-import {sort, union} from "d3-array";
+import {max} from "d3-array";
 
 export interface CustomTooltipProps extends TooltipProps<ValueType, NameType> {
   xAxisOption: typeof XAxisOptions[any],
@@ -58,7 +62,6 @@ const XAxisOptions = [
 
 const TtkComparison: React.FC = observer(() => {
   const store = useStore();
-  const loadouts = toJS(store.loadouts);
   const calcResults = toJS(store.calc.loadouts);
 
   const {resolvedTheme} = useTheme();
@@ -76,9 +79,9 @@ const TtkComparison: React.FC = observer(() => {
         : (x: number) => x.toString();
 
     const lines: { name: string, [lKey: string]: string | number }[] = [];
-    const uniqueTtks = sort(union(...calcResults.map(l => l.ttkDist?.keys() || [])));
+    const uniqueTtks = max(calcResults, r => max(r.ttkDist?.keys() || [])) || 0;
 
-    for (let ttk of uniqueTtks) {
+    for (let ttk = 0; ttk <= uniqueTtks; ttk++) {
       const entry: typeof lines[0] = {name: xLabeller(ttk)};
       calcResults.forEach((l, i) => {
         const v = l.ttkDist?.get(ttk);
