@@ -15,7 +15,7 @@ const EquipmentPresets: React.FC = () => {
     {label: 'Max Ranged', value: EquipmentPreset.MAX_RANGED},
     {label: 'Void (Melee)', value: EquipmentPreset.VOID_MELEE},
     {label: 'Void (Ranged)', value: EquipmentPreset.VOID_RANGED},
-    {label: 'Vercac\'s equipment', value: EquipmentPreset.VERACS},
+    {label: 'Verac\'s equipment', value: EquipmentPreset.VERACS},
   ]
 
   const onSelect = useCallback((v: {label: string, value: EquipmentPreset} | null | undefined) => {
