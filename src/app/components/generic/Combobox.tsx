@@ -1,6 +1,6 @@
-import {useCombobox, UseComboboxGetItemPropsOptions} from 'downshift';
+import {useCombobox} from 'downshift';
 import React, {useEffect, useRef, useState} from 'react';
-import {VariableSizeList as List} from 'react-window';
+import {Virtuoso, VirtuosoHandle} from "react-virtuoso";
 
 type ComboboxItem = {label: string, value: any};
 
@@ -17,18 +17,6 @@ interface IComboboxProps<T> {
   keepOpenAfterSelect?: boolean;
   className?: string;
   CustomItemComponent?: React.FC<{item: T, itemString: string}>;
-}
-
-interface IItemRendererProps<T> {
-  index: number;
-  style: any;
-  data: {
-    items: T[];
-    getItemProps: (options: UseComboboxGetItemPropsOptions<any>) => any;
-    highlightedIndex: number;
-    selectedItem: any;
-    CustomItemComponent?: React.FC<{item: T, itemString: string}>;
-  }
 }
 
 /**
@@ -58,19 +46,6 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  // Virtualisation
-  const listRef = useRef<List>(null);
-  const rowHeights = useRef<{[k: number]: number}>({});
-
-  const getRowHeight = (ix: number) => {
-    return rowHeights.current[ix] + 15 || 30;
-  }
-
-  const setRowHeight = (ix: number, height: number) => {
-    listRef.current?.resetAfterIndex(0);
-    rowHeights.current = {...rowHeights.current, [ix]: height};
-  }
-
   // When the passed value prop changes, also change the input value
   useEffect(() => {
     if (value) setInputValue(value);
@@ -88,59 +63,11 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     setFilteredItems(newFilteredItems);
   }, [inputValue, items]);
 
-  /**
-   * Sub-component for rendering each individual combobox item.
-   *
-   * @param props
-   * @constructor
-   */
-  const ItemRenderer: React.FC<IItemRendererProps<T>> = (props) => {
-    const {index} = props;
-    const {items, getItemProps, highlightedIndex, CustomItemComponent} = props.data;
-    const item = items[props.index];
-    const itemString = itemToString(item);
-
-    const rowRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-      if (rowRef.current) {
-        setRowHeight(index, rowRef.current.clientHeight);
-      }
-      // eslint-disable-next-line
-    }, [rowRef]);
-
-    return (
-        <div
-            className={
-              `px-3 py-2 leading-none items-center text-sm cursor-pointer ${(highlightedIndex === props.index) ? 'bg-gray-200 dark:bg-dark-200' : ''}`
-            }
-            {...getItemProps({
-              index: props.index,
-              item
-            })}
-            style={props.style}
-        >
-          {(() => {
-            if (CustomItemComponent) {
-              return <div ref={rowRef}><CustomItemComponent item={item} itemString={itemString} /></div>
-            } else {
-              return (
-                  <div ref={rowRef}>
-                    {itemString}
-                  </div>
-              )
-            }
-          })()}
-        </div>
-    )
-  }
-
   const {
     getInputProps,
     getItemProps,
     getMenuProps,
     highlightedIndex,
-    selectedItem,
     isOpen,
     reset,
     setHighlightedIndex,
@@ -152,15 +79,26 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     defaultIsOpen: props.keepOpenAfterSelect,
     onInputValueChange: ({inputValue: newValue}) => {
       setInputValue(newValue || '');
-      listRef.current?.scrollToItem(0);
       setHighlightedIndex(0);
     },
     onSelectedItemChange: ({selectedItem}) => {
       if (onSelectedItemChange) onSelectedItemChange(selectedItem);
       if (resetAfterSelect) reset();
       if (blurAfterSelect) inputRef.current?.blur();
+    },
+    scrollIntoView: () => {},
+    onHighlightedIndexChange: (changes) => {
+      if (
+        virtuosoRef.current &&
+        changes.type !== useCombobox.stateChangeTypes.MenuMouseLeave &&
+        changes.highlightedIndex !== undefined
+      ) {
+        virtuosoRef.current.scrollIntoView({index: changes.highlightedIndex});
+      }
     }
   });
+
+  const virtuosoRef = React.useRef<VirtuosoHandle>(null)
 
   return (
     <div>
@@ -171,24 +109,40 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
             ref: menuRef
           })}
       >
-        {!isOpen || !filteredItems.length ? null : (
-            <List
-              ref={listRef}
-              itemSize={getRowHeight}
-              height={(filteredItems.length < 10 ? filteredItems.length * 29 : 200)}
-              estimatedItemSize={35}
-              itemCount={filteredItems.length}
-              width={300}
-              itemData={{
-                items: filteredItems,
-                getItemProps,
-                highlightedIndex,
-                selectedItem,
-                CustomItemComponent
+        {!filteredItems.length ? null : (
+            <Virtuoso
+              ref={virtuosoRef}
+              style={{ height: 200, width: 300 }}
+              data={filteredItems}
+              itemContent={(i, d) => {
+                const itemString = itemToString(d);
+
+                return (
+                  <div
+                    className={
+                      `px-3 py-2 leading-none items-center text-sm cursor-pointer ${(highlightedIndex === i) ? 'bg-gray-200 dark:bg-dark-200' : ''}`
+                    }
+                    {...getItemProps({
+                      index: i,
+                      item: d
+                    })}
+                  >
+                    {(() => {
+                      if (CustomItemComponent) {
+                        return <div><CustomItemComponent item={d} itemString={itemString}/></div>
+                      } else {
+                        return (
+                          <div>
+                            {itemString}
+                          </div>
+                        )
+                      }
+                    })()}
+                  </div>
+                )
               }}
             >
-              {ItemRenderer}
-            </List>
+            </Virtuoso>
         )}
       </div>
     </div>
