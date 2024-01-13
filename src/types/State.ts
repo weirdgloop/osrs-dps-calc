@@ -72,4 +72,9 @@ export interface State extends ImportableData {
    * All available equipment that a player can equip.
    */
   availableEquipment: EquipmentPiece[];
+
+  /**
+   * All monsters that a player can fight.
+   */
+  availableMonsters: Monster[];
 }
