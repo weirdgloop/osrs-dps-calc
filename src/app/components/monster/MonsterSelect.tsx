@@ -2,19 +2,19 @@ import React, {useMemo} from 'react';
 import {useStore} from '@/state';
 import {observer} from 'mobx-react-lite';
 
-import {Monster} from "@/types/Monster";
+import {Monster} from '@/types/Monster';
 import Combobox from '../generic/Combobox';
+
+interface MonsterOption {
+  label: string;
+  value: number;
+  version: string;
+  monster: Partial<Monster>;
+}
 
 const MonsterSelect: React.FC = observer(() => {
   const store = useStore();
   const {availableMonsters} = store;
-
-  interface MonsterOption {
-    label: string;
-    value: number;
-    version: string;
-    monster: Partial<Monster>;
-  }
 
   const options: MonsterOption[] = useMemo(() => availableMonsters.map((m, i) => {
     return {
