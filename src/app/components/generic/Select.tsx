@@ -5,7 +5,7 @@ import {
   UseSelectGetToggleButtonPropsOptions
 } from 'downshift';
 import React, {useEffect, useRef} from 'react';
-import {FixedSizeList as List} from 'react-window';
+import {Virtuoso, VirtuosoHandle} from "react-virtuoso";
 
 type SelectItem = {label: string, value: any};
 
@@ -22,18 +22,6 @@ interface ISelectProps<T> {
   menuClassName?: string;
   CustomSelectComponent?: React.FC<{getToggleButtonProps: (options?: UseSelectGetToggleButtonPropsOptions | undefined, otherOptions?: GetPropsCommonOptions | undefined) => any}>
   CustomItemComponent?: React.FC<{item: T, itemString: string}>;
-}
-
-interface IItemRendererProps<T> {
-  index: number;
-  style: any;
-  data: {
-    items: T[];
-    getItemProps: (options: UseSelectGetItemPropsOptions<any>) => any;
-    highlightedIndex: number;
-    selectedItem: any;
-    CustomItemComponent?: React.FC<{item: T, itemString: string}>;
-  }
 }
 
 /**
@@ -55,43 +43,6 @@ const Select = <T extends SelectItem>(props: ISelectProps<T>) => {
     CustomSelectComponent,
     CustomItemComponent
   } = props;
-
-  /**
-   * Component for rendering each individual combobox item.
-   *
-   * @param props
-   * @constructor
-   */
-  const ItemRenderer: React.FC<IItemRendererProps<T>> = (props) => {
-    const {items, getItemProps, highlightedIndex, selectedItem, CustomItemComponent} = props.data;
-    const item = items[props.index];
-    const itemString = itemToString(item);
-
-    return (
-      <div
-        className={
-          `px-3 py-2 leading-none items-center text-sm cursor-pointer ${(highlightedIndex === props.index) ? 'bg-gray-200 dark:bg-dark-200' : ''}`
-        }
-        {...getItemProps({
-          index: props.index,
-          item
-        })}
-        style={props.style}
-      >
-        {(() => {
-          if (CustomItemComponent) {
-            return <CustomItemComponent item={item} itemString={itemString} />
-          } else {
-            return (
-              <div>
-                {itemString}
-              </div>
-            )
-          }
-        })()}
-      </div>
-    )
-  }
 
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -124,6 +75,16 @@ const Select = <T extends SelectItem>(props: ISelectProps<T>) => {
     onSelectedItemChange: ({selectedItem}) => {
       if (onSelectedItemChange) onSelectedItemChange(selectedItem);
       if (resetAfterSelect) selectItem(null);
+    },
+    scrollIntoView: () => {},
+    onHighlightedIndexChange: (changes) => {
+      if (
+        virtuosoRef.current &&
+        changes.type !== useSelect.stateChangeTypes.MenuMouseLeave &&
+        changes.highlightedIndex !== undefined
+      ) {
+        virtuosoRef.current.scrollIntoView({index: changes.highlightedIndex});
+      }
     }
   });
 
@@ -132,6 +93,8 @@ const Select = <T extends SelectItem>(props: ISelectProps<T>) => {
       selectItem(value);
     }
   }, [selectItem, value]);
+
+  const virtuosoRef = React.useRef<VirtuosoHandle>(null)
 
   return (
     <div className={'relative'}>
@@ -153,22 +116,40 @@ const Select = <T extends SelectItem>(props: ISelectProps<T>) => {
             ref: menuRef
           })}
       >
-        {!isOpen || !items.length ? null : (
-            <List
-              itemSize={32}
-              height={(items.length < 10 ? items.length * 32 : 200)}
-              itemCount={items.length}
-              width={300}
-              itemData={{
-                items: items,
-                getItemProps,
-                highlightedIndex,
-                selectedItem,
-                CustomItemComponent
-              }}
-            >
-              {ItemRenderer}
-            </List>
+        {!items.length ? null : (
+          <Virtuoso
+            ref={virtuosoRef}
+            style={{ height: 200, width: 300 }}
+            data={items}
+            itemContent={(i, d) => {
+              const itemString = itemToString(d);
+
+              return (
+                <div
+                  className={
+                    `px-3 py-2 leading-none items-center text-sm cursor-pointer ${(highlightedIndex === i) ? 'bg-gray-200 dark:bg-dark-200' : ''}`
+                  }
+                  {...getItemProps({
+                    index: i,
+                    item: d
+                  })}
+                >
+                  {(() => {
+                    if (CustomItemComponent) {
+                      return <div><CustomItemComponent item={d} itemString={itemString}/></div>
+                    } else {
+                      return (
+                        <div>
+                          {itemString}
+                        </div>
+                      )
+                    }
+                  })()}
+                </div>
+              )
+            }}
+          >
+          </Virtuoso>
         )}
       </div>
     </div>
