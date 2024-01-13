@@ -1,7 +1,7 @@
 import {EquipmentPiece, Player} from '@/types/Player';
 import {Monster} from '@/types/Monster';
 import {
-  AttackDistribution,
+  AttackDistribution, cappedReroll,
   divisionTransformer,
   flatLimitTransformer,
   HitDistribution,
@@ -1018,7 +1018,8 @@ export default class CombatCalc {
     }
 
     if (this.monster.name === 'Zulrah') {
-      dist = dist.transform(linearMinTransformer(5, 45));
+      // https://twitter.com/JagexAsh/status/1745852774607183888
+      dist = dist.transform(cappedReroll(50, 5, 45));
     }
     if (this.monster.name === 'Fragment of Seren') {
       // https://twitter.com/JagexAsh/status/1375037874559721474

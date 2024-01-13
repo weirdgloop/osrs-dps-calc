@@ -23,6 +23,20 @@ export function linearMinTransformer(max: number, offset: number = 0): HitTransf
     }
 }
 
+export function cappedReroll(limit: number, rollMax: number, offset: number = 0): HitTransformer {
+    return (h) => {
+        const d = new HitDistribution([]);
+        const prob = 1.0 / (rollMax + 1);
+        for (let i = 0; i <= rollMax; i++) {
+            d.addHit(new WeightedHit(
+                prob,
+                [h > limit ? i + offset : h],
+            ));
+        }
+        return d.flatten();
+    }
+}
+
 export function divisionTransformer(divisor: number, minimum: number = 0): HitTransformer {
     return (h) => new HitDistribution(
       h === 0
