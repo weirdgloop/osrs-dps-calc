@@ -6,6 +6,7 @@ import {max, min} from "d3-array";
 import Toggle from "@/app/components/generic/Toggle";
 import HitDistribution from "@/app/components/results/HitDistribution";
 import Spinner from "@/app/components/Spinner";
+import {ACCURACY_PRECISION, DPS_PRECISION} from "@/constants";
 
 interface IResultRowProps {
   calcKey: keyof Omit<CalculatedLoadout, 'ttkDist'>;
@@ -20,9 +21,9 @@ const calcKeyToString = (value: number, calcKey: keyof CalculatedLoadout): strin
 
   switch (calcKey) {
     case "accuracy":
-      return (value * 100).toFixed(2) + '%';
+      return (value * 100).toFixed(ACCURACY_PRECISION) + '%';
     case "dps":
-      return value.toFixed(3);
+      return value.toFixed(DPS_PRECISION);
     case 'ttk':
       return value === 0
         ? '-----'

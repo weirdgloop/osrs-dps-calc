@@ -8,6 +8,11 @@ let nextConfig = {
     unoptimized: true,
     domains: ['runescape.wiki', 'oldschool.runescape.wiki'],
   },
+  transpilePackages: [
+    'd3',
+    'd3-array',
+    'internmap'
+  ],
 }
 
 if (shouldAnalyse) {

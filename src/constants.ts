@@ -308,3 +308,6 @@ export const PARTY_SIZE_REQUIRED_MONSTER_IDS = [
   ...TOB_MONSTER_IDS,
   ...TOB_EM_MONSTER_IDS,
 ];
+
+export const ACCURACY_PRECISION = 2;
+export const DPS_PRECISION = 3;
