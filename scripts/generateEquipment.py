@@ -135,9 +135,11 @@ def main():
         # Prune...
         if (
             # ...items with all 0 stat bonuses
-            all(statbonus == 0 for statbonus in equipment['offensive']) and all(statbonus == 0 for statbonus in equipment['defensive'])
-            # ...items that are broken, locked, SW/Emir variants
-            or re.match(r"^(Broken|Locked|Soul Wars|Emir's Arena)$", equipment['version'])
+            (all(statbonus == 0 for statbonus in equipment['offensive'])
+             and all(statbonus == 0 for statbonus in equipment['defensive'])
+             and (equipment['speed'] == 4 or equipment['speed'] <= 0))
+            # ...items that are broken, inactive, locked, SW/Emir variants
+            or re.match(r"^(Broken|Inactive|Locked|Soul Wars|Emir's Arena)$", equipment['version'])
             # ...items that are degraded variants
             or re.match(r"^(25|50|75|100)$", equipment['version'])
             # ...items from LMS (PvP only mode), or historical
