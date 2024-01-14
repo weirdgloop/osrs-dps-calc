@@ -126,12 +126,7 @@ export const generateEmptyPlayer: () => Player = () => {
       chargeSpell: false,
       markOfDarknessSpell: false
     },
-    spell: {
-      name: '',
-      image: '',
-      max_hit: 0,
-      spellbook: 'standard',
-    }
+    spell: undefined,
   }
 }
 

@@ -28,12 +28,12 @@ const Combat: React.FC = observer(() => {
         </div>
         <div className={'my-4'}>
           {
-            ['Saradomin Strike', 'Claws of Guthix', 'Flames of Zamorak'].includes(spell.name) && (
+            ['Saradomin Strike', 'Claws of Guthix', 'Flames of Zamorak'].includes(spell?.name || '') && (
               <Toggle checked={buffs.chargeSpell} setChecked={(v) => {store.updatePlayer({buffs: {chargeSpell: v}})}} label={'Using the Charge spell'} />
             )
           }
           {
-            spell.name.includes('Demonbane') && (
+            spell?.name.includes('Demonbane') && (
               <Toggle checked={buffs.markOfDarknessSpell} setChecked={(v) => {store.updatePlayer({buffs: {markOfDarknessSpell: v}})}} label={'Using Mark of Darkness'} />
             )
           }
