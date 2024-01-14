@@ -3,7 +3,7 @@ import React, {createContext, useContext} from 'react';
 import {PartialDeep} from 'type-fest';
 import {Potion, PotionMap} from './enums/Potion';
 import * as localforage from 'localforage';
-import {Calculator, ImportableData, Preferences, State, UI} from '@/types/State';
+import {CalculatedLoadout, Calculator, ImportableData, Preferences, State, UI} from '@/types/State';
 import {ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, Prayer} from './enums/Prayer';
 import merge from 'lodash.mergewith';
 import {EquipmentCategory, getCombatStylesForCategory} from './enums/EquipmentCategory';
@@ -16,6 +16,8 @@ import {RecomputeValuesRequest, WorkerRequestType} from "@/types/WorkerData";
 import {scaledMonster} from "@/lib/MonsterScaling";
 import equipment from '../cdn/json/equipment.json';
 import {getMonsters} from "@/lib/Monsters";
+
+const EMPTY_CALC_LOADOUT = {} as CalculatedLoadout;
 
 type EquipmentBonuses = Pick<Player, 'bonuses' | 'offensive' | 'defensive'>
 const calculateEquipmentBonuses = (eq: EquipmentPiece[]): EquipmentBonuses => {
@@ -526,6 +528,7 @@ class GlobalState implements State {
   }
 
   doWorkerRecompute() {
+    this.calc.loadouts = this.loadouts.map(() => EMPTY_CALC_LOADOUT);
     if (this.workerRecomputeTimer) {
       window.clearTimeout(this.workerRecomputeTimer);
     }
