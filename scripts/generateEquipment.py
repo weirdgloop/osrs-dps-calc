@@ -11,6 +11,7 @@ import os
 import requests
 import json
 import urllib.parse
+import re
 
 FILE_NAME = '../cdn/json/equipment.json'
 WIKI_BASE = 'https://oldschool.runescape.wiki'
@@ -135,20 +136,18 @@ def main():
         if (
             # ...items with all 0 stat bonuses
             all(statbonus == 0 for statbonus in equipment['offensive']) and all(statbonus == 0 for statbonus in equipment['defensive'])
-            # ...items that are broken variants
-            or equipment['version'] == 'Broken'
-            # ...items that are locked variants
-            or equipment['version'] == 'Locked'
+            # ...items that are broken, locked, SW/Emir variants
+            or re.match(r"^(Broken|Locked|Soul Wars|Emir's Arena)$", equipment['version'])
             # ...items that are degraded variants
-            or equipment['version'] == '75'
-            or equipment['version'] == '50'
-            or equipment['version'] == '25'
-            # ...items from LMS (PvP only mode)
-            or '(last man standing)' in str.lower(equipment['name'])
-            # ...items that are historical
-            or '(historical)' in str.lower(equipment['name'])
+            or re.match(r"^(25|50|75|100)$", equipment['version'])
+            # ...items from LMS (PvP only mode), or historical
+            or re.search(r"\((Last Man Standing|historical)\)$", equipment['name'])
         ):
             continue
+
+        # If this is an item from Nightmare Zone, it will become the main variant for all NMZ/SW/Emir's variants
+        if equipment['version'] == 'Nightmare Zone':
+            equipment['version'] = ''
 
         # Append the current equipment item to the calc's equipment list
         data.append(equipment)

@@ -7,6 +7,7 @@
 """
 import requests
 import urllib.parse
+import re
 
 FILE_NAME = './EquipmentAliases.ts'
 WIKI_BASE = 'https://oldschool.runescape.wiki'
@@ -55,17 +56,26 @@ def getPrintoutValue(prop):
     else:
         return prop[0]
 
-
-def main():
-    # Grab the equipment info using SMW, including all the relevant printouts
-    wiki_data = getEquipmentData()
-
-    data = """/**
+data = """/**
  * A map of item ID -> item ID for items that are identical in function, but different in appearance. This includes
  * "locked" variants of items, broken/degraded variants of armour and weapons, and cosmetic recolours of equipment.
  * @see https://oldschool.runescape.wiki/w/Trouver_parchment
  */
 export const equipmentAliases = {"""
+
+
+def handle_base_variant(all_items, variant_item, base_name, base_version):
+    global data
+    base_variant = next((x for x in all_items if x['name'] == base_name and x['version'] == base_version), None)
+    if base_variant:
+        data += '\n    %s: %s, // %s' % (variant_item['id'], base_variant['id'], variant_item['name'] + '#' + variant_item['version'])
+
+
+def main():
+    global data
+
+    # Grab the equipment info using SMW, including all the relevant printouts
+    wiki_data = getEquipmentData()
 
     all_items = []
 
@@ -88,21 +98,20 @@ export const equipmentAliases = {"""
     all_items.sort(key=lambda d: d.get('name'))
 
     for item in all_items:
+        slayer_helm_match = re.match(r"^(?:Black|Green|Red|Purple|Turquoise|Hydra|Twisted|Tztok|Vampyric|Tzkal) slayer helmet( \(i\))?$", item['name'])
+
         # Locked variants
         if item['version'] == 'Locked':
-            base_variant = next((x for x in all_items if x['name'] == item['name'] and x['version'] == 'Normal'), None)
-            if base_variant:
-                data += '\n    %s: %s, // %s' % (item['id'], base_variant['id'], item['name'] + '#' + item['version'])
+            handle_base_variant(all_items, item, item['name'], 'Normal')
+        # Cosmetic Slayer helmets
+        elif slayer_helm_match:
+            handle_base_variant(all_items, item, 'Slayer helmet%s' % (slayer_helm_match.group(1) or ''), '')
+        # Merge Soul Wars/Emir's Arena versions -> Nightmare Zone
+        elif re.match(r"^(Soul Wars|Emir's Arena)$", item['version']):
+            handle_base_variant(all_items, item, item['name'], 'Nightmare Zone')
         # Degraded variants
-        elif (
-            item['version'] == '25' or
-            item['version'] == '50' or
-            item['version'] == '75'
-        ):
-            base_variant = next((x for x in all_items if x['name'] == item['name'] and x['version'] == '100'), None)
-            if base_variant:
-                data += '\n    %s: %s, // %s' % (item['id'], base_variant['id'], item['name'] + '#' + item['version'])
-
+        elif re.match(r"^(25|50|75|100)$", item['version']):
+            handle_base_variant(all_items, item, item['name'], 'Undamaged')
 
     data += '\n}'
 

@@ -4705,34 +4705,6 @@
   },
   {
     "name": "Ahrim's hood",
-    "id": 4856,
-    "version": "100",
-    "slot": "head",
-    "image": "Ahrim's hood.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      16,
-      6,
-      0,
-      13,
-      15,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ahrim's hood",
     "id": 4708,
     "version": "Undamaged",
     "slot": "head",
@@ -4755,34 +4727,6 @@
       0,
       13,
       15,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ahrim's robeskirt",
-    "id": 4874,
-    "version": "100",
-    "slot": "legs",
-    "image": "Ahrim's robeskirt.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      22,
-      -7,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      36,
-      22,
-      0,
-      30,
-      33,
       0
     ],
     "isTwoHanded": false
@@ -4817,34 +4761,6 @@
   },
   {
     "name": "Ahrim's robetop",
-    "id": 4868,
-    "version": "100",
-    "slot": "body",
-    "image": "Ahrim's robetop.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      30,
-      -10,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      63,
-      30,
-      0,
-      37,
-      52,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ahrim's robetop",
     "id": 4712,
     "version": "Undamaged",
     "slot": "body",
@@ -4867,34 +4783,6 @@
       0,
       37,
       52,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ahrim's staff",
-    "id": 4862,
-    "version": "100",
-    "slot": "weapon",
-    "image": "Ahrim's staff.png",
-    "speed": 6,
-    "category": "Staff",
-    "offensive": [
-      65,
-      5,
-      15,
-      0,
-      0,
-      -1,
-      12,
-      68
-    ],
-    "defensive": [
-      2,
-      15,
-      0,
-      5,
-      3,
       0
     ],
     "isTwoHanded": false
@@ -7084,34 +6972,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Ancient staff",
-    "id": 4675,
-    "version": "",
-    "slot": "weapon",
-    "image": "Ancient staff.png",
-    "speed": 4,
-    "category": "Staff",
-    "offensive": [
-      40,
-      0,
-      15,
-      0,
-      0,
-      -1,
-      10,
-      50
-    ],
-    "defensive": [
-      1,
-      15,
-      0,
-      3,
-      2,
-      -1
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Ancient stole",
     "id": 12201,
     "version": "",
@@ -7561,64 +7421,8 @@
   },
   {
     "name": "Archers ring (i)",
-    "id": 26768,
-    "version": "Emir's Arena",
-    "slot": "ring",
-    "image": "Archers ring (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      8,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      8,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Archers ring (i)",
     "id": 11771,
-    "version": "Nightmare Zone",
-    "slot": "ring",
-    "image": "Archers ring (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      8,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      8,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Archers ring (i)",
-    "id": 25260,
-    "version": "Soul Wars",
+    "version": "",
     "slot": "ring",
     "image": "Archers ring (i).png",
     "speed": 0,
@@ -10137,64 +9941,8 @@
   },
   {
     "name": "Berserker ring (i)",
-    "id": 26770,
-    "version": "Emir's Arena",
-    "slot": "ring",
-    "image": "Berserker ring (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      8
-    ],
-    "defensive": [
-      8,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Berserker ring (i)",
     "id": 11773,
-    "version": "Nightmare Zone",
-    "slot": "ring",
-    "image": "Berserker ring (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      8
-    ],
-    "defensive": [
-      8,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Berserker ring (i)",
-    "id": 25264,
-    "version": "Soul Wars",
+    "version": "",
     "slot": "ring",
     "image": "Berserker ring (i).png",
     "speed": 0,
@@ -12993,64 +12741,8 @@
   },
   {
     "name": "Black slayer helmet (i)",
-    "id": 26675,
-    "version": "Emir's Arena",
-    "slot": "head",
-    "image": "Black slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Black slayer helmet (i)",
     "id": 19641,
-    "version": "Nightmare Zone",
-    "slot": "head",
-    "image": "Black slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Black slayer helmet (i)",
-    "id": 25179,
-    "version": "Soul Wars",
+    "version": "",
     "slot": "head",
     "image": "Black slayer helmet (i).png",
     "speed": 0,
@@ -26545,34 +26237,6 @@
   },
   {
     "name": "Dharok's greataxe",
-    "id": 4886,
-    "version": "100",
-    "slot": "weapon",
-    "image": "Dharok's greataxe.png",
-    "speed": 7,
-    "category": "Axe",
-    "offensive": [
-      95,
-      0,
-      -4,
-      0,
-      0,
-      103,
-      -4,
-      105
-    ],
-    "defensive": [
-      0,
-      0,
-      -1,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
-    "name": "Dharok's greataxe",
     "id": 4718,
     "version": "Undamaged",
     "slot": "weapon",
@@ -26598,34 +26262,6 @@
       0
     ],
     "isTwoHanded": true
-  },
-  {
-    "name": "Dharok's helm",
-    "id": 4880,
-    "version": "100",
-    "slot": "head",
-    "image": "Dharok's helm 100.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -3,
-      -1,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      44,
-      -1,
-      51,
-      48,
-      45,
-      0
-    ],
-    "isTwoHanded": false
   },
   {
     "name": "Dharok's helm",
@@ -26657,34 +26293,6 @@
   },
   {
     "name": "Dharok's platebody",
-    "id": 4892,
-    "version": "100",
-    "slot": "body",
-    "image": "Dharok's platebody.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -30,
-      -10,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      107,
-      -6,
-      132,
-      120,
-      122,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dharok's platebody",
     "id": 4720,
     "version": "Undamaged",
     "slot": "body",
@@ -26707,34 +26315,6 @@
       132,
       120,
       122,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dharok's platelegs",
-    "id": 4898,
-    "version": "100",
-    "slot": "legs",
-    "image": "Dharok's platelegs.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      83,
-      -4,
-      92,
-      82,
-      85,
       0
     ],
     "isTwoHanded": false
@@ -35253,64 +34833,8 @@
   },
   {
     "name": "Granite ring (i)",
-    "id": 26685,
-    "version": "Emir's Arena",
-    "slot": "ring",
-    "image": "Granite ring (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      4,
-      -4,
-      16,
-      4,
-      4,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Granite ring (i)",
     "id": 21752,
-    "version": "Nightmare Zone",
-    "slot": "ring",
-    "image": "Granite ring (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      4,
-      -4,
-      16,
-      4,
-      4,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Granite ring (i)",
-    "id": 25193,
-    "version": "Soul Wars",
+    "version": "",
     "slot": "ring",
     "image": "Granite ring (i).png",
     "speed": 0,
@@ -35757,64 +35281,8 @@
   },
   {
     "name": "Green slayer helmet (i)",
-    "id": 26676,
-    "version": "Emir's Arena",
-    "slot": "head",
-    "image": "Green slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Green slayer helmet (i)",
     "id": 19645,
-    "version": "Nightmare Zone",
-    "slot": "head",
-    "image": "Green slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Green slayer helmet (i)",
-    "id": 25181,
-    "version": "Soul Wars",
+    "version": "",
     "slot": "head",
     "image": "Green slayer helmet (i).png",
     "speed": 0,
@@ -36485,34 +35953,6 @@
   },
   {
     "name": "Guthan's chainskirt",
-    "id": 4922,
-    "version": "100",
-    "slot": "legs",
-    "image": "Guthan's chainskirt.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -14,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      73,
-      -4,
-      82,
-      72,
-      75,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Guthan's chainskirt",
     "id": 4730,
     "version": "Undamaged",
     "slot": "legs",
@@ -36535,34 +35975,6 @@
       82,
       72,
       75,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Guthan's helm",
-    "id": 4904,
-    "version": "100",
-    "slot": "head",
-    "image": "Guthan's helm.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      54,
-      -1,
-      62,
-      58,
-      55,
       0
     ],
     "isTwoHanded": false
@@ -36597,34 +36009,6 @@
   },
   {
     "name": "Guthan's platebody",
-    "id": 4916,
-    "version": "100",
-    "slot": "body",
-    "image": "Guthan's platebody.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -30,
-      -10,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      107,
-      -6,
-      132,
-      120,
-      122,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Guthan's platebody",
     "id": 4728,
     "version": "Undamaged",
     "slot": "body",
@@ -36650,34 +36034,6 @@
       0
     ],
     "isTwoHanded": false
-  },
-  {
-    "name": "Guthan's warspear",
-    "id": 4910,
-    "version": "100",
-    "slot": "weapon",
-    "image": "Guthan's warspear.png",
-    "speed": 5,
-    "category": "Spear",
-    "offensive": [
-      75,
-      0,
-      0,
-      0,
-      0,
-      75,
-      75,
-      75
-    ],
-    "defensive": [
-      7,
-      0,
-      0,
-      7,
-      7,
-      0
-    ],
-    "isTwoHanded": true
   },
   {
     "name": "Guthan's warspear",
@@ -38893,64 +38249,8 @@
   },
   {
     "name": "Hydra slayer helmet (i)",
-    "id": 26680,
-    "version": "Emir's Arena",
-    "slot": "head",
-    "image": "Hydra slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Hydra slayer helmet (i)",
     "id": 23075,
-    "version": "Nightmare Zone",
-    "slot": "head",
-    "image": "Hydra slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Hydra slayer helmet (i)",
-    "id": 25189,
-    "version": "Soul Wars",
+    "version": "",
     "slot": "head",
     "image": "Hydra slayer helmet (i).png",
     "speed": 0,
@@ -42729,34 +42029,6 @@
   },
   {
     "name": "Karil's coif",
-    "id": 4928,
-    "version": "100",
-    "slot": "head",
-    "image": "Karil's coif.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -1,
-      7,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      12,
-      6,
-      10,
-      9,
-      6,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Karil's coif",
     "id": 4732,
     "version": "Undamaged",
     "slot": "head",
@@ -42782,34 +42054,6 @@
       0
     ],
     "isTwoHanded": false
-  },
-  {
-    "name": "Karil's crossbow",
-    "id": 4934,
-    "version": "100",
-    "slot": "weapon",
-    "image": "Karil's crossbow.png",
-    "speed": 4,
-    "category": "Crossbow",
-    "offensive": [
-      0,
-      0,
-      0,
-      84,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": true
   },
   {
     "name": "Karil's crossbow",
@@ -42841,34 +42085,6 @@
   },
   {
     "name": "Karil's leatherskirt",
-    "id": 4946,
-    "version": "100",
-    "slot": "legs",
-    "image": "Karil's leatherskirt.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -10,
-      17,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      28,
-      35,
-      33,
-      20,
-      26,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Karil's leatherskirt",
     "id": 4738,
     "version": "Undamaged",
     "slot": "legs",
@@ -42891,34 +42107,6 @@
       33,
       20,
       26,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Karil's leathertop",
-    "id": 4940,
-    "version": "100",
-    "slot": "body",
-    "image": "Karil's leathertop.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -15,
-      30,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      50,
-      65,
-      57,
-      42,
-      47,
       0
     ],
     "isTwoHanded": false
@@ -52613,64 +51801,8 @@
   },
   {
     "name": "Purple slayer helmet (i)",
-    "id": 26678,
-    "version": "Emir's Arena",
-    "slot": "head",
-    "image": "Purple slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Purple slayer helmet (i)",
     "id": 21266,
-    "version": "Nightmare Zone",
-    "slot": "head",
-    "image": "Purple slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Purple slayer helmet (i)",
-    "id": 25185,
-    "version": "Soul Wars",
+    "version": "",
     "slot": "head",
     "image": "Purple slayer helmet (i).png",
     "speed": 0,
@@ -53817,64 +52949,8 @@
   },
   {
     "name": "Red slayer helmet (i)",
-    "id": 26677,
-    "version": "Emir's Arena",
-    "slot": "head",
-    "image": "Red slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Red slayer helmet (i)",
     "id": 19649,
-    "version": "Nightmare Zone",
-    "slot": "head",
-    "image": "Red slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Red slayer helmet (i)",
-    "id": 25183,
-    "version": "Soul Wars",
+    "version": "",
     "slot": "head",
     "image": "Red slayer helmet (i).png",
     "speed": 0,
@@ -54209,64 +53285,8 @@
   },
   {
     "name": "Ring of the gods (i)",
-    "id": 26764,
-    "version": "Emir's Arena",
-    "slot": "ring",
-    "image": "Ring of the gods (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      8
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ring of the gods (i)",
     "id": 13202,
-    "version": "Nightmare Zone",
-    "slot": "ring",
-    "image": "Ring of the gods (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      8
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ring of the gods (i)",
-    "id": 25252,
-    "version": "Soul Wars",
+    "version": "",
     "slot": "ring",
     "image": "Ring of the gods (i).png",
     "speed": 0,
@@ -58969,94 +57989,10 @@
   },
   {
     "name": "Salve amulet(ei)",
-    "id": 26782,
-    "version": "Emir's Arena",
-    "slot": "neck",
-    "image": "Salve amulet(ei).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      3,
-      0,
-      0,
-      3,
-      3,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Salve amulet(ei)",
     "id": 12018,
-    "version": "Nightmare Zone",
+    "version": "",
     "slot": "neck",
     "image": "Salve amulet(ei).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      3,
-      0,
-      0,
-      3,
-      3,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Salve amulet(ei)",
-    "id": 25278,
-    "version": "Soul Wars",
-    "slot": "neck",
-    "image": "Salve amulet(ei).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      3,
-      0,
-      0,
-      3,
-      3,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Salve amulet(i)",
-    "id": 26763,
-    "version": "Emir's Arena",
-    "slot": "neck",
-    "image": "Salve amulet(i).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -59082,35 +58018,7 @@
   {
     "name": "Salve amulet(i)",
     "id": 12017,
-    "version": "Nightmare Zone",
-    "slot": "neck",
-    "image": "Salve amulet(i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      3,
-      0,
-      0,
-      3,
-      3,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Salve amulet(i)",
-    "id": 25250,
-    "version": "Soul Wars",
+    "version": "",
     "slot": "neck",
     "image": "Salve amulet(i).png",
     "speed": 0,
@@ -60509,64 +59417,8 @@
   },
   {
     "name": "Seers ring (i)",
-    "id": 26767,
-    "version": "Emir's Arena",
-    "slot": "ring",
-    "image": "Seers ring (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      12,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      12,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Seers ring (i)",
     "id": 11770,
-    "version": "Nightmare Zone",
-    "slot": "ring",
-    "image": "Seers ring (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      12,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      12,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Seers ring (i)",
-    "id": 25258,
-    "version": "Soul Wars",
+    "version": "",
     "slot": "ring",
     "image": "Seers ring (i).png",
     "speed": 0,
@@ -62385,64 +61237,8 @@
   },
   {
     "name": "Slayer helmet (i)",
-    "id": 26674,
-    "version": "Emir's Arena",
-    "slot": "head",
-    "image": "Slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Slayer helmet (i)",
     "id": 11865,
-    "version": "Nightmare Zone",
-    "slot": "head",
-    "image": "Slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Slayer helmet (i)",
-    "id": 25177,
-    "version": "Soul Wars",
+    "version": "",
     "slot": "head",
     "image": "Slayer helmet (i).png",
     "speed": 0,
@@ -69777,34 +68573,6 @@
   },
   {
     "name": "Torag's hammers",
-    "id": 4958,
-    "version": "100",
-    "slot": "weapon",
-    "image": "Torag's hammers.png",
-    "speed": 5,
-    "category": "Blunt",
-    "offensive": [
-      85,
-      0,
-      -4,
-      0,
-      0,
-      -4,
-      -4,
-      72
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
-    "name": "Torag's hammers",
     "id": 4747,
     "version": "Undamaged",
     "slot": "weapon",
@@ -69830,34 +68598,6 @@
       0
     ],
     "isTwoHanded": true
-  },
-  {
-    "name": "Torag's helm",
-    "id": 4952,
-    "version": "100",
-    "slot": "head",
-    "image": "Torag's helm.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      54,
-      -1,
-      62,
-      58,
-      55,
-      0
-    ],
-    "isTwoHanded": false
   },
   {
     "name": "Torag's helm",
@@ -69889,34 +68629,6 @@
   },
   {
     "name": "Torag's platebody",
-    "id": 4964,
-    "version": "100",
-    "slot": "body",
-    "image": "Torag's platebody.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -30,
-      -10,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      107,
-      -6,
-      132,
-      120,
-      122,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Torag's platebody",
     "id": 4749,
     "version": "Undamaged",
     "slot": "body",
@@ -69939,34 +68651,6 @@
       132,
       120,
       122,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Torag's platelegs",
-    "id": 4970,
-    "version": "100",
-    "slot": "legs",
-    "image": "Torag's platelegs.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      83,
-      -4,
-      92,
-      82,
-      85,
       0
     ],
     "isTwoHanded": false
@@ -70645,64 +69329,8 @@
   },
   {
     "name": "Treasonous ring (i)",
-    "id": 26766,
-    "version": "Emir's Arena",
-    "slot": "ring",
-    "image": "Treasonous ring (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      8,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      8,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Treasonous ring (i)",
     "id": 12692,
-    "version": "Nightmare Zone",
-    "slot": "ring",
-    "image": "Treasonous ring (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      8,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      8,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Treasonous ring (i)",
-    "id": 25256,
-    "version": "Soul Wars",
+    "version": "",
     "slot": "ring",
     "image": "Treasonous ring (i).png",
     "speed": 0,
@@ -71205,64 +69833,8 @@
   },
   {
     "name": "Turquoise slayer helmet (i)",
-    "id": 26679,
-    "version": "Emir's Arena",
-    "slot": "head",
-    "image": "Turquoise slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Turquoise slayer helmet (i)",
     "id": 21890,
-    "version": "Nightmare Zone",
-    "slot": "head",
-    "image": "Turquoise slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Turquoise slayer helmet (i)",
-    "id": 25187,
-    "version": "Soul Wars",
+    "version": "",
     "slot": "head",
     "image": "Turquoise slayer helmet (i).png",
     "speed": 0,
@@ -71541,64 +70113,8 @@
   },
   {
     "name": "Twisted slayer helmet (i)",
-    "id": 26681,
-    "version": "Emir's Arena",
-    "slot": "head",
-    "image": "Twisted slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Twisted slayer helmet (i)",
     "id": 24444,
-    "version": "Nightmare Zone",
-    "slot": "head",
-    "image": "Twisted slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Twisted slayer helmet (i)",
-    "id": 25191,
-    "version": "Soul Wars",
+    "version": "",
     "slot": "head",
     "image": "Twisted slayer helmet (i).png",
     "speed": 0,
@@ -71653,64 +70169,8 @@
   },
   {
     "name": "Tyrannical ring (i)",
-    "id": 26765,
-    "version": "Emir's Arena",
-    "slot": "ring",
-    "image": "Tyrannical ring (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      8,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      8,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Tyrannical ring (i)",
     "id": 12691,
-    "version": "Nightmare Zone",
-    "slot": "ring",
-    "image": "Tyrannical ring (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      8,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      8,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Tyrannical ring (i)",
-    "id": 25254,
-    "version": "Soul Wars",
+    "version": "",
     "slot": "ring",
     "image": "Tyrannical ring (i).png",
     "speed": 0,
@@ -71877,64 +70337,8 @@
   },
   {
     "name": "Tzkal slayer helmet (i)",
-    "id": 26684,
-    "version": "Emir's Arena",
-    "slot": "head",
-    "image": "Tzkal slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Tzkal slayer helmet (i)",
     "id": 25912,
-    "version": "Nightmare Zone",
-    "slot": "head",
-    "image": "Tzkal slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Tzkal slayer helmet (i)",
-    "id": 25914,
-    "version": "Soul Wars",
+    "version": "",
     "slot": "head",
     "image": "Tzkal slayer helmet (i).png",
     "speed": 0,
@@ -71989,64 +70393,8 @@
   },
   {
     "name": "Tztok slayer helmet (i)",
-    "id": 26682,
-    "version": "Emir's Arena",
-    "slot": "head",
-    "image": "Tztok slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Tztok slayer helmet (i)",
     "id": 25900,
-    "version": "Nightmare Zone",
-    "slot": "head",
-    "image": "Tztok slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Tztok slayer helmet (i)",
-    "id": 25902,
-    "version": "Soul Wars",
+    "version": "",
     "slot": "head",
     "image": "Tztok slayer helmet (i).png",
     "speed": 0,
@@ -72465,64 +70813,8 @@
   },
   {
     "name": "Vampyric slayer helmet (i)",
-    "id": 26683,
-    "version": "Emir's Arena",
-    "slot": "head",
-    "image": "Vampyric slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Vampyric slayer helmet (i)",
     "id": 25906,
-    "version": "Nightmare Zone",
-    "slot": "head",
-    "image": "Vampyric slayer helmet (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      3,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      10,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Vampyric slayer helmet (i)",
-    "id": 25908,
-    "version": "Soul Wars",
+    "version": "",
     "slot": "head",
     "image": "Vampyric slayer helmet (i).png",
     "speed": 0,
@@ -72745,34 +71037,6 @@
   },
   {
     "name": "Verac's brassard",
-    "id": 4988,
-    "version": "100",
-    "slot": "body",
-    "image": "Verac's brassard.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      85,
-      0,
-      81,
-      95,
-      81,
-      5
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Verac's brassard",
     "id": 4757,
     "version": "Undamaged",
     "slot": "body",
@@ -72798,34 +71062,6 @@
       5
     ],
     "isTwoHanded": false
-  },
-  {
-    "name": "Verac's flail",
-    "id": 4982,
-    "version": "100",
-    "slot": "weapon",
-    "image": "Verac's flail.png",
-    "speed": 5,
-    "category": "Spiked",
-    "offensive": [
-      82,
-      0,
-      0,
-      0,
-      0,
-      -2,
-      68,
-      72
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      6
-    ],
-    "isTwoHanded": true
   },
   {
     "name": "Verac's flail",
@@ -72857,34 +71093,6 @@
   },
   {
     "name": "Verac's helm",
-    "id": 4976,
-    "version": "100",
-    "slot": "head",
-    "image": "Verac's helm.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      54,
-      0,
-      56,
-      58,
-      55,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Verac's helm",
     "id": 4753,
     "version": "Undamaged",
     "slot": "head",
@@ -72908,34 +71116,6 @@
       58,
       55,
       3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Verac's plateskirt",
-    "id": 4994,
-    "version": "100",
-    "slot": "legs",
-    "image": "Verac's plateskirt.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      83,
-      0,
-      84,
-      82,
-      85,
-      4
     ],
     "isTwoHanded": false
   },
@@ -74285,64 +72465,8 @@
   },
   {
     "name": "Warrior ring (i)",
-    "id": 26769,
-    "version": "Emir's Arena",
-    "slot": "ring",
-    "image": "Warrior ring (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      8,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      8,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Warrior ring (i)",
     "id": 11772,
-    "version": "Nightmare Zone",
-    "slot": "ring",
-    "image": "Warrior ring (i).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      8,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      8,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Warrior ring (i)",
-    "id": 25262,
-    "version": "Soul Wars",
+    "version": "",
     "slot": "ring",
     "image": "Warrior ring (i).png",
     "speed": 0,
