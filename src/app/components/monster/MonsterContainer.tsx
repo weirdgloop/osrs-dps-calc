@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react';
+import React, {useMemo, useState} from 'react';
 import AttributeInput from '../generic/AttributeInput';
 import dagger from '@/public/img/bonuses/dagger.png';
 import scimitar from '@/public/img/bonuses/scimitar.png';
@@ -29,7 +29,11 @@ import {
   TOMBS_OF_AMASCUT_MONSTER_IDS,
   TOMBS_OF_AMASCUT_PATH_MONSTER_IDS
 } from "@/constants";
-import {IconExternalLink} from "@tabler/icons-react";
+import {
+  IconChevronDown,
+  IconChevronUp,
+  IconExternalLink
+} from "@tabler/icons-react";
 import {scaledMonster} from "@/lib/MonsterScaling";
 import {Monster} from "@/types/Monster";
 import LazyImage from "@/app/components/generic/LazyImage";
@@ -87,6 +91,7 @@ const TombsOfAmascutMonsterContainer: React.FC<ITombsOfAmascutMonsterContainerPr
 const MonsterContainer: React.FC = observer(() => {
   const store = useStore();
   const {loadouts, monster, prefs} = store;
+  const [attributesExpanded, setAttributesExpanded] = useState(false);
 
   // Don't automatically update the stat inputs if manual editing is on
   const displayMonster = prefs.manualMode ? monster : scaledMonster(monster);
@@ -327,16 +332,25 @@ const MonsterContainer: React.FC = observer(() => {
                     </div>
                   </div>
                 </div>
-                <div className={'mt-4'}>
-                  <h4 className={`font-bold font-serif`}>
-                    Attributes <HelpLink href={'https://oldschool.runescape.wiki/w/Monster_attribute'}/>
-                  </h4>
-                  <div className={'mt-2 text-sm flex flex-wrap gap-1.5'}>
-                    {
-                      Object.values(MonsterAttribute).map((attr, idx) => {
-                        return <PresetAttributeButton key={idx} attr={attr}/>
-                      })
-                    }
+                <div className={'mt-4 text-sm'}>
+                  <div className={'rounded bg-body-100 dark:bg-dark-500'}>
+                    <button
+                      className={`w-full pt-1 border-b-body-400 dark:border-b-dark-300 px-2 flex text-gray-500 dark:text-gray-300 font-semibold justify-between gap-2 ${attributesExpanded ? 'border-b' : ''}`}
+                      onClick={() => setAttributesExpanded(!attributesExpanded)}
+                    >
+                      <div>Attributes <HelpLink href={'https://oldschool.runescape.wiki/w/Monster_attribute'}/></div>
+                      <div className={'relative top-[-2px]'}>{attributesExpanded ? <IconChevronUp width={20} /> : <IconChevronDown width={20} />}</div>
+                    </button>
+
+                    {attributesExpanded && (
+                      <div className={'py-2 px-2 flex flex-wrap gap-1.5'}>
+                        {
+                          Object.values(MonsterAttribute).map((attr, idx) => {
+                            return <PresetAttributeButton key={idx} attr={attr}/>
+                          })
+                        }
+                      </div>
+                    )}
                   </div>
                 </div>
                 {(extraMonsterOptions.length > 0) && (
