@@ -1086,6 +1086,10 @@ export default class CombatCalc {
     if (this.monster.attributes.includes(MonsterAttribute.LEAFY) && !this.isWearingLeafBladedWeapon()) {
       return true;
     }
+    if (this.monster.name === 'Fire Warrior of Lesarkus' && 
+      (styleType !== 'ranged' || this.player.equipment.ammo?.name !== 'Ice arrows')) {
+      return true;
+    }
 
     return false;
   }
