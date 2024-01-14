@@ -1045,6 +1045,32 @@ export default class CombatCalc {
       ]);
     }
 
+    // bolt effects
+    if (this.player.style.type === 'ranged' && this.player.equipment.weapon?.name.includes('rossbow')) {
+      const zaryte = this.wearing('Zaryte crossbow');
+      const rangedLvl = this.player.skills.ranged + this.player.boosts.ranged;
+      const kandarinDiaryFactor = this.player.buffs.kandarinDiary ? 1.1 : 1.0;
+
+      if (this.wearing(['Opal bolts (e)', 'Opal dragon bolts (e)'])) {
+        const chance = 0.05 * kandarinDiaryFactor;
+        const bonusDmg = Math.trunc(rangedLvl / (zaryte ? 9 : 10));
+        dist = dist.transform(h => new HitDistribution([
+          new WeightedHit(chance, [h + bonusDmg]),
+          new WeightedHit(1 - chance, [h]),
+        ]));
+      }
+
+      // if (this.wearing(['Opal bolts (e)', 'Opal dragon bolts (e)'])) {
+      //   const chance = 0.05 * kandarinDiaryFactor;
+      //   const bonusDmg = Math.trunc(rangedLvl / (zaryte ? 9 : 10));
+      //   dist = dist.transform(h => new HitDistribution([
+      //     new WeightedHit(h, [h + bonusDmg]),
+      //     new WeightedHit(1 - h, [h]),
+      //   ]));
+      // }
+
+    }
+
     return this.applyLimiters(dist);
   }
 
@@ -1130,10 +1156,11 @@ export default class CombatCalc {
       (styleType !== 'ranged' || this.player.equipment.ammo?.name !== 'Ice arrows')) {
       return true;
     }
-    if (this.monster.name === 'Fareed' &&
-      !isWaterSpell(this.player.spell) || 
+    if (this.monster.name === 'Fareed') {
+      if (styleType === 'magic' && !isWaterSpell(this.player.spell) || 
         (styleType === 'ranged' && !this.player.equipment.ammo?.name?.includes('arrow'))) {
-      return true;
+        return true;
+      }
     }
 
     return false;
@@ -1300,9 +1327,16 @@ export default class CombatCalc {
     ).getDistribution().asSingleHitplat();
   }
 
+  
+
   public static distIsCurrentHpDependent(loadout: Player, monster: Monster): boolean {
-    // todo use this for ttk dist as well #81
-    // todo ruby bolts
-    return monster.name === 'Vardorvis';
+    if (monster.name === 'Vardorvis') {
+      return true;
+    }
+    if (loadout.equipment.weapon?.name.includes('rossbow') && ['Ruby bolts (e)', 'Ruby dragon bolts (e)'].includes(loadout.equipment.ammo?.name || '')) {
+      return true;
+    }
+
+    return false;
   }
 }
