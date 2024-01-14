@@ -1318,7 +1318,6 @@ export default class CombatCalc {
 
       // 8. update counters and repeat
       hps = nextHps;
-      console.debug(hit)
     }
 
     return ttks;
