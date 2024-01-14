@@ -137,6 +137,12 @@ def main():
             all(statbonus == 0 for statbonus in equipment['offensive']) and all(statbonus == 0 for statbonus in equipment['defensive'])
             # ...items that are broken variants
             or equipment['version'] == 'Broken'
+            # ...items that are locked variants
+            or equipment['version'] == 'Locked'
+            # ...items that are degraded variants
+            or equipment['version'] == '75'
+            or equipment['version'] == '50'
+            or equipment['version'] == '25'
             # ...items from LMS (PvP only mode)
             or '(last man standing)' in str.lower(equipment['name'])
             # ...items that are historical

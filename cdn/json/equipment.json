@@ -1989,34 +1989,6 @@
   },
   {
     "name": "Adamant defender",
-    "id": 24141,
-    "version": "Locked",
-    "slot": "shield",
-    "image": "Adamant defender.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      11,
-      0,
-      -3,
-      -2,
-      0,
-      12,
-      13,
-      4
-    ],
-    "defensive": [
-      11,
-      -3,
-      -2,
-      12,
-      13,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Adamant defender",
     "id": 8849,
     "version": "Normal",
     "slot": "shield",
@@ -4761,90 +4733,6 @@
   },
   {
     "name": "Ahrim's hood",
-    "id": 4859,
-    "version": "25",
-    "slot": "head",
-    "image": "Ahrim's hood.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      16,
-      6,
-      0,
-      13,
-      15,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ahrim's hood",
-    "id": 4858,
-    "version": "50",
-    "slot": "head",
-    "image": "Ahrim's hood.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      16,
-      6,
-      0,
-      13,
-      15,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ahrim's hood",
-    "id": 4857,
-    "version": "75",
-    "slot": "head",
-    "image": "Ahrim's hood.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      16,
-      6,
-      0,
-      13,
-      15,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ahrim's hood",
     "id": 4708,
     "version": "Undamaged",
     "slot": "head",
@@ -4875,90 +4763,6 @@
     "name": "Ahrim's robeskirt",
     "id": 4874,
     "version": "100",
-    "slot": "legs",
-    "image": "Ahrim's robeskirt.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      22,
-      -7,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      36,
-      22,
-      0,
-      30,
-      33,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ahrim's robeskirt",
-    "id": 4877,
-    "version": "25",
-    "slot": "legs",
-    "image": "Ahrim's robeskirt.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      22,
-      -7,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      36,
-      22,
-      0,
-      30,
-      33,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ahrim's robeskirt",
-    "id": 4876,
-    "version": "50",
-    "slot": "legs",
-    "image": "Ahrim's robeskirt.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      22,
-      -7,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      36,
-      22,
-      0,
-      30,
-      33,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ahrim's robeskirt",
-    "id": 4875,
-    "version": "75",
     "slot": "legs",
     "image": "Ahrim's robeskirt.png",
     "speed": 0,
@@ -5041,90 +4845,6 @@
   },
   {
     "name": "Ahrim's robetop",
-    "id": 4871,
-    "version": "25",
-    "slot": "body",
-    "image": "Ahrim's robetop.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      30,
-      -10,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      63,
-      30,
-      0,
-      37,
-      52,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ahrim's robetop",
-    "id": 4870,
-    "version": "50",
-    "slot": "body",
-    "image": "Ahrim's robetop.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      30,
-      -10,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      63,
-      30,
-      0,
-      37,
-      52,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ahrim's robetop",
-    "id": 4869,
-    "version": "75",
-    "slot": "body",
-    "image": "Ahrim's robetop.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      30,
-      -10,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      63,
-      30,
-      0,
-      37,
-      52,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ahrim's robetop",
     "id": 4712,
     "version": "Undamaged",
     "slot": "body",
@@ -5155,90 +4875,6 @@
     "name": "Ahrim's staff",
     "id": 4862,
     "version": "100",
-    "slot": "weapon",
-    "image": "Ahrim's staff.png",
-    "speed": 6,
-    "category": "Staff",
-    "offensive": [
-      65,
-      5,
-      15,
-      0,
-      0,
-      -1,
-      12,
-      68
-    ],
-    "defensive": [
-      2,
-      15,
-      0,
-      5,
-      3,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ahrim's staff",
-    "id": 4865,
-    "version": "25",
-    "slot": "weapon",
-    "image": "Ahrim's staff.png",
-    "speed": 6,
-    "category": "Staff",
-    "offensive": [
-      65,
-      5,
-      15,
-      0,
-      0,
-      -1,
-      12,
-      68
-    ],
-    "defensive": [
-      2,
-      15,
-      0,
-      5,
-      3,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ahrim's staff",
-    "id": 4864,
-    "version": "50",
-    "slot": "weapon",
-    "image": "Ahrim's staff.png",
-    "speed": 6,
-    "category": "Staff",
-    "offensive": [
-      65,
-      5,
-      15,
-      0,
-      0,
-      -1,
-      12,
-      68
-    ],
-    "defensive": [
-      2,
-      15,
-      0,
-      5,
-      3,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ahrim's staff",
-    "id": 4863,
-    "version": "75",
     "slot": "weapon",
     "image": "Ahrim's staff.png",
     "speed": 6,
@@ -7169,34 +6805,6 @@
   },
   {
     "name": "Ancient halo",
-    "id": 24203,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Ancient halo.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      11,
-      -1,
-      12,
-      11,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ancient halo",
     "id": 24201,
     "version": "Normal",
     "slot": "head",
@@ -7444,34 +7052,6 @@
       0,
       0,
       6
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ancient sceptre",
-    "id": 27626,
-    "version": "Locked",
-    "slot": "weapon",
-    "image": "Ancient sceptre.png",
-    "speed": 4,
-    "category": "Staff",
-    "offensive": [
-      50,
-      5,
-      20,
-      0,
-      0,
-      -1,
-      20,
-      60
-    ],
-    "defensive": [
-      1,
-      15,
-      0,
-      3,
-      2,
-      -1
     ],
     "isTwoHanded": false
   },
@@ -8737,34 +8317,6 @@
   },
   {
     "name": "Armadyl halo",
-    "id": 24194,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Armadyl halo.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      11,
-      -1,
-      12,
-      11,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Armadyl halo",
     "id": 24192,
     "version": "Normal",
     "slot": "head",
@@ -9073,34 +8625,6 @@
   },
   {
     "name": "Assembler max cape",
-    "id": 24135,
-    "version": "Locked",
-    "slot": "cape",
-    "image": "Assembler max cape.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      8,
-      2,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      1,
-      8,
-      2,
-      1,
-      1,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Assembler max cape",
     "id": 21898,
     "version": "Normal",
     "slot": "cape",
@@ -9241,34 +8765,6 @@
   },
   {
     "name": "Ava's assembler",
-    "id": 24222,
-    "version": "Locked",
-    "slot": "cape",
-    "image": "Ava's assembler.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      8,
-      2,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      1,
-      8,
-      2,
-      1,
-      1,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ava's assembler",
     "id": 22109,
     "version": "Normal",
     "slot": "cape",
@@ -9319,34 +8815,6 @@
       0,
       0,
       0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Avernic defender",
-    "id": 24186,
-    "version": "Locked",
-    "slot": "shield",
-    "image": "Avernic defender.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      28,
-      0,
-      -5,
-      -4,
-      0,
-      29,
-      30,
-      8
-    ],
-    "defensive": [
-      28,
-      -5,
-      -4,
-      29,
-      30,
       0
     ],
     "isTwoHanded": false
@@ -9801,34 +9269,6 @@
   },
   {
     "name": "Bandos halo",
-    "id": 24197,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Bandos halo.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      11,
-      -1,
-      12,
-      11,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Bandos halo",
     "id": 24195,
     "version": "Normal",
     "slot": "head",
@@ -10274,34 +9714,6 @@
       0
     ],
     "isTwoHanded": true
-  },
-  {
-    "name": "Barronite mace",
-    "id": 25643,
-    "version": "Locked",
-    "slot": "weapon",
-    "image": "Barronite mace (l).png",
-    "speed": 4,
-    "category": "Blunt",
-    "offensive": [
-      40,
-      0,
-      0,
-      0,
-      0,
-      -2,
-      20,
-      40
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      2
-    ],
-    "isTwoHanded": false
   },
   {
     "name": "Barronite mace",
@@ -11643,34 +11055,6 @@
       0,
       0,
       0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Black defender",
-    "id": 24139,
-    "version": "Locked",
-    "slot": "shield",
-    "image": "Black defender.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      7,
-      0,
-      -3,
-      -2,
-      0,
-      8,
-      9,
-      2
-    ],
-    "defensive": [
-      7,
-      -3,
-      -2,
-      8,
-      9,
       0
     ],
     "isTwoHanded": false
@@ -14505,34 +13889,6 @@
   },
   {
     "name": "Blood ancient sceptre",
-    "id": 28473,
-    "version": "Locked",
-    "slot": "weapon",
-    "image": "Blood ancient sceptre.png",
-    "speed": 4,
-    "category": "Staff",
-    "offensive": [
-      50,
-      5,
-      20,
-      0,
-      0,
-      -1,
-      20,
-      60
-    ],
-    "defensive": [
-      1,
-      15,
-      0,
-      3,
-      2,
-      -1
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Blood ancient sceptre",
     "id": 28260,
     "version": "Normal",
     "slot": "weapon",
@@ -16493,34 +15849,6 @@
   },
   {
     "name": "Brassica halo",
-    "id": 24206,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Brassica halo.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      11,
-      -1,
-      12,
-      11,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Brassica halo",
     "id": 24204,
     "version": "Normal",
     "slot": "head",
@@ -17355,34 +16683,6 @@
       0,
       0,
       0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Bronze defender",
-    "id": 24136,
-    "version": "Locked",
-    "slot": "shield",
-    "image": "Bronze defender.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      1,
-      0,
-      -3,
-      -2,
-      0,
-      2,
-      3,
-      0
-    ],
-    "defensive": [
-      1,
-      -3,
-      -2,
-      2,
-      3,
       0
     ],
     "isTwoHanded": false
@@ -19881,34 +19181,6 @@
   },
   {
     "name": "Calamity breeches",
-    "id": 26756,
-    "version": "Locked",
-    "slot": "legs",
-    "image": "Calamity breeches (l).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      2,
-      0,
-      5,
-      8,
-      0,
-      2,
-      2,
-      0
-    ],
-    "defensive": [
-      8,
-      8,
-      8,
-      5,
-      4,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Calamity breeches",
     "id": 26755,
     "version": "Normal",
     "slot": "legs",
@@ -19931,34 +19203,6 @@
       8,
       5,
       4,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Calamity chest",
-    "id": 26750,
-    "version": "Locked",
-    "slot": "body",
-    "image": "Calamity chest (l).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      4,
-      0,
-      8,
-      11,
-      0,
-      4,
-      4,
-      0
-    ],
-    "defensive": [
-      10,
-      12,
-      10,
-      7,
-      6,
       0
     ],
     "isTwoHanded": false
@@ -20267,34 +19511,6 @@
       0,
       0,
       0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Centurion cuirass",
-    "id": 26722,
-    "version": "Locked",
-    "slot": "body",
-    "image": "Centurion cuirass (l).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -40,
-      0,
-      0,
-      0,
-      0,
-      4
-    ],
-    "defensive": [
-      70,
-      -10,
-      7,
-      91,
-      72,
       0
     ],
     "isTwoHanded": false
@@ -26321,34 +25537,6 @@
   },
   {
     "name": "Decorative armour (gold platebody)",
-    "id": 24158,
-    "version": "Locked",
-    "slot": "body",
-    "image": "Decorative armour (gold platebody).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -30,
-      -15,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      55,
-      -6,
-      63,
-      63,
-      65,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative armour (gold platebody)",
     "id": 4509,
     "version": "Normal",
     "slot": "body",
@@ -26377,66 +25565,10 @@
   },
   {
     "name": "Decorative armour (gold platelegs)",
-    "id": 24159,
-    "version": "Locked",
-    "slot": "legs",
-    "image": "Decorative armour (gold platelegs).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      29,
-      -4,
-      31,
-      31,
-      33,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative armour (gold platelegs)",
     "id": 4510,
     "version": "Normal",
     "slot": "legs",
     "image": "Decorative armour (gold platelegs).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      29,
-      -4,
-      31,
-      31,
-      33,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative armour (gold plateskirt)",
-    "id": 24162,
-    "version": "Locked",
-    "slot": "legs",
-    "image": "Decorative armour (gold plateskirt).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -26489,34 +25621,6 @@
   },
   {
     "name": "Decorative armour (magic hat)",
-    "id": 24165,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Decorative armour (magic hat).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      4,
-      4,
-      4,
-      4,
-      4,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative armour (magic hat)",
     "id": 11898,
     "version": "Normal",
     "slot": "head",
@@ -26539,34 +25643,6 @@
       4,
       4,
       4,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative armour (magic legs)",
-    "id": 24164,
-    "version": "Locked",
-    "slot": "legs",
-    "image": "Decorative armour (magic legs).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      15,
-      15,
-      15,
-      15,
-      15,
       0
     ],
     "isTwoHanded": false
@@ -26601,34 +25677,6 @@
   },
   {
     "name": "Decorative armour (magic top)",
-    "id": 24163,
-    "version": "Locked",
-    "slot": "body",
-    "image": "Decorative armour (magic top).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      20,
-      20,
-      20,
-      20,
-      20,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative armour (magic top)",
     "id": 11896,
     "version": "Normal",
     "slot": "body",
@@ -26651,34 +25699,6 @@
       20,
       20,
       20,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative armour (quiver)",
-    "id": 24168,
-    "version": "Locked",
-    "slot": "cape",
-    "image": "Decorative armour (quiver).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      4,
-      4,
-      4,
-      4,
-      4,
       0
     ],
     "isTwoHanded": false
@@ -26713,34 +25733,6 @@
   },
   {
     "name": "Decorative armour (ranged legs)",
-    "id": 24167,
-    "version": "Locked",
-    "slot": "legs",
-    "image": "Decorative armour (ranged legs).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      15,
-      15,
-      15,
-      15,
-      15,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative armour (ranged legs)",
     "id": 11900,
     "version": "Normal",
     "slot": "legs",
@@ -26763,34 +25755,6 @@
       15,
       15,
       15,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative armour (ranged top)",
-    "id": 24166,
-    "version": "Locked",
-    "slot": "body",
-    "image": "Decorative armour (ranged top).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      20,
-      20,
-      20,
-      20,
-      20,
       0
     ],
     "isTwoHanded": false
@@ -26993,34 +25957,6 @@
   },
   {
     "name": "Decorative boots (gold)",
-    "id": 25173,
-    "version": "Locked",
-    "slot": "feet",
-    "image": "Decorative boots (l) (gold).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -3,
-      -1,
-      0,
-      0,
-      0,
-      1
-    ],
-    "defensive": [
-      12,
-      0,
-      0,
-      11,
-      10,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative boots (gold)",
     "id": 25171,
     "version": "Normal",
     "slot": "feet",
@@ -27099,34 +26035,6 @@
       0,
       9,
       8,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative full helm (gold)",
-    "id": 25176,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Decorative full helm (l) (gold).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      16,
-      -1,
-      19,
-      21,
-      19,
       0
     ],
     "isTwoHanded": false
@@ -27217,34 +26125,6 @@
   },
   {
     "name": "Decorative helm (gold)",
-    "id": 24160,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Decorative helm (gold).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -3,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      13,
-      -1,
-      14,
-      15,
-      14,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative helm (gold)",
     "id": 4511,
     "version": "Normal",
     "slot": "head",
@@ -27329,34 +26209,6 @@
   },
   {
     "name": "Decorative shield (gold)",
-    "id": 24161,
-    "version": "Locked",
-    "slot": "shield",
-    "image": "Decorative shield (gold).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -8,
-      -3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      29,
-      -1,
-      29,
-      31,
-      27,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative shield (gold)",
     "id": 4512,
     "version": "Normal",
     "slot": "shield",
@@ -27435,34 +26287,6 @@
       20,
       22,
       18,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Decorative sword (gold)",
-    "id": 24157,
-    "version": "Locked",
-    "slot": "weapon",
-    "image": "Decorative sword (gold).png",
-    "speed": 5,
-    "category": "Slash Sword",
-    "offensive": [
-      -2,
-      0,
-      0,
-      0,
-      0,
-      29,
-      20,
-      31
-    ],
-    "defensive": [
-      2,
-      0,
-      0,
-      3,
-      0,
       0
     ],
     "isTwoHanded": false
@@ -27749,90 +26573,6 @@
   },
   {
     "name": "Dharok's greataxe",
-    "id": 4889,
-    "version": "25",
-    "slot": "weapon",
-    "image": "Dharok's greataxe.png",
-    "speed": 7,
-    "category": "Axe",
-    "offensive": [
-      95,
-      0,
-      -4,
-      0,
-      0,
-      103,
-      -4,
-      105
-    ],
-    "defensive": [
-      0,
-      0,
-      -1,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
-    "name": "Dharok's greataxe",
-    "id": 4888,
-    "version": "50",
-    "slot": "weapon",
-    "image": "Dharok's greataxe.png",
-    "speed": 7,
-    "category": "Axe",
-    "offensive": [
-      95,
-      0,
-      -4,
-      0,
-      0,
-      103,
-      -4,
-      105
-    ],
-    "defensive": [
-      0,
-      0,
-      -1,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
-    "name": "Dharok's greataxe",
-    "id": 4887,
-    "version": "75",
-    "slot": "weapon",
-    "image": "Dharok's greataxe.png",
-    "speed": 7,
-    "category": "Axe",
-    "offensive": [
-      95,
-      0,
-      -4,
-      0,
-      0,
-      103,
-      -4,
-      105
-    ],
-    "defensive": [
-      0,
-      0,
-      -1,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
-    "name": "Dharok's greataxe",
     "id": 4718,
     "version": "Undamaged",
     "slot": "weapon",
@@ -27865,90 +26605,6 @@
     "version": "100",
     "slot": "head",
     "image": "Dharok's helm 100.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -3,
-      -1,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      44,
-      -1,
-      51,
-      48,
-      45,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dharok's helm",
-    "id": 4883,
-    "version": "25",
-    "slot": "head",
-    "image": "Dharok's helm 25.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -3,
-      -1,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      44,
-      -1,
-      51,
-      48,
-      45,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dharok's helm",
-    "id": 4882,
-    "version": "50",
-    "slot": "head",
-    "image": "Dharok's helm 50.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -3,
-      -1,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      44,
-      -1,
-      51,
-      48,
-      45,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dharok's helm",
-    "id": 4881,
-    "version": "75",
-    "slot": "head",
-    "image": "Dharok's helm 75.png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -28029,90 +26685,6 @@
   },
   {
     "name": "Dharok's platebody",
-    "id": 4895,
-    "version": "25",
-    "slot": "body",
-    "image": "Dharok's platebody.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -30,
-      -10,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      107,
-      -6,
-      132,
-      120,
-      122,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dharok's platebody",
-    "id": 4894,
-    "version": "50",
-    "slot": "body",
-    "image": "Dharok's platebody.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -30,
-      -10,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      107,
-      -6,
-      132,
-      120,
-      122,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dharok's platebody",
-    "id": 4893,
-    "version": "75",
-    "slot": "body",
-    "image": "Dharok's platebody.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -30,
-      -10,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      107,
-      -6,
-      132,
-      120,
-      122,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dharok's platebody",
     "id": 4720,
     "version": "Undamaged",
     "slot": "body",
@@ -28143,90 +26715,6 @@
     "name": "Dharok's platelegs",
     "id": 4898,
     "version": "100",
-    "slot": "legs",
-    "image": "Dharok's platelegs.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      83,
-      -4,
-      92,
-      82,
-      85,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dharok's platelegs",
-    "id": 4901,
-    "version": "25",
-    "slot": "legs",
-    "image": "Dharok's platelegs.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      83,
-      -4,
-      92,
-      82,
-      85,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dharok's platelegs",
-    "id": 4900,
-    "version": "50",
-    "slot": "legs",
-    "image": "Dharok's platelegs.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      83,
-      -4,
-      92,
-      82,
-      85,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dharok's platelegs",
-    "id": 4899,
-    "version": "75",
     "slot": "legs",
     "image": "Dharok's platelegs.png",
     "speed": 0,
@@ -29597,66 +28085,10 @@
   },
   {
     "name": "Dragon defender",
-    "id": 24143,
-    "version": "Locked",
-    "slot": "shield",
-    "image": "Dragon defender.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      23,
-      0,
-      -3,
-      -2,
-      0,
-      24,
-      25,
-      6
-    ],
-    "defensive": [
-      23,
-      -3,
-      -2,
-      24,
-      25,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dragon defender",
     "id": 12954,
     "version": "Normal",
     "slot": "shield",
     "image": "Dragon defender.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      23,
-      0,
-      -3,
-      -2,
-      0,
-      24,
-      25,
-      6
-    ],
-    "defensive": [
-      23,
-      -3,
-      -2,
-      24,
-      25,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dragon defender (t)",
-    "id": 27008,
-    "version": "Locked",
-    "slot": "shield",
-    "image": "Dragon defender (t).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -32733,34 +31165,6 @@
   },
   {
     "name": "Elite calamity breeches",
-    "id": 26760,
-    "version": "Locked",
-    "slot": "legs",
-    "image": "Elite calamity breeches (l).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      4,
-      0,
-      11,
-      14,
-      0,
-      4,
-      4,
-      0
-    ],
-    "defensive": [
-      44,
-      24,
-      44,
-      43,
-      44,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Elite calamity breeches",
     "id": 26759,
     "version": "Normal",
     "slot": "legs",
@@ -32783,34 +31187,6 @@
       44,
       43,
       44,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Elite calamity chest",
-    "id": 26754,
-    "version": "Locked",
-    "slot": "body",
-    "image": "Elite calamity chest (l).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      6,
-      0,
-      16,
-      21,
-      0,
-      6,
-      6,
-      0
-    ],
-    "defensive": [
-      66,
-      36,
-      64,
-      63,
-      66,
       0
     ],
     "isTwoHanded": false
@@ -32845,66 +31221,10 @@
   },
   {
     "name": "Elite void robe",
-    "id": 24180,
-    "version": "Locked",
-    "slot": "legs",
-    "image": "Elite void robe.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      30,
-      30,
-      30,
-      30,
-      30,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Elite void robe",
     "id": 13073,
     "version": "Normal",
     "slot": "legs",
     "image": "Elite void robe.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      30,
-      30,
-      30,
-      30,
-      30,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Elite void robe (or)",
-    "id": 27004,
-    "version": "Locked",
-    "slot": "legs",
-    "image": "Elite void robe (or).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -32957,66 +31277,10 @@
   },
   {
     "name": "Elite void top",
-    "id": 24178,
-    "version": "Locked",
-    "slot": "body",
-    "image": "Elite void top.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      45,
-      45,
-      45,
-      45,
-      45,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Elite void top",
     "id": 13072,
     "version": "Normal",
     "slot": "body",
     "image": "Elite void top.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      45,
-      45,
-      45,
-      45,
-      45,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Elite void top (or)",
-    "id": 27003,
-    "version": "Locked",
-    "slot": "body",
-    "image": "Elite void top (or).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -33909,34 +32173,6 @@
   },
   {
     "name": "Fighter hat",
-    "id": 24173,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Fighter hat.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      5,
-      0,
-      -7,
-      -7,
-      0,
-      5,
-      5,
-      0
-    ],
-    "defensive": [
-      26,
-      -3,
-      28,
-      29,
-      27,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Fighter hat",
     "id": 10548,
     "version": "Normal",
     "slot": "head",
@@ -33965,66 +32201,10 @@
   },
   {
     "name": "Fighter torso",
-    "id": 24175,
-    "version": "Locked",
-    "slot": "body",
-    "image": "Fighter torso.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -40,
-      0,
-      0,
-      0,
-      0,
-      4
-    ],
-    "defensive": [
-      62,
-      -10,
-      67,
-      85,
-      62,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Fighter torso",
     "id": 10551,
     "version": "Normal",
     "slot": "body",
     "image": "Fighter torso.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -40,
-      0,
-      0,
-      0,
-      0,
-      4
-    ],
-    "defensive": [
-      62,
-      -10,
-      67,
-      85,
-      62,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Fighter torso (or)",
-    "id": 28069,
-    "version": "Locked",
-    "slot": "body",
-    "image": "Fighter torso (or).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -34161,66 +32341,10 @@
   },
   {
     "name": "Fire cape",
-    "id": 24223,
-    "version": "Locked",
-    "slot": "cape",
-    "image": "Fire cape.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      1,
-      0,
-      1,
-      1,
-      0,
-      1,
-      1,
-      4
-    ],
-    "defensive": [
-      11,
-      11,
-      11,
-      11,
-      11,
-      2
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Fire cape",
     "id": 6570,
     "version": "Normal",
     "slot": "cape",
     "image": "Fire cape.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      1,
-      0,
-      1,
-      1,
-      0,
-      1,
-      1,
-      4
-    ],
-    "defensive": [
-      11,
-      11,
-      11,
-      11,
-      11,
-      2
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Fire max cape",
-    "id": 24134,
-    "version": "Locked",
-    "slot": "cape",
-    "image": "Fire max cape.png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -35533,66 +33657,10 @@
   },
   {
     "name": "Ghommal's avernic defender 5",
-    "id": 27551,
-    "version": "Locked",
-    "slot": "shield",
-    "image": "Ghommal's avernic defender 5.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      28,
-      0,
-      -5,
-      -4,
-      0,
-      29,
-      30,
-      8
-    ],
-    "defensive": [
-      28,
-      -5,
-      -4,
-      29,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ghommal's avernic defender 5",
     "id": 27550,
     "version": "Normal",
     "slot": "shield",
     "image": "Ghommal's avernic defender 5.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      28,
-      0,
-      -5,
-      -4,
-      0,
-      29,
-      30,
-      8
-    ],
-    "defensive": [
-      28,
-      -5,
-      -4,
-      29,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ghommal's avernic defender 6",
-    "id": 27553,
-    "version": "Locked",
-    "slot": "shield",
-    "image": "Ghommal's avernic defender 6.png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -38445,90 +36513,6 @@
   },
   {
     "name": "Guthan's chainskirt",
-    "id": 4925,
-    "version": "25",
-    "slot": "legs",
-    "image": "Guthan's chainskirt.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -14,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      73,
-      -4,
-      82,
-      72,
-      75,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Guthan's chainskirt",
-    "id": 4924,
-    "version": "50",
-    "slot": "legs",
-    "image": "Guthan's chainskirt.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -14,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      73,
-      -4,
-      82,
-      72,
-      75,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Guthan's chainskirt",
-    "id": 4923,
-    "version": "75",
-    "slot": "legs",
-    "image": "Guthan's chainskirt.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -14,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      73,
-      -4,
-      82,
-      72,
-      75,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Guthan's chainskirt",
     "id": 4730,
     "version": "Undamaged",
     "slot": "legs",
@@ -38559,90 +36543,6 @@
     "name": "Guthan's helm",
     "id": 4904,
     "version": "100",
-    "slot": "head",
-    "image": "Guthan's helm.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      54,
-      -1,
-      62,
-      58,
-      55,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Guthan's helm",
-    "id": 4907,
-    "version": "25",
-    "slot": "head",
-    "image": "Guthan's helm.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      54,
-      -1,
-      62,
-      58,
-      55,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Guthan's helm",
-    "id": 4906,
-    "version": "50",
-    "slot": "head",
-    "image": "Guthan's helm.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      54,
-      -1,
-      62,
-      58,
-      55,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Guthan's helm",
-    "id": 4905,
-    "version": "75",
     "slot": "head",
     "image": "Guthan's helm.png",
     "speed": 0,
@@ -38725,90 +36625,6 @@
   },
   {
     "name": "Guthan's platebody",
-    "id": 4919,
-    "version": "25",
-    "slot": "body",
-    "image": "Guthan's platebody.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -30,
-      -10,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      107,
-      -6,
-      132,
-      120,
-      122,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Guthan's platebody",
-    "id": 4918,
-    "version": "50",
-    "slot": "body",
-    "image": "Guthan's platebody.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -30,
-      -10,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      107,
-      -6,
-      132,
-      120,
-      122,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Guthan's platebody",
-    "id": 4917,
-    "version": "75",
-    "slot": "body",
-    "image": "Guthan's platebody.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -30,
-      -10,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      107,
-      -6,
-      132,
-      120,
-      122,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Guthan's platebody",
     "id": 4728,
     "version": "Undamaged",
     "slot": "body",
@@ -38839,90 +36655,6 @@
     "name": "Guthan's warspear",
     "id": 4910,
     "version": "100",
-    "slot": "weapon",
-    "image": "Guthan's warspear.png",
-    "speed": 5,
-    "category": "Spear",
-    "offensive": [
-      75,
-      0,
-      0,
-      0,
-      0,
-      75,
-      75,
-      75
-    ],
-    "defensive": [
-      7,
-      0,
-      0,
-      7,
-      7,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
-    "name": "Guthan's warspear",
-    "id": 4913,
-    "version": "25",
-    "slot": "weapon",
-    "image": "Guthan's warspear.png",
-    "speed": 5,
-    "category": "Spear",
-    "offensive": [
-      75,
-      0,
-      0,
-      0,
-      0,
-      75,
-      75,
-      75
-    ],
-    "defensive": [
-      7,
-      0,
-      0,
-      7,
-      7,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
-    "name": "Guthan's warspear",
-    "id": 4912,
-    "version": "50",
-    "slot": "weapon",
-    "image": "Guthan's warspear.png",
-    "speed": 5,
-    "category": "Spear",
-    "offensive": [
-      75,
-      0,
-      0,
-      0,
-      0,
-      75,
-      75,
-      75
-    ],
-    "defensive": [
-      7,
-      0,
-      0,
-      7,
-      7,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
-    "name": "Guthan's warspear",
-    "id": 4911,
-    "version": "75",
     "slot": "weapon",
     "image": "Guthan's warspear.png",
     "speed": 5,
@@ -39252,34 +36984,6 @@
       32,
       30,
       1
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Guthix halo",
-    "id": 24171,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Guthix halo.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      11,
-      -1,
-      12,
-      11,
-      3
     ],
     "isTwoHanded": false
   },
@@ -40287,34 +37991,6 @@
       0,
       0,
       0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Healer hat",
-    "id": 24172,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Healer hat.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      -5,
-      0,
-      6,
-      -5,
-      0,
-      -5,
-      -5,
-      0
-    ],
-    "defensive": [
-      10,
-      7,
-      0,
-      8,
-      6,
       0
     ],
     "isTwoHanded": false
@@ -41357,34 +39033,6 @@
   },
   {
     "name": "Ice ancient sceptre",
-    "id": 28474,
-    "version": "Locked",
-    "slot": "weapon",
-    "image": "Ice ancient sceptre.png",
-    "speed": 4,
-    "category": "Staff",
-    "offensive": [
-      50,
-      5,
-      20,
-      0,
-      0,
-      -1,
-      20,
-      60
-    ],
-    "defensive": [
-      1,
-      15,
-      0,
-      3,
-      2,
-      -1
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ice ancient sceptre",
     "id": 28262,
     "version": "Normal",
     "slot": "weapon",
@@ -41469,66 +39117,10 @@
   },
   {
     "name": "Imbued guthix cape",
-    "id": 24249,
-    "version": "Locked",
-    "slot": "cape",
-    "image": "Imbued guthix cape.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      2,
-      15,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      3,
-      15,
-      0,
-      3,
-      3,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued guthix cape",
     "id": 21793,
     "version": "Normal",
     "slot": "cape",
     "image": "Imbued guthix cape.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      2,
-      15,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      3,
-      15,
-      0,
-      3,
-      3,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued guthix max cape",
-    "id": 24234,
-    "version": "Locked",
-    "slot": "cape",
-    "image": "Imbued guthix max cape.png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -41581,66 +39173,10 @@
   },
   {
     "name": "Imbued saradomin cape",
-    "id": 24248,
-    "version": "Locked",
-    "slot": "cape",
-    "image": "Imbued saradomin cape.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      2,
-      15,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      3,
-      15,
-      0,
-      3,
-      3,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued saradomin cape",
     "id": 21791,
     "version": "Normal",
     "slot": "cape",
     "image": "Imbued saradomin cape.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      2,
-      15,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      3,
-      15,
-      0,
-      3,
-      3,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued saradomin max cape",
-    "id": 24232,
-    "version": "Locked",
-    "slot": "cape",
-    "image": "Imbued saradomin max cape.png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -41693,66 +39229,10 @@
   },
   {
     "name": "Imbued zamorak cape",
-    "id": 24250,
-    "version": "Locked",
-    "slot": "cape",
-    "image": "Imbued zamorak cape.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      2,
-      15,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      3,
-      15,
-      0,
-      3,
-      3,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued zamorak cape",
     "id": 21795,
     "version": "Normal",
     "slot": "cape",
     "image": "Imbued zamorak cape.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      2,
-      15,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      3,
-      15,
-      0,
-      3,
-      3,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued zamorak max cape",
-    "id": 24233,
-    "version": "Locked",
-    "slot": "cape",
-    "image": "Imbued zamorak max cape.png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -41917,34 +39397,6 @@
   },
   {
     "name": "Infernal cape",
-    "id": 24224,
-    "version": "Locked",
-    "slot": "cape",
-    "image": "Infernal cape.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      4,
-      0,
-      1,
-      1,
-      0,
-      4,
-      4,
-      8
-    ],
-    "defensive": [
-      12,
-      12,
-      12,
-      12,
-      12,
-      2
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Infernal cape",
     "id": 21295,
     "version": "Normal",
     "slot": "cape",
@@ -42080,34 +39532,6 @@
       1,
       0,
       0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Infernal max cape",
-    "id": 24133,
-    "version": "Locked",
-    "slot": "cape",
-    "image": "Infernal max cape.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      4,
-      0,
-      1,
-      1,
-      0,
-      4,
-      4,
-      8
-    ],
-    "defensive": [
-      12,
-      12,
-      12,
-      12,
-      12,
-      2
     ],
     "isTwoHanded": false
   },
@@ -43283,34 +40707,6 @@
       0,
       0,
       0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Iron defender",
-    "id": 24137,
-    "version": "Locked",
-    "slot": "shield",
-    "image": "Iron defender.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      3,
-      0,
-      -3,
-      -2,
-      0,
-      4,
-      5,
-      0
-    ],
-    "defensive": [
-      3,
-      -3,
-      -2,
-      4,
-      5,
       0
     ],
     "isTwoHanded": false
@@ -45361,90 +42757,6 @@
   },
   {
     "name": "Karil's coif",
-    "id": 4931,
-    "version": "25",
-    "slot": "head",
-    "image": "Karil's coif.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -1,
-      7,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      12,
-      6,
-      10,
-      9,
-      6,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Karil's coif",
-    "id": 4930,
-    "version": "50",
-    "slot": "head",
-    "image": "Karil's coif.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -1,
-      7,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      12,
-      6,
-      10,
-      9,
-      6,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Karil's coif",
-    "id": 4929,
-    "version": "75",
-    "slot": "head",
-    "image": "Karil's coif.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -1,
-      7,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      12,
-      6,
-      10,
-      9,
-      6,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Karil's coif",
     "id": 4732,
     "version": "Undamaged",
     "slot": "head",
@@ -45475,90 +42787,6 @@
     "name": "Karil's crossbow",
     "id": 4934,
     "version": "100",
-    "slot": "weapon",
-    "image": "Karil's crossbow.png",
-    "speed": 4,
-    "category": "Crossbow",
-    "offensive": [
-      0,
-      0,
-      0,
-      84,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
-    "name": "Karil's crossbow",
-    "id": 4937,
-    "version": "25",
-    "slot": "weapon",
-    "image": "Karil's crossbow.png",
-    "speed": 4,
-    "category": "Crossbow",
-    "offensive": [
-      0,
-      0,
-      0,
-      84,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
-    "name": "Karil's crossbow",
-    "id": 4936,
-    "version": "50",
-    "slot": "weapon",
-    "image": "Karil's crossbow.png",
-    "speed": 4,
-    "category": "Crossbow",
-    "offensive": [
-      0,
-      0,
-      0,
-      84,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
-    "name": "Karil's crossbow",
-    "id": 4935,
-    "version": "75",
     "slot": "weapon",
     "image": "Karil's crossbow.png",
     "speed": 4,
@@ -45641,90 +42869,6 @@
   },
   {
     "name": "Karil's leatherskirt",
-    "id": 4949,
-    "version": "25",
-    "slot": "legs",
-    "image": "Karil's leatherskirt.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -10,
-      17,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      28,
-      35,
-      33,
-      20,
-      26,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Karil's leatherskirt",
-    "id": 4948,
-    "version": "50",
-    "slot": "legs",
-    "image": "Karil's leatherskirt.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -10,
-      17,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      28,
-      35,
-      33,
-      20,
-      26,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Karil's leatherskirt",
-    "id": 4947,
-    "version": "75",
-    "slot": "legs",
-    "image": "Karil's leatherskirt.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -10,
-      17,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      28,
-      35,
-      33,
-      20,
-      26,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Karil's leatherskirt",
     "id": 4738,
     "version": "Undamaged",
     "slot": "legs",
@@ -45755,90 +42899,6 @@
     "name": "Karil's leathertop",
     "id": 4940,
     "version": "100",
-    "slot": "body",
-    "image": "Karil's leathertop.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -15,
-      30,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      50,
-      65,
-      57,
-      42,
-      47,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Karil's leathertop",
-    "id": 4943,
-    "version": "25",
-    "slot": "body",
-    "image": "Karil's leathertop.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -15,
-      30,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      50,
-      65,
-      57,
-      42,
-      47,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Karil's leathertop",
-    "id": 4942,
-    "version": "50",
-    "slot": "body",
-    "image": "Karil's leathertop.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -15,
-      30,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      50,
-      65,
-      57,
-      42,
-      47,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Karil's leathertop",
-    "id": 4941,
-    "version": "75",
     "slot": "body",
     "image": "Karil's leathertop.png",
     "speed": 0,
@@ -46341,34 +43401,6 @@
   },
   {
     "name": "Koriff's coif",
-    "id": 26742,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Koriff's coif (l).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      -60,
-      0,
-      -60,
-      18,
-      0,
-      -60,
-      -60,
-      0
-    ],
-    "defensive": [
-      -25,
-      20,
-      0,
-      -25,
-      -25,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Koriff's coif",
     "id": 26741,
     "version": "Normal",
     "slot": "head",
@@ -46397,34 +43429,6 @@
   },
   {
     "name": "Koriff's cowl",
-    "id": 26740,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Koriff's cowl (l).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      -40,
-      0,
-      -40,
-      14,
-      0,
-      -40,
-      -40,
-      0
-    ],
-    "defensive": [
-      -15,
-      15,
-      0,
-      -15,
-      -15,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Koriff's cowl",
     "id": 26739,
     "version": "Normal",
     "slot": "head",
@@ -46447,34 +43451,6 @@
       0,
       -15,
       -15,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Koriff's headband",
-    "id": 26738,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Koriff's headband (l).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      -20,
-      0,
-      -20,
-      10,
-      0,
-      -20,
-      -20,
-      0
-    ],
-    "defensive": [
-      -10,
-      10,
-      0,
-      -10,
-      -10,
       0
     ],
     "isTwoHanded": false
@@ -48133,34 +45109,6 @@
   },
   {
     "name": "Maoma's full helm",
-    "id": 26746,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Maoma's full helm (l).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      8,
-      0,
-      -40,
-      -40,
-      0,
-      8,
-      8,
-      2
-    ],
-    "defensive": [
-      0,
-      -15,
-      15,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Maoma's full helm",
     "id": 26745,
     "version": "Normal",
     "slot": "head",
@@ -48189,34 +45137,6 @@
   },
   {
     "name": "Maoma's great helm",
-    "id": 26748,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Maoma's great helm (l).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      10,
-      0,
-      -60,
-      -60,
-      0,
-      10,
-      10,
-      4
-    ],
-    "defensive": [
-      0,
-      -25,
-      25,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Maoma's great helm",
     "id": 26747,
     "version": "Normal",
     "slot": "head",
@@ -48237,34 +45157,6 @@
       0,
       -25,
       25,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Maoma's med helm",
-    "id": 26744,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Maoma's med helm (l).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      6,
-      0,
-      -20,
-      -20,
-      0,
-      6,
-      6,
-      1
-    ],
-    "defensive": [
-      0,
-      -10,
-      10,
       0,
       0,
       0
@@ -48525,66 +45417,10 @@
   },
   {
     "name": "Masori assembler",
-    "id": 27376,
-    "version": "Locked",
-    "slot": "cape",
-    "image": "Masori assembler (l).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      8,
-      2,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      1,
-      8,
-      2,
-      1,
-      1,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Masori assembler",
     "id": 27374,
     "version": "Normal",
     "slot": "cape",
     "image": "Masori assembler.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      8,
-      2,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      1,
-      8,
-      2,
-      1,
-      1,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Masori assembler max cape",
-    "id": 27365,
-    "version": "Locked",
-    "slot": "cape",
-    "image": "Masori assembler max cape (l).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -49807,34 +46643,6 @@
       0,
       0,
       0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Mithril defender",
-    "id": 24140,
-    "version": "Locked",
-    "slot": "shield",
-    "image": "Mithril defender.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      8,
-      0,
-      -3,
-      -2,
-      0,
-      9,
-      10,
-      3
-    ],
-    "defensive": [
-      8,
-      -3,
-      -2,
-      9,
-      10,
       0
     ],
     "isTwoHanded": false
@@ -54909,34 +51717,6 @@
   },
   {
     "name": "Penance skirt",
-    "id": 24176,
-    "version": "Locked",
-    "slot": "legs",
-    "image": "Penance skirt.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -10,
-      15,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      28,
-      19,
-      26,
-      21,
-      26,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Penance skirt",
     "id": 10555,
     "version": "Normal",
     "slot": "legs",
@@ -56163,34 +52943,6 @@
       0,
       2,
       1,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ranger hat",
-    "id": 24174,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Ranger hat.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      -5,
-      0,
-      -5,
-      6,
-      0,
-      -5,
-      -5,
-      0
-    ],
-    "defensive": [
-      11,
-      5,
-      8,
-      10,
-      7,
       0
     ],
     "isTwoHanded": false
@@ -59025,66 +55777,10 @@
   },
   {
     "name": "Rune defender",
-    "id": 24142,
-    "version": "Locked",
-    "slot": "shield",
-    "image": "Rune defender.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      18,
-      0,
-      -3,
-      -2,
-      0,
-      19,
-      20,
-      5
-    ],
-    "defensive": [
-      18,
-      -3,
-      -2,
-      19,
-      20,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Rune defender",
     "id": 8850,
     "version": "Normal",
     "slot": "shield",
     "image": "Rune defender.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      18,
-      0,
-      -3,
-      -2,
-      0,
-      19,
-      20,
-      5
-    ],
-    "defensive": [
-      18,
-      -3,
-      -2,
-      19,
-      20,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Rune defender (t)",
-    "id": 27009,
-    "version": "Locked",
-    "slot": "shield",
-    "image": "Rune defender (t).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -62105,34 +58801,6 @@
   },
   {
     "name": "Runner hat",
-    "id": 24533,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Runner hat.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      27,
-      1,
-      30,
-      32,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Runner hat",
     "id": 10549,
     "version": "Normal",
     "slot": "head",
@@ -62155,34 +58823,6 @@
       30,
       32,
       30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Saika's hood",
-    "id": 26732,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Saika's hood (l).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      -20,
-      0,
-      10,
-      -2,
-      0,
-      -20,
-      -20,
-      0
-    ],
-    "defensive": [
-      10,
-      0,
-      -10,
-      10,
-      10,
       0
     ],
     "isTwoHanded": false
@@ -62217,34 +58857,6 @@
   },
   {
     "name": "Saika's shroud",
-    "id": 26736,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Saika's shroud (l).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      -60,
-      0,
-      18,
-      -60,
-      0,
-      -60,
-      -60,
-      0
-    ],
-    "defensive": [
-      20,
-      0,
-      -25,
-      20,
-      20,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Saika's shroud",
     "id": 26735,
     "version": "Normal",
     "slot": "head",
@@ -62267,34 +58879,6 @@
       -25,
       20,
       20,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Saika's veil",
-    "id": 26734,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Saika's veil (l).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      -40,
-      0,
-      14,
-      -40,
-      0,
-      -40,
-      -40,
-      0
-    ],
-    "defensive": [
-      15,
-      0,
-      -15,
-      15,
-      15,
       0
     ],
     "isTwoHanded": false
@@ -63365,34 +59949,6 @@
   },
   {
     "name": "Saradomin halo",
-    "id": 24169,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Saradomin halo.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      11,
-      -1,
-      12,
-      11,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Saradomin halo",
     "id": 12637,
     "version": "Normal",
     "slot": "head",
@@ -64037,34 +60593,6 @@
   },
   {
     "name": "Seren halo",
-    "id": 24200,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Seren halo.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      11,
-      -1,
-      12,
-      11,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Seren halo",
     "id": 24198,
     "version": "Normal",
     "slot": "head",
@@ -64228,34 +60756,6 @@
       0,
       0,
       5
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Shadow ancient sceptre",
-    "id": 28476,
-    "version": "Locked",
-    "slot": "weapon",
-    "image": "Shadow ancient sceptre.png",
-    "speed": 4,
-    "category": "Staff",
-    "offensive": [
-      50,
-      5,
-      20,
-      0,
-      0,
-      -1,
-      20,
-      60
-    ],
-    "defensive": [
-      1,
-      15,
-      0,
-      3,
-      2,
-      -1
     ],
     "isTwoHanded": false
   },
@@ -66076,34 +62576,6 @@
       9,
       9,
       0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Smoke ancient sceptre",
-    "id": 28475,
-    "version": "Locked",
-    "slot": "weapon",
-    "image": "Smoke ancient sceptre.png",
-    "speed": 4,
-    "category": "Staff",
-    "offensive": [
-      50,
-      5,
-      20,
-      0,
-      0,
-      -1,
-      20,
-      60
-    ],
-    "defensive": [
-      1,
-      15,
-      0,
-      3,
-      2,
-      -1
     ],
     "isTwoHanded": false
   },
@@ -68287,34 +64759,6 @@
       0,
       0,
       0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Steel defender",
-    "id": 24138,
-    "version": "Locked",
-    "slot": "shield",
-    "image": "Steel defender.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      5,
-      0,
-      -3,
-      -2,
-      0,
-      6,
-      7,
-      1
-    ],
-    "defensive": [
-      5,
-      -3,
-      -2,
-      6,
-      7,
       0
     ],
     "isTwoHanded": false
@@ -70841,34 +67285,6 @@
   },
   {
     "name": "Superior calamity breeches",
-    "id": 26758,
-    "version": "Locked",
-    "slot": "legs",
-    "image": "Superior calamity breeches (l).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      3,
-      0,
-      8,
-      11,
-      0,
-      3,
-      3,
-      0
-    ],
-    "defensive": [
-      36,
-      20,
-      32,
-      34,
-      32,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Superior calamity breeches",
     "id": 26757,
     "version": "Normal",
     "slot": "legs",
@@ -70891,34 +67307,6 @@
       32,
       34,
       32,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Superior calamity chest",
-    "id": 26752,
-    "version": "Locked",
-    "slot": "body",
-    "image": "Superior calamity chest (l).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      5,
-      0,
-      12,
-      16,
-      0,
-      5,
-      5,
-      0
-    ],
-    "defensive": [
-      54,
-      28,
-      48,
-      51,
-      47,
       0
     ],
     "isTwoHanded": false
@@ -73417,90 +69805,6 @@
   },
   {
     "name": "Torag's hammers",
-    "id": 4961,
-    "version": "25",
-    "slot": "weapon",
-    "image": "Torag's hammers.png",
-    "speed": 5,
-    "category": "Blunt",
-    "offensive": [
-      85,
-      0,
-      -4,
-      0,
-      0,
-      -4,
-      -4,
-      72
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
-    "name": "Torag's hammers",
-    "id": 4960,
-    "version": "50",
-    "slot": "weapon",
-    "image": "Torag's hammers.png",
-    "speed": 5,
-    "category": "Blunt",
-    "offensive": [
-      85,
-      0,
-      -4,
-      0,
-      0,
-      -4,
-      -4,
-      72
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
-    "name": "Torag's hammers",
-    "id": 4959,
-    "version": "75",
-    "slot": "weapon",
-    "image": "Torag's hammers.png",
-    "speed": 5,
-    "category": "Blunt",
-    "offensive": [
-      85,
-      0,
-      -4,
-      0,
-      0,
-      -4,
-      -4,
-      72
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
-    "name": "Torag's hammers",
     "id": 4747,
     "version": "Undamaged",
     "slot": "weapon",
@@ -73531,90 +69835,6 @@
     "name": "Torag's helm",
     "id": 4952,
     "version": "100",
-    "slot": "head",
-    "image": "Torag's helm.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      54,
-      -1,
-      62,
-      58,
-      55,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Torag's helm",
-    "id": 4955,
-    "version": "25",
-    "slot": "head",
-    "image": "Torag's helm.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      54,
-      -1,
-      62,
-      58,
-      55,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Torag's helm",
-    "id": 4954,
-    "version": "50",
-    "slot": "head",
-    "image": "Torag's helm.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      54,
-      -1,
-      62,
-      58,
-      55,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Torag's helm",
-    "id": 4953,
-    "version": "75",
     "slot": "head",
     "image": "Torag's helm.png",
     "speed": 0,
@@ -73697,90 +69917,6 @@
   },
   {
     "name": "Torag's platebody",
-    "id": 4967,
-    "version": "25",
-    "slot": "body",
-    "image": "Torag's platebody.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -30,
-      -10,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      107,
-      -6,
-      132,
-      120,
-      122,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Torag's platebody",
-    "id": 4966,
-    "version": "50",
-    "slot": "body",
-    "image": "Torag's platebody.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -30,
-      -10,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      107,
-      -6,
-      132,
-      120,
-      122,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Torag's platebody",
-    "id": 4965,
-    "version": "75",
-    "slot": "body",
-    "image": "Torag's platebody.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -30,
-      -10,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      107,
-      -6,
-      132,
-      120,
-      122,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Torag's platebody",
     "id": 4749,
     "version": "Undamaged",
     "slot": "body",
@@ -73811,90 +69947,6 @@
     "name": "Torag's platelegs",
     "id": 4970,
     "version": "100",
-    "slot": "legs",
-    "image": "Torag's platelegs.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      83,
-      -4,
-      92,
-      82,
-      85,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Torag's platelegs",
-    "id": 4973,
-    "version": "25",
-    "slot": "legs",
-    "image": "Torag's platelegs.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      83,
-      -4,
-      92,
-      82,
-      85,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Torag's platelegs",
-    "id": 4972,
-    "version": "50",
-    "slot": "legs",
-    "image": "Torag's platelegs.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      83,
-      -4,
-      92,
-      82,
-      85,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Torag's platelegs",
-    "id": 4971,
-    "version": "75",
     "slot": "legs",
     "image": "Torag's platelegs.png",
     "speed": 0,
@@ -76721,90 +72773,6 @@
   },
   {
     "name": "Verac's brassard",
-    "id": 4991,
-    "version": "25",
-    "slot": "body",
-    "image": "Verac's brassard.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      85,
-      0,
-      81,
-      95,
-      81,
-      5
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Verac's brassard",
-    "id": 4990,
-    "version": "50",
-    "slot": "body",
-    "image": "Verac's brassard.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      85,
-      0,
-      81,
-      95,
-      81,
-      5
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Verac's brassard",
-    "id": 4989,
-    "version": "75",
-    "slot": "body",
-    "image": "Verac's brassard.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      85,
-      0,
-      81,
-      95,
-      81,
-      5
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Verac's brassard",
     "id": 4757,
     "version": "Undamaged",
     "slot": "body",
@@ -76835,90 +72803,6 @@
     "name": "Verac's flail",
     "id": 4982,
     "version": "100",
-    "slot": "weapon",
-    "image": "Verac's flail.png",
-    "speed": 5,
-    "category": "Spiked",
-    "offensive": [
-      82,
-      0,
-      0,
-      0,
-      0,
-      -2,
-      68,
-      72
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      6
-    ],
-    "isTwoHanded": true
-  },
-  {
-    "name": "Verac's flail",
-    "id": 4985,
-    "version": "25",
-    "slot": "weapon",
-    "image": "Verac's flail.png",
-    "speed": 5,
-    "category": "Spiked",
-    "offensive": [
-      82,
-      0,
-      0,
-      0,
-      0,
-      -2,
-      68,
-      72
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      6
-    ],
-    "isTwoHanded": true
-  },
-  {
-    "name": "Verac's flail",
-    "id": 4984,
-    "version": "50",
-    "slot": "weapon",
-    "image": "Verac's flail.png",
-    "speed": 5,
-    "category": "Spiked",
-    "offensive": [
-      82,
-      0,
-      0,
-      0,
-      0,
-      -2,
-      68,
-      72
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      6
-    ],
-    "isTwoHanded": true
-  },
-  {
-    "name": "Verac's flail",
-    "id": 4983,
-    "version": "75",
     "slot": "weapon",
     "image": "Verac's flail.png",
     "speed": 5,
@@ -77001,90 +72885,6 @@
   },
   {
     "name": "Verac's helm",
-    "id": 4979,
-    "version": "25",
-    "slot": "head",
-    "image": "Verac's helm.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      54,
-      0,
-      56,
-      58,
-      55,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Verac's helm",
-    "id": 4978,
-    "version": "50",
-    "slot": "head",
-    "image": "Verac's helm.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      54,
-      0,
-      56,
-      58,
-      55,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Verac's helm",
-    "id": 4977,
-    "version": "75",
-    "slot": "head",
-    "image": "Verac's helm.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -6,
-      -2,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      54,
-      0,
-      56,
-      58,
-      55,
-      3
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Verac's helm",
     "id": 4753,
     "version": "Undamaged",
     "slot": "head",
@@ -77115,90 +72915,6 @@
     "name": "Verac's plateskirt",
     "id": 4994,
     "version": "100",
-    "slot": "legs",
-    "image": "Verac's plateskirt.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      83,
-      0,
-      84,
-      82,
-      85,
-      4
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Verac's plateskirt",
-    "id": 4997,
-    "version": "25",
-    "slot": "legs",
-    "image": "Verac's plateskirt.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      83,
-      0,
-      84,
-      82,
-      85,
-      4
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Verac's plateskirt",
-    "id": 4996,
-    "version": "50",
-    "slot": "legs",
-    "image": "Verac's plateskirt.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      -21,
-      -11,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      83,
-      0,
-      84,
-      82,
-      85,
-      4
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Verac's plateskirt",
-    "id": 4995,
-    "version": "75",
     "slot": "legs",
     "image": "Verac's plateskirt.png",
     "speed": 0,
@@ -77673,66 +73389,10 @@
   },
   {
     "name": "Void knight gloves",
-    "id": 24182,
-    "version": "Locked",
-    "slot": "hands",
-    "image": "Void knight gloves.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      6,
-      4,
-      6,
-      6,
-      6,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Void knight gloves",
     "id": 8842,
     "version": "Normal",
     "slot": "hands",
     "image": "Void knight gloves.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      6,
-      4,
-      6,
-      6,
-      6,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Void knight gloves (or)",
-    "id": 27002,
-    "version": "Locked",
-    "slot": "hands",
-    "image": "Void knight gloves (or).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -77785,34 +73445,6 @@
   },
   {
     "name": "Void knight mace",
-    "id": 24181,
-    "version": "Locked",
-    "slot": "weapon",
-    "image": "Void knight mace.png",
-    "speed": 5,
-    "category": "Staff",
-    "offensive": [
-      41,
-      0,
-      8,
-      0,
-      0,
-      0,
-      22,
-      38
-    ],
-    "defensive": [
-      2,
-      2,
-      2,
-      2,
-      2,
-      6
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Void knight mace",
     "id": 8841,
     "version": "Normal",
     "slot": "weapon",
@@ -77841,66 +73473,10 @@
   },
   {
     "name": "Void knight robe",
-    "id": 24179,
-    "version": "Locked",
-    "slot": "legs",
-    "image": "Void knight robe.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      30,
-      30,
-      30,
-      30,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Void knight robe",
     "id": 8840,
     "version": "Normal",
     "slot": "legs",
     "image": "Void knight robe.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      30,
-      30,
-      30,
-      30,
-      30,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Void knight robe (or)",
-    "id": 27001,
-    "version": "Locked",
-    "slot": "legs",
-    "image": "Void knight robe (or).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -77953,66 +73529,10 @@
   },
   {
     "name": "Void knight top",
-    "id": 24177,
-    "version": "Locked",
-    "slot": "body",
-    "image": "Void knight top.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      45,
-      45,
-      45,
-      45,
-      45,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Void knight top",
     "id": 8839,
     "version": "Normal",
     "slot": "body",
     "image": "Void knight top.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      45,
-      45,
-      45,
-      45,
-      45,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Void knight top (or)",
-    "id": 27000,
-    "version": "Locked",
-    "slot": "body",
-    "image": "Void knight top (or).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -78065,66 +73585,10 @@
   },
   {
     "name": "Void mage helm",
-    "id": 24183,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Void mage helm.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      6,
-      6,
-      6,
-      6,
-      6,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Void mage helm",
     "id": 11663,
     "version": "Normal",
     "slot": "head",
     "image": "Void mage helm.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      6,
-      6,
-      6,
-      6,
-      6,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Void mage helm (or)",
-    "id": 27005,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Void mage helm (or).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -78177,66 +73641,10 @@
   },
   {
     "name": "Void melee helm",
-    "id": 24185,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Void melee helm.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      6,
-      6,
-      6,
-      6,
-      6,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Void melee helm",
     "id": 11665,
     "version": "Normal",
     "slot": "head",
     "image": "Void melee helm.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      6,
-      6,
-      6,
-      6,
-      6,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Void melee helm (or)",
-    "id": 27007,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Void melee helm (or).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -78289,66 +73697,10 @@
   },
   {
     "name": "Void ranger helm",
-    "id": 24184,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Void ranger helm.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      6,
-      6,
-      6,
-      6,
-      6,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Void ranger helm",
     "id": 11664,
     "version": "Normal",
     "slot": "head",
     "image": "Void ranger helm.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      6,
-      6,
-      6,
-      6,
-      6,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Void ranger helm (or)",
-    "id": 27006,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Void ranger helm (or).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -80893,34 +76245,6 @@
   },
   {
     "name": "Wristbands of the arena",
-    "id": 26724,
-    "version": "Locked",
-    "slot": "hands",
-    "image": "Wristbands of the arena (l).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      12,
-      0,
-      6,
-      12,
-      0,
-      12,
-      12,
-      12
-    ],
-    "defensive": [
-      12,
-      6,
-      12,
-      12,
-      12,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Wristbands of the arena",
     "id": 26723,
     "version": "Normal",
     "slot": "hands",
@@ -80981,34 +76305,6 @@
     "version": "Charged and Locked",
     "slot": "hands",
     "image": "Wristbands of the arena (ilc).png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      15,
-      0,
-      7,
-      13,
-      0,
-      13,
-      14,
-      12
-    ],
-    "defensive": [
-      12,
-      6,
-      12,
-      12,
-      12,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Wristbands of the arena (i)",
-    "id": 26728,
-    "version": "Locked",
-    "slot": "hands",
-    "image": "Wristbands of the arena (il).png",
     "speed": 0,
     "category": "",
     "offensive": [
@@ -81898,34 +77194,6 @@
       8
     ],
     "isTwoHanded": true
-  },
-  {
-    "name": "Zamorak halo",
-    "id": 24170,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Zamorak halo.png",
-    "speed": 0,
-    "category": "",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      11,
-      -1,
-      12,
-      11,
-      3
-    ],
-    "isTwoHanded": false
   },
   {
     "name": "Zamorak halo",
