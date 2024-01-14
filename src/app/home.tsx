@@ -98,7 +98,6 @@ const Home: NextPage = observer(() => {
       () => toJS(store.loadouts),
       () => toJS(store.monster),
       () => toJS(store.prefs.showTtkComparison),
-      () => toJS(store.prefs.hitDistsHideZeros),
     ];
     const reactions = triggers.map(t => reaction(t, recompute, {fireImmediately: true}))
 
