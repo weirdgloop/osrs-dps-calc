@@ -1090,6 +1090,11 @@ export default class CombatCalc {
       (styleType !== 'ranged' || this.player.equipment.ammo?.name !== 'Ice arrows')) {
       return true;
     }
+    if (this.monster.name === 'Fareed' &&
+      ((styleType === 'magic' && !isWaterSpell(this.player.spell)) || 
+        (styleType === 'ranged' && !this.player.equipment.ammo?.name?.includes('arrow')))) {
+      return true;
+    }
 
     return false;
   }
