@@ -1104,9 +1104,14 @@ export default class CombatCalc {
    */
   public getAttackSpeed(): number {
     let attackSpeed = this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;
+
     if (this.player.style.stance === 'Rapid') {
       attackSpeed -= 1;
     }
+    if (this.player.equipment.weapon?.name === 'Harmonised nightmare staff' && this.player.spell?.spellbook === 'standard') {
+      attackSpeed -=1;
+    }
+
     return attackSpeed;
   }
 
