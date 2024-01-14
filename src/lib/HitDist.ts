@@ -47,7 +47,7 @@ export function divisionTransformer(divisor: number, minimum: number = 0): HitTr
 
 export class WeightedHit {
     readonly probability: number;
-    private readonly hitsplats: number[];
+    readonly hitsplats: number[];
 
     public constructor(probability: number, hitsplats: number[]) {
         this.probability = probability;
@@ -93,10 +93,6 @@ export class WeightedHit {
 
     public getExpectedValue(): number {
         return this.probability * this.getSum();
-    }
-
-    public getHitsplats(): number[] {
-        return [...this.hitsplats];
     }
 
     public getHash(): number {
@@ -152,7 +148,7 @@ export class HitDistribution {
         return new HitDistribution(this.hits
             .map(h => new WeightedHit(
                 h.probability,
-                h.getHitsplats().map(s => Math.trunc(s * factor / divisor))
+                h.hitsplats.map(s => Math.trunc(s * factor / divisor))
             )));
     }
 
@@ -164,7 +160,7 @@ export class HitDistribution {
             const prev = acc.get(hash);
             if (prev === undefined) {
                 acc.set(hash, hit.probability);
-                hitLists.set(hash, hit.getHitsplats());
+                hitLists.set(hash, hit.hitsplats);
             } else {
                 acc.set(hash, prev + hit.probability);
             }

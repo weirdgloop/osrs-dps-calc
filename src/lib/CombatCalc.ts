@@ -1001,7 +1001,7 @@ export default class CombatCalc {
         new HitDistribution([
           ...standardHitDist.hits.map(h => new WeightedHit(
             h.probability * 0.25, // 25% chance to
-            [...h.getHitsplats(), ...h.getHitsplats().map(s => Math.trunc(s / 2))] // deal a second hitsplat of half damage
+            [...h.hitsplats, ...h.hitsplats.map(s => Math.trunc(s / 2))] // deal a second hitsplat of half damage
           )),
         ]),
       ]);
@@ -1254,7 +1254,7 @@ export default class CombatCalc {
         // 4. for each damage amount possible,
         for (let h of currDist.hits) {
           let dmgProb = h.probability;
-          let dmg = h.getHitsplats()[0]; // guaranteed to be length 1 from asSingleHitsplat
+          let dmg = h.hitsplats[0]; // guaranteed to be length 1 from asSingleHitsplat
 
           // 5. the chance of this path being reached is the previous chance of landing here * the chance of hitting this amount
           const chanceOfAction = dmgProb * hpProb;
