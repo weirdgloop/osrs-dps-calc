@@ -992,6 +992,10 @@ export default class CombatCalc {
       ])
     }
 
+    if (this.monster.name === 'Ice demon' && (isFireSpell(this.player.spell) || this.player.spell?.name === 'Flames of Zamorak')) {
+      // https://twitter.com/JagexAsh/status/1133350436554121216
+      dist = dist.scaleDamage(3, 2);
+    }
     if (this.wearing('Tome of fire') && isFireSpell(this.player.spell)) {
       dist = dist.scaleDamage(3, 2);
     }
@@ -1051,6 +1055,10 @@ export default class CombatCalc {
     }
     if (this.monster.name === 'Corporeal Beast' && !this.isWearingCorpbaneWeapon()) {
       dist = dist.transform(divisionTransformer(2));
+    }
+    if (this.monster.name === 'Ice demon' && !isFireSpell(this.player.spell) && this.player.spell?.name !== 'Flames of Zamorak') {
+      // https://twitter.com/JagexAsh/status/1133350436554121216
+      dist = dist.transform(divisionTransformer(3));
     }
 
     // now also cap hits indiscriminately by the monster's max health, in case it is higher
