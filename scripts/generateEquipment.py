@@ -141,7 +141,7 @@ def main():
             # ...items that are broken, inactive, locked, SW/Emir variants
             or re.match(r"^(Broken|Inactive|Locked|Soul Wars|Emir's Arena)$", equipment['version'])
             # ...items that are degraded variants
-            or re.match(r"^(25|50|75|100)$", equipment['version'])
+            or re.match(r"^(0|25|50|75|100)$", equipment['version'])
             # ...items from LMS (PvP only mode), or historical
             or re.search(r"\((Last Man Standing|historical)\)$", equipment['name'])
         ):
