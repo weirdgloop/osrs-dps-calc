@@ -453,6 +453,9 @@ export default class CombatCalc {
     }
     if (this.wearing('Arclight') && mattrs.includes(MonsterAttribute.DEMON)) {
       attackRoll = Math.trunc(attackRoll * 17/10);
+      if (this.monster.name === 'Duke Sucellus') {
+        attackRoll = Math.trunc(attackRoll * 7 / 10);
+      }
     }
     if (this.wearing('Dragon hunter lance') && mattrs.includes(MonsterAttribute.DRAGON)) {
       attackRoll = Math.trunc(attackRoll * 6/5);
@@ -525,6 +528,9 @@ export default class CombatCalc {
 
     if (this.wearing('Arclight') && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = Math.trunc(maxHit * 17/10);
+      if (this.monster.name === 'Duke Sucellus') {
+        maxHit = Math.trunc(maxHit * 7 / 10);
+      }
     }
     if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {
       maxHit = Math.trunc(baseDmg * 11/10); // TODO: confirm that this is the appropriate place
@@ -546,6 +552,9 @@ export default class CombatCalc {
     }
     if (this.wearing(['Silverlight', 'Darklight', 'Silverlight (dyed)']) && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = Math.trunc(maxHit * 8/5);
+      if (this.monster.name === 'Duke Sucellus') {
+        maxHit = Math.trunc(maxHit * 7 / 10);
+      }
     }
     if (this.wearing('Blisterwood flail') && isVampyre(mattrs)) {
       maxHit = Math.trunc(maxHit * 5/4);
@@ -745,6 +754,9 @@ export default class CombatCalc {
         // still retains a 20% accuracy buff without mark
         attackRoll = Math.trunc(attackRoll * 24 / 20);
       }
+      if (this.monster.name === 'Duke Sucellus') {
+        attackRoll = Math.trunc(attackRoll * 7 / 10);
+      }
     }
     if (this.wearing(["Thammaron's sceptre", "Accursed sceptre"]) && buffs.inWilderness) {
       attackRoll = Math.trunc(attackRoll * 3/2);
@@ -853,6 +865,9 @@ export default class CombatCalc {
 
     if (this.player.buffs.markOfDarknessSpell && this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = Math.trunc(maxHit * 25/20);
+      if (this.monster.name === 'Duke Sucellus') {
+        maxHit = Math.trunc(maxHit * 7 / 10);
+      }
     }
 
     return maxHit;
