@@ -24827,9 +24827,9 @@
     "attributes": []
   },
   {
-    "id": 2834,
+    "id": 6824,
     "name": "Giant bat",
-    "version": "Normal",
+    "version": "Arceuus",
     "image": "Giant bat.png",
     "level": 27,
     "speed": 4,
@@ -24862,11 +24862,44 @@
   {
     "id": 4504,
     "name": "Giant bat",
-    "version": "Sven's cave",
+    "version": "Brine Rat Cavern",
     "image": "Giant bat (Brine Rat Cavern).png",
     "level": 27,
     "speed": 4,
     "size": 1,
+    "skills": [
+      22,
+      22,
+      32,
+      1,
+      1,
+      22
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      12,
+      10,
+      8,
+      10,
+      10
+    ],
+    "attributes": []
+  },
+  {
+    "id": 2834,
+    "name": "Giant bat",
+    "version": "Normal",
+    "image": "Giant bat.png",
+    "level": 27,
+    "speed": 4,
+    "size": 2,
     "skills": [
       22,
       22,

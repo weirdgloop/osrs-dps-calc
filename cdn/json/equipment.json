@@ -15680,6 +15680,230 @@
     "isTwoHanded": false
   },
   {
+    "name": "Broken axe (adamant)",
+    "id": 504,
+    "version": "",
+    "slot": "weapon",
+    "image": "Broken axe (adamant).png",
+    "speed": 5,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
+    "name": "Broken axe (black)",
+    "id": 500,
+    "version": "",
+    "slot": "weapon",
+    "image": "Broken axe (black).png",
+    "speed": 5,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
+    "name": "Broken axe (bronze)",
+    "id": 494,
+    "version": "",
+    "slot": "weapon",
+    "image": "Broken axe (bronze).png",
+    "speed": 5,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
+    "name": "Broken axe (dragon)",
+    "id": 6741,
+    "version": "",
+    "slot": "weapon",
+    "image": "Broken axe (dragon).png",
+    "speed": 5,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
+    "name": "Broken axe (iron)",
+    "id": 496,
+    "version": "",
+    "slot": "weapon",
+    "image": "Broken axe (iron).png",
+    "speed": 5,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
+    "name": "Broken axe (mithril)",
+    "id": 502,
+    "version": "",
+    "slot": "weapon",
+    "image": "Broken axe (mithril).png",
+    "speed": 5,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
+    "name": "Broken axe (rune)",
+    "id": 506,
+    "version": "",
+    "slot": "weapon",
+    "image": "Broken axe (rune).png",
+    "speed": 5,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
+    "name": "Broken axe (steel)",
+    "id": 498,
+    "version": "",
+    "slot": "weapon",
+    "image": "Broken axe (steel).png",
+    "speed": 5,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
     "name": "Broken bark snelm",
     "id": 3335,
     "version": "",
@@ -15703,6 +15927,230 @@
       7,
       8,
       7,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
+    "name": "Broken pickaxe (adamant)",
+    "id": 476,
+    "version": "",
+    "slot": "weapon",
+    "image": "Broken pickaxe (adamant).png",
+    "speed": 5,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
+    "name": "Broken pickaxe (black)",
+    "id": 12594,
+    "version": "",
+    "slot": "weapon",
+    "image": "Broken pickaxe (black).png",
+    "speed": 5,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
+    "name": "Broken pickaxe (bronze)",
+    "id": 468,
+    "version": "",
+    "slot": "weapon",
+    "image": "Broken pickaxe (bronze).png",
+    "speed": 5,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
+    "name": "Broken pickaxe (dragon)",
+    "id": 11923,
+    "version": "",
+    "slot": "weapon",
+    "image": "Broken pickaxe (dragon).png",
+    "speed": 5,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
+    "name": "Broken pickaxe (iron)",
+    "id": 470,
+    "version": "",
+    "slot": "weapon",
+    "image": "Broken pickaxe (iron).png",
+    "speed": 5,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
+    "name": "Broken pickaxe (mithril)",
+    "id": 474,
+    "version": "",
+    "slot": "weapon",
+    "image": "Broken pickaxe (mithril).png",
+    "speed": 5,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
+    "name": "Broken pickaxe (rune)",
+    "id": 478,
+    "version": "",
+    "slot": "weapon",
+    "image": "Broken pickaxe (rune).png",
+    "speed": 5,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
+    "name": "Broken pickaxe (steel)",
+    "id": 472,
+    "version": "",
+    "slot": "weapon",
+    "image": "Broken pickaxe (steel).png",
+    "speed": 5,
+    "category": "",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
       0
     ],
     "isTwoHanded": false
@@ -21784,34 +22232,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Crystal axe",
-    "id": 23675,
-    "version": "Inactive",
-    "slot": "weapon",
-    "image": "Crystal axe (inactive).png",
-    "speed": 5,
-    "category": "Axe",
-    "offensive": [
-      32,
-      0,
-      0,
-      0,
-      0,
-      38,
-      -2,
-      42
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      1,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Crystal axe (The Gauntlet)",
     "id": 23862,
     "version": "",
@@ -22624,34 +23044,6 @@
     "isTwoHanded": true
   },
   {
-    "name": "Crystal felling axe",
-    "id": 28223,
-    "version": "Inactive",
-    "slot": "weapon",
-    "image": "Crystal felling axe (inactive).png",
-    "speed": 7,
-    "category": "Axe",
-    "offensive": [
-      51,
-      0,
-      0,
-      0,
-      0,
-      60,
-      -3,
-      67
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      1,
-      0,
-      0
-    ],
-    "isTwoHanded": true
-  },
-  {
     "name": "Crystal halberd",
     "id": 23987,
     "version": "Active",
@@ -23077,34 +23469,6 @@
     "version": "Active",
     "slot": "weapon",
     "image": "Crystal harpoon.png",
-    "speed": 5,
-    "category": "Stab Sword",
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      32,
-      38,
-      42
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      1,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Crystal harpoon",
-    "id": 23764,
-    "version": "Inactive",
-    "slot": "weapon",
-    "image": "Crystal harpoon (inactive).png",
     "speed": 5,
     "category": "Stab Sword",
     "offensive": [
@@ -23856,34 +24220,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Crystal pickaxe",
-    "id": 23682,
-    "version": "Inactive",
-    "slot": "weapon",
-    "image": "Crystal pickaxe (inactive).png",
-    "speed": 5,
-    "category": "Pickaxe",
-    "offensive": [
-      32,
-      0,
-      0,
-      0,
-      0,
-      -2,
-      38,
-      42
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      1,
-      0,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
     "name": "Crystal pickaxe (The Gauntlet)",
     "id": 23863,
     "version": "",
@@ -24404,6 +24740,34 @@
       -100,
       -100,
       -10
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  {
+    "name": "Cursed goblin bow",
+    "id": 11708,
+    "version": "",
+    "slot": "weapon",
+    "image": "Cursed goblin bow.png",
+    "speed": 6,
+    "category": "Bow",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "defensive": [
       0,
@@ -34300,6 +34664,34 @@
     "isTwoHanded": false
   },
   {
+    "name": "Goblin paint cannon",
+    "id": 12727,
+    "version": "",
+    "slot": "weapon",
+    "image": "Goblin paint cannon.png",
+    "speed": 3,
+    "category": "Unarmed",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": true
+  },
+  {
     "name": "Gold helmet",
     "id": 4567,
     "version": "",
@@ -36792,6 +37184,34 @@
     "isTwoHanded": false
   },
   {
+    "name": "Ham joint",
+    "id": 23360,
+    "version": "",
+    "slot": "weapon",
+    "image": "Ham joint.png",
+    "speed": 3,
+    "category": "Blunt",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
     "name": "Ham robe",
     "id": 4300,
     "version": "",
@@ -38528,6 +38948,34 @@
     "isTwoHanded": false
   },
   {
+    "name": "Imbued tephra",
+    "id": 23907,
+    "version": "",
+    "slot": "weapon",
+    "image": "Imbued tephra.png",
+    "speed": 3,
+    "category": "Unarmed",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
     "name": "Imbued zamorak cape",
     "id": 21795,
     "version": "Normal",
@@ -38579,6 +39027,34 @@
       0,
       3,
       3,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
+    "name": "Imcando hammer",
+    "id": 25644,
+    "version": "Repaired",
+    "slot": "weapon",
+    "image": "Imcando hammer.png",
+    "speed": 6,
+    "category": "Blunt",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
       0
     ],
     "isTwoHanded": false
@@ -50148,6 +50624,34 @@
     "isTwoHanded": true
   },
   {
+    "name": "Oily pearl fishing rod",
+    "id": 23122,
+    "version": "",
+    "slot": "weapon",
+    "image": "Oily pearl fishing rod.png",
+    "speed": 5,
+    "category": "Unarmed",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
     "name": "Onyx bolts",
     "id": 9342,
     "version": "",
@@ -50736,6 +51240,34 @@
     "isTwoHanded": false
   },
   {
+    "name": "Pearl barbarian rod",
+    "id": 22842,
+    "version": "",
+    "slot": "weapon",
+    "image": "Pearl barbarian rod.png",
+    "speed": 5,
+    "category": "Unarmed",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
     "name": "Pearl bolts",
     "id": 880,
     "version": "",
@@ -50833,6 +51365,62 @@
       0,
       0,
       122,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
+    "name": "Pearl fishing rod",
+    "id": 22846,
+    "version": "",
+    "slot": "weapon",
+    "image": "Pearl fishing rod.png",
+    "speed": 5,
+    "category": "Unarmed",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
+    "name": "Pearl fly fishing rod",
+    "id": 22844,
+    "version": "",
+    "slot": "weapon",
+    "image": "Pearl fly fishing rod.png",
+    "speed": 5,
+    "category": "Unarmed",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       0
@@ -57843,6 +58431,34 @@
       30,
       32,
       30,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
+    "name": "Sage's axe",
+    "id": 28773,
+    "version": "",
+    "slot": "weapon",
+    "image": "Sage's axe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
       0
     ],
     "isTwoHanded": false
@@ -66304,6 +66920,34 @@
     "isTwoHanded": false
   },
   {
+    "name": "Swift blade",
+    "id": 24219,
+    "version": "",
+    "slot": "weapon",
+    "image": "Swift blade.png",
+    "speed": 3,
+    "category": "Stab Sword",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
     "name": "Tanzanite helm",
     "id": 13197,
     "version": "Charged",
@@ -68992,6 +69636,34 @@
     "isTwoHanded": false
   },
   {
+    "name": "Trailblazer cane",
+    "id": 25013,
+    "version": "",
+    "slot": "weapon",
+    "image": "Trailblazer cane.png",
+    "speed": 5,
+    "category": "Spiked",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
     "name": "Trailblazer dragon trophy",
     "id": 25042,
     "version": "",
@@ -70023,6 +70695,34 @@
       58,
       24,
       22,
+      0
+    ],
+    "isTwoHanded": false
+  },
+  {
+    "name": "Twisted cane",
+    "id": 24395,
+    "version": "",
+    "slot": "weapon",
+    "image": "Twisted cane.png",
+    "speed": 5,
+    "category": "Spiked",
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
       0
     ],
     "isTwoHanded": false
@@ -71153,34 +71853,6 @@
     "version": "Active",
     "slot": "weapon",
     "image": "Vesta's blighted longsword.png",
-    "speed": 5,
-    "category": "Slash Sword",
-    "offensive": [
-      -2,
-      0,
-      0,
-      0,
-      0,
-      121,
-      106,
-      118
-    ],
-    "defensive": [
-      3,
-      0,
-      0,
-      4,
-      1,
-      0
-    ],
-    "isTwoHanded": false
-  },
-  {
-    "name": "Vesta's blighted longsword",
-    "id": 24619,
-    "version": "Inactive",
-    "slot": "weapon",
-    "image": "Vesta's longsword (inactive).png",
     "speed": 5,
     "category": "Slash Sword",
     "offensive": [

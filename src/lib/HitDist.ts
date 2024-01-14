@@ -239,6 +239,14 @@ export class AttackDistribution {
     );
 
     readonly dists: HitDistribution[];
+    private _singleHitsplat: HitDistribution | undefined = undefined;
+
+    get singleHitsplat(): HitDistribution {
+        if (this._singleHitsplat) {
+            return this._singleHitsplat;
+        }
+        return this._singleHitsplat = this.dists.reduce((prev, curr) => prev.zip(curr)).cumulative();
+    }
 
     constructor(dists: HitDistribution[]) {
         this.dists = dists;
@@ -246,11 +254,6 @@ export class AttackDistribution {
 
     public addDist(d: HitDistribution): void {
         this.dists.push(d);
-    }
-
-    public expectedDamage(): number {
-        return sum(this.dists
-            .map(d => d.expectedHit()));
     }
 
     public transform(t: HitTransformer): AttackDistribution {
@@ -277,12 +280,8 @@ export class AttackDistribution {
         return sum(this.dists.map(d => d.expectedHit())) || 0;
     }
 
-    public asSingleHitplat(): HitDistribution {
-        return this.dists.reduce((prev, curr) => prev.zip(curr)).cumulative();
-    }
-
     public asHistogram(): HistogramEntry[] {
-        const dist = this.asSingleHitplat();
+        const dist = this.singleHitsplat;
 
         const hitMap = new Map<number, number>();
         dist.hits.forEach(h => hitMap.set(h.getSum(), h.probability));
