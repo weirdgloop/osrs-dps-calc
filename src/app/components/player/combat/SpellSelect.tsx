@@ -32,17 +32,15 @@ const SpellSelect: React.FC = observer(() => {
   return (
     <Combobox<SpellOption>
       id={'spell-select'}
-      value={store.player.spell.name}
+      value={store.player.spell?.name}
       className={'w-full'}
       items={options}
       placeholder={'Search for spell...'}
       blurAfterSelect={true}
       onSelectedItemChange={(item) => {
-        if (item) {
-          store.updatePlayer({
-            spell: item.spell
-          })
-        }
+        store.updatePlayer({
+          spell: item?.spell
+        })
       }}
       CustomItemComponent={({item, itemString}) => {
         return (

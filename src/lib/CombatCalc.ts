@@ -1,7 +1,8 @@
 import {EquipmentPiece, Player} from '@/types/Player';
 import {Monster} from '@/types/Monster';
 import {
-  AttackDistribution, cappedReroll,
+  AttackDistribution,
+  cappedReroll,
   divisionTransformer,
   flatLimitTransformer,
   HitDistribution,
@@ -27,14 +28,17 @@ import {
   USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
   VERZIK_P1_IDS,
 } from "@/constants";
-import { EquipmentCategory } from '@/enums/EquipmentCategory';
+import {EquipmentCategory} from '@/enums/EquipmentCategory';
 import {scaledMonster} from "@/lib/MonsterScaling";
+import {CombatStyleStance} from "@/types/PlayerCombatStyle";
 
 const DEFAULT_ATTACK_SPEED = 4;
 const SECONDS_PER_TICK = 0.6;
 
 const TTK_DIST_MAX_ITER_ROUNDS = 1000;
 const TTK_DIST_EPSILON = 0.0001;
+
+const AUTOCAST_STANCES: CombatStyleStance[] = ['Autocast', 'Defensive Autocast'];
 
 export interface CalcOpts {
   overrides?: {
@@ -55,14 +59,27 @@ export default class CombatCalc {
   private memoizedDist: AttackDistribution | undefined = undefined;
 
   constructor(player: Player, monster: Monster, opts: Partial<CalcOpts> = {}) {
-    this.player = player;
-    this.monster = monster;
+    // clone all the inputs so that we can make edits without affecting ui state
+    this.player = {
+      ...player,
+    };
+    this.monster = {
+      ...monster,
+    };
     this.opts = {
       ...DEFAULT_OPTS,
       ...opts,
     }
 
+    this.sanitizeInputs();
+
     this.allEquippedItems = Object.values(player.equipment).filter((v) => v !== null).flat(1).map((eq: EquipmentPiece | null) => eq?.name || '');
+  }
+
+  private sanitizeInputs() {
+    if (!AUTOCAST_STANCES.includes(this.player.style.stance)) {
+      this.player.spell = undefined;
+    }
   }
 
   /**
@@ -313,7 +330,7 @@ export default class CombatCalc {
       return true;
     }
 
-    if (this.wearing('Slayer\'s staff') && this.player.spell.name === 'Magic Dart') {
+    if (this.wearing('Slayer\'s staff') && this.player.spell?.name === 'Magic Dart') {
       return true;
     }
 
@@ -366,7 +383,7 @@ export default class CombatCalc {
       return false;
     }
 
-    switch (this.player.spell.name) {
+    switch (this.player.spell?.name) {
       case 'Saradomin Strike':
         return this.wearing(['Saradomin cape', 'Imbued saradomin cape', 'Saradomin max cape', 'Imbued saradomin max cape']);
       case 'Claws of Guthix':
@@ -436,6 +453,9 @@ export default class CombatCalc {
     }
     if (this.wearing('Arclight') && mattrs.includes(MonsterAttribute.DEMON)) {
       attackRoll = Math.trunc(attackRoll * 17/10);
+      if (this.monster.name === 'Duke Sucellus') {
+        attackRoll = Math.trunc(attackRoll * 7 / 10);
+      }
     }
     if (this.wearing('Dragon hunter lance') && mattrs.includes(MonsterAttribute.DRAGON)) {
       attackRoll = Math.trunc(attackRoll * 6/5);
@@ -508,6 +528,9 @@ export default class CombatCalc {
 
     if (this.wearing('Arclight') && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = Math.trunc(maxHit * 17/10);
+      if (this.monster.name === 'Duke Sucellus') {
+        maxHit = Math.trunc(maxHit * 7 / 10);
+      }
     }
     if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {
       maxHit = Math.trunc(baseDmg * 11/10); // TODO: confirm that this is the appropriate place
@@ -529,6 +552,9 @@ export default class CombatCalc {
     }
     if (this.wearing(['Silverlight', 'Darklight', 'Silverlight (dyed)']) && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = Math.trunc(maxHit * 8/5);
+      if (this.monster.name === 'Duke Sucellus') {
+        maxHit = Math.trunc(maxHit * 7 / 10);
+      }
     }
     if (this.wearing('Blisterwood flail') && isVampyre(mattrs)) {
       maxHit = Math.trunc(maxHit * 5/4);
@@ -721,18 +747,21 @@ export default class CombatCalc {
       attackRoll = Math.trunc(attackRoll * 23/20);
     }
 
-    if (this.player.spell.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
+    if (this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
       if (this.player.buffs.markOfDarknessSpell) {
         attackRoll = Math.trunc(attackRoll * 28 / 20);
       } else {
         // still retains a 20% accuracy buff without mark
         attackRoll = Math.trunc(attackRoll * 24 / 20);
       }
+      if (this.monster.name === 'Duke Sucellus') {
+        attackRoll = Math.trunc(attackRoll * 7 / 10);
+      }
     }
     if (this.wearing(["Thammaron's sceptre", "Accursed sceptre"]) && buffs.inWilderness) {
       attackRoll = Math.trunc(attackRoll * 3/2);
     }
-    if (this.isWearingSmokeStaff() && this.player.spell.spellbook === 'standard') {
+    if (this.isWearingSmokeStaff() && this.player.spell?.spellbook === 'standard') {
       attackRoll = Math.trunc(attackRoll * 11/10);
     }
     if (this.wearing('Tome of water') && (isWaterSpell(this.player.spell) || isBindSpell(this.player.spell))) { // todo does this go here?
@@ -754,7 +783,7 @@ export default class CombatCalc {
     const mattrs = this.monster.attributes;
     const buffs = this.player.buffs;
 
-    if (spell.name === 'Magic Dart') {
+    if (spell?.name === 'Magic Dart') {
       if (this.wearing("Slayer's staff (e)") && buffs.onSlayerTask) {
         maxHit = Math.trunc(13 + magicLevel / 6);
       } else {
@@ -793,7 +822,7 @@ export default class CombatCalc {
     } else if (this.wearing('Black salamander')) {
       maxHit = Math.trunc((magicLevel * (92 + 64) + 320) / 640);
     } else {
-      maxHit = spell.max_hit || 0;
+      maxHit = spell?.max_hit || 0;
     }
 
     if (maxHit === 0) {
@@ -802,7 +831,7 @@ export default class CombatCalc {
       return 0;
     }
 
-    if (this.wearing('Chaos gauntlets') && spell.name.toLowerCase().includes('bolt')) {
+    if (this.wearing('Chaos gauntlets') && spell?.name.toLowerCase().includes('bolt')) {
       maxHit = maxHit + 3;
     }
     if (this.isChargeSpellApplicable()) {
@@ -817,7 +846,7 @@ export default class CombatCalc {
     if (this.isWearingEliteMagicVoid()) {
       magicDmgBonus = magicDmgBonus + 25;
     }
-    if (this.isWearingSmokeStaff() && spell.spellbook === 'standard') {
+    if (this.isWearingSmokeStaff() && spell?.spellbook === 'standard') {
       magicDmgBonus = magicDmgBonus + 100;
     }
 
@@ -834,8 +863,11 @@ export default class CombatCalc {
 
     if (blackMaskBonus) maxHit = Math.trunc(maxHit * 23/20);
 
-    if (this.player.buffs.markOfDarknessSpell && this.player.spell.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
+    if (this.player.buffs.markOfDarknessSpell && this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = Math.trunc(maxHit * 25/20);
+      if (this.monster.name === 'Duke Sucellus') {
+        maxHit = Math.trunc(maxHit * 7 / 10);
+      }
     }
 
     return maxHit;
@@ -992,6 +1024,10 @@ export default class CombatCalc {
       ])
     }
 
+    if (this.monster.name === 'Ice demon' && (isFireSpell(this.player.spell) || this.player.spell?.name === 'Flames of Zamorak')) {
+      // https://twitter.com/JagexAsh/status/1133350436554121216
+      dist = dist.scaleDamage(3, 2);
+    }
     if (this.wearing('Tome of fire') && isFireSpell(this.player.spell)) {
       dist = dist.scaleDamage(3, 2);
     }
@@ -1052,6 +1088,10 @@ export default class CombatCalc {
     if (this.monster.name === 'Corporeal Beast' && !this.isWearingCorpbaneWeapon()) {
       dist = dist.transform(divisionTransformer(2));
     }
+    if (this.monster.name === 'Ice demon' && !isFireSpell(this.player.spell) && this.player.spell?.name !== 'Flames of Zamorak') {
+      // https://twitter.com/JagexAsh/status/1133350436554121216
+      dist = dist.transform(divisionTransformer(3));
+    }
 
     // now also cap hits indiscriminately by the monster's max health, in case it is higher
     dist = dist.transform(flatLimitTransformer(this.monster.skills.hp));
@@ -1086,6 +1126,15 @@ export default class CombatCalc {
     if (this.monster.attributes.includes(MonsterAttribute.LEAFY) && !this.isWearingLeafBladedWeapon()) {
       return true;
     }
+    if (this.monster.name === 'Fire Warrior of Lesarkus' && 
+      (styleType !== 'ranged' || this.player.equipment.ammo?.name !== 'Ice arrows')) {
+      return true;
+    }
+    if (this.monster.name === 'Fareed' &&
+      !isWaterSpell(this.player.spell) || 
+        (styleType === 'ranged' && !this.player.equipment.ammo?.name?.includes('arrow'))) {
+      return true;
+    }
 
     return false;
   }
@@ -1095,9 +1144,14 @@ export default class CombatCalc {
    */
   public getAttackSpeed(): number {
     let attackSpeed = this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;
+
     if (this.player.style.stance === 'Rapid') {
       attackSpeed -= 1;
     }
+    if (this.player.equipment.weapon?.name === 'Harmonised nightmare staff' && this.player.spell?.spellbook === 'standard') {
+      attackSpeed -=1;
+    }
+
     return attackSpeed;
   }
 

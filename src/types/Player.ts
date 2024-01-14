@@ -111,5 +111,5 @@ export interface Player {
      */
     markOfDarknessSpell: boolean;
   }
-  spell: Spell
+  spell?: Spell
 }
