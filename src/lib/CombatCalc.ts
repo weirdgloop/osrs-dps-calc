@@ -41,12 +41,15 @@ const TTK_DIST_EPSILON = 0.0001;
 const AUTOCAST_STANCES: CombatStyleStance[] = ['Autocast', 'Defensive Autocast'];
 
 export interface CalcOpts {
+  loadoutIx: number,
   overrides?: {
     accuracy?: number,
   }
 }
 
-const DEFAULT_OPTS: CalcOpts = {};
+const DEFAULT_OPTS: CalcOpts = {
+  loadoutIx: -1,
+};
 
 export default class CombatCalc {
   private player: Player;
@@ -1060,14 +1063,27 @@ export default class CombatCalc {
         ]));
       }
 
-      // if (this.wearing(['Opal bolts (e)', 'Opal dragon bolts (e)'])) {
-      //   const chance = 0.05 * kandarinDiaryFactor;
-      //   const bonusDmg = Math.trunc(rangedLvl / (zaryte ? 9 : 10));
-      //   dist = dist.transform(h => new HitDistribution([
-      //     new WeightedHit(h, [h + bonusDmg]),
-      //     new WeightedHit(1 - h, [h]),
-      //   ]));
-      // }
+      // todo are pearl bolts affected by zcb? wiki doesn't list them
+      if (this.wearing(['Pearl bolts (e)', 'Pearl dragon bolts (e)'])) {
+        const chance = 0.06 * kandarinDiaryFactor;
+        const bonusDmg = Math.trunc(rangedLvl / (mattrs.includes(MonsterAttribute.FIERY) ? 15 : 20));
+        dist = dist.transform(h => new HitDistribution([
+          new WeightedHit(chance, [h + bonusDmg]),
+          new WeightedHit(1 - chance, [h]),
+        ]));
+      }
+
+      if (this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)'])) {
+        const chance = 0.06 * kandarinDiaryFactor;
+        const effectDmg = Math.min(100, Math.trunc(this.monster.monsterCurrentHp / 5));
+        dist = new AttackDistribution([
+          new HitDistribution([
+            ...standardHitDist.scaleProbability(1 - chance).hits,
+            new WeightedHit(this.getHitChance() * chance, [effectDmg]),
+            new WeightedHit((1 - this.getHitChance()) * chance, [0]),
+          ]),
+        ]);
+      }
 
     }
 
@@ -1235,10 +1251,8 @@ export default class CombatCalc {
    * it is an object where keys are tick counts and values are probabilities.
    */
   public getTtkDistribution(): Map<number, number> {
-    const recalcDistOnHp = CombatCalc.distIsCurrentHpDependent(this.player, this.monster);
-
     const speed = this.getAttackSpeed();
-    const dist = this.getDistribution().asSingleHitplat();
+    const dist = this.getDistribution().singleHitsplat;
     if (dist.expectedHit() === 0) {
       return new Map<number, number>();
     }
@@ -1255,29 +1269,25 @@ export default class CombatCalc {
     let epsilon = 1.0;
 
     // if the hit dist depends on hp, we'll have to recalculate it each time, so cache the results to not repeat work
+    const recalcDistOnHp = CombatCalc.distIsCurrentHpDependent(this.player, this.monster);
     const hpHitDists = new Map<number, HitDistribution>();
     hpHitDists.set(this.monster.skills.hp, dist);
+    if (recalcDistOnHp) {
+      for (let hp = 0; hp < this.monster.skills.hp; hp++) {
+        hpHitDists.set(hp, this.distAtHp(hp));
+      }
+    }
 
     // 1. until the amount of hp values remaining above zero is more than our desired epsilon accuracy,
     //    or we reach the maximum iteration rounds
-    for (let hit = 0; hit < (TTK_DIST_MAX_ITER_ROUNDS + 1) && epsilon > TTK_DIST_EPSILON; hit++) {
-      // 2. track the sum total of probability-paths that reach zero on this iteration
-      let delta = 0.0;
-
+    for (let hit = 0; hit < (TTK_DIST_MAX_ITER_ROUNDS + 1) && epsilon >= TTK_DIST_EPSILON; hit++) {
       const nextHps = new Float64Array(this.monster.skills.hp + 1);
 
       // 3. for each possible hp value,
       for (let [hp, hpProb] of hps.entries()) {
         // this is a bit of a hack, but idk if there's a better way
-        let currDist: HitDistribution = dist;
-        if (recalcDistOnHp) {
-          let cachedDist = hpHitDists.get(hp);
-          if (!cachedDist) {
-            hpHitDists.set(hp, cachedDist = this.distAtHp(hp));
-          }
-          currDist = cachedDist;
-        }
-        
+        const currDist: HitDistribution = recalcDistOnHp ? hpHitDists.get(hp)! : dist;
+
         // 4. for each damage amount possible,
         for (let h of currDist.hits) {
           let dmgProb = h.probability;
@@ -1285,7 +1295,9 @@ export default class CombatCalc {
 
           // 5. the chance of this path being reached is the previous chance of landing here * the chance of hitting this amount
           const chanceOfAction = dmgProb * hpProb;
-          if (chanceOfAction === 0) continue;
+          if (chanceOfAction === 0) {
+            continue;
+          }
 
           const newHp = hp - dmg;
 
@@ -1294,7 +1306,7 @@ export default class CombatCalc {
           if (newHp <= 0) {
             const tick = hit * speed + 1;
             ttks.set(tick, (ttks.get(tick) || 0) + chanceOfAction);
-            delta += chanceOfAction;
+            epsilon -= chanceOfAction;
           }
 
           // 7. otherwise, we add the chance of this path to the next iteration's hp value
@@ -1305,8 +1317,8 @@ export default class CombatCalc {
       }
 
       // 8. update counters and repeat
-      epsilon -= delta;
       hps = nextHps;
+      console.debug(hit)
     }
 
     return ttks;
@@ -1314,7 +1326,17 @@ export default class CombatCalc {
 
   distAtHp(hp: number): HitDistribution {
     if (!CombatCalc.distIsCurrentHpDependent(this.player, this.monster) || hp === this.monster.monsterCurrentHp) {
-      return this.getDistribution().asSingleHitplat();
+      return this.getDistribution().singleHitsplat;
+    }
+
+    // a special case for optimization, ruby bolts only change dps under 500 hp
+    // so for high health targets, avoid recomputing dist until then
+    if (this.player.style.type === 'ranged'
+      && this.player.equipment.weapon?.name.includes('rossbow') 
+      && ['Ruby bolts (e)', 'Ruby dragon bolts (e)'].includes(this.player.equipment.ammo?.name || '')
+      && this.monster.monsterCurrentHp >= 500
+      && hp >= 500) {
+      return this.getDistribution().singleHitsplat;
     }
 
     return new CombatCalc(
@@ -1324,10 +1346,8 @@ export default class CombatCalc {
         monsterCurrentHp: hp,
       }),
       this.opts,
-    ).getDistribution().asSingleHitplat();
+    ).getDistribution().singleHitsplat;
   }
-
-  
 
   public static distIsCurrentHpDependent(loadout: Player, monster: Monster): boolean {
     if (monster.name === 'Vardorvis') {

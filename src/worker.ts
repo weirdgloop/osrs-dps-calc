@@ -23,7 +23,9 @@ const computeValues = async (loadouts: Player[], m: Monster, calcOpts: WorkerCal
 
   for (let [i, p] of loadouts.entries()) {
     const start = new Date().getTime();
-    let calc = new CombatCalc(p, m);
+    let calc = new CombatCalc(p, m, {
+      loadoutIx: i + 1,
+    });
     res.push({
       npcDefRoll: calc.getNPCDefenceRoll(),
       maxHit: calc.getDistribution().getMax(),

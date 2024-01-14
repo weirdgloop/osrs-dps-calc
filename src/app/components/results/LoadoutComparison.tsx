@@ -37,6 +37,7 @@ enum XAxisType {
 enum YAxisType {
   // TTK,
   DPS,
+  EXPECTED_HIT,
   // DAMAGE_TAKEN
 }
 
@@ -230,6 +231,7 @@ function* inputRange(
 
 const YAxisOptions = [
   {label: 'Player damage-per-second', value: YAxisType.DPS},
+  {label: 'Expected hit', value: YAxisType.EXPECTED_HIT},
   // {label: 'Time-to-kill', value: YAxisType.TTK},
   // {label: 'Damage taken', value: YAxisType.DAMAGE_TAKEN}
 ]
@@ -242,6 +244,8 @@ const getOutput = (
   switch (yAxisType) {
     case YAxisType.DPS:
       return new CombatCalc(loadout, monster).getDps();
+    case YAxisType.EXPECTED_HIT:
+      return new CombatCalc(loadout, monster).getDistribution().getExpectedDamage();
 
     default:
       throw new Error(`Unimplemented yAxisType ${yAxisType}`);
