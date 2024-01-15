@@ -1089,6 +1089,39 @@ export default class CombatCalc {
           ]),
         ]);
       }
+
+      if (this.wearing(['Diamond bolts (e)', 'Diamond dragon bolts (e)'])) {
+        const chance = 0.1 * kandarinDiaryFactor;
+        const effectMax = Math.trunc(max * (zaryte ? 26 : 15) / 100);
+        dist = new AttackDistribution([
+          new HitDistribution([
+            ...standardHitDist.scaleProbability(1 - chance).hits,
+            ...HitDistribution.linear(1.0, 0, effectMax).scaleProbability(chance).hits,
+          ]),
+        ]);
+      }
+
+      if (this.wearing(['Dragonstone bolts (e)', 'Dragonstone dragon bolts (e)']) && (!mattrs.includes(MonsterAttribute.FIERY) || !mattrs.includes(MonsterAttribute.DRAGON))) {
+        const chance = 0.06 * kandarinDiaryFactor;
+        const effectDmg = Math.trunc(rangedLvl * (zaryte ? 22 : 20) / 100);
+        dist = new AttackDistribution([
+          new HitDistribution([
+            ...standardHitDist.scaleProbability(1 - chance).hits,
+            ...HitDistribution.linear(acc, effectDmg, max + effectDmg).scaleProbability(chance).hits,
+          ]),
+        ]);
+      }
+
+      if (this.wearing(['Onyx bolts (e)', 'Onyx dragon bolts (e)']) && !mattrs.includes(MonsterAttribute.UNDEAD)) {
+        const chance = 0.1 * kandarinDiaryFactor;
+        const effectDmg = Math.trunc(rangedLvl * (zaryte ? 32 : 20) / 100);
+        dist = new AttackDistribution([
+          new HitDistribution([
+            ...standardHitDist.scaleProbability(1 - chance).hits,
+            ...HitDistribution.linear(acc, effectDmg, max + effectDmg).scaleProbability(chance).hits,
+          ]),
+        ]);
+      }
     }
 
     return this.applyLimiters(dist);
