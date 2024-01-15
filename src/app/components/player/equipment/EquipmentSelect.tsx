@@ -1,11 +1,11 @@
-import React, {useMemo} from 'react';
-import {useStore} from '@/state';
-import {observer} from 'mobx-react-lite';
-import {getCdnImage} from '@/utils';
-import {EquipmentPiece} from '@/types/Player';
+import React, { useMemo } from 'react';
+import { useStore } from '@/state';
+import { observer } from 'mobx-react-lite';
+import { getCdnImage } from '@/utils';
+import { EquipmentPiece } from '@/types/Player';
+import LazyImage from '@/app/components/generic/LazyImage';
+import { cross } from 'd3-array';
 import Combobox from '../../generic/Combobox';
-import LazyImage from "@/app/components/generic/LazyImage";
-import {cross} from "d3-array";
 
 interface EquipmentOption {
   label: string;
@@ -16,20 +16,20 @@ interface EquipmentOption {
 }
 
 const BLOWPIPE_IDS: string[] = [
-  "12926", // regular
-  "28688", // blazing
+  '12926', // regular
+  '28688', // blazing
 ];
 
 const DART_IDS: string[] = [
-  "806", // bronze
-  "807", // iron
-  "808", // steel
-  "809", // mithril
-  "810", // adamant
-  "811", // rune
-  "3093", // black
-  "11230", // dragon
-  "25849", // amethyst
+  '806', // bronze
+  '807', // iron
+  '808', // steel
+  '809', // mithril
+  '810', // adamant
+  '811', // rune
+  '3093', // black
+  '11230', // dragon
+  '25849', // amethyst
 ];
 
 const EquipmentSelect: React.FC = observer(() => {
@@ -40,13 +40,13 @@ const EquipmentSelect: React.FC = observer(() => {
     const dartEntries: EquipmentOption[] = [];
 
     const entries: EquipmentOption[] = [];
-    for (let v of store.availableEquipment) {
-      let e: EquipmentOption = {
+    for (const v of store.availableEquipment) {
+      const e: EquipmentOption = {
         label: `${v.name}`,
         value: v.id.toString(),
         version: v.version || '',
         slot: v.slot,
-        equipment: v
+        equipment: v,
       };
 
       if (BLOWPIPE_IDS.includes(e.value)) {
@@ -72,45 +72,48 @@ const EquipmentSelect: React.FC = observer(() => {
             newStrength,
             ...blowpipe.equipment.offensive.slice(5),
           ],
-        }
+        },
       });
     });
 
     return entries;
-  }, [store.availableEquipment])
+  }, [store.availableEquipment]);
 
   return (
     <Combobox<EquipmentOption>
-      id={'equipment-select'}
-      className={'w-full'}
+      id="equipment-select"
+      className="w-full"
       items={options}
-      keepOpenAfterSelect={true}
-      keepPositionAfterSelect={true}
-      placeholder={'Search for equipment...'}
+      keepOpenAfterSelect
+      keepPositionAfterSelect
+      placeholder="Search for equipment..."
       onSelectedItemChange={(item) => {
         if (item) {
           store.updatePlayer({
             equipment: {
-              [item.equipment.slot]: item.equipment
-            }
-          })
+              [item.equipment.slot]: item.equipment,
+            },
+          });
         }
       }}
-      CustomItemComponent={({item, itemString}) => {
-        return (
-          <div className={'flex items-center gap-2'}>
-            <div className={'basis-4 flex justify-center h-[20px] w-auto'}>
-              {item.equipment.image && (<LazyImage responsive={true} src={item.equipment.image ? getCdnImage(`equipment/${item.equipment.image}`) : undefined} alt={''} />)}
-            </div>
-            <div>
-              {itemString}
-              {item.version && <span className={'monster-version text-xs text-gray-400 dark:text-gray-300'}>#{item.version}</span>}
-            </div>
+      CustomItemComponent={({ item, itemString }) => (
+        <div className="flex items-center gap-2">
+          <div className="basis-4 flex justify-center h-[20px] w-auto">
+            {item.equipment.image && (<LazyImage responsive src={item.equipment.image ? getCdnImage(`equipment/${item.equipment.image}`) : undefined} alt="" />)}
           </div>
-        )
-      }}
+          <div>
+            {itemString}
+            {item.version && (
+              <span className="monster-version text-xs text-gray-400 dark:text-gray-300">
+                #
+                {item.version}
+              </span>
+            )}
+          </div>
+        </div>
+      )}
     />
-  )
-})
+  );
+});
 
 export default EquipmentSelect;

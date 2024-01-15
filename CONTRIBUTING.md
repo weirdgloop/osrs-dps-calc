@@ -24,6 +24,13 @@ The web app is contained inside the `src/app` directory. This project uses [Next
 
 The `src/lib` directory contains the "core" code for the calculator itself. This code is heavily based on [some psuedocode](https://oldschool.runescape.wiki/w/RuneScape:Sandbox/combat_pseudocode) written collaboratively by the community.
 
+### JS/TS style guide
+We lint the project using [`eslint`](https://eslint.org/). We tend to follow the [Airbnb style guide](https://github.com/airbnb/javascript) for JavaScript closely. Any JS/TS code that you write should adhere to this style guide. There are several eslint rules that are turned off or reconfigured because they are not beneficial for readability of our code, you can check [.eslintrc.cjs](/.eslintrc.cjs) for the disabled rules.
+
+Most JavaScript IDEs will detect eslint and warn you accordingly of any problems. If you're using Visual Studio Code, [install this plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+
+You can also run `yarn lint`, which will check for any issues with your code.
+
 ### Scripts
 The `scripts` directory contains several Python 3 scripts that are used for generating the dataset required by this appliocation.
 

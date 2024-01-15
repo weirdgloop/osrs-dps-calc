@@ -6,20 +6,20 @@ export interface Spell {
 }
 
 export function isFireSpell(spell?: Spell): boolean {
-  return spell !== undefined &&
-      ['Fire Strike', 'Fire Bolt', 'Fire Blast', 'Fire Wave', 'Fire Surge']
-          .includes(spell.name);
+  return spell !== undefined
+      && ['Fire Strike', 'Fire Bolt', 'Fire Blast', 'Fire Wave', 'Fire Surge']
+        .includes(spell.name);
 }
 
 export function isWaterSpell(spell?: Spell): boolean {
-  return spell !== undefined &&
-      ['Water Strike', 'Water Bolt', 'Water Blast', 'Water Wave', 'Water Surge']
-          .includes(spell.name);
+  return spell !== undefined
+      && ['Water Strike', 'Water Bolt', 'Water Blast', 'Water Wave', 'Water Surge']
+        .includes(spell.name);
 }
 
 export function isBindSpell(spell?: Spell): boolean {
-  return spell !== undefined &&
-    ['Bind', 'Snare', 'Entangle'] // todo bind isn't actually added yet, but future-proofing
+  return spell !== undefined
+    && ['Bind', 'Snare', 'Entangle'] // todo bind isn't actually added yet, but future-proofing
       .includes(spell.name);
 }
 

@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from 'react';
 
 interface AttackSpeedProgressBarProps {
   speed: number;
 }
 
 const AttackSpeedProgressBar: React.FC<AttackSpeedProgressBarProps> = (props) => {
-  const {speed} = props;
+  const { speed } = props;
   const [speedPerc, setSpeedPerc] = useState(0);
 
   useEffect(() => {
@@ -18,29 +18,31 @@ const AttackSpeedProgressBar: React.FC<AttackSpeedProgressBarProps> = (props) =>
   const determineSpeedBg = () => {
     if (speedPerc > 90) {
       return 'bg-red-300';
-    } else if (speedPerc > 50) {
+    } if (speedPerc > 50) {
       return 'bg-orange-300';
-    } else if (speedPerc > 35) {
+    } if (speedPerc > 35) {
       return 'bg-yellow-300';
-    } else {
-      return 'bg-green-300';
     }
-  }
+    return 'bg-green-300';
+  };
 
   return (
     <>
       <div className="mt-2 w-full bg-body-500 rounded-full">
         <div
           className={`${determineSpeedBg()} transition-[width,background] text-xs font-medium text-black text-center p-0.5 leading-none rounded-full`}
-          style={{width: `${speedPerc}%`}}>{speed}s
+          style={{ width: `${speedPerc}%` }}
+        >
+          {speed}
+          s
         </div>
       </div>
-      <div className={'mt-1 mb-4 flex justify-between text-xs text-gray-500'}>
+      <div className="mt-1 mb-4 flex justify-between text-xs text-gray-500">
         <p>Fast</p>
         <p>Slow</p>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default AttackSpeedProgressBar;

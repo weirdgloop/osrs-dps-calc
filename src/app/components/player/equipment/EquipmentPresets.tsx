@@ -1,29 +1,27 @@
-import Select from "@/app/components/generic/Select";
-import React, {useCallback} from "react";
-import {EquipmentPreset} from "@/enums/EquipmentPreset";
-import {useStore} from "@/state";
-import {PartialDeep} from "type-fest";
-import {Player} from "@/types/Player";
+import Select from '@/app/components/generic/Select';
+import React, { useCallback } from 'react';
+import EquipmentPreset from '@/enums/EquipmentPreset';
+import { useStore } from '@/state';
+import { PartialDeep } from 'type-fest';
+import { Player } from '@/types/Player';
 
 const EquipmentPresets: React.FC = () => {
   const store = useStore();
-  const {availableEquipment} = store;
+  const { availableEquipment } = store;
 
   const presets = [
-    {label: 'Dharok\'s equipment', value: EquipmentPreset.DHAROKS},
-    {label: 'Max Melee', value: EquipmentPreset.MAX_MELEE},
-    {label: 'Max Ranged', value: EquipmentPreset.MAX_RANGED},
-    {label: 'Verac\'s equipment', value: EquipmentPreset.VERACS},
-    {label: 'Void (Melee)', value: EquipmentPreset.VOID_MELEE},
-    {label: 'Void (Ranged)', value: EquipmentPreset.VOID_RANGED},
-  ]
+    { label: 'Dharok\'s equipment', value: EquipmentPreset.DHAROKS },
+    { label: 'Max Melee', value: EquipmentPreset.MAX_MELEE },
+    { label: 'Max Ranged', value: EquipmentPreset.MAX_RANGED },
+    { label: 'Verac\'s equipment', value: EquipmentPreset.VERACS },
+    { label: 'Void (Melee)', value: EquipmentPreset.VOID_MELEE },
+    { label: 'Void (Ranged)', value: EquipmentPreset.VOID_RANGED },
+  ];
 
-  const onSelect = useCallback((v: {label: string, value: EquipmentPreset} | null | undefined) => {
+  const onSelect = useCallback((v: { label: string, value: EquipmentPreset } | null | undefined) => {
     let newPlayer: PartialDeep<Player> = {};
 
-    const findItemById = (id: number) => {
-      return availableEquipment.find((eq) => eq.id === id);
-    }
+    const findItemById = (id: number) => availableEquipment.find((eq) => eq.id === id);
 
     switch (v?.value) {
       case EquipmentPreset.DHAROKS: {
@@ -40,8 +38,8 @@ const EquipmentPresets: React.FC = () => {
             hands: findItemById(22981), // Ferocious gloves
             feet: findItemById(13239), // Primordial boots
             ring: findItemById(28307), // Ultor ring
-          }
-        }
+          },
+        };
         break;
       }
       case EquipmentPreset.MAX_MELEE: {
@@ -56,8 +54,8 @@ const EquipmentPresets: React.FC = () => {
             hands: findItemById(22981), // Ferocious gloves
             feet: findItemById(13239), // Primordial boots
             ring: findItemById(28307), // Ultor ring
-          }
-        }
+          },
+        };
         break;
       }
       case EquipmentPreset.MAX_RANGED: {
@@ -72,8 +70,8 @@ const EquipmentPresets: React.FC = () => {
             hands: findItemById(26235), // Zaryte vambraces
             feet: findItemById(13237), // Pegasian boots
             ring: findItemById(28310), // Venator ring
-          }
-        }
+          },
+        };
         break;
       }
       case EquipmentPreset.VOID_MELEE: {
@@ -88,8 +86,8 @@ const EquipmentPresets: React.FC = () => {
             hands: findItemById(8842), // Void knight gloves
             feet: findItemById(13239), // Primordial boots
             ring: findItemById(28307), // Ultor ring
-          }
-        }
+          },
+        };
         break;
       }
       case EquipmentPreset.VOID_RANGED: {
@@ -104,8 +102,8 @@ const EquipmentPresets: React.FC = () => {
             hands: findItemById(8842), // Void knight gloves
             feet: findItemById(13237), // Pegasian boots
             ring: findItemById(28310), // Venator ring
-          }
-        }
+          },
+        };
         break;
       }
       case EquipmentPreset.VERACS: {
@@ -122,26 +120,28 @@ const EquipmentPresets: React.FC = () => {
             hands: findItemById(22981), // Ferocious gloves
             feet: findItemById(13239), // Primordial boots
             ring: findItemById(28307), // Ultor ring
-          }
-        }
+          },
+        };
         break;
       }
+      default:
+        break;
     }
 
     if (Object.keys(newPlayer).length > 0) {
-      store.updatePlayer(newPlayer)
+      store.updatePlayer(newPlayer);
     }
-  }, [store, availableEquipment])
+  }, [store, availableEquipment]);
 
   return (
-    <Select
-      id={'presets'}
+    <Select<{ label: string, value: EquipmentPreset }>
+      id="presets"
       items={presets}
-      placeholder={'Presets'}
-      resetAfterSelect={true}
+      placeholder="Presets"
+      resetAfterSelect
       onSelectedItemChange={onSelect}
     />
-  )
-}
+  );
+};
 
 export default EquipmentPresets;

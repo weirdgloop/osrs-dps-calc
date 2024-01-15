@@ -1,22 +1,22 @@
 'use client';
 
-import type {NextPage} from 'next';
+import type { NextPage } from 'next';
 import MonsterContainer from '@/app/components/monster/MonsterContainer';
-import {Tooltip} from 'react-tooltip';
-import React, {Suspense, useEffect} from 'react';
-import {observer} from 'mobx-react-lite';
-import {useStore} from '@/state';
-import {ToastContainer} from 'react-toastify';
-import PlayerContainer from "@/app/components/player/PlayerContainer";
-import ResultsContainer from "@/app/components/results/ResultsContainer";
-import {WorkerResponses, WorkerResponseType} from "@/types/WorkerData";
-import {IReactionPublic, reaction, toJS} from "mobx";
-import {WORKER_JSON_REVIVER} from "@/utils";
-import PreferencesModal from "@/app/components/PreferencesModal";
-import InitialLoad from "@/app/components/InitialLoad";
-import LoadoutComparison from "@/app/components/results/LoadoutComparison";
-import TtkComparison from "@/app/components/results/TtkComparison";
-import ShareModal from "@/app/components/ShareModal";
+import { Tooltip } from 'react-tooltip';
+import React, { Suspense, useEffect } from 'react';
+import { observer } from 'mobx-react-lite';
+import { useStore } from '@/state';
+import { ToastContainer } from 'react-toastify';
+import PlayerContainer from '@/app/components/player/PlayerContainer';
+import ResultsContainer from '@/app/components/results/ResultsContainer';
+import { WorkerResponses, WorkerResponseType } from '@/types/WorkerData';
+import { IReactionPublic, reaction, toJS } from 'mobx';
+import { WORKER_JSON_REVIVER } from '@/utils';
+import PreferencesModal from '@/app/components/PreferencesModal';
+import InitialLoad from '@/app/components/InitialLoad';
+import LoadoutComparison from '@/app/components/results/LoadoutComparison';
+import TtkComparison from '@/app/components/results/TtkComparison';
+import ShareModal from '@/app/components/ShareModal';
 
 const Home: NextPage = observer(() => {
   const store = useStore();
@@ -30,19 +30,19 @@ const Home: NextPage = observer(() => {
       // Depending on the response type, do things...
       switch (data.type) {
         case WorkerResponseType.COMPUTED_VALUES:
-          store.updateCalculator({loadouts: data.data});
+          store.updateCalculator({ loadouts: data.data });
           break;
         default:
           break;
       }
-    }
+    };
     store.setWorker(worker);
 
     return () => {
       // Terminate the worker when we un-mount this component
       worker?.terminate();
       store.setWorker(null);
-    }
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -55,20 +55,21 @@ const Home: NextPage = observer(() => {
       case '2':
       case '3':
       case '4':
-      case '5':
+      case '5': {
         // Handle quickly switching between loadouts (max 5)
         const key = parseInt(e.key) - 1;
         if (store.loadouts[key] !== undefined) {
           store.setSelectedLoadout(key);
         }
-        break
+        break;
+      }
       default:
-        return true;
+        break;
     }
 
     // If we get here, we've handled the event, so prevent it bubbling
     e.preventDefault();
-  }
+  };
 
   useEffect(() => {
     // Load preferences from browser storage if there are any
@@ -79,7 +80,7 @@ const Home: NextPage = observer(() => {
 
     return () => {
       document.removeEventListener('keydown', globalKeyDownHandler);
-    }
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -94,18 +95,18 @@ const Home: NextPage = observer(() => {
     const recompute = () => store.doWorkerRecompute();
 
     // When a calculator input changes, trigger a re-compute on the worker
-    const triggers: ((r: IReactionPublic) => any)[] = [
+    const triggers: ((r: IReactionPublic) => unknown)[] = [
       () => toJS(store.loadouts),
       () => toJS(store.monster),
       () => toJS(store.prefs.showTtkComparison),
     ];
-    const reactions = triggers.map(t => reaction(t, recompute, {fireImmediately: true}))
+    const reactions = triggers.map((t) => reaction(t, recompute, { fireImmediately: true }));
 
     return () => {
-      for (let r of reactions) {
+      for (const r of reactions) {
         r();
       }
-    }
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -115,8 +116,8 @@ const Home: NextPage = observer(() => {
         <InitialLoad />
       </Suspense>
       {/* Main container */}
-      <div className={'max-w-[1420px] mx-auto my-8'}>
-        <div className={'flex gap-2 flex-wrap justify-center'}>
+      <div className="max-w-[1420px] mx-auto my-8">
+        <div className="flex gap-2 flex-wrap justify-center">
           <PlayerContainer />
           <MonsterContainer />
           <ResultsContainer />
@@ -128,45 +129,53 @@ const Home: NextPage = observer(() => {
           store.prefs.showLoadoutComparison
           || store.prefs.showTtkComparison
         ) && (
-          <div className={'bg-btns-100 dark:bg-dark-300 border-t-8 border-body-500 dark:border-dark-200 text-white px-4'}>
-            <div className={'max-w-[1420px] mx-auto py-6'}>
+          <div className="bg-btns-100 dark:bg-dark-300 border-t-8 border-body-500 dark:border-dark-200 text-white px-4">
+            <div className="max-w-[1420px] mx-auto py-6">
               {
                 store.prefs.showLoadoutComparison ? (
-                  <div className={'grow bg-tile dark:bg-dark-500 md:rounded shadow-lg max-w-[100vw] my-4 text-black'}>
+                  <div className="grow bg-tile dark:bg-dark-500 md:rounded shadow-lg max-w-[100vw] my-4 text-black">
                     <div
-                      className={'px-6 py-4 bg-btns-200 dark:bg-dark-400 dark:border-dark-200 text-white md:rounded-t border-b-4 border-body-300'}>
-                      <h3 className={'font-serif font-bold'}>Loadout Comparison</h3>
+                      className="px-6 py-4 bg-btns-200 dark:bg-dark-400 dark:border-dark-200 text-white md:rounded-t border-b-4 border-body-300"
+                    >
+                      <h3 className="font-serif font-bold">Loadout Comparison</h3>
                     </div>
-                    <div className={'px-6 py-4'}>
-                      <LoadoutComparison/>
+                    <div className="px-6 py-4">
+                      <LoadoutComparison />
                     </div>
                   </div>
-                ) : <></>
+                ) : null
               }
               {
                 store.prefs.showTtkComparison ? (
-                  <div className={'grow bg-tile dark:bg-dark-500 md:rounded shadow-lg max-w-[100vw] my-4 text-black'}>
+                  <div className="grow bg-tile dark:bg-dark-500 md:rounded shadow-lg max-w-[100vw] my-4 text-black">
                     <div
-                      className={'px-6 py-4 bg-btns-200 dark:bg-dark-400 dark:border-dark-200 text-white md:rounded-t border-b-4 border-body-300'}>
-                      <h3 className={'font-serif font-bold'}>Time-to-Kill Comparison</h3>
+                      className="px-6 py-4 bg-btns-200 dark:bg-dark-400 dark:border-dark-200 text-white md:rounded-t border-b-4 border-body-300"
+                    >
+                      <h3 className="font-serif font-bold">Time-to-Kill Comparison</h3>
                     </div>
-                    <div className={'px-6 py-4'}>
-                      <TtkComparison/>
+                    <div className="px-6 py-4">
+                      <TtkComparison />
                     </div>
                   </div>
-                ) : <></>
+                ) : null
               }
             </div>
           </div>
         )
       }
-      <Tooltip id={'tooltip'}/>
-      <ToastContainer position={'bottom-right'} hideProgressBar={true} draggable={false} limit={3} closeButton={false}
-                      className={'text-sm'}/>
+      <Tooltip id="tooltip" />
+      <ToastContainer
+        position="bottom-right"
+        hideProgressBar
+        draggable={false}
+        limit={3}
+        closeButton={false}
+        className="text-sm"
+      />
       <PreferencesModal />
       <ShareModal />
     </div>
-  )
-})
+  );
+});
 
 export default Home;

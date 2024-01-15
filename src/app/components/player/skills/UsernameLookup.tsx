@@ -1,7 +1,7 @@
-import React, {useRef, useState} from "react";
-import {observer} from "mobx-react-lite";
-import {useStore} from "@/state";
-import localforage from "localforage";
+import React, { useRef, useState } from 'react';
+import { observer } from 'mobx-react-lite';
+import { useStore } from '@/state';
+import localforage from 'localforage';
 
 const UsernameLookup: React.FC = observer(() => {
   const store = useStore();
@@ -13,12 +13,12 @@ const UsernameLookup: React.FC = observer(() => {
   return (
     <>
       <input
-        type={'text'}
-        className={'form-control rounded w-full mt-auto'}
-        placeholder={'RuneScape name'}
+        type="text"
+        className="form-control rounded w-full mt-auto"
+        placeholder="RuneScape name"
         value={username}
         onChange={(e) => {
-          store.updateUIState({username: e.currentTarget.value});
+          store.updateUIState({ username: e.currentTarget.value });
           if (shouldRemember) {
             localforage.setItem('dps-calc-username', e.currentTarget.value).catch(() => {
             });
@@ -33,8 +33,8 @@ const UsernameLookup: React.FC = observer(() => {
       <button
         ref={btn}
         disabled={!username || btnDisabled}
-        type={'button'}
-        className={'ml-1 text-sm btn'}
+        type="button"
+        className="ml-1 text-sm btn"
         onClick={async () => {
           setBtnDisabled(true);
           await store.fetchCurrentPlayerSkills();
@@ -44,7 +44,7 @@ const UsernameLookup: React.FC = observer(() => {
         Lookup
       </button>
     </>
-  )
-})
+  );
+});
 
 export default UsernameLookup;

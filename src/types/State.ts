@@ -1,5 +1,5 @@
-import {EquipmentPiece, Player} from '@/types/Player';
-import {Monster} from '@/types/Monster';
+import { EquipmentPiece, Player } from '@/types/Player';
+import { Monster } from '@/types/Monster';
 
 /**
  * UI-specific toggled behaviour and state.
@@ -24,7 +24,7 @@ export interface Preferences {
 }
 
 export interface HistogramEntry {
-  name: any,
+  name: string,
   chance: number,
 }
 

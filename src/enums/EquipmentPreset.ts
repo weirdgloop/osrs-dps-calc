@@ -1,8 +1,10 @@
-export enum EquipmentPreset {
+enum EquipmentPreset {
   DHAROKS,
   MAX_MELEE,
   MAX_RANGED,
   VERACS,
   VOID_MELEE,
-  VOID_RANGED
+  VOID_RANGED,
 }
+
+export default EquipmentPreset;

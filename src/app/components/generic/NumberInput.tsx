@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface NumberInputProps extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'onChange'> {
   onChange?: (v: number) => void;
@@ -6,24 +6,26 @@ interface NumberInputProps extends Omit<React.DetailedHTMLProps<React.InputHTMLA
 }
 
 const NumberInput: React.FC<NumberInputProps> = (props) => {
-  const [value, setValue] = useState<string>(props.value.toString() || '');
-  const {onChange} = props;
+  const { value } = props;
+  const [inputValue, setInputValue] = useState<string>(value.toString() || '');
+  const { onChange } = props;
 
   useEffect(() => {
     // If a new value is passed in as a prop, update the state of this component
-    setValue(props.value.toString() || '');
-  }, [props.value]);
+    setInputValue(value.toString() || '');
+  }, [value]);
 
   return (
     <input
-      type={'number'}
-      className={'form-control w-16'}
+      type="number"
+      className="form-control w-16"
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
-      value={value}
+      value={inputValue}
       onChange={(evt) => {
         const valueAsNum = evt.currentTarget.valueAsNumber;
         // Always update the value of this component locally
-        setValue(evt.currentTarget.value);
+        setInputValue(evt.currentTarget.value);
 
         // If it's a valid number (passes local HTML validation), call our onChange
         if (evt.currentTarget.validity.valid && onChange) {
@@ -31,7 +33,7 @@ const NumberInput: React.FC<NumberInputProps> = (props) => {
         }
       }}
     />
-  )
-}
+  );
+};
 
 export default NumberInput;

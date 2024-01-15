@@ -1,10 +1,10 @@
-import {useCombobox} from 'downshift';
-import React, {useEffect, useRef, useState} from 'react';
-import {Virtuoso, VirtuosoHandle} from "react-virtuoso";
+import { useCombobox } from 'downshift';
+import React, { useEffect, useRef, useState } from 'react';
+import { Virtuoso, VirtuosoHandle } from 'react-virtuoso';
 
-type ComboboxItem = {label: string, value: any};
+type ComboboxItem = { label: string, value: string | number };
 
-const itemToString = <T extends ComboboxItem>(i: T | null) => (i ? i.label : '')
+const itemToString = <T extends ComboboxItem>(i: T | null) => (i ? i.label : '');
 
 interface IComboboxProps<T> {
   id: string;
@@ -17,7 +17,7 @@ interface IComboboxProps<T> {
   keepOpenAfterSelect?: boolean;
   keepPositionAfterSelect?: boolean;
   className?: string;
-  CustomItemComponent?: React.FC<{item: T, itemString: string}>;
+  CustomItemComponent?: React.FC<{ item: T, itemString: string }>;
 }
 
 /**
@@ -45,9 +45,10 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     CustomItemComponent,
   } = props;
   const [inputValue, setInputValue] = useState<string>(value || '');
-  const [filteredItems, setFilteredItems] = useState<any[]>([]);
+  const [filteredItems, setFilteredItems] = useState<T[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+  const virtuosoRef = useRef<VirtuosoHandle>(null);
 
   // When the passed value prop changes, also change the input value
   useEffect(() => {
@@ -79,11 +80,11 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     items: filteredItems,
     inputValue,
     itemToString,
-    onInputValueChange: ({inputValue: newValue}) => {
+    onInputValueChange: ({ inputValue: newValue }) => {
       setInputValue(newValue || '');
       setHighlightedIndex(0);
     },
-    onSelectedItemChange: ({selectedItem}) => {
+    onSelectedItemChange: ({ selectedItem }) => {
       if (onSelectedItemChange) onSelectedItemChange(selectedItem);
       if (resetAfterSelect) reset();
       if (blurAfterSelect) inputRef.current?.blur();
@@ -91,15 +92,16 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     scrollIntoView: () => {},
     onHighlightedIndexChange: (changes) => {
       if (
-        virtuosoRef.current &&
-        changes.type !== useCombobox.stateChangeTypes.MenuMouseLeave &&
-        changes.highlightedIndex !== undefined
+        virtuosoRef.current
+        && changes.type !== useCombobox.stateChangeTypes.MenuMouseLeave
+        && changes.highlightedIndex !== undefined
       ) {
-        virtuosoRef.current.scrollIntoView({index: changes.highlightedIndex});
+        virtuosoRef.current.scrollIntoView({ index: changes.highlightedIndex });
       }
     },
     stateReducer: (state, actionAndChanges) => {
-      let { changes, type } = actionAndChanges;
+      let { changes } = actionAndChanges;
+      const { type } = actionAndChanges;
 
       if (keepPositionAfterSelect) {
         switch (type) {
@@ -107,9 +109,12 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
           case useCombobox.stateChangeTypes.ItemClick:
             changes = {
               ...changes,
-              inputValue: inputValue, // Keep the input value the same
-              highlightedIndex: state.highlightedIndex // Keep the highlighted index the same
+              inputValue, // Keep the input value the same
+              highlightedIndex: state.highlightedIndex, // Keep the highlighted index the same
             };
+            break;
+          default:
+            break;
         }
       }
 
@@ -119,8 +124,11 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
           case useCombobox.stateChangeTypes.ItemClick:
             changes = {
               ...changes,
-              isOpen: true
+              isOpen: true,
             };
+            break;
+          default:
+            break;
         }
       }
 
@@ -128,55 +136,59 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     },
   });
 
-  const virtuosoRef = React.useRef<VirtuosoHandle>(null)
-
   return (
     <div>
-      <input className={`form-control cursor-pointer ${className}`} {...getInputProps({ref: inputRef, open: isOpen, type: 'text', placeholder: (placeholder || 'Search...')})} />
+      <input
+        className={`form-control cursor-pointer ${className}`}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...getInputProps({
+          ref: inputRef, open: isOpen, type: 'text', placeholder: (placeholder || 'Search...'),
+        })}
+      />
       <div
-          className={`absolute bg-white rounded dark:bg-dark-400 dark:border-dark-200 dark:text-white shadow-xl mt-1 border border-gray-300 z-10 transition-opacity ${(isOpen && filteredItems.length) ? 'opacity-100' : 'opacity-0'}`}
-          {...getMenuProps({
-            ref: menuRef
-          })}
+        className={`absolute bg-white rounded dark:bg-dark-400 dark:border-dark-200 dark:text-white shadow-xl mt-1 border border-gray-300 z-10 transition-opacity ${(isOpen && filteredItems.length) ? 'opacity-100' : 'opacity-0'}`}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...getMenuProps({
+          ref: menuRef,
+        })}
       >
         {!isOpen || !filteredItems.length ? null : (
-            <Virtuoso
-              ref={virtuosoRef}
-              style={{ height: 200, width: 300 }}
-              data={filteredItems}
-              itemContent={(i, d) => {
-                const itemString = itemToString(d);
+          <Virtuoso
+            ref={virtuosoRef}
+            style={{ height: 200, width: 300 }}
+            data={filteredItems}
+            itemContent={(i, d) => {
+              const itemString = itemToString(d);
 
-                return (
-                  <div
-                    className={
-                      `px-3 py-2 leading-none items-center text-sm cursor-pointer ${(highlightedIndex === i) ? 'bg-gray-200 dark:bg-dark-200' : ''}`
+              return (
+                <div
+                  className={
+                    `px-3 py-2 leading-none items-center text-sm cursor-pointer ${(highlightedIndex === i) ? 'bg-gray-200 dark:bg-dark-200' : ''}`
+                  }
+                  // eslint-disable-next-line react/jsx-props-no-spreading
+                  {...getItemProps({
+                    index: i,
+                    item: d,
+                  })}
+                >
+                  {(() => {
+                    if (CustomItemComponent) {
+                      return <div><CustomItemComponent item={d} itemString={itemString} /></div>;
                     }
-                    {...getItemProps({
-                      index: i,
-                      item: d
-                    })}
-                  >
-                    {(() => {
-                      if (CustomItemComponent) {
-                        return <div><CustomItemComponent item={d} itemString={itemString}/></div>
-                      } else {
-                        return (
-                          <div>
-                            {itemString}
-                          </div>
-                        )
-                      }
-                    })()}
-                  </div>
-                )
-              }}
-            >
-            </Virtuoso>
+                    return (
+                      <div>
+                        {itemString}
+                      </div>
+                    );
+                  })()}
+                </div>
+              );
+            }}
+          />
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Combobox;

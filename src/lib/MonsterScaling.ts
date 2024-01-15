@@ -1,4 +1,4 @@
-import {Monster} from "@/types/Monster";
+import { Monster } from '@/types/Monster';
 import {
   ABYSSAL_PORTAL_IDS,
   AKKHA_IDS,
@@ -27,12 +27,143 @@ import {
   TOMBS_OF_AMASCUT_MONSTER_IDS,
   TOMBS_OF_AMASCUT_PATH_MONSTER_IDS,
   VOLATILE_BABOON_IDS,
-  ZEBAK_IDS
-} from "@/constants";
-import {MonsterAttribute} from "@/enums/MonsterAttribute";
-import {lerp} from "@/utils";
+  ZEBAK_IDS,
+} from '@/constants';
+import { MonsterAttribute } from '@/enums/MonsterAttribute';
+import { lerp } from '@/utils';
 
-export const scaledMonster: (m: Monster) => Monster = m => {
+const getToaScalingValues = (id: number): ToaScalingValues | undefined => {
+  if (AKKHA_IDS.includes(id)) {
+    return {
+      base: 40,
+      factor: 10,
+    };
+  }
+
+  if (AKKHA_SHADOW_IDS.includes(id)) {
+    return {
+      base: 14,
+      factor: 5,
+    };
+  }
+
+  if (BABA_IDS.includes(id)) {
+    return {
+      base: 38,
+      factor: 10,
+    };
+  }
+
+  if (STANDARD_BABOON_SMALL_IDS.includes(id)) {
+    return {
+      base: 4,
+      factor: 1,
+    };
+  }
+
+  if (STANDARD_BABOON_LARGE_IDS.includes(id)) {
+    return {
+      base: 6,
+      factor: 1,
+    };
+  }
+
+  if (BABOON_SHAMAN_IDS.includes(id)) {
+    return {
+      base: 16,
+      factor: 1,
+    };
+  }
+
+  if (VOLATILE_BABOON_IDS.includes(id)) {
+    return {
+      base: 8,
+      factor: 1,
+    };
+  }
+
+  if (CURSED_BABOON_IDS.includes(id)) {
+    return {
+      base: 10,
+      factor: 1,
+    };
+  }
+
+  if (BABOON_THRALL_IDS.includes(id)) {
+    return {
+      base: 2,
+      factor: 1,
+    };
+  }
+
+  if (BABOON_THRALL_IDS.includes(id)) {
+    return {
+      base: 2,
+      factor: 1,
+    };
+  }
+
+  if (KEPHRI_SHIELDED_IDS.includes(id)) {
+    return {
+      base: 15,
+      factor: 10,
+    };
+  }
+
+  if (KEPHRI_UNSHIELDED_IDS.includes(id)) {
+    return {
+      base: 16,
+      factor: 5,
+    };
+  }
+
+  if (KEPHRI_OVERLORD_IDS.includes(id)) {
+    return {
+      base: 40,
+      factor: 1,
+    };
+  }
+
+  if (ZEBAK_IDS.includes(id)) {
+    return {
+      base: 58,
+      factor: 10,
+    };
+  }
+
+  if (TOA_OBELISK_IDS.includes(id)) {
+    return {
+      base: 26,
+      factor: 10,
+    };
+  }
+
+  if (P2_WARDEN_IDS.includes(id)) {
+    return {
+      base: 28,
+      factor: 5,
+    };
+  }
+
+  if (TOA_CORE_IDS.includes(id)) {
+    return {
+      base: 450,
+      factor: 10,
+    };
+  }
+
+  if (P3_WARDEN_IDS.includes(id)) {
+    return {
+      base: 88,
+      factor: 10,
+    };
+  }
+
+  return undefined;
+};
+
+// eslint-disable-next-line import/prefer-default-export
+export const scaledMonster: (m: Monster) => Monster = (m) => {
   const mId = m.id;
 
   // vard's strength and defence scale linearly throughout the fight based on hp
@@ -55,16 +186,16 @@ export const scaledMonster: (m: Monster) => Monster = m => {
         def: [268, 181],
       };
     }
-    
-    const currHp = isFinite(m.monsterCurrentHp) ? m.monsterCurrentHp : vardRanges.maxHp;
+
+    const currHp = Number.isFinite(m.monsterCurrentHp) ? m.monsterCurrentHp : vardRanges.maxHp;
     return {
       ...m,
       skills: {
         ...m.skills,
         str: lerp(currHp, vardRanges.maxHp, 0, vardRanges.str[0], vardRanges.str[1]),
         def: lerp(currHp, vardRanges.maxHp, 0, vardRanges.def[0], vardRanges.def[1]),
-      }
-    }
+      },
+    };
   }
 
   // toa multiplies rolled values, not stats, except for hp
@@ -96,19 +227,19 @@ export const scaledMonster: (m: Monster) => Monster = m => {
     }
 
     const newHp = Math.trunc(
-      values.base *
-      (1000 + invoFactor) *
-      (100 + pathLevelFactor) *
-      (10 + partyFactor) /
-      (1000 * 100 * 10)
+      values.base
+      * (1000 + invoFactor)
+      * (100 + pathLevelFactor)
+      * (10 + partyFactor)
+      / (1000 * 100 * 10),
     ) * values.factor;
     return {
       ...m,
       skills: {
         ...m.skills,
         hp: newHp,
-      }
-    }
+      },
+    };
   }
 
   // tob only scales hp and nothing else
@@ -118,9 +249,9 @@ export const scaledMonster: (m: Monster) => Monster = m => {
       ...m,
       skills: {
         ...m.skills,
-        hp: Math.trunc(m.skills.hp * (partySize + 3) / 8)
-      }
-    }
+        hp: Math.trunc(m.skills.hp * (partySize + 3) / 8),
+      },
+    };
   }
 
   if (TOB_EM_MONSTER_IDS.includes(mId)) {
@@ -129,9 +260,9 @@ export const scaledMonster: (m: Monster) => Monster = m => {
       ...m,
       skills: {
         ...m.skills,
-        hp: Math.trunc(m.skills.hp * partySize / 5)
-      }
-    }
+        hp: Math.trunc(m.skills.hp * partySize / 5),
+      },
+    };
   }
 
   if (m.attributes.includes(MonsterAttribute.XERICIAN)) {
@@ -180,11 +311,11 @@ export const scaledMonster: (m: Monster) => Monster = m => {
         return scaleDefence(base);
       }
       return Math.trunc(Math.trunc(Math.trunc(base * (Math.trunc(hp * 4 / 9) + 55) / 99) * (sqrt(ps - 1) * 7 + (ps - 1) + 100) / 100) * (cm ? f + 1 : f) / f);
-    }
+    };
     const scaleMagic = (base: number) => {
       const f = TEKTON_IDS.includes(mId) ? 5 : 2;
       return scaleOffence(base, f);
-    }
+    };
     return {
       ...m,
       skills: {
@@ -200,139 +331,9 @@ export const scaledMonster: (m: Monster) => Monster = m => {
   }
 
   return m;
-}
+};
 
 interface ToaScalingValues {
   base: number,
   factor: number,
-}
-
-const getToaScalingValues = (id: number): ToaScalingValues | undefined => {
-  if (AKKHA_IDS.includes(id)) {
-    return {
-      base: 40,
-      factor: 10,
-    }
-  }
-
-  if (AKKHA_SHADOW_IDS.includes(id)) {
-    return {
-      base: 14,
-      factor: 5,
-    }
-  }
-
-  if (BABA_IDS.includes(id)) {
-    return {
-      base: 38,
-      factor: 10,
-    }
-  }
-
-  if (STANDARD_BABOON_SMALL_IDS.includes(id)) {
-    return {
-      base: 4,
-      factor: 1,
-    }
-  }
-
-  if (STANDARD_BABOON_LARGE_IDS.includes(id)) {
-    return {
-      base: 6,
-      factor: 1,
-    }
-  }
-
-  if (BABOON_SHAMAN_IDS.includes(id)) {
-    return {
-      base: 16,
-      factor: 1,
-    }
-  }
-
-  if (VOLATILE_BABOON_IDS.includes(id)) {
-    return {
-      base: 8,
-      factor: 1,
-    }
-  }
-
-  if (CURSED_BABOON_IDS.includes(id)) {
-    return {
-      base: 10,
-      factor: 1,
-    }
-  }
-
-  if (BABOON_THRALL_IDS.includes(id)) {
-    return {
-      base: 2,
-      factor: 1,
-    }
-  }
-
-  if (BABOON_THRALL_IDS.includes(id)) {
-    return {
-      base: 2,
-      factor: 1,
-    }
-  }
-
-  if (KEPHRI_SHIELDED_IDS.includes(id)) {
-    return {
-      base: 15,
-      factor: 10,
-    }
-  }
-
-  if (KEPHRI_UNSHIELDED_IDS.includes(id)) {
-    return {
-      base: 16,
-      factor: 5,
-    }
-  }
-
-  if (KEPHRI_OVERLORD_IDS.includes(id)) {
-    return {
-      base: 40,
-      factor: 1,
-    }
-  }
-
-  if (ZEBAK_IDS.includes(id)) {
-    return {
-      base: 58,
-      factor: 10,
-    }
-  }
-
-  if (TOA_OBELISK_IDS.includes(id)) {
-    return {
-      base: 26,
-      factor: 10,
-    }
-  }
-
-  if (P2_WARDEN_IDS.includes(id)) {
-    return {
-      base: 28,
-      factor: 5,
-    }
-  }
-
-  if (TOA_CORE_IDS.includes(id)) {
-    return {
-      base: 450,
-      factor: 10,
-    }
-  }
-
-  if (P3_WARDEN_IDS.includes(id)) {
-    return {
-      base: 88,
-      factor: 10,
-    }
-  }
-
-  return undefined;
 }

@@ -3,7 +3,7 @@ const { fontFamily } = require('tailwindcss/defaultTheme');
 module.exports = {
   darkMode: 'class',
   content: [
-      "./src/**/*.{js,ts,jsx,tsx}"
+    './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
@@ -94,7 +94,7 @@ module.exports = {
           200: '#e4eaee',
           300: '#949eaa',
           400: '#5d6773',
-          500: '#444e5a'
+          500: '#444e5a',
         },
         dark: {
           100: '#b79d7e', // @portage
@@ -104,12 +104,12 @@ module.exports = {
           500: '#28221d', // @big-stone
           600: '#1b1612', // @dark-body
           700: '#98a2b6',
-        }
-      }
+        },
+      },
     },
   },
   plugins: [
     require('@tailwindcss/forms'),
-    require('@headlessui/tailwindcss')({prefix: 'ui'})
+    require('@headlessui/tailwindcss')({ prefix: 'ui' }),
   ],
-}
+};

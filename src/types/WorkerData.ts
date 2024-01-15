@@ -1,13 +1,13 @@
-import {Player} from "@/types/Player";
-import {Monster} from "@/types/Monster";
-import {CalculatedLoadout} from "@/types/State";
+import { Player } from '@/types/Player';
+import { Monster } from '@/types/Monster';
+import { CalculatedLoadout } from '@/types/State';
 
 /**
  * Requests
  */
 
 export enum WorkerRequestType {
-  RECOMPUTE_VALUES
+  RECOMPUTE_VALUES,
 }
 
 export interface WorkerCalcOpts {
@@ -30,7 +30,7 @@ export type WorkerRequests = RecomputeValuesRequest;
  */
 
 export enum WorkerResponseType {
-  COMPUTED_VALUES
+  COMPUTED_VALUES,
 }
 
 export interface ComputedValuesResponse {

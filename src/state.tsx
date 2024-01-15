@@ -1,25 +1,39 @@
-import {IReactionPublic, makeAutoObservable, reaction, toJS} from 'mobx';
-import React, {createContext, useContext} from 'react';
-import {PartialDeep} from 'type-fest';
-import {Potion, PotionMap} from './enums/Potion';
+import {
+  IReactionPublic, makeAutoObservable, reaction, toJS,
+} from 'mobx';
+import React, { createContext, useContext } from 'react';
+import { PartialDeep } from 'type-fest';
 import * as localforage from 'localforage';
-import {CalculatedLoadout, Calculator, ImportableData, Preferences, State, UI} from '@/types/State';
-import {ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, Prayer} from './enums/Prayer';
+import {
+  CalculatedLoadout, Calculator, ImportableData, Preferences, State, UI,
+} from '@/types/State';
 import merge from 'lodash.mergewith';
-import {EquipmentCategory, getCombatStylesForCategory} from './enums/EquipmentCategory';
-import {EquipmentPiece, Player, PlayerEquipment, PlayerSkills} from '@/types/Player';
-import {Monster} from '@/types/Monster';
-import {MonsterAttribute} from "@/enums/MonsterAttribute";
-import {toast} from "react-toastify";
-import {fetchPlayerSkills, fetchShortlinkData, WORKER_JSON_REPLACER} from "@/utils";
-import {RecomputeValuesRequest, WorkerRequestType} from "@/types/WorkerData";
-import {scaledMonster} from "@/lib/MonsterScaling";
+import {
+  EquipmentPiece, Player, PlayerEquipment, PlayerSkills,
+} from '@/types/Player';
+import { Monster } from '@/types/Monster';
+import { MonsterAttribute } from '@/enums/MonsterAttribute';
+import { toast } from 'react-toastify';
+import {
+  fetchPlayerSkills,
+  getCombatStylesForCategory,
+  fetchShortlinkData,
+  WORKER_JSON_REPLACER,
+  PotionMap,
+} from '@/utils';
+import { RecomputeValuesRequest, WorkerRequestType } from '@/types/WorkerData';
+import { scaledMonster } from '@/lib/MonsterScaling';
+import getMonsters from '@/lib/Monsters';
 import equipment from '../cdn/json/equipment.json';
-import {getMonsters} from "@/lib/Monsters";
+import { EquipmentCategory } from './enums/EquipmentCategory';
+import {
+  ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, Prayer,
+} from './enums/Prayer';
+import Potion from './enums/Potion';
 
 const EMPTY_CALC_LOADOUT = {} as CalculatedLoadout;
 
-type EquipmentBonuses = Pick<Player, 'bonuses' | 'offensive' | 'defensive'>
+type EquipmentBonuses = Pick<Player, 'bonuses' | 'offensive' | 'defensive'>;
 const calculateEquipmentBonuses = (eq: EquipmentPiece[]): EquipmentBonuses => {
   const seed: EquipmentBonuses = {
     bonuses: {
@@ -65,72 +79,78 @@ const calculateEquipmentBonuses = (eq: EquipmentPiece[]): EquipmentBonuses => {
       magic: acc.defensive.magic + piece.defensive[1],
     },
   }), seed);
-}
+};
 
 const generateInitialEquipment = () => {
-  let slots = ['head', 'cape', 'neck', 'ammo', 'weapon', 'body', 'shield', 'legs', 'hands', 'feet', 'ring'];
-  let equipment: {[k: string]: any} = {};
-  for (let s of slots) {
-    equipment[s] = null;
-  }
-  return equipment as PlayerEquipment;
-}
+  const initialEquipment: PlayerEquipment = {
+    ammo: null,
+    body: null,
+    cape: null,
+    feet: null,
+    hands: null,
+    head: null,
+    legs: null,
+    neck: null,
+    ring: null,
+    shield: null,
+    weapon: null,
+  };
+  return initialEquipment;
+};
 
-export const generateEmptyPlayer: () => Player = () => {
-  return {
-    username: '',
-    style: getCombatStylesForCategory(EquipmentCategory.NONE)[0],
-    skills: {
-      atk: 99,
-      def: 99,
-      hp: 99,
-      magic: 99,
-      prayer: 99,
-      ranged: 99,
-      str: 99,
-    },
-    boosts: {
-      atk: 0,
-      def: 0,
-      hp: 0,
-      magic: 0,
-      prayer: 0,
-      ranged: 0,
-      str: 0,
-    },
-    equipment: generateInitialEquipment(),
-    prayers: [],
-    bonuses: {
-      str: 0,
-      ranged_str: 0,
-      magic_str: 0,
-      prayer: 0,
-    },
-    defensive: {
-      stab: 0,
-      slash: 0,
-      crush: 0,
-      magic: 0,
-      ranged: 0,
-    },
-    offensive: {
-      stab: 0,
-      slash: 0,
-      crush: 0,
-      magic: 0,
-      ranged: 0,
-    },
-    buffs: {
-      potions: [],
-      onSlayerTask: false,
-      inWilderness: false,
-      kandarinDiary: false,
-      chargeSpell: false,
-      markOfDarknessSpell: false
-    },
-    spell: undefined,
-  }
-}
+export const generateEmptyPlayer: () => Player = () => ({
+  username: '',
+  style: getCombatStylesForCategory(EquipmentCategory.NONE)[0],
+  skills: {
+    atk: 99,
+    def: 99,
+    hp: 99,
+    magic: 99,
+    prayer: 99,
+    ranged: 99,
+    str: 99,
+  },
+  boosts: {
+    atk: 0,
+    def: 0,
+    hp: 0,
+    magic: 0,
+    prayer: 0,
+    ranged: 0,
+    str: 0,
+  },
+  equipment: generateInitialEquipment(),
+  prayers: [],
+  bonuses: {
+    str: 0,
+    ranged_str: 0,
+    magic_str: 0,
+    prayer: 0,
+  },
+  defensive: {
+    stab: 0,
+    slash: 0,
+    crush: 0,
+    magic: 0,
+    ranged: 0,
+  },
+  offensive: {
+    stab: 0,
+    slash: 0,
+    crush: 0,
+    magic: 0,
+    ranged: 0,
+  },
+  buffs: {
+    potions: [],
+    onSlayerTask: false,
+    inWilderness: false,
+    kandarinDiary: false,
+    chargeSpell: false,
+    markOfDarknessSpell: false,
+  },
+  spell: undefined,
+});
 
 class GlobalState implements State {
   monster: Monster = {
@@ -170,11 +190,11 @@ class GlobalState implements State {
     partySize: 1,
     monsterCurrentHp: 150,
     attributes: [MonsterAttribute.DEMON],
-  }
+  };
 
   loadouts: Player[] = [
-    generateEmptyPlayer()
-  ]
+    generateEmptyPlayer(),
+  ];
 
   selectedLoadout = 0;
 
@@ -182,7 +202,7 @@ class GlobalState implements State {
     showPreferencesModal: false,
     showShareModal: false,
     username: '',
-  }
+  };
 
   prefs: Preferences = {
     manualMode: false,
@@ -191,7 +211,7 @@ class GlobalState implements State {
     showLoadoutComparison: false,
     showTtkComparison: false,
     hitDistsHideZeros: false,
-  }
+  };
 
   calc: Calculator = {
     loadouts: [
@@ -204,27 +224,31 @@ class GlobalState implements State {
         ttk: 0,
         hitDist: [],
         ttkDist: undefined,
-      }
-    ]
-  }
+      },
+    ],
+  };
 
-  worker: Worker | null = null
-  workerRecomputeTimer: number | null = null
+  worker: Worker | null = null;
 
-  availableEquipment = equipment.map((v) => v as EquipmentPiece)
+  workerRecomputeTimer: number | null = null;
+
+  availableEquipment = equipment.map((v) => v as EquipmentPiece);
+
   availableMonsters = getMonsters();
 
   constructor() {
-    makeAutoObservable(this, {}, {autoBind: true});
+    makeAutoObservable(this, {}, { autoBind: true });
 
     const recomputeBoosts = () => {
       // Re-compute the player's boost values.
-      let boosts: PlayerSkills = {atk: 0, def: 0, hp: 0, magic: 0, prayer: 0, ranged: 0, str: 0}
+      const boosts: PlayerSkills = {
+        atk: 0, def: 0, hp: 0, magic: 0, prayer: 0, ranged: 0, str: 0,
+      };
 
-      for (let p of this.player.buffs.potions) {
-        let result = PotionMap[p].calculateFn(this.player.skills);
-        for (let k of Object.keys(result)) {
-          let r = result[k as keyof typeof result] as number;
+      for (const p of this.player.buffs.potions) {
+        const result = PotionMap[p].calculateFn(this.player.skills);
+        for (const k of Object.keys(result)) {
+          const r = result[k as keyof typeof result] as number;
           if (r > boosts[k as keyof typeof boosts]) {
             // If this skill's boost is higher than what it already is, then change it
             boosts[k as keyof typeof boosts] = result[k as keyof typeof result] as number;
@@ -232,14 +256,14 @@ class GlobalState implements State {
         }
       }
 
-      this.updatePlayer({boosts: boosts});
+      this.updatePlayer({ boosts });
     };
 
-    const triggers: ((r: IReactionPublic) => any)[] = [
+    const triggers: ((r: IReactionPublic) => unknown)[] = [
       () => toJS(this.player.skills),
       () => toJS(this.player.buffs.potions),
     ];
-    triggers.map(t => reaction(t, recomputeBoosts, {fireImmediately: false}));
+    triggers.map((t) => reaction(t, recomputeBoosts, { fireImmediately: false }));
   }
 
   /**
@@ -270,9 +294,7 @@ class GlobalState implements State {
    * For that, interpret the values in `store.player` for the current loadout.
    */
   get equipmentBonuses(): EquipmentBonuses {
-    return calculateEquipmentBonuses(Object.values(this.equipmentData).filter((v) => {
-      return (v !== null && v !== undefined);
-    }) as EquipmentPiece[]);
+    return calculateEquipmentBonuses(Object.values(this.equipmentData).filter((v) => (v !== null && v !== undefined)) as EquipmentPiece[]);
   }
 
   recalculateEquipmentBonusesFromGear() {
@@ -280,7 +302,7 @@ class GlobalState implements State {
     this.updatePlayer({
       bonuses: newBonuses.bonuses,
       offensive: newBonuses.offensive,
-      defensive: newBonuses.defensive
+      defensive: newBonuses.defensive,
     });
   }
 
@@ -306,7 +328,7 @@ class GlobalState implements State {
     try {
       data = await fetchShortlinkData(linkId);
     } catch (e) {
-      toast.error('Failed to load shared data.', {toastId: 'shortlink-fail'})
+      toast.error('Failed to load shared data.', { toastId: 'shortlink-fail' });
       return;
     }
 
@@ -335,26 +357,26 @@ class GlobalState implements State {
     }).catch((e) => {
       console.error(e);
       // TODO maybe some handling here
-    })
+    });
   }
 
   async fetchCurrentPlayerSkills() {
-    const username = this.ui.username;
+    const { username } = this.ui;
 
     try {
       const res = await toast.promise(
         fetchPlayerSkills(username),
         {
-          pending: `Fetching player skills...`,
+          pending: 'Fetching player skills...',
           success: `Successfully fetched player skills for ${username}!`,
-          error: `Error fetching player skills`
+          error: 'Error fetching player skills',
         },
         {
-          toastId: 'skills-fetch'
-        }
-      )
+          toastId: 'skills-fetch',
+        },
+      );
 
-      if (res) this.updatePlayer({skills: res});
+      if (res) this.updatePlayer({ skills: res });
     } catch (e) {
       console.error(e);
     }
@@ -364,7 +386,7 @@ class GlobalState implements State {
     // Update local state store
     this.prefs = Object.assign(this.prefs, pref);
 
-    if (pref && pref.hasOwnProperty('manualMode')) {
+    if (pref && Object.prototype.hasOwnProperty.call(pref, 'manualMode')) {
       // Reset player bonuses to their worn equipment
       this.player.bonuses = this.equipmentBonuses.bonuses;
       this.player.offensive = this.equipmentBonuses.offensive;
@@ -376,7 +398,7 @@ class GlobalState implements State {
       console.error(e);
       // TODO something that isn't this
       alert('Could not persist preferences to browser. Make sure our site has permission to do this.');
-    })
+    });
   }
 
   /**
@@ -417,7 +439,7 @@ class GlobalState implements State {
           if (ARM_PRAYERS.includes(prayer)) return !OFFENSIVE_PRAYERS.includes(p) || BRAIN_PRAYERS.includes(p);
           // Otherwise, there are no offensive prayers it can be paired with, disable them all
           return !OFFENSIVE_PRAYERS.includes(p);
-        })
+        });
       }
 
       this.player.prayers = [...newPrayers, prayer];
@@ -460,11 +482,11 @@ class GlobalState implements State {
 
       // Special handling for if a shield is equipped, and we're using a two-handed weapon
       if (player.equipment?.shield && newShield !== undefined && currentWeapon?.isTwoHanded) {
-        player = {...player, equipment: {...player.equipment, weapon: null}};
+        player = { ...player, equipment: { ...player.equipment, weapon: null } };
       }
       // ...and vice-versa
       if (player.equipment?.weapon && newWeapon?.isTwoHanded && currentShield?.name !== '') {
-        player = {...player, equipment: {...player.equipment, shield: null}};
+        player = { ...player, equipment: { ...player.equipment, shield: null } };
       }
     }
 
@@ -481,6 +503,7 @@ class GlobalState implements State {
       if (Array.isArray(src) && src.length === 0) {
         return src;
       }
+      return undefined;
     });
   }
 
@@ -488,12 +511,12 @@ class GlobalState implements State {
    * Clear an equipment slot, removing the item that was inside of it.
    * @param slot
    */
-  clearEquipmentSlot(slot: keyof PlayerEquipment ) {
+  clearEquipmentSlot(slot: keyof PlayerEquipment) {
     this.updatePlayer({
       equipment: {
-        [slot]: null
-      }
-    })
+        [slot]: null,
+      },
+    });
   }
 
   setSelectedLoadout(ix: number) {
@@ -507,7 +530,7 @@ class GlobalState implements State {
     this.loadouts = this.loadouts.filter((p, i) => i !== ix);
     // If the selected loadout index is equal to or over the index we just remove, shift it down by one, else add one
     if ((this.selectedLoadout >= ix) && ix !== 0) {
-      this.selectedLoadout = this.selectedLoadout - 1;
+      this.selectedLoadout -= 1;
     }
   }
 
@@ -545,23 +568,19 @@ class GlobalState implements State {
             calcOpts: {
               includeTtkDist: this.prefs.showTtkComparison,
             },
-          }
-        } as RecomputeValuesRequest, WORKER_JSON_REPLACER))
+          },
+        } as RecomputeValuesRequest, WORKER_JSON_REPLACER));
       }
-    }, 250)
+    }, 250);
   }
 }
 
 const StoreContext = createContext<GlobalState>(new GlobalState());
 
-const StoreProvider: React.FC<{ store: GlobalState, children: any }> = ({ store, children }) => {
-  return (
-    <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
-  )
-}
+const StoreProvider: React.FC<{ store: GlobalState, children: React.ReactNode }> = ({ store, children }) => (
+  <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
+);
 
-const useStore = () => {
-  return useContext(StoreContext);
-}
+const useStore = () => useContext(StoreContext);
 
 export { GlobalState, StoreProvider, useStore };

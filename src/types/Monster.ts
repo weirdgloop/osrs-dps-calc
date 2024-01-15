@@ -1,5 +1,5 @@
-import {CombatStyleType} from "@/types/PlayerCombatStyle";
-import {MonsterAttribute} from "@/enums/MonsterAttribute";
+import { CombatStyleType } from '@/types/PlayerCombatStyle';
+import { MonsterAttribute } from '@/enums/MonsterAttribute';
 
 export interface Monster {
   id: number;

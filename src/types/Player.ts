@@ -1,8 +1,8 @@
-import {EquipmentCategory} from '@/enums/EquipmentCategory';
-import {Prayer} from '@/enums/Prayer';
-import {Potion} from '@/enums/Potion';
-import {Spell} from '@/types/Spell';
-import {PlayerCombatStyle} from "@/types/PlayerCombatStyle";
+import { EquipmentCategory } from '@/enums/EquipmentCategory';
+import { Prayer } from '@/enums/Prayer';
+import Potion from '@/enums/Potion';
+import { Spell } from '@/types/Spell';
+import { PlayerCombatStyle } from '@/types/PlayerCombatStyle';
 
 export interface PlayerSkills {
   atk: number;

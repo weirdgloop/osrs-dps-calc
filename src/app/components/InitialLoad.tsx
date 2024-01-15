@@ -1,7 +1,7 @@
-import React, {useEffect} from "react";
-import {useStore} from "@/state";
-import {useSearchParams} from "next/navigation";
-import localforage from "localforage";
+import React, { useEffect } from 'react';
+import { useStore } from '@/state';
+import { useSearchParams } from 'next/navigation';
+import localforage from 'localforage';
 
 /**
  * This is a dummy component that is rendered inside a Suspense boundary in home.tsx. This is so that we have access to
@@ -21,7 +21,7 @@ const InitialLoad: React.FC = () => {
     } else {
       // Else, load username from browser storage if there is one and lookup stats
       localforage.getItem('dps-calc-username').then((u) => {
-        store.updateUIState({username: u as string});
+        store.updateUIState({ username: u as string });
         if (u) store.fetchCurrentPlayerSkills();
       }).catch(() => {});
     }
@@ -29,6 +29,6 @@ const InitialLoad: React.FC = () => {
   }, [searchParams]);
 
   return null;
-}
+};
 
 export default InitialLoad;

@@ -15,7 +15,7 @@ export const STANDARD_BABOON_SMALL_IDS = [
 ];
 
 export const STANDARD_BABOON_LARGE_IDS = [
-  11712, 11713, 11714
+  11712, 11713, 11714,
 ];
 
 export const BABOON_SHAMAN_IDS = [
@@ -91,7 +91,7 @@ export const TOMBS_OF_AMASCUT_PATH_MONSTER_IDS = [
   ...ZEBAK_IDS,
 ];
 
-/** IDs of monsters that are present in Tombs of Amascut **/
+/** IDs of monsters that are present in Tombs of Amascut * */
 export const TOMBS_OF_AMASCUT_MONSTER_IDS = [
   ...TOMBS_OF_AMASCUT_PATH_MONSTER_IDS,
   ...TOA_OBELISK_IDS,
@@ -103,7 +103,7 @@ export const TOMBS_OF_AMASCUT_MONSTER_IDS = [
 export const VERZIK_P1_IDS = [
   10830, 10831, 10832, // em
   8369, 8370, 8371, // norm
-  10847, 10848, 10849 // hmt
+  10847, 10848, 10849, // hmt
 ];
 
 export const VERZIK_IDS = [
@@ -113,7 +113,7 @@ export const VERZIK_IDS = [
   10850, 10851, 10852, // verzik hard mode
 ];
 
-/** IDs of monsters that are present in Theatre of Blood **/
+/** IDs of monsters that are present in Theatre of Blood * */
 export const TOB_MONSTER_IDS = [
   ...VERZIK_P1_IDS,
   // normal
@@ -137,11 +137,11 @@ export const TOB_MONSTER_IDS = [
   10867, 10868, // sote
   10770, 10771, 10772, // xarpus (i think there's an extra one here because of its different p3 behaviour?)
   10850, 10851, 10852, // verzik
-  10854, 10858, 10859, 10860, 10861, 10862 // verzik web + nylos
+  10854, 10858, 10859, 10860, 10861, 10862, // verzik web + nylos
 ];
 
 /** IDs of monsters that are present in Theatre of Blood Entry Mode.
- * Separated from norm + hmt due to different health scaling rules. **/
+ * Separated from norm + hmt due to different health scaling rules. * */
 export const TOB_EM_MONSTER_IDS = [
   10814, 10815, 10816, 10817, 10818, 10819, // maiden
   10820, 10821, // maiden crab + blood spawn
@@ -152,7 +152,7 @@ export const TOB_EM_MONSTER_IDS = [
   10864, 10865, // sote
   10767, 10768, // xarpus
   10833, 10834, 10835, // verzik
-  10837, 10841, 10842, 10843, 10844, 10845 // verzik web + nylos
+  10837, 10841, 10842, 10843, 10844, 10845, // verzik web + nylos
 ];
 
 /**
@@ -213,7 +213,7 @@ export const OLM_IDS = [
  * Separated due to different health scaling rules.
  */
 export const SCAVENGER_BEAST_IDS = [
-  7548, 7549
+  7548, 7549,
 ];
 
 /**
@@ -244,19 +244,19 @@ export const ICE_DEMON_IDS = [
  * IDs of the Fragment of Seren.
  */
 export const FRAGMENT_OF_SEREN_IDS = [
-  8917, 8918, 8919, 8920
+  8917, 8918, 8919, 8920,
 ];
 
 /**
  * IDs of monsters that calculate their magical defence using the defence stat.
  * https://twitter.com/JagexAsh/status/1689566945635438592
- **/
+ * */
 export const USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS = [
   ...ICE_DEMON_IDS,
   ...VERZIK_IDS,
   ...FRAGMENT_OF_SEREN_IDS,
   11709, 11712, // baboon brawler
-  9118 // rabbit (prifddinas)
+  9118, // rabbit (prifddinas)
 ];
 
 /**
@@ -282,7 +282,7 @@ export const IMMUNE_TO_MELEE_DAMAGE_NPC_IDS = [
   2042, 2043, 2044, // zulrah
 ];
 
-export const IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDs = [
+export const IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS = [
   3169, 3170, 3171, 3172, 3173, 3174, 3175, 3176, 3177, 3178, 3179, 3180, 3181, 3182, 3183, // aviansie
   7037, // reanimated aviansie
 ];
