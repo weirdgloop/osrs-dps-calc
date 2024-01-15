@@ -53,10 +53,12 @@ const PlayerContainer: React.FC = observer(() => {
           <div>
             <h1 className="tracking-tight font-bold">
               Loadout
+              {' '}
               {selectedLoadout + 1}
             </h1>
             <div className="text-xs font-bold text-gray-500 dark:text-gray-300">
               Level
+              {' '}
               {calculateCombatLevel(player.skills)}
             </div>
           </div>

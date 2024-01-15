@@ -72,6 +72,7 @@ const CombatStyle: React.FC<CombatStyleProps> = observer((props) => {
         <div className="text-xs">
           {style.type.charAt(0).toUpperCase() + style.type.slice(1)}
           ,
+          {' '}
           {style.stance}
         </div>
       </div>

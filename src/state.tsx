@@ -149,7 +149,7 @@ export const generateEmptyPlayer: () => Player = () => ({
     chargeSpell: false,
     markOfDarknessSpell: false,
   },
-  spell: undefined,
+  spell: null,
 });
 
 class GlobalState implements State {

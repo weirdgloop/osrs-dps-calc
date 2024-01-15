@@ -83,7 +83,7 @@ export default class CombatCalc {
 
   private sanitizeInputs() {
     if (!AUTOCAST_STANCES.includes(this.player.style.stance)) {
-      this.player.spell = undefined;
+      this.player.spell = null;
     }
   }
 

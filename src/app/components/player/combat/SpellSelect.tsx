@@ -30,10 +30,10 @@ const SpellSelect: React.FC = observer(() => {
   return (
     <Combobox<SpellOption>
       id="spell-select"
-      value={store.player.spell?.name}
       className="w-full"
       items={options}
-      placeholder="Search for spell..."
+      placeholder="Select a spell..."
+      resetAfterSelect
       blurAfterSelect
       onSelectedItemChange={(item) => {
         store.updatePlayer({
