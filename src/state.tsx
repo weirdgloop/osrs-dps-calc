@@ -397,6 +397,7 @@ class GlobalState implements State {
     localforage.setItem('dps-calc-prefs', toJS(this.prefs)).catch((e) => {
       console.error(e);
       // TODO something that isn't this
+      // eslint-disable-next-line no-alert
       alert('Could not persist preferences to browser. Make sure our site has permission to do this.');
     });
   }
