@@ -6972,6 +6972,34 @@
     "isTwoHanded": false
   },
   {
+    "name": "Ancient staff",
+    "id": 4675,
+    "version": "",
+    "slot": "weapon",
+    "image": "Ancient staff.png",
+    "speed": 4,
+    "category": "Staff",
+    "offensive": [
+      40,
+      0,
+      15,
+      0,
+      0,
+      -1,
+      10,
+      50
+    ],
+    "defensive": [
+      1,
+      15,
+      0,
+      3,
+      2,
+      -1
+    ],
+    "isTwoHanded": false
+  },
+  {
     "name": "Ancient stole",
     "id": 12201,
     "version": "",

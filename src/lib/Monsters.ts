@@ -19,8 +19,8 @@ function getMonsters(): Monster[] {
     },
     offensive: {
       atk: m.offensive[0],
-      magic: m.offensive[1],
-      magic_str: m.offensive[2],
+      magic: m.offensive[2],
+      magic_str: m.offensive[1],
       ranged: m.offensive[3],
       ranged_str: m.offensive[4],
       str: m.offensive[5],
