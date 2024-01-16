@@ -30,7 +30,7 @@ const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => 
         <img src={getCdnImage(`equipment/${currentSlot.image}`)} alt={currentSlot.name} />
       ) : (
         placeholder && (
-          <img className="opacity-30 dark:filter dark:invert" src={placeholder} alt={slot} />
+          <img className="opacity-30 dark:filter dark:invert" src={placeholder} alt={slot} draggable={false} />
         )
       )}
     </button>
