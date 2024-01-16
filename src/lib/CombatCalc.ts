@@ -1138,7 +1138,7 @@ export default class CombatCalc {
           : Math.min(110, Math.trunc(this.monster.monsterCurrentHp * 22 / 100));
         dist = new AttackDistribution([
           new HitDistribution([
-            ...standardHitDist.scaleProbability(1 - chance).hits,
+            ...dist.dists[0].scaleProbability(1 - chance).hits,
             new WeightedHit(acc * chance, [effectDmg]),
             new WeightedHit((1 - acc) * chance, [0]),
           ]),
