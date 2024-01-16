@@ -1209,6 +1209,10 @@ export default class CombatCalc {
       // https://twitter.com/JagexAsh/status/1133350436554121216
       dist = dist.transform(divisionTransformer(3));
     }
+    if (this.monster.name === 'Slagilith' && this.player.equipment.weapon?.category !== EquipmentCategory.PICKAXE) {
+      // https://twitter.com/JagexAsh/status/1219652159148646401
+      dist = dist.transform(divisionTransformer(3));
+    }
 
     // now also cap hits indiscriminately by the monster's max health, in case it is higher
     dist = dist.transform(flatLimitTransformer(this.monster.skills.hp));
