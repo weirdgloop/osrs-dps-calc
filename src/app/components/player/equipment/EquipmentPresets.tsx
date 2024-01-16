@@ -11,9 +11,11 @@ const EquipmentPresets: React.FC = () => {
 
   const presets = [
     { label: 'Dharok\'s equipment', value: EquipmentPreset.DHAROKS },
+    { label: 'Max Mage', value: EquipmentPreset.MAX_MAGE },
     { label: 'Max Melee', value: EquipmentPreset.MAX_MELEE },
     { label: 'Max Ranged', value: EquipmentPreset.MAX_RANGED },
     { label: 'Verac\'s equipment', value: EquipmentPreset.VERACS },
+    { label: 'Void (Mage)', value: EquipmentPreset.VOID_MAGE },
     { label: 'Void (Melee)', value: EquipmentPreset.VOID_MELEE },
     { label: 'Void (Ranged)', value: EquipmentPreset.VOID_RANGED },
   ];
@@ -38,6 +40,22 @@ const EquipmentPresets: React.FC = () => {
             hands: findItemById(22981), // Ferocious gloves
             feet: findItemById(13239), // Primordial boots
             ring: findItemById(28307), // Ultor ring
+          },
+        };
+        break;
+      }
+      case EquipmentPreset.MAX_MAGE: {
+        newPlayer = {
+          equipment: {
+            head: findItemById(21018), // Ancestral hat
+            cape: findItemById(21791), // Imbued saradomin cape
+            neck: findItemById(12002), // Occult necklace
+            ammo: findItemById(22947), // Rada's blessing 4
+            body: findItemById(21021), // Ancestral robe top
+            legs: findItemById(21024), // Ancestral robe bottom
+            hands: findItemById(19544), // Tormented bracelet
+            feet: findItemById(13235), // Eternal boots
+            ring: findItemById(28313), // Magus ring
           },
         };
         break;
@@ -70,6 +88,22 @@ const EquipmentPresets: React.FC = () => {
             hands: findItemById(26235), // Zaryte vambraces
             feet: findItemById(13237), // Pegasian boots
             ring: findItemById(28310), // Venator ring
+          },
+        };
+        break;
+      }
+      case EquipmentPreset.VOID_MAGE: {
+        newPlayer = {
+          equipment: {
+            head: findItemById(11663), // Void mage helm
+            cape: findItemById(21791), // Imbued saradomin cape
+            neck: findItemById(12002), // Occult necklace
+            ammo: findItemById(22947), // Rada's blessing 4
+            body: findItemById(13072), // Elite void top
+            legs: findItemById(13073), // Elite void robe
+            hands: findItemById(8842), // Void knight gloves
+            feet: findItemById(13235), // Eternal boots
+            ring: findItemById(28313), // Magus ring
           },
         };
         break;
