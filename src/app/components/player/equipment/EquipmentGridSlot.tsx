@@ -22,7 +22,7 @@ const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => 
       data-slot={slot}
       data-tooltip-id="tooltip"
       data-tooltip-content={currentSlot?.name}
-      onClick={() => {
+      onMouseDown={() => {
         if (!isEmpty) store.clearEquipmentSlot(slot);
       }}
     >
@@ -30,7 +30,7 @@ const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => 
         <img src={getCdnImage(`equipment/${currentSlot.image}`)} alt={currentSlot.name} />
       ) : (
         placeholder && (
-          <img className="opacity-30 dark:filter dark:invert" src={placeholder} alt={slot} />
+          <img className="opacity-30 dark:filter dark:invert" src={placeholder} alt={slot} draggable={false} />
         )
       )}
     </button>
