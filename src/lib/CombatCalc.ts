@@ -44,6 +44,8 @@ export interface CalcOpts {
   loadoutIx: number,
   overrides?: {
     accuracy?: number,
+    attackRoll?: number,
+    defenceRoll?: number,
   }
 }
 
@@ -408,6 +410,10 @@ export default class CombatCalc {
      * Get the NPC defence roll for this loadout, which is based on the player's current combat style
      */
   public getNPCDefenceRoll(): number {
+    if (this.opts.overrides?.defenceRoll !== undefined) {
+      return this.opts.overrides.defenceRoll;
+    }
+
     let effectiveLevel = this.player.style.type === 'magic' && !USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS.includes(this.monster.id)
       ? this.monster.skills.magic
       : this.monster.skills.def;
@@ -925,6 +931,10 @@ export default class CombatCalc {
      * Get the max attack roll for this loadout, which is based on the player's current combat style
      */
   public getMaxAttackRoll() {
+    if (this.opts.overrides?.attackRoll !== undefined) {
+      return this.opts.overrides.attackRoll;
+    }
+
     const style = this.player.style.type;
     if (this.isUsingMeleeStyle()) {
       return this.getPlayerMaxMeleeAttackRoll();
@@ -954,6 +964,15 @@ export default class CombatCalc {
     const hitChance = (atk > def)
       ? 1 - ((def + 2) / (2 * (atk + 1)))
       : atk / (2 * (def + 1));
+
+    if (this.player.style.type === 'magic' && this.wearing('Brimstone ring')) {
+      const effectDef = Math.trunc(def * 9 / 10);
+      const effectHitChance = (atk > effectDef)
+        ? 1 - ((effectDef + 2) / (2 * (atk + 1)))
+        : atk / (2 * (effectDef + 1));
+
+      return (0.75 * hitChance) + (0.25 * effectHitChance);
+    }
 
     if (this.isWearingFang()) {
       if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)) {
