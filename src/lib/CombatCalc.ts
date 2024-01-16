@@ -1096,8 +1096,8 @@ export default class CombatCalc {
         dist = new AttackDistribution([
           new HitDistribution([
             ...standardHitDist.scaleProbability(1 - chance).hits,
-            new WeightedHit(this.getHitChance() * chance, [effectDmg]),
-            new WeightedHit((1 - this.getHitChance()) * chance, [0]),
+            new WeightedHit(acc * chance, [effectDmg]),
+            new WeightedHit((1 - acc) * chance, [0]),
           ]),
         ]);
       }
@@ -1126,11 +1126,12 @@ export default class CombatCalc {
 
       if (this.wearing(['Onyx bolts (e)', 'Onyx dragon bolts (e)']) && !mattrs.includes(MonsterAttribute.UNDEAD)) {
         const chance = 0.1 * kandarinDiaryFactor;
-        const effectDmg = Math.trunc(rangedLvl * (zaryte ? 32 : 20) / 100);
+        const effectMax = max + Math.trunc(rangedLvl * (zaryte ? 32 : 20) / 100);
         dist = new AttackDistribution([
           new HitDistribution([
             ...standardHitDist.scaleProbability(1 - chance).hits,
-            ...HitDistribution.linear(acc, effectDmg, max + effectDmg).scaleProbability(chance).hits,
+            ...HitDistribution.linear(1.0, 0, effectMax).scaleProbability(acc * chance).hits,
+            new WeightedHit((1 - acc) * chance, [0]),
           ]),
         ]);
       }
