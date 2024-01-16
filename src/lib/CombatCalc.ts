@@ -214,6 +214,10 @@ export default class CombatCalc {
     return this.wearingAll(['Obsidian helmet', 'Obsidian platelegs', 'Obsidian platebody']);
   }
 
+  private isWearingDinhs(): boolean {
+    return this.wearing(["Dinh's bulwark", "Dinh's blazing bulwark"]);
+  }
+
   /**
      * Whether the player is using an item that acts as a crystal bow for the purpose of its effect.
      * @see https://oldschool.runescape.wiki/w/Crystal_bow
@@ -515,7 +519,15 @@ export default class CombatCalc {
       effectiveLevel = Math.trunc(effectiveLevel * 11 / 10);
     }
 
-    let maxHit = Math.trunc((effectiveLevel * (this.player.bonuses.str + 64) + 320) / 640); // should this be (.str) or (.melee_str)?
+    let strBonus = this.player.bonuses.str;
+    if (this.isWearingDinhs()) {
+      // todo should this be done somewhere visible to the user?
+      const defensives = this.player.defensive;
+      const defenceSum = defensives.stab + defensives.slash + defensives.crush + defensives.ranged;
+      strBonus += Math.max(0, Math.trunc((defenceSum - 800) / 12) - 38);
+    }
+
+    let maxHit = Math.trunc((effectiveLevel * (strBonus + 64) + 320) / 640); // should this be (.str) or (.melee_str)?
     const baseDmg = maxHit;
 
     // Specific bonuses that are applied from equipment
