@@ -64,7 +64,7 @@ const Home: NextPage = observer(() => {
         break;
       }
       default:
-        break;
+        return;
     }
 
     // If we get here, we've handled the event, so prevent it bubbling
