@@ -1092,7 +1092,9 @@ export default class CombatCalc {
 
       if (this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)'])) {
         const chance = 0.06 * kandarinDiaryFactor;
-        const effectDmg = Math.min(100, Math.trunc(this.monster.monsterCurrentHp / 5));
+        const effectDmg = zaryte
+          ? Math.min(100, Math.trunc(this.monster.monsterCurrentHp / 5))
+          : Math.min(110, Math.trunc(this.monster.monsterCurrentHp * 22 / 100));
         dist = new AttackDistribution([
           new HitDistribution([
             ...standardHitDist.scaleProbability(1 - chance).hits,
