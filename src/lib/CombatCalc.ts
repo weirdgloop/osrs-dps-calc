@@ -1090,20 +1090,6 @@ export default class CombatCalc {
         ]));
       }
 
-      if (this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)'])) {
-        const chance = 0.06 * kandarinDiaryFactor;
-        const effectDmg = zaryte
-          ? Math.min(100, Math.trunc(this.monster.monsterCurrentHp / 5))
-          : Math.min(110, Math.trunc(this.monster.monsterCurrentHp * 22 / 100));
-        dist = new AttackDistribution([
-          new HitDistribution([
-            ...standardHitDist.scaleProbability(1 - chance).hits,
-            new WeightedHit(acc * chance, [effectDmg]),
-            new WeightedHit((1 - acc) * chance, [0]),
-          ]),
-        ]);
-      }
-
       if (this.wearing(['Diamond bolts (e)', 'Diamond dragon bolts (e)'])) {
         const chance = 0.1 * kandarinDiaryFactor;
         const effectMax = Math.trunc(max * (zaryte ? 26 : 15) / 100);
@@ -1133,6 +1119,27 @@ export default class CombatCalc {
           new HitDistribution([
             ...standardHitDist.scaleProbability(1 - chance).hits,
             ...HitDistribution.linear(1.0, 0, effectMax).scaleProbability(acc * chance).hits,
+            new WeightedHit((1 - acc) * chance, [0]),
+          ]),
+        ]);
+      }
+    }
+
+    // we apply corp early and rubies late since corp takes full ruby bolt effect damage
+    if (this.monster.name === 'Corporeal Beast' && !this.isWearingCorpbaneWeapon()) {
+      dist = dist.transform(divisionTransformer(2));
+    }
+
+    if (this.player.equipment.weapon?.name.includes('rossbow')) {
+      if (this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)'])) {
+        const chance = 0.06 * (this.player.buffs.kandarinDiary ? 1.1 : 1.0);
+        const effectDmg = this.wearing('Zaryte crossbow')
+          ? Math.min(100, Math.trunc(this.monster.monsterCurrentHp / 5))
+          : Math.min(110, Math.trunc(this.monster.monsterCurrentHp * 22 / 100));
+        dist = new AttackDistribution([
+          new HitDistribution([
+            ...standardHitDist.scaleProbability(1 - chance).hits,
+            new WeightedHit(acc * chance, [effectDmg]),
             new WeightedHit((1 - acc) * chance, [0]),
           ]),
         ]);
@@ -1178,9 +1185,6 @@ export default class CombatCalc {
     }
     if (this.monster.attributes.includes(MonsterAttribute.VAMPYRE_2) && this.wearing("Efaritay's aid") && !this.isWearingSilverWeapon()) {
       dist = dist.transform(flatLimitTransformer(10));
-    }
-    if (this.monster.name === 'Corporeal Beast' && !this.isWearingCorpbaneWeapon()) {
-      dist = dist.transform(divisionTransformer(2));
     }
     if (this.monster.name === 'Ice demon' && !isFireSpell(this.player.spell) && this.player.spell?.name !== 'Flames of Zamorak') {
       // https://twitter.com/JagexAsh/status/1133350436554121216
