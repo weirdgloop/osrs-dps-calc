@@ -69,6 +69,11 @@ const Select = <T extends SelectItem>(props: ISelectProps<T>) => {
           } else {
             menuRef.current?.classList.remove('bottom-[100%]');
           }
+
+          // If it would overflow the right edge of the viewport, align the right edges of the select and dropdown elements instead of the left edges
+          if (pos.right > window.innerWidth) {
+            menuRef.current?.classList.add('right-0');
+          }
         }
       }
     },
