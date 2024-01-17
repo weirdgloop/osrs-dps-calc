@@ -66,13 +66,8 @@ export default class CombatCalc {
   private memoizedDist: AttackDistribution | undefined = undefined;
 
   constructor(player: Player, monster: Monster, opts: Partial<CalcOpts> = {}) {
-    // clone all the inputs so that we can make edits without affecting ui state
-    this.player = {
-      ...player,
-    };
-    this.monster = {
-      ...monster,
-    };
+    this.player = player;
+    this.monster = monster;
     this.opts = {
       ...DEFAULT_OPTS,
       ...opts,
@@ -84,8 +79,12 @@ export default class CombatCalc {
   }
 
   private sanitizeInputs() {
+    // we should do clone-edits here to prevent affecting ui state
     if (!AUTOCAST_STANCES.includes(this.player.style.stance)) {
-      this.player.spell = null;
+      this.player = {
+        ...this.player,
+        spell: null,
+      };
     }
   }
 
