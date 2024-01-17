@@ -494,7 +494,7 @@ class GlobalState implements State {
    */
   updatePlayer(player: PartialDeep<Player>) {
     const eq = player.equipment;
-    if (eq && Object.hasOwn(eq, 'weapon')) {
+    if (eq && (Object.hasOwn(eq, 'weapon') || Object.hasOwn(eq, 'shield'))) {
       const currentWeapon = this.equipmentData.weapon;
       const newWeapon = player.equipment?.weapon;
 
