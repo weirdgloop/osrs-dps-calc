@@ -31,6 +31,7 @@ import {
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { scaledMonster } from '@/lib/MonsterScaling';
 import { CombatStyleStance } from '@/types/PlayerCombatStyle';
+import { CalcDetails, DetailEntry, DetailKey } from '@/lib/CalcDetails';
 
 const DEFAULT_ATTACK_SPEED = 4;
 const SECONDS_PER_TICK = 0.6;
@@ -41,7 +42,8 @@ const TTK_DIST_EPSILON = 0.0001;
 const AUTOCAST_STANCES: CombatStyleStance[] = ['Autocast', 'Defensive Autocast'];
 
 export interface CalcOpts {
-  loadoutIx: number,
+  loadoutName: string,
+  detailedOutput: boolean,
   overrides?: {
     accuracy?: number,
     attackRoll?: number,
@@ -50,7 +52,8 @@ export interface CalcOpts {
 }
 
 const DEFAULT_OPTS: CalcOpts = {
-  loadoutIx: -1,
+  loadoutName: 'unknown',
+  detailedOutput: false,
 };
 
 export default class CombatCalc {
@@ -63,7 +66,9 @@ export default class CombatCalc {
   // Array of the names of all equipped items (for quick checks)
   private allEquippedItems: string[];
 
-  private memoizedDist: AttackDistribution | undefined = undefined;
+  private memoizedDist?: AttackDistribution;
+
+  private _details?: CalcDetails;
 
   constructor(player: Player, monster: Monster, opts: Partial<CalcOpts> = {}) {
     this.player = player;
@@ -72,6 +77,10 @@ export default class CombatCalc {
       ...DEFAULT_OPTS,
       ...opts,
     };
+
+    if (this.opts.detailedOutput) {
+      this._details = new CalcDetails();
+    }
 
     this.sanitizeInputs();
 
@@ -86,6 +95,15 @@ export default class CombatCalc {
         spell: null,
       };
     }
+  }
+
+  private track(label: DetailKey, value: number): number {
+    this._details?.track(label, value);
+    return value;
+  }
+
+  get details(): DetailEntry[] {
+    return this._details?.lines || [];
   }
 
   /**
@@ -406,21 +424,24 @@ export default class CombatCalc {
      */
   public getNPCDefenceRoll(): number {
     if (this.opts.overrides?.defenceRoll !== undefined) {
-      return this.opts.overrides.defenceRoll;
+      return this.track(DetailKey.DEFENCE_ROLL_FINAL, this.opts.overrides.defenceRoll);
     }
 
-    let effectiveLevel = this.player.style.type === 'magic' && !USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS.includes(this.monster.id)
-      ? this.monster.skills.magic
-      : this.monster.skills.def;
+    const level = this.track(
+      DetailKey.DEFENCE_ROLL_LEVEL,
+      this.player.style.type === 'magic' && !USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS.includes(this.monster.id)
+        ? this.monster.skills.magic
+        : this.monster.skills.def,
+    );
+    const effectiveLevel = this.track(DetailKey.DEFENCE_ROLL_EFFECTIVE_LEVEL, level + 9);
 
-    effectiveLevel += 9;
-    let defenceRoll = effectiveLevel * (this.monster.defensive[this.player.style.type] + 64);
+    let defenceRoll = this.track(DetailKey.DEFENCE_ROLL_BASE, effectiveLevel * (this.monster.defensive[this.player.style.type] + 64));
 
     if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) && this.monster.toaInvocationLevel) {
-      defenceRoll = Math.trunc(defenceRoll * (250 + this.monster.toaInvocationLevel) / 250);
+      defenceRoll = this.track(DetailKey.DEFENCE_ROLL_TOA, Math.trunc(defenceRoll * (250 + this.monster.toaInvocationLevel) / 250));
     }
 
-    return defenceRoll;
+    return this.track(DetailKey.DEFENCE_ROLL_FINAL, defenceRoll);
   }
 
   private getPlayerMaxMeleeAttackRoll(): number {
