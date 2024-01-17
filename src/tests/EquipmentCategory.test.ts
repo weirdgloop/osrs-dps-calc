@@ -1,5 +1,6 @@
 import { expect, test } from '@jest/globals';
-import { EquipmentCategory, getCombatStylesForCategory } from '@/enums/EquipmentCategory';
+import { EquipmentCategory } from '@/enums/EquipmentCategory';
+import { getCombatStylesForCategory } from '@/utils';
 
 test('getCombatStylesForCategory', () => {
   expect(getCombatStylesForCategory(EquipmentCategory.BLUDGEON)).toEqual([

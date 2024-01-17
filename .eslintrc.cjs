@@ -3,7 +3,7 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     plugins: ['@typescript-eslint'],
     root: true,
-    ignorePatterns: ['**/tests/**/*.ts', '**/tests/**/*.js'],
+    ignorePatterns: ['**/tests/__mocks__/**/*'],
     rules: {
         '@next/next/no-img-element': 'off',
         'react/require-default-props': 'off',
