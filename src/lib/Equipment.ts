@@ -1,9 +1,115 @@
+const commonAmmoCategories = () => {
+  const ret: { [k: string]: number[] } = {
+    bow_t1: [
+      882, 883, 5616, 5622, // Bronze arrow + variants
+      884, 885, 5617, 5623, // Iron arrow + variants
+    ],
+    cb_t1: [
+      877, 878, 6061, 6062, 879, 9236, // Bronze bolts + variants, opal bolts + (e)
+    ],
+    javelin: [
+      825, 831, 5642, 5648, // Bronze javelin + variants
+      826, 832, 5643, 5649, // Iron javelin + variants
+      827, 833, 5644, 5650, // Steel javelin + variants
+      828, 834, 5645, 5651, // Mithril javelin + variants
+      829, 835, 5646, 5652, // Adamant javelin + variants
+      830, 836, 5647, 5653, // Rune javelin + variants
+      21318, 21320, 21322, 21324, // Amethyst javelin + variants
+      19484, 19486, 19488, 19490, // Dragon javelin + variants
+    ],
+  };
+
+  // Bows
+  ret.bow_t5 = [...ret.bow_t1, 886, 887, 5618, 5624]; // Steel arrow + variants
+  ret.bow_t20 = [...ret.bow_t5, 888, 889, 5619, 5625]; // Mithril arrow + variants
+  ret.bow_t30 = [...ret.bow_t20, 890, 891, 5620, 5626]; // Adamant arrow + variants
+  ret.bow_t40 = [...ret.bow_t30, 892, 893, 5621, 5627, 78]; // Rune arrow + variants, ice arrows
+  ret.bow_t50 = [...ret.bow_t40, 21326, 21332, 21334, 21336, 4160]; // Amethyst arrow + variants, broad arrows
+  ret.bow_t60 = [...ret.bow_t50, 11212, 11227, 11228, 11229]; // Dragon arrow + variants
+
+  // Bolts
+  ret.cb_t16 = [...ret.cb_t1, 9139, 9286, 9293, 9300, 9335, 9237]; // Blurite bolts + variants, jade bolts + (e)
+  ret.cb_t26 = [...ret.cb_t16, 9140, 9287, 9294, 9301, 880, 9238, 9145, 9292, 9299, 9306]; // Iron bolts + variants, pearl bolts + (e), silver bolts
+  ret.cb_t31 = [...ret.cb_t26, 9141, 9288, 9295, 9302, 9336, 9239]; // Steel bolts + variants, topaz bolts + (e)
+  ret.cb_t36 = [...ret.cb_t31, 9142, 9289, 9296, 9303, 9337, 9240, 9338, 9241]; // Mithril bolts + variants, sapphire/emerald bolts + (e)
+  ret.cb_t46 = [...ret.cb_t36, 9143, 9290, 9297, 9304, 9339, 9242, 9340, 9243]; // Adamant bolts + variants, ruby/diamond bolts + (e)
+  ret.cb_t61 = [...ret.cb_t46, 9144, 9291, 9298, 9305, 11875, 21316, 9341, 9244, 9342, 9245]; // Runite bolts + variants, broad bolts, amethyst broad bolts, dragonstone/onyx bolts + (e)
+  ret.cb_t64 = [...ret.cb_t61, 21905, 21924, 21926, 21928, 21955, 21932, 21957, 21934, 21959, 21936, 21961, 21938, 21963, 21940, 21965, 21942, 21967, 21944, 21969, 21946, 21971, 21948, 21973, 21950]; // Dragon bolts + variants, many gem-tipped bolts
+  return ret;
+};
+
+/**
+ * A map of item ID -> array of item IDs for which ranged weapons can use which specific types of ammo.
+ * Empty arrays indicate that the item should not be used with any ammo in the ammo slot at all.
+ */
+export const ammoForRangedWeapons = {
+  11708: commonAmmoCategories().bow_t1, // Cursed goblin bow
+  23357: commonAmmoCategories().bow_t1, // Rain bow
+  9705: 9706, // Training bow
+  841: commonAmmoCategories().bow_t1, // Shortbow
+  839: commonAmmoCategories().bow_t1, // Longbow
+  843: commonAmmoCategories().bow_t5, // Oak shortbow
+  845: commonAmmoCategories().bow_t5, // Oak longbow
+  4236: commonAmmoCategories().bow_t5, // Signed oak bow
+  849: commonAmmoCategories().bow_t20, // Willow shortbow
+  847: commonAmmoCategories().bow_t20, // Willow longbow
+  10280: commonAmmoCategories().bow_t20, // Willow comp bow
+  853: commonAmmoCategories().bow_t30, // Maple shortbow
+  851: commonAmmoCategories().bow_t30, // Maple longbow
+  2883: [2866], // Ogre bow
+  4827: [2866, 4773, 4778, 4783, 4788, 4793, 4798, 4803], // Comp ogre bow
+  857: commonAmmoCategories().bow_t40, // Yew shortbow
+  855: commonAmmoCategories().bow_t40, // Yew longbow
+  10282: commonAmmoCategories().bow_t40, // Yew comp bow
+  6724: commonAmmoCategories().bow_t50, // Seercull
+  861: commonAmmoCategories().bow_t50, // Magic shortbow
+  12788: commonAmmoCategories().bow_t50, // Magic shortbow (i)
+  859: commonAmmoCategories().bow_t50, // Magic longbow
+  10284: commonAmmoCategories().bow_t50, // Magic comp bow
+  11235: commonAmmoCategories().bow_t60, // Dark bow
+  27853: commonAmmoCategories().bow_t60, // Dark bow (bh)
+  12424: commonAmmoCategories().bow_t60, // 3rd age bow
+  27610: commonAmmoCategories().bow_t60, // Venator bow
+  27612: commonAmmoCategories().bow_t60, // Venator bow (uncharged)
+  20997: commonAmmoCategories().bow_t60, // Twisted bow
+  837: commonAmmoCategories().cb_t1, // Crossbow
+  767: commonAmmoCategories().cb_t1, // Phoenix crossbow
+  9174: commonAmmoCategories().cb_t1, // Bronze crossbow
+  9176: commonAmmoCategories().cb_t16, // Blurite crossbow
+  9177: commonAmmoCategories().cb_t26, // Iron crossbow
+  9179: commonAmmoCategories().cb_t31, // Steel crossbow
+  9181: commonAmmoCategories().cb_t36, // Mithril crossbow
+  9183: commonAmmoCategories().cb_t46, // Adamant crossbow
+  9185: commonAmmoCategories().cb_t61, // Rune crossbow
+  21902: commonAmmoCategories().cb_t64, // Dragon crossbow
+  19478: commonAmmoCategories().javelin, // Light ballista
+  19481: commonAmmoCategories().javelin, // Heavy ballista
+  8880: [...commonAmmoCategories().cb_t16, 9140, 9287, 9294, 9301, 8882], // Dorgeshuun crossbow
+  10156: [10158, 10159], // Hunters' crossbow
+  4734: [4740], // Karil's crossbow (undmg)
+  21012: commonAmmoCategories().cb_t64, // Dragon hunter crossbow
+  11785: commonAmmoCategories().cb_t64, // Armadyl crossbow
+  26374: commonAmmoCategories().cb_t64, // Zaryte crossbow
+  12924: [], // Toxic blowpipe (empty)
+  12926: [], // Toxic blowpipe (charged)
+  22547: [], // Craw's bow (empty)
+  22550: [], // Craw's bow (charged)
+  23983: [], // Crystal bow (empty)
+  23985: [], // Crystal bow (inactive)
+  24123: [], // Crystal bow (new)
+  27652: [], // Webweaver bow (empty)
+  27655: [], // Webweaver bow (charged)
+  25862: [], // Bow of faerdhinen (empty)
+  25865: [], // Bow of faerdhinen (charged)
+  25867: [], // Bow of faerdhinen (c)
+};
+
 /**
  * A map of item ID -> item ID for items that are identical in function, but different in appearance. This includes
  * "locked" variants of items, broken/degraded variants of armour and weapons, and cosmetic recolours of equipment.
  * @see https://oldschool.runescape.wiki/w/Trouver_parchment
  */
-const equipmentAliases = {
+export const equipmentAliases = {
   24141: 8849, // Adamant defender#Locked
   4856: 4708, // Ahrim's hood#100
   4859: 4708, // Ahrim's hood#25
@@ -230,5 +336,3 @@ const equipmentAliases = {
   26728: 26727, // Wristbands of the arena (i)#Locked
   24170: 12638, // Zamorak halo#Locked
 };
-
-export default equipmentAliases;
