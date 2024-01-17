@@ -190,7 +190,7 @@ class GlobalState implements State {
 
   workerRecomputeTimer: number | null = null;
 
-  availableEquipment = equipment.map((v) => v as EquipmentPiece);
+  availableEquipment: EquipmentPiece[] = equipment as EquipmentPiece[];
 
   availableMonsters = getMonsters();
 
@@ -261,7 +261,7 @@ class GlobalState implements State {
 
   recalculateEquipmentBonusesFromGear() {
     const eq = this.equipmentData;
-    let totals: EquipmentBonuses = {
+    const totals: EquipmentBonuses = {
       bonuses: {
         str: 0,
         magic_str: 0,
@@ -283,34 +283,22 @@ class GlobalState implements State {
         magic: 0,
       },
     };
-    keys(this.equipmentData).forEach((slot) => {
+
+    keys(eq).forEach((slot) => {
       const piece = eq[slot];
       if (!piece) {
         return;
       }
 
-      totals = {
-        bonuses: {
-          str: totals.bonuses.str + piece.offensive[7],
-          magic_str: totals.bonuses.magic_str + piece.offensive[1],
-          ranged_str: totals.bonuses.ranged_str + piece.offensive[4],
-          prayer: totals.bonuses.prayer + piece.defensive[5],
-        },
-        offensive: {
-          slash: totals.offensive.slash + piece.offensive[5],
-          stab: totals.offensive.stab + piece.offensive[6],
-          crush: totals.offensive.crush + piece.offensive[0],
-          ranged: totals.offensive.ranged + piece.offensive[3],
-          magic: totals.offensive.magic + piece.offensive[2],
-        },
-        defensive: {
-          slash: totals.defensive.slash + piece.defensive[3],
-          stab: totals.defensive.stab + piece.defensive[4],
-          crush: totals.defensive.crush + piece.defensive[0],
-          ranged: totals.defensive.ranged + piece.defensive[2],
-          magic: totals.defensive.magic + piece.defensive[1],
-        },
-      };
+      keys(piece.bonuses).forEach((stat) => {
+        totals.bonuses[stat] += piece.bonuses[stat] || 0;
+      });
+      keys(piece.offensive).forEach((stat) => {
+        totals.offensive[stat] += piece.offensive[stat] || 0;
+      });
+      keys(piece.defensive).forEach((stat) => {
+        totals.defensive[stat] += piece.defensive[stat] || 0;
+      });
     });
 
     if (eq.weapon?.name === "Tumeken's shadow") {

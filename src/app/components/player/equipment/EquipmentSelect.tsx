@@ -60,18 +60,17 @@ const EquipmentSelect: React.FC = observer(() => {
     }
 
     cross(blowpipeEntries, dartEntries).forEach(([blowpipe, dart]) => {
-      const newStrength = blowpipe.equipment.offensive[4] + dart.equipment.offensive[4];
+      const newStrength = blowpipe.equipment.bonuses.ranged_str + dart.equipment.bonuses.ranged_str;
       entries.push({
         ...blowpipe,
         label: `${blowpipe.label} (${dart.label.split(' ', 2)[0]})`,
         value: `${blowpipe.value}_${dart.value}`,
         equipment: {
           ...blowpipe.equipment,
-          offensive: [
-            ...blowpipe.equipment.offensive.slice(0, 4),
-            newStrength,
-            ...blowpipe.equipment.offensive.slice(5),
-          ],
+          bonuses: {
+            ...blowpipe.equipment.bonuses,
+            ranged_str: newStrength,
+          },
         },
       });
     });

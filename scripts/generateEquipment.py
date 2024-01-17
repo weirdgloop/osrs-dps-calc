@@ -106,24 +106,27 @@ def main():
             'image': '' if not po['Image'] else po['Image'][0]['fulltext'].replace('File:', ''),
             'speed': getPrintoutValue(po['Weapon attack speed']) or 0,
             'category': getPrintoutValue(po['Combat style']) or '',
-            'offensive': [
-                getPrintoutValue(po['Crush attack bonus']) or 0,
-                getPrintoutValue(po['Magic Damage bonus']) or 0,
-                getPrintoutValue(po['Magic attack bonus']) or 0,
-                getPrintoutValue(po['Range attack bonus']) or 0,
-                getPrintoutValue(po['Ranged Strength bonus']) or 0,
-                getPrintoutValue(po['Slash attack bonus']) or 0,
-                getPrintoutValue(po['Stab attack bonus']) or 0,
-                getPrintoutValue(po['Strength bonus']) or 0
-            ],
-            'defensive': [
-                getPrintoutValue(po['Crush defence bonus']) or 0,
-                getPrintoutValue(po['Magic defence bonus']) or 0,
-                getPrintoutValue(po['Range defence bonus']) or 0,
-                getPrintoutValue(po['Slash defence bonus']) or 0,
-                getPrintoutValue(po['Stab defence bonus']) or 0,
-                getPrintoutValue(po['Prayer bonus']) or 0
-            ],
+            'bonuses': {
+                'str': getPrintoutValue(po['Strength bonus']),
+                'ranged_str': getPrintoutValue(po['Ranged Strength bonus']),
+                'magic_str': getPrintoutValue(po['Magic Damage bonus']),
+                'prayer': getPrintoutValue(po['Prayer bonus']),
+            },
+            'offensive': {
+                'stab': getPrintoutValue(po['Stab attack bonus']),
+                'slash': getPrintoutValue(po['Slash attack bonus']),
+                'crush': getPrintoutValue(po['Crush attack bonus']),
+                'magic': getPrintoutValue(po['Magic attack bonus']),
+                'ranged': getPrintoutValue(po['Range attack bonus']),
+            },
+            'defensive': {
+                'stab': getPrintoutValue(po['Stab defence bonus']),
+                'slash': getPrintoutValue(po['Slash defence bonus']),
+                'crush': getPrintoutValue(po['Crush defence bonus']),
+                'magic': getPrintoutValue(po['Magic defence bonus']),
+                'ranged': getPrintoutValue(po['Range defence bonus']),
+
+            },
             'isTwoHanded': False
         }
 

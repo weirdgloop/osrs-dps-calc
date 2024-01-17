@@ -14,7 +14,7 @@ export interface PlayerSkills {
   str: number;
 }
 
-export interface EquipmentPiece {
+export interface EquipmentPiece extends EquipmentStats {
   name: string;
   id: number;
   version: string;
@@ -22,8 +22,6 @@ export interface EquipmentPiece {
   image: string;
   speed: number;
   category: EquipmentCategory;
-  offensive: number[],
-  defensive: number[],
   isTwoHanded: boolean;
 }
 
@@ -68,7 +66,13 @@ export interface PlayerOffensive {
   ranged: number;
 }
 
-export interface Player {
+export interface EquipmentStats {
+  bonuses: PlayerBonuses,
+  offensive: PlayerOffensive,
+  defensive: PlayerDefensive,
+}
+
+export interface Player extends EquipmentStats {
   style: PlayerCombatStyle;
   /**
    * The player's base skill levels. These are their skill levels before any boosts (for example, from potions)
@@ -82,9 +86,6 @@ export interface Player {
   boosts: PlayerSkills;
   equipment: PlayerEquipment;
   prayers: Prayer[];
-  bonuses: PlayerBonuses;
-  defensive: PlayerDefensive;
-  offensive: PlayerOffensive;
   buffs: {
     /**
      * This property should only be used to display the UI state, and should not be used in calculator code.
