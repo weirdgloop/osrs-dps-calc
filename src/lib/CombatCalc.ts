@@ -982,7 +982,7 @@ export default class CombatCalc {
       return (0.75 * hitChance) + (0.25 * effectHitChance);
     }
 
-    if (this.isWearingFang()) {
+    if (this.isWearingFang() && this.player.style.type === 'stab') {
       if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)) {
         return 1 - (1 - hitChance) ** 2;
       }
