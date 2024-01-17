@@ -361,20 +361,21 @@ export default class CombatCalc {
      */
   private isWearingCorpbaneWeapon(): boolean {
     const { weapon } = this.player.equipment;
+    const isStab = this.player.style.type === 'stab';
     if (!weapon) {
       return false;
     }
 
     if (this.isWearingFang()) {
-      return true;
+      return isStab;
     }
 
     if (weapon.name.endsWith('halberd')) {
-      return true;
+      return isStab;
     }
 
     if (weapon.name.includes('spear')) {
-      return true;
+      return isStab;
     }
 
     if (this.player.style.type === 'magic') {
