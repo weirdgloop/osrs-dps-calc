@@ -95,6 +95,7 @@ export interface Player {
     potions: Potion[];
     onSlayerTask: boolean;
     inWilderness: boolean;
+    forinthrySurge: boolean;
     /**
      * Whether the Kandarin Hard Diary has been completed, which provides 10% increase for the enchanted bolt spec to activate.
      * @see https://oldschool.runescape.wiki/w/Kandarin_Diary#Hard

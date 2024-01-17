@@ -4,6 +4,7 @@ import { useStore } from '@/state';
 import slayer from '@/public/img/misc/slayer.webp';
 import skull from '@/public/img/misc/skull.webp';
 import diary from '@/public/img/misc/diary.png';
+import forinthry_surge from '@/public/img/misc/forinthry_surge.webp';
 import Toggle from '../generic/Toggle';
 
 const ExtraOptions: React.FC = observer(() => {
@@ -32,6 +33,17 @@ const ExtraOptions: React.FC = observer(() => {
               <img src={skull.src} width={18} className="inline-block" alt="" />
               {' '}
               In the Wilderness
+            </>
+          )}
+        />
+        <Toggle
+          checked={player.buffs.forinthrySurge}
+          setChecked={(c) => store.updatePlayer({ buffs: { forinthrySurge: c } })}
+          label={(
+            <>
+              <img src={forinthry_surge.src} width={18} className="inline-block" alt="" />
+              {' '}
+              Forinthry Surge
             </>
           )}
         />

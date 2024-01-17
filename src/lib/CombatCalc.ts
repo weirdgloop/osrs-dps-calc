@@ -46,7 +46,7 @@ export interface CalcOpts {
     accuracy?: number,
     attackRoll?: number,
     defenceRoll?: number,
-  }
+  },
 }
 
 const DEFAULT_OPTS: CalcOpts = {
@@ -455,7 +455,11 @@ export default class CombatCalc {
     const { buffs } = this.player;
 
     // These bonuses do not stack with each other
-    if (this.wearing(['Salve amulet (e)', 'Salve amulet(ei)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
+    if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
+      attackRoll = this.player.buffs.forinthrySurge
+        ? Math.trunc(attackRoll * 14 / 20)
+        : Math.trunc(attackRoll * 17 / 20);
+    } else if (this.wearing(['Salve amulet (e)', 'Salve amulet(ei)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
       attackRoll = Math.trunc(attackRoll * 6 / 5);
     } else if (this.wearing(['Salve amulet', 'Salve amulet(i)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
       attackRoll = Math.trunc(attackRoll * 7 / 6);
@@ -541,7 +545,11 @@ export default class CombatCalc {
     const { buffs } = this.player;
 
     // These bonuses do not stack with each other
-    if (this.wearing(['Salve amulet (e)', 'Salve amulet(ei)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
+    if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
+      maxHit = this.player.buffs.forinthrySurge
+        ? Math.trunc(maxHit * 14 / 20)
+        : Math.trunc(maxHit * 17 / 20);
+    } else if (this.wearing(['Salve amulet (e)', 'Salve amulet(ei)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
       maxHit = Math.trunc(maxHit * 6 / 5);
     } else if (this.wearing(['Salve amulet', 'Salve amulet(i)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
       maxHit = Math.trunc(maxHit * 7 / 6);
@@ -644,7 +652,11 @@ export default class CombatCalc {
     const mattrs = this.monster.attributes;
     const { buffs } = this.player;
 
-    if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
+    if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
+      attackRoll = this.player.buffs.forinthrySurge
+        ? Math.trunc(attackRoll * 14 / 20)
+        : Math.trunc(attackRoll * 17 / 20);
+    } else if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       attackRoll = Math.trunc(attackRoll * 6 / 5);
     } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       attackRoll = Math.trunc(attackRoll * 7 / 6);
@@ -706,7 +718,11 @@ export default class CombatCalc {
     // Specific bonuses that are applied from equipment
     const mattrs = this.monster.attributes;
     const { buffs } = this.player;
-    if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
+    if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
+      maxHit = this.player.buffs.forinthrySurge
+        ? Math.trunc(maxHit * 14 / 20)
+        : Math.trunc(maxHit * 17 / 20);
+    } else if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       maxHit = Math.trunc(maxHit * 6 / 5);
     } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       maxHit = Math.trunc(maxHit * 7 / 6);
@@ -762,7 +778,11 @@ export default class CombatCalc {
 
     let attackRoll = effectiveLevel * (magicBonus + 64);
 
-    if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
+    if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
+      attackRoll = this.player.buffs.forinthrySurge
+        ? Math.trunc(attackRoll * 14 / 20)
+        : Math.trunc(attackRoll * 17 / 20);
+    } else if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       attackRoll = Math.trunc(attackRoll * 6 / 5);
     } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       attackRoll = Math.trunc(attackRoll * 23 / 20);
@@ -884,7 +904,13 @@ export default class CombatCalc {
 
     maxHit = Math.trunc(maxHit * (1000 + magicDmgBonus) / 1000);
 
-    if (blackMaskBonus) maxHit = Math.trunc(maxHit * 23 / 20);
+    if (blackMaskBonus) {
+      maxHit = Math.trunc(maxHit * 23 / 20);
+    } else if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
+      maxHit = this.player.buffs.forinthrySurge
+        ? Math.trunc(maxHit * 14 / 20)
+        : Math.trunc(maxHit * 17 / 20);
+    }
 
     if (this.player.buffs.markOfDarknessSpell && this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = Math.trunc(maxHit * 25 / 20);
