@@ -1167,8 +1167,7 @@ export default class CombatCalc {
         dist = new AttackDistribution([
           new HitDistribution([
             ...dist.dists[0].scaleProbability(1 - chance).hits,
-            new WeightedHit(acc * chance, [effectDmg]),
-            new WeightedHit((1 - acc) * chance, [0]),
+            new WeightedHit(chance, [effectDmg]),
           ]),
         ]);
       }
