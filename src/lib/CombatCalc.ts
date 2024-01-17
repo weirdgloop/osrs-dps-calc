@@ -215,10 +215,6 @@ export default class CombatCalc {
     return this.wearingAll(['Obsidian helmet', 'Obsidian platelegs', 'Obsidian platebody']);
   }
 
-  private isWearingDinhs(): boolean {
-    return this.wearing(["Dinh's bulwark", "Dinh's blazing bulwark"]);
-  }
-
   /**
      * Whether the player is using an item that acts as a crystal bow for the purpose of its effect.
      * @see https://oldschool.runescape.wiki/w/Crystal_bow
@@ -528,13 +524,7 @@ export default class CombatCalc {
       effectiveLevel = Math.trunc(effectiveLevel * 11 / 10);
     }
 
-    let strBonus = this.player.bonuses.str;
-    if (this.isWearingDinhs()) {
-      // todo should this be done somewhere visible to the user?
-      const defensives = this.player.defensive;
-      const defenceSum = defensives.stab + defensives.slash + defensives.crush + defensives.ranged;
-      strBonus += Math.max(0, Math.trunc((defenceSum - 800) / 12) - 38);
-    }
+    const strBonus = this.player.bonuses.str;
 
     let maxHit = Math.trunc((effectiveLevel * (strBonus + 64) + 320) / 640); // should this be (.str) or (.melee_str)?
     const baseDmg = maxHit;
@@ -769,11 +759,7 @@ export default class CombatCalc {
     // Specific bonuses that are applied from equipment
     const mattrs = this.monster.attributes;
     const { buffs } = this.player;
-    let magicBonus = this.player.offensive.magic;
-
-    if (this.wearing("Tumeken's shadow")) {
-      magicBonus *= (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) ? 4 : 3);
-    }
+    const magicBonus = this.player.offensive.magic;
 
     let attackRoll = effectiveLevel * (magicBonus + 64);
 
@@ -880,10 +866,7 @@ export default class CombatCalc {
       maxHit += 10;
     }
 
-    let magicDmgBonus = this.player.bonuses.magic_str * 10; // is magic_str correct here?
-    if (this.wearing("Tumeken's shadow")) {
-      magicDmgBonus *= (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) ? 4 : 3);
-    }
+    let magicDmgBonus = this.player.bonuses.magic_str * 10;
 
     if (this.isWearingEliteMagicVoid()) {
       magicDmgBonus += 25;

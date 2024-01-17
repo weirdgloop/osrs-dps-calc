@@ -16,14 +16,16 @@ import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { toast } from 'react-toastify';
 import {
   fetchPlayerSkills,
-  getCombatStylesForCategory,
   fetchShortlinkData,
-  WORKER_JSON_REPLACER,
+  getCombatStylesForCategory,
+  keys,
   PotionMap,
+  WORKER_JSON_REPLACER,
 } from '@/utils';
 import { RecomputeValuesRequest, WorkerRequestType } from '@/types/WorkerData';
 import { scaledMonster } from '@/lib/MonsterScaling';
 import getMonsters from '@/lib/Monsters';
+import { TOMBS_OF_AMASCUT_MONSTER_IDS } from '@/constants';
 import equipment from '../cdn/json/equipment.json';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
@@ -34,8 +36,8 @@ import Potion from './enums/Potion';
 const EMPTY_CALC_LOADOUT = {} as CalculatedLoadout;
 
 type EquipmentBonuses = Pick<Player, 'bonuses' | 'offensive' | 'defensive'>;
-const calculateEquipmentBonuses = (eq: EquipmentPiece[]): EquipmentBonuses => {
-  const seed: EquipmentBonuses = {
+const calculateEquipmentBonuses = (eq: PlayerEquipment, m: Monster): EquipmentBonuses => {
+  let totals: EquipmentBonuses = {
     bonuses: {
       str: 0,
       magic_str: 0,
@@ -57,28 +59,49 @@ const calculateEquipmentBonuses = (eq: EquipmentPiece[]): EquipmentBonuses => {
       magic: 0,
     },
   };
-  return eq.reduce((acc, piece) => ({
-    bonuses: {
-      str: acc.bonuses.str + piece.offensive[7],
-      magic_str: acc.bonuses.magic_str + piece.offensive[1],
-      ranged_str: acc.bonuses.ranged_str + piece.offensive[4],
-      prayer: acc.bonuses.prayer + piece.defensive[5],
-    },
-    offensive: {
-      slash: acc.offensive.slash + piece.offensive[5],
-      stab: acc.offensive.stab + piece.offensive[6],
-      crush: acc.offensive.crush + piece.offensive[0],
-      ranged: acc.offensive.ranged + piece.offensive[3],
-      magic: acc.offensive.magic + piece.offensive[2],
-    },
-    defensive: {
-      slash: acc.defensive.slash + piece.defensive[3],
-      stab: acc.defensive.stab + piece.defensive[4],
-      crush: acc.defensive.crush + piece.defensive[0],
-      ranged: acc.defensive.ranged + piece.defensive[2],
-      magic: acc.defensive.magic + piece.defensive[1],
-    },
-  }), seed);
+  keys(eq).forEach((slot) => {
+    const piece = eq[slot];
+    if (!piece) {
+      return;
+    }
+
+    totals = {
+      bonuses: {
+        str: totals.bonuses.str + piece.offensive[7],
+        magic_str: totals.bonuses.magic_str + piece.offensive[1],
+        ranged_str: totals.bonuses.ranged_str + piece.offensive[4],
+        prayer: totals.bonuses.prayer + piece.defensive[5],
+      },
+      offensive: {
+        slash: totals.offensive.slash + piece.offensive[5],
+        stab: totals.offensive.stab + piece.offensive[6],
+        crush: totals.offensive.crush + piece.offensive[0],
+        ranged: totals.offensive.ranged + piece.offensive[3],
+        magic: totals.offensive.magic + piece.offensive[2],
+      },
+      defensive: {
+        slash: totals.defensive.slash + piece.defensive[3],
+        stab: totals.defensive.stab + piece.defensive[4],
+        crush: totals.defensive.crush + piece.defensive[0],
+        ranged: totals.defensive.ranged + piece.defensive[2],
+        magic: totals.defensive.magic + piece.defensive[1],
+      },
+    };
+  });
+
+  if (eq.weapon?.name === "Tumeken's shadow") {
+    const factor = TOMBS_OF_AMASCUT_MONSTER_IDS.includes(m.id || 0) ? 4 : 3;
+    totals.bonuses.magic_str *= factor;
+    totals.offensive.magic *= factor;
+  }
+
+  if (eq.weapon?.name === "Dinh's bulwark" || eq.weapon?.name === "Dinh's blazing bulwark") {
+    const defensives = totals.defensive;
+    const defenceSum = defensives.stab + defensives.slash + defensives.crush + defensives.ranged;
+    totals.bonuses.str += Math.max(0, Math.trunc((defenceSum - 800) / 12) - 38);
+  }
+
+  return totals;
 };
 
 const generateInitialEquipment = () => {
@@ -148,6 +171,7 @@ export const generateEmptyPlayer: () => Player = () => ({
     kandarinDiary: false,
     chargeSpell: false,
     markOfDarknessSpell: false,
+    forinthrySurge: false,
   },
   spell: null,
 });
@@ -290,15 +314,19 @@ class GlobalState implements State {
   }
 
   /**
-   * Return the player's worn equipment bonuses. This is NOT the same as the player's current bonuses overall.
-   * For that, interpret the values in `store.player` for the current loadout.
+   * Return the player's worn equipment bonuses.
    */
   get equipmentBonuses(): EquipmentBonuses {
-    return calculateEquipmentBonuses(Object.values(this.equipmentData).filter((v) => (v !== null && v !== undefined)) as EquipmentPiece[]);
+    const p = this.player;
+    return {
+      bonuses: p.bonuses,
+      offensive: p.offensive,
+      defensive: p.defensive,
+    };
   }
 
   recalculateEquipmentBonusesFromGear() {
-    const newBonuses = this.equipmentBonuses;
+    const newBonuses = calculateEquipmentBonuses(this.equipmentData, this.monster);
     this.updatePlayer({
       bonuses: newBonuses.bonuses,
       offensive: newBonuses.offensive,
@@ -465,7 +493,8 @@ class GlobalState implements State {
    * @param player
    */
   updatePlayer(player: PartialDeep<Player>) {
-    if (Object.hasOwn(player.equipment || {}, 'weapon')) {
+    const eq = player.equipment;
+    if (eq && Object.hasOwn(eq, 'weapon')) {
       const currentWeapon = this.equipmentData.weapon;
       const newWeapon = player.equipment?.weapon;
 
@@ -492,6 +521,9 @@ class GlobalState implements State {
     }
 
     this.loadouts[this.selectedLoadout] = merge(this.player, player);
+    if (eq) {
+      this.recalculateEquipmentBonusesFromGear();
+    }
   }
 
   /**

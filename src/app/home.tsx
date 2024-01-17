@@ -85,13 +85,6 @@ const Home: NextPage = observer(() => {
   }, []);
 
   useEffect(() => {
-    // When equipment bonuses change, set the current equipment bonuses as the player's bonuses.
-    if (!store.prefs.manualMode) {
-      store.recalculateEquipmentBonusesFromGear();
-    }
-  }, [store, store.equipmentBonuses]);
-
-  useEffect(() => {
     const recompute = () => store.doWorkerRecompute();
 
     // When a calculator input changes, trigger a re-compute on the worker
