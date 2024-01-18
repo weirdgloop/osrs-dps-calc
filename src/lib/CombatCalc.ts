@@ -659,9 +659,7 @@ export default class CombatCalc {
       if (mattrs.includes(MonsterAttribute.XERICIAN)) cap = 350;
 
       const tbowMagic = Math.max(this.monster.skills.magic, this.monster.offensive.magic);
-      const m = Math.trunc(Math.min(tbowMagic, cap) * 3 / 10);
-      const tbowMod = Math.trunc(Math.min(140, (140 + (m * 10 - 10) / 100 - (m - 100) ** 2 / 100)));
-      attackRoll = Math.trunc(attackRoll * tbowMod / 100);
+      attackRoll = tbowScaling(attackRoll, tbowMagic, true);
     }
     if (this.wearing(["Craw's bow", 'Webweaver bow']) && buffs.inWilderness) {
       attackRoll = Math.trunc(attackRoll * 3 / 2);
@@ -725,9 +723,7 @@ export default class CombatCalc {
       if (mattrs.includes(MonsterAttribute.XERICIAN)) cap = 350;
 
       const tbowMagic = Math.max(this.monster.skills.magic, this.monster.offensive.magic);
-      const m = Math.trunc(Math.min(tbowMagic, cap) * 3 / 10);
-      const tbowMod = Math.trunc(Math.min(250, 250 + (m * 10 - 14) / 100 - (m - 140) ** 2 / 100));
-      maxHit = Math.trunc(maxHit * tbowMod / 100);
+      maxHit = tbowScaling(maxHit, tbowMagic, false);
     }
     if (this.wearing(["Craw's bow", 'Webweaver bow']) && buffs.inWilderness) {
       maxHit = Math.trunc(maxHit * 3 / 2);
@@ -1444,3 +1440,14 @@ export default class CombatCalc {
     return false;
   }
 }
+
+const tbowScaling = (current: number, magic: number, accuracyMode: boolean): number => {
+  const factor = accuracyMode ? 10 : 14;
+  const base = accuracyMode ? 140 : 250;
+
+  const t2 = Math.trunc((3 * magic - factor) / 100);
+  const t3 = Math.trunc((Math.trunc(3 * magic / 10) - (10 * factor)) ** 2 / 100);
+
+  const bonus = base + t2 - t3;
+  return Math.trunc(current * bonus / 100);
+};
