@@ -29,14 +29,14 @@ const EquipmentPresets: React.FC = () => {
       case EquipmentPreset.DHAROKS: {
         newPlayer = {
           equipment: {
-            head: findItemById(4880), // Dharok's helm
+            head: findItemById(4716), // Dharok's helm
             cape: findItemById(21295), // Infernal cape
             neck: findItemById(19553), // Amulet of torture
             ammo: findItemById(22947), // Rada's blessing 4
             weapon: findItemById(4718), // Dharok's greataxe
-            body: findItemById(4892), // Dharok's platebody
+            body: findItemById(4720), // Dharok's platebody
             shield: null,
-            legs: findItemById(4898), // Dharok's platelegs
+            legs: findItemById(4722), // Dharok's platelegs
             hands: findItemById(22981), // Ferocious gloves
             feet: findItemById(13239), // Primordial boots
             ring: findItemById(28307), // Ultor ring
@@ -143,14 +143,14 @@ const EquipmentPresets: React.FC = () => {
       case EquipmentPreset.VERACS: {
         newPlayer = {
           equipment: {
-            head: findItemById(4976), // Verac's helm
+            head: findItemById(4753), // Verac's helm
             cape: findItemById(21295), // Infernal cape
             neck: findItemById(19553), // Amulet of torture
             ammo: findItemById(22947), // Rada's blessing 4
             weapon: findItemById(4755), // Verac's flail
-            body: findItemById(4988), // Verac's brassard
+            body: findItemById(4757), // Verac's brassard
             shield: null,
-            legs: findItemById(4994), // Verac's plateskirt
+            legs: findItemById(4759), // Verac's plateskirt
             hands: findItemById(22981), // Ferocious gloves
             feet: findItemById(13239), // Primordial boots
             ring: findItemById(28307), // Ultor ring
