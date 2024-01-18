@@ -153,7 +153,7 @@ const ResultsContainer = observer(() => {
       <div className="text-xs my-3 mx-1 text-dark-300 dark:text-body-200 text-center">
         To display additional output graphs,
         {' '}
-        <button type="button" onClick={() => store.updateUIState({ showPreferencesModal: true })}>change your preferences</button>
+        <button type="button" className="underline" onClick={() => store.updateUIState({ showPreferencesModal: true })}>change your preferences</button>
         .
       </div>
     </div>
