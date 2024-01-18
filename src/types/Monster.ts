@@ -64,6 +64,13 @@ export interface Monster {
    * The monster's current HP, for effects like Ruby bolt (e), or Vardorvis defence.
    */
   monsterCurrentHp: number;
+  defenceReductions: {
+    vulnerability: boolean;
+    accursed: boolean;
+    dwh: number;
+    arclight: number;
+    bgs: number;
+  }
   /**
    * The attributes the monster has
    * @see https://oldschool.runescape.wiki/w/Monster_attribute

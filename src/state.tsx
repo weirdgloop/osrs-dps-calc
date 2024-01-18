@@ -148,6 +148,13 @@ class GlobalState implements State {
     partySize: 1,
     monsterCurrentHp: 150,
     attributes: [MonsterAttribute.DEMON],
+    defenceReductions: {
+      vulnerability: false,
+      accursed: false,
+      dwh: 0,
+      arclight: 0,
+      bgs: 0,
+    },
   };
 
   loadouts: Player[] = [

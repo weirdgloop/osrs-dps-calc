@@ -30,7 +30,7 @@ import {
   ZEBAK_IDS,
 } from '@/constants';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
-import { lerp } from '@/utils';
+import { keys, lerp } from '@/utils';
 
 const getToaScalingValues = (id: number): ToaScalingValues | undefined => {
   if (AKKHA_IDS.includes(id)) {
@@ -162,10 +162,70 @@ const getToaScalingValues = (id: number): ToaScalingValues | undefined => {
   return undefined;
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export const scaledMonster: (m: Monster) => Monster = (m) => {
-  const mId = m.id;
+const applyDefenceReductions = (m: Monster): Monster => {
+  const newSkills = (m: Monster, skills: Partial<Monster['skills']>): Monster => {
+    keys(skills).forEach((k) => skills[k] = Math.max(0, skills[k]!));
+    return ({
+      ...m,
+      skills: {
+        ...m.skills,
+        ...skills,
+      },
+    });
+  };
 
+  // todo defence reduction limits / immunities
+  if (m.defenceReductions.accursed) {
+    m = newSkills(m, {
+      def: Math.trunc(m.skills.def * 17 / 20),
+      magic: Math.trunc(m.skills.magic * 17 / 20),
+    });
+  } else if (m.defenceReductions.vulnerability) {
+    // todo tome of water increases this to 15% reduction,
+    // but how do we handle that?
+    m = newSkills(m, {
+      def: Math.trunc(m.skills.def * 9 / 10),
+    });
+  }
+
+  for (let i = 0; i < m.defenceReductions.dwh; i++) {
+    m = newSkills(m, {
+      def: Math.trunc(m.skills.def * 7 / 10),
+    });
+  }
+
+  const arclightFactor = m.attributes.includes(MonsterAttribute.DEMON) ? 18 : 19;
+  for (let i = 0; i < m.defenceReductions.arclight; i++) {
+    m = newSkills(m, {
+      atk: Math.trunc(m.skills.atk * arclightFactor / 20) - 1,
+      str: Math.trunc(m.skills.str * arclightFactor / 20) - 1,
+      def: Math.trunc(m.skills.def * arclightFactor / 20) - 1,
+    });
+  }
+
+  let bgsDmg = m.defenceReductions.bgs;
+  if (bgsDmg > 0) {
+    const useBgsDmg = (skill: number): number => {
+      const newValue = Math.max(0, skill - bgsDmg);
+      bgsDmg -= skill - newValue;
+      return newValue;
+    };
+
+    m = newSkills(m, {
+      // order matters here
+      def: useBgsDmg(m.skills.def),
+      str: useBgsDmg(m.skills.str),
+      atk: useBgsDmg(m.skills.atk),
+      magic: useBgsDmg(m.skills.magic),
+      ranged: useBgsDmg(m.skills.ranged),
+    });
+  }
+
+  return m;
+};
+
+// eslint-disable-next-line import/prefer-default-export
+export const scaledMonster = (m: Monster): Monster => {
   // vard's strength and defence scale linearly throughout the fight based on hp
   if (m.name === 'Vardorvis') {
     let vardRanges = {
@@ -188,28 +248,28 @@ export const scaledMonster: (m: Monster) => Monster = (m) => {
     }
 
     const currHp = Number.isFinite(m.monsterCurrentHp) ? m.monsterCurrentHp : vardRanges.maxHp;
-    return {
+    return applyDefenceReductions({
       ...m,
       skills: {
         ...m.skills,
         str: lerp(currHp, vardRanges.maxHp, 0, vardRanges.str[0], vardRanges.str[1]),
         def: lerp(currHp, vardRanges.maxHp, 0, vardRanges.def[0], vardRanges.def[1]),
       },
-    };
+    });
   }
 
   // toa multiplies rolled values, not stats, except for hp
-  if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(mId)) {
-    const values = getToaScalingValues(mId);
+  if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(m.id)) {
+    const values = getToaScalingValues(m.id);
     if (!values) {
       // either doesn't scale or isn't implemented
-      return m;
+      return applyDefenceReductions(m);
     }
 
-    const invoFactor = TOA_CORE_IDS.includes(mId) ? m.toaInvocationLevel : 4 * m.toaInvocationLevel;
+    const invoFactor = TOA_CORE_IDS.includes(m.id) ? m.toaInvocationLevel : 4 * m.toaInvocationLevel;
 
     let pathLevelFactor = 0;
-    if (TOMBS_OF_AMASCUT_PATH_MONSTER_IDS.includes(mId)) {
+    if (TOMBS_OF_AMASCUT_PATH_MONSTER_IDS.includes(m.id)) {
       const pathLevel = Math.min(6, Math.max(0, m.toaPathLevel));
       if (pathLevel >= 1) {
         pathLevelFactor += 30;
@@ -233,36 +293,36 @@ export const scaledMonster: (m: Monster) => Monster = (m) => {
       * (10 + partyFactor)
       / (1000 * 100 * 10),
     ) * values.factor;
-    return {
+    return applyDefenceReductions({
       ...m,
       skills: {
         ...m.skills,
         hp: newHp,
       },
-    };
+    });
   }
 
   // tob only scales hp and nothing else
-  if (TOB_MONSTER_IDS.includes(mId)) {
+  if (TOB_MONSTER_IDS.includes(m.id)) {
     const partySize = Math.min(5, Math.max(3, m.partySize));
-    return {
+    return applyDefenceReductions({
       ...m,
       skills: {
         ...m.skills,
         hp: Math.trunc(m.skills.hp * (partySize + 3) / 8),
       },
-    };
+    });
   }
 
-  if (TOB_EM_MONSTER_IDS.includes(mId)) {
+  if (TOB_EM_MONSTER_IDS.includes(m.id)) {
     const partySize = Math.min(5, Math.max(1, m.partySize));
-    return {
+    return applyDefenceReductions({
       ...m,
       skills: {
         ...m.skills,
         hp: Math.trunc(m.skills.hp * partySize / 5),
       },
-    };
+    });
   }
 
   if (m.attributes.includes(MonsterAttribute.XERICIAN)) {
@@ -275,11 +335,11 @@ export const scaledMonster: (m: Monster) => Monster = (m) => {
     const sqrt = (x: number) => Math.trunc(Math.sqrt(x));
 
     // olm does everything differently
-    if (OLM_IDS.includes(mId)) {
-      const olmHp = () => (OLM_HEAD_IDS.includes(mId) ? 400 : 300) * (ps - Math.trunc(ps / 8) * 3 + 1);
+    if (OLM_IDS.includes(m.id)) {
+      const olmHp = () => (OLM_HEAD_IDS.includes(m.id) ? 400 : 300) * (ps - Math.trunc(ps / 8) * 3 + 1);
       const olmDefence = (base: number) => Math.trunc(base * (sqrt(ps - 1) + Math.trunc((ps - 1) * 7 / 10) + 100) / 100 * (cm ? 3 : 2) / 2);
       const olmOffence = (base: number) => Math.trunc(base * (sqrt(ps - 1) * 7 + (ps - 1) + 100) / 100 * (cm ? 3 : 2) / 2);
-      return {
+      return applyDefenceReductions({
         ...m,
         skills: {
           ...m.skills,
@@ -290,33 +350,33 @@ export const scaledMonster: (m: Monster) => Monster = (m) => {
           magic: olmOffence(m.skills.magic),
           def: olmDefence(m.skills.def),
         },
-      };
+      });
     }
 
     const scaleHp = (base: number) => {
-      if (SCAVENGER_BEAST_IDS.includes(mId)) { // no scaling
+      if (SCAVENGER_BEAST_IDS.includes(m.id)) { // no scaling
         return base;
       }
-      const baseHp = GUARDIAN_IDS.includes(mId) ? 151 + min : m.skills.hp;
-      const c = cm && !GLOWING_CRYSTAL_IDS.includes(mId);
+      const baseHp = GUARDIAN_IDS.includes(m.id) ? 151 + min : m.skills.hp;
+      const c = cm && !GLOWING_CRYSTAL_IDS.includes(m.id);
       return Math.trunc(Math.trunc(baseHp * cmb / 126) * (Math.trunc(ps / 2) + 1) * (c ? 3 : 2) / 2);
     };
     const scaleDefence = (base: number) => {
-      const f = TEKTON_IDS.includes(mId) ? 5 : 2;
-      const c = cm && !GLOWING_CRYSTAL_IDS.includes(mId);
+      const f = TEKTON_IDS.includes(m.id) ? 5 : 2;
+      const c = cm && !GLOWING_CRYSTAL_IDS.includes(m.id);
       return Math.trunc(Math.trunc(Math.trunc(base * (Math.trunc(hp * 4 / 9) + 55) / 99) * (sqrt(ps - 1) + Math.trunc((ps - 1) * 7 / 10) + 100) / 100) * (c ? f + 1 : f) / f);
     };
     const scaleOffence = (base: number, f: number = 2) => {
-      if (ABYSSAL_PORTAL_IDS.includes(mId)) {
+      if (ABYSSAL_PORTAL_IDS.includes(m.id)) {
         return scaleDefence(base);
       }
       return Math.trunc(Math.trunc(Math.trunc(base * (Math.trunc(hp * 4 / 9) + 55) / 99) * (sqrt(ps - 1) * 7 + (ps - 1) + 100) / 100) * (cm ? f + 1 : f) / f);
     };
     const scaleMagic = (base: number) => {
-      const f = TEKTON_IDS.includes(mId) ? 5 : 2;
+      const f = TEKTON_IDS.includes(m.id) ? 5 : 2;
       return scaleOffence(base, f);
     };
-    return {
+    return applyDefenceReductions({
       ...m,
       skills: {
         ...m.skills,
@@ -327,10 +387,10 @@ export const scaledMonster: (m: Monster) => Monster = (m) => {
         magic: scaleMagic(m.skills.magic),
         def: scaleDefence(m.skills.def),
       },
-    };
+    });
   }
 
-  return m;
+  return applyDefenceReductions(m);
 };
 
 interface ToaScalingValues {
