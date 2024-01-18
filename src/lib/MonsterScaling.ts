@@ -163,12 +163,14 @@ const getToaScalingValues = (id: number): ToaScalingValues | undefined => {
 };
 
 const applyDefenceReductions = (m: Monster): Monster => {
-  const newSkills = (m: Monster, skills: Partial<Monster['skills']>): Monster => {
-    keys(skills).forEach((k) => skills[k] = Math.max(0, skills[k]!));
+  const newSkills = (m2: Monster, skills: Partial<Monster['skills']>): Monster => {
+    keys(skills).forEach((k) => {
+      skills[k] = Math.max(0, skills[k]!);
+    });
     return ({
-      ...m,
+      ...m2,
       skills: {
-        ...m.skills,
+        ...m2.skills,
         ...skills,
       },
     });
@@ -205,7 +207,7 @@ const applyDefenceReductions = (m: Monster): Monster => {
 
   let bgsDmg = m.defenceReductions.bgs;
   if (bgsDmg > 0) {
-    const useBgsDmg = (skill: number): number => {
+    const applyBgsDmg = (skill: number): number => {
       const newValue = Math.max(0, skill - bgsDmg);
       bgsDmg -= skill - newValue;
       return newValue;
@@ -213,11 +215,11 @@ const applyDefenceReductions = (m: Monster): Monster => {
 
     m = newSkills(m, {
       // order matters here
-      def: useBgsDmg(m.skills.def),
-      str: useBgsDmg(m.skills.str),
-      atk: useBgsDmg(m.skills.atk),
-      magic: useBgsDmg(m.skills.magic),
-      ranged: useBgsDmg(m.skills.ranged),
+      def: applyBgsDmg(m.skills.def),
+      str: applyBgsDmg(m.skills.str),
+      atk: applyBgsDmg(m.skills.atk),
+      magic: applyBgsDmg(m.skills.magic),
+      ranged: applyBgsDmg(m.skills.ranged),
     });
   }
 
