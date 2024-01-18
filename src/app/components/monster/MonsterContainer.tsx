@@ -454,11 +454,11 @@ const MonsterContainer: React.FC = observer(() => {
                     )}
                   </div>
                 </div>
-                <div className="mt-4 text-sm">
+                <div className="mt-1 text-sm">
                   <div className="rounded bg-body-100 dark:bg-dark-500">
                     <button
                       type="button"
-                      className={`w-full pt-1 border-b-body-400 dark:border-b-dark-300 px-2 flex text-gray-500 dark:text-gray-300 font-semibold justify-between gap-2 ${attributesExpanded ? 'border-b' : ''}`}
+                      className={`w-full pt-1 border-b-body-400 dark:border-b-dark-300 px-2 flex text-gray-500 dark:text-gray-300 font-semibold justify-between gap-2 ${defensiveReductionsExpanded ? 'border-b' : ''}`}
                       onClick={() => setDefensiveReductionsExpanded(!defensiveReductionsExpanded)}
                     >
                       <div>
@@ -468,7 +468,7 @@ const MonsterContainer: React.FC = observer(() => {
                     </button>
 
                     {defensiveReductionsExpanded && (
-                      <>
+                      <div className="p-2">
                         <Toggle
                           checked={monster.defenceReductions.accursed}
                           setChecked={(c) => store.updateMonster({ defenceReductions: { accursed: c } })}
@@ -521,7 +521,7 @@ const MonsterContainer: React.FC = observer(() => {
                           />
                           <span className="pl-2">Bandos godsword damage</span>
                         </div>
-                      </>
+                      </div>
                     )}
                   </div>
                 </div>
