@@ -42,12 +42,12 @@ jobs:
       - name: Build project
         run: yarn build
       - run: mv cdn out/
-      - run: zip artifact.zip ./out -r
       - uses: actions/upload-artifact@v4
         # We only need to upload an artifact if this is a push to the main branch
         if: github.ref == 'refs/heads/main'
         with:
-          path: artifact.zip
+          name: output
+          path: out/
 
   deploy:
     runs-on: ubuntu-latest
@@ -56,9 +56,10 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v3
         with:
-          merge-multiple: true
+          name: output
+          path: out
       - name: Deploy to server
         uses: easingthemes/ssh-deploy@main
         with:
