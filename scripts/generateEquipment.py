@@ -125,10 +125,13 @@ def main():
                 'crush': getPrintoutValue(po['Crush defence bonus']),
                 'magic': getPrintoutValue(po['Magic defence bonus']),
                 'ranged': getPrintoutValue(po['Range defence bonus']),
-
             },
             'isTwoHanded': False
         }
+
+        # Trim out 0 values in stats
+        for section in ['bonuses', 'offensive', 'defensive']:
+            equipment[section] = {k:v for (k,v) in equipment[section].items() if v != 0}
 
         # Handle 2H weapons
         if equipment['slot'] == '2h':
@@ -138,8 +141,7 @@ def main():
         # Prune...
         if (
             # ...items with all 0 stat bonuses
-            (all(statbonus == 0 for statbonus in equipment['offensive'])
-             and all(statbonus == 0 for statbonus in equipment['defensive'])
+            (len(equipment['bonuses']) == 0 and len(equipment['offensive']) == 0 and len(equipment['defensive']) == 0
              and (equipment['speed'] == 4 or equipment['speed'] <= 0))
             # ...items that are broken, inactive, locked, SW/Emir variants
             or re.match(r"^(Broken|Inactive|Locked|Soul Wars|Emir's Arena)$", equipment['version'])
