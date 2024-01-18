@@ -59,7 +59,6 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, pa
         <div>
           <p>
             <strong>
-              Level
               {label}
             </strong>
           </p>
