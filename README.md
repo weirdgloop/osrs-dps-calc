@@ -1,5 +1,5 @@
 # osrs-dps-calc
-[![](https://img.shields.io/badge/view%20online-yellow)](https://dps.osrs.wiki)
+[![](https://img.shields.io/badge/view%20online-yellow)](https://tools.runescape.wiki/osrs-dps)
 
 Web-based DPS calculator for Old School RuneScape, created for the [OSRS Wiki](https://oldschool.runescape.wiki).
 

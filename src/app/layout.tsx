@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "See how your gear stacks up against Old School RuneScape's monsters using the OSRS Wiki's damage-per-second calculator.",
   authors: [{ name: 'OSRS Wiki', url: 'https://oldschool.runescape.wiki' }],
   keywords: ['osrs', 'old school runescape', 'runescape', 'dps calculator', 'osrs dps', 'osrs wiki', 'osrs wiki dps'],
-  alternates: { canonical: 'https://dps.osrs.wiki' },
+  alternates: { canonical: 'https://tools.runescape.wiki/osrs-dps' },
 };
 
 const RootLayout: React.FC<PropsWithChildren> = (props) => {

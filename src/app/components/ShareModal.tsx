@@ -12,7 +12,7 @@ const ShareModal: React.FC = observer(() => {
   const { ui } = store;
   const inputRef = createRef<HTMLInputElement>();
 
-  const domain = isDevServer() ? 'http://localhost:3000/' : 'https://dps.osrs.wiki/';
+  const domain = isDevServer() ? 'http://localhost:3000/' : 'https://tools.runescape.wiki/osrs-dps/';
   const [shareId, setShareId] = useState('');
   const [error, setError] = useState(false);
 

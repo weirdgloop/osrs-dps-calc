@@ -23,7 +23,7 @@ import { PlayerCombatStyle } from '@/types/PlayerCombatStyle';
 
 export const classNames = (...classes: string[]) => classes.filter(Boolean).join(' ');
 
-const SHORTLINK_API = 'https://dps.osrs.wiki/shortlink';
+const SHORTLINK_API = 'https://tools.runescape.wiki/osrs-dps/shortlink';
 const API_PROXY = 'https://oldschool.runescape.wiki/cors';
 
 /**
@@ -83,7 +83,7 @@ export const calculateCombatLevel = (s: PlayerSkills) => {
 
 export const getWikiImage = (filename: string) => `https://oldschool.runescape.wiki/images/${filename.replaceAll(' ', '_')}?11111`;
 
-export const getCdnImage = (filename: string) => `https://dps.osrs.wiki/cdn/${filename}`;
+export const getCdnImage = (filename: string) => `https://tools.runescape.wiki/osrs-dps/${filename}`;
 
 export const isDevServer = () => process.env.NODE_ENV === 'development';
 
