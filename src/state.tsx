@@ -609,16 +609,8 @@ class GlobalState implements State {
     for (const [k, l] of Object.entries(this.loadouts)) {
       const loadoutName = `Loadout ${parseInt(k) + 1}`;
 
-      if (l.equipment.neck?.name.includes('Salve amulet') && !this.monster.attributes.includes(MonsterAttribute.UNDEAD)) {
-        issues.push({ message: 'Using a salve amulet against a non-undead target provides no bonuses', loadoutName });
-      }
-
       if (l.equipment.weapon?.category && [EquipmentCategory.STAFF, EquipmentCategory.POLESTAFF, EquipmentCategory.POWERED_WAND, EquipmentCategory.POWERED_STAFF].includes(l.equipment.weapon.category) && l.spell === null) {
         issues.push({ message: 'A magic weapon is being used, but no spell is selected', loadoutName });
-      }
-
-      if (l.buffs.forinthrySurge && !this.monster.name.includes('Revenant')) {
-        issues.push({ message: 'Forinthry Surge only works against revenants', loadoutName });
       }
 
       if (!isValidAmmoForRangedWeapon(l.equipment.weapon?.id, l.equipment.ammo?.id)) {
