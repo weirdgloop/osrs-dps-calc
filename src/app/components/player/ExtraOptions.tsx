@@ -22,6 +22,14 @@ const ExtraOptions: React.FC = observer(() => {
               <img src={slayer.src} width={18} className="inline-block" alt="" />
               {' '}
               On Slayer task
+              {' '}
+              <span
+                className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+                data-tooltip-id="tooltip"
+                data-tooltip-content="Some weapons give bonuses while you are on a Slayer task."
+              >
+                ?
+              </span>
             </>
           )}
         />
@@ -33,6 +41,14 @@ const ExtraOptions: React.FC = observer(() => {
               <img src={skull.src} width={18} className="inline-block" alt="" />
               {' '}
               In the Wilderness
+              {' '}
+              <span
+                className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+                data-tooltip-id="tooltip"
+                data-tooltip-content="Some weapons give bonuses while you are in the Wilderness."
+              >
+                ?
+              </span>
             </>
           )}
         />
@@ -44,6 +60,14 @@ const ExtraOptions: React.FC = observer(() => {
               <img src={forinthry_surge.src} width={18} className="inline-block" alt="" />
               {' '}
               Forinthry Surge
+              {' '}
+              <span
+                className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+                data-tooltip-id="tooltip"
+                data-tooltip-content="Provides a bonus against revenants."
+              >
+                ?
+              </span>
             </>
           )}
         />
@@ -55,6 +79,14 @@ const ExtraOptions: React.FC = observer(() => {
               <img src={diary.src} width={18} className="inline-block" alt="" />
               {' '}
               Kandarin Hard Diary
+              {' '}
+              <span
+                className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+                data-tooltip-id="tooltip"
+                data-tooltip-content="10% activation chance increase to enchanted bolts."
+              >
+                ?
+              </span>
             </>
           )}
         />
