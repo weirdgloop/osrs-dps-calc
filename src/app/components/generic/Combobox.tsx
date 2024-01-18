@@ -108,9 +108,11 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
         switch (type) {
           case useCombobox.stateChangeTypes.InputKeyDownEnter:
           case useCombobox.stateChangeTypes.ItemClick:
+            if (onSelectedItemChange) onSelectedItemChange(changes.selectedItem);
             changes = {
               ...changes,
               inputValue, // Keep the input value the same
+              selectedItem: null,
               highlightedIndex: state.highlightedIndex, // Keep the highlighted index the same
             };
             break;
