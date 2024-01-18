@@ -58,8 +58,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          path: out/artifact.zip
-      - run: unzip artifact.zip -d out
+          merge-multiple: true
       - name: Deploy to server
         uses: easingthemes/ssh-deploy@main
         with:
