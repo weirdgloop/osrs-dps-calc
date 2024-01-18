@@ -192,7 +192,7 @@ const applyDefenceReductions = (m: Monster): Monster => {
 
   for (let i = 0; i < m.defenceReductions.dwh; i++) {
     m = newSkills(m, {
-      def: Math.trunc(m.skills.def * 7 / 10),
+      def: m.skills.def - Math.trunc(m.skills.def * 3 / 10),
     });
   }
 
