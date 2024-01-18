@@ -655,11 +655,11 @@ export default class CombatCalc {
     }
 
     if (this.wearing('Twisted bow')) {
-      let cap = 250;
-      if (mattrs.includes(MonsterAttribute.XERICIAN)) cap = 350;
+      // let cap = 250;
+      // if (mattrs.includes(MonsterAttribute.XERICIAN)) cap = 350;
 
       const tbowMagic = Math.max(this.monster.skills.magic, this.monster.offensive.magic);
-      attackRoll = tbowScaling(attackRoll, tbowMagic, true);
+      attackRoll = CombatCalc.tbowScaling(attackRoll, tbowMagic, true);
     }
     if (this.wearing(["Craw's bow", 'Webweaver bow']) && buffs.inWilderness) {
       attackRoll = Math.trunc(attackRoll * 3 / 2);
@@ -719,11 +719,11 @@ export default class CombatCalc {
     }
 
     if (this.wearing('Twisted bow')) {
-      let cap = 250;
-      if (mattrs.includes(MonsterAttribute.XERICIAN)) cap = 350;
+      // let cap = 250;
+      // if (mattrs.includes(MonsterAttribute.XERICIAN)) cap = 350;
 
       const tbowMagic = Math.max(this.monster.skills.magic, this.monster.offensive.magic);
-      maxHit = tbowScaling(maxHit, tbowMagic, false);
+      maxHit = CombatCalc.tbowScaling(maxHit, tbowMagic, false);
     }
     if (this.wearing(["Craw's bow", 'Webweaver bow']) && buffs.inWilderness) {
       maxHit = Math.trunc(maxHit * 3 / 2);
@@ -1439,15 +1439,15 @@ export default class CombatCalc {
 
     return false;
   }
+
+  private static tbowScaling = (current: number, magic: number, accuracyMode: boolean): number => {
+    const factor = accuracyMode ? 10 : 14;
+    const base = accuracyMode ? 140 : 250;
+
+    const t2 = Math.trunc((3 * magic - factor) / 100);
+    const t3 = Math.trunc((Math.trunc(3 * magic / 10) - (10 * factor)) ** 2 / 100);
+
+    const bonus = base + t2 - t3;
+    return Math.trunc(current * bonus / 100);
+  };
 }
-
-const tbowScaling = (current: number, magic: number, accuracyMode: boolean): number => {
-  const factor = accuracyMode ? 10 : 14;
-  const base = accuracyMode ? 140 : 250;
-
-  const t2 = Math.trunc((3 * magic - factor) / 100);
-  const t3 = Math.trunc((Math.trunc(3 * magic / 10) - (10 * factor)) ** 2 / 100);
-
-  const bonus = base + t2 - t3;
-  return Math.trunc(current * bonus / 100);
-};
