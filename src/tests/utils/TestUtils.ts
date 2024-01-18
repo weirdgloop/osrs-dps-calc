@@ -2,6 +2,7 @@ import getMonsters from '@/lib/Monsters';
 import { Monster } from '@/types/Monster';
 import { Player } from '@/types/Player';
 import CombatCalc from '@/lib/CombatCalc';
+import { DetailEntry, DetailKey } from '@/lib/CalcDetails';
 
 const monsters = getMonsters();
 
@@ -16,13 +17,20 @@ export function getMonster(name: string, version: string): Monster {
 }
 
 export function calculate(player: Player, monster: Monster) {
-  const calc = new CombatCalc(player, monster);
-  const result = {
+  const calc = new CombatCalc(player, monster, {
+    loadoutName: 'test',
+    detailedOutput: true,
+  });
+  return {
     npcDefRoll: calc.getNPCDefenceRoll(),
     maxHit: calc.getDistribution().getMax(),
     maxAttackRoll: calc.getMaxAttackRoll(),
     accuracy: calc.getHitChance(),
     dps: calc.getDps(),
+    details: calc.details,
   };
-  return result;
+}
+
+export function findResult(details: DetailEntry[], key: DetailKey): number | undefined {
+  return details.find((d) => d.label === key)?.value;
 }
