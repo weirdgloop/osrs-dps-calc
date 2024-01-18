@@ -357,7 +357,6 @@ export default class CombatCalc {
   /**
      * Whether the player is wearing a weapon capable of dealing full damage to the Corporeal Beast.
      * @see https://oldschool.runescape.wiki/w/Corpbane_weapons
-     * @todo Handle ruby bolt procs separately (non-procs do half damage, but procs deal full damage)
      */
   private isWearingCorpbaneWeapon(): boolean {
     const { weapon } = this.player.equipment;
