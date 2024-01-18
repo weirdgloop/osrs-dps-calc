@@ -1,6 +1,11 @@
 import { EquipmentPiece, Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 
+export interface UserIssue {
+  message: string;
+  loadoutName?: string;
+}
+
 /**
  * UI-specific toggled behaviour and state.
  */
@@ -8,6 +13,7 @@ export interface UI {
   showPreferencesModal: boolean;
   showShareModal: boolean;
   username: string;
+  issues: UserIssue[];
 }
 
 /**

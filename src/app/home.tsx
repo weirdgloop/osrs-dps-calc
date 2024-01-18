@@ -85,7 +85,10 @@ const Home: NextPage = observer(() => {
   }, []);
 
   useEffect(() => {
-    const recompute = () => store.doWorkerRecompute();
+    const recompute = () => {
+      store.doWorkerRecompute();
+      store.doUserIssuesCheck();
+    };
 
     // When a calculator input changes, trigger a re-compute on the worker
     const triggers: ((r: IReactionPublic) => unknown)[] = [

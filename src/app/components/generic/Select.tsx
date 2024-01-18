@@ -3,7 +3,7 @@ import {
   useSelect,
   UseSelectGetToggleButtonPropsOptions,
 } from 'downshift';
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Virtuoso, VirtuosoHandle } from 'react-virtuoso';
 
 type SelectItem = { label: string };

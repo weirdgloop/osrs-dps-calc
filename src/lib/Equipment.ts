@@ -42,10 +42,10 @@ const commonAmmoCategories = () => {
  * A map of item ID -> array of item IDs for which ranged weapons can use which specific types of ammo.
  * Empty arrays indicate that the item should not be used with any ammo in the ammo slot at all.
  */
-export const ammoForRangedWeapons = {
+const ammoForRangedWeapons: { [weapon: number]: number[] } = {
   11708: commonAmmoCategories().bow_t1, // Cursed goblin bow
   23357: commonAmmoCategories().bow_t1, // Rain bow
-  9705: 9706, // Training bow
+  9705: [9706], // Training bow
   841: commonAmmoCategories().bow_t1, // Shortbow
   839: commonAmmoCategories().bow_t1, // Longbow
   843: commonAmmoCategories().bow_t5, // Oak shortbow
@@ -102,6 +102,23 @@ export const ammoForRangedWeapons = {
   25862: [], // Bow of faerdhinen (empty)
   25865: [], // Bow of faerdhinen (charged)
   25867: [], // Bow of faerdhinen (c)
+};
+
+/**
+ * Returns whether the given ammo item ID is valid ammo for the given ranged weapon ID.
+ * Will return true if no weapon is equipped, or no ranged weapon is equipped.
+ * @param weaponId - the item ID of the ranged weapon
+ * @param ammoId - the item ID of the ammo (such as bronze arrows)
+ */
+export const isValidAmmoForRangedWeapon = (weaponId?: number, ammoId?: number) => {
+  if (!weaponId) return true; // No weapon, ammo is valid
+  if (!Object.prototype.hasOwnProperty.call(ammoForRangedWeapons, weaponId)) return true; // Probably not a ranged weapon, ammo is valid
+
+  const validAmmo = ammoForRangedWeapons[weaponId];
+  if (validAmmo.length === 0 && ammoId === undefined) return true; // No ammo is valid for this weapon, no ammo was passed, valid
+  if (ammoId && validAmmo.includes(ammoId)) return true; // Ammo can be used with this weapon
+
+  return false; // Ammo is not valid for this weapon
 };
 
 /**

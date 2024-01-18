@@ -5,7 +5,7 @@ import React, { createContext, useContext } from 'react';
 import { PartialDeep } from 'type-fest';
 import * as localforage from 'localforage';
 import {
-  CalculatedLoadout, Calculator, ImportableData, Preferences, State, UI,
+  CalculatedLoadout, Calculator, ImportableData, Preferences, State, UI, UserIssue,
 } from '@/types/State';
 import merge from 'lodash.mergewith';
 import {
@@ -27,6 +27,7 @@ import { scaledMonster } from '@/lib/MonsterScaling';
 import getMonsters from '@/lib/Monsters';
 import { TOMBS_OF_AMASCUT_MONSTER_IDS } from '@/constants';
 import { sum } from 'd3-array';
+import { isValidAmmoForRangedWeapon } from '@/lib/Equipment';
 import equipment from '../cdn/json/equipment.json';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
@@ -167,6 +168,7 @@ class GlobalState implements State {
     showPreferencesModal: false,
     showShareModal: false,
     username: '',
+    issues: [],
   };
 
   prefs: Preferences = {
@@ -331,11 +333,6 @@ class GlobalState implements State {
       defensive: totals.defensive,
     });
   }
-
-  /**
-   * Return the player's skill bonuses.
-   * @param ui
-   */
 
   updateUIState(ui: PartialDeep<UI>) {
     this.ui = Object.assign(this.ui, ui);
@@ -603,6 +600,33 @@ class GlobalState implements State {
         } as RecomputeValuesRequest, WORKER_JSON_REPLACER));
       }
     }, 250);
+  }
+
+  doUserIssuesCheck() {
+    const issues: UserIssue[] = [];
+
+    // For each loadout, check if there are any issues we should surface to the user.
+    for (const [k, l] of Object.entries(this.loadouts)) {
+      const loadoutName = `Loadout ${parseInt(k) + 1}`;
+
+      if (l.equipment.neck?.name.includes('Salve amulet') && !this.monster.attributes.includes(MonsterAttribute.UNDEAD)) {
+        issues.push({ message: 'Using a salve amulet against a non-undead target provides no bonuses', loadoutName });
+      }
+
+      if (l.equipment.weapon?.category && [EquipmentCategory.STAFF, EquipmentCategory.POLESTAFF, EquipmentCategory.POWERED_WAND, EquipmentCategory.POWERED_STAFF].includes(l.equipment.weapon.category) && l.spell === null) {
+        issues.push({ message: 'A magic weapon is being used, but no spell is selected', loadoutName });
+      }
+
+      if (l.buffs.forinthrySurge && !this.monster.name.includes('Revenant')) {
+        issues.push({ message: 'Forinthry Surge only works against revenants', loadoutName });
+      }
+
+      if (!isValidAmmoForRangedWeapon(l.equipment.weapon?.id, l.equipment.ammo?.id)) {
+        issues.push({ message: l.equipment.ammo?.name ? `${l.equipment.ammo?.name} is not valid ammo for ${l.equipment.weapon?.name}` : `Must equip ammo to use ${l.equipment.weapon?.name}`, loadoutName });
+      }
+    }
+
+    this.updateUIState({ issues });
   }
 }
 
