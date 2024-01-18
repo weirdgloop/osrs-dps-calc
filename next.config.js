@@ -14,6 +14,16 @@ let nextConfig = {
     'd3-array',
     'internmap'
   ],
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/osrs-dps',
+        basePath: false,
+        permanent: true
+      }
+    ]
+  }
 }
 
 if (shouldAnalyse) {
