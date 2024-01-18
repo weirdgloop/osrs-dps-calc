@@ -3,7 +3,7 @@ import {
   useSelect,
   UseSelectGetToggleButtonPropsOptions,
 } from 'downshift';
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import { Virtuoso, VirtuosoHandle } from 'react-virtuoso';
 
 type SelectItem = { label: string };
@@ -45,6 +45,7 @@ const Select = <T extends SelectItem>(props: ISelectProps<T>) => {
 
   const menuRef = useRef<HTMLDivElement>(null);
   const virtuosoRef = useRef<VirtuosoHandle>(null);
+  const [listHeight, setListHeight] = useState(200);
 
   const {
     getItemProps,
@@ -121,37 +122,39 @@ const Select = <T extends SelectItem>(props: ISelectProps<T>) => {
         })}
       >
         {!isOpen || !items.length ? null : (
-          <Virtuoso
-            ref={virtuosoRef}
-            style={{ height: 200, width: 300 }}
-            data={items}
-            itemContent={(i, d) => {
-              const itemString = itemToString(d);
-              return (
-                <div
-                  className={
-                    `px-3 py-2 leading-none items-center text-sm cursor-pointer ${(highlightedIndex === i) ? 'bg-gray-200 dark:bg-dark-200' : ''}`
-                  }
-                  // eslint-disable-next-line react/jsx-props-no-spreading
-                  {...getItemProps({
-                    index: i,
-                    item: d,
-                  })}
-                >
-                  {(() => {
-                    if (CustomItemComponent) {
-                      return <div><CustomItemComponent item={d} itemString={itemString} /></div>;
+          <div style={{ height: listHeight, maxHeight: '200px', width: 300 }}>
+            <Virtuoso
+              ref={virtuosoRef}
+              totalListHeightChanged={setListHeight}
+              data={items}
+              itemContent={(i, d) => {
+                const itemString = itemToString(d);
+                return (
+                  <div
+                    className={
+                      `px-3 py-2 leading-none items-center text-sm cursor-pointer ${(highlightedIndex === i) ? 'bg-gray-200 dark:bg-dark-200' : ''}`
                     }
-                    return (
-                      <div>
-                        {itemString}
-                      </div>
-                    );
-                  })()}
-                </div>
-              );
-            }}
-          />
+                    // eslint-disable-next-line react/jsx-props-no-spreading
+                    {...getItemProps({
+                      index: i,
+                      item: d,
+                    })}
+                  >
+                    {(() => {
+                      if (CustomItemComponent) {
+                        return <div><CustomItemComponent item={d} itemString={itemString} /></div>;
+                      }
+                      return (
+                        <div>
+                          {itemString}
+                        </div>
+                      );
+                    })()}
+                  </div>
+                );
+              }}
+            />
+          </div>
         )}
       </div>
     </div>
