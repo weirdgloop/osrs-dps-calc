@@ -32,7 +32,7 @@ jobs:
           path: |
             ${{ steps.yarn-cache-dir-path.outputs.dir }}
             ${{ github.workspace }}/.next/cache
-          # Generate a new acche whenever packages or source files change.
+          # Generate a new cache whenever packages or source files change.
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
@@ -41,6 +41,7 @@ jobs:
         run: yarn
       - name: Build project
         run: yarn build
+      - run: mv cdn out/
       - uses: actions/upload-artifact@v3
         # We only need to upload an artifact if this is a push to the main branch
         if: github.ref == 'refs/heads/main'
@@ -50,8 +51,6 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    env:
-      GCS_BUCKET: ${{ secrets.GCS_BUCKET }}
     needs: build
     # Ensure that we only deploy when pushing to the main branch
     if: github.ref == 'refs/heads/main'
@@ -61,20 +60,15 @@ jobs:
         with:
           name: output
           path: out
-      - id: 'auth'
-        uses: 'google-github-actions/auth@v1'
+      - name: Deploy to server
+        uses: easingthemes/ssh-deploy@main
         with:
-          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
-      - name: 'Setup Cloud SDK'
-        uses: 'google-github-actions/setup-gcloud@v1'
-      - name: 'Sync build output to GCS bucket'
-        run: |-
-          gsutil -m rsync -r out gs://$GCS_BUCKET
-      - uses: actions/checkout@v4
-        with:
-          path: 'cdn'
-          sparse-checkout: 'cdn'
-          sparse-checkout-cone-mode: false
-      - name: 'Sync CDN assets to GCS bucket'
-        run: |-
-          gsutil -m rsync -r cdn gs://$GCS_BUCKET/cdn
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USER }}
+          ARGS: "-rlgoDzvc -i --delete"
+          SOURCE: "out/"
+          TARGET: "/var/www/html/osrs-dps/"
+          SCRIPT_AFTER: |
+            whoami
+            echo $RSYNC_STDOUT
