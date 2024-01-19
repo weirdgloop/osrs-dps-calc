@@ -10,7 +10,7 @@ export enum DetailKey {
 
 export interface DetailEntry {
   label: DetailKey,
-  value: number,
+  value: string,
 }
 
 const OUTPUT_ORDER: DetailKey[] = [
@@ -28,11 +28,22 @@ export class CalcDetails {
 
   private dirty: boolean = true;
 
-  public track(label: DetailKey, value: number) {
+  public track(label: DetailKey, value: number | string) {
+    let stringValue: string;
+    if (typeof value === 'number') {
+      if (Number.isInteger(value)) {
+        stringValue = value.toString();
+      } else {
+        stringValue = value.toFixed(2);
+      }
+    } else {
+      stringValue = value;
+    }
+
     this.dirty = true;
     this.entries.set(label, {
       label,
-      value,
+      value: stringValue,
     });
   }
 

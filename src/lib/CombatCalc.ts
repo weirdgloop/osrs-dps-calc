@@ -97,7 +97,7 @@ export default class CombatCalc {
     }
   }
 
-  private track(label: DetailKey, value: number): number {
+  private track<T extends Parameters<CalcDetails['track']>[1]>(label: Parameters<CalcDetails['track']>[0], value: T): T {
     this._details?.track(label, value);
     return value;
   }
