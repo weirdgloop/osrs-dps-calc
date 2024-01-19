@@ -1101,6 +1101,7 @@ export default class CombatCalc {
         'Rune pickaxe': 41,
       };
 
+      // https://twitter.com/JagexAsh/status/1007600220358742021
       const pickBonus = pickBonuses[this.player.equipment.weapon.name] || 61; // there's a lot of dpick variants
       const factor = 50 + this.player.skills.mining + pickBonus;
       const divisor = 150;
