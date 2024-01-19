@@ -1237,6 +1237,13 @@ export default class CombatCalc {
       // https://twitter.com/JagexAsh/status/1219652159148646401
       dist = dist.transform(divisionTransformer(3));
     }
+    if (['Slash Bash', 'Zogre', 'Skogre'].includes(this.monster.name)) {
+      if (this.player.spell?.name === 'Crumble Undead') {
+        dist = dist.transform(divisionTransformer(2));
+      } else if (!this.player.equipment.ammo?.name.includes(' brutal')) {
+        dist = dist.transform(divisionTransformer(4));
+      }
+    }
 
     // now also cap hits indiscriminately by the monster's max health, in case it is higher
     dist = dist.transform(flatLimitTransformer(this.monster.skills.hp));
