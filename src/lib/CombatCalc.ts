@@ -1099,6 +1099,7 @@ export default class CombatCalc {
         'Mithril pickaxe': 21,
         'Adamant pickaxe': 31,
         'Rune pickaxe': 41,
+        // crystal is same as dpick https://twitter.com/JagexAsh/status/1155820855076802560
       };
 
       // https://twitter.com/JagexAsh/status/1007600220358742021
