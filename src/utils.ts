@@ -48,6 +48,7 @@ export const fetchPlayerSkills = async (username: string) => {
     ranged: skillData[5].level,
     prayer: skillData[6].level,
     magic: skillData[7].level,
+    mining: skillData[15].level,
   };
 };
 
