@@ -1157,7 +1157,7 @@ export default class CombatCalc {
       }
 
       if (this.wearing(['Onyx bolts (e)', 'Onyx dragon bolts (e)']) && !mattrs.includes(MonsterAttribute.UNDEAD)) {
-        const chance = 0.1 * kandarinDiaryFactor;
+        const chance = 0.11 * kandarinDiaryFactor;
         const effectMax = max + Math.trunc(rangedLvl * (zaryte ? 32 : 20) / 100);
         dist = new AttackDistribution([
           new HitDistribution([
