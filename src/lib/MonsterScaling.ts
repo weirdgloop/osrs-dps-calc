@@ -196,12 +196,12 @@ const applyDefenceReductions = (m: Monster): Monster => {
     });
   }
 
-  const arclightFactor = m.attributes.includes(MonsterAttribute.DEMON) ? 18 : 19;
+  const arclightDivisor = m.attributes.includes(MonsterAttribute.DEMON) ? 10 : 20;
   for (let i = 0; i < m.defenceReductions.arclight; i++) {
     m = newSkills(m, {
-      atk: Math.trunc(m.skills.atk * arclightFactor / 20) - 1,
-      str: Math.trunc(m.skills.str * arclightFactor / 20) - 1,
-      def: Math.trunc(m.skills.def * arclightFactor / 20) - 1,
+      atk: m.skills.atk - Math.trunc(m.skills.atk / arclightDivisor) - 1,
+      str: m.skills.str - Math.trunc(m.skills.str / arclightDivisor) - 1,
+      def: m.skills.def - Math.trunc(m.skills.def / arclightDivisor) - 1,
     });
   }
 
