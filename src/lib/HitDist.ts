@@ -282,7 +282,7 @@ export function linearMinTransformer(maximum: number, offset: number = 0): HitTr
   };
 }
 
-export function cappedReroll(limit: number, rollMax: number, offset: number = 0): HitTransformer {
+export function cappedRerollTransformer(limit: number, rollMax: number, offset: number = 0): HitTransformer {
   return (h) => {
     const d = new HitDistribution([]);
     const prob = 1.0 / (rollMax + 1);
@@ -296,10 +296,20 @@ export function cappedReroll(limit: number, rollMax: number, offset: number = 0)
   };
 }
 
-export function divisionTransformer(divisor: number, minimum: number = 0): HitTransformer {
+export function multiplyTransformer(numerator: number, divisor: number, minimum: number = 0): HitTransformer {
   return (h) => new HitDistribution(
     h === 0
       ? [new WeightedHit(1.0, [0])]
-      : [new WeightedHit(1.0, [Math.max(minimum, Math.trunc(h / divisor))])],
+      : [new WeightedHit(1.0, [Math.max(minimum, Math.trunc(numerator * h / divisor))])],
   );
+}
+
+export function divisionTransformer(divisor: number, minimum: number = 0): HitTransformer {
+  return multiplyTransformer(1, divisor, minimum);
+}
+
+export function flatAddTransformer(addend: number): HitTransformer {
+  return (h) => new HitDistribution([
+    new WeightedHit(1.0, [h + addend]),
+  ]);
 }

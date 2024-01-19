@@ -6,6 +6,7 @@ export enum DetailKey {
   DEFENCE_ROLL_BASE = 'Base defence roll',
   DEFENCE_ROLL_TOA = 'ToA defence roll',
   DEFENCE_ROLL_FINAL = 'Defence roll',
+  GUARDIANS_DMG_BONUS = 'Guardians hit multiplier',
 }
 
 export interface DetailEntry {

@@ -2,11 +2,12 @@ import { EquipmentPiece, Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import {
   AttackDistribution,
-  cappedReroll,
+  cappedRerollTransformer,
   divisionTransformer,
   flatLimitTransformer,
   HitDistribution,
   linearMinTransformer,
+  multiplyTransformer,
   WeightedHit,
 } from '@/lib/HitDist';
 import { isBindSpell, isFireSpell, isWaterSpell } from '@/types/Spell';
@@ -1088,6 +1089,26 @@ export default class CombatCalc {
       ]);
     }
 
+    if (GUARDIAN_IDS.includes(this.monster.id) && this.player.equipment.weapon?.category === EquipmentCategory.PICKAXE) {
+      // just the level required to wield
+      const pickBonuses: { [k: string]: number } = {
+        'Bronze pickaxe': 1,
+        'Iron pickaxe': 1,
+        'Steel pickaxe': 6,
+        'Black pickaxe': 11,
+        'Mithril pickaxe': 21,
+        'Adamant pickaxe': 31,
+        'Rune pickaxe': 41,
+      };
+
+      const pickBonus = pickBonuses[this.player.equipment.weapon.name] || 61; // there's a lot of dpick variants
+      const factor = 50 + this.player.skills.mining + pickBonus;
+      const divisor = 150;
+
+      this.track(DetailKey.GUARDIANS_DMG_BONUS, factor / divisor);
+      dist = dist.transform(multiplyTransformer(factor, divisor));
+    }
+
     if (this.monster.name === 'Ice demon' && (isFireSpell(this.player.spell) || this.player.spell?.name === 'Flames of Zamorak')) {
       // https://twitter.com/JagexAsh/status/1133350436554121216
       dist = dist.scaleDamage(3, 2);
@@ -1200,7 +1221,7 @@ export default class CombatCalc {
 
     if (this.monster.name === 'Zulrah') {
       // https://twitter.com/JagexAsh/status/1745852774607183888
-      dist = dist.transform(cappedReroll(50, 5, 45));
+      dist = dist.transform(cappedRerollTransformer(50, 5, 45));
     }
     if (this.monster.name === 'Fragment of Seren') {
       // https://twitter.com/JagexAsh/status/1375037874559721474

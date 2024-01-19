@@ -67,6 +67,7 @@ export const generateEmptyPlayer: () => Player = () => ({
     prayer: 99,
     ranged: 99,
     str: 99,
+    mining: 99,
   },
   boosts: {
     atk: 0,
@@ -76,6 +77,7 @@ export const generateEmptyPlayer: () => Player = () => ({
     prayer: 0,
     ranged: 0,
     str: 0,
+    mining: 0,
   },
   equipment: generateInitialEquipment(),
   prayers: [],
@@ -209,7 +211,7 @@ class GlobalState implements State {
     const recomputeBoosts = () => {
       // Re-compute the player's boost values.
       const boosts: PlayerSkills = {
-        atk: 0, def: 0, hp: 0, magic: 0, prayer: 0, ranged: 0, str: 0,
+        atk: 0, def: 0, hp: 0, magic: 0, prayer: 0, ranged: 0, str: 0, mining: 0,
       };
 
       for (const p of this.player.buffs.potions) {

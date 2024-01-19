@@ -12,6 +12,7 @@ export interface PlayerSkills {
   prayer: number;
   ranged: number;
   str: number;
+  mining: number;
 }
 
 export interface EquipmentPiece extends EquipmentStats {
