@@ -1,9 +1,11 @@
 import { EquipmentPiece, Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
+import UserIssueType from '@/enums/UserIssueType';
 
 export interface UserIssue {
+  type: UserIssueType;
   message: string;
-  loadoutName?: string;
+  loadout?: number;
 }
 
 /**

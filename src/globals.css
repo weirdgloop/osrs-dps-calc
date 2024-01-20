@@ -74,7 +74,7 @@ input.form-control[type=number] {
   appearance: textfield;
 }
 
-#tooltip {
+#tooltip, #tooltip-warning {
   @apply bg-black;
   @apply text-xs;
   @apply p-1;
@@ -83,6 +83,10 @@ input.form-control[type=number] {
 
   @apply hidden;
   @apply block;
+}
+
+#tooltip-warning {
+  @apply bg-orange-400;
 }
 
 .select-input input {

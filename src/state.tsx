@@ -28,6 +28,7 @@ import getMonsters from '@/lib/Monsters';
 import { TOMBS_OF_AMASCUT_MONSTER_IDS } from '@/constants';
 import { sum } from 'd3-array';
 import { isValidAmmoForRangedWeapon } from '@/lib/Equipment';
+import UserIssueType from '@/enums/UserIssueType';
 import equipment from '../cdn/json/equipment.json';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
@@ -268,6 +269,10 @@ class GlobalState implements State {
       offensive: p.offensive,
       defensive: p.defensive,
     };
+  }
+
+  hasUserIssue(type: UserIssueType, loadout: number): UserIssue | false {
+    return this.ui.issues.find((t) => t.type === type && t.loadout === loadout) || false;
   }
 
   recalculateEquipmentBonusesFromGear() {
@@ -609,14 +614,12 @@ class GlobalState implements State {
 
     // For each loadout, check if there are any issues we should surface to the user.
     for (const [k, l] of Object.entries(this.loadouts)) {
-      const loadoutName = `Loadout ${parseInt(k) + 1}`;
-
-      if (l.equipment.weapon?.category && [EquipmentCategory.STAFF, EquipmentCategory.POLESTAFF, EquipmentCategory.POWERED_WAND, EquipmentCategory.POWERED_STAFF].includes(l.equipment.weapon.category) && l.spell === null) {
-        issues.push({ message: 'A magic weapon is being used, but no spell is selected', loadoutName });
-      }
-
       if (!isValidAmmoForRangedWeapon(l.equipment.weapon?.id, l.equipment.ammo?.id)) {
-        issues.push({ message: l.equipment.ammo?.name ? `${l.equipment.ammo?.name} is not valid ammo for ${l.equipment.weapon?.name}` : `Must equip ammo to use ${l.equipment.weapon?.name}`, loadoutName });
+        if (l.equipment.ammo?.name) {
+          issues.push({ type: UserIssueType.EQUIPMENT_WRONG_AMMO, loadout: parseInt(k), message: 'This ammo does not work with your current weapon' });
+        } else {
+          issues.push({ type: UserIssueType.EQUIPMENT_MISSING_AMMO, loadout: parseInt(k), message: 'Your weapon requires ammo to use' });
+        }
       }
     }
 

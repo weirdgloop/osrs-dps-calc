@@ -7,7 +7,6 @@ import Toggle from '@/app/components/generic/Toggle';
 import HitDistribution from '@/app/components/results/HitDistribution';
 import Spinner from '@/app/components/Spinner';
 import { ACCURACY_PRECISION, DPS_PRECISION } from '@/constants';
-import IssuesContainer from '@/app/components/results/IssuesContainer';
 
 interface IResultRowProps {
   calcKey: keyof Omit<CalculatedLoadout, 'ttkDist'>;
@@ -123,7 +122,6 @@ const ResultsContainer = observer(() => {
           <ResultsTable />
         </div>
       </div>
-      <IssuesContainer />
       {
         prefs.showHitDistribution && (
           <div className="my-3 sm:rounded shadow-lg bg-body-100 dark:bg-dark-400">

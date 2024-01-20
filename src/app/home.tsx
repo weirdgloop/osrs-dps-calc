@@ -160,6 +160,7 @@ const Home: NextPage = observer(() => {
         )
       }
       <Tooltip id="tooltip" />
+      <Tooltip id="tooltip-warning" />
       <ToastContainer
         position="bottom-right"
         hideProgressBar
