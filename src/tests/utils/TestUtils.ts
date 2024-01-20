@@ -31,6 +31,6 @@ export function calculate(player: Player, monster: Monster) {
   };
 }
 
-export function findResult(details: DetailEntry[], key: DetailKey): number | undefined {
+export function findResult(details: DetailEntry[], key: DetailKey): string | undefined {
   return details.find((d) => d.label === key)?.value;
 }
