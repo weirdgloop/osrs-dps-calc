@@ -848,7 +848,8 @@ export default class CombatCalc {
     } else if (this.wearing(['Sanguinesti staff', 'Holy sanguinesti staff'])) {
       maxHit = Math.trunc(magicLevel / 3 - 1);
     } else if (this.wearing('Dawnbringer')) {
-      maxHit = Math.trunc(magicLevel / 6 - 1);
+      // dawnbringer is not affected by any magic damage bonuses
+      return Math.trunc(magicLevel / 6 - 1);
     } else if (this.wearing("Tumeken's shadow")) {
       maxHit = Math.trunc(magicLevel / 3 + 1);
     } else if (this.wearing('Warped sceptre')) {
