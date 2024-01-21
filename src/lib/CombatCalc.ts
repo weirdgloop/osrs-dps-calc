@@ -223,7 +223,7 @@ export default class CombatCalc {
      * @see https://oldschool.runescape.wiki/w/Obsidian_equipment
      */
   private isWearingTzhaarWeapon(): boolean {
-    return this.wearing(['Tzhaar-ket-em', 'Tzhaar-ket-om', 'Tzhaar-ket-om (t)', 'Toktz-xil-ak', 'Toktz-xil-ek']);
+    return this.wearing(['Tzhaar-ket-em', 'Tzhaar-ket-om', 'Tzhaar-ket-om (t)', 'Toktz-xil-ak', 'Toktz-xil-ek', 'Toktz-mej-tal']);
   }
 
   /**
