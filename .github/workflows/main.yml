@@ -41,6 +41,8 @@ jobs:
         run: yarn
       - name: Build project
         run: yarn build
+      - name: Run tests
+        run: yarn test
       - run: mv cdn out/
       - uses: actions/upload-artifact@v4
         # We only need to upload an artifact if this is a push to the main branch
