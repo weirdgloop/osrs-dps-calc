@@ -1327,8 +1327,11 @@ export default class CombatCalc {
     if (this.player.style.stance === 'Rapid') {
       attackSpeed -= 1;
     }
-    if (this.player.equipment.weapon?.name === 'Harmonised nightmare staff' && this.player.spell?.spellbook === 'standard') {
-      attackSpeed -= 1;
+    if (AUTOCAST_STANCES.includes(this.player.style.stance)) {
+      if (this.player.equipment.weapon?.name === 'Harmonised nightmare staff' && this.player.spell?.spellbook === 'standard') {
+        return 4;
+      }
+      return 5;
     }
 
     return attackSpeed;
