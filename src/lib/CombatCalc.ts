@@ -829,6 +829,11 @@ export default class CombatCalc {
     const mattrs = this.monster.attributes;
     const { buffs } = this.player;
 
+    if (this.wearing('Dawnbringer')) {
+      // dawnbringer is not affected by any magic damage bonuses
+      return Math.trunc(magicLevel / 6 - 1);
+    }
+
     if (spell?.name === 'Magic Dart') {
       if (this.wearing("Slayer's staff (e)") && buffs.onSlayerTask) {
         maxHit = Math.trunc(13 + magicLevel / 6);
@@ -847,9 +852,6 @@ export default class CombatCalc {
       maxHit = Math.trunc(magicLevel / 3 - 2);
     } else if (this.wearing(['Sanguinesti staff', 'Holy sanguinesti staff'])) {
       maxHit = Math.trunc(magicLevel / 3 - 1);
-    } else if (this.wearing('Dawnbringer')) {
-      // dawnbringer is not affected by any magic damage bonuses
-      return Math.trunc(magicLevel / 6 - 1);
     } else if (this.wearing("Tumeken's shadow")) {
       maxHit = Math.trunc(magicLevel / 3 + 1);
     } else if (this.wearing('Warped sceptre')) {
