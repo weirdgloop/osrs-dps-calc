@@ -74,3 +74,14 @@ jobs:
           SCRIPT_AFTER: |
             whoami
             echo $RSYNC_STDOUT
+      - name: Purge cache on Cloudflare
+        run: |
+          curl --request POST \
+            --url https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE }}/purge_cache \
+            -H 'Content-Type: application/json' \
+            -H 'Authorization: Bearer ${{ secrets.CLOUDFLARE_TOKEN }}' \
+            --data '{
+              "files": [
+                "https://tools.runescape.wiki/osrs-dps/"
+              ]
+            }'
