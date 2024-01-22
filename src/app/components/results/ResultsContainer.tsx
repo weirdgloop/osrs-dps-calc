@@ -3,7 +3,6 @@ import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 import { CalculatedLoadout } from '@/types/State';
 import { max, min } from 'd3-array';
-import Toggle from '@/app/components/generic/Toggle';
 import HitDistribution from '@/app/components/results/HitDistribution';
 import Spinner from '@/app/components/Spinner';
 import { ACCURACY_PRECISION, DPS_PRECISION } from '@/constants';
@@ -104,15 +103,14 @@ const ResultsTable: React.FC = observer(() => {
 
 const ResultsContainer = observer(() => {
   const store = useStore();
-  const { prefs } = store;
 
   return (
     <div className="grow basis-1/4 md:mt-9 flex flex-col">
       <div
-        className="sm:rounded shadow-lg bg-body-100 dark:bg-dark-400"
+        className="sm:rounded shadow-lg bg-tile dark:bg-dark-300"
       >
         <div
-          className="px-4 py-3.5 border-b-body-400 dark:border-b-dark-200 border-b md:rounded md:rounded-bl-none md:rounded-br-none flex justify-between items-center"
+          className="px-4 py-3.5 border-b-body-400 bg-body-100 dark:bg-dark-400 dark:border-b-dark-200 border-b md:rounded md:rounded-bl-none md:rounded-br-none flex justify-between items-center"
         >
           <h1 className="font-serif text-lg tracking-tight font-bold">
             Results
@@ -122,46 +120,7 @@ const ResultsContainer = observer(() => {
           <ResultsTable />
         </div>
       </div>
-      {
-        prefs.showHitDistribution && (
-          <div className="my-3 sm:rounded shadow-lg bg-body-100 dark:bg-dark-400">
-            <div
-              className="px-4 py-3.5 border-b-body-400 dark:border-b-dark-200 border-b md:rounded md:rounded-bl-none md:rounded-br-none flex justify-between items-center"
-            >
-              <h1 className="font-serif text-lg tracking-tight font-bold">
-                Hit Distribution (Loadout
-                {' '}
-                {store.selectedLoadout + 1}
-                )
-              </h1>
-              <div>
-                <Toggle
-                  checked={prefs.hitDistsHideZeros}
-                  setChecked={(c) => store.updatePreferences({ hitDistsHideZeros: c })}
-                  label="Hide 0s"
-                />
-              </div>
-            </div>
-            <div>
-              <div className="mt-2 px-2">
-                <HitDistribution dist={store.calc.loadouts[store.selectedLoadout]?.hitDist || []} />
-              </div>
-            </div>
-          </div>
-        )
-      }
-      <div className="text-xs my-3 mx-1 text-dark-300 dark:text-body-200 text-center">
-        To display additional output graphs,
-        {' '}
-        <button
-          type="button"
-          className="underline"
-          onClick={() => store.updateUIState({ showPreferencesModal: true })}
-        >
-          change your preferences
-        </button>
-        .
-      </div>
+      <HitDistribution dist={store.calc.loadouts[store.selectedLoadout]?.hitDist || []} />
     </div>
   );
 });

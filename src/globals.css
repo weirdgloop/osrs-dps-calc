@@ -175,7 +175,7 @@ tbody tr:not(tr:last-child) {
 }
 
 tbody tr:last-child th:first-child {
-  @apply rounded-bl-lg;
+  @apply rounded-bl;
   @apply pb-2;
 }
 

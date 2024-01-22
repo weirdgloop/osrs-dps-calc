@@ -22,6 +22,9 @@ import { useTheme } from 'next-themes';
 import { max } from 'd3-array';
 import { keys } from '@/utils';
 import { scaledMonster } from '@/lib/MonsterScaling';
+import equipmentStats from '@/public/img/Equipment Stats.png';
+import SectionAccordion from '@/app/components/generic/SectionAccordion';
+import LazyImage from '@/app/components/generic/LazyImage';
 
 enum XAxisType {
   MONSTER_DEF,
@@ -256,6 +259,7 @@ const getOutput = (
 
 const LoadoutComparison: React.FC = observer(() => {
   const store = useStore();
+  const { showLoadoutComparison } = store.prefs;
   const loadouts = toJS(store.loadouts);
   const monster = toJS(store.monster);
 
@@ -318,55 +322,70 @@ const LoadoutComparison: React.FC = observer(() => {
   }, [loadouts, isDark]);
 
   return (
-    <>
-      <ResponsiveContainer width="100%" height={200}>
-        <LineChart
-          data={data.lines}
-        >
-          <XAxis
-            allowDecimals
-            dataKey="name"
-            stroke="#777777"
-            interval="equidistantPreserveStart"
-          />
-          <YAxis
-            stroke="#777777"
-            domain={[data.min, data.max]}
-            interval="equidistantPreserveStart"
-          />
-          <CartesianGrid stroke="gray" strokeDasharray="5 5" />
-          <Tooltip
-            content={(props) => <CustomTooltip {...props} />}
-          />
-          <Legend wrapperStyle={{ fontSize: '.9em' }} />
-          {generateLines()}
-        </LineChart>
-      </ResponsiveContainer>
-      <div className="my-4 flex flex-wrap md:flex-nowrap gap-4 max-w-lg m-auto dark:text-white">
-        <div className="basis-full md:basis-1/2">
-          <h3 className="font-serif font-bold mb-2">X axis</h3>
-          <Select
-            id="loadout-comparison-x"
-            items={XAxisOptions}
-            value={xAxisType || undefined}
-            onSelectedItemChange={(i) => {
-              setXAxisType(i);
-            }}
-          />
+    <SectionAccordion
+      defaultIsOpen={showLoadoutComparison}
+      onIsOpenChanged={(o) => store.updatePreferences({ showLoadoutComparison: o })}
+      title={(
+        <div className="flex items-center gap-2">
+          <div className="w-6 flex justify-center"><LazyImage src={equipmentStats.src} /></div>
+          <h3 className="font-serif font-bold">
+            Loadout Graph
+          </h3>
         </div>
-        <div className="basis-full md:basis-1/2">
-          <h3 className="font-serif font-bold mb-2">Y axis</h3>
-          <Select
-            id="loadout-comparison-y"
-            items={YAxisOptions}
-            value={yAxisType || undefined}
-            onSelectedItemChange={(i) => {
-              setYAxisType(i);
-            }}
-          />
-        </div>
-      </div>
-    </>
+      )}
+    >
+      {data && (
+        <>
+          <ResponsiveContainer width="100%" height={200}>
+            <LineChart
+              data={data.lines}
+            >
+              <XAxis
+                allowDecimals
+                dataKey="name"
+                stroke="#777777"
+                interval="equidistantPreserveStart"
+              />
+              <YAxis
+                stroke="#777777"
+                domain={[data.min, data.max]}
+                interval="equidistantPreserveStart"
+              />
+              <CartesianGrid stroke="gray" strokeDasharray="5 5" />
+              <Tooltip
+                content={(props) => <CustomTooltip {...props} />}
+              />
+              <Legend wrapperStyle={{ fontSize: '.9em' }} />
+              {generateLines()}
+            </LineChart>
+          </ResponsiveContainer>
+          <div className="my-4 flex flex-wrap md:flex-nowrap gap-4 max-w-lg m-auto dark:text-white">
+            <div className="basis-full md:basis-1/2">
+              <h3 className="font-serif font-bold mb-2">X axis</h3>
+              <Select
+                id="loadout-comparison-x"
+                items={XAxisOptions}
+                value={xAxisType || undefined}
+                onSelectedItemChange={(i) => {
+                  setXAxisType(i);
+                }}
+              />
+            </div>
+            <div className="basis-full md:basis-1/2">
+              <h3 className="font-serif font-bold mb-2">Y axis</h3>
+              <Select
+                id="loadout-comparison-y"
+                items={YAxisOptions}
+                value={yAxisType || undefined}
+                onSelectedItemChange={(i) => {
+                  setYAxisType(i);
+                }}
+              />
+            </div>
+          </div>
+        </>
+      )}
+    </SectionAccordion>
   );
 });
 

@@ -32,30 +32,6 @@ const PreferencesModal: React.FC = observer(() => {
           label="Manual mode"
         />
       </div>
-      <div className="mt-4">
-        <h2 className="font-serif font-bold mb-2 select-none">Additional outputs</h2>
-        <Toggle
-          checked={prefs.showHitDistribution}
-          setChecked={(c) => {
-            store.updatePreferences({ showHitDistribution: c });
-          }}
-          label="Show hit distribution graph"
-        />
-        <Toggle
-          checked={prefs.showLoadoutComparison}
-          setChecked={(c) => {
-            store.updatePreferences({ showLoadoutComparison: c });
-          }}
-          label="Show loadout comparison graph"
-        />
-        <Toggle
-          checked={prefs.showTtkComparison}
-          setChecked={(c) => {
-            store.updatePreferences({ showTtkComparison: c });
-          }}
-          label="Show time-to-kill comparison graph"
-        />
-      </div>
       <Modal
         isOpen={advancedIsOpen}
         setIsOpen={setManualIsOpen}

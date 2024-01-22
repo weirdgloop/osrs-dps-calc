@@ -112,7 +112,7 @@ const Home: NextPage = observer(() => {
         <InitialLoad />
       </Suspense>
       {/* Main container */}
-      <div className="max-w-[1420px] mx-auto my-8">
+      <div className="max-w-[1420px] mx-auto mt-8 md:mb-8">
         <div className="flex gap-2 flex-wrap justify-center">
           <PlayerContainer />
           <MonsterContainer />
@@ -120,45 +120,10 @@ const Home: NextPage = observer(() => {
         </div>
       </div>
       {/* Additional graphs and stuff */}
-      {
-        (
-          store.prefs.showLoadoutComparison
-          || store.prefs.showTtkComparison
-        ) && (
-          <div className="bg-btns-100 dark:bg-dark-300 border-t-8 border-body-500 dark:border-dark-200 text-white px-4">
-            <div className="max-w-[1420px] mx-auto py-6">
-              {
-                store.prefs.showLoadoutComparison ? (
-                  <div className="grow bg-tile dark:bg-dark-500 md:rounded shadow-lg max-w-[100vw] my-4 text-black">
-                    <div
-                      className="px-6 py-4 bg-btns-200 dark:bg-dark-400 dark:border-dark-200 text-white md:rounded-t border-b-4 border-body-300"
-                    >
-                      <h3 className="font-serif font-bold">Loadout Comparison</h3>
-                    </div>
-                    <div className="px-6 py-4">
-                      <LoadoutComparison />
-                    </div>
-                  </div>
-                ) : null
-              }
-              {
-                store.prefs.showTtkComparison ? (
-                  <div className="grow bg-tile dark:bg-dark-500 md:rounded shadow-lg max-w-[100vw] my-4 text-black">
-                    <div
-                      className="px-6 py-4 bg-btns-200 dark:bg-dark-400 dark:border-dark-200 text-white md:rounded-t border-b-4 border-body-300"
-                    >
-                      <h3 className="font-serif font-bold">Time-to-Kill Comparison</h3>
-                    </div>
-                    <div className="px-6 py-4">
-                      <TtkComparison />
-                    </div>
-                  </div>
-                ) : null
-              }
-            </div>
-          </div>
-        )
-      }
+      <div className="max-w-[1420px] mx-auto mb-8">
+        <LoadoutComparison />
+        <TtkComparison />
+      </div>
       <Tooltip id="tooltip" />
       <Tooltip id="tooltip-warning" />
       <ToastContainer

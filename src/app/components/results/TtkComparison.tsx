@@ -17,6 +17,9 @@ import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipCont
 import { toJS } from 'mobx';
 import { useTheme } from 'next-themes';
 import { max } from 'd3-array';
+import SectionAccordion from '@/app/components/generic/SectionAccordion';
+import hourglass from '@/public/img/Hourglass.png';
+import LazyImage from '@/app/components/generic/LazyImage';
 
 export interface CustomTooltipProps extends TooltipProps<ValueType, NameType> {
   xAxisOption: typeof XAxisOptions[0],
@@ -73,6 +76,7 @@ const XAxisOptions = [
 
 const TtkComparison: React.FC = observer(() => {
   const store = useStore();
+  const { showTtkComparison } = store.prefs;
   const calcResults = toJS(store.calc.loadouts);
 
   const { resolvedTheme } = useTheme();
@@ -122,44 +126,59 @@ const TtkComparison: React.FC = observer(() => {
   }, [isDark, calcResults.length]);
 
   return (
-    <>
-      <ResponsiveContainer width="100%" height={200}>
-        <LineChart
-          data={data}
-        >
-          <XAxis
-            allowDecimals
-            dataKey="name"
-            stroke="#777777"
-            interval="equidistantPreserveStart"
-          />
-          <YAxis
-            stroke="#777777"
-            domain={[0, '100']}
-            interval="equidistantPreserveStart"
-          />
-          <CartesianGrid stroke="gray" strokeDasharray="5 5" />
-          <Tooltip
-            content={(props) => <CustomTooltip {...props} xAxisOption={xAxisType || XAxisOptions[0]} />}
-          />
-          <Legend wrapperStyle={{ fontSize: '.9em' }} />
-          {generateLines()}
-        </LineChart>
-      </ResponsiveContainer>
-      <div className="my-4 flex gap-4 max-w-lg m-auto dark:text-white">
-        <div className="basis-full md:basis-1/2">
-          <h3 className="font-serif font-bold mb-2">X axis</h3>
-          <Select
-            id="loadout-comparison-x"
-            items={XAxisOptions}
-            value={xAxisType || undefined}
-            onSelectedItemChange={(i) => {
-              setXAxisType(i);
-            }}
-          />
+    <SectionAccordion
+      defaultIsOpen={showTtkComparison}
+      onIsOpenChanged={(o) => store.updatePreferences({ showTtkComparison: o })}
+      title={(
+        <div className="flex items-center gap-2">
+          <div className="w-6 flex justify-center"><LazyImage src={hourglass.src} /></div>
+          <h3 className="font-serif font-bold">
+            Time-to-Kill Graph
+          </h3>
         </div>
-      </div>
-    </>
+      )}
+    >
+      {data && (
+        <>
+          <ResponsiveContainer width="100%" height={200}>
+            <LineChart
+              data={data}
+            >
+              <XAxis
+                allowDecimals
+                dataKey="name"
+                stroke="#777777"
+                interval="equidistantPreserveStart"
+              />
+              <YAxis
+                stroke="#777777"
+                domain={[0, '100']}
+                interval="equidistantPreserveStart"
+              />
+              <CartesianGrid stroke="gray" strokeDasharray="5 5" />
+              <Tooltip
+                content={(props) => <CustomTooltip {...props} xAxisOption={xAxisType || XAxisOptions[0]} />}
+              />
+              <Legend wrapperStyle={{ fontSize: '.9em' }} />
+              {generateLines()}
+            </LineChart>
+          </ResponsiveContainer>
+          <div className="my-4 flex gap-4 max-w-lg m-auto dark:text-white">
+            <div className="basis-full md:basis-1/2">
+              <h3 className="font-serif font-bold mb-2">X axis</h3>
+              <Select
+                id="loadout-comparison-x"
+                items={XAxisOptions}
+                value={xAxisType || undefined}
+                onSelectedItemChange={(i) => {
+                  setXAxisType(i);
+                }}
+              />
+            </div>
+          </div>
+        </>
+      )}
+    </SectionAccordion>
   );
 });
 
