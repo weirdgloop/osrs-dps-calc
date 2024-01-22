@@ -45,7 +45,10 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({
                     <span className="w-3 h-3 inline-block border border-gray-400 rounded-lg" style={{ backgroundColor: p.color }} />
                     {p.name}
                   </div>
-                  <span className="text-gray-400 font-bold">{p.value}%</span>
+                  <span className="text-gray-400 font-bold">
+                    {p.value}
+                    %
+                  </span>
                 </div>
               ))
             }
