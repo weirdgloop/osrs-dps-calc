@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint-fast": "eslint",
     "fmt": "next lint --fix",
     "analyse": "ANALYSE=true next build",
     "test": "jest",

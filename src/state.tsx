@@ -18,17 +18,15 @@ import {
   fetchPlayerSkills,
   fetchShortlinkData,
   getCombatStylesForCategory,
-  keys,
   PotionMap,
   WORKER_JSON_REPLACER,
 } from '@/utils';
 import { RecomputeValuesRequest, WorkerRequestType } from '@/types/WorkerData';
 import { scaledMonster } from '@/lib/MonsterScaling';
 import getMonsters from '@/lib/Monsters';
-import { TOMBS_OF_AMASCUT_MONSTER_IDS } from '@/constants';
-import { sum } from 'd3-array';
 import { isValidAmmoForRangedWeapon } from '@/lib/Equipment';
 import UserIssueType from '@/enums/UserIssueType';
+import { calculateEquipmentBonusesFromGear, EquipmentBonuses } from '@/equipmentStats';
 import equipment from '../cdn/json/equipment.json';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
@@ -37,8 +35,6 @@ import {
 import Potion from './enums/Potion';
 
 const EMPTY_CALC_LOADOUT = {} as CalculatedLoadout;
-
-type EquipmentBonuses = Pick<Player, 'bonuses' | 'offensive' | 'defensive'>;
 
 const generateInitialEquipment = () => {
   const initialEquipment: PlayerEquipment = {
@@ -276,70 +272,7 @@ class GlobalState implements State {
   }
 
   recalculateEquipmentBonusesFromGear() {
-    const eq = this.equipmentData;
-    const totals: EquipmentBonuses = {
-      bonuses: {
-        str: 0,
-        magic_str: 0,
-        ranged_str: 0,
-        prayer: 0,
-      },
-      offensive: {
-        slash: 0,
-        stab: 0,
-        crush: 0,
-        ranged: 0,
-        magic: 0,
-      },
-      defensive: {
-        slash: 0,
-        stab: 0,
-        crush: 0,
-        ranged: 0,
-        magic: 0,
-      },
-    };
-
-    keys(eq).forEach((slot) => {
-      const piece = eq[slot];
-      if (!piece) {
-        return;
-      }
-
-      // If this is the ammo slot, determine whether the ammo is compatible with the current weapon.
-      if (piece.slot === 'ammo' && !isValidAmmoForRangedWeapon(eq.weapon?.id, piece.id)) {
-        // If it is not valid ammo, then don't include this in the bonuses.
-        return;
-      }
-
-      keys(piece.bonuses).forEach((stat) => {
-        totals.bonuses[stat] += piece.bonuses[stat] || 0;
-      });
-      keys(piece.offensive).forEach((stat) => {
-        totals.offensive[stat] += piece.offensive[stat] || 0;
-      });
-      keys(piece.defensive).forEach((stat) => {
-        totals.defensive[stat] += piece.defensive[stat] || 0;
-      });
-    });
-
-    if (eq.weapon?.name === "Tumeken's shadow") {
-      const factor = TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) ? 4 : 3;
-      totals.bonuses.magic_str *= factor;
-      totals.offensive.magic *= factor;
-    }
-
-    if (eq.weapon?.name === "Dinh's bulwark" || eq.weapon?.name === "Dinh's blazing bulwark") {
-      const defensives = totals.defensive;
-      const defenceSum = defensives.stab + defensives.slash + defensives.crush + defensives.ranged;
-      totals.bonuses.str += Math.max(0, Math.trunc((defenceSum - 800) / 12) - 38);
-    }
-
-    if (this.player.spell?.spellbook === 'ancient') {
-      const virtusPieces = sum([eq.head?.name, eq.body?.name, eq.legs?.name], (i) => (i?.includes('Virtus') ? 1 : 0));
-      totals.bonuses.magic_str += 3 * virtusPieces;
-    }
-
+    const totals = calculateEquipmentBonusesFromGear(this.player, this.monster);
     this.updatePlayer({
       bonuses: totals.bonuses,
       offensive: totals.offensive,

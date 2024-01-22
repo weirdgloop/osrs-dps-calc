@@ -1,11 +1,10 @@
 import { expect, test } from '@jest/globals';
-import { generateEmptyPlayer } from '@/state';
-import { calculate, getMonster } from '@/tests/utils/TestUtils';
+import { calculate, getTestMonster, getTestPlayer } from '@/tests/utils/TestUtils';
 import { ACCURACY_PRECISION, DPS_PRECISION } from '@/constants';
 
 test('Empty player against Abyssal demon', () => {
-  const player = generateEmptyPlayer();
-  const monster = getMonster('Abyssal demon', 'Standard');
+  const monster = getTestMonster('Abyssal demon', 'Standard');
+  const player = getTestPlayer(monster);
   const result = calculate(player, monster);
 
   expect(result.maxHit).toBe(11);
