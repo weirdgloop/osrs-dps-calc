@@ -79,6 +79,7 @@ const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = observer(({ dist }
               // label={{ value: 'damage', position: 'bottom' }}
               dataKey="name"
               stroke="#777777"
+              interval="equidistantPreserveStart"
             />
             <YAxis
               // label={{ value: 'chance', angle: -90, position: 'left' }}
