@@ -306,6 +306,12 @@ class GlobalState implements State {
         return;
       }
 
+      // If this is the ammo slot, determine whether the ammo is compatible with the current weapon.
+      if (piece.slot === 'ammo' && !isValidAmmoForRangedWeapon(eq.weapon?.id, piece.id)) {
+        // If it is not valid ammo, then don't include this in the bonuses.
+        return;
+      }
+
       keys(piece.bonuses).forEach((stat) => {
         totals.bonuses[stat] += piece.bonuses[stat] || 0;
       });

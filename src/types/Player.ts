@@ -19,7 +19,7 @@ export interface EquipmentPiece extends EquipmentStats {
   name: string;
   id: number;
   version: string;
-  slot: string;
+  slot: keyof PlayerEquipment;
   image: string;
   speed: number;
   category: EquipmentCategory;
