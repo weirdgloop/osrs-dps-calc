@@ -4,6 +4,7 @@ import {
   Legend,
   Line,
   LineChart,
+  ReferenceLine,
   ResponsiveContainer,
   Tooltip,
   TooltipProps,
@@ -234,6 +235,30 @@ function* inputRange(
   }
 }
 
+interface Annotation {
+  label: string,
+  xValue: number,
+}
+const getAnnotations = (xAxisType: XAxisType, monster: Monster): Annotation[] => {
+  if (xAxisType === XAxisType.MONSTER_DEF) {
+    const annotations: Annotation[] = [];
+    let currentDef = monster.skills.def;
+    let dwhCount = 1;
+    while (currentDef >= 100) {
+      currentDef -= Math.trunc(currentDef * 3 / 10);
+      annotations.push({
+        label: `DWH x${dwhCount}`,
+        xValue: currentDef,
+      });
+      dwhCount += 1;
+    }
+
+    return annotations;
+  }
+
+  return [];
+};
+
 const YAxisOptions = [
   { label: 'Player damage-per-second', value: YAxisType.DPS },
   { label: 'Expected hit', value: YAxisType.EXPECTED_HIT },
@@ -261,7 +286,8 @@ const LoadoutComparison: React.FC = observer(() => {
   const store = useStore();
   const { showLoadoutComparison } = store.prefs;
   const loadouts = toJS(store.loadouts);
-  const monster = toJS(store.monster);
+  const storeMonster = toJS(store.monster);
+  const monster = useMemo(() => scaledMonster(storeMonster), [storeMonster]);
 
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
@@ -321,6 +347,28 @@ const LoadoutComparison: React.FC = observer(() => {
     return lines;
   }, [loadouts, isDark]);
 
+  const generateAnnotations = useCallback((): React.ReactNode[] => {
+    if (!xAxisType) {
+      return [];
+    }
+
+    const annotations: React.ReactNode[] = [];
+    getAnnotations(xAxisType.value, monster).forEach((a) => {
+      annotations.push(
+        <ReferenceLine
+          key={a.label}
+          label={a.label}
+          x={a.xValue}
+          stroke="red"
+          strokeDasharray="3 3"
+        />,
+      );
+    });
+
+    console.log(annotations.length);
+    return annotations;
+  }, [xAxisType, monster]);
+
   return (
     <SectionAccordion
       defaultIsOpen={showLoadoutComparison}
@@ -357,6 +405,7 @@ const LoadoutComparison: React.FC = observer(() => {
               />
               <Legend wrapperStyle={{ fontSize: '.9em' }} />
               {generateLines()}
+              {generateAnnotations()}
             </LineChart>
           </ResponsiveContainer>
           <div className="my-4 flex flex-wrap md:flex-nowrap gap-4 max-w-lg m-auto dark:text-white">
