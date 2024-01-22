@@ -357,17 +357,18 @@ const LoadoutComparison: React.FC = observer(() => {
       annotations.push(
         <ReferenceLine
           key={a.label}
-          label={a.label}
+          label={{
+            value: a.label, angle: 90, fontSize: 12, fill: isDark ? 'white' : 'black',
+          }}
           x={a.xValue}
           stroke="red"
-          strokeDasharray="3 3"
+          strokeDasharray="6 6"
         />,
       );
     });
 
-    console.log(annotations.length);
     return annotations;
-  }, [xAxisType, monster]);
+  }, [xAxisType, monster, isDark]);
 
   return (
     <SectionAccordion
