@@ -5,6 +5,7 @@ import {
 } from 'downshift';
 import React, { useEffect, useRef, useState } from 'react';
 import { Virtuoso, VirtuosoHandle } from 'react-virtuoso';
+import { IconChevronDown, IconChevronUp } from '@tabler/icons-react';
 
 type SelectItem = { label: string };
 
@@ -108,8 +109,11 @@ const Select = <T extends SelectItem>(props: ISelectProps<T>) => {
         }
         return (
           // eslint-disable-next-line react/jsx-props-no-spreading
-          <div className={`bg-white cursor-pointer form-control ${className}`} {...getToggleButtonProps()}>
-            {selectedItem ? selectedItem.label : (placeholder || 'Select...')}
+          <div className={`bg-white cursor-pointer form-control flex justify-between ${className}`} {...getToggleButtonProps()}>
+            <div>{selectedItem ? selectedItem.label : (placeholder || 'Select...')}</div>
+            <div className="h-4 relative top-[-1px]">
+              {isOpen ? <IconChevronUp className="w-4" /> : <IconChevronDown className="w-4" />}
+            </div>
           </div>
         );
       })()}
