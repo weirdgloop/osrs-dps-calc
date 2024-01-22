@@ -104,7 +104,7 @@ export const generateEmptyPlayer: () => Player = () => ({
   },
   buffs: {
     potions: [],
-    onSlayerTask: false,
+    onSlayerTask: true,
     inWilderness: false,
     kandarinDiary: false,
     chargeSpell: false,
