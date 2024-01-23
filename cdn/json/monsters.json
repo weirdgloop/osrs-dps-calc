@@ -2933,7 +2933,7 @@
   {
     "id": 9246,
     "name": "Arianwyn",
-    "version": "",
+    "version": "Hard",
     "image": "Arianwyn (Song of the Elves).png",
     "level": 378,
     "speed": 5,
@@ -2966,7 +2966,7 @@
   {
     "id": 8865,
     "name": "Arianwyn",
-    "version": "",
+    "version": "In combat",
     "image": "Arianwyn (Song of the Elves).png",
     "level": 212,
     "speed": 5,
@@ -18964,7 +18964,7 @@
   {
     "id": 12166,
     "name": "Duke Sucellus",
-    "version": "Asleep",
+    "version": "Awakened, Asleep",
     "image": "Duke Sucellus (asleep).png",
     "level": 1099,
     "speed": 5,
@@ -18999,7 +18999,7 @@
   {
     "id": 12191,
     "name": "Duke Sucellus",
-    "version": "Awake",
+    "version": "Awakened, Awake",
     "image": "Duke Sucellus.png",
     "level": 1099,
     "speed": 5,
@@ -19034,7 +19034,7 @@
   {
     "id": 12192,
     "name": "Duke Sucellus",
-    "version": "Defeated",
+    "version": "Awakened, Defeated",
     "image": "Duke Sucellus (defeated).png",
     "level": 1099,
     "speed": 5,
@@ -19069,7 +19069,7 @@
   {
     "id": 12166,
     "name": "Duke Sucellus",
-    "version": "Asleep",
+    "version": "Post-Quest, Asleep",
     "image": "Duke Sucellus (asleep).png",
     "level": 758,
     "speed": 5,
@@ -19104,7 +19104,7 @@
   {
     "id": 12191,
     "name": "Duke Sucellus",
-    "version": "Awake",
+    "version": "Post-Quest, Awake",
     "image": "Duke Sucellus.png",
     "level": 758,
     "speed": 5,
@@ -19139,7 +19139,7 @@
   {
     "id": 12192,
     "name": "Duke Sucellus",
-    "version": "Defeated",
+    "version": "Post-Quest, Defeated",
     "image": "Duke Sucellus (defeated).png",
     "level": 758,
     "speed": 5,
@@ -19174,7 +19174,7 @@
   {
     "id": 12193,
     "name": "Duke Sucellus",
-    "version": "Asleep",
+    "version": "Quest, Asleep",
     "image": "Duke Sucellus (asleep).png",
     "level": 538,
     "speed": 6,
@@ -19209,7 +19209,7 @@
   {
     "id": 12195,
     "name": "Duke Sucellus",
-    "version": "Awake",
+    "version": "Quest, Awake",
     "image": "Duke Sucellus.png",
     "level": 538,
     "speed": 6,
@@ -19244,7 +19244,7 @@
   {
     "id": 12196,
     "name": "Duke Sucellus",
-    "version": "Defeated",
+    "version": "Quest, Defeated",
     "image": "Duke Sucellus (defeated).png",
     "level": 538,
     "speed": 6,
@@ -19312,7 +19312,7 @@
   {
     "id": 3607,
     "name": "Dungeon rat",
-    "version": "",
+    "version": "Small",
     "image": "Dungeon rat.png",
     "level": 12,
     "speed": 4,
@@ -20667,7 +20667,7 @@
   {
     "id": 6594,
     "name": "Ent",
-    "version": "",
+    "version": "Wilderness",
     "image": "Ent (lv 101).png",
     "level": 101,
     "speed": 4,
@@ -20700,7 +20700,7 @@
   {
     "id": 7234,
     "name": "Ent",
-    "version": "",
+    "version": "Woodcutting Guild",
     "image": "Ent (lv 86).png",
     "level": 86,
     "speed": 4,
@@ -20799,7 +20799,7 @@
   {
     "id": 9247,
     "name": "Essyllt",
-    "version": "",
+    "version": "Hard",
     "image": "Essyllt (Song of the Elves).png",
     "level": 395,
     "speed": 4,
@@ -20832,7 +20832,7 @@
   {
     "id": 8847,
     "name": "Essyllt",
-    "version": "",
+    "version": "Normal",
     "image": "Essyllt (Song of the Elves).png",
     "level": 236,
     "speed": 4,
@@ -23929,7 +23929,7 @@
   {
     "id": 5626,
     "name": "Ghast",
-    "version": "",
+    "version": "Level 109",
     "image": "Ghast (Level 109).png",
     "level": 109,
     "speed": 8,
@@ -23964,7 +23964,7 @@
   {
     "id": 5627,
     "name": "Ghast",
-    "version": "",
+    "version": "Level 139",
     "image": "Ghast (Level 139).png",
     "level": 139,
     "speed": 8,
@@ -23999,7 +23999,7 @@
   {
     "id": 946,
     "name": "Ghast",
-    "version": "",
+    "version": "Level 30",
     "image": "Ghast (Level 30).png",
     "level": 30,
     "speed": 4,
@@ -24034,7 +24034,7 @@
   {
     "id": 5625,
     "name": "Ghast",
-    "version": "",
+    "version": "Level 79",
     "image": "Ghast (Level 79).png",
     "level": 79,
     "speed": 8,
@@ -24827,13 +24827,13 @@
     "attributes": []
   },
   {
-    "id": 6824,
-    "name": "Giant bat",
-    "version": "Arceuus",
-    "image": "Giant bat.png",
+    "id": 4504,
+    "name": "Giant bat (Brine Rat Cavern)",
+    "version": "",
+    "image": "Giant bat (Brine Rat Cavern).png",
     "level": 27,
     "speed": 4,
-    "size": 2,
+    "size": 1,
     "skills": [
       22,
       22,
@@ -24860,13 +24860,13 @@
     "attributes": []
   },
   {
-    "id": 4504,
+    "id": 6824,
     "name": "Giant bat",
-    "version": "Brine Rat Cavern",
-    "image": "Giant bat (Brine Rat Cavern).png",
+    "version": "Arceuus",
+    "image": "Giant bat.png",
     "level": 27,
     "speed": 4,
-    "size": 1,
+    "size": 2,
     "skills": [
       22,
       22,
@@ -34223,7 +34223,7 @@
   {
     "id": 7964,
     "name": "Ithoi the Navigator",
-    "version": "",
+    "version": "Attackable",
     "image": "Ithoi the Navigator.png",
     "level": 35,
     "speed": 5,
@@ -34256,7 +34256,7 @@
   {
     "id": 7949,
     "name": "Ithoi the Navigator",
-    "version": "",
+    "version": "NMZ",
     "image": "Ithoi the Navigator.png",
     "level": 35,
     "speed": 5,
@@ -34289,7 +34289,7 @@
   {
     "id": 7948,
     "name": "Ithoi the Navigator",
-    "version": "",
+    "version": "NMZ (hard)",
     "image": "Ithoi the Navigator.png",
     "level": 103,
     "speed": 3,
@@ -37263,7 +37263,7 @@
   {
     "id": 4163,
     "name": "King Roald",
-    "version": "",
+    "version": "In combat",
     "image": "King Roald.png",
     "level": 47,
     "speed": 4,
@@ -37296,7 +37296,7 @@
   {
     "id": 6328,
     "name": "King Roald",
-    "version": "",
+    "version": "In combat (hard)",
     "image": "King Roald.png",
     "level": 188,
     "speed": 4,
@@ -37958,7 +37958,7 @@
   {
     "id": 3897,
     "name": "Koschei the deathless",
-    "version": "",
+    "version": "The Fremennik Trials (Form 1)",
     "image": "Koschei the deathless.png",
     "level": 0,
     "speed": 4,
@@ -37991,7 +37991,7 @@
   {
     "id": 3898,
     "name": "Koschei the deathless",
-    "version": "",
+    "version": "The Fremennik Trials (Form 2)",
     "image": "Koschei the deathless.png",
     "level": 0,
     "speed": 4,
@@ -38024,7 +38024,7 @@
   {
     "id": 3899,
     "name": "Koschei the deathless",
-    "version": "",
+    "version": "The Fremennik Trials (Form 3)",
     "image": "Koschei the deathless.png",
     "level": 0,
     "speed": 4,
@@ -38057,7 +38057,7 @@
   {
     "id": 3900,
     "name": "Koschei the deathless",
-    "version": "",
+    "version": "The Fremennik Trials (Form 4)",
     "image": "Koschei the deathless.png",
     "level": 0,
     "speed": 1,
@@ -38189,7 +38189,7 @@
   {
     "id": 3162,
     "name": "Kree'arra",
-    "version": "Normal",
+    "version": "",
     "image": "Kree'arra.png",
     "level": 580,
     "speed": 3,
@@ -40050,7 +40050,7 @@
   {
     "id": 6604,
     "name": "Mammoth",
-    "version": "",
+    "version": "Normal",
     "image": "Mammoth.png",
     "level": 80,
     "speed": 4,
@@ -41428,7 +41428,7 @@
     ],
     "defensive": [
       -10,
-      21,
+      -21,
       -10,
       -10,
       -10
@@ -42767,7 +42767,7 @@
   {
     "id": 9017,
     "name": "Mourner",
-    "version": "",
+    "version": "Level 108",
     "image": "Mourner (level 108).png",
     "level": 108,
     "speed": 4,
@@ -42800,7 +42800,7 @@
   {
     "id": 9013,
     "name": "Mourner",
-    "version": "",
+    "version": "Level 11",
     "image": "Mourner.png",
     "level": 11,
     "speed": 4,
@@ -44012,7 +44012,7 @@
   {
     "id": 6318,
     "name": "Nezikchened",
-    "version": "",
+    "version": "Hard",
     "image": "Nezikchened.png",
     "level": 295,
     "speed": 5,
@@ -44045,7 +44045,7 @@
   {
     "id": 3962,
     "name": "Nezikchened",
-    "version": "",
+    "version": "Normal",
     "image": "Nezikchened.png",
     "level": 187,
     "speed": 5,
@@ -49668,7 +49668,7 @@
   {
     "id": 8242,
     "name": "Ranis Drakan",
-    "version": "",
+    "version": "A Taste of Hope",
     "image": "Ranis Drakan (A Taste of Hope).png",
     "level": 233,
     "speed": 5,
@@ -49703,7 +49703,7 @@
   {
     "id": 8248,
     "name": "Ranis Drakan",
-    "version": "",
+    "version": "A Taste of Hope (1/4th health)",
     "image": "Ranis Drakan (A Taste of Hope).png",
     "level": 233,
     "speed": 2,
@@ -55168,7 +55168,7 @@
   {
     "id": 5139,
     "name": "Sigmund",
-    "version": "",
+    "version": "Another Slice of H.A.M.",
     "image": "Sigmund (monster).png",
     "level": 64,
     "speed": 4,
@@ -55201,7 +55201,7 @@
   {
     "id": 990,
     "name": "Sigmund",
-    "version": "",
+    "version": "Death to the Dorgeshuun",
     "image": "Sigmund (monster).png",
     "level": 50,
     "speed": 4,
@@ -61616,7 +61616,7 @@
   {
     "id": 12268,
     "name": "Strangled",
-    "version": "Strangled 1",
+    "version": "Level 138, Strangled 1",
     "image": "Strangled (1).png",
     "level": 138,
     "speed": 0,
@@ -61649,7 +61649,7 @@
   {
     "id": 12269,
     "name": "Strangled",
-    "version": "Strangled 2",
+    "version": "Level 138, Strangled 2",
     "image": "Strangled (2).png",
     "level": 138,
     "speed": 0,
@@ -61682,7 +61682,7 @@
   {
     "id": 12270,
     "name": "Strangled",
-    "version": "Strangled 3",
+    "version": "Level 138, Strangled 3",
     "image": "Strangled (3).png",
     "level": 138,
     "speed": 0,
@@ -61715,7 +61715,7 @@
   {
     "id": 12271,
     "name": "Strangled",
-    "version": "Strangled 4",
+    "version": "Level 138, Strangled 4",
     "image": "Strangled (4).png",
     "level": 138,
     "speed": 0,
@@ -61748,7 +61748,7 @@
   {
     "id": 12272,
     "name": "Strangled",
-    "version": "Strangled 1",
+    "version": "Level 149, Strangled 1",
     "image": "Strangled (5).png",
     "level": 149,
     "speed": 0,
@@ -61781,7 +61781,7 @@
   {
     "id": 12273,
     "name": "Strangled",
-    "version": "Strangled 2",
+    "version": "Level 149, Strangled 2",
     "image": "Strangled (6).png",
     "level": 149,
     "speed": 0,
@@ -61814,7 +61814,7 @@
   {
     "id": 12274,
     "name": "Strangled",
-    "version": "Strangled 3",
+    "version": "Level 149, Strangled 3",
     "image": "Strangled (7).png",
     "level": 149,
     "speed": 0,
@@ -62775,7 +62775,7 @@
   {
     "id": 6476,
     "name": "Tarn",
-    "version": "",
+    "version": "Ghost",
     "image": "Tarn ghost.png",
     "level": 69,
     "speed": 4,
@@ -62810,7 +62810,7 @@
   {
     "id": 6477,
     "name": "Tarn",
-    "version": "",
+    "version": "Mutant",
     "image": "Mutant tarn.png",
     "level": 69,
     "speed": 4,
@@ -64668,7 +64668,7 @@
   {
     "id": 1076,
     "name": "Tolna",
-    "version": "",
+    "version": "East head",
     "image": "Tolna (monster).png",
     "level": 46,
     "speed": 5,
@@ -64701,7 +64701,7 @@
   {
     "id": 1077,
     "name": "Tolna",
-    "version": "",
+    "version": "North head",
     "image": "Tolna (monster).png",
     "level": 46,
     "speed": 0,
@@ -64734,7 +64734,7 @@
   {
     "id": 1075,
     "name": "Tolna",
-    "version": "",
+    "version": "South head",
     "image": "Tolna (monster).png",
     "level": 46,
     "speed": 0,
@@ -65774,7 +65774,7 @@
   {
     "id": 6359,
     "name": "Treus Dayth",
-    "version": "",
+    "version": "In combat",
     "image": "Treus Dayth.png",
     "level": 95,
     "speed": 4,
@@ -65809,7 +65809,7 @@
   {
     "id": 6298,
     "name": "Treus Dayth",
-    "version": "",
+    "version": "In combat (hard)",
     "image": "Treus Dayth.png",
     "level": 194,
     "speed": 4,
@@ -68667,7 +68667,7 @@
   {
     "id": 9567,
     "name": "Vanstrom Klause",
-    "version": "",
+    "version": "Sins of the Father",
     "image": "Vanstrom Klause (vampyre).png",
     "level": 459,
     "speed": 5,
@@ -68702,7 +68702,7 @@
   {
     "id": 3734,
     "name": "Vanstrom Klause",
-    "version": "",
+    "version": "Vampyre",
     "image": "Vanstrom Klause (vampyre).png",
     "level": 169,
     "speed": 8,
@@ -69005,7 +69005,7 @@
   {
     "id": 10830,
     "name": "Verzik Vitur",
-    "version": "Phase 1",
+    "version": "Entry mode, Phase 1",
     "image": "Verzik Vitur.png",
     "level": 425,
     "speed": 12,
@@ -69038,7 +69038,7 @@
   {
     "id": 10833,
     "name": "Verzik Vitur",
-    "version": "Phase 2",
+    "version": "Entry mode, Phase 2",
     "image": "Verzik Vitur (flying).png",
     "level": 488,
     "speed": 4,
@@ -69071,7 +69071,7 @@
   {
     "id": 10835,
     "name": "Verzik Vitur",
-    "version": "Phase 3",
+    "version": "Entry mode, Phase 3",
     "image": "Verzik Vitur (final form).png",
     "level": 512,
     "speed": 7,
@@ -69104,7 +69104,7 @@
   {
     "id": 10847,
     "name": "Verzik Vitur",
-    "version": "Phase 1",
+    "version": "Hard mode, Phase 1",
     "image": "Verzik Vitur.png",
     "level": 1040,
     "speed": 12,
@@ -69137,7 +69137,7 @@
   {
     "id": 10850,
     "name": "Verzik Vitur",
-    "version": "Phase 2",
+    "version": "Hard mode, Phase 2",
     "image": "Verzik Vitur (flying).png",
     "level": 1265,
     "speed": 4,
@@ -69170,7 +69170,7 @@
   {
     "id": 10852,
     "name": "Verzik Vitur",
-    "version": "Phase 3",
+    "version": "Hard mode, Phase 3",
     "image": "Verzik Vitur (final form).png",
     "level": 1520,
     "speed": 7,
@@ -69203,7 +69203,7 @@
   {
     "id": 8369,
     "name": "Verzik Vitur",
-    "version": "Phase 1",
+    "version": "Normal mode, Phase 1",
     "image": "Verzik Vitur.png",
     "level": 1040,
     "speed": 12,
@@ -69236,7 +69236,7 @@
   {
     "id": 8372,
     "name": "Verzik Vitur",
-    "version": "Phase 2",
+    "version": "Normal mode, Phase 2",
     "image": "Verzik Vitur (flying).png",
     "level": 1265,
     "speed": 4,
@@ -69269,7 +69269,7 @@
   {
     "id": 8374,
     "name": "Verzik Vitur",
-    "version": "Phase 3",
+    "version": "Normal mode, Phase 3",
     "image": "Verzik Vitur (final form).png",
     "level": 1520,
     "speed": 7,
@@ -73578,7 +73578,7 @@
   {
     "id": 10768,
     "name": "Xarpus",
-    "version": "",
+    "version": "Entry mode",
     "image": "Xarpus.png",
     "level": 331,
     "speed": 4,
@@ -73611,7 +73611,7 @@
   {
     "id": 10772,
     "name": "Xarpus",
-    "version": "",
+    "version": "Hard mode",
     "image": "Xarpus.png",
     "level": 1160,
     "speed": 4,
@@ -73644,7 +73644,7 @@
   {
     "id": 8340,
     "name": "Xarpus",
-    "version": "",
+    "version": "Normal mode",
     "image": "Xarpus.png",
     "level": 960,
     "speed": 4,
@@ -77504,7 +77504,7 @@
   {
     "id": 537,
     "name": "Zygomite",
-    "version": "",
+    "version": "Level 74",
     "image": "Zygomite (level 74).png",
     "level": 74,
     "speed": 4,
@@ -77537,7 +77537,7 @@
   {
     "id": 1024,
     "name": "Zygomite",
-    "version": "",
+    "version": "Level 86",
     "image": "Zygomite (level 86).png",
     "level": 86,
     "speed": 4,

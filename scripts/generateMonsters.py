@@ -66,7 +66,12 @@ def main():
             continue
 
         po = v['printouts']
-        version = getPrintoutValue(po['Version anchor']) or ''
+
+        # We split the key instead of using the Version anchor prop here to account for monsters with custom |smwname=
+        try:
+            version = k.split('#', 1)[1]
+        except IndexError:
+            version = ''
 
         # If this is a CoX monster Challenge Mode variant, remove it. This will be handled by the calculator UI.
         if 'Challenge Mode' in version:
