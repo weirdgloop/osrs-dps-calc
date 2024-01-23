@@ -1,11 +1,12 @@
 import { expect, test } from '@jest/globals';
-import { generateEmptyPlayer } from '@/state';
-import { calculate, findResult, getMonster } from '@/tests/utils/TestUtils';
+import {
+  calculate, findResult, getTestMonster, getTestPlayer,
+} from '@/tests/utils/TestUtils';
 import { DetailKey } from '@/lib/CalcDetails';
 
 test('Abyssal demon', () => {
-  const player = generateEmptyPlayer();
-  const monster = getMonster('Abyssal demon', 'Standard');
+  const monster = getTestMonster('Abyssal demon', 'Standard');
+  const player = getTestPlayer(monster);
   const { npcDefRoll, details } = calculate(player, monster);
 
   expect(npcDefRoll).toBe(12096);

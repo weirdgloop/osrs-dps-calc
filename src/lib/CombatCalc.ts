@@ -548,7 +548,8 @@ export default class CombatCalc {
 
     const strBonus = this.player.bonuses.str;
 
-    let maxHit = Math.trunc((effectiveLevel * (strBonus + 64) + 320) / 640); // should this be (.str) or (.melee_str)?
+    const baseMax = Math.trunc((effectiveLevel * (strBonus + 64) + 320) / 640);
+    let maxHit = baseMax;
 
     // Specific bonuses that are applied from equipment
     const mattrs = this.monster.attributes;
@@ -574,7 +575,7 @@ export default class CombatCalc {
       }
     }
     if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {
-      maxHit = Math.trunc(maxHit * 11 / 10); // TODO: confirm that this is the appropriate place
+      maxHit += Math.trunc(baseMax / 10);
     }
     if (this.isWearingTzhaarWeapon() && this.wearing('Berserker necklace')) {
       maxHit = Math.trunc(maxHit * 6 / 5);
