@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useStore } from '@/state';
 import { useSearchParams } from 'next/navigation';
 import localforage from 'localforage';
+import { observer } from 'mobx-react-lite';
 
 /**
  * This is a dummy component that is rendered inside a Suspense boundary in home.tsx. This is so that we have access to
@@ -9,7 +10,7 @@ import localforage from 'localforage';
  *
  * @see https://nextjs.org/docs/app/api-reference/functions/use-search-params#static-rendering
  */
-const InitialLoad: React.FC = () => {
+const InitialLoad: React.FC = observer(() => {
   const store = useStore();
   const searchParams = useSearchParams();
 
@@ -25,10 +26,19 @@ const InitialLoad: React.FC = () => {
         if (u) store.fetchCurrentPlayerSkills();
       }).catch(() => {});
     }
+
+    const monster = searchParams.get('monster');
+    if (monster) {
+      const target = store.availableMonsters.find((m) => m.id === parseInt(monster));
+      if (target) {
+        // If a monster ID was provided, set the active monster to it.
+        store.updateMonster(target);
+      }
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   return null;
-};
+});
 
 export default InitialLoad;
