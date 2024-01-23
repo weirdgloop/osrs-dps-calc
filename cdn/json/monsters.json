@@ -682,39 +682,6 @@
     "attributes": []
   },
   {
-    "id": 12394,
-    "name": "Abyssal walker (The Scar)",
-    "version": "Level 90",
-    "image": "Abyssal walker (The Scar).png",
-    "level": 90,
-    "speed": 5,
-    "size": 0,
-    "skills": [
-      0,
-      0,
-      0,
-      1,
-      1,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      75,
-      75,
-      75,
-      75
-    ],
-    "attributes": []
-  },
-  {
     "id": 9573,
     "name": "Acidic Bloodveld",
     "version": "",
@@ -3030,39 +2997,6 @@
     "attributes": []
   },
   {
-    "id": 7750,
-    "name": "Armoured Foe",
-    "version": "",
-    "image": "Armoured Foe.png",
-    "level": 820,
-    "speed": 0,
-    "size": 5,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 6331,
     "name": "Arrg",
     "version": "Hard",
@@ -3195,39 +3129,6 @@
     "attributes": []
   },
   {
-    "id": 1233,
-    "name": "Arzinian Avatar of Magic",
-    "version": "Invincible",
-    "image": "Arzinian Avatar of Magic.png",
-    "level": 0,
-    "speed": 4,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 1234,
     "name": "Arzinian Avatar of Magic",
     "version": "Level 125",
@@ -3294,39 +3195,6 @@
     "attributes": []
   },
   {
-    "id": 1230,
-    "name": "Arzinian Avatar of Ranging",
-    "version": "Invincible",
-    "image": "Arzinian Avatar of Ranging.png",
-    "level": 0,
-    "speed": 4,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 1231,
     "name": "Arzinian Avatar of Ranging",
     "version": "Level 125",
@@ -3389,39 +3257,6 @@
       15,
       10,
       10
-    ],
-    "attributes": []
-  },
-  {
-    "id": 1227,
-    "name": "Arzinian Avatar of Strength",
-    "version": "Invincible",
-    "image": "Arzinian Avatar of Strength.png",
-    "level": 0,
-    "speed": 4,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "attributes": []
   },
@@ -8404,39 +8239,6 @@
     "attributes": []
   },
   {
-    "id": 12561,
-    "name": "Bloodthirst rockslug",
-    "version": "",
-    "image": "Bloodthirst rockslug.png",
-    "level": 86,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 12566,
     "name": "Bloodthirsty Basilisk Sentinel",
     "version": "",
@@ -8534,39 +8336,6 @@
       0,
       20,
       20
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12539,
-    "name": "Bloodthirsty Crawler",
-    "version": "",
-    "image": "Bloodthirsty Crawler.png",
-    "level": 68,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "attributes": []
   },
@@ -8709,39 +8478,6 @@
     "attributes": []
   },
   {
-    "id": 12567,
-    "name": "Bloodthirsty Mage",
-    "version": "",
-    "image": "Bloodthirsty Mage.png",
-    "level": 162,
-    "speed": 4,
-    "size": 2,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 12582,
     "name": "Bloodthirsty Nechryarch",
     "version": "",
@@ -8808,42 +8544,6 @@
       75
     ],
     "attributes": []
-  },
-  {
-    "id": 12574,
-    "name": "Bloodthirsty Repugnant spectre",
-    "version": "",
-    "image": "Bloodthirsty Repugnant spectre.png",
-    "level": 335,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": [
-      "spectral",
-      "undead"
-    ]
   },
   {
     "id": 12585,
@@ -8951,39 +8651,6 @@
     ]
   },
   {
-    "id": 12572,
-    "name": "Bloodthirsty abomination",
-    "version": "",
-    "image": "Bloodthirsty abomination.png",
-    "level": 206,
-    "speed": 4,
-    "size": 2,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 12581,
     "name": "Bloodthirsty abyssal demon",
     "version": "",
@@ -9019,42 +8686,6 @@
     ]
   },
   {
-    "id": 12540,
-    "name": "Bloodthirsty banshee",
-    "version": "",
-    "image": "Bloodthirsty banshee.png",
-    "level": 70,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": [
-      "spectral",
-      "undead"
-    ]
-  },
-  {
     "id": 12565,
     "name": "Bloodthirsty basilisk",
     "version": "",
@@ -9086,107 +8717,6 @@
       35
     ],
     "attributes": []
-  },
-  {
-    "id": 12575,
-    "name": "Bloodthirsty choke devil",
-    "version": "",
-    "image": "Bloodthirsty choke devil.png",
-    "level": 396,
-    "speed": 4,
-    "size": 2,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12578,
-    "name": "Bloodthirsty gargoyle",
-    "version": "",
-    "image": "Bloodthirsty gargoyle.png",
-    "level": 349,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12538,
-    "name": "Bloodthirsty hand",
-    "version": "",
-    "image": "Bloodthirsty hand.png",
-    "level": 45,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": [
-      "undead"
-    ]
   },
   {
     "id": 12576,
@@ -9325,78 +8855,6 @@
       0
     ],
     "attributes": []
-  },
-  {
-    "id": 12573,
-    "name": "Bloodthirsty spectre",
-    "version": "",
-    "image": "Bloodthirsty spectre.png",
-    "level": 253,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": [
-      "spectral",
-      "undead"
-    ]
-  },
-  {
-    "id": 12542,
-    "name": "Bloodthirsty twisted banshee",
-    "version": "",
-    "image": "Bloodthirsty twisted banshee.png",
-    "level": 144,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": [
-      "spectral",
-      "undead"
-    ]
   },
   {
     "id": 12571,
@@ -10313,39 +9771,6 @@
       0,
       0,
       132
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 1738,
-    "name": "Brawler",
-    "version": "Level 158",
-    "image": "Brawler (level 158).png",
-    "level": 158,
-    "speed": 4,
-    "size": 2,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "offensive": [
       0,
@@ -14326,41 +13751,6 @@
       0
     ],
     "attributes": []
-  },
-  {
-    "id": 455,
-    "name": "Crawling Hand",
-    "version": "Level 11 (unused)",
-    "image": "Crawling Hand (unused, 1).png",
-    "level": 11,
-    "speed": 4,
-    "size": 2,
-    "skills": [
-      0,
-      0,
-      0,
-      1,
-      1,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": [
-      "undead"
-    ]
   },
   {
     "id": 453,
@@ -27013,39 +26403,6 @@
     "attributes": []
   },
   {
-    "id": 2836,
-    "name": "Golem (unused NPC)",
-    "version": "",
-    "image": "Golem (unused).png",
-    "level": 55,
-    "speed": 0,
-    "size": 2,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 4367,
     "name": "Gorad",
     "version": "",
@@ -28019,39 +27376,6 @@
       1,
       1,
       38
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 5141,
-    "name": "Guard (Another Slice of H.A.M.)",
-    "version": "",
-    "image": "Guard (Another Slice of H.A.M.).png",
-    "level": 22,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "offensive": [
       0,
@@ -37494,39 +36818,6 @@
     "attributes": []
   },
   {
-    "id": 3300,
-    "name": "Knight of Ardougne (unused)",
-    "version": "",
-    "image": "Knight of Ardougne (unused).png",
-    "level": 46,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 11936,
     "name": "Knight of Ardougne",
     "version": "Female",
@@ -42567,105 +41858,6 @@
     "attributes": []
   },
   {
-    "id": 8846,
-    "name": "Mourner (Song of the Elves)",
-    "version": "Level 106",
-    "image": "Mourner (Song of the Elves, level 106).png",
-    "level": 106,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 8844,
-    "name": "Mourner (Song of the Elves)",
-    "version": "Level 24",
-    "image": "Mourner (Song of the Elves).png",
-    "level": 24,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 8845,
-    "name": "Mourner (Song of the Elves)",
-    "version": "Level 51",
-    "image": "Mourner (Song of the Elves).png",
-    "level": 51,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 9008,
     "name": "Mourner (boss)",
     "version": "",
@@ -44359,204 +43551,6 @@
       0,
       500,
       500,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 10820,
-    "name": "Nylocas Matomenos",
-    "version": "Entry Mode Maiden",
-    "image": "Nylocas Matomenos.png",
-    "level": 68,
-    "speed": -1,
-    "size": 2,
-    "skills": [
-      100,
-      100,
-      0,
-      100,
-      100,
-      100
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 10845,
-    "name": "Nylocas Matomenos",
-    "version": "Entry Mode Verzik",
-    "image": "Nylocas Matomenos.png",
-    "level": 68,
-    "speed": -1,
-    "size": 2,
-    "skills": [
-      100,
-      100,
-      0,
-      100,
-      100,
-      100
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 10828,
-    "name": "Nylocas Matomenos",
-    "version": "Hard Mode Maiden",
-    "image": "Nylocas Matomenos.png",
-    "level": 138,
-    "speed": -1,
-    "size": 2,
-    "skills": [
-      100,
-      100,
-      0,
-      100,
-      100,
-      100
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 10862,
-    "name": "Nylocas Matomenos",
-    "version": "Hard Mode Verzik",
-    "image": "Nylocas Matomenos.png",
-    "level": 138,
-    "speed": -1,
-    "size": 2,
-    "skills": [
-      100,
-      100,
-      0,
-      100,
-      100,
-      100
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 8366,
-    "name": "Nylocas Matomenos",
-    "version": "Normal Mode Maiden",
-    "image": "Nylocas Matomenos.png",
-    "level": 115,
-    "speed": -1,
-    "size": 2,
-    "skills": [
-      100,
-      100,
-      0,
-      100,
-      100,
-      100
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 8385,
-    "name": "Nylocas Matomenos",
-    "version": "Normal Mode Verzik",
-    "image": "Nylocas Matomenos.png",
-    "level": 115,
-    "speed": -1,
-    "size": 2,
-    "skills": [
-      100,
-      100,
-      0,
-      100,
-      100,
-      100
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
       0,
       0,
       0
@@ -48697,138 +47691,6 @@
     ]
   },
   {
-    "id": 1742,
-    "name": "Portal (Pest Control)",
-    "version": "Blue",
-    "image": "Blue Portal.png",
-    "level": 0,
-    "speed": -1,
-    "size": 3,
-    "skills": [
-      0,
-      120,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      100,
-      0,
-      100,
-      100,
-      100
-    ],
-    "attributes": []
-  },
-  {
-    "id": 1739,
-    "name": "Portal (Pest Control)",
-    "version": "Purple",
-    "image": "Pink Portal.png",
-    "level": 0,
-    "speed": -1,
-    "size": 3,
-    "skills": [
-      0,
-      120,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      100,
-      100,
-      0,
-      100,
-      100
-    ],
-    "attributes": []
-  },
-  {
-    "id": 1740,
-    "name": "Portal (Pest Control)",
-    "version": "Red",
-    "image": "Red Portal.png",
-    "level": 0,
-    "speed": -1,
-    "size": 3,
-    "skills": [
-      0,
-      120,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      100,
-      100,
-      100,
-      100
-    ],
-    "attributes": []
-  },
-  {
-    "id": 1741,
-    "name": "Portal (Pest Control)",
-    "version": "Yellow",
-    "image": "Yellow Portal.png",
-    "level": 0,
-    "speed": -1,
-    "size": 3,
-    "skills": [
-      0,
-      120,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      100,
-      100,
-      100,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 4210,
     "name": "Possessed Priest",
     "version": "",
@@ -52396,39 +51258,6 @@
       -42,
       -42,
       -42
-    ],
-    "attributes": []
-  },
-  {
-    "id": 4654,
-    "name": "Rowdy Guard",
-    "version": "",
-    "image": "Rowdy Guard.png",
-    "level": 43,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "attributes": []
   },
@@ -61515,237 +60344,6 @@
     "attributes": []
   },
   {
-    "id": 12268,
-    "name": "Strangled",
-    "version": "Level 138, Strangled 1",
-    "image": "Strangled (1).png",
-    "level": 138,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12269,
-    "name": "Strangled",
-    "version": "Level 138, Strangled 2",
-    "image": "Strangled (2).png",
-    "level": 138,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12270,
-    "name": "Strangled",
-    "version": "Level 138, Strangled 3",
-    "image": "Strangled (3).png",
-    "level": 138,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12271,
-    "name": "Strangled",
-    "version": "Level 138, Strangled 4",
-    "image": "Strangled (4).png",
-    "level": 138,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12272,
-    "name": "Strangled",
-    "version": "Level 149, Strangled 1",
-    "image": "Strangled (5).png",
-    "level": 149,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12273,
-    "name": "Strangled",
-    "version": "Level 149, Strangled 2",
-    "image": "Strangled (6).png",
-    "level": 149,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12274,
-    "name": "Strangled",
-    "version": "Level 149, Strangled 3",
-    "image": "Strangled (7).png",
-    "level": 149,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 11273,
     "name": "Strongbones",
     "version": "",
@@ -68463,41 +67061,6 @@
     ]
   },
   {
-    "id": 7526,
-    "name": "Vanguard",
-    "version": "Moving",
-    "image": "Vanguard (moving).png",
-    "level": 0,
-    "speed": 4,
-    "size": 3,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": [
-      "xerician"
-    ]
-  },
-  {
     "id": 7528,
     "name": "Vanguard",
     "version": "Ranged",
@@ -70860,39 +69423,6 @@
       20,
       23,
       21
-    ],
-    "attributes": []
-  },
-  {
-    "id": 7751,
-    "name": "Well-armed Foe",
-    "version": "",
-    "image": "Well-armed Foe.png",
-    "level": 820,
-    "speed": 0,
-    "size": 3,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "attributes": []
   },
@@ -73576,39 +72106,6 @@
     "attributes": []
   },
   {
-    "id": 2847,
-    "name": "Yeti",
-    "version": "",
-    "image": "Yeti.png",
-    "level": 58,
-    "speed": 0,
-    "size": 3,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 1636,
     "name": "Young impling",
     "version": "",
@@ -73638,39 +72135,6 @@
       -10,
       -10,
       -10
-    ],
-    "attributes": []
-  },
-  {
-    "id": 3679,
-    "name": "Yrsa (Miscellania)",
-    "version": "",
-    "image": "Yrsa (Miscellania).png",
-    "level": 1,
-    "speed": 0,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "attributes": []
   },

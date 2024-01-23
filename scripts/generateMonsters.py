@@ -169,8 +169,10 @@ def main():
 
         # Prune...
         if (
+            # ...monsters that do not have any hitpoints
+            monster['skills'][2] == 0
             # ...monsters that don't have an ID
-            monster['id'] is None
+            or monster['id'] is None
             # ...monsters that are historical
             or '(historical)' in str.lower(monster['name'])
             # ...monsters from the PvM arena
