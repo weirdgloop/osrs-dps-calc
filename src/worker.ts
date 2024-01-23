@@ -27,6 +27,7 @@ const computeValues = async (loadouts: Player[], m: Monster, calcOpts: WorkerCal
     const start = new Date().getTime();
     const calc = new CombatCalc(p, m, {
       loadoutName: `${i + 1}`,
+      detailedOutput: calcOpts.detailedOutput,
     });
     res.push({
       npcDefRoll: calc.getNPCDefenceRoll(),
@@ -37,6 +38,7 @@ const computeValues = async (loadouts: Player[], m: Monster, calcOpts: WorkerCal
       ttk: calc.getTtk(),
       hitDist: calc.getDistribution().asHistogram(),
       ttkDist: calcOpts.includeTtkDist ? calc.getTtkDistribution() : undefined, // this one can sometimes be quite expensive
+      details: calc.details,
     });
     const end = new Date().getTime();
 

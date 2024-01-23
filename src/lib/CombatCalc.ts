@@ -103,6 +103,18 @@ export default class CombatCalc {
     return value;
   }
 
+  private trackFactor(label: Parameters<CalcDetails['track']>[0], base: number, factor: number, denominator: number): number {
+    const result = Math.trunc(base * factor / denominator);
+    this.track(label, `${base} * ${factor} / ${denominator} = ${result}`);
+    return result;
+  }
+
+  private trackAdd(label: Parameters<CalcDetails['track']>[0], base: number, addend: number): number {
+    const result = Math.trunc(base + addend);
+    this.track(label, `${base} ${addend >= 0 ? '+' : '-'} ${addend} = ${result}`);
+    return result;
+  }
+
   get details(): DetailEntry[] {
     return this._details?.lines || [];
   }
@@ -456,24 +468,29 @@ export default class CombatCalc {
   private getPlayerMaxMeleeAttackRoll(): number {
     const { style } = this.player;
 
-    const boostedLevel = this.player.skills.atk + this.player.boosts.atk;
+    const boostedLevel = this.track(DetailKey.ACCURACY_LEVEL, this.player.skills.atk + this.player.boosts.atk);
     const prayerBonus = this.getPrayerBonus(true);
     let effectiveLevel = Math.trunc(boostedLevel * prayerBonus);
 
+    let stanceBonus: number;
     if (style.stance === 'Accurate') {
-      effectiveLevel += 3;
+      stanceBonus = this.track(DetailKey.ACCURACY_STANCE_BONUS, 11);
     } else if (style.stance === 'Controlled') {
-      effectiveLevel += 1;
+      stanceBonus = this.track(DetailKey.ACCURACY_STANCE_BONUS, 9);
+    } else {
+      stanceBonus = this.track(DetailKey.ACCURACY_STANCE_BONUS, 8);
     }
 
-    effectiveLevel += 8;
+    effectiveLevel = this.track(DetailKey.ACCURACY_EFFECTIVE_LEVEL, effectiveLevel + stanceBonus);
 
     const isWearingVoid = this.isWearingMeleeVoid();
     if (isWearingVoid) {
-      effectiveLevel = Math.trunc(effectiveLevel * 11 / 10);
+      effectiveLevel = this.track(DetailKey.ACCURACY_EFFECTIVE_LEVEL_VOID, Math.trunc(effectiveLevel * 11 / 10));
     }
 
-    let attackRoll = effectiveLevel * (this.player.offensive[style.type] + 64);
+    const gearBonus = this.track(DetailKey.ACCURACY_GEAR_BONUS, this.player.offensive[style.type]);
+    const baseRoll = this.track(DetailKey.ACCURACY_ROLL_BASE, effectiveLevel * (gearBonus + 64));
+    let attackRoll = baseRoll;
 
     // Specific bonuses that are applied from equipment
     const mattrs = this.monster.attributes;
@@ -481,37 +498,39 @@ export default class CombatCalc {
 
     // These bonuses do not stack with each other
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
-      attackRoll = this.player.buffs.forinthrySurge
-        ? Math.trunc(attackRoll * 14 / 20)
-        : Math.trunc(attackRoll * 17 / 20);
+      const factor = [buffs.forinthrySurge ? 17 : 14, 20];
+      attackRoll = this.trackFactor(DetailKey.ACCURACY_FORINTHRY_SURGE_BONUS, attackRoll, factor[0], factor[1]);
     } else if (this.wearing(['Salve amulet (e)', 'Salve amulet(ei)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
-      attackRoll = Math.trunc(attackRoll * 6 / 5);
+      attackRoll = this.trackFactor(DetailKey.ACCURACY_SALVE_BONUS, attackRoll, 6, 5);
     } else if (this.wearing(['Salve amulet', 'Salve amulet(i)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
-      attackRoll = Math.trunc(attackRoll * 7 / 6);
+      attackRoll = this.trackFactor(DetailKey.ACCURACY_SALVE_BONUS, attackRoll, 7, 6);
     } else if (this.isWearingBlackMask() && buffs.onSlayerTask) {
-      attackRoll = Math.trunc(attackRoll * 7 / 6);
+      attackRoll = this.trackFactor(DetailKey.ACCURACY_BLACK_MASK_BONUS, attackRoll, 7, 6);
+    }
+
+    if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {
+      attackRoll += this.trackFactor(DetailKey.ACCURACY_OBSIDIAN_BONUS, baseRoll, 1, 10);
     }
 
     if (this.wearing(["Viggora's chainmace", 'Ursine chainmace']) && buffs.inWilderness) {
-      attackRoll = Math.trunc(attackRoll * 3 / 2);
+      attackRoll = this.trackFactor(DetailKey.ACCURACY_REV_WEAPON_BONUS, attackRoll, 3, 2);
     }
     if (this.wearing('Arclight') && mattrs.includes(MonsterAttribute.DEMON)) {
-      attackRoll = Math.trunc(attackRoll * 17 / 10);
+      attackRoll = this.trackFactor(DetailKey.ACCURACY_DEMONBANE_BONUS, attackRoll, 17, 10);
       if (this.monster.name === 'Duke Sucellus') {
+        // todo https://github.com/weirdgloop/osrs-dps-calc/issues/108
         attackRoll = Math.trunc(attackRoll * 7 / 10);
       }
     }
     if (this.wearing('Dragon hunter lance') && mattrs.includes(MonsterAttribute.DRAGON)) {
-      attackRoll = Math.trunc(attackRoll * 6 / 5);
+      attackRoll = this.trackFactor(DetailKey.ACCURACY_DRAGONHUNTER_BONUS, attackRoll, 6, 5);
     }
     if (this.wearing('Keris partisan of breaching') && mattrs.includes(MonsterAttribute.KALPHITE)) {
-      attackRoll = Math.trunc(attackRoll * 133 / 100); // https://twitter.com/JagexAsh/status/1704107285381787952
+      // https://twitter.com/JagexAsh/status/1704107285381787952
+      attackRoll = this.trackFactor(DetailKey.ACCURACY_KERIS_BONUS, attackRoll, 133, 100);
     }
     if (this.wearing(['Blisterwood flail', 'Blisterwood sickle']) && isVampyre(mattrs)) {
-      attackRoll = Math.trunc(attackRoll * 21 / 20);
-    }
-    if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {
-      attackRoll = Math.trunc(attackRoll * 11 / 10);
+      attackRoll = this.trackFactor(DetailKey.ACCURACY_VAMPYREBANE_BONUS, attackRoll, 21, 20);
     }
 
     // Inquisitor's armour set gives bonuses when using the crush attack style
@@ -525,7 +544,9 @@ export default class CombatCalc {
       // When wearing the full set, the bonus is enhanced
       if (inqPieces === 3) inqPieces = 5;
 
-      attackRoll = Math.trunc(attackRoll * (200 + inqPieces) / 200);
+      if (inqPieces > 0) {
+        attackRoll = this.trackFactor(DetailKey.ACCURACY_INQ_BONUS, attackRoll, 200 + inqPieces, 200);
+      }
     }
 
     return attackRoll;
@@ -537,26 +558,28 @@ export default class CombatCalc {
   private getPlayerMaxMeleeHit(): number {
     const { style } = this.player;
 
-    const boostedLevel = this.player.skills.str + this.player.boosts.str;
+    const boostedLevel = this.track(DetailKey.DAMAGE_LEVEL, this.player.skills.str + this.player.boosts.str);
     const prayerBonus = this.getPrayerBonus(false);
     let effectiveLevel = Math.trunc(boostedLevel * prayerBonus);
 
+    let stanceBonus: number;
     if (style.stance === 'Aggressive') {
-      effectiveLevel += 3;
+      stanceBonus = this.track(DetailKey.DAMAGE_STANCE_BONUS, 11);
     } else if (style.stance === 'Controlled') {
-      effectiveLevel += 1;
+      stanceBonus = this.track(DetailKey.DAMAGE_STANCE_BONUS, 9);
+    } else {
+      stanceBonus = this.track(DetailKey.DAMAGE_STANCE_BONUS, 8);
     }
 
-    effectiveLevel += 8;
+    effectiveLevel = this.track(DetailKey.DAMAGE_EFFECTIVE_LEVEL, effectiveLevel + stanceBonus);
 
     const isWearingVoid = this.isWearingMeleeVoid();
     if (isWearingVoid) {
-      effectiveLevel = Math.trunc(effectiveLevel * 11 / 10);
+      effectiveLevel = this.track(DetailKey.DAMAGE_EFFECTIVE_LEVEL_VOID, Math.trunc(effectiveLevel * 11 / 10));
     }
 
-    const strBonus = this.player.bonuses.str;
-
-    const baseMax = Math.trunc((effectiveLevel * (strBonus + 64) + 320) / 640);
+    const gearBonus = this.track(DetailKey.DAMAGE_GEAR_BONUS, this.player.bonuses.str);
+    const baseMax = this.track(DetailKey.MAX_HIT_BASE, Math.trunc((effectiveLevel * (gearBonus + 64) + 320) / 640));
     let maxHit = baseMax;
 
     // Specific bonuses that are applied from equipment
@@ -565,64 +588,67 @@ export default class CombatCalc {
 
     // These bonuses do not stack with each other
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
-      maxHit = this.player.buffs.forinthrySurge
-        ? Math.trunc(maxHit * 14 / 20)
-        : Math.trunc(maxHit * 17 / 20);
+      const factor = [buffs.forinthrySurge ? 17 : 14, 20];
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_FORINTHRY_SURGE_BONUS, maxHit, factor[0], factor[1]);
     } else if (this.wearing(['Salve amulet (e)', 'Salve amulet(ei)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
-      maxHit = Math.trunc(maxHit * 6 / 5);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_SALVE_BONUS, maxHit, 6, 5);
     } else if (this.wearing(['Salve amulet', 'Salve amulet(i)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
-      maxHit = Math.trunc(maxHit * 7 / 6);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_SALVE_BONUS, maxHit, 7, 6);
     } else if (this.isWearingBlackMask() && buffs.onSlayerTask) {
-      maxHit = Math.trunc(maxHit * 7 / 6);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_BLACK_MASK_BONUS, maxHit, 7, 6);
     }
 
     if (this.wearing('Arclight') && mattrs.includes(MonsterAttribute.DEMON)) {
-      maxHit = Math.trunc(maxHit * 17 / 10);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE_BONUS, maxHit, 17, 10);
       if (this.monster.name === 'Duke Sucellus') {
+        // todo https://github.com/weirdgloop/osrs-dps-calc/issues/108
         maxHit = Math.trunc(maxHit * 7 / 10);
       }
     }
     if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {
-      maxHit += Math.trunc(baseMax / 10);
+      const obsidianBonus = this.trackFactor(DetailKey.MAX_HIT_OBSIDIAN_BONUS, baseMax, 1, 10);
+      maxHit = this.trackAdd(DetailKey.MAX_HIT_OBSIDIAN, maxHit, obsidianBonus);
     }
     if (this.isWearingTzhaarWeapon() && this.isWearingBerserkerNecklace()) {
-      maxHit = Math.trunc(maxHit * 6 / 5);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_BERSERKER_BONUS, maxHit, 6, 5);
     }
     if (this.wearing('Dragon hunter lance') && mattrs.includes(MonsterAttribute.DRAGON)) {
-      maxHit = Math.trunc(maxHit * 6 / 5);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER_BONUS, maxHit, 6, 5);
     }
     if (this.isWearingKeris() && mattrs.includes(MonsterAttribute.KALPHITE)) {
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_KERIS_BONUS, maxHit, 133, 100);
       maxHit = Math.trunc(maxHit * 133 / 100);
     }
     if (this.wearing('Barronite mace') && mattrs.includes(MonsterAttribute.GOLEM)) {
-      maxHit = Math.trunc(maxHit * 6 / 5);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_GOLEMBANE_BONUS, maxHit, 6, 5);
     }
     if (this.wearing(["Viggora's chainmace", 'Ursine chainmace']) && buffs.inWilderness) {
-      maxHit = Math.trunc(maxHit * 3 / 2);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_REV_WEAPON_BONUS, maxHit, 3, 2);
     }
     if (this.wearing(['Silverlight', 'Darklight', 'Silverlight (dyed)']) && mattrs.includes(MonsterAttribute.DEMON)) {
-      maxHit = Math.trunc(maxHit * 8 / 5);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE_BONUS, maxHit, 8, 5);
       if (this.monster.name === 'Duke Sucellus') {
+        // todo https://github.com/weirdgloop/osrs-dps-calc/issues/108
         maxHit = Math.trunc(maxHit * 7 / 10);
       }
     }
     if (this.wearing('Blisterwood flail') && isVampyre(mattrs)) {
-      maxHit = Math.trunc(maxHit * 5 / 4);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE_BONUS, maxHit, 5, 4);
     }
     if (this.wearing('Blisterwood sickle') && isVampyre(mattrs)) {
-      maxHit = Math.trunc(maxHit * 23 / 20);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE_BONUS, maxHit, 23, 20);
     }
     if (this.wearing('Ivandis flail') && isVampyre(mattrs)) {
-      maxHit = Math.trunc(maxHit * 6 / 5);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE_BONUS, maxHit, 6, 5);
     }
     if ((this.wearing("Efaritay's aid") || this.isWearingSilverWeapon()) && mattrs.includes(MonsterAttribute.VAMPYRE_1)) {
-      maxHit = Math.trunc(maxHit * 11 / 10); // todo should this be before/after the vampyrebane weapons above?
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_EFARITAY_BONUS, maxHit, 11, 10); // todo should this be before/after the vampyrebane weapons above?
     }
     if (this.wearing('Leaf-bladed battleaxe') && mattrs.includes(MonsterAttribute.LEAFY)) {
-      maxHit = Math.trunc(maxHit * 47 / 40);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_LEAFY_BONUS, maxHit, 47, 40);
     }
     if (this.wearing('Colossal blade')) {
-      maxHit += Math.min(this.monster.size * 2, 10);
+      maxHit = this.trackAdd(DetailKey.MAX_HIT_COLOSSALBLADE_BONUS, maxHit, Math.min(this.monster.size * 2, 10));
     }
 
     // Inquisitor's armour set gives bonuses when using the crush attack style
@@ -636,10 +662,11 @@ export default class CombatCalc {
       // When wearing the full set, the bonus is enhanced
       if (inqPieces === 3) inqPieces = 5;
 
-      maxHit = Math.trunc(maxHit * (200 + inqPieces) / 200);
+      if (inqPieces > 0) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_INQ_BONUS, maxHit, 200 + inqPieces, 200);
+      }
     }
 
-    // TODO: many more...
     return maxHit;
   }
 
@@ -931,16 +958,23 @@ export default class CombatCalc {
   }
 
   private getPrayerBonus(accuracy: boolean): number {
+    const style = this.player.style.type;
+
     let prayers = this.player.prayers.map((p) => PrayerMap[p]);
     if (this.isUsingMeleeStyle()) {
       prayers = prayers.filter((p) => p.combatStyle === 'melee');
-    } else if (this.player.style.type === 'ranged') {
+    } else if (style === 'ranged') {
       prayers = prayers.filter((p) => p.combatStyle === 'ranged');
-    } else if (this.player.style.type === 'magic') {
+    } else {
       prayers = prayers.filter((p) => p.combatStyle === 'magic');
     }
 
-    return 1 + sum(prayers.map((p) => (accuracy ? p.factorAccuracy : p.factorStrength)));
+    const factor = 1 + sum(prayers, (p) => (accuracy ? p.factorAccuracy : p.factorStrength));
+    if (factor !== 1) {
+      const key = accuracy ? DetailKey.ACCURACY_PRAYER_BONUS : DetailKey.DAMAGE_PRAYER_BONUS;
+      return this.track(key, factor);
+    }
+    return factor;
   }
 
   /**
@@ -948,17 +982,19 @@ export default class CombatCalc {
      */
   private getMaxHit() {
     const style = this.player.style.type;
+
+    let maxHit = 0;
     if (this.isUsingMeleeStyle()) {
-      return this.getPlayerMaxMeleeHit();
+      maxHit = this.getPlayerMaxMeleeHit();
     }
     if (style === 'ranged') {
-      return this.getPlayerMaxRangedHit();
+      maxHit = this.getPlayerMaxRangedHit();
     }
     if (style === 'magic') {
-      return this.getPlayerMaxMagicHit();
+      maxHit = this.getPlayerMaxMagicHit();
     }
 
-    return 0;
+    return this.track(DetailKey.MAX_HIT_FINAL, maxHit);
   }
 
   /**
@@ -966,38 +1002,43 @@ export default class CombatCalc {
      */
   public getMaxAttackRoll() {
     if (this.opts.overrides?.attackRoll !== undefined) {
-      return this.opts.overrides.attackRoll;
+      return this.track(DetailKey.ACCURACY_ROLL_FINAL, this.opts.overrides?.attackRoll);
     }
 
     const style = this.player.style.type;
+    let atkRoll = 0;
     if (this.isUsingMeleeStyle()) {
-      return this.getPlayerMaxMeleeAttackRoll();
+      atkRoll = this.getPlayerMaxMeleeAttackRoll();
     }
     if (style === 'ranged') {
-      return this.getPlayerMaxRangedAttackRoll();
+      atkRoll = this.getPlayerMaxRangedAttackRoll();
     }
     if (style === 'magic') {
-      return this.getPlayerMaxMagicAttackRoll();
+      atkRoll = this.getPlayerMaxMagicAttackRoll();
     }
 
-    return 0;
+    return this.track(DetailKey.ACCURACY_ROLL_FINAL, atkRoll);
   }
 
   public getHitChance() {
     if (this.opts.overrides?.accuracy) {
-      return this.opts.overrides.accuracy;
+      return this.track(DetailKey.ACCURACY_FINAL, this.opts.overrides.accuracy);
     }
 
     if (VERZIK_P1_IDS.includes(this.monster.id) && this.wearing('Dawnbringer')) {
-      return 1.0;
+      this.track(DetailKey.ACCURACY_DAWNBRINGER, 1.0);
+      return this.track(DetailKey.ACCURACY_FINAL, 1.0);
     }
 
     const atk = this.getMaxAttackRoll();
     const def = this.getNPCDefenceRoll();
 
-    const hitChance = (atk > def)
-      ? 1 - ((def + 2) / (2 * (atk + 1)))
-      : atk / (2 * (def + 1));
+    let hitChance = this.track(
+      DetailKey.ACCURACY_BASE,
+      (atk > def)
+        ? 1 - ((def + 2) / (2 * (atk + 1)))
+        : atk / (2 * (def + 1)),
+    );
 
     if (this.player.style.type === 'magic' && this.wearing('Brimstone ring')) {
       const effectDef = Math.trunc(def * 9 / 10);
@@ -1005,19 +1046,23 @@ export default class CombatCalc {
         ? 1 - ((effectDef + 2) / (2 * (atk + 1)))
         : atk / (2 * (effectDef + 1));
 
-      return (0.75 * hitChance) + (0.25 * effectHitChance);
+      hitChance = this.track(DetailKey.ACCURACY_BRIMSTONE, (0.75 * hitChance) + (0.25 * effectHitChance));
     }
 
     if (this.isWearingFang() && this.player.style.type === 'stab') {
       if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)) {
-        return 1 - (1 - hitChance) ** 2;
+        hitChance = this.track(DetailKey.ACCURACY_FANG_TOA, 1 - (1 - hitChance) ** 2);
+      } else {
+        hitChance = this.track(
+          DetailKey.ACCURACY_FANG,
+          (atk > def) // whatever the fuck this is that some stats person derived
+            ? 1 - (def + 2) * (2 * def + 3) / (atk + 1) / (atk + 1) / 6
+            : atk * (4 * atk + 5) / 6 / (atk + 1) / (def + 1),
+        );
       }
-      return (atk > def)
-        ? 1 - (def + 2) * (2 * def + 3) / (atk + 1) / (atk + 1) / 6
-        : atk * (4 * atk + 5) / 6 / (atk + 1) / (def + 1);
     }
 
-    return hitChance;
+    return this.track(DetailKey.ACCURACY_FINAL, hitChance);
   }
 
   public getDistribution(): AttackDistribution {

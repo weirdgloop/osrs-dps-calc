@@ -1,6 +1,7 @@
 import { EquipmentPiece, Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import UserIssueType from '@/enums/UserIssueType';
+import { DetailEntry } from '@/lib/CalcDetails';
 
 export interface UserIssue {
   type: UserIssueType;
@@ -49,6 +50,7 @@ export interface CalculatedLoadout {
   ttk: number,
   hitDist: HistogramEntry[],
   ttkDist?: Map<number, number>,
+  details?: DetailEntry[],
 }
 
 export interface Calculator {

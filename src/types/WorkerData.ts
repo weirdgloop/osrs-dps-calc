@@ -12,6 +12,7 @@ export enum WorkerRequestType {
 
 export interface WorkerCalcOpts {
   includeTtkDist: boolean,
+  detailedOutput: boolean,
 }
 
 export interface RecomputeValuesRequest {

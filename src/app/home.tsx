@@ -17,9 +17,11 @@ import InitialLoad from '@/app/components/InitialLoad';
 import LoadoutComparison from '@/app/components/results/LoadoutComparison';
 import TtkComparison from '@/app/components/results/TtkComparison';
 import ShareModal from '@/app/components/ShareModal';
+import DebugCalcDetails from '@/app/components/results/CalcDetails';
 
 const Home: NextPage = observer(() => {
   const store = useStore();
+  store.debug = process.env && process.env.NODE_ENV === 'development';
 
   useEffect(() => {
     // When the page loads, set up the worker and be ready to interpret the responses
@@ -123,6 +125,7 @@ const Home: NextPage = observer(() => {
       <div className="max-w-[1420px] mx-auto mb-8">
         <LoadoutComparison />
         <TtkComparison />
+        <DebugCalcDetails />
       </div>
       <Tooltip id="tooltip" />
       <Tooltip id="tooltip-warning" />

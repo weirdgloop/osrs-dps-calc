@@ -202,6 +202,8 @@ class GlobalState implements State {
 
   availableMonsters = getMonsters();
 
+  _debug: boolean = false;
+
   constructor() {
     makeAutoObservable(this, {}, { autoBind: true });
 
@@ -230,6 +232,14 @@ class GlobalState implements State {
       () => toJS(this.player.buffs.potions),
     ];
     triggers.map((t) => reaction(t, recomputeBoosts, { fireImmediately: false }));
+  }
+
+  set debug(debug: boolean) {
+    this._debug = debug;
+  }
+
+  get debug(): boolean {
+    return this._debug;
   }
 
   /**
@@ -541,6 +551,7 @@ class GlobalState implements State {
             monster: m,
             calcOpts: {
               includeTtkDist: this.prefs.showTtkComparison,
+              detailedOutput: this.debug,
             },
           },
         } as RecomputeValuesRequest, WORKER_JSON_REPLACER));
