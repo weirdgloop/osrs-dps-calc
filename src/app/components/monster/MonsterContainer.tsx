@@ -37,7 +37,7 @@ import LazyImage from '@/app/components/generic/LazyImage';
 import Toggle from '@/app/components/generic/Toggle';
 import { toJS } from 'mobx';
 import CombatCalc from '@/lib/CombatCalc';
-import slayer from '@/public/img/misc/slayer.webp';
+import DefensiveReductions from '@/app/components/monster/DefensiveReductions';
 import MonsterSelect from './MonsterSelect';
 import HelpLink from '../HelpLink';
 import AttributeInput from '../generic/AttributeInput';
@@ -95,7 +95,6 @@ const MonsterContainer: React.FC = observer(() => {
   const store = useStore();
   const { loadouts, monster, prefs } = store;
   const [attributesExpanded, setAttributesExpanded] = useState(false);
-  const [defensiveReductionsExpanded, setDefensiveReductionsExpanded] = useState(false);
 
   // Don't automatically update the stat inputs if manual editing is on
   const displayMonster = prefs.manualMode ? monster : scaledMonster(monster);
@@ -455,75 +454,7 @@ const MonsterContainer: React.FC = observer(() => {
                   </div>
                 </div>
                 <div className="mt-1 text-sm">
-                  <div className="rounded bg-body-100 dark:bg-dark-500">
-                    <button
-                      type="button"
-                      className={`w-full pt-1 border-b-body-400 dark:border-b-dark-300 px-2 flex text-gray-500 dark:text-gray-300 font-semibold justify-between gap-2 ${defensiveReductionsExpanded ? 'border-b' : ''}`}
-                      onClick={() => setDefensiveReductionsExpanded(!defensiveReductionsExpanded)}
-                    >
-                      <div>
-                        Defensive Reductions
-                      </div>
-                      <div className="relative top-[-2px]">{defensiveReductionsExpanded ? <IconChevronUp width={20} /> : <IconChevronDown width={20} />}</div>
-                    </button>
-
-                    {defensiveReductionsExpanded && (
-                      <div className="p-2">
-                        <Toggle
-                          checked={monster.defenceReductions.accursed}
-                          setChecked={(c) => store.updateMonster({ defenceReductions: { accursed: c } })}
-                          label={(
-                            <>
-                              <img src={slayer.src} width={18} className="inline-block" alt="" />
-                              {' '}
-                              Accursed sceptre
-                            </>
-                          )}
-                        />
-                        <Toggle
-                          checked={monster.defenceReductions.vulnerability}
-                          setChecked={(c) => store.updateMonster({ defenceReductions: { vulnerability: c } })}
-                          label={(
-                            <>
-                              <img src={slayer.src} width={18} className="inline-block" alt="" />
-                              {' '}
-                              Vulnerability
-                            </>
-                          )}
-                        />
-                        <div className="w-full">
-                          <NumberInput
-                            className="form-control w-1/6"
-                            required
-                            min={0}
-                            value={monster.defenceReductions.dwh}
-                            onChange={(v) => store.updateMonster({ defenceReductions: { dwh: v } })}
-                          />
-                          <span className="pl-2">Dragon warhammer hits</span>
-                        </div>
-                        <div className="w-full">
-                          <NumberInput
-                            className="form-control w-1/6"
-                            required
-                            min={0}
-                            value={monster.defenceReductions.arclight}
-                            onChange={(v) => store.updateMonster({ defenceReductions: { arclight: v } })}
-                          />
-                          <span className="pl-2">Arclight hits</span>
-                        </div>
-                        <div className="w-full">
-                          <NumberInput
-                            className="form-control w-1/6"
-                            required
-                            min={0}
-                            value={monster.defenceReductions.bgs}
-                            onChange={(v) => store.updateMonster({ defenceReductions: { bgs: v } })}
-                          />
-                          <span className="pl-2">Bandos godsword damage</span>
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                  <DefensiveReductions />
                 </div>
                 {(extraMonsterOptions.length > 0) && (
                   <div className="mt-4 flex flex-wrap gap-x-4">
