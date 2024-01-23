@@ -509,7 +509,8 @@ export default class CombatCalc {
     }
 
     if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {
-      attackRoll += this.trackFactor(DetailKey.ACCURACY_OBSIDIAN_BONUS, baseRoll, 1, 10);
+      const obsidianBonus = this.trackFactor(DetailKey.ACCURACY_OBSIDIAN_BONUS, baseRoll, 1, 10);
+      attackRoll = this.trackAdd(DetailKey.ACCURACY_OBSIDIAN, attackRoll, obsidianBonus);
     }
 
     if (this.wearing(["Viggora's chainmace", 'Ursine chainmace']) && buffs.inWilderness) {
