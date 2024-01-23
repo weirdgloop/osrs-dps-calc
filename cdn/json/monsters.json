@@ -4228,39 +4228,6 @@
     "attributes": []
   },
   {
-    "id": 7288,
-    "name": "Awakened Altar",
-    "version": "",
-    "image": "Awakened Altar.png",
-    "level": 0,
-    "speed": -1,
-    "size": 1,
-    "skills": [
-      0,
-      0,
-      100,
-      0,
-      0,
-      0
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 11778,
     "name": "Ba-Ba",
     "version": "",
@@ -40873,39 +40840,6 @@
     "attributes": []
   },
   {
-    "id": 11420,
-    "name": "Medium Barrier",
-    "version": "",
-    "image": "Placeholder.png",
-    "level": 0,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      1,
-      0,
-      100,
-      1,
-      1,
-      1
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 823,
     "name": "Melzar the Mad",
     "version": "",
@@ -45752,39 +45686,6 @@
       0,
       0,
       -21
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 11424,
-    "name": "Overcharged Barrier",
-    "version": "",
-    "image": "Placeholder.png",
-    "level": 0,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      1,
-      0,
-      400,
-      1,
-      1,
-      1
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
     ],
     "defensive": [
       0,
@@ -61845,39 +61746,6 @@
     "attributes": []
   },
   {
-    "id": 11422,
-    "name": "Strong Barrier",
-    "version": "",
-    "image": "Placeholder.png",
-    "level": 0,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      1,
-      0,
-      200,
-      1,
-      1,
-      1
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
     "id": 11273,
     "name": "Strongbones",
     "version": "",
@@ -70961,39 +70829,6 @@
     "attributes": [
       "demon"
     ]
-  },
-  {
-    "id": 11418,
-    "name": "Weak Barrier",
-    "version": "",
-    "image": "Placeholder.png",
-    "level": 0,
-    "speed": 0,
-    "size": 0,
-    "skills": [
-      1,
-      0,
-      50,
-      1,
-      1,
-      1
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
   },
   {
     "id": 5211,

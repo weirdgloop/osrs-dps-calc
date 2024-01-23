@@ -11,6 +11,7 @@ import os.path
 
 import requests
 import json
+import urllib.parse
 import re
 
 FILE_NAME = '../cdn/json/monsters.json'
@@ -18,12 +19,52 @@ WIKI_BASE = 'https://oldschool.runescape.wiki'
 API_BASE = WIKI_BASE + '/api.php'
 IMG_PATH = '../cdn/monsters/'
 
-def getMonsterData():
+REQUIRED_PRINTOUTS = [
+    'Attack bonus',
+    'Attack level',
+    'Attack speed',
+    'Attack style',
+    'Combat level',
+    'Crush defence bonus',
+    'Defence level',
+    'Hitpoints',
+    'Image',
+    'Immune to poison',
+    'Immune to venom',
+    'Magic Damage bonus',
+    'Magic attack bonus',
+    'Magic defence bonus',
+    'Magic level',
+    'Max hit',
+    'Monster attribute',
+    'Name',
+    'Range attack bonus',
+    'Ranged Strength bonus',
+    'Range defence bonus',
+    'Ranged level',
+    'Slash defence bonus',
+    'Slayer category',
+    'Slayer experience',
+    'Stab defence bonus',
+    'Strength bonus',
+    'Strength level',
+    'Size',
+    'NPC ID',
+    'Category'
+]
+
+
+def get_monster_data():
     monsters = {}
     offset = 0
     while True:
         print('Fetching monster info: ' + str(offset))
-        r = requests.get(API_BASE + '?action=ask&format=json&query=%5B%5BUses%20infobox%3A%3AMonster%5D%5D%20%7C%3FAttack%20bonus%20%7C%3FAttack%20level%20%7C%3FAttack%20speed%20%7C%3FAttack%20style%20%7C%3FCombat%20level%20%7C%3FCrush%20defence%20bonus%20%7C%3FDefence%20level%20%7C%3FHitpoints%20%7C%3FImage%20%7C%3FImmune%20to%20poison%20%7C%3FImmune%20to%20venom%20%7C%3FMagic%20Damage%20bonus%20%7C%3FMagic%20attack%20bonus%20%7C%3FMagic%20defence%20bonus%20%7C%3FMagic%20level%20%7C%3FMax%20hit%20%7C%3FMonster%20attribute%20%7C%3FNPC%20ID%20%7C%3FName%20%7C%3FRange%20attack%20bonus%20%7C%3FRanged%20Strength%20bonus%20%7C%3FRange%20defence%20bonus%20%7C%3FRanged%20level%20%7C%3FSlash%20defence%20bonus%20%7C%3FSlayer%20category%20%7C%3FSlayer%20experience%20%7C%3FStab%20defence%20bonus%20%7C%3FStrength%20bonus%20%7C%3FStrength%20level%20%7C%3FSize%20%7C%3FVersion anchor%20%7C%3FNPC%20ID%20%7C%3FImage%7Climit%3D500%7Coffset%3D' + str(offset), headers={
+        query = {
+            'action': 'ask',
+            'format': 'json',
+            'query': '[[Uses infobox::Monster]]|?' + '|?'.join(REQUIRED_PRINTOUTS) + '|limit=500|offset=' + str(offset)
+        }
+        r = requests.get(API_BASE + '?' + urllib.parse.urlencode(query), headers={
             'User-Agent': 'osrs-dps-calc (https://github.com/weirdgloop/osrs-dps-calc)'
         })
         data = r.json()
@@ -41,16 +82,22 @@ def getMonsterData():
             offset = data['query-continue-offset']
     return monsters
 
-def getPrintoutValue(prop):
+
+def get_printout_value(prop):
     # SMW printouts are all arrays, so ensure that the array is not empty
     if not prop:
         return None
     else:
         return prop[0]
 
+
+def has_category(category_array, category):
+    return next((c for c in category_array if c['fulltext'] == "Category:%s" % category), None)
+
+
 def main():
     # Grab the monster info using SMW, including all the relevant printouts
-    wiki_data = getMonsterData()
+    wiki_data = get_monster_data()
 
     # Convert the data into our own JSON structure
     data = []
@@ -82,36 +129,40 @@ def main():
         if re.match("^([A-z]*):", k):
             continue
 
+        # Skip "monsters" that are actually non-interactive scenery
+        if has_category(po['Category'], 'Non-interactive scenery'):
+            continue
+
         monster = {
-            'id': getPrintoutValue(po['NPC ID']),
+            'id': get_printout_value(po['NPC ID']),
             'name': k.rsplit('#', 1)[0] or '',
             'version': version,
             'image': '' if not po['Image'] else po['Image'][0]['fulltext'].replace('File:', ''),
-            'level': getPrintoutValue(po['Combat level']) or 0,
-            'speed': getPrintoutValue(po['Attack speed']) or 0,
-            'size': getPrintoutValue(po['Size']) or 0,
+            'level': get_printout_value(po['Combat level']) or 0,
+            'speed': get_printout_value(po['Attack speed']) or 0,
+            'size': get_printout_value(po['Size']) or 0,
             'skills': [
-                getPrintoutValue(po['Attack level']) or 0,
-                getPrintoutValue(po['Defence level']) or 0,
-                getPrintoutValue(po['Hitpoints']) or 0,
-                getPrintoutValue(po['Magic level']) or 0,
-                getPrintoutValue(po['Ranged level']) or 0,
-                getPrintoutValue(po['Strength level']) or 0
+                get_printout_value(po['Attack level']) or 0,
+                get_printout_value(po['Defence level']) or 0,
+                get_printout_value(po['Hitpoints']) or 0,
+                get_printout_value(po['Magic level']) or 0,
+                get_printout_value(po['Ranged level']) or 0,
+                get_printout_value(po['Strength level']) or 0
             ],
             'offensive': [
-                getPrintoutValue(po['Attack bonus']) or 0,
-                getPrintoutValue(po['Magic Damage bonus']) or 0,
-                getPrintoutValue(po['Magic attack bonus']) or 0,
-                getPrintoutValue(po['Range attack bonus']) or 0,
-                getPrintoutValue(po['Ranged Strength bonus']) or 0,
-                getPrintoutValue(po['Strength bonus']) or 0
+                get_printout_value(po['Attack bonus']) or 0,
+                get_printout_value(po['Magic Damage bonus']) or 0,
+                get_printout_value(po['Magic attack bonus']) or 0,
+                get_printout_value(po['Range attack bonus']) or 0,
+                get_printout_value(po['Ranged Strength bonus']) or 0,
+                get_printout_value(po['Strength bonus']) or 0
             ],
             'defensive': [
-                getPrintoutValue(po['Crush defence bonus']) or 0,
-                getPrintoutValue(po['Magic defence bonus']) or 0,
-                getPrintoutValue(po['Range defence bonus']) or 0,
-                getPrintoutValue(po['Slash defence bonus']) or 0,
-                getPrintoutValue(po['Stab defence bonus']) or 0
+                get_printout_value(po['Crush defence bonus']) or 0,
+                get_printout_value(po['Magic defence bonus']) or 0,
+                get_printout_value(po['Range defence bonus']) or 0,
+                get_printout_value(po['Slash defence bonus']) or 0,
+                get_printout_value(po['Stab defence bonus']) or 0
             ],
             'attributes': po['Monster attribute'] or []
         }
