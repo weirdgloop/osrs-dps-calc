@@ -235,6 +235,14 @@ export default class CombatCalc {
   }
 
   /**
+     * Whether the player is wearing a Berserker necklace.
+     * @see https://oldschool.runescape.wiki/w/Berserker_necklace
+     */
+  private isWearingBerserkerNecklace(): boolean {
+    return this.wearing(['Berserker necklace', 'Berserker necklace (or)']);
+  }
+
+  /**
      * Whether the player is using an item that acts as a crystal bow for the purpose of its effect.
      * @see https://oldschool.runescape.wiki/w/Crystal_bow
      */
@@ -577,7 +585,7 @@ export default class CombatCalc {
     if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {
       maxHit += Math.trunc(baseMax / 10);
     }
-    if (this.isWearingTzhaarWeapon() && this.wearing('Berserker necklace')) {
+    if (this.isWearingTzhaarWeapon() && this.isWearingBerserkerNecklace()) {
       maxHit = Math.trunc(maxHit * 6 / 5);
     }
     if (this.wearing('Dragon hunter lance') && mattrs.includes(MonsterAttribute.DRAGON)) {
