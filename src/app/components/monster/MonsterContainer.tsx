@@ -259,7 +259,7 @@ const MonsterContainer: React.FC = observer(() => {
             <h1 className="font-serif tracking-tight font-bold leading-4">
               {monster.name ? monster.name : 'Monster'}
               <br />
-              <span className="text-xs text-gray-300">{monster.version}</span>
+              <span className="text-xs text-gray-500 dark:text-gray-300">{monster.version}</span>
             </h1>
           </div>
           {monster.id && (
