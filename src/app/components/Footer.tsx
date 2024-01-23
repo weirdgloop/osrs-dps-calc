@@ -12,7 +12,11 @@ const Footer: React.FC = () => (
         {' '}
         &#183;
         {' '}
-        <a href="https://github.com/weirdgloop/osrs-dps-calc" target="_blank">Contribute on GitHub</a>
+        <a href="https://github.com/weirdgloop/osrs-dps-calc" target="_blank">GitHub</a>
+        {' '}
+        &#183;
+        {' '}
+        <a href="https://discord.gg/runescapewiki" target="_blank">Discord</a>
       </div>
       <div>
         <a href="https://weirdgloop.org/privacy" target="_blank">Privacy</a>
