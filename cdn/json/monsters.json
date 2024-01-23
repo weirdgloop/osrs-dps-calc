@@ -8340,41 +8340,6 @@
     "attributes": []
   },
   {
-    "id": 12586,
-    "name": "Bloodthirsty Drake",
-    "version": "",
-    "image": "Bloodthirsty Drake.png",
-    "level": 576,
-    "speed": 4,
-    "size": 5,
-    "skills": [
-      405,
-      200,
-      945,
-      450,
-      360,
-      420
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      40,
-      12
-    ],
-    "defensive": [
-      100,
-      20,
-      150,
-      100,
-      60
-    ],
-    "attributes": [
-      "dragon"
-    ]
-  },
-  {
     "id": 12588,
     "name": "Bloodthirsty Hydra",
     "version": "",

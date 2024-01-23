@@ -129,8 +129,11 @@ def main():
         if re.match("^([A-z]*):", k):
             continue
 
-        # Skip "monsters" that are actually non-interactive scenery
-        if has_category(po['Category'], 'Non-interactive scenery'):
+        # Skip "monsters" that are actually non-interactive scenery, or don't exist
+        if (
+            has_category(po['Category'], 'Non-interactive scenery')
+            or has_category(po['Category'], 'Discontinued content')
+        ):
             continue
 
         monster = {
