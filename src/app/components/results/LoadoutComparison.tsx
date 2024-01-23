@@ -355,6 +355,8 @@ const LoadoutComparison: React.FC = observer(() => {
     const annotations: React.ReactNode[] = [];
     getAnnotations(xAxisType.value, monster).forEach((a) => {
       annotations.push(
+        // ReferenceLine throws a warning: Support for defaultProps will be removed ...
+        // this is known: https://github.com/recharts/recharts/issues/3615#issuecomment-1865558694
         <ReferenceLine
           key={a.label}
           label={{
