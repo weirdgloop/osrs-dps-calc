@@ -1,28 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 import SectionAccordion from '@/app/components/generic/SectionAccordion';
 import LazyImage from '@/app/components/generic/LazyImage';
 import debug from '@/public/img/debug.webp';
 import { DetailEntry } from '@/lib/CalcDetails';
-import { toJS } from 'mobx';
 
 const DebugCalcDetails: React.FC = observer(() => {
   const store = useStore();
-  if (!store.debug) {
-    return <div />;
-  }
+  if (!store.debug) return null;
 
-  const { selectedLoadout } = store;
-  const loadouts = toJS(store.calc.loadouts);
-
-  const [data, setData] = useState<DetailEntry[]>([]);
-  useEffect(() => {
-    const newDetails = loadouts[selectedLoadout]?.details;
-    if (newDetails !== undefined) {
-      setData(newDetails);
-    }
-  }, [selectedLoadout, loadouts]);
+  const { calc, selectedLoadout } = store;
+  const details: DetailEntry[] = calc.loadouts[selectedLoadout].details || [];
 
   return (
     <SectionAccordion
@@ -43,7 +32,7 @@ const DebugCalcDetails: React.FC = observer(() => {
           </tr>
         </thead>
         <tbody>
-          {data.length > 0 && data.map((d) => (
+          {details.map((d) => (
             <tr key={d.label} className="hover:bg-btns-100 hover:dark:bg-btns-100">
               <td className={`border text-center w-1/2 border-l ${d.highlight ? 'dark:text-white text-black font-bold' : 'dark:text-body-400 text-gray-400'}`}>{d.label}</td>
               <td className={`border text-center w-1/2 border-l ${d.highlight ? 'dark:text-white text-black font-bold' : 'dark:text-body-400 text-gray-400'}`}>{d.value}</td>
