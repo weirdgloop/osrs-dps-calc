@@ -130,395 +130,213 @@ export const isValidAmmoForRangedWeapon = (weaponId?: number, ammoId?: number) =
 };
 
 /**
- * A map of item ID -> item ID for items that are identical in function, but different in appearance. This includes
+ * A map of base item ID -> variant item IDs for items that are identical in function. This includes
  * "locked" variants of items, broken/degraded variants of armour and weapons, and cosmetic recolours of equipment.
  * @see https://oldschool.runescape.wiki/w/Trouver_parchment
  */
 export const equipmentAliases = {
-  24141: 8849, // Adamant defender#Locked
-  2613: 1161, // Adamant full helm (g)#
-  2605: 1161, // Adamant full helm (t)#
-  2611: 1199, // Adamant kiteshield (g)#
-  2603: 1199, // Adamant kiteshield (t)#
-  2607: 1123, // Adamant platebody (g)#
-  23392: 1123, // Adamant platebody (h1)#
-  23395: 1123, // Adamant platebody (h2)#
-  23398: 1123, // Adamant platebody (h3)#
-  23401: 1123, // Adamant platebody (h4)#
-  23404: 1123, // Adamant platebody (h5)#
-  2599: 1123, // Adamant platebody (t)#
-  2609: 1073, // Adamant platelegs (g)#
-  2601: 1073, // Adamant platelegs (t)#
-  3475: 1091, // Adamant plateskirt (g)#
-  3474: 1091, // Adamant plateskirt (t)#
-  4860: 4708, // Ahrim's hood#0
-  4856: 4708, // Ahrim's hood#100
-  4859: 4708, // Ahrim's hood#25
-  4858: 4708, // Ahrim's hood#50
-  4857: 4708, // Ahrim's hood#75
-  4878: 4714, // Ahrim's robeskirt#0
-  4874: 4714, // Ahrim's robeskirt#100
-  4877: 4714, // Ahrim's robeskirt#25
-  4876: 4714, // Ahrim's robeskirt#50
-  4875: 4714, // Ahrim's robeskirt#75
-  4872: 4712, // Ahrim's robetop#0
-  4868: 4712, // Ahrim's robetop#100
-  4871: 4712, // Ahrim's robetop#25
-  4870: 4712, // Ahrim's robetop#50
-  4869: 4712, // Ahrim's robetop#75
-  4866: 4710, // Ahrim's staff#0
-  4862: 4710, // Ahrim's staff#100
-  4865: 4710, // Ahrim's staff#25
-  4864: 4710, // Ahrim's staff#50
-  4863: 4710, // Ahrim's staff#75
-  23309: 1729, // Amulet of defence (t)#
-  10366: 1727, // Amulet of magic (t)#
-  23354: 1731, // Amulet of power (t)#
-  24203: 24201, // Ancient halo#Locked
-  27626: 27624, // Ancient sceptre#Locked
-  26768: 11771, // Archers ring (i)#Emir's Arena
-  25260: 11771, // Archers ring (i)#Soul Wars
-  24194: 24192, // Armadyl halo#Locked
-  24135: 21898, // Assembler max cape#Locked
-  24222: 22109, // Ava's assembler#Locked
-  24186: 22322, // Avernic defender#Locked
-  24197: 24195, // Bandos halo#Locked
-  25643: 25641, // Barronite mace#Locked
-  26770: 11773, // Berserker ring (i)#Emir's Arena
-  25264: 11773, // Berserker ring (i)#Soul Wars
-  12381: 2503, // Black d'hide body (g)#
-  12385: 2503, // Black d'hide body (t)#
-  12383: 2497, // Black d'hide chaps (g)#
-  12387: 2497, // Black d'hide chaps (t)#
-  24139: 8847, // Black defender#Locked
-  2595: 1165, // Black full helm (g)#
-  2587: 1165, // Black full helm (t)#
-  2597: 1195, // Black kiteshield (g)#
-  2589: 1195, // Black kiteshield (t)#
-  2591: 1125, // Black platebody (g)#
-  23366: 1125, // Black platebody (h1)#
-  23369: 1125, // Black platebody (h2)#
-  23372: 1125, // Black platebody (h3)#
-  23375: 1125, // Black platebody (h4)#
-  23378: 1125, // Black platebody (h5)#
-  2583: 1125, // Black platebody (t)#
-  2593: 1077, // Black platelegs (g)#
-  2585: 1077, // Black platelegs (t)#
-  3473: 1089, // Black plateskirt (g)#
-  3472: 1089, // Black plateskirt (t)#
-  12445: 1015, // Black skirt (g)#
-  12447: 1015, // Black skirt (t)#
-  19639: 11864, // Black slayer helmet#
-  28473: 28260, // Blood ancient sceptre#Locked
-  7374: 2499, // Blue d'hide body (g)#
-  7376: 2499, // Blue d'hide body (t)#
-  7382: 2493, // Blue d'hide chaps (g)#
-  7384: 2493, // Blue d'hide chaps (t)#
-  7386: 1011, // Blue skirt (g)#
-  7388: 1011, // Blue skirt (t)#
-  7394: 579, // Blue wizard hat (g)#
-  7396: 579, // Blue wizard hat (t)#
-  7390: 577, // Blue wizard robe (g)#
-  7392: 577, // Blue wizard robe (t)#
-  24206: 24204, // Brassica halo#Locked
-  24136: 8844, // Bronze defender#Locked
-  12211: 1155, // Bronze full helm (g)#
-  12221: 1155, // Bronze full helm (t)#
-  12213: 1189, // Bronze kiteshield (g)#
-  12223: 1189, // Bronze kiteshield (t)#
-  12205: 1117, // Bronze platebody (g)#
-  12215: 1117, // Bronze platebody (t)#
-  12207: 1075, // Bronze platelegs (g)#
-  12217: 1075, // Bronze platelegs (t)#
-  12209: 1087, // Bronze plateskirt (g)#
-  12219: 1087, // Bronze plateskirt (t)#
-  20059: 19991, // Bucket helm (g)#
-  26756: 26755, // Calamity breeches#Locked
-  26750: 26749, // Calamity chest#Locked
-  26722: 26721, // Centurion cuirass#Locked
-  23413: 3105, // Climbing boots (g)#
-  24158: 4509, // Decorative armour (gold platebody)#Locked
-  24159: 4510, // Decorative armour (gold platelegs)#Locked
-  24162: 11895, // Decorative armour (gold plateskirt)#Locked
-  24165: 11898, // Decorative armour (magic hat)#Locked
-  24164: 11897, // Decorative armour (magic legs)#Locked
-  24163: 11896, // Decorative armour (magic top)#Locked
-  24168: 11901, // Decorative armour (quiver)#Locked
-  24167: 11900, // Decorative armour (ranged legs)#Locked
-  24166: 11899, // Decorative armour (ranged top)#Locked
-  25173: 25171, // Decorative boots (gold)#Locked
-  25176: 25174, // Decorative full helm (gold)#Locked
-  24160: 4511, // Decorative helm (gold)#Locked
-  24161: 4512, // Decorative shield (gold)#Locked
-  24157: 4508, // Decorative sword (gold)#Locked
-  4890: 4718, // Dharok's greataxe#0
-  4886: 4718, // Dharok's greataxe#100
-  4889: 4718, // Dharok's greataxe#25
-  4888: 4718, // Dharok's greataxe#50
-  4887: 4718, // Dharok's greataxe#75
-  4884: 4716, // Dharok's helm#0
-  4880: 4716, // Dharok's helm#100
-  4883: 4716, // Dharok's helm#25
-  4882: 4716, // Dharok's helm#50
-  4881: 4716, // Dharok's helm#75
-  4896: 4720, // Dharok's platebody#0
-  4892: 4720, // Dharok's platebody#100
-  4895: 4720, // Dharok's platebody#25
-  4894: 4720, // Dharok's platebody#50
-  4893: 4720, // Dharok's platebody#75
-  4902: 4722, // Dharok's platelegs#0
-  4898: 4722, // Dharok's platelegs#100
-  4901: 4722, // Dharok's platelegs#25
-  4900: 4722, // Dharok's platelegs#50
-  4899: 4722, // Dharok's platelegs#75
-  22234: 11840, // Dragon boots (g)#
-  12414: 3140, // Dragon chainbody (g)#
-  24143: 12954, // Dragon defender#Locked
-  27008: 19722, // Dragon defender (t)#Locked
-  12417: 11335, // Dragon full helm (g)#
-  25916: 21012, // Dragon hunter crossbow (t)#
-  22244: 21895, // Dragon kiteshield (g)#
-  22242: 21892, // Dragon platebody (g)#
-  12415: 4087, // Dragon platelegs (g)#
-  12416: 4585, // Dragon plateskirt (g)#
-  12418: 1187, // Dragon sq shield (g)#
-  26760: 26759, // Elite calamity breeches#Locked
-  26754: 26753, // Elite calamity chest#Locked
-  24180: 13073, // Elite void robe#Locked
-  27004: 26471, // Elite void robe (or)#Locked
-  24178: 13072, // Elite void top#Locked
-  27003: 26469, // Elite void top (or)#Locked
-  24173: 10548, // Fighter hat#Locked
-  24175: 10551, // Fighter torso#Locked
-  28069: 28067, // Fighter torso (or)#Locked
-  24223: 6570, // Fire cape#Locked
-  24134: 13329, // Fire max cape#Locked
-  27551: 27550, // Ghommal's avernic defender 5#Locked
-  27553: 27552, // Ghommal's avernic defender 6#Locked
-  26685: 21752, // Granite ring (i)#Emir's Arena
-  25193: 21752, // Granite ring (i)#Soul Wars
-  7370: 1135, // Green d'hide body (g)#
-  7372: 1135, // Green d'hide body (t)#
-  7378: 1099, // Green d'hide chaps (g)#
-  7380: 1099, // Green d'hide chaps (t)#
-  19643: 11864, // Green slayer helmet#
-  4926: 4730, // Guthan's chainskirt#0
-  4922: 4730, // Guthan's chainskirt#100
-  4925: 4730, // Guthan's chainskirt#25
-  4924: 4730, // Guthan's chainskirt#50
-  4923: 4730, // Guthan's chainskirt#75
-  4908: 4724, // Guthan's helm#0
-  4904: 4724, // Guthan's helm#100
-  4907: 4724, // Guthan's helm#25
-  4906: 4724, // Guthan's helm#50
-  4905: 4724, // Guthan's helm#75
-  4920: 4728, // Guthan's platebody#0
-  4916: 4728, // Guthan's platebody#100
-  4919: 4728, // Guthan's platebody#25
-  4918: 4728, // Guthan's platebody#50
-  4917: 4728, // Guthan's platebody#75
-  4914: 4726, // Guthan's warspear#0
-  4910: 4726, // Guthan's warspear#100
-  4913: 4726, // Guthan's warspear#25
-  4912: 4726, // Guthan's warspear#50
-  4911: 4726, // Guthan's warspear#75
-  24171: 12639, // Guthix halo#Locked
-  24172: 10547, // Healer hat#Locked
-  23073: 11864, // Hydra slayer helmet#
-  28474: 28262, // Ice ancient sceptre#Locked
-  24249: 21793, // Imbued guthix cape#Locked
-  24234: 21784, // Imbued guthix max cape#Locked
-  24248: 21791, // Imbued saradomin cape#Locked
-  24232: 21776, // Imbued saradomin max cape#Locked
-  24250: 21795, // Imbued zamorak cape#Locked
-  24233: 21780, // Imbued zamorak max cape#Locked
-  24224: 21295, // Infernal cape#Locked
-  24133: 21285, // Infernal max cape#Locked
-  24137: 8845, // Iron defender#Locked
-  12241: 1153, // Iron full helm (g)#
-  12231: 1153, // Iron full helm (t)#
-  12243: 1191, // Iron kiteshield (g)#
-  12233: 1191, // Iron kiteshield (t)#
-  12235: 1115, // Iron platebody (g)#
-  12225: 1115, // Iron platebody (t)#
-  12237: 1067, // Iron platelegs (g)#
-  12227: 1067, // Iron platelegs (t)#
-  12239: 1081, // Iron plateskirt (g)#
-  12229: 1081, // Iron plateskirt (t)#
-  4932: 4732, // Karil's coif#0
-  4928: 4732, // Karil's coif#100
-  4931: 4732, // Karil's coif#25
-  4930: 4732, // Karil's coif#50
-  4929: 4732, // Karil's coif#75
-  4938: 4734, // Karil's crossbow#0
-  4934: 4734, // Karil's crossbow#100
-  4937: 4734, // Karil's crossbow#25
-  4936: 4734, // Karil's crossbow#50
-  4935: 4734, // Karil's crossbow#75
-  4950: 4738, // Karil's leatherskirt#0
-  4946: 4738, // Karil's leatherskirt#100
-  4949: 4738, // Karil's leatherskirt#25
-  4948: 4738, // Karil's leatherskirt#50
-  4947: 4738, // Karil's leatherskirt#75
-  4944: 4736, // Karil's leathertop#0
-  4940: 4736, // Karil's leathertop#100
-  4943: 4736, // Karil's leathertop#25
-  4942: 4736, // Karil's leathertop#50
-  4941: 4736, // Karil's leathertop#75
-  26742: 26741, // Koriff's coif#Locked
-  26740: 26739, // Koriff's cowl#Locked
-  26738: 26737, // Koriff's headband#Locked
-  23381: 1129, // Leather body (g)#
-  23384: 1095, // Leather chaps (g)#
-  26746: 26745, // Maoma's full helm#Locked
-  26748: 26747, // Maoma's great helm#Locked
-  26744: 26743, // Maoma's med helm#Locked
-  27376: 27374, // Masori assembler#Locked
-  27365: 27363, // Masori assembler max cape#Locked
-  24140: 8848, // Mithril defender#Locked
-  12283: 1159, // Mithril full helm (g)#
-  12293: 1159, // Mithril full helm (t)#
-  12281: 1197, // Mithril kiteshield (g)#
-  12291: 1197, // Mithril kiteshield (t)#
-  12277: 1121, // Mithril platebody (g)#
-  12287: 1121, // Mithril platebody (t)#
-  12279: 1071, // Mithril platelegs (g)#
-  12289: 1071, // Mithril platelegs (t)#
-  12285: 1085, // Mithril plateskirt (g)#
-  12295: 1085, // Mithril plateskirt (t)#
-  20202: 542, // Monk's robe (g)#
-  23306: 542, // Monk's robe (t)#
-  20199: 544, // Monk's robe top (g)#
-  23303: 544, // Monk's robe top (t)#
-  24176: 10555, // Penance skirt#Locked
-  21264: 11864, // Purple slayer helmet#
-  24174: 10550, // Ranger hat#Locked
-  12327: 2501, // Red d'hide body (g)#
-  12331: 2501, // Red d'hide body (t)#
-  12329: 2495, // Red d'hide chaps (g)#
-  12333: 2495, // Red d'hide chaps (t)#
-  19647: 11864, // Red slayer helmet#
-  26764: 13202, // Ring of the gods (i)#Emir's Arena
-  25252: 13202, // Ring of the gods (i)#Soul Wars
-  24142: 8850, // Rune defender#Locked
-  27009: 23230, // Rune defender (t)#Locked
-  2619: 1163, // Rune full helm (g)#
-  2627: 1163, // Rune full helm (t)#
-  2621: 1201, // Rune kiteshield (g)#
-  2629: 1201, // Rune kiteshield (t)#
-  2615: 1127, // Rune platebody (g)#
-  23209: 1127, // Rune platebody (h1)#
-  23212: 1127, // Rune platebody (h2)#
-  23215: 1127, // Rune platebody (h3)#
-  23218: 1127, // Rune platebody (h4)#
-  23221: 1127, // Rune platebody (h5)#
-  2623: 1127, // Rune platebody (t)#
-  2617: 1079, // Rune platelegs (g)#
-  2625: 1079, // Rune platelegs (t)#
-  3476: 1093, // Rune plateskirt (g)#
-  3477: 1093, // Rune plateskirt (t)#
-  24533: 10549, // Runner hat#Locked
-  26732: 26731, // Saika's hood#Locked
-  26736: 26735, // Saika's shroud#Locked
-  26734: 26733, // Saika's veil#Locked
-  26782: 12018, // Salve amulet(ei)#Emir's Arena
-  25278: 12018, // Salve amulet(ei)#Soul Wars
-  26763: 12017, // Salve amulet(i)#Emir's Arena
-  25250: 12017, // Salve amulet(i)#Soul Wars
-  24169: 12637, // Saradomin halo#Locked
-  26767: 11770, // Seers ring (i)#Emir's Arena
-  25258: 11770, // Seers ring (i)#Soul Wars
-  24200: 24198, // Seren halo#Locked
-  28476: 28266, // Shadow ancient sceptre#Locked
-  26674: 11865, // Slayer helmet (i)#Emir's Arena
-  25177: 11865, // Slayer helmet (i)#Soul Wars
-  28475: 28264, // Smoke ancient sceptre#Locked
-  24138: 8846, // Steel defender#Locked
-  20178: 1157, // Steel full helm (g)#
-  20193: 1157, // Steel full helm (t)#
-  20181: 1193, // Steel kiteshield (g)#
-  20196: 1193, // Steel kiteshield (t)#
-  20169: 1119, // Steel platebody (g)#
-  20184: 1119, // Steel platebody (t)#
-  20172: 1069, // Steel platelegs (g)#
-  20187: 1069, // Steel platelegs (t)#
-  20175: 1083, // Steel plateskirt (g)#
-  20190: 1083, // Steel plateskirt (t)#
-  7362: 1133, // Studded body (g)#
-  7364: 1133, // Studded body (t)#
-  7366: 1097, // Studded chaps (g)#
-  7368: 1097, // Studded chaps (t)#
-  26758: 26757, // Superior calamity breeches#Locked
-  26752: 26751, // Superior calamity chest#Locked
-  4962: 4747, // Torag's hammers#0
-  4958: 4747, // Torag's hammers#100
-  4961: 4747, // Torag's hammers#25
-  4960: 4747, // Torag's hammers#50
-  4959: 4747, // Torag's hammers#75
-  4956: 4745, // Torag's helm#0
-  4952: 4745, // Torag's helm#100
-  4955: 4745, // Torag's helm#25
-  4954: 4745, // Torag's helm#50
-  4953: 4745, // Torag's helm#75
-  4968: 4749, // Torag's platebody#0
-  4964: 4749, // Torag's platebody#100
-  4967: 4749, // Torag's platebody#25
-  4966: 4749, // Torag's platebody#50
-  4965: 4749, // Torag's platebody#75
-  4974: 4751, // Torag's platelegs#0
-  4970: 4751, // Torag's platelegs#100
-  4973: 4751, // Torag's platelegs#25
-  4972: 4751, // Torag's platelegs#50
-  4971: 4751, // Torag's platelegs#75
-  26766: 12692, // Treasonous ring (i)#Emir's Arena
-  25256: 12692, // Treasonous ring (i)#Soul Wars
-  21888: 11864, // Turquoise slayer helmet#
-  24370: 11864, // Twisted slayer helmet#
-  26765: 12691, // Tyrannical ring (i)#Emir's Arena
-  25254: 12691, // Tyrannical ring (i)#Soul Wars
-  23235: 6528, // Tzhaar-ket-om (t)#
-  25910: 11864, // Tzkal slayer helmet#
-  25898: 11864, // Tztok slayer helmet#
-  25904: 11864, // Vampyric slayer helmet#
-  4992: 4757, // Verac's brassard#0
-  4988: 4757, // Verac's brassard#100
-  4991: 4757, // Verac's brassard#25
-  4990: 4757, // Verac's brassard#50
-  4989: 4757, // Verac's brassard#75
-  4986: 4755, // Verac's flail#0
-  4982: 4755, // Verac's flail#100
-  4985: 4755, // Verac's flail#25
-  4984: 4755, // Verac's flail#50
-  4983: 4755, // Verac's flail#75
-  4980: 4753, // Verac's helm#0
-  4976: 4753, // Verac's helm#100
-  4979: 4753, // Verac's helm#25
-  4978: 4753, // Verac's helm#50
-  4977: 4753, // Verac's helm#75
-  4998: 4759, // Verac's plateskirt#0
-  4994: 4759, // Verac's plateskirt#100
-  4997: 4759, // Verac's plateskirt#25
-  4996: 4759, // Verac's plateskirt#50
-  4995: 4759, // Verac's plateskirt#75
-  24182: 8842, // Void knight gloves#Locked
-  27002: 26467, // Void knight gloves (or)#Locked
-  24181: 8841, // Void knight mace#Locked
-  24179: 8840, // Void knight robe#Locked
-  27001: 26465, // Void knight robe (or)#Locked
-  24177: 8839, // Void knight top#Locked
-  27000: 26463, // Void knight top (or)#Locked
-  24183: 11663, // Void mage helm#Locked
-  27005: 26473, // Void mage helm (or)#Locked
-  24185: 11665, // Void melee helm#Locked
-  27007: 26477, // Void melee helm (or)#Locked
-  24184: 11664, // Void ranger helm#Locked
-  27006: 26475, // Void ranger helm (or)#Locked
-  26769: 11772, // Warrior ring (i)#Emir's Arena
-  25262: 11772, // Warrior ring (i)#Soul Wars
-  20166: 1171, // Wooden shield (g)#
-  26724: 26723, // Wristbands of the arena#Locked
-  26728: 26727, // Wristbands of the arena (i)#Locked
-  24170: 12638, // Zamorak halo#Locked
+  8849: [24141],
+  1161: [2613, 2605],
+  1199: [2611, 2603],
+  1123: [2607, 23392, 23395, 23398, 23401, 23404, 2599],
+  1073: [2609, 2601],
+  1091: [3475, 3474],
+  4708: [4860, 4856, 4859, 4858, 4857],
+  4714: [4878, 4874, 4877, 4876, 4875],
+  4712: [4872, 4868, 4871, 4870, 4869],
+  4710: [4866, 4862, 4865, 4864, 4863],
+  1729: [23309],
+  1727: [10366],
+  1731: [23354],
+  24201: [24203],
+  27624: [27626],
+  11771: [26768, 25260],
+  24192: [24194],
+  21898: [24135],
+  22109: [24222],
+  22322: [24186],
+  24195: [24197],
+  25641: [25643],
+  11773: [26770, 25264],
+  2503: [12381, 12385],
+  2497: [12383, 12387],
+  8847: [24139],
+  1165: [2595, 2587],
+  1195: [2597, 2589],
+  1125: [2591, 23366, 23369, 23372, 23375, 23378, 2583],
+  1077: [2593, 2585],
+  1089: [3473, 3472],
+  1015: [12445, 12447],
+  11864: [19639, 19643, 23073, 21264, 19647, 21888, 24370, 25910, 25898, 25904],
+  28260: [28473],
+  2499: [7374, 7376],
+  2493: [7382, 7384],
+  1011: [7386, 7388],
+  579: [7394, 7396],
+  577: [7390, 7392],
+  24204: [24206],
+  8844: [24136],
+  1155: [12211, 12221],
+  1189: [12213, 12223],
+  1117: [12205, 12215],
+  1075: [12207, 12217],
+  1087: [12209, 12219],
+  19991: [20059],
+  26755: [26756],
+  26749: [26750],
+  26721: [26722],
+  3105: [23413],
+  4509: [24158],
+  4510: [24159],
+  11895: [24162],
+  11898: [24165],
+  11897: [24164],
+  11896: [24163],
+  11901: [24168],
+  11900: [24167],
+  11899: [24166],
+  25171: [25173],
+  25174: [25176],
+  4511: [24160],
+  4512: [24161],
+  4508: [24157],
+  4718: [4890, 4886, 4889, 4888, 4887],
+  4716: [4884, 4880, 4883, 4882, 4881],
+  4720: [4896, 4892, 4895, 4894, 4893],
+  4722: [4902, 4898, 4901, 4900, 4899],
+  11840: [22234],
+  3140: [12414],
+  12954: [24143],
+  19722: [27008],
+  11335: [12417],
+  21012: [25916],
+  21895: [22244],
+  21892: [22242],
+  4087: [12415],
+  4585: [12416],
+  1187: [12418],
+  26759: [26760],
+  26753: [26754],
+  13073: [24180],
+  26471: [27004],
+  13072: [24178],
+  26469: [27003],
+  10548: [24173],
+  10551: [24175],
+  28067: [28069],
+  6570: [24223],
+  13329: [24134],
+  27550: [27551],
+  27552: [27553],
+  21752: [26685, 25193],
+  1135: [7370, 7372],
+  1099: [7378, 7380],
+  4730: [4926, 4922, 4925, 4924, 4923],
+  4724: [4908, 4904, 4907, 4906, 4905],
+  4728: [4920, 4916, 4919, 4918, 4917],
+  4726: [4914, 4910, 4913, 4912, 4911],
+  12639: [24171],
+  10547: [24172],
+  28262: [28474],
+  21793: [24249],
+  21784: [24234],
+  21791: [24248],
+  21776: [24232],
+  21795: [24250],
+  21780: [24233],
+  21295: [24224],
+  21285: [24133],
+  8845: [24137],
+  1153: [12241, 12231],
+  1191: [12243, 12233],
+  1115: [12235, 12225],
+  1067: [12237, 12227],
+  1081: [12239, 12229],
+  4732: [4932, 4928, 4931, 4930, 4929],
+  4734: [4938, 4934, 4937, 4936, 4935],
+  4738: [4950, 4946, 4949, 4948, 4947],
+  4736: [4944, 4940, 4943, 4942, 4941],
+  26741: [26742],
+  26739: [26740],
+  26737: [26738],
+  1129: [23381],
+  1095: [23384],
+  26745: [26746],
+  26747: [26748],
+  26743: [26744],
+  27374: [27376],
+  27363: [27365],
+  8848: [24140],
+  1159: [12283, 12293],
+  1197: [12281, 12291],
+  1121: [12277, 12287],
+  1071: [12279, 12289],
+  1085: [12285, 12295],
+  542: [20202, 23306],
+  544: [20199, 23303],
+  10555: [24176],
+  10550: [24174],
+  2501: [12327, 12331],
+  2495: [12329, 12333],
+  13202: [26764, 25252],
+  8850: [24142],
+  23230: [27009],
+  1163: [2619, 2627],
+  1201: [2621, 2629],
+  1127: [2615, 23209, 23212, 23215, 23218, 23221, 2623],
+  1079: [2617, 2625],
+  1093: [3476, 3477],
+  10549: [24533],
+  26731: [26732],
+  26735: [26736],
+  26733: [26734],
+  12018: [26782, 25278],
+  12017: [26763, 25250],
+  12637: [24169],
+  11770: [26767, 25258],
+  24198: [24200],
+  28266: [28476],
+  11865: [26674, 25177],
+  28264: [28475],
+  8846: [24138],
+  1157: [20178, 20193],
+  1193: [20181, 20196],
+  1119: [20169, 20184],
+  1069: [20172, 20187],
+  1083: [20175, 20190],
+  1133: [7362, 7364],
+  1097: [7366, 7368],
+  26757: [26758],
+  26751: [26752],
+  4747: [4962, 4958, 4961, 4960, 4959],
+  4745: [4956, 4952, 4955, 4954, 4953],
+  4749: [4968, 4964, 4967, 4966, 4965],
+  4751: [4974, 4970, 4973, 4972, 4971],
+  12692: [26766, 25256],
+  12691: [26765, 25254],
+  6528: [23235],
+  4757: [4992, 4988, 4991, 4990, 4989],
+  4755: [4986, 4982, 4985, 4984, 4983],
+  4753: [4980, 4976, 4979, 4978, 4977],
+  4759: [4998, 4994, 4997, 4996, 4995],
+  8842: [24182],
+  26467: [27002],
+  8841: [24181],
+  8840: [24179],
+  26465: [27001],
+  8839: [24177],
+  26463: [27000],
+  11663: [24183],
+  26473: [27005],
+  11665: [24185],
+  26477: [27007],
+  11664: [24184],
+  26475: [27006],
+  11772: [26769, 25262],
+  1171: [20166],
+  26723: [26724],
+  26727: [26728],
+  12638: [24170],
 };
 
 export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monster): EquipmentBonuses => {

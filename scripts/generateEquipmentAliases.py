@@ -56,8 +56,11 @@ def getPrintoutValue(prop):
     else:
         return prop[0]
 
-data = """/**
- * A map of item ID -> item ID for items that are identical in function, but different in appearance. This includes
+
+data = {}
+
+dataJs = """/**
+ * A map of base item ID -> variant item IDs for items that are identical in function. This includes
  * "locked" variants of items, broken/degraded variants of armour and weapons, and cosmetic recolours of equipment.
  * @see https://oldschool.runescape.wiki/w/Trouver_parchment
  */
@@ -68,11 +71,11 @@ def handle_base_variant(all_items, variant_item, base_name, base_version):
     global data
     base_variant = next((x for x in all_items if x['name'] == base_name and x['version'] == base_version), None)
     if base_variant:
-        data += '\n    %s: %s, // %s' % (variant_item['id'], base_variant['id'], variant_item['name'] + '#' + variant_item['version'])
+        data.setdefault(base_variant['id'], []).append(variant_item['id'])
 
 
 def main():
-    global data
+    global dataJs
 
     # Grab the equipment info using SMW, including all the relevant printouts
     wiki_data = getEquipmentData()
@@ -117,11 +120,13 @@ def main():
         elif re.match(r"^(Broken|0|25|50|75|100)$", item['version']):
             handle_base_variant(all_items, item, item['name'], 'Undamaged')
 
-    data += '\n}'
+    for k, v in data.items():
+        dataJs += '\n  %s: %s,' % (k, v)
 
-    print('Total equipment: ' + str(len(data)))
+    dataJs += '\n}'
+
     with open(FILE_NAME, 'w') as f:
         print('Saving to JSON at file: ' + FILE_NAME)
-        f.write(data)
+        f.write(dataJs)
 
 main()
