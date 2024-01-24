@@ -24,7 +24,12 @@ import {
 import { RecomputeValuesRequest, WorkerRequestType } from '@/types/WorkerData';
 import { scaledMonster } from '@/lib/MonsterScaling';
 import getMonsters from '@/lib/Monsters';
-import { isValidAmmoForRangedWeapon, calculateEquipmentBonusesFromGear, EquipmentBonuses } from '@/lib/Equipment';
+import {
+  isValidAmmoForRangedWeapon,
+  calculateEquipmentBonusesFromGear,
+  EquipmentBonuses,
+  getCanonicalItemId,
+} from '@/lib/Equipment';
 import UserIssueType from '@/enums/UserIssueType';
 import equipment from '../cdn/json/equipment.json';
 import { EquipmentCategory } from './enums/EquipmentCategory';
@@ -543,10 +548,24 @@ class GlobalState implements State {
       if (this.worker) {
         const m = this.prefs.manualMode ? this.monster : scaledMonster(this.monster);
 
+        // Before we send our data off to the worker, get canonical versions of equipment as required.
+        const loadouts = [...toJS(this.loadouts)];
+        for (const l of loadouts) {
+          for (const [k, v] of Object.entries(l.equipment)) {
+            if (!v) continue;
+
+            const canonicalId = getCanonicalItemId(v.id);
+            if (canonicalId !== v.id) {
+              // Canonical ID is different to the current EquipmentPiece ID, change EquipmentPiece
+              l.equipment[k as keyof PlayerEquipment] = this.availableEquipment.find((eq) => eq.id === canonicalId) || null;
+            }
+          }
+        }
+
         this.worker.postMessage(JSON.stringify({
           type: WorkerRequestType.RECOMPUTE_VALUES,
           data: {
-            loadouts: this.loadouts,
+            loadouts,
             monster: m,
             calcOpts: {
               includeTtkDist: this.prefs.showTtkComparison,
