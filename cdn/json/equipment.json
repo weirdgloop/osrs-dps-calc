@@ -3430,6 +3430,90 @@
   },
   {
     "name": "Ahrim's hood",
+    "id": 4856,
+    "version": "100",
+    "slot": "head",
+    "image": "Ahrim's hood.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 15,
+      "slash": 13,
+      "crush": 16,
+      "magic": 6
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ahrim's hood",
+    "id": 4859,
+    "version": "25",
+    "slot": "head",
+    "image": "Ahrim's hood.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 15,
+      "slash": 13,
+      "crush": 16,
+      "magic": 6
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ahrim's hood",
+    "id": 4858,
+    "version": "50",
+    "slot": "head",
+    "image": "Ahrim's hood.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 15,
+      "slash": 13,
+      "crush": 16,
+      "magic": 6
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ahrim's hood",
+    "id": 4857,
+    "version": "75",
+    "slot": "head",
+    "image": "Ahrim's hood.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 15,
+      "slash": 13,
+      "crush": 16,
+      "magic": 6
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ahrim's hood",
     "id": 4708,
     "version": "Undamaged",
     "slot": "head",
@@ -3446,6 +3530,90 @@
       "slash": 13,
       "crush": 16,
       "magic": 6
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ahrim's robeskirt",
+    "id": 4874,
+    "version": "100",
+    "slot": "legs",
+    "image": "Ahrim's robeskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 22,
+      "ranged": -7
+    },
+    "defensive": {
+      "stab": 33,
+      "slash": 30,
+      "crush": 36,
+      "magic": 22
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ahrim's robeskirt",
+    "id": 4877,
+    "version": "25",
+    "slot": "legs",
+    "image": "Ahrim's robeskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 22,
+      "ranged": -7
+    },
+    "defensive": {
+      "stab": 33,
+      "slash": 30,
+      "crush": 36,
+      "magic": 22
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ahrim's robeskirt",
+    "id": 4876,
+    "version": "50",
+    "slot": "legs",
+    "image": "Ahrim's robeskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 22,
+      "ranged": -7
+    },
+    "defensive": {
+      "stab": 33,
+      "slash": 30,
+      "crush": 36,
+      "magic": 22
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ahrim's robeskirt",
+    "id": 4875,
+    "version": "75",
+    "slot": "legs",
+    "image": "Ahrim's robeskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 22,
+      "ranged": -7
+    },
+    "defensive": {
+      "stab": 33,
+      "slash": 30,
+      "crush": 36,
+      "magic": 22
     },
     "isTwoHanded": false
   },
@@ -3472,6 +3640,90 @@
   },
   {
     "name": "Ahrim's robetop",
+    "id": 4868,
+    "version": "100",
+    "slot": "body",
+    "image": "Ahrim's robetop.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 52,
+      "slash": 37,
+      "crush": 63,
+      "magic": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ahrim's robetop",
+    "id": 4871,
+    "version": "25",
+    "slot": "body",
+    "image": "Ahrim's robetop.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 52,
+      "slash": 37,
+      "crush": 63,
+      "magic": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ahrim's robetop",
+    "id": 4870,
+    "version": "50",
+    "slot": "body",
+    "image": "Ahrim's robetop.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 52,
+      "slash": 37,
+      "crush": 63,
+      "magic": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ahrim's robetop",
+    "id": 4869,
+    "version": "75",
+    "slot": "body",
+    "image": "Ahrim's robetop.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 52,
+      "slash": 37,
+      "crush": 63,
+      "magic": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ahrim's robetop",
     "id": 4712,
     "version": "Undamaged",
     "slot": "body",
@@ -3488,6 +3740,123 @@
       "slash": 37,
       "crush": 63,
       "magic": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ahrim's staff",
+    "id": 4866,
+    "version": "0",
+    "slot": "weapon",
+    "image": "Ahrim's staff 0.png",
+    "speed": 6,
+    "category": "Staff",
+    "bonuses": {},
+    "offensive": {},
+    "defensive": {},
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ahrim's staff",
+    "id": 4862,
+    "version": "100",
+    "slot": "weapon",
+    "image": "Ahrim's staff.png",
+    "speed": 6,
+    "category": "Staff",
+    "bonuses": {
+      "str": 68,
+      "magic_str": 5
+    },
+    "offensive": {
+      "stab": 12,
+      "slash": -1,
+      "crush": 65,
+      "magic": 15
+    },
+    "defensive": {
+      "stab": 3,
+      "slash": 5,
+      "crush": 2,
+      "magic": 15
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ahrim's staff",
+    "id": 4865,
+    "version": "25",
+    "slot": "weapon",
+    "image": "Ahrim's staff.png",
+    "speed": 6,
+    "category": "Staff",
+    "bonuses": {
+      "str": 68,
+      "magic_str": 5
+    },
+    "offensive": {
+      "stab": 12,
+      "slash": -1,
+      "crush": 65,
+      "magic": 15
+    },
+    "defensive": {
+      "stab": 3,
+      "slash": 5,
+      "crush": 2,
+      "magic": 15
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ahrim's staff",
+    "id": 4864,
+    "version": "50",
+    "slot": "weapon",
+    "image": "Ahrim's staff.png",
+    "speed": 6,
+    "category": "Staff",
+    "bonuses": {
+      "str": 68,
+      "magic_str": 5
+    },
+    "offensive": {
+      "stab": 12,
+      "slash": -1,
+      "crush": 65,
+      "magic": 15
+    },
+    "defensive": {
+      "stab": 3,
+      "slash": 5,
+      "crush": 2,
+      "magic": 15
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ahrim's staff",
+    "id": 4863,
+    "version": "75",
+    "slot": "weapon",
+    "image": "Ahrim's staff.png",
+    "speed": 6,
+    "category": "Staff",
+    "bonuses": {
+      "str": 68,
+      "magic_str": 5
+    },
+    "offensive": {
+      "stab": 12,
+      "slash": -1,
+      "crush": 65,
+      "magic": 15
+    },
+    "defensive": {
+      "stab": 3,
+      "slash": 5,
+      "crush": 2,
+      "magic": 15
     },
     "isTwoHanded": false
   },
@@ -5548,8 +5917,42 @@
   },
   {
     "name": "Archers ring (i)",
+    "id": 26768,
+    "version": "Emir's Arena",
+    "slot": "ring",
+    "image": "Archers ring (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "ranged": 8
+    },
+    "defensive": {
+      "ranged": 8
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Archers ring (i)",
     "id": 11771,
     "version": "",
+    "slot": "ring",
+    "image": "Archers ring (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "ranged": 8
+    },
+    "defensive": {
+      "ranged": 8
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Archers ring (i)",
+    "id": 25260,
+    "version": "Soul Wars",
     "slot": "ring",
     "image": "Archers ring (i).png",
     "speed": 0,
@@ -7526,8 +7929,42 @@
   },
   {
     "name": "Berserker ring (i)",
+    "id": 26770,
+    "version": "Emir's Arena",
+    "slot": "ring",
+    "image": "Berserker ring (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 8
+    },
+    "offensive": {},
+    "defensive": {
+      "crush": 8
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Berserker ring (i)",
     "id": 11773,
     "version": "",
+    "slot": "ring",
+    "image": "Berserker ring (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 8
+    },
+    "offensive": {},
+    "defensive": {
+      "crush": 8
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Berserker ring (i)",
+    "id": 25264,
+    "version": "Soul Wars",
     "slot": "ring",
     "image": "Berserker ring (i).png",
     "speed": 0,
@@ -9605,8 +10042,52 @@
   },
   {
     "name": "Black slayer helmet (i)",
+    "id": 26675,
+    "version": "Emir's Arena",
+    "slot": "head",
+    "image": "Black slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black slayer helmet (i)",
     "id": 19641,
     "version": "",
+    "slot": "head",
+    "image": "Black slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black slayer helmet (i)",
+    "id": 25179,
+    "version": "Soul Wars",
     "slot": "head",
     "image": "Black slayer helmet (i).png",
     "speed": 0,
@@ -11026,6 +11507,40 @@
     "isTwoHanded": false
   },
   {
+    "name": "Bone mace",
+    "id": 28792,
+    "version": "",
+    "slot": "weapon",
+    "image": "Bone mace.png",
+    "speed": 4,
+    "category": "Spiked",
+    "bonuses": {
+      "str": 55
+    },
+    "offensive": {
+      "stab": 40,
+      "slash": -2,
+      "crush": 60
+    },
+    "defensive": {},
+    "isTwoHanded": false
+  },
+  {
+    "name": "Bone shortbow",
+    "id": 28794,
+    "version": "",
+    "slot": "weapon",
+    "image": "Bone shortbow.png",
+    "speed": 4,
+    "category": "Bow",
+    "bonuses": {},
+    "offensive": {
+      "ranged": 69
+    },
+    "defensive": {},
+    "isTwoHanded": true
+  },
+  {
     "name": "Bone spear",
     "id": 5016,
     "version": "",
@@ -11045,6 +11560,21 @@
       "stab": 1,
       "slash": 1
     },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Bone staff",
+    "id": 28796,
+    "version": "",
+    "slot": "weapon",
+    "image": "Bone staff.png",
+    "speed": 4,
+    "category": "Bow",
+    "bonuses": {},
+    "offensive": {
+      "magic": 14
+    },
+    "defensive": {},
     "isTwoHanded": false
   },
   {
@@ -19634,6 +20164,107 @@
   },
   {
     "name": "Dharok's greataxe",
+    "id": 4890,
+    "version": "0",
+    "slot": "weapon",
+    "image": "Dharok's greataxe 0.png",
+    "speed": 7,
+    "category": "Axe",
+    "bonuses": {},
+    "offensive": {},
+    "defensive": {},
+    "isTwoHanded": true
+  },
+  {
+    "name": "Dharok's greataxe",
+    "id": 4886,
+    "version": "100",
+    "slot": "weapon",
+    "image": "Dharok's greataxe.png",
+    "speed": 7,
+    "category": "Axe",
+    "bonuses": {
+      "str": 105
+    },
+    "offensive": {
+      "stab": -4,
+      "slash": 103,
+      "crush": 95,
+      "magic": -4
+    },
+    "defensive": {
+      "ranged": -1
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Dharok's greataxe",
+    "id": 4889,
+    "version": "25",
+    "slot": "weapon",
+    "image": "Dharok's greataxe.png",
+    "speed": 7,
+    "category": "Axe",
+    "bonuses": {
+      "str": 105
+    },
+    "offensive": {
+      "stab": -4,
+      "slash": 103,
+      "crush": 95,
+      "magic": -4
+    },
+    "defensive": {
+      "ranged": -1
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Dharok's greataxe",
+    "id": 4888,
+    "version": "50",
+    "slot": "weapon",
+    "image": "Dharok's greataxe.png",
+    "speed": 7,
+    "category": "Axe",
+    "bonuses": {
+      "str": 105
+    },
+    "offensive": {
+      "stab": -4,
+      "slash": 103,
+      "crush": 95,
+      "magic": -4
+    },
+    "defensive": {
+      "ranged": -1
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Dharok's greataxe",
+    "id": 4887,
+    "version": "75",
+    "slot": "weapon",
+    "image": "Dharok's greataxe.png",
+    "speed": 7,
+    "category": "Axe",
+    "bonuses": {
+      "str": 105
+    },
+    "offensive": {
+      "stab": -4,
+      "slash": 103,
+      "crush": 95,
+      "magic": -4
+    },
+    "defensive": {
+      "ranged": -1
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Dharok's greataxe",
     "id": 4718,
     "version": "Undamaged",
     "slot": "weapon",
@@ -19653,6 +20284,94 @@
       "ranged": -1
     },
     "isTwoHanded": true
+  },
+  {
+    "name": "Dharok's helm",
+    "id": 4880,
+    "version": "100",
+    "slot": "head",
+    "image": "Dharok's helm 100.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -3,
+      "ranged": -1
+    },
+    "defensive": {
+      "stab": 45,
+      "slash": 48,
+      "crush": 44,
+      "magic": -1,
+      "ranged": 51
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dharok's helm",
+    "id": 4883,
+    "version": "25",
+    "slot": "head",
+    "image": "Dharok's helm 25.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -3,
+      "ranged": -1
+    },
+    "defensive": {
+      "stab": 45,
+      "slash": 48,
+      "crush": 44,
+      "magic": -1,
+      "ranged": 51
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dharok's helm",
+    "id": 4882,
+    "version": "50",
+    "slot": "head",
+    "image": "Dharok's helm 50.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -3,
+      "ranged": -1
+    },
+    "defensive": {
+      "stab": 45,
+      "slash": 48,
+      "crush": 44,
+      "magic": -1,
+      "ranged": 51
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dharok's helm",
+    "id": 4881,
+    "version": "75",
+    "slot": "head",
+    "image": "Dharok's helm 75.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -3,
+      "ranged": -1
+    },
+    "defensive": {
+      "stab": 45,
+      "slash": 48,
+      "crush": 44,
+      "magic": -1,
+      "ranged": 51
+    },
+    "isTwoHanded": false
   },
   {
     "name": "Dharok's helm",
@@ -19678,6 +20397,94 @@
   },
   {
     "name": "Dharok's platebody",
+    "id": 4892,
+    "version": "100",
+    "slot": "body",
+    "image": "Dharok's platebody.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 122,
+      "slash": 120,
+      "crush": 107,
+      "magic": -6,
+      "ranged": 132
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dharok's platebody",
+    "id": 4895,
+    "version": "25",
+    "slot": "body",
+    "image": "Dharok's platebody.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 122,
+      "slash": 120,
+      "crush": 107,
+      "magic": -6,
+      "ranged": 132
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dharok's platebody",
+    "id": 4894,
+    "version": "50",
+    "slot": "body",
+    "image": "Dharok's platebody.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 122,
+      "slash": 120,
+      "crush": 107,
+      "magic": -6,
+      "ranged": 132
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dharok's platebody",
+    "id": 4893,
+    "version": "75",
+    "slot": "body",
+    "image": "Dharok's platebody.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 122,
+      "slash": 120,
+      "crush": 107,
+      "magic": -6,
+      "ranged": 132
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dharok's platebody",
     "id": 4720,
     "version": "Undamaged",
     "slot": "body",
@@ -19695,6 +20502,94 @@
       "crush": 107,
       "magic": -6,
       "ranged": 132
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dharok's platelegs",
+    "id": 4898,
+    "version": "100",
+    "slot": "legs",
+    "image": "Dharok's platelegs.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -21,
+      "ranged": -11
+    },
+    "defensive": {
+      "stab": 85,
+      "slash": 82,
+      "crush": 83,
+      "magic": -4,
+      "ranged": 92
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dharok's platelegs",
+    "id": 4901,
+    "version": "25",
+    "slot": "legs",
+    "image": "Dharok's platelegs.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -21,
+      "ranged": -11
+    },
+    "defensive": {
+      "stab": 85,
+      "slash": 82,
+      "crush": 83,
+      "magic": -4,
+      "ranged": 92
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dharok's platelegs",
+    "id": 4900,
+    "version": "50",
+    "slot": "legs",
+    "image": "Dharok's platelegs.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -21,
+      "ranged": -11
+    },
+    "defensive": {
+      "stab": 85,
+      "slash": 82,
+      "crush": 83,
+      "magic": -4,
+      "ranged": 92
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dharok's platelegs",
+    "id": 4899,
+    "version": "75",
+    "slot": "legs",
+    "image": "Dharok's platelegs.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -21,
+      "ranged": -11
+    },
+    "defensive": {
+      "stab": 85,
+      "slash": 82,
+      "crush": 83,
+      "magic": -4,
+      "ranged": 92
     },
     "isTwoHanded": false
   },
@@ -25793,8 +26688,46 @@
   },
   {
     "name": "Granite ring (i)",
+    "id": 26685,
+    "version": "Emir's Arena",
+    "slot": "ring",
+    "image": "Granite ring (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {},
+    "defensive": {
+      "stab": 4,
+      "slash": 4,
+      "crush": 4,
+      "magic": -4,
+      "ranged": 16
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Granite ring (i)",
     "id": 21752,
     "version": "",
+    "slot": "ring",
+    "image": "Granite ring (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {},
+    "defensive": {
+      "stab": 4,
+      "slash": 4,
+      "crush": 4,
+      "magic": -4,
+      "ranged": 16
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Granite ring (i)",
+    "id": 25193,
+    "version": "Soul Wars",
     "slot": "ring",
     "image": "Granite ring (i).png",
     "speed": 0,
@@ -26115,8 +27048,52 @@
   },
   {
     "name": "Green slayer helmet (i)",
+    "id": 26676,
+    "version": "Emir's Arena",
+    "slot": "head",
+    "image": "Green slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Green slayer helmet (i)",
     "id": 19645,
     "version": "",
+    "slot": "head",
+    "image": "Green slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Green slayer helmet (i)",
+    "id": 25181,
+    "version": "Soul Wars",
     "slot": "head",
     "image": "Green slayer helmet (i).png",
     "speed": 0,
@@ -26602,6 +27579,94 @@
   },
   {
     "name": "Guthan's chainskirt",
+    "id": 4922,
+    "version": "100",
+    "slot": "legs",
+    "image": "Guthan's chainskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -14,
+      "ranged": -11
+    },
+    "defensive": {
+      "stab": 75,
+      "slash": 72,
+      "crush": 73,
+      "magic": -4,
+      "ranged": 82
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Guthan's chainskirt",
+    "id": 4925,
+    "version": "25",
+    "slot": "legs",
+    "image": "Guthan's chainskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -14,
+      "ranged": -11
+    },
+    "defensive": {
+      "stab": 75,
+      "slash": 72,
+      "crush": 73,
+      "magic": -4,
+      "ranged": 82
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Guthan's chainskirt",
+    "id": 4924,
+    "version": "50",
+    "slot": "legs",
+    "image": "Guthan's chainskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -14,
+      "ranged": -11
+    },
+    "defensive": {
+      "stab": 75,
+      "slash": 72,
+      "crush": 73,
+      "magic": -4,
+      "ranged": 82
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Guthan's chainskirt",
+    "id": 4923,
+    "version": "75",
+    "slot": "legs",
+    "image": "Guthan's chainskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -14,
+      "ranged": -11
+    },
+    "defensive": {
+      "stab": 75,
+      "slash": 72,
+      "crush": 73,
+      "magic": -4,
+      "ranged": 82
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Guthan's chainskirt",
     "id": 4730,
     "version": "Undamaged",
     "slot": "legs",
@@ -26619,6 +27684,94 @@
       "crush": 73,
       "magic": -4,
       "ranged": 82
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Guthan's helm",
+    "id": 4904,
+    "version": "100",
+    "slot": "head",
+    "image": "Guthan's helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 55,
+      "slash": 58,
+      "crush": 54,
+      "magic": -1,
+      "ranged": 62
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Guthan's helm",
+    "id": 4907,
+    "version": "25",
+    "slot": "head",
+    "image": "Guthan's helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 55,
+      "slash": 58,
+      "crush": 54,
+      "magic": -1,
+      "ranged": 62
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Guthan's helm",
+    "id": 4906,
+    "version": "50",
+    "slot": "head",
+    "image": "Guthan's helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 55,
+      "slash": 58,
+      "crush": 54,
+      "magic": -1,
+      "ranged": 62
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Guthan's helm",
+    "id": 4905,
+    "version": "75",
+    "slot": "head",
+    "image": "Guthan's helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 55,
+      "slash": 58,
+      "crush": 54,
+      "magic": -1,
+      "ranged": 62
     },
     "isTwoHanded": false
   },
@@ -26646,6 +27799,94 @@
   },
   {
     "name": "Guthan's platebody",
+    "id": 4916,
+    "version": "100",
+    "slot": "body",
+    "image": "Guthan's platebody.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 122,
+      "slash": 120,
+      "crush": 107,
+      "magic": -6,
+      "ranged": 132
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Guthan's platebody",
+    "id": 4919,
+    "version": "25",
+    "slot": "body",
+    "image": "Guthan's platebody.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 122,
+      "slash": 120,
+      "crush": 107,
+      "magic": -6,
+      "ranged": 132
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Guthan's platebody",
+    "id": 4918,
+    "version": "50",
+    "slot": "body",
+    "image": "Guthan's platebody.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 122,
+      "slash": 120,
+      "crush": 107,
+      "magic": -6,
+      "ranged": 132
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Guthan's platebody",
+    "id": 4917,
+    "version": "75",
+    "slot": "body",
+    "image": "Guthan's platebody.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 122,
+      "slash": 120,
+      "crush": 107,
+      "magic": -6,
+      "ranged": 132
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Guthan's platebody",
     "id": 4728,
     "version": "Undamaged",
     "slot": "body",
@@ -26665,6 +27906,111 @@
       "ranged": 132
     },
     "isTwoHanded": false
+  },
+  {
+    "name": "Guthan's warspear",
+    "id": 4914,
+    "version": "0",
+    "slot": "weapon",
+    "image": "Guthan's warspear 0.png",
+    "speed": 5,
+    "category": "Spear",
+    "bonuses": {},
+    "offensive": {},
+    "defensive": {},
+    "isTwoHanded": true
+  },
+  {
+    "name": "Guthan's warspear",
+    "id": 4910,
+    "version": "100",
+    "slot": "weapon",
+    "image": "Guthan's warspear.png",
+    "speed": 5,
+    "category": "Spear",
+    "bonuses": {
+      "str": 75
+    },
+    "offensive": {
+      "stab": 75,
+      "slash": 75,
+      "crush": 75
+    },
+    "defensive": {
+      "stab": 7,
+      "slash": 7,
+      "crush": 7
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Guthan's warspear",
+    "id": 4913,
+    "version": "25",
+    "slot": "weapon",
+    "image": "Guthan's warspear.png",
+    "speed": 5,
+    "category": "Spear",
+    "bonuses": {
+      "str": 75
+    },
+    "offensive": {
+      "stab": 75,
+      "slash": 75,
+      "crush": 75
+    },
+    "defensive": {
+      "stab": 7,
+      "slash": 7,
+      "crush": 7
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Guthan's warspear",
+    "id": 4912,
+    "version": "50",
+    "slot": "weapon",
+    "image": "Guthan's warspear.png",
+    "speed": 5,
+    "category": "Spear",
+    "bonuses": {
+      "str": 75
+    },
+    "offensive": {
+      "stab": 75,
+      "slash": 75,
+      "crush": 75
+    },
+    "defensive": {
+      "stab": 7,
+      "slash": 7,
+      "crush": 7
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Guthan's warspear",
+    "id": 4911,
+    "version": "75",
+    "slot": "weapon",
+    "image": "Guthan's warspear.png",
+    "speed": 5,
+    "category": "Spear",
+    "bonuses": {
+      "str": 75
+    },
+    "offensive": {
+      "stab": 75,
+      "slash": 75,
+      "crush": 75
+    },
+    "defensive": {
+      "stab": 7,
+      "slash": 7,
+      "crush": 7
+    },
+    "isTwoHanded": true
   },
   {
     "name": "Guthan's warspear",
@@ -28310,8 +29656,52 @@
   },
   {
     "name": "Hydra slayer helmet (i)",
+    "id": 26680,
+    "version": "Emir's Arena",
+    "slot": "head",
+    "image": "Hydra slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Hydra slayer helmet (i)",
     "id": 23075,
     "version": "",
+    "slot": "head",
+    "image": "Hydra slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Hydra slayer helmet (i)",
+    "id": 25189,
+    "version": "Soul Wars",
     "slot": "head",
     "image": "Hydra slayer helmet (i).png",
     "speed": 0,
@@ -31122,6 +32512,94 @@
   },
   {
     "name": "Karil's coif",
+    "id": 4928,
+    "version": "100",
+    "slot": "head",
+    "image": "Karil's coif.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -1,
+      "ranged": 7
+    },
+    "defensive": {
+      "stab": 6,
+      "slash": 9,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 10
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Karil's coif",
+    "id": 4931,
+    "version": "25",
+    "slot": "head",
+    "image": "Karil's coif.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -1,
+      "ranged": 7
+    },
+    "defensive": {
+      "stab": 6,
+      "slash": 9,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 10
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Karil's coif",
+    "id": 4930,
+    "version": "50",
+    "slot": "head",
+    "image": "Karil's coif.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -1,
+      "ranged": 7
+    },
+    "defensive": {
+      "stab": 6,
+      "slash": 9,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 10
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Karil's coif",
+    "id": 4929,
+    "version": "75",
+    "slot": "head",
+    "image": "Karil's coif.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -1,
+      "ranged": 7
+    },
+    "defensive": {
+      "stab": 6,
+      "slash": 9,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 10
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Karil's coif",
     "id": 4732,
     "version": "Undamaged",
     "slot": "head",
@@ -31144,6 +32622,66 @@
   },
   {
     "name": "Karil's crossbow",
+    "id": 4934,
+    "version": "100",
+    "slot": "weapon",
+    "image": "Karil's crossbow.png",
+    "speed": 4,
+    "category": "Crossbow",
+    "bonuses": {},
+    "offensive": {
+      "ranged": 84
+    },
+    "defensive": {},
+    "isTwoHanded": true
+  },
+  {
+    "name": "Karil's crossbow",
+    "id": 4937,
+    "version": "25",
+    "slot": "weapon",
+    "image": "Karil's crossbow.png",
+    "speed": 4,
+    "category": "Crossbow",
+    "bonuses": {},
+    "offensive": {
+      "ranged": 84
+    },
+    "defensive": {},
+    "isTwoHanded": true
+  },
+  {
+    "name": "Karil's crossbow",
+    "id": 4936,
+    "version": "50",
+    "slot": "weapon",
+    "image": "Karil's crossbow.png",
+    "speed": 4,
+    "category": "Crossbow",
+    "bonuses": {},
+    "offensive": {
+      "ranged": 84
+    },
+    "defensive": {},
+    "isTwoHanded": true
+  },
+  {
+    "name": "Karil's crossbow",
+    "id": 4935,
+    "version": "75",
+    "slot": "weapon",
+    "image": "Karil's crossbow.png",
+    "speed": 4,
+    "category": "Crossbow",
+    "bonuses": {},
+    "offensive": {
+      "ranged": 84
+    },
+    "defensive": {},
+    "isTwoHanded": true
+  },
+  {
+    "name": "Karil's crossbow",
     "id": 4734,
     "version": "Undamaged",
     "slot": "weapon",
@@ -31156,6 +32694,94 @@
     },
     "defensive": {},
     "isTwoHanded": true
+  },
+  {
+    "name": "Karil's leatherskirt",
+    "id": 4946,
+    "version": "100",
+    "slot": "legs",
+    "image": "Karil's leatherskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -10,
+      "ranged": 17
+    },
+    "defensive": {
+      "stab": 26,
+      "slash": 20,
+      "crush": 28,
+      "magic": 35,
+      "ranged": 33
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Karil's leatherskirt",
+    "id": 4949,
+    "version": "25",
+    "slot": "legs",
+    "image": "Karil's leatherskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -10,
+      "ranged": 17
+    },
+    "defensive": {
+      "stab": 26,
+      "slash": 20,
+      "crush": 28,
+      "magic": 35,
+      "ranged": 33
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Karil's leatherskirt",
+    "id": 4948,
+    "version": "50",
+    "slot": "legs",
+    "image": "Karil's leatherskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -10,
+      "ranged": 17
+    },
+    "defensive": {
+      "stab": 26,
+      "slash": 20,
+      "crush": 28,
+      "magic": 35,
+      "ranged": 33
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Karil's leatherskirt",
+    "id": 4947,
+    "version": "75",
+    "slot": "legs",
+    "image": "Karil's leatherskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -10,
+      "ranged": 17
+    },
+    "defensive": {
+      "stab": 26,
+      "slash": 20,
+      "crush": 28,
+      "magic": 35,
+      "ranged": 33
+    },
+    "isTwoHanded": false
   },
   {
     "name": "Karil's leatherskirt",
@@ -31176,6 +32802,94 @@
       "crush": 28,
       "magic": 35,
       "ranged": 33
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Karil's leathertop",
+    "id": 4940,
+    "version": "100",
+    "slot": "body",
+    "image": "Karil's leathertop.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -15,
+      "ranged": 30
+    },
+    "defensive": {
+      "stab": 47,
+      "slash": 42,
+      "crush": 50,
+      "magic": 65,
+      "ranged": 57
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Karil's leathertop",
+    "id": 4943,
+    "version": "25",
+    "slot": "body",
+    "image": "Karil's leathertop.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -15,
+      "ranged": 30
+    },
+    "defensive": {
+      "stab": 47,
+      "slash": 42,
+      "crush": 50,
+      "magic": 65,
+      "ranged": 57
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Karil's leathertop",
+    "id": 4942,
+    "version": "50",
+    "slot": "body",
+    "image": "Karil's leathertop.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -15,
+      "ranged": 30
+    },
+    "defensive": {
+      "stab": 47,
+      "slash": 42,
+      "crush": 50,
+      "magic": 65,
+      "ranged": 57
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Karil's leathertop",
+    "id": 4941,
+    "version": "75",
+    "slot": "body",
+    "image": "Karil's leathertop.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -15,
+      "ranged": 30
+    },
+    "defensive": {
+      "stab": 47,
+      "slash": 42,
+      "crush": 50,
+      "magic": 65,
+      "ranged": 57
     },
     "isTwoHanded": false
   },
@@ -38017,8 +39731,52 @@
   },
   {
     "name": "Purple slayer helmet (i)",
+    "id": 26678,
+    "version": "Emir's Arena",
+    "slot": "head",
+    "image": "Purple slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Purple slayer helmet (i)",
     "id": 21266,
     "version": "",
+    "slot": "head",
+    "image": "Purple slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Purple slayer helmet (i)",
+    "id": 25185,
+    "version": "Soul Wars",
     "slot": "head",
     "image": "Purple slayer helmet (i).png",
     "speed": 0,
@@ -38845,8 +40603,52 @@
   },
   {
     "name": "Red slayer helmet (i)",
+    "id": 26677,
+    "version": "Emir's Arena",
+    "slot": "head",
+    "image": "Red slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Red slayer helmet (i)",
     "id": 19649,
     "version": "",
+    "slot": "head",
+    "image": "Red slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Red slayer helmet (i)",
+    "id": 25183,
+    "version": "Soul Wars",
     "slot": "head",
     "image": "Red slayer helmet (i).png",
     "speed": 0,
@@ -39110,8 +40912,50 @@
   },
   {
     "name": "Ring of the gods (i)",
+    "id": 26764,
+    "version": "Emir's Arena",
+    "slot": "ring",
+    "image": "Ring of the gods (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "prayer": 8
+    },
+    "offensive": {},
+    "defensive": {
+      "stab": 1,
+      "slash": 1,
+      "crush": 1,
+      "magic": 1,
+      "ranged": 1
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ring of the gods (i)",
     "id": 13202,
     "version": "",
+    "slot": "ring",
+    "image": "Ring of the gods (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "prayer": 8
+    },
+    "offensive": {},
+    "defensive": {
+      "stab": 1,
+      "slash": 1,
+      "crush": 1,
+      "magic": 1,
+      "ranged": 1
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ring of the gods (i)",
+    "id": 25252,
+    "version": "Soul Wars",
     "slot": "ring",
     "image": "Ring of the gods (i).png",
     "speed": 0,
@@ -42586,6 +44430,25 @@
   },
   {
     "name": "Salve amulet(ei)",
+    "id": 26782,
+    "version": "Emir's Arena",
+    "slot": "neck",
+    "image": "Salve amulet(ei).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "prayer": 3
+    },
+    "offensive": {},
+    "defensive": {
+      "stab": 3,
+      "slash": 3,
+      "crush": 3
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Salve amulet(ei)",
     "id": 12018,
     "version": "",
     "slot": "neck",
@@ -42604,9 +44467,66 @@
     "isTwoHanded": false
   },
   {
+    "name": "Salve amulet(ei)",
+    "id": 25278,
+    "version": "Soul Wars",
+    "slot": "neck",
+    "image": "Salve amulet(ei).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "prayer": 3
+    },
+    "offensive": {},
+    "defensive": {
+      "stab": 3,
+      "slash": 3,
+      "crush": 3
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Salve amulet(i)",
+    "id": 26763,
+    "version": "Emir's Arena",
+    "slot": "neck",
+    "image": "Salve amulet(i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "prayer": 3
+    },
+    "offensive": {},
+    "defensive": {
+      "stab": 3,
+      "slash": 3,
+      "crush": 3
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Salve amulet(i)",
     "id": 12017,
     "version": "",
+    "slot": "neck",
+    "image": "Salve amulet(i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "prayer": 3
+    },
+    "offensive": {},
+    "defensive": {
+      "stab": 3,
+      "slash": 3,
+      "crush": 3
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Salve amulet(i)",
+    "id": 25250,
+    "version": "Soul Wars",
     "slot": "neck",
     "image": "Salve amulet(i).png",
     "speed": 0,
@@ -43656,8 +45576,42 @@
   },
   {
     "name": "Seers ring (i)",
+    "id": 26767,
+    "version": "Emir's Arena",
+    "slot": "ring",
+    "image": "Seers ring (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 12
+    },
+    "defensive": {
+      "magic": 12
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Seers ring (i)",
     "id": 11770,
     "version": "",
+    "slot": "ring",
+    "image": "Seers ring (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 12
+    },
+    "defensive": {
+      "magic": 12
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Seers ring (i)",
+    "id": 25258,
+    "version": "Soul Wars",
     "slot": "ring",
     "image": "Seers ring (i).png",
     "speed": 0,
@@ -44951,8 +46905,52 @@
   },
   {
     "name": "Slayer helmet (i)",
+    "id": 26674,
+    "version": "Emir's Arena",
+    "slot": "head",
+    "image": "Slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Slayer helmet (i)",
     "id": 11865,
     "version": "",
+    "slot": "head",
+    "image": "Slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Slayer helmet (i)",
+    "id": 25177,
+    "version": "Soul Wars",
     "slot": "head",
     "image": "Slayer helmet (i).png",
     "speed": 0,
@@ -50167,6 +52165,99 @@
   },
   {
     "name": "Torag's hammers",
+    "id": 4962,
+    "version": "0",
+    "slot": "weapon",
+    "image": "Torag's hammers 0.png",
+    "speed": 5,
+    "category": "Blunt",
+    "bonuses": {},
+    "offensive": {},
+    "defensive": {},
+    "isTwoHanded": true
+  },
+  {
+    "name": "Torag's hammers",
+    "id": 4958,
+    "version": "100",
+    "slot": "weapon",
+    "image": "Torag's hammers.png",
+    "speed": 5,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 72
+    },
+    "offensive": {
+      "stab": -4,
+      "slash": -4,
+      "crush": 85,
+      "magic": -4
+    },
+    "defensive": {},
+    "isTwoHanded": true
+  },
+  {
+    "name": "Torag's hammers",
+    "id": 4961,
+    "version": "25",
+    "slot": "weapon",
+    "image": "Torag's hammers.png",
+    "speed": 5,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 72
+    },
+    "offensive": {
+      "stab": -4,
+      "slash": -4,
+      "crush": 85,
+      "magic": -4
+    },
+    "defensive": {},
+    "isTwoHanded": true
+  },
+  {
+    "name": "Torag's hammers",
+    "id": 4960,
+    "version": "50",
+    "slot": "weapon",
+    "image": "Torag's hammers.png",
+    "speed": 5,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 72
+    },
+    "offensive": {
+      "stab": -4,
+      "slash": -4,
+      "crush": 85,
+      "magic": -4
+    },
+    "defensive": {},
+    "isTwoHanded": true
+  },
+  {
+    "name": "Torag's hammers",
+    "id": 4959,
+    "version": "75",
+    "slot": "weapon",
+    "image": "Torag's hammers.png",
+    "speed": 5,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 72
+    },
+    "offensive": {
+      "stab": -4,
+      "slash": -4,
+      "crush": 85,
+      "magic": -4
+    },
+    "defensive": {},
+    "isTwoHanded": true
+  },
+  {
+    "name": "Torag's hammers",
     "id": 4747,
     "version": "Undamaged",
     "slot": "weapon",
@@ -50184,6 +52275,94 @@
     },
     "defensive": {},
     "isTwoHanded": true
+  },
+  {
+    "name": "Torag's helm",
+    "id": 4952,
+    "version": "100",
+    "slot": "head",
+    "image": "Torag's helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 55,
+      "slash": 58,
+      "crush": 54,
+      "magic": -1,
+      "ranged": 62
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Torag's helm",
+    "id": 4955,
+    "version": "25",
+    "slot": "head",
+    "image": "Torag's helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 55,
+      "slash": 58,
+      "crush": 54,
+      "magic": -1,
+      "ranged": 62
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Torag's helm",
+    "id": 4954,
+    "version": "50",
+    "slot": "head",
+    "image": "Torag's helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 55,
+      "slash": 58,
+      "crush": 54,
+      "magic": -1,
+      "ranged": 62
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Torag's helm",
+    "id": 4953,
+    "version": "75",
+    "slot": "head",
+    "image": "Torag's helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 55,
+      "slash": 58,
+      "crush": 54,
+      "magic": -1,
+      "ranged": 62
+    },
+    "isTwoHanded": false
   },
   {
     "name": "Torag's helm",
@@ -50209,6 +52388,94 @@
   },
   {
     "name": "Torag's platebody",
+    "id": 4964,
+    "version": "100",
+    "slot": "body",
+    "image": "Torag's platebody.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 122,
+      "slash": 120,
+      "crush": 107,
+      "magic": -6,
+      "ranged": 132
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Torag's platebody",
+    "id": 4967,
+    "version": "25",
+    "slot": "body",
+    "image": "Torag's platebody.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 122,
+      "slash": 120,
+      "crush": 107,
+      "magic": -6,
+      "ranged": 132
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Torag's platebody",
+    "id": 4966,
+    "version": "50",
+    "slot": "body",
+    "image": "Torag's platebody.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 122,
+      "slash": 120,
+      "crush": 107,
+      "magic": -6,
+      "ranged": 132
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Torag's platebody",
+    "id": 4965,
+    "version": "75",
+    "slot": "body",
+    "image": "Torag's platebody.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 122,
+      "slash": 120,
+      "crush": 107,
+      "magic": -6,
+      "ranged": 132
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Torag's platebody",
     "id": 4749,
     "version": "Undamaged",
     "slot": "body",
@@ -50226,6 +52493,94 @@
       "crush": 107,
       "magic": -6,
       "ranged": 132
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Torag's platelegs",
+    "id": 4970,
+    "version": "100",
+    "slot": "legs",
+    "image": "Torag's platelegs.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -21,
+      "ranged": -11
+    },
+    "defensive": {
+      "stab": 85,
+      "slash": 82,
+      "crush": 83,
+      "magic": -4,
+      "ranged": 92
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Torag's platelegs",
+    "id": 4973,
+    "version": "25",
+    "slot": "legs",
+    "image": "Torag's platelegs.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -21,
+      "ranged": -11
+    },
+    "defensive": {
+      "stab": 85,
+      "slash": 82,
+      "crush": 83,
+      "magic": -4,
+      "ranged": 92
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Torag's platelegs",
+    "id": 4972,
+    "version": "50",
+    "slot": "legs",
+    "image": "Torag's platelegs.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -21,
+      "ranged": -11
+    },
+    "defensive": {
+      "stab": 85,
+      "slash": 82,
+      "crush": 83,
+      "magic": -4,
+      "ranged": 92
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Torag's platelegs",
+    "id": 4971,
+    "version": "75",
+    "slot": "legs",
+    "image": "Torag's platelegs.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": -21,
+      "ranged": -11
+    },
+    "defensive": {
+      "stab": 85,
+      "slash": 82,
+      "crush": 83,
+      "magic": -4,
+      "ranged": 92
     },
     "isTwoHanded": false
   },
@@ -50721,8 +53076,42 @@
   },
   {
     "name": "Treasonous ring (i)",
+    "id": 26766,
+    "version": "Emir's Arena",
+    "slot": "ring",
+    "image": "Treasonous ring (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "stab": 8
+    },
+    "defensive": {
+      "stab": 8
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Treasonous ring (i)",
     "id": 12692,
     "version": "",
+    "slot": "ring",
+    "image": "Treasonous ring (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "stab": 8
+    },
+    "defensive": {
+      "stab": 8
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Treasonous ring (i)",
+    "id": 25256,
+    "version": "Soul Wars",
     "slot": "ring",
     "image": "Treasonous ring (i).png",
     "speed": 0,
@@ -51062,8 +53451,52 @@
   },
   {
     "name": "Turquoise slayer helmet (i)",
+    "id": 26679,
+    "version": "Emir's Arena",
+    "slot": "head",
+    "image": "Turquoise slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Turquoise slayer helmet (i)",
     "id": 21890,
     "version": "",
+    "slot": "head",
+    "image": "Turquoise slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Turquoise slayer helmet (i)",
+    "id": 25187,
+    "version": "Soul Wars",
     "slot": "head",
     "image": "Turquoise slayer helmet (i).png",
     "speed": 0,
@@ -51289,8 +53722,52 @@
   },
   {
     "name": "Twisted slayer helmet (i)",
+    "id": 26681,
+    "version": "Emir's Arena",
+    "slot": "head",
+    "image": "Twisted slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Twisted slayer helmet (i)",
     "id": 24444,
     "version": "",
+    "slot": "head",
+    "image": "Twisted slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Twisted slayer helmet (i)",
+    "id": 25191,
+    "version": "Soul Wars",
     "slot": "head",
     "image": "Twisted slayer helmet (i).png",
     "speed": 0,
@@ -51328,8 +53805,42 @@
   },
   {
     "name": "Tyrannical ring (i)",
+    "id": 26765,
+    "version": "Emir's Arena",
+    "slot": "ring",
+    "image": "Tyrannical ring (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "crush": 8
+    },
+    "defensive": {
+      "crush": 8
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Tyrannical ring (i)",
     "id": 12691,
     "version": "",
+    "slot": "ring",
+    "image": "Tyrannical ring (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "crush": 8
+    },
+    "defensive": {
+      "crush": 8
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Tyrannical ring (i)",
+    "id": 25254,
+    "version": "Soul Wars",
     "slot": "ring",
     "image": "Tyrannical ring (i).png",
     "speed": 0,
@@ -51444,8 +53955,52 @@
   },
   {
     "name": "Tzkal slayer helmet (i)",
+    "id": 26684,
+    "version": "Emir's Arena",
+    "slot": "head",
+    "image": "Tzkal slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Tzkal slayer helmet (i)",
     "id": 25912,
     "version": "",
+    "slot": "head",
+    "image": "Tzkal slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Tzkal slayer helmet (i)",
+    "id": 25914,
+    "version": "Soul Wars",
     "slot": "head",
     "image": "Tzkal slayer helmet (i).png",
     "speed": 0,
@@ -51488,8 +54043,52 @@
   },
   {
     "name": "Tztok slayer helmet (i)",
+    "id": 26682,
+    "version": "Emir's Arena",
+    "slot": "head",
+    "image": "Tztok slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Tztok slayer helmet (i)",
     "id": 25900,
     "version": "",
+    "slot": "head",
+    "image": "Tztok slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Tztok slayer helmet (i)",
+    "id": 25902,
+    "version": "Soul Wars",
     "slot": "head",
     "image": "Tztok slayer helmet (i).png",
     "speed": 0,
@@ -51788,8 +54387,52 @@
   },
   {
     "name": "Vampyric slayer helmet (i)",
+    "id": 26683,
+    "version": "Emir's Arena",
+    "slot": "head",
+    "image": "Vampyric slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Vampyric slayer helmet (i)",
     "id": 25906,
     "version": "",
+    "slot": "head",
+    "image": "Vampyric slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Vampyric slayer helmet (i)",
+    "id": 25908,
+    "version": "Soul Wars",
     "slot": "head",
     "image": "Vampyric slayer helmet (i).png",
     "speed": 0,
@@ -51949,6 +54592,98 @@
   },
   {
     "name": "Verac's brassard",
+    "id": 4988,
+    "version": "100",
+    "slot": "body",
+    "image": "Verac's brassard.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "prayer": 5
+    },
+    "offensive": {
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 81,
+      "slash": 95,
+      "crush": 85,
+      "ranged": 81
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Verac's brassard",
+    "id": 4991,
+    "version": "25",
+    "slot": "body",
+    "image": "Verac's brassard.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "prayer": 5
+    },
+    "offensive": {
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 81,
+      "slash": 95,
+      "crush": 85,
+      "ranged": 81
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Verac's brassard",
+    "id": 4990,
+    "version": "50",
+    "slot": "body",
+    "image": "Verac's brassard.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "prayer": 5
+    },
+    "offensive": {
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 81,
+      "slash": 95,
+      "crush": 85,
+      "ranged": 81
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Verac's brassard",
+    "id": 4989,
+    "version": "75",
+    "slot": "body",
+    "image": "Verac's brassard.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "prayer": 5
+    },
+    "offensive": {
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 81,
+      "slash": 95,
+      "crush": 85,
+      "ranged": 81
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Verac's brassard",
     "id": 4757,
     "version": "Undamaged",
     "slot": "body",
@@ -51972,6 +54707,99 @@
   },
   {
     "name": "Verac's flail",
+    "id": 4986,
+    "version": "0",
+    "slot": "weapon",
+    "image": "Verac's flail 0.png",
+    "speed": 5,
+    "category": "Spiked",
+    "bonuses": {},
+    "offensive": {},
+    "defensive": {},
+    "isTwoHanded": true
+  },
+  {
+    "name": "Verac's flail",
+    "id": 4982,
+    "version": "100",
+    "slot": "weapon",
+    "image": "Verac's flail.png",
+    "speed": 5,
+    "category": "Spiked",
+    "bonuses": {
+      "str": 72,
+      "prayer": 6
+    },
+    "offensive": {
+      "stab": 68,
+      "slash": -2,
+      "crush": 82
+    },
+    "defensive": {},
+    "isTwoHanded": true
+  },
+  {
+    "name": "Verac's flail",
+    "id": 4985,
+    "version": "25",
+    "slot": "weapon",
+    "image": "Verac's flail.png",
+    "speed": 5,
+    "category": "Spiked",
+    "bonuses": {
+      "str": 72,
+      "prayer": 6
+    },
+    "offensive": {
+      "stab": 68,
+      "slash": -2,
+      "crush": 82
+    },
+    "defensive": {},
+    "isTwoHanded": true
+  },
+  {
+    "name": "Verac's flail",
+    "id": 4984,
+    "version": "50",
+    "slot": "weapon",
+    "image": "Verac's flail.png",
+    "speed": 5,
+    "category": "Spiked",
+    "bonuses": {
+      "str": 72,
+      "prayer": 6
+    },
+    "offensive": {
+      "stab": 68,
+      "slash": -2,
+      "crush": 82
+    },
+    "defensive": {},
+    "isTwoHanded": true
+  },
+  {
+    "name": "Verac's flail",
+    "id": 4983,
+    "version": "75",
+    "slot": "weapon",
+    "image": "Verac's flail.png",
+    "speed": 5,
+    "category": "Spiked",
+    "bonuses": {
+      "str": 72,
+      "prayer": 6
+    },
+    "offensive": {
+      "stab": 68,
+      "slash": -2,
+      "crush": 82
+    },
+    "defensive": {},
+    "isTwoHanded": true
+  },
+  {
+    "name": "Verac's flail",
     "id": 4755,
     "version": "Undamaged",
     "slot": "weapon",
@@ -51989,6 +54817,98 @@
     },
     "defensive": {},
     "isTwoHanded": true
+  },
+  {
+    "name": "Verac's helm",
+    "id": 4976,
+    "version": "100",
+    "slot": "head",
+    "image": "Verac's helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "prayer": 3
+    },
+    "offensive": {
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 55,
+      "slash": 58,
+      "crush": 54,
+      "ranged": 56
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Verac's helm",
+    "id": 4979,
+    "version": "25",
+    "slot": "head",
+    "image": "Verac's helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "prayer": 3
+    },
+    "offensive": {
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 55,
+      "slash": 58,
+      "crush": 54,
+      "ranged": 56
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Verac's helm",
+    "id": 4978,
+    "version": "50",
+    "slot": "head",
+    "image": "Verac's helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "prayer": 3
+    },
+    "offensive": {
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 55,
+      "slash": 58,
+      "crush": 54,
+      "ranged": 56
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Verac's helm",
+    "id": 4977,
+    "version": "75",
+    "slot": "head",
+    "image": "Verac's helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "prayer": 3
+    },
+    "offensive": {
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 55,
+      "slash": 58,
+      "crush": 54,
+      "ranged": 56
+    },
+    "isTwoHanded": false
   },
   {
     "name": "Verac's helm",
@@ -52010,6 +54930,98 @@
       "slash": 58,
       "crush": 54,
       "ranged": 56
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Verac's plateskirt",
+    "id": 4994,
+    "version": "100",
+    "slot": "legs",
+    "image": "Verac's plateskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "prayer": 4
+    },
+    "offensive": {
+      "magic": -21,
+      "ranged": -11
+    },
+    "defensive": {
+      "stab": 85,
+      "slash": 82,
+      "crush": 83,
+      "ranged": 84
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Verac's plateskirt",
+    "id": 4997,
+    "version": "25",
+    "slot": "legs",
+    "image": "Verac's plateskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "prayer": 4
+    },
+    "offensive": {
+      "magic": -21,
+      "ranged": -11
+    },
+    "defensive": {
+      "stab": 85,
+      "slash": 82,
+      "crush": 83,
+      "ranged": 84
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Verac's plateskirt",
+    "id": 4996,
+    "version": "50",
+    "slot": "legs",
+    "image": "Verac's plateskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "prayer": 4
+    },
+    "offensive": {
+      "magic": -21,
+      "ranged": -11
+    },
+    "defensive": {
+      "stab": 85,
+      "slash": 82,
+      "crush": 83,
+      "ranged": 84
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Verac's plateskirt",
+    "id": 4995,
+    "version": "75",
+    "slot": "legs",
+    "image": "Verac's plateskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "prayer": 4
+    },
+    "offensive": {
+      "magic": -21,
+      "ranged": -11
+    },
+    "defensive": {
+      "stab": 85,
+      "slash": 82,
+      "crush": 83,
+      "ranged": 84
     },
     "isTwoHanded": false
   },
@@ -52983,8 +55995,42 @@
   },
   {
     "name": "Warrior ring (i)",
+    "id": 26769,
+    "version": "Emir's Arena",
+    "slot": "ring",
+    "image": "Warrior ring (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "slash": 8
+    },
+    "defensive": {
+      "slash": 8
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Warrior ring (i)",
     "id": 11772,
     "version": "",
+    "slot": "ring",
+    "image": "Warrior ring (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {},
+    "offensive": {
+      "slash": 8
+    },
+    "defensive": {
+      "slash": 8
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Warrior ring (i)",
+    "id": 25262,
+    "version": "Soul Wars",
     "slot": "ring",
     "image": "Warrior ring (i).png",
     "speed": 0,

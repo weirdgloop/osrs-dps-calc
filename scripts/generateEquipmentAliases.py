@@ -99,6 +99,7 @@ def main():
 
     for item in all_items:
         slayer_helm_match = re.match(r"^(?:Black|Green|Red|Purple|Turquoise|Hydra|Twisted|Tztok|Vampyric|Tzkal) slayer helmet( \(i\))?$", item['name'])
+        decoration_kit_match = re.match(r"(.*)\((?:g|t|h\d)\)$", item['name'])
 
         # Locked variants
         if item['version'] == 'Locked':
@@ -106,11 +107,14 @@ def main():
         # Cosmetic Slayer helmets
         elif slayer_helm_match:
             handle_base_variant(all_items, item, 'Slayer helmet%s' % (slayer_helm_match.group(1) or ''), '')
+        # Decoration kit variants
+        elif decoration_kit_match:
+            handle_base_variant(all_items, item, decoration_kit_match.group(1).strip(), '')
         # Merge Soul Wars/Emir's Arena versions -> Nightmare Zone
         elif re.match(r"^(Soul Wars|Emir's Arena)$", item['version']):
             handle_base_variant(all_items, item, item['name'], 'Nightmare Zone')
         # Degraded variants
-        elif re.match(r"^(25|50|75|100)$", item['version']):
+        elif re.match(r"^(Broken|0|25|50|75|100)$", item['version']):
             handle_base_variant(all_items, item, item['name'], 'Undamaged')
 
     data += '\n}'

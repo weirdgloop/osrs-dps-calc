@@ -143,10 +143,8 @@ def main():
             # ...items with all 0 stat bonuses
             (len(equipment['bonuses']) == 0 and len(equipment['offensive']) == 0 and len(equipment['defensive']) == 0
              and (equipment['speed'] == 4 or equipment['speed'] <= 0))
-            # ...items that are broken, inactive, locked, SW/Emir variants
-            or re.match(r"^(Broken|Inactive|Locked|Soul Wars|Emir's Arena)$", equipment['version'])
-            # ...items that are degraded variants
-            or re.match(r"^(0|25|50|75|100)$", equipment['version'])
+            # ...items that are broken, inactive, locked
+            or re.match(r"^(Broken|Inactive|Locked)$", equipment['version'])
             # ...items from LMS (PvP only mode), or historical
             or re.search(r"\((Last Man Standing|historical)\)$", equipment['name'])
         ):
