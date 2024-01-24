@@ -26,7 +26,7 @@ jobs:
           pip install -r requirements.txt
       - name: Run update scripts
         run: |
-          python generateEquipment.json
+          python generateEquipment.py
           python generateMonsters.py
       - name: Create pull request
         run: git switch -C regenerate-json && git push --force && gh pr create -B main -H regenerate-json
