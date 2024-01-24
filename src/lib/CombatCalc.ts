@@ -423,6 +423,18 @@ export default class CombatCalc {
     return false;
   }
 
+  /**
+   * Whether the player is wearing a leaf-bladed weapon capable of harming rat monsters.
+   * @see https://oldschool.runescape.wiki/w/Rat_(attribute)
+   */
+  private isWearingRatBoneWeapon(): boolean {
+    return this.wearing([
+      'Bone mace',
+      'Bone shortbow',
+      'Bone staff',
+    ]);
+  }
+
   private isChargeSpellApplicable(): boolean {
     if (!this.player.buffs.chargeSpell) {
       return false;
@@ -1330,6 +1342,7 @@ export default class CombatCalc {
 
   isImmune(): boolean {
     const monsterId = this.monster.id;
+    const monsterAttrs = this.monster.attributes;
     const styleType = this.player.style.type;
 
     if (IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS.includes(monsterId) && styleType === 'magic') {
@@ -1346,13 +1359,16 @@ export default class CombatCalc {
             && this.player.equipment.weapon?.category !== EquipmentCategory.SALAMANDER) {
       return true;
     }
-    if (this.monster.attributes.includes(MonsterAttribute.VAMPYRE_3) && !this.isWearingIvandisWeapon()) {
+    if (monsterAttrs.includes(MonsterAttribute.VAMPYRE_3) && !this.isWearingIvandisWeapon()) {
       return true;
     }
     if (GUARDIAN_IDS.includes(monsterId) && this.player.equipment.weapon?.category !== EquipmentCategory.PICKAXE) {
       return true;
     }
-    if (this.monster.attributes.includes(MonsterAttribute.LEAFY) && !this.isWearingLeafBladedWeapon()) {
+    if (monsterAttrs.includes(MonsterAttribute.LEAFY) && !this.isWearingLeafBladedWeapon()) {
+      return true;
+    }
+    if (!monsterAttrs.includes(MonsterAttribute.RAT) && this.isWearingRatBoneWeapon()) {
       return true;
     }
     if (this.monster.name === 'Fire Warrior of Lesarkus'
