@@ -7968,7 +7968,9 @@
       -24,
       -24
     ],
-    "attributes": []
+    "attributes": [
+      "rat"
+    ]
   },
   {
     "id": 4535,
@@ -8001,7 +8003,9 @@
       -24,
       -24
     ],
-    "attributes": []
+    "attributes": [
+      "rat"
+    ]
   },
   {
     "id": 4533,
@@ -9917,7 +9921,9 @@
       0,
       0
     ],
-    "attributes": []
+    "attributes": [
+      "rat"
+    ]
   },
   {
     "id": 3685,
@@ -14263,7 +14269,9 @@
       0,
       0
     ],
-    "attributes": []
+    "attributes": [
+      "rat"
+    ]
   },
   {
     "id": 1683,
@@ -18629,7 +18637,9 @@
       0,
       0
     ],
-    "attributes": []
+    "attributes": [
+      "rat"
+    ]
   },
   {
     "id": 3607,
@@ -18662,7 +18672,9 @@
       0,
       0
     ],
-    "attributes": []
+    "attributes": [
+      "rat"
+    ]
   },
   {
     "id": 2866,
@@ -18695,7 +18707,9 @@
       0,
       0
     ],
-    "attributes": []
+    "attributes": [
+      "rat"
+    ]
   },
   {
     "id": 7851,
@@ -24278,7 +24292,9 @@
       0,
       0
     ],
-    "attributes": []
+    "attributes": [
+      "rat"
+    ]
   },
   {
     "id": 1684,
@@ -24512,6 +24528,41 @@
     "attributes": []
   },
   {
+    "id": 7223,
+    "name": "Giant rat (Scurrius)",
+    "version": "",
+    "image": "Giant rat (Scurrius).png",
+    "level": 46,
+    "speed": 4,
+    "size": 2,
+    "skills": [
+      100,
+      10,
+      15,
+      1,
+      1,
+      25
+    ],
+    "offensive": [
+      68,
+      0,
+      0,
+      0,
+      0,
+      5
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": [
+      "rat"
+    ]
+  },
+  {
     "id": 3314,
     "name": "Giant rat (Tutorial Island)",
     "version": "Unused, 1",
@@ -24641,7 +24692,9 @@
       0,
       0
     ],
-    "attributes": []
+    "attributes": [
+      "rat"
+    ]
   },
   {
     "id": 2856,
@@ -24674,7 +24727,9 @@
       0,
       0
     ],
-    "attributes": []
+    "attributes": [
+      "rat"
+    ]
   },
   {
     "id": 2862,
@@ -24707,7 +24762,9 @@
       0,
       0
     ],
-    "attributes": []
+    "attributes": [
+      "rat"
+    ]
   },
   {
     "id": 7392,
@@ -48527,7 +48584,9 @@
       -42,
       -42
     ],
-    "attributes": []
+    "attributes": [
+      "rat"
+    ]
   },
   {
     "id": 2492,
@@ -48560,7 +48619,9 @@
       -42,
       -42
     ],
-    "attributes": []
+    "attributes": [
+      "rat"
+    ]
   },
   {
     "id": 1708,
@@ -52723,6 +52784,76 @@
     "attributes": [
       "spectral",
       "undead"
+    ]
+  },
+  {
+    "id": 7221,
+    "name": "Scurrius",
+    "version": "Group",
+    "image": "Scurrius.png",
+    "level": 250,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      300,
+      100,
+      1500,
+      100,
+      100,
+      100
+    ],
+    "offensive": [
+      150,
+      20,
+      150,
+      150,
+      10,
+      10
+    ],
+    "defensive": [
+      20,
+      10,
+      20,
+      20,
+      20
+    ],
+    "attributes": [
+      "rat"
+    ]
+  },
+  {
+    "id": 7222,
+    "name": "Scurrius",
+    "version": "Solo",
+    "image": "Scurrius.png",
+    "level": 200,
+    "speed": 4,
+    "size": 3,
+    "skills": [
+      300,
+      60,
+      500,
+      50,
+      50,
+      100
+    ],
+    "offensive": [
+      150,
+      20,
+      150,
+      150,
+      10,
+      10
+    ],
+    "defensive": [
+      20,
+      10,
+      20,
+      20,
+      20
+    ],
+    "attributes": [
+      "rat"
     ]
   },
   {
@@ -71341,6 +71472,39 @@
     "attributes": []
   },
   {
+    "id": 3299,
+    "name": "Woman (East Ardougne)",
+    "version": "",
+    "image": "Woman (East Ardougne).png",
+    "level": 2,
+    "speed": 4,
+    "size": 1,
+    "skills": [
+      1,
+      1,
+      7,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      -21,
+      -21,
+      -21,
+      -21,
+      -21
+    ],
+    "attributes": []
+  },
+  {
     "id": 1140,
     "name": "Woman (West Ardougne)",
     "version": "Level 12",
@@ -71576,39 +71740,6 @@
     "name": "Woman",
     "version": "Brown",
     "image": "Woman (brown).png",
-    "level": 2,
-    "speed": 4,
-    "size": 1,
-    "skills": [
-      1,
-      1,
-      7,
-      1,
-      1,
-      1
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      -21,
-      -21,
-      -21,
-      -21,
-      -21
-    ],
-    "attributes": []
-  },
-  {
-    "id": 3299,
-    "name": "Woman",
-    "version": "East Ardougne",
-    "image": "Woman (East Ardougne).png",
     "level": 2,
     "speed": 4,
     "size": 1,
@@ -74935,7 +75066,10 @@
       0,
       0
     ],
-    "attributes": []
+    "attributes": [
+      "rat",
+      "undead"
+    ]
   },
   {
     "id": 3970,
@@ -74968,7 +75102,10 @@
       0,
       0
     ],
-    "attributes": []
+    "attributes": [
+      "rat",
+      "undead"
+    ]
   },
   {
     "id": 3971,
@@ -75001,7 +75138,10 @@
       0,
       0
     ],
-    "attributes": []
+    "attributes": [
+      "rat",
+      "undead"
+    ]
   },
   {
     "id": 619,
