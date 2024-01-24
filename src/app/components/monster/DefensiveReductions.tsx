@@ -39,34 +39,49 @@ const DefensiveReductions: React.FC = observer(() => {
               required
               min={0}
               value={defenceReductions.dwh}
-              onChange={(v) => store.updateMonster({ defenceReductions: { dwh: v } })}
+              onChange={(v) => store.updateMonster({defenceReductions: {dwh: v}})}
             />
             <span className="pl-2">
-              <img src={dwh.src} width={18} className="inline-block" alt="" />
+              <img src={dwh.src} width={18} className="inline-block" alt=""/>
               {' '}
               Dragon warhammer hits
             </span>
           </div>
-          <div className="w-full mb-1">
+          <div className="w-full">
             <NumberInput
               className="form-control w-1/6"
               required
               min={0}
               value={defenceReductions.bgs}
-              onChange={(v) => store.updateMonster({ defenceReductions: { bgs: v } })}
+              onChange={(v) => store.updateMonster({defenceReductions: {bgs: v}})}
             />
             <span className="pl-2">
-              <img src={bgs.src} width={18} className="inline-block" alt="" />
+              <img src={bgs.src} width={18} className="inline-block" alt=""/>
               {' '}
               Bandos godsword damage
             </span>
           </div>
+          <div className="w-full">
+            <NumberInput
+              className="form-control w-1/6"
+              required
+              min={0}
+              value={defenceReductions.arclight}
+              onChange={(v) => store.updateMonster({defenceReductions: {arclight: v}})}
+            />
+            <span className="pl-2">
+              <img src={arc.src} width={18} className="inline-block" alt=""/>
+              {' '}
+              Arclight hits
+            </span>
+          </div>
           <Toggle
+            className="mt-1"
             checked={defenceReductions.accursed}
-            setChecked={(c) => store.updateMonster({ defenceReductions: { accursed: c } })}
+            setChecked={(c) => store.updateMonster({defenceReductions: {accursed: c}})}
             label={(
               <>
-                <img src={sceptre.src} width={18} className="inline-block" alt="" />
+                <img src={sceptre.src} width={18} className="inline-block" alt=""/>
                 {' '}
                 Accursed sceptre
               </>
@@ -74,29 +89,15 @@ const DefensiveReductions: React.FC = observer(() => {
           />
           <Toggle
             checked={defenceReductions.vulnerability}
-            setChecked={(c) => store.updateMonster({ defenceReductions: { vulnerability: c } })}
+            setChecked={(c) => store.updateMonster({defenceReductions: {vulnerability: c}})}
             label={(
               <>
-                <img src={vuln.src} width={18} className="inline-block" alt="" />
+                <img src={vuln.src} width={18} className="inline-block" alt=""/>
                 {' '}
                 Vulnerability
               </>
             )}
           />
-          <div className="w-full">
-            <NumberInput
-              className="form-control w-1/6"
-              required
-              min={0}
-              value={defenceReductions.arclight}
-              onChange={(v) => store.updateMonster({ defenceReductions: { arclight: v } })}
-            />
-            <span className="pl-2">
-              <img src={arc.src} width={18} className="inline-block" alt="" />
-              {' '}
-              Arclight hits
-            </span>
-          </div>
         </div>
       )}
     </div>
