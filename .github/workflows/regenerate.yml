@@ -22,9 +22,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          cd scripts
+          pip install -r scripts/requirements.txt
       - name: Run update scripts
         run: |
-          cd scripts && python generateEquipment.json && python generateMonsters.py
+          python generateEquipment.json
+          python generateMonsters.py
       - name: Create pull request
         run: git switch -C regenerate-json && git push --force && gh pr create -B main -H regenerate-json
