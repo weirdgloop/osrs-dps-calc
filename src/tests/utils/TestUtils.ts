@@ -6,7 +6,7 @@ import { DetailEntry, DetailKey } from '@/lib/CalcDetails';
 import merge from 'lodash.mergewith';
 import { generateEmptyPlayer } from '@/state';
 import { PartialDeep } from 'type-fest';
-import { calculateEquipmentBonusesFromGear } from '@/equipmentStats';
+import { calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import eq from '../../../cdn/json/equipment.json';
 
 const monsters = getMonsters();

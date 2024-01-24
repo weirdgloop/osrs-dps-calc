@@ -24,9 +24,8 @@ import {
 import { RecomputeValuesRequest, WorkerRequestType } from '@/types/WorkerData';
 import { scaledMonster } from '@/lib/MonsterScaling';
 import getMonsters from '@/lib/Monsters';
-import { isValidAmmoForRangedWeapon } from '@/lib/Equipment';
+import { isValidAmmoForRangedWeapon, calculateEquipmentBonusesFromGear, EquipmentBonuses } from '@/lib/Equipment';
 import UserIssueType from '@/enums/UserIssueType';
-import { calculateEquipmentBonusesFromGear, EquipmentBonuses } from '@/equipmentStats';
 import equipment from '../cdn/json/equipment.json';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
