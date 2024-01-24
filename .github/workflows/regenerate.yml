@@ -39,5 +39,5 @@ jobs:
           git switch -C regenerate-json
           git add .
           git commit -m "[automated] Update JSON files"
-          git push --set-upstream origin --force
+          git push --set-upstream origin regenerate-json --force
           gh pr create -B main -H regenerate-json -f
