@@ -681,6 +681,9 @@ export default class CombatCalc {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_INQ_BONUS, maxHit, [200 + inqPieces, 200]);
       }
     }
+    if (this.isWearingRatBoneWeapon() && mattrs.includes(MonsterAttribute.RAT)) {
+      maxHit = this.trackAdd(DetailKey.MAX_HIT_RATBANE_BONUS, maxHit, 10);
+    }
 
     return maxHit;
   }
@@ -804,6 +807,9 @@ export default class CombatCalc {
     if (this.wearing('Dragon hunter crossbow') && mattrs.includes(MonsterAttribute.DRAGON)) {
       // TODO: https://twitter.com/JagexAsh/status/1647928422843273220 for max_hit seems to be additive now
       maxHit = Math.trunc(maxHit * 5 / 4);
+    }
+    if (this.isWearingRatBoneWeapon() && mattrs.includes(MonsterAttribute.RAT)) {
+      maxHit = this.trackAdd(DetailKey.MAX_HIT_RATBANE_BONUS, maxHit, 10);
     }
 
     return maxHit;

@@ -46,6 +46,7 @@ export enum DetailKey {
   MAX_HIT_LEAFY_BONUS = 'Max hit leafy bonus',
   MAX_HIT_COLOSSALBLADE_BONUS = 'Max hit colossal blade bonus',
   MAX_HIT_INQ_BONUS = 'Max hit inquisitor\'s bonus',
+  MAX_HIT_RATBANE_BONUS = 'Max hit ratbane bonus',
   MAX_HIT_FINAL = 'Max hit',
   ACCURACY_DAWNBRINGER = 'Accuracy override dawnbringer',
   ACCURACY_BASE = 'Accuracy base',
