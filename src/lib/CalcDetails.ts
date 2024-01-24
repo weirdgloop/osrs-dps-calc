@@ -5,7 +5,7 @@ export enum DetailKey {
   DEFENCE_ROLL_TOA = 'Defence ToA roll',
   DEFENCE_ROLL_FINAL = 'Defence roll',
   ACCURACY_LEVEL = 'Accuracy level',
-  ACCURACY_PRAYER_BONUS = 'Accuracy prayer bonus',
+  ACCURACY_LEVEL_PRAYER_ = 'Accuracy level ',
   ACCURACY_STANCE_BONUS = 'Accuracy stance bonus',
   ACCURACY_EFFECTIVE_LEVEL = 'Accuracy effective level',
   ACCURACY_EFFECTIVE_LEVEL_VOID = 'Accuracy void effective level',
@@ -24,7 +24,7 @@ export enum DetailKey {
   ACCURACY_INQ_BONUS = 'Accuracy inquisitor\'s bonus',
   ACCURACY_ROLL_FINAL = 'Accuracy roll',
   DAMAGE_LEVEL = 'Damage level',
-  DAMAGE_PRAYER_BONUS = 'Damage prayer bonus',
+  DAMAGE_LEVEL_PRAYER_ = 'Damage level ',
   DAMAGE_STANCE_BONUS = 'Damage stance bonus',
   DAMAGE_EFFECTIVE_LEVEL = 'Damage effective level',
   DAMAGE_EFFECTIVE_LEVEL_VOID = 'Damage void effective level',
@@ -57,12 +57,12 @@ export enum DetailKey {
 }
 
 export interface DetailEntry {
-  label: DetailKey,
+  label: string,
   value: string,
   highlight: boolean,
 }
 
-const HIGHLIGHTS: DetailKey[] = [
+const HIGHLIGHTS: string[] = [
   DetailKey.DEFENCE_ROLL_FINAL,
   DetailKey.ACCURACY_ROLL_FINAL,
   DetailKey.MAX_HIT_BASE,
@@ -71,13 +71,13 @@ const HIGHLIGHTS: DetailKey[] = [
 ];
 
 export class CalcDetails {
-  private readonly entries: Map<DetailKey, DetailEntry> = new Map();
+  private readonly entries: Map<string, DetailEntry> = new Map();
 
   private _lines: DetailEntry[] = [];
 
   private dirty: boolean = true;
 
-  public track(label: DetailKey, value: number | string) {
+  public track(label: DetailKey | string, value: number | string) {
     // preserve the order of insertion, in case we run over something multiple times
     if (this.entries.get(label) !== undefined) {
       return;
