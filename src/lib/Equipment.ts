@@ -339,6 +339,17 @@ export const equipmentAliases = {
   12638: [24170],
 };
 
+/**
+ * Returns the canonical (base) item ID for a given item ID. This is useful if there are variants of each item.
+ * @param itemId
+ */
+export const getCanonicalItemId = (itemId: number): number => {
+  for (const [k, v] of Object.entries(equipmentAliases)) {
+    if (v.includes(itemId)) return parseInt(k);
+  }
+  return itemId;
+};
+
 export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monster): EquipmentBonuses => {
   const totals: EquipmentBonuses = {
     bonuses: {

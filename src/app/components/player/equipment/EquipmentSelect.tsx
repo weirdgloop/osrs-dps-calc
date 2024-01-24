@@ -5,6 +5,7 @@ import { getCdnImage } from '@/utils';
 import { EquipmentPiece } from '@/types/Player';
 import LazyImage from '@/app/components/generic/LazyImage';
 import { cross } from 'd3-array';
+import { equipmentAliases } from '@/lib/Equipment';
 import Combobox from '../../generic/Combobox';
 
 interface EquipmentOption {
@@ -111,6 +112,37 @@ const EquipmentSelect: React.FC = observer(() => {
           </div>
         </div>
       )}
+      customFilter={(v) => {
+        const remainingVariantGroups: { [k: number]: number[] } = {};
+
+        // For each option, add it to a variant group if necessary.
+        for (const eqOpt of v) {
+          const eqId = eqOpt.equipment.id;
+          for (const [base, vars] of Object.entries(equipmentAliases)) {
+            const baseId = parseInt(base);
+            if (baseId === eqId || vars.includes(eqId)) {
+              remainingVariantGroups[baseId] = remainingVariantGroups[baseId] ? [...remainingVariantGroups[baseId], eqId] : [eqId];
+            }
+          }
+        }
+
+        return v.filter((eqOpt) => {
+          const eqId = eqOpt.equipment.id;
+
+          // This is a base variant, keep it in the list
+          if (Object.keys(equipmentAliases).includes(eqId.toString())) return true;
+
+          for (const group of Object.values(remainingVariantGroups)) {
+            if (group.includes(eqId)) {
+              // Keep this item in the list if it is the only one left
+              return group.length === 1;
+            }
+          }
+
+          // For everything else (probably items that aren't variants), keep in the list
+          return true;
+        });
+      }}
     />
   );
 });

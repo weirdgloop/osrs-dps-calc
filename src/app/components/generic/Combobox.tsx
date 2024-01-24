@@ -18,6 +18,7 @@ interface IComboboxProps<T> {
   keepPositionAfterSelect?: boolean;
   className?: string;
   CustomItemComponent?: React.FC<{ item: T, itemString: string }>;
+  customFilter?: (v: T[], inputValue: string) => T[];
 }
 
 /**
@@ -43,6 +44,7 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     placeholder,
     className,
     CustomItemComponent,
+    customFilter,
   } = props;
   const [inputValue, setInputValue] = useState<string>(value || '');
   const [filteredItems, setFilteredItems] = useState<T[]>([]);
@@ -61,12 +63,15 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
 
     // When the input value changes, change the filtered items
     if (inputValue) {
-      const iv = inputValue.toLowerCase();
-      newFilteredItems = items.filter((v) => v.label.toLowerCase().includes(iv));
+      newFilteredItems = items.filter((v) => v.label.toLowerCase().includes(inputValue.toLowerCase()));
+
+      if (customFilter !== undefined) {
+        newFilteredItems = customFilter(newFilteredItems, inputValue);
+      }
     }
 
     setFilteredItems(newFilteredItems);
-  }, [inputValue, items]);
+  }, [inputValue, items, customFilter]);
 
   const {
     getInputProps,
