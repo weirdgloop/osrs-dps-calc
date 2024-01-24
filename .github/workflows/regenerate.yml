@@ -30,4 +30,8 @@ jobs:
           python generateEquipment.py
           python generateMonsters.py
       - name: Create pull request
-        run: git switch -C regenerate-json && git push --force && gh pr create -B main -H regenerate-json
+        run: |
+          git switch -C regenerate-json
+          git commit -m "[automated] Update JSON files"
+          git push --set-upstream origin --force
+          gh pr create -B main -H regenerate-json -f
