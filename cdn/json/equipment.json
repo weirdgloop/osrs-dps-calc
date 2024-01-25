@@ -11569,7 +11569,7 @@
     "slot": "weapon",
     "image": "Bone staff.png",
     "speed": 4,
-    "category": "Bow",
+    "category": "Powered Staff",
     "bonuses": {},
     "offensive": {
       "magic": 14
