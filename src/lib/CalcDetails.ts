@@ -27,6 +27,8 @@ export enum DetailKey {
   ACCURACY_ROLL_FINAL = 'Accuracy roll',
   DAMAGE_LEVEL = 'Damage level',
   DAMAGE_LEVEL_PRAYER = 'Damage level prayer',
+  DAMAGE_LEVEL_SOULREAPER_BONUS = 'Damage level soulreaper axe bonus',
+  DAMAGE_LEVEL_SOULREAPER = 'Damage level soulreaper axe',
   DAMAGE_EFFECTIVE_LEVEL = 'Damage effective level',
   DAMAGE_EFFECTIVE_LEVEL_VOID = 'Damage void effective level',
   DAMAGE_GEAR_BONUS = 'Damage gear bonus',

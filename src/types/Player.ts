@@ -99,6 +99,11 @@ export interface Player extends EquipmentStats {
     inWilderness: boolean;
     forinthrySurge: boolean;
     /**
+     * Soul Stacks for the Soulreaper axe.
+     @see https://oldschool.runescape.wiki/w/Soulreaper_axe
+     */
+    soulreaperStacks: number;
+    /**
      * Whether the Kandarin Hard Diary has been completed, which provides 10% increase for the enchanted bolt spec to activate.
      * @see https://oldschool.runescape.wiki/w/Kandarin_Diary#Hard
      */
