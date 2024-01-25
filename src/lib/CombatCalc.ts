@@ -912,6 +912,10 @@ export default class CombatCalc {
       maxHit = Math.trunc(magicLevel / 3 + 1);
     } else if (this.wearing('Warped sceptre')) {
       maxHit = Math.trunc((8 * magicLevel + 96) / 37);
+    } else if (this.wearing('Bone staff')) {
+      // although the +10 is technically a ratbane bonus, the weapon can't be used against non-rats
+      // and shows this max hit against the combat dummy as well
+      maxHit = Math.min(1, Math.trunc(magicLevel / 3) - 5) + 10;
     } else if (this.wearing(['Crystal staff (basic)', 'Corrupted staff (basic)'])) {
       maxHit = 23;
     } else if (this.wearing(['Crystal staff (attuned)', 'Corrupted staff (attuned)'])) {
