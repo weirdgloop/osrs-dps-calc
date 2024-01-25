@@ -665,6 +665,10 @@ export default class CombatCalc {
       maxHit = this.trackAdd(DetailKey.MAX_HIT_COLOSSALBLADE_BONUS, maxHit, Math.min(this.monster.size * 2, 10));
     }
 
+    if (this.isWearingRatBoneWeapon() && mattrs.includes(MonsterAttribute.RAT)) {
+      // applies before inq, tested 2024-01-25, str level 99 str gear 112
+      maxHit = this.trackAdd(DetailKey.MAX_HIT_RATBANE_BONUS, maxHit, 10);
+    }
     // Inquisitor's armour set gives bonuses when using the crush attack style
     if (style.type === 'crush') {
       let inqPieces = this.allEquippedItems.filter((v) => [
@@ -679,9 +683,6 @@ export default class CombatCalc {
       if (inqPieces > 0) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_INQ_BONUS, maxHit, [200 + inqPieces, 200]);
       }
-    }
-    if (this.isWearingRatBoneWeapon() && mattrs.includes(MonsterAttribute.RAT)) {
-      maxHit = this.trackAdd(DetailKey.MAX_HIT_RATBANE_BONUS, maxHit, 10);
     }
 
     return maxHit;
