@@ -130,10 +130,10 @@ export default class CombatCalc {
   }
 
   /**
-     * Simple utility function for checking if an item name is equipped. If an array of string is passed instead, this
-     * function will return a boolean indicating whether ANY of the provided items are equipped.
-     * @param item - item name
-     */
+   * Simple utility function for checking if an item name is equipped. If an array of string is passed instead, this
+   * function will return a boolean indicating whether ANY of the provided items are equipped.
+   * @param item - item name
+   */
   private wearing(item: string | string[]): boolean {
     if (Array.isArray(item)) {
       return (item as string[]).some((i) => this.allEquippedItems.includes(i));
@@ -142,201 +142,201 @@ export default class CombatCalc {
   }
 
   /**
-     * Simple utility function for checking if ALL passed items are equipped.
-     * @param items - array of item names
-     */
+   * Simple utility function for checking if ALL passed items are equipped.
+   * @param items - array of item names
+   */
   private wearingAll(items: string[]) {
     return items.every((i) => this.allEquippedItems.includes(i));
   }
 
   /**
-     * Whether the player is using either a slash, crush, or stab combat style.
-     */
+   * Whether the player is using either a slash, crush, or stab combat style.
+   */
   private isUsingMeleeStyle(): boolean {
     return ['slash', 'crush', 'stab'].includes(this.player.style.type);
   }
 
   /**
-     * Whether the player is wearing the full void set, excluding the helmet.
-     * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
-     */
+   * Whether the player is wearing the full void set, excluding the helmet.
+   * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
+   */
   private isWearingVoidRobes(): boolean {
     return this.wearing(['Void knight top', 'Void knight top (or)', 'Elite void top', 'Elite void top (or)'])
-            && this.wearing(['Void knight robe', 'Void knight robe (or)', 'Elite void robe', 'Elite void robe (or)'])
-            && this.wearing('Void knight gloves');
+      && this.wearing(['Void knight robe', 'Void knight robe (or)', 'Elite void robe', 'Elite void robe (or)'])
+      && this.wearing('Void knight gloves');
   }
 
   /**
-     * Whether the player is wearing the full elite void set, excluding the helmet.
-     * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
-     */
+   * Whether the player is wearing the full elite void set, excluding the helmet.
+   * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
+   */
   private isWearingEliteVoidRobes(): boolean {
     return this.wearing(['Elite void top', 'Elite void top (or)'])
-            && this.wearing(['Elite void robe', 'Elite void robe (or)'])
-            && this.wearing('Void knight gloves');
+      && this.wearing(['Elite void robe', 'Elite void robe (or)'])
+      && this.wearing('Void knight gloves');
   }
 
   /**
-     * Whether the player is wearing the full melee void set.
-     * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
-     */
+   * Whether the player is wearing the full melee void set.
+   * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
+   */
   private isWearingMeleeVoid(): boolean {
     return this.isWearingVoidRobes() && this.wearing(['Void melee helm', 'Void melee helm (or)']);
   }
 
   /**
-     * Whether the player is wearing the full elite ranged void set.
-     * @see https://oldschool.runescape.wiki/w/Elite_Void_Knight_equipment
-     */
+   * Whether the player is wearing the full elite ranged void set.
+   * @see https://oldschool.runescape.wiki/w/Elite_Void_Knight_equipment
+   */
   private isWearingEliteRangedVoid(): boolean {
     return this.isWearingEliteVoidRobes() && this.wearing(['Void ranger helm', 'Void ranger helm (or)']);
   }
 
   /**
-     * Whether the player is wearing the full elite magic void set.
-     * @see https://oldschool.runescape.wiki/w/Elite_Void_Knight_equipment
-     */
+   * Whether the player is wearing the full elite magic void set.
+   * @see https://oldschool.runescape.wiki/w/Elite_Void_Knight_equipment
+   */
   private isWearingEliteMagicVoid(): boolean {
     return this.isWearingEliteVoidRobes() && this.wearing(['Void mage helm', 'Void mage helm (or)']);
   }
 
   /**
-     * Whether the player is wearing the full ranged void set.
-     * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
-     */
+   * Whether the player is wearing the full ranged void set.
+   * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
+   */
   private isWearingRangedVoid(): boolean {
     return this.isWearingVoidRobes() && this.wearing(['Void ranger helm', 'Void ranger helm (or)']);
   }
 
   /**
-     * Whether the player is wearing the full magic void set.
-     * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
-     */
+   * Whether the player is wearing the full magic void set.
+   * @see https://oldschool.runescape.wiki/w/Void_Knight_equipment
+   */
   private isWearingMagicVoid(): boolean {
     return this.isWearingVoidRobes() && this.wearing(['Void mage helm', 'Void mage helm (or)']);
   }
 
   /**
-     * Whether the player is wearing any item that acts as a black mask for the purpose of its effect.
-     * @see https://oldschool.runescape.wiki/w/Black_mask
-     */
+   * Whether the player is wearing any item that acts as a black mask for the purpose of its effect.
+   * @see https://oldschool.runescape.wiki/w/Black_mask
+   */
   private isWearingBlackMask(): boolean {
     return this.isWearingImbuedBlackMask() || this.wearing(['Black mask', 'Slayer helmet']);
   }
 
   /**
-     * Whether the player is wearing any item that acts as an imbued black mask for the purpose of its effect.
-     * @see https://oldschool.runescape.wiki/w/Black_mask_(i)
-     */
+   * Whether the player is wearing any item that acts as an imbued black mask for the purpose of its effect.
+   * @see https://oldschool.runescape.wiki/w/Black_mask_(i)
+   */
   private isWearingImbuedBlackMask(): boolean {
     return this.wearing(['Black mask (i)', 'Slayer helmet (i)']);
   }
 
   /**
-     * Whether the player is using a smoke battlestaff or mystic smoke staff.
-     * @see https://oldschool.runescape.wiki/w/Smoke_battlestaff
-     */
+   * Whether the player is using a smoke battlestaff or mystic smoke staff.
+   * @see https://oldschool.runescape.wiki/w/Smoke_battlestaff
+   */
   private isWearingSmokeStaff(): boolean {
     return this.wearing(['Smoke battlestaff', 'Mystic smoke staff']);
   }
 
   /**
-     * Whether the player is using a Tzhaar weapon.
-     * @see https://oldschool.runescape.wiki/w/Obsidian_equipment
-     */
+   * Whether the player is using a Tzhaar weapon.
+   * @see https://oldschool.runescape.wiki/w/Obsidian_equipment
+   */
   private isWearingTzhaarWeapon(): boolean {
     return this.wearing(['Tzhaar-ket-em', 'Tzhaar-ket-om', 'Tzhaar-ket-om (t)', 'Toktz-xil-ak', 'Toktz-xil-ek', 'Toktz-mej-tal']);
   }
 
   /**
-     * Whether the player is wearing the entire set of obsidian armour.
-     * @see https://oldschool.runescape.wiki/w/Obsidian_equipment
-     */
+   * Whether the player is wearing the entire set of obsidian armour.
+   * @see https://oldschool.runescape.wiki/w/Obsidian_equipment
+   */
   private isWearingObsidian(): boolean {
     return this.wearingAll(['Obsidian helmet', 'Obsidian platelegs', 'Obsidian platebody']);
   }
 
   /**
-     * Whether the player is wearing a Berserker necklace.
-     * @see https://oldschool.runescape.wiki/w/Berserker_necklace
-     */
+   * Whether the player is wearing a Berserker necklace.
+   * @see https://oldschool.runescape.wiki/w/Berserker_necklace
+   */
   private isWearingBerserkerNecklace(): boolean {
     return this.wearing(['Berserker necklace', 'Berserker necklace (or)']);
   }
 
   /**
-     * Whether the player is using an item that acts as a crystal bow for the purpose of its effect.
-     * @see https://oldschool.runescape.wiki/w/Crystal_bow
-     */
+   * Whether the player is using an item that acts as a crystal bow for the purpose of its effect.
+   * @see https://oldschool.runescape.wiki/w/Crystal_bow
+   */
   private isWearingCrystalBow(): boolean {
     return this.wearing('Crystal bow') || this.allEquippedItems.some((ei) => ei.includes('Bow of faerdhinen'));
   }
 
   /**
-     * Whether the player is using any variant of Osmumten's fang.
-     * @see https://oldschool.runescape.wiki/w/Osmumten%27s_fang
-     */
+   * Whether the player is using any variant of Osmumten's fang.
+   * @see https://oldschool.runescape.wiki/w/Osmumten%27s_fang
+   */
   private isWearingFang(): boolean {
     return this.wearing(["Osmumten's fang", "Osmumten's fang (or)"]);
   }
 
   /**
-     * Whether the player is using any variant of the scythe of vitur.
-     * @see https://oldschool.runescape.wiki/w/Scythe_of_vitur
-     */
+   * Whether the player is using any variant of the scythe of vitur.
+   * @see https://oldschool.runescape.wiki/w/Scythe_of_vitur
+   */
   private isWearingScythe(): boolean {
     return this.wearing('Scythe of vitur') || this.allEquippedItems.some((ei) => ei.includes('of vitur'));
   }
 
   /**
-     * Whether the player is using the Keris dagger.
-     * @see https://oldschool.runescape.wiki/w/Keris
-     */
+   * Whether the player is using the Keris dagger.
+   * @see https://oldschool.runescape.wiki/w/Keris
+   */
   private isWearingKeris(): boolean {
     return this.allEquippedItems.some((ei) => ei.includes('Keris'));
   }
 
   /**
-     * Whether the player is wearing the entire Dharok the Wretched's equipment set.
-     * @see https://oldschool.runescape.wiki/w/Dharok_the_Wretched%27s_equipment
-     */
+   * Whether the player is wearing the entire Dharok the Wretched's equipment set.
+   * @see https://oldschool.runescape.wiki/w/Dharok_the_Wretched%27s_equipment
+   */
   private isWearingDharok(): boolean {
     return this.wearingAll(["Dharok's helm", "Dharok's platebody", "Dharok's platelegs", "Dharok's greataxe"]);
   }
 
   /**
-     * Whether the player is wearing the entire Verac the Defiled's equipment set.
-     * @see https://oldschool.runescape.wiki/w/Verac_the_Defiled%27s_equipment
-     */
+   * Whether the player is wearing the entire Verac the Defiled's equipment set.
+   * @see https://oldschool.runescape.wiki/w/Verac_the_Defiled%27s_equipment
+   */
   private isWearingVeracs(): boolean {
     return this.wearingAll(["Verac's helm", "Verac's brassard", "Verac's plateskirt", "Verac's flail"]);
   }
 
   /**
-     * Whether the player is wearing the entire Karil the Tainted's equipment set.
-     * @see https://oldschool.runescape.wiki/w/Karil_the_Tainted%27s_equipment
-     */
+   * Whether the player is wearing the entire Karil the Tainted's equipment set.
+   * @see https://oldschool.runescape.wiki/w/Karil_the_Tainted%27s_equipment
+   */
   private isWearingKarils(): boolean {
     return this.wearingAll(["Karil's coif", "Karil's leathertop", "Karil's leatherskirt", "Karil's crossbow", 'Amulet of the damned']);
   }
 
   /**
-     * Whether the player is wearing the entire Ahrim the Blighted's equipment set.
-     * @see https://oldschool.runescape.wiki/w/Ahrim_the_Blighted%27s_equipment
-     */
+   * Whether the player is wearing the entire Ahrim the Blighted's equipment set.
+   * @see https://oldschool.runescape.wiki/w/Ahrim_the_Blighted%27s_equipment
+   */
 
   private isWearingAhrims(): boolean {
     return this.wearingAll(["Ahrim's staff", "Ahrim's hood", "Ahrim's robetop", "Ahrim's robeskirt", 'Amulet of the damned']);
   }
 
   /**
-     * Whether the player is wearing a silver weapon.
-     * @see https://oldschool.runescape.wiki/w/Silver_weaponry
-     */
+   * Whether the player is wearing a silver weapon.
+   * @see https://oldschool.runescape.wiki/w/Silver_weaponry
+   */
 
   private isWearingSilverWeapon(): boolean {
     if (this.player.equipment.ammo?.name.startsWith('Silver bolts')
-            && this.player.style.type === 'ranged') {
+      && this.player.style.type === 'ranged') {
       return true;
     }
 
@@ -361,9 +361,9 @@ export default class CombatCalc {
   }
 
   /**
-     * Whether the player is wearing an Ivandis weapon--that is, a weapon capable of harming Tier 3 Vampyres.
-     * @see https://oldschool.runescape.wiki/w/Silver_weaponry
-     */
+   * Whether the player is wearing an Ivandis weapon--that is, a weapon capable of harming Tier 3 Vampyres.
+   * @see https://oldschool.runescape.wiki/w/Silver_weaponry
+   */
   private isWearingIvandisWeapon(): boolean {
     return this.wearing([
       'Ivandis flail',
@@ -373,9 +373,9 @@ export default class CombatCalc {
   }
 
   /**
-     * Whether the player is wearing a leaf-bladed weapon capable of harming leafy monsters.
-     * @see https://oldschool.runescape.wiki/w/Leafy_(attribute)
-     */
+   * Whether the player is wearing a leaf-bladed weapon capable of harming leafy monsters.
+   * @see https://oldschool.runescape.wiki/w/Leafy_(attribute)
+   */
   private isWearingLeafBladedWeapon(): boolean {
     if (this.wearing([
       'Leaf-bladed battleaxe',
@@ -395,7 +395,7 @@ export default class CombatCalc {
         'Broad bolts',
         'Amethyst broad bolts',
       ])
-            && this.player.style.type === 'ranged'
+      && this.player.style.type === 'ranged'
     ) {
       return true;
     }
@@ -404,9 +404,9 @@ export default class CombatCalc {
   }
 
   /**
-     * Whether the player is wearing a weapon capable of dealing full damage to the Corporeal Beast.
-     * @see https://oldschool.runescape.wiki/w/Corpbane_weapons
-     */
+   * Whether the player is wearing a weapon capable of dealing full damage to the Corporeal Beast.
+   * @see https://oldschool.runescape.wiki/w/Corpbane_weapons
+   */
   private isWearingCorpbaneWeapon(): boolean {
     const { weapon } = this.player.equipment;
     const isStab = this.player.style.type === 'stab';
@@ -463,8 +463,8 @@ export default class CombatCalc {
   }
 
   /**
-     * Get the NPC defence roll for this loadout, which is based on the player's current combat style
-     */
+   * Get the NPC defence roll for this loadout, which is based on the player's current combat style
+   */
   public getNPCDefenceRoll(): number {
     if (this.opts.overrides?.defenceRoll !== undefined) {
       return this.track(DetailKey.DEFENCE_ROLL_FINAL, this.opts.overrides.defenceRoll);
@@ -539,11 +539,7 @@ export default class CombatCalc {
       attackRoll = this.trackFactor(DetailKey.ACCURACY_REV_WEAPON, attackRoll, [3, 2]);
     }
     if (this.wearing('Arclight') && mattrs.includes(MonsterAttribute.DEMON)) {
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_DEMONBANE, attackRoll, [17, 10]);
-      if (this.monster.name === 'Duke Sucellus') {
-        // todo https://github.com/weirdgloop/osrs-dps-calc/issues/108
-        attackRoll = Math.trunc(attackRoll * 7 / 10);
-      }
+      attackRoll = this.trackFactor(DetailKey.ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor([7, 10]));
     }
     if (this.wearing('Dragon hunter lance') && mattrs.includes(MonsterAttribute.DRAGON)) {
       attackRoll = this.trackFactor(DetailKey.ACCURACY_DRAGONHUNTER, attackRoll, [6, 5]);
@@ -576,8 +572,8 @@ export default class CombatCalc {
   }
 
   /**
-     * Get the player's max melee hit
-     */
+   * Get the player's max melee hit
+   */
   private getPlayerMaxMeleeHit(): number {
     const { style } = this.player;
 
@@ -621,11 +617,7 @@ export default class CombatCalc {
     }
 
     if (this.wearing('Arclight') && mattrs.includes(MonsterAttribute.DEMON)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, [17, 10]);
-      if (this.monster.name === 'Duke Sucellus') {
-        // todo https://github.com/weirdgloop/osrs-dps-calc/issues/108
-        maxHit = Math.trunc(maxHit * 7 / 10);
-      }
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([7, 10]));
     }
     if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {
       const obsidianBonus = this.trackFactor(DetailKey.MAX_HIT_OBSIDIAN, baseMax, [1, 10]);
@@ -647,11 +639,7 @@ export default class CombatCalc {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_REV_WEAPON, maxHit, [3, 2]);
     }
     if (this.wearing(['Silverlight', 'Darklight', 'Silverlight (dyed)']) && mattrs.includes(MonsterAttribute.DEMON)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, [8, 5]);
-      if (this.monster.name === 'Duke Sucellus') {
-        // todo https://github.com/weirdgloop/osrs-dps-calc/issues/108
-        maxHit = Math.trunc(maxHit * 7 / 10);
-      }
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([3, 5]));
     }
     if (this.wearing('Blisterwood flail') && isVampyre(mattrs)) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [5, 4]);
@@ -761,8 +749,8 @@ export default class CombatCalc {
   }
 
   /**
-     * Get the player's max ranged hit
-     */
+   * Get the player's max ranged hit
+   */
   private getPlayerMaxRangedHit() {
     const weaponId = this.player.equipment.weapon?.id;
     const ammoId = this.player.equipment.ammo?.id;
@@ -872,15 +860,8 @@ export default class CombatCalc {
     }
 
     if (this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
-      if (this.player.buffs.markOfDarknessSpell) {
-        attackRoll = Math.trunc(attackRoll * 28 / 20);
-      } else {
-        // still retains a 20% accuracy buff without mark
-        attackRoll = Math.trunc(attackRoll * 24 / 20);
-      }
-      if (this.monster.name === 'Duke Sucellus') {
-        attackRoll = Math.trunc(attackRoll * 7 / 10);
-      }
+      const baseFactor: Factor = buffs.markOfDarknessSpell ? [8, 20] : [4, 20];
+      attackRoll = this.trackFactor(DetailKey.ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor(baseFactor));
     }
     if (this.wearing(["Thammaron's sceptre", 'Accursed sceptre']) && buffs.inWilderness) {
       attackRoll = Math.trunc(attackRoll * 3 / 2);
@@ -896,8 +877,8 @@ export default class CombatCalc {
   }
 
   /**
-     * Get the player's max magic hit
-     */
+   * Get the player's max magic hit
+   */
   private getPlayerMaxMagicHit() {
     let maxHit: number;
     const magicLevel = this.player.skills.magic + this.player.boosts.magic;
@@ -995,10 +976,7 @@ export default class CombatCalc {
     }
 
     if (this.player.buffs.markOfDarknessSpell && this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
-      maxHit = Math.trunc(maxHit * 25 / 20);
-      if (this.monster.name === 'Duke Sucellus') {
-        maxHit = Math.trunc(maxHit * 7 / 10);
-      }
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([5, 20]));
     }
 
     if (this.wearing(["Thammaron's sceptre", 'Accursed sceptre']) && buffs.inWilderness) {
@@ -1024,8 +1002,8 @@ export default class CombatCalc {
   }
 
   /**
-     * Get the max hit for this loadout, which is based on the player's current combat style
-     */
+   * Get the max hit for this loadout, which is based on the player's current combat style
+   */
   private getMaxHit() {
     const style = this.player.style.type;
 
@@ -1044,8 +1022,8 @@ export default class CombatCalc {
   }
 
   /**
-     * Get the max attack roll for this loadout, which is based on the player's current combat style
-     */
+   * Get the max attack roll for this loadout, which is based on the player's current combat style
+   */
   public getMaxAttackRoll() {
     if (this.opts.overrides?.attackRoll !== undefined) {
       return this.track(DetailKey.ACCURACY_ROLL_FINAL, this.opts.overrides?.attackRoll);
@@ -1395,8 +1373,8 @@ export default class CombatCalc {
       return true;
     }
     if (IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS.includes(monsterId)
-            && this.isUsingMeleeStyle()
-            && this.player.equipment.weapon?.category !== EquipmentCategory.SALAMANDER) {
+      && this.isUsingMeleeStyle()
+      && this.player.equipment.weapon?.category !== EquipmentCategory.SALAMANDER) {
       return true;
     }
     if (mattrs.includes(MonsterAttribute.VAMPYRE_3) && !this.isWearingIvandisWeapon()) {
@@ -1412,12 +1390,12 @@ export default class CombatCalc {
       return true;
     }
     if (this.monster.name === 'Fire Warrior of Lesarkus'
-            && (styleType !== 'ranged' || this.player.equipment.ammo?.name !== 'Ice arrows')) {
+      && (styleType !== 'ranged' || this.player.equipment.ammo?.name !== 'Ice arrows')) {
       return true;
     }
     if (this.monster.name === 'Fareed') {
       if (styleType === 'magic' && !isWaterSpell(this.player.spell)
-                || (styleType === 'ranged' && !this.player.equipment.ammo?.name?.includes('arrow'))) {
+        || (styleType === 'ranged' && !this.player.equipment.ammo?.name?.includes('arrow'))) {
         return true;
       }
     }
@@ -1426,8 +1404,8 @@ export default class CombatCalc {
   }
 
   /**
-     * Returns the player's attack speed.
-     */
+   * Returns the player's attack speed.
+   */
   public getAttackSpeed(): number {
     let attackSpeed = this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;
 
@@ -1445,22 +1423,22 @@ export default class CombatCalc {
   }
 
   /**
-     * Returns the expected damage per tick, based on the player's attack speed.
-     */
+   * Returns the expected damage per tick, based on the player's attack speed.
+   */
   public getDpt() {
     return this.getDistribution().getExpectedDamage() / this.getAttackSpeed();
   }
 
   /**
-     * Returns the damage-per-second calculation, which is the damage-per-tick divided by the number of seconds per tick.
-     */
+   * Returns the damage-per-second calculation, which is the damage-per-tick divided by the number of seconds per tick.
+   */
   public getDps() {
     return this.getDpt() / SECONDS_PER_TICK;
   }
 
   /**
-     * Returns the average hits-to-kill calculation.
-     */
+   * Returns the average hits-to-kill calculation.
+   */
   public getHtk() {
     const dist = this.getDistribution();
     const hist = dist.asHistogram();
@@ -1485,17 +1463,17 @@ export default class CombatCalc {
   }
 
   /**
-     * Returns the average time-to-kill (in seconds) calculation.
-     */
+   * Returns the average time-to-kill (in seconds) calculation.
+   */
   public getTtk() {
     return this.getHtk() * this.getAttackSpeed() * SECONDS_PER_TICK;
   }
 
   /**
-     * Returns a distribution of times-to-kill (in ticks) to probabilities.
-     * Because the result will not be densely populated (unless attack speed is 1),
-     * it is an object where keys are tick counts and values are probabilities.
-     */
+   * Returns a distribution of times-to-kill (in ticks) to probabilities.
+   * Because the result will not be densely populated (unless attack speed is 1),
+   * it is an object where keys are tick counts and values are probabilities.
+   */
   public getTtkDistribution(): Map<number, number> {
     const speed = this.getAttackSpeed();
     const dist = this.getDistribution().singleHitsplat;
@@ -1575,10 +1553,10 @@ export default class CombatCalc {
     // a special case for optimization, ruby bolts only change dps under 500 hp
     // so for high health targets, avoid recomputing dist until then
     if (this.player.style.type === 'ranged'
-            && this.player.equipment.weapon?.name.includes('rossbow')
-            && ['Ruby bolts (e)', 'Ruby dragon bolts (e)'].includes(this.player.equipment.ammo?.name || '')
-            && this.monster.monsterCurrentHp >= 500
-            && hp >= 500) {
+      && this.player.equipment.weapon?.name.includes('rossbow')
+      && ['Ruby bolts (e)', 'Ruby dragon bolts (e)'].includes(this.player.equipment.ammo?.name || '')
+      && this.monster.monsterCurrentHp >= 500
+      && hp >= 500) {
       return this.getDistribution().singleHitsplat;
     }
 
@@ -1590,6 +1568,16 @@ export default class CombatCalc {
       }),
       this.opts,
     ).getDistribution().singleHitsplat;
+  }
+
+  demonbaneFactor(baseFactor: Factor): Factor {
+    let ret = baseFactor;
+    if (this.monster.name === 'Duke Sucellus') {
+      ret = [ret[0] * 7, ret[1] * 10];
+    }
+
+    ret[0] += ret[1];
+    return ret;
   }
 
   public static distIsCurrentHpDependent(loadout: Player, monster: Monster): boolean {
