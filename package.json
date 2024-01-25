@@ -12,7 +12,8 @@
     "fmt": "next lint --fix",
     "analyse": "ANALYSE=true next build",
     "test": "jest",
-    "cdn-docker": "docker compose build data-scraper && docker compose run --rm data-scraper"
+    "cdn-docker": "docker compose build data-scraper && docker compose run --rm data-scraper",
+    "cdn-dispatch": "gh workflow run regenerate.yml"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.14",
