@@ -7,10 +7,23 @@ import merge from 'lodash.mergewith';
 import { generateEmptyPlayer } from '@/state';
 import { PartialDeep } from 'type-fest';
 import { calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
+import { Spell } from '@/types/Spell';
 import eq from '../../../cdn/json/equipment.json';
+import spellsRaw from '../../../cdn/json/spells.json';
 
 const monsters = getMonsters();
 const equipment = eq as EquipmentPiece[];
+const spells = spellsRaw as Spell[];
+
+function find<T>(arr: T[], pred: (_: T) => boolean, failMsg?: string): T {
+  const opt = arr.find(pred);
+
+  if (!opt) {
+    throw new Error(failMsg);
+  }
+
+  return opt;
+}
 
 export function getTestPlayer(monster: Monster, overrides: PartialDeep<Player> = {}): Player {
   const player = merge(generateEmptyPlayer(), overrides);
@@ -24,23 +37,45 @@ export function getTestPlayer(monster: Monster, overrides: PartialDeep<Player> =
 }
 
 export function getTestMonster(name: string, version: string, overrides: PartialDeep<Monster> = {}): Monster {
-  const monsterOption = monsters.find((option) => option.name === name && option.version === version);
+  return merge(
+    find(
+      monsters,
+      (m) => m.name === name && m.version === version,
+      `Monster not found for name '${name}' and version '${version}'`,
+    ),
+    overrides,
+  );
+}
 
-  if (!monsterOption) {
-    throw new Error(`Monster not found for name '${name}' and version '${version}'`);
-  }
-
-  return merge(monsterOption, overrides);
+export function getTestMonsterById(id: number, overrides: PartialDeep<Monster> = {}): Monster {
+  return merge(
+    find(
+      monsters,
+      (m) => m.id === id,
+      `Monster not found for id '${id}'`,
+    ),
+    overrides,
+  );
 }
 
 export function findEquipment(name: string, version: string = ''): EquipmentPiece {
-  const opt = equipment.find((e) => e.name === name && (version === '' || e.version === version));
+  return find(
+    equipment,
+    (e) => e.name === name && (version === '' || e.version === version),
+    `Equipment piece not found for name '${name}' and version '${version}'`,
+  );
+}
 
-  if (!opt) {
-    throw new Error(`Equipment piece not found for name '${name}' and version '${version}'`);
-  }
+export function findEquipmentById(id: number): EquipmentPiece {
+  return find(
+    equipment,
+    (e) => e.id === id,
+    `Equipment piece not found for id '${id}'`,
+  );
+}
 
-  return opt;
+export function findSpell(name: string): Spell {
+  return find(spells, (s) => s.name === name);
 }
 
 export function calculate(player: Player, monster: Monster) {

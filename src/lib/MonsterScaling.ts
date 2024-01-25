@@ -32,6 +32,42 @@ import {
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { keys, lerp } from '@/utils';
 
+const getDefenceFloor = (m: Monster): number => {
+  if (m.name === 'Verzik Vitur') {
+    return m.skills.def;
+  }
+  if (m.name === 'Sotetseg') {
+    return 100;
+  }
+  if (m.name === 'The Nightmare' || m.name === 'Phosani\'s Nightmare') {
+    return 120;
+  }
+  if (m.name === 'Akkha') {
+    return 70;
+  }
+  if (m.name === 'Ba-Ba') {
+    return 60;
+  }
+  if (m.name === 'Kephri') {
+    return 60;
+  }
+  if (m.name === 'Zebak') {
+    return 50;
+  }
+  if (P3_WARDEN_IDS.includes(m.id)) {
+    return 120;
+  }
+  if (m.name === 'Obelisk') {
+    return 60;
+  }
+  if (m.name === 'Nex') {
+    return 250;
+  }
+
+  // no limit
+  return 0;
+};
+
 const getToaScalingValues = (id: number): ToaScalingValues | undefined => {
   if (AKKHA_IDS.includes(id)) {
     return {
@@ -163,20 +199,20 @@ const getToaScalingValues = (id: number): ToaScalingValues | undefined => {
 };
 
 const applyDefenceReductions = (m: Monster): Monster => {
-  const newSkills = (m2: Monster, skills: Partial<Monster['skills']>): Monster => {
+  const newSkills = (current: Monster, skills: Partial<Monster['skills']>): Monster => {
     keys(skills).forEach((k) => {
-      skills[k] = Math.max(0, skills[k]!);
+      const floor = k === 'def' ? getDefenceFloor(current) : 0;
+      skills[k] = Math.max(floor, skills[k]!);
     });
     return ({
-      ...m2,
+      ...current,
       skills: {
-        ...m2.skills,
+        ...current.skills,
         ...skills,
       },
     });
   };
 
-  // todo defence reduction limits / immunities
   if (m.defenceReductions.accursed) {
     m = newSkills(m, {
       def: Math.trunc(m.skills.def * 17 / 20),
