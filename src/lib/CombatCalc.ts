@@ -632,7 +632,6 @@ export default class CombatCalc {
     }
     if (this.isWearingKeris() && mattrs.includes(MonsterAttribute.KALPHITE)) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_KERIS_BONUS, maxHit, [133, 100]);
-      maxHit = Math.trunc(maxHit * 133 / 100);
     }
     if (this.wearing('Barronite mace') && mattrs.includes(MonsterAttribute.GOLEM)) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_GOLEMBANE_BONUS, maxHit, [6, 5]);
