@@ -58,6 +58,6 @@ export function calculate(player: Player, monster: Monster) {
   };
 }
 
-export function findResult(details: DetailEntry[], key: DetailKey): string | undefined {
+export function findResult(details: DetailEntry[], key: DetailKey): unknown {
   return details.find((d) => d.label === key)?.value;
 }

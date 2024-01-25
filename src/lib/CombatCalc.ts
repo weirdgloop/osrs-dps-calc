@@ -99,20 +99,29 @@ export default class CombatCalc {
     }
   }
 
-  private track<T extends Parameters<CalcDetails['track']>[1]>(label: Parameters<CalcDetails['track']>[0], value: T): T {
-    this._details?.track(label, value);
+  private track<T extends Parameters<CalcDetails['track']>[1]>(label: Parameters<CalcDetails['track']>[0], value: T, textOverride?: Parameters<CalcDetails['track']>[2]): T {
+    this._details?.track(label, value, textOverride);
     return value;
   }
 
   private trackFactor(label: Parameters<CalcDetails['track']>[0], base: number, factor: Factor): number {
     const result = Math.trunc(base * factor[0] / factor[1]);
-    this.track(label, `${base} * ${factor[0]} ${factor[1] !== 1 ? `/ ${factor[1]}` : ''} = ${result}`);
+    const multStr = factor[0] !== 1 ? ` * ${factor[0]}` : '';
+    const divStr = factor[1] !== 1 ? ` / ${factor[1]}` : '';
+    this.track(label, result, `${base}${multStr}${divStr} = ${result}`);
+    return result;
+  }
+
+  private trackMaxHitFromEffective(label: Parameters<CalcDetails['track']>[0], effectiveLevel: number, gearBonus: number): number {
+    // a bit of a special case, and would otherwise be a lot of intermediates
+    const result = Math.trunc((effectiveLevel * gearBonus + 320) / 640);
+    this.track(label, result, `(${effectiveLevel} * ${gearBonus} + 320) / 640 = ${result}`);
     return result;
   }
 
   private trackAdd(label: Parameters<CalcDetails['track']>[0], base: number, addend: number): number {
     const result = Math.trunc(base + addend);
-    this.track(label, `${base} ${addend >= 0 ? '+' : '-'} ${addend} = ${result}`);
+    this.track(label, result, `${base} ${addend >= 0 ? '+' : '-'} ${addend} = ${result}`);
     return result;
   }
 
@@ -467,9 +476,10 @@ export default class CombatCalc {
         ? this.monster.skills.magic
         : this.monster.skills.def,
     );
-    const effectiveLevel = this.track(DetailKey.DEFENCE_ROLL_EFFECTIVE_LEVEL, level + 9);
+    const effectiveLevel = this.trackAdd(DetailKey.DEFENCE_ROLL_EFFECTIVE_LEVEL, level, 9);
 
-    let defenceRoll = this.track(DetailKey.DEFENCE_ROLL_BASE, effectiveLevel * (this.monster.defensive[this.player.style.type] + 64));
+    const statBonus = this.trackAdd(DetailKey.DEFENCE_STAT_BONUS, this.monster.defensive[this.player.style.type], 64);
+    let defenceRoll = this.trackFactor(DetailKey.DEFENCE_ROLL_BASE, effectiveLevel, [statBonus, 1]);
 
     if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) && this.monster.toaInvocationLevel) {
       defenceRoll = this.track(DetailKey.DEFENCE_ROLL_TOA, Math.trunc(defenceRoll * (250 + this.monster.toaInvocationLevel) / 250));
@@ -483,27 +493,25 @@ export default class CombatCalc {
 
     let effectiveLevel: number = this.track(DetailKey.ACCURACY_LEVEL, this.player.skills.atk + this.player.boosts.atk);
     for (const p of this.getPrayers(true)) {
-      effectiveLevel = this.trackFactor(DetailKey.ACCURACY_LEVEL_PRAYER_ + p.name, effectiveLevel, p.factorAccuracy!);
+      effectiveLevel = this.trackFactor(DetailKey.ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
     }
 
-    let stanceBonus: number;
+    let stanceBonus = 8;
     if (style.stance === 'Accurate') {
-      stanceBonus = this.track(DetailKey.ACCURACY_STANCE_BONUS, 11);
+      stanceBonus += 3;
     } else if (style.stance === 'Controlled') {
-      stanceBonus = this.track(DetailKey.ACCURACY_STANCE_BONUS, 9);
-    } else {
-      stanceBonus = this.track(DetailKey.ACCURACY_STANCE_BONUS, 8);
+      stanceBonus += 1;
     }
 
-    effectiveLevel = this.track(DetailKey.ACCURACY_EFFECTIVE_LEVEL, effectiveLevel + stanceBonus);
+    effectiveLevel = this.trackAdd(DetailKey.ACCURACY_EFFECTIVE_LEVEL, effectiveLevel, stanceBonus);
 
     const isWearingVoid = this.isWearingMeleeVoid();
     if (isWearingVoid) {
-      effectiveLevel = this.track(DetailKey.ACCURACY_EFFECTIVE_LEVEL_VOID, Math.trunc(effectiveLevel * 11 / 10));
+      effectiveLevel = this.trackFactor(DetailKey.ACCURACY_EFFECTIVE_LEVEL_VOID, effectiveLevel, [11, 10]);
     }
 
-    const gearBonus = this.track(DetailKey.ACCURACY_GEAR_BONUS, this.player.offensive[style.type]);
-    const baseRoll = this.track(DetailKey.ACCURACY_ROLL_BASE, effectiveLevel * (gearBonus + 64));
+    const gearBonus = this.trackAdd(DetailKey.ACCURACY_GEAR_BONUS, this.player.offensive[style.type], 64);
+    const baseRoll = this.trackFactor(DetailKey.ACCURACY_ROLL_BASE, effectiveLevel, [gearBonus, 1]);
     let attackRoll = baseRoll;
 
     // Specific bonuses that are applied from equipment
@@ -513,39 +521,39 @@ export default class CombatCalc {
     // These bonuses do not stack with each other
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
       const factor = <Factor>[buffs.forinthrySurge ? 17 : 14, 20];
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_FORINTHRY_SURGE_BONUS, attackRoll, factor);
+      attackRoll = this.trackFactor(DetailKey.ACCURACY_FORINTHRY_SURGE, attackRoll, factor);
     } else if (this.wearing(['Salve amulet (e)', 'Salve amulet(ei)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_SALVE_BONUS, attackRoll, [6, 5]);
+      attackRoll = this.trackFactor(DetailKey.ACCURACY_SALVE, attackRoll, [6, 5]);
     } else if (this.wearing(['Salve amulet', 'Salve amulet(i)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_SALVE_BONUS, attackRoll, [7, 6]);
+      attackRoll = this.trackFactor(DetailKey.ACCURACY_SALVE, attackRoll, [7, 6]);
     } else if (this.isWearingBlackMask() && buffs.onSlayerTask) {
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_BLACK_MASK_BONUS, attackRoll, [7, 6]);
+      attackRoll = this.trackFactor(DetailKey.ACCURACY_BLACK_MASK, attackRoll, [7, 6]);
     }
 
     if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {
-      const obsidianBonus = this.trackFactor(DetailKey.ACCURACY_OBSIDIAN_BONUS, baseRoll, [1, 10]);
+      const obsidianBonus = this.trackFactor(DetailKey.ACCURACY_OBSIDIAN, baseRoll, [1, 10]);
       attackRoll = this.trackAdd(DetailKey.ACCURACY_OBSIDIAN, attackRoll, obsidianBonus);
     }
 
     if (this.wearing(["Viggora's chainmace", 'Ursine chainmace']) && buffs.inWilderness) {
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_REV_WEAPON_BONUS, attackRoll, [3, 2]);
+      attackRoll = this.trackFactor(DetailKey.ACCURACY_REV_WEAPON, attackRoll, [3, 2]);
     }
     if (this.wearing('Arclight') && mattrs.includes(MonsterAttribute.DEMON)) {
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_DEMONBANE_BONUS, attackRoll, [17, 10]);
+      attackRoll = this.trackFactor(DetailKey.ACCURACY_DEMONBANE, attackRoll, [17, 10]);
       if (this.monster.name === 'Duke Sucellus') {
         // todo https://github.com/weirdgloop/osrs-dps-calc/issues/108
         attackRoll = Math.trunc(attackRoll * 7 / 10);
       }
     }
     if (this.wearing('Dragon hunter lance') && mattrs.includes(MonsterAttribute.DRAGON)) {
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_DRAGONHUNTER_BONUS, attackRoll, [6, 5]);
+      attackRoll = this.trackFactor(DetailKey.ACCURACY_DRAGONHUNTER, attackRoll, [6, 5]);
     }
     if (this.wearing('Keris partisan of breaching') && mattrs.includes(MonsterAttribute.KALPHITE)) {
       // https://twitter.com/JagexAsh/status/1704107285381787952
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_KERIS_BONUS, attackRoll, [133, 100]);
+      attackRoll = this.trackFactor(DetailKey.ACCURACY_KERIS, attackRoll, [133, 100]);
     }
     if (this.wearing(['Blisterwood flail', 'Blisterwood sickle']) && isVampyre(mattrs)) {
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_VAMPYREBANE_BONUS, attackRoll, [21, 20]);
+      attackRoll = this.trackFactor(DetailKey.ACCURACY_VAMPYREBANE, attackRoll, [21, 20]);
     }
 
     // Inquisitor's armour set gives bonuses when using the crush attack style
@@ -560,7 +568,7 @@ export default class CombatCalc {
       if (inqPieces === 3) inqPieces = 5;
 
       if (inqPieces > 0) {
-        attackRoll = this.trackFactor(DetailKey.ACCURACY_INQ_BONUS, attackRoll, [200 + inqPieces, 200]);
+        attackRoll = this.trackFactor(DetailKey.ACCURACY_INQ, attackRoll, [200 + inqPieces, 200]);
       }
     }
 
@@ -575,27 +583,25 @@ export default class CombatCalc {
 
     let effectiveLevel: number = this.track(DetailKey.DAMAGE_LEVEL, this.player.skills.str + this.player.boosts.str);
     for (const p of this.getPrayers(false)) {
-      effectiveLevel = this.trackFactor(DetailKey.DAMAGE_LEVEL_PRAYER_ + p.name, effectiveLevel, p.factorStrength!);
+      effectiveLevel = this.trackFactor(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, p.factorStrength!);
     }
 
-    let stanceBonus: number;
+    let stanceBonus = 8;
     if (style.stance === 'Aggressive') {
-      stanceBonus = this.track(DetailKey.DAMAGE_STANCE_BONUS, 11);
+      stanceBonus += 3;
     } else if (style.stance === 'Controlled') {
-      stanceBonus = this.track(DetailKey.DAMAGE_STANCE_BONUS, 9);
-    } else {
-      stanceBonus = this.track(DetailKey.DAMAGE_STANCE_BONUS, 8);
+      stanceBonus += 1;
     }
 
-    effectiveLevel = this.track(DetailKey.DAMAGE_EFFECTIVE_LEVEL, effectiveLevel + stanceBonus);
+    effectiveLevel = this.trackAdd(DetailKey.DAMAGE_EFFECTIVE_LEVEL, effectiveLevel, stanceBonus);
 
     const isWearingVoid = this.isWearingMeleeVoid();
     if (isWearingVoid) {
-      effectiveLevel = this.track(DetailKey.DAMAGE_EFFECTIVE_LEVEL_VOID, Math.trunc(effectiveLevel * 11 / 10));
+      effectiveLevel = this.trackFactor(DetailKey.DAMAGE_EFFECTIVE_LEVEL_VOID, effectiveLevel, [11, 10]);
     }
 
-    const gearBonus = this.track(DetailKey.DAMAGE_GEAR_BONUS, this.player.bonuses.str);
-    const baseMax = this.track(DetailKey.MAX_HIT_BASE, Math.trunc((effectiveLevel * (gearBonus + 64) + 320) / 640));
+    const gearBonus = this.trackAdd(DetailKey.DAMAGE_GEAR_BONUS, this.player.bonuses.str, 64);
+    const baseMax = this.trackMaxHitFromEffective(DetailKey.MAX_HIT_BASE, effectiveLevel, gearBonus);
     let maxHit = baseMax;
 
     // Specific bonuses that are applied from equipment
@@ -605,70 +611,70 @@ export default class CombatCalc {
     // These bonuses do not stack with each other
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
       const factor = <Factor>[buffs.forinthrySurge ? 17 : 14, 20];
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_FORINTHRY_SURGE_BONUS, maxHit, factor);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_FORINTHRY_SURGE, maxHit, factor);
     } else if (this.wearing(['Salve amulet (e)', 'Salve amulet(ei)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_SALVE_BONUS, maxHit, [6, 5]);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_SALVE, maxHit, [6, 5]);
     } else if (this.wearing(['Salve amulet', 'Salve amulet(i)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_SALVE_BONUS, maxHit, [7, 6]);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_SALVE, maxHit, [7, 6]);
     } else if (this.isWearingBlackMask() && buffs.onSlayerTask) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_BLACK_MASK_BONUS, maxHit, [7, 6]);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_BLACK_MASK, maxHit, [7, 6]);
     }
 
     if (this.wearing('Arclight') && mattrs.includes(MonsterAttribute.DEMON)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE_BONUS, maxHit, [17, 10]);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, [17, 10]);
       if (this.monster.name === 'Duke Sucellus') {
         // todo https://github.com/weirdgloop/osrs-dps-calc/issues/108
         maxHit = Math.trunc(maxHit * 7 / 10);
       }
     }
     if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {
-      const obsidianBonus = this.trackFactor(DetailKey.MAX_HIT_OBSIDIAN_BONUS, baseMax, [1, 10]);
+      const obsidianBonus = this.trackFactor(DetailKey.MAX_HIT_OBSIDIAN, baseMax, [1, 10]);
       maxHit = this.trackAdd(DetailKey.MAX_HIT_OBSIDIAN, maxHit, obsidianBonus);
     }
     if (this.isWearingTzhaarWeapon() && this.isWearingBerserkerNecklace()) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_BERSERKER_BONUS, maxHit, [6, 5]);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_BERSERKER, maxHit, [6, 5]);
     }
     if (this.wearing('Dragon hunter lance') && mattrs.includes(MonsterAttribute.DRAGON)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER_BONUS, maxHit, [6, 5]);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER, maxHit, [6, 5]);
     }
     if (this.isWearingKeris() && mattrs.includes(MonsterAttribute.KALPHITE)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_KERIS_BONUS, maxHit, [133, 100]);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_KERIS, maxHit, [133, 100]);
     }
     if (this.wearing('Barronite mace') && mattrs.includes(MonsterAttribute.GOLEM)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_GOLEMBANE_BONUS, maxHit, [6, 5]);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_GOLEMBANE, maxHit, [6, 5]);
     }
     if (this.wearing(["Viggora's chainmace", 'Ursine chainmace']) && buffs.inWilderness) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_REV_WEAPON_BONUS, maxHit, [3, 2]);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_REV_WEAPON, maxHit, [3, 2]);
     }
     if (this.wearing(['Silverlight', 'Darklight', 'Silverlight (dyed)']) && mattrs.includes(MonsterAttribute.DEMON)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE_BONUS, maxHit, [8, 5]);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, [8, 5]);
       if (this.monster.name === 'Duke Sucellus') {
         // todo https://github.com/weirdgloop/osrs-dps-calc/issues/108
         maxHit = Math.trunc(maxHit * 7 / 10);
       }
     }
     if (this.wearing('Blisterwood flail') && isVampyre(mattrs)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE_BONUS, maxHit, [5, 4]);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [5, 4]);
     }
     if (this.wearing('Blisterwood sickle') && isVampyre(mattrs)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE_BONUS, maxHit, [23, 20]);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [23, 20]);
     }
     if (this.wearing('Ivandis flail') && isVampyre(mattrs)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE_BONUS, maxHit, [6, 5]);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [6, 5]);
     }
     if ((this.wearing("Efaritay's aid") || this.isWearingSilverWeapon()) && mattrs.includes(MonsterAttribute.VAMPYRE_1)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_EFARITAY_BONUS, maxHit, [11, 10]); // todo should this be before/after the vampyrebane weapons above?
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_EFARITAY, maxHit, [11, 10]); // todo should this be before/after the vampyrebane weapons above?
     }
     if (this.wearing('Leaf-bladed battleaxe') && mattrs.includes(MonsterAttribute.LEAFY)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_LEAFY_BONUS, maxHit, [47, 40]);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_LEAFY, maxHit, [47, 40]);
     }
     if (this.wearing('Colossal blade')) {
-      maxHit = this.trackAdd(DetailKey.MAX_HIT_COLOSSALBLADE_BONUS, maxHit, Math.min(this.monster.size * 2, 10));
+      maxHit = this.trackAdd(DetailKey.MAX_HIT_COLOSSALBLADE, maxHit, Math.min(this.monster.size * 2, 10));
     }
 
     if (this.isWearingRatBoneWeapon() && mattrs.includes(MonsterAttribute.RAT)) {
       // applies before inq, tested 2024-01-25, str level 99 str gear 112
-      maxHit = this.trackAdd(DetailKey.MAX_HIT_RATBANE_BONUS, maxHit, 10);
+      maxHit = this.trackAdd(DetailKey.MAX_HIT_RATBANE, maxHit, 10);
     }
     // Inquisitor's armour set gives bonuses when using the crush attack style
     if (style.type === 'crush') {
@@ -682,7 +688,7 @@ export default class CombatCalc {
       if (inqPieces === 3) inqPieces = 5;
 
       if (inqPieces > 0) {
-        maxHit = this.trackFactor(DetailKey.MAX_HIT_INQ_BONUS, maxHit, [200 + inqPieces, 200]);
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_INQ, maxHit, [200 + inqPieces, 200]);
       }
     }
 
@@ -700,7 +706,7 @@ export default class CombatCalc {
 
     let effectiveLevel: number = this.track(DetailKey.ACCURACY_LEVEL, this.player.skills.ranged + this.player.boosts.ranged);
     for (const p of this.getPrayers(true)) {
-      effectiveLevel = this.trackFactor(DetailKey.ACCURACY_LEVEL_PRAYER_ + p.name, effectiveLevel, p.factorAccuracy!);
+      effectiveLevel = this.trackFactor(DetailKey.ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
     }
 
     if (style.stance === 'Accurate') {
@@ -768,7 +774,7 @@ export default class CombatCalc {
 
     let effectiveLevel: number = this.track(DetailKey.DAMAGE_LEVEL, this.player.skills.ranged + this.player.boosts.ranged);
     for (const p of this.getPrayers(false)) {
-      effectiveLevel = this.trackFactor(DetailKey.DAMAGE_LEVEL_PRAYER_ + p.name, effectiveLevel, p.factorStrength!);
+      effectiveLevel = this.trackFactor(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, p.factorStrength!);
     }
 
     if (style.stance === 'Accurate') {
@@ -822,7 +828,7 @@ export default class CombatCalc {
       maxHit = Math.trunc(maxHit * 5 / 4);
     }
     if (this.isWearingRatBoneWeapon() && mattrs.includes(MonsterAttribute.RAT)) {
-      maxHit = this.trackAdd(DetailKey.MAX_HIT_RATBANE_BONUS, maxHit, 10);
+      maxHit = this.trackAdd(DetailKey.MAX_HIT_RATBANE, maxHit, 10);
     }
 
     return maxHit;
@@ -833,7 +839,7 @@ export default class CombatCalc {
 
     let effectiveLevel: number = this.track(DetailKey.ACCURACY_LEVEL, this.player.skills.magic + this.player.boosts.magic);
     for (const p of this.getPrayers(true)) {
-      effectiveLevel = this.trackFactor(DetailKey.ACCURACY_LEVEL_PRAYER_ + p.name, effectiveLevel, p.factorAccuracy!);
+      effectiveLevel = this.trackFactor(DetailKey.ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
     }
 
     if (style.stance === 'Accurate') {

@@ -36,7 +36,7 @@ const DebugCalcDetails: React.FC = observer(() => {
           {details.map((d) => (
             <tr key={d.label} className="hover:bg-btns-100 hover:dark:bg-btns-100">
               <td className={`border text-center w-1/2 border-l ${d.highlight ? 'dark:text-white text-black font-bold' : 'dark:text-body-400 text-gray-400'}`}>{d.label}</td>
-              <td className={`border text-center w-1/2 border-l ${d.highlight ? 'dark:text-white text-black font-bold' : 'dark:text-body-400 text-gray-400'}`}>{d.value}</td>
+              <td className={`border text-center w-1/2 border-l ${d.highlight ? 'dark:text-white text-black font-bold' : 'dark:text-body-400 text-gray-400'}`}>{d.displayValue}</td>
             </tr>
           ))}
         </tbody>
