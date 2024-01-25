@@ -982,6 +982,10 @@ export default class CombatCalc {
       }
     }
 
+    if (this.wearing(["Thammaron's sceptre", 'Accursed sceptre']) && buffs.inWilderness) {
+      maxHit = Math.trunc(maxHit * 3 / 2);
+    }
+
     return maxHit;
   }
 
