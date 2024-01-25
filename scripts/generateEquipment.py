@@ -130,8 +130,9 @@ def main():
         }
 
         # Trim out 0 values in stats
-        for section in ['bonuses', 'offensive', 'defensive']:
-            equipment[section] = {k:v for (k,v) in equipment[section].items() if v != 0}
+        # todo this was causing items to not clear out values in stats they do not have
+        # for section in ['bonuses', 'offensive', 'defensive']:
+        #     equipment[section] = {k:v for (k,v) in equipment[section].items() if v != 0}
 
         # Handle 2H weapons
         if equipment['slot'] == '2h':
