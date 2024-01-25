@@ -17,7 +17,7 @@ import InitialLoad from '@/app/components/InitialLoad';
 import LoadoutComparison from '@/app/components/results/LoadoutComparison';
 import TtkComparison from '@/app/components/results/TtkComparison';
 import ShareModal from '@/app/components/ShareModal';
-import DebugCalcDetails from '@/app/components/results/CalcDetails';
+import DebugCalcDetails from '@/app/components/results/DebugCalcDetails';
 
 const Home: NextPage = observer(() => {
   const store = useStore();

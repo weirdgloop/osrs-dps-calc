@@ -23,6 +23,7 @@ const DebugCalcDetails: React.FC = observer(() => {
           </h3>
         </div>
           )}
+      defaultIsOpen
     >
       <table className="w-full">
         <thead>
