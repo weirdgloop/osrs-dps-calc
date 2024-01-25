@@ -36,4 +36,4 @@ yarn-error.log*
 
 scripts/*.json
 .idea/
-.yarn/
+.yarn/install-state.gz
