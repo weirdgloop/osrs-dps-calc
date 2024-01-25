@@ -1105,6 +1105,13 @@ export default class CombatCalc {
     const standardHitDist = HitDistribution.linear(acc, 0, max);
     let dist = new AttackDistribution([standardHitDist]);
 
+    // Scurrius' giant rat
+    if (this.monster.id === 7223) {
+      return new AttackDistribution([
+        HitDistribution.single(1.0, Math.min(this.monster.skills.hp, max)),
+      ]);
+    }
+
     if (this.isWearingFang()) {
       const shrink = Math.trunc(max * 3 / 20);
       dist = new AttackDistribution(
