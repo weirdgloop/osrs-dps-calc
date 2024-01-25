@@ -55,7 +55,6 @@ const getDefenceFloor = (m: Monster): number => {
     return 50;
   }
   if (P3_WARDEN_IDS.includes(m.id)) {
-    // todo this floor is different (90) during enrage, how do we model that?
     return 120;
   }
   if (m.name === 'Obelisk') {
