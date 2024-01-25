@@ -112,21 +112,36 @@ const ammoForRangedWeapons: { [weapon: number]: number[] } = {
   25867: [], // Bow of faerdhinen (c)
 };
 
+export enum AmmoApplicability {
+  /** Include the ammo slot bonuses in the equipment stats */
+  INCLUDED,
+  /** Allow the ammo but do not include its ranged accuracy and strength bonuses */
+  ALLOWED,
+  /** The ammo is incompatible with the weapon */
+  INVALID,
+}
+
 /**
  * Returns whether the given ammo item ID is valid ammo for the given ranged weapon ID.
  * Will return true if no weapon is equipped, or no ranged weapon is equipped.
  * @param weaponId - the item ID of the ranged weapon
  * @param ammoId - the item ID of the ammo (such as bronze arrows)
  */
-export const isValidAmmoForRangedWeapon = (weaponId?: number, ammoId?: number) => {
-  if (!weaponId) return true; // No weapon, ammo is valid
-  if (!Object.prototype.hasOwnProperty.call(ammoForRangedWeapons, weaponId)) return true; // Probably not a ranged weapon, ammo is valid
+export const ammoApplicability = (weaponId?: number, ammoId?: number): AmmoApplicability => {
+  const validAmmo = ammoForRangedWeapons[weaponId || -1];
 
-  const validAmmo = ammoForRangedWeapons[weaponId];
-  if (validAmmo.length === 0 && ammoId === undefined) return true; // No ammo is valid for this weapon, no ammo was passed, valid
-  if (ammoId && validAmmo.includes(ammoId)) return true; // Ammo can be used with this weapon
+  // The weapon does not use ammo
+  if (!validAmmo || validAmmo.length === 0) {
+    return AmmoApplicability.ALLOWED;
+  }
 
-  return false; // Ammo is not valid for this weapon
+  // weapon requires ammo, and we have one that matches the list
+  if (ammoId !== undefined && validAmmo.includes(ammoId)) {
+    return AmmoApplicability.INCLUDED;
+  }
+
+  // weapon requires ammo, but we don't have a matching one
+  return AmmoApplicability.INVALID;
 };
 
 /**
@@ -380,16 +395,19 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
       return;
     }
 
-    // If this is the ammo slot, determine whether the ammo is compatible with the current weapon.
-    if (piece.slot === 'ammo' && !isValidAmmoForRangedWeapon(player.equipment.weapon?.id, piece.id)) {
-      // If it is not valid ammo, then don't include this in the bonuses.
-      return;
-    }
+    // skip over ammo slot's ranged bonuses if it is not used by the bow
+    const applyRangedStats = piece.slot !== 'ammo' || ammoApplicability(player.equipment.weapon?.id, piece.id) === AmmoApplicability.INCLUDED;
 
     keys(piece.bonuses).forEach((stat) => {
+      if (stat === 'ranged_str' && !applyRangedStats) {
+        return;
+      }
       totals.bonuses[stat] += piece.bonuses[stat] || 0;
     });
     keys(piece.offensive).forEach((stat) => {
+      if (stat === 'ranged' && !applyRangedStats) {
+        return;
+      }
       totals.offensive[stat] += piece.offensive[stat] || 0;
     });
     keys(piece.defensive).forEach((stat) => {

@@ -33,6 +33,7 @@ import { scaledMonster } from '@/lib/MonsterScaling';
 import { CombatStyleStance } from '@/types/PlayerCombatStyle';
 import { CalcDetails, DetailEntry, DetailKey } from '@/lib/CalcDetails';
 import { Factor } from '@/lib/Math';
+import { AmmoApplicability, ammoApplicability } from '@/lib/Equipment';
 
 const DEFAULT_ATTACK_SPEED = 4;
 const SECONDS_PER_TICK = 0.6;
@@ -689,6 +690,12 @@ export default class CombatCalc {
   }
 
   private getPlayerMaxRangedAttackRoll() {
+    const weaponId = this.player.equipment.weapon?.id;
+    const ammoId = this.player.equipment.ammo?.id;
+    if (ammoApplicability(weaponId, ammoId) === AmmoApplicability.INVALID) {
+      return 0;
+    }
+
     const { style } = this.player;
 
     let effectiveLevel: number = this.track(DetailKey.ACCURACY_LEVEL, this.player.skills.ranged + this.player.boosts.ranged);
@@ -751,6 +758,12 @@ export default class CombatCalc {
      * Get the player's max ranged hit
      */
   private getPlayerMaxRangedHit() {
+    const weaponId = this.player.equipment.weapon?.id;
+    const ammoId = this.player.equipment.ammo?.id;
+    if (ammoApplicability(weaponId, ammoId) === AmmoApplicability.INVALID) {
+      return 0;
+    }
+
     const { style } = this.player;
 
     let effectiveLevel: number = this.track(DetailKey.DAMAGE_LEVEL, this.player.skills.ranged + this.player.boosts.ranged);

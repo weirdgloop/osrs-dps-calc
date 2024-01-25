@@ -25,7 +25,8 @@ import { RecomputeValuesRequest, WorkerRequestType } from '@/types/WorkerData';
 import { scaledMonster } from '@/lib/MonsterScaling';
 import getMonsters from '@/lib/Monsters';
 import {
-  isValidAmmoForRangedWeapon,
+  AmmoApplicability,
+  ammoApplicability,
   calculateEquipmentBonusesFromGear,
   EquipmentBonuses,
   getCanonicalItemId,
@@ -582,7 +583,7 @@ class GlobalState implements State {
 
     // For each loadout, check if there are any issues we should surface to the user.
     for (const [k, l] of Object.entries(this.loadouts)) {
-      if (!isValidAmmoForRangedWeapon(l.equipment.weapon?.id, l.equipment.ammo?.id)) {
+      if (ammoApplicability(l.equipment.weapon?.id, l.equipment.ammo?.id) === AmmoApplicability.INVALID) {
         if (l.equipment.ammo?.name) {
           issues.push({ type: UserIssueType.EQUIPMENT_WRONG_AMMO, loadout: parseInt(k), message: 'This ammo does not work with your current weapon' });
         } else {
