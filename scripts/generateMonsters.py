@@ -214,8 +214,15 @@ def main():
     required_imgs = set(required_imgs)
 
     # Fetch all the images from the wiki and store them for local serving
+    saved_image_paths = set()
     for idx, img in enumerate(required_imgs):
-        if os.path.isfile(IMG_PATH + img):
+        dest_path = IMG_PATH + img
+        if dest_path.lower() in saved_image_paths:
+            print('[WARN] Case-sensitive image filename clashes: ' + dest_path)
+            continue
+
+        saved_image_paths.add(dest_path.lower())
+        if os.path.isfile(dest_path):
             skipped_img_dls += 1
             continue
 
@@ -224,7 +231,7 @@ def main():
             'User-Agent': 'osrs-dps-calc (https://github.com/weirdgloop/osrs-dps-calc)'
         })
         if r.status_code == 200:
-            with open(IMG_PATH + img, 'wb') as f:
+            with open(dest_path, 'wb') as f:
                 f.write(r.content)
                 print('Saved image: ' + img)
                 success_img_dls += 1
