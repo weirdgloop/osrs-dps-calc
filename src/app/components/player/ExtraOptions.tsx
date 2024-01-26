@@ -94,17 +94,25 @@ const ExtraOptions: React.FC = observer(() => {
         />
         <div className="w-full">
           <NumberInput
-            className="form-control w-1/6"
+            className="form-control w-12"
             required
             min={0}
             max={5}
             value={player.buffs.soulreaperStacks}
             onChange={(v) => store.updatePlayer({ buffs: { soulreaperStacks: v } })}
           />
-          <span className="pl-2">
+          <span className="ml-1 text-sm select-none">
             <img src={soulreaper_axe.src} width={18} className="inline-block" alt="" />
             {' '}
-            Soul Stacks (Soulreaper axe)
+            Soul stacks
+            {' '}
+            <span
+              className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+              data-tooltip-id="tooltip"
+              data-tooltip-content="When using the soulreaper axe, every hit gives a soul stack."
+            >
+              ?
+            </span>
           </span>
         </div>
       </div>
