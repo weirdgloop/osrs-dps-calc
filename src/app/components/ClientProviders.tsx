@@ -13,7 +13,7 @@ const ClientProviders: React.FC<PropsWithChildren> = (props) => {
   const { children } = props;
 
   return (
-    <ThemeProvider enableSystem attribute="class">
+    <ThemeProvider defaultTheme="dark" enableSystem={false} enableColorScheme={false} attribute="class">
       <StoreProvider store={store}>
         <main className="flex flex-col h-[100vh]">
           <div>
