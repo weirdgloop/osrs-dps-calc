@@ -31,6 +31,8 @@ const Footer: React.FC = observer(() => {
           >
             <IconBrandGithub size={15} />
           </a>
+        </div>
+        <div>
           <button
             type="button"
             className="underline"
@@ -46,8 +48,9 @@ const Footer: React.FC = observer(() => {
             {' '}
             manual mode
           </button>
-        </div>
-        <div>
+          {' '}
+          &#183;
+          {' '}
           <a href="https://weirdgloop.org/privacy" target="_blank">Privacy</a>
           {' '}
           &#183;
