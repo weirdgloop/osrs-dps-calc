@@ -69,6 +69,7 @@ const ammoForRangedWeapons: { [weapon: number]: number[] } = {
   857: commonAmmoCategories().bow_t40, // Yew shortbow
   855: commonAmmoCategories().bow_t40, // Yew longbow
   10282: commonAmmoCategories().bow_t40, // Yew comp bow
+  28794: commonAmmoCategories().bow_t50, // Bone shortbow
   6724: commonAmmoCategories().bow_t50, // Seercull
   861: commonAmmoCategories().bow_t50, // Magic shortbow
   12788: commonAmmoCategories().bow_t50, // Magic shortbow (i)
