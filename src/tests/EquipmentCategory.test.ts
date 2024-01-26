@@ -7,5 +7,6 @@ test('getCombatStylesForCategory', () => {
     { name: 'Pound', type: 'crush', stance: 'Aggressive' },
     { name: 'Pummel', type: 'crush', stance: 'Aggressive' },
     { name: 'Smash', type: 'crush', stance: 'Aggressive' },
+    { name: 'Spell', type: 'magic', stance: 'Manual Cast' },
   ]);
 });
