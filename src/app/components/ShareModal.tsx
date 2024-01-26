@@ -6,6 +6,7 @@ import { ImportableData } from '@/types/State';
 import { toJS } from 'mobx';
 import { generateShortlink, isDevServer } from '@/utils';
 import { toast } from 'react-toastify';
+import { IconClipboardCopy } from '@tabler/icons-react';
 
 const ShareModal: React.FC = observer(() => {
   const store = useStore();
@@ -42,22 +43,6 @@ const ShareModal: React.FC = observer(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ui.showShareModal]);
 
-  useEffect(() => {
-    const input = inputRef.current;
-    const clickListener = () => {
-      navigator.clipboard.writeText(inputRef.current?.value as string).then(() => {
-        toast('Copied share link to clipboard!', { toastId: 'share' });
-      }).catch(() => {});
-    };
-
-    if (input) {
-      input.addEventListener('click', clickListener);
-    }
-    return () => {
-      input?.removeEventListener('click', clickListener);
-    };
-  }, [inputRef]);
-
   return (
     <Modal
       isOpen={ui.showShareModal}
@@ -66,8 +51,20 @@ const ShareModal: React.FC = observer(() => {
     >
       <div className="text-sm">
         <p>You can share your current calculator state (loadouts and selected monster) with friends by sending them the link below.</p>
-        <div className="mt-2 font-semibold">
+        <div className="mt-2 flex gap-1">
           <input ref={inputRef} readOnly className="form-control w-full" value={shareId ? `${domain}?id=${shareId}` : 'Generating...'} />
+          <button
+            className="form-control flex items-center gap-1 hover:scale-105"
+            type="button"
+            onClick={() => {
+              navigator.clipboard.writeText(inputRef.current?.value as string).then(() => {
+                toast('Copied share link to clipboard!', { toastId: 'share' });
+              }).catch(() => {});
+            }}
+          >
+            <IconClipboardCopy className="w-5" />
+            Copy
+          </button>
         </div>
         {error && (
         <p className="mt-2 text-red-400 dark:text-red-200">
