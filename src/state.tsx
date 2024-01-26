@@ -111,6 +111,7 @@ export const generateEmptyPlayer: () => Player = () => ({
     chargeSpell: false,
     markOfDarknessSpell: false,
     forinthrySurge: false,
+    soulreaperStacks: 0,
   },
   spell: null,
 });

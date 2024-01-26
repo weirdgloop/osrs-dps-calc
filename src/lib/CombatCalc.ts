@@ -576,10 +576,20 @@ export default class CombatCalc {
    */
   private getPlayerMaxMeleeHit(): number {
     const { style } = this.player;
+    const { buffs } = this.player;
 
-    let effectiveLevel: number = this.track(DetailKey.DAMAGE_LEVEL, this.player.skills.str + this.player.boosts.str);
+    const baseLevel: number = this.trackAdd(DetailKey.DAMAGE_LEVEL, this.player.skills.str, this.player.boosts.str);
+    let effectiveLevel: number = baseLevel;
+
     for (const p of this.getPrayers(false)) {
       effectiveLevel = this.trackFactor(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, p.factorStrength!);
+    }
+
+    if (this.wearing('Soulreaper axe')) {
+      // does not stack multiplicatively with prayers
+      const stacks = Math.max(0, Math.min(5, buffs.soulreaperStacks));
+      const bonus = this.trackFactor(DetailKey.DAMAGE_LEVEL_SOULREAPER_BONUS, baseLevel, [stacks * 6, 100]);
+      effectiveLevel = this.trackAdd(DetailKey.DAMAGE_LEVEL_SOULREAPER, effectiveLevel, bonus);
     }
 
     let stanceBonus = 8;
@@ -602,7 +612,6 @@ export default class CombatCalc {
 
     // Specific bonuses that are applied from equipment
     const mattrs = this.monster.attributes;
-    const { buffs } = this.player;
 
     // These bonuses do not stack with each other
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {

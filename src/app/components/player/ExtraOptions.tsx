@@ -5,6 +5,8 @@ import slayer from '@/public/img/misc/slayer.webp';
 import skull from '@/public/img/misc/skull.webp';
 import diary from '@/public/img/misc/diary.png';
 import forinthry_surge from '@/public/img/misc/forinthry_surge.webp';
+import soulreaper_axe from '@/public/img/misc/soulreaper_axe.png';
+import NumberInput from '@/app/components/generic/NumberInput';
 import Toggle from '../generic/Toggle';
 
 const ExtraOptions: React.FC = observer(() => {
@@ -90,6 +92,21 @@ const ExtraOptions: React.FC = observer(() => {
             </>
           )}
         />
+        <div className="w-full">
+          <NumberInput
+            className="form-control w-1/6"
+            required
+            min={0}
+            max={5}
+            value={player.buffs.soulreaperStacks}
+            onChange={(v) => store.updatePlayer({ buffs: { soulreaperStacks: v } })}
+          />
+          <span className="pl-2">
+            <img src={soulreaper_axe.src} width={18} className="inline-block" alt="" />
+            {' '}
+            Soul Stacks (Soulreaper axe)
+          </span>
+        </div>
       </div>
     </div>
 
