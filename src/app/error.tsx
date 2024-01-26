@@ -20,7 +20,7 @@ const Error: React.FC<IErrorProps> = (props) => {
         <h2 className="font-serif font-bold text-lg text-orange-400 dark:text-orange-300">There was an error</h2>
         <p className="text-sm">
           If this continues, please report it to us on
-          <a href="https://discord.gg/runescapewiki" target="_blank" rel="noreferrer">Discord</a>
+          <a href="https://discord.gg/JXeUnR9stP" target="_blank" rel="noreferrer">Discord</a>
           .
         </p>
         <div className="mt-4">

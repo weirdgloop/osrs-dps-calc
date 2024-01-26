@@ -21,7 +21,7 @@ const TopBar: React.FC = observer(() => {
           <div className="block ml-6">
             <div className="flex text-body-200 text-sm font-medium space-x-2">
               <a
-                href="https://discord.gg/runescapewiki"
+                href="https://discord.gg/JXeUnR9stP"
                 target="_blank"
                 className="transition-all hover:scale-105 no-underline text-white border border-transparent bg-[#5865F2] py-2 px-2.5 rounded-md flex gap-1"
               >
