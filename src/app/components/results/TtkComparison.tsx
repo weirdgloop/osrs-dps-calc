@@ -150,6 +150,7 @@ const TtkComparison: React.FC = observer(() => {
                 dataKey="name"
                 stroke="#777777"
                 interval="equidistantPreserveStart"
+                tickFormatter={(v: string) => `${parseFloat(v)}`}
               />
               <YAxis
                 stroke="#777777"
