@@ -15,7 +15,7 @@ export const PlayerTab: React.FC<PlayerTabProps> = (props) => {
   return (
     <button
       type="button"
-      className={`flex flex-initial shadow w-10 h-10 cursor-pointer justify-center items-center rounded transition-[background] ${isActive ? ' bg-tile dark:bg-dark-700' : 'bg-body-400 dark:bg-dark-200'}`}
+      className={`flex flex-initial shadow w-10 h-10 cursor-pointer justify-center items-center rounded transition-[background] ${isActive ? ' bg-tile dark:bg-dark-100' : 'hover:dark:bg-dark-100 bg-body-400 dark:bg-dark-200'}`}
       onClick={onClick}
       data-tooltip-id="tooltip"
       data-tooltip-content={name}
