@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
   BarChart, XAxis, YAxis, Tooltip, ResponsiveContainer, Bar, TooltipProps, CartesianGrid,
 } from 'recharts';
@@ -12,6 +12,7 @@ import LazyImage from '@/app/components/generic/LazyImage';
 import SectionAccordion from '@/app/components/generic/SectionAccordion';
 import Toggle from '@/app/components/generic/Toggle';
 import { observer } from 'mobx-react-lite';
+import { max } from 'd3-array';
 
 const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
@@ -47,6 +48,14 @@ const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = observer(({ dist }
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
 
+  const [tickCount, domainMax] = useMemo(() => {
+    const highest = max(data, (d) => d.chance)!;
+    const stepsize = 10 ** Math.floor(Math.log10(highest) - 1);
+    const ceilHighest = Math.ceil(1 / stepsize * highest) * stepsize;
+    const count = 1 + Math.ceil(1 / stepsize * highest);
+    return [count, ceilHighest];
+  }, [data]);
+
   return (
     <SectionAccordion
       defaultIsOpen={prefs.showHitDistribution}
@@ -71,9 +80,10 @@ const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = observer(({ dist }
           label="Hide 0s"
           className="text-black dark:text-white mb-4"
         />
-        <ResponsiveContainer width="100%" height={150}>
+        <ResponsiveContainer width="100%" height={200}>
           <BarChart
             data={data}
+            margin={{ top: 11, left: 11 }}
           >
             <XAxis
               // label={{ value: 'damage', position: 'bottom' }}
@@ -84,8 +94,9 @@ const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = observer(({ dist }
             <YAxis
               // label={{ value: 'chance', angle: -90, position: 'left' }}
               stroke="#777777"
-              domain={[0, 'dataMax']}
-              tickFormatter={(v: number) => `${Math.floor(v * 100).toString()}%`}
+              domain={[0, domainMax]}
+              tickCount={tickCount}
+              tickFormatter={(v: number) => `${parseFloat((v * 100).toFixed(2))}%`}
               width={35}
               interval="equidistantPreserveStart"
             />

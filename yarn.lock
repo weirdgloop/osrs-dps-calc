@@ -5871,7 +5871,7 @@ __metadata:
     react-toastify: "npm:^9.1.3"
     react-tooltip: "npm:^5.13.2"
     react-virtuoso: "npm:^4.6.2"
-    recharts: "npm:^2.10.3"
+    recharts: "patch:recharts@npm%3A2.10.3#~/.yarn/patches/recharts-npm-2.10.3-179add6aaa.patch"
     tailwindcss: "npm:^3.3.2"
     ts-jest: "npm:^29.1.1"
     ts-node: "npm:^10.9.2"
@@ -6380,7 +6380,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"recharts@npm:^2.10.3":
+"recharts@npm:2.10.3":
   version: 2.10.3
   resolution: "recharts@npm:2.10.3"
   dependencies:
@@ -6397,6 +6397,26 @@ __metadata:
     react: ^16.0.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
   checksum: 7c2896e05bef4777362621ab3b4de5aaa2469370295638028e93f1fc917fbf93c94ff09d330c5d01529c50d2b7a9b4a29a4f259e3f39b0a7b471f9dfe5ecbe1d
+  languageName: node
+  linkType: hard
+
+"recharts@patch:recharts@npm%3A2.10.3#~/.yarn/patches/recharts-npm-2.10.3-179add6aaa.patch":
+  version: 2.10.3
+  resolution: "recharts@patch:recharts@npm%3A2.10.3#~/.yarn/patches/recharts-npm-2.10.3-179add6aaa.patch::version=2.10.3&hash=631609"
+  dependencies:
+    clsx: "npm:^2.0.0"
+    eventemitter3: "npm:^4.0.1"
+    lodash: "npm:^4.17.19"
+    react-is: "npm:^16.10.2"
+    react-smooth: "npm:^2.0.5"
+    recharts-scale: "npm:^0.4.4"
+    tiny-invariant: "npm:^1.3.1"
+    victory-vendor: "npm:^36.6.8"
+  peerDependencies:
+    prop-types: ^15.6.0
+    react: ^16.0.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: 307f5e2f92441691a6925333a94465e066697fd93ace3a8a93e907981c452febbd2b5031516a91329a645b4d35728eb00985084de39bc4fbee9c553eb205b3d8
   languageName: node
   linkType: hard
 

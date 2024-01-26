@@ -34,7 +34,7 @@
     "react-toastify": "^9.1.3",
     "react-tooltip": "^5.13.2",
     "react-virtuoso": "^4.6.2",
-    "recharts": "^2.10.3"
+    "recharts": "patch:recharts@npm%3A2.10.3#~/.yarn/patches/recharts-npm-2.10.3-179add6aaa.patch"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",

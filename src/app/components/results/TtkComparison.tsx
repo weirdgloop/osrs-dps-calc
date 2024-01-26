@@ -143,6 +143,7 @@ const TtkComparison: React.FC = observer(() => {
           <ResponsiveContainer width="100%" height={200}>
             <LineChart
               data={data}
+              margin={{ top: 11 }}
             >
               <XAxis
                 allowDecimals
@@ -152,7 +153,7 @@ const TtkComparison: React.FC = observer(() => {
               />
               <YAxis
                 stroke="#777777"
-                domain={[0, '100']}
+                domain={[0, 100]}
                 interval="equidistantPreserveStart"
               />
               <CartesianGrid stroke="gray" strokeDasharray="5 5" />

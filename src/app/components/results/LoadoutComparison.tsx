@@ -326,6 +326,14 @@ const LoadoutComparison: React.FC = observer(() => {
     };
   }, [xAxisType, yAxisType, monster, loadouts]);
 
+  const [tickCount, domainMax] = useMemo(() => {
+    const highest = data.max;
+    const stepsize = 10 ** Math.floor(Math.log10(highest) - 1);
+    const ceilHighest = Math.ceil(1 / stepsize * highest) * stepsize - 1 / 1e9;
+    const count = 1 + Math.ceil(1 / stepsize * highest);
+    return [count, ceilHighest];
+  }, [data]);
+
   const generateLines = useCallback(() => {
     const lines: React.ReactNode[] = [];
 
@@ -390,6 +398,7 @@ const LoadoutComparison: React.FC = observer(() => {
           <ResponsiveContainer width="100%" height={200}>
             <LineChart
               data={data.lines}
+              margin={{ top: 11 }}
             >
               <XAxis
                 allowDecimals
@@ -399,7 +408,9 @@ const LoadoutComparison: React.FC = observer(() => {
               />
               <YAxis
                 stroke="#777777"
-                domain={[data.min, data.max]}
+                domain={[0, domainMax]}
+                tickCount={tickCount}
+                tickFormatter={(v: number) => `${parseFloat(v.toFixed(2))}`}
                 interval="equidistantPreserveStart"
               />
               <CartesianGrid stroke="gray" strokeDasharray="5 5" />
