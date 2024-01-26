@@ -1,21 +1,14 @@
 import { useStore } from '@/state';
 import {
-  IconMoon, IconSettings, IconShare2, IconSun,
+  IconBrandDiscord,
+  IconShare2,
 } from '@tabler/icons-react';
 import wiki from '@/public/img/Wiki@2x.webp';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { observer } from 'mobx-react-lite';
-import { useTheme } from 'next-themes';
 
 const TopBar: React.FC = observer(() => {
   const store = useStore();
-  const { resolvedTheme, setTheme } = useTheme();
-  const isDark = resolvedTheme === 'dark';
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   return (
     <div className="mx-auto px-3 sm:px-6 lg:px-8 bg-btns-400 dark:bg-dark-500 shadow border-b-4 border-body-500 dark:border-dark-200">
@@ -26,45 +19,24 @@ const TopBar: React.FC = observer(() => {
             <span className="font-bold font-serif text-white">DPS Calculator</span>
           </div>
           <div className="block ml-6">
-            <div className="flex border border-body-500 bg-[#3e2816] dark:bg-dark-300 dark:border-dark-200 text-body-200 py-2 px-2.5 rounded-md text-sm font-medium space-x-4">
-              {mounted && (
-              <button
-                type="button"
-                data-tooltip-id="tooltip"
-                data-tooltip-content={`Toggle ${isDark ? 'light' : 'dark'} mode`}
-                className="transition-all hover:scale-105 hover:text-white"
-                onClick={() => {
-                  setTheme(isDark ? 'light' : 'dark');
-                }}
+            <div className="flex text-body-200 text-sm font-medium space-x-2">
+              <a
+                href="https://discord.gg/runescapewiki"
+                target="_blank"
+                className="transition-all hover:scale-105 no-underline text-white border border-transparent bg-[#5865F2] py-2 px-2.5 rounded-md flex gap-1"
               >
-                {(isDark) ? (
-                  <IconSun size={20} aria-label="Toggle light mode" />
-                ) : (
-                  <IconMoon size={20} aria-label="Toggle dark mode" />
-                )}
-              </button>
-              )}
+                <IconBrandDiscord size={20} aria-label="Preferences" />
+                <div className="hidden md:block">Feedback? Join Discord!</div>
+              </a>
               <button
                 type="button"
-                data-tooltip-id="tooltip"
-                data-tooltip-content="Preferences"
-                className="transition-all hover:scale-105 hover:text-white"
-                onClick={() => {
-                  store.updateUIState({ showPreferencesModal: true });
-                }}
-              >
-                <IconSettings size={20} aria-label="Preferences" />
-              </button>
-              <button
-                type="button"
-                data-tooltip-id="tooltip"
-                data-tooltip-content="Share"
-                className="transition-all hover:scale-105 hover:text-white"
+                className="transition-all hover:scale-105 hover:text-white border border-body-500 bg-[#3e2816] py-2 px-2.5 rounded-md dark:bg-dark-300 dark:border-dark-200 flex gap-1"
                 onClick={() => {
                   store.updateUIState({ showShareModal: true });
                 }}
               >
                 <IconShare2 size={20} aria-label="Share" />
+                <div className="hidden md:block">Share</div>
               </button>
             </div>
           </div>

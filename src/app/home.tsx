@@ -12,7 +12,6 @@ import ResultsContainer from '@/app/components/results/ResultsContainer';
 import { WorkerResponses, WorkerResponseType } from '@/types/WorkerData';
 import { IReactionPublic, reaction, toJS } from 'mobx';
 import { WORKER_JSON_REVIVER } from '@/utils';
-import PreferencesModal from '@/app/components/PreferencesModal';
 import InitialLoad from '@/app/components/InitialLoad';
 import LoadoutComparison from '@/app/components/results/LoadoutComparison';
 import TtkComparison from '@/app/components/results/TtkComparison';
@@ -137,7 +136,6 @@ const Home: NextPage = observer(() => {
         closeButton={false}
         className="text-sm"
       />
-      <PreferencesModal />
       <ShareModal />
     </div>
   );
