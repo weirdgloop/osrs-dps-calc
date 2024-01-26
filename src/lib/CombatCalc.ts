@@ -42,6 +42,7 @@ const TTK_DIST_MAX_ITER_ROUNDS = 1000;
 const TTK_DIST_EPSILON = 0.0001;
 
 const AUTOCAST_STANCES: CombatStyleStance[] = ['Autocast', 'Defensive Autocast'];
+const CAST_STANCES: CombatStyleStance[] = [...AUTOCAST_STANCES, 'Manual Cast'];
 
 export interface CalcOpts {
   loadoutName: string,
@@ -91,7 +92,7 @@ export default class CombatCalc {
 
   private sanitizeInputs() {
     // we should do clone-edits here to prevent affecting ui state
-    if (!AUTOCAST_STANCES.includes(this.player.style.stance)) {
+    if (!CAST_STANCES.includes(this.player.style.stance)) {
       this.player = {
         ...this.player,
         spell: null,

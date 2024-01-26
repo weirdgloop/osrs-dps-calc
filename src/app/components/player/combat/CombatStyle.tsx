@@ -32,7 +32,7 @@ const CombatStyle: React.FC<CombatStyleProps> = observer((props) => {
 
       if (style.type === 'magic' && style.stance === 'Defensive Autocast') {
         path = { image: 'styles/760' };
-      } else if (style.type === 'magic' && style.stance === 'Autocast') {
+      } else if (style.type === 'magic' && ['Autocast', 'Manual Cast'].includes(style.stance)) {
         path = { image: 'tabs/spells' };
       } else if (path !== undefined) {
         path = { image: `styles/${path.image}` };

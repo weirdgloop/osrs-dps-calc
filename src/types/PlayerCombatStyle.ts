@@ -8,7 +8,9 @@ export type CombatStyleStance =
   'Defensive' |
   'Defensive Autocast' |
   'Longrange' |
-  'Rapid';
+  'Rapid' |
+  // Psuedo stances
+  'Manual Cast';
 
 export interface PlayerCombatStyle {
   name: string,
