@@ -27,6 +27,7 @@ const Footer: React.FC = observer(() => {
             className="flex border rounded-full p-0.5 border-gray-400"
             href="https://github.com/weirdgloop/osrs-dps-calc"
             target="_blank"
+            aria-label="Visit the GitHub repo"
           >
             <IconBrandGithub size={15} />
           </a>
