@@ -155,6 +155,7 @@ const TtkComparison: React.FC = observer(() => {
                 stroke="#777777"
                 domain={[0, 100]}
                 interval="equidistantPreserveStart"
+                tickFormatter={(v: number) => `${v}%`}
               />
               <CartesianGrid stroke="gray" strokeDasharray="5 5" />
               <Tooltip
