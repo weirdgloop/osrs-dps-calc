@@ -199,6 +199,7 @@ const getToaScalingValues = (id: number): ToaScalingValues | undefined => {
 };
 
 const applyDefenceReductions = (m: Monster): Monster => {
+  const reductions = m.inputs.defenceReductions;
   const newSkills = (current: Monster, skills: Partial<Monster['skills']>): Monster => {
     keys(skills).forEach((k) => {
       const floor = k === 'def' ? getDefenceFloor(current) : 0;
@@ -213,12 +214,12 @@ const applyDefenceReductions = (m: Monster): Monster => {
     });
   };
 
-  if (m.defenceReductions.accursed) {
+  if (reductions.accursed) {
     m = newSkills(m, {
       def: Math.trunc(m.skills.def * 17 / 20),
       magic: Math.trunc(m.skills.magic * 17 / 20),
     });
-  } else if (m.defenceReductions.vulnerability) {
+  } else if (reductions.vulnerability) {
     // todo tome of water increases this to 15% reduction,
     // but how do we handle that?
     m = newSkills(m, {
@@ -226,14 +227,14 @@ const applyDefenceReductions = (m: Monster): Monster => {
     });
   }
 
-  for (let i = 0; i < m.defenceReductions.dwh; i++) {
+  for (let i = 0; i < reductions.dwh; i++) {
     m = newSkills(m, {
       def: m.skills.def - Math.trunc(m.skills.def * 3 / 10),
     });
   }
 
   const arclightDivisor = m.attributes.includes(MonsterAttribute.DEMON) ? 10 : 20;
-  for (let i = 0; i < m.defenceReductions.arclight; i++) {
+  for (let i = 0; i < reductions.arclight; i++) {
     m = newSkills(m, {
       atk: m.skills.atk - Math.trunc(m.skills.atk / arclightDivisor) - 1,
       str: m.skills.str - Math.trunc(m.skills.str / arclightDivisor) - 1,
@@ -241,7 +242,7 @@ const applyDefenceReductions = (m: Monster): Monster => {
     });
   }
 
-  let bgsDmg = m.defenceReductions.bgs;
+  let bgsDmg = reductions.bgs;
   if (bgsDmg > 0) {
     const applyBgsDmg = (skill: number): number => {
       const newValue = Math.max(0, skill - bgsDmg);
@@ -264,6 +265,7 @@ const applyDefenceReductions = (m: Monster): Monster => {
 
 // eslint-disable-next-line import/prefer-default-export
 export const scaledMonster = (m: Monster): Monster => {
+  const { inputs } = m;
   // vard's strength and defence scale linearly throughout the fight based on hp
   if (m.name === 'Vardorvis') {
     let vardRanges = {
@@ -285,7 +287,7 @@ export const scaledMonster = (m: Monster): Monster => {
       };
     }
 
-    const currHp = Number.isFinite(m.monsterCurrentHp) ? m.monsterCurrentHp : vardRanges.maxHp;
+    const currHp = Number.isFinite(inputs.monsterCurrentHp) ? inputs.monsterCurrentHp : vardRanges.maxHp;
     return applyDefenceReductions({
       ...m,
       skills: {
@@ -304,18 +306,18 @@ export const scaledMonster = (m: Monster): Monster => {
       return applyDefenceReductions(m);
     }
 
-    const invoFactor = TOA_CORE_IDS.includes(m.id) ? m.toaInvocationLevel : 4 * m.toaInvocationLevel;
+    const invoFactor = TOA_CORE_IDS.includes(m.id) ? inputs.toaInvocationLevel : 4 * inputs.toaInvocationLevel;
 
     let pathLevelFactor = 0;
     if (TOMBS_OF_AMASCUT_PATH_MONSTER_IDS.includes(m.id)) {
-      const pathLevel = Math.min(6, Math.max(0, m.toaPathLevel));
+      const pathLevel = Math.min(6, Math.max(0, inputs.toaPathLevel));
       if (pathLevel >= 1) {
         pathLevelFactor += 30;
-        pathLevelFactor += 50 * m.toaPathLevel;
+        pathLevelFactor += 50 * inputs.toaPathLevel;
       }
     }
 
-    const partySize = Math.min(8, Math.max(1, m.partySize));
+    const partySize = Math.min(8, Math.max(1, inputs.partySize));
     let partyFactor = 0;
     if (partySize >= 2) {
       partyFactor += 9 * Math.min(2, partySize - 1);
@@ -342,7 +344,7 @@ export const scaledMonster = (m: Monster): Monster => {
 
   // tob only scales hp and nothing else
   if (TOB_MONSTER_IDS.includes(m.id)) {
-    const partySize = Math.min(5, Math.max(3, m.partySize));
+    const partySize = Math.min(5, Math.max(3, inputs.partySize));
     return applyDefenceReductions({
       ...m,
       skills: {
@@ -353,7 +355,7 @@ export const scaledMonster = (m: Monster): Monster => {
   }
 
   if (TOB_EM_MONSTER_IDS.includes(m.id)) {
-    const partySize = Math.min(5, Math.max(1, m.partySize));
+    const partySize = Math.min(5, Math.max(1, inputs.partySize));
     return applyDefenceReductions({
       ...m,
       skills: {
@@ -364,11 +366,11 @@ export const scaledMonster = (m: Monster): Monster => {
   }
 
   if (m.attributes.includes(MonsterAttribute.XERICIAN)) {
-    const cmb = Math.min(126, Math.max(3, m.partyMaxCombatLevel));
-    const hp = Math.min(99, Math.max(1, m.partyMaxHpLevel));
-    const min = Math.min(99, Math.max(1, m.partyAvgMiningLevel));
-    const ps = Math.min(100, Math.max(1, m.partySize));
-    const cm = m.isFromCoxCm;
+    const cmb = Math.min(126, Math.max(3, inputs.partyMaxCombatLevel));
+    const hp = Math.min(99, Math.max(1, inputs.partyMaxHpLevel));
+    const min = Math.min(99, Math.max(1, inputs.partyAvgMiningLevel));
+    const ps = Math.min(100, Math.max(1, inputs.partySize));
+    const cm = inputs.isFromCoxCm;
 
     const sqrt = (x: number) => Math.trunc(Math.sqrt(x));
 

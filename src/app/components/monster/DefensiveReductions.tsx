@@ -12,7 +12,7 @@ import { useStore } from '@/state';
 
 const DefensiveReductions: React.FC = observer(() => {
   const store = useStore();
-  const { defenceReductions } = store.monster;
+  const { defenceReductions } = store.monster.inputs;
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -39,7 +39,7 @@ const DefensiveReductions: React.FC = observer(() => {
               required
               min={0}
               value={defenceReductions.dwh}
-              onChange={(v) => store.updateMonster({ defenceReductions: { dwh: v } })}
+              onChange={(v) => store.updateMonster({ inputs: { defenceReductions: { dwh: v } } })}
             />
             <span className="pl-2">
               <img src={dwh.src} width={18} className="inline-block" alt="" />
@@ -53,7 +53,7 @@ const DefensiveReductions: React.FC = observer(() => {
               required
               min={0}
               value={defenceReductions.bgs}
-              onChange={(v) => store.updateMonster({ defenceReductions: { bgs: v } })}
+              onChange={(v) => store.updateMonster({ inputs: { defenceReductions: { bgs: v } } })}
             />
             <span className="pl-2">
               <img src={bgs.src} width={18} className="inline-block" alt="" />
@@ -67,7 +67,7 @@ const DefensiveReductions: React.FC = observer(() => {
               required
               min={0}
               value={defenceReductions.arclight}
-              onChange={(v) => store.updateMonster({ defenceReductions: { arclight: v } })}
+              onChange={(v) => store.updateMonster({ inputs: { defenceReductions: { arclight: v } } })}
             />
             <span className="pl-2">
               <img src={arc.src} width={18} className="inline-block" alt="" />
@@ -78,7 +78,7 @@ const DefensiveReductions: React.FC = observer(() => {
           <Toggle
             className="mt-1"
             checked={defenceReductions.accursed}
-            setChecked={(c) => store.updateMonster({ defenceReductions: { accursed: c } })}
+            setChecked={(c) => store.updateMonster({ inputs: { defenceReductions: { accursed: c } } })}
             label={(
               <>
                 <img src={sceptre.src} width={18} className="inline-block" alt="" />
@@ -89,7 +89,7 @@ const DefensiveReductions: React.FC = observer(() => {
           />
           <Toggle
             checked={defenceReductions.vulnerability}
-            setChecked={(c) => store.updateMonster({ defenceReductions: { vulnerability: c } })}
+            setChecked={(c) => store.updateMonster({ inputs: { defenceReductions: { vulnerability: c } } })}
             label={(
               <>
                 <img src={vuln.src} width={18} className="inline-block" alt="" />

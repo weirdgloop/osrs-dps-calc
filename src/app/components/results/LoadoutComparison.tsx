@@ -132,7 +132,10 @@ function* inputRange(
       for (let newHp = baseMonster.skills.hp; newHp >= 0; newHp--) {
         const m: Monster = {
           ...baseMonster,
-          monsterCurrentHp: newHp,
+          inputs: {
+            ...baseMonster.inputs,
+            monsterCurrentHp: newHp,
+          },
         };
         yield {
           xValue: newHp,

@@ -145,21 +145,23 @@ class GlobalState implements State {
       slash: 20,
       stab: 20,
     },
-    isFromCoxCm: false,
-    toaInvocationLevel: 0,
-    toaPathLevel: 0,
-    partyMaxCombatLevel: 126,
-    partyAvgMiningLevel: 99,
-    partyMaxHpLevel: 99,
-    partySize: 1,
-    monsterCurrentHp: 150,
     attributes: [MonsterAttribute.DEMON],
-    defenceReductions: {
-      vulnerability: false,
-      accursed: false,
-      dwh: 0,
-      arclight: 0,
-      bgs: 0,
+    inputs: {
+      isFromCoxCm: false,
+      toaInvocationLevel: 0,
+      toaPathLevel: 0,
+      partyMaxCombatLevel: 126,
+      partyAvgMiningLevel: 99,
+      partyMaxHpLevel: 99,
+      partySize: 1,
+      monsterCurrentHp: 150,
+      defenceReductions: {
+        vulnerability: false,
+        accursed: false,
+        dwh: 0,
+        arclight: 0,
+        bgs: 0,
+      },
     },
   };
 
@@ -287,13 +289,15 @@ class GlobalState implements State {
     return this.ui.issues.find((t) => t.type === type && t.loadout === loadout) || false;
   }
 
-  recalculateEquipmentBonusesFromGear() {
-    const totals = calculateEquipmentBonusesFromGear(this.player, this.monster);
+  recalculateEquipmentBonusesFromGear(loadoutIx?: number) {
+    loadoutIx = loadoutIx !== undefined ? loadoutIx : this.selectedLoadout;
+
+    const totals = calculateEquipmentBonusesFromGear(this.loadouts[loadoutIx], this.monster);
     this.updatePlayer({
       bonuses: totals.bonuses,
       offensive: totals.offensive,
       defensive: totals.defensive,
-    });
+    }, loadoutIx);
   }
 
   updateUIState(ui: PartialDeep<UI>) {
@@ -331,9 +335,22 @@ class GlobalState implements State {
   }
 
   updateImportedData(data: ImportableData) {
-    this.selectedLoadout = data.selectedLoadout;
+    const monsterById = getMonsters().find((m) => m.id === data.monster.id);
+    if (!monsterById) {
+      throw new Error(`Failed to find monster by id '${data.monster.id}' from shortlink`);
+    }
+
+    // only use the shortlink for user-input fields, trust cdn for others in case they change
+    this.updateMonster({
+      ...monsterById,
+      inputs: data.monster.inputs,
+    });
+
+    // manually recompute equipment in case their metadata has changed since the shortlink was created
     this.loadouts = merge(this.loadouts, data.loadouts);
-    this.updateMonster(data.monster);
+    this.loadouts.forEach((_, i) => this.recalculateEquipmentBonusesFromGear(i));
+
+    this.selectedLoadout = data.selectedLoadout;
   }
 
   loadPreferences() {
@@ -448,8 +465,11 @@ class GlobalState implements State {
   /**
    * Update the player state.
    * @param player
+   * @param loadoutIx Which loadout to update. Defaults to the current selected loadout.
    */
-  updatePlayer(player: PartialDeep<Player>) {
+  updatePlayer(player: PartialDeep<Player>, loadoutIx?: number) {
+    loadoutIx = loadoutIx !== undefined ? loadoutIx : this.selectedLoadout;
+
     const eq = player.equipment;
     if (eq && (Object.hasOwn(eq, 'weapon') || Object.hasOwn(eq, 'shield'))) {
       const currentWeapon = this.equipmentData.weapon;
@@ -477,9 +497,9 @@ class GlobalState implements State {
       }
     }
 
-    this.loadouts[this.selectedLoadout] = merge(this.player, player);
+    this.loadouts[loadoutIx] = merge(this.player, player);
     if (eq || Object.hasOwn(player, 'spell')) {
-      this.recalculateEquipmentBonusesFromGear();
+      this.recalculateEquipmentBonusesFromGear(loadoutIx);
     }
   }
 

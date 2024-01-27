@@ -488,8 +488,8 @@ export default class CombatCalc {
     const statBonus = this.trackAdd(DetailKey.DEFENCE_STAT_BONUS, this.monster.defensive[this.player.style.type], 64);
     let defenceRoll = this.trackFactor(DetailKey.DEFENCE_ROLL_BASE, effectiveLevel, [statBonus, 1]);
 
-    if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) && this.monster.toaInvocationLevel) {
-      defenceRoll = this.track(DetailKey.DEFENCE_ROLL_TOA, Math.trunc(defenceRoll * (250 + this.monster.toaInvocationLevel) / 250));
+    if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) && this.monster.inputs.toaInvocationLevel) {
+      defenceRoll = this.track(DetailKey.DEFENCE_ROLL_TOA, Math.trunc(defenceRoll * (250 + this.monster.inputs.toaInvocationLevel) / 250));
     }
 
     return this.track(DetailKey.DEFENCE_ROLL_FINAL, defenceRoll);
@@ -1291,8 +1291,8 @@ export default class CombatCalc {
       if (this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)'])) {
         const chance = 0.06 * (this.player.buffs.kandarinDiary ? 1.1 : 1.0);
         const effectDmg = this.wearing('Zaryte crossbow')
-          ? Math.min(110, Math.trunc(this.monster.monsterCurrentHp * 22 / 100))
-          : Math.min(100, Math.trunc(this.monster.monsterCurrentHp / 5));
+          ? Math.min(110, Math.trunc(this.monster.inputs.monsterCurrentHp * 22 / 100))
+          : Math.min(100, Math.trunc(this.monster.inputs.monsterCurrentHp / 5));
         dist = new AttackDistribution([
           new HitDistribution([
             ...dist.dists[0].scaleProbability(1 - chance).hits,
@@ -1552,7 +1552,7 @@ export default class CombatCalc {
   }
 
   distAtHp(hp: number): HitDistribution {
-    if (!CombatCalc.distIsCurrentHpDependent(this.player, this.monster) || hp === this.monster.monsterCurrentHp) {
+    if (!CombatCalc.distIsCurrentHpDependent(this.player, this.monster) || hp === this.monster.inputs.monsterCurrentHp) {
       return this.getDistribution().singleHitsplat;
     }
 
@@ -1561,7 +1561,7 @@ export default class CombatCalc {
     if (this.player.style.type === 'ranged'
       && this.player.equipment.weapon?.name.includes('rossbow')
       && ['Ruby bolts (e)', 'Ruby dragon bolts (e)'].includes(this.player.equipment.ammo?.name || '')
-      && this.monster.monsterCurrentHp >= 500
+      && this.monster.inputs.monsterCurrentHp >= 500
       && hp >= 500) {
       return this.getDistribution().singleHitsplat;
     }
@@ -1570,7 +1570,10 @@ export default class CombatCalc {
       this.player,
       scaledMonster({
         ...this.monster,
-        monsterCurrentHp: hp,
+        inputs: {
+          ...this.monster.inputs,
+          monsterCurrentHp: hp,
+        },
       }),
       this.opts,
     ).getDistribution().singleHitsplat;
