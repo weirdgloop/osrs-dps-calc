@@ -7,6 +7,10 @@ import {
 } from '@/tests/utils/TestUtils';
 import { Prayer } from '@/enums/Prayer';
 
+// Generated tests by https://github.com/LlemonDuck/wiki-calc-test-caser
+// Ideally it is better to override Player.bonuses and Player.offensive to prevent flakiness,
+// but these are very quick to add and give us a good sense of matching in-game situations.
+
 describe('Generated tests', () => {
   test('Osmumten\'s fang in max melee', () => {
     const monster = getTestMonsterById(415);
