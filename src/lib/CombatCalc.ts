@@ -1249,7 +1249,7 @@ export default class CombatCalc {
 
       if (this.wearing(['Diamond bolts (e)', 'Diamond dragon bolts (e)'])) {
         const chance = 0.1 * kandarinDiaryFactor;
-        const effectMax = Math.trunc(max * (zaryte ? 26 : 15) / 100);
+        const effectMax = max + Math.trunc(max * (zaryte ? 26 : 15) / 100);
         dist = new AttackDistribution([
           new HitDistribution([
             ...standardHitDist.scaleProbability(1 - chance).hits,
