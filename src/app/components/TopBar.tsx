@@ -17,20 +17,25 @@ const TopBar: React.FC = observer(() => {
           <div className="flex-shrink-0 flex items-center gap-2 select-none">
             <a target="_blank" href="https://oldschool.runescape.wiki"><img src={wiki.src} width={50} alt="OSRS Wiki" /></a>
             <span className="font-bold font-serif text-white">DPS Calculator</span>
+            <span
+              className="text-sm text-white px-1 py-0.5 bg-orange-700 rounded [text-shadow:_0_1px_0_rgb(0_0_0_/_30%)] lowercase"
+            >
+              Beta
+            </span>
           </div>
           <div className="block ml-6">
-            <div className="flex text-body-200 text-sm font-medium space-x-2">
+            <div className="flex text-body-200 text-xs font-medium space-x-2">
               <a
                 href="https://discord.gg/JXeUnR9stP"
                 target="_blank"
-                className="transition-all hover:scale-105 no-underline text-white border border-transparent bg-[#5865F2] py-2 px-2.5 rounded-md flex gap-1"
+                className="transition-all hover:scale-105 no-underline text-white border border-transparent bg-[#5865F2] py-1.5 px-2.5 rounded-md flex items-center gap-1"
               >
                 <IconBrandDiscord size={20} aria-label="Preferences" />
                 <div className="hidden md:block">Feedback? Join Discord!</div>
               </a>
               <button
                 type="button"
-                className="transition-all hover:scale-105 hover:text-white border border-body-500 bg-[#3e2816] py-2 px-2.5 rounded-md dark:bg-dark-300 dark:border-dark-200 flex gap-1"
+                className="transition-all hover:scale-105 hover:text-white border border-body-500 bg-[#3e2816] py-1.5 px-2.5 rounded-md dark:bg-dark-300 dark:border-dark-200 flex items-center gap-1"
                 onClick={() => {
                   store.updateUIState({ showShareModal: true });
                 }}

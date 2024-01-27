@@ -28,7 +28,7 @@ const ExtraOptions: React.FC = observer(() => {
               <span
                 className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
                 data-tooltip-id="tooltip"
-                data-tooltip-content="Some weapons give bonuses while you are on a Slayer task."
+                data-tooltip-content="Black mask and slayer helmet give bonuses while you are on a Slayer task."
               >
                 ?
               </span>

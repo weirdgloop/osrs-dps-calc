@@ -388,7 +388,7 @@ const LoadoutComparison: React.FC = observer(() => {
         <div className="flex items-center gap-2">
           <div className="w-6 flex justify-center"><LazyImage src={equipmentStats.src} /></div>
           <h3 className="font-serif font-bold">
-            Loadout Graph
+            Loadout Comparison Graph
           </h3>
         </div>
       )}

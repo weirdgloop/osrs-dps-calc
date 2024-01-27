@@ -15,7 +15,7 @@ const UsernameLookup: React.FC = observer(() => {
       <input
         type="text"
         className="form-control rounded w-full mt-auto"
-        placeholder="RuneScape name"
+        placeholder="OSRS username"
         value={username}
         onChange={(e) => {
           store.updateUIState({ username: e.currentTarget.value });
