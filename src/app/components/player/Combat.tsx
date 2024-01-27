@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
-import React from 'react';
+import React, { useMemo } from 'react';
 import CombatStyle from '@/app/components/player/combat/CombatStyle';
 import SpellSelect from '@/app/components/player/combat/SpellSelect';
 import Toggle from '@/app/components/generic/Toggle';
@@ -9,14 +9,13 @@ import SpellContainer from '@/app/components/player/combat/SpellContainer';
 const Combat: React.FC = observer(() => {
   const store = useStore();
   const { spell, buffs, style } = store.player;
-  const styles = store.availableCombatStyles;
+  // eslint-disable-next-line react/no-array-index-key
+  const styles = useMemo(() => store.availableCombatStyles.map((s, i) => <CombatStyle key={i} style={s} />), [store.availableCombatStyles]);
 
   return (
     <div>
       <div className="flex flex-col my-4">
-        {
-          styles.map((s) => <CombatStyle key={s.type + s.name} style={s} />)
-        }
+        {styles}
       </div>
       {
         ['Autocast', 'Defensive Autocast', 'Manual Cast'].includes(style.stance) && (
