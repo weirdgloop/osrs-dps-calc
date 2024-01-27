@@ -922,7 +922,7 @@ export default class CombatCalc {
     } else if (this.wearing('Bone staff')) {
       // although the +10 is technically a ratbane bonus, the weapon can't be used against non-rats
       // and shows this max hit against the combat dummy as well
-      maxHit = Math.min(1, Math.trunc(magicLevel / 3) - 5) + 10;
+      maxHit = Math.max(1, Math.trunc(magicLevel / 3) - 5) + 10;
     } else if (this.wearing(['Crystal staff (basic)', 'Corrupted staff (basic)'])) {
       maxHit = 23;
     } else if (this.wearing(['Crystal staff (attuned)', 'Corrupted staff (attuned)'])) {
@@ -1249,7 +1249,7 @@ export default class CombatCalc {
 
       if (this.wearing(['Diamond bolts (e)', 'Diamond dragon bolts (e)'])) {
         const chance = 0.1 * kandarinDiaryFactor;
-        const effectMax = Math.trunc(max * (zaryte ? 26 : 15) / 100);
+        const effectMax = max + Math.trunc(max * (zaryte ? 26 : 15) / 100);
         dist = new AttackDistribution([
           new HitDistribution([
             ...standardHitDist.scaleProbability(1 - chance).hits,
