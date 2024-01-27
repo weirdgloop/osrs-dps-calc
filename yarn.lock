@@ -6402,7 +6402,7 @@ __metadata:
 
 "recharts@patch:recharts@npm%3A2.10.3#~/.yarn/patches/recharts-npm-2.10.3-179add6aaa.patch":
   version: 2.10.3
-  resolution: "recharts@patch:recharts@npm%3A2.10.3#~/.yarn/patches/recharts-npm-2.10.3-179add6aaa.patch::version=2.10.3&hash=772365"
+  resolution: "recharts@patch:recharts@npm%3A2.10.3#~/.yarn/patches/recharts-npm-2.10.3-179add6aaa.patch::version=2.10.3&hash=904406"
   dependencies:
     clsx: "npm:^2.0.0"
     eventemitter3: "npm:^4.0.1"
@@ -6416,7 +6416,7 @@ __metadata:
     prop-types: ^15.6.0
     react: ^16.0.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 093f0b48b30885f074a116ed32c95254f0bddbdfefc3856ebe9d0d621b1d600dc3f26f9b3ed9c1e0babe8839905243216b9d57f5424afedb3c1f0235383182d1
+  checksum: 1eed05f33f426dce77c1b172b1791f477b2095b8fcd8c5b7d1f5db58c2b8ad6b72424343566cb25458d47e4f0d711ad1000024970b64438732a4d40dce9c5c34
   languageName: node
   linkType: hard
 

@@ -23,18 +23,3 @@ index 142f79fdeeb227b80099b06803599c00fc683973..dde99357d19a07ffb6f009d32f0f12fa
        }
        if (isShow) {
          // If it can be shown, update the start
-diff --git a/es6/util/DOMUtils.js b/es6/util/DOMUtils.js
-index b3a1ce3f8a07cfc31a04b81c79f5a46d9f79cf0d..d3749c08d7846c4d8a1d94cee6ad364504c7c787 100644
---- a/es6/util/DOMUtils.js
-+++ b/es6/util/DOMUtils.js
-@@ -59,6 +59,10 @@ function removeInvalidKeys(obj) {
- }
- export var getStringSize = function getStringSize(text) {
-   var style = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-+
-+  if (style.fontSize === undefined || style.fontSize === null) {
-+    style.fontSize = '14px'
-+  }
-   if (text === undefined || text === null || Global.isSsr) {
-     return {
-       width: 0,
