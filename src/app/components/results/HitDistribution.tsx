@@ -80,16 +80,17 @@ const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = observer(({ dist }
           label="Hide 0s"
           className="text-black dark:text-white mb-4"
         />
-        <ResponsiveContainer width="100%" height={200}>
+        <ResponsiveContainer width="100%" height={225}>
           <BarChart
             data={data}
-            margin={{ top: 11, left: 11 }}
+            margin={{ top: 11, left: 25, bottom: 20 }}
           >
             <XAxis
               // label={{ value: 'damage', position: 'bottom' }}
               dataKey="name"
               stroke="#777777"
               interval="equidistantPreserveStart"
+              label={{ value: 'Hitsplat', position: 'insideBottom', offset: -15 }}
             />
             <YAxis
               // label={{ value: 'chance', angle: -90, position: 'left' }}
@@ -99,6 +100,9 @@ const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = observer(({ dist }
               tickFormatter={(v: number) => `${parseFloat((v * 100).toFixed(2))}%`}
               width={35}
               interval="equidistantPreserveStart"
+              label={{
+                value: 'chance', position: 'insideLeft', angle: -90, offset: -20, style: { textAnchor: 'middle' },
+              }}
             />
             <CartesianGrid stroke="gray" strokeDasharray="5 5" />
             <Tooltip

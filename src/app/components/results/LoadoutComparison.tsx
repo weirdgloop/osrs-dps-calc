@@ -46,14 +46,14 @@ enum YAxisType {
 }
 
 const XAxisOptions = [
-  { label: 'Monster defence level', value: XAxisType.MONSTER_DEF },
-  { label: 'Monster magic level', value: XAxisType.MONSTER_MAGIC },
-  { label: 'Monster HP', value: XAxisType.MONSTER_HP },
-  { label: 'Player attack level', value: XAxisType.PLAYER_ATTACK_LEVEL },
-  { label: 'Player strength level', value: XAxisType.PLAYER_STRENGTH_LEVEL },
-  { label: 'Player ranged level', value: XAxisType.PLAYER_RANGED_LEVEL },
-  { label: 'Player magic level', value: XAxisType.PLAYER_MAGIC_LEVEL },
-  { label: 'Player stat decay', value: XAxisType.STAT_DECAY_RESTORE },
+  { label: 'Monster defence level', axisLabel: 'Level', value: XAxisType.MONSTER_DEF },
+  { label: 'Monster magic level', axisLabel: 'Level', value: XAxisType.MONSTER_MAGIC },
+  { label: 'Monster HP', axisLabel: 'Hitpoints', value: XAxisType.MONSTER_HP },
+  { label: 'Player attack level', axisLabel: 'Level', value: XAxisType.PLAYER_ATTACK_LEVEL },
+  { label: 'Player strength level', axisLabel: 'Level', value: XAxisType.PLAYER_STRENGTH_LEVEL },
+  { label: 'Player ranged level', axisLabel: 'Level', value: XAxisType.PLAYER_RANGED_LEVEL },
+  { label: 'Player magic level', axisLabel: 'Level', value: XAxisType.PLAYER_MAGIC_LEVEL },
+  { label: 'Player stat decay', axisLabel: 'Minutes after boost', value: XAxisType.STAT_DECAY_RESTORE },
 ];
 
 const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, payload, label }) => {
@@ -260,8 +260,8 @@ const getAnnotations = (xAxisType: XAxisType, monster: Monster): Annotation[] =>
 };
 
 const YAxisOptions = [
-  { label: 'Player damage-per-second', value: YAxisType.DPS },
-  { label: 'Expected hit', value: YAxisType.EXPECTED_HIT },
+  { label: 'Player damage-per-second', axisLabel: 'DPS', value: YAxisType.DPS },
+  { label: 'Expected hit', axisLabel: 'Hit', value: YAxisType.EXPECTED_HIT },
   // {label: 'Time-to-kill', value: YAxisType.TTK},
   // {label: 'Damage taken', value: YAxisType.DAMAGE_TAKEN}
 ];
@@ -292,8 +292,8 @@ const LoadoutComparison: React.FC = observer(() => {
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
 
-  const [xAxisType, setXAxisType] = useState<{ label: string, value: XAxisType } | null | undefined>(XAxisOptions[0]);
-  const [yAxisType, setYAxisType] = useState<{ label: string, value: YAxisType } | null | undefined>(YAxisOptions[0]);
+  const [xAxisType, setXAxisType] = useState<{ label: string, axisLabel?: string, value: XAxisType } | null | undefined>(XAxisOptions[0]);
+  const [yAxisType, setYAxisType] = useState<{ label: string, axisLabel?: string, value: YAxisType } | null | undefined>(YAxisOptions[0]);
 
   const data = useMemo(() => {
     const x = xAxisType?.value;
@@ -395,16 +395,17 @@ const LoadoutComparison: React.FC = observer(() => {
     >
       {data && (
         <>
-          <ResponsiveContainer width="100%" height={200}>
+          <ResponsiveContainer width="100%" height={250}>
             <LineChart
               data={data.lines}
-              margin={{ top: 11 }}
+              margin={{ top: 40 }}
             >
               <XAxis
                 allowDecimals
                 dataKey="name"
                 stroke="#777777"
                 interval="equidistantPreserveStart"
+                label={{ value: xAxisType?.axisLabel, position: 'insideBottom', offset: -15 }}
               />
               <YAxis
                 stroke="#777777"
@@ -412,12 +413,15 @@ const LoadoutComparison: React.FC = observer(() => {
                 tickCount={tickCount}
                 tickFormatter={(v: number) => `${parseFloat(v.toFixed(2))}`}
                 interval="equidistantPreserveStart"
+                label={{
+                  value: yAxisType?.axisLabel, position: 'insideLeft', angle: -90, style: { textAnchor: 'middle' },
+                }}
               />
               <CartesianGrid stroke="gray" strokeDasharray="5 5" />
               <Tooltip
                 content={(props) => <CustomTooltip {...props} />}
               />
-              <Legend wrapperStyle={{ fontSize: '.9em' }} />
+              <Legend wrapperStyle={{ fontSize: '.9em', top: 0 }} />
               {generateLines()}
               {generateAnnotations()}
             </LineChart>

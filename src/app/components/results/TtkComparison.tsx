@@ -140,10 +140,10 @@ const TtkComparison: React.FC = observer(() => {
     >
       {data && (
         <>
-          <ResponsiveContainer width="100%" height={200}>
+          <ResponsiveContainer width="100%" height={250}>
             <LineChart
               data={data}
-              margin={{ top: 11 }}
+              margin={{ top: 40 }}
             >
               <XAxis
                 allowDecimals
@@ -151,18 +151,22 @@ const TtkComparison: React.FC = observer(() => {
                 stroke="#777777"
                 interval="equidistantPreserveStart"
                 tickFormatter={(v: string) => `${parseFloat(v)}`}
+                label={{ value: xAxisType?.label, position: 'insideBottom', offset: -15 }}
               />
               <YAxis
                 stroke="#777777"
                 domain={[0, 100]}
                 interval="equidistantPreserveStart"
                 tickFormatter={(v: number) => `${v}%`}
+                label={{
+                  value: 'chance', position: 'insideLeft', angle: -90, style: { textAnchor: 'middle' },
+                }}
               />
               <CartesianGrid stroke="gray" strokeDasharray="5 5" />
               <Tooltip
                 content={(props) => <CustomTooltip {...props} xAxisOption={xAxisType || XAxisOptions[0]} />}
               />
-              <Legend wrapperStyle={{ fontSize: '.9em' }} />
+              <Legend wrapperStyle={{ fontSize: '.9em', top: 0 }} />
               {generateLines()}
             </LineChart>
           </ResponsiveContainer>

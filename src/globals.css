@@ -133,6 +133,11 @@ button.btn:disabled {
   @apply font-mono;
 }
 
+.recharts-label {
+  font-size: .9em;
+  @apply lowercase;
+}
+
 /* Whatever style we apply to the axis ticks, we must apply to the measurement span to avoid issues */
 .recharts-cartesian-axis-ticks, #recharts_measurement_span {
   @apply text-sm;
