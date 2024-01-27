@@ -1,54 +1,3 @@
-diff --git a/.idea/.gitignore b/.idea/.gitignore
-new file mode 100644
-index 0000000000000000000000000000000000000000..13566b81b018ad684f3a35fee301741b2734c8f4
---- /dev/null
-+++ b/.idea/.gitignore
-@@ -0,0 +1,8 @@
-+# Default ignored files
-+/shelf/
-+/workspace.xml
-+# Editor-based HTTP Client requests
-+/httpRequests/
-+# Datasource local storage ignored files
-+/dataSources/
-+/dataSources.local.xml
-diff --git a/.idea/discord.xml b/.idea/discord.xml
-new file mode 100644
-index 0000000000000000000000000000000000000000..30bab2abb1a9fd88a1356176a99648e4468caba2
---- /dev/null
-+++ b/.idea/discord.xml
-@@ -0,0 +1,7 @@
-+<?xml version="1.0" encoding="UTF-8"?>
-+<project version="4">
-+  <component name="DiscordProjectSettings">
-+    <option name="show" value="ASK" />
-+    <option name="description" value="" />
-+  </component>
-+</project>
-\ No newline at end of file
-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
-new file mode 100644
-index 0000000000000000000000000000000000000000..6797ae3fe8413da23dcf56357e08778701618e2f
---- /dev/null
-+++ b/.idea/workspace.xml
-@@ -0,0 +1,16 @@
-+<?xml version="1.0" encoding="UTF-8"?>
-+<project version="4">
-+  <component name="ComposerSettings">
-+    <execution />
-+  </component>
-+  <component name="ProjectViewState">
-+    <option name="hideEmptyMiddlePackages" value="true" />
-+    <option name="openDirectoriesWithSingleClick" value="true" />
-+    <option name="showLibraryContents" value="true" />
-+  </component>
-+  <component name="PropertiesComponent">{
-+  &quot;keyToString&quot;: {
-+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
-+  }
-+}</component>
-+</project>
-\ No newline at end of file
 diff --git a/es6/cartesian/getEquidistantTicks.js b/es6/cartesian/getEquidistantTicks.js
 index 142f79fdeeb227b80099b06803599c00fc683973..dde99357d19a07ffb6f009d32f0f12fa6a346f60 100644
 --- a/es6/cartesian/getEquidistantTicks.js
@@ -74,28 +23,18 @@ index 142f79fdeeb227b80099b06803599c00fc683973..dde99357d19a07ffb6f009d32f0f12fa
        }
        if (isShow) {
          // If it can be shown, update the start
-diff --git a/lib/cartesian/getEquidistantTicks.js b/lib/cartesian/getEquidistantTicks.js
-index c4ad51df6880b20fa180ba9236e84b8812877f59..a23ccb564f8c9be1ade92f118ee65f4d8b8f874f 100644
---- a/lib/cartesian/getEquidistantTicks.js
-+++ b/lib/cartesian/getEquidistantTicks.js
-@@ -13,7 +13,9 @@ function getEquidistantTicks(sign, boundaries, getTickSize, ticks, minTickGap) {
-   var index = 0;
-   // Premature optimisation idea 1: Estimate a lower bound, and start from there.
-   // For now, start from every tick
--  var stepsize = 1;
-+  var stepsizes = [1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000];
-+  var stepsize_index = 0;
-+  var stepsize = stepsizes[stepsize_index];
-   var start = initialStart;
-   var _loop = function _loop() {
-       // Given stepsize, evaluate whether every stepsize-th tick can be shown.
-@@ -44,7 +46,8 @@ function getEquidistantTicks(sign, boundaries, getTickSize, ticks, minTickGap) {
-         // Start all over with a larger stepsize
-         index = 0;
-         start = initialStart;
--        stepsize += 1;
-+        stepsize_index += 1;
-+        stepsize = stepsizes[stepsize_index]
-       }
-       if (isShow) {
-         // If it can be shown, update the start
+diff --git a/es6/util/DOMUtils.js b/es6/util/DOMUtils.js
+index b3a1ce3f8a07cfc31a04b81c79f5a46d9f79cf0d..d3749c08d7846c4d8a1d94cee6ad364504c7c787 100644
+--- a/es6/util/DOMUtils.js
++++ b/es6/util/DOMUtils.js
+@@ -59,6 +59,10 @@ function removeInvalidKeys(obj) {
+ }
+ export var getStringSize = function getStringSize(text) {
+   var style = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
++
++  if (style.fontSize === undefined || style.fontSize === null) {
++    style.fontSize = '14px'
++  }
+   if (text === undefined || text === null || Global.isSsr) {
+     return {
+       width: 0,
