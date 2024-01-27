@@ -5,6 +5,7 @@ import CombatStyle from '@/app/components/player/combat/CombatStyle';
 import SpellSelect from '@/app/components/player/combat/SpellSelect';
 import Toggle from '@/app/components/generic/Toggle';
 import SpellContainer from '@/app/components/player/combat/SpellContainer';
+import {CombatStyleStance} from "@/types/PlayerCombatStyle";
 
 const Combat: React.FC = observer(() => {
   const store = useStore();
@@ -19,7 +20,7 @@ const Combat: React.FC = observer(() => {
         }
       </div>
       {
-        style.type === 'magic' && (
+        ['Autocast', 'Defensive Autocast', 'Manual Cast'].includes(style.stance) && (
           <div className="px-4">
             <h4 className="font-bold font-serif">
               Spell
