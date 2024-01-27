@@ -5,7 +5,6 @@ import CombatStyle from '@/app/components/player/combat/CombatStyle';
 import SpellSelect from '@/app/components/player/combat/SpellSelect';
 import Toggle from '@/app/components/generic/Toggle';
 import SpellContainer from '@/app/components/player/combat/SpellContainer';
-import {CombatStyleStance} from "@/types/PlayerCombatStyle";
 
 const Combat: React.FC = observer(() => {
   const store = useStore();
