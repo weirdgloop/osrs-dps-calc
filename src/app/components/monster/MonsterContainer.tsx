@@ -61,11 +61,11 @@ const TombsOfAmascutMonsterContainer: React.FC<ITombsOfAmascutMonsterContainerPr
         </h4>
         <div className="mt-2">
           <NumberInput
-            value={monster.toaInvocationLevel}
+            value={monster.inputs.toaInvocationLevel}
             min={0}
             max={600}
             step={5}
-            onChange={(v) => store.updateMonster({ toaInvocationLevel: v })}
+            onChange={(v) => store.updateMonster({ inputs: { toaInvocationLevel: v } })}
           />
         </div>
       </div>
@@ -78,11 +78,11 @@ const TombsOfAmascutMonsterContainer: React.FC<ITombsOfAmascutMonsterContainerPr
           </h4>
           <div className="mt-2">
             <NumberInput
-              value={monster.toaPathLevel}
+              value={monster.inputs.toaPathLevel}
               min={0}
               max={6}
               step={1}
-              onChange={(v) => store.updateMonster({ toaPathLevel: v })}
+              onChange={(v) => store.updateMonster({ inputs: { toaPathLevel: v } })}
             />
           </div>
         </div>
@@ -122,7 +122,10 @@ const MonsterContainer: React.FC = observer(() => {
             Challenge Mode
           </h4>
           <div className="mt-2">
-            <Toggle checked={monster.isFromCoxCm} setChecked={(c) => store.updateMonster({ isFromCoxCm: c })} />
+            <Toggle
+              checked={monster.inputs.isFromCoxCm}
+              setChecked={(c) => store.updateMonster({ inputs: { isFromCoxCm: c } })}
+            />
           </div>
         </div>,
       );
@@ -138,11 +141,11 @@ const MonsterContainer: React.FC = observer(() => {
           </h4>
           <div className="mt-2">
             <NumberInput
-              value={monster.partySize}
+              value={monster.inputs.partySize}
               min={1}
               max={100}
               step={1}
-              onChange={(v) => store.updateMonster({ partySize: v })}
+              onChange={(v) => store.updateMonster({ inputs: { partySize: v } })}
             />
           </div>
         </div>,
@@ -159,11 +162,11 @@ const MonsterContainer: React.FC = observer(() => {
           </h4>
           <div className="mt-2">
             <NumberInput
-              value={monster.partyMaxCombatLevel}
+              value={monster.inputs.partyMaxCombatLevel}
               min={3}
               max={126}
               step={1}
-              onChange={(v) => store.updateMonster({ partyMaxCombatLevel: v })}
+              onChange={(v) => store.updateMonster({ inputs: { partyMaxCombatLevel: v } })}
             />
           </div>
         </div>,
@@ -178,11 +181,11 @@ const MonsterContainer: React.FC = observer(() => {
           </h4>
           <div className="mt-2">
             <NumberInput
-              value={monster.partyMaxHpLevel}
+              value={monster.inputs.partyMaxHpLevel}
               min={1}
               max={99}
               step={1}
-              onChange={(v) => store.updateMonster({ partyMaxHpLevel: v })}
+              onChange={(v) => store.updateMonster({ inputs: { partyMaxHpLevel: v } })}
             />
           </div>
         </div>,
@@ -199,11 +202,11 @@ const MonsterContainer: React.FC = observer(() => {
           </h4>
           <div className="mt-2">
             <NumberInput
-              value={monster.partyAvgMiningLevel}
+              value={monster.inputs.partyAvgMiningLevel}
               min={1}
               max={99}
               step={1}
-              onChange={(v) => store.updateMonster({ partyAvgMiningLevel: v })}
+              onChange={(v) => store.updateMonster({ inputs: { partyAvgMiningLevel: v } })}
             />
           </div>
         </div>,
@@ -220,11 +223,11 @@ const MonsterContainer: React.FC = observer(() => {
           </h4>
           <div className="mt-2">
             <NumberInput
-              value={monster.monsterCurrentHp}
+              value={monster.inputs.monsterCurrentHp}
               min={0}
               max={monster.skills.hp}
               step={1}
-              onChange={(v) => store.updateMonster({ monsterCurrentHp: v })}
+              onChange={(v) => store.updateMonster({ inputs: { monsterCurrentHp: v } })}
             />
           </div>
         </div>,
