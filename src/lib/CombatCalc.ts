@@ -44,6 +44,12 @@ const TTK_DIST_EPSILON = 0.0001;
 const AUTOCAST_STANCES: CombatStyleStance[] = ['Autocast', 'Defensive Autocast'];
 const CAST_STANCES: CombatStyleStance[] = [...AUTOCAST_STANCES, 'Manual Cast'];
 
+const ONE_HIT_MONSTERS: number[] = [
+  7223, // Giant rat (Scurrius)
+  8584, // Flower
+  11193, // Flower (A Night at the Theatre)
+];
+
 export interface CalcOpts {
   loadoutName: string,
   detailedOutput: boolean,
@@ -1106,10 +1112,10 @@ export default class CombatCalc {
     const standardHitDist = HitDistribution.linear(acc, 0, max);
     let dist = new AttackDistribution([standardHitDist]);
 
-    // Scurrius' giant rat
-    if (this.monster.id === 7223) {
+    // Monsters that always die in one hit no matter what
+    if (ONE_HIT_MONSTERS.includes(this.monster.id)) {
       return new AttackDistribution([
-        HitDistribution.single(1.0, Math.min(this.monster.skills.hp, max)),
+        HitDistribution.single(1.0, this.monster.skills.hp),
       ]);
     }
 
