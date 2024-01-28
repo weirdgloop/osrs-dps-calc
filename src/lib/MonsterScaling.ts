@@ -199,6 +199,8 @@ const getToaScalingValues = (id: number): ToaScalingValues | undefined => {
 };
 
 const applyDefenceReductions = (m: Monster): Monster => {
+  const baseSkills = m.skills;
+
   const reductions = m.inputs.defenceReductions;
   const newSkills = (current: Monster, skills: Partial<Monster['skills']>): Monster => {
     keys(skills).forEach((k) => {
@@ -233,12 +235,14 @@ const applyDefenceReductions = (m: Monster): Monster => {
     });
   }
 
-  const arclightDivisor = m.attributes.includes(MonsterAttribute.DEMON) ? 10 : 20;
-  for (let i = 0; i < reductions.arclight; i++) {
+  if (reductions.arclight > 0) {
+    // arclight always applies against base stats
+    // https://discord.com/channels/177206626514632704/1098698914498101368/1201061390727794728 (wiki server)
+    const arclightDivisor = m.attributes.includes(MonsterAttribute.DEMON) ? 10 : 20;
     m = newSkills(m, {
-      atk: m.skills.atk - Math.trunc(m.skills.atk / arclightDivisor) - 1,
-      str: m.skills.str - Math.trunc(m.skills.str / arclightDivisor) - 1,
-      def: m.skills.def - Math.trunc(m.skills.def / arclightDivisor) - 1,
+      atk: m.skills.atk - (reductions.arclight * (Math.trunc(baseSkills.atk / arclightDivisor) + 1)),
+      str: m.skills.str - (reductions.arclight * (Math.trunc(baseSkills.str / arclightDivisor) + 1)),
+      def: m.skills.def - (reductions.arclight * (Math.trunc(baseSkills.def / arclightDivisor) + 1)),
     });
   }
 
