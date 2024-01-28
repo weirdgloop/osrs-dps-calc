@@ -40,8 +40,8 @@ const TopBar: React.FC = observer(() => {
                   store.updateUIState({ showShareModal: true });
                 }}
               >
-                <IconShare2 size={20} aria-label="Share" />
-                <div className="hidden md:block">Share</div>
+                <IconShare2 size={20} aria-label="Share loadout" />
+                <div className="hidden md:block">Share loadout</div>
               </button>
             </div>
           </div>
