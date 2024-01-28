@@ -100,30 +100,35 @@ export default class CombatCalc {
       this._details = new CalcDetails();
     }
 
-    this.sanitizeInputs();
+    this.canonicalizeEquipment();
     this.allEquippedItems = Object.values(this.player.equipment).filter((v) => v !== null).flat(1).map((eq: EquipmentPiece | null) => eq?.name || '');
+    this.sanitizeInputs();
   }
 
-  private sanitizeInputs() {
+  private canonicalizeEquipment() {
     // canonicalize equipment ids
     const inputEq = this.player.equipment;
-    let eq = inputEq;
+    let canonicalized = inputEq;
     for (const k of keys(inputEq)) {
       const v = inputEq[k];
       if (!v) continue;
 
       const canonical = getCanonicalItem(v);
       if (v.id !== canonical.id) {
-        eq = {
-          ...eq,
+        canonicalized = {
+          ...canonicalized,
           [k]: canonical,
         };
       }
     }
     this.player = {
       ...this.player,
-      equipment: eq,
+      equipment: canonicalized,
     };
+  }
+
+  private sanitizeInputs() {
+    const eq = this.player.equipment;
 
     // we should do clone-edits here to prevent affecting ui state
     if (!CAST_STANCES.includes(this.player.style.stance)) {
