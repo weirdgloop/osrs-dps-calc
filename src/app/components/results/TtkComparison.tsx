@@ -49,8 +49,7 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({
                     {p.name}
                   </div>
                   <span className="text-gray-400 font-bold">
-                    {p.value}
-                    %
+                    {p.value === 'NaN' ? '---' : `${p.value}%`}
                   </span>
                 </div>
               ))
