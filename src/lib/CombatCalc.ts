@@ -1232,7 +1232,8 @@ export default class CombatCalc {
       // todo are pearl bolts affected by zcb? wiki doesn't list them
       if (this.wearing(['Pearl bolts (e)', 'Pearl dragon bolts (e)'])) {
         const chance = 0.06 * kandarinDiaryFactor;
-        const bonusDmg = Math.trunc(rangedLvl / (mattrs.includes(MonsterAttribute.FIERY) ? 15 : 20));
+        const divisor = mattrs.includes(MonsterAttribute.FIERY) ? 15 : 20;
+        const bonusDmg = Math.trunc(rangedLvl / (zaryte ? divisor - 2 : divisor));
         dist = dist.transform((h) => new HitDistribution([
           new WeightedHit(chance, [h + bonusDmg]),
           new WeightedHit(1 - chance, [h]),
