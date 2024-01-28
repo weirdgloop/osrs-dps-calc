@@ -316,8 +316,8 @@ export const scaledMonster = (m: Monster): Monster => {
     if (TOMBS_OF_AMASCUT_PATH_MONSTER_IDS.includes(m.id)) {
       const pathLevel = Math.min(6, Math.max(0, inputs.toaPathLevel));
       if (pathLevel >= 1) {
-        pathLevelFactor += 30;
-        pathLevelFactor += 50 * inputs.toaPathLevel;
+        pathLevelFactor += 3;
+        pathLevelFactor += 5 * inputs.toaPathLevel;
       }
     }
 
