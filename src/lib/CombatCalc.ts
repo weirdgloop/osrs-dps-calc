@@ -1110,14 +1110,14 @@ export default class CombatCalc {
       ]);
     }
 
-    if (this.isWearingFang()) {
+    if (this.isWearingFang() && this.player.style.type === 'melee') {
       const shrink = Math.trunc(max * 3 / 20);
       dist = new AttackDistribution(
         [HitDistribution.linear(acc, shrink, max - shrink)],
       );
     }
 
-    if (this.wearing('Gadderhammer') && mattrs.includes(MonsterAttribute.SHADE)) {
+    if (this.wearing('Gadderhammer') && mattrs.includes(MonsterAttribute.SHADE) && this.player.style.type === 'melee') {
       dist = new AttackDistribution([
         new HitDistribution([
           ...standardHitDist.scaleProbability(0.95).scaleDamage(5, 4).hits,
@@ -1126,13 +1126,13 @@ export default class CombatCalc {
       ]);
     }
 
-    if (this.isWearingDharok()) {
+    if (this.isWearingDharok() && this.player.style.type === 'melee') {
       const newMax = this.player.skills.hp;
       const curr = this.player.skills.hp + this.player.boosts.hp;
       dist = dist.scaleDamage(10000 + (max - curr) * newMax, 10000);
     }
 
-    if (this.isWearingVeracs()) {
+    if (this.isWearingVeracs() && this.player.style.type === 'melee') {
       dist = new AttackDistribution([
         new HitDistribution([
           ...standardHitDist.scaleProbability(0.75).hits,
@@ -1141,7 +1141,7 @@ export default class CombatCalc {
       ]);
     }
 
-    if (this.isWearingKarils()) {
+    if (this.isWearingKarils() && this.player.style.type === 'ranged') {
       dist = new AttackDistribution([
         standardHitDist.scaleProbability(0.75),
         new HitDistribution([
@@ -1153,7 +1153,7 @@ export default class CombatCalc {
       ]);
     }
 
-    if (this.isWearingScythe()) {
+    if (this.isWearingScythe() && this.player.style.type === 'melee') {
       const hits: HitDistribution[] = [];
       for (let i = 0; i < Math.min(Math.max(this.monster.size, 1), 3); i++) {
         hits.push(HitDistribution.linear(acc, 0, Math.floor(max / (2 ** i))));
@@ -1161,7 +1161,7 @@ export default class CombatCalc {
       dist = new AttackDistribution(hits);
     }
 
-    if (this.isWearingKeris() && mattrs.includes(MonsterAttribute.KALPHITE)) {
+    if (this.isWearingKeris() && mattrs.includes(MonsterAttribute.KALPHITE) && this.player.style.type === 'melee') {
       dist = new AttackDistribution([
         new HitDistribution([
           ...standardHitDist.scaleProbability(50.0 / 51.0).hits,
@@ -1170,7 +1170,7 @@ export default class CombatCalc {
       ]);
     }
 
-    if (GUARDIAN_IDS.includes(this.monster.id) && this.player.equipment.weapon?.category === EquipmentCategory.PICKAXE) {
+    if (GUARDIAN_IDS.includes(this.monster.id) && this.player.equipment.weapon?.category === EquipmentCategory.PICKAXE && this.player.style.type === 'melee') {
       // just the level required to wield
       const pickBonuses: { [k: string]: number } = {
         'Bronze pickaxe': 1,
@@ -1205,7 +1205,7 @@ export default class CombatCalc {
       dist = dist.scaleDamage(6, 5);
     }
 
-    if (this.isWearingAhrims()) {
+    if (this.isWearingAhrims() && this.player.style.type === 'magic') {
       dist = new AttackDistribution([
         new HitDistribution([
           ...standardHitDist.scaleProbability(0.75).hits,
