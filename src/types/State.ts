@@ -1,4 +1,4 @@
-import { EquipmentPiece, Player } from '@/types/Player';
+import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import UserIssueType from '@/enums/UserIssueType';
 import { DetailEntry } from '@/lib/CalcDetails';
@@ -77,11 +77,6 @@ export interface State extends ImportableData {
   prefs: Preferences;
   calc: Calculator;
   worker: Worker | null;
-
-  /**
-   * All available equipment that a player can equip.
-   */
-  availableEquipment: EquipmentPiece[];
 
   /**
    * All monsters that a player can fight.

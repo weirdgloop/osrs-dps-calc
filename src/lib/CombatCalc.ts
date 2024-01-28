@@ -33,9 +33,14 @@ import { scaledMonster } from '@/lib/MonsterScaling';
 import { CombatStyleStance } from '@/types/PlayerCombatStyle';
 import { CalcDetails, DetailEntry, DetailKey } from '@/lib/CalcDetails';
 import { Factor } from '@/lib/Math';
-import { AmmoApplicability, ammoApplicability } from '@/lib/Equipment';
+import {
+  AmmoApplicability,
+  ammoApplicability,
+  getCanonicalItem,
+} from '@/lib/Equipment';
 import { UserIssue } from '@/types/State';
 import UserIssueType from '@/enums/UserIssueType';
+import { keys } from '@/utils';
 
 const DEFAULT_ATTACK_SPEED = 4;
 const SECONDS_PER_TICK = 0.6;
@@ -95,12 +100,31 @@ export default class CombatCalc {
       this._details = new CalcDetails();
     }
 
-    this.allEquippedItems = Object.values(player.equipment).filter((v) => v !== null).flat(1).map((eq: EquipmentPiece | null) => eq?.name || '');
-
     this.sanitizeInputs();
+    this.allEquippedItems = Object.values(this.player.equipment).filter((v) => v !== null).flat(1).map((eq: EquipmentPiece | null) => eq?.name || '');
   }
 
   private sanitizeInputs() {
+    // canonicalize equipment ids
+    const inputEq = this.player.equipment;
+    let eq = inputEq;
+    for (const k of keys(inputEq)) {
+      const v = inputEq[k];
+      if (!v) continue;
+
+      const canonical = getCanonicalItem(v);
+      if (v.id !== canonical.id) {
+        eq = {
+          ...eq,
+          [k]: canonical,
+        };
+      }
+    }
+    this.player = {
+      ...this.player,
+      equipment: eq,
+    };
+
     // we should do clone-edits here to prevent affecting ui state
     if (!CAST_STANCES.includes(this.player.style.stance)) {
       this.player = {
@@ -109,8 +133,8 @@ export default class CombatCalc {
       };
     }
 
-    if (this.player.style.stance !== 'Manual Cast' && ammoApplicability(this.player.equipment.weapon?.id, this.player.equipment.ammo?.id) === AmmoApplicability.INVALID) {
-      if (this.player.equipment.ammo?.name) {
+    if (this.player.style.stance !== 'Manual Cast' && ammoApplicability(eq.weapon?.id, eq.ammo?.id) === AmmoApplicability.INVALID) {
+      if (eq.ammo?.name) {
         this.addIssue(UserIssueType.EQUIPMENT_WRONG_AMMO, 'This ammo does not work with your current weapon.');
       } else {
         this.addIssue(UserIssueType.EQUIPMENT_MISSING_AMMO, 'Your weapon requires ammo to use.');

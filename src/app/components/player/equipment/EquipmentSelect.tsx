@@ -5,7 +5,7 @@ import { getCdnImage } from '@/utils';
 import { EquipmentPiece } from '@/types/Player';
 import LazyImage from '@/app/components/generic/LazyImage';
 import { cross } from 'd3-array';
-import { equipmentAliases } from '@/lib/Equipment';
+import { availableEquipment, equipmentAliases } from '@/lib/Equipment';
 import Combobox from '../../generic/Combobox';
 
 interface EquipmentOption {
@@ -41,7 +41,7 @@ const EquipmentSelect: React.FC = observer(() => {
     const dartEntries: EquipmentOption[] = [];
 
     const entries: EquipmentOption[] = [];
-    for (const v of store.availableEquipment) {
+    for (const v of availableEquipment) {
       const e: EquipmentOption = {
         label: `${v.name}`,
         value: v.id.toString(),
@@ -77,7 +77,7 @@ const EquipmentSelect: React.FC = observer(() => {
     });
 
     return entries;
-  }, [store.availableEquipment]);
+  }, []);
 
   return (
     <Combobox<EquipmentOption>

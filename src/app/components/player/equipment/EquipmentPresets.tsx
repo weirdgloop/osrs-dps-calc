@@ -4,10 +4,10 @@ import EquipmentPreset from '@/enums/EquipmentPreset';
 import { useStore } from '@/state';
 import { PartialDeep } from 'type-fest';
 import { Player } from '@/types/Player';
+import { availableEquipment } from '@/lib/Equipment';
 
 const EquipmentPresets: React.FC = () => {
   const store = useStore();
-  const { availableEquipment } = store;
 
   const presets = [
     { label: 'Dharok\'s equipment', value: EquipmentPreset.DHAROKS },
