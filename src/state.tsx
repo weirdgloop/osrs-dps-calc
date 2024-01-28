@@ -227,11 +227,17 @@ class GlobalState implements State {
       this.updatePlayer({ boosts });
     };
 
-    const triggers: ((r: IReactionPublic) => unknown)[] = [
+    const potionTriggers: ((r: IReactionPublic) => unknown)[] = [
       () => toJS(this.player.skills),
       () => toJS(this.player.buffs.potions),
     ];
-    triggers.map((t) => reaction(t, recomputeBoosts, { fireImmediately: false }));
+    potionTriggers.map((t) => reaction(t, recomputeBoosts, { fireImmediately: false }));
+
+    // for toa monster + shadow handling
+    const equipmentTriggers: ((r: IReactionPublic) => unknown)[] = [
+      () => toJS(this.monster),
+    ];
+    equipmentTriggers.map((t) => reaction(t, this.recalculateEquipmentBonusesFromGearAll));
   }
 
   set debug(debug: boolean) {
@@ -299,6 +305,10 @@ class GlobalState implements State {
     }, loadoutIx);
   }
 
+  recalculateEquipmentBonusesFromGearAll() {
+    this.loadouts.forEach((_, i) => this.recalculateEquipmentBonusesFromGear(i));
+  }
+
   updateUIState(ui: PartialDeep<UI>) {
     this.ui = Object.assign(this.ui, ui);
   }
@@ -347,7 +357,7 @@ class GlobalState implements State {
 
     // manually recompute equipment in case their metadata has changed since the shortlink was created
     this.loadouts = merge(this.loadouts, data.loadouts);
-    this.loadouts.forEach((_, i) => this.recalculateEquipmentBonusesFromGear(i));
+    this.recalculateEquipmentBonusesFromGearAll();
 
     this.selectedLoadout = data.selectedLoadout;
   }
