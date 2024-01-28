@@ -5,12 +5,16 @@ import CombatStyle from '@/app/components/player/combat/CombatStyle';
 import SpellSelect from '@/app/components/player/combat/SpellSelect';
 import Toggle from '@/app/components/generic/Toggle';
 import SpellContainer from '@/app/components/player/combat/SpellContainer';
+import UserIssueWarning from '@/app/components/generic/UserIssueWarning';
 
 const Combat: React.FC = observer(() => {
   const store = useStore();
   const { spell, buffs, style } = store.player;
   // eslint-disable-next-line react/no-array-index-key
   const styles = useMemo(() => store.availableCombatStyles.map((s, i) => <CombatStyle key={i} style={s} />), [store.availableCombatStyles]);
+
+  // Determine whether there's any issues with spells
+  const spellIssues = useMemo(() => store.userIssues.filter((i) => i.type.startsWith('spell_') && i.loadout === `${store.selectedLoadout + 1}`), [store.userIssues, store.selectedLoadout]);
 
   return (
     <div>
@@ -20,8 +24,11 @@ const Combat: React.FC = observer(() => {
       {
         ['Autocast', 'Defensive Autocast', 'Manual Cast'].includes(style.stance) && (
           <div className="px-4">
-            <h4 className="font-bold font-serif">
+            <h4 className="font-bold font-serif flex gap-2">
               Spell
+              {spellIssues.length > 0 && (
+                <UserIssueWarning issue={spellIssues[0]} />
+              )}
             </h4>
             <div className="my-2">
               <SpellContainer />

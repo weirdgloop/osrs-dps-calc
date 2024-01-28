@@ -25,13 +25,10 @@ import { RecomputeValuesRequest, WorkerRequestType } from '@/types/WorkerData';
 import { scaledMonster } from '@/lib/MonsterScaling';
 import getMonsters from '@/lib/Monsters';
 import {
-  AmmoApplicability,
-  ammoApplicability,
   calculateEquipmentBonusesFromGear,
   EquipmentBonuses,
   getCanonicalItemId,
 } from '@/lib/Equipment';
-import UserIssueType from '@/enums/UserIssueType';
 import equipment from '../cdn/json/equipment.json';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
@@ -175,7 +172,6 @@ class GlobalState implements State {
     showPreferencesModal: false,
     showShareModal: false,
     username: '',
-    issues: [],
   };
 
   prefs: Preferences = {
@@ -265,6 +261,17 @@ class GlobalState implements State {
   }
 
   /**
+   * Get the user's current issues based on their calculated loadouts
+   */
+  get userIssues() {
+    let is: UserIssue[] = [];
+    for (const l of this.calc.loadouts) {
+      if (l.userIssues) is = [...is, ...l.userIssues];
+    }
+    return is;
+  }
+
+  /**
    * Get the available combat styles for the currently equipped weapon
    * @see https://oldschool.runescape.wiki/w/Combat_Options
    */
@@ -283,10 +290,6 @@ class GlobalState implements State {
       offensive: p.offensive,
       defensive: p.defensive,
     };
-  }
-
-  hasUserIssue(type: UserIssueType, loadout: number): UserIssue | false {
-    return this.ui.issues.find((t) => t.type === type && t.loadout === loadout) || false;
   }
 
   recalculateEquipmentBonusesFromGear(loadoutIx?: number) {
@@ -597,23 +600,6 @@ class GlobalState implements State {
         } as RecomputeValuesRequest, WORKER_JSON_REPLACER));
       }
     }, 250);
-  }
-
-  doUserIssuesCheck() {
-    const issues: UserIssue[] = [];
-
-    // For each loadout, check if there are any issues we should surface to the user.
-    for (const [k, l] of Object.entries(this.loadouts)) {
-      if (ammoApplicability(l.equipment.weapon?.id, l.equipment.ammo?.id) === AmmoApplicability.INVALID) {
-        if (l.equipment.ammo?.name) {
-          issues.push({ type: UserIssueType.EQUIPMENT_WRONG_AMMO, loadout: parseInt(k), message: 'This ammo does not work with your current weapon' });
-        } else {
-          issues.push({ type: UserIssueType.EQUIPMENT_MISSING_AMMO, loadout: parseInt(k), message: 'Your weapon requires ammo to use' });
-        }
-      }
-    }
-
-    this.updateUIState({ issues });
   }
 }
 

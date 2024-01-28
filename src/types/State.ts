@@ -6,7 +6,7 @@ import { DetailEntry } from '@/lib/CalcDetails';
 export interface UserIssue {
   type: UserIssueType;
   message: string;
-  loadout?: number;
+  loadout?: string;
 }
 
 /**
@@ -16,7 +16,6 @@ export interface UI {
   showPreferencesModal: boolean;
   showShareModal: boolean;
   username: string;
-  issues: UserIssue[];
 }
 
 /**
@@ -51,6 +50,7 @@ export interface CalculatedLoadout {
   hitDist: HistogramEntry[],
   ttkDist?: Map<number, number>,
   details?: DetailEntry[],
+  userIssues?: UserIssue[],
 }
 
 export interface Calculator {

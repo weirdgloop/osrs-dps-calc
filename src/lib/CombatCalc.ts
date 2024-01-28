@@ -1,16 +1,31 @@
 import { EquipmentPiece, Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import {
-  AttackDistribution, cappedRerollTransformer, divisionTransformer, flatLimitTransformer, HitDistribution,
-  linearMinTransformer, multiplyTransformer, WeightedHit,
+  AttackDistribution,
+  cappedRerollTransformer,
+  divisionTransformer,
+  flatLimitTransformer,
+  HitDistribution,
+  linearMinTransformer,
+  multiplyTransformer,
+  WeightedHit,
 } from '@/lib/HitDist';
 import { isBindSpell, isFireSpell, isWaterSpell } from '@/types/Spell';
 import { PrayerData, PrayerMap } from '@/enums/Prayer';
 import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
-  GLOWING_CRYSTAL_IDS, GUARDIAN_IDS, IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS, IMMUNE_TO_MELEE_DAMAGE_NPC_IDS,
-  IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS, IMMUNE_TO_RANGED_DAMAGE_NPC_IDS, OLM_HEAD_IDS, OLM_MAGE_HAND_IDS,
-  OLM_MELEE_HAND_IDS, TEKTON_IDS, TOMBS_OF_AMASCUT_MONSTER_IDS, USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
+  GLOWING_CRYSTAL_IDS,
+  GUARDIAN_IDS,
+  IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS,
+  IMMUNE_TO_MELEE_DAMAGE_NPC_IDS,
+  IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS,
+  IMMUNE_TO_RANGED_DAMAGE_NPC_IDS,
+  OLM_HEAD_IDS,
+  OLM_MAGE_HAND_IDS,
+  OLM_MELEE_HAND_IDS,
+  TEKTON_IDS,
+  TOMBS_OF_AMASCUT_MONSTER_IDS,
+  USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
   VERZIK_P1_IDS,
 } from '@/constants';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
@@ -19,6 +34,8 @@ import { CombatStyleStance } from '@/types/PlayerCombatStyle';
 import { CalcDetails, DetailEntry, DetailKey } from '@/lib/CalcDetails';
 import { Factor } from '@/lib/Math';
 import { AmmoApplicability, ammoApplicability } from '@/lib/Equipment';
+import { UserIssue } from '@/types/State';
+import UserIssueType from '@/enums/UserIssueType';
 
 const DEFAULT_ATTACK_SPEED = 4;
 const SECONDS_PER_TICK = 0.6;
@@ -64,6 +81,8 @@ export default class CombatCalc {
 
   private _details?: CalcDetails;
 
+  public userIssues: UserIssue[] = [];
+
   constructor(player: Player, monster: Monster, opts: Partial<CalcOpts> = {}) {
     this.player = player;
     this.monster = monster;
@@ -76,9 +95,9 @@ export default class CombatCalc {
       this._details = new CalcDetails();
     }
 
-    this.sanitizeInputs();
-
     this.allEquippedItems = Object.values(player.equipment).filter((v) => v !== null).flat(1).map((eq: EquipmentPiece | null) => eq?.name || '');
+
+    this.sanitizeInputs();
   }
 
   private sanitizeInputs() {
@@ -88,6 +107,30 @@ export default class CombatCalc {
         ...this.player,
         spell: null,
       };
+    }
+
+    if (ammoApplicability(this.player.equipment.weapon?.id, this.player.equipment.ammo?.id) === AmmoApplicability.INVALID) {
+      if (this.player.equipment.ammo?.name) {
+        this.addIssue(UserIssueType.EQUIPMENT_WRONG_AMMO, 'This ammo does not work with your current weapon.');
+      } else {
+        this.addIssue(UserIssueType.EQUIPMENT_MISSING_AMMO, 'Your weapon requires ammo to use.');
+      }
+    }
+
+    // Certain spells require specific weapons to be equipped
+    const spellName = this.player.spell?.name;
+    if (
+      (spellName === 'Iban Blast' && !this.wearing(['Iban\'s staff', 'Iban\'s staff (u)']))
+      || (spellName === 'Saradomin Strike' && !this.wearing(['Saradomin staff', 'Staff of light']))
+      || (spellName === 'Claws of Guthix' && !this.wearing(['Guthix staff', 'Void knight mace', 'Staff of balance']))
+      || (spellName === 'Flames of Zamarok' && !this.wearing(['Zamorak staff', 'Staff of the dead', 'Toxic staff of the dead', 'Thammaron\'s sceptre (a)', 'Accursed sceptre (a)']))
+      || (spellName === 'Magic Dart' && !this.wearing(['Slayer\'s staff', 'Slayer\'s staff (e)', 'Staff of the dead', 'Toxic staff of the dead', 'Staff of light', 'Staff of balance']))
+    ) {
+      this.player = {
+        ...this.player,
+        spell: null,
+      };
+      this.addIssue(UserIssueType.SPELL_WRONG_WEAPON, 'This spell needs a specific weapon equipped to cast.');
     }
   }
 
@@ -115,6 +158,10 @@ export default class CombatCalc {
     const result = Math.trunc(base + addend);
     this.track(label, result, `${base} ${addend >= 0 ? '+' : '-'} ${addend} = ${result}`);
     return result;
+  }
+
+  private addIssue(type: UserIssueType, message: string) {
+    this.userIssues.push({ type, message, loadout: this.opts.loadoutName });
   }
 
   get details(): DetailEntry[] {

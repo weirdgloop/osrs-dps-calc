@@ -39,6 +39,7 @@ const computeValues = async (loadouts: Player[], m: Monster, calcOpts: WorkerCal
       hitDist: calc.getDistribution().asHistogram(),
       ttkDist: calcOpts.includeTtkDist ? calc.getTtkDistribution() : undefined, // this one can sometimes be quite expensive
       details: calc.details,
+      userIssues: calc.userIssues,
     });
     const end = new Date().getTime();
 

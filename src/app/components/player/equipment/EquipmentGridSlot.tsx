@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 import { getCdnImage } from '@/utils';
-import { IconAlertTriangleFilled } from '@tabler/icons-react';
+import UserIssueWarning from '@/app/components/generic/UserIssueWarning';
 
 interface EquipmentGridSlotProps {
   slot: keyof PlayerEquipment;
@@ -17,19 +17,13 @@ const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => 
   const isEmpty = !currentSlot;
 
   // Determine whether there's any issues with this element
-  const issues = useMemo(() => store.ui.issues.filter((i) => i.type.startsWith(`equipment_slot_${slot}`) && i.loadout === store.selectedLoadout), [store.ui.issues, store.selectedLoadout, slot]);
+  const issues = useMemo(() => store.userIssues.filter((i) => i.type.startsWith(`equipment_slot_${slot}`) && i.loadout === `${store.selectedLoadout + 1}`), [store.userIssues, store.selectedLoadout, slot]);
 
   return (
     <div className="h-[40px] w-[40px] relative">
       {
         issues.length > 0 && (
-          <div
-            className="absolute top-[-10px] right-[-10px] cursor-help"
-            data-tooltip-id="tooltip-warning"
-            data-tooltip-content={issues[0].message}
-          >
-            <IconAlertTriangleFilled className="text-orange-300 w-5" />
-          </div>
+          <UserIssueWarning className="absolute top-[-10px] right-[-10px]" issue={issues[0]} />
         )
       }
       <button
