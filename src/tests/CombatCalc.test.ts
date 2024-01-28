@@ -1,6 +1,6 @@
 import { expect, test } from '@jest/globals';
 import { calculate, getTestMonster, getTestPlayer } from '@/tests/utils/TestUtils';
-import { ACCURACY_PRECISION, DPS_PRECISION } from '@/constants';
+import { ACCURACY_PRECISION, DPS_PRECISION } from '@/lib/constants';
 
 test('Empty player against Abyssal demon', () => {
   const monster = getTestMonster('Abyssal demon', 'Standard');

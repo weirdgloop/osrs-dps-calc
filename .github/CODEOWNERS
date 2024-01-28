@@ -1,0 +1,23 @@
+# anything calc-related
+/src/lib/ @LlemonDuck
+/src/tests/calc/ @LlemonDuck
+
+# anything ui-related
+/src/*.ts @jayktaylor
+/src/*.css @jayktaylor
+/src/app/ @jayktaylor
+/src/enums @jayktaylor
+/src/public/ @jayktaylor
+
+# anything updating the shared ui/calc boundaries
+/src/types/ @LlemonDuck @jayktaylor
+/scripts/ @LlemonDuck @jayktaylor
+
+# lots of different root config files
+/*.js @jayktaylor
+/*.cjs @jayktaylor
+/*.ts @jayktaylor
+/*.json @jayktaylor
+/*.lock @jayktaylor
+/.yarnrc.yml @jayktaylor
+/.nvmrc @jayktaylor

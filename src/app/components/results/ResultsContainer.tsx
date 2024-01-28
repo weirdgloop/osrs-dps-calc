@@ -5,7 +5,7 @@ import { CalculatedLoadout } from '@/types/State';
 import { max, min } from 'd3-array';
 import HitDistribution from '@/app/components/results/HitDistribution';
 import Spinner from '@/app/components/Spinner';
-import { ACCURACY_PRECISION, DPS_PRECISION } from '@/constants';
+import { ACCURACY_PRECISION, DPS_PRECISION } from '@/lib/constants';
 
 interface IResultRowProps {
   calcKey: keyof Omit<CalculatedLoadout, 'ttkDist'>;

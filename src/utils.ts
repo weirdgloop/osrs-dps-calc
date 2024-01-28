@@ -108,15 +108,6 @@ export const WORKER_JSON_REVIVER = (k: string, v: any) => {
 
 export const keys = <T extends object>(o: T): (keyof T)[] => Object.keys(o) as (keyof T)[];
 
-export const lerp = (curr: number, srcStart: number, srcEnd: number, dstStart: number, dstEnd: number): number => {
-  // does this need to be int-based?
-  const srcRange = srcEnd - srcStart;
-  const dstRange = dstEnd - dstStart;
-  const currNorm = curr - srcStart;
-
-  return Math.trunc(((currNorm * dstRange) / srcRange) + dstStart);
-};
-
 export const PotionMap: { [k in Potion]: { name: string, image: StaticImageData, calculateFn: (skills: PlayerSkills) => Partial<PlayerSkills> } } = {
   [Potion.ANCIENT]: {
     name: 'Ancient brew',

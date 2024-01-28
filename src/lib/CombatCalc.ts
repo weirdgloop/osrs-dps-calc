@@ -27,7 +27,7 @@ import {
   TOMBS_OF_AMASCUT_MONSTER_IDS,
   USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
   VERZIK_P1_IDS,
-} from '@/constants';
+} from '@/lib/constants';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { scaledMonster } from '@/lib/MonsterScaling';
 import { CombatStyleStance } from '@/types/PlayerCombatStyle';

@@ -28,9 +28,10 @@ import {
   TOMBS_OF_AMASCUT_PATH_MONSTER_IDS,
   VOLATILE_BABOON_IDS,
   ZEBAK_IDS,
-} from '@/constants';
+} from '@/lib/constants';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
-import { keys, lerp } from '@/utils';
+import { keys } from '@/utils';
+import { lerp } from '@/lib/Math';
 
 const getDefenceFloor = (m: Monster): number => {
   if (m.name === 'Verzik Vitur') {
