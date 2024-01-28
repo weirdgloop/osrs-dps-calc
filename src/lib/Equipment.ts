@@ -1,10 +1,16 @@
-import { Player } from '@/types/Player';
+import { EquipmentPiece, Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { keys } from '@/utils';
 import { TOMBS_OF_AMASCUT_MONSTER_IDS } from '@/lib/constants';
 import { sum } from 'd3-array';
+import equipment from '../../cdn/json/equipment.json';
 
 export type EquipmentBonuses = Pick<Player, 'bonuses' | 'offensive' | 'defensive'>;
+
+/**
+ * All available equipment that a player can equip.
+ */
+export const availableEquipment = equipment as EquipmentPiece[];
 
 const commonAmmoCategories = () => {
   const ret: { [k: string]: number[] } = {
@@ -374,6 +380,15 @@ export const getCanonicalItemId = (itemId: number): number => {
     if (v.includes(itemId)) return parseInt(k);
   }
   return itemId;
+};
+
+export const getCanonicalItem = (equipmentPiece: EquipmentPiece): EquipmentPiece => {
+  const canonicalId = getCanonicalItemId(equipmentPiece.id);
+  if (equipmentPiece.id === canonicalId) {
+    return equipmentPiece;
+  }
+
+  return availableEquipment.find((e) => e.id === canonicalId) || equipmentPiece;
 };
 
 export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monster): EquipmentBonuses => {
