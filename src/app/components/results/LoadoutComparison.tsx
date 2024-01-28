@@ -39,9 +39,9 @@ enum XAxisType {
 }
 
 enum YAxisType {
-  // TTK,
   DPS,
   EXPECTED_HIT,
+  AVG_TTK,
   // DAMAGE_TAKEN
 }
 
@@ -129,7 +129,7 @@ function* inputRange(
 
     case XAxisType.MONSTER_HP: {
       const shouldScale = loadouts.some((l) => CombatCalc.distIsCurrentHpDependent(l, baseMonster));
-      for (let newHp = baseMonster.skills.hp; newHp >= 0; newHp--) {
+      for (let newHp = baseMonster.skills.hp; newHp > 0; newHp--) {
         const m: Monster = {
           ...baseMonster,
           inputs: {
@@ -265,7 +265,7 @@ const getAnnotations = (xAxisType: XAxisType, monster: Monster): Annotation[] =>
 const YAxisOptions = [
   { label: 'Player damage-per-second', axisLabel: 'DPS', value: YAxisType.DPS },
   { label: 'Expected hit', axisLabel: 'Hit', value: YAxisType.EXPECTED_HIT },
-  // {label: 'Time-to-kill', value: YAxisType.TTK},
+  { label: 'Time-to-kill', value: YAxisType.AVG_TTK },
   // {label: 'Damage taken', value: YAxisType.DAMAGE_TAKEN}
 ];
 
@@ -279,6 +279,8 @@ const getOutput = (
       return new CombatCalc(loadout, monster).getDps();
     case YAxisType.EXPECTED_HIT:
       return new CombatCalc(loadout, monster).getDistribution().getExpectedDamage();
+    case YAxisType.AVG_TTK:
+      return new CombatCalc(loadout, monster).getTtk();
 
     default:
       throw new Error(`Unimplemented yAxisType ${yAxisType}`);
