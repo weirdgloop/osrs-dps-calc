@@ -511,6 +511,9 @@ class GlobalState implements State {
    * @param monster
    */
   updateMonster(monster: PartialDeep<Monster>) {
+    // If monster attributes were passed to this function, clear the existing ones
+    if (monster.attributes !== undefined) this.monster.attributes = [];
+
     this.monster = merge(this.monster, monster, (obj, src) => {
       // This check is to ensure that empty arrays always override existing arrays, even if they have values.
       if (Array.isArray(src) && src.length === 0) {
