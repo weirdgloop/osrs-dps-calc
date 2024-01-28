@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useStore } from '@/state';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import localforage from 'localforage';
 import { observer } from 'mobx-react-lite';
 
@@ -13,16 +13,12 @@ import { observer } from 'mobx-react-lite';
 const InitialLoad: React.FC = observer(() => {
   const store = useStore();
   const searchParams = useSearchParams();
-  const router = useRouter();
-  const pathname = usePathname();
 
   useEffect(() => {
     const id = searchParams.get('id');
     if (id) {
       // If there was a share ID provided, load the data for it into the calculator
-      store.loadShortlink(id).then(() => {
-        router.push(pathname);
-      });
+      store.loadShortlink(id);
     } else {
       // Else, load username from browser storage if there is one and lookup stats
       localforage.getItem('dps-calc-username').then((u) => {
