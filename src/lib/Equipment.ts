@@ -110,7 +110,10 @@ const ammoForRangedWeapons: { [weapon: number]: number[] } = {
   27655: [], // Webweaver bow (charged)
   25862: [], // Bow of faerdhinen (empty)
   25865: [], // Bow of faerdhinen (charged)
-  25867: [], // Bow of faerdhinen (c)
+  10149: [10142], // Swamp lizard, Guam tar
+  10146: [10143], // Orange salamander, Marrentill tar
+  10147: [10144], // Red salamander, Tarromin tar
+  10148: [10145], // Black salamander, Guam tar
 };
 
 export enum AmmoApplicability {
