@@ -1288,7 +1288,6 @@ export default class CombatCalc {
         ]));
       }
 
-      // todo are pearl bolts affected by zcb? wiki doesn't list them
       if (this.wearing(['Pearl bolts (e)', 'Pearl dragon bolts (e)'])) {
         const chance = 0.06 * kandarinDiaryFactor;
         const divisor = mattrs.includes(MonsterAttribute.FIERY) ? 15 : 20;
@@ -1312,6 +1311,7 @@ export default class CombatCalc {
 
       if (this.wearing(['Dragonstone bolts (e)', 'Dragonstone dragon bolts (e)']) && (!mattrs.includes(MonsterAttribute.FIERY) || !mattrs.includes(MonsterAttribute.DRAGON))) {
         const chance = 0.06 * kandarinDiaryFactor;
+        // https://github.com/weirdgloop/osrs-dps-calc/issues/152#issuecomment-1913508743
         const effectDmg = Math.trunc(rangedLvl * 2 / (zaryte ? 9 : 10));
         dist = new AttackDistribution([
           new HitDistribution([
