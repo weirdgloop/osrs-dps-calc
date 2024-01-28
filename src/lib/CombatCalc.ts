@@ -392,7 +392,7 @@ export default class CombatCalc {
       return true;
     }
 
-    if (this.wearing('Slayer\'s staff') && this.player.spell?.name === 'Magic Dart') {
+    if (this.player.spell?.name === 'Magic Dart') {
       return true;
     }
 
