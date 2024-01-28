@@ -401,7 +401,7 @@ const LoadoutComparison: React.FC = observer(() => {
           <ResponsiveContainer width="100%" height={250}>
             <LineChart
               data={data.lines}
-              margin={{ top: 40 }}
+              margin={{ top: 40, right: 20 }}
             >
               <XAxis
                 allowDecimals
