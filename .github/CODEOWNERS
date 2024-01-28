@@ -4,6 +4,7 @@
 
 # anything ui-related
 /src/*.ts @jayktaylor
+/src/*.tsx @jayktaylor
 /src/*.css @jayktaylor
 /src/app/ @jayktaylor
 /src/enums @jayktaylor
