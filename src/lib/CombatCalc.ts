@@ -744,12 +744,6 @@ export default class CombatCalc {
   }
 
   private getPlayerMaxRangedAttackRoll() {
-    const weaponId = this.player.equipment.weapon?.id;
-    const ammoId = this.player.equipment.ammo?.id;
-    if (ammoApplicability(weaponId, ammoId) === AmmoApplicability.INVALID) {
-      return 0;
-    }
-
     const { style } = this.player;
 
     let effectiveLevel: number = this.track(DetailKey.ACCURACY_LEVEL, this.player.skills.ranged + this.player.boosts.ranged);
@@ -808,12 +802,6 @@ export default class CombatCalc {
    * Get the player's max ranged hit
    */
   private getPlayerMaxRangedHit() {
-    const weaponId = this.player.equipment.weapon?.id;
-    const ammoId = this.player.equipment.ammo?.id;
-    if (ammoApplicability(weaponId, ammoId) === AmmoApplicability.INVALID) {
-      return 0;
-    }
-
     const { style } = this.player;
 
     let effectiveLevel: number = this.track(DetailKey.DAMAGE_LEVEL, this.player.skills.ranged + this.player.boosts.ranged);
@@ -1055,6 +1043,14 @@ export default class CombatCalc {
    * Get the max hit for this loadout, which is based on the player's current combat style
    */
   private getMaxHit() {
+    if (this.player.style.stance !== 'Manual Cast') {
+      const weaponId = this.player.equipment.weapon?.id;
+      const ammoId = this.player.equipment.ammo?.id;
+      if (ammoApplicability(weaponId, ammoId) === AmmoApplicability.INVALID) {
+        return 0;
+      }
+    }
+
     const style = this.player.style.type;
 
     let maxHit = 0;
@@ -1077,6 +1073,14 @@ export default class CombatCalc {
   public getMaxAttackRoll() {
     if (this.opts.overrides?.attackRoll !== undefined) {
       return this.track(DetailKey.ACCURACY_ROLL_FINAL, this.opts.overrides?.attackRoll);
+    }
+
+    if (this.player.style.stance !== 'Manual Cast') {
+      const weaponId = this.player.equipment.weapon?.id;
+      const ammoId = this.player.equipment.ammo?.id;
+      if (ammoApplicability(weaponId, ammoId) === AmmoApplicability.INVALID) {
+        return this.track(DetailKey.ACCURACY_ROLL_FINAL, 0.0);
+      }
     }
 
     const style = this.player.style.type;
