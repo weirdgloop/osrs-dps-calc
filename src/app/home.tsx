@@ -16,7 +16,7 @@ import InitialLoad from '@/app/components/InitialLoad';
 import LoadoutComparison from '@/app/components/results/LoadoutComparison';
 import TtkComparison from '@/app/components/results/TtkComparison';
 import ShareModal from '@/app/components/ShareModal';
-import DebugCalcDetails from '@/app/components/results/DebugCalcDetails';
+import DebugPanels from '@/app/components/results/DebugPanels';
 
 const Home: NextPage = observer(() => {
   const store = useStore();
@@ -123,7 +123,7 @@ const Home: NextPage = observer(() => {
       <div className="max-w-[1420px] mx-auto mb-8">
         <LoadoutComparison />
         <TtkComparison />
-        <DebugCalcDetails />
+        <DebugPanels />
       </div>
       <Tooltip id="tooltip" />
       <Tooltip id="tooltip-warning" />
