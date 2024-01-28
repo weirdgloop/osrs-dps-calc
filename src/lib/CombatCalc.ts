@@ -1252,7 +1252,7 @@ export default class CombatCalc {
 
       if (this.wearing(['Dragonstone bolts (e)', 'Dragonstone dragon bolts (e)']) && (!mattrs.includes(MonsterAttribute.FIERY) || !mattrs.includes(MonsterAttribute.DRAGON))) {
         const chance = 0.06 * kandarinDiaryFactor;
-        const effectDmg = Math.trunc(rangedLvl * (zaryte ? 22 : 20) / 100);
+        const effectDmg = Math.trunc(rangedLvl * 2 / (zaryte ? 9 : 10));
         dist = new AttackDistribution([
           new HitDistribution([
             ...standardHitDist.scaleProbability(1 - chance).hits,
