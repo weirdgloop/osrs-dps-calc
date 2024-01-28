@@ -16,6 +16,9 @@ export const metadata: Metadata = {
       'https://tools.runescape.wiki/static/dps-logo.png',
     ],
   },
+  twitter: {
+    card: 'summary',
+  },
 };
 
 const RootLayout: React.FC<PropsWithChildren> = (props) => {
