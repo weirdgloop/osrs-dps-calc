@@ -4,7 +4,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Metadata } from 'next';
 import { ibm, pts } from '@/fonts';
 import ClientProviders from '@/app/components/ClientProviders';
-import logo from '@/public/img/logo.png';
 
 export const metadata: Metadata = {
   title: 'DPS Calculator - OSRS Wiki',
@@ -14,7 +13,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://tools.runescape.wiki/osrs-dps' },
   openGraph: {
     images: [
-      logo.src,
+      'https://tools.runescape.wiki/static/dps-logo.png',
     ],
   },
 };
