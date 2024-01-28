@@ -78,7 +78,7 @@ export function findSpell(name: string): Spell {
   return find(spells, (s) => s.name === name);
 }
 
-export function calculate(player: Player, monster: Monster) {
+export function calculate(monster: Monster, player: Player) {
   const calc = new CombatCalc(player, monster, {
     loadoutName: 'test',
     detailedOutput: true,

@@ -5,7 +5,7 @@ import { ACCURACY_PRECISION, DPS_PRECISION } from '@/constants';
 test('Empty player against Abyssal demon', () => {
   const monster = getTestMonster('Abyssal demon', 'Standard');
   const player = getTestPlayer(monster);
-  const result = calculate(player, monster);
+  const result = calculate(monster, player);
 
   expect(result.maxHit).toBe(11);
   expect(result.dps).toBeCloseTo(0.667, DPS_PRECISION);

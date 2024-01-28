@@ -56,7 +56,7 @@ describe('Toktz-ket-xil', () => {
         },
       });
 
-      const { maxHit } = calculate(player, monster);
+      const { maxHit } = calculate(monster, player);
       expect(maxHit).toBe(34);
     });
 
@@ -69,7 +69,7 @@ describe('Toktz-ket-xil', () => {
         },
       });
 
-      const { maxHit } = calculate(player, monster);
+      const { maxHit } = calculate(monster, player);
       expect(maxHit).toBe(37);
     });
 
@@ -82,7 +82,7 @@ describe('Toktz-ket-xil', () => {
         },
       });
 
-      const { maxHit } = calculate(player, monster);
+      const { maxHit } = calculate(monster, player);
       expect(maxHit).toBe(40);
     });
 
@@ -96,7 +96,7 @@ describe('Toktz-ket-xil', () => {
         },
       });
 
-      const { maxHit } = calculate(player, monster);
+      const { maxHit } = calculate(monster, player);
       expect(maxHit).toBe(43);
     });
 
@@ -109,7 +109,7 @@ describe('Toktz-ket-xil', () => {
         },
       });
 
-      const { maxHit } = calculate(player, monster);
+      const { maxHit } = calculate(monster, player);
       expect(maxHit).toBe(40);
     });
 
@@ -123,7 +123,7 @@ describe('Toktz-ket-xil', () => {
         },
       });
 
-      const { maxHit } = calculate(player, monster);
+      const { maxHit } = calculate(monster, player);
       expect(maxHit).toBe(44);
     });
   });
@@ -145,7 +145,7 @@ describe('Toktz-ket-xil', () => {
         },
       });
 
-      const { maxHit } = calculate(player, monster);
+      const { maxHit } = calculate(monster, player);
       expect(maxHit).toBe(27);
     });
 
@@ -158,7 +158,7 @@ describe('Toktz-ket-xil', () => {
         },
       });
 
-      const { maxHit } = calculate(player, monster);
+      const { maxHit } = calculate(monster, player);
       expect(maxHit).toBe(29);
     });
 
@@ -171,7 +171,7 @@ describe('Toktz-ket-xil', () => {
         },
       });
 
-      const { maxHit } = calculate(player, monster);
+      const { maxHit } = calculate(monster, player);
       expect(maxHit).toBe(32);
     });
 
@@ -185,7 +185,7 @@ describe('Toktz-ket-xil', () => {
         },
       });
 
-      const { maxHit } = calculate(player, monster);
+      const { maxHit } = calculate(monster, player);
       expect(maxHit).toBe(34);
     });
 
@@ -198,7 +198,7 @@ describe('Toktz-ket-xil', () => {
         },
       });
 
-      const { maxHit } = calculate(player, monster);
+      const { maxHit } = calculate(monster, player);
       expect(maxHit).toBe(32);
     });
 
@@ -212,7 +212,7 @@ describe('Toktz-ket-xil', () => {
         },
       });
 
-      const { maxHit } = calculate(player, monster);
+      const { maxHit } = calculate(monster, player);
       expect(maxHit).toBe(34);
     });
   });

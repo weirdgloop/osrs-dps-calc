@@ -43,7 +43,7 @@ describe('Soulreaper axe', () => {
           },
         });
 
-        const { maxHit } = calculate(player, monster);
+        const { maxHit } = calculate(monster, player);
         expect(maxHit).toBe(max);
       });
     });
@@ -64,7 +64,7 @@ describe('Soulreaper axe', () => {
         },
       });
 
-      const { maxHit } = calculate(player, monster);
+      const { maxHit } = calculate(monster, player);
       expect(maxHit).toBe(63);
     });
   });

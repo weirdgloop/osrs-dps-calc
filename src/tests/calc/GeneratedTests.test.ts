@@ -41,7 +41,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(50);
   });
 
@@ -74,7 +74,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(57);
   });
 
@@ -107,7 +107,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(58);
   });
 
@@ -143,7 +143,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(56);
   });
 
@@ -176,7 +176,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(47);
   });
 
@@ -209,7 +209,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(53);
   });
 
@@ -242,7 +242,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(58);
   });
 
@@ -275,7 +275,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(55);
   });
 
@@ -308,7 +308,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(46);
   });
 
@@ -341,7 +341,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(46);
   });
 
@@ -374,7 +374,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(52);
   });
 
@@ -407,7 +407,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(53);
   });
 
@@ -443,7 +443,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(73);
   });
 
@@ -479,7 +479,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(67);
   });
 
@@ -515,7 +515,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(85);
   });
 
@@ -551,7 +551,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(78);
   });
 
@@ -583,7 +583,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(66);
   });
 
@@ -615,7 +615,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(62);
   });
 
@@ -650,7 +650,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(73);
   });
 
@@ -682,7 +682,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(54);
   });
 
@@ -714,7 +714,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(51);
   });
 
@@ -747,7 +747,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(53);
   });
 
@@ -780,7 +780,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(59);
   });
 
@@ -813,7 +813,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(50);
   });
 
@@ -847,7 +847,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(20);
   });
 
@@ -881,7 +881,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(22);
   });
 
@@ -915,7 +915,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(30);
   });
 
@@ -949,7 +949,7 @@ describe('Generated tests', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(31);
   });
 });

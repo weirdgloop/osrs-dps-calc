@@ -38,7 +38,7 @@ describe('Duke demonbane', () => {
       },
     });
 
-    const { maxHit } = calculate(player, monster);
+    const { maxHit } = calculate(monster, player);
     expect(maxHit).toBe(50);
   });
 });

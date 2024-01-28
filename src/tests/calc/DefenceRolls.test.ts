@@ -7,7 +7,7 @@ import { DetailKey } from '@/lib/CalcDetails';
 test('Abyssal demon', () => {
   const monster = getTestMonster('Abyssal demon', 'Standard');
   const player = getTestPlayer(monster);
-  const { npcDefRoll, details } = calculate(player, monster);
+  const { npcDefRoll, details } = calculate(monster, player);
 
   expect(npcDefRoll).toBe(12096);
   expect(findResult(details, DetailKey.DEFENCE_ROLL_LEVEL)).toBe(135);
