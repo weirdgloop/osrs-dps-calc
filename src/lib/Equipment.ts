@@ -1,7 +1,7 @@
 import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { keys } from '@/utils';
-import { TOMBS_OF_AMASCUT_MONSTER_IDS } from '@/constants';
+import { TOMBS_OF_AMASCUT_MONSTER_IDS } from '@/lib/constants';
 import { sum } from 'd3-array';
 
 export type EquipmentBonuses = Pick<Player, 'bonuses' | 'offensive' | 'defensive'>;

@@ -25,7 +25,7 @@ import {
   PARTY_SIZE_REQUIRED_MONSTER_IDS,
   TOMBS_OF_AMASCUT_MONSTER_IDS,
   TOMBS_OF_AMASCUT_PATH_MONSTER_IDS,
-} from '@/constants';
+} from '@/lib/constants';
 import {
   IconChevronDown,
   IconChevronUp,
