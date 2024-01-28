@@ -18,7 +18,9 @@ const InitialLoad: React.FC = observer(() => {
     const id = searchParams.get('id');
     if (id) {
       // If there was a share ID provided, load the data for it into the calculator
-      store.loadShortlink(id);
+      store.loadShortlink(id).then(() => {
+        window.history.replaceState({}, '', '/osrs-dps/');
+      });
     } else {
       // Else, load username from browser storage if there is one and lookup stats
       localforage.getItem('dps-calc-username').then((u) => {
