@@ -109,7 +109,7 @@ export default class CombatCalc {
       };
     }
 
-    if (ammoApplicability(this.player.equipment.weapon?.id, this.player.equipment.ammo?.id) === AmmoApplicability.INVALID) {
+    if (this.player.style.stance !== 'Manual Cast' && ammoApplicability(this.player.equipment.weapon?.id, this.player.equipment.ammo?.id) === AmmoApplicability.INVALID) {
       if (this.player.equipment.ammo?.name) {
         this.addIssue(UserIssueType.EQUIPMENT_WRONG_AMMO, 'This ammo does not work with your current weapon.');
       } else {
@@ -391,7 +391,7 @@ export default class CombatCalc {
       return true;
     }
 
-    return this.wearing([
+    return this.isUsingMeleeStyle() && this.wearing([
       'Blessed axe',
       'Ivandis flail',
       'Blisterwood flail',
@@ -416,7 +416,7 @@ export default class CombatCalc {
    * @see https://oldschool.runescape.wiki/w/Silver_weaponry
    */
   private isWearingIvandisWeapon(): boolean {
-    return this.wearing([
+    return this.isUsingMeleeStyle() && this.wearing([
       'Ivandis flail',
       'Blisterwood sickle',
       'Blisterwood flail',
@@ -428,7 +428,7 @@ export default class CombatCalc {
    * @see https://oldschool.runescape.wiki/w/Leafy_(attribute)
    */
   private isWearingLeafBladedWeapon(): boolean {
-    if (this.wearing([
+    if (this.isUsingMeleeStyle() && this.wearing([
       'Leaf-bladed battleaxe',
       'Leaf-bladed spear',
       'Leaf-bladed sword',
@@ -1157,6 +1157,7 @@ export default class CombatCalc {
     const mattrs = this.monster.attributes;
     const acc = this.getHitChance();
     const max = this.getMaxHit();
+    const style = this.player.style.type;
 
     // standard linear
     const standardHitDist = HitDistribution.linear(acc, 0, max);
@@ -1169,14 +1170,14 @@ export default class CombatCalc {
       ]);
     }
 
-    if (this.isWearingFang()) {
+    if (this.isUsingMeleeStyle() && this.isWearingFang()) {
       const shrink = Math.trunc(max * 3 / 20);
       dist = new AttackDistribution(
         [HitDistribution.linear(acc, shrink, max - shrink)],
       );
     }
 
-    if (this.wearing('Gadderhammer') && mattrs.includes(MonsterAttribute.SHADE)) {
+    if (this.isUsingMeleeStyle() && this.wearing('Gadderhammer') && mattrs.includes(MonsterAttribute.SHADE)) {
       dist = new AttackDistribution([
         new HitDistribution([
           ...standardHitDist.scaleProbability(0.95).scaleDamage(5, 4).hits,
@@ -1185,13 +1186,13 @@ export default class CombatCalc {
       ]);
     }
 
-    if (this.isWearingDharok()) {
+    if (this.isUsingMeleeStyle() && this.isWearingDharok()) {
       const newMax = this.player.skills.hp;
       const curr = this.player.skills.hp + this.player.boosts.hp;
       dist = dist.scaleDamage(10000 + (max - curr) * newMax, 10000);
     }
 
-    if (this.isWearingVeracs()) {
+    if (this.isUsingMeleeStyle() && this.isWearingVeracs()) {
       dist = new AttackDistribution([
         new HitDistribution([
           ...standardHitDist.scaleProbability(0.75).hits,
@@ -1200,7 +1201,7 @@ export default class CombatCalc {
       ]);
     }
 
-    if (this.isWearingKarils()) {
+    if (style === 'ranged' && this.isWearingKarils()) {
       dist = new AttackDistribution([
         standardHitDist.scaleProbability(0.75),
         new HitDistribution([
@@ -1212,7 +1213,7 @@ export default class CombatCalc {
       ]);
     }
 
-    if (this.isWearingScythe()) {
+    if (this.isUsingMeleeStyle() && this.isWearingScythe()) {
       const hits: HitDistribution[] = [];
       for (let i = 0; i < Math.min(Math.max(this.monster.size, 1), 3); i++) {
         hits.push(HitDistribution.linear(acc, 0, Math.floor(max / (2 ** i))));
@@ -1220,7 +1221,7 @@ export default class CombatCalc {
       dist = new AttackDistribution(hits);
     }
 
-    if (this.isWearingKeris() && mattrs.includes(MonsterAttribute.KALPHITE)) {
+    if (this.isUsingMeleeStyle() && this.isWearingKeris() && mattrs.includes(MonsterAttribute.KALPHITE)) {
       dist = new AttackDistribution([
         new HitDistribution([
           ...standardHitDist.scaleProbability(50.0 / 51.0).hits,
@@ -1229,7 +1230,7 @@ export default class CombatCalc {
       ]);
     }
 
-    if (GUARDIAN_IDS.includes(this.monster.id) && this.player.equipment.weapon?.category === EquipmentCategory.PICKAXE) {
+    if (this.isUsingMeleeStyle() && GUARDIAN_IDS.includes(this.monster.id) && this.player.equipment.weapon?.category === EquipmentCategory.PICKAXE) {
       // just the level required to wield
       const pickBonuses: { [k: string]: number } = {
         'Bronze pickaxe': 1,
@@ -1259,12 +1260,11 @@ export default class CombatCalc {
     if (this.wearing('Tome of fire') && isFireSpell(this.player.spell)) {
       dist = dist.scaleDamage(3, 2);
     }
-
     if (this.wearing('Tome of water') && isWaterSpell(this.player.spell)) {
       dist = dist.scaleDamage(6, 5);
     }
 
-    if (this.isWearingAhrims()) {
+    if (this.player.style.type === 'magic' && this.isWearingAhrims()) {
       dist = new AttackDistribution([
         new HitDistribution([
           ...standardHitDist.scaleProbability(0.75).hits,
@@ -1339,7 +1339,7 @@ export default class CombatCalc {
       dist = dist.transform(divisionTransformer(2));
     }
 
-    if (this.player.equipment.weapon?.name.includes('rossbow')) {
+    if (this.player.style.type === 'ranged' && this.player.equipment.weapon?.name.includes('rossbow')) {
       if (this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)'])) {
         const chance = 0.06 * (this.player.buffs.kandarinDiary ? 1.1 : 1.0);
         const effectDmg = this.wearing('Zaryte crossbow')
@@ -1440,7 +1440,7 @@ export default class CombatCalc {
     if (mattrs.includes(MonsterAttribute.VAMPYRE_3) && !this.isWearingIvandisWeapon()) {
       return true;
     }
-    if (GUARDIAN_IDS.includes(monsterId) && this.player.equipment.weapon?.category !== EquipmentCategory.PICKAXE) {
+    if (GUARDIAN_IDS.includes(monsterId) && (!this.isUsingMeleeStyle() || this.player.equipment.weapon?.category !== EquipmentCategory.PICKAXE)) {
       return true;
     }
     if (mattrs.includes(MonsterAttribute.LEAFY) && !this.isWearingLeafBladedWeapon()) {
@@ -1469,7 +1469,7 @@ export default class CombatCalc {
   public getAttackSpeed(): number {
     let attackSpeed = this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;
 
-    if (this.player.style.stance === 'Rapid') {
+    if (this.player.style.type === 'ranged' && this.player.style.stance === 'Rapid') {
       attackSpeed -= 1;
     }
     if (AUTOCAST_STANCES.includes(this.player.style.stance)) {
