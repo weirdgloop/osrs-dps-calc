@@ -17,6 +17,7 @@ import LoadoutComparison from '@/app/components/results/LoadoutComparison';
 import TtkComparison from '@/app/components/results/TtkComparison';
 import ShareModal from '@/app/components/ShareModal';
 import DebugPanels from '@/app/components/results/DebugPanels';
+import { IconAlertTriangle } from '@tabler/icons-react';
 
 const Home: NextPage = observer(() => {
   const store = useStore();
@@ -108,6 +109,16 @@ const Home: NextPage = observer(() => {
 
   return (
     <div>
+      {store.prefs.manualMode && (
+        <button
+          type="button"
+          className="w-full bg-orange-500 text-white px-4 py-1 text-sm border-b border-orange-400 flex items-center gap-1"
+          onClick={() => store.updatePreferences({ manualMode: false })}
+        >
+          <IconAlertTriangle className="text-orange-200" />
+          Manual mode is enabled! Some things may not function correctly. Click here to disable it.
+        </button>
+      )}
       <Suspense>
         <InitialLoad />
       </Suspense>
