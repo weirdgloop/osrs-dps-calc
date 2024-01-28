@@ -52,6 +52,7 @@ export enum DetailKey {
   MAX_HIT_RATBANE = 'Max hit ratbane',
   MAX_HIT_FINAL = 'Max hit',
   ACCURACY_DAWNBRINGER = 'Accuracy override dawnbringer',
+  ACCURACY_SCURRIUS_RAT = 'Accuracy override giant rat',
   ACCURACY_BASE = 'Accuracy base',
   ACCURACY_BRIMSTONE = 'Accuracy brimstone ring',
   ACCURACY_FANG_TOA = 'Accuracy fang toa',

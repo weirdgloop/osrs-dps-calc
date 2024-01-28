@@ -1,31 +1,16 @@
 import { EquipmentPiece, Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import {
-  AttackDistribution,
-  cappedRerollTransformer,
-  divisionTransformer,
-  flatLimitTransformer,
-  HitDistribution,
-  linearMinTransformer,
-  multiplyTransformer,
-  WeightedHit,
+  AttackDistribution, cappedRerollTransformer, divisionTransformer, flatLimitTransformer, HitDistribution,
+  linearMinTransformer, multiplyTransformer, WeightedHit,
 } from '@/lib/HitDist';
 import { isBindSpell, isFireSpell, isWaterSpell } from '@/types/Spell';
 import { PrayerData, PrayerMap } from '@/enums/Prayer';
 import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
-  GLOWING_CRYSTAL_IDS,
-  GUARDIAN_IDS,
-  IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS,
-  IMMUNE_TO_MELEE_DAMAGE_NPC_IDS,
-  IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS,
-  IMMUNE_TO_RANGED_DAMAGE_NPC_IDS,
-  OLM_HEAD_IDS,
-  OLM_MAGE_HAND_IDS,
-  OLM_MELEE_HAND_IDS,
-  TEKTON_IDS,
-  TOMBS_OF_AMASCUT_MONSTER_IDS,
-  USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
+  GLOWING_CRYSTAL_IDS, GUARDIAN_IDS, IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS, IMMUNE_TO_MELEE_DAMAGE_NPC_IDS,
+  IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS, IMMUNE_TO_RANGED_DAMAGE_NPC_IDS, OLM_HEAD_IDS, OLM_MAGE_HAND_IDS,
+  OLM_MELEE_HAND_IDS, TEKTON_IDS, TOMBS_OF_AMASCUT_MONSTER_IDS, USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
   VERZIK_P1_IDS,
 } from '@/constants';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
@@ -1060,6 +1045,12 @@ export default class CombatCalc {
       return this.track(DetailKey.ACCURACY_FINAL, 1.0);
     }
 
+    // Giant rat (Scurrius)
+    if (this.monster.id === 7223 && this.player.style.stance !== 'Manual Cast') {
+      this.track(DetailKey.ACCURACY_SCURRIUS_RAT, 1.0);
+      return this.track(DetailKey.ACCURACY_FINAL, 1.0);
+    }
+
     const atk = this.getMaxAttackRoll();
     const def = this.getNPCDefenceRoll();
 
@@ -1426,6 +1417,13 @@ export default class CombatCalc {
         return 4;
       }
       return 5;
+    }
+
+    // Giant rat (Scurrius)
+    if (this.monster.id === 7223 && this.player.style.stance !== 'Manual Cast') {
+      if (['Bone mace', 'Bone shortbow', 'Bone staff'].includes(this.player.equipment.weapon?.name || '')) {
+        attackSpeed = 1;
+      }
     }
 
     return attackSpeed;
