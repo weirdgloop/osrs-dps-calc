@@ -784,7 +784,8 @@ export default class CombatCalc {
     }
 
     if (this.wearing('Twisted bow')) {
-      const tbowMagic = Math.max(this.monster.skills.magic, this.monster.offensive.magic);
+      const cap = mattrs.includes(MonsterAttribute.XERICIAN) ? 350 : 250;
+      const tbowMagic = Math.min(cap, Math.max(this.monster.skills.magic, this.monster.offensive.magic));
       attackRoll = CombatCalc.tbowScaling(attackRoll, tbowMagic, true);
     }
     if (this.wearing(["Craw's bow", 'Webweaver bow']) && buffs.inWilderness) {
@@ -845,7 +846,8 @@ export default class CombatCalc {
     }
 
     if (this.wearing('Twisted bow')) {
-      const tbowMagic = Math.max(this.monster.skills.magic, this.monster.offensive.magic);
+      const cap = mattrs.includes(MonsterAttribute.XERICIAN) ? 350 : 250;
+      const tbowMagic = Math.min(cap, Math.max(this.monster.skills.magic, this.monster.offensive.magic));
       maxHit = CombatCalc.tbowScaling(maxHit, tbowMagic, false);
     }
     if (this.wearing(["Craw's bow", 'Webweaver bow']) && buffs.inWilderness) {
