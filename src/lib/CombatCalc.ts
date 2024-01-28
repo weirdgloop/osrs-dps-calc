@@ -1354,7 +1354,9 @@ export default class CombatCalc {
     if (['Slash Bash', 'Zogre', 'Skogre'].includes(this.monster.name)) {
       if (this.player.spell?.name === 'Crumble Undead') {
         dist = dist.transform(divisionTransformer(2));
-      } else if (!this.player.equipment.ammo?.name.includes(' brutal')) {
+      } else if (this.player.style.type !== 'ranged'
+        || !this.player.equipment.ammo?.name.includes(' brutal')
+        || this.player.equipment.weapon?.name !== 'Comp ogre bow') {
         dist = dist.transform(divisionTransformer(4));
       }
     }
