@@ -132,6 +132,18 @@ export default class CombatCalc {
       };
       this.addIssue(UserIssueType.SPELL_WRONG_WEAPON, 'This spell needs a specific weapon equipped to cast.');
     }
+
+    // Certain spells can only be cast on specific monsters
+    if (
+      (spellName?.includes('Demonbane') && !this.monster.attributes.includes(MonsterAttribute.DEMON))
+      || (spellName === 'Crumble Undead' && !this.monster.attributes.includes(MonsterAttribute.UNDEAD))
+    ) {
+      this.player = {
+        ...this.player,
+        spell: null,
+      };
+      this.addIssue(UserIssueType.SPELL_WRONG_MONSTER, 'This spell cannot be cast on the selected monster.');
+    }
   }
 
   private track<T extends Parameters<CalcDetails['track']>[1]>(label: Parameters<CalcDetails['track']>[0], value: T, textOverride?: Parameters<CalcDetails['track']>[2]): T {
