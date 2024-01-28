@@ -472,7 +472,7 @@ class GlobalState implements State {
 
     const eq = player.equipment;
     if (eq && (Object.hasOwn(eq, 'weapon') || Object.hasOwn(eq, 'shield'))) {
-      const currentWeapon = this.equipmentData.weapon;
+      const currentWeapon = this.loadouts[loadoutIx].equipment.weapon;
       const newWeapon = player.equipment?.weapon;
 
       if (newWeapon !== undefined) {
@@ -484,7 +484,7 @@ class GlobalState implements State {
         }
       }
 
-      const currentShield = this.equipmentData.shield;
+      const currentShield = this.loadouts[loadoutIx].equipment.shield;
       const newShield = player.equipment?.shield;
 
       // Special handling for if a shield is equipped, and we're using a two-handed weapon
@@ -497,7 +497,7 @@ class GlobalState implements State {
       }
     }
 
-    this.loadouts[loadoutIx] = merge(this.player, player);
+    this.loadouts[loadoutIx] = merge(this.loadouts[loadoutIx], player);
     if (eq || Object.hasOwn(player, 'spell')) {
       this.recalculateEquipmentBonusesFromGear(loadoutIx);
     }
