@@ -441,7 +441,7 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
     });
   });
 
-  if (player.equipment.weapon?.name === "Tumeken's shadow") {
+  if (player.equipment.weapon?.name === "Tumeken's shadow" && player.style.stance !== 'Manual Cast') {
     const factor = TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id) ? 4 : 3;
     totals.bonuses.magic_str *= factor;
     totals.offensive.magic *= factor;
