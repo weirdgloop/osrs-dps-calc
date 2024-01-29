@@ -239,6 +239,14 @@ class GlobalState implements State {
         this.recalculateEquipmentBonusesFromGearAll();
       }
     }));
+
+    // reset monster current hp when selecting a new monster
+    const monsterHpTriggers: ((r: IReactionPublic) => unknown)[] = [
+      () => toJS(this.monster.id),
+    ];
+    monsterHpTriggers.map((t) => reaction(t, () => {
+      this.monster.inputs.monsterCurrentHp = this.monster.skills.hp;
+    }));
   }
 
   set debug(debug: boolean) {
