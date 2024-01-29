@@ -4,6 +4,8 @@
  * @see https://oldschool.runescape.wiki/w/Trouver_parchment
  */
 const equipmentAliases = {
+  12006: [26484], // Abyssal tentacle
+  4151: [26482], // Abyssal whip
   8849: [24141], // Adamant defender
   1161: [2613, 2605], // Adamant full helm
   1199: [2611, 2603], // Adamant kiteshield
@@ -15,17 +17,26 @@ const equipmentAliases = {
   4712: [4872, 4868, 4871, 4870, 4869], // Ahrim's robetop
   4710: [4866, 4862, 4865, 4864, 4863], // Ahrim's staff
   1729: [23309], // Amulet of defence
+  6585: [12436], // Amulet of fury
   1727: [10366], // Amulet of magic
   1731: [23354], // Amulet of power
+  19553: [20366], // Amulet of torture
   24201: [24203], // Ancient halo
   27624: [27626], // Ancient sceptre
   11771: [26768, 25260], // Archers ring (i)
+  11830: [26716], // Armadyl chainskirt
+  11802: [20368], // Armadyl godsword
   24192: [24194], // Armadyl halo
+  11826: [26714], // Armadyl helmet
   21898: [24135], // Assembler max cape
   22109: [24222], // Ava's assembler
   22322: [24186], // Avernic defender
+  11836: [26720], // Bandos boots
+  11804: [20370], // Bandos godsword
   24195: [24197], // Bandos halo
+  11834: [26719], // Bandos tassets
   25641: [25643], // Barronite mace
+  11128: [23240], // Berserker necklace
   11773: [26770, 25264], // Berserker ring (i)
   2503: [12381, 12385], // Black d'hide body
   2497: [12383, 12387], // Black d'hide chaps
@@ -37,12 +48,18 @@ const equipmentAliases = {
   1089: [3473, 3472], // Black plateskirt
   1015: [12445, 12447], // Black skirt
   11864: [19639, 19643, 23073, 21264, 19647, 21888, 24370, 25910, 25898, 25904], // Slayer helmet
+  24551: [25882, 25876, 25878, 25872, 25870, 25880, 25874], // Blade of saeldor (c)
   28260: [28473], // Blood ancient sceptre
   2499: [7374, 7376], // Blue d'hide body
   2493: [7382, 7384], // Blue d'hide chaps
   1011: [7386, 7388], // Blue skirt
   579: [7394, 7396], // Blue wizard hat
   577: [7390, 7392], // Blue wizard robe
+  3844: [26488], // Book of balance
+  12612: [26490], // Book of darkness
+  12610: [26492], // Book of law
+  12608: [26494], // Book of war
+  25867: [25896, 25890, 25892, 25886, 25884, 25894, 25888], // Bow of faerdhinen (c)
   24204: [24206], // Brassica halo
   8844: [24136], // Bronze defender
   1155: [12211, 12221], // Bronze full helm
@@ -55,6 +72,9 @@ const equipmentAliases = {
   26749: [26750], // Calamity chest
   26721: [26722], // Centurion cuirass
   3105: [23413], // Climbing boots
+  24288: [27123], // Dagon'hai hat
+  24294: [27127], // Dagon'hai robe bottom
+  24291: [27125], // Dagon'hai robe top
   4509: [24158], // Decorative armour (gold platebody)
   4510: [24159], // Decorative armour (gold platelegs)
   11895: [24162], // Decorative armour (gold plateskirt)
@@ -73,29 +93,47 @@ const equipmentAliases = {
   4716: [4884, 4880, 4883, 4882, 4881], // Dharok's helm
   4720: [4896, 4892, 4895, 4894, 4893], // Dharok's platebody
   4722: [4902, 4898, 4901, 4900, 4899], // Dharok's platelegs
-  11840: [22234], // Dragon boots
-  3140: [12414], // Dragon chainbody
+  7158: [28051], // Dragon 2h sword
+  6739: [25378], // Dragon axe
+  1377: [28037], // Dragon battleaxe
+  11840: [28055, 22234], // Dragon boots
+  3140: [28065, 12414], // Dragon chainbody
+  13652: [28039, 26708], // Dragon claws
+  21902: [28053], // Dragon crossbow
   12954: [24143, 27008, 19722], // Dragon defender
   11335: [12417], // Dragon full helm
-  21012: [25916], // Dragon hunter crossbow
+  3204: [28049], // Dragon halberd
+  21028: [25373], // Dragon harpoon
+  21012: [25918, 25916], // Dragon hunter crossbow
   21895: [22244], // Dragon kiteshield
+  1305: [28033], // Dragon longsword
+  1434: [28027], // Dragon mace
+  1149: [28057], // Dragon med helm
+  11920: [23677, 12797], // Dragon pickaxe
+  23677: [25376], // Dragon pickaxe (or)
   21892: [22242], // Dragon platebody
-  4087: [12415], // Dragon platelegs
-  4585: [12416], // Dragon plateskirt
-  1187: [12418], // Dragon sq shield
+  4087: [28061, 12415], // Dragon platelegs
+  4585: [28063, 12416], // Dragon plateskirt
+  4587: [28031, 20000], // Dragon scimitar
+  1187: [28059, 12418], // Dragon sq shield
+  21009: [28029], // Dragon sword
+  13576: [28035, 26710], // Dragon warhammer
+  20595: [27119], // Elder chaos hood
+  20520: [27117], // Elder chaos robe
+  20517: [27115], // Elder chaos top
+  21003: [27100], // Elder maul
+  25985: [27253], // Elidinis' ward
   26759: [26760], // Elite calamity breeches
   26753: [26754], // Elite calamity chest
-  13073: [24180], // Elite void robe
-  26471: [27004], // Elite void robe (or)
-  13072: [24178], // Elite void top
-  26469: [27003], // Elite void top (or)
+  13073: [24180, 27004, 26471], // Elite void robe
+  13072: [24178, 27003, 26469], // Elite void top
   10548: [24173], // Fighter hat
-  10551: [24175], // Fighter torso
-  28067: [28069], // Fighter torso (or)
+  10551: [24175, 28069, 28067], // Fighter torso
   6570: [24223], // Fire cape
   13329: [24134], // Fire max cape
   27550: [27551], // Ghommal's avernic defender 5
   27552: [27553], // Ghommal's avernic defender 6
+  4153: [12848, 24227], // Granite maul
   21752: [26685, 25193], // Granite ring (i)
   1135: [7370, 7372], // Green d'hide body
   1099: [7378, 7380], // Green d'hide chaps
@@ -105,6 +143,9 @@ const equipmentAliases = {
   4726: [4914, 4910, 4913, 4912, 4911], // Guthan's warspear
   12639: [24171], // Guthix halo
   10547: [24172], // Healer hat
+  19481: [26712], // Heavy ballista
+  10828: [28070], // Helm of neitiznot
+  3840: [26496], // Holy book
   28262: [28474], // Ice ancient sceptre
   21793: [24249], // Imbued guthix cape
   21784: [24234], // Imbued guthix max cape
@@ -127,8 +168,10 @@ const equipmentAliases = {
   26741: [26742], // Koriff's coif
   26739: [26740], // Koriff's cowl
   26737: [26738], // Koriff's headband
+  3053: [21198], // Lava battlestaff
   1129: [23381], // Leather body
   1095: [23384], // Leather chaps
+  11924: [12806], // Malediction ward
   26745: [26746], // Maoma's full helm
   26747: [26748], // Maoma's great helm
   26743: [26744], // Maoma's med helm
@@ -142,11 +185,23 @@ const equipmentAliases = {
   1085: [12285, 12295], // Mithril plateskirt
   542: [20202, 23306], // Monk's robe
   544: [20199, 23303], // Monk's robe top
+  4097: [26539], // Mystic boots
+  4095: [26537], // Mystic gloves
+  4089: [26531], // Mystic hat
+  3054: [21200], // Mystic lava staff
+  4093: [26535], // Mystic robe bottom
+  4091: [26533], // Mystic robe top
+  11789: [12796], // Mystic steam staff
+  19547: [22249], // Necklace of anguish
+  12002: [19720], // Occult necklace
+  11926: [12807], // Odium ward
+  26219: [27246], // Osmumten's fang
   10555: [24176], // Penance skirt
   10550: [24174], // Ranger hat
   2501: [12327, 12331], // Red d'hide body
   2495: [12329, 12333], // Red d'hide chaps
   13202: [26764, 25252], // Ring of the gods (i)
+  9185: [26486], // Rune crossbow
   8850: [24142, 27009, 23230], // Rune defender
   1163: [2619, 2627], // Rune full helm
   1201: [2621, 2629], // Rune kiteshield
@@ -160,12 +215,15 @@ const equipmentAliases = {
   26733: [26734], // Saika's veil
   12018: [26782, 25278], // Salve amulet(ei)
   12017: [26763, 25250], // Salve amulet(i)
+  11806: [20372], // Saradomin godsword
   12637: [24169], // Saradomin halo
   11770: [26767, 25258], // Seers ring (i)
   24198: [24200], // Seren halo
   28266: [28476], // Shadow ancient sceptre
+  2961: [2963], // Silver sickle
   11865: [26674, 25177], // Slayer helmet (i)
   28264: [28475], // Smoke ancient sceptre
+  11787: [12795], // Steam battlestaff
   8846: [24138], // Steel defender
   1157: [20178, 20193], // Steel full helm
   1193: [20181, 20196], // Steel kiteshield
@@ -180,30 +238,27 @@ const equipmentAliases = {
   4745: [4956, 4952, 4955, 4954, 4953], // Torag's helm
   4749: [4968, 4964, 4967, 4966, 4965], // Torag's platebody
   4751: [4974, 4970, 4973, 4972, 4971], // Torag's platelegs
+  19544: [23444], // Tormented bracelet
   12692: [26766, 25256], // Treasonous ring (i)
   12691: [26765, 25254], // Tyrannical ring (i)
   6528: [23235], // Tzhaar-ket-om
+  3842: [26498], // Unholy book
   4757: [4992, 4988, 4991, 4990, 4989], // Verac's brassard
   4755: [4986, 4982, 4985, 4984, 4983], // Verac's flail
   4753: [4980, 4976, 4979, 4978, 4977], // Verac's helm
   4759: [4998, 4994, 4997, 4996, 4995], // Verac's plateskirt
-  8842: [24182], // Void knight gloves
-  26467: [27002], // Void knight gloves (or)
+  8842: [24182, 27002, 26467], // Void knight gloves
   8841: [24181], // Void knight mace
-  8840: [24179], // Void knight robe
-  26465: [27001], // Void knight robe (or)
-  8839: [24177], // Void knight top
-  26463: [27000], // Void knight top (or)
-  11663: [24183], // Void mage helm
-  26473: [27005], // Void mage helm (or)
-  11665: [24185], // Void melee helm
-  26477: [27007], // Void melee helm (or)
-  11664: [24184], // Void ranger helm
-  26475: [27006], // Void ranger helm (or)
+  8840: [24179, 27001, 26465], // Void knight robe
+  8839: [24177, 27000, 26463], // Void knight top
+  11663: [24183, 27005, 26473], // Void mage helm
+  11665: [24185, 27007, 26477], // Void melee helm
+  11664: [24184, 27006, 26475], // Void ranger helm
   11772: [26769, 25262], // Warrior ring (i)
   1171: [20166], // Wooden shield
   26723: [26724], // Wristbands of the arena
   26727: [26728], // Wristbands of the arena (i)
+  11808: [20374], // Zamorak godsword
   12638: [24170], // Zamorak halo
 };
 
