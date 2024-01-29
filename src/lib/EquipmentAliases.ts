@@ -75,8 +75,7 @@ const equipmentAliases = {
   4722: [4902, 4898, 4901, 4900, 4899], // Dharok's platelegs
   11840: [22234], // Dragon boots
   3140: [12414], // Dragon chainbody
-  12954: [24143], // Dragon defender
-  19722: [27008], // Dragon defender (t)
+  12954: [24143, 27008, 19722], // Dragon defender
   11335: [12417], // Dragon full helm
   21012: [25916], // Dragon hunter crossbow
   21895: [22244], // Dragon kiteshield
@@ -148,8 +147,7 @@ const equipmentAliases = {
   2501: [12327, 12331], // Red d'hide body
   2495: [12329, 12333], // Red d'hide chaps
   13202: [26764, 25252], // Ring of the gods (i)
-  8850: [24142], // Rune defender
-  23230: [27009], // Rune defender (t)
+  8850: [24142, 27009, 23230], // Rune defender
   1163: [2619, 2627], // Rune full helm
   1201: [2621, 2629], // Rune kiteshield
   1127: [2615, 23209, 23212, 23215, 23218, 23221, 2623], // Rune platebody

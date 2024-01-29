@@ -69,9 +69,9 @@ const equipmentAliases = {"""
 
 EquipmentAliases = namedtuple('EquipmentAliases', ['base_name', 'alias_ids'])
 
-def handle_base_variant(all_items, variant_item, base_name, base_version):
+def handle_base_variant(all_items, variant_item, base_name, base_versions):
     global data
-    base_variant = next((x for x in all_items if x['name'] == base_name and x['version'] == base_version), None)
+    base_variant = next((x for x in all_items if x['name'] == base_name and x['version'] in base_versions), None)
     if base_variant:
         data.setdefault(base_variant['id'], EquipmentAliases(base_name, [])).alias_ids.append(variant_item['id'])
 
@@ -108,19 +108,24 @@ def main():
 
         # Locked variants
         if item['version'] == 'Locked':
-            handle_base_variant(all_items, item, item['name'], 'Normal')
+            # Locked and decorated
+            if decoration_kit_match:
+                handle_base_variant(all_items, item, decoration_kit_match.group(1).strip(), ['Normal'])
+            # Only locked
+            else:
+                handle_base_variant(all_items, item, item['name'], ['Normal'])
         # Cosmetic Slayer helmets
         elif slayer_helm_match:
-            handle_base_variant(all_items, item, 'Slayer helmet%s' % (slayer_helm_match.group(1) or ''), '')
+            handle_base_variant(all_items, item, 'Slayer helmet%s' % (slayer_helm_match.group(1) or ''), [''])
         # Decoration kit variants
         elif decoration_kit_match:
-            handle_base_variant(all_items, item, decoration_kit_match.group(1).strip(), '')
+            handle_base_variant(all_items, item, decoration_kit_match.group(1).strip(), ['', 'Normal'])
         # Merge Soul Wars/Emir's Arena versions -> Nightmare Zone
         elif re.match(r"^(Soul Wars|Emir's Arena)$", item['version']):
-            handle_base_variant(all_items, item, item['name'], 'Nightmare Zone')
+            handle_base_variant(all_items, item, item['name'], ['Nightmare Zone'])
         # Degraded variants
         elif re.match(r"^(Broken|0|25|50|75|100)$", item['version']):
-            handle_base_variant(all_items, item, item['name'], 'Undamaged')
+            handle_base_variant(all_items, item, item['name'], ['Undamaged'])
 
     for k, v in data.items():
         dataJs += '\n  %s: %s, // %s' % (k, v[1], v[0])
