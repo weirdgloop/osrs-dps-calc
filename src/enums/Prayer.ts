@@ -14,6 +14,12 @@ import Chivalry from '@/public/img/prayers/Chivalry.png';
 import Piety from '@/public/img/prayers/Piety.png';
 import Rigour from '@/public/img/prayers/Rigour.png';
 import Augury from '@/public/img/prayers/Augury.png';
+import ProtectMagic from '@/public/img/prayers/Protect_from_Magic.png';
+import ProtectMelee from '@/public/img/prayers/Protect_from_Melee.png';
+import ProtectRanged from '@/public/img/prayers/Protect_from_Missiles.png';
+import Redemption from '@/public/img/prayers/Redemption.png';
+import Retribution from '@/public/img/prayers/Retribution.png';
+import Smite from '@/public/img/prayers/Smite.png';
 import { StaticImageData } from 'next/image';
 import { Factor } from '@/lib/Math';
 
@@ -34,6 +40,12 @@ export enum Prayer {
   PIETY,
   RIGOUR,
   AUGURY,
+  PROTECT_MAGIC,
+  PROTECT_RANGED,
+  PROTECT_MELEE,
+  RETRIBUTION,
+  REDEMPTION,
+  SMITE,
 }
 
 export const DEFENSIVE_PRAYERS = [
@@ -54,11 +66,16 @@ export const ARM_PRAYERS = [
   Prayer.BURST_OF_STRENGTH, Prayer.SUPERHUMAN_STRENGTH, Prayer.ULTIMATE_STRENGTH,
 ];
 
+export const OVERHEAD_PRAYERS = [
+  Prayer.PROTECT_MAGIC, Prayer.PROTECT_RANGED, Prayer.PROTECT_MELEE,
+  Prayer.RETRIBUTION, Prayer.REDEMPTION, Prayer.SMITE,
+];
+
 export type PrayerCombatStyle = 'magic' | 'ranged' | 'melee';
 export interface PrayerData {
   name: string,
   image: StaticImageData,
-  combatStyle: PrayerCombatStyle,
+  combatStyle?: PrayerCombatStyle,
   factorAccuracy?: Factor,
   factorStrength?: Factor,
 }
@@ -165,5 +182,29 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     image: Augury,
     combatStyle: 'magic',
     factorAccuracy: [5, 4],
+  },
+  [Prayer.PROTECT_MAGIC]: {
+    name: 'Protect from Magic',
+    image: ProtectMagic,
+  },
+  [Prayer.PROTECT_MELEE]: {
+    name: 'Protect from Melee',
+    image: ProtectMelee,
+  },
+  [Prayer.PROTECT_RANGED]: {
+    name: 'Protect from Missiles',
+    image: ProtectRanged,
+  },
+  [Prayer.RETRIBUTION]: {
+    name: 'Retribution',
+    image: Retribution,
+  },
+  [Prayer.REDEMPTION]: {
+    name: 'Redemption',
+    image: Redemption,
+  },
+  [Prayer.SMITE]: {
+    name: 'Smite',
+    image: Smite,
   },
 };

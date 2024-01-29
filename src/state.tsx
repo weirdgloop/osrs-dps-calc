@@ -27,7 +27,7 @@ import getMonsters from '@/lib/Monsters';
 import { calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
-  ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, Prayer,
+  ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, OVERHEAD_PRAYERS, Prayer,
 } from './enums/Prayer';
 import Potion from './enums/Potion';
 
@@ -436,6 +436,9 @@ class GlobalState implements State {
 
       // If this is a defensive prayer, disable all other defensive prayers
       if (DEFENSIVE_PRAYERS.includes(prayer)) newPrayers = newPrayers.filter((p) => !DEFENSIVE_PRAYERS.includes(p));
+
+      // If this is an overhead prayer, disable all other overhead prayers
+      if (OVERHEAD_PRAYERS.includes(prayer)) newPrayers = newPrayers.filter((p) => !OVERHEAD_PRAYERS.includes(p));
 
       // If this is an offensive prayer...
       if (OFFENSIVE_PRAYERS.includes(prayer)) {

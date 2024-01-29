@@ -11,7 +11,9 @@ import {
   WeightedHit,
 } from '@/lib/HitDist';
 import { isBindSpell, isFireSpell, isWaterSpell } from '@/types/Spell';
-import { PrayerData, PrayerMap } from '@/enums/Prayer';
+import {
+  OVERHEAD_PRAYERS, Prayer, PrayerData, PrayerMap,
+} from '@/enums/Prayer';
 import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
   GLOWING_CRYSTAL_IDS,
@@ -589,7 +591,7 @@ export default class CombatCalc {
     const { style } = this.player;
 
     let effectiveLevel: number = this.track(DetailKey.ACCURACY_LEVEL, this.player.skills.atk + this.player.boosts.atk);
-    for (const p of this.getPrayers(true)) {
+    for (const p of this.getCombatPrayers(true)) {
       effectiveLevel = this.trackFactor(DetailKey.ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
     }
 
@@ -678,7 +680,7 @@ export default class CombatCalc {
     const baseLevel: number = this.trackAdd(DetailKey.DAMAGE_LEVEL, this.player.skills.str, this.player.boosts.str);
     let effectiveLevel: number = baseLevel;
 
-    for (const p of this.getPrayers(false)) {
+    for (const p of this.getCombatPrayers(false)) {
       effectiveLevel = this.trackFactor(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, p.factorStrength!);
     }
 
@@ -793,7 +795,7 @@ export default class CombatCalc {
     const { style } = this.player;
 
     let effectiveLevel: number = this.track(DetailKey.ACCURACY_LEVEL, this.player.skills.ranged + this.player.boosts.ranged);
-    for (const p of this.getPrayers(true)) {
+    for (const p of this.getCombatPrayers(true)) {
       effectiveLevel = this.trackFactor(DetailKey.ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
     }
 
@@ -852,7 +854,7 @@ export default class CombatCalc {
     const { style } = this.player;
 
     let effectiveLevel: number = this.track(DetailKey.DAMAGE_LEVEL, this.player.skills.ranged + this.player.boosts.ranged);
-    for (const p of this.getPrayers(false)) {
+    for (const p of this.getCombatPrayers(false)) {
       effectiveLevel = this.trackFactor(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, p.factorStrength!);
     }
 
@@ -914,7 +916,7 @@ export default class CombatCalc {
     const { style } = this.player;
 
     let effectiveLevel: number = this.track(DetailKey.ACCURACY_LEVEL, this.player.skills.magic + this.player.boosts.magic);
-    for (const p of this.getPrayers(true)) {
+    for (const p of this.getCombatPrayers(true)) {
       effectiveLevel = this.trackFactor(DetailKey.ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
     }
 
@@ -1073,7 +1075,17 @@ export default class CombatCalc {
     return maxHit;
   }
 
-  private getPrayers(accuracy: boolean): PrayerData[] {
+  /**
+   * Get the overhead prayer being used. Only one can be used at a time, so we can just return whichever matches first.
+   */
+  private getOverheadPrayer(): Prayer | null {
+    return this.player.prayers.find((p) => OVERHEAD_PRAYERS.includes(p)) || null;
+  }
+
+  /**
+   * Get the "combat" prayers for the current combat style. These are prayers that aren't overheads.
+   */
+  private getCombatPrayers(accuracy: boolean): PrayerData[] {
     const style = this.player.style.type;
 
     let prayers = this.player.prayers.map((p) => PrayerMap[p]);
