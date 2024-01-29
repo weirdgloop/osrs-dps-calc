@@ -9,7 +9,7 @@ import requests
 import urllib.parse
 import re
 
-FILE_NAME = './EquipmentAliases.ts'
+FILE_NAME = '../src/lib/EquipmentAliases.ts'
 WIKI_BASE = 'https://oldschool.runescape.wiki'
 API_BASE = WIKI_BASE + '/api.php'
 
@@ -64,7 +64,7 @@ dataJs = """/**
  * "locked" variants of items, broken/degraded variants of armour and weapons, and cosmetic recolours of equipment.
  * @see https://oldschool.runescape.wiki/w/Trouver_parchment
  */
-export const equipmentAliases = {"""
+const equipmentAliases = {"""
 
 
 def handle_base_variant(all_items, variant_item, base_name, base_version):
@@ -123,7 +123,7 @@ def main():
     for k, v in data.items():
         dataJs += '\n  %s: %s,' % (k, v)
 
-    dataJs += '\n}'
+    dataJs += '\n};\nexport default equipmentAliases;\n'
 
     with open(FILE_NAME, 'w') as f:
         print('Saving to JSON at file: ' + FILE_NAME)
