@@ -51,11 +51,11 @@ const PlayerContainer: React.FC = observer(() => {
           className="px-5 py-3 border-b-body-400 dark:border-b-dark-200 border-b flex justify-between items-center font-serif"
         >
           <div>
-            <h1 className="tracking-tight font-bold">
+            <h2 className="tracking-tight font-bold">
               Loadout
               {' '}
               {selectedLoadout + 1}
-            </h1>
+            </h2>
             <div className="text-xs font-bold text-gray-500 dark:text-gray-300">
               Level
               {' '}

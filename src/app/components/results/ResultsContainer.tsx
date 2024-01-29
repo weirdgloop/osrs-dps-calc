@@ -112,9 +112,9 @@ const ResultsContainer = observer(() => {
         <div
           className="px-4 py-3.5 border-b-body-400 bg-body-100 dark:bg-dark-400 dark:border-b-dark-200 border-b md:rounded md:rounded-bl-none md:rounded-br-none flex justify-between items-center"
         >
-          <h1 className="font-serif text-lg tracking-tight font-bold dark:text-white">
+          <h2 className="font-serif text-lg tracking-tight font-bold dark:text-white">
             Results
-          </h1>
+          </h2>
         </div>
         <div className="overflow-x-auto max-w-[100vw]">
           <ResultsTable />
