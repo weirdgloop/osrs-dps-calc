@@ -513,6 +513,23 @@ export default class CombatCalc {
     return false;
   }
 
+  private isRevWeaponBuffApplicable(): boolean {
+    if (!this.player.buffs.inWilderness || this.player.equipment.weapon?.version !== 'Charged') {
+      return false;
+    }
+
+    switch (this.player.style.type) {
+      case 'magic':
+        return this.wearing(['Accursed sceptre', 'Accursed sceptre (a)', 'Thammaron\'s sceptre', 'Thammaron\'s sceptre (a)']);
+
+      case 'ranged':
+        return this.wearing(['Craw\'s bow', 'Webweaver bow']);
+
+      default:
+        return this.wearing(['Ursine chainmace', 'Viggora\'s chainmace']);
+    }
+  }
+
   /**
    * Whether the player is wearing a leaf-bladed weapon capable of harming rat monsters.
    * @see https://oldschool.runescape.wiki/w/Rat_(attribute)
@@ -615,7 +632,7 @@ export default class CombatCalc {
       attackRoll = this.trackAdd(DetailKey.ACCURACY_OBSIDIAN, attackRoll, obsidianBonus);
     }
 
-    if (this.wearing(["Viggora's chainmace", 'Ursine chainmace']) && buffs.inWilderness) {
+    if (this.isRevWeaponBuffApplicable()) {
       attackRoll = this.trackFactor(DetailKey.ACCURACY_REV_WEAPON, attackRoll, [3, 2]);
     }
     if (this.wearing('Arclight') && mattrs.includes(MonsterAttribute.DEMON)) {
@@ -724,7 +741,7 @@ export default class CombatCalc {
     if (this.wearing('Barronite mace') && mattrs.includes(MonsterAttribute.GOLEM)) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_GOLEMBANE, maxHit, [6, 5]);
     }
-    if (this.wearing(["Viggora's chainmace", 'Ursine chainmace']) && buffs.inWilderness) {
+    if (this.isRevWeaponBuffApplicable()) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_REV_WEAPON, maxHit, [3, 2]);
     }
     if (this.wearing(['Silverlight', 'Darklight', 'Silverlight (dyed)']) && mattrs.includes(MonsterAttribute.DEMON)) {
@@ -817,7 +834,7 @@ export default class CombatCalc {
       const tbowMagic = Math.min(cap, Math.max(this.monster.skills.magic, this.monster.offensive.magic));
       attackRoll = CombatCalc.tbowScaling(attackRoll, tbowMagic, true);
     }
-    if (this.wearing(["Craw's bow", 'Webweaver bow']) && buffs.inWilderness) {
+    if (this.isRevWeaponBuffApplicable()) {
       attackRoll = Math.trunc(attackRoll * 3 / 2);
     }
     if (this.wearing('Dragon hunter crossbow') && mattrs.includes(MonsterAttribute.DRAGON)) {
@@ -879,7 +896,7 @@ export default class CombatCalc {
       const tbowMagic = Math.min(cap, Math.max(this.monster.skills.magic, this.monster.offensive.magic));
       maxHit = CombatCalc.tbowScaling(maxHit, tbowMagic, false);
     }
-    if (this.wearing(["Craw's bow", 'Webweaver bow']) && buffs.inWilderness) {
+    if (this.isRevWeaponBuffApplicable()) {
       maxHit = Math.trunc(maxHit * 3 / 2);
     }
     if (this.wearing('Dragon hunter crossbow') && mattrs.includes(MonsterAttribute.DRAGON)) {
@@ -933,7 +950,7 @@ export default class CombatCalc {
       const baseFactor: Factor = buffs.markOfDarknessSpell ? [8, 20] : [4, 20];
       attackRoll = this.trackFactor(DetailKey.ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor(baseFactor));
     }
-    if (this.wearing(["Thammaron's sceptre", 'Accursed sceptre']) && buffs.inWilderness) {
+    if (this.isRevWeaponBuffApplicable()) {
       attackRoll = Math.trunc(attackRoll * 3 / 2);
     }
     if (this.isWearingSmokeStaff() && this.player.spell?.spellbook === 'standard') {
@@ -1048,7 +1065,7 @@ export default class CombatCalc {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([5, 20]));
     }
 
-    if (this.wearing(["Thammaron's sceptre", 'Accursed sceptre']) && buffs.inWilderness) {
+    if (this.isRevWeaponBuffApplicable()) {
       maxHit = Math.trunc(maxHit * 3 / 2);
     }
 
