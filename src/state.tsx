@@ -237,7 +237,11 @@ class GlobalState implements State {
     const equipmentTriggers: ((r: IReactionPublic) => unknown)[] = [
       () => toJS(this.monster),
     ];
-    equipmentTriggers.map((t) => reaction(t, this.recalculateEquipmentBonusesFromGearAll));
+    equipmentTriggers.map((t) => reaction(t, () => {
+      if (!this.prefs.manualMode) {
+        this.recalculateEquipmentBonusesFromGearAll();
+      }
+    }));
   }
 
   set debug(debug: boolean) {
@@ -507,8 +511,10 @@ class GlobalState implements State {
     }
 
     this.loadouts[loadoutIx] = merge(this.loadouts[loadoutIx], player);
-    if (eq || Object.hasOwn(player, 'spell')) {
-      this.recalculateEquipmentBonusesFromGear(loadoutIx);
+    if (!this.prefs.manualMode) {
+      if (eq || Object.hasOwn(player, 'spell')) {
+        this.recalculateEquipmentBonusesFromGear(loadoutIx);
+      }
     }
   }
 
