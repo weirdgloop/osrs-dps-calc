@@ -8171,7 +8171,8 @@
       20
     ],
     "attributes": [
-      "demon"
+      "demon",
+      "icy"
     ]
   },
   {
@@ -8206,7 +8207,8 @@
       20
     ],
     "attributes": [
-      "demon"
+      "demon",
+      "icy"
     ]
   },
   {
@@ -59242,6 +59244,7 @@
       420
     ],
     "attributes": [
+      "icy",
       "spectral"
     ]
   },
@@ -59417,6 +59420,7 @@
       20
     ],
     "attributes": [
+      "icy",
       "spectral"
     ]
   },
@@ -59592,6 +59596,7 @@
       100
     ],
     "attributes": [
+      "icy",
       "spectral"
     ]
   },
