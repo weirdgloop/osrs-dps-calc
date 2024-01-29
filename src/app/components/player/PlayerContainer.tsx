@@ -8,7 +8,7 @@ import { IconPlus, IconTrash } from '@tabler/icons-react';
 const PlayerContainer: React.FC = observer(() => {
   const store = useStore();
   const {
-    loadouts, player, selectedLoadout, canCreateLoadout, canRemoveLoadout, createLoadout, deleteLoadout,
+    loadouts, player, selectedLoadout, canCreateLoadout, createLoadout, deleteLoadout,
   } = store;
 
   return (
@@ -65,7 +65,6 @@ const PlayerContainer: React.FC = observer(() => {
           <div>
             <button
               type="button"
-              disabled={!canRemoveLoadout}
               onClick={() => deleteLoadout(selectedLoadout)}
               className="disabled:cursor-not-allowed text-body-500 dark:text-dark-100 disabled:text-btns-100 dark:disabled:text-dark-500 hover:text-red transition-colors"
               data-tooltip-id="tooltip"
