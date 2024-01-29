@@ -75,6 +75,16 @@ def handle_base_variant(all_items, variant_item, base_name, base_versions):
     if base_variant:
         data.setdefault(base_variant['id'], EquipmentAliases(base_name, [])).alias_ids.append(variant_item['id'])
 
+one_off_renames = {
+    "Dinh's blazing bulwark": "Dinh's bulwark",
+    "Blazing blowpipe": "Toxic blowpipe",
+    "Volcanic abyssal whip": "Abyssal whip",
+    "Frozen abyssal whip": "Abyssal whip",
+    "Holy ghrazi rapier": "Ghrazi rapier",
+    "Holy sanguinesti staff": "Sanguinesti staff",
+    "Holy scythe of vitur": "Scythe of vitur",
+    "Sanguine scythe of vitur": "Scythe of vitur",
+}
 
 def main():
     global dataJs
@@ -105,9 +115,13 @@ def main():
     for item in all_items:
         slayer_helm_match = re.match(r"^(?:Black|Green|Red|Purple|Turquoise|Hydra|Twisted|Tztok|Vampyric|Tzkal) slayer helmet( \(i\))?$", item['name'])
         decoration_kit_match = re.match(r"(.*)\((?:g|t|h\d|guthix|saradomin|zamorak|or|cr|b|Hallowed|Trailblazer|Ithell|Iorwerth|Trahaearn|Cadarn|Crwys|Meilyr|Hefin|Amlodd|upgraded)\)$", item['name'])
+        magic_robe_kit_match = re.match(r"^(?:Dark|Light|Twisted) ((?:infinity|ancestral) .*)$", item['name'])
 
+        # Ava's assembler variants (Must be before locked due to the base name change)
+        if re.match(r"^Masori assembler(|\(l\))$", item['name']):
+            handle_base_variant(all_items, item, "Ava's assembler", ['Normal'])
         # Locked variants
-        if item['version'] == 'Locked':
+        elif item['version'] == 'Locked':
             # Locked and decorated
             if decoration_kit_match:
                 handle_base_variant(all_items, item, decoration_kit_match.group(1).strip(), ['Normal'])
@@ -120,15 +134,29 @@ def main():
         # Decoration kit variants
         elif decoration_kit_match:
             handle_base_variant(all_items, item, decoration_kit_match.group(1).strip(), ['', 'Normal'])
+        # Magic robe variants
+        elif magic_robe_kit_match:
+            handle_base_variant(all_items, item, magic_robe_kit_match.group(1).capitalize(), [''])
         # Merge Soul Wars/Emir's Arena versions -> Nightmare Zone
         elif re.match(r"^(Soul Wars|Emir's Arena)$", item['version']):
             handle_base_variant(all_items, item, item['name'], ['Nightmare Zone'])
         # Degraded variants
         elif re.match(r"^(Broken|0|25|50|75|100)$", item['version']):
             handle_base_variant(all_items, item, item['name'], ['Undamaged'])
+        # Dark Bow variants
+        elif item['name'] == "Dark bow" and item['version'] != "Regular":
+            handle_base_variant(all_items, item, item['name'], ['Regular'])
+        # Granite maul variants
+        elif (item['name'] == "Granite maul" and item['version'] != "Normal") or item['name'] == "Granite maul (or)":
+            handle_base_variant(all_items, item, 'Granite maul', ['Normal'])
+        # One off items:
+        elif item['name'] in one_off_renames:
+            assert item['version'] in ['', 'Empty', 'Charged', 'Uncharged'], "Only certain versions are expected: %s" % item
+            handle_base_variant(all_items, item, one_off_renames[item['name']], [item['version']])
 
-    for k, v in data.items():
-        dataJs += '\n  %s: %s, // %s' % (k, v[1], v[0])
+
+    for k, v in sorted(data.items(), key=lambda item: item[1].base_name):
+        dataJs += '\n  %s: %s, // %s' % (k, v.alias_ids, v.base_name)
 
     dataJs += '\n};\n\nexport default equipmentAliases;\n'
 
