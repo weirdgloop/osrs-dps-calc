@@ -1242,7 +1242,7 @@ export default class CombatCalc {
     if (this.isUsingMeleeStyle() && this.isWearingDharok()) {
       const newMax = this.player.skills.hp;
       const curr = this.player.skills.hp + this.player.boosts.hp;
-      dist = dist.scaleDamage(10000 + (max - curr) * newMax, 10000);
+      dist = dist.scaleDamage(10000 + (newMax - curr) * newMax, 10000);
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingVeracs()) {
