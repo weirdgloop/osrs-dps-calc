@@ -28,6 +28,7 @@ export interface Preferences {
   showHitDistribution: boolean;
   showLoadoutComparison: boolean;
   showTtkComparison: boolean;
+  showNPCVersusPlayerResults: boolean;
   hitDistsHideZeros: boolean;
 }
 

@@ -175,6 +175,7 @@ class GlobalState implements State {
     showHitDistribution: false,
     showLoadoutComparison: false,
     showTtkComparison: false,
+    showNPCVersusPlayerResults: false,
     hitDistsHideZeros: false,
   };
 

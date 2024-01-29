@@ -138,7 +138,7 @@ const TtkComparison: React.FC = observer(() => {
       )}
     >
       {data && (
-        <>
+        <div className="px-6 py-4">
           <ResponsiveContainer width="100%" height={250}>
             <LineChart
               data={data}
@@ -182,7 +182,7 @@ const TtkComparison: React.FC = observer(() => {
               />
             </div>
           </div>
-        </>
+        </div>
       )}
     </SectionAccordion>
   );

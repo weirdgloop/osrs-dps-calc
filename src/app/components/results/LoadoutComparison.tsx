@@ -397,7 +397,7 @@ const LoadoutComparison: React.FC = observer(() => {
       )}
     >
       {data && (
-        <>
+        <div className="px-6 py-4">
           <ResponsiveContainer width="100%" height={250}>
             <LineChart
               data={data.lines}
@@ -453,7 +453,7 @@ const LoadoutComparison: React.FC = observer(() => {
               />
             </div>
           </div>
-        </>
+        </div>
       )}
     </SectionAccordion>
   );

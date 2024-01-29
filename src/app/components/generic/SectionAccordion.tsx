@@ -31,7 +31,7 @@ const SectionAccordion: React.FC<PropsWithChildren<ISectionAccordionProps>> = (p
         {isOpen ? <IconChevronUp /> : <IconChevronDown />}
       </button>
       {isOpen && (
-        <div className="px-6 py-4">
+        <div>
           {children}
         </div>
       )}

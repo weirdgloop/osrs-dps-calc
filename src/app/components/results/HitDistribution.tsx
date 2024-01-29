@@ -73,7 +73,7 @@ const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = observer(({ dist }
         </div>
       )}
     >
-      <>
+      <div className="px-6 py-4">
         <Toggle
           checked={prefs.hitDistsHideZeros}
           setChecked={(c) => store.updatePreferences({ hitDistsHideZeros: c })}
@@ -112,7 +112,7 @@ const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = observer(({ dist }
             <Bar dataKey="chance" fill="tan" isAnimationActive={false} />
           </BarChart>
         </ResponsiveContainer>
-      </>
+      </div>
     </SectionAccordion>
   );
 });

@@ -18,6 +18,7 @@ import TtkComparison from '@/app/components/results/TtkComparison';
 import ShareModal from '@/app/components/ShareModal';
 import DebugPanels from '@/app/components/results/DebugPanels';
 import { IconAlertTriangle } from '@tabler/icons-react';
+import NPCVersusPlayerResults from '@/app/components/results/NPCVersusPlayerResults';
 
 const Home: NextPage = observer(() => {
   const store = useStore();
@@ -134,6 +135,7 @@ const Home: NextPage = observer(() => {
       <div className="max-w-[1420px] mx-auto mb-8">
         <LoadoutComparison />
         <TtkComparison />
+        <NPCVersusPlayerResults />
         <DebugPanels />
       </div>
       <Tooltip id="tooltip" />
