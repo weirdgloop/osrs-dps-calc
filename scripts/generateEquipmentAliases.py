@@ -5,6 +5,7 @@
 
     Written for Python 3.9.
 """
+from collections import namedtuple
 import requests
 import urllib.parse
 import re
@@ -66,12 +67,13 @@ dataJs = """/**
  */
 const equipmentAliases = {"""
 
+EquipmentAliases = namedtuple('EquipmentAliases', ['base_name', 'alias_ids'])
 
 def handle_base_variant(all_items, variant_item, base_name, base_version):
     global data
     base_variant = next((x for x in all_items if x['name'] == base_name and x['version'] == base_version), None)
     if base_variant:
-        data.setdefault(base_variant['id'], []).append(variant_item['id'])
+        data.setdefault(base_variant['id'], EquipmentAliases(base_name, [])).alias_ids.append(variant_item['id'])
 
 
 def main():
@@ -121,12 +123,12 @@ def main():
             handle_base_variant(all_items, item, item['name'], 'Undamaged')
 
     for k, v in data.items():
-        dataJs += '\n  %s: %s,' % (k, v)
+        dataJs += '\n  %s: %s, // %s' % (k, v[1], v[0])
 
-    dataJs += '\n};\nexport default equipmentAliases;\n'
+    dataJs += '\n};\n\nexport default equipmentAliases;\n'
 
     with open(FILE_NAME, 'w') as f:
-        print('Saving to JSON at file: ' + FILE_NAME)
+        print('Saving to Typescript at file: ' + FILE_NAME)
         f.write(dataJs)
 
 main()
