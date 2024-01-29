@@ -24,10 +24,7 @@ import {
 import { RecomputeValuesRequest, WorkerRequestType } from '@/types/WorkerData';
 import { scaledMonster } from '@/lib/MonsterScaling';
 import getMonsters from '@/lib/Monsters';
-import {
-  calculateEquipmentBonusesFromGear,
-  EquipmentBonuses,
-} from '@/lib/Equipment';
+import { calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
   ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, Prayer,
@@ -286,18 +283,6 @@ class GlobalState implements State {
     return getCombatStylesForCategory(cat);
   }
 
-  /**
-   * Return the player's worn equipment bonuses.
-   */
-  get equipmentBonuses(): EquipmentBonuses {
-    const p = this.player;
-    return {
-      bonuses: p.bonuses,
-      offensive: p.offensive,
-      defensive: p.defensive,
-    };
-  }
-
   recalculateEquipmentBonusesFromGear(loadoutIx?: number) {
     loadoutIx = loadoutIx !== undefined ? loadoutIx : this.selectedLoadout;
 
@@ -403,9 +388,7 @@ class GlobalState implements State {
 
     if (pref && Object.prototype.hasOwnProperty.call(pref, 'manualMode')) {
       // Reset player bonuses to their worn equipment
-      this.player.bonuses = this.equipmentBonuses.bonuses;
-      this.player.offensive = this.equipmentBonuses.offensive;
-      this.player.defensive = this.equipmentBonuses.defensive;
+      this.recalculateEquipmentBonusesFromGearAll();
     }
 
     // Save to browser storage
