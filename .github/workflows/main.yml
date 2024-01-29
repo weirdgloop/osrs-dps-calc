@@ -1,8 +1,10 @@
 name: Main
 
 on:
-  # Push to any branch
+  # Push to main branch
   push:
+    branches:
+      - main
   # PR to main branch
   pull_request:
     branches:
