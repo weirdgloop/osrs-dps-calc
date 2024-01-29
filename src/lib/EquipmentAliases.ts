@@ -153,6 +153,7 @@ const equipmentAliases = {
   1127: [2615, 23209, 23212, 23215, 23218, 23221, 2623], // Rune platebody
   1079: [2617, 2625], // Rune platelegs
   1093: [3476, 3477], // Rune plateskirt
+  1333: [23330, 23332, 23334], // Rune scimitar
   10549: [24533], // Runner hat
   26731: [26732], // Saika's hood
   26735: [26736], // Saika's shroud

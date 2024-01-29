@@ -104,7 +104,7 @@ def main():
 
     for item in all_items:
         slayer_helm_match = re.match(r"^(?:Black|Green|Red|Purple|Turquoise|Hydra|Twisted|Tztok|Vampyric|Tzkal) slayer helmet( \(i\))?$", item['name'])
-        decoration_kit_match = re.match(r"(.*)\((?:g|t|h\d)\)$", item['name'])
+        decoration_kit_match = re.match(r"(.*)\((?:g|t|h\d|guthix|saradomin|zamorak)\)$", item['name'])
 
         # Locked variants
         if item['version'] == 'Locked':
