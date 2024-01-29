@@ -967,7 +967,7 @@ export default class CombatCalc {
    * Get the player's max magic hit
    */
   private getPlayerMaxMagicHit() {
-    let maxHit: number;
+    let maxHit: number = 0;
     const magicLevel = this.player.skills.magic + this.player.boosts.magic;
     const { spell } = this.player;
 
@@ -975,11 +975,14 @@ export default class CombatCalc {
     const mattrs = this.monster.attributes;
     const { buffs } = this.player;
 
-    if (spell?.name === 'Magic Dart') {
-      if (this.wearing("Slayer's staff (e)") && buffs.onSlayerTask) {
-        maxHit = Math.trunc(13 + magicLevel / 6);
-      } else {
-        maxHit = Math.trunc(10 + magicLevel / 10);
+    if (spell) {
+      maxHit = spell.max_hit || 0;
+      if (spell?.name === 'Magic Dart') {
+        if (this.wearing("Slayer's staff (e)") && buffs.onSlayerTask) {
+          maxHit = Math.trunc(13 + magicLevel / 6);
+        } else {
+          maxHit = Math.trunc(10 + magicLevel / 10);
+        }
       }
     } else if (this.wearing('Starter staff')) {
       maxHit = 8;
@@ -1017,8 +1020,6 @@ export default class CombatCalc {
       maxHit = Math.trunc((magicLevel * (77 + 64) + 320) / 640);
     } else if (this.wearing('Black salamander')) {
       maxHit = Math.trunc((magicLevel * (92 + 64) + 320) / 640);
-    } else {
-      maxHit = spell?.max_hit || 0;
     }
 
     if (maxHit === 0) {
