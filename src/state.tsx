@@ -535,8 +535,11 @@ class GlobalState implements State {
   }
 
   deleteLoadout(ix: number) {
-    // Sanity check to ensure we can never have less than one loadout
-    if (this.loadouts.length === 1) return;
+    if (this.loadouts.length === 1) {
+      // If there is only one loadout, clear it instead of deleting it
+      this.loadouts[0] = generateEmptyPlayer();
+      return;
+    }
 
     this.loadouts = this.loadouts.filter((p, i) => i !== ix);
     // If the selected loadout index is equal to or over the index we just remove, shift it down by one, else add one
@@ -547,10 +550,6 @@ class GlobalState implements State {
 
   get canCreateLoadout() {
     return (this.loadouts.length < 5);
-  }
-
-  get canRemoveLoadout() {
-    return (this.loadouts.length > 1);
   }
 
   createLoadout(selected?: boolean, cloneIndex?: number) {
