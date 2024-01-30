@@ -116,7 +116,7 @@ def main():
 
     for item in all_items:
         slayer_helm_match = re.match(r"^(?:Black|Green|Red|Purple|Turquoise|Hydra|Twisted|Tztok|Vampyric|Tzkal) slayer helmet( \(i\))?$", item['name'])
-        decoration_kit_match = re.match(r"(.*)\((?:g|t|h\d|guthix|saradomin|zamorak|or|cr|Hallowed|Trailblazer|Ithell|Iorwerth|Trahaearn|Cadarn|Crwys|Meilyr|Hefin|Amlodd|upgraded|light|dark|dusk|lit)\)$", item['name'])
+        decoration_kit_match = re.match(r"(.*)\((?:g|t|(h)\d|guthix|saradomin|zamorak|or|cr|Hallowed|Trailblazer|Ithell|Iorwerth|Trahaearn|Cadarn|Crwys|Meilyr|Hefin|Amlodd|upgraded|light|dark|dusk|lit)\)$", item['name'])
         magic_robe_kit_match = re.match(r"^(?:Dark|Light|Twisted) ((?:infinity|ancestral) .*)$", item['name'])
 
         # Ava's assembler variants (Must be before locked due to the base name change)
@@ -135,11 +135,16 @@ def main():
             handle_base_variant(all_items, item, 'Slayer helmet%s' % (slayer_helm_match.group(1) or ''), ['', 'Nightmare Zone'])
         # Decoration kit variants
         elif decoration_kit_match:
+            base_item_name = decoration_kit_match.group(1).strip()
             # Crystal armor should not be aliases across Active and Inactive
             if item['version'] in ['Active', 'Inactive']:
-                handle_base_variant(all_items, item, decoration_kit_match.group(1).strip(), [item['version']])
+                handle_base_variant(all_items, item, base_item_name, [item['version']])
+            elif base_item_name.endswith(" helm") and decoration_kit_match.group(2) == "h":
+                handle_base_variant(all_items, item, base_item_name.replace(" helm", " full helm"), [item['version']])
+            elif base_item_name.endswith(" shield") and decoration_kit_match.group(2) == "h":
+                handle_base_variant(all_items, item, base_item_name.replace(" shield", " kiteshield"), [item['version']])
             else:
-                handle_base_variant(all_items, item, decoration_kit_match.group(1).strip(), ['', 'Normal'])
+                handle_base_variant(all_items, item, base_item_name, ['', 'Normal'])
         # Magic robe variants
         elif magic_robe_kit_match:
             handle_base_variant(all_items, item, magic_robe_kit_match.group(1).capitalize(), [''])
