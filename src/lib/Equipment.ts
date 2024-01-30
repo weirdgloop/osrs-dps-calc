@@ -18,7 +18,7 @@ export const availableEquipment = equipment as EquipmentPiece[];
  * "locked" variants of items, broken/degraded variants of armour and weapons, and cosmetic recolours of equipment.
  * @see https://oldschool.runescape.wiki/w/Trouver_parchment
  */
-export const equipmentAliases = generatedEquipmentAliases;
+export const equipmentAliases = generatedEquipmentAliases as { [key: number]: number[] };
 
 const commonAmmoCategories = () => {
   const ret: { [k: string]: number[] } = {
