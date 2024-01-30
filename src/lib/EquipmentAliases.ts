@@ -7,8 +7,8 @@ const equipmentAliases = {
   12006: [26484], // Abyssal tentacle
   4151: [26482, 12774, 12773], // Abyssal whip
   8849: [24141], // Adamant defender#Normal
-  1161: [2613, 2605], // Adamant full helm
-  1199: [2611, 2603], // Adamant kiteshield
+  1161: [2613, 2605, 10296, 10298, 10300, 10302, 10304], // Adamant full helm
+  1199: [2611, 2603, 7334, 7340, 7346, 7352, 7358], // Adamant kiteshield
   1123: [2607, 23392, 23395, 23398, 23401, 23404, 2599], // Adamant platebody
   1073: [2609, 2601], // Adamant platelegs
   1091: [3475, 3474], // Adamant plateskirt
@@ -44,8 +44,8 @@ const equipmentAliases = {
   2503: [12381, 12385], // Black d'hide body
   2497: [12383, 12387], // Black d'hide chaps
   8847: [24139], // Black defender#Normal
-  1165: [2595, 2587], // Black full helm
-  1195: [2597, 2589], // Black kiteshield
+  1165: [2595, 2587, 10306, 10308, 10310, 10312, 10314], // Black full helm
+  1195: [2597, 2589, 7332, 7338, 7344, 7350, 7356], // Black kiteshield
   1125: [2591, 23366, 23369, 23372, 23375, 23378, 2583], // Black platebody
   1077: [2593, 2585], // Black platelegs
   1089: [3473, 3472], // Black plateskirt
@@ -217,8 +217,8 @@ const equipmentAliases = {
   13202: [26764, 25252], // Ring of the gods (i)#Nightmare Zone
   9185: [26486], // Rune crossbow
   8850: [24142, 27009, 23230], // Rune defender#Normal
-  1163: [2619, 2627], // Rune full helm
-  1201: [2621, 2629], // Rune kiteshield
+  1163: [2619, 2627, 10286, 10288, 10290, 10292, 10294], // Rune full helm
+  1201: [2621, 2629, 7336, 7342, 7348, 7354, 7360], // Rune kiteshield
   1127: [2615, 23209, 23212, 23215, 23218, 23221, 2623], // Rune platebody
   1079: [2617, 2625], // Rune platelegs
   1093: [3476, 3477], // Rune plateskirt
