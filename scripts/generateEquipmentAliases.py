@@ -134,6 +134,7 @@ def main():
             handle_base_variant(all_items, item, 'Slayer helmet%s' % (slayer_helm_match.group(1) or ''), ['', 'Nightmare Zone'])
         # Decoration kit variants
         elif decoration_kit_match:
+            # Crystal armor should not be aliases across Active and Inactive
             if item['version'] in ['Active', 'Inactive']:
                 handle_base_variant(all_items, item, decoration_kit_match.group(1).strip(), [item['version']])
             else:
@@ -160,7 +161,7 @@ def main():
 
 
     for k, v in sorted(data.items(), key=lambda item: item[1].base_name):
-        dataJs += '\n  %s: %s, // %s#%s' % (k, v.alias_ids, v.base_name, v.base_version)
+        dataJs += '\n  %s: %s, // %s%s' % (k, v.alias_ids, v.base_name, f"#{v.base_version}" if v.base_version else "")
 
     dataJs += '\n};\n\nexport default equipmentAliases;\n'
 
