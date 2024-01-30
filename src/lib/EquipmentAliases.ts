@@ -198,14 +198,15 @@ const equipmentAliases = {
   1085: [12285, 12295], // Mithril plateskirt
   542: [20202, 23306], // Monk's robe
   544: [20199, 23303], // Monk's robe top
-  4097: [26539], // Mystic boots
-  4095: [26537], // Mystic gloves
-  4089: [26531], // Mystic hat
+  4097: [4107, 23059, 4117, 26539], // Mystic boots
+  4095: [4105, 23056, 4115, 26537], // Mystic gloves
+  4089: [4099, 23047, 4109, 26531], // Mystic hat
   3054: [21200], // Mystic lava staff
-  4093: [26535], // Mystic robe bottom
-  4091: [26533], // Mystic robe top
+  4093: [4103, 23053, 4113, 26535], // Mystic robe bottom
+  4091: [4101, 23050, 4111, 26533], // Mystic robe top
   11789: [12796], // Mystic steam staff
   19547: [22249], // Necklace of anguish
+  6568: [20050], // Obsidian cape
   12002: [19720], // Occult necklace
   11926: [12807], // Odium ward
   26219: [27246], // Osmumten's fang
