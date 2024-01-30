@@ -67,13 +67,13 @@ dataJs = """/**
  */
 const equipmentAliases = {"""
 
-EquipmentAliases = namedtuple('EquipmentAliases', ['base_name', 'alias_ids'])
+EquipmentAliases = namedtuple('EquipmentAliases', ['base_name', 'base_version', 'alias_ids'])
 
 def handle_base_variant(all_items, variant_item, base_name, base_versions):
     global data
     base_variant = next((x for x in all_items if x['name'] == base_name and x['version'] in base_versions), None)
     if base_variant:
-        data.setdefault(base_variant['id'], EquipmentAliases(base_name, [])).alias_ids.append(variant_item['id'])
+        data.setdefault(base_variant['id'], EquipmentAliases(base_name, base_variant['version'], [])).alias_ids.append(variant_item['id'])
 
 one_off_renames = {
     "Dinh's blazing bulwark": "Dinh's bulwark",
@@ -84,6 +84,7 @@ one_off_renames = {
     "Holy sanguinesti staff": "Sanguinesti staff",
     "Holy scythe of vitur": "Scythe of vitur",
     "Sanguine scythe of vitur": "Scythe of vitur",
+    "Dragon hunter crossbow (b)": "Dragon hunter crossbow"
 }
 
 def main():
@@ -114,7 +115,7 @@ def main():
 
     for item in all_items:
         slayer_helm_match = re.match(r"^(?:Black|Green|Red|Purple|Turquoise|Hydra|Twisted|Tztok|Vampyric|Tzkal) slayer helmet( \(i\))?$", item['name'])
-        decoration_kit_match = re.match(r"(.*)\((?:g|t|h\d|guthix|saradomin|zamorak|or|cr|b|Hallowed|Trailblazer|Ithell|Iorwerth|Trahaearn|Cadarn|Crwys|Meilyr|Hefin|Amlodd|upgraded)\)$", item['name'])
+        decoration_kit_match = re.match(r"(.*)\((?:g|t|h\d|guthix|saradomin|zamorak|or|cr|Hallowed|Trailblazer|Ithell|Iorwerth|Trahaearn|Cadarn|Crwys|Meilyr|Hefin|Amlodd|upgraded)\)$", item['name'])
         magic_robe_kit_match = re.match(r"^(?:Dark|Light|Twisted) ((?:infinity|ancestral) .*)$", item['name'])
 
         # Ava's assembler variants (Must be before locked due to the base name change)
@@ -130,10 +131,13 @@ def main():
                 handle_base_variant(all_items, item, item['name'], ['Normal'])
         # Cosmetic Slayer helmets
         elif slayer_helm_match:
-            handle_base_variant(all_items, item, 'Slayer helmet%s' % (slayer_helm_match.group(1) or ''), [''])
+            handle_base_variant(all_items, item, 'Slayer helmet%s' % (slayer_helm_match.group(1) or ''), ['', 'Nightmare Zone'])
         # Decoration kit variants
         elif decoration_kit_match:
-            handle_base_variant(all_items, item, decoration_kit_match.group(1).strip(), ['', 'Normal', 'Active', 'Inactive'])
+            if item['version'] in ['Active', 'Inactive']:
+                handle_base_variant(all_items, item, decoration_kit_match.group(1).strip(), [item['version']])
+            else:
+                handle_base_variant(all_items, item, decoration_kit_match.group(1).strip(), ['', 'Normal'])
         # Magic robe variants
         elif magic_robe_kit_match:
             handle_base_variant(all_items, item, magic_robe_kit_match.group(1).capitalize(), [''])
@@ -156,7 +160,7 @@ def main():
 
 
     for k, v in sorted(data.items(), key=lambda item: item[1].base_name):
-        dataJs += '\n  %s: %s, // %s' % (k, v.alias_ids, v.base_name)
+        dataJs += '\n  %s: %s, // %s#%s' % (k, v.alias_ids, v.base_name, v.base_version)
 
     dataJs += '\n};\n\nexport default equipmentAliases;\n'
 
