@@ -1,7 +1,7 @@
 import getMonsters from '@/lib/Monsters';
 import { Monster } from '@/types/Monster';
 import { EquipmentPiece, Player } from '@/types/Player';
-import CombatCalc from '@/lib/CombatCalc';
+import PlayerVsMonsterCalc from '@/lib/PlayerVsMonsterCalc';
 import { DetailEntry, DetailKey } from '@/lib/CalcDetails';
 import merge from 'lodash.mergewith';
 import { generateEmptyPlayer } from '@/state';
@@ -79,7 +79,7 @@ export function findSpell(name: string): Spell {
 }
 
 export function calculate(monster: Monster, player: Player) {
-  const calc = new CombatCalc(player, monster, {
+  const calc = new PlayerVsMonsterCalc(player, monster, {
     loadoutName: 'test',
     detailedOutput: true,
   });

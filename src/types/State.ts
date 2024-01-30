@@ -39,7 +39,7 @@ export interface HistogramEntry {
 
 /**
  * The result of running the calculator on a specific Player loadout.
- * @see CombatCalc
+ * @see PlayerVsMonsterCalc
  */
 export interface CalculatedLoadout {
   npcDefRoll: number,

@@ -9,6 +9,8 @@ function getMonsters(): Monster[] {
     version: m.version,
     image: m.image,
     size: m.size,
+    speed: m.speed,
+    style: m.style ? m.style.toLowerCase() : null,
     skills: {
       atk: m.skills[0],
       def: m.skills[1],

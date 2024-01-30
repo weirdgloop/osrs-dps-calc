@@ -114,6 +114,8 @@ class GlobalState implements State {
     name: 'Abyssal demon',
     image: 'Abyssal demon.png',
     size: 1,
+    speed: 4,
+    style: 'stab',
     skills: {
       atk: 97,
       def: 135,

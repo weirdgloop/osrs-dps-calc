@@ -103,6 +103,8 @@ def main():
     data = []
     required_imgs = []
 
+    styles = []
+
     # Loop over the monsters data from the wiki
     for k, v in wiki_data.items():
         print('Processing ' + k)
@@ -136,6 +138,12 @@ def main():
         ):
             continue
 
+        monster_style = get_printout_value(po['Attack style'])
+        if monster_style == 'None' or monster_style == 'N/A':
+            monster_style = None
+
+        styles.append(monster_style)
+
         monster = {
             'id': get_printout_value(po['NPC ID']),
             'name': k.rsplit('#', 1)[0] or '',
@@ -143,7 +151,9 @@ def main():
             'image': '' if not po['Image'] else po['Image'][0]['fulltext'].replace('File:', ''),
             'level': get_printout_value(po['Combat level']) or 0,
             'speed': get_printout_value(po['Attack speed']) or 0,
+            'style': monster_style,
             'size': get_printout_value(po['Size']) or 0,
+            'max_hit': get_printout_value(po['Size']) or 0,
             'skills': [
                 get_printout_value(po['Attack level']) or 0,
                 get_printout_value(po['Defence level']) or 0,
@@ -242,6 +252,7 @@ def main():
     print('Total images saved: ' + str(success_img_dls))
     print('Total images skipped (already exists): ' + str(skipped_img_dls))
     print('Total images failed to save: ' + str(failed_img_dls))
+    print(list(set(styles)))
 
 
 main()

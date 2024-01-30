@@ -1,3 +1,5 @@
+import { CombatStyleStance } from '@/types/PlayerCombatStyle';
+
 export const AKKHA_IDS = [
   11789, 11790, 11791, 11792, 11793, 11794, 11795, 11796,
 ];
@@ -311,3 +313,18 @@ export const PARTY_SIZE_REQUIRED_MONSTER_IDS = [
 
 export const ACCURACY_PRECISION = 2;
 export const DPS_PRECISION = 3;
+
+export const AUTOCAST_STANCES: CombatStyleStance[] = ['Autocast', 'Defensive Autocast'];
+export const CAST_STANCES: CombatStyleStance[] = [...AUTOCAST_STANCES, 'Manual Cast'];
+
+export const ONE_HIT_MONSTERS: number[] = [
+  7223, // Giant rat (Scurrius)
+  8584, // Flower
+  11193, // Flower (A Night at the Theatre)
+];
+
+export const DEFAULT_ATTACK_SPEED = 4;
+export const SECONDS_PER_TICK = 0.6;
+
+export const TTK_DIST_MAX_ITER_ROUNDS = 1000;
+export const TTK_DIST_EPSILON = 0.0001;

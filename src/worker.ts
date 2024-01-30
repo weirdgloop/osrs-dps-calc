@@ -9,7 +9,7 @@ import {
 } from '@/types/WorkerData';
 import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
-import CombatCalc from '@/lib/CombatCalc';
+import PlayerVsMonsterCalc from '@/lib/PlayerVsMonsterCalc';
 import { CalculatedLoadout } from '@/types/State';
 import { WORKER_JSON_REPLACER, WORKER_JSON_REVIVER } from '@/utils';
 
@@ -25,7 +25,7 @@ const computeValues = async (loadouts: Player[], m: Monster, calcOpts: WorkerCal
   // eslint-disable-next-line no-restricted-syntax
   for (const [i, p] of loadouts.entries()) {
     const start = new Date().getTime();
-    const calc = new CombatCalc(p, m, {
+    const calc = new PlayerVsMonsterCalc(p, m, {
       loadoutName: `${i + 1}`,
       detailedOutput: calcOpts.detailedOutput,
     });

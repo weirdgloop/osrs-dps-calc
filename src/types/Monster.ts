@@ -1,12 +1,17 @@
 import { CombatStyleType } from '@/types/PlayerCombatStyle';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 
+// For now this is the same as player combat styles, but it may support other stuff in future like "typeless"
+export type MonsterCombatStyle = CombatStyleType;
+
 export interface Monster {
   id: number;
   name: string;
   image?: string;
   version?: string;
   size: number;
+  speed: number;
+  style: MonsterCombatStyle | null;
   skills: {
     atk: number;
     def: number;

@@ -36,7 +36,7 @@ import { Monster } from '@/types/Monster';
 import LazyImage from '@/app/components/generic/LazyImage';
 import Toggle from '@/app/components/generic/Toggle';
 import { toJS } from 'mobx';
-import CombatCalc from '@/lib/CombatCalc';
+import PlayerVsMonsterCalc from '@/lib/PlayerVsMonsterCalc';
 import DefensiveReductions from '@/app/components/monster/DefensiveReductions';
 import MonsterSelect from './MonsterSelect';
 import HelpLink from '../HelpLink';
@@ -213,7 +213,7 @@ const MonsterContainer: React.FC = observer(() => {
       );
     }
 
-    if (loadouts.some((l) => CombatCalc.distIsCurrentHpDependent(l, monster))) {
+    if (loadouts.some((l) => PlayerVsMonsterCalc.distIsCurrentHpDependent(l, monster))) {
       comps.push(
         <div className="mt-4" key="cox-guardian">
           <h4 className="font-bold font-serif">
