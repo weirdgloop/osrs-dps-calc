@@ -133,7 +133,7 @@ def main():
             handle_base_variant(all_items, item, 'Slayer helmet%s' % (slayer_helm_match.group(1) or ''), [''])
         # Decoration kit variants
         elif decoration_kit_match:
-            handle_base_variant(all_items, item, decoration_kit_match.group(1).strip(), ['', 'Normal'])
+            handle_base_variant(all_items, item, decoration_kit_match.group(1).strip(), ['', 'Normal', 'Active', 'Inactive'])
         # Magic robe variants
         elif magic_robe_kit_match:
             handle_base_variant(all_items, item, magic_robe_kit_match.group(1).capitalize(), [''])
