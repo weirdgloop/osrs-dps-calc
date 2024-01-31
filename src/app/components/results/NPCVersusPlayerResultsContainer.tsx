@@ -8,8 +8,9 @@ import ranged from '@/public/img/bonuses/ranged.png';
 import magic from '@/public/img/bonuses/magic.png';
 import LazyImage from '@/app/components/generic/LazyImage';
 import { IconAlertTriangle } from '@tabler/icons-react';
+import NPCVersusPlayerResultsTable from '@/app/components/results/NPCVersusPlayerResultsTable';
 
-const NPCVersusPlayerResults: React.FC = observer(() => {
+const NPCVersusPlayerResultsContainer: React.FC = observer(() => {
   const store = useStore();
   const { monster } = store;
   const { showNPCVersusPlayerResults } = store.prefs;
@@ -50,18 +51,26 @@ const NPCVersusPlayerResults: React.FC = observer(() => {
           This monster has non-standard behaviour. This section could be inaccurate.
         </div>
       )}
-      <div className="px-6 py-4 text-white flex gap-4">
-        <div className="border-l-2 bg-dark-400 px-3 py-1 rounded-r border-blue-300 flex flex-col text-sm">
-          <div className="flex gap-1">
-            <span className="text-gray-300">Monster style:</span>
-            <div className="flex gap-1">
-              {renderMonsterStyleImage}
-              <span className="capitalize">{monster.style}</span>
+      <div className="flex flex-wrap">
+        <div className="overflow-x-auto max-w-[100vw]">
+          <NPCVersusPlayerResultsTable />
+        </div>
+        <div className="bg-dark-400 flex-grow text-white">
+          <div className="m-4">
+            <h2 className="font-serif font-bold">Additional information</h2>
+            <div className="border-l-2 bg-dark-500 w-48 py-1 px-3 rounded-r border-blue-300 flex flex-col mt-2 text-sm">
+              <div className="flex gap-1">
+                <span className="text-gray-300">NPC style:</span>
+                <div className="flex gap-1">
+                  {renderMonsterStyleImage}
+                  <span className="capitalize">{monster.style}</span>
+                </div>
+              </div>
+              <div className="flex gap-2 items-center">
+                <span className="text-gray-300">NPC speed:</span>
+                {monster.speed}
+              </div>
             </div>
-          </div>
-          <div className="flex gap-2 items-center">
-            <span className="text-gray-300">Monster speed:</span>
-            {monster.speed}
           </div>
         </div>
       </div>
@@ -69,4 +78,4 @@ const NPCVersusPlayerResults: React.FC = observer(() => {
   );
 });
 
-export default NPCVersusPlayerResults;
+export default NPCVersusPlayerResultsContainer;

@@ -2,10 +2,9 @@ import React, { PropsWithChildren, useMemo } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 import { CalculatedLoadout } from '@/types/State';
-import { max, min } from 'd3-array';
-import HitDistribution from '@/app/components/results/HitDistribution';
 import Spinner from '@/app/components/Spinner';
 import { ACCURACY_PRECISION, DPS_PRECISION } from '@/lib/constants';
+import { max, min } from 'd3-array';
 
 interface IResultRowProps {
   calcKey: keyof Omit<CalculatedLoadout, 'ttkDist'>;
@@ -56,7 +55,7 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
   );
 });
 
-const ResultsTable: React.FC = observer(() => {
+const PlayerVsNPCResultsTable: React.FC = observer(() => {
   const store = useStore();
   const { selectedLoadout } = store;
 
@@ -67,7 +66,7 @@ const ResultsTable: React.FC = observer(() => {
           <th aria-label="blank" className="bg-btns-400 border-r dark:bg-dark-500 select-none" />
           {store.loadouts.map((_, i) => (
             <th
-              // eslint-disable-next-line react/no-array-index-key
+            // eslint-disable-next-line react/no-array-index-key
               key={i}
               className={`text-center w-28 border-r font-bold font-serif cursor-pointer transition-colors ${selectedLoadout === i ? 'bg-orange-400 dark:bg-orange-700' : 'bg-btns-400 dark:bg-dark-500'}`}
               onClick={() => store.setSelectedLoadout(i)}
@@ -101,28 +100,4 @@ const ResultsTable: React.FC = observer(() => {
   );
 });
 
-const ResultsContainer = observer(() => {
-  const store = useStore();
-
-  return (
-    <div className="grow basis-1/4 md:mt-9 flex flex-col">
-      <div
-        className="sm:rounded shadow-lg bg-tile dark:bg-dark-300"
-      >
-        <div
-          className="px-4 py-3.5 border-b-body-400 bg-body-100 dark:bg-dark-400 dark:border-b-dark-200 border-b md:rounded md:rounded-bl-none md:rounded-br-none flex justify-between items-center"
-        >
-          <h2 className="font-serif text-lg tracking-tight font-bold dark:text-white">
-            Results
-          </h2>
-        </div>
-        <div className="overflow-x-auto max-w-[100vw]">
-          <ResultsTable />
-        </div>
-      </div>
-      <HitDistribution dist={store.calc.loadouts[store.selectedLoadout]?.hitDist || []} />
-    </div>
-  );
-});
-
-export default ResultsContainer;
+export default PlayerVsNPCResultsTable;

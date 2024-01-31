@@ -8,7 +8,7 @@ import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 import { ToastContainer } from 'react-toastify';
 import PlayerContainer from '@/app/components/player/PlayerContainer';
-import ResultsContainer from '@/app/components/results/ResultsContainer';
+import PlayerVsNPCResultsContainer from '@/app/components/results/PlayerVsNPCResultsContainer';
 import { WorkerResponses, WorkerResponseType } from '@/types/WorkerData';
 import { IReactionPublic, reaction, toJS } from 'mobx';
 import { WORKER_JSON_REVIVER } from '@/utils';
@@ -18,7 +18,7 @@ import TtkComparison from '@/app/components/results/TtkComparison';
 import ShareModal from '@/app/components/ShareModal';
 import DebugPanels from '@/app/components/results/DebugPanels';
 import { IconAlertTriangle } from '@tabler/icons-react';
-import NPCVersusPlayerResults from '@/app/components/results/NPCVersusPlayerResults';
+import NPCVersusPlayerResultsContainer from '@/app/components/results/NPCVersusPlayerResultsContainer';
 
 const Home: NextPage = observer(() => {
   const store = useStore();
@@ -128,14 +128,14 @@ const Home: NextPage = observer(() => {
         <div className="flex gap-2 flex-wrap justify-center">
           <PlayerContainer />
           <MonsterContainer />
-          <ResultsContainer />
+          <PlayerVsNPCResultsContainer />
         </div>
       </div>
       {/* Additional graphs and stuff */}
       <div className="max-w-[1420px] mx-auto mb-8">
         <LoadoutComparison />
         <TtkComparison />
-        <NPCVersusPlayerResults />
+        <NPCVersusPlayerResultsContainer />
         <DebugPanels />
       </div>
       <Tooltip id="tooltip" />
