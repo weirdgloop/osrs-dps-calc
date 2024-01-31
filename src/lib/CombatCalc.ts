@@ -1206,9 +1206,7 @@ export default class CombatCalc {
 
     if (this.player.style.type === 'magic' && this.wearing('Brimstone ring')) {
       const effectDef = Math.trunc(def * 9 / 10);
-      const effectHitChance = (atk > effectDef)
-        ? 1 - ((effectDef + 2) / (2 * (atk + 1)))
-        : atk / (2 * (effectDef + 1));
+      const effectHitChance = CombatCalc.getNormalAccuracyRoll(atk, effectDef);
 
       hitChance = this.track(DetailKey.ACCURACY_BRIMSTONE, (0.75 * hitChance) + (0.25 * effectHitChance));
     }
