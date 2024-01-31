@@ -8171,8 +8171,7 @@
       20
     ],
     "attributes": [
-      "demon",
-      "icy"
+      "demon"
     ]
   },
   {
@@ -8207,8 +8206,7 @@
       20
     ],
     "attributes": [
-      "demon",
-      "icy"
+      "demon"
     ]
   },
   {
@@ -63799,6 +63797,72 @@
       "spectral",
       "undead"
     ]
+  },
+  {
+    "id": 9434,
+    "name": "Totem (Phosani's Nightmare)",
+    "version": "",
+    "image": "Totem (Phosani's Nightmare, inactive).png",
+    "level": 0,
+    "speed": 0,
+    "size": 3,
+    "skills": [
+      0,
+      0,
+      200,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 9434,
+    "name": "Totem (The Nightmare)",
+    "version": "",
+    "image": "Totem (The Nightmare, uncharged).png",
+    "level": 0,
+    "speed": 0,
+    "size": 3,
+    "skills": [
+      0,
+      0,
+      300,
+      0,
+      0,
+      0
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
   },
   {
     "id": 3551,
