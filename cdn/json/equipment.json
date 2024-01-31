@@ -127020,6 +127020,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Zombie axe",
+    "id": 99999999,
+    "version": "",
+    "slot": "weapon",
+    "image": "Zombie axe.png",
+    "speed": 5,
+    "category": "Axe",
+    "bonuses": {
+      "str": 107,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -3,
+      "slash": 105,
+      "crush": 90,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": -1,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": -1
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Zombie boots",
     "id": 7596,
     "version": "",

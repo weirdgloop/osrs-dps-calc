@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import dagger from '@/public/img/bonuses/dagger.png';
 import scimitar from '@/public/img/bonuses/scimitar.png';
 import warhammer from '@/public/img/bonuses/warhammer.png';
@@ -98,6 +98,13 @@ const MonsterContainer: React.FC = observer(() => {
 
   // Don't automatically update the stat inputs if manual editing is on
   const displayMonster = prefs.manualMode ? monster : scaledMonster(monster);
+
+  useEffect(() => {
+    // When display monster HP is changed, update the monster's current HP
+    if (store.monster.inputs.monsterCurrentHp !== displayMonster.skills.hp) {
+      store.updateMonster({ inputs: { monsterCurrentHp: displayMonster.skills.hp } });
+    }
+  }, [store, displayMonster.skills.hp]);
 
   const extraMonsterOptions = useMemo(() => {
     // Determine whether we need to show any extra monster option components
@@ -225,7 +232,7 @@ const MonsterContainer: React.FC = observer(() => {
             <NumberInput
               value={monster.inputs.monsterCurrentHp}
               min={0}
-              max={monster.skills.hp}
+              max={displayMonster.skills.hp}
               step={1}
               onChange={(v) => store.updateMonster({ inputs: { monsterCurrentHp: v } })}
             />
@@ -236,7 +243,7 @@ const MonsterContainer: React.FC = observer(() => {
 
     return comps;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [toJS(loadouts), toJS(monster)]);
+  }, [toJS(loadouts), toJS(monster), displayMonster.skills.hp]);
 
   return (
     <div className="basis-4 flex flex-col grow mt-3 md:grow-0">
@@ -311,7 +318,7 @@ const MonsterContainer: React.FC = observer(() => {
                       />
                       <AttributeInput
                         name="Defence"
-                        max={1000}
+                        max={40000}
                         disabled={!prefs.manualMode}
                         image={defence}
                         value={displayMonster.skills.def}

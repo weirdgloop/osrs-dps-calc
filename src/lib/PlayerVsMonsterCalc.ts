@@ -688,6 +688,39 @@ export default class PlayerVsMonsterCalc extends BaseCalc {
     return this.track(DetailKey.ACCURACY_ROLL_FINAL, atkRoll);
   }
 
+  public static getNormalAccuracyRoll(atk: number, def: number): number {
+    const stdRoll = (attack: number, defence: number) => ((attack > defence)
+      ? 1 - ((defence + 2) / (2 * (attack + 1)))
+      : attack / (2 * (defence + 1)));
+
+    if (atk < 0) atk = Math.min(0, atk + 2);
+    if (def < 0) def = Math.min(0, def + 2);
+
+    if (atk >= 0 && def >= 0) return stdRoll(atk, def);
+    if (atk >= 0 && def < 0) return 1 - 1 / (-def + 1) / (atk + 1);
+    if (atk < 0 && def >= 0) return 0;
+    if (atk < 0 && def < 0) return stdRoll(-def, -atk);
+    return 0;
+  }
+
+  public static getFangAccuracyRoll(atk: number, def: number): number {
+    const stdRoll = (attack: number, defence: number) => ((attack > def)
+      ? 1 - (defence + 2) * (2 * defence + 3) / (attack + 1) / (attack + 1) / 6
+      : attack * (4 * attack + 5) / 6 / (attack + 1) / (defence + 1));
+
+    const rvRoll = (attack: number, defence: number) => ((attack < def)
+      ? attack * (defence * 6 - 2 * attack + 5) / 6 / (defence + 1) / (defence + 1)
+      : 1 - (defence + 2) * (2 * defence + 3) / 6 / (defence + 1) / (attack + 1));
+
+    if (atk < 0) atk = Math.min(0, atk + 2);
+    if (def < 0) def = Math.min(0, def + 2);
+    if (atk >= 0 && def >= 0) return stdRoll(atk, def);
+    if (atk >= 0 && def < 0) return 1 - 1 / (-def + 1) / (atk + 1);
+    if (atk < 0 && def >= 0) return 0;
+    if (atk < 0 && def < 0) return rvRoll(-def, -atk);
+    return 0;
+  }
+
   public getHitChance() {
     if (this.opts.overrides?.accuracy) {
       return this.track(DetailKey.ACCURACY_FINAL, this.opts.overrides.accuracy);
@@ -709,16 +742,12 @@ export default class PlayerVsMonsterCalc extends BaseCalc {
 
     let hitChance = this.track(
       DetailKey.ACCURACY_BASE,
-      (atk > def)
-        ? 1 - ((def + 2) / (2 * (atk + 1)))
-        : atk / (2 * (def + 1)),
+      PlayerVsMonsterCalc.getNormalAccuracyRoll(atk, def),
     );
 
     if (this.player.style.type === 'magic' && this.wearing('Brimstone ring')) {
       const effectDef = Math.trunc(def * 9 / 10);
-      const effectHitChance = (atk > effectDef)
-        ? 1 - ((effectDef + 2) / (2 * (atk + 1)))
-        : atk / (2 * (effectDef + 1));
+      const effectHitChance = PlayerVsMonsterCalc.getNormalAccuracyRoll(atk, effectDef);
 
       hitChance = this.track(DetailKey.ACCURACY_BRIMSTONE, (0.75 * hitChance) + (0.25 * effectHitChance));
     }
@@ -729,9 +758,7 @@ export default class PlayerVsMonsterCalc extends BaseCalc {
       } else {
         hitChance = this.track(
           DetailKey.ACCURACY_FANG,
-          (atk > def) // whatever the fuck this is that some stats person derived
-            ? 1 - (def + 2) * (2 * def + 3) / (atk + 1) / (atk + 1) / 6
-            : atk * (4 * atk + 5) / 6 / (atk + 1) / (def + 1),
+          PlayerVsMonsterCalc.getFangAccuracyRoll(atk, def),
         );
       }
     }
@@ -783,7 +810,7 @@ export default class PlayerVsMonsterCalc extends BaseCalc {
     if (this.isUsingMeleeStyle() && this.isWearingDharok()) {
       const newMax = this.player.skills.hp;
       const curr = this.player.skills.hp + this.player.boosts.hp;
-      dist = dist.scaleDamage(10000 + (max - curr) * newMax, 10000);
+      dist = dist.scaleDamage(10000 + (newMax - curr) * newMax, 10000);
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingVeracs()) {

@@ -35,6 +35,7 @@ jobs:
         run: |
           cd scripts
           python generateEquipment.py
+          python generateEquipmentAliases.py
           python generateMonsters.py
       - name: Create pull request
         run: |

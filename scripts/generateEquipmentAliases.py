@@ -5,11 +5,12 @@
 
     Written for Python 3.9.
 """
+from collections import namedtuple
 import requests
 import urllib.parse
 import re
 
-FILE_NAME = './EquipmentAliases.ts'
+FILE_NAME = '../src/lib/EquipmentAliases.ts'
 WIKI_BASE = 'https://oldschool.runescape.wiki'
 API_BASE = WIKI_BASE + '/api.php'
 
@@ -64,15 +65,28 @@ dataJs = """/**
  * "locked" variants of items, broken/degraded variants of armour and weapons, and cosmetic recolours of equipment.
  * @see https://oldschool.runescape.wiki/w/Trouver_parchment
  */
-export const equipmentAliases = {"""
+const equipmentAliases = {"""
 
+EquipmentAliases = namedtuple('EquipmentAliases', ['base_name', 'base_version', 'alias_ids'])
 
-def handle_base_variant(all_items, variant_item, base_name, base_version):
+def handle_base_variant(all_items, variant_item, base_name, base_versions):
     global data
-    base_variant = next((x for x in all_items if x['name'] == base_name and x['version'] == base_version), None)
+    base_variant = next((x for x in all_items if x['name'] == base_name and x['version'] in base_versions), None)
     if base_variant:
-        data.setdefault(base_variant['id'], []).append(variant_item['id'])
+        data.setdefault(base_variant['id'], EquipmentAliases(base_name, base_variant['version'], [])).alias_ids.append(variant_item['id'])
 
+one_off_renames = {
+    "Dinh's blazing bulwark": "Dinh's bulwark",
+    "Blazing blowpipe": "Toxic blowpipe",
+    "Volcanic abyssal whip": "Abyssal whip",
+    "Frozen abyssal whip": "Abyssal whip",
+    "Holy ghrazi rapier": "Ghrazi rapier",
+    "Holy sanguinesti staff": "Sanguinesti staff",
+    "Holy scythe of vitur": "Scythe of vitur",
+    "Sanguine scythe of vitur": "Scythe of vitur",
+    "Dragon hunter crossbow (b)": "Dragon hunter crossbow",
+    "Obsidian cape (r)": "Obsidian cape",
+}
 
 def main():
     global dataJs
@@ -102,31 +116,63 @@ def main():
 
     for item in all_items:
         slayer_helm_match = re.match(r"^(?:Black|Green|Red|Purple|Turquoise|Hydra|Twisted|Tztok|Vampyric|Tzkal) slayer helmet( \(i\))?$", item['name'])
-        decoration_kit_match = re.match(r"(.*)\((?:g|t|h\d)\)$", item['name'])
+        decoration_kit_match = re.match(r"(.*)\((?:g|t|(h)\d|guthix|saradomin|zamorak|or|cr|Hallowed|Trailblazer|Ithell|Iorwerth|Trahaearn|Cadarn|Crwys|Meilyr|Hefin|Amlodd|upgraded|light|dark|dusk|lit)\)$", item['name'])
+        magic_robe_kit_match = re.match(r"^(?:Dark|Light|Twisted) ((?:infinity|ancestral) .*)$", item['name'])
 
+        # Ava's assembler variants (Must be before locked due to the base name change)
+        if re.match(r"^Masori assembler(|\(l\))$", item['name']):
+            handle_base_variant(all_items, item, "Ava's assembler", ['Normal'])
         # Locked variants
-        if item['version'] == 'Locked':
-            handle_base_variant(all_items, item, item['name'], 'Normal')
+        elif item['version'] == 'Locked':
+            # Locked and decorated
+            if decoration_kit_match:
+                handle_base_variant(all_items, item, decoration_kit_match.group(1).strip(), ['Normal'])
+            # Only locked
+            else:
+                handle_base_variant(all_items, item, item['name'], ['Normal'])
         # Cosmetic Slayer helmets
         elif slayer_helm_match:
-            handle_base_variant(all_items, item, 'Slayer helmet%s' % (slayer_helm_match.group(1) or ''), '')
+            handle_base_variant(all_items, item, 'Slayer helmet%s' % (slayer_helm_match.group(1) or ''), ['', 'Nightmare Zone'])
         # Decoration kit variants
         elif decoration_kit_match:
-            handle_base_variant(all_items, item, decoration_kit_match.group(1).strip(), '')
+            base_item_name = decoration_kit_match.group(1).strip()
+            # Crystal armor should not be aliases across Active and Inactive
+            if item['version'] in ['Active', 'Inactive']:
+                handle_base_variant(all_items, item, base_item_name, [item['version']])
+            elif base_item_name.endswith(" helm") and decoration_kit_match.group(2) == "h":
+                handle_base_variant(all_items, item, base_item_name.replace(" helm", " full helm"), [item['version']])
+            elif base_item_name.endswith(" shield") and decoration_kit_match.group(2) == "h":
+                handle_base_variant(all_items, item, base_item_name.replace(" shield", " kiteshield"), [item['version']])
+            else:
+                handle_base_variant(all_items, item, base_item_name, ['', 'Normal'])
+        # Magic robe variants
+        elif magic_robe_kit_match:
+            handle_base_variant(all_items, item, magic_robe_kit_match.group(1).capitalize(), [''])
         # Merge Soul Wars/Emir's Arena versions -> Nightmare Zone
         elif re.match(r"^(Soul Wars|Emir's Arena)$", item['version']):
-            handle_base_variant(all_items, item, item['name'], 'Nightmare Zone')
+            handle_base_variant(all_items, item, item['name'], ['Nightmare Zone'])
         # Degraded variants
         elif re.match(r"^(Broken|0|25|50|75|100)$", item['version']):
-            handle_base_variant(all_items, item, item['name'], 'Undamaged')
+            handle_base_variant(all_items, item, item['name'], ['Undamaged'])
+        # Dark Bow variants
+        elif item['name'] == "Dark bow" and item['version'] != "Regular":
+            handle_base_variant(all_items, item, item['name'], ['Regular'])
+        # Granite maul variants
+        elif (item['name'] == "Granite maul" and item['version'] != "Normal") or item['name'] == "Granite maul (or)":
+            handle_base_variant(all_items, item, 'Granite maul', ['Normal'])
+        # One off items:
+        elif item['name'] in one_off_renames:
+            assert item['version'] in ['', 'Empty', 'Charged', 'Uncharged'], "Only certain versions are expected: %s" % item
+            handle_base_variant(all_items, item, one_off_renames[item['name']], [item['version']])
 
-    for k, v in data.items():
-        dataJs += '\n  %s: %s,' % (k, v)
 
-    dataJs += '\n}'
+    for k, v in sorted(data.items(), key=lambda item: item[1].base_name):
+        dataJs += '\n  %s: %s, // %s%s' % (k, v.alias_ids, v.base_name, f"#{v.base_version}" if v.base_version else "")
+
+    dataJs += '\n};\n\nexport default equipmentAliases;\n'
 
     with open(FILE_NAME, 'w') as f:
-        print('Saving to JSON at file: ' + FILE_NAME)
+        print('Saving to Typescript at file: ' + FILE_NAME)
         f.write(dataJs)
 
 main()
