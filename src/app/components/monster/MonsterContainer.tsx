@@ -311,7 +311,7 @@ const MonsterContainer: React.FC = observer(() => {
                       />
                       <AttributeInput
                         name="Defence"
-                        max={1000}
+                        max={40000}
                         disabled={!prefs.manualMode}
                         image={defence}
                         value={displayMonster.skills.def}
