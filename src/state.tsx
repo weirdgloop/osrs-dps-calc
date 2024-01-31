@@ -21,7 +21,11 @@ import {
   PotionMap,
   WORKER_JSON_REPLACER,
 } from '@/utils';
-import { RecomputeValuesRequest, WorkerRequestType } from '@/types/WorkerData';
+import {
+  RecomputeNPCVsPlayerValuesRequest,
+  RecomputePlayerVsNPCValuesRequest,
+  WorkerRequestType,
+} from '@/types/WorkerData';
 import { scaledMonster } from '@/lib/MonsterScaling';
 import getMonsters from '@/lib/Monsters';
 import { calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
@@ -182,18 +186,23 @@ class GlobalState implements State {
   };
 
   calc: Calculator = {
-    loadouts: [
-      {
+    loadouts: {
+      1: {
         npcDefRoll: 0,
         maxHit: 0,
         maxAttackRoll: 0,
+        npcMaxHit: 0,
+        npcMaxAttackRoll: 0,
+        npcDps: 0,
+        npcAccuracy: 0,
+        playerDefRoll: 0,
         accuracy: 0,
         dps: 0,
         ttk: 0,
         hitDist: [],
         ttkDist: undefined,
       },
-    ],
+    },
   };
 
   worker: Worker | null = null;
@@ -279,7 +288,7 @@ class GlobalState implements State {
    */
   get userIssues() {
     let is: UserIssue[] = [];
-    for (const l of this.calc.loadouts) {
+    for (const l of Object.values(this.calc.loadouts)) {
       if (l.userIssues) is = [...is, ...l.userIssues];
     }
     return is;
@@ -314,7 +323,7 @@ class GlobalState implements State {
   }
 
   updateCalculator(calc: PartialDeep<Calculator>) {
-    this.calc = Object.assign(this.calc, calc);
+    this.calc = merge(this.calc, calc);
   }
 
   setWorker(worker: Worker | null) {
@@ -575,7 +584,13 @@ class GlobalState implements State {
   }
 
   doWorkerRecompute() {
-    this.calc.loadouts = this.loadouts.map(() => EMPTY_CALC_LOADOUT);
+    const calculatedLoadouts: { [k: string]: CalculatedLoadout } = {};
+    // eslint-disable-next-line guard-for-in
+    for (const l in this.loadouts) {
+      calculatedLoadouts[`${parseInt(l) + 1}`] = EMPTY_CALC_LOADOUT;
+    }
+    this.calc.loadouts = calculatedLoadouts;
+
     if (this.workerRecomputeTimer) {
       window.clearTimeout(this.workerRecomputeTimer);
     }
@@ -585,7 +600,7 @@ class GlobalState implements State {
         const m = this.prefs.manualMode ? this.monster : scaledMonster(this.monster);
 
         this.worker.postMessage(JSON.stringify({
-          type: WorkerRequestType.RECOMPUTE_VALUES,
+          type: WorkerRequestType.RECOMPUTE_PLAYER_VS_NPC_VALUES,
           data: {
             loadouts: this.loadouts,
             monster: m,
@@ -594,7 +609,19 @@ class GlobalState implements State {
               detailedOutput: this.debug,
             },
           },
-        } as RecomputeValuesRequest, WORKER_JSON_REPLACER));
+        } as RecomputePlayerVsNPCValuesRequest, WORKER_JSON_REPLACER));
+
+        // If we're showing NPC-vs-player results, also return results for that
+        // (doing this conditionally prevents unnecessary computations)
+        if (this.prefs.showNPCVersusPlayerResults) {
+          this.worker.postMessage(JSON.stringify({
+            type: WorkerRequestType.RECOMPUTE_NPC_VS_PLAYER_VALUES,
+            data: {
+              loadouts: this.loadouts,
+              monster: m,
+            },
+          } as RecomputeNPCVsPlayerValuesRequest, WORKER_JSON_REPLACER));
+        }
       }
     }, 250);
   }

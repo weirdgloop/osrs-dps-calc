@@ -32,7 +32,8 @@ const Home: NextPage = observer(() => {
 
       // Depending on the response type, do things...
       switch (data.type) {
-        case WorkerResponseType.COMPUTED_VALUES:
+        case WorkerResponseType.COMPUTED_PLAYER_VS_NPC_VALUES:
+        case WorkerResponseType.COMPUTED_NPC_VS_PLAYER_VALUES:
           store.updateCalculator({ loadouts: data.data });
           break;
         default:
@@ -96,7 +97,8 @@ const Home: NextPage = observer(() => {
     const triggers: ((r: IReactionPublic) => unknown)[] = [
       () => toJS(store.loadouts),
       () => toJS(store.monster),
-      () => toJS(store.prefs.showTtkComparison),
+      () => store.prefs.showTtkComparison,
+      () => store.prefs.showNPCVersusPlayerResults,
     ];
     const reactions = triggers.map((t) => reaction(t, recompute, { fireImmediately: true }));
 

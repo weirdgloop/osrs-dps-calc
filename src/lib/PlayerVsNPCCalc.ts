@@ -12,7 +12,7 @@ import {
 } from '@/lib/HitDist';
 import { isBindSpell, isFireSpell, isWaterSpell } from '@/types/Spell';
 import {
-  OVERHEAD_PRAYERS, Prayer, PrayerData, PrayerMap,
+  PrayerData, PrayerMap,
 } from '@/enums/Prayer';
 import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
@@ -43,9 +43,9 @@ import { UserIssue } from '@/types/State';
 import BaseCalc, { CalcOpts } from '@/lib/BaseCalc';
 
 /**
- * Class for computing various player versus monster metrics.
+ * Class for computing various player-vs-NPC metrics.
  */
-export default class PlayerVsMonsterCalc extends BaseCalc {
+export default class PlayerVsNPCCalc extends BaseCalc {
   private memoizedDist?: AttackDistribution;
 
   private _details?: CalcDetails;
@@ -363,7 +363,7 @@ export default class PlayerVsMonsterCalc extends BaseCalc {
     if (this.wearing('Twisted bow')) {
       const cap = mattrs.includes(MonsterAttribute.XERICIAN) ? 350 : 250;
       const tbowMagic = Math.min(cap, Math.max(this.monster.skills.magic, this.monster.offensive.magic));
-      attackRoll = PlayerVsMonsterCalc.tbowScaling(attackRoll, tbowMagic, true);
+      attackRoll = PlayerVsNPCCalc.tbowScaling(attackRoll, tbowMagic, true);
     }
     if (this.isRevWeaponBuffApplicable()) {
       attackRoll = Math.trunc(attackRoll * 3 / 2);
@@ -425,7 +425,7 @@ export default class PlayerVsMonsterCalc extends BaseCalc {
     if (this.wearing('Twisted bow')) {
       const cap = mattrs.includes(MonsterAttribute.XERICIAN) ? 350 : 250;
       const tbowMagic = Math.min(cap, Math.max(this.monster.skills.magic, this.monster.offensive.magic));
-      maxHit = PlayerVsMonsterCalc.tbowScaling(maxHit, tbowMagic, false);
+      maxHit = PlayerVsNPCCalc.tbowScaling(maxHit, tbowMagic, false);
     }
     if (this.isRevWeaponBuffApplicable()) {
       maxHit = Math.trunc(maxHit * 3 / 2);
@@ -605,13 +605,6 @@ export default class PlayerVsMonsterCalc extends BaseCalc {
   }
 
   /**
-   * Get the overhead prayer being used. Only one can be used at a time, so we can just return whichever matches first.
-   */
-  private getOverheadPrayer(): Prayer | null {
-    return this.player.prayers.find((p) => OVERHEAD_PRAYERS.includes(p)) || null;
-  }
-
-  /**
    * Get the "combat" prayers for the current combat style. These are prayers that aren't overheads.
    */
   private getCombatPrayers(accuracy: boolean): PrayerData[] {
@@ -688,39 +681,6 @@ export default class PlayerVsMonsterCalc extends BaseCalc {
     return this.track(DetailKey.ACCURACY_ROLL_FINAL, atkRoll);
   }
 
-  public static getNormalAccuracyRoll(atk: number, def: number): number {
-    const stdRoll = (attack: number, defence: number) => ((attack > defence)
-      ? 1 - ((defence + 2) / (2 * (attack + 1)))
-      : attack / (2 * (defence + 1)));
-
-    if (atk < 0) atk = Math.min(0, atk + 2);
-    if (def < 0) def = Math.min(0, def + 2);
-
-    if (atk >= 0 && def >= 0) return stdRoll(atk, def);
-    if (atk >= 0 && def < 0) return 1 - 1 / (-def + 1) / (atk + 1);
-    if (atk < 0 && def >= 0) return 0;
-    if (atk < 0 && def < 0) return stdRoll(-def, -atk);
-    return 0;
-  }
-
-  public static getFangAccuracyRoll(atk: number, def: number): number {
-    const stdRoll = (attack: number, defence: number) => ((attack > def)
-      ? 1 - (defence + 2) * (2 * defence + 3) / (attack + 1) / (attack + 1) / 6
-      : attack * (4 * attack + 5) / 6 / (attack + 1) / (defence + 1));
-
-    const rvRoll = (attack: number, defence: number) => ((attack < def)
-      ? attack * (defence * 6 - 2 * attack + 5) / 6 / (defence + 1) / (defence + 1)
-      : 1 - (defence + 2) * (2 * defence + 3) / 6 / (defence + 1) / (attack + 1));
-
-    if (atk < 0) atk = Math.min(0, atk + 2);
-    if (def < 0) def = Math.min(0, def + 2);
-    if (atk >= 0 && def >= 0) return stdRoll(atk, def);
-    if (atk >= 0 && def < 0) return 1 - 1 / (-def + 1) / (atk + 1);
-    if (atk < 0 && def >= 0) return 0;
-    if (atk < 0 && def < 0) return rvRoll(-def, -atk);
-    return 0;
-  }
-
   public getHitChance() {
     if (this.opts.overrides?.accuracy) {
       return this.track(DetailKey.ACCURACY_FINAL, this.opts.overrides.accuracy);
@@ -742,12 +702,12 @@ export default class PlayerVsMonsterCalc extends BaseCalc {
 
     let hitChance = this.track(
       DetailKey.ACCURACY_BASE,
-      PlayerVsMonsterCalc.getNormalAccuracyRoll(atk, def),
+      BaseCalc.getNormalAccuracyRoll(atk, def),
     );
 
     if (this.player.style.type === 'magic' && this.wearing('Brimstone ring')) {
       const effectDef = Math.trunc(def * 9 / 10);
-      const effectHitChance = PlayerVsMonsterCalc.getNormalAccuracyRoll(atk, effectDef);
+      const effectHitChance = BaseCalc.getNormalAccuracyRoll(atk, effectDef);
 
       hitChance = this.track(DetailKey.ACCURACY_BRIMSTONE, (0.75 * hitChance) + (0.25 * effectHitChance));
     }
@@ -758,7 +718,7 @@ export default class PlayerVsMonsterCalc extends BaseCalc {
       } else {
         hitChance = this.track(
           DetailKey.ACCURACY_FANG,
-          PlayerVsMonsterCalc.getFangAccuracyRoll(atk, def),
+          BaseCalc.getFangAccuracyRoll(atk, def),
         );
       }
     }
@@ -1181,7 +1141,7 @@ export default class PlayerVsMonsterCalc extends BaseCalc {
     let epsilon = 1.0;
 
     // if the hit dist depends on hp, we'll have to recalculate it each time, so cache the results to not repeat work
-    const recalcDistOnHp = PlayerVsMonsterCalc.distIsCurrentHpDependent(this.player, this.monster);
+    const recalcDistOnHp = PlayerVsNPCCalc.distIsCurrentHpDependent(this.player, this.monster);
     const hpHitDists = new Map<number, HitDistribution>();
     hpHitDists.set(this.monster.skills.hp, dist);
     if (recalcDistOnHp) {
@@ -1234,7 +1194,7 @@ export default class PlayerVsMonsterCalc extends BaseCalc {
   }
 
   distAtHp(hp: number): HitDistribution {
-    if (!PlayerVsMonsterCalc.distIsCurrentHpDependent(this.player, this.monster) || hp === this.monster.inputs.monsterCurrentHp) {
+    if (!PlayerVsNPCCalc.distIsCurrentHpDependent(this.player, this.monster) || hp === this.monster.inputs.monsterCurrentHp) {
       return this.getDistribution().singleHitsplat;
     }
 
@@ -1248,7 +1208,7 @@ export default class PlayerVsMonsterCalc extends BaseCalc {
       return this.getDistribution().singleHitsplat;
     }
 
-    return new PlayerVsMonsterCalc(
+    return new PlayerVsNPCCalc(
       this.player,
       scaledMonster({
         ...this.monster,

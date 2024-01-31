@@ -38,24 +38,36 @@ export interface HistogramEntry {
 }
 
 /**
- * The result of running the calculator on a specific Player loadout.
- * @see PlayerVsMonsterCalc
+ * The result of running the calculator on a specific player loadout.
  */
 export interface CalculatedLoadout {
-  npcDefRoll: number,
-  maxHit: number,
-  maxAttackRoll: number,
-  accuracy: number,
-  dps: number,
-  ttk: number,
-  hitDist: HistogramEntry[],
+  // Player vs NPC metrics
+  npcDefRoll?: number,
+  maxHit?: number,
+  maxAttackRoll?: number,
+  accuracy?: number,
+  dps?: number,
+  ttk?: number,
+  hitDist?: HistogramEntry[],
   ttkDist?: Map<number, number>,
+
+  // NPC vs Player metrics
+  playerDefRoll?: number,
+  npcMaxAttackRoll?: number,
+  npcMaxHit?: number,
+  npcDps?: number,
+  npcAccuracy?: number,
+
+  // Misc
   details?: DetailEntry[],
   userIssues?: UserIssue[],
 }
 
+export type PlayerVsNPCCalculatedLoadout = Omit<CalculatedLoadout, 'playerDefRoll' | 'npcMaxAttackRoll' | 'npcMaxHit' | 'npcDps' | 'npcAccuracy'>;
+export type NPCVsPlayerCalculatedLoadout = Omit<CalculatedLoadout, 'npcDefRoll' | 'maxHit' | 'maxAttackRoll' | 'accuracy' | 'dps' | 'ttk' | 'hitDist' | 'ttkDist'>;
+
 export interface Calculator {
-  loadouts: CalculatedLoadout[]
+  loadouts: { [k: string]: CalculatedLoadout }
 }
 
 /**

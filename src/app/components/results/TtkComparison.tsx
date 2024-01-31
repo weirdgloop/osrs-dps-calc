@@ -93,12 +93,12 @@ const TtkComparison: React.FC = observer(() => {
       : (x: number) => x.toString();
 
     const lines: { name: string, [lKey: string]: string | number }[] = [];
-    const uniqueTtks = max(calcResults, (r) => max(r.ttkDist?.keys() || [])) || 0;
+    const uniqueTtks = max(Object.values(calcResults), (r) => max(r.ttkDist?.keys() || [])) || 0;
 
     const runningTotals: number[] = [];
     for (let ttk = 0; ttk <= uniqueTtks; ttk++) {
       const entry: typeof lines[0] = { name: xLabeller(ttk) };
-      calcResults.forEach((l, i) => {
+      Object.values(calcResults).forEach((l, i) => {
         const v = l.ttkDist?.get(ttk);
         if (v) {
           runningTotals[i] = (runningTotals[i] || 0) + v;
@@ -116,13 +116,13 @@ const TtkComparison: React.FC = observer(() => {
     const strokeColours = isDark
       ? ['cyan', 'yellow', 'lime', 'orange', 'pink']
       : ['blue', 'chocolate', 'green', 'sienna', 'purple'];
-    for (let i = 0; i < calcResults.length; i++) {
+    for (let i = 0; i < Object.values(calcResults).length; i++) {
       const colour = strokeColours.shift() || 'red';
       lines.push(<Line key={i} isAnimationActive={false} type="monotone" dataKey={`Loadout ${i + 1}`} stroke={colour} dot={false} connectNulls />);
       strokeColours.push(colour);
     }
     return lines;
-  }, [isDark, calcResults.length]);
+  }, [isDark, calcResults]);
 
   return (
     <SectionAccordion

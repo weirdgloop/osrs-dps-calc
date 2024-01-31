@@ -5,6 +5,7 @@ import { CalculatedLoadout } from '@/types/State';
 import Spinner from '@/app/components/Spinner';
 import { ACCURACY_PRECISION, DPS_PRECISION } from '@/lib/constants';
 import { max, min } from 'd3-array';
+import { toJS } from 'mobx';
 
 interface IResultRowProps {
   calcKey: keyof Omit<CalculatedLoadout, 'ttkDist'>;
@@ -35,17 +36,18 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
   const store = useStore();
   const { children, calcKey, title } = props;
   const { calc } = store;
+  const loadouts = toJS(calc.loadouts);
 
   const cells = useMemo(() => {
     const aggregator = calcKey === 'ttk' ? min : max;
-    const bestValue = aggregator(calc.loadouts, (l) => l[calcKey] as number);
+    const bestValue = aggregator(Object.values(loadouts), (l) => l[calcKey] as number);
 
-    return calc.loadouts.map((l, i) => {
+    return Object.values(loadouts).map((l, i) => {
       const value = l[calcKey] as number;
       // eslint-disable-next-line react/no-array-index-key
-      return <th className={`text-center w-28 border-r ${((calc.loadouts.length > 1) && bestValue === value) ? 'dark:text-green-200 text-green-800' : 'dark:text-body-200 text-black'}`} key={i}>{calcKeyToString(value, calcKey)}</th>;
+      return <th className={`text-center w-28 border-r ${((Object.values(loadouts).length > 1) && bestValue === value) ? 'dark:text-green-200 text-green-800' : 'dark:text-body-200 text-black'}`} key={i}>{calcKeyToString(value, calcKey)}</th>;
     });
-  }, [calc.loadouts, calcKey]);
+  }, [loadouts, calcKey]);
 
   return (
     <tr>

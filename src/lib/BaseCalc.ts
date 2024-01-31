@@ -75,6 +75,39 @@ export default class BaseCalc {
     };
   }
 
+  public static getNormalAccuracyRoll(atk: number, def: number): number {
+    const stdRoll = (attack: number, defence: number) => ((attack > defence)
+      ? 1 - ((defence + 2) / (2 * (attack + 1)))
+      : attack / (2 * (defence + 1)));
+
+    if (atk < 0) atk = Math.min(0, atk + 2);
+    if (def < 0) def = Math.min(0, def + 2);
+
+    if (atk >= 0 && def >= 0) return stdRoll(atk, def);
+    if (atk >= 0 && def < 0) return 1 - 1 / (-def + 1) / (atk + 1);
+    if (atk < 0 && def >= 0) return 0;
+    if (atk < 0 && def < 0) return stdRoll(-def, -atk);
+    return 0;
+  }
+
+  public static getFangAccuracyRoll(atk: number, def: number): number {
+    const stdRoll = (attack: number, defence: number) => ((attack > def)
+      ? 1 - (defence + 2) * (2 * defence + 3) / (attack + 1) / (attack + 1) / 6
+      : attack * (4 * attack + 5) / 6 / (attack + 1) / (defence + 1));
+
+    const rvRoll = (attack: number, defence: number) => ((attack < def)
+      ? attack * (defence * 6 - 2 * attack + 5) / 6 / (defence + 1) / (defence + 1)
+      : 1 - (defence + 2) * (2 * defence + 3) / 6 / (defence + 1) / (attack + 1));
+
+    if (atk < 0) atk = Math.min(0, atk + 2);
+    if (def < 0) def = Math.min(0, def + 2);
+    if (atk >= 0 && def >= 0) return stdRoll(atk, def);
+    if (atk >= 0 && def < 0) return 1 - 1 / (-def + 1) / (atk + 1);
+    if (atk < 0 && def >= 0) return 0;
+    if (atk < 0 && def < 0) return rvRoll(-def, -atk);
+    return 0;
+  }
+
   /**
    * Simple utility function for checking if an item name is equipped. If an array of string is passed instead, this
    * function will return a boolean indicating whether ANY of the provided items are equipped.

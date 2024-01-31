@@ -1,7 +1,8 @@
 /* eslint-disable no-restricted-globals */
 import {
-  ComputedValuesResponse,
-  WorkerCalcOpts,
+  ComputedNPCVsPlayerValuesResponse,
+  ComputedPlayerVsNPCValuesResponse,
+  PlayerVsNPCCalcOpts,
   WorkerRequests,
   WorkerRequestType,
   WorkerResponses,
@@ -9,9 +10,10 @@ import {
 } from '@/types/WorkerData';
 import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
-import PlayerVsMonsterCalc from '@/lib/PlayerVsMonsterCalc';
-import { CalculatedLoadout } from '@/types/State';
+import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
+import { NPCVsPlayerCalculatedLoadout, PlayerVsNPCCalculatedLoadout } from '@/types/State';
 import { WORKER_JSON_REPLACER, WORKER_JSON_REVIVER } from '@/utils';
+import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
 
 /**
  * Method for computing the calculator values based on given loadouts and Monster object
@@ -19,17 +21,18 @@ import { WORKER_JSON_REPLACER, WORKER_JSON_REVIVER } from '@/utils';
  * @param m
  * @param calcOpts
  */
-const computeValues = async (loadouts: Player[], m: Monster, calcOpts: WorkerCalcOpts) => {
-  const res: CalculatedLoadout[] = [];
+const computePvMValues = async (loadouts: Player[], m: Monster, calcOpts: PlayerVsNPCCalcOpts) => {
+  const res: { [k: string]: PlayerVsNPCCalculatedLoadout } = {};
 
   // eslint-disable-next-line no-restricted-syntax
   for (const [i, p] of loadouts.entries()) {
+    const loadoutName = (i + 1).toString();
     const start = new Date().getTime();
-    const calc = new PlayerVsMonsterCalc(p, m, {
-      loadoutName: `${i + 1}`,
+    const calc = new PlayerVsNPCCalc(p, m, {
+      loadoutName,
       detailedOutput: calcOpts.detailedOutput,
     });
-    res.push({
+    res[loadoutName] = {
       npcDefRoll: calc.getNPCDefenceRoll(),
       maxHit: calc.getDistribution().getMax(),
       maxAttackRoll: calc.getMaxAttackRoll(),
@@ -40,7 +43,33 @@ const computeValues = async (loadouts: Player[], m: Monster, calcOpts: WorkerCal
       ttkDist: calcOpts.includeTtkDist ? calc.getTtkDistribution() : undefined, // this one can sometimes be quite expensive
       details: calc.details,
       userIssues: calc.userIssues,
+    };
+    const end = new Date().getTime();
+
+    if (end - start >= 1000) {
+      console.warn(`Loadout ${i + 1} took ${end - start}ms to calculate!`);
+    }
+  }
+
+  return res;
+};
+
+const computeMvPValues = async (loadouts: Player[], m: Monster) => {
+  const res: { [k: string]: NPCVsPlayerCalculatedLoadout } = {};
+
+  for (const [i, p] of loadouts.entries()) {
+    const loadoutName = (i + 1).toString();
+    const start = new Date().getTime();
+    const calc = new NPCVsPlayerCalc(p, m, {
+      loadoutName,
     });
+    res[loadoutName] = {
+      npcMaxAttackRoll: calc.getNPCMaxAttackRoll(),
+      npcMaxHit: calc.getNPCMaxHit(),
+      npcDps: calc.getDps(),
+      npcAccuracy: calc.getHitChance(),
+      playerDefRoll: calc.getPlayerDefenceRoll(),
+    };
     const end = new Date().getTime();
 
     if (end - start >= 1000) {
@@ -57,9 +86,14 @@ self.onmessage = async (e: MessageEvent<string>) => {
 
   // Interpret the incoming request, and action it accordingly
   switch (data.type) {
-    case WorkerRequestType.RECOMPUTE_VALUES: {
-      const calculatedLoadouts = await computeValues(data.data.loadouts, data.data.monster, data.data.calcOpts);
-      res = { type: WorkerResponseType.COMPUTED_VALUES, data: calculatedLoadouts } as ComputedValuesResponse;
+    case WorkerRequestType.RECOMPUTE_PLAYER_VS_NPC_VALUES: {
+      const calculatedLoadouts = await computePvMValues(data.data.loadouts, data.data.monster, data.data.calcOpts);
+      res = { type: WorkerResponseType.COMPUTED_PLAYER_VS_NPC_VALUES, data: calculatedLoadouts } as ComputedPlayerVsNPCValuesResponse;
+      break;
+    }
+    case WorkerRequestType.RECOMPUTE_NPC_VS_PLAYER_VALUES: {
+      const calculatedLoadouts = await computeMvPValues(data.data.loadouts, data.data.monster);
+      res = { type: WorkerResponseType.COMPUTED_NPC_VS_PLAYER_VALUES, data: calculatedLoadouts } as ComputedNPCVsPlayerValuesResponse;
       break;
     }
     default:

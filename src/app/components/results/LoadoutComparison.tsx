@@ -14,7 +14,7 @@ import {
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 import Select from '@/app/components/generic/Select';
-import PlayerVsMonsterCalc from '@/lib/PlayerVsMonsterCalc';
+import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import { Player, PlayerSkills } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent';
@@ -128,7 +128,7 @@ function* inputRange(
       return;
 
     case XAxisType.MONSTER_HP: {
-      const shouldScale = loadouts.some((l) => PlayerVsMonsterCalc.distIsCurrentHpDependent(l, baseMonster));
+      const shouldScale = loadouts.some((l) => PlayerVsNPCCalc.distIsCurrentHpDependent(l, baseMonster));
       for (let newHp = baseMonster.skills.hp; newHp >= 0; newHp--) {
         const m: Monster = {
           ...baseMonster,
@@ -276,9 +276,9 @@ const getOutput = (
 ): number => {
   switch (yAxisType) {
     case YAxisType.DPS:
-      return new PlayerVsMonsterCalc(loadout, monster).getDps();
+      return new PlayerVsNPCCalc(loadout, monster).getDps();
     case YAxisType.EXPECTED_HIT:
-      return new PlayerVsMonsterCalc(loadout, monster).getDistribution().getExpectedDamage();
+      return new PlayerVsNPCCalc(loadout, monster).getDistribution().getExpectedDamage();
 
     default:
       throw new Error(`Unimplemented yAxisType ${yAxisType}`);
