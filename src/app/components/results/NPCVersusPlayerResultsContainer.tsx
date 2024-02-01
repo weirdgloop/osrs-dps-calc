@@ -38,7 +38,14 @@ const NPCVersusPlayerResultsContainer: React.FC = observer(() => {
         <div className="flex items-center gap-2">
           <div className="w-6 flex justify-center"><LazyImage src={defence.src} /></div>
           <h3 className="font-serif font-bold">
-            NPC versus Player
+            Damage Taken
+            {' '}
+            <span className="text-gray-300">
+              (
+              {store.monster.name}
+              {' '}
+              vs Player)
+            </span>
           </h3>
         </div>
       )}
