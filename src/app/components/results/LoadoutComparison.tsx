@@ -1,4 +1,6 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, {
+  useCallback, useEffect, useMemo, useState,
+} from 'react';
 import {
   CartesianGrid,
   Legend,
@@ -282,15 +284,6 @@ const getAnnotations = (xAxisType: XAxisType, monster: Monster): Annotation[] =>
   return [];
 };
 
-const YAxisOptions = [
-  { label: 'Player damage-per-second', axisLabel: 'DPS', value: YAxisType.PLAYER_DPS },
-  { label: 'Player expected hit', axisLabel: 'Hit', value: YAxisType.PLAYER_EXPECTED_HIT },
-  { label: 'Player damage taken per sec', axisLabel: 'DPS', value: YAxisType.MONSTER_DPS },
-  { label: 'Player damage taken per kill', axisLabel: 'Damage', value: YAxisType.DAMAGE_TAKEN },
-  // {label: 'Time-to-kill', value: YAxisType.TTK},
-  // {label: 'Damage taken', value: YAxisType.DAMAGE_TAKEN}
-];
-
 const getOutput = (
   yAxisType: YAxisType,
   loadout: Player,
@@ -322,8 +315,33 @@ const LoadoutComparison: React.FC = observer(() => {
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
 
+  const YAxisOptions = useMemo(() => {
+    const opts = [
+      { label: 'Player damage-per-second', axisLabel: 'DPS', value: YAxisType.PLAYER_DPS },
+      { label: 'Player expected hit', axisLabel: 'Hit', value: YAxisType.PLAYER_EXPECTED_HIT },
+      // {label: 'Time-to-kill', value: YAxisType.TTK},
+      // {label: 'Damage taken', value: YAxisType.DAMAGE_TAKEN}
+    ];
+
+    if (!store.isNonStandardMonster) {
+      opts.push(
+        { label: 'Player damage taken per sec', axisLabel: 'DPS', value: YAxisType.MONSTER_DPS },
+        { label: 'Player damage taken per kill', axisLabel: 'Damage', value: YAxisType.DAMAGE_TAKEN },
+      );
+    }
+
+    return opts;
+  }, [store.isNonStandardMonster]);
+
   const [xAxisType, setXAxisType] = useState<{ label: string, axisLabel?: string, value: XAxisType } | null | undefined>(XAxisOptions[0]);
   const [yAxisType, setYAxisType] = useState<{ label: string, axisLabel?: string, value: YAxisType } | null | undefined>(YAxisOptions[0]);
+
+  useEffect(() => {
+    // If the list of Y axis options changes, and the option we have selected no longer exists, reset to the first one
+    if (!YAxisOptions.find((opt) => opt.value === yAxisType?.value)) {
+      setYAxisType(YAxisOptions[0]);
+    }
+  }, [YAxisOptions, yAxisType?.value]);
 
   const data = useMemo(() => {
     const x = xAxisType?.value;

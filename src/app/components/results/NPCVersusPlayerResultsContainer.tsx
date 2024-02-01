@@ -12,7 +12,7 @@ import NPCVersusPlayerResultsTable from '@/app/components/results/NPCVersusPlaye
 
 const NPCVersusPlayerResultsContainer: React.FC = observer(() => {
   const store = useStore();
-  const { monster } = store;
+  const { monster, isNonStandardMonster } = store;
   const { showNPCVersusPlayerResults } = store.prefs;
 
   const renderMonsterStyle = useMemo(() => {
@@ -43,8 +43,6 @@ const NPCVersusPlayerResultsContainer: React.FC = observer(() => {
     return <span className="text-gray-300 italic">Unknown</span>;
   }, [monster.style]);
 
-  const isNonStandard = useMemo(() => !['slash', 'crush', 'stab', 'magic', 'ranged'].includes(monster.style || ''), [monster.style]);
-
   return (
     <SectionAccordion
       defaultIsOpen={showNPCVersusPlayerResults}
@@ -58,36 +56,39 @@ const NPCVersusPlayerResultsContainer: React.FC = observer(() => {
         </div>
       )}
     >
-      {isNonStandard && (
+      {isNonStandardMonster ? (
         <div
           className="w-full bg-orange-500 text-white px-4 py-1 text-sm border-b border-orange-400 flex items-center gap-2"
         >
           <IconAlertTriangle className="text-orange-200" />
-          This monster has non-standard behaviour. This section could be inaccurate.
+          This monster has non-standard attacks, so we&apos;re currently unable to calculate these metrics.
         </div>
-      )}
-      <div className="flex flex-wrap">
-        <div className="overflow-x-auto max-w-[100vw]">
-          <NPCVersusPlayerResultsTable />
-        </div>
-        <div className="bg-dark-400 flex-grow text-white">
-          <div className="m-4">
-            <h2 className="font-serif font-bold">Additional information</h2>
-            <div className="border-l-2 bg-dark-500 w-48 py-1 px-3 rounded-r border-blue-300 flex flex-col mt-2 text-sm">
-              <div className="flex gap-1">
-                <span className="text-gray-300">NPC style:</span>
+      ) : (
+        <div className="flex flex-wrap">
+          <div className="overflow-x-auto max-w-[100vw]">
+            <NPCVersusPlayerResultsTable />
+          </div>
+          <div className="bg-dark-400 flex-grow text-white">
+            <div className="m-4">
+              <h2 className="font-serif font-bold">Additional information</h2>
+              <div
+                className="border-l-2 bg-dark-500 w-48 py-1 px-3 rounded-r border-blue-300 flex flex-col mt-2 text-sm"
+              >
                 <div className="flex gap-1">
-                  {renderMonsterStyle}
+                  <span className="text-gray-300">NPC style:</span>
+                  <div className="flex gap-1">
+                    {renderMonsterStyle}
+                  </div>
                 </div>
-              </div>
-              <div className="flex gap-2 items-center">
-                <span className="text-gray-300">NPC speed:</span>
-                {monster.speed}
+                <div className="flex gap-2 items-center">
+                  <span className="text-gray-300">NPC speed:</span>
+                  {monster.speed}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </SectionAccordion>
   );
 });

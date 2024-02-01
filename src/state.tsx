@@ -303,6 +303,14 @@ class GlobalState implements State {
     return getCombatStylesForCategory(cat);
   }
 
+  /**
+   * Whether the currently selected monster has non-standard mechanics or behaviour.
+   * In this case, we should hide UI elements relating to reverse DPS/damage taken metrics.
+   */
+  get isNonStandardMonster() {
+    return !['slash', 'crush', 'stab', 'magic', 'ranged'].includes(this.monster.style || '');
+  }
+
   recalculateEquipmentBonusesFromGear(loadoutIx?: number) {
     loadoutIx = loadoutIx !== undefined ? loadoutIx : this.selectedLoadout;
 

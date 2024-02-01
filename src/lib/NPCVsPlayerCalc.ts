@@ -1,8 +1,8 @@
 import BaseCalc, { CalcOpts } from '@/lib/BaseCalc';
 import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
-import { OVERHEAD_PRAYERS, Prayer } from '@/enums/Prayer';
-import { AttackDistribution, HitDistribution, WeightedHit } from '@/lib/HitDist';
+// import { OVERHEAD_PRAYERS, Prayer } from '@/enums/Prayer';
+import { AttackDistribution, HitDistribution } from '@/lib/HitDist';
 import {
   SECONDS_PER_TICK,
 } from '@/lib/constants';
@@ -45,14 +45,14 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     const dist = new AttackDistribution([standardHitDist]);
 
     // There's some monsters that can hit through prayers, but let's worry about that later
-    const style = this.monster.style || '';
-    if (
-      (['crush', 'stab', 'slash'].includes(style) && this.getOverheadPrayer() === Prayer.PROTECT_MELEE)
-      || (style === 'magic' && this.getOverheadPrayer() === Prayer.PROTECT_MAGIC)
-      || (style === 'ranged' && this.getOverheadPrayer() === Prayer.PROTECT_RANGED)
-    ) {
-      return new AttackDistribution([new HitDistribution([new WeightedHit(1.0, [0])])]);
-    }
+    // const style = this.monster.style || '';
+    // if (
+    //   (['crush', 'stab', 'slash'].includes(style) && this.getOverheadPrayer() === Prayer.PROTECT_MELEE)
+    //   || (style === 'magic' && this.getOverheadPrayer() === Prayer.PROTECT_MAGIC)
+    //   || (style === 'ranged' && this.getOverheadPrayer() === Prayer.PROTECT_RANGED)
+    // ) {
+    //   return new AttackDistribution([new HitDistribution([new WeightedHit(1.0, [0])])]);
+    // }
 
     return dist;
   }
@@ -60,9 +60,9 @@ export default class NPCVsPlayerCalc extends BaseCalc {
   /**
    * Get the overhead prayer being used. Only one can be used at a time, so we can just return whichever matches first.
    */
-  private getOverheadPrayer(): Prayer | null {
-    return this.player.prayers.find((p) => OVERHEAD_PRAYERS.includes(p)) || null;
-  }
+  // private getOverheadPrayer(): Prayer | null {
+  //   return this.player.prayers.find((p) => OVERHEAD_PRAYERS.includes(p)) || null;
+  // }
 
   /**
    * Get the player's defence roll for this loadout
