@@ -206,15 +206,15 @@ class GlobalState implements State {
 
     const recomputeBoosts = () => {
       // Re-compute the player's boost values.
-      const boosts: PlayerSkills = {
-        atk: 0, def: 0, hp: 0, magic: 0, prayer: 0, ranged: 0, str: 0, mining: 0,
+      const boosts: Partial<PlayerSkills> = {
+        atk: 0, def: 0, magic: 0, prayer: 0, ranged: 0, str: 0, mining: 0,
       };
 
       for (const p of this.player.buffs.potions) {
         const result = PotionMap[p].calculateFn(this.player.skills);
         for (const k of Object.keys(result)) {
           const r = result[k as keyof typeof result] as number;
-          if (r > boosts[k as keyof typeof boosts]) {
+          if (r > boosts[k as keyof typeof boosts]!) {
             // If this skill's boost is higher than what it already is, then change it
             boosts[k as keyof typeof boosts] = result[k as keyof typeof result] as number;
           }
