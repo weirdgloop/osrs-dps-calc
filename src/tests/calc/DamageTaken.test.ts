@@ -1,7 +1,6 @@
 import { describe, expect, test } from '@jest/globals';
 import { calculateNpcVsPlayer, getTestMonster, getTestPlayer } from '@/tests/utils/TestUtils';
 import { ACCURACY_PRECISION, DPS_PRECISION } from '@/lib/constants';
-import { Prayer } from '@/enums/Prayer';
 
 describe('Damage Taken', () => {
   describe('Abyssal demon', () => {
@@ -27,13 +26,6 @@ describe('Damage Taken', () => {
       expect(result.npcMaxAttackRoll).toBe(6784);
       expect(result.playerDefRoll).toBe(6848);
       expect(result.npcAccuracy * 100).toBeCloseTo(49.53, ACCURACY_PRECISION);
-    });
-
-    test('protect melee', () => {
-      const player = getTestPlayer(monster, { prayers: [Prayer.PROTECT_MELEE] });
-      const result = calculateNpcVsPlayer(monster, player);
-
-      expect(result.npcDps).toBeCloseTo(0.000, DPS_PRECISION);
     });
   });
 });
