@@ -57,6 +57,7 @@ const Home: NextPage = observer(() => {
   useEffect(() => {
     // Load preferences from browser storage if there are any
     store.loadPreferences();
+    store.loadLoadouts();
 
     // Setup global event handling
     document.addEventListener('keydown', globalKeyDownHandler);
