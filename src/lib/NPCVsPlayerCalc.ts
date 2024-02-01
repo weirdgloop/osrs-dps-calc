@@ -2,7 +2,7 @@ import BaseCalc, { CalcOpts } from '@/lib/BaseCalc';
 import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { OVERHEAD_PRAYERS, Prayer } from '@/enums/Prayer';
-import { AttackDistribution, HitDistribution } from '@/lib/HitDist';
+import {AttackDistribution, HitDistribution, WeightedHit} from '@/lib/HitDist';
 import {
   SECONDS_PER_TICK,
 } from '@/lib/constants';
@@ -19,15 +19,31 @@ export default class NPCVsPlayerCalc extends BaseCalc {
 
   public getDistribution(): AttackDistribution {
     if (this.memoizedDist === undefined) {
-      const acc = this.getHitChance();
-      const max = this.getNPCMaxHit();
-
-      // standard linear
-      const standardHitDist = HitDistribution.linear(acc, 0, max);
-      this.memoizedDist = new AttackDistribution([standardHitDist]);
+      this.memoizedDist = this.getDistributionImpl();
     }
 
     return this.memoizedDist;
+  }
+
+  public getDistributionImpl(): AttackDistribution {
+    const acc = this.getHitChance();
+    const max = this.getNPCMaxHit();
+
+    // Standard linear
+    const standardHitDist = HitDistribution.linear(acc, 0, max);
+    const dist = new AttackDistribution([standardHitDist]);
+
+    // There's some monsters that can hit through prayers, but let's worry about that later
+    const style = this.monster.style || '';
+    if (
+      (['crush', 'stab', 'slash'].includes(style) && this.getOverheadPrayer() === Prayer.PROTECT_MELEE)
+      || (style === 'magic' && this.getOverheadPrayer() === Prayer.PROTECT_MAGIC)
+      || (style === 'ranged' && this.getOverheadPrayer() === Prayer.PROTECT_RANGED)
+    ) {
+      return new AttackDistribution([new HitDistribution([new WeightedHit(1.0, [0])])]);
+    }
+
+    return dist;
   }
 
   /**
