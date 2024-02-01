@@ -8,6 +8,7 @@ import { generateEmptyPlayer } from '@/state';
 import { PartialDeep } from 'type-fest';
 import { calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { Spell } from '@/types/Spell';
+import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
 import eq from '../../../cdn/json/equipment.json';
 import spellsRaw from '../../../cdn/json/spells.json';
 
@@ -78,7 +79,7 @@ export function findSpell(name: string): Spell {
   return find(spells, (s) => s.name === name);
 }
 
-export function calculate(monster: Monster, player: Player) {
+export function calculatePlayerVsNpc(monster: Monster, player: Player) {
   const calc = new PlayerVsNPCCalc(player, monster, {
     loadoutName: 'test',
     detailedOutput: true,
@@ -90,6 +91,19 @@ export function calculate(monster: Monster, player: Player) {
     accuracy: calc.getHitChance(),
     dps: calc.getDps(),
     details: calc.details,
+  };
+}
+
+export function calculateNpcVsPlayer(monster: Monster, player: Player) {
+  const calc = new NPCVsPlayerCalc(player, monster, {
+    loadoutName: 'test',
+  });
+  return {
+    npcMaxAttackRoll: calc.getNPCMaxAttackRoll(),
+    npcMaxHit: calc.getNPCMaxHit(),
+    npcDps: calc.getDps(),
+    npcAccuracy: calc.getHitChance(),
+    playerDefRoll: calc.getPlayerDefenceRoll(),
   };
 }
 

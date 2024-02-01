@@ -1,13 +1,13 @@
 import { expect, test } from '@jest/globals';
 import {
-  calculate, findResult, getTestMonster, getTestPlayer,
+  calculatePlayerVsNpc, findResult, getTestMonster, getTestPlayer,
 } from '@/tests/utils/TestUtils';
 import { DetailKey } from '@/lib/CalcDetails';
 
 test('Abyssal demon', () => {
   const monster = getTestMonster('Abyssal demon', 'Standard');
   const player = getTestPlayer(monster);
-  const { npcDefRoll, details } = calculate(monster, player);
+  const { npcDefRoll, details } = calculatePlayerVsNpc(monster, player);
 
   expect(npcDefRoll).toBe(12096);
   expect(findResult(details, DetailKey.DEFENCE_ROLL_LEVEL)).toBe(135);
