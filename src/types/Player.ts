@@ -118,6 +118,11 @@ export interface Player extends EquipmentStats {
      * @see https://oldschool.runescape.wiki/w/Mark_of_Darkness
      */
     markOfDarknessSpell: boolean;
+    /**
+     * Whether thralls are being used
+     * @see https://oldschool.runescape.wiki/w/Thrall
+     */
+    thrallSpell: boolean;
   }
   spell: Spell | null;
 }

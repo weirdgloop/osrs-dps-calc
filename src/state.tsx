@@ -105,6 +105,7 @@ export const generateEmptyPlayer: () => Player = () => ({
     markOfDarknessSpell: false,
     forinthrySurge: false,
     soulreaperStacks: 0,
+    thrallSpell: false,
   },
   spell: null,
 });

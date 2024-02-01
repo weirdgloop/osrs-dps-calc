@@ -4,6 +4,7 @@ import { useStore } from '@/state';
 import slayer from '@/public/img/misc/slayer.webp';
 import skull from '@/public/img/misc/skull.webp';
 import diary from '@/public/img/misc/diary.png';
+import thrall from '@/public/img/misc/arceuus.png';
 import forinthry_surge from '@/public/img/misc/forinthry_surge.webp';
 import soulreaper_axe from '@/public/img/misc/soulreaper_axe.png';
 import NumberInput from '@/app/components/generic/NumberInput';
@@ -92,6 +93,26 @@ const ExtraOptions: React.FC = observer(() => {
             </>
           )}
         />
+        <Toggle
+          checked={player.buffs.thrallSpell}
+          setChecked={(c) => store.updatePlayer({ buffs: { thrallSpell: c } })}
+          label={(
+            <>
+              <img src={thrall.src} width={18} className="inline-block" alt="Thralls" />
+              {' '}
+              Use thralls
+              {' '}
+              <span
+                className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+                data-tooltip-id="tooltip"
+                data-tooltip-content="Includes thrall damage in dps calculation"
+              >
+                ?
+              </span>
+            </>
+        )}
+        />
+
         <div className="w-full">
           <NumberInput
             className="form-control w-12"

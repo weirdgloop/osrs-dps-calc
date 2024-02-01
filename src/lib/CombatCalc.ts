@@ -57,6 +57,8 @@ const ONE_HIT_MONSTERS: number[] = [
   11193, // Flower (A Night at the Theatre)
 ];
 
+const THRALL_DPT = 0.375;
+
 export interface CalcOpts {
   loadoutName: string,
   detailedOutput: boolean,
@@ -1573,7 +1575,8 @@ export default class CombatCalc {
    * Returns the expected damage per tick, based on the player's attack speed.
    */
   public getDpt() {
-    return this.getDistribution().getExpectedDamage() / this.getAttackSpeed();
+    const playerDpt = this.getDistribution().getExpectedDamage() / this.getAttackSpeed();
+    return this.player.buffs.thrallSpell ? playerDpt + THRALL_DPT : playerDpt;
   }
 
   /**
