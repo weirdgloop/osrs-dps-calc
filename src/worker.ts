@@ -97,7 +97,7 @@ self.onmessage = async (e: MessageEvent<string>) => {
       break;
     }
     default:
-      console.debug(`Unknown data type sent to worker: ${data.type}`);
+      console.debug(`Unknown data type sent to worker. Data: ${JSON.stringify(data)}`);
       return;
   }
 
