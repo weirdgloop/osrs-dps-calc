@@ -5,7 +5,8 @@
   "author": "Jayden Bailey (https://weirdgloop.org)",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "NEXT_PUBLIC_BASE_PATH=/osrs-dps next build",
+    "build-staging": "NEXT_PUBLIC_BASE_PATH=/osrs-dps-staging next build",
     "start": "next start",
     "lint": "next lint",
     "lint-fast": "eslint",
