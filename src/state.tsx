@@ -29,7 +29,6 @@ import {
 import { scaledMonster } from '@/lib/MonsterScaling';
 import getMonsters from '@/lib/Monsters';
 import { calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
-import BaseCalc from '@/lib/BaseCalc';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
   ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, OVERHEAD_PRAYERS, Prayer,
@@ -324,16 +323,7 @@ class GlobalState implements State {
   }
 
   updateCalculator(calc: PartialDeep<Calculator>) {
-    const newCalc: Calculator = merge(this.calc, calc);
-
-    // Compute a new property here for average damage taken, so that we don't have to make repeated calls to the calc.
-    for (const [k, l] of Object.entries(newCalc.loadouts)) {
-      if (l.npcDps !== undefined && l.ttk !== undefined) {
-        newCalc.loadouts[k].avgDmgTaken = BaseCalc.getAverageDamageTaken(l.ttk, l.npcDps);
-      }
-    }
-
-    this.calc = newCalc;
+    this.calc = merge(this.calc, calc);
   }
 
   setWorker(worker: Worker | null) {

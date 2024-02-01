@@ -6,12 +6,15 @@ import { AttackDistribution, HitDistribution, WeightedHit } from '@/lib/HitDist'
 import {
   SECONDS_PER_TICK,
 } from '@/lib/constants';
+import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 
 /**
  * Class for computing various NPC-vs-player metrics.
  */
 export default class NPCVsPlayerCalc extends BaseCalc {
   private memoizedDist?: AttackDistribution;
+
+  private memoizedPlayerVsNPCCalc?: PlayerVsNPCCalc;
 
   constructor(player: Player, monster: Monster, opts: Partial<CalcOpts> = {}) {
     super(player, monster, opts);
@@ -23,6 +26,14 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     }
 
     return this.memoizedDist;
+  }
+
+  public getPlayerVsNPCCalc(): PlayerVsNPCCalc {
+    if (this.memoizedPlayerVsNPCCalc === undefined) {
+      this.memoizedPlayerVsNPCCalc = new PlayerVsNPCCalc(this.player, this.monster);
+    }
+
+    return this.memoizedPlayerVsNPCCalc;
   }
 
   public getDistributionImpl(): AttackDistribution {
@@ -148,5 +159,12 @@ export default class NPCVsPlayerCalc extends BaseCalc {
    */
   public getDps() {
     return this.getDpt() / SECONDS_PER_TICK;
+  }
+
+  /**
+   * Returns the average damage taken for a kill.
+   */
+  public getAverageDamageTaken() {
+    return this.getPlayerVsNPCCalc().getTtk() * this.getDps();
   }
 }

@@ -26,6 +26,7 @@ import { scaledMonster } from '@/lib/MonsterScaling';
 import equipmentStats from '@/public/img/Equipment Stats.png';
 import SectionAccordion from '@/app/components/generic/SectionAccordion';
 import LazyImage from '@/app/components/generic/LazyImage';
+import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
 
 enum XAxisType {
   MONSTER_DEF,
@@ -36,13 +37,15 @@ enum XAxisType {
   PLAYER_RANGED_LEVEL,
   PLAYER_MAGIC_LEVEL,
   STAT_DECAY_RESTORE,
+  PLAYER_DEFENCE_LEVEL,
 }
 
 enum YAxisType {
   // TTK,
-  DPS,
-  EXPECTED_HIT,
-  // DAMAGE_TAKEN
+  PLAYER_DPS,
+  PLAYER_EXPECTED_HIT,
+  MONSTER_DPS,
+  DAMAGE_TAKEN,
 }
 
 const XAxisOptions = [
@@ -51,6 +54,7 @@ const XAxisOptions = [
   { label: 'Monster HP', axisLabel: 'Hitpoints', value: XAxisType.MONSTER_HP },
   { label: 'Player attack level', axisLabel: 'Level', value: XAxisType.PLAYER_ATTACK_LEVEL },
   { label: 'Player strength level', axisLabel: 'Level', value: XAxisType.PLAYER_STRENGTH_LEVEL },
+  { label: 'Player defence level', axisLabel: 'Level', value: XAxisType.PLAYER_DEFENCE_LEVEL },
   { label: 'Player ranged level', axisLabel: 'Level', value: XAxisType.PLAYER_RANGED_LEVEL },
   { label: 'Player magic level', axisLabel: 'Level', value: XAxisType.PLAYER_MAGIC_LEVEL },
   { label: 'Player stat decay', axisLabel: 'Minutes after boost', value: XAxisType.STAT_DECAY_RESTORE },
@@ -178,6 +182,22 @@ function* inputRange(
       }
       return;
 
+    case XAxisType.PLAYER_DEFENCE_LEVEL:
+      for (let newDefence = 0; newDefence <= 125; newDefence++) {
+        yield {
+          xValue: newDefence,
+          loadouts: loadouts.map((l) => ({
+            ...l,
+            skills: {
+              ...l.skills,
+              def: newDefence,
+            },
+          })),
+          monster: baseMonster,
+        };
+      }
+      return;
+
     case XAxisType.PLAYER_RANGED_LEVEL:
       for (let newRanged = 0; newRanged <= 125; newRanged++) {
         yield {
@@ -263,8 +283,10 @@ const getAnnotations = (xAxisType: XAxisType, monster: Monster): Annotation[] =>
 };
 
 const YAxisOptions = [
-  { label: 'Player damage-per-second', axisLabel: 'DPS', value: YAxisType.DPS },
-  { label: 'Expected hit', axisLabel: 'Hit', value: YAxisType.EXPECTED_HIT },
+  { label: 'Player damage-per-second', axisLabel: 'DPS', value: YAxisType.PLAYER_DPS },
+  { label: 'Player expected hit', axisLabel: 'Hit', value: YAxisType.PLAYER_EXPECTED_HIT },
+  { label: 'Player damage taken per sec', axisLabel: 'DPS', value: YAxisType.MONSTER_DPS },
+  { label: 'Player damage taken per kill', axisLabel: 'Damage', value: YAxisType.DAMAGE_TAKEN },
   // {label: 'Time-to-kill', value: YAxisType.TTK},
   // {label: 'Damage taken', value: YAxisType.DAMAGE_TAKEN}
 ];
@@ -275,10 +297,15 @@ const getOutput = (
   monster: Monster,
 ): number => {
   switch (yAxisType) {
-    case YAxisType.DPS:
+    case YAxisType.PLAYER_DPS:
       return new PlayerVsNPCCalc(loadout, monster).getDps();
-    case YAxisType.EXPECTED_HIT:
+    case YAxisType.PLAYER_EXPECTED_HIT:
       return new PlayerVsNPCCalc(loadout, monster).getDistribution().getExpectedDamage();
+    case YAxisType.MONSTER_DPS:
+      return new NPCVsPlayerCalc(loadout, monster).getDps();
+    case YAxisType.DAMAGE_TAKEN: {
+      return new NPCVsPlayerCalc(loadout, monster).getAverageDamageTaken();
+    }
 
     default:
       throw new Error(`Unimplemented yAxisType ${yAxisType}`);

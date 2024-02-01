@@ -69,6 +69,7 @@ const computeMvPValues = async (loadouts: Player[], m: Monster) => {
       npcDps: calc.getDps(),
       npcAccuracy: calc.getHitChance(),
       playerDefRoll: calc.getPlayerDefenceRoll(),
+      avgDmgTaken: calc.getAverageDamageTaken(),
     };
     const end = new Date().getTime();
 

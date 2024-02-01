@@ -80,7 +80,7 @@ const NPCVersusPlayerResultsTable: React.FC = observer(() => {
           NPC max hit
         </ResultRow>
         <ResultRow calcKey="npcDps" title="The average damage the NPC will deal per-second">
-          NPC DPS
+          Damage taken per sec
         </ResultRow>
         <ResultRow calcKey="npcMaxAttackRoll" title="The maximum attack roll for the NPC (lower is better!)">
           NPC attack roll
