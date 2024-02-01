@@ -387,6 +387,14 @@ class GlobalState implements State {
     this.selectedLoadout = data.selectedLoadout;
   }
 
+  async loadLoadouts() {
+    const loadouts = await localforage.getItem<Player[]>('dps-calc-loadouts');
+
+    if (loadouts) {
+      this.loadouts = loadouts;
+    }
+  }
+
   loadPreferences() {
     localforage.getItem('dps-calc-prefs').then((v) => {
       this.updatePreferences(v as PartialDeep<Preferences>);
@@ -538,6 +546,8 @@ class GlobalState implements State {
         this.recalculateEquipmentBonusesFromGear(loadoutIx);
       }
     }
+
+    localforage.setItem('dps-calc-loadouts', toJS(this.loadouts));
   }
 
   /**
