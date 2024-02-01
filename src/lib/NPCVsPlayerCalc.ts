@@ -2,7 +2,7 @@ import BaseCalc, { CalcOpts } from '@/lib/BaseCalc';
 import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { OVERHEAD_PRAYERS, Prayer } from '@/enums/Prayer';
-import {AttackDistribution, HitDistribution, WeightedHit} from '@/lib/HitDist';
+import { AttackDistribution, HitDistribution, WeightedHit } from '@/lib/HitDist';
 import {
   SECONDS_PER_TICK,
 } from '@/lib/constants';

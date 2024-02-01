@@ -35,7 +35,7 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
   const loadouts = toJS(calc.loadouts);
 
   const cells = useMemo(() => {
-    const aggregator = calcKey === 'ttk' ? min : max;
+    const aggregator = calcKey === 'playerDefRoll' ? max : min;
     const bestValue = aggregator(Object.values(loadouts), (l) => l[calcKey] as number);
 
     return Object.values(loadouts).map((l, i) => {
