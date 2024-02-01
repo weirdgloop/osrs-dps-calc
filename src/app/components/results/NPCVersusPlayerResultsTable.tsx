@@ -22,6 +22,7 @@ const calcKeyToString = (value: number, calcKey: keyof CalculatedLoadout): strin
     case 'npcAccuracy':
       return `${(value * 100).toFixed(ACCURACY_PRECISION)}%`;
     case 'npcDps':
+    case 'avgDmgTaken':
       return value.toFixed(DPS_PRECISION);
     default:
       return `${value}`;
@@ -47,7 +48,7 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
 
   return (
     <tr>
-      <th className="w-32 px-4 border-r bg-btns-400 dark:bg-dark-500 select-none" title={title}>{children}</th>
+      <th className="w-50 px-4 border-r bg-btns-400 dark:bg-dark-500 select-none cursor-help" title={title}>{children}</th>
       {cells}
     </tr>
   );
@@ -87,8 +88,11 @@ const NPCVersusPlayerResultsTable: React.FC = observer(() => {
         <ResultRow calcKey="playerDefRoll" title={"The player's defense roll (higher is better!)"}>
           Player def roll
         </ResultRow>
-        <ResultRow calcKey="npcAccuracy" title="The average damage the NPC will deal per-second">
+        <ResultRow calcKey="npcAccuracy" title="How accurate the NPC is against you">
           NPC accuracy
+        </ResultRow>
+        <ResultRow calcKey="avgDmgTaken" title="The average damage you will receive from this NPC, per kill">
+          Avg. damage taken per kill
         </ResultRow>
       </tbody>
     </table>

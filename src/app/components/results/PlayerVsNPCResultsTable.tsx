@@ -51,7 +51,7 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
 
   return (
     <tr>
-      <th className="w-32 px-4 border-r bg-btns-400 dark:bg-dark-500 select-none" title={title}>{children}</th>
+      <th className="w-32 px-4 border-r bg-btns-400 dark:bg-dark-500 select-none cursor-help" title={title}>{children}</th>
       {cells}
     </tr>
   );

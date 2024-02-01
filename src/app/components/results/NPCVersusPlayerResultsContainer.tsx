@@ -15,17 +15,32 @@ const NPCVersusPlayerResultsContainer: React.FC = observer(() => {
   const { monster } = store;
   const { showNPCVersusPlayerResults } = store.prefs;
 
-  const renderMonsterStyleImage = useMemo(() => {
+  const renderMonsterStyle = useMemo(() => {
     if (['slash', 'stab', 'crush'].includes(monster.style || '')) {
-      return <img src={attack.src} className="w-5" alt="Melee" />;
+      return (
+        <>
+          <img src={attack.src} className="w-5" alt="Melee" />
+          <span className="capitalize">{monster.style}</span>
+        </>
+      );
     }
     if (monster.style === 'ranged') {
-      return <img src={ranged.src} className="w-5" alt="Ranged" />;
+      return (
+        <>
+          <img src={ranged.src} className="w-5" alt="Ranged" />
+          <span className="capitalize">{monster.style}</span>
+        </>
+      );
     }
     if (monster.style === 'magic') {
-      return <img src={magic.src} className="w-5" alt="Magic" />;
+      return (
+        <>
+          <img src={magic.src} className="w-5" alt="Magic" />
+          <span className="capitalize">{monster.style}</span>
+        </>
+      );
     }
-    return null;
+    return <span className="text-gray-300 italic">Unknown</span>;
   }, [monster.style]);
 
   const isNonStandard = useMemo(() => !['slash', 'crush', 'stab', 'magic', 'ranged'].includes(monster.style || ''), [monster.style]);
@@ -39,13 +54,6 @@ const NPCVersusPlayerResultsContainer: React.FC = observer(() => {
           <div className="w-6 flex justify-center"><LazyImage src={defence.src} /></div>
           <h3 className="font-serif font-bold">
             Damage Taken
-            {' '}
-            <span className="text-gray-300">
-              (
-              {store.monster.name}
-              {' '}
-              vs Player)
-            </span>
           </h3>
         </div>
       )}
@@ -69,8 +77,7 @@ const NPCVersusPlayerResultsContainer: React.FC = observer(() => {
               <div className="flex gap-1">
                 <span className="text-gray-300">NPC style:</span>
                 <div className="flex gap-1">
-                  {renderMonsterStyleImage}
-                  <span className="capitalize">{monster.style}</span>
+                  {renderMonsterStyle}
                 </div>
               </div>
               <div className="flex gap-2 items-center">

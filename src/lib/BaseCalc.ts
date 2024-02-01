@@ -509,4 +509,13 @@ export default class BaseCalc {
       this.addIssue(UserIssueType.SPELL_WRONG_MONSTER, 'This spell cannot be cast on the selected monster.');
     }
   }
+
+  /**
+   * Returns the average damage taken over the number of seconds provided.
+   * @param secs
+   * @param dps
+   */
+  public static getAverageDamageTaken(secs: number, dps: number) {
+    return secs * dps;
+  }
 }
