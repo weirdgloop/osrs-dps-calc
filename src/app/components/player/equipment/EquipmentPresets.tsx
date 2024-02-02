@@ -14,6 +14,9 @@ const EquipmentPresets: React.FC = () => {
     { label: 'Max Mage', value: EquipmentPreset.MAX_MAGE },
     { label: 'Max Melee', value: EquipmentPreset.MAX_MELEE },
     { label: 'Max Ranged', value: EquipmentPreset.MAX_RANGED },
+    { label: 'Mid Level Mage', value: EquipmentPreset.MID_LEVEL_MAGE },
+    { label: 'Mid Level Melee', value: EquipmentPreset.MID_LEVEL_MELEE },
+    { label: 'Mid Level Ranged', value: EquipmentPreset.MID_LEVEL_RANGED },
     { label: 'Verac\'s equipment', value: EquipmentPreset.VERACS },
     { label: 'Void (Mage)', value: EquipmentPreset.VOID_MAGE },
     { label: 'Void (Melee)', value: EquipmentPreset.VOID_MELEE },
@@ -88,6 +91,54 @@ const EquipmentPresets: React.FC = () => {
             hands: findItemById(26235), // Zaryte vambraces
             feet: findItemById(13237), // Pegasian boots
             ring: findItemById(28310), // Venator ring
+          },
+        };
+        break;
+      }
+      case EquipmentPreset.MID_LEVEL_MAGE: {
+        newPlayer = {
+          equipment: {
+            head: findItemById(4708), // Ahrim's hood#Undamaged
+            cape: findItemById(21791), // Imbued saradomin cape
+            neck: findItemById(12002), // Occult necklace
+            ammo: findItemById(22947), // Rada's blessing 4
+            body: findItemById(4712), // Ahrim's robetop#Undamaged
+            legs: findItemById(4714), // Ahrim's robeskirt#Undamaged
+            hands: findItemById(7462), // Barrows gloves
+            feet: findItemById(6920), // Infinity boots
+            ring: findItemById(11770), // Seers ring (i)
+          },
+        };
+        break;
+      }
+      case EquipmentPreset.MID_LEVEL_MELEE: {
+        newPlayer = {
+          equipment: {
+            head: findItemById(12931), // Serpentine helm#Charged
+            cape: findItemById(6570), // Fire cape
+            neck: findItemById(6585), // Amulet of fury
+            ammo: findItemById(22947), // Rada's blessing 4
+            body: findItemById(10551), // Fighter torso#Normal
+            legs: findItemById(21304), // Obsidian platelegs
+            hands: findItemById(7462), // Barrows gloves
+            feet: findItemById(11840), // Dragon boots
+            ring: findItemById(11773), // Berserker ring (i)
+          },
+        };
+        break;
+      }
+      case EquipmentPreset.MID_LEVEL_RANGED: {
+        newPlayer = {
+          equipment: {
+            head: findItemById(12496), // Ancient coif
+            cape: findItemById(22109), // Ava's assembler
+            neck: findItemById(6585), // Amulet of fury
+            ammo: findItemById(11212), // Dragon arrow
+            body: findItemById(12492), // Ancient d'hide body
+            legs: findItemById(12494), // Ancient chaps
+            hands: findItemById(7462), // Barrows gloves
+            feet: findItemById(19921), // Ancient d'hide boots
+            ring: findItemById(11771), // Archers ring (i)
           },
         };
         break;
