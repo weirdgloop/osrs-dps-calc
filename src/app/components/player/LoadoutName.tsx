@@ -1,5 +1,5 @@
 import { IconPencil } from '@tabler/icons-react';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 interface LoadoutNameProps {
   name: string;
@@ -15,16 +15,14 @@ interface LoadoutNameEditContainerProps {
 
 const LoadoutNameEditContainer: React.FC<LoadoutNameEditContainerProps> = (props) => {
   const { value, onSubmit, onChange } = props;
-  const formRef = useRef<HTMLFormElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, [inputRef.current]);
+  const focusInput = useCallback((input: HTMLInputElement | null) => {
+    input?.focus();
+  }, []);
 
   return (
-    <form ref={formRef} className="flex gap-2 items-center w-full" onSubmit={onSubmit}>
-      <input ref={inputRef} type="text" className="form-control" value={value} onChange={onChange} maxLength={20} onBlur={onSubmit} />
+    <form className="flex gap-2 items-center w-full" onSubmit={onSubmit}>
+      <input type="text" className="form-control" pattern=".*\S.*" title="Must contain at least one non-whitespace character" ref={focusInput} value={value} onChange={onChange} maxLength={24} onBlur={onSubmit} />
     </form>
   );
 };
