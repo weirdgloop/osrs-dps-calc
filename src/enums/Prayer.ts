@@ -14,6 +14,9 @@ import Chivalry from '@/public/img/prayers/Chivalry.png';
 import Piety from '@/public/img/prayers/Piety.png';
 import Rigour from '@/public/img/prayers/Rigour.png';
 import Augury from '@/public/img/prayers/Augury.png';
+import ThickSkin from '@/public/img/prayers/Thick Skin.png';
+import RockSkin from '@/public/img/prayers/Rock Skin.png';
+import SteelSkin from '@/public/img/prayers/Steel Skin.png';
 // import ProtectMagic from '@/public/img/prayers/Protect_from_Magic.png';
 // import ProtectMelee from '@/public/img/prayers/Protect_from_Melee.png';
 // import ProtectRanged from '@/public/img/prayers/Protect_from_Missiles.png';
@@ -23,6 +26,7 @@ import Augury from '@/public/img/prayers/Augury.png';
 import { StaticImageData } from 'next/image';
 import { Factor } from '@/lib/Math';
 
+// The values of this enum is used in the calc state and shortlinks. Do not re-order.
 export enum Prayer {
   BURST_OF_STRENGTH,
   CLARITY_OF_THOUGHT,
@@ -40,6 +44,9 @@ export enum Prayer {
   PIETY,
   RIGOUR,
   AUGURY,
+  THICK_SKIN,
+  ROCK_SKIN,
+  STEEL_SKIN,
   // PROTECT_MAGIC,
   // PROTECT_RANGED,
   // PROTECT_MELEE,
@@ -49,6 +56,7 @@ export enum Prayer {
 }
 
 export const DEFENSIVE_PRAYERS: Prayer[] = [
+  Prayer.THICK_SKIN, Prayer.ROCK_SKIN, Prayer.STEEL_SKIN,
   Prayer.CHIVALRY, Prayer.PIETY, Prayer.RIGOUR, Prayer.AUGURY,
 ];
 
@@ -188,6 +196,21 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     factorAccuracy: [5, 4],
     factorDefence: [5, 4],
   },
+  [Prayer.THICK_SKIN]: {
+    name: 'Thick Skin',
+    image: ThickSkin,
+    factorDefence: [21, 20],
+  },
+  [Prayer.ROCK_SKIN]: {
+    name: 'Rock Skin',
+    image: RockSkin,
+    factorDefence: [11, 10],
+  },
+  [Prayer.STEEL_SKIN]: {
+    name: 'Steel Skin',
+    image: SteelSkin,
+    factorDefence: [23, 20],
+  }
   // [Prayer.PROTECT_MAGIC]: {
   //   name: 'Protect from Magic',
   //   image: ProtectMagic,

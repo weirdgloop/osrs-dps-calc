@@ -83,9 +83,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   private getPlayerMaxMeleeAttackRoll(): number {
     const { style } = this.player;
 
-    let effectiveLevel: number = this.track(DetailKey.ACCURACY_LEVEL, this.player.skills.atk + this.player.boosts.atk);
+    let effectiveLevel: number = this.track(DetailKey.PLAYER_ACCURACY_LEVEL, this.player.skills.atk + this.player.boosts.atk);
     for (const p of this.getCombatPrayers(true)) {
-      effectiveLevel = this.trackFactor(DetailKey.ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
+      effectiveLevel = this.trackFactor(DetailKey.PLAYER_ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
     }
 
     let stanceBonus = 8;
@@ -95,15 +95,15 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       stanceBonus += 1;
     }
 
-    effectiveLevel = this.trackAdd(DetailKey.ACCURACY_EFFECTIVE_LEVEL, effectiveLevel, stanceBonus);
+    effectiveLevel = this.trackAdd(DetailKey.PLAYER_ACCURACY_EFFECTIVE_LEVEL, effectiveLevel, stanceBonus);
 
     const isWearingVoid = this.isWearingMeleeVoid();
     if (isWearingVoid) {
-      effectiveLevel = this.trackFactor(DetailKey.ACCURACY_EFFECTIVE_LEVEL_VOID, effectiveLevel, [11, 10]);
+      effectiveLevel = this.trackFactor(DetailKey.PLAYER_ACCURACY_EFFECTIVE_LEVEL_VOID, effectiveLevel, [11, 10]);
     }
 
-    const gearBonus = this.trackAdd(DetailKey.ACCURACY_GEAR_BONUS, this.player.offensive[style.type], 64);
-    const baseRoll = this.trackFactor(DetailKey.ACCURACY_ROLL_BASE, effectiveLevel, [gearBonus, 1]);
+    const gearBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_GEAR_BONUS, this.player.offensive[style.type], 64);
+    const baseRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_ROLL_BASE, effectiveLevel, [gearBonus, 1]);
     let attackRoll = baseRoll;
 
     // Specific bonuses that are applied from equipment
@@ -113,35 +113,35 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     // These bonuses do not stack with each other
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
       const factor = <Factor>[buffs.forinthrySurge ? 27 : 24, 20];
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_FORINTHRY_SURGE, attackRoll, factor);
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_FORINTHRY_SURGE, attackRoll, factor);
     } else if (this.wearing(['Salve amulet (e)', 'Salve amulet(ei)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_SALVE, attackRoll, [6, 5]);
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SALVE, attackRoll, [6, 5]);
     } else if (this.wearing(['Salve amulet', 'Salve amulet(i)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_SALVE, attackRoll, [7, 6]);
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SALVE, attackRoll, [7, 6]);
     } else if (this.isWearingBlackMask() && buffs.onSlayerTask) {
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_BLACK_MASK, attackRoll, [7, 6]);
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_BLACK_MASK, attackRoll, [7, 6]);
     }
 
     if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {
-      const obsidianBonus = this.trackFactor(DetailKey.ACCURACY_OBSIDIAN, baseRoll, [1, 10]);
-      attackRoll = this.trackAdd(DetailKey.ACCURACY_OBSIDIAN, attackRoll, obsidianBonus);
+      const obsidianBonus = this.trackFactor(DetailKey.PLAYER_ACCURACY_OBSIDIAN, baseRoll, [1, 10]);
+      attackRoll = this.trackAdd(DetailKey.PLAYER_ACCURACY_OBSIDIAN, attackRoll, obsidianBonus);
     }
 
     if (this.isRevWeaponBuffApplicable()) {
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_REV_WEAPON, attackRoll, [3, 2]);
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_REV_WEAPON, attackRoll, [3, 2]);
     }
     if (this.wearing('Arclight') && mattrs.includes(MonsterAttribute.DEMON)) {
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor([7, 10]));
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor([7, 10]));
     }
     if (this.wearing('Dragon hunter lance') && mattrs.includes(MonsterAttribute.DRAGON)) {
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_DRAGONHUNTER, attackRoll, [6, 5]);
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DRAGONHUNTER, attackRoll, [6, 5]);
     }
     if (this.wearing('Keris partisan of breaching') && mattrs.includes(MonsterAttribute.KALPHITE)) {
       // https://twitter.com/JagexAsh/status/1704107285381787952
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_KERIS, attackRoll, [133, 100]);
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_KERIS, attackRoll, [133, 100]);
     }
     if (this.wearing(['Blisterwood flail', 'Blisterwood sickle']) && isVampyre(mattrs)) {
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_VAMPYREBANE, attackRoll, [21, 20]);
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_VAMPYREBANE, attackRoll, [21, 20]);
     }
 
     // Inquisitor's armour set gives bonuses when using the crush attack style
@@ -156,7 +156,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       if (inqPieces === 3) inqPieces = 5;
 
       if (inqPieces > 0) {
-        attackRoll = this.trackFactor(DetailKey.ACCURACY_INQ, attackRoll, [200 + inqPieces, 200]);
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_INQ, attackRoll, [200 + inqPieces, 200]);
       }
     }
 
@@ -287,9 +287,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   private getPlayerMaxRangedAttackRoll() {
     const { style } = this.player;
 
-    let effectiveLevel: number = this.track(DetailKey.ACCURACY_LEVEL, this.player.skills.ranged + this.player.boosts.ranged);
+    let effectiveLevel: number = this.track(DetailKey.PLAYER_ACCURACY_LEVEL, this.player.skills.ranged + this.player.boosts.ranged);
     for (const p of this.getCombatPrayers(true)) {
-      effectiveLevel = this.trackFactor(DetailKey.ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
+      effectiveLevel = this.trackFactor(DetailKey.PLAYER_ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
     }
 
     if (style.stance === 'Accurate') {
@@ -315,7 +315,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
       const factor = <Factor>[buffs.forinthrySurge ? 27 : 24, 20];
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_FORINTHRY_SURGE, attackRoll, factor);
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_FORINTHRY_SURGE, attackRoll, factor);
     } else if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       attackRoll = Math.trunc(attackRoll * 6 / 5);
     } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
@@ -408,9 +408,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   private getPlayerMaxMagicAttackRoll() {
     const { style } = this.player;
 
-    let effectiveLevel: number = this.track(DetailKey.ACCURACY_LEVEL, this.player.skills.magic + this.player.boosts.magic);
+    let effectiveLevel: number = this.track(DetailKey.PLAYER_ACCURACY_LEVEL, this.player.skills.magic + this.player.boosts.magic);
     for (const p of this.getCombatPrayers(true)) {
-      effectiveLevel = this.trackFactor(DetailKey.ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
+      effectiveLevel = this.trackFactor(DetailKey.PLAYER_ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
     }
 
     if (style.stance === 'Accurate') {
@@ -432,7 +432,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
       const factor = <Factor>[buffs.forinthrySurge ? 27 : 24, 20];
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_FORINTHRY_SURGE, attackRoll, factor);
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_FORINTHRY_SURGE, attackRoll, factor);
     } else if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       attackRoll = Math.trunc(attackRoll * 6 / 5);
     } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
@@ -443,7 +443,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
       const baseFactor: Factor = buffs.markOfDarknessSpell ? [8, 20] : [4, 20];
-      attackRoll = this.trackFactor(DetailKey.ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor(baseFactor));
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor(baseFactor));
     }
     if (this.isRevWeaponBuffApplicable()) {
       attackRoll = Math.trunc(attackRoll * 3 / 2);
@@ -619,14 +619,14 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    */
   public getMaxAttackRoll() {
     if (this.opts.overrides?.attackRoll !== undefined) {
-      return this.track(DetailKey.ACCURACY_ROLL_FINAL, this.opts.overrides?.attackRoll);
+      return this.track(DetailKey.PLAYER_ACCURACY_ROLL_FINAL, this.opts.overrides?.attackRoll);
     }
 
     if (this.player.style.stance !== 'Manual Cast') {
       const weaponId = this.player.equipment.weapon?.id;
       const ammoId = this.player.equipment.ammo?.id;
       if (ammoApplicability(weaponId, ammoId) === AmmoApplicability.INVALID) {
-        return this.track(DetailKey.ACCURACY_ROLL_FINAL, 0.0);
+        return this.track(DetailKey.PLAYER_ACCURACY_ROLL_FINAL, 0.0);
       }
     }
 
@@ -642,30 +642,30 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       atkRoll = this.getPlayerMaxMagicAttackRoll();
     }
 
-    return this.track(DetailKey.ACCURACY_ROLL_FINAL, atkRoll);
+    return this.track(DetailKey.PLAYER_ACCURACY_ROLL_FINAL, atkRoll);
   }
 
   public getHitChance() {
     if (this.opts.overrides?.accuracy) {
-      return this.track(DetailKey.ACCURACY_FINAL, this.opts.overrides.accuracy);
+      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, this.opts.overrides.accuracy);
     }
 
     if (VERZIK_P1_IDS.includes(this.monster.id) && this.wearing('Dawnbringer')) {
-      this.track(DetailKey.ACCURACY_DAWNBRINGER, 1.0);
-      return this.track(DetailKey.ACCURACY_FINAL, 1.0);
+      this.track(DetailKey.PLAYER_ACCURACY_DAWNBRINGER, 1.0);
+      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
     // Giant rat (Scurrius)
     if (this.monster.id === 7223 && this.player.style.stance !== 'Manual Cast') {
-      this.track(DetailKey.ACCURACY_SCURRIUS_RAT, 1.0);
-      return this.track(DetailKey.ACCURACY_FINAL, 1.0);
+      this.track(DetailKey.PLAYER_ACCURACY_SCURRIUS_RAT, 1.0);
+      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
     const atk = this.getMaxAttackRoll();
     const def = this.getNPCDefenceRoll();
 
     let hitChance = this.track(
-      DetailKey.ACCURACY_BASE,
+      DetailKey.PLAYER_ACCURACY_BASE,
       BaseCalc.getNormalAccuracyRoll(atk, def),
     );
 
@@ -673,21 +673,21 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const effectDef = Math.trunc(def * 9 / 10);
       const effectHitChance = BaseCalc.getNormalAccuracyRoll(atk, effectDef);
 
-      hitChance = this.track(DetailKey.ACCURACY_BRIMSTONE, (0.75 * hitChance) + (0.25 * effectHitChance));
+      hitChance = this.track(DetailKey.PLAYER_ACCURACY_BRIMSTONE, (0.75 * hitChance) + (0.25 * effectHitChance));
     }
 
     if (this.isWearingFang() && this.player.style.type === 'stab') {
       if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)) {
-        hitChance = this.track(DetailKey.ACCURACY_FANG_TOA, 1 - (1 - hitChance) ** 2);
+        hitChance = this.track(DetailKey.PLAYER_ACCURACY_FANG_TOA, 1 - (1 - hitChance) ** 2);
       } else {
         hitChance = this.track(
-          DetailKey.ACCURACY_FANG,
+          DetailKey.PLAYER_ACCURACY_FANG,
           BaseCalc.getFangAccuracyRoll(atk, def),
         );
       }
     }
 
-    return this.track(DetailKey.ACCURACY_FINAL, hitChance);
+    return this.track(DetailKey.PLAYER_ACCURACY_FINAL, hitChance);
   }
 
   public getDistribution(): AttackDistribution {

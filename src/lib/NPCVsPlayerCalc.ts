@@ -115,20 +115,25 @@ export default class NPCVsPlayerCalc extends BaseCalc {
   public getNPCMaxAttackRoll(): number {
     const style = this.monster.style || '';
     const skills = this.monster.skills;
-    const bonus = this.monster.offensive;
+    const bonuses = this.monster.offensive;
 
     let roll = 0;
+    let bonus = 0;
+
     if (['slash', 'crush', 'stab'].includes(style)) {
-      roll = (9 + skills.atk) * (bonus.atk + 64);
+      roll = this.trackAdd(DetailKey.NPC_ACCURACY_ROLL_BASE, 9, skills.atk);
+      bonus = this.trackAdd(DetailKey.NPC_ACCURACY_ROLL_BONUS, bonuses.atk, 64);
     }
     if (style === 'ranged') {
-      roll = (9 + skills.ranged) * (bonus.ranged + 64);
+      roll = this.trackAdd(DetailKey.NPC_ACCURACY_ROLL_BASE, 9, skills.ranged);
+      bonus = this.trackAdd(DetailKey.NPC_ACCURACY_ROLL_BONUS, bonuses.ranged, 64);
     }
     if (style === 'magic') {
-      roll = (9 + skills.magic) * (bonus.magic + 64);
+      roll = this.trackAdd(DetailKey.NPC_ACCURACY_ROLL_BASE, 9, skills.magic);
+      bonus = this.trackAdd(DetailKey.NPC_ACCURACY_ROLL_BONUS, bonuses.magic, 64);
     }
 
-    return roll;
+    return this.track(DetailKey.NPC_ACCURACY_ROLL_FINAL, roll * bonus);
   }
 
   /**
