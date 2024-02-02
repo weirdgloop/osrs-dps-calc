@@ -210,7 +210,7 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     name: 'Steel Skin',
     image: SteelSkin,
     factorDefence: [23, 20],
-  }
+  },
   // [Prayer.PROTECT_MAGIC]: {
   //   name: 'Protect from Magic',
   //   image: ProtectMagic,

@@ -59,6 +59,33 @@ const NPCVersusPlayerResultsContainer: React.FC = observer(() => {
     return <span className="text-gray-300 italic">Unknown</span>;
   }, [monster.style]);
 
+  const renderWarning = () => {
+    if (monster.maxHit !== undefined && monster.maxHit !== computedBaseMaxHit) {
+      return (
+        <div
+          className="w-full bg-orange-500 text-white px-4 py-1 text-sm border-b border-orange-400 flex items-center gap-2"
+        >
+          <IconAlertTriangle className="text-orange-200" />
+          The wiki reports a different max hit for this NPC. Results may be inaccurate.
+        </div>
+      );
+    }
+
+    return (
+      <div
+        className="w-full bg-yellow-500 text-white px-4 py-1 text-sm border-b border-yellow-400 flex items-center gap-2"
+      >
+        <IconAlertTriangle className="text-orange-200" />
+        <div>
+          This is an experimental feature and may not be 100% accurate. Report issues on
+          {' '}
+          <a href="https://discord.gg/JXeUnR9stP" target="_blank">Discord</a>
+          .
+        </div>
+      </div>
+    );
+  };
+
   return (
     <SectionAccordion
       defaultIsOpen={showNPCVersusPlayerResults}
@@ -81,17 +108,7 @@ const NPCVersusPlayerResultsContainer: React.FC = observer(() => {
         </div>
       ) : (
         <>
-          <div
-            className="w-full bg-orange-500 text-white px-4 py-1 text-sm border-b border-orange-400 flex items-center gap-2"
-          >
-            <IconAlertTriangle className="text-orange-200" />
-            <div>
-              This is an experimental feature and may not be 100% accurate. Report issues on
-              {' '}
-              <a href="https://discord.gg/JXeUnR9stP" target="_blank">Discord</a>
-              .
-            </div>
-          </div>
+          {renderWarning()}
           <div>
             <div className="overflow-x-auto max-w-[100vw]">
               <NPCVersusPlayerResultsTable />
@@ -121,17 +138,6 @@ const NPCVersusPlayerResultsContainer: React.FC = observer(() => {
                     s)
                   </span>
                 </div>
-                {
-                  (monster.maxHit !== undefined && monster.maxHit !== computedBaseMaxHit) && (
-                    <div
-                      className="border-l-2 bg-dark-500 py-1 px-3 border-orange-300 text-gray-300"
-                    >
-                      <IconAlertTriangle className="text-orange-300 h-4 w-4 inline-block" />
-                      {' '}
-                      <span>The wiki reports a different max hit for this NPC. Results may be inaccurate.</span>
-                    </div>
-                  )
-                }
               </div>
             </div>
           </div>
