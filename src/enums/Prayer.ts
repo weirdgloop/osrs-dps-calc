@@ -78,6 +78,7 @@ export interface PrayerData {
   combatStyle?: PrayerCombatStyle,
   factorAccuracy?: Factor,
   factorStrength?: Factor,
+  factorDefence?: Factor,
 }
 
 export const PrayerMap: { [k in Prayer]: PrayerData } = {
@@ -162,6 +163,7 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     combatStyle: 'melee',
     factorAccuracy: [23, 20],
     factorStrength: [118, 100],
+    factorDefence: [6, 5],
   },
   [Prayer.PIETY]: {
     name: 'Piety',
@@ -169,6 +171,7 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     combatStyle: 'melee',
     factorAccuracy: [6, 5],
     factorStrength: [123, 100],
+    factorDefence: [5, 4],
   },
   [Prayer.RIGOUR]: {
     name: 'Rigour',
@@ -176,12 +179,14 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     combatStyle: 'ranged',
     factorAccuracy: [6, 5],
     factorStrength: [123, 100],
+    factorDefence: [5, 4],
   },
   [Prayer.AUGURY]: {
     name: 'Augury',
     image: Augury,
     combatStyle: 'magic',
     factorAccuracy: [5, 4],
+    factorDefence: [5, 4],
   },
   // [Prayer.PROTECT_MAGIC]: {
   //   name: 'Protect from Magic',

@@ -33,7 +33,7 @@ import {
 } from '@/lib/constants';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { scaledMonster } from '@/lib/MonsterScaling';
-import { CalcDetails, DetailEntry, DetailKey } from '@/lib/CalcDetails';
+import { DetailKey } from '@/lib/CalcDetails';
 import { Factor } from '@/lib/Math';
 import {
   AmmoApplicability,
@@ -48,46 +48,10 @@ import BaseCalc, { CalcOpts } from '@/lib/BaseCalc';
 export default class PlayerVsNPCCalc extends BaseCalc {
   private memoizedDist?: AttackDistribution;
 
-  private _details?: CalcDetails;
-
   public userIssues: UserIssue[] = [];
 
   constructor(player: Player, monster: Monster, opts: Partial<CalcOpts> = {}) {
     super(player, monster, opts);
-
-    if (this.opts.detailedOutput) {
-      this._details = new CalcDetails();
-    }
-  }
-
-  private track<T extends Parameters<CalcDetails['track']>[1]>(label: Parameters<CalcDetails['track']>[0], value: T, textOverride?: Parameters<CalcDetails['track']>[2]): T {
-    this._details?.track(label, value, textOverride);
-    return value;
-  }
-
-  private trackFactor(label: Parameters<CalcDetails['track']>[0], base: number, factor: Factor): number {
-    const result = Math.trunc(base * factor[0] / factor[1]);
-    const multStr = factor[0] !== 1 ? ` * ${factor[0]}` : '';
-    const divStr = factor[1] !== 1 ? ` / ${factor[1]}` : '';
-    this.track(label, result, `${base}${multStr}${divStr} = ${result}`);
-    return result;
-  }
-
-  private trackMaxHitFromEffective(label: Parameters<CalcDetails['track']>[0], effectiveLevel: number, gearBonus: number): number {
-    // a bit of a special case, and would otherwise be a lot of intermediates
-    const result = Math.trunc((effectiveLevel * gearBonus + 320) / 640);
-    this.track(label, result, `(${effectiveLevel} * ${gearBonus} + 320) / 640 = ${result}`);
-    return result;
-  }
-
-  private trackAdd(label: Parameters<CalcDetails['track']>[0], base: number, addend: number): number {
-    const result = Math.trunc(base + addend);
-    this.track(label, result, `${base} ${addend >= 0 ? '+' : '-'} ${addend} = ${result}`);
-    return result;
-  }
-
-  get details(): DetailEntry[] {
-    return this._details?.lines || [];
   }
 
   /**
@@ -95,25 +59,25 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    */
   public getNPCDefenceRoll(): number {
     if (this.opts.overrides?.defenceRoll !== undefined) {
-      return this.track(DetailKey.DEFENCE_ROLL_FINAL, this.opts.overrides.defenceRoll);
+      return this.track(DetailKey.NPC_DEFENCE_ROLL_FINAL, this.opts.overrides.defenceRoll);
     }
 
     const level = this.track(
-      DetailKey.DEFENCE_ROLL_LEVEL,
+      DetailKey.NPC_DEFENCE_ROLL_LEVEL,
       this.player.style.type === 'magic' && !USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS.includes(this.monster.id)
         ? this.monster.skills.magic
         : this.monster.skills.def,
     );
-    const effectiveLevel = this.trackAdd(DetailKey.DEFENCE_ROLL_EFFECTIVE_LEVEL, level, 9);
+    const effectiveLevel = this.trackAdd(DetailKey.NPC_DEFENCE_ROLL_EFFECTIVE_LEVEL, level, 9);
 
-    const statBonus = this.trackAdd(DetailKey.DEFENCE_STAT_BONUS, this.monster.defensive[this.player.style.type], 64);
-    let defenceRoll = this.trackFactor(DetailKey.DEFENCE_ROLL_BASE, effectiveLevel, [statBonus, 1]);
+    const statBonus = this.trackAdd(DetailKey.NPC_DEFENCE_STAT_BONUS, this.monster.defensive[this.player.style.type], 64);
+    let defenceRoll = this.trackFactor(DetailKey.NPC_DEFENCE_ROLL_BASE, effectiveLevel, [statBonus, 1]);
 
     if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) && this.monster.inputs.toaInvocationLevel) {
-      defenceRoll = this.track(DetailKey.DEFENCE_ROLL_TOA, Math.trunc(defenceRoll * (250 + this.monster.inputs.toaInvocationLevel) / 250));
+      defenceRoll = this.track(DetailKey.NPC_DEFENCE_ROLL_TOA, Math.trunc(defenceRoll * (250 + this.monster.inputs.toaInvocationLevel) / 250));
     }
 
-    return this.track(DetailKey.DEFENCE_ROLL_FINAL, defenceRoll);
+    return this.track(DetailKey.NPC_DEFENCE_ROLL_FINAL, defenceRoll);
   }
 
   private getPlayerMaxMeleeAttackRoll(): number {

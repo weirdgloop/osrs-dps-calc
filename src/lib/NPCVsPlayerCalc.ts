@@ -7,6 +7,8 @@ import {
   SECONDS_PER_TICK,
 } from '@/lib/constants';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
+import { DetailKey } from '@/lib/CalcDetails';
+import { PrayerMap } from '@/enums/Prayer';
 
 /**
  * Class for computing various NPC-vs-player metrics.
@@ -72,6 +74,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     const style = this.monster.style || '';
     const skills = this.player.skills;
     const boosts = this.player.boosts;
+    const prayers = this.player.prayers.map((p) => PrayerMap[p]);
     const defBonuses = this.player.defensive;
 
     let stanceBonus = 0;
@@ -84,17 +87,26 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     if (style === 'stab') bonus = defBonuses.stab;
     if (style === 'ranged') bonus = defBonuses.ranged;
 
-    const effectiveDef = skills.def + boosts.def;
-    const effectiveMagic = skills.magic + boosts.magic;
-
-    let skillBonus = effectiveDef;
-    // TODO is this wrong?
-    if (style === 'magic') {
-      bonus = defBonuses.magic;
-      skillBonus = Math.trunc(((70 / 100) * effectiveMagic)) + Math.trunc(((30 / 100) * effectiveDef));
+    let effectiveLevel = this.trackAdd(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL, skills.def, boosts.def);
+    for (const p of prayers.filter((pr) => pr.factorDefence)) {
+      effectiveLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL_PRAYER, effectiveLevel, p.factorDefence!);
     }
 
-    return (8 + skillBonus + stanceBonus) * (bonus + 64);
+    // TODO is this wrong?
+    if (style === 'magic') {
+      let effectiveMagicLevel = this.trackAdd(DetailKey.PLAYER_DEFENCE_ROLL_MAGIC_LEVEL, skills.magic, boosts.magic);
+      for (const p of prayers.filter((pr) => pr.factorAccuracy && pr.combatStyle === 'magic')) {
+        effectiveMagicLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_MAGIC_LEVEL_PRAYER, effectiveMagicLevel, p.factorAccuracy!);
+      }
+
+      bonus = defBonuses.magic;
+      effectiveLevel = Math.trunc(((70 / 100) * effectiveMagicLevel)) + Math.trunc(((30 / 100) * effectiveLevel));
+    }
+
+    effectiveLevel = this.trackAdd(DetailKey.PLAYER_DEFENCE_ROLL_EFFECTIVE_LEVEL, effectiveLevel, stanceBonus);
+    const gearBonus = this.trackAdd(DetailKey.PLAYER_DEFENCE_ROLL_GEAR_BONUS, bonus, 64);
+
+    return this.track(DetailKey.PLAYER_DEFENCE_ROLL_FINAL, (8 + effectiveLevel) * gearBonus);
   }
 
   /**

@@ -627,6 +627,9 @@ class GlobalState implements State {
             data: {
               loadouts: this.loadouts,
               monster: m,
+              calcOpts: {
+                detailedOutput: this.debug,
+              },
             },
           } as RecomputeNPCVsPlayerValuesRequest, WORKER_JSON_REPLACER));
         }

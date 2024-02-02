@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-globals */
 import {
   ComputedNPCVsPlayerValuesResponse,
-  ComputedPlayerVsNPCValuesResponse,
+  ComputedPlayerVsNPCValuesResponse, NPCVsPlayerCalcOpts,
   PlayerVsNPCCalcOpts,
   WorkerRequests,
   WorkerRequestType,
@@ -54,7 +54,7 @@ const computePvMValues = async (loadouts: Player[], m: Monster, calcOpts: Player
   return res;
 };
 
-const computeMvPValues = async (loadouts: Player[], m: Monster) => {
+const computeMvPValues = async (loadouts: Player[], m: Monster, calcOpts: NPCVsPlayerCalcOpts) => {
   const res: { [k: string]: NPCVsPlayerCalculatedLoadout } = {};
 
   for (const [i, p] of loadouts.entries()) {
@@ -62,6 +62,7 @@ const computeMvPValues = async (loadouts: Player[], m: Monster) => {
     const start = new Date().getTime();
     const calc = new NPCVsPlayerCalc(p, m, {
       loadoutName,
+      detailedOutput: calcOpts.detailedOutput,
     });
     res[loadoutName] = {
       npcMaxAttackRoll: calc.getNPCMaxAttackRoll(),
@@ -70,6 +71,7 @@ const computeMvPValues = async (loadouts: Player[], m: Monster) => {
       npcAccuracy: calc.getHitChance(),
       playerDefRoll: calc.getPlayerDefenceRoll(),
       avgDmgTaken: calc.getAverageDamageTaken(),
+      details: calc.details,
     };
     const end = new Date().getTime();
 
@@ -93,7 +95,7 @@ self.onmessage = async (e: MessageEvent<string>) => {
       break;
     }
     case WorkerRequestType.RECOMPUTE_NPC_VS_PLAYER_VALUES: {
-      const calculatedLoadouts = await computeMvPValues(data.data.loadouts, data.data.monster);
+      const calculatedLoadouts = await computeMvPValues(data.data.loadouts, data.data.monster, data.data.calcOpts);
       res = { type: WorkerResponseType.COMPUTED_NPC_VS_PLAYER_VALUES, data: calculatedLoadouts } as ComputedNPCVsPlayerValuesResponse;
       break;
     }

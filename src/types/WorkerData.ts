@@ -16,6 +16,10 @@ export interface PlayerVsNPCCalcOpts {
   detailedOutput: boolean,
 }
 
+export interface NPCVsPlayerCalcOpts {
+  detailedOutput: boolean,
+}
+
 export interface RecomputePlayerVsNPCValuesRequest {
   type: WorkerRequestType.RECOMPUTE_PLAYER_VS_NPC_VALUES,
   data: {
@@ -29,7 +33,8 @@ export interface RecomputeNPCVsPlayerValuesRequest {
   type: WorkerRequestType.RECOMPUTE_NPC_VS_PLAYER_VALUES,
   data: {
     loadouts: Player[],
-    monster: Monster
+    monster: Monster,
+    calcOpts: NPCVsPlayerCalcOpts,
   }
 }
 

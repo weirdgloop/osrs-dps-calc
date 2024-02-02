@@ -6,6 +6,8 @@ import UserIssueType from '@/enums/UserIssueType';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { CAST_STANCES } from '@/lib/constants';
 import { UserIssue } from '@/types/State';
+import { CalcDetails, DetailEntry } from '@/lib/CalcDetails';
+import { Factor } from '@/lib/Math';
 
 export interface CalcOpts {
   loadoutName: string,
@@ -28,6 +30,8 @@ const DEFAULT_OPTS: CalcOpts = {
 export default class BaseCalc {
   protected opts: CalcOpts;
 
+  private _details?: CalcDetails;
+
   // The player that we're using for this calculation
   protected player: Player;
 
@@ -45,12 +49,46 @@ export default class BaseCalc {
       ...opts,
     };
 
+    if (this.opts.detailedOutput) {
+      this._details = new CalcDetails();
+    }
+
     this.player = player;
     this.monster = monster;
 
     this.canonicalizeEquipment();
     this.allEquippedItems = Object.values(this.player.equipment).filter((v) => v !== null).flat(1).map((eq: EquipmentPiece | null) => eq?.name || '');
     this.sanitizeInputs();
+  }
+
+  protected track<T extends Parameters<CalcDetails['track']>[1]>(label: Parameters<CalcDetails['track']>[0], value: T, textOverride?: Parameters<CalcDetails['track']>[2]): T {
+    this._details?.track(label, value, textOverride);
+    return value;
+  }
+
+  protected trackFactor(label: Parameters<CalcDetails['track']>[0], base: number, factor: Factor): number {
+    const result = Math.trunc(base * factor[0] / factor[1]);
+    const multStr = factor[0] !== 1 ? ` * ${factor[0]}` : '';
+    const divStr = factor[1] !== 1 ? ` / ${factor[1]}` : '';
+    this.track(label, result, `${base}${multStr}${divStr} = ${result}`);
+    return result;
+  }
+
+  protected trackMaxHitFromEffective(label: Parameters<CalcDetails['track']>[0], effectiveLevel: number, gearBonus: number): number {
+    // a bit of a special case, and would otherwise be a lot of intermediates
+    const result = Math.trunc((effectiveLevel * gearBonus + 320) / 640);
+    this.track(label, result, `(${effectiveLevel} * ${gearBonus} + 320) / 640 = ${result}`);
+    return result;
+  }
+
+  protected trackAdd(label: Parameters<CalcDetails['track']>[0], base: number, addend: number): number {
+    const result = Math.trunc(base + addend);
+    this.track(label, result, `${base} ${addend >= 0 ? '+' : '-'} ${addend} = ${result}`);
+    return result;
+  }
+
+  get details(): DetailEntry[] {
+    return this._details?.lines || [];
   }
 
   private canonicalizeEquipment() {

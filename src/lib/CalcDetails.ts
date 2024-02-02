@@ -1,12 +1,12 @@
 import { Factor } from '@/lib/Math';
 
 export enum DetailKey {
-  DEFENCE_ROLL_LEVEL = 'Defence level',
-  DEFENCE_ROLL_EFFECTIVE_LEVEL = 'Defence effective level',
-  DEFENCE_STAT_BONUS = 'Defence stat bonus',
-  DEFENCE_ROLL_BASE = 'Defence base roll',
-  DEFENCE_ROLL_TOA = 'Defence ToA roll',
-  DEFENCE_ROLL_FINAL = 'Defence roll',
+  NPC_DEFENCE_ROLL_LEVEL = 'NPC defence level',
+  NPC_DEFENCE_ROLL_EFFECTIVE_LEVEL = 'NPC defence effective level',
+  NPC_DEFENCE_STAT_BONUS = 'NPC defence stat bonus',
+  NPC_DEFENCE_ROLL_BASE = 'NPC defence base roll',
+  NPC_DEFENCE_ROLL_TOA = 'NPC defence ToA roll',
+  NPC_DEFENCE_ROLL_FINAL = 'NPC defence roll',
   ACCURACY_LEVEL = 'Accuracy level',
   ACCURACY_LEVEL_PRAYER = 'Accuracy level prayer',
   ACCURACY_EFFECTIVE_LEVEL = 'Accuracy effective level',
@@ -59,6 +59,13 @@ export enum DetailKey {
   ACCURACY_FANG = 'Accuracy fang',
   ACCURACY_FINAL = 'Accuracy',
   GUARDIANS_DMG_BONUS = 'Guardians hit multiplier',
+  PLAYER_DEFENCE_ROLL_LEVEL = 'Player defence level',
+  PLAYER_DEFENCE_ROLL_LEVEL_PRAYER = 'Player defence level prayer',
+  PLAYER_DEFENCE_ROLL_MAGIC_LEVEL = 'Player defence magic level',
+  PLAYER_DEFENCE_ROLL_MAGIC_LEVEL_PRAYER = 'Player defence magic level prayer',
+  PLAYER_DEFENCE_ROLL_EFFECTIVE_LEVEL = 'Player defence effective level',
+  PLAYER_DEFENCE_ROLL_GEAR_BONUS = 'Player defence gear bonus',
+  PLAYER_DEFENCE_ROLL_FINAL = 'Player defence roll',
 }
 
 export interface DetailEntry {
@@ -69,7 +76,8 @@ export interface DetailEntry {
 }
 
 const HIGHLIGHTS: string[] = [
-  DetailKey.DEFENCE_ROLL_FINAL,
+  DetailKey.PLAYER_DEFENCE_ROLL_FINAL,
+  DetailKey.NPC_DEFENCE_ROLL_FINAL,
   DetailKey.ACCURACY_ROLL_FINAL,
   DetailKey.MAX_HIT_FINAL,
   DetailKey.ACCURACY_FINAL,

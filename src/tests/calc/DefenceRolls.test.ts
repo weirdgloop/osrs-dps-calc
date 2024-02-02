@@ -10,9 +10,9 @@ test('Abyssal demon', () => {
   const { npcDefRoll, details } = calculatePlayerVsNpc(monster, player);
 
   expect(npcDefRoll).toBe(12096);
-  expect(findResult(details, DetailKey.DEFENCE_ROLL_LEVEL)).toBe(135);
-  expect(findResult(details, DetailKey.DEFENCE_ROLL_EFFECTIVE_LEVEL)).toBe(144);
-  expect(findResult(details, DetailKey.DEFENCE_ROLL_BASE)).toBe(12096);
-  expect(findResult(details, DetailKey.DEFENCE_ROLL_FINAL)).toBe(12096);
-  expect(findResult(details, DetailKey.DEFENCE_ROLL_TOA)).toBeUndefined();
+  expect(findResult(details, DetailKey.NPC_DEFENCE_ROLL_LEVEL)).toBe(135);
+  expect(findResult(details, DetailKey.NPC_DEFENCE_ROLL_EFFECTIVE_LEVEL)).toBe(144);
+  expect(findResult(details, DetailKey.NPC_DEFENCE_ROLL_BASE)).toBe(12096);
+  expect(findResult(details, DetailKey.NPC_DEFENCE_ROLL_FINAL)).toBe(12096);
+  expect(findResult(details, DetailKey.NPC_DEFENCE_ROLL_TOA)).toBeUndefined();
 });
