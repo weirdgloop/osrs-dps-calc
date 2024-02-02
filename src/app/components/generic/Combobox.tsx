@@ -1,8 +1,9 @@
 import { useCombobox } from 'downshift';
+import { fuzzyFilter } from 'fuzzbunny';
 import React, { useEffect, useRef, useState } from 'react';
 import { Virtuoso, VirtuosoHandle } from 'react-virtuoso';
 
-type ComboboxItem = { label: string, value: string | number };
+type ComboboxItem = { label: string, version?: string, value: string | number };
 
 const itemToString = <T extends ComboboxItem>(i: T | null) => (i ? i.label : '');
 
@@ -63,7 +64,7 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
 
     // When the input value changes, change the filtered items
     if (inputValue) {
-      newFilteredItems = items.filter((v) => v.label.toLowerCase().includes(inputValue.toLowerCase()));
+      newFilteredItems = fuzzyFilter(items.map((item) => ({ item, valueToFilter: `${item.label} ${item.version}` })), inputValue, { fields: ['valueToFilter'] }).map((match) => match.item.item);
 
       if (customFilter !== undefined) {
         newFilteredItems = customFilter(newFilteredItems, inputValue);
