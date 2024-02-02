@@ -28,6 +28,7 @@ const EquipmentPresets: React.FC = () => {
     switch (v?.value) {
       case EquipmentPreset.DHAROKS: {
         newPlayer = {
+          name: v.label,
           equipment: {
             head: findItemById(4716), // Dharok's helm
             cape: findItemById(21295), // Infernal cape
@@ -46,6 +47,7 @@ const EquipmentPresets: React.FC = () => {
       }
       case EquipmentPreset.MAX_MAGE: {
         newPlayer = {
+          name: v.label,
           equipment: {
             head: findItemById(21018), // Ancestral hat
             cape: findItemById(21791), // Imbued saradomin cape
@@ -62,6 +64,7 @@ const EquipmentPresets: React.FC = () => {
       }
       case EquipmentPreset.MAX_MELEE: {
         newPlayer = {
+          name: v.label,
           equipment: {
             head: findItemById(26382), // Torva full helm
             cape: findItemById(21295), // Infernal cape
@@ -78,6 +81,7 @@ const EquipmentPresets: React.FC = () => {
       }
       case EquipmentPreset.MAX_RANGED: {
         newPlayer = {
+          name: v.label,
           equipment: {
             head: findItemById(27235), // Masori mask (f)
             cape: findItemById(22109), // Ava's assembler
@@ -94,6 +98,7 @@ const EquipmentPresets: React.FC = () => {
       }
       case EquipmentPreset.VOID_MAGE: {
         newPlayer = {
+          name: v.label,
           equipment: {
             head: findItemById(11663), // Void mage helm
             cape: findItemById(21791), // Imbued saradomin cape
@@ -110,6 +115,7 @@ const EquipmentPresets: React.FC = () => {
       }
       case EquipmentPreset.VOID_MELEE: {
         newPlayer = {
+          name: v.label,
           equipment: {
             head: findItemById(11665), // Void melee helm
             cape: findItemById(21295), // Infernal cape
@@ -126,6 +132,7 @@ const EquipmentPresets: React.FC = () => {
       }
       case EquipmentPreset.VOID_RANGED: {
         newPlayer = {
+          name: v.label,
           equipment: {
             head: findItemById(11664), // Void ranger helm
             cape: findItemById(22109), // Ava's assembler
@@ -142,6 +149,7 @@ const EquipmentPresets: React.FC = () => {
       }
       case EquipmentPreset.VERACS: {
         newPlayer = {
+          name: v.label,
           equipment: {
             head: findItemById(4753), // Verac's helm
             cape: findItemById(21295), // Infernal cape

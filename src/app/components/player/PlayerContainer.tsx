@@ -3,12 +3,13 @@ import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 import { calculateCombatLevel } from '@/utils';
 import PlayerInnerContainer from '@/app/components/player/PlayerInnerContainer';
+import LoadoutName from '@/app/components/player/LoadoutName';
 import { IconPlus, IconTrash } from '@tabler/icons-react';
 
 const PlayerContainer: React.FC = observer(() => {
   const store = useStore();
   const {
-    loadouts, player, selectedLoadout, canCreateLoadout, createLoadout, deleteLoadout,
+    loadouts, player, selectedLoadout, canCreateLoadout, createLoadout, renameLoadout, deleteLoadout,
   } = store;
 
   return (
@@ -50,12 +51,8 @@ const PlayerContainer: React.FC = observer(() => {
         <div
           className="px-5 py-3 border-b-body-400 dark:border-b-dark-200 border-b flex justify-between items-center font-serif"
         >
-          <div>
-            <h2 className="tracking-tight font-bold">
-              Loadout
-              {' '}
-              {selectedLoadout + 1}
-            </h2>
+          <div className="min-w-0">
+            <LoadoutName name={loadouts[selectedLoadout].name} renameLoadout={renameLoadout} index={selectedLoadout} />
             <div className="text-xs font-bold text-gray-500 dark:text-gray-300">
               Level
               {' '}
