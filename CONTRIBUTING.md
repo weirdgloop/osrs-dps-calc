@@ -41,14 +41,8 @@ Where possible, we prefer serving images direct from the web app instead of the 
 
 ### Running locally
 1. Install dependencies with `yarn` (our package manager of choice).
-2. Create a `.env.local` file with the following value:
-
-```dotenv
-NEXT_PUBLIC_BASE_PATH=/osrs-dps
-```
-
-3. Run the development Next.js server running `yarn dev`.
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the development Next.js server running `yarn dev`.
+3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ### Building the app
 This web app is written with the intention of being statically exported as HTML, and served from Google Cloud Storage. As a result, the use of some Next.js functionality such as `next/image` is avoided.

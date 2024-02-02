@@ -134,7 +134,7 @@ const NPCVersusPlayerResultsContainer: React.FC = observer(() => {
                   {' '}
                   <span className="text-gray-300">
                     (
-                    {monster.speed * 0.6}
+                    {parseFloat((monster.speed * 0.6).toFixed(1))}
                     s)
                   </span>
                 </div>

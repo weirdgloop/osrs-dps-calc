@@ -17,6 +17,8 @@ import SuperStrength from '@/public/img/potions/Super strength.png';
 import SuperRanging from '@/public/img/potions/Super ranging.png';
 import SuperCombat from '@/public/img/potions/Super combat.png';
 import SuperMagic from '@/public/img/potions/Super magic.png';
+import Defence from '@/public/img/potions/Defence.png';
+import SuperDefence from '@/public/img/potions/Super defence.png';
 import Potion from '@/enums/Potion';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { PlayerCombatStyle } from '@/types/PlayerCombatStyle';
@@ -239,6 +241,20 @@ export const PotionMap: { [k in Potion]: { name: string, image: StaticImageData,
     image: SuperMagic,
     calculateFn: (skills) => ({
       magic: Math.floor(5 + (skills.magic * 0.15)),
+    }),
+  },
+  [Potion.DEFENCE]: {
+    name: 'Defence potion',
+    image: Defence,
+    calculateFn: (skills) => ({
+      def: Math.floor(3 + (skills.def * 0.1)),
+    }),
+  },
+  [Potion.SUPER_DEFENCE]: {
+    name: 'Super defence',
+    image: SuperDefence,
+    calculateFn: (skills) => ({
+      def: Math.floor(5 + (skills.def * 0.15)),
     }),
   },
 };
