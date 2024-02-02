@@ -70,7 +70,8 @@ const Home: NextPage = observer(() => {
 
   useEffect(() => {
     const recompute = () => {
-      store.doWorkerRecompute();
+      store.doWorkerRecompute()
+        .catch(console.error);
     };
 
     // When a calculator input changes, trigger a re-compute on the worker

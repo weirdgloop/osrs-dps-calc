@@ -5,11 +5,9 @@ import {
   WORKER_JSON_REPLACER,
   WORKER_JSON_REVIVER,
 } from '@/worker/CalcWorkerTypes';
+import { DeferredPromise } from '@/utils';
 
-interface CalcPromise {
-  resolve: (response: any) => void, // eslint-disable-line @typescript-eslint/no-explicit-any
-  reject: (reason: Error) => void,
-}
+type CalcPromise = DeferredPromise<any>; // eslint-disable-line @typescript-eslint/no-explicit-any
 
 export class CalcWorker {
   private readonly promiseCache: Map<number, CalcPromise> = new Map();
@@ -36,12 +34,15 @@ export class CalcWorker {
   public do<
     Req extends CalcRequestsUnion,
     Resp extends CalcResponse<Req['type']>,
-  >(req: Req): { requestId: number, promise: Promise<Resp> } {
+  >(req: Req): {
+    requestId: number, // can be used to distinguish multiple simultaneous results
+    promise: () => Promise<Resp>, // () => is just to make `await promise()` feel more "usual"
+  } {
     // this shouldn't really happen
     if (!this.worker) {
       return {
         requestId: -1,
-        promise: Promise.reject(new Error('worker is not initialized and cannot handle requests')),
+        promise: () => Promise.reject(new Error('worker is not initialized and cannot handle requests')),
       };
     }
 
@@ -50,12 +51,8 @@ export class CalcWorker {
     this.sequenceId += 1;
 
     // deferred promise so that we can invoke the callback in onResponse
-    const promise = new Promise<Resp>((resolve, reject) => {
-      this.promiseCache.set(req.sequenceId!, {
-        resolve,
-        reject,
-      });
-    });
+    const promise = new DeferredPromise<Resp>();
+    this.promiseCache.set(req.sequenceId!, promise);
 
     const payload = JSON.stringify(req, WORKER_JSON_REPLACER);
     this.worker.postMessage(payload);
@@ -63,7 +60,7 @@ export class CalcWorker {
 
     return {
       requestId: req.sequenceId,
-      promise,
+      promise: () => promise.promise,
     };
   }
 
