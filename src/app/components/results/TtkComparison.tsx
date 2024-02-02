@@ -77,6 +77,7 @@ const TtkComparison: React.FC = observer(() => {
   const store = useStore();
   const { showTtkComparison } = store.prefs;
   const calcResults = toJS(store.calc.loadouts);
+  const loadouts = toJS(store.loadouts);
 
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
@@ -103,12 +104,12 @@ const TtkComparison: React.FC = observer(() => {
         if (v) {
           runningTotals[i] = (runningTotals[i] || 0) + v;
         }
-        entry[`Loadout ${i + 1}`] = (runningTotals[i] * 100).toFixed(2);
+        entry[loadouts[i].name] = (runningTotals[i] * 100).toFixed(2);
       });
       lines.push(entry);
     }
     return lines;
-  }, [xAxisType, calcResults]);
+  }, [xAxisType, calcResults, loadouts]);
 
   const generateLines = useCallback(() => {
     const lines: React.ReactNode[] = [];
@@ -118,11 +119,11 @@ const TtkComparison: React.FC = observer(() => {
       : ['blue', 'chocolate', 'green', 'sienna', 'purple'];
     for (let i = 0; i < calcResults.length; i++) {
       const colour = strokeColours.shift() || 'red';
-      lines.push(<Line key={i} isAnimationActive={false} type="monotone" dataKey={`Loadout ${i + 1}`} stroke={colour} dot={false} connectNulls />);
+      lines.push(<Line key={i} isAnimationActive={false} type="monotone" dataKey={loadouts[i].name} stroke={colour} dot={false} connectNulls />);
       strokeColours.push(colour);
     }
     return lines;
-  }, [isDark, calcResults.length]);
+  }, [isDark, calcResults.length, loadouts]);
 
   return (
     <SectionAccordion

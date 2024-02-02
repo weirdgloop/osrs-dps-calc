@@ -314,9 +314,9 @@ const LoadoutComparison: React.FC = observer(() => {
     const lines: { name: number, [lKey: string]: string | number }[] = [];
     for (const input of inputRange(x, loadouts, monster)) {
       const entry: typeof lines[0] = { name: input.xValue };
-      for (const [i, l] of input.loadouts.entries()) {
+      for (const [, l] of input.loadouts.entries()) {
         const v = getOutput(y, l, input.monster);
-        entry[`Loadout ${i + 1}`] = v.toFixed(2);
+        entry[l.name] = v.toFixed(2);
         maximum = Math.max(maximum, v);
         min = Math.min(min, v);
       }
@@ -348,7 +348,7 @@ const LoadoutComparison: React.FC = observer(() => {
       lines.push(<Line
         key={i}
         type="monotone"
-        dataKey={`Loadout ${i + 1}`}
+        dataKey={loadouts[i].name}
         stroke={colour}
         dot={false}
         isAnimationActive={false}
