@@ -14,7 +14,9 @@ interface CalcPromise {
 export class CalcWorker {
   private readonly promiseCache: Map<number, CalcPromise> = new Map();
 
-  worker?: Worker;
+  private worker?: Worker;
+
+  private sequenceId: number = 1;
 
   initWorker() {
     if (!this.worker) {
@@ -31,17 +33,11 @@ export class CalcWorker {
     }
   }
 
-  private _requestId: number = 0;
-
-  private get newRequestId(): number {
-    this._requestId += 1;
-    return this._requestId;
-  }
-
   public do<
     Req extends CalcRequestsUnion,
     Resp extends CalcResponse<Req['type']>,
   >(req: Req): { requestId: number, promise: Promise<Resp> } {
+    // this shouldn't really happen
     if (!this.worker) {
       return {
         requestId: -1,
@@ -50,11 +46,12 @@ export class CalcWorker {
     }
 
     // we use these ids to map the response back to the promise
-    req.requestId = this.newRequestId;
+    req.sequenceId = this.sequenceId;
+    this.sequenceId += 1;
 
-    // we store the promise resolvers so that we can do that in onResponse
+    // deferred promise so that we can invoke the callback in onResponse
     const promise = new Promise<Resp>((resolve, reject) => {
-      this.promiseCache.set(req.requestId!, {
+      this.promiseCache.set(req.sequenceId!, {
         resolve,
         reject,
       });
@@ -62,25 +59,25 @@ export class CalcWorker {
 
     const payload = JSON.stringify(req, WORKER_JSON_REPLACER);
     this.worker.postMessage(payload);
-    console.debug(`[WorkerContext] Sent off worker request ${req.requestId}`, payload);
+    console.debug(`[WorkerContext] Sent off worker request ${req.sequenceId}`, payload);
 
     return {
-      requestId: req.requestId,
+      requestId: req.sequenceId,
       promise,
     };
   }
 
   private onResponse(e: MessageEvent<string>) {
     const data = JSON.parse(e.data, WORKER_JSON_REVIVER) as CalcResponsesUnion;
-    const { requestId, error } = data;
+    const { sequenceId, error } = data;
 
     // fetch the deferred promise, id must match
-    const promise = this.promiseCache.get(requestId);
+    const promise = this.promiseCache.get(sequenceId);
     if (!promise) {
-      console.warn(`[WorkerContext] Request ID ${requestId} did not have a matching promise!`);
+      console.warn(`[WorkerContext] Request ID ${sequenceId} did not have a matching promise!`);
       return;
     }
-    this.promiseCache.delete(requestId);
+    this.promiseCache.delete(sequenceId);
 
     // fail early on error, none of the other properties should be considered valid
     if (error) {
