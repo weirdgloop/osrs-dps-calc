@@ -1,6 +1,8 @@
 import { useCombobox } from 'downshift';
 import { fuzzyFilter } from 'fuzzbunny';
-import React, { useEffect, useRef, useState } from 'react';
+import React, {
+  useEffect, useMemo, useRef, useState,
+} from 'react';
 import { Virtuoso, VirtuosoHandle } from 'react-virtuoso';
 
 type ComboboxItem = { label: string, version?: string, value: string | number };
@@ -48,7 +50,6 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     customFilter,
   } = props;
   const [inputValue, setInputValue] = useState<string>(value || '');
-  const [filteredItems, setFilteredItems] = useState<T[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const virtuosoRef = useRef<VirtuosoHandle>(null);
@@ -59,20 +60,22 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     if (value) setInputValue(value);
   }, [value]);
 
-  useEffect(() => {
-    let newFilteredItems: T[] = items;
+  const preprocessedItems = useMemo(() => items.map((item) => ({ item, valueToFilter: `${item.label} ${item.version}` })), [items]);
 
+  const filteredItems = useMemo(() => {
     // When the input value changes, change the filtered items
     if (inputValue) {
-      newFilteredItems = fuzzyFilter(items.map((item) => ({ item, valueToFilter: `${item.label} ${item.version}` })), inputValue, { fields: ['valueToFilter'] }).map((match) => match.item.item);
+      let newFilteredItems = fuzzyFilter(preprocessedItems, inputValue, { fields: ['valueToFilter'] }).map((match) => match.item.item);
 
       if (customFilter !== undefined) {
         newFilteredItems = customFilter(newFilteredItems, inputValue);
       }
+
+      return newFilteredItems;
     }
 
-    setFilteredItems(newFilteredItems);
-  }, [inputValue, items, customFilter]);
+    return items;
+  }, [inputValue, items, customFilter, preprocessedItems]);
 
   const {
     getInputProps,
