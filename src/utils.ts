@@ -90,6 +90,54 @@ export const isDevServer = () => process.env.NODE_ENV === 'development';
 
 export const keys = <T extends object>(o: T): (keyof T)[] => Object.keys(o) as (keyof T)[];
 
+export class DeferredPromise<T> {
+  private _resolve!: (response: T) => void;
+
+  private _reject!: (reason: Error) => void;
+
+  readonly promise: Promise<T>;
+
+  constructor() {
+    this.promise = new Promise((resolve, reject) => {
+      this.resolve = resolve;
+      this.reject = reject;
+    });
+  }
+
+  public resolve(response: T): void {
+    this._resolve(response);
+  }
+
+  public reject(reason: Error): void {
+    this._reject(reason);
+  }
+}
+
+// This is a bit of a hack of Promise, but it is very convenient to use as a result.
+// Technically a promise should always be resolved, but we *can* just not resolve to effectively debounce.
+export class Debouncer {
+  private readonly delay: number;
+
+  private windowTimeoutId?: number;
+
+  constructor(ms: number = 250) {
+    this.delay = ms;
+  }
+
+  async debounce<T>(body: () => T): Promise<T> {
+    if (this.windowTimeoutId) {
+      window.clearTimeout(this.windowTimeoutId);
+    }
+
+    const p = new DeferredPromise<T>();
+    this.windowTimeoutId = window.setTimeout(() => {
+      p.resolve(body());
+    }, this.delay);
+
+    return p.promise;
+  }
+}
+
 export const PotionMap: { [k in Potion]: { name: string, image: StaticImageData, calculateFn: (skills: PlayerSkills) => Partial<PlayerSkills> } } = {
   [Potion.ANCIENT]: {
     name: 'Ancient brew',

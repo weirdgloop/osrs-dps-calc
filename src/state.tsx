@@ -15,6 +15,7 @@ import { Monster } from '@/types/Monster';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { toast } from 'react-toastify';
 import {
+  Debouncer,
   fetchPlayerSkills,
   fetchShortlinkData,
   getCombatStylesForCategory,
@@ -195,9 +196,9 @@ class GlobalState implements State {
 
   readonly calcWorker: CalcWorker = new CalcWorker();
 
-  private calcDedupeId?: number;
+  private readonly calcDebouncer: Debouncer = new Debouncer();
 
-  private workerRecomputeTimer: number | null = null;
+  private calcDedupeId?: number;
 
   availableMonsters = getMonsters();
 
@@ -566,37 +567,29 @@ class GlobalState implements State {
     if (selected) this.selectedLoadout = (this.loadouts.length - 1);
   }
 
-  doWorkerRecompute() {
+  async doWorkerRecompute() {
     this.calc.loadouts = this.loadouts.map(() => EMPTY_CALC_LOADOUT);
-    if (this.workerRecomputeTimer) {
-      window.clearTimeout(this.workerRecomputeTimer);
+    const { requestId, promise } = await this.calcDebouncer.debounce(() => this.calcWorker.do({
+      type: WorkerRequestType.COMPUTE_BASIC,
+      data: {
+        loadouts: this.loadouts,
+        monster: this.prefs.manualMode ? this.monster : scaledMonster(this.monster),
+        calcOpts: {
+          includeTtkDist: this.prefs.showTtkComparison,
+          detailedOutput: this.debug,
+        },
+      },
+    }));
+
+    this.calcDedupeId = requestId;
+    const resp = await promise();
+
+    if (resp.sequenceId !== this.calcDedupeId) {
+      // another compute request was probably sent before this one resolved, don't unify these results
+      return;
     }
 
-    this.workerRecomputeTimer = window.setTimeout(() => {
-      const m = this.prefs.manualMode ? this.monster : scaledMonster(this.monster);
-      const { requestId, promise } = this.calcWorker.do({
-        type: WorkerRequestType.COMPUTE_BASIC,
-        data: {
-          loadouts: this.loadouts,
-          monster: m,
-          calcOpts: {
-            includeTtkDist: this.prefs.showTtkComparison,
-            detailedOutput: this.debug,
-          },
-        },
-      });
-
-      this.calcDedupeId = requestId;
-
-      promise.then((resp) => {
-        if (resp.sequenceId !== this.calcDedupeId) {
-          // another compute request was probably sent before this one resolved, don't unify these results
-          return;
-        }
-
-        this.updateCalcResults({ loadouts: resp.payload });
-      });
-    }, 250);
+    this.updateCalcResults({ loadouts: resp.payload });
   }
 }
 
