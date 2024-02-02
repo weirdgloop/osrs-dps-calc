@@ -52,11 +52,11 @@ const computeValues = async (loadouts: Player[], m: Monster, calcOpts: WorkerCal
 
 self.onmessage = async (evt: MessageEvent<string>) => {
   const data = JSON.parse(evt.data, WORKER_JSON_REVIVER) as CalcRequestsUnion;
-  const { type, requestId } = data;
+  const { type, sequenceId } = data;
 
   const res = {
     type,
-    requestId: requestId!,
+    sequenceId: sequenceId!,
   } as CalcResponse<typeof type>;
 
   // Interpret the incoming request, and action it accordingly

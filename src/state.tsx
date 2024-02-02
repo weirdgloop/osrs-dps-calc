@@ -589,14 +589,14 @@ class GlobalState implements State {
       this.calcDedupeId = requestId;
 
       promise.then((resp) => {
-        if (resp.requestId !== this.calcDedupeId) {
+        if (resp.sequenceId !== this.calcDedupeId) {
           // another compute request was probably sent before this one resolved, don't unify these results
           return;
         }
 
         this.updateCalcResults({ loadouts: resp.payload });
       });
-    });
+    }, 250);
   }
 }
 

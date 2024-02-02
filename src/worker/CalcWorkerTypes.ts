@@ -14,7 +14,7 @@ export enum WorkerRequestType {
 
 export interface WorkerRequest {
   type: WorkerRequestType,
-  requestId?: number,
+  sequenceId?: number,
 }
 
 export interface WorkerCalcOpts {
@@ -39,7 +39,7 @@ export type CalcRequestsUnion = ComputeBasicRequest;
 
 export interface WorkerResponse<T extends WorkerRequestType> {
   type: T,
-  requestId: number,
+  sequenceId: number,
   error?: string,
   payload: unknown,
 }
