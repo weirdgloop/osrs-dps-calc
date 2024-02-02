@@ -44,6 +44,8 @@ export interface PlayerEquipment {
   ring: EquipmentPiece | null;
 }
 
+export type EquipmentSlot = keyof PlayerEquipment;
+
 export interface PlayerBonuses {
   str: number;
   ranged_str: number;
