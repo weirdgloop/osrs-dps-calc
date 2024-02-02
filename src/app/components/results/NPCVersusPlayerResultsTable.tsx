@@ -82,6 +82,9 @@ const NPCVersusPlayerResultsTable: React.FC = observer(() => {
         <ResultRow calcKey="npcDps" title="The average damage the NPC will deal per-second">
           Damage taken per sec
         </ResultRow>
+        <ResultRow calcKey="avgDmgTaken" title="The average damage you will receive from this NPC, per kill">
+          Avg. damage taken per kill
+        </ResultRow>
         <ResultRow calcKey="npcMaxAttackRoll" title="The maximum attack roll for the NPC (lower is better!)">
           NPC attack roll
         </ResultRow>
@@ -90,9 +93,6 @@ const NPCVersusPlayerResultsTable: React.FC = observer(() => {
         </ResultRow>
         <ResultRow calcKey="npcAccuracy" title="How accurate the NPC is against you">
           NPC accuracy
-        </ResultRow>
-        <ResultRow calcKey="avgDmgTaken" title="The average damage you will receive from this NPC, per kill">
-          Avg. damage taken per kill
         </ResultRow>
       </tbody>
     </table>

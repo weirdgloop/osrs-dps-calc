@@ -174,7 +174,7 @@ th {
   @apply py-1;
 }
 
-tbody tr:not(tr:last-child) {
+tbody tr {
   @apply border-b;
   @apply border-dark-200;
 }
