@@ -3650,6 +3650,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fuzzbunny@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "fuzzbunny@npm:1.0.1"
+  checksum: 427617fe9ae0ff54212a9fb1bced95b51b5e8d6642e9fd0c350168b97188e5f6beba25e6cd5a58f9017fcbc8be0886b5724eb956a708edde203adb1e9550d219
+  languageName: node
+  linkType: hard
+
 "gensync@npm:^1.0.0-beta.2":
   version: 1.0.0-beta.2
   resolution: "gensync@npm:1.0.0-beta.2"
@@ -5856,6 +5863,7 @@ __metadata:
     eslint-plugin-jsx-a11y: "npm:^6.8.0"
     eslint-plugin-react: "npm:^7.33.2"
     eslint-plugin-react-hooks: "npm:^4.6.0"
+    fuzzbunny: "npm:^1.0.1"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     localforage: "npm:^1.10.0"
