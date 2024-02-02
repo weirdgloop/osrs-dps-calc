@@ -353,6 +353,9 @@ class GlobalState implements State {
       inputs: data.monster.inputs,
     });
 
+    // Intialize names if not present
+    data.loadouts = data.loadouts.map((loadout, i) => ({ name: `Loadout ${i + 1}`, ...loadout }));
+
     // manually recompute equipment in case their metadata has changed since the shortlink was created
     this.loadouts = merge(this.loadouts, data.loadouts);
     this.recalculateEquipmentBonusesFromGearAll();
@@ -560,8 +563,9 @@ class GlobalState implements State {
   renameLoadout(ix: number, name: string) {
     const loadout = this.loadouts[ix];
 
-    if (loadout) {
-      loadout.name = name;
+    const trimmedName = name.trim();
+    if (loadout && trimmedName) {
+      loadout.name = trimmedName;
     }
   }
 

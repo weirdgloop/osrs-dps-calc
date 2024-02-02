@@ -62,7 +62,7 @@ export interface Calculator {
  * If you change the schema here without taking precautions, you **will** break existing shortlinks.
  */
 export interface ImportableData {
-  loadouts: Player[];
+  loadouts: Partial<Player>[];
   selectedLoadout: number;
 
   monster: Monster;
