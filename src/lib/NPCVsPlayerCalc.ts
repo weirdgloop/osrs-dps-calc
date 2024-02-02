@@ -71,6 +71,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     const stance = this.player.style.stance;
     const style = this.monster.style || '';
     const skills = this.player.skills;
+    const boosts = this.player.boosts;
     const defBonuses = this.player.defensive;
 
     let stanceBonus = 0;
@@ -83,11 +84,14 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     if (style === 'stab') bonus = defBonuses.stab;
     if (style === 'ranged') bonus = defBonuses.ranged;
 
-    let skillBonus = skills.def;
+    const effectiveDef = skills.def + boosts.def;
+    const effectiveMagic = skills.magic + boosts.magic;
+
+    let skillBonus = effectiveDef;
     // TODO is this wrong?
     if (style === 'magic') {
       bonus = defBonuses.magic;
-      skillBonus = ((70 / 100) * skills.magic) + ((30 / 100) * skills.def);
+      skillBonus = Math.trunc(((70 / 100) * effectiveMagic)) + Math.trunc(((30 / 100) * effectiveDef));
     }
 
     return (8 + skillBonus + stanceBonus) * (bonus + 64);
