@@ -60,7 +60,7 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     if (value) setInputValue(value);
   }, [value]);
 
-  const preprocessedItems = useMemo(() => items.map((item) => ({ item, valueToFilter: `${item.label} ${item.version}` })), [items]);
+  const preprocessedItems = useMemo(() => items.map((item) => ({ item, valueToFilter: `${item.label} ${item.version ? item.version : ''}` })), [items]);
 
   const filteredItems = useMemo(() => {
     // When the input value changes, change the filtered items
