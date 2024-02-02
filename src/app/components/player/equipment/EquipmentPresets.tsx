@@ -101,7 +101,7 @@ const EquipmentPresets: React.FC = () => {
             head: findItemById(4708), // Ahrim's hood#Undamaged
             cape: findItemById(21791), // Imbued saradomin cape
             neck: findItemById(12002), // Occult necklace
-            ammo: findItemById(22947), // Rada's blessing 4
+            ammo: findItemById(20229), // Honourable blessing
             body: findItemById(4712), // Ahrim's robetop#Undamaged
             legs: findItemById(4714), // Ahrim's robeskirt#Undamaged
             hands: findItemById(7462), // Barrows gloves
@@ -117,7 +117,7 @@ const EquipmentPresets: React.FC = () => {
             head: findItemById(12931), // Serpentine helm#Charged
             cape: findItemById(6570), // Fire cape
             neck: findItemById(6585), // Amulet of fury
-            ammo: findItemById(22947), // Rada's blessing 4
+            ammo: findItemById(20229), // Honourable blessing
             body: findItemById(10551), // Fighter torso#Normal
             legs: findItemById(21304), // Obsidian platelegs
             hands: findItemById(7462), // Barrows gloves
