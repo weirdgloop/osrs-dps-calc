@@ -105,7 +105,7 @@ const ExtraOptions: React.FC = observer(() => {
               <span
                 className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
                 data-tooltip-id="tooltip"
-                data-tooltip-content="Includes thrall damage in dps calculation"
+                data-tooltip-content="Include thrall damage."
               >
                 ?
               </span>

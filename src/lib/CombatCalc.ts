@@ -45,7 +45,7 @@ import { keys } from '@/utils';
 const DEFAULT_ATTACK_SPEED = 4;
 const SECONDS_PER_TICK = 0.6;
 
-const TTK_DIST_MAX_ITER_ROUNDS = 1000;
+const TTK_DIST_MAX_ITER_ROUNDS = 4000;
 const TTK_DIST_EPSILON = 0.0001;
 
 const AUTOCAST_STANCES: CombatStyleStance[] = ['Autocast', 'Defensive Autocast'];
@@ -58,6 +58,22 @@ const ONE_HIT_MONSTERS: number[] = [
 ];
 
 const THRALL_DPT = 0.375;
+const THRALL_SPEED = 4;
+const thrallDistribution = new HitDistribution([new WeightedHit(0.25, [0]), new WeightedHit(0.25, [1]), new WeightedHit(0.25, [2]), new WeightedHit(0.25, [3])]);
+const zeroDistribution = new HitDistribution([new WeightedHit(1, [0])]);
+
+const getAttackingDistribution = (playerAttacks: boolean, thrallAttacks: boolean, playerDistribution: HitDistribution): HitDistribution => {
+  if (playerAttacks && thrallAttacks) {
+    return playerDistribution.zip(thrallDistribution).cumulative();
+  }
+  if (playerAttacks) {
+    return playerDistribution;
+  }
+  if (thrallAttacks) {
+    return thrallDistribution;
+  }
+  return zeroDistribution;
+};
 
 export interface CalcOpts {
   loadoutName: string,
@@ -1593,7 +1609,7 @@ export default class CombatCalc {
     const dist = this.getDistribution();
     const hist = dist.asHistogram();
     const max = dist.getMax();
-    if (max === 0) {
+    if (dist.getExpectedDamage() === 0) {
       return 0;
     }
 
@@ -1616,7 +1632,7 @@ export default class CombatCalc {
    * Returns the average time-to-kill (in seconds) calculation.
    */
   public getTtk() {
-    return this.getHtk() * this.getAttackSpeed() * SECONDS_PER_TICK;
+    return this.monster.skills.hp / this.getDps();
   }
 
   /**
@@ -1627,7 +1643,7 @@ export default class CombatCalc {
   public getTtkDistribution(): Map<number, number> {
     const speed = this.getAttackSpeed();
     const dist = this.getDistribution().singleHitsplat;
-    if (dist.expectedHit() === 0) {
+    if (dist.expectedHit() === 0 && !this.player.buffs.thrallSpell) {
       return new Map<number, number>();
     }
 
@@ -1654,13 +1670,16 @@ export default class CombatCalc {
 
     // 1. until the amount of hp values remaining above zero is more than our desired epsilon accuracy,
     //    or we reach the maximum iteration rounds
-    for (let hit = 0; hit < (TTK_DIST_MAX_ITER_ROUNDS + 1) && epsilon >= TTK_DIST_EPSILON; hit++) {
+    for (let tick = 1; tick < (TTK_DIST_MAX_ITER_ROUNDS + 1) && epsilon >= TTK_DIST_EPSILON; tick++) {
       const nextHps = new Float64Array(this.monster.skills.hp + 1);
+      const playerAttacks = !((tick - 1) % speed);
+      const thrallAttacks = this.player.buffs.thrallSpell && !((tick - 1) % THRALL_SPEED);
 
       // 3. for each possible hp value,
       for (const [hp, hpProb] of hps.entries()) {
         // this is a bit of a hack, but idk if there's a better way
-        const currDist: HitDistribution = recalcDistOnHp ? hpHitDists.get(hp)! : dist;
+        const playerDistribution = recalcDistOnHp ? hpHitDists.get(hp)! : dist;
+        const currDist = getAttackingDistribution(playerAttacks, thrallAttacks, playerDistribution);
 
         // 4. for each damage amount possible,
         for (const h of currDist.hits) {
@@ -1678,7 +1697,6 @@ export default class CombatCalc {
           // 6. if the hp we are about to arrive at is <= 0, the npc is killed, the iteration count is hits done,
           //    and we add this probability path into the delta
           if (newHp <= 0) {
-            const tick = hit * speed + 1;
             ttks.set(tick, (ttks.get(tick) || 0) + chanceOfAction);
             epsilon -= chanceOfAction;
           } else {
