@@ -19,12 +19,12 @@ import {
   fetchShortlinkData,
   getCombatStylesForCategory,
   PotionMap,
-  WORKER_JSON_REPLACER,
 } from '@/utils';
-import { RecomputeValuesRequest, WorkerRequestType } from '@/types/WorkerData';
+import { WorkerRequestType } from '@/worker/CalcWorkerTypes';
 import { scaledMonster } from '@/lib/MonsterScaling';
 import getMonsters from '@/lib/Monsters';
 import { calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
+import { CalcWorker } from '@/worker/CalcWorker';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
   ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, Prayer,
@@ -193,13 +193,15 @@ class GlobalState implements State {
     ],
   };
 
-  worker: Worker | null = null;
+  readonly calcWorker: CalcWorker = new CalcWorker();
 
-  workerRecomputeTimer: number | null = null;
+  private calcDedupeId?: number;
+
+  private workerRecomputeTimer: number | null = null;
 
   availableMonsters = getMonsters();
 
-  _debug: boolean = false;
+  private _debug: boolean = false;
 
   constructor() {
     makeAutoObservable(this, {}, { autoBind: true });
@@ -310,12 +312,8 @@ class GlobalState implements State {
     this.ui = Object.assign(this.ui, ui);
   }
 
-  updateCalculator(calc: PartialDeep<Calculator>) {
+  updateCalcResults(calc: PartialDeep<Calculator>) {
     this.calc = Object.assign(this.calc, calc);
-  }
-
-  setWorker(worker: Worker | null) {
-    this.worker = worker;
   }
 
   async loadShortlink(linkId: string) {
@@ -575,22 +573,30 @@ class GlobalState implements State {
     }
 
     this.workerRecomputeTimer = window.setTimeout(() => {
-      if (this.worker) {
-        const m = this.prefs.manualMode ? this.monster : scaledMonster(this.monster);
-
-        this.worker.postMessage(JSON.stringify({
-          type: WorkerRequestType.RECOMPUTE_VALUES,
-          data: {
-            loadouts: this.loadouts,
-            monster: m,
-            calcOpts: {
-              includeTtkDist: this.prefs.showTtkComparison,
-              detailedOutput: this.debug,
-            },
+      const m = this.prefs.manualMode ? this.monster : scaledMonster(this.monster);
+      const { requestId, promise } = this.calcWorker.do({
+        type: WorkerRequestType.COMPUTE_BASIC,
+        data: {
+          loadouts: this.loadouts,
+          monster: m,
+          calcOpts: {
+            includeTtkDist: this.prefs.showTtkComparison,
+            detailedOutput: this.debug,
           },
-        } as RecomputeValuesRequest, WORKER_JSON_REPLACER));
-      }
-    }, 250);
+        },
+      });
+
+      this.calcDedupeId = requestId;
+
+      promise.then((resp) => {
+        if (resp.requestId !== this.calcDedupeId) {
+          // another compute request was probably sent before this one resolved, don't unify these results
+          return;
+        }
+
+        this.updateCalcResults({ loadouts: resp.payload });
+      });
+    });
   }
 }
 
