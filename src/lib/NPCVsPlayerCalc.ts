@@ -78,6 +78,11 @@ export default class NPCVsPlayerCalc extends BaseCalc {
       ]);
     }
 
+    if (this.wearing(["Dinh's bulwark", "Dinh's blazing bulwark"]) && this.player.style.name === 'Block') {
+      // Monster damage reduced by 20%
+      dist = dist.scaleDamage(0.8);
+    }
+
     if (this.isWearingJusticiarArmour()) {
       // Justiciar armour stacks with Ely
       const reduction = 1 - bonus / 3000;
