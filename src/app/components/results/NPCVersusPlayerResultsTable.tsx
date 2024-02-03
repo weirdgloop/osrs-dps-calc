@@ -63,14 +63,14 @@ const NPCVersusPlayerResultsTable: React.FC = observer(() => {
       <thead>
         <tr>
           <th aria-label="blank" className="bg-btns-400 border-r dark:bg-dark-500 select-none" />
-          {store.loadouts.map((_, i) => (
+          {store.loadouts.map(({ name }, i) => (
             <th
             // eslint-disable-next-line react/no-array-index-key
               key={i}
-              className={`text-center w-28 border-r font-bold font-serif cursor-pointer transition-colors ${selectedLoadout === i ? 'bg-orange-400 dark:bg-orange-700' : 'bg-btns-400 dark:bg-dark-500'}`}
+              className={`text-center w-28 border-r py-1.5 font-bold font-serif leading-tight text-xs cursor-pointer transition-colors ${selectedLoadout === i ? 'bg-orange-400 dark:bg-orange-700' : 'bg-btns-400 dark:bg-dark-500'}`}
               onClick={() => store.setSelectedLoadout(i)}
             >
-              {i + 1}
+              {name}
             </th>
           ))}
         </tr>
