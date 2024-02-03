@@ -3,9 +3,7 @@ import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 // import { OVERHEAD_PRAYERS, Prayer } from '@/enums/Prayer';
 import { AttackDistribution, HitDistribution, WeightedHit } from '@/lib/HitDist';
-import {
-  SECONDS_PER_TICK,
-} from '@/lib/constants';
+import { SECONDS_PER_TICK } from '@/lib/constants';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import { DetailKey } from '@/lib/CalcDetails';
 import { PrayerMap } from '@/enums/Prayer';
@@ -86,7 +84,6 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     }
 
     if (this.isWearingJusticiarArmour()) {
-      // Justiciar armour stacks with Ely
       const reduction = 1 - bonus / 3000;
       dist = new AttackDistribution([
         new HitDistribution([
@@ -134,6 +131,12 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     let effectiveLevel = this.trackAdd(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL, skills.def, boosts.def);
     for (const p of prayers.filter((pr) => pr.factorDefence)) {
       effectiveLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL_PRAYER, effectiveLevel, p.factorDefence!);
+    }
+
+    if (this.isWearingTorags()) {
+      const currentHealth = skills.hp + boosts.hp;
+      const missingHealth = ((Math.round((skills.hp - currentHealth) / skills.hp * 100) / 100) * 100);
+      effectiveLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL_TORAGS, effectiveLevel, [1 + missingHealth, 100]);
     }
 
     if (style === 'magic') {

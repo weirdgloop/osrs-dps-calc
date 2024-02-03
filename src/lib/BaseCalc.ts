@@ -347,6 +347,14 @@ export default class BaseCalc {
   }
 
   /**
+   * Whether the player is wearing the entire Torag the Corrupted's equipment set.
+   * @see https://oldschool.runescape.wiki/w/Torag_the_Corrupted%27s_equipment
+   */
+  protected isWearingTorags(): boolean {
+    return this.wearingAll(["Torag's helm", "Torag's platebody", "Torag's platelegs", "Torag's hammers", 'Amulet of the damned']);
+  }
+
+  /**
    * Whether the player is wearing a silver weapon.
    * @see https://oldschool.runescape.wiki/w/Silver_weaponry
    */

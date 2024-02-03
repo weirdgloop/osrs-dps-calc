@@ -61,6 +61,7 @@ export enum DetailKey {
   GUARDIANS_DMG_BONUS = 'Guardians hit multiplier',
   PLAYER_DEFENCE_ROLL_LEVEL = 'Player defence level',
   PLAYER_DEFENCE_ROLL_LEVEL_PRAYER = 'Player defence level prayer',
+  PLAYER_DEFENCE_ROLL_LEVEL_TORAGS = 'Player defence level torags',
   PLAYER_DEFENCE_ROLL_MAGIC_LEVEL = 'Player defence magic level',
   PLAYER_DEFENCE_ROLL_MAGIC_LEVEL_PRAYER = 'Player defence magic level prayer',
   PLAYER_DEFENCE_ROLL_EFFECTIVE_LEVEL = 'Player defence effective level',
