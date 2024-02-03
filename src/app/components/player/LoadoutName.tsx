@@ -22,7 +22,7 @@ const LoadoutNameEditContainer: React.FC<LoadoutNameEditContainerProps> = (props
 
   return (
     <form className="flex gap-2 items-center w-full" onSubmit={onSubmit}>
-      <input type="text" className="form-control" pattern=".*\S.*" title="Must contain at least one non-whitespace character" ref={focusInput} value={value} onChange={onChange} maxLength={24} onBlur={onSubmit} />
+      <input type="text" className="form-control" ref={focusInput} value={value} onChange={onChange} maxLength={24} onBlur={onSubmit} />
     </form>
   );
 };
@@ -45,9 +45,7 @@ const LoadoutName: React.FC<LoadoutNameProps> = ({ name, index, renameLoadout })
   };
 
   const onSubmit = () => {
-    if (value) {
-      renameLoadout(index, value);
-    }
+    renameLoadout(index, value);
     setEditName(false);
   };
 

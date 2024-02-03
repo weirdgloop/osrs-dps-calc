@@ -564,8 +564,12 @@ class GlobalState implements State {
     const loadout = this.loadouts[ix];
 
     const trimmedName = name.trim();
-    if (loadout && trimmedName) {
-      loadout.name = trimmedName;
+    if (loadout) {
+      if (trimmedName) {
+        loadout.name = trimmedName;
+      } else {
+        loadout.name = `Loadout ${ix + 1}`;
+      }
     }
   }
 
