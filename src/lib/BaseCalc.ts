@@ -496,6 +496,18 @@ export default class BaseCalc {
     }
   }
 
+  /**
+   * Whether the player is wearing the full set of Justiciar armour.
+   * @see https://oldschool.runescape.wiki/w/Justiciar_armour
+   */
+  protected isWearingJusticiarArmour(): boolean {
+    return this.wearingAll([
+      'Justiciar faceguard',
+      'Justiciar chestguard',
+      'Justiciar legguards'
+    ])
+  }
+
   protected addIssue(type: UserIssueType, message: string) {
     this.userIssues.push({ type, message, loadout: this.opts.loadoutName });
   }

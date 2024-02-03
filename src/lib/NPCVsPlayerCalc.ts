@@ -2,7 +2,7 @@ import BaseCalc, { CalcOpts } from '@/lib/BaseCalc';
 import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 // import { OVERHEAD_PRAYERS, Prayer } from '@/enums/Prayer';
-import { AttackDistribution, HitDistribution } from '@/lib/HitDist';
+import { AttackDistribution, HitDistribution, WeightedHit } from '@/lib/HitDist';
 import {
   SECONDS_PER_TICK,
 } from '@/lib/constants';
@@ -38,13 +38,47 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     return this.memoizedPlayerVsNPCCalc;
   }
 
+  private getPlayerDefensiveBonus() {
+    let styleBonus = 0;
+    switch (this.monster.style) {
+      case 'crush':
+        styleBonus = this.player.defensive.crush;
+        break;
+      case 'stab':
+        styleBonus = this.player.defensive.stab;
+        break;
+      case 'slash':
+        styleBonus = this.player.defensive.slash;
+        break;
+      case 'magic':
+        styleBonus = this.player.defensive.magic;
+        break;
+      case 'ranged':
+        styleBonus = this.player.defensive.ranged;
+        break;
+      default:
+        break;
+    }
+    return styleBonus;
+  }
+
   public getDistributionImpl(): AttackDistribution {
     const acc = this.getHitChance();
     const max = this.getNPCMaxHit();
+    const bonus = this.getPlayerDefensiveBonus();
 
     // Standard linear
     const standardHitDist = HitDistribution.linear(acc, 0, max);
-    const dist = new AttackDistribution([standardHitDist]);
+    let dist = new AttackDistribution([standardHitDist]);
+
+    if (this.isWearingJusticiarArmour()) {
+      const reduction = 1 - bonus / 3000;
+      dist = new AttackDistribution([
+        new HitDistribution([
+          ...standardHitDist.hits.map((h) => new WeightedHit(h.probability, h.hitsplats.map((s) => Math.trunc(s * reduction)))),
+        ]),
+      ]);
+    }
 
     // There's some monsters that can hit through prayers, but let's worry about that later
     // const style = this.monster.style || '';
@@ -81,12 +115,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     if (stance === 'Defensive') stanceBonus += 3;
     if (stance === 'Controlled') stanceBonus += 1;
 
-    let bonus = 0;
-    if (style === 'slash') bonus = defBonuses.slash;
-    if (style === 'crush') bonus = defBonuses.crush;
-    if (style === 'stab') bonus = defBonuses.stab;
-    if (style === 'ranged') bonus = defBonuses.ranged;
-    if (style === 'magic') bonus = defBonuses.magic;
+    const bonus = this.getPlayerDefensiveBonus();
 
     let effectiveLevel = this.trackAdd(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL, skills.def, boosts.def);
     for (const p of prayers.filter((pr) => pr.factorDefence)) {
