@@ -9,9 +9,7 @@ import { useStore } from '@/state';
 import { ToastContainer } from 'react-toastify';
 import PlayerContainer from '@/app/components/player/PlayerContainer';
 import ResultsContainer from '@/app/components/results/ResultsContainer';
-import { WorkerResponses, WorkerResponseType } from '@/types/WorkerData';
 import { IReactionPublic, reaction, toJS } from 'mobx';
-import { WORKER_JSON_REVIVER } from '@/utils';
 import InitialLoad from '@/app/components/InitialLoad';
 import LoadoutComparison from '@/app/components/results/LoadoutComparison';
 import TtkComparison from '@/app/components/results/TtkComparison';
@@ -24,27 +22,11 @@ const Home: NextPage = observer(() => {
   store.debug = process.env && process.env.NODE_ENV === 'development';
 
   useEffect(() => {
-    // When the page loads, set up the worker and be ready to interpret the responses
-    const worker = new Worker(new URL('../worker.ts', import.meta.url));
-    worker.onmessage = (evt: MessageEvent<string>) => {
-      const data = JSON.parse(evt.data, WORKER_JSON_REVIVER) as WorkerResponses;
+    // set up the web worker on component mount
+    store.calcWorker.initWorker();
 
-      // Depending on the response type, do things...
-      switch (data.type) {
-        case WorkerResponseType.COMPUTED_VALUES:
-          store.updateCalculator({ loadouts: data.data });
-          break;
-        default:
-          break;
-      }
-    };
-    store.setWorker(worker);
-
-    return () => {
-      // Terminate the worker when we un-mount this component
-      worker?.terminate();
-      store.setWorker(null);
-    };
+    // and make sure it tears down cleanly on unmount
+    return () => store.calcWorker.shutdown();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -88,7 +70,8 @@ const Home: NextPage = observer(() => {
 
   useEffect(() => {
     const recompute = () => {
-      store.doWorkerRecompute();
+      store.doWorkerRecompute()
+        .catch(console.error);
     };
 
     // When a calculator input changes, trigger a re-compute on the worker

@@ -1,17 +1,16 @@
 /* eslint-disable no-restricted-globals */
 import {
-  ComputedValuesResponse,
+  CalcRequestsUnion,
+  CalcResponse,
+  WORKER_JSON_REPLACER,
+  WORKER_JSON_REVIVER,
   WorkerCalcOpts,
-  WorkerRequests,
   WorkerRequestType,
-  WorkerResponses,
-  WorkerResponseType,
-} from '@/types/WorkerData';
+} from '@/worker/CalcWorkerTypes';
 import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import CombatCalc from '@/lib/CombatCalc';
 import { CalculatedLoadout } from '@/types/State';
-import { WORKER_JSON_REPLACER, WORKER_JSON_REVIVER } from '@/utils';
 
 /**
  * Method for computing the calculator values based on given loadouts and Monster object
@@ -51,20 +50,32 @@ const computeValues = async (loadouts: Player[], m: Monster, calcOpts: WorkerCal
   return res;
 };
 
-self.onmessage = async (e: MessageEvent<string>) => {
-  const data = JSON.parse(e.data, WORKER_JSON_REVIVER) as WorkerRequests;
-  let res: WorkerResponses;
+self.onmessage = async (evt: MessageEvent<string>) => {
+  const data = JSON.parse(evt.data, WORKER_JSON_REVIVER) as CalcRequestsUnion;
+  const { type, sequenceId } = data;
+
+  const res = {
+    type,
+    sequenceId: sequenceId!,
+  } as CalcResponse<typeof type>;
 
   // Interpret the incoming request, and action it accordingly
-  switch (data.type) {
-    case WorkerRequestType.RECOMPUTE_VALUES: {
-      const calculatedLoadouts = await computeValues(data.data.loadouts, data.data.monster, data.data.calcOpts);
-      res = { type: WorkerResponseType.COMPUTED_VALUES, data: calculatedLoadouts } as ComputedValuesResponse;
-      break;
+  try {
+    switch (type) {
+      case WorkerRequestType.COMPUTE_BASIC: {
+        res.payload = await computeValues(data.data.loadouts, data.data.monster, data.data.calcOpts);
+        break;
+      }
+
+      default:
+        res.error = `Unsupported request type ${type}`;
     }
-    default:
-      console.debug(`Unknown data type sent to worker: ${data.type}`);
-      return;
+  } catch (e: unknown) {
+    if (e instanceof Error) {
+      res.error = e.message;
+    } else {
+      res.error = `Unknown error type: ${e}`;
+    }
   }
 
   // Send message back to the master
