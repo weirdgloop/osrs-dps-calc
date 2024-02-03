@@ -15,9 +15,9 @@ const EquipmentPresets: React.FC = () => {
     { label: 'Max Melee', value: EquipmentPreset.MAX_MELEE },
     { label: 'Max Ranged', value: EquipmentPreset.MAX_RANGED },
     { label: 'Verac\'s equipment', value: EquipmentPreset.VERACS },
-    { label: 'Void (Mage)', value: EquipmentPreset.VOID_MAGE },
-    { label: 'Void (Melee)', value: EquipmentPreset.VOID_MELEE },
-    { label: 'Void (Ranged)', value: EquipmentPreset.VOID_RANGED },
+    { label: 'Void Mage', value: EquipmentPreset.VOID_MAGE },
+    { label: 'Void Melee', value: EquipmentPreset.VOID_MELEE },
+    { label: 'Void Ranged', value: EquipmentPreset.VOID_RANGED },
   ];
 
   const onSelect = useCallback((v: { label: string, value: EquipmentPreset } | null | undefined) => {
@@ -173,7 +173,7 @@ const EquipmentPresets: React.FC = () => {
     if (Object.keys(newPlayer).length > 0) {
       store.updatePlayer(newPlayer);
     }
-  }, [store, availableEquipment]);
+  }, [store]);
 
   return (
     <Select<{ label: string, value: EquipmentPreset }>

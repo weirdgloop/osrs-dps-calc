@@ -1,3 +1,4 @@
+import { PartialDeep } from 'type-fest';
 import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import UserIssueType from '@/enums/UserIssueType';
@@ -62,7 +63,7 @@ export interface Calculator {
  * If you change the schema here without taking precautions, you **will** break existing shortlinks.
  */
 export interface ImportableData {
-  loadouts: Partial<Player>[];
+  loadouts: PartialDeep<Player>[];
   selectedLoadout: number;
 
   monster: Monster;
