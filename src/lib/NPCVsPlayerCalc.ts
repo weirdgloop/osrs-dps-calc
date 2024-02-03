@@ -73,8 +73,10 @@ export default class NPCVsPlayerCalc extends BaseCalc {
 
     if (this.wearing('Elysian spirit shield')) {
       dist = new AttackDistribution([
-        standardHitDist.scaleProbability(0.3),
-        standardHitDist.scaleProbability(0.7).scaleDamage(3, 4),
+        new HitDistribution([
+          ...standardHitDist.scaleProbability(0.3).hits,
+          ...standardHitDist.scaleProbability(0.7).scaleDamage(0.75).hits,
+        ]),
       ]);
     }
 
