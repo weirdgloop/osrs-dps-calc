@@ -50,7 +50,8 @@ const generateInitialEquipment = () => {
   return initialEquipment;
 };
 
-export const generateEmptyPlayer: () => Player = () => ({
+export const generateEmptyPlayer = (name?: string) => ({
+  name: name ?? 'Loadout 1',
   username: '',
   style: getCombatStylesForCategory(EquipmentCategory.NONE)[0],
   skills: {
@@ -366,6 +367,9 @@ class GlobalState implements State {
       inputs: data.monster.inputs,
     });
 
+    // Intialize names if not present
+    data.loadouts = data.loadouts.map((loadout, i) => ({ name: `Loadout ${i + 1}`, ...loadout }));
+
     // manually recompute equipment in case their metadata has changed since the shortlink was created
     this.loadouts = merge(this.loadouts, data.loadouts);
     this.recalculateEquipmentBonusesFromGearAll();
@@ -573,6 +577,19 @@ class GlobalState implements State {
     }
   }
 
+  renameLoadout(ix: number, name: string) {
+    const loadout = this.loadouts[ix];
+
+    const trimmedName = name.trim();
+    if (loadout) {
+      if (trimmedName) {
+        loadout.name = trimmedName;
+      } else {
+        loadout.name = `Loadout ${ix + 1}`;
+      }
+    }
+  }
+
   get canCreateLoadout() {
     return (this.loadouts.length < 5);
   }
@@ -581,7 +598,10 @@ class GlobalState implements State {
     // Do not allow creating a loadout if we're over the limit
     if (!this.canCreateLoadout) return;
 
-    this.loadouts.push((cloneIndex !== undefined) ? toJS(this.loadouts[cloneIndex]) : generateEmptyPlayer());
+    const newLoadout = (cloneIndex !== undefined) ? toJS(this.loadouts[cloneIndex]) : generateEmptyPlayer();
+    newLoadout.name = `Loadout ${this.loadouts.length + 1}`;
+
+    this.loadouts.push(newLoadout);
     if (selected) this.selectedLoadout = (this.loadouts.length - 1);
   }
 

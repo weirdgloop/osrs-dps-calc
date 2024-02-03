@@ -74,9 +74,14 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, pa
           </p>
           {
             payload.map((p) => (
-              <div key={p.name} className="flex justify-between w-32">
-                <div className="flex items-center gap-1">
-                  <span className="w-3 h-3 inline-block border border-gray-400 rounded-lg" style={{ backgroundColor: p.color }} />
+              <div key={p.name} className="flex justify-between w-40 gap-2">
+                <div className="flex items-center gap-1 leading-3 overflow-hidden">
+                  <div>
+                    <div
+                      className="w-3 h-3 inline-block border border-gray-400 rounded-lg"
+                      style={{ backgroundColor: p.color }}
+                    />
+                  </div>
                   {p.name}
                 </div>
                 <span className="text-gray-400 font-bold">{p.value}</span>
@@ -359,9 +364,9 @@ const LoadoutComparison: React.FC = observer(() => {
     const lines: { name: number, [lKey: string]: string | number }[] = [];
     for (const input of inputRange(x, loadouts, monster)) {
       const entry: typeof lines[0] = { name: input.xValue };
-      for (const [i, l] of input.loadouts.entries()) {
+      for (const [, l] of input.loadouts.entries()) {
         const v = getOutput(y, l, input.monster);
-        entry[`Loadout ${i + 1}`] = v.toFixed(2);
+        entry[l.name] = v.toFixed(2);
         maximum = Math.max(maximum, v);
         min = Math.min(min, v);
       }
@@ -393,7 +398,7 @@ const LoadoutComparison: React.FC = observer(() => {
       lines.push(<Line
         key={i}
         type="monotone"
-        dataKey={`Loadout ${i + 1}`}
+        dataKey={loadouts[i].name}
         stroke={colour}
         dot={false}
         isAnimationActive={false}

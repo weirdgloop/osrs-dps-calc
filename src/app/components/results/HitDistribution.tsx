@@ -65,10 +65,12 @@ const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = observer(({ dist }
           <div className="w-6 flex justify-center"><LazyImage src={hitsplat.src} /></div>
           <h3 className="font-serif font-bold">
             Hit Distribution
-            (Loadout
             {' '}
-            {store.selectedLoadout + 1}
-            )
+            <span className="text-gray-300 text-sm">
+              (
+              {store.player.name}
+              )
+            </span>
           </h3>
         </div>
       )}
