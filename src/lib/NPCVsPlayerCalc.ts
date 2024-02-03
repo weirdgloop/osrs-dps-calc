@@ -71,11 +71,19 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     const standardHitDist = HitDistribution.linear(acc, 0, max);
     let dist = new AttackDistribution([standardHitDist]);
 
+    if (this.wearing('Elysian spirit shield')) {
+      dist = new AttackDistribution([
+        standardHitDist.scaleProbability(0.3),
+        standardHitDist.scaleProbability(0.7).scaleDamage(3, 4),
+      ]);
+    }
+
     if (this.isWearingJusticiarArmour()) {
+      // Justiciar armour stacks with Ely
       const reduction = 1 - bonus / 3000;
       dist = new AttackDistribution([
         new HitDistribution([
-          ...standardHitDist.hits.map((h) => new WeightedHit(h.probability, h.hitsplats.map((s) => Math.trunc(s * reduction)))),
+          ...dist.dists[0].hits.map((h) => new WeightedHit(h.probability, h.hitsplats.map((s) => Math.trunc(s * reduction)))),
         ]),
       ]);
     }
@@ -109,7 +117,6 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     const skills = this.player.skills;
     const boosts = this.player.boosts;
     const prayers = this.player.prayers.map((p) => PrayerMap[p]);
-    const defBonuses = this.player.defensive;
 
     let stanceBonus = 0;
     if (stance === 'Defensive') stanceBonus += 3;
