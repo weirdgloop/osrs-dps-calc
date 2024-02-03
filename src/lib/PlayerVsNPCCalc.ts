@@ -70,7 +70,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     );
     const effectiveLevel = this.trackAdd(DetailKey.NPC_DEFENCE_ROLL_EFFECTIVE_LEVEL, level, 9);
 
-    const statBonus = this.trackAdd(DetailKey.NPC_DEFENCE_STAT_BONUS, this.monster.defensive[this.player.style.type], 64);
+    const statBonus = this.trackAdd(DetailKey.NPC_DEFENCE_STAT_BONUS, this.player.style.type ? this.monster.defensive[this.player.style.type] : 0, 64);
     let defenceRoll = this.trackFactor(DetailKey.NPC_DEFENCE_ROLL_BASE, effectiveLevel, [statBonus, 1]);
 
     if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) && this.monster.inputs.toaInvocationLevel) {
@@ -102,7 +102,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       effectiveLevel = this.trackFactor(DetailKey.PLAYER_ACCURACY_EFFECTIVE_LEVEL_VOID, effectiveLevel, [11, 10]);
     }
 
-    const gearBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_GEAR_BONUS, this.player.offensive[style.type], 64);
+    const gearBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_GEAR_BONUS, style.type ? this.player.offensive[style.type] : 0, 64);
     const baseRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_ROLL_BASE, effectiveLevel, [gearBonus, 1]);
     let attackRoll = baseRoll;
 

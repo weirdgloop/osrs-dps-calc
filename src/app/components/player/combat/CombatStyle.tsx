@@ -32,7 +32,7 @@ const CombatStyle: React.FC<CombatStyleProps> = observer((props) => {
 
       if (style.type === 'magic' && style.stance === 'Defensive Autocast') {
         path = { image: 'styles/760' };
-      } else if (style.type === 'magic' && ['Autocast', 'Manual Cast'].includes(style.stance)) {
+      } else if (style.type === 'magic' && ['Autocast', 'Manual Cast'].includes(style.stance || '')) {
         path = { image: 'tabs/spells' };
       } else if (path !== undefined) {
         path = { image: `styles/${path.image}` };
@@ -69,11 +69,11 @@ const CombatStyle: React.FC<CombatStyleProps> = observer((props) => {
         <div className="font-bold font-serif">
           {style.name}
         </div>
-        <div className="text-xs">
-          {style.type.charAt(0).toUpperCase() + style.type.slice(1)}
+        <div className="text-xs capitalize">
+          {style.type || 'None'}
           ,
           {' '}
-          {style.stance}
+          {style.stance || 'None'}
         </div>
       </div>
       {(hovering || active) && (

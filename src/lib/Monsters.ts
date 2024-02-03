@@ -2,7 +2,7 @@ import { Monster } from '@/types/Monster';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import monsters from '../../cdn/json/monsters.json';
 
-function getMonsters(): Monster[] {
+function getMonsters(): Omit<Monster, 'inputs'>[] {
   return monsters.map((m) => {
     const maxHit = parseInt(m.max_hit.toString());
     return {
@@ -38,7 +38,7 @@ function getMonsters(): Monster[] {
         stab: m.defensive[4],
       },
       attributes: m.attributes as MonsterAttribute[],
-    } as Monster;
+    } as Omit<Monster, 'inputs'>;
   });
 }
 

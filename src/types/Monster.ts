@@ -30,7 +30,7 @@ export interface Monster {
     str: number;
   }
   defensive: {
-    [k in CombatStyleType]: number;
+    [k in CombatStyleType as string]: number;
   }
   /**
    * The attributes the monster has

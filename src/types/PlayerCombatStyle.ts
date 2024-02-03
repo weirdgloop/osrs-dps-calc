@@ -1,6 +1,7 @@
 // The available types of combat styles. These directly translate into defensive bonuses for monsters too.
-export type CombatStyleType = 'slash' | 'crush' | 'stab' | 'magic' | 'ranged';
+export type CombatStyleType = null | 'slash' | 'crush' | 'stab' | 'magic' | 'ranged';
 export type CombatStyleStance =
+  null |
   'Accurate' |
   'Aggressive' |
   'Autocast' |

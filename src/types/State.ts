@@ -95,5 +95,5 @@ export interface State extends ImportableData {
   /**
    * All monsters that a player can fight.
    */
-  availableMonsters: Monster[];
+  availableMonsters: Omit<Monster, 'inputs'>[];
 }

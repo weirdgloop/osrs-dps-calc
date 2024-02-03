@@ -170,7 +170,7 @@ export default class BaseCalc {
    * Whether the player is using either a slash, crush, or stab combat style.
    */
   protected isUsingMeleeStyle(): boolean {
-    return ['slash', 'crush', 'stab'].includes(this.player.style.type);
+    return ['slash', 'crush', 'stab'].includes(this.player.style.type || '');
   }
 
   /**
@@ -504,8 +504,8 @@ export default class BaseCalc {
     return this.wearingAll([
       'Justiciar faceguard',
       'Justiciar chestguard',
-      'Justiciar legguards'
-    ])
+      'Justiciar legguards',
+    ]);
   }
 
   protected addIssue(type: UserIssueType, message: string) {

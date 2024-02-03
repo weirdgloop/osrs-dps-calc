@@ -501,7 +501,7 @@ export const getCombatStylesForCategory = (style: EquipmentCategory): PlayerComb
     case EquipmentCategory.BULWARK:
       ret = [
         { name: 'Pummel', type: 'crush', stance: 'Accurate' },
-        // {name: 'Block', type: '', stance: ''},
+        { name: 'Block', type: null, stance: null },
       ];
       break;
     case EquipmentCategory.PARTISAN:
