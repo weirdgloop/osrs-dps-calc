@@ -3,14 +3,14 @@ import {
   CalcRequestsUnion,
   CalcResponse,
   WORKER_JSON_REPLACER,
-  WORKER_JSON_REVIVER,
-  WorkerCalcOpts,
+  WORKER_JSON_REVIVER, WorkerCalcOpts,
   WorkerRequestType,
 } from '@/worker/CalcWorkerTypes';
 import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
-import CombatCalc from '@/lib/CombatCalc';
-import { CalculatedLoadout } from '@/types/State';
+import { NPCVsPlayerCalculatedLoadout, PlayerVsNPCCalculatedLoadout } from '@/types/State';
+import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
+import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 
 /**
  * Method for computing the calculator values based on given loadouts and Monster object
@@ -18,7 +18,7 @@ import { CalculatedLoadout } from '@/types/State';
  * @param m
  * @param calcOpts
  */
-const computePvMValues = async (loadouts: Player[], m: Monster, calcOpts: PlayerVsNPCCalcOpts) => {
+const computePvMValues = async (loadouts: Player[], m: Monster, calcOpts: WorkerCalcOpts) => {
   const res: { [k: string]: PlayerVsNPCCalculatedLoadout } = {};
 
   // eslint-disable-next-line no-restricted-syntax
@@ -51,7 +51,7 @@ const computePvMValues = async (loadouts: Player[], m: Monster, calcOpts: Player
   return res;
 };
 
-const computeMvPValues = async (loadouts: Player[], m: Monster, calcOpts: NPCVsPlayerCalcOpts) => {
+const computeMvPValues = async (loadouts: Player[], m: Monster, calcOpts: WorkerCalcOpts) => {
   const res: { [k: string]: NPCVsPlayerCalculatedLoadout } = {};
 
   for (const [i, p] of loadouts.entries()) {
@@ -93,7 +93,12 @@ self.onmessage = async (evt: MessageEvent<string>) => {
   try {
     switch (type) {
       case WorkerRequestType.COMPUTE_BASIC: {
-        res.payload = await computeValues(data.data.loadouts, data.data.monster, data.data.calcOpts);
+        res.payload = await computePvMValues(data.data.loadouts, data.data.monster, data.data.calcOpts);
+        break;
+      }
+
+      case WorkerRequestType.COMPUTE_REVERSE: {
+        res.payload = await computeMvPValues(data.data.loadouts, data.data.monster, data.data.calcOpts);
         break;
       }
 

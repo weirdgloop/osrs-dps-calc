@@ -8,18 +8,12 @@ import {
   CalculatedLoadout, Calculator, ImportableData, Preferences, State, UI, UserIssue,
 } from '@/types/State';
 import merge from 'lodash.mergewith';
-import {
-  Player, PlayerEquipment, PlayerSkills,
-} from '@/types/Player';
+import { Player, PlayerEquipment, PlayerSkills } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { toast } from 'react-toastify';
 import {
-  Debouncer,
-  fetchPlayerSkills,
-  fetchShortlinkData,
-  getCombatStylesForCategory,
-  PotionMap,
+  Debouncer, fetchPlayerSkills, fetchShortlinkData, getCombatStylesForCategory, PotionMap,
 } from '@/utils';
 import { WorkerRequestType } from '@/worker/CalcWorkerTypes';
 import { scaledMonster } from '@/lib/MonsterScaling';
@@ -28,7 +22,12 @@ import { calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { CalcWorker } from '@/worker/CalcWorker';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
-  ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, OVERHEAD_PRAYERS, Prayer,
+  ARM_PRAYERS,
+  BRAIN_PRAYERS,
+  DEFENSIVE_PRAYERS,
+  OFFENSIVE_PRAYERS,
+  OVERHEAD_PRAYERS,
+  Prayer,
 } from './enums/Prayer';
 import Potion from './enums/Potion';
 
@@ -587,28 +586,40 @@ class GlobalState implements State {
   }
 
   async doWorkerRecompute() {
-    this.calc.loadouts = this.loadouts.map(() => EMPTY_CALC_LOADOUT);
-    const { requestId, promise } = await this.calcDebouncer.debounce(() => this.calcWorker.do({
-      type: WorkerRequestType.COMPUTE_BASIC,
-      data: {
-        loadouts: this.loadouts,
-        monster: this.prefs.manualMode ? this.monster : scaledMonster(this.monster),
-        calcOpts: {
-          includeTtkDist: this.prefs.showTtkComparison,
-          detailedOutput: this.debug,
-        },
-      },
-    }));
-
-    this.calcDedupeId = requestId;
-    const resp = await promise();
-
-    if (resp.sequenceId !== this.calcDedupeId) {
-      // another compute request was probably sent before this one resolved, don't unify these results
-      return;
+    // clear existing loadout data
+    const calculatedLoadouts: { [k: string]: CalculatedLoadout } = {};
+    // eslint-disable-next-line guard-for-in
+    for (const l in this.loadouts) {
+      calculatedLoadouts[`${parseInt(l) + 1}`] = EMPTY_CALC_LOADOUT;
     }
+    this.calc.loadouts = calculatedLoadouts;
 
-    this.updateCalcResults({ loadouts: resp.payload });
+    // don't fire a bajillion reqs if they're editing multiple fields
+    await this.calcDebouncer.debounce();
+
+    const data = {
+      loadouts: this.loadouts,
+      monster: this.prefs.manualMode ? this.monster : scaledMonster(this.monster),
+      calcOpts: {
+        includeTtkDist: this.prefs.showTtkComparison,
+        detailedOutput: this.debug,
+      },
+    };
+    const request = async (type: WorkerRequestType.COMPUTE_BASIC | WorkerRequestType.COMPUTE_REVERSE) => {
+      const { sequenceId, promise } = this.calcWorker.do({
+        type,
+        data,
+      });
+      this.calcDedupeId = sequenceId;
+
+      const resp = await promise;
+      if (this.calcDedupeId === resp.sequenceId) {
+        this.updateCalcResults({ loadouts: resp.payload });
+      }
+    };
+
+    await request(WorkerRequestType.COMPUTE_BASIC);
+    await request(WorkerRequestType.COMPUTE_REVERSE);
   }
 }
 

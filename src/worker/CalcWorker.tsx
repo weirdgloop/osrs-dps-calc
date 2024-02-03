@@ -35,14 +35,14 @@ export class CalcWorker {
     Req extends CalcRequestsUnion,
     Resp extends CalcResponse<Req['type']>,
   >(req: Req): {
-    requestId: number, // can be used to distinguish multiple simultaneous results
-    promise: () => Promise<Resp>, // () => is just to make `await promise()` feel more "usual"
+    sequenceId: number, // can be used to distinguish multiple simultaneous results
+    promise: Promise<Resp>,
   } {
     // this shouldn't really happen
     if (!this.worker) {
       return {
-        requestId: -1,
-        promise: () => Promise.reject(new Error('worker is not initialized and cannot handle requests')),
+        sequenceId: -1,
+        promise: Promise.reject(new Error('worker is not initialized and cannot handle requests')),
       };
     }
 
@@ -59,8 +59,8 @@ export class CalcWorker {
     console.debug(`[WorkerContext] Sent off worker request ${req.sequenceId}`, payload);
 
     return {
-      requestId: req.sequenceId,
-      promise: () => promise.promise,
+      sequenceId: req.sequenceId,
+      promise: promise.promise,
     };
   }
 

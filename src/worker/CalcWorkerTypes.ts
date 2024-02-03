@@ -1,6 +1,6 @@
 import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
-import { CalculatedLoadout } from '@/types/State';
+import { NPCVsPlayerCalculatedLoadout, PlayerVsNPCCalculatedLoadout } from '@/types/State';
 
 /**
  * Requests
@@ -8,12 +8,13 @@ import { CalculatedLoadout } from '@/types/State';
 
 export enum WorkerRequestType {
   COMPUTE_BASIC,
+  COMPUTE_REVERSE,
   COMPUTE_TTK,
   COMPARE,
 }
 
-export interface WorkerRequest {
-  type: WorkerRequestType,
+export interface WorkerRequest<T extends WorkerRequestType> {
+  type: T,
   sequenceId?: number,
 }
 
@@ -22,7 +23,7 @@ export interface WorkerCalcOpts {
   detailedOutput: boolean,
 }
 
-export interface ComputeBasicRequest extends WorkerRequest {
+export interface ComputeBasicRequest extends WorkerRequest<WorkerRequestType.COMPUTE_BASIC> {
   type: WorkerRequestType.COMPUTE_BASIC,
   data: {
     loadouts: Player[],
@@ -31,7 +32,16 @@ export interface ComputeBasicRequest extends WorkerRequest {
   }
 }
 
-export type CalcRequestsUnion = ComputeBasicRequest;
+export interface ComputeReverseRequest extends WorkerRequest<WorkerRequestType.COMPUTE_REVERSE> {
+  type: WorkerRequestType.COMPUTE_REVERSE,
+  data: {
+    loadouts: Player[],
+    monster: Monster,
+    calcOpts: WorkerCalcOpts,
+  }
+}
+
+export type CalcRequestsUnion = ComputeBasicRequest | ComputeReverseRequest;
 
 /**
  * Responses
@@ -44,11 +54,15 @@ export interface WorkerResponse<T extends WorkerRequestType> {
   payload: unknown,
 }
 
-export interface ComputedValuesResponse extends WorkerResponse<WorkerRequestType.COMPUTE_BASIC> {
-  payload: CalculatedLoadout[],
+export interface ComputeBasicResponse extends WorkerResponse<WorkerRequestType.COMPUTE_BASIC> {
+  payload: { [k: string]: PlayerVsNPCCalculatedLoadout }
 }
 
-export type CalcResponsesUnion = ComputedValuesResponse;
+export interface ComputeReverseResponse extends WorkerResponse<WorkerRequestType.COMPUTE_REVERSE> {
+  payload: { [k: string]: NPCVsPlayerCalculatedLoadout }
+}
+
+export type CalcResponsesUnion = ComputeBasicResponse | ComputeReverseResponse;
 export type CalcResponse<T extends WorkerRequestType> = CalcResponsesUnion & { type: T };
 
 export const WORKER_JSON_REPLACER = (k: string, v: Map<unknown, unknown> | never) => {

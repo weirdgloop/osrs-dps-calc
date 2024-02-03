@@ -165,7 +165,7 @@ const EquipmentPresets: React.FC = () => {
     if (Object.keys(newPlayer).length > 0) {
       store.updatePlayer(newPlayer);
     }
-  }, [store, availableEquipment]);
+  }, [store]);
 
   return (
     <Select<{ label: string, value: EquipmentPreset }>

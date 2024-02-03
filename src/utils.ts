@@ -126,14 +126,14 @@ export class Debouncer {
     this.delay = ms;
   }
 
-  async debounce<T>(body: () => T): Promise<T> {
+  async debounce(): Promise<void> {
     if (this.windowTimeoutId) {
       window.clearTimeout(this.windowTimeoutId);
     }
 
-    const p = new DeferredPromise<T>();
+    const p = new DeferredPromise<void>();
     this.windowTimeoutId = window.setTimeout(() => {
-      p.resolve(body());
+      p.resolve(undefined);
     }, this.delay);
 
     return p.promise;
