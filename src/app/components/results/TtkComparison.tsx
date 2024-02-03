@@ -109,7 +109,9 @@ const TtkComparison: React.FC = observer(() => {
         if (v) {
           runningTotals[i] = (runningTotals[i] || 0) + v;
         }
-        entry[loadouts[i].name] = (runningTotals[i] * 100).toFixed(2);
+        if (loadouts[i]) {
+          entry[loadouts[i].name] = (runningTotals[i] * 100).toFixed(2);
+        }
       });
       lines.push(entry);
     }

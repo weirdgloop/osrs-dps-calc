@@ -69,7 +69,7 @@ export type PlayerVsNPCCalculatedLoadout = Pick<CalculatedLoadout, 'npcDefRoll' 
 export type NPCVsPlayerCalculatedLoadout = Pick<CalculatedLoadout, 'playerDefRoll' | 'npcMaxAttackRoll' | 'npcMaxHit' | 'npcDps' | 'npcAccuracy' | 'avgDmgTaken' | 'details' | 'userIssues'>;
 
 export interface Calculator {
-  loadouts: { [k: string]: CalculatedLoadout }
+  loadouts: CalculatedLoadout[]
 }
 
 /**

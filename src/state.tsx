@@ -183,8 +183,8 @@ class GlobalState implements State {
   };
 
   calc: Calculator = {
-    loadouts: {
-      1: {
+    loadouts: [
+      {
         npcDefRoll: 0,
         maxHit: 0,
         maxAttackRoll: 0,
@@ -199,7 +199,7 @@ class GlobalState implements State {
         hitDist: [],
         ttkDist: undefined,
       },
-    },
+    ],
   };
 
   readonly calcWorker: CalcWorker = new CalcWorker();
@@ -330,7 +330,13 @@ class GlobalState implements State {
   }
 
   updateCalcResults(calc: PartialDeep<Calculator>) {
-    this.calc = merge(this.calc, calc);
+    this.calc = merge(this.calc, calc, (obj, src, key) => {
+      // When we're handling the details array, merge the obj + src together instead of replacing
+      if (key === 'details' && Array.isArray(src) && Array.isArray(obj)) {
+        return [...obj, ...src];
+      }
+      return undefined;
+    });
   }
 
   async loadShortlink(linkId: string) {
@@ -607,11 +613,8 @@ class GlobalState implements State {
 
   async doWorkerRecompute() {
     // clear existing loadout data
-    const calculatedLoadouts: { [k: string]: CalculatedLoadout } = {};
-    // eslint-disable-next-line guard-for-in
-    for (const l in this.loadouts) {
-      calculatedLoadouts[`${parseInt(l) + 1}`] = EMPTY_CALC_LOADOUT;
-    }
+    const calculatedLoadouts: CalculatedLoadout[] = [];
+    this.loadouts.forEach(() => calculatedLoadouts.push(EMPTY_CALC_LOADOUT));
     this.calc.loadouts = calculatedLoadouts;
 
     // don't fire a bajillion reqs if they're editing multiple fields
@@ -634,6 +637,7 @@ class GlobalState implements State {
 
       const resp = await promise;
       if (this.calcDedupeId === resp.sequenceId) {
+        console.log('resp.payload', resp.payload);
         this.updateCalcResults({ loadouts: resp.payload });
       }
     };

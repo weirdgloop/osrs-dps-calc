@@ -19,7 +19,7 @@ import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
  * @param calcOpts
  */
 const computePvMValues = async (loadouts: Player[], m: Monster, calcOpts: WorkerCalcOpts) => {
-  const res: { [k: string]: PlayerVsNPCCalculatedLoadout } = {};
+  const res: PlayerVsNPCCalculatedLoadout[] = [];
 
   // eslint-disable-next-line no-restricted-syntax
   for (const [i, p] of loadouts.entries()) {
@@ -29,7 +29,7 @@ const computePvMValues = async (loadouts: Player[], m: Monster, calcOpts: Worker
       loadoutName,
       detailedOutput: calcOpts.detailedOutput,
     });
-    res[loadoutName] = {
+    res.push({
       npcDefRoll: calc.getNPCDefenceRoll(),
       maxHit: calc.getDistribution().getMax(),
       maxAttackRoll: calc.getMaxAttackRoll(),
@@ -40,7 +40,7 @@ const computePvMValues = async (loadouts: Player[], m: Monster, calcOpts: Worker
       ttkDist: calcOpts.includeTtkDist ? calc.getTtkDistribution() : undefined, // this one can sometimes be quite expensive
       details: calc.details,
       userIssues: calc.userIssues,
-    };
+    });
     const end = new Date().getTime();
 
     if (end - start >= 1000) {
@@ -52,7 +52,7 @@ const computePvMValues = async (loadouts: Player[], m: Monster, calcOpts: Worker
 };
 
 const computeMvPValues = async (loadouts: Player[], m: Monster, calcOpts: WorkerCalcOpts) => {
-  const res: { [k: string]: NPCVsPlayerCalculatedLoadout } = {};
+  const res: NPCVsPlayerCalculatedLoadout[] = [];
 
   for (const [i, p] of loadouts.entries()) {
     const loadoutName = (i + 1).toString();
@@ -61,7 +61,7 @@ const computeMvPValues = async (loadouts: Player[], m: Monster, calcOpts: Worker
       loadoutName,
       detailedOutput: calcOpts.detailedOutput,
     });
-    res[loadoutName] = {
+    res.push({
       npcMaxAttackRoll: calc.getNPCMaxAttackRoll(),
       npcMaxHit: calc.getNPCMaxHit(),
       npcDps: calc.getDps(),
@@ -69,7 +69,7 @@ const computeMvPValues = async (loadouts: Player[], m: Monster, calcOpts: Worker
       playerDefRoll: calc.getPlayerDefenceRoll(),
       avgDmgTaken: calc.getAverageDamageTaken(),
       details: calc.details,
-    };
+    });
     const end = new Date().getTime();
 
     if (end - start >= 1000) {

@@ -55,11 +55,11 @@ export interface WorkerResponse<T extends WorkerRequestType> {
 }
 
 export interface ComputeBasicResponse extends WorkerResponse<WorkerRequestType.COMPUTE_BASIC> {
-  payload: { [k: string]: PlayerVsNPCCalculatedLoadout }
+  payload: PlayerVsNPCCalculatedLoadout[],
 }
 
 export interface ComputeReverseResponse extends WorkerResponse<WorkerRequestType.COMPUTE_REVERSE> {
-  payload: { [k: string]: NPCVsPlayerCalculatedLoadout }
+  payload: NPCVsPlayerCalculatedLoadout[],
 }
 
 export type CalcResponsesUnion = ComputeBasicResponse | ComputeReverseResponse;
