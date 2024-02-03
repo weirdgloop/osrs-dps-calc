@@ -8,12 +8,15 @@ import UserIssueWarning from '@/app/components/generic/UserIssueWarning';
 interface EquipmentGridSlotProps {
   slot: EquipmentSlot;
   placeholder?: string;
+  selected: boolean;
   onClick: (slot: EquipmentSlot) => void;
 }
 
 const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => {
   const store = useStore();
-  const { slot, placeholder, onClick } = props;
+  const {
+    slot, placeholder, selected, onClick,
+  } = props;
   const currentSlot = store.equipmentData[slot];
   const isEmpty = !currentSlot;
 
@@ -37,7 +40,7 @@ const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => 
       }
       <button
         type="button"
-        className={`flex justify-center items-center h-[40px] w-[40px] bg-body-100 dark:bg-dark-400 dark:border-dark-400 border border-body-300 transition-colors rounded ${!isEmpty ? 'cursor-pointer hover:border-red' : ''}`}
+        className={`flex justify-center items-center h-[40px] w-[40px] bg-body-100 dark:bg-dark-400 border transition-colors rounded ${!isEmpty ? 'cursor-pointer hover:border-red-500' : ''} ${selected ? 'border-blue-600' : 'dark:border-dark-400 border-body-300'}`}
         data-slot={slot}
         data-tooltip-id="tooltip"
         data-tooltip-content={currentSlot?.name}

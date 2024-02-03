@@ -19,6 +19,7 @@ interface EquipmentOption {
 interface EquipmentSelectProps {
   slot: EquipmentSlot | null;
   inputRef: React.MutableRefObject<HTMLInputElement | null>;
+  onSelect: () => void;
 }
 
 const BLOWPIPE_IDS: string[] = [
@@ -38,7 +39,7 @@ const DART_IDS: string[] = [
   '25849', // amethyst
 ];
 
-const EquipmentSelect: React.FC<EquipmentSelectProps> = observer(({ slot, inputRef }) => {
+const EquipmentSelect: React.FC<EquipmentSelectProps> = observer(({ slot, inputRef, onSelect }) => {
   const store = useStore();
 
   const options: EquipmentOption[] = useMemo(() => {
@@ -90,11 +91,11 @@ const EquipmentSelect: React.FC<EquipmentSelectProps> = observer(({ slot, inputR
       className="w-full"
       items={options}
       inputRef={inputRef}
-      keepOpenAfterSelect
-      keepPositionAfterSelect
+      resetAfterSelect
       placeholder="Search for equipment..."
       onSelectedItemChange={(item) => {
         if (item) {
+          onSelect();
           store.updatePlayer({
             equipment: {
               [item.equipment.slot]: item.equipment,
