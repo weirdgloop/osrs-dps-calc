@@ -257,6 +257,9 @@ const equipmentAliases = {
   4749: [4968, 4964, 4967, 4966, 4965], // Torag's platebody#Undamaged
   4751: [4974, 4970, 4973, 4972, 4971], // Torag's platelegs#Undamaged
   19544: [23444], // Tormented bracelet
+  26382: [28254], // Torva full helm#Restored
+  26384: [28256], // Torva platebody#Restored
+  26386: [28258], // Torva platelegs#Restored
   12926: [28688], // Toxic blowpipe#Charged
   12924: [28687], // Toxic blowpipe#Empty
   12692: [26766, 25256], // Treasonous ring (i)#Nightmare Zone

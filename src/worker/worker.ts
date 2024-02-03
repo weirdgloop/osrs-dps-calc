@@ -1,19 +1,16 @@
 /* eslint-disable no-restricted-globals */
 import {
-  ComputedNPCVsPlayerValuesResponse,
-  ComputedPlayerVsNPCValuesResponse, NPCVsPlayerCalcOpts,
-  PlayerVsNPCCalcOpts,
-  WorkerRequests,
+  CalcRequestsUnion,
+  CalcResponse,
+  WORKER_JSON_REPLACER,
+  WORKER_JSON_REVIVER,
+  WorkerCalcOpts,
   WorkerRequestType,
-  WorkerResponses,
-  WorkerResponseType,
-} from '@/types/WorkerData';
+} from '@/worker/CalcWorkerTypes';
 import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
-import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
-import { NPCVsPlayerCalculatedLoadout, PlayerVsNPCCalculatedLoadout } from '@/types/State';
-import { WORKER_JSON_REPLACER, WORKER_JSON_REVIVER } from '@/utils';
-import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
+import CombatCalc from '@/lib/CombatCalc';
+import { CalculatedLoadout } from '@/types/State';
 
 /**
  * Method for computing the calculator values based on given loadouts and Monster object
@@ -83,25 +80,32 @@ const computeMvPValues = async (loadouts: Player[], m: Monster, calcOpts: NPCVsP
   return res;
 };
 
-self.onmessage = async (e: MessageEvent<string>) => {
-  const data = JSON.parse(e.data, WORKER_JSON_REVIVER) as WorkerRequests;
-  let res: WorkerResponses;
+self.onmessage = async (evt: MessageEvent<string>) => {
+  const data = JSON.parse(evt.data, WORKER_JSON_REVIVER) as CalcRequestsUnion;
+  const { type, sequenceId } = data;
+
+  const res = {
+    type,
+    sequenceId: sequenceId!,
+  } as CalcResponse<typeof type>;
 
   // Interpret the incoming request, and action it accordingly
-  switch (data.type) {
-    case WorkerRequestType.RECOMPUTE_PLAYER_VS_NPC_VALUES: {
-      const calculatedLoadouts = await computePvMValues(data.data.loadouts, data.data.monster, data.data.calcOpts);
-      res = { type: WorkerResponseType.COMPUTED_PLAYER_VS_NPC_VALUES, data: calculatedLoadouts } as ComputedPlayerVsNPCValuesResponse;
-      break;
+  try {
+    switch (type) {
+      case WorkerRequestType.COMPUTE_BASIC: {
+        res.payload = await computeValues(data.data.loadouts, data.data.monster, data.data.calcOpts);
+        break;
+      }
+
+      default:
+        res.error = `Unsupported request type ${type}`;
     }
-    case WorkerRequestType.RECOMPUTE_NPC_VS_PLAYER_VALUES: {
-      const calculatedLoadouts = await computeMvPValues(data.data.loadouts, data.data.monster, data.data.calcOpts);
-      res = { type: WorkerResponseType.COMPUTED_NPC_VS_PLAYER_VALUES, data: calculatedLoadouts } as ComputedNPCVsPlayerValuesResponse;
-      break;
+  } catch (e: unknown) {
+    if (e instanceof Error) {
+      res.error = e.message;
+    } else {
+      res.error = `Unknown error type: ${e}`;
     }
-    default:
-      console.debug(`Unknown data type sent to worker. Data: ${JSON.stringify(data)}`);
-      return;
   }
 
   // Send message back to the master

@@ -116,6 +116,7 @@ def main():
 
     for item in all_items:
         slayer_helm_match = re.match(r"^(?:Black|Green|Red|Purple|Turquoise|Hydra|Twisted|Tztok|Vampyric|Tzkal) slayer helmet( \(i\))?$", item['name'])
+        sanguine_torva_match = re.match(r"^Sanguine t(orva (full helm|platebody|platelegs))$", item['name'])
         decoration_kit_match = re.match(r"(.*)\((?:g|t|(h)\d|guthix|saradomin|zamorak|or|cr|Hallowed|Trailblazer|Ithell|Iorwerth|Trahaearn|Cadarn|Crwys|Meilyr|Hefin|Amlodd|upgraded|light|dark|dusk|lit)\)$", item['name'])
         magic_robe_kit_match = re.match(r"^(?:Dark|Light|Twisted) ((?:infinity|ancestral) .*)$", item['name'])
 
@@ -133,6 +134,9 @@ def main():
         # Cosmetic Slayer helmets
         elif slayer_helm_match:
             handle_base_variant(all_items, item, 'Slayer helmet%s' % (slayer_helm_match.group(1) or ''), ['', 'Nightmare Zone'])
+        # Sanguine Torva
+        elif sanguine_torva_match:
+            handle_base_variant(all_items, item, 'T%s' % (sanguine_torva_match.group(1) or ''), ['Restored'])
         # Decoration kit variants
         elif decoration_kit_match:
             base_item_name = decoration_kit_match.group(1).strip()

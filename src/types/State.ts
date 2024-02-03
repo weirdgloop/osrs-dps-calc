@@ -90,7 +90,6 @@ export interface State extends ImportableData {
   ui: UI;
   prefs: Preferences;
   calc: Calculator;
-  worker: Worker | null;
 
   /**
    * All monsters that a player can fight.

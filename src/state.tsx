@@ -15,20 +15,17 @@ import { Monster } from '@/types/Monster';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { toast } from 'react-toastify';
 import {
+  Debouncer,
   fetchPlayerSkills,
   fetchShortlinkData,
   getCombatStylesForCategory,
   PotionMap,
-  WORKER_JSON_REPLACER,
 } from '@/utils';
-import {
-  RecomputeNPCVsPlayerValuesRequest,
-  RecomputePlayerVsNPCValuesRequest,
-  WorkerRequestType,
-} from '@/types/WorkerData';
+import { WorkerRequestType } from '@/worker/CalcWorkerTypes';
 import { scaledMonster } from '@/lib/MonsterScaling';
 import getMonsters from '@/lib/Monsters';
 import { calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
+import { CalcWorker } from '@/worker/CalcWorker';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
   ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, OVERHEAD_PRAYERS, Prayer,
@@ -205,13 +202,15 @@ class GlobalState implements State {
     },
   };
 
-  worker: Worker | null = null;
+  readonly calcWorker: CalcWorker = new CalcWorker();
 
-  workerRecomputeTimer: number | null = null;
+  private readonly calcDebouncer: Debouncer = new Debouncer();
+
+  private calcDedupeId?: number;
 
   availableMonsters = getMonsters();
 
-  _debug: boolean = false;
+  private _debug: boolean = false;
 
   constructor() {
     makeAutoObservable(this, {}, { autoBind: true });
@@ -330,12 +329,8 @@ class GlobalState implements State {
     this.ui = Object.assign(this.ui, ui);
   }
 
-  updateCalculator(calc: PartialDeep<Calculator>) {
+  updateCalcResults(calc: PartialDeep<Calculator>) {
     this.calc = merge(this.calc, calc);
-  }
-
-  setWorker(worker: Worker | null) {
-    this.worker = worker;
   }
 
   async loadShortlink(linkId: string) {
@@ -591,50 +586,29 @@ class GlobalState implements State {
     if (selected) this.selectedLoadout = (this.loadouts.length - 1);
   }
 
-  doWorkerRecompute() {
-    const calculatedLoadouts: { [k: string]: CalculatedLoadout } = {};
-    // eslint-disable-next-line guard-for-in
-    for (const l in this.loadouts) {
-      calculatedLoadouts[`${parseInt(l) + 1}`] = EMPTY_CALC_LOADOUT;
+  async doWorkerRecompute() {
+    this.calc.loadouts = this.loadouts.map(() => EMPTY_CALC_LOADOUT);
+    const { requestId, promise } = await this.calcDebouncer.debounce(() => this.calcWorker.do({
+      type: WorkerRequestType.COMPUTE_BASIC,
+      data: {
+        loadouts: this.loadouts,
+        monster: this.prefs.manualMode ? this.monster : scaledMonster(this.monster),
+        calcOpts: {
+          includeTtkDist: this.prefs.showTtkComparison,
+          detailedOutput: this.debug,
+        },
+      },
+    }));
+
+    this.calcDedupeId = requestId;
+    const resp = await promise();
+
+    if (resp.sequenceId !== this.calcDedupeId) {
+      // another compute request was probably sent before this one resolved, don't unify these results
+      return;
     }
-    this.calc.loadouts = calculatedLoadouts;
 
-    if (this.workerRecomputeTimer) {
-      window.clearTimeout(this.workerRecomputeTimer);
-    }
-
-    this.workerRecomputeTimer = window.setTimeout(() => {
-      if (this.worker) {
-        const m = this.prefs.manualMode ? this.monster : scaledMonster(this.monster);
-
-        this.worker.postMessage(JSON.stringify({
-          type: WorkerRequestType.RECOMPUTE_PLAYER_VS_NPC_VALUES,
-          data: {
-            loadouts: this.loadouts,
-            monster: m,
-            calcOpts: {
-              includeTtkDist: this.prefs.showTtkComparison,
-              detailedOutput: this.debug,
-            },
-          },
-        } as RecomputePlayerVsNPCValuesRequest, WORKER_JSON_REPLACER));
-
-        // If we're showing NPC-vs-player results, also return results for that
-        // (doing this conditionally prevents unnecessary computations)
-        if (this.prefs.showNPCVersusPlayerResults) {
-          this.worker.postMessage(JSON.stringify({
-            type: WorkerRequestType.RECOMPUTE_NPC_VS_PLAYER_VALUES,
-            data: {
-              loadouts: this.loadouts,
-              monster: m,
-              calcOpts: {
-                detailedOutput: this.debug,
-              },
-            },
-          } as RecomputeNPCVsPlayerValuesRequest, WORKER_JSON_REPLACER));
-        }
-      }
-    }, 250);
+    this.updateCalcResults({ loadouts: resp.payload });
   }
 }
 
