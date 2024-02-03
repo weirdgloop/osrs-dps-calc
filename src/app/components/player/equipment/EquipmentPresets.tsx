@@ -114,7 +114,7 @@ const EquipmentPresets: React.FC = () => {
       case EquipmentPreset.MID_LEVEL_MELEE: {
         newPlayer = {
           equipment: {
-            head: findItemById(12931), // Serpentine helm#Charged
+            head: findItemById(10828), // Helm of neitiznot
             cape: findItemById(6570), // Fire cape
             neck: findItemById(6585), // Amulet of fury
             ammo: findItemById(20229), // Honourable blessing
