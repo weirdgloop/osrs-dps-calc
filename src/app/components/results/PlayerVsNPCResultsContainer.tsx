@@ -23,7 +23,7 @@ const ResultsContainer = observer(() => {
           <PlayerVsNPCResultsTable />
         </div>
       </div>
-      <HitDistribution dist={store.calc.loadouts[`${store.selectedLoadout + 1}`]?.hitDist || []} />
+      <HitDistribution dist={store.calc.loadouts[store.selectedLoadout]?.hitDist || []} />
     </div>
   );
 });
