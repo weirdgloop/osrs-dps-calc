@@ -87,6 +87,9 @@ export interface PrayerData {
   factorAccuracy?: Factor,
   factorStrength?: Factor,
   factorDefence?: Factor,
+  // there aren't currently any prayers that have distinct factorDefence and factorDefenceMagic,
+  // but it could happen in the future, and we have no actual idea how that would work
+  factorDefenceMagic?: Factor,
 }
 
 export const PrayerMap: { [k in Prayer]: PrayerData } = {
@@ -114,6 +117,7 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     image: MysticWill,
     combatStyle: 'magic',
     factorAccuracy: [21, 20],
+    factorDefenceMagic: [21, 20],
   },
   [Prayer.SUPERHUMAN_STRENGTH]: {
     name: 'Superhuman Strength',
@@ -139,6 +143,7 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     image: MysticLore,
     combatStyle: 'magic',
     factorAccuracy: [11, 10],
+    factorDefenceMagic: [11, 10],
   },
   [Prayer.ULTIMATE_STRENGTH]: {
     name: 'Ultimate Strength',
@@ -164,6 +169,7 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     image: MysticMight,
     combatStyle: 'magic',
     factorAccuracy: [23, 20],
+    factorDefenceMagic: [23, 20],
   },
   [Prayer.CHIVALRY]: {
     name: 'Chivalry',
@@ -195,6 +201,7 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     combatStyle: 'magic',
     factorAccuracy: [5, 4],
     factorDefence: [5, 4],
+    factorDefenceMagic: [5, 4],
   },
   [Prayer.THICK_SKIN]: {
     name: 'Thick Skin',

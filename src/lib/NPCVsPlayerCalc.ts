@@ -86,21 +86,20 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     if (style === 'crush') bonus = defBonuses.crush;
     if (style === 'stab') bonus = defBonuses.stab;
     if (style === 'ranged') bonus = defBonuses.ranged;
+    if (style === 'magic') bonus = defBonuses.magic;
 
     let effectiveLevel = this.trackAdd(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL, skills.def, boosts.def);
     for (const p of prayers.filter((pr) => pr.factorDefence)) {
       effectiveLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL_PRAYER, effectiveLevel, p.factorDefence!);
     }
 
-    // TODO is this wrong?
     if (style === 'magic') {
       let effectiveMagicLevel = this.trackAdd(DetailKey.PLAYER_DEFENCE_ROLL_MAGIC_LEVEL, skills.magic, boosts.magic);
-      for (const p of prayers.filter((pr) => pr.factorAccuracy && pr.combatStyle === 'magic')) {
-        effectiveMagicLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_MAGIC_LEVEL_PRAYER, effectiveMagicLevel, p.factorAccuracy!);
+      for (const p of prayers.filter((pr) => pr.factorDefenceMagic && pr.combatStyle === 'magic')) {
+        effectiveMagicLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_MAGIC_LEVEL_PRAYER, effectiveMagicLevel, p.factorDefenceMagic!);
       }
 
-      bonus = defBonuses.magic;
-      effectiveLevel = Math.trunc(((70 / 100) * effectiveMagicLevel)) + Math.trunc(((30 / 100) * effectiveLevel));
+      effectiveLevel = Math.trunc(effectiveMagicLevel * 7 / 10) + Math.trunc(effectiveLevel * 3 / 10);
     }
 
     effectiveLevel = this.trackAdd(DetailKey.PLAYER_DEFENCE_ROLL_EFFECTIVE_LEVEL, effectiveLevel, stanceBonus);
