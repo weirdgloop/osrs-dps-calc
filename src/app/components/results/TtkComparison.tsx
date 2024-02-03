@@ -43,9 +43,14 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({
           </p>
           {
               payload.map((p) => (
-                <div key={p.name} className="flex justify-between w-36">
-                  <div className="flex items-center gap-1">
-                    <span className="w-3 h-3 inline-block border border-gray-400 rounded-lg" style={{ backgroundColor: p.color }} />
+                <div key={p.name} className="flex justify-between w-44 gap-1">
+                  <div className="flex items-center gap-1 leading-3 overflow-hidden">
+                    <div>
+                      <div
+                        className="w-3 h-3 inline-block border border-gray-400 rounded-lg"
+                        style={{ backgroundColor: p.color }}
+                      />
+                    </div>
                     {p.name}
                   </div>
                   <span className="text-gray-400 font-bold">
