@@ -73,7 +73,10 @@ export default class NPCVsPlayerCalc extends BaseCalc {
       dist = new AttackDistribution([
         new HitDistribution([
           ...standardHitDist.scaleProbability(0.3).hits,
-          ...standardHitDist.scaleProbability(0.7).scaleDamage(0.75).hits,
+          ...standardHitDist.scaleProbability(0.7).hits.map((h) => new WeightedHit(h.probability, h.hitsplats.map((d) => {
+            const reduction = Math.max(1, Math.trunc(d * 3 / 4));
+            return d - reduction;
+          }))),
         ]),
       ]);
     }
