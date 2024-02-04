@@ -11,7 +11,26 @@ import { Spell } from '@/types/Spell';
 import eq from '../../../cdn/json/equipment.json';
 import spellsRaw from '../../../cdn/json/spells.json';
 
-const monsters = getMonsters();
+const monsters = getMonsters().map((m) => ({
+  ...m,
+  inputs: {
+    isFromCoxCm: false,
+    toaInvocationLevel: 0,
+    toaPathLevel: 0,
+    partyMaxCombatLevel: 126,
+    partyAvgMiningLevel: 99,
+    partyMaxHpLevel: 99,
+    partySize: 1,
+    monsterCurrentHp: 150,
+    defenceReductions: {
+      vulnerability: false,
+      accursed: false,
+      dwh: 0,
+      arclight: 0,
+      bgs: 0,
+    },
+  },
+}));
 const equipment = eq as EquipmentPiece[];
 const spells = spellsRaw as Spell[];
 
