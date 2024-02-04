@@ -42,6 +42,22 @@ REQUIRED_PRINTOUTS = [
     'Combat style'
 ]
 
+NOSTAT_EXCEPTIONS = [
+    'Castle wars bracelet',
+    'Lightbearer',
+    'Ring of recoil',
+    'Phoenix necklace',
+    'Reinforced goggles',
+    'Expeditious bracelet',
+    'Bracelet of slaughter',
+    'Facemask',
+    'Earmuffs',
+    'Bug lantern',
+    'Nose peg',
+    "Efaritay's aid",
+    'Inoculation bracelet',
+    'Bracelet of ethereum'
+]
 
 def getEquipmentData():
     equipment = {}
@@ -142,12 +158,21 @@ def main():
         # Prune...
         if (
             # ...items with all 0 stat bonuses
-            (len(equipment['bonuses']) == 0 and len(equipment['offensive']) == 0 and len(equipment['defensive']) == 0
-             and (equipment['speed'] == 4 or equipment['speed'] <= 0))
+            (all(v == 0 for v in equipment['bonuses'].values())
+             and all(v == 0 for v in equipment['offensive'].values())
+             and all(v == 0 for v in equipment['defensive'].values())
+             # ...except for ones with interesting speed values
+             and (equipment['speed'] == 4 or equipment['speed'] <= 0)
+             # ...and except a few specific no-stat items with special effects
+             and not (equipment['name'] in NOSTAT_EXCEPTIONS))
             # ...items that are broken, inactive, locked
             or re.match(r"^(Broken|Inactive|Locked)$", equipment['version'])
-            # ...items from LMS (PvP only mode), or historical
-            or re.search(r"\((Last Man Standing|historical)\)$", equipment['name'])
+            # ...items from LMS (PvP only mode), historical, or beta
+            or re.search(r"\((Last Man Standing|historical|beta)\)$", equipment['name'])
+            # ...items from some old events
+            or re.search(r"(Fine mesh net|Wilderness champion amulet|\(Wilderness Wars)", equipment['name'])
+            # ...old imbued crystal weapons
+            or re.search(r"^Crystal .* \(i\)$", equipment['name'])
         ):
             continue
 
