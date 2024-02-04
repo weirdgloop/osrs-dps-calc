@@ -187,3 +187,34 @@ tbody tr:last-child th:first-child {
 tbody th:first-child {
   @apply text-white;
 }
+
+/* Toasts */
+:root {
+  --toastify-icon-color-success: theme(backgroundColor.green.200);
+  --toastify-icon-color-error: theme(backgroundColor.red.200);
+}
+
+.Toastify__toast {
+  @apply transition-colors;
+  @apply duration-500;
+}
+
+.Toastify__toast--default {
+  @apply bg-dark-200;
+  @apply text-white;
+}
+
+.Toastify__toast--warning {
+  @apply bg-orange-500;
+  @apply text-orange-200;
+}
+
+.Toastify__toast--success {
+  @apply bg-green-500;
+  @apply text-green-200;
+}
+
+.Toastify__toast--error {
+  @apply bg-red-500;
+  @apply text-red-200;
+}

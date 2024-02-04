@@ -341,24 +341,28 @@ class GlobalState implements State {
 
   async loadShortlink(linkId: string) {
     let data: ImportableData;
-    try {
+
+    await toast.promise(async () => {
       data = await fetchShortlinkData(linkId);
-    } catch (e) {
-      toast.error('Failed to load shared data.', { toastId: 'shortlink-fail' });
-      return;
-    }
 
-    /**
-     * For future reference: if we ever change the schema of the loadouts or the monster object,
-     * then some of the JSON data we store for shortlinks will be incorrect. We can handle those instances here, as
-     * a sort of "on-demand migration".
-     *
-     * Also: the reason we're merging the objects below is that we're trying our hardest not to cause the app to
-     * error if the JSON data is bad. To achieve that, we do a deep merge of the loadouts and monster objects so that
-     * the existing data still remains.
-     */
+      /**
+       * For future reference: if we ever change the schema of the loadouts or the monster object,
+       * then some of the JSON data we store for shortlinks will be incorrect. We can handle those instances here, as
+       * a sort of "on-demand migration".
+       *
+       * Also: the reason we're merging the objects below is that we're trying our hardest not to cause the app to
+       * error if the JSON data is bad. To achieve that, we do a deep merge of the loadouts and monster objects so that
+       * the existing data still remains.
+       */
 
-    this.updateImportedData(data);
+      this.updateImportedData(data);
+    }, {
+      pending: 'Loading data from shared link...',
+      success: 'Loaded data from shared link!',
+      error: 'Failed to load shared link data. Please try again.',
+    }, {
+      toastId: 'shortlink',
+    });
   }
 
   updateImportedData(data: ImportableData) {
