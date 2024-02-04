@@ -5,8 +5,8 @@
   "author": "Jayden Bailey (https://weirdgloop.org)",
   "scripts": {
     "dev": "next dev",
-    "build": "NEXT_PUBLIC_BASE_PATH=/osrs-dps next build",
-    "build-staging": "NEXT_PUBLIC_BASE_PATH=/osrs-dps-staging next build",
+    "build": "next build",
+    "build-staging": "env-cmd -f .env.staging next build",
     "start": "next start",
     "lint": "next lint",
     "lint-fast": "eslint",
@@ -52,6 +52,7 @@
     "@typescript-eslint/eslint-plugin": "^6.18.1",
     "@typescript-eslint/parser": "^6.18.1",
     "autoprefixer": "^10.4.17",
+    "env-cmd": "^10.1.0",
     "eslint": "^8.56.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
