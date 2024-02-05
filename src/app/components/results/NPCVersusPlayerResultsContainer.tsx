@@ -66,7 +66,7 @@ const NPCVersusPlayerResultsContainer: React.FC = observer(() => {
           className="w-full bg-orange-500 text-white px-4 py-1 text-sm border-b border-orange-400 flex items-center gap-2"
         >
           <IconAlertTriangle className="text-orange-200" />
-          The wiki reports a different max hit for this NPC. Results may be inaccurate.
+          This calculation uses the max hit shown by Monster Examine, but the wiki reports a different max hit for this monster. Results may be inaccurate.
         </div>
       );
     }
