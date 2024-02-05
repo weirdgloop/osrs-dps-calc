@@ -22,7 +22,7 @@ const LoadoutNameEditContainer: React.FC<LoadoutNameEditContainerProps> = (props
 
   return (
     <form className="flex gap-2 items-center w-full" onSubmit={onSubmit}>
-      <input type="text" className="form-control" ref={focusInput} value={value} onChange={onChange} maxLength={24} onBlur={onSubmit} />
+      <input type="text" className="form-control font-mono tracking-tighter" ref={focusInput} value={value} onChange={onChange} maxLength={24} onBlur={onSubmit} />
     </form>
   );
 };
