@@ -1,4 +1,5 @@
 import { CombatStyleStance } from '@/types/PlayerCombatStyle';
+import { range, sum } from 'd3-array';
 
 export const AKKHA_IDS = [
   11789, 11790, 11791, 11792, 11793, 11794, 11795, 11796,
@@ -328,3 +329,7 @@ export const SECONDS_PER_TICK = 0.6;
 
 export const TTK_DIST_MAX_ITER_ROUNDS = 1000;
 export const TTK_DIST_EPSILON = 0.0001;
+
+export const THRALL_MAX = 3;
+export const THRALL_SPEED = 4;
+export const THRALL_DPT = sum(range(0, THRALL_MAX + 1)) / ((THRALL_MAX + 1) * THRALL_SPEED);

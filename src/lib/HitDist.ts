@@ -1,5 +1,6 @@
 import { cross, max, sum } from 'd3-array';
 import { HistogramEntry } from '@/types/State';
+import { THRALL_MAX } from '@/lib/constants';
 
 export type HitTransformer = (hitsplat: number) => HitDistribution;
 
@@ -69,10 +70,21 @@ export class HitDistribution {
     [new WeightedHit(1.0, [0])],
   );
 
+  public static readonly THRALL_DIST: HitDistribution = HitDistribution.linear(1.0, 0, THRALL_MAX);
+
   readonly hits: WeightedHit[];
 
   constructor(hits: WeightedHit[]) {
     this.hits = hits;
+  }
+
+  private _thrallCumulative?: HitDistribution;
+
+  public get thrallCumulative() {
+    if (!this._thrallCumulative) {
+      this._thrallCumulative = this.zip(HitDistribution.THRALL_DIST).cumulative();
+    }
+    return this._thrallCumulative;
   }
 
   public addHit(w: WeightedHit): void {

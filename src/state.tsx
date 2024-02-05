@@ -50,9 +50,8 @@ const generateInitialEquipment = () => {
   return initialEquipment;
 };
 
-export const generateEmptyPlayer = (name?: string) => ({
+export const generateEmptyPlayer = (name?: string): Player => ({
   name: name ?? 'Loadout 1',
-  username: '',
   style: getCombatStylesForCategory(EquipmentCategory.NONE)[0],
   skills: {
     atk: 99,
@@ -105,6 +104,7 @@ export const generateEmptyPlayer = (name?: string) => ({
     markOfDarknessSpell: false,
     forinthrySurge: false,
     soulreaperStacks: 0,
+    thrallSpell: false,
   },
   spell: null,
 });

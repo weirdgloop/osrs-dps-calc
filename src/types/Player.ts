@@ -100,6 +100,10 @@ export interface Player extends EquipmentStats {
     inWilderness: boolean;
     forinthrySurge: boolean;
     /**
+     * Whether the player is using thralls.
+     */
+    thrallSpell: boolean;
+    /**
      * Soul Stacks for the Soulreaper axe.
      @see https://oldschool.runescape.wiki/w/Soulreaper_axe
      */
