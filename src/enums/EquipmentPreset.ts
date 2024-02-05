@@ -10,6 +10,7 @@ enum EquipmentPreset {
   VOID_MAGE,
   VOID_MELEE,
   VOID_RANGED,
+  TANK,
 }
 
 export default EquipmentPreset;

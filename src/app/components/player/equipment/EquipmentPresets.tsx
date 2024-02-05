@@ -5,6 +5,8 @@ import { useStore } from '@/state';
 import { PartialDeep } from 'type-fest';
 import { Player } from '@/types/Player';
 import { availableEquipment } from '@/lib/Equipment';
+import { EquipmentCategory } from '@/enums/EquipmentCategory';
+import { getCombatStylesForCategory } from '@/utils';
 
 const EquipmentPresets: React.FC = () => {
   const store = useStore();
@@ -21,6 +23,7 @@ const EquipmentPresets: React.FC = () => {
     { label: 'Void Mage', value: EquipmentPreset.VOID_MAGE },
     { label: 'Void Melee', value: EquipmentPreset.VOID_MELEE },
     { label: 'Void Ranged', value: EquipmentPreset.VOID_RANGED },
+    { label: 'Tank', value: EquipmentPreset.TANK },
   ];
 
   const onSelect = useCallback((v: { label: string, value: EquipmentPreset } | null | undefined) => {
@@ -101,6 +104,7 @@ const EquipmentPresets: React.FC = () => {
       }
       case EquipmentPreset.MID_LEVEL_MAGE: {
         newPlayer = {
+          name: v.label,
           equipment: {
             head: findItemById(4708), // Ahrim's hood#Undamaged
             cape: findItemById(21791), // Imbued saradomin cape
@@ -117,6 +121,7 @@ const EquipmentPresets: React.FC = () => {
       }
       case EquipmentPreset.MID_LEVEL_MELEE: {
         newPlayer = {
+          name: v.label,
           equipment: {
             head: findItemById(10828), // Helm of neitiznot
             cape: findItemById(6570), // Fire cape
@@ -133,6 +138,7 @@ const EquipmentPresets: React.FC = () => {
       }
       case EquipmentPreset.MID_LEVEL_RANGED: {
         newPlayer = {
+          name: v.label,
           equipment: {
             head: findItemById(12496), // Ancient coif
             cape: findItemById(22109), // Ava's assembler
@@ -213,6 +219,26 @@ const EquipmentPresets: React.FC = () => {
             hands: findItemById(22981), // Ferocious gloves
             feet: findItemById(13239), // Primordial boots
             ring: findItemById(28307), // Ultor ring
+          },
+        };
+        break;
+      }
+      case EquipmentPreset.TANK: {
+        newPlayer = {
+          name: v.label,
+          style: getCombatStylesForCategory(EquipmentCategory.BULWARK)[1],
+          equipment: {
+            head: findItemById(22326), // Justiciar faceguard
+            cape: findItemById(21295), // Infernal cape
+            neck: findItemById(6585), // Amulet of fury
+            ammo: findItemById(22947), // Rada's blessing 4
+            weapon: findItemById(21015), // Dinh's bulwark
+            body: findItemById(22327), // Justiciar chestguard
+            shield: null,
+            legs: findItemById(22328), // Justiciar legguards
+            hands: findItemById(7462), // Barrows gloves
+            feet: findItemById(21733), // Guardian boots
+            ring: findItemById(19710), // Ring of suffering (i)
           },
         };
         break;
