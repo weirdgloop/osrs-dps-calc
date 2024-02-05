@@ -8,10 +8,12 @@ import { CAST_STANCES } from '@/lib/constants';
 import { UserIssue } from '@/types/State';
 import { CalcDetails, DetailEntry } from '@/lib/CalcDetails';
 import { Factor } from '@/lib/Math';
+import { scaleMonster } from '@/lib/MonsterScaling';
 
 export interface CalcOpts {
   loadoutName: string,
   detailedOutput: boolean,
+  disableMonsterScaling: boolean,
   overrides?: {
     accuracy?: number,
     attackRoll?: number,
@@ -19,16 +21,26 @@ export interface CalcOpts {
   },
 }
 
-const DEFAULT_OPTS: CalcOpts = {
+export interface InternalOpts extends CalcOpts {
+  /**
+   * Internal-only flag for when the calc is being spawned as a sub-calc of the current,
+   * and as such the caller guarantees that all required properties are already sanitized and valid.
+   */
+  noInit: boolean,
+}
+
+const DEFAULT_OPTS: InternalOpts = {
   loadoutName: 'unknown',
   detailedOutput: false,
+  disableMonsterScaling: false,
+  noInit: false,
 };
 
 /**
  * Base class which the other calculators extend.
  */
 export default class BaseCalc {
-  protected opts: CalcOpts;
+  protected opts: CalcOpts & InternalOpts;
 
   private _details?: CalcDetails;
 
@@ -38,8 +50,11 @@ export default class BaseCalc {
   // The monster that we're using for this calculation
   protected monster: Monster;
 
+  // The original monster passed in to the calculator before scaling was applied
+  protected baseMonster: Monster;
+
   // Array of the names of all equipped items (for quick checks)
-  protected allEquippedItems: string[];
+  protected allEquippedItems!: string[];
 
   protected userIssues: UserIssue[] = [];
 
@@ -54,11 +69,14 @@ export default class BaseCalc {
     }
 
     this.player = player;
-    this.monster = monster;
+    this.baseMonster = monster;
+    this.monster = (this.opts.disableMonsterScaling || this.opts.noInit) ? monster : scaleMonster(monster);
 
-    this.canonicalizeEquipment();
-    this.allEquippedItems = Object.values(this.player.equipment).filter((v) => v !== null).flat(1).map((eq: EquipmentPiece | null) => eq?.name || '');
-    this.sanitizeInputs();
+    if (!this.opts.noInit) {
+      this.canonicalizeEquipment();
+      this.allEquippedItems = Object.values(this.player.equipment).filter((v) => v !== null).flat(1).map((eq: EquipmentPiece | null) => eq?.name || '');
+      this.sanitizeInputs();
+    }
   }
 
   protected track<T extends Parameters<CalcDetails['track']>[1]>(label: Parameters<CalcDetails['track']>[0], value: T, textOverride?: Parameters<CalcDetails['track']>[2]): T {

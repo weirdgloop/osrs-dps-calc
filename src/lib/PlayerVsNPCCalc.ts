@@ -32,7 +32,6 @@ import {
   VERZIK_P1_IDS,
 } from '@/lib/constants';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
-import { scaledMonster } from '@/lib/MonsterScaling';
 import { DetailKey } from '@/lib/CalcDetails';
 import { Factor } from '@/lib/Math';
 import {
@@ -40,7 +39,8 @@ import {
   ammoApplicability,
 } from '@/lib/Equipment';
 import { UserIssue } from '@/types/State';
-import BaseCalc, { CalcOpts } from '@/lib/BaseCalc';
+import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
+import { scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 
 /**
  * Class for computing various player-vs-NPC metrics.
@@ -1158,8 +1158,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   distAtHp(hp: number): HitDistribution {
+    const noScaling = this.getDistribution().singleHitsplat;
+    if (this.opts.disableMonsterScaling) {
+      return noScaling;
+    }
+
     if (!PlayerVsNPCCalc.distIsCurrentHpDependent(this.player, this.monster) || hp === this.monster.inputs.monsterCurrentHp) {
-      return this.getDistribution().singleHitsplat;
+      return noScaling;
     }
 
     // a special case for optimization, ruby bolts only change dps under 500 hp
@@ -1169,20 +1174,27 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       && ['Ruby bolts (e)', 'Ruby dragon bolts (e)'].includes(this.player.equipment.ammo?.name || '')
       && this.monster.inputs.monsterCurrentHp >= 500
       && hp >= 500) {
-      return this.getDistribution().singleHitsplat;
+      return noScaling;
     }
 
-    return new PlayerVsNPCCalc(
+    const subCalc = new PlayerVsNPCCalc(
       this.player,
-      scaledMonster({
-        ...this.monster,
+      scaleMonsterHpOnly({
+        ...this.baseMonster,
         inputs: {
-          ...this.monster.inputs,
+          ...this.baseMonster.inputs,
           monsterCurrentHp: hp,
         },
       }),
-      this.opts,
-    ).getDistribution().singleHitsplat;
+      <InternalOpts>{
+        ...this.opts,
+        noInit: true,
+      },
+    );
+    subCalc.allEquippedItems = this.allEquippedItems;
+    subCalc.baseMonster = this.baseMonster;
+
+    return subCalc.getDistribution().singleHitsplat;
   }
 
   demonbaneFactor(baseFactor: Factor): Factor {

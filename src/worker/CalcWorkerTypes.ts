@@ -1,6 +1,7 @@
 import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { NPCVsPlayerCalculatedLoadout, PlayerVsNPCCalculatedLoadout } from '@/types/State';
+import { CalcOpts } from '@/lib/BaseCalc';
 
 /**
  * Requests
@@ -19,8 +20,9 @@ export interface WorkerRequest<T extends WorkerRequestType> {
 }
 
 export interface WorkerCalcOpts {
-  includeTtkDist: boolean,
-  detailedOutput: boolean,
+  includeTtkDist?: boolean,
+  detailedOutput?: CalcOpts['detailedOutput'],
+  disableMonsterScaling?: CalcOpts['disableMonsterScaling'],
 }
 
 export interface ComputeBasicRequest extends WorkerRequest<WorkerRequestType.COMPUTE_BASIC> {

@@ -31,7 +31,7 @@ import {
   IconChevronUp,
   IconExternalLink,
 } from '@tabler/icons-react';
-import { scaledMonster } from '@/lib/MonsterScaling';
+import { scaleMonster } from '@/lib/MonsterScaling';
 import { Monster } from '@/types/Monster';
 import LazyImage from '@/app/components/generic/LazyImage';
 import Toggle from '@/app/components/generic/Toggle';
@@ -97,7 +97,13 @@ const MonsterContainer: React.FC = observer(() => {
   const [attributesExpanded, setAttributesExpanded] = useState(false);
 
   // Don't automatically update the stat inputs if manual editing is on
-  const displayMonster = prefs.manualMode ? monster : scaledMonster(monster);
+  const monsterJS = toJS(monster);
+  const displayMonster = useMemo(() => {
+    if (prefs.manualMode) {
+      return monsterJS;
+    }
+    return scaleMonster(monsterJS);
+  }, [prefs.manualMode, monsterJS]);
 
   useEffect(() => {
     // When display monster HP is changed, update the monster's current HP
