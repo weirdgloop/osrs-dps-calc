@@ -27,7 +27,6 @@ import {
   OLM_MAGE_HAND_IDS,
   OLM_MELEE_HAND_IDS, ONE_HIT_MONSTERS, SECONDS_PER_TICK,
   TEKTON_IDS,
-  THRALL_DPT, THRALL_SPEED,
   TOMBS_OF_AMASCUT_MONSTER_IDS, TTK_DIST_EPSILON, TTK_DIST_MAX_ITER_ROUNDS,
   USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
   VERZIK_P1_IDS,
@@ -1039,8 +1038,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    * Returns the expected damage per tick, based on the player's attack speed.
    */
   public getDpt() {
-    const playerDpt = this.getDistribution().getExpectedDamage() / this.getAttackSpeed();
-    return this.player.buffs.thrallSpell ? playerDpt + THRALL_DPT : playerDpt;
+    return this.getDistribution().getExpectedDamage() / this.getAttackSpeed();
   }
 
   /**
@@ -1051,10 +1049,36 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   /**
+   * Returns the average hits-to-kill calculation.
+   */
+  public getHtk() {
+    const dist = this.getDistribution();
+    const hist = dist.asHistogram();
+    const max = dist.getMax();
+    if (max === 0) {
+      return 0;
+    }
+
+    const htk = new Float64Array(this.monster.skills.hp + 1); // 0 hits left to do if hp = 0
+
+    for (let hp = 1; hp <= this.monster.skills.hp; hp++) {
+      let val = 1.0; // takes at least one hit
+      for (let hit = 1; hit <= Math.min(hp, max); hit++) {
+        const p = hist[hit];
+        val += p.chance * htk[hp - hit];
+      }
+
+      htk[hp] = val / (1 - hist[0].chance);
+    }
+
+    return htk[this.monster.skills.hp];
+  }
+
+  /**
    * Returns the average time-to-kill (in seconds) calculation.
    */
   public getTtk() {
-    return this.monster.inputs.monsterCurrentHp / this.getDps();
+    return this.getHtk() * this.getAttackSpeed() * SECONDS_PER_TICK;
   }
 
   /**
@@ -1064,8 +1088,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    */
   public getTtkDistribution(): Map<number, number> {
     const speed = this.getAttackSpeed();
-    const baseDist = this.getDistribution().singleHitsplat;
-    if (baseDist.expectedHit() === 0 && !this.player.buffs.thrallSpell) {
+    const dist = this.getDistribution().singleHitsplat;
+    if (dist.expectedHit() === 0) {
       return new Map<number, number>();
     }
 
@@ -1080,46 +1104,25 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     // sum of non-zero-health probabilities
     let epsilon = 1.0;
 
-    // if the hit baseDist depends on hp, we'll have to recalculate it each time, so cache the results to not repeat work
+    // if the hit dist depends on hp, we'll have to recalculate it each time, so cache the results to not repeat work
     const recalcDistOnHp = PlayerVsNPCCalc.distIsCurrentHpDependent(this.player, this.monster);
-    const hpHitDists = recalcDistOnHp ? new Array<HitDistribution>(this.monster.skills.hp) : [];
+    const hpHitDists = new Map<number, HitDistribution>();
+    hpHitDists.set(this.monster.skills.hp, dist);
     if (recalcDistOnHp) {
-      hpHitDists[this.monster.skills.hp] = baseDist;
       for (let hp = 0; hp < this.monster.skills.hp; hp++) {
-        hpHitDists[hp] = this.distAtHp(hp);
+        hpHitDists.set(hp, this.distAtHp(hp));
       }
     }
 
-    // some utils for determining what hit dist to use per tick/hp combo
-    // everything here should be cached some way or another
-    const playerAttacksThisTick = (tick: number): boolean => tick % speed === 0;
-    const thrallAttacksThisTick = (tick: number): boolean => this.player.buffs.thrallSpell && (tick % THRALL_SPEED === 0);
-    const distAtHp = (tick: number, hp: number): HitDistribution | undefined => {
-      const playerDist = hpHitDists[hp] || baseDist;
-      if (playerAttacksThisTick(tick) && thrallAttacksThisTick(tick)) {
-        return playerDist.thrallCumulative;
-      } if (playerAttacksThisTick(tick)) {
-        return playerDist;
-      } if (thrallAttacksThisTick(tick)) {
-        return HitDistribution.THRALL_DIST;
-      }
-      return undefined;
-    };
-
     // 1. until the amount of hp values remaining above zero is more than our desired epsilon accuracy,
     //    or we reach the maximum iteration rounds
-    const maxTicks = TTK_DIST_MAX_ITER_ROUNDS * this.getAttackSpeed();
-    // eslint-disable-next-line no-labels
-    outer: for (let tick = 0; tick < maxTicks && epsilon >= TTK_DIST_EPSILON; tick++) {
+    for (let hit = 0; hit < (TTK_DIST_MAX_ITER_ROUNDS + 1) && epsilon >= TTK_DIST_EPSILON; hit++) {
       const nextHps = new Float64Array(this.monster.skills.hp + 1);
 
       // 3. for each possible hp value,
       for (const [hp, hpProb] of hps.entries()) {
-        const currDist = distAtHp(tick, hp);
-        if (!currDist) {
-          // eslint-disable-next-line no-labels
-          continue outer;
-        }
+        // this is a bit of a hack, but idk if there's a better way
+        const currDist: HitDistribution = recalcDistOnHp ? hpHitDists.get(hp)! : dist;
 
         // 4. for each damage amount possible,
         for (const h of currDist.hits) {
@@ -1137,7 +1140,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           // 6. if the hp we are about to arrive at is <= 0, the npc is killed, the iteration count is hits done,
           //    and we add this probability path into the delta
           if (newHp <= 0) {
-            ttks.set(tick + 1, (ttks.get(tick + 1) || 0) + chanceOfAction);
+            const tick = hit * speed + 1;
+            ttks.set(tick, (ttks.get(tick) || 0) + chanceOfAction);
             epsilon -= chanceOfAction;
           } else {
             // 7. otherwise, we add the chance of this path to the next iteration's hp value

@@ -7,7 +7,6 @@ import diary from '@/public/img/misc/diary.png';
 import forinthry_surge from '@/public/img/misc/forinthry_surge.webp';
 import soulreaper_axe from '@/public/img/misc/soulreaper_axe.png';
 import NumberInput from '@/app/components/generic/NumberInput';
-import arceuus from '@/public/img/misc/arceuus.png';
 import Toggle from '../generic/Toggle';
 
 const ExtraOptions: React.FC = observer(() => {
@@ -87,25 +86,6 @@ const ExtraOptions: React.FC = observer(() => {
                 className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
                 data-tooltip-id="tooltip"
                 data-tooltip-content="10% activation chance increase to enchanted bolts."
-              >
-                ?
-              </span>
-            </>
-          )}
-        />
-        <Toggle
-          checked={player.buffs.thrallSpell}
-          setChecked={(c) => store.updatePlayer({ buffs: { thrallSpell: c } })}
-          label={(
-            <>
-              <img src={arceuus.src} width={18} className="inline-block" alt="Thralls" />
-              {' '}
-              Using thralls
-              {' '}
-              <span
-                className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
-                data-tooltip-id="tooltip"
-                data-tooltip-content="Include thrall damage in calculations."
               >
                 ?
               </span>
