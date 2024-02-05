@@ -24,11 +24,12 @@ import { toJS } from 'mobx';
 import { useTheme } from 'next-themes';
 import { max } from 'd3-array';
 import { keys } from '@/utils';
-import { scaledMonster } from '@/lib/MonsterScaling';
 import equipmentStats from '@/public/img/Equipment Stats.png';
 import SectionAccordion from '@/app/components/generic/SectionAccordion';
 import LazyImage from '@/app/components/generic/LazyImage';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
+import { scaleMonsterHpOnly, scaleMonster } from '@/lib/MonsterScaling';
+import { CalcOpts } from '@/lib/BaseCalc';
 
 enum XAxisType {
   MONSTER_DEF,
@@ -105,16 +106,17 @@ function* inputRange(
     loadouts: Player[],
     monster: Monster,
   }> {
+  const scaledMonster: Monster = scaleMonster(baseMonster);
   switch (xAxisType) {
     case XAxisType.MONSTER_DEF:
-      for (let newDef = baseMonster.skills.def; newDef >= 0; newDef--) {
+      for (let newDef = scaledMonster.skills.def; newDef >= 0; newDef--) {
         yield {
           xValue: newDef,
           loadouts,
           monster: {
-            ...baseMonster,
+            ...scaledMonster,
             skills: {
-              ...baseMonster.skills,
+              ...scaledMonster.skills,
               def: newDef,
             },
           },
@@ -123,14 +125,14 @@ function* inputRange(
       return;
 
     case XAxisType.MONSTER_MAGIC:
-      for (let newMagic = baseMonster.skills.magic; newMagic >= 0; newMagic--) {
+      for (let newMagic = scaledMonster.skills.magic; newMagic >= 0; newMagic--) {
         yield {
           xValue: newMagic,
           loadouts,
           monster: {
-            ...baseMonster,
+            ...scaledMonster,
             skills: {
-              ...baseMonster.skills,
+              ...scaledMonster.skills,
               magic: newMagic,
             },
           },
@@ -139,19 +141,18 @@ function* inputRange(
       return;
 
     case XAxisType.MONSTER_HP: {
-      const shouldScale = loadouts.some((l) => PlayerVsNPCCalc.distIsCurrentHpDependent(l, baseMonster));
-      for (let newHp = baseMonster.skills.hp; newHp >= 0; newHp--) {
+      for (let newHp = scaledMonster.skills.hp; newHp >= 0; newHp--) {
         const m: Monster = {
-          ...baseMonster,
+          ...scaledMonster,
           inputs: {
-            ...baseMonster.inputs,
+            ...scaledMonster.inputs,
             monsterCurrentHp: newHp,
           },
         };
         yield {
           xValue: newHp,
           loadouts,
-          monster: shouldScale ? scaledMonster(m) : m,
+          monster: scaleMonsterHpOnly(m),
         };
       }
       return;
@@ -168,7 +169,7 @@ function* inputRange(
               atk: newAttack,
             },
           })),
-          monster: baseMonster,
+          monster: scaledMonster,
         };
       }
       return;
@@ -184,7 +185,7 @@ function* inputRange(
               str: newStrength,
             },
           })),
-          monster: baseMonster,
+          monster: scaledMonster,
         };
       }
       return;
@@ -200,7 +201,7 @@ function* inputRange(
               def: newDefence,
             },
           })),
-          monster: baseMonster,
+          monster: scaledMonster,
         };
       }
       return;
@@ -216,7 +217,7 @@ function* inputRange(
               ranged: newRanged,
             },
           })),
-          monster: baseMonster,
+          monster: scaledMonster,
         };
       }
       return;
@@ -232,7 +233,7 @@ function* inputRange(
               magic: newMagic,
             },
           })),
-          monster: baseMonster,
+          monster: scaledMonster,
         };
       }
       return;
@@ -254,7 +255,7 @@ function* inputRange(
               boosts: newBoosts,
             };
           }),
-          monster: baseMonster,
+          monster: scaledMonster,
         };
       }
       return;
@@ -294,15 +295,19 @@ const getOutput = (
   loadout: Player,
   monster: Monster,
 ): number => {
+  const opts: Partial<CalcOpts> = {
+    // we explicitly handle this in getInputs
+    disableMonsterScaling: true,
+  };
   switch (yAxisType) {
     case YAxisType.PLAYER_DPS:
-      return new PlayerVsNPCCalc(loadout, monster).getDps();
+      return new PlayerVsNPCCalc(loadout, monster, opts).getDps();
     case YAxisType.PLAYER_EXPECTED_HIT:
-      return new PlayerVsNPCCalc(loadout, monster).getDistribution().getExpectedDamage();
+      return new PlayerVsNPCCalc(loadout, monster, opts).getDistribution().getExpectedDamage();
     case YAxisType.MONSTER_DPS:
-      return new NPCVsPlayerCalc(loadout, monster).getDps();
+      return new NPCVsPlayerCalc(loadout, monster, opts).getDps();
     case YAxisType.DAMAGE_TAKEN: {
-      return new NPCVsPlayerCalc(loadout, monster).getAverageDamageTaken();
+      return new NPCVsPlayerCalc(loadout, monster, opts).getAverageDamageTaken();
     }
 
     default:
@@ -312,10 +317,9 @@ const getOutput = (
 
 const LoadoutComparison: React.FC = observer(() => {
   const store = useStore();
+  const { monster } = store;
   const { showLoadoutComparison } = store.prefs;
   const loadouts = toJS(store.loadouts);
-  const storeMonster = toJS(store.monster);
-  const monster = useMemo(() => scaledMonster(storeMonster), [storeMonster]);
 
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
@@ -351,7 +355,7 @@ const LoadoutComparison: React.FC = observer(() => {
   const data = useMemo(() => {
     const x = xAxisType?.value;
     const y = yAxisType?.value;
-    if (x === undefined || y === undefined) {
+    if (!showLoadoutComparison || (x === undefined || y === undefined)) {
       return {
         max: 1,
         min: 0,
@@ -377,7 +381,7 @@ const LoadoutComparison: React.FC = observer(() => {
       min: min === 100 ? 0 : Math.floor(min),
       lines,
     };
-  }, [xAxisType, yAxisType, monster, loadouts]);
+  }, [xAxisType, yAxisType, monster, loadouts, showLoadoutComparison]);
 
   const [tickCount, domainMax] = useMemo(() => {
     const highest = data.max;

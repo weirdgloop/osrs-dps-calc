@@ -37,26 +37,52 @@ export function getTestPlayer(monster: Monster, overrides: PartialDeep<Player> =
   return player;
 }
 
+const DEFAULT_MONSTER_INPUTS: Monster['inputs'] = {
+  monsterCurrentHp: 0, // handled dynamically in getTestMonster
+  isFromCoxCm: false,
+  toaInvocationLevel: 0,
+  toaPathLevel: 0,
+  partyMaxCombatLevel: 126,
+  partyAvgMiningLevel: 99,
+  partyMaxHpLevel: 99,
+  partySize: 1,
+  defenceReductions: {
+    vulnerability: false,
+    accursed: false,
+    dwh: 0,
+    arclight: 0,
+    bgs: 0,
+  },
+};
+
 export function getTestMonster(name: string, version: string, overrides: PartialDeep<Monster> = {}): Monster {
-  return merge(
+  const monster = merge(
     find(
       monsters,
       (m) => m.name === name && m.version === version,
       `Monster not found for name '${name}' and version '${version}'`,
     ),
+    { inputs: DEFAULT_MONSTER_INPUTS },
     overrides,
   );
+
+  monster.monsterCurrentHp = monster.monsterCurrentHp || monster.skills.hp;
+  return monster;
 }
 
 export function getTestMonsterById(id: number, overrides: PartialDeep<Monster> = {}): Monster {
-  return merge(
+  const monster = merge(
     find(
       monsters,
       (m) => m.id === id,
       `Monster not found for id '${id}'`,
     ),
+    { inputs: DEFAULT_MONSTER_INPUTS },
     overrides,
   );
+
+  monster.monsterCurrentHp = monster.monsterCurrentHp || monster.skills.hp;
+  return monster;
 }
 
 export function findEquipment(name: string, version: string = ''): EquipmentPiece {

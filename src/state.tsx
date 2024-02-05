@@ -15,8 +15,7 @@ import { toast } from 'react-toastify';
 import {
   Debouncer, fetchPlayerSkills, fetchShortlinkData, getCombatStylesForCategory, PotionMap,
 } from '@/utils';
-import { WorkerRequestType } from '@/worker/CalcWorkerTypes';
-import { scaledMonster } from '@/lib/MonsterScaling';
+import { ComputeBasicRequest, ComputeReverseRequest, WorkerRequestType } from '@/worker/CalcWorkerTypes';
 import getMonsters from '@/lib/Monsters';
 import { calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { CalcWorker } from '@/worker/CalcWorker';
@@ -624,12 +623,13 @@ class GlobalState implements State {
     // don't fire a bajillion reqs if they're editing multiple fields
     await this.calcDebouncer.debounce();
 
-    const data = {
+    const data: Extract<ComputeBasicRequest['data'], ComputeReverseRequest['data']> = {
       loadouts: this.loadouts,
-      monster: this.prefs.manualMode ? this.monster : scaledMonster(this.monster),
+      monster: this.monster,
       calcOpts: {
         includeTtkDist: this.prefs.showTtkComparison,
         detailedOutput: this.debug,
+        disableMonsterScaling: this.prefs.manualMode,
       },
     };
     const request = async (type: WorkerRequestType.COMPUTE_BASIC | WorkerRequestType.COMPUTE_REVERSE) => {

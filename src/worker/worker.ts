@@ -28,6 +28,7 @@ const computePvMValues = async (loadouts: Player[], m: Monster, calcOpts: Worker
     const calc = new PlayerVsNPCCalc(p, m, {
       loadoutName,
       detailedOutput: calcOpts.detailedOutput,
+      disableMonsterScaling: calcOpts.disableMonsterScaling,
     });
     res.push({
       npcDefRoll: calc.getNPCDefenceRoll(),
@@ -60,6 +61,7 @@ const computeMvPValues = async (loadouts: Player[], m: Monster, calcOpts: Worker
     const calc = new NPCVsPlayerCalc(p, m, {
       loadoutName,
       detailedOutput: calcOpts.detailedOutput,
+      disableMonsterScaling: calcOpts.disableMonsterScaling,
     });
     res.push({
       npcMaxAttackRoll: calc.getNPCMaxAttackRoll(),
