@@ -193,6 +193,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     const style = this.monster.style || '';
     const skills = this.monster.skills;
     const bonuses = this.monster.offensive;
+    const name = this.monster.name;
 
     let maxHit = 0;
     if (['slash', 'crush', 'stab'].includes(style)) {
@@ -208,7 +209,19 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     // Some monsters have a hardcoded max hit. Let's overwrite the max hit with the real value here.
     if (Object.prototype.hasOwnProperty.call(NPC_HARDCODED_MAX_HIT, this.monster.id)) {
       maxHit = NPC_HARDCODED_MAX_HIT[this.monster.id];
+    } else if (style === 'magic' && this.monster.maxHit !== undefined && maxHit !== this.monster.maxHit) {
+      // For now, if the monster is using the magic attack style and the max hit on the wiki is different to the max hit
+      // returned by the standard calculation we're using above, then let's just use the wiki value. A lot of magic
+      // monsters have a hardcoded max hit (see https://twitter.com/JagexAsh/status/1754447323222929712).
+      maxHit = this.monster.maxHit;
     }
+
+    // Some monsters have a reduced max hit under specific conditions
+    if (name === 'Aberrant spectre' && (this.wearing('Nose peg') || this.isWearingSlayerHelmet())) maxHit = 8;
+    if (name === 'Dust devil' && (this.wearing('Face mask') || this.isWearingSlayerHelmet())) maxHit = 8;
+    if (name === 'Banshee' && (this.wearing('Earmuffs') || this.isWearingSlayerHelmet())) maxHit = 2;
+    if (name === 'Wall beast' && (this.wearing('Spiny helmet') || this.isWearingSlayerHelmet())) maxHit = 4;
+    if (name === 'Sourhog' && (this.wearing('Reinforced goggles') || this.isWearingSlayerHelmet())) maxHit = 6;
 
     return maxHit;
   }

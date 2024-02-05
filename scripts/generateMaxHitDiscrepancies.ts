@@ -9,7 +9,16 @@ const monsters = getMonsters();
  * and the value that we compute using the NPC vs Player calculator.
  */
 const generateMaxHitDiscrepancies = () => {
+  const mismatch: { [s: string]: string[] } = {
+    '': [],
+    slash: [],
+    crush: [],
+    stab: [],
+    magic: [],
+    ranged: [],
+  };
   for (const m of monsters) {
+    // if (m.style !== 'magic') continue;
     const wikiMaxHit = m.maxHit;
     if (wikiMaxHit === undefined) continue;
     if (!['slash', 'crush', 'stab', 'magic', 'ranged'].includes(m.style || '')) continue;
@@ -36,9 +45,11 @@ const generateMaxHitDiscrepancies = () => {
     });
     const computedMaxHit = calc.getNPCMaxHit();
     if (wikiMaxHit !== computedMaxHit) {
-      console.log(`${m.name} (${m.id}) has mismatch. Wiki value: ${wikiMaxHit}. Computed value: ${computedMaxHit}`);
+      mismatch[m.style || ''].push(`${m.name}${m.version ? `#${m.version}` : ''}`);
     }
   }
+
+  console.log(JSON.stringify(mismatch, null, 2));
 };
 
 export default generateMaxHitDiscrepancies;

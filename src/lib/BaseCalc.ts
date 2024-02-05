@@ -253,6 +253,14 @@ export default class BaseCalc {
   }
 
   /**
+   * Whether the player is wearing *any* slayer helmet
+   * @see https://oldschool.runescape.wiki/w/Slayer_helmet
+   */
+  protected isWearingSlayerHelmet(): boolean {
+    return this.wearing(['Slayer helmet', 'Slayer helmet (i)']);
+  }
+
+  /**
    * Whether the player is wearing any item that acts as a black mask for the purpose of its effect.
    * @see https://oldschool.runescape.wiki/w/Black_mask
    */
