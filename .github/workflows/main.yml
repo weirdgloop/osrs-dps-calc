@@ -1,14 +1,16 @@
 name: Main
 
 on:
-  # Push to main branch
+  # Push to main or staging branch
   push:
     branches:
       - main
-  # PR to main branch
+      - staging
+  # PR to main or staging branch
   pull_request:
     branches:
       - main
+      - staging
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -38,13 +40,17 @@ jobs:
       - name: Install dependencies
         run: yarn
       - name: Build project
+        if: github.ref != 'refs/heads/staging'
         run: yarn build
+      - name: Build project (staging)
+        if: github.ref == 'refs/heads/staging'
+        run: yarn build-staging
       - name: Run tests
         run: yarn test
       - run: mv cdn out/
       - uses: actions/upload-artifact@v4
         # We only need to upload an artifact if this is a push to the main branch
-        if: github.ref == 'refs/heads/main'
+        if: github.repository == 'weirdgloop/osrs-dps-calc' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging')
         with:
           name: output
           path: out/
@@ -53,7 +59,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     # Ensure that we only deploy when pushing to the main branch
-    if: github.repository == 'weirdgloop/osrs-dps-calc' && github.ref == 'refs/heads/main'
+    if: github.repository == 'weirdgloop/osrs-dps-calc' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging')
+    env:
+      DIRECTORY_NAME: ${{ github.ref == 'refs/heads/main' && 'osrs-dps/' || 'osrs-dps-staging/' }}
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v4
@@ -68,7 +76,7 @@ jobs:
           REMOTE_USER: ${{ secrets.SSH_USER }}
           ARGS: "-rlgoDzvc -i --delete"
           SOURCE: "out/"
-          TARGET: "/var/www/html/osrs-dps/"
+          TARGET: "/var/www/html/$DIRECTORY_NAME"
           SCRIPT_AFTER: |
             whoami
             echo $RSYNC_STDOUT
@@ -80,6 +88,6 @@ jobs:
             -H 'Authorization: Bearer ${{ secrets.CLOUDFLARE_TOKEN }}' \
             --data '{
               "files": [
-                "https://tools.runescape.wiki/osrs-dps/"
+                "https://tools.runescape.wiki/$DIRECTORY_NAME"
               ]
             }'
