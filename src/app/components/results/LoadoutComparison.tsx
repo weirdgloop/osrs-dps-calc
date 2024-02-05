@@ -85,7 +85,9 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, pa
                   </div>
                   {p.name}
                 </div>
-                <span className="text-gray-400 font-bold">{p.value}</span>
+                <span className="text-gray-400 font-bold">
+                  {p.value === 'NaN' ? '---' : `${p.value}`}
+                </span>
               </div>
             ))
           }
@@ -307,7 +309,8 @@ const getOutput = (
     case YAxisType.MONSTER_DPS:
       return new NPCVsPlayerCalc(loadout, monster, opts).getDps();
     case YAxisType.DAMAGE_TAKEN: {
-      return new NPCVsPlayerCalc(loadout, monster, opts).getAverageDamageTaken();
+      const dmgTaken = new NPCVsPlayerCalc(loadout, monster, opts).getAverageDamageTaken();
+      return dmgTaken === 0 ? NaN : dmgTaken;
     }
 
     default:
