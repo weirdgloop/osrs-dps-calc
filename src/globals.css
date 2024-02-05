@@ -133,7 +133,7 @@ button.btn:disabled {
   @apply font-mono;
 }
 
-.recharts-label {
+.recharts-cartesian-axis .recharts-label {
   font-size: .9em;
   @apply lowercase;
 }
