@@ -1,4 +1,4 @@
-import BaseCalc, { CalcOpts } from '@/lib/BaseCalc';
+import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 // import { OVERHEAD_PRAYERS, Prayer } from '@/enums/Prayer';
@@ -30,7 +30,9 @@ export default class NPCVsPlayerCalc extends BaseCalc {
 
   public getPlayerVsNPCCalc(): PlayerVsNPCCalc {
     if (this.memoizedPlayerVsNPCCalc === undefined) {
-      this.memoizedPlayerVsNPCCalc = new PlayerVsNPCCalc(this.player, this.monster);
+      this.memoizedPlayerVsNPCCalc = new PlayerVsNPCCalc(this.player, this.monster, <InternalOpts>{
+        noInit: true,
+      });
     }
 
     return this.memoizedPlayerVsNPCCalc;

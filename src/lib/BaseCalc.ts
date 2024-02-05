@@ -74,9 +74,10 @@ export default class BaseCalc {
 
     if (!this.opts.noInit) {
       this.canonicalizeEquipment();
-      this.allEquippedItems = Object.values(this.player.equipment).filter((v) => v !== null).flat(1).map((eq: EquipmentPiece | null) => eq?.name || '');
       this.sanitizeInputs();
     }
+
+    this.allEquippedItems = Object.values(this.player.equipment).filter((v) => v !== null).flat(1).map((eq: EquipmentPiece | null) => eq?.name || '');
   }
 
   protected track<T extends Parameters<CalcDetails['track']>[1]>(label: Parameters<CalcDetails['track']>[0], value: T, textOverride?: Parameters<CalcDetails['track']>[2]): T {
