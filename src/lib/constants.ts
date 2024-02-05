@@ -328,3 +328,8 @@ export const SECONDS_PER_TICK = 0.6;
 
 export const TTK_DIST_MAX_ITER_ROUNDS = 1000;
 export const TTK_DIST_EPSILON = 0.0001;
+
+export const NPC_HARDCODED_MAX_HIT: { [npcId: number]: number } = {
+  5947: 10, // Spinolyp (1)
+  5961: 10, // Spinolyp (2)
+};

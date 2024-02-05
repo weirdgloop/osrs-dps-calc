@@ -140,6 +140,11 @@ def main():
         if monster_style == 'None' or monster_style == 'N/A':
             monster_style = None
 
+        # Override style specifically for Spinolyps. Both attacks roll ranged vs ranged.
+        # This "patch" will have to be revisited if/when we add protection prayers.
+        if 'Spinolyp' in k:
+            monster_style = ['Ranged']
+
         monster = {
             'id': get_printout_value(po['NPC ID']),
             'name': k.rsplit('#', 1)[0] or '',

@@ -3,7 +3,7 @@ import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 // import { OVERHEAD_PRAYERS, Prayer } from '@/enums/Prayer';
 import { AttackDistribution, HitDistribution, WeightedHit } from '@/lib/HitDist';
-import { SECONDS_PER_TICK } from '@/lib/constants';
+import { NPC_HARDCODED_MAX_HIT, SECONDS_PER_TICK } from '@/lib/constants';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import { DetailKey } from '@/lib/CalcDetails';
 import { PrayerMap } from '@/enums/Prayer';
@@ -203,6 +203,11 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     }
     if (style === 'magic') {
       maxHit = Math.trunc(((9 + skills.magic) * (bonuses.magic_str + 64) + 320) / 640);
+    }
+
+    // Some monsters have a hardcoded max hit. Let's overwrite the max hit with the real value here.
+    if (Object.prototype.hasOwnProperty.call(NPC_HARDCODED_MAX_HIT, this.monster.id)) {
+      maxHit = NPC_HARDCODED_MAX_HIT[this.monster.id];
     }
 
     return maxHit;
