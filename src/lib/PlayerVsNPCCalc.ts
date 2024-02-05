@@ -234,7 +234,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_KERIS, maxHit, [133, 100]);
     }
     if (this.wearing('Barronite mace') && mattrs.includes(MonsterAttribute.GOLEM)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_GOLEMBANE, maxHit, [6, 5]);
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_GOLEMBANE, maxHit, [23, 20]);
     }
     if (this.isRevWeaponBuffApplicable()) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_REV_WEAPON, maxHit, [3, 2]);
