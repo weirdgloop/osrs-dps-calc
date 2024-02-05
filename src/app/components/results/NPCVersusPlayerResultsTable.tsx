@@ -22,8 +22,11 @@ const calcKeyToString = (value: number, calcKey: keyof CalculatedLoadout): strin
     case 'npcAccuracy':
       return `${(value * 100).toFixed(ACCURACY_PRECISION)}%`;
     case 'npcDps':
-    case 'avgDmgTaken':
       return value.toFixed(DPS_PRECISION);
+    case 'avgDmgTaken':
+      return value === 0
+        ? '-----'
+        : `${value.toFixed(DPS_PRECISION)}`;
     default:
       return `${value}`;
   }
@@ -37,7 +40,7 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
 
   const cells = useMemo(() => {
     const aggregator = calcKey === 'playerDefRoll' ? max : min;
-    const bestValue = aggregator(Object.values(loadouts), (l) => l[calcKey] as number);
+    const bestValue = aggregator(Object.values(loadouts).filter((l) => (calcKey === 'avgDmgTaken' ? l[calcKey] !== 0 : true)), (l) => l[calcKey] as number);
 
     return Object.values(loadouts).map((l, i) => {
       const value = l[calcKey] as number;

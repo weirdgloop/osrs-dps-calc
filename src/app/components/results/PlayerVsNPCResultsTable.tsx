@@ -40,7 +40,7 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
 
   const cells = useMemo(() => {
     const aggregator = ['ttk', 'npcDefRoll'].includes(calcKey) ? min : max;
-    const bestValue = aggregator(Object.values(loadouts), (l) => l[calcKey] as number);
+    const bestValue = aggregator(Object.values(loadouts).filter((l) => (calcKey === 'ttk' ? l[calcKey] !== 0 : true)), (l) => l[calcKey] as number);
 
     return Object.values(loadouts).map((l, i) => {
       const value = l[calcKey] as number;
