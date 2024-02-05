@@ -88,6 +88,6 @@ jobs:
             -H 'Authorization: Bearer ${{ secrets.CLOUDFLARE_TOKEN }}' \
             --data '{
               "files": [
-                "https://tools.runescape.wiki/$DIRECTORY_NAME"
+                "https://tools.runescape.wiki/${{ env.DIRECTORY_NAME }}"
               ]
             }'
