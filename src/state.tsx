@@ -112,6 +112,7 @@ class GlobalState implements State {
   monster: Monster = {
     id: 415,
     name: 'Abyssal demon',
+    version: 'Standard',
     image: 'Abyssal demon.png',
     size: 1,
     speed: 4,
