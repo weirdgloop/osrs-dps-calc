@@ -3,29 +3,25 @@ import {
   CalcRequestsUnion,
   CalcResponse,
   WORKER_JSON_REPLACER,
-  WORKER_JSON_REVIVER, WorkerCalcOpts,
+  WORKER_JSON_REVIVER,
   WorkerRequestType,
 } from '@/worker/CalcWorkerTypes';
-import { Player } from '@/types/Player';
-import { Monster } from '@/types/Monster';
 import { NPCVsPlayerCalculatedLoadout, PlayerVsNPCCalculatedLoadout } from '@/types/State';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
+import Comparator from '@/lib/Comparator';
 
-/**
- * Method for computing the calculator values based on given loadouts and Monster object
- * @param loadouts
- * @param m
- * @param calcOpts
- */
-const computePvMValues = async (loadouts: Player[], m: Monster, calcOpts: WorkerCalcOpts) => {
+type Handler<T extends WorkerRequestType> = (data: Extract<CalcRequestsUnion, { type: T }>['data']) => Promise<CalcResponse<T>['payload']>;
+
+const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) => {
+  const { loadouts, monster, calcOpts } = data;
   const res: PlayerVsNPCCalculatedLoadout[] = [];
 
   // eslint-disable-next-line no-restricted-syntax
   for (const [i, p] of loadouts.entries()) {
     const loadoutName = (i + 1).toString();
     const start = new Date().getTime();
-    const calc = new PlayerVsNPCCalc(p, m, {
+    const calc = new PlayerVsNPCCalc(p, monster, {
       loadoutName,
       detailedOutput: calcOpts.detailedOutput,
       disableMonsterScaling: calcOpts.disableMonsterScaling,
@@ -52,13 +48,14 @@ const computePvMValues = async (loadouts: Player[], m: Monster, calcOpts: Worker
   return res;
 };
 
-const computeMvPValues = async (loadouts: Player[], m: Monster, calcOpts: WorkerCalcOpts) => {
+const computeMvPValues: Handler<WorkerRequestType.COMPUTE_REVERSE> = async (data) => {
+  const { loadouts, monster, calcOpts } = data;
   const res: NPCVsPlayerCalculatedLoadout[] = [];
 
   for (const [i, p] of loadouts.entries()) {
     const loadoutName = (i + 1).toString();
     const start = new Date().getTime();
-    const calc = new NPCVsPlayerCalc(p, m, {
+    const calc = new NPCVsPlayerCalc(p, monster, {
       loadoutName,
       detailedOutput: calcOpts.detailedOutput,
       disableMonsterScaling: calcOpts.disableMonsterScaling,
@@ -82,9 +79,25 @@ const computeMvPValues = async (loadouts: Player[], m: Monster, calcOpts: Worker
   return res;
 };
 
+const compare: Handler<WorkerRequestType.COMPARE> = async (data) => {
+  const { axes, loadouts, monster } = data;
+  const comparator = new Comparator(loadouts, monster, axes.x, axes.y);
+
+  const [entries, domainMax] = comparator.getEntries();
+
+  return {
+    entries,
+    annotations: {
+      x: comparator.getAnnotationsX(),
+      y: comparator.getAnnotationsY(),
+    },
+    domainMax,
+  };
+};
+
 self.onmessage = async (evt: MessageEvent<string>) => {
-  const data = JSON.parse(evt.data, WORKER_JSON_REVIVER) as CalcRequestsUnion;
-  const { type, sequenceId } = data;
+  const req = JSON.parse(evt.data, WORKER_JSON_REVIVER) as CalcRequestsUnion;
+  const { type, sequenceId, data } = req;
 
   const res = {
     type,
@@ -95,12 +108,17 @@ self.onmessage = async (evt: MessageEvent<string>) => {
   try {
     switch (type) {
       case WorkerRequestType.COMPUTE_BASIC: {
-        res.payload = await computePvMValues(data.data.loadouts, data.data.monster, data.data.calcOpts);
+        res.payload = await computePvMValues(data);
         break;
       }
 
       case WorkerRequestType.COMPUTE_REVERSE: {
-        res.payload = await computeMvPValues(data.data.loadouts, data.data.monster, data.data.calcOpts);
+        res.payload = await computeMvPValues(data);
+        break;
+      }
+
+      case WorkerRequestType.COMPARE: {
+        res.payload = await compare(data);
         break;
       }
 
