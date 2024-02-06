@@ -1064,10 +1064,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       let val = 1.0; // takes at least one hit
       for (let hit = 1; hit <= Math.min(hp, max); hit++) {
         const p = hist[hit];
-        val += p.chance * htk[hp - hit];
+        val += p.value * htk[hp - hit];
       }
 
-      htk[hp] = val / (1 - hist[0].chance);
+      htk[hp] = val / (1 - hist[0].value);
     }
 
     return htk[this.monster.skills.hp];

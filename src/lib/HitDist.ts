@@ -1,5 +1,5 @@
 import { cross, max, sum } from 'd3-array';
-import { HistogramEntry } from '@/types/State';
+import { ChartEntry } from '@/types/State';
 
 export type HitTransformer = (hitsplat: number) => HitDistribution;
 
@@ -236,19 +236,19 @@ export class AttackDistribution {
     return sum(this.dists.map((d) => d.expectedHit())) || 0;
   }
 
-  public asHistogram(): HistogramEntry[] {
+  public asHistogram(): ChartEntry[] {
     const dist = this.singleHitsplat;
 
     const hitMap = new Map<number, number>();
     dist.hits.forEach((h) => hitMap.set(h.getSum(), h.probability));
 
-    const ret: HistogramEntry[] = [];
+    const ret: ChartEntry[] = [];
     for (let i = 0; i <= dist.getMax(); i++) {
       const prob = hitMap.get(i);
       if (prob === undefined) {
-        ret.push({ name: i.toString(), chance: 0 });
+        ret.push({ name: i.toString(), value: 0 });
       } else {
-        ret.push({ name: i.toString(), chance: prob });
+        ret.push({ name: i.toString(), value: prob });
       }
     }
 

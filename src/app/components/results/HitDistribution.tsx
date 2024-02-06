@@ -5,7 +5,7 @@ import {
 import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent';
 import hitsplat from '@/public/img/hitsplat.webp';
 import zero_hitsplat from '@/public/img/zero_hitsplat.png';
-import { HistogramEntry } from '@/types/State';
+import { ChartEntry } from '@/types/State';
 import { useTheme } from 'next-themes';
 import { useStore } from '@/state';
 import LazyImage from '@/app/components/generic/LazyImage';
@@ -40,7 +40,7 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, pa
   return null;
 };
 
-const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = observer(({ dist }) => {
+const HitDistribution: React.FC<{ dist: ChartEntry[] }> = observer(({ dist }) => {
   const store = useStore();
   const { prefs } = store;
   const data = prefs.hitDistsHideZeros ? dist.slice(1) : dist;
@@ -49,7 +49,7 @@ const HitDistribution: React.FC<{ dist: HistogramEntry[] }> = observer(({ dist }
   const isDark = resolvedTheme === 'dark';
 
   const [tickCount, domainMax] = useMemo(() => {
-    const highest = max(data, (d) => d.chance)!;
+    const highest = max(data, (d) => d.value as number)!;
     const stepsize = 10 ** Math.floor(Math.log10(highest) - 1);
     const ceilHighest = Math.ceil(1 / stepsize * highest) * stepsize;
     const count = 1 + Math.ceil(1 / stepsize * highest);
