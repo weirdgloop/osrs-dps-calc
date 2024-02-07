@@ -16,7 +16,7 @@ import {
 } from '@/enums/Prayer';
 import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
-  AUTOCAST_STANCES, DEFAULT_ATTACK_SPEED,
+  CAST_STANCES, DEFAULT_ATTACK_SPEED,
   GLOWING_CRYSTAL_IDS,
   GUARDIAN_IDS,
   IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS,
@@ -1017,8 +1017,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.player.style.type === 'ranged' && this.player.style.stance === 'Rapid') {
       attackSpeed -= 1;
     }
-    if (AUTOCAST_STANCES.includes(this.player.style.stance)) {
-      if (this.player.equipment.weapon?.name === 'Harmonised nightmare staff' && this.player.spell?.spellbook === 'standard') {
+    if (CAST_STANCES.includes(this.player.style.stance)) {
+      if (this.player.equipment.weapon?.name === 'Harmonised nightmare staff'
+        && this.player.spell?.spellbook === 'standard'
+        && this.player.style.stance !== 'Manual Cast') {
         return 4;
       }
       return 5;
