@@ -1017,6 +1017,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.player.style.type === 'ranged' && this.player.style.stance === 'Rapid') {
       attackSpeed -= 1;
     }
+    if (this.player.style.stance === 'Manual Cast') {
+      return 5;
+    }
     if (AUTOCAST_STANCES.includes(this.player.style.stance)) {
       if (this.player.equipment.weapon?.name === 'Harmonised nightmare staff' && this.player.spell?.spellbook === 'standard') {
         return 4;
