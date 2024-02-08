@@ -127,7 +127,6 @@ export class Debouncer {
   }
 
   async debounce(): Promise<void> {
-    console.log(new Date().getTime());
     if (this.windowTimeoutId) {
       window.clearTimeout(this.windowTimeoutId);
     }

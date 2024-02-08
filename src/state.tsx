@@ -30,6 +30,8 @@ import {
 } from './enums/Prayer';
 import Potion from './enums/Potion';
 
+const CALC_DEBOUNCE_MS: number = 250;
+
 const EMPTY_CALC_LOADOUT = {} as CalculatedLoadout;
 
 const generateInitialEquipment = () => {
@@ -202,11 +204,7 @@ class GlobalState implements State {
     ],
   };
 
-  readonly calcWorker: CalcWorker = new CalcWorker();
-
-  private readonly calcDebouncer: Debouncer = new Debouncer();
-
-  private calcDedupeId?: number;
+  private calcWorker!: CalcWorker;
 
   availableMonsters = getMonsters();
 
@@ -308,6 +306,15 @@ class GlobalState implements State {
    */
   get isNonStandardMonster() {
     return !['slash', 'crush', 'stab', 'magic', 'ranged'].includes(this.monster.style || '');
+  }
+
+  setCalcWorker(worker: CalcWorker) {
+    if (this.calcWorker) {
+      console.warn('[GlobalState] CalcWorker is already set!');
+    }
+    worker.initWorker();
+    worker.setDebouncer(new Debouncer(CALC_DEBOUNCE_MS));
+    this.calcWorker = worker;
   }
 
   recalculateEquipmentBonusesFromGear(loadoutIx?: number) {
@@ -616,13 +623,15 @@ class GlobalState implements State {
   }
 
   async doWorkerRecompute() {
+    if (!this.calcWorker?.isReady()) {
+      console.debug('[GlobalState] doWorkerRecompute called but worker is not ready, ignoring for now.');
+      return;
+    }
+
     // clear existing loadout data
     const calculatedLoadouts: CalculatedLoadout[] = [];
     this.loadouts.forEach(() => calculatedLoadouts.push(EMPTY_CALC_LOADOUT));
     this.calc.loadouts = calculatedLoadouts;
-
-    // don't fire a bajillion reqs if they're editing multiple fields
-    await this.calcDebouncer.debounce();
 
     const data: Extract<ComputeBasicRequest['data'], ComputeReverseRequest['data']> = {
       loadouts: this.loadouts,
@@ -634,17 +643,13 @@ class GlobalState implements State {
       },
     };
     const request = async (type: WorkerRequestType.COMPUTE_BASIC | WorkerRequestType.COMPUTE_REVERSE) => {
-      const { sequenceId, promise } = this.calcWorker.do({
+      const resp = await this.calcWorker.do({
         type,
         data,
       });
-      this.calcDedupeId = sequenceId;
 
-      const resp = await promise;
-      if (this.calcDedupeId === resp.sequenceId) {
-        console.log('resp.payload', resp.payload);
-        this.updateCalcResults({ loadouts: resp.payload });
-      }
+      console.log(`[GlobalState] Calc response ${WorkerRequestType[type]}`, resp.payload);
+      this.updateCalcResults({ loadouts: resp.payload });
     };
 
     await request(WorkerRequestType.COMPUTE_BASIC);

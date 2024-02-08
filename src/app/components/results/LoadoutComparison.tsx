@@ -1,5 +1,5 @@
 import React, {
-  useCallback, useEffect, useMemo, useRef,
+  useCallback, useEffect, useMemo, useState,
 } from 'react';
 import {
   CartesianGrid,
@@ -17,76 +17,16 @@ import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 import Select from '@/app/components/generic/Select';
 import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent';
-import {
-  makeAutoObservable,
-} from 'mobx';
+import { toJS } from 'mobx';
 import { useTheme } from 'next-themes';
 import equipmentStats from '@/public/img/Equipment Stats.png';
 import SectionAccordion from '@/app/components/generic/SectionAccordion';
 import LazyImage from '@/app/components/generic/LazyImage';
 import { CompareResult, CompareXAxis, CompareYAxis } from '@/lib/Comparator';
 import { CompareRequest, WorkerRequestType } from '@/worker/CalcWorkerTypes';
-import { Debouncer, keys } from '@/utils';
+import { keys } from '@/utils';
 import { ChartAnnotation } from '@/types/State';
-import CalcWorker from '@/worker/CalcWorker';
-import { Player } from '@/types/Player';
-import { Monster } from '@/types/Monster';
-
-class ComparisonStore {
-  private readonly debouncer: Debouncer;
-
-  private readonly worker: CalcWorker;
-
-  private sequenceId: number = -1;
-
-  _result?: CompareResult;
-
-  get result() { return this._result; }
-
-  set result(v) { this._result = v; }
-
-  _xAxis: { label: string, axisLabel?: string, value: CompareXAxis } = { label: 'Monster defence level', axisLabel: 'Level', value: CompareXAxis.MONSTER_DEF };
-
-  get xAxis() { return this._xAxis; }
-
-  setXAxis(v: { label: string, axisLabel?: string, value: CompareXAxis }) { this._xAxis = v; }
-
-  _yAxis: { label: string, axisLabel?: string, value: CompareYAxis } = { label: 'Player damage-per-second', axisLabel: 'DPS', value: CompareYAxis.PLAYER_DPS };
-
-  get yAxis() { return this._yAxis; }
-
-  setYAxis(v: { label: string, axisLabel?: string, value: CompareYAxis }) { this._yAxis = v; }
-
-  constructor() {
-    makeAutoObservable(this, {}, { autoBind: true });
-    this.debouncer = new Debouncer(250);
-    this.worker = new CalcWorker();
-    this.worker.initWorker();
-  }
-
-  async recompute(loadouts: Player[], monster: Monster) {
-    await this.debouncer.debounce();
-    const req: CompareRequest = {
-      type: WorkerRequestType.COMPARE,
-      data: {
-        loadouts,
-        monster,
-        axes: {
-          x: this.xAxis.value,
-          y: this.yAxis.value,
-        },
-      },
-    };
-    const { sequenceId, promise } = this.worker.do(req);
-    this.sequenceId = sequenceId;
-
-    await promise.then((resp) => {
-      if (resp.sequenceId === this.sequenceId && !resp.error) {
-        this.result = resp.payload;
-      }
-    });
-  }
-}
+import { useCalc } from '@/worker/CalcWorker';
 
 const XAxisOptions = [
   { label: 'Monster defence level', axisLabel: 'Level', value: CompareXAxis.MONSTER_DEF },
@@ -136,32 +76,21 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, pa
   return null;
 };
 
-function stringToHash(string) {
-  let hash = 0;
-
-  if (string.length === 0) return hash;
-
-  for (let i = 0; i < string.length; i++) {
-    const char = string.charCodeAt(i);
-    hash = ((hash << 5) - hash) + char;
-    hash &= hash;
-  }
-
-  return hash;
-}
-
 const LoadoutComparison: React.FC = observer(() => {
+  const calc = useCalc();
   const store = useStore();
-  const { monster, loadouts } = store;
+  const { monster } = store;
   const { showLoadoutComparison } = store.prefs;
-  const comparisonStore = useRef(new ComparisonStore());
-  console.log(stringToHash(JSON.stringify(loadouts)));
-
-  const compareData = comparisonStore.current.result;
+  const loadouts = toJS(store.loadouts);
 
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
 
+  const [compareResult, setCompareResult] = useState<CompareResult>();
+  const [xAxisType, setXAxisType] = useState<{ label: string, axisLabel?: string, value: CompareXAxis } | null | undefined>(XAxisOptions[0]);
+  const [yAxisType, setYAxisType] = useState<{ label: string, axisLabel?: string, value: CompareYAxis } | null | undefined>({ label: 'Player damage-per-second', axisLabel: 'DPS', value: CompareYAxis.PLAYER_DPS });
+
+  // recompute the valid y axis options if the monster has reverse dps support
   const YAxisOptions = useMemo(() => {
     const opts = [
       { label: 'Player damage-per-second', axisLabel: 'DPS', value: CompareYAxis.PLAYER_DPS },
@@ -180,37 +109,52 @@ const LoadoutComparison: React.FC = observer(() => {
     return opts;
   }, [store.isNonStandardMonster]);
 
+  // If the list of Y axis options changes, and the option we have selected no longer exists, reset to the first one
   useEffect(() => {
-    // If the list of Y axis options changes, and the option we have selected no longer exists, reset to the first one
-    if (!YAxisOptions.find((opt) => opt.value === comparisonStore.current.yAxis.value)) {
-      comparisonStore.current.setYAxis(YAxisOptions[0]);
+    if (!YAxisOptions.find((opt) => opt.value === yAxisType?.value)) {
+      setYAxisType(YAxisOptions[0]);
     }
-  }, [YAxisOptions]);
+  }, [yAxisType, YAxisOptions]);
 
+  // recompute results hook
   useEffect(() => {
-    if (!showLoadoutComparison) {
-      comparisonStore.current.result = undefined;
+    if (!showLoadoutComparison || !xAxisType || !yAxisType || !calc.isReady()) {
+      setCompareResult(undefined);
       return;
     }
 
-    comparisonStore.current.recompute(loadouts, monster)
-      .catch(console.error);
-  }, [showLoadoutComparison, loadouts, monster, comparisonStore.current.xAxis, comparisonStore.current.yAxis]);
+    const req: CompareRequest = {
+      type: WorkerRequestType.COMPARE,
+      data: {
+        loadouts,
+        monster,
+        axes: {
+          x: xAxisType.value,
+          y: yAxisType.value,
+        },
+      },
+    };
+    calc.do(req).then((resp) => {
+      setCompareResult(resp.payload);
+    }).catch((e: unknown) => {
+      console.error('[LoadoutComparison] Failed to compute compare results', e);
+    });
+  }, [showLoadoutComparison, loadouts, monster, xAxisType, yAxisType]);
 
   const [tickCount, domainMax] = useMemo(() => {
-    if (!compareData?.domainMax) {
+    if (!compareResult?.domainMax) {
       return [1, 1];
     }
 
-    const highest = compareData.domainMax;
+    const highest = compareResult.domainMax;
     const stepsize = 10 ** Math.floor(Math.log10(highest) - 1);
     const ceilHighest = Math.ceil(1 / stepsize * highest) * stepsize - 1 / 1e9;
     const count = 1 + Math.ceil(1 / stepsize * highest);
     return [count, ceilHighest];
-  }, [compareData]);
+  }, [compareResult]);
 
   const generateChartLines = useCallback(() => {
-    if (!compareData?.entries.length) {
+    if (!compareResult?.entries.length) {
       return [];
     }
 
@@ -219,7 +163,7 @@ const LoadoutComparison: React.FC = observer(() => {
       : ['blue', 'chocolate', 'green', 'sienna', 'purple'];
 
     const lines: React.ReactNode[] = [];
-    keys(compareData.entries[0]).forEach((k) => {
+    keys(compareResult.entries[0]).forEach((k) => {
       if (k !== 'name') {
         const colour = strokeColours.shift() || 'red';
         lines.push(<Line
@@ -234,10 +178,10 @@ const LoadoutComparison: React.FC = observer(() => {
       }
     });
     return lines;
-  }, [compareData, isDark]);
+  }, [compareResult, isDark]);
 
   const generateAnnotations = useCallback((): React.ReactNode[] => {
-    if (!compareData) {
+    if (!compareResult) {
       return [];
     }
 
@@ -255,10 +199,10 @@ const LoadoutComparison: React.FC = observer(() => {
     );
 
     return [
-      ...compareData.annotations.x.map((a) => toRecharts(a, true)),
-      ...compareData.annotations.x.map((a) => toRecharts(a, false)),
+      ...compareResult.annotations.x.map((a) => toRecharts(a, true)),
+      ...compareResult.annotations.x.map((a) => toRecharts(a, false)),
     ];
-  }, [compareData, isDark]);
+  }, [compareResult, isDark]);
 
   return (
     <SectionAccordion
@@ -273,11 +217,11 @@ const LoadoutComparison: React.FC = observer(() => {
         </div>
       )}
     >
-      {compareData && (
+      {compareResult && (
         <div className="px-6 py-4">
           <ResponsiveContainer width="100%" height={250}>
             <LineChart
-              data={compareData.entries}
+              data={compareResult.entries}
               margin={{ top: 40, right: 20 }}
             >
               <XAxis
@@ -285,7 +229,7 @@ const LoadoutComparison: React.FC = observer(() => {
                 dataKey="name"
                 stroke="#777777"
                 interval="equidistantPreserveStart"
-                label={{ value: comparisonStore.current.xAxis.axisLabel, position: 'insideBottom', offset: -15 }}
+                label={{ value: xAxisType?.axisLabel, position: 'insideBottom', offset: -15 }}
               />
               <YAxis
                 stroke="#777777"
@@ -294,7 +238,7 @@ const LoadoutComparison: React.FC = observer(() => {
                 tickFormatter={(v: number) => `${parseFloat(v.toFixed(2))}`}
                 interval="equidistantPreserveStart"
                 label={{
-                  value: comparisonStore.current.yAxis.axisLabel, position: 'insideLeft', angle: -90, style: { textAnchor: 'middle' },
+                  value: yAxisType?.axisLabel, position: 'insideLeft', angle: -90, style: { textAnchor: 'middle' },
                 }}
               />
               <CartesianGrid stroke="gray" strokeDasharray="5 5" />
@@ -312,9 +256,9 @@ const LoadoutComparison: React.FC = observer(() => {
               <Select
                 id="loadout-comparison-x"
                 items={XAxisOptions}
-                value={comparisonStore.current.xAxis}
+                value={xAxisType || undefined}
                 onSelectedItemChange={(i) => {
-                  comparisonStore.current.setXAxis(i!);
+                  setXAxisType(i);
                 }}
               />
             </div>
@@ -323,9 +267,9 @@ const LoadoutComparison: React.FC = observer(() => {
               <Select
                 id="loadout-comparison-y"
                 items={YAxisOptions}
-                value={comparisonStore.current.yAxis}
+                value={yAxisType || undefined}
                 onSelectedItemChange={(i) => {
-                  comparisonStore.current.setYAxis(i!);
+                  setYAxisType(i);
                 }}
               />
             </div>
