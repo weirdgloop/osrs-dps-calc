@@ -17,17 +17,15 @@ import ShareModal from '@/app/components/ShareModal';
 import DebugPanels from '@/app/components/results/DebugPanels';
 import { IconAlertTriangle } from '@tabler/icons-react';
 import NPCVersusPlayerResultsContainer from '@/app/components/results/NPCVersusPlayerResultsContainer';
+import { CalcProvider, useCalc } from '@/worker/CalcWorker';
 
 const Home: NextPage = observer(() => {
+  const calc = useCalc();
   const store = useStore();
   store.debug = process.env && process.env.NODE_ENV === 'development';
 
   useEffect(() => {
-    // set up the web worker on component mount
-    store.calcWorker.initWorker();
-
-    // and make sure it tears down cleanly on unmount
-    return () => store.calcWorker.shutdown();
+    store.setCalcWorker(calc);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -117,7 +115,10 @@ const Home: NextPage = observer(() => {
       </div>
       {/* Additional graphs and stuff */}
       <div className="max-w-[1420px] mx-auto mb-8">
-        <LoadoutComparison />
+        {/* LoadoutComparison requires its own calc context */}
+        <CalcProvider>
+          <LoadoutComparison />
+        </CalcProvider>
         <TtkComparison />
         <NPCVersusPlayerResultsContainer />
         <DebugPanels />
