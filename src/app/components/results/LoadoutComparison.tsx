@@ -1,5 +1,5 @@
 import React, {
-  useCallback, useEffect, useMemo,
+  useCallback, useEffect, useMemo, useRef,
 } from 'react';
 import {
   CartesianGrid,
@@ -18,7 +18,7 @@ import { useStore } from '@/state';
 import Select from '@/app/components/generic/Select';
 import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent';
 import {
-  makeAutoObservable, toJS,
+  makeAutoObservable,
 } from 'mobx';
 import { useTheme } from 'next-themes';
 import equipmentStats from '@/public/img/Equipment Stats.png';
@@ -49,13 +49,13 @@ class ComparisonStore {
 
   get xAxis() { return this._xAxis; }
 
-  set xAxis(v) { this._xAxis = v; }
+  setXAxis(v: { label: string, axisLabel?: string, value: CompareXAxis }) { this._xAxis = v; }
 
   _yAxis: { label: string, axisLabel?: string, value: CompareYAxis } = { label: 'Player damage-per-second', axisLabel: 'DPS', value: CompareYAxis.PLAYER_DPS };
 
   get yAxis() { return this._yAxis; }
 
-  set yAxis(v) { this._yAxis = v; }
+  setYAxis(v: { label: string, axisLabel?: string, value: CompareYAxis }) { this._yAxis = v; }
 
   constructor() {
     makeAutoObservable(this, {}, { autoBind: true });
@@ -87,7 +87,6 @@ class ComparisonStore {
     });
   }
 }
-const comparisonStore = new ComparisonStore();
 
 const XAxisOptions = [
   { label: 'Monster defence level', axisLabel: 'Level', value: CompareXAxis.MONSTER_DEF },
@@ -153,12 +152,12 @@ function stringToHash(string) {
 
 const LoadoutComparison: React.FC = observer(() => {
   const store = useStore();
-  const { monster } = store;
+  const { monster, loadouts } = store;
   const { showLoadoutComparison } = store.prefs;
-  const loadouts = toJS(store.loadouts);
+  const comparisonStore = useRef(new ComparisonStore());
   console.log(stringToHash(JSON.stringify(loadouts)));
 
-  const compareData = toJS(comparisonStore.result);
+  const compareData = comparisonStore.current.result;
 
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
@@ -183,20 +182,20 @@ const LoadoutComparison: React.FC = observer(() => {
 
   useEffect(() => {
     // If the list of Y axis options changes, and the option we have selected no longer exists, reset to the first one
-    if (!YAxisOptions.find((opt) => opt.value === comparisonStore.yAxis.value)) {
-      comparisonStore.yAxis = YAxisOptions[0];
+    if (!YAxisOptions.find((opt) => opt.value === comparisonStore.current.yAxis.value)) {
+      comparisonStore.current.setYAxis(YAxisOptions[0]);
     }
   }, [YAxisOptions]);
 
   useEffect(() => {
     if (!showLoadoutComparison) {
-      comparisonStore.result = undefined;
+      comparisonStore.current.result = undefined;
       return;
     }
 
-    comparisonStore.recompute(loadouts, monster)
+    comparisonStore.current.recompute(loadouts, monster)
       .catch(console.error);
-  }, [showLoadoutComparison, loadouts, monster]);
+  }, [showLoadoutComparison, loadouts, monster, comparisonStore.current.xAxis, comparisonStore.current.yAxis]);
 
   const [tickCount, domainMax] = useMemo(() => {
     if (!compareData?.domainMax) {
@@ -286,7 +285,7 @@ const LoadoutComparison: React.FC = observer(() => {
                 dataKey="name"
                 stroke="#777777"
                 interval="equidistantPreserveStart"
-                label={{ value: comparisonStore.xAxis.axisLabel, position: 'insideBottom', offset: -15 }}
+                label={{ value: comparisonStore.current.xAxis.axisLabel, position: 'insideBottom', offset: -15 }}
               />
               <YAxis
                 stroke="#777777"
@@ -295,7 +294,7 @@ const LoadoutComparison: React.FC = observer(() => {
                 tickFormatter={(v: number) => `${parseFloat(v.toFixed(2))}`}
                 interval="equidistantPreserveStart"
                 label={{
-                  value: comparisonStore.yAxis.axisLabel, position: 'insideLeft', angle: -90, style: { textAnchor: 'middle' },
+                  value: comparisonStore.current.yAxis.axisLabel, position: 'insideLeft', angle: -90, style: { textAnchor: 'middle' },
                 }}
               />
               <CartesianGrid stroke="gray" strokeDasharray="5 5" />
@@ -313,9 +312,9 @@ const LoadoutComparison: React.FC = observer(() => {
               <Select
                 id="loadout-comparison-x"
                 items={XAxisOptions}
-                value={comparisonStore.xAxis}
+                value={comparisonStore.current.xAxis}
                 onSelectedItemChange={(i) => {
-                  comparisonStore.xAxis = i!;
+                  comparisonStore.current.setXAxis(i!);
                 }}
               />
             </div>
@@ -324,9 +323,9 @@ const LoadoutComparison: React.FC = observer(() => {
               <Select
                 id="loadout-comparison-y"
                 items={YAxisOptions}
-                value={comparisonStore.yAxis}
+                value={comparisonStore.current.yAxis}
                 onSelectedItemChange={(i) => {
-                  comparisonStore.yAxis = i!;
+                  comparisonStore.current.setYAxis(i!);
                 }}
               />
             </div>
