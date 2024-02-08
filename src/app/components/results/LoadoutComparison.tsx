@@ -146,7 +146,7 @@ const LoadoutComparison: React.FC = observer(() => {
       return [1, 1];
     }
 
-    const highest = compareResult.domainMax;
+    const highest = Math.ceil(compareResult.domainMax);
     const stepsize = 10 ** Math.floor(Math.log10(highest) - 1);
     const ceilHighest = Math.ceil(1 / stepsize * highest) * stepsize - 1 / 1e9;
     const count = 1 + Math.ceil(1 / stepsize * highest);
