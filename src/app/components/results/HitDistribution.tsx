@@ -111,7 +111,7 @@ const HitDistribution: React.FC<{ dist: ChartEntry[] }> = observer(({ dist }) =>
               content={(props) => <CustomTooltip {...props} />}
               cursor={{ fill: isDark ? '#3c3226' : '#b0aa9a' }}
             />
-            <Bar dataKey="chance" fill="tan" isAnimationActive={false} />
+            <Bar dataKey="value" fill="tan" isAnimationActive={false} />
           </BarChart>
         </ResponsiveContainer>
       </div>
