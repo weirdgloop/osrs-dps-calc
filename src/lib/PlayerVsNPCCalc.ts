@@ -957,9 +957,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
-    // now also cap hits indiscriminately by the monster's max health, in case it is higher
-    dist = dist.transform(flatLimitTransformer(this.monster.skills.hp));
-
     return dist;
   }
 
