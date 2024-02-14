@@ -236,13 +236,13 @@ export class AttackDistribution {
     return sum(this.dists.map((d) => d.expectedHit())) || 0;
   }
 
-  public asHistogram(): ChartEntry[] {
+  public asHistogram(): (ChartEntry & { name: string, value: number })[] {
     const dist = this.singleHitsplat;
 
     const hitMap = new Map<number, number>();
     dist.hits.forEach((h) => hitMap.set(h.getSum(), h.probability));
 
-    const ret: ChartEntry[] = [];
+    const ret: { name: string, value: number }[] = [];
     for (let i = 0; i <= dist.getMax(); i++) {
       const prob = hitMap.get(i);
       if (prob === undefined) {
