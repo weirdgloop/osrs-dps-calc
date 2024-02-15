@@ -748,11 +748,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (style === 'ranged' && this.isWearingKarils()) {
       dist = new AttackDistribution([
-        standardHitDist.scaleProbability(0.75),
         new HitDistribution([
+          ...standardHitDist.scaleProbability(0.75).hits,
           ...standardHitDist.hits.map((h) => new WeightedHit(
-            h.probability * 0.25, // 25% chance to
-            [...h.hitsplats, ...h.hitsplats.map((s) => Math.trunc(s / 2))], // deal a second hitsplat of half damage
+            h.probability * 0.25, // 25% chance of effect
+            [h.hitsplats[0], Math.trunc(h.hitsplats[0] / 2)], // to deal a second hitsplat of half damage
           )),
         ]),
       ]);
@@ -956,9 +956,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         dist = dist.transform(divisionTransformer(4));
       }
     }
-
-    // now also cap hits indiscriminately by the monster's max health, in case it is higher
-    dist = dist.transform(flatLimitTransformer(this.monster.skills.hp));
 
     return dist;
   }
