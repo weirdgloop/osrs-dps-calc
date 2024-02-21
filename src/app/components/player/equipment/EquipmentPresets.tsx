@@ -7,15 +7,19 @@ import { Player } from '@/types/Player';
 import { availableEquipment } from '@/lib/Equipment';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { getCombatStylesForCategory } from '@/utils';
+import { Prayer } from '@/enums/Prayer';
+import Potion from '@/enums/Potion';
 
 const EquipmentPresets: React.FC = () => {
   const store = useStore();
 
   const presets = [
-    { label: 'Dharok\'s equipment', value: EquipmentPreset.DHAROKS },
-    { label: 'Max Mage', value: EquipmentPreset.MAX_MAGE },
+    { label: 'Max Melee Scythe', value: EquipmentPreset.MAX_MELEE_SCYTHE },
     { label: 'Max Melee', value: EquipmentPreset.MAX_MELEE },
-    { label: 'Max Ranged', value: EquipmentPreset.MAX_RANGED },
+    { label: 'Max Mage Shadow', value: EquipmentPreset.MAX_MAGE_SHADOW },
+    { label: 'Max Mage', value: EquipmentPreset.MAX_MAGE },
+    { label: 'Max Ranged Twisted Bow', value: EquipmentPreset.MAX_RANGED_TWISTED_BOW },
+    { label: 'Max Ranged Blowpipe', value: EquipmentPreset.MAX_RANGED_BLOWPIPE },
     { label: 'Mid Level Mage', value: EquipmentPreset.MID_LEVEL_MAGE },
     { label: 'Mid Level Melee', value: EquipmentPreset.MID_LEVEL_MELEE },
     { label: 'Mid Level Ranged', value: EquipmentPreset.MID_LEVEL_RANGED },
@@ -24,6 +28,7 @@ const EquipmentPresets: React.FC = () => {
     { label: 'Void Melee', value: EquipmentPreset.VOID_MELEE },
     { label: 'Void Ranged', value: EquipmentPreset.VOID_RANGED },
     { label: 'Tank', value: EquipmentPreset.TANK },
+    { label: 'Dharok\'s equipment', value: EquipmentPreset.DHAROKS },
   ];
 
   const onSelect = useCallback((v: { label: string, value: EquipmentPreset } | null | undefined) => {
@@ -51,6 +56,27 @@ const EquipmentPresets: React.FC = () => {
         };
         break;
       }
+      case EquipmentPreset.MAX_MAGE_SHADOW: {
+        newPlayer = {
+          name: v.label,
+          equipment: {
+            head: findItemById(21018), // Ancestral hat
+            cape: findItemById(21791), // Imbued saradomin cape
+            neck: findItemById(12002), // Occult necklace
+            ammo: findItemById(22947), // Rada's blessing 4
+            weapon: findItemById(27275), // Tumeken's shadow
+            body: findItemById(21021), // Ancestral robe top
+            legs: findItemById(21024), // Ancestral robe bottom
+            hands: findItemById(19544), // Tormented bracelet
+            feet: findItemById(13235), // Eternal boots
+            ring: findItemById(28313), // Magus ring
+          },
+          prayers: [Prayer.AUGURY],
+          buffs: { potions: [Potion.SATURATED_HEART] },
+        };
+        break;
+      }
+
       case EquipmentPreset.MAX_MAGE: {
         newPlayer = {
           name: v.label,
@@ -59,15 +85,41 @@ const EquipmentPresets: React.FC = () => {
             cape: findItemById(21791), // Imbued saradomin cape
             neck: findItemById(12002), // Occult necklace
             ammo: findItemById(22947), // Rada's blessing 4
+            weapon: findItemById(22323), // Sanguinesti staff
+            shield: findItemById(27251), // Elidinis' ward (f)
             body: findItemById(21021), // Ancestral robe top
             legs: findItemById(21024), // Ancestral robe bottom
             hands: findItemById(19544), // Tormented bracelet
             feet: findItemById(13235), // Eternal boots
             ring: findItemById(28313), // Magus ring
           },
+          prayers: [Prayer.AUGURY],
+          buffs: { potions: [Potion.SATURATED_HEART] },
         };
         break;
       }
+
+      case EquipmentPreset.MAX_MELEE_SCYTHE: {
+        newPlayer = {
+          name: v.label,
+          equipment: {
+            head: findItemById(26382), // Torva full helm
+            cape: findItemById(21295), // Infernal cape
+            neck: findItemById(19553), // Amulet of torture
+            ammo: findItemById(22947), // Rada's blessing 4
+            weapon: findItemById(22325), // Scythe of vitur
+            body: findItemById(26384), // Torva platebody
+            legs: findItemById(26386), // Torva platelegs
+            hands: findItemById(22981), // Ferocious gloves
+            feet: findItemById(13239), // Primordial boots
+            ring: findItemById(28307), // Ultor ring
+          },
+          prayers: [Prayer.PIETY],
+          buffs: { potions: [Potion.SUPER_COMBAT] },
+        };
+        break;
+      }
+
       case EquipmentPreset.MAX_MELEE: {
         newPlayer = {
           name: v.label,
@@ -76,16 +128,20 @@ const EquipmentPresets: React.FC = () => {
             cape: findItemById(21295), // Infernal cape
             neck: findItemById(19553), // Amulet of torture
             ammo: findItemById(22947), // Rada's blessing 4
+            weapon: null,
+            shield: null,
             body: findItemById(26384), // Torva platebody
             legs: findItemById(26386), // Torva platelegs
             hands: findItemById(22981), // Ferocious gloves
             feet: findItemById(13239), // Primordial boots
             ring: findItemById(28307), // Ultor ring
           },
+          prayers: [Prayer.PIETY],
+          buffs: { potions: [Potion.SUPER_COMBAT] },
         };
         break;
       }
-      case EquipmentPreset.MAX_RANGED: {
+      case EquipmentPreset.MAX_RANGED_TWISTED_BOW: {
         newPlayer = {
           name: v.label,
           equipment: {
@@ -93,12 +149,35 @@ const EquipmentPresets: React.FC = () => {
             cape: findItemById(28955), // Blessed dizana's quiver
             neck: findItemById(19547), // Necklace of anguish
             ammo: findItemById(11212), // Dragon arrow
+            weapon: findItemById(20997), // Twisted bow
             body: findItemById(27238), // Masori body (f)
             legs: findItemById(27241), // Masori chaps (f)
             hands: findItemById(26235), // Zaryte vambraces
             feet: findItemById(13237), // Pegasian boots
             ring: findItemById(28310), // Venator ring
           },
+          prayers: [Prayer.RIGOUR],
+          buffs: { potions: [Potion.RANGING] },
+        };
+        break;
+      }
+      case EquipmentPreset.MAX_RANGED_BLOWPIPE: {
+        newPlayer = {
+          name: v.label,
+          equipment: {
+            head: findItemById(27235), // Masori mask (f)
+            cape: findItemById(22109), // Ava's assembler
+            neck: findItemById(19547), // Necklace of anguish
+            ammo: findItemById(11230), // Dragon dart
+            weapon: findItemById(12926), // Toxic Blowpipe
+            body: findItemById(27238), // Masori body (f)
+            legs: findItemById(27241), // Masori chaps (f)
+            hands: findItemById(26235), // Zaryte vambraces
+            feet: findItemById(13237), // Pegasian boots
+            ring: findItemById(28310), // Venator ring
+          },
+          prayers: [Prayer.RIGOUR],
+          buffs: { potions: [Potion.RANGING] },
         };
         break;
       }
