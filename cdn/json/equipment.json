@@ -78870,6 +78870,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Twitcher's gloves",
+    "id": 28630,
+    "version": "",
+    "slot": "hands",
+    "image": "Twitcher's gloves.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 1,
+      "crush": 2,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Tyrannical ring",
     "id": 12603,
     "version": "",
@@ -85616,6 +85646,36 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Zombie axe",
+    "id": 28810,
+    "version": "",
+    "slot": "weapon",
+    "image": "Zombie axe.png",
+    "speed": 5,
+    "category": "Axe",
+    "bonuses": {
+      "str": 107,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -3,
+      "slash": 105,
+      "crush": 90,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": -1,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": -1
     },
     "isTwoHanded": false
   },

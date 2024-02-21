@@ -9263,313 +9263,6 @@
     "attributes": []
   },
   {
-    "id": 12566,
-    "name": "Bloodthirsty Basilisk Sentinel",
-    "version": "",
-    "image": "Bloodthirsty Basilisk Sentinel.png",
-    "level": 537,
-    "speed": 4,
-    "style": [
-      "Magic",
-      "Melee"
-    ],
-    "size": 3,
-    "max_hit": "42",
-    "skills": [
-      411,
-      274,
-      780,
-      411,
-      1,
-      411
-    ],
-    "offensive": [
-      12,
-      12,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      10,
-      50,
-      10,
-      50,
-      50
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12568,
-    "name": "Bloodthirsty Bloodveld",
-    "version": "",
-    "image": "Bloodthirsty Bloodveld.png",
-    "level": 303,
-    "speed": 4,
-    "style": [
-      "Magical melee"
-    ],
-    "size": 3,
-    "max_hit": "20+",
-    "skills": [
-      285,
-      85,
-      435,
-      1,
-      1,
-      217
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": [
-      "demon"
-    ]
-  },
-  {
-    "id": 12562,
-    "name": "Bloodthirsty Cockathrice",
-    "version": "",
-    "image": "Bloodthirsty Cockathrice.png",
-    "level": 133,
-    "speed": 4,
-    "style": [
-      "Stab"
-    ],
-    "size": 3,
-    "max_hit": "13",
-    "skills": [
-      94,
-      78,
-      142,
-      1,
-      1,
-      117
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      20,
-      0,
-      20,
-      20
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12588,
-    "name": "Bloodthirsty Hydra",
-    "version": "",
-    "image": "Bloodthirsty Hydra.png",
-    "level": 501,
-    "speed": 6,
-    "style": [
-      "Magic",
-      "Ranged"
-    ],
-    "size": 5,
-    "max_hit": "38",
-    "skills": [
-      1,
-      100,
-      1125,
-      375,
-      375,
-      1
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      200,
-      200,
-      20,
-      200,
-      100
-    ],
-    "attributes": [
-      "dragon"
-    ]
-  },
-  {
-    "id": 12564,
-    "name": "Bloodthirsty Infernal pyrelord",
-    "version": "",
-    "image": "Bloodthirsty Infernal pyrelord.png",
-    "level": 201,
-    "speed": 4,
-    "style": [
-      "Magical melee"
-    ],
-    "size": 2,
-    "max_hit": 0,
-    "skills": [
-      186,
-      68,
-      276,
-      1,
-      1,
-      144
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      18,
-      0,
-      18,
-      18,
-      18
-    ],
-    "attributes": [
-      "demon"
-    ]
-  },
-  {
-    "id": 12570,
-    "name": "Bloodthirsty Jelly",
-    "version": "",
-    "image": "Bloodthirsty Jelly.png",
-    "level": 309,
-    "speed": 4,
-    "style": [
-      "Magical melee"
-    ],
-    "size": 2,
-    "max_hit": "23",
-    "skills": [
-      255,
-      220,
-      285,
-      225,
-      1,
-      225
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12582,
-    "name": "Bloodthirsty Nechryarch",
-    "version": "",
-    "image": "Bloodthirsty Nechryarch.png",
-    "level": 450,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 2,
-    "max_hit": "40",
-    "skills": [
-      465,
-      140,
-      480,
-      1,
-      1,
-      390
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      30,
-      0,
-      30,
-      30,
-      30
-    ],
-    "attributes": [
-      "demon"
-    ]
-  },
-  {
-    "id": 12580,
-    "name": "Bloodthirsty Night beast",
-    "version": "",
-    "image": "Bloodthirsty Night beast.png",
-    "level": 561,
-    "speed": 4,
-    "style": [
-      "Crush",
-      "Magic"
-    ],
-    "size": 4,
-    "max_hit": "44",
-    "skills": [
-      405,
-      220,
-      825,
-      450,
-      1,
-      435
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      200,
-      190,
-      200,
-      80,
-      75
-    ],
-    "attributes": []
-  },
-  {
     "id": 12585,
     "name": "Bloodthirsty Shadow Wyrm",
     "version": "Attacking",
@@ -9648,312 +9341,6 @@
     "attributes": [
       "dragon"
     ]
-  },
-  {
-    "id": 12582,
-    "name": "Bloodthirsty Turoth",
-    "version": "",
-    "image": "Bloodthirsty Turoth.png",
-    "level": 366,
-    "speed": 4,
-    "style": [
-      "Melee"
-    ],
-    "size": 3,
-    "max_hit": "43",
-    "skills": [
-      306,
-      154,
-      292,
-      1,
-      1,
-      420
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      40,
-      0,
-      0,
-      40,
-      0
-    ],
-    "attributes": [
-      "leafy"
-    ]
-  },
-  {
-    "id": 12581,
-    "name": "Bloodthirsty abyssal demon",
-    "version": "",
-    "image": "Bloodthirsty abyssal demon.png",
-    "level": 513,
-    "speed": 4,
-    "style": [
-      "Stab"
-    ],
-    "size": 1,
-    "max_hit": "40",
-    "skills": [
-      450,
-      240,
-      600,
-      1,
-      1,
-      390
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      50,
-      0,
-      50,
-      50,
-      50
-    ],
-    "attributes": [
-      "demon"
-    ]
-  },
-  {
-    "id": 12565,
-    "name": "Bloodthirsty basilisk",
-    "version": "",
-    "image": "Bloodthirsty basilisk.png",
-    "level": 202,
-    "speed": 4,
-    "style": [
-      "Slash"
-    ],
-    "size": 3,
-    "max_hit": "16",
-    "skills": [
-      132,
-      130,
-      255,
-      1,
-      1,
-      147
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      35,
-      0,
-      35,
-      35
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12576,
-    "name": "Bloodthirsty kurask",
-    "version": "",
-    "image": "Bloodthirsty kurask.png",
-    "level": 295,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 5,
-    "max_hit": "49",
-    "skills": [
-      285,
-      250,
-      405,
-      1,
-      1,
-      480
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      5,
-      0,
-      0,
-      50,
-      0
-    ],
-    "attributes": [
-      "leafy"
-    ]
-  },
-  {
-    "id": 12569,
-    "name": "Bloodthirsty mutated Bloodveld",
-    "version": "",
-    "image": "Bloodthirsty mutated Bloodveld.png",
-    "level": 417,
-    "speed": 4,
-    "style": [
-      "Magical melee"
-    ],
-    "size": 3,
-    "max_hit": "27+",
-    "skills": [
-      375,
-      130,
-      615,
-      1,
-      1,
-      285
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": [
-      "demon"
-    ]
-  },
-  {
-    "id": 12563,
-    "name": "Bloodthirsty pyrelord",
-    "version": "",
-    "image": "Bloodthirsty pyrelord.png",
-    "level": 145,
-    "speed": 4,
-    "style": [
-      "Magical melee"
-    ],
-    "size": 2,
-    "max_hit": 0,
-    "skills": [
-      147,
-      52,
-      187,
-      1,
-      1,
-      97
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      18,
-      0,
-      18,
-      18,
-      18
-    ],
-    "attributes": [
-      "demon"
-    ]
-  },
-  {
-    "id": 12577,
-    "name": "Bloodthirsty smoke devil",
-    "version": "",
-    "image": "Bloodthirsty smoke devil.png",
-    "level": 420,
-    "speed": 4,
-    "style": [
-      "Magical ranged"
-    ],
-    "size": 2,
-    "max_hit": "35",
-    "skills": [
-      360,
-      390,
-      360,
-      1,
-      420,
-      345
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      850,
-      80,
-      0,
-      0
-    ],
-    "attributes": []
-  },
-  {
-    "id": 12571,
-    "name": "Bloodthirsty warped Jelly",
-    "version": "",
-    "image": "Bloodthirsty warped Jelly.png",
-    "level": 361,
-    "speed": 4,
-    "style": [
-      "Magical melee"
-    ],
-    "size": 3,
-    "max_hit": "28",
-    "skills": [
-      300,
-      250,
-      330,
-      270,
-      1,
-      270
-    ],
-    "offensive": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "attributes": []
   },
   {
     "id": 3138,
@@ -18666,7 +18053,7 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": "6",
+    "max_hit": "5",
     "skills": [
       5,
       10,
@@ -18740,7 +18127,7 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": "6",
+    "max_hit": "5",
     "skills": [
       20,
       15,
@@ -18777,7 +18164,7 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": "6",
+    "max_hit": "5",
     "skills": [
       20,
       20,
@@ -18814,7 +18201,7 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": "6",
+    "max_hit": "2",
     "skills": [
       5,
       5,
@@ -19876,7 +19263,7 @@
       "Magic"
     ],
     "size": 2,
-    "max_hit": "21",
+    "max_hit": "8",
     "skills": [
       1,
       90,
@@ -45214,7 +44601,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "80",
+    "max_hit": "80 (lightning)",
     "skills": [
       150,
       140,
@@ -66845,7 +66232,7 @@
       0,
       0,
       0,
-      0,
+      110,
       0,
       0
     ],
@@ -66884,7 +66271,7 @@
       29,
       0,
       0,
-      0,
+      110,
       0,
       13
     ],
@@ -66923,7 +66310,7 @@
       9,
       0,
       0,
-      0,
+      110,
       0,
       6
     ],
@@ -66962,7 +66349,7 @@
       0,
       0,
       0,
-      0,
+      110,
       0,
       0
     ],
@@ -67001,7 +66388,7 @@
       0,
       0,
       0,
-      0,
+      110,
       0,
       0
     ],
@@ -73888,7 +73275,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-000000BD-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000006C-QINU`\"'",
     "skills": [
       350,
       260,
@@ -73926,7 +73313,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-000000BD-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000006C-QINU`\"'",
     "skills": [
       350,
       260,
@@ -75776,7 +75163,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000019-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000010-QINU`\"'",
     "skills": [
       280,
       215,
@@ -75813,7 +75200,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000001B-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000012-QINU`\"'",
     "skills": [
       260,
       180,
