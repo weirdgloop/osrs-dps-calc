@@ -576,7 +576,15 @@ class GlobalState implements State {
         const newWeaponCat = newWeapon?.category || EquipmentCategory.NONE;
         if ((newWeaponCat !== undefined) && (newWeaponCat !== oldWeaponCat) && !player.style) {
           // If the weapon slot category was changed, we should reset the player's selected combat style to the first one that exists.
-          player.style = getCombatStylesForCategory(newWeaponCat)[0];
+          const styles = getCombatStylesForCategory(newWeaponCat);
+          const rapid = styles.find((e) => e.stance === 'Rapid');
+          if (rapid !== undefined) {
+            player.style = rapid;
+          } else {
+            // Would perhaps be worth it to make a similar thing for looking up
+            // aggressive?
+            player.style = styles[0];
+          }
         }
       }
 
