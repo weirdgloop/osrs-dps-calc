@@ -17,7 +17,7 @@ import {
 } from '@/utils';
 import { ComputeBasicRequest, ComputeReverseRequest, WorkerRequestType } from '@/worker/CalcWorkerTypes';
 import getMonsters from '@/lib/Monsters';
-import { calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
+import { availableEquipment, calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { CalcWorker } from '@/worker/CalcWorker';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
@@ -373,25 +373,40 @@ class GlobalState implements State {
   }
 
   updateImportedData(data: ImportableData) {
-    const monsterById = getMonsters().find((m) => m.id === data.monster.id);
-    if (!monsterById) {
-      throw new Error(`Failed to find monster by id '${data.monster.id}' from shortlink`);
+    if (data.monster && data.monster.id) {
+      const monsterById = getMonsters().find((m) => m.id === data.monster.id);
+      if (!monsterById) {
+        throw new Error(`Failed to find monster by id '${data.monster.id}' from shortlink`);
+      }
+
+      // only use the shortlink for user-input fields, trust cdn for others in case they change
+      this.updateMonster({
+        ...monsterById,
+        inputs: data.monster.inputs,
+      });
     }
 
-    // only use the shortlink for user-input fields, trust cdn for others in case they change
-    this.updateMonster({
-      ...monsterById,
-      inputs: data.monster.inputs,
-    });
-
     // Intialize names if not present
-    data.loadouts = data.loadouts.map((loadout, i) => ({ name: `Loadout ${i + 1}`, ...loadout }));
+    data.loadouts = data.loadouts.map((loadout, i) => {
+      // For each item, if only an item ID is available, load the other data.
+      if (loadout.equipment) {
+        for (const [k, v] of Object.entries(loadout.equipment)) {
+          if (v === null) continue;
+          if (Object.keys(v).length === 1 && Object.hasOwn(v, 'id')) {
+            const item = availableEquipment.find((eq) => eq.id === v.id);
+            loadout.equipment[k as keyof typeof loadout.equipment] = item || null;
+          }
+        }
+      }
+
+      return { name: `Loadout ${i + 1}`, ...loadout };
+    });
 
     // manually recompute equipment in case their metadata has changed since the shortlink was created
     this.loadouts = merge(this.loadouts, data.loadouts);
     this.recalculateEquipmentBonusesFromGearAll();
 
-    this.selectedLoadout = data.selectedLoadout;
+    this.selectedLoadout = data.selectedLoadout || 0;
   }
 
   loadPreferences() {
