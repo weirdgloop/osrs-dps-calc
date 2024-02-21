@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useStore } from '@/state';
 import { useSearchParams } from 'next/navigation';
 import localforage from 'localforage';
@@ -13,8 +13,13 @@ import { observer } from 'mobx-react-lite';
 const InitialLoad: React.FC = observer(() => {
   const store = useStore();
   const searchParams = useSearchParams();
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
+    // This code is necessary because searchParams may change later, when we strip the query params from the URL
+    if (loaded) return;
+    setLoaded(true);
+
     const id = searchParams.get('id');
     if (id) {
       // If there was a share ID provided, load the data for it into the calculator
