@@ -505,8 +505,8 @@ export const getCombatStylesForCategory = (style: EquipmentCategory): PlayerComb
     case EquipmentCategory.CROSSBOW:
     case EquipmentCategory.THROWN:
       ret = [
-        { name: 'Accurate', type: 'ranged', stance: 'Accurate' },
         { name: 'Rapid', type: 'ranged', stance: 'Rapid' },
+        { name: 'Accurate', type: 'ranged', stance: 'Accurate' },
         { name: 'Longrange', type: 'ranged', stance: 'Longrange' },
       ];
       break;
