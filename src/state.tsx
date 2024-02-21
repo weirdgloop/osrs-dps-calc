@@ -17,7 +17,7 @@ import {
 } from '@/utils';
 import { ComputeBasicRequest, ComputeReverseRequest, WorkerRequestType } from '@/worker/CalcWorkerTypes';
 import getMonsters from '@/lib/Monsters';
-import { calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
+import { availableEquipment, calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { CalcWorker } from '@/worker/CalcWorker';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
@@ -29,6 +29,8 @@ import {
   Prayer,
 } from './enums/Prayer';
 import Potion from './enums/Potion';
+
+const CALC_DEBOUNCE_MS: number = 250;
 
 const EMPTY_CALC_LOADOUT = {} as CalculatedLoadout;
 
@@ -202,11 +204,7 @@ class GlobalState implements State {
     ],
   };
 
-  readonly calcWorker: CalcWorker = new CalcWorker();
-
-  private readonly calcDebouncer: Debouncer = new Debouncer();
-
-  private calcDedupeId?: number;
+  private calcWorker!: CalcWorker;
 
   availableMonsters = getMonsters();
 
@@ -310,6 +308,15 @@ class GlobalState implements State {
     return !['slash', 'crush', 'stab', 'magic', 'ranged'].includes(this.monster.style || '');
   }
 
+  setCalcWorker(worker: CalcWorker) {
+    if (this.calcWorker) {
+      console.warn('[GlobalState] CalcWorker is already set!');
+    }
+    worker.initWorker();
+    worker.setDebouncer(new Debouncer(CALC_DEBOUNCE_MS));
+    this.calcWorker = worker;
+  }
+
   recalculateEquipmentBonusesFromGear(loadoutIx?: number) {
     loadoutIx = loadoutIx !== undefined ? loadoutIx : this.selectedLoadout;
 
@@ -366,25 +373,40 @@ class GlobalState implements State {
   }
 
   updateImportedData(data: ImportableData) {
-    const monsterById = getMonsters().find((m) => m.id === data.monster.id);
-    if (!monsterById) {
-      throw new Error(`Failed to find monster by id '${data.monster.id}' from shortlink`);
+    if (data.monster && data.monster.id) {
+      const monsterById = getMonsters().find((m) => m.id === data.monster.id);
+      if (!monsterById) {
+        throw new Error(`Failed to find monster by id '${data.monster.id}' from shortlink`);
+      }
+
+      // only use the shortlink for user-input fields, trust cdn for others in case they change
+      this.updateMonster({
+        ...monsterById,
+        inputs: data.monster.inputs,
+      });
     }
 
-    // only use the shortlink for user-input fields, trust cdn for others in case they change
-    this.updateMonster({
-      ...monsterById,
-      inputs: data.monster.inputs,
-    });
-
     // Intialize names if not present
-    data.loadouts = data.loadouts.map((loadout, i) => ({ name: `Loadout ${i + 1}`, ...loadout }));
+    data.loadouts = data.loadouts.map((loadout, i) => {
+      // For each item, if only an item ID is available, load the other data.
+      if (loadout.equipment) {
+        for (const [k, v] of Object.entries(loadout.equipment)) {
+          if (v === null) continue;
+          if (Object.keys(v).length === 1 && Object.hasOwn(v, 'id')) {
+            const item = availableEquipment.find((eq) => eq.id === v.id);
+            loadout.equipment[k as keyof typeof loadout.equipment] = item || null;
+          }
+        }
+      }
+
+      return { name: `Loadout ${i + 1}`, ...loadout };
+    });
 
     // manually recompute equipment in case their metadata has changed since the shortlink was created
     this.loadouts = merge(this.loadouts, data.loadouts);
     this.recalculateEquipmentBonusesFromGearAll();
 
-    this.selectedLoadout = data.selectedLoadout;
+    this.selectedLoadout = data.selectedLoadout || 0;
   }
 
   loadPreferences() {
@@ -616,13 +638,15 @@ class GlobalState implements State {
   }
 
   async doWorkerRecompute() {
+    if (!this.calcWorker?.isReady()) {
+      console.debug('[GlobalState] doWorkerRecompute called but worker is not ready, ignoring for now.');
+      return;
+    }
+
     // clear existing loadout data
     const calculatedLoadouts: CalculatedLoadout[] = [];
     this.loadouts.forEach(() => calculatedLoadouts.push(EMPTY_CALC_LOADOUT));
     this.calc.loadouts = calculatedLoadouts;
-
-    // don't fire a bajillion reqs if they're editing multiple fields
-    await this.calcDebouncer.debounce();
 
     const data: Extract<ComputeBasicRequest['data'], ComputeReverseRequest['data']> = {
       loadouts: this.loadouts,
@@ -634,17 +658,13 @@ class GlobalState implements State {
       },
     };
     const request = async (type: WorkerRequestType.COMPUTE_BASIC | WorkerRequestType.COMPUTE_REVERSE) => {
-      const { sequenceId, promise } = this.calcWorker.do({
+      const resp = await this.calcWorker.do({
         type,
         data,
       });
-      this.calcDedupeId = sequenceId;
 
-      const resp = await promise;
-      if (this.calcDedupeId === resp.sequenceId) {
-        console.log('resp.payload', resp.payload);
-        this.updateCalcResults({ loadouts: resp.payload });
-      }
+      console.log(`[GlobalState] Calc response ${WorkerRequestType[type]}`, resp.payload);
+      this.updateCalcResults({ loadouts: resp.payload });
     };
 
     await request(WorkerRequestType.COMPUTE_BASIC);

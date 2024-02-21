@@ -33,9 +33,14 @@ export interface Preferences {
   hitDistsHideZeros: boolean;
 }
 
-export interface HistogramEntry {
-  name: string,
-  chance: number,
+export interface ChartEntry {
+  name: string | number,
+  [k: string]: string | number,
+}
+
+export interface ChartAnnotation {
+  value: number,
+  label: string
 }
 
 /**
@@ -49,7 +54,7 @@ export interface CalculatedLoadout {
   accuracy?: number,
   dps?: number,
   ttk?: number,
-  hitDist?: HistogramEntry[],
+  hitDist?: ChartEntry[],
   ttkDist?: Map<number, number>,
 
   // NPC vs Player metrics

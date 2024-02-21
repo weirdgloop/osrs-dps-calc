@@ -2,6 +2,9 @@ import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { NPCVsPlayerCalculatedLoadout, PlayerVsNPCCalculatedLoadout } from '@/types/State';
 import { CalcOpts } from '@/lib/BaseCalc';
+import {
+  CompareResult, CompareXAxis, CompareYAxis,
+} from '@/lib/Comparator';
 
 /**
  * Requests
@@ -26,7 +29,6 @@ export interface WorkerCalcOpts {
 }
 
 export interface ComputeBasicRequest extends WorkerRequest<WorkerRequestType.COMPUTE_BASIC> {
-  type: WorkerRequestType.COMPUTE_BASIC,
   data: {
     loadouts: Player[],
     monster: Monster,
@@ -35,7 +37,6 @@ export interface ComputeBasicRequest extends WorkerRequest<WorkerRequestType.COM
 }
 
 export interface ComputeReverseRequest extends WorkerRequest<WorkerRequestType.COMPUTE_REVERSE> {
-  type: WorkerRequestType.COMPUTE_REVERSE,
   data: {
     loadouts: Player[],
     monster: Monster,
@@ -43,7 +44,21 @@ export interface ComputeReverseRequest extends WorkerRequest<WorkerRequestType.C
   }
 }
 
-export type CalcRequestsUnion = ComputeBasicRequest | ComputeReverseRequest;
+export interface CompareRequest extends WorkerRequest<WorkerRequestType.COMPARE> {
+  data: {
+    axes: {
+      x: CompareXAxis,
+      y: CompareYAxis,
+    },
+    loadouts: Player[],
+    monster: Monster,
+  },
+}
+
+export type CalcRequestsUnion =
+  ComputeBasicRequest |
+  ComputeReverseRequest |
+  CompareRequest;
 
 /**
  * Responses
@@ -64,7 +79,14 @@ export interface ComputeReverseResponse extends WorkerResponse<WorkerRequestType
   payload: NPCVsPlayerCalculatedLoadout[],
 }
 
-export type CalcResponsesUnion = ComputeBasicResponse | ComputeReverseResponse;
+export interface CompareResponse extends WorkerResponse<WorkerRequestType.COMPARE> {
+  payload: CompareResult,
+}
+
+export type CalcResponsesUnion =
+  ComputeBasicResponse |
+  ComputeReverseResponse |
+  CompareResponse;
 export type CalcResponse<T extends WorkerRequestType> = CalcResponsesUnion & { type: T };
 
 export const WORKER_JSON_REPLACER = (k: string, v: Map<unknown, unknown> | never) => {

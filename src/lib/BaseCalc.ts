@@ -11,9 +11,9 @@ import { Factor } from '@/lib/Math';
 import { scaleMonster } from '@/lib/MonsterScaling';
 
 export interface CalcOpts {
-  loadoutName: string,
-  detailedOutput: boolean,
-  disableMonsterScaling: boolean,
+  loadoutName?: string,
+  detailedOutput?: boolean,
+  disableMonsterScaling?: boolean,
   overrides?: {
     accuracy?: number,
     attackRoll?: number,
@@ -29,18 +29,19 @@ export interface InternalOpts extends CalcOpts {
   noInit: boolean,
 }
 
-const DEFAULT_OPTS: InternalOpts = {
+const DEFAULT_OPTS: Required<InternalOpts> = {
   loadoutName: 'unknown',
   detailedOutput: false,
   disableMonsterScaling: false,
   noInit: false,
+  overrides: {},
 };
 
 /**
  * Base class which the other calculators extend.
  */
 export default class BaseCalc {
-  protected opts: CalcOpts & InternalOpts;
+  protected opts: Required<InternalOpts>;
 
   private _details?: CalcDetails;
 
@@ -58,7 +59,7 @@ export default class BaseCalc {
 
   protected userIssues: UserIssue[] = [];
 
-  constructor(player: Player, monster: Monster, opts: Partial<CalcOpts> = {}) {
+  constructor(player: Player, monster: Monster, opts: CalcOpts = {}) {
     this.opts = {
       ...DEFAULT_OPTS,
       ...opts,
