@@ -3375,6 +3375,162 @@
     "attributes": []
   },
   {
+    "id": 12720,
+    "name": "Armoured zombie",
+    "version": "Melee",
+    "image": "Armoured zombie (melee, 5).png",
+    "level": 85,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": [
+      73,
+      68,
+      85,
+      1,
+      1,
+      72
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      10,
+      20,
+      20
+    ],
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 12730,
+    "name": "Armoured zombie",
+    "version": "Melee (invasion)",
+    "image": "Armoured zombie (melee, 5).png",
+    "level": 85,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": [
+      73,
+      68,
+      85,
+      1,
+      0,
+      72
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      10,
+      20,
+      20
+    ],
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 12725,
+    "name": "Armoured zombie",
+    "version": "Ranged",
+    "image": "Armoured zombie (ranged, 5).png",
+    "level": 85,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": [
+      73,
+      68,
+      85,
+      1,
+      72,
+      72
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      10,
+      20,
+      20
+    ],
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 12735,
+    "name": "Armoured zombie",
+    "version": "Ranged (invasion)",
+    "image": "Armoured zombie (ranged, 5).png",
+    "level": 85,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": [
+      73,
+      68,
+      85,
+      1,
+      0,
+      72
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      10,
+      20,
+      20
+    ],
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
     "id": 6331,
     "name": "Arrg",
     "version": "Hard",
@@ -73275,7 +73431,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000006C-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000042-QINU`\"'",
     "skills": [
       350,
       260,
@@ -73313,7 +73469,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000006C-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000042-QINU`\"'",
     "skills": [
       350,
       260,
@@ -75163,7 +75319,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000010-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000001F-QINU`\"'",
     "skills": [
       280,
       215,
@@ -75200,7 +75356,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000012-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000021-QINU`\"'",
     "skills": [
       260,
       180,
