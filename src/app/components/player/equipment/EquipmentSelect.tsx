@@ -5,7 +5,7 @@ import { getCdnImage } from '@/utils';
 import { EquipmentPiece } from '@/types/Player';
 import LazyImage from '@/app/components/generic/LazyImage';
 import { cross } from 'd3-array';
-import { availableEquipment, equipmentAliases } from '@/lib/Equipment';
+import { availableEquipment, equipmentAliases, noStatExceptions } from '@/lib/Equipment';
 import Combobox from '../../generic/Combobox';
 
 interface EquipmentOption {
@@ -41,7 +41,24 @@ const EquipmentSelect: React.FC = observer(() => {
     const dartEntries: EquipmentOption[] = [];
 
     const entries: EquipmentOption[] = [];
-    for (const v of availableEquipment) {
+    for (const v of availableEquipment.filter((eq) => {
+      if (
+        (
+          (Object.values(eq.bonuses).reduce((a, b) => a + b, 0) === 0)
+          && (Object.values(eq.offensive).reduce((a, b) => a + b, 0) === 0)
+          && (Object.values(eq.defensive).reduce((a, b) => a + b, 0) === 0)
+          && (eq.speed === 4 || eq.speed <= 0)
+          && !noStatExceptions.includes(eq.name)
+        )
+        || eq.version.match(/^(Broken|Inactive|Locked)$/)
+        || eq.name.match(/\((Last Man Standing|historical|beta)\)$/)
+        || eq.name.match(/(Fine mesh net|Wilderness champion amulet|\(Wilderness Wars)/)
+        || eq.name.match(/^Crystal .* \(i\)$/)
+      ) {
+        return false;
+      }
+      return true;
+    })) {
       const e: EquipmentOption = {
         label: `${v.name}`,
         value: v.id.toString(),

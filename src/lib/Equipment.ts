@@ -13,6 +13,23 @@ export type EquipmentBonuses = Pick<Player, 'bonuses' | 'offensive' | 'defensive
  */
 export const availableEquipment = equipment as EquipmentPiece[];
 
+export const noStatExceptions = [
+  'Castle wars bracelet',
+  'Lightbearer',
+  'Ring of recoil',
+  'Phoenix necklace',
+  'Reinforced goggles',
+  'Expeditious bracelet',
+  'Bracelet of slaughter',
+  'Facemask',
+  'Earmuffs',
+  'Bug lantern',
+  'Nose peg',
+  "Efaritay's aid",
+  'Inoculation bracelet',
+  'Bracelet of ethereum',
+];
+
 /**
  * A map of base item ID -> variant item IDs for items that are identical in function. This includes
  * "locked" variants of items, broken/degraded variants of armour and weapons, and cosmetic recolours of equipment.

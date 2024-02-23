@@ -11,7 +11,6 @@ import os
 import requests
 import json
 import urllib.parse
-import re
 
 FILE_NAME = '../cdn/json/equipment.json'
 WIKI_BASE = 'https://oldschool.runescape.wiki'
@@ -40,23 +39,6 @@ REQUIRED_PRINTOUTS = [
     'Weapon attack range',
     'Weapon attack speed',
     'Combat style'
-]
-
-NOSTAT_EXCEPTIONS = [
-    'Castle wars bracelet',
-    'Lightbearer',
-    'Ring of recoil',
-    'Phoenix necklace',
-    'Reinforced goggles',
-    'Expeditious bracelet',
-    'Bracelet of slaughter',
-    'Facemask',
-    'Earmuffs',
-    'Bug lantern',
-    'Nose peg',
-    "Efaritay's aid",
-    'Inoculation bracelet',
-    'Bracelet of ethereum'
 ]
 
 def getEquipmentData():
@@ -145,36 +127,10 @@ def main():
             'isTwoHanded': False
         }
 
-        # Trim out 0 values in stats
-        # todo this was causing items to not clear out values in stats they do not have
-        # for section in ['bonuses', 'offensive', 'defensive']:
-        #     equipment[section] = {k:v for (k,v) in equipment[section].items() if v != 0}
-
         # Handle 2H weapons
         if equipment['slot'] == '2h':
             equipment['slot'] = 'weapon'
             equipment['isTwoHanded'] = True
-
-        # Prune...
-        if (
-            # ...items with all 0 stat bonuses
-            (all(v == 0 for v in equipment['bonuses'].values())
-             and all(v == 0 for v in equipment['offensive'].values())
-             and all(v == 0 for v in equipment['defensive'].values())
-             # ...except for ones with interesting speed values
-             and (equipment['speed'] == 4 or equipment['speed'] <= 0)
-             # ...and except a few specific no-stat items with special effects
-             and not (equipment['name'] in NOSTAT_EXCEPTIONS))
-            # ...items that are broken, inactive, locked
-            or re.match(r"^(Broken|Inactive|Locked)$", equipment['version'])
-            # ...items from LMS (PvP only mode), historical, or beta
-            or re.search(r"\((Last Man Standing|historical|beta)\)$", equipment['name'])
-            # ...items from some old events
-            or re.search(r"(Fine mesh net|Wilderness champion amulet|\(Wilderness Wars)", equipment['name'])
-            # ...old imbued crystal weapons
-            or re.search(r"^Crystal .* \(i\)$", equipment['name'])
-        ):
-            continue
 
         # If this is an item from Nightmare Zone, it will become the main variant for all NMZ/SW/Emir's variants
         if equipment['version'] == 'Nightmare Zone':
