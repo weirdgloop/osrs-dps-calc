@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 import Select from '../generic/Select';
@@ -14,7 +14,17 @@ const WikiSyncAddLoadout: React.FC = observer(() => {
     rlUsernames,
   } = store;
 
-  const rlwss: WikiSyncSelectItem[] = Array.from(
+  const wikiSyncSelectItems: WikiSyncSelectItem[] = useMemo(() => {
+    const items: WikiSyncSelectItem[] = [];
+    rlUsernames.forEach((wikisyncer, port) => {
+      if (wikisyncer.username) {
+        items.push({ label: wikisyncer.username, value: port });
+      }
+    });
+    return items;
+  }, [rlUsernames]);
+
+  Array.from(
     rlUsernames.entries(),
     ([port, wikisyncer]) => ({ label: wikisyncer.username, value: port }),
   ).filter(({ label }) => label);
@@ -23,14 +33,14 @@ const WikiSyncAddLoadout: React.FC = observer(() => {
     console.log(item);
   }, []);
 
-  if (rlwss.length === 0) {
+  if (wikiSyncSelectItems.length === 0) {
     return <div>No RL account logged in</div>;
   }
 
   return (
     <Select<WikiSyncSelectItem>
       id="rlws"
-      items={rlwss}
+      items={wikiSyncSelectItems}
       placeholder="RL"
       resetAfterSelect
       onSelectedItemChange={onSelect}
