@@ -403,7 +403,9 @@ class GlobalState implements State {
     });
 
     // manually recompute equipment in case their metadata has changed since the shortlink was created
-    this.loadouts = merge(this.loadouts, data.loadouts);
+    data.loadouts.forEach((p, ix) => {
+      this.updatePlayer(p, ix);
+    });
     this.recalculateEquipmentBonusesFromGearAll();
 
     this.selectedLoadout = data.selectedLoadout || 0;
