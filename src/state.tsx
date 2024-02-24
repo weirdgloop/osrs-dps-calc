@@ -1,7 +1,7 @@
 import {
   IReactionPublic, makeAutoObservable, reaction, toJS,
 } from 'mobx';
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import { PartialDeep } from 'type-fest';
 import * as localforage from 'localforage';
 import {
@@ -30,6 +30,7 @@ import {
   Prayer,
 } from './enums/Prayer';
 import Potion from './enums/Potion';
+import { WikiSyncer, startPollingForRuneLite } from './lib/WikiSyncer';
 
 const CALC_DEBOUNCE_MS: number = 250;
 
@@ -211,6 +212,8 @@ class GlobalState implements State {
 
   private _debug: boolean = false;
 
+  rlUsernames: Map<number, WikiSyncer>;
+
   constructor() {
     makeAutoObservable(this, {}, { autoBind: true });
 
@@ -257,6 +260,8 @@ class GlobalState implements State {
     monsterHpTriggers.map((t) => reaction(t, () => {
       this.monster.inputs.monsterCurrentHp = this.monster.skills.hp;
     }));
+
+    this.rlUsernames = startPollingForRuneLite();
   }
 
   set debug(debug: boolean) {
@@ -683,9 +688,12 @@ class GlobalState implements State {
 
 const StoreContext = createContext<GlobalState>(new GlobalState());
 
-const StoreProvider: React.FC<{ store: GlobalState, children: React.ReactNode }> = ({ store, children }) => (
-  <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
-);
+const StoreProvider: React.FC<{ store: GlobalState, children: React.ReactNode }> = ({ store, children }) => {
+
+  return (
+    <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
+  );
+};
 
 const useStore = () => useContext(StoreContext);
 

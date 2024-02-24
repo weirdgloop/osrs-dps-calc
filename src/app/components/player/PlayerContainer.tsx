@@ -5,6 +5,7 @@ import { calculateCombatLevel } from '@/utils';
 import PlayerInnerContainer from '@/app/components/player/PlayerInnerContainer';
 import LoadoutName from '@/app/components/player/LoadoutName';
 import { IconPlus, IconTrash } from '@tabler/icons-react';
+import WikiSyncAddLoadout from './WikiSyncAddLoadout';
 
 const PlayerContainer: React.FC = observer(() => {
   const store = useStore();
@@ -43,6 +44,7 @@ const PlayerContainer: React.FC = observer(() => {
           >
             <IconPlus aria-label="Add new loadout" />
           </button>
+          <WikiSyncAddLoadout />
         </div>
       </div>
       <div
