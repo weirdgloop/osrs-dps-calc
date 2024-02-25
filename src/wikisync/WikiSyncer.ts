@@ -1,10 +1,15 @@
 'use client';
 
-import { WikiSyncerRequestType, WikiSyncerResponsesUnion } from './WikiSyncerTypes';
+import { GetPlayerRequest, WikiSyncerRequestType, WikiSyncerResponsesUnion } from './WikiSyncerTypes';
 
 const minimumPort = 37767;
 // const maximumPort = 37776;
 const maximumPort = 37768;
+
+interface InFlightRequest {
+  resolve: (value: unknown) => void;
+  reject: (error: Error) => void;
+}
 
 export class WikiSyncer {
   port: number;
@@ -14,6 +19,10 @@ export class WikiSyncer {
   private ws?: WebSocket;
 
   private reconnectionJobId?: ReturnType<typeof setTimeout>;
+
+  private nextSequenceID = 0;
+
+  private inFlightRequests = new Map<number, InFlightRequest>();
 
   constructor(port: number) {
     this.port = port;
@@ -38,6 +47,7 @@ export class WikiSyncer {
 
     this.ws.onclose = () => {
       this.ws = undefined;
+      this.username = null;
       if (this.reconnectionJobId) {
         return;
       }
@@ -47,6 +57,25 @@ export class WikiSyncer {
         this.connect();
       }, 10000);
     };
+  }
+
+  getPlayer() {
+    const p = new Promise(((resolve, reject) => {
+      if (this.ws) {
+        const req: GetPlayerRequest = {
+          type: WikiSyncerRequestType.GET_PLAYER,
+          sequenceId: this.nextSequenceID,
+          data: {},
+        };
+        this.ws.send(JSON.stringify(req));
+        this.inFlightRequests.set(this.nextSequenceID, { resolve, reject });
+        this.nextSequenceID += 1;
+      } else {
+        reject(new Error('Not connected'));
+      }
+    }));
+
+    return p;
   }
 }
 

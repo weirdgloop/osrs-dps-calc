@@ -11,7 +11,7 @@ export enum WikiSyncerRequestType {
 
 export interface WikiSyncerRequest<T extends WikiSyncerRequestType> {
   type: T,
-  sequenceId?: number,
+  sequenceId: number,
 }
 
 export interface GetPlayerRequest extends WikiSyncerRequest<WikiSyncerRequestType.GET_PLAYER> {
