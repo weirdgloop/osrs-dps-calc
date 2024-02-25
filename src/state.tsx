@@ -410,6 +410,7 @@ class GlobalState implements State {
 
     // manually recompute equipment in case their metadata has changed since the shortlink was created
     data.loadouts.forEach((p, ix) => {
+      if (this.loadouts[ix] === undefined) this.loadouts.push(generateEmptyPlayer());
       this.updatePlayer(p, ix);
     });
     this.recalculateEquipmentBonusesFromGearAll();
