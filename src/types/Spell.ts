@@ -1,8 +1,16 @@
+import spellsRaw from '../../cdn/json/spells.json';
+
 export interface Spell {
   name: string;
   image: string;
   max_hit: number;
   spellbook: Spellbook;
+}
+
+export const spells = spellsRaw as Spell[];
+
+export function spellByName(name: string): Spell | null {
+  return spells.find((s) => s.name === name) || null;
 }
 
 export function isFireSpell(spell: Spell | null): boolean {
