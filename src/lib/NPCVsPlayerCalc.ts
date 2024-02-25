@@ -3,7 +3,7 @@ import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 // import { OVERHEAD_PRAYERS, Prayer } from '@/enums/Prayer';
 import { AttackDistribution, HitDistribution, WeightedHit } from '@/lib/HitDist';
-import { NPC_HARDCODED_MAX_HIT, SECONDS_PER_TICK } from '@/lib/constants';
+import { ALWAYS_ACCURATE_MONSTERS, NPC_HARDCODED_MAX_HIT, SECONDS_PER_TICK } from '@/lib/constants';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import { DetailKey } from '@/lib/CalcDetails';
 import { PrayerMap } from '@/enums/Prayer';
@@ -222,6 +222,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     if (name === 'Banshee' && (this.wearing('Earmuffs') || this.isWearingSlayerHelmet())) maxHit = 2;
     if (name === 'Wall beast' && (this.wearing('Spiny helmet') || this.isWearingSlayerHelmet())) maxHit = 4;
     if (name === 'Sourhog' && (this.wearing('Reinforced goggles') || this.isWearingSlayerHelmet())) maxHit = 6;
+    if (['Ice troll female', 'Thrower Troll', 'Thrower troll (Trollheim)'].includes(name) && this.wearing('Neitiznot shield')) maxHit = 2;
 
     return maxHit;
   }
@@ -230,6 +231,11 @@ export default class NPCVsPlayerCalc extends BaseCalc {
    * Get the NPC's hit chance
    */
   public getHitChance(): number {
+    if (ALWAYS_ACCURATE_MONSTERS.includes(this.monster.id)) {
+      // This NPC will always hit the player with their attacks
+      return 1;
+    }
+
     const atk = this.getNPCMaxAttackRoll();
     const def = this.getPlayerDefenceRoll();
 

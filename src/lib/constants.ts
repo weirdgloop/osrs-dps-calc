@@ -317,10 +317,23 @@ export const DPS_PRECISION = 3;
 export const AUTOCAST_STANCES: CombatStyleStance[] = ['Autocast', 'Defensive Autocast'];
 export const CAST_STANCES: CombatStyleStance[] = [...AUTOCAST_STANCES, 'Manual Cast'];
 
+/**
+ * NPCs that will always die in one hit from a player attack
+ */
 export const ONE_HIT_MONSTERS: number[] = [
   7223, // Giant rat (Scurrius)
   8584, // Flower
   11193, // Flower (A Night at the Theatre)
+];
+
+/**
+ * NPCs that will always hit the player with their attacks, no matter what gear they are wearing
+ */
+export const ALWAYS_ACCURATE_MONSTERS: number[] = [
+  931, // Thrower Troll
+  4135, // Thrower troll (Trollheim)
+  7691, // Jal-Nib
+  12335, // Wighted Leech
 ];
 
 export const DEFAULT_ATTACK_SPEED = 4;
