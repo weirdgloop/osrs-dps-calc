@@ -7,14 +7,12 @@ import merge from 'lodash.mergewith';
 import { generateEmptyPlayer } from '@/state';
 import { PartialDeep } from 'type-fest';
 import { calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
-import { Spell } from '@/types/Spell';
+import { Spell, spells } from '@/types/Spell';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
 import eq from '../../../cdn/json/equipment.json';
-import spellsRaw from '../../../cdn/json/spells.json';
 
 const monsters = getMonsters();
 const equipment = eq as EquipmentPiece[];
-const spells = spellsRaw as Spell[];
 
 function find<T>(arr: T[], pred: (_: T) => boolean, failMsg?: string): T {
   const opt = arr.find(pred);
