@@ -19,6 +19,7 @@ import { ComputeBasicRequest, ComputeReverseRequest, WorkerRequestType } from '@
 import getMonsters from '@/lib/Monsters';
 import { availableEquipment, calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { CalcWorker } from '@/worker/CalcWorker';
+import { spellByName } from '@/types/Spell';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
   ARM_PRAYERS,
@@ -386,7 +387,7 @@ class GlobalState implements State {
       });
     }
 
-    // Intialize names if not present
+    // Expand some minified fields with thier full metadata
     data.loadouts = data.loadouts.map((loadout, i) => {
       // For each item, if only an item ID is available, load the other data.
       if (loadout.equipment) {
@@ -397,6 +398,11 @@ class GlobalState implements State {
             loadout.equipment[k as keyof typeof loadout.equipment] = item || null;
           }
         }
+      }
+
+      // load the current spell, if applicable
+      if (loadout.spell?.name) {
+        loadout.spell = spellByName(loadout.spell.name);
       }
 
       return { name: `Loadout ${i + 1}`, ...loadout };

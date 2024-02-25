@@ -10,7 +10,7 @@ export type CombatStyleStance =
   'Defensive Autocast' |
   'Longrange' |
   'Rapid' |
-  // Psuedo stances
+  // Pseudo stances
   'Manual Cast';
 
 export interface PlayerCombatStyle {
