@@ -9,8 +9,8 @@ export interface Spell {
 
 export const spells = spellsRaw as Spell[];
 
-export function spellByName(name: string): Spell | undefined {
-  return spells.find((s) => s.name === name);
+export function spellByName(name: string): Spell | null {
+  return spells.find((s) => s.name === name) || null;
 }
 
 export function isFireSpell(spell: Spell | null): boolean {
