@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useCallback, useMemo } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
@@ -14,20 +16,23 @@ const WikiSyncAddLoadout: React.FC = observer(() => {
     rlUsernames,
   } = store;
 
-  const wikiSyncSelectItems: WikiSyncSelectItem[] = useMemo(() => {
-    const items: WikiSyncSelectItem[] = [];
-    rlUsernames.forEach((wikisyncer, port) => {
-      if (wikisyncer.username) {
-        items.push({ label: wikisyncer.username, value: port });
-      }
-    });
-    return items;
-  }, [rlUsernames]);
+  // const wikiSyncSelectItems: WikiSyncSelectItem[] = useMemo(() => {
+  //   const items: WikiSyncSelectItem[] = [];
+  //   rlUsernames.forEach((wikisyncer, port) => {
+  //     if (wikisyncer.username) {
+  //       items.push({ label: wikisyncer.username, value: port });
+  //     }
+  //   });
+  //   return items;
+  // }, [rlUsernames]);
 
-  Array.from(
-    rlUsernames.entries(),
-    ([port, wikisyncer]) => ({ label: wikisyncer.username, value: port }),
-  ).filter(({ label }) => label);
+  const wikiSyncSelectItems: WikiSyncSelectItem[] = [];
+
+  rlUsernames.forEach((wikisyncer, port) => {
+    if (wikisyncer.username) {
+      wikiSyncSelectItems.push({ label: wikisyncer.username, value: port });
+    }
+  });
 
   const onSelect = useCallback((item: WikiSyncSelectItem | null | undefined) => {
     console.log(item);

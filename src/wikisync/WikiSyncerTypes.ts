@@ -5,12 +5,12 @@ import { PlayerEquipment, PlayerSkills } from '@/types/Player';
  */
 
 export enum WikiSyncerRequestType {
-  USERNAME_CHANGED,
-  GET_PLAYER,
+  USERNAME_CHANGED = 'UsernameChanged',
+  GET_PLAYER = 'GetPlayer',
 }
 
 export interface WikiSyncerRequest<T extends WikiSyncerRequestType> {
-  type: T,
+  _wsType: T,
   sequenceId: number,
 }
 
@@ -26,12 +26,12 @@ export type WikiSyncerRequestsUnion =
  */
 
 export interface UsernameChangedBroadcast {
-  type: WikiSyncerRequestType.USERNAME_CHANGED,
-  username: string | null;
+  _wsType: WikiSyncerRequestType.USERNAME_CHANGED,
+  username?: string;
 }
 
 export interface WikiSyncerResponse<T extends WikiSyncerRequestType> {
-  type: T,
+  _wsType: T,
   sequenceId: number,
   error?: string,
   payload: unknown,

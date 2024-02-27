@@ -1,10 +1,11 @@
 'use client';
 
+import { makeAutoObservable } from 'mobx';
 import { GetPlayerRequest, WikiSyncerRequestType, WikiSyncerResponsesUnion } from './WikiSyncerTypes';
 
 const minimumPort = 37767;
 // const maximumPort = 37776;
-const maximumPort = 37768;
+const maximumPort = 37768; // small port range for testing
 
 interface InFlightRequest {
   resolve: (value: unknown) => void;
@@ -14,7 +15,7 @@ interface InFlightRequest {
 export class WikiSyncer {
   port: number;
 
-  username: string | null = null;
+  username?: string;
 
   private ws?: WebSocket;
 
@@ -25,15 +26,16 @@ export class WikiSyncer {
   private inFlightRequests = new Map<number, InFlightRequest>();
 
   constructor(port: number) {
+    makeAutoObservable(this);
     this.port = port;
     this.connect();
   }
 
   private onMessage(message: MessageEvent) {
-    const data: WikiSyncerResponsesUnion = JSON.parse(message.data);
+    const response: WikiSyncerResponsesUnion = JSON.parse(message.data);
     console.log(message);
-    if (data.type === WikiSyncerRequestType.USERNAME_CHANGED) {
-      this.username = data.username;
+    if (response._wsType === WikiSyncerRequestType.USERNAME_CHANGED) {
+      this.username = response.username;
     }
   }
 
@@ -43,11 +45,11 @@ export class WikiSyncer {
       return;
     }
     this.ws = new WebSocket(`ws://localhost:${this.port}`);
-    this.ws.onmessage = this.onMessage;
+    this.ws.onmessage = (message) => this.onMessage(message);
 
     this.ws.onclose = () => {
       this.ws = undefined;
-      this.username = null;
+      this.username = undefined;
       if (this.reconnectionJobId) {
         return;
       }
@@ -63,7 +65,7 @@ export class WikiSyncer {
     const p = new Promise(((resolve, reject) => {
       if (this.ws) {
         const req: GetPlayerRequest = {
-          type: WikiSyncerRequestType.GET_PLAYER,
+          _wsType: WikiSyncerRequestType.GET_PLAYER,
           sequenceId: this.nextSequenceID,
           data: {},
         };
@@ -85,6 +87,10 @@ export const startPollingForRuneLite = () => {
   if (typeof window === 'undefined' || syncers.size > 0) {
     return syncers;
   }
+
+  makeAutoObservable(syncers);
+
+  window.syncers = syncers;
 
   for (let port = minimumPort; port <= maximumPort; port++) {
     syncers.set(port, new WikiSyncer(port));
