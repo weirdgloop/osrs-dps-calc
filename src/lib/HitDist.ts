@@ -30,7 +30,7 @@ export class WeightedHit {
   public shift(): [WeightedHit, WeightedHit] {
     return [
       new WeightedHit(this.probability, [this.hitsplats[0]]),
-      new WeightedHit(this.probability, [...this.hitsplats.slice(1)]),
+      new WeightedHit(1.0, this.hitsplats.slice(1)),
     ];
   }
 
@@ -125,7 +125,7 @@ export class HitDistribution {
 
     const d = new HitDistribution([]);
     for (const [hash, prob] of acc.entries()) {
-      d.addHit(new WeightedHit(prob, hitLists.get(hash) as number[]));
+      d.addHit(new WeightedHit(prob, hitLists.get(hash)!));
     }
     return d;
   }
@@ -284,6 +284,10 @@ export function linearMinTransformer(maximum: number, offset: number = 0): HitTr
 
 export function cappedRerollTransformer(limit: number, rollMax: number, offset: number = 0): HitTransformer {
   return (h) => {
+    if (h <= limit) {
+      return HitDistribution.single(1.0, h);
+    }
+
     const d = new HitDistribution([]);
     const prob = 1.0 / (rollMax + 1);
     for (let i = 0; i <= rollMax; i++) {
