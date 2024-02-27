@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 import Select from '../generic/Select';
@@ -13,18 +13,8 @@ type WikiSyncSelectItem = {
 const WikiSyncAddLoadout: React.FC = observer(() => {
   const store = useStore();
   const {
-    rlUsernames,
+    createLoadout, rlUsernames, updatePlayer,
   } = store;
-
-  // const wikiSyncSelectItems: WikiSyncSelectItem[] = useMemo(() => {
-  //   const items: WikiSyncSelectItem[] = [];
-  //   rlUsernames.forEach((wikisyncer, port) => {
-  //     if (wikisyncer.username) {
-  //       items.push({ label: wikisyncer.username, value: port });
-  //     }
-  //   });
-  //   return items;
-  // }, [rlUsernames]);
 
   const wikiSyncSelectItems: WikiSyncSelectItem[] = [];
 
@@ -34,9 +24,16 @@ const WikiSyncAddLoadout: React.FC = observer(() => {
     }
   });
 
-  const onSelect = useCallback((item: WikiSyncSelectItem | null | undefined) => {
+  const onSelect = useCallback(async (item: WikiSyncSelectItem | null | undefined) => {
     console.log(item);
-  }, []);
+    if (item) {
+      const data = await rlUsernames.get(item.value)?.getPlayer();
+      data?.loadouts.forEach((player) => {
+        createLoadout(true);
+        updatePlayer(player);
+      });
+    }
+  }, [createLoadout, rlUsernames, updatePlayer]);
 
   if (wikiSyncSelectItems.length === 0) {
     return <div>No RL account logged in</div>;

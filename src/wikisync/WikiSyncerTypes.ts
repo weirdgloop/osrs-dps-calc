@@ -1,4 +1,5 @@
 import { PlayerEquipment, PlayerSkills } from '@/types/Player';
+import { ImportableData } from '@/types/State';
 
 /**
  * Requests
@@ -38,10 +39,7 @@ export interface WikiSyncerResponse<T extends WikiSyncerRequestType> {
 }
 
 export interface GetPlayerResponse extends WikiSyncerResponse<WikiSyncerRequestType.GET_PLAYER> {
-  payload: {
-    skills: PlayerSkills,
-    equipment: PlayerEquipment,
-  },
+  payload: ImportableData,
 }
 
 export type WikiSyncerResponsesUnion =

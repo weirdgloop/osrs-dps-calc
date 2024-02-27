@@ -112,6 +112,26 @@ export const generateEmptyPlayer = (name?: string) => ({
   spell: null,
 });
 
+export const parseLoadoutsFromImportedData = (data: ImportableData) => data.loadouts.map((loadout, i) => {
+  // For each item, if only an item ID is available, load the other data.
+  if (loadout.equipment) {
+    for (const [k, v] of Object.entries(loadout.equipment)) {
+      if (v === null) continue;
+      if (Object.keys(v).length === 1 && Object.hasOwn(v, 'id')) {
+        const item = availableEquipment.find((eq) => eq.id === v.id);
+        loadout.equipment[k as keyof typeof loadout.equipment] = item || null;
+      }
+    }
+  }
+
+  // load the current spell, if applicable
+  if (loadout.spell?.name) {
+    loadout.spell = spellByName(loadout.spell.name);
+  }
+
+  return { name: `Loadout ${i + 1}`, ...loadout };
+});
+
 class GlobalState implements State {
   monster: Monster = {
     id: 415,
@@ -393,28 +413,10 @@ class GlobalState implements State {
     }
 
     // Expand some minified fields with thier full metadata
-    data.loadouts = data.loadouts.map((loadout, i) => {
-      // For each item, if only an item ID is available, load the other data.
-      if (loadout.equipment) {
-        for (const [k, v] of Object.entries(loadout.equipment)) {
-          if (v === null) continue;
-          if (Object.keys(v).length === 1 && Object.hasOwn(v, 'id')) {
-            const item = availableEquipment.find((eq) => eq.id === v.id);
-            loadout.equipment[k as keyof typeof loadout.equipment] = item || null;
-          }
-        }
-      }
-
-      // load the current spell, if applicable
-      if (loadout.spell?.name) {
-        loadout.spell = spellByName(loadout.spell.name);
-      }
-
-      return { name: `Loadout ${i + 1}`, ...loadout };
-    });
+    const loadouts = parseLoadoutsFromImportedData(data);
 
     // manually recompute equipment in case their metadata has changed since the shortlink was created
-    data.loadouts.forEach((p, ix) => {
+    loadouts.forEach((p, ix) => {
       if (this.loadouts[ix] === undefined) this.loadouts.push(generateEmptyPlayer());
       this.updatePlayer(p, ix);
     });

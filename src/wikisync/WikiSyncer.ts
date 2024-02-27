@@ -1,21 +1,30 @@
 'use client';
 
 import { makeAutoObservable } from 'mobx';
+import { ImportableData } from '@/types/State';
 import { GetPlayerRequest, WikiSyncerRequestType, WikiSyncerResponsesUnion } from './WikiSyncerTypes';
 
 const minimumPort = 37767;
 // const maximumPort = 37776;
 const maximumPort = 37768; // small port range for testing
 
-interface InFlightRequest {
-  resolve: (value: unknown) => void;
+interface InFlightRequest<T> {
+  resolve: (value: T) => void;
   reject: (error: Error) => void;
 }
 
 export class WikiSyncer {
   port: number;
 
-  username?: string;
+  private _username?: string;
+
+  public get username(): string | undefined {
+    return this._username;
+  }
+
+  public set username(value: string | undefined) {
+    this._username = value;
+  }
 
   private ws?: WebSocket;
 
@@ -23,7 +32,7 @@ export class WikiSyncer {
 
   private nextSequenceID = 0;
 
-  private inFlightRequests = new Map<number, InFlightRequest>();
+  private inFlightRequests = { getPlayer: new Map<number, InFlightRequest<ImportableData>>() };
 
   constructor(port: number) {
     makeAutoObservable(this);
@@ -34,8 +43,21 @@ export class WikiSyncer {
   private onMessage(message: MessageEvent) {
     const response: WikiSyncerResponsesUnion = JSON.parse(message.data);
     console.log(message);
-    if (response._wsType === WikiSyncerRequestType.USERNAME_CHANGED) {
-      this.username = response.username;
+    switch (response._wsType) {
+      case WikiSyncerRequestType.USERNAME_CHANGED:
+        this.username = response.username;
+        break;
+
+      case WikiSyncerRequestType.GET_PLAYER:
+        if (response.error) {
+          this.inFlightRequests.getPlayer.get(response.sequenceId)?.reject(new Error(response.error));
+        } else {
+          this.inFlightRequests.getPlayer.get(response.sequenceId)?.resolve(response.payload);
+        }
+        break;
+
+      default:
+        break;
     }
   }
 
@@ -62,7 +84,7 @@ export class WikiSyncer {
   }
 
   getPlayer() {
-    const p = new Promise(((resolve, reject) => {
+    const p = new Promise<ImportableData>(((resolve, reject) => {
       if (this.ws) {
         const req: GetPlayerRequest = {
           _wsType: WikiSyncerRequestType.GET_PLAYER,
@@ -70,7 +92,7 @@ export class WikiSyncer {
           data: {},
         };
         this.ws.send(JSON.stringify(req));
-        this.inFlightRequests.set(this.nextSequenceID, { resolve, reject });
+        this.inFlightRequests.getPlayer.set(this.nextSequenceID, { resolve, reject });
         this.nextSequenceID += 1;
       } else {
         reject(new Error('Not connected'));
@@ -88,7 +110,7 @@ export const startPollingForRuneLite = () => {
     return syncers;
   }
 
-  makeAutoObservable(syncers);
+  // makeAutoObservable(syncers);
 
   window.syncers = syncers;
 
