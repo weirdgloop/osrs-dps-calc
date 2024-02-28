@@ -2,7 +2,7 @@
 
 import React, { useCallback } from 'react';
 import { observer } from 'mobx-react-lite';
-import { useStore } from '@/state';
+import { parseLoadoutsFromImportedData, useStore } from '@/state';
 import Select from '../generic/Select';
 
 type WikiSyncSelectItem = {
@@ -13,7 +13,7 @@ type WikiSyncSelectItem = {
 const WikiSyncAddLoadout: React.FC = observer(() => {
   const store = useStore();
   const {
-    createLoadout, rlUsernames, updatePlayer,
+    createLoadout, rlUsernames, updatePlayer, loadouts,
   } = store;
 
   const wikiSyncSelectItems: WikiSyncSelectItem[] = [];
@@ -25,15 +25,17 @@ const WikiSyncAddLoadout: React.FC = observer(() => {
   });
 
   const onSelect = useCallback(async (item: WikiSyncSelectItem | null | undefined) => {
-    console.log(item);
+    console.log(item, loadouts);
     if (item) {
       const data = await rlUsernames.get(item.value)?.getPlayer();
-      data?.loadouts.forEach((player) => {
-        createLoadout(true);
-        updatePlayer(player);
-      });
+      if (data) {
+        parseLoadoutsFromImportedData(data).forEach((player) => {
+          createLoadout(true);
+          updatePlayer(player);
+        });
+      }
     }
-  }, [createLoadout, rlUsernames, updatePlayer]);
+  }, [createLoadout, loadouts, rlUsernames, updatePlayer]);
 
   if (wikiSyncSelectItems.length === 0) {
     return <div>No RL account logged in</div>;

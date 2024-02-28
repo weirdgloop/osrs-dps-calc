@@ -42,7 +42,7 @@ export class WikiSyncer {
 
   private onMessage(message: MessageEvent) {
     const response: WikiSyncerResponsesUnion = JSON.parse(message.data);
-    console.log(message);
+    console.log(message, response);
     switch (response._wsType) {
       case WikiSyncerRequestType.USERNAME_CHANGED:
         this.username = response.username;

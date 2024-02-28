@@ -1,4 +1,3 @@
-import { PlayerEquipment, PlayerSkills } from '@/types/Player';
 import { ImportableData } from '@/types/State';
 
 /**
