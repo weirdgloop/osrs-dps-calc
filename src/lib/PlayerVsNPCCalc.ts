@@ -1058,9 +1058,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return 0;
     }
 
-    const htk = new Float64Array(this.monster.skills.hp + 1); // 0 hits left to do if hp = 0
+    const htk = new Float64Array(this.monster.inputs.monsterCurrentHp + 1); // 0 hits left to do if hp = 0
 
-    for (let hp = 1; hp <= this.monster.skills.hp; hp++) {
+    for (let hp = 1; hp <= this.monster.inputs.monsterCurrentHp; hp++) {
       let val = 1.0; // takes at least one hit
       for (let hit = 1; hit <= Math.min(hp, max); hit++) {
         const p = hist[hit];
@@ -1070,7 +1070,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       htk[hp] = val / (1 - hist[0].value);
     }
 
-    return htk[this.monster.skills.hp];
+    return htk[this.monster.inputs.monsterCurrentHp];
   }
 
   /**
