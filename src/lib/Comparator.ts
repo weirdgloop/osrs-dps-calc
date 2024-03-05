@@ -2,7 +2,7 @@ import { Player, PlayerSkills } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { scaleMonster, scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { max } from 'd3-array';
-import { keys } from '@/utils';
+import { keys, typedMerge } from '@/utils';
 import { CalcOpts } from '@/lib/BaseCalc';
 import { PartialDeep } from 'type-fest';
 import merge from 'lodash.mergewith';
@@ -10,8 +10,6 @@ import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
 import { ChartAnnotation, ChartEntry } from '@/types/State';
 import { DPS_PRECISION } from '@/lib/constants';
-
-const typedMerge = <T, E = PartialDeep<T>>(base: T, updates: E): T => merge(base, updates);
 
 export enum CompareXAxis {
   MONSTER_DEF,
@@ -149,15 +147,20 @@ export default class Comparator {
         return;
 
       case CompareXAxis.STAT_DECAY_RESTORE: {
-        const limit = max(this.baseLoadouts, (l) => max(keys(l.boosts) as (keyof PlayerSkills)[], (k) => Math.abs(l.boosts[k]))) || 0;
+        const limit = max(this.baseLoadouts, (l) => max(keys(l.boosts), (k) => Math.abs(l.boosts[k]))) || 0;
         for (let restore = 0; restore <= limit; restore++) {
           const restoredLoadouts = this.baseLoadouts.map((p) => {
-            const newBoosts: PartialDeep<PlayerSkills> = {};
+            const newBoosts: PlayerSkills = {} as PlayerSkills;
             keys(p.boosts).forEach((k) => {
-              const v = p.boosts[k];
-              newBoosts[k] = v === 0 ? 0 : (Math.sign(v) * (Math.abs(v) - restore));
+              const boost = p.boosts[k];
+              const distFromZero = Math.abs(boost);
+              if (restore >= distFromZero) {
+                newBoosts[k] = 0;
+              } else {
+                newBoosts[k] = Math.sign(boost) * (distFromZero - restore);
+              }
             });
-            return merge(p, newBoosts);
+            return typedMerge(p, { boosts: newBoosts });
           });
 
           yield {
