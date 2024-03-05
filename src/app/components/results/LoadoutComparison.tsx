@@ -199,7 +199,7 @@ const LoadoutComparison: React.FC = observer(() => {
 
     return [
       ...compareResult.annotations.x.map((a) => toRecharts(a, true)),
-      ...compareResult.annotations.x.map((a) => toRecharts(a, false)),
+      ...compareResult.annotations.y.map((a) => toRecharts(a, false)),
     ];
   }, [compareResult, isDark]);
 
