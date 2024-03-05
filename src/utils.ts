@@ -22,6 +22,8 @@ import SuperDefence from '@/public/img/potions/Super defence.png';
 import Potion from '@/enums/Potion';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { PlayerCombatStyle } from '@/types/PlayerCombatStyle';
+import { PartialDeep } from 'type-fest';
+import merge from 'lodash.mergewith';
 
 export const classNames = (...classes: string[]) => classes.filter(Boolean).join(' ');
 
@@ -91,6 +93,8 @@ export const getCdnImage = (filename: string) => `https://tools.runescape.wiki/o
 export const isDevServer = () => process.env.NODE_ENV === 'development';
 
 export const keys = <T extends object>(o: T): (keyof T)[] => Object.keys(o) as (keyof T)[];
+
+export const typedMerge = <T, E extends PartialDeep<T>>(base: T, updates: E): T => merge({}, base, updates);
 
 export class DeferredPromise<T> {
   private _resolve!: (response: T) => void;
