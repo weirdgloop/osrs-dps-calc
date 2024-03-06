@@ -15,14 +15,18 @@ let nextConfig = {
     'internmap'
   ],
   async redirects() {
-    return [
-      {
-        source: '/',
-        destination: process.env.NEXT_PUBLIC_BASE_PATH,
-        basePath: false,
-        permanent: true
-      }
-    ]
+    if (process.env.NEXT_PUBLIC_BASE_PATH) {
+      return [
+        {
+          source: '/',
+          destination: process.env.NEXT_PUBLIC_BASE_PATH,
+          basePath: false,
+          permanent: true
+        }
+      ]
+    } else {
+      return [];
+    }
   }
 }
 
