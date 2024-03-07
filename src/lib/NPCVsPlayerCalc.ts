@@ -130,6 +130,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     let stanceBonus = 0;
     if (stance === 'Defensive') stanceBonus += 3;
     if (stance === 'Controlled') stanceBonus += 1;
+    if (stance === 'Longrange') stanceBonus += 3;
 
     const bonus = this.getPlayerDefensiveBonus();
 
