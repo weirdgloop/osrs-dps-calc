@@ -1,4 +1,4 @@
-import { EquipmentPiece, Player } from '@/types/Player';
+import { EquipmentPiece, Player, PlayerEquipment } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { keys } from '@/utils';
 import { TOMBS_OF_AMASCUT_MONSTER_IDS } from '@/lib/constants';
@@ -199,6 +199,24 @@ export const getCanonicalItem = (equipmentPiece: EquipmentPiece): EquipmentPiece
   return availableEquipment.find((e) => e.id === canonicalId) || equipmentPiece;
 };
 
+export const getCanonicalEquipment = (inputEq: PlayerEquipment) => {
+  // canonicalize equipment ids
+  let canonicalized = inputEq;
+  for (const k of keys(inputEq)) {
+    const v = inputEq[k];
+    if (!v) continue;
+
+    const canonical = getCanonicalItem(v);
+    if (v.id !== canonical.id) {
+      canonicalized = {
+        ...canonicalized,
+        [k]: canonical,
+      };
+    }
+  }
+  return canonicalized;
+};
+
 export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monster): EquipmentBonuses => {
   const totals: EquipmentBonuses = {
     bonuses: {
@@ -223,14 +241,20 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
     },
   };
 
-  keys(player.equipment).forEach((slot) => {
-    const piece = player.equipment[slot];
+  // canonicalize all items first, otherwise ammoApplicability etc calls may return incorrect results later
+  const playerEquipment: PlayerEquipment = getCanonicalEquipment(player.equipment);
+
+  keys(playerEquipment).forEach((slot) => {
+    let piece = playerEquipment[slot]!;
     if (!piece) {
       return;
     }
 
+    // canonicalize the item first
+    piece = getCanonicalItem(piece);
+
     // skip over ammo slot's ranged bonuses if it is not used by the bow
-    const applyRangedStats = piece.slot !== 'ammo' || ammoApplicability(player.equipment.weapon?.id, piece.id) === AmmoApplicability.INCLUDED;
+    const applyRangedStats = piece.slot !== 'ammo' || ammoApplicability(playerEquipment.weapon?.id, piece.id) === AmmoApplicability.INCLUDED;
 
     keys(piece.bonuses).forEach((stat) => {
       if (stat === 'ranged_str' && !applyRangedStats) {
@@ -249,20 +273,20 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
     });
   });
 
-  if (player.equipment.weapon?.name === "Tumeken's shadow" && player.style.stance !== 'Manual Cast') {
+  if (playerEquipment.weapon?.name === "Tumeken's shadow" && player.style.stance !== 'Manual Cast') {
     const factor = TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id) ? 4 : 3;
     totals.bonuses.magic_str *= factor;
     totals.offensive.magic *= factor;
   }
 
-  if (player.equipment.weapon?.name === "Dinh's bulwark" || player.equipment.weapon?.name === "Dinh's blazing bulwark") {
+  if (playerEquipment.weapon?.name === "Dinh's bulwark" || playerEquipment.weapon?.name === "Dinh's blazing bulwark") {
     const defensives = totals.defensive;
     const defenceSum = defensives.stab + defensives.slash + defensives.crush + defensives.ranged;
     totals.bonuses.str += Math.max(0, Math.trunc((defenceSum - 800) / 12) - 38);
   }
 
   if (player.spell?.spellbook === 'ancient') {
-    const virtusPieces = sum([player.equipment.head?.name, player.equipment.body?.name, player.equipment.legs?.name], (i) => (i?.includes('Virtus') ? 1 : 0));
+    const virtusPieces = sum([playerEquipment.head?.name, playerEquipment.body?.name, playerEquipment.legs?.name], (i) => (i?.includes('Virtus') ? 1 : 0));
     totals.bonuses.magic_str += 3 * virtusPieces;
   }
 
