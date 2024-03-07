@@ -1,7 +1,6 @@
 import { EquipmentPiece, Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
-import { keys } from '@/utils';
-import { AmmoApplicability, ammoApplicability, getCanonicalItem } from '@/lib/Equipment';
+import { AmmoApplicability, ammoApplicability, getCanonicalEquipment } from '@/lib/Equipment';
 import UserIssueType from '@/enums/UserIssueType';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { CAST_STANCES } from '@/lib/constants';
@@ -111,24 +110,9 @@ export default class BaseCalc {
   }
 
   private canonicalizeEquipment() {
-    // canonicalize equipment ids
-    const inputEq = this.player.equipment;
-    let canonicalized = inputEq;
-    for (const k of keys(inputEq)) {
-      const v = inputEq[k];
-      if (!v) continue;
-
-      const canonical = getCanonicalItem(v);
-      if (v.id !== canonical.id) {
-        canonicalized = {
-          ...canonicalized,
-          [k]: canonical,
-        };
-      }
-    }
     this.player = {
       ...this.player,
-      equipment: canonicalized,
+      equipment: getCanonicalEquipment(this.player.equipment),
     };
   }
 
