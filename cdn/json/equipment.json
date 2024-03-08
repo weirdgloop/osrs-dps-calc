@@ -85176,7 +85176,7 @@
     "slot": "weapon",
     "image": "Mystic cards.png",
     "speed": 3,
-    "category": "blunt",
+    "category": "Blunt",
     "bonuses": {
       "str": -20,
       "ranged_str": 0,

@@ -155,36 +155,36 @@ def main():
             'style': monster_style,
             'size': get_printout_value(po['Size']) or 0,
             'max_hit': get_printout_value(po['Max hit']) or 0,
-            'skills': [
-                get_printout_value(po['Attack level']) or 0,
-                get_printout_value(po['Defence level']) or 0,
-                get_printout_value(po['Hitpoints']) or 0,
-                get_printout_value(po['Magic level']) or 0,
-                get_printout_value(po['Ranged level']) or 0,
-                get_printout_value(po['Strength level']) or 0
-            ],
-            'offensive': [
-                get_printout_value(po['Attack bonus']) or 0,
-                get_printout_value(po['Magic Damage bonus']) or 0,
-                get_printout_value(po['Magic attack bonus']) or 0,
-                get_printout_value(po['Range attack bonus']) or 0,
-                get_printout_value(po['Ranged Strength bonus']) or 0,
-                get_printout_value(po['Strength bonus']) or 0
-            ],
-            'defensive': [
-                get_printout_value(po['Crush defence bonus']) or 0,
-                get_printout_value(po['Magic defence bonus']) or 0,
-                get_printout_value(po['Range defence bonus']) or 0,
-                get_printout_value(po['Slash defence bonus']) or 0,
-                get_printout_value(po['Stab defence bonus']) or 0
-            ],
+            'skills': {
+                'atk': get_printout_value(po['Attack level']) or 0,
+                'def': get_printout_value(po['Defence level']) or 0,
+                'hp': get_printout_value(po['Hitpoints']) or 0,
+                'magic': get_printout_value(po['Magic level']) or 0,
+                'ranged': get_printout_value(po['Ranged level']) or 0,
+                'str': get_printout_value(po['Strength level']) or 0
+            },
+            'offensive': {
+                'atk': get_printout_value(po['Attack bonus']) or 0,
+                'magic': get_printout_value(po['Magic Damage bonus']) or 0,
+                'magic_str': get_printout_value(po['Magic attack bonus']) or 0,
+                'ranged': get_printout_value(po['Range attack bonus']) or 0,
+                'ranged_str': get_printout_value(po['Ranged Strength bonus']) or 0,
+                'str': get_printout_value(po['Strength bonus']) or 0
+            },
+            'defensive': {
+                'crush': get_printout_value(po['Crush defence bonus']) or 0,
+                'magic': get_printout_value(po['Magic defence bonus']) or 0,
+                'ranged': get_printout_value(po['Range defence bonus']) or 0,
+                'slash': get_printout_value(po['Slash defence bonus']) or 0,
+                'stab': get_printout_value(po['Stab defence bonus']) or 0
+            },
             'attributes': po['Monster attribute'] or []
         }
 
         # Prune...
         if (
                 # ...monsters that do not have any hitpoints
-                monster['skills'][2] == 0
+                monster['skills']['hp'] == 0
                 # ...monsters that don't have an ID
                 or monster['id'] is None
                 # ...monsters that are historical
@@ -195,18 +195,6 @@ def main():
                 or '(deadman: apocalypse)' in str.lower(monster['name'])
         ):
             continue
-
-        # vard's defence and str change throughout the fight and the ask query doesn't pull that field properly
-        if monster['name'] == 'Vardorvis':
-            if monster['version'] == 'Post-Quest':
-                monster['skills'][1] = 215
-                monster['skills'][5] = 270
-            elif monster['version'] == 'Awakened':
-                monster['skills'][1] = 268
-                monster['skills'][5] = 391
-            elif monster['version'] == 'Quest':
-                monster['skills'][1] = 180
-                monster['skills'][5] = 210
 
         data.append(monster)
         if not monster['image'] == '':
