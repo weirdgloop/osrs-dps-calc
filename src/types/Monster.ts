@@ -11,7 +11,7 @@ export interface Monster {
   version?: string;
   size: number;
   speed: number;
-  style: MonsterCombatStyle | null;
+  style: MonsterCombatStyle;
   maxHit?: number; // Only used for UI. Calculator doesn't use this value - it computes it itself.
   skills: {
     atk: number;
@@ -30,7 +30,7 @@ export interface Monster {
     str: number;
   }
   defensive: {
-    [k in CombatStyleType as string]: number;
+    [k in Exclude<CombatStyleType, null>]: number;
   }
   /**
    * The attributes the monster has
