@@ -13,6 +13,7 @@ import requests
 import json
 import urllib.parse
 import re
+import csv
 
 FILE_NAME = '../cdn/json/monsters.json'
 WIKI_BASE = 'https://oldschool.runescape.wiki'
@@ -201,6 +202,11 @@ def main():
             required_imgs.append(monster['image'])
 
     print('Total monsters: ' + str(len(data)))
+
+    with open('defence_rework.csv', 'r', newline='') as f:
+        print('Applying defence rework modifications')
+        for m in data:
+            m['defensive']
 
     # Save the JSON
     with open(FILE_NAME, 'w') as f:
