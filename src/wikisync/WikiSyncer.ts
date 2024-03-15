@@ -5,8 +5,8 @@ import { ImportableData } from '@/types/State';
 import { GetPlayerRequest, WikiSyncerRequestType, WikiSyncerResponsesUnion } from './WikiSyncerTypes';
 
 const minimumPort = 37767;
-// const maximumPort = 37776;
-const maximumPort = 37768; // small port range for testing
+const maximumPort = 37776;
+// const maximumPort = 37768; // small port range for testing
 
 interface InFlightRequest<T> {
   resolve: (value: T) => void;
