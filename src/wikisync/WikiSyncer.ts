@@ -94,7 +94,7 @@ export class WikiSyncer {
       }
       this.reconnectionJobId = setTimeout(() => {
         this.reconnectionJobId = undefined;
-        console.log('Reconnecting', this.port);
+        console.debug('Reconnecting', this.port);
         this.connect();
       }, 10000);
     };

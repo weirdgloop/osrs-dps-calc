@@ -233,7 +233,7 @@ class GlobalState implements State {
   private _debug: boolean = false;
 
   /**
-   * Map of WikiSync instances (PORT -> WIKISYNCER) that we have connected to.
+   * Map of WikiSync instances (PORT -> WIKISYNCER) that we attempt to persistently connect to.
    * The WikiSync RuneLite plugin includes a websocket server which exposes player information from the local
    * RuneLite client to the DPS calculator.
    */

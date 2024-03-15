@@ -59,7 +59,7 @@ const WikiSyncButton: React.FC<IWikiSyncButtonProps> = observer((props) => {
         footerChildren={(
           <p className="text-xs text-gray-300">
             You can also open this page from RuneLite without WikiSync. Ensure the default Wiki plugin is enabled,
-            then right-click the Wiki icon under the minimap and click View DPS.
+            then right-click the Wiki icon under the minimap and click DPS Wiki.
           </p>
         )}
       >
@@ -83,8 +83,8 @@ const WikiSyncButton: React.FC<IWikiSyncButtonProps> = observer((props) => {
               <li>Login to Old School RuneScape</li>
             </ol>
             <p className="mt-2">
-              The calculator will detect your PC running RuneLite, allowing you to click the RuneLite
-              button again to import your current player.
+              The calculator will automatically detect RuneLite running on this computer. Once RuneLite is detected, click the RuneLite
+              button to import your current player.
             </p>
           </div>
         </div>
@@ -93,7 +93,7 @@ const WikiSyncButton: React.FC<IWikiSyncButtonProps> = observer((props) => {
   );
 });
 
-const WikiSyncButtonWrapper: React.FC = () => {
+const WikiSyncButtonWrapper: React.FC = observer(() => {
   const store = useStore();
   const {
     validWikiSyncInstances, updatePlayer,
@@ -119,6 +119,6 @@ const WikiSyncButtonWrapper: React.FC = () => {
       onSelectedItemChange={onSelect}
     />
   );
-};
+});
 
 export default WikiSyncButtonWrapper;
