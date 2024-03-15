@@ -13,8 +13,23 @@ interface InFlightRequest<T> {
   reject: (error: Error) => void;
 }
 
+enum ConnectionState {
+  Disconnected,
+  Connected,
+}
+
 export class WikiSyncer {
   port: number;
+
+  private _connectionState = ConnectionState.Disconnected;
+
+  public get connectionState(): ConnectionState {
+    return this._connectionState;
+  }
+
+  public set connectionState(value: ConnectionState) {
+    this._connectionState = value;
+  }
 
   private _username?: string;
 
@@ -42,7 +57,6 @@ export class WikiSyncer {
 
   private onMessage(message: MessageEvent) {
     const response: WikiSyncerResponsesUnion = JSON.parse(message.data);
-    console.log(message, response);
     switch (response._wsType) {
       case WikiSyncerRequestType.USERNAME_CHANGED:
         this.username = response.username;
@@ -67,11 +81,14 @@ export class WikiSyncer {
       return;
     }
     this.ws = new WebSocket(`ws://localhost:${this.port}`);
+    this.ws.onopen = () => { this.connectionState = ConnectionState.Connected; };
+
     this.ws.onmessage = (message) => this.onMessage(message);
 
     this.ws.onclose = () => {
       this.ws = undefined;
       this.username = undefined;
+      this.connectionState = ConnectionState.Disconnected;
       if (this.reconnectionJobId) {
         return;
       }
@@ -109,10 +126,6 @@ export const startPollingForRuneLite = () => {
   if (typeof window === 'undefined' || syncers.size > 0) {
     return syncers;
   }
-
-  // makeAutoObservable(syncers);
-
-  window.syncers = syncers;
 
   for (let port = minimumPort; port <= maximumPort; port++) {
     syncers.set(port, new WikiSyncer(port));
