@@ -55,6 +55,27 @@ REQUIRED_PRINTOUTS = [
 ]
 
 
+REBALANCE_VALUES = {}
+with open('rebalance.csv', 'r', newline='') as f:
+    reader = csv.reader(f)
+    for r in reader:
+        name = r[1]
+        version = r[2]
+        REBALANCE_VALUES[f'{name}#{version if version else ''}'] = {
+            'weakness': r[3],
+            'severity': r[4],
+            'alterDef': r[5],
+            'stab': r[6],
+            'slash': r[7],
+            'crush': r[8],
+            'alterRangedDef': r[9],
+            'heavy': r[10],
+            'standard': r[11],
+            'light': r[12],
+            'touched': False,
+        }
+
+
 def get_monster_data():
     monsters = {}
     offset = 0
@@ -175,7 +196,9 @@ def main():
             'defensive': {
                 'crush': get_printout_value(po['Crush defence bonus']) or 0,
                 'magic': get_printout_value(po['Magic defence bonus']) or 0,
-                'ranged': get_printout_value(po['Range defence bonus']) or 0,
+                'heavy': get_printout_value(po['Range defence bonus']) or 0,
+                'standard': get_printout_value(po['Range defence bonus']) or 0,
+                'light': get_printout_value(po['Range defence bonus']) or 0,
                 'slash': get_printout_value(po['Slash defence bonus']) or 0,
                 'stab': get_printout_value(po['Stab defence bonus']) or 0
             },
@@ -197,16 +220,34 @@ def main():
         ):
             continue
 
+        rebalance_ref = f'{monster['name']}#{monster['version'] if monster['version'] else ''}'
+        if rebalance_ref in REBALANCE_VALUES:
+            rebalance = REBALANCE_VALUES[rebalance_ref]
+            print(f'rebalancing {rebalance_ref} with {rebalance}')
+            rebalance['touched'] = True
+            if rebalance['severity'] != '0':
+                monster['weakness'] = {
+                    'element': rebalance['weakness'].lower(),
+                    'severity': int(rebalance['severity'])
+                }
+            if rebalance['alterDef'] == 'TRUE':
+                monster['defensive']['stab'] = int(rebalance['stab'])
+                monster['defensive']['slash'] = int(rebalance['slash'])
+                monster['defensive']['crush'] = int(rebalance['crush'])
+            if rebalance['alterRangedDef'] == 'TRUE':
+                monster['defensive']['heavy'] = int(rebalance['heavy'])
+                monster['defensive']['standard'] = int(rebalance['standard'])
+                monster['defensive']['light'] = int(rebalance['light'])
+
         data.append(monster)
         if not monster['image'] == '':
             required_imgs.append(monster['image'])
 
     print('Total monsters: ' + str(len(data)))
 
-    with open('defence_rework.csv', 'r', newline='') as f:
-        print('Applying defence rework modifications')
-        for m in data:
-            m['defensive']
+    for k in REBALANCE_VALUES:
+        if not REBALANCE_VALUES[k]['touched']:
+            print(f'Rebalance {k} was not touched')
 
     # Save the JSON
     with open(FILE_NAME, 'w') as f:

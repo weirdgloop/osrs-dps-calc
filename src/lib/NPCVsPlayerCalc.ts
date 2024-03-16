@@ -175,7 +175,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
       roll = this.trackAdd(DetailKey.NPC_ACCURACY_ROLL_BASE, 9, skills.atk);
       bonus = this.trackAdd(DetailKey.NPC_ACCURACY_ROLL_BONUS, bonuses.atk, 64);
     }
-    if (style === 'ranged') {
+    if (['light', 'standard', 'heavy'].includes(style)) {
       roll = this.trackAdd(DetailKey.NPC_ACCURACY_ROLL_BASE, 9, skills.ranged);
       bonus = this.trackAdd(DetailKey.NPC_ACCURACY_ROLL_BONUS, bonuses.ranged, 64);
     }
@@ -200,7 +200,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     if (['slash', 'crush', 'stab'].includes(style)) {
       maxHit = Math.trunc(((9 + skills.str) * (bonuses.str + 64) + 320) / 640);
     }
-    if (style === 'ranged') {
+    if (['light', 'standard', 'heavy'].includes(style)) {
       maxHit = Math.trunc(((9 + skills.ranged) * (bonuses.ranged_str + 64) + 320) / 640);
     }
     if (style === 'magic') {

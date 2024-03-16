@@ -119,8 +119,6 @@ export interface Player extends EquipmentStats {
      * @see https://oldschool.runescape.wiki/w/Mark_of_Darkness
      */
     markOfDarknessSpell: boolean;
-
-    damageBonus: boolean;
   }
   spell: Spell | null;
 }

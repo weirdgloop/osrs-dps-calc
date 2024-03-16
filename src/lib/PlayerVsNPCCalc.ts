@@ -10,7 +10,9 @@ import {
   multiplyTransformer,
   WeightedHit,
 } from '@/lib/HitDist';
-import { isBindSpell, isFireSpell, isWaterSpell } from '@/types/Spell';
+import {
+  getSpellement, getSpellMaxHit, isBindSpell, isFireSpell, isWaterSpell,
+} from '@/types/Spell';
 import {
   PrayerData, PrayerMap,
 } from '@/enums/Prayer';
@@ -41,6 +43,7 @@ import {
 import { UserIssue } from '@/types/State';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonsterHpOnly } from '@/lib/MonsterScaling';
+import { getRangedDamageType } from '@/types/PlayerCombatStyle';
 
 /**
  * Class for computing various player-vs-NPC metrics.
@@ -70,7 +73,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     );
     const effectiveLevel = this.trackAdd(DetailKey.NPC_DEFENCE_ROLL_EFFECTIVE_LEVEL, level, 9);
 
-    const statBonus = this.trackAdd(DetailKey.NPC_DEFENCE_STAT_BONUS, this.player.style.type ? this.monster.defensive[this.player.style.type] : 0, 64);
+    let bonus: number;
+    if (this.player.style.type === 'ranged') {
+      const rangedType = getRangedDamageType(this.player.equipment.weapon!.category);
+      bonus = rangedType === 'mixed'
+        ? Math.trunc((this.monster.defensive.light + this.monster.defensive.standard + this.monster.defensive.heavy) / 3)
+        : this.monster.defensive[rangedType];
+    } else {
+      bonus = this.monster.defensive[this.player.style.type || 'crush'];
+    }
+
+    const statBonus = this.trackAdd(DetailKey.NPC_DEFENCE_STAT_BONUS, this.player.style.type ? bonus : 0, 64);
     let defenceRoll = this.trackFactor(DetailKey.NPC_DEFENCE_ROLL_BASE, effectiveLevel, [statBonus, 1]);
 
     if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) && this.monster.inputs.toaInvocationLevel) {
@@ -428,7 +441,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const { buffs } = this.player;
     const magicBonus = this.player.offensive.magic;
 
-    let attackRoll = effectiveLevel * (magicBonus + 64);
+    const baseRoll = effectiveLevel * (magicBonus + 64);
+    let attackRoll = baseRoll;
 
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
       const factor = <Factor>[buffs.forinthrySurge ? 27 : 24, 20];
@@ -455,6 +469,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       attackRoll = Math.trunc(attackRoll * 6 / 5);
     }
 
+    const spellement = getSpellement(this.player.spell);
+    if (this.monster.weakness && spellement) {
+      if (spellement === this.monster.weakness.element) {
+        attackRoll += Math.trunc(this.monster.weakness.severity * baseRoll / 100);
+      }
+    }
+
     return attackRoll;
   }
 
@@ -471,7 +492,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const { buffs } = this.player;
 
     if (spell) {
-      maxHit = spell.max_hit || 0;
+      maxHit = getSpellMaxHit(spell, magicLevel);
       if (spell?.name === 'Magic Dart') {
         if (this.wearing("Slayer's staff (e)") && buffs.onSlayerTask) {
           maxHit = Math.trunc(13 + magicLevel / 6);
@@ -546,6 +567,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       magicDmgBonus += 150;
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
       blackMaskBonus = true;
+    }
+
+    const spellement = getSpellement(this.player.spell);
+    if (this.monster.weakness && spellement) {
+      if (spellement === this.monster.weakness.element) {
+        magicDmgBonus += this.monster.weakness.severity * 10;
+      }
     }
 
     maxHit = Math.trunc(maxHit * (1000 + magicDmgBonus) / 1000);
@@ -803,7 +831,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.scaleDamage(3, 2);
     }
     if (this.wearing('Tome of fire') && isFireSpell(this.player.spell)) {
-      dist = dist.scaleDamage(3, 2);
+      dist = dist.scaleDamage(11, 10);
     }
     if (this.wearing('Tome of water') && isWaterSpell(this.player.spell)) {
       dist = dist.scaleDamage(6, 5);
