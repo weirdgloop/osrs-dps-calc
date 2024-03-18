@@ -56,24 +56,25 @@ REQUIRED_PRINTOUTS = [
 
 
 REBALANCE_VALUES = {}
-with open('rebalance.csv', 'r', newline='') as f:
+with open('rebalance2.csv', 'r', newline='') as f:
     reader = csv.reader(f)
     for r in reader:
-        name = r[1]
-        version = r[2]
-        REBALANCE_VALUES[f'{name}#{version if version else ''}'] = {
-            'weakness': r[3],
-            'severity': r[4],
-            'alterDef': r[5],
-            'stab': r[6],
-            'slash': r[7],
-            'crush': r[8],
-            'alterRangedDef': r[9],
-            'heavy': r[10],
-            'standard': r[11],
-            'light': r[12],
+        id = int(r[3])
+        REBALANCE_VALUES[id] = {
+            'weakness': r[4],
+            'severity': r[5],
+            'alterDef': r[6],
+            'stab': r[7],
+            'slash': r[8],
+            'crush': r[9],
+            'alterRangedDef': r[10],
+            'heavy': r[11],
+            'standard': r[12],
+            'light': r[13],
             'touched': False,
         }
+
+        print(REBALANCE_VALUES[id])
 
 
 def get_monster_data():
@@ -127,7 +128,7 @@ def main():
 
     # Loop over the monsters data from the wiki
     for k, v in wiki_data.items():
-        print('Processing ' + k)
+        # print('Processing ' + k)
 
         # Sanity check: make sure that this monster has printouts from SMW
         if 'printouts' not in v:
@@ -220,7 +221,7 @@ def main():
         ):
             continue
 
-        rebalance_ref = f'{monster['name']}#{monster['version'] if monster['version'] else ''}'
+        rebalance_ref = monster['id']
         if rebalance_ref in REBALANCE_VALUES:
             rebalance = REBALANCE_VALUES[rebalance_ref]
             print(f'rebalancing {rebalance_ref} with {rebalance}')

@@ -5446,19 +5446,15 @@
     "defensive": {
       "crush": 50,
       "magic": 40,
-      "heavy": 15,
+      "heavy": 30,
       "standard": 30,
       "light": 30,
       "slash": 50,
-      "stab": 10
+      "stab": 30
     },
     "attributes": [
       "dragon"
-    ],
-    "weakness": {
-      "element": "water",
-      "severity": 50
-    }
+    ]
   },
   {
     "id": 241,
@@ -10418,16 +10414,20 @@
     "defensive": {
       "crush": 70,
       "magic": 60,
-      "heavy": 50,
+      "heavy": 15,
       "standard": 50,
       "light": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
       "fiery"
-    ]
+    ],
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
   },
   {
     "id": 5879,
@@ -10461,16 +10461,20 @@
     "defensive": {
       "crush": 70,
       "magic": 60,
-      "heavy": 50,
+      "heavy": 15,
       "standard": 50,
       "light": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
       "fiery"
-    ]
+    ],
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
   },
   {
     "id": 5880,
@@ -10504,16 +10508,20 @@
     "defensive": {
       "crush": 70,
       "magic": 60,
-      "heavy": 50,
+      "heavy": 15,
       "standard": 50,
       "light": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
       "fiery"
-    ]
+    ],
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
   },
   {
     "id": 5881,
@@ -10547,16 +10555,20 @@
     "defensive": {
       "crush": 70,
       "magic": 60,
-      "heavy": 50,
+      "heavy": 15,
       "standard": 50,
       "light": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
       "fiery"
-    ]
+    ],
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
   },
   {
     "id": 5882,
@@ -10590,16 +10602,20 @@
     "defensive": {
       "crush": 70,
       "magic": 60,
-      "heavy": 50,
+      "heavy": 15,
       "standard": 50,
       "light": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
       "fiery"
-    ]
+    ],
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
   },
   {
     "id": 11066,
@@ -21343,7 +21359,7 @@
       "heavy": 320,
       "standard": 320,
       "light": 320,
-      "slash": 65,
+      "slash": 45,
       "stab": 255
     },
     "attributes": [
@@ -24971,11 +24987,7 @@
     },
     "attributes": [
       "fiery"
-    ],
-    "weakness": {
-      "element": "water",
-      "severity": 50
-    }
+    ]
   },
   {
     "id": 1556,
@@ -38216,11 +38228,7 @@
       "slash": 60,
       "stab": 30
     },
-    "attributes": [],
-    "weakness": {
-      "element": "fire",
-      "severity": 50
-    }
+    "attributes": []
   },
   {
     "id": 651,
@@ -38259,11 +38267,7 @@
       "slash": 60,
       "stab": 30
     },
-    "attributes": [],
-    "weakness": {
-      "element": "fire",
-      "severity": 50
-    }
+    "attributes": []
   },
   {
     "id": 649,
@@ -38302,11 +38306,7 @@
       "slash": 60,
       "stab": 30
     },
-    "attributes": [],
-    "weakness": {
-      "element": "fire",
-      "severity": 50
-    }
+    "attributes": []
   },
   {
     "id": 648,
@@ -38345,11 +38345,7 @@
       "slash": 60,
       "stab": 30
     },
-    "attributes": [],
-    "weakness": {
-      "element": "fire",
-      "severity": 50
-    }
+    "attributes": []
   },
   {
     "id": 2851,
@@ -38388,11 +38384,7 @@
       "slash": 40,
       "stab": 30
     },
-    "attributes": [],
-    "weakness": {
-      "element": "fire",
-      "severity": 50
-    }
+    "attributes": []
   },
   {
     "id": 2842,
@@ -38431,7 +38423,11 @@
       "slash": 40,
       "stab": 30
     },
-    "attributes": []
+    "attributes": [],
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 2841,
@@ -38470,7 +38466,11 @@
       "slash": 40,
       "stab": 30
     },
-    "attributes": []
+    "attributes": [],
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 647,
@@ -38634,7 +38634,11 @@
     },
     "attributes": [
       "demon"
-    ]
+    ],
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 852,
@@ -45005,7 +45009,7 @@
     "defensive": {
       "crush": 230,
       "magic": 280,
-      "heavy": 50,
+      "heavy": 25,
       "standard": 50,
       "light": 50,
       "slash": 190,
@@ -45207,9 +45211,9 @@
       "magic": 0,
       "heavy": 0,
       "standard": 0,
-      "light": 0,
+      "light": -10,
       "slash": 30,
-      "stab": -10
+      "stab": -20
     },
     "attributes": []
   },
@@ -49060,11 +49064,7 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
-    "weakness": {
-      "element": "fire",
-      "severity": 50
-    }
+    "attributes": []
   },
   {
     "id": 11271,
@@ -60598,13 +60598,17 @@
     "defensive": {
       "crush": 90,
       "magic": 30,
-      "heavy": 95,
+      "heavy": 65,
       "standard": 95,
       "light": 95,
       "slash": 115,
-      "stab": 30
+      "stab": 20
     },
-    "attributes": []
+    "attributes": [],
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
   },
   {
     "id": 6600,
@@ -70758,16 +70762,20 @@
     "defensive": {
       "crush": 70,
       "magic": 30,
-      "heavy": 90,
+      "heavy": 65,
       "standard": 90,
       "light": 90,
       "slash": 70,
-      "stab": 50
+      "stab": 20
     },
     "attributes": [
       "dragon",
       "fiery"
-    ]
+    ],
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
   },
   {
     "id": 7255,
@@ -75361,11 +75369,7 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
-    "weakness": {
-      "element": "fire",
-      "severity": 100
-    }
+    "attributes": []
   },
   {
     "id": 3551,
@@ -77529,7 +77533,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000039-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-000000FE-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -77569,7 +77573,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000039-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-000000FE-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -79515,7 +79519,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000011-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000006-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -79554,7 +79558,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000013-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000008-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
