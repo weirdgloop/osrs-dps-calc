@@ -774,7 +774,7 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": "40+",
+    "max_hit": "50+",
     "skills": [
       80,
       2,
@@ -3542,7 +3542,7 @@
       "Ranged"
     ],
     "size": 2,
-    "max_hit": "74",
+    "max_hit": "74 (melee)",
     "skills": [
       140,
       40,
@@ -20904,7 +20904,7 @@
     "skills": [
       8,
       6,
-      16,
+      12,
       1,
       1,
       8
@@ -24597,7 +24597,7 @@
       "Ranged"
     ],
     "size": 3,
-    "max_hit": "12+12 (standard)",
+    "max_hit": "max HP minus 1 (special)",
     "skills": [
       242,
       102,
@@ -24657,6 +24657,117 @@
       0,
       0,
       0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12814,
+    "name": "Fremennik warband archer",
+    "version": "",
+    "image": "Fremennik warband archer.png",
+    "level": 104,
+    "speed": 5,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": 0,
+    "skills": [
+      110,
+      80,
+      50,
+      110,
+      3,
+      110
+    ],
+    "offensive": [
+      150,
+      0,
+      150,
+      0,
+      0,
+      150
+    ],
+    "defensive": [
+      0,
+      75,
+      50,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12816,
+    "name": "Fremennik warband berserker",
+    "version": "",
+    "image": "Fremennik warband berserker.png",
+    "level": 104,
+    "speed": 5,
+    "style": [
+      "Melee"
+    ],
+    "size": 1,
+    "max_hit": "40",
+    "skills": [
+      110,
+      80,
+      50,
+      110,
+      3,
+      110
+    ],
+    "offensive": [
+      150,
+      0,
+      150,
+      0,
+      0,
+      150
+    ],
+    "defensive": [
+      50,
+      0,
+      75,
+      50,
+      50
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12815,
+    "name": "Fremennik warband seer",
+    "version": "",
+    "image": "Fremennik warband seer.png",
+    "level": 104,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": 0,
+    "skills": [
+      110,
+      80,
+      50,
+      110,
+      3,
+      110
+    ],
+    "offensive": [
+      150,
+      0,
+      150,
+      0,
+      0,
+      150
+    ],
+    "defensive": [
+      50,
+      30,
+      0,
+      50,
+      50
     ],
     "attributes": []
   },
@@ -37399,6 +37510,43 @@
     "attributes": []
   },
   {
+    "id": 12810,
+    "name": "Jaguar warrior",
+    "version": "",
+    "image": "Jaguar warrior.png",
+    "level": 234,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "47",
+    "skills": [
+      200,
+      125,
+      125,
+      100,
+      160,
+      330
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      25
+    ],
+    "defensive": [
+      30,
+      15,
+      45,
+      30,
+      30
+    ],
+    "attributes": []
+  },
+  {
     "id": 4276,
     "name": "Jail guard",
     "version": "1",
@@ -38030,6 +38178,43 @@
       0,
       0,
       0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12817,
+    "name": "Javelin Colossus",
+    "version": "",
+    "image": "Javelin Colossus.png",
+    "level": 278,
+    "speed": 5,
+    "style": [
+      "Ranged"
+    ],
+    "size": 3,
+    "max_hit": "48",
+    "skills": [
+      200,
+      190,
+      220,
+      225,
+      360,
+      300
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      25,
+      20,
+      0
+    ],
+    "defensive": [
+      15,
+      20,
+      30,
+      15,
+      15
     ],
     "attributes": []
   },
@@ -40124,7 +40309,7 @@
       "Stab"
     ],
     "size": 5,
-    "max_hit": "49 (Magic)",
+    "max_hit": "54 (Melee)",
     "skills": [
       320,
       240,
@@ -40162,7 +40347,7 @@
       "Stab"
     ],
     "size": 5,
-    "max_hit": "49 (Magic)",
+    "max_hit": "54 (Melee)",
     "skills": [
       320,
       240,
@@ -44347,7 +44532,7 @@
       "Ranged"
     ],
     "size": 1,
-    "max_hit": "21",
+    "max_hit": "24",
     "skills": [
       120,
       80,
@@ -46992,9 +47177,7 @@
       90,
       90
     ],
-    "attributes": [
-      "undead"
-    ]
+    "attributes": []
   },
   {
     "id": 949,
@@ -47032,9 +47215,7 @@
       90,
       90
     ],
-    "attributes": [
-      "undead"
-    ]
+    "attributes": []
   },
   {
     "id": 717,
@@ -47072,9 +47253,7 @@
       100,
       100
     ],
-    "attributes": [
-      "undead"
-    ]
+    "attributes": []
   },
   {
     "id": 724,
@@ -47112,9 +47291,7 @@
       100,
       100
     ],
-    "attributes": [
-      "undead"
-    ]
+    "attributes": []
   },
   {
     "id": 7276,
@@ -47951,47 +48128,10 @@
     ]
   },
   {
-    "id": 11088,
+    "id": 1025,
     "name": "Necromancer",
     "version": "",
     "image": "Necromancer.png",
-    "level": 68,
-    "speed": 4,
-    "style": [
-      "Magic"
-    ],
-    "size": 1,
-    "max_hit": "7",
-    "skills": [
-      56,
-      50,
-      80,
-      60,
-      1,
-      56
-    ],
-    "offensive": [
-      0,
-      10,
-      10,
-      0,
-      0,
-      0
-    ],
-    "defensive": [
-      8,
-      4,
-      0,
-      8,
-      8
-    ],
-    "attributes": []
-  },
-  {
-    "id": 1025,
-    "name": "Necromancer (Necromancer Tower)",
-    "version": "",
-    "image": "Necromancer (Necromancer Tower).png",
     "level": 26,
     "speed": 4,
     "style": [
@@ -48022,6 +48162,43 @@
       0,
       0,
       0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 11088,
+    "name": "Necromancer (Great Kourend)",
+    "version": "",
+    "image": "Necromancer (Great Kourend).png",
+    "level": 68,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "7",
+    "skills": [
+      56,
+      50,
+      80,
+      60,
+      1,
+      56
+    ],
+    "offensive": [
+      0,
+      10,
+      10,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      8,
+      4,
+      0,
+      8,
+      8
     ],
     "attributes": []
   },
@@ -58567,7 +58744,7 @@
       "Crush"
     ],
     "size": 2,
-    "max_hit": "16 Ranged",
+    "max_hit": "16 (Ranged)",
     "skills": [
       120,
       80,
@@ -59530,6 +59707,43 @@
       0,
       0,
       0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12811,
+    "name": "Serpent shaman",
+    "version": "",
+    "image": "Serpent shaman.png",
+    "level": 161,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": 0,
+    "skills": [
+      100,
+      90,
+      125,
+      220,
+      160,
+      90
+    ],
+    "offensive": [
+      0,
+      15,
+      50,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      30,
+      15,
+      50,
+      30,
+      30
     ],
     "attributes": []
   },
@@ -73431,7 +73645,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000042-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000002-QINU`\"'",
     "skills": [
       350,
       260,
@@ -73469,7 +73683,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000042-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000002-QINU`\"'",
     "skills": [
       350,
       260,
@@ -75319,7 +75533,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000001F-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000044-QINU`\"'",
     "skills": [
       280,
       215,
@@ -75356,7 +75570,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000021-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000046-QINU`\"'",
     "skills": [
       260,
       180,
@@ -79210,7 +79424,7 @@
       "Typeless Melee"
     ],
     "size": 1,
-    "max_hit": "1",
+    "max_hit": "6",
     "skills": [
       1,
       1,

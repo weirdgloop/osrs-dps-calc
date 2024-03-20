@@ -45540,6 +45540,66 @@
     "isTwoHanded": false
   },
   {
+    "name": "Dizana's quiver",
+    "id": 28951,
+    "version": "Charged",
+    "slot": "cape",
+    "image": "Dizana's quiver.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 4,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 28
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dizana's quiver",
+    "id": 28947,
+    "version": "Uncharged",
+    "slot": "cape",
+    "image": "Dizana's quiver (uncharged).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 3,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 18
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Doctor's hat",
     "id": 6547,
     "version": "",
@@ -49920,6 +49980,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Dual macuahuitl",
+    "id": 28997,
+    "version": "",
+    "slot": "weapon",
+    "image": "Dual macuahuitl.png",
+    "speed": 7,
+    "category": "Spiked",
+    "bonuses": {
+      "str": 32,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 1
+    },
+    "offensive": {
+      "stab": 115,
+      "slash": 0,
+      "crush": 121,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Dual sai",
     "id": 23206,
     "version": "",
@@ -50269,6 +50359,36 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Eclipse atlatl",
+    "id": 29000,
+    "version": "",
+    "slot": "weapon",
+    "image": "Eclipse atlatl.png",
+    "speed": 4,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 40,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 87
     },
     "defensive": {
       "stab": 0,
@@ -68610,6 +68730,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Hunter's spear",
+    "id": 29305,
+    "version": "",
+    "slot": "weapon",
+    "image": "Hunter's spear.png",
+    "speed": 6,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 48,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 1
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 73
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Hunters' crossbow",
     "id": 10156,
     "version": "",
@@ -71230,6 +71380,36 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Irit tar",
+    "id": 28837,
+    "version": "",
+    "slot": "ammo",
+    "image": "Irit tar.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 49,
       "magic_str": 0,
       "prayer": 0
     },
@@ -83370,6 +83550,96 @@
     "isTwoHanded": false
   },
   {
+    "name": "Mixed hide boots",
+    "id": 29286,
+    "version": "",
+    "slot": "feet",
+    "image": "Mixed hide boots.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 2,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -10,
+      "ranged": 5
+    },
+    "defensive": {
+      "stab": 4,
+      "slash": 5,
+      "crush": 6,
+      "magic": 3,
+      "ranged": 3
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Mixed hide cape",
+    "id": 29289,
+    "version": "",
+    "slot": "cape",
+    "image": "Mixed hide cape.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 1,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -15,
+      "ranged": 5
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 2,
+      "crush": 2,
+      "magic": 5,
+      "ranged": 1
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Mixed hide legs",
+    "id": 29283,
+    "version": "",
+    "slot": "legs",
+    "image": "Mixed hide legs.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 3,
+      "slash": -1,
+      "crush": -2,
+      "magic": -10,
+      "ranged": 14
+    },
+    "defensive": {
+      "stab": 20,
+      "slash": 23,
+      "crush": 22,
+      "magic": 16,
+      "ranged": 20
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Mole slippers",
     "id": 23285,
     "version": "",
@@ -85176,7 +85446,7 @@
     "slot": "weapon",
     "image": "Mystic cards.png",
     "speed": 3,
-    "category": "blunt",
+    "category": "Blunt",
     "bonuses": {
       "str": -20,
       "ranged_str": 0,
@@ -117090,6 +117360,126 @@
     "isTwoHanded": false
   },
   {
+    "name": "Sulphur blades",
+    "id": 29084,
+    "version": "",
+    "slot": "weapon",
+    "image": "Sulphur blades.png",
+    "speed": 4,
+    "category": "Slash Sword",
+    "bonuses": {
+      "str": 64,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 11,
+      "slash": 72,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Sunfire fanatic chausses",
+    "id": 28939,
+    "version": "",
+    "slot": "legs",
+    "image": "Sunfire fanatic chausses.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 8
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -21,
+      "ranged": -11
+    },
+    "defensive": {
+      "stab": 51,
+      "slash": 49,
+      "crush": 47,
+      "magic": -4,
+      "ranged": 49
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Sunfire fanatic cuirass",
+    "id": 28936,
+    "version": "",
+    "slot": "body",
+    "image": "Sunfire fanatic cuirass.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 10
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -30,
+      "ranged": -15
+    },
+    "defensive": {
+      "stab": 82,
+      "slash": 80,
+      "crush": 72,
+      "magic": -6,
+      "ranged": 80
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Sunfire fanatic helm",
+    "id": 28933,
+    "version": "",
+    "slot": "head",
+    "image": "Sunfire fanatic helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 6
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -6,
+      "ranged": -3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": -1,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Superior calamity breeches",
     "id": 26693,
     "version": "Broken",
@@ -119428,6 +119818,36 @@
       "ranged": 2
     },
     "isTwoHanded": false
+  },
+  {
+    "name": "Tecu salamander",
+    "id": 28834,
+    "version": "",
+    "slot": "weapon",
+    "image": "Tecu salamander.png",
+    "speed": 5,
+    "category": "Salamander",
+    "bonuses": {
+      "str": 91,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 77,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 87
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
   },
   {
     "name": "Terrifying charm",
