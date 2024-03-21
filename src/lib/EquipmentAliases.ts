@@ -24,6 +24,7 @@ const equipmentAliases = {
   21018: [24664], // Ancestral hat
   21024: [24668], // Ancestral robe bottom
   21021: [24666], // Ancestral robe top
+  24201: [24203], // Ancient halo#Normal
   27624: [27626], // Ancient sceptre#Normal
   11771: [26768, 25260], // Archers ring (i)#Nightmare Zone
   11830: [26716], // Armadyl chainskirt
