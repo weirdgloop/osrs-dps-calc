@@ -9467,6 +9467,45 @@
     ]
   },
   {
+    "id": 12978,
+    "name": "Black jaguar",
+    "version": "",
+    "image": "Black jaguar.png",
+    "level": 67,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "6",
+    "skills": {
+      "atk": 55,
+      "def": 55,
+      "hp": 80,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
     "id": 1545,
     "name": "Black knight (Port Sarim Jail)",
     "version": "",
@@ -9822,6 +9861,45 @@
     "attributes": []
   },
   {
+    "id": 13011,
+    "name": "Blood Moon",
+    "version": "",
+    "image": "Blood Moon.png",
+    "level": 329,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 5,
+    "max_hit": "20",
+    "skills": {
+      "atk": 258,
+      "def": 60,
+      "hp": 500,
+      "magic": 100,
+      "ranged": 1,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 100,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 100,
+      "magic": 500,
+      "heavy": 500,
+      "standard": 500,
+      "light": 500,
+      "slash": 0,
+      "stab": 100
+    },
+    "attributes": []
+  },
+  {
     "id": 11293,
     "name": "Blood Reaver",
     "version": "Ancient Prison",
@@ -9902,6 +9980,45 @@
     "attributes": [
       "demon"
     ]
+  },
+  {
+    "id": 13021,
+    "name": "Blood jaguar",
+    "version": "",
+    "image": "Blood jaguar.png",
+    "level": 40,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 40,
+      "def": 28,
+      "hp": 100,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
   },
   {
     "id": 8367,
@@ -10144,6 +10261,45 @@
       "light": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 13013,
+    "name": "Blue Moon",
+    "version": "",
+    "image": "Blue Moon.png",
+    "level": 329,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 5,
+    "max_hit": "18",
+    "skills": {
+      "atk": 258,
+      "def": 60,
+      "hp": 500,
+      "magic": 100,
+      "ranged": 1,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 100,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 500,
+      "heavy": 500,
+      "standard": 500,
+      "light": 500,
+      "slash": 100,
+      "stab": 100
     },
     "attributes": []
   },
@@ -11886,6 +12042,45 @@
       "light": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 13004,
+    "name": "Buffalo (monster)",
+    "version": "",
+    "image": "Buffalo (monster).png",
+    "level": 9,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "2",
+    "skills": {
+      "atk": 6,
+      "def": 1,
+      "hp": 20,
+      "magic": 1,
+      "ranged": 1,
+      "str": 6
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": -21,
+      "magic": -21,
+      "heavy": -21,
+      "standard": -21,
+      "light": -21,
+      "slash": -21,
+      "stab": -21
     },
     "attributes": []
   },
@@ -17724,6 +17919,240 @@
     "attributes": []
   },
   {
+    "id": 12918,
+    "name": "Cultist",
+    "version": "1",
+    "image": "Cultist.png",
+    "level": 34,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 30,
+      "def": 30,
+      "hp": 25,
+      "magic": 1,
+      "ranged": 1,
+      "str": 35
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 10,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": []
+  },
+  {
+    "id": 12919,
+    "name": "Cultist",
+    "version": "2",
+    "image": "Cultist (2).png",
+    "level": 34,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 30,
+      "def": 30,
+      "hp": 25,
+      "magic": 1,
+      "ranged": 1,
+      "str": 35
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 10,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": []
+  },
+  {
+    "id": 12920,
+    "name": "Cultist",
+    "version": "3",
+    "image": "Cultist (3).png",
+    "level": 34,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 30,
+      "def": 30,
+      "hp": 25,
+      "magic": 1,
+      "ranged": 1,
+      "str": 35
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 10,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": []
+  },
+  {
+    "id": 12921,
+    "name": "Cultist",
+    "version": "4",
+    "image": "Cultist (4).png",
+    "level": 34,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 30,
+      "def": 30,
+      "hp": 25,
+      "magic": 1,
+      "ranged": 1,
+      "str": 35
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 10,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": []
+  },
+  {
+    "id": 12922,
+    "name": "Cultist",
+    "version": "5",
+    "image": "Cultist (5).png",
+    "level": 34,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 30,
+      "def": 30,
+      "hp": 25,
+      "magic": 1,
+      "ranged": 1,
+      "str": 35
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 10,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": []
+  },
+  {
+    "id": 12923,
+    "name": "Cultist",
+    "version": "6",
+    "image": "Cultist (6).png",
+    "level": 34,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 30,
+      "def": 30,
+      "hp": 25,
+      "magic": 1,
+      "ranged": 1,
+      "str": 35
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 10,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": []
+  },
+  {
     "id": 11717,
     "name": "Cursed Baboon",
     "version": "",
@@ -17759,6 +18188,45 @@
       "light": -50,
       "slash": 900,
       "stab": 900
+    },
+    "attributes": []
+  },
+  {
+    "id": 12955,
+    "name": "Cuthbert",
+    "version": "",
+    "image": "Cuthbert.png",
+    "level": 1,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 1,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
     },
     "attributes": []
   },
@@ -22558,6 +23026,45 @@
     "attributes": []
   },
   {
+    "id": 13012,
+    "name": "Eclipse Moon",
+    "version": "",
+    "image": "Eclipse Moon.png",
+    "level": 329,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 5,
+    "max_hit": "18",
+    "skills": {
+      "atk": 258,
+      "def": 60,
+      "hp": 500,
+      "magic": 100,
+      "ranged": 1,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 100,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 100,
+      "magic": 500,
+      "heavy": 500,
+      "standard": 500,
+      "light": 500,
+      "slash": 100,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
     "id": 2618,
     "name": "Eduard",
     "version": "",
@@ -23073,6 +23580,45 @@
       "light": 20,
       "slash": 40,
       "stab": 20
+    },
+    "attributes": []
+  },
+  {
+    "id": 13139,
+    "name": "Embertailed jerboa",
+    "version": "",
+    "image": "Embertailed jerboa.png",
+    "level": 2,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 0,
+    "max_hit": "0",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 2,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": -47,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": -53
+    },
+    "defensive": {
+      "crush": -42,
+      "magic": -42,
+      "heavy": -42,
+      "standard": -42,
+      "light": -42,
+      "slash": -42,
+      "stab": -42
     },
     "attributes": []
   },
@@ -26065,6 +26611,123 @@
       "light": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12814,
+    "name": "Fremennik warband archer",
+    "version": "",
+    "image": "Fremennik warband archer.png",
+    "level": 104,
+    "speed": 5,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 110,
+      "def": 80,
+      "hp": 50,
+      "magic": 110,
+      "ranged": 3,
+      "str": 110
+    },
+    "offensive": {
+      "atk": 150,
+      "magic": 0,
+      "magic_str": 150,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 150
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 75,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12816,
+    "name": "Fremennik warband berserker",
+    "version": "",
+    "image": "Fremennik warband berserker.png",
+    "level": 104,
+    "speed": 5,
+    "style": [
+      "Melee"
+    ],
+    "size": 1,
+    "max_hit": "40",
+    "skills": {
+      "atk": 110,
+      "def": 80,
+      "hp": 50,
+      "magic": 110,
+      "ranged": 3,
+      "str": 110
+    },
+    "offensive": {
+      "atk": 150,
+      "magic": 0,
+      "magic_str": 150,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 150
+    },
+    "defensive": {
+      "crush": 50,
+      "magic": 0,
+      "heavy": 75,
+      "standard": 75,
+      "light": 75,
+      "slash": 50,
+      "stab": 50
+    },
+    "attributes": []
+  },
+  {
+    "id": 12815,
+    "name": "Fremennik warband seer",
+    "version": "",
+    "image": "Fremennik warband seer.png",
+    "level": 104,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 110,
+      "def": 80,
+      "hp": 50,
+      "magic": 110,
+      "ranged": 3,
+      "str": 110
+    },
+    "offensive": {
+      "atk": 150,
+      "magic": 0,
+      "magic_str": 150,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 150
+    },
+    "defensive": {
+      "crush": 50,
+      "magic": 30,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 50,
+      "stab": 50
     },
     "attributes": []
   },
@@ -31795,6 +32458,45 @@
     "attributes": [
       "golem"
     ]
+  },
+  {
+    "id": 13029,
+    "name": "Grimy Lizard",
+    "version": "",
+    "image": "Grimy Lizard.png",
+    "level": 50,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "3",
+    "skills": {
+      "atk": 65,
+      "def": 10,
+      "hp": 75,
+      "magic": 25,
+      "ranged": 1,
+      "str": 25
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 50,
+      "magic": 50,
+      "heavy": 35,
+      "standard": 35,
+      "light": 35,
+      "slash": 15,
+      "stab": 35
+    },
+    "attributes": []
   },
   {
     "id": 4919,
@@ -39529,6 +40231,123 @@
     "attributes": []
   },
   {
+    "id": 12976,
+    "name": "Jaguar",
+    "version": "",
+    "image": "Jaguar.png",
+    "level": 67,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "6",
+    "skills": {
+      "atk": 55,
+      "def": 55,
+      "hp": 80,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12977,
+    "name": "Jaguar cub",
+    "version": "",
+    "image": "Jaguar cub.png",
+    "level": 31,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 25,
+      "def": 25,
+      "hp": 40,
+      "magic": 1,
+      "ranged": 1,
+      "str": 22
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12810,
+    "name": "Jaguar warrior",
+    "version": "",
+    "image": "Jaguar warrior.png",
+    "level": 234,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "47",
+    "skills": {
+      "atk": 200,
+      "def": 125,
+      "hp": 125,
+      "magic": 100,
+      "ranged": 160,
+      "str": 330
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 25
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 15,
+      "heavy": 45,
+      "standard": 45,
+      "light": 45,
+      "slash": 30,
+      "stab": 30
+    },
+    "attributes": []
+  },
+  {
     "id": 4276,
     "name": "Jail guard",
     "version": "1",
@@ -40194,6 +41013,45 @@
       "light": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12817,
+    "name": "Javelin Colossus",
+    "version": "",
+    "image": "Javelin Colossus.png",
+    "level": 278,
+    "speed": 5,
+    "style": [
+      "Ranged"
+    ],
+    "size": 3,
+    "max_hit": "48",
+    "skills": {
+      "atk": 200,
+      "def": 190,
+      "hp": 220,
+      "magic": 225,
+      "ranged": 360,
+      "str": 300
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 25,
+      "ranged_str": 20,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 15,
+      "magic": 20,
+      "heavy": 30,
+      "standard": 30,
+      "light": 30,
+      "slash": 15,
+      "stab": 15
     },
     "attributes": []
   },
@@ -43532,6 +44390,45 @@
       "light": 13,
       "slash": 10,
       "stab": 10
+    },
+    "attributes": []
+  },
+  {
+    "id": 13115,
+    "name": "Knight of varlamore (monster)",
+    "version": "",
+    "image": "Knight of varlamore.png",
+    "level": 46,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 38,
+      "def": 31,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 8,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "crush": 36,
+      "magic": -11,
+      "heavy": 36,
+      "standard": 36,
+      "light": 36,
+      "slash": 40,
+      "stab": 39
     },
     "attributes": []
   },
@@ -46921,6 +47818,47 @@
     "attributes": []
   },
   {
+    "id": 12818,
+    "name": "Manticore",
+    "version": "",
+    "image": "Manticore.png",
+    "level": 320,
+    "speed": 10,
+    "style": [
+      "Melee",
+      "Ranged",
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "31",
+    "skills": {
+      "atk": 300,
+      "def": 250,
+      "hp": 250,
+      "magic": 300,
+      "ranged": 350,
+      "str": 300
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 10,
+      "heavy": 25,
+      "standard": 25,
+      "light": 25,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
     "id": 7407,
     "name": "Marble gargoyle",
     "version": "",
@@ -47782,6 +48720,84 @@
       "light": 10,
       "slash": 5,
       "stab": 5
+    },
+    "attributes": []
+  },
+  {
+    "id": 12812,
+    "name": "Minotaur (Fortis Colosseum)",
+    "version": "1",
+    "image": "Minotaur (Fortis Colosseum).png",
+    "level": 318,
+    "speed": 0,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "74",
+    "skills": {
+      "atk": 300,
+      "def": 190,
+      "hp": 225,
+      "magic": 250,
+      "ranged": 120,
+      "str": 360
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 12,
+      "standard": 12,
+      "light": 12,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12813,
+    "name": "Minotaur (Fortis Colosseum)",
+    "version": "2",
+    "image": "Minotaur (Fortis Colosseum) (2).png",
+    "level": 318,
+    "speed": 0,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "74",
+    "skills": {
+      "atk": 300,
+      "def": 190,
+      "hp": 225,
+      "magic": 250,
+      "ranged": 120,
+      "str": 360
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 12,
+      "standard": 12,
+      "light": 12,
+      "slash": 0,
+      "stab": 0
     },
     "attributes": []
   },
@@ -48739,6 +49755,45 @@
       "light": 0,
       "slash": 35,
       "stab": 35
+    },
+    "attributes": []
+  },
+  {
+    "id": 13030,
+    "name": "Moonlight Cockatrice",
+    "version": "",
+    "image": "Moonlight Cockatrice.png",
+    "level": 49,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 3,
+    "max_hit": "6",
+    "skills": {
+      "atk": 31,
+      "def": 39,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 52
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 14,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 14,
+      "stab": 14
     },
     "attributes": []
   },
@@ -50661,49 +51716,10 @@
     ]
   },
   {
-    "id": 11088,
+    "id": 1025,
     "name": "Necromancer",
     "version": "",
     "image": "Necromancer.png",
-    "level": 68,
-    "speed": 4,
-    "style": [
-      "Magic"
-    ],
-    "size": 1,
-    "max_hit": "7",
-    "skills": {
-      "atk": 56,
-      "def": 50,
-      "hp": 80,
-      "magic": 60,
-      "ranged": 1,
-      "str": 56
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 10,
-      "magic_str": 10,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 8,
-      "magic": 4,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 8,
-      "stab": 8
-    },
-    "attributes": []
-  },
-  {
-    "id": 1025,
-    "name": "Necromancer (Necromancer Tower)",
-    "version": "",
-    "image": "Necromancer (Necromancer Tower).png",
     "level": 26,
     "speed": 4,
     "style": [
@@ -50736,6 +51752,45 @@
       "light": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 11088,
+    "name": "Necromancer (Great Kourend)",
+    "version": "",
+    "image": "Necromancer (Great Kourend).png",
+    "level": 68,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "7",
+    "skills": {
+      "atk": 56,
+      "def": 50,
+      "hp": 80,
+      "magic": 60,
+      "ranged": 1,
+      "str": 56
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 10,
+      "magic_str": 10,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 8,
+      "magic": 4,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 8,
+      "stab": 8
     },
     "attributes": []
   },
@@ -62890,6 +63945,45 @@
     "attributes": []
   },
   {
+    "id": 12811,
+    "name": "Serpent shaman",
+    "version": "",
+    "image": "Serpent shaman.png",
+    "level": 161,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 100,
+      "def": 90,
+      "hp": 125,
+      "magic": 220,
+      "ranged": 160,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 15,
+      "magic_str": 50,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 15,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
+      "slash": 30,
+      "stab": 30
+    },
+    "attributes": []
+  },
+  {
     "id": 4104,
     "name": "Servant (Burthorpe)",
     "version": "",
@@ -63681,6 +64775,45 @@
       "light": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12819,
+    "name": "Shockwave Colossus",
+    "version": "",
+    "image": "Shockwave Colossus.png",
+    "level": 239,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "56",
+    "skills": {
+      "atk": 120,
+      "def": 150,
+      "hp": 125,
+      "magic": 350,
+      "ranged": 220,
+      "str": 190
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 35,
+      "magic_str": 55,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 15,
+      "magic": 5,
+      "heavy": 35,
+      "standard": 35,
+      "light": 35,
+      "slash": 15,
+      "stab": 15
     },
     "attributes": []
   },
@@ -68014,6 +69147,45 @@
     "attributes": []
   },
   {
+    "id": 12821,
+    "name": "Sol Heredit",
+    "version": "",
+    "image": "Sol Heredit.png",
+    "level": 1563,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 5,
+    "max_hit": "44 regular",
+    "skills": {
+      "atk": 350,
+      "def": 200,
+      "hp": 1500,
+      "magic": 300,
+      "ranged": 350,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 250,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 150,
+      "ranged_str": 5,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 750,
+      "heavy": 825,
+      "standard": 825,
+      "light": 825,
+      "slash": 5,
+      "stab": 65
+    },
+    "attributes": []
+  },
+  {
     "id": 4086,
     "name": "Soldier (Burthorpe)",
     "version": "",
@@ -71156,7 +72328,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000008E-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-000000CA-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -71411,6 +72583,45 @@
       "light": 15,
       "slash": 25,
       "stab": 15
+    },
+    "attributes": []
+  },
+  {
+    "id": 12879,
+    "name": "Sulphur Nagua",
+    "version": "",
+    "image": "Sulphur Nagua.png",
+    "level": 98,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "11",
+    "skills": {
+      "atk": 90,
+      "def": 40,
+      "hp": 100,
+      "magic": 50,
+      "ranged": 1,
+      "str": 105
+    },
+    "offensive": {
+      "atk": 90,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 10,
+      "magic": 200,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
+      "slash": 50,
+      "stab": 50
     },
     "attributes": []
   },
@@ -75330,7 +76541,11 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": []
+    "attributes": [],
+    "weakness": {
+      "element": "fire",
+      "severity": 100
+    }
   },
   {
     "id": 9434,
@@ -75369,7 +76584,11 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": []
+    "attributes": [],
+    "weakness": {
+      "element": "fire",
+      "severity": 100
+    }
   },
   {
     "id": 3551,
@@ -77533,7 +78752,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-000000FE-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000066-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -77573,7 +78792,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-000000FE-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000066-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -79519,7 +80738,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000006-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000019-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -79558,7 +80777,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000008-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000001B-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -85104,6 +86323,88 @@
       "element": "earth",
       "severity": 50
     }
+  },
+  {
+    "id": 13032,
+    "name": "Wyrmling",
+    "version": "Attacking",
+    "image": "Wyrmling (attacking).png",
+    "level": 55,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 20,
+      "def": 40,
+      "hp": 65,
+      "magic": 60,
+      "ranged": 15,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 10,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "crush": 50,
+      "magic": 50,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 50,
+      "stab": 20
+    },
+    "attributes": [
+      "dragon"
+    ]
+  },
+  {
+    "id": 13031,
+    "name": "Wyrmling",
+    "version": "Idle",
+    "image": "Wyrmling.png",
+    "level": 55,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 20,
+      "def": 40,
+      "hp": 65,
+      "magic": 60,
+      "ranged": 15,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 10,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "crush": 50,
+      "magic": 50,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 50,
+      "stab": 20
+    },
+    "attributes": [
+      "dragon"
+    ]
   },
   {
     "id": 10951,
