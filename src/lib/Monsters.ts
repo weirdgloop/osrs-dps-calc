@@ -20,7 +20,7 @@ function getMonsters(): Omit<Monster, 'inputs'>[] {
       offensive: m.offensive,
       defensive: m.defensive,
       attributes: m.attributes as MonsterAttribute[],
-      weakness: m.weakness as Monster['weakness'],
+      weakness: <Monster['weakness']>m.weakness || null,
     };
   });
 }

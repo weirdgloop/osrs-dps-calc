@@ -145,6 +145,7 @@ class GlobalState implements State {
       heavy: 20,
     },
     attributes: [MonsterAttribute.DEMON],
+    weakness: null,
     inputs: {
       isFromCoxCm: false,
       toaInvocationLevel: 0,
