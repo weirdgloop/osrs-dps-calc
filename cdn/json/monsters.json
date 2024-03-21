@@ -8967,6 +8967,43 @@
     ]
   },
   {
+    "id": 12978,
+    "name": "Black jaguar",
+    "version": "",
+    "image": "Black jaguar.png",
+    "level": 67,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "6",
+    "skills": [
+      55,
+      55,
+      80,
+      1,
+      1,
+      50
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
     "id": 1545,
     "name": "Black knight (Port Sarim Jail)",
     "version": "",
@@ -9304,6 +9341,43 @@
     "attributes": []
   },
   {
+    "id": 13011,
+    "name": "Blood Moon",
+    "version": "",
+    "image": "Blood Moon.png",
+    "level": 329,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 5,
+    "max_hit": "20",
+    "skills": [
+      258,
+      60,
+      500,
+      100,
+      1,
+      100
+    ],
+    "offensive": [
+      100,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      100,
+      500,
+      500,
+      0,
+      100
+    ],
+    "attributes": []
+  },
+  {
     "id": 11293,
     "name": "Blood Reaver",
     "version": "Ancient Prison",
@@ -9380,6 +9454,43 @@
     "attributes": [
       "demon"
     ]
+  },
+  {
+    "id": 13021,
+    "name": "Blood jaguar",
+    "version": "",
+    "image": "Blood jaguar.png",
+    "level": 40,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": [
+      40,
+      28,
+      100,
+      1,
+      1,
+      40
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
   },
   {
     "id": 8367,
@@ -9610,6 +9721,43 @@
       0,
       0,
       0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 13013,
+    "name": "Blue Moon",
+    "version": "",
+    "image": "Blue Moon.png",
+    "level": 329,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 5,
+    "max_hit": "18",
+    "skills": [
+      258,
+      60,
+      500,
+      100,
+      1,
+      100
+    ],
+    "offensive": [
+      100,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      500,
+      500,
+      100,
+      100
     ],
     "attributes": []
   },
@@ -11206,6 +11354,43 @@
       0,
       0,
       0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 13004,
+    "name": "Buffalo (monster)",
+    "version": "",
+    "image": "Buffalo (monster).png",
+    "level": 9,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "2",
+    "skills": [
+      6,
+      1,
+      20,
+      1,
+      1,
+      6
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      -21,
+      -21,
+      -21,
+      -21,
+      -21
     ],
     "attributes": []
   },
@@ -16748,6 +16933,228 @@
     "attributes": []
   },
   {
+    "id": 12918,
+    "name": "Cultist",
+    "version": "1",
+    "image": "Cultist.png",
+    "level": 34,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": [
+      30,
+      30,
+      25,
+      1,
+      1,
+      35
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      30,
+      10,
+      20,
+      20,
+      20
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12919,
+    "name": "Cultist",
+    "version": "2",
+    "image": "Cultist (2).png",
+    "level": 34,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": [
+      30,
+      30,
+      25,
+      1,
+      1,
+      35
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      30,
+      10,
+      20,
+      20,
+      20
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12920,
+    "name": "Cultist",
+    "version": "3",
+    "image": "Cultist (3).png",
+    "level": 34,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": [
+      30,
+      30,
+      25,
+      1,
+      1,
+      35
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      30,
+      10,
+      20,
+      20,
+      20
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12921,
+    "name": "Cultist",
+    "version": "4",
+    "image": "Cultist (4).png",
+    "level": 34,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": [
+      30,
+      30,
+      25,
+      1,
+      1,
+      35
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      30,
+      10,
+      20,
+      20,
+      20
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12922,
+    "name": "Cultist",
+    "version": "5",
+    "image": "Cultist (5).png",
+    "level": 34,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": [
+      30,
+      30,
+      25,
+      1,
+      1,
+      35
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      30,
+      10,
+      20,
+      20,
+      20
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12923,
+    "name": "Cultist",
+    "version": "6",
+    "image": "Cultist (6).png",
+    "level": 34,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": [
+      30,
+      30,
+      25,
+      1,
+      1,
+      35
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      30,
+      10,
+      20,
+      20,
+      20
+    ],
+    "attributes": []
+  },
+  {
     "id": 11717,
     "name": "Cursed Baboon",
     "version": "",
@@ -16781,6 +17188,43 @@
       -50,
       900,
       900
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12955,
+    "name": "Cuthbert",
+    "version": "",
+    "image": "Cuthbert.png",
+    "level": 1,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "attributes": []
   },
@@ -21334,6 +21778,43 @@
     "attributes": []
   },
   {
+    "id": 13012,
+    "name": "Eclipse Moon",
+    "version": "",
+    "image": "Eclipse Moon.png",
+    "level": 329,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 5,
+    "max_hit": "18",
+    "skills": [
+      258,
+      60,
+      500,
+      100,
+      1,
+      100
+    ],
+    "offensive": [
+      100,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      100,
+      500,
+      500,
+      100,
+      0
+    ],
+    "attributes": []
+  },
+  {
     "id": 2618,
     "name": "Eduard",
     "version": "",
@@ -21823,6 +22304,43 @@
       20,
       40,
       20
+    ],
+    "attributes": []
+  },
+  {
+    "id": 13139,
+    "name": "Embertailed jerboa",
+    "version": "",
+    "image": "Embertailed jerboa.png",
+    "level": 2,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 0,
+    "max_hit": "0",
+    "skills": [
+      1,
+      1,
+      2,
+      1,
+      1,
+      1
+    ],
+    "offensive": [
+      -47,
+      0,
+      0,
+      0,
+      0,
+      -53
+    ],
+    "defensive": [
+      -42,
+      -42,
+      -42,
+      -42,
+      -42
     ],
     "attributes": []
   },
@@ -24671,7 +25189,7 @@
       "Ranged"
     ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "1",
     "skills": [
       110,
       80,
@@ -30200,6 +30718,43 @@
     "attributes": [
       "golem"
     ]
+  },
+  {
+    "id": 13029,
+    "name": "Grimy Lizard",
+    "version": "",
+    "image": "Grimy Lizard.png",
+    "level": 50,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "3",
+    "skills": [
+      65,
+      10,
+      75,
+      25,
+      1,
+      25
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      50,
+      50,
+      35,
+      15,
+      35
+    ],
+    "attributes": []
   },
   {
     "id": 4919,
@@ -37510,6 +38065,80 @@
     "attributes": []
   },
   {
+    "id": 12976,
+    "name": "Jaguar",
+    "version": "",
+    "image": "Jaguar.png",
+    "level": 67,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "6",
+    "skills": [
+      55,
+      55,
+      80,
+      1,
+      1,
+      50
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12977,
+    "name": "Jaguar cub",
+    "version": "",
+    "image": "Jaguar cub.png",
+    "level": 31,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": [
+      25,
+      25,
+      40,
+      1,
+      1,
+      22
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
     "id": 12810,
     "name": "Jaguar warrior",
     "version": "",
@@ -41385,6 +42014,43 @@
     "attributes": []
   },
   {
+    "id": 13115,
+    "name": "Knight of varlamore (monster)",
+    "version": "",
+    "image": "Knight of varlamore.png",
+    "level": 46,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": [
+      38,
+      31,
+      52,
+      1,
+      1,
+      40
+    ],
+    "offensive": [
+      8,
+      0,
+      0,
+      0,
+      0,
+      10
+    ],
+    "defensive": [
+      36,
+      -11,
+      36,
+      40,
+      39
+    ],
+    "attributes": []
+  },
+  {
     "id": 7106,
     "name": "Kob",
     "version": "",
@@ -44596,6 +45262,45 @@
     "attributes": []
   },
   {
+    "id": 12818,
+    "name": "Manticore",
+    "version": "",
+    "image": "Manticore.png",
+    "level": 320,
+    "speed": 10,
+    "style": [
+      "Melee",
+      "Ranged",
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "31",
+    "skills": [
+      300,
+      250,
+      250,
+      300,
+      350,
+      300
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      10,
+      25,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
     "id": 7407,
     "name": "Marble gargoyle",
     "version": "",
@@ -45413,6 +46118,80 @@
       10,
       5,
       5
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12812,
+    "name": "Minotaur (Fortis Colosseum)",
+    "version": "1",
+    "image": "Minotaur (Fortis Colosseum).png",
+    "level": 318,
+    "speed": 0,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "74",
+    "skills": [
+      300,
+      190,
+      225,
+      250,
+      120,
+      360
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      12,
+      0,
+      0
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12813,
+    "name": "Minotaur (Fortis Colosseum)",
+    "version": "2",
+    "image": "Minotaur (Fortis Colosseum) (2).png",
+    "level": 318,
+    "speed": 0,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "74",
+    "skills": [
+      300,
+      190,
+      225,
+      250,
+      120,
+      360
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      0,
+      12,
+      0,
+      0
     ],
     "attributes": []
   },
@@ -46318,6 +47097,43 @@
       0,
       35,
       35
+    ],
+    "attributes": []
+  },
+  {
+    "id": 13030,
+    "name": "Moonlight Cockatrice",
+    "version": "",
+    "image": "Moonlight Cockatrice.png",
+    "level": 49,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 3,
+    "max_hit": "6",
+    "skills": [
+      31,
+      39,
+      52,
+      1,
+      1,
+      52
+    ],
+    "offensive": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      0,
+      14,
+      0,
+      14,
+      14
     ],
     "attributes": []
   },
@@ -60503,6 +61319,43 @@
     "attributes": []
   },
   {
+    "id": 12819,
+    "name": "Shockwave Colossus",
+    "version": "",
+    "image": "Shockwave Colossus.png",
+    "level": 239,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "56",
+    "skills": [
+      120,
+      150,
+      125,
+      350,
+      220,
+      190
+    ],
+    "offensive": [
+      0,
+      35,
+      55,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      15,
+      5,
+      35,
+      15,
+      15
+    ],
+    "attributes": []
+  },
+  {
     "id": 5139,
     "name": "Sigmund",
     "version": "Another Slice of H.A.M.",
@@ -64616,6 +65469,43 @@
     "attributes": []
   },
   {
+    "id": 12821,
+    "name": "Sol Heredit",
+    "version": "",
+    "image": "Sol Heredit.png",
+    "level": 1563,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 5,
+    "max_hit": "44 regular",
+    "skills": [
+      350,
+      200,
+      1500,
+      300,
+      350,
+      400
+    ],
+    "offensive": [
+      250,
+      0,
+      0,
+      150,
+      5,
+      5
+    ],
+    "defensive": [
+      30,
+      750,
+      825,
+      5,
+      65
+    ],
+    "attributes": []
+  },
+  {
     "id": 4086,
     "name": "Soldier (Burthorpe)",
     "version": "",
@@ -67590,7 +68480,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000008E-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-000000CA-QINU`\"'",
     "skills": [
       90,
       80,
@@ -67831,6 +68721,43 @@
       15,
       25,
       15
+    ],
+    "attributes": []
+  },
+  {
+    "id": 12879,
+    "name": "Sulphur Nagua",
+    "version": "",
+    "image": "Sulphur Nagua.png",
+    "level": 98,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "11",
+    "skills": [
+      90,
+      40,
+      100,
+      50,
+      1,
+      105
+    ],
+    "offensive": [
+      90,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "defensive": [
+      10,
+      200,
+      200,
+      50,
+      50
     ],
     "attributes": []
   },
@@ -73645,7 +74572,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000002-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000066-QINU`\"'",
     "skills": [
       350,
       260,
@@ -73683,7 +74610,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000002-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000066-QINU`\"'",
     "skills": [
       350,
       260,
@@ -75533,7 +76460,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000044-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000019-QINU`\"'",
     "skills": [
       280,
       215,
@@ -75570,7 +76497,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000046-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000001B-QINU`\"'",
     "skills": [
       260,
       180,
@@ -80809,6 +81736,84 @@
       0,
       0,
       30
+    ],
+    "defensive": [
+      50,
+      50,
+      20,
+      50,
+      20
+    ],
+    "attributes": [
+      "dragon"
+    ]
+  },
+  {
+    "id": 13032,
+    "name": "Wyrmling",
+    "version": "Attacking",
+    "image": "Wyrmling (attacking).png",
+    "level": 55,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": [
+      20,
+      40,
+      65,
+      60,
+      15,
+      30
+    ],
+    "offensive": [
+      0,
+      10,
+      0,
+      0,
+      0,
+      10
+    ],
+    "defensive": [
+      50,
+      50,
+      20,
+      50,
+      20
+    ],
+    "attributes": [
+      "dragon"
+    ]
+  },
+  {
+    "id": 13031,
+    "name": "Wyrmling",
+    "version": "Idle",
+    "image": "Wyrmling.png",
+    "level": 55,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": [
+      20,
+      40,
+      65,
+      60,
+      15,
+      30
+    ],
+    "offensive": [
+      0,
+      10,
+      0,
+      0,
+      0,
+      10
     ],
     "defensive": [
       50,

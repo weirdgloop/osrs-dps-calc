@@ -9930,6 +9930,96 @@
     "isTwoHanded": false
   },
   {
+    "name": "Ancient halo",
+    "id": 24153,
+    "version": "Broken",
+    "slot": "head",
+    "image": "Ancient halo (broken).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 3
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 11,
+      "slash": 12,
+      "crush": 10,
+      "magic": 11,
+      "ranged": -1
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ancient halo",
+    "id": 24203,
+    "version": "Locked",
+    "slot": "head",
+    "image": "Ancient halo.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 3
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 11,
+      "slash": 12,
+      "crush": 10,
+      "magic": 11,
+      "ranged": -1
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ancient halo",
+    "id": 24201,
+    "version": "Normal",
+    "slot": "head",
+    "image": "Ancient halo.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 3
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 11,
+      "slash": 12,
+      "crush": 10,
+      "magic": 11,
+      "ranged": -1
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Ancient kiteshield",
     "id": 12468,
     "version": "",
@@ -12707,6 +12797,36 @@
       "stab": -100,
       "slash": -100,
       "crush": -50,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Atlatl dart",
+    "id": 28991,
+    "version": "",
+    "slot": "ammo",
+    "image": "Atlatl dart.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
       "magic": 0,
       "ranged": 0
     },
@@ -20760,6 +20880,276 @@
     "isTwoHanded": false
   },
   {
+    "name": "Blood moon chestplate",
+    "id": 29067,
+    "version": "Broken",
+    "slot": "body",
+    "image": "Blood moon chestplate (broken).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 50,
+      "slash": 52,
+      "crush": 80,
+      "magic": 40,
+      "ranged": 48
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blood moon chestplate",
+    "id": 29022,
+    "version": "New",
+    "slot": "body",
+    "image": "Blood moon chestplate.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 50,
+      "slash": 52,
+      "crush": 80,
+      "magic": 40,
+      "ranged": 48
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blood moon chestplate",
+    "id": 29043,
+    "version": "Used",
+    "slot": "body",
+    "image": "Blood moon chestplate (used).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 50,
+      "slash": 52,
+      "crush": 80,
+      "magic": 40,
+      "ranged": 48
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blood moon helm",
+    "id": 29073,
+    "version": "Broken",
+    "slot": "head",
+    "image": "Blood moon helm (broken).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 20,
+      "slash": 31,
+      "crush": 34,
+      "magic": 7,
+      "ranged": 29
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blood moon helm",
+    "id": 29028,
+    "version": "New",
+    "slot": "head",
+    "image": "Blood moon helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 20,
+      "slash": 31,
+      "crush": 34,
+      "magic": 7,
+      "ranged": 29
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blood moon helm",
+    "id": 29047,
+    "version": "Used",
+    "slot": "head",
+    "image": "Blood moon helm (used).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 20,
+      "slash": 31,
+      "crush": 34,
+      "magic": 7,
+      "ranged": 29
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blood moon tassets",
+    "id": 29070,
+    "version": "Broken",
+    "slot": "legs",
+    "image": "Blood moon tassets (broken).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 2,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 33,
+      "crush": 49,
+      "magic": 32,
+      "ranged": 28
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blood moon tassets",
+    "id": 29025,
+    "version": "New",
+    "slot": "legs",
+    "image": "Blood moon tassets.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 2,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 33,
+      "crush": 49,
+      "magic": 32,
+      "ranged": 28
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blood moon tassets",
+    "id": 29045,
+    "version": "Used",
+    "slot": "legs",
+    "image": "Blood moon tassets (used).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 2,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 33,
+      "crush": 49,
+      "magic": 32,
+      "ranged": 28
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Blood tiara",
     "id": 5549,
     "version": "",
@@ -21745,6 +22135,306 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blue moon chestplate",
+    "id": 29058,
+    "version": "Broken",
+    "slot": "body",
+    "image": "Blue moon chestplate (broken).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 2,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 30,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 51,
+      "magic": 28,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blue moon chestplate",
+    "id": 29013,
+    "version": "New",
+    "slot": "body",
+    "image": "Blue moon chestplate.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 2,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 30,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 51,
+      "magic": 28,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blue moon chestplate",
+    "id": 29037,
+    "version": "Used",
+    "slot": "body",
+    "image": "Blue moon chestplate (used).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 2,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 30,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 51,
+      "magic": 28,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blue moon helm",
+    "id": 29064,
+    "version": "Broken",
+    "slot": "head",
+    "image": "Blue moon helm (broken).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 2,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 6,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 10,
+      "magic": 6,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blue moon helm",
+    "id": 29019,
+    "version": "New",
+    "slot": "head",
+    "image": "Blue moon helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 2,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 6,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 10,
+      "magic": 6,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blue moon helm",
+    "id": 29041,
+    "version": "Used",
+    "slot": "head",
+    "image": "Blue moon helm (used).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 2,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 6,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 10,
+      "magic": 6,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blue moon spear",
+    "id": 28988,
+    "version": "",
+    "slot": "weapon",
+    "image": "Blue moon spear.png",
+    "speed": 5,
+    "category": "Bladed Staff",
+    "bonuses": {
+      "str": 71,
+      "ranged_str": 0,
+      "magic_str": 5,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 70,
+      "slash": 62,
+      "crush": 62,
+      "magic": 30,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Blue moon tassets",
+    "id": 29061,
+    "version": "Broken",
+    "slot": "legs",
+    "image": "Blue moon tassets (broken).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 1,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 22,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 23,
+      "magic": 22,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blue moon tassets",
+    "id": 29016,
+    "version": "New",
+    "slot": "legs",
+    "image": "Blue moon tassets.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 1,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 22,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 23,
+      "magic": 22,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blue moon tassets",
+    "id": 29039,
+    "version": "Used",
+    "slot": "legs",
+    "image": "Blue moon tassets (used).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 1,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 22,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 23,
+      "magic": 22,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -45540,6 +46230,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Dizana's max hood",
+    "id": 28904,
+    "version": "",
+    "slot": "head",
+    "image": "Dizana's max hood.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Dizana's quiver",
     "id": 28951,
     "version": "Charged",
@@ -49985,19 +50705,19 @@
     "version": "",
     "slot": "weapon",
     "image": "Dual macuahuitl.png",
-    "speed": 7,
+    "speed": 4,
     "category": "Spiked",
     "bonuses": {
-      "str": 32,
+      "str": 81,
       "ranged_str": 0,
       "magic_str": 0,
-      "prayer": 1
+      "prayer": 0
     },
     "offensive": {
       "stab": 115,
-      "slash": 0,
+      "slash": -4,
       "crush": 121,
-      "magic": 0,
+      "magic": -4,
       "ranged": 0
     },
     "defensive": {
@@ -50370,6 +51090,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Echo boots",
+    "id": 28945,
+    "version": "",
+    "slot": "feet",
+    "image": "Echo boots.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 3,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 4
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -3,
+      "ranged": -1
+    },
+    "defensive": {
+      "stab": 32,
+      "slash": 32,
+      "crush": 32,
+      "magic": -3,
+      "ranged": 24
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Eclipse atlatl",
     "id": 29000,
     "version": "",
@@ -50396,6 +51146,276 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Eclipse moon chestplate",
+    "id": 29049,
+    "version": "Broken",
+    "slot": "body",
+    "image": "Eclipse moon chestplate (broken).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 3,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 31
+    },
+    "defensive": {
+      "stab": 15,
+      "slash": 18,
+      "crush": 57,
+      "magic": 55,
+      "ranged": 32
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Eclipse moon chestplate",
+    "id": 29004,
+    "version": "New",
+    "slot": "body",
+    "image": "Eclipse moon chestplate.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 3,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 31
+    },
+    "defensive": {
+      "stab": 15,
+      "slash": 18,
+      "crush": 57,
+      "magic": 55,
+      "ranged": 32
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Eclipse moon chestplate",
+    "id": 29031,
+    "version": "Used",
+    "slot": "body",
+    "image": "Eclipse moon chestplate (used).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 3,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 31
+    },
+    "defensive": {
+      "stab": 15,
+      "slash": 18,
+      "crush": 57,
+      "magic": 55,
+      "ranged": 32
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Eclipse moon helm",
+    "id": 29055,
+    "version": "Broken",
+    "slot": "head",
+    "image": "Eclipse moon helm (broken).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 3,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -6,
+      "ranged": 8
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 3,
+      "crush": 14,
+      "magic": 10,
+      "ranged": 4
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Eclipse moon helm",
+    "id": 29010,
+    "version": "New",
+    "slot": "head",
+    "image": "Eclipse moon helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 3,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -6,
+      "ranged": 8
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 3,
+      "crush": 14,
+      "magic": 10,
+      "ranged": 4
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Eclipse moon helm",
+    "id": 29035,
+    "version": "Used",
+    "slot": "head",
+    "image": "Eclipse moon helm (used).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 3,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -6,
+      "ranged": 8
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 3,
+      "crush": 14,
+      "magic": 10,
+      "ranged": 4
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Eclipse moon tassets",
+    "id": 29052,
+    "version": "Broken",
+    "slot": "legs",
+    "image": "Eclipse moon tassets (broken).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 1,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 17
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 13,
+      "crush": 37,
+      "magic": 31,
+      "ranged": 17
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Eclipse moon tassets",
+    "id": 29007,
+    "version": "New",
+    "slot": "legs",
+    "image": "Eclipse moon tassets.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 1,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 17
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 13,
+      "crush": 37,
+      "magic": 31,
+      "ranged": 17
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Eclipse moon tassets",
+    "id": 29033,
+    "version": "Used",
+    "slot": "legs",
+    "image": "Eclipse moon tassets (used).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 1,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 17
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 13,
+      "crush": 37,
+      "magic": 31,
+      "ranged": 17
     },
     "isTwoHanded": false
   },
@@ -64440,6 +65460,126 @@
     "isTwoHanded": false
   },
   {
+    "name": "Guild hunter boots",
+    "id": 29269,
+    "version": "",
+    "slot": "head",
+    "image": "Guild hunter boots.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Guild hunter headwear",
+    "id": 29263,
+    "version": "",
+    "slot": "head",
+    "image": "Guild hunter headwear.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Guild hunter legs",
+    "id": 29267,
+    "version": "",
+    "slot": "head",
+    "image": "Guild hunter legs.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Guild hunter top",
+    "id": 29265,
+    "version": "",
+    "slot": "head",
+    "image": "Guild hunter top.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Guthan's chainskirt",
     "id": 4926,
     "version": "0",
@@ -68779,6 +69919,36 @@
       "crush": 0,
       "magic": 0,
       "ranged": 55
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Hunters' sunlight crossbow",
+    "id": 28869,
+    "version": "",
+    "slot": "weapon",
+    "image": "Hunters' sunlight crossbow.png",
+    "speed": 4,
+    "category": "Crossbow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 79
     },
     "defensive": {
       "stab": 0,
@@ -83640,6 +84810,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Mixed hide top",
+    "id": 29280,
+    "version": "",
+    "slot": "body",
+    "image": "Mixed hide top.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 2,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 4,
+      "slash": -2,
+      "crush": -3,
+      "magic": -15,
+      "ranged": 27
+    },
+    "defensive": {
+      "stab": 33,
+      "slash": 39,
+      "crush": 43,
+      "magic": 30,
+      "ranged": 32
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Mole slippers",
     "id": 23285,
     "version": "",
@@ -84146,6 +85346,36 @@
       "crush": 5,
       "magic": 5,
       "ranged": -7
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Moonlight antler bolts",
+    "id": 28878,
+    "version": "",
+    "slot": "ammo",
+    "image": "Moonlight antler bolts.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 60,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
     },
     "isTwoHanded": false
   },
@@ -117480,6 +118710,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Sunlight antler bolts",
+    "id": 28872,
+    "version": "",
+    "slot": "ammo",
+    "image": "Sunlight antler bolts.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 55,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Superior calamity breeches",
     "id": 26693,
     "version": "Broken",
@@ -120445,6 +121705,66 @@
       "slash": 0,
       "crush": 0,
       "magic": 8,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Tonalztics of ralos",
+    "id": 28922,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Tonalztics of ralos.png",
+    "speed": 7,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 55,
+      "magic_str": 0,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 115
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Tonalztics of ralos",
+    "id": 28919,
+    "version": "Uncharged",
+    "slot": "weapon",
+    "image": "Tonalztics of ralos (uncharged).png",
+    "speed": 7,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 55,
+      "magic_str": 0,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 115
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
       "ranged": 0
     },
     "isTwoHanded": false
