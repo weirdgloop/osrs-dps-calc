@@ -145,6 +145,7 @@ const ammoForRangedWeapons: { [weapon: number]: number[] } = {
   10146: [10143], // Orange salamander, Marrentill tar
   10147: [10144], // Red salamander, Tarromin tar
   10148: [10145], // Black salamander, Guam tar
+  28869: [28872, 28878], // Hunters' sunlight crossbow
 };
 
 export enum AmmoApplicability {
