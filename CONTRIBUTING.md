@@ -44,6 +44,8 @@ Where possible, we prefer serving images direct from the web app instead of the 
 2. Run the development Next.js server running `yarn dev`.
 3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+Attempting to find local RuneLite instances can print a lot of failed WebSocket connection messages to the browser console. Adding a filter of `-WebSocket` will filter out these messages.
+
 ### Building the app
 This web app is written with the intention of being statically exported as HTML, and served from Google Cloud Storage. As a result, the use of some Next.js functionality such as `next/image` is avoided.
 

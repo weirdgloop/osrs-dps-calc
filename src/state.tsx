@@ -30,6 +30,7 @@ import {
   Prayer,
 } from './enums/Prayer';
 import Potion from './enums/Potion';
+import { WikiSyncer, startPollingForRuneLite } from './wikisync/WikiSyncer';
 
 const CALC_DEBOUNCE_MS: number = 250;
 
@@ -109,6 +110,26 @@ export const generateEmptyPlayer = (name?: string) => ({
     soulreaperStacks: 0,
   },
   spell: null,
+});
+
+export const parseLoadoutsFromImportedData = (data: ImportableData) => data.loadouts.map((loadout, i) => {
+  // For each item, if only an item ID is available, load the other data.
+  if (loadout.equipment) {
+    for (const [k, v] of Object.entries(loadout.equipment)) {
+      if (v === null) continue;
+      if (Object.keys(v).length === 1 && Object.hasOwn(v, 'id')) {
+        const item = availableEquipment.find((eq) => eq.id === v.id);
+        loadout.equipment[k as keyof typeof loadout.equipment] = item || null;
+      }
+    }
+  }
+
+  // load the current spell, if applicable
+  if (loadout.spell?.name) {
+    loadout.spell = spellByName(loadout.spell.name);
+  }
+
+  return { name: `Loadout ${i + 1}`, ...loadout };
 });
 
 class GlobalState implements State {
@@ -211,6 +232,13 @@ class GlobalState implements State {
 
   private _debug: boolean = false;
 
+  /**
+   * Map of WikiSync instances (PORT -> WIKISYNCER) that we attempt to persistently connect to.
+   * The WikiSync RuneLite plugin includes a websocket server which exposes player information from the local
+   * RuneLite client to the DPS calculator.
+   */
+  wikisync: Map<number, WikiSyncer> = new Map();
+
   constructor() {
     makeAutoObservable(this, {}, { autoBind: true });
 
@@ -257,6 +285,8 @@ class GlobalState implements State {
     monsterHpTriggers.map((t) => reaction(t, () => {
       this.monster.inputs.monsterCurrentHp = this.monster.skills.hp;
     }));
+
+    this.wikisync = startPollingForRuneLite();
   }
 
   set debug(debug: boolean) {
@@ -307,6 +337,14 @@ class GlobalState implements State {
    */
   get isNonStandardMonster() {
     return !['slash', 'crush', 'stab', 'magic', 'ranged'].includes(this.monster.style || '');
+  }
+
+  /**
+   * Returns the WikiSyncer instances that have user information attached (AKA the user is logged in),
+   * rather than all of the instances that have an attempted connection.
+   */
+  get validWikiSyncInstances() {
+    return new Map([...this.wikisync].filter(([, v]) => v.username));
   }
 
   setCalcWorker(worker: CalcWorker) {
@@ -388,28 +426,10 @@ class GlobalState implements State {
     }
 
     // Expand some minified fields with thier full metadata
-    data.loadouts = data.loadouts.map((loadout, i) => {
-      // For each item, if only an item ID is available, load the other data.
-      if (loadout.equipment) {
-        for (const [k, v] of Object.entries(loadout.equipment)) {
-          if (v === null) continue;
-          if (Object.keys(v).length === 1 && Object.hasOwn(v, 'id')) {
-            const item = availableEquipment.find((eq) => eq.id === v.id);
-            loadout.equipment[k as keyof typeof loadout.equipment] = item || null;
-          }
-        }
-      }
-
-      // load the current spell, if applicable
-      if (loadout.spell?.name) {
-        loadout.spell = spellByName(loadout.spell.name);
-      }
-
-      return { name: `Loadout ${i + 1}`, ...loadout };
-    });
+    const loadouts = parseLoadoutsFromImportedData(data);
 
     // manually recompute equipment in case their metadata has changed since the shortlink was created
-    data.loadouts.forEach((p, ix) => {
+    loadouts.forEach((p, ix) => {
       if (this.loadouts[ix] === undefined) this.loadouts.push(generateEmptyPlayer());
       this.updatePlayer(p, ix);
     });
