@@ -85,6 +85,7 @@ def main():
     # Convert the data into our own JSON structure
     data = []
     required_imgs = []
+    uncharged_wl = ['Scythe of Vitur']
 
     # Loop over the equipment data from the wiki
     for k, v in wiki_data.items():
@@ -96,8 +97,16 @@ def main():
 
         po = v['printouts']
         item_id = getPrintoutValue(po['Item ID'])
+
+        splitted = k.rsplit('#', 1)
+        name = splitted[0]
+        # To clutter the item tab less, remove uncharged versions of
+        # an item that can't be used if uncharged.
+        if len(splitted) > 1 and name not in uncharged_wl:
+            continue
+
         equipment = {
-            'name': k.rsplit('#', 1)[0],
+            'name': name,
             'id': item_id,
             'version': getPrintoutValue(po['Version anchor']) or '',
             'slot': getPrintoutValue(po['Equipment slot']) or '',

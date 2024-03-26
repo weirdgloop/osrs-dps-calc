@@ -44,7 +44,7 @@ const Skills: React.FC = observer(() => {
         className="grow h-48 mt-2 bg-white dark:bg-dark-500 dark:border-dark-200 rounded border border-gray-300 overflow-y-scroll"
       >
         {
-          Object.entries(PotionMap).sort((a, b) => a[1].name.localeCompare(b[1].name)).map(([k, v]) => {
+          Object.entries(PotionMap).sort((a, b) => a[1].order - b[1].order).map(([k, v]) => {
             const potion: Potion = parseInt(k);
             const isActive = player.buffs.potions.includes(potion);
 
