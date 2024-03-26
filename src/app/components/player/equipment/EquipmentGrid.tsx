@@ -11,29 +11,35 @@ import hands from '@/public/img/slots/hands.png';
 import feet from '@/public/img/slots/feet.png';
 import ring from '@/public/img/slots/ring.png';
 import EquipmentGridSlot from '@/app/components/player/equipment/EquipmentGridSlot';
+import { EquipmentSlot } from '@/types/Player';
 
-const EquipmentGrid: React.FC = () => (
+interface EquipmentGridProps {
+  selectedSlot: EquipmentSlot | null;
+  setSlot: (slot: EquipmentSlot) => void
+}
+
+const EquipmentGrid: React.FC<EquipmentGridProps> = ({ selectedSlot, setSlot }) => (
   <>
     <div className="flex justify-center">
-      <EquipmentGridSlot slot="head" placeholder={head.src} />
+      <EquipmentGridSlot slot="head" selected={selectedSlot === 'head'} placeholder={head.src} onClick={setSlot} />
     </div>
     <div className="mt-1 flex justify-center gap-2">
-      <EquipmentGridSlot slot="cape" placeholder={cape.src} />
-      <EquipmentGridSlot slot="neck" placeholder={neck.src} />
-      <EquipmentGridSlot slot="ammo" placeholder={ammo.src} />
+      <EquipmentGridSlot slot="cape" selected={selectedSlot === 'cape'} placeholder={cape.src} onClick={setSlot} />
+      <EquipmentGridSlot slot="neck" selected={selectedSlot === 'neck'} placeholder={neck.src} onClick={setSlot} />
+      <EquipmentGridSlot slot="ammo" selected={selectedSlot === 'ammo'} placeholder={ammo.src} onClick={setSlot} />
     </div>
     <div className="mt-1 flex justify-center gap-6">
-      <EquipmentGridSlot slot="weapon" placeholder={weapon.src} />
-      <EquipmentGridSlot slot="body" placeholder={body.src} />
-      <EquipmentGridSlot slot="shield" placeholder={shield.src} />
+      <EquipmentGridSlot slot="weapon" selected={selectedSlot === 'weapon'} placeholder={weapon.src} onClick={setSlot} />
+      <EquipmentGridSlot slot="body" selected={selectedSlot === 'body'} placeholder={body.src} onClick={setSlot} />
+      <EquipmentGridSlot slot="shield" selected={selectedSlot === 'shield'} placeholder={shield.src} onClick={setSlot} />
     </div>
     <div className="mt-1 flex justify-center">
-      <EquipmentGridSlot slot="legs" placeholder={legs.src} />
+      <EquipmentGridSlot slot="legs" selected={selectedSlot === 'legs'} placeholder={legs.src} onClick={setSlot} />
     </div>
     <div className="mt-1 flex justify-center gap-6">
-      <EquipmentGridSlot slot="hands" placeholder={hands.src} />
-      <EquipmentGridSlot slot="feet" placeholder={feet.src} />
-      <EquipmentGridSlot slot="ring" placeholder={ring.src} />
+      <EquipmentGridSlot slot="hands" selected={selectedSlot === 'hands'} placeholder={hands.src} onClick={setSlot} />
+      <EquipmentGridSlot slot="feet" selected={selectedSlot === 'feet'} placeholder={feet.src} onClick={setSlot} />
+      <EquipmentGridSlot slot="ring" selected={selectedSlot === 'ring'} placeholder={ring.src} onClick={setSlot} />
     </div>
   </>
 );

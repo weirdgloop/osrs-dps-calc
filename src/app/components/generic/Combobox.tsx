@@ -14,6 +14,7 @@ interface IComboboxProps<T> {
   value?: string;
   items: T[];
   placeholder?: string;
+  inputRef?: React.MutableRefObject<HTMLInputElement | null>;
   onSelectedItemChange?: (item: T | null | undefined) => void;
   resetAfterSelect?: boolean;
   blurAfterSelect?: boolean;
@@ -39,6 +40,7 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     id,
     value,
     items,
+    inputRef,
     onSelectedItemChange,
     resetAfterSelect,
     blurAfterSelect,
@@ -50,7 +52,7 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     customFilter,
   } = props;
   const [inputValue, setInputValue] = useState<string>(value || '');
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRefInternal = useRef<HTMLInputElement | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const virtuosoRef = useRef<VirtuosoHandle>(null);
   const [listHeight, setListHeight] = useState(200);
@@ -97,7 +99,7 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     onSelectedItemChange: ({ selectedItem }) => {
       if (onSelectedItemChange) onSelectedItemChange(selectedItem);
       if (resetAfterSelect) reset();
-      if (blurAfterSelect) inputRef.current?.blur();
+      if (blurAfterSelect) inputRefInternal.current?.blur();
     },
     scrollIntoView: () => {},
     onHighlightedIndexChange: (changes) => {
@@ -148,13 +150,21 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     },
   });
 
+  const combinedRef = (e: HTMLInputElement | null) => {
+    if (inputRef) {
+      inputRef.current = e;
+    }
+
+    inputRefInternal.current = e;
+  };
+
   return (
     <div>
       <input
         className={`form-control cursor-pointer ${className}`}
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...getInputProps({
-          ref: inputRef, open: isOpen, type: 'text', placeholder: (placeholder || 'Search...'),
+          ref: combinedRef, open: isOpen, type: 'text', placeholder: (placeholder || 'Search...'),
         })}
       />
       <div

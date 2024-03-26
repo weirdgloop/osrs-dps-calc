@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { useStore } from '@/state';
 import { observer } from 'mobx-react-lite';
 import { getCdnImage } from '@/utils';
-import { EquipmentPiece } from '@/types/Player';
+import { EquipmentPiece, EquipmentSlot } from '@/types/Player';
 import LazyImage from '@/app/components/generic/LazyImage';
 import { cross } from 'd3-array';
 import { availableEquipment, equipmentAliases, noStatExceptions } from '@/lib/Equipment';
@@ -14,6 +14,12 @@ interface EquipmentOption {
   version: string;
   slot: string;
   equipment: EquipmentPiece;
+}
+
+interface EquipmentSelectProps {
+  slot: EquipmentSlot | null;
+  inputRef: React.MutableRefObject<HTMLInputElement | null>;
+  onSelect: () => void;
 }
 
 const BLOWPIPE_IDS: string[] = [
@@ -33,7 +39,7 @@ const DART_IDS: string[] = [
   '25849', // amethyst
 ];
 
-const EquipmentSelect: React.FC = observer(() => {
+const EquipmentSelect: React.FC<EquipmentSelectProps> = observer(({ slot, inputRef, onSelect }) => {
   const store = useStore();
 
   const options: EquipmentOption[] = useMemo(() => {
@@ -101,11 +107,12 @@ const EquipmentSelect: React.FC = observer(() => {
       id="equipment-select"
       className="w-full"
       items={options}
-      keepOpenAfterSelect
-      keepPositionAfterSelect
+      inputRef={inputRef}
+      resetAfterSelect
       placeholder="Search for equipment..."
       onSelectedItemChange={(item) => {
         if (item) {
+          onSelect();
           store.updatePlayer({
             equipment: {
               [item.equipment.slot]: item.equipment,
@@ -144,6 +151,7 @@ const EquipmentSelect: React.FC = observer(() => {
         }
 
         return v.filter((eqOpt) => {
+          if (slot && eqOpt.slot !== slot) return false;
           const eqId = eqOpt.equipment.id;
 
           // This is a base variant, keep it in the list
