@@ -51,6 +51,7 @@ const equipmentAliases = {
   1089: [3473, 3472], // Black plateskirt
   1015: [12445, 12447], // Black skirt
   24551: [25882, 25876, 25878, 25872, 25870, 25880, 25874], // Blade of saeldor (c)
+  28955: [28957], // Blessed dizana's quiver#Normal
   28260: [28473], // Blood ancient sceptre#Normal
   2499: [7374, 7376], // Blue d'hide body
   2493: [7382, 7384], // Blue d'hide chaps
@@ -103,6 +104,7 @@ const equipmentAliases = {
   4720: [4896, 4892, 4895, 4894, 4893], // Dharok's platebody#Undamaged
   4722: [4902, 4898, 4901, 4900, 4899], // Dharok's platelegs#Undamaged
   21015: [28682], // Dinh's bulwark
+  28902: [28906], // Dizana's max cape#Normal
   7158: [28051], // Dragon 2h sword
   6739: [25378], // Dragon axe
   1377: [28037], // Dragon battleaxe
