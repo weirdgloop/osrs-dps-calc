@@ -6,6 +6,7 @@ import skull from '@/public/img/misc/skull.webp';
 import diary from '@/public/img/misc/diary.png';
 import forinthry_surge from '@/public/img/misc/forinthry_surge.webp';
 import soulreaper_axe from '@/public/img/misc/soulreaper_axe.png';
+import sunfire_rune from '@/public/img/misc/sunfire_rune.webp';
 import NumberInput from '@/app/components/generic/NumberInput';
 import Toggle from '../generic/Toggle';
 
@@ -86,6 +87,25 @@ const ExtraOptions: React.FC = observer(() => {
                 className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
                 data-tooltip-id="tooltip"
                 data-tooltip-content="10% activation chance increase to enchanted bolts."
+              >
+                ?
+              </span>
+            </>
+          )}
+        />
+        <Toggle
+          checked={player.buffs.usingSunfireRunes}
+          setChecked={(c) => store.updatePlayer({ buffs: { usingSunfireRunes: c } })}
+          label={(
+            <>
+              <img src={sunfire_rune.src} width={18} className="inline-block" alt="" />
+              {' '}
+              Using Sunfire Runes
+              {' '}
+              <span
+                className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+                data-tooltip-id="tooltip"
+                data-tooltip-content="Increases minimum hit by 10%."
               >
                 ?
               </span>

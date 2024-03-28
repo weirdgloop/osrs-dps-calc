@@ -31,5 +31,14 @@ export function isBindSpell(spell: Spell | null): boolean {
       .includes(spell.name);
 }
 
+export function canUseSunfireRunes(spell: Spell | null): boolean {
+  return spell !== null && (
+    spell.name.includes('Fire')
+    || spell.name.includes('Smoke')
+    || spell.name.includes('Demonbane')
+    || ['Claws of Guthix', 'Flames of Zamorak', 'Saradomin Strike', 'Iban Blast', 'Undead Grasp'].includes(spell.name)
+  );
+}
+
 // The available spellbooks
 export type Spellbook = 'standard' | 'ancient' | 'lunar' | 'arceuus';

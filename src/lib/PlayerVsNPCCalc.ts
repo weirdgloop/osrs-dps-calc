@@ -10,7 +10,12 @@ import {
   multiplyTransformer,
   WeightedHit,
 } from '@/lib/HitDist';
-import { isBindSpell, isFireSpell, isWaterSpell } from '@/types/Spell';
+import {
+  canUseSunfireRunes,
+  isBindSpell,
+  isFireSpell,
+  isWaterSpell,
+} from '@/types/Spell';
 import {
   PrayerData, PrayerMap,
 } from '@/enums/Prayer';
@@ -713,6 +718,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return new AttackDistribution([
         HitDistribution.single(1.0, this.monster.skills.hp),
       ]);
+    }
+
+    // todo determine where this effect should happen relative to others
+    if (this.player.buffs.usingSunfireRunes && canUseSunfireRunes(this.player.spell)) {
+      dist = new AttackDistribution([HitDistribution.linear(acc, Math.trunc(max / 10), max)]);
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingFang()) {
