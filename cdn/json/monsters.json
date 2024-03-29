@@ -774,7 +774,7 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": "40+",
+    "max_hit": "50+",
     "skills": {
       "atk": 80,
       "def": 2,
@@ -1013,8 +1013,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 25,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 25,
       "ranged": 150,
       "ranged_str": 5,
       "str": 25
@@ -1242,8 +1242,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 73,
+      "magic": 73,
+      "magic_str": 0,
       "ranged": -19,
       "ranged_str": 0,
       "str": 68
@@ -1357,8 +1357,8 @@
     },
     "offensive": {
       "atk": 115,
-      "magic": 40,
-      "magic_str": 115,
+      "magic": 115,
+      "magic_str": 40,
       "ranged": 115,
       "ranged_str": 40,
       "str": 30
@@ -1394,8 +1394,8 @@
     },
     "offensive": {
       "atk": 115,
-      "magic": 40,
-      "magic_str": 115,
+      "magic": 115,
+      "magic_str": 40,
       "ranged": 115,
       "ranged_str": 40,
       "str": 30
@@ -1506,8 +1506,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 20,
-      "magic_str": 45,
+      "magic": 45,
+      "magic_str": 20,
       "ranged": 45,
       "ranged_str": 20,
       "str": 0
@@ -1546,8 +1546,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 20,
-      "magic_str": 45,
+      "magic": 45,
+      "magic_str": 20,
       "ranged": 45,
       "ranged_str": 20,
       "str": 0
@@ -1586,8 +1586,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 20,
-      "magic_str": 45,
+      "magic": 45,
+      "magic_str": 20,
       "ranged": 45,
       "ranged_str": 20,
       "str": 0
@@ -1626,8 +1626,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 20,
-      "magic_str": 45,
+      "magic": 45,
+      "magic_str": 20,
       "ranged": 45,
       "ranged_str": 20,
       "str": 0
@@ -3172,8 +3172,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 65,
-      "magic_str": 250,
+      "magic": 250,
+      "magic_str": 65,
       "ranged": 350,
       "ranged_str": 0,
       "str": 55
@@ -4828,8 +4828,8 @@
     },
     "offensive": {
       "atk": 20,
-      "magic": 0,
-      "magic_str": 20,
+      "magic": 20,
+      "magic_str": 0,
       "ranged": 20,
       "ranged_str": 0,
       "str": 0
@@ -4865,8 +4865,8 @@
     },
     "offensive": {
       "atk": 25,
-      "magic": 0,
-      "magic_str": 25,
+      "magic": 25,
+      "magic_str": 0,
       "ranged": 25,
       "ranged_str": 0,
       "str": 0
@@ -4902,8 +4902,8 @@
     },
     "offensive": {
       "atk": 20,
-      "magic": 0,
-      "magic_str": 20,
+      "magic": 20,
+      "magic_str": 0,
       "ranged": 20,
       "ranged_str": 0,
       "str": 0
@@ -4939,8 +4939,8 @@
     },
     "offensive": {
       "atk": 25,
-      "magic": 0,
-      "magic_str": 25,
+      "magic": 25,
+      "magic_str": 0,
       "ranged": 25,
       "ranged_str": 0,
       "str": 0
@@ -4976,8 +4976,8 @@
     },
     "offensive": {
       "atk": 25,
-      "magic": 0,
-      "magic_str": 25,
+      "magic": 25,
+      "magic_str": 0,
       "ranged": 25,
       "ranged_str": 0,
       "str": 0
@@ -5013,8 +5013,8 @@
     },
     "offensive": {
       "atk": 20,
-      "magic": 0,
-      "magic_str": 20,
+      "magic": 20,
+      "magic_str": 0,
       "ranged": 20,
       "ranged_str": 0,
       "str": 0
@@ -5050,8 +5050,8 @@
     },
     "offensive": {
       "atk": 20,
-      "magic": 0,
-      "magic_str": 20,
+      "magic": 20,
+      "magic_str": 0,
       "ranged": 20,
       "ranged_str": 0,
       "str": 0
@@ -5087,8 +5087,8 @@
     },
     "offensive": {
       "atk": 25,
-      "magic": 0,
-      "magic_str": 25,
+      "magic": 25,
+      "magic_str": 0,
       "ranged": 25,
       "ranged_str": 0,
       "str": 0
@@ -5920,6 +5920,43 @@
       "magic": 1,
       "ranged": 1,
       "str": 17
+    },
+    "offensive": {
+      "atk": 11,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 12
+    },
+    "defensive": {
+      "crush": 5,
+      "magic": 1,
+      "ranged": 4,
+      "slash": 8,
+      "stab": 4
+    },
+    "attributes": []
+  },
+  {
+    "id": 13283,
+    "name": "Bandit (Varlamore)",
+    "version": "",
+    "image": "Bandit (Varlamore, 1).png",
+    "level": 23,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 17,
+      "def": 17,
+      "hp": 27,
+      "magic": 1,
+      "ranged": 1,
+      "str": 22
     },
     "offensive": {
       "atk": 11,
@@ -7188,8 +7225,8 @@
     },
     "offensive": {
       "atk": 12,
-      "magic": 12,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 12,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -8967,6 +9004,43 @@
     ]
   },
   {
+    "id": 12978,
+    "name": "Black jaguar",
+    "version": "",
+    "image": "Black jaguar.png",
+    "level": 67,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "6",
+    "skills": {
+      "atk": 55,
+      "def": 55,
+      "hp": 80,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
     "id": 1545,
     "name": "Black knight (Port Sarim Jail)",
     "version": "",
@@ -9304,6 +9378,43 @@
     "attributes": []
   },
   {
+    "id": 13011,
+    "name": "Blood Moon",
+    "version": "",
+    "image": "Blood Moon.png",
+    "level": 329,
+    "speed": 6,
+    "style": [
+      "Typeless slash"
+    ],
+    "size": 5,
+    "max_hit": "20",
+    "skills": {
+      "atk": 258,
+      "def": 60,
+      "hp": 500,
+      "magic": 100,
+      "ranged": 1,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 100,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 100,
+      "magic": 500,
+      "ranged": 500,
+      "slash": 0,
+      "stab": 100
+    },
+    "attributes": []
+  },
+  {
     "id": 11293,
     "name": "Blood Reaver",
     "version": "Ancient Prison",
@@ -9382,6 +9493,43 @@
     ]
   },
   {
+    "id": 13021,
+    "name": "Blood jaguar",
+    "version": "",
+    "image": "Blood jaguar.png",
+    "level": 40,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 40,
+      "def": 28,
+      "hp": 100,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
     "id": 8367,
     "name": "Blood spawn",
     "version": "",
@@ -9441,8 +9589,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 30,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 30,
       "ranged": 0,
       "ranged_str": 0,
       "str": 30
@@ -9481,8 +9629,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 30,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 30,
       "ranged": 0,
       "ranged_str": 0,
       "str": 30
@@ -9610,6 +9758,43 @@
       "ranged": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 13013,
+    "name": "Blue Moon",
+    "version": "",
+    "image": "Blue Moon.png",
+    "level": 329,
+    "speed": 6,
+    "style": [
+      "Typeless slash"
+    ],
+    "size": 5,
+    "max_hit": "18",
+    "skills": {
+      "atk": 258,
+      "def": 60,
+      "hp": 500,
+      "magic": 100,
+      "ranged": 1,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 100,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 500,
+      "ranged": 500,
+      "slash": 100,
+      "stab": 100
     },
     "attributes": []
   },
@@ -10840,8 +11025,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 25,
+      "magic": 25,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -10877,8 +11062,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 25,
+      "magic": 25,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -10914,8 +11099,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 25,
+      "magic": 25,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -11206,6 +11391,43 @@
       "ranged": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 13004,
+    "name": "Buffalo",
+    "version": "",
+    "image": "Buffalo.png",
+    "level": 9,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "2",
+    "skills": {
+      "atk": 6,
+      "def": 1,
+      "hp": 20,
+      "magic": 1,
+      "ranged": 1,
+      "str": 6
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": -21,
+      "magic": -21,
+      "ranged": -21,
+      "slash": -21,
+      "stab": -21
     },
     "attributes": []
   },
@@ -12130,8 +12352,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": -4,
+      "magic": -4,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -12724,8 +12946,8 @@
     },
     "offensive": {
       "atk": 50,
-      "magic": 0,
-      "magic_str": 50,
+      "magic": 50,
+      "magic_str": 0,
       "ranged": 50,
       "ranged_str": 0,
       "str": 0
@@ -12764,8 +12986,8 @@
     },
     "offensive": {
       "atk": 28,
-      "magic": 26,
-      "magic_str": 28,
+      "magic": 28,
+      "magic_str": 26,
       "ranged": 0,
       "ranged_str": 0,
       "str": 26
@@ -13813,8 +14035,8 @@
     },
     "offensive": {
       "atk": 195,
-      "magic": 0,
-      "magic_str": 200,
+      "magic": 200,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 20
@@ -14223,8 +14445,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 226,
-      "magic_str": 146,
+      "magic": 146,
+      "magic_str": 226,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -14261,8 +14483,8 @@
     },
     "offensive": {
       "atk": 90,
-      "magic": 112,
-      "magic_str": 90,
+      "magic": 90,
+      "magic_str": 112,
       "ranged": 90,
       "ranged_str": 112,
       "str": 112
@@ -15505,8 +15727,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 25,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 25,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -16397,8 +16619,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 106,
-      "magic_str": 54,
+      "magic": 54,
+      "magic_str": 106,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -16435,8 +16657,8 @@
     },
     "offensive": {
       "atk": 76,
-      "magic": 64,
-      "magic_str": 76,
+      "magic": 76,
+      "magic_str": 64,
       "ranged": 76,
       "ranged_str": 64,
       "str": 64
@@ -16748,6 +16970,228 @@
     "attributes": []
   },
   {
+    "id": 12918,
+    "name": "Cultist",
+    "version": "1",
+    "image": "Cultist.png",
+    "level": 34,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 30,
+      "def": 30,
+      "hp": 25,
+      "magic": 1,
+      "ranged": 1,
+      "str": 35
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 10,
+      "ranged": 20,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": []
+  },
+  {
+    "id": 12919,
+    "name": "Cultist",
+    "version": "2",
+    "image": "Cultist (2).png",
+    "level": 34,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 30,
+      "def": 30,
+      "hp": 25,
+      "magic": 1,
+      "ranged": 1,
+      "str": 35
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 10,
+      "ranged": 20,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": []
+  },
+  {
+    "id": 12920,
+    "name": "Cultist",
+    "version": "3",
+    "image": "Cultist (3).png",
+    "level": 34,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 30,
+      "def": 30,
+      "hp": 25,
+      "magic": 1,
+      "ranged": 1,
+      "str": 35
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 10,
+      "ranged": 20,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": []
+  },
+  {
+    "id": 12921,
+    "name": "Cultist",
+    "version": "4",
+    "image": "Cultist (4).png",
+    "level": 34,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 30,
+      "def": 30,
+      "hp": 25,
+      "magic": 1,
+      "ranged": 1,
+      "str": 35
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 10,
+      "ranged": 20,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": []
+  },
+  {
+    "id": 12922,
+    "name": "Cultist",
+    "version": "5",
+    "image": "Cultist (5).png",
+    "level": 34,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 30,
+      "def": 30,
+      "hp": 25,
+      "magic": 1,
+      "ranged": 1,
+      "str": 35
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 10,
+      "ranged": 20,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": []
+  },
+  {
+    "id": 12923,
+    "name": "Cultist",
+    "version": "6",
+    "image": "Cultist (6).png",
+    "level": 34,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 30,
+      "def": 30,
+      "hp": 25,
+      "magic": 1,
+      "ranged": 1,
+      "str": 35
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 10,
+      "ranged": 20,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": []
+  },
+  {
     "id": 11717,
     "name": "Cursed Baboon",
     "version": "",
@@ -16769,8 +17213,8 @@
     },
     "offensive": {
       "atk": 25,
-      "magic": 0,
-      "magic_str": 25,
+      "magic": 25,
+      "magic_str": 0,
       "ranged": 25,
       "ranged_str": 0,
       "str": 0
@@ -16781,6 +17225,43 @@
       "ranged": -50,
       "slash": 900,
       "stab": 900
+    },
+    "attributes": []
+  },
+  {
+    "id": 12955,
+    "name": "Cuthbert",
+    "version": "",
+    "image": "Cuthbert.png",
+    "level": 1,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 1,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
     },
     "attributes": []
   },
@@ -17734,8 +18215,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 12,
-      "magic_str": 18,
+      "magic": 18,
+      "magic_str": 12,
       "ranged": 18,
       "ranged_str": 12,
       "str": 0
@@ -18557,8 +19038,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 120,
+      "magic": 120,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -18933,8 +19414,8 @@
     },
     "offensive": {
       "atk": 43,
-      "magic": 29,
-      "magic_str": 40,
+      "magic": 40,
+      "magic_str": 29,
       "ranged": 43,
       "ranged_str": 29,
       "str": 29
@@ -19011,8 +19492,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 80,
-      "magic_str": 180,
+      "magic": 180,
+      "magic_str": 80,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -19470,8 +19951,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": -58,
+      "magic": -58,
+      "magic_str": 0,
       "ranged": -18,
       "ranged_str": 0,
       "str": 105
@@ -20146,8 +20627,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 32,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 32,
       "ranged": 0,
       "ranged_str": 0,
       "str": 38
@@ -20185,8 +20666,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 32,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 32,
       "ranged": 0,
       "ranged_str": 0,
       "str": 38
@@ -20224,8 +20705,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 32,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 32,
       "ranged": 0,
       "ranged_str": 0,
       "str": 38
@@ -20263,8 +20744,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 32,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 32,
       "ranged": 0,
       "ranged_str": 0,
       "str": 38
@@ -20302,8 +20783,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 32,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 32,
       "ranged": 0,
       "ranged_str": 0,
       "str": 38
@@ -20341,8 +20822,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 32,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 32,
       "ranged": 0,
       "ranged_str": 0,
       "str": 38
@@ -20380,8 +20861,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 10,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 10,
       "ranged": 0,
       "ranged_str": 0,
       "str": 16
@@ -20419,8 +20900,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 10,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 10,
       "ranged": 0,
       "ranged_str": 0,
       "str": 16
@@ -20458,8 +20939,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 10,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 10,
       "ranged": 0,
       "ranged_str": 0,
       "str": 16
@@ -21334,6 +21815,43 @@
     "attributes": []
   },
   {
+    "id": 13012,
+    "name": "Eclipse Moon",
+    "version": "",
+    "image": "Eclipse Moon.png",
+    "level": 329,
+    "speed": 6,
+    "style": [
+      "Typeless slash"
+    ],
+    "size": 5,
+    "max_hit": "18",
+    "skills": {
+      "atk": 258,
+      "def": 60,
+      "hp": 500,
+      "magic": 100,
+      "ranged": 1,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 100,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 100,
+      "magic": 500,
+      "ranged": 500,
+      "slash": 100,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
     "id": 2618,
     "name": "Eduard",
     "version": "",
@@ -21616,8 +22134,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 225,
+      "magic": 225,
+      "magic_str": 0,
       "ranged": 225,
       "ranged_str": 0,
       "str": 10
@@ -21655,8 +22173,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 225,
+      "magic": 225,
+      "magic_str": 0,
       "ranged": 225,
       "ranged_str": 0,
       "str": 10
@@ -21694,8 +22212,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 40,
-      "magic_str": 230,
+      "magic": 230,
+      "magic_str": 40,
       "ranged": 300,
       "ranged_str": 40,
       "str": 40
@@ -21733,8 +22251,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 40,
-      "magic_str": 230,
+      "magic": 230,
+      "magic_str": 40,
       "ranged": 300,
       "ranged_str": 40,
       "str": 40
@@ -21823,6 +22341,43 @@
       "ranged": 20,
       "slash": 40,
       "stab": 20
+    },
+    "attributes": []
+  },
+  {
+    "id": 13139,
+    "name": "Embertailed jerboa",
+    "version": "",
+    "image": "Embertailed jerboa.png",
+    "level": 2,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 0,
+    "max_hit": "0",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 2,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": -47,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": -53
+    },
+    "defensive": {
+      "crush": -42,
+      "magic": -42,
+      "ranged": -42,
+      "slash": -42,
+      "stab": -42
     },
     "attributes": []
   },
@@ -21922,8 +22477,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 40,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 40,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -21959,8 +22514,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 40,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 40,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -22734,7 +23289,7 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": "36",
+    "max_hit": "40 (without Ice gloves)",
     "skills": {
       "atk": 190,
       "def": 135,
@@ -24661,6 +25216,117 @@
     "attributes": []
   },
   {
+    "id": 12814,
+    "name": "Fremennik warband archer",
+    "version": "",
+    "image": "Fremennik warband archer.png",
+    "level": 104,
+    "speed": 5,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 110,
+      "def": 80,
+      "hp": 50,
+      "magic": 110,
+      "ranged": 3,
+      "str": 110
+    },
+    "offensive": {
+      "atk": 150,
+      "magic": 150,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 150
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 75,
+      "ranged": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12816,
+    "name": "Fremennik warband berserker",
+    "version": "",
+    "image": "Fremennik warband berserker.png",
+    "level": 104,
+    "speed": 5,
+    "style": [
+      "Melee"
+    ],
+    "size": 1,
+    "max_hit": "40",
+    "skills": {
+      "atk": 110,
+      "def": 80,
+      "hp": 50,
+      "magic": 110,
+      "ranged": 3,
+      "str": 110
+    },
+    "offensive": {
+      "atk": 150,
+      "magic": 150,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 150
+    },
+    "defensive": {
+      "crush": 50,
+      "magic": 0,
+      "ranged": 75,
+      "slash": 50,
+      "stab": 50
+    },
+    "attributes": []
+  },
+  {
+    "id": 12815,
+    "name": "Fremennik warband seer",
+    "version": "",
+    "image": "Fremennik warband seer.png",
+    "level": 104,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "12",
+    "skills": {
+      "atk": 110,
+      "def": 80,
+      "hp": 50,
+      "magic": 110,
+      "ranged": 3,
+      "str": 110
+    },
+    "offensive": {
+      "atk": 150,
+      "magic": 150,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 150
+    },
+    "defensive": {
+      "crush": 50,
+      "magic": 30,
+      "ranged": 0,
+      "slash": 50,
+      "stab": 50
+    },
+    "attributes": []
+  },
+  {
     "id": 5825,
     "name": "Frenzied ice troll female",
     "version": "",
@@ -24904,8 +25570,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 25,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 25,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -25018,8 +25684,8 @@
     },
     "offensive": {
       "atk": 34,
-      "magic": 42,
-      "magic_str": 160,
+      "magic": 160,
+      "magic_str": 42,
       "ranged": 180,
       "ranged_str": 6,
       "str": 0
@@ -25061,8 +25727,8 @@
     },
     "offensive": {
       "atk": 34,
-      "magic": 42,
-      "magic_str": 160,
+      "magic": 160,
+      "magic_str": 42,
       "ranged": 180,
       "ranged_str": 6,
       "str": 0
@@ -25104,8 +25770,8 @@
     },
     "offensive": {
       "atk": 34,
-      "magic": 42,
-      "magic_str": 160,
+      "magic": 160,
+      "magic_str": 42,
       "ranged": 180,
       "ranged_str": 6,
       "str": 0
@@ -25147,8 +25813,8 @@
     },
     "offensive": {
       "atk": 34,
-      "magic": 42,
-      "magic_str": 160,
+      "magic": 160,
+      "magic_str": 42,
       "ranged": 180,
       "ranged_str": 6,
       "str": 0
@@ -27811,8 +28477,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 25,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 25,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -27924,8 +28590,8 @@
     },
     "offensive": {
       "atk": 122,
-      "magic": 40,
-      "magic_str": 80,
+      "magic": 80,
+      "magic_str": 40,
       "ranged": 100,
       "ranged_str": 40,
       "str": 75
@@ -29483,8 +30149,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 60,
+      "magic": 60,
+      "magic_str": 0,
       "ranged": 60,
       "ranged_str": 0,
       "str": 0
@@ -29523,8 +30189,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 60,
+      "magic": 60,
+      "magic_str": 0,
       "ranged": 60,
       "ranged_str": 0,
       "str": 0
@@ -29563,8 +30229,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 60,
+      "magic": 60,
+      "magic_str": 0,
       "ranged": 60,
       "ranged_str": 0,
       "str": 0
@@ -30091,6 +30757,43 @@
     ]
   },
   {
+    "id": 13029,
+    "name": "Grimy Lizard",
+    "version": "",
+    "image": "Grimy Lizard.png",
+    "level": 50,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "3",
+    "skills": {
+      "atk": 65,
+      "def": 10,
+      "hp": 75,
+      "magic": 25,
+      "ranged": 1,
+      "str": 25
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 50,
+      "magic": 50,
+      "ranged": 35,
+      "slash": 15,
+      "stab": 35
+    },
+    "attributes": []
+  },
+  {
     "id": 4919,
     "name": "Grip",
     "version": "",
@@ -30519,8 +31222,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": -4,
+      "magic": -4,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -33410,8 +34113,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": -50,
+      "magic": -50,
+      "magic_str": 0,
       "ranged": -19,
       "ranged_str": 0,
       "str": 75
@@ -33597,8 +34300,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 8,
+      "magic": 8,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -34348,8 +35051,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 0,
       "ranged": 150,
       "ranged_str": 0,
       "str": 0
@@ -34386,8 +35089,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 0,
       "ranged": 150,
       "ranged_str": 0,
       "str": 0
@@ -34476,43 +35179,6 @@
     "attributes": []
   },
   {
-    "id": 7261,
-    "name": "Hill Giant (Dark)",
-    "version": "",
-    "image": "Hill Giant (Dark).png",
-    "level": 28,
-    "speed": 6,
-    "style": [
-      "Crush"
-    ],
-    "size": 2,
-    "max_hit": "4",
-    "skills": {
-      "atk": 18,
-      "def": 26,
-      "hp": 35,
-      "magic": 1,
-      "ranged": 1,
-      "str": 22
-    },
-    "offensive": {
-      "atk": 18,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 16
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": []
-  },
-  {
     "id": 10374,
     "name": "Hill Giant (Giants' Plateau)",
     "version": "Brassard",
@@ -34591,6 +35257,154 @@
     "name": "Hill Giant (Giants' Plateau)",
     "version": "Singlet",
     "image": "Hill Giant (Giants' Plateau, 3).png",
+    "level": 28,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "4",
+    "skills": {
+      "atk": 18,
+      "def": 26,
+      "hp": 35,
+      "magic": 1,
+      "ranged": 1,
+      "str": 22
+    },
+    "offensive": {
+      "atk": 18,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 16
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 7261,
+    "name": "Hill Giant (Kourend)",
+    "version": "",
+    "image": "Hill Giant (Kourend).png",
+    "level": 28,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "4",
+    "skills": {
+      "atk": 18,
+      "def": 26,
+      "hp": 35,
+      "magic": 1,
+      "ranged": 1,
+      "str": 22
+    },
+    "offensive": {
+      "atk": 18,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 16
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12849,
+    "name": "Hill Giant (Varlamore)",
+    "version": "Clothed",
+    "image": "Hill Giant (Varlamore, 2).png",
+    "level": 28,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "4",
+    "skills": {
+      "atk": 18,
+      "def": 26,
+      "hp": 35,
+      "magic": 1,
+      "ranged": 1,
+      "str": 22
+    },
+    "offensive": {
+      "atk": 18,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 16
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12850,
+    "name": "Hill Giant (Varlamore)",
+    "version": "Helmetless",
+    "image": "Hill Giant (Varlamore, 3).png",
+    "level": 28,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "4",
+    "skills": {
+      "atk": 18,
+      "def": 26,
+      "hp": 35,
+      "magic": 1,
+      "ranged": 1,
+      "str": 22
+    },
+    "offensive": {
+      "atk": 18,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 16
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12848,
+    "name": "Hill Giant (Varlamore)",
+    "version": "Shirtless",
+    "image": "Hill Giant (Varlamore, 1).png",
     "level": 28,
     "speed": 6,
     "style": [
@@ -35387,8 +36201,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 82,
-      "magic_str": 168,
+      "magic": 168,
+      "magic_str": 82,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -37399,6 +38213,117 @@
     "attributes": []
   },
   {
+    "id": 12976,
+    "name": "Jaguar",
+    "version": "",
+    "image": "Jaguar.png",
+    "level": 67,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "6",
+    "skills": {
+      "atk": 55,
+      "def": 55,
+      "hp": 80,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12977,
+    "name": "Jaguar cub",
+    "version": "",
+    "image": "Jaguar cub.png",
+    "level": 31,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 25,
+      "def": 25,
+      "hp": 40,
+      "magic": 1,
+      "ranged": 1,
+      "str": 22
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12810,
+    "name": "Jaguar warrior",
+    "version": "",
+    "image": "Jaguar warrior.png",
+    "level": 234,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "47",
+    "skills": {
+      "atk": 200,
+      "def": 125,
+      "hp": 125,
+      "magic": 100,
+      "ranged": 160,
+      "str": 330
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 25
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 15,
+      "ranged": 45,
+      "slash": 30,
+      "stab": 30
+    },
+    "attributes": []
+  },
+  {
     "id": 4276,
     "name": "Jail guard",
     "version": "1",
@@ -37979,8 +38904,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 80,
+      "magic": 80,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -38018,8 +38943,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 75,
-      "magic_str": 100,
+      "magic": 100,
+      "magic_str": 75,
       "ranged": 80,
       "ranged_str": 0,
       "str": 0
@@ -38030,6 +38955,43 @@
       "ranged": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12817,
+    "name": "Javelin Colossus",
+    "version": "",
+    "image": "Javelin Colossus.png",
+    "level": 278,
+    "speed": 5,
+    "style": [
+      "Ranged"
+    ],
+    "size": 3,
+    "max_hit": "48",
+    "skills": {
+      "atk": 200,
+      "def": 190,
+      "hp": 220,
+      "magic": 225,
+      "ranged": 360,
+      "str": 300
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 25,
+      "ranged_str": 20,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 15,
+      "magic": 20,
+      "ranged": 30,
+      "slash": 15,
+      "stab": 15
     },
     "attributes": []
   },
@@ -38536,8 +39498,8 @@
     },
     "offensive": {
       "atk": 30,
-      "magic": 0,
-      "magic_str": 30,
+      "magic": 30,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -39904,8 +40866,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": -26,
+      "magic": -26,
+      "magic_str": 0,
       "ranged": 134,
       "ranged_str": 55,
       "str": 0
@@ -40095,8 +41057,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 50,
-      "magic_str": 125,
+      "magic": 125,
+      "magic_str": 50,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -40135,8 +41097,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 60,
+      "magic": 60,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -40173,8 +41135,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 60,
+      "magic": 60,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -41200,6 +42162,265 @@
     "attributes": []
   },
   {
+    "id": 12916,
+    "name": "Knight of Varlamore (Twilight's Promise)",
+    "version": "",
+    "image": "Knight of Varlamore (Twilight's Promise).png",
+    "level": 81,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": {
+      "atk": 70,
+      "def": 40,
+      "hp": 100,
+      "magic": 20,
+      "ranged": 1,
+      "str": 70
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 10,
+      "magic": 5,
+      "ranged": 20,
+      "slash": 26,
+      "stab": 28
+    },
+    "attributes": []
+  },
+  {
+    "id": 13114,
+    "name": "Knight of Varlamore",
+    "version": "1",
+    "image": "Knight of Varlamore (1).png",
+    "level": 46,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": {
+      "atk": 38,
+      "def": 31,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 8,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "crush": 36,
+      "magic": -11,
+      "ranged": 36,
+      "slash": 40,
+      "stab": 39
+    },
+    "attributes": []
+  },
+  {
+    "id": 13115,
+    "name": "Knight of Varlamore",
+    "version": "2",
+    "image": "Knight of Varlamore (2).png",
+    "level": 46,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": {
+      "atk": 38,
+      "def": 31,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 8,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "crush": 36,
+      "magic": -11,
+      "ranged": 36,
+      "slash": 40,
+      "stab": 39
+    },
+    "attributes": []
+  },
+  {
+    "id": 13116,
+    "name": "Knight of Varlamore",
+    "version": "3",
+    "image": "Knight of Varlamore (3).png",
+    "level": 46,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": {
+      "atk": 38,
+      "def": 31,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 8,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "crush": 36,
+      "magic": -11,
+      "ranged": 36,
+      "slash": 40,
+      "stab": 39
+    },
+    "attributes": []
+  },
+  {
+    "id": 13117,
+    "name": "Knight of Varlamore",
+    "version": "4",
+    "image": "Knight of Varlamore (4).png",
+    "level": 46,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": {
+      "atk": 38,
+      "def": 31,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 8,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "crush": 36,
+      "magic": -11,
+      "ranged": 36,
+      "slash": 40,
+      "stab": 39
+    },
+    "attributes": []
+  },
+  {
+    "id": 13118,
+    "name": "Knight of Varlamore",
+    "version": "5",
+    "image": "Knight of Varlamore (5).png",
+    "level": 46,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": {
+      "atk": 38,
+      "def": 31,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 8,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "crush": 36,
+      "magic": -11,
+      "ranged": 36,
+      "slash": 40,
+      "stab": 39
+    },
+    "attributes": []
+  },
+  {
+    "id": 13119,
+    "name": "Knight of Varlamore",
+    "version": "6",
+    "image": "Knight of Varlamore (6).png",
+    "level": 46,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": {
+      "atk": 38,
+      "def": 31,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 8,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "crush": 36,
+      "magic": -11,
+      "ranged": 36,
+      "slash": 40,
+      "stab": 39
+    },
+    "attributes": []
+  },
+  {
     "id": 7106,
     "name": "Kob",
     "version": "",
@@ -41628,8 +42849,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 50,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 50,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -41742,8 +42963,8 @@
     },
     "offensive": {
       "atk": 36,
-      "magic": 42,
-      "magic_str": 36,
+      "magic": 36,
+      "magic_str": 42,
       "ranged": 0,
       "ranged_str": 0,
       "str": 42
@@ -42354,8 +43575,8 @@
     },
     "offensive": {
       "atk": 100,
-      "magic": 0,
-      "magic_str": 100,
+      "magic": 100,
+      "magic_str": 0,
       "ranged": 100,
       "ranged_str": 0,
       "str": 0
@@ -42588,8 +43809,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 58,
-      "magic_str": 160,
+      "magic": 160,
+      "magic_str": 58,
       "ranged": 300,
       "ranged_str": 26,
       "str": 22
@@ -42627,8 +43848,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 58,
-      "magic_str": 160,
+      "magic": 160,
+      "magic_str": 58,
       "ranged": 300,
       "ranged_str": 26,
       "str": 22
@@ -42666,8 +43887,8 @@
     },
     "offensive": {
       "atk": 170,
-      "magic": 36,
-      "magic_str": 130,
+      "magic": 130,
+      "magic_str": 36,
       "ranged": 230,
       "ranged_str": 10,
       "str": 14
@@ -44347,7 +45568,7 @@
       "Ranged"
     ],
     "size": 1,
-    "max_hit": "21",
+    "max_hit": "24",
     "skills": {
       "atk": 120,
       "def": 80,
@@ -44405,6 +45626,45 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12818,
+    "name": "Manticore",
+    "version": "",
+    "image": "Manticore.png",
+    "level": 320,
+    "speed": 10,
+    "style": [
+      "Melee",
+      "Ranged",
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "35",
+    "skills": {
+      "atk": 300,
+      "def": 250,
+      "hp": 250,
+      "magic": 300,
+      "ranged": 350,
+      "str": 300
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 10,
+      "ranged": 25,
       "slash": 0,
       "stab": 0
     },
@@ -44768,8 +46028,8 @@
     },
     "offensive": {
       "atk": 46,
-      "magic": 0,
-      "magic_str": 46,
+      "magic": 46,
+      "magic_str": 0,
       "ranged": 46,
       "ranged_str": 0,
       "str": 24
@@ -44806,8 +46066,8 @@
     },
     "offensive": {
       "atk": 46,
-      "magic": 0,
-      "magic_str": 46,
+      "magic": 46,
+      "magic_str": 0,
       "ranged": 46,
       "ranged_str": 0,
       "str": 24
@@ -45140,8 +46400,8 @@
     },
     "offensive": {
       "atk": 135,
-      "magic": 0,
-      "magic_str": 180,
+      "magic": 180,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 48
@@ -45228,6 +46488,80 @@
       "ranged": 10,
       "slash": 5,
       "stab": 5
+    },
+    "attributes": []
+  },
+  {
+    "id": 12812,
+    "name": "Minotaur (Fortis Colosseum)",
+    "version": "1",
+    "image": "Minotaur (Fortis Colosseum).png",
+    "level": 318,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "74",
+    "skills": {
+      "atk": 300,
+      "def": 190,
+      "hp": 225,
+      "magic": 250,
+      "ranged": 120,
+      "str": 360
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 65
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 12,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12813,
+    "name": "Minotaur (Fortis Colosseum)",
+    "version": "2",
+    "image": "Minotaur (Fortis Colosseum) (2).png",
+    "level": 318,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "74",
+    "skills": {
+      "atk": 300,
+      "def": 190,
+      "hp": 225,
+      "magic": 250,
+      "ranged": 120,
+      "str": 360
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 65
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 12,
+      "slash": 0,
+      "stab": 0
     },
     "attributes": []
   },
@@ -46137,6 +47471,43 @@
     "attributes": []
   },
   {
+    "id": 13030,
+    "name": "Moonlight Cockatrice",
+    "version": "",
+    "image": "Moonlight Cockatrice.png",
+    "level": 49,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 3,
+    "max_hit": "6",
+    "skills": {
+      "atk": 31,
+      "def": 39,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 52
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 14,
+      "ranged": 0,
+      "slash": 14,
+      "stab": 14
+    },
+    "attributes": []
+  },
+  {
     "id": 6273,
     "name": "Mosquito swarm",
     "version": "Level 17",
@@ -46362,6 +47733,43 @@
     "attributes": []
   },
   {
+    "id": 12844,
+    "name": "Moss giant",
+    "version": "Level 42 (Varlamore)",
+    "image": "Moss giant (Varlamore, 1).png",
+    "level": 42,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "6",
+    "skills": {
+      "atk": 30,
+      "def": 30,
+      "hp": 60,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 33,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 31
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
     "id": 3851,
     "name": "Moss giant",
     "version": "Level 48",
@@ -46459,8 +47867,8 @@
     },
     "offensive": {
       "atk": 34,
-      "magic": 40,
-      "magic_str": 34,
+      "magic": 34,
+      "magic_str": 40,
       "ranged": 0,
       "ranged_str": 0,
       "str": 40
@@ -47246,8 +48654,8 @@
     },
     "offensive": {
       "atk": 88,
-      "magic": -8,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": -8,
       "ranged": 82,
       "ranged_str": 47,
       "str": 55
@@ -47286,8 +48694,8 @@
     },
     "offensive": {
       "atk": 71,
-      "magic": -8,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": -8,
       "ranged": 83,
       "ranged_str": 56,
       "str": 48
@@ -47399,8 +48807,8 @@
     },
     "offensive": {
       "atk": 80,
-      "magic": 25,
-      "magic_str": 80,
+      "magic": 80,
+      "magic_str": 25,
       "ranged": 80,
       "ranged_str": 25,
       "str": 25
@@ -47943,47 +49351,10 @@
     ]
   },
   {
-    "id": 11088,
+    "id": 1025,
     "name": "Necromancer",
     "version": "",
     "image": "Necromancer.png",
-    "level": 68,
-    "speed": 4,
-    "style": [
-      "Magic"
-    ],
-    "size": 1,
-    "max_hit": "7",
-    "skills": {
-      "atk": 56,
-      "def": 50,
-      "hp": 80,
-      "magic": 60,
-      "ranged": 1,
-      "str": 56
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 10,
-      "magic_str": 10,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 8,
-      "magic": 4,
-      "ranged": 0,
-      "slash": 8,
-      "stab": 8
-    },
-    "attributes": []
-  },
-  {
-    "id": 1025,
-    "name": "Necromancer (Necromancer Tower)",
-    "version": "",
-    "image": "Necromancer (Necromancer Tower).png",
     "level": 26,
     "speed": 4,
     "style": [
@@ -48014,6 +49385,43 @@
       "ranged": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 11088,
+    "name": "Necromancer (Great Kourend)",
+    "version": "",
+    "image": "Necromancer (Great Kourend).png",
+    "level": 68,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "7",
+    "skills": {
+      "atk": 56,
+      "def": 50,
+      "hp": 80,
+      "magic": 60,
+      "ranged": 1,
+      "str": 56
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 10,
+      "magic_str": 10,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 8,
+      "magic": 4,
+      "ranged": 0,
+      "slash": 8,
+      "stab": 8
     },
     "attributes": []
   },
@@ -48078,8 +49486,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 22,
-      "magic_str": 100,
+      "magic": 100,
+      "magic_str": 22,
       "ranged": 150,
       "ranged_str": 5,
       "str": 20
@@ -48231,8 +49639,8 @@
     },
     "offensive": {
       "atk": 140,
-      "magic": 64,
-      "magic_str": 140,
+      "magic": 140,
+      "magic_str": 64,
       "ranged": 140,
       "ranged_str": 64,
       "str": 128
@@ -48453,8 +49861,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 928,
-      "magic_str": 1073,
+      "magic": 1073,
+      "magic_str": 928,
       "ranged": 0,
       "ranged_str": -15,
       "str": 0
@@ -48527,8 +49935,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 928,
-      "magic_str": 1073,
+      "magic": 1073,
+      "magic_str": 928,
       "ranged": 0,
       "ranged_str": -15,
       "str": 0
@@ -48712,8 +50120,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 928,
-      "magic_str": 1073,
+      "magic": 1073,
+      "magic_str": 928,
       "ranged": 0,
       "ranged_str": -15,
       "str": 0
@@ -48788,8 +50196,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 460,
-      "magic_str": 380,
+      "magic": 380,
+      "magic_str": 460,
       "ranged": 0,
       "ranged_str": 40,
       "str": 40
@@ -50313,8 +51721,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 102,
-      "magic_str": 84,
+      "magic": 84,
+      "magic_str": 102,
       "ranged": 85,
       "ranged_str": 102,
       "str": 0
@@ -50351,8 +51759,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 62,
-      "magic_str": 44,
+      "magic": 44,
+      "magic_str": 62,
       "ranged": 44,
       "ranged_str": 62,
       "str": 0
@@ -50389,8 +51797,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 26,
-      "magic_str": 12,
+      "magic": 12,
+      "magic_str": 26,
       "ranged": 12,
       "ranged_str": 26,
       "str": 0
@@ -50427,8 +51835,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 46,
-      "magic_str": 20,
+      "magic": 20,
+      "magic_str": 46,
       "ranged": 20,
       "ranged_str": 46,
       "str": 0
@@ -51981,8 +53389,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 15,
-      "magic_str": 40,
+      "magic": 40,
+      "magic_str": 15,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -52211,8 +53619,8 @@
     },
     "offensive": {
       "atk": 393,
-      "magic": 180,
-      "magic_str": 280,
+      "magic": 280,
+      "magic_str": 180,
       "ranged": 64,
       "ranged_str": 6,
       "str": 11
@@ -52251,8 +53659,8 @@
     },
     "offensive": {
       "atk": 393,
-      "magic": 180,
-      "magic_str": 280,
+      "magic": 280,
+      "magic_str": 180,
       "ranged": 64,
       "ranged_str": 6,
       "str": 11
@@ -52291,8 +53699,8 @@
     },
     "offensive": {
       "atk": 393,
-      "magic": 180,
-      "magic_str": 280,
+      "magic": 280,
+      "magic_str": 180,
       "ranged": 64,
       "ranged_str": 6,
       "str": 11
@@ -52331,8 +53739,8 @@
     },
     "offensive": {
       "atk": 393,
-      "magic": 180,
-      "magic_str": 280,
+      "magic": 280,
+      "magic_str": 180,
       "ranged": 64,
       "ranged_str": 6,
       "str": 11
@@ -52370,8 +53778,8 @@
     },
     "offensive": {
       "atk": 393,
-      "magic": 180,
-      "magic_str": 280,
+      "magic": 280,
+      "magic_str": 180,
       "ranged": 64,
       "ranged_str": 6,
       "str": 11
@@ -52559,8 +53967,8 @@
     },
     "offensive": {
       "atk": 220,
-      "magic": 162,
-      "magic_str": 220,
+      "magic": 220,
+      "magic_str": 162,
       "ranged": 220,
       "ranged_str": 162,
       "str": 274
@@ -54063,8 +55471,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 34,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 34,
       "ranged": 0,
       "ranged_str": 0,
       "str": 34
@@ -54102,8 +55510,8 @@
     },
     "offensive": {
       "atk": 160,
-      "magic": 34,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 34,
       "ranged": 0,
       "ranged_str": 0,
       "str": -36
@@ -55550,8 +56958,8 @@
     },
     "offensive": {
       "atk": 36,
-      "magic": 46,
-      "magic_str": 36,
+      "magic": 36,
+      "magic_str": 46,
       "ranged": 0,
       "ranged_str": 0,
       "str": 46
@@ -55787,8 +57195,8 @@
     },
     "offensive": {
       "atk": 30,
-      "magic": 24,
-      "magic_str": 50,
+      "magic": 50,
+      "magic_str": 24,
       "ranged": 40,
       "ranged_str": 30,
       "str": 50
@@ -55829,8 +57237,8 @@
     },
     "offensive": {
       "atk": 72,
-      "magic": 35,
-      "magic_str": 61,
+      "magic": 61,
+      "magic_str": 35,
       "ranged": 60,
       "ranged_str": 51,
       "str": 78
@@ -55871,8 +57279,8 @@
     },
     "offensive": {
       "atk": 6,
-      "magic": 12,
-      "magic_str": 37,
+      "magic": 37,
+      "magic_str": 12,
       "ranged": 21,
       "ranged_str": 12,
       "str": 8
@@ -55913,8 +57321,8 @@
     },
     "offensive": {
       "atk": 38,
-      "magic": 0,
-      "magic_str": 30,
+      "magic": 30,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 40
@@ -55955,8 +57363,8 @@
     },
     "offensive": {
       "atk": 20,
-      "magic": 0,
-      "magic_str": 5,
+      "magic": 5,
+      "magic_str": 0,
       "ranged": 25,
       "ranged_str": 0,
       "str": 24
@@ -55997,8 +57405,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 5,
+      "magic": 5,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -56039,8 +57447,8 @@
     },
     "offensive": {
       "atk": 69,
-      "magic": 30,
-      "magic_str": 55,
+      "magic": 55,
+      "magic_str": 30,
       "ranged": 55,
       "ranged_str": 45,
       "str": 71
@@ -57302,8 +58710,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 16,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 16,
       "ranged": 0,
       "ranged_str": 14,
       "str": 0
@@ -57871,8 +59279,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 70,
+      "magic": 70,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -58335,8 +59743,8 @@
     },
     "offensive": {
       "atk": 100,
-      "magic": 0,
-      "magic_str": 100,
+      "magic": 100,
+      "magic_str": 0,
       "ranged": 100,
       "ranged_str": 0,
       "str": 0
@@ -58374,8 +59782,8 @@
     },
     "offensive": {
       "atk": 100,
-      "magic": 0,
-      "magic_str": 100,
+      "magic": 100,
+      "magic_str": 0,
       "ranged": 100,
       "ranged_str": 0,
       "str": 0
@@ -58413,8 +59821,8 @@
     },
     "offensive": {
       "atk": 100,
-      "magic": 0,
-      "magic_str": 100,
+      "magic": 100,
+      "magic_str": 0,
       "ranged": 100,
       "ranged_str": 0,
       "str": 0
@@ -58948,8 +60356,8 @@
     },
     "offensive": {
       "atk": 150,
-      "magic": 20,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 20,
       "ranged": 150,
       "ranged_str": 10,
       "str": 10
@@ -58989,8 +60397,8 @@
     },
     "offensive": {
       "atk": 150,
-      "magic": 20,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 20,
       "ranged": 150,
       "ranged_str": 10,
       "str": 10
@@ -59526,6 +60934,43 @@
     "attributes": []
   },
   {
+    "id": 12811,
+    "name": "Serpent shaman",
+    "version": "",
+    "image": "Serpent shaman.png",
+    "level": 161,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "28",
+    "skills": {
+      "atk": 100,
+      "def": 90,
+      "hp": 125,
+      "magic": 220,
+      "ranged": 160,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 50,
+      "magic_str": 15,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 15,
+      "ranged": 50,
+      "slash": 30,
+      "stab": 30
+    },
+    "attributes": []
+  },
+  {
     "id": 4104,
     "name": "Servant (Burthorpe)",
     "version": "",
@@ -59853,8 +61298,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 30,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 30,
       "ranged": 0,
       "ranged_str": 0,
       "str": 30
@@ -59893,8 +61338,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 30,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 30,
       "ranged": 0,
       "ranged_str": 0,
       "str": 30
@@ -60006,8 +61451,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 10,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 10,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -60281,6 +61726,43 @@
     "attributes": []
   },
   {
+    "id": 12819,
+    "name": "Shockwave Colossus",
+    "version": "",
+    "image": "Shockwave Colossus.png",
+    "level": 239,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "56",
+    "skills": {
+      "atk": 120,
+      "def": 150,
+      "hp": 125,
+      "magic": 350,
+      "ranged": 220,
+      "str": 190
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 55,
+      "magic_str": 35,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 15,
+      "magic": 5,
+      "ranged": 35,
+      "slash": 15,
+      "stab": 15
+    },
+    "attributes": []
+  },
+  {
     "id": 5139,
     "name": "Sigmund",
     "version": "Another Slice of H.A.M.",
@@ -60302,8 +61784,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 8,
+      "magic": 8,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -60339,8 +61821,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 8,
+      "magic": 8,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -60858,8 +62340,8 @@
     },
     "offensive": {
       "atk": 85,
-      "magic": 38,
-      "magic_str": 40,
+      "magic": 40,
+      "magic_str": 38,
       "ranged": 0,
       "ranged_str": 0,
       "str": 50
@@ -61675,8 +63157,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 20,
+      "magic": 20,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -64209,6 +65691,43 @@
     "attributes": []
   },
   {
+    "id": 13002,
+    "name": "Snake (Varlamore)",
+    "version": "",
+    "image": "Snake (Varlamore).png",
+    "level": 5,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 4,
+      "def": 3,
+      "hp": 6,
+      "magic": 1,
+      "ranged": 1,
+      "str": 5
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
     "id": 3544,
     "name": "Snake (desert)",
     "version": "",
@@ -64267,8 +65786,8 @@
     },
     "offensive": {
       "atk": 120,
-      "magic": -20,
-      "magic_str": 80,
+      "magic": 80,
+      "magic_str": -20,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -64390,6 +65909,43 @@
       "ranged": -21,
       "slash": -21,
       "stab": -21
+    },
+    "attributes": []
+  },
+  {
+    "id": 12821,
+    "name": "Sol Heredit",
+    "version": "",
+    "image": "Sol Heredit.png",
+    "level": 1563,
+    "speed": 0,
+    "style": [
+      "Crush"
+    ],
+    "size": 5,
+    "max_hit": "45 (regular)",
+    "skills": {
+      "atk": 350,
+      "def": 200,
+      "hp": 1500,
+      "magic": 300,
+      "ranged": 350,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 250,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 150,
+      "ranged_str": 5,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 750,
+      "ranged": 825,
+      "slash": 5,
+      "stab": 65
     },
     "attributes": []
   },
@@ -64711,8 +66267,8 @@
     },
     "offensive": {
       "atk": 100,
-      "magic": 65,
-      "magic_str": 250,
+      "magic": 250,
+      "magic_str": 65,
       "ranged": 350,
       "ranged_str": 0,
       "str": 55
@@ -64862,8 +66418,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 26,
-      "magic_str": -10,
+      "magic": -10,
+      "magic_str": 26,
       "ranged": -10,
       "ranged_str": 26,
       "str": 20
@@ -64900,8 +66456,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 60,
-      "magic_str": -10,
+      "magic": -10,
+      "magic_str": 60,
       "ranged": -10,
       "ranged_str": 60,
       "str": 48
@@ -64938,8 +66494,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 60,
-      "magic_str": -10,
+      "magic": -10,
+      "magic_str": 60,
       "ranged": -10,
       "ranged_str": 60,
       "str": 48
@@ -65126,8 +66682,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 1,
+      "magic": 1,
+      "magic_str": 0,
       "ranged": 1,
       "ranged_str": 0,
       "str": 0
@@ -66574,8 +68130,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 65,
-      "magic_str": 250,
+      "magic": 250,
+      "magic_str": 65,
       "ranged": 350,
       "ranged_str": 0,
       "str": 55
@@ -67150,8 +68706,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 10,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 10,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -67189,8 +68745,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 10,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 10,
       "ranged": 10,
       "ranged_str": 10,
       "str": 0
@@ -67228,8 +68784,8 @@
     },
     "offensive": {
       "atk": 60,
-      "magic": 66,
-      "magic_str": 90,
+      "magic": 90,
+      "magic_str": 66,
       "ranged": 0,
       "ranged_str": -10,
       "str": -10
@@ -67266,8 +68822,8 @@
     },
     "offensive": {
       "atk": 60,
-      "magic": 66,
-      "magic_str": 90,
+      "magic": 90,
+      "magic_str": 66,
       "ranged": 0,
       "ranged_str": -10,
       "str": -10
@@ -67304,8 +68860,8 @@
     },
     "offensive": {
       "atk": 60,
-      "magic": 66,
-      "magic_str": 90,
+      "magic": 90,
+      "magic_str": 66,
       "ranged": 0,
       "ranged_str": -10,
       "str": -10
@@ -67342,8 +68898,8 @@
     },
     "offensive": {
       "atk": 60,
-      "magic": 66,
-      "magic_str": 90,
+      "magic": 90,
+      "magic_str": 66,
       "ranged": 0,
       "ranged_str": -10,
       "str": -10
@@ -67368,7 +68924,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000008E-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000000-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -67379,8 +68935,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 1,
+      "magic": 1,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 40
@@ -67523,8 +69079,8 @@
     },
     "offensive": {
       "atk": 38,
-      "magic": 50,
-      "magic_str": 38,
+      "magic": 38,
+      "magic_str": 50,
       "ranged": 38,
       "ranged_str": 50,
       "str": 50
@@ -67609,6 +69165,43 @@
       "ranged": 15,
       "slash": 25,
       "stab": 15
+    },
+    "attributes": []
+  },
+  {
+    "id": 12879,
+    "name": "Sulphur Nagua",
+    "version": "",
+    "image": "Sulphur Nagua.png",
+    "level": 98,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "11",
+    "skills": {
+      "atk": 90,
+      "def": 40,
+      "hp": 100,
+      "magic": 50,
+      "ranged": 1,
+      "str": 105
+    },
+    "offensive": {
+      "atk": 90,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 10,
+      "magic": 200,
+      "ranged": 200,
+      "slash": 50,
+      "stab": 50
     },
     "attributes": []
   },
@@ -69402,8 +70995,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 300,
+      "magic": 300,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -69439,8 +71032,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 300,
+      "magic": 300,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -69476,8 +71069,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 300,
+      "magic": 300,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -69513,8 +71106,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 12,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 12,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -69550,8 +71143,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 300,
+      "magic": 300,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -69587,8 +71180,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 300,
+      "magic": 300,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -70227,8 +71820,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 24,
-      "magic_str": 145,
+      "magic": 145,
+      "magic_str": 24,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -70788,8 +72381,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": -33,
+      "magic": -33,
+      "magic_str": 0,
       "ranged": -11,
       "ranged_str": 0,
       "str": 72
@@ -71203,8 +72796,8 @@
     },
     "offensive": {
       "atk": 22,
-      "magic": 16,
-      "magic_str": 20,
+      "magic": 20,
+      "magic_str": 16,
       "ranged": 22,
       "ranged_str": 16,
       "str": 16
@@ -72484,8 +74077,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 12,
-      "magic_str": 225,
+      "magic": 225,
+      "magic_str": 12,
       "ranged": 225,
       "ranged_str": 12,
       "str": 25
@@ -72523,8 +74116,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 12,
-      "magic_str": 225,
+      "magic": 225,
+      "magic_str": 12,
       "ranged": 225,
       "ranged_str": 12,
       "str": 25
@@ -72562,8 +74155,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 40,
-      "magic_str": 230,
+      "magic": 230,
+      "magic_str": 40,
       "ranged": 300,
       "ranged_str": 40,
       "str": 40
@@ -72601,8 +74194,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 40,
-      "magic_str": 230,
+      "magic": 230,
+      "magic_str": 40,
       "ranged": 300,
       "ranged_str": 40,
       "str": 40
@@ -73423,7 +75016,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000003F-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000037-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -73434,8 +75027,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 450,
-      "magic_str": 550,
+      "magic": 550,
+      "magic_str": 450,
       "ranged": 550,
       "ranged_str": 200,
       "str": 200
@@ -73461,7 +75054,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000003F-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000037-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -73472,8 +75065,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 450,
-      "magic_str": 550,
+      "magic": 550,
+      "magic_str": 450,
       "ranged": 550,
       "ranged_str": 200,
       "str": 200
@@ -73511,8 +75104,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 60,
+      "magic": 60,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -73624,8 +75217,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 25,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 25,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -73662,8 +75255,8 @@
     },
     "offensive": {
       "atk": 50,
-      "magic": 50,
-      "magic_str": 100,
+      "magic": 100,
+      "magic_str": 50,
       "ranged": 0,
       "ranged_str": 0,
       "str": 50
@@ -75090,8 +76683,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 25,
-      "magic_str": 40,
+      "magic": 40,
+      "magic_str": 25,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -75207,8 +76800,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 18,
-      "magic_str": 16,
+      "magic": 16,
+      "magic_str": 18,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -75311,7 +76904,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000C-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000011-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -75348,7 +76941,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000E-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000013-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -75549,8 +77142,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": -42,
+      "magic": -42,
+      "magic_str": 0,
       "ranged": -14,
       "ranged_str": 0,
       "str": 72
@@ -75588,8 +77181,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 140,
-      "magic_str": 32,
+      "magic": 32,
+      "magic_str": 140,
       "ranged": 32,
       "ranged_str": 50,
       "str": 0
@@ -75627,8 +77220,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 50,
-      "magic_str": 32,
+      "magic": 32,
+      "magic_str": 50,
       "ranged": 32,
       "ranged_str": 50,
       "str": 0
@@ -75666,8 +77259,8 @@
     },
     "offensive": {
       "atk": 32,
-      "magic": 5,
-      "magic_str": 20,
+      "magic": 20,
+      "magic_str": 5,
       "ranged": 20,
       "ranged_str": 5,
       "str": 46
@@ -75703,8 +77296,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 150,
-      "magic_str": 80,
+      "magic": 80,
+      "magic_str": 150,
       "ranged": 80,
       "ranged_str": 80,
       "str": 0
@@ -75781,8 +77374,8 @@
     },
     "offensive": {
       "atk": 80,
-      "magic": 5,
-      "magic_str": 80,
+      "magic": 80,
+      "magic_str": 5,
       "ranged": 80,
       "ranged_str": 5,
       "str": 30
@@ -75818,8 +77411,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 150,
-      "magic_str": 80,
+      "magic": 80,
+      "magic_str": 150,
       "ranged": 80,
       "ranged_str": 80,
       "str": 0
@@ -75896,8 +77489,8 @@
     },
     "offensive": {
       "atk": 80,
-      "magic": 5,
-      "magic_str": 80,
+      "magic": 80,
+      "magic_str": 5,
       "ranged": 80,
       "ranged_str": 5,
       "str": 30
@@ -76351,8 +77944,8 @@
     },
     "offensive": {
       "atk": 25,
-      "magic": 0,
-      "magic_str": 25,
+      "magic": 25,
+      "magic_str": 0,
       "ranged": 25,
       "ranged_str": 0,
       "str": 0
@@ -76391,8 +77984,8 @@
     },
     "offensive": {
       "atk": 14,
-      "magic": 0,
-      "magic_str": 148,
+      "magic": 148,
+      "magic_str": 0,
       "ranged": 96,
       "ranged_str": 0,
       "str": 0
@@ -76435,8 +78028,8 @@
     },
     "offensive": {
       "atk": 16,
-      "magic": 56,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 56,
       "ranged": 78,
       "ranged_str": 0,
       "str": 0
@@ -77392,8 +78985,8 @@
     },
     "offensive": {
       "atk": 6,
-      "magic": 0,
-      "magic_str": 6,
+      "magic": 6,
+      "magic_str": 0,
       "ranged": 6,
       "ranged_str": 0,
       "str": 7
@@ -77429,8 +79022,8 @@
     },
     "offensive": {
       "atk": 6,
-      "magic": 0,
-      "magic_str": 6,
+      "magic": 6,
+      "magic_str": 0,
       "ranged": 6,
       "ranged_str": 0,
       "str": 7
@@ -77466,8 +79059,8 @@
     },
     "offensive": {
       "atk": 6,
-      "magic": 0,
-      "magic_str": 6,
+      "magic": 6,
+      "magic_str": 0,
       "ranged": 6,
       "ranged_str": 0,
       "str": 7
@@ -77503,8 +79096,8 @@
     },
     "offensive": {
       "atk": 6,
-      "magic": 0,
-      "magic_str": 6,
+      "magic": 6,
+      "magic_str": 0,
       "ranged": 6,
       "ranged_str": 0,
       "str": 7
@@ -77540,8 +79133,8 @@
     },
     "offensive": {
       "atk": 6,
-      "magic": 0,
-      "magic_str": 6,
+      "magic": 6,
+      "magic_str": 0,
       "ranged": 6,
       "ranged_str": 0,
       "str": 7
@@ -77577,8 +79170,8 @@
     },
     "offensive": {
       "atk": 6,
-      "magic": 0,
-      "magic_str": 6,
+      "magic": 6,
+      "magic_str": 0,
       "ranged": 6,
       "ranged_str": 0,
       "str": 7
@@ -78656,8 +80249,8 @@
     },
     "offensive": {
       "atk": 140,
-      "magic": 58,
-      "magic_str": 190,
+      "magic": 190,
+      "magic_str": 58,
       "ranged": 160,
       "ranged_str": 70,
       "str": 30
@@ -78693,8 +80286,8 @@
     },
     "offensive": {
       "atk": 140,
-      "magic": 58,
-      "magic_str": 190,
+      "magic": 190,
+      "magic_str": 58,
       "ranged": 160,
       "ranged_str": 70,
       "str": 30
@@ -78730,8 +80323,8 @@
     },
     "offensive": {
       "atk": 100,
-      "magic": 54,
-      "magic_str": 180,
+      "magic": 180,
+      "magic_str": 54,
       "ranged": 140,
       "ranged_str": 66,
       "str": 10
@@ -80542,8 +82135,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 30,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 30,
       "ranged": 0,
       "ranged_str": 0,
       "str": 30
@@ -80582,11 +82175,89 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 30,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 30,
       "ranged": 0,
       "ranged_str": 0,
       "str": 30
+    },
+    "defensive": {
+      "crush": 50,
+      "magic": 50,
+      "ranged": 20,
+      "slash": 50,
+      "stab": 20
+    },
+    "attributes": [
+      "dragon"
+    ]
+  },
+  {
+    "id": 13032,
+    "name": "Wyrmling",
+    "version": "Attacking",
+    "image": "Wyrmling (attacking).png",
+    "level": 55,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 20,
+      "def": 40,
+      "hp": 65,
+      "magic": 60,
+      "ranged": 15,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 10,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "crush": 50,
+      "magic": 50,
+      "ranged": 20,
+      "slash": 50,
+      "stab": 20
+    },
+    "attributes": [
+      "dragon"
+    ]
+  },
+  {
+    "id": 13031,
+    "name": "Wyrmling",
+    "version": "Idle",
+    "image": "Wyrmling.png",
+    "level": 55,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 20,
+      "def": 40,
+      "hp": 65,
+      "magic": 60,
+      "ranged": 15,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 10,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
     },
     "defensive": {
       "crush": 50,
@@ -80621,8 +82292,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 12,
-      "magic_str": 20,
+      "magic": 20,
+      "magic_str": 12,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -80920,8 +82591,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 100,
+      "magic": 100,
+      "magic_str": 0,
       "ranged": 80,
       "ranged_str": 0,
       "str": 0
@@ -81479,8 +83150,8 @@
     },
     "offensive": {
       "atk": 160,
-      "magic": 30,
-      "magic_str": 215,
+      "magic": 215,
+      "magic_str": 30,
       "ranged": 220,
       "ranged_str": 16,
       "str": 100
@@ -81865,8 +83536,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 20,
+      "magic": 20,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -84869,8 +86540,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 20,
-      "magic_str": 50,
+      "magic": 50,
+      "magic_str": 20,
       "ranged": 50,
       "ranged_str": 20,
       "str": 0
@@ -84906,8 +86577,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 20,
-      "magic_str": 50,
+      "magic": 50,
+      "magic_str": 20,
       "ranged": 50,
       "ranged_str": 20,
       "str": 0
@@ -84944,8 +86615,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 20,
-      "magic_str": 50,
+      "magic": 50,
+      "magic_str": 20,
       "ranged": 50,
       "ranged_str": 20,
       "str": 0

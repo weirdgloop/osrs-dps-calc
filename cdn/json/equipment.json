@@ -12814,7 +12814,7 @@
     "id": 28991,
     "version": "",
     "slot": "ammo",
-    "image": "Atlatl dart.png",
+    "image": "Atlatl dart 1.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -20670,6 +20670,96 @@
     "isTwoHanded": false
   },
   {
+    "name": "Blessed dizana's quiver",
+    "id": 28828,
+    "version": "Broken",
+    "slot": "cape",
+    "image": "Blessed dizana's quiver (broken).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 4,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 28
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blessed dizana's quiver",
+    "id": 28957,
+    "version": "Locked",
+    "slot": "cape",
+    "image": "Blessed dizana's quiver (l).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 4,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 28
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blessed dizana's quiver",
+    "id": 28955,
+    "version": "Normal",
+    "slot": "cape",
+    "image": "Blessed dizana's quiver.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 4,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 28
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Blessed spirit shield",
     "id": 12831,
     "version": "",
@@ -20897,15 +20987,15 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
-      "ranged": 0
+      "magic": -15,
+      "ranged": -10
     },
     "defensive": {
-      "stab": 50,
-      "slash": 52,
+      "stab": 60,
+      "slash": 80,
       "crush": 80,
       "magic": 40,
-      "ranged": 48
+      "ranged": 79
     },
     "isTwoHanded": false
   },
@@ -20927,15 +21017,15 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
-      "ranged": 0
+      "magic": -15,
+      "ranged": -10
     },
     "defensive": {
-      "stab": 50,
-      "slash": 52,
+      "stab": 60,
+      "slash": 80,
       "crush": 80,
       "magic": 40,
-      "ranged": 48
+      "ranged": 79
     },
     "isTwoHanded": false
   },
@@ -20957,15 +21047,15 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
-      "ranged": 0
+      "magic": -15,
+      "ranged": -10
     },
     "defensive": {
-      "stab": 50,
-      "slash": 52,
+      "stab": 60,
+      "slash": 80,
       "crush": 80,
       "magic": 40,
-      "ranged": 48
+      "ranged": 79
     },
     "isTwoHanded": false
   },
@@ -21077,15 +21167,15 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
-      "ranged": 0
+      "magic": -21,
+      "ranged": -7
     },
     "defensive": {
       "stab": 30,
-      "slash": 33,
+      "slash": 50,
       "crush": 49,
       "magic": 32,
-      "ranged": 28
+      "ranged": 46
     },
     "isTwoHanded": false
   },
@@ -21107,15 +21197,15 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
-      "ranged": 0
+      "magic": -21,
+      "ranged": -7
     },
     "defensive": {
       "stab": 30,
-      "slash": 33,
+      "slash": 50,
       "crush": 49,
       "magic": 32,
-      "ranged": 28
+      "ranged": 46
     },
     "isTwoHanded": false
   },
@@ -21137,15 +21227,15 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
-      "ranged": 0
+      "magic": -21,
+      "ranged": -7
     },
     "defensive": {
       "stab": 30,
-      "slash": 33,
+      "slash": 50,
       "crush": 49,
       "magic": 32,
-      "ranged": 28
+      "ranged": 46
     },
     "isTwoHanded": false
   },
@@ -22238,7 +22328,7 @@
     "speed": 0,
     "category": "",
     "bonuses": {
-      "str": 2,
+      "str": 3,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
@@ -22268,7 +22358,7 @@
     "speed": 0,
     "category": "",
     "bonuses": {
-      "str": 2,
+      "str": 3,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
@@ -22298,7 +22388,7 @@
     "speed": 0,
     "category": "",
     "bonuses": {
-      "str": 2,
+      "str": 3,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
@@ -23958,6 +24048,36 @@
       "slash": 0,
       "crush": 0,
       "magic": 10,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Book of egg",
+    "id": 29433,
+    "version": "",
+    "slot": "shield",
+    "image": "Book of egg.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
       "ranged": 0
     },
     "defensive": {
@@ -44490,66 +44610,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Desert camo legs",
-    "id": 10063,
-    "version": "",
-    "slot": "legs",
-    "image": "Desert camo legs.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": -7
-    },
-    "defensive": {
-      "stab": 11,
-      "slash": 10,
-      "crush": 10,
-      "magic": 0,
-      "ranged": 10
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Desert camo top",
-    "id": 10061,
-    "version": "",
-    "slot": "body",
-    "image": "Desert camo top.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 10,
-      "slash": 15,
-      "crush": 19,
-      "magic": 0,
-      "ranged": 12
-    },
-    "isTwoHanded": false
-  },
-  {
     "name": "Desert disguise",
     "id": 4611,
     "version": "",
@@ -46219,6 +46279,96 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dizana's max cape",
+    "id": 28830,
+    "version": "Broken",
+    "slot": "cape",
+    "image": "Dizana's max cape (broken).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 4,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 28
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dizana's max cape",
+    "id": 28906,
+    "version": "Locked",
+    "slot": "cape",
+    "image": "Dizana's max cape (l).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 4,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 28
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dizana's max cape",
+    "id": 28902,
+    "version": "Normal",
+    "slot": "cape",
+    "image": "Dizana's max cape.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 4,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 28
     },
     "defensive": {
       "stab": 0,
@@ -51167,7 +51317,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
+      "magic": -15,
       "ranged": 31
     },
     "defensive": {
@@ -51197,7 +51347,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
+      "magic": -15,
       "ranged": 31
     },
     "defensive": {
@@ -51227,7 +51377,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
+      "magic": -15,
       "ranged": 31
     },
     "defensive": {
@@ -51347,7 +51497,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
+      "magic": -15,
       "ranged": 17
     },
     "defensive": {
@@ -51377,7 +51527,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
+      "magic": -15,
       "ranged": 17
     },
     "defensive": {
@@ -51407,7 +51557,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
+      "magic": -15,
       "ranged": 17
     },
     "defensive": {
@@ -51455,6 +51605,126 @@
     "version": "",
     "slot": "ring",
     "image": "Efaritay's aid.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Egg priest mitre",
+    "id": 29443,
+    "version": "",
+    "slot": "head",
+    "image": "Egg priest mitre.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Egg priest necklace",
+    "id": 29441,
+    "version": "",
+    "slot": "neck",
+    "image": "Egg priest necklace.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Egg priest robe",
+    "id": 29437,
+    "version": "",
+    "slot": "legs",
+    "image": "Egg priest robe.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Egg priest robe top",
+    "id": 29439,
+    "version": "",
+    "slot": "body",
+    "image": "Egg priest robe top.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -65463,7 +65733,7 @@
     "name": "Guild hunter boots",
     "id": 29269,
     "version": "",
-    "slot": "head",
+    "slot": "feet",
     "image": "Guild hunter boots.png",
     "speed": 0,
     "category": "",
@@ -65523,7 +65793,7 @@
     "name": "Guild hunter legs",
     "id": 29267,
     "version": "",
-    "slot": "head",
+    "slot": "legs",
     "image": "Guild hunter legs.png",
     "speed": 0,
     "category": "",
@@ -65553,7 +65823,7 @@
     "name": "Guild hunter top",
     "id": 29265,
     "version": "",
-    "slot": "head",
+    "slot": "body",
     "image": "Guild hunter top.png",
     "speed": 0,
     "category": "",
@@ -75540,66 +75810,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Jungle camo legs",
-    "id": 10059,
-    "version": "",
-    "slot": "legs",
-    "image": "Jungle camo legs.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": -7
-    },
-    "defensive": {
-      "stab": 11,
-      "slash": 10,
-      "crush": 10,
-      "magic": 0,
-      "ranged": 10
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Jungle camo top",
-    "id": 10057,
-    "version": "",
-    "slot": "body",
-    "image": "Jungle camo top.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 10,
-      "slash": 15,
-      "crush": 19,
-      "magic": 0,
-      "ranged": 12
-    },
-    "isTwoHanded": false
-  },
-  {
     "name": "Jungle demon mask",
     "id": 20032,
     "version": "",
@@ -85354,7 +85564,7 @@
     "id": 28878,
     "version": "",
     "slot": "ammo",
-    "image": "Moonlight antler bolts.png",
+    "image": "Moonlight antler bolts 1.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -92366,66 +92576,6 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Polar camo legs",
-    "id": 10067,
-    "version": "",
-    "slot": "legs",
-    "image": "Polar camo legs.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": -7
-    },
-    "defensive": {
-      "stab": 11,
-      "slash": 10,
-      "crush": 10,
-      "magic": 0,
-      "ranged": 10
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Polar camo top",
-    "id": 10065,
-    "version": "",
-    "slot": "body",
-    "image": "Polar camo top.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 10,
-      "slash": 15,
-      "crush": 19,
-      "magic": 0,
-      "ranged": 12
     },
     "isTwoHanded": false
   },
@@ -118617,7 +118767,7 @@
       "magic": 0,
       "ranged": 0
     },
-    "isTwoHanded": false
+    "isTwoHanded": true
   },
   {
     "name": "Sunfire fanatic chausses",
@@ -118714,7 +118864,7 @@
     "id": 28872,
     "version": "",
     "slot": "ammo",
-    "image": "Sunlight antler bolts.png",
+    "image": "Sunlight antler bolts 1.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -135056,66 +135206,6 @@
       "crush": 0,
       "magic": 1,
       "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Wood camo legs",
-    "id": 10055,
-    "version": "",
-    "slot": "legs",
-    "image": "Wood camo legs.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": -7
-    },
-    "defensive": {
-      "stab": 11,
-      "slash": 10,
-      "crush": 10,
-      "magic": 0,
-      "ranged": 10
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Wood camo top",
-    "id": 10053,
-    "version": "",
-    "slot": "body",
-    "image": "Wood camo top.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 10,
-      "slash": 15,
-      "crush": 19,
-      "magic": 0,
-      "ranged": 12
     },
     "isTwoHanded": false
   },
