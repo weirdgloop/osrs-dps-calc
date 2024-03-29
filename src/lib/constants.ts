@@ -1,3 +1,5 @@
+import { CombatStyleStance } from '@/types/PlayerCombatStyle';
+
 export const AKKHA_IDS = [
   11789, 11790, 11791, 11792, 11793, 11794, 11795, 11796,
 ];
@@ -311,3 +313,36 @@ export const PARTY_SIZE_REQUIRED_MONSTER_IDS = [
 
 export const ACCURACY_PRECISION = 2;
 export const DPS_PRECISION = 3;
+
+export const AUTOCAST_STANCES: CombatStyleStance[] = ['Autocast', 'Defensive Autocast'];
+export const CAST_STANCES: CombatStyleStance[] = [...AUTOCAST_STANCES, 'Manual Cast'];
+
+/**
+ * NPCs that will always die in one hit from a player attack
+ */
+export const ONE_HIT_MONSTERS: number[] = [
+  7223, // Giant rat (Scurrius)
+  8584, // Flower
+  11193, // Flower (A Night at the Theatre)
+];
+
+/**
+ * NPCs that will always hit the player with their attacks, no matter what gear they are wearing
+ */
+export const ALWAYS_ACCURATE_MONSTERS: number[] = [
+  931, // Thrower Troll
+  4135, // Thrower troll (Trollheim)
+  7691, // Jal-Nib
+  12335, // Wighted Leech
+];
+
+export const DEFAULT_ATTACK_SPEED = 4;
+export const SECONDS_PER_TICK = 0.6;
+
+export const TTK_DIST_MAX_ITER_ROUNDS = 1000;
+export const TTK_DIST_EPSILON = 0.0001;
+
+export const NPC_HARDCODED_MAX_HIT: { [npcId: number]: number } = {
+  5947: 10, // Spinolyp (1)
+  5961: 10, // Spinolyp (2)
+};

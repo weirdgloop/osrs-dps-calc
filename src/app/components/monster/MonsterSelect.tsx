@@ -22,7 +22,6 @@ const MonsterSelect: React.FC = observer(() => {
     version: m.version || '',
     monster: {
       ...m,
-      monsterCurrentHp: m.skills.hp,
     },
   })), [availableMonsters]);
 

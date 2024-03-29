@@ -3,12 +3,14 @@ import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 import { calculateCombatLevel } from '@/utils';
 import PlayerInnerContainer from '@/app/components/player/PlayerInnerContainer';
+import LoadoutName from '@/app/components/player/LoadoutName';
 import { IconPlus, IconTrash } from '@tabler/icons-react';
+// import WikiSyncButton from 'src/app/components/player/WikiSyncButton';
 
 const PlayerContainer: React.FC = observer(() => {
   const store = useStore();
   const {
-    loadouts, player, selectedLoadout, canCreateLoadout, canRemoveLoadout, createLoadout, deleteLoadout,
+    loadouts, player, selectedLoadout, canCreateLoadout, createLoadout, renameLoadout, deleteLoadout,
   } = store;
 
   return (
@@ -50,22 +52,18 @@ const PlayerContainer: React.FC = observer(() => {
         <div
           className="px-5 py-3 border-b-body-400 dark:border-b-dark-200 border-b flex justify-between items-center font-serif"
         >
-          <div>
-            <h1 className="tracking-tight font-bold">
-              Loadout
-              {' '}
-              {selectedLoadout + 1}
-            </h1>
+          <div className="min-w-0">
+            <LoadoutName name={loadouts[selectedLoadout].name} renameLoadout={renameLoadout} index={selectedLoadout} />
             <div className="text-xs font-bold text-gray-500 dark:text-gray-300">
               Level
               {' '}
               {calculateCombatLevel(player.skills)}
             </div>
           </div>
-          <div>
+          <div className="flex gap-1">
+            {/* <WikiSyncButton /> */}
             <button
               type="button"
-              disabled={!canRemoveLoadout}
               onClick={() => deleteLoadout(selectedLoadout)}
               className="disabled:cursor-not-allowed text-body-500 dark:text-dark-100 disabled:text-btns-100 dark:disabled:text-dark-500 hover:text-red transition-colors"
               data-tooltip-id="tooltip"

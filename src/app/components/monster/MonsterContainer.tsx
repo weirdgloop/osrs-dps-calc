@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import dagger from '@/public/img/bonuses/dagger.png';
 import scimitar from '@/public/img/bonuses/scimitar.png';
 import warhammer from '@/public/img/bonuses/warhammer.png';
@@ -31,12 +31,12 @@ import {
   IconChevronUp,
   IconExternalLink,
 } from '@tabler/icons-react';
-import { scaledMonster } from '@/lib/MonsterScaling';
+import { scaleMonster } from '@/lib/MonsterScaling';
 import { Monster } from '@/types/Monster';
 import LazyImage from '@/app/components/generic/LazyImage';
 import Toggle from '@/app/components/generic/Toggle';
 import { toJS } from 'mobx';
-import CombatCalc from '@/lib/CombatCalc';
+import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import DefensiveReductions from '@/app/components/monster/DefensiveReductions';
 import MonsterSelect from './MonsterSelect';
 import HelpLink from '../HelpLink';
@@ -97,7 +97,20 @@ const MonsterContainer: React.FC = observer(() => {
   const [attributesExpanded, setAttributesExpanded] = useState(false);
 
   // Don't automatically update the stat inputs if manual editing is on
-  const displayMonster = prefs.manualMode ? monster : scaledMonster(monster);
+  const monsterJS = toJS(monster);
+  const displayMonster = useMemo(() => {
+    if (prefs.manualMode) {
+      return monsterJS;
+    }
+    return scaleMonster(monsterJS);
+  }, [prefs.manualMode, monsterJS]);
+
+  useEffect(() => {
+    // When display monster HP is changed, update the monster's current HP
+    if (store.monster.inputs.monsterCurrentHp !== displayMonster.skills.hp) {
+      store.updateMonster({ inputs: { monsterCurrentHp: displayMonster.skills.hp } });
+    }
+  }, [store, displayMonster.skills.hp]);
 
   const extraMonsterOptions = useMemo(() => {
     // Determine whether we need to show any extra monster option components
@@ -213,7 +226,7 @@ const MonsterContainer: React.FC = observer(() => {
       );
     }
 
-    if (loadouts.some((l) => CombatCalc.distIsCurrentHpDependent(l, monster))) {
+    if (loadouts.some((l) => PlayerVsNPCCalc.distIsCurrentHpDependent(l, monster))) {
       comps.push(
         <div className="mt-4" key="cox-guardian">
           <h4 className="font-bold font-serif">
@@ -225,7 +238,7 @@ const MonsterContainer: React.FC = observer(() => {
             <NumberInput
               value={monster.inputs.monsterCurrentHp}
               min={0}
-              max={monster.skills.hp}
+              max={displayMonster.skills.hp}
               step={1}
               onChange={(v) => store.updateMonster({ inputs: { monsterCurrentHp: v } })}
             />
@@ -236,7 +249,7 @@ const MonsterContainer: React.FC = observer(() => {
 
     return comps;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [toJS(loadouts), toJS(monster)]);
+  }, [toJS(loadouts), toJS(monster), displayMonster.skills.hp]);
 
   return (
     <div className="basis-4 flex flex-col grow mt-3 md:grow-0">
@@ -256,11 +269,11 @@ const MonsterContainer: React.FC = observer(() => {
                 alt={store.monster.name || 'Unknown'}
               />
             </div>
-            <h1 className="font-serif tracking-tight font-bold leading-4">
+            <h2 className="font-serif tracking-tight font-bold leading-4">
               {monster.name ? monster.name : 'Monster'}
               <br />
               <span className="text-xs text-gray-500 dark:text-gray-300">{monster.version}</span>
-            </h1>
+            </h2>
           </div>
           {monster.id && (
             <a
@@ -311,7 +324,7 @@ const MonsterContainer: React.FC = observer(() => {
                       />
                       <AttributeInput
                         name="Defence"
-                        max={1000}
+                        max={40000}
                         disabled={!prefs.manualMode}
                         image={defence}
                         value={displayMonster.skills.def}

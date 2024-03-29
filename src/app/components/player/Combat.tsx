@@ -22,7 +22,7 @@ const Combat: React.FC = observer(() => {
         {styles}
       </div>
       {
-        ['Autocast', 'Defensive Autocast', 'Manual Cast'].includes(style.stance) && (
+        ['Autocast', 'Defensive Autocast', 'Manual Cast'].includes(style.stance || '') && (
           <div className="px-4">
             <h4 className="font-bold font-serif flex gap-2">
               Spell

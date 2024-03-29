@@ -43,9 +43,14 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({
           </p>
           {
               payload.map((p) => (
-                <div key={p.name} className="flex justify-between w-36">
-                  <div className="flex items-center gap-1">
-                    <span className="w-3 h-3 inline-block border border-gray-400 rounded-lg" style={{ backgroundColor: p.color }} />
+                <div key={p.name} className="flex justify-between w-44 gap-1">
+                  <div className="flex items-center gap-1 leading-3 overflow-hidden">
+                    <div>
+                      <div
+                        className="w-3 h-3 inline-block border border-gray-400 rounded-lg"
+                        style={{ backgroundColor: p.color }}
+                      />
+                    </div>
                     {p.name}
                   </div>
                   <span className="text-gray-400 font-bold">
@@ -77,6 +82,7 @@ const TtkComparison: React.FC = observer(() => {
   const store = useStore();
   const { showTtkComparison } = store.prefs;
   const calcResults = toJS(store.calc.loadouts);
+  const loadouts = toJS(store.loadouts);
 
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
@@ -93,22 +99,24 @@ const TtkComparison: React.FC = observer(() => {
       : (x: number) => x.toString();
 
     const lines: { name: string, [lKey: string]: string | number }[] = [];
-    const uniqueTtks = max(calcResults, (r) => max(r.ttkDist?.keys() || [])) || 0;
+    const uniqueTtks = max(Object.values(calcResults), (r) => max(r.ttkDist?.keys() || [])) || 0;
 
     const runningTotals: number[] = [];
     for (let ttk = 0; ttk <= uniqueTtks; ttk++) {
       const entry: typeof lines[0] = { name: xLabeller(ttk) };
-      calcResults.forEach((l, i) => {
+      Object.values(calcResults).forEach((l, i) => {
         const v = l.ttkDist?.get(ttk);
         if (v) {
           runningTotals[i] = (runningTotals[i] || 0) + v;
         }
-        entry[`Loadout ${i + 1}`] = (runningTotals[i] * 100).toFixed(2);
+        if (loadouts[i]) {
+          entry[loadouts[i].name] = (runningTotals[i] * 100).toFixed(2);
+        }
       });
       lines.push(entry);
     }
     return lines;
-  }, [xAxisType, calcResults]);
+  }, [xAxisType, calcResults, loadouts]);
 
   const generateLines = useCallback(() => {
     const lines: React.ReactNode[] = [];
@@ -116,13 +124,13 @@ const TtkComparison: React.FC = observer(() => {
     const strokeColours = isDark
       ? ['cyan', 'yellow', 'lime', 'orange', 'pink']
       : ['blue', 'chocolate', 'green', 'sienna', 'purple'];
-    for (let i = 0; i < calcResults.length; i++) {
+    for (let i = 0; i < Object.values(calcResults).length; i++) {
       const colour = strokeColours.shift() || 'red';
-      lines.push(<Line key={i} isAnimationActive={false} type="monotone" dataKey={`Loadout ${i + 1}`} stroke={colour} dot={false} connectNulls />);
+      lines.push(<Line key={i} isAnimationActive={false} type="monotone" dataKey={loadouts[i].name} stroke={colour} dot={false} connectNulls />);
       strokeColours.push(colour);
     }
     return lines;
-  }, [isDark, calcResults.length]);
+  }, [isDark, calcResults, loadouts]);
 
   return (
     <SectionAccordion
@@ -138,7 +146,7 @@ const TtkComparison: React.FC = observer(() => {
       )}
     >
       {data && (
-        <>
+        <div className="px-6 py-4">
           <ResponsiveContainer width="100%" height={250}>
             <LineChart
               data={data}
@@ -182,7 +190,7 @@ const TtkComparison: React.FC = observer(() => {
               />
             </div>
           </div>
-        </>
+        </div>
       )}
     </SectionAccordion>
   );

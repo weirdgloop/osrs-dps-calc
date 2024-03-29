@@ -1,12 +1,18 @@
 import { CombatStyleType } from '@/types/PlayerCombatStyle';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 
+// For now this is the same as player combat styles, but it may support other stuff in future like "typeless"
+export type MonsterCombatStyle = CombatStyleType;
+
 export interface Monster {
   id: number;
   name: string;
   image?: string;
   version?: string;
   size: number;
+  speed: number;
+  style: MonsterCombatStyle;
+  maxHit?: number; // Only used for UI. Calculator doesn't use this value - it computes it itself.
   skills: {
     atk: number;
     def: number;
@@ -24,7 +30,7 @@ export interface Monster {
     str: number;
   }
   defensive: {
-    [k in CombatStyleType]: number;
+    [k in Exclude<CombatStyleType, null>]: number;
   }
   /**
    * The attributes the monster has

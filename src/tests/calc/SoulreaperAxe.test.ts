@@ -1,6 +1,6 @@
 import { describe, expect, test } from '@jest/globals';
 import {
-  calculate, findEquipment, getTestMonsterById, getTestPlayer,
+  calculatePlayerVsNpc, findEquipment, getTestMonsterById, getTestPlayer,
 } from '@/tests/utils/TestUtils';
 import { Prayer } from '@/enums/Prayer';
 import { Player } from '@/types/Player';
@@ -43,7 +43,7 @@ describe('Soulreaper axe', () => {
           },
         });
 
-        const { maxHit } = calculate(monster, player);
+        const { maxHit } = calculatePlayerVsNpc(monster, player);
         expect(maxHit).toBe(max);
       });
     });
@@ -64,7 +64,7 @@ describe('Soulreaper axe', () => {
         },
       });
 
-      const { maxHit } = calculate(monster, player);
+      const { maxHit } = calculatePlayerVsNpc(monster, player);
       expect(maxHit).toBe(63);
     });
   });

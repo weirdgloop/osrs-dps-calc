@@ -12,7 +12,7 @@ const DebugPanels: React.FC = observer(() => {
   if (!store.debug) return null;
 
   const { calc, player, selectedLoadout } = store;
-  const details: DetailEntry[] = calc.loadouts[selectedLoadout].details || [];
+  const details: DetailEntry[] = calc.loadouts[selectedLoadout]?.details || [];
 
   return (
     <>

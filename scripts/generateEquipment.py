@@ -11,7 +11,6 @@ import os
 import requests
 import json
 import urllib.parse
-import re
 
 FILE_NAME = '../cdn/json/equipment.json'
 WIKI_BASE = 'https://oldschool.runescape.wiki'
@@ -41,7 +40,6 @@ REQUIRED_PRINTOUTS = [
     'Weapon attack speed',
     'Combat style'
 ]
-
 
 def getEquipmentData():
     equipment = {}
@@ -129,27 +127,10 @@ def main():
             'isTwoHanded': False
         }
 
-        # Trim out 0 values in stats
-        # todo this was causing items to not clear out values in stats they do not have
-        # for section in ['bonuses', 'offensive', 'defensive']:
-        #     equipment[section] = {k:v for (k,v) in equipment[section].items() if v != 0}
-
         # Handle 2H weapons
         if equipment['slot'] == '2h':
             equipment['slot'] = 'weapon'
             equipment['isTwoHanded'] = True
-
-        # Prune...
-        if (
-            # ...items with all 0 stat bonuses
-            (len(equipment['bonuses']) == 0 and len(equipment['offensive']) == 0 and len(equipment['defensive']) == 0
-             and (equipment['speed'] == 4 or equipment['speed'] <= 0))
-            # ...items that are broken, inactive, locked
-            or re.match(r"^(Broken|Inactive|Locked)$", equipment['version'])
-            # ...items from LMS (PvP only mode), or historical
-            or re.search(r"\((Last Man Standing|historical)\)$", equipment['name'])
-        ):
-            continue
 
         # If this is an item from Nightmare Zone, it will become the main variant for all NMZ/SW/Emir's variants
         if equipment['version'] == 'Nightmare Zone':
@@ -160,6 +141,38 @@ def main():
 
         if not equipment['image'] == '':
             required_imgs.append(equipment['image'])
+
+    # ignore me i don't exist
+    data.append({
+        'name': 'Snail shell',
+        'id': 7800,
+        'version': '',
+        'slot': 'feet',
+        'image': 'Snail shell.png',
+        'speed': 0,
+        'category': '',
+        'bonuses': {
+            'str': 0,
+            'ranged_str': 0,
+            'magic_str': 0,
+            'prayer': 0,
+        },
+        'offensive': {
+            'stab': 0,
+            'slash': 0,
+            'crush': 0,
+            'magic': 0,
+            'ranged': 0,
+        },
+        'defensive': {
+            'stab': 0,
+            'slash': 0,
+            'crush': 0,
+            'magic': 0,
+            'ranged': 0,
+        },
+        'isTwoHanded': False
+    })
 
     print('Total equipment: ' + str(len(data)))
     data.sort(key=lambda d: d.get('name'))

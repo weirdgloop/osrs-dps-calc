@@ -1,6 +1,6 @@
 import { describe, expect, test } from '@jest/globals';
 import {
-  calculate, findEquipment, findSpell, getTestMonster, getTestPlayer,
+  calculatePlayerVsNpc, findEquipment, findSpell, getTestMonster, getTestPlayer,
 } from '@/tests/utils/TestUtils';
 import { Player } from '@/types/Player';
 
@@ -13,7 +13,7 @@ describe('Zogre damage resistances', () => {
         str: 125, // gives 32 max hit
       },
     });
-    const { maxHit } = calculate(m, p);
+    const { maxHit } = calculatePlayerVsNpc(m, p);
     expect(maxHit).toBe(8);
 
     const withArrows: Player = {
@@ -23,7 +23,7 @@ describe('Zogre damage resistances', () => {
         ammo: findEquipment('Adamant brutal'),
       },
     };
-    const maxHitWithArrows = calculate(m, withArrows).maxHit;
+    const maxHitWithArrows = calculatePlayerVsNpc(m, withArrows).maxHit;
     expect(maxHitWithArrows).toBe(8);
   });
 
@@ -39,7 +39,7 @@ describe('Zogre damage resistances', () => {
       spell: findSpell('Crumble Undead'),
     });
 
-    const { maxHit } = calculate(m, p);
+    const { maxHit } = calculatePlayerVsNpc(m, p);
     expect(maxHit).toBe(16);
 
     const withArrows: Player = {
@@ -49,12 +49,12 @@ describe('Zogre damage resistances', () => {
         ammo: findEquipment('Adamant brutal'),
       },
     };
-    const maxHitWithArrows = calculate(m, withArrows).maxHit;
+    const maxHitWithArrows = calculatePlayerVsNpc(m, withArrows).maxHit;
     expect(maxHitWithArrows).toBe(16);
   });
 
   test('Brutal arrows apply full damage', () => {
-    const { maxHit } = calculate(m, getTestPlayer(m, {
+    const { maxHit } = calculatePlayerVsNpc(m, getTestPlayer(m, {
       equipment: {
         weapon: findEquipment('Comp ogre bow'),
         ammo: findEquipment('Adamant brutal'),
@@ -71,7 +71,7 @@ describe('Zogre damage resistances', () => {
   });
 
   test('Brutal arrows do not skip damage reduction when not used', () => {
-    const { maxHit } = calculate(m, getTestPlayer(m, {
+    const { maxHit } = calculatePlayerVsNpc(m, getTestPlayer(m, {
       equipment: {
         weapon: findEquipment('Bow of faerdhinen (c)'),
         ammo: findEquipment('Adamant brutal'),

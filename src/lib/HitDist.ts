@@ -1,5 +1,5 @@
 import { cross, max, sum } from 'd3-array';
-import { HistogramEntry } from '@/types/State';
+import { ChartEntry } from '@/types/State';
 
 export type HitTransformer = (hitsplat: number) => HitDistribution;
 
@@ -30,7 +30,7 @@ export class WeightedHit {
   public shift(): [WeightedHit, WeightedHit] {
     return [
       new WeightedHit(this.probability, [this.hitsplats[0]]),
-      new WeightedHit(this.probability, [...this.hitsplats.slice(1)]),
+      new WeightedHit(1.0, this.hitsplats.slice(1)),
     ];
   }
 
@@ -125,7 +125,7 @@ export class HitDistribution {
 
     const d = new HitDistribution([]);
     for (const [hash, prob] of acc.entries()) {
-      d.addHit(new WeightedHit(prob, hitLists.get(hash) as number[]));
+      d.addHit(new WeightedHit(prob, hitLists.get(hash)!));
     }
     return d;
   }
@@ -236,19 +236,19 @@ export class AttackDistribution {
     return sum(this.dists.map((d) => d.expectedHit())) || 0;
   }
 
-  public asHistogram(): HistogramEntry[] {
+  public asHistogram(): (ChartEntry & { name: string, value: number })[] {
     const dist = this.singleHitsplat;
 
     const hitMap = new Map<number, number>();
     dist.hits.forEach((h) => hitMap.set(h.getSum(), h.probability));
 
-    const ret: HistogramEntry[] = [];
+    const ret: { name: string, value: number }[] = [];
     for (let i = 0; i <= dist.getMax(); i++) {
       const prob = hitMap.get(i);
       if (prob === undefined) {
-        ret.push({ name: i.toString(), chance: 0 });
+        ret.push({ name: i.toString(), value: 0 });
       } else {
-        ret.push({ name: i.toString(), chance: prob });
+        ret.push({ name: i.toString(), value: prob });
       }
     }
 
@@ -284,6 +284,10 @@ export function linearMinTransformer(maximum: number, offset: number = 0): HitTr
 
 export function cappedRerollTransformer(limit: number, rollMax: number, offset: number = 0): HitTransformer {
   return (h) => {
+    if (h <= limit) {
+      return HitDistribution.single(1.0, h);
+    }
+
     const d = new HitDistribution([]);
     const prob = 1.0 / (rollMax + 1);
     for (let i = 0; i <= rollMax; i++) {

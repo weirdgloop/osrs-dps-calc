@@ -6,10 +6,11 @@ import strength from '@/public/img/bonuses/strength.png';
 import rangedStrength from '@/public/img/bonuses/ranged_strength.png';
 import magicStrength from '@/public/img/bonuses/magic_strength.png';
 import prayer from '@/public/img/tabs/prayer.png';
+import { EquipmentBonuses } from '@/lib/Equipment';
 
-const OtherBonuses: React.FC = observer(() => {
+const OtherBonuses: React.FC<{ computedStats: EquipmentBonuses }> = observer(({ computedStats }) => {
   const store = useStore();
-  const { prefs, player, equipmentBonuses } = store;
+  const { prefs, player } = store;
 
   return (
     <div className="w-[95px]">
@@ -20,7 +21,7 @@ const OtherBonuses: React.FC = observer(() => {
           name="Strength"
           image={strength}
           value={player.bonuses.str}
-          className={`${(player.bonuses.str !== equipmentBonuses.bonuses.str) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
+          className={`${(player.bonuses.str !== computedStats.bonuses.str) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
           onChange={(v) => store.updatePlayer({ bonuses: { str: v } })}
         />
         <AttributeInput
@@ -28,7 +29,7 @@ const OtherBonuses: React.FC = observer(() => {
           name="Ranged Strength"
           image={rangedStrength}
           value={player.bonuses.ranged_str}
-          className={`${(player.bonuses.ranged_str !== equipmentBonuses.bonuses.ranged_str) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
+          className={`${(player.bonuses.ranged_str !== computedStats.bonuses.ranged_str) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
           onChange={(v) => store.updatePlayer({ bonuses: { ranged_str: v } })}
         />
         <AttributeInput
@@ -36,7 +37,7 @@ const OtherBonuses: React.FC = observer(() => {
           name="Magic Strength"
           image={magicStrength}
           value={player.bonuses.magic_str}
-          className={`${(player.bonuses.magic_str !== equipmentBonuses.bonuses.magic_str) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
+          className={`${(player.bonuses.magic_str !== computedStats.bonuses.magic_str) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
           onChange={(v) => store.updatePlayer({ bonuses: { magic_str: v } })}
         />
         <AttributeInput
@@ -44,7 +45,7 @@ const OtherBonuses: React.FC = observer(() => {
           name="Prayer"
           image={prayer}
           value={player.bonuses.prayer}
-          className={`${(player.bonuses.prayer !== equipmentBonuses.bonuses.prayer) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
+          className={`${(player.bonuses.prayer !== computedStats.bonuses.prayer) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
           onChange={(v) => store.updatePlayer({ bonuses: { prayer: v } })}
         />
       </div>

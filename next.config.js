@@ -4,7 +4,7 @@ const shouldAnalyse = process.env.ANALYSE === 'true';
 let nextConfig = {
   output: 'export',
   reactStrictMode: true,
-  basePath: '/osrs-dps',
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH,
   images: {
     unoptimized: true,
     domains: ['runescape.wiki', 'oldschool.runescape.wiki'],
@@ -18,7 +18,7 @@ let nextConfig = {
     return [
       {
         source: '/',
-        destination: '/osrs-dps',
+        destination: process.env.NEXT_PUBLIC_BASE_PATH,
         basePath: false,
         permanent: true
       }

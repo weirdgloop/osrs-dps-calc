@@ -15,6 +15,8 @@ enum Potion {
   SUPER_RANGING,
   SUPER_COMBAT,
   SUPER_MAGIC,
+  DEFENCE,
+  SUPER_DEFENCE,
 }
 
 export default Potion;

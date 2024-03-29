@@ -1,6 +1,6 @@
 import { describe, expect, test } from '@jest/globals';
 import {
-  calculate,
+  calculatePlayerVsNpc,
   findEquipmentById,
   getTestMonsterById,
   getTestPlayer,
@@ -38,7 +38,7 @@ describe('Duke demonbane', () => {
       },
     });
 
-    const { maxHit } = calculate(monster, player);
+    const { maxHit } = calculatePlayerVsNpc(monster, player);
     expect(maxHit).toBe(50);
   });
 });

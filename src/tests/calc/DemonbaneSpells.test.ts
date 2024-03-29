@@ -4,7 +4,7 @@ import {
   test,
 } from '@jest/globals';
 import {
-  calculate,
+  calculatePlayerVsNpc,
   findEquipment,
   findSpell,
   getTestMonster,
@@ -33,7 +33,7 @@ describe('Demonbane spells', () => {
         spell: findSpell('Dark Demonbane'),
       });
 
-      const { maxHit } = calculate(monster, player);
+      const { maxHit } = calculatePlayerVsNpc(monster, player);
       expect(maxHit).toBe(30);
     });
 
@@ -46,7 +46,7 @@ describe('Demonbane spells', () => {
         },
       });
 
-      const { maxHit } = calculate(monster, player);
+      const { maxHit } = calculatePlayerVsNpc(monster, player);
       expect(maxHit).toBe(37);
     });
   });
@@ -58,7 +58,7 @@ describe('Demonbane spells', () => {
         spell: findSpell('Superior Demonbane'),
       });
 
-      const { maxHit } = calculate(monster, player);
+      const { maxHit } = calculatePlayerVsNpc(monster, player);
       expect(maxHit).toBe(23);
     });
 
@@ -71,7 +71,7 @@ describe('Demonbane spells', () => {
         },
       });
 
-      const { maxHit } = calculate(monster, player);
+      const { maxHit } = calculatePlayerVsNpc(monster, player);
       expect(maxHit).toBe(28);
     });
   });
@@ -83,7 +83,7 @@ describe('Demonbane spells', () => {
         spell: findSpell('Inferior Demonbane'),
       });
 
-      const { maxHit } = calculate(monster, player);
+      const { maxHit } = calculatePlayerVsNpc(monster, player);
       expect(maxHit).toBe(16);
     });
 
@@ -96,7 +96,7 @@ describe('Demonbane spells', () => {
         },
       });
 
-      const { maxHit } = calculate(monster, player);
+      const { maxHit } = calculatePlayerVsNpc(monster, player);
       expect(maxHit).toBe(20);
     });
   });

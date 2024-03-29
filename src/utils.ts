@@ -17,9 +17,13 @@ import SuperStrength from '@/public/img/potions/Super strength.png';
 import SuperRanging from '@/public/img/potions/Super ranging.png';
 import SuperCombat from '@/public/img/potions/Super combat.png';
 import SuperMagic from '@/public/img/potions/Super magic.png';
+import Defence from '@/public/img/potions/Defence.png';
+import SuperDefence from '@/public/img/potions/Super defence.png';
 import Potion from '@/enums/Potion';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { PlayerCombatStyle } from '@/types/PlayerCombatStyle';
+import { PartialDeep } from 'type-fest';
+import merge from 'lodash.mergewith';
 
 export const classNames = (...classes: string[]) => classes.filter(Boolean).join(' ');
 
@@ -88,25 +92,57 @@ export const getCdnImage = (filename: string) => `https://tools.runescape.wiki/o
 
 export const isDevServer = () => process.env.NODE_ENV === 'development';
 
-export const WORKER_JSON_REPLACER = (k: string, v: Map<unknown, unknown> | never) => {
-  if (v instanceof Map) {
-    return {
-      _dataType: 'Map',
-      m: Array.from(v),
-    };
-  }
-  return v;
-};
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const WORKER_JSON_REVIVER = (k: string, v: any) => {
-  if (typeof v === 'object' && v?._dataType === 'Map') {
-    return new Map(v.m);
-  }
-  return v;
-};
-
 export const keys = <T extends object>(o: T): (keyof T)[] => Object.keys(o) as (keyof T)[];
+
+export const typedMerge = <T, E extends PartialDeep<T>>(base: T, updates: E): T => merge({}, base, updates);
+
+export class DeferredPromise<T> {
+  private _resolve!: (response: T) => void;
+
+  private _reject!: (reason: Error) => void;
+
+  readonly promise: Promise<T>;
+
+  constructor() {
+    this.promise = new Promise((resolve, reject) => {
+      this.resolve = resolve;
+      this.reject = reject;
+    });
+  }
+
+  public resolve(response: T): void {
+    this._resolve(response);
+  }
+
+  public reject(reason: Error): void {
+    this._reject(reason);
+  }
+}
+
+// This is a bit of a hack of Promise, but it is very convenient to use as a result.
+// Technically a promise should always be resolved, but we *can* just not resolve to effectively debounce.
+export class Debouncer {
+  private readonly delay: number;
+
+  private windowTimeoutId?: number;
+
+  constructor(ms: number = 250) {
+    this.delay = ms;
+  }
+
+  async debounce(): Promise<void> {
+    if (this.windowTimeoutId) {
+      window.clearTimeout(this.windowTimeoutId);
+    }
+
+    const p = new DeferredPromise<void>();
+    this.windowTimeoutId = window.setTimeout(() => {
+      p.resolve(undefined);
+    }, this.delay);
+
+    return p.promise;
+  }
+}
 
 export const PotionMap: { [k in Potion]: { name: string, image: StaticImageData, calculateFn: (skills: PlayerSkills) => Partial<PlayerSkills> } } = {
   [Potion.ANCIENT]: {
@@ -239,6 +275,20 @@ export const PotionMap: { [k in Potion]: { name: string, image: StaticImageData,
     image: SuperMagic,
     calculateFn: (skills) => ({
       magic: Math.floor(5 + (skills.magic * 0.15)),
+    }),
+  },
+  [Potion.DEFENCE]: {
+    name: 'Defence potion',
+    image: Defence,
+    calculateFn: (skills) => ({
+      def: Math.floor(3 + (skills.def * 0.1)),
+    }),
+  },
+  [Potion.SUPER_DEFENCE]: {
+    name: 'Super defence',
+    image: SuperDefence,
+    calculateFn: (skills) => ({
+      def: Math.floor(5 + (skills.def * 0.15)),
     }),
   },
 };
@@ -455,7 +505,7 @@ export const getCombatStylesForCategory = (style: EquipmentCategory): PlayerComb
     case EquipmentCategory.BULWARK:
       ret = [
         { name: 'Pummel', type: 'crush', stance: 'Accurate' },
-        // {name: 'Block', type: '', stance: ''},
+        { name: 'Block', type: null, stance: null },
       ];
       break;
     case EquipmentCategory.PARTISAN:

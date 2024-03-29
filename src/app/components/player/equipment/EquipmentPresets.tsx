@@ -5,6 +5,8 @@ import { useStore } from '@/state';
 import { PartialDeep } from 'type-fest';
 import { Player } from '@/types/Player';
 import { availableEquipment } from '@/lib/Equipment';
+import { EquipmentCategory } from '@/enums/EquipmentCategory';
+import { getCombatStylesForCategory } from '@/utils';
 
 const EquipmentPresets: React.FC = () => {
   const store = useStore();
@@ -14,10 +16,14 @@ const EquipmentPresets: React.FC = () => {
     { label: 'Max Mage', value: EquipmentPreset.MAX_MAGE },
     { label: 'Max Melee', value: EquipmentPreset.MAX_MELEE },
     { label: 'Max Ranged', value: EquipmentPreset.MAX_RANGED },
+    { label: 'Mid Level Mage', value: EquipmentPreset.MID_LEVEL_MAGE },
+    { label: 'Mid Level Melee', value: EquipmentPreset.MID_LEVEL_MELEE },
+    { label: 'Mid Level Ranged', value: EquipmentPreset.MID_LEVEL_RANGED },
     { label: 'Verac\'s equipment', value: EquipmentPreset.VERACS },
-    { label: 'Void (Mage)', value: EquipmentPreset.VOID_MAGE },
-    { label: 'Void (Melee)', value: EquipmentPreset.VOID_MELEE },
-    { label: 'Void (Ranged)', value: EquipmentPreset.VOID_RANGED },
+    { label: 'Void Mage', value: EquipmentPreset.VOID_MAGE },
+    { label: 'Void Melee', value: EquipmentPreset.VOID_MELEE },
+    { label: 'Void Ranged', value: EquipmentPreset.VOID_RANGED },
+    { label: 'Tank', value: EquipmentPreset.TANK },
   ];
 
   const onSelect = useCallback((v: { label: string, value: EquipmentPreset } | null | undefined) => {
@@ -28,6 +34,7 @@ const EquipmentPresets: React.FC = () => {
     switch (v?.value) {
       case EquipmentPreset.DHAROKS: {
         newPlayer = {
+          name: v.label,
           equipment: {
             head: findItemById(4716), // Dharok's helm
             cape: findItemById(21295), // Infernal cape
@@ -46,6 +53,7 @@ const EquipmentPresets: React.FC = () => {
       }
       case EquipmentPreset.MAX_MAGE: {
         newPlayer = {
+          name: v.label,
           equipment: {
             head: findItemById(21018), // Ancestral hat
             cape: findItemById(21791), // Imbued saradomin cape
@@ -62,6 +70,7 @@ const EquipmentPresets: React.FC = () => {
       }
       case EquipmentPreset.MAX_MELEE: {
         newPlayer = {
+          name: v.label,
           equipment: {
             head: findItemById(26382), // Torva full helm
             cape: findItemById(21295), // Infernal cape
@@ -78,6 +87,7 @@ const EquipmentPresets: React.FC = () => {
       }
       case EquipmentPreset.MAX_RANGED: {
         newPlayer = {
+          name: v.label,
           equipment: {
             head: findItemById(27235), // Masori mask (f)
             cape: findItemById(22109), // Ava's assembler
@@ -92,8 +102,60 @@ const EquipmentPresets: React.FC = () => {
         };
         break;
       }
+      case EquipmentPreset.MID_LEVEL_MAGE: {
+        newPlayer = {
+          name: v.label,
+          equipment: {
+            head: findItemById(4708), // Ahrim's hood#Undamaged
+            cape: findItemById(21791), // Imbued saradomin cape
+            neck: findItemById(12002), // Occult necklace
+            ammo: findItemById(20229), // Honourable blessing
+            body: findItemById(4712), // Ahrim's robetop#Undamaged
+            legs: findItemById(4714), // Ahrim's robeskirt#Undamaged
+            hands: findItemById(7462), // Barrows gloves
+            feet: findItemById(6920), // Infinity boots
+            ring: findItemById(11770), // Seers ring (i)
+          },
+        };
+        break;
+      }
+      case EquipmentPreset.MID_LEVEL_MELEE: {
+        newPlayer = {
+          name: v.label,
+          equipment: {
+            head: findItemById(10828), // Helm of neitiznot
+            cape: findItemById(6570), // Fire cape
+            neck: findItemById(6585), // Amulet of fury
+            ammo: findItemById(20229), // Honourable blessing
+            body: findItemById(10551), // Fighter torso#Normal
+            legs: findItemById(21304), // Obsidian platelegs
+            hands: findItemById(7462), // Barrows gloves
+            feet: findItemById(11840), // Dragon boots
+            ring: findItemById(11773), // Berserker ring (i)
+          },
+        };
+        break;
+      }
+      case EquipmentPreset.MID_LEVEL_RANGED: {
+        newPlayer = {
+          name: v.label,
+          equipment: {
+            head: findItemById(12496), // Ancient coif
+            cape: findItemById(22109), // Ava's assembler
+            neck: findItemById(6585), // Amulet of fury
+            ammo: findItemById(11212), // Dragon arrow
+            body: findItemById(12492), // Ancient d'hide body
+            legs: findItemById(12494), // Ancient chaps
+            hands: findItemById(7462), // Barrows gloves
+            feet: findItemById(19921), // Ancient d'hide boots
+            ring: findItemById(11771), // Archers ring (i)
+          },
+        };
+        break;
+      }
       case EquipmentPreset.VOID_MAGE: {
         newPlayer = {
+          name: v.label,
           equipment: {
             head: findItemById(11663), // Void mage helm
             cape: findItemById(21791), // Imbued saradomin cape
@@ -110,6 +172,7 @@ const EquipmentPresets: React.FC = () => {
       }
       case EquipmentPreset.VOID_MELEE: {
         newPlayer = {
+          name: v.label,
           equipment: {
             head: findItemById(11665), // Void melee helm
             cape: findItemById(21295), // Infernal cape
@@ -126,6 +189,7 @@ const EquipmentPresets: React.FC = () => {
       }
       case EquipmentPreset.VOID_RANGED: {
         newPlayer = {
+          name: v.label,
           equipment: {
             head: findItemById(11664), // Void ranger helm
             cape: findItemById(22109), // Ava's assembler
@@ -142,6 +206,7 @@ const EquipmentPresets: React.FC = () => {
       }
       case EquipmentPreset.VERACS: {
         newPlayer = {
+          name: v.label,
           equipment: {
             head: findItemById(4753), // Verac's helm
             cape: findItemById(21295), // Infernal cape
@@ -158,6 +223,26 @@ const EquipmentPresets: React.FC = () => {
         };
         break;
       }
+      case EquipmentPreset.TANK: {
+        newPlayer = {
+          name: v.label,
+          style: getCombatStylesForCategory(EquipmentCategory.BULWARK)[1],
+          equipment: {
+            head: findItemById(22326), // Justiciar faceguard
+            cape: findItemById(21295), // Infernal cape
+            neck: findItemById(6585), // Amulet of fury
+            ammo: findItemById(22947), // Rada's blessing 4
+            weapon: findItemById(21015), // Dinh's bulwark
+            body: findItemById(22327), // Justiciar chestguard
+            shield: null,
+            legs: findItemById(22328), // Justiciar legguards
+            hands: findItemById(7462), // Barrows gloves
+            feet: findItemById(21733), // Guardian boots
+            ring: findItemById(19710), // Ring of suffering (i)
+          },
+        };
+        break;
+      }
       default:
         break;
     }
@@ -165,7 +250,7 @@ const EquipmentPresets: React.FC = () => {
     if (Object.keys(newPlayer).length > 0) {
       store.updatePlayer(newPlayer);
     }
-  }, [store, availableEquipment]);
+  }, [store]);
 
   return (
     <Select<{ label: string, value: EquipmentPreset }>
