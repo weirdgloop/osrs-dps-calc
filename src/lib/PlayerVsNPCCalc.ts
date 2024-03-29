@@ -1075,14 +1075,15 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   public getHtk() {
     const dist = this.getDistribution();
     const hist = dist.asHistogram();
-    const max = dist.getMax();
+    const startHp = this.monster.inputs.monsterCurrentHp;
+    const max = Math.min(startHp, dist.getMax());
     if (max === 0) {
       return 0;
     }
 
-    const htk = new Float64Array(this.monster.inputs.monsterCurrentHp + 1); // 0 hits left to do if hp = 0
+    const htk = new Float64Array(startHp + 1); // 0 hits left to do if hp = 0
 
-    for (let hp = 1; hp <= this.monster.inputs.monsterCurrentHp; hp++) {
+    for (let hp = 1; hp <= startHp; hp++) {
       let val = 1.0; // takes at least one hit
       for (let hit = 1; hit <= Math.min(hp, max); hit++) {
         const p = hist[hit];
@@ -1092,7 +1093,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       htk[hp] = val / (1 - hist[0].value);
     }
 
-    return htk[this.monster.inputs.monsterCurrentHp];
+    return htk[startHp];
   }
 
   /**

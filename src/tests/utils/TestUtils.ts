@@ -11,7 +11,26 @@ import { Spell, spells } from '@/types/Spell';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
 import eq from '../../../cdn/json/equipment.json';
 
-const monsters = getMonsters();
+const monsters = getMonsters().map((m) => ({
+  ...m,
+  inputs: {
+    isFromCoxCm: false,
+    toaInvocationLevel: 0,
+    toaPathLevel: 0,
+    partyMaxCombatLevel: 126,
+    partyAvgMiningLevel: 99,
+    partyMaxHpLevel: 99,
+    partySize: 1,
+    monsterCurrentHp: 150,
+    defenceReductions: {
+      vulnerability: false,
+      accursed: false,
+      dwh: 0,
+      arclight: 0,
+      bgs: 0,
+    },
+  },
+}));
 const equipment = eq as EquipmentPiece[];
 
 function find<T>(arr: T[], pred: (_: T) => boolean, failMsg?: string): T {

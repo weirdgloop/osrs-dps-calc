@@ -95,7 +95,7 @@ const LoadoutComparison: React.FC = observer(() => {
     const opts = [
       { label: 'Player damage-per-second', axisLabel: 'DPS', value: CompareYAxis.PLAYER_DPS },
       { label: 'Player expected hit', axisLabel: 'Hit', value: CompareYAxis.PLAYER_EXPECTED_HIT },
-      // {label: 'Time-to-kill', value: YAxisType.TTK},
+      { label: 'Time-to-kill', axisLabel: 'Seconds', value: CompareYAxis.PLAYER_TTK },
       // {label: 'Damage taken', value: YAxisType.DAMAGE_TAKEN}
     ];
 
