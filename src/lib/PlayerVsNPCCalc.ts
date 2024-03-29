@@ -766,6 +766,18 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = new AttackDistribution(hits);
     }
 
+    if (this.isUsingMeleeStyle() && this.wearing('Dual macuahuitl')) {
+      // assume the first hit is accurate, roll the second hit and zip it with possible first hitsplats
+      const secondHit = HitDistribution.linear(acc, 0, max);
+      const doubleHitDist = HitDistribution.linear(1.0, 0, max).transform((h) => HitDistribution.single(1.0, h).zip(secondHit));
+
+      // scale that dist back down to the accuracy space
+      const effectDist = doubleHitDist.scaleProbability(acc);
+      effectDist.addHit(new WeightedHit(1 - acc, [0, 0])); // add back in the inaccurate hit
+
+      dist = new AttackDistribution([effectDist]);
+    }
+
     if (this.isUsingMeleeStyle() && this.isWearingKeris() && mattrs.includes(MonsterAttribute.KALPHITE)) {
       dist = new AttackDistribution([
         new HitDistribution([
