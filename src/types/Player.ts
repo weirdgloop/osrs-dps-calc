@@ -119,6 +119,12 @@ export interface Player extends EquipmentStats {
      * @see https://oldschool.runescape.wiki/w/Mark_of_Darkness
      */
     markOfDarknessSpell: boolean;
+    /**
+     * Sunfire runes ensure 10% minimum hit.
+     * Can be used for any spell that requires fire runes.
+     * @see https://oldschool.runescape.wiki/w/Sunfire_rune
+     */
+    usingSunfireRunes: boolean;
   }
   spell: Spell | null;
 }
