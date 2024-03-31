@@ -351,7 +351,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   private getPlayerMaxRangedHit() {
     const { style } = this.player;
 
-    let effectiveLevel: number = this.track(DetailKey.DAMAGE_LEVEL, this.player.skills.ranged + this.player.boosts.ranged);
+    // atlatl uses strength instead of ranged skill, melee strength bonus, and melee buff from slayer helmet/salve, but works with ranged void
+    const level = this.isWearingAtlatl() ? this.player.skills.str + this.player.boosts.str : this.player.skills.ranged + this.player.boosts.ranged;
+    let effectiveLevel: number = this.track(DetailKey.DAMAGE_LEVEL, level);
     for (const p of this.getCombatPrayers(false)) {
       effectiveLevel = this.trackFactor(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, p.factorStrength!);
     }
@@ -368,7 +370,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       effectiveLevel = Math.trunc(effectiveLevel * 11 / 10);
     }
 
-    let maxHit = Math.trunc((effectiveLevel * (this.player.bonuses.ranged_str + 64) + 320) / 640);
+    const bonusStr = this.isWearingAtlatl() ? this.player.bonuses.str : this.player.bonuses.ranged_str;
+    let maxHit = Math.trunc((effectiveLevel * (bonusStr + 64) + 320) / 640);
 
     // tested this in-game, slayer helmet (i) + crystal legs + crystal body + bowfa, on accurate, no rigour, 99 ranged
     // max hit is 36, but would be 37 if placed after slayer helm
@@ -383,9 +386,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
       const factor = <Factor>[buffs.forinthrySurge ? 27 : 24, 20];
       maxHit = this.trackFactor(DetailKey.MAX_HIT_FORINTHRY_SURGE, maxHit, factor);
-    } else if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
+    } else if ((this.wearing('Salve amulet(ei)') || (this.isWearingAtlatl() && this.wearing('Salve amulet (e)'))) && mattrs.includes(MonsterAttribute.UNDEAD)) {
       maxHit = Math.trunc(maxHit * 6 / 5);
-    } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
+    } else if ((this.wearing('Salve amulet(i)') || (this.isWearingAtlatl() && this.wearing('Salve amulet'))) && mattrs.includes(MonsterAttribute.UNDEAD)) {
+      maxHit = Math.trunc(maxHit * 7 / 6);
+    } else if (this.isWearingAtlatl() && this.isWearingBlackMask() && buffs.onSlayerTask) {
       maxHit = Math.trunc(maxHit * 7 / 6);
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
       maxHit = Math.trunc(maxHit * 23 / 20);
