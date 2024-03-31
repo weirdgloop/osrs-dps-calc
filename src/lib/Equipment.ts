@@ -28,6 +28,7 @@ export const noStatExceptions = [
   "Efaritay's aid",
   'Inoculation bracelet',
   'Bracelet of ethereum',
+  'Atlatl dart',
 ];
 
 /**
@@ -146,7 +147,7 @@ const ammoForRangedWeapons: { [weapon: number]: number[] } = {
   10147: [10144], // Red salamander, Tarromin tar
   10148: [10145], // Black salamander, Guam tar
   28869: [28872, 28878], // Hunters' sunlight crossbow
-  29000: [], // Eclipse atlatl
+  29000: [28991], // Eclipse atlatl
 };
 
 export enum AmmoApplicability {
