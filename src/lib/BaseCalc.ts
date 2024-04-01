@@ -527,14 +527,6 @@ export default class BaseCalc {
     ]);
   }
 
-  /**
-   * Whether the player is using an eclipse atlatl.
-   * @see https://oldschool.runescape.wiki/w/Eclipse_atlatl
-   */
-  protected isWearingAtlatl(): boolean {
-    return this.wearing('Eclipse atlatl');
-  }
-
   protected addIssue(type: UserIssueType, message: string) {
     this.userIssues.push({ type, message, loadout: this.opts.loadoutName });
   }
