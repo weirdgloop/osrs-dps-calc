@@ -26,7 +26,6 @@ import { CompareRequest, WorkerRequestType } from '@/worker/CalcWorkerTypes';
 import { keys } from '@/utils';
 import { ChartAnnotation } from '@/types/State';
 import { useCalc } from '@/worker/CalcWorker';
-import { toJS } from 'mobx';
 
 const XAxisOptions = [
   { label: 'Monster defence level', axisLabel: 'Level', value: CompareXAxis.MONSTER_DEF },
@@ -79,7 +78,7 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, pa
 const LoadoutComparison: React.FC = observer(() => {
   const calc = useCalc();
   const store = useStore();
-  const monster = toJS(store.monster);
+  const monster = JSON.stringify(store.monster);
   const { showLoadoutComparison } = store.prefs;
   const loadouts = JSON.stringify(store.loadouts);
 
@@ -127,7 +126,7 @@ const LoadoutComparison: React.FC = observer(() => {
       type: WorkerRequestType.COMPARE,
       data: {
         loadouts: JSON.parse(loadouts),
-        monster,
+        monster: JSON.parse(monster),
         axes: {
           x: xAxisType.value,
           y: yAxisType.value,
