@@ -18,7 +18,7 @@ const ExtraOptions: React.FC = observer(() => {
       <div className="mt-2 mb-4">
         <Toggle
           checked={player.buffs.onSlayerTask}
-          setChecked={(c) => store.updatePlayer({ buffs: { onSlayerTask: c } })}
+          setChecked={(c) => store.player.update({ buffs: { onSlayerTask: c } })}
           label={(
             <>
               <img src={slayer.src} width={18} className="inline-block" alt="" />
@@ -37,7 +37,7 @@ const ExtraOptions: React.FC = observer(() => {
         />
         <Toggle
           checked={player.buffs.inWilderness}
-          setChecked={(c) => store.updatePlayer({ buffs: { inWilderness: c } })}
+          setChecked={(c) => store.player.update({ buffs: { inWilderness: c } })}
           label={(
             <>
               <img src={skull.src} width={18} className="inline-block" alt="" />
@@ -56,7 +56,7 @@ const ExtraOptions: React.FC = observer(() => {
         />
         <Toggle
           checked={player.buffs.forinthrySurge}
-          setChecked={(c) => store.updatePlayer({ buffs: { forinthrySurge: c } })}
+          setChecked={(c) => store.player.update({ buffs: { forinthrySurge: c } })}
           label={(
             <>
               <img src={forinthry_surge.src} width={18} className="inline-block" alt="" />
@@ -75,7 +75,7 @@ const ExtraOptions: React.FC = observer(() => {
         />
         <Toggle
           checked={player.buffs.kandarinDiary}
-          setChecked={(c) => store.updatePlayer({ buffs: { kandarinDiary: c } })}
+          setChecked={(c) => store.player.update({ buffs: { kandarinDiary: c } })}
           label={(
             <>
               <img src={diary.src} width={18} className="inline-block" alt="" />
@@ -99,7 +99,7 @@ const ExtraOptions: React.FC = observer(() => {
             min={0}
             max={5}
             value={player.buffs.soulreaperStacks}
-            onChange={(v) => store.updatePlayer({ buffs: { soulreaperStacks: v } })}
+            onChange={(v) => store.player.update({ buffs: { soulreaperStacks: v } })}
           />
           <span className="ml-1 text-sm select-none">
             <img src={soulreaper_axe.src} width={18} className="inline-block" alt="" />

@@ -1,5 +1,5 @@
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
-import { Player } from '@/types/Player';
+import { IPlayer } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 // import { OVERHEAD_PRAYERS, Prayer } from '@/enums/Prayer';
 import { AttackDistribution, HitDistribution, WeightedHit } from '@/lib/HitDist';
@@ -16,7 +16,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
 
   private memoizedPlayerVsNPCCalc?: PlayerVsNPCCalc;
 
-  constructor(player: Player, monster: Monster, opts: Partial<CalcOpts> = {}) {
+  constructor(player: IPlayer, monster: Monster, opts: Partial<CalcOpts> = {}) {
     super(player, monster, opts);
   }
 

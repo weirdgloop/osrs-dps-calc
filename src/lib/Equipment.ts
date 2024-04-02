@@ -1,4 +1,4 @@
-import { EquipmentPiece, Player, PlayerEquipment } from '@/types/Player';
+import { EquipmentPiece, IPlayer, PlayerEquipment } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { keys } from '@/utils';
 import { TOMBS_OF_AMASCUT_MONSTER_IDS } from '@/lib/constants';
@@ -6,7 +6,7 @@ import { sum } from 'd3-array';
 import equipment from '../../cdn/json/equipment.json';
 import generatedEquipmentAliases from './EquipmentAliases';
 
-export type EquipmentBonuses = Pick<Player, 'bonuses' | 'offensive' | 'defensive'>;
+export type EquipmentBonuses = Pick<IPlayer, 'bonuses' | 'offensive' | 'defensive'>;
 
 /**
  * All available equipment that a player can equip.
@@ -220,7 +220,7 @@ export const getCanonicalEquipment = (inputEq: PlayerEquipment) => {
   return canonicalized;
 };
 
-export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monster): EquipmentBonuses => {
+export const calculateEquipmentBonusesFromGear = (player: IPlayer, monster: Monster): EquipmentBonuses => {
   const totals: EquipmentBonuses = {
     bonuses: {
       str: 0,

@@ -1,4 +1,4 @@
-import { Player, PlayerSkills } from '@/types/Player';
+import { IPlayer, PlayerSkills } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { scaleMonster, scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { max } from 'd3-array';
@@ -33,7 +33,7 @@ export enum CompareYAxis {
 
 interface InputSet {
   xValue: number,
-  loadouts: Player[],
+  loadouts: IPlayer[],
   monster: Monster,
 }
 
@@ -47,7 +47,7 @@ export interface CompareResult {
 }
 
 export default class Comparator {
-  private readonly baseLoadouts: Player[];
+  private readonly baseLoadouts: IPlayer[];
 
   private readonly baseMonster: Monster;
 
@@ -57,7 +57,7 @@ export default class Comparator {
 
   private readonly commonOpts: CalcOpts;
 
-  constructor(players: Player[], monster: Monster, xAxis: CompareXAxis, yAxis: CompareYAxis) {
+  constructor(players: IPlayer[], monster: Monster, xAxis: CompareXAxis, yAxis: CompareYAxis) {
     this.baseLoadouts = players;
     this.baseMonster = scaleMonster(monster);
     this.xAxis = xAxis;
@@ -78,7 +78,7 @@ export default class Comparator {
       ),
     });
 
-    const playerInput = (x: number, alterations: PartialDeep<Player>): InputSet => ({
+    const playerInput = (x: number, alterations: PartialDeep<IPlayer>): InputSet => ({
       xValue: x,
       loadouts: this.baseLoadouts.map((p) => typedMerge(
         p,
@@ -179,12 +179,12 @@ export default class Comparator {
 
   private getOutput(x: InputSet): { [loadout: string]: string } {
     const res: { [loadout: string]: string } = {};
-    const apply = (resultProvider: (loadout: Player) => string) => x.loadouts.forEach((l) => {
+    const apply = (resultProvider: (loadout: IPlayer) => string) => x.loadouts.forEach((l) => {
       res[l.name] = resultProvider(l);
     });
 
-    const forwardCalc = (loadout: Player) => new PlayerVsNPCCalc(loadout, x.monster, this.commonOpts);
-    const reverseCalc = (loadout: Player) => new NPCVsPlayerCalc(loadout, x.monster, this.commonOpts);
+    const forwardCalc = (loadout: IPlayer) => new PlayerVsNPCCalc(loadout, x.monster, this.commonOpts);
+    const reverseCalc = (loadout: IPlayer) => new NPCVsPlayerCalc(loadout, x.monster, this.commonOpts);
 
     switch (this.yAxis) {
       case CompareYAxis.PLAYER_DPS:

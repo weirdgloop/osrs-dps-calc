@@ -35,7 +35,7 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
                 title={`Your current ${name} level`}
                 value={player.skills[field] + player.boosts[field]}
                 onChange={(v) => {
-                  store.updatePlayer({
+                  store.player.update({
                     boosts: {
                       [field]: v - player.skills[field],
                     },
@@ -61,7 +61,7 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
             title={`Your base ${name} level`}
             value={player.skills[field]}
             onChange={(v) => {
-              store.updatePlayer({
+              store.player.update({
                 skills: {
                   [field]: v,
                 },

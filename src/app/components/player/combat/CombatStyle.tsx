@@ -58,7 +58,7 @@ const CombatStyle: React.FC<CombatStyleProps> = observer((props) => {
     <button
       type="button"
       className="flex gap-4 items-center text-sm p-2 px-6 text-left transition-[background] first:border-t border-b text-black border-body-200 dark:border-dark-400 bg-gray-100 dark:bg-dark-500 dark:text-white hover:bg-gray-200 dark:hover:bg-dark-400"
-      onClick={() => store.updatePlayer({ style })}
+      onClick={() => store.player.update({ style })}
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
     >

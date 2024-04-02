@@ -55,7 +55,7 @@ const Skills: React.FC = observer(() => {
                 name={v.name}
                 image={v.image}
                 active={isActive}
-                setActive={store.togglePlayerPotion}
+                setActive={store.player.togglePotion}
               />
             );
           })

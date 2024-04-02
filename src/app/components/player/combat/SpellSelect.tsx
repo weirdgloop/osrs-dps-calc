@@ -36,7 +36,7 @@ const SpellSelect: React.FC = observer(() => {
       resetAfterSelect
       blurAfterSelect
       onSelectedItemChange={(item) => {
-        store.updatePlayer({
+        store.player.update({
           spell: item?.spell,
         });
       }}

@@ -3,11 +3,11 @@ import {
   calculatePlayerVsNpc, findEquipment, getTestMonsterById, getTestPlayer,
 } from '@/tests/utils/TestUtils';
 import { Prayer } from '@/enums/Prayer';
-import { Player } from '@/types/Player';
+import { IPlayer } from '@/types/Player';
 import { PartialDeep } from 'type-fest';
 
 const monster = getTestMonsterById(415);
-const basePlayer: PartialDeep<Player> = {
+const basePlayer: PartialDeep<IPlayer> = {
   prayers: [Prayer.PIETY],
   style: {
     name: 'Hack',

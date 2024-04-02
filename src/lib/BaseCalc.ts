@@ -1,4 +1,4 @@
-import { EquipmentPiece, Player } from '@/types/Player';
+import { EquipmentPiece, IPlayer } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { AmmoApplicability, ammoApplicability, getCanonicalEquipment } from '@/lib/Equipment';
 import UserIssueType from '@/enums/UserIssueType';
@@ -45,7 +45,7 @@ export default class BaseCalc {
   private _details?: CalcDetails;
 
   // The player that we're using for this calculation
-  protected player: Player;
+  protected player: IPlayer;
 
   // The monster that we're using for this calculation
   protected monster: Monster;
@@ -58,7 +58,7 @@ export default class BaseCalc {
 
   protected userIssues: UserIssue[] = [];
 
-  constructor(player: Player, monster: Monster, opts: CalcOpts = {}) {
+  constructor(player: IPlayer, monster: Monster, opts: CalcOpts = {}) {
     this.opts = {
       ...DEFAULT_OPTS,
       ...opts,

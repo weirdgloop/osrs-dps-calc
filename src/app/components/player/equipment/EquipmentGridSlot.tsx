@@ -33,7 +33,7 @@ const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => 
         data-tooltip-id="tooltip"
         data-tooltip-content={currentSlot?.name}
         onMouseDown={() => {
-          if (!isEmpty) store.clearEquipmentSlot(slot);
+          if (!isEmpty) store.player.clearEquipmentSlot(slot);
         }}
       >
         {currentSlot?.image ? (

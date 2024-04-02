@@ -38,7 +38,7 @@ const SpellContainer: React.FC = () => {
             className="disabled:cursor-not-allowed text-body-500 dark:text-dark-100 disabled:text-btns-100 dark:disabled:text-dark-500 hover:text-red transition-colors"
             data-tooltip-id="tooltip"
             data-tooltip-content="Remove spell"
-            onClick={() => store.updatePlayer({ spell: null })}
+            onClick={() => store.player.update({ spell: null })}
           >
             <IconTrash aria-label="Remove spell" />
           </button>

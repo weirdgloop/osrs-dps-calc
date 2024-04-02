@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { observer } from 'mobx-react-lite';
-import { generateEmptyPlayer, useStore } from '@/state';
+import { useStore } from '@/state';
 import SectionAccordion from '@/app/components/generic/SectionAccordion';
 import defence from '@/public/img/bonuses/defence.png';
 import attack from '@/public/img/bonuses/attack.png';
@@ -11,6 +11,7 @@ import { IconAlertTriangle } from '@tabler/icons-react';
 import NPCVersusPlayerResultsTable from '@/app/components/results/NPCVersusPlayerResultsTable';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
 import { toJS } from 'mobx';
+import Player from '@/lib/Player';
 
 const NPCVersusPlayerResultsContainer: React.FC = observer(() => {
   const store = useStore();
@@ -24,7 +25,7 @@ const NPCVersusPlayerResultsContainer: React.FC = observer(() => {
    * Max hit may be different on a per-loadout basis in the future if something like Weaken is used.
    */
   const computedBaseMaxHit = useMemo(() => {
-    const calc = new NPCVsPlayerCalc(generateEmptyPlayer(), monsterJs);
+    const calc = new NPCVsPlayerCalc(Player.newEmpty(), monsterJs);
     return calc.getNPCMaxHit();
   }, [monsterJs]);
 

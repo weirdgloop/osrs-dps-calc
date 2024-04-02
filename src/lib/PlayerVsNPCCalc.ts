@@ -1,4 +1,4 @@
-import { Player } from '@/types/Player';
+import { IPlayer } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import {
   AttackDistribution,
@@ -55,7 +55,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
   public userIssues: UserIssue[] = [];
 
-  constructor(player: Player, monster: Monster, opts: Partial<CalcOpts> = {}) {
+  constructor(player: IPlayer, monster: Monster, opts: Partial<CalcOpts> = {}) {
     super(player, monster, opts);
   }
 
@@ -1238,7 +1238,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     return ret;
   }
 
-  public static distIsCurrentHpDependent(loadout: Player, monster: Monster): boolean {
+  public static distIsCurrentHpDependent(loadout: IPlayer, monster: Monster): boolean {
     if (monster.name === 'Vardorvis') {
       return true;
     }

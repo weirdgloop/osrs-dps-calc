@@ -3,7 +3,7 @@ import React, { useCallback } from 'react';
 import EquipmentPreset from '@/enums/EquipmentPreset';
 import { useStore } from '@/state';
 import { PartialDeep } from 'type-fest';
-import { Player } from '@/types/Player';
+import { IPlayer } from '@/types/Player';
 import { availableEquipment } from '@/lib/Equipment';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { getCombatStylesForCategory } from '@/utils';
@@ -27,7 +27,7 @@ const EquipmentPresets: React.FC = () => {
   ];
 
   const onSelect = useCallback((v: { label: string, value: EquipmentPreset } | null | undefined) => {
-    let newPlayer: PartialDeep<Player> = {};
+    let newPlayer: PartialDeep<IPlayer> = {};
 
     const findItemById = (id: number) => availableEquipment.find((eq) => eq.id === id);
 
@@ -248,7 +248,7 @@ const EquipmentPresets: React.FC = () => {
     }
 
     if (Object.keys(newPlayer).length > 0) {
-      store.updatePlayer(newPlayer);
+      store.player.update(newPlayer);
     }
   }, [store]);
 

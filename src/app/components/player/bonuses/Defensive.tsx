@@ -23,7 +23,7 @@ const Defensive: React.FC<{ computedStats: EquipmentBonuses }> = observer(({ com
           image={dagger}
           value={player.defensive.stab}
           className={`${(player.defensive.stab !== computedStats.defensive.stab) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
-          onChange={(v) => store.updatePlayer({ defensive: { stab: v } })}
+          onChange={(v) => store.player.update({ defensive: { stab: v } })}
         />
         <AttributeInput
           disabled={!prefs.manualMode}
@@ -31,7 +31,7 @@ const Defensive: React.FC<{ computedStats: EquipmentBonuses }> = observer(({ com
           image={scimitar}
           value={player.defensive.slash}
           className={`${(player.defensive.slash !== computedStats.defensive.slash) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
-          onChange={(v) => store.updatePlayer({ defensive: { slash: v } })}
+          onChange={(v) => store.player.update({ defensive: { slash: v } })}
         />
         <AttributeInput
           disabled={!prefs.manualMode}
@@ -39,7 +39,7 @@ const Defensive: React.FC<{ computedStats: EquipmentBonuses }> = observer(({ com
           image={warhammer}
           value={player.defensive.crush}
           className={`${(player.defensive.crush !== computedStats.defensive.crush) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
-          onChange={(v) => store.updatePlayer({ defensive: { crush: v } })}
+          onChange={(v) => store.player.update({ defensive: { crush: v } })}
         />
         <AttributeInput
           disabled={!prefs.manualMode}
@@ -47,7 +47,7 @@ const Defensive: React.FC<{ computedStats: EquipmentBonuses }> = observer(({ com
           image={magic}
           value={player.defensive.magic}
           className={`${(player.defensive.magic !== computedStats.defensive.magic) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
-          onChange={(v) => store.updatePlayer({ defensive: { magic: v } })}
+          onChange={(v) => store.player.update({ defensive: { magic: v } })}
         />
         <AttributeInput
           disabled={!prefs.manualMode}
@@ -55,7 +55,7 @@ const Defensive: React.FC<{ computedStats: EquipmentBonuses }> = observer(({ com
           image={ranged}
           value={player.defensive.ranged}
           className={`${(player.defensive.ranged !== computedStats.defensive.ranged) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
-          onChange={(v) => store.updatePlayer({ defensive: { ranged: v } })}
+          onChange={(v) => store.player.update({ defensive: { ranged: v } })}
         />
       </div>
     </div>

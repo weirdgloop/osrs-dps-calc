@@ -32,21 +32,12 @@ const Home: NextPage = observer(() => {
     // We only handle events that occur outside <input>, <textarea>, etc
     if (e.target !== document.body) return;
 
-    switch (e.key) {
-      case '1':
-      case '2':
-      case '3':
-      case '4':
-      case '5': {
-        // Handle quickly switching between loadouts (max 5)
-        const key = parseInt(e.key) - 1;
-        if (store.loadouts[key] !== undefined) {
-          store.setSelectedLoadout(key);
-        }
-        break;
+    if (['1', '2', '3', '4', '5'].includes(e.key)) {
+      // Handle quickly switching between loadouts (max 5)
+      const key = parseInt(e.key) - 1;
+      if (store.loadouts[key] !== undefined) {
+        store.setSelectedLoadout(key);
       }
-      default:
-        return;
     }
 
     // If we get here, we've handled the event, so prevent it bubbling

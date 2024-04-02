@@ -8,116 +8,30 @@ import {
   CalculatedLoadout, Calculator, ImportableData, Preferences, State, UI, UserIssue,
 } from '@/types/State';
 import merge from 'lodash.mergewith';
-import { Player, PlayerEquipment, PlayerSkills } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { toast } from 'react-toastify';
 import {
-  Debouncer, fetchPlayerSkills, fetchShortlinkData, getCombatStylesForCategory, PotionMap,
+  Debouncer, fetchPlayerSkills, fetchShortlinkData, getCombatStylesForCategory,
 } from '@/utils';
 import { ComputeBasicRequest, ComputeReverseRequest, WorkerRequestType } from '@/worker/CalcWorkerTypes';
 import getMonsters from '@/lib/Monsters';
-import { availableEquipment, calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
+import { availableEquipment } from '@/lib/Equipment';
 import { CalcWorker } from '@/worker/CalcWorker';
 import { spellByName } from '@/types/Spell';
+import Player from '@/lib/Player';
 import { EquipmentCategory } from './enums/EquipmentCategory';
-import {
-  ARM_PRAYERS,
-  BRAIN_PRAYERS,
-  DEFENSIVE_PRAYERS,
-  OFFENSIVE_PRAYERS,
-  OVERHEAD_PRAYERS,
-  Prayer,
-} from './enums/Prayer';
-import Potion from './enums/Potion';
 import { WikiSyncer } from './wikisync/WikiSyncer';
 
 const CALC_DEBOUNCE_MS: number = 250;
 
 const EMPTY_CALC_LOADOUT = {} as CalculatedLoadout;
 
-const generateInitialEquipment = () => {
-  const initialEquipment: PlayerEquipment = {
-    ammo: null,
-    body: null,
-    cape: null,
-    feet: null,
-    hands: null,
-    head: null,
-    legs: null,
-    neck: null,
-    ring: null,
-    shield: null,
-    weapon: null,
-  };
-  return initialEquipment;
-};
-
-export const generateEmptyPlayer = (name?: string) => ({
-  name: name ?? 'Loadout 1',
-  username: '',
-  style: getCombatStylesForCategory(EquipmentCategory.NONE)[0],
-  skills: {
-    atk: 99,
-    def: 99,
-    hp: 99,
-    magic: 99,
-    prayer: 99,
-    ranged: 99,
-    str: 99,
-    mining: 99,
-  },
-  boosts: {
-    atk: 0,
-    def: 0,
-    hp: 0,
-    magic: 0,
-    prayer: 0,
-    ranged: 0,
-    str: 0,
-    mining: 0,
-  },
-  equipment: generateInitialEquipment(),
-  prayers: [],
-  bonuses: {
-    str: 0,
-    ranged_str: 0,
-    magic_str: 0,
-    prayer: 0,
-  },
-  defensive: {
-    stab: 0,
-    slash: 0,
-    crush: 0,
-    magic: 0,
-    ranged: 0,
-  },
-  offensive: {
-    stab: 0,
-    slash: 0,
-    crush: 0,
-    magic: 0,
-    ranged: 0,
-  },
-  buffs: {
-    potions: [],
-    onSlayerTask: true,
-    inWilderness: false,
-    kandarinDiary: false,
-    chargeSpell: false,
-    markOfDarknessSpell: false,
-    forinthrySurge: false,
-    soulreaperStacks: 0,
-    usingSunfireRunes: false,
-  },
-  spell: null,
-});
-
 export const parseLoadoutsFromImportedData = (data: ImportableData) => data.loadouts.map((loadout, i) => {
   // For each item, if only an item ID is available, load the other data.
   if (loadout.equipment) {
     for (const [k, v] of Object.entries(loadout.equipment)) {
-      if (v === null) continue;
+      if (!v) continue;
       if (Object.keys(v).length === 1 && Object.hasOwn(v, 'id')) {
         const item = availableEquipment.find((eq) => eq.id === v.id);
         loadout.equipment[k as keyof typeof loadout.equipment] = item || null;
@@ -186,7 +100,7 @@ class GlobalState implements State {
   };
 
   loadouts: Player[] = [
-    generateEmptyPlayer(),
+    Player.newEmpty('Loadout 1'),
   ];
 
   selectedLoadout = 0;
@@ -245,32 +159,6 @@ class GlobalState implements State {
 
     // Set debug variable if we're running in a dev environment
     this.debug = process.env && process.env.NODE_ENV === 'development';
-
-    const recomputeBoosts = () => {
-      // Re-compute the player's boost values.
-      const boosts: Partial<PlayerSkills> = {
-        atk: 0, def: 0, magic: 0, prayer: 0, ranged: 0, str: 0, mining: 0,
-      };
-
-      for (const p of this.player.buffs.potions) {
-        const result = PotionMap[p].calculateFn(this.player.skills);
-        for (const k of Object.keys(result)) {
-          const r = result[k as keyof typeof result] as number;
-          if (r > boosts[k as keyof typeof boosts]!) {
-            // If this skill's boost is higher than what it already is, then change it
-            boosts[k as keyof typeof boosts] = result[k as keyof typeof result] as number;
-          }
-        }
-      }
-
-      this.updatePlayer({ boosts });
-    };
-
-    const potionTriggers: ((r: IReactionPublic) => unknown)[] = [
-      () => toJS(this.player.skills),
-      () => toJS(this.player.buffs.potions),
-    ];
-    potionTriggers.map((t) => reaction(t, recomputeBoosts, { fireImmediately: false }));
 
     // for toa monster + shadow handling
     const equipmentTriggers: ((r: IReactionPublic) => unknown)[] = [
@@ -361,19 +249,8 @@ class GlobalState implements State {
     this.calcWorker = worker;
   }
 
-  recalculateEquipmentBonusesFromGear(loadoutIx?: number) {
-    loadoutIx = loadoutIx !== undefined ? loadoutIx : this.selectedLoadout;
-
-    const totals = calculateEquipmentBonusesFromGear(this.loadouts[loadoutIx], this.monster);
-    this.updatePlayer({
-      bonuses: totals.bonuses,
-      offensive: totals.offensive,
-      defensive: totals.defensive,
-    }, loadoutIx);
-  }
-
   recalculateEquipmentBonusesFromGearAll() {
-    this.loadouts.forEach((_, i) => this.recalculateEquipmentBonusesFromGear(i));
+    this.loadouts.forEach((p) => p.recalculateGearBonuses(this.monster));
   }
 
   updateUIState(ui: PartialDeep<UI>) {
@@ -435,8 +312,8 @@ class GlobalState implements State {
 
     // manually recompute equipment in case their metadata has changed since the shortlink was created
     loadouts.forEach((p, ix) => {
-      if (this.loadouts[ix] === undefined) this.loadouts.push(generateEmptyPlayer());
-      this.updatePlayer(p, ix);
+      if (this.loadouts[ix] === undefined) this.loadouts.push(Player.newEmpty());
+      this.loadouts[ix].update(p);
     });
     this.recalculateEquipmentBonusesFromGearAll();
 
@@ -468,7 +345,7 @@ class GlobalState implements State {
         },
       );
 
-      if (res) this.updatePlayer({ skills: res });
+      if (res) this.player.update({ skills: res });
     } catch (e) {
       console.error(e);
     }
@@ -493,54 +370,6 @@ class GlobalState implements State {
   }
 
   /**
-   * Toggle a potion, with logic to remove from or add to the potions array depending on if it is already in there.
-   * @param potion
-   */
-  togglePlayerPotion(potion: Potion) {
-    const isToggled = this.player.buffs.potions.includes(potion);
-    if (isToggled) {
-      this.player.buffs.potions = this.player.buffs.potions.filter((p) => p !== potion);
-    } else {
-      this.player.buffs.potions = [...this.player.buffs.potions, potion];
-    }
-  }
-
-  /**
-   * Toggle a prayer, with logic to remove from or add to the prayers array depending on if it is already in there.
-   * @param prayer
-   */
-  togglePlayerPrayer(prayer: Prayer) {
-    const isToggled = this.player.prayers.includes(prayer);
-    if (isToggled) {
-      // If we're toggling off an existing prayer, just filter it out from the array
-      this.player.prayers = this.player.prayers.filter((p) => p !== prayer);
-    } else {
-      // If we're toggling on a new prayer, let's do some checks to ensure that some prayers cannot be enabled alongside it
-      let newPrayers = [...this.player.prayers];
-
-      // If this is a defensive prayer, disable all other defensive prayers
-      if (DEFENSIVE_PRAYERS.includes(prayer)) newPrayers = newPrayers.filter((p) => !DEFENSIVE_PRAYERS.includes(p));
-
-      // If this is an overhead prayer, disable all other overhead prayers
-      if (OVERHEAD_PRAYERS.includes(prayer)) newPrayers = newPrayers.filter((p) => !OVERHEAD_PRAYERS.includes(p));
-
-      // If this is an offensive prayer...
-      if (OFFENSIVE_PRAYERS.includes(prayer)) {
-        newPrayers = newPrayers.filter((p) => {
-          // If this is a "brain" prayer, it can only be paired with arm prayers
-          if (BRAIN_PRAYERS.includes(prayer)) return !OFFENSIVE_PRAYERS.includes(p) || ARM_PRAYERS.includes(p);
-          // If this is an "arm" prayer, it can only be paired with brain prayers
-          if (ARM_PRAYERS.includes(prayer)) return !OFFENSIVE_PRAYERS.includes(p) || BRAIN_PRAYERS.includes(p);
-          // Otherwise, there are no offensive prayers it can be paired with, disable them all
-          return !OFFENSIVE_PRAYERS.includes(p);
-        });
-      }
-
-      this.player.prayers = [...newPrayers, prayer];
-    }
-  }
-
-  /**
    * Toggle a monster attribute.
    * @param attr
    */
@@ -550,49 +379,6 @@ class GlobalState implements State {
       this.monster.attributes = this.monster.attributes.filter((a) => a !== attr);
     } else {
       this.monster.attributes = [...this.monster.attributes, attr];
-    }
-  }
-
-  /**
-   * Update the player state.
-   * @param player
-   * @param loadoutIx Which loadout to update. Defaults to the current selected loadout.
-   */
-  updatePlayer(player: PartialDeep<Player>, loadoutIx?: number) {
-    loadoutIx = loadoutIx !== undefined ? loadoutIx : this.selectedLoadout;
-
-    const eq = player.equipment;
-    if (eq && (Object.hasOwn(eq, 'weapon') || Object.hasOwn(eq, 'shield'))) {
-      const currentWeapon = this.loadouts[loadoutIx].equipment.weapon;
-      const newWeapon = player.equipment?.weapon;
-
-      if (newWeapon !== undefined) {
-        const oldWeaponCat = currentWeapon?.category || EquipmentCategory.NONE;
-        const newWeaponCat = newWeapon?.category || EquipmentCategory.NONE;
-        if ((newWeaponCat !== undefined) && (newWeaponCat !== oldWeaponCat) && !player.style) {
-          // If the weapon slot category was changed, we should reset the player's selected combat style to the first one that exists.
-          player.style = getCombatStylesForCategory(newWeaponCat)[0];
-        }
-      }
-
-      const currentShield = this.loadouts[loadoutIx].equipment.shield;
-      const newShield = player.equipment?.shield;
-
-      // Special handling for if a shield is equipped, and we're using a two-handed weapon
-      if (player.equipment?.shield && newShield !== undefined && currentWeapon?.isTwoHanded) {
-        player = { ...player, equipment: { ...player.equipment, weapon: null } };
-      }
-      // ...and vice-versa
-      if (player.equipment?.weapon && newWeapon?.isTwoHanded && currentShield?.name !== '') {
-        player = { ...player, equipment: { ...player.equipment, shield: null } };
-      }
-    }
-
-    this.loadouts[loadoutIx] = merge(this.loadouts[loadoutIx], player);
-    if (!this.prefs.manualMode) {
-      if (eq || Object.hasOwn(player, 'spell')) {
-        this.recalculateEquipmentBonusesFromGear(loadoutIx);
-      }
     }
   }
 
@@ -613,18 +399,6 @@ class GlobalState implements State {
     });
   }
 
-  /**
-   * Clear an equipment slot, removing the item that was inside of it.
-   * @param slot
-   */
-  clearEquipmentSlot(slot: keyof PlayerEquipment) {
-    this.updatePlayer({
-      equipment: {
-        [slot]: null,
-      },
-    });
-  }
-
   setSelectedLoadout(ix: number) {
     this.selectedLoadout = ix;
   }
@@ -632,7 +406,7 @@ class GlobalState implements State {
   deleteLoadout(ix: number) {
     if (this.loadouts.length === 1) {
       // If there is only one loadout, clear it instead of deleting it
-      this.loadouts[0] = generateEmptyPlayer();
+      this.loadouts[0] = Player.newEmpty('Loadout 1');
       return;
     }
 
@@ -640,19 +414,6 @@ class GlobalState implements State {
     // If the selected loadout index is equal to or over the index we just remove, shift it down by one, else add one
     if ((this.selectedLoadout >= ix) && ix !== 0) {
       this.selectedLoadout -= 1;
-    }
-  }
-
-  renameLoadout(ix: number, name: string) {
-    const loadout = this.loadouts[ix];
-
-    const trimmedName = name.trim();
-    if (loadout) {
-      if (trimmedName) {
-        loadout.name = trimmedName;
-      } else {
-        loadout.name = `Loadout ${ix + 1}`;
-      }
     }
   }
 
@@ -664,8 +425,8 @@ class GlobalState implements State {
     // Do not allow creating a loadout if we're over the limit
     if (!this.canCreateLoadout) return;
 
-    const newLoadout = (cloneIndex !== undefined) ? toJS(this.loadouts[cloneIndex]) : generateEmptyPlayer();
-    newLoadout.name = `Loadout ${this.loadouts.length + 1}`;
+    const newLoadout = (cloneIndex !== undefined) ? new Player(toJS(this.loadouts[cloneIndex])) : Player.newEmpty();
+    newLoadout.rename(`Loadout ${this.loadouts.length + 1}`);
 
     this.loadouts.push(newLoadout);
     if (selected) this.selectedLoadout = (this.loadouts.length - 1);
@@ -683,7 +444,7 @@ class GlobalState implements State {
     this.calc.loadouts = calculatedLoadouts;
 
     const data: Extract<ComputeBasicRequest['data'], ComputeReverseRequest['data']> = {
-      loadouts: this.loadouts,
+      loadouts: this.loadouts.map((l) => ({ ...l, boosts: l.boosts })),
       monster: this.monster,
       calcOpts: {
         includeTtkDist: this.prefs.showTtkComparison,

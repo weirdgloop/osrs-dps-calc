@@ -73,7 +73,7 @@ export interface EquipmentStats {
   defensive: PlayerDefensive,
 }
 
-export interface Player extends EquipmentStats {
+export interface IPlayer extends EquipmentStats {
   name: string;
   style: PlayerCombatStyle;
   /**

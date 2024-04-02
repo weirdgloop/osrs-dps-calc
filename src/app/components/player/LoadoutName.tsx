@@ -4,7 +4,7 @@ import React, { useCallback, useState } from 'react';
 interface LoadoutNameProps {
   name: string;
   index: number;
-  renameLoadout: (index: number, name: string) => void;
+  renameLoadout: (name: string) => void;
 }
 
 interface LoadoutNameEditContainerProps {
@@ -45,7 +45,7 @@ const LoadoutName: React.FC<LoadoutNameProps> = ({ name, index, renameLoadout })
   };
 
   const onSubmit = () => {
-    renameLoadout(index, value);
+    renameLoadout(value);
     setEditName(false);
   };
 

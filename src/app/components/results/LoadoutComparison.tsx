@@ -80,7 +80,7 @@ const LoadoutComparison: React.FC = observer(() => {
   const store = useStore();
   const monster = JSON.stringify(store.monster);
   const { showLoadoutComparison } = store.prefs;
-  const loadouts = JSON.stringify(store.loadouts);
+  const loadouts = JSON.stringify(store.loadouts.map((l) => ({ ...l, boosts: l.boosts })));
 
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';

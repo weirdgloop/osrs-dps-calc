@@ -1,4 +1,4 @@
-import { Player } from '@/types/Player';
+import { IPlayer } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { NPCVsPlayerCalculatedLoadout, PlayerVsNPCCalculatedLoadout } from '@/types/State';
 import { CalcOpts } from '@/lib/BaseCalc';
@@ -30,7 +30,7 @@ export interface WorkerCalcOpts {
 
 export interface ComputeBasicRequest extends WorkerRequest<WorkerRequestType.COMPUTE_BASIC> {
   data: {
-    loadouts: Player[],
+    loadouts: IPlayer[],
     monster: Monster,
     calcOpts: WorkerCalcOpts,
   }
@@ -38,7 +38,7 @@ export interface ComputeBasicRequest extends WorkerRequest<WorkerRequestType.COM
 
 export interface ComputeReverseRequest extends WorkerRequest<WorkerRequestType.COMPUTE_REVERSE> {
   data: {
-    loadouts: Player[],
+    loadouts: IPlayer[],
     monster: Monster,
     calcOpts: WorkerCalcOpts,
   }
@@ -50,7 +50,7 @@ export interface CompareRequest extends WorkerRequest<WorkerRequestType.COMPARE>
       x: CompareXAxis,
       y: CompareYAxis,
     },
-    loadouts: Player[],
+    loadouts: IPlayer[],
     monster: Monster,
   },
 }

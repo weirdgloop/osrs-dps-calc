@@ -11,11 +11,11 @@ import {
   getTestPlayer,
 } from '@/tests/utils/TestUtils';
 import { PartialDeep } from 'type-fest';
-import { Player } from '@/types/Player';
+import { IPlayer } from '@/types/Player';
 
 describe('Demonbane spells', () => {
   const monster = getTestMonster('Abyssal demon', 'Standard');
-  const basePlayer: PartialDeep<Player> = {
+  const basePlayer: PartialDeep<IPlayer> = {
     style: {
       name: 'Autocast',
       type: 'magic',

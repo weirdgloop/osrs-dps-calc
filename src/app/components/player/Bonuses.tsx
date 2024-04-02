@@ -20,7 +20,7 @@ const Bonuses: React.FC = observer(() => {
       <div className="flex justify-between items-center gap-2">
         <h4 className="font-serif font-bold">Bonuses</h4>
         {manualMode && (
-          <button type="button" className="text-xs underline" onClick={() => store.recalculateEquipmentBonusesFromGear()}>
+          <button type="button" className="text-xs underline" onClick={() => store.player.recalculateGearBonuses(store.monster)}>
             Calculate from equipment
           </button>
         )}

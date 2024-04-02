@@ -2,7 +2,7 @@ import { describe, expect, test } from '@jest/globals';
 import {
   calculatePlayerVsNpc, findEquipment, findSpell, getTestMonster, getTestPlayer,
 } from '@/tests/utils/TestUtils';
-import { Player } from '@/types/Player';
+import { IPlayer } from '@/types/Player';
 
 describe('Zogre damage resistances', () => {
   const m = getTestMonster('Zogre', '');
@@ -16,7 +16,7 @@ describe('Zogre damage resistances', () => {
     const { maxHit } = calculatePlayerVsNpc(m, p);
     expect(maxHit).toBe(8);
 
-    const withArrows: Player = {
+    const withArrows: IPlayer = {
       ...p,
       equipment: {
         ...p.equipment,
@@ -42,7 +42,7 @@ describe('Zogre damage resistances', () => {
     const { maxHit } = calculatePlayerVsNpc(m, p);
     expect(maxHit).toBe(16);
 
-    const withArrows: Player = {
+    const withArrows: IPlayer = {
       ...p,
       equipment: {
         ...p.equipment,

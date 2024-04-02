@@ -10,7 +10,7 @@ import { IconPlus, IconTrash } from '@tabler/icons-react';
 const PlayerContainer: React.FC = observer(() => {
   const store = useStore();
   const {
-    loadouts, player, selectedLoadout, canCreateLoadout, createLoadout, renameLoadout, deleteLoadout,
+    loadouts, player, selectedLoadout, canCreateLoadout, createLoadout, deleteLoadout,
   } = store;
 
   return (
@@ -53,7 +53,7 @@ const PlayerContainer: React.FC = observer(() => {
           className="px-5 py-3 border-b-body-400 dark:border-b-dark-200 border-b flex justify-between items-center font-serif"
         >
           <div className="min-w-0">
-            <LoadoutName name={loadouts[selectedLoadout].name} renameLoadout={renameLoadout} index={selectedLoadout} />
+            <LoadoutName name={loadouts[selectedLoadout].name} renameLoadout={store.player.rename} index={selectedLoadout} />
             <div className="text-xs font-bold text-gray-500 dark:text-gray-300">
               Level
               {' '}

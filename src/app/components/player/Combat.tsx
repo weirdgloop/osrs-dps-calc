@@ -44,7 +44,7 @@ const Combat: React.FC = observer(() => {
                   <Toggle
                     checked={buffs.usingSunfireRunes}
                     setChecked={(v) => {
-                      store.updatePlayer({ buffs: { usingSunfireRunes: v } });
+                      store.player.update({ buffs: { usingSunfireRunes: v } });
                     }}
                     label={(
                       <>
@@ -69,7 +69,7 @@ const Combat: React.FC = observer(() => {
                   <Toggle
                     checked={buffs.chargeSpell}
                     setChecked={(v) => {
-                      store.updatePlayer({ buffs: { chargeSpell: v } });
+                      store.player.update({ buffs: { chargeSpell: v } });
                     }}
                     label="Using the Charge spell"
                   />
@@ -80,7 +80,7 @@ const Combat: React.FC = observer(() => {
                   <Toggle
                     checked={buffs.markOfDarknessSpell}
                     setChecked={(v) => {
-                      store.updatePlayer({ buffs: { markOfDarknessSpell: v } });
+                      store.player.update({ buffs: { markOfDarknessSpell: v } });
                     }}
                     label="Using Mark of Darkness"
                   />

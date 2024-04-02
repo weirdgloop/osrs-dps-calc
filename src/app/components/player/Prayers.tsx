@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import React from 'react';
-import { Prayer, PrayerMap } from '@/enums/Prayer';
+import { PrayerMap } from '@/enums/Prayer';
 import { useStore } from '@/state';
 import GridItem from '@/app/components/generic/GridItem';
 
@@ -19,7 +19,7 @@ const Prayers: React.FC = observer(() => {
               name={v.name}
               image={v.image}
               active={prayers.includes(parseInt(k))}
-              onClick={(p: Prayer) => store.togglePlayerPrayer(p)}
+              onClick={store.player.togglePrayer}
             />
           ))
         }

@@ -1,14 +1,15 @@
 import getMonsters from '@/lib/Monsters';
 import { Monster } from '@/types/Monster';
-import { EquipmentPiece, Player } from '@/types/Player';
+import { EquipmentPiece, IPlayer } from '@/types/Player';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import { DetailEntry, DetailKey } from '@/lib/CalcDetails';
 import merge from 'lodash.mergewith';
-import { generateEmptyPlayer } from '@/state';
 import { PartialDeep } from 'type-fest';
 import { calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { Spell, spells } from '@/types/Spell';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
+import Player from '@/lib/Player';
+import { toJS } from 'mobx';
 import eq from '../../../cdn/json/equipment.json';
 
 const monsters = getMonsters().map((m) => ({
@@ -43,15 +44,17 @@ function find<T>(arr: T[], pred: (_: T) => boolean, failMsg?: string): T {
   return opt;
 }
 
-export function getTestPlayer(monster: Monster, overrides: PartialDeep<Player> = {}): Player {
-  const player = merge(generateEmptyPlayer(), overrides);
+export function getTestPlayer(monster: Monster, overrides: PartialDeep<IPlayer> = {}): IPlayer {
+  const player = new Player(overrides);
 
   const calculated = calculateEquipmentBonusesFromGear(player, monster);
-  player.bonuses = overrides.bonuses || calculated.bonuses;
-  player.offensive = overrides.offensive || calculated.offensive;
-  player.defensive = overrides.defensive || calculated.defensive;
+  player.update({
+    bonuses: overrides.bonuses || calculated.bonuses,
+    offensive: overrides.offensive || calculated.offensive,
+    defensive: overrides.defensive || calculated.defensive,
+  });
 
-  return player;
+  return { ...toJS(player), boosts: player.boosts };
 }
 
 const DEFAULT_MONSTER_INPUTS: Monster['inputs'] = {
@@ -122,7 +125,7 @@ export function findSpell(name: string): Spell {
   return find(spells, (s) => s.name === name);
 }
 
-export function calculatePlayerVsNpc(monster: Monster, player: Player) {
+export function calculatePlayerVsNpc(monster: Monster, player: IPlayer) {
   const calc = new PlayerVsNPCCalc(player, monster, {
     loadoutName: 'test',
     detailedOutput: true,
@@ -137,7 +140,7 @@ export function calculatePlayerVsNpc(monster: Monster, player: Player) {
   };
 }
 
-export function calculateNpcVsPlayer(monster: Monster, player: Player) {
+export function calculateNpcVsPlayer(monster: Monster, player: IPlayer) {
   const calc = new NPCVsPlayerCalc(player, monster, {
     loadoutName: 'test',
   });

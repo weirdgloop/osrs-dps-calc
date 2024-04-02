@@ -106,7 +106,7 @@ const EquipmentSelect: React.FC = observer(() => {
       placeholder="Search for equipment..."
       onSelectedItemChange={(item) => {
         if (item) {
-          store.updatePlayer({
+          store.player.update({
             equipment: {
               [item.equipment.slot]: item.equipment,
             },

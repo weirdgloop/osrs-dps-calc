@@ -22,7 +22,7 @@ const OtherBonuses: React.FC<{ computedStats: EquipmentBonuses }> = observer(({ 
           image={strength}
           value={player.bonuses.str}
           className={`${(player.bonuses.str !== computedStats.bonuses.str) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
-          onChange={(v) => store.updatePlayer({ bonuses: { str: v } })}
+          onChange={(v) => store.player.update({ bonuses: { str: v } })}
         />
         <AttributeInput
           disabled={!prefs.manualMode}
@@ -30,7 +30,7 @@ const OtherBonuses: React.FC<{ computedStats: EquipmentBonuses }> = observer(({ 
           image={rangedStrength}
           value={player.bonuses.ranged_str}
           className={`${(player.bonuses.ranged_str !== computedStats.bonuses.ranged_str) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
-          onChange={(v) => store.updatePlayer({ bonuses: { ranged_str: v } })}
+          onChange={(v) => store.player.update({ bonuses: { ranged_str: v } })}
         />
         <AttributeInput
           disabled={!prefs.manualMode}
@@ -38,7 +38,7 @@ const OtherBonuses: React.FC<{ computedStats: EquipmentBonuses }> = observer(({ 
           image={magicStrength}
           value={player.bonuses.magic_str}
           className={`${(player.bonuses.magic_str !== computedStats.bonuses.magic_str) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
-          onChange={(v) => store.updatePlayer({ bonuses: { magic_str: v } })}
+          onChange={(v) => store.player.update({ bonuses: { magic_str: v } })}
         />
         <AttributeInput
           disabled={!prefs.manualMode}
@@ -46,7 +46,7 @@ const OtherBonuses: React.FC<{ computedStats: EquipmentBonuses }> = observer(({ 
           image={prayer}
           value={player.bonuses.prayer}
           className={`${(player.bonuses.prayer !== computedStats.bonuses.prayer) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
-          onChange={(v) => store.updatePlayer({ bonuses: { prayer: v } })}
+          onChange={(v) => store.player.update({ bonuses: { prayer: v } })}
         />
       </div>
     </div>

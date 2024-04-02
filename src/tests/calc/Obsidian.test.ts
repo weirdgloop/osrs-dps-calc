@@ -8,13 +8,13 @@ import {
 import { Prayer } from '@/enums/Prayer';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { PartialDeep } from 'type-fest';
-import { Player, PlayerEquipment } from '@/types/Player';
+import { IPlayer, PlayerEquipment } from '@/types/Player';
 
 describe('Toktz-ket-xil', () => {
   const monster = getTestMonster('Abyssal demon', 'Standard', {
     attributes: [MonsterAttribute.UNDEAD],
   });
-  const basePlayer: PartialDeep<Player> = {
+  const basePlayer: PartialDeep<IPlayer> = {
     prayers: [Prayer.PIETY],
     style: {
       stance: 'Accurate',
