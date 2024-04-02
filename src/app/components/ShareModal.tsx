@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 import Modal from '@/app/components/generic/Modal';
 import { ImportableData } from '@/types/State';
-import { toJS } from 'mobx';
+import { autorun, toJS } from 'mobx';
 import { generateShortlink, isDevServer } from '@/utils';
 import { toast } from 'react-toastify';
 import { IconClipboardCopy } from '@tabler/icons-react';
@@ -36,12 +36,9 @@ const ShareModal: React.FC = observer(() => {
     }
   };
 
-  useEffect(() => {
-    if (ui.showShareModal) {
-      generateShareLink();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ui.showShareModal]);
+  useEffect(() => autorun(() => {
+    if (ui.showShareModal) generateShareLink();
+  }), []);
 
   return (
     <Modal
