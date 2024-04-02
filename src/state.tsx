@@ -243,6 +243,9 @@ class GlobalState implements State {
   constructor() {
     makeAutoObservable(this, {}, { autoBind: true });
 
+    // Set debug variable if we're running in a dev environment
+    this.debug = process.env && process.env.NODE_ENV === 'development';
+
     const recomputeBoosts = () => {
       // Re-compute the player's boost values.
       const boosts: Partial<PlayerSkills> = {
