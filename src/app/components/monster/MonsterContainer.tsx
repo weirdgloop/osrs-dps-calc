@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import dagger from '@/public/img/bonuses/dagger.png';
 import scimitar from '@/public/img/bonuses/scimitar.png';
 import warhammer from '@/public/img/bonuses/warhammer.png';
@@ -8,248 +8,43 @@ import hitpoints from '@/public/img/bonuses/hitpoints.png';
 import attack from '@/public/img/bonuses/attack.png';
 import strength from '@/public/img/bonuses/strength.png';
 import defence from '@/public/img/bonuses/defence.png';
-import mining from '@/public/img/bonuses/mining.png';
 import magicStrength from '@/public/img/bonuses/magic_strength.png';
 import rangedStrength from '@/public/img/bonuses/ranged_strength.png';
-import toaRaidLevel from '@/public/img/toa_raidlevel.webp';
-import raidsIcon from '@/public/img/raids_icon.webp';
-import coxCmIcon from '@/public/img/cox_challenge_mode.png';
 import { useStore } from '@/state';
 import { observer } from 'mobx-react-lite';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { getCdnImage } from '@/utils';
 import PresetAttributeButton from '@/app/components/monster/PresetAttributeButton';
-import NumberInput from '@/app/components/generic/NumberInput';
-import {
-  GUARDIAN_IDS,
-  PARTY_SIZE_REQUIRED_MONSTER_IDS,
-  TOMBS_OF_AMASCUT_MONSTER_IDS,
-  TOMBS_OF_AMASCUT_PATH_MONSTER_IDS,
-} from '@/lib/constants';
 import {
   IconChevronDown,
   IconChevronUp,
   IconExternalLink,
 } from '@tabler/icons-react';
 import { scaleMonster } from '@/lib/MonsterScaling';
-import { Monster } from '@/types/Monster';
 import LazyImage from '@/app/components/generic/LazyImage';
-import Toggle from '@/app/components/generic/Toggle';
-import { toJS } from 'mobx';
-import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
+import { reaction } from 'mobx';
 import DefensiveReductions from '@/app/components/monster/DefensiveReductions';
-import MonsterSelect from './MonsterSelect';
-import HelpLink from '../HelpLink';
+import ExtraContainerPartySize from '@/app/components/monster/containers/ExtraContainerPartySize';
+import ExtraContainerTombsOfAmascut from '@/app/components/monster/containers/ExtraContainerTombsOfAmascut';
+import ExtraContainerChambersOfXeric from '@/app/components/monster/containers/ExtraContainerChambersOfXeric';
+import ExtraContainerMonsterCurrentHp from '@/app/components/monster/containers/ExtraContainerMonsterCurrentHp';
 import AttributeInput from '../generic/AttributeInput';
-
-interface ITombsOfAmascutMonsterContainerProps {
-  monster: Monster;
-  isPathMonster?: boolean;
-}
-
-const TombsOfAmascutMonsterContainer: React.FC<ITombsOfAmascutMonsterContainerProps> = (props) => {
-  const store = useStore();
-  const { monster, isPathMonster } = props;
-
-  return (
-    <>
-      <div className="mt-4">
-        <h4 className="font-bold font-serif">
-          <img src={toaRaidLevel.src} alt="" className="inline-block" />
-          {' '}
-          ToA raid level
-        </h4>
-        <div className="mt-2">
-          <NumberInput
-            value={monster.inputs.toaInvocationLevel}
-            min={0}
-            max={600}
-            step={5}
-            onChange={(v) => store.updateMonster({ inputs: { toaInvocationLevel: v } })}
-          />
-        </div>
-      </div>
-      {isPathMonster && (
-        <div className="mt-4">
-          <h4 className="font-bold font-serif">
-            <img src={toaRaidLevel.src} alt="" className="inline-block" />
-            {' '}
-            ToA path level
-          </h4>
-          <div className="mt-2">
-            <NumberInput
-              value={monster.inputs.toaPathLevel}
-              min={0}
-              max={6}
-              step={1}
-              onChange={(v) => store.updateMonster({ inputs: { toaPathLevel: v } })}
-            />
-          </div>
-        </div>
-      )}
-    </>
-  );
-};
+import HelpLink from '../HelpLink';
+import MonsterSelect from './MonsterSelect';
 
 const MonsterContainer: React.FC = observer(() => {
   const store = useStore();
-  const { loadouts, monster, prefs } = store;
+  const { monster, prefs } = store;
   const [attributesExpanded, setAttributesExpanded] = useState(false);
 
   // Don't automatically update the stat inputs if manual editing is on
-  const monsterJS = toJS(monster);
-  const displayMonster = useMemo(() => {
-    if (prefs.manualMode) {
-      return monsterJS;
-    }
-    return scaleMonster(monsterJS);
-  }, [prefs.manualMode, monsterJS]);
+  const displayMonster = prefs.manualMode ? monster : scaleMonster(monster);
 
-  useEffect(() => {
-    // When display monster HP is changed, update the monster's current HP
-    if (store.monster.inputs.monsterCurrentHp !== displayMonster.skills.hp) {
+  useEffect(() => reaction(() => displayMonster.skills.hp, () => {
+    if (monster.inputs.monsterCurrentHp !== displayMonster.skills.hp) {
       store.updateMonster({ inputs: { monsterCurrentHp: displayMonster.skills.hp } });
     }
-  }, [store, displayMonster.skills.hp]);
-
-  const extraMonsterOptions = useMemo(() => {
-    // Determine whether we need to show any extra monster option components
-    const comps: React.ReactNode[] = [];
-
-    if ((TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id))) {
-      comps.push(
-        <TombsOfAmascutMonsterContainer
-          key="toa"
-          monster={monster}
-          isPathMonster={(TOMBS_OF_AMASCUT_PATH_MONSTER_IDS.includes(monster.id))}
-        />,
-      );
-    }
-
-    if (monster.attributes.includes(MonsterAttribute.XERICIAN)) {
-      comps.push(
-        <div className="mt-4" key="cox-cm">
-          <h4 className="font-bold font-serif">
-            <img src={coxCmIcon.src} alt="" className="inline-block" />
-            {' '}
-            Challenge Mode
-          </h4>
-          <div className="mt-2">
-            <Toggle
-              checked={monster.inputs.isFromCoxCm}
-              setChecked={(c) => store.updateMonster({ inputs: { isFromCoxCm: c } })}
-            />
-          </div>
-        </div>,
-      );
-    }
-
-    if ((PARTY_SIZE_REQUIRED_MONSTER_IDS.includes(monster.id)) || monster.attributes.includes(MonsterAttribute.XERICIAN)) {
-      comps.push(
-        <div className="mt-4" key="party-size">
-          <h4 className="font-bold font-serif">
-            <img src={raidsIcon.src} alt="" className="inline-block" />
-            {' '}
-            Party size
-          </h4>
-          <div className="mt-2">
-            <NumberInput
-              value={monster.inputs.partySize}
-              min={1}
-              max={100}
-              step={1}
-              onChange={(v) => store.updateMonster({ inputs: { partySize: v } })}
-            />
-          </div>
-        </div>,
-      );
-    }
-
-    if (monster.attributes.includes(MonsterAttribute.XERICIAN)) {
-      comps.push(
-        <div className="mt-4" key="cox-cb">
-          <h4 className="font-bold font-serif">
-            <img src={raidsIcon.src} alt="" className="inline-block" />
-            {' '}
-            Party&apos;s highest combat level
-          </h4>
-          <div className="mt-2">
-            <NumberInput
-              value={monster.inputs.partyMaxCombatLevel}
-              min={3}
-              max={126}
-              step={1}
-              onChange={(v) => store.updateMonster({ inputs: { partyMaxCombatLevel: v } })}
-            />
-          </div>
-        </div>,
-      );
-
-      comps.push(
-        <div className="mt-4" key="cox-hp">
-          <h4 className="font-bold font-serif">
-            <img src={raidsIcon.src} alt="" className="inline-block" />
-            {' '}
-            Party&apos;s highest HP level
-          </h4>
-          <div className="mt-2">
-            <NumberInput
-              value={monster.inputs.partyMaxHpLevel}
-              min={1}
-              max={99}
-              step={1}
-              onChange={(v) => store.updateMonster({ inputs: { partyMaxHpLevel: v } })}
-            />
-          </div>
-        </div>,
-      );
-    }
-
-    if ((GUARDIAN_IDS.includes(monster.id))) {
-      comps.push(
-        <div className="mt-4" key="cox-guardian">
-          <h4 className="font-bold font-serif">
-            <img src={mining.src} alt="" className="inline-block" />
-            {' '}
-            Party&apos;s average mining level
-          </h4>
-          <div className="mt-2">
-            <NumberInput
-              value={monster.inputs.partyAvgMiningLevel}
-              min={1}
-              max={99}
-              step={1}
-              onChange={(v) => store.updateMonster({ inputs: { partyAvgMiningLevel: v } })}
-            />
-          </div>
-        </div>,
-      );
-    }
-
-    if (loadouts.some((l) => PlayerVsNPCCalc.distIsCurrentHpDependent(l, monster))) {
-      comps.push(
-        <div className="mt-4" key="cox-guardian">
-          <h4 className="font-bold font-serif">
-            <img src={hitpoints.src} alt="" className="inline-block" />
-            {' '}
-            Monster&apos;s Current HP
-          </h4>
-          <div className="mt-2">
-            <NumberInput
-              value={monster.inputs.monsterCurrentHp}
-              min={0}
-              max={displayMonster.skills.hp}
-              step={1}
-              onChange={(v) => store.updateMonster({ inputs: { monsterCurrentHp: v } })}
-            />
-          </div>
-        </div>,
-      );
-    }
-
-    return comps;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [toJS(loadouts), toJS(monster), displayMonster.skills.hp]);
+  }), []);
 
   return (
     <div className="basis-4 flex flex-col grow mt-3 md:grow-0">
@@ -474,11 +269,12 @@ const MonsterContainer: React.FC = observer(() => {
                 <div className="mt-1 text-sm">
                   <DefensiveReductions />
                 </div>
-                {(extraMonsterOptions.length > 0) && (
-                  <div className="mt-4 flex flex-wrap gap-x-4">
-                    {extraMonsterOptions}
-                  </div>
-                )}
+                <div className="flex flex-wrap gap-x-4">
+                  <ExtraContainerPartySize monster={monster} />
+                  <ExtraContainerTombsOfAmascut monster={monster} />
+                  <ExtraContainerChambersOfXeric monster={monster} />
+                  <ExtraContainerMonsterCurrentHp monster={monster} displayMonster={displayMonster} />
+                </div>
               </div>
             </div>
           </div>

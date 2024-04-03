@@ -20,6 +20,7 @@ import { availableEquipment } from '@/lib/Equipment';
 import { CalcWorker } from '@/worker/CalcWorker';
 import { spellByName } from '@/types/Spell';
 import Player from '@/lib/Player';
+import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import { WikiSyncer } from './wikisync/WikiSyncer';
 
@@ -238,6 +239,14 @@ class GlobalState implements State {
    */
   get validWikiSyncInstances() {
     return new Map([...this.wikisync].filter(([, v]) => v.username));
+  }
+
+  /**
+   * Whether *any* loadout the user has will have different results depending on the monster's current HP.
+   * In that case, this computed value is used to display a field in MonsterContainer.tsx.
+   */
+  get usesMonsterCurrentHp() {
+    return this.loadouts.some((p) => PlayerVsNPCCalc.distIsCurrentHpDependent(p, this.monster));
   }
 
   setCalcWorker(worker: CalcWorker) {
