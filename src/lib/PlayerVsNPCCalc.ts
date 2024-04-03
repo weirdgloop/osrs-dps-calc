@@ -43,7 +43,6 @@ import {
   AmmoApplicability,
   ammoApplicability,
 } from '@/lib/Equipment';
-import { UserIssue } from '@/types/State';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 
@@ -52,8 +51,6 @@ import { scaleMonsterHpOnly } from '@/lib/MonsterScaling';
  */
 export default class PlayerVsNPCCalc extends BaseCalc {
   private memoizedDist?: AttackDistribution;
-
-  public userIssues: UserIssue[] = [];
 
   constructor(player: Player, monster: Monster, opts: Partial<CalcOpts> = {}) {
     super(player, monster, opts);

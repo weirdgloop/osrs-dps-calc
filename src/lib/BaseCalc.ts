@@ -56,7 +56,7 @@ export default class BaseCalc {
   // Array of the names of all equipped items (for quick checks)
   protected allEquippedItems!: string[];
 
-  protected userIssues: UserIssue[] = [];
+  userIssues: UserIssue[] = [];
 
   constructor(player: Player, monster: Monster, opts: CalcOpts = {}) {
     this.opts = {
