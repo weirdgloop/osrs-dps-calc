@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
-import React, { useMemo } from 'react';
+import React from 'react';
 import CombatStyle from '@/app/components/player/combat/CombatStyle';
 import SpellSelect from '@/app/components/player/combat/SpellSelect';
 import Toggle from '@/app/components/generic/Toggle';
@@ -12,11 +12,12 @@ import sunfire_rune from '@/public/img/misc/sunfire_rune.webp';
 const Combat: React.FC = observer(() => {
   const store = useStore();
   const { spell, buffs, style } = store.player;
+
   // eslint-disable-next-line react/no-array-index-key
-  const styles = useMemo(() => store.availableCombatStyles.map((s, i) => <CombatStyle key={i} style={s} />), [store.availableCombatStyles]);
+  const styles = store.availableCombatStyles.map((s, i) => <CombatStyle key={i} style={s} />);
 
   // Determine whether there's any issues with spells
-  const spellIssues = useMemo(() => store.userIssues.filter((i) => i.type.startsWith('spell_') && i.loadout === `${store.selectedLoadout + 1}`), [store.userIssues, store.selectedLoadout]);
+  const spellIssues = store.userIssues.filter((i) => i.type.startsWith('spell_') && i.loadout === `${store.selectedLoadout + 1}`);
 
   return (
     <div>
