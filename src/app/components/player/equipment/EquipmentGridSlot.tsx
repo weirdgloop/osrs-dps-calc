@@ -1,5 +1,5 @@
 import { PlayerEquipment } from '@/types/Player';
-import React, { useMemo } from 'react';
+import React from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 import { getCdnImage } from '@/utils';
@@ -17,7 +17,7 @@ const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => 
   const isEmpty = !currentSlot;
 
   // Determine whether there's any issues with this element
-  const issues = useMemo(() => store.userIssues.filter((i) => i.type.startsWith(`equipment_slot_${slot}`) && i.loadout === `${store.selectedLoadout + 1}`), [store.userIssues, store.selectedLoadout, slot]);
+  const issues = store.userIssues.filter((i) => i.type.startsWith(`equipment_slot_${slot}`) && i.loadout === `${store.selectedLoadout + 1}`);
 
   return (
     <div className="h-[40px] w-[40px] relative">

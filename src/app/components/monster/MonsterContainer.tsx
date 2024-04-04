@@ -96,6 +96,9 @@ const MonsterContainer: React.FC = observer(() => {
   const { loadouts, monster, prefs } = store;
   const [attributesExpanded, setAttributesExpanded] = useState(false);
 
+  // Determine whether there's any issues with this element
+  const issues = store.userIssues.filter((i) => i.type.startsWith('monster_overall') && (!i.loadout || i.loadout === `${store.selectedLoadout + 1}`));
+
   // Don't automatically update the stat inputs if manual editing is on
   const monsterJS = toJS(monster);
   const displayMonster = useMemo(() => {
@@ -287,6 +290,13 @@ const MonsterContainer: React.FC = observer(() => {
             </a>
           )}
         </div>
+        {
+          issues.length > 0 && (
+            <div className="bg-orange-400 border-b border-orange-300 text-xs px-4 py-1">
+              {issues[0].message}
+            </div>
+          )
+        }
         <div className="py-4 px-4">
           <div className="mb-4">
             <MonsterSelect />
