@@ -11,7 +11,12 @@ import {
   WeightedHit,
 } from '@/lib/HitDist';
 import {
-  getSpellement, getSpellMaxHit, isBindSpell, isFireSpell, isWaterSpell,
+  getSpellement,
+  getSpellMaxHit,
+  canUseSunfireRunes,
+  isBindSpell,
+  isFireSpell,
+  isWaterSpell,
 } from '@/types/Spell';
 import {
   PrayerData, PrayerMap,
@@ -40,7 +45,6 @@ import {
   AmmoApplicability,
   ammoApplicability,
 } from '@/lib/Equipment';
-import { UserIssue } from '@/types/State';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { getRangedDamageType } from '@/types/PlayerCombatStyle';
@@ -50,8 +54,6 @@ import { getRangedDamageType } from '@/types/PlayerCombatStyle';
  */
 export default class PlayerVsNPCCalc extends BaseCalc {
   private memoizedDist?: AttackDistribution;
-
-  public userIssues: UserIssue[] = [];
 
   constructor(player: Player, monster: Monster, opts: Partial<CalcOpts> = {}) {
     super(player, monster, opts);
@@ -359,7 +361,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   private getPlayerMaxRangedHit() {
     const { style } = this.player;
 
-    let effectiveLevel: number = this.track(DetailKey.DAMAGE_LEVEL, this.player.skills.ranged + this.player.boosts.ranged);
+    let effectiveLevel: number = this.player.skills.ranged + this.player.boosts.ranged;
+    if (this.wearing('Eclipse atlatl')) {
+      // atlatl uses strength instead of ranged skill, melee strength bonus, and melee buff from slayer helmet/salve, but works with ranged void
+      effectiveLevel = this.player.skills.str + this.player.boosts.str;
+    }
+    this.track(DetailKey.DAMAGE_LEVEL, effectiveLevel);
+
     for (const p of this.getCombatPrayers(false)) {
       effectiveLevel = this.trackFactor(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, p.factorStrength!);
     }
@@ -376,7 +384,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       effectiveLevel = Math.trunc(effectiveLevel * 11 / 10);
     }
 
-    let maxHit = Math.trunc((effectiveLevel * (this.player.bonuses.ranged_str + 64) + 320) / 640);
+    const bonusStr = this.wearing('Eclipse atlatl') ? this.player.bonuses.str : this.player.bonuses.ranged_str;
+    let maxHit = Math.trunc((effectiveLevel * (bonusStr + 64) + 320) / 640);
 
     // tested this in-game, slayer helmet (i) + crystal legs + crystal body + bowfa, on accurate, no rigour, 99 ranged
     // max hit is 36, but would be 37 if placed after slayer helm
@@ -391,9 +400,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
       const factor = <Factor>[buffs.forinthrySurge ? 27 : 24, 20];
       maxHit = this.trackFactor(DetailKey.MAX_HIT_FORINTHRY_SURGE, maxHit, factor);
-    } else if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
+    } else if ((this.wearing('Salve amulet(ei)') || (this.wearing('Eclipse atlatl') && this.wearing('Salve amulet (e)'))) && mattrs.includes(MonsterAttribute.UNDEAD)) {
       maxHit = Math.trunc(maxHit * 6 / 5);
-    } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
+    } else if ((this.wearing('Salve amulet(i)') || (this.wearing('Eclipse atlatl') && this.wearing('Salve amulet'))) && mattrs.includes(MonsterAttribute.UNDEAD)) {
+      maxHit = Math.trunc(maxHit * 7 / 6);
+    } else if (this.wearing('Eclipse atlatl') && this.isWearingBlackMask() && buffs.onSlayerTask) {
       maxHit = Math.trunc(maxHit * 7 / 6);
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
       maxHit = Math.trunc(maxHit * 23 / 20);
@@ -743,6 +754,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       ]);
     }
 
+    // todo determine where this effect should happen relative to others
+    if (this.player.buffs.usingSunfireRunes && canUseSunfireRunes(this.player.spell)) {
+      dist = new AttackDistribution([HitDistribution.linear(acc, Math.trunc(max / 10), max)]);
+    }
+
     if (this.isUsingMeleeStyle() && this.isWearingFang()) {
       const shrink = Math.trunc(max * 3 / 20);
       dist = new AttackDistribution(
@@ -792,6 +808,18 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         hits.push(HitDistribution.linear(acc, 0, Math.floor(max / (2 ** i))));
       }
       dist = new AttackDistribution(hits);
+    }
+
+    if (this.isUsingMeleeStyle() && this.wearing('Dual macuahuitl')) {
+      // assume the first hit is accurate, roll the second hit and zip it with possible first hitsplats
+      const secondHit = HitDistribution.linear(acc, 0, Math.trunc(max / 2));
+      const doubleHitDist = HitDistribution.linear(1.0, 0, max - Math.trunc(max / 2)).transform((h) => HitDistribution.single(1.0, h).zip(secondHit));
+
+      // scale that dist back down to the accuracy space
+      const effectDist = doubleHitDist.scaleProbability(acc);
+      effectDist.addHit(new WeightedHit(1 - acc, [0, 0])); // add back in the inaccurate hit
+
+      dist = new AttackDistribution([effectDist]);
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingKeris() && mattrs.includes(MonsterAttribute.KALPHITE)) {
@@ -1081,14 +1109,15 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   public getHtk() {
     const dist = this.getDistribution();
     const hist = dist.asHistogram();
-    const max = dist.getMax();
+    const startHp = this.monster.inputs.monsterCurrentHp;
+    const max = Math.min(startHp, dist.getMax());
     if (max === 0) {
       return 0;
     }
 
-    const htk = new Float64Array(this.monster.inputs.monsterCurrentHp + 1); // 0 hits left to do if hp = 0
+    const htk = new Float64Array(startHp + 1); // 0 hits left to do if hp = 0
 
-    for (let hp = 1; hp <= this.monster.inputs.monsterCurrentHp; hp++) {
+    for (let hp = 1; hp <= startHp; hp++) {
       let val = 1.0; // takes at least one hit
       for (let hit = 1; hit <= Math.min(hp, max); hit++) {
         const p = hist[hit];
@@ -1098,7 +1127,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       htk[hp] = val / (1 - hist[0].value);
     }
 
-    return htk[this.monster.inputs.monsterCurrentHp];
+    return htk[startHp];
   }
 
   /**

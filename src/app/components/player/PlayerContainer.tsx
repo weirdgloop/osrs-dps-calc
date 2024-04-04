@@ -5,6 +5,7 @@ import { calculateCombatLevel } from '@/utils';
 import PlayerInnerContainer from '@/app/components/player/PlayerInnerContainer';
 import LoadoutName from '@/app/components/player/LoadoutName';
 import { IconPlus, IconTrash } from '@tabler/icons-react';
+// import WikiSyncButton from 'src/app/components/player/WikiSyncButton';
 
 const PlayerContainer: React.FC = observer(() => {
   const store = useStore();
@@ -59,7 +60,8 @@ const PlayerContainer: React.FC = observer(() => {
               {calculateCombatLevel(player.skills)}
             </div>
           </div>
-          <div>
+          <div className="flex gap-1">
+            {/* <WikiSyncButton /> */}
             <button
               type="button"
               onClick={() => deleteLoadout(selectedLoadout)}

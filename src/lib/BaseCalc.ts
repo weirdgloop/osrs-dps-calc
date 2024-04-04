@@ -56,7 +56,7 @@ export default class BaseCalc {
   // Array of the names of all equipped items (for quick checks)
   protected allEquippedItems!: string[];
 
-  protected userIssues: UserIssue[] = [];
+  userIssues: UserIssue[] = [];
 
   constructor(player: Player, monster: Monster, opts: CalcOpts = {}) {
     this.opts = {
@@ -533,6 +533,17 @@ export default class BaseCalc {
 
   private sanitizeInputs() {
     const eq = this.player.equipment;
+
+    // make sure monsterCurrentHp is set and valid
+    if (!this.monster.inputs.monsterCurrentHp || this.monster.inputs.monsterCurrentHp > this.monster.skills.hp) {
+      this.monster = {
+        ...this.monster,
+        inputs: {
+          ...this.monster.inputs,
+          monsterCurrentHp: this.monster.skills.hp,
+        },
+      };
+    }
 
     // we should do clone-edits here to prevent affecting ui state
     if (!CAST_STANCES.includes(this.player.style.stance)) {

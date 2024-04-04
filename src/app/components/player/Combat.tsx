@@ -6,6 +6,8 @@ import SpellSelect from '@/app/components/player/combat/SpellSelect';
 import Toggle from '@/app/components/generic/Toggle';
 import SpellContainer from '@/app/components/player/combat/SpellContainer';
 import UserIssueWarning from '@/app/components/generic/UserIssueWarning';
+import { canUseSunfireRunes } from '@/types/Spell';
+import sunfire_rune from '@/public/img/misc/sunfire_rune.webp';
 
 const Combat: React.FC = observer(() => {
   const store = useStore();
@@ -37,6 +39,31 @@ const Combat: React.FC = observer(() => {
               <SpellSelect />
             </div>
             <div className="my-4">
+              {
+                canUseSunfireRunes(spell) && (
+                  <Toggle
+                    checked={buffs.usingSunfireRunes}
+                    setChecked={(v) => {
+                      store.updatePlayer({ buffs: { usingSunfireRunes: v } });
+                    }}
+                    label={(
+                      <>
+                        <img src={sunfire_rune.src} width={18} className="inline-block" alt="" />
+                        {' '}
+                        Using sunfire runes
+                        {' '}
+                        <span
+                          className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+                          data-tooltip-id="tooltip"
+                          data-tooltip-content="Increases minimum hit by 10%."
+                        >
+                          ?
+                        </span>
+                      </>
+                    )}
+                  />
+                )
+              }
               {
                 ['Saradomin Strike', 'Claws of Guthix', 'Flames of Zamorak'].includes(spell?.name || '') && (
                   <Toggle

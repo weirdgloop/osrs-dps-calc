@@ -24,11 +24,11 @@ export enum CompareXAxis {
 }
 
 export enum CompareYAxis {
-  // TTK,
   PLAYER_DPS,
   PLAYER_EXPECTED_HIT,
   MONSTER_DPS,
   DAMAGE_TAKEN,
+  PLAYER_TTK,
 }
 
 interface InputSet {
@@ -193,6 +193,10 @@ export default class Comparator {
 
       case CompareYAxis.PLAYER_EXPECTED_HIT:
         apply((l) => forwardCalc(l).getDistribution().getExpectedDamage().toFixed(DPS_PRECISION));
+        break;
+
+      case CompareYAxis.PLAYER_TTK:
+        apply((l) => forwardCalc(l).getTtk().toFixed(DPS_PRECISION));
         break;
 
       case CompareYAxis.MONSTER_DPS:

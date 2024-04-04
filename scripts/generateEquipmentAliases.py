@@ -86,6 +86,7 @@ one_off_renames = {
     "Sanguine scythe of vitur": "Scythe of vitur",
     "Dragon hunter crossbow (b)": "Dragon hunter crossbow",
     "Obsidian cape (r)": "Obsidian cape",
+    "Elidinis' ward (or)": "Elidinis' ward (f)"
 }
 
 def main():
@@ -120,8 +121,12 @@ def main():
         decoration_kit_match = re.match(r"(.*)\((?:g|t|(h)\d|guthix|saradomin|zamorak|or|cr|Hallowed|Trailblazer|Ithell|Iorwerth|Trahaearn|Cadarn|Crwys|Meilyr|Hefin|Amlodd|upgraded|light|dark|dusk|lit)\)$", item['name'])
         magic_robe_kit_match = re.match(r"^(?:Dark|Light|Twisted) ((?:infinity|ancestral) .*)$", item['name'])
 
+        # One off items:
+        if item['name'] in one_off_renames:
+            assert item['version'] in ['', 'Empty', 'Charged', 'Uncharged'], "Only certain versions are expected: %s" % item
+            handle_base_variant(all_items, item, one_off_renames[item['name']], [item['version']])
         # Ava's assembler variants (Must be before locked due to the base name change)
-        if re.match(r"^Masori assembler(|\(l\))$", item['name']):
+        elif re.match(r"^Masori assembler(|\(l\))$", item['name']):
             handle_base_variant(all_items, item, "Ava's assembler", ['Normal'])
         # Locked variants
         elif item['version'] == 'Locked':
@@ -164,10 +169,6 @@ def main():
         # Granite maul variants
         elif (item['name'] == "Granite maul" and item['version'] != "Normal") or item['name'] == "Granite maul (or)":
             handle_base_variant(all_items, item, 'Granite maul', ['Normal'])
-        # One off items:
-        elif item['name'] in one_off_renames:
-            assert item['version'] in ['', 'Empty', 'Charged', 'Uncharged'], "Only certain versions are expected: %s" % item
-            handle_base_variant(all_items, item, one_off_renames[item['name']], [item['version']])
 
 
     for k, v in sorted(data.items(), key=lambda item: item[1].base_name):
