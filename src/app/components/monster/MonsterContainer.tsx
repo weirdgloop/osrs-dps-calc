@@ -97,7 +97,7 @@ const MonsterContainer: React.FC = observer(() => {
   const [attributesExpanded, setAttributesExpanded] = useState(false);
 
   // Determine whether there's any issues with this element
-  const issues = store.userIssues.filter((i) => i.type.startsWith('monster_overall') && !i.loadout || i.loadout === `${store.selectedLoadout + 1}`);
+  const issues = store.userIssues.filter((i) => i.type.startsWith('monster_overall') && (!i.loadout || i.loadout === `${store.selectedLoadout + 1}`));
 
   // Don't automatically update the stat inputs if manual editing is on
   const monsterJS = toJS(monster);
