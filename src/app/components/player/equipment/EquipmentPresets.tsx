@@ -90,7 +90,7 @@ const EquipmentPresets: React.FC = () => {
           name: v.label,
           equipment: {
             head: findItemById(27235), // Masori mask (f)
-            cape: findItemById(22109), // Ava's assembler
+            cape: findItemById(28955), // Blessed dizana's quiver
             neck: findItemById(19547), // Necklace of anguish
             ammo: findItemById(11212), // Dragon arrow
             body: findItemById(27238), // Masori body (f)
