@@ -293,5 +293,13 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
     totals.bonuses.magic_str += 3 * virtusPieces;
   }
 
+  const cape = playerEquipment.cape;
+  const dizanasQuiverCharged = cape?.name === "Blessed dizana's quiver"
+    || (cape?.name === "Dizana's quiver" && cape?.version === 'Charged');
+  if (dizanasQuiverCharged && ammoApplicability(player.equipment.weapon?.id, player.equipment.ammo?.id) === AmmoApplicability.INCLUDED) {
+    totals.offensive.ranged += 10;
+    totals.bonuses.ranged_str += 1;
+  }
+
   return totals;
 };
