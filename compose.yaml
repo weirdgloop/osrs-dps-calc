@@ -1,6 +1,6 @@
 version: '3.8'
 
-services: 
+services:
   data-scraper:
     build:
       context: .
@@ -8,13 +8,14 @@ services:
       target: scraper
     volumes:
       - ./cdn:/workspace/cdn
+      - ./src/lib/EquipmentAliases.ts:/workspace/src/lib/EquipmentAliases.ts
     develop:
       watch:
         - action: rebuild
           path: ./scripts
-  
+
   wiki-calc:
-    build: 
+    build:
       context: .
       dockerfile: .dev/Dockerfile-dev
       target: webapp
@@ -23,7 +24,7 @@ services:
       - ./.next:/workspace/.next
     ports:
       - "3000:3000"
-    deploy: 
+    deploy:
       resources:
         limits:
           memory: 16G
