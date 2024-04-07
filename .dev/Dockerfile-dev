@@ -6,7 +6,7 @@ WORKDIR /workspace/scripts
 
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install -r requirements.txt
-CMD ["sh", "-c", "python generateEquipment.py && python generateMonsters.py"]
+CMD ["sh", "-c", "python generateEquipment.py && python generateMonsters.py && python generateEquipmentAliases.py"]
 
 
 
