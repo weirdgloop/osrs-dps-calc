@@ -20679,7 +20679,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 4,
+      "ranged_str": 3,
       "magic_str": 0,
       "prayer": 0
     },
@@ -20688,7 +20688,7 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
-      "ranged": 28
+      "ranged": 18
     },
     "defensive": {
       "stab": 0,
@@ -20709,7 +20709,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 4,
+      "ranged_str": 3,
       "magic_str": 0,
       "prayer": 0
     },
@@ -20718,7 +20718,7 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
-      "ranged": 28
+      "ranged": 18
     },
     "defensive": {
       "stab": 0,
@@ -20739,7 +20739,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 4,
+      "ranged_str": 3,
       "magic_str": 0,
       "prayer": 0
     },
@@ -20748,7 +20748,7 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
-      "ranged": 28
+      "ranged": 18
     },
     "defensive": {
       "stab": 0,
@@ -46299,7 +46299,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 4,
+      "ranged_str": 3,
       "magic_str": 0,
       "prayer": 0
     },
@@ -46308,7 +46308,7 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
-      "ranged": 28
+      "ranged": 18
     },
     "defensive": {
       "stab": 0,
@@ -46329,7 +46329,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 4,
+      "ranged_str": 3,
       "magic_str": 0,
       "prayer": 0
     },
@@ -46338,7 +46338,7 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
-      "ranged": 28
+      "ranged": 18
     },
     "defensive": {
       "stab": 0,
@@ -46359,7 +46359,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 4,
+      "ranged_str": 3,
       "magic_str": 0,
       "prayer": 0
     },
@@ -46368,7 +46368,7 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
-      "ranged": 28
+      "ranged": 18
     },
     "defensive": {
       "stab": 0,
@@ -46419,7 +46419,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 4,
+      "ranged_str": 3,
       "magic_str": 0,
       "prayer": 0
     },
@@ -46428,7 +46428,7 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
-      "ranged": 28
+      "ranged": 18
     },
     "defensive": {
       "stab": 0,
@@ -72849,7 +72849,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 49,
+      "ranged_str": 60,
       "magic_str": 0,
       "prayer": 0
     },

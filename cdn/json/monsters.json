@@ -7,25 +7,25 @@
     "level": 78,
     "speed": 6,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 1,
     "max_hit": "8",
     "skills": {
-      "atk": 0,
-      "def": 0,
-      "hp": 50,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "atk": 72,
+      "def": 85,
+      "hp": 59,
+      "magic": 1,
+      "ranged": 1,
+      "str": 58
     },
     "offensive": {
-      "atk": 0,
+      "atk": 18,
       "magic": 0,
       "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
-      "str": 0
+      "str": 16
     },
     "defensive": {
       "crush": 0,
@@ -774,7 +774,7 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": "50+",
+    "max_hit": "50",
     "skills": {
       "atk": 80,
       "def": 2,
@@ -3430,7 +3430,7 @@
       "def": 68,
       "hp": 85,
       "magic": 1,
-      "ranged": 0,
+      "ranged": 1,
       "str": 72
     },
     "offensive": {
@@ -3508,7 +3508,7 @@
       "def": 68,
       "hp": 85,
       "magic": 1,
-      "ranged": 0,
+      "ranged": 72,
       "str": 72
     },
     "offensive": {
@@ -15887,7 +15887,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "ranged": -10,
       "slash": -10,
       "stab": -10
@@ -15924,7 +15924,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "ranged": -10,
       "slash": -10,
       "stab": -10
@@ -15961,7 +15961,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "ranged": -10,
       "slash": -10,
       "stab": -10
@@ -15998,7 +15998,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "ranged": -10,
       "slash": -10,
       "stab": -10
@@ -16035,7 +16035,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "ranged": -10,
       "slash": -10,
       "stab": -10
@@ -16072,7 +16072,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "ranged": -10,
       "slash": -10,
       "stab": -10
@@ -16109,7 +16109,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "ranged": -10,
       "slash": -10,
       "stab": -10
@@ -16146,7 +16146,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "ranged": -10,
       "slash": -10,
       "stab": -10
@@ -16183,7 +16183,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "ranged": -10,
       "slash": -10,
       "stab": -10
@@ -16220,7 +16220,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "ranged": -10,
       "slash": -10,
       "stab": -10
@@ -16257,7 +16257,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "ranged": -10,
       "slash": -10,
       "stab": -10
@@ -16294,7 +16294,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "ranged": -10,
       "slash": -10,
       "stab": -10
@@ -16331,7 +16331,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "ranged": -10,
       "slash": -10,
       "stab": -10
@@ -16368,7 +16368,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "ranged": -10,
       "slash": -10,
       "stab": -10
@@ -16405,7 +16405,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "ranged": -10,
       "slash": -10,
       "stab": -10
@@ -16442,7 +16442,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "ranged": -10,
       "slash": -10,
       "stab": -10
@@ -16479,7 +16479,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "ranged": -10,
       "slash": -10,
       "stab": -10
@@ -20576,7 +20576,7 @@
     "level": 149,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 1,
     "max_hit": "14",
@@ -25221,26 +25221,26 @@
     "version": "",
     "image": "Fremennik warband archer.png",
     "level": 104,
-    "speed": 5,
+    "speed": 6,
     "style": [
       "Ranged"
     ],
     "size": 1,
-    "max_hit": "1",
+    "max_hit": "14",
     "skills": {
       "atk": 110,
       "def": 80,
       "hp": 50,
       "magic": 110,
-      "ranged": 3,
+      "ranged": 110,
       "str": 110
     },
     "offensive": {
       "atk": 150,
       "magic": 150,
       "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
+      "ranged": 150,
+      "ranged_str": 10,
       "str": 150
     },
     "defensive": {
@@ -25260,16 +25260,16 @@
     "level": 104,
     "speed": 5,
     "style": [
-      "Melee"
+      "Stab"
     ],
     "size": 1,
-    "max_hit": "40",
+    "max_hit": "29",
     "skills": {
       "atk": 110,
       "def": 80,
       "hp": 50,
       "magic": 110,
-      "ranged": 3,
+      "ranged": 110,
       "str": 110
     },
     "offensive": {
@@ -25278,7 +25278,7 @@
       "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
-      "str": 150
+      "str": 90
     },
     "defensive": {
       "crush": 50,
@@ -25306,16 +25306,16 @@
       "def": 80,
       "hp": 50,
       "magic": 110,
-      "ranged": 3,
+      "ranged": 110,
       "str": 110
     },
     "offensive": {
-      "atk": 150,
+      "atk": 0,
       "magic": 150,
       "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
-      "str": 150
+      "str": 0
     },
     "defensive": {
       "crush": 50,
@@ -32755,6 +32755,376 @@
     "attributes": []
   },
   {
+    "id": 13100,
+    "name": "Guard (Varlamore)",
+    "version": "1",
+    "image": "Guard (Varlamore).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 19,
+      "magic": -4,
+      "ranged": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": []
+  },
+  {
+    "id": 13109,
+    "name": "Guard (Varlamore)",
+    "version": "10",
+    "image": "Guard (Varlamore) (10).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 19,
+      "magic": -4,
+      "ranged": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": []
+  },
+  {
+    "id": 13101,
+    "name": "Guard (Varlamore)",
+    "version": "2",
+    "image": "Guard (Varlamore) (2).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 19,
+      "magic": -4,
+      "ranged": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": []
+  },
+  {
+    "id": 13102,
+    "name": "Guard (Varlamore)",
+    "version": "3",
+    "image": "Guard (Varlamore) (3).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 19,
+      "magic": -4,
+      "ranged": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": []
+  },
+  {
+    "id": 13103,
+    "name": "Guard (Varlamore)",
+    "version": "4",
+    "image": "Guard (Varlamore) (4).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 19,
+      "magic": -4,
+      "ranged": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": []
+  },
+  {
+    "id": 13104,
+    "name": "Guard (Varlamore)",
+    "version": "5",
+    "image": "Guard (Varlamore) (5).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 19,
+      "magic": -4,
+      "ranged": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": []
+  },
+  {
+    "id": 13105,
+    "name": "Guard (Varlamore)",
+    "version": "6",
+    "image": "Guard (Varlamore) (6).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 19,
+      "magic": -4,
+      "ranged": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": []
+  },
+  {
+    "id": 13106,
+    "name": "Guard (Varlamore)",
+    "version": "7",
+    "image": "Guard (Varlamore) (7).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 19,
+      "magic": -4,
+      "ranged": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": []
+  },
+  {
+    "id": 13107,
+    "name": "Guard (Varlamore)",
+    "version": "8",
+    "image": "Guard (Varlamore) (8).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 19,
+      "magic": -4,
+      "ranged": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": []
+  },
+  {
+    "id": 13108,
+    "name": "Guard (Varlamore)",
+    "version": "9",
+    "image": "Guard (Varlamore) (9).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 19,
+      "magic": -4,
+      "ranged": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": []
+  },
+  {
     "id": 5185,
     "name": "Guard (dwarf)",
     "version": "",
@@ -34146,7 +34516,7 @@
       "atk": 0,
       "def": 30,
       "hp": 35,
-      "magic": 0,
+      "magic": 1,
       "ranged": 30,
       "str": 0
     },
@@ -34284,7 +34654,7 @@
     "version": "",
     "image": "H.A.M. Mage.png",
     "level": 30,
-    "speed": 6,
+    "speed": 10,
     "style": [
       "Magic"
     ],
@@ -40963,9 +41333,9 @@
   },
   {
     "id": 1494,
-    "name": "Kebbit",
+    "name": "Kebbit (Eagles' Peak)",
     "version": "",
-    "image": "Kebbit.png",
+    "image": "Kebbit (Eagles' Peak).png",
     "level": 13,
     "speed": 4,
     "style": [
@@ -44995,7 +45365,7 @@
     },
     "defensive": {
       "crush": 0,
-      "magic": 0,
+      "magic": 75,
       "ranged": 0,
       "slash": 0,
       "stab": 0
@@ -45644,7 +46014,7 @@
       "Magic"
     ],
     "size": 3,
-    "max_hit": "35",
+    "max_hit": "31 (Melee)",
     "skills": {
       "atk": 300,
       "def": 250,
@@ -47189,7 +47559,7 @@
       "str": 130
     },
     "offensive": {
-      "atk": 0,
+      "atk": 50,
       "magic": 0,
       "magic_str": 0,
       "ranged": 0,
@@ -48189,7 +48559,7 @@
     "style": [
       "Crush"
     ],
-    "size": 0,
+    "size": 4,
     "max_hit": "9",
     "skills": {
       "atk": 95,
@@ -48226,7 +48596,7 @@
     "style": [
       "Crush"
     ],
-    "size": 0,
+    "size": 4,
     "max_hit": "9",
     "skills": {
       "atk": 95,
@@ -50999,7 +51369,7 @@
     "level": 149,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 1,
     "max_hit": "14",
@@ -51103,6 +51473,43 @@
     "attributes": []
   },
   {
+    "id": 13006,
+    "name": "Oryx",
+    "version": "",
+    "image": "Oryx.png",
+    "level": 15,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "2",
+    "skills": {
+      "atk": 11,
+      "def": 13,
+      "hp": 19,
+      "magic": 1,
+      "ranged": 1,
+      "str": 13
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
     "id": 8994,
     "name": "Othainian",
     "version": "",
@@ -51188,7 +51595,7 @@
     "level": 149,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 1,
     "max_hit": "14",
@@ -51847,6 +52254,43 @@
       "ranged": 120,
       "slash": 80,
       "stab": 60
+    },
+    "attributes": []
+  },
+  {
+    "id": 12833,
+    "name": "Passionate Supporter",
+    "version": "",
+    "image": "Passionate Supporter.png",
+    "level": 7,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 10,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
     },
     "attributes": []
   },
@@ -64840,8 +65284,8 @@
     "level": 321,
     "speed": 6,
     "style": [
-      "Slash",
-      "Magic"
+      "Magic",
+      "Stab"
     ],
     "size": 5,
     "max_hit": "38",
@@ -68957,9 +69401,11 @@
     "image": "Strangled Bear.png",
     "level": 197,
     "speed": 4,
-    "style": null,
+    "style": [
+      "Typeless"
+    ],
     "size": 3,
-    "max_hit": "5",
+    "max_hit": "6",
     "skills": {
       "atk": 0,
       "def": 0,
@@ -68992,7 +69438,9 @@
     "image": "Strangled Boar.png",
     "level": 166,
     "speed": 4,
-    "style": null,
+    "style": [
+      "Typeless"
+    ],
     "size": 1,
     "max_hit": "4",
     "skills": {
@@ -69027,9 +69475,270 @@
     "image": "Strangled Lynx.png",
     "level": 182,
     "speed": 4,
-    "style": null,
+    "style": [
+      "Typeless"
+    ],
     "size": 2,
     "max_hit": "5",
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 50,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12268,
+    "name": "Strangled",
+    "version": "Level 138, Strangled 1",
+    "image": "Strangled (1).png",
+    "level": 138,
+    "speed": 4,
+    "style": [
+      "Typeless"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 40,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12269,
+    "name": "Strangled",
+    "version": "Level 138, Strangled 2",
+    "image": "Strangled (2).png",
+    "level": 138,
+    "speed": 4,
+    "style": [
+      "Typeless"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 40,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12270,
+    "name": "Strangled",
+    "version": "Level 138, Strangled 3",
+    "image": "Strangled (3).png",
+    "level": 138,
+    "speed": 4,
+    "style": [
+      "Typeless"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 40,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12271,
+    "name": "Strangled",
+    "version": "Level 138, Strangled 4",
+    "image": "Strangled (4).png",
+    "level": 138,
+    "speed": 4,
+    "style": [
+      "Typeless"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 40,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12272,
+    "name": "Strangled",
+    "version": "Level 149, Strangled 1",
+    "image": "Strangled (5).png",
+    "level": 149,
+    "speed": 4,
+    "style": [
+      "Typeless"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 50,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12273,
+    "name": "Strangled",
+    "version": "Level 149, Strangled 2",
+    "image": "Strangled (6).png",
+    "level": 149,
+    "speed": 4,
+    "style": [
+      "Typeless"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 50,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12274,
+    "name": "Strangled",
+    "version": "Level 149, Strangled 3",
+    "image": "Strangled (7).png",
+    "level": 149,
+    "speed": 4,
+    "style": [
+      "Typeless"
+    ],
+    "size": 1,
+    "max_hit": "3",
     "skills": {
       "atk": 0,
       "def": 0,
@@ -69169,8 +69878,45 @@
     "attributes": []
   },
   {
-    "id": 12879,
+    "id": 13033,
     "name": "Sulphur Nagua",
+    "version": "",
+    "image": "Sulphur Nagua.png",
+    "level": 98,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "11",
+    "skills": {
+      "atk": 90,
+      "def": 40,
+      "hp": 100,
+      "magic": 50,
+      "ranged": 1,
+      "str": 105
+    },
+    "offensive": {
+      "atk": 90,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 10,
+      "magic": 200,
+      "ranged": 200,
+      "slash": 50,
+      "stab": 50
+    },
+    "attributes": []
+  },
+  {
+    "id": 12879,
+    "name": "Sulphur Nagua (Perilous Moons)",
     "version": "",
     "image": "Sulphur Nagua.png",
     "level": 98,
@@ -69969,7 +70715,7 @@
       "Typeless Ranged"
     ],
     "size": 2,
-    "max_hit": "9",
+    "max_hit": "7",
     "skills": {
       "atk": 120,
       "def": 70,
@@ -70794,17 +71540,17 @@
     "level": 108,
     "speed": 6,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 1,
     "max_hit": "8",
     "skills": {
-      "atk": 0,
-      "def": 0,
-      "hp": 140,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "atk": 72,
+      "def": 105,
+      "hp": 144,
+      "magic": 1,
+      "ranged": 1,
+      "str": 71
     },
     "offensive": {
       "atk": 0,
@@ -71340,6 +72086,228 @@
       "ranged": 900,
       "slash": 4,
       "stab": 11
+    },
+    "attributes": []
+  },
+  {
+    "id": 13291,
+    "name": "Thief (Varlamore)",
+    "version": "1",
+    "image": "Thief (Varlamore, 1).png",
+    "level": 23,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 14,
+      "def": 12,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 13
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 13292,
+    "name": "Thief (Varlamore)",
+    "version": "2",
+    "image": "Thief (Varlamore, 2).png",
+    "level": 23,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 14,
+      "def": 12,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 13
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 13293,
+    "name": "Thief (Varlamore)",
+    "version": "3",
+    "image": "Thief (Varlamore, 3).png",
+    "level": 23,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 14,
+      "def": 12,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 13
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 13294,
+    "name": "Thief (Varlamore)",
+    "version": "4",
+    "image": "Thief (Varlamore, 4).png",
+    "level": 23,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 14,
+      "def": 12,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 13
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 13295,
+    "name": "Thief (Varlamore)",
+    "version": "5",
+    "image": "Thief (Varlamore, 5).png",
+    "level": 23,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 14,
+      "def": 12,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 13
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 13296,
+    "name": "Thief (Varlamore)",
+    "version": "6",
+    "image": "Thief (Varlamore, 6).png",
+    "level": 23,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 14,
+      "def": 12,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 13
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
     },
     "attributes": []
   },
@@ -75016,7 +75984,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000037-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000001D-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -75054,7 +76022,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000037-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000001D-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -76126,7 +77094,7 @@
     "level": 149,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 1,
     "max_hit": "14",
@@ -76244,7 +77212,7 @@
     "level": 149,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 1,
     "max_hit": "14",
@@ -76904,7 +77872,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000011-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000006-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -76941,7 +77909,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000013-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000008-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
