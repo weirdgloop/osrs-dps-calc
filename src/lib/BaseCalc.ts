@@ -458,7 +458,8 @@ export default class BaseCalc {
       return isStab;
     }
 
-    if (weapon.name.includes('spear')) {
+    // https://twitter.com/JagexAsh/status/1777673598099968104
+    if (weapon.name.includes('spear') && weapon.name !== 'Blue moon spear') {
       return isStab;
     }
 
