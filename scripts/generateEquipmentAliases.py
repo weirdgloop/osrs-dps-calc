@@ -142,6 +142,9 @@ def main():
         # Sanguine Torva
         elif sanguine_torva_match:
             handle_base_variant(all_items, item, 'T%s' % (sanguine_torva_match.group(1) or ''), ['Restored'])
+        # Amulet of glory variants
+        elif (item['name'] == 'Amulet of glory' and item['version'] != 'Uncharged') or item['name'] == 'Amulet of glory (t)' or item['name'] == 'Amulet of eternal glory':
+            handle_base_variant(all_items, item, 'Amulet of glory', ['Uncharged'])
         # Decoration kit variants
         elif decoration_kit_match:
             base_item_name = decoration_kit_match.group(1).strip()
@@ -169,7 +172,6 @@ def main():
         # Granite maul variants
         elif (item['name'] == "Granite maul" and item['version'] != "Normal") or item['name'] == "Granite maul (or)":
             handle_base_variant(all_items, item, 'Granite maul', ['Normal'])
-
 
     for k, v in sorted(data.items(), key=lambda item: item[1].base_name):
         dataJs += '\n  %s: %s, // %s%s' % (k, v.alias_ids, v.base_name, f"#{v.base_version}" if v.base_version else "")

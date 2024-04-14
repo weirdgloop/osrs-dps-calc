@@ -18,6 +18,7 @@ const equipmentAliases = {
   4710: [4866, 4862, 4865, 4864, 4863], // Ahrim's staff#Undamaged
   1729: [23309], // Amulet of defence
   6585: [12436], // Amulet of fury
+  1704: [19707, 1706, 1708, 1710, 1712, 11976, 11978, 10360, 10358, 10356, 10354, 11966, 11964, 10362], // Amulet of glory#Uncharged
   1727: [10366], // Amulet of magic
   1731: [23354], // Amulet of power
   19553: [20366], // Amulet of torture
