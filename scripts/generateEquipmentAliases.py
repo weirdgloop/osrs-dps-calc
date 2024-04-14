@@ -118,7 +118,7 @@ def main():
     for item in all_items:
         slayer_helm_match = re.match(r"^(?:Black|Green|Red|Purple|Turquoise|Hydra|Twisted|Tztok|Vampyric|Tzkal) slayer helmet( \(i\))?$", item['name'])
         sanguine_torva_match = re.match(r"^Sanguine t(orva (full helm|platebody|platelegs))$", item['name'])
-        decoration_kit_match = re.match(r"(.*)\((?:g|t|(h)\d|guthix|saradomin|zamorak|or|cr|Hallowed|Trailblazer|Ithell|Iorwerth|Trahaearn|Cadarn|Crwys|Meilyr|Hefin|Amlodd|upgraded|light|dark|dusk|lit)\)$", item['name'])
+        decoration_kit_match = re.match(r"(.*)\((?:g|t|(h)\d|Arrav|Asgarnia|Dorgeshuun|Dragon|Fairy|Guthix|HAM|Horse|Jogre|Kandarin|Misthalin|Money|Saradomin|Skull|Varrock|Zamorak|or|cr|Hallowed|Trailblazer|Ithell|Iorwerth|Trahaearn|Cadarn|Crwys|Meilyr|Hefin|Amlodd|upgraded|light|dark|dusk|lit)\)$", item['name'], re.IGNORECASE)
         magic_robe_kit_match = re.match(r"^(?:Dark|Light|Twisted) ((?:infinity|ancestral) .*)$", item['name'])
 
         # One off items:
