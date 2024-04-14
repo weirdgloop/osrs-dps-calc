@@ -635,18 +635,18 @@
     "version": "",
     "slot": "weapon",
     "image": "3rd age felling axe.png",
-    "speed": 5,
+    "speed": 7,
     "category": "Axe",
     "bonuses": {
-      "str": 42,
+      "str": 67,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": -2,
-      "slash": 38,
-      "crush": 32,
+      "stab": -3,
+      "slash": 60,
+      "crush": 51,
       "magic": 0,
       "ranged": 0
     },
@@ -22464,7 +22464,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 23,
-      "magic": 22,
+      "magic": 32,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -22494,7 +22494,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 23,
-      "magic": 22,
+      "magic": 32,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -22524,7 +22524,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 23,
-      "magic": 22,
+      "magic": 32,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -118787,7 +118787,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": -21,
+      "magic": -4,
       "ranged": -11
     },
     "defensive": {
