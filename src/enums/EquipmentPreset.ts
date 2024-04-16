@@ -1,4 +1,5 @@
 enum EquipmentPreset {
+  BOWFA,
   DHAROKS,
   MAX_MAGE,
   MAX_MELEE,
