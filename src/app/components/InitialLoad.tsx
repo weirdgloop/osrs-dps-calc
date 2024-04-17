@@ -39,7 +39,8 @@ const InitialLoad: React.FC = observer(() => {
             store.updateUIState({ username: u as string });
             if (u) store.fetchCurrentPlayerSkills();
           })
-          .catch(() => {}));
+          .catch(() => {})
+          .finally(() => store.startStorageUpdater()));
     }
 
     const monster = searchParams.get('monster');

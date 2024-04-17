@@ -1,4 +1,5 @@
 import {
+  autorun, IReactionDisposer,
   IReactionPublic, makeAutoObservable, reaction, toJS,
 } from 'mobx';
 import React, { createContext, useContext } from 'react';
@@ -241,6 +242,8 @@ class GlobalState implements State {
    */
   wikisync: Map<number, WikiSyncer> = new Map();
 
+  private storageUpdater?: IReactionDisposer;
+
   constructor() {
     makeAutoObservable(this, {}, { autoBind: true });
 
@@ -366,6 +369,20 @@ class GlobalState implements State {
    */
   get validWikiSyncInstances() {
     return new Map([...this.wikisync].filter(([, v]) => v.username));
+  }
+
+  /**
+   * Initialises the autorun function for updating dps-calc-state when something changes.
+   * This should only ever be called once.
+   */
+  startStorageUpdater() {
+    if (this.storageUpdater) {
+      console.warn('[GlobalState] StorageUpdater is already set!');
+    }
+    this.storageUpdater = autorun(() => {
+      // Save their application state to browser storage
+      localforage.setItem('dps-calc-state', toJS(this.asImportableData)).catch(() => {});
+    });
   }
 
   setCalcWorker(worker: CalcWorker) {
