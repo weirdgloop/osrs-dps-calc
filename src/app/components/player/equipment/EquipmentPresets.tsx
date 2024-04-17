@@ -12,6 +12,7 @@ const EquipmentPresets: React.FC = () => {
   const store = useStore();
 
   const presets = [
+    { label: 'Bowfa + Crystal', value: EquipmentPreset.BOWFA },
     { label: 'Dharok\'s equipment', value: EquipmentPreset.DHAROKS },
     { label: 'Max Mage', value: EquipmentPreset.MAX_MAGE },
     { label: 'Max Melee', value: EquipmentPreset.MAX_MELEE },
@@ -32,6 +33,24 @@ const EquipmentPresets: React.FC = () => {
     const findItemById = (id: number) => availableEquipment.find((eq) => eq.id === id);
 
     switch (v?.value) {
+      case EquipmentPreset.BOWFA: {
+        newPlayer = {
+          name: v.label,
+          equipment: {
+            head: findItemById(23971), // Crystal helm
+            cape: findItemById(28955), // Blessed dizana's quiver
+            neck: findItemById(19547), // Necklace of anguish
+            ammo: findItemById(22947), // Rada's blessing 4
+            weapon: findItemById(25865), // Bow of faerdhinen
+            body: findItemById(23975), // Crystal body
+            legs: findItemById(23979), // Crystal legs
+            hands: findItemById(26235), // Zaryte vambraces
+            feet: findItemById(13237), // Pegasian boots
+            ring: findItemById(28310), // Venator ring
+          },
+        };
+        break;
+      }
       case EquipmentPreset.DHAROKS: {
         newPlayer = {
           name: v.label,
