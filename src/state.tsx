@@ -301,6 +301,17 @@ class GlobalState implements State {
   }
 
   /**
+   * Get the importable version of the current UI state
+   */
+  get asImportableData(): ImportableData {
+    return {
+      loadouts: toJS(this.loadouts),
+      monster: toJS(this.monster),
+      selectedLoadout: this.selectedLoadout,
+    };
+  }
+
+  /**
    * Get the currently selected player (loadout)
    */
   get player() {
@@ -435,7 +446,7 @@ class GlobalState implements State {
       });
     }
 
-    // Expand some minified fields with thier full metadata
+    // Expand some minified fields with their full metadata
     const loadouts = parseLoadoutsFromImportedData(data);
 
     // manually recompute equipment in case their metadata has changed since the shortlink was created
