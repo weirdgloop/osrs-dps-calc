@@ -5,7 +5,8 @@ import {
   CalcResponse,
   CalcResponsesUnion,
   WORKER_JSON_REPLACER,
-  WORKER_JSON_REVIVER, WorkerRequestType,
+  WORKER_JSON_REVIVER,
+  WorkerRequestType,
 } from '@/worker/CalcWorkerTypes';
 import { Debouncer, DeferredPromise } from '@/utils';
 import React, {
@@ -23,14 +24,17 @@ export class CalcWorker {
 
   private worker?: Worker;
 
-  // optional
-  private debouncer?: Debouncer;
+  private debouncers: { [k in WorkerRequestType]?: Debouncer } = {};
 
   private sequenceId: number = 0;
 
   constructor() {
     this.id = CalcWorker.SELF_ID;
     CalcWorker.SELF_ID += 1;
+
+    for (const t of Object.values(WorkerRequestType)) {
+      this.debouncers[t as WorkerRequestType] = new Debouncer(250);
+    }
   }
 
   public initWorker() {
@@ -49,10 +53,6 @@ export class CalcWorker {
     }
   }
 
-  public setDebouncer(debouncer: Debouncer) {
-    this.debouncer = debouncer;
-  }
-
   public isReady(): boolean {
     return this.worker !== undefined;
   }
@@ -66,8 +66,8 @@ export class CalcWorker {
       return Promise.reject(new Error('worker is not initialized and cannot handle requests'));
     }
 
-    if (this.debouncer) {
-      await this.debouncer.debounce();
+    if (Object.prototype.hasOwnProperty.call(this.debouncers, req.type)) {
+      await this.debouncers[req.type]?.debounce();
     }
 
     // we use these ids to map the response back to the promise

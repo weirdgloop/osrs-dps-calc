@@ -14,7 +14,7 @@ import { Monster } from '@/types/Monster';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { toast } from 'react-toastify';
 import {
-  Debouncer, fetchPlayerSkills, fetchShortlinkData, getCombatStylesForCategory, PotionMap,
+  fetchPlayerSkills, fetchShortlinkData, getCombatStylesForCategory, PotionMap,
 } from '@/utils';
 import { ComputeBasicRequest, ComputeReverseRequest, WorkerRequestType } from '@/worker/CalcWorkerTypes';
 import getMonsters from '@/lib/Monsters';
@@ -33,8 +33,6 @@ import {
 } from './enums/Prayer';
 import Potion from './enums/Potion';
 import { WikiSyncer } from './wikisync/WikiSyncer';
-
-const CALC_DEBOUNCE_MS: number = 250;
 
 const EMPTY_CALC_LOADOUT = {} as CalculatedLoadout;
 
@@ -390,7 +388,6 @@ class GlobalState implements State {
       console.warn('[GlobalState] CalcWorker is already set!');
     }
     worker.initWorker();
-    worker.setDebouncer(new Debouncer(CALC_DEBOUNCE_MS));
     this.calcWorker = worker;
   }
 
@@ -716,8 +713,8 @@ class GlobalState implements State {
     this.calc.loadouts = calculatedLoadouts;
 
     const data: Extract<ComputeBasicRequest['data'], ComputeReverseRequest['data']> = {
-      loadouts: this.loadouts,
-      monster: this.monster,
+      loadouts: toJS(this.loadouts),
+      monster: toJS(this.monster),
       calcOpts: {
         includeTtkDist: this.prefs.showTtkComparison,
         detailedOutput: this.debug,
