@@ -4,6 +4,7 @@ import { useSearchParams } from 'next/navigation';
 import localforage from 'localforage';
 import { observer } from 'mobx-react-lite';
 import { ImportableData } from '@/types/State';
+import { toast } from 'react-toastify';
 
 /**
  * This is a dummy component that is rendered inside a Suspense boundary in home.tsx. This is so that we have access to
@@ -28,6 +29,7 @@ const InitialLoad: React.FC = observer(() => {
         try {
           const state = await localforage.getItem('dps-calc-state');
           store.updateImportedData(state as ImportableData);
+          toast.success('Restored last browser session', { toastId: 'state-restore' });
         } catch (e) {
           // If state couldn't be loaded (or there wasn't any), then try to load the username and lookup stats, at least
           try {
