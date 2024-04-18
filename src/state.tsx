@@ -1,4 +1,5 @@
 import {
+  autorun, IReactionDisposer,
   IReactionPublic, makeAutoObservable, reaction, toJS,
 } from 'mobx';
 import React, { createContext, useContext } from 'react';
@@ -13,7 +14,7 @@ import { Monster } from '@/types/Monster';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { toast } from 'react-toastify';
 import {
-  Debouncer, fetchPlayerSkills, fetchShortlinkData, getCombatStylesForCategory, PotionMap,
+  fetchPlayerSkills, fetchShortlinkData, getCombatStylesForCategory, PotionMap,
 } from '@/utils';
 import { ComputeBasicRequest, ComputeReverseRequest, WorkerRequestType } from '@/worker/CalcWorkerTypes';
 import getMonsters from '@/lib/Monsters';
@@ -32,8 +33,6 @@ import {
 } from './enums/Prayer';
 import Potion from './enums/Potion';
 import { WikiSyncer } from './wikisync/WikiSyncer';
-
-const CALC_DEBOUNCE_MS: number = 250;
 
 const EMPTY_CALC_LOADOUT = {} as CalculatedLoadout;
 
@@ -241,6 +240,8 @@ class GlobalState implements State {
    */
   wikisync: Map<number, WikiSyncer> = new Map();
 
+  private storageUpdater?: IReactionDisposer;
+
   constructor() {
     makeAutoObservable(this, {}, { autoBind: true });
 
@@ -301,6 +302,17 @@ class GlobalState implements State {
   }
 
   /**
+   * Get the importable version of the current UI state
+   */
+  get asImportableData(): ImportableData {
+    return {
+      loadouts: toJS(this.loadouts),
+      monster: toJS(this.monster),
+      selectedLoadout: this.selectedLoadout,
+    };
+  }
+
+  /**
    * Get the currently selected player (loadout)
    */
   get player() {
@@ -357,12 +369,26 @@ class GlobalState implements State {
     return new Map([...this.wikisync].filter(([, v]) => v.username));
   }
 
+  /**
+   * Initialises the autorun function for updating dps-calc-state when something changes.
+   * This should only ever be called once.
+   */
+  startStorageUpdater() {
+    if (this.storageUpdater) {
+      console.warn('[GlobalState] StorageUpdater is already set!');
+      return;
+    }
+    this.storageUpdater = autorun(() => {
+      // Save their application state to browser storage
+      localforage.setItem('dps-calc-state', toJS(this.asImportableData)).catch(() => {});
+    });
+  }
+
   setCalcWorker(worker: CalcWorker) {
     if (this.calcWorker) {
       console.warn('[GlobalState] CalcWorker is already set!');
     }
     worker.initWorker();
-    worker.setDebouncer(new Debouncer(CALC_DEBOUNCE_MS));
     this.calcWorker = worker;
   }
 
@@ -435,7 +461,7 @@ class GlobalState implements State {
       });
     }
 
-    // Expand some minified fields with thier full metadata
+    // Expand some minified fields with their full metadata
     const loadouts = parseLoadoutsFromImportedData(data);
 
     // manually recompute equipment in case their metadata has changed since the shortlink was created
@@ -696,8 +722,8 @@ class GlobalState implements State {
     this.calc.loadouts = calculatedLoadouts;
 
     const data: Extract<ComputeBasicRequest['data'], ComputeReverseRequest['data']> = {
-      loadouts: this.loadouts,
-      monster: this.monster,
+      loadouts: toJS(this.loadouts),
+      monster: toJS(this.monster),
       calcOpts: {
         includeTtkDist: this.prefs.showTtkComparison,
         detailedOutput: this.debug,

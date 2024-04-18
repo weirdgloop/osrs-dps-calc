@@ -2,8 +2,6 @@ import React, { createRef, useEffect, useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 import Modal from '@/app/components/generic/Modal';
-import { ImportableData } from '@/types/State';
-import { toJS } from 'mobx';
 import { generateShortlink, isDevServer } from '@/utils';
 import { toast } from 'react-toastify';
 import { IconClipboardCopy } from '@tabler/icons-react';
@@ -17,28 +15,19 @@ const ShareModal: React.FC = observer(() => {
   const [shareId, setShareId] = useState('');
   const [error, setError] = useState(false);
 
-  const generateShareLink = async () => {
-    setShareId('');
-    setError(false);
-
-    // Get the data we need from the internal store
-    const data: ImportableData = {
-      loadouts: toJS(store.loadouts),
-      monster: toJS(store.monster),
-      selectedLoadout: store.selectedLoadout,
-    };
-
-    // Make an API call to generate a share link
-    try {
-      setShareId(await generateShortlink(data));
-    } catch (e) {
-      setError(true);
-    }
-  };
-
   useEffect(() => {
+    async function generate() {
+      setShareId('');
+      setError(false);
+      try {
+        setShareId(await generateShortlink(store.asImportableData));
+      } catch (e) {
+        setError(true);
+      }
+    }
+
     if (ui.showShareModal) {
-      generateShareLink();
+      generate();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ui.showShareModal]);
