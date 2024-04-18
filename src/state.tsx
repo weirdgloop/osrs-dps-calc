@@ -376,6 +376,7 @@ class GlobalState implements State {
   startStorageUpdater() {
     if (this.storageUpdater) {
       console.warn('[GlobalState] StorageUpdater is already set!');
+      return;
     }
     this.storageUpdater = autorun(() => {
       // Save their application state to browser storage

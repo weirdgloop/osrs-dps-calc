@@ -58,11 +58,6 @@ const InitialLoad: React.FC = observer(() => {
 
     if (loaded) return;
     doFirstLoad();
-
-    // This code is necessary because searchParams may change later, when we strip the query params from the URL
-    if (loaded) return;
-    setLoaded(true);
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 

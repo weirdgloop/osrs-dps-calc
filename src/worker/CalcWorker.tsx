@@ -66,9 +66,7 @@ export class CalcWorker {
       return Promise.reject(new Error('worker is not initialized and cannot handle requests'));
     }
 
-    if (Object.prototype.hasOwnProperty.call(this.debouncers, req.type)) {
-      await this.debouncers[req.type]?.debounce();
-    }
+    await this.debouncers[req.type]?.debounce();
 
     // we use these ids to map the response back to the promise
     this.sequenceId += 1;
