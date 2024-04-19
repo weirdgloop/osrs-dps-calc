@@ -32,7 +32,7 @@ import {
   Prayer,
 } from './enums/Prayer';
 import Potion from './enums/Potion';
-import { WikiSyncer } from './wikisync/WikiSyncer';
+import { WikiSyncer, startPollingForRuneLite } from './wikisync/WikiSyncer';
 
 const EMPTY_CALC_LOADOUT = {} as CalculatedLoadout;
 
@@ -289,8 +289,7 @@ class GlobalState implements State {
       this.monster.inputs.monsterCurrentHp = this.monster.skills.hp;
     }));
 
-    // this.wikisync = startPollingForRuneLite();
-    this.wikisync = new Map(); // temp disabled until we're ready
+    this.wikisync = startPollingForRuneLite();
   }
 
   set debug(debug: boolean) {
