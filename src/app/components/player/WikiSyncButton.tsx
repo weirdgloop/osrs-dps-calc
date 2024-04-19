@@ -117,6 +117,7 @@ const WikiSyncButtonWrapper: React.FC = observer(() => {
       items={items}
       CustomSelectComponent={WikiSyncButton}
       onSelectedItemChange={onSelect}
+      resetAfterSelect
     />
   );
 });
