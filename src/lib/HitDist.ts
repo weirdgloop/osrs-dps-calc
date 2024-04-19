@@ -163,7 +163,9 @@ export class HitDistribution {
     const d = new HitDistribution([]);
     const acc = new Map<number, number>();
     for (const hit of this.hits) {
-      const key = hit.anyAccurate() ? hit.getSum() : -1; // if 1 splat is accurate, treat the whole hit as accurate
+      // if 1 splat is accurate, treat the whole hit as accurate
+      // if inaccurate, take the bitwise inverse so that we have a number key that's distinct, we'll undo it later
+      const key = hit.anyAccurate() ? hit.getSum() : ~hit.getSum();
       const prev = acc.get(key);
       if (prev === undefined) {
         acc.set(key, hit.probability);
@@ -172,8 +174,10 @@ export class HitDistribution {
       }
     }
 
-    for (const [dmg, prob] of acc.entries()) {
-      d.addHit(new WeightedHit(prob, [dmg === -1 ? Hitsplat.INACCURATE : new Hitsplat(dmg)]));
+    for (const [key, prob] of acc.entries()) {
+      const accurate = key >= 0;
+      const dmg = accurate ? key : ~key;
+      d.addHit(new WeightedHit(prob, [new Hitsplat(dmg, accurate)]));
     }
 
     return d;
