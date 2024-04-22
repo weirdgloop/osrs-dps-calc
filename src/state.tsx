@@ -411,13 +411,7 @@ class GlobalState implements State {
   }
 
   updateCalcResults(calc: PartialDeep<Calculator>) {
-    this.calc = merge(this.calc, calc, (obj, src, key) => {
-      // When we're handling the details array, merge the obj + src together instead of replacing
-      if (key === 'details' && Array.isArray(src) && Array.isArray(obj)) {
-        return [...obj, ...src];
-      }
-      return undefined;
-    });
+    this.calc = merge(this.calc, calc);
   }
 
   async loadShortlink(linkId: string) {
