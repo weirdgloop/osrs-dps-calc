@@ -526,6 +526,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = Math.trunc((magicLevel * (77 + 64) + 320) / 640);
     } else if (this.wearing('Black salamander')) {
       maxHit = Math.trunc((magicLevel * (92 + 64) + 320) / 640);
+    } else if (this.wearing('Tecu salamander')) {
+      maxHit = Math.trunc((magicLevel * (104 + 64) + 320) / 640);
     }
 
     if (maxHit === 0) {
