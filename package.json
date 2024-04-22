@@ -7,13 +7,15 @@
     "dev": "next dev",
     "build": "next build",
     "build-staging": "env-cmd -f .env.staging next build",
+    "build-docker": "docker build -t weirdgloop/osrs-dps-calc .",
+    "build-docker-scraper": "docker build -t weirdgloop/osrs-dps-calc:scraper --target=scraper-dev .",
     "start": "next start",
     "lint": "next lint",
     "lint-fast": "eslint",
     "fmt": "next lint --fix",
     "analyse": "ANALYSE=true next build",
     "test": "jest",
-    "cdn-docker": "docker compose build data-scraper && docker compose run --rm data-scraper",
+    "cdn-docker": "yarn build-docker-scraper && docker run --rm -it -v $(pwd)/cdn:/srv/cdn -v $(pwd)/src/lib/EquipmentAliases.ts:/srv/src/lib/EquipmentAliases.ts weirdgloop/osrs-dps-calc:scraper",
     "cdn-dispatch": "gh workflow run regenerate.yml"
   },
   "dependencies": {
