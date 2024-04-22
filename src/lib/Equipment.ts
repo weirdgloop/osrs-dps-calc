@@ -290,7 +290,15 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
 
   if (player.spell?.spellbook === 'ancient') {
     const virtusPieces = sum([playerEquipment.head?.name, playerEquipment.body?.name, playerEquipment.legs?.name], (i) => (i?.includes('Virtus') ? 1 : 0));
-    totals.bonuses.magic_str += 3 * virtusPieces;
+    totals.bonuses.magic_str += 30 * virtusPieces;
+  }
+
+  // void mage is a visible bonus of 2.5%
+  if (playerEquipment.head?.name === 'Void mage helm'
+    && playerEquipment.body?.name === 'Elite void top'
+    && playerEquipment.legs?.name === 'Elite void robe'
+    && playerEquipment.hands?.name === 'Void knight gloves') {
+    totals.bonuses.magic_str += 25;
   }
 
   const cape = playerEquipment.cape;

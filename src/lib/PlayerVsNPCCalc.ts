@@ -541,11 +541,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit += 10;
     }
 
-    let magicDmgBonus = this.player.bonuses.magic_str * 10;
+    let magicDmgBonus = this.player.bonuses.magic_str;
 
-    if (this.isWearingEliteMagicVoid()) {
-      magicDmgBonus += 25;
-    }
     if (this.isWearingSmokeStaff() && spell?.spellbook === 'standard') {
       magicDmgBonus += 100;
     }

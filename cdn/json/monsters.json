@@ -9772,7 +9772,7 @@
       "Typeless slash"
     ],
     "size": 5,
-    "max_hit": "18",
+    "max_hit": "20",
     "skills": {
       "atk": 258,
       "def": 60,
@@ -48439,6 +48439,117 @@
     "attributes": []
   },
   {
+    "id": 8846,
+    "name": "Mourner (Song of the Elves)",
+    "version": "Level 106",
+    "image": "Mourner (Song of the Elves, level 106).png",
+    "level": 106,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 95,
+      "def": 80,
+      "hp": 100,
+      "magic": 1,
+      "ranged": 1,
+      "str": 95
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 60,
+      "magic": 50,
+      "ranged": 40,
+      "slash": 60,
+      "stab": 40
+    },
+    "attributes": []
+  },
+  {
+    "id": 8844,
+    "name": "Mourner (Song of the Elves)",
+    "version": "Level 24",
+    "image": "Mourner (Song of the Elves).png",
+    "level": 24,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 12,
+      "def": 12,
+      "hp": 13,
+      "magic": 1,
+      "ranged": 1,
+      "str": 16
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 25,
+      "magic": 15,
+      "ranged": 5,
+      "slash": 25,
+      "stab": 5
+    },
+    "attributes": []
+  },
+  {
+    "id": 8845,
+    "name": "Mourner (Song of the Elves)",
+    "version": "Level 51",
+    "image": "Mourner (Song of the Elves).png",
+    "level": 51,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 40,
+      "def": 30,
+      "hp": 29,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 40,
+      "magic": 30,
+      "ranged": 20,
+      "slash": 40,
+      "stab": 20
+    },
+    "attributes": []
+  },
+  {
     "id": 9008,
     "name": "Mourner (boss)",
     "version": "",
@@ -66361,7 +66472,7 @@
       "Crush"
     ],
     "size": 5,
-    "max_hit": "45 (regular)",
+    "max_hit": "45",
     "skills": {
       "atk": 350,
       "def": 200,
@@ -75978,7 +76089,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000037-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000002A-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -76016,7 +76127,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000037-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000002A-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -77866,7 +77977,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000039-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000008-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -77903,7 +78014,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000003B-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000A-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
