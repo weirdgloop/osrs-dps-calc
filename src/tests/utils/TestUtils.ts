@@ -74,6 +74,7 @@ const DEFAULT_MONSTER_INPUTS: Monster['inputs'] = {
 
 export function getTestMonster(name: string, version: string, overrides: PartialDeep<Monster> = {}): Monster {
   const monster = merge(
+    {},
     find(
       monsters,
       (m) => m.name === name && m.version === version,
