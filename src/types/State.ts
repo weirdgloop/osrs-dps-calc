@@ -67,11 +67,12 @@ export interface CalculatedLoadout {
 
   // Misc
   details?: DetailEntry[],
+  npcDetails?: DetailEntry[],
   userIssues?: UserIssue[],
 }
 
 export type PlayerVsNPCCalculatedLoadout = Pick<CalculatedLoadout, 'npcDefRoll' | 'maxHit' | 'maxAttackRoll' | 'accuracy' | 'dps' | 'ttk' | 'hitDist' | 'ttkDist' | 'details' | 'userIssues'>;
-export type NPCVsPlayerCalculatedLoadout = Pick<CalculatedLoadout, 'playerDefRoll' | 'npcMaxAttackRoll' | 'npcMaxHit' | 'npcDps' | 'npcAccuracy' | 'avgDmgTaken' | 'details' | 'userIssues'>;
+export type NPCVsPlayerCalculatedLoadout = Pick<CalculatedLoadout, 'playerDefRoll' | 'npcMaxAttackRoll' | 'npcMaxHit' | 'npcDps' | 'npcAccuracy' | 'avgDmgTaken' | 'npcDetails' | 'userIssues'>;
 
 export interface Calculator {
   loadouts: CalculatedLoadout[]

@@ -78,6 +78,13 @@ def getPrintoutValue(prop):
         return prop[0]
 
 
+def getMagicDamageValue(prop):
+    if not prop:
+        return None
+    else:
+        return int(prop[0] * 10)
+
+
 def main():
     # Grab the equipment info using SMW, including all the relevant printouts
     wiki_data = getEquipmentData()
@@ -107,7 +114,7 @@ def main():
             'bonuses': {
                 'str': getPrintoutValue(po['Strength bonus']),
                 'ranged_str': getPrintoutValue(po['Ranged Strength bonus']),
-                'magic_str': getPrintoutValue(po['Magic Damage bonus']),
+                'magic_str': getMagicDamageValue(po['Magic Damage bonus']),
                 'prayer': getPrintoutValue(po['Prayer bonus']),
             },
             'offensive': {

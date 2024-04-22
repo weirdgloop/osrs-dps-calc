@@ -526,6 +526,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = Math.trunc((magicLevel * (77 + 64) + 320) / 640);
     } else if (this.wearing('Black salamander')) {
       maxHit = Math.trunc((magicLevel * (92 + 64) + 320) / 640);
+    } else if (this.wearing('Tecu salamander')) {
+      maxHit = Math.trunc((magicLevel * (104 + 64) + 320) / 640);
     }
 
     if (maxHit === 0) {
@@ -541,11 +543,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit += 10;
     }
 
-    let magicDmgBonus = this.player.bonuses.magic_str * 10;
+    let magicDmgBonus = this.player.bonuses.magic_str;
 
-    if (this.isWearingEliteMagicVoid()) {
-      magicDmgBonus += 25;
-    }
     if (this.isWearingSmokeStaff() && spell?.spellbook === 'standard') {
       magicDmgBonus += 100;
     }

@@ -7330,7 +7330,7 @@
     "bonuses": {
       "str": 68,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 0
     },
     "offensive": {
@@ -7360,7 +7360,7 @@
     "bonuses": {
       "str": 68,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 0
     },
     "offensive": {
@@ -7390,7 +7390,7 @@
     "bonuses": {
       "str": 68,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 0
     },
     "offensive": {
@@ -7420,7 +7420,7 @@
     "bonuses": {
       "str": 68,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 0
     },
     "offensive": {
@@ -7450,7 +7450,7 @@
     "bonuses": {
       "str": 68,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 0
     },
     "offensive": {
@@ -7480,7 +7480,7 @@
     "bonuses": {
       "str": 68,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 0
     },
     "offensive": {
@@ -9310,7 +9310,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -9340,7 +9340,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -9370,7 +9370,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -9400,7 +9400,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -10270,7 +10270,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -10300,7 +10300,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -20890,7 +20890,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -20920,7 +20920,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -20950,7 +20950,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -22420,7 +22420,7 @@
     "bonuses": {
       "str": 71,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 0
     },
     "offensive": {
@@ -35470,7 +35470,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 1,
+      "magic_str": 10,
       "prayer": 0
     },
     "offensive": {
@@ -35500,7 +35500,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -35530,7 +35530,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 3,
+      "magic_str": 30,
       "prayer": 0
     },
     "offensive": {
@@ -52120,7 +52120,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -52240,7 +52240,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 3,
+      "magic_str": 30,
       "prayer": 1
     },
     "offensive": {
@@ -52270,7 +52270,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 4
     },
     "offensive": {
@@ -52300,7 +52300,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 4
     },
     "offensive": {
@@ -68410,7 +68410,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -70480,7 +70480,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -70510,7 +70510,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -70540,7 +70540,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -70930,7 +70930,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -70960,7 +70960,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -70990,7 +70990,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71020,7 +71020,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71050,7 +71050,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71080,7 +71080,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71110,7 +71110,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71170,7 +71170,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71200,7 +71200,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71230,7 +71230,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71260,7 +71260,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71290,7 +71290,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71320,7 +71320,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71350,7 +71350,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71440,7 +71440,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71470,7 +71470,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71500,7 +71500,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71530,7 +71530,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71560,7 +71560,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71590,7 +71590,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71620,7 +71620,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -77500,7 +77500,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -77530,7 +77530,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -80590,7 +80590,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -88420,7 +88420,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -89260,7 +89260,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 10,
+      "magic_str": 100,
       "prayer": 2
     },
     "offensive": {
@@ -89290,7 +89290,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 10,
+      "magic_str": 100,
       "prayer": 2
     },
     "offensive": {
@@ -89320,7 +89320,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 10,
+      "magic_str": 100,
       "prayer": 2
     },
     "offensive": {
@@ -107650,7 +107650,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -107680,7 +107680,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -107710,7 +107710,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -112060,7 +112060,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -112090,7 +112090,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -112120,7 +112120,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -114250,7 +114250,7 @@
     "bonuses": {
       "str": 72,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -114370,7 +114370,7 @@
     "bonuses": {
       "str": 72,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -114400,7 +114400,7 @@
     "bonuses": {
       "str": 72,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -114430,7 +114430,7 @@
     "bonuses": {
       "str": 72,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -123010,7 +123010,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 2
     },
     "offensive": {
@@ -123040,7 +123040,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 2
     },
     "offensive": {
@@ -123220,7 +123220,7 @@
     "bonuses": {
       "str": 72,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -123250,7 +123250,7 @@
     "bonuses": {
       "str": 72,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -126100,7 +126100,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -126130,7 +126130,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -126160,7 +126160,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -130240,7 +130240,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 1,
+      "magic_str": 10,
       "prayer": 1
     },
     "offensive": {
@@ -130270,7 +130270,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 1,
+      "magic_str": 10,
       "prayer": 1
     },
     "offensive": {
@@ -130300,7 +130300,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 1,
+      "magic_str": 10,
       "prayer": 2
     },
     "offensive": {
@@ -131620,7 +131620,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -131650,7 +131650,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -138400,7 +138400,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 1,
+      "magic_str": 10,
       "prayer": 0
     },
     "offensive": {
@@ -138460,7 +138460,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -138520,7 +138520,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 3,
+      "magic_str": 30,
       "prayer": 0
     },
     "offensive": {
@@ -138550,7 +138550,7 @@
     "bonuses": {
       "str": 72,
       "ranged_str": 0,
-      "magic_str": 10,
+      "magic_str": 100,
       "prayer": 0
     },
     "offensive": {
@@ -138580,7 +138580,7 @@
     "bonuses": {
       "str": 72,
       "ranged_str": 0,
-      "magic_str": 10,
+      "magic_str": 100,
       "prayer": 0
     },
     "offensive": {
@@ -138610,7 +138610,7 @@
     "bonuses": {
       "str": 72,
       "ranged_str": 0,
-      "magic_str": 10,
+      "magic_str": 100,
       "prayer": 0
     },
     "offensive": {

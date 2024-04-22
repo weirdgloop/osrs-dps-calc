@@ -67,7 +67,7 @@ const computeMvPValues: Handler<WorkerRequestType.COMPUTE_REVERSE> = async (data
       npcAccuracy: calc.getHitChance(),
       playerDefRoll: calc.getPlayerDefenceRoll(),
       avgDmgTaken: calc.getAverageDamageTaken(),
-      details: calc.details,
+      npcDetails: calc.details,
     });
     const end = new Date().getTime();
 

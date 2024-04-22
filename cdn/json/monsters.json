@@ -9532,7 +9532,7 @@
   {
     "id": 8367,
     "name": "Blood spawn",
-    "version": "",
+    "version": "Entry",
     "image": "Blood spawn.png",
     "level": 55,
     "speed": -1,
@@ -9540,11 +9540,48 @@
       "None"
     ],
     "size": 1,
-    "max_hit": "1",
+    "max_hit": "1 (does not attack)",
     "skills": {
       "atk": 1,
       "def": 0,
       "hp": 120,
+      "magic": 0,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 8367,
+    "name": "Blood spawn",
+    "version": "Normal",
+    "image": "Blood spawn.png",
+    "level": 55,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 1,
+    "max_hit": "1 (does not attack)",
+    "skills": {
+      "atk": 1,
+      "def": 0,
+      "hp": 7,
       "magic": 0,
       "ranged": 1,
       "str": 1
@@ -9772,7 +9809,7 @@
       "Typeless slash"
     ],
     "size": 5,
-    "max_hit": "18",
+    "max_hit": "20",
     "skills": {
       "atk": 258,
       "def": 60,
@@ -48439,6 +48476,117 @@
     "attributes": []
   },
   {
+    "id": 8846,
+    "name": "Mourner (Song of the Elves)",
+    "version": "Level 106",
+    "image": "Mourner (Song of the Elves, level 106).png",
+    "level": 106,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 95,
+      "def": 80,
+      "hp": 100,
+      "magic": 1,
+      "ranged": 1,
+      "str": 95
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 60,
+      "magic": 50,
+      "ranged": 40,
+      "slash": 60,
+      "stab": 40
+    },
+    "attributes": []
+  },
+  {
+    "id": 8844,
+    "name": "Mourner (Song of the Elves)",
+    "version": "Level 24",
+    "image": "Mourner (Song of the Elves).png",
+    "level": 24,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 12,
+      "def": 12,
+      "hp": 13,
+      "magic": 1,
+      "ranged": 1,
+      "str": 16
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 25,
+      "magic": 15,
+      "ranged": 5,
+      "slash": 25,
+      "stab": 5
+    },
+    "attributes": []
+  },
+  {
+    "id": 8845,
+    "name": "Mourner (Song of the Elves)",
+    "version": "Level 51",
+    "image": "Mourner (Song of the Elves).png",
+    "level": 51,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 40,
+      "def": 30,
+      "hp": 29,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 40,
+      "magic": 30,
+      "ranged": 20,
+      "slash": 40,
+      "stab": 20
+    },
+    "attributes": []
+  },
+  {
     "id": 9008,
     "name": "Mourner (boss)",
     "version": "",
@@ -50173,11 +50321,48 @@
     "attributes": []
   },
   {
+    "id": 10844,
+    "name": "Nylocas Athanatos",
+    "version": "Entry",
+    "image": "Nylocas Athanatos.png",
+    "level": 107,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 3,
+    "max_hit": "1",
+    "skills": {
+      "atk": 1,
+      "def": 40,
+      "hp": 30,
+      "magic": 40,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
     "id": 8384,
     "name": "Nylocas Athanatos",
-    "version": "",
+    "version": "Normal",
     "image": "Nylocas Athanatos.png",
-    "level": 350,
+    "level": 107,
     "speed": -1,
     "style": [
       "None"
@@ -50210,46 +50395,9 @@
     "attributes": []
   },
   {
-    "id": 8344,
-    "name": "Nylocas Hagios",
-    "version": "Level 162",
-    "image": "Nylocas Hagios.png",
-    "level": 162,
-    "speed": 3,
-    "style": [
-      "Magic"
-    ],
-    "size": 1,
-    "max_hit": "17",
-    "skills": {
-      "atk": 200,
-      "def": 1,
-      "hp": 11,
-      "magic": 1,
-      "ranged": 200,
-      "str": 160
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 1073,
-      "magic_str": 928,
-      "ranged": 0,
-      "ranged_str": -15,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": []
-  },
-  {
     "id": 8347,
     "name": "Nylocas Hagios",
-    "version": "Level 260",
+    "version": "Big",
     "image": "Nylocas Hagios.png",
     "level": 260,
     "speed": 3,
@@ -50284,14 +50432,51 @@
     "attributes": []
   },
   {
-    "id": 8342,
-    "name": "Nylocas Ischyros",
-    "version": "Level 162",
-    "image": "Nylocas Ischyros.png",
+    "id": 10779,
+    "name": "Nylocas Hagios",
+    "version": "Big (Entry mode)",
+    "image": "Nylocas Hagios.png",
+    "level": 82,
+    "speed": 3,
+    "style": [
+      "Magic"
+    ],
+    "size": 2,
+    "max_hit": "10",
+    "skills": {
+      "atk": 100,
+      "def": 6,
+      "hp": 3,
+      "magic": 6,
+      "ranged": 100,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 400,
+      "magic_str": 360,
+      "ranged": 0,
+      "ranged_str": -6,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 8344,
+    "name": "Nylocas Hagios",
+    "version": "Small",
+    "image": "Nylocas Hagios.png",
     "level": 162,
     "speed": 3,
     "style": [
-      "Stab"
+      "Magic"
     ],
     "size": 1,
     "max_hit": "17",
@@ -50309,6 +50494,43 @@
       "magic_str": 928,
       "ranged": 0,
       "ranged_str": -15,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 10776,
+    "name": "Nylocas Hagios",
+    "version": "Small (Entry mode)",
+    "image": "Nylocas Hagios.png",
+    "level": 46,
+    "speed": 3,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "5",
+    "skills": {
+      "atk": 80,
+      "def": 1,
+      "hp": 2,
+      "magic": 1,
+      "ranged": 80,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 505,
+      "magic_str": 280,
+      "ranged": 0,
+      "ranged_str": -30,
       "str": 0
     },
     "defensive": {
@@ -50323,7 +50545,7 @@
   {
     "id": 8345,
     "name": "Nylocas Ischyros",
-    "version": "Level 260",
+    "version": "Big",
     "image": "Nylocas Ischyros.png",
     "level": 260,
     "speed": 3,
@@ -50346,6 +50568,117 @@
       "magic_str": 500,
       "ranged": 0,
       "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 10777,
+    "name": "Nylocas Ischyros",
+    "version": "Big (Entry mode)",
+    "image": "Nylocas Ischyros.png",
+    "level": 82,
+    "speed": 3,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "10",
+    "skills": {
+      "atk": 100,
+      "def": 6,
+      "hp": 3,
+      "magic": 6,
+      "ranged": 100,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 400,
+      "magic_str": 360,
+      "ranged": 0,
+      "ranged_str": -6,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 8342,
+    "name": "Nylocas Ischyros",
+    "version": "Small",
+    "image": "Nylocas Ischyros.png",
+    "level": 162,
+    "speed": 3,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "17",
+    "skills": {
+      "atk": 200,
+      "def": 1,
+      "hp": 11,
+      "magic": 1,
+      "ranged": 200,
+      "str": 160
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 1073,
+      "magic_str": 928,
+      "ranged": 0,
+      "ranged_str": -15,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 10774,
+    "name": "Nylocas Ischyros",
+    "version": "Small (Entry mode)",
+    "image": "Nylocas Ischyros.png",
+    "level": 46,
+    "speed": 3,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "5",
+    "skills": {
+      "atk": 80,
+      "def": 1,
+      "hp": 2,
+      "magic": 1,
+      "ranged": 80,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 505,
+      "magic_str": 280,
+      "ranged": 0,
+      "ranged_str": -30,
       "str": 0
     },
     "defensive": {
@@ -50469,9 +50802,83 @@
     "attributes": []
   },
   {
+    "id": 8346,
+    "name": "Nylocas Toxobolos",
+    "version": "Big",
+    "image": "Nylocas Toxobolos.png",
+    "level": 260,
+    "speed": 3,
+    "style": [
+      "Ranged"
+    ],
+    "size": 2,
+    "max_hit": "24",
+    "skills": {
+      "atk": 250,
+      "def": 20,
+      "hp": 22,
+      "magic": 20,
+      "ranged": 250,
+      "str": 230
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 500,
+      "magic_str": 500,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 10778,
+    "name": "Nylocas Toxobolos",
+    "version": "Big (Entry mode)",
+    "image": "Nylocas Toxobolos.png",
+    "level": 82,
+    "speed": 3,
+    "style": [
+      "Ranged"
+    ],
+    "size": 2,
+    "max_hit": "10",
+    "skills": {
+      "atk": 100,
+      "def": 6,
+      "hp": 3,
+      "magic": 6,
+      "ranged": 100,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 400,
+      "magic_str": 360,
+      "ranged": 0,
+      "ranged_str": -6,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
     "id": 8343,
     "name": "Nylocas Toxobolos",
-    "version": "Level 162",
+    "version": "Small",
     "image": "Nylocas Toxobolos.png",
     "level": 162,
     "speed": 3,
@@ -50506,31 +50913,31 @@
     "attributes": []
   },
   {
-    "id": 8346,
+    "id": 10775,
     "name": "Nylocas Toxobolos",
-    "version": "Level 260",
+    "version": "Small (Entry mode)",
     "image": "Nylocas Toxobolos.png",
-    "level": 260,
+    "level": 46,
     "speed": 3,
     "style": [
       "Ranged"
     ],
-    "size": 2,
-    "max_hit": "24",
+    "size": 1,
+    "max_hit": "5",
     "skills": {
-      "atk": 250,
-      "def": 20,
-      "hp": 22,
-      "magic": 20,
-      "ranged": 250,
-      "str": 230
+      "atk": 80,
+      "def": 1,
+      "hp": 2,
+      "magic": 1,
+      "ranged": 80,
+      "str": 40
     },
     "offensive": {
       "atk": 0,
-      "magic": 500,
-      "magic_str": 500,
+      "magic": 505,
+      "magic_str": 280,
       "ranged": 0,
-      "ranged_str": 0,
+      "ranged_str": -30,
       "str": 0
     },
     "defensive": {
@@ -66361,7 +66768,7 @@
       "Crush"
     ],
     "size": 5,
-    "max_hit": "45 (regular)",
+    "max_hit": "45",
     "skills": {
       "atk": 350,
       "def": 200,
@@ -75978,7 +76385,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000037-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000045-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -76016,7 +76423,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000037-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000045-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -77866,7 +78273,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000039-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000C-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -77903,7 +78310,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000003B-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000E-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,

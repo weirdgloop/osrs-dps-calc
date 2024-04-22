@@ -34,7 +34,7 @@ describe('Zogre damage resistances', () => {
         stance: 'Manual Cast',
       },
       bonuses: {
-        magic_str: 125, // gives 32 max hit
+        magic_str: 1250, // gives 32 max hit
       },
       spell: findSpell('Crumble Undead'),
     });
