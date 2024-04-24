@@ -11,17 +11,13 @@ import {
   WeightedHit,
 } from '@/lib/HitDist';
 import {
-  canUseSunfireRunes,
-  isBindSpell,
-  isFireSpell,
-  isWaterSpell,
+  canUseSunfireRunes, isBindSpell, isFireSpell, isWaterSpell,
 } from '@/types/Spell';
-import {
-  PrayerData, PrayerMap,
-} from '@/enums/Prayer';
+import { PrayerData, PrayerMap } from '@/enums/Prayer';
 import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
-  CAST_STANCES, DEFAULT_ATTACK_SPEED,
+  CAST_STANCES,
+  DEFAULT_ATTACK_SPEED,
   GLOWING_CRYSTAL_IDS,
   GUARDIAN_IDS,
   IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS,
@@ -30,21 +26,23 @@ import {
   IMMUNE_TO_RANGED_DAMAGE_NPC_IDS,
   OLM_HEAD_IDS,
   OLM_MAGE_HAND_IDS,
-  OLM_MELEE_HAND_IDS, ONE_HIT_MONSTERS, SECONDS_PER_TICK,
+  OLM_MELEE_HAND_IDS,
+  ONE_HIT_MONSTERS,
+  SECONDS_PER_TICK,
   TEKTON_IDS,
-  TOMBS_OF_AMASCUT_MONSTER_IDS, TTK_DIST_EPSILON, TTK_DIST_MAX_ITER_ROUNDS,
+  TOMBS_OF_AMASCUT_MONSTER_IDS,
+  TTK_DIST_EPSILON,
+  TTK_DIST_MAX_ITER_ROUNDS,
   USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
   VERZIK_P1_IDS,
 } from '@/lib/constants';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { DetailKey } from '@/lib/CalcDetails';
 import { Factor } from '@/lib/Math';
-import {
-  AmmoApplicability,
-  ammoApplicability,
-} from '@/lib/Equipment';
+import { AmmoApplicability, ammoApplicability } from '@/lib/Equipment';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonsterHpOnly } from '@/lib/MonsterScaling';
+import UserIssueType from '@/enums/UserIssueType';
 
 /**
  * Class for computing various player-vs-NPC metrics.
@@ -603,7 +601,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.player.style.stance !== 'Manual Cast') {
       const weaponId = this.player.equipment.weapon?.id;
       const ammoId = this.player.equipment.ammo?.id;
-      if (ammoApplicability(weaponId, ammoId) === AmmoApplicability.INVALID) {
+      if (ammoApplicability(weaponId, ammoId) === AmmoApplicability.INVALID || this.userIssues.some((ui) => ui.type === UserIssueType.BLOWPIPE_MISSING_AMMO)) {
         return 0;
       }
     }
