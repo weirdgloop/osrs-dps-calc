@@ -11,13 +11,17 @@ import {
   WeightedHit,
 } from '@/lib/HitDist';
 import {
-  canUseSunfireRunes, isBindSpell, isFireSpell, isWaterSpell,
+  canUseSunfireRunes,
+  isBindSpell,
+  isFireSpell,
+  isWaterSpell,
 } from '@/types/Spell';
-import { PrayerData, PrayerMap } from '@/enums/Prayer';
+import {
+  PrayerData, PrayerMap,
+} from '@/enums/Prayer';
 import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
-  CAST_STANCES,
-  DEFAULT_ATTACK_SPEED,
+  CAST_STANCES, DEFAULT_ATTACK_SPEED,
   GLOWING_CRYSTAL_IDS,
   GUARDIAN_IDS,
   IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS,
@@ -26,23 +30,21 @@ import {
   IMMUNE_TO_RANGED_DAMAGE_NPC_IDS,
   OLM_HEAD_IDS,
   OLM_MAGE_HAND_IDS,
-  OLM_MELEE_HAND_IDS,
-  ONE_HIT_MONSTERS,
-  SECONDS_PER_TICK,
+  OLM_MELEE_HAND_IDS, ONE_HIT_MONSTERS, SECONDS_PER_TICK,
   TEKTON_IDS,
-  TOMBS_OF_AMASCUT_MONSTER_IDS,
-  TTK_DIST_EPSILON,
-  TTK_DIST_MAX_ITER_ROUNDS,
+  TOMBS_OF_AMASCUT_MONSTER_IDS, TTK_DIST_EPSILON, TTK_DIST_MAX_ITER_ROUNDS,
   USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
   VERZIK_P1_IDS,
 } from '@/lib/constants';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { DetailKey } from '@/lib/CalcDetails';
 import { Factor } from '@/lib/Math';
-import { AmmoApplicability, ammoApplicability } from '@/lib/Equipment';
+import {
+  AmmoApplicability,
+  ammoApplicability,
+} from '@/lib/Equipment';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonsterHpOnly } from '@/lib/MonsterScaling';
-import UserIssueType from '@/enums/UserIssueType';
 
 /**
  * Class for computing various player-vs-NPC metrics.
@@ -379,8 +381,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = Math.trunc(maxHit * (40 + crystalPieces) / 40);
     }
 
-    // Specific bonuses that are applied from equipment
     const mattrs = this.monster.attributes;
+    let needRevWeaponBonus = this.isRevWeaponBuffApplicable();
+    let needDragonbane = this.wearing('Dragon hunter crossbow') && mattrs.includes(MonsterAttribute.DRAGON);
+
+    // Specific bonuses that are applied from equipment
     const { buffs } = this.player;
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
       const factor = <Factor>[buffs.forinthrySurge ? 27 : 24, 20];
@@ -392,7 +397,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     } else if (this.wearing('Eclipse atlatl') && this.isWearingBlackMask() && buffs.onSlayerTask) {
       maxHit = Math.trunc(maxHit * 7 / 6);
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
-      maxHit = Math.trunc(maxHit * 23 / 20);
+      let numerator = 23;
+      // these are additive with slayer only
+      if (needRevWeaponBonus) {
+        needRevWeaponBonus = false;
+        numerator += 10;
+      }
+      if (needDragonbane) {
+        needDragonbane = false;
+        numerator += 5;
+      }
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_BLACK_MASK, maxHit, [numerator, 20]);
     }
 
     if (this.wearing('Twisted bow')) {
@@ -400,13 +415,15 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const tbowMagic = Math.min(cap, Math.max(this.monster.skills.magic, this.monster.offensive.magic));
       maxHit = PlayerVsNPCCalc.tbowScaling(maxHit, tbowMagic, false);
     }
-    if (this.isRevWeaponBuffApplicable()) {
+
+    // multiplicative if not with slayer helm
+    if (needRevWeaponBonus) {
       maxHit = Math.trunc(maxHit * 3 / 2);
     }
-    if (this.wearing('Dragon hunter crossbow') && mattrs.includes(MonsterAttribute.DRAGON)) {
-      // TODO: https://twitter.com/JagexAsh/status/1647928422843273220 for max_hit seems to be additive now
+    if (needDragonbane) {
       maxHit = Math.trunc(maxHit * 5 / 4);
     }
+
     if (this.isWearingRatBoneWeapon() && mattrs.includes(MonsterAttribute.RAT)) {
       maxHit = this.trackAdd(DetailKey.MAX_HIT_RATBANE, maxHit, 10);
     }
@@ -601,7 +618,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.player.style.stance !== 'Manual Cast') {
       const weaponId = this.player.equipment.weapon?.id;
       const ammoId = this.player.equipment.ammo?.id;
-      if (ammoApplicability(weaponId, ammoId) === AmmoApplicability.INVALID || this.userIssues.some((ui) => ui.type === UserIssueType.BLOWPIPE_MISSING_AMMO)) {
+      if (ammoApplicability(weaponId, ammoId) === AmmoApplicability.INVALID) {
         return 0;
       }
     }
