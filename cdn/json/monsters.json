@@ -70313,7 +70313,9 @@
       "slash": 50,
       "stab": 50
     },
-    "attributes": []
+    "attributes": [
+      "spectral"
+    ]
   },
   {
     "id": 12879,
@@ -76385,7 +76387,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000045-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000066-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -76423,7 +76425,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000045-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000066-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
