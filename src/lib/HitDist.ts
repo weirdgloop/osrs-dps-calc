@@ -74,8 +74,13 @@ export class WeightedHit {
     return some(this.hitsplats, (h) => h.accurate);
   }
 
+  private _sum?: number;
+
   public getSum(): number {
-    return sum(this.hitsplats, (h) => h.damage);
+    if (this._sum === undefined) {
+      this._sum = sum(this.hitsplats, (h) => h.damage);
+    }
+    return this._sum;
   }
 
   public getExpectedValue(): number {
@@ -221,11 +226,20 @@ export class HitDistribution {
 export class AttackDistribution {
   readonly dists: HitDistribution[];
 
-  private _singleHitsplat: HitDistribution | undefined = undefined;
+  private _zipped?: HitDistribution;
+
+  get zipped(): HitDistribution {
+    if (!this._zipped) {
+      this._zipped = this.dists.reduce((prev, curr) => prev.zip(curr));
+    }
+    return this._zipped;
+  }
+
+  private _singleHitsplat?: HitDistribution;
 
   get singleHitsplat(): HitDistribution {
     if (!this._singleHitsplat) {
-      this._singleHitsplat = this.dists.reduce((prev, curr) => prev.zip(curr)).cumulative();
+      this._singleHitsplat = this.zipped.cumulative();
     }
     return this._singleHitsplat;
   }

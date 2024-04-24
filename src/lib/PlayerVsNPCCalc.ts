@@ -46,6 +46,7 @@ import { AmmoApplicability, ammoApplicability } from '@/lib/Equipment';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { getRangedDamageType } from '@/types/PlayerCombatStyle';
+import { range } from 'd3-array';
 
 /**
  * Class for computing various player-vs-NPC metrics.
@@ -1210,15 +1211,47 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    */
   public getTtkDistribution(): Map<number, number> {
     const speed = this.getAttackSpeed();
-    const dist = this.getDistribution().singleHitsplat;
-    if (dist.expectedHit() === 0) {
+    const playerDist = this.getDistribution().zipped.flatten();
+    if (playerDist.expectedHit() === 0) { // todo thralls, allow thrall-only compute?
       return new Map<number, number>();
+    }
+
+    // todo thralls, iterMax = ... * max(speed, thrall_speed) // or don't maybe also
+    const iterMax = TTK_DIST_MAX_ITER_ROUNDS * speed;
+
+    // dist attack-on-specific-tick probabilities
+    // todo thralls, append here
+    const dists = [playerDist];
+    const attackOnTick = dists.map(() => new Float64Array(iterMax + 1));
+    attackOnTick.forEach((arr) => {
+      arr[1] = 1.0; // we'll always attack with every applicable dist on the first tick (1-indexed)
+    });
+
+    // todo dual maracas
+    // todo thralls
+    const isVariableAttackSpeed = this.wearing(['Dual macuahuitl', 'Test macuahuitl']);
+    const delayProvider = this.weaponDelayProvider(speed);
+    if (!isVariableAttackSpeed) {
+      for (let i = 1; i <= iterMax; i += speed) {
+        attackOnTick[0][i] = 1.0;
+      }
     }
 
     // distribution of health values at current iter step
     // we don't need to track the 0-health state, but using +1 here removes the need for -1s later on
-    let hps = new Float64Array(this.monster.skills.hp + 1);
-    hps[this.monster.skills.hp] = 1.0;
+    // hps[tick][hp] = probability
+    // todo replace with a weapon-speed size ring buffer
+
+    /**
+     * todo is this correct?
+     * tickHps[distIx][tick + speed] += tickProb * hpProb dmgProb * speedProb
+     */
+    // const tickHps = range(0, iterMax + 1).map(() => new Float64Array(this.monster.skills.hp + 1));
+    const h = iterMax + 1;
+    const w = this.monster.skills.hp + 1;
+    const tickHpsRoot = new Float64Array(h * w);
+    const tickHps = range(0, h).map((i) => tickHpsRoot.subarray(w * i, w * (i + 1)));
+    tickHps[1][this.monster.skills.hp] = 1.0;
 
     // output map, will be converted at the end
     const ttks = new Map<number, number>();
@@ -1228,55 +1261,90 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     // if the hit dist depends on hp, we'll have to recalculate it each time, so cache the results to not repeat work
     const recalcDistOnHp = PlayerVsNPCCalc.distIsCurrentHpDependent(this.player, this.monster);
-    const hpHitDists = new Map<number, HitDistribution>();
-    hpHitDists.set(this.monster.skills.hp, dist);
+    const hpHitDists = new Array<HitDistribution>(this.monster.skills.hp + 1);
+    hpHitDists[this.monster.skills.hp] = playerDist;
     if (recalcDistOnHp) {
-      for (let hp = 0; hp < this.monster.skills.hp; hp++) {
-        hpHitDists.set(hp, this.distAtHp(hp));
+      for (let hp = 0; hp <= this.monster.skills.hp; hp++) {
+        hpHitDists[hp] = this.distAtHp(hp);
       }
     }
 
     // 1. until the amount of hp values remaining above zero is more than our desired epsilon accuracy,
     //    or we reach the maximum iteration rounds
-    for (let hit = 0; hit < (TTK_DIST_MAX_ITER_ROUNDS + 1) && epsilon >= TTK_DIST_EPSILON; hit++) {
-      const nextHps = new Float64Array(this.monster.skills.hp + 1);
+    for (let tick = 1; tick <= iterMax && epsilon >= TTK_DIST_EPSILON; tick++) {
+      for (let distIx = 0; distIx < dists.length; distIx++) {
+        const distProb = attackOnTick[distIx][tick];
+        if (distProb === 0) {
+          continue;
+        }
 
-      // 3. for each possible hp value,
-      for (const [hp, hpProb] of hps.entries()) {
-        // this is a bit of a hack, but idk if there's a better way
-        const currDist: HitDistribution = recalcDistOnHp ? hpHitDists.get(hp)! : dist;
+        const dist = dists[distIx];
 
-        // 4. for each damage amount possible,
-        for (const h of currDist.hits) {
-          const dmgProb = h.probability;
-          const splat = h.hitsplats[0]; // guaranteed to be length 1 from asSingleHitsplat
-
-          // 5. the chance of this path being reached is the previous chance of landing here * the chance of hitting this amount
-          const chanceOfAction = dmgProb * hpProb;
-          if (chanceOfAction === 0) {
+        // 3. for each possible hp value,
+        const hps = tickHps[tick];
+        for (const [hp, hpProb] of hps.entries()) {
+          // this is a bit of a hack, but idk if there's a better way
+          const currDist: HitDistribution = recalcDistOnHp ? hpHitDists[hp] : dist;
+          if (hpProb === 0) {
             continue;
           }
 
-          const newHp = hp - splat.damage;
+          // 4. for each damage amount possible,
+          for (const wh of currDist.hits) {
+            const dmgProb = wh.probability;
+            const dmg = wh.getSum();
 
-          // 6. if the hp we are about to arrive at is <= 0, the npc is killed, the iteration count is hits done,
-          //    and we add this probability path into the delta
-          if (newHp <= 0) {
-            const tick = hit * speed + 1;
-            ttks.set(tick, (ttks.get(tick) || 0) + chanceOfAction);
-            epsilon -= chanceOfAction;
-          } else {
-            // 7. otherwise, we add the chance of this path to the next iteration's hp value
-            nextHps[newHp] += chanceOfAction;
+            const chanceOfAction = dmgProb * hpProb;
+            if (chanceOfAction === 0) {
+              continue;
+            }
+
+            const newHp = hp - dmg;
+            if (newHp <= 0) {
+              ttks.set(tick, (ttks.get(tick) || 0) + chanceOfAction);
+              epsilon -= chanceOfAction;
+            } else {
+              const delays = delayProvider(wh);
+              for (const [delayProb, delay] of delays) {
+                // 7. otherwise, we add the chance of this path to the next iteration's hp value
+                const chanceOfContinuance = chanceOfAction * delayProb;
+                tickHps[tick + delay][newHp] += chanceOfContinuance;
+                attackOnTick[distIx][tick + delay] += chanceOfContinuance;
+              }
+            }
           }
         }
       }
-
-      // 8. update counters and repeat
-      hps = nextHps;
     }
 
     return ttks;
+  }
+
+  private weaponDelayProvider(baseSpeed: number): (wh: WeightedHit) => [prob: number, delay: number][] {
+    if (this.wearing('Test macuahuitl')) {
+      return (wh) => [[1.0, wh.hitsplats[0].accurate ? 3 : 4]];
+    }
+
+    // todo lookup table accurate-hitsplats-count => chance ?
+    if (this.wearing('Dual macuahuitl')) {
+      return (wh) => {
+        let chanceNoEffect = 1.0;
+        for (const splat of wh.hitsplats) {
+          if (splat.accurate) {
+            chanceNoEffect *= 67 / 100;
+          } else {
+            break;
+          }
+        }
+
+        return [
+          [1 - chanceNoEffect, baseSpeed - 1],
+          [chanceNoEffect, baseSpeed],
+        ];
+      };
+    }
+
+    return () => [[1.0, baseSpeed]];
   }
 
   distAtHp(hp: number): HitDistribution {
@@ -1316,7 +1384,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     subCalc.allEquippedItems = this.allEquippedItems;
     subCalc.baseMonster = this.baseMonster;
 
-    return subCalc.getDistribution().singleHitsplat;
+    return subCalc.getDistribution().zipped;
   }
 
   demonbaneFactor(baseFactor: Factor): Factor {
