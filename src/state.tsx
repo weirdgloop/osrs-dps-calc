@@ -622,7 +622,7 @@ class GlobalState implements State {
 
     this.loadouts[loadoutIx] = merge(this.loadouts[loadoutIx], player);
     if (!this.prefs.manualMode) {
-      if (eq || Object.hasOwn(player, 'spell')) {
+      if (eq || Object.hasOwn(player, 'spell') || Object.hasOwn(player, 'style')) {
         this.recalculateEquipmentBonusesFromGear(loadoutIx);
       }
     }

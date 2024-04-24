@@ -554,6 +554,11 @@ export default class BaseCalc {
       };
     }
 
+    if (eq.weapon && ['Toxic blowpipe', 'Blazing blowpipe'].includes(eq.weapon.name) && ['Empty', 'Charged'].includes(eq.weapon.version)) {
+      // this can happen on a load from runelite, since we can't detect the ammo loaded into the blowpipe
+      this.addIssue(UserIssueType.BLOWPIPE_MISSING_AMMO, 'This blowpipe does not contain ammo. Select another version in the equipment selector.');
+    }
+
     if (this.player.style.stance !== 'Manual Cast' && ammoApplicability(eq.weapon?.id, eq.ammo?.id) === AmmoApplicability.INVALID) {
       if (eq.ammo?.name) {
         this.addIssue(UserIssueType.EQUIPMENT_WRONG_AMMO, 'This ammo does not work with your current weapon.');
