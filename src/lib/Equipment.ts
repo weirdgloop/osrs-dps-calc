@@ -1,7 +1,7 @@
 import { EquipmentPiece, Player, PlayerEquipment } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { keys } from '@/utils';
-import { TOMBS_OF_AMASCUT_MONSTER_IDS } from '@/lib/constants';
+import { CAST_STANCES, TOMBS_OF_AMASCUT_MONSTER_IDS } from '@/lib/constants';
 import { sum } from 'd3-array';
 import equipment from '../../cdn/json/equipment.json';
 import generatedEquipmentAliases from './EquipmentAliases';
@@ -289,7 +289,7 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
     totals.bonuses.str += Math.max(0, Math.trunc((defenceSum - 800) / 12) - 38);
   }
 
-  if (player.spell?.spellbook === 'ancient') {
+  if (player.spell?.spellbook === 'ancient' && CAST_STANCES.includes(player.style.stance)) {
     const virtusPieces = sum([playerEquipment.head?.name, playerEquipment.body?.name, playerEquipment.legs?.name], (i) => (i?.includes('Virtus') ? 1 : 0));
     totals.bonuses.magic_str += 30 * virtusPieces;
   }
