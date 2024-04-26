@@ -303,7 +303,8 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
   }
 
   const cape = playerEquipment.cape;
-  const dizanasQuiverCharged = cape?.name === "Blessed dizana's quiver"
+  const dizanasQuiverCharged = cape?.name === "Dizana's max cape"
+    || cape?.name === "Blessed dizana's quiver"
     || (cape?.name === "Dizana's quiver" && cape?.version === 'Charged');
   if (dizanasQuiverCharged && ammoApplicability(player.equipment.weapon?.id, player.equipment.ammo?.id) === AmmoApplicability.INCLUDED) {
     totals.offensive.ranged += 10;
