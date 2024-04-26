@@ -145,7 +145,7 @@ const ammoForRangedWeapons: { [weapon: number]: number[] } = {
   10149: [10142], // Swamp lizard, Guam tar
   10146: [10143], // Orange salamander, Marrentill tar
   10147: [10144], // Red salamander, Tarromin tar
-  10148: [10145], // Black salamander, Guam tar
+  10148: [10145], // Black salamander, Harralander tar
   28834: [28837], // Tecu salamander, Irit tar
   28869: [28872, 28878], // Hunters' sunlight crossbow
   29000: [28991], // Eclipse atlatl
