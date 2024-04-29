@@ -125,6 +125,9 @@ const TtkComparison: React.FC = observer(() => {
       ? ['cyan', 'yellow', 'lime', 'orange', 'pink']
       : ['blue', 'chocolate', 'green', 'sienna', 'purple'];
     for (let i = 0; i < Object.values(calcResults).length; i++) {
+      // Make sure that the loadout we're plotting actually exists
+      if (!loadouts[i]) continue;
+
       const colour = strokeColours.shift() || 'red';
       lines.push(<Line key={i} isAnimationActive={false} type="monotone" dataKey={loadouts[i].name} stroke={colour} dot={false} connectNulls />);
       strokeColours.push(colour);
