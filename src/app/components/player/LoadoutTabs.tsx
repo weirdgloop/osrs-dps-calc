@@ -10,14 +10,16 @@ import {
 interface DraggableTabs {
   calculateButtonClasses(index: number): string;
   calculateButtonTransform(index: number): number;
+  handleKeyDown(e: React.KeyboardEvent, index: number): void;
   handleMouseDown(e: React.MouseEvent, index: number): void;
   handleMouseOver(e: React.MouseEvent, index: number): void;
-  handleMouseUp(): void;
+  handleMouseUp(index: number): void;
 }
 
 const DraggableTabsContext = createContext<DraggableTabs>({
   calculateButtonClasses: () => '',
   calculateButtonTransform: () => 0,
+  handleKeyDown: () => {},
   handleMouseDown: () => {},
   handleMouseOver: () => {},
   handleMouseUp: () => {},
@@ -71,6 +73,12 @@ const DraggableTabsProvider: React.FC<{ children: React.ReactNode }> = ({
     [draggedTab, draggedOverTab],
   );
 
+  const handleKeyDown = useCallback((e: React.KeyboardEvent, index: number) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      setSelectedLoadout(index);
+    }
+  }, [setSelectedLoadout]);
+
   const handleMouseDown = useCallback((e: React.MouseEvent, index: number) => {
     if (e.button === 1) {
       e.preventDefault();
@@ -88,7 +96,12 @@ const DraggableTabsProvider: React.FC<{ children: React.ReactNode }> = ({
     );
   }, [setSelectedLoadout, deleteLoadout]);
 
-  const handleMouseUp = useCallback(() => {
+  const handleMouseUp = useCallback((index: number) => {
+    if (draggedTab === -1) {
+      setSelectedLoadout(index);
+      if (dragTimeout) clearTimeout(dragTimeout);
+      return;
+    }
     if (dragTimeout) clearTimeout(dragTimeout);
 
     if (draggedTab > -1 && draggedOverTab > -1) {
@@ -136,6 +149,7 @@ const DraggableTabsProvider: React.FC<{ children: React.ReactNode }> = ({
     () => ({
       calculateButtonClasses,
       calculateButtonTransform,
+      handleKeyDown,
       handleMouseDown,
       handleMouseOver,
       handleMouseUp,
@@ -143,6 +157,7 @@ const DraggableTabsProvider: React.FC<{ children: React.ReactNode }> = ({
     [
       calculateButtonClasses,
       calculateButtonTransform,
+      handleKeyDown,
       handleMouseDown,
       handleMouseOver,
       handleMouseUp,
@@ -167,9 +182,10 @@ const useDraggableTabs = (index: number) => {
   return {
     calculateButtonClasses: () => handlers.calculateButtonClasses(index),
     calculateButtonTransform: () => handlers.calculateButtonTransform(index),
+    handleKeyDown: (e: React.KeyboardEvent) => handlers.handleKeyDown(e, index),
     handleMouseDown: (e: React.MouseEvent) => handlers.handleMouseDown(e, index),
     handleMouseOver: (e: React.MouseEvent) => handlers.handleMouseOver(e, index),
-    handleMouseUp: handlers.handleMouseUp,
+    handleMouseUp: () => handlers.handleMouseUp(index),
   };
 };
 
@@ -177,6 +193,7 @@ const LoadoutTabButton: React.FC<{ index: number }> = ({ index }) => {
   const {
     calculateButtonClasses,
     calculateButtonTransform,
+    handleKeyDown,
     handleMouseDown,
     handleMouseOver,
     handleMouseUp,
@@ -189,6 +206,7 @@ const LoadoutTabButton: React.FC<{ index: number }> = ({ index }) => {
         style={{
           transform: `translate(${calculateButtonTransform()}px)`,
         }}
+        onKeyDown={handleKeyDown}
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
