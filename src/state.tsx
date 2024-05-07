@@ -657,6 +657,10 @@ class GlobalState implements State {
     });
   }
 
+  setLoadouts(loadouts: Player[])  {
+    this.loadouts = loadouts;
+  }
+
   setSelectedLoadout(ix: number) {
     this.selectedLoadout = ix;
   }
