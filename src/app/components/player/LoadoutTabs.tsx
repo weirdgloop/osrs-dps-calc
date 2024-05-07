@@ -73,6 +73,7 @@ const DraggableTabsProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const handleMouseDown = useCallback((e: React.MouseEvent, index: number) => {
     if (e.button === 1) {
+      e.preventDefault();
       deleteLoadout(index);
       return;
     }
