@@ -657,7 +657,7 @@ class GlobalState implements State {
     });
   }
 
-  setLoadouts(loadouts: Player[])  {
+  setLoadouts(loadouts: Player[]) {
     this.loadouts = loadouts;
   }
 
