@@ -199,22 +199,20 @@ const LoadoutTabButton: React.FC<{ index: number }> = ({ index }) => {
     handleMouseUp,
   } = useDraggableTabs(index);
   return (
-    <div>
-      <button
-        type="button"
-        className={calculateButtonClasses()}
-        style={{
-          transform: `translate(${calculateButtonTransform()}px)`,
-        }}
-        onKeyDown={handleKeyDown}
-        onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
-        // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
-        onMouseOver={handleMouseOver}
-      >
-        <span className="select-none pointer-events-none">{index + 1}</span>
-      </button>
-    </div>
+    <button
+      type="button"
+      className={calculateButtonClasses()}
+      style={{
+        transform: `translate(${calculateButtonTransform()}px)`,
+      }}
+      onKeyDown={handleKeyDown}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events
+      onMouseOver={handleMouseOver}
+    >
+      <span className="select-none pointer-events-none">{index + 1}</span>
+    </button>
   );
 };
 
