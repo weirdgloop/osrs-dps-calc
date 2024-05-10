@@ -25295,7 +25295,7 @@
     "version": "",
     "image": "Fremennik warband berserker.png",
     "level": 104,
-    "speed": 5,
+    "speed": 6,
     "style": [
       "Stab"
     ],
@@ -25332,7 +25332,7 @@
     "version": "",
     "image": "Fremennik warband seer.png",
     "level": 104,
-    "speed": 5,
+    "speed": 6,
     "style": [
       "Magic"
     ],
@@ -40569,7 +40569,7 @@
       "Stab"
     ],
     "size": 1,
-    "max_hit": "5",
+    "max_hit": "6",
     "skills": {
       "atk": 35,
       "def": 35,
@@ -41963,7 +41963,7 @@
     "defensive": {
       "crush": 10,
       "magic": 20,
-      "ranged": 20,
+      "ranged": -10,
       "slash": 10,
       "stab": 10
     },
@@ -42001,7 +42001,7 @@
     "defensive": {
       "crush": 10,
       "magic": 20,
-      "ranged": 20,
+      "ranged": -10,
       "slash": 10,
       "stab": 10
     },
@@ -76387,7 +76387,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000066-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000002-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -76425,7 +76425,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000066-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000002-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -78275,7 +78275,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000C-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000006-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -78312,7 +78312,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000E-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000008-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
