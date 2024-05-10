@@ -9,7 +9,9 @@ import {
   CalculatedLoadout, Calculator, ImportableData, Preferences, State, UI, UserIssue,
 } from '@/types/State';
 import merge from 'lodash.mergewith';
-import { Player, PlayerEquipment, PlayerSkills } from '@/types/Player';
+import {
+  EquipmentPiece, Player, PlayerEquipment, PlayerSkills,
+} from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { toast } from 'react-toastify';
@@ -114,14 +116,17 @@ export const generateEmptyPlayer = (name?: string) => ({
 });
 
 export const parseLoadoutsFromImportedData = (data: ImportableData) => data.loadouts.map((loadout, i) => {
-  // For each item, if only an item ID is available, load the other data.
+  // For each item, reload the most current data using the item ID to ensure we're not using stale data.
   if (loadout.equipment) {
     for (const [k, v] of Object.entries(loadout.equipment)) {
       if (v === null) continue;
-      if (Object.keys(v).length === 1 && Object.hasOwn(v, 'id')) {
-        const item = availableEquipment.find((eq) => eq.id === v.id);
-        loadout.equipment[k as keyof typeof loadout.equipment] = item || null;
+      let item: EquipmentPiece | undefined;
+      if (Object.hasOwn(v, 'id')) {
+        item = availableEquipment.find((eq) => eq.id === v.id);
+        if (!item) console.warn(`[parseLoadoutsFromImportedData] No item found for item ID ${v.id}`);
       }
+      // The following line will remove the item entirely if it seems to no longer exist.
+      loadout.equipment[k as keyof typeof loadout.equipment] = item || null;
     }
   }
 
