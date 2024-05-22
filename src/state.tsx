@@ -447,6 +447,14 @@ class GlobalState implements State {
         throw new Error(`Failed to find monster by id '${data.monster.id}' from shortlink`);
       }
 
+      // If the passed monster def reductions are different to the defaults, expand the UI section.
+      for (const [k, v] of Object.entries(data.monster.inputs?.defenceReductions)) {
+        if (v !== undefined && v !== INITIAL_MONSTER_INPUTS.defenceReductions[k as keyof typeof INITIAL_MONSTER_INPUTS.defenceReductions]) {
+          this.updateUIState({ isDefensiveReductionsExpanded: true });
+          break;
+        }
+      }
+
       // only use the shortlink for user-input fields, trust cdn for others in case they change
       this.updateMonster({
         ...monsterById,
