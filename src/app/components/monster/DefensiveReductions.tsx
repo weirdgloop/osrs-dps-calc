@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { IconChevronDown, IconChevronUp } from '@tabler/icons-react';
 import NumberInput from '@/app/components/generic/NumberInput';
 import Toggle from '@/app/components/generic/Toggle';
@@ -12,26 +12,26 @@ import { useStore } from '@/state';
 
 const DefensiveReductions: React.FC = observer(() => {
   const store = useStore();
+  const { isDefensiveReductionsExpanded } = store.ui;
   const { defenceReductions } = store.monster.inputs;
-  const [expanded, setExpanded] = useState(false);
 
   return (
     <div className="rounded bg-body-100 dark:bg-dark-500">
       <button
         type="button"
-        className={`w-full pt-1 border-b-body-400 dark:border-b-dark-300 px-2 flex text-gray-500 dark:text-gray-300 font-semibold justify-between gap-2 ${expanded ? 'border-b' : ''}`}
-        onClick={() => setExpanded(!expanded)}
+        className={`w-full pt-1 border-b-body-400 dark:border-b-dark-300 px-2 flex text-gray-500 dark:text-gray-300 font-semibold justify-between gap-2 ${isDefensiveReductionsExpanded ? 'border-b' : ''}`}
+        onClick={() => store.updateUIState({ isDefensiveReductionsExpanded: !isDefensiveReductionsExpanded })}
       >
         <div>
           Defensive Reductions
         </div>
         <div className="relative top-[-2px]">
-          {expanded ? <IconChevronUp width={20} />
+          {isDefensiveReductionsExpanded ? <IconChevronUp width={20} />
             : <IconChevronDown width={20} />}
         </div>
       </button>
 
-      {expanded && (
+      {isDefensiveReductionsExpanded && (
         <div className="p-2">
           <div className="w-full">
             <NumberInput
