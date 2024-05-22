@@ -77,7 +77,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
           ...standardHitDist.scaleProbability(0.3).hits,
           ...standardHitDist.scaleProbability(0.7).hits.map((h) => new WeightedHit(h.probability, h.hitsplats.map((d) => {
             const reduction = Math.max(1, Math.trunc(d / 4));
-            return d - reduction;
+            return Math.max(0, d - reduction);
           }))),
         ]),
       ]);
