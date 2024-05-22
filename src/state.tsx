@@ -38,6 +38,24 @@ import { WikiSyncer, startPollingForRuneLite } from './wikisync/WikiSyncer';
 
 const EMPTY_CALC_LOADOUT = {} as CalculatedLoadout;
 
+const INITIAL_MONSTER_INPUTS = {
+  isFromCoxCm: false,
+  toaInvocationLevel: 0,
+  toaPathLevel: 0,
+  partyMaxCombatLevel: 126,
+  partyAvgMiningLevel: 99,
+  partyMaxHpLevel: 99,
+  partySize: 1,
+  monsterCurrentHp: 150,
+  defenceReductions: {
+    vulnerability: false,
+    accursed: false,
+    dwh: 0,
+    arclight: 0,
+    bgs: 0,
+  },
+};
+
 const generateInitialEquipment = () => {
   const initialEquipment: PlayerEquipment = {
     ammo: null,
@@ -171,23 +189,7 @@ class GlobalState implements State {
       stab: 20,
     },
     attributes: [MonsterAttribute.DEMON],
-    inputs: {
-      isFromCoxCm: false,
-      toaInvocationLevel: 0,
-      toaPathLevel: 0,
-      partyMaxCombatLevel: 126,
-      partyAvgMiningLevel: 99,
-      partyMaxHpLevel: 99,
-      partySize: 1,
-      monsterCurrentHp: 150,
-      defenceReductions: {
-        vulnerability: false,
-        accursed: false,
-        dwh: 0,
-        arclight: 0,
-        bgs: 0,
-      },
-    },
+    inputs: { ...INITIAL_MONSTER_INPUTS },
   };
 
   loadouts: Player[] = [
@@ -200,6 +202,7 @@ class GlobalState implements State {
     showPreferencesModal: false,
     showShareModal: false,
     username: '',
+    isDefensiveReductionsExpanded: false,
   };
 
   prefs: Preferences = {
@@ -284,14 +287,6 @@ class GlobalState implements State {
       if (!this.prefs.manualMode) {
         this.recalculateEquipmentBonusesFromGearAll();
       }
-    }));
-
-    // reset monster current hp when selecting a new monster
-    const monsterHpTriggers: ((r: IReactionPublic) => unknown)[] = [
-      () => toJS(this.monster.id),
-    ];
-    monsterHpTriggers.map((t) => reaction(t, () => {
-      this.monster.inputs.monsterCurrentHp = this.monster.skills.hp;
     }));
 
     this.wikisync = startPollingForRuneLite();
@@ -450,6 +445,14 @@ class GlobalState implements State {
       const monsterById = getMonsters().find((m) => m.id === data.monster.id);
       if (!monsterById) {
         throw new Error(`Failed to find monster by id '${data.monster.id}' from shortlink`);
+      }
+
+      // If the passed monster def reductions are different to the defaults, expand the UI section.
+      for (const [k, v] of Object.entries(data.monster.inputs?.defenceReductions)) {
+        if (v !== undefined && v !== INITIAL_MONSTER_INPUTS.defenceReductions[k as keyof typeof INITIAL_MONSTER_INPUTS.defenceReductions]) {
+          this.updateUIState({ isDefensiveReductionsExpanded: true });
+          break;
+        }
       }
 
       // only use the shortlink for user-input fields, trust cdn for others in case they change
@@ -640,6 +643,15 @@ class GlobalState implements State {
   updateMonster(monster: PartialDeep<Monster>) {
     // If monster attributes were passed to this function, clear the existing ones
     if (monster.attributes !== undefined) this.monster.attributes = [];
+
+    // If the monster ID was changed, reset all the inputs.
+    if (
+      monster.id !== undefined
+      && monster.id !== this.monster.id
+      && !Object.hasOwn(monster, 'inputs')
+    ) {
+      monster.inputs = { ...INITIAL_MONSTER_INPUTS };
+    }
 
     this.monster = merge(this.monster, monster, (obj, src) => {
       // This check is to ensure that empty arrays always override existing arrays, even if they have values.
