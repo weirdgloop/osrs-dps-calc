@@ -132,7 +132,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isRevWeaponBuffApplicable()) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_REV_WEAPON, attackRoll, [3, 2]);
     }
-    if (this.wearing('Arclight') && mattrs.includes(MonsterAttribute.DEMON)) {
+    if (this.wearing(['Arclight', 'Firelight']) && mattrs.includes(MonsterAttribute.DEMON)) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor([7, 10]));
     }
     if (this.wearing('Dragon hunter lance') && mattrs.includes(MonsterAttribute.DRAGON)) {
@@ -219,7 +219,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_BLACK_MASK, maxHit, [7, 6]);
     }
 
-    if (this.wearing('Arclight') && mattrs.includes(MonsterAttribute.DEMON)) {
+    if (this.wearing(['Arclight', 'Firelight']) && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([7, 10]));
     }
     if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {
@@ -334,6 +334,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isRevWeaponBuffApplicable()) {
       attackRoll = Math.trunc(attackRoll * 3 / 2);
     }
+    if (this.wearing('Scorching bow') && mattrs.includes(MonsterAttribute.DEMON)) {
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor([3, 10]));
+    }
     if (this.wearing('Dragon hunter crossbow') && mattrs.includes(MonsterAttribute.DRAGON)) {
       // TODO: https://twitter.com/JagexAsh/status/1647928422843273220 for max_hit seems to be additive now
       attackRoll = Math.trunc(attackRoll * 13 / 10);
@@ -416,6 +419,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = PlayerVsNPCCalc.tbowScaling(maxHit, tbowMagic, false);
     }
 
+    if (this.wearing('Scorching bow') && mattrs.includes(MonsterAttribute.DEMON)) {
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([3, 10]));
+    }
+
     // multiplicative if not with slayer helm
     if (needRevWeaponBonus) {
       maxHit = Math.trunc(maxHit * 3 / 2);
@@ -468,7 +475,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
-      const baseFactor: Factor = buffs.markOfDarknessSpell ? [8, 20] : [4, 20];
+      const markMultiplier: number = buffs.markOfDarknessSpell ? 2 : 1;
+      const ignitedMultiplier: number = this.wearing('Ignited staff') ? 2 : 1;
+      const baseFactor: Factor = [4 * markMultiplier * ignitedMultiplier, 20];
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor(baseFactor));
     }
     if (this.isRevWeaponBuffApplicable()) {
@@ -583,7 +592,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.buffs.markOfDarknessSpell && this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([5, 20]));
+      const ignitedMultiplier: number = this.wearing('Ignited staff') ? 2 : 1;
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([5 * ignitedMultiplier, 20]));
     }
 
     if (this.isRevWeaponBuffApplicable()) {

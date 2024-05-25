@@ -4,6 +4,7 @@ import { keys } from '@/utils';
 import { CAST_STANCES, TOMBS_OF_AMASCUT_MONSTER_IDS } from '@/lib/constants';
 import { sum } from 'd3-array';
 import equipment from '../../cdn/json/equipment.json';
+import proposed_equipment from '../../cdn/json/proposed_equipment.json';
 import generatedEquipmentAliases from './EquipmentAliases';
 
 export type EquipmentBonuses = Pick<Player, 'bonuses' | 'offensive' | 'defensive'>;
@@ -11,7 +12,7 @@ export type EquipmentBonuses = Pick<Player, 'bonuses' | 'offensive' | 'defensive
 /**
  * All available equipment that a player can equip.
  */
-export const availableEquipment = equipment as EquipmentPiece[];
+export const availableEquipment = (equipment as EquipmentPiece[]).concat(proposed_equipment as EquipmentPiece[]);
 
 export const noStatExceptions = [
   'Castle wars bracelet',

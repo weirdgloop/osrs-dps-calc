@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Firelight",
+    "id": 19675,
+    "version": "proposed (2024-05-24)",
+    "slot": "weapon",
+    "image": "Arclight.png",
+    "speed": 4,
+    "category": "Slash Sword",
+    "bonuses": {
+      "str": 13,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 63,
+      "slash": 70,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ignited staff",
+    "id": 1409,
+    "version": "proposed (2024-05-24)",
+    "slot": "weapon",
+    "image": "Iban's staff.png",
+    "speed": 5,
+    "category": "Staff",
+    "bonuses": {
+      "str": 62,
+      "ranged_str": 0,
+      "magic_str": 100,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 10,
+      "slash": -5,
+      "crush": 83,
+      "magic": 37,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 1,
+      "slash": 1,
+      "crush": 0,
+      "magic": 25,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Scorching bow",
+    "id": 27610,
+    "version": "proposed (2024-05-24)",
+    "slot": "weapon",
+    "image": "Bow of faerdhinen (c).png",
+    "speed": 5,
+    "category": "Bow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 40,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 124
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  }
+]
