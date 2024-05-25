@@ -4,6 +4,7 @@ Hello! Thanks for taking an interest in contributing to our OSRS DPS calculator.
 ✅ We're looking for these types of contributions:
 * Changes to incorrect calculator logic (preferably with some evidence)
 * New additions to calculator logic (preferably with some evidence)
+  * Including adding items proposed by Jagex dev blogs
 * CSS improvements, provided they don't change the core user experience
 
 ❌ Generally, we're not going to accept these types of contributions:
