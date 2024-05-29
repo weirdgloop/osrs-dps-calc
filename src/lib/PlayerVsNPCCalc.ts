@@ -172,6 +172,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       if (inqPieces === 3) inqPieces = 5;
 
       if (inqPieces > 0) {
+        if (this.wearing("Inquisitor's mace")) {
+          inqPieces *= 3;
+        }
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_INQ, attackRoll, [200 + inqPieces, 200]);
       }
     }
@@ -297,6 +300,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       if (inqPieces === 3) inqPieces = 5;
 
       if (inqPieces > 0) {
+        if (this.wearing("Inquisitor's mace")) {
+          inqPieces *= 3;
+        }
         maxHit = this.trackFactor(DetailKey.MAX_HIT_INQ, maxHit, [200 + inqPieces, 200]);
       }
     }
