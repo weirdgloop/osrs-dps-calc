@@ -980,7 +980,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
-    // TODO (29/05/24): damage rolls of 0 should be boosted up to 1
+    dist = dist.transform(
+      (h) => HitDistribution.single(1.0, Math.max(h.damage, 1)),
+      { transformInaccurate: false },
+    );
 
     return this.applyLimiters(dist);
   }
