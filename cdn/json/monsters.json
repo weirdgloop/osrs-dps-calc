@@ -836,7 +836,7 @@
       "magic": 30,
       "ranged": 95,
       "slash": 110,
-      "stab": 30
+      "stab": 20
     },
     "attributes": [
       "dragon",
@@ -5172,7 +5172,7 @@
       "magic": 40,
       "ranged": 30,
       "slash": 50,
-      "stab": 30
+      "stab": 10
     },
     "attributes": [
       "dragon"
@@ -5211,7 +5211,7 @@
       "magic": 40,
       "ranged": 30,
       "slash": 50,
-      "stab": 30
+      "stab": 10
     },
     "attributes": [
       "dragon"
@@ -5250,7 +5250,7 @@
       "magic": 40,
       "ranged": 30,
       "slash": 50,
-      "stab": 30
+      "stab": 10
     },
     "attributes": [
       "dragon"
@@ -5289,7 +5289,7 @@
       "magic": 40,
       "ranged": 30,
       "slash": 50,
-      "stab": 30
+      "stab": 10
     },
     "attributes": [
       "dragon"
@@ -7194,9 +7194,9 @@
       "str": 0
     },
     "defensive": {
-      "crush": 0,
+      "crush": -15,
       "magic": 30,
-      "ranged": 0,
+      "ranged": 20,
       "slash": 30,
       "stab": 30
     },
@@ -8769,7 +8769,7 @@
     "id": 7243,
     "name": "Black demon",
     "version": "Level 178",
-    "image": "Black demon (2).png",
+    "image": "Black demon.png",
     "level": 178,
     "speed": 4,
     "style": [
@@ -8808,7 +8808,7 @@
     "id": 7242,
     "name": "Black demon",
     "version": "Level 184",
-    "image": "Black demon (3).png",
+    "image": "Black demon.png",
     "level": 184,
     "speed": 4,
     "style": [
@@ -8847,7 +8847,7 @@
     "id": 7874,
     "name": "Black demon",
     "version": "Level 188",
-    "image": "Black demon (5).png",
+    "image": "Black demon.png",
     "level": 188,
     "speed": 4,
     "style": [
@@ -8916,7 +8916,7 @@
       "magic": 60,
       "ranged": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
@@ -8957,7 +8957,7 @@
       "magic": 60,
       "ranged": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
@@ -9869,7 +9869,7 @@
       "magic": 60,
       "ranged": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
@@ -9910,7 +9910,7 @@
       "magic": 60,
       "ranged": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
@@ -9951,7 +9951,7 @@
       "magic": 60,
       "ranged": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
@@ -9992,7 +9992,7 @@
       "magic": 60,
       "ranged": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
@@ -10033,7 +10033,7 @@
       "magic": 60,
       "ranged": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
@@ -10992,7 +10992,7 @@
       "magic": 30,
       "ranged": 90,
       "slash": 70,
-      "stab": 50
+      "stab": 20
     },
     "attributes": [
       "dragon",
@@ -11033,7 +11033,7 @@
       "magic": 30,
       "ranged": 90,
       "slash": 70,
-      "stab": 50
+      "stab": 20
     },
     "attributes": [
       "dragon",
@@ -11260,7 +11260,7 @@
       "magic": 60,
       "ranged": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
@@ -11302,7 +11302,7 @@
       "magic": 60,
       "ranged": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
@@ -11344,7 +11344,7 @@
       "magic": 60,
       "ranged": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
@@ -11386,7 +11386,7 @@
       "magic": 60,
       "ranged": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
@@ -20413,7 +20413,7 @@
       "magic": 20,
       "ranged": 100,
       "slash": 60,
-      "stab": 60
+      "stab": 20
     },
     "attributes": [
       "dragon"
@@ -20791,7 +20791,7 @@
       "crush": 190,
       "magic": 440,
       "ranged": 320,
-      "slash": 65,
+      "slash": 45,
       "stab": 255
     },
     "attributes": [
@@ -20830,7 +20830,7 @@
       "crush": 190,
       "magic": 440,
       "ranged": 320,
-      "slash": 65,
+      "slash": 45,
       "stab": 255
     },
     "attributes": [
@@ -20869,7 +20869,7 @@
       "crush": 190,
       "magic": 440,
       "ranged": 320,
-      "slash": 65,
+      "slash": 45,
       "stab": 255
     },
     "attributes": [
@@ -26195,11 +26195,11 @@
       "str": 0
     },
     "defensive": {
-      "crush": 0,
+      "crush": -20,
       "magic": 20,
       "ranged": 20,
-      "slash": 20,
-      "stab": 20
+      "slash": 60,
+      "stab": 50
     },
     "attributes": []
   },
@@ -26232,11 +26232,11 @@
       "str": 0
     },
     "defensive": {
-      "crush": 0,
+      "crush": -20,
       "magic": 20,
       "ranged": 20,
-      "slash": 20,
-      "stab": 20
+      "slash": 60,
+      "stab": 50
     },
     "attributes": []
   },
@@ -30704,9 +30704,9 @@
     "defensive": {
       "crush": 40,
       "magic": 30,
-      "ranged": 20,
+      "ranged": 50,
       "slash": 40,
-      "stab": 20
+      "stab": 10
     },
     "attributes": [
       "dragon",
@@ -30745,9 +30745,9 @@
     "defensive": {
       "crush": 40,
       "magic": 30,
-      "ranged": 20,
+      "ranged": 50,
       "slash": 40,
-      "stab": 20
+      "stab": 10
     },
     "attributes": [
       "dragon",
@@ -32648,43 +32648,6 @@
     "name": "Guard (Prifddinas)",
     "version": "7",
     "image": "Guard (Prifddinas, 7).png",
-    "level": 108,
-    "speed": 4,
-    "style": [
-      "Stab"
-    ],
-    "size": 1,
-    "max_hit": "10",
-    "skills": {
-      "atk": 95,
-      "def": 80,
-      "hp": 105,
-      "magic": 1,
-      "ranged": 0,
-      "str": 95
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 70,
-      "magic": 60,
-      "ranged": 50,
-      "slash": 70,
-      "stab": 50
-    },
-    "attributes": []
-  },
-  {
-    "id": 9191,
-    "name": "Guard (Prifddinas)",
-    "version": "8",
-    "image": "Guard (Prifddinas, 8).png",
     "level": 108,
     "speed": 4,
     "style": [
@@ -38384,7 +38347,7 @@
       "magic": 30,
       "ranged": 90,
       "slash": 70,
-      "stab": 50
+      "stab": 20
     },
     "attributes": [
       "dragon",
@@ -38425,7 +38388,7 @@
       "magic": 30,
       "ranged": 90,
       "slash": 70,
-      "stab": 50
+      "stab": 20
     },
     "attributes": [
       "dragon",
@@ -40840,7 +40803,7 @@
       "Magic"
     ],
     "size": 5,
-    "max_hit": "31",
+    "max_hit": "33",
     "skills": {
       "atk": 300,
       "def": 300,
@@ -40881,7 +40844,7 @@
       "Magic"
     ],
     "size": 5,
-    "max_hit": "31",
+    "max_hit": "33",
     "skills": {
       "atk": 300,
       "def": 300,
@@ -42041,7 +42004,7 @@
       "magic": 80,
       "ranged": 70,
       "slash": 90,
-      "stab": 70
+      "stab": 60
     },
     "attributes": [
       "dragon",
@@ -43685,7 +43648,7 @@
       "magic": 80,
       "ranged": 70,
       "slash": 90,
-      "stab": 70
+      "stab": 20
     },
     "attributes": [
       "dragon",
@@ -44303,7 +44266,7 @@
     "defensive": {
       "crush": 180,
       "magic": 220,
-      "ranged": 30,
+      "ranged": 50,
       "slash": 150,
       "stab": 200
     },
@@ -44417,7 +44380,7 @@
       "magic": 0,
       "ranged": 0,
       "slash": 30,
-      "stab": -10
+      "stab": -20
     },
     "attributes": []
   },
@@ -44455,7 +44418,7 @@
       "magic": 0,
       "ranged": 0,
       "slash": 30,
-      "stab": -10
+      "stab": -20
     },
     "attributes": []
   },
@@ -44533,7 +44496,7 @@
       "magic": 50,
       "ranged": 0,
       "slash": 40,
-      "stab": -10
+      "stab": -20
     },
     "attributes": []
   },
@@ -44571,7 +44534,7 @@
       "magic": 50,
       "ranged": 0,
       "slash": 40,
-      "stab": -10
+      "stab": -20
     },
     "attributes": []
   },
@@ -44609,7 +44572,7 @@
       "magic": 0,
       "ranged": 0,
       "slash": 25,
-      "stab": -10
+      "stab": -20
     },
     "attributes": []
   },
@@ -44647,7 +44610,7 @@
       "magic": 0,
       "ranged": 0,
       "slash": 20,
-      "stab": -10
+      "stab": -20
     },
     "attributes": []
   },
@@ -47082,7 +47045,7 @@
       "magic": 30,
       "ranged": 90,
       "slash": 100,
-      "stab": 50
+      "stab": 20
     },
     "attributes": [
       "dragon",
@@ -57615,7 +57578,7 @@
       "magic": 60,
       "ranged": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
@@ -57656,7 +57619,7 @@
       "magic": 60,
       "ranged": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
@@ -57697,7 +57660,7 @@
       "magic": 60,
       "ranged": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
@@ -57738,7 +57701,7 @@
       "magic": 60,
       "ranged": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
@@ -57779,7 +57742,7 @@
       "magic": 60,
       "ranged": 50,
       "slash": 70,
-      "stab": 50
+      "stab": 10
     },
     "attributes": [
       "dragon",
@@ -59572,7 +59535,7 @@
       "magic": 30,
       "ranged": 95,
       "slash": 115,
-      "stab": 30
+      "stab": 20
     },
     "attributes": [
       "dragon",
@@ -63198,7 +63161,7 @@
       "str": 50
     },
     "defensive": {
-      "crush": 115,
+      "crush": 75,
       "magic": 140,
       "ranged": 115,
       "slash": 155,
@@ -69364,7 +69327,7 @@
       "magic": 30,
       "ranged": 90,
       "slash": 70,
-      "stab": 50
+      "stab": 20
     },
     "attributes": [
       "dragon",
@@ -69405,7 +69368,7 @@
       "magic": 30,
       "ranged": 90,
       "slash": 70,
-      "stab": 50
+      "stab": 20
     },
     "attributes": [
       "dragon",
@@ -69446,7 +69409,7 @@
       "magic": 30,
       "ranged": 90,
       "slash": 70,
-      "stab": 50
+      "stab": 20
     },
     "attributes": [
       "dragon",
@@ -76387,7 +76350,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000052-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -76425,7 +76388,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000052-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -78275,7 +78238,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000032-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000008-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -78312,7 +78275,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000034-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000A-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -78368,7 +78331,7 @@
       "str": 0
     },
     "defensive": {
-      "crush": 50,
+      "crush": 40,
       "magic": 400,
       "ranged": 40,
       "slash": 190,
@@ -83517,7 +83480,7 @@
       "magic": 50,
       "ranged": 20,
       "slash": 50,
-      "stab": 20
+      "stab": 10
     },
     "attributes": [
       "dragon"
@@ -83557,7 +83520,7 @@
       "magic": 50,
       "ranged": 20,
       "slash": 50,
-      "stab": 20
+      "stab": 10
     },
     "attributes": [
       "dragon"
