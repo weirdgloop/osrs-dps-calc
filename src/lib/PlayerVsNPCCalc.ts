@@ -880,10 +880,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.transform(multiplyTransformer(factor, divisor));
     }
 
-    if (this.monster.name === 'Ice demon' && (isFireSpell(this.player.spell) || this.player.spell?.name === 'Flames of Zamorak')) {
-      // https://twitter.com/JagexAsh/status/1133350436554121216
-      dist = dist.scaleDamage(3, 2);
-    }
     if (this.wearing('Tome of fire') && isFireSpell(this.player.spell)) {
       dist = dist.scaleDamage(11, 10);
     }
