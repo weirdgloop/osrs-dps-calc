@@ -24,6 +24,7 @@ export interface WorkerRequest<T extends WorkerRequestType> {
 
 export interface WorkerCalcOpts {
   includeTtkDist?: boolean,
+  hitDistHideMisses?: boolean,
   detailedOutput?: CalcOpts['detailedOutput'],
   disableMonsterScaling?: CalcOpts['disableMonsterScaling'],
 }
