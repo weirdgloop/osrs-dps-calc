@@ -79,6 +79,7 @@ const Home: NextPage = observer(() => {
       () => toJS(store.monster),
       () => store.prefs.showTtkComparison,
       () => store.prefs.showNPCVersusPlayerResults,
+      () => store.prefs.hitDistsHideMisses,
     ];
     const reactions = triggers.map((t) => reaction(t, recompute, { fireImmediately: true }));
 

@@ -262,11 +262,15 @@ export class AttackDistribution {
     return sum(this.dists.map((d) => d.expectedHit())) || 0;
   }
 
-  public asHistogram(): (ChartEntry & { name: string, value: number })[] {
+  public asHistogram(hideMisses: boolean = false): (ChartEntry & { name: string, value: number })[] {
     const dist = this.singleHitsplat;
 
     const hitMap = new Map<number, number>();
-    dist.hits.forEach((h) => hitMap.set(h.getSum(), (hitMap.get(h.getSum()) || 0) + h.probability));
+    dist.hits.forEach((h) => {
+      if (!hideMisses || h.anyAccurate()) {
+        hitMap.set(h.getSum(), (hitMap.get(h.getSum()) || 0) + h.probability);
+      }
+    });
 
     const ret: { name: string, value: number }[] = [];
     for (let i = 0; i <= dist.getMax(); i++) {
