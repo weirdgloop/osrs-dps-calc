@@ -264,23 +264,26 @@ const MonsterContainer: React.FC = observer(() => {
       return null;
     }
 
-    let color: string;
+    let extraStyles = '';
     switch (displayMonster.weakness.element) {
       case 'air':
-        color = 'bg-white';
+        extraStyles = 'bg-gray-500 border-gray-400';
         break;
       case 'water':
-        color = 'bg-blue-600';
+        extraStyles = 'bg-blue-800 border-blue-300';
         break;
       case 'earth':
-        color = 'bg-green-600';
+        extraStyles = 'bg-green-800 border-green-300';
+        break;
+      case 'fire':
+        extraStyles = 'bg-red-800 border-red-300';
         break;
       default:
-        color = 'bg-red-600';
+        break;
     }
 
     return (
-      <div className={`mb-4 rounded px-1 transition-[background,color] ${color} text-white text-center`}>
+      <div className={`rounded border mt-2 px-1 py-0.5 transition-[background,color] ${extraStyles} text-white text-center text-sm`}>
         {`Weak to ${displayMonster.weakness.element} spells: +${displayMonster.weakness.severity}%`}
       </div>
     );
@@ -333,7 +336,6 @@ const MonsterContainer: React.FC = observer(() => {
           <div className="mb-4">
             <MonsterSelect />
           </div>
-          {weaknessBadge}
           <div>
             <div className="flex gap-8 flex-wrap justify-center">
               <div className="w-72">
@@ -506,7 +508,8 @@ const MonsterContainer: React.FC = observer(() => {
                     </div>
                   </div>
                 </div>
-                <div className="mt-4 text-sm">
+                {weaknessBadge}
+                <div className="mt-2 text-sm">
                   <div className="rounded bg-body-100 dark:bg-dark-500">
                     <button
                       type="button"
