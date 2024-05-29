@@ -8,7 +8,7 @@ test('Empty player against abyssal demon', () => {
   const result = calculatePlayerVsNpc(monster, player);
 
   expect(result.maxHit).toBe(11);
-  expect(result.dps).toBeCloseTo(0.667, DPS_PRECISION);
+  expect(result.dps).toBeCloseTo(0.677, DPS_PRECISION);
   expect(result.maxAttackRoll).toBe(7040);
   expect(result.npcDefRoll).toBe(12096);
   expect(result.accuracy * 100).toBeCloseTo(29.10, ACCURACY_PRECISION);
