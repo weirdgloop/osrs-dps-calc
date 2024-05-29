@@ -76,8 +76,8 @@ const HitDistribution: React.FC = observer(() => {
     >
       <div className="px-6 py-4">
         <Toggle
-          checked={prefs.hitDistsHideMisses}
-          setChecked={(c) => store.updatePreferences({ hitDistsHideMisses: c })}
+          checked={prefs.hitDistsHideZeros}
+          setChecked={(c) => store.updatePreferences({ hitDistsHideZeros: c })}
           label="Hide misses"
           className="text-black dark:text-white mb-4"
         />
