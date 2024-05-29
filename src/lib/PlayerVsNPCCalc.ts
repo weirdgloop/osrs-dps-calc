@@ -24,6 +24,7 @@ import {
 } from '@/enums/Prayer';
 import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
+  BABOON_BRAWLER_IDS, BABOON_MAGE_IDS, BABOON_THROWER_IDS,
   CAST_STANCES, DEFAULT_ATTACK_SPEED,
   GLOWING_CRYSTAL_IDS,
   GUARDIAN_IDS,
@@ -785,6 +786,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return new AttackDistribution([
         HitDistribution.single(1.0, this.monster.skills.hp),
       ]);
+    }
+
+    // apmeken baboons always take max damage from combat triangle weakness
+    if ((this.player.style.type === 'magic' && BABOON_BRAWLER_IDS.includes(this.monster.id))
+      || (this.isUsingMeleeStyle() && BABOON_THROWER_IDS.includes(this.monster.id))
+      || (this.player.style.type === 'ranged' && BABOON_MAGE_IDS.includes(this.monster.id))) {
+      // special case fang max
+      if (this.isUsingMeleeStyle() && this.isWearingFang()) {
+        return new AttackDistribution([HitDistribution.single(1.0, max - Math.trunc(max * 3 / 20))]);
+      }
+      return new AttackDistribution([HitDistribution.single(1.0, max)]);
     }
 
     // todo determine where this effect should happen relative to others

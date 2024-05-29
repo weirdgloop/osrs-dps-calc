@@ -12,6 +12,18 @@ export const BABA_IDS = [
   11778, 11779, 11780,
 ];
 
+export const BABOON_BRAWLER_IDS = [
+  11709, 11712,
+];
+
+export const BABOON_THROWER_IDS = [
+  11710, 11713,
+];
+
+export const BABOON_MAGE_IDS = [
+  11711, 11714,
+];
+
 export const KEPHRI_SHIELDED_IDS = [
   11719,
 ];
