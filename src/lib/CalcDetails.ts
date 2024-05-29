@@ -73,7 +73,7 @@ export enum DetailKey {
 }
 
 export interface DetailEntry {
-  label: string,
+  label: DetailKey,
   value: unknown,
   displayValue: string,
   highlight: boolean,
@@ -118,7 +118,7 @@ export class CalcDetails {
 
     this.dirty = true;
     this.entries.set(label, {
-      label,
+      label: label as DetailKey,
       value,
       displayValue: stringValue,
       highlight: HIGHLIGHTS.includes(label),

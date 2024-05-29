@@ -189,7 +189,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     let effectiveLevel: number = baseLevel;
 
     for (const p of this.getCombatPrayers(false)) {
-      effectiveLevel = this.trackFactor(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, p.factorStrength!);
+      if (p.name === 'Burst of Strength' && effectiveLevel <= 20) {
+        effectiveLevel = this.trackAdd(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, 1);
+      } else {
+        effectiveLevel = this.trackFactor(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, p.factorStrength!);
+      }
     }
 
     if (this.wearing('Soulreaper axe')) {
@@ -368,8 +372,14 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     this.track(DetailKey.DAMAGE_LEVEL, effectiveLevel);
 
+    console.log('weeeeee');
+
     for (const p of this.getCombatPrayers(false)) {
-      effectiveLevel = this.trackFactor(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, p.factorStrength!);
+      if (p.name === 'Sharp Eye' && effectiveLevel <= 20) {
+        effectiveLevel = this.trackAdd(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, 1);
+      } else {
+        effectiveLevel = this.trackFactor(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, p.factorStrength!);
+      }
     }
 
     if (style.stance === 'Accurate') {
@@ -968,6 +978,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         ]);
       }
     }
+
+    // TODO (29/05/24): damage rolls of 0 should be boosted up to 1
 
     return this.applyLimiters(dist);
   }
