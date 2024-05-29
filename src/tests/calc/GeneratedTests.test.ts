@@ -683,7 +683,7 @@ describe('Generated tests', () => {
     });
 
     const { maxHit } = calculatePlayerVsNpc(monster, player);
-    expect(maxHit).toBe(50);
+    expect(maxHit).toBe(51);
   });
 
   test('Tumeken\'s shadow with salve in void', () => {
@@ -715,7 +715,7 @@ describe('Generated tests', () => {
     });
 
     const { maxHit } = calculatePlayerVsNpc(monster, player);
-    expect(maxHit).toBe(52);
+    expect(maxHit).toBe(53);
   });
 
   test('Bone staff in max mage', () => {
@@ -814,7 +814,7 @@ describe('Generated tests', () => {
     });
 
     const { maxHit } = calculatePlayerVsNpc(monster, player);
-    expect(maxHit).toBe(48);
+    expect(maxHit).toBe(49);
   });
 
   test('Fire bolt with chaos gauntlets', () => {
