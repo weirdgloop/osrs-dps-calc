@@ -5262,7 +5262,7 @@
     "skills": {
       "atk": 40,
       "def": 12,
-      "hp": 4,
+      "hp": 25,
       "magic": 40,
       "ranged": 40,
       "str": 40
@@ -5302,7 +5302,7 @@
     "skills": {
       "atk": 60,
       "def": 20,
-      "hp": 6,
+      "hp": 30,
       "magic": 60,
       "ranged": 40,
       "str": 60
@@ -5342,7 +5342,7 @@
     "skills": {
       "atk": 40,
       "def": 12,
-      "hp": 4,
+      "hp": 25,
       "magic": 40,
       "ranged": 40,
       "str": 40
@@ -5382,7 +5382,7 @@
     "skills": {
       "atk": 60,
       "def": 20,
-      "hp": 6,
+      "hp": 30,
       "magic": 60,
       "ranged": 40,
       "str": 60
@@ -5502,7 +5502,7 @@
     "skills": {
       "atk": 40,
       "def": 12,
-      "hp": 4,
+      "hp": 30,
       "magic": 40,
       "ranged": 40,
       "str": 40
@@ -5542,7 +5542,7 @@
     "skills": {
       "atk": 60,
       "def": 20,
-      "hp": 6,
+      "hp": 35,
       "magic": 60,
       "ranged": 40,
       "str": 60
@@ -38272,10 +38272,7 @@
     "attributes": [
       "demon"
     ],
-    "weakness": {
-      "element": "water",
-      "severity": 50
-    }
+    "weakness": null
   },
   {
     "id": 7877,
@@ -40135,7 +40132,7 @@
     ],
     "weakness": {
       "element": "fire",
-      "severity": 50
+      "severity": 150
     }
   },
   {
@@ -71214,10 +71211,7 @@
     "attributes": [
       "undead"
     ],
-    "weakness": {
-      "element": "air",
-      "severity": 35
-    }
+    "weakness": null
   },
   {
     "id": 11268,
