@@ -99,7 +99,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const { style } = this.player;
 
     let effectiveLevel: number = this.track(DetailKey.PLAYER_ACCURACY_LEVEL, this.player.skills.atk + this.player.boosts.atk);
-    for (const p of this.getCombatPrayers(true)) {
+    for (const p of this.getCombatPrayers('factorAccuracy')) {
       effectiveLevel = this.trackFactor(DetailKey.PLAYER_ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
     }
 
@@ -188,7 +188,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const baseLevel: number = this.trackAdd(DetailKey.DAMAGE_LEVEL, this.player.skills.str, this.player.boosts.str);
     let effectiveLevel: number = baseLevel;
 
-    for (const p of this.getCombatPrayers(false)) {
+    for (const p of this.getCombatPrayers()) {
       if (p.name === 'Burst of Strength' && effectiveLevel <= 20) {
         effectiveLevel = this.trackAdd(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, 1);
       } else {
@@ -307,7 +307,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const { style } = this.player;
 
     let effectiveLevel: number = this.track(DetailKey.PLAYER_ACCURACY_LEVEL, this.player.skills.ranged + this.player.boosts.ranged);
-    for (const p of this.getCombatPrayers(true)) {
+    for (const p of this.getCombatPrayers('factorAccuracy')) {
       effectiveLevel = this.trackFactor(DetailKey.PLAYER_ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
     }
 
@@ -372,9 +372,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     this.track(DetailKey.DAMAGE_LEVEL, effectiveLevel);
 
-    console.log('weeeeee');
-
-    for (const p of this.getCombatPrayers(false)) {
+    for (const p of this.getCombatPrayers()) {
       if (p.name === 'Sharp Eye' && effectiveLevel <= 20) {
         effectiveLevel = this.trackAdd(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, 1);
       } else {
@@ -458,7 +456,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const { style } = this.player;
 
     let effectiveLevel: number = this.track(DetailKey.PLAYER_ACCURACY_LEVEL, this.player.skills.magic + this.player.boosts.magic);
-    for (const p of this.getCombatPrayers(true)) {
+    for (const p of this.getCombatPrayers('factorAccuracy')) {
       effectiveLevel = this.trackFactor(DetailKey.PLAYER_ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
     }
 
@@ -611,6 +609,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
+    for (const p of this.getCombatPrayers('magicDamageBonus')) {
+      magicDmgBonus += p.magicDamageBonus!;
+    }
+
     maxHit = Math.trunc(maxHit * (1000 + magicDmgBonus) / 1000);
 
     if (blackMaskBonus) {
@@ -634,7 +636,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   /**
    * Get the "combat" prayers for the current combat style. These are prayers that aren't overheads.
    */
-  private getCombatPrayers(accuracy: boolean): PrayerData[] {
+  private getCombatPrayers(filter: keyof PrayerData = 'factorStrength'): PrayerData[] {
     const style = this.player.style.type;
 
     let prayers = this.player.prayers.map((p) => PrayerMap[p]);
@@ -646,7 +648,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       prayers = prayers.filter((p) => p.combatStyle === 'magic');
     }
 
-    return prayers.filter((p) => (accuracy ? p.factorAccuracy : p.factorStrength));
+    return prayers.filter((p) => p[filter]);
   }
 
   /**
