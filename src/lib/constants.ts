@@ -12,18 +12,6 @@ export const BABA_IDS = [
   11778, 11779, 11780,
 ];
 
-export const BABOON_BRAWLER_IDS = [
-  11709, 11712,
-];
-
-export const BABOON_THROWER_IDS = [
-  11710, 11713,
-];
-
-export const BABOON_MAGE_IDS = [
-  11711, 11714,
-];
-
 export const KEPHRI_SHIELDED_IDS = [
   11719,
 ];
@@ -303,6 +291,21 @@ export const ONE_HIT_MONSTERS: number[] = [
   8584, // Flower
   11193, // Flower (A Night at the Theatre)
 ];
+
+export const ALWAYS_MAX_HIT_MONSTERS = {
+  melee: [
+    11710, 11713, // baboon thrower
+    12814, // frem warband archer
+  ],
+  ranged: [
+    11711, 11714, // baboon mage
+    12815, // frem warband seer
+  ],
+  magic: [
+    11709, 11712, // baboon brawler
+    12816, // frem warband berserker
+  ],
+};
 
 /**
  * NPCs that will always hit the player with their attacks, no matter what gear they are wearing
