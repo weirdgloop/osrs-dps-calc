@@ -880,7 +880,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.scaleDamage(11, 10);
     }
     if (this.wearing('Tome of water') && isWaterSpell(this.player.spell)) {
-      dist = dist.scaleDamage(6, 5);
+      dist = dist.scaleDamage(11, 10);
     }
 
     if (this.player.style.type === 'magic' && this.isWearingAhrims()) {
