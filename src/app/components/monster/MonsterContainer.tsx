@@ -1,7 +1,12 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, {
+  ReactNode, useEffect, useMemo, useState,
+} from 'react';
 import dagger from '@/public/img/bonuses/dagger.png';
 import scimitar from '@/public/img/bonuses/scimitar.png';
 import warhammer from '@/public/img/bonuses/warhammer.png';
+import ranged_light from '@/public/img/bonuses/ranged_light.webp';
+import ranged_standard from '@/public/img/bonuses/ranged_standard.webp';
+import ranged_heavy from '@/public/img/bonuses/ranged_heavy.webp';
 import magic from '@/public/img/bonuses/magic.png';
 import ranged from '@/public/img/bonuses/ranged.png';
 import hitpoints from '@/public/img/bonuses/hitpoints.png';
@@ -254,6 +259,36 @@ const MonsterContainer: React.FC = observer(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [toJS(loadouts), toJS(monster), displayMonster.skills.hp]);
 
+  const weaknessBadge: ReactNode | null = useMemo(() => {
+    if (!displayMonster.weakness) {
+      return null;
+    }
+
+    let extraStyles = '';
+    switch (displayMonster.weakness.element) {
+      case 'air':
+        extraStyles = 'bg-gray-500 border-gray-400';
+        break;
+      case 'water':
+        extraStyles = 'bg-blue-800 border-blue-300';
+        break;
+      case 'earth':
+        extraStyles = 'bg-green-800 border-green-300';
+        break;
+      case 'fire':
+        extraStyles = 'bg-red-800 border-red-300';
+        break;
+      default:
+        break;
+    }
+
+    return (
+      <div className={`rounded border mt-2 px-1 py-0.5 transition-[background,color] ${extraStyles} text-white text-center text-sm`}>
+        {`Weak to ${displayMonster.weakness.element} spells: +${displayMonster.weakness.severity}%`}
+      </div>
+    );
+  }, [displayMonster.weakness]);
+
   return (
     <div className="basis-4 flex flex-col grow mt-3 md:grow-0">
       <div
@@ -447,17 +482,34 @@ const MonsterContainer: React.FC = observer(() => {
                         onChange={(v) => store.updateMonster({ defensive: { magic: v } })}
                       />
                       <AttributeInput
-                        name="Ranged"
+                        name="Ranged Light"
                         max={1000}
                         disabled={!prefs.manualMode}
-                        image={ranged}
-                        value={displayMonster.defensive.ranged}
-                        onChange={(v) => store.updateMonster({ defensive: { ranged: v } })}
+                        image={ranged_light}
+                        value={displayMonster.defensive.light}
+                        onChange={(v) => store.updateMonster({ defensive: { light: v } })}
+                      />
+                      <AttributeInput
+                        name="Ranged Standard"
+                        max={1000}
+                        disabled={!prefs.manualMode}
+                        image={ranged_standard}
+                        value={displayMonster.defensive.standard}
+                        onChange={(v) => store.updateMonster({ defensive: { standard: v } })}
+                      />
+                      <AttributeInput
+                        name="Ranged Heavy"
+                        max={1000}
+                        disabled={!prefs.manualMode}
+                        image={ranged_heavy}
+                        value={displayMonster.defensive.heavy}
+                        onChange={(v) => store.updateMonster({ defensive: { heavy: v } })}
                       />
                     </div>
                   </div>
                 </div>
-                <div className="mt-4 text-sm">
+                {weaknessBadge}
+                <div className="mt-2 text-sm">
                   <div className="rounded bg-body-100 dark:bg-dark-500">
                     <button
                       type="button"

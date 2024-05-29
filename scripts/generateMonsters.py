@@ -13,6 +13,7 @@ import requests
 import json
 import urllib.parse
 import re
+import csv
 
 FILE_NAME = '../cdn/json/monsters.json'
 WIKI_BASE = 'https://oldschool.runescape.wiki'
@@ -50,9 +51,13 @@ REQUIRED_PRINTOUTS = [
     'Strength level',
     'Size',
     'NPC ID',
-    'Category'
+    'Category',
+    'Elemental weakness',
+    'Elemental weakness percent',
+    'Light range defence bonus',
+    'Standard range defence bonus',
+    'Heavy range defence bonus'
 ]
-
 
 def get_monster_data():
     monsters = {}
@@ -105,7 +110,7 @@ def main():
 
     # Loop over the monsters data from the wiki
     for k, v in wiki_data.items():
-        print('Processing ' + k)
+        # print('Processing ' + k)
 
         # Sanity check: make sure that this monster has printouts from SMW
         if 'printouts' not in v:
@@ -165,8 +170,8 @@ def main():
             },
             'offensive': {
                 'atk': get_printout_value(po['Attack bonus']) or 0,
-                'magic': get_printout_value(po['Magic attack bonus']) or 0,
-                'magic_str': get_printout_value(po['Magic Damage bonus']) or 0,
+                'magic': get_printout_value(po['Magic Damage bonus']) or 0,
+                'magic_str': get_printout_value(po['Magic attack bonus']) or 0,
                 'ranged': get_printout_value(po['Range attack bonus']) or 0,
                 'ranged_str': get_printout_value(po['Ranged Strength bonus']) or 0,
                 'str': get_printout_value(po['Strength bonus']) or 0
@@ -174,12 +179,23 @@ def main():
             'defensive': {
                 'crush': get_printout_value(po['Crush defence bonus']) or 0,
                 'magic': get_printout_value(po['Magic defence bonus']) or 0,
-                'ranged': get_printout_value(po['Range defence bonus']) or 0,
+                'heavy': get_printout_value(po['Heavy range defence bonus']) or 0,
+                'standard': get_printout_value(po['Standard range defence bonus']) or 0,
+                'light': get_printout_value(po['Light range defence bonus']) or 0,
                 'slash': get_printout_value(po['Slash defence bonus']) or 0,
                 'stab': get_printout_value(po['Stab defence bonus']) or 0
             },
-            'attributes': po['Monster attribute'] or []
+            'attributes': po['Monster attribute'] or [],
         }
+
+        weakness = get_printout_value(po['Elemental weakness']) or None
+        if weakness:
+            monster['weakness'] = {
+                'element': weakness.lower(),
+                'severity': int(get_printout_value(po['Elemental weakness percent']) or 0)
+            }
+        else:
+            monster['weakness'] = None
 
         # Prune...
         if (

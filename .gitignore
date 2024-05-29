@@ -37,3 +37,5 @@ yarn-error.log*
 scripts/*.json
 .idea/
 .yarn/install-state.gz
+
+/scripts/.venv/

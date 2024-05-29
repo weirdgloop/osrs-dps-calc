@@ -73,9 +73,8 @@ const generateInitialEquipment = () => {
   return initialEquipment;
 };
 
-export const generateEmptyPlayer = (name?: string) => ({
+export const generateEmptyPlayer = (name?: string): Player => ({
   name: name ?? 'Loadout 1',
-  username: '',
   style: getCombatStylesForCategory(EquipmentCategory.NONE)[0],
   skills: {
     atk: 99,
@@ -182,13 +181,16 @@ class GlobalState implements State {
       str: 0,
     },
     defensive: {
+      stab: 20,
+      slash: 20,
       crush: 20,
       magic: 0,
-      ranged: 20,
-      slash: 20,
-      stab: 20,
+      light: 20,
+      standard: 20,
+      heavy: 20,
     },
     attributes: [MonsterAttribute.DEMON],
+    weakness: null,
     inputs: { ...INITIAL_MONSTER_INPUTS },
   };
 

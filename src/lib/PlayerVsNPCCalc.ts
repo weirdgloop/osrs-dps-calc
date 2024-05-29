@@ -11,6 +11,8 @@ import {
   WeightedHit,
 } from '@/lib/HitDist';
 import {
+  getSpellement,
+  getSpellMaxHit,
   canUseSunfireRunes,
   isBindSpell,
   isFireSpell,
@@ -45,6 +47,7 @@ import {
 } from '@/lib/Equipment';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonsterHpOnly } from '@/lib/MonsterScaling';
+import { getRangedDamageType } from '@/types/PlayerCombatStyle';
 
 /**
  * Class for computing various player-vs-NPC metrics.
@@ -72,7 +75,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     );
     const effectiveLevel = this.trackAdd(DetailKey.NPC_DEFENCE_ROLL_EFFECTIVE_LEVEL, level, 9);
 
-    const statBonus = this.trackAdd(DetailKey.NPC_DEFENCE_STAT_BONUS, this.player.style.type ? this.monster.defensive[this.player.style.type] : 0, 64);
+    let bonus: number;
+    if (this.player.style.type === 'ranged') {
+      const rangedType = getRangedDamageType(this.player.equipment.weapon!.category);
+      bonus = rangedType === 'mixed'
+        ? Math.trunc((this.monster.defensive.light + this.monster.defensive.standard + this.monster.defensive.heavy) / 3)
+        : this.monster.defensive[rangedType];
+    } else {
+      bonus = this.monster.defensive[this.player.style.type || 'crush'];
+    }
+
+    const statBonus = this.trackAdd(DetailKey.NPC_DEFENCE_STAT_BONUS, this.player.style.type ? bonus : 0, 64);
     let defenceRoll = this.trackFactor(DetailKey.NPC_DEFENCE_ROLL_BASE, effectiveLevel, [statBonus, 1]);
 
     if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) && this.monster.inputs.toaInvocationLevel) {
@@ -86,7 +99,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const { style } = this.player;
 
     let effectiveLevel: number = this.track(DetailKey.PLAYER_ACCURACY_LEVEL, this.player.skills.atk + this.player.boosts.atk);
-    for (const p of this.getCombatPrayers(true)) {
+    for (const p of this.getCombatPrayers('factorAccuracy')) {
       effectiveLevel = this.trackFactor(DetailKey.PLAYER_ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
     }
 
@@ -175,8 +188,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const baseLevel: number = this.trackAdd(DetailKey.DAMAGE_LEVEL, this.player.skills.str, this.player.boosts.str);
     let effectiveLevel: number = baseLevel;
 
-    for (const p of this.getCombatPrayers(false)) {
-      effectiveLevel = this.trackFactor(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, p.factorStrength!);
+    for (const p of this.getCombatPrayers()) {
+      if (p.name === 'Burst of Strength' && effectiveLevel <= 20) {
+        effectiveLevel = this.trackAdd(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, 1);
+      } else {
+        effectiveLevel = this.trackFactor(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, p.factorStrength!);
+      }
     }
 
     if (this.wearing('Soulreaper axe')) {
@@ -290,7 +307,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const { style } = this.player;
 
     let effectiveLevel: number = this.track(DetailKey.PLAYER_ACCURACY_LEVEL, this.player.skills.ranged + this.player.boosts.ranged);
-    for (const p of this.getCombatPrayers(true)) {
+    for (const p of this.getCombatPrayers('factorAccuracy')) {
       effectiveLevel = this.trackFactor(DetailKey.PLAYER_ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
     }
 
@@ -355,8 +372,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     this.track(DetailKey.DAMAGE_LEVEL, effectiveLevel);
 
-    for (const p of this.getCombatPrayers(false)) {
-      effectiveLevel = this.trackFactor(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, p.factorStrength!);
+    for (const p of this.getCombatPrayers()) {
+      if (p.name === 'Sharp Eye' && effectiveLevel <= 20) {
+        effectiveLevel = this.trackAdd(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, 1);
+      } else {
+        effectiveLevel = this.trackFactor(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, p.factorStrength!);
+      }
     }
 
     if (style.stance === 'Accurate') {
@@ -435,7 +456,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const { style } = this.player;
 
     let effectiveLevel: number = this.track(DetailKey.PLAYER_ACCURACY_LEVEL, this.player.skills.magic + this.player.boosts.magic);
-    for (const p of this.getCombatPrayers(true)) {
+    for (const p of this.getCombatPrayers('factorAccuracy')) {
       effectiveLevel = this.trackFactor(DetailKey.PLAYER_ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
     }
 
@@ -454,7 +475,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const { buffs } = this.player;
     const magicBonus = this.player.offensive.magic;
 
-    let attackRoll = effectiveLevel * (magicBonus + 64);
+    const baseRoll = effectiveLevel * (magicBonus + 64);
+    let attackRoll = baseRoll;
 
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
       const factor = <Factor>[buffs.forinthrySurge ? 27 : 24, 20];
@@ -481,6 +503,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       attackRoll = Math.trunc(attackRoll * 6 / 5);
     }
 
+    const spellement = getSpellement(this.player.spell);
+    if (this.monster.weakness && spellement) {
+      if (spellement === this.monster.weakness.element) {
+        attackRoll += Math.trunc(this.monster.weakness.severity * baseRoll / 100);
+      }
+    }
+
     return attackRoll;
   }
 
@@ -497,7 +526,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const { buffs } = this.player;
 
     if (spell) {
-      maxHit = spell.max_hit || 0;
+      maxHit = getSpellMaxHit(spell, magicLevel);
       if (spell?.name === 'Magic Dart') {
         if (this.wearing("Slayer's staff (e)") && buffs.onSlayerTask) {
           maxHit = Math.trunc(13 + magicLevel / 6);
@@ -573,6 +602,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       blackMaskBonus = true;
     }
 
+    const spellement = getSpellement(this.player.spell);
+    if (this.monster.weakness && spellement) {
+      if (spellement === this.monster.weakness.element) {
+        magicDmgBonus += this.monster.weakness.severity * 10;
+      }
+    }
+
+    for (const p of this.getCombatPrayers('magicDamageBonus')) {
+      magicDmgBonus += p.magicDamageBonus!;
+    }
+
     maxHit = Math.trunc(maxHit * (1000 + magicDmgBonus) / 1000);
 
     if (blackMaskBonus) {
@@ -596,7 +636,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   /**
    * Get the "combat" prayers for the current combat style. These are prayers that aren't overheads.
    */
-  private getCombatPrayers(accuracy: boolean): PrayerData[] {
+  private getCombatPrayers(filter: keyof PrayerData = 'factorStrength'): PrayerData[] {
     const style = this.player.style.type;
 
     let prayers = this.player.prayers.map((p) => PrayerMap[p]);
@@ -608,7 +648,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       prayers = prayers.filter((p) => p.combatStyle === 'magic');
     }
 
-    return prayers.filter((p) => (accuracy ? p.factorAccuracy : p.factorStrength));
+    return prayers.filter((p) => p[filter]);
   }
 
   /**
@@ -840,12 +880,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.transform(multiplyTransformer(factor, divisor));
     }
 
-    if (this.monster.name === 'Ice demon' && (isFireSpell(this.player.spell) || this.player.spell?.name === 'Flames of Zamorak')) {
-      // https://twitter.com/JagexAsh/status/1133350436554121216
-      dist = dist.scaleDamage(3, 2);
-    }
     if (this.wearing('Tome of fire') && isFireSpell(this.player.spell)) {
-      dist = dist.scaleDamage(3, 2);
+      dist = dist.scaleDamage(11, 10);
     }
     if (this.wearing('Tome of water') && isWaterSpell(this.player.spell)) {
       dist = dist.scaleDamage(6, 5);
@@ -940,6 +976,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         ]);
       }
     }
+
+    // TODO (29/05/24): damage rolls of 0 should be boosted up to 1
 
     return this.applyLimiters(dist);
   }

@@ -38,7 +38,7 @@ const NPCVersusPlayerResultsContainer: React.FC = observer(() => {
         </>
       );
     }
-    if (monster.style === 'ranged') {
+    if (['light', 'standard', 'heavy'].includes(monster.style || '')) {
       return (
         <>
           <img src={ranged.src} className="w-5 inline-block" alt="Ranged" />
