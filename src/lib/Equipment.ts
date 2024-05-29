@@ -1,7 +1,7 @@
 import { EquipmentPiece, Player, PlayerEquipment } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { keys } from '@/utils';
-import { TOMBS_OF_AMASCUT_MONSTER_IDS } from '@/lib/constants';
+import { CAST_STANCES, TOMBS_OF_AMASCUT_MONSTER_IDS } from '@/lib/constants';
 import { sum } from 'd3-array';
 import equipment from '../../cdn/json/equipment.json';
 import generatedEquipmentAliases from './EquipmentAliases';
@@ -41,8 +41,8 @@ export const equipmentAliases = generatedEquipmentAliases as { [key: number]: nu
 const commonAmmoCategories = () => {
   const ret: { [k: string]: number[] } = {
     bow_t1: [
-      882, 883, 5616, 5622, // Bronze arrow + variants
-      884, 885, 5617, 5623, // Iron arrow + variants
+      882, 883, 5616, 5622, 598, 942, // Bronze arrow + variants
+      884, 885, 5617, 5623, 2532, 2533, // Iron arrow + variants
     ],
     cb_t1: [
       877, 878, 6061, 6062, 879, 9236, // Bronze bolts + variants, opal bolts + (e)
@@ -60,12 +60,12 @@ const commonAmmoCategories = () => {
   };
 
   // Bows
-  ret.bow_t5 = [...ret.bow_t1, 886, 887, 5618, 5624]; // Steel arrow + variants
-  ret.bow_t20 = [...ret.bow_t5, 888, 889, 5619, 5625]; // Mithril arrow + variants
-  ret.bow_t30 = [...ret.bow_t20, 890, 891, 5620, 5626]; // Adamant arrow + variants
-  ret.bow_t40 = [...ret.bow_t30, 892, 893, 5621, 5627, 78]; // Rune arrow + variants, ice arrows
-  ret.bow_t50 = [...ret.bow_t40, 21326, 21332, 21334, 21336, 4160]; // Amethyst arrow + variants, broad arrows
-  ret.bow_t60 = [...ret.bow_t50, 11212, 11227, 11228, 11229]; // Dragon arrow + variants
+  ret.bow_t5 = [...ret.bow_t1, 886, 887, 5618, 5624, 2534, 2535]; // Steel arrow + variants
+  ret.bow_t20 = [...ret.bow_t5, 888, 889, 5619, 5625, 2536, 2537]; // Mithril arrow + variants
+  ret.bow_t30 = [...ret.bow_t20, 890, 891, 5620, 5626, 2538, 2539]; // Adamant arrow + variants
+  ret.bow_t40 = [...ret.bow_t30, 892, 893, 5621, 5627, 78, 2540, 2541]; // Rune arrow + variants, ice arrows
+  ret.bow_t50 = [...ret.bow_t40, 21326, 21332, 21334, 21336, 4160, 21328, 21330]; // Amethyst arrow + variants, broad arrows
+  ret.bow_t60 = [...ret.bow_t50, 11212, 11227, 11228, 11229, 11217, 11222]; // Dragon arrow + variants
 
   // Bolts
   ret.cb_t16 = [...ret.cb_t1, 9139, 9286, 9293, 9300, 9335, 9237]; // Blurite bolts + variants, jade bolts + (e)
@@ -145,7 +145,8 @@ const ammoForRangedWeapons: { [weapon: number]: number[] } = {
   10149: [10142], // Swamp lizard, Guam tar
   10146: [10143], // Orange salamander, Marrentill tar
   10147: [10144], // Red salamander, Tarromin tar
-  10148: [10145], // Black salamander, Guam tar
+  10148: [10145], // Black salamander, Harralander tar
+  28834: [28837], // Tecu salamander, Irit tar
   28869: [28872, 28878], // Hunters' sunlight crossbow
   29000: [28991], // Eclipse atlatl
 };
@@ -288,9 +289,26 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
     totals.bonuses.str += Math.max(0, Math.trunc((defenceSum - 800) / 12) - 38);
   }
 
-  if (player.spell?.spellbook === 'ancient') {
+  if (player.spell?.spellbook === 'ancient' && CAST_STANCES.includes(player.style.stance)) {
     const virtusPieces = sum([playerEquipment.head?.name, playerEquipment.body?.name, playerEquipment.legs?.name], (i) => (i?.includes('Virtus') ? 1 : 0));
-    totals.bonuses.magic_str += 3 * virtusPieces;
+    totals.bonuses.magic_str += 30 * virtusPieces;
+  }
+
+  // void mage is a visible bonus of 2.5%
+  if (playerEquipment.head?.name === 'Void mage helm'
+    && playerEquipment.body?.name === 'Elite void top'
+    && playerEquipment.legs?.name === 'Elite void robe'
+    && playerEquipment.hands?.name === 'Void knight gloves') {
+    totals.bonuses.magic_str += 25;
+  }
+
+  const cape = playerEquipment.cape;
+  const dizanasQuiverCharged = cape?.name === "Dizana's max cape"
+    || cape?.name === "Blessed dizana's quiver"
+    || (cape?.name === "Dizana's quiver" && cape?.version === 'Charged');
+  if (dizanasQuiverCharged && ammoApplicability(player.equipment.weapon?.id, player.equipment.ammo?.id) === AmmoApplicability.INCLUDED) {
+    totals.offensive.ranged += 10;
+    totals.bonuses.ranged_str += 1;
   }
 
   return totals;

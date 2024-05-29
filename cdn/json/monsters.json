@@ -7,25 +7,25 @@
     "level": 78,
     "speed": 6,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 1,
     "max_hit": "8",
     "skills": {
-      "atk": 0,
-      "def": 0,
-      "hp": 50,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "atk": 72,
+      "def": 85,
+      "hp": 59,
+      "magic": 1,
+      "ranged": 1,
+      "str": 58
     },
     "offensive": {
-      "atk": 0,
+      "atk": 18,
       "magic": 0,
       "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
-      "str": 0
+      "str": 16
     },
     "defensive": {
       "crush": 0,
@@ -3614,7 +3614,7 @@
       "def": 68,
       "hp": 85,
       "magic": 1,
-      "ranged": 0,
+      "ranged": 1,
       "str": 72
     },
     "offensive": {
@@ -3696,7 +3696,7 @@
       "def": 68,
       "hp": 85,
       "magic": 1,
-      "ranged": 0,
+      "ranged": 72,
       "str": 72
     },
     "offensive": {
@@ -10062,7 +10062,7 @@
   {
     "id": 8367,
     "name": "Blood spawn",
-    "version": "",
+    "version": "Entry",
     "image": "Blood spawn.png",
     "level": 55,
     "speed": -1,
@@ -10070,7 +10070,44 @@
       "None"
     ],
     "size": 1,
-    "max_hit": "1",
+    "max_hit": "1 (does not attack)",
+    "skills": {
+      "atk": 1,
+      "def": 0,
+      "hp": 7,
+      "magic": 0,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 8367,
+    "name": "Blood spawn",
+    "version": "Normal",
+    "image": "Blood spawn.png",
+    "level": 55,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 1,
+    "max_hit": "1 (does not attack)",
     "skills": {
       "atk": 1,
       "def": 0,
@@ -10314,7 +10351,7 @@
       "Typeless slash"
     ],
     "size": 5,
-    "max_hit": "18",
+    "max_hit": "20",
     "skills": {
       "atk": 258,
       "def": 60,
@@ -12326,7 +12363,7 @@
     "version": "Enraged",
     "image": "Calvar'ion (enraged).png",
     "level": 264,
-    "speed": 4,
+    "speed": 5,
     "style": [
       "Slash",
       "Magic"
@@ -12368,7 +12405,7 @@
     "version": "Normal",
     "image": "Calvar'ion.png",
     "level": 264,
-    "speed": 4,
+    "speed": 5,
     "style": [
       "Slash",
       "Magic"
@@ -16815,7 +16852,8 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
+      "ranged": -10,
       "heavy": -10,
       "standard": -10,
       "light": -10,
@@ -16854,7 +16892,8 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
+      "ranged": -10,
       "heavy": -10,
       "standard": -10,
       "light": -10,
@@ -16893,7 +16932,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "heavy": -10,
       "standard": -10,
       "light": -10,
@@ -16932,7 +16971,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "heavy": -10,
       "standard": -10,
       "light": -10,
@@ -16971,7 +17010,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "heavy": -10,
       "standard": -10,
       "light": -10,
@@ -17010,7 +17049,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "heavy": -10,
       "standard": -10,
       "light": -10,
@@ -17049,7 +17088,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "heavy": -10,
       "standard": -10,
       "light": -10,
@@ -17088,7 +17127,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "heavy": -10,
       "standard": -10,
       "light": -10,
@@ -17127,7 +17166,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "heavy": -10,
       "standard": -10,
       "light": -10,
@@ -17166,7 +17205,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "heavy": -10,
       "standard": -10,
       "light": -10,
@@ -17205,7 +17244,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "heavy": -10,
       "standard": -10,
       "light": -10,
@@ -17244,7 +17283,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "heavy": -10,
       "standard": -10,
       "light": -10,
@@ -17283,7 +17322,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "heavy": -10,
       "standard": -10,
       "light": -10,
@@ -17322,7 +17361,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "heavy": -10,
       "standard": -10,
       "light": -10,
@@ -17361,7 +17400,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "heavy": -10,
       "standard": -10,
       "light": -10,
@@ -17400,7 +17439,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "heavy": -10,
       "standard": -10,
       "light": -10,
@@ -17439,7 +17478,7 @@
     },
     "defensive": {
       "crush": -10,
-      "magic": 0,
+      "magic": 50,
       "heavy": -10,
       "standard": -10,
       "light": -10,
@@ -20165,7 +20204,7 @@
     "style": [
       "Ranged"
     ],
-    "size": 1,
+    "size": 5,
     "max_hit": "70",
     "skills": {
       "atk": 1,
@@ -21760,7 +21799,7 @@
     "level": 149,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 1,
     "max_hit": "14",
@@ -22611,7 +22650,7 @@
     "skills": {
       "atk": 8,
       "def": 6,
-      "hp": 12,
+      "hp": 16,
       "magic": 1,
       "ranged": 1,
       "str": 8
@@ -26659,7 +26698,7 @@
     "version": "",
     "image": "Fremennik warband archer.png",
     "level": 104,
-    "speed": 5,
+    "speed": 6,
     "style": [
       "Ranged"
     ],
@@ -26698,7 +26737,7 @@
     "version": "",
     "image": "Fremennik warband berserker.png",
     "level": 104,
-    "speed": 5,
+    "speed": 6,
     "style": [
       "Stab"
     ],
@@ -26737,7 +26776,7 @@
     "version": "",
     "image": "Fremennik warband seer.png",
     "level": 104,
-    "speed": 5,
+    "speed": 6,
     "style": [
       "Magic"
     ],
@@ -36460,7 +36499,7 @@
       "atk": 0,
       "def": 30,
       "hp": 35,
-      "magic": 0,
+      "magic": 1,
       "ranged": 30,
       "str": 0
     },
@@ -36606,7 +36645,7 @@
     "version": "",
     "image": "H.A.M. Mage.png",
     "level": 30,
-    "speed": 6,
+    "speed": 10,
     "style": [
       "Magic"
     ],
@@ -42830,7 +42869,7 @@
       "Stab"
     ],
     "size": 1,
-    "max_hit": "5",
+    "max_hit": "6",
     "skills": {
       "atk": 35,
       "def": 35,
@@ -44298,7 +44337,7 @@
       "magic": 20,
       "heavy": 20,
       "standard": 20,
-      "light": 20,
+      "light": -10,
       "slash": 10,
       "stab": 10
     },
@@ -44338,7 +44377,7 @@
       "magic": 20,
       "heavy": 20,
       "standard": 20,
-      "light": 20,
+      "light": -10,
       "slash": 10,
       "stab": 10
     },
@@ -47925,7 +47964,7 @@
     },
     "defensive": {
       "crush": 0,
-      "magic": 0,
+      "magic": 75,
       "heavy": 0,
       "standard": 0,
       "light": 0,
@@ -50241,7 +50280,7 @@
       "str": 130
     },
     "offensive": {
-      "atk": 0,
+      "atk": 50,
       "magic": 0,
       "magic_str": 0,
       "ranged": 0,
@@ -51181,6 +51220,117 @@
       "light": 10,
       "slash": 16,
       "stab": 16
+    },
+    "attributes": []
+  },
+  {
+    "id": 8846,
+    "name": "Mourner (Song of the Elves)",
+    "version": "Level 106",
+    "image": "Mourner (Song of the Elves, level 106).png",
+    "level": 106,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 95,
+      "def": 80,
+      "hp": 100,
+      "magic": 1,
+      "ranged": 1,
+      "str": 95
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 60,
+      "magic": 50,
+      "ranged": 40,
+      "slash": 60,
+      "stab": 40
+    },
+    "attributes": []
+  },
+  {
+    "id": 8844,
+    "name": "Mourner (Song of the Elves)",
+    "version": "Level 24",
+    "image": "Mourner (Song of the Elves).png",
+    "level": 24,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 12,
+      "def": 12,
+      "hp": 13,
+      "magic": 1,
+      "ranged": 1,
+      "str": 16
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 25,
+      "magic": 15,
+      "ranged": 5,
+      "slash": 25,
+      "stab": 5
+    },
+    "attributes": []
+  },
+  {
+    "id": 8845,
+    "name": "Mourner (Song of the Elves)",
+    "version": "Level 51",
+    "image": "Mourner (Song of the Elves).png",
+    "level": 51,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 40,
+      "def": 30,
+      "hp": 29,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 40,
+      "magic": 30,
+      "ranged": 20,
+      "slash": 40,
+      "stab": 20
     },
     "attributes": []
   },
@@ -53011,11 +53161,48 @@
     "attributes": []
   },
   {
+    "id": 10844,
+    "name": "Nylocas Athanatos",
+    "version": "Entry",
+    "image": "Nylocas Athanatos.png",
+    "level": 107,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 3,
+    "max_hit": "1",
+    "skills": {
+      "atk": 1,
+      "def": 40,
+      "hp": 30,
+      "magic": 40,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
     "id": 8384,
     "name": "Nylocas Athanatos",
-    "version": "",
+    "version": "Normal",
     "image": "Nylocas Athanatos.png",
-    "level": 350,
+    "level": 107,
     "speed": -1,
     "style": [
       "None"
@@ -53050,48 +53237,9 @@
     "attributes": []
   },
   {
-    "id": 8344,
-    "name": "Nylocas Hagios",
-    "version": "Level 162",
-    "image": "Nylocas Hagios.png",
-    "level": 162,
-    "speed": 3,
-    "style": [
-      "Magic"
-    ],
-    "size": 1,
-    "max_hit": "17",
-    "skills": {
-      "atk": 200,
-      "def": 1,
-      "hp": 11,
-      "magic": 1,
-      "ranged": 200,
-      "str": 160
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 928,
-      "magic_str": 1073,
-      "ranged": 0,
-      "ranged_str": -15,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": []
-  },
-  {
     "id": 8347,
     "name": "Nylocas Hagios",
-    "version": "Level 260",
+    "version": "Big",
     "image": "Nylocas Hagios.png",
     "level": 260,
     "speed": 3,
@@ -53119,23 +53267,58 @@
     "defensive": {
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "ranged": 0,
       "slash": 0,
       "stab": 0
     },
     "attributes": []
   },
   {
-    "id": 8342,
-    "name": "Nylocas Ischyros",
-    "version": "Level 162",
-    "image": "Nylocas Ischyros.png",
+    "id": 10779,
+    "name": "Nylocas Hagios",
+    "version": "Big (Entry mode)",
+    "image": "Nylocas Hagios.png",
+    "level": 82,
+    "speed": 3,
+    "style": [
+      "Magic"
+    ],
+    "size": 2,
+    "max_hit": "10",
+    "skills": {
+      "atk": 100,
+      "def": 6,
+      "hp": 3,
+      "magic": 6,
+      "ranged": 100,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 400,
+      "magic_str": 360,
+      "ranged": 0,
+      "ranged_str": -6,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 8344,
+    "name": "Nylocas Hagios",
+    "version": "Small",
+    "image": "Nylocas Hagios.png",
     "level": 162,
     "speed": 3,
     "style": [
-      "Stab"
+      "Magic"
     ],
     "size": 1,
     "max_hit": "17",
@@ -53161,6 +53344,43 @@
       "heavy": 0,
       "standard": 0,
       "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 10776,
+    "name": "Nylocas Hagios",
+    "version": "Small (Entry mode)",
+    "image": "Nylocas Hagios.png",
+    "level": 46,
+    "speed": 3,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "5",
+    "skills": {
+      "atk": 80,
+      "def": 1,
+      "hp": 2,
+      "magic": 1,
+      "ranged": 80,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 505,
+      "magic_str": 280,
+      "ranged": 0,
+      "ranged_str": -30,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
       "slash": 0,
       "stab": 0
     },
@@ -53169,7 +53389,7 @@
   {
     "id": 8345,
     "name": "Nylocas Ischyros",
-    "version": "Level 260",
+    "version": "Big",
     "image": "Nylocas Ischyros.png",
     "level": 260,
     "speed": 3,
@@ -53192,6 +53412,121 @@
       "magic_str": 500,
       "ranged": 0,
       "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 10777,
+    "name": "Nylocas Ischyros",
+    "version": "Big (Entry mode)",
+    "image": "Nylocas Ischyros.png",
+    "level": 82,
+    "speed": 3,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "10",
+    "skills": {
+      "atk": 100,
+      "def": 6,
+      "hp": 3,
+      "magic": 6,
+      "ranged": 100,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 400,
+      "magic_str": 360,
+      "ranged": 0,
+      "ranged_str": -6,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 8342,
+    "name": "Nylocas Ischyros",
+    "version": "Small",
+    "image": "Nylocas Ischyros.png",
+    "level": 162,
+    "speed": 3,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "17",
+    "skills": {
+      "atk": 200,
+      "def": 1,
+      "hp": 11,
+      "magic": 1,
+      "ranged": 200,
+      "str": 160
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 928,
+      "magic_str": 1073,
+      "ranged": 0,
+      "ranged_str": -15,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 10774,
+    "name": "Nylocas Ischyros",
+    "version": "Small (Entry mode)",
+    "image": "Nylocas Ischyros.png",
+    "level": 46,
+    "speed": 3,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "5",
+    "skills": {
+      "atk": 80,
+      "def": 1,
+      "hp": 2,
+      "magic": 1,
+      "ranged": 80,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 505,
+      "magic_str": 280,
+      "ranged": 0,
+      "ranged_str": -30,
       "str": 0
     },
     "defensive": {
@@ -53314,6 +53649,80 @@
     "defensive": {
       "crush": 0,
       "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 8346,
+    "name": "Nylocas Toxobolos",
+    "version": "Big",
+    "image": "Nylocas Toxobolos.png",
+    "level": 260,
+    "speed": 3,
+    "style": [
+      "Ranged"
+    ],
+    "size": 2,
+    "max_hit": "24",
+    "skills": {
+      "atk": 250,
+      "def": 20,
+      "hp": 22,
+      "magic": 20,
+      "ranged": 250,
+      "str": 230
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 500,
+      "magic_str": 500,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 10778,
+    "name": "Nylocas Toxobolos",
+    "version": "Big (Entry mode)",
+    "image": "Nylocas Toxobolos.png",
+    "level": 82,
+    "speed": 3,
+    "style": [
+      "Ranged"
+    ],
+    "size": 2,
+    "max_hit": "10",
+    "skills": {
+      "atk": 100,
+      "def": 6,
+      "hp": 3,
+      "magic": 6,
+      "ranged": 100,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 400,
+      "magic_str": 360,
+      "ranged": 0,
+      "ranged_str": -6,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
       "heavy": 0,
       "standard": 0,
       "light": 0,
@@ -53325,7 +53734,7 @@
   {
     "id": 8343,
     "name": "Nylocas Toxobolos",
-    "version": "Level 162",
+    "version": "Small",
     "image": "Nylocas Toxobolos.png",
     "level": 162,
     "speed": 3,
@@ -53362,31 +53771,31 @@
     "attributes": []
   },
   {
-    "id": 8346,
+    "id": 10775,
     "name": "Nylocas Toxobolos",
-    "version": "Level 260",
+    "version": "Small (Entry mode)",
     "image": "Nylocas Toxobolos.png",
-    "level": 260,
+    "level": 46,
     "speed": 3,
     "style": [
       "Ranged"
     ],
-    "size": 2,
-    "max_hit": "24",
+    "size": 1,
+    "max_hit": "5",
     "skills": {
-      "atk": 250,
-      "def": 20,
-      "hp": 22,
-      "magic": 20,
-      "ranged": 250,
-      "str": 230
+      "atk": 80,
+      "def": 1,
+      "hp": 2,
+      "magic": 1,
+      "ranged": 80,
+      "str": 40
     },
     "offensive": {
       "atk": 0,
-      "magic": 500,
-      "magic_str": 500,
+      "magic": 505,
+      "magic_str": 280,
       "ranged": 0,
-      "ranged_str": 0,
+      "ranged_str": -30,
       "str": 0
     },
     "defensive": {
@@ -54271,7 +54680,7 @@
     "level": 149,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 1,
     "max_hit": "14",
@@ -54420,6 +54829,43 @@
     "attributes": []
   },
   {
+    "id": 13006,
+    "name": "Oryx",
+    "version": "",
+    "image": "Oryx.png",
+    "level": 15,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "2",
+    "skills": {
+      "atk": 11,
+      "def": 13,
+      "hp": 19,
+      "magic": 1,
+      "ranged": 1,
+      "str": 13
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
     "id": 8994,
     "name": "Othainian",
     "version": "",
@@ -54509,7 +54955,7 @@
     "level": 149,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 1,
     "max_hit": "14",
@@ -55204,6 +55650,43 @@
       "light": 120,
       "slash": 80,
       "stab": 60
+    },
+    "attributes": []
+  },
+  {
+    "id": 12833,
+    "name": "Passionate Supporter",
+    "version": "",
+    "image": "Passionate Supporter.png",
+    "level": 7,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 10,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
     },
     "attributes": []
   },
@@ -68166,9 +68649,7 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [
-      "demon"
-    ]
+    "attributes": []
   },
   {
     "id": 6387,
@@ -68207,9 +68688,7 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [
-      "demon"
-    ]
+    "attributes": []
   },
   {
     "id": 5054,
@@ -68248,9 +68727,7 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [
-      "demon"
-    ]
+    "attributes": []
   },
   {
     "id": 84,
@@ -68952,8 +69429,8 @@
     "level": 321,
     "speed": 6,
     "style": [
-      "Slash",
-      "Magic"
+      "Magic",
+      "Stab"
     ],
     "size": 5,
     "max_hit": "38",
@@ -70093,7 +70570,7 @@
       "Crush"
     ],
     "size": 5,
-    "max_hit": "45 (regular)",
+    "max_hit": "45",
     "skills": {
       "atk": 350,
       "def": 200,
@@ -73264,7 +73741,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000000-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000002E-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -73299,9 +73776,11 @@
     "image": "Strangled Bear.png",
     "level": 197,
     "speed": 4,
-    "style": null,
+    "style": [
+      "Typeless"
+    ],
     "size": 3,
-    "max_hit": "5",
+    "max_hit": "6",
     "skills": {
       "atk": 0,
       "def": 0,
@@ -73336,7 +73815,9 @@
     "image": "Strangled Boar.png",
     "level": 166,
     "speed": 4,
-    "style": null,
+    "style": [
+      "Typeless"
+    ],
     "size": 1,
     "max_hit": "4",
     "skills": {
@@ -73373,7 +73854,9 @@
     "image": "Strangled Lynx.png",
     "level": 182,
     "speed": 4,
-    "style": null,
+    "style": [
+      "Typeless"
+    ],
     "size": 2,
     "max_hit": "5",
     "skills": {
@@ -73398,6 +73881,265 @@
       "heavy": 0,
       "standard": 0,
       "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12268,
+    "name": "Strangled",
+    "version": "Level 138, Strangled 1",
+    "image": "Strangled (1).png",
+    "level": 138,
+    "speed": 4,
+    "style": [
+      "Typeless"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 40,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12269,
+    "name": "Strangled",
+    "version": "Level 138, Strangled 2",
+    "image": "Strangled (2).png",
+    "level": 138,
+    "speed": 4,
+    "style": [
+      "Typeless"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 40,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12270,
+    "name": "Strangled",
+    "version": "Level 138, Strangled 3",
+    "image": "Strangled (3).png",
+    "level": 138,
+    "speed": 4,
+    "style": [
+      "Typeless"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 40,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12271,
+    "name": "Strangled",
+    "version": "Level 138, Strangled 4",
+    "image": "Strangled (4).png",
+    "level": 138,
+    "speed": 4,
+    "style": [
+      "Typeless"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 40,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12272,
+    "name": "Strangled",
+    "version": "Level 149, Strangled 1",
+    "image": "Strangled (5).png",
+    "level": 149,
+    "speed": 4,
+    "style": [
+      "Typeless"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 50,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12273,
+    "name": "Strangled",
+    "version": "Level 149, Strangled 2",
+    "image": "Strangled (6).png",
+    "level": 149,
+    "speed": 4,
+    "style": [
+      "Typeless"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 50,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": []
+  },
+  {
+    "id": 12274,
+    "name": "Strangled",
+    "version": "Level 149, Strangled 3",
+    "image": "Strangled (7).png",
+    "level": 149,
+    "speed": 4,
+    "style": [
+      "Typeless"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 50,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
       "slash": 0,
       "stab": 0
     },
@@ -73525,6 +74267,45 @@
   {
     "id": 13033,
     "name": "Sulphur Nagua",
+    "version": "",
+    "image": "Sulphur Nagua.png",
+    "level": 98,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "11",
+    "skills": {
+      "atk": 90,
+      "def": 40,
+      "hp": 100,
+      "magic": 50,
+      "ranged": 1,
+      "str": 105
+    },
+    "offensive": {
+      "atk": 90,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 10,
+      "magic": 200,
+      "ranged": 200,
+      "slash": 50,
+      "stab": 50
+    },
+    "attributes": [
+      "spectral"
+    ]
+  },
+  {
+    "id": 12879,
+    "name": "Sulphur Nagua (Perilous Moons)",
     "version": "",
     "image": "Sulphur Nagua.png",
     "level": 98,
@@ -74404,7 +75185,7 @@
       "Typeless Ranged"
     ],
     "size": 2,
-    "max_hit": "9",
+    "max_hit": "7",
     "skills": {
       "atk": 120,
       "def": 70,
@@ -75273,17 +76054,17 @@
     "level": 108,
     "speed": 6,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 1,
     "max_hit": "8",
     "skills": {
-      "atk": 0,
-      "def": 0,
-      "hp": 140,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "atk": 72,
+      "def": 105,
+      "hp": 144,
+      "magic": 1,
+      "ranged": 1,
+      "str": 71
     },
     "offensive": {
       "atk": 0,
@@ -79961,7 +80742,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000034-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000037-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -80001,7 +80782,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000034-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000037-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -81129,7 +81910,7 @@
     "level": 149,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 1,
     "max_hit": "14",
@@ -81253,7 +82034,7 @@
     "level": 149,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 1,
     "max_hit": "14",
@@ -81947,7 +82728,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000011-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000032-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -81986,7 +82767,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000013-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000034-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -89870,419 +90651,9 @@
   },
   {
     "id": 613,
-    "name": "Zombie pirate",
+    "name": "Zombie pirate (Braindeath Island)",
     "version": "1",
-    "image": "Zombie pirate (1).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 568,
-    "name": "Zombie pirate",
-    "version": "10",
-    "image": "Zombie pirate (10).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 569,
-    "name": "Zombie pirate",
-    "version": "11",
-    "image": "Zombie pirate (11).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 571,
-    "name": "Zombie pirate",
-    "version": "12",
-    "image": "Zombie pirate (12).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 572,
-    "name": "Zombie pirate",
-    "version": "13",
-    "image": "Zombie pirate (13).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 573,
-    "name": "Zombie pirate",
-    "version": "14",
-    "image": "Zombie pirate (14).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 574,
-    "name": "Zombie pirate",
-    "version": "15",
-    "image": "Zombie pirate (15).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 575,
-    "name": "Zombie pirate",
-    "version": "16",
-    "image": "Zombie pirate (16).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 576,
-    "name": "Zombie pirate",
-    "version": "17",
-    "image": "Zombie pirate (17).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 577,
-    "name": "Zombie pirate",
-    "version": "18",
-    "image": "Zombie pirate (18).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 578,
-    "name": "Zombie pirate",
-    "version": "19",
-    "image": "Zombie pirate (19).png",
+    "image": "Zombie pirate (Braindeath Island) (1).png",
     "level": 57,
     "speed": 4,
     "style": [
@@ -90321,419 +90692,9 @@
   },
   {
     "id": 614,
-    "name": "Zombie pirate",
+    "name": "Zombie pirate (Braindeath Island)",
     "version": "2",
-    "image": "Zombie pirate (2).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 579,
-    "name": "Zombie pirate",
-    "version": "20",
-    "image": "Zombie pirate (20).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 580,
-    "name": "Zombie pirate",
-    "version": "21",
-    "image": "Zombie pirate (21).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 581,
-    "name": "Zombie pirate",
-    "version": "22",
-    "image": "Zombie pirate (22).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 582,
-    "name": "Zombie pirate",
-    "version": "23",
-    "image": "Zombie pirate (23).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 584,
-    "name": "Zombie pirate",
-    "version": "24",
-    "image": "Zombie pirate (24).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 586,
-    "name": "Zombie pirate",
-    "version": "25",
-    "image": "Zombie pirate (25).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 588,
-    "name": "Zombie pirate",
-    "version": "26",
-    "image": "Zombie pirate (26).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 590,
-    "name": "Zombie pirate",
-    "version": "27",
-    "image": "Zombie pirate (27).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 592,
-    "name": "Zombie pirate",
-    "version": "28",
-    "image": "Zombie pirate (28).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 593,
-    "name": "Zombie pirate",
-    "version": "29",
-    "image": "Zombie pirate (29).png",
+    "image": "Zombie pirate (Braindeath Island) (2).png",
     "level": 57,
     "speed": 4,
     "style": [
@@ -90772,132 +90733,9 @@
   },
   {
     "id": 615,
-    "name": "Zombie pirate",
+    "name": "Zombie pirate (Braindeath Island)",
     "version": "3",
-    "image": "Zombie pirate (3).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 595,
-    "name": "Zombie pirate",
-    "version": "30",
-    "image": "Zombie pirate (30).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 597,
-    "name": "Zombie pirate",
-    "version": "31",
-    "image": "Zombie pirate (31).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 49,
-      "def": 50,
-      "hp": 52,
-      "magic": 1,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ]
-  },
-  {
-    "id": 599,
-    "name": "Zombie pirate",
-    "version": "32",
-    "image": "Zombie pirate (32).png",
+    "image": "Zombie pirate (Braindeath Island) (3).png",
     "level": 57,
     "speed": 4,
     "style": [
@@ -90936,9 +90774,9 @@
   },
   {
     "id": 616,
-    "name": "Zombie pirate",
+    "name": "Zombie pirate (Braindeath Island)",
     "version": "4",
-    "image": "Zombie pirate (4).png",
+    "image": "Zombie pirate (Braindeath Island) (4).png",
     "level": 57,
     "speed": 4,
     "style": [
@@ -90977,9 +90815,9 @@
   },
   {
     "id": 617,
-    "name": "Zombie pirate",
+    "name": "Zombie pirate (Braindeath Island)",
     "version": "5",
-    "image": "Zombie pirate (5).png",
+    "image": "Zombie pirate (Braindeath Island) (5).png",
     "level": 57,
     "speed": 4,
     "style": [
@@ -91018,9 +90856,9 @@
   },
   {
     "id": 618,
-    "name": "Zombie pirate",
+    "name": "Zombie pirate (Braindeath Island)",
     "version": "6",
-    "image": "Zombie pirate (6).png",
+    "image": "Zombie pirate (Braindeath Island) (6).png",
     "level": 57,
     "speed": 4,
     "style": [
@@ -91059,9 +90897,419 @@
   },
   {
     "id": 563,
-    "name": "Zombie pirate",
-    "version": "7",
-    "image": "Zombie pirate (7).png",
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "1",
+    "image": "Zombie pirate (Harmony Island) (1).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 575,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "10",
+    "image": "Zombie pirate (Harmony Island) (10).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 576,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "11",
+    "image": "Zombie pirate (Harmony Island) (11).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 577,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "12",
+    "image": "Zombie pirate (Harmony Island) (12).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 578,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "13",
+    "image": "Zombie pirate (Harmony Island) (13).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 579,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "14",
+    "image": "Zombie pirate (Harmony Island) (14).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 580,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "15",
+    "image": "Zombie pirate (Harmony Island) (15).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 581,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "16",
+    "image": "Zombie pirate (Harmony Island) (16).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 582,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "17",
+    "image": "Zombie pirate (Harmony Island) (17).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 584,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "18",
+    "image": "Zombie pirate (Harmony Island) (18).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 586,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "19",
+    "image": "Zombie pirate (Harmony Island) (19).png",
     "level": 57,
     "speed": 4,
     "style": [
@@ -91100,9 +91348,296 @@
   },
   {
     "id": 565,
-    "name": "Zombie pirate",
-    "version": "8",
-    "image": "Zombie pirate (8).png",
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "2",
+    "image": "Zombie pirate (Harmony Island) (2).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 588,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "20",
+    "image": "Zombie pirate (Harmony Island) (20).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 590,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "21",
+    "image": "Zombie pirate (Harmony Island) (21).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 592,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "22",
+    "image": "Zombie pirate (Harmony Island) (22).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 593,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "23",
+    "image": "Zombie pirate (Harmony Island) (23).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 595,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "24",
+    "image": "Zombie pirate (Harmony Island) (24).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 597,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "25",
+    "image": "Zombie pirate (Harmony Island) (25).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 599,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "26",
+    "image": "Zombie pirate (Harmony Island) (26).png",
     "level": 57,
     "speed": 4,
     "style": [
@@ -91141,9 +91676,9 @@
   },
   {
     "id": 567,
-    "name": "Zombie pirate",
-    "version": "9",
-    "image": "Zombie pirate (9).png",
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "3",
+    "image": "Zombie pirate (Harmony Island) (3).png",
     "level": 57,
     "speed": 4,
     "style": [
@@ -91158,6 +91693,369 @@
       "magic": 1,
       "ranged": 1,
       "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 568,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "4",
+    "image": "Zombie pirate (Harmony Island) (4).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 569,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "5",
+    "image": "Zombie pirate (Harmony Island) (5).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 571,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "6",
+    "image": "Zombie pirate (Harmony Island) (6).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 572,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "7",
+    "image": "Zombie pirate (Harmony Island) (7).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 573,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "8",
+    "image": "Zombie pirate (Harmony Island) (8).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 574,
+    "name": "Zombie pirate (Harmony Island)",
+    "version": "9",
+    "image": "Zombie pirate (Harmony Island) (9).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 49,
+      "def": 50,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 13489,
+    "name": "Zombie pirate",
+    "version": "Level 22",
+    "image": "Zombie pirate (1).png",
+    "level": 22,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 20,
+      "def": 20,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 1,
+      "str": 10
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 13490,
+    "name": "Zombie pirate",
+    "version": "Level 28",
+    "image": "Zombie pirate (2).png",
+    "level": 28,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 30,
+      "def": 20,
+      "hp": 35,
+      "magic": 1,
+      "ranged": 1,
+      "str": 15
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ]
+  },
+  {
+    "id": 13492,
+    "name": "Zombie pirate",
+    "version": "Level 34",
+    "image": "Zombie pirate (4).png",
+    "level": 34,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 40,
+      "def": 20,
+      "hp": 40,
+      "magic": 1,
+      "ranged": 1,
+      "str": 20
     },
     "offensive": {
       "atk": 0,

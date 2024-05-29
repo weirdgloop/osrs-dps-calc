@@ -458,7 +458,8 @@ export default class BaseCalc {
       return isStab;
     }
 
-    if (weapon.name.includes('spear')) {
+    // https://twitter.com/JagexAsh/status/1777673598099968104
+    if (weapon.name.includes('spear') && weapon.name !== 'Blue moon spear') {
       return isStab;
     }
 
@@ -587,6 +588,15 @@ export default class BaseCalc {
         spell: null,
       };
       this.addIssue(UserIssueType.SPELL_WRONG_MONSTER, 'This spell cannot be cast on the selected monster.');
+    }
+
+    // Some set effects are currently not accounted for
+    if (
+      this.wearingAll(['Blood moon helm', 'Blood moon chestplate', 'Blood moon tassets', 'Dual macuahuitl'])
+      || this.wearingAll(['Blue moon helm', 'Blue moon chestplate', 'Blue moon tassets', 'Blue moon spear'])
+      || this.wearingAll(['Eclipse moon helm', 'Eclipse moon chestplate', 'Eclipse moon tassets', 'Eclipse atlatl'])
+    ) {
+      this.addIssue(UserIssueType.EQUIPMENT_SET_EFFECT_UNSUPPORTED, 'The calculator currently does not account for your equipment set effect.');
     }
   }
 }

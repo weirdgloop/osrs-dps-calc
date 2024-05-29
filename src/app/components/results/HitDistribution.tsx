@@ -5,7 +5,6 @@ import {
 import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent';
 import hitsplat from '@/public/img/hitsplat.webp';
 import zero_hitsplat from '@/public/img/zero_hitsplat.png';
-import { ChartEntry } from '@/types/State';
 import { useTheme } from 'next-themes';
 import { useStore } from '@/state';
 import LazyImage from '@/app/components/generic/LazyImage';
@@ -40,9 +39,10 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, pa
   return null;
 };
 
-const HitDistribution: React.FC<{ dist: ChartEntry[] }> = observer(({ dist }) => {
+const HitDistribution: React.FC = observer(() => {
   const store = useStore();
-  const { prefs } = store;
+  const { prefs, calc, selectedLoadout } = store;
+  const dist = calc.loadouts[selectedLoadout]?.hitDist || [];
   const data = prefs.hitDistsHideZeros ? dist.slice(1) : dist;
 
   const { resolvedTheme } = useTheme();

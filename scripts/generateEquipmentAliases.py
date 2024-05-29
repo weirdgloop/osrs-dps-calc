@@ -118,7 +118,7 @@ def main():
     for item in all_items:
         slayer_helm_match = re.match(r"^(?:Black|Green|Red|Purple|Turquoise|Hydra|Twisted|Tztok|Vampyric|Tzkal) slayer helmet( \(i\))?$", item['name'])
         sanguine_torva_match = re.match(r"^Sanguine t(orva (full helm|platebody|platelegs))$", item['name'])
-        decoration_kit_match = re.match(r"(.*)\((?:g|t|(h)\d|guthix|saradomin|zamorak|or|cr|Hallowed|Trailblazer|Ithell|Iorwerth|Trahaearn|Cadarn|Crwys|Meilyr|Hefin|Amlodd|upgraded|light|dark|dusk|lit)\)$", item['name'])
+        decoration_kit_match = re.match(r"(.*)\((?:g|t|(h)\d|Arrav|Asgarnia|Dorgeshuun|Dragon|Fairy|Guthix|HAM|Horse|Jogre|Kandarin|Misthalin|Money|Saradomin|Skull|Varrock|Zamorak|or|cr|Hallowed|Trailblazer|Ithell|Iorwerth|Trahaearn|Cadarn|Crwys|Meilyr|Hefin|Amlodd|upgraded|light|dark|dusk|lit)\)$", item['name'], re.IGNORECASE)
         magic_robe_kit_match = re.match(r"^(?:Dark|Light|Twisted) ((?:infinity|ancestral) .*)$", item['name'])
 
         # One off items:
@@ -142,6 +142,9 @@ def main():
         # Sanguine Torva
         elif sanguine_torva_match:
             handle_base_variant(all_items, item, 'T%s' % (sanguine_torva_match.group(1) or ''), ['Restored'])
+        # Amulet of glory variants
+        elif (item['name'] == 'Amulet of glory' and item['version'] != 'Uncharged') or item['name'] == 'Amulet of glory (t)' or item['name'] == 'Amulet of eternal glory':
+            handle_base_variant(all_items, item, 'Amulet of glory', ['Uncharged'])
         # Decoration kit variants
         elif decoration_kit_match:
             base_item_name = decoration_kit_match.group(1).strip()
@@ -169,7 +172,6 @@ def main():
         # Granite maul variants
         elif (item['name'] == "Granite maul" and item['version'] != "Normal") or item['name'] == "Granite maul (or)":
             handle_base_variant(all_items, item, 'Granite maul', ['Normal'])
-
 
     for k, v in sorted(data.items(), key=lambda item: item[1].base_name):
         dataJs += '\n  %s: %s, // %s%s' % (k, v.alias_ids, v.base_name, f"#{v.base_version}" if v.base_version else "")

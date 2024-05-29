@@ -394,8 +394,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = Math.trunc(maxHit * (40 + crystalPieces) / 40);
     }
 
-    // Specific bonuses that are applied from equipment
     const mattrs = this.monster.attributes;
+    let needRevWeaponBonus = this.isRevWeaponBuffApplicable();
+    let needDragonbane = this.wearing('Dragon hunter crossbow') && mattrs.includes(MonsterAttribute.DRAGON);
+
+    // Specific bonuses that are applied from equipment
     const { buffs } = this.player;
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
       const factor = <Factor>[buffs.forinthrySurge ? 27 : 24, 20];
@@ -407,7 +410,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     } else if (this.wearing('Eclipse atlatl') && this.isWearingBlackMask() && buffs.onSlayerTask) {
       maxHit = Math.trunc(maxHit * 7 / 6);
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
-      maxHit = Math.trunc(maxHit * 23 / 20);
+      let numerator = 23;
+      // these are additive with slayer only
+      if (needRevWeaponBonus) {
+        needRevWeaponBonus = false;
+        numerator += 10;
+      }
+      if (needDragonbane) {
+        needDragonbane = false;
+        numerator += 5;
+      }
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_BLACK_MASK, maxHit, [numerator, 20]);
     }
 
     if (this.wearing('Twisted bow')) {
@@ -415,13 +428,15 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const tbowMagic = Math.min(cap, Math.max(this.monster.skills.magic, this.monster.offensive.magic));
       maxHit = PlayerVsNPCCalc.tbowScaling(maxHit, tbowMagic, false);
     }
-    if (this.isRevWeaponBuffApplicable()) {
+
+    // multiplicative if not with slayer helm
+    if (needRevWeaponBonus) {
       maxHit = Math.trunc(maxHit * 3 / 2);
     }
-    if (this.wearing('Dragon hunter crossbow') && mattrs.includes(MonsterAttribute.DRAGON)) {
-      // TODO: https://twitter.com/JagexAsh/status/1647928422843273220 for max_hit seems to be additive now
+    if (needDragonbane) {
       maxHit = Math.trunc(maxHit * 5 / 4);
     }
+
     if (this.isWearingRatBoneWeapon() && mattrs.includes(MonsterAttribute.RAT)) {
       maxHit = this.trackAdd(DetailKey.MAX_HIT_RATBANE, maxHit, 10);
     }
@@ -547,6 +562,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = Math.trunc((magicLevel * (77 + 64) + 320) / 640);
     } else if (this.wearing('Black salamander')) {
       maxHit = Math.trunc((magicLevel * (92 + 64) + 320) / 640);
+    } else if (this.wearing('Tecu salamander')) {
+      maxHit = Math.trunc((magicLevel * (104 + 64) + 320) / 640);
     }
 
     if (maxHit === 0) {
@@ -562,11 +579,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit += 10;
     }
 
-    let magicDmgBonus = this.player.bonuses.magic_str * 10;
+    let magicDmgBonus = this.player.bonuses.magic_str;
 
-    if (this.isWearingEliteMagicVoid()) {
-      magicDmgBonus += 25;
-    }
     if (this.isWearingSmokeStaff() && spell?.spellbook === 'standard') {
       magicDmgBonus += 100;
     }

@@ -36,9 +36,10 @@ const OtherBonuses: React.FC<{ computedStats: EquipmentBonuses }> = observer(({ 
           disabled={!prefs.manualMode}
           name="Magic Strength"
           image={magicStrength}
-          value={player.bonuses.magic_str}
+          step={0.1}
+          value={parseFloat((player.bonuses.magic_str / 10).toFixed(1))}
           className={`${(player.bonuses.magic_str !== computedStats.bonuses.magic_str) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
-          onChange={(v) => store.updatePlayer({ bonuses: { magic_str: v } })}
+          onChange={(v) => store.updatePlayer({ bonuses: { magic_str: Math.trunc(v * 10) } })}
         />
         <AttributeInput
           disabled={!prefs.manualMode}

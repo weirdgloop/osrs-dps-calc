@@ -635,18 +635,18 @@
     "version": "",
     "slot": "weapon",
     "image": "3rd age felling axe.png",
-    "speed": 5,
+    "speed": 7,
     "category": "Axe",
     "bonuses": {
-      "str": 42,
+      "str": 67,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": -2,
-      "slash": 38,
-      "crush": 32,
+      "stab": -3,
+      "slash": 60,
+      "crush": 51,
       "magic": 0,
       "ranged": 0
     },
@@ -7330,7 +7330,7 @@
     "bonuses": {
       "str": 68,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 0
     },
     "offensive": {
@@ -7360,7 +7360,7 @@
     "bonuses": {
       "str": 68,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 0
     },
     "offensive": {
@@ -7390,7 +7390,7 @@
     "bonuses": {
       "str": 68,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 0
     },
     "offensive": {
@@ -7420,7 +7420,7 @@
     "bonuses": {
       "str": 68,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 0
     },
     "offensive": {
@@ -7450,7 +7450,7 @@
     "bonuses": {
       "str": 68,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 0
     },
     "offensive": {
@@ -7480,7 +7480,7 @@
     "bonuses": {
       "str": 68,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 0
     },
     "offensive": {
@@ -9310,7 +9310,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -9340,7 +9340,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -9370,7 +9370,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -9400,7 +9400,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -10270,7 +10270,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -10300,7 +10300,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -20679,7 +20679,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 4,
+      "ranged_str": 3,
       "magic_str": 0,
       "prayer": 0
     },
@@ -20688,7 +20688,7 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
-      "ranged": 28
+      "ranged": 18
     },
     "defensive": {
       "stab": 0,
@@ -20709,7 +20709,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 4,
+      "ranged_str": 3,
       "magic_str": 0,
       "prayer": 0
     },
@@ -20718,7 +20718,7 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
-      "ranged": 28
+      "ranged": 18
     },
     "defensive": {
       "stab": 0,
@@ -20739,7 +20739,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 4,
+      "ranged_str": 3,
       "magic_str": 0,
       "prayer": 0
     },
@@ -20748,7 +20748,7 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
-      "ranged": 28
+      "ranged": 18
     },
     "defensive": {
       "stab": 0,
@@ -20890,7 +20890,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -20920,7 +20920,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -20950,7 +20950,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -22420,7 +22420,7 @@
     "bonuses": {
       "str": 71,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 0
     },
     "offensive": {
@@ -22464,7 +22464,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 23,
-      "magic": 22,
+      "magic": 32,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -22494,7 +22494,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 23,
-      "magic": 22,
+      "magic": 32,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -22524,7 +22524,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 23,
-      "magic": 22,
+      "magic": 32,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -35470,7 +35470,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 1,
+      "magic_str": 10,
       "prayer": 0
     },
     "offensive": {
@@ -35500,7 +35500,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -35530,7 +35530,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 3,
+      "magic_str": 30,
       "prayer": 0
     },
     "offensive": {
@@ -46299,7 +46299,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 4,
+      "ranged_str": 3,
       "magic_str": 0,
       "prayer": 0
     },
@@ -46308,7 +46308,7 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
-      "ranged": 28
+      "ranged": 18
     },
     "defensive": {
       "stab": 0,
@@ -46329,7 +46329,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 4,
+      "ranged_str": 3,
       "magic_str": 0,
       "prayer": 0
     },
@@ -46338,7 +46338,7 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
-      "ranged": 28
+      "ranged": 18
     },
     "defensive": {
       "stab": 0,
@@ -46359,7 +46359,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 4,
+      "ranged_str": 3,
       "magic_str": 0,
       "prayer": 0
     },
@@ -46368,7 +46368,7 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
-      "ranged": 28
+      "ranged": 18
     },
     "defensive": {
       "stab": 0,
@@ -46411,15 +46411,15 @@
   },
   {
     "name": "Dizana's quiver",
-    "id": 28951,
-    "version": "Charged",
+    "id": 28826,
+    "version": "Broken",
     "slot": "cape",
-    "image": "Dizana's quiver.png",
+    "image": "Dizana's quiver (broken).png",
     "speed": 0,
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 4,
+      "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
@@ -46428,7 +46428,67 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
-      "ranged": 28
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dizana's quiver",
+    "id": 28951,
+    "version": "Charged",
+    "slot": "cape",
+    "image": "Dizana's quiver.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 3,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 18
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dizana's quiver",
+    "id": 28953,
+    "version": "Charged + Locked",
+    "slot": "cape",
+    "image": "Dizana's quiver (l).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 3,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 18
     },
     "defensive": {
       "stab": 0,
@@ -46445,6 +46505,36 @@
     "version": "Uncharged",
     "slot": "cape",
     "image": "Dizana's quiver (uncharged).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 3,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 18
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dizana's quiver",
+    "id": 28949,
+    "version": "Uncharged + Locked",
+    "slot": "cape",
+    "image": "Dizana's quiver (uncharged) (l).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -52120,7 +52210,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -52240,7 +52330,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 3,
+      "magic_str": 30,
       "prayer": 1
     },
     "offensive": {
@@ -52270,7 +52360,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 4
     },
     "offensive": {
@@ -52300,7 +52390,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 4
     },
     "offensive": {
@@ -65250,11 +65340,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Group iron bracers",
+    "name": "Group ironman bracers",
     "id": 26168,
     "version": "",
     "slot": "hands",
-    "image": "Group iron bracers.png",
+    "image": "Group ironman bracers.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -65280,11 +65370,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Group iron bracers (unranked)",
+    "name": "Group ironman bracers (unranked)",
     "id": 27046,
     "version": "",
     "slot": "hands",
-    "image": "Group iron bracers (unranked).png",
+    "image": "Group ironman bracers (unranked).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -65310,11 +65400,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Group iron helm",
+    "name": "Group ironman helm",
     "id": 26156,
     "version": "",
     "slot": "head",
-    "image": "Group iron helm.png",
+    "image": "Group ironman helm.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -65340,11 +65430,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Group iron helm (unranked)",
+    "name": "Group ironman helm (unranked)",
     "id": 27042,
     "version": "",
     "slot": "head",
-    "image": "Group iron helm (unranked).png",
+    "image": "Group ironman helm (unranked).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -65370,11 +65460,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Group iron platebody",
+    "name": "Group ironman platebody",
     "id": 26158,
     "version": "II",
     "slot": "body",
-    "image": "Group iron platebody (II).png",
+    "image": "Group ironman platebody (II).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -65400,11 +65490,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Group iron platebody",
+    "name": "Group ironman platebody",
     "id": 26160,
     "version": "III",
     "slot": "body",
-    "image": "Group iron platebody (III).png",
+    "image": "Group ironman platebody (III).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -65430,11 +65520,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Group iron platebody",
+    "name": "Group ironman platebody",
     "id": 26162,
     "version": "IV",
     "slot": "body",
-    "image": "Group iron platebody (IV).png",
+    "image": "Group ironman platebody (IV).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -65460,11 +65550,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Group iron platebody",
+    "name": "Group ironman platebody",
     "id": 26164,
     "version": "V",
     "slot": "body",
-    "image": "Group iron platebody (V).png",
+    "image": "Group ironman platebody (V).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -65490,11 +65580,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Group iron platebody (unranked)",
+    "name": "Group ironman platebody (unranked)",
     "id": 27048,
     "version": "II",
     "slot": "body",
-    "image": "Group iron platebody (unranked) (II).png",
+    "image": "Group ironman platebody (unranked) (II).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -65520,11 +65610,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Group iron platebody (unranked)",
+    "name": "Group ironman platebody (unranked)",
     "id": 27050,
     "version": "III",
     "slot": "body",
-    "image": "Group iron platebody (unranked) (III).png",
+    "image": "Group ironman platebody (unranked) (III).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -65550,11 +65640,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Group iron platebody (unranked)",
+    "name": "Group ironman platebody (unranked)",
     "id": 27052,
     "version": "IV",
     "slot": "body",
-    "image": "Group iron platebody (unranked) (IV).png",
+    "image": "Group ironman platebody (unranked) (IV).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -65580,11 +65670,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Group iron platebody (unranked)",
+    "name": "Group ironman platebody (unranked)",
     "id": 27054,
     "version": "V",
     "slot": "body",
-    "image": "Group iron platebody (unranked) (V).png",
+    "image": "Group ironman platebody (unranked) (V).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -65610,11 +65700,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Group iron platelegs",
+    "name": "Group ironman platelegs",
     "id": 26166,
     "version": "",
     "slot": "legs",
-    "image": "Group iron platelegs.png",
+    "image": "Group ironman platelegs.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -65640,11 +65730,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Group iron platelegs (unranked)",
+    "name": "Group ironman platelegs (unranked)",
     "id": 27044,
     "version": "",
     "slot": "legs",
-    "image": "Group iron platelegs (unranked).png",
+    "image": "Group ironman platelegs (unranked).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -68040,11 +68130,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Hardcore group iron bracers",
+    "name": "Hardcore group ironman bracers",
     "id": 26182,
     "version": "",
     "slot": "hands",
-    "image": "Hardcore group iron bracers.png",
+    "image": "Hardcore group ironman bracers.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -68070,11 +68160,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Hardcore group iron helm",
+    "name": "Hardcore group ironman helm",
     "id": 26170,
     "version": "",
     "slot": "head",
-    "image": "Hardcore group iron helm.png",
+    "image": "Hardcore group ironman helm.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -68100,11 +68190,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Hardcore group iron platebody",
+    "name": "Hardcore group ironman platebody",
     "id": 26172,
     "version": "II",
     "slot": "body",
-    "image": "Hardcore group iron platebody (II).png",
+    "image": "Hardcore group ironman platebody (II).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -68130,11 +68220,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Hardcore group iron platebody",
+    "name": "Hardcore group ironman platebody",
     "id": 26174,
     "version": "III",
     "slot": "body",
-    "image": "Hardcore group iron platebody (III).png",
+    "image": "Hardcore group ironman platebody (III).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -68160,11 +68250,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Hardcore group iron platebody",
+    "name": "Hardcore group ironman platebody",
     "id": 26176,
     "version": "IV",
     "slot": "body",
-    "image": "Hardcore group iron platebody (IV).png",
+    "image": "Hardcore group ironman platebody (IV).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -68190,11 +68280,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Hardcore group iron platebody",
+    "name": "Hardcore group ironman platebody",
     "id": 26178,
     "version": "V",
     "slot": "body",
-    "image": "Hardcore group iron platebody (V).png",
+    "image": "Hardcore group ironman platebody (V).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -68220,11 +68310,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Hardcore group iron platelegs",
+    "name": "Hardcore group ironman platelegs",
     "id": 26180,
     "version": "",
     "slot": "legs",
-    "image": "Hardcore group iron platelegs.png",
+    "image": "Hardcore group ironman platelegs.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -68410,7 +68500,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -70480,7 +70570,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -70510,7 +70600,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -70540,7 +70630,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -70930,7 +71020,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -70960,7 +71050,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -70990,7 +71080,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71020,7 +71110,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71050,7 +71140,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71080,7 +71170,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71110,7 +71200,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71170,7 +71260,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71200,7 +71290,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71230,7 +71320,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71260,7 +71350,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71290,7 +71380,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71320,7 +71410,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71350,7 +71440,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71440,7 +71530,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71470,7 +71560,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71500,7 +71590,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71530,7 +71620,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71560,7 +71650,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71590,7 +71680,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -71620,7 +71710,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -72849,7 +72939,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 49,
+      "ranged_str": 60,
       "magic_str": 0,
       "prayer": 0
     },
@@ -77500,7 +77590,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -77530,7 +77620,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -80590,7 +80680,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -88420,7 +88510,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -89260,7 +89350,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 10,
+      "magic_str": 100,
       "prayer": 2
     },
     "offensive": {
@@ -89290,7 +89380,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 10,
+      "magic_str": 100,
       "prayer": 2
     },
     "offensive": {
@@ -89320,7 +89410,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 10,
+      "magic_str": 100,
       "prayer": 2
     },
     "offensive": {
@@ -107650,7 +107740,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -107680,7 +107770,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -107710,7 +107800,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -112060,7 +112150,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -112090,7 +112180,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -112120,7 +112210,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": -1
     },
     "offensive": {
@@ -114250,7 +114340,7 @@
     "bonuses": {
       "str": 72,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -114370,7 +114460,7 @@
     "bonuses": {
       "str": 72,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -114400,7 +114490,7 @@
     "bonuses": {
       "str": 72,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -114430,7 +114520,7 @@
     "bonuses": {
       "str": 72,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -118787,7 +118877,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": -21,
+      "magic": -4,
       "ranged": -11
     },
     "defensive": {
@@ -123010,7 +123100,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 2
     },
     "offensive": {
@@ -123040,7 +123130,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 2
     },
     "offensive": {
@@ -123220,7 +123310,7 @@
     "bonuses": {
       "str": 72,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -123250,7 +123340,7 @@
     "bonuses": {
       "str": 72,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -126100,7 +126190,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -126130,7 +126220,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -126160,7 +126250,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -130240,7 +130330,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 1,
+      "magic_str": 10,
       "prayer": 1
     },
     "offensive": {
@@ -130270,7 +130360,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 1,
+      "magic_str": 10,
       "prayer": 1
     },
     "offensive": {
@@ -130300,7 +130390,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 1,
+      "magic_str": 10,
       "prayer": 2
     },
     "offensive": {
@@ -131620,7 +131710,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -131650,7 +131740,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 15,
+      "magic_str": 150,
       "prayer": 0
     },
     "offensive": {
@@ -138400,7 +138490,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 1,
+      "magic_str": 10,
       "prayer": 0
     },
     "offensive": {
@@ -138460,7 +138550,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 2,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
@@ -138520,7 +138610,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 3,
+      "magic_str": 30,
       "prayer": 0
     },
     "offensive": {
@@ -138550,7 +138640,7 @@
     "bonuses": {
       "str": 72,
       "ranged_str": 0,
-      "magic_str": 10,
+      "magic_str": 100,
       "prayer": 0
     },
     "offensive": {
@@ -138580,7 +138670,7 @@
     "bonuses": {
       "str": 72,
       "ranged_str": 0,
-      "magic_str": 10,
+      "magic_str": 100,
       "prayer": 0
     },
     "offensive": {
@@ -138610,7 +138700,7 @@
     "bonuses": {
       "str": 72,
       "ranged_str": 0,
-      "magic_str": 10,
+      "magic_str": 100,
       "prayer": 0
     },
     "offensive": {

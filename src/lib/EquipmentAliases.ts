@@ -8,7 +8,7 @@ const equipmentAliases = {
   4151: [26482, 12774, 12773], // Abyssal whip
   8849: [24141], // Adamant defender#Normal
   1161: [2613, 2605, 10296, 10298, 10300, 10302, 10304], // Adamant full helm
-  1199: [2611, 2603, 7334, 7340, 7346, 7352, 7358], // Adamant kiteshield
+  1199: [22127, 22129, 22131, 22133, 22135, 22137, 22139, 22141, 22143, 22145, 22147, 22149, 22151, 22153, 22155, 22157, 2611, 2603, 7334, 7340, 7346, 7352, 7358], // Adamant kiteshield
   1123: [2607, 23392, 23395, 23398, 23401, 23404, 2599], // Adamant platebody
   1073: [2609, 2601], // Adamant platelegs
   1091: [3475, 3474], // Adamant plateskirt
@@ -18,6 +18,7 @@ const equipmentAliases = {
   4710: [4866, 4862, 4865, 4864, 4863], // Ahrim's staff#Undamaged
   1729: [23309], // Amulet of defence
   6585: [12436], // Amulet of fury
+  1704: [19707, 1706, 1708, 1710, 1712, 11976, 11978, 10360, 10358, 10356, 10354, 11966, 11964, 10362], // Amulet of glory#Uncharged
   1727: [10366], // Amulet of magic
   1731: [23354], // Amulet of power
   19553: [20366], // Amulet of torture
@@ -220,7 +221,7 @@ const equipmentAliases = {
   9185: [26486], // Rune crossbow
   8850: [24142, 27009, 23230], // Rune defender#Normal
   1163: [2619, 2627, 10286, 10288, 10290, 10292, 10294], // Rune full helm
-  1201: [2621, 2629, 7336, 7342, 7348, 7354, 7360], // Rune kiteshield
+  1201: [8714, 8716, 8718, 8720, 8722, 8724, 8726, 8728, 8730, 8732, 8734, 8736, 8738, 8740, 8742, 8744, 2621, 2629, 7336, 7342, 7348, 7354, 7360], // Rune kiteshield
   1127: [2615, 23209, 23212, 23215, 23218, 23221, 2623], // Rune platebody
   1079: [2617, 2625], // Rune platelegs
   1093: [3476, 3477], // Rune plateskirt
@@ -246,7 +247,7 @@ const equipmentAliases = {
   11787: [12795], // Steam battlestaff
   8846: [24138], // Steel defender#Normal
   1157: [20178, 20193], // Steel full helm
-  1193: [20181, 20196], // Steel kiteshield
+  1193: [8746, 8748, 8750, 8752, 8754, 8756, 8758, 8760, 8762, 8764, 8766, 8768, 8770, 8772, 8774, 8776, 20181, 20196], // Steel kiteshield
   1119: [20169, 20184], // Steel platebody
   1069: [20172, 20187], // Steel platelegs
   1083: [20175, 20190], // Steel plateskirt

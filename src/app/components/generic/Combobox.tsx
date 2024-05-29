@@ -63,18 +63,18 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
   const preprocessedItems = useMemo(() => items.map((item) => ({ item, valueToFilter: `${item.label} ${item.version ? item.version : ''}` })), [items]);
 
   const filteredItems = useMemo(() => {
+    let newFilteredItems = items;
+
     // When the input value changes, change the filtered items
     if (inputValue) {
-      let newFilteredItems = fuzzyFilter(preprocessedItems, inputValue, { fields: ['valueToFilter'] }).map((match) => match.item.item);
-
-      if (customFilter !== undefined) {
-        newFilteredItems = customFilter(newFilteredItems, inputValue);
-      }
-
-      return newFilteredItems;
+      newFilteredItems = fuzzyFilter(preprocessedItems, inputValue, { fields: ['valueToFilter'] }).map((match) => match.item.item);
     }
 
-    return items;
+    if (customFilter !== undefined) {
+      newFilteredItems = customFilter(newFilteredItems, inputValue);
+    }
+
+    return newFilteredItems;
   }, [inputValue, items, customFilter, preprocessedItems]);
 
   const {
