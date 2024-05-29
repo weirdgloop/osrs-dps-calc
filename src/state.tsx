@@ -214,7 +214,7 @@ class GlobalState implements State {
     showLoadoutComparison: false,
     showTtkComparison: false,
     showNPCVersusPlayerResults: false,
-    hitDistsHideMisses: false,
+    hitDistsHideZeros: false,
   };
 
   calc: Calculator = {
@@ -738,7 +738,7 @@ class GlobalState implements State {
       monster: toJS(this.monster),
       calcOpts: {
         includeTtkDist: this.prefs.showTtkComparison,
-        hitDistHideMisses: this.prefs.hitDistsHideMisses,
+        hitDistHideMisses: this.prefs.hitDistsHideZeros,
         detailedOutput: this.debug,
         disableMonsterScaling: this.prefs.manualMode,
       },
