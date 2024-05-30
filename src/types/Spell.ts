@@ -16,14 +16,6 @@ export function spellByName(name: string): Spell | null {
   return spells.find((s) => s.name === name) || null;
 }
 
-export function isFireSpell(spell: Spell | null): boolean {
-  return spell?.element === 'fire';
-}
-
-export function isWaterSpell(spell: Spell | null): boolean {
-  return spell?.element === 'water';
-}
-
 export function isBindSpell(spell: Spell | null): boolean {
   return spell !== null
     && ['Bind', 'Snare', 'Entangle'] // todo bind isn't actually added yet, but future-proofing
@@ -31,7 +23,7 @@ export function isBindSpell(spell: Spell | null): boolean {
 }
 
 export function getSpellMaxHit(spell: Spell, magicLevel: number): number {
-  if (!spell.element) {
+  if (!spell.element || spell.name === 'Flames of Zamorak') {
     return spell?.max_hit;
   }
 
@@ -68,14 +60,12 @@ export function getSpellMaxHit(spell: Spell, magicLevel: number): number {
       return spellByName(`Wind ${spellClass}`)!.max_hit;
 
     default:
-      // Note: Flames of Zamorak is expected to fall under this category
-      console.warn(`No dynamic max hit available for ${spell}`);
-      return spell?.max_hit;
+      throw new Error(`No dynamic max hit available for ${spell}`);
   }
 }
 
 export function canUseSunfireRunes(spell: Spell | null): boolean {
-  return isFireSpell(spell);
+  return spell?.element === 'fire';
 
   // todo do we know for sure yet whether it's "fire spells" or "fire-rune spells"?
   // return spell !== null && (
