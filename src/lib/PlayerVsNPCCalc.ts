@@ -855,8 +855,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.isUsingMeleeStyle() && this.wearing('Dual macuahuitl')) {
-      const secondHit = HitDistribution.linear(acc, 0, Math.trunc(max / 2)); // same across all transforms
-      dist = dist.transform(
+      const secondHit = HitDistribution.linear(acc, 0, Math.trunc(max / 2));
+      const firstHit = new AttackDistribution([HitDistribution.linear(acc, 0, max - Math.trunc(max / 2))]);
+      dist = firstHit.transform(
         (h) => new HitDistribution([new WeightedHit(1.0, [h])]).zip(secondHit),
         { transformInaccurate: false },
       );
