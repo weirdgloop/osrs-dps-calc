@@ -12,7 +12,6 @@ import {
   WeightedHit,
 } from '@/lib/HitDist';
 import {
-  getSpellement,
   getSpellMaxHit,
   canUseSunfireRunes,
   isBindSpell,
@@ -511,7 +510,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       attackRoll = Math.trunc(attackRoll * 6 / 5);
     }
 
-    const spellement = getSpellement(this.player.spell);
+    const spellement = this.player.spell?.element;
     if (this.monster.weakness && spellement) {
       if (spellement === this.monster.weakness.element) {
         attackRoll += Math.trunc(this.monster.weakness.severity * baseRoll / 100);
@@ -610,7 +609,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       blackMaskBonus = true;
     }
 
-    const spellement = getSpellement(this.player.spell);
+    const spellement = this.player.spell?.element;
     if (this.monster.weakness && spellement) {
       if (spellement === this.monster.weakness.element) {
         magicDmgBonus += this.monster.weakness.severity * 10;
@@ -895,7 +894,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.transform(multiplyTransformer(factor, divisor));
     }
 
-    if (this.wearing('Tome of fire') && isFireSpell(this.player.spell)) {
+    if (
+      this.wearing('Tome of fire')
+      && isFireSpell(this.player.spell)
+      && this.player.spell?.name !== 'Flames of Zamorak'
+    ) {
       dist = dist.scaleDamage(11, 10);
     }
     if (this.wearing('Tome of water') && isWaterSpell(this.player.spell)) {

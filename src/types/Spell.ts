@@ -5,6 +5,7 @@ export interface Spell {
   image: string;
   max_hit: number;
   spellbook: Spellbook;
+  element: Spellement;
 }
 
 export type Spellement = 'air' | 'water' | 'earth' | 'fire';
@@ -15,35 +16,12 @@ export function spellByName(name: string): Spell | null {
   return spells.find((s) => s.name === name) || null;
 }
 
-export function getSpellement(spell: Spell | null): Spellement | null {
-  if (spell === null) {
-    return null;
-  }
-
-  switch (spell.name.split(/ /)[0]) {
-    case 'Wind':
-      return 'air';
-
-    case 'Water':
-      return 'water';
-
-    case 'Earth':
-      return 'earth';
-
-    case 'Fire':
-      return 'fire';
-
-    default:
-      return null;
-  }
-}
-
 export function isFireSpell(spell: Spell | null): boolean {
-  return getSpellement(spell) === 'fire';
+  return spell?.element === 'fire';
 }
 
 export function isWaterSpell(spell: Spell | null): boolean {
-  return getSpellement(spell) === 'water';
+  return spell?.element === 'water';
 }
 
 export function isBindSpell(spell: Spell | null): boolean {
@@ -53,7 +31,7 @@ export function isBindSpell(spell: Spell | null): boolean {
 }
 
 export function getSpellMaxHit(spell: Spell, magicLevel: number): number {
-  if (!getSpellement(spell)) {
+  if (!spell.element) {
     return spell?.max_hit;
   }
 
@@ -90,7 +68,9 @@ export function getSpellMaxHit(spell: Spell, magicLevel: number): number {
       return spellByName(`Wind ${spellClass}`)!.max_hit;
 
     default:
-      throw new Error(`No dynamic max hit available for ${spell}`);
+      // Note: Flames of Zamorak is expected to fall under this category
+      console.warn(`No dynamic max hit available for ${spell}`);
+      return spell?.max_hit;
   }
 }
 

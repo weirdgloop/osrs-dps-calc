@@ -3,366 +3,427 @@
     "name": "Bind",
     "image": "Bind.png",
     "max_hit": 0,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": null
   },
   {
     "name": "Blood Barrage",
     "image": "Blood Barrage.png",
     "max_hit": 29,
-    "spellbook": "ancient"
+    "spellbook": "ancient",
+    "element": null
   },
   {
     "name": "Blood Blitz",
     "image": "Blood Blitz.png",
     "max_hit": 25,
-    "spellbook": "ancient"
+    "spellbook": "ancient",
+    "element": null
   },
   {
     "name": "Blood Burst",
     "image": "Blood Burst.png",
     "max_hit": 21,
-    "spellbook": "ancient"
+    "spellbook": "ancient",
+    "element": null
   },
   {
     "name": "Blood Rush",
     "image": "Blood Rush.png",
     "max_hit": 15,
-    "spellbook": "ancient"
+    "spellbook": "ancient",
+    "element": null
   },
   {
     "name": "Claws of Guthix",
     "image": "Claws of Guthix.png",
     "max_hit": 20,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": null
   },
   {
     "name": "Confuse",
     "image": "Confuse.png",
     "max_hit": 0,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": null
   },
   {
     "name": "Crumble Undead",
     "image": "Crumble Undead.png",
     "max_hit": 15,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": null
   },
   {
     "name": "Curse",
     "image": "Curse.png",
     "max_hit": 0,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": null
   },
   {
     "name": "Dark Demonbane",
     "image": "Dark Demonbane.png",
     "max_hit": 30,
-    "spellbook": "arceuus"
+    "spellbook": "arceuus",
+    "element": null
   },
   {
     "name": "Dark Lure",
     "image": "Dark Lure.png",
     "max_hit": 0,
-    "spellbook": "arceuus"
+    "spellbook": "arceuus",
+    "element": null
   },
   {
     "name": "Earth Blast",
     "image": "Earth Blast.png",
     "max_hit": 15,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "earth"
   },
   {
     "name": "Earth Bolt",
     "image": "Earth Bolt.png",
     "max_hit": 11,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "earth"
   },
   {
     "name": "Earth Strike",
     "image": "Earth Strike.png",
     "max_hit": 6,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "earth"
   },
   {
     "name": "Earth Surge",
     "image": "Earth Surge.png",
     "max_hit": 23,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "earth"
   },
   {
     "name": "Earth Wave",
     "image": "Earth Wave.png",
     "max_hit": 19,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "earth"
   },
   {
     "name": "Enfeeble",
     "image": "Enfeeble.png",
     "max_hit": 0,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": null
   },
   {
     "name": "Entangle",
     "image": "Entangle.png",
     "max_hit": 5,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": null
   },
   {
     "name": "Fire Blast",
     "image": "Fire Blast.png",
     "max_hit": 16,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "fire"
   },
   {
     "name": "Fire Bolt",
     "image": "Fire Bolt.png",
     "max_hit": 12,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "fire"
   },
   {
     "name": "Fire Strike",
     "image": "Fire Strike.png",
     "max_hit": 8,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "fire"
   },
   {
     "name": "Fire Surge",
     "image": "Fire Surge.png",
     "max_hit": 24,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "fire"
   },
   {
     "name": "Fire Wave",
     "image": "Fire Wave.png",
     "max_hit": 20,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "fire"
   },
   {
     "name": "Flames of Zamorak",
     "image": "Flames of Zamorak.png",
     "max_hit": 20,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "fire"
   },
   {
     "name": "Ghostly Grasp",
     "image": "Ghostly Grasp.png",
     "max_hit": 12,
-    "spellbook": "arceuus"
+    "spellbook": "arceuus",
+    "element": null
   },
   {
     "name": "Greater Corruption",
     "image": "Greater Corruption.png",
     "max_hit": 0,
-    "spellbook": "arceuus"
+    "spellbook": "arceuus",
+    "element": null
   },
   {
     "name": "Iban Blast",
     "image": "Iban Blast.png",
     "max_hit": 25,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": null
   },
   {
     "name": "Ice Barrage",
     "image": "Ice Barrage.png",
     "max_hit": 30,
-    "spellbook": "ancient"
+    "spellbook": "ancient",
+    "element": null
   },
   {
     "name": "Ice Blitz",
     "image": "Ice Blitz.png",
     "max_hit": 26,
-    "spellbook": "ancient"
+    "spellbook": "ancient",
+    "element": null
   },
   {
     "name": "Ice Burst",
     "image": "Ice Burst.png",
     "max_hit": 22,
-    "spellbook": "ancient"
+    "spellbook": "ancient",
+    "element": null
   },
   {
     "name": "Ice Rush",
     "image": "Ice Rush.png",
     "max_hit": 16,
-    "spellbook": "ancient"
+    "spellbook": "ancient",
+    "element": null
   },
   {
     "name": "Inferior Demonbane",
     "image": "Inferior Demonbane.png",
     "max_hit": 16,
-    "spellbook": "arceuus"
+    "spellbook": "arceuus",
+    "element": null
   },
   {
     "name": "Lesser Corruption",
     "image": "Lesser Corruption.png",
     "max_hit": 0,
-    "spellbook": "arceuus"
+    "spellbook": "arceuus",
+    "element": null
   },
   {
     "name": "Magic Dart",
     "image": "Magic Dart.png",
     "max_hit": 0,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": null
   },
   {
     "name": "Saradomin Strike",
     "image": "Saradomin Strike.png",
     "max_hit": 20,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": null
   },
   {
     "name": "Shadow Barrage",
     "image": "Shadow Barrage.png",
     "max_hit": 28,
-    "spellbook": "ancient"
+    "spellbook": "ancient",
+    "element": null
   },
   {
     "name": "Shadow Blitz",
     "image": "Shadow Blitz.png",
     "max_hit": 24,
-    "spellbook": "ancient"
+    "spellbook": "ancient",
+    "element": null
   },
   {
     "name": "Shadow Burst",
     "image": "Shadow Burst.png",
     "max_hit": 18,
-    "spellbook": "ancient"
+    "spellbook": "ancient",
+    "element": null
   },
   {
     "name": "Shadow Rush",
     "image": "Shadow Rush.png",
     "max_hit": 14,
-    "spellbook": "ancient"
+    "spellbook": "ancient",
+    "element": null
   },
   {
     "name": "Skeletal Grasp",
     "image": "Skeletal Grasp.png",
     "max_hit": 17,
-    "spellbook": "arceuus"
+    "spellbook": "arceuus",
+    "element": null
   },
   {
     "name": "Smoke Barrage",
     "image": "Smoke Barrage.png",
     "max_hit": 27,
-    "spellbook": "ancient"
+    "spellbook": "ancient",
+    "element": null
   },
   {
     "name": "Smoke Blitz",
     "image": "Smoke Blitz.png",
     "max_hit": 23,
-    "spellbook": "ancient"
+    "spellbook": "ancient",
+    "element": null
   },
   {
     "name": "Smoke Burst",
     "image": "Smoke Burst.png",
     "max_hit": 17,
-    "spellbook": "ancient"
+    "spellbook": "ancient",
+    "element": null
   },
   {
     "name": "Smoke Rush",
     "image": "Smoke Rush.png",
     "max_hit": 13,
-    "spellbook": "ancient"
+    "spellbook": "ancient",
+    "element": null
   },
   {
     "name": "Snare",
     "image": "Snare.png",
     "max_hit": 3,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": null
   },
   {
     "name": "Stun",
     "image": "Stun.png",
     "max_hit": 0,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": null
   },
   {
     "name": "Superior Demonbane",
     "image": "Superior Demonbane.png",
     "max_hit": 23,
-    "spellbook": "arceuus"
+    "spellbook": "arceuus",
+    "element": null
   },
   {
     "name": "Tele Block",
     "image": "Tele Block.png",
     "max_hit": 0,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": null
   },
   {
     "name": "Undead Grasp",
     "image": "Undead Grasp.png",
     "max_hit": 24,
-    "spellbook": "arceuus"
+    "spellbook": "arceuus",
+    "element": null
   },
   {
     "name": "Vulnerability",
     "image": "Vulnerability.png",
     "max_hit": 0,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": null
   },
   {
     "name": "Water Blast",
     "image": "Water Blast.png",
     "max_hit": 14,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "water"
   },
   {
     "name": "Water Bolt",
     "image": "Water Bolt.png",
     "max_hit": 10,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "water"
   },
   {
     "name": "Water Strike",
     "image": "Water Strike.png",
     "max_hit": 4,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "water"
   },
   {
     "name": "Water Surge",
     "image": "Water Surge.png",
     "max_hit": 22,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "water"
   },
   {
     "name": "Water Wave",
     "image": "Water Wave.png",
     "max_hit": 18,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "water"
   },
   {
     "name": "Weaken",
     "image": "Weaken.png",
     "max_hit": 0,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": null
   },
   {
     "name": "Wind Blast",
     "image": "Wind Blast.png",
     "max_hit": 13,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "air"
   },
   {
     "name": "Wind Bolt",
     "image": "Wind Bolt.png",
     "max_hit": 9,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "air"
   },
   {
     "name": "Wind Strike",
     "image": "Wind Strike.png",
     "max_hit": 2,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "air"
   },
   {
     "name": "Wind Surge",
     "image": "Wind Surge.png",
     "max_hit": 21,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "air"
   },
   {
     "name": "Wind Wave",
     "image": "Wind Wave.png",
     "max_hit": 17,
-    "spellbook": "standard"
+    "spellbook": "standard",
+    "element": "air"
   }
 ]
