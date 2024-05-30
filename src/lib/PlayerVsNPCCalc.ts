@@ -12,12 +12,9 @@ import {
   WeightedHit,
 } from '@/lib/HitDist';
 import {
-  getSpellement,
   getSpellMaxHit,
   canUseSunfireRunes,
   isBindSpell,
-  isFireSpell,
-  isWaterSpell,
 } from '@/types/Spell';
 import {
   PrayerData, PrayerMap,
@@ -507,11 +504,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isWearingSmokeStaff() && this.player.spell?.spellbook === 'standard') {
       attackRoll = Math.trunc(attackRoll * 11 / 10);
     }
-    if (this.wearing('Tome of water') && (isWaterSpell(this.player.spell) || isBindSpell(this.player.spell))) { // todo does this go here?
+    if (this.wearing('Tome of water') && this.player.spell?.element === 'water' || isBindSpell(this.player.spell)) { // todo does this go here?
       attackRoll = Math.trunc(attackRoll * 6 / 5);
     }
 
-    const spellement = getSpellement(this.player.spell);
+    const spellement = this.player.spell?.element;
     if (this.monster.weakness && spellement) {
       if (spellement === this.monster.weakness.element) {
         attackRoll += Math.trunc(this.monster.weakness.severity * baseRoll / 100);
@@ -610,7 +607,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       blackMaskBonus = true;
     }
 
-    const spellement = getSpellement(this.player.spell);
+    const spellement = this.player.spell?.element;
     if (this.monster.weakness && spellement) {
       if (spellement === this.monster.weakness.element) {
         magicDmgBonus += this.monster.weakness.severity * 10;
@@ -895,10 +892,14 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.transform(multiplyTransformer(factor, divisor));
     }
 
-    if (this.wearing('Tome of fire') && isFireSpell(this.player.spell)) {
+    if (
+      this.wearing('Tome of fire')
+      && this.player.spell?.element === 'fire'
+      && this.player.spell?.name !== 'Flames of Zamorak'
+    ) {
       dist = dist.scaleDamage(11, 10);
     }
-    if (this.wearing('Tome of water') && isWaterSpell(this.player.spell)) {
+    if (this.wearing('Tome of water') && this.player.spell?.element === 'water') {
       dist = dist.scaleDamage(11, 10);
     }
 
@@ -1038,7 +1039,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.monster.attributes.includes(MonsterAttribute.VAMPYRE_2) && this.wearing("Efaritay's aid") && !this.isWearingSilverWeapon()) {
       dist = dist.transform(flatLimitTransformer(10));
     }
-    if (this.monster.name === 'Ice demon' && !isFireSpell(this.player.spell) && this.player.spell?.name !== 'Flames of Zamorak') {
+    if (this.monster.name === 'Ice demon' && this.player.spell?.element === 'fire' && this.player.spell?.name !== 'Flames of Zamorak') {
       // https://twitter.com/JagexAsh/status/1133350436554121216
       dist = dist.transform(divisionTransformer(3));
     }
@@ -1095,7 +1096,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return true;
     }
     if (this.monster.name === 'Fareed') {
-      if (styleType === 'magic' && !isWaterSpell(this.player.spell)
+      if (styleType === 'magic' && this.player.spell?.element !== 'water'
         || (styleType === 'ranged' && !this.player.equipment.ammo?.name?.includes('arrow'))) {
         return true;
       }

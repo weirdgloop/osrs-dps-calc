@@ -5,6 +5,7 @@ export interface Spell {
   image: string;
   max_hit: number;
   spellbook: Spellbook;
+  element: Spellement;
 }
 
 export type Spellement = 'air' | 'water' | 'earth' | 'fire';
@@ -15,37 +16,6 @@ export function spellByName(name: string): Spell | null {
   return spells.find((s) => s.name === name) || null;
 }
 
-export function getSpellement(spell: Spell | null): Spellement | null {
-  if (spell === null) {
-    return null;
-  }
-
-  switch (spell.name.split(/ /)[0]) {
-    case 'Wind':
-      return 'air';
-
-    case 'Water':
-      return 'water';
-
-    case 'Earth':
-      return 'earth';
-
-    case 'Fire':
-      return 'fire';
-
-    default:
-      return null;
-  }
-}
-
-export function isFireSpell(spell: Spell | null): boolean {
-  return getSpellement(spell) === 'fire';
-}
-
-export function isWaterSpell(spell: Spell | null): boolean {
-  return getSpellement(spell) === 'water';
-}
-
 export function isBindSpell(spell: Spell | null): boolean {
   return spell !== null
     && ['Bind', 'Snare', 'Entangle'] // todo bind isn't actually added yet, but future-proofing
@@ -53,7 +23,7 @@ export function isBindSpell(spell: Spell | null): boolean {
 }
 
 export function getSpellMaxHit(spell: Spell, magicLevel: number): number {
-  if (!getSpellement(spell)) {
+  if (!spell.element || spell.name === 'Flames of Zamorak') {
     return spell?.max_hit;
   }
 
@@ -95,7 +65,7 @@ export function getSpellMaxHit(spell: Spell, magicLevel: number): number {
 }
 
 export function canUseSunfireRunes(spell: Spell | null): boolean {
-  return isFireSpell(spell);
+  return spell?.element === 'fire';
 
   // todo do we know for sure yet whether it's "fire spells" or "fire-rune spells"?
   // return spell !== null && (

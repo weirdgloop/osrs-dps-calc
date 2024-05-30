@@ -2,7 +2,7 @@ import React from 'react';
 import { useStore } from '@/state';
 import { observer } from 'mobx-react-lite';
 import { getWikiImage } from '@/utils';
-import { Spell, Spellbook } from '@/types/Spell';
+import { Spell, Spellbook, Spellement } from '@/types/Spell';
 import Combobox from '@/app/components/generic/Combobox';
 import LazyImage from '@/app/components/generic/LazyImage';
 import spell from '../../../../../cdn/json/spells.json';
@@ -24,6 +24,7 @@ const SpellSelect: React.FC = observer(() => {
       image: e.image,
       max_hit: e.max_hit,
       spellbook: e.spellbook as Spellbook,
+      element: e.element as Spellement,
     },
   }));
 
