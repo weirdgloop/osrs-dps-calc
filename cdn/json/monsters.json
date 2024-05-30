@@ -113,9 +113,9 @@
     "defensive": {
       "crush": 40,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 30,
+      "standard": 30,
+      "light": 30,
       "slash": 40,
       "stab": 40
     },
@@ -532,9 +532,9 @@
     "defensive": {
       "crush": 70,
       "magic": 150,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 70,
+      "standard": 70,
+      "light": 70,
       "slash": 70,
       "stab": 70
     },
@@ -1097,8 +1097,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 25,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 25,
       "ranged": 150,
       "ranged_str": 5,
       "str": 25
@@ -1344,8 +1344,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 73,
+      "magic": 73,
+      "magic_str": 0,
       "ranged": -19,
       "ranged_str": 0,
       "str": 68
@@ -1471,8 +1471,8 @@
     },
     "offensive": {
       "atk": 115,
-      "magic": 40,
-      "magic_str": 115,
+      "magic": 115,
+      "magic_str": 40,
       "ranged": 115,
       "ranged_str": 40,
       "str": 30
@@ -1511,8 +1511,8 @@
     },
     "offensive": {
       "atk": 115,
-      "magic": 40,
-      "magic_str": 115,
+      "magic": 115,
+      "magic_str": 40,
       "ranged": 115,
       "ranged_str": 40,
       "str": 30
@@ -1632,8 +1632,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 20,
-      "magic_str": 45,
+      "magic": 45,
+      "magic_str": 20,
       "ranged": 45,
       "ranged_str": 20,
       "str": 0
@@ -1675,8 +1675,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 20,
-      "magic_str": 45,
+      "magic": 45,
+      "magic_str": 20,
       "ranged": 45,
       "ranged_str": 20,
       "str": 0
@@ -1718,8 +1718,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 20,
-      "magic_str": 45,
+      "magic": 45,
+      "magic_str": 20,
       "ranged": 45,
       "ranged_str": 20,
       "str": 0
@@ -1761,8 +1761,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 20,
-      "magic_str": 45,
+      "magic": 45,
+      "magic_str": 20,
       "ranged": 45,
       "ranged_str": 20,
       "str": 0
@@ -2216,9 +2216,9 @@
     "defensive": {
       "crush": 70,
       "magic": 170,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 120,
+      "standard": 120,
+      "light": 120,
       "slash": 70,
       "stab": 70
     },
@@ -2259,9 +2259,9 @@
     "defensive": {
       "crush": 20,
       "magic": 30,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 30,
+      "standard": 30,
+      "light": 30,
       "slash": 20,
       "stab": 20
     },
@@ -2299,9 +2299,9 @@
     "defensive": {
       "crush": 2,
       "magic": -3,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 2,
+      "standard": 2,
+      "light": 2,
       "slash": 3,
       "stab": 0
     },
@@ -2661,9 +2661,9 @@
     "defensive": {
       "crush": 19,
       "magic": 400,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 400,
+      "standard": 400,
+      "light": 400,
       "slash": 25,
       "stab": 50
     },
@@ -2781,9 +2781,9 @@
     "defensive": {
       "crush": 19,
       "magic": 400,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 400,
+      "standard": 400,
+      "light": 400,
       "slash": 25,
       "stab": 50
     },
@@ -2901,9 +2901,9 @@
     "defensive": {
       "crush": 19,
       "magic": 400,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 400,
+      "standard": 400,
+      "light": 400,
       "slash": 25,
       "stab": 50
     },
@@ -3430,8 +3430,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 65,
-      "magic_str": 250,
+      "magic": 250,
+      "magic_str": 65,
       "ranged": 350,
       "ranged_str": 0,
       "str": 55
@@ -3524,9 +3524,9 @@
     "defensive": {
       "crush": 49,
       "magic": 18,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 45,
+      "standard": 45,
+      "light": 45,
       "slash": 50,
       "stab": 39
     },
@@ -3977,9 +3977,9 @@
     "defensive": {
       "crush": 110,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 40,
+      "standard": 40,
+      "light": 40,
       "slash": 110,
       "stab": 125
     },
@@ -5269,8 +5269,8 @@
     },
     "offensive": {
       "atk": 20,
-      "magic": 0,
-      "magic_str": 20,
+      "magic": 20,
+      "magic_str": 0,
       "ranged": 20,
       "ranged_str": 0,
       "str": 0
@@ -5309,8 +5309,8 @@
     },
     "offensive": {
       "atk": 25,
-      "magic": 0,
-      "magic_str": 25,
+      "magic": 25,
+      "magic_str": 0,
       "ranged": 25,
       "ranged_str": 0,
       "str": 0
@@ -5349,8 +5349,8 @@
     },
     "offensive": {
       "atk": 20,
-      "magic": 0,
-      "magic_str": 20,
+      "magic": 20,
+      "magic_str": 0,
       "ranged": 20,
       "ranged_str": 0,
       "str": 0
@@ -5389,8 +5389,8 @@
     },
     "offensive": {
       "atk": 25,
-      "magic": 0,
-      "magic_str": 25,
+      "magic": 25,
+      "magic_str": 0,
       "ranged": 25,
       "ranged_str": 0,
       "str": 0
@@ -5429,8 +5429,8 @@
     },
     "offensive": {
       "atk": 25,
-      "magic": 0,
-      "magic_str": 25,
+      "magic": 25,
+      "magic_str": 0,
       "ranged": 25,
       "ranged_str": 0,
       "str": 0
@@ -5438,9 +5438,9 @@
     "defensive": {
       "crush": 900,
       "magic": 900,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -50,
+      "standard": -50,
+      "light": -50,
       "slash": 900,
       "stab": 900
     },
@@ -5469,8 +5469,8 @@
     },
     "offensive": {
       "atk": 20,
-      "magic": 0,
-      "magic_str": 20,
+      "magic": 20,
+      "magic_str": 0,
       "ranged": 20,
       "ranged_str": 0,
       "str": 0
@@ -5509,8 +5509,8 @@
     },
     "offensive": {
       "atk": 20,
-      "magic": 0,
-      "magic_str": 20,
+      "magic": 20,
+      "magic_str": 0,
       "ranged": 20,
       "ranged_str": 0,
       "str": 0
@@ -5549,8 +5549,8 @@
     },
     "offensive": {
       "atk": 25,
-      "magic": 0,
-      "magic_str": 25,
+      "magic": 25,
+      "magic_str": 0,
       "ranged": 25,
       "ranged_str": 0,
       "str": 0
@@ -6512,9 +6512,9 @@
     "defensive": {
       "crush": 5,
       "magic": 1,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
       "slash": 8,
       "stab": 4
     },
@@ -7873,8 +7873,8 @@
     },
     "offensive": {
       "atk": 12,
-      "magic": 12,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 12,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -7882,9 +7882,9 @@
     "defensive": {
       "crush": 10,
       "magic": 50,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
       "slash": 50,
       "stab": 50
     },
@@ -8402,9 +8402,9 @@
     "defensive": {
       "crush": 2,
       "magic": -3,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 2,
+      "standard": 2,
+      "light": 2,
       "slash": 3,
       "stab": 0
     },
@@ -8804,9 +8804,9 @@
     "defensive": {
       "crush": 60,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 60,
+      "standard": 60,
+      "light": 60,
       "slash": 60,
       "stab": 60
     },
@@ -8844,9 +8844,9 @@
     "defensive": {
       "crush": 60,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 60,
+      "standard": 60,
+      "light": 60,
       "slash": 60,
       "stab": 60
     },
@@ -8884,9 +8884,9 @@
     "defensive": {
       "crush": 60,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 60,
+      "standard": 60,
+      "light": 60,
       "slash": 60,
       "stab": 60
     },
@@ -10004,9 +10004,9 @@
     "defensive": {
       "crush": -24,
       "magic": -24,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -24,
+      "standard": -24,
+      "light": -24,
       "slash": -24,
       "stab": -24
     },
@@ -10046,9 +10046,9 @@
     "defensive": {
       "crush": -24,
       "magic": -24,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -24,
+      "standard": -24,
+      "light": -24,
       "slash": -24,
       "stab": -24
     },
@@ -10168,9 +10168,9 @@
     "defensive": {
       "crush": 30,
       "magic": 5,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
       "slash": 5,
       "stab": 5
     },
@@ -10208,9 +10208,9 @@
     "defensive": {
       "crush": 30,
       "magic": 5,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
       "slash": 5,
       "stab": 5
     },
@@ -10288,9 +10288,9 @@
     "defensive": {
       "crush": 120,
       "magic": 300,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 55,
+      "standard": 55,
+      "light": 55,
       "slash": 80,
       "stab": 20
     },
@@ -10330,9 +10330,9 @@
     "defensive": {
       "crush": 120,
       "magic": 300,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 55,
+      "standard": 55,
+      "light": 55,
       "slash": 80,
       "stab": 20
     },
@@ -10484,8 +10484,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 30,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 30,
       "ranged": 0,
       "ranged_str": 0,
       "str": 30
@@ -10493,9 +10493,9 @@
     "defensive": {
       "crush": 100,
       "magic": 50,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 100,
       "stab": 20
     },
@@ -10527,8 +10527,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 30,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 30,
       "ranged": 0,
       "ranged_str": 0,
       "str": 30
@@ -10536,9 +10536,9 @@
     "defensive": {
       "crush": 100,
       "magic": 50,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 100,
       "stab": 20
     },
@@ -11820,9 +11820,9 @@
     "defensive": {
       "crush": 14,
       "magic": 18,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
       "slash": 14,
       "stab": 12
     },
@@ -12067,8 +12067,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 25,
+      "magic": 25,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -12107,8 +12107,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 25,
+      "magic": 25,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -12147,8 +12147,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 25,
+      "magic": 25,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -13511,8 +13511,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": -4,
+      "magic": -4,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -14040,9 +14040,9 @@
     "defensive": {
       "crush": 15,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
       "slash": 15,
       "stab": 5
     },
@@ -14120,9 +14120,9 @@
     "defensive": {
       "crush": -12,
       "magic": -12,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -12,
+      "standard": -12,
+      "light": -12,
       "slash": -12,
       "stab": -12
     },
@@ -14153,8 +14153,8 @@
     },
     "offensive": {
       "atk": 50,
-      "magic": 0,
-      "magic_str": 50,
+      "magic": 50,
+      "magic_str": 0,
       "ranged": 50,
       "ranged_str": 0,
       "str": 0
@@ -14199,8 +14199,8 @@
     },
     "offensive": {
       "atk": 28,
-      "magic": 26,
-      "magic_str": 28,
+      "magic": 28,
+      "magic_str": 26,
       "ranged": 0,
       "ranged_str": 0,
       "str": 26
@@ -14250,9 +14250,9 @@
     "defensive": {
       "crush": 70,
       "magic": 70,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 70,
+      "standard": 70,
+      "light": 70,
       "slash": 70,
       "stab": 70
     },
@@ -14493,9 +14493,9 @@
     "defensive": {
       "crush": 25,
       "magic": 10,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 35,
+      "standard": 35,
+      "light": 35,
       "slash": 34,
       "stab": 40
     },
@@ -15298,9 +15298,9 @@
     "defensive": {
       "crush": 200,
       "magic": 200,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 200,
       "stab": 100
     },
@@ -15332,8 +15332,8 @@
     },
     "offensive": {
       "atk": 195,
-      "magic": 0,
-      "magic_str": 200,
+      "magic": 200,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 20
@@ -15384,9 +15384,9 @@
     "defensive": {
       "crush": 2,
       "magic": -3,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 2,
+      "standard": 2,
+      "light": 2,
       "slash": 3,
       "stab": 0
     },
@@ -15781,8 +15781,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 226,
-      "magic_str": 146,
+      "magic": 146,
+      "magic_str": 226,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -15822,8 +15822,8 @@
     },
     "offensive": {
       "atk": 90,
-      "magic": 112,
-      "magic_str": 90,
+      "magic": 90,
+      "magic_str": 112,
       "ranged": 90,
       "ranged_str": 112,
       "str": 112
@@ -17165,8 +17165,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 25,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 25,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -18129,8 +18129,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 106,
-      "magic_str": 54,
+      "magic": 54,
+      "magic_str": 106,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -18170,8 +18170,8 @@
     },
     "offensive": {
       "atk": 76,
-      "magic": 64,
-      "magic_str": 76,
+      "magic": 76,
+      "magic_str": 64,
       "ranged": 76,
       "ranged_str": 64,
       "str": 64
@@ -18179,9 +18179,9 @@
     "defensive": {
       "crush": 20,
       "magic": 20,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 20,
       "stab": 20
     },
@@ -18771,8 +18771,8 @@
     },
     "offensive": {
       "atk": 25,
-      "magic": 0,
-      "magic_str": 25,
+      "magic": 25,
+      "magic_str": 0,
       "ranged": 25,
       "ranged_str": 0,
       "str": 0
@@ -19500,9 +19500,9 @@
     "defensive": {
       "crush": 10,
       "magic": 255,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 550,
+      "standard": 550,
+      "light": 550,
       "slash": 10,
       "stab": 10
     },
@@ -19782,9 +19782,9 @@
     "defensive": {
       "crush": 0,
       "magic": 50,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
       "slash": 0,
       "stab": 0
     },
@@ -19822,9 +19822,9 @@
     "defensive": {
       "crush": 0,
       "magic": 50,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
       "slash": 0,
       "stab": 0
     },
@@ -19854,8 +19854,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 12,
-      "magic_str": 18,
+      "magic": 18,
+      "magic_str": 12,
       "ranged": 18,
       "ranged_str": 12,
       "str": 0
@@ -20108,9 +20108,9 @@
     "defensive": {
       "crush": 100,
       "magic": 90,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
       "slash": 40,
       "stab": 30
     },
@@ -20148,9 +20148,9 @@
     "defensive": {
       "crush": 10,
       "magic": -5,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
       "slash": 10,
       "stab": 10
     },
@@ -20743,8 +20743,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 120,
+      "magic": 120,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -21149,8 +21149,8 @@
     },
     "offensive": {
       "atk": 43,
-      "magic": 29,
-      "magic_str": 40,
+      "magic": 40,
+      "magic_str": 29,
       "ranged": 43,
       "ranged_str": 29,
       "str": 29
@@ -21204,9 +21204,9 @@
     "defensive": {
       "crush": 50,
       "magic": 300,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 300,
+      "standard": 300,
+      "light": 300,
       "slash": 20,
       "stab": 20
     },
@@ -21236,8 +21236,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 80,
-      "magic_str": 180,
+      "magic": 180,
+      "magic_str": 80,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -21731,8 +21731,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": -58,
+      "magic": -58,
+      "magic_str": 0,
       "ranged": -18,
       "ranged_str": 0,
       "str": 105
@@ -22148,9 +22148,9 @@
     "defensive": {
       "crush": -10,
       "magic": 50,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -10,
+      "standard": -10,
+      "light": -10,
       "slash": -10,
       "stab": -10
     },
@@ -22276,9 +22276,9 @@
     "defensive": {
       "crush": -21,
       "magic": -21,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -21,
+      "standard": -21,
+      "light": -21,
       "slash": -21,
       "stab": -21
     },
@@ -22467,8 +22467,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 32,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 32,
       "ranged": 0,
       "ranged_str": 0,
       "str": 38
@@ -22512,8 +22512,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 32,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 32,
       "ranged": 0,
       "ranged_str": 0,
       "str": 38
@@ -22557,8 +22557,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 32,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 32,
       "ranged": 0,
       "ranged_str": 0,
       "str": 38
@@ -22602,8 +22602,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 32,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 32,
       "ranged": 0,
       "ranged_str": 0,
       "str": 38
@@ -22647,8 +22647,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 32,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 32,
       "ranged": 0,
       "ranged_str": 0,
       "str": 38
@@ -22692,8 +22692,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 32,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 32,
       "ranged": 0,
       "ranged_str": 0,
       "str": 38
@@ -22737,8 +22737,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 10,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 10,
       "ranged": 0,
       "ranged_str": 0,
       "str": 16
@@ -22782,8 +22782,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 10,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 10,
       "ranged": 0,
       "ranged_str": 0,
       "str": 16
@@ -22827,8 +22827,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 10,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 10,
       "ranged": 0,
       "ranged_str": 0,
       "str": 16
@@ -23488,9 +23488,9 @@
     "defensive": {
       "crush": -12,
       "magic": -12,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -12,
+      "standard": -12,
+      "light": -12,
       "slash": -12,
       "stab": -12
     },
@@ -23648,9 +23648,9 @@
     "defensive": {
       "crush": -10,
       "magic": 10,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -10,
+      "standard": -10,
+      "light": -10,
       "slash": -10,
       "stab": -10
     },
@@ -23768,9 +23768,9 @@
     "defensive": {
       "crush": -10,
       "magic": 10,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -10,
+      "standard": -10,
+      "light": -10,
       "slash": -10,
       "stab": -10
     },
@@ -24121,8 +24121,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 225,
+      "magic": 225,
+      "magic_str": 0,
       "ranged": 225,
       "ranged_str": 0,
       "str": 10
@@ -24163,8 +24163,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 225,
+      "magic": 225,
+      "magic_str": 0,
       "ranged": 225,
       "ranged_str": 0,
       "str": 10
@@ -24205,8 +24205,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 40,
-      "magic_str": 230,
+      "magic": 230,
+      "magic_str": 40,
       "ranged": 300,
       "ranged_str": 40,
       "str": 40
@@ -24247,8 +24247,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 40,
-      "magic_str": 230,
+      "magic": 230,
+      "magic_str": 40,
       "ranged": 300,
       "ranged_str": 40,
       "str": 40
@@ -24491,8 +24491,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 40,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 40,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -24531,8 +24531,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 40,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 40,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -26675,9 +26675,9 @@
     "defensive": {
       "crush": 0,
       "magic": 2,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
       "slash": 5,
       "stab": 5
     },
@@ -26717,9 +26717,9 @@
     "defensive": {
       "crush": 0,
       "magic": 2,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
       "slash": 5,
       "stab": 5
     },
@@ -26757,9 +26757,9 @@
     "defensive": {
       "crush": 15,
       "magic": 15,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 15,
+      "standard": 15,
+      "light": 15,
       "slash": 15,
       "stab": 15
     },
@@ -26797,9 +26797,9 @@
     "defensive": {
       "crush": 15,
       "magic": 15,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 15,
+      "standard": 15,
+      "light": 15,
       "slash": 15,
       "stab": 15
     },
@@ -26837,9 +26837,9 @@
     "defensive": {
       "crush": 15,
       "magic": 15,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 15,
+      "standard": 15,
+      "light": 15,
       "slash": 15,
       "stab": 15
     },
@@ -27485,8 +27485,8 @@
     },
     "offensive": {
       "atk": 150,
-      "magic": 0,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 0,
       "ranged": 150,
       "ranged_str": 10,
       "str": 150
@@ -27525,8 +27525,8 @@
     },
     "offensive": {
       "atk": 150,
-      "magic": 0,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 90
@@ -27565,8 +27565,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -27845,8 +27845,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 25,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 25,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -27968,8 +27968,8 @@
     },
     "offensive": {
       "atk": 34,
-      "magic": 42,
-      "magic_str": 160,
+      "magic": 160,
+      "magic_str": 42,
       "ranged": 180,
       "ranged_str": 6,
       "str": 0
@@ -28014,8 +28014,8 @@
     },
     "offensive": {
       "atk": 34,
-      "magic": 42,
-      "magic_str": 160,
+      "magic": 160,
+      "magic_str": 42,
       "ranged": 180,
       "ranged_str": 6,
       "str": 0
@@ -28060,8 +28060,8 @@
     },
     "offensive": {
       "atk": 34,
-      "magic": 42,
-      "magic_str": 160,
+      "magic": 160,
+      "magic_str": 42,
       "ranged": 180,
       "ranged_str": 6,
       "str": 0
@@ -28106,8 +28106,8 @@
     },
     "offensive": {
       "atk": 34,
-      "magic": 42,
-      "magic_str": 160,
+      "magic": 160,
+      "magic_str": 42,
       "ranged": 180,
       "ranged_str": 6,
       "str": 0
@@ -29914,9 +29914,9 @@
     "defensive": {
       "crush": 12,
       "magic": 10,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 8,
+      "standard": 8,
+      "light": 8,
       "slash": 10,
       "stab": 10
     },
@@ -29954,9 +29954,9 @@
     "defensive": {
       "crush": 12,
       "magic": 10,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 8,
+      "standard": 8,
+      "light": 8,
       "slash": 10,
       "stab": 10
     },
@@ -30156,9 +30156,9 @@
     "defensive": {
       "crush": -15,
       "magic": -15,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -15,
+      "standard": -15,
+      "light": -15,
       "slash": -15,
       "stab": -15
     },
@@ -30236,9 +30236,9 @@
     "defensive": {
       "crush": 5,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
       "slash": 15,
       "stab": 5
     },
@@ -31010,8 +31010,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 25,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 25,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -31059,9 +31059,9 @@
     "defensive": {
       "crush": 130,
       "magic": 125,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
       "slash": 110,
       "stab": 105
     },
@@ -31099,9 +31099,9 @@
     "defensive": {
       "crush": 130,
       "magic": 125,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
       "slash": 110,
       "stab": 105
     },
@@ -31132,8 +31132,8 @@
     },
     "offensive": {
       "atk": 122,
-      "magic": 40,
-      "magic_str": 80,
+      "magic": 80,
+      "magic_str": 40,
       "ranged": 100,
       "ranged_str": 40,
       "str": 75
@@ -31263,9 +31263,9 @@
     "defensive": {
       "crush": -30,
       "magic": -30,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -30,
+      "standard": -30,
+      "light": -30,
       "slash": -30,
       "stab": -30
     },
@@ -31343,9 +31343,9 @@
     "defensive": {
       "crush": -42,
       "magic": -42,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -42,
+      "standard": -42,
+      "light": -42,
       "slash": -42,
       "stab": -42
     },
@@ -31383,9 +31383,9 @@
     "defensive": {
       "crush": -42,
       "magic": -42,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -42,
+      "standard": -42,
+      "light": -42,
       "slash": -42,
       "stab": -42
     },
@@ -31423,9 +31423,9 @@
     "defensive": {
       "crush": -42,
       "magic": -42,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -42,
+      "standard": -42,
+      "light": -42,
       "slash": -42,
       "stab": -42
     },
@@ -31785,9 +31785,9 @@
     "defensive": {
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
       "slash": 10,
       "stab": 10
     },
@@ -31825,9 +31825,9 @@
     "defensive": {
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
       "slash": 10,
       "stab": 10
     },
@@ -32185,9 +32185,9 @@
     "defensive": {
       "crush": 8,
       "magic": 4,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
       "slash": 6,
       "stab": 4
     },
@@ -32265,9 +32265,9 @@
     "defensive": {
       "crush": 18,
       "magic": 14,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 14,
+      "standard": 14,
+      "light": 14,
       "slash": 16,
       "stab": 14
     },
@@ -32745,9 +32745,9 @@
     "defensive": {
       "crush": -10,
       "magic": 10,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -10,
+      "standard": -10,
+      "light": -10,
       "slash": -10,
       "stab": -10
     },
@@ -32817,8 +32817,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 60,
+      "magic": 60,
+      "magic_str": 0,
       "ranged": 60,
       "ranged_str": 0,
       "str": 0
@@ -32860,8 +32860,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 60,
+      "magic": 60,
+      "magic_str": 0,
       "ranged": 60,
       "ranged_str": 0,
       "str": 0
@@ -32903,8 +32903,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 60,
+      "magic": 60,
+      "magic_str": 0,
       "ranged": 60,
       "ranged_str": 0,
       "str": 0
@@ -33039,9 +33039,9 @@
     "defensive": {
       "crush": 15,
       "magic": 156,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 184,
+      "standard": 184,
+      "light": 184,
       "slash": 101,
       "stab": 95
     },
@@ -33174,7 +33174,7 @@
     ],
     "weakness": {
       "element": "water",
-      "severity": 50
+      "severity": 40
     }
   },
   {
@@ -33219,7 +33219,7 @@
     ],
     "weakness": {
       "element": "water",
-      "severity": 50
+      "severity": 40
     }
   },
   {
@@ -33264,7 +33264,7 @@
     ],
     "weakness": {
       "element": "water",
-      "severity": 50
+      "severity": 40
     }
   },
   {
@@ -33309,7 +33309,7 @@
     ],
     "weakness": {
       "element": "water",
-      "severity": 50
+      "severity": 40
     }
   },
   {
@@ -33354,7 +33354,7 @@
     ],
     "weakness": {
       "element": "water",
-      "severity": 50
+      "severity": 40
     }
   },
   {
@@ -33804,9 +33804,9 @@
     "defensive": {
       "crush": 14,
       "magic": 18,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
       "slash": 14,
       "stab": 12
     },
@@ -33995,8 +33995,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": -4,
+      "magic": -4,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -34724,9 +34724,9 @@
     "defensive": {
       "crush": 19,
       "magic": -3,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 19,
+      "standard": 19,
+      "light": 19,
       "slash": 15,
       "stab": 17
     },
@@ -34764,9 +34764,9 @@
     "defensive": {
       "crush": 19,
       "magic": -3,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 19,
+      "standard": 19,
+      "light": 19,
       "slash": 15,
       "stab": 17
     },
@@ -34804,9 +34804,9 @@
     "defensive": {
       "crush": 19,
       "magic": -3,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 19,
+      "standard": 19,
+      "light": 19,
       "slash": 15,
       "stab": 17
     },
@@ -34844,9 +34844,9 @@
     "defensive": {
       "crush": 19,
       "magic": -3,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 19,
+      "standard": 19,
+      "light": 19,
       "slash": 15,
       "stab": 17
     },
@@ -34884,9 +34884,9 @@
     "defensive": {
       "crush": 19,
       "magic": -3,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 19,
+      "standard": 19,
+      "light": 19,
       "slash": 15,
       "stab": 17
     },
@@ -35084,9 +35084,9 @@
     "defensive": {
       "crush": 19,
       "magic": -4,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 25,
       "stab": 18
     },
@@ -35124,9 +35124,9 @@
     "defensive": {
       "crush": 19,
       "magic": -4,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 25,
       "stab": 18
     },
@@ -35164,9 +35164,9 @@
     "defensive": {
       "crush": 19,
       "magic": -4,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 25,
       "stab": 18
     },
@@ -35204,9 +35204,9 @@
     "defensive": {
       "crush": 19,
       "magic": -4,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 25,
       "stab": 18
     },
@@ -35244,9 +35244,9 @@
     "defensive": {
       "crush": 19,
       "magic": -4,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 25,
       "stab": 18
     },
@@ -35564,9 +35564,9 @@
     "defensive": {
       "crush": 27,
       "magic": 10,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 19,
+      "standard": 19,
+      "light": 19,
       "slash": 23,
       "stab": 18
     },
@@ -36084,9 +36084,9 @@
     "defensive": {
       "crush": 5,
       "magic": 1,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
       "slash": 8,
       "stab": 4
     },
@@ -37327,16 +37327,19 @@
     "defensive": {
       "crush": 100,
       "magic": 20,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 150,
+      "standard": 150,
+      "light": 150,
       "slash": 100,
       "stab": 60
     },
     "attributes": [
       "dragon"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
   },
   {
     "id": 3446,
@@ -37480,8 +37483,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": -50,
+      "magic": -50,
+      "magic_str": 0,
       "ranged": -19,
       "ranged_str": 0,
       "str": 75
@@ -37685,8 +37688,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 8,
+      "magic": 8,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -38054,9 +38057,9 @@
     "defensive": {
       "crush": 15,
       "magic": 4,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 9,
+      "standard": 9,
+      "light": 9,
       "slash": 14,
       "stab": 8
     },
@@ -38502,8 +38505,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 0,
       "ranged": 150,
       "ranged_str": 0,
       "str": 0
@@ -38543,8 +38546,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 0,
       "ranged": 150,
       "ranged_str": 0,
       "str": 0
@@ -39745,8 +39748,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 82,
-      "magic_str": 168,
+      "magic": 168,
+      "magic_str": 82,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -40119,7 +40122,7 @@
     },
     "defensive": {
       "crush": 110,
-      "magic": 40,
+      "magic": 60,
       "heavy": 140,
       "standard": 140,
       "light": 140,
@@ -41245,9 +41248,9 @@
     "defensive": {
       "crush": -21,
       "magic": -21,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -21,
+      "standard": -21,
+      "light": -21,
       "slash": -21,
       "stab": -21
     },
@@ -42703,8 +42706,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 80,
+      "magic": 80,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -42745,8 +42748,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 75,
-      "magic_str": 100,
+      "magic": 100,
+      "magic_str": 75,
       "ranged": 80,
       "ranged_str": 0,
       "str": 0
@@ -43345,8 +43348,8 @@
     },
     "offensive": {
       "atk": 30,
-      "magic": 0,
-      "magic_str": 30,
+      "magic": 30,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -44250,9 +44253,9 @@
     "defensive": {
       "crush": 5,
       "magic": 50,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
       "slash": 25,
       "stab": 25
     },
@@ -44292,9 +44295,9 @@
     "defensive": {
       "crush": 5,
       "magic": 50,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
       "slash": 25,
       "stab": 25
     },
@@ -44334,9 +44337,9 @@
     "defensive": {
       "crush": 5,
       "magic": 50,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
       "slash": 25,
       "stab": 25
     },
@@ -44824,8 +44827,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": -26,
+      "magic": -26,
+      "magic_str": 0,
       "ranged": 134,
       "ranged_str": 55,
       "str": 0
@@ -45033,8 +45036,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 50,
-      "magic_str": 125,
+      "magic": 125,
+      "magic_str": 50,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -45079,8 +45082,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 60,
+      "magic": 60,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -45120,8 +45123,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 60,
+      "magic": 60,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -45574,9 +45577,9 @@
     "defensive": {
       "crush": 10,
       "magic": 20,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -10,
+      "standard": -10,
+      "light": -10,
       "slash": 10,
       "stab": 10
     },
@@ -45615,9 +45618,9 @@
     "defensive": {
       "crush": 10,
       "magic": 20,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -10,
+      "standard": -10,
+      "light": -10,
       "slash": 10,
       "stab": 10
     },
@@ -45862,9 +45865,9 @@
     "defensive": {
       "crush": 15,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
       "slash": 15,
       "stab": 5
     },
@@ -46024,9 +46027,9 @@
     "defensive": {
       "crush": 36,
       "magic": -11,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 36,
+      "standard": 36,
+      "light": 36,
       "slash": 40,
       "stab": 39
     },
@@ -46064,9 +46067,9 @@
     "defensive": {
       "crush": 36,
       "magic": -11,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 36,
+      "standard": 36,
+      "light": 36,
       "slash": 40,
       "stab": 39
     },
@@ -46104,9 +46107,9 @@
     "defensive": {
       "crush": 36,
       "magic": -11,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 36,
+      "standard": 36,
+      "light": 36,
       "slash": 40,
       "stab": 39
     },
@@ -46144,9 +46147,9 @@
     "defensive": {
       "crush": 36,
       "magic": -11,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 36,
+      "standard": 36,
+      "light": 36,
       "slash": 40,
       "stab": 39
     },
@@ -46784,9 +46787,9 @@
     "defensive": {
       "crush": 20,
       "magic": 20,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 20,
       "stab": 20
     },
@@ -46824,9 +46827,9 @@
     "defensive": {
       "crush": 40,
       "magic": 40,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 40,
+      "standard": 40,
+      "light": 40,
       "slash": 40,
       "stab": 40
     },
@@ -46864,9 +46867,9 @@
     "defensive": {
       "crush": 60,
       "magic": 60,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 60,
+      "standard": 60,
+      "light": 60,
       "slash": 60,
       "stab": 60
     },
@@ -46944,9 +46947,9 @@
     "defensive": {
       "crush": 40,
       "magic": 200,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
       "slash": 25,
       "stab": 25
     },
@@ -46975,8 +46978,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 50,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 50,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -47101,8 +47104,8 @@
     },
     "offensive": {
       "atk": 36,
-      "magic": 42,
-      "magic_str": 36,
+      "magic": 36,
+      "magic_str": 42,
       "ranged": 0,
       "ranged_str": 0,
       "str": 42
@@ -47764,8 +47767,8 @@
     },
     "offensive": {
       "atk": 100,
-      "magic": 0,
-      "magic_str": 100,
+      "magic": 100,
+      "magic_str": 0,
       "ranged": 100,
       "ranged_str": 0,
       "str": 0
@@ -47826,7 +47829,7 @@
     ],
     "weakness": {
       "element": "water",
-      "severity": 50
+      "severity": 40
     }
   },
   {
@@ -47871,7 +47874,7 @@
     ],
     "weakness": {
       "element": "water",
-      "severity": 50
+      "severity": 40
     }
   },
   {
@@ -47916,7 +47919,7 @@
     ],
     "weakness": {
       "element": "water",
-      "severity": 50
+      "severity": 40
     }
   },
   {
@@ -47961,7 +47964,7 @@
     ],
     "weakness": {
       "element": "water",
-      "severity": 50
+      "severity": 40
     }
   },
   {
@@ -48028,8 +48031,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 58,
-      "magic_str": 160,
+      "magic": 160,
+      "magic_str": 58,
       "ranged": 300,
       "ranged_str": 26,
       "str": 22
@@ -48073,8 +48076,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 58,
-      "magic_str": 160,
+      "magic": 160,
+      "magic_str": 58,
       "ranged": 300,
       "ranged_str": 26,
       "str": 22
@@ -48118,8 +48121,8 @@
     },
     "offensive": {
       "atk": 170,
-      "magic": 36,
-      "magic_str": 130,
+      "magic": 130,
+      "magic_str": 36,
       "ranged": 230,
       "ranged_str": 10,
       "str": 14
@@ -48893,9 +48896,9 @@
     "defensive": {
       "crush": 70,
       "magic": 140,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 120,
+      "standard": 120,
+      "light": 120,
       "slash": 70,
       "stab": 70
     },
@@ -50451,8 +50454,8 @@
     },
     "offensive": {
       "atk": 46,
-      "magic": 0,
-      "magic_str": 46,
+      "magic": 46,
+      "magic_str": 0,
       "ranged": 46,
       "ranged_str": 0,
       "str": 24
@@ -50492,8 +50495,8 @@
     },
     "offensive": {
       "atk": 46,
-      "magic": 0,
-      "magic_str": 46,
+      "magic": 46,
+      "magic_str": 0,
       "ranged": 46,
       "ranged_str": 0,
       "str": 24
@@ -50853,8 +50856,8 @@
     },
     "offensive": {
       "atk": 135,
-      "magic": 0,
-      "magic_str": 180,
+      "magic": 180,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 48
@@ -50902,9 +50905,9 @@
     "defensive": {
       "crush": 0,
       "magic": 2,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
       "slash": 5,
       "stab": 5
     },
@@ -50944,9 +50947,9 @@
     "defensive": {
       "crush": 0,
       "magic": 2,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
       "slash": 5,
       "stab": 5
     },
@@ -52452,8 +52455,8 @@
     },
     "offensive": {
       "atk": 34,
-      "magic": 40,
-      "magic_str": 34,
+      "magic": 34,
+      "magic_str": 40,
       "ranged": 0,
       "ranged_str": 0,
       "str": 40
@@ -53355,9 +53358,9 @@
     "defensive": {
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 62,
+      "standard": 62,
+      "light": 62,
       "slash": 50,
       "stab": 50
     },
@@ -53428,8 +53431,8 @@
     },
     "offensive": {
       "atk": 88,
-      "magic": -8,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": -8,
       "ranged": 82,
       "ranged_str": 47,
       "str": 55
@@ -53471,8 +53474,8 @@
     },
     "offensive": {
       "atk": 71,
-      "magic": -8,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": -8,
       "ranged": 83,
       "ranged_str": 56,
       "str": 48
@@ -53593,8 +53596,8 @@
     },
     "offensive": {
       "atk": 80,
-      "magic": 25,
-      "magic_str": 80,
+      "magic": 80,
+      "magic_str": 25,
       "ranged": 80,
       "ranged_str": 25,
       "str": 25
@@ -53762,9 +53765,9 @@
     "defensive": {
       "crush": -5,
       "magic": -5,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -5,
+      "standard": -5,
+      "light": -5,
       "slash": -5,
       "stab": -5
     },
@@ -53802,9 +53805,9 @@
     "defensive": {
       "crush": -10,
       "magic": 20,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -10,
+      "standard": -10,
+      "light": -10,
       "slash": -10,
       "stab": -10
     },
@@ -54326,8 +54329,8 @@
     },
     "offensive": {
       "atk": 200,
-      "magic": 22,
-      "magic_str": 100,
+      "magic": 100,
+      "magic_str": 22,
       "ranged": 150,
       "ranged_str": 5,
       "str": 20
@@ -54494,8 +54497,8 @@
     },
     "offensive": {
       "atk": 140,
-      "magic": 64,
-      "magic_str": 140,
+      "magic": 140,
+      "magic_str": 64,
       "ranged": 140,
       "ranged_str": 64,
       "str": 128
@@ -54663,9 +54666,9 @@
     "defensive": {
       "crush": 0,
       "magic": 850,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 80,
+      "standard": 80,
+      "light": 80,
       "slash": 0,
       "stab": 0
     },
@@ -54814,8 +54817,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 360,
-      "magic_str": 400,
+      "magic": 400,
+      "magic_str": 360,
       "ranged": 0,
       "ranged_str": -6,
       "str": 0
@@ -54854,8 +54857,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 928,
-      "magic_str": 1073,
+      "magic": 1073,
+      "magic_str": 928,
       "ranged": 0,
       "ranged_str": -15,
       "str": 0
@@ -54894,8 +54897,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 280,
-      "magic_str": 505,
+      "magic": 505,
+      "magic_str": 280,
       "ranged": 0,
       "ranged_str": -30,
       "str": 0
@@ -54974,8 +54977,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 360,
-      "magic_str": 400,
+      "magic": 400,
+      "magic_str": 360,
       "ranged": 0,
       "ranged_str": -6,
       "str": 0
@@ -55014,8 +55017,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 928,
-      "magic_str": 1073,
+      "magic": 1073,
+      "magic_str": 928,
       "ranged": 0,
       "ranged_str": -15,
       "str": 0
@@ -55054,8 +55057,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 280,
-      "magic_str": 505,
+      "magic": 505,
+      "magic_str": 280,
       "ranged": 0,
       "ranged_str": -30,
       "str": 0
@@ -55254,8 +55257,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 360,
-      "magic_str": 400,
+      "magic": 400,
+      "magic_str": 360,
       "ranged": 0,
       "ranged_str": -6,
       "str": 0
@@ -55294,8 +55297,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 928,
-      "magic_str": 1073,
+      "magic": 1073,
+      "magic_str": 928,
       "ranged": 0,
       "ranged_str": -15,
       "str": 0
@@ -55334,8 +55337,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 280,
-      "magic_str": 505,
+      "magic": 505,
+      "magic_str": 280,
       "ranged": 0,
       "ranged_str": -30,
       "str": 0
@@ -55376,8 +55379,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 460,
-      "magic_str": 380,
+      "magic": 380,
+      "magic_str": 460,
       "ranged": 0,
       "ranged_str": 40,
       "str": 40
@@ -55590,9 +55593,9 @@
     "defensive": {
       "crush": -12,
       "magic": -12,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -12,
+      "standard": -12,
+      "light": -12,
       "slash": -12,
       "stab": -12
     },
@@ -56348,9 +56351,9 @@
     "defensive": {
       "crush": 13,
       "magic": 5,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 13,
+      "standard": 13,
+      "light": 13,
       "slash": 14,
       "stab": 12
     },
@@ -56470,9 +56473,9 @@
     "defensive": {
       "crush": 20,
       "magic": -5,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 15,
+      "standard": 15,
+      "light": 15,
       "slash": 10,
       "stab": 15
     },
@@ -57064,8 +57067,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 102,
-      "magic_str": 84,
+      "magic": 84,
+      "magic_str": 102,
       "ranged": 85,
       "ranged_str": 102,
       "str": 0
@@ -57105,8 +57108,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 62,
-      "magic_str": 44,
+      "magic": 44,
+      "magic_str": 62,
       "ranged": 44,
       "ranged_str": 62,
       "str": 0
@@ -57146,8 +57149,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 26,
-      "magic_str": 12,
+      "magic": 12,
+      "magic_str": 26,
       "ranged": 12,
       "ranged_str": 26,
       "str": 0
@@ -57187,8 +57190,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 46,
-      "magic_str": 20,
+      "magic": 20,
+      "magic_str": 46,
       "ranged": 20,
       "ranged_str": 46,
       "str": 0
@@ -58904,8 +58907,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 15,
-      "magic_str": 40,
+      "magic": 40,
+      "magic_str": 15,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -59152,15 +59155,15 @@
     },
     "offensive": {
       "atk": 393,
-      "magic": 180,
-      "magic_str": 280,
+      "magic": 280,
+      "magic_str": 180,
       "ranged": 64,
       "ranged_str": 6,
       "str": 11
     },
     "defensive": {
       "crush": 120,
-      "magic": 40,
+      "magic": 34,
       "heavy": 261,
       "standard": 261,
       "light": 261,
@@ -59195,8 +59198,8 @@
     },
     "offensive": {
       "atk": 393,
-      "magic": 180,
-      "magic_str": 280,
+      "magic": 280,
+      "magic_str": 180,
       "ranged": 64,
       "ranged_str": 6,
       "str": 11
@@ -59238,8 +59241,8 @@
     },
     "offensive": {
       "atk": 393,
-      "magic": 180,
-      "magic_str": 280,
+      "magic": 280,
+      "magic_str": 180,
       "ranged": 64,
       "ranged_str": 6,
       "str": 11
@@ -59281,8 +59284,8 @@
     },
     "offensive": {
       "atk": 393,
-      "magic": 180,
-      "magic_str": 280,
+      "magic": 280,
+      "magic_str": 180,
       "ranged": 64,
       "ranged_str": 6,
       "str": 11
@@ -59323,8 +59326,8 @@
     },
     "offensive": {
       "atk": 393,
-      "magic": 180,
-      "magic_str": 280,
+      "magic": 280,
+      "magic_str": 180,
       "ranged": 64,
       "ranged_str": 6,
       "str": 11
@@ -59527,8 +59530,8 @@
     },
     "offensive": {
       "atk": 220,
-      "magic": 162,
-      "magic_str": 220,
+      "magic": 220,
+      "magic_str": 162,
       "ranged": 220,
       "ranged_str": 162,
       "str": 274
@@ -60023,9 +60026,9 @@
     "defensive": {
       "crush": 15,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
       "slash": 15,
       "stab": 5
     },
@@ -60183,9 +60186,9 @@
     "defensive": {
       "crush": 19,
       "magic": -4,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 25,
       "stab": 18
     },
@@ -60307,9 +60310,9 @@
     "defensive": {
       "crush": 5,
       "magic": 5,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
       "slash": 10,
       "stab": 15
     },
@@ -60347,9 +60350,9 @@
     "defensive": {
       "crush": 5,
       "magic": 5,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
       "slash": 10,
       "stab": 15
     },
@@ -60603,9 +60606,9 @@
     "defensive": {
       "crush": 150,
       "magic": 150,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
       "slash": 150,
       "stab": 150
     },
@@ -60763,9 +60766,9 @@
     "defensive": {
       "crush": 19,
       "magic": -4,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 25,
       "stab": 18
     },
@@ -61157,8 +61160,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 34,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 34,
       "ranged": 0,
       "ranged_str": 0,
       "str": 34
@@ -61199,8 +61202,8 @@
     },
     "offensive": {
       "atk": 160,
-      "magic": 34,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 34,
       "ranged": 0,
       "ranged_str": 0,
       "str": -36
@@ -61250,9 +61253,9 @@
     "defensive": {
       "crush": -12,
       "magic": -12,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -12,
+      "standard": -12,
+      "light": -12,
       "slash": -12,
       "stab": -12
     },
@@ -62776,8 +62779,8 @@
     },
     "offensive": {
       "atk": 36,
-      "magic": 46,
-      "magic_str": 36,
+      "magic": 36,
+      "magic_str": 46,
       "ranged": 0,
       "ranged_str": 0,
       "str": 46
@@ -62785,9 +62788,9 @@
     "defensive": {
       "crush": 5,
       "magic": 5,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 10,
       "stab": 10
     },
@@ -63031,8 +63034,8 @@
     },
     "offensive": {
       "atk": 30,
-      "magic": 24,
-      "magic_str": 50,
+      "magic": 50,
+      "magic_str": 24,
       "ranged": 40,
       "ranged_str": 30,
       "str": 50
@@ -63076,8 +63079,8 @@
     },
     "offensive": {
       "atk": 72,
-      "magic": 35,
-      "magic_str": 61,
+      "magic": 61,
+      "magic_str": 35,
       "ranged": 60,
       "ranged_str": 51,
       "str": 78
@@ -63121,8 +63124,8 @@
     },
     "offensive": {
       "atk": 6,
-      "magic": 12,
-      "magic_str": 37,
+      "magic": 37,
+      "magic_str": 12,
       "ranged": 21,
       "ranged_str": 12,
       "str": 8
@@ -63166,8 +63169,8 @@
     },
     "offensive": {
       "atk": 38,
-      "magic": 0,
-      "magic_str": 30,
+      "magic": 30,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 40
@@ -63211,8 +63214,8 @@
     },
     "offensive": {
       "atk": 20,
-      "magic": 0,
-      "magic_str": 5,
+      "magic": 5,
+      "magic_str": 0,
       "ranged": 25,
       "ranged_str": 0,
       "str": 24
@@ -63256,8 +63259,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 5,
+      "magic": 5,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -63301,8 +63304,8 @@
     },
     "offensive": {
       "atk": 69,
-      "magic": 30,
-      "magic_str": 55,
+      "magic": 55,
+      "magic_str": 30,
       "ranged": 55,
       "ranged_str": 45,
       "str": 71
@@ -63399,9 +63402,9 @@
     "defensive": {
       "crush": 146,
       "magic": 50,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 148,
+      "standard": 148,
+      "light": 148,
       "slash": 150,
       "stab": 148
     },
@@ -64663,8 +64666,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 16,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 16,
       "ranged": 0,
       "ranged_str": 14,
       "str": 0
@@ -65089,9 +65092,9 @@
     "defensive": {
       "crush": 10,
       "magic": 150,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 300,
+      "standard": 300,
+      "light": 300,
       "slash": 40,
       "stab": 60
     },
@@ -65286,8 +65289,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 70,
+      "magic": 70,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -65798,8 +65801,8 @@
     },
     "offensive": {
       "atk": 100,
-      "magic": 0,
-      "magic_str": 100,
+      "magic": 100,
+      "magic_str": 0,
       "ranged": 100,
       "ranged_str": 0,
       "str": 0
@@ -65840,8 +65843,8 @@
     },
     "offensive": {
       "atk": 100,
-      "magic": 0,
-      "magic_str": 100,
+      "magic": 100,
+      "magic_str": 0,
       "ranged": 100,
       "ranged_str": 0,
       "str": 0
@@ -65882,8 +65885,8 @@
     },
     "offensive": {
       "atk": 100,
-      "magic": 0,
-      "magic_str": 100,
+      "magic": 100,
+      "magic_str": 0,
       "ranged": 100,
       "ranged_str": 0,
       "str": 0
@@ -66100,9 +66103,9 @@
     "defensive": {
       "crush": 284,
       "magic": 44,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 284,
+      "standard": 284,
+      "light": 284,
       "slash": 284,
       "stab": 246
     },
@@ -66459,8 +66462,8 @@
     },
     "offensive": {
       "atk": 150,
-      "magic": 20,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 20,
       "ranged": 150,
       "ranged_str": 10,
       "str": 10
@@ -66503,8 +66506,8 @@
     },
     "offensive": {
       "atk": 150,
-      "magic": 20,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 20,
       "ranged": 150,
       "ranged_str": 10,
       "str": 10
@@ -67106,8 +67109,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 15,
-      "magic_str": 50,
+      "magic": 50,
+      "magic_str": 15,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -67476,8 +67479,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 30,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 30,
       "ranged": 0,
       "ranged_str": 0,
       "str": 30
@@ -67519,8 +67522,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 30,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 30,
       "ranged": 0,
       "ranged_str": 0,
       "str": 30
@@ -67641,8 +67644,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 10,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 10,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -67961,8 +67964,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 35,
-      "magic_str": 55,
+      "magic": 55,
+      "magic_str": 35,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -68001,8 +68004,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 8,
+      "magic": 8,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -68041,8 +68044,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 8,
+      "magic": 8,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -68210,9 +68213,9 @@
     "defensive": {
       "crush": 76,
       "magic": -10,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 79,
+      "standard": 79,
+      "light": 79,
       "slash": 84,
       "stab": 87
     },
@@ -68602,8 +68605,8 @@
     },
     "offensive": {
       "atk": 85,
-      "magic": 38,
-      "magic_str": 40,
+      "magic": 40,
+      "magic_str": 38,
       "ranged": 0,
       "ranged_str": 0,
       "str": 50
@@ -68833,9 +68836,9 @@
     "defensive": {
       "crush": -2,
       "magic": 1,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
       "slash": 11,
       "stab": 9
     },
@@ -69485,8 +69488,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 20,
+      "magic": 20,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -70943,9 +70946,9 @@
     "defensive": {
       "crush": 2,
       "magic": -3,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 2,
+      "standard": 2,
+      "light": 2,
       "slash": 3,
       "stab": 0
     },
@@ -71211,7 +71214,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 11268,
@@ -71369,9 +71375,9 @@
     "defensive": {
       "crush": -12,
       "magic": -12,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -12,
+      "standard": -12,
+      "light": -12,
       "slash": -12,
       "stab": -12
     },
@@ -71409,9 +71415,9 @@
     "defensive": {
       "crush": -12,
       "magic": -12,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -12,
+      "standard": -12,
+      "light": -12,
       "slash": -12,
       "stab": -12
     },
@@ -71449,9 +71455,9 @@
     "defensive": {
       "crush": -12,
       "magic": -12,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -12,
+      "standard": -12,
+      "light": -12,
       "slash": -12,
       "stab": -12
     },
@@ -71489,9 +71495,9 @@
     "defensive": {
       "crush": -12,
       "magic": -12,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -12,
+      "standard": -12,
+      "light": -12,
       "slash": -12,
       "stab": -12
     },
@@ -72093,9 +72099,9 @@
     "defensive": {
       "crush": 5,
       "magic": 5,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 10,
       "stab": 10
     },
@@ -72324,8 +72330,8 @@
     },
     "offensive": {
       "atk": 120,
-      "magic": -20,
-      "magic_str": 80,
+      "magic": 80,
+      "magic_str": -20,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -72413,9 +72419,9 @@
     "defensive": {
       "crush": 5,
       "magic": 5,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 10,
       "stab": 10
     },
@@ -72844,8 +72850,8 @@
     },
     "offensive": {
       "atk": 100,
-      "magic": 65,
-      "magic_str": 250,
+      "magic": 250,
+      "magic_str": 65,
       "ranged": 350,
       "ranged_str": 0,
       "str": 55
@@ -73010,8 +73016,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 26,
-      "magic_str": -10,
+      "magic": -10,
+      "magic_str": 26,
       "ranged": -10,
       "ranged_str": 26,
       "str": 20
@@ -73051,8 +73057,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 60,
-      "magic_str": -10,
+      "magic": -10,
+      "magic_str": 60,
       "ranged": -10,
       "ranged_str": 60,
       "str": 48
@@ -73092,8 +73098,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 60,
-      "magic_str": -10,
+      "magic": -10,
+      "magic_str": 60,
       "ranged": -10,
       "ranged_str": 60,
       "str": 48
@@ -73295,8 +73301,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 1,
+      "magic": 1,
+      "magic_str": 0,
       "ranged": 1,
       "ranged_str": 0,
       "str": 0
@@ -74857,8 +74863,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 65,
-      "magic_str": 250,
+      "magic": 250,
+      "magic_str": 65,
       "ranged": 350,
       "ranged_str": 0,
       "str": 55
@@ -75493,8 +75499,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 10,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 10,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -75535,8 +75541,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 10,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 10,
       "ranged": 10,
       "ranged_str": 10,
       "str": 0
@@ -75577,8 +75583,8 @@
     },
     "offensive": {
       "atk": 60,
-      "magic": 66,
-      "magic_str": 90,
+      "magic": 90,
+      "magic_str": 66,
       "ranged": 0,
       "ranged_str": -10,
       "str": -10
@@ -75618,8 +75624,8 @@
     },
     "offensive": {
       "atk": 60,
-      "magic": 66,
-      "magic_str": 90,
+      "magic": 90,
+      "magic_str": 66,
       "ranged": 0,
       "ranged_str": -10,
       "str": -10
@@ -75659,8 +75665,8 @@
     },
     "offensive": {
       "atk": 60,
-      "magic": 66,
-      "magic_str": 90,
+      "magic": 90,
+      "magic_str": 66,
       "ranged": 0,
       "ranged_str": -10,
       "str": -10
@@ -75700,8 +75706,8 @@
     },
     "offensive": {
       "atk": 60,
-      "magic": 66,
-      "magic_str": 90,
+      "magic": 90,
+      "magic_str": 66,
       "ranged": 0,
       "ranged_str": -10,
       "str": -10
@@ -75740,8 +75746,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 1,
+      "magic": 1,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 40
@@ -76182,8 +76188,8 @@
     },
     "offensive": {
       "atk": 38,
-      "magic": 50,
-      "magic_str": 38,
+      "magic": 38,
+      "magic_str": 50,
       "ranged": 38,
       "ranged_str": 50,
       "str": 50
@@ -76311,9 +76317,9 @@
     "defensive": {
       "crush": 10,
       "magic": 200,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
       "slash": 50,
       "stab": 50
     },
@@ -76436,9 +76442,9 @@
     "defensive": {
       "crush": 70,
       "magic": 90,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
       "slash": 70,
       "stab": 50
     },
@@ -76477,9 +76483,9 @@
     "defensive": {
       "crush": 70,
       "magic": 90,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
       "slash": 70,
       "stab": 50
     },
@@ -76518,9 +76524,9 @@
     "defensive": {
       "crush": 70,
       "magic": 90,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
       "slash": 70,
       "stab": 50
     },
@@ -76559,9 +76565,9 @@
     "defensive": {
       "crush": 70,
       "magic": 90,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
       "slash": 70,
       "stab": 50
     },
@@ -76600,9 +76606,9 @@
     "defensive": {
       "crush": 70,
       "magic": 90,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
       "slash": 70,
       "stab": 50
     },
@@ -76641,9 +76647,9 @@
     "defensive": {
       "crush": 70,
       "magic": 90,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
       "slash": 70,
       "stab": 50
     },
@@ -76682,9 +76688,9 @@
     "defensive": {
       "crush": 70,
       "magic": 90,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
       "slash": 70,
       "stab": 50
     },
@@ -76722,9 +76728,9 @@
     "defensive": {
       "crush": -21,
       "magic": -21,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -21,
+      "standard": -21,
+      "light": -21,
       "slash": -21,
       "stab": -21
     },
@@ -76762,9 +76768,9 @@
     "defensive": {
       "crush": 100,
       "magic": 100,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -55,
+      "standard": -55,
+      "light": -55,
       "slash": 100,
       "stab": 100
     },
@@ -76802,9 +76808,9 @@
     "defensive": {
       "crush": 100,
       "magic": 100,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -55,
+      "standard": -55,
+      "light": -55,
       "slash": 100,
       "stab": 100
     },
@@ -76842,9 +76848,9 @@
     "defensive": {
       "crush": 100,
       "magic": 100,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -55,
+      "standard": -55,
+      "light": -55,
       "slash": 100,
       "stab": 100
     },
@@ -77573,9 +77579,9 @@
     "defensive": {
       "crush": 10,
       "magic": 25,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 30,
       "stab": 20
     },
@@ -78293,8 +78299,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 300,
+      "magic": 300,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -78333,8 +78339,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 300,
+      "magic": 300,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -78373,8 +78379,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 300,
+      "magic": 300,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -78413,8 +78419,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 12,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 12,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -78453,8 +78459,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 300,
+      "magic": 300,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -78493,8 +78499,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 300,
+      "magic": 300,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -78542,9 +78548,9 @@
     "defensive": {
       "crush": 0,
       "magic": 10000,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 10000,
+      "standard": 10000,
+      "light": 10000,
       "slash": 0,
       "stab": 0
     },
@@ -79424,8 +79430,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 24,
-      "magic_str": 145,
+      "magic": 145,
+      "magic_str": 24,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -80030,8 +80036,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": -33,
+      "magic": -33,
+      "magic_str": 0,
       "ranged": -11,
       "ranged_str": 0,
       "str": 72
@@ -80481,8 +80487,8 @@
     },
     "offensive": {
       "atk": 22,
-      "magic": 16,
-      "magic_str": 20,
+      "magic": 20,
+      "magic_str": 16,
       "ranged": 22,
       "ranged_str": 16,
       "str": 16
@@ -81870,8 +81876,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 12,
-      "magic_str": 225,
+      "magic": 225,
+      "magic_str": 12,
       "ranged": 225,
       "ranged_str": 12,
       "str": 25
@@ -81912,8 +81918,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 12,
-      "magic_str": 225,
+      "magic": 225,
+      "magic_str": 12,
       "ranged": 225,
       "ranged_str": 12,
       "str": 25
@@ -81954,8 +81960,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 40,
-      "magic_str": 230,
+      "magic": 230,
+      "magic_str": 40,
       "ranged": 300,
       "ranged_str": 40,
       "str": 40
@@ -81996,8 +82002,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 40,
-      "magic_str": 230,
+      "magic": 230,
+      "magic_str": 40,
       "ranged": 300,
       "ranged_str": 40,
       "str": 40
@@ -82297,9 +82303,9 @@
     "defensive": {
       "crush": 10,
       "magic": 200,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
       "slash": 0,
       "stab": 0
     },
@@ -82337,9 +82343,9 @@
     "defensive": {
       "crush": 10,
       "magic": 200,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
       "slash": 0,
       "stab": 0
     },
@@ -82377,9 +82383,9 @@
     "defensive": {
       "crush": 15,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 15,
+      "standard": 15,
+      "light": 15,
       "slash": 15,
       "stab": 15
     },
@@ -82461,9 +82467,9 @@
     "defensive": {
       "crush": 76,
       "magic": -10,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 79,
+      "standard": 79,
+      "light": 79,
       "slash": 84,
       "stab": 87
     },
@@ -82884,7 +82890,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000036-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -82895,8 +82901,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 450,
-      "magic_str": 550,
+      "magic": 550,
+      "magic_str": 450,
       "ranged": 550,
       "ranged_str": 200,
       "str": 200
@@ -82925,7 +82931,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000036-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -82936,8 +82942,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 450,
-      "magic_str": 550,
+      "magic": 550,
+      "magic_str": 450,
       "ranged": 550,
       "ranged_str": 200,
       "str": 200
@@ -82978,8 +82984,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 60,
+      "magic": 60,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -83100,8 +83106,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 25,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 25,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -83141,8 +83147,8 @@
     },
     "offensive": {
       "atk": 50,
-      "magic": 50,
-      "magic_str": 100,
+      "magic": 100,
+      "magic_str": 50,
       "ranged": 0,
       "ranged_str": 0,
       "str": 50
@@ -83150,9 +83156,9 @@
     "defensive": {
       "crush": 80,
       "magic": 140,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 40,
+      "standard": 40,
+      "light": 40,
       "slash": 30,
       "stab": 40
     },
@@ -83692,9 +83698,9 @@
     "defensive": {
       "crush": -21,
       "magic": -21,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -21,
+      "standard": -21,
+      "light": -21,
       "slash": -21,
       "stab": -21
     },
@@ -84680,8 +84686,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 25,
-      "magic_str": 40,
+      "magic": 40,
+      "magic_str": 25,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -84689,9 +84695,9 @@
     "defensive": {
       "crush": 400,
       "magic": 110,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
       "slash": 340,
       "stab": 315
     },
@@ -84731,9 +84737,9 @@
     "defensive": {
       "crush": 150,
       "magic": 20,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 400,
+      "standard": 400,
+      "light": 400,
       "slash": 150,
       "stab": 150
     },
@@ -84773,9 +84779,9 @@
     "defensive": {
       "crush": 100,
       "magic": 400,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 300,
+      "standard": 300,
+      "light": 300,
       "slash": 60,
       "stab": 55
     },
@@ -84806,8 +84812,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 18,
-      "magic_str": 16,
+      "magic": 16,
+      "magic_str": 18,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -84899,9 +84905,9 @@
     "defensive": {
       "crush": 85,
       "magic": 580,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 580,
+      "standard": 580,
+      "light": 580,
       "slash": 65,
       "stab": 215
     },
@@ -84939,9 +84945,9 @@
     "defensive": {
       "crush": 85,
       "magic": 580,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 580,
+      "standard": 580,
+      "light": 580,
       "slash": 65,
       "stab": 215
     },
@@ -84979,9 +84985,9 @@
     "defensive": {
       "crush": 50,
       "magic": 560,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 560,
+      "standard": 560,
+      "light": 560,
       "slash": 25,
       "stab": 150
     },
@@ -85178,8 +85184,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": -42,
+      "magic": -42,
+      "magic_str": 0,
       "ranged": -14,
       "ranged_str": 0,
       "str": 72
@@ -85196,7 +85202,10 @@
     "attributes": [
       "spectral"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 50
+    }
   },
   {
     "id": 10830,
@@ -85220,8 +85229,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 140,
-      "magic_str": 32,
+      "magic": 32,
+      "magic_str": 140,
       "ranged": 32,
       "ranged_str": 50,
       "str": 0
@@ -85262,8 +85271,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 50,
-      "magic_str": 32,
+      "magic": 32,
+      "magic_str": 50,
       "ranged": 32,
       "ranged_str": 50,
       "str": 0
@@ -85304,8 +85313,8 @@
     },
     "offensive": {
       "atk": 32,
-      "magic": 5,
-      "magic_str": 20,
+      "magic": 20,
+      "magic_str": 5,
       "ranged": 20,
       "ranged_str": 5,
       "str": 46
@@ -85344,8 +85353,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 150,
-      "magic_str": 80,
+      "magic": 80,
+      "magic_str": 150,
       "ranged": 80,
       "ranged_str": 80,
       "str": 0
@@ -85428,8 +85437,8 @@
     },
     "offensive": {
       "atk": 80,
-      "magic": 5,
-      "magic_str": 80,
+      "magic": 80,
+      "magic_str": 5,
       "ranged": 80,
       "ranged_str": 5,
       "str": 30
@@ -85468,8 +85477,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 150,
-      "magic_str": 80,
+      "magic": 80,
+      "magic_str": 150,
       "ranged": 80,
       "ranged_str": 80,
       "str": 0
@@ -85552,8 +85561,8 @@
     },
     "offensive": {
       "atk": 80,
-      "magic": 5,
-      "magic_str": 80,
+      "magic": 80,
+      "magic_str": 5,
       "ranged": 80,
       "ranged_str": 5,
       "str": 30
@@ -85690,9 +85699,9 @@
     "defensive": {
       "crush": -10,
       "magic": 250,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 270,
+      "standard": 270,
+      "light": 270,
       "slash": 200,
       "stab": 201
     },
@@ -85733,9 +85742,9 @@
     "defensive": {
       "crush": -10,
       "magic": 250,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 270,
+      "standard": 270,
+      "light": 270,
       "slash": 200,
       "stab": 201
     },
@@ -86046,8 +86055,8 @@
     },
     "offensive": {
       "atk": 25,
-      "magic": 0,
-      "magic_str": 25,
+      "magic": 25,
+      "magic_str": 0,
       "ranged": 25,
       "ranged_str": 0,
       "str": 0
@@ -86089,8 +86098,8 @@
     },
     "offensive": {
       "atk": 14,
-      "magic": 0,
-      "magic_str": 148,
+      "magic": 148,
+      "magic_str": 0,
       "ranged": 96,
       "ranged_str": 0,
       "str": 0
@@ -86098,9 +86107,9 @@
     "defensive": {
       "crush": 126,
       "magic": 204,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 80,
+      "standard": 80,
+      "light": 80,
       "slash": 126,
       "stab": 66
     },
@@ -86136,8 +86145,8 @@
     },
     "offensive": {
       "atk": 16,
-      "magic": 56,
-      "magic_str": 150,
+      "magic": 150,
+      "magic_str": 56,
       "ranged": 78,
       "ranged_str": 0,
       "str": 0
@@ -86145,9 +86154,9 @@
     "defensive": {
       "crush": 108,
       "magic": 240,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 26,
+      "standard": 26,
+      "light": 26,
       "slash": 108,
       "stab": 26
     },
@@ -86895,9 +86904,9 @@
     "defensive": {
       "crush": 175,
       "magic": 250,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -10,
+      "standard": -10,
+      "light": -10,
       "slash": 150,
       "stab": 100
     },
@@ -86935,9 +86944,9 @@
     "defensive": {
       "crush": 175,
       "magic": 250,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
       "slash": 150,
       "stab": 100
     },
@@ -87016,9 +87025,9 @@
     "defensive": {
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 62,
+      "standard": 62,
+      "light": 62,
       "slash": 50,
       "stab": 50
     },
@@ -87057,9 +87066,9 @@
     "defensive": {
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 62,
+      "standard": 62,
+      "light": 62,
       "slash": 50,
       "stab": 50
     },
@@ -87168,8 +87177,8 @@
     },
     "offensive": {
       "atk": 6,
-      "magic": 0,
-      "magic_str": 6,
+      "magic": 6,
+      "magic_str": 0,
       "ranged": 6,
       "ranged_str": 0,
       "str": 7
@@ -87208,8 +87217,8 @@
     },
     "offensive": {
       "atk": 6,
-      "magic": 0,
-      "magic_str": 6,
+      "magic": 6,
+      "magic_str": 0,
       "ranged": 6,
       "ranged_str": 0,
       "str": 7
@@ -87248,8 +87257,8 @@
     },
     "offensive": {
       "atk": 6,
-      "magic": 0,
-      "magic_str": 6,
+      "magic": 6,
+      "magic_str": 0,
       "ranged": 6,
       "ranged_str": 0,
       "str": 7
@@ -87288,8 +87297,8 @@
     },
     "offensive": {
       "atk": 6,
-      "magic": 0,
-      "magic_str": 6,
+      "magic": 6,
+      "magic_str": 0,
       "ranged": 6,
       "ranged_str": 0,
       "str": 7
@@ -87328,8 +87337,8 @@
     },
     "offensive": {
       "atk": 6,
-      "magic": 0,
-      "magic_str": 6,
+      "magic": 6,
+      "magic_str": 0,
       "ranged": 6,
       "ranged_str": 0,
       "str": 7
@@ -87368,8 +87377,8 @@
     },
     "offensive": {
       "atk": 6,
-      "magic": 0,
-      "magic_str": 6,
+      "magic": 6,
+      "magic_str": 0,
       "ranged": 6,
       "ranged_str": 0,
       "str": 7
@@ -88540,8 +88549,8 @@
     },
     "offensive": {
       "atk": 140,
-      "magic": 58,
-      "magic_str": 190,
+      "magic": 190,
+      "magic_str": 58,
       "ranged": 160,
       "ranged_str": 70,
       "str": 30
@@ -88580,8 +88589,8 @@
     },
     "offensive": {
       "atk": 140,
-      "magic": 58,
-      "magic_str": 190,
+      "magic": 190,
+      "magic_str": 58,
       "ranged": 160,
       "ranged_str": 70,
       "str": 30
@@ -88620,8 +88629,8 @@
     },
     "offensive": {
       "atk": 100,
-      "magic": 54,
-      "magic_str": 180,
+      "magic": 180,
+      "magic_str": 54,
       "ranged": 140,
       "ranged_str": 66,
       "str": 10
@@ -88669,9 +88678,9 @@
     "defensive": {
       "crush": 70,
       "magic": -11,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 74,
+      "standard": 74,
+      "light": 74,
       "slash": 76,
       "stab": 83
     },
@@ -90027,9 +90036,9 @@
     "defensive": {
       "crush": -21,
       "magic": -21,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -21,
+      "standard": -21,
+      "light": -21,
       "slash": -21,
       "stab": -21
     },
@@ -90347,9 +90356,9 @@
     "defensive": {
       "crush": -21,
       "magic": -21,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -21,
+      "standard": -21,
+      "light": -21,
       "slash": -21,
       "stab": -21
     },
@@ -90387,9 +90396,9 @@
     "defensive": {
       "crush": -21,
       "magic": -21,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -21,
+      "standard": -21,
+      "light": -21,
       "slash": -21,
       "stab": -21
     },
@@ -90427,9 +90436,9 @@
     "defensive": {
       "crush": -21,
       "magic": -21,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -21,
+      "standard": -21,
+      "light": -21,
       "slash": -21,
       "stab": -21
     },
@@ -90467,9 +90476,9 @@
     "defensive": {
       "crush": -21,
       "magic": -21,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -21,
+      "standard": -21,
+      "light": -21,
       "slash": -21,
       "stab": -21
     },
@@ -90507,9 +90516,9 @@
     "defensive": {
       "crush": -21,
       "magic": -21,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": -21,
+      "standard": -21,
+      "light": -21,
       "slash": -21,
       "stab": -21
     },
@@ -90579,8 +90588,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 30,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 30,
       "ranged": 0,
       "ranged_str": 0,
       "str": 30
@@ -90625,8 +90634,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 30,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 30,
       "ranged": 0,
       "ranged_str": 0,
       "str": 30
@@ -90670,8 +90679,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 10,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 10,
       "ranged": 0,
       "ranged_str": 0,
       "str": 10
@@ -90712,8 +90721,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 10,
-      "magic_str": 0,
+      "magic": 0,
+      "magic_str": 10,
       "ranged": 0,
       "ranged_str": 0,
       "str": 10
@@ -90754,8 +90763,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 12,
-      "magic_str": 20,
+      "magic": 20,
+      "magic_str": 12,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -90804,9 +90813,9 @@
     "defensive": {
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
       "slash": 0,
       "stab": 0
     },
@@ -90845,9 +90854,9 @@
     "defensive": {
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 160,
+      "standard": 160,
+      "light": 160,
       "slash": 0,
       "stab": 0
     },
@@ -90886,9 +90895,9 @@
     "defensive": {
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 160,
+      "standard": 160,
+      "light": 160,
       "slash": 0,
       "stab": 0
     },
@@ -91077,8 +91086,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 100,
+      "magic": 100,
+      "magic_str": 0,
       "ranged": 80,
       "ranged_str": 0,
       "str": 0
@@ -91681,8 +91690,8 @@
     },
     "offensive": {
       "atk": 160,
-      "magic": 30,
-      "magic_str": 215,
+      "magic": 215,
+      "magic_str": 30,
       "ranged": 220,
       "ranged_str": 16,
       "str": 100
@@ -92097,8 +92106,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 0,
-      "magic_str": 20,
+      "magic": 20,
+      "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -95007,9 +95016,9 @@
     "defensive": {
       "crush": 12,
       "magic": 10,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 11,
+      "standard": 11,
+      "light": 11,
       "slash": 8,
       "stab": 9
     },
@@ -95133,9 +95142,9 @@
     "defensive": {
       "crush": 0,
       "magic": 20,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 21,
+      "standard": 21,
+      "light": 21,
       "slash": 18,
       "stab": 19
     },
@@ -95175,9 +95184,9 @@
     "defensive": {
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
       "slash": 20,
       "stab": 20
     },
@@ -95217,9 +95226,9 @@
     "defensive": {
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
       "slash": 20,
       "stab": 20
     },
@@ -95259,9 +95268,9 @@
     "defensive": {
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
       "slash": 20,
       "stab": 20
     },
@@ -95301,9 +95310,9 @@
     "defensive": {
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
       "slash": 20,
       "stab": 20
     },
@@ -95458,8 +95467,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 20,
-      "magic_str": 50,
+      "magic": 50,
+      "magic_str": 20,
       "ranged": 50,
       "ranged_str": 20,
       "str": 0
@@ -95501,8 +95510,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 20,
-      "magic_str": 50,
+      "magic": 50,
+      "magic_str": 20,
       "ranged": 50,
       "ranged_str": 20,
       "str": 0
@@ -95545,8 +95554,8 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 20,
-      "magic_str": 50,
+      "magic": 50,
+      "magic_str": 20,
       "ranged": 50,
       "ranged_str": 20,
       "str": 0

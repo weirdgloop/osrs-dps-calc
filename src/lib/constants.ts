@@ -12,37 +12,16 @@ export const BABA_IDS = [
   11778, 11779, 11780,
 ];
 
-export const STANDARD_BABOON_SMALL_IDS = [
-  11709, 11710, 11711,
+export const BABOON_BRAWLER_IDS = [
+  11709, 11712,
 ];
 
-export const STANDARD_BABOON_LARGE_IDS = [
-  11712, 11713, 11714,
+export const BABOON_THROWER_IDS = [
+  11710, 11713,
 ];
 
-export const BABOON_SHAMAN_IDS = [
-  11715,
-];
-
-export const VOLATILE_BABOON_IDS = [
-  11716,
-];
-
-export const CURSED_BABOON_IDS = [
-  11717,
-];
-
-export const BABOON_THRALL_IDS = [
-  11718,
-];
-
-export const APMEKEN_BABOON_IDS = [
-  ...STANDARD_BABOON_SMALL_IDS,
-  ...STANDARD_BABOON_LARGE_IDS,
-  ...BABOON_SHAMAN_IDS,
-  ...VOLATILE_BABOON_IDS,
-  ...CURSED_BABOON_IDS,
-  ...BABOON_THRALL_IDS,
+export const BABOON_MAGE_IDS = [
+  11711, 11714,
 ];
 
 export const KEPHRI_SHIELDED_IDS = [
@@ -86,7 +65,6 @@ export const TOMBS_OF_AMASCUT_PATH_MONSTER_IDS = [
   ...AKKHA_IDS,
   ...AKKHA_SHADOW_IDS,
   ...BABA_IDS,
-  ...APMEKEN_BABOON_IDS,
   ...KEPHRI_SHIELDED_IDS,
   ...KEPHRI_UNSHIELDED_IDS,
   ...KEPHRI_OVERLORD_IDS,

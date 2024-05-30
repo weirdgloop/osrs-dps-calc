@@ -738,6 +738,7 @@ class GlobalState implements State {
       monster: toJS(this.monster),
       calcOpts: {
         includeTtkDist: this.prefs.showTtkComparison,
+        hitDistHideMisses: this.prefs.hitDistsHideZeros,
         detailedOutput: this.debug,
         disableMonsterScaling: this.prefs.manualMode,
       },

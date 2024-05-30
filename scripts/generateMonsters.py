@@ -170,8 +170,8 @@ def main():
             },
             'offensive': {
                 'atk': get_printout_value(po['Attack bonus']) or 0,
-                'magic': get_printout_value(po['Magic Damage bonus']) or 0,
-                'magic_str': get_printout_value(po['Magic attack bonus']) or 0,
+                'magic': get_printout_value(po['Magic attack bonus']) or 0,
+                'magic_str': get_printout_value(po['Magic Damage bonus']) or 0,
                 'ranged': get_printout_value(po['Range attack bonus']) or 0,
                 'ranged_str': get_printout_value(po['Ranged Strength bonus']) or 0,
                 'str': get_printout_value(po['Strength bonus']) or 0

@@ -2,7 +2,9 @@ import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 // import { OVERHEAD_PRAYERS, Prayer } from '@/enums/Prayer';
-import { AttackDistribution, HitDistribution, WeightedHit } from '@/lib/HitDist';
+import {
+  AttackDistribution, HitDistribution, Hitsplat, WeightedHit,
+} from '@/lib/HitDist';
 import { ALWAYS_ACCURATE_MONSTERS, NPC_HARDCODED_MAX_HIT, SECONDS_PER_TICK } from '@/lib/constants';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import { DetailKey } from '@/lib/CalcDetails';
@@ -76,8 +78,8 @@ export default class NPCVsPlayerCalc extends BaseCalc {
         new HitDistribution([
           ...standardHitDist.scaleProbability(0.3).hits,
           ...standardHitDist.scaleProbability(0.7).hits.map((h) => new WeightedHit(h.probability, h.hitsplats.map((d) => {
-            const reduction = Math.max(1, Math.trunc(d / 4));
-            return Math.max(0, d - reduction);
+            const reduction = Math.max(1, Math.trunc(d.damage / 4));
+            return new Hitsplat(Math.max(0, d.damage - reduction), d.accurate);
           }))),
         ]),
       ]);
@@ -92,7 +94,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
       const reduction = 1 - bonus / 3000;
       dist = new AttackDistribution([
         new HitDistribution([
-          ...dist.dists[0].hits.map((h) => new WeightedHit(h.probability, h.hitsplats.map((s) => Math.trunc(s * reduction)))),
+          ...dist.dists[0].hits.map((h) => new WeightedHit(h.probability, h.hitsplats.map((s) => new Hitsplat(Math.trunc(s.damage * reduction), s.accurate)))),
         ]),
       ]);
     }

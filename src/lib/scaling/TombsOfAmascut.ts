@@ -2,21 +2,15 @@ import {
   AKKHA_IDS,
   AKKHA_SHADOW_IDS,
   BABA_IDS,
-  BABOON_SHAMAN_IDS,
-  BABOON_THRALL_IDS,
-  CURSED_BABOON_IDS,
   KEPHRI_OVERLORD_IDS,
   KEPHRI_SHIELDED_IDS,
   KEPHRI_UNSHIELDED_IDS,
   P2_WARDEN_IDS,
   P3_WARDEN_IDS,
-  STANDARD_BABOON_LARGE_IDS,
-  STANDARD_BABOON_SMALL_IDS,
   TOA_CORE_IDS,
   TOA_OBELISK_IDS,
   TOMBS_OF_AMASCUT_MONSTER_IDS,
   TOMBS_OF_AMASCUT_PATH_MONSTER_IDS,
-  VOLATILE_BABOON_IDS,
   ZEBAK_IDS,
 } from '@/lib/constants';
 import { Monster } from '@/types/Monster';
@@ -45,55 +39,6 @@ const getToaScalingValues = (id: number): ToaScalingValues | undefined => {
     return {
       base: 38,
       factor: 10,
-    };
-  }
-
-  if (STANDARD_BABOON_SMALL_IDS.includes(id)) {
-    return {
-      base: 4,
-      factor: 1,
-    };
-  }
-
-  if (STANDARD_BABOON_LARGE_IDS.includes(id)) {
-    return {
-      base: 6,
-      factor: 1,
-    };
-  }
-
-  if (BABOON_SHAMAN_IDS.includes(id)) {
-    return {
-      base: 16,
-      factor: 1,
-    };
-  }
-
-  if (VOLATILE_BABOON_IDS.includes(id)) {
-    return {
-      base: 8,
-      factor: 1,
-    };
-  }
-
-  if (CURSED_BABOON_IDS.includes(id)) {
-    return {
-      base: 10,
-      factor: 1,
-    };
-  }
-
-  if (BABOON_THRALL_IDS.includes(id)) {
-    return {
-      base: 2,
-      factor: 1,
-    };
-  }
-
-  if (BABOON_THRALL_IDS.includes(id)) {
-    return {
-      base: 2,
-      factor: 1,
     };
   }
 

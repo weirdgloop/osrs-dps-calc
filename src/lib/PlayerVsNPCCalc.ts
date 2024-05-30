@@ -6,6 +6,7 @@ import {
   divisionTransformer,
   flatLimitTransformer,
   HitDistribution,
+  Hitsplat,
   linearMinTransformer,
   multiplyTransformer,
   WeightedHit,
@@ -23,6 +24,7 @@ import {
 } from '@/enums/Prayer';
 import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
+  BABOON_BRAWLER_IDS, BABOON_MAGE_IDS, BABOON_THROWER_IDS,
   CAST_STANCES, DEFAULT_ATTACK_SPEED,
   GLOWING_CRYSTAL_IDS,
   GUARDIAN_IDS,
@@ -171,6 +173,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       if (inqPieces === 3) inqPieces = 5;
 
       if (inqPieces > 0) {
+        if (this.wearing("Inquisitor's mace")) {
+          inqPieces *= 3;
+        }
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_INQ, attackRoll, [200 + inqPieces, 200]);
       }
     }
@@ -296,6 +301,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       if (inqPieces === 3) inqPieces = 5;
 
       if (inqPieces > 0) {
+        if (this.wearing("Inquisitor's mace")) {
+          inqPieces *= 3;
+        }
         maxHit = this.trackFactor(DetailKey.MAX_HIT_INQ, maxHit, [200 + inqPieces, 200]);
       }
     }
@@ -780,6 +788,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       ]);
     }
 
+    // apmeken baboons always take max damage from combat triangle weakness
+    if ((this.player.style.type === 'magic' && BABOON_BRAWLER_IDS.includes(this.monster.id))
+      || (this.isUsingMeleeStyle() && BABOON_THROWER_IDS.includes(this.monster.id))
+      || (this.player.style.type === 'ranged' && BABOON_MAGE_IDS.includes(this.monster.id))) {
+      // special case fang max
+      if (this.isUsingMeleeStyle() && this.isWearingFang()) {
+        return new AttackDistribution([HitDistribution.single(1.0, max - Math.trunc(max * 3 / 20))]);
+      }
+      return new AttackDistribution([HitDistribution.single(1.0, max)]);
+    }
+
     // todo determine where this effect should happen relative to others
     if (this.player.buffs.usingSunfireRunes && canUseSunfireRunes(this.player.spell)) {
       dist = new AttackDistribution([HitDistribution.linear(acc, Math.trunc(max / 10), max)]);
@@ -817,15 +836,14 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (style === 'ranged' && this.isWearingKarils()) {
-      dist = new AttackDistribution([
-        new HitDistribution([
-          ...standardHitDist.scaleProbability(0.75).hits,
-          ...standardHitDist.hits.map((h) => new WeightedHit(
-            h.probability * 0.25, // 25% chance of effect
-            [h.hitsplats[0], Math.trunc(h.hitsplats[0] / 2)], // to deal a second hitsplat of half damage
-          )),
+      // 25% chance to deal a second hitsplat at half the damage of the first (flat, not rolled)
+      dist = dist.transform(
+        (h) => new HitDistribution([
+          new WeightedHit(0.75, [h]),
+          new WeightedHit(0.25, [h, new Hitsplat(Math.trunc(h.damage / 2))]),
         ]),
-      ]);
+        { transformInaccurate: false },
+      );
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingScythe()) {
@@ -837,15 +855,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.isUsingMeleeStyle() && this.wearing('Dual macuahuitl')) {
-      // assume the first hit is accurate, roll the second hit and zip it with possible first hitsplats
-      const secondHit = HitDistribution.linear(acc, 0, Math.trunc(max / 2));
-      const doubleHitDist = HitDistribution.linear(1.0, 0, max - Math.trunc(max / 2)).transform((h) => HitDistribution.single(1.0, h).zip(secondHit));
-
-      // scale that dist back down to the accuracy space
-      const effectDist = doubleHitDist.scaleProbability(acc);
-      effectDist.addHit(new WeightedHit(1 - acc, [0, 0])); // add back in the inaccurate hit
-
-      dist = new AttackDistribution([effectDist]);
+      const secondHit = HitDistribution.linear(acc, 0, Math.trunc(max / 2)); // same across all transforms
+      dist = dist.transform(
+        (h) => new HitDistribution([new WeightedHit(1.0, [h])]).zip(secondHit),
+        { transformInaccurate: false },
+      );
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingKeris() && mattrs.includes(MonsterAttribute.KALPHITE)) {
@@ -884,7 +898,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.scaleDamage(11, 10);
     }
     if (this.wearing('Tome of water') && isWaterSpell(this.player.spell)) {
-      dist = dist.scaleDamage(6, 5);
+      dist = dist.scaleDamage(11, 10);
     }
 
     if (this.player.style.type === 'magic' && this.isWearingAhrims()) {
@@ -906,7 +920,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         const chance = 0.05 * kandarinDiaryFactor;
         const bonusDmg = Math.trunc(rangedLvl / (zaryte ? 9 : 10));
         dist = dist.transform((h) => new HitDistribution([
-          new WeightedHit(chance, [h + bonusDmg]),
+          new WeightedHit(chance, [new Hitsplat(h.damage + bonusDmg, h.accurate)]),
           new WeightedHit(1 - chance, [h]),
         ]));
       }
@@ -916,7 +930,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         const divisor = mattrs.includes(MonsterAttribute.FIERY) ? 15 : 20;
         const bonusDmg = Math.trunc(rangedLvl / (zaryte ? divisor - 2 : divisor));
         dist = dist.transform((h) => new HitDistribution([
-          new WeightedHit(chance, [h + bonusDmg]),
+          new WeightedHit(chance, [new Hitsplat(h.damage + bonusDmg, h.accurate)]),
           new WeightedHit(1 - chance, [h]),
         ]));
       }
@@ -951,7 +965,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           new HitDistribution([
             ...standardHitDist.scaleProbability(1 - chance).hits,
             ...HitDistribution.linear(1.0, 0, effectMax).scaleProbability(acc * chance).hits,
-            new WeightedHit((1 - acc) * chance, [0]),
+            new WeightedHit((1 - acc) * chance, [Hitsplat.INACCURATE]),
           ]),
         ]);
       }
@@ -971,13 +985,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         dist = new AttackDistribution([
           new HitDistribution([
             ...dist.dists[0].scaleProbability(1 - chance).hits,
-            new WeightedHit(chance, [effectDmg]),
+            new WeightedHit(chance * acc, [new Hitsplat(effectDmg, true)]),
+            new WeightedHit(chance * (1 - acc), [new Hitsplat(effectDmg, false)]),
           ]),
         ]);
       }
     }
 
-    // TODO (29/05/24): damage rolls of 0 should be boosted up to 1
+    dist = dist.transform(
+      (h) => HitDistribution.single(1.0, Math.max(h.damage, 1)),
+      { transformInaccurate: false },
+    );
 
     return this.applyLimiters(dist);
   }
@@ -985,7 +1003,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   applyLimiters(dist: AttackDistribution): AttackDistribution {
     // we apply this here instead of at the top of getDistributionImpl just in case of multi-hits
     if (this.isImmune()) {
-      return new AttackDistribution([new HitDistribution([new WeightedHit(1.0, [0])])]);
+      return new AttackDistribution([new HitDistribution([new WeightedHit(1.0, [Hitsplat.INACCURATE])])]);
     }
 
     if (this.monster.name === 'Zulrah') {
@@ -1207,7 +1225,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         // 4. for each damage amount possible,
         for (const h of currDist.hits) {
           const dmgProb = h.probability;
-          const dmg = h.hitsplats[0]; // guaranteed to be length 1 from asSingleHitsplat
+          const splat = h.hitsplats[0]; // guaranteed to be length 1 from asSingleHitsplat
 
           // 5. the chance of this path being reached is the previous chance of landing here * the chance of hitting this amount
           const chanceOfAction = dmgProb * hpProb;
@@ -1215,7 +1233,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
             continue;
           }
 
-          const newHp = hp - dmg;
+          const newHp = hp - splat.damage;
 
           // 6. if the hp we are about to arrive at is <= 0, the npc is killed, the iteration count is hits done,
           //    and we add this probability path into the delta

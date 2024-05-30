@@ -31,7 +31,7 @@ export interface Preferences {
   showLoadoutComparison: boolean;
   showTtkComparison: boolean;
   showNPCVersusPlayerResults: boolean;
-  hitDistsHideZeros: boolean;
+  hitDistsHideZeros: boolean; // legacy name
 }
 
 export interface ChartEntry {
