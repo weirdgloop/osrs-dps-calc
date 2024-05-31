@@ -1039,7 +1039,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.monster.attributes.includes(MonsterAttribute.VAMPYRE_2) && this.wearing("Efaritay's aid") && !this.isWearingSilverWeapon()) {
       dist = dist.transform(flatLimitTransformer(10));
     }
-    if (this.monster.name === 'Ice demon' && this.player.spell?.element === 'fire' && this.player.spell?.name !== 'Flames of Zamorak') {
+    if (this.monster.name === 'Ice demon' && this.player.spell?.element !== 'fire') {
       // https://twitter.com/JagexAsh/status/1133350436554121216
       dist = dist.transform(divisionTransformer(3));
     }
