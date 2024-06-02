@@ -592,7 +592,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isChargeSpellApplicable()) {
       maxHit += 10;
     }
-	
+
 	magicBaseHit = maxHit; //We need the basehit value for the elemental bonus later.
 
     let magicDmgBonus = this.player.bonuses.magic_str;
@@ -634,7 +634,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const spellement = this.player.spell?.element;
     if (this.monster.weakness && spellement) {
       if (spellement === this.monster.weakness.element) {
-        maxHit = maxHit + Math.trunc(magicBaseHit * (this.monster.weakness.severity/100))
+        maxHit += Math.trunc(magicBaseHit * (this.monster.weakness.severity / 100))
       }
     }
 
