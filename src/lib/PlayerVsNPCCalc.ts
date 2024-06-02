@@ -523,6 +523,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    */
   private getPlayerMaxMagicHit() {
     let maxHit: number = 0;
+    let magicBaseHit: number = 0;
     const magicLevel = this.player.skills.magic + this.player.boosts.magic;
     const { spell } = this.player;
 
@@ -591,6 +592,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isChargeSpellApplicable()) {
       maxHit += 10;
     }
+	
+	magicBaseHit = maxHit; //We need the basehit value for the elemental bonus later.
 
     let magicDmgBonus = this.player.bonuses.magic_str;
 
@@ -605,13 +608,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       magicDmgBonus += 150;
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
       blackMaskBonus = true;
-    }
-
-    const spellement = this.player.spell?.element;
-    if (this.monster.weakness && spellement) {
-      if (spellement === this.monster.weakness.element) {
-        magicDmgBonus += this.monster.weakness.severity * 10;
-      }
     }
 
     for (const p of this.getCombatPrayers('magicDamageBonus')) {
@@ -633,6 +629,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.isRevWeaponBuffApplicable()) {
       maxHit = Math.trunc(maxHit * 3 / 2);
+    }
+
+    const spellement = this.player.spell?.element;
+    if (this.monster.weakness && spellement) {
+      if (spellement === this.monster.weakness.element) {
+        maxHit = maxHit + Math.trunc(magicBaseHit * (this.monster.weakness.severity/100))
+      }
     }
 
     return maxHit;
