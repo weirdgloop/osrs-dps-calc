@@ -634,7 +634,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const spellement = this.player.spell?.element;
     if (this.monster.weakness && spellement) {
       if (spellement === this.monster.weakness.element) {
-        maxHit += Math.trunc(magicBaseHit * (this.monster.weakness.severity / 100))
+        maxHit += Math.trunc(magicBaseHit * (this.monster.weakness.severity / 100));
       }
     }
 
