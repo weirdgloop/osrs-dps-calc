@@ -593,7 +593,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit += 10;
     }
 
-    //We need the basehit value for the elemental bonus later.
+    // We need the basehit value for the elemental bonus later.
     magicBaseHit = maxHit;
 
     let magicDmgBonus = this.player.bonuses.magic_str;
