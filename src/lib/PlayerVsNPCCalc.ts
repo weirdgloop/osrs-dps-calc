@@ -592,8 +592,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit += 10;
     }
 
-    // We need the basehit value for the elemental bonus later.
-    const baseMax = maxHit;
     let magicDmgBonus = this.player.bonuses.magic_str;
 
     if (this.isWearingSmokeStaff() && spell?.spellbook === 'standard') {
@@ -607,6 +605,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       magicDmgBonus += 150;
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
       blackMaskBonus = true;
+    }
+
+    const spellement = this.player.spell?.element;
+    if (this.monster.weakness && spellement) {
+      if (spellement === this.monster.weakness.element) {
+        magicDmgBonus += this.monster.weakness.severity * 10;
+      }
     }
 
     for (const p of this.getCombatPrayers('magicDamageBonus')) {
@@ -628,13 +633,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.isRevWeaponBuffApplicable()) {
       maxHit = Math.trunc(maxHit * 3 / 2);
-    }
-
-    const spellement = this.player.spell?.element;
-    if (this.monster.weakness && spellement) {
-      if (spellement === this.monster.weakness.element) {
-        maxHit += Math.trunc(baseMax * (this.monster.weakness.severity / 100));
-      }
     }
 
     return maxHit;
