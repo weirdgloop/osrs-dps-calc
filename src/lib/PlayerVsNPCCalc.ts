@@ -637,6 +637,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
+    if (
+      this.wearing('Tome of fire')
+      && this.player.spell?.element === 'fire'
+      && this.player.spell?.name !== 'Flames of Zamorak'
+    ) {
+      maxHit = Math.trunc(maxHit * 11 / 10);
+    }
+    if (this.wearing('Tome of water') && this.player.spell?.element === 'water') {
+      maxHit = Math.trunc(maxHit * 11 / 10);
+    }
+
     return maxHit;
   }
 
@@ -892,17 +903,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
       this.track(DetailKey.GUARDIANS_DMG_BONUS, factor / divisor);
       dist = dist.transform(multiplyTransformer(factor, divisor));
-    }
-
-    if (
-      this.wearing('Tome of fire')
-      && this.player.spell?.element === 'fire'
-      && this.player.spell?.name !== 'Flames of Zamorak'
-    ) {
-      dist = dist.scaleDamage(11, 10);
-    }
-    if (this.wearing('Tome of water') && this.player.spell?.element === 'water') {
-      dist = dist.scaleDamage(11, 10);
     }
 
     if (this.player.style.type === 'magic' && this.isWearingAhrims()) {
