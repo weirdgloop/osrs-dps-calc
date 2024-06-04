@@ -29,6 +29,7 @@ import {
   IMMUNE_TO_MELEE_DAMAGE_NPC_IDS,
   IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS,
   IMMUNE_TO_RANGED_DAMAGE_NPC_IDS,
+  NIGHTMARE_TOTEM_IDS,
   OLM_HEAD_IDS,
   OLM_MAGE_HAND_IDS,
   OLM_MELEE_HAND_IDS, ONE_HIT_MONSTERS, SECONDS_PER_TICK,
@@ -993,10 +994,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       { transformInaccurate: false },
     );
 
-    return this.applyLimiters(dist);
+    return this.applyNpcTransforms(dist);
   }
 
-  applyLimiters(dist: AttackDistribution): AttackDistribution {
+  applyNpcTransforms(dist: AttackDistribution): AttackDistribution {
     // we apply this here instead of at the top of getDistributionImpl just in case of multi-hits
     if (this.isImmune()) {
       return new AttackDistribution([new HitDistribution([new WeightedHit(1.0, [Hitsplat.INACCURATE])])]);
@@ -1040,6 +1041,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.monster.name === 'Slagilith' && this.player.equipment.weapon?.category !== EquipmentCategory.PICKAXE) {
       // https://twitter.com/JagexAsh/status/1219652159148646401
       dist = dist.transform(divisionTransformer(3));
+    }
+    if (NIGHTMARE_TOTEM_IDS.includes(this.monster.id) && this.player.style.type === 'magic') {
+      dist = dist.transform(multiplyTransformer(2));
     }
     if (['Slash Bash', 'Zogre', 'Skogre'].includes(this.monster.name)) {
       if (this.player.spell?.name === 'Crumble Undead') {
