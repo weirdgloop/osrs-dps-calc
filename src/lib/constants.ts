@@ -33,8 +33,8 @@ export const TOA_OBELISK_IDS = [
 ];
 
 export const P2_WARDEN_IDS = [
-  11753, 11754, 11755, // elidinis
-  11756, 11757, 11758, // tumeken
+  11753, 11754, // elidinis
+  11756, 11757, // tumeken
 ];
 
 export const P3_WARDEN_IDS = [
@@ -42,8 +42,9 @@ export const P3_WARDEN_IDS = [
   11762, 11764, // tumeken
 ];
 
-export const TOA_CORE_IDS = [
-  11770, 11771,
+export const TOA_WARDEN_CORE_EJECTED_IDS = [
+  11755, // elidinis
+  11758, // tumeken
 ];
 
 /**
@@ -64,7 +65,7 @@ export const TOMBS_OF_AMASCUT_MONSTER_IDS = [
   ...TOMBS_OF_AMASCUT_PATH_MONSTER_IDS,
   ...TOA_OBELISK_IDS,
   ...P2_WARDEN_IDS,
-  ...TOA_CORE_IDS,
+  ...TOA_WARDEN_CORE_EJECTED_IDS,
   ...P3_WARDEN_IDS,
 ];
 
@@ -307,6 +308,7 @@ export const ALWAYS_MAX_HIT_MONSTERS = {
   melee: [
     11710, 11713, // baboon thrower
     12814, // frem warband archer
+    ...TOA_WARDEN_CORE_EJECTED_IDS,
   ],
   ranged: [
     11711, 11714, // baboon mage
