@@ -23,7 +23,6 @@ import getMonsters from '@/lib/Monsters';
 import { availableEquipment, calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { CalcWorker } from '@/worker/CalcWorker';
 import { spellByName } from '@/types/Spell';
-import UserIssueType from '@/enums/UserIssueType';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
   ARM_PRAYERS,
@@ -334,9 +333,7 @@ class GlobalState implements State {
     let is: UserIssue[] = [];
 
     // Determine the current global/UI-related issues
-    if ([13011, 13012, 13013, 13033, 13029].includes(this.monster.id)) {
-      is.push({ type: UserIssueType.MONSTER_UNIQUE_EFFECTS, message: 'This monster has unique effects that are not yet accounted for. Results may be inaccurate.' });
-    }
+    // ex. is.push({ type: UserIssueType.MONSTER_UNIQUE_EFFECTS, message: 'This monster has unique effects that are not yet accounted for. Results may be inaccurate.' });
 
     // Add in the issues returned from the calculator
     for (const l of Object.values(this.calc.loadouts)) {

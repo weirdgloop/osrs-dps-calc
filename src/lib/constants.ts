@@ -338,3 +338,12 @@ export const NPC_HARDCODED_MAX_HIT: { [npcId: number]: number } = {
   5947: 10, // Spinolyp (1)
   5961: 10, // Spinolyp (2)
 };
+
+// https://oldschool.runescape.wiki/w/Flat_armour
+export const FLAT_ARMOUR: { [npcId: number]: number } = {
+  13011: -2, // blood moon
+  13012: 6, // eclipse moon (this actually drops to 4 during the clone special attack, should we handle that?)
+  13013: -5, // blue moon
+  13033: -4, // sulphur nagua
+  13029: -2, // grimy lizard
+};
