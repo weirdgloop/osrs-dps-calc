@@ -25,6 +25,7 @@ const monsters = getMonsters().map((m) => ({
     defenceReductions: {
       vulnerability: false,
       accursed: false,
+      elderMaul: 0,
       dwh: 0,
       arclight: 0,
       bgs: 0,
@@ -66,6 +67,7 @@ const DEFAULT_MONSTER_INPUTS: Monster['inputs'] = {
   defenceReductions: {
     vulnerability: false,
     accursed: false,
+    elderMaul: 0,
     dwh: 0,
     arclight: 0,
     bgs: 0,

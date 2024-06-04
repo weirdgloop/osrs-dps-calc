@@ -37,7 +37,7 @@ import { WikiSyncer, startPollingForRuneLite } from './wikisync/WikiSyncer';
 
 const EMPTY_CALC_LOADOUT = {} as CalculatedLoadout;
 
-const INITIAL_MONSTER_INPUTS = {
+const INITIAL_MONSTER_INPUTS: Monster['inputs'] = {
   isFromCoxCm: false,
   toaInvocationLevel: 0,
   toaPathLevel: 0,
@@ -49,6 +49,7 @@ const INITIAL_MONSTER_INPUTS = {
   defenceReductions: {
     vulnerability: false,
     accursed: false,
+    elderMaul: 0,
     dwh: 0,
     arclight: 0,
     bgs: 0,

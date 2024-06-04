@@ -71,6 +71,11 @@ const applyDefenceReductions = (m: Monster): Monster => {
     });
   }
 
+  for (let i = 0; i < reductions.elderMaul; i++) {
+    m = newSkills(m, {
+      def: m.skills.def - Math.trunc(m.skills.def * 35 / 100),
+    });
+  }
   for (let i = 0; i < reductions.dwh; i++) {
     m = newSkills(m, {
       def: m.skills.def - Math.trunc(m.skills.def * 3 / 10),

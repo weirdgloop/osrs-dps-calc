@@ -5,6 +5,7 @@ import Toggle from '@/app/components/generic/Toggle';
 import vuln from '@/public/img/def_reductions/Vulnerability.png';
 import bgs from '@/public/img/def_reductions/Bandos_godsword.webp';
 import sceptre from '@/public/img/def_reductions/Accursed sceptre.png';
+import elderMaul from '@/public/img/def_reductions/Elder_maul.png';
 import dwh from '@/public/img/def_reductions/Dragon_warhammer.webp';
 import arc from '@/public/img/def_reductions/Arclight.png';
 import { observer } from 'mobx-react-lite';
@@ -33,6 +34,20 @@ const DefensiveReductions: React.FC = observer(() => {
 
       {isDefensiveReductionsExpanded && (
         <div className="p-2">
+          <div className="w-full">
+            <NumberInput
+              className="form-control w-1/6"
+              required
+              min={0}
+              value={defenceReductions.elderMaul}
+              onChange={(v) => store.updateMonster({ inputs: { defenceReductions: { elderMaul: v } } })}
+            />
+            <span className="pl-2">
+              <img src={elderMaul.src} width={18} className="inline-block" alt="" />
+              {' '}
+              Elder maul hits
+            </span>
+          </div>
           <div className="w-full">
             <NumberInput
               className="form-control w-1/6"

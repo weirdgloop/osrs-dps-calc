@@ -89,6 +89,7 @@ export interface Monster {
     defenceReductions: {
       vulnerability: boolean;
       accursed: boolean;
+      elderMaul: number;
       dwh: number;
       arclight: number;
       bgs: number;
