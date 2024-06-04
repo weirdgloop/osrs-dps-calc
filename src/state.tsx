@@ -650,7 +650,10 @@ class GlobalState implements State {
       && monster.id !== this.monster.id
       && !Object.hasOwn(monster, 'inputs')
     ) {
-      monster.inputs = { ...INITIAL_MONSTER_INPUTS };
+      monster = {
+        ...monster,
+        inputs: INITIAL_MONSTER_INPUTS,
+      };
     }
 
     this.monster = merge(this.monster, monster, (obj, src) => {
