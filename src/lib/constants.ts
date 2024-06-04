@@ -222,6 +222,7 @@ export const FRAGMENT_OF_SEREN_IDS = [
  * @see https://oldschool.runescape.wiki/w/Totem_(The_Nightmare)#Uncharged
  */
 export const NIGHTMARE_TOTEM_IDS = [
+  9434, 9437, 9440, 9443,
   9435, 9438, 9441, 9444,
 ];
 
