@@ -228,6 +228,17 @@ export default class Comparator {
         dwhCount += 1;
       }
 
+      currentDef = this.baseMonster.skills.def;
+      let elderMauls = 1;
+      while (currentDef >= 100) {
+        currentDef -= Math.trunc(currentDef * 35 / 100);
+        annotations.push({
+          label: `Elder Maul x${elderMauls}`,
+          value: currentDef,
+        });
+        elderMauls += 1;
+      }
+
       return annotations;
     }
 
