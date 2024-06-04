@@ -21,7 +21,7 @@ import {
 } from '@/enums/Prayer';
 import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
-  BABOON_BRAWLER_IDS, BABOON_MAGE_IDS, BABOON_THROWER_IDS,
+  ALWAYS_MAX_HIT_MONSTERS,
   CAST_STANCES, DEFAULT_ATTACK_SPEED,
   GLOWING_CRYSTAL_IDS,
   GUARDIAN_IDS,
@@ -39,7 +39,7 @@ import {
 } from '@/lib/constants';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { DetailKey } from '@/lib/CalcDetails';
-import { Factor } from '@/lib/Math';
+import { Factor, MinMax } from '@/lib/Math';
 import {
   AmmoApplicability,
   ammoApplicability,
@@ -183,7 +183,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   /**
    * Get the player's max melee hit
    */
-  private getPlayerMaxMeleeHit(): number {
+  private getPlayerMaxMeleeHit(): MinMax {
     const { style } = this.player;
     const { buffs } = this.player;
 
@@ -221,7 +221,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     const gearBonus = this.trackAdd(DetailKey.DAMAGE_GEAR_BONUS, this.player.bonuses.str, 64);
     const baseMax = this.trackMaxHitFromEffective(DetailKey.MAX_HIT_BASE, effectiveLevel, gearBonus);
-    let maxHit = baseMax;
+    let [minHit, maxHit]: MinMax = [0, baseMax];
 
     // Specific bonuses that are applied from equipment
     const mattrs = this.monster.attributes;
@@ -305,7 +305,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
-    return maxHit;
+    if (this.isWearingFang()) {
+      const shrink = Math.trunc(maxHit * 3 / 20);
+      minHit = this.track(DetailKey.MIN_HIT_FANG, shrink);
+      maxHit = this.trackAdd(DetailKey.MAX_HIT_FANG, maxHit, -shrink);
+    }
+
+    return [minHit, maxHit];
   }
 
   private getPlayerMaxRangedAttackRoll() {
@@ -367,7 +373,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   /**
    * Get the player's max ranged hit
    */
-  private getPlayerMaxRangedHit() {
+  private getPlayerMaxRangedHit(): MinMax {
     const { style } = this.player;
 
     let effectiveLevel: number = this.player.skills.ranged + this.player.boosts.ranged;
@@ -454,7 +460,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = this.trackAdd(DetailKey.MAX_HIT_RATBANE, maxHit, 10);
     }
 
-    return maxHit;
+    return [0, maxHit]; // ranged has no min hit behaviours (aside from always-max, which is lower down)
   }
 
   private getPlayerMaxMagicAttackRoll() {
@@ -521,8 +527,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   /**
    * Get the player's max magic hit
    */
-  private getPlayerMaxMagicHit() {
-    let maxHit: number = 0;
+  private getPlayerMaxMagicHit(): MinMax {
+    let [minHit, maxHit]: MinMax = [0, 0];
     const magicLevel = this.player.skills.magic + this.player.boosts.magic;
     const { spell } = this.player;
 
@@ -582,7 +588,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (maxHit === 0) {
       // at this point either they've selected a 0-dmg spell
       // or they picked a staff-casting option without choosing a spell
-      return 0;
+      return [0, 0];
     }
 
     if (this.wearing('Chaos gauntlets') && spell?.name.toLowerCase().includes('bolt')) {
@@ -637,7 +643,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
-    return maxHit;
+    if (this.player.buffs.usingSunfireRunes && canUseSunfireRunes(this.player.spell)) {
+      // sunfire runes are applied pre-tome
+      minHit = this.trackFactor(DetailKey.MIN_HIT_SUNFIRE, maxHit, [1, 10]);
+    }
+
+    if ((this.wearing('Tome of fire') && this.player.spell?.element === 'fire' && this.player.spell.name !== 'Flames of Zamorak')
+      || (this.wearing('Tome of water') && this.player.spell?.element === 'water')) {
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_TOME, maxHit, [11, 10]);
+    }
+
+    return [minHit, maxHit];
   }
 
   /**
@@ -661,29 +677,31 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   /**
    * Get the max hit for this loadout, which is based on the player's current combat style
    */
-  private getMaxHit() {
+  private getMaxHit(): MinMax {
     if (this.player.style.stance !== 'Manual Cast') {
       const weaponId = this.player.equipment.weapon?.id;
       const ammoId = this.player.equipment.ammo?.id;
       if (ammoApplicability(weaponId, ammoId) === AmmoApplicability.INVALID) {
-        return 0;
+        return [0, 0];
       }
     }
 
     const style = this.player.style.type;
 
-    let maxHit = 0;
+    let minMax: [min: number, max: number] = [0, 0];
     if (this.isUsingMeleeStyle()) {
-      maxHit = this.getPlayerMaxMeleeHit();
+      minMax = this.getPlayerMaxMeleeHit();
     }
     if (style === 'ranged') {
-      maxHit = this.getPlayerMaxRangedHit();
+      minMax = this.getPlayerMaxRangedHit();
     }
     if (style === 'magic') {
-      maxHit = this.getPlayerMaxMagicHit();
+      minMax = this.getPlayerMaxMagicHit();
     }
 
-    return this.track(DetailKey.MAX_HIT_FINAL, maxHit);
+    this.track(DetailKey.MIN_HIT_FINAL, minMax[0]);
+    this.track(DetailKey.MAX_HIT_FINAL, minMax[1]);
+    return minMax;
   }
 
   /**
@@ -773,11 +791,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   private getDistributionImpl(): AttackDistribution {
     const mattrs = this.monster.attributes;
     const acc = this.getHitChance();
-    const max = this.getMaxHit();
+    const [min, max] = this.getMaxHit();
     const style = this.player.style.type;
 
     // standard linear
-    const standardHitDist = HitDistribution.linear(acc, 0, max);
+    const standardHitDist = HitDistribution.linear(acc, min, max);
     let dist = new AttackDistribution([standardHitDist]);
 
     // Monsters that always die in one hit no matter what
@@ -787,27 +805,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       ]);
     }
 
-    // apmeken baboons always take max damage from combat triangle weakness
-    if ((this.player.style.type === 'magic' && BABOON_BRAWLER_IDS.includes(this.monster.id))
-      || (this.isUsingMeleeStyle() && BABOON_THROWER_IDS.includes(this.monster.id))
-      || (this.player.style.type === 'ranged' && BABOON_MAGE_IDS.includes(this.monster.id))) {
-      // special case fang max
-      if (this.isUsingMeleeStyle() && this.isWearingFang()) {
-        return new AttackDistribution([HitDistribution.single(1.0, max - Math.trunc(max * 3 / 20))]);
-      }
+    // monsters that are always max hit no matter what
+    if ((this.player.style.type === 'magic' && ALWAYS_MAX_HIT_MONSTERS.magic.includes(this.monster.id))
+      || (this.isUsingMeleeStyle() && ALWAYS_MAX_HIT_MONSTERS.melee.includes(this.monster.id))
+      || (this.player.style.type === 'ranged' && ALWAYS_MAX_HIT_MONSTERS.ranged.includes(this.monster.id))) {
       return new AttackDistribution([HitDistribution.single(1.0, max)]);
-    }
-
-    // todo determine where this effect should happen relative to others
-    if (this.player.buffs.usingSunfireRunes && canUseSunfireRunes(this.player.spell)) {
-      dist = new AttackDistribution([HitDistribution.linear(acc, Math.trunc(max / 10), max)]);
-    }
-
-    if (this.isUsingMeleeStyle() && this.isWearingFang()) {
-      const shrink = Math.trunc(max * 3 / 20);
-      dist = new AttackDistribution(
-        [HitDistribution.linear(acc, shrink, max - shrink)],
-      );
     }
 
     if (this.isUsingMeleeStyle() && this.wearing('Gadderhammer') && mattrs.includes(MonsterAttribute.SHADE)) {
@@ -848,7 +850,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isUsingMeleeStyle() && this.isWearingScythe()) {
       const hits: HitDistribution[] = [];
       for (let i = 0; i < Math.min(Math.max(this.monster.size, 1), 3); i++) {
-        hits.push(HitDistribution.linear(acc, 0, Math.floor(max / (2 ** i))));
+        const splatMax = Math.trunc(max / (2 ** i));
+        hits.push(HitDistribution.linear(acc, Math.min(min, splatMax), splatMax));
       }
       dist = new AttackDistribution(hits);
     }
@@ -892,17 +895,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
       this.track(DetailKey.GUARDIANS_DMG_BONUS, factor / divisor);
       dist = dist.transform(multiplyTransformer(factor, divisor));
-    }
-
-    if (
-      this.wearing('Tome of fire')
-      && this.player.spell?.element === 'fire'
-      && this.player.spell?.name !== 'Flames of Zamorak'
-    ) {
-      dist = dist.scaleDamage(11, 10);
-    }
-    if (this.wearing('Tome of water') && this.player.spell?.element === 'water') {
-      dist = dist.scaleDamage(11, 10);
     }
 
     if (this.player.style.type === 'magic' && this.isWearingAhrims()) {
