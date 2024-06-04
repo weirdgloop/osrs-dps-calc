@@ -4,6 +4,7 @@ import {
   AttackDistribution,
   cappedRerollTransformer,
   divisionTransformer,
+  flatAddTransformer,
   flatLimitTransformer,
   HitDistribution,
   Hitsplat,
@@ -22,7 +23,9 @@ import {
 import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
   ALWAYS_MAX_HIT_MONSTERS,
-  CAST_STANCES, DEFAULT_ATTACK_SPEED,
+  CAST_STANCES,
+  DEFAULT_ATTACK_SPEED,
+  FLAT_ARMOUR,
   GLOWING_CRYSTAL_IDS,
   GUARDIAN_IDS,
   IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS,
@@ -1053,6 +1056,14 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         || this.player.equipment.weapon?.name !== 'Comp ogre bow') {
         dist = dist.transform(divisionTransformer(4));
       }
+    }
+
+    const flatArmour = FLAT_ARMOUR[this.monster.id];
+    if (flatArmour) {
+      dist = dist.transform(
+        flatAddTransformer(-flatArmour),
+        { transformInaccurate: false },
+      );
     }
 
     return dist;
