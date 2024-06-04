@@ -216,6 +216,16 @@ export const FRAGMENT_OF_SEREN_IDS = [
 ];
 
 /**
+ * IDs of the totems in the Nightmare / Phosani's Nightmare fight.
+ * They take double damage from magic sources.
+ *
+ * @see https://oldschool.runescape.wiki/w/Totem_(The_Nightmare)#Uncharged
+ */
+export const NIGHTMARE_TOTEM_IDS = [
+  9435, 9438, 9441, 9444,
+];
+
+/**
  * IDs of monsters that calculate their magical defence using the defence stat.
  * https://twitter.com/JagexAsh/status/1689566945635438592
  * */

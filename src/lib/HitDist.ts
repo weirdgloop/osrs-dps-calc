@@ -330,7 +330,7 @@ export function cappedRerollTransformer(limit: number, rollMax: number, offset: 
   };
 }
 
-export function multiplyTransformer(numerator: number, divisor: number, minimum: number = 0): HitTransformer {
+export function multiplyTransformer(numerator: number, divisor: number = 1, minimum: number = 0): HitTransformer {
   return (h) => {
     const dmg = Math.max(minimum, Math.trunc(numerator * h.damage / divisor));
     return new HitDistribution(
