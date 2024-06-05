@@ -23,7 +23,7 @@ export function isBindSpell(spell: Spell | null): boolean {
 }
 
 export function getSpellMaxHit(spell: Spell, magicLevel: number): number {
-  if (!spell.element || spell.name === 'Flames of Zamorak') {
+  if (!spell.element) {
     return spell?.max_hit;
   }
 
@@ -66,14 +66,6 @@ export function getSpellMaxHit(spell: Spell, magicLevel: number): number {
 
 export function canUseSunfireRunes(spell: Spell | null): boolean {
   return spell?.element === 'fire';
-
-  // todo do we know for sure yet whether it's "fire spells" or "fire-rune spells"?
-  // return spell !== null && (
-  //   spell.name.includes('Fire')
-  //   || spell.name.includes('Smoke')
-  //   || spell.name.includes('Demonbane')
-  //   || ['Claws of Guthix', 'Flames of Zamorak', 'Saradomin Strike', 'Iban Blast', 'Undead Grasp'].includes(spell.name)
-  // );
 }
 
 // The available spellbooks

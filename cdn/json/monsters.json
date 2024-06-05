@@ -27518,7 +27518,7 @@
     "skills": {
       "atk": 110,
       "def": 80,
-      "hp": 50,
+      "hp": 48,
       "magic": 110,
       "ranged": 110,
       "str": 110
@@ -38521,7 +38521,10 @@
       "stab": 60
     },
     "attributes": [],
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 100
+    }
   },
   {
     "id": 11192,
@@ -63680,10 +63683,7 @@
       "spectral",
       "undead"
     ],
-    "weakness": {
-      "element": "water",
-      "severity": 100
-    }
+    "weakness": null
   },
   {
     "id": 6736,
@@ -67723,7 +67723,10 @@
     "attributes": [
       "dragon"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
   },
   {
     "id": 10398,
@@ -67766,7 +67769,10 @@
     "attributes": [
       "dragon"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
   },
   {
     "id": 3016,
@@ -90974,7 +90980,10 @@
     "attributes": [
       "dragon"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
   },
   {
     "id": 13031,
@@ -91016,7 +91025,10 @@
     "attributes": [
       "dragon"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
   },
   {
     "id": 10951,
