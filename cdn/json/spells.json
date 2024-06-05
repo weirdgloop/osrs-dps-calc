@@ -165,7 +165,7 @@
     "image": "Flames of Zamorak.png",
     "max_hit": 20,
     "spellbook": "standard",
-    "element": "fire"
+    "element": null
   },
   {
     "name": "Ghostly Grasp",
