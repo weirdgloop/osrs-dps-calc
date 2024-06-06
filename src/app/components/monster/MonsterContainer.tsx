@@ -38,13 +38,14 @@ import {
   IconShieldQuestion,
 } from '@tabler/icons-react';
 import { scaleMonster } from '@/lib/MonsterScaling';
-import { Monster } from '@/types/Monster';
+import { Monster, MonsterCombatStyle } from '@/types/Monster';
 import LazyImage from '@/app/components/generic/LazyImage';
 import Toggle from '@/app/components/generic/Toggle';
 import { toJS } from 'mobx';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import DefensiveReductions from '@/app/components/monster/DefensiveReductions';
 import WeaknessBadge from '@/app/components/monster/WeaknessBadge';
+import Select from '@/app/components/generic/Select';
 import MonsterSelect from './MonsterSelect';
 import HelpLink from '../HelpLink';
 import AttributeInput from '../generic/AttributeInput';
@@ -60,7 +61,7 @@ const TombsOfAmascutMonsterContainer: React.FC<ITombsOfAmascutMonsterContainerPr
 
   return (
     <>
-      <div className="mt-4">
+      <div>
         <h4 className="font-bold font-serif">
           <img src={toaRaidLevel.src} alt="" className="inline-block" />
           {' '}
@@ -98,10 +99,19 @@ const TombsOfAmascutMonsterContainer: React.FC<ITombsOfAmascutMonsterContainerPr
   );
 };
 
+const COMBAT_STYLE_OPTIONS: { label: string, value: MonsterCombatStyle }[] = [
+  { label: 'Crush', value: 'crush' },
+  { label: 'Stab', value: 'stab' },
+  { label: 'Slash', value: 'slash' },
+  { label: 'Magic', value: 'magic' },
+  { label: 'Ranged', value: 'ranged' },
+];
+
 const MonsterContainer: React.FC = observer(() => {
   const store = useStore();
   const { loadouts, monster } = store;
   const [attributesExpanded, setAttributesExpanded] = useState(false);
+  const [optionsExpanded, setOptionsExpanded] = useState(true);
 
   // Determine whether there's any issues with this element
   const issues = store.userIssues.filter((i) => i.type.startsWith('monster_overall') && (!i.loadout || i.loadout === `${store.selectedLoadout + 1}`));
@@ -128,6 +138,50 @@ const MonsterContainer: React.FC = observer(() => {
     // Determine whether we need to show any extra monster option components
     const comps: React.ReactNode[] = [];
 
+    if (isCustomMonster) {
+      comps.push(
+        <div key="combat-style">
+          <h4 className="font-bold font-serif">
+            Combat style
+          </h4>
+          <div className="mt-2">
+            <Select<typeof COMBAT_STYLE_OPTIONS[0]>
+              id="monster-combat-style"
+              items={COMBAT_STYLE_OPTIONS}
+              value={COMBAT_STYLE_OPTIONS.find((v) => v.value === monster.style)}
+              onSelectedItemChange={(i) => store.updateMonster({ style: i?.value })}
+            />
+          </div>
+        </div>,
+        <div key="attack-speed">
+          <h4 className="font-bold font-serif">
+            Attack speed (ticks)
+          </h4>
+          <div className="mt-2">
+            <NumberInput
+              value={monster.speed}
+              min={1}
+              max={20}
+              onChange={(s) => store.updateMonster({ speed: s })}
+            />
+          </div>
+        </div>,
+        <div key="monster-size">
+          <h4 className="font-bold font-serif">
+            Size (tiles)
+          </h4>
+          <div className="mt-2">
+            <NumberInput
+              value={monster.size}
+              min={1}
+              max={10}
+              onChange={(s) => store.updateMonster({ size: s })}
+            />
+          </div>
+        </div>,
+      );
+    }
+
     if ((TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id) || isCustomMonster)) {
       comps.push(
         <TombsOfAmascutMonsterContainer
@@ -140,7 +194,7 @@ const MonsterContainer: React.FC = observer(() => {
 
     if (monster.attributes.includes(MonsterAttribute.XERICIAN)) {
       comps.push(
-        <div className="mt-4" key="cox-cm">
+        <div key="cox-cm">
           <h4 className="font-bold font-serif">
             <img src={coxCmIcon.src} alt="" className="inline-block" />
             {' '}
@@ -158,7 +212,7 @@ const MonsterContainer: React.FC = observer(() => {
 
     if ((PARTY_SIZE_REQUIRED_MONSTER_IDS.includes(monster.id)) || monster.attributes.includes(MonsterAttribute.XERICIAN)) {
       comps.push(
-        <div className="mt-4" key="party-size">
+        <div key="party-size">
           <h4 className="font-bold font-serif">
             <img src={raidsIcon.src} alt="" className="inline-block" />
             {' '}
@@ -179,7 +233,7 @@ const MonsterContainer: React.FC = observer(() => {
 
     if (monster.attributes.includes(MonsterAttribute.XERICIAN)) {
       comps.push(
-        <div className="mt-4" key="cox-cb">
+        <div key="cox-cb">
           <h4 className="font-bold font-serif">
             <img src={raidsIcon.src} alt="" className="inline-block" />
             {' '}
@@ -198,7 +252,7 @@ const MonsterContainer: React.FC = observer(() => {
       );
 
       comps.push(
-        <div className="mt-4" key="cox-hp">
+        <div key="cox-hp">
           <h4 className="font-bold font-serif">
             <img src={raidsIcon.src} alt="" className="inline-block" />
             {' '}
@@ -219,7 +273,7 @@ const MonsterContainer: React.FC = observer(() => {
 
     if ((GUARDIAN_IDS.includes(monster.id)) || isCustomMonster) {
       comps.push(
-        <div className="mt-4" key="cox-guardian">
+        <div key="cox-guardian">
           <h4 className="font-bold font-serif">
             <img src={mining.src} alt="" className="inline-block" />
             {' '}
@@ -240,11 +294,11 @@ const MonsterContainer: React.FC = observer(() => {
 
     if (loadouts.some((l) => PlayerVsNPCCalc.distIsCurrentHpDependent(l, monster))) {
       comps.push(
-        <div className="mt-4" key="cox-guardian">
+        <div key="monster-current-hp">
           <h4 className="font-bold font-serif">
             <img src={hitpoints.src} alt="" className="inline-block" />
             {' '}
-            Monster&apos;s Current HP
+            Monster&apos;s current HP
           </h4>
           <div className="mt-2">
             <NumberInput
@@ -261,7 +315,7 @@ const MonsterContainer: React.FC = observer(() => {
 
     return comps;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [toJS(loadouts), toJS(monster), displayMonster.skills.hp]);
+  }, [toJS(loadouts), toJS(monster), displayMonster.skills.hp, isCustomMonster]);
 
   return (
     <div className="basis-4 flex flex-col grow mt-3 md:grow-0">
@@ -527,8 +581,30 @@ const MonsterContainer: React.FC = observer(() => {
                   <DefensiveReductions />
                 </div>
                 {(extraMonsterOptions.length > 0) && (
-                  <div className="mt-4 flex flex-wrap gap-x-4">
-                    {extraMonsterOptions}
+                  <div className="mt-1 text-sm">
+                    <div className="rounded bg-body-100 dark:bg-dark-500">
+                      <button
+                        type="button"
+                        className={`w-full pt-1 border-b-body-400 dark:border-b-dark-300 px-2 flex text-gray-500 dark:text-gray-300 font-semibold justify-between gap-2 ${optionsExpanded ? 'border-b' : ''}`}
+                        onClick={() => setOptionsExpanded(!optionsExpanded)}
+                      >
+                        <div>
+                          Monster Settings
+                        </div>
+                        <div className="relative top-[-2px]">
+                          {optionsExpanded ? <IconChevronUp width={20} />
+                            : <IconChevronDown width={20} />}
+                        </div>
+                      </button>
+
+                      {optionsExpanded && (
+                        <div
+                          className="flex flex-wrap gap-4 text-sm py-2 max-h-48 overflow-auto px-2 bg-dark-500 rounded"
+                        >
+                          {extraMonsterOptions}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 )}
               </div>

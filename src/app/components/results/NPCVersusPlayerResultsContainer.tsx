@@ -60,7 +60,7 @@ const NPCVersusPlayerResultsContainer: React.FC = observer(() => {
   }, [monster.style]);
 
   const renderWarning = () => {
-    if (monster.maxHit !== undefined && monster.maxHit !== computedBaseMaxHit) {
+    if (monster.id !== -1 && monster.maxHit !== undefined && monster.maxHit !== computedBaseMaxHit) {
       return (
         <div
           className="w-full bg-orange-500 text-white px-4 py-1 text-sm border-b border-orange-400 flex items-center gap-2"
