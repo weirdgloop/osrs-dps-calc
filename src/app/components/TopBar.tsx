@@ -6,6 +6,7 @@ import {
 import wiki from '@/public/img/Wiki@2x.webp';
 import React from 'react';
 import { observer } from 'mobx-react-lite';
+import Changelog from '@/app/components/Changelog';
 
 const TopBar: React.FC = observer(() => {
   const store = useStore();
@@ -15,7 +16,7 @@ const TopBar: React.FC = observer(() => {
       <div className="relative flex items-center justify-between h-16">
         <div className="flex-1 flex items-center justify-between">
           <div className="flex-shrink-0 flex items-center gap-2 select-none">
-            <a target="_blank" href="https://oldschool.runescape.wiki"><img src={wiki.src} width={50} alt="OSRS Wiki" /></a>
+            <a target="_blank" href="https://oldschool.runescape.wiki"><img src={wiki.src} className="w-12" alt="OSRS Wiki" /></a>
             <h1 className="font-bold font-serif text-white">DPS Calculator</h1>
             <span
               className="text-sm text-white px-1 py-0.5 bg-orange-700 rounded [text-shadow:_0_1px_0_rgb(0_0_0_/_30%)] lowercase"
@@ -25,6 +26,7 @@ const TopBar: React.FC = observer(() => {
           </div>
           <div className="block ml-6">
             <div className="flex text-body-200 text-xs font-medium space-x-2">
+              <Changelog />
               <a
                 href="https://discord.gg/JXeUnR9stP"
                 target="_blank"
