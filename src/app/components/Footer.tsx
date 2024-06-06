@@ -95,7 +95,7 @@ const Footer: React.FC = observer(() => {
           </div>
           <div className="text-sm">
             <p>
-              Manual mode allows you to edit various player stats, equipment bonuses, and monster stats manually.
+              Manual mode allows you to edit various player stats and equipment bonuses manually.
               This is
               {' '}
               <strong>likely</strong>

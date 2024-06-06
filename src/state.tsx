@@ -19,7 +19,7 @@ import {
   fetchPlayerSkills, fetchShortlinkData, getCombatStylesForCategory, PotionMap,
 } from '@/utils';
 import { ComputeBasicRequest, ComputeReverseRequest, WorkerRequestType } from '@/worker/CalcWorkerTypes';
-import getMonsters from '@/lib/Monsters';
+import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
 import { availableEquipment, calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { CalcWorker } from '@/worker/CalcWorker';
 import { spellByName } from '@/types/Spell';
@@ -36,25 +36,6 @@ import Potion from './enums/Potion';
 import { WikiSyncer, startPollingForRuneLite } from './wikisync/WikiSyncer';
 
 const EMPTY_CALC_LOADOUT = {} as CalculatedLoadout;
-
-const INITIAL_MONSTER_INPUTS: Monster['inputs'] = {
-  isFromCoxCm: false,
-  toaInvocationLevel: 0,
-  toaPathLevel: 0,
-  partyMaxCombatLevel: 126,
-  partyAvgMiningLevel: 99,
-  partyMaxHpLevel: 99,
-  partySize: 1,
-  monsterCurrentHp: 150,
-  defenceReductions: {
-    vulnerability: false,
-    accursed: false,
-    elderMaul: 0,
-    dwh: 0,
-    arclight: 0,
-    bgs: 0,
-  },
-};
 
 const generateInitialEquipment = () => {
   const initialEquipment: PlayerEquipment = {
@@ -441,10 +422,18 @@ class GlobalState implements State {
   }
 
   updateImportedData(data: ImportableData) {
-    if (data.monster && data.monster.id) {
-      const monsterById = getMonsters().find((m) => m.id === data.monster.id);
-      if (!monsterById) {
-        throw new Error(`Failed to find monster by id '${data.monster.id}' from shortlink`);
+    if (data.monster) {
+      let newMonster: PartialDeep<Monster> = {};
+
+      if (data.monster.id > -1) {
+        const monsterById = getMonsters().find((m) => m.id === data.monster.id);
+        if (!monsterById) {
+          throw new Error(`Failed to find monster by id '${data.monster.id}' from shortlink`);
+        }
+
+        newMonster = monsterById;
+      } else {
+        newMonster = data.monster;
       }
 
       // If the passed monster def reductions are different to the defaults, expand the UI section.
@@ -457,7 +446,7 @@ class GlobalState implements State {
 
       // only use the shortlink for user-input fields, trust cdn for others in case they change
       this.updateMonster({
-        ...monsterById,
+        ...newMonster,
         inputs: data.monster.inputs,
       });
     }
@@ -741,7 +730,7 @@ class GlobalState implements State {
         includeTtkDist: this.prefs.showTtkComparison,
         hitDistHideMisses: this.prefs.hitDistsHideZeros,
         detailedOutput: this.debug,
-        disableMonsterScaling: this.prefs.manualMode,
+        disableMonsterScaling: this.monster.id === -1,
       },
     };
     const request = async (type: WorkerRequestType.COMPUTE_BASIC | WorkerRequestType.COMPUTE_REVERSE) => {

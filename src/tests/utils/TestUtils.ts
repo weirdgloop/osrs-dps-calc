@@ -1,4 +1,4 @@
-import getMonsters from '@/lib/Monsters';
+import { getMonsters } from '@/lib/Monsters';
 import { Monster } from '@/types/Monster';
 import { EquipmentPiece, Player } from '@/types/Player';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
