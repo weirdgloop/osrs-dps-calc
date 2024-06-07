@@ -599,7 +599,7 @@ const MonsterContainer: React.FC = observer(() => {
 
                       {optionsExpanded && (
                         <div
-                          className="flex flex-wrap gap-4 text-sm py-2 max-h-48 overflow-auto px-2 bg-dark-500 rounded"
+                          className="flex flex-wrap gap-4 text-sm py-2 px-2 bg-dark-500 rounded"
                         >
                           {extraMonsterOptions}
                         </div>
