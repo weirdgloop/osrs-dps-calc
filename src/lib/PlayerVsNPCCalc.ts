@@ -492,12 +492,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     const baseRoll = effectiveLevel * (magicBonus + 64);
     let attackRoll = baseRoll;
+    let combinedModifier = 1.0;
 
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
       const factor = <Factor>[buffs.forinthrySurge ? 27 : 24, 20];
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_FORINTHRY_SURGE, attackRoll, factor);
     } else if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
-      attackRoll = Math.trunc(attackRoll * 6 / 5);
+      combinedModifier *= 6 / 5;
     } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       attackRoll = Math.trunc(attackRoll * 23 / 20);
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
@@ -512,11 +513,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       attackRoll = Math.trunc(attackRoll * 3 / 2);
     }
     if (this.isWearingSmokeStaff() && this.player.spell?.spellbook === 'standard') {
-      attackRoll = Math.trunc(attackRoll * 11 / 10);
+      combinedModifier *= 11 / 10;
     }
     if (this.wearing('Tome of water') && this.player.spell?.element === 'water' || isBindSpell(this.player.spell)) { // todo does this go here?
       attackRoll = Math.trunc(attackRoll * 6 / 5);
     }
+    attackRoll = Math.trunc(attackRoll * combinedModifier);
 
     const spellement = this.player.spell?.element;
     if (this.monster.weakness && spellement) {
