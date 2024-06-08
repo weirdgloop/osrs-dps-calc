@@ -492,7 +492,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     const baseRoll = effectiveLevel * (magicBonus + 64);
     let attackRoll = baseRoll;
-    let combinedModifier = 1.0
+    let combinedModifier = 1.0;
 
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
       const factor = <Factor>[buffs.forinthrySurge ? 27 : 24, 20];
