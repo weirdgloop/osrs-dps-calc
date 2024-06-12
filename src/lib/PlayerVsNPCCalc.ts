@@ -906,7 +906,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         (h) => new HitDistribution([
           new WeightedHit(0.75, [h]),
           new WeightedHit(0.25, [new Hitsplat(Math.trunc(h.damage * 13 / 10), h.accurate)]),
-        ])
+        ]),
       );
     }
 
