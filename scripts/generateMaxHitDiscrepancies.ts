@@ -1,4 +1,4 @@
-import getMonsters from '@/lib/Monsters';
+import { getMonsters } from '@/lib/Monsters';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
 import { generateEmptyPlayer } from '@/state';
 

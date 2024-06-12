@@ -23,7 +23,7 @@ export function isBindSpell(spell: Spell | null): boolean {
 }
 
 export function getSpellMaxHit(spell: Spell, magicLevel: number): number {
-  if (!spell.element || spell.name === 'Flames of Zamorak') {
+  if (!spell.element) {
     return spell?.max_hit;
   }
 
