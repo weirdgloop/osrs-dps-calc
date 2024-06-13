@@ -964,7 +964,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
       if (this.wearing(['Onyx bolts (e)', 'Onyx dragon bolts (e)']) && !mattrs.includes(MonsterAttribute.UNDEAD)) {
         const chance = 0.11 * kandarinDiaryFactor;
-        const effectMax = max + Math.trunc(rangedLvl * (zaryte ? 32 : 20) / 100);
+        const effectMax = Math.trunc(max * (zaryte ? 132 : 120) / 100);
         dist = new AttackDistribution([
           new HitDistribution([
             ...standardHitDist.scaleProbability(1 - chance).hits,
