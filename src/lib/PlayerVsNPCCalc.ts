@@ -919,20 +919,24 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       if (this.wearing(['Opal bolts (e)', 'Opal dragon bolts (e)'])) {
         const chance = 0.05 * kandarinDiaryFactor;
         const bonusDmg = Math.trunc(rangedLvl / (zaryte ? 9 : 10));
-        dist = dist.transform((h) => new HitDistribution([
-          new WeightedHit(chance, [new Hitsplat(h.damage + bonusDmg, h.accurate)]),
-          new WeightedHit(1 - chance, [h]),
-        ]));
+        dist = new AttackDistribution([
+          new HitDistribution([
+            ...standardHitDist.scaleProbability(1 - chance).hits,
+            ...HitDistribution.linear(1.0, bonusDmg, max + bonusDmg).scaleProbability(chance).hits,
+          ]),
+        ]);
       }
 
       if (this.wearing(['Pearl bolts (e)', 'Pearl dragon bolts (e)'])) {
         const chance = 0.06 * kandarinDiaryFactor;
         const divisor = mattrs.includes(MonsterAttribute.FIERY) ? 15 : 20;
         const bonusDmg = Math.trunc(rangedLvl / (zaryte ? divisor - 2 : divisor));
-        dist = dist.transform((h) => new HitDistribution([
-          new WeightedHit(chance, [new Hitsplat(h.damage + bonusDmg, h.accurate)]),
-          new WeightedHit(1 - chance, [h]),
-        ]));
+        dist = new AttackDistribution([
+          new HitDistribution([
+            ...standardHitDist.scaleProbability(1 - chance).hits,
+            ...HitDistribution.linear(1.0, bonusDmg, max + bonusDmg).scaleProbability(chance).hits,
+          ]),
+        ]);
       }
 
       if (this.wearing(['Diamond bolts (e)', 'Diamond dragon bolts (e)'])) {
