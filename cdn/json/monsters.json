@@ -27508,7 +27508,7 @@
     "name": "Fremennik warband berserker",
     "version": "",
     "image": "Fremennik warband berserker.png",
-    "level": 104,
+    "level": 103,
     "speed": 6,
     "style": [
       "Stab"
@@ -40125,7 +40125,7 @@
     },
     "defensive": {
       "crush": 110,
-      "magic": 60,
+      "magic": 40,
       "heavy": 140,
       "standard": 140,
       "light": 140,
@@ -83173,7 +83173,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000097-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000043-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -83214,7 +83214,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000097-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000043-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -85208,7 +85208,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000007B-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000001C-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -85248,7 +85248,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000007D-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000001E-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -85671,7 +85671,7 @@
     "skills": {
       "atk": 400,
       "def": 200,
-      "hp": 3250,
+      "hp": 3500,
       "magic": 400,
       "ranged": 400,
       "str": 400
@@ -85713,7 +85713,7 @@
     "skills": {
       "atk": 400,
       "def": 150,
-      "hp": 3250,
+      "hp": 3500,
       "magic": 300,
       "ranged": 300,
       "str": 400
@@ -85795,7 +85795,7 @@
     "skills": {
       "atk": 400,
       "def": 200,
-      "hp": 3250,
+      "hp": 3500,
       "magic": 400,
       "ranged": 400,
       "str": 400
@@ -85837,7 +85837,7 @@
     "skills": {
       "atk": 400,
       "def": 150,
-      "hp": 3250,
+      "hp": 3500,
       "magic": 300,
       "ranged": 300,
       "str": 400
@@ -91082,7 +91082,7 @@
       "Poison"
     ],
     "size": 5,
-    "max_hit": "6",
+    "max_hit": "6 (38+ recoil)",
     "skills": {
       "atk": 1,
       "def": 100,

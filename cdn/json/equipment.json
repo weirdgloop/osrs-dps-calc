@@ -42100,7 +42100,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 0,
+      "magic_str": 10,
       "prayer": 0
     },
     "offensive": {
@@ -42130,7 +42130,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 0,
+      "magic_str": 10,
       "prayer": 0
     },
     "offensive": {
@@ -42160,7 +42160,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 0,
+      "magic_str": 10,
       "prayer": 0
     },
     "offensive": {
@@ -78940,7 +78940,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 0,
+      "magic_str": 10,
       "prayer": 0
     },
     "offensive": {
@@ -79000,7 +79000,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 0,
+      "magic_str": 10,
       "prayer": 0
     },
     "offensive": {
