@@ -578,7 +578,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     } else if (this.wearing(['Crystal staff (perfected)', 'Corrupted staff (perfected)'])) {
       maxHit = 39;
     } else if (this.wearing('Swamp lizard')) {
-      maxHit = Math.trunc((magicLevel * (56) + 320) / 640);
+      maxHit = Math.trunc((magicLevel * (56 + 64) + 320) / 640);
     } else if (this.wearing('Orange salamander')) {
       maxHit = Math.trunc((magicLevel * (59 + 64) + 320) / 640);
     } else if (this.wearing('Red salamander')) {
