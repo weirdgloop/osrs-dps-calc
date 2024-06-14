@@ -632,10 +632,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_FORINTHRY_SURGE, maxHit, factor);
     }
 
-    if (this.player.buffs.markOfDarknessSpell && this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([5, 20]));
-    }
-
     if (this.isRevWeaponBuffApplicable()) {
       maxHit = Math.trunc(maxHit * 3 / 2);
     }
@@ -901,13 +897,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.transform(multiplyTransformer(factor, divisor));
     }
 
+    if (this.player.buffs.markOfDarknessSpell && this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
+      dist = dist.scaleDamage(5, 4);
+    }
+
     if (this.player.style.type === 'magic' && this.isWearingAhrims()) {
-      dist = new AttackDistribution([
-        new HitDistribution([
-          ...standardHitDist.scaleProbability(0.75).hits,
-          ...standardHitDist.scaleProbability(0.25).scaleDamage(13, 10).hits,
+      dist = dist.transform(
+        (h) => new HitDistribution([
+          new WeightedHit(0.75, [h]),
+          new WeightedHit(0.25, [new Hitsplat(Math.trunc(h.damage * 13 / 10), h.accurate)]),
         ]),
-      ]);
+      );
     }
 
     // bolt effects
