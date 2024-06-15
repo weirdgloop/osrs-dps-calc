@@ -93,6 +93,12 @@ const applyDefenceReductions = (m: Monster): Monster => {
     });
   }
 
+  for (let i = 0; i < reductions.tonalztic; i++) {
+    m = newSkills(m, {
+      def: m.skills.def - Math.trunc(m.skills.magic / 10),
+    });
+  }
+
   let bgsDmg = reductions.bgs;
   if (bgsDmg > 0) {
     const applyBgsDmg = (skill: number): number => {

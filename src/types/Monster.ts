@@ -93,6 +93,7 @@ export interface Monster {
       dwh: number;
       arclight: number;
       bgs: number;
+      tonalztic: number;
     }
   }
 }
