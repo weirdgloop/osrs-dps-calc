@@ -343,8 +343,8 @@ export function divisionTransformer(divisor: number, minimum: number = 0): HitTr
   return multiplyTransformer(1, divisor, minimum);
 }
 
-export function flatAddTransformer(addend: number): HitTransformer {
+export function flatAddTransformer(addend: number, minimum: number = 0): HitTransformer {
   return (h) => new HitDistribution([
-    new WeightedHit(1.0, [new Hitsplat(Math.max(0, h.damage + addend), h.accurate)]),
+    new WeightedHit(1.0, [new Hitsplat(Math.max(minimum, h.damage + addend), h.accurate)]),
   ]);
 }
