@@ -975,7 +975,15 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
-    // we apply corp early and rubies late since corp takes full ruby bolt effect damage
+    // raise accurate 0s to 1
+    dist = dist.transform(
+      (h) => HitDistribution.single(1.0, Math.max(h.damage, 1)),
+      { transformInaccurate: false },
+    );
+
+    // we apply corp earlier than other limiters,
+    // and rubies later than other bolts,
+    // since corp takes full ruby bolt effect damage but reduced damage from bolts otherwise
     if (this.monster.name === 'Corporeal Beast' && !this.isWearingCorpbaneWeapon()) {
       dist = dist.transform(divisionTransformer(2));
     }
@@ -995,11 +1003,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         ]);
       }
     }
-
-    dist = dist.transform(
-      (h) => HitDistribution.single(1.0, Math.max(h.damage, 1)),
-      { transformInaccurate: false },
-    );
 
     return this.applyNpcTransforms(dist);
   }
