@@ -5342,7 +5342,7 @@
     "skills": {
       "atk": 40,
       "def": 12,
-      "hp": 25,
+      "hp": 20,
       "magic": 40,
       "ranged": 40,
       "str": 40
@@ -5382,7 +5382,7 @@
     "skills": {
       "atk": 60,
       "def": 20,
-      "hp": 30,
+      "hp": 25,
       "magic": 60,
       "ranged": 40,
       "str": 60
@@ -60465,6 +60465,326 @@
     "weakness": null
   },
   {
+    "id": 1740,
+    "name": "Portal (Pest Control)",
+    "version": "Blue, intermediate/veteran",
+    "image": "Blue Portal.png",
+    "level": 0,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 3,
+    "max_hit": "0 (Does not attack)",
+    "skills": {
+      "atk": 0,
+      "def": 120,
+      "hp": 250,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 100,
+      "magic": 0,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 1748,
+    "name": "Portal (Pest Control)",
+    "version": "Blue, novice",
+    "image": "Blue Portal.png",
+    "level": 0,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 3,
+    "max_hit": "0 (Does not attack)",
+    "skills": {
+      "atk": 0,
+      "def": 120,
+      "hp": 200,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 100,
+      "magic": 0,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 1739,
+    "name": "Portal (Pest Control)",
+    "version": "Purple, intermediate/veteran",
+    "image": "Pink Portal.png",
+    "level": 0,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 3,
+    "max_hit": "0 (Does not attack)",
+    "skills": {
+      "atk": 0,
+      "def": 120,
+      "hp": 250,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 100,
+      "magic": 100,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 1747,
+    "name": "Portal (Pest Control)",
+    "version": "Purple, novice",
+    "image": "Pink Portal.png",
+    "level": 0,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 3,
+    "max_hit": "0 (Does not attack)",
+    "skills": {
+      "atk": 0,
+      "def": 120,
+      "hp": 200,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 100,
+      "magic": 100,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 1742,
+    "name": "Portal (Pest Control)",
+    "version": "Red, intermediate/veteran",
+    "image": "Red Portal.png",
+    "level": 0,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 3,
+    "max_hit": "0 (Does not attack)",
+    "skills": {
+      "atk": 0,
+      "def": 120,
+      "hp": 250,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 100,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 1750,
+    "name": "Portal (Pest Control)",
+    "version": "Red, novice",
+    "image": "Red Portal.png",
+    "level": 0,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 3,
+    "max_hit": "0 (Does not attack)",
+    "skills": {
+      "atk": 0,
+      "def": 120,
+      "hp": 200,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 100,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 1741,
+    "name": "Portal (Pest Control)",
+    "version": "Yellow, intermediate/veteran",
+    "image": "Yellow Portal.png",
+    "level": 0,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 3,
+    "max_hit": "0 (Does not attack)",
+    "skills": {
+      "atk": 0,
+      "def": 120,
+      "hp": 250,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 100,
+      "magic": 100,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 1749,
+    "name": "Portal (Pest Control)",
+    "version": "Yellow, novice",
+    "image": "Yellow Portal.png",
+    "level": 0,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 3,
+    "max_hit": "0 (Does not attack)",
+    "skills": {
+      "atk": 0,
+      "def": 120,
+      "hp": 200,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 100,
+      "magic": 100,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
     "id": 4210,
     "name": "Possessed Priest",
     "version": "",
@@ -83173,7 +83493,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000043-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000004B-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -83214,7 +83534,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000043-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000004B-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -85208,7 +85528,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000001C-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000038-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -85248,7 +85568,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000001E-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000003A-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
