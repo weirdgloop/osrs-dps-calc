@@ -560,7 +560,7 @@ export const getCombatStylesForCategory = (style: EquipmentCategory): PlayerComb
     case EquipmentCategory.SALAMANDER:
       ret = [
         { name: 'Scorch', type: 'slash', stance: 'Aggressive' },
-        { name: 'Flare', type: 'ranged', stance: 'Accurate' },
+        { name: 'Flare', type: 'ranged', stance: 'Rapid' },
         { name: 'Blaze', type: 'magic', stance: 'Defensive' },
       ];
       break;
