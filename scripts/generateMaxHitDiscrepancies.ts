@@ -41,6 +41,7 @@ const generateMaxHitDiscrepancies = () => {
           dwh: 0,
           arclight: 0,
           bgs: 0,
+          tonalztic: 0,
         },
       },
     });

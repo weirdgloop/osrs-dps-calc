@@ -12,14 +12,8 @@ import {
   multiplyTransformer,
   WeightedHit,
 } from '@/lib/HitDist';
-import {
-  getSpellMaxHit,
-  canUseSunfireRunes,
-  isBindSpell,
-} from '@/types/Spell';
-import {
-  PrayerData, PrayerMap,
-} from '@/enums/Prayer';
+import { canUseSunfireRunes, getSpellMaxHit, isBindSpell } from '@/types/Spell';
+import { PrayerData, PrayerMap } from '@/enums/Prayer';
 import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
   ALWAYS_MAX_HIT_MONSTERS,
@@ -35,19 +29,20 @@ import {
   NIGHTMARE_TOTEM_IDS,
   OLM_HEAD_IDS,
   OLM_MAGE_HAND_IDS,
-  OLM_MELEE_HAND_IDS, ONE_HIT_MONSTERS, SECONDS_PER_TICK,
+  OLM_MELEE_HAND_IDS,
+  ONE_HIT_MONSTERS,
+  SECONDS_PER_TICK,
   TEKTON_IDS,
-  TOMBS_OF_AMASCUT_MONSTER_IDS, TTK_DIST_EPSILON, TTK_DIST_MAX_ITER_ROUNDS,
+  TOMBS_OF_AMASCUT_MONSTER_IDS,
+  TTK_DIST_EPSILON,
+  TTK_DIST_MAX_ITER_ROUNDS,
   USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
   VERZIK_P1_IDS,
 } from '@/lib/constants';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { DetailKey } from '@/lib/CalcDetails';
 import { Factor, MinMax } from '@/lib/Math';
-import {
-  AmmoApplicability,
-  ammoApplicability,
-} from '@/lib/Equipment';
+import { AmmoApplicability, ammoApplicability } from '@/lib/Equipment';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { getRangedDamageType } from '@/types/PlayerCombatStyle';
@@ -464,6 +459,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = this.trackAdd(DetailKey.MAX_HIT_RATBANE, maxHit, 10);
     }
 
+    if (this.wearing('Tonalztics of ralos')) {
+      // rolls 75% of max hit, but can hit twice
+      // double hit is implemented in hit distribution
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_TONALZTICS, maxHit, [3, 4]);
+    }
+
     return [0, maxHit]; // ranged has no min hit behaviours (aside from always-max, which is lower down)
   }
 
@@ -810,6 +811,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       || (this.isUsingMeleeStyle() && ALWAYS_MAX_HIT_MONSTERS.melee.includes(this.monster.id))
       || (this.player.style.type === 'ranged' && ALWAYS_MAX_HIT_MONSTERS.ranged.includes(this.monster.id))) {
       return new AttackDistribution([HitDistribution.single(1.0, max)]);
+    }
+
+    if (style === 'ranged' && this.wearing('Tonalztics of ralos') && this.player.equipment.weapon?.version === 'Charged') {
+      // roll two independent hits
+      dist = new AttackDistribution([standardHitDist, standardHitDist]);
     }
 
     if (this.isUsingMeleeStyle() && this.wearing('Gadderhammer') && mattrs.includes(MonsterAttribute.SHADE)) {
