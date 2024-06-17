@@ -40,6 +40,20 @@ const Changelog: React.FC = () => {
         title="Changelog"
       >
         <div className="text-sm bg-dark-500 rounded p-2 shadow-inner border border-dark-200 overflow-auto max-h-64">
+          <ChangelogEntry date="17 June 2024">
+            <li>
+              Fixed a bug in Corporeal Beast calculation.
+            </li>
+            <li>
+              Fixed a bug with flat armour calculation.
+            </li>
+            <li>
+              Fixed a bug with salamander accuracy bonus and attack speed.
+            </li>
+            <li>
+              Added tonalztics of ralos to defensive reductions section of the monster panel.
+            </li>
+          </ChangelogEntry>
           <ChangelogEntry date="7 June 2024">
             <li>
               Added the ability to create a custom monster by selecting it in the monster dropdown. This allows you to
