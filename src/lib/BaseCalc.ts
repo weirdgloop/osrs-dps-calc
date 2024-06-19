@@ -592,8 +592,7 @@ export default class BaseCalc {
 
     // Some set effects are currently not accounted for
     if (
-      this.wearingAll(['Blood moon helm', 'Blood moon chestplate', 'Blood moon tassets', 'Dual macuahuitl'])
-      || this.wearingAll(['Blue moon helm', 'Blue moon chestplate', 'Blue moon tassets', 'Blue moon spear'])
+      this.wearingAll(['Blue moon helm', 'Blue moon chestplate', 'Blue moon tassets', 'Blue moon spear'])
       || this.wearingAll(['Eclipse moon helm', 'Eclipse moon chestplate', 'Eclipse moon tassets', 'Eclipse atlatl'])
     ) {
       this.addIssue(UserIssueType.EQUIPMENT_SET_EFFECT_UNSUPPORTED, 'The calculator currently does not account for your equipment set effect.');

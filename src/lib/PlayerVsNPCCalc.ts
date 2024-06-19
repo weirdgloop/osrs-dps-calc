@@ -1152,6 +1152,14 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
+    // Blood moon set effect
+    if (
+      this.wearingAll(['Blood moon helm', 'Blood moon chestplate', 'Blood moon tassets', 'Dual macuahuitl'])
+    ) {
+      const acc = this.getHitChance();
+      const procChance = (acc * acc) * 2 / 9;
+      attackSpeed -= procChance;
+    }
     return attackSpeed;
   }
 
