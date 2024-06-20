@@ -6,6 +6,7 @@ import vuln from '@/public/img/def_reductions/Vulnerability.png';
 import bgs from '@/public/img/def_reductions/Bandos_godsword.webp';
 import sceptre from '@/public/img/def_reductions/Accursed sceptre.png';
 import elderMaul from '@/public/img/def_reductions/Elder_maul.png';
+import tonalztic from '@/public/img/def_reductions/Tonalztics_of_ralos.png';
 import dwh from '@/public/img/def_reductions/Dragon_warhammer.webp';
 import arc from '@/public/img/def_reductions/Arclight.png';
 import { observer } from 'mobx-react-lite';
@@ -67,20 +68,6 @@ const DefensiveReductions: React.FC = observer(() => {
               className="form-control w-1/6"
               required
               min={0}
-              value={defenceReductions.bgs}
-              onChange={(v) => store.updateMonster({ inputs: { defenceReductions: { bgs: v } } })}
-            />
-            <span className="pl-2">
-              <img src={bgs.src} width={18} className="inline-block" alt="" />
-              {' '}
-              Bandos godsword damage
-            </span>
-          </div>
-          <div className="w-full">
-            <NumberInput
-              className="form-control w-1/6"
-              required
-              min={0}
               value={defenceReductions.arclight}
               onChange={(v) => store.updateMonster({ inputs: { defenceReductions: { arclight: v } } })}
             />
@@ -88,6 +75,34 @@ const DefensiveReductions: React.FC = observer(() => {
               <img src={arc.src} width={18} className="inline-block" alt="" />
               {' '}
               Arclight hits
+            </span>
+          </div>
+          <div className="w-full">
+            <NumberInput
+              className="form-control w-1/6"
+              required
+              min={0}
+              value={defenceReductions.tonalztic}
+              onChange={(v) => store.updateMonster({ inputs: { defenceReductions: { tonalztic: v } } })}
+            />
+            <span className="pl-2">
+              <img src={tonalztic.src} width={18} className="inline-block" alt="" />
+              {' '}
+              Tonalztics of ralos&apos; hits
+            </span>
+          </div>
+          <div className="w-full">
+            <NumberInput
+              className="form-control w-1/6"
+              required
+              min={0}
+              value={defenceReductions.bgs}
+              onChange={(v) => store.updateMonster({ inputs: { defenceReductions: { bgs: v } } })}
+            />
+            <span className="pl-2">
+              <img src={bgs.src} width={18} className="inline-block" alt="" />
+              {' '}
+              Bandos godsword damage
             </span>
           </div>
           <Toggle

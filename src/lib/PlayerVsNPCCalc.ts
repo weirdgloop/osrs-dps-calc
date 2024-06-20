@@ -12,14 +12,8 @@ import {
   multiplyTransformer,
   WeightedHit,
 } from '@/lib/HitDist';
-import {
-  getSpellMaxHit,
-  canUseSunfireRunes,
-  isBindSpell,
-} from '@/types/Spell';
-import {
-  PrayerData, PrayerMap,
-} from '@/enums/Prayer';
+import { canUseSunfireRunes, getSpellMaxHit, isBindSpell } from '@/types/Spell';
+import { PrayerData, PrayerMap } from '@/enums/Prayer';
 import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
   ALWAYS_MAX_HIT_MONSTERS,
@@ -35,19 +29,20 @@ import {
   NIGHTMARE_TOTEM_IDS,
   OLM_HEAD_IDS,
   OLM_MAGE_HAND_IDS,
-  OLM_MELEE_HAND_IDS, ONE_HIT_MONSTERS, SECONDS_PER_TICK,
+  OLM_MELEE_HAND_IDS,
+  ONE_HIT_MONSTERS,
+  SECONDS_PER_TICK,
   TEKTON_IDS,
-  TOMBS_OF_AMASCUT_MONSTER_IDS, TTK_DIST_EPSILON, TTK_DIST_MAX_ITER_ROUNDS,
+  TOMBS_OF_AMASCUT_MONSTER_IDS,
+  TTK_DIST_EPSILON,
+  TTK_DIST_MAX_ITER_ROUNDS,
   USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
   VERZIK_P1_IDS,
 } from '@/lib/constants';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { DetailKey } from '@/lib/CalcDetails';
 import { Factor, MinMax } from '@/lib/Math';
-import {
-  AmmoApplicability,
-  ammoApplicability,
-} from '@/lib/Equipment';
+import { AmmoApplicability, ammoApplicability } from '@/lib/Equipment';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { getRangedDamageType } from '@/types/PlayerCombatStyle';
@@ -464,6 +459,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = this.trackAdd(DetailKey.MAX_HIT_RATBANE, maxHit, 10);
     }
 
+    if (this.wearing('Tonalztics of ralos')) {
+      // rolls 75% of max hit, but can hit twice
+      // double hit is implemented in hit distribution
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_TONALZTICS, maxHit, [3, 4]);
+    }
+
     return [0, maxHit]; // ranged has no min hit behaviours (aside from always-max, which is lower down)
   }
 
@@ -578,7 +579,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     } else if (this.wearing(['Crystal staff (perfected)', 'Corrupted staff (perfected)'])) {
       maxHit = 39;
     } else if (this.wearing('Swamp lizard')) {
-      maxHit = Math.trunc((magicLevel * (56) + 320) / 640);
+      maxHit = Math.trunc((magicLevel * (56 + 64) + 320) / 640);
     } else if (this.wearing('Orange salamander')) {
       maxHit = Math.trunc((magicLevel * (59 + 64) + 320) / 640);
     } else if (this.wearing('Red salamander')) {
@@ -630,10 +631,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     } else if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
       const factor = <Factor>[buffs.forinthrySurge ? 27 : 24, 20];
       maxHit = this.trackFactor(DetailKey.MAX_HIT_FORINTHRY_SURGE, maxHit, factor);
-    }
-
-    if (this.player.buffs.markOfDarknessSpell && this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([5, 20]));
     }
 
     if (this.isRevWeaponBuffApplicable()) {
@@ -816,6 +813,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return new AttackDistribution([HitDistribution.single(1.0, max)]);
     }
 
+    if (style === 'ranged' && this.wearing('Tonalztics of ralos') && this.player.equipment.weapon?.version === 'Charged') {
+      // roll two independent hits
+      dist = new AttackDistribution([standardHitDist, standardHitDist]);
+    }
+
     if (this.isUsingMeleeStyle() && this.wearing('Gadderhammer') && mattrs.includes(MonsterAttribute.SHADE)) {
       dist = new AttackDistribution([
         new HitDistribution([
@@ -908,13 +910,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.transform(multiplyTransformer(factor, divisor));
     }
 
+    if (this.player.buffs.markOfDarknessSpell && this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
+      dist = dist.scaleDamage(5, 4);
+    }
+
     if (this.player.style.type === 'magic' && this.isWearingAhrims()) {
-      dist = new AttackDistribution([
-        new HitDistribution([
-          ...standardHitDist.scaleProbability(0.75).hits,
-          ...standardHitDist.scaleProbability(0.25).scaleDamage(13, 10).hits,
+      dist = dist.transform(
+        (h) => new HitDistribution([
+          new WeightedHit(0.75, [h]),
+          new WeightedHit(0.25, [new Hitsplat(Math.trunc(h.damage * 13 / 10), h.accurate)]),
         ]),
-      ]);
+      );
     }
 
     // bolt effects
@@ -926,20 +932,24 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       if (this.wearing(['Opal bolts (e)', 'Opal dragon bolts (e)'])) {
         const chance = 0.05 * kandarinDiaryFactor;
         const bonusDmg = Math.trunc(rangedLvl / (zaryte ? 9 : 10));
-        dist = dist.transform((h) => new HitDistribution([
-          new WeightedHit(chance, [new Hitsplat(h.damage + bonusDmg, h.accurate)]),
-          new WeightedHit(1 - chance, [h]),
-        ]));
+        dist = new AttackDistribution([
+          new HitDistribution([
+            ...standardHitDist.scaleProbability(1 - chance).hits,
+            ...HitDistribution.linear(1.0, bonusDmg, max + bonusDmg).scaleProbability(chance).hits,
+          ]),
+        ]);
       }
 
       if (this.wearing(['Pearl bolts (e)', 'Pearl dragon bolts (e)'])) {
         const chance = 0.06 * kandarinDiaryFactor;
         const divisor = mattrs.includes(MonsterAttribute.FIERY) ? 15 : 20;
         const bonusDmg = Math.trunc(rangedLvl / (zaryte ? divisor - 2 : divisor));
-        dist = dist.transform((h) => new HitDistribution([
-          new WeightedHit(chance, [new Hitsplat(h.damage + bonusDmg, h.accurate)]),
-          new WeightedHit(1 - chance, [h]),
-        ]));
+        dist = new AttackDistribution([
+          new HitDistribution([
+            ...standardHitDist.scaleProbability(1 - chance).hits,
+            ...HitDistribution.linear(1.0, bonusDmg, max + bonusDmg).scaleProbability(chance).hits,
+          ]),
+        ]);
       }
 
       if (this.wearing(['Diamond bolts (e)', 'Diamond dragon bolts (e)'])) {
@@ -967,7 +977,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
       if (this.wearing(['Onyx bolts (e)', 'Onyx dragon bolts (e)']) && !mattrs.includes(MonsterAttribute.UNDEAD)) {
         const chance = 0.11 * kandarinDiaryFactor;
-        const effectMax = max + Math.trunc(rangedLvl * (zaryte ? 32 : 20) / 100);
+        const effectMax = Math.trunc(max * (zaryte ? 132 : 120) / 100);
         dist = new AttackDistribution([
           new HitDistribution([
             ...standardHitDist.scaleProbability(1 - chance).hits,
@@ -978,7 +988,15 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
-    // we apply corp early and rubies late since corp takes full ruby bolt effect damage
+    // raise accurate 0s to 1
+    dist = dist.transform(
+      (h) => HitDistribution.single(1.0, Math.max(h.damage, 1)),
+      { transformInaccurate: false },
+    );
+
+    // we apply corp earlier than other limiters,
+    // and rubies later than other bolts,
+    // since corp takes full ruby bolt effect damage but reduced damage from bolts otherwise
     if (this.monster.name === 'Corporeal Beast' && !this.isWearingCorpbaneWeapon()) {
       dist = dist.transform(divisionTransformer(2));
     }
@@ -998,11 +1016,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         ]);
       }
     }
-
-    dist = dist.transform(
-      (h) => HitDistribution.single(1.0, Math.max(h.damage, 1)),
-      { transformInaccurate: false },
-    );
 
     return this.applyNpcTransforms(dist);
   }
@@ -1068,7 +1081,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const flatArmour = FLAT_ARMOUR[this.monster.id];
     if (flatArmour) {
       dist = dist.transform(
-        flatAddTransformer(-flatArmour),
+        flatAddTransformer(-flatArmour, 1),
         { transformInaccurate: false },
       );
     }
