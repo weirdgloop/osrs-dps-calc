@@ -1,11 +1,18 @@
 /* eslint max-classes-per-file: 0 */
 /* eslint @typescript-eslint/no-use-before-define: 0 */
 import {
-  cross, max, some, sum,
+  cross,
+  max,
+  some,
+  sum,
 } from 'd3-array';
 import { ChartEntry } from '@/types/State';
 
 export type HitTransformer = (hitsplat: Hitsplat) => HitDistribution;
+
+export type ProbabilisticDelay = [probability: number, delay: number];
+export type WeaponDelayProvider = (wh: WeightedHit) => ProbabilisticDelay[];
+export type DelayedHit = [wh: WeightedHit, delay: number];
 
 export type TransformOpts = {
   transformInaccurate: boolean,
@@ -74,8 +81,13 @@ export class WeightedHit {
     return some(this.hitsplats, (h) => h.accurate);
   }
 
+  private _sum?: number;
+
   public getSum(): number {
-    return sum(this.hitsplats, (h) => h.damage);
+    if (this._sum === undefined) {
+      this._sum = sum(this.hitsplats, (h) => h.damage);
+    }
+    return this._sum;
   }
 
   public getExpectedValue(): number {
@@ -197,6 +209,41 @@ export class HitDistribution {
       .map((h) => h.getSum())) as number;
   }
 
+  public withProbabilisticDelays(delayProvider: WeaponDelayProvider): DelayedHit[] {
+    const hits: ReturnType<HitDistribution['withProbabilisticDelays']> = [];
+    this.hits.forEach((wh) => {
+      const delays = delayProvider(wh);
+      delays.forEach(([probability, delay]) => hits.push([
+        new WeightedHit(
+          wh.probability * probability,
+          [new Hitsplat(wh.getSum(), wh.anyAccurate())],
+        ),
+        delay,
+      ]));
+    });
+
+    // dedupe the results and merge entries
+    const d: ReturnType<HitDistribution['withProbabilisticDelays']> = [];
+    const acc = new Map<number, number>();
+    for (const [wh, delay] of hits) {
+      const key = (wh.getSum() & 0xFFFFFF) | (delay << 24);
+      const prev = acc.get(key);
+      if (prev === undefined) {
+        acc.set(key, wh.probability);
+      } else {
+        acc.set(key, prev + wh.probability);
+      }
+    }
+
+    for (const [key, prob] of acc.entries()) {
+      const delay = (key & 0x8F000000) >> 24;
+      const dmg = key & 0xFFFFFF;
+      d.push([new WeightedHit(prob, [new Hitsplat(dmg, true)]), delay]);
+    }
+
+    return d;
+  }
+
   public static linear(accuracy: number, min: number, maximum: number): HitDistribution {
     const d = new HitDistribution([]);
     const hitProb = accuracy / (maximum - min + 1);
@@ -221,11 +268,20 @@ export class HitDistribution {
 export class AttackDistribution {
   readonly dists: HitDistribution[];
 
-  private _singleHitsplat: HitDistribution | undefined = undefined;
+  private _zipped?: HitDistribution;
+
+  get zipped(): HitDistribution {
+    if (!this._zipped) {
+      this._zipped = this.dists.reduce((prev, curr) => prev.zip(curr));
+    }
+    return this._zipped;
+  }
+
+  private _singleHitsplat?: HitDistribution;
 
   get singleHitsplat(): HitDistribution {
     if (!this._singleHitsplat) {
-      this._singleHitsplat = this.dists.reduce((prev, curr) => prev.zip(curr)).cumulative();
+      this._singleHitsplat = this.zipped.cumulative();
     }
     return this._singleHitsplat;
   }
