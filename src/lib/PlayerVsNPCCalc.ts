@@ -1158,11 +1158,21 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     return attackSpeed;
   }
 
+  public getExpectedAttackSpeed() {
+    if (this.isWearingBloodMoonSet()) {
+      const acc = this.getHitChance();
+      const procChance = (acc / 3) + ((acc * acc) * 2 / 9);
+      return this.getAttackSpeed() - procChance;
+    }
+
+    return this.getAttackSpeed();
+  }
+
   /**
    * Returns the expected damage per tick, based on the player's attack speed.
    */
   public getDpt() {
-    return this.getDistribution().getExpectedDamage() / this.getAttackSpeed();
+    return this.getDistribution().getExpectedDamage() / this.getExpectedAttackSpeed();
   }
 
   /**
@@ -1203,13 +1213,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    * Returns the average time-to-kill (in seconds) calculation.
    */
   public getTtk() {
-    return this.getHtk() * this.getAttackSpeed() * SECONDS_PER_TICK;
+    return this.getHtk() * this.getExpectedAttackSpeed() * SECONDS_PER_TICK;
   }
 
   private getWeaponDelayProvider(): WeaponDelayProvider {
     const baseSpeed = this.getAttackSpeed();
 
-    if (this.wearing('Dual macuahuitl')) {
+    if (this.isWearingBloodMoonSet()) {
       return (wh) => {
         let chanceNoEffect = 1.0;
         for (const splat of wh.hitsplats) {
