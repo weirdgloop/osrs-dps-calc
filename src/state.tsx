@@ -27,7 +27,7 @@ import {
   ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, OVERHEAD_PRAYERS, Prayer,
 } from './enums/Prayer';
 import Potion from './enums/Potion';
-import { WikiSyncer } from './wikisync/WikiSyncer';
+import { WikiSyncer, startPollingForRuneLite } from './wikisync/WikiSyncer';
 
 const EMPTY_CALC_LOADOUT = {} as CalculatedLoadout;
 
@@ -746,7 +746,7 @@ class GlobalState implements State {
 
     if (this.prefs.showTtkComparison) {
       const resp = await this.calcWorker.do({
-        type: WorkerRequestType.COMPUTE_TTK,
+        type: WorkerRequestType.COMPUTE_TTK_PARALLEL,
         data,
       });
 

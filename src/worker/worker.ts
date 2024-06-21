@@ -107,7 +107,7 @@ const createTtkWorker = (): OneShotWorker<TtkResponse> => {
     worker.terminate();
     promise.resolve(result);
   };
-  worker.onerror = (ev: ErrorEvent) => console.error(ev);
+  worker.onerror = (ev: ErrorEvent) => console.error(ev.message, ev);
   return { promise, worker };
 };
 

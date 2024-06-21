@@ -1267,7 +1267,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     // const tickHps = range(0, iterMax + 1).map(() => new Float64Array(this.monster.skills.hp + 1));
     // distribution of health values at current iter step
-    const h = iterMax + 1;
+    const h = iterMax + 20;
     const w = this.monster.skills.hp + 1;
     const tickHpsRoot = new Float64Array(h * w);
     const tickHps = range(0, h).map((i) => tickHpsRoot.subarray(w * i, w * (i + 1)));
