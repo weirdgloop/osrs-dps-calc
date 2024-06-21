@@ -13,6 +13,7 @@ import {
 export enum WorkerRequestType {
   COMPUTE_BASIC,
   COMPUTE_REVERSE,
+  COMPUTE_TTK_PARALLEL,
   COMPUTE_TTK,
   COMPARE,
 }
@@ -23,7 +24,6 @@ export interface WorkerRequest<T extends WorkerRequestType> {
 }
 
 export interface WorkerCalcOpts {
-  includeTtkDist?: boolean,
   hitDistHideMisses?: boolean,
   detailedOutput?: CalcOpts['detailedOutput'],
   disableMonsterScaling?: CalcOpts['disableMonsterScaling'],
@@ -56,10 +56,24 @@ export interface CompareRequest extends WorkerRequest<WorkerRequestType.COMPARE>
   },
 }
 
+export interface TtkRequest extends WorkerRequest<WorkerRequestType.COMPUTE_TTK> {
+  data: {
+    loadouts: Player[],
+    monster: Monster,
+    calcOpts: WorkerCalcOpts,
+  },
+}
+
+export interface TtkRequestParallel extends WorkerRequest<WorkerRequestType.COMPUTE_TTK_PARALLEL> {
+  data: TtkRequest['data']
+}
+
 export type CalcRequestsUnion =
   ComputeBasicRequest |
   ComputeReverseRequest |
-  CompareRequest;
+  CompareRequest |
+  TtkRequest |
+  TtkRequestParallel;
 
 /**
  * Responses
@@ -73,7 +87,7 @@ export interface WorkerResponse<T extends WorkerRequestType> {
 }
 
 export interface ComputeBasicResponse extends WorkerResponse<WorkerRequestType.COMPUTE_BASIC> {
-  payload: PlayerVsNPCCalculatedLoadout[],
+  payload: Omit<PlayerVsNPCCalculatedLoadout, 'ttkDist'>[],
 }
 
 export interface ComputeReverseResponse extends WorkerResponse<WorkerRequestType.COMPUTE_REVERSE> {
@@ -84,11 +98,23 @@ export interface CompareResponse extends WorkerResponse<WorkerRequestType.COMPAR
   payload: CompareResult,
 }
 
+export interface TtkResponse extends WorkerResponse<WorkerRequestType.COMPUTE_TTK> {
+  payload: Pick<PlayerVsNPCCalculatedLoadout, 'ttkDist'>[],
+}
+
+export interface TtkResponseParallel extends WorkerResponse<WorkerRequestType.COMPUTE_TTK_PARALLEL> {
+  payload: TtkResponse['payload'],
+}
+
 export type CalcResponsesUnion =
   ComputeBasicResponse |
   ComputeReverseResponse |
-  CompareResponse;
+  CompareResponse |
+  TtkResponse |
+  TtkResponseParallel;
 export type CalcResponse<T extends WorkerRequestType> = CalcResponsesUnion & { type: T };
+
+export type Handler<T extends WorkerRequestType> = (data: Extract<CalcRequestsUnion, { type: T }>['data'], rawRequest: CalcRequestsUnion) => Promise<CalcResponse<T>['payload']>;
 
 export const WORKER_JSON_REPLACER = (k: string, v: Map<unknown, unknown> | never) => {
   if (v instanceof Map) {

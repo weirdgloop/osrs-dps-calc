@@ -1,12 +1,11 @@
 import {
-  autorun, IReactionDisposer,
-  IReactionPublic, makeAutoObservable, reaction, toJS,
+  autorun, IReactionDisposer, IReactionPublic, makeAutoObservable, reaction, toJS,
 } from 'mobx';
 import React, { createContext, useContext } from 'react';
 import { PartialDeep } from 'type-fest';
 import * as localforage from 'localforage';
 import {
-  CalculatedLoadout, Calculator, ImportableData, Preferences, State, UI, UserIssue,
+  CalculatedLoadout, Calculator, ImportableData, PlayerVsNPCCalculatedLoadout, Preferences, State, UI, UserIssue,
 } from '@/types/State';
 import merge from 'lodash.mergewith';
 import {
@@ -25,15 +24,10 @@ import { CalcWorker } from '@/worker/CalcWorker';
 import { spellByName } from '@/types/Spell';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
-  ARM_PRAYERS,
-  BRAIN_PRAYERS,
-  DEFENSIVE_PRAYERS,
-  OFFENSIVE_PRAYERS,
-  OVERHEAD_PRAYERS,
-  Prayer,
+  ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, OVERHEAD_PRAYERS, Prayer,
 } from './enums/Prayer';
 import Potion from './enums/Potion';
-import { WikiSyncer, startPollingForRuneLite } from './wikisync/WikiSyncer';
+import { WikiSyncer } from './wikisync/WikiSyncer';
 
 const EMPTY_CALC_LOADOUT = {} as CalculatedLoadout;
 
@@ -367,6 +361,7 @@ class GlobalState implements State {
   setCalcWorker(worker: CalcWorker) {
     if (this.calcWorker) {
       console.warn('[GlobalState] CalcWorker is already set!');
+      this.calcWorker.shutdown();
     }
     worker.initWorker();
     this.calcWorker = worker;
@@ -393,6 +388,10 @@ class GlobalState implements State {
 
   updateCalcResults(calc: PartialDeep<Calculator>) {
     this.calc = merge(this.calc, calc);
+  }
+
+  updateCalcTtkDist(loadoutIx: number, ttkDist: PlayerVsNPCCalculatedLoadout['ttkDist']) {
+    this.calc.loadouts[loadoutIx].ttkDist = ttkDist;
   }
 
   async loadShortlink(linkId: string) {
@@ -727,7 +726,6 @@ class GlobalState implements State {
       loadouts: toJS(this.loadouts),
       monster: toJS(this.monster),
       calcOpts: {
-        includeTtkDist: this.prefs.showTtkComparison,
         hitDistHideMisses: this.prefs.hitDistsHideZeros,
         detailedOutput: this.debug,
         disableMonsterScaling: this.monster.id === -1,
@@ -745,6 +743,17 @@ class GlobalState implements State {
 
     await request(WorkerRequestType.COMPUTE_BASIC);
     await request(WorkerRequestType.COMPUTE_REVERSE);
+
+    if (this.prefs.showTtkComparison) {
+      const resp = await this.calcWorker.do({
+        type: WorkerRequestType.COMPUTE_TTK,
+        data,
+      });
+
+      for (const [ix, loadout] of resp.payload.entries()) {
+        this.updateCalcTtkDist(ix, loadout.ttkDist);
+      }
+    }
   }
 }
 
