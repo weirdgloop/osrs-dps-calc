@@ -47,7 +47,7 @@ import { AmmoApplicability, ammoApplicability } from '@/lib/Equipment';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { getRangedDamageType } from '@/types/PlayerCombatStyle';
-import { range } from 'd3-array';
+import { range, sum } from 'd3-array';
 
 /**
  * Class for computing various player-vs-NPC metrics.
@@ -1194,6 +1194,30 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    */
   public getDps() {
     return this.getDpt() / SECONDS_PER_TICK;
+  }
+
+  /**
+   * Returns the amount of time (in ticks) that the user can maintain their prayers before running out of prayer points.
+   * Does not account for flicking or toggling prayers.
+   */
+  public getPrayerTicks(): number {
+    const drain = sum(this.player.prayers, (p) => PrayerMap[p].drainRate);
+    if (drain === 0) {
+      return Infinity;
+    }
+
+    const drainResistance = 2 * this.player.bonuses.prayer + 60;
+    const totalPrayerUnits = this.player.skills.prayer * drainResistance;
+
+    return Math.ceil(totalPrayerUnits / drain);
+  }
+
+  /**
+   * Returns the amount of time (in seconds) that the user can maintain their prayers before running out of prayer points.
+   * Does not account for flicking or toggling prayers.
+   */
+  public getPrayerDuration(): number {
+    return this.getPrayerTicks() * SECONDS_PER_TICK;
   }
 
   /**
