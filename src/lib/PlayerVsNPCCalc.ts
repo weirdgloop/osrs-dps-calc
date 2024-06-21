@@ -874,6 +874,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       );
     }
 
+    if (this.isUsingMeleeStyle() && (this.wearing('Torag\'s hammers') || this.wearing('Sulphur blades'))) {
+      dist = new AttackDistribution([
+        HitDistribution.linear(acc, 0, Math.trunc(max / 2)),
+        HitDistribution.linear(acc, 0, max - Math.trunc(max / 2)),
+      ]);
+    }
+
     if (this.isUsingMeleeStyle() && this.isWearingKeris() && mattrs.includes(MonsterAttribute.KALPHITE)) {
       dist = new AttackDistribution([
         new HitDistribution([
