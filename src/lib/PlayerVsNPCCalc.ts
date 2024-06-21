@@ -6,7 +6,6 @@ import {
   DelayedHit,
   divisionTransformer,
   flatAddTransformer,
-  flatLimitTransformer,
   HitDistribution,
   Hitsplat,
   linearMinTransformer,
@@ -159,6 +158,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing(['Blisterwood flail', 'Blisterwood sickle']) && isVampyre(mattrs)) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_VAMPYREBANE, attackRoll, [21, 20]);
     }
+    if (this.isWearingSilverWeapon() && isVampyre(mattrs)) {
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_EFARITAY, attackRoll, [23, 20]); // todo ordering? does this stack multiplicatively with vampyrebane?
+    }
 
     // Inquisitor's armour set gives bonuses when using the crush attack style
     if (style.type === 'crush') {
@@ -265,18 +267,23 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing(['Silverlight', 'Darklight', 'Silverlight (dyed)']) && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([3, 5]));
     }
-    if (this.wearing('Blisterwood flail') && isVampyre(mattrs)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [5, 4]);
+
+    if (isVampyre(mattrs)) {
+      if (this.wearing('Blisterwood flail')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [5, 4]);
+      } else if (this.wearing('Blisterwood sickle')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [23, 20]);
+      } else if (this.wearing('Ivandis flail')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [6, 5]);
+      } else if (this.isWearingSilverWeapon() && mattrs.includes(MonsterAttribute.VAMPYRE_1)) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [11, 10]);
+      } else if (this.wearing("Efaritay's aid") && mattrs.includes(MonsterAttribute.VAMPYRE_1)) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_EFARITAY, maxHit, [11, 10]);
+      } else if (this.wearing("Efaritay's aid") && !this.isWearingSilverWeapon() && mattrs.includes(MonsterAttribute.VAMPYRE_2)) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_EFARITAY, maxHit, [11, 10]);
+      }
     }
-    if (this.wearing('Blisterwood sickle') && isVampyre(mattrs)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [23, 20]);
-    }
-    if (this.wearing('Ivandis flail') && isVampyre(mattrs)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [6, 5]);
-    }
-    if ((this.wearing("Efaritay's aid") || this.isWearingSilverWeapon()) && mattrs.includes(MonsterAttribute.VAMPYRE_1)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_EFARITAY, maxHit, [11, 10]); // todo should this be before/after the vampyrebane weapons above?
-    }
+
     if (this.wearing('Leaf-bladed battleaxe') && mattrs.includes(MonsterAttribute.LEAFY)) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_LEAFY, maxHit, [47, 40]);
     }
@@ -1057,9 +1064,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if ((OLM_MAGE_HAND_IDS.includes(this.monster.id) || OLM_MELEE_HAND_IDS.includes(this.monster.id)) && this.player.style.type === 'ranged') {
       dist = dist.transform(divisionTransformer(3));
     }
-    if (this.monster.attributes.includes(MonsterAttribute.VAMPYRE_2) && this.wearing("Efaritay's aid") && !this.isWearingSilverWeapon()) {
-      dist = dist.transform(flatLimitTransformer(10));
-    }
     if (this.monster.name === 'Ice demon' && this.player.spell?.element !== 'fire') {
       // https://twitter.com/JagexAsh/status/1133350436554121216
       dist = dist.transform(divisionTransformer(3));
@@ -1112,6 +1116,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return true;
     }
     if (mattrs.includes(MonsterAttribute.VAMPYRE_3) && !this.isWearingIvandisWeapon()) {
+      return true;
+    }
+    if (mattrs.includes(MonsterAttribute.VAMPYRE_2) && !this.isWearingSilverWeapon() && !this.wearing("Efaritay's aid")) {
       return true;
     }
     if (GUARDIAN_IDS.includes(monsterId) && (!this.isUsingMeleeStyle() || this.player.equipment.weapon?.category !== EquipmentCategory.PICKAXE)) {

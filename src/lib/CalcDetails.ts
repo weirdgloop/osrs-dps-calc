@@ -23,6 +23,7 @@ export enum DetailKey {
   PLAYER_ACCURACY_DRAGONHUNTER = 'Player accuracy dragonhunter',
   PLAYER_ACCURACY_KERIS = 'Player accuracy keris',
   PLAYER_ACCURACY_VAMPYREBANE = 'Player accuracy vampyrebane',
+  PLAYER_ACCURACY_EFARITAY = 'Player accuracy efaritay\'s aid',
   PLAYER_ACCURACY_INQ = 'Player accuracy inquisitor\'s',
   PLAYER_ACCURACY_ROLL_FINAL = 'Player accuracy roll',
   DAMAGE_LEVEL = 'Damage level',
