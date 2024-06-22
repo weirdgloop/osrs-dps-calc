@@ -158,7 +158,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing(['Blisterwood flail', 'Blisterwood sickle']) && isVampyre(mattrs)) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_VAMPYREBANE, attackRoll, [21, 20]);
     }
-    if (this.isWearingSilverWeapon() && isVampyre(mattrs)) {
+    if (this.isWearingSilverWeapon() && this.wearing("Efaritay's aid") && isVampyre(mattrs)) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_EFARITAY, attackRoll, [23, 20]); // todo ordering? does this stack multiplicatively with vampyrebane?
     }
 
@@ -1092,6 +1092,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     if (NIGHTMARE_TOTEM_IDS.includes(this.monster.id) && this.player.style.type === 'magic') {
       dist = dist.transform(multiplyTransformer(2));
+    }
+    if (this.monster.attributes.includes(MonsterAttribute.VAMPYRE_2) && !this.isWearingSilverWeapon() && this.wearing("Efaritay's aid")) {
+      dist = dist.transform(divisionTransformer(2));
     }
     if (['Slash Bash', 'Zogre', 'Skogre'].includes(this.monster.name)) {
       if (this.player.spell?.name === 'Crumble Undead') {
