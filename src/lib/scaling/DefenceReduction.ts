@@ -101,20 +101,24 @@ const applyDefenceReductions = (m: Monster): Monster => {
 
   let bgsDmg = reductions.bgs;
   if (bgsDmg > 0) {
-    const applyBgsDmg = (skill: number): number => {
-      const newValue = Math.max(0, skill - bgsDmg);
-      bgsDmg -= skill - newValue;
-      return newValue;
+    const applyBgsDmg = (monster: Monster, k: keyof Monster['skills']): Monster => {
+      const startLevel = monster.skills[k];
+      const newMonster = newSkills(monster, { [k]: startLevel - bgsDmg });
+      if (newMonster.skills[k] > 0) {
+        // if a skill fails to drain to 0, even if because of a drain floor, the bgs does not propagate further
+        bgsDmg = 0;
+      } else {
+        bgsDmg -= startLevel;
+      }
+      return newMonster;
     };
 
-    m = newSkills(m, {
-      // order matters here
-      def: applyBgsDmg(m.skills.def),
-      str: applyBgsDmg(m.skills.str),
-      atk: applyBgsDmg(m.skills.atk),
-      magic: applyBgsDmg(m.skills.magic),
-      ranged: applyBgsDmg(m.skills.ranged),
-    });
+    // order matters here
+    m = applyBgsDmg(m, 'def');
+    m = applyBgsDmg(m, 'str');
+    m = applyBgsDmg(m, 'atk');
+    m = applyBgsDmg(m, 'magic');
+    m = applyBgsDmg(m, 'ranged');
   }
 
   return m;
