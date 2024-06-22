@@ -504,15 +504,34 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const baseRoll = effectiveLevel * (magicBonus + 64);
     let attackRoll = baseRoll;
 
+    let additiveBonus = 0;
+    let blackMaskBonus = false;
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
-      const factor = <Factor>[buffs.forinthrySurge ? 27 : 24, 20];
-      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_FORINTHRY_SURGE, attackRoll, factor);
+      additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_FORINTHRY_SURGE, additiveBonus, buffs.forinthrySurge ? 35 : 20);
     } else if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
-      attackRoll = Math.trunc(attackRoll * 6 / 5);
+      additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_SALVE, additiveBonus, 20);
     } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
-      attackRoll = Math.trunc(attackRoll * 23 / 20);
+      additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_SALVE, additiveBonus, 15);
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
-      attackRoll = Math.trunc(attackRoll * 23 / 20);
+      blackMaskBonus = true;
+    }
+
+    if (this.wearing("Efaritay's aid") && isVampyre(mattrs)) {
+      // https://x.com/JagexAsh/status/1792829802996498524
+      additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_EFARITAY, additiveBonus, 15);
+    }
+
+    if (this.isWearingSmokeStaff() && this.player.spell?.spellbook === 'standard') {
+      // https://twitter.com/JagexAsh/status/1791070064369647838
+      additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_SMOKE_BATTLESTAFF, additiveBonus, 10);
+    }
+
+    if (additiveBonus !== 0) {
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_ROLL_MAGIC_PERCENT, attackRoll, [100 + additiveBonus, 100]);
+    }
+
+    if (blackMaskBonus) {
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_BLACK_MASK, attackRoll, [23, 20]);
     }
 
     if (this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
@@ -520,19 +539,18 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor(baseFactor));
     }
     if (this.isRevWeaponBuffApplicable()) {
-      attackRoll = Math.trunc(attackRoll * 3 / 2);
-    }
-    if (this.isWearingSmokeStaff() && this.player.spell?.spellbook === 'standard') {
-      attackRoll = Math.trunc(attackRoll * 11 / 10);
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_REV_WEAPON, attackRoll, [3, 2]);
     }
     if (this.wearing('Tome of water') && this.player.spell?.element === 'water' || isBindSpell(this.player.spell)) { // todo does this go here?
-      attackRoll = Math.trunc(attackRoll * 6 / 5);
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_TOME, attackRoll, [6, 5]);
     }
 
     const spellement = this.player.spell?.element;
     if (this.monster.weakness && spellement) {
       if (spellement === this.monster.weakness.element) {
-        attackRoll += Math.trunc(this.monster.weakness.severity * baseRoll / 100);
+        const severity = this.monster.weakness.severity;
+        const bonus = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPELLEMENT_BONUS, baseRoll, [severity, 100]);
+        attackRoll = this.trackAdd(DetailKey.PLAYER_ACCURACY_SPELLEMENT, attackRoll, bonus);
       }
     }
 
