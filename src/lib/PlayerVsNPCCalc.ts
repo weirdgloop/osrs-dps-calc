@@ -606,7 +606,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return [0, 0];
     }
 
-    if (this.wearing('Chaos gauntlets') && spell?.name.toLowerCase().includes('bolt')) {
+    if (this.wearing('Chaos gauntlets') && spell?.name.toLowerCase()
+      .includes('bolt')) {
       maxHit += 3;
     }
     if (this.isChargeSpellApplicable()) {
@@ -626,6 +627,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       magicDmgBonus += 200;
     } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       magicDmgBonus += 150;
+    } else if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
+      magicDmgBonus += buffs.forinthrySurge ? 350 : 200;
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
       blackMaskBonus = true;
     }
@@ -638,9 +641,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (blackMaskBonus) {
       maxHit = Math.trunc(maxHit * 23 / 20);
-    } else if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
-      const factor = <Factor>[buffs.forinthrySurge ? 27 : 24, 20];
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_FORINTHRY_SURGE, maxHit, factor);
     }
 
     if (this.isRevWeaponBuffApplicable()) {
