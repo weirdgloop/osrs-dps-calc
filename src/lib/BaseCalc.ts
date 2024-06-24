@@ -1,6 +1,11 @@
 import { EquipmentPiece, Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
-import { AmmoApplicability, ammoApplicability, getCanonicalEquipment } from '@/lib/Equipment';
+import {
+  AmmoApplicability,
+  ammoApplicability,
+  EMPTY_BLOWPIPE,
+  getCanonicalEquipment,
+} from '@/lib/Equipment';
 import UserIssueType from '@/enums/UserIssueType';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { CAST_STANCES } from '@/lib/constants';
@@ -57,6 +62,8 @@ export default class BaseCalc {
   protected allEquippedItems!: string[];
 
   userIssues: UserIssue[] = [];
+
+  protected fatal: boolean = false;
 
   constructor(player: Player, monster: Monster, opts: CalcOpts = {}) {
     this.opts = {
@@ -532,8 +539,14 @@ export default class BaseCalc {
     ]);
   }
 
-  protected addIssue(type: UserIssueType, message: string) {
-    this.userIssues.push({ type, message, loadout: this.opts.loadoutName });
+  protected addIssue(type: UserIssueType, message: string, severity: UserIssue['severity'] = 'warn') {
+    this.userIssues.push({
+      type,
+      severity,
+      message,
+      loadout: this.opts.loadoutName,
+    });
+    this.fatal ||= severity === 'fatal';
   }
 
   private sanitizeInputs() {
@@ -558,11 +571,12 @@ export default class BaseCalc {
       };
     }
 
-    if (this.player.style.stance !== 'Manual Cast' && ammoApplicability(eq.weapon?.id, eq.ammo?.id) === AmmoApplicability.INVALID) {
+    if (ammoApplicability(eq.weapon?.id, eq.ammo?.id) === AmmoApplicability.INVALID) {
+      const severity = this.player.style.stance === 'Manual Cast' ? 'warn' : 'fatal';
       if (eq.ammo?.name) {
-        this.addIssue(UserIssueType.EQUIPMENT_WRONG_AMMO, 'This ammo does not work with your current weapon.');
+        this.addIssue(UserIssueType.EQUIPMENT_WRONG_AMMO, 'This ammo does not work with your current weapon.', severity);
       } else {
-        this.addIssue(UserIssueType.EQUIPMENT_MISSING_AMMO, 'Your weapon requires ammo to use.');
+        this.addIssue(UserIssueType.EQUIPMENT_MISSING_AMMO, 'Your weapon requires ammo to use.', severity);
       }
     }
 
@@ -579,7 +593,7 @@ export default class BaseCalc {
         ...this.player,
         spell: null,
       };
-      this.addIssue(UserIssueType.SPELL_WRONG_WEAPON, 'This spell needs a specific weapon equipped to cast.');
+      this.addIssue(UserIssueType.SPELL_WRONG_WEAPON, 'This spell needs a specific weapon equipped to cast.', 'fatal');
     }
 
     // Certain spells can only be cast on specific monsters
@@ -591,7 +605,7 @@ export default class BaseCalc {
         ...this.player,
         spell: null,
       };
-      this.addIssue(UserIssueType.SPELL_WRONG_MONSTER, 'This spell cannot be cast on the selected monster.');
+      this.addIssue(UserIssueType.SPELL_WRONG_MONSTER, 'This spell cannot be cast on the selected monster.', 'fatal');
     }
 
     // Some set effects are currently not accounted for
@@ -600,6 +614,15 @@ export default class BaseCalc {
       || this.wearingAll(['Eclipse moon helm', 'Eclipse moon chestplate', 'Eclipse moon tassets', 'Eclipse atlatl'])
     ) {
       this.addIssue(UserIssueType.EQUIPMENT_SET_EFFECT_UNSUPPORTED, 'The calculator currently does not account for your equipment set effect.');
+    }
+
+    if (this.wearing(['Toxic blowpipe', 'Blazing blowpipe'])) {
+      const severity = this.player.style.stance === 'Manual Cast' ? 'warn' : 'fatal';
+      if (eq.weapon?.version === 'Empty') {
+        this.addIssue(UserIssueType.EQUIPMENT_WEAPON_EMPTY, 'An empty weapon cannot be used.', severity);
+      } else if (eq.weapon?.bonuses?.ranged_str === EMPTY_BLOWPIPE?.bonuses?.ranged_str) {
+        this.addIssue(UserIssueType.IMPORT_MISSING_DATA, 'The import data did not specify darts for the blowpipe equipped', severity);
+      }
     }
   }
 }

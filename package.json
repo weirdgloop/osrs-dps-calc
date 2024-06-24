@@ -15,7 +15,11 @@
     "fmt": "next lint --fix",
     "analyse": "ANALYSE=true next build",
     "test": "jest",
-    "cdn-docker": "yarn build-docker-scraper && docker run --rm -it -v $(pwd)/cdn:/srv/cdn -v $(pwd)/src/lib/EquipmentAliases.ts:/srv/src/lib/EquipmentAliases.ts weirdgloop/osrs-dps-calc:scraper",
+    "cdn-docker-base": "docker run --rm -it -v $(pwd)/scripts:/srv/scripts -v $(pwd)/cdn:/srv/cdn -v $(pwd)/src/lib/EquipmentAliases.ts:/srv/src/lib/EquipmentAliases.ts weirdgloop/osrs-dps-calc:scraper",
+    "cdn-docker": "yarn build-docker-scraper && yarn cdn-docker-base",
+    "cdn-docker-aliases": "yarn cdn-docker-base python generateEquipmentAliases.py",
+    "cdn-docker-equipment": "yarn cdn-docker-base python generateEquipment.py",
+    "cdn-docker-monsters": "yarn cdn-docker-base python generateMonsters.py",
     "cdn-dispatch": "gh workflow run regenerate.yml"
   },
   "dependencies": {
