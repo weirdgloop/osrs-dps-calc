@@ -20072,6 +20072,7 @@
       "stab": 0
     },
     "attributes": [
+      "spectral",
       "undead"
     ],
     "weakness": null
@@ -55142,6 +55143,46 @@
     "weakness": null
   },
   {
+    "id": 10820,
+    "name": "Nylocas Matomenos",
+    "version": "Entry Mode Maiden",
+    "image": "Nylocas Matomenos.png",
+    "level": 68,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 2,
+    "max_hit": "11",
+    "skills": {
+      "atk": 100,
+      "def": 100,
+      "hp": 64,
+      "magic": 100,
+      "ranged": 100,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
     "id": 10828,
     "name": "Nylocas Matomenos",
     "version": "Hard Mode Maiden",
@@ -70846,6 +70887,300 @@
     "weakness": null
   },
   {
+    "id": 13495,
+    "name": "Skeleton (Wilderness Agility Course)",
+    "version": "1",
+    "image": "Skeleton Lvl18.png",
+    "level": 18,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 13496,
+    "name": "Skeleton (Wilderness Agility Course)",
+    "version": "2",
+    "image": "Skeleton Lvl18 (1).png",
+    "level": 18,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 13497,
+    "name": "Skeleton (Wilderness Agility Course)",
+    "version": "3",
+    "image": "Skeleton Lvl18 (2).png",
+    "level": 18,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 13498,
+    "name": "Skeleton (Wilderness Agility Course)",
+    "version": "4",
+    "image": "Skeleton Lvl18 (3).png",
+    "level": 18,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 13499,
+    "name": "Skeleton (Wilderness Agility Course)",
+    "version": "5",
+    "image": "Skeleton Lvl18 (4).png",
+    "level": 18,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 13500,
+    "name": "Skeleton (Wilderness Agility Course)",
+    "version": "6",
+    "image": "Skeleton Lvl18.png",
+    "level": 18,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 13501,
+    "name": "Skeleton (Wilderness Agility Course)",
+    "version": "7",
+    "image": "Skeleton Lvl18 (1).png",
+    "level": 18,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
     "id": 6441,
     "name": "Skeleton (mage)",
     "version": "",
@@ -83493,7 +83828,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000016-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -83534,7 +83869,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000016-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -85528,7 +85863,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000072-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000C-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -85568,7 +85903,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000074-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000E-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
