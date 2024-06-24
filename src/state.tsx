@@ -426,12 +426,21 @@ class GlobalState implements State {
       let newMonster: PartialDeep<Monster> = {};
 
       if (data.monster.id > -1) {
-        const monsterById = getMonsters().find((m) => m.id === data.monster.id);
-        if (!monsterById) {
+        const monstersById = getMonsters().filter((m) => m.id === data.monster.id);
+        if ((monstersById?.length || 0) === 0) {
           throw new Error(`Failed to find monster by id '${data.monster.id}' from shortlink`);
         }
 
-        newMonster = monsterById;
+        if (monstersById.length === 1) {
+          newMonster = monstersById[0];
+        } else {
+          const version = monstersById.find((m) => m.version === data.monster.version);
+          if (version) {
+            newMonster = version;
+          } else {
+            newMonster = monstersById[0];
+          }
+        }
       } else {
         newMonster = data.monster;
       }
