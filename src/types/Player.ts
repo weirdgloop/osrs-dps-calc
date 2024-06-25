@@ -105,6 +105,11 @@ export interface Player extends EquipmentStats {
      */
     soulreaperStacks: number;
     /**
+     * Barbarian assault attacker level.
+     * @see https://oldschool.runescape.wiki/w/Barbarian_Assault
+     */
+    baAttackerLevel: number;
+    /**
      * Whether the Kandarin Hard Diary has been completed, which provides 10% increase for the enchanted bolt spec to activate.
      * @see https://oldschool.runescape.wiki/w/Kandarin_Diary#Hard
      */

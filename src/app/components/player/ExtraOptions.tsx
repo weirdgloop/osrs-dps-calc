@@ -6,6 +6,7 @@ import skull from '@/public/img/misc/skull.webp';
 import diary from '@/public/img/misc/diary.png';
 import forinthry_surge from '@/public/img/misc/forinthry_surge.webp';
 import soulreaper_axe from '@/public/img/misc/soulreaper_axe.png';
+import ba_attacker from '@/public/img/misc/ba_attacker.webp';
 import NumberInput from '@/app/components/generic/NumberInput';
 import Toggle from '../generic/Toggle';
 
@@ -110,6 +111,29 @@ const ExtraOptions: React.FC = observer(() => {
               className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
               data-tooltip-id="tooltip"
               data-tooltip-content="When using the soulreaper axe, every hit gives a soul stack."
+            >
+              ?
+            </span>
+          </span>
+        </div>
+        <div className="w-full">
+          <NumberInput
+            className="form-control w-12"
+            required
+            min={0}
+            max={5}
+            value={player.buffs.baAttackerLevel}
+            onChange={(v) => store.updatePlayer({ buffs: { baAttackerLevel: v } })}
+          />
+          <span className="ml-1 text-sm select-none">
+            <img src={ba_attacker.src} className="inline-block h-fit" alt="" />
+            {' '}
+            BA Attacker level
+            {' '}
+            <span
+              className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+              data-tooltip-id="tooltip"
+              data-tooltip-content="When fighting Penance Fighters and Penance Archers, your attacker level provides extra damage."
             >
               ?
             </span>

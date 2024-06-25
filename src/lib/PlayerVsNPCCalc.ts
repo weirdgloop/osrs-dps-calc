@@ -18,6 +18,7 @@ import { PrayerData, PrayerMap } from '@/enums/Prayer';
 import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
   ALWAYS_MAX_HIT_MONSTERS,
+  BA_ATTACKER_MONSTERS,
   CAST_STANCES,
   DEFAULT_ATTACK_SPEED,
   FLAT_ARMOUR,
@@ -1101,6 +1102,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         || this.player.equipment.weapon?.name !== 'Comp ogre bow') {
         dist = dist.transform(divisionTransformer(4));
       }
+    }
+    if (BA_ATTACKER_MONSTERS.includes(this.monster.id) && this.player.buffs.baAttackerLevel !== 0) {
+      // todo is this pre- or post-roll?
+      dist = dist.transform(
+        flatAddTransformer(this.player.buffs.baAttackerLevel),
+        { transformInaccurate: true },
+      );
     }
 
     const flatArmour = FLAT_ARMOUR[this.monster.id];
