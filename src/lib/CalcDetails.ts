@@ -70,6 +70,9 @@ export enum DetailKey {
   PLAYER_ACCURACY_FANG_TOA = 'Player accuracy fang toa',
   PLAYER_ACCURACY_FANG = 'Player accuracy fang',
   PLAYER_ACCURACY_FINAL = 'Player accuracy',
+  HIT_DIST_FINAL_MIN = 'Hit dist min',
+  HIT_DIST_FINAL_MAX = 'Hit dist max',
+  HIT_DIST_FINAL_EXPECTED = 'Hit dist expected',
   GUARDIANS_DMG_BONUS = 'Guardians hit multiplier',
   PLAYER_DEFENCE_ROLL_LEVEL = 'Player defence level',
   PLAYER_DEFENCE_ROLL_LEVEL_PRAYER = 'Player defence level prayer',
@@ -98,6 +101,9 @@ const HIGHLIGHTS: string[] = [
   DetailKey.MAX_HIT_FINAL,
   DetailKey.PLAYER_ACCURACY_FINAL,
   DetailKey.NPC_ACCURACY_ROLL_FINAL,
+  DetailKey.HIT_DIST_FINAL_MIN,
+  DetailKey.HIT_DIST_FINAL_MAX,
+  DetailKey.HIT_DIST_FINAL_EXPECTED,
 ];
 
 export class CalcDetails {

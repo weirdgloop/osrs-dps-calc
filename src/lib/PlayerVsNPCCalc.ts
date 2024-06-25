@@ -815,6 +815,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       this.memoizedDist = this.getDistributionImpl();
     }
 
+    this.track(DetailKey.HIT_DIST_FINAL_MIN, this.memoizedDist.getMin());
+    this.track(DetailKey.HIT_DIST_FINAL_MAX, this.memoizedDist.getMax());
+    this.track(DetailKey.HIT_DIST_FINAL_EXPECTED, this.memoizedDist.getExpectedDamage());
     return this.memoizedDist;
   }
 
