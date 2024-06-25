@@ -289,6 +289,32 @@ export const PARTY_SIZE_REQUIRED_MONSTER_IDS = [
   ...TOB_EM_MONSTER_IDS,
 ];
 
+export const BA_ATTACKER_MONSTERS = [
+  // fighters
+  1667,
+  5739,
+  5740,
+  5741,
+  5742,
+  5743,
+  5744,
+  5745,
+  5746,
+  5747,
+
+  // rangers
+  1668,
+  5757,
+  5758,
+  5759,
+  5760,
+  5761,
+  5762,
+  5763,
+  5764,
+  5765,
+];
+
 export const ACCURACY_PRECISION = 2;
 export const DPS_PRECISION = 3;
 

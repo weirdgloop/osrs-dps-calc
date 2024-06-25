@@ -43,6 +43,7 @@ const commonAmmoCategories = () => {
     bow_t1: [
       882, 883, 5616, 5622, 598, 942, // Bronze arrow + variants
       884, 885, 5617, 5623, 2532, 2533, // Iron arrow + variants
+      22227, 22228, 22229, 22230, // barb assault
     ],
     cb_t1: [
       877, 878, 6061, 6062, 879, 9236, // Bronze bolts + variants, opal bolts + (e)
