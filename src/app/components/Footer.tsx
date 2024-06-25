@@ -31,6 +31,11 @@ const Footer: React.FC = observer(() => {
           >
             <IconBrandGithub size={15} />
           </a>
+          {process.env.GIT_SHA && (
+            <a href={`https://github.com/weirdgloop/osrs-dps-calc/tree/${process.env.GIT_SHA}`} target="_blank">
+              {`${process.env.GIT_SHA_SHORT}${process.env.GIT_DIRTY === 'true' ? '*' : ''}`}
+            </a>
+          )}
         </div>
         <div>
           <button
