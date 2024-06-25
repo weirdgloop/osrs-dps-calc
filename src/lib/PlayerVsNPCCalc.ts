@@ -1259,7 +1259,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     return this.getHtk() * this.getExpectedAttackSpeed() * SECONDS_PER_TICK;
   }
 
-  private getWeaponDelayProvider(): WeaponDelayProvider {
+  public getWeaponDelayProvider(): WeaponDelayProvider {
     const baseSpeed = this.getAttackSpeed();
 
     if (this.isWearingBloodMoonSet()) {
