@@ -1,18 +1,18 @@
 import React, { PropsWithChildren, useMemo } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
-import { CalculatedLoadout } from '@/types/State';
+import { PlayerVsNPCCalculatedLoadout } from '@/types/State';
 import Spinner from '@/app/components/Spinner';
-import { ACCURACY_PRECISION, DPS_PRECISION } from '@/lib/constants';
+import { ACCURACY_PRECISION, DPS_PRECISION, EXPECTED_HIT_PRECISION } from '@/lib/constants';
 import { max, min } from 'd3-array';
 import { toJS } from 'mobx';
 
 interface IResultRowProps {
-  calcKey: keyof Omit<CalculatedLoadout, 'ttkDist'>;
+  calcKey: keyof Omit<PlayerVsNPCCalculatedLoadout, 'ttkDist'>;
   title?: string;
 }
 
-const calcKeyToString = (value: number, calcKey: keyof CalculatedLoadout): string | React.ReactNode => {
+const calcKeyToString = (value: number, calcKey: keyof PlayerVsNPCCalculatedLoadout): string | React.ReactNode => {
   if (value === undefined || value === null) {
     // if the value has not yet been populated by the worker
     return <Spinner className="w-3" />;
@@ -20,10 +20,17 @@ const calcKeyToString = (value: number, calcKey: keyof CalculatedLoadout): strin
 
   switch (calcKey) {
     case 'accuracy':
+    case 'specAccuracy':
       return `${(value * 100).toFixed(ACCURACY_PRECISION)}%`;
     case 'dps':
+    case 'specMomentDps':
+    case 'specFullDps':
       return value.toFixed(DPS_PRECISION);
-    case 'ttk':
+    case 'expectedHit':
+    case 'specExpected':
+      return value.toFixed(EXPECTED_HIT_PRECISION);
+    case 'ttkSingle':
+    case 'ttkContinuous':
       return value === 0
         ? '-----'
         : `${value.toFixed(1)}s`;
@@ -39,8 +46,8 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
   const loadouts = toJS(calc.loadouts);
 
   const cells = useMemo(() => {
-    const aggregator = ['ttk', 'npcDefRoll'].includes(calcKey) ? min : max;
-    const bestValue = aggregator(Object.values(loadouts).filter((l) => (calcKey === 'ttk' ? l[calcKey] !== 0 : true)), (l) => l[calcKey] as number);
+    const aggregator = ['ttkSingle', 'ttkContinuous', 'npcDefRoll'].includes(calcKey) ? min : max;
+    const bestValue = aggregator(Object.values(loadouts).filter((l) => (calcKey === 'ttkSingle' ? l[calcKey] !== 0 : true)), (l) => l[calcKey] as number);
 
     return Object.values(loadouts).map((l, i) => {
       const value = l[calcKey] as number;
@@ -51,7 +58,7 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
 
   return (
     <tr>
-      <th className="w-32 px-4 border-r bg-btns-400 dark:bg-dark-500 select-none cursor-help" title={title}>{children}</th>
+      <th className="w-36 px-4 border-r bg-btns-400 dark:bg-dark-500 select-none cursor-help" title={title}>{children}</th>
       {cells}
     </tr>
   );
@@ -60,6 +67,7 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
 const PlayerVsNPCResultsTable: React.FC = observer(() => {
   const store = useStore();
   const { selectedLoadout } = store;
+  const { resultsExpanded } = store.prefs;
 
   return (
     <table>
@@ -82,12 +90,22 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
         <ResultRow calcKey="maxHit" title="The maximum hit that you will deal to the monster">
           Max hit
         </ResultRow>
+        {resultsExpanded && (
+          <ResultRow calcKey="expectedHit" title="The average damage per attack, including misses.">
+            Expected hit
+          </ResultRow>
+        )}
         <ResultRow calcKey="dps" title="The average damage you will deal per-second">
           DPS
         </ResultRow>
-        <ResultRow calcKey="ttk" title="The average time (in seconds) it will take to defeat the monster">
-          Avg. TTK
+        <ResultRow calcKey="ttkSingle" title="The average time (in seconds) it will take to defeat the monster.">
+          {resultsExpanded ? 'TTK Single' : 'Avg. TTK'}
         </ResultRow>
+        {resultsExpanded && (
+          <ResultRow calcKey="ttkContinuous" title="The average time (in seconds) it will take to defeat the monster repeatedly.">
+            TTK Multi
+          </ResultRow>
+        )}
         <ResultRow calcKey="maxAttackRoll" title="The maximum attack roll based on your current gear (higher is better!)">
           Attack roll
         </ResultRow>
@@ -97,6 +115,25 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
         <ResultRow calcKey="accuracy" title="How accurate you are against the monster">
           Accuracy
         </ResultRow>
+        {resultsExpanded && (
+          <>
+            <ResultRow calcKey="specMaxHit" title="The maximum hit that you will deal to the monster when using your special attack">
+              Spec max
+            </ResultRow>
+            <ResultRow calcKey="specExpected" title="The average damage per special attack, including misses">
+              Spec expected
+            </ResultRow>
+            <ResultRow calcKey="specMomentDps" title="The average damage you would deal per-second, if using infinite special attacks">
+              Spec DPS
+            </ResultRow>
+            <ResultRow calcKey="specFullDps" title="The average damage you would deal per-second, if only using special attacks, and waiting for regeneration">
+              Spec-regen DPS
+            </ResultRow>
+            <ResultRow calcKey="specAccuracy" title="How accurate your special attack is against the monster">
+              Spec accuracy
+            </ResultRow>
+          </>
+        )}
       </tbody>
     </table>
   );

@@ -32,6 +32,8 @@ export interface Preferences {
   showTtkComparison: boolean;
   showNPCVersusPlayerResults: boolean;
   hitDistsHideZeros: boolean; // legacy name
+  hitDistShowSpec: boolean;
+  resultsExpanded: boolean;
 }
 
 export interface ChartEntry {
@@ -48,35 +50,46 @@ export interface ChartAnnotation {
  * The result of running the calculator on a specific player loadout.
  */
 export interface CalculatedLoadout {
-  // Player vs NPC metrics
-  npcDefRoll?: number,
-  maxHit?: number,
-  maxAttackRoll?: number,
-  accuracy?: number,
-  dps?: number,
-  ttk?: number,
-  hitDist?: ChartEntry[],
-  ttkDist?: Map<number, number>,
-
-  // NPC vs Player metrics
-  playerDefRoll?: number,
-  npcMaxAttackRoll?: number,
-  npcMaxHit?: number,
-  npcDps?: number,
-  npcAccuracy?: number,
-  avgDmgTaken?: number,
-
   // Misc
   details?: DetailEntry[],
   npcDetails?: DetailEntry[],
   userIssues?: UserIssue[],
 }
 
-export type PlayerVsNPCCalculatedLoadout = Pick<CalculatedLoadout, 'npcDefRoll' | 'maxHit' | 'maxAttackRoll' | 'accuracy' | 'dps' | 'ttk' | 'hitDist' | 'ttkDist' | 'details' | 'userIssues'>;
-export type NPCVsPlayerCalculatedLoadout = Pick<CalculatedLoadout, 'playerDefRoll' | 'npcMaxAttackRoll' | 'npcMaxHit' | 'npcDps' | 'npcAccuracy' | 'avgDmgTaken' | 'npcDetails' | 'userIssues'>;
+export interface PlayerVsNPCCalculatedLoadout extends CalculatedLoadout {
+  // Player vs NPC metrics
+  npcDefRoll?: number,
+  maxHit?: number,
+  expectedHit?: number,
+  maxAttackRoll?: number,
+  accuracy?: number,
+  dps?: number,
+  ttkSingle?: number,
+  ttkContinuous?: number,
+  hitDist?: ChartEntry[],
+  ttkDist?: Map<number, number>,
+
+  // Special attack
+  specAccuracy?: number,
+  specMaxHit?: number,
+  specExpected?: number,
+  specMomentDps?: number,
+  specFullDps?: number,
+  specHitDist?: ChartEntry[],
+}
+
+// NPC vs Player metrics
+export interface NPCVsPlayerCalculatedLoadout extends CalculatedLoadout {
+  playerDefRoll?: number,
+  npcMaxAttackRoll?: number,
+  npcMaxHit?: number,
+  npcDps?: number,
+  npcAccuracy?: number,
+  avgDmgTaken?: number,
+}
 
 export interface Calculator {
-  loadouts: CalculatedLoadout[]
+  loadouts: (PlayerVsNPCCalculatedLoadout & NPCVsPlayerCalculatedLoadout)[]
 }
 
 /**

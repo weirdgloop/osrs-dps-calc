@@ -263,6 +263,6 @@ export default class NPCVsPlayerCalc extends BaseCalc {
    * Returns the average damage taken for a kill.
    */
   public getAverageDamageTaken() {
-    return this.getPlayerVsNPCCalc().getTtk() * this.getDps();
+    return this.getPlayerVsNPCCalc().getTtkSingle() * this.getDps();
   }
 }

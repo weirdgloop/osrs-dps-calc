@@ -197,6 +197,8 @@ class GlobalState implements State {
     showTtkComparison: false,
     showNPCVersusPlayerResults: false,
     hitDistsHideZeros: false,
+    hitDistShowSpec: false,
+    resultsExpanded: false,
   };
 
   calc: Calculator = {
@@ -212,7 +214,7 @@ class GlobalState implements State {
         playerDefRoll: 0,
         accuracy: 0,
         dps: 0,
-        ttk: 0,
+        ttkSingle: 0,
         hitDist: [],
         ttkDist: undefined,
       },

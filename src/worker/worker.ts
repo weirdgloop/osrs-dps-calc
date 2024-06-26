@@ -26,17 +26,33 @@ const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) 
       detailedOutput: calcOpts.detailedOutput,
       disableMonsterScaling: calcOpts.disableMonsterScaling,
     });
+    const specCalc = new PlayerVsNPCCalc(p, monster, {
+      loadoutName,
+      detailedOutput: calcOpts.detailedOutput,
+      disableMonsterScaling: calcOpts.disableMonsterScaling,
+      usingSpecialAttack: true,
+    });
     res.push({
       npcDefRoll: calc.getNPCDefenceRoll(),
       maxHit: calc.getDistribution().getMax(),
+      expectedHit: calc.getDistribution().getExpectedDamage(),
       maxAttackRoll: calc.getMaxAttackRoll(),
       accuracy: calc.getHitChance(),
       dps: calc.getDps(),
-      ttk: calc.getTtk(),
+      ttkSingle: calc.getTtkSingle(),
+      ttkContinuous: calc.getTtkContinuous(),
       hitDist: calc.getDistribution().asHistogram(calcOpts.hitDistHideMisses),
+
       ttkDist: calcOpts.includeTtkDist ? calc.getTtkDistribution() : undefined, // this one can sometimes be quite expensive
       details: calc.details,
       userIssues: calc.userIssues,
+
+      specAccuracy: specCalc.getHitChance(),
+      specMaxHit: specCalc.getDistribution().getMax(),
+      specExpected: specCalc.getDistribution().getExpectedDamage(),
+      specMomentDps: specCalc.getDps(),
+      specFullDps: specCalc.getSpecDps(),
+      specHitDist: specCalc.getDistribution().asHistogram(calcOpts.hitDistHideMisses),
     });
     const end = new Date().getTime();
 

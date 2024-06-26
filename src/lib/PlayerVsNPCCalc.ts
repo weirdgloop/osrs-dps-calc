@@ -182,6 +182,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
+    if (this.opts.usingSpecialAttack && this.isWearingFang()) {
+      attackRoll = Math.trunc(attackRoll * 3 / 2);
+    }
+
     return attackRoll;
   }
 
@@ -318,7 +322,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isWearingFang()) {
       const shrink = Math.trunc(maxHit * 3 / 20);
       minHit = this.track(DetailKey.MIN_HIT_FANG, shrink);
-      maxHit = this.trackAdd(DetailKey.MAX_HIT_FANG, maxHit, -shrink);
+      if (!this.opts.usingSpecialAttack) {
+        maxHit = this.trackAdd(DetailKey.MAX_HIT_FANG, maxHit, -shrink);
+      }
     }
 
     return [minHit, maxHit];
@@ -813,11 +819,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   public getDistribution(): AttackDistribution {
     if (this.memoizedDist === undefined) {
       this.memoizedDist = this.getDistributionImpl();
+      this.track(DetailKey.HIT_DIST_FINAL_MIN, this.memoizedDist.getMin());
+      this.track(DetailKey.HIT_DIST_FINAL_MAX, this.memoizedDist.getMax());
+      this.track(DetailKey.HIT_DIST_FINAL_EXPECTED, this.memoizedDist.getExpectedDamage());
     }
 
-    this.track(DetailKey.HIT_DIST_FINAL_MIN, this.memoizedDist.getMin());
-    this.track(DetailKey.HIT_DIST_FINAL_MAX, this.memoizedDist.getMax());
-    this.track(DetailKey.HIT_DIST_FINAL_EXPECTED, this.memoizedDist.getExpectedDamage());
     return this.memoizedDist;
   }
 
@@ -872,6 +878,70 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           ...HitDistribution.linear(1.0, 1, max + 1).scaleProbability(0.25).hits,
         ]),
       ]);
+    }
+
+    if (this.isUsingMeleeStyle() && this.opts.usingSpecialAttack && this.wearing('Dragon claws')) {
+      const clawSpecDist = new HitDistribution([]);
+      for (let accRoll = 0; accRoll < 4; accRoll++) {
+        const high = Math.trunc(max * (8 - accRoll) / 4);
+        const low = Math.trunc(max * (4 - accRoll) / 4);
+        const chancePreviousRollsFail = (1 - acc) ** accRoll;
+        const chanceThisRollPasses = chancePreviousRollsFail * acc;
+        const chancePerDmg = chanceThisRollPasses / (high - low + 1);
+        for (let dmg = low; dmg <= high; dmg++) {
+          switch (accRoll) {
+            case 0:
+              clawSpecDist.addHit(new WeightedHit(chancePerDmg, [
+                new Hitsplat(Math.trunc(dmg / 2)),
+                new Hitsplat(Math.trunc(dmg / 4)),
+                new Hitsplat(Math.trunc(dmg / 8)),
+                new Hitsplat(Math.trunc(dmg / 8) + 1),
+              ]));
+              break;
+
+            case 1:
+              clawSpecDist.addHit(new WeightedHit(chancePerDmg, [
+                new Hitsplat(Math.trunc(dmg / 2)),
+                new Hitsplat(Math.trunc(dmg / 4)),
+                new Hitsplat(Math.trunc(dmg / 4) + 1),
+                Hitsplat.INACCURATE,
+              ]));
+              break;
+
+            case 2:
+              clawSpecDist.addHit(new WeightedHit(chancePerDmg, [
+                new Hitsplat(Math.trunc(dmg / 2)),
+                new Hitsplat(Math.trunc(dmg / 2) + 1),
+                Hitsplat.INACCURATE,
+                Hitsplat.INACCURATE,
+              ]));
+              break;
+
+            default:
+              clawSpecDist.addHit(new WeightedHit(chancePerDmg, [
+                new Hitsplat(dmg + 1),
+                Hitsplat.INACCURATE,
+                Hitsplat.INACCURATE,
+                Hitsplat.INACCURATE,
+              ]));
+              break;
+          }
+        }
+      }
+      const chanceAllFail = (1 - acc) ** 4;
+      clawSpecDist.addHit(new WeightedHit(chanceAllFail * 2 / 3, [
+        new Hitsplat(1, false),
+        new Hitsplat(1, false),
+        Hitsplat.INACCURATE,
+        Hitsplat.INACCURATE,
+      ]));
+      clawSpecDist.addHit(new WeightedHit(chanceAllFail / 3, [
+        Hitsplat.INACCURATE,
+        Hitsplat.INACCURATE,
+        Hitsplat.INACCURATE,
+        Hitsplat.INACCURATE,
+      ]));
+      dist = new AttackDistribution([clawSpecDist]);
     }
 
     if (style === 'ranged' && this.isWearingKarils()) {
@@ -1255,8 +1325,22 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   /**
    * Returns the average time-to-kill (in seconds) calculation.
    */
-  public getTtk() {
+  public getTtkSingle() {
+    return ((this.getHtk() - 1) * this.getExpectedAttackSpeed() + 1) * SECONDS_PER_TICK;
+  }
+
+  /**
+   * Returns the average time-to-kill (in seconds) calculation.
+   */
+  public getTtkContinuous() {
     return this.getHtk() * this.getExpectedAttackSpeed() * SECONDS_PER_TICK;
+  }
+
+  public getSpecDps(): number {
+    const specCost = this.isWearingFang() ? 25 : 100;
+    const ticksToRegen = this.wearing('Lightbearer') ? 25 : 50;
+    const ticksPerSpec = specCost * (ticksToRegen / 10);
+    return this.getDps() / ticksPerSpec;
   }
 
   public getWeaponDelayProvider(): WeaponDelayProvider {

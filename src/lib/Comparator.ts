@@ -196,7 +196,7 @@ export default class Comparator {
         break;
 
       case CompareYAxis.PLAYER_TTK:
-        apply((l) => forwardCalc(l).getTtk().toFixed(DPS_PRECISION));
+        apply((l) => forwardCalc(l).getTtkSingle().toFixed(DPS_PRECISION));
         break;
 
       case CompareYAxis.MONSTER_DPS:
