@@ -3,7 +3,7 @@
 import type { NextPage } from 'next';
 import MonsterContainer from '@/app/components/monster/MonsterContainer';
 import { Tooltip } from 'react-tooltip';
-import React, { Suspense, useEffect } from 'react';
+import React, { Suspense, useEffect, useMemo } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 import { ToastContainer } from 'react-toastify';
@@ -18,6 +18,11 @@ import DebugPanels from '@/app/components/results/DebugPanels';
 import { IconAlertTriangle } from '@tabler/icons-react';
 import NPCVersusPlayerResultsContainer from '@/app/components/results/NPCVersusPlayerResultsContainer';
 import { CalcProvider, useCalc } from '@/worker/CalcWorker';
+import UserIssueType from '@/enums/UserIssueType';
+
+const GLOBAL_ISSUE_TYPES: UserIssueType[] = [
+  UserIssueType.IMPORT_MISSING_DATA,
+];
 
 const Home: NextPage = observer(() => {
   const calc = useCalc();
@@ -91,6 +96,23 @@ const Home: NextPage = observer(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const globalIssues = useMemo(() => {
+    const issues = store.userIssues.filter((is) => GLOBAL_ISSUE_TYPES.includes(is.type));
+    return (
+      <>
+        {issues.map((is) => (
+          <div
+            key={`${is.loadout || 'global'}/${is.message}`}
+            className="w-full bg-orange-500 text-white px-4 py-1 text-sm border-b border-orange-400 flex items-center gap-1"
+          >
+            <IconAlertTriangle className="text-orange-200" />
+            {`${is.loadout ? `Loadout ${is.loadout}: ` : ''}${is.message}`}
+          </div>
+        ))}
+      </>
+    );
+  }, [store.userIssues]);
+
   return (
     <div>
       {store.prefs.manualMode && (
@@ -103,6 +125,7 @@ const Home: NextPage = observer(() => {
           Manual mode is enabled! Some things may not function correctly. Click here to disable it.
         </button>
       )}
+      {globalIssues}
       <Suspense>
         <InitialLoad />
       </Suspense>

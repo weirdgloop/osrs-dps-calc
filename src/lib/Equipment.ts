@@ -12,6 +12,9 @@ export type EquipmentBonuses = Pick<Player, 'bonuses' | 'offensive' | 'defensive
  * All available equipment that a player can equip.
  */
 export const availableEquipment = equipment as EquipmentPiece[];
+export const EMPTY_BLOWPIPE = availableEquipment.find(
+  (e) => e.name === 'Toxic blowpipe' && e.version === 'Charged',
+);
 
 export const noStatExceptions = [
   'Castle wars bracelet',
