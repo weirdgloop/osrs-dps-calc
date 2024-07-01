@@ -37,6 +37,8 @@ ARG BASE_URL="http://localhost"
 ARG BASE_PATH=""
 ARG SHORTLINK_URL="$BASE_URL$BASE_PATH"
 
+RUN apt-get update && apt-get install git -y
+
 WORKDIR /srv
 ADD . /srv
 
@@ -54,7 +56,9 @@ RUN if [ ! -z '$BASE_PATH' ]; then \
 RUN echo "NEXT_PUBLIC_SHORTLINK_URL=$SHORTLINK_URL" >> .env.production
 
 # build prod optimized bundle
-RUN yarn build
+# mount git dir for metadata
+RUN --mount=type=bind,source=.git/,target=.git/ \
+    yarn build
 
 
 
