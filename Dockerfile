@@ -49,11 +49,11 @@ COPY --from=scraper-image /srv/cdn /srv/cdn
 RUN --mount=type=cache,target=/root/.yarn YARN_CACHE_FOLDER=/root/.yarn yarn install
 
 # override path envvars
-RUN echo "NEXT_PUBLIC_BASE_URL=$BASE_URL" > .env.production
+RUN echo "NEXT_PUBLIC_BASE_URL=$BASE_URL" > .env.local
 RUN if [ ! -z '$BASE_PATH' ]; then \
-      echo NEXT_PUBLIC_BASE_PATH=$BASE_PATH >> .env.production; \
+      echo NEXT_PUBLIC_BASE_PATH=$BASE_PATH >> .env.local; \
     fi
-RUN echo "NEXT_PUBLIC_SHORTLINK_URL=$SHORTLINK_URL" >> .env.production
+RUN echo "NEXT_PUBLIC_SHORTLINK_URL=$SHORTLINK_URL" >> .env.local
 
 # build prod optimized bundle
 # mount git dir for metadata
