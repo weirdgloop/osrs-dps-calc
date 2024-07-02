@@ -23,8 +23,8 @@ const ResultsContainer = observer(() => {
           <Toggle
             checked={prefs.resultsExpanded}
             setChecked={(c) => store.updatePreferences({ resultsExpanded: c })}
-            label="More details"
-            className="text-black dark:text-white mb-4"
+            label="Show extended view"
+            className="text-black dark:text-white mb-0"
           />
         </div>
         <div className="overflow-x-auto max-w-[100vw]">
