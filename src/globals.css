@@ -188,6 +188,10 @@ tbody th:first-child {
   @apply text-white;
 }
 
+tbody th.t-group-header {
+  @apply px-4 italic pl-6 border-r bg-btns-500 dark:bg-dark-600 select-none text-body-300;
+}
+
 /* Toasts */
 :root {
   --toastify-icon-color-success: theme(backgroundColor.green.200);

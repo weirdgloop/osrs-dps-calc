@@ -39,9 +39,28 @@ const calcKeyToString = (value: number, calcKey: keyof PlayerVsNPCCalculatedLoad
   }
 };
 
+const ResultRowHeader: React.FC<PropsWithChildren> = (props) => {
+  const { children } = props;
+
+  return (
+    <tr>
+      <th
+        className="t-group-header"
+        colSpan={999}
+      >
+        {children}
+      </th>
+    </tr>
+  );
+};
+
 const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props) => {
   const store = useStore();
-  const { children, calcKey, title } = props;
+  const {
+    children,
+    calcKey,
+    title,
+  } = props;
   const { calc } = store;
   const loadouts = toJS(calc.loadouts);
 
@@ -58,7 +77,7 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
 
   return (
     <tr>
-      <th className="w-36 px-4 border-r bg-btns-400 dark:bg-dark-500 select-none cursor-help" title={title}>{children}</th>
+      <th className="w-40 px-4 border-r bg-btns-400 dark:bg-dark-500 select-none cursor-help" title={title}>{children}</th>
       {cells}
     </tr>
   );
@@ -99,29 +118,35 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
           DPS
         </ResultRow>
         <ResultRow calcKey="ttkSingle" title="The average time (in seconds) it will take to defeat the monster.">
-          {resultsExpanded ? 'TTK Single' : 'Avg. TTK'}
+          Avg. TTK
         </ResultRow>
         {resultsExpanded && (
           <ResultRow calcKey="ttkContinuous" title="The average time (in seconds) it will take to defeat the monster repeatedly.">
-            TTK Multi
+            Avg. TTK (multi)
           </ResultRow>
         )}
-        <ResultRow calcKey="maxAttackRoll" title="The maximum attack roll based on your current gear (higher is better!)">
-          Attack roll
-        </ResultRow>
-        <ResultRow calcKey="npcDefRoll" title={"The NPC's defense roll (lower is better!)"}>
-          NPC def roll
-        </ResultRow>
         <ResultRow calcKey="accuracy" title="How accurate you are against the monster">
           Accuracy
         </ResultRow>
         {resultsExpanded && (
           <>
+            <ResultRowHeader>
+              Rolls
+            </ResultRowHeader>
+            <ResultRow calcKey="maxAttackRoll" title="The maximum attack roll based on your current gear (higher is better!)">
+              Attack roll
+            </ResultRow>
+            <ResultRow calcKey="npcDefRoll" title={"The NPC's defense roll (lower is better!)"}>
+              NPC def roll
+            </ResultRow>
+            <ResultRowHeader>
+              Special attacks
+            </ResultRowHeader>
             <ResultRow calcKey="specMaxHit" title="The maximum hit that you will deal to the monster when using your special attack">
-              Spec max
+              Spec max hit
             </ResultRow>
             <ResultRow calcKey="specExpected" title="The average damage per special attack, including misses">
-              Spec expected
+              Spec expected hit
             </ResultRow>
             <ResultRow calcKey="specMomentDps" title="The average damage you would deal per-second, if using infinite special attacks">
               Spec DPS
