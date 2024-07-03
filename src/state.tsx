@@ -273,7 +273,9 @@ class GlobalState implements State {
       }
     }));
 
-    this.wikisync = startPollingForRuneLite();
+    if ((process.env.NEXT_PUBLIC_DISABLE_WS || 'false') !== 'true') {
+      this.wikisync = startPollingForRuneLite();
+    }
   }
 
   set debug(debug: boolean) {
