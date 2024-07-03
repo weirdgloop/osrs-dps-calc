@@ -23,7 +23,7 @@ const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) 
   // eslint-disable-next-line no-restricted-syntax
   for (const [i, p] of loadouts.entries()) {
     const loadoutName = (i + 1).toString();
-    const start = new Date().getTime();
+    const start = self.performance.now();
     const calc = new PlayerVsNPCCalc(p, monster, {
       loadoutName,
       detailedOutput: calcOpts.detailedOutput,
@@ -40,11 +40,9 @@ const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) 
       details: calc.details,
       userIssues: calc.userIssues,
     });
-    const end = new Date().getTime();
 
-    if (end - start >= 100) {
-      console.warn(`Loadout ${i + 1} took ${end - start}ms to calculate!`);
-    }
+    const end = self.performance.now();
+    console.debug(`Loadout ${i + 1} took ${end - start}ms to calculate`);
   }
 
   return res;
@@ -56,7 +54,7 @@ const computeMvPValues: Handler<WorkerRequestType.COMPUTE_REVERSE> = async (data
 
   for (const [i, p] of loadouts.entries()) {
     const loadoutName = (i + 1).toString();
-    const start = new Date().getTime();
+    const start = self.performance.now();
     const calc = new NPCVsPlayerCalc(p, monster, {
       loadoutName,
       detailedOutput: calcOpts.detailedOutput,
@@ -71,11 +69,9 @@ const computeMvPValues: Handler<WorkerRequestType.COMPUTE_REVERSE> = async (data
       avgDmgTaken: calc.getAverageDamageTaken(),
       npcDetails: calc.details,
     });
-    const end = new Date().getTime();
 
-    if (end - start >= 1000) {
-      console.warn(`Loadout ${i + 1} took ${end - start}ms to calculate!`);
-    }
+    const end = self.performance.now();
+    console.debug(`Reverse loadout ${i + 1} took ${end - start}ms to calculate`);
   }
 
   return res;
@@ -142,6 +138,7 @@ const ttkDistParallel: Handler<WorkerRequestType.COMPUTE_TTK_PARALLEL> = async (
   }
 
   // fire off a ttk compute for each loadout
+  const start = self.performance.now();
   const requests: Promise<TtkResponse>[] = [];
   for (let i = 0; i < loadouts.length; i++) {
     const loadout = loadouts[i];
@@ -172,6 +169,8 @@ const ttkDistParallel: Handler<WorkerRequestType.COMPUTE_TTK_PARALLEL> = async (
   // since await clears the call stack allowing other requests to come in and cancel the previous
   // todo it would be pretty nice if we could stream these back instead of batching
   const results = await Promise.all(requests);
+  const end = self.performance.now();
+  console.debug(`Aggregating ${requests.length} TTK dists took ${end - start}`);
 
   // only need to check first elt, since all reqs in requests array are guaranteed to match
   if (results[0].sequenceId !== lastSequenceId) {

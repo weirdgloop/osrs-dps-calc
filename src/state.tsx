@@ -27,7 +27,7 @@ import {
   ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, OVERHEAD_PRAYERS, Prayer,
 } from './enums/Prayer';
 import Potion from './enums/Potion';
-import { WikiSyncer, startPollingForRuneLite } from './wikisync/WikiSyncer';
+import { startPollingForRuneLite, WikiSyncer } from './wikisync/WikiSyncer';
 
 const EMPTY_CALC_LOADOUT = {} as CalculatedLoadout;
 
@@ -741,19 +741,29 @@ class GlobalState implements State {
       this.updateCalcResults({ loadouts: resp.payload });
     };
 
-    await request(WorkerRequestType.COMPUTE_BASIC);
-    await request(WorkerRequestType.COMPUTE_REVERSE);
+    const promises: Promise<void>[] = [];
+    promises.push(
+      request(WorkerRequestType.COMPUTE_BASIC),
+      request(WorkerRequestType.COMPUTE_REVERSE),
+    );
 
     if (this.prefs.showTtkComparison) {
-      const resp = await this.calcWorker.do({
-        type: WorkerRequestType.COMPUTE_TTK_PARALLEL,
-        data,
-      });
+      promises.push(
+        (async () => {
+          const parallel = process.env.NEXT_PUBLIC_SERIAL_TTK !== 'true';
+          const resp = await this.calcWorker.do({
+            type: parallel ? WorkerRequestType.COMPUTE_TTK_PARALLEL : WorkerRequestType.COMPUTE_TTK,
+            data,
+          });
 
-      for (const [ix, loadout] of resp.payload.entries()) {
-        this.updateCalcTtkDist(ix, loadout.ttkDist);
-      }
+          for (const [ix, loadout] of resp.payload.entries()) {
+            this.updateCalcTtkDist(ix, loadout.ttkDist);
+          }
+        })(),
+      );
     }
+
+    await Promise.all(promises);
   }
 }
 

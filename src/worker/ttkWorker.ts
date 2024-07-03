@@ -12,7 +12,7 @@ export const ttkDist: Handler<WorkerRequestType.COMPUTE_TTK> = async (data) => {
   const res: Pick<PlayerVsNPCCalculatedLoadout, 'ttkDist'>[] = [];
   for (const [i, p] of loadouts.entries()) {
     const loadoutName = p.name || (i + 1).toString();
-    const start = new Date().getTime();
+    const start = self.performance.now();
     const calc = new PlayerVsNPCCalc(p, monster, {
       loadoutName,
       detailedOutput: calcOpts.detailedOutput,
@@ -23,10 +23,8 @@ export const ttkDist: Handler<WorkerRequestType.COMPUTE_TTK> = async (data) => {
       ttkDist: calc.getTtkDistribution(),
     });
 
-    const end = new Date().getTime();
-    if (end - start >= 1000) {
-      console.warn(`TTK Dist ${loadoutName} took ${end - start}ms to calculate!`);
-    }
+    const end = self.performance.now();
+    console.debug(`TTK Dist ${loadoutName} took ${end - start}ms to calculate`);
   }
 
   return res;
