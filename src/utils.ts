@@ -70,6 +70,11 @@ export const generateShortlink = async (data: ImportableData): Promise<string> =
   return res.data.data;
 };
 
+// for type narrowing
+export function isDefined<T>(id: T | undefined | null): id is T {
+  return !!id;
+}
+
 /**
  * Calculates a player's combat level using their skills
  * @param s

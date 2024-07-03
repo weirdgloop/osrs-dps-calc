@@ -122,7 +122,14 @@ export const parseLoadoutsFromImportedData = (data: ImportableData) => data.load
       let item: EquipmentPiece | undefined;
       if (Object.hasOwn(v, 'id')) {
         item = availableEquipment.find((eq) => eq.id === v.id);
-        if (!item) console.warn(`[parseLoadoutsFromImportedData] No item found for item ID ${v.id}`);
+        if (item) {
+          // include the hidden itemVars inputs that are not present on the availableEquipment store
+          if (Object.hasOwn(v, 'itemVars')) {
+            item = { ...item, itemVars: v.itemVars };
+          }
+        } else {
+          console.warn(`[parseLoadoutsFromImportedData] No item found for item ID ${v.id}`);
+        }
       }
       // The following line will remove the item entirely if it seems to no longer exist.
       loadout.equipment[k as keyof typeof loadout.equipment] = item || null;
