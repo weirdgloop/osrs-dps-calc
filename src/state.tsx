@@ -197,6 +197,7 @@ class GlobalState implements State {
     showTtkComparison: false,
     showNPCVersusPlayerResults: false,
     hitDistsHideZeros: false,
+    resultsExpanded: false,
   };
 
   calc: Calculator = {

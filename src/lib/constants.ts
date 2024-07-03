@@ -317,6 +317,7 @@ export const BA_ATTACKER_MONSTERS = [
 
 export const ACCURACY_PRECISION = 2;
 export const DPS_PRECISION = 3;
+export const EXPECTED_HIT_PRECISION = 1;
 
 export const AUTOCAST_STANCES: CombatStyleStance[] = ['Autocast', 'Defensive Autocast'];
 export const CAST_STANCES: CombatStyleStance[] = [...AUTOCAST_STANCES, 'Manual Cast'];

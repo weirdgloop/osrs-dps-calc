@@ -1,18 +1,18 @@
 import React, { PropsWithChildren, useMemo } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
-import { CalculatedLoadout } from '@/types/State';
+import { NPCVsPlayerCalculatedLoadout } from '@/types/State';
 import Spinner from '@/app/components/Spinner';
 import { ACCURACY_PRECISION, DPS_PRECISION } from '@/lib/constants';
 import { max, min } from 'd3-array';
 import { toJS } from 'mobx';
 
 interface IResultRowProps {
-  calcKey: keyof Omit<CalculatedLoadout, 'ttkDist'>;
+  calcKey: keyof NPCVsPlayerCalculatedLoadout;
   title?: string;
 }
 
-const calcKeyToString = (value: number, calcKey: keyof CalculatedLoadout): string | React.ReactNode => {
+const calcKeyToString = (value: number, calcKey: keyof NPCVsPlayerCalculatedLoadout): string | React.ReactNode => {
   if (value === undefined || value === null) {
     // if the value has not yet been populated by the worker
     return <Spinner className="w-3" />;
