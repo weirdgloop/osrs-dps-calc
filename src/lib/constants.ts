@@ -1,5 +1,10 @@
 import { CombatStyleStance } from '@/types/PlayerCombatStyle';
 
+export const BLOWPIPE_IDS: number[] = [
+  12926, // regular
+  28688, // blazing
+];
+
 export const AKKHA_IDS = [
   11789, 11790, 11791, 11792, 11793, 11794, 11795, 11796,
 ];

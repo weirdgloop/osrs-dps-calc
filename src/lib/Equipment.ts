@@ -1,7 +1,7 @@
 import { EquipmentPiece, Player, PlayerEquipment } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { keys } from '@/utils';
-import { CAST_STANCES, TOMBS_OF_AMASCUT_MONSTER_IDS } from '@/lib/constants';
+import { BLOWPIPE_IDS, CAST_STANCES, TOMBS_OF_AMASCUT_MONSTER_IDS } from '@/lib/constants';
 import { sum } from 'd3-array';
 import equipment from '../../cdn/json/equipment.json';
 import generatedEquipmentAliases from './EquipmentAliases';
@@ -277,6 +277,15 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
       totals.defensive[stat] += piece.defensive[stat] || 0;
     });
   });
+
+  if (BLOWPIPE_IDS.includes(playerEquipment.weapon?.id || 0)) {
+    const dart = availableEquipment.find((e) => e.id === playerEquipment.weapon?.itemVars?.blowpipeDartId);
+    if (dart) {
+      totals.bonuses.ranged_str += dart.bonuses.ranged_str;
+    } else {
+      // todo warn user
+    }
+  }
 
   if (playerEquipment.weapon?.name === "Tumeken's shadow" && player.style.stance !== 'Manual Cast') {
     const factor = TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id) ? 4 : 3;
