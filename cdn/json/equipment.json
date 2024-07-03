@@ -80230,7 +80230,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 0,
+      "magic_str": 20,
       "prayer": 0
     },
     "offensive": {
