@@ -135,18 +135,20 @@ export class Debouncer {
     this.delay = ms;
   }
 
+  /* eslint-disable no-restricted-globals */
   async debounce(): Promise<void> {
     if (this.windowTimeoutId) {
-      window.clearTimeout(this.windowTimeoutId);
+      self.clearTimeout(this.windowTimeoutId);
     }
 
     const p = new DeferredPromise<void>();
-    this.windowTimeoutId = window.setTimeout(() => {
+    this.windowTimeoutId = self.setTimeout(() => {
       p.resolve(undefined);
     }, this.delay);
 
     return p.promise;
   }
+  /* eslint-enable no-restricted-globals */
 }
 
 export const PotionMap: { [k in Potion]: { name: string, order: number, image: StaticImageData, calculateFn: (skills: PlayerSkills) => Partial<PlayerSkills> } } = {
