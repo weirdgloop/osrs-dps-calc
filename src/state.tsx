@@ -22,6 +22,7 @@ import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
 import { availableEquipment, calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { CalcWorker } from '@/worker/CalcWorker';
 import { spellByName } from '@/types/Spell';
+import { NUMBER_OF_LOADOUTS } from '@/lib/constants';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
   ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, OVERHEAD_PRAYERS, Prayer,
@@ -697,7 +698,7 @@ class GlobalState implements State {
   }
 
   get canCreateLoadout() {
-    return (this.loadouts.length < 5);
+    return this.loadouts.length < NUMBER_OF_LOADOUTS;
   }
 
   createLoadout(selected?: boolean, cloneIndex?: number) {

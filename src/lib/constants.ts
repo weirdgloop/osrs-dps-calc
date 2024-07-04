@@ -1,5 +1,8 @@
 import { CombatStyleStance } from '@/types/PlayerCombatStyle';
 
+// The maximum number of loadouts that users can have. Do not lower it, else it will cause share link issues.
+export const NUMBER_OF_LOADOUTS = 5;
+
 export const AKKHA_IDS = [
   11789, 11790, 11791, 11792, 11793, 11794, 11795, 11796,
 ];

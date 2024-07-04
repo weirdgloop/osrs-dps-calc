@@ -15,6 +15,7 @@ import Comparator from '@/lib/Comparator';
 import { ttkDist } from '@/worker/ttkWorker';
 import { range } from 'd3-array';
 import { DeferredPromise } from '@/utils';
+import { NUMBER_OF_LOADOUTS } from '@/lib/constants';
 
 const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) => {
   const { loadouts, monster, calcOpts } = data;
@@ -109,9 +110,9 @@ const createTtkWorker = (): OneShotWorker<TtkResponse> => {
 
 const ttkWorkers: (OneShotWorker<TtkResponse> | undefined)[] = range(0, 10).map(
   // only seed first half, otherwise we waste the other half immediately
-  (i) => (i < 5 ? createTtkWorker() : undefined),
+  (i) => (i < NUMBER_OF_LOADOUTS ? createTtkWorker() : undefined),
 );
-let ttkModulus: number = 1; // whether we use first 5 or second 5
+let ttkModulus: number = 1; // whether we use first set or second set
 let lastSequenceId: number = -1;
 
 /**
@@ -119,7 +120,7 @@ let lastSequenceId: number = -1;
  *   a) compute each ttk dist in parallel
  *   b) be cancellable via terminate()
  *   c) keep a "warm" pool of computers
- * the `i % 5`th ttkWorker corresponds to the `i`th loadout index
+ * the `i % {NUMBER_OF_LOADOUTS}`th ttkWorker corresponds to the `i`th loadout index
  * unfortunately we can't reuse CalcWorker due to cyclic imports
  */
 const ttkDistParallel: Handler<WorkerRequestType.COMPUTE_TTK_PARALLEL> = async (data, rawRequest) => {
@@ -127,13 +128,13 @@ const ttkDistParallel: Handler<WorkerRequestType.COMPUTE_TTK_PARALLEL> = async (
   const { loadouts, monster, calcOpts } = data;
   lastSequenceId = sequenceId!;
 
-  const prevBase = ttkModulus * 5;
+  const prevBase = ttkModulus * NUMBER_OF_LOADOUTS;
   ttkModulus += 1;
   ttkModulus %= 2;
-  const currBase = ttkModulus * 5;
+  const currBase = ttkModulus * NUMBER_OF_LOADOUTS;
 
   // kill in progress computes immediately
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < NUMBER_OF_LOADOUTS; i++) {
     ttkWorkers[prevBase + i]?.worker?.terminate();
   }
 
@@ -152,7 +153,7 @@ const ttkDistParallel: Handler<WorkerRequestType.COMPUTE_TTK_PARALLEL> = async (
       type: WorkerRequestType.COMPUTE_TTK,
       sequenceId: sequenceId!,
       data: {
-        loadouts: [loadout], // we're just splitting up the 5 payloads into one per worker
+        loadouts: [loadout], // we're just splitting up the payloads into one per worker
         monster,
         calcOpts,
       },
@@ -161,7 +162,7 @@ const ttkDistParallel: Handler<WorkerRequestType.COMPUTE_TTK_PARALLEL> = async (
   }
 
   // while we wait for the jobs to finish we can spin up the workers for the next request
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < NUMBER_OF_LOADOUTS; i++) {
     ttkWorkers[prevBase + i] = createTtkWorker();
   }
 
