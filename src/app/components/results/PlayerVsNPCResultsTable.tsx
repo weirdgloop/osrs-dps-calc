@@ -20,10 +20,15 @@ const calcKeyToString = (value: number, calcKey: keyof PlayerVsNPCCalculatedLoad
 
   switch (calcKey) {
     case 'accuracy':
+    case 'specAccuracy':
       return `${(value * 100).toFixed(ACCURACY_PRECISION)}%`;
     case 'dps':
+    case 'specMomentDps':
       return value.toFixed(DPS_PRECISION);
+    case 'specFullDps':
+      return value.toPrecision(DPS_PRECISION);
     case 'expectedHit':
+    case 'specExpected':
       return value.toFixed(EXPECTED_HIT_PRECISION);
     case 'ttk':
       return value === 0
@@ -128,6 +133,24 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
             </ResultRow>
             <ResultRow calcKey="npcDefRoll" title={"The NPC's defense roll (lower is better!)"}>
               NPC def roll
+            </ResultRow>
+            <ResultRowHeader>
+              Special Attack
+            </ResultRowHeader>
+            <ResultRow calcKey="specAccuracy" title="How accurate your special attack is against the monster">
+              Accuracy
+            </ResultRow>
+            <ResultRow calcKey="specMomentDps" title="The average damage you would deal per-second, given infinite special attack energy">
+              DPS
+            </ResultRow>
+            <ResultRow calcKey="specFullDps" title="The damage per-second of the special attack, accounting for special attack regeneration">
+              Sustain DPS
+            </ResultRow>
+            <ResultRow calcKey="specMaxHit" title="The maximum hit that the special attack can deal to the monster">
+              Max hit
+            </ResultRow>
+            <ResultRow calcKey="specExpected" title="The expected hit that the special attack will deal to the monster per use, including misses">
+              Expected hit
             </ResultRow>
           </>
         )}

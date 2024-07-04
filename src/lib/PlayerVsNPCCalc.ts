@@ -182,6 +182,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
+    if (this.opts.usingSpecialAttack && this.isWearingFang()) {
+      attackRoll = Math.trunc(attackRoll * 3 / 2);
+    }
+
     return attackRoll;
   }
 
@@ -318,7 +322,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isWearingFang()) {
       const shrink = Math.trunc(maxHit * 3 / 20);
       minHit = this.track(DetailKey.MIN_HIT_FANG, shrink);
-      maxHit = this.trackAdd(DetailKey.MAX_HIT_FANG, maxHit, -shrink);
+      if (!this.opts.usingSpecialAttack) {
+        maxHit = this.trackAdd(DetailKey.MAX_HIT_FANG, maxHit, -shrink);
+      }
     }
 
     return [minHit, maxHit];
@@ -813,11 +819,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   public getDistribution(): AttackDistribution {
     if (this.memoizedDist === undefined) {
       this.memoizedDist = this.getDistributionImpl();
+      this.track(DetailKey.HIT_DIST_FINAL_MIN, this.memoizedDist.getMin());
+      this.track(DetailKey.HIT_DIST_FINAL_MAX, this.memoizedDist.getMax());
+      this.track(DetailKey.HIT_DIST_FINAL_EXPECTED, this.memoizedDist.getExpectedDamage());
     }
 
-    this.track(DetailKey.HIT_DIST_FINAL_MIN, this.memoizedDist.getMin());
-    this.track(DetailKey.HIT_DIST_FINAL_MAX, this.memoizedDist.getMax());
-    this.track(DetailKey.HIT_DIST_FINAL_EXPECTED, this.memoizedDist.getExpectedDamage());
     return this.memoizedDist;
   }
 
@@ -1281,6 +1287,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    */
   public getTtk() {
     return this.getHtk() * this.getExpectedAttackSpeed() * SECONDS_PER_TICK;
+  }
+
+  public getSpecDps(): number {
+    const specCost = this.isWearingFang() ? 25 : 100;
+    const ticksToRegen = this.wearing('Lightbearer') ? 25 : 50;
+    const ticksPerSpec = specCost * (ticksToRegen / 10);
+    return this.getDps() / ticksPerSpec;
   }
 
   public getWeaponDelayProvider(): WeaponDelayProvider {

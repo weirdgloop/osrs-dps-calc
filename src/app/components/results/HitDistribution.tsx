@@ -42,7 +42,7 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, pa
 const HitDistribution: React.FC = observer(() => {
   const store = useStore();
   const { prefs, calc, selectedLoadout } = store;
-  const data = calc.loadouts[selectedLoadout]?.hitDist || [];
+  const data = (prefs.hitDistShowSpec ? calc.loadouts[selectedLoadout]?.specHitDist : calc.loadouts[selectedLoadout]?.hitDist) || [];
 
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
@@ -79,6 +79,12 @@ const HitDistribution: React.FC = observer(() => {
           checked={prefs.hitDistsHideZeros}
           setChecked={(c) => store.updatePreferences({ hitDistsHideZeros: c })}
           label="Hide misses"
+          className="text-black dark:text-white mb-4"
+        />
+        <Toggle
+          checked={prefs.hitDistShowSpec}
+          setChecked={(c) => store.updatePreferences({ hitDistShowSpec: c })}
+          label="Show special attack"
           className="text-black dark:text-white mb-4"
         />
         <ResponsiveContainer width="100%" height={225}>

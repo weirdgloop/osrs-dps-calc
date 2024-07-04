@@ -32,6 +32,7 @@ export interface Preferences {
   showTtkComparison: boolean;
   showNPCVersusPlayerResults: boolean;
   hitDistsHideZeros: boolean; // legacy name
+  hitDistShowSpec: boolean;
   resultsExpanded: boolean;
 }
 
@@ -65,6 +66,13 @@ export interface PlayerVsNPCCalculatedLoadout extends CalculatedLoadout {
   ttk?: number,
   hitDist?: ChartEntry[],
   ttkDist?: Map<number, number>,
+
+  specAccuracy?: number,
+  specMaxHit?: number,
+  specExpected?: number,
+  specMomentDps?: number,
+  specFullDps?: number,
+  specHitDist?: ChartEntry[],
 }
 
 // NPC vs Player metrics

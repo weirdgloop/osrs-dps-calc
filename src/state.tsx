@@ -199,6 +199,7 @@ class GlobalState implements State {
     showTtkComparison: false,
     showNPCVersusPlayerResults: false,
     hitDistsHideZeros: false,
+    hitDistShowSpec: false,
     resultsExpanded: false,
   };
 

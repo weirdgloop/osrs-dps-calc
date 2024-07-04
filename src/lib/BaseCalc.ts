@@ -13,6 +13,7 @@ export interface CalcOpts {
   loadoutName?: string,
   detailedOutput?: boolean,
   disableMonsterScaling?: boolean,
+  usingSpecialAttack?: boolean,
   overrides?: {
     accuracy?: number,
     attackRoll?: number,
@@ -32,6 +33,7 @@ const DEFAULT_OPTS: Required<InternalOpts> = {
   loadoutName: 'unknown',
   detailedOutput: false,
   disableMonsterScaling: false,
+  usingSpecialAttack: false,
   noInit: false,
   overrides: {},
 };
