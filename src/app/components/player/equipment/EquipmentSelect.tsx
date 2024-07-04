@@ -1,11 +1,12 @@
 import React, { useMemo } from 'react';
 import { useStore } from '@/state';
 import { observer } from 'mobx-react-lite';
-import { getCdnImage } from '@/utils';
+import { getCdnImage, isDefined } from '@/utils';
 import { EquipmentPiece } from '@/types/Player';
 import LazyImage from '@/app/components/generic/LazyImage';
 import { cross } from 'd3-array';
 import { availableEquipment, equipmentAliases, noStatExceptions } from '@/lib/Equipment';
+import { BLOWPIPE_IDS } from '@/lib/constants';
 import Combobox from '../../generic/Combobox';
 
 interface EquipmentOption {
@@ -16,29 +17,30 @@ interface EquipmentOption {
   equipment: EquipmentPiece;
 }
 
-const BLOWPIPE_IDS: string[] = [
-  '12926', // regular
-  '28688', // blazing
-];
-
-const DART_IDS: string[] = [
-  '806', // bronze
-  '807', // iron
-  '808', // steel
-  '809', // mithril
-  '810', // adamant
-  '811', // rune
-  '3093', // black
-  '11230', // dragon
-  '25849', // amethyst
-];
+const findDart = (name: string): EquipmentPiece | undefined => {
+  const eq = availableEquipment.find((e) => e.name === name);
+  if (!eq) {
+    console.warn(`Failed to locate dart [${name}] for blowpipe dart entry generation, proceeding without this option.`);
+  }
+  return eq;
+};
+const DARTS: EquipmentPiece[] = [
+  findDart('Bronze dart'),
+  findDart('Iron dart'),
+  findDart('Steel dart'),
+  findDart('Mithril dart'),
+  findDart('Adamant dart'),
+  findDart('Rune dart'),
+  findDart('Black dart'),
+  findDart('Dragon dart'),
+  findDart('Amethyst dart'),
+].filter(isDefined);
 
 const EquipmentSelect: React.FC = observer(() => {
   const store = useStore();
 
   const options: EquipmentOption[] = useMemo(() => {
     const blowpipeEntries: EquipmentOption[] = [];
-    const dartEntries: EquipmentOption[] = [];
 
     const entries: EquipmentOption[] = [];
     for (const v of availableEquipment.filter((eq) => {
@@ -67,27 +69,24 @@ const EquipmentSelect: React.FC = observer(() => {
         equipment: v,
       };
 
-      if (BLOWPIPE_IDS.includes(e.value)) {
+      if (BLOWPIPE_IDS.includes(v.id)) {
         blowpipeEntries.push(e);
-      } else if (DART_IDS.includes(e.value)) {
-        dartEntries.push(e);
-        entries.push(e);
       } else {
         entries.push(e);
       }
     }
 
-    cross(blowpipeEntries, dartEntries).forEach(([blowpipe, dart]) => {
-      const newStrength = blowpipe.equipment.bonuses.ranged_str + dart.equipment.bonuses.ranged_str;
+    cross(blowpipeEntries, DARTS).forEach(([blowpipe, dart]) => {
       entries.push({
         ...blowpipe,
-        label: `${blowpipe.label} (${dart.label.split(' ', 2)[0]})`,
-        value: `${blowpipe.value}_${dart.value}`,
+        label: `${blowpipe.label} (${dart.name.replace(' dart', '')})`,
+        value: `${blowpipe.value}_${dart.id}`,
         equipment: {
           ...blowpipe.equipment,
-          bonuses: {
-            ...blowpipe.equipment.bonuses,
-            ranged_str: newStrength,
+          itemVars: {
+            ...blowpipe.equipment.itemVars,
+            blowpipeDartName: dart.name,
+            blowpipeDartId: dart.id,
           },
         },
       });

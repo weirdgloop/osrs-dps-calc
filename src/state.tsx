@@ -103,6 +103,7 @@ export const generateEmptyPlayer = (name?: string): Player => ({
     markOfDarknessSpell: false,
     forinthrySurge: false,
     soulreaperStacks: 0,
+    baAttackerLevel: 0,
     usingSunfireRunes: false,
   },
   spell: null,
@@ -116,7 +117,14 @@ export const parseLoadoutsFromImportedData = (data: ImportableData) => data.load
       let item: EquipmentPiece | undefined;
       if (Object.hasOwn(v, 'id')) {
         item = availableEquipment.find((eq) => eq.id === v.id);
-        if (!item) console.warn(`[parseLoadoutsFromImportedData] No item found for item ID ${v.id}`);
+        if (item) {
+          // include the hidden itemVars inputs that are not present on the availableEquipment store
+          if (Object.hasOwn(v, 'itemVars')) {
+            item = { ...item, itemVars: v.itemVars };
+          }
+        } else {
+          console.warn(`[parseLoadoutsFromImportedData] No item found for item ID ${v.id}`);
+        }
       }
       // The following line will remove the item entirely if it seems to no longer exist.
       loadout.equipment[k as keyof typeof loadout.equipment] = item || null;
@@ -191,6 +199,7 @@ class GlobalState implements State {
     showTtkComparison: false,
     showNPCVersusPlayerResults: false,
     hitDistsHideZeros: false,
+    resultsExpanded: false,
   };
 
   calc: Calculator = {
@@ -267,7 +276,9 @@ class GlobalState implements State {
       }
     }));
 
-    this.wikisync = startPollingForRuneLite();
+    if ((process.env.NEXT_PUBLIC_DISABLE_WS || 'false') !== 'true') {
+      this.wikisync = startPollingForRuneLite();
+    }
   }
 
   set debug(debug: boolean) {
@@ -426,12 +437,21 @@ class GlobalState implements State {
       let newMonster: PartialDeep<Monster> = {};
 
       if (data.monster.id > -1) {
-        const monsterById = getMonsters().find((m) => m.id === data.monster.id);
-        if (!monsterById) {
+        const monstersById = getMonsters().filter((m) => m.id === data.monster.id);
+        if ((monstersById?.length || 0) === 0) {
           throw new Error(`Failed to find monster by id '${data.monster.id}' from shortlink`);
         }
 
-        newMonster = monsterById;
+        if (monstersById.length === 1) {
+          newMonster = monstersById[0];
+        } else {
+          const version = monstersById.find((m) => m.version === data.monster.version);
+          if (version) {
+            newMonster = version;
+          } else {
+            newMonster = monstersById[0];
+          }
+        }
       } else {
         newMonster = data.monster;
       }

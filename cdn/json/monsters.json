@@ -796,7 +796,7 @@
     "style": [
       "Crush"
     ],
-    "size": 0,
+    "size": 1,
     "max_hit": "18",
     "skills": {
       "atk": 20,
@@ -813,6 +813,46 @@
       "ranged": 0,
       "ranged_str": 0,
       "str": 10
+    },
+    "defensive": {
+      "crush": 10,
+      "magic": 75,
+      "heavy": 75,
+      "standard": 75,
+      "light": 75,
+      "slash": 75,
+      "stab": 75
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 12394,
+    "name": "Abyssal walker (The Scar)",
+    "version": "Level 90",
+    "image": "Abyssal walker (The Scar).png",
+    "level": 90,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 20,
+      "def": 20,
+      "hp": 120,
+      "magic": 1,
+      "ranged": 1,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
     },
     "defensive": {
       "crush": 10,
@@ -2323,12 +2363,12 @@
     "size": 2,
     "max_hit": "5",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 37,
+      "def": 38,
       "hp": 200,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 38
     },
     "offensive": {
       "atk": 0,
@@ -2403,12 +2443,12 @@
     "size": 1,
     "max_hit": "5",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 37,
+      "def": 38,
       "hp": 200,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 38
     },
     "offensive": {
       "atk": 0,
@@ -2483,12 +2523,12 @@
     "size": 1,
     "max_hit": "5",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 37,
+      "def": 38,
       "hp": 200,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 38
     },
     "offensive": {
       "atk": 0,
@@ -2563,12 +2603,12 @@
     "size": 2,
     "max_hit": "5",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 37,
+      "def": 38,
       "hp": 200,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 38
     },
     "offensive": {
       "atk": 0,
@@ -3987,6 +4027,46 @@
     "weakness": null
   },
   {
+    "id": 1233,
+    "name": "Arzinian Avatar of Magic",
+    "version": "Invincible",
+    "image": "Arzinian Avatar of Magic.png",
+    "level": 0,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "15",
+    "skills": {
+      "atk": 10,
+      "def": 130,
+      "hp": 200,
+      "magic": 150,
+      "ranged": 0,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
     "id": 1234,
     "name": "Arzinian Avatar of Magic",
     "version": "Level 125",
@@ -4067,6 +4147,46 @@
     "weakness": null
   },
   {
+    "id": 1230,
+    "name": "Arzinian Avatar of Ranging",
+    "version": "Invincible",
+    "image": "Arzinian Avatar of Ranging.png",
+    "level": 0,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "17",
+    "skills": {
+      "atk": 20,
+      "def": 130,
+      "hp": 200,
+      "magic": 0,
+      "ranged": 140,
+      "str": 110
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
     "id": 1231,
     "name": "Arzinian Avatar of Ranging",
     "version": "Level 125",
@@ -4142,6 +4262,46 @@
       "light": 15,
       "slash": 10,
       "stab": 10
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 1227,
+    "name": "Arzinian Avatar of Strength",
+    "version": "Invincible",
+    "image": "Arzinian Avatar of Strength.png",
+    "level": 0,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "14",
+    "skills": {
+      "atk": 150,
+      "def": 120,
+      "hp": 200,
+      "magic": 0,
+      "ranged": 0,
+      "str": 130
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
     },
     "attributes": [],
     "weakness": null
@@ -10462,6 +10622,169 @@
     "weakness": null
   },
   {
+    "id": 12561,
+    "name": "Bloodthirst rockslug",
+    "version": "",
+    "image": "Bloodthirst rockslug.png",
+    "level": 86,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 72,
+      "def": 77,
+      "hp": 77,
+      "magic": 1,
+      "ranged": 1,
+      "str": 77
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 12539,
+    "name": "Bloodthirsty Crawler",
+    "version": "",
+    "image": "Bloodthirsty Crawler.png",
+    "level": 68,
+    "speed": 4,
+    "style": [
+      "Melee"
+    ],
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 64,
+      "def": 55,
+      "hp": 60,
+      "magic": 1,
+      "ranged": 1,
+      "str": 59
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 12567,
+    "name": "Bloodthirsty Mage",
+    "version": "",
+    "image": "Bloodthirsty Mage.png",
+    "level": 162,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 2,
+    "max_hit": 0,
+    "skills": {
+      "atk": 1,
+      "def": 175,
+      "hp": 175,
+      "magic": 175,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 12574,
+    "name": "Bloodthirsty Repugnant spectre",
+    "version": "",
+    "image": "Bloodthirsty Repugnant spectre.png",
+    "level": 335,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 1,
+      "def": 220,
+      "hp": 380,
+      "magic": 380,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "spectral",
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
     "id": 12585,
     "name": "Bloodthirsty Shadow Wyrm",
     "version": "Attacking",
@@ -10544,6 +10867,91 @@
     },
     "attributes": [
       "dragon"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 12538,
+    "name": "Bloodthirsty hand",
+    "version": "",
+    "image": "Bloodthirsty hand.png",
+    "level": 45,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 45,
+      "def": 14,
+      "hp": 55,
+      "magic": 1,
+      "ranged": 1,
+      "str": 42
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 12573,
+    "name": "Bloodthirsty spectre",
+    "version": "",
+    "image": "Bloodthirsty spectre.png",
+    "level": 253,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 1,
+      "def": 180,
+      "hp": 250,
+      "magic": 300,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "spectral",
+      "undead"
     ],
     "weakness": null
   },
@@ -11688,6 +12096,46 @@
       "magic": 0,
       "ranged": 0,
       "str": 132
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 1738,
+    "name": "Brawler",
+    "version": "Level 158",
+    "image": "Brawler (level 158).png",
+    "level": 158,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": 0,
+    "skills": {
+      "atk": 87,
+      "def": 143,
+      "hp": 173,
+      "magic": 0,
+      "ranged": 0,
+      "str": 157
     },
     "offensive": {
       "atk": 0,
@@ -14675,12 +15123,12 @@
     "size": 1,
     "max_hit": "0",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 1,
+      "def": 1,
       "hp": 3,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -16602,6 +17050,48 @@
       "stab": 0
     },
     "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 455,
+    "name": "Crawling Hand",
+    "version": "Level 11 (unused)",
+    "image": "Crawling Hand (unused, 1).png",
+    "level": 11,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "2",
+    "skills": {
+      "atk": 10,
+      "def": 6,
+      "hp": 18,
+      "magic": 1,
+      "ranged": 1,
+      "str": 6
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
     "weakness": null
   },
   {
@@ -20072,6 +20562,7 @@
       "stab": 0
     },
     "attributes": [
+      "spectral",
       "undead"
     ],
     "weakness": null
@@ -26945,12 +27436,12 @@
     "size": 1,
     "max_hit": "0 (Does not attack)",
     "skills": {
-      "atk": 0,
+      "atk": 1,
       "def": 0,
       "hp": 10,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -26985,12 +27476,12 @@
     "size": 1,
     "max_hit": "0 (Does not attack)",
     "skills": {
-      "atk": 0,
+      "atk": 1,
       "def": 0,
       "hp": 10,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -32567,12 +33058,50 @@
     "size": 1,
     "max_hit": "0",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 1,
+      "def": 1,
       "hp": 14,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
       "magic": 0,
+      "magic_str": 0,
       "ranged": 0,
+      "ranged_str": 0,
       "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 2836,
+    "name": "Golem (unused NPC)",
+    "version": "",
+    "image": "Golem (unused).png",
+    "level": 55,
+    "speed": 0,
+    "style": null,
+    "size": 2,
+    "max_hit": 0,
+    "skills": {
+      "atk": 35,
+      "def": 30,
+      "hp": 70,
+      "magic": 1,
+      "ranged": 1,
+      "str": 60
     },
     "offensive": {
       "atk": 0,
@@ -33832,6 +34361,44 @@
       "magic": 1,
       "ranged": 1,
       "str": 38
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 5141,
+    "name": "Guard (Another Slice of H.A.M.)",
+    "version": "",
+    "image": "Guard (Another Slice of H.A.M.).png",
+    "level": 22,
+    "speed": 0,
+    "style": null,
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 16,
+      "def": 12,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 1,
+      "str": 20
     },
     "offensive": {
       "atk": 0,
@@ -46063,6 +46630,44 @@
     "weakness": null
   },
   {
+    "id": 3300,
+    "name": "Knight of Ardougne (unused)",
+    "version": "",
+    "image": "Knight of Ardougne (unused).png",
+    "level": 46,
+    "speed": 0,
+    "style": null,
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 38,
+      "def": 31,
+      "hp": 52,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
     "id": 11936,
     "name": "Knight of Ardougne",
     "version": "Female",
@@ -46675,12 +47280,12 @@
     "size": 1,
     "max_hit": "20",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 28,
+      "def": 58,
       "hp": 78,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 30,
+      "ranged": 1,
+      "str": 23
     },
     "offensive": {
       "atk": 0,
@@ -46715,12 +47320,12 @@
     "size": 1,
     "max_hit": "20",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 15,
+      "def": 20,
       "hp": 3,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 15,
+      "ranged": 1,
+      "str": 10
     },
     "offensive": {
       "atk": 0,
@@ -46755,12 +47360,12 @@
     "size": 1,
     "max_hit": "20",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 55,
+      "def": 72,
       "hp": 65,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 50,
+      "ranged": 1,
+      "str": 70
     },
     "offensive": {
       "atk": 0,
@@ -46795,12 +47400,12 @@
     "size": 3,
     "max_hit": "20",
     "skills": {
-      "atk": 0,
-      "def": 0,
-      "hp": 65,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "atk": 69,
+      "def": 47,
+      "hp": 78,
+      "magic": 70,
+      "ranged": 1,
+      "str": 78
     },
     "offensive": {
       "atk": 0,
@@ -46838,8 +47443,8 @@
       "atk": 20,
       "def": 20,
       "hp": 30,
-      "magic": 0,
-      "ranged": 0,
+      "magic": 1,
+      "ranged": 1,
       "str": 20
     },
     "offensive": {
@@ -46878,8 +47483,8 @@
       "atk": 40,
       "def": 40,
       "hp": 50,
-      "magic": 0,
-      "ranged": 0,
+      "magic": 1,
+      "ranged": 1,
       "str": 40
     },
     "offensive": {
@@ -46918,8 +47523,8 @@
       "atk": 60,
       "def": 60,
       "hp": 70,
-      "magic": 0,
-      "ranged": 0,
+      "magic": 1,
+      "ranged": 1,
       "str": 60
     },
     "offensive": {
@@ -46958,8 +47563,8 @@
       "atk": 255,
       "def": 255,
       "hp": 255,
-      "magic": 0,
-      "ranged": 0,
+      "magic": 1,
+      "ranged": 1,
       "str": 5
     },
     "offensive": {
@@ -47431,46 +48036,6 @@
       "light": 0,
       "slash": 2,
       "stab": 2
-    },
-    "attributes": [],
-    "weakness": null
-  },
-  {
-    "id": 7817,
-    "name": "Lava beast",
-    "version": "",
-    "image": "Lava beast.png",
-    "level": 0,
-    "speed": 4,
-    "style": [
-      "Ranged"
-    ],
-    "size": 2,
-    "max_hit": "18",
-    "skills": {
-      "atk": 0,
-      "def": 0,
-      "hp": 65,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
     },
     "attributes": [],
     "weakness": null
@@ -55142,6 +55707,46 @@
     "weakness": null
   },
   {
+    "id": 10820,
+    "name": "Nylocas Matomenos",
+    "version": "Entry Mode Maiden",
+    "image": "Nylocas Matomenos.png",
+    "level": 68,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 2,
+    "max_hit": "11",
+    "skills": {
+      "atk": 100,
+      "def": 100,
+      "hp": 64,
+      "magic": 100,
+      "ranged": 100,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
     "id": 10828,
     "name": "Nylocas Matomenos",
     "version": "Hard Mode Maiden",
@@ -55959,12 +56564,12 @@
     "size": 2,
     "max_hit": 0,
     "skills": {
-      "atk": 1,
-      "def": 1,
-      "hp": 1,
+      "atk": 99,
+      "def": 99,
+      "hp": 99,
       "magic": 1,
       "ranged": 1,
-      "str": 1
+      "str": 99
     },
     "offensive": {
       "atk": 0,
@@ -57531,7 +58136,7 @@
       "def": 25,
       "hp": 28,
       "magic": 1,
-      "ranged": 0,
+      "ranged": 1,
       "str": 26
     },
     "offensive": {
@@ -57573,7 +58178,7 @@
       "def": 27,
       "hp": 29,
       "magic": 1,
-      "ranged": 0,
+      "ranged": 1,
       "str": 29
     },
     "offensive": {
@@ -57615,7 +58220,7 @@
       "def": 34,
       "hp": 32,
       "magic": 1,
-      "ranged": 0,
+      "ranged": 1,
       "str": 32
     },
     "offensive": {
@@ -57657,7 +58262,7 @@
       "def": 37,
       "hp": 37,
       "magic": 1,
-      "ranged": 0,
+      "ranged": 1,
       "str": 38
     },
     "offensive": {
@@ -57699,7 +58304,7 @@
       "def": 44,
       "hp": 38,
       "magic": 1,
-      "ranged": 0,
+      "ranged": 1,
       "str": 43
     },
     "offensive": {
@@ -57741,7 +58346,7 @@
       "def": 48,
       "hp": 49,
       "magic": 1,
-      "ranged": 0,
+      "ranged": 1,
       "str": 48
     },
     "offensive": {
@@ -57783,7 +58388,7 @@
       "def": 52,
       "hp": 50,
       "magic": 1,
-      "ranged": 0,
+      "ranged": 1,
       "str": 55
     },
     "offensive": {
@@ -57825,7 +58430,7 @@
       "def": 62,
       "hp": 55,
       "magic": 1,
-      "ranged": 0,
+      "ranged": 1,
       "str": 61
     },
     "offensive": {
@@ -57867,7 +58472,7 @@
       "def": 66,
       "hp": 56,
       "magic": 1,
-      "ranged": 0,
+      "ranged": 1,
       "str": 73
     },
     "offensive": {
@@ -57905,12 +58510,12 @@
     "size": 1,
     "max_hit": "0 (Does not attack)",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 9,
+      "def": 9,
       "hp": 27,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
     },
     "offensive": {
       "atk": 0,
@@ -57945,12 +58550,12 @@
     "size": 1,
     "max_hit": "0 (Does not attack)",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 13,
+      "def": 14,
       "hp": 32,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 15
     },
     "offensive": {
       "atk": 0,
@@ -57985,12 +58590,12 @@
     "size": 1,
     "max_hit": "0 (Does not attack)",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 20,
+      "def": 19,
       "hp": 37,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
     },
     "offensive": {
       "atk": 0,
@@ -58025,12 +58630,12 @@
     "size": 1,
     "max_hit": "0 (Does not attack)",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 22,
+      "def": 21,
       "hp": 43,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 23
     },
     "offensive": {
       "atk": 0,
@@ -58065,12 +58670,12 @@
     "size": 1,
     "max_hit": "0 (Does not attack)",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 26,
+      "def": 25,
       "hp": 49,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 27
     },
     "offensive": {
       "atk": 0,
@@ -58105,12 +58710,12 @@
     "size": 1,
     "max_hit": "0 (Does not attack)",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 30,
+      "def": 28,
       "hp": 55,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 32
     },
     "offensive": {
       "atk": 0,
@@ -58145,12 +58750,12 @@
     "size": 1,
     "max_hit": "0 (Does not attack)",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 33,
+      "def": 34,
       "hp": 60,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 36
     },
     "offensive": {
       "atk": 0,
@@ -58185,12 +58790,12 @@
     "size": 1,
     "max_hit": "0 (Does not attack)",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 40,
+      "def": 36,
       "hp": 67,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 38
     },
     "offensive": {
       "atk": 0,
@@ -58225,12 +58830,12 @@
     "size": 1,
     "max_hit": "0 (Does not attack)",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 40,
+      "def": 38,
       "hp": 76,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 44
     },
     "offensive": {
       "atk": 0,
@@ -58306,12 +58911,12 @@
     "size": 1,
     "max_hit": "3",
     "skills": {
-      "atk": 0,
+      "atk": 22,
       "def": 21,
       "hp": 20,
-      "magic": 0,
+      "magic": 1,
       "ranged": 23,
-      "str": 0
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -58348,12 +58953,12 @@
     "size": 1,
     "max_hit": "4",
     "skills": {
-      "atk": 0,
+      "atk": 27,
       "def": 29,
       "hp": 28,
-      "magic": 0,
+      "magic": 1,
       "ranged": 24,
-      "str": 0
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -58390,12 +58995,12 @@
     "size": 1,
     "max_hit": "4",
     "skills": {
-      "atk": 0,
+      "atk": 32,
       "def": 33,
       "hp": 29,
-      "magic": 0,
+      "magic": 1,
       "ranged": 34,
-      "str": 0
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -58432,12 +59037,12 @@
     "size": 1,
     "max_hit": "5",
     "skills": {
-      "atk": 0,
+      "atk": 41,
       "def": 42,
       "hp": 34,
-      "magic": 0,
+      "magic": 1,
       "ranged": 40,
-      "str": 0
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -58474,12 +59079,12 @@
     "size": 1,
     "max_hit": "6",
     "skills": {
-      "atk": 0,
+      "atk": 44,
       "def": 46,
       "hp": 41,
-      "magic": 0,
+      "magic": 1,
       "ranged": 45,
-      "str": 0
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -58516,12 +59121,12 @@
     "size": 1,
     "max_hit": "6",
     "skills": {
-      "atk": 0,
+      "atk": 51,
       "def": 54,
       "hp": 50,
-      "magic": 0,
+      "magic": 1,
       "ranged": 52,
-      "str": 0
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -58558,12 +59163,12 @@
     "size": 1,
     "max_hit": "7",
     "skills": {
-      "atk": 0,
+      "atk": 63,
       "def": 61,
       "hp": 50,
-      "magic": 0,
+      "magic": 1,
       "ranged": 62,
-      "str": 0
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -58600,12 +59205,12 @@
     "size": 1,
     "max_hit": "8",
     "skills": {
-      "atk": 0,
+      "atk": 69,
       "def": 68,
       "hp": 54,
-      "magic": 0,
+      "magic": 1,
       "ranged": 70,
-      "str": 0
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -58642,12 +59247,12 @@
     "size": 1,
     "max_hit": "9",
     "skills": {
-      "atk": 0,
+      "atk": 79,
       "def": 80,
       "hp": 58,
-      "magic": 0,
+      "magic": 1,
       "ranged": 78,
-      "str": 0
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -58684,12 +59289,12 @@
     "size": 1,
     "max_hit": "0",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 1,
+      "def": 1,
       "hp": 5,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -58724,12 +59329,12 @@
     "size": 1,
     "max_hit": "0",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 1,
+      "def": 1,
       "hp": 5,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -58764,12 +59369,12 @@
     "size": 1,
     "max_hit": "0",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 1,
+      "def": 1,
       "hp": 5,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -58804,12 +59409,12 @@
     "size": 1,
     "max_hit": "0",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 1,
+      "def": 1,
       "hp": 5,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -58844,12 +59449,12 @@
     "size": 1,
     "max_hit": "0",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 1,
+      "def": 1,
       "hp": 5,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -58884,12 +59489,12 @@
     "size": 1,
     "max_hit": "0",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 1,
+      "def": 1,
       "hp": 5,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -58924,12 +59529,12 @@
     "size": 1,
     "max_hit": "0",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 1,
+      "def": 1,
       "hp": 5,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -58964,12 +59569,12 @@
     "size": 1,
     "max_hit": "0",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 1,
+      "def": 1,
       "hp": 5,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -59004,12 +59609,12 @@
     "size": 1,
     "max_hit": "0",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 1,
+      "def": 1,
       "hp": 5,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -67975,12 +68580,12 @@
     "size": 1,
     "max_hit": "0 (45 if not defeated)",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 1,
+      "def": 10,
       "hp": 20,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -70846,6 +71451,338 @@
     "weakness": null
   },
   {
+    "id": 13495,
+    "name": "Skeleton (Wilderness Agility Course)",
+    "version": "1",
+    "image": "Skeleton Lvl18.png",
+    "level": 18,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 13496,
+    "name": "Skeleton (Wilderness Agility Course)",
+    "version": "2",
+    "image": "Skeleton Lvl18 (1).png",
+    "level": 18,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 13497,
+    "name": "Skeleton (Wilderness Agility Course)",
+    "version": "3",
+    "image": "Skeleton Lvl18 (2).png",
+    "level": 18,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 13498,
+    "name": "Skeleton (Wilderness Agility Course)",
+    "version": "4",
+    "image": "Skeleton Lvl18 (3).png",
+    "level": 18,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 13499,
+    "name": "Skeleton (Wilderness Agility Course)",
+    "version": "5",
+    "image": "Skeleton Lvl18 (4).png",
+    "level": 18,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 13500,
+    "name": "Skeleton (Wilderness Agility Course)",
+    "version": "6",
+    "image": "Skeleton Lvl18.png",
+    "level": 18,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 13501,
+    "name": "Skeleton (Wilderness Agility Course)",
+    "version": "7",
+    "image": "Skeleton Lvl18 (1).png",
+    "level": 18,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 2847,
+    "name": "Skeleton (Wrath Altar)",
+    "version": "",
+    "image": "Skeleton (Wrath Altar).png",
+    "level": 35,
+    "speed": 0,
+    "style": null,
+    "size": 2,
+    "max_hit": 0,
+    "skills": {
+      "atk": 30,
+      "def": 24,
+      "hp": 60,
+      "magic": 1,
+      "ranged": 1,
+      "str": 24
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
     "id": 6441,
     "name": "Skeleton (mage)",
     "version": "",
@@ -73438,12 +74375,12 @@
     "size": 1,
     "max_hit": "4",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 25,
+      "def": 25,
       "hp": 40,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 25
     },
     "offensive": {
       "atk": 0,
@@ -74666,7 +75603,7 @@
       "def": 10,
       "hp": 100,
       "magic": 1,
-      "ranged": 1,
+      "ranged": 100,
       "str": 10
     },
     "offensive": {
@@ -74742,12 +75679,12 @@
     "size": 1,
     "max_hit": "10",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 10,
+      "def": 10,
       "hp": 100,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 10
     },
     "offensive": {
       "atk": 0,
@@ -76380,12 +77317,12 @@
     "size": 3,
     "max_hit": "6",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 190,
+      "def": 40,
       "hp": 100,
-      "magic": 0,
+      "magic": 60,
       "ranged": 0,
-      "str": 0
+      "str": 70
     },
     "offensive": {
       "atk": 0,
@@ -76420,12 +77357,12 @@
     "size": 1,
     "max_hit": "4",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 190,
+      "def": 40,
       "hp": 40,
-      "magic": 0,
+      "magic": 60,
       "ranged": 0,
-      "str": 0
+      "str": 70
     },
     "offensive": {
       "atk": 0,
@@ -76460,12 +77397,12 @@
     "size": 2,
     "max_hit": "5",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 190,
+      "def": 40,
       "hp": 50,
-      "magic": 0,
+      "magic": 60,
       "ranged": 0,
-      "str": 0
+      "str": 70
     },
     "offensive": {
       "atk": 0,
@@ -81204,12 +82141,12 @@
     "size": 3,
     "max_hit": 0,
     "skills": {
-      "atk": 0,
+      "atk": 1,
       "def": 0,
       "hp": 200,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -81247,12 +82184,12 @@
     "size": 3,
     "max_hit": 0,
     "skills": {
-      "atk": 0,
+      "atk": 1,
       "def": 0,
       "hp": 300,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -83493,7 +84430,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000005B-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -83534,7 +84471,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000005B-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -83825,12 +84762,12 @@
     "size": 1,
     "max_hit": 0,
     "skills": {
-      "atk": 0,
-      "def": 0,
-      "hp": 12,
+      "atk": 87,
+      "def": 11,
+      "hp": 11,
       "magic": 1,
       "ranged": 1,
-      "str": 0
+      "str": 6
     },
     "offensive": {
       "atk": 0,
@@ -83993,12 +84930,12 @@
     "size": 1,
     "max_hit": 0,
     "skills": {
-      "atk": 0,
-      "def": 0,
-      "hp": 12,
+      "atk": 133,
+      "def": 15,
+      "hp": 15,
       "magic": 1,
       "ranged": 1,
-      "str": 0
+      "str": 16
     },
     "offensive": {
       "atk": 0,
@@ -84037,7 +84974,7 @@
     "skills": {
       "atk": 137,
       "def": 16,
-      "hp": 12,
+      "hp": 16,
       "magic": 1,
       "ranged": 1,
       "str": 26
@@ -84077,12 +85014,12 @@
     "size": 1,
     "max_hit": 0,
     "skills": {
-      "atk": 0,
-      "def": 0,
-      "hp": 12,
+      "atk": 147,
+      "def": 17,
+      "hp": 17,
       "magic": 1,
       "ranged": 1,
-      "str": 0
+      "str": 26
     },
     "offensive": {
       "atk": 0,
@@ -84119,12 +85056,12 @@
     "size": 1,
     "max_hit": 0,
     "skills": {
-      "atk": 0,
-      "def": 0,
-      "hp": 12,
+      "atk": 163,
+      "def": 18,
+      "hp": 18,
       "magic": 1,
       "ranged": 1,
-      "str": 0
+      "str": 26
     },
     "offensive": {
       "atk": 0,
@@ -85528,7 +86465,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000072-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000A-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -85568,7 +86505,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000074-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000C-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -86489,12 +87426,12 @@
     "size": 0,
     "max_hit": "0 (Does not attack)",
     "skills": {
-      "atk": 0,
+      "atk": 1,
       "def": 50,
       "hp": 200,
       "magic": 50,
-      "ranged": 0,
-      "str": 0
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -86529,12 +87466,12 @@
     "size": 0,
     "max_hit": "0 (Does not attack)",
     "skills": {
-      "atk": 0,
+      "atk": 1,
       "def": 50,
       "hp": 200,
       "magic": 50,
-      "ranged": 0,
-      "str": 0
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -86569,12 +87506,12 @@
     "size": 0,
     "max_hit": "0 (Does not attack)",
     "skills": {
-      "atk": 0,
+      "atk": 1,
       "def": 50,
       "hp": 200,
       "magic": 50,
-      "ranged": 0,
-      "str": 0
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -86609,12 +87546,12 @@
     "size": 0,
     "max_hit": "0 (Does not attack)",
     "skills": {
-      "atk": 0,
+      "atk": 1,
       "def": 50,
       "hp": 200,
       "magic": 50,
-      "ranged": 0,
-      "str": 0
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -89943,12 +90880,12 @@
     "size": 1,
     "max_hit": 0,
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 25,
+      "def": 25,
       "hp": 10,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 30,
+      "ranged": 1,
+      "str": 25
     },
     "offensive": {
       "atk": 0,
@@ -89981,12 +90918,12 @@
     "size": 1,
     "max_hit": 0,
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 25,
+      "def": 25,
       "hp": 10,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 30,
+      "ranged": 1,
+      "str": 25
     },
     "offensive": {
       "atk": 0,
@@ -91572,6 +92509,44 @@
       "magic": 1,
       "ranged": 1,
       "str": 10
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 2847,
+    "name": "Yeti",
+    "version": "",
+    "image": "Yeti.png",
+    "level": 58,
+    "speed": 0,
+    "style": null,
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 48,
+      "def": 39,
+      "hp": 55,
+      "magic": 1,
+      "ranged": 1,
+      "str": 60
     },
     "offensive": {
       "atk": 0,

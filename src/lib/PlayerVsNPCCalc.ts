@@ -6,7 +6,6 @@ import {
   DelayedHit,
   divisionTransformer,
   flatAddTransformer,
-  flatLimitTransformer,
   HitDistribution,
   Hitsplat,
   linearMinTransformer,
@@ -19,6 +18,7 @@ import { PrayerData, PrayerMap } from '@/enums/Prayer';
 import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
   ALWAYS_MAX_HIT_MONSTERS,
+  BA_ATTACKER_MONSTERS,
   CAST_STANCES,
   DEFAULT_ATTACK_SPEED,
   FLAT_ARMOUR,
@@ -48,7 +48,7 @@ import { AmmoApplicability, ammoApplicability } from '@/lib/Equipment';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { getRangedDamageType } from '@/types/PlayerCombatStyle';
-import { range } from 'd3-array';
+import { range, sum } from 'd3-array';
 
 /**
  * Class for computing various player-vs-NPC metrics.
@@ -159,6 +159,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing(['Blisterwood flail', 'Blisterwood sickle']) && isVampyre(mattrs)) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_VAMPYREBANE, attackRoll, [21, 20]);
     }
+    if (this.isWearingSilverWeapon() && isVampyre(mattrs)) {
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_EFARITAY, attackRoll, [23, 20]); // todo ordering? does this stack multiplicatively with vampyrebane?
+    }
 
     // Inquisitor's armour set gives bonuses when using the crush attack style
     if (style.type === 'crush') {
@@ -265,18 +268,23 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing(['Silverlight', 'Darklight', 'Silverlight (dyed)']) && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([3, 5]));
     }
-    if (this.wearing('Blisterwood flail') && isVampyre(mattrs)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [5, 4]);
+
+    if (isVampyre(mattrs)) {
+      if (this.wearing('Blisterwood flail')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [5, 4]);
+      } else if (this.wearing('Blisterwood sickle')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [23, 20]);
+      } else if (this.wearing('Ivandis flail')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [6, 5]);
+      } else if (this.isWearingSilverWeapon() && mattrs.includes(MonsterAttribute.VAMPYRE_1)) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [11, 10]);
+      } else if (this.wearing("Efaritay's aid") && mattrs.includes(MonsterAttribute.VAMPYRE_1)) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_EFARITAY, maxHit, [11, 10]);
+      } else if (this.wearing("Efaritay's aid") && !this.isWearingSilverWeapon() && mattrs.includes(MonsterAttribute.VAMPYRE_2)) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_EFARITAY, maxHit, [1, 2]);
+      }
     }
-    if (this.wearing('Blisterwood sickle') && isVampyre(mattrs)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [23, 20]);
-    }
-    if (this.wearing('Ivandis flail') && isVampyre(mattrs)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [6, 5]);
-    }
-    if ((this.wearing("Efaritay's aid") || this.isWearingSilverWeapon()) && mattrs.includes(MonsterAttribute.VAMPYRE_1)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_EFARITAY, maxHit, [11, 10]); // todo should this be before/after the vampyrebane weapons above?
-    }
+
     if (this.wearing('Leaf-bladed battleaxe') && mattrs.includes(MonsterAttribute.LEAFY)) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_LEAFY, maxHit, [47, 40]);
     }
@@ -497,15 +505,34 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const baseRoll = effectiveLevel * (magicBonus + 64);
     let attackRoll = baseRoll;
 
+    let additiveBonus = 0;
+    let blackMaskBonus = false;
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
-      const factor = <Factor>[buffs.forinthrySurge ? 27 : 24, 20];
-      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_FORINTHRY_SURGE, attackRoll, factor);
+      additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_FORINTHRY_SURGE, additiveBonus, buffs.forinthrySurge ? 35 : 20);
     } else if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
-      attackRoll = Math.trunc(attackRoll * 6 / 5);
+      additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_SALVE, additiveBonus, 20);
     } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
-      attackRoll = Math.trunc(attackRoll * 23 / 20);
+      additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_SALVE, additiveBonus, 15);
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
-      attackRoll = Math.trunc(attackRoll * 23 / 20);
+      blackMaskBonus = true;
+    }
+
+    if (this.wearing("Efaritay's aid") && isVampyre(mattrs)) {
+      // https://x.com/JagexAsh/status/1792829802996498524
+      additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_EFARITAY, additiveBonus, 15);
+    }
+
+    if (this.isWearingSmokeStaff() && this.player.spell?.spellbook === 'standard') {
+      // https://twitter.com/JagexAsh/status/1791070064369647838
+      additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_SMOKE_BATTLESTAFF, additiveBonus, 10);
+    }
+
+    if (additiveBonus !== 0) {
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_ROLL_MAGIC_PERCENT, attackRoll, [100 + additiveBonus, 100]);
+    }
+
+    if (blackMaskBonus) {
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_BLACK_MASK, attackRoll, [23, 20]);
     }
 
     if (this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
@@ -513,19 +540,18 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor(baseFactor));
     }
     if (this.isRevWeaponBuffApplicable()) {
-      attackRoll = Math.trunc(attackRoll * 3 / 2);
-    }
-    if (this.isWearingSmokeStaff() && this.player.spell?.spellbook === 'standard') {
-      attackRoll = Math.trunc(attackRoll * 11 / 10);
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_REV_WEAPON, attackRoll, [3, 2]);
     }
     if (this.wearing('Tome of water') && this.player.spell?.element === 'water' || isBindSpell(this.player.spell)) { // todo does this go here?
-      attackRoll = Math.trunc(attackRoll * 6 / 5);
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_TOME, attackRoll, [6, 5]);
     }
 
     const spellement = this.player.spell?.element;
     if (this.monster.weakness && spellement) {
       if (spellement === this.monster.weakness.element) {
-        attackRoll += Math.trunc(this.monster.weakness.severity * baseRoll / 100);
+        const severity = this.monster.weakness.severity;
+        const bonus = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPELLEMENT_BONUS, baseRoll, [severity, 100]);
+        attackRoll = this.trackAdd(DetailKey.PLAYER_ACCURACY_SPELLEMENT, attackRoll, bonus);
       }
     }
 
@@ -599,7 +625,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return [0, 0];
     }
 
-    if (this.wearing('Chaos gauntlets') && spell?.name.toLowerCase().includes('bolt')) {
+    if (this.wearing('Chaos gauntlets') && spell?.name.toLowerCase()
+      .includes('bolt')) {
       maxHit += 3;
     }
     if (this.isChargeSpellApplicable()) {
@@ -619,6 +646,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       magicDmgBonus += 200;
     } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       magicDmgBonus += 150;
+    } else if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
+      magicDmgBonus += buffs.forinthrySurge ? 350 : 200;
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
       blackMaskBonus = true;
     }
@@ -631,9 +660,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (blackMaskBonus) {
       maxHit = Math.trunc(maxHit * 23 / 20);
-    } else if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
-      const factor = <Factor>[buffs.forinthrySurge ? 27 : 24, 20];
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_FORINTHRY_SURGE, maxHit, factor);
     }
 
     if (this.isRevWeaponBuffApplicable()) {
@@ -789,6 +815,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       this.memoizedDist = this.getDistributionImpl();
     }
 
+    this.track(DetailKey.HIT_DIST_FINAL_MIN, this.memoizedDist.getMin());
+    this.track(DetailKey.HIT_DIST_FINAL_MAX, this.memoizedDist.getMax());
+    this.track(DetailKey.HIT_DIST_FINAL_EXPECTED, this.memoizedDist.getExpectedDamage());
     return this.memoizedDist;
   }
 
@@ -872,6 +901,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         (h) => new HitDistribution([new WeightedHit(1.0, [h])]).zip(secondHit),
         { transformInaccurate: false },
       );
+    }
+
+    if (this.isUsingMeleeStyle() && (this.wearing('Torag\'s hammers') || this.wearing('Sulphur blades'))) {
+      dist = new AttackDistribution([
+        HitDistribution.linear(acc, 0, Math.trunc(max / 2)),
+        HitDistribution.linear(acc, 0, max - Math.trunc(max / 2)),
+      ]);
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingKeris() && mattrs.includes(MonsterAttribute.KALPHITE)) {
@@ -1050,9 +1086,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if ((OLM_MAGE_HAND_IDS.includes(this.monster.id) || OLM_MELEE_HAND_IDS.includes(this.monster.id)) && this.player.style.type === 'ranged') {
       dist = dist.transform(divisionTransformer(3));
     }
-    if (this.monster.attributes.includes(MonsterAttribute.VAMPYRE_2) && this.wearing("Efaritay's aid") && !this.isWearingSilverWeapon()) {
-      dist = dist.transform(flatLimitTransformer(10));
-    }
     if (this.monster.name === 'Ice demon' && this.player.spell?.element !== 'fire') {
       // https://twitter.com/JagexAsh/status/1133350436554121216
       dist = dist.transform(divisionTransformer(3));
@@ -1072,6 +1105,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         || this.player.equipment.weapon?.name !== 'Comp ogre bow') {
         dist = dist.transform(divisionTransformer(4));
       }
+    }
+    if (BA_ATTACKER_MONSTERS.includes(this.monster.id) && this.player.buffs.baAttackerLevel !== 0) {
+      // todo is this pre- or post-roll?
+      dist = dist.transform(
+        flatAddTransformer(this.player.buffs.baAttackerLevel),
+        { transformInaccurate: true },
+      );
     }
 
     const flatArmour = FLAT_ARMOUR[this.monster.id];
@@ -1105,6 +1145,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return true;
     }
     if (mattrs.includes(MonsterAttribute.VAMPYRE_3) && !this.isWearingIvandisWeapon()) {
+      return true;
+    }
+    if (mattrs.includes(MonsterAttribute.VAMPYRE_2) && !this.isWearingSilverWeapon() && !this.wearing("Efaritay's aid")) {
       return true;
     }
     if (GUARDIAN_IDS.includes(monsterId) && (!this.isUsingMeleeStyle() || this.player.equipment.weapon?.category !== EquipmentCategory.PICKAXE)) {
@@ -1183,6 +1226,30 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   /**
+   * Returns the amount of time (in ticks) that the user can maintain their prayers before running out of prayer points.
+   * Does not account for flicking or toggling prayers.
+   */
+  public getPrayerTicks(): number {
+    const drain = sum(this.player.prayers, (p) => PrayerMap[p].drainRate);
+    if (drain === 0) {
+      return Infinity;
+    }
+
+    const drainResistance = 2 * this.player.bonuses.prayer + 60;
+    const totalPrayerUnits = this.player.skills.prayer * drainResistance;
+
+    return Math.ceil(totalPrayerUnits / drain);
+  }
+
+  /**
+   * Returns the amount of time (in seconds) that the user can maintain their prayers before running out of prayer points.
+   * Does not account for flicking or toggling prayers.
+   */
+  public getPrayerDuration(): number {
+    return this.getPrayerTicks() * SECONDS_PER_TICK;
+  }
+
+  /**
    * Returns the average hits-to-kill calculation.
    */
   public getHtk() {
@@ -1216,7 +1283,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     return this.getHtk() * this.getExpectedAttackSpeed() * SECONDS_PER_TICK;
   }
 
-  private getWeaponDelayProvider(): WeaponDelayProvider {
+  public getWeaponDelayProvider(): WeaponDelayProvider {
     const baseSpeed = this.getAttackSpeed();
 
     if (this.isWearingBloodMoonSet()) {

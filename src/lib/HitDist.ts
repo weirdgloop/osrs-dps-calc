@@ -3,6 +3,7 @@
 import {
   cross,
   max,
+  min,
   some,
   sum,
 } from 'd3-array';
@@ -204,6 +205,11 @@ export class HitDistribution {
     return this.hits.length;
   }
 
+  public getMin(): number {
+    return min(this.hits
+      .map((h) => h.getSum())) as number;
+  }
+
   public getMax(): number {
     return max(this.hits
       .map((h) => h.getSum())) as number;
@@ -244,10 +250,10 @@ export class HitDistribution {
     return d;
   }
 
-  public static linear(accuracy: number, min: number, maximum: number): HitDistribution {
+  public static linear(accuracy: number, minimum: number, maximum: number): HitDistribution {
     const d = new HitDistribution([]);
-    const hitProb = accuracy / (maximum - min + 1);
-    for (let i = min; i <= maximum; i++) {
+    const hitProb = accuracy / (maximum - minimum + 1);
+    for (let i = minimum; i <= maximum; i++) {
       d.addHit(new WeightedHit(hitProb, [new Hitsplat(i)]));
     }
     d.addHit(new WeightedHit(1 - accuracy, [Hitsplat.INACCURATE]));
@@ -308,6 +314,10 @@ export class AttackDistribution {
 
   public scaleDamage(factor: number, divisor: number = 1) {
     return this.map((d) => d.scaleDamage(factor, divisor));
+  }
+
+  public getMin(): number {
+    return sum(this.dists.map((d) => d.getMin())) || 0;
   }
 
   public getMax(): number {

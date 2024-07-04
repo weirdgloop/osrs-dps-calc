@@ -37,6 +37,8 @@ ARG BASE_URL="http://localhost"
 ARG BASE_PATH=""
 ARG SHORTLINK_URL="$BASE_URL$BASE_PATH"
 
+RUN apt-get update && apt-get install git -y
+
 WORKDIR /srv
 ADD . /srv
 
@@ -47,14 +49,16 @@ COPY --from=scraper-image /srv/cdn /srv/cdn
 RUN --mount=type=cache,target=/root/.yarn YARN_CACHE_FOLDER=/root/.yarn yarn install
 
 # override path envvars
-RUN echo "NEXT_PUBLIC_BASE_URL=$BASE_URL" > .env.production
+RUN echo "NEXT_PUBLIC_BASE_URL=$BASE_URL" > .env.local
 RUN if [ ! -z '$BASE_PATH' ]; then \
-      echo NEXT_PUBLIC_BASE_PATH=$BASE_PATH >> .env.production; \
+      echo NEXT_PUBLIC_BASE_PATH=$BASE_PATH >> .env.local; \
     fi
-RUN echo "NEXT_PUBLIC_SHORTLINK_URL=$SHORTLINK_URL" >> .env.production
+RUN echo "NEXT_PUBLIC_SHORTLINK_URL=$SHORTLINK_URL" >> .env.local
 
 # build prod optimized bundle
-RUN yarn build
+# mount git dir for metadata
+RUN --mount=type=bind,source=.git/,target=.git/ \
+    yarn build
 
 
 
