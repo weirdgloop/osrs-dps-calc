@@ -85,6 +85,7 @@ const EquipmentSelect: React.FC = observer(() => {
           ...blowpipe.equipment,
           itemVars: {
             ...blowpipe.equipment.itemVars,
+            blowpipeDartName: dart.name,
             blowpipeDartId: dart.id,
           },
         },

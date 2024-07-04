@@ -4,6 +4,7 @@ import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 import { getCdnImage } from '@/utils';
 import UserIssueWarning from '@/app/components/generic/UserIssueWarning';
+import { BLOWPIPE_IDS } from '@/lib/constants';
 
 interface EquipmentGridSlotProps {
   slot: keyof PlayerEquipment;
@@ -19,6 +20,17 @@ const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => 
   // Determine whether there's any issues with this element
   const issues = store.userIssues.filter((i) => i.type.startsWith(`equipment_slot_${slot}`) && i.loadout === `${store.selectedLoadout + 1}`);
 
+  const getTooltipContent = () => {
+    if (currentSlot !== null) {
+      // Special handling for blowpipes
+      if (BLOWPIPE_IDS.includes(currentSlot.id)) {
+        return `${currentSlot.name} (${currentSlot.itemVars?.blowpipeDartName?.replace(' dart', '') || 'Unknown dart'})`;
+      }
+    }
+
+    return currentSlot?.name;
+  };
+
   return (
     <div className="h-[40px] w-[40px] relative">
       {
@@ -31,7 +43,7 @@ const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => 
         className={`flex justify-center items-center h-[40px] w-[40px] bg-body-100 dark:bg-dark-400 dark:border-dark-400 border border-body-300 transition-colors rounded ${!isEmpty ? 'cursor-pointer hover:border-red' : ''}`}
         data-slot={slot}
         data-tooltip-id="tooltip"
-        data-tooltip-content={currentSlot?.name}
+        data-tooltip-content={getTooltipContent()}
         onMouseDown={() => {
           if (!isEmpty) store.clearEquipmentSlot(slot);
         }}
