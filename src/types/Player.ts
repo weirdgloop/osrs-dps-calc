@@ -25,6 +25,7 @@ export interface EquipmentPiece extends EquipmentStats {
   category: EquipmentCategory;
   isTwoHanded: boolean;
   itemVars?: {
+    blowpipeDartName?: string;
     blowpipeDartId?: number;
   };
 }
