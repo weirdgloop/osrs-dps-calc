@@ -31,12 +31,14 @@ const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) 
       detailedOutput: calcOpts.detailedOutput,
       disableMonsterScaling: calcOpts.disableMonsterScaling,
     });
-    const specCalc = new PlayerVsNPCCalc(p, monster, {
-      loadoutName,
-      detailedOutput: calcOpts.detailedOutput,
-      disableMonsterScaling: calcOpts.disableMonsterScaling,
-      usingSpecialAttack: true,
-    });
+    const specCalc = PlayerVsNPCCalc.isSpecSupported(p.equipment.weapon?.name)
+      ? new PlayerVsNPCCalc(p, monster, {
+        loadoutName,
+        detailedOutput: calcOpts.detailedOutput,
+        disableMonsterScaling: calcOpts.disableMonsterScaling,
+        usingSpecialAttack: true,
+      })
+      : null;
 
     res.push({
       npcDefRoll: calc.getNPCDefenceRoll(),
@@ -50,12 +52,12 @@ const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) 
       details: calc.details,
       userIssues: calc.userIssues,
 
-      specAccuracy: specCalc.getHitChance(),
-      specMaxHit: specCalc.getDistribution().getMax(),
-      specExpected: specCalc.getDistribution().getExpectedDamage(),
-      specMomentDps: specCalc.getDps(),
-      specFullDps: specCalc.getSpecDps(),
-      specHitDist: specCalc.getDistribution().asHistogram(calcOpts.hitDistHideMisses),
+      specAccuracy: specCalc?.getHitChance(),
+      specMaxHit: specCalc?.getDistribution().getMax(),
+      specExpected: specCalc?.getDistribution().getExpectedDamage(),
+      specMomentDps: specCalc?.getDps(),
+      specFullDps: specCalc?.getSpecDps(),
+      specHitDist: specCalc?.getDistribution().asHistogram(calcOpts.hitDistHideMisses),
     });
 
     const end = self.performance.now();

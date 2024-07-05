@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
   BarChart, XAxis, YAxis, Tooltip, ResponsiveContainer, Bar, TooltipProps, CartesianGrid,
 } from 'recharts';
@@ -12,6 +12,8 @@ import SectionAccordion from '@/app/components/generic/SectionAccordion';
 import Toggle from '@/app/components/generic/Toggle';
 import { observer } from 'mobx-react-lite';
 import { max } from 'd3-array';
+import { toJS } from 'mobx';
+import { isDefined } from '@/utils';
 
 const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
@@ -42,7 +44,17 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, pa
 const HitDistribution: React.FC = observer(() => {
   const store = useStore();
   const { prefs, calc, selectedLoadout } = store;
-  const data = (prefs.hitDistShowSpec ? calc.loadouts[selectedLoadout]?.specHitDist : calc.loadouts[selectedLoadout]?.hitDist) || [];
+
+  const loadouts = toJS(calc.loadouts);
+  const [specAvailable, setSpecAvailable] = useState<boolean>(false);
+  useEffect(() => {
+    // only update when data is unavailable
+    if (loadouts[selectedLoadout]?.accuracy !== undefined) {
+      setSpecAvailable(isDefined(loadouts[selectedLoadout]?.specHitDist));
+    }
+  }, [loadouts, selectedLoadout]);
+
+  const data = ((prefs.hitDistShowSpec && specAvailable) ? calc.loadouts[selectedLoadout]?.specHitDist : calc.loadouts[selectedLoadout]?.hitDist) || [];
 
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
@@ -82,7 +94,8 @@ const HitDistribution: React.FC = observer(() => {
           className="text-black dark:text-white mb-4"
         />
         <Toggle
-          checked={prefs.hitDistShowSpec}
+          disabled={!specAvailable}
+          checked={specAvailable && prefs.hitDistShowSpec}
           setChecked={(c) => store.updatePreferences({ hitDistShowSpec: c })}
           label="Show special attack"
           className="text-black dark:text-white mb-4"
