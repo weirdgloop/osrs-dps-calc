@@ -95,7 +95,7 @@ const HitDistribution: React.FC = observer(() => {
         />
         <Toggle
           disabled={!specAvailable}
-          checked={specAvailable && prefs.hitDistShowSpec}
+          checked={prefs.hitDistShowSpec}
           setChecked={(c) => store.updatePreferences({ hitDistShowSpec: c })}
           label="Show special attack"
           className="text-black dark:text-white mb-4"
