@@ -50,6 +50,7 @@ import { scaleMonster, scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { CombatStyleType, getRangedDamageType } from '@/types/PlayerCombatStyle';
 import { range, sum } from 'd3-array';
 import { FeatureStatus } from '@/utils';
+import UserIssueType from '@/enums/UserIssueType';
 
 // https://oldschool.runescape.wiki/w/Category:Weapons_with_Special_attacks
 // Some entries are intentionally omitted as they are not dps-related (e.g. dragon skilling tools, ivandis flail, dbaxe)
@@ -118,6 +119,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
   constructor(player: Player, monster: Monster, opts: Partial<CalcOpts> = {}) {
     super(player, monster, opts);
+
+    if (this.isSpecSupported() === FeatureStatus.UNIMPLEMENTED) {
+      this.addIssue(UserIssueType.EQUIPMENT_SPEC_UNSUPPORTED, 'This weapon has a special attack which is not yet supported in the calculator.');
+    }
   }
 
   /**
