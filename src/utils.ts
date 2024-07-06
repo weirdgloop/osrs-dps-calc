@@ -25,6 +25,34 @@ import { PlayerCombatStyle } from '@/types/PlayerCombatStyle';
 import { PartialDeep } from 'type-fest';
 import merge from 'lodash.mergewith';
 
+/**
+ * Can be reused in a number of locations where we partially support a feature
+ * and want to distinguish to users whether that feature is expected, and is implemented.
+ */
+export enum FeatureStatus {
+  /**
+   * The feature is fully implemented and is expected to give accurate and comprehensive results.
+   */
+  IMPLEMENTED,
+
+  /**
+   * The feature is partially but not wholly implemented, and may or may not be accurate.
+   * Example: a special attack that has an increased max hit, and applies damage over time, where only the increased max hit is implemented.
+   */
+  PARTIALLY_IMPLEMENTED,
+
+  /**
+   * The feature is known to exist, but has not been implemented.
+   * Example: A new weapon has been implemented with a unique effect and is selectable in the UI, but it is not yet implemented in the calculator. */
+  UNIMPLEMENTED,
+
+  /**
+   * The feature does not apply to the given conditions.
+   * Example: Querying whether the special attack of a weapon has been implemented, but the weapon does not have a special attack.
+   */
+  NOT_APPLICABLE,
+}
+
 export const classNames = (...classes: string[]) => classes.filter(Boolean).join(' ');
 
 const SHORTLINK_API = 'https://tools.runescape.wiki/osrs-dps/shortlink';

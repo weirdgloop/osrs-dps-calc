@@ -323,3 +323,29 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
 
   return totals;
 };
+
+/* eslint-disable quote-props */
+export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
+  'Dragon dagger': 25,
+  "Osmumten's fang": 25,
+  "Osmumten's fang (or)": 25,
+
+  'Dragon halberd': 30,
+  'Crystal halberd': 30,
+
+  'Elder maul': 50,
+  'Dragon warhammer': 50,
+  'Bandos godsword': 50,
+  'Saradomin godsword': 50,
+  'Accursed sceptre': 50,
+  'Accursed sceptre (a)': 50,
+  'Arclight': 50,
+  'Tonalztics of ralos': 50,
+  'Dragon claws': 50,
+  'Voidwaker': 50,
+  'Toxic blowpipe': 50,
+  'Blazing blowpipe': 50,
+
+  'Zaryte crossbow': 75,
+};
+/* eslint-enable quote-props */
