@@ -46,15 +46,16 @@ const HitDistribution: React.FC = observer(() => {
   const { prefs, calc, selectedLoadout } = store;
 
   const loadouts = toJS(calc.loadouts);
+  const thisLoadoutResult = loadouts[selectedLoadout];
   const [specAvailable, setSpecAvailable] = useState<boolean>(false);
   useEffect(() => {
     // only update when data is unavailable
-    if (loadouts[selectedLoadout]?.accuracy !== undefined) {
-      setSpecAvailable(isDefined(loadouts[selectedLoadout]?.specHitDist));
+    if (thisLoadoutResult?.accuracy !== undefined) {
+      setSpecAvailable(isDefined(thisLoadoutResult?.specHitDist));
     }
-  }, [loadouts, selectedLoadout]);
+  }, [thisLoadoutResult]);
 
-  const data = ((prefs.hitDistShowSpec && specAvailable) ? calc.loadouts[selectedLoadout]?.specHitDist : calc.loadouts[selectedLoadout]?.hitDist) || [];
+  const data = useMemo(() => ((prefs.hitDistShowSpec && specAvailable) ? thisLoadoutResult?.specHitDist : thisLoadoutResult?.hitDist) || [], [thisLoadoutResult, prefs.hitDistShowSpec, specAvailable]);
 
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
@@ -87,19 +88,23 @@ const HitDistribution: React.FC = observer(() => {
       )}
     >
       <div className="px-6 py-4">
-        <Toggle
-          checked={prefs.hitDistsHideZeros}
-          setChecked={(c) => store.updatePreferences({ hitDistsHideZeros: c })}
-          label="Hide misses"
-          className="text-black dark:text-white mb-4"
-        />
-        <Toggle
-          disabled={!specAvailable}
-          checked={prefs.hitDistShowSpec}
-          setChecked={(c) => store.updatePreferences({ hitDistShowSpec: c })}
-          label="Show special attack"
-          className="text-black dark:text-white mb-4"
-        />
+        <div
+          className="flex items-center gap-4"
+        >
+          <Toggle
+            checked={prefs.hitDistsHideZeros}
+            setChecked={(c) => store.updatePreferences({ hitDistsHideZeros: c })}
+            label="Hide misses"
+            className="text-black dark:text-white mb-4"
+          />
+          <Toggle
+            disabled={!specAvailable}
+            checked={prefs.hitDistShowSpec}
+            setChecked={(c) => store.updatePreferences({ hitDistShowSpec: c })}
+            label="Show special attack"
+            className="text-black dark:text-white mb-4"
+          />
+        </div>
         <ResponsiveContainer width="100%" height={225}>
           <BarChart
             data={data}

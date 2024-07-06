@@ -160,7 +160,7 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
               NPC def roll
             </ResultRow>
             <ResultRowHeader>
-              Special Attack
+              Special attack
             </ResultRowHeader>
             <ResultRow calcKey="specAccuracy" title="How accurate your special attack is against the monster" hasResults={hasResults} collapseSpecs={resultsExpanded}>
               Accuracy
