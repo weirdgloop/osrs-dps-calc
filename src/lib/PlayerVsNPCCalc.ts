@@ -963,7 +963,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const clawSpecDist = new HitDistribution([]);
       for (let accRoll = 0; accRoll < 4; accRoll++) {
         const low = Math.trunc(max * (4 - accRoll) / 4);
-        const high = max + low;
+        const high = max + low - 1;
         const chancePreviousRollsFail = (1 - acc) ** accRoll;
         const chanceThisRollPasses = chancePreviousRollsFail * acc;
         const chancePerDmg = chanceThisRollPasses / (high - low + 1);
