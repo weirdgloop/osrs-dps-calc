@@ -46,8 +46,8 @@ import { DetailKey } from '@/lib/CalcDetails';
 import { Factor, MinMax } from '@/lib/Math';
 import { AmmoApplicability, ammoApplicability } from '@/lib/Equipment';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
-import { scaleMonsterHpOnly } from '@/lib/MonsterScaling';
-import { getRangedDamageType } from '@/types/PlayerCombatStyle';
+import { scaleMonster, scaleMonsterHpOnly } from '@/lib/MonsterScaling';
+import { CombatStyleType, getRangedDamageType } from '@/types/PlayerCombatStyle';
 import { range, sum } from 'd3-array';
 
 /**
@@ -68,25 +68,37 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return this.track(DetailKey.NPC_DEFENCE_ROLL_FINAL, this.opts.overrides.defenceRoll);
     }
 
+    let defenceStyle: CombatStyleType = this.player.style.type;
+    if (this.opts.usingSpecialAttack) {
+      if (this.wearing(['Dragon claws', 'Bandos godsword', 'Saradomin godsword', 'Dragon dagger', 'Dragon halberd', 'Crystal halberd'])) {
+        defenceStyle = 'slash';
+      } else if (this.wearing('Arclight')) {
+        defenceStyle = 'stab';
+      } else if (this.wearing('Voidwaker')) {
+        // doesn't really matter since it's 100% accuracy but eh
+        defenceStyle = 'magic';
+      }
+    }
+
     const level = this.track(
       DetailKey.NPC_DEFENCE_ROLL_LEVEL,
-      this.player.style.type === 'magic' && !USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS.includes(this.monster.id)
+      defenceStyle === 'magic' && !USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS.includes(this.monster.id)
         ? this.monster.skills.magic
         : this.monster.skills.def,
     );
     const effectiveLevel = this.trackAdd(DetailKey.NPC_DEFENCE_ROLL_EFFECTIVE_LEVEL, level, 9);
 
     let bonus: number;
-    if (this.player.style.type === 'ranged') {
+    if (defenceStyle === 'ranged') {
       const rangedType = getRangedDamageType(this.player.equipment.weapon!.category);
       bonus = rangedType === 'mixed'
         ? Math.trunc((this.monster.defensive.light + this.monster.defensive.standard + this.monster.defensive.heavy) / 3)
         : this.monster.defensive[rangedType];
     } else {
-      bonus = this.monster.defensive[this.player.style.type || 'crush'];
+      bonus = this.monster.defensive[defenceStyle || 'crush'];
     }
 
-    const statBonus = this.trackAdd(DetailKey.NPC_DEFENCE_STAT_BONUS, this.player.style.type ? bonus : 0, 64);
+    const statBonus = this.trackAdd(DetailKey.NPC_DEFENCE_STAT_BONUS, defenceStyle ? bonus : 0, 64);
     let defenceRoll = this.trackFactor(DetailKey.NPC_DEFENCE_ROLL_BASE, effectiveLevel, [statBonus, 1]);
 
     if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) && this.monster.inputs.toaInvocationLevel) {
@@ -179,6 +191,18 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           inqPieces *= 3;
         }
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_INQ, attackRoll, [200 + inqPieces, 200]);
+      }
+    }
+
+    if (this.opts.usingSpecialAttack) {
+      if (this.isWearingFang()) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [3, 2]);
+      } else if (this.wearing('Elder maul')) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [5, 4]);
+      } else if (this.wearing(['Bandos godsword', 'Saradomin godsword'])) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
+      } else if (this.wearing('Dragon dagger')) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [23, 20]);
       }
     }
 
@@ -318,7 +342,29 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isWearingFang()) {
       const shrink = Math.trunc(maxHit * 3 / 20);
       minHit = this.track(DetailKey.MIN_HIT_FANG, shrink);
-      maxHit = this.trackAdd(DetailKey.MAX_HIT_FANG, maxHit, -shrink);
+      if (this.opts.usingSpecialAttack) {
+        // not reduced during spec, but min hit is changed as usual
+        this.track(DetailKey.MAX_HIT_SPEC, maxHit);
+      } else {
+        maxHit = this.trackAdd(DetailKey.MAX_HIT_FANG, maxHit, -shrink);
+      }
+    }
+
+    if (this.opts.usingSpecialAttack) {
+      if (this.wearing('Dragon warhammer')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [3, 2]);
+      } else if (this.wearing('Bandos godsword')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [121, 100]);
+      } else if (this.wearing('Saradomin godsword')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [11, 10]);
+      } else if (this.wearing('Voidwaker')) {
+        minHit = this.trackFactor(DetailKey.MIN_HIT_SPEC, maxHit, [1, 2]);
+        maxHit = this.trackAdd(DetailKey.MAX_HIT_SPEC, maxHit, minHit);
+      } else if (this.wearing(['Dragon halberd', 'Crystal halberd'])) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [11, 10]);
+      } else if (this.wearing('Dragon dagger')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [23, 20]);
+      }
     }
 
     return [minHit, maxHit];
@@ -375,6 +421,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing('Dragon hunter crossbow') && mattrs.includes(MonsterAttribute.DRAGON)) {
       // TODO: https://twitter.com/JagexAsh/status/1647928422843273220 for max_hit seems to be additive now
       attackRoll = Math.trunc(attackRoll * 13 / 10);
+    }
+
+    if (this.opts.usingSpecialAttack) {
+      if (this.wearing('Zaryte crossbow') || this.isWearingBlowpipe()) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
+      }
     }
 
     return attackRoll;
@@ -476,6 +528,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_TONALZTICS, maxHit, [3, 4]);
     }
 
+    if (this.opts.usingSpecialAttack) {
+      if (this.isWearingBlowpipe()) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [3, 2]);
+      }
+    }
+
     return [0, maxHit]; // ranged has no min hit behaviours (aside from always-max, which is lower down)
   }
 
@@ -544,6 +602,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     if (this.wearing('Tome of water') && this.player.spell?.element === 'water' || isBindSpell(this.player.spell)) { // todo does this go here?
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_TOME, attackRoll, [6, 5]);
+    }
+
+    if (this.opts.usingSpecialAttack) {
+      if (this.isWearingAccursedSceptre()) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [3, 2]);
+      }
     }
 
     const spellement = this.player.spell?.element;
@@ -666,6 +730,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = Math.trunc(maxHit * 3 / 2);
     }
 
+    if (this.opts.usingSpecialAttack) {
+      // todo ordering
+      if (this.isWearingAccursedSceptre()) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [3, 2]);
+      }
+    }
+
     const spellement = this.player.spell?.element;
     if (this.monster.weakness && spellement) {
       if (spellement === this.monster.weakness.element) {
@@ -750,6 +821,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
+    if (this.opts.usingSpecialAttack && this.wearing('Voidwaker')) {
+      return 1.0;
+    }
+
     const style = this.player.style.type;
     let atkRoll = 0;
     if (this.isUsingMeleeStyle()) {
@@ -813,11 +888,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   public getDistribution(): AttackDistribution {
     if (this.memoizedDist === undefined) {
       this.memoizedDist = this.getDistributionImpl();
+      this.track(DetailKey.HIT_DIST_FINAL_MIN, this.memoizedDist.getMin());
+      this.track(DetailKey.HIT_DIST_FINAL_MAX, this.memoizedDist.getMax());
+      this.track(DetailKey.HIT_DIST_FINAL_EXPECTED, this.memoizedDist.getExpectedDamage());
     }
 
-    this.track(DetailKey.HIT_DIST_FINAL_MIN, this.memoizedDist.getMin());
-    this.track(DetailKey.HIT_DIST_FINAL_MAX, this.memoizedDist.getMax());
-    this.track(DetailKey.HIT_DIST_FINAL_EXPECTED, this.memoizedDist.getExpectedDamage());
     return this.memoizedDist;
   }
 
@@ -834,7 +909,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     // Monsters that always die in one hit no matter what
     if (ONE_HIT_MONSTERS.includes(this.monster.id)) {
       return new AttackDistribution([
-        HitDistribution.single(1.0, this.monster.skills.hp),
+        HitDistribution.single(1.0, [new Hitsplat(this.monster.skills.hp)]),
       ]);
     }
 
@@ -842,12 +917,34 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if ((this.player.style.type === 'magic' && ALWAYS_MAX_HIT_MONSTERS.magic.includes(this.monster.id))
       || (this.isUsingMeleeStyle() && ALWAYS_MAX_HIT_MONSTERS.melee.includes(this.monster.id))
       || (this.player.style.type === 'ranged' && ALWAYS_MAX_HIT_MONSTERS.ranged.includes(this.monster.id))) {
-      return new AttackDistribution([HitDistribution.single(1.0, max)]);
+      return new AttackDistribution([HitDistribution.single(1.0, [new Hitsplat(max)])]);
     }
 
     if (style === 'ranged' && this.wearing('Tonalztics of ralos') && this.player.equipment.weapon?.version === 'Charged') {
       // roll two independent hits
-      dist = new AttackDistribution([standardHitDist, standardHitDist]);
+      if (!this.opts.usingSpecialAttack) {
+        dist = new AttackDistribution([standardHitDist, standardHitDist]);
+      } else {
+        // the defence reduction from the first hit applies to the second hit,
+        // so we need a full subcalc with the new defence value to determine the dist
+        const loweredDefHitAccuracy = this.noInitSubCalc(this.player, scaleMonster({
+          ...this.baseMonster,
+          inputs: {
+            ...this.baseMonster.inputs,
+            defenceReductions: {
+              ...this.baseMonster.inputs.defenceReductions,
+              tonalztic: this.baseMonster.inputs.defenceReductions.tonalztic + 1,
+            },
+          },
+        })).getHitChance();
+
+        const loweredDefHitDist = HitDistribution.linear(loweredDefHitAccuracy, min, max);
+        dist = dist.transform((firstHit) => {
+          const firstHitDist = HitDistribution.single(1.0, [firstHit]);
+          const secondHitDist = firstHit.accurate ? loweredDefHitDist : standardHitDist;
+          return firstHitDist.zip(secondHitDist);
+        });
+      }
     }
 
     if (this.isUsingMeleeStyle() && this.wearing('Gadderhammer') && mattrs.includes(MonsterAttribute.SHADE)) {
@@ -857,6 +954,89 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           ...standardHitDist.scaleProbability(0.05).scaleDamage(2).hits,
         ]),
       ]);
+    }
+
+    let accurateZeroApplicable: boolean = true;
+    if (this.opts.usingSpecialAttack && this.wearing('Dragon claws')) {
+      accurateZeroApplicable = false;
+
+      const clawSpecDist = new HitDistribution([]);
+      for (let accRoll = 0; accRoll < 4; accRoll++) {
+        const low = Math.trunc(max * (4 - accRoll) / 4);
+        const high = max + low;
+        const chancePreviousRollsFail = (1 - acc) ** accRoll;
+        const chanceThisRollPasses = chancePreviousRollsFail * acc;
+        const chancePerDmg = chanceThisRollPasses / (high - low + 1);
+        for (let dmg = low; dmg <= high; dmg++) {
+          switch (accRoll) {
+            case 0:
+              clawSpecDist.addHit(new WeightedHit(chancePerDmg, [
+                new Hitsplat(Math.trunc(dmg / 2)),
+                new Hitsplat(Math.trunc(dmg / 4)),
+                new Hitsplat(Math.trunc(dmg / 8)),
+                new Hitsplat(Math.trunc(dmg / 8) + 1),
+              ]));
+              break;
+
+            case 1:
+              clawSpecDist.addHit(new WeightedHit(chancePerDmg, [
+                new Hitsplat(Math.trunc(dmg / 2)),
+                new Hitsplat(Math.trunc(dmg / 4)),
+                new Hitsplat(Math.trunc(dmg / 4) + 1),
+                Hitsplat.INACCURATE,
+              ]));
+              break;
+
+            case 2:
+              clawSpecDist.addHit(new WeightedHit(chancePerDmg, [
+                new Hitsplat(Math.trunc(dmg / 2)),
+                new Hitsplat(Math.trunc(dmg / 2) + 1),
+                Hitsplat.INACCURATE,
+                Hitsplat.INACCURATE,
+              ]));
+              break;
+
+            default:
+              clawSpecDist.addHit(new WeightedHit(chancePerDmg, [
+                new Hitsplat(dmg + 1),
+                Hitsplat.INACCURATE,
+                Hitsplat.INACCURATE,
+                Hitsplat.INACCURATE,
+              ]));
+              break;
+          }
+        }
+      }
+      const chanceAllFail = (1 - acc) ** 4;
+      clawSpecDist.addHit(new WeightedHit(chanceAllFail * 2 / 3, [
+        new Hitsplat(1, false),
+        new Hitsplat(1, false),
+        Hitsplat.INACCURATE,
+        Hitsplat.INACCURATE,
+      ]));
+      clawSpecDist.addHit(new WeightedHit(chanceAllFail / 3, [
+        Hitsplat.INACCURATE,
+        Hitsplat.INACCURATE,
+        Hitsplat.INACCURATE,
+        Hitsplat.INACCURATE,
+      ]));
+      dist = new AttackDistribution([clawSpecDist]);
+    }
+
+    if (this.opts.usingSpecialAttack && this.wearing(['Dragon halberd', 'Crystal halberd']) && this.monster.size > 1) {
+      const secondHitAttackRoll = Math.trunc(this.getMaxAttackRoll() * 3 / 4);
+      const secondHitAcc = this.noInitSubCalc(
+        this.player,
+        this.monster,
+        { overrides: { attackRoll: secondHitAttackRoll } },
+      ).getHitChance();
+
+      dist = new AttackDistribution([standardHitDist, HitDistribution.linear(secondHitAcc, min, max)]);
+    }
+
+    if (this.opts.usingSpecialAttack && this.wearing('Dragon dagger')) {
+      // just a double hit, stat changes are earlier
+      dist = new AttackDistribution([standardHitDist, standardHitDist]);
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingDharok()) {
@@ -956,13 +1136,14 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     // bolt effects
+    const zaryte = this.wearing('Zaryte crossbow');
+    const zaryteSpec = zaryte && this.opts.usingSpecialAttack;
     if (this.player.style.type === 'ranged' && this.player.equipment.weapon?.name.includes('rossbow')) {
-      const zaryte = this.wearing('Zaryte crossbow');
       const rangedLvl = this.player.skills.ranged + this.player.boosts.ranged;
       const kandarinDiaryFactor = this.player.buffs.kandarinDiary ? 1.1 : 1.0;
 
       if (this.wearing(['Opal bolts (e)', 'Opal dragon bolts (e)'])) {
-        const chance = 0.05 * kandarinDiaryFactor;
+        const chance = zaryteSpec ? 1.0 : 0.05 * kandarinDiaryFactor;
         const bonusDmg = Math.trunc(rangedLvl / (zaryte ? 9 : 10));
         dist = new AttackDistribution([
           new HitDistribution([
@@ -973,7 +1154,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
 
       if (this.wearing(['Pearl bolts (e)', 'Pearl dragon bolts (e)'])) {
-        const chance = 0.06 * kandarinDiaryFactor;
+        const chance = zaryteSpec ? 1.0 : 0.06 * kandarinDiaryFactor;
         const divisor = mattrs.includes(MonsterAttribute.FIERY) ? 15 : 20;
         const bonusDmg = Math.trunc(rangedLvl / (zaryte ? divisor - 2 : divisor));
         dist = new AttackDistribution([
@@ -985,7 +1166,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
 
       if (this.wearing(['Diamond bolts (e)', 'Diamond dragon bolts (e)'])) {
-        const chance = 0.1 * kandarinDiaryFactor;
+        const chance = zaryteSpec ? 1.0 : 0.1 * kandarinDiaryFactor;
         const effectMax = max + Math.trunc(max * (zaryte ? 26 : 15) / 100);
         dist = new AttackDistribution([
           new HitDistribution([
@@ -996,7 +1177,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
 
       if (this.wearing(['Dragonstone bolts (e)', 'Dragonstone dragon bolts (e)']) && (!mattrs.includes(MonsterAttribute.FIERY) || !mattrs.includes(MonsterAttribute.DRAGON))) {
-        const chance = 0.06 * kandarinDiaryFactor;
+        const chance = zaryteSpec ? 1.0 : 0.06 * kandarinDiaryFactor;
         // https://github.com/weirdgloop/osrs-dps-calc/issues/152#issuecomment-1913508743
         const effectDmg = Math.trunc(rangedLvl * 2 / (zaryte ? 9 : 10));
         dist = new AttackDistribution([
@@ -1008,12 +1189,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
 
       if (this.wearing(['Onyx bolts (e)', 'Onyx dragon bolts (e)']) && !mattrs.includes(MonsterAttribute.UNDEAD)) {
-        const chance = 0.11 * kandarinDiaryFactor;
+        const chance = zaryteSpec ? 1.0 : 0.11 * kandarinDiaryFactor;
         const effectMax = Math.trunc(max * (zaryte ? 132 : 120) / 100);
         dist = new AttackDistribution([
           new HitDistribution([
             ...standardHitDist.scaleProbability(1 - chance).hits,
-            ...HitDistribution.linear(1.0, 0, effectMax).scaleProbability(acc * chance).hits,
+            ...HitDistribution.linear(1.0, 0, effectMax)
+              .scaleProbability(acc * chance).hits,
             new WeightedHit((1 - acc) * chance, [Hitsplat.INACCURATE]),
           ]),
         ]);
@@ -1021,10 +1203,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     // raise accurate 0s to 1
-    dist = dist.transform(
-      (h) => HitDistribution.single(1.0, Math.max(h.damage, 1)),
-      { transformInaccurate: false },
-    );
+    if (accurateZeroApplicable) {
+      dist = dist.transform(
+        (h) => HitDistribution.single(1.0, [new Hitsplat(Math.max(h.damage, 1))]),
+        { transformInaccurate: false },
+      );
+    }
 
     // we apply corp earlier than other limiters,
     // and rubies later than other bolts,
@@ -1035,7 +1219,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.player.style.type === 'ranged' && this.player.equipment.weapon?.name.includes('rossbow')) {
       if (this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)'])) {
-        const chance = 0.06 * (this.player.buffs.kandarinDiary ? 1.1 : 1.0);
+        const chance = zaryteSpec ? 1.0 : 0.06 * (this.player.buffs.kandarinDiary ? 1.1 : 1.0);
         const effectDmg = this.wearing('Zaryte crossbow')
           ? Math.min(110, Math.trunc(this.monster.inputs.monsterCurrentHp * 22 / 100))
           : Math.min(100, Math.trunc(this.monster.inputs.monsterCurrentHp / 5));
@@ -1058,6 +1242,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return new AttackDistribution([new HitDistribution([new WeightedHit(1.0, [Hitsplat.INACCURATE])])]);
     }
 
+    // todo this comes up in a few places now, it may be good to abstract it into a "getDamageStyle"
+    let styleType = this.player.style.type;
+    if (this.opts.usingSpecialAttack && this.wearing('Voidwaker')) {
+      styleType = 'magic';
+    }
+
     if (this.monster.name === 'Zulrah') {
       // https://twitter.com/JagexAsh/status/1745852774607183888
       dist = dist.transform(cappedRerollTransformer(50, 5, 45));
@@ -1066,7 +1256,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       // https://twitter.com/JagexAsh/status/1375037874559721474
       dist = dist.transform(linearMinTransformer(2, 22));
     }
-    if (this.monster.name === 'Kraken' && this.player.style.type === 'ranged') {
+    if (this.monster.name === 'Kraken' && styleType === 'ranged') {
       // https://twitter.com/JagexAsh/status/1699360516488011950
       dist = dist.transform(divisionTransformer(7, 1));
     }
@@ -1074,16 +1264,16 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const limit = this.isUsingMeleeStyle() ? 10 : 3;
       dist = dist.transform(linearMinTransformer(limit));
     }
-    if (TEKTON_IDS.includes(this.monster.id) && this.player.style.type === 'magic') {
+    if (TEKTON_IDS.includes(this.monster.id) && styleType === 'magic') {
       dist = dist.transform(divisionTransformer(5, 1));
     }
-    if (GLOWING_CRYSTAL_IDS.includes(this.monster.id) && this.player.style.type === 'magic') {
+    if (GLOWING_CRYSTAL_IDS.includes(this.monster.id) && styleType === 'magic') {
       dist = dist.transform(divisionTransformer(3));
     }
-    if ((OLM_MELEE_HAND_IDS.includes(this.monster.id) || OLM_HEAD_IDS.includes(this.monster.id)) && this.player.style.type === 'magic') {
+    if ((OLM_MELEE_HAND_IDS.includes(this.monster.id) || OLM_HEAD_IDS.includes(this.monster.id)) && styleType === 'magic') {
       dist = dist.transform(divisionTransformer(3));
     }
-    if ((OLM_MAGE_HAND_IDS.includes(this.monster.id) || OLM_MELEE_HAND_IDS.includes(this.monster.id)) && this.player.style.type === 'ranged') {
+    if ((OLM_MAGE_HAND_IDS.includes(this.monster.id) || OLM_MELEE_HAND_IDS.includes(this.monster.id)) && styleType === 'ranged') {
       dist = dist.transform(divisionTransformer(3));
     }
     if (this.monster.name === 'Ice demon' && this.player.spell?.element !== 'fire') {
@@ -1094,7 +1284,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       // https://twitter.com/JagexAsh/status/1219652159148646401
       dist = dist.transform(divisionTransformer(3));
     }
-    if (NIGHTMARE_TOTEM_IDS.includes(this.monster.id) && this.player.style.type === 'magic') {
+    if (NIGHTMARE_TOTEM_IDS.includes(this.monster.id) && styleType === 'magic') {
       dist = dist.transform(multiplyTransformer(2));
     }
     if (['Slash Bash', 'Zogre', 'Skogre'].includes(this.monster.name)) {
@@ -1128,7 +1318,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   isImmune(): boolean {
     const monsterId = this.monster.id;
     const mattrs = this.monster.attributes;
-    const styleType = this.player.style.type;
+    let styleType = this.player.style.type;
+
+    if (this.opts.usingSpecialAttack && this.wearing('Voidwaker')) {
+      styleType = 'magic';
+    }
 
     if (IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS.includes(monsterId) && styleType === 'magic') {
       return true;
@@ -1215,7 +1409,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    * Returns the expected damage per tick, based on the player's attack speed.
    */
   public getDpt() {
-    return this.getDistribution().getExpectedDamage() / this.getExpectedAttackSpeed();
+    return this.getDistribution()
+      .getExpectedDamage() / this.getExpectedAttackSpeed();
   }
 
   /**
@@ -1283,6 +1478,18 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     return this.getHtk() * this.getExpectedAttackSpeed() * SECONDS_PER_TICK;
   }
 
+  public getSpecDps(): number {
+    const specCost = PlayerVsNPCCalc.getSpecCost(this.player.equipment.weapon?.name);
+    if (specCost === null) {
+      console.warn(`Expected spec cost for weapon [${this.player.equipment.weapon?.name}] but was not provided`);
+      return 0;
+    }
+
+    const ticksToRegen = this.wearing('Lightbearer') ? 25 : 50;
+    const ticksPerSpec = specCost * (ticksToRegen / 10);
+    return this.getDps() / ticksPerSpec;
+  }
+
   public getWeaponDelayProvider(): WeaponDelayProvider {
     const baseSpeed = this.getAttackSpeed();
 
@@ -1313,7 +1520,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    * it is an object where keys are tick counts and values are probabilities.
    */
   public getTtkDistribution(): Map<number, number> {
-    if (this.getDistribution().getExpectedDamage() === 0) { // todo thralls, allow thrall-only compute?
+    if (this.getDistribution()
+      .getExpectedDamage() === 0) { // todo thralls, allow thrall-only compute?
       return new Map<number, number>();
     }
 
@@ -1321,7 +1529,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const speed = this.getAttackSpeed();
     const iterMax = TTK_DIST_MAX_ITER_ROUNDS * speed;
 
-    const playerDist = this.getDistribution().zipped
+    const playerDist = this.getDistribution()
+      .zipped
       .withProbabilisticDelays(this.getWeaponDelayProvider());
 
     // dist attack-on-specific-tick probabilities
@@ -1337,7 +1546,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const h = iterMax + 20;
     const w = this.monster.skills.hp + 1;
     const tickHpsRoot = new Float64Array(h * w);
-    const tickHps = range(0, h).map((i) => tickHpsRoot.subarray(w * i, w * (i + 1)));
+    const tickHps = range(0, h)
+      .map((i) => tickHpsRoot.subarray(w * i, w * (i + 1)));
     tickHps[1][this.monster.skills.hp] = 1.0;
 
     // output map, will be converted at the end
@@ -1421,7 +1631,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return baseDist;
     }
 
-    const subCalc = new PlayerVsNPCCalc(
+    const subCalc = this.noInitSubCalc(
       this.player,
       scaleMonsterHpOnly({
         ...this.baseMonster,
@@ -1430,15 +1640,18 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           monsterCurrentHp: hp,
         },
       }),
-      <InternalOpts>{
-        ...this.opts,
-        noInit: true,
-      },
     );
+
+    return subCalc.getDistribution().zipped.withProbabilisticDelays(this.getWeaponDelayProvider());
+  }
+
+  // a computational shortcut for internal class use only
+  private noInitSubCalc(p: Player, m: Monster, opts: Partial<InternalOpts> = {}): PlayerVsNPCCalc {
+    const subCalc = new PlayerVsNPCCalc(p, m, <InternalOpts>{ ...this.opts, ...opts, noInit: true });
     subCalc.allEquippedItems = this.allEquippedItems;
     subCalc.baseMonster = this.baseMonster;
 
-    return subCalc.getDistribution().zipped.withProbabilisticDelays(this.getWeaponDelayProvider());
+    return subCalc;
   }
 
   demonbaneFactor(baseFactor: Factor): Factor {
@@ -1472,4 +1685,41 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const bonus = base + t2 - t3;
     return Math.trunc(current * bonus / 100);
   };
+
+  static getSpecCost(weaponName: string | null | undefined): number | null {
+    switch (weaponName) {
+      case 'Dragon dagger':
+      case "Osmumten's fang":
+      case "Osmumten's fang (or)":
+        return 25;
+
+      case 'Dragon halberd':
+      case 'Crystal halberd':
+        return 30;
+
+      case 'Elder maul':
+      case 'Dragon warhammer':
+      case 'Bandos godsword':
+      case 'Saradomin godsword':
+      case 'Accursed sceptre':
+      case 'Accursed sceptre (a)':
+      case 'Arclight':
+      case 'Tonalztics of ralos':
+      case 'Dragon claws':
+      case 'Voidwaker':
+      case 'Toxic blowpipe':
+      case 'Blazing blowpipe':
+        return 50;
+
+      case 'Zaryte crossbow':
+        return 75;
+
+      default:
+        return null;
+    }
+  }
+
+  static isSpecSupported(weaponName: string | null | undefined) {
+    return PlayerVsNPCCalc.getSpecCost(weaponName) !== null;
+  }
 }

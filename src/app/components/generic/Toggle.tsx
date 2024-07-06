@@ -4,6 +4,7 @@ import { Switch } from '@headlessui/react';
 interface ToggleProps {
   checked: boolean;
   setChecked: (checked: boolean) => void;
+  disabled?: boolean;
   label?: string | React.ReactNode;
   help?: string;
   className?: string;
@@ -11,13 +12,14 @@ interface ToggleProps {
 
 const Toggle: React.FC<ToggleProps> = (props) => {
   const {
-    checked, setChecked, label, help, className,
+    checked, setChecked, disabled, label, help, className,
   } = props;
 
   return (
     <Switch.Group>
-      <div className={`flex items-center text-sm mb-1.5 ${className}`}>
+      <div className={`flex items-center text-sm mb-1.5 transition-opacity ${disabled ? 'opacity-25' : ''} ${className}`}>
         <Switch
+          disabled={disabled}
           checked={checked}
           onChange={setChecked}
           className={`${
@@ -30,13 +32,13 @@ const Toggle: React.FC<ToggleProps> = (props) => {
             } inline-block h-4 w-4 transform rounded-full bg-white transition-transform`}
           />
         </Switch>
-        <Switch.Label className="ml-2">
+        <Switch.Label className="ml-2 text-gray-500 dark:text-white">
           {label}
           {' '}
           {help && (
           <span
             title={help}
-            className="cursor-help ml-1 text-gray-500 transition-[background] bg-body-200 dark:bg-dark-200 dark:text-white dark:hover:bg-dark-100 hover:bg-body-300 px-1 rounded no-underline"
+            className="cursor-help ml-1 transition-[background] bg-body-200 dark:bg-dark-200 dark:hover:bg-dark-100 hover:bg-body-300 px-1 rounded no-underline"
           >
             ?
           </span>

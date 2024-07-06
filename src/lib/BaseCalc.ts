@@ -8,11 +8,14 @@ import { UserIssue } from '@/types/State';
 import { CalcDetails, DetailEntry } from '@/lib/CalcDetails';
 import { Factor } from '@/lib/Math';
 import { scaleMonster } from '@/lib/MonsterScaling';
+import { getCombatStylesForCategory } from '@/utils';
+import { EquipmentCategory } from '@/enums/EquipmentCategory';
 
 export interface CalcOpts {
   loadoutName?: string,
   detailedOutput?: boolean,
   disableMonsterScaling?: boolean,
+  usingSpecialAttack?: boolean,
   overrides?: {
     accuracy?: number,
     attackRoll?: number,
@@ -32,6 +35,7 @@ const DEFAULT_OPTS: Required<InternalOpts> = {
   loadoutName: 'unknown',
   detailedOutput: false,
   disableMonsterScaling: false,
+  usingSpecialAttack: false,
   noInit: false,
   overrides: {},
 };
@@ -308,6 +312,14 @@ export default class BaseCalc {
     return this.wearing(["Osmumten's fang", "Osmumten's fang (or)"]);
   }
 
+  protected isWearingAccursedSceptre(): boolean {
+    return this.wearing(['Accursed sceptre', 'Accursed sceptre (a)']);
+  }
+
+  protected isWearingBlowpipe(): boolean {
+    return this.wearing(['Toxic blowpipe', 'Blazing blowpipe']);
+  }
+
   /**
    * Whether the player is using any variant of the scythe of vitur.
    * @see https://oldschool.runescape.wiki/w/Scythe_of_vitur
@@ -547,6 +559,14 @@ export default class BaseCalc {
           ...this.monster.inputs,
           monsterCurrentHp: this.monster.skills.hp,
         },
+      };
+    }
+
+    // specs are never manual cast, although the base loadout can be at the same time
+    if (this.opts.usingSpecialAttack && this.player.style.stance === 'Manual Cast') {
+      this.player = {
+        ...this.player,
+        style: getCombatStylesForCategory(eq.weapon?.category || EquipmentCategory.UNARMED)[0],
       };
     }
 

@@ -164,7 +164,9 @@ export class HitDistribution {
 
     const d = new HitDistribution([]);
     for (const [hash, prob] of acc.entries()) {
-      d.addHit(new WeightedHit(prob, hitLists.get(hash)!));
+      if (prob > 0) {
+        d.addHit(new WeightedHit(prob, hitLists.get(hash)!));
+      }
     }
     return d;
   }
@@ -190,7 +192,9 @@ export class HitDistribution {
     for (const [key, prob] of acc.entries()) {
       const accurate = key >= 0;
       const dmg = accurate ? key : ~key;
-      d.addHit(new WeightedHit(prob, [new Hitsplat(dmg, accurate)]));
+      if (prob > 0) {
+        d.addHit(new WeightedHit(prob, [new Hitsplat(dmg, accurate)]));
+      }
     }
 
     return d;
@@ -260,9 +264,9 @@ export class HitDistribution {
     return d;
   }
 
-  public static single(accuracy: number, hit: number): HitDistribution {
+  public static single(accuracy: number, hitsplats: Hitsplat[]): HitDistribution {
     const d = new HitDistribution([
-      new WeightedHit(accuracy, [new Hitsplat(hit)]),
+      new WeightedHit(accuracy, hitsplats),
     ]);
     if (accuracy !== 1.0) {
       d.addHit(new WeightedHit(1 - accuracy, [Hitsplat.INACCURATE]));
