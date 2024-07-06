@@ -821,10 +821,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
-    if (this.opts.usingSpecialAttack && this.wearing('Voidwaker')) {
-      return 1.0;
-    }
-
     const style = this.player.style.type;
     let atkRoll = 0;
     if (this.isUsingMeleeStyle()) {
@@ -854,6 +850,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.monster.id === 7223 && this.player.style.stance !== 'Manual Cast') {
       this.track(DetailKey.PLAYER_ACCURACY_SCURRIUS_RAT, 1.0);
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
+    }
+
+    if (this.opts.usingSpecialAttack && this.wearing('Voidwaker')) {
+      return 1.0;
     }
 
     const atk = this.getMaxAttackRoll();
