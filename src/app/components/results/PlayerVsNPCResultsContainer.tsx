@@ -4,12 +4,10 @@ import PlayerVsNPCResultsTable from '@/app/components/results/PlayerVsNPCResults
 import { useStore } from '@/state';
 import Toggle from '@/app/components/generic/Toggle';
 import { observer } from 'mobx-react-lite';
-import UserIssueWarning from '@/app/components/generic/UserIssueWarning';
 
 const ResultsContainer = observer(() => {
   const store = useStore();
-  const { prefs, userIssues } = store;
-  const issues = userIssues.filter((i) => i.type.startsWith('pvm_results') && i.loadout === `${store.selectedLoadout + 1}`);
+  const { prefs } = store;
 
   return (
     <div className="grow basis-1/4 md:mt-9 flex flex-col">
@@ -21,11 +19,6 @@ const ResultsContainer = observer(() => {
         >
           <h2 className="font-serif text-lg tracking-tight font-bold dark:text-white flex items-center gap-2">
             Results
-            {
-              issues.length > 0 && (
-                <UserIssueWarning className="inline-block" issue={issues[0]} />
-              )
-            }
           </h2>
           <Toggle
             checked={prefs.resultsExpanded}

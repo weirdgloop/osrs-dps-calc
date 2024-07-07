@@ -7,6 +7,7 @@ import { ACCURACY_PRECISION, DPS_PRECISION, EXPECTED_HIT_PRECISION } from '@/lib
 import { max, min, some } from 'd3-array';
 import { toJS } from 'mobx';
 import { isDefined } from '@/utils';
+import UserIssueType from '@/enums/UserIssueType';
 
 interface IResultRowProps {
   calcKey: keyof Omit<PlayerVsNPCCalculatedLoadout, 'ttkDist'>;
@@ -65,7 +66,7 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
     hasResults,
     collapseSpecs,
   } = props;
-  const { calc } = store;
+  const { calc, userIssues } = store;
   const loadouts = toJS(calc.loadouts);
 
   const cells = useMemo(() => {
@@ -78,9 +79,12 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
         // results are in, but the weapon has no implemented special attack
         // we colspan on the first entry (specAccuracy) if extended, and just return nothing for the rest
         return (calcKey === 'specAccuracy' || !collapseSpecs)
-          // eslint-disable-next-line react/no-array-index-key
-          ? (<th key={i} rowSpan={5} className="w-28 border-r bg-dark-400 text-dark-200 text-center">N/A</th>)
-          : undefined;
+          ? (
+            // eslint-disable-next-line react/no-array-index-key
+            <th key={i} rowSpan={5} className="w-28 border-r bg-dark-400 text-dark-200 text-center text-xs">
+              {userIssues.find((is) => is.loadout === `${i + 1}` && is.type === UserIssueType.EQUIPMENT_SPEC_UNSUPPORTED) ? 'Not implemented' : 'N/A'}
+            </th>
+          ) : undefined;
       }
 
       return (
@@ -90,7 +94,7 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
         </th>
       );
     });
-  }, [loadouts, calcKey, collapseSpecs, hasResults]);
+  }, [loadouts, calcKey, collapseSpecs, hasResults, userIssues]);
 
   return (
     <tr>
