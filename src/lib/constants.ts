@@ -255,6 +255,12 @@ const DUSK_IDS = [
   7887, 7888, 7889, // dusk second form
 ];
 
+const WARRIORS_GUILD_CYCLOPES = [
+  2463, 2465, 2467, // L56
+  2464, 2466, 2468, // L76
+  2137, 2138, 2139, 2140, 2141, 2142, // L106
+];
+
 /**
  * Monsters immune to melee damage.
  */
@@ -282,6 +288,7 @@ export const IMMUNE_TO_RANGED_DAMAGE_NPC_IDS = [
   ...TEKTON_IDS,
   ...DUSK_IDS,
   ...GLOWING_CRYSTAL_IDS,
+  ...WARRIORS_GUILD_CYCLOPES,
 ];
 
 /**
@@ -289,6 +296,7 @@ export const IMMUNE_TO_RANGED_DAMAGE_NPC_IDS = [
  */
 export const IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS = [
   ...DUSK_IDS,
+  ...WARRIORS_GUILD_CYCLOPES,
 ];
 
 export const PARTY_SIZE_REQUIRED_MONSTER_IDS = [
