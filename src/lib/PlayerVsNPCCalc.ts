@@ -504,6 +504,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       // TODO: https://twitter.com/JagexAsh/status/1647928422843273220 for max_hit seems to be additive now
       attackRoll = Math.trunc(attackRoll * 13 / 10);
     }
+    if (this.wearing('Scorching bow')) {
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor([3, 10]));
+    }
 
     if (this.opts.usingSpecialAttack) {
       if (this.wearing(['Zaryte crossbow', 'Webweaver bow']) || this.isWearingBlowpipe()) {
@@ -705,6 +708,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
       const baseFactor: Factor = buffs.markOfDarknessSpell ? [8, 20] : [4, 20];
+      if (this.wearing('Ignited staff')) {
+        baseFactor[0] *= 2;
+      }
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor(baseFactor));
     }
     if (this.isRevWeaponBuffApplicable()) {
@@ -1259,7 +1265,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.buffs.markOfDarknessSpell && this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
-      dist = dist.scaleDamage(5, 4);
+      // todo(wgs): confirm that this is still post-roll with and without ignited staff
+      dist = dist.scaleDamage(this.wearing('Ignited staff') ? 6 : 5, 4);
     }
 
     if (this.player.style.type === 'magic' && this.isWearingAhrims()) {

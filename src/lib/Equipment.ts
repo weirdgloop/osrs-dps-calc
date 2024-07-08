@@ -84,6 +84,7 @@ const commonAmmoCategories = () => {
  * Empty arrays indicate that the item should not be used with any ammo in the ammo slot at all.
  */
 const ammoForRangedWeapons: { [weapon: number]: number[] } = {
+  // todo(wgs): scorching bow arrows
   11708: commonAmmoCategories().bow_t1, // Cursed goblin bow
   23357: commonAmmoCategories().bow_t1, // Rain bow
   9705: [9706], // Training bow
