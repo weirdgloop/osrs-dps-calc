@@ -621,6 +621,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isWearingRatBoneWeapon() && mattrs.includes(MonsterAttribute.RAT)) {
       maxHit = this.trackAdd(DetailKey.MAX_HIT_RATBANE, maxHit, 10);
     }
+    if (this.wearing('Scorching bow')) {
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([3, 10]));
+    }
 
     if (this.wearing('Tonalztics of ralos')) {
       // rolls 75% of max hit, but can hit twice
