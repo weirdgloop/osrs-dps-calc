@@ -2,8 +2,9 @@ import React from 'react';
 import HitDistribution from '@/app/components/results/HitDistribution';
 import PlayerVsNPCResultsTable from '@/app/components/results/PlayerVsNPCResultsTable';
 import { useStore } from '@/state';
-import Toggle from '@/app/components/generic/Toggle';
 import { observer } from 'mobx-react-lite';
+import { IconArrowDown, IconArrowUp } from '@tabler/icons-react';
+import AutoHeight from '@/app/components/generic/AutoHeight';
 
 const ResultsContainer = observer(() => {
   const store = useStore();
@@ -20,16 +21,42 @@ const ResultsContainer = observer(() => {
           <h2 className="font-serif text-lg tracking-tight font-bold dark:text-white flex items-center gap-2">
             Results
           </h2>
-          <Toggle
-            checked={prefs.resultsExpanded}
-            setChecked={(c) => store.updatePreferences({ resultsExpanded: c })}
-            label="Show extended view"
-            className="text-black dark:text-white mb-0"
-          />
+          {/* <Toggle */}
+          {/*   checked={prefs.resultsExpanded} */}
+          {/*   setChecked={(c) => store.updatePreferences({ resultsExpanded: c })} */}
+          {/*   label="Show extended view" */}
+          {/*   className="text-black dark:text-white mb-0" */}
+          {/* /> */}
         </div>
         <div className="overflow-x-auto max-w-[100vw]">
-          <PlayerVsNPCResultsTable />
+          <AutoHeight
+            duration={200}
+            height="auto"
+          >
+            <PlayerVsNPCResultsTable />
+          </AutoHeight>
         </div>
+        <button
+          type="button"
+          className="text-sm px-4 py-1 bg-dark-500 text-gray-300 w-full shadow border-t border-dark-200 flex justify-between items-center rounded-b"
+          onClick={() => store.updatePreferences({ resultsExpanded: !prefs.resultsExpanded })}
+        >
+          {
+            prefs.resultsExpanded ? (
+              <>
+                <IconArrowUp size={15} />
+                <div>Hide less</div>
+                <IconArrowUp size={15} />
+              </>
+            ) : (
+              <>
+                <IconArrowDown size={15} />
+                <div>Show more</div>
+                <IconArrowDown size={15} />
+              </>
+            )
+          }
+        </button>
       </div>
       <HitDistribution />
     </div>

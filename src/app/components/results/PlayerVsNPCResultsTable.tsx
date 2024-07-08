@@ -119,6 +119,8 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
           <th aria-label="blank" className="bg-btns-400 border-r dark:bg-dark-500 select-none" />
           {store.loadouts.map(({ name }, i) => (
             <th
+              role="button"
+              tabIndex={0}
             // eslint-disable-next-line react/no-array-index-key
               key={i}
               className={`text-center w-28 border-r py-1.5 font-bold font-serif leading-tight text-xs cursor-pointer transition-colors ${selectedLoadout === i ? 'bg-orange-400 dark:bg-orange-700' : 'bg-btns-400 dark:bg-dark-500'}`}

@@ -5918,6 +5918,7 @@ __metadata:
     next-themes: "npm:^0.2.1"
     postcss-import: "npm:^16.0.0"
     react: "npm:^18.2.0"
+    react-animate-height: "npm:^3.2.3"
     react-dom: "npm:^18.2.0"
     react-toastify: "npm:^10.0.4"
     react-tooltip: "npm:^5.26.0"
@@ -6295,6 +6296,16 @@ __metadata:
   version: 1.2.3
   resolution: "queue-microtask@npm:1.2.3"
   checksum: 10c0/900a93d3cdae3acd7d16f642c29a642aea32c2026446151f0778c62ac089d4b8e6c986811076e1ae180a694cedf077d453a11b58ff0a865629a4f82ab558e102
+  languageName: node
+  linkType: hard
+
+"react-animate-height@npm:^3.2.3":
+  version: 3.2.3
+  resolution: "react-animate-height@npm:3.2.3"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10c0/45b32b53e070c2a5dcde51616aa9ded9f1f17684239173d8df00513317126b8a6ec6099d232fd687e8060b0c7316bb236ce45f8ee0f8f89d9489fe9d24119acc
   languageName: node
   linkType: hard
 
