@@ -75,7 +75,7 @@ const DEFAULT_MONSTER_INPUTS: Monster['inputs'] = {
   },
 };
 
-export function getTestMonster(name: string, version: string, overrides: PartialDeep<Monster> = {}): Monster {
+export function getTestMonster(name: string = 'Abyssal demon', version: string = 'Standard', overrides: PartialDeep<Monster> = {}): Monster {
   const monster = merge(
     {},
     find(
