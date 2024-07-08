@@ -80,7 +80,6 @@ const UNIMPLEMENTED_SPECS: string[] = [
   'Dragon spear',
   'Dragon sword',
   'Dragon thrownaxe',
-  'Dual macuahuitl',
   'Eclipse atlatl',
   'Eldritch nightmare staff',
   'Excalibur',
@@ -440,6 +439,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else if (this.wearing('Abyssal bludgeon')) {
         const prayerMissing = Math.max(-this.player.boosts.prayer, 0);
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [100 + (prayerMissing / 2), 100]);
+      } else if (this.isWearingBloodMoonSet()) {
+        minHit = this.trackFactor(DetailKey.MIN_HIT_SPEC, maxHit, [1, 4]);
+        maxHit = this.trackAdd(DetailKey.MAX_HIT_SPEC, maxHit, minHit);
       }
     }
 
@@ -1523,7 +1525,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   public getExpectedAttackSpeed() {
     if (this.isWearingBloodMoonSet()) {
       const acc = this.getHitChance();
-      const procChance = (acc / 3) + ((acc * acc) * 2 / 9);
+      const procChance = this.opts.usingSpecialAttack ? 1.0
+        : (acc / 3) + ((acc * acc) * 2 / 9);
       return this.getAttackSpeed() - procChance;
     }
 
@@ -1823,6 +1826,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   isSpecSupported(): FeatureStatus {
     const weaponName = this.player.equipment.weapon?.name;
     if (!weaponName) {
+      return FeatureStatus.NOT_APPLICABLE;
+    }
+
+    if (this.wearing('Dual macuahuitl') && !this.isWearingBloodMoonSet()) {
+      return FeatureStatus.NOT_APPLICABLE;
+    } if (this.wearing('Soulreaper axe') && this.player.buffs.soulreaperStacks === 0) {
       return FeatureStatus.NOT_APPLICABLE;
     }
 

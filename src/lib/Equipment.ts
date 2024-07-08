@@ -330,6 +330,7 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Dragon dagger': 25,
   "Osmumten's fang": 25,
   "Osmumten's fang (or)": 25,
+  'Dual macuahuitl': 25,
 
   'Dawnbringer': 30,
   'Dragon halberd': 30,
