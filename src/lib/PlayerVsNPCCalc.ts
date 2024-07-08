@@ -53,6 +53,7 @@ import { FeatureStatus } from '@/utils';
 import UserIssueType from '@/enums/UserIssueType';
 
 const PARTIALLY_IMPLEMENTED_SPECS: string[] = [
+  'Ancient godsword',
 ];
 
 // https://oldschool.runescape.wiki/w/Category:Weapons_with_Special_attacks
@@ -61,10 +62,8 @@ const UNIMPLEMENTED_SPECS: string[] = [
   'Abyssal bludgeon',
   'Abyssal tentacle',
   'Abyssal whip',
-  'Ancient godsword',
   'Ancient mace',
   'Armadyl crossbow',
-  'Armadyl godsword',
   'Barrelchest anchor',
   'Blue moon spear',
   'Bone dagger',
@@ -103,7 +102,6 @@ const UNIMPLEMENTED_SPECS: string[] = [
   'Toxic staff of the dead',
   'Ursine chainmace',
   'Volatile nightmare staff',
-  'Zamorak godsword',
   'Zamorakian hasta',
   'Zamorakian spear',
 ];
@@ -423,12 +421,16 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.opts.usingSpecialAttack) {
-      if (this.wearing('Dragon warhammer')) {
-        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [3, 2]);
-      } else if (this.wearing('Bandos godsword')) {
-        maxHit = this.track(DetailKey.MAX_HIT_SPEC, Math.trunc(Math.trunc(maxHit * 11 / 10) * 11 / 10), `${maxHit} * 11 / 10 * 11 / 10`);
-      } else if (this.wearing('Saradomin godsword')) {
+      if (this.isWearingGodsword()) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_GODSWORD_SPEC, maxHit, [11, 10]);
+      }
+
+      if (this.wearing('Bandos godsword')) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [11, 10]);
+      } else if (this.wearing('Armadyl godsword')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [4, 3]);
+      } else if (this.wearing('Dragon warhammer')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [3, 2]);
       } else if (this.wearing('Voidwaker')) {
         minHit = this.trackFactor(DetailKey.MIN_HIT_SPEC, maxHit, [1, 2]);
         maxHit = this.trackAdd(DetailKey.MAX_HIT_SPEC, maxHit, minHit);

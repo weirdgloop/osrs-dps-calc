@@ -320,6 +320,10 @@ export default class BaseCalc {
     return this.wearing(['Toxic blowpipe', 'Blazing blowpipe']);
   }
 
+  protected isWearingGodsword(): boolean {
+    return this.wearing(['Ancient godsword', 'Armadyl godsword', 'Bandos godsword', 'Saradomin godsword', 'Zamorak godsword']);
+  }
+
   /**
    * Whether the player is using any variant of the scythe of vitur.
    * @see https://oldschool.runescape.wiki/w/Scythe_of_vitur

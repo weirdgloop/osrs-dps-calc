@@ -351,6 +351,9 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Blazing blowpipe': 50,
   'Webweaver bow': 50,
   'Magic shortbow (i)': 50,
+  'Ancient godsword': 50,
+  'Armadyl godsword': 50,
+  'Zamorak godsword': 50,
 
   'Magic shortbow': 55,
 
