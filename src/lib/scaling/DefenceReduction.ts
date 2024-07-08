@@ -83,15 +83,15 @@ const applyDefenceReductions = (m: Monster): Monster => {
     });
   }
 
-  const reduceArclight = (m: Monster, iter: number, [num, den]: Factor): Monster => {
+  const reduceArclight = (monster: Monster, iter: number, [num, den]: Factor): Monster => {
     if (iter === 0) {
-      return m;
+      return monster;
     }
 
-    return newSkills(m, {
-      atk: m.skills.atk - (iter * (Math.trunc(num * baseSkills.atk / den) + 1)),
-      str: m.skills.str - (iter * (Math.trunc(num * baseSkills.str / den) + 1)),
-      def: m.skills.def - (iter * (Math.trunc(num * baseSkills.def / den) + 1)),
+    return newSkills(monster, {
+      atk: monster.skills.atk - (iter * (Math.trunc(num * baseSkills.atk / den) + 1)),
+      str: monster.skills.str - (iter * (Math.trunc(num * baseSkills.str / den) + 1)),
+      def: monster.skills.def - (iter * (Math.trunc(num * baseSkills.def / den) + 1)),
     });
   };
   m = reduceArclight(m, reductions.arclight, m.attributes.includes(MonsterAttribute.DEMON) ? [2, 10] : [1, 10]);
