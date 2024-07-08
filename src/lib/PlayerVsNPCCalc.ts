@@ -841,9 +841,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   /**
-   * Get the max hit for this loadout, which is based on the player's current combat style
+   * Get the min and max hit for this loadout, which is based on the player's current combat style.
+   * Don't use this for player-facing values! Use `getDistribution().getMax()`
    */
-  private getMaxHit(): MinMax {
+  getMinAndMax(): MinMax {
     if (this.player.style.stance !== 'Manual Cast') {
       const weaponId = this.player.equipment.weapon?.id;
       const ammoId = this.player.equipment.ammo?.id;
@@ -854,7 +855,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     const style = this.player.style.type;
 
-    let minMax: [min: number, max: number] = [0, 0];
+    let minMax: MinMax = [0, 0];
     if (this.isUsingMeleeStyle()) {
       minMax = this.getPlayerMaxMeleeHit();
     }
@@ -863,6 +864,14 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     if (style === 'magic') {
       minMax = this.getPlayerMaxMagicHit();
+    }
+
+    // some cursed (literally, cursed amulet of magic) stuff throws this off
+    if (minMax[0] <= 0) {
+      minMax[0] = 0;
+    }
+    if (minMax[1] <= 0) {
+      minMax[1] = 0;
     }
 
     this.track(DetailKey.MIN_HIT_FINAL, minMax[0]);
@@ -964,7 +973,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   private getDistributionImpl(): AttackDistribution {
     const mattrs = this.monster.attributes;
     const acc = this.getHitChance();
-    const [min, max] = this.getMaxHit();
+    const [min, max] = this.getMinAndMax();
     const style = this.player.style.type;
 
     // standard linear
