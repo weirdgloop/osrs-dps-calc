@@ -1090,14 +1090,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     let accurateZeroApplicable: boolean = true;
-    if (this.opts.usingSpecialAttack && this.wearing('Dragon claws')) {
+    const burningClaws = this.wearing('Burning claws');
+    if (this.opts.usingSpecialAttack && (burningClaws || this.wearing('Dragon claws'))) {
       accurateZeroApplicable = false;
 
       const clawSpecDist = new HitDistribution([]);
-      for (let accRoll = 0; accRoll < 4; accRoll++) {
+      const startRoll = burningClaws ? 1 : 0;
+      const fourthSplat = burningClaws ? [] : [Hitsplat.INACCURATE];
+      for (let accRoll = startRoll; accRoll < 4; accRoll++) {
         const low = Math.trunc(max * (4 - accRoll) / 4);
         const high = max + low - 1;
-        const chancePreviousRollsFail = (1 - acc) ** accRoll;
+        const chancePreviousRollsFail = (1 - acc) ** (accRoll - startRoll);
         const chanceThisRollPasses = chancePreviousRollsFail * acc;
         const chancePerDmg = chanceThisRollPasses / (high - low + 1);
         for (let dmg = low; dmg <= high; dmg++) {
@@ -1116,7 +1119,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
                 new Hitsplat(Math.trunc(dmg / 2)),
                 new Hitsplat(Math.trunc(dmg / 4)),
                 new Hitsplat(Math.trunc(dmg / 4) + 1),
-                Hitsplat.INACCURATE,
+                ...fourthSplat,
               ]));
               break;
 
@@ -1125,7 +1128,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
                 new Hitsplat(Math.trunc(dmg / 2)),
                 new Hitsplat(Math.trunc(dmg / 2) + 1),
                 Hitsplat.INACCURATE,
-                Hitsplat.INACCURATE,
+                ...fourthSplat,
               ]));
               break;
 
@@ -1134,24 +1137,26 @@ export default class PlayerVsNPCCalc extends BaseCalc {
                 new Hitsplat(dmg + 1),
                 Hitsplat.INACCURATE,
                 Hitsplat.INACCURATE,
-                Hitsplat.INACCURATE,
+                ...fourthSplat,
               ]));
               break;
           }
         }
       }
-      const chanceAllFail = (1 - acc) ** 4;
+
+      // todo(wgs): what is the failure system like for burning claws?
+      const chanceAllFail = (1 - acc) ** (4 - startRoll);
       clawSpecDist.addHit(new WeightedHit(chanceAllFail * 2 / 3, [
         new Hitsplat(1, false),
         new Hitsplat(1, false),
         Hitsplat.INACCURATE,
-        Hitsplat.INACCURATE,
+        ...fourthSplat,
       ]));
       clawSpecDist.addHit(new WeightedHit(chanceAllFail / 3, [
         Hitsplat.INACCURATE,
         Hitsplat.INACCURATE,
         Hitsplat.INACCURATE,
-        Hitsplat.INACCURATE,
+        ...fourthSplat,
       ]));
       dist = new AttackDistribution([clawSpecDist]);
     }
