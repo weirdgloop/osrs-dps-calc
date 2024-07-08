@@ -320,6 +320,10 @@ export default class BaseCalc {
     return this.wearing(['Toxic blowpipe', 'Blazing blowpipe']);
   }
 
+  protected isWearingGodsword(): boolean {
+    return this.wearing(['Ancient godsword', 'Armadyl godsword', 'Bandos godsword', 'Saradomin godsword', 'Zamorak godsword']);
+  }
+
   /**
    * Whether the player is using any variant of the scythe of vitur.
    * @see https://oldschool.runescape.wiki/w/Scythe_of_vitur
@@ -422,6 +426,14 @@ export default class BaseCalc {
       'Blisterwood sickle',
       'Blisterwood flail',
     ]);
+  }
+
+  protected isWearingMsb(): boolean {
+    return this.wearing(['Magic shortbow', 'Magic shortbow (i)']);
+  }
+
+  protected isWearingMlb(): boolean {
+    return this.wearing(['Magic longbow', 'Magic comp bow']);
   }
 
   /**
@@ -567,6 +579,16 @@ export default class BaseCalc {
       this.player = {
         ...this.player,
         style: getCombatStylesForCategory(eq.weapon?.category || EquipmentCategory.UNARMED)[0],
+        spell: null,
+      };
+    }
+
+    // these staves use a built-in spell for their spec
+    if (['Accursed sceptre (a)', 'Eldritch nightmare staff', 'Volatile nightmare staff'].includes(eq.weapon?.name || '')) {
+      this.player = {
+        ...this.player,
+        style: getCombatStylesForCategory(EquipmentCategory.POWERED_STAFF)[0],
+        spell: null,
       };
     }
 
@@ -612,6 +634,13 @@ export default class BaseCalc {
         spell: null,
       };
       this.addIssue(UserIssueType.SPELL_WRONG_MONSTER, 'This spell cannot be cast on the selected monster.');
+    }
+
+    // some weapons are only available to use against certain monsters
+    if (
+      this.wearing('Dawnbringer') && (this.monster.name !== 'Verzik Vitur' || !this.monster.version?.includes('Phase 1'))
+    ) {
+      this.addIssue(UserIssueType.WEAPON_WRONG_MONSTER, 'This weapon cannot be used against the select monster.');
     }
 
     // Some set effects are currently not accounted for

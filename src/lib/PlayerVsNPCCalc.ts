@@ -52,24 +52,22 @@ import { range, sum } from 'd3-array';
 import { FeatureStatus } from '@/utils';
 import UserIssueType from '@/enums/UserIssueType';
 
+const PARTIALLY_IMPLEMENTED_SPECS: string[] = [
+  'Ancient godsword',
+];
+
 // https://oldschool.runescape.wiki/w/Category:Weapons_with_Special_attacks
 // Some entries are intentionally omitted as they are not dps-related (e.g. dragon skilling tools, ivandis flail, dbaxe)
 const UNIMPLEMENTED_SPECS: string[] = [
-  'Abyssal bludgeon',
-  'Abyssal dagger',
   'Abyssal tentacle',
   'Abyssal whip',
-  'Ancient godsword',
   'Ancient mace',
   'Armadyl crossbow',
-  'Armadyl godsword',
   'Barrelchest anchor',
   'Blue moon spear',
   'Bone dagger',
   'Brine sabre',
-  'Dark bow',
   'Darklight',
-  'Dawnbringer',
   "Dinh's bulwark",
   'Dorgeshuun crossbow',
   'Dragon 2h sword',
@@ -82,31 +80,21 @@ const UNIMPLEMENTED_SPECS: string[] = [
   'Dragon spear',
   'Dragon sword',
   'Dragon thrownaxe',
-  'Dual macuahuitl',
   'Eclipse atlatl',
-  'Eldritch nightmare staff',
   'Excalibur',
   'Granite hammer',
   'Granite maul',
   'Heavy ballista',
   'Light ballista',
-  'Magic comp bow',
-  'Magic longbow',
-  'Magic shortbow',
-  'Magic shortbow (i)',
   'Rune claws',
   'Saradomin sword',
   "Saradomin's blessed sword",
   'Seercull',
-  'Soulreaper axe',
   'Staff of balance',
   'Staff of light',
   'Staff of the dead',
   'Toxic staff of the dead',
   'Ursine chainmace',
-  'Volatile nightmare staff',
-  'Webweaver bow',
-  'Zamorak godsword',
   'Zamorakian hasta',
   'Zamorakian spear',
 ];
@@ -135,7 +123,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     let defenceStyle: CombatStyleType = this.player.style.type;
     if (this.opts.usingSpecialAttack) {
-      if (this.wearing(['Dragon claws', 'Bandos godsword', 'Saradomin godsword', 'Dragon dagger', 'Dragon halberd', 'Crystal halberd'])) {
+      if (this.wearing([
+        'Dragon claws',
+        'Dragon dagger',
+        'Dragon halberd',
+        'Crystal halberd',
+        'Abyssal dagger',
+      ]) || this.isWearingGodsword()) {
         defenceStyle = 'slash';
       } else if (this.wearing('Arclight')) {
         defenceStyle = 'stab';
@@ -176,9 +170,18 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   private getPlayerMaxMeleeAttackRoll(): number {
     const { style } = this.player;
 
-    let effectiveLevel: number = this.track(DetailKey.PLAYER_ACCURACY_LEVEL, this.player.skills.atk + this.player.boosts.atk);
+    const baseLevel: number = this.trackAdd(DetailKey.DAMAGE_LEVEL, this.player.skills.str, this.player.boosts.str);
+    let effectiveLevel: number = baseLevel;
+
     for (const p of this.getCombatPrayers('factorAccuracy')) {
       effectiveLevel = this.trackFactor(DetailKey.PLAYER_ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
+    }
+
+    if (this.wearing('Soulreaper axe') && this.opts.usingSpecialAttack) {
+      // does not stack multiplicatively with prayers
+      const stacks = Math.max(0, Math.min(5, this.player.buffs.soulreaperStacks));
+      const bonus = this.trackFactor(DetailKey.DAMAGE_LEVEL_SOULREAPER_BONUS, baseLevel, [stacks * 6, 100]);
+      effectiveLevel = this.trackAdd(DetailKey.DAMAGE_LEVEL_SOULREAPER, effectiveLevel, bonus);
     }
 
     let stanceBonus = 8;
@@ -268,6 +271,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
       } else if (this.wearing('Dragon dagger')) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [23, 20]);
+      } else if (this.wearing('Abyssal dagger')) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [5, 4]);
       }
     }
 
@@ -416,12 +421,16 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.opts.usingSpecialAttack) {
-      if (this.wearing('Dragon warhammer')) {
-        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [3, 2]);
-      } else if (this.wearing('Bandos godsword')) {
-        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [121, 100]);
-      } else if (this.wearing('Saradomin godsword')) {
+      if (this.isWearingGodsword()) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_GODSWORD_SPEC, maxHit, [11, 10]);
+      }
+
+      if (this.wearing('Bandos godsword')) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [11, 10]);
+      } else if (this.wearing('Armadyl godsword')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [4, 3]);
+      } else if (this.wearing('Dragon warhammer')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [3, 2]);
       } else if (this.wearing('Voidwaker')) {
         minHit = this.trackFactor(DetailKey.MIN_HIT_SPEC, maxHit, [1, 2]);
         maxHit = this.trackAdd(DetailKey.MAX_HIT_SPEC, maxHit, minHit);
@@ -429,6 +438,14 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [11, 10]);
       } else if (this.wearing('Dragon dagger')) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [23, 20]);
+      } else if (this.wearing('Abyssal dagger')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [17, 20]);
+      } else if (this.wearing('Abyssal bludgeon')) {
+        const prayerMissing = Math.max(-this.player.boosts.prayer, 0);
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [100 + (prayerMissing / 2), 100]);
+      } else if (this.isWearingBloodMoonSet()) {
+        minHit = this.trackFactor(DetailKey.MIN_HIT_SPEC, maxHit, [1, 4]);
+        maxHit = this.trackAdd(DetailKey.MAX_HIT_SPEC, maxHit, minHit);
       }
     }
 
@@ -489,8 +506,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.opts.usingSpecialAttack) {
-      if (this.wearing('Zaryte crossbow') || this.isWearingBlowpipe()) {
+      if (this.wearing(['Zaryte crossbow', 'Webweaver bow']) || this.isWearingBlowpipe()) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
+      } else if (this.isWearingMsb()) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [10, 7]);
       }
     }
 
@@ -509,6 +528,18 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       effectiveLevel = this.player.skills.str + this.player.boosts.str;
     }
     this.track(DetailKey.DAMAGE_LEVEL, effectiveLevel);
+
+    if (this.opts.usingSpecialAttack && (this.isWearingMsb() || this.isWearingMlb())) {
+      // why +10 when that's not used anywhere else? who knows
+      effectiveLevel += 10;
+
+      // ignores other gear
+      const bonusStr = this.player.equipment.ammo?.bonuses.ranged_str || 0;
+      const maxHit = Math.trunc((effectiveLevel * (bonusStr + 64) + 320) / 640);
+
+      // end early, it ignores all other gear and bonuses
+      return [0, maxHit];
+    }
 
     for (const p of this.getCombatPrayers()) {
       if (p.name === 'Sharp Eye' && effectiveLevel <= 20) {
@@ -531,7 +562,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     const bonusStr = this.wearing('Eclipse atlatl') ? this.player.bonuses.str : this.player.bonuses.ranged_str;
-    let maxHit = Math.trunc((effectiveLevel * (bonusStr + 64) + 320) / 640);
+    const baseMax = Math.trunc((effectiveLevel * (bonusStr + 64) + 320) / 640);
+    let [minHit, maxHit]: MinMax = [0, baseMax];
 
     // tested this in-game, slayer helmet (i) + crystal legs + crystal body + bowfa, on accurate, no rigour, 99 ranged
     // max hit is 36, but would be 37 if placed after slayer helm
@@ -596,10 +628,23 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.opts.usingSpecialAttack) {
       if (this.isWearingBlowpipe()) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [3, 2]);
+      } else if (this.wearing('Webweaver bow')) {
+        const maxReduction = Math.trunc(maxHit * 6 / 10);
+        maxHit = this.trackAdd(DetailKey.MAX_HIT_SPEC, maxHit, -maxReduction);
       }
     }
 
-    return [0, maxHit]; // ranged has no min hit behaviours (aside from always-max, which is lower down)
+    if (this.opts.usingSpecialAttack) {
+      if (this.wearing('Dark bow')) {
+        const descentOfDragons = this.wearing('Dragon arrow');
+        minHit = this.track(DetailKey.MIN_HIT_SPEC, descentOfDragons ? 5 : 8);
+
+        const dmgFactor = descentOfDragons ? 15 : 13;
+        maxHit = this.track(DetailKey.MAX_HIT_SPEC, Math.min(48, Math.trunc(maxHit * dmgFactor / 10)), `min(48, ${maxHit} * ${dmgFactor} / 10)`);
+      }
+    }
+
+    return [minHit, maxHit];
   }
 
   private getPlayerMaxMagicAttackRoll() {
@@ -672,6 +717,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.opts.usingSpecialAttack) {
       if (this.isWearingAccursedSceptre()) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [3, 2]);
+      } else if (this.wearing('Volatile nightmare staff')) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [3, 2]);
       }
     }
 
@@ -714,7 +761,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = Math.trunc(magicLevel / 3 - 5);
     } else if (this.wearing("Thammaron's sceptre")) {
       maxHit = Math.trunc(magicLevel / 3 - 8);
-    } else if (this.wearing('Accursed sceptre')) {
+    } else if (this.wearing('Accursed sceptre') || (this.wearing('Accursed sceptre (a)') && this.opts.usingSpecialAttack)) {
       maxHit = Math.trunc(magicLevel / 3 - 6);
     } else if (this.wearing(['Trident of the swamp', 'Trident of the swamp (e)'])) {
       maxHit = Math.trunc(magicLevel / 3 - 2);
@@ -722,6 +769,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = Math.trunc(magicLevel / 3 - 1);
     } else if (this.wearing('Dawnbringer')) {
       maxHit = Math.trunc(magicLevel / 6 - 1);
+      if (this.opts.usingSpecialAttack) { // guaranteed hit between 75-150, ignores bonuses
+        return [75, 150];
+      }
     } else if (this.wearing("Tumeken's shadow")) {
       maxHit = Math.trunc(magicLevel / 3 + 1);
     } else if (this.wearing('Warped sceptre')) {
@@ -730,6 +780,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       // although the +10 is technically a ratbane bonus, the weapon can't be used against non-rats
       // and shows this max hit against the combat dummy as well
       maxHit = Math.max(1, Math.trunc(magicLevel / 3) - 5) + 10;
+    } else if (this.wearing('Eldritch nightmare staff') && this.opts.usingSpecialAttack) {
+      maxHit = Math.min(44, 44 * Math.trunc(magicLevel / 99) + 1);
+    } else if (this.wearing('Volatile nightmare staff') && this.opts.usingSpecialAttack) {
+      maxHit = Math.min(58, 58 * Math.trunc(magicLevel / 99) + 1);
     } else if (this.wearing(['Crystal staff (basic)', 'Corrupted staff (basic)'])) {
       maxHit = 23;
     } else if (this.wearing(['Crystal staff (attuned)', 'Corrupted staff (attuned)'])) {
@@ -796,7 +850,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.opts.usingSpecialAttack) {
-      // todo ordering
       if (this.isWearingAccursedSceptre()) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [3, 2]);
       }
@@ -926,7 +979,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
-    if (this.opts.usingSpecialAttack && this.wearing('Voidwaker')) {
+    if (this.opts.usingSpecialAttack && (this.wearing(['Voidwaker', 'Dawnbringer']) || this.isWearingMlb())) {
       return 1.0;
     }
 
@@ -1108,9 +1161,18 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = new AttackDistribution([standardHitDist, HitDistribution.linear(secondHitAcc, min, max)]);
     }
 
-    if (this.opts.usingSpecialAttack && this.wearing('Dragon dagger')) {
-      // just a double hit, stat changes are earlier
-      dist = new AttackDistribution([standardHitDist, standardHitDist]);
+    // simple multi-hit specs
+    if (this.opts.usingSpecialAttack) {
+      let hitCount = 1;
+      if (this.wearing(['Dragon dagger', 'Abyssal dagger', 'Dark bow']) || this.isWearingMsb()) {
+        hitCount = 2;
+      } else if (this.wearing('Webweaver bow')) {
+        hitCount = 4;
+      }
+
+      if (hitCount !== 1) {
+        dist = new AttackDistribution(Array(hitCount).fill(standardHitDist));
+      }
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingDharok()) {
@@ -1472,7 +1534,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   public getExpectedAttackSpeed() {
     if (this.isWearingBloodMoonSet()) {
       const acc = this.getHitChance();
-      const procChance = (acc / 3) + ((acc * acc) * 2 / 9);
+      const procChance = this.opts.usingSpecialAttack ? 1.0
+        : (acc / 3) + ((acc * acc) * 2 / 9);
       return this.getAttackSpeed() - procChance;
     }
 
@@ -1553,6 +1616,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   public getSpecDps(): number {
+    if (this.wearing('Soulreaper axe')) {
+      // assumes using spec every time you reach the current stack count
+      const ticksPerSpec = this.getAttackSpeed() * this.player.buffs.soulreaperStacks;
+      return this.getDps() * this.getExpectedAttackSpeed() / ticksPerSpec;
+    }
+
     const specCost = this.getSpecCost();
     if (!specCost) {
       console.warn(`Expected spec cost for weapon [${this.player.equipment.weapon?.name}] but was not provided`);
@@ -1561,7 +1630,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     const ticksToRegen = this.wearing('Lightbearer') ? 25 : 50;
     const ticksPerSpec = specCost * (ticksToRegen / 10);
-    return this.getDps() / ticksPerSpec;
+    return this.getDps() * this.getExpectedAttackSpeed() / ticksPerSpec;
   }
 
   public getWeaponDelayProvider(): WeaponDelayProvider {
@@ -1773,6 +1842,18 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const weaponName = this.player.equipment.weapon?.name;
     if (!weaponName) {
       return FeatureStatus.NOT_APPLICABLE;
+    }
+
+    if (this.wearing('Dual macuahuitl') && !this.isWearingBloodMoonSet()) {
+      return FeatureStatus.NOT_APPLICABLE;
+    } if (this.wearing('Soulreaper axe')) {
+      return this.player.buffs.soulreaperStacks === 0
+        ? FeatureStatus.NOT_APPLICABLE
+        : FeatureStatus.IMPLEMENTED;
+    }
+
+    if (PARTIALLY_IMPLEMENTED_SPECS.includes(weaponName)) {
+      return FeatureStatus.PARTIALLY_IMPLEMENTED;
     }
 
     if (this.getSpecCost() !== undefined) {

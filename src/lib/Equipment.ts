@@ -326,12 +326,18 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
 
 /* eslint-disable quote-props */
 export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
+  'Abyssal dagger': 25,
   'Dragon dagger': 25,
   "Osmumten's fang": 25,
   "Osmumten's fang (or)": 25,
+  'Dual macuahuitl': 25,
 
+  'Dawnbringer': 30,
   'Dragon halberd': 30,
   'Crystal halberd': 30,
+
+  'Magic longbow': 35,
+  'Magic comp bow': 35,
 
   'Elder maul': 50,
   'Dragon warhammer': 50,
@@ -345,6 +351,17 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Voidwaker': 50,
   'Toxic blowpipe': 50,
   'Blazing blowpipe': 50,
+  'Webweaver bow': 50,
+  'Magic shortbow (i)': 50,
+  'Ancient godsword': 50,
+  'Armadyl godsword': 50,
+  'Zamorak godsword': 50,
+  'Abyssal bludgeon': 50,
+
+  'Magic shortbow': 55,
+  'Dark bow': 55,
+  'Eldritch nightmare staff': 55,
+  'Volatile nightmare staff': 55,
 
   'Zaryte crossbow': 75,
 };
