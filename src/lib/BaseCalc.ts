@@ -105,7 +105,7 @@ export default class BaseCalc {
 
   protected trackAdd(label: Parameters<CalcDetails['track']>[0], base: number, addend: number): number {
     const result = Math.trunc(base + addend);
-    this.track(label, result, `${base} ${addend >= 0 ? '+' : '-'} ${addend} = ${result}`);
+    this.track(label, result, `${base} ${addend >= 0 ? '+' : '-'} ${-addend} = ${result}`);
     return result;
   }
 
