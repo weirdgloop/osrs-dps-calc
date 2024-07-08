@@ -90,7 +90,6 @@ const UNIMPLEMENTED_SPECS: string[] = [
   'Saradomin sword',
   "Saradomin's blessed sword",
   'Seercull',
-  'Soulreaper axe',
   'Staff of balance',
   'Staff of light',
   'Staff of the dead',
@@ -173,9 +172,18 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   private getPlayerMaxMeleeAttackRoll(): number {
     const { style } = this.player;
 
-    let effectiveLevel: number = this.track(DetailKey.PLAYER_ACCURACY_LEVEL, this.player.skills.atk + this.player.boosts.atk);
+    const baseLevel: number = this.trackAdd(DetailKey.DAMAGE_LEVEL, this.player.skills.str, this.player.boosts.str);
+    let effectiveLevel: number = baseLevel;
+
     for (const p of this.getCombatPrayers('factorAccuracy')) {
       effectiveLevel = this.trackFactor(DetailKey.PLAYER_ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
+    }
+
+    if (this.wearing('Soulreaper axe') && this.opts.usingSpecialAttack) {
+      // does not stack multiplicatively with prayers
+      const stacks = Math.max(0, Math.min(5, this.player.buffs.soulreaperStacks));
+      const bonus = this.trackFactor(DetailKey.DAMAGE_LEVEL_SOULREAPER_BONUS, baseLevel, [stacks * 6, 100]);
+      effectiveLevel = this.trackAdd(DetailKey.DAMAGE_LEVEL_SOULREAPER, effectiveLevel, bonus);
     }
 
     let stanceBonus = 8;
@@ -1610,6 +1618,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   public getSpecDps(): number {
+    if (this.wearing('Soulreaper axe')) {
+      // assumes using spec every time you reach the current stack count
+      const ticksPerSpec = this.getAttackSpeed() * this.player.buffs.soulreaperStacks;
+      return this.getDps() / ticksPerSpec;
+    }
+
     const specCost = this.getSpecCost();
     if (!specCost) {
       console.warn(`Expected spec cost for weapon [${this.player.equipment.weapon?.name}] but was not provided`);
@@ -1834,8 +1848,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.wearing('Dual macuahuitl') && !this.isWearingBloodMoonSet()) {
       return FeatureStatus.NOT_APPLICABLE;
-    } if (this.wearing('Soulreaper axe') && this.player.buffs.soulreaperStacks === 0) {
-      return FeatureStatus.NOT_APPLICABLE;
+    } if (this.wearing('Soulreaper axe')) {
+      return this.player.buffs.soulreaperStacks === 0
+        ? FeatureStatus.NOT_APPLICABLE
+        : FeatureStatus.IMPLEMENTED;
     }
 
     if (PARTIALLY_IMPLEMENTED_SPECS.includes(weaponName)) {
