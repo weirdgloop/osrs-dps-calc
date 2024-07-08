@@ -518,7 +518,7 @@ class GlobalState implements State {
 
   updatePreferences(pref: PartialDeep<Preferences>) {
     // Update local state store
-    this.prefs = Object.assign(this.prefs, pref);
+    this.prefs = merge(this.prefs, pref);
 
     if (pref && Object.prototype.hasOwnProperty.call(pref, 'manualMode')) {
       // Reset player bonuses to their worn equipment
