@@ -45,7 +45,7 @@ const ResultsContainer = observer(() => {
             prefs.resultsExpanded ? (
               <>
                 <IconArrowUp size={15} />
-                <div>Hide less</div>
+                <div>Show less</div>
                 <IconArrowUp size={15} />
               </>
             ) : (
