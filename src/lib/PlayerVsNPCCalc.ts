@@ -81,7 +81,6 @@ const UNIMPLEMENTED_SPECS: string[] = [
   'Dragon sword',
   'Dragon thrownaxe',
   'Eclipse atlatl',
-  'Eldritch nightmare staff',
   'Excalibur',
   'Granite hammer',
   'Granite maul',
@@ -97,7 +96,6 @@ const UNIMPLEMENTED_SPECS: string[] = [
   'Staff of the dead',
   'Toxic staff of the dead',
   'Ursine chainmace',
-  'Volatile nightmare staff',
   'Zamorakian hasta',
   'Zamorakian spear',
 ];
@@ -713,6 +711,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.opts.usingSpecialAttack) {
       if (this.isWearingAccursedSceptre()) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [3, 2]);
+      } else if (this.wearing('Volatile nightmare staff')) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [3, 2]);
       }
     }
 
@@ -755,7 +755,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = Math.trunc(magicLevel / 3 - 5);
     } else if (this.wearing("Thammaron's sceptre")) {
       maxHit = Math.trunc(magicLevel / 3 - 8);
-    } else if (this.wearing('Accursed sceptre')) {
+    } else if (this.wearing('Accursed sceptre') || (this.wearing('Accursed sceptre (a)') && this.opts.usingSpecialAttack)) {
       maxHit = Math.trunc(magicLevel / 3 - 6);
     } else if (this.wearing(['Trident of the swamp', 'Trident of the swamp (e)'])) {
       maxHit = Math.trunc(magicLevel / 3 - 2);
@@ -774,6 +774,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       // although the +10 is technically a ratbane bonus, the weapon can't be used against non-rats
       // and shows this max hit against the combat dummy as well
       maxHit = Math.max(1, Math.trunc(magicLevel / 3) - 5) + 10;
+    } else if (this.wearing('Eldritch nightmare staff') && this.opts.usingSpecialAttack) {
+      maxHit = Math.min(44, 44 * Math.trunc(magicLevel / 99) + 1);
+    } else if (this.wearing('Volatile nightmare staff') && this.opts.usingSpecialAttack) {
+      maxHit = Math.min(58, 58 * Math.trunc(magicLevel / 99) + 1);
     } else if (this.wearing(['Crystal staff (basic)', 'Corrupted staff (basic)'])) {
       maxHit = 23;
     } else if (this.wearing(['Crystal staff (attuned)', 'Corrupted staff (attuned)'])) {
@@ -840,7 +844,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.opts.usingSpecialAttack) {
-      // todo ordering
       if (this.isWearingAccursedSceptre()) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [3, 2]);
       }

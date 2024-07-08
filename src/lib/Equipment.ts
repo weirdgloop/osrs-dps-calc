@@ -360,6 +360,8 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
 
   'Magic shortbow': 55,
   'Dark bow': 55,
+  'Eldritch nightmare staff': 55,
+  'Volatile nightmare staff': 55,
 
   'Zaryte crossbow': 75,
 };
