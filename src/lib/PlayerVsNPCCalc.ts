@@ -67,7 +67,6 @@ const UNIMPLEMENTED_SPECS: string[] = [
   'Blue moon spear',
   'Bone dagger',
   'Brine sabre',
-  'Dark bow',
   'Darklight',
   "Dinh's bulwark",
   'Dorgeshuun crossbow',
@@ -557,7 +556,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     const bonusStr = this.wearing('Eclipse atlatl') ? this.player.bonuses.str : this.player.bonuses.ranged_str;
-    let maxHit = Math.trunc((effectiveLevel * (bonusStr + 64) + 320) / 640);
+    const baseMax = Math.trunc((effectiveLevel * (bonusStr + 64) + 320) / 640);
+    let [minHit, maxHit]: MinMax = [0, baseMax];
 
     // tested this in-game, slayer helmet (i) + crystal legs + crystal body + bowfa, on accurate, no rigour, 99 ranged
     // max hit is 36, but would be 37 if placed after slayer helm
@@ -628,7 +628,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
-    return [0, maxHit]; // ranged has no min hit behaviours (aside from always-max, which is lower down)
+    if (this.opts.usingSpecialAttack) {
+      if (this.wearing('Dark bow')) {
+        const descentOfDragons = this.wearing('Dragon arrow');
+        minHit = this.track(DetailKey.MIN_HIT_SPEC, descentOfDragons ? 5 : 8);
+
+        const dmgFactor = descentOfDragons ? 15 : 13;
+        maxHit = this.track(DetailKey.MAX_HIT_SPEC, Math.min(48, Math.trunc(maxHit * dmgFactor / 10)), `min(48, ${maxHit} * ${dmgFactor} / 10)`);
+      }
+    }
+
+    return [minHit, maxHit];
   }
 
   private getPlayerMaxMagicAttackRoll() {
@@ -1143,7 +1153,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     // simple multi-hit specs
     if (this.opts.usingSpecialAttack) {
       let hitCount = 1;
-      if (this.wearing(['Dragon dagger', 'Abyssal dagger']) || this.isWearingMsb()) {
+      if (this.wearing(['Dragon dagger', 'Abyssal dagger', 'Dark bow']) || this.isWearingMsb()) {
         hitCount = 2;
       } else if (this.wearing('Webweaver bow')) {
         hitCount = 4;

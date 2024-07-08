@@ -358,6 +358,7 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Abyssal bludgeon': 50,
 
   'Magic shortbow': 55,
+  'Dark bow': 55,
 
   'Zaryte crossbow': 75,
 };
