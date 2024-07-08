@@ -69,7 +69,6 @@ const UNIMPLEMENTED_SPECS: string[] = [
   'Brine sabre',
   'Dark bow',
   'Darklight',
-  'Dawnbringer',
   "Dinh's bulwark",
   'Dorgeshuun crossbow',
   'Dragon 2h sword',
@@ -752,6 +751,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = Math.trunc(magicLevel / 3 - 1);
     } else if (this.wearing('Dawnbringer')) {
       maxHit = Math.trunc(magicLevel / 6 - 1);
+      if (this.opts.usingSpecialAttack) { // guaranteed hit between 75-150, ignores bonuses
+        return [75, 150];
+      }
     } else if (this.wearing("Tumeken's shadow")) {
       maxHit = Math.trunc(magicLevel / 3 + 1);
     } else if (this.wearing('Warped sceptre')) {
@@ -956,7 +958,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
-    if (this.opts.usingSpecialAttack && (this.wearing('Voidwaker') || this.isWearingMlb())) {
+    if (this.opts.usingSpecialAttack && (this.wearing(['Voidwaker', 'Dawnbringer']) || this.isWearingMlb())) {
       return 1.0;
     }
 

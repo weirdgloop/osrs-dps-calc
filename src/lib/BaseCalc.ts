@@ -626,6 +626,13 @@ export default class BaseCalc {
       this.addIssue(UserIssueType.SPELL_WRONG_MONSTER, 'This spell cannot be cast on the selected monster.');
     }
 
+    // some weapons are only available to use against certain monsters
+    if (
+      this.wearing('Dawnbringer') && (this.monster.name !== 'Verzik Vitur' || !this.monster.version?.includes('Phase 1'))
+    ) {
+      this.addIssue(UserIssueType.WEAPON_WRONG_MONSTER, 'This weapon cannot be used against the select monster.');
+    }
+
     // Some set effects are currently not accounted for
     if (
       this.wearingAll(['Blue moon helm', 'Blue moon chestplate', 'Blue moon tassets', 'Blue moon spear'])
