@@ -59,7 +59,6 @@ const PARTIALLY_IMPLEMENTED_SPECS: string[] = [
 // https://oldschool.runescape.wiki/w/Category:Weapons_with_Special_attacks
 // Some entries are intentionally omitted as they are not dps-related (e.g. dragon skilling tools, ivandis flail, dbaxe)
 const UNIMPLEMENTED_SPECS: string[] = [
-  'Abyssal bludgeon',
   'Abyssal tentacle',
   'Abyssal whip',
   'Ancient mace',
@@ -440,6 +439,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [23, 20]);
       } else if (this.wearing('Abyssal dagger')) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [17, 20]);
+      } else if (this.wearing('Abyssal bludgeon')) {
+        const prayerMissing = Math.max(-this.player.boosts.prayer, 0);
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [100 + (prayerMissing / 2), 100]);
       }
     }
 
