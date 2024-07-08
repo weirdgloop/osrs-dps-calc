@@ -844,12 +844,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    * Get the max hit for this loadout, which is based on the player's current combat style
    */
   private getMaxHit(): MinMax {
-    if (this.player.style.stance !== 'Manual Cast') {
-      const weaponId = this.player.equipment.weapon?.id;
-      const ammoId = this.player.equipment.ammo?.id;
-      if (ammoApplicability(weaponId, ammoId) === AmmoApplicability.INVALID) {
-        return [0, 0];
-      }
+    if (this.fatal) {
+      return [0, 0];
     }
 
     const style = this.player.style.type;
@@ -962,6 +958,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   private getDistributionImpl(): AttackDistribution {
+    if (this.fatal) {
+      return new AttackDistribution([new HitDistribution([new WeightedHit(1.0, [new Hitsplat(0, false)])])]);
+    }
+
     const mattrs = this.monster.attributes;
     const acc = this.getHitChance();
     const [min, max] = this.getMaxHit();

@@ -6,6 +6,7 @@ import { DetailEntry } from '@/lib/CalcDetails';
 
 export interface UserIssue {
   type: UserIssueType;
+  severity: 'warn' | 'fatal';
   message: string;
   loadout?: string;
 }
