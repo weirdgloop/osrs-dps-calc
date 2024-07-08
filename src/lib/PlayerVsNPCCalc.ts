@@ -177,13 +177,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       effectiveLevel = this.trackFactor(DetailKey.PLAYER_ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
     }
 
-    if (this.wearing('Soulreaper axe') && this.opts.usingSpecialAttack) {
-      // does not stack multiplicatively with prayers
-      const stacks = Math.max(0, Math.min(5, this.player.buffs.soulreaperStacks));
-      const bonus = this.trackFactor(DetailKey.DAMAGE_LEVEL_SOULREAPER_BONUS, baseLevel, [stacks * 6, 100]);
-      effectiveLevel = this.trackAdd(DetailKey.DAMAGE_LEVEL_SOULREAPER, effectiveLevel, bonus);
-    }
-
     let stanceBonus = 8;
     if (style.stance === 'Accurate') {
       stanceBonus += 3;
@@ -273,6 +266,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [23, 20]);
       } else if (this.wearing('Abyssal dagger')) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [5, 4]);
+      } else if (this.wearing('Soulreaper axe')) {
+        const stacks = Math.max(0, Math.min(5, this.player.buffs.soulreaperStacks));
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [100 + 6 * stacks, 100]);
       }
     }
 
@@ -297,7 +293,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
-    if (this.wearing('Soulreaper axe')) {
+    if (this.wearing('Soulreaper axe') && !this.opts.usingSpecialAttack) {
       // does not stack multiplicatively with prayers
       const stacks = Math.max(0, Math.min(5, buffs.soulreaperStacks));
       const bonus = this.trackFactor(DetailKey.DAMAGE_LEVEL_SOULREAPER_BONUS, baseLevel, [stacks * 6, 100]);
@@ -446,6 +442,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else if (this.isWearingBloodMoonSet()) {
         minHit = this.trackFactor(DetailKey.MIN_HIT_SPEC, maxHit, [1, 4]);
         maxHit = this.trackAdd(DetailKey.MAX_HIT_SPEC, maxHit, minHit);
+      } else if (this.wearing('Soulreaper axe')) {
+        const stacks = Math.max(0, Math.min(5, this.player.buffs.soulreaperStacks));
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [100 + 6 * stacks, 100]);
       }
     }
 
