@@ -125,13 +125,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.opts.usingSpecialAttack) {
       if (this.wearing([
         'Dragon claws',
-        'Bandos godsword',
-        'Saradomin godsword',
         'Dragon dagger',
         'Dragon halberd',
         'Crystal halberd',
         'Abyssal dagger',
-      ])) {
+      ]) || this.isWearingGodsword()) {
         defenceStyle = 'slash';
       } else if (this.wearing('Arclight')) {
         defenceStyle = 'stab';
