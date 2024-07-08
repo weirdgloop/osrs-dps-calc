@@ -44,11 +44,72 @@ import {
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { DetailKey } from '@/lib/CalcDetails';
 import { Factor, MinMax } from '@/lib/Math';
-import { AmmoApplicability, ammoApplicability } from '@/lib/Equipment';
+import { AmmoApplicability, ammoApplicability, WEAPON_SPEC_COSTS } from '@/lib/Equipment';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonster, scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { CombatStyleType, getRangedDamageType } from '@/types/PlayerCombatStyle';
 import { range, sum } from 'd3-array';
+import { FeatureStatus } from '@/utils';
+import UserIssueType from '@/enums/UserIssueType';
+
+// https://oldschool.runescape.wiki/w/Category:Weapons_with_Special_attacks
+// Some entries are intentionally omitted as they are not dps-related (e.g. dragon skilling tools, ivandis flail, dbaxe)
+const UNIMPLEMENTED_SPECS: string[] = [
+  'Abyssal bludgeon',
+  'Abyssal dagger',
+  'Abyssal tentacle',
+  'Abyssal whip',
+  'Ancient godsword',
+  'Ancient mace',
+  'Armadyl crossbow',
+  'Armadyl godsword',
+  'Barrelchest anchor',
+  'Blue moon spear',
+  'Bone dagger',
+  'Brine sabre',
+  'Dark bow',
+  'Darklight',
+  'Dawnbringer',
+  "Dinh's bulwark",
+  'Dorgeshuun crossbow',
+  'Dragon 2h sword',
+  'Dragon crossbow',
+  'Dragon hasta',
+  'Dragon knife',
+  'Dragon longsword',
+  'Dragon mace',
+  'Dragon scimitar',
+  'Dragon spear',
+  'Dragon sword',
+  'Dragon thrownaxe',
+  'Dual macuahuitl',
+  'Eclipse atlatl',
+  'Eldritch nightmare staff',
+  'Excalibur',
+  'Granite hammer',
+  'Granite maul',
+  'Heavy ballista',
+  'Light ballista',
+  'Magic comp bow',
+  'Magic longbow',
+  'Magic shortbow',
+  'Magic shortbow (i)',
+  'Rune claws',
+  'Saradomin sword',
+  "Saradomin's blessed sword",
+  'Seercull',
+  'Soulreaper axe',
+  'Staff of balance',
+  'Staff of light',
+  'Staff of the dead',
+  'Toxic staff of the dead',
+  'Ursine chainmace',
+  'Volatile nightmare staff',
+  'Webweaver bow',
+  'Zamorak godsword',
+  'Zamorakian hasta',
+  'Zamorakian spear',
+];
 
 /**
  * Class for computing various player-vs-NPC metrics.
@@ -58,6 +119,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
   constructor(player: Player, monster: Monster, opts: Partial<CalcOpts> = {}) {
     super(player, monster, opts);
+
+    if (this.isSpecSupported() === FeatureStatus.UNIMPLEMENTED) {
+      this.addIssue(UserIssueType.EQUIPMENT_SPEC_UNSUPPORTED, 'This loadout\'s weapon special attack is not yet supported in the calculator.');
+    }
   }
 
   /**
@@ -1479,8 +1544,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   public getSpecDps(): number {
-    const specCost = PlayerVsNPCCalc.getSpecCost(this.player.equipment.weapon?.name);
-    if (specCost === null) {
+    const specCost = this.getSpecCost();
+    if (!specCost) {
       console.warn(`Expected spec cost for weapon [${this.player.equipment.weapon?.name}] but was not provided`);
       return 0;
     }
@@ -1686,40 +1751,43 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     return Math.trunc(current * bonus / 100);
   };
 
-  static getSpecCost(weaponName: string | null | undefined): number | null {
-    switch (weaponName) {
-      case 'Dragon dagger':
-      case "Osmumten's fang":
-      case "Osmumten's fang (or)":
-        return 25;
+  getSpecCost(): number | undefined {
+    const weaponName = this.player.equipment.weapon?.name;
+    if (!weaponName) {
+      return undefined;
+    }
 
-      case 'Dragon halberd':
-      case 'Crystal halberd':
-        return 30;
+    return WEAPON_SPEC_COSTS[weaponName];
+  }
 
-      case 'Elder maul':
-      case 'Dragon warhammer':
-      case 'Bandos godsword':
-      case 'Saradomin godsword':
-      case 'Accursed sceptre':
-      case 'Accursed sceptre (a)':
-      case 'Arclight':
-      case 'Tonalztics of ralos':
-      case 'Dragon claws':
-      case 'Voidwaker':
-      case 'Toxic blowpipe':
-      case 'Blazing blowpipe':
-        return 50;
+  isSpecSupported(): FeatureStatus {
+    const weaponName = this.player.equipment.weapon?.name;
+    if (!weaponName) {
+      return FeatureStatus.NOT_APPLICABLE;
+    }
 
-      case 'Zaryte crossbow':
-        return 75;
+    if (this.getSpecCost() !== undefined) {
+      return FeatureStatus.IMPLEMENTED;
+    }
+
+    if (UNIMPLEMENTED_SPECS.includes(weaponName)) {
+      return FeatureStatus.UNIMPLEMENTED;
+    }
+
+    return FeatureStatus.NOT_APPLICABLE;
+  }
+
+  getSpecCalc(): PlayerVsNPCCalc | null {
+    switch (this.isSpecSupported()) {
+      case FeatureStatus.IMPLEMENTED:
+      case FeatureStatus.PARTIALLY_IMPLEMENTED:
+        return new PlayerVsNPCCalc(this.player, this.baseMonster, {
+          ...this.opts,
+          usingSpecialAttack: true,
+        });
 
       default:
         return null;
     }
-  }
-
-  static isSpecSupported(weaponName: string | null | undefined) {
-    return PlayerVsNPCCalc.getSpecCost(weaponName) !== null;
   }
 }

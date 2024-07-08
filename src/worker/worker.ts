@@ -3,7 +3,8 @@ import {
   CalcRequestsUnion,
   CalcResponse,
   Handler,
-  TtkRequest, TtkResponse,
+  TtkRequest,
+  TtkResponse,
   WORKER_JSON_REPLACER,
   WORKER_JSON_REVIVER,
   WorkerRequestType,
@@ -31,14 +32,7 @@ const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) 
       detailedOutput: calcOpts.detailedOutput,
       disableMonsterScaling: calcOpts.disableMonsterScaling,
     });
-    const specCalc = PlayerVsNPCCalc.isSpecSupported(p.equipment.weapon?.name)
-      ? new PlayerVsNPCCalc(p, monster, {
-        loadoutName,
-        detailedOutput: calcOpts.detailedOutput,
-        disableMonsterScaling: calcOpts.disableMonsterScaling,
-        usingSpecialAttack: true,
-      })
-      : null;
+    const specCalc = calc.getSpecCalc();
 
     res.push({
       npcDefRoll: calc.getNPCDefenceRoll(),
