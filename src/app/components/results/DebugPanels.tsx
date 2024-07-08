@@ -13,6 +13,7 @@ const DebugPanels: React.FC = observer(() => {
 
   const { calc, player, selectedLoadout } = store;
   const details: DetailEntry[] = calc.loadouts[selectedLoadout]?.details || [];
+  const specDetails: DetailEntry[] = calc.loadouts[selectedLoadout]?.specDetails || [];
   const npcDetails: DetailEntry[] = calc.loadouts[selectedLoadout]?.npcDetails || [];
 
   return (
@@ -81,11 +82,39 @@ const DebugPanels: React.FC = observer(() => {
           <div className="flex items-center gap-2">
             <div className="w-6 flex justify-center"><LazyImage src={debug.src} /></div>
             <h3 className="font-serif font-bold">
+              [Debug] Spec Details
+            </h3>
+          </div>
+        )}
+        defaultIsOpen={false}
+      >
+        <table className="w-full">
+          <thead>
+            <tr>
+              <th className="text-center w-1/2 border-x border-y font-bold font-serif bg-btns-400 dark:bg-dark-500 text-white">Label</th>
+              <th className="text-center w-1/2 border-r border-y font-bold font-serif bg-btns-400 dark:bg-dark-500 text-white">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            {specDetails.map((d) => (
+              <tr key={d.label} className="hover:bg-btns-100 hover:dark:bg-btns-100">
+                <td className={`border text-center w-1/2 border-l ${d.highlight ? 'dark:text-white text-black font-bold' : 'dark:text-body-400 text-gray-400'}`}>{d.label}</td>
+                <td className={`border text-center w-1/2 border-l ${d.highlight ? 'dark:text-white text-black font-bold' : 'dark:text-body-400 text-gray-400'}`}>{d.displayValue}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </SectionAccordion>
+      <SectionAccordion
+        title={(
+          <div className="flex items-center gap-2">
+            <div className="w-6 flex justify-center"><LazyImage src={debug.src} /></div>
+            <h3 className="font-serif font-bold">
               [Debug] Reverse Details
             </h3>
           </div>
         )}
-        defaultIsOpen
+        defaultIsOpen={false}
       >
         <table className="w-full">
           <thead>
