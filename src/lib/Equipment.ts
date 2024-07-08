@@ -334,6 +334,9 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Dragon halberd': 30,
   'Crystal halberd': 30,
 
+  'Magic longbow': 35,
+  'Magic comp bow': 35,
+
   'Elder maul': 50,
   'Dragon warhammer': 50,
   'Bandos godsword': 50,
@@ -347,6 +350,9 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Toxic blowpipe': 50,
   'Blazing blowpipe': 50,
   'Webweaver bow': 50,
+  'Magic shortbow (i)': 50,
+
+  'Magic shortbow': 55,
 
   'Zaryte crossbow': 75,
 };

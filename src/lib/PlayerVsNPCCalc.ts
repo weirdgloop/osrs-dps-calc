@@ -92,10 +92,6 @@ const UNIMPLEMENTED_SPECS: string[] = [
   'Granite maul',
   'Heavy ballista',
   'Light ballista',
-  'Magic comp bow',
-  'Magic longbow',
-  'Magic shortbow',
-  'Magic shortbow (i)',
   'Rune claws',
   'Saradomin sword',
   "Saradomin's blessed sword",
@@ -504,6 +500,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.opts.usingSpecialAttack) {
       if (this.wearing(['Zaryte crossbow', 'Webweaver bow']) || this.isWearingBlowpipe()) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
+      } else if (this.isWearingMsb()) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [10, 7]);
       }
     }
 
@@ -522,6 +520,18 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       effectiveLevel = this.player.skills.str + this.player.boosts.str;
     }
     this.track(DetailKey.DAMAGE_LEVEL, effectiveLevel);
+
+    if (this.opts.usingSpecialAttack && (this.isWearingMsb() || this.isWearingMlb())) {
+      // why +10 when that's not used anywhere else? who knows
+      effectiveLevel += 10;
+
+      // ignores other gear
+      const bonusStr = this.player.equipment.ammo?.bonuses.ranged_str || 0;
+      const maxHit = Math.trunc((effectiveLevel * (bonusStr + 64) + 320) / 640);
+
+      // end early, it ignores all other gear and bonuses
+      return [0, maxHit];
+    }
 
     for (const p of this.getCombatPrayers()) {
       if (p.name === 'Sharp Eye' && effectiveLevel <= 20) {
@@ -942,7 +952,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
-    if (this.opts.usingSpecialAttack && this.wearing('Voidwaker')) {
+    if (this.opts.usingSpecialAttack && (this.wearing('Voidwaker') || this.isWearingMlb())) {
       return 1.0;
     }
 
@@ -1127,7 +1137,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     // simple multi-hit specs
     if (this.opts.usingSpecialAttack) {
       let hitCount = 1;
-      if (this.wearing(['Dragon dagger', 'Abyssal dagger'])) {
+      if (this.wearing(['Dragon dagger', 'Abyssal dagger']) || this.isWearingMsb()) {
         hitCount = 2;
       } else if (this.wearing('Webweaver bow')) {
         hitCount = 4;

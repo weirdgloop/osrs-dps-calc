@@ -424,6 +424,14 @@ export default class BaseCalc {
     ]);
   }
 
+  protected isWearingMsb(): boolean {
+    return this.wearing(['Magic shortbow', 'Magic shortbow (i)']);
+  }
+
+  protected isWearingMlb(): boolean {
+    return this.wearing(['Magic longbow', 'Magic comp bow']);
+  }
+
   /**
    * Whether the player is wearing a leaf-bladed weapon capable of harming leafy monsters.
    * @see https://oldschool.runescape.wiki/w/Leafy_(attribute)
