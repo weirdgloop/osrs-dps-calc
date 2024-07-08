@@ -52,6 +52,9 @@ import { range, sum } from 'd3-array';
 import { FeatureStatus } from '@/utils';
 import UserIssueType from '@/enums/UserIssueType';
 
+const PARTIALLY_IMPLEMENTED_SPECS: string[] = [
+];
+
 // https://oldschool.runescape.wiki/w/Category:Weapons_with_Special_attacks
 // Some entries are intentionally omitted as they are not dps-related (e.g. dragon skilling tools, ivandis flail, dbaxe)
 const UNIMPLEMENTED_SPECS: string[] = [
@@ -105,7 +108,6 @@ const UNIMPLEMENTED_SPECS: string[] = [
   'Toxic staff of the dead',
   'Ursine chainmace',
   'Volatile nightmare staff',
-  'Webweaver bow',
   'Zamorak godsword',
   'Zamorakian hasta',
   'Zamorakian spear',
@@ -489,7 +491,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.opts.usingSpecialAttack) {
-      if (this.wearing('Zaryte crossbow') || this.isWearingBlowpipe()) {
+      if (this.wearing(['Zaryte crossbow', 'Webweaver bow']) || this.isWearingBlowpipe()) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
       }
     }
@@ -596,6 +598,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.opts.usingSpecialAttack) {
       if (this.isWearingBlowpipe()) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [3, 2]);
+      } else if (this.wearing('Webweaver bow')) {
+        const maxReduction = Math.trunc(maxHit * 6 / 10);
+        maxHit = this.trackAdd(DetailKey.MAX_HIT_SPEC, maxHit, -maxReduction);
       }
     }
 
@@ -1111,6 +1116,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.opts.usingSpecialAttack && this.wearing('Dragon dagger')) {
       // just a double hit, stat changes are earlier
       dist = new AttackDistribution([standardHitDist, standardHitDist]);
+    }
+
+    if (this.opts.usingSpecialAttack && this.wearing('Webweaver bow')) {
+      // just a quadruple hit, stat changes are earlier
+      dist = new AttackDistribution([standardHitDist, standardHitDist, standardHitDist, standardHitDist]);
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingDharok()) {
@@ -1773,6 +1783,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const weaponName = this.player.equipment.weapon?.name;
     if (!weaponName) {
       return FeatureStatus.NOT_APPLICABLE;
+    }
+
+    if (PARTIALLY_IMPLEMENTED_SPECS.includes(weaponName)) {
+      return FeatureStatus.PARTIALLY_IMPLEMENTED;
     }
 
     if (this.getSpecCost() !== undefined) {

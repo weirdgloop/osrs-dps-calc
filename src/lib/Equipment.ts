@@ -345,6 +345,7 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Voidwaker': 50,
   'Toxic blowpipe': 50,
   'Blazing blowpipe': 50,
+  'Webweaver bow': 50,
 
   'Zaryte crossbow': 75,
 };
