@@ -55,6 +55,7 @@ export interface CalculatedLoadout {
 
 export interface PlayerVsNPCCalculatedLoadout extends CalculatedLoadout {
   details?: DetailEntry[],
+  specDetails?: DetailEntry[],
 
   // Player vs NPC metrics
   npcDefRoll?: number,

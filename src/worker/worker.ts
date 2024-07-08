@@ -52,6 +52,7 @@ const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) 
       specMomentDps: specCalc?.getDps(),
       specFullDps: specCalc?.getSpecDps(),
       specHitDist: specCalc?.getDistribution().asHistogram(calcOpts.hitDistHideMisses),
+      specDetails: specCalc?.details,
     });
 
     const end = self.performance.now();
