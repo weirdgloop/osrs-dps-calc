@@ -1621,7 +1621,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing('Soulreaper axe')) {
       // assumes using spec every time you reach the current stack count
       const ticksPerSpec = this.getAttackSpeed() * this.player.buffs.soulreaperStacks;
-      return this.getDps() / ticksPerSpec;
+      return this.getDps() * this.getExpectedAttackSpeed() / ticksPerSpec;
     }
 
     const specCost = this.getSpecCost();
@@ -1632,7 +1632,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     const ticksToRegen = this.wearing('Lightbearer') ? 25 : 50;
     const ticksPerSpec = specCost * (ticksToRegen / 10);
-    return this.getDps() / ticksPerSpec;
+    return this.getDps() * this.getExpectedAttackSpeed() / ticksPerSpec;
   }
 
   public getWeaponDelayProvider(): WeaponDelayProvider {
