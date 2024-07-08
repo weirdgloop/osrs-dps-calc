@@ -326,6 +326,7 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
 
 /* eslint-disable quote-props */
 export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
+  'Abyssal dagger': 25,
   'Dragon dagger': 25,
   "Osmumten's fang": 25,
   "Osmumten's fang (or)": 25,

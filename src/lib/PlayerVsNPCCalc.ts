@@ -59,7 +59,6 @@ const PARTIALLY_IMPLEMENTED_SPECS: string[] = [
 // Some entries are intentionally omitted as they are not dps-related (e.g. dragon skilling tools, ivandis flail, dbaxe)
 const UNIMPLEMENTED_SPECS: string[] = [
   'Abyssal bludgeon',
-  'Abyssal dagger',
   'Abyssal tentacle',
   'Abyssal whip',
   'Ancient godsword',
@@ -137,7 +136,15 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     let defenceStyle: CombatStyleType = this.player.style.type;
     if (this.opts.usingSpecialAttack) {
-      if (this.wearing(['Dragon claws', 'Bandos godsword', 'Saradomin godsword', 'Dragon dagger', 'Dragon halberd', 'Crystal halberd'])) {
+      if (this.wearing([
+        'Dragon claws',
+        'Bandos godsword',
+        'Saradomin godsword',
+        'Dragon dagger',
+        'Dragon halberd',
+        'Crystal halberd',
+        'Abyssal dagger',
+      ])) {
         defenceStyle = 'slash';
       } else if (this.wearing('Arclight')) {
         defenceStyle = 'stab';
@@ -270,6 +277,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
       } else if (this.wearing('Dragon dagger')) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [23, 20]);
+      } else if (this.wearing('Abyssal dagger')) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [5, 4]);
       }
     }
 
@@ -431,6 +440,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [11, 10]);
       } else if (this.wearing('Dragon dagger')) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [23, 20]);
+      } else if (this.wearing('Abyssal dagger')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [17, 20]);
       }
     }
 
@@ -1113,14 +1124,18 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = new AttackDistribution([standardHitDist, HitDistribution.linear(secondHitAcc, min, max)]);
     }
 
-    if (this.opts.usingSpecialAttack && this.wearing('Dragon dagger')) {
-      // just a double hit, stat changes are earlier
-      dist = new AttackDistribution([standardHitDist, standardHitDist]);
-    }
+    // simple multi-hit specs
+    if (this.opts.usingSpecialAttack) {
+      let hitCount = 1;
+      if (this.wearing(['Dragon dagger', 'Abyssal dagger'])) {
+        hitCount = 2;
+      } else if (this.wearing('Webweaver bow')) {
+        hitCount = 4;
+      }
 
-    if (this.opts.usingSpecialAttack && this.wearing('Webweaver bow')) {
-      // just a quadruple hit, stat changes are earlier
-      dist = new AttackDistribution([standardHitDist, standardHitDist, standardHitDist, standardHitDist]);
+      if (hitCount !== 1) {
+        dist = new AttackDistribution(Array(hitCount).fill(standardHitDist));
+      }
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingDharok()) {
