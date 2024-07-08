@@ -886,10 +886,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
-    if (this.opts.usingSpecialAttack && this.wearing('Voidwaker')) {
-      return 1.0;
-    }
-
     const style = this.player.style.type;
     let atkRoll = 0;
     if (this.isUsingMeleeStyle()) {
@@ -919,6 +915,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.monster.id === 7223 && this.player.style.stance !== 'Manual Cast') {
       this.track(DetailKey.PLAYER_ACCURACY_SCURRIUS_RAT, 1.0);
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
+    }
+
+    if (this.opts.usingSpecialAttack && this.wearing('Voidwaker')) {
+      return 1.0;
     }
 
     const atk = this.getMaxAttackRoll();
@@ -1028,7 +1028,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const clawSpecDist = new HitDistribution([]);
       for (let accRoll = 0; accRoll < 4; accRoll++) {
         const low = Math.trunc(max * (4 - accRoll) / 4);
-        const high = max + low;
+        const high = max + low - 1;
         const chancePreviousRollsFail = (1 - acc) ** accRoll;
         const chanceThisRollPasses = chancePreviousRollsFail * acc;
         const chancePerDmg = chanceThisRollPasses / (high - low + 1);
