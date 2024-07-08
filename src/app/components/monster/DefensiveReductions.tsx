@@ -82,6 +82,21 @@ const DefensiveReductions: React.FC = observer(() => {
               className="form-control w-1/6"
               required
               min={0}
+              value={defenceReductions.firelight}
+              onChange={(v) => store.updateMonster({ inputs: { defenceReductions: { firelight: v } } })}
+            />
+            <span className="pl-2">
+              <img src={arc.src} width={18} className="inline-block" alt="" />
+              {/* todo(wgs): swap icon out */}
+              {' '}
+              Firelight hits
+            </span>
+          </div>
+          <div className="w-full">
+            <NumberInput
+              className="form-control w-1/6"
+              required
+              min={0}
               value={defenceReductions.tonalztic}
               onChange={(v) => store.updateMonster({ inputs: { defenceReductions: { tonalztic: v } } })}
             />

@@ -131,7 +131,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         'Abyssal dagger',
       ]) || this.isWearingGodsword()) {
         defenceStyle = 'slash';
-      } else if (this.wearing('Arclight')) {
+      } else if (this.wearing(['Arclight', 'Firelight'])) {
         defenceStyle = 'stab';
       } else if (this.wearing('Voidwaker')) {
         // doesn't really matter since it's 100% accuracy but eh
@@ -226,7 +226,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isRevWeaponBuffApplicable()) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_REV_WEAPON, attackRoll, [3, 2]);
     }
-    if (this.wearing('Arclight') && mattrs.includes(MonsterAttribute.DEMON)) {
+    if (this.wearing(['Arclight', 'Firelight']) && mattrs.includes(MonsterAttribute.DEMON)) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor([7, 10]));
     }
     if (this.wearing('Dragon hunter lance') && mattrs.includes(MonsterAttribute.DRAGON)) {
@@ -337,7 +337,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_BLACK_MASK, maxHit, [7, 6]);
     }
 
-    if (this.wearing('Arclight') && mattrs.includes(MonsterAttribute.DEMON)) {
+    if (this.wearing(['Arclight', 'Firelight']) && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([7, 10]));
     }
     if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {

@@ -70,6 +70,7 @@ const DEFAULT_MONSTER_INPUTS: Monster['inputs'] = {
     elderMaul: 0,
     dwh: 0,
     arclight: 0,
+    firelight: 0,
     bgs: 0,
     tonalztic: 0,
   },
