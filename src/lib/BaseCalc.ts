@@ -58,7 +58,7 @@ export default class BaseCalc {
   protected baseMonster: Monster;
 
   // Array of the names of all equipped items (for quick checks)
-  protected allEquippedItems!: string[];
+  protected allEquippedItems: string[] = [];
 
   userIssues: UserIssue[] = [];
 
