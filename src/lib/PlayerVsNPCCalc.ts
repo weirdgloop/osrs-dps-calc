@@ -108,7 +108,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   constructor(player: Player, monster: Monster, opts: Partial<CalcOpts> = {}) {
     super(player, monster, opts);
 
-    if (this.isSpecSupported() === FeatureStatus.UNIMPLEMENTED) {
+    if (!this.opts.noInit && this.isSpecSupported() === FeatureStatus.UNIMPLEMENTED) {
       this.addIssue(UserIssueType.EQUIPMENT_SPEC_UNSUPPORTED, 'This loadout\'s weapon special attack is not yet supported in the calculator.');
     }
   }
