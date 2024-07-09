@@ -250,6 +250,7 @@ self.onmessage = async (evt: MessageEvent<string>) => {
     }
   } catch (e: unknown) {
     if (e instanceof Error) {
+      console.error(e);
       res.error = e.message;
     } else {
       res.error = `Unknown error type: ${e}`;
