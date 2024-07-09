@@ -13,7 +13,7 @@ const ChangelogEntry: React.FC<PropsWithChildren<IChangelogEntryProps>> = (props
     <div className="border-t first:border-0 mt-2 first:mt-0 pt-2 first:pt-0 border-dark-300">
       <span className="rounded bg-green-500 px-1">{date}</span>
       <div className="mt-1">
-        <ul className="list-inside list-disc text-gray-300">
+        <ul className="list-inside list-disc text-gray-300 changelog-list">
           {children}
         </ul>
       </div>
@@ -40,6 +40,38 @@ const Changelog: React.FC = () => {
         title="Changelog"
       >
         <div className="text-sm bg-dark-500 rounded p-2 shadow-inner border border-dark-200 overflow-auto max-h-64">
+          <ChangelogEntry date="9 July 2024">
+            <li>
+              Implemented support for showing data on
+              {' '}
+              <span className="font-bold text-orange-300">special attacks</span>
+              {' '}
+              in the results panel - a highly requested community feature. We have support for 27 commonly used
+              special attacks for now, with more coming in the future.
+            </li>
+            <li>
+              Added an expanded version of the results table which shows more information. Rolls are now hidden by
+              default.
+            </li>
+            <li>
+              Added better support for different variants of blowpipes. Generating a share link that includes a
+              blowpipe will now correctly save which variant it is.
+            </li>
+            <li>
+              TTK calculations across all loadouts are now performed in parallel in an attempt to speed up slower
+              computations.
+            </li>
+            <li>
+              Added extra visual changes to the UI, such as dotted underlines for results table headers to make it
+              clear that you can hover over them for a definition.
+            </li>
+            <li>
+              Handled Warriors&apos; Guild cyclopes being immune to combat styles which aren&apos;t melee.
+            </li>
+            <li>
+              Handled edge cases where negative max hits are not rounded up to 1.
+            </li>
+          </ChangelogEntry>
           <ChangelogEntry date="17 June 2024">
             <li>
               Fixed a bug in Corporeal Beast calculation.

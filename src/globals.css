@@ -222,3 +222,12 @@ tbody th.t-group-header {
   @apply bg-red-500;
   @apply text-red-200;
 }
+
+/* Lists */
+.changelog-list li {
+  margin: 1em 0;
+}
+
+.changelog-list li:first-child {
+  margin-top: 0;
+}
