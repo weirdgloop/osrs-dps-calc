@@ -173,7 +173,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   private getPlayerMaxMeleeAttackRoll(): number {
     const { style } = this.player;
 
-    const baseLevel: number = this.trackAdd(DetailKey.DAMAGE_LEVEL, this.player.skills.str, this.player.boosts.str);
+    const baseLevel: number = this.trackAdd(DetailKey.DAMAGE_LEVEL, this.player.skills.atk, this.player.boosts.atk);
     let effectiveLevel: number = baseLevel;
 
     for (const p of this.getCombatPrayers('factorAccuracy')) {
