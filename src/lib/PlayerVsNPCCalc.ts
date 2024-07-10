@@ -259,12 +259,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.opts.usingSpecialAttack) {
-      if (this.isWearingFang()) {
+      if (this.isWearingGodsword()) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
+      } else if (this.isWearingFang()) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [3, 2]);
       } else if (this.wearing('Elder maul')) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [5, 4]);
-      } else if (this.wearing(['Bandos godsword', 'Saradomin godsword'])) {
-        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
       } else if (this.wearing('Dragon dagger')) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [23, 20]);
       } else if (this.wearing('Abyssal dagger')) {
