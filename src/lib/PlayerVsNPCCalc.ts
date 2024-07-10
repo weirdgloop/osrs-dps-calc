@@ -506,6 +506,30 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       // TODO: https://twitter.com/JagexAsh/status/1647928422843273220 for max_hit seems to be additive now
       attackRoll = Math.trunc(attackRoll * 13 / 10);
     }
+    if (this.player.equipment.weapon?.category === EquipmentCategory.CHINCHOMPA) {
+      const distance = Math.min(7, Math.max(1, this.player.buffs.chinchompaDistance));
+
+      let numerator: number = 4;
+      if (style.name === 'Short fuse') {
+        if (distance >= 7) {
+          numerator = 2;
+        } else if (distance >= 4) {
+          numerator = 3;
+        }
+      } else if (style.name === 'Medium fuse') {
+        if (distance < 4 || distance >= 7) {
+          numerator = 3;
+        }
+      } else if (style.name === 'Long fuse') {
+        if (distance < 4) {
+          numerator = 2;
+        } else if (distance < 7) {
+          numerator = 3;
+        }
+      }
+
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_CHINCHOMPA, attackRoll, [numerator, 4]);
+    }
 
     if (this.opts.usingSpecialAttack) {
       if (this.wearing(['Zaryte crossbow', 'Webweaver bow']) || this.isWearingBlowpipe()) {

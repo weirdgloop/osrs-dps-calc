@@ -22,6 +22,7 @@ export enum DetailKey {
   PLAYER_ACCURACY_REV_WEAPON = 'Player accuracy revenant weapon',
   PLAYER_ACCURACY_DEMONBANE = 'Player accuracy demonbane',
   PLAYER_ACCURACY_DRAGONHUNTER = 'Player accuracy dragonhunter',
+  PLAYER_ACCURACY_CHINCHOMPA = 'Player accuracy chinchompa distance',
   PLAYER_ACCURACY_KERIS = 'Player accuracy keris',
   PLAYER_ACCURACY_VAMPYREBANE = 'Player accuracy vampyrebane',
   PLAYER_ACCURACY_EFARITAY = 'Player accuracy efaritay\'s aid',
