@@ -9,6 +9,8 @@ import { PartialDeep } from 'type-fest';
 import { calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { Spell, spells } from '@/types/Spell';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
+import { getCombatStylesForCategory } from '@/utils';
+import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import eq from '../../../cdn/json/equipment.json';
 
 const monsters = getMonsters().map((m) => ({
@@ -51,6 +53,10 @@ export function getTestPlayer(monster: Monster, overrides: PartialDeep<Player> =
   player.bonuses = overrides.bonuses || calculated.bonuses;
   player.offensive = overrides.offensive || calculated.offensive;
   player.defensive = overrides.defensive || calculated.defensive;
+
+  if (!overrides.style && overrides?.equipment?.weapon) {
+    player.style = getCombatStylesForCategory(overrides.equipment.weapon.category || EquipmentCategory.NONE)[0];
+  }
 
   return player;
 }
