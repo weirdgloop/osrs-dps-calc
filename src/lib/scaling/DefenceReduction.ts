@@ -95,7 +95,7 @@ const applyDefenceReductions = (m: Monster): Monster => {
     });
   };
   m = reduceArclight(m, reductions.arclight, m.attributes.includes(MonsterAttribute.DEMON) ? [2, 10] : [1, 10]);
-  m = reduceArclight(m, reductions.firelight, m.attributes.includes(MonsterAttribute.DEMON) ? [3, 10] : [1, 10]);
+  m = reduceArclight(m, reductions.emberlight, m.attributes.includes(MonsterAttribute.DEMON) ? [3, 10] : [1, 10]);
 
   for (let i = 0; i < reductions.tonalztic; i++) {
     m = newSkills(m, {

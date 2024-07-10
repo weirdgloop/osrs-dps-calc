@@ -39,7 +39,7 @@ const generateMaxHitDiscrepancies = () => {
           accursed: false,
           elderMaul: 0,
           dwh: 0,
-          firelight: 0,
+          emberlight: 0,
           arclight: 0,
           bgs: 0,
           tonalztic: 0,

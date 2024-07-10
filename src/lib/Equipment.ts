@@ -115,6 +115,7 @@ const ammoForRangedWeapons: { [weapon: number]: number[] } = {
   27610: commonAmmoCategories().bow_t60, // Venator bow
   27612: commonAmmoCategories().bow_t60, // Venator bow (uncharged)
   20997: commonAmmoCategories().bow_t60, // Twisted bow
+  29591: commonAmmoCategories().bow_t60, // Scorching bow
   837: commonAmmoCategories().cb_t1, // Crossbow
   767: commonAmmoCategories().cb_t1, // Phoenix crossbow
   9174: commonAmmoCategories().cb_t1, // Bronze crossbow
@@ -332,11 +333,13 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   "Osmumten's fang": 25,
   "Osmumten's fang (or)": 25,
   'Dual macuahuitl': 25,
+  'Scorching bow': 25,
+  'Purging staff': 25,
 
   'Dawnbringer': 30,
   'Dragon halberd': 30,
   'Crystal halberd': 30,
-  'Burning claws': 30,
+  'Bone claws': 30,
 
   'Magic longbow': 35,
   'Magic comp bow': 35,
@@ -348,6 +351,7 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Accursed sceptre': 50,
   'Accursed sceptre (a)': 50,
   'Arclight': 50,
+  'Emberlight': 50,
   'Tonalztics of ralos': 50,
   'Dragon claws': 50,
   'Voidwaker': 50,
