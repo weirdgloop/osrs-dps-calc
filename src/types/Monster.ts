@@ -92,6 +92,7 @@ export interface Monster {
       elderMaul: number;
       dwh: number;
       arclight: number;
+      emberlight: number;
       bgs: number;
       tonalztic: number;
     }

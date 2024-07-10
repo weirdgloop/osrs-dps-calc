@@ -134,7 +134,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         'Abyssal dagger',
       ]) || this.isWearingGodsword()) {
         defenceStyle = 'slash';
-      } else if (this.wearing('Arclight')) {
+      } else if (this.wearing(['Arclight', 'Emberlight'])) {
         defenceStyle = 'stab';
       } else if (this.wearing('Voidwaker')) {
         // doesn't really matter since it's 100% accuracy but eh
@@ -222,7 +222,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isRevWeaponBuffApplicable()) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_REV_WEAPON, attackRoll, [3, 2]);
     }
-    if (this.wearing('Arclight') && mattrs.includes(MonsterAttribute.DEMON)) {
+    if (this.wearing(['Arclight', 'Emberlight']) && mattrs.includes(MonsterAttribute.DEMON)) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor([7, 10]));
     }
     if (this.wearing('Dragon hunter lance') && mattrs.includes(MonsterAttribute.DRAGON)) {
@@ -336,7 +336,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_BLACK_MASK, maxHit, [7, 6]);
     }
 
-    if (this.wearing('Arclight') && mattrs.includes(MonsterAttribute.DEMON)) {
+    if (this.wearing(['Arclight', 'Emberlight']) && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([7, 10]));
     }
     if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {
@@ -506,6 +506,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       // TODO: https://twitter.com/JagexAsh/status/1647928422843273220 for max_hit seems to be additive now
       attackRoll = Math.trunc(attackRoll * 13 / 10);
     }
+    if (this.wearing('Scorching bow')) {
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor([3, 10]));
+    }
 
     if (this.opts.usingSpecialAttack) {
       if (this.wearing(['Zaryte crossbow', 'Webweaver bow']) || this.isWearingBlowpipe()) {
@@ -620,6 +623,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isWearingRatBoneWeapon() && mattrs.includes(MonsterAttribute.RAT)) {
       maxHit = this.trackAdd(DetailKey.MAX_HIT_RATBANE, maxHit, 10);
     }
+    if (this.wearing('Scorching bow')) {
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([3, 10]));
+    }
 
     if (this.wearing('Tonalztics of ralos')) {
       // rolls 75% of max hit, but can hit twice
@@ -707,6 +713,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
       const baseFactor: Factor = buffs.markOfDarknessSpell ? [8, 20] : [4, 20];
+      if (this.wearing('Purging staff')) {
+        baseFactor[0] *= 2;
+      }
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor(baseFactor));
     }
     if (this.isRevWeaponBuffApplicable()) {
@@ -1086,14 +1095,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     let accurateZeroApplicable: boolean = true;
-    if (this.opts.usingSpecialAttack && this.wearing('Dragon claws')) {
+    const boneClaws = this.wearing('Bone claws');
+    if (this.opts.usingSpecialAttack && (boneClaws || this.wearing('Dragon claws'))) {
       accurateZeroApplicable = false;
 
       const clawSpecDist = new HitDistribution([]);
-      for (let accRoll = 0; accRoll < 4; accRoll++) {
+      const startRoll = boneClaws ? 1 : 0;
+      const fourthSplat = boneClaws ? [] : [Hitsplat.INACCURATE];
+      for (let accRoll = startRoll; accRoll < 4; accRoll++) {
         const low = Math.trunc(max * (4 - accRoll) / 4);
         const high = max + low - 1;
-        const chancePreviousRollsFail = (1 - acc) ** accRoll;
+        const chancePreviousRollsFail = (1 - acc) ** (accRoll - startRoll);
         const chanceThisRollPasses = chancePreviousRollsFail * acc;
         const chancePerDmg = chanceThisRollPasses / (high - low + 1);
         for (let dmg = low; dmg <= high; dmg++) {
@@ -1112,7 +1124,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
                 new Hitsplat(Math.trunc(dmg / 2)),
                 new Hitsplat(Math.trunc(dmg / 4)),
                 new Hitsplat(Math.trunc(dmg / 4) + 1),
-                Hitsplat.INACCURATE,
+                ...fourthSplat,
               ]));
               break;
 
@@ -1121,7 +1133,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
                 new Hitsplat(Math.trunc(dmg / 2)),
                 new Hitsplat(Math.trunc(dmg / 2) + 1),
                 Hitsplat.INACCURATE,
-                Hitsplat.INACCURATE,
+                ...fourthSplat,
               ]));
               break;
 
@@ -1130,24 +1142,26 @@ export default class PlayerVsNPCCalc extends BaseCalc {
                 new Hitsplat(dmg + 1),
                 Hitsplat.INACCURATE,
                 Hitsplat.INACCURATE,
-                Hitsplat.INACCURATE,
+                ...fourthSplat,
               ]));
               break;
           }
         }
       }
-      const chanceAllFail = (1 - acc) ** 4;
+
+      // todo(wgs): what is the failure system like for bone claws?
+      const chanceAllFail = (1 - acc) ** (4 - startRoll);
       clawSpecDist.addHit(new WeightedHit(chanceAllFail * 2 / 3, [
         new Hitsplat(1, false),
         new Hitsplat(1, false),
         Hitsplat.INACCURATE,
-        Hitsplat.INACCURATE,
+        ...fourthSplat,
       ]));
       clawSpecDist.addHit(new WeightedHit(chanceAllFail / 3, [
         Hitsplat.INACCURATE,
         Hitsplat.INACCURATE,
         Hitsplat.INACCURATE,
-        Hitsplat.INACCURATE,
+        ...fourthSplat,
       ]));
       dist = new AttackDistribution([clawSpecDist]);
     }
@@ -1175,6 +1189,21 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       if (hitCount !== 1) {
         dist = new AttackDistribution(Array(hitCount).fill(standardHitDist));
       }
+    }
+
+    if (this.opts.usingSpecialAttack && this.wearing('Scorching bow')) {
+      // todo(wgs): confirm that this applies on inaccurate rolls too, and that it is in addition to the regular hit
+      const extraDmg = mattrs.includes(MonsterAttribute.DEMON) ? 5 : 1;
+
+      // increase 0s to 1s here since the burn applies separately, and this otherwise skips that raising later
+      dist = dist.transform((h) => {
+        const baseDmg = Math.max(h.accurate ? 1 : 0, h.damage);
+        return new HitDistribution([new WeightedHit(1.0, [new Hitsplat(baseDmg + extraDmg, h.accurate)])]);
+      });
+    }
+
+    if (this.opts.usingSpecialAttack && this.wearing('Purging staff')) {
+      // todo(wgs): does this require the correct runes or only the level of each demonbane spell?
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingDharok()) {
@@ -1261,7 +1290,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.buffs.markOfDarknessSpell && this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
-      dist = dist.scaleDamage(5, 4);
+      // todo(wgs): confirm that this is still post-roll with and without purging staff
+      dist = dist.scaleDamage(this.wearing('Purging staff') ? 6 : 5, 4);
     }
 
     if (this.player.style.type === 'magic' && this.isWearingAhrims()) {
