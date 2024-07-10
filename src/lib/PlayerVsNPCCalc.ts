@@ -506,7 +506,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       // TODO: https://twitter.com/JagexAsh/status/1647928422843273220 for max_hit seems to be additive now
       attackRoll = Math.trunc(attackRoll * 13 / 10);
     }
-    if (this.wearing('Scorching bow')) {
+    if (this.wearing('Scorching bow') && mattrs.includes(MonsterAttribute.DEMON)) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor([3, 10]));
     }
 
@@ -623,7 +623,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isWearingRatBoneWeapon() && mattrs.includes(MonsterAttribute.RAT)) {
       maxHit = this.trackAdd(DetailKey.MAX_HIT_RATBANE, maxHit, 10);
     }
-    if (this.wearing('Scorching bow')) {
+    if (this.wearing('Scorching bow') && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([3, 10]));
     }
 
