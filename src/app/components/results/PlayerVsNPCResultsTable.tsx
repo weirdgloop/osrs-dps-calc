@@ -175,7 +175,7 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
               DPS
             </ResultRow>
             <ResultRow calcKey="specFullDps" title="The damage per-second of the special attack, accounting for special attack regeneration" hasResults={hasResults} collapseSpecs={resultsExpanded}>
-              Sustain DPS
+              Spec-only DPS
             </ResultRow>
             <ResultRow calcKey="specMaxHit" title="The maximum hit that the special attack can deal to the monster" hasResults={hasResults} collapseSpecs={resultsExpanded}>
               Max hit
