@@ -48,9 +48,12 @@ import { AmmoApplicability, ammoApplicability, WEAPON_SPEC_COSTS } from '@/lib/E
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonster, scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { CombatStyleType, getRangedDamageType } from '@/types/PlayerCombatStyle';
-import { range, sum } from 'd3-array';
+import { range, some, sum } from 'd3-array';
 import { FeatureStatus } from '@/utils';
 import UserIssueType from '@/enums/UserIssueType';
+import {
+  BoltContext, diamondBolts, dragonstoneBolts, onyxBolts, opalBolts, pearlBolts, rubyBolts,
+} from '@/lib/dists/bolts';
 
 const PARTIALLY_IMPLEMENTED_SPECS: string[] = [
   'Ancient godsword',
@@ -1271,69 +1274,25 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     // bolt effects
-    const zaryte = this.wearing('Zaryte crossbow');
-    const zaryteSpec = zaryte && this.opts.usingSpecialAttack;
+    const boltContext: BoltContext = {
+      maxHit: max,
+      rangedLvl: this.player.skills.ranged + this.player.boosts.ranged,
+      zcb: this.wearing('Zaryte crossbow'),
+      spec: this.opts.usingSpecialAttack,
+      kandarinDiary: this.player.buffs.kandarinDiary,
+      monster: this.monster,
+    };
     if (this.player.style.type === 'ranged' && this.player.equipment.weapon?.name.includes('rossbow')) {
-      const rangedLvl = this.player.skills.ranged + this.player.boosts.ranged;
-      const kandarinDiaryFactor = this.player.buffs.kandarinDiary ? 1.1 : 1.0;
-
       if (this.wearing(['Opal bolts (e)', 'Opal dragon bolts (e)'])) {
-        const chance = zaryteSpec ? 1.0 : 0.05 * kandarinDiaryFactor;
-        const bonusDmg = Math.trunc(rangedLvl / (zaryte ? 9 : 10));
-        dist = new AttackDistribution([
-          new HitDistribution([
-            ...standardHitDist.scaleProbability(1 - chance).hits,
-            ...HitDistribution.linear(1.0, bonusDmg, max + bonusDmg).scaleProbability(chance).hits,
-          ]),
-        ]);
-      }
-
-      if (this.wearing(['Pearl bolts (e)', 'Pearl dragon bolts (e)'])) {
-        const chance = zaryteSpec ? 1.0 : 0.06 * kandarinDiaryFactor;
-        const divisor = mattrs.includes(MonsterAttribute.FIERY) ? 15 : 20;
-        const bonusDmg = Math.trunc(rangedLvl / (zaryte ? divisor - 2 : divisor));
-        dist = new AttackDistribution([
-          new HitDistribution([
-            ...standardHitDist.scaleProbability(1 - chance).hits,
-            ...HitDistribution.linear(1.0, bonusDmg, max + bonusDmg).scaleProbability(chance).hits,
-          ]),
-        ]);
-      }
-
-      if (this.wearing(['Diamond bolts (e)', 'Diamond dragon bolts (e)'])) {
-        const chance = zaryteSpec ? 1.0 : 0.1 * kandarinDiaryFactor;
-        const effectMax = max + Math.trunc(max * (zaryte ? 26 : 15) / 100);
-        dist = new AttackDistribution([
-          new HitDistribution([
-            ...standardHitDist.scaleProbability(1 - chance).hits,
-            ...HitDistribution.linear(1.0, 0, effectMax).scaleProbability(chance).hits,
-          ]),
-        ]);
-      }
-
-      if (this.wearing(['Dragonstone bolts (e)', 'Dragonstone dragon bolts (e)']) && (!mattrs.includes(MonsterAttribute.FIERY) || !mattrs.includes(MonsterAttribute.DRAGON))) {
-        const chance = zaryteSpec ? 1.0 : 0.06 * kandarinDiaryFactor;
-        // https://github.com/weirdgloop/osrs-dps-calc/issues/152#issuecomment-1913508743
-        const effectDmg = Math.trunc(rangedLvl * 2 / (zaryte ? 9 : 10));
-        dist = new AttackDistribution([
-          new HitDistribution([
-            ...standardHitDist.scaleProbability(1 - chance).hits,
-            ...HitDistribution.linear(acc, effectDmg, max + effectDmg).scaleProbability(chance).hits,
-          ]),
-        ]);
-      }
-
-      if (this.wearing(['Onyx bolts (e)', 'Onyx dragon bolts (e)']) && !mattrs.includes(MonsterAttribute.UNDEAD)) {
-        const chance = zaryteSpec ? 1.0 : 0.11 * kandarinDiaryFactor;
-        const effectMax = Math.trunc(max * (zaryte ? 132 : 120) / 100);
-        dist = new AttackDistribution([
-          new HitDistribution([
-            ...standardHitDist.scaleProbability(1 - chance).hits,
-            ...HitDistribution.linear(1.0, 0, effectMax)
-              .scaleProbability(acc * chance).hits,
-            new WeightedHit((1 - acc) * chance, [Hitsplat.INACCURATE]),
-          ]),
-        ]);
+        dist = dist.transform(opalBolts(boltContext));
+      } else if (this.wearing(['Pearl bolts (e)', 'Pearl dragon bolts (e)'])) {
+        dist = dist.transform(pearlBolts(boltContext));
+      } else if (this.wearing(['Diamond bolts (e)', 'Diamond dragon bolts (e)'])) {
+        dist = dist.transform(diamondBolts(boltContext));
+      } else if (this.wearing(['Dragonstone bolts (e)', 'Dragonstone dragon bolts (e)'])) {
+        dist = dist.transform(dragonstoneBolts(boltContext));
+      } else if (this.wearing(['Onyx bolts (e)', 'Onyx dragon bolts (e)']) && !mattrs.includes(MonsterAttribute.UNDEAD)) {
+        dist = dist.transform(onyxBolts(boltContext));
       }
     }
 
@@ -1353,19 +1312,20 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.style.type === 'ranged' && this.player.equipment.weapon?.name.includes('rossbow')) {
-      if (this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)'])) {
-        const chance = zaryteSpec ? 1.0 : 0.06 * (this.player.buffs.kandarinDiary ? 1.1 : 1.0);
-        const effectDmg = this.wearing('Zaryte crossbow')
-          ? Math.min(110, Math.trunc(this.monster.inputs.monsterCurrentHp * 22 / 100))
-          : Math.min(100, Math.trunc(this.monster.inputs.monsterCurrentHp / 5));
-        dist = new AttackDistribution([
-          new HitDistribution([
-            ...dist.dists[0].scaleProbability(1 - chance).hits,
-            new WeightedHit(chance * acc, [new Hitsplat(effectDmg, true)]),
-            new WeightedHit(chance * (1 - acc), [new Hitsplat(effectDmg, false)]),
-          ]),
-        ]);
+      const currentHp = this.player.skills.hp + this.player.boosts.hp;
+      if (this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)']) && currentHp >= 10) {
+        dist = dist.transform(rubyBolts(boltContext));
       }
+    }
+
+    if (process.env.NEXT_PUBLIC_HIT_DIST_SANITY_CHECK) {
+      dist.dists.forEach((hitDist, ix) => {
+        const sumAccuracy = sum(hitDist.hits, (wh) => wh.probability);
+        const fractionalDamage = some(hitDist.hits, (wh) => some(wh.hitsplats, (h) => !Number.isInteger(h.damage)));
+        if (Math.abs(sumAccuracy - 1.0) > 0.00001 || fractionalDamage) {
+          console.warn(`Hit dist [${this.opts.loadoutName}/${ix}] failed sanity check!`, { sumAccuracy, fractionalDamage, hitDist });
+        }
+      });
     }
 
     return this.applyNpcTransforms(dist);
