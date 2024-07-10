@@ -42210,6 +42210,96 @@
     "isTwoHanded": false
   },
   {
+    "name": "Dark squall hood",
+    "id": 29566,
+    "version": "",
+    "slot": "head",
+    "image": "Dark squall hood.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 2,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 2,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dark squall robe bottom",
+    "id": 29570,
+    "version": "",
+    "slot": "legs",
+    "image": "Dark squall robe bottom.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 3,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 3,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dark squall robe top",
+    "id": 29568,
+    "version": "",
+    "slot": "body",
+    "image": "Dark squall robe top.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 4,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 4,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Dark trousers",
     "id": 19964,
     "version": "",
@@ -52470,6 +52560,96 @@
     "isTwoHanded": false
   },
   {
+    "name": "Elite black full helm",
+    "id": 29560,
+    "version": "",
+    "slot": "head",
+    "image": "Elite black full helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 4
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -6,
+      "ranged": -3
+    },
+    "defensive": {
+      "stab": 13,
+      "slash": 14,
+      "crush": 11,
+      "magic": -1,
+      "ranged": 13
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Elite black platebody",
+    "id": 29562,
+    "version": "",
+    "slot": "body",
+    "image": "Elite black platebody.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 8
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -30,
+      "ranged": -15
+    },
+    "defensive": {
+      "stab": 46,
+      "slash": 44,
+      "crush": 38,
+      "magic": -6,
+      "ranged": 44
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Elite black platelegs",
+    "id": 29564,
+    "version": "",
+    "slot": "legs",
+    "image": "Elite black platelegs.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 6
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -21,
+      "ranged": -11
+    },
+    "defensive": {
+      "stab": 24,
+      "slash": 22,
+      "crush": 20,
+      "magic": -4,
+      "ranged": 22
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Elite calamity breeches",
     "id": 26694,
     "version": "Broken",
@@ -53302,9 +53482,9 @@
     },
     "defensive": {
       "stab": 0,
-      "slash": 0,
+      "slash": 3,
       "crush": 0,
-      "magic": 0,
+      "magic": 5,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -107697,7 +107877,7 @@
       "magic": 0,
       "ranged": 0
     },
-    "isTwoHanded": false
+    "isTwoHanded": true
   },
   {
     "name": "Scroll sack",
