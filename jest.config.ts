@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type {Config} from 'jest';
+import type { Config } from 'jest';
 
 import nextJest from 'next/jest.js';
 
@@ -31,7 +31,7 @@ const config: Config = {
   // collectCoverageFrom: undefined,
 
   // The directory where Jest should output its coverage files
-  coverageDirectory: "coverage",
+  coverageDirectory: 'coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
@@ -39,7 +39,7 @@ const config: Config = {
   // ],
 
   // Indicates which provider should be used to instrument code for coverage
-  coverageProvider: "v8",
+  coverageProvider: 'v8',
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
@@ -100,7 +100,7 @@ const config: Config = {
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/src/tests/__mocks__/fileMock.js',
     '\\.(css|less)$': '<rootDir>/src/tests/__mocks__/styleMock.js',
-    '^@/(.*)$': '<rootDir>/src/$1'
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -157,7 +157,7 @@ const config: Config = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: "jsdom",
+  testEnvironment: 'jsdom',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -187,7 +187,7 @@ const config: Config = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    '^.+\\.(ts|tsx)?$': ['ts-jest', {tsconfig: {jsx: 'react'}}],
+    '^.+\\.(ts|tsx)?$': ['ts-jest', { tsconfig: { jsx: 'react' } }],
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
