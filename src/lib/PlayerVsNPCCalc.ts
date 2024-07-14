@@ -49,7 +49,7 @@ import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonster, scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { CombatStyleType, getRangedDamageType } from '@/types/PlayerCombatStyle';
 import { range, some, sum } from 'd3-array';
-import { FeatureStatus, isDefined } from '@/utils';
+import { FeatureStatus } from '@/utils';
 import UserIssueType from '@/enums/UserIssueType';
 import {
   BoltContext, diamondBolts, dragonstoneBolts, onyxBolts, opalBolts, pearlBolts, rubyBolts,
@@ -1420,16 +1420,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       );
     }
     if (this.monster.name === 'Tormented Demon') {
-      if (this.monster.inputs.tormentedDemonPhase === 'Unshielded') {
-        if (styleType === 'crush'
-          || (styleType === 'magic' && isDefined(this.player.spell))
-          || (styleType === 'ranged' && getRangedDamageType(this.player.equipment.weapon!.category) === 'heavy')) {
-          const bonusDmg = Math.max(0, this.getAttackSpeed() ** 2 - 16);
-          dist = dist.transform(
-            flatAddTransformer(bonusDmg),
-            { transformInaccurate: false },
-          );
-        }
+      if (this.tdUnshieldedBonusApplies()) {
+        const bonusDmg = Math.max(0, this.getAttackSpeed() ** 2 - 16);
+        dist = dist.transform(
+          flatAddTransformer(bonusDmg),
+          { transformInaccurate: false },
+        );
       } else if (!this.isUsingDemonbane() && !this.isUsingAbyssal()) {
         // 20% damage reduction when not using demonbane or abyssal
         // todo floor of 1?
@@ -1534,6 +1530,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const procChance = this.opts.usingSpecialAttack ? 1.0
         : (acc / 3) + ((acc * acc) * 2 / 9);
       return this.getAttackSpeed() - procChance;
+    }
+
+    if (this.tdUnshieldedBonusApplies()) {
+      return this.getAttackSpeed() - 1;
     }
 
     return this.getAttackSpeed();
