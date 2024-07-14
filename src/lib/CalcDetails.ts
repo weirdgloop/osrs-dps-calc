@@ -77,6 +77,8 @@ export enum DetailKey {
   HIT_DIST_FINAL_MIN = 'Hit dist min',
   HIT_DIST_FINAL_MAX = 'Hit dist max',
   HIT_DIST_FINAL_EXPECTED = 'Hit dist expected',
+  DOT_EXPECTED = 'Damage over time expected',
+  DOT_MAX = 'Damage over time max',
   GUARDIANS_DMG_BONUS = 'Guardians hit multiplier',
   PLAYER_DEFENCE_ROLL_LEVEL = 'Player defence level',
   PLAYER_DEFENCE_ROLL_LEVEL_PRAYER = 'Player defence level prayer',

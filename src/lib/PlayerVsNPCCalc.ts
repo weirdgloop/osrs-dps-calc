@@ -54,6 +54,7 @@ import UserIssueType from '@/enums/UserIssueType';
 import {
   BoltContext, diamondBolts, dragonstoneBolts, onyxBolts, opalBolts, pearlBolts, rubyBolts,
 } from '@/lib/dists/bolts';
+import { burningClawDoT, burningClawSpec, dClawDist } from '@/lib/dists/claws';
 
 const PARTIALLY_IMPLEMENTED_SPECS: string[] = [
   'Ancient godsword',
@@ -225,6 +226,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing(['Arclight', 'Emberlight']) && mattrs.includes(MonsterAttribute.DEMON)) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor([7, 10]));
     }
+    if (this.wearing(['Bone claws', 'Burning claws']) && mattrs.includes(MonsterAttribute.DEMON)) {
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor([1, 20]));
+    }
     if (this.wearing('Dragon hunter lance') && mattrs.includes(MonsterAttribute.DRAGON)) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DRAGONHUNTER, attackRoll, [6, 5]);
     }
@@ -338,6 +342,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.wearing(['Arclight', 'Emberlight']) && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([7, 10]));
+    }
+    if (this.wearing(['Bone claws', 'Burning claws']) && mattrs.includes(MonsterAttribute.DEMON)) {
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([1, 20]));
     }
     if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {
       const obsidianBonus = this.trackFactor(DetailKey.MAX_HIT_OBSIDIAN, baseMax, [1, 10]);
@@ -906,7 +913,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
   /**
    * Get the min and max hit for this loadout, which is based on the player's current combat style.
-   * Don't use this for player-facing values! Use `getDistribution().getMax()`
+   * Don't use this for player-facing values! Use `getMax()`
    */
   getMinAndMax(): MinMax {
     if (this.player.style.stance !== 'Manual Cast') {
@@ -1023,6 +1030,46 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     return this.track(DetailKey.PLAYER_ACCURACY_FINAL, hitChance);
   }
 
+  public getDoTExpected(): number {
+    let ret: number = 0;
+    if (this.opts.usingSpecialAttack) {
+      if (this.wearing(['Bone claws', 'Burning claws'])) {
+        ret = burningClawDoT(this.getHitChance());
+      } if (this.wearing('Scorching bow')) {
+        ret = this.monster.attributes.includes(MonsterAttribute.DEMON) ? 5 : 1;
+      }
+    }
+
+    if (ret !== 0) {
+      this.track(DetailKey.DOT_EXPECTED, ret);
+    }
+    return 0;
+  }
+
+  public getDoTMax(): number {
+    let ret: number = 0;
+    if (this.opts.usingSpecialAttack) {
+      if (this.wearing(['Bone claws', 'Burning claws'])) {
+        ret = 30;
+      } if (this.wearing('Scorching bow')) {
+        ret = this.monster.attributes.includes(MonsterAttribute.DEMON) ? 5 : 1;
+      }
+    }
+
+    if (ret !== 0) {
+      this.track(DetailKey.DOT_MAX, ret);
+    }
+    return ret;
+  }
+
+  public getMax(): number {
+    return this.getDistribution().getMax() + this.getDoTMax();
+  }
+
+  public getExpectedDamage(): number {
+    return this.getDistribution().getExpectedDamage() + this.getDoTExpected();
+  }
+
   public getDistribution(): AttackDistribution {
     if (this.memoizedDist === undefined) {
       this.memoizedDist = this.getDistributionImpl();
@@ -1095,75 +1142,14 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     let accurateZeroApplicable: boolean = true;
-    const boneClaws = this.wearing('Bone claws');
-    if (this.opts.usingSpecialAttack && (boneClaws || this.wearing('Dragon claws'))) {
-      accurateZeroApplicable = false;
-
-      const clawSpecDist = new HitDistribution([]);
-      const startRoll = boneClaws ? 1 : 0;
-      const fourthSplat = boneClaws ? [] : [Hitsplat.INACCURATE];
-      for (let accRoll = startRoll; accRoll < 4; accRoll++) {
-        const low = Math.trunc(max * (4 - accRoll) / 4);
-        const high = max + low - 1;
-        const chancePreviousRollsFail = (1 - acc) ** (accRoll - startRoll);
-        const chanceThisRollPasses = chancePreviousRollsFail * acc;
-        const chancePerDmg = chanceThisRollPasses / (high - low + 1);
-        for (let dmg = low; dmg <= high; dmg++) {
-          switch (accRoll) {
-            case 0:
-              clawSpecDist.addHit(new WeightedHit(chancePerDmg, [
-                new Hitsplat(Math.trunc(dmg / 2)),
-                new Hitsplat(Math.trunc(dmg / 4)),
-                new Hitsplat(Math.trunc(dmg / 8)),
-                new Hitsplat(Math.trunc(dmg / 8) + 1),
-              ]));
-              break;
-
-            case 1:
-              clawSpecDist.addHit(new WeightedHit(chancePerDmg, [
-                new Hitsplat(Math.trunc(dmg / 2)),
-                new Hitsplat(Math.trunc(dmg / 4)),
-                new Hitsplat(Math.trunc(dmg / 4) + 1),
-                ...fourthSplat,
-              ]));
-              break;
-
-            case 2:
-              clawSpecDist.addHit(new WeightedHit(chancePerDmg, [
-                new Hitsplat(Math.trunc(dmg / 2)),
-                new Hitsplat(Math.trunc(dmg / 2) + 1),
-                Hitsplat.INACCURATE,
-                ...fourthSplat,
-              ]));
-              break;
-
-            default:
-              clawSpecDist.addHit(new WeightedHit(chancePerDmg, [
-                new Hitsplat(dmg + 1),
-                Hitsplat.INACCURATE,
-                Hitsplat.INACCURATE,
-                ...fourthSplat,
-              ]));
-              break;
-          }
-        }
+    if (this.opts.usingSpecialAttack) {
+      if (this.wearing('Dragon claws')) {
+        accurateZeroApplicable = false;
+        dist = dClawDist(acc, max);
+      } else if (this.wearing(['Bone claws', 'Burning claws'])) {
+        accurateZeroApplicable = false;
+        dist = burningClawSpec(acc, max);
       }
-
-      // todo(wgs): what is the failure system like for bone claws?
-      const chanceAllFail = (1 - acc) ** (4 - startRoll);
-      clawSpecDist.addHit(new WeightedHit(chanceAllFail * 2 / 3, [
-        new Hitsplat(1, false),
-        new Hitsplat(1, false),
-        Hitsplat.INACCURATE,
-        ...fourthSplat,
-      ]));
-      clawSpecDist.addHit(new WeightedHit(chanceAllFail / 3, [
-        Hitsplat.INACCURATE,
-        Hitsplat.INACCURATE,
-        Hitsplat.INACCURATE,
-        ...fourthSplat,
-      ]));
-      dist = new AttackDistribution([clawSpecDist]);
     }
 
     if (this.opts.usingSpecialAttack && this.wearing(['Dragon halberd', 'Crystal halberd']) && this.monster.size > 1) {
@@ -1535,8 +1521,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    * Returns the expected damage per tick, based on the player's attack speed.
    */
   public getDpt() {
-    return this.getDistribution()
-      .getExpectedDamage() / this.getExpectedAttackSpeed();
+    return this.getExpectedDamage() / this.getExpectedAttackSpeed();
   }
 
   /**
