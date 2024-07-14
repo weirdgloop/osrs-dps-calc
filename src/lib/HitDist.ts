@@ -402,7 +402,16 @@ export function cappedRerollTransformer(limit: number, rollMax: number, offset: 
 
 export function multiplyTransformer(numerator: number, divisor: number = 1, minimum: number = 0): HitTransformer {
   return (h) => {
-    const dmg = Math.min(h.damage, Math.max(minimum, Math.trunc(numerator * h.damage / divisor)));
+    let dmg = Math.trunc(numerator * h.damage / divisor);
+    if (minimum !== 0) {
+      if (h.damage >= minimum) {
+        // if the value started above the minimum, make sure it doesn't drop below
+        dmg = Math.max(minimum, dmg);
+      } else {
+        // if the value started below the minimum, make sure it isn't reduced, but respect increases
+        dmg = Math.max(h.damage, dmg);
+      }
+    }
     return new HitDistribution(
       [new WeightedHit(1.0, [new Hitsplat(dmg, h.accurate)])],
     );
