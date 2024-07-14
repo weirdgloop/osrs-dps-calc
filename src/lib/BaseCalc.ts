@@ -556,6 +556,24 @@ export default class BaseCalc {
     ]);
   }
 
+  protected isUsingDemonbane(): boolean {
+    switch (this.player.style.type) {
+      case 'magic':
+        return this.player.spell?.name.includes('Demonbane') || false;
+
+      case 'ranged':
+        return this.wearing(['Scorching bow']);
+
+      default:
+        return this.wearing(['Silverlight', 'Darklight', 'Arclight', 'Emberlight', 'Bone claws', 'Burning claws']);
+    }
+  }
+
+  protected isUsingAbyssal(): boolean {
+    return this.isUsingMeleeStyle()
+      && this.wearing(['Abyssal bludgeon', 'Abyssal dagger', 'Abyssal whip', 'Abyssal tentacle']);
+  }
+
   protected addIssue(type: UserIssueType, message: string) {
     this.userIssues.push({ type, message, loadout: this.opts.loadoutName });
   }

@@ -69,6 +69,7 @@ export enum DetailKey {
   MIN_HIT_FINAL = 'Min hit',
   PLAYER_ACCURACY_DAWNBRINGER = 'Player accuracy override dawnbringer',
   PLAYER_ACCURACY_SCURRIUS_RAT = 'Player accuracy override giant rat',
+  PLAYER_ACCURACY_TD = 'Player accuracy override tormented demon',
   PLAYER_ACCURACY_BASE = 'Player accuracy base',
   PLAYER_ACCURACY_BRIMSTONE = 'Player accuracy brimstone ring',
   PLAYER_ACCURACY_FANG_TOA = 'Player accuracy fang toa',

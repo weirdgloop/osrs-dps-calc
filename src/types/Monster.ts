@@ -1,6 +1,7 @@
 import { CombatStyleType, RangedDamageType } from '@/types/PlayerCombatStyle';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { Spellement } from '@/types/Spell';
+import { TD_PHASES } from '@/lib/constants';
 
 // For now this is the same as player combat styles, but it may support other stuff in future like "typeless"
 export type MonsterCombatStyle = CombatStyleType;
@@ -95,6 +96,8 @@ export interface Monster {
       emberlight: number;
       bgs: number;
       tonalztic: number;
-    }
+    };
+
+    tormentedDemonPhase?: typeof TD_PHASES[number];
   }
 }

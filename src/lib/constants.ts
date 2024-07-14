@@ -392,3 +392,5 @@ export const FLAT_ARMOUR: { [npcId: number]: number } = {
   13033: -4, // sulphur nagua
   13029: -2, // grimy lizard
 };
+
+export const TD_PHASES = ['Shielded', 'Shielded (Defenceless)', 'Unshielded'] as const;

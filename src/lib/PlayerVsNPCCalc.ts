@@ -49,7 +49,7 @@ import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonster, scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { CombatStyleType, getRangedDamageType } from '@/types/PlayerCombatStyle';
 import { range, some, sum } from 'd3-array';
-import { FeatureStatus } from '@/utils';
+import { FeatureStatus, isDefined } from '@/utils';
 import UserIssueType from '@/enums/UserIssueType';
 import {
   BoltContext, diamondBolts, dragonstoneBolts, onyxBolts, opalBolts, pearlBolts, rubyBolts,
@@ -997,6 +997,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
+    if (this.monster.name === 'Tormented Demon' && this.monster.inputs.tormentedDemonPhase !== 'Shielded') {
+      this.track(DetailKey.PLAYER_ACCURACY_TD, 1.0);
+      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
+    }
+
     if (this.opts.usingSpecialAttack && (this.wearing(['Voidwaker', 'Dawnbringer']) || this.isWearingMlb())) {
       return 1.0;
     }
@@ -1413,6 +1418,23 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         flatAddTransformer(this.player.buffs.baAttackerLevel),
         { transformInaccurate: true },
       );
+    }
+    if (this.monster.name === 'Tormented Demon') {
+      if (this.monster.inputs.tormentedDemonPhase === 'Unshielded') {
+        if (styleType === 'crush'
+          || (styleType === 'magic' && isDefined(this.player.spell))
+          || (styleType === 'ranged' && getRangedDamageType(this.player.equipment.weapon!.category) === 'heavy')) {
+          const bonusDmg = Math.max(0, this.getAttackSpeed() ** 2 - 16);
+          dist = dist.transform(
+            flatAddTransformer(bonusDmg),
+            { transformInaccurate: false },
+          );
+        }
+      } else if (!this.isUsingDemonbane() && !this.isUsingAbyssal()) {
+        // 20% damage reduction when not using demonbane or abyssal
+        // todo floor of 1?
+        dist = dist.transform(multiplyTransformer(4, 5, 1));
+      }
     }
 
     const flatArmour = FLAT_ARMOUR[this.monster.id];

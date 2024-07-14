@@ -19,6 +19,7 @@ import rangedStrength from '@/public/img/bonuses/ranged_strength.png';
 import toaRaidLevel from '@/public/img/toa_raidlevel.webp';
 import raidsIcon from '@/public/img/raids_icon.webp';
 import coxCmIcon from '@/public/img/cox_challenge_mode.png';
+import bone_claw from '@/public/img/misc/bone_claw.webp';
 import { useStore } from '@/state';
 import { observer } from 'mobx-react-lite';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
@@ -28,6 +29,7 @@ import NumberInput from '@/app/components/generic/NumberInput';
 import {
   GUARDIAN_IDS,
   PARTY_SIZE_REQUIRED_MONSTER_IDS,
+  TD_PHASES,
   TOMBS_OF_AMASCUT_MONSTER_IDS,
   TOMBS_OF_AMASCUT_PATH_MONSTER_IDS,
 } from '@/lib/constants';
@@ -134,6 +136,7 @@ const MonsterContainer: React.FC = observer(() => {
     }
   }, [store, displayMonster.skills.hp]);
 
+  const tdPhaseOptions = useMemo(() => TD_PHASES.map((s) => ({ label: s })), []);
   const extraMonsterOptions = useMemo(() => {
     // Determine whether we need to show any extra monster option components
     const comps: React.ReactNode[] = [];
@@ -286,6 +289,28 @@ const MonsterContainer: React.FC = observer(() => {
               max={99}
               step={1}
               onChange={(v) => store.updateMonster({ inputs: { partyAvgMiningLevel: v } })}
+            />
+          </div>
+        </div>,
+      );
+    }
+
+    if (monster.name === 'Tormented Demon') {
+      comps.push(
+        <div key="td-phase">
+          <h4 className="font-bold font-serif">
+            <img src={bone_claw.src} alt="" className="inline-block" />
+            {' '}
+            Phase
+          </h4>
+          <div className="mt-2">
+            <Select
+              id="presets"
+              items={tdPhaseOptions}
+              placeholder={monster.inputs.tormentedDemonPhase}
+              value={tdPhaseOptions.find((o) => o.label === monster.inputs.tormentedDemonPhase)}
+              resetAfterSelect
+              onSelectedItemChange={(v) => store.updateMonster({ inputs: { tormentedDemonPhase: v?.label || undefined } })}
             />
           </div>
         </div>,
