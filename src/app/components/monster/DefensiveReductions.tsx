@@ -9,6 +9,7 @@ import elderMaul from '@/public/img/def_reductions/Elder_maul.png';
 import tonalztic from '@/public/img/def_reductions/Tonalztics_of_ralos.png';
 import dwh from '@/public/img/def_reductions/Dragon_warhammer.webp';
 import arc from '@/public/img/def_reductions/Arclight.png';
+import emberlight from '@/public/img/def_reductions/Emberlight.png';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 
@@ -75,6 +76,20 @@ const DefensiveReductions: React.FC = observer(() => {
               <img src={arc.src} width={18} className="inline-block" alt="" />
               {' '}
               Arclight hits
+            </span>
+          </div>
+          <div className="w-full">
+            <NumberInput
+              className="form-control w-1/6"
+              required
+              min={0}
+              value={defenceReductions.emberlight}
+              onChange={(v) => store.updateMonster({ inputs: { defenceReductions: { emberlight: v } } })}
+            />
+            <span className="pl-2">
+              <img src={emberlight.src} width={18} className="inline-block" alt="" />
+              {' '}
+              Emberlight hits
             </span>
           </div>
           <div className="w-full">

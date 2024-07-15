@@ -28,6 +28,7 @@ import NumberInput from '@/app/components/generic/NumberInput';
 import {
   GUARDIAN_IDS,
   PARTY_SIZE_REQUIRED_MONSTER_IDS,
+  TD_PHASES,
   TOMBS_OF_AMASCUT_MONSTER_IDS,
   TOMBS_OF_AMASCUT_PATH_MONSTER_IDS,
 } from '@/lib/constants';
@@ -134,6 +135,7 @@ const MonsterContainer: React.FC = observer(() => {
     }
   }, [store, displayMonster.skills.hp]);
 
+  const tdPhaseOptions = useMemo(() => TD_PHASES.map((s) => ({ label: s })), []);
   const extraMonsterOptions = useMemo(() => {
     // Determine whether we need to show any extra monster option components
     const comps: React.ReactNode[] = [];
@@ -286,6 +288,26 @@ const MonsterContainer: React.FC = observer(() => {
               max={99}
               step={1}
               onChange={(v) => store.updateMonster({ inputs: { partyAvgMiningLevel: v } })}
+            />
+          </div>
+        </div>,
+      );
+    }
+
+    if (monster.name === 'Tormented Demon') {
+      comps.push(
+        <div key="td-phase">
+          <h4 className="font-bold font-serif">
+            Phase
+          </h4>
+          <div className="mt-2">
+            <Select
+              id="presets"
+              items={tdPhaseOptions}
+              placeholder={monster.inputs.tormentedDemonPhase}
+              value={tdPhaseOptions.find((o) => o.label === monster.inputs.tormentedDemonPhase)}
+              resetAfterSelect
+              onSelectedItemChange={(v) => store.updateMonster({ inputs: { tormentedDemonPhase: v?.label || undefined } })}
             />
           </div>
         </div>,

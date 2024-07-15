@@ -1158,6 +1158,46 @@
     "weakness": null
   },
   {
+    "id": 13483,
+    "name": "Agile Warrior",
+    "version": "",
+    "image": "Agile Warrior.png",
+    "level": 96,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 25,
+      "def": 80,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 80,
+      "str": 25
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
     "id": 6327,
     "name": "Agrith Naar",
     "version": "Hard",
@@ -1495,9 +1535,9 @@
     "level": 337,
     "speed": 6,
     "style": [
-      "Melee",
       "Magic",
-      "Ranged"
+      "Ranged",
+      "Slash"
     ],
     "size": 3,
     "max_hit": "55",
@@ -4469,6 +4509,86 @@
     "weakness": null
   },
   {
+    "id": 13514,
+    "name": "Assassin (While Guthix Sleeps)",
+    "version": "1",
+    "image": "Assassin (While Guthix Sleeps, 1).png",
+    "level": 102,
+    "speed": 5,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "12",
+    "skills": {
+      "atk": 50,
+      "def": 70,
+      "hp": 85,
+      "magic": 30,
+      "ranged": 110,
+      "str": 70
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 90,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 15,
+      "magic": 30,
+      "heavy": 30,
+      "standard": 20,
+      "light": 60,
+      "slash": 10,
+      "stab": 10
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13515,
+    "name": "Assassin (While Guthix Sleeps)",
+    "version": "2",
+    "image": "Assassin (While Guthix Sleeps, 2).png",
+    "level": 102,
+    "speed": 5,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "12",
+    "skills": {
+      "atk": 50,
+      "def": 70,
+      "hp": 85,
+      "magic": 30,
+      "ranged": 110,
+      "str": 70
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 90,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 15,
+      "magic": 30,
+      "heavy": 30,
+      "standard": 20,
+      "light": 60,
+      "slash": 10,
+      "stab": 10
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
     "id": 1284,
     "name": "Asyn Shade",
     "version": "Shade",
@@ -6395,6 +6515,48 @@
       "light": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13528,
+    "name": "Balance Elemental",
+    "version": "",
+    "image": "Balance Elemental.png",
+    "level": 524,
+    "speed": 6,
+    "style": [
+      "Melee",
+      "Ranged",
+      "Magic"
+    ],
+    "size": 0,
+    "max_hit": "30",
+    "skills": {
+      "atk": 275,
+      "def": 275,
+      "hp": 750,
+      "magic": 275,
+      "ranged": 275,
+      "str": 286
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": -40,
+      "magic": -40,
+      "heavy": -40,
+      "standard": 0,
+      "light": 5,
+      "slash": 0,
+      "stab": 5
     },
     "attributes": [],
     "weakness": null
@@ -24757,6 +24919,486 @@
     "weakness": null
   },
   {
+    "id": 13464,
+    "name": "Elite Black Knight",
+    "version": "Female",
+    "image": "Elite Black Knight (female).png",
+    "level": 138,
+    "speed": 6,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "13",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 70,
+      "ranged": 20,
+      "str": 120
+    },
+    "offensive": {
+      "atk": 85,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 40,
+      "magic": -5,
+      "heavy": 60,
+      "standard": 135,
+      "light": 140,
+      "slash": 130,
+      "stab": 110
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13463,
+    "name": "Elite Black Knight",
+    "version": "Male",
+    "image": "Elite Black Knight (male).png",
+    "level": 138,
+    "speed": 6,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "13",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 70,
+      "ranged": 20,
+      "str": 120
+    },
+    "offensive": {
+      "atk": 85,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 40,
+      "magic": -5,
+      "heavy": 60,
+      "standard": 135,
+      "light": 140,
+      "slash": 130,
+      "stab": 110
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13470,
+    "name": "Elite Dark Mage",
+    "version": "Female",
+    "image": "Elite Dark Mage (female).png",
+    "level": 96,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "16",
+    "skills": {
+      "atk": 25,
+      "def": 80,
+      "hp": 80,
+      "magic": 80,
+      "ranged": 25,
+      "str": 25
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 80,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13469,
+    "name": "Elite Dark Mage",
+    "version": "Male",
+    "image": "Elite Dark Mage (male).png",
+    "level": 96,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "16",
+    "skills": {
+      "atk": 25,
+      "def": 80,
+      "hp": 80,
+      "magic": 80,
+      "ranged": 25,
+      "str": 25
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 80,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13468,
+    "name": "Elite Dark Ranger",
+    "version": "Female",
+    "image": "Elite Dark Ranger (female).png",
+    "level": 96,
+    "speed": 5,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "9",
+    "skills": {
+      "atk": 25,
+      "def": 80,
+      "hp": 80,
+      "magic": 40,
+      "ranged": 80,
+      "str": 25
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 80,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13467,
+    "name": "Elite Dark Ranger",
+    "version": "Male",
+    "image": "Elite Dark Ranger (male).png",
+    "level": 96,
+    "speed": 5,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "9",
+    "skills": {
+      "atk": 25,
+      "def": 80,
+      "hp": 80,
+      "magic": 40,
+      "ranged": 80,
+      "str": 25
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 80,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13466,
+    "name": "Elite Dark Warrior",
+    "version": "Female",
+    "image": "Elite Dark Warrior (female).png",
+    "level": 96,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "9",
+    "skills": {
+      "atk": 80,
+      "def": 80,
+      "hp": 80,
+      "magic": 40,
+      "ranged": 25,
+      "str": 80
+    },
+    "offensive": {
+      "atk": 80,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13465,
+    "name": "Elite Dark Warrior",
+    "version": "Male",
+    "image": "Elite Dark Warrior (male).png",
+    "level": 96,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "9",
+    "skills": {
+      "atk": 80,
+      "def": 80,
+      "hp": 80,
+      "magic": 40,
+      "ranged": 25,
+      "str": 80
+    },
+    "offensive": {
+      "atk": 80,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13531,
+    "name": "Elite Khazard Guard",
+    "version": "1",
+    "image": "Elite Khazard Guard (1).png",
+    "level": 95,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "12",
+    "skills": {
+      "atk": 80,
+      "def": 80,
+      "hp": 85,
+      "magic": 30,
+      "ranged": 1,
+      "str": 88
+    },
+    "offensive": {
+      "atk": 10,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 38,
+      "stab": 44
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13532,
+    "name": "Elite Khazard Guard",
+    "version": "2",
+    "image": "Elite Khazard Guard (2).png",
+    "level": 95,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "12",
+    "skills": {
+      "atk": 80,
+      "def": 80,
+      "hp": 85,
+      "magic": 30,
+      "ranged": 1,
+      "str": 88
+    },
+    "offensive": {
+      "atk": 10,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 38,
+      "stab": 44
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13533,
+    "name": "Elite Khazard Guard",
+    "version": "3",
+    "image": "Elite Khazard Guard (3).png",
+    "level": 95,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "12",
+    "skills": {
+      "atk": 80,
+      "def": 80,
+      "hp": 85,
+      "magic": 30,
+      "ranged": 1,
+      "str": 88
+    },
+    "offensive": {
+      "atk": 10,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 38,
+      "stab": 44
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13534,
+    "name": "Elite Khazard Guard",
+    "version": "4",
+    "image": "Elite Khazard Guard (4).png",
+    "level": 95,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "12",
+    "skills": {
+      "atk": 80,
+      "def": 80,
+      "hp": 85,
+      "magic": 30,
+      "ranged": 1,
+      "str": 88
+    },
+    "offensive": {
+      "atk": 10,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 38,
+      "stab": 44
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
     "id": 6118,
     "name": "Elvarg",
     "version": "Hard",
@@ -42639,7 +43281,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "47",
+    "max_hit": "47 (x3)",
     "skills": {
       "atk": 200,
       "def": 125,
@@ -51260,6 +51902,126 @@
       "light": 19,
       "slash": 15,
       "stab": 17
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13535,
+    "name": "Mercenary axeman",
+    "version": "1",
+    "image": "Mercenary axeman (1).png",
+    "level": 131,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "22",
+    "skills": {
+      "atk": 150,
+      "def": 110,
+      "hp": 110,
+      "magic": 40,
+      "ranged": 1,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 75,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 25
+    },
+    "defensive": {
+      "crush": 80,
+      "magic": 10,
+      "heavy": 30,
+      "standard": 70,
+      "light": 90,
+      "slash": 80,
+      "stab": 110
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13536,
+    "name": "Mercenary axeman",
+    "version": "2",
+    "image": "Mercenary axeman (2).png",
+    "level": 131,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "22",
+    "skills": {
+      "atk": 150,
+      "def": 110,
+      "hp": 110,
+      "magic": 40,
+      "ranged": 1,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 75,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 25
+    },
+    "defensive": {
+      "crush": 80,
+      "magic": 10,
+      "heavy": 30,
+      "standard": 70,
+      "light": 90,
+      "slash": 80,
+      "stab": 110
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13537,
+    "name": "Mercenary mage",
+    "version": "",
+    "image": "Mercenary mage.png",
+    "level": 112,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "5",
+    "skills": {
+      "atk": 40,
+      "def": 90,
+      "hp": 150,
+      "magic": 150,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 150,
+      "magic_str": 10,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 60,
+      "magic": 10,
+      "heavy": 15,
+      "standard": 10,
+      "light": 5,
+      "slash": 40,
+      "stab": 50
     },
     "attributes": [],
     "weakness": null
@@ -77705,6 +78467,46 @@
     "weakness": null
   },
   {
+    "id": 13484,
+    "name": "Strong Warrior",
+    "version": "",
+    "image": "Strong Warrior.png",
+    "level": 96,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "21",
+    "skills": {
+      "atk": 25,
+      "def": 80,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 80,
+      "str": 200
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
     "id": 11273,
     "name": "Strongbones",
     "version": "",
@@ -81840,6 +82642,90 @@
     "weakness": null
   },
   {
+    "id": 13599,
+    "name": "Tormented Demon",
+    "version": "1",
+    "image": "Tormented Demon (1).png",
+    "level": 450,
+    "speed": 6,
+    "style": [
+      "All"
+    ],
+    "size": 3,
+    "max_hit": "31",
+    "skills": {
+      "atk": 255,
+      "def": 150,
+      "hp": 600,
+      "magic": 255,
+      "ranged": 255,
+      "str": 255
+    },
+    "offensive": {
+      "atk": 400,
+      "magic": 300,
+      "magic_str": 5,
+      "ranged": 300,
+      "ranged_str": 5,
+      "str": 10
+    },
+    "defensive": {
+      "crush": 68,
+      "magic": 5,
+      "heavy": 90,
+      "standard": 150,
+      "light": 140,
+      "slash": 175,
+      "stab": 75
+    },
+    "attributes": [
+      "demon"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 13600,
+    "name": "Tormented Demon",
+    "version": "2",
+    "image": "Tormented Demon (2).png",
+    "level": 450,
+    "speed": 6,
+    "style": [
+      "All"
+    ],
+    "size": 3,
+    "max_hit": "31",
+    "skills": {
+      "atk": 255,
+      "def": 150,
+      "hp": 600,
+      "magic": 255,
+      "ranged": 255,
+      "str": 255
+    },
+    "offensive": {
+      "atk": 400,
+      "magic": 300,
+      "magic_str": 5,
+      "ranged": 300,
+      "ranged_str": 5,
+      "str": 10
+    },
+    "defensive": {
+      "crush": 68,
+      "magic": 5,
+      "heavy": 90,
+      "standard": 150,
+      "light": 140,
+      "slash": 175,
+      "stab": 75
+    },
+    "attributes": [
+      "demon"
+    ],
+    "weakness": null
+  },
+  {
     "id": 8512,
     "name": "Tormented Soul",
     "version": "",
@@ -84430,7 +85316,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000005B-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000065-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -84471,7 +85357,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000005B-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000065-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -86465,7 +87351,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000A-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000021-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -86505,7 +87391,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000C-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000023-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -90867,7 +91753,10 @@
       "stab": 0
     },
     "attributes": [],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 30
+    }
   },
   {
     "id": 515,

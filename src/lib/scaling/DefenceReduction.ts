@@ -2,6 +2,7 @@ import { Monster } from '@/types/Monster';
 import { P3_WARDEN_IDS } from '@/lib/constants';
 import { keys } from '@/utils';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
+import { Factor } from '@/lib/Math';
 
 const getDefenceFloor = (m: Monster): number => {
   if (m.name === 'Verzik Vitur' || m.name === 'Vardorvis') {
@@ -82,16 +83,19 @@ const applyDefenceReductions = (m: Monster): Monster => {
     });
   }
 
-  if (reductions.arclight > 0) {
-    // arclight always applies against base stats
-    // https://discord.com/channels/177206626514632704/1098698914498101368/1201061390727794728 (wiki server)
-    const arclightDivisor = m.attributes.includes(MonsterAttribute.DEMON) ? 10 : 20;
-    m = newSkills(m, {
-      atk: m.skills.atk - (reductions.arclight * (Math.trunc(baseSkills.atk / arclightDivisor) + 1)),
-      str: m.skills.str - (reductions.arclight * (Math.trunc(baseSkills.str / arclightDivisor) + 1)),
-      def: m.skills.def - (reductions.arclight * (Math.trunc(baseSkills.def / arclightDivisor) + 1)),
+  const reduceArclight = (monster: Monster, iter: number, [num, den]: Factor): Monster => {
+    if (iter === 0) {
+      return monster;
+    }
+
+    return newSkills(monster, {
+      atk: monster.skills.atk - (iter * (Math.trunc(num * baseSkills.atk / den) + 1)),
+      str: monster.skills.str - (iter * (Math.trunc(num * baseSkills.str / den) + 1)),
+      def: monster.skills.def - (iter * (Math.trunc(num * baseSkills.def / den) + 1)),
     });
-  }
+  };
+  m = reduceArclight(m, reductions.arclight, m.attributes.includes(MonsterAttribute.DEMON) ? [2, 20] : [1, 20]);
+  m = reduceArclight(m, reductions.emberlight, m.attributes.includes(MonsterAttribute.DEMON) ? [3, 20] : [1, 20]);
 
   for (let i = 0; i < reductions.tonalztic; i++) {
     m = newSkills(m, {

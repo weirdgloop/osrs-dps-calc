@@ -23610,6 +23610,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Bone claws",
+    "id": 29577,
+    "version": "",
+    "slot": "weapon",
+    "image": "Bone claws.png",
+    "speed": 4,
+    "category": "Claw",
+    "bonuses": {
+      "str": 32,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 43,
+      "slash": 54,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 6,
+      "crush": 1,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Bone club",
     "id": 5018,
     "version": "",
@@ -42180,6 +42210,96 @@
     "isTwoHanded": false
   },
   {
+    "name": "Dark squall hood",
+    "id": 29566,
+    "version": "",
+    "slot": "head",
+    "image": "Dark squall hood.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 2,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 2,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dark squall robe bottom",
+    "id": 29570,
+    "version": "",
+    "slot": "legs",
+    "image": "Dark squall robe bottom.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 3,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 3,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dark squall robe top",
+    "id": 29568,
+    "version": "",
+    "slot": "body",
+    "image": "Dark squall robe top.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 4,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 4,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Dark trousers",
     "id": 19964,
     "version": "",
@@ -52440,6 +52560,96 @@
     "isTwoHanded": false
   },
   {
+    "name": "Elite black full helm",
+    "id": 29560,
+    "version": "",
+    "slot": "head",
+    "image": "Elite black full helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 4
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -6,
+      "ranged": -3
+    },
+    "defensive": {
+      "stab": 13,
+      "slash": 14,
+      "crush": 11,
+      "magic": -1,
+      "ranged": 13
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Elite black platebody",
+    "id": 29562,
+    "version": "",
+    "slot": "body",
+    "image": "Elite black platebody.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 8
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -30,
+      "ranged": -15
+    },
+    "defensive": {
+      "stab": 46,
+      "slash": 44,
+      "crush": 38,
+      "magic": -6,
+      "ranged": 44
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Elite black platelegs",
+    "id": 29564,
+    "version": "",
+    "slot": "legs",
+    "image": "Elite black platelegs.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 6
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -21,
+      "ranged": -11
+    },
+    "defensive": {
+      "stab": 24,
+      "slash": 22,
+      "crush": 20,
+      "magic": -4,
+      "ranged": 22
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Elite calamity breeches",
     "id": 26694,
     "version": "Broken",
@@ -53246,6 +53456,36 @@
       "crush": 75,
       "magic": 2,
       "ranged": 57
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Emberlight",
+    "id": 29589,
+    "version": "",
+    "slot": "weapon",
+    "image": "Emberlight.png",
+    "speed": 4,
+    "category": "Slash Sword",
+    "bonuses": {
+      "str": 13,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 63,
+      "slash": 70,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 3,
+      "crush": 0,
+      "magic": 5,
+      "ranged": 0
     },
     "isTwoHanded": false
   },
@@ -93480,6 +93720,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Purging staff",
+    "id": 29594,
+    "version": "",
+    "slot": "weapon",
+    "image": "Purging staff.png",
+    "speed": 5,
+    "category": "Staff",
+    "bonuses": {
+      "str": 62,
+      "ranged_str": 0,
+      "magic_str": 100,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 10,
+      "slash": -5,
+      "crush": 83,
+      "magic": 37,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 1,
+      "slash": 1,
+      "crush": 0,
+      "magic": 25,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Purple boater",
     "id": 12311,
     "version": "",
@@ -107578,6 +107848,36 @@
       "ranged": 0
     },
     "isTwoHanded": false
+  },
+  {
+    "name": "Scorching bow",
+    "id": 29591,
+    "version": "",
+    "slot": "weapon",
+    "image": "Scorching bow.png",
+    "speed": 5,
+    "category": "Bow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 40,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 124
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
   },
   {
     "name": "Scroll sack",
