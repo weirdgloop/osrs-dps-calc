@@ -997,6 +997,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
+    if (this.monster.name === 'Tormented Demon' && this.monster.inputs.tormentedDemonPhase !== 'Shielded') {
+      this.track(DetailKey.PLAYER_ACCURACY_TD, 1.0);
+      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
+    }
+
     if (this.opts.usingSpecialAttack && (this.wearing(['Voidwaker', 'Dawnbringer']) || this.isWearingMlb())) {
       return 1.0;
     }
@@ -1414,6 +1419,19 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         { transformInaccurate: true },
       );
     }
+    if (this.monster.name === 'Tormented Demon') {
+      if (this.tdUnshieldedBonusApplies()) {
+        const bonusDmg = Math.max(0, this.getAttackSpeed() ** 2 - 16);
+        dist = dist.transform(
+          flatAddTransformer(bonusDmg),
+          { transformInaccurate: false },
+        );
+      } else if (!this.isUsingDemonbane() && !this.isUsingAbyssal()) {
+        // 20% damage reduction when not using demonbane or abyssal
+        // todo floor of 1?
+        dist = dist.transform(multiplyTransformer(4, 5, 1));
+      }
+    }
 
     const flatArmour = FLAT_ARMOUR[this.monster.id];
     if (flatArmour) {
@@ -1512,6 +1530,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const procChance = this.opts.usingSpecialAttack ? 1.0
         : (acc / 3) + ((acc * acc) * 2 / 9);
       return this.getAttackSpeed() - procChance;
+    }
+
+    if (this.tdUnshieldedBonusApplies()) {
+      return this.getAttackSpeed() - 1;
     }
 
     return this.getAttackSpeed();

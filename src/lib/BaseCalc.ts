@@ -8,8 +8,9 @@ import { UserIssue } from '@/types/State';
 import { CalcDetails, DetailEntry } from '@/lib/CalcDetails';
 import { Factor } from '@/lib/Math';
 import { scaleMonster } from '@/lib/MonsterScaling';
-import { getCombatStylesForCategory } from '@/utils';
+import { getCombatStylesForCategory, isDefined } from '@/utils';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
+import { getRangedDamageType } from '@/types/PlayerCombatStyle';
 
 export interface CalcOpts {
   loadoutName?: string,
@@ -554,6 +555,44 @@ export default class BaseCalc {
       'Justiciar chestguard',
       'Justiciar legguards',
     ]);
+  }
+
+  protected isUsingDemonbane(): boolean {
+    switch (this.player.style.type) {
+      case 'magic':
+        return this.player.spell?.name.includes('Demonbane') || false;
+
+      case 'ranged':
+        return this.wearing(['Scorching bow']);
+
+      default:
+        return this.wearing(['Silverlight', 'Darklight', 'Arclight', 'Emberlight', 'Bone claws', 'Burning claws']);
+    }
+  }
+
+  protected isUsingAbyssal(): boolean {
+    return this.isUsingMeleeStyle()
+      && this.wearing(['Abyssal bludgeon', 'Abyssal dagger', 'Abyssal whip', 'Abyssal tentacle']);
+  }
+
+  protected tdUnshieldedBonusApplies(): boolean {
+    if (this.monster.name !== 'Tormented Demon' || this.monster.inputs.tormentedDemonPhase !== 'Unshielded') {
+      return false;
+    }
+
+    switch (this.player.style.type) {
+      case 'magic':
+        return isDefined(this.player.spell);
+
+      case 'ranged':
+        return getRangedDamageType(this.player.equipment.weapon!.category) === 'heavy';
+
+      case 'crush':
+        return true;
+
+      default:
+        return false;
+    }
   }
 
   protected addIssue(type: UserIssueType, message: string) {
