@@ -114,6 +114,11 @@ export interface Player extends EquipmentStats {
      */
     baAttackerLevel: number;
     /**
+     * Distance from the monster. Used for chinchompa accuracy modifiers, ignored otherwise.
+     * @see https://oldschool.runescape.wiki/w/Chinchompa#Chinchompa_guide
+     */
+    chinchompaDistance: number;
+    /**
      * Whether the Kandarin Hard Diary has been completed, which provides 10% increase for the enchanted bolt spec to activate.
      * @see https://oldschool.runescape.wiki/w/Kandarin_Diary#Hard
      */

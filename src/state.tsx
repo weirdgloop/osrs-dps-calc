@@ -104,6 +104,7 @@ export const generateEmptyPlayer = (name?: string): Player => ({
     forinthrySurge: false,
     soulreaperStacks: 0,
     baAttackerLevel: 0,
+    chinchompaDistance: 4, // 4 tiles is the optimal range for "medium fuse" (rapid), which is the default selected stance
     usingSunfireRunes: false,
   },
   spell: null,
