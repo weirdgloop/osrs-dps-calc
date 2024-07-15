@@ -152,7 +152,7 @@ const ExtraOptions: React.FC = observer(() => {
           <span className="ml-1 text-sm select-none">
             <img src={chinchompa.src} className="inline-block h-fit" alt="" />
             {' '}
-            Chinchompa distance
+            Chinchompa distance (tiles)
             {' '}
             <span
               className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
