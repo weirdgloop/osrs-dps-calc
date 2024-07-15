@@ -19,7 +19,6 @@ import rangedStrength from '@/public/img/bonuses/ranged_strength.png';
 import toaRaidLevel from '@/public/img/toa_raidlevel.webp';
 import raidsIcon from '@/public/img/raids_icon.webp';
 import coxCmIcon from '@/public/img/cox_challenge_mode.png';
-import bone_claw from '@/public/img/misc/bone_claw.webp';
 import { useStore } from '@/state';
 import { observer } from 'mobx-react-lite';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
@@ -299,8 +298,6 @@ const MonsterContainer: React.FC = observer(() => {
       comps.push(
         <div key="td-phase">
           <h4 className="font-bold font-serif">
-            <img src={bone_claw.src} alt="" className="inline-block" />
-            {' '}
             Phase
           </h4>
           <div className="mt-2">
