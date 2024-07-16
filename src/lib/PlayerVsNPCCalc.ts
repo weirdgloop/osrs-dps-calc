@@ -1043,7 +1043,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (ret !== 0) {
       this.track(DetailKey.DOT_EXPECTED, ret);
     }
-    return 0;
+    return ret;
   }
 
   public getDoTMax(): number {
