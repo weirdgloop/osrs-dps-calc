@@ -612,6 +612,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const mattrs = this.monster.attributes;
     let needRevWeaponBonus = this.isRevWeaponBuffApplicable();
     let needDragonbane = this.wearing('Dragon hunter crossbow') && mattrs.includes(MonsterAttribute.DRAGON);
+    let needDemonbane = this.wearing('Scorching bow') && mattrs.includes(MonsterAttribute.DEMON);
 
     // Specific bonuses that are applied from equipment
     const { buffs } = this.player;
@@ -635,6 +636,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         needDragonbane = false;
         numerator += 5;
       }
+      if (needDemonbane) {
+        needDemonbane = false;
+        numerator += 6;
+      }
       maxHit = this.trackFactor(DetailKey.MAX_HIT_BLACK_MASK, maxHit, [numerator, 20]);
     }
 
@@ -651,12 +656,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (needDragonbane) {
       maxHit = Math.trunc(maxHit * 5 / 4);
     }
+    if (needDemonbane) {
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([3, 10]));
+    }
 
     if (this.isWearingRatBoneWeapon() && mattrs.includes(MonsterAttribute.RAT)) {
       maxHit = this.trackAdd(DetailKey.MAX_HIT_RATBANE, maxHit, 10);
-    }
-    if (this.wearing('Scorching bow') && mattrs.includes(MonsterAttribute.DEMON)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([3, 10]));
     }
 
     if (this.wearing('Tonalztics of ralos')) {
