@@ -614,21 +614,23 @@ export default class BaseCalc {
     }
 
     // specs are never manual cast, although the base loadout can be at the same time
-    if (this.opts.usingSpecialAttack && this.player.style.stance === 'Manual Cast') {
-      this.player = {
-        ...this.player,
-        style: getCombatStylesForCategory(eq.weapon?.category || EquipmentCategory.UNARMED)[0],
-        spell: null,
-      };
-    }
+    if (this.opts.usingSpecialAttack) {
+      if (this.player.style.stance === 'Manual Cast') {
+        this.player = {
+          ...this.player,
+          style: getCombatStylesForCategory(eq.weapon?.category || EquipmentCategory.UNARMED)[0],
+          spell: null,
+        };
+      }
 
-    // these staves use a built-in spell for their spec
-    if (['Accursed sceptre (a)', 'Eldritch nightmare staff', 'Volatile nightmare staff'].includes(eq.weapon?.name || '')) {
-      this.player = {
-        ...this.player,
-        style: getCombatStylesForCategory(EquipmentCategory.POWERED_STAFF)[0],
-        spell: null,
-      };
+      // these staves use a built-in spell for their spec
+      if (['Accursed sceptre (a)', 'Eldritch nightmare staff', 'Volatile nightmare staff'].includes(eq.weapon?.name || '')) {
+        this.player = {
+          ...this.player,
+          style: getCombatStylesForCategory(EquipmentCategory.POWERED_STAFF)[0],
+          spell: null,
+        };
+      }
     }
 
     // we should do clone-edits here to prevent affecting ui state
