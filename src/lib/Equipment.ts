@@ -339,7 +339,7 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Dawnbringer': 30,
   'Dragon halberd': 30,
   'Crystal halberd': 30,
-  'Bone claws': 30,
+  'Burning claws': 30,
 
   'Magic longbow': 35,
   'Magic comp bow': 35,
