@@ -4513,13 +4513,14 @@
     "name": "Assassin (While Guthix Sleeps)",
     "version": "1",
     "image": "Assassin (While Guthix Sleeps, 1).png",
-    "level": 102,
+    "level": 147,
     "speed": 5,
     "style": [
-      "Ranged"
+      "Ranged",
+      "Slash"
     ],
     "size": 1,
-    "max_hit": "12",
+    "max_hit": "20 (normal)",
     "skills": {
       "atk": 50,
       "def": 70,
@@ -4553,13 +4554,14 @@
     "name": "Assassin (While Guthix Sleeps)",
     "version": "2",
     "image": "Assassin (While Guthix Sleeps, 2).png",
-    "level": 102,
+    "level": 147,
     "speed": 5,
     "style": [
-      "Ranged"
+      "Ranged",
+      "Slash"
     ],
     "size": 1,
-    "max_hit": "12",
+    "max_hit": "20 (normal)",
     "skills": {
       "atk": 50,
       "def": 70,
@@ -6520,19 +6522,97 @@
     "weakness": null
   },
   {
+    "id": 13530,
+    "name": "Balance Elemental",
+    "version": "Magic",
+    "image": "Balance Elemental (magic).png",
+    "level": 524,
+    "speed": 6,
+    "style": [
+      "Magic"
+    ],
+    "size": 0,
+    "max_hit": "89",
+    "skills": {
+      "atk": 275,
+      "def": 275,
+      "hp": 750,
+      "magic": 275,
+      "ranged": 275,
+      "str": 286
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": -40,
+      "magic": -40,
+      "heavy": -40,
+      "standard": 0,
+      "light": 5,
+      "slash": 0,
+      "stab": 5
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13529,
+    "name": "Balance Elemental",
+    "version": "Melee",
+    "image": "Balance Elemental (melee).png",
+    "level": 524,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 0,
+    "max_hit": "89",
+    "skills": {
+      "atk": 275,
+      "def": 275,
+      "hp": 750,
+      "magic": 275,
+      "ranged": 275,
+      "str": 286
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": -40,
+      "magic": -40,
+      "heavy": -40,
+      "standard": 0,
+      "light": 5,
+      "slash": 0,
+      "stab": 5
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
     "id": 13528,
     "name": "Balance Elemental",
-    "version": "",
+    "version": "Ranged",
     "image": "Balance Elemental.png",
     "level": 524,
     "speed": 6,
     "style": [
-      "Melee",
-      "Ranged",
-      "Magic"
+      "Ranged"
     ],
     "size": 0,
-    "max_hit": "30",
+    "max_hit": "89",
     "skills": {
       "atk": 275,
       "def": 275,
@@ -12070,9 +12150,7 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [
-      "demon"
-    ],
+    "attributes": [],
     "weakness": null
   },
   {
@@ -12112,9 +12190,7 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [
-      "demon"
-    ],
+    "attributes": [],
     "weakness": null
   },
   {
@@ -12154,9 +12230,7 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [
-      "demon"
-    ],
+    "attributes": [],
     "weakness": null
   },
   {
@@ -23383,7 +23457,7 @@
     "skills": {
       "atk": 250,
       "def": 215,
-      "hp": 200,
+      "hp": 330,
       "magic": 230,
       "ranged": 0,
       "str": 280
@@ -23428,7 +23502,7 @@
     "skills": {
       "atk": 250,
       "def": 215,
-      "hp": 200,
+      "hp": 330,
       "magic": 230,
       "ranged": 0,
       "str": 280
@@ -23473,7 +23547,7 @@
     "skills": {
       "atk": 250,
       "def": 215,
-      "hp": 200,
+      "hp": 330,
       "magic": 230,
       "ranged": 0,
       "str": 280
@@ -64830,7 +64904,9 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "demon"
+    ],
     "weakness": null
   },
   {
@@ -78037,7 +78113,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000313-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000000-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -79035,6 +79111,46 @@
       "light": 50,
       "slash": 70,
       "stab": 50
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13482,
+    "name": "Surok Magis",
+    "version": "",
+    "image": "Surok Magis (Dagon'hai).png",
+    "level": 265,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 0,
+    "max_hit": "45+ (Special)",
+    "skills": {
+      "atk": 1,
+      "def": 160,
+      "hp": 450,
+      "magic": 160,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 85,
+      "magic_str": 105,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 40,
+      "magic": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 20,
+      "stab": 30
     },
     "attributes": [],
     "weakness": null
@@ -85316,7 +85432,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000065-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000002D-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -85357,7 +85473,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000065-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000002D-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -87351,7 +87467,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000021-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000006-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -87391,7 +87507,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000023-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000008-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
