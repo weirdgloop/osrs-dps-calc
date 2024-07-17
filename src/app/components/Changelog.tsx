@@ -40,6 +40,17 @@ const Changelog: React.FC = () => {
         title="Changelog"
       >
         <div className="text-sm bg-dark-500 rounded p-2 shadow-inner border border-dark-200 overflow-auto max-h-64">
+          <ChangelogEntry date="16 July 2024">
+            <li>
+              Fixed issue with burning claws spec calculation
+            </li>
+            <li>
+              Added ability to select an attack phase for tormented demons
+            </li>
+            <li>
+              Added input for tile distance (for chinchompas)
+            </li>
+          </ChangelogEntry>
           <ChangelogEntry date="9 July 2024">
             <li>
               Implemented support for showing data on
