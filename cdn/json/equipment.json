@@ -23610,36 +23610,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Bone claws",
-    "id": 29577,
-    "version": "",
-    "slot": "weapon",
-    "image": "Bone claws.png",
-    "speed": 4,
-    "category": "Claw",
-    "bonuses": {
-      "str": 32,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 43,
-      "slash": 54,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 6,
-      "crush": 1,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
     "name": "Bone club",
     "id": 5018,
     "version": "",
@@ -30118,6 +30088,36 @@
       "ranged": 0
     },
     "isTwoHanded": false
+  },
+  {
+    "name": "Burning claws",
+    "id": 29577,
+    "version": "",
+    "slot": "weapon",
+    "image": "Burning claws.png",
+    "speed": 4,
+    "category": "Claw",
+    "bonuses": {
+      "str": 32,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 43,
+      "slash": 54,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 3,
+      "slash": 6,
+      "crush": 1,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
   },
   {
     "name": "Butterfly net",
