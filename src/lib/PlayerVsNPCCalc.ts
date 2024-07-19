@@ -1227,12 +1227,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       // todo(wgs): does this require the correct runes or only the level of each demonbane spell?
     }
 
-    if (this.isUsingMeleeStyle() && this.isWearingDharok()) {
-      const newMax = this.player.skills.hp;
-      const curr = this.player.skills.hp + this.player.boosts.hp;
-      dist = dist.scaleDamage(10000 + (newMax - curr) * newMax, 10000);
-    }
-
     if (this.isUsingMeleeStyle() && this.isWearingVeracs()) {
       dist = new AttackDistribution([
         new HitDistribution([
@@ -1322,6 +1316,20 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           new WeightedHit(0.25, [new Hitsplat(Math.trunc(h.damage * 13 / 10), h.accurate)]),
         ]),
       );
+    }
+
+    if (this.tdUnshieldedBonusApplies()) {
+      const bonusDmg = Math.max(0, this.getAttackSpeed() ** 2 - 16);
+      dist = dist.transform(
+        flatAddTransformer(bonusDmg),
+        { transformInaccurate: false },
+      );
+    }
+
+    if (this.isUsingMeleeStyle() && this.isWearingDharok()) {
+      const newMax = this.player.skills.hp;
+      const curr = this.player.skills.hp + this.player.boosts.hp;
+      dist = dist.scaleDamage(10000 + (newMax - curr) * newMax, 10000);
     }
 
     // bolt effects
@@ -1450,13 +1458,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       );
     }
     if (this.monster.name === 'Tormented Demon') {
-      if (this.tdUnshieldedBonusApplies()) {
-        const bonusDmg = Math.max(0, this.getAttackSpeed() ** 2 - 16);
-        dist = dist.transform(
-          flatAddTransformer(bonusDmg),
-          { transformInaccurate: false },
-        );
-      } else if (!this.isUsingDemonbane() && !this.isUsingAbyssal()) {
+      if (!this.tdUnshieldedBonusApplies() && !this.isUsingDemonbane() && !this.isUsingAbyssal()) {
         // 20% damage reduction when not using demonbane or abyssal
         // todo floor of 1?
         dist = dist.transform(multiplyTransformer(4, 5, 1));
