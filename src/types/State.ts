@@ -93,10 +93,22 @@ export interface Calculator {
 }
 
 /**
+ * The exported data version, which can be used to perform lazy migrations on load,
+ * if the application changes since the data was written to storage.
+ * This value should be incremented every time {@link ImportableData},
+ * or any of its subproperties, are updated in a non-backwards-compatible manner,
+ * or also in any manner that could affect the migrations required on load.
+ */
+export const IMPORT_VERSION = 1 as const;
+
+/**
  * This is the state that can be exported and imported (through shortlinks).
  * If you change the schema here without taking precautions, you **will** break existing shortlinks.
  */
 export interface ImportableData {
+  // can be any number <= IMPORT_VERSION
+  serializationVersion: number;
+
   loadouts: PartialDeep<Player>[];
   selectedLoadout: number;
 
