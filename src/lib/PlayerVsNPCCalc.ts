@@ -431,7 +431,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       if (this.wearing('Bandos godsword')) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [11, 10]);
       } else if (this.wearing('Armadyl godsword')) {
-        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [4, 3]);
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [5, 4]);
       } else if (this.wearing('Dragon warhammer')) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [3, 2]);
       } else if (this.wearing('Voidwaker')) {
