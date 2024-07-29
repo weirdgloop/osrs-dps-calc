@@ -5,7 +5,7 @@ import React, { createContext, useContext } from 'react';
 import { PartialDeep } from 'type-fest';
 import * as localforage from 'localforage';
 import {
-  CalculatedLoadout, Calculator, ImportableData, PlayerVsNPCCalculatedLoadout, Preferences, State, UI, UserIssue,
+  CalculatedLoadout, Calculator, IMPORT_VERSION, ImportableData, PlayerVsNPCCalculatedLoadout, Preferences, State, UI, UserIssue,
 } from '@/types/State';
 import merge from 'lodash.mergewith';
 import {
@@ -141,6 +141,8 @@ export const parseLoadoutsFromImportedData = (data: ImportableData) => data.load
 });
 
 class GlobalState implements State {
+  serializationVersion = IMPORT_VERSION;
+
   monster: Monster = {
     id: 415,
     name: 'Abyssal demon',
@@ -296,6 +298,7 @@ class GlobalState implements State {
    */
   get asImportableData(): ImportableData {
     return {
+      serializationVersion: IMPORT_VERSION,
       loadouts: toJS(this.loadouts),
       monster: toJS(this.monster),
       selectedLoadout: this.selectedLoadout,
