@@ -12210,6 +12210,36 @@
     "isTwoHanded": true
   },
   {
+    "name": "Armadyl godsword (deadman)",
+    "id": 29605,
+    "version": "",
+    "slot": "weapon",
+    "image": "Armadyl godsword (deadman).png",
+    "speed": 6,
+    "category": "2h Sword",
+    "bonuses": {
+      "str": 132,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 8
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 132,
+      "crush": 80,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Armadyl godsword (or)",
     "id": 20368,
     "version": "",
@@ -34440,6 +34470,36 @@
     "isTwoHanded": true
   },
   {
+    "name": "Corrupted dark bow",
+    "id": 29599,
+    "version": "",
+    "slot": "weapon",
+    "image": "Corrupted dark bow.png",
+    "speed": 6,
+    "category": "Bow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 95
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Corrupted dragon claws",
     "id": 28534,
     "version": "",
@@ -35485,6 +35545,36 @@
       "slash": 1,
       "crush": 0,
       "magic": 2,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Corrupted volatile nightmare staff",
+    "id": 29602,
+    "version": "",
+    "slot": "weapon",
+    "image": "Corrupted volatile nightmare staff.png",
+    "speed": 5,
+    "category": "Staff",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 150,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 16,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 14,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -41989,6 +42079,36 @@
       "crush": 0,
       "magic": 0,
       "ranged": 105
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Dark bow (deadman)",
+    "id": 29611,
+    "version": "",
+    "slot": "weapon",
+    "image": "Dark bow (deadman).png",
+    "speed": 9,
+    "category": "Bow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 95
     },
     "defensive": {
       "stab": 0,
@@ -71400,6 +71520,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Imbued guthix cape (deadman)",
+    "id": 29615,
+    "version": "",
+    "slot": "cape",
+    "image": "Imbued guthix cape (deadman).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 20,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 15,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 3,
+      "slash": 3,
+      "crush": 3,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Imbued guthix max cape",
     "id": 24242,
     "version": "Broken",
@@ -71615,6 +71765,36 @@
     "version": "",
     "slot": "cape",
     "image": "Imbued saradomin cape (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 20,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 15,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 3,
+      "slash": 3,
+      "crush": 3,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Imbued saradomin cape (deadman)",
+    "id": 29617,
+    "version": "",
+    "slot": "cape",
+    "image": "Imbued saradomin cape (deadman).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -71885,6 +72065,36 @@
     "version": "",
     "slot": "cape",
     "image": "Imbued zamorak cape (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 20,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 15,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 3,
+      "slash": 3,
+      "crush": 3,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Imbued zamorak cape (deadman)",
+    "id": 29613,
+    "version": "",
+    "slot": "cape",
+    "image": "Imbued zamorak cape (deadman).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -132570,6 +132780,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Voidwaker (deadman)",
+    "id": 29607,
+    "version": "",
+    "slot": "weapon",
+    "image": "Voidwaker (deadman).png",
+    "speed": 4,
+    "category": "Slash Sword",
+    "bonuses": {
+      "str": 80,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 70,
+      "slash": 80,
+      "crush": -2,
+      "magic": 5,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 1,
+      "crush": 0,
+      "magic": 2,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Volatile nightmare staff",
     "id": 24424,
     "version": "",
@@ -132605,6 +132845,36 @@
     "version": "",
     "slot": "weapon",
     "image": "Volatile nightmare staff (Last Man Standing).png",
+    "speed": 5,
+    "category": "Staff",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 150,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 16,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 14,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Volatile nightmare staff (deadman)",
+    "id": 29609,
+    "version": "",
+    "slot": "weapon",
+    "image": "Volatile nightmare staff (deadman).png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
