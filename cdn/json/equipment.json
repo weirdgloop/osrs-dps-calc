@@ -44673,7 +44673,7 @@
     "name": "Defensive shield",
     "id": 8856,
     "version": "",
-    "slot": "weapon",
+    "slot": "shield",
     "image": "Defensive shield.png",
     "speed": 0,
     "category": "",
@@ -44697,7 +44697,7 @@
       "magic": 0,
       "ranged": 7
     },
-    "isTwoHanded": true
+    "isTwoHanded": false
   },
   {
     "name": "Demon feet",
