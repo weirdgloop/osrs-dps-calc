@@ -1235,7 +1235,9 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "demon"
+    ],
     "weakness": null
   },
   {
@@ -1276,7 +1278,9 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "demon"
+    ],
     "weakness": null
   },
   {
@@ -3731,7 +3735,10 @@
       "stab": 0
     },
     "attributes": [],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 30
+    }
   },
   {
     "id": 12720,
@@ -14957,7 +14964,7 @@
     "name": "Cerberus (Deadman)",
     "version": "",
     "image": "Cerberus (Deadman).png",
-    "level": 430,
+    "level": 473,
     "speed": 3,
     "style": [
       "Stab"
@@ -56278,7 +56285,9 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "demon"
+    ],
     "weakness": null
   },
   {
@@ -56319,7 +56328,9 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "demon"
+    ],
     "weakness": null
   },
   {
@@ -59137,7 +59148,7 @@
   {
     "id": 9468,
     "name": "Parasite (Phosani's Nightmare)",
-    "version": "Level 129",
+    "version": "Regular",
     "image": "Parasite.png",
     "level": 129,
     "speed": 4,
@@ -59178,7 +59189,7 @@
   {
     "id": 9469,
     "name": "Parasite (Phosani's Nightmare)",
-    "version": "Level 91",
+    "version": "Weakened",
     "image": "Parasite (2).png",
     "level": 91,
     "speed": 4,
@@ -59219,7 +59230,7 @@
   {
     "id": 9453,
     "name": "Parasite",
-    "version": "Level 57",
+    "version": "Regular",
     "image": "Parasite (2).png",
     "level": 57,
     "speed": 4,
@@ -59260,7 +59271,7 @@
   {
     "id": 9452,
     "name": "Parasite",
-    "version": "Level 86",
+    "version": "Weakened",
     "image": "Parasite.png",
     "level": 86,
     "speed": 4,
@@ -78756,7 +78767,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-000000DB-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000010-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -86157,7 +86168,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000019-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000002-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -86198,7 +86209,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000019-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000002-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -88272,7 +88283,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000D-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000008-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -88312,7 +88323,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000F-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000A-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
