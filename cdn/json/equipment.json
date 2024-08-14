@@ -9300,6 +9300,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Amy's saw (off-hand)",
+    "id": 29774,
+    "version": "",
+    "slot": "shield",
+    "image": "Amy's saw (off-hand).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Ancestral hat",
     "id": 21018,
     "version": "",
@@ -29467,6 +29497,36 @@
     "image": "Bruma torch.png",
     "speed": 4,
     "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Bruma torch (off-hand)",
+    "id": 29777,
+    "version": "",
+    "slot": "shield",
+    "image": "Bruma torch (off-hand).png",
+    "speed": 0,
+    "category": "",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -72247,6 +72307,36 @@
     "image": "Imcando hammer.png",
     "speed": 6,
     "category": "Blunt",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Imcando hammer (offhand)",
+    "id": 29775,
+    "version": "",
+    "slot": "shield",
+    "image": "Imcando hammer (offhand).png",
+    "speed": 0,
+    "category": "",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
