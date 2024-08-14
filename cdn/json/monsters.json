@@ -9914,7 +9914,10 @@
     "attributes": [
       "demon"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 1432,
@@ -9956,7 +9959,10 @@
     "attributes": [
       "demon"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 240,
@@ -45971,7 +45977,7 @@
       "Magic"
     ],
     "size": 5,
-    "max_hit": "33",
+    "max_hit": "31",
     "skills": {
       "atk": 300,
       "def": 300,
@@ -46015,7 +46021,7 @@
       "Magic"
     ],
     "size": 5,
-    "max_hit": "33",
+    "max_hit": "31",
     "skills": {
       "atk": 300,
       "def": 300,
@@ -59228,50 +59234,9 @@
     "weakness": null
   },
   {
-    "id": 9453,
-    "name": "Parasite",
-    "version": "Regular",
-    "image": "Parasite (2).png",
-    "level": 57,
-    "speed": 4,
-    "style": [
-      "Ranged",
-      "Magic"
-    ],
-    "size": 1,
-    "max_hit": "10",
-    "skills": {
-      "atk": 1,
-      "def": 40,
-      "hp": 40,
-      "magic": 60,
-      "ranged": 60,
-      "str": 1
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 12,
-      "magic_str": 26,
-      "ranged": 12,
-      "ranged_str": 26,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 10,
-      "magic": 100,
-      "heavy": 100,
-      "standard": 100,
-      "light": 100,
-      "slash": 70,
-      "stab": 50
-    },
-    "attributes": [],
-    "weakness": null
-  },
-  {
     "id": 9452,
     "name": "Parasite",
-    "version": "Weakened",
+    "version": "Regular",
     "image": "Parasite.png",
     "level": 86,
     "speed": 4,
@@ -59305,6 +59270,47 @@
       "light": 120,
       "slash": 80,
       "stab": 60
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 9453,
+    "name": "Parasite",
+    "version": "Weakened",
+    "image": "Parasite (2).png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Ranged",
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 1,
+      "def": 40,
+      "hp": 40,
+      "magic": 60,
+      "ranged": 60,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 12,
+      "magic_str": 26,
+      "ranged": 12,
+      "ranged_str": 26,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 10,
+      "magic": 100,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 70,
+      "stab": 50
     },
     "attributes": [],
     "weakness": null
@@ -60950,7 +60956,7 @@
     "id": 2063,
     "name": "Penguin (monster)",
     "version": "",
-    "image": "Ping.png",
+    "image": "Penguin (monster).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -73686,7 +73692,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 4491,
@@ -78767,7 +78776,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000010-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000004F-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -86168,7 +86177,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000002-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000034-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -86209,7 +86218,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000002-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000034-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -88283,7 +88292,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000008-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000E-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -88323,7 +88332,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000A-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000010-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
