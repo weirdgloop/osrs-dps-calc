@@ -129,11 +129,11 @@ const MonsterContainer: React.FC = observer(() => {
   }, [isCustomMonster, monsterJS]);
 
   useEffect(() => {
-    // When display monster HP is changed, update the monster's current HP
-    if (store.monster.inputs.monsterCurrentHp !== displayMonster.skills.hp) {
+    // When display monster HP or NPC ID is changed, update the monster's current HP
+    if (store.monster.inputs.monsterCurrentHp !== displayMonster.skills.hp || store.monster.id !== displayMonster.id) {
       store.updateMonster({ inputs: { monsterCurrentHp: displayMonster.skills.hp } });
     }
-  }, [store, displayMonster.skills.hp]);
+  }, [store, displayMonster.skills.hp, displayMonster.id]);
 
   const tdPhaseOptions = useMemo(() => TD_PHASES.map((s) => ({ label: s })), []);
   const extraMonsterOptions = useMemo(() => {
