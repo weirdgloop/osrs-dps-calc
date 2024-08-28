@@ -867,6 +867,49 @@
     "weakness": null
   },
   {
+    "id": 13675,
+    "name": "Acidic Araxyte",
+    "version": "",
+    "image": "Egg (Acidic Araxyte).png",
+    "level": 114,
+    "speed": 6,
+    "style": [
+      "All"
+    ],
+    "size": 2,
+    "max_hit": "15",
+    "skills": {
+      "atk": 150,
+      "def": 50,
+      "hp": 60,
+      "magic": 1,
+      "ranged": 60,
+      "str": 120
+    },
+    "offensive": {
+      "atk": 180,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 450,
+      "str": 12
+    },
+    "defensive": {
+      "crush": 25,
+      "magic": -10,
+      "heavy": 25,
+      "standard": 25,
+      "light": 25,
+      "slash": 25,
+      "stab": 25
+    },
+    "attributes": [],
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
+  },
+  {
     "id": 9573,
     "name": "Acidic Bloodveld",
     "version": "",
@@ -3493,6 +3536,49 @@
     "weakness": null
   },
   {
+    "id": 13668,
+    "name": "Araxxor",
+    "version": "",
+    "image": "Araxxor (dead).png",
+    "level": 890,
+    "speed": 6,
+    "style": [
+      "All"
+    ],
+    "size": 7,
+    "max_hit": "38",
+    "skills": {
+      "atk": 320,
+      "def": 135,
+      "hp": 1020,
+      "magic": 190,
+      "ranged": 210,
+      "str": 320
+    },
+    "offensive": {
+      "atk": 218,
+      "magic": 260,
+      "magic_str": 5,
+      "ranged": 283,
+      "ranged_str": 35,
+      "str": 10
+    },
+    "defensive": {
+      "crush": 15,
+      "magic": 237,
+      "heavy": 218,
+      "standard": 218,
+      "light": 218,
+      "slash": 75,
+      "stab": 160
+    },
+    "attributes": [],
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
+  },
+  {
     "id": 11726,
     "name": "Arcane Scarab",
     "version": "",
@@ -5461,7 +5547,7 @@
     "speed": 6,
     "style": [
       "Ranged",
-      "Melee"
+      "Crush"
     ],
     "size": 5,
     "max_hit": "24",
@@ -23164,6 +23250,44 @@
     }
   },
   {
+    "id": 13680,
+    "name": "Dreadborn Araxyte",
+    "version": "",
+    "image": "Dreadborn Araxyte.png",
+    "level": 281,
+    "speed": 0,
+    "style": null,
+    "size": 0,
+    "max_hit": 0,
+    "skills": {
+      "atk": 260,
+      "def": 100,
+      "hp": 350,
+      "magic": 100,
+      "ranged": 0,
+      "str": 260
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
     "id": 3258,
     "name": "Druid",
     "version": "",
@@ -26642,8 +26766,8 @@
     "level": 109,
     "speed": 4,
     "style": [
-      "Crush",
-      "Ranged"
+      "Ranged",
+      "Stab"
     ],
     "size": 2,
     "max_hit": "11 (approx)",
@@ -30732,52 +30856,6 @@
     }
   },
   {
-    "id": 3625,
-    "name": "Ghost",
-    "version": "Level 29",
-    "image": "Ghost.png",
-    "level": 29,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "3",
-    "skills": {
-      "atk": 23,
-      "def": 28,
-      "hp": 27,
-      "magic": 1,
-      "ranged": 1,
-      "str": 23
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 5,
-      "magic": -5,
-      "heavy": 5,
-      "standard": 5,
-      "light": 5,
-      "slash": 5,
-      "stab": 5
-    },
-    "attributes": [
-      "spectral",
-      "undead"
-    ],
-    "weakness": {
-      "element": "air",
-      "severity": 50
-    }
-  },
-  {
     "id": 2531,
     "name": "Ghost",
     "version": "Level 76",
@@ -30812,7 +30890,7 @@
       "standard": 45,
       "light": 45,
       "slash": 45,
-      "stab": 45
+      "stab": 0
     },
     "attributes": [
       "spectral",
@@ -30854,11 +30932,11 @@
     "defensive": {
       "crush": 5,
       "magic": 55,
-      "heavy": 55,
+      "heavy": 0,
       "standard": 55,
       "light": 55,
       "slash": 55,
-      "stab": 55
+      "stab": 45
     },
     "attributes": [
       "spectral",
@@ -39340,6 +39418,52 @@
     },
     "attributes": [],
     "weakness": null
+  },
+  {
+    "id": 3626,
+    "name": "Haze",
+    "version": "",
+    "image": "Ghost.png",
+    "level": 29,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 23,
+      "def": 28,
+      "hp": 27,
+      "magic": 1,
+      "ranged": 1,
+      "str": 23
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 5,
+      "magic": -5,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
+      "slash": 5,
+      "stab": 5
+    },
+    "attributes": [
+      "spectral",
+      "undead"
+    ],
+    "weakness": {
+      "element": "air",
+      "severity": 50
+    }
   },
   {
     "id": 12096,
@@ -50310,6 +50434,7 @@
       "stab": 0
     },
     "attributes": [
+      "shade",
       "spectral",
       "undead"
     ],
@@ -50353,7 +50478,6 @@
       "stab": 0
     },
     "attributes": [
-      "shade",
       "spectral",
       "undead"
     ],
@@ -53018,6 +53142,49 @@
     },
     "attributes": [],
     "weakness": null
+  },
+  {
+    "id": 13671,
+    "name": "Mirrorback Araxyte",
+    "version": "",
+    "image": "Egg (Mirrorback Araxyte).png",
+    "level": 114,
+    "speed": 6,
+    "style": [
+      "All"
+    ],
+    "size": 2,
+    "max_hit": "15",
+    "skills": {
+      "atk": 150,
+      "def": 50,
+      "hp": 60,
+      "magic": 1,
+      "ranged": 60,
+      "str": 120
+    },
+    "offensive": {
+      "atk": 180,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 450,
+      "str": 12
+    },
+    "defensive": {
+      "crush": 25,
+      "magic": -10,
+      "heavy": 25,
+      "standard": 25,
+      "light": 25,
+      "slash": 25,
+      "stab": 25
+    },
+    "attributes": [],
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 2919,
@@ -67248,6 +67415,49 @@
     "weakness": null
   },
   {
+    "id": 13673,
+    "name": "Ruptura Araxyte",
+    "version": "",
+    "image": "Egg (Ruptura Araxyte).png",
+    "level": 114,
+    "speed": 6,
+    "style": [
+      "All"
+    ],
+    "size": 2,
+    "max_hit": "15",
+    "skills": {
+      "atk": 150,
+      "def": 50,
+      "hp": 60,
+      "magic": 1,
+      "ranged": 60,
+      "str": 120
+    },
+    "offensive": {
+      "atk": 180,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 450,
+      "str": 12
+    },
+    "defensive": {
+      "crush": 25,
+      "magic": -10,
+      "heavy": 25,
+      "standard": 25,
+      "light": 25,
+      "slash": 25,
+      "stab": 25
+    },
+    "attributes": [],
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
+  },
+  {
     "id": 3281,
     "name": "Rusty",
     "version": "",
@@ -76512,22 +76722,22 @@
   {
     "id": 11176,
     "name": "Spider (araxyte)",
-    "version": "Level 123",
+    "version": "Level 146",
     "image": "Spider (araxyte, lv 123).png",
-    "level": 123,
+    "level": 146,
     "speed": 4,
     "style": [
       "Crush"
     ],
     "size": 2,
-    "max_hit": "13",
+    "max_hit": "17",
     "skills": {
       "atk": 120,
-      "def": 80,
+      "def": 70,
       "hp": 100,
       "magic": 80,
       "ranged": 1,
-      "str": 120
+      "str": 160
     },
     "offensive": {
       "atk": 0,
@@ -76540,34 +76750,37 @@
     "defensive": {
       "crush": 20,
       "magic": 20,
-      "heavy": 180,
-      "standard": 180,
-      "light": 180,
-      "slash": 60,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 30,
       "stab": 60
     },
     "attributes": [],
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 11175,
     "name": "Spider (araxyte)",
-    "version": "Level 87",
+    "version": "Level 96",
     "image": "Spider (araxyte, lv 87).png",
-    "level": 87,
+    "level": 96,
     "speed": 4,
     "style": [
       "Crush"
     ],
     "size": 1,
-    "max_hit": "9",
+    "max_hit": "13",
     "skills": {
       "atk": 80,
       "def": 60,
-      "hp": 80,
+      "hp": 60,
       "magic": 60,
       "ranged": 1,
-      "str": 80
+      "str": 125
     },
     "offensive": {
       "atk": 0,
@@ -76580,14 +76793,17 @@
     "defensive": {
       "crush": 20,
       "magic": 20,
-      "heavy": 180,
-      "standard": 180,
-      "light": 180,
-      "slash": 60,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 30,
       "stab": 60
     },
     "attributes": [],
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 3019,
@@ -78776,7 +78992,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000004F-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000000-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -86177,7 +86393,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000034-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000002A-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -86218,7 +86434,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000034-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000002A-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -87616,7 +87832,7 @@
   {
     "id": 4436,
     "name": "Vampyre Juvenile",
-    "version": "Burgh de Rott",
+    "version": "Burgh de Rott/Crombwick Manor",
     "image": "Vampyre Juvenile.png",
     "level": 45,
     "speed": 4,
@@ -88292,7 +88508,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000E-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000037-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -88332,7 +88548,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000010-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000039-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
