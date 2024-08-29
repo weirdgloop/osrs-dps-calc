@@ -9000,6 +9000,66 @@
     "isTwoHanded": false
   },
   {
+    "name": "Amulet of rancour",
+    "id": 29801,
+    "version": "Regular",
+    "slot": "neck",
+    "image": "Amulet of rancour.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 12,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": 25,
+      "slash": 25,
+      "crush": 25,
+      "magic": -6,
+      "ranged": -8
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Amulet of rancour",
+    "id": 29804,
+    "version": "Silver",
+    "slot": "neck",
+    "image": "Amulet of rancour (s).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 12,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": 25,
+      "slash": 25,
+      "crush": 25,
+      "magic": -6,
+      "ranged": -8
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Amulet of strength",
     "id": 1725,
     "version": "",
@@ -11126,6 +11186,156 @@
       "crush": 0,
       "magic": 10,
       "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Aranea boots",
+    "id": 29806,
+    "version": "",
+    "slot": "feet",
+    "image": "Aranea boots.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 1
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 5,
+      "ranged": 6
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Araxyte slayer helmet",
+    "id": 29816,
+    "version": "",
+    "slot": "head",
+    "image": "Araxyte slayer helmet.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": -1,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Araxyte slayer helmet (i)",
+    "id": 29822,
+    "version": "Emir's Arena",
+    "slot": "head",
+    "image": "Araxyte slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Araxyte slayer helmet (i)",
+    "id": 29818,
+    "version": "",
+    "slot": "head",
+    "image": "Araxyte slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Araxyte slayer helmet (i)",
+    "id": 29820,
+    "version": "Soul Wars",
+    "slot": "head",
+    "image": "Araxyte slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
     },
     "isTwoHanded": false
   },
@@ -41865,9 +42075,9 @@
     },
     "offensive": {
       "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
+      "slash": 4,
+      "crush": 4,
+      "magic": 4,
       "ranged": 0
     },
     "defensive": {
@@ -64021,10 +64231,10 @@
   },
   {
     "name": "Granite maul",
-    "id": 4153,
-    "version": "Normal",
+    "id": 12848,
+    "version": "Clamp",
     "slot": "weapon",
-    "image": "Granite maul.png",
+    "image": "Granite maul (clamp).png",
     "speed": 7,
     "category": "Blunt",
     "bonuses": {
@@ -64051,10 +64261,10 @@
   },
   {
     "name": "Granite maul",
-    "id": 24225,
-    "version": "Ornate handle",
+    "id": 4153,
+    "version": "Normal",
     "slot": "weapon",
-    "image": "Granite maul (ornate handle).png",
+    "image": "Granite maul.png",
     "speed": 7,
     "category": "Blunt",
     "bonuses": {
@@ -64110,11 +64320,11 @@
     "isTwoHanded": true
   },
   {
-    "name": "Granite maul (or)",
-    "id": 12848,
-    "version": "Normal",
+    "name": "Granite maul (ornate handle)",
+    "id": 24227,
+    "version": "Clamp",
     "slot": "weapon",
-    "image": "Granite maul (or).png",
+    "image": "Granite maul (ornate handle, clamp).png",
     "speed": 7,
     "category": "Blunt",
     "bonuses": {
@@ -64140,11 +64350,11 @@
     "isTwoHanded": true
   },
   {
-    "name": "Granite maul (or)",
-    "id": 24227,
-    "version": "Ornate handle",
+    "name": "Granite maul (ornate handle)",
+    "id": 24225,
+    "version": "Normal",
     "slot": "weapon",
-    "image": "Granite maul (or) (ornate handle).png",
+    "image": "Granite maul (ornate handle).png",
     "speed": 7,
     "category": "Blunt",
     "bonuses": {
@@ -72330,11 +72540,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Imcando hammer (offhand)",
+    "name": "Imcando hammer (off-hand)",
     "id": 29775,
     "version": "",
     "slot": "shield",
-    "image": "Imcando hammer (offhand).png",
+    "image": "Imcando hammer (off-hand).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -89220,6 +89430,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Noxious halberd",
+    "id": 29796,
+    "version": "",
+    "slot": "weapon",
+    "image": "Noxious halberd.png",
+    "speed": 5,
+    "category": "Polearm",
+    "bonuses": {
+      "str": 142,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 80,
+      "slash": 132,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Nunchaku",
     "id": 19918,
     "version": "",
@@ -90245,7 +90485,7 @@
     "version": "",
     "slot": "weapon",
     "image": "Oily pearl fishing rod.png",
-    "speed": 5,
+    "speed": 4,
     "category": "Unarmed",
     "bonuses": {
       "str": 0,
@@ -91385,7 +91625,7 @@
     "version": "",
     "slot": "weapon",
     "image": "Pearl barbarian rod.png",
-    "speed": 5,
+    "speed": 4,
     "category": "Unarmed",
     "bonuses": {
       "str": 0,
@@ -91535,7 +91775,7 @@
     "version": "",
     "slot": "weapon",
     "image": "Pearl fishing rod.png",
-    "speed": 5,
+    "speed": 4,
     "category": "Unarmed",
     "bonuses": {
       "str": 0,
@@ -91565,7 +91805,7 @@
     "version": "",
     "slot": "weapon",
     "image": "Pearl fly fishing rod.png",
-    "speed": 5,
+    "speed": 4,
     "category": "Unarmed",
     "bonuses": {
       "str": 0,
