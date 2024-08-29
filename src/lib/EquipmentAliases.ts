@@ -27,6 +27,7 @@ const equipmentAliases = {
   21021: [24666], // Ancestral robe top
   24201: [24203], // Ancient halo#Normal
   27624: [27626], // Ancient sceptre#Normal
+  29818: [29822, 29820], // Araxyte slayer helmet (i)#Nightmare Zone
   11771: [26768, 25260], // Archers ring (i)#Nightmare Zone
   11830: [26716], // Armadyl chainskirt
   11802: [20368], // Armadyl godsword
@@ -147,7 +148,7 @@ const equipmentAliases = {
   27550: [27551], // Ghommal's avernic defender 5#Normal
   27552: [27553], // Ghommal's avernic defender 6#Normal
   22324: [25734], // Ghrazi rapier
-  4153: [24225, 12848, 24227], // Granite maul#Normal
+  4153: [12848], // Granite maul#Normal
   21752: [26685, 25193], // Granite ring (i)#Nightmare Zone
   1135: [7370, 7372], // Green d'hide body
   1099: [7378, 7380], // Green d'hide chaps
