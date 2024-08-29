@@ -438,6 +438,15 @@ class GlobalState implements State {
   }
 
   updateImportedData(data: ImportableData) {
+    /* eslint-disable no-fallthrough */
+    switch (data.serializationVersion) {
+      case 1:
+        data.monster.inputs.phase = data.monster.inputs.tormentedDemonPhase;
+
+      default:
+    }
+    /* eslint-enable no-fallthrough */
+
     if (data.monster) {
       let newMonster: PartialDeep<Monster> = {};
 

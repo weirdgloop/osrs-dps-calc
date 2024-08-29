@@ -26,6 +26,7 @@ import { getCdnImage } from '@/utils';
 import PresetAttributeButton from '@/app/components/monster/PresetAttributeButton';
 import NumberInput from '@/app/components/generic/NumberInput';
 import {
+  ARAXXOR_PHASES,
   GUARDIAN_IDS,
   PARTY_SIZE_REQUIRED_MONSTER_IDS,
   TD_PHASES,
@@ -119,6 +120,28 @@ const MonsterContainer: React.FC = observer(() => {
 
   const isCustomMonster = store.monster.id === -1;
 
+  const phases = useMemo(() => {
+    switch (monster.name) {
+      case 'Tormented Demon':
+        return TD_PHASES;
+
+      case 'Araxxor':
+        return ARAXXOR_PHASES;
+
+      default:
+        return undefined;
+    }
+  }, [monster.name]);
+
+  const phaseOptions = useMemo(() => phases?.map((p) => ({ label: p })), [phases]);
+
+  useEffect(() => {
+    // When display monster name is changed, reset the phase option selection
+    if (phases && !phases?.includes(store.monster.inputs.phase || '')) {
+      store.updateMonster({ inputs: { phase: phases?.[0] } });
+    }
+  }, [store, phases]);
+
   // Don't automatically update the stat inputs if manual editing is on
   const monsterJS = toJS(monster);
   const displayMonster = useMemo(() => {
@@ -135,7 +158,6 @@ const MonsterContainer: React.FC = observer(() => {
     }
   }, [store, displayMonster.skills.hp, displayMonster.id]);
 
-  const tdPhaseOptions = useMemo(() => TD_PHASES.map((s) => ({ label: s })), []);
   const extraMonsterOptions = useMemo(() => {
     // Determine whether we need to show any extra monster option components
     const comps: React.ReactNode[] = [];
@@ -294,7 +316,7 @@ const MonsterContainer: React.FC = observer(() => {
       );
     }
 
-    if (monster.name === 'Tormented Demon') {
+    if (phaseOptions) {
       comps.push(
         <div key="td-phase">
           <h4 className="font-bold font-serif">
@@ -303,11 +325,11 @@ const MonsterContainer: React.FC = observer(() => {
           <div className="mt-2">
             <Select
               id="presets"
-              items={tdPhaseOptions}
-              placeholder={monster.inputs.tormentedDemonPhase}
-              value={tdPhaseOptions.find((o) => o.label === monster.inputs.tormentedDemonPhase)}
+              items={phaseOptions}
+              placeholder={monster.inputs.phase}
+              value={phaseOptions.find((opt) => opt.label === monster.inputs.phase)}
               resetAfterSelect
-              onSelectedItemChange={(v) => store.updateMonster({ inputs: { tormentedDemonPhase: v?.label || undefined } })}
+              onSelectedItemChange={(v) => store.updateMonster({ inputs: { phase: v?.label } })}
             />
           </div>
         </div>,
