@@ -429,15 +429,18 @@ export default class BaseCalc {
   }
 
   /**
-   * Whether the player is wearing an Ivandis weapon--that is, a weapon capable of harming Tier 3 Vampyres.
+   * Whether the player is using a vampyrebane weapon capable of full damage against t2 or t3 vampyres
    * @see https://oldschool.runescape.wiki/w/Silver_weaponry
    */
-  protected isWearingIvandisWeapon(): boolean {
-    return this.isUsingMeleeStyle() && this.wearing([
-      'Ivandis flail',
-      'Blisterwood sickle',
-      'Blisterwood flail',
-    ]);
+  protected wearingVampyrebane(tier: MonsterAttribute.VAMPYRE_2 | MonsterAttribute.VAMPYRE_3): boolean {
+    const t2 = tier === MonsterAttribute.VAMPYRE_2;
+    return (t2 || this.isUsingMeleeStyle())
+      && this.wearing([
+        ...(t2 ? ['Rod of ivandis'] : []),
+        'Ivandis flail',
+        'Blisterwood sickle',
+        'Blisterwood flail',
+      ]);
   }
 
   protected isWearingMsb(): boolean {
