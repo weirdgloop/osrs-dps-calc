@@ -1,6 +1,4 @@
-import React, {
-  useEffect, useMemo, useState,
-} from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import dagger from '@/public/img/bonuses/dagger.png';
 import scimitar from '@/public/img/bonuses/scimitar.png';
 import warhammer from '@/public/img/bonuses/warhammer.png';
@@ -26,18 +24,14 @@ import { getCdnImage } from '@/utils';
 import PresetAttributeButton from '@/app/components/monster/PresetAttributeButton';
 import NumberInput from '@/app/components/generic/NumberInput';
 import {
-  ARAXXOR_PHASES,
   GUARDIAN_IDS,
+  MONSTER_PHASES_BY_ID,
   PARTY_SIZE_REQUIRED_MONSTER_IDS,
-  TD_PHASES,
   TOMBS_OF_AMASCUT_MONSTER_IDS,
   TOMBS_OF_AMASCUT_PATH_MONSTER_IDS,
 } from '@/lib/constants';
 import {
-  IconChevronDown,
-  IconChevronUp,
-  IconExternalLink,
-  IconShieldQuestion,
+  IconChevronDown, IconChevronUp, IconExternalLink, IconShieldQuestion,
 } from '@tabler/icons-react';
 import { scaleMonster } from '@/lib/MonsterScaling';
 import { Monster, MonsterCombatStyle } from '@/types/Monster';
@@ -120,18 +114,7 @@ const MonsterContainer: React.FC = observer(() => {
 
   const isCustomMonster = store.monster.id === -1;
 
-  const phases = useMemo(() => {
-    switch (monster.name) {
-      case 'Tormented Demon':
-        return TD_PHASES;
-
-      case 'Araxxor':
-        return ARAXXOR_PHASES;
-
-      default:
-        return undefined;
-    }
-  }, [monster.name]);
+  const phases = useMemo(() => MONSTER_PHASES_BY_ID[monster.id], [monster.id]);
 
   const phaseOptions = useMemo(() => phases?.map((p) => ({ label: p })), [phases]);
 

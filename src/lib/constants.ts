@@ -393,5 +393,11 @@ export const FLAT_ARMOUR: { [npcId: number]: number } = {
   13029: -2, // grimy lizard
 };
 
+export const MONSTER_PHASES_BY_ID: { [k: number]: string[] } = {};
+export const TD_IDS = [13599, 13600, 13601, 13602, 13603, 13604, 13605, 13606];
 export const TD_PHASES = ['Shielded', 'Shielded (Defenceless)', 'Unshielded'];
+TD_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = TD_PHASES; });
+
+export const ARAXXOR_IDS = [13668];
 export const ARAXXOR_PHASES = ['Standard', 'Enraged'];
+ARAXXOR_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = ARAXXOR_PHASES; });
