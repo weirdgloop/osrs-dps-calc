@@ -22,7 +22,7 @@
     "@headlessui/react": "^1.7.18",
     "@headlessui/tailwindcss": "^0.2.0",
     "@tabler/icons-react": "^2.47.0",
-    "axios": "^1.6.7",
+    "axios": "^1.7.4",
     "d3-array": "^3.2.4",
     "downshift": "^8.3.1",
     "fuzzbunny": "^1.0.1",
