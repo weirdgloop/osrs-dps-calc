@@ -57,7 +57,7 @@ const EquipmentPresets: React.FC = () => {
           equipment: {
             head: findItemById(4716), // Dharok's helm
             cape: findItemById(21295), // Infernal cape
-            neck: findItemById(19553), // Amulet of torture
+            neck: findItemById(29801), // Amulet of rancour
             ammo: findItemById(22947), // Rada's blessing 4
             weapon: findItemById(4718), // Dharok's greataxe
             body: findItemById(4720), // Dharok's platebody
@@ -93,7 +93,7 @@ const EquipmentPresets: React.FC = () => {
           equipment: {
             head: findItemById(26382), // Torva full helm
             cape: findItemById(21295), // Infernal cape
-            neck: findItemById(19553), // Amulet of torture
+            neck: findItemById(29801), // Amulet of rancour
             ammo: findItemById(22947), // Rada's blessing 4
             body: findItemById(26384), // Torva platebody
             legs: findItemById(26386), // Torva platelegs
@@ -195,7 +195,7 @@ const EquipmentPresets: React.FC = () => {
           equipment: {
             head: findItemById(11665), // Void melee helm
             cape: findItemById(21295), // Infernal cape
-            neck: findItemById(19553), // Amulet of torture
+            neck: findItemById(29801), // Amulet of rancour
             ammo: findItemById(22947), // Rada's blessing 4
             body: findItemById(13072), // Elite void top
             legs: findItemById(13073), // Elite void robe
@@ -229,7 +229,7 @@ const EquipmentPresets: React.FC = () => {
           equipment: {
             head: findItemById(4753), // Verac's helm
             cape: findItemById(21295), // Infernal cape
-            neck: findItemById(19553), // Amulet of torture
+            neck: findItemById(29801), // Amulet of rancour
             ammo: findItemById(22947), // Rada's blessing 4
             weapon: findItemById(4755), // Verac's flail
             body: findItemById(4757), // Verac's brassard
