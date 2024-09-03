@@ -1,38 +1,51 @@
 import { Monster } from '@/types/Monster';
-import { P3_WARDEN_IDS } from '@/lib/constants';
+import {
+  AKKHA_IDS,
+  BABA_IDS,
+  KEPHRI_SHIELDED_IDS,
+  KEPHRI_UNSHIELDED_IDS,
+  NEX_IDS,
+  NIGHTMARE_IDS,
+  P3_WARDEN_IDS,
+  SOTETSEG_IDS,
+  TOA_OBELISK_IDS,
+  VARDORVIS_IDS,
+  VERZIK_IDS,
+  ZEBAK_IDS,
+} from '@/lib/constants';
 import { keys } from '@/utils';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { Factor } from '@/lib/Math';
 
 const getDefenceFloor = (m: Monster): number => {
-  if (m.name === 'Verzik Vitur' || m.name === 'Vardorvis') {
+  if (VERZIK_IDS.includes(m.id) || VARDORVIS_IDS.includes(m.id)) {
     return m.skills.def;
   }
-  if (m.name === 'Sotetseg') {
+  if (SOTETSEG_IDS.includes(m.id)) {
     return 100;
   }
-  if (m.name === 'The Nightmare' || m.name === 'Phosani\'s Nightmare') {
+  if (NIGHTMARE_IDS.includes(m.id)) {
     return 120;
   }
-  if (m.name === 'Akkha') {
+  if (AKKHA_IDS.includes(m.id)) {
     return 70;
   }
-  if (m.name === 'Ba-Ba') {
+  if (BABA_IDS.includes(m.id)) {
     return 60;
   }
-  if (m.name === 'Kephri') {
+  if (KEPHRI_UNSHIELDED_IDS.includes(m.id) || KEPHRI_SHIELDED_IDS.includes(m.id)) {
     return 60;
   }
-  if (m.name === 'Zebak') {
+  if (ZEBAK_IDS.includes(m.id)) {
     return 50;
   }
   if (P3_WARDEN_IDS.includes(m.id)) {
     return 120;
   }
-  if (m.name === 'Obelisk') {
+  if (TOA_OBELISK_IDS.includes(m.id)) {
     return 60;
   }
-  if (m.name === 'Nex') {
+  if (NEX_IDS.includes(m.id)) {
     return 250;
   }
 

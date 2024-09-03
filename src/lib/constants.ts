@@ -90,6 +90,11 @@ export const VERZIK_IDS = [
   10850, 10851, 10852, // verzik hard mode
 ];
 
+export const SOTETSEG_IDS = [
+  8387, 8388, // normal
+  10867, 10868, // hard
+];
+
 /** IDs of monsters that are present in Theatre of Blood * */
 export const TOB_MONSTER_IDS = [
   ...VERZIK_P1_IDS,
@@ -99,7 +104,7 @@ export const TOB_MONSTER_IDS = [
   8359, // bloat
   8342, 8343, 8344, 8345, 8346, 8347, 8348, 8349, 8350, 8351, 8352, 8353, // nylos
   8355, 8356, 8357, // nylo boss
-  10864, 10865, // sote
+  ...SOTETSEG_IDS,
   8339, 8340, // xarpus
   8372, 8373, 8374, // verzik
   8376, 8381, 8382, 8383, 8384, 8385, // verzik web + nylos
@@ -111,7 +116,7 @@ export const TOB_MONSTER_IDS = [
   10791, 10792, 10793, 10794, 10795, 10796, 10797, 10798, 10799, 10800, 10801, 10802, // nylos
   10804, 10805, 10806, // nylo demi-boss
   10808, 10809, 10810, // nylo boss
-  10867, 10868, // sote
+  // sote is above
   10770, 10771, 10772, // xarpus (i think there's an extra one here because of its different p3 behaviour?)
   10850, 10851, 10852, // verzik
   10854, 10858, 10859, 10860, 10861, 10862, // verzik web + nylos
@@ -224,6 +229,11 @@ export const FRAGMENT_OF_SEREN_IDS = [
   8917, 8918, 8919, 8920,
 ];
 
+export const NIGHTMARE_IDS = [
+  378, 9425, 9426, 9427, 9428, 9429, 9430, 9431, 9432, 9433, 9460, // nightmare
+  377, 9423, 9416, 9417, 9418, 9419, 9420, 9421, 9422, 9424, 11153, 11154, 11155, // phosani's
+];
+
 /**
  * IDs of the totems in the Nightmare / Phosani's Nightmare fight.
  * They take double damage from magic sources.
@@ -233,6 +243,10 @@ export const FRAGMENT_OF_SEREN_IDS = [
 export const NIGHTMARE_TOTEM_IDS = [
   9434, 9437, 9440, 9443,
   9435, 9438, 9441, 9444,
+];
+
+export const NEX_IDS = [
+  11278, 11279, 11280, 11281, 11282,
 ];
 
 /**
@@ -330,6 +344,8 @@ export const BA_ATTACKER_MONSTERS = [
   5764,
   5765,
 ];
+
+export const VARDORVIS_IDS = [12223, 12224, 12228, 12425, 12426, 13656];
 
 export const ACCURACY_PRECISION = 2;
 export const DPS_PRECISION = 3;
