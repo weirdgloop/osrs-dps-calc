@@ -3543,7 +3543,9 @@
     "level": 890,
     "speed": 6,
     "style": [
-      "All"
+      "All",
+      "Melee",
+      "magic"
     ],
     "size": 7,
     "max_hit": "38",
@@ -25412,6 +25414,48 @@
     "skills": {
       "atk": 150,
       "def": 150,
+      "hp": 880,
+      "magic": 150,
+      "ranged": 150,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 230,
+      "magic_str": 40,
+      "ranged": 300,
+      "ranged_str": 40,
+      "str": 40
+    },
+    "defensive": {
+      "crush": 20,
+      "magic": 20,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 40,
+      "stab": 40
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 11761,
+    "name": "Elidinis' Warden",
+    "version": "Enraged",
+    "image": "Elidinis' Warden (level-544, immune).png",
+    "level": 544,
+    "speed": 7,
+    "style": [
+      "Melee",
+      "Ranged",
+      "Magic"
+    ],
+    "size": 5,
+    "max_hit": "26",
+    "skills": {
+      "atk": 150,
+      "def": 180,
       "hp": 880,
       "magic": 150,
       "ranged": 150,
@@ -67520,7 +67564,7 @@
     "skills": {
       "atk": 150,
       "def": 50,
-      "hp": 60,
+      "hp": 58,
       "magic": 1,
       "ranged": 60,
       "str": 120
@@ -86398,7 +86442,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000001A-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000018-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -86439,7 +86483,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000001A-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000018-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
