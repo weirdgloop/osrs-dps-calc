@@ -576,7 +576,7 @@ export default class BaseCalc {
   }
 
   protected tdUnshieldedBonusApplies(): boolean {
-    if (this.monster.name !== 'Tormented Demon' || this.monster.inputs.tormentedDemonPhase !== 'Unshielded') {
+    if (this.monster.name !== 'Tormented Demon' || this.monster.inputs.phase !== 'Unshielded') {
       return false;
     }
 

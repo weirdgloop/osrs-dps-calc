@@ -4,6 +4,7 @@ import applyTobScaling from '@/lib/scaling/TheatreOfBlood';
 import applyToaScaling from '@/lib/scaling/TombsOfAmascut';
 import applyVardScaling from '@/lib/scaling/Vardorvis';
 import applyDefenceReductions from '@/lib/scaling/DefenceReduction';
+import applyMonsterPhases from '@/lib/scaling/Phases';
 
 type MonsterTransformer = (m: Monster) => Monster;
 const ORDER_OF_OPERATIONS: MonsterTransformer[] = [
@@ -11,6 +12,7 @@ const ORDER_OF_OPERATIONS: MonsterTransformer[] = [
   applyTobScaling,
   applyToaScaling,
   applyVardScaling,
+  applyMonsterPhases,
   applyDefenceReductions,
 ];
 

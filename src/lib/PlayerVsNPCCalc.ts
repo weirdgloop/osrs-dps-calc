@@ -1026,7 +1026,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
-    if (this.monster.name === 'Tormented Demon' && this.monster.inputs.tormentedDemonPhase !== 'Shielded') {
+    if (this.monster.name === 'Tormented Demon' && this.monster.inputs.phase !== 'Shielded') {
       this.track(DetailKey.PLAYER_ACCURACY_TD, 1.0);
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }

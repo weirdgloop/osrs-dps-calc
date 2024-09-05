@@ -98,6 +98,9 @@ export interface Monster {
       tonalztic: number;
     };
 
+    /** @deprecated use {@link phase} */
     tormentedDemonPhase?: typeof TD_PHASES[number];
+
+    phase?: string;
   }
 }
