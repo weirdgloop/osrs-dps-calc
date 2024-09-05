@@ -270,7 +270,7 @@ export const PotionMap: { [k in Potion]: { name: string, order: number, image: S
     order: 9,
     image: Ancient,
     calculateFn: (skills) => ({
-      magic: Math.floor(3 + (skills.magic * 0.05)),
+      magic: Math.floor(2 + (skills.magic * 0.05)),
       atk: Math.floor(-2 - (skills.atk * 0.1)),
       str: Math.floor(-2 - (skills.str * 0.1)),
       def: Math.floor(-2 - (skills.def * 0.1)),
