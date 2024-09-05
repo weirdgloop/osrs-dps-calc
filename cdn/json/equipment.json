@@ -9002,7 +9002,7 @@
   {
     "name": "Amulet of rancour",
     "id": 29801,
-    "version": "Regular",
+    "version": "",
     "slot": "neck",
     "image": "Amulet of rancour.png",
     "speed": 0,
@@ -9030,9 +9030,9 @@
     "isTwoHanded": false
   },
   {
-    "name": "Amulet of rancour",
+    "name": "Amulet of rancour (s)",
     "id": 29804,
-    "version": "Silver",
+    "version": "",
     "slot": "neck",
     "image": "Amulet of rancour (s).png",
     "speed": 0,
@@ -9461,6 +9461,36 @@
       "str": 0,
       "ranged_str": 0,
       "magic_str": 30,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 26,
+      "ranged": -7
+    },
+    "defensive": {
+      "stab": 27,
+      "slash": 24,
+      "crush": 30,
+      "magic": 20,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ancestral robe bottom (Last Man Standing)",
+    "id": 27194,
+    "version": "",
+    "slot": "Legs",
+    "image": "Ancestral robe bottom (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 40,
       "prayer": 0
     },
     "offensive": {
@@ -42075,9 +42105,9 @@
     },
     "offensive": {
       "stab": 0,
-      "slash": 4,
-      "crush": 4,
-      "magic": 4,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
       "ranged": 0
     },
     "defensive": {
