@@ -91,7 +91,7 @@ const NPCVersusPlayerResultsTable: React.FC = observer(() => {
         <ResultRow calcKey="npcMaxAttackRoll" title="The maximum attack roll for the NPC (lower is better!)">
           NPC attack roll
         </ResultRow>
-        <ResultRow calcKey="playerDefRoll" title={"The player's defense roll (higher is better!)"}>
+        <ResultRow calcKey="playerDefRoll" title="The player's defense roll (higher is better!)">
           Player def roll
         </ResultRow>
         <ResultRow calcKey="npcAccuracy" title="How accurate the NPC is against you">
