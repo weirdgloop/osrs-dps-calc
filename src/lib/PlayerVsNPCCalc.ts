@@ -6,6 +6,7 @@ import {
   DelayedHit,
   divisionTransformer,
   flatAddTransformer,
+  flatLimitTransformer,
   HitDistribution,
   Hitsplat,
   linearMinTransformer,
@@ -681,10 +682,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.opts.usingSpecialAttack) {
       if (this.wearing('Dark bow')) {
         const descentOfDragons = this.wearing('Dragon arrow');
-        minHit = this.track(DetailKey.MIN_HIT_SPEC, descentOfDragons ? 5 : 8);
-
+        minHit = this.track(DetailKey.MIN_HIT_SPEC, descentOfDragons ? 8 : 5);
         const dmgFactor = descentOfDragons ? 15 : 13;
-        maxHit = this.track(DetailKey.MAX_HIT_SPEC, Math.min(48, Math.trunc(maxHit * dmgFactor / 10)), `min(48, ${maxHit} * ${dmgFactor} / 10)`);
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [dmgFactor, 10]);
       }
     }
 
@@ -1175,6 +1175,16 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       ]);
     }
 
+    if (style === 'ranged' && this.wearing('Dark bow')) {
+      if (this.opts.usingSpecialAttack) {
+        // Start with two linear distributions with no min hit, then apply caps
+        dist = new AttackDistribution([HitDistribution.linear(acc, 0, max), HitDistribution.linear(acc, 0, max)]);
+        dist = dist.transform(flatLimitTransformer(48, min));
+      } else {
+        dist = new AttackDistribution([standardHitDist, standardHitDist]);
+      }
+    }
+
     let accurateZeroApplicable: boolean = true;
     if (this.opts.usingSpecialAttack) {
       if (this.wearing('Dragon claws')) {
@@ -1200,7 +1210,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     // simple multi-hit specs
     if (this.opts.usingSpecialAttack) {
       let hitCount = 1;
-      if (this.wearing(['Dragon dagger', 'Abyssal dagger', 'Dark bow']) || this.isWearingMsb()) {
+      if (this.wearing(['Dragon dagger', 'Abyssal dagger']) || this.isWearingMsb()) {
         hitCount = 2;
       } else if (this.wearing('Webweaver bow')) {
         hitCount = 4;

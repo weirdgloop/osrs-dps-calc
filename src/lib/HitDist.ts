@@ -362,9 +362,9 @@ export class AttackDistribution {
   }
 }
 
-export function flatLimitTransformer(maximum: number): HitTransformer {
+export function flatLimitTransformer(maximum: number, minimum: number = 0): HitTransformer {
   return (h) => new HitDistribution(
-    [new WeightedHit(1.0, [new Hitsplat(Math.min(h.damage, maximum), h.accurate)])],
+    [new WeightedHit(1.0, [new Hitsplat(Math.max(minimum, Math.min(h.damage, maximum)), h.accurate)])],
   );
 }
 
