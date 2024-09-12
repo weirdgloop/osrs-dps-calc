@@ -13140,6 +13140,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Atlatl dart (Last Man Standing)",
+    "id": 29852,
+    "version": "",
+    "slot": "weapon",
+    "image": "Eclipse atlatl (Last Man Standing).png",
+    "speed": 4,
+    "category": "Bow",
+    "bonuses": {
+      "str": 40,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 87
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Attack cape",
     "id": 9748,
     "version": "Trimmed",
@@ -21360,6 +21390,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Blood moon chestplate (Last Man Standing)",
+    "id": 29846,
+    "version": "",
+    "slot": "body",
+    "image": "Blood moon chestplate (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -15,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 60,
+      "slash": 80,
+      "crush": 80,
+      "magic": 40,
+      "ranged": 79
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Blood moon helm",
     "id": 29073,
     "version": "Broken",
@@ -21425,6 +21485,36 @@
     "version": "Used",
     "slot": "head",
     "image": "Blood moon helm (used).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 20,
+      "slash": 31,
+      "crush": 34,
+      "magic": 7,
+      "ranged": 29
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blood moon helm (Last Man Standing)",
+    "id": 29848,
+    "version": "",
+    "slot": "head",
+    "image": "Blood moon helm (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -21521,6 +21611,36 @@
       "str": 2,
       "ranged_str": 0,
       "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -21,
+      "ranged": -7
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 50,
+      "crush": 49,
+      "magic": 32,
+      "ranged": 46
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blood moon tassets (Last Man Standing)",
+    "id": 29847,
+    "version": "",
+    "slot": "legs",
+    "image": "Blood moon tassets (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 2,
+      "ranged_str": 0,
+      "magic_str": null,
       "prayer": 0
     },
     "offensive": {
@@ -22620,6 +22740,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Blue moon chestplate (Last Man Standing)",
+    "id": 29843,
+    "version": "",
+    "slot": "body",
+    "image": "Blue moon chestplate (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 2,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 30,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 51,
+      "magic": 28,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Blue moon helm",
     "id": 29064,
     "version": "Broken",
@@ -22710,11 +22860,71 @@
     "isTwoHanded": false
   },
   {
+    "name": "Blue moon helm (Last Man Standing)",
+    "id": 29845,
+    "version": "",
+    "slot": "head",
+    "image": "Blue moon helm (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 3,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 6,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 10,
+      "magic": 6,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Blue moon spear",
     "id": 28988,
     "version": "",
     "slot": "weapon",
     "image": "Blue moon spear.png",
+    "speed": 5,
+    "category": "Bladed Staff",
+    "bonuses": {
+      "str": 71,
+      "ranged_str": 0,
+      "magic_str": 50,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 70,
+      "slash": 62,
+      "crush": 62,
+      "magic": 30,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 3,
+      "crush": 1,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Blue moon spear (Last Man Standing)",
+    "id": 29849,
+    "version": "",
+    "slot": "weapon",
+    "image": "Blue moon spear (Last Man Standing).png",
     "speed": 5,
     "category": "Bladed Staff",
     "bonuses": {
@@ -22805,6 +23015,36 @@
     "version": "Used",
     "slot": "legs",
     "image": "Blue moon tassets (used).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 1,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 22,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 23,
+      "magic": 32,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blue moon tassets (Last Man Standing)",
+    "id": 29844,
+    "version": "",
+    "slot": "legs",
+    "image": "Blue moon tassets (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -51540,6 +51780,36 @@
     "isTwoHanded": true
   },
   {
+    "name": "Dual macuahuitl (Last Man Standing)",
+    "id": 29850,
+    "version": "",
+    "slot": "weapon",
+    "image": "Dual macuahuitl (Last Man Standing).png",
+    "speed": 4,
+    "category": "Spiked",
+    "bonuses": {
+      "str": 81,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 115,
+      "slash": -4,
+      "crush": 121,
+      "magic": -4,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Dual sai",
     "id": 23206,
     "version": "",
@@ -51960,6 +52230,36 @@
     "isTwoHanded": true
   },
   {
+    "name": "Eclipse atlatl (Last Man Standing)",
+    "id": 29851,
+    "version": "",
+    "slot": "weapon",
+    "image": "Eclipse atlatl (Last Man Standing).png",
+    "speed": 4,
+    "category": "Bow",
+    "bonuses": {
+      "str": 40,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 87
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Eclipse moon chestplate",
     "id": 29049,
     "version": "Broken",
@@ -52025,6 +52325,36 @@
     "version": "Used",
     "slot": "body",
     "image": "Eclipse moon chestplate (used).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 3,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -15,
+      "ranged": 31
+    },
+    "defensive": {
+      "stab": 15,
+      "slash": 18,
+      "crush": 57,
+      "magic": 55,
+      "ranged": 32
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Eclipse moon chestplate (Last Man Standing)",
+    "id": 29840,
+    "version": "",
+    "slot": "body",
+    "image": "Eclipse moon chestplate (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -52140,6 +52470,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Eclipse moon helm (Last Man Standing)",
+    "id": 29842,
+    "version": "",
+    "slot": "head",
+    "image": "Eclipse moon helm (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 3,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -6,
+      "ranged": 8
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 3,
+      "crush": 14,
+      "magic": 10,
+      "ranged": 4
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Eclipse moon tassets",
     "id": 29052,
     "version": "Broken",
@@ -52205,6 +52565,36 @@
     "version": "Used",
     "slot": "legs",
     "image": "Eclipse moon tassets (used).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 1,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -15,
+      "ranged": 17
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 13,
+      "crush": 37,
+      "magic": 31,
+      "ranged": 17
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Eclipse moon tassets (Last Man Standing)",
+    "id": 29841,
+    "version": "",
+    "slot": "legs",
+    "image": "Eclipse moon tassets (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "bonuses": {

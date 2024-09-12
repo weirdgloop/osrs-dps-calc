@@ -3544,8 +3544,8 @@
     "speed": 6,
     "style": [
       "All",
-      "Melee",
-      "magic"
+      "Magic",
+      "Crush'\"`UNIQ--ref-00000005-QINU`\"'"
     ],
     "size": 7,
     "max_hit": "38",
@@ -6722,7 +6722,7 @@
       "Magic"
     ],
     "size": 0,
-    "max_hit": "89",
+    "max_hit": "40",
     "skills": {
       "atk": 275,
       "def": 275,
@@ -6762,7 +6762,7 @@
       "Crush"
     ],
     "size": 0,
-    "max_hit": "89",
+    "max_hit": "40",
     "skills": {
       "atk": 275,
       "def": 275,
@@ -6802,7 +6802,7 @@
       "Ranged"
     ],
     "size": 0,
-    "max_hit": "89",
+    "max_hit": "40",
     "skills": {
       "atk": 275,
       "def": 275,
@@ -38737,6 +38737,46 @@
       "light": 20,
       "slash": 25,
       "stab": 18
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 11946,
+    "name": "Guard",
+    "version": "Falador (unarmed)",
+    "image": "Guard (Falador, unarmed).png",
+    "level": 19,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 15,
+      "def": 16,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 15
+    },
+    "offensive": {
+      "atk": 6,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "crush": 5,
+      "magic": -4,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
+      "slash": 5,
+      "stab": 5
     },
     "attributes": [],
     "weakness": null
@@ -79041,7 +79081,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-000000B8-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000007-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -86442,7 +86482,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000018-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000094-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -86483,7 +86523,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000018-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000094-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -88557,7 +88597,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000009-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000006-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -88597,7 +88637,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000B-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000008-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
