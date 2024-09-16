@@ -1221,17 +1221,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
-    if (this.opts.usingSpecialAttack && this.wearing('Scorching bow')) {
-      // todo(wgs): confirm that this applies on inaccurate rolls too, and that it is in addition to the regular hit
-      const extraDmg = mattrs.includes(MonsterAttribute.DEMON) ? 5 : 1;
-
-      // increase 0s to 1s here since the burn applies separately, and this otherwise skips that raising later
-      dist = dist.transform((h) => {
-        const baseDmg = Math.max(h.accurate ? 1 : 0, h.damage);
-        return new HitDistribution([new WeightedHit(1.0, [new Hitsplat(baseDmg + extraDmg, h.accurate)])]);
-      });
-    }
-
     if (this.opts.usingSpecialAttack && this.wearing('Purging staff')) {
       // todo(wgs): does this require the correct runes or only the level of each demonbane spell?
     }
