@@ -914,8 +914,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       minHit = this.trackFactor(DetailKey.MIN_HIT_SUNFIRE, maxHit, [1, 10]);
     }
 
-    if ((this.wearing('Tome of fire') && this.player.spell?.element === 'fire')
-      || (this.wearing('Tome of water') && this.player.spell?.element === 'water')) {
+    if ((this.wearing('Tome of fire') && this.player.equipment.shield?.version === 'Charged' && this.player.spell?.element === 'fire')
+      || (this.wearing('Tome of water') && this.player.equipment.shield?.version === 'Charged' && this.player.spell?.element === 'water')) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_TOME, maxHit, [11, 10]);
     }
 
