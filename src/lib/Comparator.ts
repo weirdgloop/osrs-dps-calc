@@ -87,6 +87,8 @@ export default class Comparator {
       monster: this.baseMonster,
     });
 
+    const skillInput = (x: number, stat: keyof PlayerSkills): InputSet => playerInput(x, { skills: { [stat]: x }, boosts: { [stat]: 0 } });
+
     switch (this.xAxis) {
       case CompareXAxis.MONSTER_DEF:
         for (let newDef = this.baseMonster.skills.def; newDef >= 0; newDef--) {
@@ -118,31 +120,31 @@ export default class Comparator {
 
       case CompareXAxis.PLAYER_ATTACK_LEVEL:
         for (let newAttack = 0; newAttack <= 125; newAttack++) {
-          yield playerInput(newAttack, { skills: { atk: newAttack } });
+          yield skillInput(newAttack, 'atk');
         }
         return;
 
       case CompareXAxis.PLAYER_STRENGTH_LEVEL:
         for (let newStrength = 0; newStrength <= 125; newStrength++) {
-          yield playerInput(newStrength, { skills: { str: newStrength } });
+          yield skillInput(newStrength, 'str');
         }
         return;
 
       case CompareXAxis.PLAYER_DEFENCE_LEVEL:
         for (let newDefence = 0; newDefence <= 125; newDefence++) {
-          yield playerInput(newDefence, { skills: { def: newDefence } });
+          yield skillInput(newDefence, 'def');
         }
         return;
 
       case CompareXAxis.PLAYER_RANGED_LEVEL:
         for (let newRanged = 0; newRanged <= 125; newRanged++) {
-          yield playerInput(newRanged, { skills: { ranged: newRanged } });
+          yield skillInput(newRanged, 'ranged');
         }
         return;
 
       case CompareXAxis.PLAYER_MAGIC_LEVEL:
         for (let newMagic = 0; newMagic <= 125; newMagic++) {
-          yield playerInput(newMagic, { skills: { magic: newMagic } });
+          yield skillInput(newMagic, 'magic');
         }
         return;
 
