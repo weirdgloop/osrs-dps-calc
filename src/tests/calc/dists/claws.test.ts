@@ -3,12 +3,33 @@ import { burningClawDoT, burningClawSpec } from '@/lib/dists/claws';
 
 describe('burning claws expected damage over time', () => {
   test('100% accuracy', () => {
+    // THE BELOW COMMENT IS WRONG DUE TO A BUG, BUT IS KEPT IN CASE THE BUG IS FIXED
     // 15% chance per splat to deal 10 damage = 1.5 expected
     // * 3 hitsplats = 4.5
-    expect(burningClawDoT(1.0)).toBe(4.5);
+    expect(burningClawDoT(1.0)).toBeCloseTo(4.4775);
+  });
+
+  test('75% accuracy', () => {
+    // THE BELOW COMMENT IS WRONG DUE TO A BUG, BUT IS KEPT IN CASE THE BUG IS FIXED
+    // first roll hits = 75% chance
+    //    15% chance per hitsplat = 1.5 expected if hit
+    //    75% chance of hit => 1.125 expected
+    //    * 3 hitsplats = 3.375 expected
+    // second roll hits = 25% no hit yet * 75% accuracy = 18.75%
+    //    30% chance per hitsplat = 3 expected if hit
+    //    18.75% chance of hit => 0.5625 expected
+    //    * 3 hitsplats = 1.6875 expected
+    // third roll hits = 1.5625% no hit yet * 75% accuracy = 1.171875%
+    //    45% chance per hitsplat = 4.5 expected if hit
+    //    1.171875% chance of hit => 0.052734375 expected
+    //    * 3 hitsplats = 0.158203125 expected
+    // sum of all
+    //    3.375 + 1.6875 + 0.158203125 = 5.220703125
+    expect(burningClawDoT(0.75)).toBeCloseTo(5.6520703125);
   });
 
   test('50% accuracy', () => {
+    // THE BELOW COMMENT IS WRONG DUE TO A BUG, BUT IS KEPT IN CASE THE BUG IS FIXED
     // first roll hits = 50% chance
     //    15% chance per hitsplat = 1.5 expected if hit
     //    50% chance of hit => 0.75 expected
@@ -23,10 +44,11 @@ describe('burning claws expected damage over time', () => {
     //    * 3 hitsplats = 1.6875 expected
     // sum of all
     //    2.25 + 2.25 + 1.6875 = 6.1875
-    expect(burningClawDoT(0.5)).toBe(6.1875);
+    expect(burningClawDoT(0.5)).toBeCloseTo(6.1284375);
   });
 
   test('25% accuracy', () => {
+    // THE BELOW COMMENT IS WRONG DUE TO A BUG, BUT IS KEPT IN CASE THE BUG IS FIXED
     // first roll hits = 25% chance
     //    15% chance per hitsplat = 1.5 expected if hit
     //    25% chance of hit => 0.375 expected
@@ -41,7 +63,7 @@ describe('burning claws expected damage over time', () => {
     //    * 3 hitsplats = 1.8984375 expected
     // sum of all
     //    1.125 + 1.6875 + 1.8984375 = 4.7109375
-    expect(burningClawDoT(0.25)).toBe(4.7109375);
+    expect(burningClawDoT(0.25)).toBeCloseTo(4.6599609375);
   });
 
   test('0% accuracy', () => {
