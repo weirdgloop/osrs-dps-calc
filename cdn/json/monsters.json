@@ -3538,17 +3538,60 @@
   {
     "id": 13668,
     "name": "Araxxor",
-    "version": "",
-    "image": "Araxxor (dead).png",
+    "version": "Enraged",
+    "image": "Araxxor (enraged).png",
+    "level": 890,
+    "speed": 4,
+    "style": [
+      "All"
+    ],
+    "size": 7,
+    "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
+    "skills": {
+      "atk": 320,
+      "def": 170,
+      "hp": 1020,
+      "magic": 218,
+      "ranged": 241,
+      "str": 320
+    },
+    "offensive": {
+      "atk": 218,
+      "magic": 260,
+      "magic_str": 5,
+      "ranged": 283,
+      "ranged_str": 35,
+      "str": 10
+    },
+    "defensive": {
+      "crush": 15,
+      "magic": 237,
+      "heavy": 218,
+      "standard": 218,
+      "light": 218,
+      "slash": 75,
+      "stab": 160
+    },
+    "attributes": [],
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
+  },
+  {
+    "id": 13668,
+    "name": "Araxxor",
+    "version": "In combat",
+    "image": "Araxxor.png",
     "level": 890,
     "speed": 6,
     "style": [
-      "All",
-      "Magic",
-      "Crush'\"`UNIQ--ref-00000005-QINU`\"'"
+      "Crush",
+      "Ranged",
+      "'\"`UNIQ--ref-00000057-QINU`\"' Magic"
     ],
     "size": 7,
-    "max_hit": "38",
+    "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
     "skills": {
       "atk": 320,
       "def": 135,
@@ -24200,7 +24243,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Crush"
+      "Slash '\"`UNIQ--ref-00000036-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -24240,8 +24283,8 @@
     "level": 328,
     "speed": 6,
     "style": [
-      "Crush",
-      "Ranged"
+      "Ranged",
+      "Slash"
     ],
     "size": 6,
     "max_hit": "26",
@@ -79081,7 +79124,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000007-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000013-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -86482,7 +86525,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000094-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000002A-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -86523,7 +86566,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000094-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000002A-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -88597,7 +88640,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000006-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000013-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -88637,7 +88680,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000008-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000015-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
