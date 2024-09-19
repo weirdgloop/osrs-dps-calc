@@ -1084,7 +1084,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     let ret: number = 0;
     if (this.opts.usingSpecialAttack) {
       if (this.wearing(['Bone claws', 'Burning claws'])) {
-        ret = 30;
+        ret = 29;
       } if (this.wearing('Scorching bow')) {
         ret = this.monster.attributes.includes(MonsterAttribute.DEMON) ? 5 : 1;
       }
