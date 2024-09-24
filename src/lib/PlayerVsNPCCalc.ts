@@ -723,6 +723,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_FORINTHRY_SURGE, additiveBonus, buffs.forinthrySurge ? 35 : 20);
     } else if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_SALVE, additiveBonus, 20);
+    } else if (this.wearing('Hueycoatl wand') && mattrs.includes(MonsterAttribute.DRAGON)) {
+      additiveBonus += this.trackAdd(DetailKey.PLAYER_ACCURACY_SALVE, additiveBonus, 50);
     } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_SALVE, additiveBonus, 15);
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
@@ -876,6 +878,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       magicDmgBonus += 200;
     } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       magicDmgBonus += 150;
+    } else if (this.wearing('Hueycoatl wand') && mattrs.includes(MonsterAttribute.DRAGON)) {
+      magicDmgBonus += 200;
     } else if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
       magicDmgBonus += buffs.forinthrySurge ? 350 : 200;
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
