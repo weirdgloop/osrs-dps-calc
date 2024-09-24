@@ -890,7 +890,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       magicDmgBonus += p.magicDamageBonus!;
     }
 
-    maxHit = Math.trunc(maxHit * (1000 + magicDmgBonus) / 1000);
+    maxHit += Math.trunc(maxHit * magicDmgBonus / 1000);
 
     if (blackMaskBonus) {
       maxHit = Math.trunc(maxHit * 23 / 20);
