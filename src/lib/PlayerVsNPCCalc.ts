@@ -255,11 +255,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       ].includes(v)).length;
 
       // When wearing the full set, the bonus is enhanced
-      if (inqPieces === 3) inqPieces = 5;
-
       if (inqPieces > 0) {
         if (this.wearing("Inquisitor's mace")) {
-          inqPieces *= 3;
+          // 2.5% per piece, no full-set bonus
+          inqPieces *= 5;
+        } else if (inqPieces === 3) {
+          // 1.0% extra for full set when not using inq mace
+          inqPieces = 5;
         }
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_INQ, attackRoll, [200 + inqPieces, 200]);
       }
