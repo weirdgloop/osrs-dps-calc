@@ -334,6 +334,17 @@ export default class BaseCalc {
   }
 
   /**
+   * Standard roll two-hit weapons
+   */
+  protected isWearingTwoHitWeapon(): boolean {
+    return this.wearing([
+      "Torag's hammers",
+      'Sulphur blades',
+      'Glacial temotli',
+    ]);
+  }
+
+  /**
    * Whether the player is using the Keris dagger.
    * @see https://oldschool.runescape.wiki/w/Keris
    */
