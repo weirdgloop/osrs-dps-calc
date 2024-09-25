@@ -1278,7 +1278,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       );
     }
 
-    if (this.isUsingMeleeStyle() && (this.wearing('Torag\'s hammers') || this.wearing('Sulphur blades'))) {
+    if (this.isUsingMeleeStyle() && this.isWearingTwoHitWeapon()) {
       dist = new AttackDistribution([
         HitDistribution.linear(acc, 0, Math.trunc(max / 2)),
         HitDistribution.linear(acc, 0, max - Math.trunc(max / 2)),
