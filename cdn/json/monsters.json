@@ -3586,9 +3586,9 @@
     "level": 890,
     "speed": 6,
     "style": [
-      "Crush",
       "Ranged",
-      "'\"`UNIQ--ref-00000057-QINU`\"' Magic"
+      "Crush",
+      "'\"`UNIQ--ref-00000044-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -6765,7 +6765,7 @@
       "Magic"
     ],
     "size": 0,
-    "max_hit": "40",
+    "max_hit": "89",
     "skills": {
       "atk": 275,
       "def": 275,
@@ -6805,7 +6805,7 @@
       "Crush"
     ],
     "size": 0,
-    "max_hit": "40",
+    "max_hit": "89",
     "skills": {
       "atk": 275,
       "def": 275,
@@ -6845,7 +6845,7 @@
       "Ranged"
     ],
     "size": 0,
-    "max_hit": "40",
+    "max_hit": "89",
     "skills": {
       "atk": 275,
       "def": 275,
@@ -10912,7 +10912,7 @@
       "Typeless slash"
     ],
     "size": 5,
-    "max_hit": "20",
+    "max_hit": "20 (x3)",
     "skills": {
       "atk": 258,
       "def": 60,
@@ -11614,7 +11614,7 @@
       "Typeless slash"
     ],
     "size": 5,
-    "max_hit": "20",
+    "max_hit": "20 (x3)",
     "skills": {
       "atk": 258,
       "def": 60,
@@ -24243,7 +24243,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-00000036-QINU`\"'"
+      "Slash '\"`UNIQ--ref-00000085-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -25047,7 +25047,7 @@
       "Typeless slash"
     ],
     "size": 5,
-    "max_hit": "18",
+    "max_hit": "18 (x3)",
     "skills": {
       "atk": 258,
       "def": 60,
@@ -29602,6 +29602,91 @@
       "stab": 0
     },
     "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13789,
+    "name": "Frost Crab",
+    "version": "",
+    "image": "Frost Crab.png",
+    "level": 15,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 0,
+    "max_hit": "1 (crush)",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 60,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": -50,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": {
+      "element": "fire",
+      "severity": 100
+    }
+  },
+  {
+    "id": 13728,
+    "name": "Frost Nagua",
+    "version": "",
+    "image": "Frost Nagua.png",
+    "level": 104,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 2,
+    "max_hit": "12",
+    "skills": {
+      "atk": 1,
+      "def": 40,
+      "hp": 120,
+      "magic": 90,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 70,
+      "magic_str": 15,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 10,
+      "magic": 60,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
+      "slash": 50,
+      "stab": 50
+    },
+    "attributes": [
+      "spectral"
+    ],
     "weakness": null
   },
   {
@@ -35354,7 +35439,7 @@
     "level": 83,
     "speed": 4,
     "style": [
-      "Slash"
+      "Typeless Slash"
     ],
     "size": 0,
     "max_hit": "8",
@@ -55913,7 +55998,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "4",
+    "max_hit": "4 (x3)",
     "skills": {
       "atk": 320,
       "def": 40,
@@ -55953,7 +56038,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "2",
+    "max_hit": "2 (x3)",
     "skills": {
       "atk": 150,
       "def": 2,
@@ -55993,7 +56078,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "3",
+    "max_hit": "3 (x3)",
     "skills": {
       "atk": 215,
       "def": 30,
@@ -57353,46 +57438,6 @@
       "magic_str": 280,
       "ranged": 0,
       "ranged_str": -30,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "weakness": null
-  },
-  {
-    "id": 10820,
-    "name": "Nylocas Matomenos",
-    "version": "Entry Mode Maiden",
-    "image": "Nylocas Matomenos.png",
-    "level": 68,
-    "speed": -1,
-    "style": [
-      "None"
-    ],
-    "size": 2,
-    "max_hit": "11",
-    "skills": {
-      "atk": 100,
-      "def": 100,
-      "hp": 64,
-      "magic": 100,
-      "ranged": 100,
-      "str": 100
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
       "str": 0
     },
     "defensive": {
@@ -62535,7 +62580,7 @@
     "level": 48,
     "speed": 5,
     "style": [
-      "Ranged"
+      "Typeless Ranged"
     ],
     "size": 0,
     "max_hit": "8",
@@ -62728,6 +62773,46 @@
     "attributes": [
       "demon"
     ],
+    "weakness": null
+  },
+  {
+    "id": 13968,
+    "name": "Porcupine",
+    "version": "",
+    "image": "Porcupine.png",
+    "level": 4,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 4,
+      "def": 2,
+      "hp": 5,
+      "magic": 1,
+      "ranged": 1,
+      "str": 5
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
     "weakness": null
   },
   {
@@ -70195,7 +70280,7 @@
   },
   {
     "id": 4004,
-    "name": "Shadow",
+    "name": "Shadow (Temple of Light)",
     "version": "",
     "image": "Shadow.png",
     "level": 73,
@@ -79124,7 +79209,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000013-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000008C-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -81543,6 +81628,51 @@
       "spectral"
     ],
     "weakness": null
+  },
+  {
+    "id": 14009,
+    "name": "The Hueycoatl",
+    "version": "",
+    "image": "The Hueycoatl.png",
+    "level": 642,
+    "speed": 0,
+    "style": [
+      "Melee",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 7,
+    "max_hit": "11",
+    "skills": {
+      "atk": 150,
+      "def": 125,
+      "hp": 2500,
+      "magic": 50,
+      "ranged": 50,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 100,
+      "magic": 200,
+      "magic_str": 50,
+      "ranged": 250,
+      "ranged_str": 50,
+      "str": 50
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 200,
+      "heavy": 350,
+      "standard": 350,
+      "light": 350,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "weakness": {
+      "element": "earth",
+      "severity": 60
+    }
   },
   {
     "id": 3476,
@@ -86525,7 +86655,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000002A-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000043-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -86566,7 +86696,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000002A-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000043-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -88640,7 +88770,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000013-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000063-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -88680,7 +88810,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000015-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000065-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
