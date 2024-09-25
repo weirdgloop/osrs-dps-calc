@@ -27,7 +27,6 @@ const equipmentAliases = {
   21021: [24666], // Ancestral robe top
   24201: [24203], // Ancient halo#Normal
   27624: [27626], // Ancient sceptre#Normal
-  29818: [29822, 29820], // Araxyte slayer helmet (i)#Nightmare Zone
   11771: [26768, 25260], // Archers ring (i)#Nightmare Zone
   11830: [26716], // Armadyl chainskirt
   11802: [20368], // Armadyl godsword
@@ -242,8 +241,8 @@ const equipmentAliases = {
   11770: [26767, 25258], // Seers ring (i)#Nightmare Zone
   24198: [24200], // Seren halo#Normal
   28266: [28476], // Shadow ancient sceptre#Normal
-  11864: [19639, 19643, 23073, 21264, 19647, 21888, 24370, 25910, 25898, 25904], // Slayer helmet
-  11865: [26675, 19641, 25179, 26676, 19645, 25181, 26680, 23075, 25189, 26678, 21266, 25185, 26677, 19649, 25183, 26674, 25177, 26679, 21890, 25187, 26681, 24444, 25191, 26684, 25912, 25914, 26682, 25900, 25902, 26683, 25906, 25908], // Slayer helmet (i)#Nightmare Zone
+  11864: [29816, 19639, 19643, 23073, 21264, 19647, 21888, 24370, 25910, 25898, 25904], // Slayer helmet
+  11865: [29822, 29818, 29820, 26675, 19641, 25179, 26676, 19645, 25181, 26680, 23075, 25189, 26678, 21266, 25185, 26677, 19649, 25183, 26674, 25177, 26679, 21890, 25187, 26681, 24444, 25191, 26684, 25912, 25914, 26682, 25900, 25902, 26683, 25906, 25908], // Slayer helmet (i)#Nightmare Zone
   28264: [28475], // Smoke ancient sceptre#Normal
   11787: [12795], // Steam battlestaff
   8846: [24138], // Steel defender#Normal

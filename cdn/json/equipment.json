@@ -48840,6 +48840,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Dragon hunter wand",
+    "id": 30070,
+    "version": "",
+    "slot": "weapon",
+    "image": "Dragon hunter wand.png",
+    "speed": 5,
+    "category": "Staff",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 100,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 16,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 16,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Dragon javelin",
     "id": 19486,
     "version": "Poison",
@@ -60450,6 +60480,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Glacial temotli",
+    "id": 29889,
+    "version": "",
+    "slot": "weapon",
+    "image": "Glacial temotli.png",
+    "speed": 4,
+    "category": "Spiked",
+    "bonuses": {
+      "str": 64,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": 11,
+      "slash": 0,
+      "crush": 72,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Glarial's amulet",
     "id": 295,
     "version": "",
@@ -70525,6 +70585,126 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Hueycoatl hide body",
+    "id": 30076,
+    "version": "",
+    "slot": "body",
+    "image": "Hueycoatl hide body.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 3
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -15,
+      "ranged": 30
+    },
+    "defensive": {
+      "stab": 55,
+      "slash": 47,
+      "crush": 60,
+      "magic": 56,
+      "ranged": 55
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Hueycoatl hide chaps",
+    "id": 30079,
+    "version": "",
+    "slot": "legs",
+    "image": "Hueycoatl hide chaps.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -10,
+      "ranged": 17
+    },
+    "defensive": {
+      "stab": 31,
+      "slash": 25,
+      "crush": 33,
+      "magic": 30,
+      "ranged": 31
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Hueycoatl hide coif",
+    "id": 30073,
+    "version": "",
+    "slot": "head",
+    "image": "Hueycoatl hide coif.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -1,
+      "ranged": 7
+    },
+    "defensive": {
+      "stab": 4,
+      "slash": 7,
+      "crush": 10,
+      "magic": 5,
+      "ranged": 8
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Hueycoatl hide vambraces",
+    "id": 30082,
+    "version": "",
+    "slot": "hands",
+    "image": "Hueycoatl hide vambraces.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 1
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -10,
+      "ranged": 11
+    },
+    "defensive": {
+      "stab": 6,
+      "slash": 5,
+      "crush": 7,
+      "magic": 8,
       "ranged": 0
     },
     "isTwoHanded": false
