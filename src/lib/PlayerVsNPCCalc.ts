@@ -25,6 +25,7 @@ import {
   FLAT_ARMOUR,
   GLOWING_CRYSTAL_IDS,
   GUARDIAN_IDS,
+  HUEYCOATL_TAIL,
   IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS,
   IMMUNE_TO_MELEE_DAMAGE_NPC_IDS,
   IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS,
@@ -1037,6 +1038,15 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
+    const weapon = this.player.equipment.weapon;
+    if (this.monster.id === HUEYCOATL_TAIL
+      && this.player.style.type === 'crush'
+      && weapon
+      && weapon.offensive.crush > weapon.offensive.stab
+      && weapon.offensive.crush > weapon.offensive.slash) {
+      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
+    }
+
     if (this.opts.usingSpecialAttack && (this.wearing(['Voidwaker', 'Dawnbringer']) || this.isWearingMlb())) {
       return 1.0;
     }
@@ -1482,6 +1492,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         // todo floor of 1?
         dist = dist.transform(multiplyTransformer(4, 5, 1));
       }
+    }
+    if (this.monster.id === HUEYCOATL_TAIL) {
+      // todo is this flatLimit, cappedReroll or linearMin?
+      dist = dist.transform(linearMinTransformer(9));
     }
 
     const flatArmour = FLAT_ARMOUR[this.monster.id];
