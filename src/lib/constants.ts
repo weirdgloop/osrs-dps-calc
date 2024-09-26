@@ -417,3 +417,5 @@ TD_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = TD_PHASES; });
 export const ARAXXOR_IDS = [13668];
 export const ARAXXOR_PHASES = ['Standard', 'Enraged'];
 ARAXXOR_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = ARAXXOR_PHASES; });
+
+export const HUEYCOATL_TAIL = 14014;
