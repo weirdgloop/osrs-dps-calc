@@ -407,6 +407,19 @@ export const FLAT_ARMOUR: { [npcId: number]: number } = {
   13013: -5, // blue moon
   13033: -4, // sulphur nagua
   13029: -2, // grimy lizard
+  13685: -2, // amoxliatl
+
+  // frost nagua
+  13728: -2,
+  13787: -2,
+  13788: -2,
+
+  // elite black knight
+  13463: 7,
+  13480: 7,
+  13566: 7,
+  13464: 7,
+  13481: 7,
 };
 
 export const MONSTER_PHASES_BY_ID: { [k: number]: string[] } = {};
