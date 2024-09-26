@@ -2069,6 +2069,51 @@
     "weakness": null
   },
   {
+    "id": 13685,
+    "name": "Amoxliatl",
+    "version": "",
+    "image": "Amoxliatl.png",
+    "level": 263,
+    "speed": 8,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "22",
+    "skills": {
+      "atk": 0,
+      "def": 80,
+      "hp": 520,
+      "magic": 170,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 160,
+      "magic_str": 15,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 40,
+      "magic": 100,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [
+      "spectral"
+    ],
+    "weakness": {
+      "element": "fire",
+      "severity": 30
+    }
+  },
+  {
     "id": 12336,
     "name": "Ancient Guardian (Desert Treasure II)",
     "version": "",
@@ -3588,7 +3633,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000044-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000005-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -22931,6 +22976,49 @@
     }
   },
   {
+    "id": 13812,
+    "name": "Dire Wolf Alpha",
+    "version": "",
+    "image": "Dire Wolf Alpha.png",
+    "level": 113,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 3,
+    "max_hit": "12",
+    "skills": {
+      "atk": 120,
+      "def": 80,
+      "hp": 100,
+      "magic": 40,
+      "ranged": 1,
+      "str": 110
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": {
+      "element": "none",
+      "severity": 0
+    }
+  },
+  {
     "id": 9181,
     "name": "Dire Wolf",
     "version": "Level 72",
@@ -22995,6 +23083,46 @@
       "magic": 0,
       "magic_str": 0,
       "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13813,
+    "name": "Dire Wolf",
+    "version": "Meat and Greet",
+    "image": "Dire Wolf.png",
+    "level": 72,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 2,
+    "max_hit": "3",
+    "skills": {
+      "atk": 75,
+      "def": 70,
+      "hp": 10,
+      "magic": 1,
+      "ranged": 20,
+      "str": 75
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 500,
       "ranged_str": 0,
       "str": 0
     },
@@ -24243,7 +24371,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-00000085-QINU`\"'"
+      "Slash '\"`UNIQ--ref-0000001D-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -26169,6 +26297,135 @@
     },
     "attributes": [],
     "weakness": null
+  },
+  {
+    "id": 13732,
+    "name": "Emissary Acolyte",
+    "version": "",
+    "image": "Emissary acolyte.png",
+    "level": 34,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 30,
+      "def": 30,
+      "hp": 25,
+      "magic": 1,
+      "ranged": 1,
+      "str": 35
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 30,
+      "magic": 10,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [],
+    "weakness": {
+      "element": "none",
+      "severity": 0
+    }
+  },
+  {
+    "id": 13744,
+    "name": "Emissary Ascended",
+    "version": "",
+    "image": "Emissary Ascended.png",
+    "level": 117,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "12",
+    "skills": {
+      "atk": 120,
+      "def": 90,
+      "hp": 80,
+      "magic": 40,
+      "ranged": 1,
+      "str": 110
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 50,
+      "magic": 20,
+      "heavy": 30,
+      "standard": 30,
+      "light": 30,
+      "slash": 30,
+      "stab": 30
+    },
+    "attributes": [],
+    "weakness": {
+      "element": "none",
+      "severity": 0
+    }
+  },
+  {
+    "id": 13738,
+    "name": "Emissary Chosen",
+    "version": "",
+    "image": "Emissary chosen.png",
+    "level": 76,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": {
+      "atk": 80,
+      "def": 60,
+      "hp": 50,
+      "magic": 20,
+      "ranged": 1,
+      "str": 70
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 40,
+      "magic": 15,
+      "heavy": 25,
+      "standard": 25,
+      "light": 25,
+      "slash": 25,
+      "stab": 25
+    },
+    "attributes": [],
+    "weakness": {
+      "element": "none",
+      "severity": 0
+    }
   },
   {
     "id": 4381,
@@ -29614,7 +29871,7 @@
     "style": [
       "Crush"
     ],
-    "size": 0,
+    "size": 1,
     "max_hit": "1 (crush)",
     "skills": {
       "atk": 1,
@@ -29687,7 +29944,10 @@
     "attributes": [
       "spectral"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 11283,
@@ -53362,6 +53622,47 @@
       "light": 12,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13814,
+    "name": "Minotaur (Meat and Greet)",
+    "version": "",
+    "image": "Minotaur (Meat and Greet).png",
+    "level": 193,
+    "speed": 5,
+    "style": [
+      "Melee",
+      "Magic"
+    ],
+    "size": 2,
+    "max_hit": "14",
+    "skills": {
+      "atk": 140,
+      "def": 100,
+      "hp": 240,
+      "magic": 100,
+      "ranged": 0,
+      "str": 110
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 300,
+      "magic_str": 5,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "crush": 50,
+      "magic": 80,
+      "heavy": 140,
+      "standard": 140,
+      "light": 140,
+      "slash": 20,
+      "stab": 30
     },
     "attributes": [],
     "weakness": null
@@ -81630,9 +81931,54 @@
     "weakness": null
   },
   {
+    "id": 14017,
+    "name": "The Hueycoatl",
+    "version": "Body",
+    "image": "The Hueycoatl.png",
+    "level": 642,
+    "speed": 0,
+    "style": [
+      "Melee",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "13",
+    "skills": {
+      "atk": 150,
+      "def": 125,
+      "hp": 250,
+      "magic": 50,
+      "ranged": 50,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 100,
+      "magic": 200,
+      "magic_str": 50,
+      "ranged": 250,
+      "ranged_str": 50,
+      "str": 50
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 200,
+      "heavy": 350,
+      "standard": 350,
+      "light": 350,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "weakness": {
+      "element": "earth",
+      "severity": 60
+    }
+  },
+  {
     "id": 14009,
     "name": "The Hueycoatl",
-    "version": "",
+    "version": "Head",
     "image": "The Hueycoatl.png",
     "level": 642,
     "speed": 0,
@@ -81642,11 +81988,56 @@
       "Ranged"
     ],
     "size": 7,
-    "max_hit": "11",
+    "max_hit": "13",
     "skills": {
       "atk": 150,
       "def": 125,
       "hp": 2500,
+      "magic": 50,
+      "ranged": 50,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 100,
+      "magic": 200,
+      "magic_str": 50,
+      "ranged": 250,
+      "ranged_str": 50,
+      "str": 50
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 200,
+      "heavy": 350,
+      "standard": 350,
+      "light": 350,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "weakness": {
+      "element": "earth",
+      "severity": 60
+    }
+  },
+  {
+    "id": 14014,
+    "name": "The Hueycoatl",
+    "version": "Tail",
+    "image": "The Hueycoatl.png",
+    "level": 642,
+    "speed": 0,
+    "style": [
+      "Melee",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 5,
+    "max_hit": "13",
+    "skills": {
+      "atk": 150,
+      "def": 125,
+      "hp": 400,
       "magic": 50,
       "ranged": 50,
       "str": 50
@@ -86655,7 +87046,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000043-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000055-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -86696,7 +87087,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000043-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000055-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -88770,7 +89161,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000063-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000003C-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -88810,7 +89201,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000065-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000003E-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -93007,6 +93398,49 @@
       "golem"
     ],
     "weakness": null
+  },
+  {
+    "id": 12979,
+    "name": "White jaguar",
+    "version": "",
+    "image": "White jaguar.png",
+    "level": 67,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "6",
+    "skills": {
+      "atk": 55,
+      "def": 55,
+      "hp": 80,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": {
+      "element": "none",
+      "severity": 0
+    }
   },
   {
     "id": 107,
