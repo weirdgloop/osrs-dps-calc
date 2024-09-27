@@ -410,9 +410,9 @@ export const FLAT_ARMOUR: { [npcId: number]: number } = {
   13685: -2, // amoxliatl
 
   // frost nagua
-  13728: -2,
-  13787: -2,
-  13788: -2,
+  13728: -4,
+  13787: -4,
+  13788: -4,
 
   // elite black knight
   13463: 7,
