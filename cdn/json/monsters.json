@@ -15919,6 +15919,49 @@
     "weakness": null
   },
   {
+    "id": 13799,
+    "name": "Chilled jelly",
+    "version": "",
+    "image": "Chilled jelly.png",
+    "level": 112,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 95,
+      "def": 70,
+      "hp": 140,
+      "magic": 95,
+      "ranged": 1,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
+  },
+  {
     "id": 2910,
     "name": "Chinchompa (Hunter)",
     "version": "",
@@ -29914,7 +29957,7 @@
     "style": [
       "Magic"
     ],
-    "size": 2,
+    "size": 1,
     "max_hit": "12",
     "skills": {
       "atk": 1,
@@ -63558,6 +63601,46 @@
     "weakness": null
   },
   {
+    "id": 12650,
+    "name": "Prince Itzla Arkan",
+    "version": "",
+    "image": "Prince Itzla Arkan.png",
+    "level": 167,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "12",
+    "skills": {
+      "atk": 150,
+      "def": 75,
+      "hp": 250,
+      "magic": 55,
+      "ranged": 1,
+      "str": 110
+    },
+    "offensive": {
+      "atk": 150,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 20,
+      "magic": 10,
+      "heavy": 30,
+      "standard": 30,
+      "light": 30,
+      "slash": 30,
+      "stab": 30
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
     "id": 3139,
     "name": "Pyrefiend",
     "version": "GWD",
@@ -81969,7 +82052,9 @@
       "slash": 100,
       "stab": 100
     },
-    "attributes": [],
+    "attributes": [
+      "dragon"
+    ],
     "weakness": {
       "element": "earth",
       "severity": 60
@@ -82014,7 +82099,9 @@
       "slash": 100,
       "stab": 100
     },
-    "attributes": [],
+    "attributes": [
+      "dragon"
+    ],
     "weakness": {
       "element": "earth",
       "severity": 60
@@ -82059,7 +82146,9 @@
       "slash": 100,
       "stab": 100
     },
-    "attributes": [],
+    "attributes": [
+      "dragon"
+    ],
     "weakness": {
       "element": "earth",
       "severity": 60
@@ -87046,7 +87135,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000055-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000049-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -87087,7 +87176,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000055-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000049-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -89161,7 +89250,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000003C-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000C-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -89201,7 +89290,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000003E-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000E-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
