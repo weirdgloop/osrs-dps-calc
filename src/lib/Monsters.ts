@@ -2,6 +2,7 @@ import { Monster } from '@/types/Monster';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { isCombatStyleType } from '@/types/PlayerCombatStyle';
 import monsters from '../../cdn/json/monsters.json';
+import { FLAT_ARMOUR } from './constants';
 
 export function getMonsters(): Omit<Monster, 'inputs'>[] {
   return monsters.map((m): Omit<Monster, 'inputs'> => {
@@ -17,6 +18,7 @@ export function getMonsters(): Omit<Monster, 'inputs'>[] {
       style: isCombatStyleType(styleStr) ? styleStr : null,
       maxHit: Number.isNaN(maxHit) ? 0 : maxHit,
       skills: m.skills,
+      damage_modifiers: {flat_armour: FLAT_ARMOUR[m.id] ?? 0},
       offensive: m.offensive,
       defensive: m.defensive,
       attributes: m.attributes as MonsterAttribute[],
@@ -78,6 +80,9 @@ export const CUSTOM_MONSTER_BASE: Monster = {
     light: 0,
     standard: 0,
     heavy: 0,
+  },
+  damage_modifiers: {
+    flat_armour: 0
   },
   attributes: [],
   weakness: null,
