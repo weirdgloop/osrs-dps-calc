@@ -1498,10 +1498,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.transform(linearMinTransformer(9));
     }
 
-    const flatArmour = FLAT_ARMOUR[this.monster.id];
-    if (flatArmour) {
+    if (this.monster.damage_modifiers.flat_armour) {
       dist = dist.transform(
-        flatAddTransformer(-flatArmour, 1),
+        flatAddTransformer(-this.monster.damage_modifiers.flat_armour, 1),
         { transformInaccurate: false },
       );
     }
