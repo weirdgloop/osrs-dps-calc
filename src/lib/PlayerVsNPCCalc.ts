@@ -726,8 +726,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_FORINTHRY_SURGE, additiveBonus, buffs.forinthrySurge ? 35 : 20);
     } else if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_SALVE, additiveBonus, 20);
-    } else if (this.wearing('Dragon hunter wand') && mattrs.includes(MonsterAttribute.DRAGON)) {
-      additiveBonus += this.trackAdd(DetailKey.PLAYER_ACCURACY_SALVE, additiveBonus, 50);
     } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_SALVE, additiveBonus, 15);
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
@@ -737,6 +735,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing("Efaritay's aid") && isVampyre(mattrs)) {
       // https://x.com/JagexAsh/status/1792829802996498524
       additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_EFARITAY, additiveBonus, 15);
+    }
+
+    if (this.wearing('Dragon hunter wand') && mattrs.includes(MonsterAttribute.DRAGON)) {
+      additiveBonus += this.trackAdd(DetailKey.DRAGONHUNTER, additiveBonus, 50);
     }
 
     if (this.isWearingSmokeStaff() && this.player.spell?.spellbook === 'standard') {
