@@ -738,7 +738,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.wearing('Dragon hunter wand') && mattrs.includes(MonsterAttribute.DRAGON)) {
-      additiveBonus += this.trackAdd(DetailKey.DRAGONHUNTER, additiveBonus, 50);
+      additiveBonus += this.trackAdd(DetailKey.PLAYER_ACCURACY_DRAGONHUNTER, additiveBonus, 50);
     }
 
     if (this.isWearingSmokeStaff() && this.player.spell?.spellbook === 'standard') {
