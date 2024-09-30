@@ -19,6 +19,9 @@ import SuperCombat from '@/public/img/potions/Super combat.png';
 import SuperMagic from '@/public/img/potions/Super magic.png';
 import Defence from '@/public/img/potions/Defence.png';
 import SuperDefence from '@/public/img/potions/Super defence.png';
+import RubyHarvest from '@/public/img/potions/Ruby Harvest.png';
+import BlackWarlock from '@/public/img/potions/Black Warlock.png';
+import SapphireGlacialis from '@/public/img/potions/Sapphire Glacialis.png';
 import Potion from '@/enums/Potion';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { PlayerCombatStyle } from '@/types/PlayerCombatStyle';
@@ -342,6 +345,30 @@ export const PotionMap: { [k in Potion]: { name: string, order: number, image: S
     image: SuperDefence,
     calculateFn: (skills) => ({
       def: Math.floor(5 + (skills.def * 0.15)),
+    }),
+  },
+  [Potion.RUBY_HARVEST]: {
+    name: 'Ruby Harvest',
+    order: 18,
+    image: RubyHarvest,
+    calculateFn: (skills) => ({
+      atk: Math.floor(4 + (skills.atk * 0.15))
+    }),
+  },
+  [Potion.BLACK_WARLOCK]: {
+    name: 'Black Warlock',
+    order: 19,
+    image: BlackWarlock,
+    calculateFn: (skills) => ({
+      str: Math.floor(4 + (skills.str * 0.15))
+    }),
+  },
+  [Potion.SAPPHIRE_GLACIALIS]: {
+    name: 'Sapphire Glacialis',
+    order: 20,
+    image: SapphireGlacialis,
+    calculateFn: (skills) => ({
+      def: Math.floor(4 + (skills.def * 0.15))
     }),
   },
 };

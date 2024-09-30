@@ -17,6 +17,9 @@ enum Potion {
   SUPER_MAGIC,
   DEFENCE,
   SUPER_DEFENCE,
+  RUBY_HARVEST,
+  BLACK_WARLOCK,
+  SAPPHIRE_GLACIALIS,
 }
 
 export default Potion;
