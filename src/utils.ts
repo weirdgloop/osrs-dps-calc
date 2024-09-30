@@ -352,7 +352,7 @@ export const PotionMap: { [k in Potion]: { name: string, order: number, image: S
     order: 18,
     image: RubyHarvest,
     calculateFn: (skills) => ({
-      atk: Math.floor(4 + (skills.atk * 0.15))
+      atk: Math.floor(4 + (skills.atk * 0.15)),
     }),
   },
   [Potion.BLACK_WARLOCK]: {
@@ -360,7 +360,7 @@ export const PotionMap: { [k in Potion]: { name: string, order: number, image: S
     order: 19,
     image: BlackWarlock,
     calculateFn: (skills) => ({
-      str: Math.floor(4 + (skills.str * 0.15))
+      str: Math.floor(4 + (skills.str * 0.15)),
     }),
   },
   [Potion.SAPPHIRE_GLACIALIS]: {
@@ -368,7 +368,7 @@ export const PotionMap: { [k in Potion]: { name: string, order: number, image: S
     order: 20,
     image: SapphireGlacialis,
     calculateFn: (skills) => ({
-      def: Math.floor(4 + (skills.def * 0.15))
+      def: Math.floor(4 + (skills.def * 0.15)),
     }),
   },
 };
