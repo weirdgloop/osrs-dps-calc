@@ -7560,6 +7560,66 @@
     "isTwoHanded": false
   },
   {
+    "name": "Alchemist's amulet",
+    "id": 29990,
+    "version": "Charged",
+    "slot": "neck",
+    "image": "Alchemist's amulet (charged).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Alchemist's amulet",
+    "id": 29988,
+    "version": "Uncharged",
+    "slot": "neck",
+    "image": "Alchemist's amulet (uncharged).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Ale of the gods",
     "id": 20056,
     "version": "",
@@ -30688,6 +30748,36 @@
       "ranged": 0
     },
     "isTwoHanded": true
+  },
+  {
+    "name": "Butler's tray",
+    "id": 29912,
+    "version": "",
+    "slot": "weapon",
+    "image": "Butler's tray.png",
+    "speed": 4,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
   },
   {
     "name": "Butterfly net",
@@ -62280,6 +62370,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Graceful boots (Varlamore)",
+    "id": 30062,
+    "version": "Worn",
+    "slot": "feet",
+    "image": "Graceful boots (Varlamore).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Graceful cape",
     "id": 11853,
     "version": "Worn",
@@ -62585,6 +62705,36 @@
     "version": "Worn",
     "slot": "cape",
     "image": "Graceful cape (Trailblazer).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Graceful cape (Varlamore)",
+    "id": 30050,
+    "version": "Worn",
+    "slot": "cape",
+    "image": "Graceful cape (Varlamore).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -62940,6 +63090,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Graceful gloves (Varlamore)",
+    "id": 30059,
+    "version": "Worn",
+    "slot": "hands",
+    "image": "Graceful gloves (Varlamore).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Graceful hood",
     "id": 11851,
     "version": "Worn",
@@ -63245,6 +63425,36 @@
     "version": "Worn",
     "slot": "head",
     "image": "Graceful hood (Trailblazer).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Graceful hood (Varlamore)",
+    "id": 30047,
+    "version": "Worn",
+    "slot": "head",
+    "image": "Graceful hood (Varlamore).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -63600,6 +63810,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Graceful legs (Varlamore)",
+    "id": 30056,
+    "version": "Worn",
+    "slot": "legs",
+    "image": "Graceful legs (Varlamore).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Graceful top",
     "id": 11855,
     "version": "Worn",
@@ -63905,6 +64145,36 @@
     "version": "Worn",
     "slot": "body",
     "image": "Graceful top (Trailblazer).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Graceful top (Varlamore)",
+    "id": 30053,
+    "version": "Worn",
+    "slot": "body",
+    "image": "Graceful top (Varlamore).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -92057,7 +92327,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
+      "magic": 2,
       "ranged": 0
     },
     "defensive": {
@@ -92087,7 +92357,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
+      "magic": 2,
       "ranged": 0
     },
     "defensive": {
