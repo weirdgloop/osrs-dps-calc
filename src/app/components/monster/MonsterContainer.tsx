@@ -468,8 +468,8 @@ const MonsterContainer: React.FC = observer(() => {
                         max={1000}
                         disabled={!isCustomMonster}
                         image={flatArmor}
-                        value={displayMonster.damage_modifiers.flat_armour}
-                        onChange={(v) => store.updateMonster({ damage_modifiers: { flat_armour: v } })}
+                        value={displayMonster.damageModifiers.flatArmour}
+                        onChange={(v) => store.updateMonster({ damageModifiers: { flatArmour: v } })}
                       />
                     </div>
                   </div>

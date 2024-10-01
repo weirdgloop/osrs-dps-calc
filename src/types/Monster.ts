@@ -34,8 +34,8 @@ export interface Monster {
   defensive: {
     [k in Exclude<CombatStyleType, null | 'ranged'> | Exclude<RangedDamageType, 'mixed'>]: number;
   }
-  damage_modifiers: {
-    flat_armour: number;
+  damageModifiers: {
+    flatArmour: number;
   }
   /**
    * The attributes the monster has

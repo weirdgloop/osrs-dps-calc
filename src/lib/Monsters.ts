@@ -18,7 +18,7 @@ export function getMonsters(): Omit<Monster, 'inputs'>[] {
       style: isCombatStyleType(styleStr) ? styleStr : null,
       maxHit: Number.isNaN(maxHit) ? 0 : maxHit,
       skills: m.skills,
-      damage_modifiers: { flat_armour: FLAT_ARMOUR[m.id] ?? 0 },
+      damageModifiers: { flatArmour: FLAT_ARMOUR[m.id] ?? 0 },
       offensive: m.offensive,
       defensive: m.defensive,
       attributes: m.attributes as MonsterAttribute[],
@@ -81,8 +81,8 @@ export const CUSTOM_MONSTER_BASE: Monster = {
     standard: 0,
     heavy: 0,
   },
-  damage_modifiers: {
-    flat_armour: 0,
+  damageModifiers: {
+    flatArmour: 0,
   },
   attributes: [],
   weakness: null,
