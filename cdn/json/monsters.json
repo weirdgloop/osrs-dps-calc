@@ -3633,7 +3633,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000040-QINU`\"' Magic"
+      "'\"`UNIQ--ref-0000001E-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -25157,7 +25157,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-0000005F-QINU`\"'"
+      "Slash '\"`UNIQ--ref-00000041-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -52608,7 +52608,7 @@
     "style": [
       "Slash"
     ],
-    "size": 2,
+    "size": 1,
     "max_hit": "1",
     "skills": {
       "atk": 1,
@@ -82388,7 +82388,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000008C-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000002D-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -84851,7 +84851,7 @@
   {
     "id": 14017,
     "name": "The Hueycoatl",
-    "version": "",
+    "version": "Body",
     "image": "Hueycoatl body.png",
     "level": 642,
     "speed": 0,
@@ -84866,53 +84866,6 @@
       "atk": 150,
       "def": 125,
       "hp": 250,
-      "magic": 50,
-      "ranged": 50,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 100,
-      "magic": 200,
-      "magic_str": 50,
-      "ranged": 250,
-      "ranged_str": 50,
-      "str": 50
-    },
-    "defensive": {
-      "crush": 0,
-      "magic": 200,
-      "heavy": 350,
-      "standard": 350,
-      "light": 350,
-      "slash": 100,
-      "stab": 100
-    },
-    "attributes": [
-      "dragon"
-    ],
-    "weakness": {
-      "element": "earth",
-      "severity": 60
-    }
-  },
-  {
-    "id": 14015,
-    "name": "The Hueycoatl",
-    "version": "Broken",
-    "image": "Hueycoatl tail (broken).png",
-    "level": 642,
-    "speed": 0,
-    "style": [
-      "Melee",
-      "Magic",
-      "Ranged"
-    ],
-    "size": 5,
-    "max_hit": "13",
-    "skills": {
-      "atk": 150,
-      "def": 125,
-      "hp": 2500,
       "magic": 50,
       "ranged": 50,
       "str": 50
@@ -85002,7 +84955,7 @@
       "Ranged"
     ],
     "size": 7,
-    "max_hit": "13",
+    "max_hit": "14",
     "skills": {
       "atk": 150,
       "def": 125,
@@ -85050,6 +85003,100 @@
     ],
     "size": 7,
     "max_hit": "14",
+    "skills": {
+      "atk": 150,
+      "def": 125,
+      "hp": 2500,
+      "magic": 50,
+      "ranged": 50,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 100,
+      "magic": 200,
+      "magic_str": 50,
+      "ranged": 250,
+      "ranged_str": 50,
+      "str": 50
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 200,
+      "heavy": 350,
+      "standard": 350,
+      "light": 350,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [
+      "dragon"
+    ],
+    "weakness": {
+      "element": "earth",
+      "severity": 60
+    }
+  },
+  {
+    "id": 14014,
+    "name": "The Hueycoatl",
+    "version": "Tail",
+    "image": "Hueycoatl tail.png",
+    "level": 642,
+    "speed": 0,
+    "style": [
+      "Melee",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 5,
+    "max_hit": "13",
+    "skills": {
+      "atk": 150,
+      "def": 125,
+      "hp": 2500,
+      "magic": 50,
+      "ranged": 50,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 100,
+      "magic": 200,
+      "magic_str": 50,
+      "ranged": 250,
+      "ranged_str": 50,
+      "str": 50
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 200,
+      "heavy": 350,
+      "standard": 350,
+      "light": 350,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [
+      "dragon"
+    ],
+    "weakness": {
+      "element": "earth",
+      "severity": 60
+    }
+  },
+  {
+    "id": 14015,
+    "name": "The Hueycoatl",
+    "version": "Tail (broken)",
+    "image": "Hueycoatl tail (broken).png",
+    "level": 642,
+    "speed": 0,
+    "style": [
+      "Melee",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 5,
+    "max_hit": "13",
     "skills": {
       "atk": 150,
       "def": 125,
@@ -90106,7 +90153,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000000B-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -90147,7 +90194,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000000B-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -92221,7 +92268,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000008-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000E-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -92261,7 +92308,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000A-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000010-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
