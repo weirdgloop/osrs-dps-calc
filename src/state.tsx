@@ -82,6 +82,7 @@ export const generateEmptyPlayer = (name?: string): Player => ({
     ranged_str: 0,
     magic_str: 0,
     prayer: 0,
+    attack_speed: DEFAULT_ATTACK_SPEED,
   },
   defensive: {
     stab: 0,

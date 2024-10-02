@@ -55,6 +55,7 @@ export interface PlayerBonuses {
   ranged_str: number;
   magic_str: number;
   prayer: number;
+  attack_speed: number;
 }
 
 export interface PlayerDefensive {
