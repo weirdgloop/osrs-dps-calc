@@ -99,6 +99,47 @@ def get_printout_value(prop, all_results=False):
 def has_category(category_array, category):
     return next((c for c in category_array if c['fulltext'] == "Category:%s" % category), None)
 
+def is_cosmetic_variant(monsters, candidate):
+    for monster in monsters:
+        if candidate["name"] != monster["name"]:
+            continue
+        if (
+            candidate["level"] != monster["level"]
+            or candidate["speed"] != monster["speed"]
+            or candidate["style"] != monster["style"]
+            or candidate["size"] != monster["size"]
+            or candidate["max_hit"] != monster["max_hit"]
+            or candidate["skills"]["atk"] != monster["skills"]["atk"]
+            or candidate["skills"]["def"] != monster["skills"]["def"]
+            or candidate["skills"]["hp"] != monster["skills"]["hp"]
+            or candidate["skills"]["magic"] != monster["skills"]["magic"]
+            or candidate["skills"]["ranged"] != monster["skills"]["ranged"]
+            or candidate["offensive"]["atk"] != monster["offensive"]["atk"]
+            or candidate["offensive"]["magic"] != monster["offensive"]["magic"]
+            or candidate["offensive"]["magic_str"] != monster["offensive"]["magic_str"]
+            or candidate["offensive"]["ranged"] != monster["offensive"]["ranged"]
+            or candidate["offensive"]["ranged_str"] != monster["offensive"]["ranged_str"]
+            or candidate["offensive"]["str"] != monster["offensive"]["str"]
+            or candidate["defensive"]["crush"] != monster["defensive"]["crush"]
+            or candidate["defensive"]["magic"] != monster["defensive"]["magic"]
+            or candidate["defensive"]["heavy"] != monster["defensive"]["heavy"]
+            or candidate["defensive"]["standard"] != monster["defensive"]["standard"]
+            or candidate["defensive"]["light"] != monster["defensive"]["light"]
+            or candidate["defensive"]["slash"] != monster["defensive"]["slash"]
+            or candidate["defensive"]["stab"] != monster["defensive"]["stab"]
+        ):
+            return False
+        if (candidate["weakness"] is not None
+            and monster["weakness"] is not None
+            and candidate["weakness"]["element"] != monster["weakness"]["element"]
+            and candidate["weakness"]["severity"] != monster["weakness"]["severity"]
+        ):
+            return False
+        if(candidate["attributes"] is not None 
+           and monster["attributes"] is not None
+           and candidate["attributes"] != monster["attributes"]):
+            return False
+        return True
 
 def main():
     # Grab the monster info using SMW, including all the relevant printouts
@@ -210,6 +251,9 @@ def main():
                 # ...monsters from DMM Apocalypse
                 or '(deadman: apocalypse)' in str.lower(monster['name'])
         ):
+            continue
+
+        if is_cosmetic_variant(data, monster):
             continue
 
         data.append(monster)
