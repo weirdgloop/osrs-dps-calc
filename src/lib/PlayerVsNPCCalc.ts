@@ -24,7 +24,7 @@ import {
   DEFAULT_ATTACK_SPEED,
   FLAT_ARMOUR,
   GLOWING_CRYSTAL_IDS,
-  GUARDIAN_IDS,
+  GUARDIAN_IDS, HUEYCOATL_IDS,
   HUEYCOATL_TAIL,
   IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS,
   IMMUNE_TO_MELEE_DAMAGE_NPC_IDS,
@@ -1516,10 +1516,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           return HitDistribution.single(1.0, [new Hitsplat(1)]);
         });
       }
-
-      if (this.monster.inputs.phase === 'With Pillar') {
-        dist = dist.transform(multiplyTransformer(13, 10));
-      }
+    }
+    if (HUEYCOATL_IDS.includes(this.monster.id) && this.monster.inputs.phase === 'With Pillar') {
+      dist = dist.transform(multiplyTransformer(13, 10));
     }
 
     const flatArmour = FLAT_ARMOUR[this.monster.id];
