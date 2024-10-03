@@ -1027,15 +1027,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
-    const weapon = this.player.equipment.weapon;
-    if (this.monster.id === HUEYCOATL_TAIL
-      && this.player.style.type === 'crush'
-      && weapon
-      && weapon.offensive.crush > weapon.offensive.stab
-      && weapon.offensive.crush > weapon.offensive.slash) {
-      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
-    }
-
     if (this.opts.usingSpecialAttack && (this.wearing(['Voidwaker', 'Dawnbringer']) || this.isWearingMlb())) {
       return 1.0;
     }
@@ -1274,8 +1265,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const secondHit = HitDistribution.linear(acc, 0, max - Math.trunc(max / 2));
       const firstHit = new AttackDistribution([HitDistribution.linear(acc, 0, Math.trunc(max / 2))]);
       dist = firstHit.transform(
-        (h) => new HitDistribution([new WeightedHit(1.0, [h])]).zip(secondHit),
-        { transformInaccurate: false },
+        (h) => {
+          if (h.accurate) {
+            return new HitDistribution([new WeightedHit(1.0, [h])]).zip(secondHit);
+          }
+          return new HitDistribution([new WeightedHit(1.0, [h, Hitsplat.INACCURATE])]);
+        },
       );
     }
 
@@ -1518,8 +1513,20 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.transform(divisionTransformer(2));
     }
     if (this.monster.id === HUEYCOATL_TAIL) {
-      // todo is this flatLimit, cappedReroll or linearMin?
-      dist = dist.transform(linearMinTransformer(9));
+      const crush = styleType === 'crush'
+        && this.player.offensive.crush > this.player.offensive.slash
+        && this.player.offensive.crush > this.player.offensive.stab;
+
+      dist = dist.transform(linearMinTransformer(crush ? 9 : 4));
+
+      if (crush) {
+        dist = dist.transform((h) => {
+          if (h.damage > 0) {
+            return HitDistribution.single(1.0, [h]);
+          }
+          return HitDistribution.single(1.0, [new Hitsplat(1)]);
+        });
+      }
     }
 
     const flatArmour = FLAT_ARMOUR[this.monster.id];
