@@ -1516,6 +1516,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           return HitDistribution.single(1.0, [new Hitsplat(1)]);
         });
       }
+
+      if (this.monster.inputs.phase === 'With Pillar') {
+        dist = dist.transform(multiplyTransformer(13, 10));
+      }
     }
 
     const flatArmour = FLAT_ARMOUR[this.monster.id];

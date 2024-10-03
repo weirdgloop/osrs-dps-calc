@@ -432,3 +432,9 @@ export const ARAXXOR_PHASES = ['Standard', 'Enraged'];
 ARAXXOR_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = ARAXXOR_PHASES; });
 
 export const HUEYCOATL_TAIL = 14014;
+export const HUEYCOATL_IDS = [
+  14009, 14010, 14013, // head
+  14014, // tail
+];
+export const HUEYCOATL_PHASES = ['Without Pillar', 'With Pillar'];
+HUEYCOATL_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = HUEYCOATL_PHASES; });
