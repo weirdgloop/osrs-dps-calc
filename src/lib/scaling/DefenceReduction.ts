@@ -1,7 +1,9 @@
 import { Monster } from '@/types/Monster';
 import {
-  AKKHA_IDS, ARAXXOR_IDS,
+  AKKHA_IDS,
+  ARAXXOR_IDS,
   BABA_IDS,
+  HUEYCOATL_IDS,
   KEPHRI_SHIELDED_IDS,
   KEPHRI_UNSHIELDED_IDS,
   NEX_IDS,
@@ -50,6 +52,9 @@ const getDefenceFloor = (m: Monster): number => {
   }
   if (ARAXXOR_IDS.includes(m.id)) {
     return 90;
+  }
+  if (HUEYCOATL_IDS.includes(m.id)) {
+    return 120;
   }
 
   // no limit

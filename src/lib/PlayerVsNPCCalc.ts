@@ -24,8 +24,9 @@ import {
   DEFAULT_ATTACK_SPEED,
   FLAT_ARMOUR,
   GLOWING_CRYSTAL_IDS,
-  GUARDIAN_IDS, HUEYCOATL_IDS,
-  HUEYCOATL_TAIL,
+  GUARDIAN_IDS,
+  HUEYCOATL_PHASE_IDS,
+  HUEYCOATL_TAIL_IDS,
   IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS,
   IMMUNE_TO_MELEE_DAMAGE_NPC_IDS,
   IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS,
@@ -1501,7 +1502,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (mattrs.includes(MonsterAttribute.VAMPYRE_2) && !this.wearingVampyrebane(MonsterAttribute.VAMPYRE_2) && this.wearing("Efaritay's aid")) {
       dist = dist.transform(divisionTransformer(2));
     }
-    if (this.monster.id === HUEYCOATL_TAIL) {
+    if (HUEYCOATL_TAIL_IDS.includes(this.monster.id)) {
       const crush = styleType === 'crush'
         && this.player.offensive.crush > this.player.offensive.slash
         && this.player.offensive.crush > this.player.offensive.stab;
@@ -1517,7 +1518,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         });
       }
     }
-    if (HUEYCOATL_IDS.includes(this.monster.id) && this.monster.inputs.phase === 'With Pillar') {
+    if (HUEYCOATL_PHASE_IDS.includes(this.monster.id) && this.monster.inputs.phase === 'With Pillar') {
       dist = dist.transform(multiplyTransformer(13, 10));
     }
 
