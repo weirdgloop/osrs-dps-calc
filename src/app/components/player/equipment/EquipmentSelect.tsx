@@ -130,6 +130,7 @@ const EquipmentSelect: React.FC = observer(() => {
       )}
       customFilter={(v) => {
         const remainingVariantGroups: { [k: number]: number[] } = {};
+        const remainingVariantMemberships: { [k: number]: number } = {}; // reverse map
 
         // For each option, add it to a variant group if necessary.
         for (const eqOpt of v) {
@@ -138,6 +139,7 @@ const EquipmentSelect: React.FC = observer(() => {
             const baseId = parseInt(base);
             if (baseId === eqId || vars.includes(eqId)) {
               remainingVariantGroups[baseId] = remainingVariantGroups[baseId] ? [...remainingVariantGroups[baseId], eqId] : [eqId];
+              remainingVariantMemberships[eqId] = baseId;
             }
           }
         }
@@ -146,12 +148,15 @@ const EquipmentSelect: React.FC = observer(() => {
           const eqId = eqOpt.equipment.id;
 
           // This is a base variant, keep it in the list
-          if (Object.keys(equipmentAliases).includes(eqId.toString())) return true;
+          const baseId: number | undefined = remainingVariantMemberships[eqId];
+          if (baseId === eqId) return true;
 
-          for (const group of Object.values(remainingVariantGroups)) {
+          if (baseId !== undefined) {
+            const group = remainingVariantGroups[baseId];
             if (group.includes(eqId)) {
-              // Keep this item in the list if it is the only one left
-              return group.length === 1;
+              // Keep this item in the list if it's the first result,
+              // and its base variant is filtered
+              return group.indexOf(eqId) === 0 && !v.find((o) => o.equipment.id === baseId);
             }
           }
 
