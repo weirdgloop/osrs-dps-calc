@@ -110,6 +110,15 @@ export default class BaseCalc {
     return result;
   }
 
+  protected trackAddFactor(label: Parameters<CalcDetails['track']>[0], base: number, factor: Factor): number {
+    const addend = Math.trunc(base * factor[0] / factor[1]);
+    const result = Math.trunc(base + addend);
+    const multStr = factor[0] !== 1 ? ` * ${factor[0]}` : '';
+    const divStr = factor[1] !== 1 ? ` / ${factor[1]}` : '';
+    this.track(label, result, `${base} + (${base}${multStr}${divStr} = ${addend}) = ${result}`);
+    return result;
+  }
+
   get details(): DetailEntry[] {
     return this._details?.lines || [];
   }
