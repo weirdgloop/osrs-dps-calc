@@ -7560,6 +7560,216 @@
     "isTwoHanded": false
   },
   {
+    "name": "Alchemist gloves",
+    "id": 29986,
+    "version": "",
+    "slot": "hands",
+    "image": "Alchemist gloves.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Alchemist labcoat",
+    "id": 29978,
+    "version": "Apron off",
+    "slot": "body",
+    "image": "Alchemist labcoat (apron off).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Alchemist labcoat",
+    "id": 29980,
+    "version": "Apron on",
+    "slot": "body",
+    "image": "Alchemist labcoat (apron on).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Alchemist pants",
+    "id": 29982,
+    "version": "Apron off",
+    "slot": "legs",
+    "image": "Alchemist pants (apron off).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Alchemist pants",
+    "id": 29984,
+    "version": "Apron on",
+    "slot": "legs",
+    "image": "Alchemist pants (apron on).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Alchemist's amulet",
+    "id": 29990,
+    "version": "Charged",
+    "slot": "neck",
+    "image": "Alchemist's amulet (charged).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Alchemist's amulet",
+    "id": 29988,
+    "version": "Uncharged",
+    "slot": "neck",
+    "image": "Alchemist's amulet (uncharged).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Ale of the gods",
     "id": 20056,
     "version": "",
@@ -16265,6 +16475,36 @@
     "version": "",
     "slot": "neck",
     "image": "Binding necklace.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Bird mask",
+    "id": 29931,
+    "version": "",
+    "slot": "head",
+    "image": "Bird mask.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -30688,6 +30928,96 @@
       "ranged": 0
     },
     "isTwoHanded": true
+  },
+  {
+    "name": "Butler's tray",
+    "id": 29912,
+    "version": "",
+    "slot": "weapon",
+    "image": "Butler's tray.png",
+    "speed": 4,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Butler's uniform (bottom)",
+    "id": 29915,
+    "version": "",
+    "slot": "legs",
+    "image": "Butler's uniform (bottom).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Butler's uniform (top)",
+    "id": 29916,
+    "version": "",
+    "slot": "body",
+    "image": "Butler's uniform (top).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
   },
   {
     "name": "Butterfly net",
@@ -62280,6 +62610,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Graceful boots (Varlamore)",
+    "id": 30062,
+    "version": "Worn",
+    "slot": "feet",
+    "image": "Graceful boots (Varlamore).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Graceful cape",
     "id": 11853,
     "version": "Worn",
@@ -62585,6 +62945,36 @@
     "version": "Worn",
     "slot": "cape",
     "image": "Graceful cape (Trailblazer).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Graceful cape (Varlamore)",
+    "id": 30050,
+    "version": "Worn",
+    "slot": "cape",
+    "image": "Graceful cape (Varlamore).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -62940,6 +63330,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Graceful gloves (Varlamore)",
+    "id": 30059,
+    "version": "Worn",
+    "slot": "hands",
+    "image": "Graceful gloves (Varlamore).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Graceful hood",
     "id": 11851,
     "version": "Worn",
@@ -63245,6 +63665,36 @@
     "version": "Worn",
     "slot": "head",
     "image": "Graceful hood (Trailblazer).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Graceful hood (Varlamore)",
+    "id": 30047,
+    "version": "Worn",
+    "slot": "head",
+    "image": "Graceful hood (Varlamore).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -63600,6 +64050,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Graceful legs (Varlamore)",
+    "id": 30056,
+    "version": "Worn",
+    "slot": "legs",
+    "image": "Graceful legs (Varlamore).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Graceful top",
     "id": 11855,
     "version": "Worn",
@@ -63905,6 +64385,36 @@
     "version": "Worn",
     "slot": "body",
     "image": "Graceful top (Trailblazer).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Graceful top (Varlamore)",
+    "id": 30053,
+    "version": "Worn",
+    "slot": "body",
+    "image": "Graceful top (Varlamore).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -69805,6 +70315,36 @@
       "slash": 7,
       "crush": 5,
       "magic": -1,
+      "ranged": 6
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Helmet of the moon",
+    "id": 30111,
+    "version": "",
+    "slot": "head",
+    "image": "Helmet of the moon.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 3
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 3,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 6,
+      "slash": 7,
+      "crush": 5,
+      "magic": 3,
       "ranged": 6
     },
     "isTwoHanded": false
@@ -76565,6 +77105,36 @@
     "version": "",
     "slot": "ring",
     "image": "Jade ring.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Jaguar mask",
+    "id": 29932,
+    "version": "",
+    "slot": "head",
+    "image": "Jaguar mask.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -92057,7 +92627,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
+      "magic": 2,
       "ranged": 0
     },
     "defensive": {
@@ -92087,7 +92657,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
+      "magic": 2,
       "ranged": 0
     },
     "defensive": {
@@ -93780,6 +94350,66 @@
     "isTwoHanded": true
   },
   {
+    "name": "Prescription goggles",
+    "id": 29976,
+    "version": "Focused",
+    "slot": "head",
+    "image": "Prescription goggles (focused).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Prescription goggles",
+    "id": 29974,
+    "version": "Unfocused",
+    "slot": "head",
+    "image": "Prescription goggles (unfocused).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Priest gown (bottom)",
     "id": 428,
     "version": "",
@@ -94007,6 +94637,36 @@
       "stab": -100,
       "slash": -100,
       "crush": -50,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Prop sword (Death on the Isle)",
+    "id": 29911,
+    "version": "",
+    "slot": "weapon",
+    "image": "Prop sword (Death on the Isle).png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
       "magic": 0,
       "ranged": 0
     },
@@ -96485,6 +97145,36 @@
     "version": "Transgender",
     "slot": "neck",
     "image": "Colourful scarf (transgender).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ram mask",
+    "id": 29929,
+    "version": "",
+    "slot": "head",
+    "image": "Ram mask.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -113795,6 +114485,36 @@
     "version": "",
     "slot": "feet",
     "image": "Snail shell.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Snake mask",
+    "id": 29933,
+    "version": "",
+    "slot": "head",
+    "image": "Snake mask.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -136895,6 +137615,36 @@
     "version": "",
     "slot": "head",
     "image": "Wolf mask.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wolf mask (Death on the Isle)",
+    "id": 29930,
+    "version": "",
+    "slot": "head",
+    "image": "Wolf mask (Death on the Isle).png",
     "speed": 0,
     "category": "",
     "bonuses": {

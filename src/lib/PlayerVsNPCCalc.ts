@@ -24,7 +24,8 @@ import {
   DEFAULT_ATTACK_SPEED,
   GLOWING_CRYSTAL_IDS,
   GUARDIAN_IDS,
-  HUEYCOATL_TAIL,
+  HUEYCOATL_PHASE_IDS,
+  HUEYCOATL_TAIL_IDS,
   IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS,
   IMMUNE_TO_MELEE_DAMAGE_NPC_IDS,
   IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS,
@@ -371,22 +372,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor([3, 5]));
     }
 
-    if (isVampyre(mattrs)) {
-      if (this.wearing('Blisterwood flail')) {
-        maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [5, 4]);
-      } else if (this.wearing('Blisterwood sickle')) {
-        maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [23, 20]);
-      } else if (this.wearing('Ivandis flail')) {
-        maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [6, 5]);
-      } else if (this.isWearingSilverWeapon() && mattrs.includes(MonsterAttribute.VAMPYRE_1)) {
-        maxHit = this.trackFactor(DetailKey.MAX_HIT_VAMPYREBANE, maxHit, [11, 10]);
-      } else if (this.wearing("Efaritay's aid") && mattrs.includes(MonsterAttribute.VAMPYRE_1)) {
-        maxHit = this.trackFactor(DetailKey.MAX_HIT_EFARITAY, maxHit, [11, 10]);
-      } else if (this.wearing("Efaritay's aid") && !this.isWearingSilverWeapon() && mattrs.includes(MonsterAttribute.VAMPYRE_2)) {
-        maxHit = this.trackFactor(DetailKey.MAX_HIT_EFARITAY, maxHit, [1, 2]);
-      }
-    }
-
     if (this.wearing('Leaf-bladed battleaxe') && mattrs.includes(MonsterAttribute.LEAFY)) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_LEAFY, maxHit, [47, 40]);
     }
@@ -406,12 +391,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         "Inquisitor's plateskirt",
       ].includes(v)).length;
 
-      // When wearing the full set, the bonus is enhanced
-      if (inqPieces === 3) inqPieces = 5;
-
       if (inqPieces > 0) {
         if (this.wearing("Inquisitor's mace")) {
-          inqPieces *= 3;
+          // 2.5% per piece, no full-set bonus
+          inqPieces *= 5;
+        } else if (inqPieces === 3) {
+          // 1.0% extra for full set when not using inq mace
+          inqPieces = 5;
         }
         maxHit = this.trackFactor(DetailKey.MAX_HIT_INQ, maxHit, [200 + inqPieces, 200]);
       }
@@ -725,15 +711,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_FORINTHRY_SURGE, additiveBonus, buffs.forinthrySurge ? 35 : 20);
     } else if (this.wearing('Salve amulet(ei)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_SALVE, additiveBonus, 20);
-    } else if (this.wearing('Dragon hunter wand') && mattrs.includes(MonsterAttribute.DRAGON)) {
-      additiveBonus += this.trackAdd(DetailKey.PLAYER_ACCURACY_SALVE, additiveBonus, 50);
     } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_SALVE, additiveBonus, 15);
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
       blackMaskBonus = true;
     }
 
-    if (this.wearing("Efaritay's aid") && isVampyre(mattrs)) {
+    if (this.wearing("Efaritay's aid") && isVampyre(mattrs) && this.isWearingSilverWeapon()) {
       // https://x.com/JagexAsh/status/1792829802996498524
       additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_EFARITAY, additiveBonus, 15);
     }
@@ -745,6 +729,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (additiveBonus !== 0) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_ROLL_MAGIC_PERCENT, attackRoll, [100 + additiveBonus, 100]);
+    }
+
+    if (this.wearing('Dragon hunter wand') && mattrs.includes(MonsterAttribute.DRAGON)) {
+      attackRoll += this.trackFactor(DetailKey.PLAYER_ACCURACY_DRAGONHUNTER, attackRoll, [3, 2]);
     }
 
     if (blackMaskBonus) {
@@ -880,8 +868,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       magicDmgBonus += 200;
     } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       magicDmgBonus += 150;
-    } else if (this.wearing('Dragon hunter wand') && mattrs.includes(MonsterAttribute.DRAGON)) {
-      magicDmgBonus += 200;
     } else if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
       magicDmgBonus += buffs.forinthrySurge ? 350 : 200;
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
@@ -896,6 +882,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (blackMaskBonus) {
       maxHit = Math.trunc(maxHit * 23 / 20);
+    }
+
+    if (this.wearing('Dragon hunter wand') && mattrs.includes(MonsterAttribute.DRAGON)) {
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER, maxHit, [6, 5]);
     }
 
     if (this.isRevWeaponBuffApplicable()) {
@@ -921,7 +911,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if ((this.wearing('Tome of fire') && this.player.equipment.shield?.version === 'Charged' && this.player.spell?.element === 'fire')
-      || (this.wearing('Tome of water') && this.player.equipment.shield?.version === 'Charged' && this.player.spell?.element === 'water')) {
+      || (this.wearing('Tome of water') && this.player.equipment.shield?.version === 'Charged' && this.player.spell?.element === 'water')
+       || (this.wearing('Tome of earth') && this.player.equipment.shield?.version === 'Charged' && this.player.spell?.element === 'earth')) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_TOME, maxHit, [11, 10]);
     }
 
@@ -1034,15 +1025,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.monster.name === 'Tormented Demon' && this.monster.inputs.phase !== 'Shielded') {
       this.track(DetailKey.PLAYER_ACCURACY_TD, 1.0);
-      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
-    }
-
-    const weapon = this.player.equipment.weapon;
-    if (this.monster.id === HUEYCOATL_TAIL
-      && this.player.style.type === 'crush'
-      && weapon
-      && weapon.offensive.crush > weapon.offensive.stab
-      && weapon.offensive.crush > weapon.offensive.slash) {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
@@ -1236,17 +1218,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
-    if (this.opts.usingSpecialAttack && this.wearing('Scorching bow')) {
-      // todo(wgs): confirm that this applies on inaccurate rolls too, and that it is in addition to the regular hit
-      const extraDmg = mattrs.includes(MonsterAttribute.DEMON) ? 5 : 1;
-
-      // increase 0s to 1s here since the burn applies separately, and this otherwise skips that raising later
-      dist = dist.transform((h) => {
-        const baseDmg = Math.max(h.accurate ? 1 : 0, h.damage);
-        return new HitDistribution([new WeightedHit(1.0, [new Hitsplat(baseDmg + extraDmg, h.accurate)])]);
-      });
-    }
-
     if (this.opts.usingSpecialAttack && this.wearing('Purging staff')) {
       // todo(wgs): does this require the correct runes or only the level of each demonbane spell?
     }
@@ -1284,8 +1255,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const secondHit = HitDistribution.linear(acc, 0, max - Math.trunc(max / 2));
       const firstHit = new AttackDistribution([HitDistribution.linear(acc, 0, Math.trunc(max / 2))]);
       dist = firstHit.transform(
-        (h) => new HitDistribution([new WeightedHit(1.0, [h])]).zip(secondHit),
-        { transformInaccurate: false },
+        (h) => {
+          if (h.accurate) {
+            return new HitDistribution([new WeightedHit(1.0, [h])]).zip(secondHit);
+          }
+          return new HitDistribution([new WeightedHit(1.0, [h, Hitsplat.INACCURATE])]);
+        },
       );
     }
 
@@ -1360,6 +1335,36 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.scaleDamage(6, 5);
     }
 
+    // all this vampyre stuff was tested methodically by @jmyaeger, many thanks!
+    // there is still a consideration that this behaviour may be unintentional,
+    // but it has been in the game long enough that we are implementing it anyway
+    if (isVampyre(mattrs)) {
+      // efaritay's bonus only applies if we can deal uncapped damage
+      const efaritay = this.wearing("Efaritay's aid");
+      const doEfaritay = (d: AttackDistribution) => (efaritay ? d.scaleDamage(11, 10) : d);
+
+      if (this.wearing('Blisterwood flail')) {
+        dist = doEfaritay(dist);
+        dist = dist.scaleDamage(5, 4);
+      } else if (this.wearing('Blisterwood sickle')) {
+        dist = doEfaritay(dist);
+        dist = dist.scaleDamage(23, 20);
+      } else if (this.wearing('Ivandis flail')) {
+        dist = doEfaritay(dist);
+        dist = dist.scaleDamage(6, 5);
+      } else if (this.wearing('Rod of ivandis') && !mattrs.includes(MonsterAttribute.VAMPYRE_3)) {
+        dist = doEfaritay(dist);
+        dist = dist.scaleDamage(11, 10);
+      } else if (this.isWearingSilverWeapon() && mattrs.includes(MonsterAttribute.VAMPYRE_1)) {
+        dist = doEfaritay(dist);
+        dist = dist.scaleDamage(11, 10);
+      }
+      // also relevant:
+      // * half damage against t2 by non-ivandis weapons with efaritay's, in applyNpcTransforms
+      // * no damage against t2 by non-ivandis weapons without efaritay's, in isImmune
+      // * no damage against t3 by non-blisterwood weapons, in isImmune
+    }
+
     // bolt effects
     const boltContext: BoltContext = {
       maxHit: max,
@@ -1423,6 +1428,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isImmune()) {
       return new AttackDistribution([new HitDistribution([new WeightedHit(1.0, [Hitsplat.INACCURATE])])]);
     }
+
+    const mattrs = this.monster.attributes;
 
     // todo this comes up in a few places now, it may be good to abstract it into a "getDamageStyle"
     let styleType = this.player.style.type;
@@ -1492,9 +1499,27 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         dist = dist.transform(multiplyTransformer(4, 5, 1));
       }
     }
-    if (this.monster.id === HUEYCOATL_TAIL) {
-      // todo is this flatLimit, cappedReroll or linearMin?
-      dist = dist.transform(linearMinTransformer(9));
+    if (mattrs.includes(MonsterAttribute.VAMPYRE_2) && !this.wearingVampyrebane(MonsterAttribute.VAMPYRE_2) && this.wearing("Efaritay's aid")) {
+      dist = dist.transform(divisionTransformer(2));
+    }
+    if (HUEYCOATL_TAIL_IDS.includes(this.monster.id)) {
+      const crush = styleType === 'crush'
+        && this.player.offensive.crush > this.player.offensive.slash
+        && this.player.offensive.crush > this.player.offensive.stab;
+
+      dist = dist.transform(linearMinTransformer(crush ? 9 : 4));
+
+      if (crush) {
+        dist = dist.transform((h) => {
+          if (h.damage > 0) {
+            return HitDistribution.single(1.0, [h]);
+          }
+          return HitDistribution.single(1.0, [new Hitsplat(1)]);
+        });
+      }
+    }
+    if (HUEYCOATL_PHASE_IDS.includes(this.monster.id) && this.monster.inputs.phase === 'With Pillar') {
+      dist = dist.transform(multiplyTransformer(13, 10));
     }
 
     if (this.monster.damageModifiers.flatArmour) {
@@ -1530,10 +1555,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       && this.player.equipment.weapon?.category !== EquipmentCategory.SALAMANDER) {
       return true;
     }
-    if (mattrs.includes(MonsterAttribute.VAMPYRE_3) && !this.isWearingIvandisWeapon()) {
+    if (mattrs.includes(MonsterAttribute.VAMPYRE_3) && !this.wearingVampyrebane(MonsterAttribute.VAMPYRE_3)) {
       return true;
     }
-    if (mattrs.includes(MonsterAttribute.VAMPYRE_2) && !this.isWearingSilverWeapon() && !this.wearing("Efaritay's aid")) {
+    if (mattrs.includes(MonsterAttribute.VAMPYRE_2) && !this.wearingVampyrebane(MonsterAttribute.VAMPYRE_2) && !this.wearing("Efaritay's aid")) {
       return true;
     }
     if (GUARDIAN_IDS.includes(monsterId) && (!this.isUsingMeleeStyle() || this.player.equipment.weapon?.category !== EquipmentCategory.PICKAXE)) {
