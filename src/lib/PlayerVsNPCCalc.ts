@@ -1389,6 +1389,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
+    if (this.player.spell && this.player.spell.max_hit === 0) {
+      // don't raise things like bind
+      accurateZeroApplicable = false;
+    }
+
     // raise accurate 0s to 1
     if (accurateZeroApplicable) {
       dist = dist.transform(
