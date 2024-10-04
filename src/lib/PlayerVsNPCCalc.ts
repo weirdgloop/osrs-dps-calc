@@ -847,6 +847,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       // or they picked a staff-casting option without choosing a spell
       return [0, 0];
     }
+    this.track(DetailKey.MAX_HIT_BASE, maxHit);
 
     if (this.wearing('Chaos gauntlets') && spell?.name.toLowerCase()
       .includes('bolt')) {
@@ -879,7 +880,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       magicDmgBonus += p.magicDamageBonus!;
     }
 
-    maxHit += Math.trunc(maxHit * magicDmgBonus / 1000);
+    maxHit = this.trackAddFactor(DetailKey.MAX_HIT_MAGIC_DMG, maxHit, [magicDmgBonus, 1000]);
 
     if (blackMaskBonus) {
       maxHit = Math.trunc(maxHit * 23 / 20);
