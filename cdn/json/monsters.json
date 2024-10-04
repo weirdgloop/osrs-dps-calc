@@ -950,6 +950,46 @@
     "weakness": null
   },
   {
+    "id": 13823,
+    "name": "Adala",
+    "version": "",
+    "image": "Adala.png",
+    "level": 49,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 50,
+      "def": 10,
+      "hp": 60,
+      "magic": 5,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
     "id": 8030,
     "name": "Adamant dragon",
     "version": "",
@@ -3633,7 +3673,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-0000001E-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000037-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -6335,6 +6375,51 @@
     ],
     "weakness": {
       "element": "water",
+      "severity": 50
+    }
+  },
+  {
+    "id": 13794,
+    "name": "Baby blue dragon",
+    "version": "Ruins of Tapoyauik",
+    "image": "Baby blue dragon (Ruins of Tapoyauik).png",
+    "level": 48,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 40,
+      "def": 40,
+      "hp": 50,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 50,
+      "magic": 40,
+      "heavy": 15,
+      "standard": 30,
+      "light": 30,
+      "slash": 50,
+      "stab": 10
+    },
+    "attributes": [
+      "dragon"
+    ],
+    "weakness": {
+      "element": "fire",
       "severity": 50
     }
   },
@@ -13354,7 +13439,7 @@
   {
     "id": 7273,
     "name": "Brutal blue dragon",
-    "version": "",
+    "version": "Catacombs of Kourend",
     "image": "Brutal blue dragon.png",
     "level": 271,
     "speed": 4,
@@ -13396,6 +13481,54 @@
     ],
     "weakness": {
       "element": "water",
+      "severity": 50
+    }
+  },
+  {
+    "id": 13795,
+    "name": "Brutal blue dragon",
+    "version": "Ruins of Tapoyauik",
+    "image": "Brutal blue dragon.png",
+    "level": 271,
+    "speed": 4,
+    "style": [
+      "Slash",
+      "Magic",
+      "Dragonfire"
+    ],
+    "size": 4,
+    "max_hit": "21 (Melee; Magic)",
+    "skills": {
+      "atk": 298,
+      "def": 198,
+      "hp": 245,
+      "magic": 198,
+      "ranged": 0,
+      "str": 198
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 70,
+      "magic": 60,
+      "heavy": 15,
+      "standard": 50,
+      "light": 50,
+      "slash": 70,
+      "stab": 10
+    },
+    "attributes": [
+      "dragon",
+      "fiery"
+    ],
+    "weakness": {
+      "element": "fire",
       "severity": 50
     }
   },
@@ -25157,7 +25290,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-00000041-QINU`\"'"
+      "Slash '\"`UNIQ--ref-0000001A-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -27685,7 +27818,7 @@
     "weakness": null
   },
   {
-    "id": 13764,
+    "id": 13738,
     "name": "Emissary Chosen",
     "version": "1",
     "image": "Emissary Chosen (Monster, 1).png",
@@ -37834,6 +37967,406 @@
       "light": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13986,
+    "name": "Guard (Aldarin)",
+    "version": "1",
+    "image": "Guard (Aldarin).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13995,
+    "name": "Guard (Aldarin)",
+    "version": "10",
+    "image": "Guard (Aldarin) (10).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13987,
+    "name": "Guard (Aldarin)",
+    "version": "2",
+    "image": "Guard (Aldarin) (2).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13988,
+    "name": "Guard (Aldarin)",
+    "version": "3",
+    "image": "Guard (Aldarin) (3).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13989,
+    "name": "Guard (Aldarin)",
+    "version": "4",
+    "image": "Guard (Aldarin) (4).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13990,
+    "name": "Guard (Aldarin)",
+    "version": "5",
+    "image": "Guard (Aldarin) (5).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13991,
+    "name": "Guard (Aldarin)",
+    "version": "6",
+    "image": "Guard (Aldarin) (6).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13992,
+    "name": "Guard (Aldarin)",
+    "version": "7",
+    "image": "Guard (Aldarin) (7).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13993,
+    "name": "Guard (Aldarin)",
+    "version": "8",
+    "image": "Guard (Aldarin) (8).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13994,
+    "name": "Guard (Aldarin)",
+    "version": "9",
+    "image": "Guard (Aldarin) (9).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
     },
     "attributes": [],
     "weakness": null
@@ -58431,8 +58964,48 @@
   {
     "id": 513,
     "name": "Mugger",
-    "version": "",
+    "version": "Regular",
     "image": "Mugger.png",
+    "level": 6,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 5,
+      "def": 5,
+      "hp": 8,
+      "magic": 1,
+      "ranged": 1,
+      "str": 5
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": -21
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13282,
+    "name": "Mugger",
+    "version": "Varlamore",
+    "image": "Mugger (Varlamore).png",
     "level": 6,
     "speed": 4,
     "style": [
@@ -82388,7 +82961,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000002D-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000074-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -84856,9 +85429,7 @@
     "level": 642,
     "speed": 0,
     "style": [
-      "Melee",
-      "Magic",
-      "Ranged"
+      "None"
     ],
     "size": 1,
     "max_hit": "13",
@@ -85044,16 +85615,14 @@
     "level": 642,
     "speed": 0,
     "style": [
-      "Melee",
-      "Magic",
-      "Ranged"
+      "Typeless"
     ],
     "size": 5,
-    "max_hit": "13",
+    "max_hit": "25",
     "skills": {
       "atk": 150,
       "def": 125,
-      "hp": 2500,
+      "hp": 400,
       "magic": 50,
       "ranged": 50,
       "str": 50
@@ -85091,16 +85660,14 @@
     "level": 642,
     "speed": 0,
     "style": [
-      "Melee",
-      "Magic",
-      "Ranged"
+      "Typeless"
     ],
     "size": 5,
-    "max_hit": "13",
+    "max_hit": "25",
     "skills": {
       "atk": 150,
       "def": 125,
-      "hp": 2500,
+      "hp": 400,
       "magic": 50,
       "ranged": 50,
       "str": 50
@@ -90153,7 +90720,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000004B-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -90194,7 +90761,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000004B-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -92268,7 +92835,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000E-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000007-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -92308,7 +92875,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000010-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000009-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
