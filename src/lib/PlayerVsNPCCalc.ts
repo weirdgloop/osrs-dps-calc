@@ -234,8 +234,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing(['Bone claws', 'Burning claws']) && mattrs.includes(MonsterAttribute.DEMON)) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor([1, 20]));
     }
-    if (this.wearing('Dragon hunter lance') && mattrs.includes(MonsterAttribute.DRAGON)) {
-      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DRAGONHUNTER, attackRoll, [6, 5]);
+    if (mattrs.includes(MonsterAttribute.DRAGON)) {
+      if (this.wearing('Dragon hunter lance')) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DRAGONHUNTER, attackRoll, [6, 5]);
+      } else if (this.wearing('Dragon hunter wand')) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DRAGONHUNTER, attackRoll, [3, 2]);
+      }
     }
     if (this.wearing('Keris partisan of breaching') && mattrs.includes(MonsterAttribute.KALPHITE)) {
       // https://twitter.com/JagexAsh/status/1704107285381787952
@@ -357,7 +361,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const obsidianBonus = this.trackFactor(DetailKey.MAX_HIT_OBSIDIAN, baseMax, [1, 10]);
       maxHit = this.trackAdd(DetailKey.MAX_HIT_OBSIDIAN, maxHit, obsidianBonus);
     }
-    if (this.wearing('Dragon hunter lance') && mattrs.includes(MonsterAttribute.DRAGON)) {
+    if (this.wearing(['Dragon hunter lance', 'Dragon hunter wand']) && mattrs.includes(MonsterAttribute.DRAGON)) {
+      // still applies to dhw when wand bashing
       maxHit = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER, maxHit, [6, 5]);
     }
     if (this.isWearingKeris() && mattrs.includes(MonsterAttribute.KALPHITE)) {
@@ -732,8 +737,15 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_ROLL_MAGIC_PERCENT, attackRoll, [100 + additiveBonus, 100]);
     }
 
-    if (this.wearing('Dragon hunter wand') && mattrs.includes(MonsterAttribute.DRAGON)) {
-      attackRoll += this.trackFactor(DetailKey.PLAYER_ACCURACY_DRAGONHUNTER, attackRoll, [3, 2]);
+    if (mattrs.includes(MonsterAttribute.DRAGON)) {
+      // this still applies to dhl and dhcb when autocasting
+      if (this.wearing('Dragon hunter crossbow')) {
+        attackRoll = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER, attackRoll, [13, 10]);
+      } else if (this.wearing('Dragon hunter lance')) {
+        attackRoll = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER, attackRoll, [6, 5]);
+      } else if (this.wearing('Dragon hunter wand')) {
+        attackRoll = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER, attackRoll, [3, 2]);
+      }
     }
 
     if (blackMaskBonus) {
@@ -886,8 +898,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = Math.trunc(maxHit * 23 / 20);
     }
 
-    if (this.wearing('Dragon hunter wand') && mattrs.includes(MonsterAttribute.DRAGON)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER, maxHit, [6, 5]);
+    if (mattrs.includes(MonsterAttribute.DRAGON)) {
+      // this still applies to dhl and dhcb when autocasting
+      if (this.wearing(['Dragon hunter wand', 'Dragon hunter lance'])) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER, maxHit, [6, 5]);
+      } else if (this.wearing('Dragon hunter crossbow')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER, maxHit, [5, 4]);
+      }
     }
 
     if (this.isRevWeaponBuffApplicable()) {
