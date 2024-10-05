@@ -22,7 +22,6 @@ import {
   BA_ATTACKER_MONSTERS,
   CAST_STANCES,
   DEFAULT_ATTACK_SPEED,
-  FLAT_ARMOUR,
   GLOWING_CRYSTAL_IDS,
   GUARDIAN_IDS,
   HUEYCOATL_PHASE_IDS,
@@ -1546,10 +1545,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.transform(multiplyTransformer(13, 10));
     }
 
-    const flatArmour = FLAT_ARMOUR[this.monster.id];
-    if (flatArmour) {
+    if (this.monster.damageModifiers.flatArmour) {
       dist = dist.transform(
-        flatAddTransformer(-flatArmour, 1),
+        flatAddTransformer(-this.monster.damageModifiers.flatArmour, 1),
         { transformInaccurate: false },
       );
     }

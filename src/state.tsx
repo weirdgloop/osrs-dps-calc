@@ -176,6 +176,9 @@ class GlobalState implements State {
       standard: 20,
       heavy: 20,
     },
+    damageModifiers: {
+      flatArmour: 0,
+    },
     attributes: [MonsterAttribute.DEMON],
     weakness: null,
     inputs: { ...INITIAL_MONSTER_INPUTS },
