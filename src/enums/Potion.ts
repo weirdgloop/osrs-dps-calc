@@ -17,6 +17,7 @@ enum Potion {
   SUPER_MAGIC,
   DEFENCE,
   SUPER_DEFENCE,
+  MOONLIGHT,
 }
 
 export default Potion;

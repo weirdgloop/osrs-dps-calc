@@ -19,6 +19,7 @@ import SuperCombat from '@/public/img/potions/Super combat.png';
 import SuperMagic from '@/public/img/potions/Super magic.png';
 import Defence from '@/public/img/potions/Defence.png';
 import SuperDefence from '@/public/img/potions/Super defence.png';
+import Moonlight from '@/public/img/potions/Moonlight.png';
 import Potion from '@/enums/Potion';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { PlayerCombatStyle } from '@/types/PlayerCombatStyle';
@@ -81,6 +82,7 @@ export const fetchPlayerSkills = async (username: string) => {
     prayer: skillData[6].level,
     magic: skillData[7].level,
     mining: skillData[15].level,
+    herblore: skillData[16].level,
   };
 };
 
@@ -343,6 +345,32 @@ export const PotionMap: { [k in Potion]: { name: string, order: number, image: S
     calculateFn: (skills) => ({
       def: Math.floor(5 + (skills.def * 0.15)),
     }),
+  },
+  [Potion.MOONLIGHT]: {
+    name: 'Moonlight',
+    order: 18,
+    image: Moonlight,
+    calculateFn: (skills) => {
+      let atk; let str; let def;
+      if (skills.herblore >= 45) {
+        atk = Math.trunc(5 + (skills.atk * 0.15));
+      } else if (skills.herblore >= 3) {
+        atk = Math.trunc(3 + (skills.atk * 0.10));
+      }
+      if (skills.herblore >= 55) {
+        str = Math.trunc(5 + (skills.str * 0.15));
+      } else if (skills.herblore >= 12) {
+        str = Math.trunc(3 + (skills.str * 0.10));
+      }
+      if (skills.herblore >= 70) {
+        def = Math.trunc(7 + (skills.def * 0.20));
+      } else if (skills.herblore >= 66) {
+        def = Math.trunc(5 + (skills.def * 0.15));
+      } else if (skills.herblore >= 30) {
+        def = Math.trunc(3 + (skills.def * 0.10));
+      }
+      return { atk, str, def };
+    },
   },
 };
 
