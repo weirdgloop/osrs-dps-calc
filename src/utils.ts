@@ -372,6 +372,7 @@ export const PotionMap: { [k in Potion]: { name: string, order: number, image: S
     calculateFn: (skills) => ({
       def: Math.floor(4 + (skills.def * 0.15)),
     }),
+  },
   [Potion.MOONLIGHT]: {
     name: 'Moonlight',
     order: 21,
