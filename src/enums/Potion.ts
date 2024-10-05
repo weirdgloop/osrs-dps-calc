@@ -20,6 +20,7 @@ enum Potion {
   RUBY_HARVEST,
   BLACK_WARLOCK,
   SAPPHIRE_GLACIALIS,
+  MOONLIGHT,
 }
 
 export default Potion;
