@@ -63,6 +63,7 @@ export enum DetailKey {
   MAX_HIT_TONALZTICS = 'Max hit tonalztics',
   MAX_HIT_GODSWORD_SPEC = 'Max hit godsword spec',
   MAX_HIT_SPEC = 'Max hit spec',
+  MAX_HIT_MAGIC_DMG = 'Max hit magic damage bonus',
   MAX_HIT_FINAL = 'Max hit',
   MIN_HIT_SUNFIRE = 'Min hit sunfire runes',
   MIN_HIT_FANG = 'Min hit fang',

@@ -431,4 +431,14 @@ export const ARAXXOR_IDS = [13668];
 export const ARAXXOR_PHASES = ['Standard', 'Enraged'];
 ARAXXOR_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = ARAXXOR_PHASES; });
 
-export const HUEYCOATL_TAIL = 14014;
+export const HUEYCOATL_HEAD_IDS = [14009, 14010, 14013];
+export const HUEYCOATL_BODY_IDS = [14017];
+export const HUEYCOATL_TAIL_IDS = [14014];
+export const HUEYCOATL_IDS = [
+  ...HUEYCOATL_HEAD_IDS,
+  ...HUEYCOATL_BODY_IDS,
+  ...HUEYCOATL_TAIL_IDS,
+];
+export const HUEYCOATL_PHASES = ['Without Pillar', 'With Pillar'];
+export const HUEYCOATL_PHASE_IDS = [...HUEYCOATL_HEAD_IDS, ...HUEYCOATL_TAIL_IDS]; // body can't receive pillar buff
+HUEYCOATL_PHASE_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = HUEYCOATL_PHASES; });

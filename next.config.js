@@ -5,9 +5,9 @@ let gitSha = undefined,
   gitShaShort = "unknown",
   gitDirty = "false";
 try {
-  gitSha = execSync("git rev-parse HEAD").toString().trim();
-  gitShaShort = execSync("git rev-parse --short HEAD").toString().trim();
-  gitDirty = execSync("git status --untracked-files=no --porcelain").toString().trim();
+  gitSha = execSync("git rev-parse HEAD", { windowsHide: true }).toString().trim();
+  gitShaShort = execSync("git rev-parse --short HEAD", { windowsHide: true }).toString().trim();
+  gitDirty = execSync("git status --untracked-files=no --porcelain", { windowsHide: true }).toString().trim();
   if (gitDirty !== "") {
     gitDirty = "true";
   }

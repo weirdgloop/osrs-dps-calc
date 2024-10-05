@@ -110,6 +110,15 @@ export default class BaseCalc {
     return result;
   }
 
+  protected trackAddFactor(label: Parameters<CalcDetails['track']>[0], base: number, factor: Factor): number {
+    const addend = Math.trunc(base * factor[0] / factor[1]);
+    const result = Math.trunc(base + addend);
+    const multStr = factor[0] !== 1 ? ` * ${factor[0]}` : '';
+    const divStr = factor[1] !== 1 ? ` / ${factor[1]}` : '';
+    this.track(label, result, `${base} + (${base}${multStr}${divStr} = ${addend}) = ${result}`);
+    return result;
+  }
+
   get details(): DetailEntry[] {
     return this._details?.lines || [];
   }
@@ -429,15 +438,18 @@ export default class BaseCalc {
   }
 
   /**
-   * Whether the player is wearing an Ivandis weapon--that is, a weapon capable of harming Tier 3 Vampyres.
+   * Whether the player is using a vampyrebane weapon capable of full damage against t2 or t3 vampyres
    * @see https://oldschool.runescape.wiki/w/Silver_weaponry
    */
-  protected isWearingIvandisWeapon(): boolean {
-    return this.isUsingMeleeStyle() && this.wearing([
-      'Ivandis flail',
-      'Blisterwood sickle',
-      'Blisterwood flail',
-    ]);
+  protected wearingVampyrebane(tier: MonsterAttribute.VAMPYRE_2 | MonsterAttribute.VAMPYRE_3): boolean {
+    const t2 = tier === MonsterAttribute.VAMPYRE_2;
+    return (t2 || this.isUsingMeleeStyle())
+      && this.wearing([
+        ...(t2 ? ['Rod of ivandis'] : []),
+        'Ivandis flail',
+        'Blisterwood sickle',
+        'Blisterwood flail',
+      ]);
   }
 
   protected isWearingMsb(): boolean {
