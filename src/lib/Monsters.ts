@@ -71,6 +71,7 @@ export const CUSTOM_MONSTER_BASE: Monster = {
     str: 0,
   },
   defensive: {
+    flat_armour: 0,
     stab: 0,
     slash: 0,
     crush: 0,
