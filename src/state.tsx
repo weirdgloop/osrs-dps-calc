@@ -168,6 +168,7 @@ class GlobalState implements State {
       str: 0,
     },
     defensive: {
+      flat_armour: 0,
       stab: 20,
       slash: 20,
       crush: 20,

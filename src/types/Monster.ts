@@ -32,6 +32,8 @@ export interface Monster {
     str: number;
   }
   defensive: {
+    flat_armour: number;
+  } & {
     [k in Exclude<CombatStyleType, null | 'ranged'> | Exclude<RangedDamageType, 'mixed'>]: number;
   }
   /**

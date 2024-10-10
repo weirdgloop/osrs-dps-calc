@@ -400,28 +400,6 @@ export const NPC_HARDCODED_MAX_HIT: { [npcId: number]: number } = {
   5961: 10, // Spinolyp (2)
 };
 
-// https://oldschool.runescape.wiki/w/Flat_armour
-export const FLAT_ARMOUR: { [npcId: number]: number } = {
-  13011: -2, // blood moon
-  13012: 6, // eclipse moon (this actually drops to 4 during the clone special attack, should we handle that?)
-  13013: -5, // blue moon
-  13033: -4, // sulphur nagua
-  13029: -2, // grimy lizard
-  13685: -2, // amoxliatl
-
-  // frost nagua
-  13728: -4,
-  13787: -4,
-  13788: -4,
-
-  // elite black knight
-  13463: 7,
-  13480: 7,
-  13566: 7,
-  13464: 7,
-  13481: 7,
-};
-
 export const MONSTER_PHASES_BY_ID: { [k: number]: string[] } = {};
 export const TD_IDS = [13599, 13600, 13601, 13602, 13603, 13604, 13605, 13606];
 export const TD_PHASES = ['Shielded', 'Shielded (Defenceless)', 'Unshielded'];
