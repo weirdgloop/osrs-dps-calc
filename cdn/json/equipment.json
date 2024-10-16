@@ -109200,6 +109200,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Scarecrow shirt",
+    "id": 30232,
+    "version": "",
+    "slot": "body",
+    "image": "Scarecrow shirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Scorching bow",
     "id": 29591,
     "version": "",
