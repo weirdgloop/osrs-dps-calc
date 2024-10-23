@@ -2119,7 +2119,7 @@
       "Magic"
     ],
     "size": 3,
-    "max_hit": "22",
+    "max_hit": "22 (standard)<br>34 (Icicle Crash)",
     "skills": {
       "atk": 0,
       "def": 80,
@@ -3673,7 +3673,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000037-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000023-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -6379,10 +6379,55 @@
     }
   },
   {
-    "id": 13794,
+    "id": 14105,
     "name": "Baby blue dragon",
-    "version": "Ruins of Tapoyauik",
-    "image": "Baby blue dragon (Ruins of Tapoyauik).png",
+    "version": "Ruins of Tapoyauik, 1",
+    "image": "Baby blue dragon (Ruins of Tapoyauik, 1).png",
+    "level": 48,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 40,
+      "def": 40,
+      "hp": 50,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 50,
+      "magic": 40,
+      "heavy": 15,
+      "standard": 30,
+      "light": 30,
+      "slash": 50,
+      "stab": 10
+    },
+    "attributes": [
+      "dragon"
+    ],
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
+  },
+  {
+    "id": 14106,
+    "name": "Baby blue dragon",
+    "version": "Ruins of Tapoyauik, 2",
+    "image": "Baby blue dragon (Ruins of Tapoyauik, 2).png",
     "level": 48,
     "speed": 4,
     "style": [
@@ -6894,8 +6939,8 @@
     "style": [
       "Magic"
     ],
-    "size": 0,
-    "max_hit": "89",
+    "size": 3,
+    "max_hit": "40 (standard)<br>89 (stat-draining)",
     "skills": {
       "atk": 275,
       "def": 275,
@@ -6934,8 +6979,8 @@
     "style": [
       "Crush"
     ],
-    "size": 0,
-    "max_hit": "89",
+    "size": 3,
+    "max_hit": "40 (standard)<br>89 (stat-draining)",
     "skills": {
       "atk": 275,
       "def": 275,
@@ -6974,8 +7019,8 @@
     "style": [
       "Ranged"
     ],
-    "size": 0,
-    "max_hit": "89",
+    "size": 3,
+    "max_hit": "40 (standard)<br>89 (stat-draining)",
     "skills": {
       "atk": 275,
       "def": 275,
@@ -11774,53 +11819,6 @@
     "weakness": null
   },
   {
-    "id": 13793,
-    "name": "Blue dragon",
-    "version": "",
-    "image": "Blue dragon (2).png",
-    "level": 111,
-    "speed": 4,
-    "style": [
-      "Slash",
-      "Dragonfire"
-    ],
-    "size": 4,
-    "max_hit": "10 (Slash)",
-    "skills": {
-      "atk": 95,
-      "def": 95,
-      "hp": 105,
-      "magic": 1,
-      "ranged": 1,
-      "str": 95
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "crush": 70,
-      "magic": 60,
-      "heavy": 15,
-      "standard": 50,
-      "light": 50,
-      "slash": 70,
-      "stab": 10
-    },
-    "attributes": [
-      "dragon",
-      "fiery"
-    ],
-    "weakness": {
-      "element": "fire",
-      "severity": 50
-    }
-  },
-  {
     "id": 265,
     "name": "Blue dragon",
     "version": "1",
@@ -12052,6 +12050,100 @@
     ],
     "weakness": {
       "element": "water",
+      "severity": 50
+    }
+  },
+  {
+    "id": 14103,
+    "name": "Blue dragon",
+    "version": "Ruins of Tapoyauik, 1",
+    "image": "Blue dragon (Ruins of Tapoyauik, 1).png",
+    "level": 111,
+    "speed": 4,
+    "style": [
+      "Slash",
+      "Dragonfire"
+    ],
+    "size": 4,
+    "max_hit": "10 (Slash)",
+    "skills": {
+      "atk": 95,
+      "def": 95,
+      "hp": 105,
+      "magic": 1,
+      "ranged": 1,
+      "str": 95
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 70,
+      "magic": 60,
+      "heavy": 15,
+      "standard": 50,
+      "light": 50,
+      "slash": 70,
+      "stab": 10
+    },
+    "attributes": [
+      "dragon",
+      "fiery"
+    ],
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
+  },
+  {
+    "id": 14104,
+    "name": "Blue dragon",
+    "version": "Ruins of Tapoyauik, 2",
+    "image": "Blue dragon (Ruins of Tapoyauik, 2).png",
+    "level": 111,
+    "speed": 4,
+    "style": [
+      "Slash",
+      "Dragonfire"
+    ],
+    "size": 4,
+    "max_hit": "10 (Slash)",
+    "skills": {
+      "atk": 95,
+      "def": 95,
+      "hp": 105,
+      "magic": 1,
+      "ranged": 1,
+      "str": 95
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 70,
+      "magic": 60,
+      "heavy": 15,
+      "standard": 50,
+      "light": 50,
+      "slash": 70,
+      "stab": 10
+    },
+    "attributes": [
+      "dragon",
+      "fiery"
+    ],
+    "weakness": {
+      "element": "fire",
       "severity": 50
     }
   },
@@ -12689,7 +12781,9 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "demon"
+    ],
     "weakness": null
   },
   {
@@ -13488,7 +13582,7 @@
     "id": 13795,
     "name": "Brutal blue dragon",
     "version": "Ruins of Tapoyauik",
-    "image": "Brutal blue dragon.png",
+    "image": "Brutal blue dragon (Ruins of Tapoyauik).png",
     "level": 271,
     "speed": 4,
     "style": [
@@ -23556,8 +23650,7 @@
     "speed": 3,
     "style": [
       "Crush",
-      "Magic",
-      "Magical ranged"
+      "Magic"
     ],
     "size": 1,
     "max_hit": "37",
@@ -23598,8 +23691,7 @@
     "speed": 3,
     "style": [
       "Crush",
-      "Magic",
-      "Magical ranged"
+      "Magic"
     ],
     "size": 1,
     "max_hit": "19",
@@ -24849,7 +24941,7 @@
   {
     "id": 12166,
     "name": "Duke Sucellus",
-    "version": "Post-Quest, Asleep",
+    "version": "Post-quest, asleep",
     "image": "Duke Sucellus (asleep).png",
     "level": 758,
     "speed": 5,
@@ -24894,7 +24986,7 @@
   {
     "id": 12191,
     "name": "Duke Sucellus",
-    "version": "Post-Quest, Awake",
+    "version": "Post-quest, awake",
     "image": "Duke Sucellus.png",
     "level": 758,
     "speed": 5,
@@ -24939,7 +25031,7 @@
   {
     "id": 12192,
     "name": "Duke Sucellus",
-    "version": "Post-Quest, Defeated",
+    "version": "Post-quest, defeated",
     "image": "Duke Sucellus (defeated).png",
     "level": 758,
     "speed": 5,
@@ -25290,7 +25382,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-0000001A-QINU`\"'"
+      "Slash '\"`UNIQ--ref-00000000-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -26086,7 +26178,47 @@
   {
     "id": 13012,
     "name": "Eclipse Moon",
-    "version": "",
+    "version": "Clone",
+    "image": "Eclipse Moon.png",
+    "level": 329,
+    "speed": 6,
+    "style": [
+      "Typeless slash"
+    ],
+    "size": 5,
+    "max_hit": "18 (x3)",
+    "skills": {
+      "atk": 258,
+      "def": 60,
+      "hp": 500,
+      "magic": 100,
+      "ranged": 1,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 100,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 100,
+      "magic": 500,
+      "heavy": 500,
+      "standard": 500,
+      "light": 500,
+      "slash": 100,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13012,
+    "name": "Eclipse Moon",
+    "version": "Regular",
     "image": "Eclipse Moon.png",
     "level": 329,
     "speed": 6,
@@ -27542,6 +27674,46 @@
     "name": "Emissary Ascended",
     "version": "3",
     "image": "Emissary Ascended (NPC, 3).png",
+    "level": 117,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "12",
+    "skills": {
+      "atk": 120,
+      "def": 90,
+      "hp": 80,
+      "magic": 40,
+      "ranged": 1,
+      "str": 110
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "crush": 50,
+      "magic": 20,
+      "heavy": 30,
+      "standard": 30,
+      "light": 30,
+      "slash": 30,
+      "stab": 30
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13709,
+    "name": "Emissary Ascended",
+    "version": "4",
+    "image": "Emissary Ascended (NPC, 4).png",
     "level": 117,
     "speed": 4,
     "style": [
@@ -48863,15 +49035,54 @@
       "slash": 50,
       "stab": 0
     },
-    "attributes": [
-      "demon"
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 6382,
+    "name": "Jungle Demon",
+    "version": "Normal",
+    "image": "Jungle Demon.png",
+    "level": 195,
+    "speed": 6,
+    "style": [
+      "Slash",
+      "Magic"
     ],
+    "size": 3,
+    "max_hit": "32",
+    "skills": {
+      "atk": 170,
+      "def": 170,
+      "hp": 170,
+      "magic": 170,
+      "ranged": 1,
+      "str": 170
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 50
+    },
+    "defensive": {
+      "crush": 0,
+      "magic": 50,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 50,
+      "stab": 0
+    },
+    "attributes": [],
     "weakness": null
   },
   {
     "id": 1443,
     "name": "Jungle Demon",
-    "version": "Normal",
+    "version": "Quest",
     "image": "Jungle Demon.png",
     "level": 195,
     "speed": 6,
@@ -53609,14 +53820,14 @@
   {
     "id": 12214,
     "name": "The Leviathan",
-    "version": "Post-Quest",
+    "version": "Post-quest",
     "image": "The Leviathan.png",
     "level": 798,
     "speed": 0,
     "style": [
       "Melee",
-      "Magic",
-      "Ranged"
+      "Ranged",
+      "Magic"
     ],
     "size": 7,
     "max_hit": "87",
@@ -77789,7 +78000,9 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "demon"
+    ],
     "weakness": null
   },
   {
@@ -77829,7 +78042,9 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "demon"
+    ],
     "weakness": null
   },
   {
@@ -82961,7 +83176,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000074-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000001C-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -90720,7 +90935,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000004B-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000003-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -90761,7 +90976,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000004B-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000003-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -90843,7 +91058,7 @@
       "Stab"
     ],
     "size": 5,
-    "max_hit": "36",
+    "max_hit": "108",
     "skills": {
       "atk": 350,
       "def": 200,
@@ -91090,7 +91305,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "2",
     "skills": {
       "atk": 87,
       "def": 11,
@@ -92827,7 +93042,7 @@
   {
     "id": 12223,
     "name": "Vardorvis",
-    "version": "Post-Quest",
+    "version": "Post-quest",
     "image": "Vardorvis.png",
     "level": 784,
     "speed": 5,
@@ -92835,7 +93050,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000007-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000049-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -92875,7 +93090,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000009-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000004B-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -96672,7 +96887,7 @@
   {
     "id": 12204,
     "name": "The Whisperer",
-    "version": "Post-Quest",
+    "version": "Post-quest",
     "image": "The Whisperer.png",
     "level": 791,
     "speed": 10,
