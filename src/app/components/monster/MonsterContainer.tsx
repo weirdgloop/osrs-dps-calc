@@ -12,6 +12,7 @@ import attack from '@/public/img/bonuses/attack.png';
 import strength from '@/public/img/bonuses/strength.png';
 import defence from '@/public/img/bonuses/defence.png';
 import mining from '@/public/img/bonuses/mining.png';
+import flat_armour from '@/public/img/bonuses/flat_armour.png';
 import magicStrength from '@/public/img/bonuses/magic_strength.png';
 import rangedStrength from '@/public/img/bonuses/ranged_strength.png';
 import toaRaidLevel from '@/public/img/toa_raidlevel.webp';
@@ -458,6 +459,14 @@ const MonsterContainer: React.FC = observer(() => {
                         image={ranged}
                         value={displayMonster.skills.ranged}
                         onChange={(v) => store.updateMonster({ skills: { ranged: v } })}
+                      />
+                      <AttributeInput
+                        name="Flat Armour"
+                        max={1000}
+                        disabled={!isCustomMonster}
+                        image={flat_armour}
+                        value={displayMonster.defensive.flat_armour}
+                        onChange={(v) => store.updateMonster({ defensive: { flat_armour: v } })}
                       />
                     </div>
                   </div>
