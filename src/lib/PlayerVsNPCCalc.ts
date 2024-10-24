@@ -1192,12 +1192,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (style === 'ranged' && this.wearing('Dark bow')) {
+      dist = new AttackDistribution([standardHitDist, standardHitDist]);
       if (this.opts.usingSpecialAttack) {
-        // Start with two linear distributions with no min hit, then apply caps
-        dist = new AttackDistribution([HitDistribution.linear(acc, 0, max), HitDistribution.linear(acc, 0, max)]);
         dist = dist.transform(flatLimitTransformer(48, min));
-      } else {
-        dist = new AttackDistribution([standardHitDist, standardHitDist]);
       }
     }
 
