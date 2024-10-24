@@ -28,6 +28,7 @@ REQUIRED_PRINTOUTS = [
     'Combat level',
     'Crush defence bonus',
     'Defence level',
+    'Flat armour',
     'Hitpoints',
     'Image',
     'Immune to poison',
@@ -177,6 +178,7 @@ def main():
                 'str': get_printout_value(po['Strength bonus']) or 0
             },
             'defensive': {
+                'flat_armour': get_printout_value(po['Flat armour']) or 0,
                 'crush': get_printout_value(po['Crush defence bonus']) or 0,
                 'magic': get_printout_value(po['Magic defence bonus']) or 0,
                 'heavy': get_printout_value(po['Heavy range defence bonus']) or 0,
