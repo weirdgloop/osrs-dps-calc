@@ -251,7 +251,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     if (this.wearing('Keris partisan of the sun')
       && TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)
-      && this.monster.inputs.monsterCurrentHp < Math.floor(this.monster.skills.hp / 4)) {
+      && this.monster.inputs.monsterCurrentHp < Math.trunc(this.monster.skills.hp / 4)) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_KERIS, attackRoll, [5, 4]);
     }
     if (this.wearing(['Blisterwood flail', 'Blisterwood sickle']) && isVampyre(mattrs)) {
@@ -1892,7 +1892,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     // similarly, only recompute the dist for the yellow keris below 25% hp
     if (this.wearing('Keris partisan of the sun')
       && TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)
-      && hp >= Math.floor(this.monster.skills.hp / 4)) {
+      && hp >= Math.trunc(this.monster.skills.hp / 4)) {
       return baseDist;
     }
 
@@ -1936,7 +1936,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (loadout.equipment.weapon?.name.includes('rossbow') && this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)'])) {
       return true;
     }
-    if (loadout.equipment.weapon?.name === 'Keris partisan of the sun' && TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id)) {
+    if (this.wearing('Keris partisan of the sun') && TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id)) {
       return true;
     }
 
