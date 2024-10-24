@@ -11910,6 +11910,66 @@
     "isTwoHanded": false
   },
   {
+    "name": "Arclight",
+    "id": 19675,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Arclight.png",
+    "speed": 4,
+    "category": "Slash Sword",
+    "bonuses": {
+      "str": 8,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 10,
+      "slash": 38,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 3,
+      "crush": 2,
+      "magic": 2,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Arclight",
+    "id": 30305,
+    "version": "Inactive",
+    "slot": "weapon",
+    "image": "Arclight (inactive).png",
+    "speed": 4,
+    "category": "Slash Sword",
+    "bonuses": {
+      "str": 13,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 10,
+      "slash": 16,
+      "crush": -2,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 3,
+      "crush": 2,
+      "magic": 2,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Ardougne cloak 1",
     "id": 13121,
     "version": "",
