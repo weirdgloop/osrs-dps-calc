@@ -249,6 +249,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       // https://twitter.com/JagexAsh/status/1704107285381787952
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_KERIS, attackRoll, [133, 100]);
     }
+    if (
+      this.wearing('Keris partisan of the sun')
+      && TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)
+      && this.monster.inputs.monsterCurrentHp < Math.floor(this.monster.skills.hp / 4)
+    ) {
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_KERIS, attackRoll, [5, 4]);
+    }
     if (this.wearing(['Blisterwood flail', 'Blisterwood sickle']) && isVampyre(mattrs)) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_VAMPYREBANE, attackRoll, [21, 20]);
     }
@@ -1922,6 +1929,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return true;
     }
     if (loadout.equipment.weapon?.name.includes('rossbow') && this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)'])) {
+      return true;
+    }
+    if (loadout.equipment.weapon?.name === 'Keris partisan of the sun' && TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id)) {
       return true;
     }
 
