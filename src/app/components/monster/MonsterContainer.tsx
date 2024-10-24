@@ -38,7 +38,6 @@ import { Monster, MonsterCombatStyle } from '@/types/Monster';
 import LazyImage from '@/app/components/generic/LazyImage';
 import Toggle from '@/app/components/generic/Toggle';
 import { toJS } from 'mobx';
-import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import DefensiveReductions from '@/app/components/monster/DefensiveReductions';
 import WeaknessBadge from '@/app/components/monster/WeaknessBadge';
 import Select from '@/app/components/generic/Select';
@@ -319,26 +318,24 @@ const MonsterContainer: React.FC = observer(() => {
       );
     }
 
-    if (loadouts.some((l) => PlayerVsNPCCalc.distIsCurrentHpDependent(l, monster))) {
-      comps.push(
-        <div key="monster-current-hp">
-          <h4 className="font-bold font-serif">
-            <img src={hitpoints.src} alt="" className="inline-block" />
-            {' '}
-            Monster&apos;s current HP
-          </h4>
-          <div className="mt-2">
-            <NumberInput
-              value={monster.inputs.monsterCurrentHp}
-              min={0}
-              max={displayMonster.skills.hp}
-              step={1}
-              onChange={(v) => store.updateMonster({ inputs: { monsterCurrentHp: v } })}
-            />
-          </div>
-        </div>,
-      );
-    }
+    comps.push(
+      <div key="monster-current-hp">
+        <h4 className="font-bold font-serif">
+          <img src={hitpoints.src} alt="" className="inline-block" />
+          {' '}
+          Monster&apos;s current HP
+        </h4>
+        <div className="mt-2">
+          <NumberInput
+            value={monster.inputs.monsterCurrentHp}
+            min={0}
+            max={displayMonster.skills.hp}
+            step={1}
+            onChange={(v) => store.updateMonster({ inputs: { monsterCurrentHp: v } })}
+          />
+        </div>
+      </div>,
+    );
 
     return comps;
     // eslint-disable-next-line react-hooks/exhaustive-deps
