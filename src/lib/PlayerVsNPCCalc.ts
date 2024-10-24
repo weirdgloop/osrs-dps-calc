@@ -20,8 +20,6 @@ import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
   ALWAYS_MAX_HIT_MONSTERS,
   BA_ATTACKER_MONSTERS,
-  CAST_STANCES,
-  DEFAULT_ATTACK_SPEED,
   FLAT_ARMOUR,
   GLOWING_CRYSTAL_IDS,
   GUARDIAN_IDS,
@@ -1610,19 +1608,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    * Returns the player's attack speed.
    */
   public getAttackSpeed(): number {
-    let attackSpeed = this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;
-
-    if (this.player.style.type === 'ranged' && this.player.style.stance === 'Rapid') {
-      attackSpeed -= 1;
-    }
-    if (CAST_STANCES.includes(this.player.style.stance)) {
-      if (this.player.equipment.weapon?.name === 'Harmonised nightmare staff'
-        && this.player.spell?.spellbook === 'standard'
-        && this.player.style.stance !== 'Manual Cast') {
-        return 4;
-      }
-      return 5;
-    }
+    let attackSpeed = this.player.bonuses.attack_speed;
 
     // Giant rat (Scurrius)
     if (this.monster.id === 7223 && this.player.style.stance !== 'Manual Cast') {

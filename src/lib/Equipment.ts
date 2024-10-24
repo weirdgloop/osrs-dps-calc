@@ -1,7 +1,12 @@
 import { EquipmentPiece, Player, PlayerEquipment } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { keys } from '@/utils';
-import { BLOWPIPE_IDS, CAST_STANCES, TOMBS_OF_AMASCUT_MONSTER_IDS } from '@/lib/constants';
+import {
+  BLOWPIPE_IDS,
+  CAST_STANCES,
+  DEFAULT_ATTACK_SPEED,
+  TOMBS_OF_AMASCUT_MONSTER_IDS,
+} from '@/lib/constants';
 import { sum } from 'd3-array';
 import equipment from '../../cdn/json/equipment.json';
 import generatedEquipmentAliases from './EquipmentAliases';
@@ -224,6 +229,28 @@ export const getCanonicalEquipment = (inputEq: PlayerEquipment) => {
   return canonicalized;
 };
 
+/**
+ * Calculates the player's attack speed using current stance and equipment.
+ * @param player - the player
+ */
+export const calculateAttackSpeed = (player: Player): number => {
+  let attackSpeed = player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;
+
+  if (player.style.type === 'ranged' && player.style.stance === 'Rapid') {
+    attackSpeed -= 1;
+  }
+  if (CAST_STANCES.includes(player.style.stance)) {
+    if (player.equipment.weapon?.name === 'Harmonised nightmare staff'
+      && player.spell?.spellbook === 'standard'
+      && player.style.stance !== 'Manual Cast') {
+      return 4;
+    }
+    return 5;
+  }
+
+  return attackSpeed;
+};
+
 export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monster): EquipmentBonuses => {
   const totals: EquipmentBonuses = {
     bonuses: {
@@ -231,6 +258,7 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
       magic_str: 0,
       ranged_str: 0,
       prayer: 0,
+      attack_speed: DEFAULT_ATTACK_SPEED,
     },
     offensive: {
       slash: 0,
@@ -322,6 +350,8 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
     totals.offensive.ranged += 10;
     totals.bonuses.ranged_str += 1;
   }
+
+  totals.bonuses.attack_speed = calculateAttackSpeed(player);
 
   return totals;
 };

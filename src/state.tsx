@@ -22,7 +22,7 @@ import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
 import { availableEquipment, calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { CalcWorker } from '@/worker/CalcWorker';
 import { spellByName } from '@/types/Spell';
-import { NUMBER_OF_LOADOUTS } from '@/lib/constants';
+import { DEFAULT_ATTACK_SPEED, NUMBER_OF_LOADOUTS } from '@/lib/constants';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
   ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, OVERHEAD_PRAYERS, Prayer,
@@ -79,6 +79,7 @@ export const generateEmptyPlayer = (name?: string): Player => ({
     ranged_str: 0,
     magic_str: 0,
     prayer: 0,
+    attack_speed: DEFAULT_ATTACK_SPEED,
   },
   defensive: {
     stab: 0,
