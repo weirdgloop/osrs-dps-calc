@@ -54,7 +54,13 @@ import { range, some, sum } from 'd3-array';
 import { FeatureStatus } from '@/utils';
 import UserIssueType from '@/enums/UserIssueType';
 import {
-  BoltContext, diamondBolts, dragonstoneBolts, onyxBolts, opalBolts, pearlBolts, rubyBolts,
+  BoltContext,
+  diamondBolts,
+  dragonstoneBolts,
+  onyxBolts,
+  opalBolts,
+  pearlBolts,
+  rubyBolts,
 } from '@/lib/dists/bolts';
 import { burningClawDoT, burningClawSpec, dClawDist } from '@/lib/dists/claws';
 
@@ -178,8 +184,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   private getPlayerMaxMeleeAttackRoll(): number {
     const { style } = this.player;
 
-    const baseLevel: number = this.trackAdd(DetailKey.DAMAGE_LEVEL, this.player.skills.atk, this.player.boosts.atk);
-    let effectiveLevel: number = baseLevel;
+    let effectiveLevel: number = this.trackAdd(DetailKey.DAMAGE_LEVEL, this.player.skills.atk, this.player.boosts.atk);
 
     for (const p of this.getCombatPrayers('factorAccuracy')) {
       effectiveLevel = this.trackFactor(DetailKey.PLAYER_ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
@@ -1796,7 +1801,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const tickHpsRoot = new Float64Array(h * w);
     const tickHps = range(0, h)
       .map((i) => tickHpsRoot.subarray(w * i, w * (i + 1)));
-    tickHps[1][this.monster.skills.hp] = 1.0;
+    tickHps[1][this.monster.inputs.monsterCurrentHp || this.monster.skills.hp] = 1.0;
 
     // output map, will be converted at the end
     const ttks = new Map<number, number>();
@@ -1805,7 +1810,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     let epsilon = 1.0;
 
     // if the hit dist depends on hp, we'll have to recalculate it each time, so cache the results to not repeat work
-    const recalcDistOnHp = PlayerVsNPCCalc.distIsCurrentHpDependent(this.player, this.monster);
+    const recalcDistOnHp = this.distIsCurrentHpDependent(this.player, this.monster);
     const hpHitDists = new Array<DelayedHit[]>(this.monster.skills.hp + 1);
     hpHitDists[this.monster.skills.hp] = playerDist;
     if (recalcDistOnHp) {
@@ -1865,7 +1870,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return baseDist;
     }
 
-    if (!PlayerVsNPCCalc.distIsCurrentHpDependent(this.player, this.monster) || hp === this.monster.inputs.monsterCurrentHp) {
+    if (!this.distIsCurrentHpDependent(this.player, this.monster) || hp === this.monster.inputs.monsterCurrentHp) {
       return baseDist;
     }
 
@@ -1912,11 +1917,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     return ret;
   }
 
-  public static distIsCurrentHpDependent(loadout: Player, monster: Monster): boolean {
+  public distIsCurrentHpDependent(loadout: Player, monster: Monster): boolean {
     if (monster.name === 'Vardorvis') {
       return true;
     }
-    if (loadout.equipment.weapon?.name.includes('rossbow') && ['Ruby bolts (e)', 'Ruby dragon bolts (e)'].includes(loadout.equipment.ammo?.name || '')) {
+    if (loadout.equipment.weapon?.name.includes('rossbow') && this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)'])) {
       return true;
     }
 
