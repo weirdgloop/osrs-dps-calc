@@ -95,7 +95,7 @@ const compare: Handler<WorkerRequestType.COMPARE> = async (data) => {
   const { axes, loadouts, monster } = data;
   const comparator = new Comparator(loadouts, monster, axes.x, axes.y);
 
-  const [entries, domainMax] = comparator.getEntries();
+  const [entries, domainMin, domainMax] = comparator.getEntries();
 
   return {
     entries,
@@ -103,6 +103,7 @@ const compare: Handler<WorkerRequestType.COMPARE> = async (data) => {
       x: comparator.getAnnotationsX(),
       y: comparator.getAnnotationsY(),
     },
+    domainMin,
     domainMax,
   };
 };

@@ -26,6 +26,7 @@ import { CompareRequest, WorkerRequestType } from '@/worker/CalcWorkerTypes';
 import { keys } from '@/utils';
 import { ChartAnnotation } from '@/types/State';
 import { useCalc } from '@/worker/CalcWorker';
+import Toggle from '../generic/Toggle';
 
 const XAxisOptions = [
   { label: 'Monster defence level', axisLabel: 'Level', value: CompareXAxis.MONSTER_DEF },
@@ -88,6 +89,7 @@ const LoadoutComparison: React.FC = observer(() => {
   const [compareResult, setCompareResult] = useState<CompareResult>();
   const [xAxisType, setXAxisType] = useState<{ label: string, axisLabel?: string, value: CompareXAxis } | null | undefined>(XAxisOptions[0]);
   const [yAxisType, setYAxisType] = useState<{ label: string, axisLabel?: string, value: CompareYAxis } | null | undefined>({ label: 'Player damage-per-second', axisLabel: 'DPS', value: CompareYAxis.PLAYER_DPS });
+  const [yAxisFromZero, setYAxisFromZero] = useState(true);
 
   // recompute the valid y axis options if the monster has reverse dps support
   const YAxisOptions = useMemo(() => {
@@ -140,16 +142,17 @@ const LoadoutComparison: React.FC = observer(() => {
     });
   }, [showLoadoutComparison, loadouts, monster, xAxisType, yAxisType, calc]);
 
-  const [tickCount, domainMax] = useMemo(() => {
+  const [tickCount, domainMin, domainMax] = useMemo(() => {
     if (!compareResult?.domainMax) {
-      return [1, 1];
+      return [1, 0, 1];
     }
 
+    const lowest = Math.floor(compareResult.domainMin);
     const highest = Math.ceil(compareResult.domainMax);
     const stepsize = 10 ** Math.floor(Math.log10(highest) - 1);
     const ceilHighest = Math.ceil(1 / stepsize * highest) * stepsize - 1 / 1e9;
     const count = 1 + Math.ceil(1 / stepsize * highest);
-    return [count, ceilHighest];
+    return [count, lowest, ceilHighest];
   }, [compareResult]);
 
   const generateChartLines = useCallback(() => {
@@ -232,7 +235,7 @@ const LoadoutComparison: React.FC = observer(() => {
               />
               <YAxis
                 stroke="#777777"
-                domain={[0, domainMax]}
+                domain={[yAxisFromZero ? 0 : domainMin, domainMax]}
                 tickCount={tickCount}
                 tickFormatter={(v: number) => `${parseFloat(v.toFixed(2))}`}
                 interval="equidistantPreserveStart"
@@ -262,7 +265,15 @@ const LoadoutComparison: React.FC = observer(() => {
               />
             </div>
             <div className="basis-full md:basis-1/2">
-              <h3 className="font-serif font-bold mb-2">Y axis</h3>
+              <div className="flex flex-nowrap gap-4">
+                <h3 className="font-serif font-bold mb-2 basis-full">Y axis</h3>
+                <Toggle
+                  className="shrink-0"
+                  checked={yAxisFromZero}
+                  setChecked={setYAxisFromZero}
+                  label="Start from 0"
+                />
+              </div>
               <Select
                 id="loadout-comparison-y"
                 items={YAxisOptions}
