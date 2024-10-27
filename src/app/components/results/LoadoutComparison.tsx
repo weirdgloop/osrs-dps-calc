@@ -95,6 +95,7 @@ const LoadoutComparison: React.FC = observer(() => {
       { label: 'Player damage-per-second', axisLabel: 'DPS', value: CompareYAxis.PLAYER_DPS },
       { label: 'Player expected hit', axisLabel: 'Hit', value: CompareYAxis.PLAYER_EXPECTED_HIT },
       { label: 'Time-to-kill', axisLabel: 'Seconds', value: CompareYAxis.PLAYER_TTK },
+      { label: 'Player max hit', axisLabel: 'Max hit', value: CompareYAxis.PLAYER_MAX_HIT },
       // {label: 'Damage taken', value: YAxisType.DAMAGE_TAKEN}
     ];
 

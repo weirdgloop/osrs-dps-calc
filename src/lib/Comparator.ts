@@ -29,6 +29,7 @@ export enum CompareYAxis {
   MONSTER_DPS,
   DAMAGE_TAKEN,
   PLAYER_TTK,
+  PLAYER_MAX_HIT,
 }
 
 interface InputSet {
@@ -207,6 +208,10 @@ export default class Comparator {
 
       case CompareYAxis.DAMAGE_TAKEN:
         apply((l) => reverseCalc(l).getAverageDamageTaken().toFixed(DPS_PRECISION));
+        break;
+
+      case CompareYAxis.PLAYER_MAX_HIT:
+        apply((l) => forwardCalc(l).getMax().toString());
         break;
 
       default:
