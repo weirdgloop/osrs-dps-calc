@@ -3762,7 +3762,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000028-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000023-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -18142,7 +18142,7 @@
       "Melee"
     ],
     "size": 2,
-    "max_hit": 0,
+    "max_hit": "17",
     "skills": {
       "atk": 75,
       "def": 24,
@@ -25999,7 +25999,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-00000000-QINU`\"'"
+      "Slash '\"`UNIQ--ref-00000033-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -34276,7 +34276,7 @@
       "standard": 45,
       "light": 45,
       "slash": 45,
-      "stab": 0
+      "stab": 45
     },
     "attributes": [
       "spectral",
@@ -34319,11 +34319,11 @@
       "flat_armour": 0,
       "crush": 5,
       "magic": 55,
-      "heavy": 0,
+      "heavy": 55,
       "standard": 55,
       "light": 55,
       "slash": 55,
-      "stab": 45
+      "stab": 55
     },
     "attributes": [
       "spectral",
@@ -43594,9 +43594,9 @@
     "weakness": null
   },
   {
-    "id": 3626,
+    "id": 3625,
     "name": "Haze",
-    "version": "",
+    "version": "Ghost",
     "image": "Ghost.png",
     "level": 29,
     "speed": 4,
@@ -43608,7 +43608,7 @@
     "skills": {
       "atk": 23,
       "def": 28,
-      "hp": 27,
+      "hp": 30,
       "magic": 1,
       "ranged": 1,
       "str": 23
@@ -85202,7 +85202,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000001C-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000001F-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -85847,6 +85847,49 @@
       "stab": 15
     },
     "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 13033,
+    "name": "Sulphur Nagua",
+    "version": "",
+    "image": "Sulphur Nagua.png",
+    "level": 98,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "11",
+    "skills": {
+      "atk": 90,
+      "def": 40,
+      "hp": 100,
+      "magic": 50,
+      "ranged": 1,
+      "str": 105
+    },
+    "offensive": {
+      "atk": 90,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": -4,
+      "crush": 10,
+      "magic": 200,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
+      "slash": 50,
+      "stab": 50
+    },
+    "attributes": [
+      "spectral"
+    ],
     "weakness": null
   },
   {
@@ -93109,7 +93152,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000001C-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000063-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -93151,7 +93194,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000001C-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000063-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -95275,7 +95318,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000D-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000B-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -95316,7 +95359,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000F-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000D-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
