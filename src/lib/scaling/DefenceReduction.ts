@@ -19,7 +19,7 @@ import { keys } from '@/utils';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { Factor } from '@/lib/Math';
 
-const getDefenceFloor = (m: Monster): number => {
+export const getDefenceFloor = (m: Monster): number => {
   if (VERZIK_IDS.includes(m.id) || VARDORVIS_IDS.includes(m.id)) {
     return m.skills.def;
   }
