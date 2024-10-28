@@ -7,6 +7,8 @@ enum UserIssueType {
   SPELL_WRONG_WEAPON = 'spell_wrong_weapon',
   SPELL_WRONG_MONSTER = 'spell_wrong_monster',
   MONSTER_UNIQUE_EFFECTS = 'monster_overall_unique_effects',
+  RING_RECOIL_UNSUPPORTED = 'equipment_slot_ring_recoil',
+  FEET_RECOIL_UNSUPPORTED = 'equipment_slot_feet_recoil',
 }
 
 export default UserIssueType;
