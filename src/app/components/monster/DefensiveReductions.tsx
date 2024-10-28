@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { IconChevronDown, IconChevronUp } from '@tabler/icons-react';
 import NumberInput from '@/app/components/generic/NumberInput';
 import Toggle from '@/app/components/generic/Toggle';
@@ -12,11 +12,17 @@ import arc from '@/public/img/def_reductions/Arclight.png';
 import emberlight from '@/public/img/def_reductions/Emberlight.png';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
+import { getDefenceFloor } from '@/lib/scaling/DefenceReduction';
+import { toJS } from 'mobx';
 
 const DefensiveReductions: React.FC = observer(() => {
   const store = useStore();
   const { isDefensiveReductionsExpanded } = store.ui;
-  const { defenceReductions } = store.monster.inputs;
+  const { monster } = store;
+  const { defenceReductions } = monster.inputs;
+
+  const monsterJs = toJS(monster);
+  const defenceFloor = useMemo(() => getDefenceFloor(monsterJs), [monsterJs]);
 
   return (
     <div className="rounded bg-body-100 dark:bg-dark-500">
@@ -36,6 +42,13 @@ const DefensiveReductions: React.FC = observer(() => {
 
       {isDefensiveReductionsExpanded && (
         <div className="p-2">
+          {defenceFloor !== 0 && (
+            <p className="text-xs mb-2 text-gray-300">
+              Defence floor:
+              {' '}
+              {defenceFloor}
+            </p>
+          )}
           <div className="w-full">
             <NumberInput
               className="form-control w-1/6"
