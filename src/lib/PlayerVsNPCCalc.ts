@@ -563,7 +563,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const { style } = this.player;
 
     let effectiveLevel: number = this.player.skills.ranged + this.player.boosts.ranged;
-    if (this.wearing('Eclipse atlatl')) {
+    const scalesWithStr: boolean = this.wearing('Eclipse atlatl') || this.wearing("Hunter's spear");
+    if (scalesWithStr) {
       // atlatl uses strength instead of ranged skill, melee strength bonus, and melee buff from slayer helmet/salve, but works with ranged void
       effectiveLevel = this.player.skills.str + this.player.boosts.str;
     }
@@ -601,7 +602,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       effectiveLevel = Math.trunc(effectiveLevel * 11 / 10);
     }
 
-    const bonusStr = this.wearing('Eclipse atlatl') ? this.player.bonuses.str : this.player.bonuses.ranged_str;
+    const bonusStr = scalesWithStr ? this.player.bonuses.str : this.player.bonuses.ranged_str;
     const baseMax = Math.trunc((effectiveLevel * (bonusStr + 64) + 320) / 640);
     let [minHit, maxHit]: MinMax = [0, baseMax];
 
@@ -622,11 +623,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
       const factor = <Factor>[buffs.forinthrySurge ? 27 : 24, 20];
       maxHit = this.trackFactor(DetailKey.MAX_HIT_FORINTHRY_SURGE, maxHit, factor);
-    } else if ((this.wearing('Salve amulet(ei)') || (this.wearing('Eclipse atlatl') && this.wearing('Salve amulet (e)'))) && mattrs.includes(MonsterAttribute.UNDEAD)) {
+    } else if ((this.wearing('Salve amulet(ei)') || (scalesWithStr && this.wearing('Salve amulet (e)'))) && mattrs.includes(MonsterAttribute.UNDEAD)) {
       maxHit = Math.trunc(maxHit * 6 / 5);
-    } else if ((this.wearing('Salve amulet(i)') || (this.wearing('Eclipse atlatl') && this.wearing('Salve amulet'))) && mattrs.includes(MonsterAttribute.UNDEAD)) {
+    } else if ((this.wearing('Salve amulet(i)') || (scalesWithStr && this.wearing('Salve amulet'))) && mattrs.includes(MonsterAttribute.UNDEAD)) {
       maxHit = Math.trunc(maxHit * 7 / 6);
-    } else if (this.wearing('Eclipse atlatl') && this.isWearingBlackMask() && buffs.onSlayerTask) {
+    } else if (scalesWithStr && this.isWearingBlackMask() && buffs.onSlayerTask) {
       maxHit = Math.trunc(maxHit * 7 / 6);
     } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
       let numerator = 23;
