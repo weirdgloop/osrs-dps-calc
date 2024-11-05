@@ -86,7 +86,11 @@ one_off_renames = {
     "Sanguine scythe of vitur": "Scythe of vitur",
     "Dragon hunter crossbow (b)": "Dragon hunter crossbow",
     "Obsidian cape (r)": "Obsidian cape",
-    "Elidinis' ward (or)": "Elidinis' ward (f)"
+    "Elidinis' ward (or)": "Elidinis' ward (f)",
+    "Armadyl godsword (deadman)": "Armadyl godsword",
+    "Voidwaker (deadman)": "Voidwaker",
+    "Volatile nightmare staff (deadman)": "Volatile nightmare staff",
+    "Amulet of rancour (s)": "Amulet of rancour"
 }
 
 def main():
@@ -170,8 +174,8 @@ def main():
         elif re.match(r"^(Used|New)", item['version']) and "Crystal" not in item['name']:
             handle_base_variant(all_items, item, item['name'], ['New'])
         # Dark Bow variants
-        elif item['name'] == "Dark bow" and item['version'] != "Regular":
-            handle_base_variant(all_items, item, item['name'], ['Regular'])
+        elif (item['name'] == "Dark bow" and item['version'] != "Regular") or item['name'] == "Dark bow (deadman)":
+            handle_base_variant(all_items, item, "Dark bow", ['Regular'])
         # Granite maul variants
         elif (item['name'] == "Granite maul" and item['version'] != "Normal") or item['name'] == "Granite maul (or)":
             handle_base_variant(all_items, item, 'Granite maul', ['Normal'])

@@ -21,6 +21,7 @@ const equipmentAliases = {
   1704: [19707, 1706, 1708, 1710, 1712, 11976, 11978, 10360, 10358, 10356, 10354, 11966, 11964, 10362], // Amulet of glory#Uncharged
   1727: [10366], // Amulet of magic
   1731: [23354], // Amulet of power
+  29801: [29804], // Amulet of rancour
   19553: [20366], // Amulet of torture
   21018: [24664], // Ancestral hat
   21024: [24668], // Ancestral robe bottom
@@ -29,7 +30,7 @@ const equipmentAliases = {
   27624: [27626], // Ancient sceptre#Normal
   11771: [26768, 25260], // Archers ring (i)#Nightmare Zone
   11830: [26716], // Armadyl chainskirt
-  11802: [20368], // Armadyl godsword
+  11802: [29605, 20368], // Armadyl godsword
   24192: [24194], // Armadyl halo#Normal
   11826: [26714], // Armadyl helmet
   21898: [24135], // Assembler max cape#Normal
@@ -91,7 +92,7 @@ const equipmentAliases = {
   24288: [27123], // Dagon'hai hat
   24294: [27127], // Dagon'hai robe bottom
   24291: [27125], // Dagon'hai robe top
-  11235: [12766, 12765, 12768, 12767], // Dark bow#Regular
+  11235: [12766, 12765, 12768, 12767, 29611], // Dark bow#Regular
   4509: [24158], // Decorative armour (gold platebody)#Normal
   4510: [24159], // Decorative armour (gold platelegs)#Normal
   11895: [24162], // Decorative armour (gold plateskirt)#Normal
@@ -289,6 +290,8 @@ const equipmentAliases = {
   11663: [24183, 27005, 26473], // Void mage helm#Normal
   11665: [24185, 27007, 26477], // Void melee helm#Normal
   11664: [24184, 27006, 26475], // Void ranger helm#Normal
+  27690: [29607], // Voidwaker
+  24424: [29609], // Volatile nightmare staff
   11772: [26769, 25262], // Warrior ring (i)#Nightmare Zone
   1171: [20166], // Wooden shield
   26723: [26724], // Wristbands of the arena#Normal
