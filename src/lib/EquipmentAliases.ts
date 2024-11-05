@@ -54,8 +54,14 @@ const equipmentAliases = {
   24551: [25882, 25876, 25878, 25872, 25870, 25880, 25874], // Blade of saeldor (c)
   28955: [28957], // Blessed dizana's quiver#Normal
   28260: [28473], // Blood ancient sceptre#Normal
+  29022: [29022, 29043], // Blood moon chestplate#New
+  29028: [29028, 29047], // Blood moon helm#New
+  29025: [29025, 29045], // Blood moon tassets#New
   2499: [7374, 7376], // Blue d'hide body
   2493: [7382, 7384], // Blue d'hide chaps
+  29013: [29013, 29037], // Blue moon chestplate#New
+  29019: [29019, 29041], // Blue moon helm#New
+  29016: [29016, 29039], // Blue moon tassets#New
   1011: [7386, 7388], // Blue skirt
   579: [7394, 7396], // Blue wizard hat
   577: [7390, 7392], // Blue wizard robe
@@ -131,6 +137,9 @@ const equipmentAliases = {
   1187: [28059, 12418], // Dragon sq shield
   21009: [28029], // Dragon sword
   13576: [28035, 26710], // Dragon warhammer
+  29004: [29004, 29031], // Eclipse moon chestplate#New
+  29010: [29010, 29035], // Eclipse moon helm#New
+  29007: [29007, 29033], // Eclipse moon tassets#New
   20595: [27119], // Elder chaos hood
   20520: [27117], // Elder chaos robe
   20517: [27115], // Elder chaos top
