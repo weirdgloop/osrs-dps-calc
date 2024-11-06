@@ -4143,8 +4143,8 @@
   {
     "id": 14113,
     "name": "Armoured zombie (Zemouregal's Fortress)",
-    "version": "",
-    "image": "Armoured zombie (Zemouregal's Fortres).png",
+    "version": "1",
+    "image": "Armoured zombie (Zemouregal's Fortress, 1).png",
     "level": 109,
     "speed": 4,
     "style": [
@@ -4178,7 +4178,482 @@
       "slash": 20,
       "stab": 20
     },
-    "attributes": [],
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14122,
+    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "version": "10",
+    "image": "Armoured zombie (Zemouregal's Fortress, 10).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 1,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14135,
+    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "version": "11",
+    "image": "Armoured zombie (Zemouregal's Fortress, 11).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 1,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14136,
+    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "version": "12",
+    "image": "Armoured zombie (Zemouregal's Fortress, 12).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 1,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14114,
+    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "version": "2",
+    "image": "Armoured zombie (Zemouregal's Fortress, 2).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 1,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14115,
+    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "version": "3",
+    "image": "Armoured zombie (Zemouregal's Fortress, 3).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 1,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14116,
+    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "version": "4",
+    "image": "Armoured zombie (Zemouregal's Fortress, 4).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 1,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14117,
+    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "version": "5",
+    "image": "Armoured zombie (Zemouregal's Fortress, 5).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 1,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14118,
+    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "version": "6",
+    "image": "Armoured zombie (Zemouregal's Fortress, 6).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 1,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14119,
+    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "version": "7",
+    "image": "Armoured zombie (Zemouregal's Fortress, 7).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 1,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14120,
+    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "version": "8",
+    "image": "Armoured zombie (Zemouregal's Fortress, 8).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 1,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14121,
+    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "version": "9",
+    "image": "Armoured zombie (Zemouregal's Fortress, 9).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 1,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
     "weakness": null
   },
   {
