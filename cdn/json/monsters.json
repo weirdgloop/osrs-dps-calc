@@ -4142,9 +4142,9 @@
   },
   {
     "id": 14113,
-    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "name": "Armoured zombie (Zemouregal's Fort)",
     "version": "1",
-    "image": "Armoured zombie (Zemouregal's Fortress, 1).png",
+    "image": "Armoured zombie (Zemouregal's Fort, 1).png",
     "level": 109,
     "speed": 4,
     "style": [
@@ -4185,9 +4185,9 @@
   },
   {
     "id": 14122,
-    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "name": "Armoured zombie (Zemouregal's Fort)",
     "version": "10",
-    "image": "Armoured zombie (Zemouregal's Fortress, 10).png",
+    "image": "Armoured zombie (Zemouregal's Fort, 10).png",
     "level": 109,
     "speed": 4,
     "style": [
@@ -4228,9 +4228,9 @@
   },
   {
     "id": 14135,
-    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "name": "Armoured zombie (Zemouregal's Fort)",
     "version": "11",
-    "image": "Armoured zombie (Zemouregal's Fortress, 11).png",
+    "image": "Armoured zombie (Zemouregal's Fort, 11).png",
     "level": 109,
     "speed": 4,
     "style": [
@@ -4271,9 +4271,9 @@
   },
   {
     "id": 14136,
-    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "name": "Armoured zombie (Zemouregal's Fort)",
     "version": "12",
-    "image": "Armoured zombie (Zemouregal's Fortress, 12).png",
+    "image": "Armoured zombie (Zemouregal's Fort, 12).png",
     "level": 109,
     "speed": 4,
     "style": [
@@ -4314,9 +4314,9 @@
   },
   {
     "id": 14114,
-    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "name": "Armoured zombie (Zemouregal's Fort)",
     "version": "2",
-    "image": "Armoured zombie (Zemouregal's Fortress, 2).png",
+    "image": "Armoured zombie (Zemouregal's Fort, 2).png",
     "level": 109,
     "speed": 4,
     "style": [
@@ -4357,9 +4357,9 @@
   },
   {
     "id": 14115,
-    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "name": "Armoured zombie (Zemouregal's Fort)",
     "version": "3",
-    "image": "Armoured zombie (Zemouregal's Fortress, 3).png",
+    "image": "Armoured zombie (Zemouregal's Fort, 3).png",
     "level": 109,
     "speed": 4,
     "style": [
@@ -4400,9 +4400,9 @@
   },
   {
     "id": 14116,
-    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "name": "Armoured zombie (Zemouregal's Fort)",
     "version": "4",
-    "image": "Armoured zombie (Zemouregal's Fortress, 4).png",
+    "image": "Armoured zombie (Zemouregal's Fort, 4).png",
     "level": 109,
     "speed": 4,
     "style": [
@@ -4443,9 +4443,9 @@
   },
   {
     "id": 14117,
-    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "name": "Armoured zombie (Zemouregal's Fort)",
     "version": "5",
-    "image": "Armoured zombie (Zemouregal's Fortress, 5).png",
+    "image": "Armoured zombie (Zemouregal's Fort, 5).png",
     "level": 109,
     "speed": 4,
     "style": [
@@ -4486,9 +4486,9 @@
   },
   {
     "id": 14118,
-    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "name": "Armoured zombie (Zemouregal's Fort)",
     "version": "6",
-    "image": "Armoured zombie (Zemouregal's Fortress, 6).png",
+    "image": "Armoured zombie (Zemouregal's Fort, 6).png",
     "level": 109,
     "speed": 4,
     "style": [
@@ -4529,9 +4529,9 @@
   },
   {
     "id": 14119,
-    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "name": "Armoured zombie (Zemouregal's Fort)",
     "version": "7",
-    "image": "Armoured zombie (Zemouregal's Fortress, 7).png",
+    "image": "Armoured zombie (Zemouregal's Fort, 7).png",
     "level": 109,
     "speed": 4,
     "style": [
@@ -4572,9 +4572,9 @@
   },
   {
     "id": 14120,
-    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "name": "Armoured zombie (Zemouregal's Fort)",
     "version": "8",
-    "image": "Armoured zombie (Zemouregal's Fortress, 8).png",
+    "image": "Armoured zombie (Zemouregal's Fort, 8).png",
     "level": 109,
     "speed": 4,
     "style": [
@@ -4615,9 +4615,9 @@
   },
   {
     "id": 14121,
-    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "name": "Armoured zombie (Zemouregal's Fort)",
     "version": "9",
-    "image": "Armoured zombie (Zemouregal's Fortress, 9).png",
+    "image": "Armoured zombie (Zemouregal's Fort, 9).png",
     "level": 109,
     "speed": 4,
     "style": [
@@ -31232,7 +31232,7 @@
       "Stab"
     ],
     "size": 2,
-    "max_hit": "1–12 (without Slayer gloves)",
+    "max_hit": "1ï¿½12 (without Slayer gloves)",
     "skills": {
       "atk": 60,
       "def": 40,
