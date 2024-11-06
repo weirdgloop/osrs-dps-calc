@@ -780,6 +780,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "3rd age mage hat (Last Man Standing)",
+    "id": 27183,
+    "version": "",
+    "slot": "head",
+    "image": "3rd age mage hat (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 8,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 8,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "3rd age pickaxe",
     "id": 20014,
     "version": "",
@@ -930,11 +960,71 @@
     "isTwoHanded": false
   },
   {
+    "name": "3rd age range coif (Last Man Standing)",
+    "id": 27201,
+    "version": "",
+    "slot": "head",
+    "image": "3rd age range coif (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -2,
+      "ranged": 9
+    },
+    "defensive": {
+      "stab": 4,
+      "slash": 7,
+      "crush": 10,
+      "magic": 5,
+      "ranged": 8
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "3rd age range legs",
     "id": 10332,
     "version": "",
     "slot": "legs",
     "image": "3rd age range legs.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -10,
+      "ranged": 17
+    },
+    "defensive": {
+      "stab": 31,
+      "slash": 25,
+      "crush": 33,
+      "magic": 30,
+      "ranged": 31
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "3rd age range legs (Last Man Standing)",
+    "id": 27200,
+    "version": "",
+    "slot": "legs",
+    "image": "3rd age range legs (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -990,6 +1080,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "3rd age range top (Last Man Standing)",
+    "id": 27199,
+    "version": "",
+    "slot": "body",
+    "image": "3rd age range top (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -15,
+      "ranged": 30
+    },
+    "defensive": {
+      "stab": 55,
+      "slash": 47,
+      "crush": 60,
+      "magic": 60,
+      "ranged": 55
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "3rd age robe",
     "id": 10340,
     "version": "",
@@ -1020,11 +1140,71 @@
     "isTwoHanded": false
   },
   {
+    "name": "3rd age robe (Last Man Standing)",
+    "id": 20577,
+    "version": "",
+    "slot": "legs",
+    "image": "3rd age robe (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 19,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 19,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "3rd age robe top",
     "id": 10338,
     "version": "",
     "slot": "body",
     "image": "3rd age robe top.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 24,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 24,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "3rd age robe top (Last Man Standing)",
+    "id": 20576,
+    "version": "",
+    "slot": "body",
+    "image": "3rd age robe top (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -9510,6 +9690,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Amulet of torture (Last Man Standing)",
+    "id": 27173,
+    "version": "",
+    "slot": "neck",
+    "image": "Amulet of torture (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 10,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": 15,
+      "slash": 15,
+      "crush": 15,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Amulet of torture (or)",
     "id": 20366,
     "version": "",
@@ -9700,7 +9910,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 40,
+      "magic_str": 30,
       "prayer": 0
     },
     "offensive": {
@@ -9725,6 +9935,36 @@
     "version": "",
     "slot": "body",
     "image": "Ancestral robe top.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 30,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 35,
+      "ranged": -8
+    },
+    "defensive": {
+      "stab": 42,
+      "slash": 31,
+      "crush": 51,
+      "magic": 28,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ancestral robe top (Last Man Standing)",
+    "id": 27193,
+    "version": "",
+    "slot": "body",
+    "image": "Ancestral robe top (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -10230,6 +10470,36 @@
     "isTwoHanded": true
   },
   {
+    "name": "Ancient godsword (Last Man Standing)",
+    "id": 27184,
+    "version": "",
+    "slot": "weapon",
+    "image": "Ancient godsword (Last Man Standing).png",
+    "speed": 6,
+    "category": "2h sword",
+    "bonuses": {
+      "str": 132,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 8
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 132,
+      "crush": 80,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Ancient gorilla greegree",
     "id": 4028,
     "version": "",
@@ -10657,6 +10927,36 @@
     "image": "Ancient staff.png",
     "speed": 4,
     "category": "Staff",
+    "bonuses": {
+      "str": 50,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": -1
+    },
+    "offensive": {
+      "stab": 10,
+      "slash": -1,
+      "crush": 40,
+      "magic": 15,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 3,
+      "crush": 1,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ancient staff (Last Man Standing)",
+    "id": 20431,
+    "version": "",
+    "slot": "weapon",
+    "image": "Ancient staff (Last Man Standing).png",
+    "speed": 4,
+    "category": "staff",
     "bonuses": {
       "str": 50,
       "ranged_str": 0,
@@ -16530,6 +16830,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Berserker helm (Last Man Standing)",
+    "id": 27169,
+    "version": "",
+    "slot": "head",
+    "image": "Berserker helm (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 3,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -5,
+      "ranged": -5
+    },
+    "defensive": {
+      "stab": 31,
+      "slash": 29,
+      "crush": 33,
+      "magic": 0,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Berserker necklace",
     "id": 11128,
     "version": "",
@@ -17465,6 +17795,36 @@
     "version": "",
     "slot": "legs",
     "image": "Black d'hide chaps.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -10,
+      "ranged": 17
+    },
+    "defensive": {
+      "stab": 18,
+      "slash": 20,
+      "crush": 26,
+      "magic": 23,
+      "ranged": 26
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black d'hide chaps (Last Man Standing)",
+    "id": 20424,
+    "version": "",
+    "slot": "legs",
+    "image": "Black d'hide chaps (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -50100,6 +50460,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Dragon knife (Last Man Standing)",
+    "id": 27157,
+    "version": "",
+    "slot": "weapon",
+    "image": "Dragon knife (Last Man Standing).png",
+    "speed": 3,
+    "category": "thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 30,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 28
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Dragon longsword",
     "id": 1305,
     "version": "",
@@ -50737,6 +51127,36 @@
     "image": "Dragon scimitar.png",
     "speed": 4,
     "category": "Slash Sword",
+    "bonuses": {
+      "str": 66,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 8,
+      "slash": 67,
+      "crush": -2,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 1,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dragon scimitar (Last Man Standing)",
+    "id": 20406,
+    "version": "",
+    "slot": "weapon",
+    "image": "Dragon scimitar (Last Man Standing).png",
+    "speed": 4,
+    "category": "slash sword",
     "bonuses": {
       "str": 66,
       "ranged_str": 0,
@@ -53190,6 +53610,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Elder chaos hood (Last Man Standing)",
+    "id": 27176,
+    "version": "",
+    "slot": "head",
+    "image": "Elder chaos hood (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 5,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 4,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Elder chaos hood (or)",
     "id": 27119,
     "version": "",
@@ -53250,6 +53700,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Elder chaos robe (Last Man Standing)",
+    "id": 27175,
+    "version": "",
+    "slot": "legs",
+    "image": "Elder chaos robe (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 6,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 6,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Elder chaos robe (or)",
     "id": 27117,
     "version": "",
@@ -53285,6 +53765,36 @@
     "version": "",
     "slot": "body",
     "image": "Elder chaos top.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 10,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 8,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Elder chaos top (Last Man Standing)",
+    "id": 27174,
+    "version": "",
+    "slot": "body",
+    "image": "Elder chaos top (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -58860,6 +59370,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Fremennik kilt (Last Man Standing)",
+    "id": 27177,
+    "version": "",
+    "slot": "legs",
+    "image": "Fremennik kilt (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 1,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -21,
+      "ranged": -7
+    },
+    "defensive": {
+      "stab": 11,
+      "slash": 10,
+      "crush": 10,
+      "magic": -4,
+      "ranged": 10
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Fremennik pink cloak",
     "id": 3787,
     "version": "",
@@ -60480,6 +61020,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Ghostly hood (Last Man Standing)",
+    "id": 27166,
+    "version": "",
+    "slot": "head",
+    "image": "Ghostly hood (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 3,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 3,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Ghostly robe (bottom)",
     "id": 6108,
     "version": "",
@@ -60510,11 +61080,71 @@
     "isTwoHanded": false
   },
   {
+    "name": "Ghostly robe (bottom) (Last Man Standing)",
+    "id": 27168,
+    "version": "",
+    "slot": "legs",
+    "image": "Ghostly robe (bottom) (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 4,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 4,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Ghostly robe (top)",
     "id": 6107,
     "version": "",
     "slot": "body",
     "image": "Ghostly robe (top).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 5,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 5,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ghostly robe (top) (Last Man Standing)",
+    "id": 27167,
+    "version": "",
+    "slot": "body",
+    "image": "Ghostly robe (top) (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -68460,6 +69090,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Guthix chaps (Last Man Standing)",
+    "id": 27180,
+    "version": "",
+    "slot": "legs",
+    "image": "Guthix chaps (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 1
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -10,
+      "ranged": 17
+    },
+    "defensive": {
+      "stab": 31,
+      "slash": 25,
+      "crush": 33,
+      "magic": 28,
+      "ranged": 31
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Guthix cloak",
     "id": 10448,
     "version": "",
@@ -68733,6 +69393,36 @@
     "name": "Guthix halo",
     "id": 12639,
     "version": "Normal",
+    "slot": "head",
+    "image": "Guthix halo.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 3
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 11,
+      "slash": 12,
+      "crush": 10,
+      "magic": 11,
+      "ranged": -1
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Guthix halo (Last Man Standing)",
+    "id": 27163,
+    "version": "",
     "slot": "head",
     "image": "Guthix halo.png",
     "speed": 0,
@@ -74460,6 +75150,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Infinity boots (Last Man Standing)",
+    "id": 27170,
+    "version": "",
+    "slot": "feet",
+    "image": "Infinity boots (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 5,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 5,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Infinity bottoms",
     "id": 6924,
     "version": "",
@@ -74730,11 +75450,71 @@
     "isTwoHanded": false
   },
   {
+    "name": "Inquisitor's great helm (Last Man Standing)",
+    "id": 27195,
+    "version": "",
+    "slot": "head",
+    "image": "Inquisitor's great helm (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 1
+    },
+    "offensive": {
+      "stab": -2,
+      "slash": -2,
+      "crush": 8,
+      "magic": -5,
+      "ranged": -5
+    },
+    "defensive": {
+      "stab": 19,
+      "slash": 10,
+      "crush": 21,
+      "magic": 0,
+      "ranged": 12
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Inquisitor's hauberk",
     "id": 24420,
     "version": "",
     "slot": "body",
     "image": "Inquisitor's hauberk.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": -3,
+      "slash": -3,
+      "crush": 12,
+      "magic": -11,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 67,
+      "slash": 55,
+      "crush": 71,
+      "magic": 0,
+      "ranged": 35
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Inquisitor's hauberk (Last Man Standing)",
+    "id": 27196,
+    "version": "",
+    "slot": "body",
+    "image": "Inquisitor's hauberk (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -74790,11 +75570,71 @@
     "isTwoHanded": false
   },
   {
+    "name": "Inquisitor's mace (Last Man Standing)",
+    "id": 27198,
+    "version": "",
+    "slot": "weapon",
+    "image": "Inquisitor's mace (Last Man Standing).png",
+    "speed": 4,
+    "category": "spiked",
+    "bonuses": {
+      "str": 89,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": 52,
+      "slash": -4,
+      "crush": 95,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Inquisitor's plateskirt",
     "id": 24421,
     "version": "",
     "slot": "legs",
     "image": "Inquisitor's plateskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 2,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": -3,
+      "slash": -3,
+      "crush": 12,
+      "magic": -9,
+      "ranged": -5
+    },
+    "defensive": {
+      "stab": 42,
+      "slash": 30,
+      "crush": 49,
+      "magic": 0,
+      "ranged": 22
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Inquisitor's plateskirt (Last Man Standing)",
+    "id": 27197,
+    "version": "",
+    "slot": "legs",
+    "image": "Inquisitor's plateskirt (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -85710,6 +86550,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Mithril gloves (Last Man Standing)",
+    "id": 20581,
+    "version": "",
+    "slot": "hands",
+    "image": "Mithril gloves (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 6,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 6,
+      "slash": 6,
+      "crush": 6,
+      "magic": 3,
+      "ranged": 6
+    },
+    "defensive": {
+      "stab": 6,
+      "slash": 6,
+      "crush": 6,
+      "magic": 3,
+      "ranged": 6
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Mithril gloves (wrapped)",
     "id": 27110,
     "version": "",
@@ -89580,6 +90450,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Mystic robe bottom (dark) (Last Man Standing)",
+    "id": 27159,
+    "version": "",
+    "slot": "legs",
+    "image": "Mystic robe bottom (dark) (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 15,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Mystic robe bottom (dusk)",
     "id": 23053,
     "version": "",
@@ -89615,6 +90515,36 @@
     "version": "",
     "slot": "legs",
     "image": "Mystic robe bottom (light).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 15,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Mystic robe bottom (light) (Last Man Standing)",
+    "id": 27161,
+    "version": "",
+    "slot": "legs",
+    "image": "Mystic robe bottom (light) (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -89760,6 +90690,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Mystic robe top (dark) (Last Man Standing)",
+    "id": 27158,
+    "version": "",
+    "slot": "body",
+    "image": "Mystic robe top (dark) (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 20,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 20,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Mystic robe top (dusk)",
     "id": 23050,
     "version": "",
@@ -89795,6 +90755,36 @@
     "version": "",
     "slot": "body",
     "image": "Mystic robe top (light).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 20,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 20,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Mystic robe top (light) (Last Man Standing)",
+    "id": 27160,
+    "version": "",
+    "slot": "body",
+    "image": "Mystic robe top (light) (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -90125,6 +91115,36 @@
     "version": "",
     "slot": "neck",
     "image": "Necklace of anguish.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 5,
+      "magic_str": 0,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 15
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Necklace of anguish (Last Man Standing)",
+    "id": 27172,
+    "version": "",
+    "slot": "neck",
+    "image": "Necklace of anguish (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -92192,6 +93212,36 @@
   {
     "name": "Opal dragon bolts (e)",
     "id": 21932,
+    "version": "",
+    "slot": "ammo",
+    "image": "Opal dragon bolts (e) 5.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 122,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Opal dragon bolts (e) (Last Man Standing)",
+    "id": 27192,
     "version": "",
     "slot": "ammo",
     "image": "Opal dragon bolts (e) 5.png",
@@ -98550,6 +99600,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Rangers' tunic (Last Man Standing)",
+    "id": 27179,
+    "version": "",
+    "slot": "body",
+    "image": "Rangers' tunic (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -15,
+      "ranged": 15
+    },
+    "defensive": {
+      "stab": 6,
+      "slash": 9,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 6
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Ranging cape",
     "id": 9757,
     "version": "Trimmed",
@@ -104490,6 +105570,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Rune defender (Last Man Standing)",
+    "id": 27185,
+    "version": "",
+    "slot": "shield",
+    "image": "Rune defender.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 5,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 20,
+      "slash": 19,
+      "crush": 18,
+      "magic": -3,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 20,
+      "slash": 19,
+      "crush": 18,
+      "magic": -3,
+      "ranged": -2
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Rune defender (t)",
     "id": 27009,
     "version": "Locked",
@@ -109740,6 +110850,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Saradomin chaps (Last Man Standing)",
+    "id": 27182,
+    "version": "",
+    "slot": "legs",
+    "image": "Saradomin chaps (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 1
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -10,
+      "ranged": 17
+    },
+    "defensive": {
+      "stab": 31,
+      "slash": 25,
+      "crush": 33,
+      "magic": 28,
+      "ranged": 31
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Saradomin cloak",
     "id": 10446,
     "version": "",
@@ -110073,6 +111213,36 @@
     "name": "Saradomin halo",
     "id": 12637,
     "version": "Normal",
+    "slot": "head",
+    "image": "Saradomin halo.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 3
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 11,
+      "slash": 12,
+      "crush": 10,
+      "magic": 11,
+      "ranged": -1
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Saradomin halo (Last Man Standing)",
+    "id": 27165,
+    "version": "",
     "slot": "head",
     "image": "Saradomin halo.png",
     "speed": 0,
@@ -116975,6 +118145,36 @@
     "version": "",
     "slot": "feet",
     "image": "Spiked manacles.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -3,
+      "ranged": -1
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -4,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Spiked manacles (Last Man Standing)",
+    "id": 27178,
+    "version": "",
+    "slot": "feet",
+    "image": "Spiked manacles (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -125610,6 +126810,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Tome of fire (Last Man Standing)",
+    "id": 27358,
+    "version": "",
+    "slot": "shield",
+    "image": "Tome of fire.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 8,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 8,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Tome of water",
     "id": 25574,
     "version": "Charged",
@@ -126815,6 +128045,36 @@
     "version": "",
     "slot": "hands",
     "image": "Tormented bracelet.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 50,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 10,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Tormented bracelet (Last Man Standing)",
+    "id": 27171,
+    "version": "",
+    "slot": "hands",
+    "image": "Tormented bracelet (Last Man Standing).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -131672,6 +132932,36 @@
   {
     "name": "Unholy book",
     "id": 3842,
+    "version": "",
+    "slot": "shield",
+    "image": "Unholy book.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 5
+    },
+    "offensive": {
+      "stab": 8,
+      "slash": 8,
+      "crush": 8,
+      "magic": 8,
+      "ranged": 8
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Unholy book (Last Man Standing)",
+    "id": 27191,
     "version": "",
     "slot": "shield",
     "image": "Unholy book.png",
@@ -139320,6 +140610,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Wizard boots (Last Man Standing)",
+    "id": 27162,
+    "version": "",
+    "slot": "feet",
+    "image": "Wizard boots (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 4,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 4,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Wizard hat",
     "id": 1017,
     "version": "",
@@ -141390,6 +142710,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Zamorak chaps (Last Man Standing)",
+    "id": 27181,
+    "version": "",
+    "slot": "legs",
+    "image": "Zamorak chaps (Last Man Standing).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 1
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -10,
+      "ranged": 17
+    },
+    "defensive": {
+      "stab": 31,
+      "slash": 25,
+      "crush": 33,
+      "magic": 28,
+      "ranged": 31
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Zamorak cloak",
     "id": 10450,
     "version": "",
@@ -141723,6 +143073,36 @@
     "name": "Zamorak halo",
     "id": 12638,
     "version": "Normal",
+    "slot": "head",
+    "image": "Zamorak halo.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 3
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 11,
+      "slash": 12,
+      "crush": 10,
+      "magic": 11,
+      "ranged": -1
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Zamorak halo (Last Man Standing)",
+    "id": 27164,
+    "version": "",
     "slot": "head",
     "image": "Zamorak halo.png",
     "speed": 0,
@@ -142320,6 +143700,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Zaryte crossbow (Last Man Standing)",
+    "id": 27186,
+    "version": "",
+    "slot": "weapon",
+    "image": "Zaryte crossbow (Last Man Standing).png",
+    "speed": 6,
+    "category": "crossbow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 1
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 110
+    },
+    "defensive": {
+      "stab": 14,
+      "slash": 14,
+      "crush": 12,
+      "magic": 15,
+      "ranged": 16
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Zaryte vambraces",
     "id": 26235,
     "version": "",
@@ -142706,6 +144116,36 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Zombie helmet",
+    "id": 30321,
+    "version": "",
+    "slot": "head",
+    "image": "Zombie helmet.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 2,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 8,
+      "magic": -4,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 38,
+      "magic": 0,
+      "ranged": 30
     },
     "isTwoHanded": false
   },
