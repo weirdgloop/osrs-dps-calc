@@ -3762,7 +3762,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000023-QINU`\"' Magic"
+      "'\"`UNIQ--ref-0000004D-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -4139,6 +4139,47 @@
       "element": "air",
       "severity": 30
     }
+  },
+  {
+    "id": 14113,
+    "name": "Armoured zombie (Zemouregal's Fortress)",
+    "version": "",
+    "image": "Armoured zombie (Zemouregal's Fortres).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 1,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [],
+    "weakness": null
   },
   {
     "id": 12720,
@@ -14845,47 +14886,6 @@
     "weakness": null
   },
   {
-    "id": 12454,
-    "name": "Cave abomination (Deadman)",
-    "version": "",
-    "image": "Cave abomination (Deadman Apocalypse).png",
-    "level": 361,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 3,
-    "max_hit": "20",
-    "skills": {
-      "atk": 230,
-      "def": 142,
-      "hp": 750,
-      "magic": 230,
-      "ranged": 1,
-      "str": 195
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "weakness": null
-  },
-  {
     "id": 481,
     "name": "Cave bug",
     "version": "Level 6",
@@ -21653,7 +21653,7 @@
     "id": 2259,
     "name": "Dagannoth (Waterbirth Island)",
     "version": "Level 88",
-    "image": "Dagannoth.png",
+    "image": "Dagannoth (Waterbirth Island, level 88).png",
     "level": 88,
     "speed": 3,
     "style": [
@@ -21694,7 +21694,7 @@
     "id": 3185,
     "name": "Dagannoth (Waterbirth Island)",
     "version": "Level 90",
-    "image": "Dagannoth.png",
+    "image": "Dagannoth (Waterbirth Island, level 90).png",
     "level": 90,
     "speed": 4,
     "style": [
@@ -30757,7 +30757,7 @@
       "Stab"
     ],
     "size": 2,
-    "max_hit": "1â€“12 (without Slayer gloves)",
+    "max_hit": "1–12 (without Slayer gloves)",
     "skills": {
       "atk": 60,
       "def": 40,
@@ -37695,6 +37695,49 @@
       "stab": 0
     },
     "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 14125,
+    "name": "Golem guard",
+    "version": "",
+    "image": "Golem guard.png",
+    "level": 141,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "18",
+    "skills": {
+      "atk": 170,
+      "def": 100,
+      "hp": 150,
+      "magic": 170,
+      "ranged": 0,
+      "str": 170
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 20,
+      "magic": 40,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 200,
+      "stab": 180
+    },
+    "attributes": [
+      "golem"
+    ],
     "weakness": null
   },
   {
@@ -46362,6 +46405,138 @@
     }
   },
   {
+    "id": 7878,
+    "name": "Ice giant",
+    "version": "Wilderness Slayer Cave 1",
+    "image": "Ice giant.png",
+    "level": 67,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "10",
+    "skills": {
+      "atk": 40,
+      "def": 40,
+      "hp": 100,
+      "magic": 1,
+      "ranged": 1,
+      "str": 60
+    },
+    "offensive": {
+      "atk": 29,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 31
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 2,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 3,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": {
+      "element": "fire",
+      "severity": 100
+    }
+  },
+  {
+    "id": 7879,
+    "name": "Ice giant",
+    "version": "Wilderness Slayer Cave 2",
+    "image": "Ice giant (2).png",
+    "level": 67,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "10",
+    "skills": {
+      "atk": 40,
+      "def": 40,
+      "hp": 100,
+      "magic": 1,
+      "ranged": 1,
+      "str": 60
+    },
+    "offensive": {
+      "atk": 29,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 31
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 2,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 3,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": {
+      "element": "fire",
+      "severity": 100
+    }
+  },
+  {
+    "id": 7880,
+    "name": "Ice giant",
+    "version": "Wilderness Slayer Cave 3",
+    "image": "Ice giant (3).png",
+    "level": 67,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "10",
+    "skills": {
+      "atk": 40,
+      "def": 40,
+      "hp": 100,
+      "magic": 1,
+      "ranged": 1,
+      "str": 60
+    },
+    "offensive": {
+      "atk": 29,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 31
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 2,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 3,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": {
+      "element": "fire",
+      "severity": 100
+    }
+  },
+  {
     "id": 3022,
     "name": "Ice spider",
     "version": "Normal",
@@ -49930,6 +50105,45 @@
       "ranged": 0,
       "ranged_str": 0,
       "str": 20
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 14138,
+    "name": "Jonny the Beard",
+    "version": "",
+    "image": "Jonny the Beard.png",
+    "level": 2,
+    "speed": 0,
+    "style": null,
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 8,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
     },
     "defensive": {
       "flat_armour": 0,
@@ -55125,10 +55339,7 @@
       "stab": 260
     },
     "attributes": [],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 12214,
@@ -55143,7 +55354,7 @@
       "Magic"
     ],
     "size": 7,
-    "max_hit": "87",
+    "max_hit": "50 (Melee orb & Bite)",
     "skills": {
       "atk": 300,
       "def": 250,
@@ -55171,10 +55382,7 @@
       "stab": 260
     },
     "attributes": [],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 12215,
@@ -55217,10 +55425,7 @@
       "stab": 200
     },
     "attributes": [],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 2632,
@@ -81436,6 +81641,49 @@
     "weakness": null
   },
   {
+    "id": 14126,
+    "name": "Small scarab",
+    "version": "",
+    "image": "Small scarab.png",
+    "level": 41,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 55,
+      "def": 55,
+      "hp": 40,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "kalphite"
+    ],
+    "weakness": null
+  },
+  {
     "id": 498,
     "name": "Smoke devil",
     "version": "",
@@ -85786,47 +86034,6 @@
       "magic": 1,
       "ranged": 1,
       "str": 45
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 25,
-      "magic": 0,
-      "heavy": 15,
-      "standard": 15,
-      "light": 15,
-      "slash": 25,
-      "stab": 15
-    },
-    "attributes": [],
-    "weakness": null
-  },
-  {
-    "id": 12458,
-    "name": "Sulphur Lizard (Deadman)",
-    "version": "",
-    "image": "Sulphur Lizard (Deadman Apocalypse).png",
-    "level": 257,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 2,
-    "max_hit": "21",
-    "skills": {
-      "atk": 150,
-      "def": 75,
-      "hp": 500,
-      "magic": 1,
-      "ranged": 1,
-      "str": 200
     },
     "offensive": {
       "atk": 0,
@@ -93152,7 +93359,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000063-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000022-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -93194,7 +93401,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000063-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000022-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -95318,7 +95525,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000B-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000008-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -95359,7 +95566,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000D-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000A-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
