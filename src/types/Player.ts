@@ -125,6 +125,10 @@ export interface Player extends EquipmentStats {
      */
     kandarinDiary: boolean;
     /**
+     * Enable 5.3 tick calculation, which means that 1 hit is lost every 3 attacks on a 4-tick cycle (15/16).
+     */
+    fiveThreeTick: boolean;
+    /**
      * Whether the Charge spell buff is being used, which empowers god spells from the Mage Arena.
      * @see https://oldschool.runescape.wiki/w/Charge
      */

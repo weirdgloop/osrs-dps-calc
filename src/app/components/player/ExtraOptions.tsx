@@ -6,6 +6,7 @@ import skull from '@/public/img/misc/skull.webp';
 import diary from '@/public/img/misc/diary.png';
 import forinthry_surge from '@/public/img/misc/forinthry_surge.webp';
 import soulreaper_axe from '@/public/img/misc/soulreaper_axe.png';
+import scythe from '@/public/img/misc/scythe.png';
 import ba_attacker from '@/public/img/misc/ba_attacker.webp';
 import chinchompa from '@/public/img/misc/chinchompa.png';
 import NumberInput from '@/app/components/generic/NumberInput';
@@ -88,6 +89,25 @@ const ExtraOptions: React.FC = observer(() => {
                 className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
                 data-tooltip-id="tooltip"
                 data-tooltip-content="10% activation chance increase to enchanted bolts."
+              >
+                ?
+              </span>
+            </>
+          )}
+        />
+        <Toggle
+          checked={player.buffs.fiveThreeTick}
+          setChecked={(c) => store.updatePlayer({ buffs: { fiveThreeTick: c } })}
+          label={(
+            <>
+              <img src={scythe.src} width={18} className="inline-block" alt="" />
+              {' '}
+              5.3 tick
+              {' '}
+              <span
+                className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+                data-tooltip-id="tooltip"
+                data-tooltip-content="Skip 1 hit every 3 attacks. Commonly used for Xarpus and Verzik P2 Scythe walking."
               >
                 ?
               </span>

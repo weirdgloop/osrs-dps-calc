@@ -101,6 +101,7 @@ export const generateEmptyPlayer = (name?: string): Player => ({
     onSlayerTask: true,
     inWilderness: false,
     kandarinDiary: false,
+    fiveThreeTick: false,
     chargeSpell: false,
     markOfDarknessSpell: false,
     forinthrySurge: false,

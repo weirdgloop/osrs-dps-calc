@@ -1655,6 +1655,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return this.getAttackSpeed() - 1;
     }
 
+    // Set attack speed to 5.3t when missing a hit every 3 attacks (Xarpus/Verzik)
+    if (this.player.buffs.fiveThreeTick && this.isUsingMeleeStyle() && this.getAttackSpeed() === 5) {
+      return 16 / 3;
+    }
+
     return this.getAttackSpeed();
   }
 
@@ -1767,6 +1772,14 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           [chanceNoEffect, baseSpeed],
         ];
       };
+    }
+
+    // Set attack speed to 5.3t when missing a hit every 3 attacks (Xarpus/Verzik)
+    if (this.player.buffs.fiveThreeTick && this.isUsingMeleeStyle() && baseSpeed === 5) {
+      return () => [
+        [0.75, baseSpeed],
+        [0.25, baseSpeed + 1], // step back then attack (skipped hit)
+      ];
     }
 
     return () => [[1.0, baseSpeed]];
