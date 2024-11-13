@@ -3762,7 +3762,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-0000004D-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000002-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -4141,10 +4141,96 @@
     }
   },
   {
+    "id": 14135,
+    "name": "Armoured zombie (The Curse of Arrav)",
+    "version": "1",
+    "image": "Armoured zombie (The Curse of Arrav, 1).png",
+    "level": 70,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 10,
+      "hp": 10,
+      "magic": 1,
+      "ranged": 1,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 5,
+      "magic": -50,
+      "heavy": -100,
+      "standard": -100,
+      "light": -100,
+      "slash": 5,
+      "stab": 5
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14136,
+    "name": "Armoured zombie (The Curse of Arrav)",
+    "version": "2",
+    "image": "Armoured zombie (The Curse of Arrav, 2).png",
+    "level": 70,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 10,
+      "hp": 10,
+      "magic": 1,
+      "ranged": 1,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 5,
+      "magic": -50,
+      "heavy": -100,
+      "standard": -100,
+      "light": -100,
+      "slash": 5,
+      "stab": 5
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
     "id": 14113,
-    "name": "Armoured zombie (Zemouregal's Fortress)",
-    "version": "",
-    "image": "Armoured zombie (Zemouregal's Fortres).png",
+    "name": "Armoured zombie (Zemouregal's Fort)",
+    "version": "Melee, 1",
+    "image": "Armoured zombie (Zemouregal's Fort, 1).png",
     "level": 109,
     "speed": 4,
     "style": [
@@ -4178,7 +4264,396 @@
       "slash": 20,
       "stab": 20
     },
-    "attributes": [],
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14114,
+    "name": "Armoured zombie (Zemouregal's Fort)",
+    "version": "Melee, 2",
+    "image": "Armoured zombie (Zemouregal's Fort, 2).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 1,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14115,
+    "name": "Armoured zombie (Zemouregal's Fort)",
+    "version": "Melee, 3",
+    "image": "Armoured zombie (Zemouregal's Fort, 3).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 1,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14116,
+    "name": "Armoured zombie (Zemouregal's Fort)",
+    "version": "Melee, 4",
+    "image": "Armoured zombie (Zemouregal's Fort, 4).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 1,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14117,
+    "name": "Armoured zombie (Zemouregal's Fort)",
+    "version": "Melee, 5",
+    "image": "Armoured zombie (Zemouregal's Fort, 5).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 1,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14118,
+    "name": "Armoured zombie (Zemouregal's Fort)",
+    "version": "Ranged, 1",
+    "image": "Armoured zombie (Zemouregal's Fort, 6).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Range"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 94,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14119,
+    "name": "Armoured zombie (Zemouregal's Fort)",
+    "version": "Ranged, 2",
+    "image": "Armoured zombie (Zemouregal's Fort, 7).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Range"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 94,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14120,
+    "name": "Armoured zombie (Zemouregal's Fort)",
+    "version": "Ranged, 3",
+    "image": "Armoured zombie (Zemouregal's Fort, 8).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Range"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 94,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14121,
+    "name": "Armoured zombie (Zemouregal's Fort)",
+    "version": "Ranged, 4",
+    "image": "Armoured zombie (Zemouregal's Fort, 9).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Range"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 94,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 14122,
+    "name": "Armoured zombie (Zemouregal's Fort)",
+    "version": "Ranged, 5",
+    "image": "Armoured zombie (Zemouregal's Fort, 10).png",
+    "level": 109,
+    "speed": 4,
+    "style": [
+      "Range"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 106,
+      "def": 68,
+      "hp": 110,
+      "magic": 1,
+      "ranged": 94,
+      "str": 94
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
     "weakness": null
   },
   {
@@ -4351,6 +4826,47 @@
     "attributes": [
       "undead"
     ],
+    "weakness": null
+  },
+  {
+    "id": 12612,
+    "name": "Arrav",
+    "version": "",
+    "image": "Arrav.png",
+    "level": 339,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "30",
+    "skills": {
+      "atk": 220,
+      "def": 150,
+      "hp": 600,
+      "magic": 150,
+      "ranged": 0,
+      "str": 220
+    },
+    "offensive": {
+      "atk": 100,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 20
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 40,
+      "magic": 160,
+      "heavy": 80,
+      "standard": 80,
+      "light": 80,
+      "slash": 80,
+      "stab": 80
+    },
+    "attributes": [],
     "weakness": null
   },
   {
@@ -5974,10 +6490,7 @@
       "stab": 80
     },
     "attributes": [],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 11781,
@@ -8906,10 +9419,7 @@
       "stab": 30
     },
     "attributes": [],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 9258,
@@ -17422,10 +17932,7 @@
       "stab": 100
     },
     "attributes": [],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 12445,
@@ -17713,10 +18220,7 @@
       "stab": 25
     },
     "attributes": [],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 7996,
@@ -25448,10 +25952,7 @@
     "attributes": [
       "demon"
     ],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 12191,
@@ -25494,10 +25995,7 @@
     "attributes": [
       "demon"
     ],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 12192,
@@ -25540,10 +26038,7 @@
     "attributes": [
       "demon"
     ],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 12166,
@@ -25586,10 +26081,7 @@
     "attributes": [
       "demon"
     ],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 12191,
@@ -25632,10 +26124,7 @@
     "attributes": [
       "demon"
     ],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 12192,
@@ -25678,10 +26167,7 @@
     "attributes": [
       "demon"
     ],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 12193,
@@ -25724,10 +26210,7 @@
     "attributes": [
       "demon"
     ],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 12195,
@@ -25770,10 +26253,7 @@
     "attributes": [
       "demon"
     ],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 12196,
@@ -25816,10 +26296,7 @@
     "attributes": [
       "demon"
     ],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 2865,
@@ -25999,7 +26476,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-00000033-QINU`\"'"
+      "Slash '\"`UNIQ--ref-00000031-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -30757,7 +31234,7 @@
       "Stab"
     ],
     "size": 2,
-    "max_hit": "1–12 (without Slayer gloves)",
+    "max_hit": "1â€“12 (without Slayer gloves)",
     "skills": {
       "atk": 60,
       "def": 40,
@@ -33375,10 +33852,7 @@
       "stab": 50
     },
     "attributes": [],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 412,
@@ -33419,10 +33893,7 @@
       "stab": 50
     },
     "attributes": [],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 6312,
@@ -44408,7 +44879,7 @@
       "Magic"
     ],
     "size": 3,
-    "max_hit": "16 (standard)",
+    "max_hit": "40+ (special)",
     "skills": {
       "atk": 1,
       "def": 120,
@@ -44453,7 +44924,7 @@
       "Magic"
     ],
     "size": 3,
-    "max_hit": "16 (standard)",
+    "max_hit": "40+ (special)",
     "skills": {
       "atk": 1,
       "def": 120,
@@ -50120,49 +50591,10 @@
     "weakness": null
   },
   {
-    "id": 14138,
+    "id": 5213,
     "name": "Jonny the Beard",
     "version": "",
     "image": "Jonny the Beard.png",
-    "level": 2,
-    "speed": 0,
-    "style": null,
-    "size": 1,
-    "max_hit": 0,
-    "skills": {
-      "atk": 1,
-      "def": 1,
-      "hp": 8,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "weakness": null
-  },
-  {
-    "id": 5213,
-    "name": "Jonny the beard",
-    "version": "",
-    "image": "Jonny the beard.png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -55549,10 +55981,7 @@
       "stab": -20
     },
     "attributes": [],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 6918,
@@ -55594,10 +56023,7 @@
       "stab": -20
     },
     "attributes": [],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 7573,
@@ -55683,10 +56109,7 @@
       "stab": -20
     },
     "attributes": [],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 6766,
@@ -55728,10 +56151,7 @@
       "stab": -20
     },
     "attributes": [],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 6914,
@@ -55773,10 +56193,7 @@
       "stab": -20
     },
     "attributes": [],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 6916,
@@ -55818,10 +56235,7 @@
       "stab": -20
     },
     "attributes": [],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 1277,
@@ -62158,10 +62572,7 @@
       "stab": 40
     },
     "attributes": [],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 6318,
@@ -77624,10 +78035,7 @@
       "undead",
       "xerician"
     ],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 468,
@@ -81651,7 +82059,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "1",
     "skills": {
       "atk": 55,
       "def": 55,
@@ -93359,7 +93767,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000022-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000028-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -93401,7 +93809,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000022-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000028-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -95525,7 +95933,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000008-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000D-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -95566,7 +95974,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000A-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000F-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -95638,10 +96046,7 @@
     "attributes": [
       "xerician"
     ],
-    "weakness": {
-      "element": "no",
-      "severity": 0
-    }
+    "weakness": null
   },
   {
     "id": 6610,
@@ -98470,7 +98875,7 @@
     }
   },
   {
-    "id": 5211,
+    "id": 14137,
     "name": "Weaponsmaster",
     "version": "",
     "image": "Weaponsmaster.png",

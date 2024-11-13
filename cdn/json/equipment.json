@@ -22590,41 +22590,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Blood'n'tar snelm (pointed)",
-    "id": 3339,
-    "version": "",
-    "slot": "head",
-    "image": "Blood'n'tar snelm (pointed).png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": -3,
-      "ranged": -1
-    },
-    "defensive": {
-      "stab": 7,
-      "slash": 8,
-      "crush": 6,
-      "magic": -1,
-      "ranged": 7
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Blood'n'tar snelm (round)",
+    "name": "Blood'n'tar snelm",
     "id": 3329,
     "version": "",
     "slot": "head",
-    "image": "Blood'n'tar snelm (round).png",
+    "image": "Blood'n'tar snelm.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -30810,41 +30780,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Bruise blue snelm (pointed)",
-    "id": 3343,
-    "version": "",
-    "slot": "head",
-    "image": "Bruise blue snelm (pointed).png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": -3,
-      "ranged": -1
-    },
-    "defensive": {
-      "stab": 7,
-      "slash": 8,
-      "crush": 6,
-      "magic": -1,
-      "ranged": 7
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Bruise blue snelm (round)",
+    "name": "Bruise blue snelm",
     "id": 3333,
     "version": "",
     "slot": "head",
-    "image": "Bruise blue snelm (round).png",
+    "image": "Bruise blue snelm.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -89580,41 +89520,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Myre snelm (pointed)",
-    "id": 3337,
-    "version": "",
-    "slot": "head",
-    "image": "Myre snelm (pointed).png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": -3,
-      "ranged": -1
-    },
-    "defensive": {
-      "stab": 7,
-      "slash": 8,
-      "crush": 6,
-      "magic": -1,
-      "ranged": 7
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Myre snelm (round)",
+    "name": "Myre snelm",
     "id": 3327,
     "version": "",
     "slot": "head",
-    "image": "Myre snelm (round).png",
+    "image": "Myre snelm.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -92460,41 +92370,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Ochre snelm (pointed)",
-    "id": 3341,
-    "version": "",
-    "slot": "head",
-    "image": "Ochre snelm (pointed).png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": -3,
-      "ranged": -1
-    },
-    "defensive": {
-      "stab": 7,
-      "slash": 8,
-      "crush": 6,
-      "magic": -1,
-      "ranged": 7
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ochre snelm (round)",
+    "name": "Ochre snelm",
     "id": 3331,
     "version": "",
     "slot": "head",
-    "image": "Ochre snelm (round).png",
+    "image": "Ochre snelm.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -96056,6 +95936,126 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Pointed blood'n'tar snelm",
+    "id": 3339,
+    "version": "",
+    "slot": "head",
+    "image": "Pointed blood'n'tar snelm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -3,
+      "ranged": -1
+    },
+    "defensive": {
+      "stab": 7,
+      "slash": 8,
+      "crush": 6,
+      "magic": -1,
+      "ranged": 7
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Pointed bruise blue snelm",
+    "id": 3343,
+    "version": "",
+    "slot": "head",
+    "image": "Pointed bruise blue snelm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -3,
+      "ranged": -1
+    },
+    "defensive": {
+      "stab": 7,
+      "slash": 8,
+      "crush": 6,
+      "magic": -1,
+      "ranged": 7
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Pointed myre snelm",
+    "id": 3337,
+    "version": "",
+    "slot": "head",
+    "image": "Pointed myre snelm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -3,
+      "ranged": -1
+    },
+    "defensive": {
+      "stab": 7,
+      "slash": 8,
+      "crush": 6,
+      "magic": -1,
+      "ranged": 7
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Pointed ochre snelm",
+    "id": 3341,
+    "version": "",
+    "slot": "head",
+    "image": "Pointed ochre snelm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -3,
+      "ranged": -1
+    },
+    "defensive": {
+      "stab": 7,
+      "slash": 8,
+      "crush": 6,
+      "magic": -1,
+      "ranged": 7
     },
     "isTwoHanded": false
   },
