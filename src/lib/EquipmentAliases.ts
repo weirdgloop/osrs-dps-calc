@@ -21,6 +21,7 @@ const equipmentAliases = {
   1704: [19707, 1706, 1708, 1710, 1712, 11976, 11978, 10360, 10358, 10356, 10354, 11966, 11964, 10362], // Amulet of glory#Uncharged
   1727: [10366], // Amulet of magic
   1731: [23354], // Amulet of power
+  29801: [29804], // Amulet of rancour
   19553: [20366], // Amulet of torture
   21018: [24664], // Ancestral hat
   21024: [24668], // Ancestral robe bottom
@@ -29,7 +30,7 @@ const equipmentAliases = {
   27624: [27626], // Ancient sceptre#Normal
   11771: [26768, 25260], // Archers ring (i)#Nightmare Zone
   11830: [26716], // Armadyl chainskirt
-  11802: [20368], // Armadyl godsword
+  11802: [29605, 20368], // Armadyl godsword
   24192: [24194], // Armadyl halo#Normal
   11826: [26714], // Armadyl helmet
   21898: [24135], // Assembler max cape#Normal
@@ -54,8 +55,14 @@ const equipmentAliases = {
   24551: [25882, 25876, 25878, 25872, 25870, 25880, 25874], // Blade of saeldor (c)
   28955: [28957], // Blessed dizana's quiver#Normal
   28260: [28473], // Blood ancient sceptre#Normal
+  29022: [29022, 29043], // Blood moon chestplate#New
+  29028: [29028, 29047], // Blood moon helm#New
+  29025: [29025, 29045], // Blood moon tassets#New
   2499: [7374, 7376], // Blue d'hide body
   2493: [7382, 7384], // Blue d'hide chaps
+  29013: [29013, 29037], // Blue moon chestplate#New
+  29019: [29019, 29041], // Blue moon helm#New
+  29016: [29016, 29039], // Blue moon tassets#New
   1011: [7386, 7388], // Blue skirt
   579: [7394, 7396], // Blue wizard hat
   577: [7390, 7392], // Blue wizard robe
@@ -85,7 +92,7 @@ const equipmentAliases = {
   24288: [27123], // Dagon'hai hat
   24294: [27127], // Dagon'hai robe bottom
   24291: [27125], // Dagon'hai robe top
-  11235: [12766, 12765, 12768, 12767], // Dark bow#Regular
+  11235: [12766, 12765, 12768, 12767, 29611], // Dark bow#Regular
   4509: [24158], // Decorative armour (gold platebody)#Normal
   4510: [24159], // Decorative armour (gold platelegs)#Normal
   11895: [24162], // Decorative armour (gold plateskirt)#Normal
@@ -131,6 +138,9 @@ const equipmentAliases = {
   1187: [28059, 12418], // Dragon sq shield
   21009: [28029], // Dragon sword
   13576: [28035, 26710], // Dragon warhammer
+  29004: [29004, 29031], // Eclipse moon chestplate#New
+  29010: [29010, 29035], // Eclipse moon helm#New
+  29007: [29007, 29033], // Eclipse moon tassets#New
   20595: [27119], // Elder chaos hood
   20520: [27117], // Elder chaos robe
   20517: [27115], // Elder chaos top
@@ -280,6 +290,8 @@ const equipmentAliases = {
   11663: [24183, 27005, 26473], // Void mage helm#Normal
   11665: [24185, 27007, 26477], // Void melee helm#Normal
   11664: [24184, 27006, 26475], // Void ranger helm#Normal
+  27690: [29607], // Voidwaker
+  24424: [29609], // Volatile nightmare staff
   11772: [26769, 25262], // Warrior ring (i)#Nightmare Zone
   1171: [20166], // Wooden shield
   26723: [26724], // Wristbands of the arena#Normal
