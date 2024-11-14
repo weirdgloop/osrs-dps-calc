@@ -40,6 +40,7 @@ import {
   TOMBS_OF_AMASCUT_MONSTER_IDS,
   TTK_DIST_EPSILON,
   TTK_DIST_MAX_ITER_ROUNDS,
+  UNDERWATER_MONSTERS,
   USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
   VERZIK_P1_IDS,
 } from '@/lib/constants';
@@ -79,7 +80,6 @@ const UNIMPLEMENTED_SPECS: string[] = [
   'Barrelchest anchor',
   'Blue moon spear',
   'Bone dagger',
-  'Brine sabre',
   'Darklight',
   "Dinh's bulwark",
   'Dorgeshuun crossbow',
@@ -266,7 +266,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isWearingSilverWeapon() && this.wearing("Efaritay's aid") && isVampyre(mattrs)) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_EFARITAY, attackRoll, [23, 20]); // todo ordering? does this stack multiplicatively with vampyrebane?
     }
-
+    
     // Inquisitor's armour set gives bonuses when using the crush attack style
     if (style.type === 'crush') {
       let inqPieces = this.allEquippedItems.filter((v) => [
@@ -302,6 +302,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else if (this.wearing('Soulreaper axe')) {
         const stacks = Math.max(0, Math.min(5, this.player.buffs.soulreaperStacks));
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [100 + 6 * stacks, 100]);
+      } else if (this.wearing('Brine sabre') && UNDERWATER_MONSTERS.includes(this.monster.id)) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
       }
     }
 

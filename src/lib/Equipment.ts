@@ -372,5 +372,7 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Volatile nightmare staff': 55,
 
   'Zaryte crossbow': 75,
+
+  'Brine sabre': 75,
 };
 /* eslint-enable quote-props */
