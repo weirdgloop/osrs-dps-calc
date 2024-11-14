@@ -34,7 +34,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-scripts/*.json
 .idea/
 .yarn/install-state.gz
 

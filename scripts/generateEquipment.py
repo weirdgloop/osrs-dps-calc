@@ -153,37 +153,11 @@ def main():
         if not equipment['image'] == '':
             required_imgs.append(equipment['image'])
 
-    # ignore me i don't exist
-    data.append({
-        'name': 'Snail shell',
-        'id': 7800,
-        'version': '',
-        'slot': 'feet',
-        'image': 'Snail shell.png',
-        'speed': 0,
-        'category': '',
-        'bonuses': {
-            'str': 0,
-            'ranged_str': 0,
-            'magic_str': 0,
-            'prayer': 0,
-        },
-        'offensive': {
-            'stab': 0,
-            'slash': 0,
-            'crush': 0,
-            'magic': 0,
-            'ranged': 0,
-        },
-        'defensive': {
-            'stab': 0,
-            'slash': 0,
-            'crush': 0,
-            'magic': 0,
-            'ranged': 0,
-        },
-        'isTwoHanded': False
-    })
+    # add manual equipment that isn't pulled from the wiki
+    # this should ONLY be used for upcoming items that are not yet released
+    with open('manual_equipment.json', 'r') as f:
+        manual_data = json.load(f)
+        data = data + manual_data
 
     print('Total equipment: ' + str(len(data)))
     data.sort(key=lambda d: d.get('name'))

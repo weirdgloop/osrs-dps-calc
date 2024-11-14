@@ -363,6 +363,8 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Armadyl godsword': 50,
   'Zamorak godsword': 50,
   'Abyssal bludgeon': 50,
+  'The dogsword': 50,
+  'Thunder khopesh': 50,
 
   'Magic shortbow': 55,
   'Dark bow': 55,
