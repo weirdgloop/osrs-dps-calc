@@ -563,7 +563,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const { style } = this.player;
 
     let effectiveLevel: number = this.player.skills.ranged + this.player.boosts.ranged;
-    const scalesWithStr: boolean = this.wearing('Eclipse atlatl') || this.wearing("Hunter's spear");
+    const scalesWithStr: boolean = this.wearing(['Eclipse atlatl', "Hunter's spear"]);
     if (scalesWithStr) {
       // atlatl uses strength instead of ranged skill, melee strength bonus, and melee buff from slayer helmet/salve, but works with ranged void
       effectiveLevel = this.player.skills.str + this.player.boosts.str;
