@@ -9240,6 +9240,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Amulet of the monarchs",
+    "id": 1000005,
+    "version": "",
+    "slot": "",
+    "image": "Amulet of the monarchs.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 15,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 10
+    },
+    "offensive": {
+      "stab": 30,
+      "slash": 30,
+      "crush": 30,
+      "magic": 30,
+      "ranged": 30
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 30,
+      "crush": 30,
+      "magic": 30,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Amulet of torture",
     "id": 19553,
     "version": "",
@@ -36870,6 +36900,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Crystal blessing",
+    "id": 1000009,
+    "version": "",
+    "slot": "",
+    "image": "Crystal blessing.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 5
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Crystal body",
     "id": 23975,
     "version": "Active",
@@ -45000,6 +45060,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Devil's element",
+    "id": 1000002,
+    "version": "",
+    "slot": "",
+    "image": "Devil's element.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 3
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 6,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Devout boots",
     "id": 22954,
     "version": "",
@@ -50850,6 +50940,66 @@
     "isTwoHanded": false
   },
   {
+    "name": "Drygore blowpipe",
+    "id": 1000004,
+    "version": "",
+    "slot": "weapon",
+    "image": "Drygore blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 10,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 50
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Drygore blowpipe (empty)",
+    "id": 1000003,
+    "version": "",
+    "slot": "weapon",
+    "image": "Drygore blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 10,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 50
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Dual macuahuitl",
     "id": 28997,
     "version": "",
@@ -53606,6 +53756,36 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Emperor ring",
+    "id": 1000006,
+    "version": "",
+    "slot": "",
+    "image": "Emperor ring.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 15,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 10
+    },
+    "offensive": {
+      "stab": 30,
+      "slash": 30,
+      "crush": 30,
+      "magic": 30,
+      "ranged": 30
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 30,
+      "crush": 30,
+      "magic": 30,
+      "ranged": 30
     },
     "isTwoHanded": false
   },
@@ -60266,6 +60446,36 @@
       "crush": 2,
       "magic": 0,
       "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Gloves of the damned",
+    "id": 1000007,
+    "version": "",
+    "slot": "hands",
+    "image": "Gloves of the damned.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 12,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 12,
+      "slash": 12,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 12
+    },
+    "defensive": {
+      "stab": 12,
+      "slash": 12,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 12
     },
     "isTwoHanded": false
   },
@@ -88159,6 +88369,66 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Nature's Reprisal (Uncharged)",
+    "id": 1000013,
+    "version": "",
+    "slot": "weapon",
+    "image": "Nature's reprisal.png",
+    "speed": 5,
+    "category": "Salamander",
+    "bonuses": {
+      "str": 60,
+      "ranged_str": 20,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 70,
+      "slash": 0,
+      "crush": 0,
+      "magic": 15,
+      "ranged": 30
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Nature's reprisal",
+    "id": 1000012,
+    "version": "",
+    "slot": "weapon",
+    "image": "Nature's reprisal.png",
+    "speed": 5,
+    "category": "Salamander",
+    "bonuses": {
+      "str": 95,
+      "ranged_str": 20,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 80,
+      "slash": 0,
+      "crush": 0,
+      "magic": 15,
+      "ranged": 30
     },
     "defensive": {
       "stab": 0,
@@ -120570,6 +120840,66 @@
     "isTwoHanded": false
   },
   {
+    "name": "Sunlight spear",
+    "id": 1000001,
+    "version": "",
+    "slot": "weapon",
+    "image": "Sunlight spear.png",
+    "speed": 5,
+    "category": "Spear",
+    "bonuses": {
+      "str": 103,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 125,
+      "slash": 75,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 70,
+      "slash": 70,
+      "crush": 70,
+      "magic": 28,
+      "ranged": 70
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Sunlit bracers",
+    "id": 1000010,
+    "version": "",
+    "slot": "",
+    "image": "Sunlit bracers.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 8,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 10,
+      "slash": 10,
+      "crush": 10,
+      "magic": 6,
+      "ranged": 18
+    },
+    "defensive": {
+      "stab": 12,
+      "slash": 12,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 12
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Superior calamity breeches",
     "id": 26693,
     "version": "Broken",
@@ -123090,6 +123420,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "The dogsword",
+    "id": 1000000,
+    "version": "",
+    "slot": "weapon",
+    "image": "The dogsword.png",
+    "speed": 6,
+    "category": "2h Sword",
+    "bonuses": {
+      "str": 132,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 8
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 132,
+      "crush": 80,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Thieving bag",
     "id": 23224,
     "version": "",
@@ -123210,6 +123570,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Thousand-dragon ward",
+    "id": 1000008,
+    "version": "",
+    "slot": "",
+    "image": "Thousand-dragon ward.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 12,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 6
+    },
+    "offensive": {
+      "stab": 35,
+      "slash": 35,
+      "crush": 35,
+      "magic": 15,
+      "ranged": 25
+    },
+    "defensive": {
+      "stab": 50,
+      "slash": 55,
+      "crush": 53,
+      "magic": 40,
+      "ranged": 52
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Three barrels",
     "id": 8862,
     "version": "",
@@ -123226,6 +123616,36 @@
     "offensive": {
       "stab": 0,
       "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Thunder khopesh",
+    "id": 1000011,
+    "version": "",
+    "slot": "weapon",
+    "image": "Thunder khopesh.png",
+    "speed": 4,
+    "category": "Spiked",
+    "bonuses": {
+      "str": 100,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 65,
+      "slash": 110,
       "crush": 0,
       "magic": 0,
       "ranged": 0
