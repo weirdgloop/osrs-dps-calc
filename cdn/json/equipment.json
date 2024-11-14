@@ -9243,7 +9243,7 @@
     "name": "Amulet of the monarchs",
     "id": 1000005,
     "version": "",
-    "slot": "",
+    "slot": "neck",
     "image": "Amulet of the monarchs.png",
     "speed": 0,
     "category": "",
@@ -36903,7 +36903,7 @@
     "name": "Crystal blessing",
     "id": 1000009,
     "version": "",
-    "slot": "",
+    "slot": "ammo",
     "image": "Crystal blessing.png",
     "speed": 0,
     "category": "",
@@ -45063,7 +45063,7 @@
     "name": "Devil's element",
     "id": 1000002,
     "version": "",
-    "slot": "",
+    "slot": "shield",
     "image": "Devil's element.png",
     "speed": 0,
     "category": "",
@@ -50941,38 +50941,8 @@
   },
   {
     "name": "Drygore blowpipe",
-    "id": 1000004,
-    "version": "",
-    "slot": "weapon",
-    "image": "Drygore blowpipe.png",
-    "speed": 3,
-    "category": "Thrown",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 10,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 50
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Drygore blowpipe (empty)",
     "id": 1000003,
-    "version": "",
+    "version": "Empty",
     "slot": "weapon",
     "image": "Drygore blowpipe.png",
     "speed": 3,
@@ -50998,6 +50968,36 @@
       "ranged": 0
     },
     "isTwoHanded": false
+  },
+  {
+    "name": "Drygore blowpipe",
+    "id": 1000004,
+    "version": "Loaded",
+    "slot": "weapon",
+    "image": "Drygore blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 10,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 50
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
   },
   {
     "name": "Dual macuahuitl",
@@ -53763,7 +53763,7 @@
     "name": "Emperor ring",
     "id": 1000006,
     "version": "",
-    "slot": "",
+    "slot": "ring",
     "image": "Emperor ring.png",
     "speed": 0,
     "category": "",
@@ -88380,9 +88380,9 @@
     "isTwoHanded": false
   },
   {
-    "name": "Nature's Reprisal (Uncharged)",
+    "name": "Nature's Reprisal",
     "id": 1000013,
-    "version": "",
+    "version": "Uncharged",
     "slot": "weapon",
     "image": "Nature's reprisal.png",
     "speed": 5,
@@ -88412,7 +88412,7 @@
   {
     "name": "Nature's reprisal",
     "id": 1000012,
-    "version": "",
+    "version": "Charged",
     "slot": "weapon",
     "image": "Nature's reprisal.png",
     "speed": 5,
@@ -120873,7 +120873,7 @@
     "name": "Sunlit bracers",
     "id": 1000010,
     "version": "",
-    "slot": "",
+    "slot": "hands",
     "image": "Sunlit bracers.png",
     "speed": 0,
     "category": "",
@@ -123573,7 +123573,7 @@
     "name": "Thousand-dragon ward",
     "id": 1000008,
     "version": "",
-    "slot": "",
+    "slot": "shield",
     "image": "Thousand-dragon ward.png",
     "speed": 0,
     "category": "",
@@ -123636,7 +123636,7 @@
     "slot": "weapon",
     "image": "Thunder khopesh.png",
     "speed": 4,
-    "category": "Spiked",
+    "category": "Slash Sword",
     "bonuses": {
       "str": 100,
       "ranged_str": 0,

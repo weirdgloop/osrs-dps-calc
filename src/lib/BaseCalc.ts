@@ -331,7 +331,7 @@ export default class BaseCalc {
   }
 
   protected isWearingGodsword(): boolean {
-    return this.wearing(['Ancient godsword', 'Armadyl godsword', 'Bandos godsword', 'Saradomin godsword', 'Zamorak godsword']);
+    return this.wearing(['Ancient godsword', 'Armadyl godsword', 'Bandos godsword', 'Saradomin godsword', 'Zamorak godsword', 'The dogsword']);
   }
 
   /**
@@ -516,6 +516,10 @@ export default class BaseCalc {
     }
 
     if (this.player.style.type === 'magic') {
+      return true;
+    }
+
+    if (this.wearing('Thunder khopesh')) {
       return true;
     }
 

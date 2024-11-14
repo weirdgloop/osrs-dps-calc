@@ -34,7 +34,7 @@
 		"id": 1000000,
 		"version": "",
 		"slot": "weapon",
-		"image": "The dogsword.png",
+		"image": "The dogsword.webp",
 		"speed": 6,
 		"category": "2h Sword",
 		"bonuses": {
@@ -64,7 +64,7 @@
 		"id": 1000001,
 		"version": "",
 		"slot": "weapon",
-		"image": "Sunlight spear.png",
+		"image": "Sunlight spear.webp",
 		"speed": 5,
 		"category": "Spear",
 		"bonuses": {
@@ -93,8 +93,8 @@
 		"name": "Devil's element",
 		"id": 1000002,
 		"version": "",
-		"slot": "weapon",
-		"image": "Devil's element.png",
+		"slot": "shield",
+		"image": "Devil's element.webp",
 		"speed": 0,
 		"category": "",
 		"bonuses": {
@@ -120,11 +120,11 @@
 		"isTwoHanded": false
 	},
 	{
-		"name": "Drygore blowpipe (empty)",
+		"name": "Drygore blowpipe",
 		"id": 1000003,
-		"version": "",
+		"version": "Empty",
 		"slot": "weapon",
-		"image": "Drygore blowpipe.png",
+		"image": "Drygore blowpipe.webp",
 		"speed": 3,
 		"category": "Thrown",
 		"bonuses": {
@@ -152,9 +152,9 @@
 	{
 		"name": "Drygore blowpipe",
 		"id": 1000004,
-		"version": "",
+		"version": "Loaded",
 		"slot": "weapon",
-		"image": "Drygore blowpipe.png",
+		"image": "Drygore blowpipe.webp",
 		"speed": 3,
 		"category": "Thrown",
 		"bonuses": {
@@ -184,7 +184,7 @@
 		"id": 1000005,
 		"version": "",
 		"slot": "neck",
-		"image": "Amulet of the monarchs.png",
+		"image": "Amulet of the monarchs.webp",
 		"speed": 0,
 		"category": "",
 		"bonuses": {
@@ -214,7 +214,7 @@
 		"id": 1000006,
 		"version": "",
 		"slot": "ring",
-		"image": "Emperor ring.png",
+		"image": "Emperor ring.webp",
 		"speed": 0,
 		"category": "",
 		"bonuses": {
@@ -244,7 +244,7 @@
 		"id": 1000007,
 		"version": "",
 		"slot": "hands",
-		"image": "Gloves of the damned.png",
+		"image": "Gloves of the damned.webp",
 		"speed": 0,
 		"category": "",
 		"bonuses": {
@@ -274,7 +274,7 @@
 		"id": 1000008,
 		"version": "",
 		"slot": "shield",
-		"image": "Thousand-dragon ward.png",
+		"image": "Thousand-dragon ward.webp",
 		"speed": 0,
 		"category": "",
 		"bonuses": {
@@ -304,7 +304,7 @@
 		"id": 1000009,
 		"version": "",
 		"slot": "ammo",
-		"image": "Crystal blessing.png",
+		"image": "Crystal blessing.webp",
 		"speed": 0,
 		"category": "",
 		"bonuses": {
@@ -334,7 +334,7 @@
 		"id": 1000010,
 		"version": "",
 		"slot": "hands",
-		"image": "Sunlit bracers.png",
+		"image": "Sunlit bracers.webp",
 		"speed": 0,
 		"category": "",
 		"bonuses": {
@@ -364,9 +364,9 @@
 		"id": 1000011,
 		"version": "",
 		"slot": "weapon",
-		"image": "Thunder khopesh.png",
+		"image": "Thunder khopesh.webp",
 		"speed": 4,
-		"category": "Spiked",
+		"category": "Slash Sword",
 		"bonuses": {
 			"str": 100,
 			"ranged_str": 0,
@@ -392,9 +392,9 @@
 	{
 		"name": "Nature's reprisal",
 		"id": 1000012,
-		"version": "",
+		"version": "Charged",
 		"slot": "weapon",
-		"image": "Nature's reprisal.png",
+		"image": "Nature's reprisal.webp",
 		"speed": 5,
 		"category": "Salamander",
 		"bonuses": {
@@ -420,11 +420,11 @@
 		"isTwoHanded": false
 	},
 	{
-		"name": "Nature's Reprisal (Uncharged)",
+		"name": "Nature's Reprisal",
 		"id": 1000013,
-		"version": "",
+		"version": "Uncharged",
 		"slot": "weapon",
-		"image": "Nature's reprisal.png",
+		"image": "Nature's reprisal.webp",
 		"speed": 5,
 		"category": "Salamander",
 		"bonuses": {

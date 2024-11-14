@@ -1,8 +1,10 @@
 import { CombatStyleStance } from '@/types/PlayerCombatStyle';
 
+export const DRYGORE_BLOWPIPE_MOCK_ID = 1000004;
 export const BLOWPIPE_IDS: number[] = [
   12926, // regular
   28688, // blazing
+  DRYGORE_BLOWPIPE_MOCK_ID,
 ];
 
 // The maximum number of loadouts that users can have. Do not lower it, else it will cause share link issues.
