@@ -143,6 +143,10 @@ def main():
         if equipment['version'] == 'Nightmare Zone':
             equipment['version'] = ''
 
+        # Skip last man standing items
+        if "(Last Man Standing)" in equipment['name']:
+            continue
+
         # Append the current equipment item to the calc's equipment list
         data.append(equipment)
 
