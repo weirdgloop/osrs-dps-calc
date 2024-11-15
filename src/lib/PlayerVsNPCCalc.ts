@@ -1302,7 +1302,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingVeracs()) {
-      const effectChance = this.wearing('Gloves of the damned') ? 0.5 : 0.25;
+      const effectChance = this.isWearingBothDamnedItems() ? 0.5 : 0.25;
       dist = new AttackDistribution([
         new HitDistribution([
           ...standardHitDist.scaleProbability(1 - effectChance).hits,
@@ -1313,7 +1313,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (style === 'ranged' && this.isWearingKarils()) {
       // 25% chance to deal a second hitsplat at half the damage of the first (flat, not rolled)
-      const effectChance = this.wearing('Gloves of the damned') ? 0.5 : 0.25;
+      const effectChance = this.isWearingBothDamnedItems() ? 0.5 : 0.25;
       dist = dist.transform(
         (h) => new HitDistribution([
           new WeightedHit(1 - effectChance, [h]),
@@ -1390,7 +1390,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.style.type === 'magic' && this.isWearingAhrims()) {
-      const effectChance = this.wearing('Gloves of the damned') ? 0.5 : 0.25;
+      const effectChance = this.isWearingBothDamnedItems() ? 0.5 : 0.25;
       dist = dist.transform(
         (h) => new HitDistribution([
           new WeightedHit(1 - effectChance, [h]),
