@@ -1302,7 +1302,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingVeracs()) {
-      const effectChance = this.isWearingBothDamnedItems() ? 0.5 : 0.25;
+      const effectChance = this.wearing('Gloves of the damned') ? 0.5 : 0.25;
       dist = new AttackDistribution([
         new HitDistribution([
           ...standardHitDist.scaleProbability(1 - effectChance).hits,
