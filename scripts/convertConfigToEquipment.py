@@ -39,7 +39,7 @@ for i in items:
         elif cat == 'weapon_hacksword':
             cat = 'Spiked' # TODO: ?
         elif cat == 'weapon_tribrid':
-            cat = 'Salamander' # TODO: ?
+            cat = 'Multi-Style' # TODO: ?
         elif cat == 'weapon_heavysword':
             cat = '2h Sword'
         elif cat == 'weapon_stabsword':
