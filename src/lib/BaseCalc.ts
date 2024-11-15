@@ -378,28 +378,32 @@ export default class BaseCalc {
   }
 
   /**
-   * Whether the player is wearing the entire Karil the Tainted's equipment set.
+   * Whether the player is wearing the entire Karil the Tainted's equipment set including a damned item.
    * @see https://oldschool.runescape.wiki/w/Karil_the_Tainted%27s_equipment
    */
   protected isWearingKarils(): boolean {
-    return this.wearingAll(["Karil's coif", "Karil's leathertop", "Karil's leatherskirt", "Karil's crossbow", 'Amulet of the damned']);
+    return this.wearingAll(["Karil's coif", "Karil's leathertop", "Karil's leatherskirt", "Karil's crossbow"]) && this.isWearingAnyDamnedItems();
   }
 
   /**
-   * Whether the player is wearing the entire Ahrim the Blighted's equipment set.
+   * Whether the player is wearing the entire Ahrim the Blighted's equipment set including a damned item.
    * @see https://oldschool.runescape.wiki/w/Ahrim_the_Blighted%27s_equipment
    */
 
   protected isWearingAhrims(): boolean {
-    return this.wearingAll(["Ahrim's staff", "Ahrim's hood", "Ahrim's robetop", "Ahrim's robeskirt", 'Amulet of the damned']);
+    return this.wearingAll(["Ahrim's staff", "Ahrim's hood", "Ahrim's robetop", "Ahrim's robeskirt"]) && this.isWearingAnyDamnedItems();
   }
 
   /**
-   * Whether the player is wearing the entire Torag the Corrupted's equipment set.
+   * Whether the player is wearing the entire Torag the Corrupted's equipment set including a damned item.
    * @see https://oldschool.runescape.wiki/w/Torag_the_Corrupted%27s_equipment
    */
   protected isWearingTorags(): boolean {
-    return this.wearingAll(["Torag's helm", "Torag's platebody", "Torag's platelegs", "Torag's hammers", 'Amulet of the damned']);
+    return this.wearingAll(["Torag's helm", "Torag's platebody", "Torag's platelegs", "Torag's hammers"]) && this.isWearingAnyDamnedItems();
+  }
+
+  protected isWearingAnyDamnedItems(): boolean {
+    return this.wearing('Amulet of the damned') || this.wearing('Gloves of the damned');
   }
 
   protected isWearingBloodMoonSet(): boolean {
