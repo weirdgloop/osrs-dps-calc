@@ -402,10 +402,6 @@ export default class BaseCalc {
     return this.wearingAll(["Torag's helm", "Torag's platebody", "Torag's platelegs", "Torag's hammers"]) && this.isWearingAnyDamnedItems();
   }
 
-  protected isWearingBothDamnedItems(): boolean {
-    return this.wearingAll(['Amulet of the damned', 'Gloves of the damned']);
-  }
-
   protected isWearingAnyDamnedItems(): boolean {
     return this.wearing('Amulet of the damned') || this.wearing('Gloves of the damned');
   }
