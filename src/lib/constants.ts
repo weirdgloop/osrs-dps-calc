@@ -1,5 +1,7 @@
 import { CombatStyleStance } from '@/types/PlayerCombatStyle';
 
+export const NATURES_REPRISAL_MOCK_ID = 1000012;
+
 export const DRYGORE_BLOWPIPE_MOCK_ID = 1000004;
 export const BLOWPIPE_IDS: number[] = [
   12926, // regular

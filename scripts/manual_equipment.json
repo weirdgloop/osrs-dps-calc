@@ -396,7 +396,7 @@
 		"slot": "weapon",
 		"image": "Nature's reprisal.png",
 		"speed": 5,
-		"category": "Salamander",
+		"category": "Multi-Style",
 		"bonuses": {
 			"str": 103,
 			"ranged_str": 92,
@@ -426,7 +426,7 @@
 		"slot": "weapon",
 		"image": "Nature's reprisal.png",
 		"speed": 5,
-		"category": "Salamander",
+		"category": "Multi-Style",
 		"bonuses": {
 			"str": 60,
 			"ranged_str": 20,

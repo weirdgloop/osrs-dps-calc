@@ -1644,7 +1644,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     if (IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS.includes(monsterId)
       && this.isUsingMeleeStyle()
-      && this.player.equipment.weapon?.category !== EquipmentCategory.SALAMANDER) {
+      && this.player.equipment.weapon?.category !== EquipmentCategory.SALAMANDER
+      && this.player.equipment.weapon?.category !== EquipmentCategory.MULTISTYLE) {
       return true;
     }
     if (mattrs.includes(MonsterAttribute.VAMPYRE_3) && !this.wearingVampyrebane(MonsterAttribute.VAMPYRE_3)) {

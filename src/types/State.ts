@@ -99,7 +99,7 @@ export interface Calculator {
  * or any of its subproperties, are updated in a non-backwards-compatible manner,
  * or also in any manner that could affect the migrations required on load.
  */
-export const IMPORT_VERSION = 2 as const;
+export const IMPORT_VERSION = 3 as const;
 
 /**
  * This is the state that can be exported and imported (through shortlinks).
