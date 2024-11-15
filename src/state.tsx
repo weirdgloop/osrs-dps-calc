@@ -22,7 +22,7 @@ import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
 import { availableEquipment, calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { CalcWorker } from '@/worker/CalcWorker';
 import { spellByName } from '@/types/Spell';
-import { NUMBER_OF_LOADOUTS } from '@/lib/constants';
+import { NATURES_REPRISAL_MOCK_ID, NUMBER_OF_LOADOUTS } from '@/lib/constants';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
   ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, OVERHEAD_PRAYERS, Prayer,
@@ -445,6 +445,12 @@ class GlobalState implements State {
     switch (data.serializationVersion) {
       case 1:
         data.monster.inputs.phase = data.monster.inputs.tormentedDemonPhase;
+      case 2:
+        data.loadouts.forEach((l) => {
+          if (l.equipment?.weapon?.id === NATURES_REPRISAL_MOCK_ID) {
+            l.equipment.weapon.category = EquipmentCategory.MULTISTYLE;
+          }
+        });
 
       default:
     }
