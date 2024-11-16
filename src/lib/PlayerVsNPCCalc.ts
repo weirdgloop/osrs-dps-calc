@@ -266,7 +266,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isWearingSilverWeapon() && this.wearing("Efaritay's aid") && isVampyre(mattrs)) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_EFARITAY, attackRoll, [23, 20]); // todo ordering? does this stack multiplicatively with vampyrebane?
     }
-    
+
     // Inquisitor's armour set gives bonuses when using the crush attack style
     if (style.type === 'crush') {
       let inqPieces = this.allEquippedItems.filter((v) => [

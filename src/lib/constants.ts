@@ -424,5 +424,5 @@ export const HUEYCOATL_PHASE_IDS = [...HUEYCOATL_HEAD_IDS, ...HUEYCOATL_TAIL_IDS
 HUEYCOATL_PHASE_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = HUEYCOATL_PHASES; });
 
 export const UNDERWATER_MONSTERS = [
-  7796 // Lobstrosity
-]
+  7796, // Lobstrosity
+];
