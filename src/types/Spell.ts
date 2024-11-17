@@ -18,7 +18,7 @@ export function spellByName(name: string): Spell | null {
 
 export function isBindSpell(spell: Spell | null): boolean {
   return spell !== null
-    && ['Bind', 'Snare', 'Entangle'] // todo bind isn't actually added yet, but future-proofing
+    && ['Bind', 'Snare', 'Entangle']
       .includes(spell.name);
 }
 
@@ -66,14 +66,6 @@ export function getSpellMaxHit(spell: Spell, magicLevel: number): number {
 
 export function canUseSunfireRunes(spell: Spell | null): boolean {
   return spell?.element === 'fire';
-
-  // todo do we know for sure yet whether it's "fire spells" or "fire-rune spells"?
-  // return spell !== null && (
-  //   spell.name.includes('Fire')
-  //   || spell.name.includes('Smoke')
-  //   || spell.name.includes('Demonbane')
-  //   || ['Claws of Guthix', 'Flames of Zamorak', 'Saradomin Strike', 'Iban Blast', 'Undead Grasp'].includes(spell.name)
-  // );
 }
 
 // The available spellbooks
