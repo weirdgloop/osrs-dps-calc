@@ -3762,7 +3762,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-0000000E-QINU`\"' Magic"
+      "'\"`UNIQ--ref-0000002E-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -54540,9 +54540,9 @@
     "max_hit": "28",
     "skills": {
       "atk": 1,
-      "def": 150,
+      "def": 1,
       "hp": 255,
-      "magic": 390,
+      "magic": 1,
       "ranged": 1,
       "str": 1
     },
@@ -55245,7 +55245,10 @@
     "attributes": [
       "demon"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 3982,
@@ -80350,7 +80353,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 12107,
@@ -93767,7 +93773,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000086-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000057-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -93809,7 +93815,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000086-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000057-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -95933,7 +95939,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000053-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000004B-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -95974,7 +95980,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000055-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000004D-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
