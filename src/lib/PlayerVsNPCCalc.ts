@@ -1296,7 +1296,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         let echoDist = rollDamageTwice(acc * 0.2, min, echoMax);
         for (let i = 1; i < 8; i++) {
           echoDist = echoDist
-            .zip(rollDamageTwice(acc * (0.2 ** (i + 1)), min, echoMax))
+            .zip(rollDamageTwice(0.2 ** (i + 1), min, echoMax))
             .cumulative();
         }
         return rollDamageTwice(acc, min, max)
