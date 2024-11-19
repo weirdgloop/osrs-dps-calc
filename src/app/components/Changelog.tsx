@@ -40,6 +40,19 @@ const Changelog: React.FC = () => {
         title="Changelog"
       >
         <div className="text-sm bg-dark-500 rounded p-2 shadow-inner border border-dark-200 overflow-auto max-h-64">
+          <ChangelogEntry date="19 November 2024">
+            <li>
+              Increased maximum number of loadouts to 6, instead of 5.
+            </li>
+            <li>
+              Fixed issue where results table horizontal overflow wasn&apos;t working properly on mobile.
+            </li>
+          </ChangelogEntry>
+          <ChangelogEntry date="14 November 2024">
+            <li>
+              Added upcoming items for Raging Echoes League.
+            </li>
+          </ChangelogEntry>
           <ChangelogEntry date="16 July 2024">
             <li>
               Fixed issue with burning claws spec calculation
@@ -136,7 +149,8 @@ const Changelog: React.FC = () => {
             </li>
           </ChangelogEntry>
         </div>
-        <div className="flex justify-center text-xs mt-3">
+        <div className="flex justify-center text-xs mt-3 gap-1">
+          <span>Weekly data updates not displayed here.</span>
           <a
             href="https://github.com/weirdgloop/osrs-dps-calc/commits/main/"
             target="_blank"
