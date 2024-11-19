@@ -1916,13 +1916,18 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   public getTtk() {
     if (this.hasLeaguesMastery('magic', MagicMastery.MAGIC_6)) {
       // Use slower TTK calculation
-      const calc = new PlayerVsNPCCalc(this.player, this.monster, {
-        disableMonsterScaling: this.monster.id === -1,
-      });
+      const calc = this.noInitSubCalc(this.player, this.monster);
       const ttkDist = calc.getTtkDistribution();
       let accum = 0.0;
+      let probAccum = 0.0;
       for (const [k, v] of ttkDist.entries()) {
+        probAccum += v;
         accum += k * v;
+      }
+
+      if (probAccum < TTK_DIST_EPSILON) {
+        console.log({ loadout: this.opts.loadoutName, probAccum });
+        return undefined;
       }
       return (accum + this.getExpectedAttackSpeed() - 1) * SECONDS_PER_TICK;
     }

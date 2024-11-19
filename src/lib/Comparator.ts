@@ -180,9 +180,9 @@ export default class Comparator {
     }
   }
 
-  private getOutput(x: InputSet): { [loadout: string]: string } {
-    const res: { [loadout: string]: string } = {};
-    const apply = (resultProvider: (loadout: Player) => string) => x.loadouts.forEach((l) => {
+  private getOutput(x: InputSet): { [loadout: string]: string | undefined } {
+    const res: { [loadout: string]: string | undefined } = {};
+    const apply = (resultProvider: (loadout: Player) => string | undefined) => x.loadouts.forEach((l) => {
       res[l.name] = resultProvider(l);
     });
 
@@ -199,7 +199,7 @@ export default class Comparator {
         break;
 
       case CompareYAxis.PLAYER_TTK:
-        apply((l) => forwardCalc(l).getTtk().toFixed(DPS_PRECISION));
+        apply((l) => forwardCalc(l).getTtk()?.toFixed(DPS_PRECISION));
         break;
 
       case CompareYAxis.MONSTER_DPS:
@@ -207,7 +207,7 @@ export default class Comparator {
         break;
 
       case CompareYAxis.DAMAGE_TAKEN:
-        apply((l) => reverseCalc(l).getAverageDamageTaken().toFixed(DPS_PRECISION));
+        apply((l) => reverseCalc(l).getAverageDamageTaken()?.toFixed(DPS_PRECISION));
         break;
 
       case CompareYAxis.PLAYER_MAX_HIT:
@@ -264,7 +264,7 @@ export default class Comparator {
     for (const x of this.inputsIterator()) {
       const y = this.getOutput(x);
       for (const k of keys(y)) {
-        const f = parseFloat(y[k]);
+        const f = y[k] ? parseFloat(y[k]!) : 0;
         if (f > domainMax) {
           domainMax = f;
         }
