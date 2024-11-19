@@ -23,6 +23,7 @@ import { availableEquipment, calculateEquipmentBonusesFromGear } from '@/lib/Equ
 import { CalcWorker } from '@/worker/CalcWorker';
 import { spellByName } from '@/types/Spell';
 import { NATURES_REPRISAL_MOCK_ID, NUMBER_OF_LOADOUTS } from '@/lib/constants';
+import { DEFAULT_LEAGUES_STATE } from '@/lib/LeaguesV';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
   ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, OVERHEAD_PRAYERS, Prayer,
@@ -110,6 +111,9 @@ export const generateEmptyPlayer = (name?: string): Player => ({
     usingSunfireRunes: false,
   },
   spell: null,
+  leagues: {
+    five: DEFAULT_LEAGUES_STATE,
+  },
 });
 
 export const parseLoadoutsFromImportedData = (data: ImportableData) => data.loadouts.map((loadout, i) => {
@@ -445,10 +449,18 @@ class GlobalState implements State {
     switch (data.serializationVersion) {
       case 1:
         data.monster.inputs.phase = data.monster.inputs.tormentedDemonPhase;
+
       case 2:
         data.loadouts.forEach((l) => {
           if (l.equipment?.weapon?.id === NATURES_REPRISAL_MOCK_ID) {
             l.equipment.weapon.category = EquipmentCategory.MULTISTYLE;
+          }
+        });
+
+      case 3:
+        data.loadouts.forEach((l) => {
+          if (!l.leagues?.five) {
+            l.leagues = { five: DEFAULT_LEAGUES_STATE };
           }
         });
 

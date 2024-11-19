@@ -47,6 +47,9 @@ const Changelog: React.FC = () => {
             <li>
               Fixed issue where results table horizontal overflow wasn&apos;t working properly on mobile.
             </li>
+            <li>
+              Added combat masteries for Raging Echoes League.
+            </li>
           </ChangelogEntry>
           <ChangelogEntry date="14 November 2024">
             <li>

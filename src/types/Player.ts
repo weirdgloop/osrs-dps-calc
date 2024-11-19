@@ -3,6 +3,7 @@ import { Prayer } from '@/enums/Prayer';
 import Potion from '@/enums/Potion';
 import { Spell } from '@/types/Spell';
 import { PlayerCombatStyle } from '@/types/PlayerCombatStyle';
+import { LeaguesState } from '@/lib/LeaguesV';
 
 export interface PlayerSkills {
   atk: number;
@@ -140,6 +141,10 @@ export interface Player extends EquipmentStats {
      * @see https://oldschool.runescape.wiki/w/Sunfire_rune
      */
     usingSunfireRunes: boolean;
-  }
+  };
   spell: Spell | null;
+
+  leagues: {
+    five: LeaguesState,
+  };
 }
