@@ -51,6 +51,7 @@ import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonster, scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { CombatStyleType, getRangedDamageType } from '@/types/PlayerCombatStyle';
 import { range, some, sum } from 'd3-array';
+import * as d3 from 'd3-array';
 import { FeatureStatus } from '@/utils';
 import UserIssueType from '@/enums/UserIssueType';
 import {
@@ -1927,7 +1928,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
 
       if (probAccum < TTK_DIST_EPSILON) {
-        console.log({ loadout: this.opts.loadoutName, probAccum });
         return undefined;
       }
       return (accum + this.getExpectedAttackSpeed() - 1) * SECONDS_PER_TICK;
@@ -2122,6 +2122,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (!this.distIsCurrentHpDependent(this.player, this.monster) || hp === this.monster.inputs.monsterCurrentHp) {
       return baseDist;
+    }
+
+    if (this.hasLeaguesMastery('magic', MagicMastery.MAGIC_6)) {
+      const potentialMax = d3.max(baseDist, ([wh]) => wh.getSum());
+      if (potentialMax && hp > potentialMax) {
+        return baseDist;
+      }
     }
 
     // a special case for optimization, ruby bolts only change dps under 500 hp
