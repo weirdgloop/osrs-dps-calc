@@ -28,14 +28,14 @@ const ResultsContainer = observer(() => {
           {/*   className="text-black dark:text-white mb-0" */}
           {/* /> */}
         </div>
-        <div className="overflow-x-auto max-w-[100vw]">
-          <AutoHeight
-            duration={200}
-            height="auto"
-          >
+        <AutoHeight
+          duration={200}
+          height="auto"
+        >
+          <div className="overflow-x-auto max-w-[100vw]">
             <PlayerVsNPCResultsTable />
-          </AutoHeight>
-        </div>
+          </div>
+        </AutoHeight>
         <button
           type="button"
           className="text-sm px-4 py-1 bg-dark-500 text-gray-300 w-full shadow border-t border-dark-200 flex justify-between items-center rounded-b"
