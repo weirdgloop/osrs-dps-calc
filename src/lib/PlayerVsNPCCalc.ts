@@ -110,6 +110,7 @@ const UNIMPLEMENTED_SPECS: string[] = [
   'Staff of light',
   'Staff of the dead',
   'Toxic staff of the dead',
+  'Thunder khopesh',
   'Ursine chainmace',
   'Zamorakian hasta',
   'Zamorakian spear',
@@ -1352,28 +1353,28 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.wearing('Thunder khopesh')) {
-      if (this.opts.usingSpecialAttack) {
-        const boltDist = HitDistribution.linear(1.0, 0, max);
-        // only spawns one lightning bolt even if both hit,
-        // so we have to check both accuracies and therefore they are correlated,
-        // so we can't use the normal 2-hit implementation which assumes they are not
-        dist = dist.transform((h1) => generateStandardDist(acc, min, max).transform((h2) => {
-          const twoHitDist = HitDistribution.single(1.0, [h1, h2]);
-          if (h1.accurate || h2.accurate) {
-            return twoHitDist.zip(boltDist);
-          }
-          return twoHitDist;
-        }));
-      } else {
-        const boltDist = HitDistribution.linear(1.0, 0, Math.trunc(max / 2));
-        dist = dist.transform((khopeshSplat) => new HitDistribution([
-          new WeightedHit(0.8, [khopeshSplat]),
-          ...HitDistribution.single(1.0, [khopeshSplat])
-            .scaleProbability(0.2)
-            .zip(boltDist)
-            .hits,
-        ]));
-      }
+      // if (this.opts.usingSpecialAttack) {
+      //   const boltDist = HitDistribution.linear(1.0, 0, max);
+      //   // only spawns one lightning bolt even if both hit,
+      //   // so we have to check both accuracies and therefore they are correlated,
+      //   // so we can't use the normal 2-hit implementation which assumes they are not
+      //   dist = dist.transform((h1) => generateStandardDist(acc, min, max).transform((h2) => {
+      //     const twoHitDist = HitDistribution.single(1.0, [h1, h2]);
+      //     if (h1.accurate || h2.accurate) {
+      //       return twoHitDist.zip(boltDist);
+      //     }
+      //     return twoHitDist;
+      //   }));
+      // } else {
+      const boltDist = HitDistribution.linear(1.0, 0, Math.trunc(max / 2));
+      dist = dist.transform((khopeshSplat) => new HitDistribution([
+        new WeightedHit(0.8, [khopeshSplat]),
+        ...HitDistribution.single(1.0, [khopeshSplat])
+          .scaleProbability(0.2)
+          .zip(boltDist)
+          .hits,
+      ]));
+      // }
     }
 
     if (this.wearing('Sunlight spear') && this.opts.usingSpecialAttack) {
