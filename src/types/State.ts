@@ -60,6 +60,7 @@ export interface PlayerVsNPCCalculatedLoadout extends CalculatedLoadout {
   // Player vs NPC metrics
   npcDefRoll?: number,
   maxHit?: number,
+  echoMax?: number,
   expectedHit?: number,
   maxAttackRoll?: number,
   accuracy?: number,

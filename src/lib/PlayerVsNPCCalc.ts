@@ -1045,6 +1045,16 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     return minMax;
   }
 
+  public getEchoMax(): number | undefined {
+    if (!this.hasLeaguesMastery('melee', MeleeMastery.MELEE_2)) {
+      return undefined;
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [min, max] = this.getMinAndMax();
+    return Math.trunc(max / 2);
+  }
+
   /**
    * Get the max attack roll for this loadout, which is based on the player's current combat style
    */

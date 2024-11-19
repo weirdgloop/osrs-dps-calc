@@ -111,6 +111,7 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
 
   const loadouts = toJS(calc.loadouts);
   const hasResults = useMemo(() => some(loadouts, (l) => some(Object.entries(l), ([, v]) => isDefined(v))), [loadouts]);
+  const showEchoMax = useMemo(() => some(loadouts, (l) => isDefined(l.echoMax)), [loadouts]);
 
   return (
     <table>
@@ -135,6 +136,11 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
         <ResultRow calcKey="maxHit" title="The maximum hit that you will deal to the monster" hasResults={hasResults}>
           Max hit
         </ResultRow>
+        {showEchoMax && (
+          <ResultRow calcKey="echoMax" title="The maximum damage per echo hit." hasResults={hasResults}>
+            Echo max
+          </ResultRow>
+        )}
         {resultsExpanded && (
           <ResultRow calcKey="expectedHit" title="The average damage per attack, including misses." hasResults={hasResults}>
             Expected hit

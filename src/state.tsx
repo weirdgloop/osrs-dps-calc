@@ -218,6 +218,7 @@ class GlobalState implements State {
       {
         npcDefRoll: 0,
         maxHit: 0,
+        echoMax: undefined,
         maxAttackRoll: 0,
         npcMaxHit: 0,
         npcMaxAttackRoll: 0,
