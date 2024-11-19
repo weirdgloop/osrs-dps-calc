@@ -23,7 +23,7 @@ import { availableEquipment, calculateEquipmentBonusesFromGear } from '@/lib/Equ
 import { CalcWorker } from '@/worker/CalcWorker';
 import { spellByName } from '@/types/Spell';
 import { NATURES_REPRISAL_MOCK_ID, NUMBER_OF_LOADOUTS } from '@/lib/constants';
-import { DEFAULT_LEAGUES_STATE } from '@/lib/LeaguesV';
+import { defaultLeaguesState } from '@/lib/LeaguesV';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
   ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, OVERHEAD_PRAYERS, Prayer,
@@ -112,7 +112,7 @@ export const generateEmptyPlayer = (name?: string): Player => ({
   },
   spell: null,
   leagues: {
-    five: DEFAULT_LEAGUES_STATE,
+    five: defaultLeaguesState(),
   },
 });
 
@@ -460,7 +460,7 @@ class GlobalState implements State {
       case 3:
         data.loadouts.forEach((l) => {
           if (!l.leagues?.five) {
-            l.leagues = { five: DEFAULT_LEAGUES_STATE };
+            l.leagues = { five: defaultLeaguesState() };
           }
         });
 

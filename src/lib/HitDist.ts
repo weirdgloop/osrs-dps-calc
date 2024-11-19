@@ -105,6 +105,10 @@ export class WeightedHit {
     }
     return acc;
   }
+
+  toString(): string {
+    return `WeightedHit(p: ${this.probability}, h: [${this.hitsplats.map((h) => h.damage).join(',')}], s: ${this.getSum()})`;
+  }
 }
 
 export class HitDistribution {

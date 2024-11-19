@@ -62,13 +62,13 @@ export interface LeaguesState {
 
 export type MasteryStyle = keyof Pick<LeaguesState, 'melee' | 'ranged' | 'magic'>;
 
-export const DEFAULT_LEAGUES_STATE: LeaguesState = {
+export const defaultLeaguesState = (): LeaguesState => ({
   melee: MeleeMastery.NONE,
   ranged: RangedMastery.NONE,
   magic: MagicMastery.NONE,
   ticksDelayed: 0,
   attackCount: 2, // average, -1 relative to ui so this is 3/5
-};
+});
 
 export interface MasteryUiData<S extends MasteryStyle> {
   masteryStyle: S;
