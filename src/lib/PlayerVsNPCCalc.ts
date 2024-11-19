@@ -1928,7 +1928,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
 
       if (probAccum < TTK_DIST_EPSILON) {
-        console.log({ loadout: this.opts.loadoutName, probAccum });
         return undefined;
       }
       return (accum + this.getExpectedAttackSpeed() - 1) * SECONDS_PER_TICK;
@@ -2127,7 +2126,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.hasLeaguesMastery('magic', MagicMastery.MAGIC_6)) {
       const potentialMax = d3.max(baseDist, ([wh]) => wh.getSum());
-      console.log(potentialMax);
       if (potentialMax && hp > potentialMax) {
         return baseDist;
       }
