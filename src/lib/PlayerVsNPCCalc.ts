@@ -51,7 +51,6 @@ import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonster, scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { CombatStyleType, getRangedDamageType } from '@/types/PlayerCombatStyle';
 import { range, some, sum } from 'd3-array';
-import * as d3 from 'd3-array';
 import { FeatureStatus } from '@/utils';
 import UserIssueType from '@/enums/UserIssueType';
 import {
@@ -2118,9 +2117,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return baseDist;
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [baseMin, baseMax] = this.getMinAndMax();
     if (this.hasLeaguesMastery('magic', MagicMastery.MAGIC_6)) {
-      const potentialMax = d3.max(baseDist, ([wh]) => wh.getSum());
-      if (potentialMax && hp > potentialMax) {
+      if (baseMax && hp > baseMax) {
         return baseDist;
       }
     }
