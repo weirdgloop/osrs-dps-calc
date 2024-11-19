@@ -11,7 +11,6 @@ import {
 } from '@/lib/LeaguesV';
 import NumberInput from '@/app/components/generic/NumberInput';
 import magic_2 from '@/public/img/league/magic_2.png';
-import ranged_2 from '@/public/img/league/ranged_2.png';
 
 const MasteryButton: React.FC<MasteryUiData<MasteryStyle>> = observer((props) => {
   const {
@@ -77,62 +76,33 @@ const EchoesLeague: React.FC = observer(() => {
         {MAGIC_MASTERIES.map((r) => (<MasteryButton {...r} key={r.name} />))}
       </div>
 
-      <div className="my-4">
-        {
-          data.magic >= 2 && (
-            <div className="w-full">
-              <NumberInput
-                className="form-control w-12"
-                required
-                min={0}
-                max={8}
-                value={data.ticksDelayed}
-                onChange={(v) => store.updatePlayer({ leagues: { five: { ticksDelayed: v } } })}
-              />
-              <span className="ml-1 text-sm select-none">
-                <img src={magic_2.src} width={24} className="inline-block" alt="" />
-                {' '}
-                Extra delay ticks
-                {' '}
-                <span
-                  className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
-                  data-tooltip-id="tooltip"
-                  data-tooltip-content="Extra ticks delayed between attacks on top of the normal weapon attack speed."
-                >
-                  ?
-                </span>
+      {data.magic >= 2 && (
+        <div className="my-4">
+          <div className="w-full">
+            <NumberInput
+              className="form-control w-12"
+              required
+              min={0}
+              max={8}
+              value={data.ticksDelayed}
+              onChange={(v) => store.updatePlayer({ leagues: { five: { ticksDelayed: v } } })}
+            />
+            <span className="ml-1 text-sm select-none">
+              <img src={magic_2.src} width={24} className="inline-block" alt="" />
+              {' '}
+              Extra delay ticks
+              {' '}
+              <span
+                className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+                data-tooltip-id="tooltip"
+                data-tooltip-content="Extra ticks delayed between attacks on top of the normal weapon attack speed."
+              >
+                ?
               </span>
-            </div>
-          )
-        }
-        {
-          data.ranged >= 2 && (
-            <div className="w-full">
-              <NumberInput
-                className="form-control w-12"
-                required
-                min={1}
-                max={5}
-                value={data.attackCount + 1}
-                onChange={(v) => store.updatePlayer({ leagues: { five: { attackCount: v - 1 } } })}
-              />
-              <span className="ml-1 text-sm select-none">
-                <img src={ranged_2.src} width={24} className="inline-block" alt="" />
-                {' '}
-                Ranged attack counter
-                {' '}
-                <span
-                  className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
-                  data-tooltip-id="tooltip"
-                  data-tooltip-content="How many subsequent ranged attacks you have used."
-                >
-                  ?
-                </span>
-              </span>
-            </div>
-          )
-        }
-      </div>
+            </span>
+          </div>
+        </div>
+      )}
 
       {(passives.length > 0) && (
         <div className="ml-1 my-4 text-gray-300 text-sm justify-center">

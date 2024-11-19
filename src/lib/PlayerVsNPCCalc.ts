@@ -1061,6 +1061,22 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       ).getDisplayMax();
     }
 
+    if (this.hasLeaguesMastery('ranged', RangedMastery.RANGED_2)) {
+      return this.noInitSubCalc(
+        {
+          ...this.player,
+          leagues: {
+            ...this.player.leagues,
+            five: {
+              ...this.player.leagues.five,
+              attackCount: 4,
+            },
+          },
+        },
+        this.monster,
+      ).getDistribution().getMax();
+    }
+
     return this.getDistribution().getMax();
   }
 
@@ -1884,6 +1900,30 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    * Returns the expected damage per tick, based on the player's attack speed.
    */
   public getDpt() {
+    if (this.hasLeaguesMastery('ranged', RangedMastery.RANGED_2)) {
+      const subCalc = (n: number) => this.noInitSubCalc(
+        {
+          ...this.player,
+          leagues: {
+            ...this.player.leagues,
+            five: {
+              ...this.player.leagues.five,
+              attackCount: n,
+            },
+          },
+        },
+        this.monster,
+      );
+
+      return (
+        subCalc(0).getExpectedDamage()
+          + subCalc(1).getExpectedDamage()
+          + subCalc(2).getExpectedDamage()
+          + subCalc(3).getExpectedDamage()
+          + subCalc(4).getExpectedDamage()
+      ) / (5 * this.getExpectedAttackSpeed());
+    }
+
     return this.getExpectedDamage() / this.getExpectedAttackSpeed();
   }
 
@@ -1949,7 +1989,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    * Returns the average time-to-kill (in seconds) calculation.
    */
   public getTtk() {
-    if (this.hasLeaguesMastery('magic', MagicMastery.MAGIC_6)) {
+    if (this.hasLeaguesMastery('magic', MagicMastery.MAGIC_6) || this.hasLeaguesMastery('ranged', RangedMastery.RANGED_2)) {
       // Use slower TTK calculation
       const calc = this.noInitSubCalc(this.player, this.monster);
       const ttkDist = calc.getTtkDistribution();

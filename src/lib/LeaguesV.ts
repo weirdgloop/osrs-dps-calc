@@ -56,7 +56,7 @@ export interface LeaguesState {
   /** for {@link MagicMastery.MAGIC_2} */
   ticksDelayed: number;
 
-  /** for {@link RangedMastery.RANGED_2} */
+  /** for {@link RangedMastery.RANGED_2}. not shown in ui anymore but still stateful in calculations */
   attackCount: number;
 }
 
