@@ -67,7 +67,7 @@ export const DEFAULT_LEAGUES_STATE: LeaguesState = {
   ranged: RangedMastery.NONE,
   magic: MagicMastery.NONE,
   ticksDelayed: 0,
-  attackCount: 0,
+  attackCount: 2, // average, -1 relative to ui so this is 3/5
 };
 
 export interface MasteryUiData<S extends MasteryStyle> {
