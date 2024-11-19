@@ -63,7 +63,9 @@ import {
   rubyBolts,
 } from '@/lib/dists/bolts';
 import { burningClawDoT, burningClawSpec, dClawDist } from '@/lib/dists/claws';
-import { LeaguesState, MagicMastery, MeleeMastery, RangedMastery } from '@/lib/LeaguesV';
+import {
+  LeaguesState, MagicMastery, MeleeMastery, RangedMastery,
+} from '@/lib/LeaguesV';
 
 const PARTIALLY_IMPLEMENTED_SPECS: string[] = [
   'Ancient godsword',
