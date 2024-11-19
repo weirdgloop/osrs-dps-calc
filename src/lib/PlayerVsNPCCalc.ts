@@ -1044,6 +1044,46 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     return minMax;
   }
 
+  public getDisplayMax(): number {
+    if (this.hasLeaguesMastery('melee', MeleeMastery.MELEE_2)) {
+      return this.noInitSubCalc(
+        {
+          ...this.player,
+          leagues: {
+            ...this.player.leagues,
+            five: {
+              ...this.player.leagues.five,
+              melee: MeleeMastery.MELEE_1,
+            },
+          },
+        },
+        this.monster,
+      ).getDisplayMax();
+    }
+
+    return this.getDistribution().getMax();
+  }
+
+  public getHistogram(hideMisses: boolean = false): ReturnType<AttackDistribution['asHistogram']> {
+    if (this.hasLeaguesMastery('melee', MeleeMastery.MELEE_2)) {
+      return this.noInitSubCalc(
+        {
+          ...this.player,
+          leagues: {
+            ...this.player.leagues,
+            five: {
+              ...this.player.leagues.five,
+              melee: MeleeMastery.MELEE_1,
+            },
+          },
+        },
+        this.monster,
+      ).getHistogram(hideMisses);
+    }
+
+    return this.getDistribution().asHistogram(hideMisses);
+  }
+
   /**
    * Get the max attack roll for this loadout, which is based on the player's current combat style
    */
