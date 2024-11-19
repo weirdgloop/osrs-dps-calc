@@ -50979,7 +50979,7 @@
     "category": "Thrown",
     "bonuses": {
       "str": 0,
-      "ranged_str": 0,
+      "ranged_str": 10,
       "magic_str": 0,
       "prayer": 0
     },
