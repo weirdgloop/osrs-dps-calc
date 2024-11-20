@@ -291,7 +291,8 @@ export const IMMUNE_TO_MELEE_DAMAGE_NPC_IDS = [
   7852, 7853, 7884, 7885, // dawn
   ...OLM_MAGE_HAND_IDS,
   ...OLM_HEAD_IDS,
-  2042, 2043, 2044, // zulrah
+  //2042, 2043, 2044, // zulrah
+  //TODO: After leagues 5 add zulrah immunity
 ];
 
 export const IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS = [

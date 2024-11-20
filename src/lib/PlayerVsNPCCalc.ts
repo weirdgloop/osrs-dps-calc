@@ -1693,7 +1693,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.monster.name === 'Zulrah') {
       // https://twitter.com/JagexAsh/status/1745852774607183888
-      dist = dist.transform(cappedRerollTransformer(50, 5, 45));
+      //TODO: After leagues 5 add damage cap
+      //dist = dist.transform(cappedRerollTransformer(50, 5, 45));
     }
     if (this.monster.name === 'Fragment of Seren') {
       // https://twitter.com/JagexAsh/status/1375037874559721474
