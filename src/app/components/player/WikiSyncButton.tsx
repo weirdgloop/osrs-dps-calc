@@ -26,6 +26,9 @@ const WikiSyncButton: React.FC<IWikiSyncButtonProps> = observer((props) => {
   const [helpIsOpen, setHelpIsOpen] = useState(false);
 
   const onButtonClick = useCallback(() => {
+    // simple logging of button press for usage stats
+    fetch('https://chisel.weirdgloop.org/t/dps/rl');
+
     if (validWikiSyncInstances.size === 0) {
       setHelpIsOpen(true);
     }
