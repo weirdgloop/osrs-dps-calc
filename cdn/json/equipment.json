@@ -53363,7 +53363,7 @@
     "defensive": {
       "stab": 0,
       "slash": 3,
-      "crush": 0,
+      "crush": 2,
       "magic": 5,
       "ranged": 0
     },

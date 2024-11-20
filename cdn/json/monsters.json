@@ -3762,7 +3762,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-0000002E-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000002-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -93773,7 +93773,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000057-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000079-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -93815,7 +93815,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000057-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000079-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -95939,7 +95939,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000004B-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000017-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -95980,7 +95980,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000004D-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000019-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
