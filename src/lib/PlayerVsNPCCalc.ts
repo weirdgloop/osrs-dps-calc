@@ -41,7 +41,7 @@ import {
   TTK_DIST_EPSILON,
   TTK_DIST_MAX_ITER_ROUNDS,
   USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
-  VERZIK_P1_IDS,
+  VERZIK_P1_IDS, ZULRAH_IDS,
 } from '@/lib/constants';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { DetailKey } from '@/lib/CalcDetails';
@@ -1692,9 +1692,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.monster.name === 'Zulrah') {
-      // https://twitter.com/JagexAsh/status/1745852774607183888
-      //TODO: After leagues 5 add damage cap
-      //dist = dist.transform(cappedRerollTransformer(50, 5, 45));
+      // during leagues this cap has been removed.
+      // we're just using the presence of any league mastery at all to check
+      const maxMastery = Math.max(this.player.leagues.five.melee, this.player.leagues.five.ranged, this.player.leagues.five.magic);
+      if (maxMastery === 0) {
+        // https://twitter.com/JagexAsh/status/1745852774607183888
+        dist = dist.transform(cappedRerollTransformer(50, 5, 45));
+      }
     }
     if (this.monster.name === 'Fragment of Seren') {
       // https://twitter.com/JagexAsh/status/1375037874559721474
@@ -1804,7 +1808,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return true;
     }
     if (IMMUNE_TO_MELEE_DAMAGE_NPC_IDS.includes(monsterId) && this.isUsingMeleeStyle()) {
-      return true;
+      if (ZULRAH_IDS.includes(monsterId)) {
+        // during leagues this immunity has been removed.
+        // we're just using the presence of any league mastery at all to check
+        // but not bothering with a range >= 2 check since we don't track that
+        const maxMastery = Math.max(this.player.leagues.five.melee, this.player.leagues.five.ranged, this.player.leagues.five.magic);
+        if (maxMastery === 0) {
+          return true;
+        }
+      } else {
+        return true;
+      }
     }
     if (IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS.includes(monsterId)
       && this.isUsingMeleeStyle()
