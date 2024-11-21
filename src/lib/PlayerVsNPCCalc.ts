@@ -1888,8 +1888,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   public getExpectedAttackSpeed() {
     if (this.isWearingBloodMoonSet()) {
       const acc = this.getHitChance();
-      const procChance = this.opts.usingSpecialAttack ? 1.0
-        : (acc / 3) + ((acc * acc) * 2 / 9);
+      const procChance = this.opts.usingSpecialAttack
+        ? 1 - ((1 - acc) ** 2) // always if hit
+        : (acc / 3) + ((acc * acc) * 2 / 9); // 1/3 per hit;
       return this.getAttackSpeed() - procChance;
     }
 
