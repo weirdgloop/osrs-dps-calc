@@ -279,6 +279,10 @@ const WARRIORS_GUILD_CYCLOPES = [
   2137, 2138, 2139, 2140, 2141, 2142, // L106
 ];
 
+export const ZULRAH_IDS = [
+  2042, 2043, 2044,
+];
+
 /**
  * Monsters immune to melee damage.
  */
@@ -291,7 +295,7 @@ export const IMMUNE_TO_MELEE_DAMAGE_NPC_IDS = [
   7852, 7853, 7884, 7885, // dawn
   ...OLM_MAGE_HAND_IDS,
   ...OLM_HEAD_IDS,
-  2042, 2043, 2044, // zulrah
+  ...ZULRAH_IDS,
 ];
 
 export const IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS = [
