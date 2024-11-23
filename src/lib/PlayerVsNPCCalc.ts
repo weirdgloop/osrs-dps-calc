@@ -1869,7 +1869,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         && this.player.style.stance !== 'Manual Cast') {
         attackSpeed = 4;
       }
-      attackSpeed = 5;
+      else {
+        attackSpeed = 5;
+      }
     }
 
     // Giant rat (Scurrius)
