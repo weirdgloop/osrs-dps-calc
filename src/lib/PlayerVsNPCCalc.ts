@@ -1868,8 +1868,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         && this.player.spell?.spellbook === 'standard'
         && this.player.style.stance !== 'Manual Cast') {
         attackSpeed = 4;
-      }
-      else {
+      } else {
         attackSpeed = 5;
       }
     }
