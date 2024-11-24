@@ -30,6 +30,22 @@ const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => 
 
     return currentSlot?.name;
   };
+	
+  /**
+   * Handle mouse down event
+   * If ctrl key is pressed, open the wiki page for the item, otherwise clear the equipment slot
+   * @param e The mouse event
+   */
+  const mouseDown = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if (isEmpty) return;
+
+    if (e.ctrlKey) {
+	  const item = store.getSelectedLoadout(slot)!
+	  window.open('https://oldschool.runescape.wiki/w/' + encodeURIComponent(item.name), '_blank');
+    } else {
+	  store.clearEquipmentSlot(slot);
+    }
+  }
 
   return (
     <div className="h-[40px] w-[40px] relative">
@@ -44,9 +60,7 @@ const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => 
         data-slot={slot}
         data-tooltip-id="tooltip"
         data-tooltip-content={getTooltipContent()}
-        onMouseDown={() => {
-          if (!isEmpty) store.clearEquipmentSlot(slot);
-        }}
+        onMouseDown={e => mouseDown(e)}
       >
         {currentSlot?.image ? (
           <img src={getCdnImage(`equipment/${currentSlot.image}`)} alt={currentSlot.name} />

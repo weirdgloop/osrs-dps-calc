@@ -720,6 +720,15 @@ class GlobalState implements State {
       },
     });
   }
+  
+  /**
+   * Return the current item in the selected equipment slot
+   * @param slot The slot to get the item of
+   * @returns The item in the slot, or `null` if the slot is empty
+   */
+  getSelectedLoadout(slot: keyof PlayerEquipment) {
+	  return this.player.equipment[slot];
+  }
 
   setSelectedLoadout(ix: number) {
     this.selectedLoadout = ix;
