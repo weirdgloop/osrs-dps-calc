@@ -31,7 +31,7 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
                 id={id}
                 required
                 min={1}
-                max={199}
+                max={255}
                 title={`Your current ${name} level`}
                 value={player.skills[field] + player.boosts[field]}
                 onChange={(v) => {
@@ -57,7 +57,7 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
             id={id}
             required
             min={1}
-            max={199}
+            max={255}
             title={`Your base ${name} level`}
             value={player.skills[field]}
             onChange={(v) => {
