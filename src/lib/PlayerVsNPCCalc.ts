@@ -1340,6 +1340,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if ((this.player.style.type === 'magic' && ALWAYS_MAX_HIT_MONSTERS.magic.includes(this.monster.id))
       || (this.isUsingMeleeStyle() && ALWAYS_MAX_HIT_MONSTERS.melee.includes(this.monster.id))
       || (this.player.style.type === 'ranged' && ALWAYS_MAX_HIT_MONSTERS.ranged.includes(this.monster.id))) {
+      if (this.player.style.type === 'magic' && this.hasLeaguesMastery('magic', MagicMastery.MAGIC_1)) {
+        return new AttackDistribution([HitDistribution.single(1.0, [new Hitsplat(Math.trunc(max * 3 / 2))])]);
+      }
       return new AttackDistribution([HitDistribution.single(1.0, [new Hitsplat(max)])]);
     }
 
