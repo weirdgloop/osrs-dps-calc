@@ -102,6 +102,7 @@ export interface Player extends EquipmentStats {
      * added to each of the "skills" values to make the player's "current" skill levels.
      */
     potions: Potion[];
+    lastStand: boolean;
     onSlayerTask: boolean;
     inWilderness: boolean;
     forinthrySurge: boolean;

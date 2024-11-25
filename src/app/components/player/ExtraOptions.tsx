@@ -1,6 +1,7 @@
 import React from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
+import lastStand from '@/public/img/misc/last_stand.webp';
 import slayer from '@/public/img/misc/slayer.webp';
 import skull from '@/public/img/misc/skull.webp';
 import diary from '@/public/img/misc/diary.png';
@@ -18,6 +19,17 @@ const ExtraOptions: React.FC = observer(() => {
   return (
     <div className="px-6 my-4">
       <div className="mt-2 mb-4">
+        <Toggle
+          checked={player.buffs.lastStand}
+          setChecked={(c) => store.updatePlayer({ buffs: { lastStand: c } })}
+          label={(
+            <>
+              <img src={lastStand.src} width={18} className="inline-block" alt="" />
+              {' '}
+              Last Stand Relic
+            </>
+          )}
+        />
         <Toggle
           checked={player.buffs.onSlayerTask}
           setChecked={(c) => store.updatePlayer({ buffs: { onSlayerTask: c } })}

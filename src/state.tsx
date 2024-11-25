@@ -99,6 +99,7 @@ export const generateEmptyPlayer = (name?: string): Player => ({
   },
   buffs: {
     potions: [],
+    lastStand: false,
     onSlayerTask: true,
     inWilderness: false,
     kandarinDiary: false,
@@ -251,31 +252,11 @@ class GlobalState implements State {
   constructor() {
     makeAutoObservable(this, {}, { autoBind: true });
 
-    const recomputeBoosts = () => {
-      // Re-compute the player's boost values.
-      const boosts: Partial<PlayerSkills> = {
-        atk: 0, def: 0, magic: 0, prayer: 0, ranged: 0, str: 0, mining: 0, herblore: 0,
-      };
-
-      for (const p of this.player.buffs.potions) {
-        const result = PotionMap[p].calculateFn(this.player.skills);
-        for (const k of Object.keys(result)) {
-          const r = result[k as keyof typeof result] as number;
-          if (r > boosts[k as keyof typeof boosts]!) {
-            // If this skill's boost is higher than what it already is, then change it
-            boosts[k as keyof typeof boosts] = result[k as keyof typeof result] as number;
-          }
-        }
-      }
-
-      this.updatePlayer({ boosts });
-    };
-
     const potionTriggers: ((r: IReactionPublic) => unknown)[] = [
       () => toJS(this.player.skills),
       () => toJS(this.player.buffs.potions),
     ];
-    potionTriggers.map((t) => reaction(t, recomputeBoosts, { fireImmediately: false }));
+    potionTriggers.map((t) => reaction(t, this.recomputeBoosts.bind(this), { fireImmediately: false }));
 
     // for toa monster + shadow handling
     const equipmentTriggers: ((r: IReactionPublic) => unknown)[] = [
@@ -404,6 +385,38 @@ class GlobalState implements State {
 
   recalculateEquipmentBonusesFromGearAll() {
     this.loadouts.forEach((_, i) => this.recalculateEquipmentBonusesFromGear(i));
+  }
+
+  recomputeBoosts() {
+    // Re-compute the player's boost values.
+    const boosts: Partial<PlayerSkills> = {
+      atk: 0, def: 0, magic: 0, prayer: 0, ranged: 0, str: 0, mining: 0, herblore: 0, hp: 0,
+    };
+
+    for (const p of this.player.buffs.potions) {
+      const result = PotionMap[p].calculateFn(this.player.skills);
+      for (const k of Object.keys(result)) {
+        const r = result[k as keyof typeof result] as number;
+        if (r > boosts[k as keyof typeof boosts]!) {
+          // If this skill's boost is higher than what it already is, then change it
+          boosts[k as keyof typeof boosts] = result[k as keyof typeof result] as number;
+        }
+      }
+    }
+
+    if (this.player.buffs.lastStand) {
+      boosts.atk = 250 - 99;
+      boosts.str = 250 - 99;
+      boosts.def = 250 - 99;
+      boosts.ranged = 250 - 99;
+      boosts.magic = 250 - 99;
+      boosts.prayer = 250 - 99;
+
+      // Reset to 1 hp
+      boosts.hp = -this.player.skills.hp + 1;
+    }
+
+    this.updatePlayer({ boosts });
   }
 
   updateUIState(ui: PartialDeep<UI>) {
@@ -677,6 +690,10 @@ class GlobalState implements State {
       if (eq || Object.hasOwn(player, 'spell') || Object.hasOwn(player, 'style')) {
         this.recalculateEquipmentBonusesFromGear(loadoutIx);
       }
+    }
+
+    if (player.buffs && 'lastStand' in player.buffs) {
+      this.recomputeBoosts();
     }
   }
 
