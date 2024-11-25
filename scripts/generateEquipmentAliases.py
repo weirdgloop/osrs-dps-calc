@@ -153,7 +153,8 @@ def main():
         elif decoration_kit_match:
             base_item_name = decoration_kit_match.group(1).strip()
             # Crystal armor should not be aliases across Active and Inactive
-            if item['version'] in ['Active', 'Inactive']:
+            # Nor should items with weapon poison
+            if item['version'] in ['Active', 'Inactive', 'Unpoisoned', 'Poison', 'Poison+', 'Poison++']:
                 handle_base_variant(all_items, item, base_item_name, [item['version']])
             elif base_item_name.endswith(" helm") and decoration_kit_match.group(2) == "h":
                 handle_base_variant(all_items, item, base_item_name.replace(" helm", " full helm"), [item['version']])
