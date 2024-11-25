@@ -120,6 +120,10 @@ const equipmentAliases = {
   3140: [28065, 12414], // Dragon chainbody
   13652: [28039, 26708], // Dragon claws
   21902: [28053], // Dragon crossbow
+  1231: [28021], // Dragon dagger#Poison
+  5680: [28023], // Dragon dagger#Poison+
+  5698: [28025], // Dragon dagger#Poison++
+  1215: [28019], // Dragon dagger#Unpoisoned
   12954: [24143, 27008, 19722], // Dragon defender#Normal
   11335: [12417], // Dragon full helm
   3204: [28049], // Dragon halberd
@@ -135,6 +139,10 @@ const equipmentAliases = {
   4087: [28061, 12415], // Dragon platelegs
   4585: [28063, 12416], // Dragon plateskirt
   4587: [28031, 20000], // Dragon scimitar
+  1263: [28043], // Dragon spear#Poison
+  5716: [28045], // Dragon spear#Poison+
+  5730: [28047], // Dragon spear#Poison++
+  1249: [28041], // Dragon spear#Unpoisoned
   1187: [28059, 12418], // Dragon sq shield
   21009: [28029], // Dragon sword
   13576: [28035, 26710], // Dragon warhammer
