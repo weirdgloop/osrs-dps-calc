@@ -67,6 +67,7 @@ export interface PlayerVsNPCCalculatedLoadout extends CalculatedLoadout {
   ttk?: number,
   hitDist?: ChartEntry[],
   ttkDist?: Map<number, number>,
+  attackSpeed?: number,
 
   specAccuracy?: number,
   specMaxHit?: number,

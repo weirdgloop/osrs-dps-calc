@@ -3,7 +3,9 @@ import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 import { PlayerVsNPCCalculatedLoadout } from '@/types/State';
 import Spinner from '@/app/components/Spinner';
-import { ACCURACY_PRECISION, DPS_PRECISION, EXPECTED_HIT_PRECISION } from '@/lib/constants';
+import {
+  ACCURACY_PRECISION, ATTACK_SPEED_PRECISION, DPS_PRECISION, EXPECTED_HIT_PRECISION,
+} from '@/lib/constants';
 import { max, min, some } from 'd3-array';
 import { toJS } from 'mobx';
 import { isDefined } from '@/utils';
@@ -37,6 +39,8 @@ const calcKeyToString = (value: number, calcKey: keyof PlayerVsNPCCalculatedLoad
       return value === 0
         ? '-----'
         : `${value.toFixed(1)}s`;
+    case 'attackSpeed':
+      return value.toFixed(ATTACK_SPEED_PRECISION);
     default:
       return `${value}`;
   }
@@ -149,6 +153,11 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
         <ResultRow calcKey="accuracy" title="How accurate you are against the monster" hasResults={hasResults}>
           Accuracy
         </ResultRow>
+        {resultsExpanded && (
+          <ResultRow calcKey="attackSpeed" title="The attack speed of the weapon in ticks" hasResults={hasResults}>
+            Attack Speed
+          </ResultRow>
+        )}
         {!resultsExpanded && (
           <ResultRow calcKey="specExpected" title="The expected hit that the special attack will deal to the monster per use, including misses" hasResults={hasResults} collapseSpecs={resultsExpanded}>
             Spec expected hit
