@@ -106500,6 +106500,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Sage's greaves (Trailblazer Reloaded League)",
+    "id": 28771,
+    "version": "",
+    "slot": "feet",
+    "image": "Sage's greaves (Trailblazer Reloaded League).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Saika's hood",
     "id": 26701,
     "version": "Broken",
