@@ -57,6 +57,7 @@ const OtherBonuses: React.FC<{ computedStats: EquipmentBonuses }> = observer(({ 
           value={player.bonuses.attack_speed}
           className={`${(player.bonuses.attack_speed !== computedStats.bonuses.attack_speed) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
           onChange={(v) => store.updatePlayer({ bonuses: { attack_speed: v } })}
+          min={1}
         />
       </div>
     </div>
