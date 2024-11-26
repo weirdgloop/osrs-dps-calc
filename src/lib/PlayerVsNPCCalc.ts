@@ -41,7 +41,8 @@ import {
   TTK_DIST_EPSILON,
   TTK_DIST_MAX_ITER_ROUNDS,
   USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
-  VERZIK_P1_IDS, ZULRAH_IDS,
+  VERZIK_P1_IDS,
+  ZULRAH_IDS,
 } from '@/lib/constants';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { DetailKey } from '@/lib/CalcDetails';
@@ -1329,18 +1330,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     let dist = new AttackDistribution([generateStandardDist(acc, min, max)]);
 
     // Monsters that always die in one hit no matter what
-    if (ONE_HIT_MONSTERS.includes(this.monster.id)
-      || (this.hasLeaguesMastery('magic', MagicMastery.MAGIC_6) && this.monster.inputs.monsterCurrentHp <= max)) {
+    if (ONE_HIT_MONSTERS.includes(this.monster.id)) {
       return new AttackDistribution([
         HitDistribution.single(1.0, [new Hitsplat(this.monster.skills.hp)]),
       ]);
-    }
-
-    // monsters that are always max hit no matter what
-    if ((this.player.style.type === 'magic' && ALWAYS_MAX_HIT_MONSTERS.magic.includes(this.monster.id))
-      || (this.isUsingMeleeStyle() && ALWAYS_MAX_HIT_MONSTERS.melee.includes(this.monster.id))
-      || (this.player.style.type === 'ranged' && ALWAYS_MAX_HIT_MONSTERS.ranged.includes(this.monster.id))) {
-      return new AttackDistribution([HitDistribution.single(1.0, [new Hitsplat(max)])]);
     }
 
     if (this.hasLeaguesMastery('magic', MagicMastery.MAGIC_1)) {
@@ -1351,6 +1344,18 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         }
         return HitDistribution.single(1.0, [new Hitsplat(Math.trunc(h.damage), h.accurate)]);
       });
+    }
+
+    if (this.hasLeaguesMastery('magic', MagicMastery.MAGIC_6)
+      && this.monster.inputs.monsterCurrentHp <= dist.getMax()) {
+      dist = new AttackDistribution([
+        HitDistribution.single(acc, [new Hitsplat(this.monster.inputs.monsterCurrentHp)]),
+      ]);
+    } else if ((this.player.style.type === 'magic' && ALWAYS_MAX_HIT_MONSTERS.magic.includes(this.monster.id))
+      || (this.isUsingMeleeStyle() && ALWAYS_MAX_HIT_MONSTERS.melee.includes(this.monster.id))
+      || (this.player.style.type === 'ranged' && ALWAYS_MAX_HIT_MONSTERS.ranged.includes(this.monster.id))) {
+      // monsters that are always max hit no matter what
+      return new AttackDistribution([HitDistribution.single(1.0, [new Hitsplat(max)])]);
     }
 
     if (style === 'ranged' && this.wearing('Tonalztics of ralos') && this.player.equipment.weapon?.version === 'Charged') {
@@ -2221,7 +2226,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [baseMin, baseMax] = this.getMinAndMax();
     if (this.hasLeaguesMastery('magic', MagicMastery.MAGIC_6)) {
-      if (baseMax && hp > baseMax) {
+      const critMax = Math.trunc(baseMax * 3 / 2);
+      if (baseMax && hp > critMax) {
         return baseDist;
       }
     }
