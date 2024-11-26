@@ -22,7 +22,7 @@ import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
 import { availableEquipment, calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { CalcWorker } from '@/worker/CalcWorker';
 import { spellByName } from '@/types/Spell';
-import { NATURES_REPRISAL_MOCK_ID, NUMBER_OF_LOADOUTS } from '@/lib/constants';
+import { DEFAULT_ATTACK_SPEED, NATURES_REPRISAL_MOCK_ID, NUMBER_OF_LOADOUTS } from '@/lib/constants';
 import { defaultLeaguesState } from '@/lib/LeaguesV';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
@@ -392,19 +392,17 @@ class GlobalState implements State {
     this.calcWorker = worker;
   }
 
-  recalculateEquipmentBonusesFromGear(loadoutIx?: number) {
+  updateEquipmentBonuses(loadoutIx?: number) {
     loadoutIx = loadoutIx !== undefined ? loadoutIx : this.selectedLoadout;
 
-    const totals = calculateEquipmentBonusesFromGear(this.loadouts[loadoutIx], this.monster);
-    this.updatePlayer({
-      bonuses: totals.bonuses,
-      offensive: totals.offensive,
-      defensive: totals.defensive,
-    }, loadoutIx);
+    this.loadouts[loadoutIx] = merge(
+      this.loadouts[loadoutIx],
+      calculateEquipmentBonusesFromGear(this.loadouts[loadoutIx], this.monster),
+    );
   }
 
   recalculateEquipmentBonusesFromGearAll() {
-    this.loadouts.forEach((_, i) => this.recalculateEquipmentBonusesFromGear(i));
+    this.loadouts.forEach((_, i) => this.updateEquipmentBonuses(i));
   }
 
   updateUIState(ui: PartialDeep<UI>) {
@@ -675,9 +673,7 @@ class GlobalState implements State {
 
     this.loadouts[loadoutIx] = merge(this.loadouts[loadoutIx], player);
     if (!this.prefs.manualMode) {
-      if (eq || Object.hasOwn(player, 'spell') || Object.hasOwn(player, 'style')) {
-        this.recalculateEquipmentBonusesFromGear(loadoutIx);
-      }
+      this.updateEquipmentBonuses(loadoutIx);
     }
   }
 

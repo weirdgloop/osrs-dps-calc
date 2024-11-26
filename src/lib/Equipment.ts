@@ -231,24 +231,53 @@ export const getCanonicalEquipment = (inputEq: PlayerEquipment) => {
 
 /**
  * Calculates the player's attack speed using current stance and equipment.
- * @param player - the player
  */
-export const calculateAttackSpeed = (player: Player): number => {
+export const calculateAttackSpeed = (player: Player, monster: Monster): number => {
   let attackSpeed = player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;
 
   if (player.style.type === 'ranged' && player.style.stance === 'Rapid') {
     attackSpeed -= 1;
-  }
-  if (CAST_STANCES.includes(player.style.stance)) {
+  } else if (CAST_STANCES.includes(player.style.stance)) {
     if (player.equipment.weapon?.name === 'Harmonised nightmare staff'
       && player.spell?.spellbook === 'standard'
       && player.style.stance !== 'Manual Cast') {
-      return 4;
+      attackSpeed = 4;
+    } else {
+      attackSpeed = 5;
     }
-    return 5;
   }
 
-  return attackSpeed;
+  // Giant rat (Scurrius)
+  if (monster.id === 7223 && player.style.stance !== 'Manual Cast') {
+    if (['Bone mace', 'Bone shortbow', 'Bone staff'].includes(player.equipment.weapon?.name || '')) {
+      attackSpeed = 1;
+    }
+  }
+
+  let activeRelic: number;
+  if (player.style.type === 'ranged') {
+    activeRelic = player.leagues.five.ranged;
+  } else if (player.style.type === 'magic') {
+    activeRelic = player.leagues.five.magic;
+  } else {
+    activeRelic = player.leagues.five.melee;
+  }
+
+  if (activeRelic >= 5) {
+    if (attackSpeed >= 5) {
+      attackSpeed = Math.trunc(attackSpeed / 2);
+    } else {
+      attackSpeed = Math.ceil(attackSpeed / 2);
+    }
+  } else if (activeRelic >= 3) {
+    attackSpeed = Math.trunc(attackSpeed * 4 / 5);
+  }
+
+  if (player.style.type === 'magic' && activeRelic >= 2) {
+    attackSpeed += player.leagues.five.ticksDelayed;
+  }
+
+  return Math.max(attackSpeed, 1);
 };
 
 export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monster): EquipmentBonuses => {
@@ -351,7 +380,7 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
     totals.bonuses.ranged_str += 1;
   }
 
-  totals.bonuses.attack_speed = calculateAttackSpeed(player);
+  totals.bonuses.attack_speed = calculateAttackSpeed(player, monster);
 
   return totals;
 };

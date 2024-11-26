@@ -20,9 +20,6 @@ import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
   ALWAYS_MAX_HIT_MONSTERS,
   BA_ATTACKER_MONSTERS,
-  CAST_STANCES,
-  DEFAULT_ATTACK_SPEED,
-  FLAT_ARMOUR,
   GLOWING_CRYSTAL_IDS,
   GUARDIAN_IDS,
   HUEYCOATL_PHASE_IDS,
@@ -48,7 +45,9 @@ import {
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { DetailKey } from '@/lib/CalcDetails';
 import { Factor, MinMax } from '@/lib/Math';
-import { AmmoApplicability, ammoApplicability, WEAPON_SPEC_COSTS } from '@/lib/Equipment';
+import {
+  AmmoApplicability, ammoApplicability, calculateAttackSpeed, WEAPON_SPEC_COSTS,
+} from '@/lib/Equipment';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonster, scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { CombatStyleType, getRangedDamageType } from '@/types/PlayerCombatStyle';
@@ -1865,46 +1864,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    * Returns the player's attack speed.
    */
   public getAttackSpeed(): number {
-    let attackSpeed = this.player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;
-
-    if (this.player.style.type === 'ranged' && this.player.style.stance === 'Rapid') {
-      attackSpeed -= 1;
-    } else if (CAST_STANCES.includes(this.player.style.stance)) {
-      if (this.player.equipment.weapon?.name === 'Harmonised nightmare staff'
-        && this.player.spell?.spellbook === 'standard'
-        && this.player.style.stance !== 'Manual Cast') {
-        attackSpeed = 4;
-      } else {
-        attackSpeed = 5;
-      }
-    }
-
-    // Giant rat (Scurrius)
-    if (this.monster.id === 7223 && this.player.style.stance !== 'Manual Cast') {
-      if (['Bone mace', 'Bone shortbow', 'Bone staff'].includes(this.player.equipment.weapon?.name || '')) {
-        attackSpeed = 1;
-      }
-    }
-
-    if (this.hasLeaguesMastery('melee', MeleeMastery.MELEE_5)
-    || this.hasLeaguesMastery('ranged', RangedMastery.RANGED_5)
-    || this.hasLeaguesMastery('magic', MagicMastery.MAGIC_5)) {
-      if (attackSpeed >= 5) {
-        attackSpeed = Math.trunc(attackSpeed / 2);
-      } else {
-        attackSpeed = Math.ceil(attackSpeed / 2);
-      }
-    } else if (this.hasLeaguesMastery('melee', MeleeMastery.MELEE_3)
-      || this.hasLeaguesMastery('ranged', RangedMastery.RANGED_3)
-      || this.hasLeaguesMastery('magic', MagicMastery.MAGIC_3)) {
-      attackSpeed = Math.trunc(attackSpeed * 4 / 5);
-    }
-
-    if (this.hasLeaguesMastery('magic', MagicMastery.MAGIC_2)) {
-      attackSpeed += this.player.leagues.five.ticksDelayed;
-    }
-
-    return attackSpeed;
+    return this.player.bonuses.attack_speed
+      ?? calculateAttackSpeed(this.player, this.monster);
   }
 
   public getExpectedAttackSpeed() {
