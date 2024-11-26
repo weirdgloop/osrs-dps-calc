@@ -55,7 +55,6 @@ export interface PlayerBonuses {
   ranged_str: number;
   magic_str: number;
   prayer: number;
-  attack_speed: number;
 }
 
 export interface PlayerDefensive {
@@ -94,6 +93,7 @@ export interface Player extends EquipmentStats {
    */
   boosts: PlayerSkills;
   equipment: PlayerEquipment;
+  attackSpeed: number;
   prayers: Prayer[];
   buffs: {
     /**

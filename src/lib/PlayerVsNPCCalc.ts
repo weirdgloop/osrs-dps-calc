@@ -1864,7 +1864,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    * Returns the player's attack speed.
    */
   public getAttackSpeed(): number {
-    return this.player.bonuses.attack_speed
+    return this.player.attackSpeed
       ?? calculateAttackSpeed(this.player, this.monster);
   }
 

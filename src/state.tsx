@@ -76,13 +76,13 @@ export const generateEmptyPlayer = (name?: string): Player => ({
     herblore: 0,
   },
   equipment: generateInitialEquipment(),
+  attackSpeed: DEFAULT_ATTACK_SPEED,
   prayers: [],
   bonuses: {
     str: 0,
     ranged_str: 0,
     magic_str: 0,
     prayer: 0,
-    attack_speed: DEFAULT_ATTACK_SPEED,
   },
   defensive: {
     stab: 0,

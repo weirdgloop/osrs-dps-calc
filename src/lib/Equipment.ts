@@ -11,7 +11,7 @@ import { sum } from 'd3-array';
 import equipment from '../../cdn/json/equipment.json';
 import generatedEquipmentAliases from './EquipmentAliases';
 
-export type EquipmentBonuses = Pick<Player, 'bonuses' | 'offensive' | 'defensive'>;
+export type EquipmentBonuses = Pick<Player, 'bonuses' | 'offensive' | 'defensive' | 'attackSpeed'>;
 
 /**
  * All available equipment that a player can equip.
@@ -287,7 +287,6 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
       magic_str: 0,
       ranged_str: 0,
       prayer: 0,
-      attack_speed: DEFAULT_ATTACK_SPEED,
     },
     offensive: {
       slash: 0,
@@ -303,6 +302,7 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
       ranged: 0,
       magic: 0,
     },
+    attackSpeed: DEFAULT_ATTACK_SPEED,
   };
 
   // canonicalize all items first, otherwise ammoApplicability etc calls may return incorrect results later
@@ -380,7 +380,7 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
     totals.bonuses.ranged_str += 1;
   }
 
-  totals.bonuses.attack_speed = calculateAttackSpeed(player, monster);
+  totals.attackSpeed = calculateAttackSpeed(player, monster);
 
   return totals;
 };
