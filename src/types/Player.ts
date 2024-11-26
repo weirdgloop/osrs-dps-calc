@@ -93,6 +93,7 @@ export interface Player extends EquipmentStats {
    */
   boosts: PlayerSkills;
   equipment: PlayerEquipment;
+  attackSpeed: number;
   prayers: Prayer[];
   buffs: {
     /**

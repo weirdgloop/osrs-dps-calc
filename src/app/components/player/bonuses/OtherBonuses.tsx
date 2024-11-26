@@ -6,6 +6,7 @@ import strength from '@/public/img/bonuses/strength.png';
 import rangedStrength from '@/public/img/bonuses/ranged_strength.png';
 import magicStrength from '@/public/img/bonuses/magic_strength.png';
 import prayer from '@/public/img/tabs/prayer.png';
+import attackSpeed from '@/public/img/bonuses/attack_speed.png';
 import { EquipmentBonuses } from '@/lib/Equipment';
 
 const OtherBonuses: React.FC<{ computedStats: EquipmentBonuses }> = observer(({ computedStats }) => {
@@ -48,6 +49,15 @@ const OtherBonuses: React.FC<{ computedStats: EquipmentBonuses }> = observer(({ 
           value={player.bonuses.prayer}
           className={`${(player.bonuses.prayer !== computedStats.bonuses.prayer) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
           onChange={(v) => store.updatePlayer({ bonuses: { prayer: v } })}
+        />
+        <AttributeInput
+          disabled={!prefs.manualMode}
+          name="Attack Speed"
+          image={attackSpeed}
+          value={player.attackSpeed}
+          className={`${(player.attackSpeed !== computedStats.attackSpeed) ? 'bg-yellow-200 dark:bg-yellow-500' : ''}`}
+          onChange={(v) => store.updatePlayer({ attackSpeed: v })}
+          min={1}
         />
       </div>
     </div>

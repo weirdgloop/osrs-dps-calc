@@ -1,12 +1,17 @@
 import { EquipmentPiece, Player, PlayerEquipment } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { keys } from '@/utils';
-import { BLOWPIPE_IDS, CAST_STANCES, TOMBS_OF_AMASCUT_MONSTER_IDS } from '@/lib/constants';
+import {
+  BLOWPIPE_IDS,
+  CAST_STANCES,
+  DEFAULT_ATTACK_SPEED,
+  TOMBS_OF_AMASCUT_MONSTER_IDS,
+} from '@/lib/constants';
 import { sum } from 'd3-array';
 import equipment from '../../cdn/json/equipment.json';
 import generatedEquipmentAliases from './EquipmentAliases';
 
-export type EquipmentBonuses = Pick<Player, 'bonuses' | 'offensive' | 'defensive'>;
+export type EquipmentBonuses = Pick<Player, 'bonuses' | 'offensive' | 'defensive' | 'attackSpeed'>;
 
 /**
  * All available equipment that a player can equip.
@@ -224,6 +229,57 @@ export const getCanonicalEquipment = (inputEq: PlayerEquipment) => {
   return canonicalized;
 };
 
+/**
+ * Calculates the player's attack speed using current stance and equipment.
+ */
+export const calculateAttackSpeed = (player: Player, monster: Monster): number => {
+  let attackSpeed = player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;
+
+  if (player.style.type === 'ranged' && player.style.stance === 'Rapid') {
+    attackSpeed -= 1;
+  } else if (CAST_STANCES.includes(player.style.stance)) {
+    if (player.equipment.weapon?.name === 'Harmonised nightmare staff'
+      && player.spell?.spellbook === 'standard'
+      && player.style.stance !== 'Manual Cast') {
+      attackSpeed = 4;
+    } else {
+      attackSpeed = 5;
+    }
+  }
+
+  // Giant rat (Scurrius)
+  if (monster.id === 7223 && player.style.stance !== 'Manual Cast') {
+    if (['Bone mace', 'Bone shortbow', 'Bone staff'].includes(player.equipment.weapon?.name || '')) {
+      attackSpeed = 1;
+    }
+  }
+
+  let activeRelic: number;
+  if (player.style.type === 'ranged') {
+    activeRelic = player.leagues.five.ranged;
+  } else if (player.style.type === 'magic') {
+    activeRelic = player.leagues.five.magic;
+  } else {
+    activeRelic = player.leagues.five.melee;
+  }
+
+  if (activeRelic >= 5) {
+    if (attackSpeed >= 5) {
+      attackSpeed = Math.trunc(attackSpeed / 2);
+    } else {
+      attackSpeed = Math.ceil(attackSpeed / 2);
+    }
+  } else if (activeRelic >= 3) {
+    attackSpeed = Math.trunc(attackSpeed * 4 / 5);
+  }
+
+  if (player.style.type === 'magic' && activeRelic >= 2) {
+    attackSpeed += player.leagues.five.ticksDelayed;
+  }
+
+  return Math.max(attackSpeed, 1);
+};
+
 export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monster): EquipmentBonuses => {
   const totals: EquipmentBonuses = {
     bonuses: {
@@ -246,6 +302,7 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
       ranged: 0,
       magic: 0,
     },
+    attackSpeed: DEFAULT_ATTACK_SPEED,
   };
 
   // canonicalize all items first, otherwise ammoApplicability etc calls may return incorrect results later
@@ -322,6 +379,8 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
     totals.offensive.ranged += 10;
     totals.bonuses.ranged_str += 1;
   }
+
+  totals.attackSpeed = calculateAttackSpeed(player, monster);
 
   return totals;
 };
