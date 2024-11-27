@@ -3762,7 +3762,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000014-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000008-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -26476,7 +26476,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-00000000-QINU`\"'"
+      "Slash '\"`UNIQ--ref-0000002A-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -79249,7 +79249,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 2522,
@@ -85864,7 +85867,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000001F-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000133-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -91076,6 +91079,49 @@
     "weakness": null
   },
   {
+    "id": 13602,
+    "name": "Tormented Demon",
+    "version": "4",
+    "image": "Tormented Demon (4).png",
+    "level": 450,
+    "speed": 6,
+    "style": [
+      "All"
+    ],
+    "size": 3,
+    "max_hit": "31 (auto) <br/> 45 (special)",
+    "skills": {
+      "atk": 255,
+      "def": 150,
+      "hp": 600,
+      "magic": 255,
+      "ranged": 255,
+      "str": 255
+    },
+    "offensive": {
+      "atk": 400,
+      "magic": 300,
+      "magic_str": 5,
+      "ranged": 300,
+      "ranged_str": 5,
+      "str": 10
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 68,
+      "magic": 5,
+      "heavy": 90,
+      "standard": 150,
+      "light": 140,
+      "slash": 175,
+      "stab": 75
+    },
+    "attributes": [
+      "demon"
+    ],
+    "weakness": null
+  },
+  {
     "id": 8512,
     "name": "Tormented Soul",
     "version": "",
@@ -93773,7 +93819,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000039-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-000000A8-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -93815,7 +93861,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000039-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-000000A8-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -95939,7 +95985,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000062-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-000000EA-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -95980,7 +96026,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000064-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-000000EC-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
