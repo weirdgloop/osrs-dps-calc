@@ -975,9 +975,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.hasLeaguesMastery('magic', MagicMastery.MAGIC_2)) {
-      // const delay = this.getAttackSpeed();
-      // const factor = Math.max(0, Math.min(8, delay));
-      // maxHit = this.trackFactor(DetailKey.MAX_HIT_FOCUS_BLASTS, maxHit, [20 + factor, 20]);
+      const delay = this.getAttackSpeed();
+      const factor = Math.max(0, Math.min(8, delay));
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_FOCUS_BLASTS, maxHit, [20 + factor, 20]);
     }
 
     if (this.hasLeaguesMastery('magic', MagicMastery.MAGIC_6)) {
