@@ -975,9 +975,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.hasLeaguesMastery('magic', MagicMastery.MAGIC_2)) {
-      const delay = this.getAttackSpeed();
-      const factor = Math.max(0, Math.min(8, delay));
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_FOCUS_BLASTS, maxHit, [20 + factor, 20]);
+      // const delay = this.getAttackSpeed();
+      // const factor = Math.max(0, Math.min(8, delay));
+      // maxHit = this.trackFactor(DetailKey.MAX_HIT_FOCUS_BLASTS, maxHit, [20 + factor, 20]);
     }
 
     if (this.hasLeaguesMastery('magic', MagicMastery.MAGIC_6)) {
@@ -1336,25 +1336,24 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       ]);
     }
 
-    if (this.hasLeaguesMastery('magic', MagicMastery.MAGIC_1)) {
-      const critThreshold = Math.trunc(max * 9 / 10);
-      dist = dist.transform((h) => {
-        if (h.damage > critThreshold) {
-          return HitDistribution.single(1.0, [new Hitsplat(Math.trunc(h.damage * 3 / 2), h.accurate)]);
-        }
-        return HitDistribution.single(1.0, [new Hitsplat(Math.trunc(h.damage), h.accurate)]);
-      });
-    }
-
-    if (this.hasLeaguesMastery('magic', MagicMastery.MAGIC_6)
-      && this.monster.inputs.monsterCurrentHp <= dist.getMax()) {
-      dist = new AttackDistribution([
-        HitDistribution.single(acc, [new Hitsplat(this.monster.inputs.monsterCurrentHp)]),
-      ]);
-    } else if ((this.player.style.type === 'magic' && ALWAYS_MAX_HIT_MONSTERS.magic.includes(this.monster.id))
+    const maxHitMonster = (this.player.style.type === 'magic' && ALWAYS_MAX_HIT_MONSTERS.magic.includes(this.monster.id))
       || (this.isUsingMeleeStyle() && ALWAYS_MAX_HIT_MONSTERS.melee.includes(this.monster.id))
-      || (this.player.style.type === 'ranged' && ALWAYS_MAX_HIT_MONSTERS.ranged.includes(this.monster.id))) {
-      // monsters that are always max hit no matter what
+      || (this.player.style.type === 'ranged' && ALWAYS_MAX_HIT_MONSTERS.ranged.includes(this.monster.id));
+
+    if (this.hasLeaguesMastery('magic', MagicMastery.MAGIC_1)) {
+      const hasMagic6 = this.hasLeaguesMastery('magic', MagicMastery.MAGIC_6);
+      const critThreshold = Math.trunc(max * 9 / 10);
+      const critMax = Math.trunc(max * 3 / 2);
+      dist = dist.transform((h) => {
+        // magic 1 & 6 have weird complications with forced max hits
+        const newDmg = h.damage >= critThreshold ? Math.trunc(h.damage * 3 / 2) : h.damage;
+        const newMax = h.damage >= critThreshold ? critMax : max;
+        if (maxHitMonster || (hasMagic6 && newMax >= this.monster.inputs.monsterCurrentHp)) {
+          return HitDistribution.single(1.0, [new Hitsplat(newMax)]);
+        }
+        return HitDistribution.single(1.0, [new Hitsplat(newDmg)]);
+      }, { transformInaccurate: maxHitMonster });
+    } else if (maxHitMonster) {
       return new AttackDistribution([HitDistribution.single(1.0, [new Hitsplat(max)])]);
     }
 
