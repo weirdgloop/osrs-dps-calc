@@ -114,7 +114,7 @@ const equipmentAliases = {
   21015: [28682], // Dinh's bulwark
   28902: [28906], // Dizana's max cape#Normal
   7158: [28051], // Dragon 2h sword
-  6739: [25378], // Dragon axe
+  6739: [25378, 30352], // Dragon axe
   1377: [28037], // Dragon battleaxe
   11840: [28055, 22234], // Dragon boots
   3140: [28065, 12414], // Dragon chainbody
@@ -127,14 +127,14 @@ const equipmentAliases = {
   12954: [24143, 27008, 19722], // Dragon defender#Normal
   11335: [12417], // Dragon full helm
   3204: [28049], // Dragon halberd
-  21028: [25373], // Dragon harpoon
+  21028: [25373, 30349], // Dragon harpoon
   21012: [25918, 25916], // Dragon hunter crossbow
   21895: [22244], // Dragon kiteshield
   1305: [28033], // Dragon longsword
   1434: [28027], // Dragon mace
   1149: [28057], // Dragon med helm
   11920: [23677, 12797], // Dragon pickaxe
-  23677: [25376], // Dragon pickaxe (or)
+  23677: [25376, 30351], // Dragon pickaxe (or)
   21892: [22242], // Dragon platebody
   4087: [28061, 12415], // Dragon platelegs
   4585: [28063, 12416], // Dragon plateskirt
