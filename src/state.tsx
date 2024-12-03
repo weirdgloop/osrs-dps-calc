@@ -496,6 +496,7 @@ class GlobalState implements State {
 
               const newId = LEAGUES_FIVE_MOCK_ID_MAPPINGS[eq.id];
               if (newId) {
+                eq.id = newId;
                 console.info('mock id migration', {
                   ix,
                   slot,
