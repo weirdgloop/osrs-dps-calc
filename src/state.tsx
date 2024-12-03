@@ -5,7 +5,15 @@ import React, { createContext, useContext } from 'react';
 import { PartialDeep } from 'type-fest';
 import * as localforage from 'localforage';
 import {
-  CalculatedLoadout, Calculator, IMPORT_VERSION, ImportableData, PlayerVsNPCCalculatedLoadout, Preferences, State, UI, UserIssue,
+  CalculatedLoadout,
+  Calculator,
+  IMPORT_VERSION,
+  ImportableData,
+  PlayerVsNPCCalculatedLoadout,
+  Preferences,
+  State,
+  UI,
+  UserIssue,
 } from '@/types/State';
 import merge from 'lodash.mergewith';
 import {
@@ -15,18 +23,32 @@ import { Monster } from '@/types/Monster';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { toast } from 'react-toastify';
 import {
-  fetchPlayerSkills, fetchShortlinkData, getCombatStylesForCategory, PotionMap,
+  fetchPlayerSkills,
+  fetchShortlinkData,
+  getCombatStylesForCategory,
+  keys,
+  PotionMap,
 } from '@/utils';
 import { ComputeBasicRequest, ComputeReverseRequest, WorkerRequestType } from '@/worker/CalcWorkerTypes';
 import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
 import { availableEquipment, calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { CalcWorker } from '@/worker/CalcWorker';
 import { spellByName } from '@/types/Spell';
-import { DEFAULT_ATTACK_SPEED, NATURES_REPRISAL_MOCK_ID, NUMBER_OF_LOADOUTS } from '@/lib/constants';
+import {
+  DEFAULT_ATTACK_SPEED,
+  LEAGUES_FIVE_MOCK_ID_MAPPINGS,
+  NATURES_REPRISAL_MOCK_ID,
+  NUMBER_OF_LOADOUTS,
+} from '@/lib/constants';
 import { defaultLeaguesState } from '@/lib/LeaguesV';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
-  ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, OVERHEAD_PRAYERS, Prayer,
+  ARM_PRAYERS,
+  BRAIN_PRAYERS,
+  DEFENSIVE_PRAYERS,
+  OFFENSIVE_PRAYERS,
+  OVERHEAD_PRAYERS,
+  Prayer,
 } from './enums/Prayer';
 import Potion from './enums/Potion';
 import { startPollingForRuneLite, WikiSyncer } from './wikisync/WikiSyncer';
@@ -460,6 +482,28 @@ class GlobalState implements State {
         data.loadouts.forEach((l) => {
           if (!l.leagues?.five) {
             l.leagues = { five: defaultLeaguesState() };
+          }
+        });
+
+      case 4:
+        data.loadouts.forEach((l, ix) => {
+          if (l.equipment) {
+            for (const slot of keys(l.equipment)) {
+              const eq = l.equipment[slot];
+              if (!eq?.id) {
+                continue;
+              }
+
+              const newId = LEAGUES_FIVE_MOCK_ID_MAPPINGS[eq.id];
+              if (newId) {
+                console.info('mock id migration', {
+                  ix,
+                  slot,
+                  oldId: eq.id,
+                  newId,
+                });
+              }
+            }
           }
         });
 
