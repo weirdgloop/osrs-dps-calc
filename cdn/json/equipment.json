@@ -8220,36 +8220,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Amulet of chemistry",
-    "id": 21163,
-    "version": "",
-    "slot": "neck",
-    "image": "Amulet of chemistry.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
     "name": "Amulet of defence",
     "id": 1729,
     "version": "",
@@ -9241,7 +9211,7 @@
   },
   {
     "name": "Amulet of the monarchs",
-    "id": 1000005,
+    "id": 30376,
     "version": "",
     "slot": "neck",
     "image": "Amulet of the monarchs.png",
@@ -14366,6 +14336,36 @@
       "crush": 66,
       "magic": -4,
       "ranged": 93
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Banker's briefcase",
+    "id": 30361,
+    "version": "",
+    "slot": "cape",
+    "image": "Banker's briefcase.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
     },
     "isTwoHanded": false
   },
@@ -33810,6 +33810,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Clue compass (item)",
+    "id": 30363,
+    "version": "",
+    "slot": "ammo",
+    "image": "Clue compass (item).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Clue hunter boots",
     "id": 19695,
     "version": "",
@@ -36901,7 +36931,7 @@
   },
   {
     "name": "Crystal blessing",
-    "id": 1000009,
+    "id": 30384,
     "version": "",
     "slot": "ammo",
     "image": "Crystal blessing.png",
@@ -38545,6 +38575,36 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Crystal dagger (perfected)",
+    "id": 30340,
+    "version": "",
+    "slot": "weapon",
+    "image": "Crystal dagger (perfected).png",
+    "speed": 0,
+    "category": "Stab Sword",
+    "bonuses": {
+      "str": 40,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 3
+    },
+    "offensive": {
+      "stab": 20,
+      "slash": 140,
+      "crush": -4,
+      "magic": 1,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 1,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -45061,7 +45121,7 @@
   },
   {
     "name": "Devil's element",
-    "id": 1000002,
+    "id": 30371,
     "version": "",
     "slot": "shield",
     "image": "Devil's element.png",
@@ -47012,9 +47072,39 @@
   {
     "name": "Dragon axe (or)",
     "id": 25378,
-    "version": "",
+    "version": "Trailblazer",
     "slot": "weapon",
     "image": "Dragon axe (or).png",
+    "speed": 5,
+    "category": "Axe",
+    "bonuses": {
+      "str": 42,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -2,
+      "slash": 38,
+      "crush": 32,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 1,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dragon axe (or)",
+    "id": 30352,
+    "version": "Trailblazer Reloaded",
+    "slot": "weapon",
+    "image": "Dragon axe (or) (Trailblazer Reloaded).png",
     "speed": 5,
     "category": "Axe",
     "bonuses": {
@@ -48392,9 +48482,39 @@
   {
     "name": "Dragon harpoon (or)",
     "id": 25373,
-    "version": "",
+    "version": "Trailblazer",
     "slot": "weapon",
     "image": "Dragon harpoon (or).png",
+    "speed": 5,
+    "category": "Stab Sword",
+    "bonuses": {
+      "str": 42,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 38,
+      "slash": 32,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 1,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dragon harpoon (or)",
+    "id": 30349,
+    "version": "Trailblazer Reloaded",
+    "slot": "weapon",
+    "image": "Dragon harpoon (or) (Trailblazer Reloaded).png",
     "speed": 5,
     "category": "Stab Sword",
     "bonuses": {
@@ -48714,7 +48834,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
+      "magic": 16,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -49352,9 +49472,39 @@
   {
     "name": "Dragon pickaxe (or) (Trailblazer)",
     "id": 25376,
-    "version": "",
+    "version": "Trailblazer",
     "slot": "weapon",
     "image": "Dragon pickaxe (or) (Trailblazer).png",
+    "speed": 5,
+    "category": "Pickaxe",
+    "bonuses": {
+      "str": 42,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 38,
+      "slash": -2,
+      "crush": 32,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 1,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dragon pickaxe (or) (Trailblazer)",
+    "id": 30351,
+    "version": "Trailblazer Reloaded",
+    "slot": "weapon",
+    "image": "Dragon pickaxe (or) (Trailblazer Reloaded).png",
     "speed": 5,
     "category": "Pickaxe",
     "bonuses": {
@@ -50941,15 +51091,15 @@
   },
   {
     "name": "Drygore blowpipe",
-    "id": 1000003,
-    "version": "Empty",
+    "id": 30374,
+    "version": "Charged",
     "slot": "weapon",
     "image": "Drygore blowpipe.png",
     "speed": 3,
     "category": "Thrown",
     "bonuses": {
       "str": 0,
-      "ranged_str": 0,
+      "ranged_str": 10,
       "magic_str": 0,
       "prayer": 0
     },
@@ -50967,19 +51117,19 @@
       "magic": 0,
       "ranged": 0
     },
-    "isTwoHanded": false
+    "isTwoHanded": true
   },
   {
     "name": "Drygore blowpipe",
-    "id": 1000004,
-    "version": "Loaded",
+    "id": 30373,
+    "version": "Empty",
     "slot": "weapon",
-    "image": "Drygore blowpipe.png",
+    "image": "Drygore blowpipe (empty).png",
     "speed": 3,
     "category": "Thrown",
     "bonuses": {
       "str": 0,
-      "ranged_str": 10,
+      "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
@@ -51390,6 +51540,126 @@
     "isTwoHanded": false
   },
   {
+    "name": "Echo ahrim's hood",
+    "id": 30445,
+    "version": "",
+    "slot": "head",
+    "image": "Echo ahrim's hood.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 15,
+      "slash": 13,
+      "crush": 16,
+      "magic": 6,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's robeskirt",
+    "id": 30449,
+    "version": "",
+    "slot": "legs",
+    "image": "Echo ahrim's robeskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 22,
+      "ranged": -7
+    },
+    "defensive": {
+      "stab": 33,
+      "slash": 30,
+      "crush": 36,
+      "magic": 22,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's robetop",
+    "id": 30447,
+    "version": "",
+    "slot": "body",
+    "image": "Echo ahrim's robetop.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 52,
+      "slash": 37,
+      "crush": 63,
+      "magic": 30,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo axe",
+    "id": 25110,
+    "version": "",
+    "slot": "weapon",
+    "image": "Echo axe.png",
+    "speed": 5,
+    "category": "Axe",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Echo boots",
     "id": 28945,
     "version": "",
@@ -51416,6 +51686,216 @@
       "crush": 32,
       "magic": -3,
       "ranged": 24
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo harpoon",
+    "id": 25114,
+    "version": "",
+    "slot": "weapon",
+    "image": "Echo harpoon.png",
+    "speed": 5,
+    "category": "Stab Sword",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo pickaxe",
+    "id": 25112,
+    "version": "",
+    "slot": "weapon",
+    "image": "Echo pickaxe.png",
+    "speed": 5,
+    "category": "Pickaxe",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo venator bow",
+    "id": 30434,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Echo venator bow.png",
+    "speed": 5,
+    "category": "Bow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 25,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 90
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Echo venator bow",
+    "id": 30434,
+    "version": "Uncharged",
+    "slot": "weapon",
+    "image": "Echo venator bow (uncharged).png",
+    "speed": 5,
+    "category": "Bow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 25,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 90
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Echo virtus mask",
+    "id": 30437,
+    "version": "",
+    "slot": "head",
+    "image": "Echo virtus mask.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 20,
+      "prayer": 1
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 8,
+      "ranged": -3
+    },
+    "defensive": {
+      "stab": 15,
+      "slash": 14,
+      "crush": 16,
+      "magic": 6,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo virtus robe bottom",
+    "id": 30441,
+    "version": "",
+    "slot": "legs",
+    "image": "Echo virtus robe bottom.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 20,
+      "prayer": 1
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 26,
+      "ranged": -9
+    },
+    "defensive": {
+      "stab": 31,
+      "slash": 28,
+      "crush": 34,
+      "magic": 22,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo virtus robe top",
+    "id": 30439,
+    "version": "",
+    "slot": "body",
+    "image": "Echo virtus robe top.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 20,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 35,
+      "ranged": -11
+    },
+    "defensive": {
+      "stab": 47,
+      "slash": 38,
+      "crush": 56,
+      "magic": 31,
+      "ranged": 0
     },
     "isTwoHanded": false
   },
@@ -53761,7 +54241,7 @@
   },
   {
     "name": "Emperor ring",
-    "id": 1000006,
+    "id": 30378,
     "version": "",
     "slot": "ring",
     "image": "Emperor ring.png",
@@ -56885,6 +57365,36 @@
     "version": "Transgender",
     "slot": "head",
     "image": "Flower crown (transgender).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Forager's pouch",
+    "id": 30357,
+    "version": "",
+    "slot": "shield",
+    "image": "Forager's pouch.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -60451,7 +60961,7 @@
   },
   {
     "name": "Gloves of the damned",
-    "id": 1000007,
+    "id": 30380,
     "version": "",
     "slot": "hands",
     "image": "Gloves of the damned.png",
@@ -72510,6 +73020,66 @@
     "isTwoHanded": false
   },
   {
+    "name": "Infernal axe (or) (Trailblazer Reloaded)",
+    "id": 30347,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Infernal axe (or) (Trailblazer Reloaded).png",
+    "speed": 5,
+    "category": "Axe",
+    "bonuses": {
+      "str": 42,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -2,
+      "slash": 38,
+      "crush": 32,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 1,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Infernal axe (or) (Trailblazer Reloaded)",
+    "id": 30348,
+    "version": "Uncharged",
+    "slot": "weapon",
+    "image": "Infernal axe (or) (Trailblazer Reloaded).png",
+    "speed": 5,
+    "category": "Axe",
+    "bonuses": {
+      "str": 42,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -2,
+      "slash": 38,
+      "crush": 32,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 1,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Infernal cape",
     "id": 21287,
     "version": "Broken",
@@ -72695,6 +73265,66 @@
     "version": "Uncharged",
     "slot": "weapon",
     "image": "Infernal harpoon (uncharged) (Trailblazer).png",
+    "speed": 5,
+    "category": "Stab Sword",
+    "bonuses": {
+      "str": 42,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 38,
+      "slash": 32,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 1,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Infernal harpoon (or) (Trailblazer Reloaded)",
+    "id": 30342,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Infernal harpoon (or) (Trailblazer Reloaded).png",
+    "speed": 5,
+    "category": "Stab Sword",
+    "bonuses": {
+      "str": 42,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 38,
+      "slash": 32,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 1,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Infernal harpoon (or) (Trailblazer Reloaded)",
+    "id": 30343,
+    "version": "Uncharged",
+    "slot": "weapon",
+    "image": "Infernal harpoon (or) (Trailblazer Reloaded).png",
     "speed": 5,
     "category": "Stab Sword",
     "bonuses": {
@@ -72935,6 +73565,66 @@
     "version": "Uncharged",
     "slot": "weapon",
     "image": "Infernal pickaxe (uncharged) (Trailblazer).png",
+    "speed": 5,
+    "category": "Pickaxe",
+    "bonuses": {
+      "str": 42,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 38,
+      "slash": -2,
+      "crush": 32,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 1,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Infernal pickaxe (or) (Trailblazer Reloaded)",
+    "id": 30345,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Infernal harpoon (or) (Trailblazer Reloaded).png",
+    "speed": 5,
+    "category": "Pickaxe",
+    "bonuses": {
+      "str": 42,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 38,
+      "slash": -2,
+      "crush": 32,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 1,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Infernal pickaxe (or) (Trailblazer Reloaded)",
+    "id": 30346,
+    "version": "Uncharged",
+    "slot": "weapon",
+    "image": "Infernal harpoon (or) (Trailblazer Reloaded).png",
     "speed": 5,
     "category": "Pickaxe",
     "bonuses": {
@@ -78808,36 +79498,6 @@
       "ranged": -1
     },
     "isTwoHanded": false
-  },
-  {
-    "name": "Leaf-bladed spear",
-    "id": 4158,
-    "version": "",
-    "slot": "weapon",
-    "image": "Leaf-bladed spear.png",
-    "speed": 5,
-    "category": "Spear",
-    "bonuses": {
-      "str": 50,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 47,
-      "slash": 42,
-      "crush": 36,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 1,
-      "slash": 1,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
   },
   {
     "name": "Leaf-bladed sword",
@@ -88380,38 +89040,8 @@
     "isTwoHanded": false
   },
   {
-    "name": "Nature's Reprisal",
-    "id": 1000013,
-    "version": "Uncharged",
-    "slot": "weapon",
-    "image": "Nature's reprisal.png",
-    "speed": 5,
-    "category": "Multi-Style",
-    "bonuses": {
-      "str": 60,
-      "ranged_str": 20,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 70,
-      "slash": 0,
-      "crush": 0,
-      "magic": 15,
-      "ranged": 30
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
     "name": "Nature's reprisal",
-    "id": 1000012,
+    "id": 30390,
     "version": "Charged",
     "slot": "weapon",
     "image": "Nature's reprisal.png",
@@ -88437,7 +89067,37 @@
       "magic": 0,
       "ranged": 0
     },
-    "isTwoHanded": false
+    "isTwoHanded": true
+  },
+  {
+    "name": "Nature's reprisal",
+    "id": 30392,
+    "version": "Uncharged",
+    "slot": "weapon",
+    "image": "Nature's reprisal (uncharged).png",
+    "speed": 5,
+    "category": "Multi-Style",
+    "bonuses": {
+      "str": 103,
+      "ranged_str": 92,
+      "magic_str": 120,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 95,
+      "slash": 0,
+      "crush": 0,
+      "magic": 45,
+      "ranged": 155
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
   },
   {
     "name": "Navy cavalier",
@@ -95532,6 +96192,636 @@
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 2
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Raging echoes adamant trophy",
+    "id": 30469,
+    "version": "",
+    "slot": "weapon",
+    "image": "Raging echoes adamant trophy.png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": -10,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -100,
+      "slash": -100,
+      "crush": -50,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Raging echoes banner",
+    "id": 30430,
+    "version": "",
+    "slot": "weapon",
+    "image": "Raging echoes banner.png",
+    "speed": 4,
+    "category": "Banner",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Raging echoes boots (t1)",
+    "id": 30410,
+    "version": "",
+    "slot": "feet",
+    "image": "Raging echoes boots (t1).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Raging echoes boots (t2)",
+    "id": 30418,
+    "version": "",
+    "slot": "feet",
+    "image": "Raging echoes boots (t2).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Raging echoes boots (t3)",
+    "id": 30426,
+    "version": "",
+    "slot": "feet",
+    "image": "Raging echoes boots (t3).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Raging echoes bronze trophy",
+    "id": 30477,
+    "version": "",
+    "slot": "shield",
+    "image": "Raging echoes bronze trophy.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Raging echoes cane",
+    "id": 30428,
+    "version": "",
+    "slot": "weapon",
+    "image": "Raging echoes cane.png",
+    "speed": 5,
+    "category": "Spiked",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Raging echoes dragon trophy",
+    "id": 30465,
+    "version": "",
+    "slot": "weapon",
+    "image": "Raging echoes dragon trophy.png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": -10,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -100,
+      "slash": -100,
+      "crush": -50,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Raging echoes hat (t1)",
+    "id": 30404,
+    "version": "",
+    "slot": "head",
+    "image": "Raging echoes hat (t1).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Raging echoes hat (t2)",
+    "id": 30412,
+    "version": "",
+    "slot": "head",
+    "image": "Raging echoes hat (t2).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Raging echoes hat (t3)",
+    "id": 30420,
+    "version": "",
+    "slot": "head",
+    "image": "Raging echoes hat (t3).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Raging echoes iron trophy",
+    "id": 30475,
+    "version": "",
+    "slot": "shield",
+    "image": "Raging echoes iron trophy.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Raging echoes mithril trophy",
+    "id": 30471,
+    "version": "",
+    "slot": "shield",
+    "image": "Raging echoes mithril trophy.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Raging echoes robeskirt (t1)",
+    "id": 30408,
+    "version": "",
+    "slot": "legs",
+    "image": "Raging echoes robeskirt (t1).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Raging echoes robeskirt (t2)",
+    "id": 30416,
+    "version": "",
+    "slot": "legs",
+    "image": "Raging echoes robeskirt (t2).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Raging echoes robeskirt (t3)",
+    "id": 30424,
+    "version": "",
+    "slot": "legs",
+    "image": "Raging echoes robeskirt (t3).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Raging echoes rune trophy",
+    "id": 30467,
+    "version": "",
+    "slot": "weapon",
+    "image": "Raging echoes rune trophy.png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": -10,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -100,
+      "slash": -100,
+      "crush": -50,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Raging echoes steel trophy",
+    "id": 30473,
+    "version": "",
+    "slot": "shield",
+    "image": "Raging echoes steel trophy.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Raging echoes top (t1)",
+    "id": 30406,
+    "version": "",
+    "slot": "body",
+    "image": "Raging echoes top (t1).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Raging echoes top (t2)",
+    "id": 30414,
+    "version": "",
+    "slot": "body",
+    "image": "Raging echoes top (t2).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Raging echoes top (t3)",
+    "id": 30422,
+    "version": "",
+    "slot": "body",
+    "image": "Raging echoes top (t3).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
     },
     "offensive": {
       "stab": 0,
@@ -113760,66 +115050,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Sled",
-    "id": 4083,
-    "version": "Unwaxed",
-    "slot": "weapon",
-    "image": "Sled (unwaxed).png",
-    "speed": 4,
-    "category": "Unarmed",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Sled",
-    "id": 4084,
-    "version": "Waxed",
-    "slot": "weapon",
-    "image": "Sled.png",
-    "speed": 4,
-    "category": "Unarmed",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
     "name": "Sled (2020 Christmas event)",
     "id": 25282,
     "version": "",
@@ -120871,12 +122101,12 @@
   },
   {
     "name": "Sunlight spear",
-    "id": 1000001,
+    "id": 30369,
     "version": "",
     "slot": "weapon",
     "image": "Sunlight spear.png",
     "speed": 5,
-    "category": "Spear",
+    "category": "Stab Sword",
     "bonuses": {
       "str": 113,
       "ranged_str": 0,
@@ -120897,11 +122127,11 @@
       "magic": 28,
       "ranged": 70
     },
-    "isTwoHanded": false
+    "isTwoHanded": true
   },
   {
     "name": "Sunlit bracers",
-    "id": 1000010,
+    "id": 30386,
     "version": "",
     "slot": "hands",
     "image": "Sunlit bracers.png",
@@ -123451,7 +124681,7 @@
   },
   {
     "name": "The dogsword",
-    "id": 1000000,
+    "id": 30367,
     "version": "",
     "slot": "weapon",
     "image": "The dogsword.png",
@@ -123601,7 +124831,7 @@
   },
   {
     "name": "Thousand-dragon ward",
-    "id": 1000008,
+    "id": 30382,
     "version": "",
     "slot": "shield",
     "image": "Thousand-dragon ward.png",
@@ -123661,7 +124891,7 @@
   },
   {
     "name": "Thunder khopesh",
-    "id": 1000011,
+    "id": 30388,
     "version": "",
     "slot": "weapon",
     "image": "Thunder khopesh.png",
