@@ -37,7 +37,6 @@ import { spellByName } from '@/types/Spell';
 import {
   DEFAULT_ATTACK_SPEED,
   LEAGUES_FIVE_MOCK_ID_MAPPINGS,
-  NATURES_REPRISAL_MOCK_ID,
   NUMBER_OF_LOADOUTS,
 } from '@/lib/constants';
 import { defaultLeaguesState } from '@/lib/LeaguesV';
@@ -473,7 +472,7 @@ class GlobalState implements State {
 
       case 2:
         data.loadouts.forEach((l) => {
-          if (l.equipment?.weapon?.id === NATURES_REPRISAL_MOCK_ID) {
+          if (l.equipment?.weapon?.id === 1000012) { // old mock version of Nature's reprisal
             l.equipment.weapon.category = EquipmentCategory.MULTISTYLE;
           }
         });
