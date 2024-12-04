@@ -70,6 +70,7 @@ const TombsOfAmascutMonsterContainer: React.FC<ITombsOfAmascutMonsterContainerPr
             max={600}
             step={5}
             onChange={(v) => store.updateMonster({ inputs: { toaInvocationLevel: v } })}
+            required
           />
         </div>
       </div>
@@ -87,6 +88,7 @@ const TombsOfAmascutMonsterContainer: React.FC<ITombsOfAmascutMonsterContainerPr
               max={6}
               step={1}
               onChange={(v) => store.updateMonster({ inputs: { toaPathLevel: v } })}
+              required
             />
           </div>
         </div>
@@ -170,6 +172,7 @@ const MonsterContainer: React.FC = observer(() => {
               min={1}
               max={20}
               onChange={(s) => store.updateMonster({ speed: s })}
+              required
             />
           </div>
         </div>,
@@ -183,6 +186,7 @@ const MonsterContainer: React.FC = observer(() => {
               min={1}
               max={10}
               onChange={(s) => store.updateMonster({ size: s })}
+              required
             />
           </div>
         </div>,
@@ -232,6 +236,7 @@ const MonsterContainer: React.FC = observer(() => {
               max={100}
               step={1}
               onChange={(v) => store.updateMonster({ inputs: { partySize: v } })}
+              required
             />
           </div>
         </div>,
@@ -253,6 +258,7 @@ const MonsterContainer: React.FC = observer(() => {
               max={126}
               step={1}
               onChange={(v) => store.updateMonster({ inputs: { partyMaxCombatLevel: v } })}
+              required
             />
           </div>
         </div>,
@@ -272,6 +278,7 @@ const MonsterContainer: React.FC = observer(() => {
               max={99}
               step={1}
               onChange={(v) => store.updateMonster({ inputs: { partyMaxHpLevel: v } })}
+              required
             />
           </div>
         </div>,
@@ -293,6 +300,7 @@ const MonsterContainer: React.FC = observer(() => {
               max={99}
               step={1}
               onChange={(v) => store.updateMonster({ inputs: { partyAvgMiningLevel: v } })}
+              required
             />
           </div>
         </div>,
@@ -333,6 +341,7 @@ const MonsterContainer: React.FC = observer(() => {
             max={displayMonster.skills.hp}
             step={1}
             onChange={(v) => store.updateMonster({ inputs: { monsterCurrentHp: v } })}
+            required
           />
         </div>
       </div>,

@@ -126,6 +126,7 @@ const WeaknessBadge: React.FC<IWeaknessBadgeProps> = (props) => {
               max={1000}
               value={severity || 0}
               step={1}
+              required
             />
             <p>%</p>
           </div>
