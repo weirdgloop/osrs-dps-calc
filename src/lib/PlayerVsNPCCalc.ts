@@ -1987,7 +1987,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         accum += k * v;
       }
 
-      if (probAccum < TTK_DIST_EPSILON) {
+      if (probAccum < (1 - TTK_DIST_EPSILON)) {
         return undefined;
       }
       return (accum + this.getExpectedAttackSpeed() - 1) * SECONDS_PER_TICK;
