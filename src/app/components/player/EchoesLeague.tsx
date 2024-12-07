@@ -104,6 +104,42 @@ const EchoesLeague: React.FC = observer(() => {
         </div>
       )}
 
+      {(data.melee > 0) && (
+        <div className="ml-1 my-4 text-gray-300 text-sm justify-center">
+          Melee:
+          <ul className="list-disc ml-5">
+            {MELEE_MASTERIES.slice(0, data.melee).map((mastery, i) => (
+              // each index is always the same string
+              // eslint-disable-next-line react/no-array-index-key
+              <li className="list-" key={i}>{mastery.description}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {(data.ranged > 0) && (
+        <div className="ml-1 my-4 text-gray-300 text-sm justify-center">
+          Ranged:
+          <ul className="list-disc ml-5">
+            {RANGED_MASTERIES.slice(0, data.ranged).map((mastery, i) => (
+              // each index is always the same string
+              // eslint-disable-next-line react/no-array-index-key
+              <li className="list-" key={i}>{mastery.description}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {(data.magic > 0) && (
+        <div className="ml-1 my-4 text-gray-300 text-sm justify-center">
+          Magic:
+          <ul className="list-disc ml-5">
+            {MAGIC_MASTERIES.slice(0, data.magic).map((mastery, i) => (
+              // each index is always the same string
+              // eslint-disable-next-line react/no-array-index-key
+              <li className="list-" key={i}>{mastery.description}</li>
+            ))}
+          </ul>
+        </div>
+      )}
       {(passives.length > 0) && (
         <div className="ml-1 my-4 text-gray-300 text-sm justify-center">
           Passives:
