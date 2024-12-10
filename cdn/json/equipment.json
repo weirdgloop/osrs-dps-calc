@@ -71700,6 +71700,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Ice gloves",
+    "id": 1580,
+    "version": "",
+    "slot": "hands",
+    "image": "Ice gloves.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 3,
+      "crush": 4,
+      "magic": 0,
+      "ranged": 2
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Iced gingerbread shield",
     "id": 24440,
     "version": "Blue",
@@ -79468,6 +79498,36 @@
       "ranged": -1
     },
     "isTwoHanded": false
+  },
+  {
+    "name": "Leaf-bladed spear",
+    "id": 4158,
+    "version": "",
+    "slot": "weapon",
+    "image": "Leaf-bladed spear.png",
+    "speed": 5,
+    "category": "Spear",
+    "bonuses": {
+      "str": 50,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 47,
+      "slash": 42,
+      "crush": 36,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 1,
+      "slash": 1,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
   },
   {
     "name": "Leaf-bladed sword",
