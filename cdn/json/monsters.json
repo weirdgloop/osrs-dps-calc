@@ -3762,7 +3762,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000069-QINU`\"' Magic"
+      "'\"`UNIQ--ref-0000003C-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -23723,6 +23723,47 @@
     "weakness": null
   },
   {
+    "id": 7850,
+    "name": "Dawn (Echo)",
+    "version": "",
+    "image": "Dawn (Echo).png",
+    "level": 228,
+    "speed": 6,
+    "style": [
+      "Slash"
+    ],
+    "size": 0,
+    "max_hit": 0,
+    "skills": {
+      "atk": 140,
+      "def": 100,
+      "hp": 450,
+      "magic": 100,
+      "ranged": 140,
+      "str": 140
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
     "id": 3021,
     "name": "Deadly red spider",
     "version": "",
@@ -24157,6 +24198,47 @@
       "magic": 0,
       "ranged": 117,
       "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 7849,
+    "name": "Definitely Not Dusk",
+    "version": "",
+    "image": "Definitely Not Dusk.png",
+    "level": 248,
+    "speed": 6,
+    "style": [
+      "Slash"
+    ],
+    "size": 0,
+    "max_hit": "15",
+    "skills": {
+      "atk": 200,
+      "def": 100,
+      "hp": 450,
+      "magic": 140,
+      "ranged": 140,
+      "str": 140
     },
     "offensive": {
       "atk": 0,
@@ -26464,6 +26546,47 @@
       "light": 88,
       "slash": 134,
       "stab": 148
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 7888,
+    "name": "Dusk (Echo)",
+    "version": "",
+    "image": "Dusk (Echo).png",
+    "level": 656,
+    "speed": 6,
+    "style": [
+      "Slash"
+    ],
+    "size": 0,
+    "max_hit": 0,
+    "skills": {
+      "atk": 345,
+      "def": 187,
+      "hp": 1080,
+      "magic": 262,
+      "ranged": 387,
+      "str": 287
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
     },
     "attributes": [],
     "weakness": null
@@ -93837,7 +93960,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000007E-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000095-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -93879,7 +94002,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000007E-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000095-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -96003,7 +96126,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000011-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000028-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -96044,7 +96167,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000013-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000002A-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
