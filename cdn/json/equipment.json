@@ -124860,6 +124860,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Thousand-dragon ward",
+    "id": 30382,
+    "version": "",
+    "slot": "shield",
+    "image": "Thousand-dragon ward.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 12,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 6
+    },
+    "offensive": {
+      "stab": 35,
+      "slash": 35,
+      "crush": 35,
+      "magic": 15,
+      "ranged": 25
+    },
+    "defensive": {
+      "stab": 50,
+      "slash": 55,
+      "crush": 53,
+      "magic": 40,
+      "ranged": 52
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Three barrels",
     "id": 8862,
     "version": "",
