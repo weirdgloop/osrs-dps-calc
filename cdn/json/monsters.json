@@ -935,7 +935,7 @@
     "id": 9573,
     "name": "Acidic Bloodveld",
     "version": "",
-    "image": "Acidic Bloodveld.png",
+    "image": "Acidic Bloodveld (Christmas).png",
     "level": 56,
     "speed": 4,
     "style": [
@@ -3762,7 +3762,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-0000003C-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000017-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -12492,7 +12492,7 @@
     "id": 3138,
     "name": "Bloodveld",
     "version": "God Wars",
-    "image": "Bloodveld (God Wars Dungeon).png",
+    "image": "Bloodveld (God Wars Dungeon, Christmas).png",
     "level": 81,
     "speed": 4,
     "style": [
@@ -12535,7 +12535,7 @@
     "id": 484,
     "name": "Bloodveld",
     "version": "Standard",
-    "image": "Bloodveld.png",
+    "image": "Bloodveld (Christmas).png",
     "level": 76,
     "speed": 4,
     "style": [
@@ -16553,7 +16553,7 @@
     "id": 5862,
     "name": "Cerberus",
     "version": "",
-    "image": "Cerberus.png",
+    "image": "Cerberus (Christmas).png",
     "level": 318,
     "speed": 6,
     "style": [
@@ -18184,7 +18184,7 @@
     "id": 319,
     "name": "Corporeal Beast",
     "version": "",
-    "image": "Corporeal Beast.png",
+    "image": "Corporeal Beast (Christmas).png",
     "level": 785,
     "speed": 4,
     "style": [
@@ -19855,7 +19855,7 @@
     "id": 4184,
     "name": "Crocodile",
     "version": "",
-    "image": "Crocodile.png",
+    "image": "Crocodile (Christmas).png",
     "level": 63,
     "speed": 4,
     "style": [
@@ -23232,7 +23232,7 @@
     "id": 320,
     "name": "Dark energy core",
     "version": "",
-    "image": "Dark energy core.png",
+    "image": "Dark energy core (Christmas).png",
     "level": 75,
     "speed": 2,
     "style": [
@@ -23713,47 +23713,6 @@
       "flat_armour": 0,
       "crush": 0,
       "magic": 80,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "weakness": null
-  },
-  {
-    "id": 7850,
-    "name": "Dawn (Echo)",
-    "version": "",
-    "image": "Dawn (Echo).png",
-    "level": 228,
-    "speed": 6,
-    "style": [
-      "Slash"
-    ],
-    "size": 0,
-    "max_hit": 0,
-    "skills": {
-      "atk": 140,
-      "def": 100,
-      "hp": 450,
-      "magic": 100,
-      "ranged": 140,
-      "str": 140
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
       "heavy": 0,
       "standard": 0,
       "light": 0,
@@ -26546,47 +26505,6 @@
       "light": 88,
       "slash": 134,
       "stab": 148
-    },
-    "attributes": [],
-    "weakness": null
-  },
-  {
-    "id": 7888,
-    "name": "Dusk (Echo)",
-    "version": "",
-    "image": "Dusk (Echo).png",
-    "level": 656,
-    "speed": 6,
-    "style": [
-      "Slash"
-    ],
-    "size": 0,
-    "max_hit": 0,
-    "skills": {
-      "atk": 345,
-      "def": 187,
-      "hp": 1080,
-      "magic": 262,
-      "ranged": 387,
-      "str": 287
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
     },
     "attributes": [],
     "weakness": null
@@ -35056,7 +34974,7 @@
     "id": 5779,
     "name": "Giant Mole",
     "version": "",
-    "image": "Giant Mole.png",
+    "image": "Giant Mole (Christmas).png",
     "level": 230,
     "speed": 4,
     "style": [
@@ -38543,7 +38461,7 @@
     "id": 7551,
     "name": "Great Olm",
     "version": "Head",
-    "image": "Great Olm.png",
+    "image": "Great Olm (Christmas).png",
     "level": 1043,
     "speed": 4,
     "style": [
@@ -38588,7 +38506,7 @@
     "id": 7552,
     "name": "Great Olm",
     "version": "Left claw",
-    "image": "Great Olm.png",
+    "image": "Great Olm (Christmas).png",
     "level": 750,
     "speed": 4,
     "style": [
@@ -38632,7 +38550,7 @@
     "id": 7550,
     "name": "Great Olm",
     "version": "Right claw",
-    "image": "Great Olm.png",
+    "image": "Great Olm (Christmas).png",
     "level": 549,
     "speed": 4,
     "style": [
@@ -42745,7 +42663,7 @@
     "id": 3254,
     "name": "Guard",
     "version": "Edgeville 1",
-    "image": "Guard (Edgeville).png",
+    "image": "Guard (Edgeville, 1, Christmas).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -42786,7 +42704,7 @@
     "id": 11922,
     "name": "Guard",
     "version": "Edgeville 2",
-    "image": "Guard (Edgeville, 2).png",
+    "image": "Guard (Edgeville, 2, Christmas).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -42827,7 +42745,7 @@
     "id": 11923,
     "name": "Guard",
     "version": "Edgeville 3",
-    "image": "Guard (Edgeville, 3).png",
+    "image": "Guard (Edgeville, 3, Christmas).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -42868,7 +42786,7 @@
     "id": 11924,
     "name": "Guard",
     "version": "Edgeville 4",
-    "image": "Guard (Edgeville, 4).png",
+    "image": "Guard (Edgeville, 4, Christmas).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -42909,7 +42827,7 @@
     "id": 3271,
     "name": "Guard",
     "version": "Falador (battleaxe, 1)",
-    "image": "Guard (Falador, battleaxe).png",
+    "image": "Guard (Falador, battleaxe, 1, Christmas).png",
     "level": 19,
     "speed": 6,
     "style": [
@@ -42950,7 +42868,7 @@
     "id": 11946,
     "name": "Guard",
     "version": "Falador (battleaxe, 2)",
-    "image": "Guard (Falador, battleaxe, 2).png",
+    "image": "Guard (Falador, battleaxe, 2, Christmas).png",
     "level": 19,
     "speed": 6,
     "style": [
@@ -42991,7 +42909,7 @@
     "id": 3270,
     "name": "Guard",
     "version": "Falador (crossbow, 1)",
-    "image": "Guard (Falador, crossbow).png",
+    "image": "Guard (Falador, crossbow, 1, Christmas).png",
     "level": 22,
     "speed": 6,
     "style": [
@@ -43032,7 +42950,7 @@
     "id": 11945,
     "name": "Guard",
     "version": "Falador (crossbow, 2)",
-    "image": "Guard (Falador, crossbow, 2).png",
+    "image": "Guard (Falador, crossbow, 2, Christmas).png",
     "level": 22,
     "speed": 6,
     "style": [
@@ -43073,7 +42991,7 @@
     "id": 11947,
     "name": "Guard",
     "version": "Falador (longbow, 1)",
-    "image": "Guard (Falador, longbow).png",
+    "image": "Guard (Falador, longbow, 1, Christmas).png",
     "level": 22,
     "speed": 6,
     "style": [
@@ -43114,7 +43032,7 @@
     "id": 3273,
     "name": "Guard",
     "version": "Falador (longbow, 2)",
-    "image": "Guard (Falador, longbow, 2).png",
+    "image": "Guard (Falador, longbow, 2, Christmas).png",
     "level": 22,
     "speed": 6,
     "style": [
@@ -43155,7 +43073,7 @@
     "id": 3274,
     "name": "Guard",
     "version": "Falador (longbow, 3)",
-    "image": "Guard (Falador, longbow, 3).png",
+    "image": "Guard (Falador, longbow, 3, Christmas).png",
     "level": 22,
     "speed": 6,
     "style": [
@@ -43196,7 +43114,7 @@
     "id": 3269,
     "name": "Guard",
     "version": "Falador (sword, 1)",
-    "image": "Guard (Falador, sword).png",
+    "image": "Guard (Falador, sword, 1, Christmas).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -43237,7 +43155,7 @@
     "id": 11942,
     "name": "Guard",
     "version": "Falador (sword, 2)",
-    "image": "Guard (Falador, sword, 2).png",
+    "image": "Guard (Falador, sword, 2, Christmas).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -43278,7 +43196,7 @@
     "id": 11943,
     "name": "Guard",
     "version": "Falador (sword, 3)",
-    "image": "Guard (Falador, sword, 3).png",
+    "image": "Guard (Falador, sword, 3, Christmas).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -43319,7 +43237,7 @@
     "id": 11944,
     "name": "Guard",
     "version": "Falador (sword, 4)",
-    "image": "Guard (Falador, sword, 4).png",
+    "image": "Guard (Falador, sword, 4, Christmas).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -43360,7 +43278,7 @@
     "id": 11946,
     "name": "Guard",
     "version": "Falador (unarmed)",
-    "image": "Guard (Falador, unarmed).png",
+    "image": "Guard (Falador, unarmed, Christmas).png",
     "level": 19,
     "speed": 6,
     "style": [
@@ -48223,7 +48141,7 @@
     "id": 5007,
     "name": "Imp",
     "version": "Regular",
-    "image": "Imp.png",
+    "image": "Imp (Christmas).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -49811,7 +49729,7 @@
     "id": 7691,
     "name": "Jal-Nib",
     "version": "",
-    "image": "Jal-Nib.png",
+    "image": "Jal-Nib (Christmas).png",
     "level": 32,
     "speed": 4,
     "style": [
@@ -53163,7 +53081,7 @@
     "id": 239,
     "name": "King Black Dragon",
     "version": "",
-    "image": "King Black Dragon.png",
+    "image": "King Black Dragon (Christmas).png",
     "level": 276,
     "speed": 4,
     "style": [
@@ -54653,7 +54571,7 @@
     "id": 494,
     "name": "Kraken",
     "version": "Kraken",
-    "image": "Kraken.png",
+    "image": "Kraken (Christmas).png",
     "level": 291,
     "speed": 4,
     "style": [
@@ -56163,7 +56081,7 @@
       "Ranged"
     ],
     "size": 3,
-    "max_hit": "47<sup class=\"noprint fact\">&#91;<span class=\"fact-text\" title=\"May be higher than 47\">confirmation needed</span>&#93;</sup>Category:Pages with unsourced statements",
+    "max_hit": "55<sup class=\"noprint fact\">&#91;<span class=\"fact-text\" title=\"May be higher than 55\">confirmation needed</span>&#93;</sup>Category:Pages with unsourced statements",
     "skills": {
       "atk": 130,
       "def": 210,
@@ -57331,7 +57249,7 @@
     "id": 6604,
     "name": "Mammoth",
     "version": "Normal",
-    "image": "Mammoth.png",
+    "image": "Mammoth (Christmas).png",
     "level": 80,
     "speed": 4,
     "style": [
@@ -57495,7 +57413,7 @@
     "id": 3109,
     "name": "Man",
     "version": "Backpack",
-    "image": "Man (backpack).png",
+    "image": "Man (backpack, Christmas).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -57536,7 +57454,7 @@
     "id": 3110,
     "name": "Man",
     "version": "Backpack (Musa Point)",
-    "image": "Man (backpack).png",
+    "image": "Man (backpack, Christmas).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -57618,7 +57536,7 @@
     "id": 3106,
     "name": "Man",
     "version": "Blue",
-    "image": "Man (blue).png",
+    "image": "Man (blue, Christmas).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -57700,7 +57618,7 @@
     "id": 3108,
     "name": "Man",
     "version": "Green",
-    "image": "Man.png",
+    "image": "Man (green, Christmas).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -57782,7 +57700,7 @@
     "id": 3264,
     "name": "Man",
     "version": "Light blue",
-    "image": "Man (light blue).png",
+    "image": "Man (light blue, Christmas).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -57864,7 +57782,7 @@
     "id": 3107,
     "name": "Man",
     "version": "Red",
-    "image": "Man (red).png",
+    "image": "Man (red, Christmas).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -61615,7 +61533,7 @@
     "id": 7276,
     "name": "Mutated Bloodveld",
     "version": "",
-    "image": "Mutated Bloodveld.png",
+    "image": "Mutated Bloodveld (Christmas).png",
     "level": 123,
     "speed": 4,
     "style": [
@@ -62916,7 +62834,7 @@
     "id": 9425,
     "name": "The Nightmare",
     "version": "",
-    "image": "The Nightmare.png",
+    "image": "The Nightmare (Christmas).png",
     "level": 814,
     "speed": 6,
     "style": [
@@ -67644,7 +67562,7 @@
     "id": 10812,
     "name": "Pestilent Bloat",
     "version": "Entry",
-    "image": "Pestilent Bloat.png",
+    "image": "Pestilent Bloat (Christmas, Santa hat).png",
     "level": 312,
     "speed": 1,
     "style": [
@@ -67687,7 +67605,7 @@
     "id": 10813,
     "name": "Pestilent Bloat",
     "version": "Hard",
-    "image": "Pestilent Bloat.png",
+    "image": "Pestilent Bloat (Christmas, Santa hat).png",
     "level": 1044,
     "speed": 1,
     "style": [
@@ -67730,7 +67648,7 @@
     "id": 8359,
     "name": "Pestilent Bloat",
     "version": "Normal",
-    "image": "Pestilent Bloat.png",
+    "image": "Pestilent Bloat (Christmas, Santa hat).png",
     "level": 870,
     "speed": 1,
     "style": [
@@ -68237,7 +68155,7 @@
     "id": 9416,
     "name": "Phosani's Nightmare",
     "version": "",
-    "image": "The Nightmare.png",
+    "image": "The Nightmare (idle, Christmas).png",
     "level": 1024,
     "speed": 6,
     "style": [
@@ -93952,7 +93870,7 @@
     "id": 7706,
     "name": "TzKal-Zuk",
     "version": "Enraged",
-    "image": "TzKal-Zuk.png",
+    "image": "TzKal-Zuk (Christmas).png",
     "level": 1400,
     "speed": 7,
     "style": [
@@ -93960,7 +93878,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000095-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000094-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -93994,7 +93912,7 @@
     "id": 7706,
     "name": "TzKal-Zuk",
     "version": "Normal",
-    "image": "TzKal-Zuk.png",
+    "image": "TzKal-Zuk (Christmas).png",
     "level": 1400,
     "speed": 10,
     "style": [
@@ -94002,7 +93920,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000095-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000094-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -94036,7 +93954,7 @@
     "id": 3127,
     "name": "TzTok-Jad",
     "version": "",
-    "image": "TzTok-Jad.png",
+    "image": "TzTok-Jad (Christmas).png",
     "level": 702,
     "speed": 8,
     "style": [
@@ -96126,7 +96044,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000028-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000046-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -96167,7 +96085,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000002A-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000048-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -97383,7 +97301,7 @@
     "id": 8058,
     "name": "Vorkath",
     "version": "Dragon Slayer II",
-    "image": "Vorkath.png",
+    "image": "Vorkath (Christmas).png",
     "level": 392,
     "speed": 5,
     "style": [
@@ -97431,7 +97349,7 @@
     "id": 8059,
     "name": "Vorkath",
     "version": "Post-quest",
-    "image": "Vorkath.png",
+    "image": "Vorkath (Christmas).png",
     "level": 732,
     "speed": 5,
     "style": [
@@ -101904,7 +101822,7 @@
     "id": 3112,
     "name": "Woman",
     "version": "Brown",
-    "image": "Woman (brown).png",
+    "image": "Woman (brown, Christmas).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -101945,7 +101863,7 @@
     "id": 3111,
     "name": "Woman",
     "version": "Purple",
-    "image": "Woman.png",
+    "image": "Woman (purple, Christmas).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -101986,7 +101904,7 @@
     "id": 3113,
     "name": "Woman",
     "version": "Red",
-    "image": "Woman (red).png",
+    "image": "Woman (red, Christmas).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -107192,7 +107110,7 @@
     "id": 2043,
     "name": "Zulrah",
     "version": "Magma",
-    "image": "Zulrah (magma).png",
+    "image": "Zulrah (magma, Christmas).png",
     "level": 725,
     "speed": 3,
     "style": [
@@ -107236,7 +107154,7 @@
     "id": 2042,
     "name": "Zulrah",
     "version": "Serpentine",
-    "image": "Zulrah (serpentine).png",
+    "image": "Zulrah (serpentine, Christmas).png",
     "level": 725,
     "speed": 3,
     "style": [
@@ -107280,7 +107198,7 @@
     "id": 2044,
     "name": "Zulrah",
     "version": "Tanzanite",
-    "image": "Zulrah (tanzanite).png",
+    "image": "Zulrah (tanzanite, Christmas).png",
     "level": 725,
     "speed": 3,
     "style": [
