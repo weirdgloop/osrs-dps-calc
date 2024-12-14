@@ -46800,6 +46800,66 @@
     "isTwoHanded": false
   },
   {
+    "name": "Dog boots",
+    "id": 30491,
+    "version": "",
+    "slot": "body",
+    "image": "Dog boots.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dog disguise",
+    "id": 30487,
+    "version": "",
+    "slot": "body",
+    "image": "Dog disguise.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Dorgeshuun crossbow",
     "id": 8880,
     "version": "",
@@ -55925,6 +55985,36 @@
     "version": "",
     "slot": "head",
     "image": "Festive games crown.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Festive scarf",
+    "id": 30489,
+    "version": "",
+    "slot": "head",
+    "image": "Festive scarf.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -73594,7 +73684,7 @@
     "id": 30345,
     "version": "Charged",
     "slot": "weapon",
-    "image": "Infernal harpoon (or) (Trailblazer Reloaded).png",
+    "image": "Infernal pickaxe (or) (Trailblazer Reloaded).png",
     "speed": 5,
     "category": "Pickaxe",
     "bonuses": {
@@ -73624,7 +73714,7 @@
     "id": 30346,
     "version": "Uncharged",
     "slot": "weapon",
-    "image": "Infernal harpoon (or) (Trailblazer Reloaded).png",
+    "image": "Infernal pickaxe (or) (Trailblazer Reloaded).png",
     "speed": 5,
     "category": "Pickaxe",
     "bonuses": {
@@ -94595,6 +94685,126 @@
     "version": "Unfocused",
     "slot": "head",
     "image": "Prescription goggles (unfocused).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Present box hat",
+    "id": 30485,
+    "version": "Anti-santa",
+    "slot": "body",
+    "image": "Present box hat (anti-santa).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Present box hat",
+    "id": 30479,
+    "version": "Festive",
+    "slot": "body",
+    "image": "Present box hat (festive).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Present box hat",
+    "id": 30483,
+    "version": "Icy",
+    "slot": "body",
+    "image": "Present box hat (icy).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Present box hat",
+    "id": 30481,
+    "version": "Simple",
+    "slot": "body",
+    "image": "Present box hat (simple).png",
     "speed": 0,
     "category": "",
     "bonuses": {
