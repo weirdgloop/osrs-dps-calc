@@ -722,5 +722,11 @@ export default class BaseCalc {
     ) {
       this.addIssue(UserIssueType.EQUIPMENT_SET_EFFECT_UNSUPPORTED, 'The calculator currently does not account for your equipment set effect.');
     }
+    if (this.wearing('Ring of recoil') || this.wearing('Ring of suffering (i)') || this.wearing('Ring of suffering')) {
+      this.addIssue(UserIssueType.RING_RECOIL_UNSUPPORTED, 'The calculator does not account for recoil damage.');
+    }
+    if (this.wearing('Echo boots')) {
+      this.addIssue(UserIssueType.FEET_RECOIL_UNSUPPORTED, 'The calculator does not account for recoil damage.');
+    }
   }
 }
