@@ -33,6 +33,7 @@ jobs:
           python generateEquipment.py
           python generateEquipmentAliases.py
           python generateMonsters.py
+          python generateMonsterAliases.py
       - name: Create pull request
         run: |
           git config user.name github-actions

@@ -22,7 +22,7 @@ By contributing to this repository, you agree that your code will be available u
 ### Project structure
 The web app is contained inside the `src/app` directory. This project uses [Next.js 13's app routing structure](https://nextjs.org/docs). We opt to use TailwindCSS heavily in this project rather than writing CSS, but there is a `src/styles/global.css` file containing some styling.
 
-The `src/lib` directory contains the "core" code for the calculator itself. This code is heavily based on [some psuedocode](https://oldschool.runescape.wiki/w/RuneScape:Sandbox/combat_pseudocode) written collaboratively by the community.
+The `src/lib` directory contains the "core" code for the calculator itself. This code is heavily based on [some pseudocode](https://oldschool.runescape.wiki/w/RuneScape:Sandbox/combat_pseudocode) written collaboratively by the community.
 
 ### JS/TS style guide
 We lint the project using [`eslint`](https://eslint.org/). We tend to follow the [Airbnb style guide](https://github.com/airbnb/javascript) for JavaScript closely. Any JS/TS code that you write should adhere to this style guide. There are several eslint rules that are turned off or reconfigured because they are not beneficial for readability of our code, you can check [.eslintrc.cjs](/.eslintrc.cjs) for the disabled rules.
@@ -32,16 +32,18 @@ Most JavaScript IDEs will detect eslint and warn you accordingly of any problems
 You can also run `yarn lint`, which will check for any issues with your code.
 
 ### Scripts
-The `scripts` directory contains several Python 3 scripts that are used for generating the dataset required by this appliocation.
+The `scripts` directory contains several Python 3 scripts that are used for generating the dataset required by this application.
 
 * `generateEquipment.py` fetches applicable equipment from the OSRS Wiki and saves the output as JSON. It also downloads each equipment image to the local directory.
+* `generateEquipmentAliases.py` fetches applicable equipment from the OSRS wiki and generates a typescript file of item id aliases. These are used to deduplicate the equipment search.
 * `generateMonsters.py` fetches monsters from the OSRS Wiki and saves the output as JSON. It also downloads each NPC image to the local directory.
+* `generateMonsterAliases.py` parses the JSON output of `generateMonsters.py` to create a typescript file of monster id aliases. These are used to deduplicate the monster search.
 
 Where possible, we prefer serving images direct from the web app instead of the wiki for a few reasons. The main reason is that because the wiki can be edited by users, it is very easy for a user editing the wiki to break the functionality of this app by renaming or changing a file.
 
 ### Running locally
 1. Install dependencies with `yarn` (our package manager of choice).
-2. Run the development Next.js server running `yarn dev`.
+2. Run the development Next.js server by running `yarn dev`.
 3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 Attempting to find local RuneLite instances can print a lot of failed WebSocket connection messages to the browser console. Adding a filter of `-WebSocket` will filter out these messages.
