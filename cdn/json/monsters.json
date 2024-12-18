@@ -3762,7 +3762,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000017-QINU`\"' Magic"
+      "'\"`UNIQ--ref-0000006C-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -24190,7 +24190,7 @@
       "Slash"
     ],
     "size": 0,
-    "max_hit": "15",
+    "max_hit": "17",
     "skills": {
       "atk": 200,
       "def": 100,
@@ -25672,7 +25672,7 @@
       "Crush"
     ],
     "size": 3,
-    "max_hit": "31",
+    "max_hit": "31 (normal)",
     "skills": {
       "atk": 260,
       "def": 100,
@@ -78386,7 +78386,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 1687,
@@ -78429,7 +78432,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 1685,
@@ -78472,7 +78478,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 1686,
@@ -78515,7 +78524,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 7265,
@@ -93878,7 +93890,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000094-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000037-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -93920,7 +93932,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000094-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000037-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -96044,7 +96056,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000046-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000030-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -96085,7 +96097,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000048-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000032-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -100428,7 +100440,7 @@
     "level": 75,
     "speed": 4,
     "style": [
-      "Crush"
+      "Crush weapons|Crush"
     ],
     "size": 1,
     "max_hit": "4",
