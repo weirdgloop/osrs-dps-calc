@@ -180,6 +180,13 @@ def main():
         # Granite maul variants
         elif (item['name'] == "Granite maul" and item['version'] != "Normal") or item['name'] == "Granite maul (or)":
             handle_base_variant(all_items, item, 'Granite maul', ['Normal'])
+        elif re.match(r"^Echo (ahrim|venator|virtus)", item['name']):
+            name = item['name'].removeprefix("Echo ")
+            name = name[0].upper() + name[1:]
+            if ("Ahrim's" in name):
+                handle_base_variant(all_items, item, name, "Undamaged")
+            else:
+                handle_base_variant(all_items, item, name, item['version'])
 
     for k, v in sorted(data.items(), key=lambda item: item[1].base_name):
         dataJs += '\n  %s: %s, // %s%s' % (k, v.alias_ids, v.base_name, f"#{v.base_version}" if v.base_version else "")
