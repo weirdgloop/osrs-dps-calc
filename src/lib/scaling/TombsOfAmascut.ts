@@ -25,7 +25,7 @@ const applyToaScaling = (m: Monster): Monster => {
 
   const partySize = Math.min(8, Math.max(1, inputs.partySize));
   if (partySize >= 2) {
-    let partyFactor = 9 * (partySize === 3 ? 2 : 1);
+    let partyFactor = 9 * (partySize >= 3 ? 2 : 1);
     if (partySize >= 4) {
       partyFactor += 6 * (partySize - 3);
     }
