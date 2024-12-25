@@ -46803,7 +46803,7 @@
     "name": "Dog boots",
     "id": 30491,
     "version": "",
-    "slot": "body",
+    "slot": "feet",
     "image": "Dog boots.png",
     "speed": 0,
     "category": "",
@@ -46833,7 +46833,7 @@
     "name": "Dog disguise",
     "id": 30487,
     "version": "",
-    "slot": "body",
+    "slot": "head",
     "image": "Dog disguise.png",
     "speed": 0,
     "category": "",
@@ -56013,7 +56013,7 @@
     "name": "Festive scarf",
     "id": 30489,
     "version": "",
-    "slot": "head",
+    "slot": "neck",
     "image": "Festive scarf.png",
     "speed": 0,
     "category": "",
@@ -59345,36 +59345,6 @@
     "version": "",
     "slot": "shield",
     "image": "Ghommal's hilt 1.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ghommal's hilt 2",
-    "id": 25928,
-    "version": "",
-    "slot": "shield",
-    "image": "Ghommal's hilt 2.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -94713,7 +94683,7 @@
     "name": "Present box hat",
     "id": 30485,
     "version": "Anti-santa",
-    "slot": "body",
+    "slot": "head",
     "image": "Present box hat (anti-santa).png",
     "speed": 0,
     "category": "",
@@ -94743,7 +94713,7 @@
     "name": "Present box hat",
     "id": 30479,
     "version": "Festive",
-    "slot": "body",
+    "slot": "head",
     "image": "Present box hat (festive).png",
     "speed": 0,
     "category": "",
@@ -94773,7 +94743,7 @@
     "name": "Present box hat",
     "id": 30483,
     "version": "Icy",
-    "slot": "body",
+    "slot": "head",
     "image": "Present box hat (icy).png",
     "speed": 0,
     "category": "",
@@ -94803,7 +94773,7 @@
     "name": "Present box hat",
     "id": 30481,
     "version": "Simple",
-    "slot": "body",
+    "slot": "head",
     "image": "Present box hat (simple).png",
     "speed": 0,
     "category": "",
@@ -110580,11 +110550,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Scythe",
+    "name": "Scythe (Halloween event)",
     "id": 1419,
     "version": "",
     "slot": "weapon",
-    "image": "Scythe.png",
+    "image": "Scythe (Halloween event).png",
     "speed": 7,
     "category": "Scythe",
     "bonuses": {
@@ -133882,7 +133852,7 @@
     },
     "defensive": {
       "stab": 47,
-      "slash": 38,
+      "slash": 36,
       "crush": 56,
       "magic": 31,
       "ranged": 0
