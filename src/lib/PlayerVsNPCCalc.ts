@@ -1766,6 +1766,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.transform(divisionTransformer(2));
     }
     if (HUEYCOATL_TAIL_IDS.includes(this.monster.id)) {
+      if (this.wearing('Sunlight spear') && this.opts.usingSpecialAttack) return dist;
       const crush = styleType === 'crush'
         && this.player.offensive.crush > this.player.offensive.slash
         && this.player.offensive.crush > this.player.offensive.stab;
