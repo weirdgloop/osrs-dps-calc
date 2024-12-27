@@ -3762,7 +3762,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000017-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000032-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -23900,7 +23900,7 @@
     "style": [
       "Ranged"
     ],
-    "size": 5,
+    "size": 1,
     "max_hit": "70",
     "skills": {
       "atk": 1,
@@ -24190,7 +24190,7 @@
       "Slash"
     ],
     "size": 0,
-    "max_hit": "15",
+    "max_hit": "17",
     "skills": {
       "atk": 200,
       "def": 100,
@@ -25672,7 +25672,7 @@
       "Crush"
     ],
     "size": 3,
-    "max_hit": "31",
+    "max_hit": "31 (normal)",
     "skills": {
       "atk": 260,
       "def": 100,
@@ -30097,7 +30097,7 @@
   },
   {
     "id": 6306,
-    "name": "Evil Chicken (Recipe for Disaster)",
+    "name": "Evil Chicken (Nightmare Zone)",
     "version": "Hard",
     "image": "Evil Chicken.png",
     "level": 286,
@@ -30137,9 +30137,50 @@
     "weakness": null
   },
   {
+    "id": 6367,
+    "name": "Evil Chicken (Nightmare Zone)",
+    "version": "Normal",
+    "image": "Evil Chicken.png",
+    "level": 159,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "21",
+    "skills": {
+      "atk": 1,
+      "def": 126,
+      "hp": 120,
+      "magic": 200,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
     "id": 1870,
     "name": "Evil Chicken (Recipe for Disaster)",
-    "version": "Normal",
+    "version": "",
     "image": "Evil Chicken.png",
     "level": 159,
     "speed": 4,
@@ -35222,7 +35263,10 @@
     "attributes": [
       "kalphite"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 797,
@@ -35266,7 +35310,10 @@
     "attributes": [
       "kalphite"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 1101,
@@ -46477,8 +46524,51 @@
     "weakness": null
   },
   {
-    "id": 6294,
+    "id": 5822,
     "name": "Ice Troll King",
+    "version": "",
+    "image": "Ice Troll King.png",
+    "level": 122,
+    "speed": 4,
+    "style": [
+      "Crush",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 2,
+    "max_hit": "21 (melee)",
+    "skills": {
+      "atk": 100,
+      "def": 80,
+      "hp": 150,
+      "magic": 1,
+      "ranged": 1,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 60
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 45,
+      "magic": 2000,
+      "heavy": 2000,
+      "standard": 2000,
+      "light": 2000,
+      "slash": 45,
+      "stab": 45
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 6294,
+    "name": "Ice Troll King (Nightmare Zone)",
     "version": "Hard",
     "image": "Ice Troll King.png",
     "level": 213,
@@ -46518,19 +46608,17 @@
     "weakness": null
   },
   {
-    "id": 5822,
-    "name": "Ice Troll King",
+    "id": 6356,
+    "name": "Ice Troll King (Nightmare Zone)",
     "version": "Normal",
     "image": "Ice Troll King.png",
     "level": 122,
     "speed": 4,
     "style": [
-      "Crush",
-      "Magic",
-      "Ranged"
+      "Crush"
     ],
     "size": 2,
-    "max_hit": "21 (melee)",
+    "max_hit": "21",
     "skills": {
       "atk": 100,
       "def": 80,
@@ -61362,92 +61450,8 @@
     "weakness": null
   },
   {
-    "id": 720,
-    "name": "Mummy",
-    "version": "Level 103",
-    "image": "Mummy (level 103).png",
-    "level": 103,
-    "speed": 4,
-    "style": [
-      "Melee",
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "24",
-    "skills": {
-      "atk": 90,
-      "def": 90,
-      "hp": 90,
-      "magic": 1,
-      "ranged": 1,
-      "str": 90
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 90
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 90,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 90,
-      "stab": 90
-    },
-    "attributes": [],
-    "weakness": null
-  },
-  {
-    "id": 949,
-    "name": "Mummy",
-    "version": "Level 84",
-    "image": "Mummy (level 84).png",
-    "level": 84,
-    "speed": 4,
-    "style": [
-      "Melee",
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 90,
-      "def": 90,
-      "hp": 90,
-      "magic": 1,
-      "ranged": 1,
-      "str": 30
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 30
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 30,
-      "magic": 90,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 90,
-      "stab": 90
-    },
-    "attributes": [],
-    "weakness": null
-  },
-  {
     "id": 717,
-    "name": "Mummy",
+    "name": "Mummy (Ancient Pyramid sarcophagus)",
     "version": "Level 96",
     "image": "Mummy (level 96).png",
     "level": 96,
@@ -61489,7 +61493,7 @@
   },
   {
     "id": 724,
-    "name": "Mummy",
+    "name": "Mummy (Ancient Pyramid sarcophagus)",
     "version": "Level 98",
     "image": "Mummy (level 98).png",
     "level": 98,
@@ -61525,6 +61529,762 @@
       "light": 0,
       "slash": 100,
       "stab": 100
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 720,
+    "name": "Mummy (Ancient Pyramid)",
+    "version": "1",
+    "image": "Mummy (level 103).png",
+    "level": 103,
+    "speed": 4,
+    "style": [
+      "Melee",
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "24",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 1,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 90
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 90
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 725,
+    "name": "Mummy (Ancient Pyramid)",
+    "version": "1 alight",
+    "image": "Mummy (level 103, alight 1).png",
+    "level": 103,
+    "speed": 4,
+    "style": [
+      "Melee",
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "24",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 1,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 90
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 90
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 721,
+    "name": "Mummy (Ancient Pyramid)",
+    "version": "2",
+    "image": "Mummy (level 103, 2).png",
+    "level": 103,
+    "speed": 4,
+    "style": [
+      "Melee",
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "24",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 1,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 90
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 90
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 726,
+    "name": "Mummy (Ancient Pyramid)",
+    "version": "2 alight",
+    "image": "Mummy (level 103, alight 1).png",
+    "level": 103,
+    "speed": 4,
+    "style": [
+      "Melee",
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "24",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 1,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 90
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 90
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 722,
+    "name": "Mummy (Ancient Pyramid)",
+    "version": "3",
+    "image": "Mummy (level 103, 3).png",
+    "level": 103,
+    "speed": 4,
+    "style": [
+      "Melee",
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "24",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 1,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 90
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 90
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 727,
+    "name": "Mummy (Ancient Pyramid)",
+    "version": "3 alight",
+    "image": "Mummy (level 103, alight 2).png",
+    "level": 103,
+    "speed": 4,
+    "style": [
+      "Melee",
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "24",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 1,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 90
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 90
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 723,
+    "name": "Mummy (Ancient Pyramid)",
+    "version": "4",
+    "image": "Mummy (level 103, 4).png",
+    "level": 103,
+    "speed": 4,
+    "style": [
+      "Melee",
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "24",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 1,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 90
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 90
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 728,
+    "name": "Mummy (Ancient Pyramid)",
+    "version": "4 alight",
+    "image": "Mummy (level 103, alight 2).png",
+    "level": 103,
+    "speed": 4,
+    "style": [
+      "Melee",
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "24",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 1,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 90
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 90
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 949,
+    "name": "Mummy (Klenter's Pyramid)",
+    "version": "1",
+    "image": "Mummy (level 84).png",
+    "level": 84,
+    "speed": 4,
+    "style": [
+      "Melee",
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 30
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 30,
+      "magic": 90,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 90
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 950,
+    "name": "Mummy (Klenter's Pyramid)",
+    "version": "2",
+    "image": "Mummy (level 84, 2).png",
+    "level": 84,
+    "speed": 4,
+    "style": [
+      "Melee",
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 30
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 30,
+      "magic": 90,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 90
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 951,
+    "name": "Mummy (Klenter's Pyramid)",
+    "version": "3",
+    "image": "Mummy (level 84, 3).png",
+    "level": 84,
+    "speed": 4,
+    "style": [
+      "Melee",
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 30
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 30,
+      "magic": 90,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 90
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 952,
+    "name": "Mummy (Klenter's Pyramid)",
+    "version": "4",
+    "image": "Mummy (level 84, 4).png",
+    "level": 84,
+    "speed": 4,
+    "style": [
+      "Melee",
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 30
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 30,
+      "magic": 90,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 90
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 953,
+    "name": "Mummy (Klenter's Pyramid)",
+    "version": "5",
+    "image": "Mummy (level 84, 5).png",
+    "level": 84,
+    "speed": 4,
+    "style": [
+      "Melee",
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 30
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 30,
+      "magic": 90,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 90
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 7658,
+    "name": "Mummy (Pyramid Plunder)",
+    "version": "1",
+    "image": "Mummy (Pyramid Plunder, 1).png",
+    "level": 84,
+    "speed": 4,
+    "style": [
+      "Melee",
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 30
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 30,
+      "magic": 90,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 90
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 7659,
+    "name": "Mummy (Pyramid Plunder)",
+    "version": "2",
+    "image": "Mummy (Pyramid Plunder, 2).png",
+    "level": 84,
+    "speed": 4,
+    "style": [
+      "Melee",
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 30
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 30,
+      "magic": 90,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 90
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 7661,
+    "name": "Mummy (Pyramid Plunder)",
+    "version": "3",
+    "image": "Mummy (Pyramid Plunder, 3).png",
+    "level": 84,
+    "speed": 4,
+    "style": [
+      "Melee",
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 30
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 30,
+      "magic": 90,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 90
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 7660,
+    "name": "Mummy (Pyramid Plunder)",
+    "version": "4",
+    "image": "Mummy (Pyramid Plunder, 4).png",
+    "level": 84,
+    "speed": 4,
+    "style": [
+      "Melee",
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 30
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 30,
+      "magic": 90,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 90
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 7662,
+    "name": "Mummy (Pyramid Plunder)",
+    "version": "5",
+    "image": "Mummy (Pyramid Plunder, 5).png",
+    "level": 84,
+    "speed": 4,
+    "style": [
+      "Melee",
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 30
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 30,
+      "magic": 90,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 90
     },
     "attributes": [],
     "weakness": null
@@ -78386,7 +79146,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 1687,
@@ -78429,7 +79192,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 1685,
@@ -78472,7 +79238,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 1686,
@@ -78515,7 +79284,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 7265,
@@ -85926,7 +86698,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000133-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000000A-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -93878,7 +94650,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000094-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000037-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -93920,7 +94692,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000094-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000037-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -96044,7 +96816,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000046-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000071-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -96085,7 +96857,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000048-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000073-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
