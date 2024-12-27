@@ -12,9 +12,9 @@ const equipmentAliases = {
   1123: [2607, 23392, 23395, 23398, 23401, 23404, 2599], // Adamant platebody
   1073: [2609, 2601], // Adamant platelegs
   1091: [3475, 3474], // Adamant plateskirt
-  4708: [4860, 4856, 4859, 4858, 4857], // Ahrim's hood#Undamaged
-  4714: [4878, 4874, 4877, 4876, 4875], // Ahrim's robeskirt#Undamaged
-  4712: [4872, 4868, 4871, 4870, 4869], // Ahrim's robetop#Undamaged
+  4708: [4860, 4856, 4859, 4858, 4857, 30445], // Ahrim's hood#Undamaged
+  4714: [4878, 4874, 4877, 4876, 4875, 30449], // Ahrim's robeskirt#Undamaged
+  4712: [4872, 4868, 4871, 4870, 4869, 30447], // Ahrim's robetop#Undamaged
   4710: [4866, 4862, 4865, 4864, 4863], // Ahrim's staff#Undamaged
   1729: [23309], // Amulet of defence
   6585: [12436], // Amulet of fury
@@ -287,10 +287,15 @@ const equipmentAliases = {
   12691: [26765, 25254], // Tyrannical ring (i)#Nightmare Zone
   6528: [23235], // Tzhaar-ket-om
   3842: [26498], // Unholy book
+  27610: [30434], // Venator bow#Charged
+  27612: [30434], // Venator bow#Uncharged
   4757: [4992, 4988, 4991, 4990, 4989], // Verac's brassard#Undamaged
   4755: [4986, 4982, 4985, 4984, 4983], // Verac's flail#Undamaged
   4753: [4980, 4976, 4979, 4978, 4977], // Verac's helm#Undamaged
   4759: [4998, 4994, 4997, 4996, 4995], // Verac's plateskirt#Undamaged
+  26241: [30437], // Virtus mask
+  26245: [30441], // Virtus robe bottom
+  26243: [30439], // Virtus robe top
   8842: [24182, 27002, 26467], // Void knight gloves#Normal
   8841: [24181], // Void knight mace#Normal
   8840: [24179, 27001, 26465], // Void knight robe#Normal
