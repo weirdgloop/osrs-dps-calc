@@ -67,7 +67,7 @@ const TombsOfAmascutMonsterContainer: React.FC<ITombsOfAmascutMonsterContainerPr
           <NumberInput
             value={monster.inputs.toaInvocationLevel}
             min={0}
-            max={600}
+            max={700}
             step={5}
             onChange={(v) => store.updateMonster({ inputs: { toaInvocationLevel: v } })}
             required
