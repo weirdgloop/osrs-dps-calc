@@ -59370,6 +59370,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Ghommal's hilt 2",
+    "id": 25928,
+    "version": "",
+    "slot": "shield",
+    "image": "Ghommal's hilt 2.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Ghommal's hilt 3",
     "id": 25930,
     "version": "",
