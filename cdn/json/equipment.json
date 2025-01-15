@@ -3275,18 +3275,18 @@
     "version": "",
     "slot": "weapon",
     "image": "Adamant felling axe.png",
-    "speed": 5,
+    "speed": 7,
     "category": "Axe",
     "bonuses": {
-      "str": 19,
+      "str": 30,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": -2,
-      "slash": 17,
-      "crush": 15,
+      "stab": -3,
+      "slash": 27,
+      "crush": 24,
       "magic": 0,
       "ranged": 0
     },
@@ -27095,18 +27095,18 @@
     "version": "",
     "slot": "weapon",
     "image": "Bronze felling axe.png",
-    "speed": 5,
+    "speed": 7,
     "category": "Axe",
     "bonuses": {
-      "str": 5,
+      "str": 8,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": -2,
-      "slash": 4,
-      "crush": 2,
+      "stab": -3,
+      "slash": 6,
+      "crush": 3,
       "magic": 0,
       "ranged": 0
     },
@@ -59370,6 +59370,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Ghommal's hilt 2",
+    "id": 25928,
+    "version": "",
+    "slot": "shield",
+    "image": "Ghommal's hilt 2.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Ghommal's hilt 3",
     "id": 25930,
     "version": "",
@@ -75065,18 +75095,18 @@
     "version": "",
     "slot": "weapon",
     "image": "Iron felling axe.png",
-    "speed": 5,
+    "speed": 7,
     "category": "Axe",
     "bonuses": {
-      "str": 7,
+      "str": 11,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": -2,
-      "slash": 5,
-      "crush": 3,
+      "stab": -3,
+      "slash": 8,
+      "crush": 4,
       "magic": 0,
       "ranged": 0
     },
@@ -84665,18 +84695,18 @@
     "version": "",
     "slot": "weapon",
     "image": "Mithril felling axe.png",
-    "speed": 5,
+    "speed": 7,
     "category": "Axe",
     "bonuses": {
-      "str": 13,
+      "str": 20,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": -2,
-      "slash": 12,
-      "crush": 10,
+      "stab": -3,
+      "slash": 19,
+      "crush": 16,
       "magic": 0,
       "ranged": 0
     },
@@ -104465,18 +104495,18 @@
     "version": "",
     "slot": "weapon",
     "image": "Rune felling axe.png",
-    "speed": 5,
+    "speed": 7,
     "category": "Axe",
     "bonuses": {
-      "str": 29,
+      "str": 46,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": -2,
-      "slash": 26,
-      "crush": 24,
+      "stab": -3,
+      "slash": 41,
+      "crush": 38,
       "magic": 0,
       "ranged": 0
     },
@@ -119285,18 +119315,18 @@
     "version": "",
     "slot": "weapon",
     "image": "Steel felling axe.png",
-    "speed": 5,
+    "speed": 7,
     "category": "Axe",
     "bonuses": {
-      "str": 9,
+      "str": 14,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": -2,
-      "slash": 8,
-      "crush": 6,
+      "stab": -3,
+      "slash": 12,
+      "crush": 9,
       "magic": 0,
       "ranged": 0
     },
@@ -127145,7 +127175,7 @@
     "version": "",
     "slot": "weapon",
     "image": "Trailblazer cane.png",
-    "speed": 5,
+    "speed": 4,
     "category": "Spiked",
     "bonuses": {
       "str": 0,
@@ -130055,7 +130085,7 @@
     "version": "",
     "slot": "weapon",
     "image": "Twisted cane.png",
-    "speed": 5,
+    "speed": 4,
     "category": "Spiked",
     "bonuses": {
       "str": 0,
@@ -141238,96 +141268,6 @@
       "ranged": 0
     },
     "isTwoHanded": true
-  },
-  {
-    "name": "Zamorak halo",
-    "id": 20539,
-    "version": "Broken",
-    "slot": "head",
-    "image": "Zamorak halo (broken).png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 3
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 11,
-      "slash": 12,
-      "crush": 10,
-      "magic": 11,
-      "ranged": -1
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Zamorak halo",
-    "id": 24170,
-    "version": "Locked",
-    "slot": "head",
-    "image": "Zamorak halo.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 3
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 11,
-      "slash": 12,
-      "crush": 10,
-      "magic": 11,
-      "ranged": -1
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Zamorak halo",
-    "id": 12638,
-    "version": "Normal",
-    "slot": "head",
-    "image": "Zamorak halo.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 3
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 11,
-      "slash": 12,
-      "crush": 10,
-      "magic": 11,
-      "ranged": -1
-    },
-    "isTwoHanded": false
   },
   {
     "name": "Zamorak kiteshield",

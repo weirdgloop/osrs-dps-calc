@@ -310,7 +310,6 @@ const equipmentAliases = {
   26723: [26724], // Wristbands of the arena#Normal
   26727: [26728], // Wristbands of the arena (i)#Normal
   11808: [20374], // Zamorak godsword
-  12638: [24170], // Zamorak halo#Normal
 };
 
 export default equipmentAliases;
