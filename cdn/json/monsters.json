@@ -935,7 +935,7 @@
     "id": 9573,
     "name": "Acidic Bloodveld",
     "version": "",
-    "image": "Acidic Bloodveld (Christmas).png",
+    "image": "Acidic Bloodveld.png",
     "level": 56,
     "speed": 4,
     "style": [
@@ -3762,7 +3762,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000032-QINU`\"' Magic"
+      "'\"`UNIQ--ref-0000007C-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -9380,6 +9380,88 @@
     "weakness": null
   },
   {
+    "id": 9283,
+    "name": "Basilisk (The Fremennik Exiles)",
+    "version": "1",
+    "image": "Basilisk.png",
+    "level": 61,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 30,
+      "def": 75,
+      "hp": 75,
+      "magic": 1,
+      "ranged": 1,
+      "str": 45
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 20,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 9285,
+    "name": "Basilisk (The Fremennik Exiles)",
+    "version": "2",
+    "image": "Basilisk (unused).png",
+    "level": 61,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 30,
+      "def": 75,
+      "hp": 75,
+      "magic": 1,
+      "ranged": 1,
+      "str": 45
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 20,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
     "id": 9293,
     "name": "Basilisk Knight",
     "version": "",
@@ -12492,7 +12574,7 @@
     "id": 3138,
     "name": "Bloodveld",
     "version": "God Wars",
-    "image": "Bloodveld (God Wars Dungeon, Christmas).png",
+    "image": "Bloodveld (God Wars Dungeon).png",
     "level": 81,
     "speed": 4,
     "style": [
@@ -12535,7 +12617,7 @@
     "id": 484,
     "name": "Bloodveld",
     "version": "Standard",
-    "image": "Bloodveld (Christmas).png",
+    "image": "Bloodveld.png",
     "level": 76,
     "speed": 4,
     "style": [
@@ -16553,7 +16635,7 @@
     "id": 5862,
     "name": "Cerberus",
     "version": "",
-    "image": "Cerberus (Christmas).png",
+    "image": "Cerberus.png",
     "level": 318,
     "speed": 6,
     "style": [
@@ -18184,7 +18266,7 @@
     "id": 319,
     "name": "Corporeal Beast",
     "version": "",
-    "image": "Corporeal Beast (Christmas).png",
+    "image": "Corporeal Beast.png",
     "level": 785,
     "speed": 4,
     "style": [
@@ -19020,7 +19102,7 @@
     "style": [
       "Crush"
     ],
-    "size": 2,
+    "size": 1,
     "max_hit": "1",
     "skills": {
       "atk": 1,
@@ -19855,7 +19937,7 @@
     "id": 4184,
     "name": "Crocodile",
     "version": "",
-    "image": "Crocodile (Christmas).png",
+    "image": "Crocodile.png",
     "level": 63,
     "speed": 4,
     "style": [
@@ -23232,7 +23314,7 @@
     "id": 320,
     "name": "Dark energy core",
     "version": "",
-    "image": "Dark energy core (Christmas).png",
+    "image": "Dark energy core.png",
     "level": 75,
     "speed": 2,
     "style": [
@@ -24157,47 +24239,6 @@
       "magic": 0,
       "ranged": 117,
       "str": 0
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "weakness": null
-  },
-  {
-    "id": 7849,
-    "name": "Definitely Not Dusk",
-    "version": "",
-    "image": "Definitely Not Dusk.png",
-    "level": 248,
-    "speed": 6,
-    "style": [
-      "Slash"
-    ],
-    "size": 0,
-    "max_hit": "17",
-    "skills": {
-      "atk": 200,
-      "def": 100,
-      "hp": 450,
-      "magic": 140,
-      "ranged": 140,
-      "str": 140
     },
     "offensive": {
       "atk": 0,
@@ -25913,7 +25954,7 @@
   },
   {
     "id": 7176,
-    "name": "Duke",
+    "name": "Duke (monkey)",
     "version": "",
     "image": "Duke.png",
     "level": 149,
@@ -26517,7 +26558,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-0000002A-QINU`\"'"
+      "Slash '\"`UNIQ--ref-000003D6-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -35015,7 +35056,7 @@
     "id": 5779,
     "name": "Giant Mole",
     "version": "",
-    "image": "Giant Mole (Christmas).png",
+    "image": "Giant Mole.png",
     "level": 230,
     "speed": 4,
     "style": [
@@ -38508,7 +38549,7 @@
     "id": 7551,
     "name": "Great Olm",
     "version": "Head",
-    "image": "Great Olm (Christmas).png",
+    "image": "Great Olm.png",
     "level": 1043,
     "speed": 4,
     "style": [
@@ -38553,7 +38594,7 @@
     "id": 7552,
     "name": "Great Olm",
     "version": "Left claw",
-    "image": "Great Olm (Christmas).png",
+    "image": "Great Olm.png",
     "level": 750,
     "speed": 4,
     "style": [
@@ -38597,7 +38638,7 @@
     "id": 7550,
     "name": "Great Olm",
     "version": "Right claw",
-    "image": "Great Olm (Christmas).png",
+    "image": "Great Olm.png",
     "level": 549,
     "speed": 4,
     "style": [
@@ -42710,7 +42751,7 @@
     "id": 3254,
     "name": "Guard",
     "version": "Edgeville 1",
-    "image": "Guard (Edgeville, 1, Christmas).png",
+    "image": "Guard (Edgeville).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -42751,7 +42792,7 @@
     "id": 11922,
     "name": "Guard",
     "version": "Edgeville 2",
-    "image": "Guard (Edgeville, 2, Christmas).png",
+    "image": "Guard (Edgeville, 2).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -42792,7 +42833,7 @@
     "id": 11923,
     "name": "Guard",
     "version": "Edgeville 3",
-    "image": "Guard (Edgeville, 3, Christmas).png",
+    "image": "Guard (Edgeville, 3).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -42833,7 +42874,7 @@
     "id": 11924,
     "name": "Guard",
     "version": "Edgeville 4",
-    "image": "Guard (Edgeville, 4, Christmas).png",
+    "image": "Guard (Edgeville, 4).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -42874,7 +42915,7 @@
     "id": 3271,
     "name": "Guard",
     "version": "Falador (battleaxe, 1)",
-    "image": "Guard (Falador, battleaxe, 1, Christmas).png",
+    "image": "Guard (Falador, battleaxe, 1).png",
     "level": 19,
     "speed": 6,
     "style": [
@@ -42915,7 +42956,7 @@
     "id": 11946,
     "name": "Guard",
     "version": "Falador (battleaxe, 2)",
-    "image": "Guard (Falador, battleaxe, 2, Christmas).png",
+    "image": "Guard (Falador, battleaxe, 2).png",
     "level": 19,
     "speed": 6,
     "style": [
@@ -42956,7 +42997,7 @@
     "id": 3270,
     "name": "Guard",
     "version": "Falador (crossbow, 1)",
-    "image": "Guard (Falador, crossbow, 1, Christmas).png",
+    "image": "Guard (Falador, crossbow, 1).png",
     "level": 22,
     "speed": 6,
     "style": [
@@ -42997,7 +43038,7 @@
     "id": 11945,
     "name": "Guard",
     "version": "Falador (crossbow, 2)",
-    "image": "Guard (Falador, crossbow, 2, Christmas).png",
+    "image": "Guard (Falador, crossbow, 2).png",
     "level": 22,
     "speed": 6,
     "style": [
@@ -43038,7 +43079,7 @@
     "id": 11947,
     "name": "Guard",
     "version": "Falador (longbow, 1)",
-    "image": "Guard (Falador, longbow, 1, Christmas).png",
+    "image": "Guard (Falador, longbow, 1).png",
     "level": 22,
     "speed": 6,
     "style": [
@@ -43079,7 +43120,7 @@
     "id": 3273,
     "name": "Guard",
     "version": "Falador (longbow, 2)",
-    "image": "Guard (Falador, longbow, 2, Christmas).png",
+    "image": "Guard (Falador, longbow, 2).png",
     "level": 22,
     "speed": 6,
     "style": [
@@ -43120,7 +43161,7 @@
     "id": 3274,
     "name": "Guard",
     "version": "Falador (longbow, 3)",
-    "image": "Guard (Falador, longbow, 3, Christmas).png",
+    "image": "Guard (Falador, longbow, 3).png",
     "level": 22,
     "speed": 6,
     "style": [
@@ -43161,7 +43202,7 @@
     "id": 3269,
     "name": "Guard",
     "version": "Falador (sword, 1)",
-    "image": "Guard (Falador, sword, 1, Christmas).png",
+    "image": "Guard (Falador, sword).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -43202,7 +43243,7 @@
     "id": 11942,
     "name": "Guard",
     "version": "Falador (sword, 2)",
-    "image": "Guard (Falador, sword, 2, Christmas).png",
+    "image": "Guard (Falador, sword, 2).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -43243,7 +43284,7 @@
     "id": 11943,
     "name": "Guard",
     "version": "Falador (sword, 3)",
-    "image": "Guard (Falador, sword, 3, Christmas).png",
+    "image": "Guard (Falador, sword, 3).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -43284,7 +43325,7 @@
     "id": 11944,
     "name": "Guard",
     "version": "Falador (sword, 4)",
-    "image": "Guard (Falador, sword, 4, Christmas).png",
+    "image": "Guard (Falador, sword, 4).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -43325,7 +43366,7 @@
     "id": 11946,
     "name": "Guard",
     "version": "Falador (unarmed)",
-    "image": "Guard (Falador, unarmed, Christmas).png",
+    "image": "Guard (Falador, unarmed).png",
     "level": 19,
     "speed": 6,
     "style": [
@@ -45643,6 +45684,47 @@
       "ranged": 0,
       "ranged_str": 0,
       "str": 16
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 4805,
+    "name": "Hobgoblin (The Slug Menace)",
+    "version": "",
+    "image": "Hobgoblin (The Slug Menace).png",
+    "level": 28,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 22,
+      "def": 24,
+      "hp": 29,
+      "magic": 1,
+      "ranged": 1,
+      "str": 24
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
     },
     "defensive": {
       "flat_armour": 0,
@@ -48229,7 +48311,7 @@
     "id": 5007,
     "name": "Imp",
     "version": "Regular",
-    "image": "Imp (Christmas).png",
+    "image": "Imp.png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -49817,7 +49899,7 @@
     "id": 7691,
     "name": "Jal-Nib",
     "version": "",
-    "image": "Jal-Nib (Christmas).png",
+    "image": "Jal-Nib.png",
     "level": 32,
     "speed": 4,
     "style": [
@@ -53169,7 +53251,7 @@
     "id": 239,
     "name": "King Black Dragon",
     "version": "",
-    "image": "King Black Dragon (Christmas).png",
+    "image": "King Black Dragon.png",
     "level": 276,
     "speed": 4,
     "style": [
@@ -54659,7 +54741,7 @@
     "id": 494,
     "name": "Kraken",
     "version": "Kraken",
-    "image": "Kraken (Christmas).png",
+    "image": "Kraken.png",
     "level": 291,
     "speed": 4,
     "style": [
@@ -57337,7 +57419,7 @@
     "id": 6604,
     "name": "Mammoth",
     "version": "Normal",
-    "image": "Mammoth (Christmas).png",
+    "image": "Mammoth.png",
     "level": 80,
     "speed": 4,
     "style": [
@@ -57501,7 +57583,7 @@
     "id": 3109,
     "name": "Man",
     "version": "Backpack",
-    "image": "Man (backpack, Christmas).png",
+    "image": "Man (backpack).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -57542,7 +57624,7 @@
     "id": 3110,
     "name": "Man",
     "version": "Backpack (Musa Point)",
-    "image": "Man (backpack, Christmas).png",
+    "image": "Man (backpack).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -57624,7 +57706,7 @@
     "id": 3106,
     "name": "Man",
     "version": "Blue",
-    "image": "Man (blue, Christmas).png",
+    "image": "Man (blue).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -57706,7 +57788,7 @@
     "id": 3108,
     "name": "Man",
     "version": "Green",
-    "image": "Man (green, Christmas).png",
+    "image": "Man.png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -57788,7 +57870,7 @@
     "id": 3264,
     "name": "Man",
     "version": "Light blue",
-    "image": "Man (light blue, Christmas).png",
+    "image": "Man (light blue).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -57870,7 +57952,7 @@
     "id": 3107,
     "name": "Man",
     "version": "Red",
-    "image": "Man (red, Christmas).png",
+    "image": "Man (red).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -62293,7 +62375,7 @@
     "id": 7276,
     "name": "Mutated Bloodveld",
     "version": "",
-    "image": "Mutated Bloodveld (Christmas).png",
+    "image": "Mutated Bloodveld.png",
     "level": 123,
     "speed": 4,
     "style": [
@@ -63594,7 +63676,7 @@
     "id": 9425,
     "name": "The Nightmare",
     "version": "",
-    "image": "The Nightmare (Christmas).png",
+    "image": "The Nightmare.png",
     "level": 814,
     "speed": 6,
     "style": [
@@ -68322,7 +68404,7 @@
     "id": 10812,
     "name": "Pestilent Bloat",
     "version": "Entry",
-    "image": "Pestilent Bloat (Christmas, Santa hat).png",
+    "image": "Pestilent Bloat.png",
     "level": 312,
     "speed": 1,
     "style": [
@@ -68365,7 +68447,7 @@
     "id": 10813,
     "name": "Pestilent Bloat",
     "version": "Hard",
-    "image": "Pestilent Bloat (Christmas, Santa hat).png",
+    "image": "Pestilent Bloat.png",
     "level": 1044,
     "speed": 1,
     "style": [
@@ -68408,7 +68490,7 @@
     "id": 8359,
     "name": "Pestilent Bloat",
     "version": "Normal",
-    "image": "Pestilent Bloat (Christmas, Santa hat).png",
+    "image": "Pestilent Bloat.png",
     "level": 870,
     "speed": 1,
     "style": [
@@ -68915,7 +68997,7 @@
     "id": 9416,
     "name": "Phosani's Nightmare",
     "version": "",
-    "image": "The Nightmare (idle, Christmas).png",
+    "image": "The Nightmare.png",
     "level": 1024,
     "speed": 6,
     "style": [
@@ -79330,7 +79412,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 3565,
@@ -81831,7 +81916,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 1539,
@@ -81874,7 +81962,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 74,
@@ -86698,7 +86789,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000000A-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000002-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -93846,49 +93937,6 @@
     "weakness": null
   },
   {
-    "id": 426,
-    "name": "Turoth",
-    "version": "Level 86 (unused)",
-    "image": "Turoth (level 86).png",
-    "level": 86,
-    "speed": 4,
-    "style": [
-      "Stab"
-    ],
-    "size": 1,
-    "max_hit": "10",
-    "skills": {
-      "atk": 55,
-      "def": 85,
-      "hp": 78,
-      "magic": 1,
-      "ranged": 1,
-      "str": 85
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 20,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 20,
-      "stab": 0
-    },
-    "attributes": [
-      "leafy"
-    ],
-    "weakness": null
-  },
-  {
     "id": 428,
     "name": "Turoth",
     "version": "Level 87",
@@ -93907,49 +93955,6 @@
       "magic": 1,
       "ranged": 1,
       "str": 86
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 20,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 20,
-      "stab": 0
-    },
-    "attributes": [
-      "leafy"
-    ],
-    "weakness": null
-  },
-  {
-    "id": 431,
-    "name": "Turoth",
-    "version": "Level 88 (unused)",
-    "image": "Turoth (level 88, white).png",
-    "level": 88,
-    "speed": 4,
-    "style": [
-      "Stab"
-    ],
-    "size": 2,
-    "max_hit": "10",
-    "skills": {
-      "atk": 57,
-      "def": 87,
-      "hp": 80,
-      "magic": 1,
-      "ranged": 1,
-      "str": 87
     },
     "offensive": {
       "atk": 0,
@@ -94642,7 +94647,7 @@
     "id": 7706,
     "name": "TzKal-Zuk",
     "version": "Enraged",
-    "image": "TzKal-Zuk (Christmas).png",
+    "image": "TzKal-Zuk.png",
     "level": 1400,
     "speed": 7,
     "style": [
@@ -94650,7 +94655,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000037-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000059-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -94684,7 +94689,7 @@
     "id": 7706,
     "name": "TzKal-Zuk",
     "version": "Normal",
-    "image": "TzKal-Zuk (Christmas).png",
+    "image": "TzKal-Zuk.png",
     "level": 1400,
     "speed": 10,
     "style": [
@@ -94692,7 +94697,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000037-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000059-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -94726,7 +94731,7 @@
     "id": 3127,
     "name": "TzTok-Jad",
     "version": "",
-    "image": "TzTok-Jad (Christmas).png",
+    "image": "TzTok-Jad.png",
     "level": 702,
     "speed": 8,
     "style": [
@@ -96816,7 +96821,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000071-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000002F-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -96857,7 +96862,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000073-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000031-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -98073,7 +98078,7 @@
     "id": 8058,
     "name": "Vorkath",
     "version": "Dragon Slayer II",
-    "image": "Vorkath (Christmas).png",
+    "image": "Vorkath.png",
     "level": 392,
     "speed": 5,
     "style": [
@@ -98121,7 +98126,7 @@
     "id": 8059,
     "name": "Vorkath",
     "version": "Post-quest",
-    "image": "Vorkath (Christmas).png",
+    "image": "Vorkath.png",
     "level": 732,
     "speed": 5,
     "style": [
@@ -102594,7 +102599,7 @@
     "id": 3112,
     "name": "Woman",
     "version": "Brown",
-    "image": "Woman (brown, Christmas).png",
+    "image": "Woman (brown).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -102635,7 +102640,7 @@
     "id": 3111,
     "name": "Woman",
     "version": "Purple",
-    "image": "Woman (purple, Christmas).png",
+    "image": "Woman.png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -102676,7 +102681,7 @@
     "id": 3113,
     "name": "Woman",
     "version": "Red",
-    "image": "Woman (red, Christmas).png",
+    "image": "Woman (red).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -104352,6 +104357,178 @@
     "weakness": null
   },
   {
+    "id": 7486,
+    "name": "Zombie (Kourend)",
+    "version": "Level 56",
+    "image": "Zombie (Level 56).png",
+    "level": 56,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "7",
+    "skills": {
+      "atk": 50,
+      "def": 47,
+      "hp": 50,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 7485,
+    "name": "Zombie (Kourend)",
+    "version": "Level 70",
+    "image": "Zombie (Level 70).png",
+    "level": 70,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": {
+      "atk": 61,
+      "def": 61,
+      "hp": 65,
+      "magic": 1,
+      "ranged": 1,
+      "str": 60
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 7488,
+    "name": "Zombie (Kourend)",
+    "version": "Level 72",
+    "image": "Zombie (Level 72).png",
+    "level": 72,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": {
+      "atk": 61,
+      "def": 62,
+      "hp": 68,
+      "magic": 1,
+      "ranged": 1,
+      "str": 63
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 7487,
+    "name": "Zombie (Kourend)",
+    "version": "Level 76",
+    "image": "Zombie (Level 76).png",
+    "level": 76,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "9",
+    "skills": {
+      "atk": 69,
+      "def": 62,
+      "hp": 71,
+      "magic": 1,
+      "ranged": 1,
+      "str": 65
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
     "id": 3980,
     "name": "Zombie (Melzar's Maze)",
     "version": "",
@@ -104560,6 +104737,393 @@
       "light": 20,
       "slash": 10,
       "stab": 15
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 2501,
+    "name": "Zombie (Stronghold of Security)",
+    "version": "Level 30, 1",
+    "image": "Zombie (Stronghold of Security, level 30, 1).png",
+    "level": 30,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 25,
+      "def": 20,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 1,
+      "str": 29
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 2502,
+    "name": "Zombie (Stronghold of Security)",
+    "version": "Level 30, 2",
+    "image": "Zombie (Stronghold of Security, level 30, 2).png",
+    "level": 30,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 25,
+      "def": 20,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 1,
+      "str": 29
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 2503,
+    "name": "Zombie (Stronghold of Security)",
+    "version": "Level 30, 3",
+    "image": "Zombie (Stronghold of Security, level 30, 3).png",
+    "level": 30,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 25,
+      "def": 20,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 1,
+      "str": 29
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 2504,
+    "name": "Zombie (Stronghold of Security)",
+    "version": "Level 44, 1",
+    "image": "Zombie (Stronghold of Security, level 44, 1).png",
+    "level": 44,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "5",
+    "skills": {
+      "atk": 35,
+      "def": 40,
+      "hp": 40,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 22,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 2505,
+    "name": "Zombie (Stronghold of Security)",
+    "version": "Level 44, 2",
+    "image": "Zombie (Stronghold of Security, level 44, 2).png",
+    "level": 44,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "5",
+    "skills": {
+      "atk": 35,
+      "def": 40,
+      "hp": 40,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 22,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 2506,
+    "name": "Zombie (Stronghold of Security)",
+    "version": "Level 44, 3",
+    "image": "Zombie (Stronghold of Security, level 44, 3).png",
+    "level": 44,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "5",
+    "skills": {
+      "atk": 35,
+      "def": 40,
+      "hp": 40,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 22,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 2507,
+    "name": "Zombie (Stronghold of Security)",
+    "version": "Level 53, 1",
+    "image": "Zombie (Stronghold of Security, level 53, 1).png",
+    "level": 53,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "5",
+    "skills": {
+      "atk": 55,
+      "def": 48,
+      "hp": 50,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 20,
+      "heavy": 21,
+      "standard": 21,
+      "light": 21,
+      "slash": 18,
+      "stab": 19
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 2508,
+    "name": "Zombie (Stronghold of Security)",
+    "version": "Level 53, 2",
+    "image": "Zombie (Stronghold of Security, level 53, 2).png",
+    "level": 53,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "5",
+    "skills": {
+      "atk": 55,
+      "def": 48,
+      "hp": 50,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 20,
+      "heavy": 21,
+      "standard": 21,
+      "light": 21,
+      "slash": 18,
+      "stab": 19
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 2509,
+    "name": "Zombie (Stronghold of Security)",
+    "version": "Level 53, 3",
+    "image": "Zombie (Stronghold of Security, level 53, 3).png",
+    "level": 53,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "5",
+    "skills": {
+      "atk": 55,
+      "def": 48,
+      "hp": 50,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 20,
+      "heavy": 21,
+      "standard": 21,
+      "light": 21,
+      "slash": 18,
+      "stab": 19
     },
     "attributes": [
       "undead"
@@ -105377,6 +105941,522 @@
       "light": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 45,
+    "name": "Zombie (Wilderness)",
+    "version": "Level 18, 1",
+    "image": "Zombie (Wilderness, level 18, 1).png",
+    "level": 18,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 13,
+      "def": 18,
+      "hp": 24,
+      "magic": 1,
+      "ranged": 1,
+      "str": 13
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 46,
+    "name": "Zombie (Wilderness)",
+    "version": "Level 18, 2",
+    "image": "Zombie (Wilderness, level 18, 2).png",
+    "level": 18,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 13,
+      "def": 18,
+      "hp": 24,
+      "magic": 1,
+      "ranged": 1,
+      "str": 13
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 47,
+    "name": "Zombie (Wilderness)",
+    "version": "Level 18, 3",
+    "image": "Zombie (Wilderness, level 18, 3).png",
+    "level": 18,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 13,
+      "def": 18,
+      "hp": 24,
+      "magic": 1,
+      "ranged": 1,
+      "str": 13
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 48,
+    "name": "Zombie (Wilderness)",
+    "version": "Level 18, 4",
+    "image": "Zombie (Wilderness, level 18, 4).png",
+    "level": 18,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 13,
+      "def": 18,
+      "hp": 24,
+      "magic": 1,
+      "ranged": 1,
+      "str": 13
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 6596,
+    "name": "Zombie (Wilderness)",
+    "version": "Level 18, 5",
+    "image": "Zombie (Wilderness, level 18, 5).png",
+    "level": 18,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 13,
+      "def": 18,
+      "hp": 24,
+      "magic": 1,
+      "ranged": 1,
+      "str": 13
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 6597,
+    "name": "Zombie (Wilderness)",
+    "version": "Level 18, 6",
+    "image": "Zombie (Wilderness, level 18, 6).png",
+    "level": 18,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 13,
+      "def": 18,
+      "hp": 24,
+      "magic": 1,
+      "ranged": 1,
+      "str": 13
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 6598,
+    "name": "Zombie (Wilderness)",
+    "version": "Level 18, 7",
+    "image": "Zombie (Wilderness, level 18, 7).png",
+    "level": 18,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 13,
+      "def": 18,
+      "hp": 24,
+      "magic": 1,
+      "ranged": 1,
+      "str": 13
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 59,
+    "name": "Zombie (Wilderness)",
+    "version": "Level 24, 1",
+    "image": "Zombie (Wilderness, level 24, 1).png",
+    "level": 24,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 16,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 1,
+      "str": 21
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 12,
+      "magic": 10,
+      "heavy": 11,
+      "standard": 11,
+      "light": 11,
+      "slash": 8,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 60,
+    "name": "Zombie (Wilderness)",
+    "version": "Level 24, 2",
+    "image": "Zombie (Wilderness, level 24, 2).png",
+    "level": 24,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 16,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 1,
+      "str": 21
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 12,
+      "magic": 10,
+      "heavy": 11,
+      "standard": 11,
+      "light": 11,
+      "slash": 8,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 61,
+    "name": "Zombie (Wilderness)",
+    "version": "Level 24, 3",
+    "image": "Zombie (Wilderness, level 24, 3).png",
+    "level": 24,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 16,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 1,
+      "str": 21
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 12,
+      "magic": 10,
+      "heavy": 11,
+      "standard": 11,
+      "light": 11,
+      "slash": 8,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 62,
+    "name": "Zombie (Wilderness)",
+    "version": "Level 24, 4",
+    "image": "Zombie (Wilderness, level 24, 4).png",
+    "level": 24,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 16,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 1,
+      "str": 21
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 12,
+      "magic": 10,
+      "heavy": 11,
+      "standard": 11,
+      "light": 11,
+      "slash": 8,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 63,
+    "name": "Zombie (Wilderness)",
+    "version": "Level 24, 5",
+    "image": "Zombie (Wilderness, level 24, 5).png",
+    "level": 24,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 16,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 1,
+      "str": 21
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 12,
+      "magic": 10,
+      "heavy": 11,
+      "standard": 11,
+      "light": 11,
+      "slash": 8,
+      "stab": 9
     },
     "attributes": [
       "undead"
@@ -107324,8 +108404,524 @@
   {
     "id": 26,
     "name": "Zombie",
-    "version": "Level 13",
+    "version": "Level 13, 1",
     "image": "Zombie (Level 13).png",
+    "level": 13,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 9
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 38,
+    "name": "Zombie",
+    "version": "Level 13, 10",
+    "image": "Zombie (Level 13, 13).png",
+    "level": 13,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 9
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 39,
+    "name": "Zombie",
+    "version": "Level 13, 11",
+    "image": "Zombie (Level 13, 14).png",
+    "level": 13,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 9
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 40,
+    "name": "Zombie",
+    "version": "Level 13, 12",
+    "image": "Zombie (Level 13, 15).png",
+    "level": 13,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 9
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 41,
+    "name": "Zombie",
+    "version": "Level 13, 13",
+    "image": "Zombie (Level 13, 16).png",
+    "level": 13,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 9
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 27,
+    "name": "Zombie",
+    "version": "Level 13, 2",
+    "image": "Zombie (Level 13, 2).png",
+    "level": 13,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 9
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 28,
+    "name": "Zombie",
+    "version": "Level 13, 3",
+    "image": "Zombie (Level 13, 3).png",
+    "level": 13,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 9
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 29,
+    "name": "Zombie",
+    "version": "Level 13, 4",
+    "image": "Zombie (Level 13, 4).png",
+    "level": 13,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 9
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 30,
+    "name": "Zombie",
+    "version": "Level 13, 5",
+    "image": "Zombie (Level 13, 5).png",
+    "level": 13,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 9
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 31,
+    "name": "Zombie",
+    "version": "Level 13, 6",
+    "image": "Zombie (Level 13, 6).png",
+    "level": 13,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 9
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 32,
+    "name": "Zombie",
+    "version": "Level 13, 7",
+    "image": "Zombie (Level 13, 7).png",
+    "level": 13,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 9
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 34,
+    "name": "Zombie",
+    "version": "Level 13, 8",
+    "image": "Zombie (Level 13, 9).png",
+    "level": 13,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 9
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 37,
+    "name": "Zombie",
+    "version": "Level 13, 9",
+    "image": "Zombie (Level 13, 12).png",
     "level": 13,
     "speed": 5,
     "style": [
@@ -107367,8 +108963,94 @@
   {
     "id": 42,
     "name": "Zombie",
-    "version": "Level 18",
+    "version": "Level 18, 1",
     "image": "Zombie (Level 18).png",
+    "level": 18,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 13,
+      "def": 18,
+      "hp": 24,
+      "magic": 1,
+      "ranged": 1,
+      "str": 13
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 43,
+    "name": "Zombie",
+    "version": "Level 18, 2",
+    "image": "Zombie (Level 18, 2).png",
+    "level": 18,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 13,
+      "def": 18,
+      "hp": 24,
+      "magic": 1,
+      "ranged": 1,
+      "str": 13
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 44,
+    "name": "Zombie",
+    "version": "Level 18, 3",
+    "image": "Zombie (Level 18, 3).png",
     "level": 18,
     "speed": 5,
     "style": [
@@ -107410,7 +109092,7 @@
   {
     "id": 49,
     "name": "Zombie",
-    "version": "Level 24",
+    "version": "Level 24, 1",
     "image": "Zombie (Level 24).png",
     "level": 24,
     "speed": 5,
@@ -107451,110 +109133,24 @@
     "weakness": null
   },
   {
-    "id": 2501,
+    "id": 50,
     "name": "Zombie",
-    "version": "Level 30",
-    "image": "Zombie (Level 30).png",
-    "level": 30,
+    "version": "Level 24, 2",
+    "image": "Zombie (Level 24, 2).png",
+    "level": 24,
     "speed": 5,
     "style": [
       "Slash"
     ],
     "size": 1,
-    "max_hit": "4",
+    "max_hit": "3",
     "skills": {
-      "atk": 25,
-      "def": 20,
+      "atk": 19,
+      "def": 16,
       "hp": 30,
       "magic": 1,
       "ranged": 1,
-      "str": 29
-    },
-    "offensive": {
-      "atk": 5,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ],
-    "weakness": null
-  },
-  {
-    "id": 2504,
-    "name": "Zombie",
-    "version": "Level 44",
-    "image": "Zombie (Level 44).png",
-    "level": 44,
-    "speed": 5,
-    "style": [
-      "Slash"
-    ],
-    "size": 1,
-    "max_hit": "5",
-    "skills": {
-      "atk": 35,
-      "def": 40,
-      "hp": 40,
-      "magic": 1,
-      "ranged": 1,
-      "str": 40
-    },
-    "offensive": {
-      "atk": 5,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 22,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ],
-    "weakness": null
-  },
-  {
-    "id": 2507,
-    "name": "Zombie",
-    "version": "Level 53",
-    "image": "Zombie (Level 53).png",
-    "level": 53,
-    "speed": 5,
-    "style": [
-      "Slash"
-    ],
-    "size": 1,
-    "max_hit": "5",
-    "skills": {
-      "atk": 55,
-      "def": 48,
-      "hp": 50,
-      "magic": 1,
-      "ranged": 1,
-      "str": 40
+      "str": 21
     },
     "offensive": {
       "atk": 5,
@@ -107566,13 +109162,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 20,
-      "heavy": 21,
-      "standard": 21,
-      "light": 21,
-      "slash": 18,
-      "stab": 19
+      "crush": 12,
+      "magic": 10,
+      "heavy": 11,
+      "standard": 11,
+      "light": 11,
+      "slash": 8,
+      "stab": 9
     },
     "attributes": [
       "undead"
@@ -107580,24 +109176,24 @@
     "weakness": null
   },
   {
-    "id": 7486,
+    "id": 51,
     "name": "Zombie",
-    "version": "Level 56",
-    "image": "Zombie (Level 56).png",
-    "level": 56,
+    "version": "Level 24, 3",
+    "image": "Zombie (Level 24, 3).png",
+    "level": 24,
     "speed": 5,
     "style": [
       "Slash"
     ],
     "size": 1,
-    "max_hit": "7",
+    "max_hit": "3",
     "skills": {
-      "atk": 50,
-      "def": 47,
-      "hp": 50,
+      "atk": 19,
+      "def": 16,
+      "hp": 30,
       "magic": 1,
       "ranged": 1,
-      "str": 50
+      "str": 21
     },
     "offensive": {
       "atk": 5,
@@ -107605,17 +109201,17 @@
       "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
-      "str": 10
+      "str": 7
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 10,
-      "standard": 10,
-      "light": 10,
-      "slash": 20,
-      "stab": 20
+      "crush": 12,
+      "magic": 10,
+      "heavy": 11,
+      "standard": 11,
+      "light": 11,
+      "slash": 8,
+      "stab": 9
     },
     "attributes": [
       "undead"
@@ -107623,24 +109219,24 @@
     "weakness": null
   },
   {
-    "id": 7485,
+    "id": 52,
     "name": "Zombie",
-    "version": "Level 70",
-    "image": "Zombie (Level 70).png",
-    "level": 70,
+    "version": "Level 24, 4",
+    "image": "Zombie (Level 24, 4).png",
+    "level": 24,
     "speed": 5,
     "style": [
       "Slash"
     ],
     "size": 1,
-    "max_hit": "8",
+    "max_hit": "3",
     "skills": {
-      "atk": 61,
-      "def": 61,
-      "hp": 65,
+      "atk": 19,
+      "def": 16,
+      "hp": 30,
       "magic": 1,
       "ranged": 1,
-      "str": 60
+      "str": 21
     },
     "offensive": {
       "atk": 5,
@@ -107648,17 +109244,17 @@
       "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
-      "str": 10
+      "str": 7
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 10,
-      "standard": 10,
-      "light": 10,
-      "slash": 20,
-      "stab": 20
+      "crush": 12,
+      "magic": 10,
+      "heavy": 11,
+      "standard": 11,
+      "light": 11,
+      "slash": 8,
+      "stab": 9
     },
     "attributes": [
       "undead"
@@ -107666,24 +109262,24 @@
     "weakness": null
   },
   {
-    "id": 7488,
+    "id": 54,
     "name": "Zombie",
-    "version": "Level 72",
-    "image": "Zombie (Level 72).png",
-    "level": 72,
+    "version": "Level 24, 5",
+    "image": "Zombie (Level 24, 6).png",
+    "level": 24,
     "speed": 5,
     "style": [
       "Slash"
     ],
     "size": 1,
-    "max_hit": "8",
+    "max_hit": "3",
     "skills": {
-      "atk": 61,
-      "def": 62,
-      "hp": 68,
+      "atk": 19,
+      "def": 16,
+      "hp": 30,
       "magic": 1,
       "ranged": 1,
-      "str": 63
+      "str": 21
     },
     "offensive": {
       "atk": 5,
@@ -107691,17 +109287,17 @@
       "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
-      "str": 10
+      "str": 7
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 10,
-      "standard": 10,
-      "light": 10,
-      "slash": 20,
-      "stab": 20
+      "crush": 12,
+      "magic": 10,
+      "heavy": 11,
+      "standard": 11,
+      "light": 11,
+      "slash": 8,
+      "stab": 9
     },
     "attributes": [
       "undead"
@@ -107709,24 +109305,24 @@
     "weakness": null
   },
   {
-    "id": 7487,
+    "id": 55,
     "name": "Zombie",
-    "version": "Level 76",
-    "image": "Zombie (Level 76).png",
-    "level": 76,
+    "version": "Level 24, 6",
+    "image": "Zombie (Level 24, 7).png",
+    "level": 24,
     "speed": 5,
     "style": [
       "Slash"
     ],
     "size": 1,
-    "max_hit": "9",
+    "max_hit": "3",
     "skills": {
-      "atk": 69,
-      "def": 62,
-      "hp": 71,
+      "atk": 19,
+      "def": 16,
+      "hp": 30,
       "magic": 1,
       "ranged": 1,
-      "str": 65
+      "str": 21
     },
     "offensive": {
       "atk": 5,
@@ -107734,17 +109330,146 @@
       "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
-      "str": 10
+      "str": 7
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
+      "crush": 12,
+      "magic": 10,
+      "heavy": 11,
+      "standard": 11,
+      "light": 11,
+      "slash": 8,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 56,
+    "name": "Zombie",
+    "version": "Level 24, 7",
+    "image": "Zombie (Level 24, 8).png",
+    "level": 24,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 16,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 1,
+      "str": 21
+    },
+    "offensive": {
+      "atk": 5,
       "magic": 0,
-      "heavy": 10,
-      "standard": 10,
-      "light": 10,
-      "slash": 20,
-      "stab": 20
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 12,
+      "magic": 10,
+      "heavy": 11,
+      "standard": 11,
+      "light": 11,
+      "slash": 8,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 57,
+    "name": "Zombie",
+    "version": "Level 24, 8",
+    "image": "Zombie (Level 24, 9).png",
+    "level": 24,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 16,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 1,
+      "str": 21
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 12,
+      "magic": 10,
+      "heavy": 11,
+      "standard": 11,
+      "light": 11,
+      "slash": 8,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 58,
+    "name": "Zombie",
+    "version": "Level 24, 9",
+    "image": "Zombie (Level 24, 10).png",
+    "level": 24,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 16,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 1,
+      "str": 21
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 12,
+      "magic": 10,
+      "heavy": 11,
+      "standard": 11,
+      "light": 11,
+      "slash": 8,
+      "stab": 9
     },
     "attributes": [
       "undead"
@@ -107882,7 +109607,7 @@
     "id": 2043,
     "name": "Zulrah",
     "version": "Magma",
-    "image": "Zulrah (magma, Christmas).png",
+    "image": "Zulrah (magma).png",
     "level": 725,
     "speed": 3,
     "style": [
@@ -107926,7 +109651,7 @@
     "id": 2042,
     "name": "Zulrah",
     "version": "Serpentine",
-    "image": "Zulrah (serpentine, Christmas).png",
+    "image": "Zulrah (serpentine).png",
     "level": 725,
     "speed": 3,
     "style": [
@@ -107970,7 +109695,7 @@
     "id": 2044,
     "name": "Zulrah",
     "version": "Tanzanite",
-    "image": "Zulrah (tanzanite, Christmas).png",
+    "image": "Zulrah (tanzanite).png",
     "level": 725,
     "speed": 3,
     "style": [

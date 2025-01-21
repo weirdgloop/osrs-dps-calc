@@ -12,9 +12,9 @@ const equipmentAliases = {
   1123: [2607, 23392, 23395, 23398, 23401, 23404, 2599], // Adamant platebody
   1073: [2609, 2601], // Adamant platelegs
   1091: [3475, 3474], // Adamant plateskirt
-  4708: [4860, 4856, 4859, 4858, 4857, 30445], // Ahrim's hood#Undamaged
-  4714: [4878, 4874, 4877, 4876, 4875, 30449], // Ahrim's robeskirt#Undamaged
-  4712: [4872, 4868, 4871, 4870, 4869, 30447], // Ahrim's robetop#Undamaged
+  4708: [4860, 4856, 4859, 4858, 4857, 30543, 30519, 30537, 30531, 30525, 30445], // Ahrim's hood#Undamaged
+  4714: [4878, 4874, 4877, 4876, 4875, 30547, 30523, 30541, 30535, 30529, 30449], // Ahrim's robeskirt#Undamaged
+  4712: [4872, 4868, 4871, 4870, 4869, 30545, 30521, 30539, 30533, 30527, 30447], // Ahrim's robetop#Undamaged
   4710: [4866, 4862, 4865, 4864, 4863], // Ahrim's staff#Undamaged
   1729: [23309], // Amulet of defence
   6585: [12436], // Amulet of fury
@@ -310,7 +310,6 @@ const equipmentAliases = {
   26723: [26724], // Wristbands of the arena#Normal
   26727: [26728], // Wristbands of the arena (i)#Normal
   11808: [20374], // Zamorak godsword
-  12638: [24170], // Zamorak halo#Normal
 };
 
 export default equipmentAliases;
