@@ -3275,18 +3275,18 @@
     "version": "",
     "slot": "weapon",
     "image": "Adamant felling axe.png",
-    "speed": 5,
+    "speed": 7,
     "category": "Axe",
     "bonuses": {
-      "str": 19,
+      "str": 30,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": -2,
-      "slash": 17,
-      "crush": 15,
+      "stab": -3,
+      "slash": 27,
+      "crush": 24,
       "magic": 0,
       "ranged": 0
     },
@@ -27095,18 +27095,18 @@
     "version": "",
     "slot": "weapon",
     "image": "Bronze felling axe.png",
-    "speed": 5,
+    "speed": 7,
     "category": "Axe",
     "bonuses": {
-      "str": 5,
+      "str": 8,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": -2,
-      "slash": 4,
-      "crush": 2,
+      "stab": -3,
+      "slash": 6,
+      "crush": 3,
       "magic": 0,
       "ranged": 0
     },
@@ -38585,7 +38585,7 @@
     "version": "",
     "slot": "weapon",
     "image": "Crystal dagger (perfected).png",
-    "speed": 0,
+    "speed": 4,
     "category": "Stab Sword",
     "bonuses": {
       "str": 40,
@@ -51601,8 +51601,158 @@
   },
   {
     "name": "Echo ahrim's hood",
+    "id": 30543,
+    "version": "0",
+    "slot": "head",
+    "image": "Echo ahrim's hood.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's hood",
+    "id": 30519,
+    "version": "100",
+    "slot": "head",
+    "image": "Echo ahrim's hood.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 15,
+      "slash": 13,
+      "crush": 16,
+      "magic": 6,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's hood",
+    "id": 30537,
+    "version": "25",
+    "slot": "head",
+    "image": "Echo ahrim's hood.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 15,
+      "slash": 13,
+      "crush": 16,
+      "magic": 6,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's hood",
+    "id": 30531,
+    "version": "50",
+    "slot": "head",
+    "image": "Echo ahrim's hood.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 15,
+      "slash": 13,
+      "crush": 16,
+      "magic": 6,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's hood",
+    "id": 30525,
+    "version": "75",
+    "slot": "head",
+    "image": "Echo ahrim's hood.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 15,
+      "slash": 13,
+      "crush": 16,
+      "magic": 6,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's hood",
     "id": 30445,
-    "version": "",
+    "version": "Undamaged",
     "slot": "head",
     "image": "Echo ahrim's hood.png",
     "speed": 0,
@@ -51631,8 +51781,158 @@
   },
   {
     "name": "Echo ahrim's robeskirt",
+    "id": 30547,
+    "version": "0",
+    "slot": "legs",
+    "image": "Echo ahrim's robeskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's robeskirt",
+    "id": 30523,
+    "version": "100",
+    "slot": "legs",
+    "image": "Echo ahrim's robeskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 22,
+      "ranged": -7
+    },
+    "defensive": {
+      "stab": 33,
+      "slash": 30,
+      "crush": 36,
+      "magic": 22,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's robeskirt",
+    "id": 30541,
+    "version": "25",
+    "slot": "legs",
+    "image": "Echo ahrim's robeskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 22,
+      "ranged": -7
+    },
+    "defensive": {
+      "stab": 33,
+      "slash": 30,
+      "crush": 36,
+      "magic": 22,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's robeskirt",
+    "id": 30535,
+    "version": "50",
+    "slot": "legs",
+    "image": "Echo ahrim's robeskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 22,
+      "ranged": -7
+    },
+    "defensive": {
+      "stab": 33,
+      "slash": 30,
+      "crush": 36,
+      "magic": 22,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's robeskirt",
+    "id": 30529,
+    "version": "75",
+    "slot": "legs",
+    "image": "Echo ahrim's robeskirt.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 22,
+      "ranged": -7
+    },
+    "defensive": {
+      "stab": 33,
+      "slash": 30,
+      "crush": 36,
+      "magic": 22,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's robeskirt",
     "id": 30449,
-    "version": "",
+    "version": "Undamaged",
     "slot": "legs",
     "image": "Echo ahrim's robeskirt.png",
     "speed": 0,
@@ -51661,8 +51961,158 @@
   },
   {
     "name": "Echo ahrim's robetop",
+    "id": 30545,
+    "version": "0",
+    "slot": "body",
+    "image": "Echo ahrim's robetop.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's robetop",
+    "id": 30521,
+    "version": "100",
+    "slot": "body",
+    "image": "Echo ahrim's robetop.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 52,
+      "slash": 37,
+      "crush": 63,
+      "magic": 30,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's robetop",
+    "id": 30539,
+    "version": "25",
+    "slot": "body",
+    "image": "Echo ahrim's robetop.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 52,
+      "slash": 37,
+      "crush": 63,
+      "magic": 30,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's robetop",
+    "id": 30533,
+    "version": "50",
+    "slot": "body",
+    "image": "Echo ahrim's robetop.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 52,
+      "slash": 37,
+      "crush": 63,
+      "magic": 30,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's robetop",
+    "id": 30527,
+    "version": "75",
+    "slot": "body",
+    "image": "Echo ahrim's robetop.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 30,
+      "ranged": -10
+    },
+    "defensive": {
+      "stab": 52,
+      "slash": 37,
+      "crush": 63,
+      "magic": 30,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's robetop",
     "id": 30447,
-    "version": "",
+    "version": "Undamaged",
     "slot": "body",
     "image": "Echo ahrim's robetop.png",
     "speed": 0,
@@ -51880,21 +52330,21 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 20,
-      "prayer": 1
+      "magic_str": 0,
+      "prayer": 0
     },
     "offensive": {
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 8,
-      "ranged": -3
+      "magic": 0,
+      "ranged": 0
     },
     "defensive": {
-      "stab": 15,
-      "slash": 14,
-      "crush": 16,
-      "magic": 6,
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -51952,7 +52402,7 @@
     },
     "defensive": {
       "stab": 47,
-      "slash": 38,
+      "slash": 36,
       "crush": 56,
       "magic": 31,
       "ranged": 0
@@ -59345,6 +59795,36 @@
     "version": "",
     "slot": "shield",
     "image": "Ghommal's hilt 1.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ghommal's hilt 2",
+    "id": 25928,
+    "version": "",
+    "slot": "shield",
+    "image": "Ghommal's hilt 2.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -75065,18 +75545,18 @@
     "version": "",
     "slot": "weapon",
     "image": "Iron felling axe.png",
-    "speed": 5,
+    "speed": 7,
     "category": "Axe",
     "bonuses": {
-      "str": 7,
+      "str": 11,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": -2,
-      "slash": 5,
-      "crush": 3,
+      "stab": -3,
+      "slash": 8,
+      "crush": 4,
       "magic": 0,
       "ranged": 0
     },
@@ -84665,18 +85145,18 @@
     "version": "",
     "slot": "weapon",
     "image": "Mithril felling axe.png",
-    "speed": 5,
+    "speed": 7,
     "category": "Axe",
     "bonuses": {
-      "str": 13,
+      "str": 20,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": -2,
-      "slash": 12,
-      "crush": 10,
+      "stab": -3,
+      "slash": 19,
+      "crush": 16,
       "magic": 0,
       "ranged": 0
     },
@@ -96605,7 +97085,7 @@
     "version": "",
     "slot": "weapon",
     "image": "Raging echoes cane.png",
-    "speed": 5,
+    "speed": 4,
     "category": "Spiked",
     "bonuses": {
       "str": 0,
@@ -104465,18 +104945,18 @@
     "version": "",
     "slot": "weapon",
     "image": "Rune felling axe.png",
-    "speed": 5,
+    "speed": 7,
     "category": "Axe",
     "bonuses": {
-      "str": 29,
+      "str": 46,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": -2,
-      "slash": 26,
-      "crush": 24,
+      "stab": -3,
+      "slash": 41,
+      "crush": 38,
       "magic": 0,
       "ranged": 0
     },
@@ -119285,18 +119765,18 @@
     "version": "",
     "slot": "weapon",
     "image": "Steel felling axe.png",
-    "speed": 5,
+    "speed": 7,
     "category": "Axe",
     "bonuses": {
-      "str": 9,
+      "str": 14,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": -2,
-      "slash": 8,
-      "crush": 6,
+      "stab": -3,
+      "slash": 12,
+      "crush": 9,
       "magic": 0,
       "ranged": 0
     },
@@ -127145,7 +127625,7 @@
     "version": "",
     "slot": "weapon",
     "image": "Trailblazer cane.png",
-    "speed": 5,
+    "speed": 4,
     "category": "Spiked",
     "bonuses": {
       "str": 0,
@@ -130055,7 +130535,7 @@
     "version": "",
     "slot": "weapon",
     "image": "Twisted cane.png",
-    "speed": 5,
+    "speed": 4,
     "category": "Spiked",
     "bonuses": {
       "str": 0,
