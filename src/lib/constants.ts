@@ -3,7 +3,6 @@ import { CombatStyleStance } from '@/types/PlayerCombatStyle';
 export const BLOWPIPE_IDS: number[] = [
   12926, // regular
   28688, // blazing
-  30374, // drygore
 ];
 
 // The maximum number of loadouts that users can have. Do not lower it, else it will cause share link issues.
@@ -423,19 +422,3 @@ export const HUEYCOATL_IDS = [
 export const HUEYCOATL_PHASES = ['Without Pillar', 'With Pillar'];
 export const HUEYCOATL_PHASE_IDS = [...HUEYCOATL_HEAD_IDS, ...HUEYCOATL_TAIL_IDS]; // body can't receive pillar buff
 HUEYCOATL_PHASE_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = HUEYCOATL_PHASES; });
-
-export const LEAGUES_FIVE_MOCK_ID_MAPPINGS: { [k: number]: number } = {
-  1000000: 30367, // the dogsword
-  1000001: 30369, // sunlight spear
-  1000002: 30371, // devil's element
-  1000003: 30373, // drygore blowpipe#empty
-  1000004: 30374, // drygore blowpipe#charged
-  1000005: 30376, // amulet of the monarchs
-  1000006: 30378, // emperor ring
-  1000007: 30380, // gloves of the damned
-  1000008: 30382, // thousand-dragon ward
-  1000009: 30384, // crystal blessing
-  1000010: 30386, // sunlit bracers
-  1000012: 30390, // nature's reprisal#charged
-  1000013: 30392, // nature's reprisal#uncharged
-};

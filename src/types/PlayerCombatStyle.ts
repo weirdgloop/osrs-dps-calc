@@ -37,7 +37,6 @@ export function getRangedDamageType(category: EquipmentCategory): RangedDamageTy
       return 'heavy';
 
     case EquipmentCategory.SALAMANDER:
-    case EquipmentCategory.MULTISTYLE:
       return 'mixed';
 
     default:

@@ -552,11 +552,6 @@ export const CombatStyleMap: { [k in EquipmentCategory]: { [k: string]: { image:
     Flare: { image: '290' },
     Blaze: { image: '291' },
   },
-  [EquipmentCategory.MULTISTYLE]: {
-    Melee: { image: '289' },
-    Ranged: { image: '290' },
-    Magic: { image: '291' },
-  },
   [EquipmentCategory.DAGGER]: {},
   [EquipmentCategory.NONE]: {
     Punch: { image: '247' },
@@ -619,13 +614,6 @@ export const getCombatStylesForCategory = (style: EquipmentCategory): PlayerComb
       ret = [
         { name: 'Pummel', type: 'crush', stance: 'Accurate' },
         { name: 'Block', type: null, stance: null },
-      ];
-      break;
-    case EquipmentCategory.MULTISTYLE:
-      ret = [
-        { name: 'Melee', type: 'stab', stance: 'Aggressive' },
-        { name: 'Ranged', type: 'ranged', stance: 'Rapid' },
-        { name: 'Magic', type: 'magic', stance: 'Defensive' },
       ];
       break;
     case EquipmentCategory.PARTISAN:

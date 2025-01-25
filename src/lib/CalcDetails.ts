@@ -95,11 +95,6 @@ export enum DetailKey {
   NPC_ACCURACY_ROLL_BONUS = 'NPC accuracy bonus',
   NPC_ACCURACY_ROLL_FINAL = 'NPC accuracy roll',
 
-  // leagues relics
-  PLAYER_ACCURACY_LEAGUES_5_PASSIVE = 'Leagues V passive accuracy',
-  MAX_HIT_FOCUS_BLASTS = 'Focus blasts max hit',
-  MAX_HIT_ADRENALINE_CHARGES = 'Adrenaline charges max hit',
-  MAX_HIT_REPEAT_SHOOTER = 'Repeat shooter max hit',
 }
 
 export interface DetailEntry {

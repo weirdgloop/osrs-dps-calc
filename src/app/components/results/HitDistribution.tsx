@@ -14,7 +14,6 @@ import { observer } from 'mobx-react-lite';
 import { max } from 'd3-array';
 import { toJS } from 'mobx';
 import { isDefined } from '@/utils';
-import { MeleeMastery } from '@/lib/LeaguesV';
 
 const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
@@ -138,14 +137,6 @@ const HitDistribution: React.FC = observer(() => {
             <Bar dataKey="value" fill="tan" isAnimationActive={false} />
           </BarChart>
         </ResponsiveContainer>
-        {store.loadouts[selectedLoadout].leagues.five.melee >= MeleeMastery.MELEE_2 && (
-          <p className="text-sm text-gray-400 pt-2">
-            <em>
-              Echoes are intentionally omitted from the above graph for clarity,
-              but are included in all other calculations.
-            </em>
-          </p>
-        )}
       </div>
     </SectionAccordion>
   );

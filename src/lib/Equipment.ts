@@ -254,29 +254,6 @@ export const calculateAttackSpeed = (player: Player, monster: Monster): number =
     }
   }
 
-  let activeRelic: number;
-  if (player.style.type === 'ranged') {
-    activeRelic = player.leagues.five.ranged;
-  } else if (player.style.type === 'magic') {
-    activeRelic = player.leagues.five.magic;
-  } else {
-    activeRelic = player.leagues.five.melee;
-  }
-
-  if (activeRelic >= 5) {
-    if (attackSpeed >= 5) {
-      attackSpeed = Math.trunc(attackSpeed / 2);
-    } else {
-      attackSpeed = Math.ceil(attackSpeed / 2);
-    }
-  } else if (activeRelic >= 3) {
-    attackSpeed = Math.trunc(attackSpeed * 4 / 5);
-  }
-
-  if (player.style.type === 'magic' && activeRelic >= 2) {
-    attackSpeed += player.leagues.five.ticksDelayed;
-  }
-
   return Math.max(attackSpeed, 1);
 };
 
@@ -422,8 +399,6 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Armadyl godsword': 50,
   'Zamorak godsword': 50,
   'Abyssal bludgeon': 50,
-  'The dogsword': 50,
-  'Thunder khopesh': 50,
 
   'Magic shortbow': 55,
   'Dark bow': 55,
