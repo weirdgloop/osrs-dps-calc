@@ -8,11 +8,14 @@ const Prayers: React.FC = observer(() => {
   const store = useStore();
   const { prayers } = store.player;
 
+  const sortedPrayers = Object.entries(PrayerMap)
+    .sort(([, a], [, b]) => (a.renderOrder ?? Infinity) - (b.renderOrder ?? Infinity)); // Sort by renderOrder
+
   return (
     <div className="px-4 mb-8">
       <div className="grid grid-cols-4 gap-y-4 mt-6 w-48 m-auto items-center justify-center">
         {
-          Object.entries(PrayerMap).map(([k, v]) => (
+          sortedPrayers.map(([k, v]) => (
             <GridItem
               key={k}
               item={parseInt(k)}

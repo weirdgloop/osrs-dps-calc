@@ -137,9 +137,25 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     const bonus = this.getPlayerDefensiveBonus();
 
     let effectiveLevel = this.trackAdd(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL, skills.def, boosts.def);
-    for (const p of prayers.filter((pr) => pr.factorDefence)) {
-      effectiveLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL_PRAYER, effectiveLevel, p.factorDefence!);
-    }
+    const combinedFactor = prayers
+      .filter((pr) => pr.factorDefence)
+      .reduce<[number, number]>(
+      (acc, pr) => {
+        const [num, den] = pr.factorDefence!;
+        // Convert fraction to common base (adjusted by -1)
+        const adjustedNum = num - den; // Extract the extra multiplier over 1
+        const adjustedAccNum = acc[0] - acc[1];
+
+        // Add as fractions: (a/b) + (c/d) = (a*d + c*b) / (b*d)
+        const newNum = adjustedAccNum * den + adjustedNum * acc[1];
+        const newDen = acc[1] * den;
+
+        return [newNum + newDen, newDen]; // Convert back by adding 1
+      },
+      [1, 1], // Start with neutral factor 1/1 (100%)
+    );
+
+    effectiveLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL_PRAYER, effectiveLevel, combinedFactor);
 
     if (this.isWearingTorags()) {
       const currentHealth = skills.hp + boosts.hp;
