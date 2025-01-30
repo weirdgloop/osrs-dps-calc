@@ -2461,9 +2461,9 @@
     "level": 210,
     "speed": 5,
     "style": [
-      "Typeless Ranged",
       "Icy breath",
-      "Slash"
+      "Slash",
+      "Typeless Magic"
     ],
     "size": 5,
     "max_hit": "16 (Melee)",
@@ -3762,7 +3762,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-0000007C-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000030-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -47652,7 +47652,7 @@
     "attributes": [],
     "weakness": {
       "element": "fire",
-      "severity": 100
+      "severity": 50
     }
   },
   {
@@ -56803,7 +56803,7 @@
     "speed": 6,
     "style": [
       "Slash",
-      "Icy breath"
+      "Typeless Magic Icy breath"
     ],
     "size": 3,
     "max_hit": "13 (Melee)",
@@ -80457,7 +80457,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 6446,
@@ -80500,7 +80503,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 6444,
@@ -80543,7 +80549,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 6445,
@@ -80586,7 +80595,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 6447,
@@ -80629,7 +80641,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 6467,
@@ -80672,7 +80687,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 6442,
@@ -80715,7 +80733,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 6443,
@@ -80758,7 +80779,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 6468,
@@ -80801,7 +80825,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 924,
@@ -81229,7 +81256,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 3358,
@@ -83915,17 +83945,17 @@
       "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
-      "str": 0
+      "str": 16
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
+      "crush": 5,
+      "magic": 72,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": 5,
+      "stab": 5
     },
     "attributes": [],
     "weakness": null
@@ -86849,13 +86879,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
+      "crush": 30,
+      "magic": 10,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": 20,
+      "stab": 30
     },
     "attributes": [],
     "weakness": null
@@ -86890,13 +86920,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
+      "crush": 30,
+      "magic": 10,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": 20,
+      "stab": 30
     },
     "attributes": [],
     "weakness": null
@@ -86931,13 +86961,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
+      "crush": 30,
+      "magic": 10,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": 20,
+      "stab": 30
     },
     "attributes": [],
     "weakness": null
@@ -86955,12 +86985,12 @@
     "size": 1,
     "max_hit": "3",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 110,
+      "def": 30,
       "hp": 40,
-      "magic": 0,
+      "magic": 50,
       "ranged": 0,
-      "str": 0
+      "str": 50
     },
     "offensive": {
       "atk": 0,
@@ -86972,13 +87002,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
+      "crush": 30,
+      "magic": 10,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": 20,
+      "stab": 30
     },
     "attributes": [],
     "weakness": null
@@ -86996,12 +87026,12 @@
     "size": 1,
     "max_hit": "3",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 110,
+      "def": 30,
       "hp": 40,
-      "magic": 0,
+      "magic": 50,
       "ranged": 0,
-      "str": 0
+      "str": 50
     },
     "offensive": {
       "atk": 0,
@@ -87013,13 +87043,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
+      "crush": 30,
+      "magic": 10,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": 20,
+      "stab": 30
     },
     "attributes": [],
     "weakness": null
@@ -87037,12 +87067,12 @@
     "size": 1,
     "max_hit": "3",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 110,
+      "def": 30,
       "hp": 40,
-      "magic": 0,
+      "magic": 50,
       "ranged": 0,
-      "str": 0
+      "str": 50
     },
     "offensive": {
       "atk": 0,
@@ -87054,13 +87084,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
+      "crush": 30,
+      "magic": 10,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": 20,
+      "stab": 30
     },
     "attributes": [],
     "weakness": null
@@ -87078,12 +87108,12 @@
     "size": 1,
     "max_hit": "3",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 110,
+      "def": 30,
       "hp": 40,
-      "magic": 0,
+      "magic": 50,
       "ranged": 0,
-      "str": 0
+      "str": 50
     },
     "offensive": {
       "atk": 0,
@@ -87095,13 +87125,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
+      "crush": 30,
+      "magic": 10,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": 20,
+      "stab": 30
     },
     "attributes": [],
     "weakness": null
@@ -87119,12 +87149,12 @@
     "size": 1,
     "max_hit": "3",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 150,
+      "def": 30,
       "hp": 50,
-      "magic": 0,
+      "magic": 50,
       "ranged": 0,
-      "str": 0
+      "str": 60
     },
     "offensive": {
       "atk": 0,
@@ -87136,13 +87166,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
+      "crush": 30,
+      "magic": 10,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": 20,
+      "stab": 30
     },
     "attributes": [],
     "weakness": null
@@ -87160,12 +87190,12 @@
     "size": 1,
     "max_hit": "3",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 150,
+      "def": 30,
       "hp": 50,
-      "magic": 0,
+      "magic": 50,
       "ranged": 0,
-      "str": 0
+      "str": 60
     },
     "offensive": {
       "atk": 0,
@@ -87177,13 +87207,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
+      "crush": 30,
+      "magic": 10,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": 20,
+      "stab": 30
     },
     "attributes": [],
     "weakness": null
@@ -87201,12 +87231,12 @@
     "size": 1,
     "max_hit": "3",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 150,
+      "def": 30,
       "hp": 50,
-      "magic": 0,
+      "magic": 50,
       "ranged": 0,
-      "str": 0
+      "str": 60
     },
     "offensive": {
       "atk": 0,
@@ -87218,13 +87248,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
+      "crush": 30,
+      "magic": 10,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": 20,
+      "stab": 30
     },
     "attributes": [],
     "weakness": null
@@ -88235,8 +88265,8 @@
     "speed": 6,
     "style": [
       "Slash",
-      "Typeless Ranged",
-      "Icy breath"
+      "Icy breath",
+      "Typeless Magic"
     ],
     "size": 3,
     "max_hit": "12 (Melee)",
@@ -94655,7 +94685,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000059-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000080-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -94697,7 +94727,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000059-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000080-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -96821,7 +96851,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000002F-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000038-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -96862,7 +96892,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000031-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000003A-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,

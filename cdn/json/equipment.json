@@ -28470,6 +28470,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Bronze staff of collection",
+    "id": 30597,
+    "version": "",
+    "slot": "weapon",
+    "image": "Bronze staff of collection.png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Bronze sword",
     "id": 1277,
     "version": "",
@@ -52140,6 +52170,186 @@
     "isTwoHanded": false
   },
   {
+    "name": "Echo ahrim's staff",
+    "id": 30574,
+    "version": "0",
+    "slot": "weapon",
+    "image": "Echo ahrim's staff 0.png",
+    "speed": 6,
+    "category": "Staff",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's staff",
+    "id": 30570,
+    "version": "100",
+    "slot": "weapon",
+    "image": "Echo ahrim's staff.png",
+    "speed": 6,
+    "category": "Staff",
+    "bonuses": {
+      "str": 68,
+      "ranged_str": 0,
+      "magic_str": 50,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 12,
+      "slash": -1,
+      "crush": 65,
+      "magic": 15,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 3,
+      "slash": 5,
+      "crush": 2,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's staff",
+    "id": 30573,
+    "version": "25",
+    "slot": "weapon",
+    "image": "Echo ahrim's staff.png",
+    "speed": 6,
+    "category": "Staff",
+    "bonuses": {
+      "str": 68,
+      "ranged_str": 0,
+      "magic_str": 50,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 12,
+      "slash": -1,
+      "crush": 65,
+      "magic": 15,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 3,
+      "slash": 5,
+      "crush": 2,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's staff",
+    "id": 30572,
+    "version": "50",
+    "slot": "weapon",
+    "image": "Echo ahrim's staff.png",
+    "speed": 6,
+    "category": "Staff",
+    "bonuses": {
+      "str": 68,
+      "ranged_str": 0,
+      "magic_str": 50,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 12,
+      "slash": -1,
+      "crush": 65,
+      "magic": 15,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 3,
+      "slash": 5,
+      "crush": 2,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's staff",
+    "id": 30571,
+    "version": "75",
+    "slot": "weapon",
+    "image": "Echo ahrim's staff.png",
+    "speed": 6,
+    "category": "Staff",
+    "bonuses": {
+      "str": 68,
+      "ranged_str": 0,
+      "magic_str": 50,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 12,
+      "slash": -1,
+      "crush": 65,
+      "magic": 15,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 3,
+      "slash": 5,
+      "crush": 2,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Echo ahrim's staff",
+    "id": 30568,
+    "version": "Undamaged",
+    "slot": "weapon",
+    "image": "Echo ahrim's staff.png",
+    "speed": 6,
+    "category": "Staff",
+    "bonuses": {
+      "str": 68,
+      "ranged_str": 0,
+      "magic_str": 50,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 12,
+      "slash": -1,
+      "crush": 65,
+      "magic": 15,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 3,
+      "slash": 5,
+      "crush": 2,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Echo axe",
     "id": 25110,
     "version": "",
@@ -52330,21 +52540,21 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
+      "magic_str": 20,
+      "prayer": 1
     },
     "offensive": {
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
-      "ranged": 0
+      "magic": 8,
+      "ranged": -3
     },
     "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
+      "stab": 15,
+      "slash": 14,
+      "crush": 16,
+      "magic": 6,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -115738,6 +115948,66 @@
       "ranged": 0
     },
     "isTwoHanded": false
+  },
+  {
+    "name": "Sled",
+    "id": 4083,
+    "version": "Unwaxed",
+    "slot": "weapon",
+    "image": "Sled (unwaxed).png",
+    "speed": 4,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Sled",
+    "id": 4084,
+    "version": "Waxed",
+    "slot": "weapon",
+    "image": "Sled.png",
+    "speed": 4,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
   },
   {
     "name": "Sled (2020 Christmas event)",
