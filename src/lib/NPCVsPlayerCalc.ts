@@ -9,6 +9,7 @@ import { ALWAYS_ACCURATE_MONSTERS, NPC_HARDCODED_MAX_HIT, SECONDS_PER_TICK } fro
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import { DetailKey } from '@/lib/CalcDetails';
 import { PrayerMap } from '@/enums/Prayer';
+import { sum } from 'd3-array';
 
 /**
  * Class for computing various NPC-vs-player metrics.
@@ -137,25 +138,11 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     const bonus = this.getPlayerDefensiveBonus();
 
     let effectiveLevel = this.trackAdd(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL, skills.def, boosts.def);
-    const combinedFactor = prayers
-      .filter((pr) => pr.factorDefence)
-      .reduce<[number, number]>(
-      (acc, pr) => {
-        const [num, den] = pr.factorDefence!;
-        // Convert fraction to common base (adjusted by -1)
-        const adjustedNum = num - den; // Extract the extra multiplier over 1
-        const adjustedAccNum = acc[0] - acc[1];
-
-        // Add as fractions: (a/b) + (c/d) = (a*d + c*b) / (b*d)
-        const newNum = adjustedAccNum * den + adjustedNum * acc[1];
-        const newDen = acc[1] * den;
-
-        return [newNum + newDen, newDen]; // Convert back by adding 1
-      },
-      [1, 1], // Start with neutral factor 1/1 (100%)
+    const numerator = sum(
+      prayers.filter((pr) => pr.factorDefence),
+      (p) => p.factorDefence![0] - 100,
     );
-
-    effectiveLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL_PRAYER, effectiveLevel, combinedFactor);
+    effectiveLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL_PRAYER, effectiveLevel, [numerator + 100, 100]);
 
     if (this.isWearingTorags()) {
       const currentHealth = skills.hp + boosts.hp;

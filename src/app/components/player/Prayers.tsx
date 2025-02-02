@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import React from 'react';
-import { Prayer, PrayerMap } from '@/enums/Prayer';
+import { Prayer, SortedPrayers } from '@/enums/Prayer';
 import { useStore } from '@/state';
 import GridItem from '@/app/components/generic/GridItem';
 
@@ -8,14 +8,11 @@ const Prayers: React.FC = observer(() => {
   const store = useStore();
   const { prayers } = store.player;
 
-  const sortedPrayers = Object.entries(PrayerMap)
-    .sort(([, a], [, b]) => (a.renderOrder ?? Infinity) - (b.renderOrder ?? Infinity)); // Sort by renderOrder
-
   return (
     <div className="px-4 mb-8">
       <div className="grid grid-cols-4 gap-y-4 mt-6 w-48 m-auto items-center justify-center">
         {
-          sortedPrayers.map(([k, v]) => (
+          SortedPrayers.map(([k, v]) => (
             <GridItem
               key={k}
               item={parseInt(k)}

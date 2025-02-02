@@ -28,7 +28,6 @@ import SteelSkin from '@/public/img/prayers/Steel Skin.png';
 import { StaticImageData } from 'next/image';
 import { Factor } from '@/lib/Math';
 
-// The values of this enum is used in the calc state and shortlinks. Do not re-order.
 export enum Prayer {
   BURST_OF_STRENGTH = 0,
   CLARITY_OF_THOUGHT = 1,
@@ -99,6 +98,7 @@ export interface PrayerData {
   factorDefenceMagic?: Factor,
 }
 
+// Factors must be given as a denominator of 100 such that additive prayers are calculated correctly
 export const PrayerMap: { [k in Prayer]: PrayerData } = {
   [Prayer.BURST_OF_STRENGTH]: {
     renderOrder: 1,
@@ -106,7 +106,7 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     image: BurstOfStrength,
     drainRate: 1,
     combatStyle: 'melee',
-    factorStrength: [21, 20],
+    factorStrength: [105, 100],
   },
   [Prayer.CLARITY_OF_THOUGHT]: {
     renderOrder: 2,
@@ -114,7 +114,7 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     image: ClarityOfThought,
     drainRate: 1,
     combatStyle: 'melee',
-    factorAccuracy: [21, 20],
+    factorAccuracy: [105, 100],
   },
   [Prayer.SHARP_EYE]: {
     renderOrder: 3,
@@ -122,8 +122,8 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     image: SharpEye,
     drainRate: 1,
     combatStyle: 'ranged',
-    factorAccuracy: [21, 20],
-    factorStrength: [21, 20],
+    factorAccuracy: [105, 100],
+    factorStrength: [105, 100],
   },
   [Prayer.MYSTIC_WILL]: {
     renderOrder: 4,
@@ -131,8 +131,8 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     image: MysticWill,
     drainRate: 1,
     combatStyle: 'magic',
-    factorAccuracy: [21, 20],
-    factorDefenceMagic: [21, 20],
+    factorAccuracy: [105, 100],
+    factorDefenceMagic: [105, 100],
   },
   [Prayer.SUPERHUMAN_STRENGTH]: {
     renderOrder: 5,
@@ -140,7 +140,7 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     image: SuperhumanStrength,
     drainRate: 6,
     combatStyle: 'melee',
-    factorStrength: [11, 10],
+    factorStrength: [110, 100],
   },
   [Prayer.IMPROVED_REFLEXES]: {
     renderOrder: 6,
@@ -148,7 +148,7 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     image: ImprovedReflexes,
     drainRate: 6,
     combatStyle: 'melee',
-    factorAccuracy: [11, 10],
+    factorAccuracy: [110, 100],
   },
   [Prayer.HAWK_EYE]: {
     renderOrder: 7,
@@ -156,8 +156,8 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     image: HawkEye,
     drainRate: 6,
     combatStyle: 'ranged',
-    factorAccuracy: [11, 10],
-    factorStrength: [11, 10],
+    factorAccuracy: [110, 100],
+    factorStrength: [110, 100],
   },
   [Prayer.MYSTIC_LORE]: {
     renderOrder: 8,
@@ -166,8 +166,8 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     drainRate: 6,
     combatStyle: 'magic',
     magicDamageBonus: 10,
-    factorAccuracy: [11, 10],
-    factorDefenceMagic: [11, 10],
+    factorAccuracy: [110, 100],
+    factorDefenceMagic: [110, 100],
   },
   [Prayer.ULTIMATE_STRENGTH]: {
     renderOrder: 9,
@@ -175,7 +175,7 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     image: UltimateStrength,
     drainRate: 12,
     combatStyle: 'melee',
-    factorStrength: [23, 20],
+    factorStrength: [115, 100],
   },
   [Prayer.INCREDIBLE_REFLEXES]: {
     renderOrder: 10,
@@ -183,7 +183,7 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     image: IncredibleReflexes,
     drainRate: 12,
     combatStyle: 'melee',
-    factorAccuracy: [23, 20],
+    factorAccuracy: [115, 100],
   },
   [Prayer.EAGLE_EYE]: {
     renderOrder: 11,
@@ -191,8 +191,8 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     image: EagleEye,
     drainRate: 12,
     combatStyle: 'ranged',
-    factorAccuracy: [23, 20],
-    factorStrength: [23, 20],
+    factorAccuracy: [115, 100],
+    factorStrength: [115, 100],
   },
   [Prayer.MYSTIC_MIGHT]: {
     renderOrder: 12,
@@ -201,8 +201,8 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     drainRate: 12,
     combatStyle: 'magic',
     magicDamageBonus: 20,
-    factorAccuracy: [23, 20],
-    factorDefenceMagic: [23, 20],
+    factorAccuracy: [115, 100],
+    factorDefenceMagic: [115, 100],
   },
   [Prayer.CHIVALRY]: {
     renderOrder: 14,
@@ -210,9 +210,9 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     image: Chivalry,
     drainRate: 24,
     combatStyle: 'melee',
-    factorAccuracy: [23, 20],
+    factorAccuracy: [115, 100],
     factorStrength: [118, 100],
-    factorDefence: [6, 5],
+    factorDefence: [120, 100],
   },
   [Prayer.PIETY]: {
     renderOrder: 18,
@@ -220,9 +220,9 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     image: Piety,
     drainRate: 24,
     combatStyle: 'melee',
-    factorAccuracy: [6, 5],
+    factorAccuracy: [120, 100],
     factorStrength: [123, 100],
-    factorDefence: [5, 4],
+    factorDefence: [125, 100],
   },
   [Prayer.RIGOUR]: {
     renderOrder: 19,
@@ -230,9 +230,9 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     image: Rigour,
     drainRate: 24,
     combatStyle: 'ranged',
-    factorAccuracy: [6, 5],
+    factorAccuracy: [120, 100],
     factorStrength: [123, 100],
-    factorDefence: [5, 4],
+    factorDefence: [125, 100],
   },
   [Prayer.AUGURY]: {
     renderOrder: 20,
@@ -241,30 +241,30 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     drainRate: 24,
     combatStyle: 'magic',
     magicDamageBonus: 40,
-    factorAccuracy: [5, 4],
-    factorDefence: [5, 4],
-    factorDefenceMagic: [5, 4],
+    factorAccuracy: [125, 100],
+    factorDefence: [125, 100],
+    factorDefenceMagic: [125, 100],
   },
   [Prayer.THICK_SKIN]: {
     renderOrder: 13,
     name: 'Thick Skin',
     image: ThickSkin,
     drainRate: 1,
-    factorDefence: [21, 20],
+    factorDefence: [105, 100],
   },
   [Prayer.ROCK_SKIN]: {
     renderOrder: 17,
     name: 'Rock Skin',
     image: RockSkin,
     drainRate: 6,
-    factorDefence: [11, 10],
+    factorDefence: [110, 100],
   },
   [Prayer.STEEL_SKIN]: {
     renderOrder: 21,
     name: 'Steel Skin',
     image: SteelSkin,
     drainRate: 12,
-    factorDefence: [23, 20],
+    factorDefence: [115, 100],
   },
   [Prayer.DEADEYE]: {
     renderOrder: 15,
@@ -272,8 +272,9 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     image: Deadeye,
     drainRate: 12,
     combatStyle: 'ranged',
-    factorAccuracy: [59, 50],
-    factorDefence: [21, 20],
+    factorAccuracy: [118, 100],
+    factorStrength: [118, 100],
+    factorDefence: [105, 100],
   },
   [Prayer.MYSTIC_VIGOUR]: {
     renderOrder: 16,
@@ -281,8 +282,10 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     image: MysticVigour,
     drainRate: 12,
     combatStyle: 'magic',
-    factorAccuracy: [59, 50],
-    factorDefenceMagic: [21, 20],
+    magicDamageBonus: 30,
+    factorAccuracy: [118, 100],
+    factorDefenceMagic: [118, 100],
+    factorDefence: [105, 100],
   },
   // [Prayer.PROTECT_MAGIC]: {
   //   name: 'Protect from Magic',
@@ -315,3 +318,6 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
   //   drainRate: 18,
   // },
 };
+
+export const SortedPrayers = Object.entries(PrayerMap)
+  .sort(([, a], [, b]) => (a.renderOrder ?? Infinity) - (b.renderOrder ?? Infinity)); // Sort by renderOrder
