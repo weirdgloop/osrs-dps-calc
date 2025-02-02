@@ -1,3 +1,5 @@
+// noinspection FallThroughInSwitchStatementJS
+
 import {
   autorun, IReactionDisposer, IReactionPublic, makeAutoObservable, reaction, toJS,
 } from 'mobx';
@@ -26,7 +28,6 @@ import {
   fetchPlayerSkills,
   fetchShortlinkData,
   getCombatStylesForCategory,
-  keys,
   PotionMap,
 } from '@/utils';
 import { ComputeBasicRequest, ComputeReverseRequest, WorkerRequestType } from '@/worker/CalcWorkerTypes';
@@ -36,10 +37,8 @@ import { CalcWorker } from '@/worker/CalcWorker';
 import { spellByName } from '@/types/Spell';
 import {
   DEFAULT_ATTACK_SPEED,
-  LEAGUES_FIVE_MOCK_ID_MAPPINGS,
   NUMBER_OF_LOADOUTS,
 } from '@/lib/constants';
-import { defaultLeaguesState } from '@/lib/LeaguesV';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
   ARM_PRAYERS,
@@ -133,9 +132,6 @@ export const generateEmptyPlayer = (name?: string): Player => ({
     usingSunfireRunes: false,
   },
   spell: null,
-  leagues: {
-    five: defaultLeaguesState(),
-  },
 });
 
 export const parseLoadoutsFromImportedData = (data: ImportableData) => data.loadouts.map((loadout, i) => {
@@ -470,46 +466,24 @@ class GlobalState implements State {
       case 1:
         data.monster.inputs.phase = data.monster.inputs.tormentedDemonPhase;
 
-      case 2:
+      case 2: // reserved: used during leagues 5
+      case 3: // reserved: used during leagues 5
+      case 4: // reserved: used during leagues 5
+      case 5:
         data.loadouts.forEach((l) => {
-          if (l.equipment?.weapon?.id === 1000012) { // old mock version of Nature's reprisal
-            l.equipment.weapon.category = EquipmentCategory.MULTISTYLE;
+          /* eslint-disable @typescript-eslint/dot-notation */
+          /* eslint-disable @typescript-eslint/no-explicit-any */
+          if ((l as any)['leagues']) {
+            delete (l as any)['leagues'];
           }
-        });
-
-      case 3:
-        data.loadouts.forEach((l) => {
-          if (!l.leagues?.five) {
-            l.leagues = { five: defaultLeaguesState() };
-          }
-        });
-
-      case 4:
-        data.loadouts.forEach((l, ix) => {
-          if (l.equipment) {
-            for (const slot of keys(l.equipment)) {
-              const eq = l.equipment[slot];
-              if (!eq?.id) {
-                continue;
-              }
-
-              const newId = LEAGUES_FIVE_MOCK_ID_MAPPINGS[eq.id];
-              if (newId) {
-                eq.id = newId;
-                console.info('mock id migration', {
-                  ix,
-                  slot,
-                  oldId: eq.id,
-                  newId,
-                });
-              }
-            }
-          }
+          /* eslint-enable @typescript-eslint/dot-notation */
+          /* eslint-enable @typescript-eslint/no-explicit-any */
         });
 
       default:
     }
     /* eslint-enable no-fallthrough */
+    console.debug('IMPORT | ', data);
 
     if (data.monster) {
       let newMonster: PartialDeep<Monster> = {};

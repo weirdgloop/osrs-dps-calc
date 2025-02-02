@@ -331,7 +331,7 @@ export default class BaseCalc {
   }
 
   protected isWearingGodsword(): boolean {
-    return this.wearing(['Ancient godsword', 'Armadyl godsword', 'Bandos godsword', 'Saradomin godsword', 'Zamorak godsword', 'The dogsword']);
+    return this.wearing(['Ancient godsword', 'Armadyl godsword', 'Bandos godsword', 'Saradomin godsword', 'Zamorak godsword']);
   }
 
   /**
@@ -382,7 +382,7 @@ export default class BaseCalc {
    * @see https://oldschool.runescape.wiki/w/Karil_the_Tainted%27s_equipment
    */
   protected isWearingKarils(): boolean {
-    return this.wearingAll(["Karil's coif", "Karil's leathertop", "Karil's leatherskirt", "Karil's crossbow"]) && this.isWearingAnyDamnedItems();
+    return this.wearingAll(["Karil's coif", "Karil's leathertop", "Karil's leatherskirt", "Karil's crossbow", 'Amulet of the damned']);
   }
 
   /**
@@ -391,7 +391,7 @@ export default class BaseCalc {
    */
 
   protected isWearingAhrims(): boolean {
-    return this.wearingAll(["Ahrim's staff", "Ahrim's hood", "Ahrim's robetop", "Ahrim's robeskirt"]) && this.isWearingAnyDamnedItems();
+    return this.wearingAll(["Ahrim's staff", "Ahrim's hood", "Ahrim's robetop", "Ahrim's robeskirt", 'Amulet of the damned']);
   }
 
   /**
@@ -399,11 +399,7 @@ export default class BaseCalc {
    * @see https://oldschool.runescape.wiki/w/Torag_the_Corrupted%27s_equipment
    */
   protected isWearingTorags(): boolean {
-    return this.wearingAll(["Torag's helm", "Torag's platebody", "Torag's platelegs", "Torag's hammers"]) && this.isWearingAnyDamnedItems();
-  }
-
-  protected isWearingAnyDamnedItems(): boolean {
-    return this.wearing('Amulet of the damned') || this.wearing('Gloves of the damned');
+    return this.wearingAll(["Torag's helm", "Torag's platebody", "Torag's platelegs", "Torag's hammers", 'Amulet of the damned']);
   }
 
   protected isWearingBloodMoonSet(): boolean {
@@ -520,10 +516,6 @@ export default class BaseCalc {
     }
 
     if (this.player.style.type === 'magic') {
-      return true;
-    }
-
-    if (this.wearing('Thunder khopesh')) {
       return true;
     }
 

@@ -7,13 +7,11 @@ import { Monster } from '@/types/Monster';
 
 export interface BoltContext {
   rangedLvl: number;
-  minHit: number;
   maxHit: number;
   zcb: boolean;
   spec: boolean;
   kandarinDiary: boolean;
   monster: Monster;
-  generateStandardDist: (acc: number, min: number, max: number) => HitDistribution;
 }
 export type BoltTransformer = (ctx: BoltContext) => HitTransformer;
 
@@ -54,7 +52,7 @@ export const diamondBolts: BoltTransformer = (ctx) => {
   const chance = 0.1 * kandarinFactor(ctx);
   const effectMax = Math.trunc(maxHit * (zcb ? 126 : 115) / 100);
 
-  const effectDist = ctx.generateStandardDist(1.0, ctx.minHit, effectMax);
+  const effectDist = HitDistribution.linear(1.0, 0, effectMax);
   return (h) => {
     if (h.accurate && zcb && spec) {
       return effectDist;
@@ -93,7 +91,7 @@ export const onyxBolts: BoltTransformer = (ctx) => {
   const chance = 0.11 * kandarinFactor(ctx);
   const effectMax = Math.trunc(maxHit * (zcb ? 132 : 120) / 100);
 
-  const effectDist = ctx.generateStandardDist(1.0, ctx.minHit, effectMax);
+  const effectDist = HitDistribution.linear(1.0, 0, effectMax);
   return (h) => {
     if (!h.accurate) {
       return new HitDistribution([new WeightedHit(1.0, [h])]);

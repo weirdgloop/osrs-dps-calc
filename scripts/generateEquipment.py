@@ -41,6 +41,21 @@ REQUIRED_PRINTOUTS = [
     'Combat style'
 ]
 
+ITEMS_TO_SKIP = [
+    'The dogsword',
+    'Drygore blowpipe',
+    'Amulet of the monarchs',
+    'Emperor ring',
+    'Devil\'s element',
+    'Nature\'s reprisal',
+    'Gloves of the damned',
+    'Crystal blessing',
+    'Sunlight spear',
+    'Sunlit bracers',
+    'Thunder khopesh',
+    'Thousand-dragon ward'
+]
+
 def getEquipmentData():
     equipment = {}
     offset = 0
@@ -145,6 +160,9 @@ def main():
 
         # Skip last man standing items
         if "(Last Man Standing)" in equipment['name']:
+            continue
+
+        if equipment['name'] in ITEMS_TO_SKIP:
             continue
 
         # Append the current equipment item to the calc's equipment list
