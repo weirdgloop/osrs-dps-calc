@@ -1,3 +1,5 @@
+// noinspection FallThroughInSwitchStatementJS
+
 import {
   autorun, IReactionDisposer, IReactionPublic, makeAutoObservable, reaction, toJS,
 } from 'mobx';
@@ -464,9 +466,24 @@ class GlobalState implements State {
       case 1:
         data.monster.inputs.phase = data.monster.inputs.tormentedDemonPhase;
 
+      case 2: // reserved: used during leagues 5
+      case 3: // reserved: used during leagues 5
+      case 4: // reserved: used during leagues 5
+      case 5:
+        data.loadouts.forEach((l) => {
+          /* eslint-disable @typescript-eslint/dot-notation */
+          /* eslint-disable @typescript-eslint/no-explicit-any */
+          if ((l as any)['leagues']) {
+            delete (l as any)['leagues'];
+          }
+          /* eslint-enable @typescript-eslint/dot-notation */
+          /* eslint-enable @typescript-eslint/no-explicit-any */
+        });
+
       default:
     }
     /* eslint-enable no-fallthrough */
+    console.debug('IMPORT | ', data);
 
     if (data.monster) {
       let newMonster: PartialDeep<Monster> = {};
