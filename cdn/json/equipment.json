@@ -6000,6 +6000,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Adamant staff of collection",
+    "id": 30607,
+    "version": "",
+    "slot": "weapon",
+    "image": "Adamant staff of collection.png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Adamant sword",
     "id": 1287,
     "version": "",
@@ -9240,36 +9270,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Amulet of the monarchs",
-    "id": 30376,
-    "version": "",
-    "slot": "neck",
-    "image": "Amulet of the monarchs.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 15,
-      "ranged_str": 15,
-      "magic_str": 100,
-      "prayer": 10
-    },
-    "offensive": {
-      "stab": 30,
-      "slash": 30,
-      "crush": 30,
-      "magic": 30,
-      "ranged": 30
-    },
-    "defensive": {
-      "stab": 30,
-      "slash": 30,
-      "crush": 30,
-      "magic": 30,
-      "ranged": 30
-    },
-    "isTwoHanded": false
-  },
-  {
     "name": "Amulet of torture",
     "id": 19553,
     "version": "",
@@ -11645,7 +11645,7 @@
     "version": "Inactive",
     "slot": "weapon",
     "image": "Arclight (inactive).png",
-    "speed": 4,
+    "speed": 5,
     "category": "Slash Sword",
     "bonuses": {
       "str": 13,
@@ -20396,6 +20396,36 @@
       "crush": 14,
       "magic": 0,
       "ranged": 15
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black staff of collection",
+    "id": 30603,
+    "version": "",
+    "slot": "weapon",
+    "image": "Black staff of collection.png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
     },
     "isTwoHanded": false
   },
@@ -34110,6 +34140,306 @@
     "isTwoHanded": false
   },
   {
+    "name": "Collection log",
+    "id": 22711,
+    "version": "",
+    "slot": "shield",
+    "image": "Collection log.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Collection log (adamant)",
+    "id": 30589,
+    "version": "",
+    "slot": "shield",
+    "image": "Collection log (adamant).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Collection log (black)",
+    "id": 30585,
+    "version": "",
+    "slot": "shield",
+    "image": "Collection log (black).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Collection log (bronze)",
+    "id": 30579,
+    "version": "",
+    "slot": "shield",
+    "image": "Collection log (bronze).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Collection log (dragon)",
+    "id": 30593,
+    "version": "",
+    "slot": "shield",
+    "image": "Collection log (dragon).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Collection log (gilded)",
+    "id": 30595,
+    "version": "",
+    "slot": "shield",
+    "image": "Collection log (gilded).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Collection log (iron)",
+    "id": 30581,
+    "version": "",
+    "slot": "shield",
+    "image": "Collection log (iron).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Collection log (mithril)",
+    "id": 30587,
+    "version": "",
+    "slot": "shield",
+    "image": "Collection log (mithril).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Collection log (rune)",
+    "id": 30591,
+    "version": "",
+    "slot": "shield",
+    "image": "Collection log (rune).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Collection log (steel)",
+    "id": 30583,
+    "version": "",
+    "slot": "shield",
+    "image": "Collection log (steel).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Colossal blade",
     "id": 27021,
     "version": "",
@@ -35361,11 +35691,11 @@
       "ranged": 36
     },
     "defensive": {
-      "stab": 27,
-      "slash": 20,
-      "crush": 24,
+      "stab": 14,
+      "slash": 10,
+      "crush": 12,
       "magic": 30,
-      "ranged": 28
+      "ranged": 15
     },
     "isTwoHanded": false
   },
@@ -35391,11 +35721,11 @@
       "ranged": 23
     },
     "defensive": {
-      "stab": 18,
-      "slash": 15,
-      "crush": 16,
+      "stab": 9,
+      "slash": 7,
+      "crush": 8,
       "magic": 20,
-      "ranged": 19
+      "ranged": 11
     },
     "isTwoHanded": false
   },
@@ -35721,11 +36051,11 @@
       "ranged": -2
     },
     "defensive": {
-      "stab": 17,
-      "slash": 20,
-      "crush": 14,
+      "stab": 10,
+      "slash": 13,
+      "crush": 8,
       "magic": -1,
-      "ranged": 18
+      "ranged": 11
     },
     "isTwoHanded": false
   },
@@ -35751,11 +36081,11 @@
       "ranged": -15
     },
     "defensive": {
-      "stab": 50,
-      "slash": 46,
-      "crush": 44,
+      "stab": 35,
+      "slash": 31,
+      "crush": 29,
       "magic": -12,
-      "ranged": 45
+      "ranged": 33
     },
     "isTwoHanded": false
   },
@@ -35901,11 +36231,11 @@
       "ranged": -14
     },
     "defensive": {
-      "stab": 25,
-      "slash": 32,
-      "crush": 34,
+      "stab": 18,
+      "slash": 21,
+      "crush": 23,
       "magic": -10,
-      "ranged": 30
+      "ranged": 21
     },
     "isTwoHanded": false
   },
@@ -35931,11 +36261,11 @@
       "ranged": -12
     },
     "defensive": {
-      "stab": 22,
-      "slash": 20,
-      "crush": 18,
+      "stab": 14,
+      "slash": 11,
+      "crush": 16,
       "magic": -9,
-      "ranged": 22
+      "ranged": 15
     },
     "isTwoHanded": false
   },
@@ -36017,7 +36347,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 5,
+      "magic": 12,
       "ranged": -1
     },
     "defensive": {
@@ -36047,7 +36377,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 18,
+      "magic": 32,
       "ranged": -6
     },
     "defensive": {
@@ -36077,7 +36407,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 25,
+      "magic": 46,
       "ranged": -8
     },
     "defensive": {
@@ -36947,36 +37277,6 @@
       "stab": 4,
       "slash": 4,
       "crush": 4,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Crystal blessing",
-    "id": 30384,
-    "version": "",
-    "slot": "ammo",
-    "image": "Crystal blessing.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 5
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
       "magic": 0,
       "ranged": 0
     },
@@ -45150,36 +45450,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Devil's element",
-    "id": 30371,
-    "version": "",
-    "slot": "shield",
-    "image": "Devil's element.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 60,
-      "prayer": 3
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 20,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
     "name": "Devout boots",
     "id": 22954,
     "version": "",
@@ -50340,6 +50610,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Dragon staff of collection",
+    "id": 30611,
+    "version": "",
+    "slot": "weapon",
+    "image": "Dragon staff of collection.png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Dragon sword",
     "id": 21009,
     "version": "",
@@ -51178,66 +51478,6 @@
       "ranged": 0
     },
     "isTwoHanded": false
-  },
-  {
-    "name": "Drygore blowpipe",
-    "id": 30374,
-    "version": "Charged",
-    "slot": "weapon",
-    "image": "Drygore blowpipe.png",
-    "speed": 3,
-    "category": "Thrown",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 10,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 50
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Drygore blowpipe",
-    "id": 30373,
-    "version": "Empty",
-    "slot": "weapon",
-    "image": "Drygore blowpipe (empty).png",
-    "speed": 3,
-    "category": "Thrown",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 50
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
   },
   {
     "name": "Dual macuahuitl",
@@ -54956,36 +55196,6 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Emperor ring",
-    "id": 30378,
-    "version": "",
-    "slot": "ring",
-    "image": "Emperor ring.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 15,
-      "ranged_str": 15,
-      "magic_str": 50,
-      "prayer": 10
-    },
-    "offensive": {
-      "stab": 30,
-      "slash": 30,
-      "crush": 30,
-      "magic": 30,
-      "ranged": 30
-    },
-    "defensive": {
-      "stab": 30,
-      "slash": 30,
-      "crush": 30,
-      "magic": 30,
-      "ranged": 30
     },
     "isTwoHanded": false
   },
@@ -61500,6 +61710,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Gilded staff of collection",
+    "id": 30613,
+    "version": "",
+    "slot": "weapon",
+    "image": "Gilded staff of collection.png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Gingerbread shield",
     "id": 24437,
     "version": "",
@@ -61706,36 +61946,6 @@
       "crush": 2,
       "magic": 0,
       "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Gloves of the damned",
-    "id": 30380,
-    "version": "",
-    "slot": "hands",
-    "image": "Gloves of the damned.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 12,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 12,
-      "slash": 12,
-      "crush": 12,
-      "magic": 6,
-      "ranged": 12
-    },
-    "defensive": {
-      "stab": 12,
-      "slash": 12,
-      "crush": 12,
-      "magic": 6,
-      "ranged": 12
     },
     "isTwoHanded": false
   },
@@ -77130,6 +77340,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Iron staff of collection",
+    "id": 30599,
+    "version": "",
+    "slot": "weapon",
+    "image": "Iron staff of collection.png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Iron sword",
     "id": 1279,
     "version": "",
@@ -86730,6 +86970,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Mithril staff of collection",
+    "id": 30605,
+    "version": "",
+    "slot": "weapon",
+    "image": "Mithril staff of collection.png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Mithril sword",
     "id": 1285,
     "version": "",
@@ -87681,11 +87951,11 @@
       "ranged": 36
     },
     "defensive": {
-      "stab": 61,
-      "slash": 53,
-      "crush": 66,
+      "stab": 35,
+      "slash": 30,
+      "crush": 40,
       "magic": 75,
-      "ranged": 62
+      "ranged": 37
     },
     "isTwoHanded": false
   },
@@ -87741,11 +88011,11 @@
       "ranged": 23
     },
     "defensive": {
-      "stab": 35,
-      "slash": 29,
-      "crush": 37,
+      "stab": 18,
+      "slash": 15,
+      "crush": 20,
       "magic": 46,
-      "ranged": 35
+      "ranged": 22
     },
     "isTwoHanded": false
   },
@@ -89818,66 +90088,6 @@
       "ranged": 0
     },
     "isTwoHanded": false
-  },
-  {
-    "name": "Nature's reprisal",
-    "id": 30390,
-    "version": "Charged",
-    "slot": "weapon",
-    "image": "Nature's reprisal.png",
-    "speed": 5,
-    "category": "Multi-Style",
-    "bonuses": {
-      "str": 103,
-      "ranged_str": 92,
-      "magic_str": 120,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 95,
-      "slash": 0,
-      "crush": 0,
-      "magic": 45,
-      "ranged": 155
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Nature's reprisal",
-    "id": 30392,
-    "version": "Uncharged",
-    "slot": "weapon",
-    "image": "Nature's reprisal (uncharged).png",
-    "speed": 5,
-    "category": "Multi-Style",
-    "bonuses": {
-      "str": 103,
-      "ranged_str": 92,
-      "magic_str": 120,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 95,
-      "slash": 0,
-      "crush": 0,
-      "magic": 45,
-      "ranged": 155
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
   },
   {
     "name": "Navy cavalier",
@@ -108060,6 +108270,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Rune staff of collection",
+    "id": 30609,
+    "version": "",
+    "slot": "weapon",
+    "image": "Rune staff of collection.png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Rune sword",
     "id": 1289,
     "version": "",
@@ -122340,6 +122580,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Steel staff of collection",
+    "id": 30601,
+    "version": "",
+    "slot": "weapon",
+    "image": "Steel staff of collection.png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Steel sword",
     "id": 1281,
     "version": "",
@@ -123056,66 +123326,6 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Sunlight spear",
-    "id": 30369,
-    "version": "",
-    "slot": "weapon",
-    "image": "Sunlight spear.png",
-    "speed": 5,
-    "category": "Stab Sword",
-    "bonuses": {
-      "str": 113,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 125,
-      "slash": 75,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 70,
-      "slash": 70,
-      "crush": 70,
-      "magic": 28,
-      "ranged": 70
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Sunlit bracers",
-    "id": 30386,
-    "version": "",
-    "slot": "hands",
-    "image": "Sunlit bracers.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 8,
-      "ranged_str": 4,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 10,
-      "slash": 10,
-      "crush": 10,
-      "magic": 6,
-      "ranged": 18
-    },
-    "defensive": {
-      "stab": 12,
-      "slash": 12,
-      "crush": 12,
-      "magic": 6,
-      "ranged": 12
     },
     "isTwoHanded": false
   },
@@ -125640,36 +125850,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "The dogsword",
-    "id": 30367,
-    "version": "",
-    "slot": "weapon",
-    "image": "The dogsword.png",
-    "speed": 6,
-    "category": "2h Sword",
-    "bonuses": {
-      "str": 132,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 8
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 132,
-      "crush": 80,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
     "name": "Thieving bag",
     "id": 23224,
     "version": "",
@@ -125790,36 +125970,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Thousand-dragon ward",
-    "id": 30382,
-    "version": "",
-    "slot": "shield",
-    "image": "Thousand-dragon ward.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 12,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 6
-    },
-    "offensive": {
-      "stab": 35,
-      "slash": 35,
-      "crush": 35,
-      "magic": 15,
-      "ranged": 25
-    },
-    "defensive": {
-      "stab": 50,
-      "slash": 55,
-      "crush": 53,
-      "magic": 40,
-      "ranged": 52
-    },
-    "isTwoHanded": false
-  },
-  {
     "name": "Three barrels",
     "id": 8862,
     "version": "",
@@ -125836,36 +125986,6 @@
     "offensive": {
       "stab": 0,
       "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Thunder khopesh",
-    "id": 30388,
-    "version": "",
-    "slot": "weapon",
-    "image": "Thunder khopesh.png",
-    "speed": 4,
-    "category": "Slash Sword",
-    "bonuses": {
-      "str": 100,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 65,
-      "slash": 110,
       "crush": 0,
       "magic": 0,
       "ranged": 0
@@ -130470,6 +130590,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Twinflame staff",
+    "id": 30634,
+    "version": "",
+    "slot": "weapon",
+    "image": "Twinflame staff.png",
+    "speed": 6,
+    "category": "Staff",
+    "bonuses": {
+      "str": 22,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 7,
+      "slash": -1,
+      "crush": 28,
+      "magic": 12,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 3,
+      "crush": 1,
+      "magic": 12,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Twisted adamant trophy",
     "id": 24376,
     "version": "",
@@ -133611,11 +133761,11 @@
       "ranged": -15
     },
     "defensive": {
-      "stab": 74,
-      "slash": 81,
-      "crush": 89,
+      "stab": 55,
+      "slash": 59,
+      "crush": 62,
       "magic": -18,
-      "ranged": 95
+      "ranged": 85
     },
     "isTwoHanded": false
   },
@@ -133731,11 +133881,11 @@
       "ranged": -12
     },
     "defensive": {
-      "stab": 55,
-      "slash": 64,
-      "crush": 67,
+      "stab": 39,
+      "slash": 42,
+      "crush": 45,
       "magic": -15,
-      "ranged": 71
+      "ranged": 59
     },
     "isTwoHanded": false
   },
@@ -143297,7 +143447,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 8,
+      "magic": 18,
       "ranged": -2
     },
     "defensive": {
@@ -143357,7 +143507,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 25,
+      "magic": 46,
       "ranged": -7
     },
     "defensive": {
@@ -143417,7 +143567,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 35,
+      "magic": 58,
       "ranged": -10
     },
     "defensive": {

@@ -83,6 +83,7 @@ const equipmentAliases = {
   26749: [26750], // Calamity chest#Normal
   26721: [26722], // Centurion cuirass#Normal
   3105: [23413], // Climbing boots
+  22711: [30593], // Collection log
   23975: [27769, 27745, 27757, 27697, 27721, 27709, 27733], // Crystal body#Active
   23977: [27771, 27747, 27759, 27699, 27723, 27711, 27735], // Crystal body#Inactive
   23971: [27777, 27753, 27765, 27705, 27729, 27717, 27741], // Crystal helm#Active
