@@ -1334,6 +1334,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.scaleDamage(this.wearing('Purging staff') ? 6 : 5, 4);
     }
 
+    if (this.player.style.type === 'magic'
+      && this.wearing('Twinflame staff')
+      && ['Bolt', 'Blast', 'Wave'].includes(this.player.spell?.name ?? '')) {
+      dist = dist.transform(
+        (h) => HitDistribution.single(1.0, [
+          new Hitsplat(h.damage),
+          new Hitsplat(Math.trunc(h.damage * 4 / 10)),
+        ]),
+      );
+    }
+
     if (this.player.style.type === 'magic' && this.isWearingAhrims()) {
       dist = dist.transform(
         (h) => new HitDistribution([

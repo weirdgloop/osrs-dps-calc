@@ -279,7 +279,7 @@ export default class BaseCalc {
    * @see https://oldschool.runescape.wiki/w/Smoke_battlestaff
    */
   protected isWearingSmokeStaff(): boolean {
-    return this.wearing(['Smoke battlestaff', 'Mystic smoke staff']);
+    return this.wearing(['Smoke battlestaff', 'Mystic smoke staff', 'Twinflame staff']);
   }
 
   /**
