@@ -84,7 +84,7 @@ export const OVERHEAD_PRAYERS: Prayer[] = [
 
 export type PrayerCombatStyle = 'magic' | 'ranged' | 'melee';
 export interface PrayerData {
-  renderOrder?: number,
+  renderOrder: number,
   name: string,
   image: StaticImageData,
   drainRate: number;
@@ -320,4 +320,4 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
 };
 
 export const SortedPrayers = Object.entries(PrayerMap)
-  .sort(([, a], [, b]) => (a.renderOrder ?? Infinity) - (b.renderOrder ?? Infinity)); // Sort by renderOrder
+  .sort(([, a], [, b]) => a.renderOrder - b.renderOrder); // Sort by renderOrder
