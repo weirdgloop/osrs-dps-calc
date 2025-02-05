@@ -3762,7 +3762,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000030-QINU`\"' Magic"
+      "'\"`UNIQ--ref-0000005E-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -13729,6 +13729,47 @@
     "weakness": null
   },
   {
+    "id": 12596,
+    "name": "Branda the Fire Queen",
+    "version": "",
+    "image": "Branda the Fire Queen.png",
+    "level": 350,
+    "speed": 7,
+    "style": [
+      "All"
+    ],
+    "size": 3,
+    "max_hit": "26",
+    "skills": {
+      "atk": 300,
+      "def": 100,
+      "hp": 600,
+      "magic": 100,
+      "ranged": 150,
+      "str": 250
+    },
+    "offensive": {
+      "atk": 150,
+      "magic": 100,
+      "magic_str": 100,
+      "ranged": 100,
+      "ranged_str": 100,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 700,
+      "heavy": 700,
+      "standard": 700,
+      "light": 700,
+      "slash": 12,
+      "stab": 12
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
     "id": 7310,
     "name": "Brassican Mage",
     "version": "",
@@ -15026,7 +15067,7 @@
     "version": "Normal",
     "image": "Calvar'ion.png",
     "level": 264,
-    "speed": 5,
+    "speed": 6,
     "style": [
       "Slash",
       "Magic"
@@ -26558,7 +26599,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-000003D6-QINU`\"'"
+      "Slash '\"`UNIQ--ref-000000AA-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -27572,6 +27613,47 @@
       "light": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 14147,
+    "name": "Eldric the Ice King",
+    "version": "",
+    "image": "Eldric the Ice King.png",
+    "level": 350,
+    "speed": 7,
+    "style": [
+      "All"
+    ],
+    "size": 3,
+    "max_hit": "26",
+    "skills": {
+      "atk": 300,
+      "def": 100,
+      "hp": 600,
+      "magic": 100,
+      "ranged": 150,
+      "str": 250
+    },
+    "offensive": {
+      "atk": 150,
+      "magic": 100,
+      "magic_str": 100,
+      "ranged": 100,
+      "ranged_str": 100,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 700,
+      "heavy": 700,
+      "standard": 700,
+      "light": 700,
+      "slash": 12,
+      "stab": 12
     },
     "attributes": [],
     "weakness": null
@@ -31470,6 +31552,50 @@
       "fiery"
     ],
     "weakness": null
+  },
+  {
+    "id": 14150,
+    "name": "Fire elemental (Royal Titans)",
+    "version": "",
+    "image": "Fire elemental (Royal Titans).png",
+    "level": 37,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "4 (Melee)",
+    "skills": {
+      "atk": 35,
+      "def": 20,
+      "hp": 40,
+      "magic": 20,
+      "ranged": 20,
+      "str": 35
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": {
+      "element": "water",
+      "severity": 100
+    }
   },
   {
     "id": 7252,
@@ -46779,6 +46905,50 @@
     }
   },
   {
+    "id": 14151,
+    "name": "Ice elemental (Royal Titans)",
+    "version": "",
+    "image": "Ice elemental (Royal Titans).png",
+    "level": 37,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "4 (Melee)",
+    "skills": {
+      "atk": 30,
+      "def": 30,
+      "hp": 40,
+      "magic": 30,
+      "ranged": 30,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": {
+      "element": "fire",
+      "severity": 100
+    }
+  },
+  {
     "id": 2085,
     "name": "Ice giant",
     "version": "1",
@@ -53175,7 +53345,7 @@
       "Magical ranged"
     ],
     "size": 1,
-    "max_hit": "6 (Ranged)",
+    "max_hit": "8 (Ranged)",
     "skills": {
       "atk": 50,
       "def": 40,
@@ -53217,7 +53387,7 @@
       "Magical ranged"
     ],
     "size": 1,
-    "max_hit": "6 (Ranged)",
+    "max_hit": "8 (Ranged)",
     "skills": {
       "atk": 50,
       "def": 40,
@@ -56803,7 +56973,8 @@
     "speed": 6,
     "style": [
       "Slash",
-      "Typeless Magic Icy breath"
+      "Typeless Magic",
+      "Icy breath"
     ],
     "size": 3,
     "max_hit": "13 (Melee)",
@@ -71628,7 +71799,7 @@
     "level": 0,
     "speed": 5,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 1,
     "max_hit": "15",
@@ -71669,7 +71840,7 @@
     "level": 0,
     "speed": 4,
     "style": [
-      "Melee"
+      "Stab"
     ],
     "size": 1,
     "max_hit": "8",
@@ -71715,7 +71886,7 @@
       "Melee"
     ],
     "size": 2,
-    "max_hit": "9",
+    "max_hit": "1",
     "skills": {
       "atk": 71,
       "def": 70,
@@ -71919,7 +72090,7 @@
     "level": 0,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 2,
     "max_hit": "8",
@@ -72044,8 +72215,8 @@
     "level": 0,
     "speed": 4,
     "style": [
-      "Melee",
-      "Dragonfire"
+      "Dragonfire",
+      "Slash"
     ],
     "size": 5,
     "max_hit": "50 (Dragonfire)",
@@ -72088,7 +72259,7 @@
     "level": 0,
     "speed": 4,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 1,
     "max_hit": "10",
@@ -72211,7 +72382,7 @@
     "level": 0,
     "speed": 4,
     "style": [
-      "Melee"
+      "Stab"
     ],
     "size": 2,
     "max_hit": "11",
@@ -72254,7 +72425,7 @@
     "level": 0,
     "speed": 4,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 2,
     "max_hit": "8",
@@ -72338,7 +72509,7 @@
     "level": 0,
     "speed": 4,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 4,
     "max_hit": "12",
@@ -72463,7 +72634,7 @@
     "level": 0,
     "speed": 6,
     "style": [
-      "Melee"
+      "Stab"
     ],
     "size": 2,
     "max_hit": "8",
@@ -72545,7 +72716,7 @@
     "level": 0,
     "speed": 4,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 1,
     "max_hit": "11",
@@ -81692,7 +81863,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 4494,
@@ -81735,7 +81909,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 4497,
@@ -81778,7 +81955,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 130,
@@ -94685,7 +94865,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000080-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-000000C6-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -94727,7 +94907,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000080-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-000000C6-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -96851,7 +97031,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000038-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000132-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -96892,7 +97072,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000003A-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000134-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -97614,7 +97794,7 @@
     "version": "Enraged",
     "image": "Vet'ion (enraged).png",
     "level": 454,
-    "speed": 4,
+    "speed": 5,
     "style": [
       "Slash",
       "Magic"
@@ -97658,7 +97838,7 @@
     "version": "Normal",
     "image": "Vet'ion.png",
     "level": 454,
-    "speed": 4,
+    "speed": 6,
     "style": [
       "Magic",
       "Slash"
