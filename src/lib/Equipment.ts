@@ -244,7 +244,7 @@ export const calculateAttackSpeed = (player: Player, monster: Monster): number =
       attackSpeed = 4;
     } else if (player.equipment.weapon?.name === 'Twinflame staff') {
       attackSpeed = 6;
-    }else{
+    } else {
       attackSpeed = 5;
     }
   }
