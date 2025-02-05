@@ -1336,7 +1336,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.player.style.type === 'magic'
       && this.wearing('Twinflame staff')
-      && ['Bolt', 'Blast', 'Wave'].includes(this.player.spell?.name ?? '')) {
+      && ['Bolt', 'Blast', 'Wave'].some((spellClass) => this.player.spell?.name.includes(spellClass) ?? false)) {
       dist = dist.transform(
         (h) => HitDistribution.single(1.0, [
           new Hitsplat(h.damage),

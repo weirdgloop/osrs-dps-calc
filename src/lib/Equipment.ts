@@ -242,6 +242,8 @@ export const calculateAttackSpeed = (player: Player, monster: Monster): number =
       && player.spell?.spellbook === 'standard'
       && player.style.stance !== 'Manual Cast') {
       attackSpeed = 4;
+    } else if (player.equipment.weapon?.name === 'Twinflame staff') {
+      attackSpeed = 6;
     } else {
       attackSpeed = 5;
     }
