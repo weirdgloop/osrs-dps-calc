@@ -1335,14 +1335,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.style.type === 'magic'
-      && this.wearing('Twinflame staff')
-      && ['Bolt', 'Blast', 'Wave'].includes(this.player.spell?.name ?? '')) {
-      dist = dist.transform(
-        (h) => HitDistribution.single(1.0, [
-          new Hitsplat(h.damage),
-          new Hitsplat(Math.trunc(h.damage * 4 / 10)),
-        ]),
-      );
+      && this.wearing('Twinflame staff')) {
+        if (this.player.spell?.name.toLowerCase().includes('bolt')
+          || this.player.spell?.name.toLowerCase().includes('blast')
+          || this.player.spell?.name.toLowerCase().includes('wave')) {
+            dist = dist.transform(
+              (h) => HitDistribution.single(1.0, [
+                new Hitsplat(h.damage),
+                new Hitsplat(Math.trunc(h.damage * 4 / 10)),
+              ]),
+            );
+        }
     }
 
     if (this.player.style.type === 'magic' && this.isWearingAhrims()) {
