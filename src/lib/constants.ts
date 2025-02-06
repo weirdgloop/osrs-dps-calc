@@ -378,6 +378,7 @@ export const ALWAYS_MAX_HIT_MONSTERS = {
   magic: [
     11709, 11712, // baboon brawler
     12816, // frem warband berserker
+    14151, 14150, // Royal titans elementals
   ],
 };
 
