@@ -34,7 +34,7 @@ import {
   OLM_MELEE_HAND_IDS,
   ONE_HIT_MONSTERS,
   SECONDS_PER_TICK,
-  TEKTON_IDS,
+  TEKTON_IDS, TITAN_ELEMENTAL_IDS,
   TOMBS_OF_AMASCUT_MONSTER_IDS,
   TTK_DIST_EPSILON,
   TTK_DIST_MAX_ITER_ROUNDS,
@@ -1058,7 +1058,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     // Ice elemental (Royal Titans) Fire elemental (Royal Titans)
-    if ((this.monster.id === 14150 || this.monster.id === 14151) && this.player.style.type === 'magic') {
+    if (TITAN_ELEMENTAL_IDS.includes(this.monster.id) && this.player.style.type === 'magic') {
       let accuracy = Math.min(1.0, Math.max(0, this.player.offensive.magic) / 100 + 0.3);
       if (this.isWearingEliteMagicVoid() || this.isWearingMagicVoid()) {
         accuracy = Math.min(1.0, accuracy * 1.45);
