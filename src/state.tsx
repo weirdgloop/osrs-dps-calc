@@ -39,6 +39,7 @@ import {
   DEFAULT_ATTACK_SPEED,
   NUMBER_OF_LOADOUTS,
 } from '@/lib/constants';
+import UserIssueType from '@/enums/UserIssueType';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
   ARM_PRAYERS,
@@ -352,7 +353,9 @@ class GlobalState implements State {
 
     // Determine the current global/UI-related issues
     // ex. is.push({ type: UserIssueType.MONSTER_UNIQUE_EFFECTS, message: 'This monster has unique effects that are not yet accounted for. Results may be inaccurate.' });
-
+    if ([12596, 14147].includes(this.monster.id)) {
+      is.push({ type: UserIssueType.MONSTER_UNIQUE_EFFECTS, message: 'This monster has unique effects when using ranged that are not yet accounted for. Ranged results will be inaccurate.' });
+    }
     // Add in the issues returned from the calculator
     for (const l of Object.values(this.calc.loadouts)) {
       if (l.userIssues) is = [...is, ...l.userIssues];
