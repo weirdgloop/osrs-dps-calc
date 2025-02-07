@@ -99,7 +99,7 @@ export default class Comparator {
 
       case CompareXAxis.MONSTER_MAGIC:
         for (let newMagic = this.baseMonster.skills.magic; newMagic >= 0; newMagic--) {
-          yield monsterInput(newMagic, { skills: { def: newMagic } });
+          yield monsterInput(newMagic, { skills: { magic: newMagic } });
         }
         return;
 
