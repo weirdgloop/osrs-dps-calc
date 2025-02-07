@@ -34,7 +34,7 @@ import {
   OLM_MELEE_HAND_IDS,
   ONE_HIT_MONSTERS,
   SECONDS_PER_TICK,
-  TEKTON_IDS,
+  TEKTON_IDS, TITAN_ELEMENTAL_IDS,
   TOMBS_OF_AMASCUT_MONSTER_IDS,
   TTK_DIST_EPSILON,
   TTK_DIST_MAX_ITER_ROUNDS,
@@ -1055,6 +1055,16 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.monster.name === 'Tormented Demon' && this.monster.inputs.phase !== 'Shielded') {
       this.track(DetailKey.PLAYER_ACCURACY_TD, 1.0);
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
+    }
+
+    // Ice elemental (Royal Titans) Fire elemental (Royal Titans)
+    if (TITAN_ELEMENTAL_IDS.includes(this.monster.id) && this.player.style.type === 'magic') {
+      let accuracy = Math.min(1.0, Math.max(0, this.player.offensive.magic) / 100 + 0.3);
+      if (this.isWearingEliteMagicVoid() || this.isWearingMagicVoid()) {
+        accuracy = Math.min(1.0, accuracy * 1.45);
+      }
+      this.track(DetailKey.PLAYER_ACCURACY_ROYAL_TITAN_ELEMENTAL, accuracy);
+      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, accuracy);
     }
 
     if (this.opts.usingSpecialAttack && (this.wearing(['Voidwaker', 'Dawnbringer']) || this.isWearingMlb())) {

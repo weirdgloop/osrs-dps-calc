@@ -349,6 +349,11 @@ export const BA_ATTACKER_MONSTERS = [
 
 export const VARDORVIS_IDS = [12223, 12224, 12228, 12425, 12426, 13656];
 
+export const TITAN_ELEMENTAL_IDS = [
+  14150, // Fire elemental (Royal Titans)
+  14151, // Ice elemental (Royal Titans)
+];
+
 export const ACCURACY_PRECISION = 2;
 export const DPS_PRECISION = 3;
 export const EXPECTED_HIT_PRECISION = 1;
