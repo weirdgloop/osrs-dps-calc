@@ -1057,6 +1057,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
+    // Ice elemental (Royal Titans) Fire elemental (Royal Titans)
+    if ((this.monster.id === 14150 || this.monster.id === 14151) && this.player.style.type === 'magic') {
+      const accuracy = Math.min(1.0, Math.max(0, this.player.offensive.magic) / 100 + 0.3);
+      this.track(DetailKey.PLAYER_ACCURACY_ROYAL_TITAN_ELEMENTAL, accuracy);
+      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, accuracy);
+    }
+
     if (this.opts.usingSpecialAttack && (this.wearing(['Voidwaker', 'Dawnbringer']) || this.isWearingMlb())) {
       return 1.0;
     }

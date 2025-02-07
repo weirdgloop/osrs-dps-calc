@@ -76,6 +76,7 @@ export enum DetailKey {
   PLAYER_ACCURACY_BRIMSTONE = 'Player accuracy brimstone ring',
   PLAYER_ACCURACY_FANG_TOA = 'Player accuracy fang toa',
   PLAYER_ACCURACY_FANG = 'Player accuracy fang',
+  PLAYER_ACCURACY_ROYAL_TITAN_ELEMENTAL = 'Player accuracy override elemental',
   PLAYER_ACCURACY_FINAL = 'Player accuracy',
   HIT_DIST_FINAL_MIN = 'Hit dist min',
   HIT_DIST_FINAL_MAX = 'Hit dist max',
