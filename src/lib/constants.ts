@@ -349,6 +349,11 @@ export const BA_ATTACKER_MONSTERS = [
 
 export const VARDORVIS_IDS = [12223, 12224, 12228, 12425, 12426, 13656];
 
+export const TITAN_BOSS_IDS = [
+  12596, // Fire elemental (Royal Titans)
+  14147, // Ice elemental (Royal Titans)
+];
+
 export const TITAN_ELEMENTAL_IDS = [
   14150, // Fire elemental (Royal Titans)
   14151, // Ice elemental (Royal Titans)
