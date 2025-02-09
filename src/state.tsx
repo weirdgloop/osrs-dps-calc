@@ -38,6 +38,7 @@ import { spellByName } from '@/types/Spell';
 import {
   DEFAULT_ATTACK_SPEED,
   NUMBER_OF_LOADOUTS,
+  TITAN_BOSS_IDS,
 } from '@/lib/constants';
 import UserIssueType from '@/enums/UserIssueType';
 import { EquipmentCategory } from './enums/EquipmentCategory';
@@ -353,7 +354,7 @@ class GlobalState implements State {
 
     // Determine the current global/UI-related issues
     // ex. is.push({ type: UserIssueType.MONSTER_UNIQUE_EFFECTS, message: 'This monster has unique effects that are not yet accounted for. Results may be inaccurate.' });
-    if ([12596, 14147].includes(this.monster.id)) {
+    if (TITAN_BOSS_IDS.includes(this.monster.id)) {
       is.push({ type: UserIssueType.MONSTER_UNIQUE_EFFECTS, message: 'This monster has unique effects when using ranged that are not yet accounted for. Ranged results will be inaccurate.' });
     }
     // Add in the issues returned from the calculator
