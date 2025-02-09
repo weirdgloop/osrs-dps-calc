@@ -368,10 +368,13 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
 export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Abyssal dagger': 25,
   'Dragon dagger': 25,
+  'Dragon longsword': 25,
+  'Dragon mace': 25,
   "Osmumten's fang": 25,
   "Osmumten's fang (or)": 25,
   'Dual macuahuitl': 25,
   'Scorching bow': 25,
+  'Dragon knife': 25,
   'Purging staff': 25,
 
   'Dawnbringer': 30,
@@ -381,6 +384,8 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
 
   'Magic longbow': 35,
   'Magic comp bow': 35,
+
+  'Dragon sword': 40,
 
   'Elder maul': 50,
   'Dragon warhammer': 50,
@@ -401,12 +406,21 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Armadyl godsword': 50,
   'Zamorak godsword': 50,
   'Abyssal bludgeon': 50,
+  'Abyssal whip': 50,
 
   'Magic shortbow': 55,
   'Dark bow': 55,
   'Eldritch nightmare staff': 55,
   'Volatile nightmare staff': 55,
+  'Dragon scimitar': 55,
+
+  'Heavy ballista': 65,
+  'Light ballista': 65,
+  "Saradomin's blessed sword": 65,
 
   'Zaryte crossbow': 75,
+
+  'Saradomin sword': 100,
+  'Seercull': 100,
 };
 /* eslint-enable quote-props */
