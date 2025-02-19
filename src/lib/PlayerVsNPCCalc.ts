@@ -44,9 +44,7 @@ import {
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { DetailKey } from '@/lib/CalcDetails';
 import { Factor, MinMax } from '@/lib/Math';
-import {
-  AmmoApplicability, ammoApplicability, calculateAttackSpeed, WEAPON_SPEC_COSTS,
-} from '@/lib/Equipment';
+import { calculateAttackSpeed, WEAPON_SPEC_COSTS } from '@/lib/Equipment';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonster, scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { CombatStyleType, getRangedDamageType } from '@/types/PlayerCombatStyle';
@@ -72,7 +70,6 @@ const PARTIALLY_IMPLEMENTED_SPECS: string[] = [
 // Some entries are intentionally omitted as they are not dps-related (e.g. dragon skilling tools, ivandis flail, dbaxe)
 const UNIMPLEMENTED_SPECS: string[] = [
   'Abyssal tentacle',
-  'Abyssal whip',
   'Ancient mace',
   'Armadyl crossbow',
   'Barrelchest anchor',
@@ -85,23 +82,13 @@ const UNIMPLEMENTED_SPECS: string[] = [
   'Dragon 2h sword',
   'Dragon crossbow',
   'Dragon hasta',
-  'Dragon knife',
-  'Dragon longsword',
-  'Dragon mace',
-  'Dragon scimitar',
   'Dragon spear',
-  'Dragon sword',
   'Dragon thrownaxe',
   'Eclipse atlatl',
   'Excalibur',
   'Granite hammer',
   'Granite maul',
-  'Heavy ballista',
-  'Light ballista',
   'Rune claws',
-  'Saradomin sword',
-  "Saradomin's blessed sword",
-  'Seercull',
   'Staff of balance',
   'Staff of light',
   'Staff of the dead',
@@ -139,15 +126,20 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         'Dragon claws',
         'Dragon dagger',
         'Dragon halberd',
+        'Dragon longsword',
+        'Dragon scimitar',
         'Crystal halberd',
         'Abyssal dagger',
+        'Saradomin sword',
       ]) || this.isWearingGodsword()) {
         defenceStyle = 'slash';
-      } else if (this.wearing(['Arclight', 'Emberlight'])) {
+      } else if (this.wearing(['Arclight', 'Emberlight', 'Dragon sword'])) {
         defenceStyle = 'stab';
-      } else if (this.wearing('Voidwaker')) {
-        // doesn't really matter since it's 100% accuracy but eh
+      } else if (this.wearing(['Voidwaker', "Saradomin's blessed sword"])) {
+        // doesn't really matter for voidwaker since it's 100% accuracy but eh
         defenceStyle = 'magic';
+      } else if (this.wearing('Dragon mace')) {
+        defenceStyle = 'crush';
       }
     }
 
@@ -287,7 +279,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
       } else if (this.isWearingFang()) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [3, 2]);
-      } else if (this.wearing('Elder maul')) {
+      } else if (this.wearing(['Elder maul', 'Dragon mace', 'Dragon sword', 'Dragon scimitar', 'Abyssal whip'])) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [5, 4]);
       } else if (this.wearing('Dragon dagger')) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [23, 20]);
@@ -434,11 +426,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_GODSWORD_SPEC, maxHit, [11, 10]);
       }
 
-      if (this.wearing('Bandos godsword')) {
+      if (this.wearing(['Bandos godsword', 'Saradomin sword'])) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [11, 10]);
-      } else if (this.wearing('Armadyl godsword')) {
+      } else if (this.wearing(['Armadyl godsword', 'Dragon sword', 'Dragon longsword', "Saradomin's blessed sword"])) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [5, 4]);
-      } else if (this.wearing('Dragon warhammer')) {
+      } else if (this.wearing(['Dragon mace', 'Dragon warhammer'])) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [3, 2]);
       } else if (this.wearing('Voidwaker')) {
         minHit = this.trackFactor(DetailKey.MIN_HIT_SPEC, maxHit, [1, 2]);
@@ -550,6 +542,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
       } else if (this.isWearingMsb()) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [10, 7]);
+      } else if (this.wearing(['Heavy ballista', 'Light ballista'])) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [5, 4]);
       }
     }
 
@@ -570,7 +564,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     this.track(DetailKey.DAMAGE_LEVEL, effectiveLevel);
 
-    if (this.opts.usingSpecialAttack && (this.isWearingMsb() || this.isWearingMlb())) {
+    if (this.opts.usingSpecialAttack && (this.isWearingMsb() || this.isWearingMlb() || this.wearing('Seercull'))) {
       // why +10 when that's not used anywhere else? who knows
       effectiveLevel += 10;
 
@@ -680,6 +674,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else if (this.wearing('Webweaver bow')) {
         const maxReduction = Math.trunc(maxHit * 6 / 10);
         maxHit = this.trackAdd(DetailKey.MAX_HIT_SPEC, maxHit, -maxReduction);
+      } else if (this.wearing(['Heavy ballista', 'Light ballista'])) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [5, 4]);
       }
     }
 
@@ -971,12 +967,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    * Don't use this for player-facing values! Use `getMax()`
    */
   getMinAndMax(): MinMax {
-    if (this.player.style.stance !== 'Manual Cast') {
-      const weaponId = this.player.equipment.weapon?.id;
-      const ammoId = this.player.equipment.ammo?.id;
-      if (ammoApplicability(weaponId, ammoId) === AmmoApplicability.INVALID) {
-        return [0, 0];
-      }
+    if (this.player.style.stance !== 'Manual Cast' && this.isAmmoInvalid()) {
+      return [0, 0];
     }
 
     const style = this.player.style.type;
@@ -1013,12 +1005,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return this.track(DetailKey.PLAYER_ACCURACY_ROLL_FINAL, this.opts.overrides?.attackRoll);
     }
 
-    if (this.player.style.stance !== 'Manual Cast') {
-      const weaponId = this.player.equipment.weapon?.id;
-      const ammoId = this.player.equipment.ammo?.id;
-      if (ammoApplicability(weaponId, ammoId) === AmmoApplicability.INVALID) {
-        return this.track(DetailKey.PLAYER_ACCURACY_ROLL_FINAL, 0.0);
-      }
+    if (this.player.style.stance !== 'Manual Cast' && this.isAmmoInvalid()) {
+      return this.track(DetailKey.PLAYER_ACCURACY_ROLL_FINAL, 0.0);
     }
 
     const style = this.player.style.type;
@@ -1067,8 +1055,15 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, accuracy);
     }
 
-    if (this.opts.usingSpecialAttack && (this.wearing(['Voidwaker', 'Dawnbringer']) || this.isWearingMlb())) {
+    if (this.opts.usingSpecialAttack && this.wearing(['Voidwaker', 'Dawnbringer'])) {
       return 1.0;
+    }
+
+    if (this.opts.usingSpecialAttack && (this.wearing('Seercull') || this.isWearingMlb())) {
+      if (this.isAmmoInvalid()) {
+        return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 0.0);
+      }
+      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
     const atk = this.getMaxAttackRoll();
@@ -1243,7 +1238,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     // simple multi-hit specs
     if (this.opts.usingSpecialAttack) {
       let hitCount = 1;
-      if (this.wearing(['Dragon dagger', 'Abyssal dagger']) || this.isWearingMsb()) {
+      if (this.wearing(['Dragon dagger', 'Abyssal dagger', 'Dragon knife']) || this.isWearingMsb()) {
         hitCount = 2;
       } else if (this.wearing('Webweaver bow')) {
         hitCount = 4;
@@ -1252,6 +1247,18 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       if (hitCount !== 1) {
         dist = new AttackDistribution(Array(hitCount).fill(standardHitDist));
       }
+    }
+
+    if (this.opts.usingSpecialAttack && this.wearing('Saradomin sword')) {
+      const magicHit = HitDistribution.linear(1.0, 1, 16);
+      dist = dist.transform(
+        (h) => {
+          if (h.accurate && !IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS.includes(this.monster.id)) {
+            return new HitDistribution([new WeightedHit(1.0, [h])]).zip(magicHit);
+          }
+          return new HitDistribution([new WeightedHit(1.0, [h, Hitsplat.INACCURATE])]);
+        },
+      );
     }
 
     if (this.opts.usingSpecialAttack && this.wearing('Purging staff')) {

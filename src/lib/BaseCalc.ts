@@ -618,6 +618,10 @@ export default class BaseCalc {
     }
   }
 
+  protected isAmmoInvalid(): boolean {
+    return ammoApplicability(this.player.equipment.weapon?.id, this.player.equipment.ammo?.id) === AmmoApplicability.INVALID;
+  }
+
   protected addIssue(type: UserIssueType, message: string) {
     this.userIssues.push({ type, message, loadout: this.opts.loadoutName });
   }
@@ -664,7 +668,7 @@ export default class BaseCalc {
       };
     }
 
-    if (this.player.style.stance !== 'Manual Cast' && ammoApplicability(eq.weapon?.id, eq.ammo?.id) === AmmoApplicability.INVALID) {
+    if (this.player.style.stance !== 'Manual Cast' && this.isAmmoInvalid()) {
       if (eq.ammo?.name) {
         this.addIssue(UserIssueType.EQUIPMENT_WRONG_AMMO, 'This ammo does not work with your current weapon.');
       } else {
