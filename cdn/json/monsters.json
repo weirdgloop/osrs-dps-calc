@@ -4449,7 +4449,7 @@
     "level": 109,
     "speed": 4,
     "style": [
-      "Range"
+      "Ranged"
     ],
     "size": 1,
     "max_hit": "10",
@@ -4492,7 +4492,7 @@
     "level": 109,
     "speed": 4,
     "style": [
-      "Range"
+      "Ranged"
     ],
     "size": 1,
     "max_hit": "10",
@@ -4535,7 +4535,7 @@
     "level": 109,
     "speed": 4,
     "style": [
-      "Range"
+      "Ranged"
     ],
     "size": 1,
     "max_hit": "10",
@@ -4578,7 +4578,7 @@
     "level": 109,
     "speed": 4,
     "style": [
-      "Range"
+      "Ranged"
     ],
     "size": 1,
     "max_hit": "10",
@@ -4621,7 +4621,7 @@
     "level": 109,
     "speed": 4,
     "style": [
-      "Range"
+      "Ranged"
     ],
     "size": 1,
     "max_hit": "10",
@@ -9956,50 +9956,6 @@
     "weakness": null
   },
   {
-    "id": 13658,
-    "name": "Bee Swarm (Deadman)",
-    "version": "",
-    "image": "Bee Swarm (Deadman).png",
-    "level": 670,
-    "speed": 1,
-    "style": [
-      "Crush"
-    ],
-    "size": 3,
-    "max_hit": "11",
-    "skills": {
-      "atk": 400,
-      "def": 30,
-      "hp": 2000,
-      "magic": 1,
-      "ranged": 1,
-      "str": 100
-    },
-    "offensive": {
-      "atk": 200,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 10,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 10,
-      "stab": 10
-    },
-    "attributes": [],
-    "weakness": {
-      "element": "fire",
-      "severity": 50
-    }
-  },
-  {
     "id": 4132,
     "name": "Berry",
     "version": "Awake",
@@ -10007,7 +9963,7 @@
     "level": 71,
     "speed": 6,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 2,
     "max_hit": "13",
@@ -10048,7 +10004,7 @@
     "level": 71,
     "speed": 6,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 2,
     "max_hit": "13",
@@ -11200,6 +11156,52 @@
     "name": "Black demon (The Grand Tree)",
     "version": "Normal",
     "image": "Black demon (The Grand Tree).png",
+    "level": 172,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "16",
+    "skills": {
+      "atk": 145,
+      "def": 152,
+      "hp": 157,
+      "magic": 1,
+      "ranged": 1,
+      "str": 148
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": -10,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "demon"
+    ],
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
+  },
+  {
+    "id": 12385,
+    "name": "Black demon (The Scar)",
+    "version": "",
+    "image": "Black demon (3).png",
     "level": 172,
     "speed": 4,
     "style": [
@@ -13736,10 +13738,10 @@
     "level": 350,
     "speed": 7,
     "style": [
-      "All"
+      "Crush"
     ],
     "size": 3,
-    "max_hit": "26",
+    "max_hit": "26 (Melee)",
     "skills": {
       "atk": 300,
       "def": 100,
@@ -13766,7 +13768,9 @@
       "slash": 12,
       "stab": 12
     },
-    "attributes": [],
+    "attributes": [
+      "fiery"
+    ],
     "weakness": null
   },
   {
@@ -16690,52 +16694,6 @@
       "atk": 220,
       "def": 100,
       "hp": 600,
-      "magic": 220,
-      "ranged": 220,
-      "str": 220
-    },
-    "offensive": {
-      "atk": 50,
-      "magic": 50,
-      "magic_str": 0,
-      "ranged": 50,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 25,
-      "magic": 100,
-      "heavy": 100,
-      "standard": 100,
-      "light": 100,
-      "slash": 100,
-      "stab": 50
-    },
-    "attributes": [
-      "demon"
-    ],
-    "weakness": {
-      "element": "water",
-      "severity": 40
-    }
-  },
-  {
-    "id": 13657,
-    "name": "Cerberus (Deadman)",
-    "version": "",
-    "image": "Cerberus (Deadman).png",
-    "level": 473,
-    "speed": 3,
-    "style": [
-      "Stab"
-    ],
-    "size": 5,
-    "max_hit": "23",
-    "skills": {
-      "atk": 220,
-      "def": 150,
-      "hp": 1000,
       "magic": 220,
       "ranged": 220,
       "str": 220
@@ -24441,7 +24399,7 @@
     "speed": 3,
     "style": [
       "Ranged",
-      "Melee"
+      "Crush"
     ],
     "size": 1,
     "max_hit": "56 (special direct hit)",
@@ -25703,9 +25661,9 @@
     "level": 192,
     "speed": 4,
     "style": [
-      "Melee",
       "Ranged",
-      "Volcanic flame"
+      "Ranged melee",
+      "Dragonfire"
     ],
     "size": 5,
     "max_hit": "15",
@@ -26551,47 +26509,6 @@
     "weakness": null
   },
   {
-    "id": 13662,
-    "name": "Durial321 (Deadman)",
-    "version": "",
-    "image": "Durial321 (Deadman).png",
-    "level": 334,
-    "speed": 4,
-    "style": [
-      "Slash"
-    ],
-    "size": 1,
-    "max_hit": "28",
-    "skills": {
-      "atk": 95,
-      "def": 88,
-      "hp": 1000,
-      "magic": 94,
-      "ranged": 80,
-      "str": 98
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 47,
-      "magic_str": 0,
-      "ranged": -12,
-      "ranged_str": 0,
-      "str": 105
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 162,
-      "magic": 69,
-      "heavy": 88,
-      "standard": 88,
-      "light": 88,
-      "slash": 134,
-      "stab": 148
-    },
-    "attributes": [],
-    "weakness": null
-  },
-  {
     "id": 7851,
     "name": "Dusk",
     "version": "First form",
@@ -26599,7 +26516,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-000000AA-QINU`\"'"
+      "Slash '\"`UNIQ--ref-00000000-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -27625,10 +27542,10 @@
     "level": 350,
     "speed": 7,
     "style": [
-      "All"
+      "Crush"
     ],
     "size": 3,
-    "max_hit": "26",
+    "max_hit": "26 (Melee)",
     "skills": {
       "atk": 300,
       "def": 100,
@@ -28537,9 +28454,9 @@
     "level": 214,
     "speed": 4,
     "style": [
-      "Melee",
       "Magic",
-      "Dragonfire"
+      "Dragonfire",
+      "Slash"
     ],
     "size": 4,
     "max_hit": "22 (Slash)",
@@ -28580,9 +28497,9 @@
     "level": 83,
     "speed": 4,
     "style": [
-      "Melee",
       "Magic",
-      "Dragonfire"
+      "Dragonfire",
+      "Slash"
     ],
     "size": 4,
     "max_hit": "8 (Slash)",
@@ -31221,7 +31138,7 @@
     "level": 64,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 1,
     "max_hit": "7",
@@ -33740,26 +33657,25 @@
     "level": 83,
     "speed": 3,
     "style": [
-      "Ranged",
-      "Melee"
+      "Slash"
     ],
     "size": 1,
-    "max_hit": "13",
+    "max_hit": "12",
     "skills": {
-      "atk": 1,
+      "atk": 70,
       "def": 70,
       "hp": 80,
       "magic": 1,
-      "ranged": 80,
-      "str": 1
+      "ranged": 1,
+      "str": 70
     },
     "offensive": {
-      "atk": 0,
+      "atk": 50,
       "magic": 0,
       "magic_str": 0,
-      "ranged": 50,
+      "ranged": 0,
       "ranged_str": 0,
-      "str": 0
+      "str": 30
     },
     "defensive": {
       "flat_armour": 0,
@@ -33782,8 +33698,7 @@
     "level": 76,
     "speed": 3,
     "style": [
-      "Ranged",
-      "Melee"
+      "Ranged"
     ],
     "size": 1,
     "max_hit": "13",
@@ -33800,7 +33715,7 @@
       "magic": 0,
       "magic_str": 0,
       "ranged": 50,
-      "ranged_str": 0,
+      "ranged_str": 30,
       "str": 0
     },
     "defensive": {
@@ -33824,10 +33739,10 @@
     "level": 45,
     "speed": 4,
     "style": [
-      "Melee"
+      "Stab"
     ],
     "size": 1,
-    "max_hit": "6",
+    "max_hit": "5",
     "skills": {
       "atk": 40,
       "def": 50,
@@ -33837,12 +33752,12 @@
       "str": 30
     },
     "offensive": {
-      "atk": 20,
+      "atk": 25,
       "magic": 0,
       "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
-      "str": 30
+      "str": 20
     },
     "defensive": {
       "flat_armour": 0,
@@ -33865,7 +33780,7 @@
     "level": 45,
     "speed": 4,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 1,
     "max_hit": "6",
@@ -33904,16 +33819,16 @@
     "version": "Level 50 (1)",
     "image": "Gangster (level 50, 1).png",
     "level": 50,
-    "speed": 5,
+    "speed": 7,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 1,
     "max_hit": "6",
     "skills": {
       "atk": 50,
       "def": 40,
-      "hp": 50,
+      "hp": 45,
       "magic": 1,
       "ranged": 1,
       "str": 40
@@ -33945,27 +33860,27 @@
     "version": "Level 50 (2)",
     "image": "Gangster (level 50, 2).png",
     "level": 50,
-    "speed": 5,
+    "speed": 4,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 1,
-    "max_hit": "6",
+    "max_hit": "8",
     "skills": {
-      "atk": 50,
-      "def": 40,
-      "hp": 50,
+      "atk": 40,
+      "def": 30,
+      "hp": 30,
       "magic": 1,
       "ranged": 1,
-      "str": 40
+      "str": 70
     },
     "offensive": {
-      "atk": 35,
+      "atk": 0,
       "magic": 0,
       "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
-      "str": 15
+      "str": 0
     },
     "defensive": {
       "flat_armour": 0,
@@ -39102,6 +39017,52 @@
       "demon"
     ],
     "weakness": null
+  },
+  {
+    "id": 12387,
+    "name": "Greater demon (The Scar)",
+    "version": "",
+    "image": "Greater demon.png",
+    "level": 92,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "9",
+    "skills": {
+      "atk": 76,
+      "def": 81,
+      "hp": 87,
+      "magic": 1,
+      "ranged": 1,
+      "str": 78
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": -10,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "demon"
+    ],
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 7245,
@@ -48740,7 +48701,7 @@
     "speed": 4,
     "style": [
       "Magic",
-      "Melee"
+      "Crush"
     ],
     "size": 1,
     "max_hit": "3",
@@ -49400,47 +49361,6 @@
       "light": 45,
       "slash": 30,
       "stab": 30
-    },
-    "attributes": [],
-    "weakness": null
-  },
-  {
-    "id": 13660,
-    "name": "Jaguar warrior (Deadman)",
-    "version": "",
-    "image": "Jaguar warrior (deadman).png",
-    "level": 518,
-    "speed": 6,
-    "style": [
-      "Slash"
-    ],
-    "size": 2,
-    "max_hit": "21",
-    "skills": {
-      "atk": 200,
-      "def": 100,
-      "hp": 1500,
-      "magic": 100,
-      "ranged": 160,
-      "str": 165
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 15
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 50,
-      "magic": 100,
-      "heavy": 50,
-      "standard": 50,
-      "light": 50,
-      "slash": 50,
-      "stab": 50
     },
     "attributes": [],
     "weakness": null
@@ -53341,8 +53261,8 @@
     "level": 55,
     "speed": 2,
     "style": [
-      "Melee",
-      "Magical ranged"
+      "Magical ranged",
+      "Crush"
     ],
     "size": 1,
     "max_hit": "8 (Ranged)",
@@ -53383,8 +53303,8 @@
     "level": 55,
     "speed": 2,
     "style": [
-      "Melee",
-      "Magical ranged"
+      "Magical ranged",
+      "Stab"
     ],
     "size": 1,
     "max_hit": "8 (Ranged)",
@@ -55715,7 +55635,10 @@
     "attributes": [
       "demon"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 12389,
@@ -55741,6 +55664,52 @@
       "atk": 0,
       "magic": 0,
       "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": -10,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "demon"
+    ],
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
+  },
+  {
+    "id": 12361,
+    "name": "Lesser demon (The Scar)",
+    "version": "Level 94 (mage)",
+    "image": "Lesser demon (level 94, mage).png",
+    "level": 94,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 2,
+    "max_hit": "12",
+    "skills": {
+      "atk": 110,
+      "def": 110,
+      "hp": 80,
+      "magic": 110,
+      "ranged": 110,
+      "str": 110
+    },
+    "offensive": {
+      "atk": 100,
+      "magic": 100,
+      "magic_str": 0,
       "ranged": 100,
       "ranged_str": 0,
       "str": 0
@@ -55758,13 +55727,16 @@
     "attributes": [
       "demon"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 12363,
     "name": "Lesser demon (The Scar)",
-    "version": "Level 94 (mage)",
-    "image": "Lesser demon (level 94, mage).png",
+    "version": "Level 94 (melee)",
+    "image": "Lesser demon (level 94, melee).png",
     "level": 94,
     "speed": 4,
     "style": [
@@ -55801,50 +55773,10 @@
     "attributes": [
       "demon"
     ],
-    "weakness": null
-  },
-  {
-    "id": 12361,
-    "name": "Lesser demon (The Scar)",
-    "version": "Level 94 (melee)",
-    "image": "Lesser demon (level 94, melee).png",
-    "level": 94,
-    "speed": 4,
-    "style": [
-      "Slash"
-    ],
-    "size": 2,
-    "max_hit": "12",
-    "skills": {
-      "atk": 110,
-      "def": 110,
-      "hp": 80,
-      "magic": 110,
-      "ranged": 110,
-      "str": 110
-    },
-    "offensive": {
-      "atk": 100,
-      "magic": 100,
-      "magic_str": 0,
-      "ranged": 100,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "demon"
-    ],
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 12365,
@@ -55887,7 +55819,10 @@
     "attributes": [
       "demon"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 2005,
@@ -61710,7 +61645,6 @@
     "level": 96,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -61752,7 +61686,6 @@
     "level": 98,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -61794,7 +61727,6 @@
     "level": 103,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -61836,7 +61768,6 @@
     "level": 103,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -61878,7 +61809,6 @@
     "level": 103,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -61920,7 +61850,6 @@
     "level": 103,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -61962,7 +61891,6 @@
     "level": 103,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -62004,7 +61932,6 @@
     "level": 103,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -62046,7 +61973,6 @@
     "level": 103,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -62088,7 +62014,6 @@
     "level": 103,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -62130,7 +62055,6 @@
     "level": 84,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -62172,7 +62096,6 @@
     "level": 84,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -62214,7 +62137,6 @@
     "level": 84,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -62256,7 +62178,6 @@
     "level": 84,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -62298,7 +62219,6 @@
     "level": 84,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -62340,7 +62260,6 @@
     "level": 84,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -62382,7 +62301,6 @@
     "level": 84,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -62424,7 +62342,6 @@
     "level": 84,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -62466,7 +62383,6 @@
     "level": 84,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -62508,7 +62424,6 @@
     "level": 84,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -63472,8 +63387,8 @@
     "level": 26,
     "speed": 4,
     "style": [
-      "Melee",
-      "Curse"
+      "Curse",
+      "Crush"
     ],
     "size": 1,
     "max_hit": "3",
@@ -63598,7 +63513,7 @@
     "style": [
       "Magic",
       "Ranged",
-      "Melee"
+      "Crush"
     ],
     "size": 3,
     "max_hit": "33 (Magic)",
@@ -70763,7 +70678,7 @@
     "level": 2,
     "speed": 3,
     "style": [
-      "Typeless Melee"
+      "Typeless Crush"
     ],
     "size": 1,
     "max_hit": "40",
@@ -72163,7 +72078,9 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "demon"
+    ],
     "weakness": null
   },
   {
@@ -75997,7 +75914,10 @@
     "attributes": [
       "demon"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 12373,
@@ -76040,7 +75960,10 @@
     "attributes": [
       "demon"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 12388,
@@ -76083,7 +76006,10 @@
     "attributes": [
       "demon"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 12374,
@@ -76126,7 +76052,10 @@
     "attributes": [
       "demon"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
   },
   {
     "id": 12377,
@@ -76374,7 +76303,7 @@
     "defensive": {
       "flat_armour": 0,
       "crush": 0,
-      "magic": 0,
+      "magic": -10,
       "heavy": 0,
       "standard": 0,
       "light": 0,
@@ -76384,7 +76313,10 @@
     "attributes": [
       "demon"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 7548,
@@ -79366,7 +79298,7 @@
     "level": 77,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 1,
     "max_hit": "10",
@@ -79412,7 +79344,7 @@
     "level": 77,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 1,
     "max_hit": "10",
@@ -79458,7 +79390,7 @@
     "level": 77,
     "speed": 4,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 1,
     "max_hit": "10",
@@ -79504,7 +79436,7 @@
     "level": 77,
     "speed": 4,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 1,
     "max_hit": "10",
@@ -79596,7 +79528,6 @@
     "level": 22,
     "speed": 4,
     "style": [
-      "Melee",
       "Slash"
     ],
     "size": 1,
@@ -81009,8 +80940,7 @@
     "level": 13,
     "speed": 4,
     "style": [
-      "Crush",
-      "Melee"
+      "Crush"
     ],
     "size": 1,
     "max_hit": "2",
@@ -81698,7 +81628,7 @@
     "speed": 4,
     "style": [
       "Magic",
-      "Melee"
+      "Crush"
     ],
     "size": 1,
     "max_hit": "3",
@@ -82405,8 +82335,94 @@
   {
     "id": 872,
     "name": "Skogre",
-    "version": "",
-    "image": "Skogre.png",
+    "version": "1",
+    "image": "Skogre (1).png",
+    "level": 44,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 20,
+      "def": 35,
+      "hp": 71,
+      "magic": 1,
+      "ranged": 1,
+      "str": 36
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 878,
+    "name": "Skogre",
+    "version": "2",
+    "image": "Skogre (2).png",
+    "level": 44,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 20,
+      "def": 35,
+      "hp": 71,
+      "magic": 1,
+      "ranged": 1,
+      "str": 36
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "undead"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 879,
+    "name": "Skogre",
+    "version": "3",
+    "image": "Skogre (3).png",
     "level": 44,
     "speed": 6,
     "style": [
@@ -82487,7 +82503,10 @@
     "attributes": [
       "demon"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 774,
@@ -85069,7 +85088,6 @@
     "level": 36,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -85111,7 +85129,6 @@
     "level": 55,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -85153,7 +85170,6 @@
     "level": 74,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -85195,7 +85211,6 @@
     "level": 88,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -85237,7 +85252,6 @@
     "level": 92,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -86999,7 +87013,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000002-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000048-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -90424,7 +90438,7 @@
     "name": "Thief (Varlamore)",
     "version": "1",
     "image": "Thief (Varlamore, 1).png",
-    "level": 23,
+    "level": 16,
     "speed": 4,
     "style": [
       "Crush"
@@ -90465,7 +90479,7 @@
     "name": "Thief (Varlamore)",
     "version": "2",
     "image": "Thief (Varlamore, 2).png",
-    "level": 23,
+    "level": 16,
     "speed": 4,
     "style": [
       "Crush"
@@ -90506,7 +90520,7 @@
     "name": "Thief (Varlamore)",
     "version": "3",
     "image": "Thief (Varlamore, 3).png",
-    "level": 23,
+    "level": 16,
     "speed": 4,
     "style": [
       "Crush"
@@ -90547,7 +90561,7 @@
     "name": "Thief (Varlamore)",
     "version": "4",
     "image": "Thief (Varlamore, 4).png",
-    "level": 23,
+    "level": 16,
     "speed": 4,
     "style": [
       "Crush"
@@ -90588,7 +90602,7 @@
     "name": "Thief (Varlamore)",
     "version": "5",
     "image": "Thief (Varlamore, 5).png",
-    "level": 23,
+    "level": 16,
     "speed": 4,
     "style": [
       "Crush"
@@ -90629,7 +90643,7 @@
     "name": "Thief (Varlamore)",
     "version": "6",
     "image": "Thief (Varlamore, 6).png",
-    "level": 23,
+    "level": 16,
     "speed": 4,
     "style": [
       "Crush"
@@ -90673,7 +90687,6 @@
     "level": 14,
     "speed": 4,
     "style": [
-      "Melee",
       "Stab"
     ],
     "size": 1,
@@ -90715,7 +90728,6 @@
     "level": 16,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -90757,7 +90769,6 @@
     "level": 16,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -90799,7 +90810,6 @@
     "level": 16,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -90841,7 +90851,6 @@
     "level": 21,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -90883,7 +90892,6 @@
     "level": 21,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -90925,7 +90933,6 @@
     "level": 21,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -90967,7 +90974,6 @@
     "level": 16,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -91009,7 +91015,6 @@
     "level": 16,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -91051,7 +91056,6 @@
     "level": 16,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -91093,7 +91097,6 @@
     "level": 16,
     "speed": 4,
     "style": [
-      "Melee",
       "Crush"
     ],
     "size": 1,
@@ -93008,15 +93011,57 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "spectral"
+    ],
+    "weakness": null
+  },
+  {
+    "id": 6380,
+    "name": "Tree spirit (Lost City)",
+    "version": "Normal",
+    "image": "Tree spirit (Lost City).png",
+    "level": 101,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "10",
+    "skills": {
+      "atk": 90,
+      "def": 80,
+      "hp": 85,
+      "magic": 1,
+      "ranged": 1,
+      "str": 95
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "spectral"
     ],
     "weakness": null
   },
   {
     "id": 1163,
     "name": "Tree spirit (Lost City)",
-    "version": "Normal",
+    "version": "Quest",
     "image": "Tree spirit (Lost City).png",
     "level": 101,
     "speed": 4,
@@ -94865,7 +94910,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-000000C6-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -94907,7 +94952,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-000000C6-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -94965,47 +95010,6 @@
       "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "weakness": null
-  },
-  {
-    "id": 13661,
-    "name": "TzTok-Jad (Deadman)",
-    "version": "",
-    "image": "TzTok-Jad (Deadman).png",
-    "level": 1527,
-    "speed": 4,
-    "style": [
-      "Stab"
-    ],
-    "size": 5,
-    "max_hit": "108",
-    "skills": {
-      "atk": 350,
-      "def": 200,
-      "hp": 5000,
-      "magic": 450,
-      "ranged": 450,
-      "str": 350
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 50,
-      "magic_str": 20,
-      "ranged": 50,
-      "ranged_str": 20,
       "str": 0
     },
     "defensive": {
@@ -95154,8 +95158,8 @@
     "level": 105,
     "speed": 4,
     "style": [
-      "Melee",
-      "Magic"
+      "Magic",
+      "Crush"
     ],
     "size": 1,
     "max_hit": "22 (Magic)",
@@ -97031,7 +97035,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000132-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000068-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -97072,7 +97076,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000134-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000006A-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -109954,11 +109958,11 @@
     "level": 74,
     "speed": 4,
     "style": [
-      "Magical melee",
-      "Magical ranged"
+      "Magical ranged",
+      "Magical melee"
     ],
     "size": 1,
-    "max_hit": "6 (ranged)",
+    "max_hit": "7 (Melee)",
     "skills": {
       "atk": 65,
       "def": 65,
@@ -109996,11 +110000,11 @@
     "level": 86,
     "speed": 4,
     "style": [
-      "Magical melee",
-      "Magical ranged"
+      "Magical ranged",
+      "Magical melee"
     ],
     "size": 2,
-    "max_hit": "8 (melee)",
+    "max_hit": "8 (Melee)",
     "skills": {
       "atk": 75,
       "def": 75,
