@@ -28,6 +28,7 @@ export enum DetailKey {
   PLAYER_ACCURACY_EFARITAY = 'Player accuracy efaritay\'s aid',
   PLAYER_ACCURACY_SMOKE_BATTLESTAFF = 'Player accuracy smoke battlestaff',
   PLAYER_ACCURACY_TOME = 'Player accuracy tome',
+  PLAYER_ACCURACY_TITANS_RANGED = 'Player accuracy Royal Titans ranged',
   PLAYER_ACCURACY_SPELLEMENT_BONUS = 'Player accuracy spellement weakness bonus',
   PLAYER_ACCURACY_SPELLEMENT = 'Player accuracy spellement weakness',
   PLAYER_ACCURACY_INQ = 'Player accuracy inquisitor\'s',

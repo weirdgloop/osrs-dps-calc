@@ -433,3 +433,6 @@ export const HUEYCOATL_IDS = [
 export const HUEYCOATL_PHASES = ['Without Pillar', 'With Pillar'];
 export const HUEYCOATL_PHASE_IDS = [...HUEYCOATL_HEAD_IDS, ...HUEYCOATL_TAIL_IDS]; // body can't receive pillar buff
 HUEYCOATL_PHASE_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = HUEYCOATL_PHASES; });
+
+export const ROYAL_TITANS_PHASES = ['In Melee Range', 'Out of Melee Range'];
+TITAN_BOSS_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = ROYAL_TITANS_PHASES; });
