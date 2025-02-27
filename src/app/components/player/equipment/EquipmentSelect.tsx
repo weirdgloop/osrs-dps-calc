@@ -5,8 +5,14 @@ import { getCdnImage, isDefined } from '@/utils';
 import { EquipmentPiece } from '@/types/Player';
 import LazyImage from '@/app/components/generic/LazyImage';
 import { cross } from 'd3-array';
-import { availableEquipment, equipmentAliases, noStatExceptions } from '@/lib/Equipment';
-import { BLOWPIPE_IDS } from '@/lib/constants';
+import {
+  availableEquipment,
+  CORRUPTED_GAUNTLET_EQUIPMENT_IDS,
+  equipmentAliases,
+  GAUNTLET_EQUIPMENT_IDS,
+  noStatExceptions,
+} from '@/lib/Equipment';
+import { BLOWPIPE_IDS, GAUNTLET_MONSTER_IDS, CORRUPTED_GAUNTLET_MONSTER_IDS } from '@/lib/constants';
 import Combobox from '../../generic/Combobox';
 
 interface EquipmentOption {
@@ -91,9 +97,35 @@ const EquipmentSelect: React.FC = observer(() => {
         },
       });
     });
+    if (GAUNTLET_MONSTER_IDS.includes(store.monster.id)) {
+      return entries.sort((a, b) => {
+        const aPriority = GAUNTLET_EQUIPMENT_IDS.includes(a.equipment.id);
+        const bPriority = GAUNTLET_EQUIPMENT_IDS.includes(b.equipment.id);
+        if (aPriority && !bPriority) return -1;
+        if (!aPriority && bPriority) return 1;
 
-    return entries;
-  }, []);
+        return a.label.localeCompare(b.label);
+      });
+    }
+    if (CORRUPTED_GAUNTLET_MONSTER_IDS.includes(store.monster.id)) {
+      return entries.sort((a, b) => {
+        const aPriority = CORRUPTED_GAUNTLET_EQUIPMENT_IDS.includes(a.equipment.id);
+        const bPriority = CORRUPTED_GAUNTLET_EQUIPMENT_IDS.includes(b.equipment.id);
+        if (aPriority && !bPriority) return -1;
+        if (!aPriority && bPriority) return 1;
+
+        return a.label.localeCompare(b.label);
+      });
+    }
+    return entries.sort((a, b) => {
+      const aPriority = GAUNTLET_EQUIPMENT_IDS.includes(a.equipment.id) || CORRUPTED_GAUNTLET_EQUIPMENT_IDS.includes(a.equipment.id);
+      const bPriority = GAUNTLET_EQUIPMENT_IDS.includes(b.equipment.id) || CORRUPTED_GAUNTLET_EQUIPMENT_IDS.includes(b.equipment.id);
+      if (aPriority && !bPriority) return 1;
+      if (!aPriority && bPriority) return -1;
+
+      return a.label.localeCompare(b.label);
+    });
+  }, [store.monster.id]);
 
   return (
     <Combobox<EquipmentOption>
