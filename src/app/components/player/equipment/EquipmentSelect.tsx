@@ -42,6 +42,39 @@ const DARTS: EquipmentPiece[] = [
   findDart('Amethyst dart'),
 ].filter(isDefined);
 
+const gauntletSort = (items: EquipmentOption[], monsterId: number) => {
+  // If the selected NPC is in The Gauntlet prioritize Gauntlet Equipment
+  if (GAUNTLET_MONSTER_IDS.includes(monsterId)) {
+    return items.sort((a, b) => {
+      const aPriority = GAUNTLET_EQUIPMENT_IDS.includes(a.equipment.id);
+      const bPriority = GAUNTLET_EQUIPMENT_IDS.includes(b.equipment.id);
+      if (aPriority && !bPriority) return -1;
+      if (!aPriority && bPriority) return 1;
+      return a.label.localeCompare(b.label);
+    });
+  }
+
+  // If the selected NPC is in The Corrupted Gauntlet prioritize Corrupted Gauntlet Equipment
+  if (CORRUPTED_GAUNTLET_MONSTER_IDS.includes(monsterId)) {
+    return items.sort((a, b) => {
+      const aPriority = CORRUPTED_GAUNTLET_EQUIPMENT_IDS.includes(a.equipment.id);
+      const bPriority = CORRUPTED_GAUNTLET_EQUIPMENT_IDS.includes(b.equipment.id);
+      if (aPriority && !bPriority) return -1;
+      if (!aPriority && bPriority) return 1;
+      return a.label.localeCompare(b.label);
+    });
+  }
+
+  // If the selected NPS is not in The (Corrupted) Gauntlet all Gauntlet equipment is deprioritzed
+  return items.sort((a, b) => {
+    const aPriority = GAUNTLET_EQUIPMENT_IDS.includes(a.equipment.id) || CORRUPTED_GAUNTLET_EQUIPMENT_IDS.includes(a.equipment.id);
+    const bPriority = GAUNTLET_EQUIPMENT_IDS.includes(b.equipment.id) || CORRUPTED_GAUNTLET_EQUIPMENT_IDS.includes(b.equipment.id);
+    if (aPriority && !bPriority) return 1;
+    if (!aPriority && bPriority) return -1;
+    return a.label.localeCompare(b.label);
+  });
+};
+
 const EquipmentSelect: React.FC = observer(() => {
   const store = useStore();
 
@@ -97,34 +130,7 @@ const EquipmentSelect: React.FC = observer(() => {
         },
       });
     });
-    if (GAUNTLET_MONSTER_IDS.includes(store.monster.id)) {
-      return entries.sort((a, b) => {
-        const aPriority = GAUNTLET_EQUIPMENT_IDS.includes(a.equipment.id);
-        const bPriority = GAUNTLET_EQUIPMENT_IDS.includes(b.equipment.id);
-        if (aPriority && !bPriority) return -1;
-        if (!aPriority && bPriority) return 1;
-
-        return a.label.localeCompare(b.label);
-      });
-    }
-    if (CORRUPTED_GAUNTLET_MONSTER_IDS.includes(store.monster.id)) {
-      return entries.sort((a, b) => {
-        const aPriority = CORRUPTED_GAUNTLET_EQUIPMENT_IDS.includes(a.equipment.id);
-        const bPriority = CORRUPTED_GAUNTLET_EQUIPMENT_IDS.includes(b.equipment.id);
-        if (aPriority && !bPriority) return -1;
-        if (!aPriority && bPriority) return 1;
-
-        return a.label.localeCompare(b.label);
-      });
-    }
-    return entries.sort((a, b) => {
-      const aPriority = GAUNTLET_EQUIPMENT_IDS.includes(a.equipment.id) || CORRUPTED_GAUNTLET_EQUIPMENT_IDS.includes(a.equipment.id);
-      const bPriority = GAUNTLET_EQUIPMENT_IDS.includes(b.equipment.id) || CORRUPTED_GAUNTLET_EQUIPMENT_IDS.includes(b.equipment.id);
-      if (aPriority && !bPriority) return 1;
-      if (!aPriority && bPriority) return -1;
-
-      return a.label.localeCompare(b.label);
-    });
+    return gauntletSort(entries, store.monster.id);
   }, [store.monster.id]);
 
   return (
@@ -196,6 +202,7 @@ const EquipmentSelect: React.FC = observer(() => {
           return true;
         });
       }}
+      customSort={(v) => gauntletSort(v, store.monster.id)}
     />
   );
 });
