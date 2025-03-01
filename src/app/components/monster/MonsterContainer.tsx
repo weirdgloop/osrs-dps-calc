@@ -428,6 +428,7 @@ const MonsterContainer: React.FC = observer(() => {
                         image={hitpoints}
                         value={displayMonster.skills.hp}
                         onChange={(v) => store.updateMonster({ skills: { hp: v } })}
+                        required
                       />
                       <AttributeInput
                         name="Attack"
@@ -436,6 +437,7 @@ const MonsterContainer: React.FC = observer(() => {
                         image={attack}
                         value={displayMonster.skills.atk}
                         onChange={(v) => store.updateMonster({ skills: { atk: v } })}
+                        required
                       />
                       <AttributeInput
                         name="Strength"
@@ -444,6 +446,7 @@ const MonsterContainer: React.FC = observer(() => {
                         image={strength}
                         value={displayMonster.skills.str}
                         onChange={(v) => store.updateMonster({ skills: { str: v } })}
+                        required
                       />
                       <AttributeInput
                         name="Defence"
@@ -452,6 +455,7 @@ const MonsterContainer: React.FC = observer(() => {
                         image={defence}
                         value={displayMonster.skills.def}
                         onChange={(v) => store.updateMonster({ skills: { def: v } })}
+                        required
                       />
                       <AttributeInput
                         name="Magic"
@@ -460,6 +464,7 @@ const MonsterContainer: React.FC = observer(() => {
                         image={magic}
                         value={displayMonster.skills.magic}
                         onChange={(v) => store.updateMonster({ skills: { magic: v } })}
+                        required
                       />
                       <AttributeInput
                         name="Ranged"
@@ -468,6 +473,7 @@ const MonsterContainer: React.FC = observer(() => {
                         image={ranged}
                         value={displayMonster.skills.ranged}
                         onChange={(v) => store.updateMonster({ skills: { ranged: v } })}
+                        required
                       />
                       <AttributeInput
                         name="Flat Armour"
@@ -476,6 +482,7 @@ const MonsterContainer: React.FC = observer(() => {
                         image={flat_armour}
                         value={displayMonster.defensive.flat_armour}
                         onChange={(v) => store.updateMonster({ defensive: { flat_armour: v } })}
+                        required
                       />
                     </div>
                   </div>
@@ -489,6 +496,7 @@ const MonsterContainer: React.FC = observer(() => {
                         image={attack}
                         value={displayMonster.offensive.atk}
                         onChange={(v) => store.updateMonster({ offensive: { atk: v } })}
+                        required
                       />
                       <AttributeInput
                         name="Strength"
@@ -497,6 +505,7 @@ const MonsterContainer: React.FC = observer(() => {
                         image={strength}
                         value={displayMonster.offensive.str}
                         onChange={(v) => store.updateMonster({ offensive: { str: v } })}
+                        required
                       />
                       <AttributeInput
                         name="Magic"
@@ -505,6 +514,7 @@ const MonsterContainer: React.FC = observer(() => {
                         image={magic}
                         value={displayMonster.offensive.magic}
                         onChange={(v) => store.updateMonster({ offensive: { magic: v } })}
+                        required
                       />
                       <AttributeInput
                         name="Magic Strength"
@@ -513,6 +523,7 @@ const MonsterContainer: React.FC = observer(() => {
                         image={magicStrength}
                         value={displayMonster.offensive.magic_str}
                         onChange={(v) => store.updateMonster({ offensive: { magic_str: v } })}
+                        required
                       />
                       <AttributeInput
                         name="Ranged"
@@ -521,6 +532,7 @@ const MonsterContainer: React.FC = observer(() => {
                         image={ranged}
                         value={displayMonster.offensive.ranged}
                         onChange={(v) => store.updateMonster({ offensive: { ranged: v } })}
+                        required
                       />
                       <AttributeInput
                         name="Ranged Strength"
@@ -529,6 +541,7 @@ const MonsterContainer: React.FC = observer(() => {
                         image={rangedStrength}
                         value={displayMonster.offensive.ranged_str}
                         onChange={(v) => store.updateMonster({ offensive: { ranged_str: v } })}
+                        required
                       />
                     </div>
                   </div>
@@ -542,6 +555,7 @@ const MonsterContainer: React.FC = observer(() => {
                         image={dagger}
                         value={displayMonster.defensive.stab}
                         onChange={(v) => store.updateMonster({ defensive: { stab: v } })}
+                        required
                       />
                       <AttributeInput
                         name="Slash"
@@ -550,6 +564,7 @@ const MonsterContainer: React.FC = observer(() => {
                         image={scimitar}
                         value={displayMonster.defensive.slash}
                         onChange={(v) => store.updateMonster({ defensive: { slash: v } })}
+                        required
                       />
                       <AttributeInput
                         name="Crush"
@@ -558,6 +573,7 @@ const MonsterContainer: React.FC = observer(() => {
                         image={warhammer}
                         value={displayMonster.defensive.crush}
                         onChange={(v) => store.updateMonster({ defensive: { crush: v } })}
+                        required
                       />
                       <AttributeInput
                         name="Magic"
@@ -566,6 +582,7 @@ const MonsterContainer: React.FC = observer(() => {
                         image={magic}
                         value={displayMonster.defensive.magic}
                         onChange={(v) => store.updateMonster({ defensive: { magic: v } })}
+                        required
                       />
                       <AttributeInput
                         name="Ranged Light"
@@ -574,6 +591,7 @@ const MonsterContainer: React.FC = observer(() => {
                         image={ranged_light}
                         value={displayMonster.defensive.light}
                         onChange={(v) => store.updateMonster({ defensive: { light: v } })}
+                        required
                       />
                       <AttributeInput
                         name="Ranged Standard"
@@ -582,6 +600,7 @@ const MonsterContainer: React.FC = observer(() => {
                         image={ranged_standard}
                         value={displayMonster.defensive.standard}
                         onChange={(v) => store.updateMonster({ defensive: { standard: v } })}
+                        required
                       />
                       <AttributeInput
                         name="Ranged Heavy"
@@ -590,6 +609,7 @@ const MonsterContainer: React.FC = observer(() => {
                         image={ranged_heavy}
                         value={displayMonster.defensive.heavy}
                         onChange={(v) => store.updateMonster({ defensive: { heavy: v } })}
+                        required
                       />
                     </div>
                   </div>

@@ -12,11 +12,12 @@ interface AttributeInputProps {
   min?: number;
   max?: number;
   step?: React.InputHTMLAttributes<unknown>['step'];
+  required?: boolean;
 }
 
 const AttributeInput: React.FC<AttributeInputProps> = (props) => {
   const {
-    name, image, className, min, max, step, onChange, value, disabled,
+    name, image, className, min, max, step, onChange, value, disabled, required,
   } = props;
 
   return (
@@ -38,6 +39,7 @@ const AttributeInput: React.FC<AttributeInputProps> = (props) => {
                   max={max}
                   value={value}
                   step={step}
+                  required={required}
                 />
               )
           }
