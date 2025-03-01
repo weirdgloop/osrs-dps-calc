@@ -35,6 +35,7 @@ import {
   ONE_HIT_MONSTERS,
   SECONDS_PER_TICK,
   TEKTON_IDS, TITAN_ELEMENTAL_IDS,
+  TITAN_BOSS_IDS,
   TOMBS_OF_AMASCUT_MONSTER_IDS,
   TTK_DIST_EPSILON,
   TTK_DIST_MAX_ITER_ROUNDS,
@@ -545,6 +546,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else if (this.wearing(['Heavy ballista', 'Light ballista'])) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [5, 4]);
       }
+    }
+
+    if (TITAN_BOSS_IDS.includes(this.monster.id) && this.monster.inputs.phase === 'Out of Melee Range') {
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_TITANS_RANGED, attackRoll, [6, 1]);
     }
 
     return attackRoll;
