@@ -1021,13 +1021,13 @@
     "level": 338,
     "speed": 4,
     "style": [
-      "Melee",
       "Ranged",
       "Magic",
-      "Dragonfire"
+      "Dragonfire",
+      "Slash"
     ],
     "size": 5,
-    "max_hit": "29",
+    "max_hit": "50 (Dragonfire)",
     "skills": {
       "atk": 280,
       "def": 272,
@@ -3762,7 +3762,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-0000005E-QINU`\"' Magic"
+      "'\"`UNIQ--ref-000000A9-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -54919,7 +54919,7 @@
     "style": [
       "Ranged",
       "Ranged magic",
-      "Melee"
+      "Magical melee"
     ],
     "size": 5,
     "max_hit": "69 (Ranged)",
@@ -76329,7 +76329,7 @@
       "Crush"
     ],
     "size": 2,
-    "max_hit": "16",
+    "max_hit": "13",
     "skills": {
       "atk": 120,
       "def": 45,
@@ -88834,7 +88834,9 @@
     "level": 0,
     "speed": 3,
     "style": [
-      "Melee"
+      "Stab",
+      "Slash",
+      "Crush"
     ],
     "size": 4,
     "max_hit": "59",
@@ -88877,7 +88879,9 @@
     "level": 0,
     "speed": 3,
     "style": [
-      "Melee"
+      "Stab",
+      "Slash",
+      "Crush"
     ],
     "size": 4,
     "max_hit": "52",
@@ -94910,7 +94914,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000004A-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -94952,7 +94956,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000004A-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -97035,7 +97039,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000068-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000019-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -97076,7 +97080,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000006A-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000001B-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -97753,11 +97757,10 @@
     "level": 0,
     "speed": 3,
     "style": [
-      "Melee",
       "Ranged"
     ],
     "size": 5,
-    "max_hit": 0,
+    "max_hit": "14 (Ranged)",
     "skills": {
       "atk": 150,
       "def": 88,
@@ -109825,10 +109828,10 @@
     "level": 725,
     "speed": 3,
     "style": [
-      "Typeless Melee"
+      "Typeless"
     ],
     "size": 5,
-    "max_hit": "41",
+    "max_hit": "30",
     "skills": {
       "atk": 1,
       "def": 300,
