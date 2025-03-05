@@ -3762,7 +3762,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-000000A9-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000079-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -17523,7 +17523,7 @@
     "level": 264,
     "speed": 4,
     "style": [
-      "Melee"
+      "Ranged melee"
     ],
     "size": 2,
     "max_hit": "24",
@@ -23770,7 +23770,7 @@
     "style": [
       "Slash",
       "Ranged",
-      "Magic"
+      "Magic (special)"
     ],
     "size": 4,
     "max_hit": "15",
@@ -26516,7 +26516,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-00000000-QINU`\"'"
+      "Slash '\"`UNIQ--ref-00000057-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -43828,8 +43828,8 @@
     "level": 386,
     "speed": 4,
     "style": [
-      "Melee",
-      "Ranged"
+      "Ranged",
+      "Ranged melee"
     ],
     "size": 5,
     "max_hit": "35 (melee)",
@@ -48313,14 +48313,137 @@
     }
   },
   {
-    "id": 852,
+    "id": 855,
     "name": "Icelord",
-    "version": "",
-    "image": "Icelord.png",
+    "version": "Melee, 1",
+    "image": "Icelord (melee).png",
     "level": 51,
     "speed": 4,
     "style": [
       "Crush"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 40,
+      "def": 40,
+      "hp": 60,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 854,
+    "name": "Icelord",
+    "version": "Melee, 2",
+    "image": "Icelord (melee, 2).png",
+    "level": 51,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 40,
+      "def": 40,
+      "hp": 60,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 853,
+    "name": "Icelord",
+    "version": "Melee, 3",
+    "image": "Icelord (melee, 3).png",
+    "level": 51,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 40,
+      "def": 40,
+      "hp": 60,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 852,
+    "name": "Icelord",
+    "version": "Ranged",
+    "image": "Icelord (ranged).png",
+    "level": 51,
+    "speed": 4,
+    "style": [
+      "Ranged"
     ],
     "size": 2,
     "max_hit": "5",
@@ -87013,7 +87136,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000048-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000001A-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -94914,7 +95037,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000004A-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000003A-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -94956,7 +95079,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000004A-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000003A-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -97039,7 +97162,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000019-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000006-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -97080,7 +97203,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000001B-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000008-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
