@@ -9,8 +9,10 @@ from collections import namedtuple
 import requests
 import urllib.parse
 import re
+import json
 
 FILE_NAME = '../src/lib/EquipmentAliases.ts'
+MAPPING_DICT_FILE_NAME = '../cdn/json/equipment_aliases.json'
 WIKI_BASE = 'https://oldschool.runescape.wiki'
 API_BASE = WIKI_BASE + '/api.php'
 
@@ -189,13 +191,20 @@ def main():
         elif (item['name'] == "Granite maul" and item['version'] != "Normal") or item['name'] == "Granite maul (or)":
             handle_base_variant(all_items, item, 'Granite maul', ['Normal'])
 
+    mapping_dict = {}
     for k, v in sorted(data.items(), key=lambda item: item[1].base_name):
         dataJs += '\n  %s: %s, // %s%s' % (k, v.alias_ids, v.base_name, f"#{v.base_version}" if v.base_version else "")
+        for id in v.alias_ids:
+            mapping_dict[id] = k
 
     dataJs += '\n};\n\nexport default equipmentAliases;\n'
 
     with open(FILE_NAME, 'w') as f:
         print('Saving to Typescript at file: ' + FILE_NAME)
         f.write(dataJs)
+
+    with open(MAPPING_DICT_FILE_NAME, 'w') as f:
+        print('Saving direct mapping at file: ' + MAPPING_DICT_FILE_NAME)
+        json.dump(mapping_dict, f, ensure_ascii=False, indent=2)
 
 main()
