@@ -76,7 +76,7 @@ const computeMvPValues: Handler<WorkerRequestType.COMPUTE_REVERSE> = async (data
     });
     res.push({
       npcMaxAttackRoll: calc.getNPCMaxAttackRoll(),
-      npcMaxHit: calc.getNPCMaxHit(),
+      npcMaxHit: calc.getDistribution().getMax(),
       npcDps: calc.getDps(),
       npcAccuracy: calc.getHitChance(),
       playerDefRoll: calc.getPlayerDefenceRoll(),
