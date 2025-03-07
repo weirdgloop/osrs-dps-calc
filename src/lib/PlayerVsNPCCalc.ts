@@ -1243,7 +1243,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     // simple multi-hit specs
     if (this.opts.usingSpecialAttack) {
       let hitCount = 1;
-      if (this.wearing(['Dragon dagger', 'Abyssal dagger', 'Dragon knife']) || this.isWearingMsb()) {
+      if (this.wearing(['Dragon dagger', 'Dragon knife']) || this.isWearingMsb()) {
         hitCount = 2;
       } else if (this.wearing('Webweaver bow')) {
         hitCount = 4;
@@ -1252,6 +1252,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       if (hitCount !== 1) {
         dist = new AttackDistribution(Array(hitCount).fill(standardHitDist));
       }
+    }
+
+    if (this.opts.usingSpecialAttack && this.wearing('Abyssal dagger')) {
+      const secondHit = HitDistribution.linear(1.0, min, max);
+      dist = dist.transform((h) => new HitDistribution([new WeightedHit(1.0, [h])]).zip(secondHit), { transformInaccurate: false });
     }
 
     if (this.opts.usingSpecialAttack && this.wearing('Saradomin sword')) {
