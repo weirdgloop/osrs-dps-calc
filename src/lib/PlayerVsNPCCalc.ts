@@ -787,11 +787,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
-      const baseFactor: Factor = buffs.markOfDarknessSpell ? [8, 20] : [4, 20];
+      let demonbanePercent = buffs.markOfDarknessSpell ? 40 : 20;
       if (this.wearing('Purging staff')) {
-        baseFactor[0] *= 2;
+        demonbanePercent *= 2;
       }
-      attackRoll = this.trackAddFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor(70));
+      attackRoll = this.trackAddFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor(demonbanePercent));
     }
     if (this.isRevWeaponBuffApplicable()) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_REV_WEAPON, attackRoll, [3, 2]);
@@ -1380,7 +1380,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.player.buffs.markOfDarknessSpell && this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
       // todo(wgs): confirm that this is still post-roll with and without purging staff
-      dist = dist.scaleDamage(this.wearing('Purging staff') ? 6 : 5, 4);
+      const demonbaneFactor = this.demonbaneFactor(this.wearing('Purging staff') ? 150 : 125);
+      dist = dist.scaleDamage(demonbaneFactor[0], demonbaneFactor[1]);
     }
 
     if (this.player.style.type === 'magic'
