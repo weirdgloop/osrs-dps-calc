@@ -338,11 +338,11 @@ const MonsterContainer: React.FC = observer(() => {
           </h4>
           <div className="mt-2">
             <NumberInput
-              value={monster.inputs.demonbaneEffectiveness || 100}
+              value={monster.inputs.demonbaneVulnerability || 100}
               min={0}
               max={100}
               step={1}
-              onChange={(v) => store.updateMonster({ inputs: { demonbaneEffectiveness: v } })}
+              onChange={(v) => store.updateMonster({ inputs: { demonbaneVulnerability: v } })}
             />
             %
           </div>

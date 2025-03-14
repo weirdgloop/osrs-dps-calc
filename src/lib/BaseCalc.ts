@@ -106,7 +106,7 @@ export default class BaseCalc {
 
   protected trackAdd(label: Parameters<CalcDetails['track']>[0], base: number, addend: number): number {
     const result = Math.trunc(base + addend);
-    this.track(label, result, `${base} ${addend >= 0 ? '+' : '-'} ${-addend} = ${result}`);
+    this.track(label, result, `${base} ${addend >= 0 ? `+${addend}` : `-${-addend}`} = ${result}`);
     return result;
   }
 
@@ -632,8 +632,8 @@ export default class BaseCalc {
     if (this.monster.attributes.includes(MonsterAttribute.DEMON)) {
       // make sure demonbane effectiveness is set and uses the right value
       let demonbaneEffectiveness: number = 100;
-      if (this.monster.id === -1 && this.monster.inputs.demonbaneEffectiveness !== undefined) {
-        demonbaneEffectiveness = this.monster.inputs.demonbaneEffectiveness;
+      if (this.monster.id === -1 && this.monster.inputs.demonbaneVulnerability !== undefined) {
+        demonbaneEffectiveness = this.monster.inputs.demonbaneVulnerability;
       } else if (this.monster.name === 'Duke Sucellus') {
         demonbaneEffectiveness = 70;
       }
@@ -641,7 +641,7 @@ export default class BaseCalc {
         ...this.monster,
         inputs: {
           ...this.monster.inputs,
-          demonbaneEffectiveness,
+          demonbaneVulnerability: demonbaneEffectiveness,
         },
       };
     }
@@ -723,7 +723,8 @@ export default class BaseCalc {
 
     // some weapons are only available to use against certain monsters
     if (
-      this.wearing('Dawnbringer') && (this.monster.name !== 'Verzik Vitur' || !this.monster.version?.includes('Phase 1'))
+      (this.wearing('Dawnbringer') && (this.monster.name !== 'Verzik Vitur' || !this.monster.version?.includes('Phase 1'))
+      || (this.wearing('Holy water') && !this.monster.attributes.includes(MonsterAttribute.DEMON)))
     ) {
       this.addIssue(UserIssueType.WEAPON_WRONG_MONSTER, 'This weapon cannot be used against the select monster.');
     }

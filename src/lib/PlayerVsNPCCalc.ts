@@ -570,6 +570,28 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     this.track(DetailKey.DAMAGE_LEVEL, effectiveLevel);
 
+    if (this.wearing('Holy water')) {
+      if (!this.monster.attributes.includes(MonsterAttribute.DEMON)) {
+        // can't be used against non-demons
+        return [0, 0];
+      }
+
+      // similar to msb + mlb + seercull below
+      effectiveLevel = this.trackAdd(DetailKey.DAMAGE_EFFECTIVE_LEVEL_HOLY_WATER, effectiveLevel, 10);
+
+      const str = 64 + this.player.equipment.weapon!.bonuses.ranged_str;
+      let maxHit = this.trackMaxHitFromEffective(DetailKey.MAX_HIT_BASE, effectiveLevel, str);
+
+      if (this.monster.attributes.includes(MonsterAttribute.DEMON)) {
+        maxHit = this.trackAddFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor(60));
+      }
+      if (this.monster.name === 'Nezikchened') {
+        maxHit = this.trackAdd(DetailKey.MAX_HIT_NEZIKCHENED, maxHit, 5);
+      }
+
+      return [0, maxHit];
+    }
+
     if (this.opts.usingSpecialAttack && (this.isWearingMsb() || this.isWearingMlb() || this.wearing('Seercull'))) {
       // why +10 when that's not used anywhere else? who knows
       effectiveLevel += 10;
@@ -1157,6 +1179,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const acc = this.getHitChance();
     const [min, max] = this.getMinAndMax();
     const style = this.player.style.type;
+
+    if (max === 0) {
+      return new AttackDistribution([new HitDistribution([new WeightedHit(1.0, [Hitsplat.INACCURATE])])]);
+    }
 
     // standard linear
     const standardHitDist = HitDistribution.linear(acc, min, max);
@@ -1941,8 +1967,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    * @param weaponDemonbane as a percent out of 100
    */
   demonbaneFactor(weaponDemonbane: number): Factor {
-    const effectiveness = this.monster.inputs.demonbaneEffectiveness ?? 100;
-    const percent = this.trackFactor(DetailKey.PLAYER_DEMONBANE_FACTOR, weaponDemonbane, [effectiveness, 100]);
+    const vulnerability = this.monster.inputs.demonbaneVulnerability ?? 100;
+    const percent = this.trackFactor(DetailKey.PLAYER_DEMONBANE_FACTOR, weaponDemonbane, [vulnerability, 100]);
     return [percent, 100];
   }
 
