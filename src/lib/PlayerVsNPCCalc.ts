@@ -39,7 +39,7 @@ import {
   TITAN_ELEMENTAL_IDS,
   TOMBS_OF_AMASCUT_MONSTER_IDS,
   TTK_DIST_EPSILON,
-  TTK_DIST_MAX_ITER_ROUNDS,
+  TTK_DIST_MAX_ITER_ROUNDS, UNDERWATER_MONSTERS,
   USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
   VERZIK_P1_IDS,
 } from '@/lib/constants';
@@ -290,6 +290,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else if (this.wearing('Soulreaper axe')) {
         const stacks = Math.max(0, Math.min(5, this.player.buffs.soulreaperStacks));
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [100 + 6 * stacks, 100]);
+      } else if (this.wearing('Brine sabre')) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
       }
     }
 
@@ -2025,6 +2027,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return this.player.buffs.soulreaperStacks === 0
         ? FeatureStatus.NOT_APPLICABLE
         : FeatureStatus.IMPLEMENTED;
+    }
+    if (this.wearing('Brine sabre')) {
+      return UNDERWATER_MONSTERS.includes(this.monster.id)
+        ? FeatureStatus.IMPLEMENTED
+        : FeatureStatus.NOT_APPLICABLE;
     }
 
     if (PARTIALLY_IMPLEMENTED_SPECS.includes(weaponName)) {

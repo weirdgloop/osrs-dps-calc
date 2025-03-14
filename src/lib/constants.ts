@@ -359,6 +359,10 @@ export const TITAN_ELEMENTAL_IDS = [
   14151, // Ice elemental (Royal Titans)
 ];
 
+export const UNDERWATER_MONSTERS = [
+  7796, // lobstrosity
+];
+
 export const ACCURACY_PRECISION = 2;
 export const DPS_PRECISION = 3;
 export const EXPECTED_HIT_PRECISION = 1;

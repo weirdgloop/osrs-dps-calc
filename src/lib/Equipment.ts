@@ -418,6 +418,7 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Light ballista': 65,
   "Saradomin's blessed sword": 65,
 
+  'Brine sabre': 75,
   'Zaryte crossbow': 75,
 
   'Saradomin sword': 100,
