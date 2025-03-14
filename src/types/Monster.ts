@@ -100,6 +100,8 @@ export interface Monster {
       tonalztic: number;
     };
 
+    demonbaneEffectiveness?: number;
+
     /** @deprecated use {@link phase} */
     tormentedDemonPhase?: typeof TD_PHASES[number];
 

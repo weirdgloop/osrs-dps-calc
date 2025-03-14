@@ -7,6 +7,7 @@ import ranged_standard from '@/public/img/bonuses/ranged_standard.webp';
 import ranged_heavy from '@/public/img/bonuses/ranged_heavy.webp';
 import magic from '@/public/img/bonuses/magic.png';
 import ranged from '@/public/img/bonuses/ranged.png';
+import demon from '@/public/img/bonuses/demon.png';
 import hitpoints from '@/public/img/bonuses/hitpoints.png';
 import attack from '@/public/img/bonuses/attack.png';
 import strength from '@/public/img/bonuses/strength.png';
@@ -322,6 +323,28 @@ const MonsterContainer: React.FC = observer(() => {
               resetAfterSelect
               onSelectedItemChange={(v) => store.updateMonster({ inputs: { phase: v?.label } })}
             />
+          </div>
+        </div>,
+      );
+    }
+
+    if (monster.attributes.includes(MonsterAttribute.DEMON)) {
+      comps.push(
+        <div key="demonbane-effectiveness">
+          <h4 className="font-bold font-serif">
+            <img src={demon.src} alt="" className="inline-block" />
+            {' '}
+            Demonbane effectiveness
+          </h4>
+          <div className="mt-2">
+            <NumberInput
+              value={monster.inputs.demonbaneEffectiveness || 100}
+              min={0}
+              max={100}
+              step={1}
+              onChange={(v) => store.updateMonster({ inputs: { demonbaneEffectiveness: v } })}
+            />
+            %
           </div>
         </div>,
       );

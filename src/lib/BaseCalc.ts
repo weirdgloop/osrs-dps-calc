@@ -629,6 +629,23 @@ export default class BaseCalc {
   private sanitizeInputs() {
     const eq = this.player.equipment;
 
+    if (this.monster.attributes.includes(MonsterAttribute.DEMON)) {
+      // make sure demonbane effectiveness is set and uses the right value
+      let demonbaneEffectiveness: number = 100;
+      if (this.monster.id === -1 && this.monster.inputs.demonbaneEffectiveness !== undefined) {
+        demonbaneEffectiveness = this.monster.inputs.demonbaneEffectiveness;
+      } else if (this.monster.name === 'Duke Sucellus') {
+        demonbaneEffectiveness = 70;
+      }
+      this.monster = {
+        ...this.monster,
+        inputs: {
+          ...this.monster.inputs,
+          demonbaneEffectiveness,
+        },
+      };
+    }
+
     // make sure monsterCurrentHp is set and valid
     if (!this.monster.inputs.monsterCurrentHp || this.monster.inputs.monsterCurrentHp > this.monster.skills.hp) {
       this.monster = {
