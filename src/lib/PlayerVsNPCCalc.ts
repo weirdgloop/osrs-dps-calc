@@ -844,32 +844,32 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     } else if (this.wearing('Starter staff')) {
       maxHit = 8;
     } else if (this.wearing(['Trident of the seas', 'Trident of the seas (e)'])) {
-      maxHit = Math.trunc(magicLevel / 3 - 5);
+      maxHit = Math.max(1, Math.trunc(magicLevel / 3 - 5));
     } else if (this.wearing("Thammaron's sceptre")) {
-      maxHit = Math.trunc(magicLevel / 3 - 8);
+      maxHit = Math.max(1, Math.trunc(magicLevel / 3 - 8));
     } else if (this.wearing('Accursed sceptre') || (this.wearing('Accursed sceptre (a)') && this.opts.usingSpecialAttack)) {
-      maxHit = Math.trunc(magicLevel / 3 - 6);
+      maxHit = Math.max(1, Math.trunc(magicLevel / 3 - 6));
     } else if (this.wearing(['Trident of the swamp', 'Trident of the swamp (e)'])) {
-      maxHit = Math.trunc(magicLevel / 3 - 2);
+      maxHit = Math.max(1, Math.trunc(magicLevel / 3 - 2));
     } else if (this.wearing(['Sanguinesti staff', 'Holy sanguinesti staff'])) {
-      maxHit = Math.trunc(magicLevel / 3 - 1);
+      maxHit = Math.max(1, Math.trunc(magicLevel / 3 - 1));
     } else if (this.wearing('Dawnbringer')) {
-      maxHit = Math.trunc(magicLevel / 6 - 1);
+      maxHit = Math.max(1, Math.trunc(magicLevel / 6 - 1));
       if (this.opts.usingSpecialAttack) { // guaranteed hit between 75-150, ignores bonuses
         return [75, 150];
       }
     } else if (this.wearing("Tumeken's shadow")) {
-      maxHit = Math.trunc(magicLevel / 3 + 1);
+      maxHit = Math.max(1, Math.trunc(magicLevel / 3 + 1));
     } else if (this.wearing('Warped sceptre')) {
-      maxHit = Math.trunc((8 * magicLevel + 96) / 37);
+      maxHit = Math.max(1, Math.trunc((8 * magicLevel + 96) / 37));
     } else if (this.wearing('Bone staff')) {
       // although the +10 is technically a ratbane bonus, the weapon can't be used against non-rats
       // and shows this max hit against the combat dummy as well
       maxHit = Math.max(1, Math.trunc(magicLevel / 3) - 5) + 10;
     } else if (this.wearing('Eldritch nightmare staff') && this.opts.usingSpecialAttack) {
-      maxHit = Math.min(44, 44 * Math.trunc(magicLevel / 99) + 1);
+      maxHit = Math.max(1, Math.min(44, 44 * Math.trunc(magicLevel / 99) + 1));
     } else if (this.wearing('Volatile nightmare staff') && this.opts.usingSpecialAttack) {
-      maxHit = Math.min(58, 58 * Math.trunc(magicLevel / 99) + 1);
+      maxHit = Math.max(1, Math.min(58, 58 * Math.trunc(magicLevel / 99) + 1));
     } else if (this.wearing(['Crystal staff (basic)', 'Corrupted staff (basic)'])) {
       maxHit = 23;
     } else if (this.wearing(['Crystal staff (attuned)', 'Corrupted staff (attuned)'])) {
