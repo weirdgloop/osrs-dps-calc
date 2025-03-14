@@ -285,7 +285,7 @@ const MonsterContainer: React.FC = observer(() => {
       );
     }
 
-    if ((GUARDIAN_IDS.includes(monster.id)) || isCustomMonster) {
+    if (GUARDIAN_IDS.includes(monster.id)) {
       comps.push(
         <div key="cox-guardian">
           <h4 className="font-bold font-serif">
