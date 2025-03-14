@@ -1380,8 +1380,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.player.buffs.markOfDarknessSpell && this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
       // todo(wgs): confirm that this is still post-roll with and without purging staff
-      const demonbaneFactor = this.demonbaneFactor(this.wearing('Purging staff') ? 150 : 125);
-      dist = dist.scaleDamage(demonbaneFactor[0], demonbaneFactor[1]);
+      const demonbaneFactor = this.demonbaneFactor(this.wearing('Purging staff') ? 50 : 25);
+      dist = dist.transform((h) => HitDistribution.single(1.0, [new Hitsplat(h.damage + Math.trunc(h.damage * demonbaneFactor[0] / demonbaneFactor[1]))]));
     }
 
     if (this.player.style.type === 'magic'
