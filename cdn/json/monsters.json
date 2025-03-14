@@ -3762,7 +3762,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000079-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000065-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -11609,9 +11609,9 @@
   },
   {
     "id": 1545,
-    "name": "Black knight (Port Sarim Jail)",
+    "name": "Black knight (Port Sarim jail)",
     "version": "",
-    "image": "Black knight (Port Sarim Jail).png",
+    "image": "Black knight (Port Sarim jail).png",
     "level": 33,
     "speed": 5,
     "style": [
@@ -35060,7 +35060,7 @@
     "level": 56,
     "speed": 4,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 2,
     "max_hit": "5",
@@ -41483,7 +41483,7 @@
   },
   {
     "id": 1546,
-    "name": "Guard (Port Sarim Jail)",
+    "name": "Guard (Port Sarim jail)",
     "version": "1",
     "image": "Guard (Port Sarim, 1).png",
     "level": 21,
@@ -41524,7 +41524,7 @@
   },
   {
     "id": 1547,
-    "name": "Guard (Port Sarim Jail)",
+    "name": "Guard (Port Sarim jail)",
     "version": "2",
     "image": "Guard (Port Sarim, 2).png",
     "level": 21,
@@ -41565,7 +41565,7 @@
   },
   {
     "id": 1548,
-    "name": "Guard (Port Sarim Jail)",
+    "name": "Guard (Port Sarim jail)",
     "version": "3",
     "image": "Guard (Port Sarim, 3).png",
     "level": 21,
@@ -41606,7 +41606,7 @@
   },
   {
     "id": 1549,
-    "name": "Guard (Port Sarim Jail)",
+    "name": "Guard (Port Sarim jail)",
     "version": "4",
     "image": "Guard (Port Sarim, 4).png",
     "level": 21,
@@ -41647,7 +41647,7 @@
   },
   {
     "id": 1550,
-    "name": "Guard (Port Sarim Jail)",
+    "name": "Guard (Port Sarim jail)",
     "version": "5",
     "image": "Guard (Port Sarim, 5).png",
     "level": 21,
@@ -42674,7 +42674,7 @@
     "id": 5418,
     "name": "Guard",
     "version": "Ardougne 1",
-    "image": "Guard (East Ardougne).png",
+    "image": "Guard (East Ardougne, 1).png",
     "level": 20,
     "speed": 5,
     "style": [
@@ -42838,7 +42838,7 @@
     "id": 3254,
     "name": "Guard",
     "version": "Edgeville 1",
-    "image": "Guard (Edgeville).png",
+    "image": "Guard (Edgeville, 1).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -43289,7 +43289,7 @@
     "id": 3269,
     "name": "Guard",
     "version": "Falador (sword, 1)",
-    "image": "Guard (Falador, sword).png",
+    "image": "Guard (Falador, sword, 1).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -48446,7 +48446,7 @@
       "Ranged"
     ],
     "size": 2,
-    "max_hit": "5",
+    "max_hit": "1",
     "skills": {
       "atk": 40,
       "def": 40,
@@ -53049,10 +53049,133 @@
     "weakness": null
   },
   {
+    "id": 1211,
+    "name": "Khazard Guard",
+    "version": "Khazard 1",
+    "image": "Khazard Guard.png",
+    "level": 23,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 20,
+      "def": 20,
+      "hp": 25,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 10,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 30,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 38,
+      "stab": 44
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
     "id": 1208,
     "name": "Khazard Guard",
-    "version": "",
-    "image": "Khazard Guard.png",
+    "version": "Khazard 2",
+    "image": "Khazard Guard 2.png",
+    "level": 23,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 20,
+      "def": 20,
+      "hp": 25,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 10,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 30,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 38,
+      "stab": 44
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 12019,
+    "name": "Khazard Guard",
+    "version": "Khazard 3",
+    "image": "Khazard Guard 3.png",
+    "level": 23,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 20,
+      "def": 20,
+      "hp": 25,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 10,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 30,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 38,
+      "stab": 44
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 12020,
+    "name": "Khazard Guard",
+    "version": "Khazard 4",
+    "image": "Khazard Guard 4.png",
     "level": 23,
     "speed": 4,
     "style": [
@@ -64673,7 +64796,7 @@
       "Magic"
     ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "25",
     "skills": {
       "atk": 200,
       "def": 25,
@@ -64714,7 +64837,7 @@
       "Stab"
     ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "25",
     "skills": {
       "atk": 200,
       "def": 25,
@@ -64755,7 +64878,7 @@
       "Ranged"
     ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "25",
     "skills": {
       "atk": 200,
       "def": 25,
@@ -87136,7 +87259,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000001A-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000047-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -90891,7 +91014,7 @@
   {
     "id": 1448,
     "name": "Thief",
-    "version": "Port Sarim Jail",
+    "version": "Port Sarim jail",
     "image": "Thief (Standard, 1).png",
     "level": 16,
     "speed": 4,
@@ -94861,7 +94984,7 @@
   },
   {
     "id": 2154,
-    "name": "TzHaar-Mej (monster)",
+    "name": "TzHaar-Mej",
     "version": "",
     "image": "TzHaar-Mej.png",
     "level": 103,
@@ -95037,7 +95160,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000003A-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000065-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -95079,7 +95202,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000003A-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000065-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -97162,7 +97285,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000006-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000075-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -97203,7 +97326,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000008-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000077-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -98505,8 +98628,8 @@
     },
     "attributes": [
       "dragon",
-      "fiery",
-      "undead"
+      "undead",
+      "fiery"
     ],
     "weakness": null
   },
