@@ -53,7 +53,18 @@ ITEMS_TO_SKIP = [
     'Sunlight spear',
     'Sunlit bracers',
     'Thunder khopesh',
-    'Thousand-dragon ward'
+    'Thousand-dragon ward',
+    'Arcane grimoire',
+    'Wristbands of the arena',
+    'Wristbands of the arena (i)',
+    'Armadyl chainskirt (or)',
+    'Armadyl chestplate (or)',
+    'Armadyl helmet (or)',
+    'Dagon\'hai hat (or)',
+    'Dagon\'hai robe bottom (or)',
+    'Dagon\'hai robe top (or)',
+    'Dragon warhammer (or)',
+    'Centurion cuirass'
 ]
 
 def getEquipmentData():
