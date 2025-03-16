@@ -57,7 +57,8 @@ REQUIRED_PRINTOUTS = [
     'Elemental weakness percent',
     'Light range defence bonus',
     'Standard range defence bonus',
-    'Heavy range defence bonus'
+    'Heavy range defence bonus',
+    'Immune to burn'
 ]
 
 def get_monster_data():
@@ -146,6 +147,17 @@ def main():
         if monster_style == 'None' or monster_style == 'N/A':
             monster_style = None
 
+        burn_immunity = get_printout_value(po['Immune to burn'])
+        if burn_immunity:
+            if 'weak' in burn_immunity.lower():
+                burn_immunity = 'Weak'
+            elif 'normal' in burn_immunity.lower():
+                burn_immunity = 'Normal'
+            elif 'strong' in burn_immunity.lower():
+                burn_immunity = 'Strong'
+            else:
+                burn_immunity = None
+
         # Override style specifically for Spinolyps. Both attacks roll ranged vs ranged.
         # This "patch" will have to be revisited if/when we add protection prayers.
         if 'Spinolyp' in k:
@@ -188,6 +200,9 @@ def main():
                 'stab': get_printout_value(po['Stab defence bonus']) or 0
             },
             'attributes': po['Monster attribute'] or [],
+            'immunities': {
+                'burn': burn_immunity,
+            }
         }
 
         weakness = get_printout_value(po['Elemental weakness']) or None

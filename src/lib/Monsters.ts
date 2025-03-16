@@ -21,6 +21,7 @@ export function getMonsters(): Omit<Monster, 'inputs'>[] {
       defensive: m.defensive,
       attributes: m.attributes as MonsterAttribute[],
       weakness: <Monster['weakness']>m.weakness || null,
+      immunities: m.immunities,
     };
   });
 }
@@ -82,6 +83,9 @@ export const CUSTOM_MONSTER_BASE: Monster = {
   },
   attributes: [],
   weakness: null,
+  immunities: {
+    burn: null,
+  },
   inputs: {
     ...INITIAL_MONSTER_INPUTS,
     monsterCurrentHp: 150,
