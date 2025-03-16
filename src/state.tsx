@@ -204,6 +204,9 @@ class GlobalState implements State {
     },
     attributes: [MonsterAttribute.DEMON],
     weakness: null,
+    immunities: {
+      burn: null,
+    },
     inputs: { ...INITIAL_MONSTER_INPUTS },
   };
 
