@@ -45,7 +45,10 @@ export interface Monster {
   weakness: {
     element: Spellement;
     severity: number;
-  } | null
+  } | null;
+  immunities: {
+    burn: string | null;
+  }
 
   /**
    * Fields that users have control over in the UI, which may affect buff applicability, monster scaling, etc.
