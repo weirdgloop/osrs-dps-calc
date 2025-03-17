@@ -1085,6 +1085,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, accuracy);
     }
 
+    if (this.player.style.type === 'magic' && ALWAYS_MAX_HIT_MONSTERS.magic.includes(this.monster.id)) return 1.0;
+    if (this.player.style.type === 'ranged' && ALWAYS_MAX_HIT_MONSTERS.ranged.includes(this.monster.id)) return 1.0;
+    if (this.isUsingMeleeStyle() && ALWAYS_MAX_HIT_MONSTERS.melee.includes(this.monster.id)) return 1.0;
+
     if (this.opts.usingSpecialAttack && this.wearing(['Voidwaker', 'Dawnbringer'])) {
       return 1.0;
     }
