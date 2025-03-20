@@ -340,7 +340,7 @@ const MonsterContainer: React.FC = observer(() => {
             <NumberInput
               value={monster.inputs.demonbaneVulnerability || 100}
               min={0}
-              max={100}
+              max={10000}
               step={1}
               onChange={(v) => store.updateMonster({ inputs: { demonbaneVulnerability: v } })}
             />
