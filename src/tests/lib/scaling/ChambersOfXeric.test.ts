@@ -733,7 +733,7 @@ describe('cmb=126 hp=99 regulars', () => {
         partySize: 6,
         partyMaxCombatLevel: 126,
         partyMaxHpLevel: 99,
-        partyAvgMiningLevel: Math.trunc(93 / 6),
+        partySumMiningLevel: 93,
         isFromCoxCm: false,
       },
     });
@@ -776,7 +776,7 @@ describe('cmb=126 hp=99 regulars', () => {
         partySize: 8,
         partyMaxCombatLevel: 126,
         partyMaxHpLevel: 99,
-        partyAvgMiningLevel: Math.trunc(93 / 8),
+        partySumMiningLevel: 93,
         isFromCoxCm: false,
       },
     });
@@ -798,7 +798,7 @@ describe('cmb=126 hp=99 regulars', () => {
         partySize: 25,
         partyMaxCombatLevel: 126,
         partyMaxHpLevel: 99,
-        partyAvgMiningLevel: Math.trunc(93 / 25),
+        partySumMiningLevel: 93,
         isFromCoxCm: false,
       },
     });
@@ -969,7 +969,7 @@ describe('cmb=114 hp=97 regulars', () => {
         partySize: 4,
         partyMaxCombatLevel: 114,
         partyMaxHpLevel: 97,
-        partyAvgMiningLevel: Math.trunc(93 / 4),
+        partySumMiningLevel: 93,
         isFromCoxCm: false,
       },
     });
@@ -1117,7 +1117,7 @@ describe('cmb=114 hp=97 regulars', () => {
         partySize: 80,
         partyMaxCombatLevel: 114,
         partyMaxHpLevel: 97,
-        partyAvgMiningLevel: Math.trunc(93 / 80),
+        partySumMiningLevel: 93,
         isFromCoxCm: false,
       },
     });

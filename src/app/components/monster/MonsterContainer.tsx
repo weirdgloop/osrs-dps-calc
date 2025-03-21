@@ -292,15 +292,23 @@ const MonsterContainer: React.FC = observer(() => {
           <h4 className="font-bold font-serif">
             <img src={mining.src} alt="" className="inline-block" />
             {' '}
-            Party&apos;s average mining level
+            Party&apos;s sum of mining levels
+            {' '}
+            <span
+              className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+              data-tooltip-id="tooltip"
+              data-tooltip-content="Does NOT include 'fake' board-scaling players."
+            >
+              ?
+            </span>
           </h4>
           <div className="mt-2">
             <NumberInput
-              value={monster.inputs.partyAvgMiningLevel}
+              value={monster.inputs.partySumMiningLevel}
               min={1}
-              max={99}
+              max={9900}
               step={1}
-              onChange={(v) => store.updateMonster({ inputs: { partyAvgMiningLevel: v } })}
+              onChange={(v) => store.updateMonster({ inputs: { partySumMiningLevel: v } })}
               required
             />
           </div>
