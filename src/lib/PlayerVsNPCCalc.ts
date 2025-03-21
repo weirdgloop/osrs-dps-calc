@@ -33,6 +33,7 @@ import {
   OLM_MAGE_HAND_IDS,
   OLM_MELEE_HAND_IDS,
   ONE_HIT_MONSTERS,
+  P2_WARDEN_IDS,
   SECONDS_PER_TICK,
   TEKTON_IDS,
   TITAN_BOSS_IDS,
@@ -46,7 +47,7 @@ import {
 } from '@/lib/constants';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { DetailKey } from '@/lib/CalcDetails';
-import { Factor, MinMax } from '@/lib/Math';
+import { Factor, iLerp, MinMax } from '@/lib/Math';
 import { calculateAttackSpeed, WEAPON_SPEC_COSTS } from '@/lib/Equipment';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonster, scaleMonsterHpOnly } from '@/lib/MonsterScaling';
@@ -719,6 +720,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
+    if (P2_WARDEN_IDS.includes(this.monster.id)) {
+      [minHit, maxHit] = this.applyP2WardensDamageModifier([minHit, maxHit]);
+    }
+
     return [minHit, maxHit];
   }
 
@@ -972,6 +977,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_TOME, maxHit, [11, 10]);
     }
 
+    if (P2_WARDEN_IDS.includes(this.monster.id)) {
+      [minHit, maxHit] = this.applyP2WardensDamageModifier([minHit, maxHit]);
+    }
+
     return [minHit, maxHit];
   }
 
@@ -1065,6 +1074,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
+    if (P2_WARDEN_IDS.includes(this.monster.id)) {
+      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
+    }
+
     // Giant rat (Scurrius)
     if (this.monster.id === 7223 && this.player.style.stance !== 'Manual Cast') {
       this.track(DetailKey.PLAYER_ACCURACY_SCURRIUS_RAT, 1.0);
@@ -1108,13 +1121,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       DetailKey.PLAYER_ACCURACY_BASE,
       BaseCalc.getNormalAccuracyRoll(atk, def),
     );
-
-    if (this.player.style.type === 'magic' && this.wearing('Brimstone ring')) {
-      const effectDef = Math.trunc(def * 9 / 10);
-      const effectHitChance = BaseCalc.getNormalAccuracyRoll(atk, effectDef);
-
-      hitChance = this.track(DetailKey.PLAYER_ACCURACY_BRIMSTONE, (0.75 * hitChance) + (0.25 * effectHitChance));
-    }
 
     if (this.isWearingFang() && this.player.style.type === 'stab') {
       if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)) {
@@ -1512,6 +1518,32 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       if (this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)']) && currentHp >= 10) {
         dist = dist.transform(rubyBolts(boltContext));
       }
+    }
+
+    if (this.player.style.type === 'magic' && this.wearing('Brimstone ring') && !this.opts.overrides.defenceRoll) {
+      const effectChance = 0.25;
+      const effectDef = this.trackFactor(DetailKey.NPC_DEFENCE_BRIMSTONE, this.getNPCDefenceRoll(), [9, 10]);
+      const effectDist = this.noInitSubCalc(this.player, this.monster, {
+        loadoutName: `${this.opts.loadoutName}/brimstone`,
+        overrides: {
+          defenceRoll: effectDef,
+        },
+      }).getDistribution();
+
+      const zippedDists = [];
+      for (let i = 0; i < dist.dists.length; i++) {
+        zippedDists.push(
+          new HitDistribution([
+            ...dist.dists[i]
+              .scaleProbability(1 - effectChance)
+              .hits,
+            ...effectDist.dists[i]
+              .scaleProbability(effectChance)
+              .hits,
+          ]),
+        );
+      }
+      dist = new AttackDistribution(zippedDists).flatten();
     }
 
     if (process.env.NEXT_PUBLIC_HIT_DIST_SANITY_CHECK) {
@@ -2067,5 +2099,28 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       default:
         return null;
     }
+  }
+
+  private applyP2WardensDamageModifier([, max]: MinMax): MinMax {
+    // 1/3 of enemy defence is removed from accuracy
+    const reducedNpcDefence = Math.trunc(this.getNPCDefenceRoll() / 3);
+    const accuracyDelta = this.track(
+      DetailKey.WARDENS_ACCURACY_DELTA,
+      Math.max(this.getMaxAttackRoll() - reducedNpcDefence, 0),
+    );
+
+    // remaining accuracy provides a % dmg modifier from 15% - 40% based on lerp from 0 to 42k MAR
+    const modifier = this.track(
+      DetailKey.WARDENS_DMG_MODIFIER,
+      Math.max(Math.min(iLerp(15, 40, 0, 42_000, accuracyDelta), 40), 15),
+    );
+
+    const $range = 20; // todo need to confirm this still
+    return [
+      // these apply the % separately
+      // in effect, we're dealing between [15-35, 40-60]% of normal damage
+      this.track(DetailKey.MIN_HIT_WARDENS, Math.trunc(max * modifier / 100)),
+      this.track(DetailKey.MAX_HIT_WARDENS, Math.trunc(max * (modifier + $range) / 100)),
+    ];
   }
 }
