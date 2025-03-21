@@ -28,6 +28,7 @@ import {
   fetchPlayerSkills,
   fetchShortlinkData,
   getCombatStylesForCategory,
+  isDefined,
   PotionMap,
 } from '@/utils';
 import { ComputeBasicRequest, ComputeReverseRequest, WorkerRequestType } from '@/worker/CalcWorkerTypes';
@@ -478,6 +479,13 @@ class GlobalState implements State {
           /* eslint-enable @typescript-eslint/dot-notation */
           /* eslint-enable @typescript-eslint/no-explicit-any */
         });
+
+      case 6:
+        // partyAvgMiningLevel becomes partySumMiningLevel
+        if (isDefined(data.monster.inputs.partyAvgMiningLevel)) {
+          data.monster.inputs.partySumMiningLevel = data.monster.inputs.partyAvgMiningLevel * data.monster.inputs.partySize;
+          delete data.monster.inputs.partyAvgMiningLevel;
+        }
 
       default:
     }

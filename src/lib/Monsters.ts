@@ -30,7 +30,7 @@ export const INITIAL_MONSTER_INPUTS: Monster['inputs'] = {
   toaInvocationLevel: 0,
   toaPathLevel: 0,
   partyMaxCombatLevel: 126,
-  partyAvgMiningLevel: 99,
+  partySumMiningLevel: 99,
   partyMaxHpLevel: 99,
   partySize: 1,
   monsterCurrentHp: 150,
