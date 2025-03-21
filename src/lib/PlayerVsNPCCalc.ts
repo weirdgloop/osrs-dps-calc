@@ -76,7 +76,6 @@ const UNIMPLEMENTED_SPECS: string[] = [
   'Abyssal tentacle',
   'Ancient mace',
   'Armadyl crossbow',
-  'Barrelchest anchor',
   'Blue moon spear',
   'Bone dagger',
   'Brine sabre',
@@ -294,6 +293,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [100 + 6 * stacks, 100]);
       } else if (this.wearing('Brine sabre')) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
+      } else if (this.wearing('Barrelchest anchor')) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
       }
     }
 
@@ -450,6 +451,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else if (this.wearing('Abyssal bludgeon')) {
         const prayerMissing = Math.max(-this.player.boosts.prayer, 0);
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [100 + (prayerMissing / 2), 100]);
+      } else if (this.wearing('Barrelchest anchor')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [110, 100]);
       } else if (this.isWearingBloodMoonSet()) {
         minHit = this.trackFactor(DetailKey.MIN_HIT_SPEC, maxHit, [1, 4]);
         maxHit = this.trackAdd(DetailKey.MAX_HIT_SPEC, maxHit, minHit);
