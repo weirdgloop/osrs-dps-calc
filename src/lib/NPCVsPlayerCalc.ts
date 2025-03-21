@@ -34,6 +34,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
   public getPlayerVsNPCCalc(): PlayerVsNPCCalc {
     if (this.memoizedPlayerVsNPCCalc === undefined) {
       this.memoizedPlayerVsNPCCalc = new PlayerVsNPCCalc(this.player, this.monster, <InternalOpts>{
+        loadoutName: `${this.opts.loadoutName}/forward`,
         disableMonsterScaling: true,
       });
     }

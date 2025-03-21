@@ -39,7 +39,8 @@ import {
   TITAN_ELEMENTAL_IDS,
   TOMBS_OF_AMASCUT_MONSTER_IDS,
   TTK_DIST_EPSILON,
-  TTK_DIST_MAX_ITER_ROUNDS, UNDERWATER_MONSTERS,
+  TTK_DIST_MAX_ITER_ROUNDS,
+  UNDERWATER_MONSTERS,
   USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
   VERZIK_P1_IDS,
 } from '@/lib/constants';
@@ -627,7 +628,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     const bonusStr = scalesWithStr ? this.player.bonuses.str : this.player.bonuses.ranged_str;
-    const baseMax = Math.trunc((effectiveLevel * (bonusStr + 64) + 320) / 640);
+    const baseMax = this.trackMaxHitFromEffective(DetailKey.MAX_HIT_BASE, effectiveLevel, 64 + bonusStr);
     let [minHit, maxHit]: MinMax = [0, baseMax];
 
     // tested this in-game, slayer helmet (i) + crystal legs + crystal body + bowfa, on accurate, no rigour, 99 ranged
@@ -1518,7 +1519,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         const sumAccuracy = sum(hitDist.hits, (wh) => wh.probability);
         const fractionalDamage = some(hitDist.hits, (wh) => some(wh.hitsplats, (h) => !Number.isInteger(h.damage)));
         if (Math.abs(sumAccuracy - 1.0) > 0.00001 || fractionalDamage) {
-          console.warn(`Hit dist [${this.opts.loadoutName}/${ix}] failed sanity check!`, { sumAccuracy, fractionalDamage, hitDist });
+          console.warn(`Hit dist [${this.opts.loadoutName}#${ix}] failed sanity check!`, { sumAccuracy, fractionalDamage, hitDist });
         }
       });
     }
@@ -2059,6 +2060,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       case FeatureStatus.PARTIALLY_IMPLEMENTED:
         return new PlayerVsNPCCalc(this.player, this.baseMonster, {
           ...this.opts,
+          loadoutName: `${this.opts.loadoutName}/spec`,
           usingSpecialAttack: true,
         });
 

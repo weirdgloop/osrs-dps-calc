@@ -70,7 +70,7 @@ const computeMvPValues: Handler<WorkerRequestType.COMPUTE_REVERSE> = async (data
     const loadoutName = (i + 1).toString();
     const start = self.performance.now();
     const calc = new NPCVsPlayerCalc(p, monster, {
-      loadoutName,
+      loadoutName: `${loadoutName}/reverse`,
       detailedOutput: calcOpts.detailedOutput,
       disableMonsterScaling: calcOpts.disableMonsterScaling,
     });

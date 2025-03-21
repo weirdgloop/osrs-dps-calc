@@ -11,6 +11,7 @@ import { Spell, spells } from '@/types/Spell';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
 import { getCombatStylesForCategory } from '@/utils';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
+import { CalcOpts } from '@/lib/BaseCalc';
 import eq from '../../../cdn/json/equipment.json';
 
 const monsters = getMonsters().map((m) => ({
@@ -133,8 +134,9 @@ export function findSpell(name: string): Spell {
   return find(spells, (s) => s.name === name);
 }
 
-export function calculatePlayerVsNpc(monster: Monster, player: Player) {
+export function calculatePlayerVsNpc(monster: Monster, player: Player, opts?: CalcOpts) {
   const calc = new PlayerVsNPCCalc(player, monster, {
+    ...opts,
     loadoutName: 'test',
     detailedOutput: true,
   });
@@ -145,6 +147,7 @@ export function calculatePlayerVsNpc(monster: Monster, player: Player) {
     accuracy: calc.getHitChance(),
     dps: calc.getDps(),
     details: calc.details,
+    dist: calc.getDistribution(),
   };
 }
 
