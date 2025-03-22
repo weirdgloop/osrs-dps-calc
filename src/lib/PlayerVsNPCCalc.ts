@@ -1400,7 +1400,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.buffs.markOfDarknessSpell && this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
-      // todo(wgs): confirm that this is still post-roll with and without purging staff
       const demonbaneFactor = this.demonbaneFactor(this.wearing('Purging staff') ? 50 : 25);
       dist = dist.transform((h) => HitDistribution.single(1.0, [new Hitsplat(h.damage + Math.trunc(h.damage * demonbaneFactor[0] / demonbaneFactor[1]))]));
     }
@@ -2118,12 +2117,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       Math.max(Math.min(iLerp(15, 40, 0, 42_000, accuracyDelta), 40), 15),
     );
 
-    const $range = 20; // todo need to confirm this still
+    const maxPctRange = 20;
     return [
       // these apply the % separately
       // in effect, we're dealing between [15-35, 40-60]% of normal damage
       this.track(DetailKey.MIN_HIT_WARDENS, Math.trunc(max * modifier / 100)),
-      this.track(DetailKey.MAX_HIT_WARDENS, Math.trunc(max * (modifier + $range) / 100)),
+      this.track(DetailKey.MAX_HIT_WARDENS, Math.trunc(max * (modifier + maxPctRange) / 100)),
     ];
   }
 }
