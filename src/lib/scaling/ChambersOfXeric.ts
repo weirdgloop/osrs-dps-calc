@@ -2,11 +2,15 @@ import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
   COX_MAGIC_IS_DEFENSIVE_IDS,
   COX_USE_SINGLES_SCALING_IDS,
-  GLOWING_CRYSTAL_IDS, GUARDIAN_IDS, OLM_MAGE_HAND_IDS,
+  GLOWING_CRYSTAL_IDS,
+  GUARDIAN_IDS,
+  OLM_IDS,
+  OLM_MAGE_HAND_IDS,
+  OLM_MELEE_HAND_IDS,
   TEKTON_IDS,
 } from '@/lib/constants';
 import { Monster } from '@/types/Monster';
-import { iSqrt, addPercent } from '@/lib/Math';
+import { addPercent, iSqrt } from '@/lib/Math';
 import { max } from 'd3-array';
 
 type MonsterSkills = Monster['skills'];
@@ -168,6 +172,29 @@ const applyMultiCoxScaling = (m: Monster): Monster => {
   };
 };
 
+export const applyOlmScaling = (m: Monster): Monster => {
+  const lhand = OLM_MELEE_HAND_IDS.includes(m.id);
+  const rhand = OLM_MAGE_HAND_IDS.includes(m.id);
+
+  // partySize - 3 * extraPhases, basically
+  const partySizeScaleFactor = Math.min(m.inputs.partySize - 1, 50) - 3 * Math.trunc(Math.min(m.inputs.partySize, 50) / 8);
+
+  const base = applyMultiCoxScaling(m);
+  const magic: number = rhand ? Math.trunc(base.skills.magic / 2) : base.skills.magic;
+  const hp = (lhand || rhand)
+    ? 600 + 300 * partySizeScaleFactor
+    : 800 + 400 * partySizeScaleFactor;
+
+  return {
+    ...base,
+    skills: {
+      ...base.skills,
+      hp,
+      magic,
+    },
+  };
+};
+
 const applyCoxScaling = (m: Monster): Monster => {
   if (!m.attributes.includes(MonsterAttribute.XERICIAN)) {
     return m;
@@ -175,6 +202,10 @@ const applyCoxScaling = (m: Monster): Monster => {
 
   if (COX_USE_SINGLES_SCALING_IDS.includes(m.id)) {
     return applySinglesCoxScaling(m);
+  }
+
+  if (OLM_IDS.includes(m.id)) {
+    return applyOlmScaling(m);
   }
 
   return applyMultiCoxScaling(m);
