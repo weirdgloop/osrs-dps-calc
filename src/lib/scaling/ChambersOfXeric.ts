@@ -158,11 +158,6 @@ const applyMultiCoxScaling = (m: Monster): Monster => {
     statChanges[d] = Math.max(Math.min(defensive, 20_000), 50);
   }
 
-  // reduced olm mage hand magic def
-  if (OLM_MAGE_HAND_IDS.includes(m.id)) {
-    statChanges.magic = Math.trunc(statChanges.magic! / 2);
-  }
-
   return {
     ...m,
     skills: {
