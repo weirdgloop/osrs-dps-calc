@@ -5,8 +5,8 @@ import monsters from '../../cdn/json/monsters.json';
 
 export function getMonsters(): Omit<Monster, 'inputs'>[] {
   return monsters.map((m): Omit<Monster, 'inputs'> => {
-    const maxHit = Array.isArray(m.max_hit) 
-      ? Math.max(...m.max_hit.map(hit => parseInt(hit) || 0))
+    const maxHit = Array.isArray(m.max_hit)
+      ? Math.max(...m.max_hit.map((hit) => parseInt(hit) || 0))
       : parseInt(m.max_hit.toString());
     const styleStr = m.style?.join(',').toLowerCase() || null;
     return {
