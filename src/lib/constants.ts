@@ -222,6 +222,33 @@ export const ICE_DEMON_IDS = [
   7585, // cm
 ];
 
+export const VESPINE_SOLDIER_IDS = [
+  7538, 7539,
+];
+
+export const DEATHLY_RANGER_IDS = [ // cox tightrope rangers
+  7559,
+];
+
+export const VESPULA_IDS = [
+  7530, 7531, 7532,
+];
+
+export const COX_MAGIC_IS_DEFENSIVE_IDS = [
+  ...DEATHLY_RANGER_IDS,
+  ...TEKTON_IDS,
+  ...ABYSSAL_PORTAL_IDS,
+  ...VESPULA_IDS,
+  ...VESPINE_SOLDIER_IDS,
+  ...OLM_MELEE_HAND_IDS,
+  ...OLM_MAGE_HAND_IDS,
+];
+
+export const COX_USE_SINGLES_SCALING_IDS = [
+  ...SCAVENGER_BEAST_IDS,
+  ...VESPINE_SOLDIER_IDS,
+];
+
 /**
  * IDs of the Fragment of Seren.
  */

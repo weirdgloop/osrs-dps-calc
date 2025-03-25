@@ -3762,7 +3762,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000065-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000031-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -26516,7 +26516,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-00000057-QINU`\"'"
+      "Slash '\"`UNIQ--ref-0000005D-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -48863,7 +48863,7 @@
     "version": "Female",
     "image": "Iorwerth Archer (2).png",
     "level": 90,
-    "speed": 5,
+    "speed": 4,
     "style": [
       "Ranged"
     ],
@@ -48904,7 +48904,7 @@
     "version": "Male",
     "image": "Iorwerth Archer (1).png",
     "level": 90,
-    "speed": 5,
+    "speed": 4,
     "style": [
       "Ranged"
     ],
@@ -87259,7 +87259,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000047-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-000000A7-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -95160,7 +95160,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000065-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000005F-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -95202,7 +95202,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000065-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000005F-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -97285,7 +97285,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000075-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000038-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -97326,7 +97326,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000077-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000003A-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,

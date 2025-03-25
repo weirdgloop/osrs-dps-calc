@@ -1,4 +1,4 @@
-import { getMonsters } from '@/lib/Monsters';
+import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
 import { Monster } from '@/types/Monster';
 import { EquipmentPiece, Player } from '@/types/Player';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
@@ -11,6 +11,7 @@ import { Spell, spells } from '@/types/Spell';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
 import { getCombatStylesForCategory } from '@/utils';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
+import { CalcOpts } from '@/lib/BaseCalc';
 import eq from '../../../cdn/json/equipment.json';
 
 const monsters = getMonsters().map((m) => ({
@@ -61,27 +62,6 @@ export function getTestPlayer(monster: Monster, overrides: PartialDeep<Player> =
   return player;
 }
 
-const DEFAULT_MONSTER_INPUTS: Monster['inputs'] = {
-  monsterCurrentHp: 0, // handled dynamically in getTestMonster
-  isFromCoxCm: false,
-  toaInvocationLevel: 0,
-  toaPathLevel: 0,
-  partyMaxCombatLevel: 126,
-  partyAvgMiningLevel: 99,
-  partyMaxHpLevel: 99,
-  partySize: 1,
-  defenceReductions: {
-    vulnerability: false,
-    accursed: false,
-    elderMaul: 0,
-    dwh: 0,
-    arclight: 0,
-    emberlight: 0,
-    bgs: 0,
-    tonalztic: 0,
-  },
-};
-
 export function getTestMonster(name: string = 'Abyssal demon', version: string = '', overrides: PartialDeep<Monster> = {}): Monster {
   const monster = merge(
     {},
@@ -90,7 +70,7 @@ export function getTestMonster(name: string = 'Abyssal demon', version: string =
       (m) => m.name === name && (!version || m.version === version),
       `Monster not found for name '${name}' and version '${version}'`,
     ),
-    { inputs: DEFAULT_MONSTER_INPUTS },
+    { inputs: INITIAL_MONSTER_INPUTS },
     overrides,
   );
 
@@ -105,7 +85,7 @@ export function getTestMonsterById(id: number, overrides: PartialDeep<Monster> =
       (m) => m.id === id,
       `Monster not found for id '${id}'`,
     ),
-    { inputs: DEFAULT_MONSTER_INPUTS },
+    { inputs: INITIAL_MONSTER_INPUTS },
     overrides,
   );
 
@@ -133,8 +113,9 @@ export function findSpell(name: string): Spell {
   return find(spells, (s) => s.name === name);
 }
 
-export function calculatePlayerVsNpc(monster: Monster, player: Player) {
+export function calculatePlayerVsNpc(monster: Monster, player: Player, opts?: CalcOpts) {
   const calc = new PlayerVsNPCCalc(player, monster, {
+    ...opts,
     loadoutName: 'test',
     detailedOutput: true,
   });
@@ -145,6 +126,7 @@ export function calculatePlayerVsNpc(monster: Monster, player: Player) {
     accuracy: calc.getHitChance(),
     dps: calc.getDps(),
     details: calc.details,
+    dist: calc.getDistribution(),
   };
 }
 
