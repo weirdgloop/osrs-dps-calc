@@ -490,6 +490,13 @@ class GlobalState implements State {
           delete data.monster.inputs.partyAvgMiningLevel;
         }
 
+      case 7:
+        if (!isDefined(data.monster.immunities)) {
+          data.monster.immunities = {
+            burn: null,
+          };
+        }
+
       default:
     }
     /* eslint-enable no-fallthrough */
