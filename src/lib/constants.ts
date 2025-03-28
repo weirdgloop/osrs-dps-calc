@@ -334,6 +334,14 @@ export const IMMUNE_TO_RANGED_DAMAGE_NPC_IDS = [
   ...WARRIORS_GUILD_CYCLOPES,
 ];
 
+// as of now this is the same as the ranged immune npcs, but not sure if that will change later
+export const IMMUNE_TO_BURN_DAMAGE_NPC_IDS = [
+  ...TEKTON_IDS,
+  ...DUSK_IDS,
+  ...GLOWING_CRYSTAL_IDS,
+  ...WARRIORS_GUILD_CYCLOPES,
+];
+
 /**
  * Monsters immune to magic damage.
  */
