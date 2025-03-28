@@ -3762,7 +3762,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000031-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000024-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -7427,8 +7427,13 @@
       "slash": 50,
       "stab": 30
     },
-    "attributes": [],
-    "weakness": null
+    "attributes": [
+      "dragon"
+    ],
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
   },
   {
     "id": 244,
@@ -26000,7 +26005,8 @@
     "level": 1099,
     "speed": 5,
     "style": [
-      "Magic & Melee"
+      "Magic",
+      "Crush"
     ],
     "size": 7,
     "max_hit": "81 (Melee)",
@@ -26043,7 +26049,8 @@
     "level": 1099,
     "speed": 5,
     "style": [
-      "Magic & Melee"
+      "Magic",
+      "Crush"
     ],
     "size": 7,
     "max_hit": "81 (Melee)",
@@ -26086,7 +26093,8 @@
     "level": 1099,
     "speed": 5,
     "style": [
-      "Magic & Melee"
+      "Magic",
+      "Crush"
     ],
     "size": 7,
     "max_hit": "81 (Melee)",
@@ -26129,7 +26137,8 @@
     "level": 758,
     "speed": 5,
     "style": [
-      "Magic & Melee"
+      "Magic",
+      "Crush"
     ],
     "size": 7,
     "max_hit": "56 (Melee)",
@@ -26172,7 +26181,8 @@
     "level": 758,
     "speed": 5,
     "style": [
-      "Magic & Melee"
+      "Magic",
+      "Crush"
     ],
     "size": 7,
     "max_hit": "56 (Melee)",
@@ -26215,7 +26225,8 @@
     "level": 758,
     "speed": 5,
     "style": [
-      "Magic & Melee"
+      "Magic",
+      "Crush"
     ],
     "size": 7,
     "max_hit": "56 (Melee)",
@@ -26258,7 +26269,8 @@
     "level": 538,
     "speed": 6,
     "style": [
-      "Magic & Melee"
+      "Magic",
+      "Crush"
     ],
     "size": 7,
     "max_hit": "36 (Melee)",
@@ -26301,7 +26313,8 @@
     "level": 538,
     "speed": 6,
     "style": [
-      "Magic & Melee"
+      "Magic",
+      "Crush"
     ],
     "size": 7,
     "max_hit": "36 (Melee)",
@@ -26344,7 +26357,8 @@
     "level": 538,
     "speed": 6,
     "style": [
-      "Magic & Melee"
+      "Magic",
+      "Crush"
     ],
     "size": 7,
     "max_hit": "36 (Melee)",
@@ -26516,7 +26530,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-0000005D-QINU`\"'"
+      "Slash '\"`UNIQ--ref-00000000-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -40418,15 +40432,15 @@
   {
     "id": 6576,
     "name": "Guard (Deadman Mode)",
-    "version": "Catherby",
+    "version": "Catherby (ranged)",
     "image": "Guard (Deadman Mode, Catherby).png",
     "level": 1337,
-    "speed": 4,
+    "speed": 2,
     "style": [
-      "Slash"
+      "Ranged"
     ],
     "size": 1,
-    "max_hit": "45",
+    "max_hit": "Varies",
     "skills": {
       "atk": 800,
       "def": 300,
@@ -40462,12 +40476,53 @@
     "version": "East Ardougne",
     "image": "Guard (Deadman Mode, East Ardougne).png",
     "level": 1337,
-    "speed": 4,
+    "speed": 2,
     "style": [
       "Slash"
     ],
     "size": 1,
-    "max_hit": "45",
+    "max_hit": "Varies",
+    "skills": {
+      "atk": 800,
+      "def": 300,
+      "hp": 800,
+      "magic": 1,
+      "ranged": 1,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 7,
+      "magic": 0,
+      "heavy": 8,
+      "standard": 8,
+      "light": 8,
+      "slash": 9,
+      "stab": 8
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 11200,
+    "name": "Guard (Deadman Mode)",
+    "version": "East Ardougne (ranged)",
+    "image": "Guard (Deadman Mode, East Ardougne, ranged).png",
+    "level": 1337,
+    "speed": 2,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "Varies",
     "skills": {
       "atk": 800,
       "def": 300,
@@ -40503,12 +40558,53 @@
     "version": "Falador",
     "image": "Guard (Deadman Mode, Falador).png",
     "level": 1337,
-    "speed": 4,
+    "speed": 2,
     "style": [
       "Slash"
     ],
     "size": 1,
-    "max_hit": "45",
+    "max_hit": "Varies",
+    "skills": {
+      "atk": 800,
+      "def": 300,
+      "hp": 800,
+      "magic": 1,
+      "ranged": 1,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 7,
+      "magic": 0,
+      "heavy": 8,
+      "standard": 8,
+      "light": 8,
+      "slash": 9,
+      "stab": 8
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 11202,
+    "name": "Guard (Deadman Mode)",
+    "version": "Falador (ranged)",
+    "image": "Guard (Deadman Mode, Falador, ranged).png",
+    "level": 1337,
+    "speed": 2,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "Varies",
     "skills": {
       "atk": 800,
       "def": 300,
@@ -40544,12 +40640,53 @@
     "version": "Fremennik Isles",
     "image": "Guard (Deadman Mode, Fremennik Isles).png",
     "level": 1337,
-    "speed": 4,
+    "speed": 2,
     "style": [
       "Slash"
     ],
     "size": 1,
-    "max_hit": "45",
+    "max_hit": "Varies",
+    "skills": {
+      "atk": 800,
+      "def": 300,
+      "hp": 800,
+      "magic": 1,
+      "ranged": 1,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 7,
+      "magic": 0,
+      "heavy": 8,
+      "standard": 8,
+      "light": 8,
+      "slash": 9,
+      "stab": 8
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 11207,
+    "name": "Guard (Deadman Mode)",
+    "version": "Fremennik Isles (ranged)",
+    "image": "Guard (Deadman Mode, Fremennik Isles, ranged).png",
+    "level": 1337,
+    "speed": 2,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "Varies",
     "skills": {
       "atk": 800,
       "def": 300,
@@ -40582,15 +40719,56 @@
   {
     "id": 6574,
     "name": "Guard (Deadman Mode)",
-    "version": "Gnome guard",
+    "version": "Gnome Stronghold",
     "image": "Gnome guard (Deadman Mode).png",
     "level": 1337,
-    "speed": 4,
+    "speed": 2,
     "style": [
       "Slash"
     ],
     "size": 1,
-    "max_hit": "45",
+    "max_hit": "Varies",
+    "skills": {
+      "atk": 800,
+      "def": 300,
+      "hp": 800,
+      "magic": 1,
+      "ranged": 1,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 7,
+      "magic": 0,
+      "heavy": 8,
+      "standard": 8,
+      "light": 8,
+      "slash": 9,
+      "stab": 8
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 11199,
+    "name": "Guard (Deadman Mode)",
+    "version": "Gnome Stronghold (ranged)",
+    "image": "Gnome guard (Deadman Mode, ranged).png",
+    "level": 1337,
+    "speed": 2,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "Varies",
     "skills": {
       "atk": 800,
       "def": 300,
@@ -40626,12 +40804,53 @@
     "version": "Kourend Castle",
     "image": "Kourend guard (Deadman Mode).png",
     "level": 1337,
-    "speed": 4,
+    "speed": 2,
     "style": [
       "Slash"
     ],
     "size": 1,
-    "max_hit": "45",
+    "max_hit": "Varies",
+    "skills": {
+      "atk": 800,
+      "def": 300,
+      "hp": 800,
+      "magic": 1,
+      "ranged": 1,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 7,
+      "magic": 0,
+      "heavy": 8,
+      "standard": 8,
+      "light": 8,
+      "slash": 9,
+      "stab": 8
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 11210,
+    "name": "Guard (Deadman Mode)",
+    "version": "Kourend Castle (ranged)",
+    "image": "Kourend guard (Deadman Mode, ranged).png",
+    "level": 1337,
+    "speed": 2,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "Varies",
     "skills": {
       "atk": 800,
       "def": 300,
@@ -40667,12 +40886,53 @@
     "version": "Lumbridge",
     "image": "Guard (Deadman Mode, Lumbridge).png",
     "level": 1337,
-    "speed": 4,
+    "speed": 2,
     "style": [
       "Slash"
     ],
     "size": 1,
-    "max_hit": "45",
+    "max_hit": "Varies",
+    "skills": {
+      "atk": 800,
+      "def": 300,
+      "hp": 800,
+      "magic": 1,
+      "ranged": 1,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 7,
+      "magic": 0,
+      "heavy": 8,
+      "standard": 8,
+      "light": 8,
+      "slash": 9,
+      "stab": 8
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 11204,
+    "name": "Guard (Deadman Mode)",
+    "version": "Lumbridge (ranged)",
+    "image": "Guard (Deadman Mode, Lumbridge, ranged).png",
+    "level": 1337,
+    "speed": 2,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "Varies",
     "skills": {
       "atk": 800,
       "def": 300,
@@ -40708,12 +40968,53 @@
     "version": "Port Phasmatys",
     "image": "Ghost guard (Deadman Mode).png",
     "level": 1337,
-    "speed": 4,
+    "speed": 2,
     "style": [
       "Slash"
     ],
     "size": 1,
-    "max_hit": "45",
+    "max_hit": "Varies",
+    "skills": {
+      "atk": 800,
+      "def": 300,
+      "hp": 800,
+      "magic": 1,
+      "ranged": 1,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 7,
+      "magic": 0,
+      "heavy": 8,
+      "standard": 8,
+      "light": 8,
+      "slash": 9,
+      "stab": 8
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 11205,
+    "name": "Guard (Deadman Mode)",
+    "version": "Port Phasmatys (ranged)",
+    "image": "Ghost guard (Deadman Mode, ranged).png",
+    "level": 1337,
+    "speed": 2,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "Varies",
     "skills": {
       "atk": 800,
       "def": 300,
@@ -40749,12 +41050,53 @@
     "version": "Prifddinas",
     "image": "Prifddinas guard (Deadman Mode).png",
     "level": 1337,
-    "speed": 4,
+    "speed": 2,
     "style": [
       "Slash"
     ],
     "size": 1,
-    "max_hit": "45",
+    "max_hit": "Varies",
+    "skills": {
+      "atk": 800,
+      "def": 300,
+      "hp": 800,
+      "magic": 1,
+      "ranged": 1,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 7,
+      "magic": 0,
+      "heavy": 8,
+      "standard": 8,
+      "light": 8,
+      "slash": 9,
+      "stab": 8
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 11211,
+    "name": "Guard (Deadman Mode)",
+    "version": "Prifddinas (ranged)",
+    "image": "Prifddinas guard (Deadman Mode, ranged).png",
+    "level": 1337,
+    "speed": 2,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "Varies",
     "skills": {
       "atk": 800,
       "def": 300,
@@ -40790,12 +41132,53 @@
     "version": "Rellekka",
     "image": "Guard (Deadman Mode, Rellekka).png",
     "level": 1337,
-    "speed": 4,
+    "speed": 2,
     "style": [
       "Slash"
     ],
     "size": 1,
-    "max_hit": "45",
+    "max_hit": "Varies",
+    "skills": {
+      "atk": 800,
+      "def": 300,
+      "hp": 800,
+      "magic": 1,
+      "ranged": 1,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 7,
+      "magic": 0,
+      "heavy": 8,
+      "standard": 8,
+      "light": 8,
+      "slash": 9,
+      "stab": 8
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 11209,
+    "name": "Guard (Deadman Mode)",
+    "version": "Rellekka (ranged)",
+    "image": "Guard (Deadman Mode, Rellekka, ranged).png",
+    "level": 1337,
+    "speed": 2,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "Varies",
     "skills": {
       "atk": 800,
       "def": 300,
@@ -40828,15 +41211,15 @@
   {
     "id": 6575,
     "name": "Guard (Deadman Mode)",
-    "version": "Seers' Village",
+    "version": "Seers' Village (ranged)",
     "image": "Guard (Deadman Mode, Seers' Village).png",
     "level": 1337,
-    "speed": 4,
+    "speed": 2,
     "style": [
-      "Slash"
+      "Ranged"
     ],
     "size": 1,
-    "max_hit": "45",
+    "max_hit": "Varies",
     "skills": {
       "atk": 800,
       "def": 300,
@@ -40872,12 +41255,53 @@
     "version": "Sophanem",
     "image": "Guard (Deadman Mode, Sophanem).png",
     "level": 1337,
-    "speed": 4,
+    "speed": 2,
     "style": [
       "Slash"
     ],
     "size": 1,
-    "max_hit": "45",
+    "max_hit": "Varies",
+    "skills": {
+      "atk": 800,
+      "def": 300,
+      "hp": 800,
+      "magic": 1,
+      "ranged": 1,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 7,
+      "magic": 0,
+      "heavy": 8,
+      "standard": 8,
+      "light": 8,
+      "slash": 9,
+      "stab": 8
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 11206,
+    "name": "Guard (Deadman Mode)",
+    "version": "Sophanem (ranged)",
+    "image": "Guard (Deadman Mode, Sophanem, ranged).png",
+    "level": 1337,
+    "speed": 2,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "Varies",
     "skills": {
       "atk": 800,
       "def": 300,
@@ -40913,12 +41337,53 @@
     "version": "Varrock",
     "image": "Guard (Deadman Mode, Varrock).png",
     "level": 1337,
-    "speed": 4,
+    "speed": 2,
     "style": [
       "Slash"
     ],
     "size": 1,
-    "max_hit": "45",
+    "max_hit": "Varies",
+    "skills": {
+      "atk": 800,
+      "def": 300,
+      "hp": 800,
+      "magic": 1,
+      "ranged": 1,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 7,
+      "magic": 0,
+      "heavy": 8,
+      "standard": 8,
+      "light": 8,
+      "slash": 9,
+      "stab": 8
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 11203,
+    "name": "Guard (Deadman Mode)",
+    "version": "Varrock (ranged)",
+    "image": "Guard (Deadman Mode, Varrock, ranged).png",
+    "level": 1337,
+    "speed": 2,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "Varies",
     "skills": {
       "atk": 800,
       "def": 300,
@@ -40954,12 +41419,53 @@
     "version": "Void Knights' Outpost",
     "image": "Guard (Deadman Mode, Void Knights' Outpost).png",
     "level": 1337,
-    "speed": 4,
+    "speed": 2,
     "style": [
       "Slash"
     ],
     "size": 1,
-    "max_hit": "45",
+    "max_hit": "Varies",
+    "skills": {
+      "atk": 800,
+      "def": 300,
+      "hp": 800,
+      "magic": 1,
+      "ranged": 1,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 7,
+      "magic": 0,
+      "heavy": 8,
+      "standard": 8,
+      "light": 8,
+      "slash": 9,
+      "stab": 8
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 11208,
+    "name": "Guard (Deadman Mode)",
+    "version": "Void Knights' Outpost (ranged)",
+    "image": "Guard (Deadman Mode, Void Knights' Outpost, ranged).png",
+    "level": 1337,
+    "speed": 2,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "Varies",
     "skills": {
       "atk": 800,
       "def": 300,
@@ -40995,12 +41501,12 @@
     "version": "Warriors' Guild",
     "image": "Guard (Deadman Mode, Warriors' Guild).png",
     "level": 1337,
-    "speed": 4,
+    "speed": 2,
     "style": [
       "Slash"
     ],
     "size": 1,
-    "max_hit": "45",
+    "max_hit": "Varies",
     "skills": {
       "atk": 800,
       "def": 300,
@@ -41036,12 +41542,53 @@
     "version": "Yanille",
     "image": "Guard (Deadman Mode, Yanille).png",
     "level": 1337,
-    "speed": 4,
+    "speed": 2,
     "style": [
       "Slash"
     ],
     "size": 1,
-    "max_hit": "45",
+    "max_hit": "Varies",
+    "skills": {
+      "atk": 800,
+      "def": 300,
+      "hp": 800,
+      "magic": 1,
+      "ranged": 1,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 7,
+      "magic": 0,
+      "heavy": 8,
+      "standard": 8,
+      "light": 8,
+      "slash": 9,
+      "stab": 8
+    },
+    "attributes": [],
+    "weakness": null
+  },
+  {
+    "id": 11201,
+    "name": "Guard (Deadman Mode)",
+    "version": "Yanille (ranged)",
+    "image": "Guard (Deadman Mode, Yanille, ranged).png",
+    "level": 1337,
+    "speed": 2,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "Varies",
     "skills": {
       "atk": 800,
       "def": 300,
@@ -44782,7 +45329,10 @@
       "stab": 0
     },
     "attributes": [],
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
   },
   {
     "id": 104,
@@ -74895,8 +75445,8 @@
       "atk": 80,
       "def": 80,
       "hp": 100,
-      "magic": 0,
-      "ranged": 0,
+      "magic": 1,
+      "ranged": 1,
       "str": 80
     },
     "offensive": {
@@ -75183,10 +75733,10 @@
     "level": 380,
     "speed": 4,
     "style": [
-      "Crush",
       "Ranged",
       "Magic",
-      "Dragonfire"
+      "Dragonfire",
+      "Slash"
     ],
     "size": 4,
     "max_hit": "38",
@@ -75201,7 +75751,7 @@
     "offensive": {
       "atk": 0,
       "magic": 0,
-      "magic_str": 0,
+      "magic_str": 16,
       "ranged": 0,
       "ranged_str": 14,
       "str": 0
@@ -75210,13 +75760,15 @@
       "flat_armour": 0,
       "crush": 90,
       "magic": 30,
-      "heavy": 65,
+      "heavy": 95,
       "standard": 95,
       "light": 95,
       "slash": 115,
-      "stab": 20
+      "stab": 30
     },
-    "attributes": [],
+    "attributes": [
+      "dragon"
+    ],
     "weakness": {
       "element": "earth",
       "severity": 50
@@ -82157,12 +82709,12 @@
       "str": 18
     },
     "offensive": {
-      "atk": 0,
+      "atk": 15,
       "magic": 0,
       "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
-      "str": 0
+      "str": 14
     },
     "defensive": {
       "flat_armour": 0,
@@ -82175,7 +82727,10 @@
       "stab": 9
     },
     "attributes": [],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 1540,
@@ -82218,7 +82773,10 @@
     "attributes": [
       "undead"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 1537,
@@ -82259,7 +82817,10 @@
       "stab": 0
     },
     "attributes": [],
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
   },
   {
     "id": 1541,
@@ -95160,7 +95721,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000005F-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000058-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -95202,7 +95763,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000005F-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000058-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -97285,7 +97846,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000038-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000001E-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -97326,7 +97887,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000003A-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000020-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -98580,8 +99141,8 @@
     },
     "attributes": [
       "dragon",
-      "fiery",
-      "undead"
+      "undead",
+      "fiery"
     ],
     "weakness": null
   },
