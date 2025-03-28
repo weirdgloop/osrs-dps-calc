@@ -89,12 +89,29 @@ def get_monster_data():
     return monsters
 
 
+def validate_array_value(value):
+    if not value or value == ['None'] or value == ['N/A']:
+        return None
+    return value
+
+def parse_max_hits(max_hits):
+    if not isinstance(max_hits, list):
+        return 0
+    
+    hits = []
+    for hit in max_hits:
+        # Max hits can sometimes have multiple values separated by <br> or <br/>, so split them
+        parsed = [h.strip() for h in re.split(r'<br/?>', hit)]
+        hits.extend(parsed)
+    
+    return hits if hits else 0
+
 def get_printout_value(prop, all_results=False):
     # SMW printouts are all arrays, so ensure that the array is not empty
     if not prop:
         return None
     else:
-        return prop if all_results else prop[0]
+        return validate_array_value(prop) if all_results else prop[0]
 
 
 def has_category(category_array, category):
@@ -143,8 +160,6 @@ def main():
             continue
 
         monster_style = get_printout_value(po['Attack style'], True)
-        if monster_style == 'None' or monster_style == 'N/A':
-            monster_style = None
 
         # Override style specifically for Spinolyps. Both attacks roll ranged vs ranged.
         # This "patch" will have to be revisited if/when we add protection prayers.
@@ -160,7 +175,7 @@ def main():
             'speed': get_printout_value(po['Attack speed']) or 0,
             'style': monster_style,
             'size': get_printout_value(po['Size']) or 0,
-            'max_hit': get_printout_value(po['Max hit']) or 0,
+            'max_hit': parse_max_hits(get_printout_value(po['Max hit'], True) or 0),
             'skills': {
                 'atk': get_printout_value(po['Attack level']) or 0,
                 'def': get_printout_value(po['Defence level']) or 0,
