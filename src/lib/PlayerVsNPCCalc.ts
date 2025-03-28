@@ -1144,7 +1144,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.opts.usingSpecialAttack) {
       if (this.wearing(['Bone claws', 'Burning claws']) && !this.isImmuneToNormalBurns()) {
         ret = burningClawDoT(this.getHitChance());
-      } if (this.wearing('Scorching bow') && !this.isImmuneToNormalBurns()) {
+      } else if (this.wearing('Scorching bow') && !this.isImmuneToNormalBurns()) {
         ret = this.monster.attributes.includes(MonsterAttribute.DEMON) ? 5 : 1;
       }
     }
@@ -1160,7 +1160,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.opts.usingSpecialAttack) {
       if (this.wearing(['Bone claws', 'Burning claws']) && !this.isImmuneToNormalBurns()) {
         ret = 29;
-      } if (this.wearing('Scorching bow') && !this.isImmuneToNormalBurns()) {
+      } else if (this.wearing('Scorching bow') && !this.isImmuneToNormalBurns()) {
         ret = this.monster.attributes.includes(MonsterAttribute.DEMON) ? 5 : 1;
       }
     }
