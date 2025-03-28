@@ -6,6 +6,12 @@ import { TD_PHASES } from '@/lib/constants';
 // For now this is the same as player combat styles, but it may support other stuff in future like "typeless"
 export type MonsterCombatStyle = CombatStyleType;
 
+export enum BurnImmunity {
+  WEAK = 'weak',
+  NORMAL = 'normal',
+  STRONG = 'strong',
+}
+
 export interface Monster {
   id: number;
   name: string;
@@ -47,7 +53,7 @@ export interface Monster {
     severity: number;
   } | null;
   immunities: {
-    burn: string | null;
+    burn: BurnImmunity | null;
   }
 
   /**
