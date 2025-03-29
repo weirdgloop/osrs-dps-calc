@@ -15,7 +15,7 @@ RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.txt
 
 ### Util for regenerating /cdn on dev machines via docker
 FROM scraper-base AS scraper-dev
-CMD ["sh", "-c", "python generateEquipment.py && python generateMonsters.py && python generateEquipmentAliases.py"]
+CMD ["sh", "-c", "python generateEquipment.py && python generateMonsters.py && python generateMonsterAliases.py && python generateEquipmentAliases.py"]
 
 ### Used below in release docker image
 FROM scraper-base AS scraper-image
@@ -27,6 +27,7 @@ ADD ./cdn /srv/cdn
 RUN python generateEquipment.py
 RUN python generateEquipmentAliases.py
 RUN python generateMonsters.py
+RUN python generateMonsterAliases.py
 
 
 

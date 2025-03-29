@@ -5,6 +5,7 @@ import { observer } from 'mobx-react-lite';
 import { Monster } from '@/types/Monster';
 import { CUSTOM_MONSTER_BASE } from '@/lib/Monsters';
 import { IconPencilPlus } from '@tabler/icons-react';
+import monsterAliases from '@/lib/MonsterAliases';
 import Combobox from '../generic/Combobox';
 
 interface MonsterOption {
@@ -44,9 +45,36 @@ const MonsterSelect: React.FC = observer(() => {
       resetAfterSelect
       blurAfterSelect
       customFilter={(items, iv) => {
-        if (!iv) return items;
-        // When searching, don't show the custom monster option in the results
-        return items.filter((i) => i.value !== -1);
+        const remainingVariantGroups: { [k: number]: number[] } = {};
+        const remainingVariantMemberships: { [k: number]: number } = {}; // reverse map
+
+        for (const monster of items) {
+          if (monster.value === -1) continue;
+          const mId = monster.monster.id;
+          if (mId === undefined) continue;
+          for (const [base, vars] of Object.entries(monsterAliases)) {
+            const baseId = parseInt(base);
+            if (baseId === mId || vars.includes(mId)) {
+              remainingVariantGroups[baseId] = remainingVariantGroups[baseId] ? [...remainingVariantGroups[baseId], mId] : [mId];
+              remainingVariantMemberships[mId] = baseId;
+            }
+          }
+        }
+        return items.filter((mOpt) => {
+          // If there is a search query do not show custom monster
+          if (mOpt.value === -1) return !iv;
+          const mId = mOpt.monster.id;
+          if (mId === undefined) return true;
+          const baseId: number | undefined = remainingVariantMemberships[mId];
+          if (baseId === mId) return true;
+          if (baseId !== undefined) {
+            const group = remainingVariantGroups[baseId];
+            if (group.includes(mId)) {
+              return group.indexOf(mId) === 0 && !items.find((o) => o.monster.id === baseId);
+            }
+          }
+          return true;
+        });
       }}
       onSelectedItemChange={(item) => {
         if (item) {
