@@ -204,6 +204,9 @@ class GlobalState implements State {
     },
     attributes: [MonsterAttribute.DEMON],
     weakness: null,
+    immunities: {
+      burn: null,
+    },
     inputs: { ...INITIAL_MONSTER_INPUTS },
   };
 
@@ -485,6 +488,13 @@ class GlobalState implements State {
         if (isDefined(data.monster.inputs.partyAvgMiningLevel)) {
           data.monster.inputs.partySumMiningLevel = data.monster.inputs.partyAvgMiningLevel * data.monster.inputs.partySize;
           delete data.monster.inputs.partyAvgMiningLevel;
+        }
+
+      case 7:
+        if (!isDefined(data.monster.immunities)) {
+          data.monster.immunities = {
+            burn: null,
+          };
         }
 
       default:
