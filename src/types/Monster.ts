@@ -7,9 +7,9 @@ import { TD_PHASES } from '@/lib/constants';
 export type MonsterCombatStyle = CombatStyleType;
 
 export enum BurnImmunity {
-  WEAK = 'weak',
-  NORMAL = 'normal',
-  STRONG = 'strong',
+  WEAK = 'Weak',
+  NORMAL = 'Normal',
+  STRONG = 'Strong',
 }
 
 export interface Monster {

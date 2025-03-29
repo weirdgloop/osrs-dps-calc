@@ -1,4 +1,4 @@
-import { Monster } from '@/types/Monster';
+import { BurnImmunity, Monster } from '@/types/Monster';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { isCombatStyleType } from '@/types/PlayerCombatStyle';
 import monsters from '../../cdn/json/monsters.json';
@@ -21,7 +21,9 @@ export function getMonsters(): Omit<Monster, 'inputs'>[] {
       defensive: m.defensive,
       attributes: m.attributes as MonsterAttribute[],
       weakness: <Monster['weakness']>m.weakness || null,
-      immunities: m.immunities,
+      immunities: {
+        burn: m.immunities.burn as BurnImmunity,
+      },
     };
   });
 }
