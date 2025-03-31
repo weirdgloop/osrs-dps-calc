@@ -13,6 +13,7 @@ const EquipmentPresets: React.FC = () => {
 
   const presets = [
     { label: 'Bowfa + Crystal', value: EquipmentPreset.BOWFA },
+    { label: 'Blood moon set', value: EquipmentPreset.BLOOD_MOON },
     { label: 'Dharok\'s equipment', value: EquipmentPreset.DHAROKS },
     { label: 'Max Mage', value: EquipmentPreset.MAX_MAGE },
     { label: 'Max Melee', value: EquipmentPreset.MAX_MELEE },
@@ -47,6 +48,19 @@ const EquipmentPresets: React.FC = () => {
             hands: findItemById(26235), // Zaryte vambraces
             feet: findItemById(13237), // Pegasian boots
             ring: findItemById(28310), // Venator ring
+          },
+        };
+        break;
+      }
+      case EquipmentPreset.BLOOD_MOON: {
+        newPlayer = {
+          name: v.label,
+          equipment: {
+            head: findItemById(29028), // Blood moon helm
+            body: findItemById(29022), // Blood moon chestplate
+            weapon: findItemById(28997), // Dual macuahuitl
+            shield: null,
+            legs: findItemById(29025), // Blood moon tassets
           },
         };
         break;
