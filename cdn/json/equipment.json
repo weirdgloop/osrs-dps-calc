@@ -4299,7 +4299,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 107,
+      "ranged_str": 102,
       "magic_str": 0,
       "prayer": 0
     },
@@ -4329,7 +4329,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 107,
+      "ranged_str": 102,
       "magic_str": 0,
       "prayer": 0
     },
@@ -4359,7 +4359,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 107,
+      "ranged_str": 102,
       "magic_str": 0,
       "prayer": 0
     },
@@ -4389,7 +4389,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 107,
+      "ranged_str": 102,
       "magic_str": 0,
       "prayer": 0
     },
@@ -4938,7 +4938,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 27,
@@ -4968,7 +4968,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 27,
@@ -18108,7 +18108,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 17,
@@ -18138,7 +18138,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 17,
@@ -27618,7 +27618,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 5,
@@ -27648,7 +27648,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 5,
@@ -49158,7 +49158,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 56,
@@ -53387,7 +53387,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 135,
-      "magic": -4,
+      "magic": 0,
       "ranged": 0
     },
     "defensive": {
@@ -53417,7 +53417,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 135,
-      "magic": -4,
+      "magic": 0,
       "ranged": 0
     },
     "defensive": {
@@ -76338,7 +76338,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 8,
@@ -76368,7 +76368,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 8,
@@ -80095,7 +80095,7 @@
       "slash": 5,
       "crush": 3,
       "magic": 0,
-      "ranged": 1
+      "ranged": 4
     },
     "isTwoHanded": false
   },
@@ -85998,7 +85998,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 18,
@@ -86028,7 +86028,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 18,
@@ -93227,7 +93227,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 2,
+      "magic": 0,
       "ranged": 0
     },
     "defensive": {
@@ -93257,7 +93257,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 2,
+      "magic": 0,
       "ranged": 0
     },
     "defensive": {
@@ -121638,7 +121638,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 13,
@@ -121668,7 +121668,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 13,
