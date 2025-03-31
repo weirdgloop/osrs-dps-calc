@@ -3762,7 +3762,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000024-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000076-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -31895,7 +31895,7 @@
     "skills": {
       "atk": 98,
       "def": 52,
-      "hp": 126,
+      "hp": 125,
       "magic": 1,
       "ranged": 1,
       "str": 65
@@ -31921,7 +31921,10 @@
     "attributes": [
       "demon"
     ],
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 100
+    }
   },
   {
     "id": 12453,
@@ -87820,7 +87823,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-000000A7-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000003D-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -95721,7 +95724,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000058-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -95763,7 +95766,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000058-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -97846,7 +97849,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000001E-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000B-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -97887,7 +97890,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000020-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000D-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
