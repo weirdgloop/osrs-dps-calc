@@ -208,7 +208,17 @@ export const getCanonicalItem = (equipmentPiece: EquipmentPiece): EquipmentPiece
     return equipmentPiece;
   }
 
-  return availableEquipment.find((e) => e.id === canonicalId) || equipmentPiece;
+  const canonicalItem = availableEquipment.find((e) => e.id === canonicalId);
+  if (!canonicalItem) {
+    return equipmentPiece;
+  }
+
+  return {
+    ...canonicalItem,
+    itemVars: {
+      ...equipmentPiece.itemVars,
+    },
+  };
 };
 
 export const getCanonicalEquipment = (inputEq: PlayerEquipment) => {
@@ -288,13 +298,10 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
   const playerEquipment: PlayerEquipment = getCanonicalEquipment(player.equipment);
 
   keys(playerEquipment).forEach((slot) => {
-    let piece = playerEquipment[slot]!;
+    const piece = playerEquipment[slot]!;
     if (!piece) {
       return;
     }
-
-    // canonicalize the item first
-    piece = getCanonicalItem(piece);
 
     // skip over ammo slot's ranged bonuses if it is not used by the bow
     const applyRangedStats = piece.slot !== 'ammo' || ammoApplicability(playerEquipment.weapon?.id, piece.id) === AmmoApplicability.INCLUDED;
