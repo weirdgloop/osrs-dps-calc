@@ -4029,7 +4029,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000076-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000021-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -28277,8 +28277,54 @@
   {
     "id": 2865,
     "name": "Dungeon rat",
-    "version": "Doesn't drop tail",
+    "version": "Full tail",
     "image": "Dungeon rat.png",
+    "level": 12,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "2",
+    "skills": {
+      "atk": 10,
+      "def": 10,
+      "hp": 12,
+      "magic": 1,
+      "ranged": 1,
+      "str": 10
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "rat"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 2866,
+    "name": "Dungeon rat",
+    "version": "Short tail",
+    "image": "Dungeon rat (tailless).png",
     "level": 12,
     "speed": 4,
     "style": [
@@ -28331,52 +28377,6 @@
       "Stab"
     ],
     "size": 1,
-    "max_hit": "2",
-    "skills": {
-      "atk": 10,
-      "def": 10,
-      "hp": 12,
-      "magic": 1,
-      "ranged": 1,
-      "str": 10
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "rat"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 2866,
-    "name": "Dungeon rat",
-    "version": "Standard",
-    "image": "Dungeon rat.png",
-    "level": 12,
-    "speed": 4,
-    "style": [
-      "Stab"
-    ],
-    "size": 2,
     "max_hit": "2",
     "skills": {
       "atk": 10,
@@ -69837,6 +69837,50 @@
     "weakness": null
   },
   {
+    "id": 10820,
+    "name": "Nylocas Matomenos",
+    "version": "Entry Mode Maiden",
+    "image": "Nylocas Matomenos.png",
+    "level": 68,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 2,
+    "max_hit": "11",
+    "skills": {
+      "atk": 100,
+      "def": 100,
+      "hp": 64,
+      "magic": 100,
+      "ranged": 100,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 10828,
     "name": "Nylocas Matomenos",
     "version": "Hard Mode Maiden",
@@ -91652,7 +91696,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 8137,
@@ -91696,7 +91743,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 3019,
@@ -102552,7 +102602,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000009D-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -102597,7 +102647,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000009D-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -104827,7 +104877,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000B-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000006-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -104871,7 +104921,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000D-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000008-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
