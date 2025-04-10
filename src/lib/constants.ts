@@ -475,3 +475,5 @@ HUEYCOATL_PHASE_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = HUEYCOATL_PHASE
 
 export const ROYAL_TITANS_PHASES = ['In Melee Range', 'Out of Melee Range'];
 TITAN_BOSS_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = ROYAL_TITANS_PHASES; });
+
+export const MAIDEN_CRAB_IDS = [10820, 8366, 10828];
