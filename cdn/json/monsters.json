@@ -4029,7 +4029,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000076-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000001-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -4435,6 +4435,98 @@
     }
   },
   {
+    "id": 12730,
+    "name": "Armoured zombie (Defender of Varrock)",
+    "version": "Melee (invasion)",
+    "image": "Armoured zombie (melee, 5).png",
+    "level": 85,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": {
+      "atk": 73,
+      "def": 68,
+      "hp": 85,
+      "magic": 1,
+      "ranged": 1,
+      "str": 72
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12735,
+    "name": "Armoured zombie (Defender of Varrock)",
+    "version": "Ranged (invasion)",
+    "image": "Armoured zombie (ranged, 5).png",
+    "level": 85,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": {
+      "atk": 73,
+      "def": 68,
+      "hp": 85,
+      "magic": 1,
+      "ranged": 72,
+      "str": 72
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 14135,
     "name": "Armoured zombie (The Curse of Arrav)",
     "version": "1",
@@ -4517,6 +4609,98 @@
       "light": -100,
       "slash": 5,
       "stab": 5
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12720,
+    "name": "Armoured zombie (Zemouregal's Base)",
+    "version": "Melee",
+    "image": "Armoured zombie (melee, 5).png",
+    "level": 85,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": {
+      "atk": 73,
+      "def": 68,
+      "hp": 85,
+      "magic": 1,
+      "ranged": 1,
+      "str": 72
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12725,
+    "name": "Armoured zombie (Zemouregal's Base)",
+    "version": "Ranged",
+    "image": "Armoured zombie (ranged, 5).png",
+    "level": 85,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": {
+      "atk": 73,
+      "def": 68,
+      "hp": 85,
+      "magic": 1,
+      "ranged": 72,
+      "str": 72
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 20,
+      "stab": 20
     },
     "attributes": [
       "undead"
@@ -4959,190 +5143,6 @@
       "magic": 1,
       "ranged": 94,
       "str": 94
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 10,
-      "standard": 10,
-      "light": 10,
-      "slash": 20,
-      "stab": 20
-    },
-    "attributes": [
-      "undead"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 12720,
-    "name": "Armoured zombie",
-    "version": "Melee",
-    "image": "Armoured zombie (melee, 5).png",
-    "level": 85,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "8",
-    "skills": {
-      "atk": 73,
-      "def": 68,
-      "hp": 85,
-      "magic": 1,
-      "ranged": 1,
-      "str": 72
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 10,
-      "standard": 10,
-      "light": 10,
-      "slash": 20,
-      "stab": 20
-    },
-    "attributes": [
-      "undead"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 12730,
-    "name": "Armoured zombie",
-    "version": "Melee (invasion)",
-    "image": "Armoured zombie (melee, 5).png",
-    "level": 85,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "8",
-    "skills": {
-      "atk": 73,
-      "def": 68,
-      "hp": 85,
-      "magic": 1,
-      "ranged": 1,
-      "str": 72
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 10,
-      "standard": 10,
-      "light": 10,
-      "slash": 20,
-      "stab": 20
-    },
-    "attributes": [
-      "undead"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 12725,
-    "name": "Armoured zombie",
-    "version": "Ranged",
-    "image": "Armoured zombie (ranged, 5).png",
-    "level": 85,
-    "speed": 4,
-    "style": [
-      "Ranged"
-    ],
-    "size": 1,
-    "max_hit": "8",
-    "skills": {
-      "atk": 73,
-      "def": 68,
-      "hp": 85,
-      "magic": 1,
-      "ranged": 72,
-      "str": 72
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 10,
-      "standard": 10,
-      "light": 10,
-      "slash": 20,
-      "stab": 20
-    },
-    "attributes": [
-      "undead"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 12735,
-    "name": "Armoured zombie",
-    "version": "Ranged (invasion)",
-    "image": "Armoured zombie (ranged, 5).png",
-    "level": 85,
-    "speed": 4,
-    "style": [
-      "Ranged"
-    ],
-    "size": 1,
-    "max_hit": "8",
-    "skills": {
-      "atk": 73,
-      "def": 68,
-      "hp": 85,
-      "magic": 1,
-      "ranged": 72,
-      "str": 72
     },
     "offensive": {
       "atk": 0,
@@ -9961,9 +9961,54 @@
     "weakness": null
   },
   {
-    "id": 1126,
+    "id": 600,
     "name": "Barrelchest",
-    "version": "Hard",
+    "version": "",
+    "image": "Barrelchest.png",
+    "level": 190,
+    "speed": 5,
+    "style": [
+      "Crush",
+      "Ranged"
+    ],
+    "size": 3,
+    "max_hit": "35",
+    "skills": {
+      "atk": 170,
+      "def": 140,
+      "hp": 134,
+      "magic": 90,
+      "ranged": 1,
+      "str": 145
+    },
+    "offensive": {
+      "atk": 80,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 80
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1126,
+    "name": "Barrelchest (Nightmare Zone)",
+    "version": "Hard Mode",
     "image": "Barrelchest.png",
     "level": 380,
     "speed": 5,
@@ -10006,9 +10051,9 @@
     "weakness": null
   },
   {
-    "id": 600,
-    "name": "Barrelchest",
-    "version": "Normal",
+    "id": 6342,
+    "name": "Barrelchest (Nightmare Zone)",
+    "version": "Normal Mode",
     "image": "Barrelchest.png",
     "level": 190,
     "speed": 5,
@@ -12877,7 +12922,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -13647,7 +13692,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -15957,51 +16002,7 @@
   {
     "id": 6102,
     "name": "Bush snake",
-    "version": "1",
-    "image": "Bush snake.png",
-    "level": 35,
-    "speed": 3,
-    "style": [
-      "Stab"
-    ],
-    "size": 1,
-    "max_hit": "3",
-    "skills": {
-      "atk": 25,
-      "def": 50,
-      "hp": 25,
-      "magic": 1,
-      "ranged": 1,
-      "str": 25
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 6103,
-    "name": "Bush snake",
-    "version": "2",
+    "version": "",
     "image": "Bush snake.png",
     "level": 35,
     "speed": 3,
@@ -17896,7 +17897,7 @@
     "defensive": {
       "flat_armour": 0,
       "crush": 25,
-      "magic": 100,
+      "magic": 65,
       "heavy": 100,
       "standard": 100,
       "light": 100,
@@ -26117,7 +26118,7 @@
     "defensive": {
       "flat_armour": 0,
       "crush": 0,
-      "magic": 50,
+      "magic": 20,
       "heavy": 0,
       "standard": 0,
       "light": 0,
@@ -28277,8 +28278,54 @@
   {
     "id": 2865,
     "name": "Dungeon rat",
-    "version": "Doesn't drop tail",
+    "version": "Full tail",
     "image": "Dungeon rat.png",
+    "level": 12,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "2",
+    "skills": {
+      "atk": 10,
+      "def": 10,
+      "hp": 12,
+      "magic": 1,
+      "ranged": 1,
+      "str": 10
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "rat"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 2866,
+    "name": "Dungeon rat",
+    "version": "Short tail",
+    "image": "Dungeon rat (tailless).png",
     "level": 12,
     "speed": 4,
     "style": [
@@ -28331,52 +28378,6 @@
       "Stab"
     ],
     "size": 1,
-    "max_hit": "2",
-    "skills": {
-      "atk": 10,
-      "def": 10,
-      "hp": 12,
-      "magic": 1,
-      "ranged": 1,
-      "str": 10
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "rat"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 2866,
-    "name": "Dungeon rat",
-    "version": "Standard",
-    "image": "Dungeon rat.png",
-    "level": 12,
-    "speed": 4,
-    "style": [
-      "Stab"
-    ],
-    "size": 2,
     "max_hit": "2",
     "skills": {
       "atk": 10,
@@ -29333,7 +29334,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -29377,7 +29378,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -35117,8 +35118,8 @@
     "level": 494,
     "speed": 7,
     "style": [
-      "Melee",
-      "Ranged"
+      "Ranged",
+      "Slash"
     ],
     "size": 3,
     "max_hit": "max HP minus 1 (special)",
@@ -56175,7 +56176,7 @@
     "defensive": {
       "flat_armour": 0,
       "crush": 80,
-      "magic": 130,
+      "magic": 80,
       "heavy": 80,
       "standard": 80,
       "light": 80,
@@ -69837,6 +69838,50 @@
     "weakness": null
   },
   {
+    "id": 10820,
+    "name": "Nylocas Matomenos",
+    "version": "Entry Mode Maiden",
+    "image": "Nylocas Matomenos.png",
+    "level": 68,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 2,
+    "max_hit": "11",
+    "skills": {
+      "atk": 100,
+      "def": 100,
+      "hp": 64,
+      "magic": 100,
+      "ranged": 100,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 10828,
     "name": "Nylocas Matomenos",
     "version": "Hard Mode Maiden",
@@ -70023,7 +70068,7 @@
       "Magic"
     ],
     "size": 3,
-    "max_hit": "25",
+    "max_hit": "30",
     "skills": {
       "atk": 200,
       "def": 25,
@@ -70067,7 +70112,7 @@
       "Stab"
     ],
     "size": 3,
-    "max_hit": "25",
+    "max_hit": "30",
     "skills": {
       "atk": 200,
       "def": 25,
@@ -70111,7 +70156,7 @@
       "Ranged"
     ],
     "size": 3,
-    "max_hit": "25",
+    "max_hit": "30",
     "skills": {
       "atk": 200,
       "def": 25,
@@ -89243,7 +89288,7 @@
     "defensive": {
       "flat_armour": 0,
       "crush": 80,
-      "magic": 130,
+      "magic": 80,
       "heavy": 130,
       "standard": 130,
       "light": 130,
@@ -91652,7 +91697,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 8137,
@@ -91696,7 +91744,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 3019,
@@ -94084,7 +94135,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000003D-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000000-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -102552,7 +102603,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000001A-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -102597,7 +102648,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000001-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000001A-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -104827,7 +104878,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000B-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000041-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -104871,7 +104922,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000D-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000043-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -105232,9 +105283,9 @@
     "level": 512,
     "speed": 7,
     "style": [
-      "Crush",
       "Magic",
-      "Ranged"
+      "Ranged",
+      "Typeless Crush"
     ],
     "size": 7,
     "max_hit": "36 (melee)",
@@ -105368,9 +105419,9 @@
     "level": 1520,
     "speed": 7,
     "style": [
-      "Crush",
       "Magic",
-      "Ranged"
+      "Ranged",
+      "Typeless Crush"
     ],
     "size": 7,
     "max_hit": "63 (melee)",
@@ -105504,9 +105555,9 @@
     "level": 1520,
     "speed": 7,
     "style": [
-      "Crush",
       "Magic",
-      "Ranged"
+      "Ranged",
+      "Typeless Crush"
     ],
     "size": 7,
     "max_hit": "63 (melee)",
