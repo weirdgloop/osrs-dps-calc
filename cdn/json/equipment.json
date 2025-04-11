@@ -31260,6 +31260,66 @@
     "isTwoHanded": false
   },
   {
+    "name": "Castle wars arrow",
+    "id": 30694,
+    "version": "",
+    "slot": "ammo",
+    "image": "Castle wars arrow 2.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 60,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Castle wars bolts",
+    "id": 30696,
+    "version": "",
+    "slot": "ammo",
+    "image": "Castle wars bolts 1.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 122,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Castle wars bracelet",
     "id": 11083,
     "version": "(1)",
@@ -51994,7 +52054,7 @@
     "id": 30545,
     "version": "0",
     "slot": "body",
-    "image": "Echo ahrim's robetop.png",
+    "image": "Echo ahrim's robetop 0.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -71585,66 +71645,6 @@
     "version": "",
     "slot": "head",
     "image": "Hood of ruin.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Hooded cloak",
-    "id": 4041,
-    "version": "Saradomin",
-    "slot": "cape",
-    "image": "Hooded cloak (Saradomin).png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Hooded cloak",
-    "id": 4042,
-    "version": "Zamorak",
-    "slot": "cape",
-    "image": "Hooded cloak (Zamorak).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -110400,6 +110400,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Saradomin cloak (Castle Wars)",
+    "id": 4041,
+    "version": "",
+    "slot": "cape",
+    "image": "Saradomin cloak (Castle Wars).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Saradomin coif",
     "id": 10390,
     "version": "",
@@ -141416,6 +141446,36 @@
       "crush": 3,
       "magic": 3,
       "ranged": 3
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Zamorak cloak (Castle Wars)",
+    "id": 4042,
+    "version": "",
+    "slot": "cape",
+    "image": "Zamorak cloak (Castle Wars).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
     },
     "isTwoHanded": false
   },
