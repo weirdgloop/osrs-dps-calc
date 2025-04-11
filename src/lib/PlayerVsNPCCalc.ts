@@ -1070,6 +1070,29 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     return this.track(DetailKey.PLAYER_ACCURACY_ROLL_FINAL, atkRoll);
   }
 
+  public getDisplayHitChance(): number {
+    let hitChance = this.getHitChance();
+
+    if (hitChance === 1.0 || hitChance === 0.0) {
+      // probably a special effect
+      return hitChance;
+    }
+
+    const atk = this.getMaxAttackRoll();
+    const def = this.getNPCDefenceRoll();
+
+    if (this.player.style.type === 'magic' && this.wearing('Brimstone ring')) {
+      const effectHitChance = this.track(
+        DetailKey.PLAYER_ACCURACY_BRIMSTONE,
+        BaseCalc.getNormalAccuracyRoll(atk, Math.trunc(def * 9 / 10)),
+      );
+
+      hitChance = 0.75 * hitChance + 0.25 * effectHitChance;
+    }
+
+    return hitChance;
+  }
+
   public getHitChance() {
     if (this.opts.overrides?.accuracy) {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, this.opts.overrides.accuracy);
