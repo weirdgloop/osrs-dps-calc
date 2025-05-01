@@ -336,7 +336,7 @@ const MonsterContainer: React.FC = observer(() => {
       );
     }
 
-    if (monster.attributes.includes(MonsterAttribute.DEMON)) {
+    if (monster.attributes.includes(MonsterAttribute.DEMON) && isCustomMonster) {
       comps.push(
         <div key="demonbane-effectiveness">
           <h4 className="font-bold font-serif">
