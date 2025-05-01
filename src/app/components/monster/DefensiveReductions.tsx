@@ -10,6 +10,7 @@ import tonalztic from '@/public/img/def_reductions/Tonalztics_of_ralos.png';
 import dwh from '@/public/img/def_reductions/Dragon_warhammer.webp';
 import arc from '@/public/img/def_reductions/Arclight.png';
 import emberlight from '@/public/img/def_reductions/Emberlight.png';
+import seercull from '@/public/img/def_reductions/Seercull.png';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 import { getDefenceFloor } from '@/lib/scaling/DefenceReduction';
@@ -131,6 +132,20 @@ const DefensiveReductions: React.FC = observer(() => {
               <img src={bgs.src} width={18} className="inline-block" alt="" />
               {' '}
               Bandos godsword damage
+            </span>
+          </div>
+          <div className="w-full">
+            <NumberInput
+              className="form-control w-1/6"
+              required
+              min={0}
+              value={defenceReductions.seercull}
+              onChange={(v) => store.updateMonster({ inputs: { defenceReductions: { seercull: v } } })}
+            />
+            <span className="pl-2">
+              <img src={seercull.src} width={18} className="inline-block" alt="" />
+              {' '}
+              Seercull damage
             </span>
           </div>
           <Toggle

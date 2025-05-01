@@ -46,6 +46,7 @@ export const INITIAL_MONSTER_INPUTS: Monster['inputs'] = {
     emberlight: 0,
     bgs: 0,
     tonalztic: 0,
+    seercull: 0,
   },
 };
 

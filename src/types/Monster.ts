@@ -112,6 +112,7 @@ export interface Monster {
       emberlight: number;
       bgs: number;
       tonalztic: number;
+      seercull: number;
     };
 
     demonbaneVulnerability?: number;
