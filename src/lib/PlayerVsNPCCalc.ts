@@ -1445,17 +1445,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.transform((h) => HitDistribution.single(1.0, [new Hitsplat(h.damage + Math.trunc(h.damage * demonbaneFactor[0] / demonbaneFactor[1]))]));
     }
 
-    if (this.player.style.type === 'magic'
-      && this.wearing('Twinflame staff')
-      && ['Bolt', 'Blast', 'Wave'].some((spellClass) => this.player.spell?.name.includes(spellClass) ?? false)) {
-      dist = dist.transform(
-        (h) => HitDistribution.single(1.0, [
-          new Hitsplat(h.damage),
-          new Hitsplat(Math.trunc(h.damage * 4 / 10)),
-        ]),
-      );
-    }
-
     if (this.player.style.type === 'magic' && this.isWearingAhrims()) {
       dist = dist.transform(
         (h) => new HitDistribution([
@@ -1546,6 +1535,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.transform(
         (h) => HitDistribution.single(1.0, [new Hitsplat(Math.max(h.damage, 1))]),
         { transformInaccurate: false },
+      );
+    }
+
+    if (this.player.style.type === 'magic'
+      && this.wearing('Twinflame staff')
+      && ['Bolt', 'Blast', 'Wave'].some((spellClass) => this.player.spell?.name.includes(spellClass) ?? false)) {
+      dist = dist.transform(
+        (h) => HitDistribution.single(1.0, [
+          new Hitsplat(h.damage),
+          new Hitsplat(Math.trunc(h.damage * 4 / 10)),
+        ]),
       );
     }
 
