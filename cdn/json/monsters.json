@@ -197,7 +197,7 @@
     "skills": {
       "atk": 180,
       "def": 250,
-      "hp": 400,
+      "hp": 425,
       "magic": 200,
       "ranged": 1,
       "str": 136
@@ -243,7 +243,7 @@
     "skills": {
       "atk": 180,
       "def": 250,
-      "hp": 400,
+      "hp": 425,
       "magic": 200,
       "ranged": 1,
       "str": 136
@@ -289,7 +289,7 @@
     "skills": {
       "atk": 180,
       "def": 250,
-      "hp": 400,
+      "hp": 425,
       "magic": 200,
       "ranged": 1,
       "str": 136
@@ -335,7 +335,7 @@
     "skills": {
       "atk": 180,
       "def": 250,
-      "hp": 400,
+      "hp": 425,
       "magic": 200,
       "ranged": 1,
       "str": 136
@@ -2085,7 +2085,7 @@
       "dragon"
     ],
     "immunities": {
-      "burn": null
+      "burn": "Normal"
     },
     "weakness": null
   },
@@ -4029,7 +4029,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000001-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000004-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -12893,7 +12893,7 @@
       "Typeless slash"
     ],
     "size": 5,
-    "max_hit": "20 (x3)",
+    "max_hit": "20x3 (Typeless)",
     "skills": {
       "atk": 258,
       "def": 60,
@@ -13151,185 +13151,6 @@
     "weakness": null
   },
   {
-    "id": 12561,
-    "name": "Bloodthirst rockslug",
-    "version": "",
-    "image": "Bloodthirst rockslug.png",
-    "level": 86,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 3,
-    "max_hit": 0,
-    "skills": {
-      "atk": 72,
-      "def": 77,
-      "hp": 77,
-      "magic": 1,
-      "ranged": 1,
-      "str": 77
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 12539,
-    "name": "Bloodthirsty Crawler",
-    "version": "",
-    "image": "Bloodthirsty Crawler.png",
-    "level": 68,
-    "speed": 4,
-    "style": [
-      "Melee"
-    ],
-    "size": 3,
-    "max_hit": 0,
-    "skills": {
-      "atk": 64,
-      "def": 55,
-      "hp": 60,
-      "magic": 1,
-      "ranged": 1,
-      "str": 59
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 12567,
-    "name": "Bloodthirsty Mage",
-    "version": "",
-    "image": "Bloodthirsty Mage.png",
-    "level": 162,
-    "speed": 4,
-    "style": [
-      "Magic"
-    ],
-    "size": 2,
-    "max_hit": 0,
-    "skills": {
-      "atk": 1,
-      "def": 175,
-      "hp": 175,
-      "magic": 175,
-      "ranged": 1,
-      "str": 1
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 12574,
-    "name": "Bloodthirsty Repugnant spectre",
-    "version": "",
-    "image": "Bloodthirsty Repugnant spectre.png",
-    "level": 335,
-    "speed": 4,
-    "style": [
-      "Magic"
-    ],
-    "size": 3,
-    "max_hit": 0,
-    "skills": {
-      "atk": 1,
-      "def": 220,
-      "hp": 380,
-      "magic": 380,
-      "ranged": 1,
-      "str": 1
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "spectral",
-      "undead"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
     "id": 12585,
     "name": "Bloodthirsty Shadow Wyrm",
     "version": "Attacking",
@@ -13417,99 +13238,6 @@
     },
     "attributes": [
       "dragon"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 12538,
-    "name": "Bloodthirsty hand",
-    "version": "",
-    "image": "Bloodthirsty hand.png",
-    "level": 45,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 3,
-    "max_hit": 0,
-    "skills": {
-      "atk": 45,
-      "def": 14,
-      "hp": 55,
-      "magic": 1,
-      "ranged": 1,
-      "str": 42
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "undead"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 12573,
-    "name": "Bloodthirsty spectre",
-    "version": "",
-    "image": "Bloodthirsty spectre.png",
-    "level": 253,
-    "speed": 4,
-    "style": [
-      "Magic"
-    ],
-    "size": 3,
-    "max_hit": 0,
-    "skills": {
-      "atk": 1,
-      "def": 180,
-      "hp": 250,
-      "magic": 300,
-      "ranged": 1,
-      "str": 1
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "spectral",
-      "undead"
     ],
     "immunities": {
       "burn": null
@@ -13663,7 +13391,7 @@
       "Typeless slash"
     ],
     "size": 5,
-    "max_hit": "20 (x3)",
+    "max_hit": "20x3 (Typeless)",
     "skills": {
       "atk": 258,
       "def": 60,
@@ -16056,7 +15784,7 @@
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "60 (Special)",
+    "max_hit": "55 (Crush)",
     "skills": {
       "atk": 350,
       "def": 225,
@@ -18325,7 +18053,7 @@
     "level": 215,
     "speed": 3,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 1,
     "max_hit": "7",
@@ -19706,7 +19434,7 @@
     "level": 48,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 2,
     "max_hit": "11",
@@ -19750,7 +19478,7 @@
     "level": 258,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 3,
     "max_hit": "48",
@@ -19927,7 +19655,7 @@
     "level": 34,
     "speed": 4,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 2,
     "max_hit": "14",
@@ -19971,7 +19699,7 @@
     "level": 89,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 2,
     "max_hit": "17",
@@ -20015,10 +19743,10 @@
     "level": 32,
     "speed": 4,
     "style": [
-      "Melee"
+      "Stab"
     ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "5",
     "skills": {
       "atk": 48,
       "def": 4,
@@ -20059,7 +19787,7 @@
     "level": 64,
     "speed": 4,
     "style": [
-      "Melee"
+      "Stab"
     ],
     "size": 2,
     "max_hit": "17",
@@ -20103,7 +19831,7 @@
     "level": 102,
     "speed": 4,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 2,
     "max_hit": "19",
@@ -22378,7 +22106,7 @@
     "level": 33,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 2,
     "max_hit": "8",
@@ -22422,7 +22150,7 @@
     "level": 172,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 3,
     "max_hit": "28",
@@ -22599,7 +22327,7 @@
     "level": 24,
     "speed": 4,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 2,
     "max_hit": "4",
@@ -22643,7 +22371,7 @@
     "level": 64,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 2,
     "max_hit": "11",
@@ -22687,10 +22415,10 @@
     "level": 22,
     "speed": 4,
     "style": [
-      "Melee"
+      "Stab"
     ],
     "size": 2,
-    "max_hit": 0,
+    "max_hit": "4",
     "skills": {
       "atk": 32,
       "def": 4,
@@ -22731,7 +22459,7 @@
     "level": 48,
     "speed": 4,
     "style": [
-      "Melee"
+      "Stab"
     ],
     "size": 2,
     "max_hit": "6",
@@ -22775,7 +22503,7 @@
     "level": 74,
     "speed": 4,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 2,
     "max_hit": "8",
@@ -26005,7 +25733,7 @@
     "level": 27,
     "speed": 6,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 2,
     "max_hit": "9",
@@ -27498,11 +27226,11 @@
     "speed": 4,
     "style": [
       "Ranged",
-      "Ranged melee",
-      "Dragonfire"
+      "Dragonfire",
+      "Ranged melee"
     ],
     "size": 5,
-    "max_hit": "15",
+    "max_hit": "15 (Ranged)",
     "skills": {
       "atk": 140,
       "def": 120,
@@ -28421,7 +28149,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-00000000-QINU`\"'"
+      "Slash '\"`UNIQ--ref-000000F3-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -29305,7 +29033,7 @@
       "Typeless slash"
     ],
     "size": 5,
-    "max_hit": "18 (x3)",
+    "max_hit": "20x3 (Typeless)",
     "skills": {
       "atk": 258,
       "def": 60,
@@ -29349,7 +29077,7 @@
       "Typeless slash"
     ],
     "size": 5,
-    "max_hit": "18 (x3)",
+    "max_hit": "20x3 (Typeless)",
     "skills": {
       "atk": 258,
       "def": 60,
@@ -41633,7 +41361,9 @@
       "slash": 101,
       "stab": 95
     },
-    "attributes": [],
+    "attributes": [
+      "undead"
+    ],
     "immunities": {
       "burn": null
     },
@@ -47507,7 +47237,7 @@
     "level": 0,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 0,
     "max_hit": "20",
@@ -53206,7 +52936,7 @@
       "fiery"
     ],
     "immunities": {
-      "burn": null
+      "burn": "Weak"
     },
     "weakness": {
       "element": "earth",
@@ -53257,7 +52987,7 @@
       "fiery"
     ],
     "immunities": {
-      "burn": null
+      "burn": "Weak"
     },
     "weakness": {
       "element": "earth",
@@ -59393,7 +59123,7 @@
     "level": 0,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 1,
     "max_hit": "3",
@@ -61239,7 +60969,7 @@
       "Ranged"
     ],
     "size": 3,
-    "max_hit": "55<sup class=\"noprint fact\">&#91;<span class=\"fact-text\" title=\"May be higher than 55\">confirmation needed</span>&#93;</sup>Category:Pages with unsourced statements",
+    "max_hit": "55 (unconfirmed)",
     "skills": {
       "atk": 130,
       "def": 210,
@@ -66552,12 +66282,12 @@
   {
     "id": 9017,
     "name": "Mourner",
-    "version": "Level 108",
+    "version": "level 108",
     "image": "Mourner (level 108).png",
     "level": 108,
     "speed": 4,
     "style": [
-      "Melee"
+      "Stab"
     ],
     "size": 1,
     "max_hit": "10",
@@ -66596,7 +66326,7 @@
   {
     "id": 9013,
     "name": "Mourner",
-    "version": "Level 11",
+    "version": "level 11",
     "image": "Mourner.png",
     "level": 11,
     "speed": 4,
@@ -75867,8 +75597,52 @@
   {
     "id": 1740,
     "name": "Portal (Pest Control)",
-    "version": "Blue, intermediate/veteran",
+    "version": "Blue, Intermediate/veteran",
     "image": "Blue Portal.png",
+    "level": 0,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 3,
+    "max_hit": "0 (Does not attack)",
+    "skills": {
+      "atk": 0,
+      "def": 120,
+      "hp": 250,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 0,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1744,
+    "name": "Portal (Pest Control)",
+    "version": "Blue, Intermediate/veteran (shielded)",
+    "image": "Blue Portal Shield.png",
     "level": 0,
     "speed": -1,
     "style": [
@@ -75911,8 +75685,52 @@
   {
     "id": 1748,
     "name": "Portal (Pest Control)",
-    "version": "Blue, novice",
+    "version": "Blue, Novice",
     "image": "Blue Portal.png",
+    "level": 0,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 3,
+    "max_hit": "0 (Does not attack)",
+    "skills": {
+      "atk": 0,
+      "def": 120,
+      "hp": 200,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 0,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1752,
+    "name": "Portal (Pest Control)",
+    "version": "Blue, Novice (shielded)",
+    "image": "Blue Portal Shield.png",
     "level": 0,
     "speed": -1,
     "style": [
@@ -75955,8 +75773,52 @@
   {
     "id": 1739,
     "name": "Portal (Pest Control)",
-    "version": "Purple, intermediate/veteran",
+    "version": "Purple, Intermediate/veteran",
     "image": "Pink Portal.png",
+    "level": 0,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 3,
+    "max_hit": "0 (Does not attack)",
+    "skills": {
+      "atk": 0,
+      "def": 120,
+      "hp": 250,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 100,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1743,
+    "name": "Portal (Pest Control)",
+    "version": "Purple, Intermediate/veteran (shielded)",
+    "image": "Purple Portal Shield.png",
     "level": 0,
     "speed": -1,
     "style": [
@@ -75999,8 +75861,52 @@
   {
     "id": 1747,
     "name": "Portal (Pest Control)",
-    "version": "Purple, novice",
+    "version": "Purple, Novice",
     "image": "Pink Portal.png",
+    "level": 0,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 3,
+    "max_hit": "0 (Does not attack)",
+    "skills": {
+      "atk": 0,
+      "def": 120,
+      "hp": 200,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 100,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1751,
+    "name": "Portal (Pest Control)",
+    "version": "Purple, Novice (shielded)",
+    "image": "Purple Portal Shield.png",
     "level": 0,
     "speed": -1,
     "style": [
@@ -76043,8 +75949,52 @@
   {
     "id": 1742,
     "name": "Portal (Pest Control)",
-    "version": "Red, intermediate/veteran",
+    "version": "Red, Intermediate/veteran",
     "image": "Red Portal.png",
+    "level": 0,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 3,
+    "max_hit": "0 (Does not attack)",
+    "skills": {
+      "atk": 0,
+      "def": 120,
+      "hp": 250,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 100,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1746,
+    "name": "Portal (Pest Control)",
+    "version": "Red, Intermediate/veteran (shielded)",
+    "image": "Red Portal Shield.png",
     "level": 0,
     "speed": -1,
     "style": [
@@ -76087,8 +76037,52 @@
   {
     "id": 1750,
     "name": "Portal (Pest Control)",
-    "version": "Red, novice",
+    "version": "Red, Novice",
     "image": "Red Portal.png",
+    "level": 0,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 3,
+    "max_hit": "0 (Does not attack)",
+    "skills": {
+      "atk": 0,
+      "def": 120,
+      "hp": 200,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 100,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1754,
+    "name": "Portal (Pest Control)",
+    "version": "Red, Novice (shielded)",
+    "image": "Red Portal Shield.png",
     "level": 0,
     "speed": -1,
     "style": [
@@ -76131,8 +76125,52 @@
   {
     "id": 1741,
     "name": "Portal (Pest Control)",
-    "version": "Yellow, intermediate/veteran",
+    "version": "Yellow, Intermediate/veteran",
     "image": "Yellow Portal.png",
+    "level": 0,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 3,
+    "max_hit": "0 (Does not attack)",
+    "skills": {
+      "atk": 0,
+      "def": 120,
+      "hp": 250,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 100,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1745,
+    "name": "Portal (Pest Control)",
+    "version": "Yellow, Intermediate/veteran (shielded)",
+    "image": "Yellow Portal Shield.png",
     "level": 0,
     "speed": -1,
     "style": [
@@ -76175,7 +76213,7 @@
   {
     "id": 1749,
     "name": "Portal (Pest Control)",
-    "version": "Yellow, novice",
+    "version": "Yellow, Novice",
     "image": "Yellow Portal.png",
     "level": 0,
     "speed": -1,
@@ -76207,6 +76245,94 @@
       "heavy": 100,
       "standard": 100,
       "light": 100,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1753,
+    "name": "Portal (Pest Control)",
+    "version": "Yellow, Novice (shielded)",
+    "image": "Yellow Portal Shield.png",
+    "level": 0,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 3,
+    "max_hit": "0 (Does not attack)",
+    "skills": {
+      "atk": 0,
+      "def": 120,
+      "hp": 200,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 100,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12334,
+    "name": "Portal (wighted leech)",
+    "version": "",
+    "image": "Portal (wighted leech).png",
+    "level": 0,
+    "speed": 0,
+    "style": [
+      "None"
+    ],
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
       "slash": 0,
       "stab": 0
     },
@@ -77838,7 +77964,7 @@
     "level": 0,
     "speed": 5,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 2,
     "max_hit": "1",
@@ -77882,7 +78008,7 @@
     "level": 0,
     "speed": 4,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 2,
     "max_hit": "6",
@@ -77972,7 +78098,7 @@
     "level": 0,
     "speed": 4,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 1,
     "max_hit": "6",
@@ -78152,7 +78278,7 @@
     "level": 0,
     "speed": 4,
     "style": [
-      "Melee"
+      "Stab"
     ],
     "size": 1,
     "max_hit": "6",
@@ -78287,7 +78413,7 @@
     "level": 0,
     "speed": 6,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 2,
     "max_hit": "6",
@@ -78465,7 +78591,7 @@
     "level": 0,
     "speed": 4,
     "style": [
-      "Melee"
+      "Stab"
     ],
     "size": 1,
     "max_hit": "3",
@@ -78557,7 +78683,7 @@
     "level": 0,
     "speed": 4,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 1,
     "max_hit": "5",
@@ -78601,7 +78727,7 @@
     "level": 0,
     "speed": 4,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 1,
     "max_hit": "3",
@@ -78689,7 +78815,7 @@
     "level": 0,
     "speed": 4,
     "style": [
-      "Melee"
+      "Stab"
     ],
     "size": 2,
     "max_hit": "5",
@@ -78777,7 +78903,7 @@
     "level": 0,
     "speed": 4,
     "style": [
-      "Melee"
+      "Stab"
     ],
     "size": 2,
     "max_hit": "6",
@@ -81181,7 +81307,7 @@
       "fiery"
     ],
     "immunities": {
-      "burn": null
+      "burn": "Weak"
     },
     "weakness": {
       "element": "earth",
@@ -82726,7 +82852,7 @@
     "name": "Scion",
     "version": "",
     "image": "Scion.png",
-    "level": 100,
+    "level": 93,
     "speed": 4,
     "style": [
       "Ranged",
@@ -82736,7 +82862,7 @@
     "max_hit": "16 (Ranged)",
     "skills": {
       "atk": 120,
-      "def": 80,
+      "def": 50,
       "hp": 50,
       "magic": 1,
       "ranged": 100,
@@ -86379,7 +86505,7 @@
     "level": 132,
     "speed": 5,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 1,
     "max_hit": "19",
@@ -86428,7 +86554,7 @@
     "level": 132,
     "speed": 5,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 1,
     "max_hit": "19",
@@ -86477,7 +86603,7 @@
     "level": 132,
     "speed": 5,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 1,
     "max_hit": "19",
@@ -86526,7 +86652,7 @@
     "level": 132,
     "speed": 5,
     "style": [
-      "Melee"
+      "Slash"
     ],
     "size": 1,
     "max_hit": "19",
@@ -88160,7 +88286,9 @@
       "slash": 73,
       "stab": 76
     },
-    "attributes": [],
+    "attributes": [
+      "undead"
+    ],
     "immunities": {
       "burn": null
     },
@@ -91439,7 +91567,7 @@
     "name": "Spawn",
     "version": "",
     "image": "Spawn.png",
-    "level": 60,
+    "level": 55,
     "speed": 4,
     "style": [
       "Ranged",
@@ -91449,7 +91577,7 @@
     "max_hit": "9 Ranged",
     "skills": {
       "atk": 120,
-      "def": 30,
+      "def": 10,
       "hp": 15,
       "magic": 1,
       "ranged": 50,
@@ -91942,7 +92070,7 @@
     "level": 244,
     "speed": 4,
     "style": [
-      "Melee"
+      "Stab"
     ],
     "size": 3,
     "max_hit": "29",
@@ -93654,7 +93782,7 @@
       "fiery"
     ],
     "immunities": {
-      "burn": null
+      "burn": "Weak"
     },
     "weakness": {
       "element": "earth",
@@ -93705,7 +93833,7 @@
       "fiery"
     ],
     "immunities": {
-      "burn": null
+      "burn": "Weak"
     },
     "weakness": {
       "element": "earth",
@@ -93756,7 +93884,7 @@
       "fiery"
     ],
     "immunities": {
-      "burn": null
+      "burn": "Weak"
     },
     "weakness": {
       "element": "earth",
@@ -99992,7 +100120,7 @@
     "version": "Level 142",
     "image": "Tortured gorilla.png",
     "level": 142,
-    "speed": 6,
+    "speed": 4,
     "style": [
       "Crush"
     ],
@@ -102603,7 +102731,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000001A-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000063-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -102632,7 +102760,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -102648,7 +102776,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000001A-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000063-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -102677,7 +102805,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -103992,8 +104120,8 @@
     },
     "attributes": [
       "shade",
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -104039,8 +104167,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -104878,7 +105006,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000041-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000075-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -104922,7 +105050,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000043-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000077-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -118440,7 +118568,7 @@
     "level": 51,
     "speed": 4,
     "style": [
-      "Melee"
+      "Stab"
     ],
     "size": 2,
     "max_hit": "5",
