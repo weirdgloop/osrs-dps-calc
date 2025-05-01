@@ -165,15 +165,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     const statBonus = this.trackAdd(DetailKey.NPC_DEFENCE_STAT_BONUS, defenceStyle ? bonus : 0, 64);
-    return this.trackFactor(DetailKey.NPC_DEFENCE_ROLL_BASE, effectiveLevel, [statBonus, 1]);
-  }
-
-  private getScaledNpcDefenceRoll(): number {
-    let defenceRoll = this.getNPCDefenceRoll();
+    let defenceRoll = this.trackFactor(DetailKey.NPC_DEFENCE_ROLL_BASE, effectiveLevel, [statBonus, 1]);
 
     const isCustomMonster = this.monster.id === -1;
+
     if ((TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) || isCustomMonster) && this.monster.inputs.toaInvocationLevel) {
-      defenceRoll = this.track(DetailKey.NPC_DEFENCE_ROLL_TOA, Math.trunc(defenceRoll * (250 + this.monster.inputs.toaInvocationLevel) / 250));
+      defenceRoll = this.trackFactor(DetailKey.NPC_DEFENCE_ROLL_TOA, defenceRoll, [250 + this.monster.inputs.toaInvocationLevel, 250]);
     }
 
     return this.track(DetailKey.NPC_DEFENCE_ROLL_FINAL, defenceRoll);
