@@ -155,7 +155,7 @@ const LoadoutComparison: React.FC = observer(() => {
       return [];
     }
 
-    const strokeColours = ['cyan', 'yellow', 'lime', 'orange', 'pink', '#ef615d'];
+    const strokeColours = ['cyan', 'yellow', 'lime', 'orange', 'pink', '#8B9BE8'];
 
     const lines: React.ReactNode[] = [];
     keys(compareResult.entries[0]).forEach((k) => {
