@@ -5,7 +5,6 @@ import {
 import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent';
 import hitsplat from '@/public/img/hitsplat.webp';
 import zero_hitsplat from '@/public/img/zero_hitsplat.png';
-import { useTheme } from 'next-themes';
 import { useStore } from '@/state';
 import LazyImage from '@/app/components/generic/LazyImage';
 import SectionAccordion from '@/app/components/generic/SectionAccordion';

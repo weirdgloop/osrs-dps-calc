@@ -15,7 +15,6 @@ import { useStore } from '@/state';
 import Select from '@/app/components/generic/Select';
 import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent';
 import { toJS } from 'mobx';
-import { useTheme } from 'next-themes';
 import { max } from 'd3-array';
 import SectionAccordion from '@/app/components/generic/SectionAccordion';
 import hourglass from '@/public/img/Hourglass.png';
