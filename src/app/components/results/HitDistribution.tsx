@@ -57,9 +57,6 @@ const HitDistribution: React.FC = observer(() => {
 
   const data = useMemo(() => ((prefs.hitDistShowSpec && specAvailable) ? thisLoadoutResult?.specHitDist : thisLoadoutResult?.hitDist) || [], [thisLoadoutResult, prefs.hitDistShowSpec, specAvailable]);
 
-  const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme === 'dark';
-
   const [tickCount, domainMax] = useMemo(() => {
     const highest = max(data, (d) => d.value as number)!;
     const stepsize = 10 ** Math.floor(Math.log10(highest) - 1);
@@ -132,7 +129,7 @@ const HitDistribution: React.FC = observer(() => {
             <CartesianGrid stroke="gray" strokeDasharray="5 5" />
             <Tooltip
               content={(props) => <CustomTooltip {...props} />}
-              cursor={{ fill: isDark ? '#3c3226' : '#b0aa9a' }}
+              cursor={{ fill: '#3c3226' }}
             />
             <Bar dataKey="value" fill="tan" isAnimationActive={false} />
           </BarChart>

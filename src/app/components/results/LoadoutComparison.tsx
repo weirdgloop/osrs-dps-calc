@@ -82,9 +82,6 @@ const LoadoutComparison: React.FC = observer(() => {
   const { showLoadoutComparison } = store.prefs;
   const loadouts = JSON.stringify(store.loadouts);
 
-  const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme === 'dark';
-
   const [compareResult, setCompareResult] = useState<CompareResult>();
   const [xAxisType, setXAxisType] = useState<{ label: string, axisLabel?: string, value: CompareXAxis } | null | undefined>(XAxisOptions[0]);
   const [yAxisType, setYAxisType] = useState<{ label: string, axisLabel?: string, value: CompareYAxis } | null | undefined>({ label: 'Player damage-per-second', axisLabel: 'DPS', value: CompareYAxis.PLAYER_DPS });
@@ -158,9 +155,7 @@ const LoadoutComparison: React.FC = observer(() => {
       return [];
     }
 
-    const strokeColours = isDark
-      ? ['cyan', 'yellow', 'lime', 'orange', 'pink']
-      : ['blue', 'chocolate', 'green', 'sienna', 'purple'];
+    const strokeColours = ['cyan', 'yellow', 'lime', 'orange', 'pink', 'red'];
 
     const lines: React.ReactNode[] = [];
     keys(compareResult.entries[0]).forEach((k) => {
@@ -178,7 +173,7 @@ const LoadoutComparison: React.FC = observer(() => {
       }
     });
     return lines;
-  }, [compareResult, isDark]);
+  }, [compareResult]);
 
   const generateAnnotations = useCallback((): React.ReactNode[] => {
     if (!compareResult) {
@@ -189,7 +184,7 @@ const LoadoutComparison: React.FC = observer(() => {
       <ReferenceLine
         key={a.label}
         label={{
-          value: a.label, angle: (x ? 90 : 0), fontSize: 12, fill: isDark ? 'white' : 'black',
+          value: a.label, angle: (x ? 90 : 0), fontSize: 12, fill: 'white',
         }}
         x={x ? a.value : undefined}
         y={!x ? a.value : undefined}
@@ -202,7 +197,7 @@ const LoadoutComparison: React.FC = observer(() => {
       ...compareResult.annotations.x.map((a) => toRecharts(a, true)),
       ...compareResult.annotations.y.map((a) => toRecharts(a, false)),
     ];
-  }, [compareResult, isDark]);
+  }, [compareResult]);
 
   return (
     <SectionAccordion
