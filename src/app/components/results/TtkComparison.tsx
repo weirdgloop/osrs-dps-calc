@@ -118,7 +118,7 @@ const TtkComparison: React.FC = observer(() => {
   const generateLines = useCallback(() => {
     const lines: React.ReactNode[] = [];
 
-    const strokeColours = ['cyan', 'yellow', 'lime', 'orange', 'pink', 'red'];
+    const strokeColours = ['cyan', 'yellow', 'lime', 'orange', 'pink', '#ef615d'];
     for (let i = 0; i < Object.values(calcResults).length; i++) {
       // Make sure that the loadout we're plotting actually exists
       if (!loadouts[i]) continue;
