@@ -34,6 +34,7 @@ export enum DetailKey {
   PLAYER_ACCURACY_SPELLEMENT_BONUS = 'Player accuracy spellement weakness bonus',
   PLAYER_ACCURACY_SPELLEMENT = 'Player accuracy spellement weakness',
   PLAYER_ACCURACY_INQ = 'Player accuracy inquisitor\'s',
+  PLAYER_ACCURACY_BRIMSTONE = 'Player accuracy brimstone ring',
   PLAYER_ACCURACY_SPEC = 'Player accuracy spec',
   PLAYER_ACCURACY_ROLL_FINAL = 'Player accuracy roll',
   DAMAGE_LEVEL = 'Damage level',

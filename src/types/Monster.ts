@@ -6,6 +6,12 @@ import { TD_PHASES } from '@/lib/constants';
 // For now this is the same as player combat styles, but it may support other stuff in future like "typeless"
 export type MonsterCombatStyle = CombatStyleType;
 
+export enum BurnImmunity {
+  WEAK = 'Weak',
+  NORMAL = 'Normal',
+  STRONG = 'Strong',
+}
+
 export interface Monster {
   id: number;
   name: string;
@@ -45,7 +51,10 @@ export interface Monster {
   weakness: {
     element: Spellement;
     severity: number;
-  } | null
+  } | null;
+  immunities: {
+    burn: BurnImmunity | null;
+  }
 
   /**
    * Fields that users have control over in the UI, which may affect buff applicability, monster scaling, etc.
@@ -103,6 +112,7 @@ export interface Monster {
       emberlight: number;
       bgs: number;
       tonalztic: number;
+      seercull: number;
     };
 
     demonbaneVulnerability?: number;

@@ -46,9 +46,9 @@ const EquipmentSelect: React.FC = observer(() => {
     for (const v of availableEquipment.filter((eq) => {
       if (
         (
-          (Object.values(eq.bonuses).reduce((a, b) => a + b, 0) === 0)
-          && (Object.values(eq.offensive).reduce((a, b) => a + b, 0) === 0)
-          && (Object.values(eq.defensive).reduce((a, b) => a + b, 0) === 0)
+          (Object.values(eq.bonuses).every((val) => val === 0))
+          && (Object.values(eq.offensive).every((val) => val === 0))
+          && (Object.values(eq.defensive).every((val) => val === 0))
           && (eq.speed === 4 || eq.speed <= 0)
           && !noStatExceptions.includes(eq.name)
         )

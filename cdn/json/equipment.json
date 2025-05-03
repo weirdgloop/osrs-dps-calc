@@ -4299,7 +4299,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 107,
+      "ranged_str": 102,
       "magic_str": 0,
       "prayer": 0
     },
@@ -4329,7 +4329,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 107,
+      "ranged_str": 102,
       "magic_str": 0,
       "prayer": 0
     },
@@ -4359,7 +4359,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 107,
+      "ranged_str": 102,
       "magic_str": 0,
       "prayer": 0
     },
@@ -4389,7 +4389,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 107,
+      "ranged_str": 102,
       "magic_str": 0,
       "prayer": 0
     },
@@ -4938,7 +4938,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 27,
@@ -4968,7 +4968,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 27,
@@ -18108,7 +18108,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 17,
@@ -18138,7 +18138,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 17,
@@ -27618,7 +27618,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 5,
@@ -27648,7 +27648,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 5,
@@ -31230,6 +31230,126 @@
     "isTwoHanded": false
   },
   {
+    "name": "Carrot costume body",
+    "id": 30722,
+    "version": "",
+    "slot": "body",
+    "image": "Carrot costume body.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Carrot costume gloves",
+    "id": 30726,
+    "version": "",
+    "slot": "hands",
+    "image": "Carrot costume gloves.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Carrot costume hat",
+    "id": 30720,
+    "version": "",
+    "slot": "head",
+    "image": "Carrot costume hat.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Carrot costume tights",
+    "id": 30724,
+    "version": "",
+    "slot": "legs",
+    "image": "Carrot costume tights.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Carrot sword",
     "id": 24537,
     "version": "",
@@ -31247,6 +31367,66 @@
       "stab": -100,
       "slash": -100,
       "crush": -100,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Castle wars arrow",
+    "id": 30694,
+    "version": "",
+    "slot": "ammo",
+    "image": "Castle wars arrow 2.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 60,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Castle wars bolts",
+    "id": 30696,
+    "version": "",
+    "slot": "ammo",
+    "image": "Castle wars bolts 1.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 122,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
       "magic": 0,
       "ranged": 0
     },
@@ -49158,7 +49338,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 56,
@@ -51994,7 +52174,7 @@
     "id": 30545,
     "version": "0",
     "slot": "body",
-    "image": "Echo ahrim's robetop.png",
+    "image": "Echo ahrim's robetop 0.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -53387,7 +53567,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 135,
-      "magic": -4,
+      "magic": 0,
       "ranged": 0
     },
     "defensive": {
@@ -53417,7 +53597,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 135,
-      "magic": -4,
+      "magic": 0,
       "ranged": 0
     },
     "defensive": {
@@ -71610,66 +71790,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Hooded cloak",
-    "id": 4041,
-    "version": "Saradomin",
-    "slot": "cape",
-    "image": "Hooded cloak (Saradomin).png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Hooded cloak",
-    "id": 4042,
-    "version": "Zamorak",
-    "slot": "cape",
-    "image": "Hooded cloak (Zamorak).png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
     "name": "Hornwood helm",
     "id": 19699,
     "version": "",
@@ -76338,7 +76458,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 8,
@@ -76368,7 +76488,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 8,
@@ -80095,7 +80215,7 @@
       "slash": 5,
       "crush": 3,
       "magic": 0,
-      "ranged": 1
+      "ranged": 4
     },
     "isTwoHanded": false
   },
@@ -85998,7 +86118,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 18,
@@ -86028,7 +86148,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 18,
@@ -93227,7 +93347,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 2,
+      "magic": 0,
       "ranged": 0
     },
     "defensive": {
@@ -93257,7 +93377,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 2,
+      "magic": 0,
       "ranged": 0
     },
     "defensive": {
@@ -110400,6 +110520,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Saradomin cloak (Castle Wars)",
+    "id": 4041,
+    "version": "",
+    "slot": "cape",
+    "image": "Saradomin cloak (Castle Wars).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Saradomin coif",
     "id": 10390,
     "version": "",
@@ -121638,7 +121788,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 13,
@@ -121668,7 +121818,7 @@
       "slash": 0,
       "crush": 0,
       "magic": -8,
-      "ranged": -3
+      "ranged": -2
     },
     "defensive": {
       "stab": 13,
@@ -141416,6 +141566,36 @@
       "crush": 3,
       "magic": 3,
       "ranged": 3
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Zamorak cloak (Castle Wars)",
+    "id": 4042,
+    "version": "",
+    "slot": "cape",
+    "image": "Zamorak cloak (Castle Wars).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
     },
     "isTwoHanded": false
   },

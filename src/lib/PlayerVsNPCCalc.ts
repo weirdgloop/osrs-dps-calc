@@ -170,7 +170,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const isCustomMonster = this.monster.id === -1;
 
     if ((TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) || isCustomMonster) && this.monster.inputs.toaInvocationLevel) {
-      defenceRoll = this.track(DetailKey.NPC_DEFENCE_ROLL_TOA, Math.trunc(defenceRoll * (250 + this.monster.inputs.toaInvocationLevel) / 250));
+      defenceRoll = this.trackFactor(DetailKey.NPC_DEFENCE_ROLL_TOA, defenceRoll, [250 + this.monster.inputs.toaInvocationLevel, 250]);
     }
 
     return this.track(DetailKey.NPC_DEFENCE_ROLL_FINAL, defenceRoll);
@@ -1067,6 +1067,29 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     return this.track(DetailKey.PLAYER_ACCURACY_ROLL_FINAL, atkRoll);
   }
 
+  public getDisplayHitChance(): number {
+    let hitChance = this.getHitChance();
+
+    if (hitChance === 1.0 || hitChance === 0.0) {
+      // probably a special effect
+      return hitChance;
+    }
+
+    const atk = this.getMaxAttackRoll();
+    const def = this.getNPCDefenceRoll();
+
+    if (this.player.style.type === 'magic' && this.wearing('Brimstone ring')) {
+      const effectHitChance = this.track(
+        DetailKey.PLAYER_ACCURACY_BRIMSTONE,
+        BaseCalc.getNormalAccuracyRoll(atk, Math.trunc(def * 9 / 10)),
+      );
+
+      hitChance = 0.75 * hitChance + 0.25 * effectHitChance;
+    }
+
+    return hitChance;
+  }
+
   public getHitChance() {
     if (this.opts.overrides?.accuracy) {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, this.opts.overrides.accuracy);
@@ -1142,9 +1165,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   public getDoTExpected(): number {
     let ret: number = 0;
     if (this.opts.usingSpecialAttack) {
-      if (this.wearing(['Bone claws', 'Burning claws'])) {
+      if (this.wearing(['Bone claws', 'Burning claws']) && !this.isImmuneToNormalBurns()) {
         ret = burningClawDoT(this.getHitChance());
-      } if (this.wearing('Scorching bow')) {
+      } else if (this.wearing('Scorching bow') && !this.isImmuneToNormalBurns()) {
         ret = this.monster.attributes.includes(MonsterAttribute.DEMON) ? 5 : 1;
       }
     }
@@ -1158,9 +1181,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   public getDoTMax(): number {
     let ret: number = 0;
     if (this.opts.usingSpecialAttack) {
-      if (this.wearing(['Bone claws', 'Burning claws'])) {
+      if (this.wearing(['Bone claws', 'Burning claws']) && !this.isImmuneToNormalBurns()) {
         ret = 29;
-      } if (this.wearing('Scorching bow')) {
+      } else if (this.wearing('Scorching bow') && !this.isImmuneToNormalBurns()) {
         ret = this.monster.attributes.includes(MonsterAttribute.DEMON) ? 5 : 1;
       }
     }
@@ -1191,6 +1214,24 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   private getDistributionImpl(): AttackDistribution {
+    const attackerDist = this.getAttackerDist();
+
+    const npcDist = this.applyNpcTransforms(attackerDist);
+
+    if (process.env.NEXT_PUBLIC_HIT_DIST_SANITY_CHECK) {
+      npcDist.dists.forEach((hitDist, ix) => {
+        const sumAccuracy = sum(hitDist.hits, (wh) => wh.probability);
+        const fractionalDamage = some(hitDist.hits, (wh) => some(wh.hitsplats, (h) => !Number.isInteger(h.damage)));
+        if (Math.abs(sumAccuracy - 1.0) > 0.00001 || fractionalDamage) {
+          console.warn(`Post-NPC hit dist [${this.opts.loadoutName}#${ix}] failed sanity check!`, { sumAccuracy, fractionalDamage, hitDist });
+        }
+      });
+    }
+
+    return npcDist;
+  }
+
+  private getAttackerDist(): AttackDistribution {
     const mattrs = this.monster.attributes;
     const acc = this.getHitChance();
     const [min, max] = this.getMinAndMax();
@@ -1404,17 +1445,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.transform((h) => HitDistribution.single(1.0, [new Hitsplat(h.damage + Math.trunc(h.damage * demonbaneFactor[0] / demonbaneFactor[1]))]));
     }
 
-    if (this.player.style.type === 'magic'
-      && this.wearing('Twinflame staff')
-      && ['Bolt', 'Blast', 'Wave'].some((spellClass) => this.player.spell?.name.includes(spellClass) ?? false)) {
-      dist = dist.transform(
-        (h) => HitDistribution.single(1.0, [
-          new Hitsplat(h.damage),
-          new Hitsplat(Math.trunc(h.damage * 4 / 10)),
-        ]),
-      );
-    }
-
     if (this.player.style.type === 'magic' && this.isWearingAhrims()) {
       dist = dist.transform(
         (h) => new HitDistribution([
@@ -1508,6 +1538,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       );
     }
 
+    if (this.player.style.type === 'magic'
+      && this.wearing('Twinflame staff')
+      && ['Bolt', 'Blast', 'Wave'].some((spellClass) => this.player.spell?.name.includes(spellClass) ?? false)) {
+      dist = dist.transform(
+        (h) => HitDistribution.single(1.0, [
+          new Hitsplat(h.damage),
+          new Hitsplat(Math.trunc(h.damage * 4 / 10)),
+        ]),
+      );
+    }
+
     // we apply corp earlier than other limiters,
     // and rubies later than other bolts,
     // since corp takes full ruby bolt effect damage but reduced damage from bolts otherwise
@@ -1530,7 +1571,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         overrides: {
           defenceRoll: effectDef,
         },
-      }).getDistribution();
+      }).getAttackerDist();
 
       const zippedDists = [];
       for (let i = 0; i < dist.dists.length; i++) {
@@ -1558,7 +1599,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       });
     }
 
-    return this.applyNpcTransforms(dist);
+    return dist;
   }
 
   applyNpcTransforms(dist: AttackDistribution): AttackDistribution {

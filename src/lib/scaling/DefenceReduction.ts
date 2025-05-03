@@ -124,6 +124,12 @@ const applyDefenceReductions = (m: Monster): Monster => {
     });
   }
 
+  if (reductions.seercull > 0) {
+    m = newSkills(m, {
+      magic: m.skills.magic - reductions.seercull,
+    });
+  }
+
   let bgsDmg = reductions.bgs;
   if (bgsDmg > 0) {
     const applyBgsDmg = (monster: Monster, k: keyof Monster['skills']): Monster => {

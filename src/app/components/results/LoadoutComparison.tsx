@@ -17,7 +17,6 @@ import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 import Select from '@/app/components/generic/Select';
 import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent';
-import { useTheme } from 'next-themes';
 import equipmentStats from '@/public/img/Equipment Stats.png';
 import SectionAccordion from '@/app/components/generic/SectionAccordion';
 import LazyImage from '@/app/components/generic/LazyImage';
@@ -81,9 +80,6 @@ const LoadoutComparison: React.FC = observer(() => {
   const monster = JSON.stringify(store.monster);
   const { showLoadoutComparison } = store.prefs;
   const loadouts = JSON.stringify(store.loadouts);
-
-  const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme === 'dark';
 
   const [compareResult, setCompareResult] = useState<CompareResult>();
   const [xAxisType, setXAxisType] = useState<{ label: string, axisLabel?: string, value: CompareXAxis } | null | undefined>(XAxisOptions[0]);
@@ -158,9 +154,7 @@ const LoadoutComparison: React.FC = observer(() => {
       return [];
     }
 
-    const strokeColours = isDark
-      ? ['cyan', 'yellow', 'lime', 'orange', 'pink']
-      : ['blue', 'chocolate', 'green', 'sienna', 'purple'];
+    const strokeColours = ['cyan', 'yellow', 'lime', 'orange', 'pink', '#8B9BE8'];
 
     const lines: React.ReactNode[] = [];
     keys(compareResult.entries[0]).forEach((k) => {
@@ -178,7 +172,7 @@ const LoadoutComparison: React.FC = observer(() => {
       }
     });
     return lines;
-  }, [compareResult, isDark]);
+  }, [compareResult]);
 
   const generateAnnotations = useCallback((): React.ReactNode[] => {
     if (!compareResult) {
@@ -189,7 +183,7 @@ const LoadoutComparison: React.FC = observer(() => {
       <ReferenceLine
         key={a.label}
         label={{
-          value: a.label, angle: (x ? 90 : 0), fontSize: 12, fill: isDark ? 'white' : 'black',
+          value: a.label, angle: (x ? 90 : 0), fontSize: 12, fill: 'white',
         }}
         x={x ? a.value : undefined}
         y={!x ? a.value : undefined}
@@ -202,7 +196,7 @@ const LoadoutComparison: React.FC = observer(() => {
       ...compareResult.annotations.x.map((a) => toRecharts(a, true)),
       ...compareResult.annotations.y.map((a) => toRecharts(a, false)),
     ];
-  }, [compareResult, isDark]);
+  }, [compareResult]);
 
   return (
     <SectionAccordion

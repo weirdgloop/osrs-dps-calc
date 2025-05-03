@@ -33,7 +33,7 @@ jobs:
           python generateEquipment.py
           python generateEquipmentAliases.py
           python generateMonsters.py
-      - name: Create pull request
+      - name: Push changes to branch
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
@@ -41,4 +41,7 @@ jobs:
           git add .
           git commit -m "[automated] Update JSON files"
           git push --set-upstream origin regenerate-json --force
+      - name: Create pull request
+        continue-on-error: true
+        run: |
           gh pr create -B main -f
