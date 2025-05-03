@@ -201,6 +201,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     const skills = this.monster.skills;
     const bonuses = this.monster.offensive;
     const name = this.monster.name;
+    const isCustomMonster = this.monster.id === -1;
 
     let maxHit = 0;
     if (['slash', 'crush', 'stab'].includes(style)) {
@@ -216,7 +217,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     // Some monsters have a hardcoded max hit. Let's overwrite the max hit with the real value here.
     if (Object.prototype.hasOwnProperty.call(NPC_HARDCODED_MAX_HIT, this.monster.id)) {
       maxHit = NPC_HARDCODED_MAX_HIT[this.monster.id];
-    } else if (style === 'magic' && this.monster.maxHit !== undefined && maxHit !== this.monster.maxHit) {
+    } else if (style === 'magic' && this.monster.maxHit !== undefined && maxHit !== this.monster.maxHit && !isCustomMonster) {
       // For now, if the monster is using the magic attack style and the max hit on the wiki is different to the max hit
       // returned by the standard calculation we're using above, then let's just use the wiki value. A lot of magic
       // monsters have a hardcoded max hit (see https://twitter.com/JagexAsh/status/1754447323222929712).
