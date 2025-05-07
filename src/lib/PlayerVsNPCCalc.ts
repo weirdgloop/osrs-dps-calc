@@ -44,6 +44,7 @@ import {
   UNDERWATER_MONSTERS,
   USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
   VERZIK_P1_IDS,
+  MAIDEN_CRAB_IDS,
 } from '@/lib/constants';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { DetailKey } from '@/lib/CalcDetails';
@@ -1156,6 +1157,15 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           DetailKey.PLAYER_ACCURACY_FANG,
           BaseCalc.getFangAccuracyRoll(atk, def),
         );
+      }
+    }
+    
+    if (this.player.spell?.name.includes('Ice') && MAIDEN_CRAB_IDS.includes(this.monster.id)) {
+      const guaranteedFreezeRoll = (this.player.skills.magic + 9) * 204;
+      const playerMagicRoll = this.getPlayerMaxMagicAttackRoll();
+ 
+      if (playerMagicRoll > guaranteedFreezeRoll) {
+        return 1.0;
       }
     }
 
