@@ -104,6 +104,7 @@ export enum DetailKey {
   NPC_ACCURACY_ROLL_BASE = 'NPC accuracy base roll',
   NPC_ACCURACY_ROLL_BONUS = 'NPC accuracy bonus',
   NPC_ACCURACY_ROLL_FINAL = 'NPC accuracy roll',
+  REPIRATORY_SYSTEM_MIN_HIT = 'Respiratory system minimum hit',
 }
 
 export interface DetailEntry {
