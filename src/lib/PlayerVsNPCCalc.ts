@@ -44,6 +44,7 @@ import {
   UNDERWATER_MONSTERS,
   USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
   VERZIK_P1_IDS,
+  ZULRAH_IDS,
 } from '@/lib/constants';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { DetailKey } from '@/lib/CalcDetails';
@@ -1728,6 +1729,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return true;
     }
     if (IMMUNE_TO_MELEE_DAMAGE_NPC_IDS.includes(monsterId) && this.isUsingMeleeStyle()) {
+      if (ZULRAH_IDS.includes(monsterId) && this.player.equipment.weapon?.category === EquipmentCategory.POLEARM) return false;
       return true;
     }
     if (IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS.includes(monsterId)
