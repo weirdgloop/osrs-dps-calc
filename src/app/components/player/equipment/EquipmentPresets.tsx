@@ -110,6 +110,7 @@ const EquipmentPresets: React.FC = () => {
             neck: findItemById(29801), // Amulet of rancour
             ammo: findItemById(22947), // Rada's blessing 4
             body: findItemById(26384), // Torva platebody
+            shield: findItemById(22322), // Avernic defender
             legs: findItemById(26386), // Torva platelegs
             hands: findItemById(22981), // Ferocious gloves
             feet: findItemById(13239), // Primordial boots
@@ -161,6 +162,7 @@ const EquipmentPresets: React.FC = () => {
             neck: findItemById(6585), // Amulet of fury
             ammo: findItemById(20229), // Honourable blessing
             body: findItemById(10551), // Fighter torso#Normal
+            shield: findItemById(12954), // Dragon defender
             legs: findItemById(21304), // Obsidian platelegs
             hands: findItemById(7462), // Barrows gloves
             feet: findItemById(11840), // Dragon boots
@@ -212,6 +214,7 @@ const EquipmentPresets: React.FC = () => {
             neck: findItemById(29801), // Amulet of rancour
             ammo: findItemById(22947), // Rada's blessing 4
             body: findItemById(13072), // Elite void top
+            shield: findItemById(22322), // Avernic defender
             legs: findItemById(13073), // Elite void robe
             hands: findItemById(8842), // Void knight gloves
             feet: findItemById(13239), // Primordial boots
