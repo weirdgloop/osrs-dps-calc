@@ -414,6 +414,9 @@ export const ONE_HIT_MONSTERS: number[] = [
   11193, // Flower (A Night at the Theatre)
 ];
 
+/**
+ * NPCs that will the player always max hits with using the correct combat style
+ */
 export const ALWAYS_MAX_HIT_MONSTERS = {
   melee: [
     11710, 11713, // baboon thrower
@@ -430,6 +433,13 @@ export const ALWAYS_MAX_HIT_MONSTERS = {
     14151, 14150, // Royal titans elementals
   ],
 };
+
+/**
+ * NPCs that the player has 100% accuracy against
+ */
+export const GUARANTEED_ACCURACY_MONSTERS: number[] = [
+  5916, // Spawn (abyssal sire)
+];
 
 /**
  * NPCs that will always hit the player with their attacks, no matter what gear they are wearing
@@ -475,3 +485,7 @@ HUEYCOATL_PHASE_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = HUEYCOATL_PHASE
 
 export const ROYAL_TITANS_PHASES = ['In Melee Range', 'Out of Melee Range'];
 TITAN_BOSS_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = ROYAL_TITANS_PHASES; });
+
+export const ABYSSAL_SIRE_PHASES = ['Standard', 'Transition'];
+export const ABYSSAL_SIRE_TRANSITION_IDS = [5886, 5889, 5891];
+ABYSSAL_SIRE_TRANSITION_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = ABYSSAL_SIRE_PHASES; });

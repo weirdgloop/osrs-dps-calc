@@ -18,9 +18,11 @@ import { canUseSunfireRunes, getSpellMaxHit, isBindSpell } from '@/types/Spell';
 import { PrayerData, PrayerMap } from '@/enums/Prayer';
 import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
+  ABYSSAL_SIRE_TRANSITION_IDS,
   ALWAYS_MAX_HIT_MONSTERS,
   BA_ATTACKER_MONSTERS,
   GLOWING_CRYSTAL_IDS,
+  GUARANTEED_ACCURACY_MONSTERS,
   GUARDIAN_IDS,
   HUEYCOATL_PHASE_IDS,
   HUEYCOATL_TAIL_IDS,
@@ -463,6 +465,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
+    if (this.monster.name === 'Respiratory system') {
+      minHit = this.trackAdd(DetailKey.REPIRATORY_SYSTEM_MIN_HIT, minHit, Math.trunc(maxHit / 2));
+    }
+
     return [minHit, maxHit];
   }
 
@@ -728,6 +734,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       [minHit, maxHit] = this.applyP2WardensDamageModifier([minHit, maxHit]);
     }
 
+    if (this.monster.name === 'Respiratory system') {
+      minHit = this.trackAdd(DetailKey.REPIRATORY_SYSTEM_MIN_HIT, minHit, Math.trunc(maxHit / 2));
+    }
+
     return [minHit, maxHit];
   }
 
@@ -985,6 +995,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       [minHit, maxHit] = this.applyP2WardensDamageModifier([minHit, maxHit]);
     }
 
+    if (this.monster.name === 'Respiratory system') {
+      minHit = this.trackAdd(DetailKey.REPIRATORY_SYSTEM_MIN_HIT, minHit, Math.trunc(maxHit / 2));
+    }
+
     return [minHit, maxHit];
   }
 
@@ -1094,6 +1108,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   public getHitChance() {
     if (this.opts.overrides?.accuracy) {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, this.opts.overrides.accuracy);
+    }
+
+    if (GUARANTEED_ACCURACY_MONSTERS.includes(this.monster.id)) {
+      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
     if (VERZIK_P1_IDS.includes(this.monster.id) && this.wearing('Dawnbringer')) {
@@ -1250,6 +1268,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (ONE_HIT_MONSTERS.includes(this.monster.id)) {
       return new AttackDistribution([
         HitDistribution.single(1.0, [new Hitsplat(this.monster.skills.hp)]),
+      ]);
+    }
+
+    if (this.monster.name === 'Respiratory system' && this.isUsingDemonbane()) {
+      return new AttackDistribution([
+        HitDistribution.single(acc, [new Hitsplat(this.monster.skills.hp)]),
       ]);
     }
 
@@ -1700,6 +1724,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     if (HUEYCOATL_PHASE_IDS.includes(this.monster.id) && this.monster.inputs.phase === 'With Pillar') {
       dist = dist.transform(multiplyTransformer(13, 10));
+    }
+
+    if (ABYSSAL_SIRE_TRANSITION_IDS.includes(this.monster.id) && this.monster.inputs.phase === 'Transition') {
+      dist = dist.transform(divisionTransformer(2));
     }
 
     const flatArmour = this.monster.defensive.flat_armour;
