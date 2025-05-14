@@ -190,6 +190,9 @@ def main():
         # Granite maul variants
         elif (item['name'] == "Granite maul" and item['version'] != "Normal") or item['name'] == "Granite maul (or)":
             handle_base_variant(all_items, item, 'Granite maul', ['Normal'])
+        # Radiant oathplate variants
+        elif re.match(r"^Radiant", item['name']):
+            handle_base_variant(all_items, item, item['name'].replace("Radiant ", "").capitalize(), '')
 
     mapping_dict = {}
     for k, v in sorted(data.items(), key=lambda item: item[1].base_name):
