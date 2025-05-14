@@ -91140,6 +91140,96 @@
     "isTwoHanded": true
   },
   {
+    "name": "Oathplate chest",
+    "id": 30753,
+    "version": "",
+    "slot": "body",
+    "image": "Oathplate chest.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 16,
+      "crush": 0,
+      "magic": null,
+      "ranged": null
+    },
+    "defensive": {
+      "stab": 105,
+      "slash": 128,
+      "crush": 100,
+      "magic": null,
+      "ranged": 112
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Oathplate helm",
+    "id": 30750,
+    "version": "",
+    "slot": "head",
+    "image": "Oathplate helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 6,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 10,
+      "crush": 0,
+      "magic": null,
+      "ranged": null
+    },
+    "defensive": {
+      "stab": 50,
+      "slash": 72,
+      "crush": 45,
+      "magic": 0,
+      "ranged": 50
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Oathplate legs",
+    "id": 30756,
+    "version": "",
+    "slot": "legs",
+    "image": "Oathplate legs.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 2,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 12,
+      "crush": 0,
+      "magic": null,
+      "ranged": null
+    },
+    "defensive": {
+      "stab": 75,
+      "slash": 100,
+      "crush": 73,
+      "magic": null,
+      "ranged": 81
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Obsidian cape",
     "id": 6568,
     "version": "",
@@ -97256,6 +97346,96 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Radiant oathplate chest",
+    "id": 30779,
+    "version": "",
+    "slot": "body",
+    "image": "Radiant oathplate chest.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 16,
+      "crush": 0,
+      "magic": null,
+      "ranged": null
+    },
+    "defensive": {
+      "stab": 105,
+      "slash": 128,
+      "crush": 100,
+      "magic": null,
+      "ranged": 112
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Radiant oathplate helm",
+    "id": 30777,
+    "version": "",
+    "slot": "head",
+    "image": "Radiant oathplate helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 6,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 10,
+      "crush": 0,
+      "magic": null,
+      "ranged": null
+    },
+    "defensive": {
+      "stab": 50,
+      "slash": 72,
+      "crush": 45,
+      "magic": 0,
+      "ranged": 50
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Radiant oathplate legs",
+    "id": 30781,
+    "version": "",
+    "slot": "legs",
+    "image": "Radiant oathplate legs.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 2,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 12,
+      "crush": 0,
+      "magic": null,
+      "ranged": null
+    },
+    "defensive": {
+      "stab": 75,
+      "slash": 100,
+      "crush": 73,
+      "magic": null,
+      "ranged": 81
     },
     "isTwoHanded": false
   },
@@ -116135,7 +116315,7 @@
     "version": "",
     "slot": "weapon",
     "image": "Slayer's staff (e).png",
-    "speed": 5,
+    "speed": 4,
     "category": "Staff",
     "bonuses": {
       "str": 35,
@@ -117415,6 +117595,36 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Soulflame horn",
+    "id": 30759,
+    "version": "",
+    "slot": "weapon",
+    "image": "Soulflame horn.png",
+    "speed": 5,
+    "category": "",
+    "bonuses": {
+      "str": 23,
+      "ranged_str": 0,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 2,
+      "slash": 0,
+      "crush": 21,
+      "magic": 7,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 7,
+      "crush": 3,
+      "magic": 11,
       "ranged": 0
     },
     "isTwoHanded": false

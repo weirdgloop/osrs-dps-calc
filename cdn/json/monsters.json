@@ -4029,7 +4029,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000006-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000056-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -48813,274 +48813,10 @@
     "weakness": null
   },
   {
-    "id": 10374,
-    "name": "Hill Giant (Giants' Plateau)",
-    "version": "Brassard",
-    "image": "Hill Giant (Giants' Plateau, 1).png",
-    "level": 28,
-    "speed": 6,
-    "style": [
-      "Crush"
-    ],
-    "size": 2,
-    "max_hit": "4",
-    "skills": {
-      "atk": 18,
-      "def": 26,
-      "hp": 35,
-      "magic": 1,
-      "ranged": 1,
-      "str": 22
-    },
-    "offensive": {
-      "atk": 18,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 16
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 10375,
-    "name": "Hill Giant (Giants' Plateau)",
-    "version": "Hammer",
-    "image": "Hill Giant (Giants' Plateau, 2).png",
-    "level": 28,
-    "speed": 6,
-    "style": [
-      "Crush"
-    ],
-    "size": 2,
-    "max_hit": "4",
-    "skills": {
-      "atk": 18,
-      "def": 26,
-      "hp": 35,
-      "magic": 1,
-      "ranged": 1,
-      "str": 22
-    },
-    "offensive": {
-      "atk": 18,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 16
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 10376,
-    "name": "Hill Giant (Giants' Plateau)",
-    "version": "Singlet",
-    "image": "Hill Giant (Giants' Plateau, 3).png",
-    "level": 28,
-    "speed": 6,
-    "style": [
-      "Crush"
-    ],
-    "size": 2,
-    "max_hit": "4",
-    "skills": {
-      "atk": 18,
-      "def": 26,
-      "hp": 35,
-      "magic": 1,
-      "ranged": 1,
-      "str": 22
-    },
-    "offensive": {
-      "atk": 18,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 16
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
     "id": 7261,
-    "name": "Hill Giant (Kourend)",
+    "name": "Hill Giant",
     "version": "",
     "image": "Hill Giant (Kourend).png",
-    "level": 28,
-    "speed": 6,
-    "style": [
-      "Crush"
-    ],
-    "size": 2,
-    "max_hit": "4",
-    "skills": {
-      "atk": 18,
-      "def": 26,
-      "hp": 35,
-      "magic": 1,
-      "ranged": 1,
-      "str": 22
-    },
-    "offensive": {
-      "atk": 18,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 16
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 12849,
-    "name": "Hill Giant (Varlamore)",
-    "version": "Clothed",
-    "image": "Hill Giant (Varlamore, 2).png",
-    "level": 28,
-    "speed": 6,
-    "style": [
-      "Crush"
-    ],
-    "size": 2,
-    "max_hit": "4",
-    "skills": {
-      "atk": 18,
-      "def": 26,
-      "hp": 35,
-      "magic": 1,
-      "ranged": 1,
-      "str": 22
-    },
-    "offensive": {
-      "atk": 18,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 16
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 12850,
-    "name": "Hill Giant (Varlamore)",
-    "version": "Helmetless",
-    "image": "Hill Giant (Varlamore, 3).png",
-    "level": 28,
-    "speed": 6,
-    "style": [
-      "Crush"
-    ],
-    "size": 2,
-    "max_hit": "4",
-    "skills": {
-      "atk": 18,
-      "def": 26,
-      "hp": 35,
-      "magic": 1,
-      "ranged": 1,
-      "str": 22
-    },
-    "offensive": {
-      "atk": 18,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 16
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 12848,
-    "name": "Hill Giant (Varlamore)",
-    "version": "Shirtless",
-    "image": "Hill Giant (Varlamore, 1).png",
     "level": 28,
     "speed": 6,
     "style": [
@@ -49345,6 +49081,270 @@
     "name": "Hill Giant",
     "version": "6",
     "image": "Hill Giant (6).png",
+    "level": 28,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "4",
+    "skills": {
+      "atk": 18,
+      "def": 26,
+      "hp": 35,
+      "magic": 1,
+      "ranged": 1,
+      "str": 22
+    },
+    "offensive": {
+      "atk": 18,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 16
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 10374,
+    "name": "Hill Giant",
+    "version": "Brassard",
+    "image": "Hill Giant (Giants' Plateau, 1).png",
+    "level": 28,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "4",
+    "skills": {
+      "atk": 18,
+      "def": 26,
+      "hp": 35,
+      "magic": 1,
+      "ranged": 1,
+      "str": 22
+    },
+    "offensive": {
+      "atk": 18,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 16
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12849,
+    "name": "Hill Giant",
+    "version": "Clothed",
+    "image": "Hill Giant (Varlamore, 2).png",
+    "level": 28,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "4",
+    "skills": {
+      "atk": 18,
+      "def": 26,
+      "hp": 35,
+      "magic": 1,
+      "ranged": 1,
+      "str": 22
+    },
+    "offensive": {
+      "atk": 18,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 16
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 10375,
+    "name": "Hill Giant",
+    "version": "Hammer",
+    "image": "Hill Giant (Giants' Plateau, 2).png",
+    "level": 28,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "4",
+    "skills": {
+      "atk": 18,
+      "def": 26,
+      "hp": 35,
+      "magic": 1,
+      "ranged": 1,
+      "str": 22
+    },
+    "offensive": {
+      "atk": 18,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 16
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12850,
+    "name": "Hill Giant",
+    "version": "Helmetless",
+    "image": "Hill Giant (Varlamore, 3).png",
+    "level": 28,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "4",
+    "skills": {
+      "atk": 18,
+      "def": 26,
+      "hp": 35,
+      "magic": 1,
+      "ranged": 1,
+      "str": 22
+    },
+    "offensive": {
+      "atk": 18,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 16
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12848,
+    "name": "Hill Giant",
+    "version": "Shirtless",
+    "image": "Hill Giant (Varlamore, 1).png",
+    "level": 28,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "4",
+    "skills": {
+      "atk": 18,
+      "def": 26,
+      "hp": 35,
+      "magic": 1,
+      "ranged": 1,
+      "str": 22
+    },
+    "offensive": {
+      "atk": 18,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 16
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 10376,
+    "name": "Hill Giant",
+    "version": "Singlet",
+    "image": "Hill Giant (Giants' Plateau, 3).png",
     "level": 28,
     "speed": 6,
     "style": [
@@ -53315,7 +53315,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "47 (x3)",
+    "max_hit": "47 (x3) <br/> 48 (x3) (Relentless I) <br/> 50 (x3) (Relentless II) <br/> 53 (x3) (Relentless III)",
     "skills": {
       "atk": 200,
       "def": 125,
@@ -55214,8 +55214,8 @@
     "level": 168,
     "speed": 4,
     "style": [
-      "Magic",
-      "Melee"
+      "Melee",
+      "Magic (Fire Waves)"
     ],
     "size": 3,
     "max_hit": "12",
@@ -60552,7 +60552,7 @@
     "id": 7865,
     "name": "Lesser demon",
     "version": "Level 94 (Wilderness Slayer Cave)",
-    "image": "Lesser demon (5).png",
+    "image": "Lesser demon.png",
     "level": 94,
     "speed": 4,
     "style": [
@@ -64122,7 +64122,7 @@
   {
     "id": 12812,
     "name": "Minotaur (Fortis Colosseum)",
-    "version": "1",
+    "version": "Normal",
     "image": "Minotaur (Fortis Colosseum).png",
     "level": 318,
     "speed": 5,
@@ -64166,7 +64166,7 @@
   {
     "id": 12813,
     "name": "Minotaur (Fortis Colosseum)",
-    "version": "2",
+    "version": "Red Flag",
     "image": "Minotaur (Fortis Colosseum) (2).png",
     "level": 318,
     "speed": 5,
@@ -102731,7 +102731,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000000B-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000004E-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -102776,7 +102776,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000000B-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000004E-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -105006,7 +105006,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000D-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000007D-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -105050,7 +105050,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000F-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000007F-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -106123,6 +106123,52 @@
       "stab": 0
     },
     "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14176,
+    "name": "Void Flare",
+    "version": "",
+    "image": "Void Flare.png",
+    "level": 130,
+    "speed": 4,
+    "style": [
+      "Melee"
+    ],
+    "size": 2,
+    "max_hit": "1",
+    "skills": {
+      "atk": 1,
+      "def": 100,
+      "hp": 140,
+      "magic": 200,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "demon"
+    ],
     "immunities": {
       "burn": null
     },
@@ -111920,6 +111966,54 @@
       "stab": 0
     },
     "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14176,
+    "name": "Yama",
+    "version": "",
+    "image": "Yama.png",
+    "level": 1238,
+    "speed": 8,
+    "style": [
+      "Melee",
+      "Ranged",
+      "Magic"
+    ],
+    "size": 7,
+    "max_hit": "44 (auto-attacks)",
+    "skills": {
+      "atk": 320,
+      "def": 225,
+      "hp": 2500,
+      "magic": 250,
+      "ranged": 210,
+      "str": 350
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 100,
+      "magic_str": 65,
+      "ranged": 100,
+      "ranged_str": 80,
+      "str": 15
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 333,
+      "magic": -30,
+      "heavy": 333,
+      "standard": 220,
+      "light": 333,
+      "slash": 80,
+      "stab": 100
+    },
+    "attributes": [
+      "demon"
+    ],
     "immunities": {
       "burn": null
     },
