@@ -1649,7 +1649,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       // https://twitter.com/JagexAsh/status/1375037874559721474
       dist = dist.transform(linearMinTransformer(2, 22));
     }
-    if (this.monster.name === 'Kraken' && styleType === 'ranged') {
+    if (['Kraken', 'Cave kraken'].includes(this.monster.name) && styleType === 'ranged') {
       // https://twitter.com/JagexAsh/status/1699360516488011950
       dist = dist.transform(divisionTransformer(7, 1));
     }
