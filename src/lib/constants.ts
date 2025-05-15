@@ -398,6 +398,8 @@ export const UNDERWATER_MONSTERS = [
   7796, // lobstrosity
 ];
 
+export const YAMA_VOID_FLARE_IDS = [14179];
+
 export const ACCURACY_PRECISION = 2;
 export const DPS_PRECISION = 3;
 export const EXPECTED_HIT_PRECISION = 1;
@@ -422,15 +424,18 @@ export const ALWAYS_MAX_HIT_MONSTERS = {
     11710, 11713, // baboon thrower
     12814, // frem warband archer
     ...TOA_WARDEN_CORE_EJECTED_IDS,
+    ...YAMA_VOID_FLARE_IDS,
   ],
   ranged: [
     11711, 11714, // baboon mage
     12815, // frem warband seer
+    ...YAMA_VOID_FLARE_IDS,
   ],
   magic: [
     11709, 11712, // baboon brawler
     12816, // frem warband berserker
     14151, 14150, // Royal titans elementals
+    ...YAMA_VOID_FLARE_IDS,
   ],
 };
 
@@ -489,3 +494,7 @@ TITAN_BOSS_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = ROYAL_TITANS_PHASES;
 export const ABYSSAL_SIRE_PHASES = ['Standard', 'Transition'];
 export const ABYSSAL_SIRE_TRANSITION_IDS = [5886, 5889, 5891];
 ABYSSAL_SIRE_TRANSITION_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = ABYSSAL_SIRE_PHASES; });
+
+export const YAMA_IDS = [14176];
+export const YAMA_PHASES = ['Tank using magic', 'Tank not using magic'];
+YAMA_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = YAMA_PHASES; });

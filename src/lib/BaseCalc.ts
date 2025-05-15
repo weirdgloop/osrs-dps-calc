@@ -3,7 +3,12 @@ import { BurnImmunity, Monster } from '@/types/Monster';
 import { AmmoApplicability, ammoApplicability, getCanonicalEquipment } from '@/lib/Equipment';
 import UserIssueType from '@/enums/UserIssueType';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
-import { CAST_STANCES, IMMUNE_TO_BURN_DAMAGE_NPC_IDS } from '@/lib/constants';
+import {
+  CAST_STANCES,
+  IMMUNE_TO_BURN_DAMAGE_NPC_IDS,
+  YAMA_IDS,
+  YAMA_VOID_FLARE_IDS,
+} from '@/lib/constants';
 import { UserIssue } from '@/types/State';
 import { CalcDetails, DetailEntry } from '@/lib/CalcDetails';
 import { Factor } from '@/lib/Math';
@@ -641,9 +646,9 @@ export default class BaseCalc {
       return this.monster.inputs.demonbaneVulnerability;
     } if (this.monster.name === 'Duke Sucellus') {
       return 70;
-    } if (this.monster.name === 'Yama') {
+    } if (YAMA_IDS.includes(this.monster.id)) {
       return 120;
-    } if (this.monster.name === 'Void Flare') {
+    } if (YAMA_VOID_FLARE_IDS.includes(this.monster.id)) {
       return 200;
     }
 

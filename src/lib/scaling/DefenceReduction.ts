@@ -12,7 +12,7 @@ import {
   SOTETSEG_IDS,
   TOA_OBELISK_IDS,
   VARDORVIS_IDS,
-  VERZIK_IDS,
+  VERZIK_IDS, YAMA_IDS,
   ZEBAK_IDS,
 } from '@/lib/constants';
 import { keys } from '@/utils';
@@ -55,6 +55,9 @@ export const getDefenceFloor = (m: Monster): number => {
   }
   if (HUEYCOATL_IDS.includes(m.id)) {
     return 120;
+  }
+  if (YAMA_IDS.includes(m.id)) {
+    return 145;
   }
 
   // no limit
