@@ -1466,8 +1466,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.buffs.markOfDarknessSpell && this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
-      const demonbaneFactor = this.demonbaneFactor(this.wearing('Purging staff') ? 50 : 25);
-      dist = dist.transform((h) => HitDistribution.single(1.0, [new Hitsplat(h.damage + Math.trunc(h.damage * demonbaneFactor[0] / demonbaneFactor[1]))]));
+      const demonbaneFactor = this.wearing('Purging staff') ? 50 : 25;
+      dist = dist.transform(
+        (h) => HitDistribution.single(1.0, [new Hitsplat(
+          h.damage + Math.trunc(Math.trunc(h.damage * demonbaneFactor / 100) * this.demonbaneVulnerability() / 100),
+          h.accurate,
+        )]),
+      );
     }
 
     if (this.player.style.type === 'magic' && this.isWearingAhrims()) {

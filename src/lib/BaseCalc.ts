@@ -636,22 +636,30 @@ export default class BaseCalc {
     this.userIssues.push({ type, message, loadout: this.opts.loadoutName });
   }
 
+  protected demonbaneVulnerability(): number {
+    if (this.monster.id === -1 && this.monster.inputs.demonbaneVulnerability !== undefined) {
+      return this.monster.inputs.demonbaneVulnerability;
+    } if (this.monster.name === 'Duke Sucellus') {
+      return 70;
+    } if (this.monster.name === 'Yama') {
+      return 120;
+    } if (this.monster.name === 'Void Flare') {
+      return 200;
+    }
+
+    return 100;
+  }
+
   private sanitizeInputs() {
     const eq = this.player.equipment;
 
     if (this.monster.attributes.includes(MonsterAttribute.DEMON)) {
       // make sure demonbane effectiveness is set and uses the right value
-      let demonbaneEffectiveness: number = 100;
-      if (this.monster.id === -1 && this.monster.inputs.demonbaneVulnerability !== undefined) {
-        demonbaneEffectiveness = this.monster.inputs.demonbaneVulnerability;
-      } else if (this.monster.name === 'Duke Sucellus') {
-        demonbaneEffectiveness = 70;
-      }
       this.monster = {
         ...this.monster,
         inputs: {
           ...this.monster.inputs,
-          demonbaneVulnerability: demonbaneEffectiveness,
+          demonbaneVulnerability: this.demonbaneVulnerability(),
         },
       };
     }
