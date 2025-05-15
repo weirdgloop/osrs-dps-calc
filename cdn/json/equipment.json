@@ -91157,14 +91157,14 @@
       "stab": 0,
       "slash": 16,
       "crush": 0,
-      "magic": null,
-      "ranged": null
+      "magic": -16,
+      "ranged": -18
     },
     "defensive": {
       "stab": 105,
       "slash": 128,
       "crush": 100,
-      "magic": null,
+      "magic": -5,
       "ranged": 112
     },
     "isTwoHanded": false
@@ -91187,8 +91187,8 @@
       "stab": 0,
       "slash": 10,
       "crush": 0,
-      "magic": null,
-      "ranged": null
+      "magic": -2,
+      "ranged": -7
     },
     "defensive": {
       "stab": 50,
@@ -91217,14 +91217,14 @@
       "stab": 0,
       "slash": 12,
       "crush": 0,
-      "magic": null,
-      "ranged": null
+      "magic": -12,
+      "ranged": -14
     },
     "defensive": {
       "stab": 75,
       "slash": 100,
       "crush": 73,
-      "magic": null,
+      "magic": -5,
       "ranged": 81
     },
     "isTwoHanded": false
@@ -97367,14 +97367,14 @@
       "stab": 0,
       "slash": 16,
       "crush": 0,
-      "magic": null,
-      "ranged": null
+      "magic": -16,
+      "ranged": -18
     },
     "defensive": {
       "stab": 105,
       "slash": 128,
       "crush": 100,
-      "magic": null,
+      "magic": -5,
       "ranged": 112
     },
     "isTwoHanded": false
@@ -97397,8 +97397,8 @@
       "stab": 0,
       "slash": 10,
       "crush": 0,
-      "magic": null,
-      "ranged": null
+      "magic": -2,
+      "ranged": -7
     },
     "defensive": {
       "stab": 50,
@@ -97427,14 +97427,14 @@
       "stab": 0,
       "slash": 12,
       "crush": 0,
-      "magic": null,
-      "ranged": null
+      "magic": -12,
+      "ranged": -14
     },
     "defensive": {
       "stab": 75,
       "slash": 100,
       "crush": 73,
-      "magic": null,
+      "magic": -3,
       "ranged": 81
     },
     "isTwoHanded": false

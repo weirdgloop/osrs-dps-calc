@@ -4029,7 +4029,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000056-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000042-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -28149,7 +28149,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-000000F3-QINU`\"'"
+      "Slash '\"`UNIQ--ref-00000022-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -55207,15 +55207,61 @@
     "weakness": null
   },
   {
-    "id": 10936,
+    "id": 14180,
     "name": "Judge of Yama",
+    "version": "",
+    "image": "Judge of Yama.png",
+    "level": 168,
+    "speed": 0,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 200,
+      "def": 150,
+      "hp": 400,
+      "magic": 250,
+      "ranged": 200,
+      "str": 200
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 50,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 10936,
+    "name": "Judge of Yama (A Kingdom Divided)",
     "version": "",
     "image": "Judge of Yama.png",
     "level": 168,
     "speed": 4,
     "style": [
-      "Melee",
-      "Magic (Fire Waves)"
+      "Magic (Fire Waves)",
+      "Melee"
     ],
     "size": 3,
     "max_hit": "12",
@@ -102731,7 +102777,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000004E-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000005A-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -102776,7 +102822,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000004E-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000005A-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -105006,7 +105052,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000007D-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000004E-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -105050,7 +105096,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000007F-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000050-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -106129,7 +106175,7 @@
     "weakness": null
   },
   {
-    "id": 14176,
+    "id": 14179,
     "name": "Void Flare",
     "version": "",
     "image": "Void Flare.png",
@@ -111974,7 +112020,7 @@
   {
     "id": 14176,
     "name": "Yama",
-    "version": "",
+    "version": "Enraged",
     "image": "Yama.png",
     "level": 1238,
     "speed": 8,
@@ -111983,8 +112029,56 @@
       "Ranged",
       "Magic"
     ],
-    "size": 7,
-    "max_hit": "44 (auto-attacks)",
+    "size": 5,
+    "max_hit": "46 (auto-attacks) <br/> 121 (Meteor Strike) <br/> 80 (Shadow Stomp)",
+    "skills": {
+      "atk": 320,
+      "def": 225,
+      "hp": 2500,
+      "magic": 250,
+      "ranged": 210,
+      "str": 350
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 100,
+      "magic_str": 65,
+      "ranged": 100,
+      "ranged_str": 80,
+      "str": 15
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 449,
+      "magic": 81,
+      "heavy": 449,
+      "standard": 297,
+      "light": 449,
+      "slash": 108,
+      "stab": 135
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14176,
+    "name": "Yama",
+    "version": "Normal",
+    "image": "Yama.png",
+    "level": 1238,
+    "speed": 8,
+    "style": [
+      "Melee",
+      "Ranged",
+      "Magic"
+    ],
+    "size": 5,
+    "max_hit": "46 (auto-attacks) <br/> 121 (Meteor Strike) <br/> 80 (Shadow Stomp)",
     "skills": {
       "atk": 320,
       "def": 225,
