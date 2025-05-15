@@ -228,6 +228,9 @@ const equipmentAliases = {
   4091: [4101, 23050, 4111, 26533], // Mystic robe top
   11789: [12796], // Mystic steam staff
   19547: [22249], // Necklace of anguish
+  30753: [30779], // Oathplate chest
+  30750: [30777], // Oathplate helm
+  30756: [30781], // Oathplate legs
   6568: [20050], // Obsidian cape
   12002: [19720], // Occult necklace
   11926: [12807], // Odium ward
