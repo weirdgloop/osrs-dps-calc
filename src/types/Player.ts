@@ -141,6 +141,12 @@ export interface Player extends EquipmentStats {
      * @see https://oldschool.runescape.wiki/w/Sunfire_rune
      */
     usingSunfireRunes: boolean;
+    /**
+     * Whether the player is under the Entice effect of the Soulflame horn,
+     * which makes the next melee attack within 6 ticks guaranteed to hit.
+     * @see https://oldschool.runescape.wiki/w/Soulflame_horn
+     */
+    soulflameHorn: boolean;
   };
   spell: Spell | null;
 }
