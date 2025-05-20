@@ -1702,7 +1702,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       );
     }
     if (this.monster.name === 'Tormented Demon') {
-      if (!this.tdUnshieldedBonusApplies() && !this.isUsingDemonbane() && !this.isUsingAbyssal()) {
+      if (this.monster.inputs.phase !== 'Unshielded' && !this.isUsingDemonbane() && !this.isUsingAbyssal()) {
         // 20% damage reduction when not using demonbane or abyssal
         // todo floor of 1?
         dist = dist.transform(multiplyTransformer(4, 5, 1));
