@@ -102,7 +102,7 @@ const ExtraOptions: React.FC = observer(() => {
             <>
               <img src={soulflame.src} width={18} className="inline-block" alt="" />
               {' '}
-              Buffed by Soulflame horn
+              Soulflame horn buff
               {' '}
               <span
                 className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
