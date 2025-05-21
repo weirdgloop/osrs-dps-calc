@@ -4029,7 +4029,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000042-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000000-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -28149,7 +28149,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-00000022-QINU`\"'"
+      "Slash '\"`UNIQ--ref-000000F0-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -49297,10 +49297,10 @@
     "weakness": null
   },
   {
-    "id": 12848,
+    "id": 10376,
     "name": "Hill Giant",
-    "version": "Shirtless",
-    "image": "Hill Giant (Varlamore, 1).png",
+    "version": "Scimitar and singlet",
+    "image": "Hill Giant (Giants' Plateau, 3).png",
     "level": 28,
     "speed": 6,
     "style": [
@@ -49341,10 +49341,10 @@
     "weakness": null
   },
   {
-    "id": 10376,
+    "id": 12848,
     "name": "Hill Giant",
-    "version": "Singlet",
-    "image": "Hill Giant (Giants' Plateau, 3).png",
+    "version": "Shirtless",
+    "image": "Hill Giant (Varlamore, 1).png",
     "level": 28,
     "speed": 6,
     "style": [
@@ -55212,12 +55212,12 @@
     "version": "",
     "image": "Judge of Yama.png",
     "level": 168,
-    "speed": 0,
+    "speed": 5,
     "style": [
       "Magic"
     ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "18 (aoe)",
     "skills": {
       "atk": 200,
       "def": 150,
@@ -94309,7 +94309,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000020-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000024-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -102777,7 +102777,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000005A-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000006B-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -102822,7 +102822,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000005A-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000006B-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -105052,7 +105052,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000004E-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000047-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -105096,7 +105096,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000050-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000049-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -106177,8 +106177,54 @@
   {
     "id": 14179,
     "name": "Void Flare",
-    "version": "",
-    "image": "Void Flare.png",
+    "version": "Fire",
+    "image": "Void Flare (fire).png",
+    "level": 130,
+    "speed": 4,
+    "style": [
+      "Melee"
+    ],
+    "size": 2,
+    "max_hit": "1",
+    "skills": {
+      "atk": 1,
+      "def": 100,
+      "hp": 140,
+      "magic": 200,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14179,
+    "name": "Void Flare",
+    "version": "Shadow",
+    "image": "Void Flare (shadow).png",
     "level": 130,
     "speed": 4,
     "style": [
@@ -112020,7 +112066,7 @@
   {
     "id": 14176,
     "name": "Yama",
-    "version": "Enraged",
+    "version": "Normal",
     "image": "Yama.png",
     "level": 1238,
     "speed": 8,
@@ -112030,7 +112076,55 @@
       "Magic"
     ],
     "size": 5,
-    "max_hit": "46 (auto-attacks) <br/> 121 (Meteor Strike) <br/> 80 (Shadow Stomp)",
+    "max_hit": "46 (auto-attacks)",
+    "skills": {
+      "atk": 320,
+      "def": 225,
+      "hp": 2500,
+      "magic": 250,
+      "ranged": 210,
+      "str": 350
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 100,
+      "magic_str": 65,
+      "ranged": 100,
+      "ranged_str": 80,
+      "str": 15
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 333,
+      "magic": 0,
+      "heavy": 333,
+      "standard": 220,
+      "light": 333,
+      "slash": 80,
+      "stab": 100
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14176,
+    "name": "Yama",
+    "version": "Phase 3",
+    "image": "Yama.png",
+    "level": 1238,
+    "speed": 7,
+    "style": [
+      "Melee",
+      "Ranged",
+      "Magic"
+    ],
+    "size": 5,
+    "max_hit": "46 (auto-attacks)",
     "skills": {
       "atk": 320,
       "def": 225,
@@ -112056,54 +112150,6 @@
       "light": 449,
       "slash": 108,
       "stab": 135
-    },
-    "attributes": [
-      "demon"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 14176,
-    "name": "Yama",
-    "version": "Normal",
-    "image": "Yama.png",
-    "level": 1238,
-    "speed": 8,
-    "style": [
-      "Melee",
-      "Ranged",
-      "Magic"
-    ],
-    "size": 5,
-    "max_hit": "46 (auto-attacks) <br/> 121 (Meteor Strike) <br/> 80 (Shadow Stomp)",
-    "skills": {
-      "atk": 320,
-      "def": 225,
-      "hp": 2500,
-      "magic": 250,
-      "ranged": 210,
-      "str": 350
-    },
-    "offensive": {
-      "atk": 50,
-      "magic": 100,
-      "magic_str": 65,
-      "ranged": 100,
-      "ranged_str": 80,
-      "str": 15
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 333,
-      "magic": -30,
-      "heavy": 333,
-      "standard": 220,
-      "light": 333,
-      "slash": 80,
-      "stab": 100
     },
     "attributes": [
       "demon"

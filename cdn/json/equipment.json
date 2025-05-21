@@ -117606,7 +117606,7 @@
     "slot": "weapon",
     "image": "Soulflame horn.png",
     "speed": 5,
-    "category": "",
+    "category": "Spiked",
     "bonuses": {
       "str": 23,
       "ranged_str": 0,
