@@ -4029,7 +4029,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000042-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000048-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -28149,7 +28149,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-00000022-QINU`\"'"
+      "Slash '\"`UNIQ--ref-00000037-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -49297,10 +49297,10 @@
     "weakness": null
   },
   {
-    "id": 12848,
+    "id": 10376,
     "name": "Hill Giant",
-    "version": "Shirtless",
-    "image": "Hill Giant (Varlamore, 1).png",
+    "version": "Scimitar and singlet",
+    "image": "Hill Giant (Giants' Plateau, 3).png",
     "level": 28,
     "speed": 6,
     "style": [
@@ -49341,10 +49341,10 @@
     "weakness": null
   },
   {
-    "id": 10376,
+    "id": 12848,
     "name": "Hill Giant",
-    "version": "Singlet",
-    "image": "Hill Giant (Giants' Plateau, 3).png",
+    "version": "Shirtless",
+    "image": "Hill Giant (Varlamore, 1).png",
     "level": 28,
     "speed": 6,
     "style": [
@@ -55212,12 +55212,12 @@
     "version": "",
     "image": "Judge of Yama.png",
     "level": 168,
-    "speed": 0,
+    "speed": 5,
     "style": [
       "Magic"
     ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "18 (aoe)",
     "skills": {
       "atk": 200,
       "def": 150,
@@ -86881,7 +86881,7 @@
     "id": 8072,
     "name": "Skeleton (Shayzien Crypts)",
     "version": "Magic",
-    "image": "Skeleton Mage (lv 16).png",
+    "image": "Skeleton (Shayzien Crypts, magic).png",
     "level": 132,
     "speed": 5,
     "style": [
@@ -86927,7 +86927,7 @@
     "id": 8070,
     "name": "Skeleton (Shayzien Crypts)",
     "version": "Melee",
-    "image": "Skeleton (9).png",
+    "image": "Skeleton (Shayzien Crypts, melee).png",
     "level": 132,
     "speed": 5,
     "style": [
@@ -86973,7 +86973,7 @@
     "id": 8071,
     "name": "Skeleton (Shayzien Crypts)",
     "version": "Range",
-    "image": "Skeleton (3).png",
+    "image": "Skeleton (Shayzien Crypts, range).png",
     "level": 132,
     "speed": 5,
     "style": [
@@ -89055,8 +89055,106 @@
   {
     "id": 74,
     "name": "Skeleton",
-    "version": "Level 21",
-    "image": "Skeleton.png",
+    "version": "Level 21, 1",
+    "image": "Skeleton (level 21, 1).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 17,
+      "def": 17,
+      "hp": 24,
+      "magic": 1,
+      "ranged": 1,
+      "str": 17
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -5,
+      "magic": 0,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
+      "slash": 5,
+      "stab": 5
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 75,
+    "name": "Skeleton",
+    "version": "Level 21, 2",
+    "image": "Skeleton (level 21, 2).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 17,
+      "def": 17,
+      "hp": 24,
+      "magic": 1,
+      "ranged": 1,
+      "str": 17
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -5,
+      "magic": 0,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
+      "slash": 5,
+      "stab": 5
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 76,
+    "name": "Skeleton",
+    "version": "Level 21, 3",
+    "image": "Skeleton (level 21, 3).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -89104,8 +89202,155 @@
   {
     "id": 70,
     "name": "Skeleton",
-    "version": "Level 22",
-    "image": "Skeleton.png",
+    "version": "Level 22, 1",
+    "image": "Skeleton (level 22, 1).png",
+    "level": 22,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 15,
+      "def": 17,
+      "hp": 29,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -5,
+      "magic": 0,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
+      "slash": 5,
+      "stab": 5
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 71,
+    "name": "Skeleton",
+    "version": "Level 22, 2",
+    "image": "Skeleton (level 22, 2).png",
+    "level": 22,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 15,
+      "def": 17,
+      "hp": 29,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -5,
+      "magic": 0,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
+      "slash": 5,
+      "stab": 5
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 72,
+    "name": "Skeleton",
+    "version": "Level 22, 3",
+    "image": "Skeleton (level 22, 3).png",
+    "level": 22,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 15,
+      "def": 17,
+      "hp": 29,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -5,
+      "magic": 0,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
+      "slash": 5,
+      "stab": 5
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 73,
+    "name": "Skeleton",
+    "version": "Level 22, 4",
+    "image": "Skeleton (level 22, 4).png",
     "level": 22,
     "speed": 4,
     "style": [
@@ -89153,8 +89398,204 @@
   {
     "id": 77,
     "name": "Skeleton",
-    "version": "Level 25",
-    "image": "Skeleton (5).png",
+    "version": "Level 25, 1",
+    "image": "Skeleton (level 25, 1).png",
+    "level": 25,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 24
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 78,
+    "name": "Skeleton",
+    "version": "Level 25, 2",
+    "image": "Skeleton (level 25, 2).png",
+    "level": 25,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 24
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 79,
+    "name": "Skeleton",
+    "version": "Level 25, 3",
+    "image": "Skeleton (level 25, 3).png",
+    "level": 25,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 24
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 80,
+    "name": "Skeleton",
+    "version": "Level 25, 4",
+    "image": "Skeleton (level 25, 4).png",
+    "level": 25,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 24
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 81,
+    "name": "Skeleton",
+    "version": "Level 25, 5",
+    "image": "Skeleton (level 25, 5).png",
     "level": 25,
     "speed": 4,
     "style": [
@@ -89202,8 +89643,57 @@
   {
     "id": 82,
     "name": "Skeleton",
-    "version": "Level 45",
-    "image": "Giant skeleton (Shadow Dungeon).png",
+    "version": "Level 45, 1",
+    "image": "Skeleton (level 45, 1).png",
+    "level": 45,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "5",
+    "skills": {
+      "atk": 32,
+      "def": 36,
+      "hp": 59,
+      "magic": 1,
+      "ranged": 1,
+      "str": 35
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 83,
+    "name": "Skeleton",
+    "version": "Level 45, 2",
+    "image": "Skeleton (level 45, 2).png",
     "level": 45,
     "speed": 4,
     "style": [
@@ -94309,7 +94799,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000020-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000055-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -102777,7 +103267,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000005A-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000003C-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -102822,7 +103312,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000005A-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000003C-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -105052,7 +105542,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000004E-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000059-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -105096,7 +105586,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000050-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000005B-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -106177,8 +106667,54 @@
   {
     "id": 14179,
     "name": "Void Flare",
-    "version": "",
-    "image": "Void Flare.png",
+    "version": "Fire",
+    "image": "Void Flare (fire).png",
+    "level": 130,
+    "speed": 4,
+    "style": [
+      "Melee"
+    ],
+    "size": 2,
+    "max_hit": "1",
+    "skills": {
+      "atk": 1,
+      "def": 100,
+      "hp": 140,
+      "magic": 200,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14179,
+    "name": "Void Flare",
+    "version": "Shadow",
+    "image": "Void Flare (shadow).png",
     "level": 130,
     "speed": 4,
     "style": [
@@ -112020,17 +112556,65 @@
   {
     "id": 14176,
     "name": "Yama",
-    "version": "Enraged",
+    "version": "Normal",
     "image": "Yama.png",
     "level": 1238,
     "speed": 8,
     "style": [
-      "Melee",
       "Ranged",
-      "Magic"
+      "Magic",
+      "Melee (Slash)"
     ],
     "size": 5,
-    "max_hit": "46 (auto-attacks) <br/> 121 (Meteor Strike) <br/> 80 (Shadow Stomp)",
+    "max_hit": "46 (auto-attacks)",
+    "skills": {
+      "atk": 320,
+      "def": 225,
+      "hp": 2500,
+      "magic": 250,
+      "ranged": 210,
+      "str": 350
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 100,
+      "magic_str": 65,
+      "ranged": 100,
+      "ranged_str": 80,
+      "str": 15
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 333,
+      "magic": 0,
+      "heavy": 333,
+      "standard": 220,
+      "light": 333,
+      "slash": 80,
+      "stab": 100
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14176,
+    "name": "Yama",
+    "version": "Phase 3",
+    "image": "Yama.png",
+    "level": 1238,
+    "speed": 7,
+    "style": [
+      "Ranged",
+      "Magic",
+      "Melee (Slash)"
+    ],
+    "size": 5,
+    "max_hit": "46 (auto-attacks)",
     "skills": {
       "atk": 320,
       "def": 225,
@@ -112056,54 +112640,6 @@
       "light": 449,
       "slash": 108,
       "stab": 135
-    },
-    "attributes": [
-      "demon"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 14176,
-    "name": "Yama",
-    "version": "Normal",
-    "image": "Yama.png",
-    "level": 1238,
-    "speed": 8,
-    "style": [
-      "Melee",
-      "Ranged",
-      "Magic"
-    ],
-    "size": 5,
-    "max_hit": "46 (auto-attacks) <br/> 121 (Meteor Strike) <br/> 80 (Shadow Stomp)",
-    "skills": {
-      "atk": 320,
-      "def": 225,
-      "hp": 2500,
-      "magic": 250,
-      "ranged": 210,
-      "str": 350
-    },
-    "offensive": {
-      "atk": 50,
-      "magic": 100,
-      "magic_str": 65,
-      "ranged": 100,
-      "ranged_str": 80,
-      "str": 15
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 333,
-      "magic": -30,
-      "heavy": 333,
-      "standard": 220,
-      "light": 333,
-      "slash": 80,
-      "stab": 100
     },
     "attributes": [
       "demon"
