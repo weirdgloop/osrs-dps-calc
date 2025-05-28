@@ -41,8 +41,9 @@ const Home: NextPage = observer(() => {
       case '2':
       case '3':
       case '4':
-      case '5': {
-        // Handle quickly switching between loadouts (max 5)
+      case '5':
+      case '6': {
+        // Handle quickly switching between loadouts (max 6)
         const key = parseInt(e.key) - 1;
         if (store.loadouts[key] !== undefined) {
           store.setSelectedLoadout(key);
