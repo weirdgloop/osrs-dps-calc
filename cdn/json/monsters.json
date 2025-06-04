@@ -1405,56 +1405,9 @@
     "weakness": null
   },
   {
-    "id": 6327,
-    "name": "Agrith Naar",
-    "version": "Hard",
-    "image": "Agrith Naar.png",
-    "level": 196,
-    "speed": 4,
-    "style": [
-      "Crush",
-      "Magic"
-    ],
-    "size": 3,
-    "max_hit": "21",
-    "skills": {
-      "atk": 182,
-      "def": 82,
-      "hp": 209,
-      "magic": 220,
-      "ranged": 220,
-      "str": 198
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "demon"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
     "id": 911,
     "name": "Agrith Naar",
-    "version": "Normal",
+    "version": "",
     "image": "Agrith Naar.png",
     "level": 100,
     "speed": 4,
@@ -1499,28 +1452,28 @@
     "weakness": null
   },
   {
-    "id": 6308,
-    "name": "Agrith-Na-Na",
-    "version": "Hard",
-    "image": "Agrith-Na-Na.png",
-    "level": 235,
+    "id": 6327,
+    "name": "Agrith Naar (Nightmare Zone)",
+    "version": "Hard Mode",
+    "image": "Agrith Naar (Nightmare Zone).png",
+    "level": 196,
     "speed": 4,
     "style": [
       "Crush",
       "Magic"
     ],
     "size": 3,
-    "max_hit": "31",
+    "max_hit": "21",
     "skills": {
-      "atk": 166,
+      "atk": 182,
       "def": 82,
-      "hp": 255,
-      "magic": 200,
-      "ranged": 200,
-      "str": 300
+      "hp": 209,
+      "magic": 220,
+      "ranged": 220,
+      "str": 198
     },
     "offensive": {
-      "atk": 100,
+      "atk": 0,
       "magic": 0,
       "magic_str": 0,
       "ranged": 0,
@@ -1529,24 +1482,73 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 100,
-      "magic": 100,
-      "heavy": 100,
-      "standard": 100,
-      "light": 100,
-      "slash": 100,
-      "stab": 100
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "demon"
+    ],
     "immunities": {
       "burn": null
     },
     "weakness": null
   },
   {
-    "id": 6369,
+    "id": 6388,
+    "name": "Agrith Naar (Nightmare Zone)",
+    "version": "Normal Mode",
+    "image": "Agrith Naar (Nightmare Zone).png",
+    "level": 100,
+    "speed": 4,
+    "style": [
+      "Crush",
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "14",
+    "skills": {
+      "atk": 83,
+      "def": 82,
+      "hp": 95,
+      "magic": 100,
+      "ranged": 100,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 4880,
     "name": "Agrith-Na-Na",
-    "version": "Nightmare Zone",
+    "version": "",
     "image": "Agrith-Na-Na.png",
     "level": 146,
     "speed": 4,
@@ -1589,10 +1591,55 @@
     "weakness": null
   },
   {
-    "id": 4880,
-    "name": "Agrith-Na-Na",
-    "version": "Normal",
-    "image": "Agrith-Na-Na.png",
+    "id": 6308,
+    "name": "Agrith-Na-Na (Nightmare Zone)",
+    "version": "Hard Mode",
+    "image": "Agrith-Na-Na (Nightmare Zone).png",
+    "level": 235,
+    "speed": 4,
+    "style": [
+      "Crush",
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "31",
+    "skills": {
+      "atk": 166,
+      "def": 82,
+      "hp": 255,
+      "magic": 200,
+      "ranged": 200,
+      "str": 300
+    },
+    "offensive": {
+      "atk": 100,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 100,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6369,
+    "name": "Agrith-Na-Na (Nightmare Zone)",
+    "version": "Normal Mode",
+    "image": "Agrith-Na-Na (Nightmare Zone).png",
     "level": 146,
     "speed": 4,
     "style": [
@@ -4029,7 +4076,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000042-QINU`\"' Magic"
+      "'\"`UNIQ--ref-0000000E-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -4301,9 +4348,9 @@
   },
   {
     "id": 9246,
-    "name": "Arianwyn",
-    "version": "Hard",
-    "image": "Arianwyn (Song of the Elves).png",
+    "name": "Arianwyn (Nightmare Zone)",
+    "version": "Hard Mode",
+    "image": "Arianwyn (Nightmare Zone).png",
     "level": 378,
     "speed": 5,
     "style": [
@@ -4324,6 +4371,50 @@
       "magic": 0,
       "magic_str": 0,
       "ranged": 126,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 80,
+      "magic": 260,
+      "heavy": 180,
+      "standard": 180,
+      "light": 180,
+      "slash": 80,
+      "stab": 80
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 9248,
+    "name": "Arianwyn (Nightmare Zone)",
+    "version": "Normal Mode",
+    "image": "Arianwyn (Nightmare Zone).png",
+    "level": 212,
+    "speed": 5,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "38",
+    "skills": {
+      "atk": 0,
+      "def": 102,
+      "hp": 300,
+      "magic": 102,
+      "ranged": 368,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 84,
       "ranged_str": 0,
       "str": 0
     },
@@ -5215,54 +5306,9 @@
     "weakness": null
   },
   {
-    "id": 6331,
+    "id": 643,
     "name": "Arrg",
-    "version": "Hard",
-    "image": "Arrg.png",
-    "level": 210,
-    "speed": 4,
-    "style": [
-      "Slash",
-      "Ranged"
-    ],
-    "size": 2,
-    "max_hit": "74 (melee)",
-    "skills": {
-      "atk": 140,
-      "def": 40,
-      "hp": 255,
-      "magic": 0,
-      "ranged": 140,
-      "str": 280
-    },
-    "offensive": {
-      "atk": 60,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 100
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 35,
-      "magic": 200,
-      "heavy": 200,
-      "standard": 200,
-      "light": 200,
-      "slash": 60,
-      "stab": 35
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 6392,
-    "name": "Arrg",
-    "version": "Nightmare Zone",
+    "version": "",
     "image": "Arrg.png",
     "level": 113,
     "speed": 4,
@@ -5305,10 +5351,55 @@
     "weakness": null
   },
   {
-    "id": 643,
-    "name": "Arrg",
-    "version": "Normal",
-    "image": "Arrg.png",
+    "id": 6331,
+    "name": "Arrg (Nightmare Zone)",
+    "version": "Hard Mode",
+    "image": "Arrg (Nightmare Zone).png",
+    "level": 210,
+    "speed": 4,
+    "style": [
+      "Slash",
+      "Ranged"
+    ],
+    "size": 2,
+    "max_hit": "74 (melee)",
+    "skills": {
+      "atk": 140,
+      "def": 40,
+      "hp": 255,
+      "magic": 0,
+      "ranged": 140,
+      "str": 280
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 100
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 35,
+      "magic": 200,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
+      "slash": 60,
+      "stab": 35
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6392,
+    "name": "Arrg (Nightmare Zone)",
+    "version": "Normal Mode",
+    "image": "Arrg (Nightmare Zone).png",
     "level": 113,
     "speed": 4,
     "style": [
@@ -10189,7 +10280,7 @@
     "version": "",
     "image": "Basilisk Knight.png",
     "level": 204,
-    "speed": 4,
+    "speed": 0,
     "style": [
       "Slash",
       "Magic"
@@ -11552,53 +11643,9 @@
     "weakness": null
   },
   {
-    "id": 6299,
+    "id": 4067,
     "name": "Black Knight Titan",
-    "version": "Hard",
-    "image": "Black Knight Titan.png",
-    "level": 210,
-    "speed": 7,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "28",
-    "skills": {
-      "atk": 182,
-      "def": 91,
-      "hp": 255,
-      "magic": 1,
-      "ranged": 1,
-      "str": 200
-    },
-    "offensive": {
-      "atk": 27,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 22
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 18,
-      "magic": 1000,
-      "heavy": 1000,
-      "standard": 1000,
-      "light": 1000,
-      "slash": 27,
-      "stab": 18
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 6360,
-    "name": "Black Knight Titan",
-    "version": "Nightmare Zone",
+    "version": "",
     "image": "Black Knight Titan.png",
     "level": 120,
     "speed": 7,
@@ -11640,10 +11687,54 @@
     "weakness": null
   },
   {
-    "id": 4067,
-    "name": "Black Knight Titan",
+    "id": 6299,
+    "name": "Black Knight Titan (Nightmare Zone)",
+    "version": "Hard",
+    "image": "Black Knight Titan (Nightmare Zone).png",
+    "level": 210,
+    "speed": 7,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "28",
+    "skills": {
+      "atk": 182,
+      "def": 91,
+      "hp": 255,
+      "magic": 1,
+      "ranged": 1,
+      "str": 200
+    },
+    "offensive": {
+      "atk": 27,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 22
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 18,
+      "magic": 1000,
+      "heavy": 1000,
+      "standard": 1000,
+      "light": 1000,
+      "slash": 27,
+      "stab": 18
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6360,
+    "name": "Black Knight Titan (Nightmare Zone)",
     "version": "Normal",
-    "image": "Black Knight Titan.png",
+    "image": "Black Knight Titan (Nightmare Zone).png",
     "level": 120,
     "speed": 7,
     "style": [
@@ -11949,8 +12040,8 @@
   },
   {
     "id": 6295,
-    "name": "Black demon (The Grand Tree)",
-    "version": "Hard",
+    "name": "Black demon (Nightmare Zone)",
+    "version": "Hard Mode",
     "image": "Black demon (hard) (The Grand Tree).png",
     "level": 292,
     "speed": 4,
@@ -11991,15 +12082,58 @@
     "immunities": {
       "burn": null
     },
-    "weakness": {
-      "element": "water",
-      "severity": 40
-    }
+    "weakness": null
+  },
+  {
+    "id": 6357,
+    "name": "Black demon (Nightmare Zone)",
+    "version": "Normal Mode",
+    "image": "Black demon (hard) (The Grand Tree).png",
+    "level": 172,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "16",
+    "skills": {
+      "atk": 145,
+      "def": 152,
+      "hp": 157,
+      "magic": 1,
+      "ranged": 1,
+      "str": 148
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": -10,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
   },
   {
     "id": 1432,
     "name": "Black demon (The Grand Tree)",
-    "version": "Normal",
+    "version": "",
     "image": "Black demon (The Grand Tree).png",
     "level": 172,
     "speed": 4,
@@ -14303,24 +14437,24 @@
     "weakness": null
   },
   {
-    "id": 3508,
-    "name": "Bouncer (ghost)",
+    "id": 1224,
+    "name": "Bouncer",
     "version": "",
-    "image": "Bouncer (ghost).png",
-    "level": 160,
+    "image": "Bouncer.png",
+    "level": 137,
     "speed": 4,
     "style": [
       "Stab"
     ],
     "size": 2,
-    "max_hit": "15",
+    "max_hit": "13",
     "skills": {
-      "atk": 145,
-      "def": 145,
-      "hp": 120,
+      "atk": 120,
+      "def": 120,
+      "hp": 116,
       "magic": 1,
       "ranged": 1,
-      "str": 145
+      "str": 120
     },
     "offensive": {
       "atk": 0,
@@ -14340,7 +14474,9 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "demon"
+    ],
     "immunities": {
       "burn": null
     },
@@ -14348,9 +14484,9 @@
   },
   {
     "id": 6293,
-    "name": "Bouncer",
-    "version": "Hard",
-    "image": "Bouncer.png",
+    "name": "Bouncer (Nightmare Zone)",
+    "version": "Hard Mode",
+    "image": "Bouncer (Nightmare Zone).png",
     "level": 244,
     "speed": 4,
     "style": [
@@ -14392,9 +14528,9 @@
   },
   {
     "id": 6355,
-    "name": "Bouncer",
-    "version": "Normal",
-    "image": "Bouncer.png",
+    "name": "Bouncer (Nightmare Zone)",
+    "version": "Normal Mode",
+    "image": "Bouncer (Nightmare Zone).png",
     "level": 137,
     "speed": 4,
     "style": [
@@ -14435,24 +14571,24 @@
     "weakness": null
   },
   {
-    "id": 1224,
-    "name": "Bouncer",
-    "version": "Quest",
-    "image": "Bouncer.png",
-    "level": 137,
+    "id": 3508,
+    "name": "Bouncer (ghost)",
+    "version": "",
+    "image": "Bouncer (ghost).png",
+    "level": 160,
     "speed": 4,
     "style": [
       "Stab"
     ],
     "size": 2,
-    "max_hit": "13",
+    "max_hit": "15",
     "skills": {
-      "atk": 120,
-      "def": 120,
-      "hp": 116,
+      "atk": 145,
+      "def": 145,
+      "hp": 120,
       "magic": 1,
       "ranged": 1,
-      "str": 120
+      "str": 145
     },
     "offensive": {
       "atk": 0,
@@ -14472,9 +14608,7 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [
-      "demon"
-    ],
+    "attributes": [],
     "immunities": {
       "burn": null
     },
@@ -18580,10 +18714,56 @@
     "weakness": null
   },
   {
-    "id": 6292,
+    "id": 4987,
     "name": "Chronozon",
-    "version": "Hard",
+    "version": "",
     "image": "Chronozon.png",
+    "level": 170,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "18",
+    "skills": {
+      "atk": 173,
+      "def": 173,
+      "hp": 60,
+      "magic": 1,
+      "ranged": 1,
+      "str": 172
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6292,
+    "name": "Chronozon (Nightmare Zone)",
+    "version": "Hard Mode",
+    "image": "Chronozon (Nightmare Zone).png",
     "level": 297,
     "speed": 4,
     "style": [
@@ -18626,10 +18806,10 @@
     "weakness": null
   },
   {
-    "id": 4987,
-    "name": "Chronozon",
-    "version": "Normal",
-    "image": "Chronozon.png",
+    "id": 6354,
+    "name": "Chronozon (Nightmare Zone)",
+    "version": "Normal Mode",
+    "image": "Chronozon (Nightmare Zone).png",
     "level": 170,
     "speed": 4,
     "style": [
@@ -19337,9 +19517,54 @@
     "weakness": null
   },
   {
-    "id": 7996,
+    "id": 8000,
     "name": "Corrupt Lizardman",
-    "version": "Hard",
+    "version": "",
+    "image": "Corrupt Lizardman.png",
+    "level": 46,
+    "speed": 4,
+    "style": [
+      "Crush",
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 38,
+      "def": 38,
+      "hp": 50,
+      "magic": 1,
+      "ranged": 38,
+      "str": 38
+    },
+    "offensive": {
+      "atk": 22,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 22,
+      "ranged_str": 20,
+      "str": 20
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 25,
+      "stab": -10
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 7996,
+    "name": "Corrupt Lizardman (Nightmare Zone)",
+    "version": "Hard Mode",
     "image": "Corrupt Lizardman.png",
     "level": 152,
     "speed": 4,
@@ -19383,8 +19608,8 @@
   },
   {
     "id": 7997,
-    "name": "Corrupt Lizardman",
-    "version": "Normal",
+    "name": "Corrupt Lizardman (Nightmare Zone)",
+    "version": "Normal Mode",
     "image": "Corrupt Lizardman.png",
     "level": 46,
     "speed": 4,
@@ -19842,6 +20067,94 @@
       "magic": 22,
       "ranged": 0,
       "str": 99
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 7948,
+    "name": "Corsair Traitor",
+    "version": "Hard Mode",
+    "image": "Corsair Traitor.png",
+    "level": 103,
+    "speed": 3,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "19",
+    "skills": {
+      "atk": 1,
+      "def": 80,
+      "hp": 160,
+      "magic": 90,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 7949,
+    "name": "Corsair Traitor",
+    "version": "Normal Mode",
+    "image": "Corsair Traitor.png",
+    "level": 35,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 1,
+      "def": 30,
+      "hp": 55,
+      "magic": 30,
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -22584,8 +22897,53 @@
     "weakness": null
   },
   {
-    "id": 6307,
+    "id": 3400,
     "name": "Culinaromancer",
+    "version": "",
+    "image": "Culinaromancer.png",
+    "level": 75,
+    "speed": 4,
+    "style": [
+      "Melee",
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "25",
+    "skills": {
+      "atk": 10,
+      "def": 10,
+      "hp": 150,
+      "magic": 1,
+      "ranged": 1,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -10,
+      "magic": -10,
+      "heavy": -10,
+      "standard": -10,
+      "light": -10,
+      "slash": -10,
+      "stab": -10
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6307,
+    "name": "Culinaromancer (Nightmare Zone)",
     "version": "Hard",
     "image": "Culinaromancer.png",
     "level": 209,
@@ -22628,8 +22986,8 @@
     "weakness": null
   },
   {
-    "id": 3400,
-    "name": "Culinaromancer",
+    "id": 6368,
+    "name": "Culinaromancer (Nightmare Zone)",
     "version": "Normal",
     "image": "Culinaromancer.png",
     "level": 75,
@@ -23377,9 +23735,53 @@
     "weakness": null
   },
   {
-    "id": 6330,
+    "id": 4130,
     "name": "Dad",
-    "version": "Hard",
+    "version": "",
+    "image": "Dad.png",
+    "level": 101,
+    "speed": 8,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "27",
+    "skills": {
+      "atk": 60,
+      "def": 50,
+      "hp": 120,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 40,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 70
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 40,
+      "magic": 200,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
+      "slash": 25,
+      "stab": 25
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6330,
+    "name": "Dad (Nightmare Zone)",
+    "version": "Hard Mode",
     "image": "Dad.png",
     "level": 201,
     "speed": 8,
@@ -23421,9 +23823,9 @@
     "weakness": null
   },
   {
-    "id": 4130,
-    "name": "Dad",
-    "version": "Normal",
+    "id": 6391,
+    "name": "Dad (Nightmare Zone)",
+    "version": "Normal Mode",
     "image": "Dad.png",
     "level": 101,
     "speed": 8,
@@ -24081,9 +24483,54 @@
     "weakness": null
   },
   {
-    "id": 6300,
+    "id": 980,
     "name": "Dagannoth mother",
-    "version": "Hard",
+    "version": "",
+    "image": "Dagannoth mother white.png",
+    "level": 100,
+    "speed": 4,
+    "style": [
+      "Melee",
+      "Ranged"
+    ],
+    "size": 3,
+    "max_hit": "9 (Melee)",
+    "skills": {
+      "atk": 78,
+      "def": 81,
+      "hp": 120,
+      "magic": 1,
+      "ranged": 50,
+      "str": 78
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 150,
+      "magic": 50,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
+      "slash": 150,
+      "stab": 150
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6300,
+    "name": "Dagannoth mother (Nightmare Zone)",
+    "version": "Hard Mode",
     "image": "Dagannoth mother white.png",
     "level": 201,
     "speed": 4,
@@ -24126,9 +24573,9 @@
     "weakness": null
   },
   {
-    "id": 980,
-    "name": "Dagannoth mother",
-    "version": "Normal",
+    "id": 6361,
+    "name": "Dagannoth mother (Nightmare Zone)",
+    "version": "Normal Mode",
     "image": "Dagannoth mother white.png",
     "level": 100,
     "speed": 4,
@@ -24438,6 +24885,182 @@
     "weakness": null
   },
   {
+    "id": 1134,
+    "name": "Damis (Nightmare Zone)",
+    "version": "First form (Hard Mode)",
+    "image": "Damis first form.png",
+    "level": 200,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "47",
+    "skills": {
+      "atk": 198,
+      "def": 90,
+      "hp": 198,
+      "magic": 1,
+      "ranged": 1,
+      "str": 198
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 80
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 60,
+      "magic": 60,
+      "heavy": 60,
+      "standard": 60,
+      "light": 60,
+      "slash": 60,
+      "stab": 60
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6346,
+    "name": "Damis (Nightmare Zone)",
+    "version": "First form (Normal Mode)",
+    "image": "Damis first form.png",
+    "level": 103,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "22",
+    "skills": {
+      "atk": 90,
+      "def": 90,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 1,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 80
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 60,
+      "magic": 60,
+      "heavy": 60,
+      "standard": 60,
+      "light": 60,
+      "slash": 60,
+      "stab": 60
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1135,
+    "name": "Damis (Nightmare Zone)",
+    "version": "Second form (Hard Mode)",
+    "image": "Damis.png",
+    "level": 272,
+    "speed": 3,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "54",
+    "skills": {
+      "atk": 320,
+      "def": 160,
+      "hp": 255,
+      "magic": 1,
+      "ranged": 1,
+      "str": 200
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 100
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 80,
+      "heavy": 120,
+      "standard": 120,
+      "light": 120,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6347,
+    "name": "Damis (Nightmare Zone)",
+    "version": "Second form (Normal Mode)",
+    "image": "Damis.png",
+    "level": 174,
+    "speed": 3,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "28",
+    "skills": {
+      "atk": 160,
+      "def": 160,
+      "hp": 200,
+      "magic": 1,
+      "ranged": 1,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 100
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 80,
+      "heavy": 120,
+      "standard": 120,
+      "light": 120,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 682,
     "name": "Damis",
     "version": "First form",
@@ -24482,50 +25105,6 @@
     "weakness": null
   },
   {
-    "id": 1134,
-    "name": "Damis",
-    "version": "First form (hard)",
-    "image": "Damis first form.png",
-    "level": 200,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "47",
-    "skills": {
-      "atk": 198,
-      "def": 90,
-      "hp": 198,
-      "magic": 1,
-      "ranged": 1,
-      "str": 198
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 80
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 60,
-      "magic": 60,
-      "heavy": 60,
-      "standard": 60,
-      "light": 60,
-      "slash": 60,
-      "stab": 60
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
     "id": 683,
     "name": "Damis",
     "version": "Second form",
@@ -24544,50 +25123,6 @@
       "magic": 1,
       "ranged": 1,
       "str": 100
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 100
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 100,
-      "magic": 80,
-      "heavy": 120,
-      "standard": 120,
-      "light": 120,
-      "slash": 100,
-      "stab": 100
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 1135,
-    "name": "Damis",
-    "version": "Second form (hard)",
-    "image": "Damis.png",
-    "level": 272,
-    "speed": 3,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "54",
-    "skills": {
-      "atk": 320,
-      "def": 160,
-      "hp": 255,
-      "magic": 1,
-      "ranged": 1,
-      "str": 200
     },
     "offensive": {
       "atk": 0,
@@ -26307,9 +26842,54 @@
     "weakness": null
   },
   {
-    "id": 6311,
+    "id": 4883,
     "name": "Dessourt",
-    "version": "Hard",
+    "version": "",
+    "image": "Dessourt.png",
+    "level": 121,
+    "speed": 3,
+    "style": [
+      "Crush",
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "19",
+    "skills": {
+      "atk": 99,
+      "def": 99,
+      "hp": 130,
+      "magic": 1,
+      "ranged": 1,
+      "str": 99
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 50
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 150,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 150,
+      "stab": 10
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6311,
+    "name": "Dessourt (Nightmare Zone)",
+    "version": "Hard Mode",
     "image": "Dessourt.png",
     "level": 217,
     "speed": 3,
@@ -26352,9 +26932,9 @@
     "weakness": null
   },
   {
-    "id": 4883,
-    "name": "Dessourt",
-    "version": "Normal",
+    "id": 6372,
+    "name": "Dessourt (Nightmare Zone)",
+    "version": "Normal Mode",
     "image": "Dessourt.png",
     "level": 121,
     "speed": 3,
@@ -26398,8 +26978,8 @@
   },
   {
     "id": 1128,
-    "name": "Dessous",
-    "version": "Hard",
+    "name": "Dessous (Nightmare Zone)",
+    "version": "Hard Mode",
     "image": "Dessous.png",
     "level": 217,
     "speed": 3,
@@ -26445,9 +27025,9 @@
     "weakness": null
   },
   {
-    "id": 3459,
-    "name": "Dessous",
-    "version": "Normal",
+    "id": 6344,
+    "name": "Dessous (Nightmare Zone)",
+    "version": "Normal Mode",
     "image": "Dessous.png",
     "level": 139,
     "speed": 3,
@@ -28149,7 +28729,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-00000022-QINU`\"'"
+      "Slash '\"`UNIQ--ref-00000037-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -30221,16 +30801,62 @@
     "weakness": null
   },
   {
-    "id": 6118,
+    "id": 817,
     "name": "Elvarg",
-    "version": "Hard",
+    "version": "",
     "image": "Elvarg.png",
+    "level": 83,
+    "speed": 4,
+    "style": [
+      "Slash",
+      "Magic",
+      "Dragonfire"
+    ],
+    "size": 4,
+    "max_hit": "8 (Slash)",
+    "skills": {
+      "atk": 70,
+      "def": 70,
+      "hp": 80,
+      "magic": 70,
+      "ranged": 1,
+      "str": 70
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 40,
+      "magic": 30,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 40,
+      "stab": 20
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6118,
+    "name": "Elvarg (Nightmare Zone)",
+    "version": "Hard Mode",
+    "image": "Elvarg (Nightmare Zone).png",
     "level": 214,
     "speed": 4,
     "style": [
+      "Slash",
       "Magic",
-      "Dragonfire",
-      "Slash"
+      "Dragonfire"
     ],
     "size": 4,
     "max_hit": "22 (Slash)",
@@ -30267,16 +30893,16 @@
     "weakness": null
   },
   {
-    "id": 817,
-    "name": "Elvarg",
-    "version": "Normal",
-    "image": "Elvarg.png",
+    "id": 6349,
+    "name": "Elvarg (Nightmare Zone)",
+    "version": "Normal Mode",
+    "image": "Elvarg (Nightmare Zone).png",
     "level": 83,
     "speed": 4,
     "style": [
+      "Slash",
       "Magic",
-      "Dragonfire",
-      "Slash"
+      "Dragonfire"
     ],
     "size": 4,
     "max_hit": "8 (Slash)",
@@ -31856,9 +32482,9 @@
   },
   {
     "id": 9247,
-    "name": "Essyllt",
-    "version": "Hard",
-    "image": "Essyllt (Song of the Elves).png",
+    "name": "Essyllt (Nightmare Zone)",
+    "version": "Hard Mode",
+    "image": "Essyllt (Nightmare Zone).png",
     "level": 395,
     "speed": 4,
     "style": [
@@ -31880,6 +32506,51 @@
       "magic": 0,
       "magic_str": 0,
       "ranged": 168,
+      "ranged_str": 28,
+      "str": 28
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 20,
+      "magic": 30,
+      "heavy": 120,
+      "standard": 120,
+      "light": 120,
+      "slash": 40,
+      "stab": 40
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 9249,
+    "name": "Essyllt (Nightmare Zone)",
+    "version": "Normal Mode",
+    "image": "Essyllt (Nightmare Zone).png",
+    "level": 236,
+    "speed": 4,
+    "style": [
+      "Stab",
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "40 (melee)",
+    "skills": {
+      "atk": 268,
+      "def": 104,
+      "hp": 320,
+      "magic": 104,
+      "ranged": 342,
+      "str": 268
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
       "ranged_str": 28,
       "str": 28
     },
@@ -33797,8 +34468,53 @@
     "weakness": null
   },
   {
-    "id": 6309,
+    "id": 4881,
     "name": "Flambeed",
+    "version": "",
+    "image": "Flambeed.png",
+    "level": 149,
+    "speed": 4,
+    "style": [
+      "Crush",
+      "Magic"
+    ],
+    "size": 5,
+    "max_hit": "25",
+    "skills": {
+      "atk": 120,
+      "def": 75,
+      "hp": 210,
+      "magic": 1,
+      "ranged": 1,
+      "str": 120
+    },
+    "offensive": {
+      "atk": 100,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 5,
+      "magic": 5,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
+      "slash": 50,
+      "stab": 50
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6309,
+    "name": "Flambeed (Nightmare Zone)",
     "version": "Hard",
     "image": "Flambeed.png",
     "level": 238,
@@ -33842,8 +34558,8 @@
     "weakness": null
   },
   {
-    "id": 4881,
-    "name": "Flambeed",
+    "id": 6370,
+    "name": "Flambeed (Nightmare Zone)",
     "version": "Normal",
     "image": "Flambeed.png",
     "level": 149,
@@ -34614,7 +35330,7 @@
     "id": 10525,
     "name": "Forgotten Soul (Soul Wars)",
     "version": "Level 76",
-    "image": "Forgotten Soul (2).png",
+    "image": "Forgotten Soul.png",
     "level": 76,
     "speed": 4,
     "style": [
@@ -36239,9 +36955,55 @@
     "weakness": null
   },
   {
-    "id": 6312,
+    "id": 4884,
     "name": "Gelatinnoth Mother",
-    "version": "Hard",
+    "version": "",
+    "image": "Gelatinnoth Mother (air).png",
+    "level": 130,
+    "speed": 4,
+    "style": [
+      "Ranged",
+      "Magic",
+      "Stab"
+    ],
+    "size": 3,
+    "max_hit": "9 (melee)",
+    "skills": {
+      "atk": 78,
+      "def": 81,
+      "hp": 240,
+      "magic": 1,
+      "ranged": 50,
+      "str": 78
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 150,
+      "magic": 50,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
+      "slash": 150,
+      "stab": 150
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6312,
+    "name": "Gelatinnoth Mother (Nightmare Zone)",
+    "version": "Hard Mode",
     "image": "Gelatinnoth Mother (air).png",
     "level": 201,
     "speed": 4,
@@ -36285,9 +37047,9 @@
     "weakness": null
   },
   {
-    "id": 4884,
-    "name": "Gelatinnoth Mother",
-    "version": "Normal",
+    "id": 6373,
+    "name": "Gelatinnoth Mother (Nightmare Zone)",
+    "version": "Normal Mode",
     "image": "Gelatinnoth Mother (air).png",
     "level": 130,
     "speed": 4,
@@ -49297,10 +50059,10 @@
     "weakness": null
   },
   {
-    "id": 12848,
+    "id": 10376,
     "name": "Hill Giant",
-    "version": "Shirtless",
-    "image": "Hill Giant (Varlamore, 1).png",
+    "version": "Scimitar and singlet",
+    "image": "Hill Giant (Giants' Plateau, 3).png",
     "level": 28,
     "speed": 6,
     "style": [
@@ -49341,10 +50103,10 @@
     "weakness": null
   },
   {
-    "id": 10376,
+    "id": 12848,
     "name": "Hill Giant",
-    "version": "Singlet",
-    "image": "Hill Giant (Giants' Plateau, 3).png",
+    "version": "Shirtless",
+    "image": "Hill Giant (Varlamore, 1).png",
     "level": 28,
     "speed": 6,
     "style": [
@@ -53085,94 +53847,6 @@
     "weakness": null
   },
   {
-    "id": 7949,
-    "name": "Ithoi the Navigator",
-    "version": "NMZ",
-    "image": "Ithoi the Navigator.png",
-    "level": 35,
-    "speed": 5,
-    "style": [
-      "Magic"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 1,
-      "def": 30,
-      "hp": 55,
-      "magic": 30,
-      "ranged": 1,
-      "str": 1
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 7948,
-    "name": "Ithoi the Navigator",
-    "version": "NMZ (hard)",
-    "image": "Ithoi the Navigator.png",
-    "level": 103,
-    "speed": 3,
-    "style": [
-      "Magic"
-    ],
-    "size": 1,
-    "max_hit": "19",
-    "skills": {
-      "atk": 1,
-      "def": 80,
-      "hp": 160,
-      "magic": 90,
-      "ranged": 1,
-      "str": 1
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
     "id": 4185,
     "name": "Jackal",
     "version": "",
@@ -55212,12 +55886,12 @@
     "version": "",
     "image": "Judge of Yama.png",
     "level": 168,
-    "speed": 0,
+    "speed": 5,
     "style": [
       "Magic"
     ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "18 (aoe)",
     "skills": {
       "atk": 200,
       "def": 150,
@@ -55300,10 +55974,57 @@
     "weakness": null
   },
   {
-    "id": 6321,
+    "id": 1443,
     "name": "Jungle Demon",
-    "version": "Hard",
+    "version": "",
     "image": "Jungle Demon.png",
+    "level": 195,
+    "speed": 6,
+    "style": [
+      "Slash",
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "32",
+    "skills": {
+      "atk": 170,
+      "def": 170,
+      "hp": 170,
+      "magic": 170,
+      "ranged": 1,
+      "str": 170
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 50
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 50,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 50,
+      "stab": 0
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6321,
+    "name": "Jungle Demon (Nightmare Zone)",
+    "version": "Hard Mode",
+    "image": "Jungle Demon (Nightmare Zone).png",
     "level": 327,
     "speed": 6,
     "style": [
@@ -55345,9 +56066,9 @@
   },
   {
     "id": 6382,
-    "name": "Jungle Demon",
-    "version": "Normal",
-    "image": "Jungle Demon.png",
+    "name": "Jungle Demon (Nightmare Zone)",
+    "version": "Normal Mode",
+    "image": "Jungle Demon (Nightmare Zone).png",
     "level": 195,
     "speed": 6,
     "style": [
@@ -55383,53 +56104,6 @@
       "stab": 0
     },
     "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 1443,
-    "name": "Jungle Demon",
-    "version": "Quest",
-    "image": "Jungle Demon.png",
-    "level": 195,
-    "speed": 6,
-    "style": [
-      "Slash",
-      "Magic"
-    ],
-    "size": 3,
-    "max_hit": "32",
-    "skills": {
-      "atk": 170,
-      "def": 170,
-      "hp": 170,
-      "magic": 170,
-      "ranged": 1,
-      "str": 170
-    },
-    "offensive": {
-      "atk": 50,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 50
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 50,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 50,
-      "stab": 0
-    },
-    "attributes": [
-      "demon"
-    ],
     "immunities": {
       "burn": null
     },
@@ -56612,9 +57286,51 @@
     "weakness": null
   },
   {
-    "id": 6310,
+    "id": 4882,
     "name": "Karamel",
-    "version": "Hard",
+    "version": "",
+    "image": "Karamel.png",
+    "level": 136,
+    "speed": 3,
+    "style": null,
+    "size": 1,
+    "max_hit": "7x2 (Magic)",
+    "skills": {
+      "atk": 1,
+      "def": 100,
+      "hp": 250,
+      "magic": 1,
+      "ranged": 100,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 150,
+      "magic": 150,
+      "heavy": 150,
+      "standard": 150,
+      "light": 150,
+      "slash": 150,
+      "stab": 150
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6310,
+    "name": "Karamel (Nightmare Zone)",
+    "version": "Hard Mode",
     "image": "Karamel.png",
     "level": 186,
     "speed": 3,
@@ -56656,9 +57372,9 @@
     "weakness": null
   },
   {
-    "id": 4882,
-    "name": "Karamel",
-    "version": "Normal",
+    "id": 6371,
+    "name": "Karamel (Nightmare Zone)",
+    "version": "Normal Mode",
     "image": "Karamel.png",
     "level": 136,
     "speed": 3,
@@ -68726,9 +69442,9 @@
   },
   {
     "id": 6318,
-    "name": "Nezikchened",
-    "version": "Hard",
-    "image": "Nezikchened.png",
+    "name": "Nezikchened (Nightmare Zone)",
+    "version": "Hard Mode",
+    "image": "Nezikchened (Nightmare Zone).png",
     "level": 295,
     "speed": 5,
     "style": [
@@ -68744,6 +69460,53 @@
       "magic": 320,
       "ranged": 320,
       "str": 336
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6379,
+    "name": "Nezikchened (Nightmare Zone)",
+    "version": "Normal Mode",
+    "image": "Nezikchened (Nightmare Zone).png",
+    "level": 187,
+    "speed": 5,
+    "style": [
+      "Slash",
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "18",
+    "skills": {
+      "atk": 165,
+      "def": 167,
+      "hp": 150,
+      "magic": 160,
+      "ranged": 160,
+      "str": 168
     },
     "offensive": {
       "atk": 0,
@@ -86881,7 +87644,7 @@
     "id": 8072,
     "name": "Skeleton (Shayzien Crypts)",
     "version": "Magic",
-    "image": "Skeleton Mage (lv 16).png",
+    "image": "Skeleton (Shayzien Crypts, magic).png",
     "level": 132,
     "speed": 5,
     "style": [
@@ -86927,7 +87690,7 @@
     "id": 8070,
     "name": "Skeleton (Shayzien Crypts)",
     "version": "Melee",
-    "image": "Skeleton (9).png",
+    "image": "Skeleton (Shayzien Crypts, melee).png",
     "level": 132,
     "speed": 5,
     "style": [
@@ -86973,7 +87736,7 @@
     "id": 8071,
     "name": "Skeleton (Shayzien Crypts)",
     "version": "Range",
-    "image": "Skeleton (3).png",
+    "image": "Skeleton (Shayzien Crypts, range).png",
     "level": 132,
     "speed": 5,
     "style": [
@@ -88295,6 +89058,52 @@
     }
   },
   {
+    "id": 5054,
+    "name": "Skeleton Hellhound",
+    "version": "",
+    "image": "Skeleton Hellhound.png",
+    "level": 97,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "12",
+    "skills": {
+      "atk": 70,
+      "def": 100,
+      "hp": 55,
+      "magic": 1,
+      "ranged": 1,
+      "str": 110
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": "Weak"
+    },
+    "weakness": null
+  },
+  {
     "id": 12107,
     "name": "Skeleton Hellhound (Calvar'ion)",
     "version": "",
@@ -88341,6 +89150,96 @@
     "weakness": null
   },
   {
+    "id": 6326,
+    "name": "Skeleton Hellhound (Nightmare Zone)",
+    "version": "Hard Mode",
+    "image": "Skeleton Hellhound (Nightmare Zone).png",
+    "level": 198,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "27",
+    "skills": {
+      "atk": 70,
+      "def": 100,
+      "hp": 55,
+      "magic": 1,
+      "ranged": 1,
+      "str": 110
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Weak"
+    },
+    "weakness": null
+  },
+  {
+    "id": 6387,
+    "name": "Skeleton Hellhound (Nightmare Zone)",
+    "version": "Normal Mode",
+    "image": "Skeleton Hellhound (Nightmare Zone).png",
+    "level": 97,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "12",
+    "skills": {
+      "atk": 70,
+      "def": 100,
+      "hp": 55,
+      "magic": 1,
+      "ranged": 1,
+      "str": 110
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": "Weak"
+    },
+    "weakness": null
+  },
+  {
     "id": 6613,
     "name": "Skeleton Hellhound (Vet'ion)",
     "version": "",
@@ -88383,142 +89282,6 @@
     ],
     "immunities": {
       "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 6326,
-    "name": "Skeleton Hellhound",
-    "version": "Hard",
-    "image": "Skeleton Hellhound.png",
-    "level": 198,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 2,
-    "max_hit": "27",
-    "skills": {
-      "atk": 168,
-      "def": 100,
-      "hp": 132,
-      "magic": 1,
-      "ranged": 1,
-      "str": 264
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": "Weak"
-    },
-    "weakness": null
-  },
-  {
-    "id": 6387,
-    "name": "Skeleton Hellhound",
-    "version": "Normal",
-    "image": "Skeleton Hellhound.png",
-    "level": 97,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 2,
-    "max_hit": "12",
-    "skills": {
-      "atk": 70,
-      "def": 100,
-      "hp": 55,
-      "magic": 1,
-      "ranged": 1,
-      "str": 110
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "demon"
-    ],
-    "immunities": {
-      "burn": "Weak"
-    },
-    "weakness": null
-  },
-  {
-    "id": 5054,
-    "name": "Skeleton Hellhound",
-    "version": "Quest",
-    "image": "Skeleton Hellhound.png",
-    "level": 97,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 2,
-    "max_hit": "12",
-    "skills": {
-      "atk": 70,
-      "def": 100,
-      "hp": 55,
-      "magic": 1,
-      "ranged": 1,
-      "str": 110
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [
-      "demon"
-    ],
-    "immunities": {
-      "burn": "Weak"
     },
     "weakness": null
   },
@@ -89055,8 +89818,106 @@
   {
     "id": 74,
     "name": "Skeleton",
-    "version": "Level 21",
-    "image": "Skeleton.png",
+    "version": "Level 21, 1",
+    "image": "Skeleton (level 21, 1).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 17,
+      "def": 17,
+      "hp": 24,
+      "magic": 1,
+      "ranged": 1,
+      "str": 17
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -5,
+      "magic": 0,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
+      "slash": 5,
+      "stab": 5
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 75,
+    "name": "Skeleton",
+    "version": "Level 21, 2",
+    "image": "Skeleton (level 21, 2).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 17,
+      "def": 17,
+      "hp": 24,
+      "magic": 1,
+      "ranged": 1,
+      "str": 17
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -5,
+      "magic": 0,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
+      "slash": 5,
+      "stab": 5
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 76,
+    "name": "Skeleton",
+    "version": "Level 21, 3",
+    "image": "Skeleton (level 21, 3).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -89104,8 +89965,155 @@
   {
     "id": 70,
     "name": "Skeleton",
-    "version": "Level 22",
-    "image": "Skeleton.png",
+    "version": "Level 22, 1",
+    "image": "Skeleton (level 22, 1).png",
+    "level": 22,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 15,
+      "def": 17,
+      "hp": 29,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -5,
+      "magic": 0,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
+      "slash": 5,
+      "stab": 5
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 71,
+    "name": "Skeleton",
+    "version": "Level 22, 2",
+    "image": "Skeleton (level 22, 2).png",
+    "level": 22,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 15,
+      "def": 17,
+      "hp": 29,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -5,
+      "magic": 0,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
+      "slash": 5,
+      "stab": 5
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 72,
+    "name": "Skeleton",
+    "version": "Level 22, 3",
+    "image": "Skeleton (level 22, 3).png",
+    "level": 22,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 15,
+      "def": 17,
+      "hp": 29,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -5,
+      "magic": 0,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
+      "slash": 5,
+      "stab": 5
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 73,
+    "name": "Skeleton",
+    "version": "Level 22, 4",
+    "image": "Skeleton (level 22, 4).png",
     "level": 22,
     "speed": 4,
     "style": [
@@ -89153,8 +90161,204 @@
   {
     "id": 77,
     "name": "Skeleton",
-    "version": "Level 25",
-    "image": "Skeleton (5).png",
+    "version": "Level 25, 1",
+    "image": "Skeleton (level 25, 1).png",
+    "level": 25,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 24
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 78,
+    "name": "Skeleton",
+    "version": "Level 25, 2",
+    "image": "Skeleton (level 25, 2).png",
+    "level": 25,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 24
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 79,
+    "name": "Skeleton",
+    "version": "Level 25, 3",
+    "image": "Skeleton (level 25, 3).png",
+    "level": 25,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 24
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 80,
+    "name": "Skeleton",
+    "version": "Level 25, 4",
+    "image": "Skeleton (level 25, 4).png",
+    "level": 25,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 17,
+      "magic": 1,
+      "ranged": 1,
+      "str": 24
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 81,
+    "name": "Skeleton",
+    "version": "Level 25, 5",
+    "image": "Skeleton (level 25, 5).png",
     "level": 25,
     "speed": 4,
     "style": [
@@ -89202,8 +90406,57 @@
   {
     "id": 82,
     "name": "Skeleton",
-    "version": "Level 45",
-    "image": "Giant skeleton (Shadow Dungeon).png",
+    "version": "Level 45, 1",
+    "image": "Skeleton (level 45, 1).png",
+    "level": 45,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "5",
+    "skills": {
+      "atk": 32,
+      "def": 36,
+      "hp": 59,
+      "magic": 1,
+      "ranged": 1,
+      "str": 35
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 14
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -2,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 11,
+      "stab": 9
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 83,
+    "name": "Skeleton",
+    "version": "Level 45, 2",
+    "image": "Skeleton (level 45, 2).png",
     "level": 45,
     "speed": 4,
     "style": [
@@ -94309,7 +95562,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000020-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-00000055-QINU`\"'",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -102777,7 +104030,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000005A-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000060-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -102822,7 +104075,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000005A-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000060-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -105052,7 +106305,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000004E-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000D-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -105096,7 +106349,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000050-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000F-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -105821,7 +107074,7 @@
     "level": 0,
     "speed": 3,
     "style": [
-      "Ranged"
+      "Ranged <br/> Typeless"
     ],
     "size": 5,
     "max_hit": "14 (Ranged)",
@@ -106177,8 +107430,54 @@
   {
     "id": 14179,
     "name": "Void Flare",
-    "version": "",
-    "image": "Void Flare.png",
+    "version": "Fire",
+    "image": "Void Flare (fire).png",
+    "level": 130,
+    "speed": 4,
+    "style": [
+      "Melee"
+    ],
+    "size": 2,
+    "max_hit": "1",
+    "skills": {
+      "atk": 1,
+      "def": 100,
+      "hp": 140,
+      "magic": 200,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14179,
+    "name": "Void Flare",
+    "version": "Shadow",
+    "image": "Void Flare (shadow).png",
     "level": 130,
     "speed": 4,
     "style": [
@@ -112020,17 +113319,65 @@
   {
     "id": 14176,
     "name": "Yama",
-    "version": "Enraged",
+    "version": "Normal",
     "image": "Yama.png",
     "level": 1238,
     "speed": 8,
     "style": [
-      "Melee",
+      "Melee (Slash)",
       "Ranged",
       "Magic"
     ],
     "size": 5,
-    "max_hit": "46 (auto-attacks) <br/> 121 (Meteor Strike) <br/> 80 (Shadow Stomp)",
+    "max_hit": "46 (auto-attacks)",
+    "skills": {
+      "atk": 320,
+      "def": 225,
+      "hp": 2500,
+      "magic": 250,
+      "ranged": 210,
+      "str": 350
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 100,
+      "magic_str": 65,
+      "ranged": 100,
+      "ranged_str": 80,
+      "str": 15
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 333,
+      "magic": 0,
+      "heavy": 333,
+      "standard": 220,
+      "light": 333,
+      "slash": 80,
+      "stab": 100
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14176,
+    "name": "Yama",
+    "version": "Phase 3",
+    "image": "Yama.png",
+    "level": 1238,
+    "speed": 7,
+    "style": [
+      "Melee (Slash)",
+      "Ranged",
+      "Magic"
+    ],
+    "size": 5,
+    "max_hit": "46 (auto-attacks)",
     "skills": {
       "atk": 320,
       "def": 225,
@@ -112056,54 +113403,6 @@
       "light": 449,
       "slash": 108,
       "stab": 135
-    },
-    "attributes": [
-      "demon"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 14176,
-    "name": "Yama",
-    "version": "Normal",
-    "image": "Yama.png",
-    "level": 1238,
-    "speed": 8,
-    "style": [
-      "Melee",
-      "Ranged",
-      "Magic"
-    ],
-    "size": 5,
-    "max_hit": "46 (auto-attacks) <br/> 121 (Meteor Strike) <br/> 80 (Shadow Stomp)",
-    "skills": {
-      "atk": 320,
-      "def": 225,
-      "hp": 2500,
-      "magic": 250,
-      "ranged": 210,
-      "str": 350
-    },
-    "offensive": {
-      "atk": 50,
-      "magic": 100,
-      "magic_str": 65,
-      "ranged": 100,
-      "ranged_str": 80,
-      "str": 15
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 333,
-      "magic": -30,
-      "heavy": 333,
-      "standard": 220,
-      "light": 333,
-      "slash": 80,
-      "stab": 100
     },
     "attributes": [
       "demon"
