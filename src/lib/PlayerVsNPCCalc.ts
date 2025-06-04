@@ -45,7 +45,7 @@ import {
   TTK_DIST_MAX_ITER_ROUNDS,
   UNDERWATER_MONSTERS,
   USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
-  VERZIK_P1_IDS,
+  VERZIK_P1_IDS, YAMA_VOID_FLARE_IDS,
   ZULRAH_IDS,
 } from '@/lib/constants';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
@@ -1285,6 +1285,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if ((this.player.style.type === 'magic' && ALWAYS_MAX_HIT_MONSTERS.magic.includes(this.monster.id))
       || (this.isUsingMeleeStyle() && ALWAYS_MAX_HIT_MONSTERS.melee.includes(this.monster.id))
       || (this.player.style.type === 'ranged' && ALWAYS_MAX_HIT_MONSTERS.ranged.includes(this.monster.id))) {
+      if (YAMA_VOID_FLARE_IDS.includes(this.monster.id) && this.player.buffs.markOfDarknessSpell && this.player.spell?.name.includes('Demonbane')) {
+        const demonbaneFactor = this.wearing('Purging staff') ? 50 : 25;
+        return new AttackDistribution([HitDistribution.single(1.0, [new Hitsplat(max + Math.trunc(Math.trunc(max * demonbaneFactor / 100) * this.demonbaneVulnerability() / 100))])]);
+      }
+
       return new AttackDistribution([HitDistribution.single(1.0, [new Hitsplat(max)])]);
     }
 
@@ -1706,7 +1711,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       );
     }
     if (this.monster.name === 'Tormented Demon') {
-      if (!this.tdUnshieldedBonusApplies() && !this.isUsingDemonbane() && !this.isUsingAbyssal()) {
+      if (this.monster.inputs.phase !== 'Unshielded' && !this.isUsingDemonbane() && !this.isUsingAbyssal()) {
         // 20% damage reduction when not using demonbane or abyssal
         // todo floor of 1?
         dist = dist.transform(multiplyTransformer(4, 5, 1));
