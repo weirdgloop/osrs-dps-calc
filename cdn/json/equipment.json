@@ -91224,7 +91224,7 @@
       "stab": 75,
       "slash": 100,
       "crush": 73,
-      "magic": -5,
+      "magic": -3,
       "ranged": 81
     },
     "isTwoHanded": false
@@ -117606,7 +117606,7 @@
     "slot": "weapon",
     "image": "Soulflame horn.png",
     "speed": 5,
-    "category": "",
+    "category": "Spiked",
     "bonuses": {
       "str": 23,
       "ranged_str": 0,
