@@ -30,6 +30,7 @@ import {
   IMMUNE_TO_MELEE_DAMAGE_NPC_IDS,
   IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS,
   IMMUNE_TO_RANGED_DAMAGE_NPC_IDS,
+  KEPHRI_OVERLORD_IDS,
   NIGHTMARE_TOTEM_IDS,
   OLM_HEAD_IDS,
   OLM_MAGE_HAND_IDS,
@@ -172,7 +173,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     const isCustomMonster = this.monster.id === -1;
 
-    if ((TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) || isCustomMonster) && this.monster.inputs.toaInvocationLevel) {
+    if (((TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) && !KEPHRI_OVERLORD_IDS.includes(this.monster.id)) || isCustomMonster) && this.monster.inputs.toaInvocationLevel) {
       defenceRoll = this.trackFactor(DetailKey.NPC_DEFENCE_ROLL_TOA, defenceRoll, [250 + this.monster.inputs.toaInvocationLevel, 250]);
     }
 
