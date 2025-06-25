@@ -429,6 +429,8 @@ export const ALWAYS_MAX_HIT_MONSTERS = {
   ranged: [
     11711, 11714, // baboon mage
     12815, // frem warband seer
+    11717, // cursed baboon
+    11715, // baboon shaman
     ...YAMA_VOID_FLARE_IDS,
   ],
   magic: [
