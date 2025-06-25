@@ -2,6 +2,7 @@ export enum MonsterAttribute {
   DEMON = 'demon',
   DRAGON = 'dragon',
   FIERY = 'fiery',
+  FLYING = 'flying',
   GOLEM = 'golem',
   KALPHITE = 'kalphite',
   LEAFY = 'leafy',
