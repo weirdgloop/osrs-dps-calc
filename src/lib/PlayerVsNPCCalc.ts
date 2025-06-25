@@ -1774,6 +1774,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       if (ZULRAH_IDS.includes(monsterId) && this.player.equipment.weapon?.category === EquipmentCategory.POLEARM) return false;
       return true;
     }
+    if (mattrs.includes(MonsterAttribute.FLYING) && this.isUsingMeleeStyle()) {
+      if (this.player.equipment.weapon?.category === EquipmentCategory.POLEARM) return false;
+      return true;
+    }
     if (IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS.includes(monsterId)
       && this.isUsingMeleeStyle()
       && this.player.equipment.weapon?.category !== EquipmentCategory.SALAMANDER) {
