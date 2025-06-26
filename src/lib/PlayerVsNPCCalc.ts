@@ -1692,7 +1692,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if ((OLM_MAGE_HAND_IDS.includes(this.monster.id) || OLM_MELEE_HAND_IDS.includes(this.monster.id)) && styleType === 'ranged') {
       dist = dist.transform(divisionTransformer(3));
     }
-   if (ICE_DEMON_IDS.includes(this.monster.id) && this.player.spell?.element !== 'fire' && !this.isUsingDemonbane()) {
+    if (ICE_DEMON_IDS.includes(this.monster.id) && this.player.spell?.element !== 'fire' && !this.isUsingDemonbane()) {
       // https://twitter.com/JagexAsh/status/1133350436554121216
       dist = dist.transform(divisionTransformer(3));
     }
