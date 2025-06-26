@@ -22,17 +22,22 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
-      - run: bun install
+      - name: Enable Corepack
+        run: corepack enable
+      - name: Use Node.js 24.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24.x'
+          cache: 'yarn'
+      - run: yarn install
       - name: Build project on tag push
         if: github.ref != 'refs/heads/main'
-        run: bun run build
+        run: yarn run build
       - name: Build project (staging)
         if: github.ref == 'refs/heads/main'
-        run: bun run build-staging
+        run: yarn run build-staging
       - name: Run tests
-        run: bun test
+        run: yarn test
       - run: mv cdn out/
       - uses: actions/upload-artifact@v4
         # We only need to upload an artifact if this is not a pull request
