@@ -46,7 +46,9 @@ import {
   TTK_DIST_MAX_ITER_ROUNDS,
   UNDERWATER_MONSTERS,
   USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
-  VERZIK_P1_IDS, YAMA_VOID_FLARE_IDS,
+  VERZIK_P1_IDS,
+  VESPULA_IDS,
+  YAMA_VOID_FLARE_IDS,
   ZULRAH_IDS,
 } from '@/lib/constants';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
@@ -1781,6 +1783,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return true;
     }
     if (mattrs.includes(MonsterAttribute.FLYING) && this.isUsingMeleeStyle()) {
+      // Vespula is immune to melee despite flying attribute.
+      if (VESPULA_IDS.includes(this.monster.id)) return true;
       if (this.player.equipment.weapon?.category === EquipmentCategory.POLEARM) return false;
       return true;
     }
