@@ -347,7 +347,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       effectiveLevel = this.trackFactor(DetailKey.DAMAGE_EFFECTIVE_LEVEL_VOID, effectiveLevel, [11, 10]);
     }
 
-    const gearBonus = this.trackAdd(DetailKey.DAMAGE_GEAR_BONUS, this.player.bonuses.str, 64);
+    let gearBonus = this.trackAdd(DetailKey.DAMAGE_GEAR_BONUS, this.player.bonuses.str, 64);
+    // If the Keris partisan of amascut is used outside ToA it has a visible strength bonus of +67, but acts as a strength bonus of +42 like the keris partisan
+    if (this.wearing('Keris partisan of amascut') && !TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)) gearBonus -= 22;
     const baseMax = this.trackMaxHitFromEffective(DetailKey.MAX_HIT_BASE, effectiveLevel, gearBonus);
     let [minHit, maxHit]: MinMax = [0, baseMax];
 
@@ -381,7 +383,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER, maxHit, [6, 5]);
     }
     if (this.isWearingKeris() && mattrs.includes(MonsterAttribute.KALPHITE)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_KERIS, maxHit, [133, 100]);
+      if (this.wearing('Keris partisan of amascut')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_KERIS, maxHit, [115, 100]);
+      } else {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_KERIS, maxHit, [133, 100]);
+      }
     }
     if (this.wearing('Barronite mace') && mattrs.includes(MonsterAttribute.GOLEM)) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_GOLEMBANE, maxHit, [23, 20]);
