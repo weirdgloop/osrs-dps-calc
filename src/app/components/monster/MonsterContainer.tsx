@@ -177,6 +177,20 @@ const MonsterContainer: React.FC = observer(() => {
             />
           </div>
         </div>,
+        <div key="max-hit">
+          <h4 className="font-bold font-serif">
+            Max hit
+          </h4>
+          <div className="mt-2">
+            <NumberInput
+              value={monster.maxHit ? monster.maxHit : 0}
+              min={0}
+              max={200}
+              onChange={(h) => store.updateMonster({ maxHit: h })}
+              required
+            />
+          </div>
+        </div>,
         <div key="monster-size">
           <h4 className="font-bold font-serif">
             Size (tiles)
