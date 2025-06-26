@@ -52681,7 +52681,7 @@
   },
   {
     "name": "Echo venator bow",
-    "id": 30434,
+    "id": 30436,
     "version": "Uncharged",
     "slot": "weapon",
     "image": "Echo venator bow (uncharged).png",
@@ -65665,7 +65665,7 @@
       "slash": 2,
       "crush": 2,
       "magic": -2,
-      "ranged": 8
+      "ranged": 12
     },
     "isTwoHanded": false
   },
@@ -65695,7 +65695,7 @@
       "slash": 4,
       "crush": 4,
       "magic": -4,
-      "ranged": 16
+      "ranged": 24
     },
     "isTwoHanded": false
   },
@@ -65725,7 +65725,7 @@
       "slash": 4,
       "crush": 4,
       "magic": -4,
-      "ranged": 16
+      "ranged": 24
     },
     "isTwoHanded": false
   },
@@ -65755,7 +65755,7 @@
       "slash": 4,
       "crush": 4,
       "magic": -4,
-      "ranged": 16
+      "ranged": 24
     },
     "isTwoHanded": false
   },
@@ -79395,6 +79395,36 @@
     },
     "offensive": {
       "stab": 58,
+      "slash": -2,
+      "crush": 57,
+      "magic": 2,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Keris partisan of amascut",
+    "id": 30891,
+    "version": "",
+    "slot": "weapon",
+    "image": "Keris partisan of amascut.png",
+    "speed": 4,
+    "category": "Partisan",
+    "bonuses": {
+      "str": 67,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 3
+    },
+    "offensive": {
+      "stab": 108,
       "slash": -2,
       "crush": 57,
       "magic": 2,
@@ -122546,6 +122576,36 @@
       "crush": 15,
       "magic": -4,
       "ranged": 16
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Steel ring",
+    "id": 30895,
+    "version": "",
+    "slot": "ring",
+    "image": "Steel ring.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 24,
+      "slash": 24,
+      "crush": 24,
+      "magic": 0,
+      "ranged": 0
     },
     "isTwoHanded": false
   },
