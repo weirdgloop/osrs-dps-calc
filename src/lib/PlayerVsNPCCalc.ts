@@ -526,6 +526,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const cap = mattrs.includes(MonsterAttribute.XERICIAN) ? 350 : 250;
       const tbowMagic = Math.min(cap, Math.max(this.monster.skills.magic, this.monster.offensive.magic));
       attackRoll = PlayerVsNPCCalc.tbowScaling(attackRoll, tbowMagic, true);
+      if (P2_WARDEN_IDS.includes(this.monster.id)) {
+        // Game update on 2023-06-21 caused this bonus to be applied twice at P2 Wardens
+        attackRoll = PlayerVsNPCCalc.tbowScaling(attackRoll, tbowMagic, true);
+      }
     }
     if (this.isRevWeaponBuffApplicable()) {
       attackRoll = Math.trunc(attackRoll * 3 / 2);
