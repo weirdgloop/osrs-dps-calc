@@ -338,6 +338,11 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
     totals.offensive.magic *= factor;
   }
 
+  if (playerEquipment.weapon?.name === 'Keris partisan of amascut' && !TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id)) {
+    totals.bonuses.str -= 22;
+    totals.offensive.stab -= 50;
+  }
+
   if (playerEquipment.weapon?.name === "Dinh's bulwark" || playerEquipment.weapon?.name === "Dinh's blazing bulwark") {
     const defensives = totals.defensive;
     const defenceSum = defensives.stab + defensives.slash + defensives.crush + defensives.ranged;
