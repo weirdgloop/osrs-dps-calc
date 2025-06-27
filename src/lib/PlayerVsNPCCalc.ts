@@ -209,8 +209,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const gearBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_GEAR_BONUS, style.type ? this.player.offensive[style.type] : 0, 64);
     const baseRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_ROLL_BASE, effectiveLevel, [gearBonus, 1]);
     let attackRoll = baseRoll;
-    // If the Keris partisan of amascut is used outside ToA it has a visible stab bonus of +108, but acts as a stab bonus of +58 like the keris partisan
-    if (this.wearing('Keris partisan of amascut') && !TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) && this.player.style.type === 'stab') attackRoll -= 50;
     // Specific bonuses that are applied from equipment
     const mattrs = this.monster.attributes;
     const { buffs } = this.player;
@@ -351,9 +349,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       effectiveLevel = this.trackFactor(DetailKey.DAMAGE_EFFECTIVE_LEVEL_VOID, effectiveLevel, [11, 10]);
     }
 
-    let gearBonus = this.trackAdd(DetailKey.DAMAGE_GEAR_BONUS, this.player.bonuses.str, 64);
-    // If the Keris partisan of amascut is used outside ToA it has a visible strength bonus of +67, but acts as a strength bonus of +42 like the keris partisan
-    if (this.wearing('Keris partisan of amascut') && !TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)) gearBonus -= 22;
+    const gearBonus = this.trackAdd(DetailKey.DAMAGE_GEAR_BONUS, this.player.bonuses.str, 64);
     const baseMax = this.trackMaxHitFromEffective(DetailKey.MAX_HIT_BASE, effectiveLevel, gearBonus);
     let [minHit, maxHit]: MinMax = [0, baseMax];
 
