@@ -250,9 +250,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       // https://twitter.com/JagexAsh/status/1704107285381787952
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_KERIS, attackRoll, [133, 100]);
     }
-    if (this.wearing('Keris partisan of amascut') && mattrs.includes(MonsterAttribute.KALPHITE) && TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)) {
-      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_KERIS, attackRoll, [115, 100]);
-    }
     if (this.wearing('Keris partisan of the sun')
       && TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)
       && this.monster.inputs.monsterCurrentHp < Math.trunc(this.monster.skills.hp / 4)) {
