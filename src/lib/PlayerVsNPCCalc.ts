@@ -26,6 +26,7 @@ import {
   GUARDIAN_IDS,
   HUEYCOATL_PHASE_IDS,
   HUEYCOATL_TAIL_IDS,
+  ICE_DEMON_IDS,
   IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS,
   IMMUNE_TO_MELEE_DAMAGE_NPC_IDS,
   IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS,
@@ -46,7 +47,9 @@ import {
   TTK_DIST_MAX_ITER_ROUNDS,
   UNDERWATER_MONSTERS,
   USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
-  VERZIK_P1_IDS, YAMA_VOID_FLARE_IDS,
+  VERZIK_P1_IDS,
+  VESPULA_IDS,
+  YAMA_VOID_FLARE_IDS,
   ZULRAH_IDS,
 } from '@/lib/constants';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
@@ -206,7 +209,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const gearBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_GEAR_BONUS, style.type ? this.player.offensive[style.type] : 0, 64);
     const baseRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_ROLL_BASE, effectiveLevel, [gearBonus, 1]);
     let attackRoll = baseRoll;
-
     // Specific bonuses that are applied from equipment
     const mattrs = this.monster.attributes;
     const { buffs } = this.player;
@@ -247,9 +249,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing('Keris partisan of breaching') && mattrs.includes(MonsterAttribute.KALPHITE)) {
       // https://twitter.com/JagexAsh/status/1704107285381787952
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_KERIS, attackRoll, [133, 100]);
-    }
-    if (this.wearing('Keris partisan of amascut') && mattrs.includes(MonsterAttribute.KALPHITE) && TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)) {
-      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_KERIS, attackRoll, [115, 100]);
     }
     if (this.wearing('Keris partisan of the sun')
       && TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)
@@ -347,9 +346,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       effectiveLevel = this.trackFactor(DetailKey.DAMAGE_EFFECTIVE_LEVEL_VOID, effectiveLevel, [11, 10]);
     }
 
-    let gearBonus = this.trackAdd(DetailKey.DAMAGE_GEAR_BONUS, this.player.bonuses.str, 64);
-    // If the Keris partisan of amascut is used outside ToA it has a visible strength bonus of +67, but acts as a strength bonus of +42 like the keris partisan
-    if (this.wearing('Keris partisan of amascut') && !TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)) gearBonus -= 22;
+    const gearBonus = this.trackAdd(DetailKey.DAMAGE_GEAR_BONUS, this.player.bonuses.str, 64);
     const baseMax = this.trackMaxHitFromEffective(DetailKey.MAX_HIT_BASE, effectiveLevel, gearBonus);
     let [minHit, maxHit]: MinMax = [0, baseMax];
 
@@ -1694,7 +1691,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if ((OLM_MAGE_HAND_IDS.includes(this.monster.id) || OLM_MELEE_HAND_IDS.includes(this.monster.id)) && styleType === 'ranged') {
       dist = dist.transform(divisionTransformer(3));
     }
-    if (this.monster.name === 'Ice demon' && this.player.spell?.element !== 'fire') {
+    if (ICE_DEMON_IDS.includes(this.monster.id) && this.player.spell?.element !== 'fire' && !this.isUsingDemonbane()) {
       // https://twitter.com/JagexAsh/status/1133350436554121216
       dist = dist.transform(divisionTransformer(3));
     }
@@ -1786,6 +1783,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return true;
     }
     if (mattrs.includes(MonsterAttribute.FLYING) && this.isUsingMeleeStyle()) {
+      // Vespula is immune to melee despite flying attribute.
+      if (VESPULA_IDS.includes(this.monster.id)) return true;
       if (this.player.equipment.weapon?.category === EquipmentCategory.POLEARM) return false;
       return true;
     }
