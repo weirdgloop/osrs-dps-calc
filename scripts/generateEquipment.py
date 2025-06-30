@@ -176,6 +176,9 @@ def main():
         if equipment['name'] in ITEMS_TO_SKIP:
             continue
 
+        if "Keris partisan of amascut" in equipment['name'] and "Outside ToA" in k:
+            continue
+
         # Append the current equipment item to the calc's equipment list
         data.append(equipment)
 

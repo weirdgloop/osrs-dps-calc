@@ -315,7 +315,6 @@ export const IMMUNE_TO_MELEE_DAMAGE_NPC_IDS = [
   7706, // zuk
   7708, // Jal-MejJak
   12214, 12215, 12219, // leviathan
-  7852, 7853, 7884, 7885, // dawn
   ...ZULRAH_IDS,
 ];
 
@@ -429,6 +428,8 @@ export const ALWAYS_MAX_HIT_MONSTERS = {
   ranged: [
     11711, 11714, // baboon mage
     12815, // frem warband seer
+    11717, // cursed baboon
+    11715, // baboon shaman
     ...YAMA_VOID_FLARE_IDS,
   ],
   magic: [

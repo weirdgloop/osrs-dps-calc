@@ -292,7 +292,7 @@ const equipmentAliases = {
   6528: [23235], // Tzhaar-ket-om
   3842: [26498], // Unholy book
   27610: [30434], // Venator bow#Charged
-  27612: [30434], // Venator bow#Uncharged
+  27612: [30436], // Venator bow#Uncharged
   4757: [4992, 4988, 4991, 4990, 4989], // Verac's brassard#Undamaged
   4755: [4986, 4982, 4985, 4984, 4983], // Verac's flail#Undamaged
   4753: [4980, 4976, 4979, 4978, 4977], // Verac's helm#Undamaged

@@ -26,10 +26,12 @@ import {
   GUARDIAN_IDS,
   HUEYCOATL_PHASE_IDS,
   HUEYCOATL_TAIL_IDS,
+  ICE_DEMON_IDS,
   IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS,
   IMMUNE_TO_MELEE_DAMAGE_NPC_IDS,
   IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS,
   IMMUNE_TO_RANGED_DAMAGE_NPC_IDS,
+  KEPHRI_OVERLORD_IDS,
   NIGHTMARE_TOTEM_IDS,
   OLM_HEAD_IDS,
   OLM_MAGE_HAND_IDS,
@@ -45,7 +47,9 @@ import {
   TTK_DIST_MAX_ITER_ROUNDS,
   UNDERWATER_MONSTERS,
   USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
-  VERZIK_P1_IDS, YAMA_VOID_FLARE_IDS,
+  VERZIK_P1_IDS,
+  VESPULA_IDS,
+  YAMA_VOID_FLARE_IDS,
   ZULRAH_IDS,
 } from '@/lib/constants';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
@@ -172,7 +176,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     const isCustomMonster = this.monster.id === -1;
 
-    if ((TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) || isCustomMonster) && this.monster.inputs.toaInvocationLevel) {
+    if (((TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) && !KEPHRI_OVERLORD_IDS.includes(this.monster.id)) || isCustomMonster) && this.monster.inputs.toaInvocationLevel) {
       defenceRoll = this.trackFactor(DetailKey.NPC_DEFENCE_ROLL_TOA, defenceRoll, [250 + this.monster.inputs.toaInvocationLevel, 250]);
     }
 
@@ -205,7 +209,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const gearBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_GEAR_BONUS, style.type ? this.player.offensive[style.type] : 0, 64);
     const baseRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_ROLL_BASE, effectiveLevel, [gearBonus, 1]);
     let attackRoll = baseRoll;
-
     // Specific bonuses that are applied from equipment
     const mattrs = this.monster.attributes;
     const { buffs } = this.player;
@@ -240,7 +243,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       if (this.wearing('Dragon hunter lance')) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DRAGONHUNTER, attackRoll, [6, 5]);
       } else if (this.wearing('Dragon hunter wand')) {
-        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DRAGONHUNTER, attackRoll, [3, 2]);
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DRAGONHUNTER, attackRoll, [7, 4]);
       }
     }
     if (this.wearing('Keris partisan of breaching') && mattrs.includes(MonsterAttribute.KALPHITE)) {
@@ -372,12 +375,19 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const obsidianBonus = this.trackFactor(DetailKey.MAX_HIT_OBSIDIAN, baseMax, [1, 10]);
       maxHit = this.trackAdd(DetailKey.MAX_HIT_OBSIDIAN, maxHit, obsidianBonus);
     }
-    if (this.wearing(['Dragon hunter lance', 'Dragon hunter wand']) && mattrs.includes(MonsterAttribute.DRAGON)) {
-      // still applies to dhw when wand bashing
+    if (this.wearing('Dragon hunter lance') && mattrs.includes(MonsterAttribute.DRAGON)) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER, maxHit, [6, 5]);
     }
+    if (this.wearing('Dragon hunter wand') && mattrs.includes(MonsterAttribute.DRAGON)) {
+      // still applies to dhw when wand bashing
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER, maxHit, [7, 5]);
+    }
     if (this.isWearingKeris() && mattrs.includes(MonsterAttribute.KALPHITE)) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_KERIS, maxHit, [133, 100]);
+      if (this.wearing('Keris partisan of amascut')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_KERIS, maxHit, [115, 100]);
+      } else {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_KERIS, maxHit, [133, 100]);
+      }
     }
     if (this.wearing('Barronite mace') && mattrs.includes(MonsterAttribute.GOLEM)) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_GOLEMBANE, maxHit, [23, 20]);
@@ -804,7 +814,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else if (this.wearing('Dragon hunter lance')) {
         attackRoll = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER, attackRoll, [6, 5]);
       } else if (this.wearing('Dragon hunter wand')) {
-        attackRoll = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER, attackRoll, [3, 2]);
+        attackRoll = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER, attackRoll, [7, 4]);
       }
     }
 
@@ -960,8 +970,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (mattrs.includes(MonsterAttribute.DRAGON)) {
       // this still applies to dhl and dhcb when autocasting
-      if (this.wearing(['Dragon hunter wand', 'Dragon hunter lance'])) {
+      if (this.wearing('Dragon hunter lance')) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER, maxHit, [6, 5]);
+      } else if (this.wearing('Dragon hunter wand')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER, maxHit, [7, 5]);
       } else if (this.wearing('Dragon hunter crossbow')) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER, maxHit, [5, 4]);
       }
@@ -1683,7 +1695,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if ((OLM_MAGE_HAND_IDS.includes(this.monster.id) || OLM_MELEE_HAND_IDS.includes(this.monster.id)) && styleType === 'ranged') {
       dist = dist.transform(divisionTransformer(3));
     }
-    if (this.monster.name === 'Ice demon' && this.player.spell?.element !== 'fire') {
+    if (ICE_DEMON_IDS.includes(this.monster.id) && this.player.spell?.element !== 'fire' && !this.isUsingDemonbane()) {
       // https://twitter.com/JagexAsh/status/1133350436554121216
       dist = dist.transform(divisionTransformer(3));
     }
@@ -1772,6 +1784,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     if (IMMUNE_TO_MELEE_DAMAGE_NPC_IDS.includes(monsterId) && this.isUsingMeleeStyle()) {
       if (ZULRAH_IDS.includes(monsterId) && this.player.equipment.weapon?.category === EquipmentCategory.POLEARM) return false;
+      return true;
+    }
+    if (mattrs.includes(MonsterAttribute.FLYING) && this.isUsingMeleeStyle()) {
+      // Vespula is immune to melee despite flying attribute.
+      if (VESPULA_IDS.includes(this.monster.id)) return true;
+      if (this.player.equipment.weapon?.category === EquipmentCategory.POLEARM) return false;
       return true;
     }
     if (IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS.includes(monsterId)
