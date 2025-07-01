@@ -3,20 +3,20 @@ import {
 } from '@/lib/HitDist';
 import { sum } from 'd3-array';
 
-const generateTotals = (accRoll: number, totalRolls: number, acc: number, max: number, highOffset: number): [chance: number, low: number, high: number] => {
+const generateTotals = (accRoll: number, totalRolls: number, acc: number, max: number, highOffset: number, soulflameHornBuff: boolean): [chance: number, low: number, high: number] => {
   const low = Math.trunc(max * (totalRolls - accRoll) / 4);
   const high = max + low + highOffset;
   const chancePreviousRollsFail = (1 - acc) ** accRoll;
-  const chanceThisRollPasses = chancePreviousRollsFail * acc;
+  const chanceThisRollPasses = (soulflameHornBuff && accRoll === 1) ? chancePreviousRollsFail : chancePreviousRollsFail * acc;
   const chancePerDmg = chanceThisRollPasses / (high - low + 1);
 
   return [chancePerDmg, low, high];
 };
 
-export const dClawDist = (acc: number, max: number): AttackDistribution => {
+export const dClawDist = (acc: number, max: number, soulflameHornBuff: boolean): AttackDistribution => {
   const dist = new HitDistribution([]);
   for (let accRoll = 0; accRoll < 4; accRoll++) {
-    const [chancePerDmg, low, high] = generateTotals(accRoll, 4, acc, max, -1);
+    const [chancePerDmg, low, high] = generateTotals(accRoll, 4, acc, max, -1, soulflameHornBuff);
     for (let dmg = low; dmg <= high; dmg++) {
       switch (accRoll) {
         case 0:
@@ -56,6 +56,9 @@ export const dClawDist = (acc: number, max: number): AttackDistribution => {
           break;
       }
     }
+    if (accRoll === 1 && soulflameHornBuff) {
+      return new AttackDistribution([dist]);
+    }
   }
 
   const chanceAllFail = (1 - acc) ** 4;
@@ -74,10 +77,10 @@ export const dClawDist = (acc: number, max: number): AttackDistribution => {
   return new AttackDistribution([dist]);
 };
 
-export const burningClawSpec = (acc: number, max: number): AttackDistribution => {
+export const burningClawSpec = (acc: number, max: number, soulflameHornBuff: boolean): AttackDistribution => {
   const dist = new HitDistribution([]);
   for (let accRoll = 0; accRoll < 3; accRoll++) {
-    const [chancePerDmg, low, high] = generateTotals(accRoll, 3, acc, max, 0);
+    const [chancePerDmg, low, high] = generateTotals(accRoll, 3, acc, max, 0, soulflameHornBuff);
     for (let dmg = low; dmg <= high; dmg++) {
       switch (accRoll) {
         case 0:
@@ -104,6 +107,9 @@ export const burningClawSpec = (acc: number, max: number): AttackDistribution =>
           ]));
           break;
       }
+    }
+    if (accRoll === 1 && soulflameHornBuff) {
+      return new AttackDistribution([dist]);
     }
   }
 
@@ -155,14 +161,18 @@ export const BURN_EXPECTED = [0, 1, 2].map((accRoll) => sum(BURN_MATRIX, (row) =
   return chanceOfRow * damage;
 }));
 
-export const burningClawDoT = (acc: number): number => {
+export const burningClawDoT = (acc: number, soulflameHornBuff: boolean): number => {
   // 10 damage burn x3 hitsplats, 15/30/45% chance per splat dependent on which roll hits
   let accumulator = 0;
 
   for (let accRoll = 0; accRoll < 3; accRoll++) {
     const prevRollsFail = (1 - acc) ** accRoll;
-    const thisRollHits = prevRollsFail * acc;
 
+    if (soulflameHornBuff && accRoll === 1) {
+      return accumulator + prevRollsFail * BURN_EXPECTED[accRoll];
+    }
+
+    const thisRollHits = prevRollsFail * acc;
     accumulator += thisRollHits * BURN_EXPECTED[accRoll];
   }
   return accumulator;
