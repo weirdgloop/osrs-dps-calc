@@ -1729,8 +1729,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         dist = dist.transform(multiplyTransformer(4, 5, 1));
       }
     }
-    if (mattrs.includes(MonsterAttribute.VAMPYRE_2) && !this.wearingVampyrebane(MonsterAttribute.VAMPYRE_2) && this.wearing("Efaritay's aid")) {
-      dist = dist.transform(divisionTransformer(2));
+    if (mattrs.includes(MonsterAttribute.VAMPYRE_2)) {
+      if (!this.wearingVampyrebane(MonsterAttribute.VAMPYRE_2) && this.wearing("Efaritay's aid")) {
+        dist = dist.transform(divisionTransformer(2));
+      } else if (this.isWearingSilverWeapon()) {
+        dist = dist.transform(flatLimitTransformer(10));
+      }
     }
     if (HUEYCOATL_TAIL_IDS.includes(this.monster.id)) {
       const crush = styleType === 'crush'
@@ -1800,7 +1804,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (mattrs.includes(MonsterAttribute.VAMPYRE_3) && !this.wearingVampyrebane(MonsterAttribute.VAMPYRE_3)) {
       return true;
     }
-    if (mattrs.includes(MonsterAttribute.VAMPYRE_2) && !this.wearingVampyrebane(MonsterAttribute.VAMPYRE_2) && !this.wearing("Efaritay's aid")) {
+    if (mattrs.includes(MonsterAttribute.VAMPYRE_2) && !this.wearingVampyrebane(MonsterAttribute.VAMPYRE_2) && !this.wearing("Efaritay's aid") && !this.isWearingSilverWeapon()) {
       return true;
     }
     if (GUARDIAN_IDS.includes(monsterId) && (!this.isUsingMeleeStyle() || this.player.equipment.weapon?.category !== EquipmentCategory.PICKAXE)) {
