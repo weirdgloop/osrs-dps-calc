@@ -122603,7 +122603,7 @@
     "defensive": {
       "stab": 24,
       "slash": 24,
-      "crush": 2,
+      "crush": 24,
       "magic": 0,
       "ranged": 0
     },
