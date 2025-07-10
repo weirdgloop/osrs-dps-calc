@@ -4173,7 +4173,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000085-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000054-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -30027,7 +30027,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
   },
   {
     "id": 1558,
@@ -31377,7 +31380,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 30
+    }
   },
   {
     "id": 6118,
@@ -36220,7 +36226,7 @@
       "Slash"
     ],
     "size": 3,
-    "max_hit": "max HP minus 1 (special)",
+    "max_hit": "12+12 (standard)",
     "skills": {
       "atk": 242,
       "def": 102,
@@ -57907,7 +57913,7 @@
       "crush": 5,
       "magic": 50,
       "heavy": 50,
-      "standard": 50,
+      "standard": 30,
       "light": 50,
       "slash": 25,
       "stab": 25
@@ -57956,7 +57962,7 @@
       "crush": 5,
       "magic": 50,
       "heavy": 50,
-      "standard": 50,
+      "standard": 30,
       "light": 50,
       "slash": 25,
       "stab": 25
@@ -58005,7 +58011,7 @@
       "crush": 5,
       "magic": 50,
       "heavy": 50,
-      "standard": 50,
+      "standard": 30,
       "light": 50,
       "slash": 25,
       "stab": 25
@@ -58156,7 +58162,7 @@
       "crush": 5,
       "magic": 50,
       "heavy": 50,
-      "standard": 50,
+      "standard": 30,
       "light": 50,
       "slash": 25,
       "stab": 25
@@ -58205,7 +58211,7 @@
       "crush": 5,
       "magic": 50,
       "heavy": 50,
-      "standard": 50,
+      "standard": 30,
       "light": 50,
       "slash": 25,
       "stab": 25
@@ -61426,7 +61432,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 494,
@@ -62011,7 +62020,7 @@
       "flat_armour": 0,
       "crush": 90,
       "magic": 80,
-      "heavy": 65,
+      "heavy": 20,
       "standard": 70,
       "light": 70,
       "slash": 90,
@@ -63428,7 +63437,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 25
+    }
   },
   {
     "id": 11584,
@@ -63521,7 +63533,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 40
+    }
   },
   {
     "id": 800,
@@ -63567,7 +63582,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 40
+    }
   },
   {
     "id": 796,
@@ -63613,7 +63631,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 40
+    }
   },
   {
     "id": 801,
@@ -63659,7 +63680,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 40
+    }
   },
   {
     "id": 7792,
@@ -63695,7 +63719,7 @@
       "flat_armour": 0,
       "crush": 70,
       "magic": 140,
-      "heavy": 120,
+      "heavy": 70,
       "standard": 120,
       "light": 120,
       "slash": 70,
@@ -63707,7 +63731,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 25
+    }
   },
   {
     "id": 2921,
@@ -66183,7 +66210,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 10694,
@@ -66227,7 +66257,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 12812,
@@ -67309,7 +67342,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 5283,
@@ -67355,7 +67391,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 5281,
@@ -67401,7 +67440,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 9287,
@@ -68625,7 +68667,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 4821,
@@ -68669,7 +68714,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 513,
@@ -68889,7 +68937,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 725,
@@ -68933,7 +68984,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 721,
@@ -68977,7 +69031,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 726,
@@ -69021,7 +69078,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 722,
@@ -69065,7 +69125,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 727,
@@ -69109,7 +69172,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 723,
@@ -69153,7 +69219,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 728,
@@ -69197,7 +69266,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 949,
@@ -73321,7 +73393,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 7989,
@@ -73365,7 +73440,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 7990,
@@ -73409,7 +73487,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 5259,
@@ -93344,7 +93425,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 30
+    }
   },
   {
     "id": 11270,
@@ -96442,8 +96526,8 @@
       "flat_armour": 0,
       "crush": 70,
       "magic": 140,
-      "heavy": 70,
-      "standard": 120,
+      "heavy": 120,
+      "standard": 70,
       "light": 120,
       "slash": 70,
       "stab": 50
@@ -96456,7 +96540,7 @@
     },
     "weakness": {
       "element": "air",
-      "severity": 35
+      "severity": 25
     }
   },
   {
@@ -98170,7 +98254,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 788,
@@ -98215,7 +98302,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 789,
@@ -98260,7 +98350,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 790,
@@ -98305,7 +98398,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 791,
@@ -98350,7 +98446,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 792,
@@ -98395,7 +98494,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 793,
@@ -98440,7 +98542,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 13482,
@@ -98916,8 +99021,8 @@
       "flat_armour": 0,
       "crush": 70,
       "magic": 140,
-      "heavy": 70,
-      "standard": 120,
+      "heavy": 120,
+      "standard": 70,
       "light": 120,
       "slash": 70,
       "stab": 50
@@ -100066,7 +100171,7 @@
     "version": "Body",
     "image": "Hueycoatl body.png",
     "level": 642,
-    "speed": 0,
+    "speed": -1,
     "style": [
       "None"
     ],
@@ -106211,7 +106316,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000002C-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000051-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -106256,7 +106361,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-0000002C-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000051-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -106566,7 +106671,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 5656,
@@ -106612,7 +106720,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 5665,
@@ -106658,7 +106769,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 5673,
@@ -106704,7 +106818,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 5681,
@@ -106750,7 +106867,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 5689,
@@ -106763,7 +106883,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "4",
     "skills": {
       "atk": 133,
       "def": 15,
@@ -106796,7 +106916,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 5697,
@@ -106842,7 +106965,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 5705,
@@ -106855,7 +106981,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "4",
     "skills": {
       "atk": 147,
       "def": 17,
@@ -106888,7 +107014,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 5713,
@@ -106901,7 +107030,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "4",
     "skills": {
       "atk": 163,
       "def": 18,
@@ -106934,7 +107063,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 10591,
@@ -106978,7 +107110,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 10592,
@@ -107022,7 +107157,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 2993,
@@ -107166,7 +107304,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 5342,
@@ -107212,7 +107353,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 5346,
@@ -107258,7 +107402,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 5349,
@@ -107304,7 +107451,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 3957,
@@ -108504,7 +108654,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000013-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000006-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -108548,7 +108698,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000015-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000008-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -108948,7 +109098,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 10847,
@@ -109084,7 +109237,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 8369,
@@ -109220,7 +109376,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 7538,
@@ -110092,7 +110251,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 20
+    }
   },
   {
     "id": 1267,
@@ -110136,7 +110298,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 20
+    }
   },
   {
     "id": 9756,
@@ -110866,7 +111031,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 30
+    }
   },
   {
     "id": 5939,
@@ -110910,7 +111078,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 30
+    }
   },
   {
     "id": 7277,
@@ -110954,7 +111125,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 30
+    }
   },
   {
     "id": 12499,
@@ -111052,12 +111226,14 @@
     "version": "",
     "image": "Warped Tortoise.png",
     "level": 121,
-    "speed": 0,
-    "style": null,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
     "size": 3,
     "max_hit": "12",
     "skills": {
-      "atk": 0,
+      "atk": 78,
       "def": 78,
       "hp": 200,
       "magic": 50,
@@ -111076,7 +111252,7 @@
       "flat_armour": 0,
       "crush": 0,
       "magic": 0,
-      "heavy": 60,
+      "heavy": 20,
       "standard": 60,
       "light": 60,
       "slash": 50,
@@ -115560,7 +115736,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 50
+    }
   },
   {
     "id": 10772,
@@ -115605,7 +115784,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 50
+    }
   },
   {
     "id": 8340,
@@ -115650,7 +115832,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 50
+    }
   },
   {
     "id": 2628,
@@ -122688,7 +122873,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 8063,
@@ -122734,7 +122922,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 2043,
