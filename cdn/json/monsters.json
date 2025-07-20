@@ -4173,7 +4173,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000054-QINU`\"' Magic"
+      "'\"`UNIQ--ref-000000A1-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -5168,7 +5168,7 @@
     "name": "Armoured zombie (Zemouregal's Fort)",
     "version": "Ranged, 1",
     "image": "Armoured zombie (Zemouregal's Fort, 6).png",
-    "level": 109,
+    "level": 105,
     "speed": 4,
     "style": [
       "Ranged"
@@ -5178,7 +5178,7 @@
     "skills": {
       "atk": 106,
       "def": 68,
-      "hp": 110,
+      "hp": 95,
       "magic": 1,
       "ranged": 94,
       "str": 94
@@ -5217,7 +5217,7 @@
     "name": "Armoured zombie (Zemouregal's Fort)",
     "version": "Ranged, 2",
     "image": "Armoured zombie (Zemouregal's Fort, 7).png",
-    "level": 109,
+    "level": 105,
     "speed": 4,
     "style": [
       "Ranged"
@@ -5227,7 +5227,7 @@
     "skills": {
       "atk": 106,
       "def": 68,
-      "hp": 110,
+      "hp": 95,
       "magic": 1,
       "ranged": 94,
       "str": 94
@@ -5266,7 +5266,7 @@
     "name": "Armoured zombie (Zemouregal's Fort)",
     "version": "Ranged, 3",
     "image": "Armoured zombie (Zemouregal's Fort, 8).png",
-    "level": 109,
+    "level": 105,
     "speed": 4,
     "style": [
       "Ranged"
@@ -5276,7 +5276,7 @@
     "skills": {
       "atk": 106,
       "def": 68,
-      "hp": 110,
+      "hp": 95,
       "magic": 1,
       "ranged": 94,
       "str": 94
@@ -5315,7 +5315,7 @@
     "name": "Armoured zombie (Zemouregal's Fort)",
     "version": "Ranged, 4",
     "image": "Armoured zombie (Zemouregal's Fort, 9).png",
-    "level": 109,
+    "level": 105,
     "speed": 4,
     "style": [
       "Ranged"
@@ -5325,7 +5325,7 @@
     "skills": {
       "atk": 106,
       "def": 68,
-      "hp": 110,
+      "hp": 95,
       "magic": 1,
       "ranged": 94,
       "str": 94
@@ -5364,7 +5364,7 @@
     "name": "Armoured zombie (Zemouregal's Fort)",
     "version": "Ranged, 5",
     "image": "Armoured zombie (Zemouregal's Fort, 10).png",
-    "level": 109,
+    "level": 105,
     "speed": 4,
     "style": [
       "Ranged"
@@ -5374,7 +5374,7 @@
     "skills": {
       "atk": 106,
       "def": 68,
-      "hp": 110,
+      "hp": 95,
       "magic": 1,
       "ranged": 94,
       "str": 94
@@ -7243,7 +7243,7 @@
       "Ranged"
     ],
     "size": 1,
-    "max_hit": "1",
+    "max_hit": "1?",
     "skills": {
       "atk": 0,
       "def": 50,
@@ -11741,8 +11741,140 @@
   {
     "id": 1409,
     "name": "Black Guard",
-    "version": "Level 25",
+    "version": "Level 25, 1",
     "image": "Black Guard (level 25, 1).png",
+    "level": 25,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 20,
+      "def": 20,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 1,
+      "str": 20
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 4,
+      "magic": 2,
+      "heavy": 3,
+      "standard": 3,
+      "light": 3,
+      "slash": 4,
+      "stab": 3
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1410,
+    "name": "Black Guard",
+    "version": "Level 25, 2",
+    "image": "Black Guard (level 25, 2).png",
+    "level": 25,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 20,
+      "def": 20,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 1,
+      "str": 20
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 4,
+      "magic": 2,
+      "heavy": 3,
+      "standard": 3,
+      "light": 3,
+      "slash": 4,
+      "stab": 3
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1411,
+    "name": "Black Guard",
+    "version": "Level 25, 3",
+    "image": "Black Guard (level 25, 3).png",
+    "level": 25,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 20,
+      "def": 20,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 1,
+      "str": 20
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 4,
+      "magic": 2,
+      "heavy": 3,
+      "standard": 3,
+      "light": 3,
+      "slash": 4,
+      "stab": 3
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1412,
+    "name": "Black Guard",
+    "version": "Level 25, 4",
+    "image": "Black Guard (level 25, 4).png",
     "level": 25,
     "speed": 4,
     "style": [
@@ -11785,8 +11917,140 @@
   {
     "id": 6046,
     "name": "Black Guard",
-    "version": "Level 48",
+    "version": "Level 48, 1",
     "image": "Black Guard (level 48, 1).png",
+    "level": 48,
+    "speed": 3,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": {
+      "atk": 40,
+      "def": 45,
+      "hp": 40,
+      "magic": 1,
+      "ranged": 1,
+      "str": 45
+    },
+    "offensive": {
+      "atk": 30,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 30
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 40,
+      "magic": 0,
+      "heavy": 40,
+      "standard": 40,
+      "light": 40,
+      "slash": 40,
+      "stab": 40
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6047,
+    "name": "Black Guard",
+    "version": "Level 48, 2",
+    "image": "Black Guard (level 48, 2).png",
+    "level": 48,
+    "speed": 3,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": {
+      "atk": 40,
+      "def": 45,
+      "hp": 40,
+      "magic": 1,
+      "ranged": 1,
+      "str": 45
+    },
+    "offensive": {
+      "atk": 30,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 30
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 40,
+      "magic": 0,
+      "heavy": 40,
+      "standard": 40,
+      "light": 40,
+      "slash": 40,
+      "stab": 40
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6048,
+    "name": "Black Guard",
+    "version": "Level 48, 3",
+    "image": "Black Guard (level 48, 3).png",
+    "level": 48,
+    "speed": 3,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": {
+      "atk": 40,
+      "def": 45,
+      "hp": 40,
+      "magic": 1,
+      "ranged": 1,
+      "str": 45
+    },
+    "offensive": {
+      "atk": 30,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 30
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 40,
+      "magic": 0,
+      "heavy": 40,
+      "standard": 40,
+      "light": 40,
+      "slash": 40,
+      "stab": 40
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6049,
+    "name": "Black Guard",
+    "version": "Level 48, 4",
+    "image": "Black Guard (level 48, 4).png",
     "level": 48,
     "speed": 3,
     "style": [
@@ -13677,7 +13941,7 @@
   {
     "id": 3138,
     "name": "Bloodveld",
-    "version": "God Wars",
+    "version": "GWD",
     "image": "Bloodveld (God Wars Dungeon).png",
     "level": 81,
     "speed": 4,
@@ -13723,7 +13987,7 @@
   {
     "id": 484,
     "name": "Bloodveld",
-    "version": "Standard",
+    "version": "Normal",
     "image": "Bloodveld.png",
     "level": 76,
     "speed": 4,
@@ -14589,7 +14853,7 @@
       "str": 28
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": 2,
       "crush": 0,
       "magic": 2,
       "heavy": 10,
@@ -14638,7 +14902,7 @@
       "str": 28
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": 2,
       "crush": 0,
       "magic": 2,
       "heavy": 10,
@@ -19146,7 +19410,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 25
+    }
   },
   {
     "id": 6292,
@@ -26257,7 +26524,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 70
+    }
   },
   {
     "id": 3021,
@@ -29250,7 +29520,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -1,
       "crush": 0,
       "magic": 0,
       "heavy": 0,
@@ -29263,7 +29533,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
   },
   {
     "id": 7887,
@@ -29308,7 +29581,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
   },
   {
     "id": 7249,
@@ -30027,10 +30303,7 @@
     "immunities": {
       "burn": null
     },
-    "weakness": {
-      "element": "earth",
-      "severity": 50
-    }
+    "weakness": null
   },
   {
     "id": 1558,
@@ -35405,7 +35678,7 @@
       "str": 15
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": 1,
       "crush": 0,
       "magic": 2,
       "heavy": 10,
@@ -35454,7 +35727,7 @@
       "str": 15
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": 1,
       "crush": 0,
       "magic": 2,
       "heavy": 10,
@@ -35992,7 +36265,7 @@
     "skills": {
       "atk": 80,
       "def": 30,
-      "hp": 77,
+      "hp": 80,
       "magic": 30,
       "ranged": 1,
       "str": 70
@@ -41436,7 +41709,187 @@
   {
     "id": 5969,
     "name": "Gnome",
-    "version": "Level 1",
+    "version": "Level 1, 1",
+    "image": "Gnome (2).png",
+    "level": 1,
+    "speed": 4,
+    "style": [
+      "Crush",
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 3,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": -42,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 2,
+      "str": -42
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -42,
+      "magic": -42,
+      "heavy": -42,
+      "standard": -42,
+      "light": -42,
+      "slash": -42,
+      "stab": -42
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6094,
+    "name": "Gnome",
+    "version": "Level 1, 2",
+    "image": "Gnome (3).png",
+    "level": 3,
+    "speed": 4,
+    "style": [
+      "Crush",
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 3,
+      "magic": 1,
+      "ranged": 5,
+      "str": 1
+    },
+    "offensive": {
+      "atk": -42,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 2,
+      "str": -42
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -42,
+      "magic": -42,
+      "heavy": -42,
+      "standard": -42,
+      "light": -42,
+      "slash": -42,
+      "stab": -42
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6095,
+    "name": "Gnome",
+    "version": "Level 1, 3",
+    "image": "Gnome.png",
+    "level": 0,
+    "speed": 4,
+    "style": [
+      "Crush",
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 3,
+      "magic": 1,
+      "ranged": 0,
+      "str": 1
+    },
+    "offensive": {
+      "atk": -42,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 2,
+      "str": -42
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -42,
+      "magic": -42,
+      "heavy": -42,
+      "standard": -42,
+      "light": -42,
+      "slash": -42,
+      "stab": -42
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 6096,
+    "name": "Gnome",
+    "version": "Level 1, 4",
+    "image": "Gnome (2).png",
+    "level": 0,
+    "speed": 4,
+    "style": [
+      "Crush",
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 3,
+      "magic": 1,
+      "ranged": 0,
+      "str": 1
+    },
+    "offensive": {
+      "atk": -42,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 2,
+      "str": -42
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -42,
+      "magic": -42,
+      "heavy": -42,
+      "standard": -42,
+      "light": -42,
+      "slash": -42,
+      "stab": -42
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 5968,
+    "name": "Gnome",
+    "version": "Level 3, 1",
     "image": "Gnome.png",
     "level": 1,
     "speed": 4,
@@ -41479,10 +41932,10 @@
     "weakness": null
   },
   {
-    "id": 5968,
+    "id": 5970,
     "name": "Gnome",
-    "version": "Level 3",
-    "image": "Gnome.png",
+    "version": "Level 3, 2",
+    "image": "Gnome (3).png",
     "level": 3,
     "speed": 4,
     "style": [
@@ -42770,7 +43223,7 @@
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "Varies",
+    "max_hit": "27 <br/> 28 <br/> 29 (phase 4)",
     "skills": {
       "atk": 250,
       "def": 150,
@@ -54138,7 +54591,7 @@
   {
     "id": 3134,
     "name": "Imp",
-    "version": "God Wars",
+    "version": "GWD",
     "image": "Imp (GWD).png",
     "level": 7,
     "speed": 4,
@@ -54184,7 +54637,7 @@
   {
     "id": 5007,
     "name": "Imp",
-    "version": "Regular",
+    "version": "Normal",
     "image": "Imp.png",
     "level": 2,
     "speed": 4,
@@ -55065,7 +55518,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "47 (x3) <br/> 48 (x3) (Relentless I) <br/> 50 (x3) (Relentless II) <br/> 53 (x3) (Relentless III)",
+    "max_hit": "47 (x3)",
     "skills": {
       "atk": 200,
       "def": 125,
@@ -63007,7 +63460,7 @@
       "str": 30
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 10,
       "magic": 0,
       "heavy": 0,
@@ -63052,7 +63505,7 @@
       "str": 30
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 10,
       "magic": 0,
       "heavy": 0,
@@ -63518,7 +63971,7 @@
       "str": 30
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 40,
       "magic": 0,
       "heavy": 0,
@@ -63567,7 +64020,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 40,
       "magic": 0,
       "heavy": 0,
@@ -63616,7 +64069,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 50,
       "magic": 34,
       "heavy": 66,
@@ -63665,7 +64118,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 50,
       "magic": 34,
       "heavy": 66,
@@ -66195,7 +66648,7 @@
       "str": 23
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": 1,
       "crush": 0,
       "magic": 2,
       "heavy": 10,
@@ -66244,7 +66697,7 @@
       "str": 23
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": 1,
       "crush": 0,
       "magic": 2,
       "heavy": 10,
@@ -74645,7 +75098,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 1667,
@@ -78971,11 +79427,11 @@
     "weakness": null
   },
   {
-    "id": 3139,
+    "id": 433,
     "name": "Pyrefiend",
-    "version": "GWD",
+    "version": "Level 43",
     "image": "Pyrefiend.png",
-    "level": 48,
+    "level": 43,
     "speed": 4,
     "style": [
       "Magical melee"
@@ -78983,12 +79439,12 @@
     "size": 1,
     "max_hit": "4",
     "skills": {
-      "atk": 60,
+      "atk": 52,
       "def": 22,
-      "hp": 48,
+      "hp": 45,
       "magic": 1,
       "ranged": 1,
-      "str": 36
+      "str": 30
     },
     "offensive": {
       "atk": 0,
@@ -79021,11 +79477,11 @@
     }
   },
   {
-    "id": 433,
+    "id": 3139,
     "name": "Pyrefiend",
-    "version": "Regular",
+    "version": "Level 48",
     "image": "Pyrefiend.png",
-    "level": 43,
+    "level": 48,
     "speed": 4,
     "style": [
       "Magical melee"
@@ -79033,12 +79489,12 @@
     "size": 1,
     "max_hit": "4",
     "skills": {
-      "atk": 52,
+      "atk": 60,
       "def": 22,
-      "hp": 45,
+      "hp": 48,
       "magic": 1,
       "ranged": 1,
-      "str": 30
+      "str": 36
     },
     "offensive": {
       "atk": 0,
@@ -97094,7 +97550,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 8066,
@@ -98677,7 +99136,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 8299,
@@ -98721,7 +99183,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 8297,
@@ -98765,7 +99230,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 8578,
@@ -98809,7 +99277,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 5616,
@@ -101260,7 +101731,7 @@
     },
     "weakness": {
       "element": "air",
-      "severity": 40
+      "severity": 20
     }
   },
   {
@@ -106316,7 +106787,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000051-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000006-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -106361,7 +106832,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000051-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000006-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -108654,7 +109125,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-00000006-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000000D-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -108698,7 +109169,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000008-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-0000000F-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -112959,7 +113430,7 @@
       "All"
     ],
     "size": 3,
-    "max_hit": "57 (Melee)",
+    "max_hit": "53 (Ranged)",
     "skills": {
       "atk": 378,
       "def": 300,
@@ -121022,7 +121493,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 13490,
@@ -121068,7 +121542,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 13492,
@@ -121114,7 +121591,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 3969,
