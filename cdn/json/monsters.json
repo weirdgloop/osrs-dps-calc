@@ -13207,6 +13207,48 @@
     }
   },
   {
+    "id": 14512,
+    "name": "Black jaguar (Scrambled!)",
+    "version": "",
+    "image": "Black jaguar (Scrambled!).png",
+    "level": 88,
+    "speed": 0,
+    "style": null,
+    "size": 2,
+    "max_hit": 0,
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 86,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 1545,
     "name": "Black knight (Port Sarim jail)",
     "version": "",
@@ -19409,32 +19451,34 @@
     "image": "Chimalli.png",
     "level": 160,
     "speed": 4,
-    "style": null,
+    "style": [
+      "Ranged"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "24",
     "skills": {
       "atk": 70,
       "def": 70,
       "hp": 180,
       "magic": 60,
       "ranged": 200,
-      "str": 0
+      "str": 70
     },
     "offensive": {
       "atk": 0,
       "magic": 0,
       "magic_str": 0,
       "ranged": 120,
-      "ranged_str": 0,
+      "ranged_str": 10,
       "str": 0
     },
     "defensive": {
       "flat_armour": 0,
       "crush": 80,
       "magic": 120,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 120,
+      "standard": 120,
+      "light": 120,
       "slash": 80,
       "stab": 70
     },
@@ -28596,7 +28640,9 @@
       "slash": 300,
       "stab": 300
     },
-    "attributes": [],
+    "attributes": [
+      "demon"
+    ],
     "immunities": {
       "burn": null
     },
@@ -28640,7 +28686,9 @@
       "slash": 300,
       "stab": 300
     },
-    "attributes": [],
+    "attributes": [
+      "demon"
+    ],
     "immunities": {
       "burn": null
     },
@@ -28684,7 +28732,9 @@
       "slash": 300,
       "stab": 300
     },
-    "attributes": [],
+    "attributes": [
+      "demon"
+    ],
     "immunities": {
       "burn": null
     },
@@ -30697,7 +30747,7 @@
   {
     "id": 14421,
     "name": "Earthen Nagua",
-    "version": "",
+    "version": "Normal",
     "image": "Earthen Nagua.png",
     "level": 128,
     "speed": 4,
@@ -30715,7 +30765,7 @@
       "str": 120
     },
     "offensive": {
-      "atk": 0,
+      "atk": 100,
       "magic": 0,
       "magic_str": 0,
       "ranged": 0,
@@ -30731,6 +30781,55 @@
       "light": 150,
       "slash": 50,
       "stab": 30
+    },
+    "attributes": [
+      "spectral"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 15
+    }
+  },
+  {
+    "id": 14421,
+    "name": "Earthen Nagua",
+    "version": "Shielded",
+    "image": "Earthen Nagua (shielded).png",
+    "level": 128,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "13",
+    "skills": {
+      "atk": 120,
+      "def": 40,
+      "hp": 160,
+      "magic": 40,
+      "ranged": 1,
+      "str": 120
+    },
+    "offensive": {
+      "atk": 100,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": -4,
+      "crush": 10,
+      "magic": 60,
+      "heavy": 150,
+      "standard": 150,
+      "light": 150,
+      "slash": 70,
+      "stab": 50
     },
     "attributes": [
       "spectral"
@@ -82576,6 +82675,48 @@
     "weakness": null
   },
   {
+    "id": 14511,
+    "name": "Red dragon (Scrambled!)",
+    "version": "",
+    "image": "Red dragon (Scrambled!).png",
+    "level": 106,
+    "speed": 0,
+    "style": null,
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 105,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 247,
     "name": "Red dragon",
     "version": "1",
@@ -98621,6 +98762,54 @@
       "burn": null
     },
     "weakness": null
+  },
+  {
+    "id": 14706,
+    "name": "Strange creature (Shadows of Custodia)",
+    "version": "",
+    "image": "Strange creature (Shadows of Custodia).png",
+    "level": 93,
+    "speed": 4,
+    "style": [
+      "Crush",
+      "Bleed"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 95,
+      "def": 45,
+      "hp": 100,
+      "magic": 25,
+      "ranged": 1,
+      "str": 55
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 5,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 50,
+      "magic": 35,
+      "heavy": 30,
+      "standard": 5,
+      "light": -10,
+      "slash": -10,
+      "stab": 30
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "fire",
+      "severity": 30
+    }
   },
   {
     "id": 685,
