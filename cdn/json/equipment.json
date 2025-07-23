@@ -13322,7 +13322,7 @@
   {
     "name": "Avernic treads",
     "id": 31088,
-    "version": "Base",
+    "version": "",
     "slot": "feet",
     "image": "Avernic treads.png",
     "speed": 0,
@@ -13350,17 +13350,197 @@
     "isTwoHanded": false
   },
   {
-    "name": "Avernic treads",
-    "id": 31088,
-    "version": "Upgraded",
+    "name": "Avernic treads (et)",
+    "id": 31093,
+    "version": "",
     "slot": "feet",
-    "image": "Avernic treads.png",
+    "image": "Avernic treads (et).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 2,
+      "magic_str": 20,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 5,
+      "slash": 5,
+      "crush": 5,
+      "magic": 11,
+      "ranged": 15
+    },
+    "defensive": {
+      "stab": 21,
+      "slash": 25,
+      "crush": 25,
+      "magic": 10,
+      "ranged": 10
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Avernic treads (max)",
+    "id": 31097,
+    "version": "",
+    "slot": "feet",
+    "image": "Avernic treads (max).png",
     "speed": 0,
     "category": "",
     "bonuses": {
       "str": 6,
       "ranged_str": 3,
       "magic_str": 20,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 5,
+      "slash": 5,
+      "crush": 5,
+      "magic": 11,
+      "ranged": 15
+    },
+    "defensive": {
+      "stab": 21,
+      "slash": 25,
+      "crush": 25,
+      "magic": 10,
+      "ranged": 10
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Avernic treads (pe)",
+    "id": 31092,
+    "version": "",
+    "slot": "feet",
+    "image": "Avernic treads (pe).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 3,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 5,
+      "slash": 5,
+      "crush": 5,
+      "magic": 11,
+      "ranged": 15
+    },
+    "defensive": {
+      "stab": 21,
+      "slash": 25,
+      "crush": 25,
+      "magic": 10,
+      "ranged": 10
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Avernic treads (pe)(et)",
+    "id": 31096,
+    "version": "",
+    "slot": "feet",
+    "image": "Avernic treads (pe)(et).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 3,
+      "magic_str": 20,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 5,
+      "slash": 5,
+      "crush": 5,
+      "magic": 11,
+      "ranged": 15
+    },
+    "defensive": {
+      "stab": 21,
+      "slash": 25,
+      "crush": 25,
+      "magic": 10,
+      "ranged": 10
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Avernic treads (pr)",
+    "id": 31091,
+    "version": "",
+    "slot": "feet",
+    "image": "Avernic treads (pr).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 6,
+      "ranged_str": 2,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 5,
+      "slash": 5,
+      "crush": 5,
+      "magic": 11,
+      "ranged": 15
+    },
+    "defensive": {
+      "stab": 21,
+      "slash": 25,
+      "crush": 25,
+      "magic": 10,
+      "ranged": 10
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Avernic treads (pr)(et)",
+    "id": 31095,
+    "version": "",
+    "slot": "feet",
+    "image": "Avernic treads (pr)(et).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 6,
+      "ranged_str": 2,
+      "magic_str": 20,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 5,
+      "slash": 5,
+      "crush": 5,
+      "magic": 11,
+      "ranged": 15
+    },
+    "defensive": {
+      "stab": 21,
+      "slash": 25,
+      "crush": 25,
+      "magic": 10,
+      "ranged": 10
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Avernic treads (pr)(pe)",
+    "id": 31094,
+    "version": "",
+    "slot": "feet",
+    "image": "Avernic treads (pr)(pe).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 6,
+      "ranged_str": 3,
+      "magic_str": 10,
       "prayer": 0
     },
     "offensive": {
