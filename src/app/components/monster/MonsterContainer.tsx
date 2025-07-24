@@ -458,6 +458,7 @@ const MonsterContainer: React.FC = observer(() => {
                         disabled={!isCustomMonster}
                         image={hitpoints}
                         value={displayMonster.skills.hp}
+                        displayValue={displayMonster.id === 14779 ? "Inf." : undefined}
                         onChange={(v) => store.updateMonster({ skills: { hp: v } })}
                         required
                       />

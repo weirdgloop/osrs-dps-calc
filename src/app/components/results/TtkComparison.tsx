@@ -129,6 +129,8 @@ const TtkComparison: React.FC = observer(() => {
     return lines;
   }, [calcResults, loadouts]);
 
+  if(store.monster.id === 14779) return null;
+
   return (
     <SectionAccordion
       defaultIsOpen={showTtkComparison}
