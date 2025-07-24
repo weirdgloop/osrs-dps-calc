@@ -841,6 +841,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [3, 2]);
       } else if (this.wearing('Volatile nightmare staff')) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [3, 2]);
+      } else if (this.wearing('Eye of ayak')) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
       }
     }
 
@@ -895,7 +897,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         return [75, 150];
       }
     } else if (this.wearing("Tumeken's shadow")) {
-      maxHit = Math.max(1, Math.trunc(magicLevel / 3 + 1));
+      maxHit = Math.max(1, Math.trunc(magicLevel / 3) + 1);
+    } else if (this.wearing('Eye of ayak')) {
+      maxHit = Math.max(1, Math.trunc(magicLevel / 3) - 6);
     } else if (this.wearing('Warped sceptre')) {
       maxHit = Math.max(1, Math.trunc((8 * magicLevel + 96) / 37));
     } else if (this.wearing('Bone staff')) {
@@ -930,6 +934,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return [0, 0];
     }
     this.track(DetailKey.MAX_HIT_BASE, maxHit);
+
+    if (this.opts.usingSpecialAttack && this.wearing('Eye of ayak')) {
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [13, 10]);
+    }
 
     if (this.wearing('Chaos gauntlets') && spell?.name.toLowerCase()
       .includes('bolt')) {
