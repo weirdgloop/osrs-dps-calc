@@ -53520,36 +53520,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Egg (Scrambled!)",
-    "id": 30970,
-    "version": "",
-    "slot": "weapon",
-    "image": "Egg (Scrambled!).png",
-    "speed": 4,
-    "category": "blunt",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
     "name": "Egg priest mitre",
     "id": 29443,
     "version": "",
@@ -56335,6 +56305,66 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Eye of ayak",
+    "id": 31113,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Eye of ayak.png",
+    "speed": 3,
+    "category": "Powered Staff",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 30,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 1,
+      "slash": 5,
+      "crush": 5,
+      "magic": 10,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Eye of ayak",
+    "id": 31115,
+    "version": "Uncharged",
+    "slot": "weapon",
+    "image": "Eye of ayak (uncharged).png",
+    "speed": 3,
+    "category": "Powered Staff",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 30,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 1,
+      "slash": 5,
+      "crush": 5,
+      "magic": 10,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -67382,6 +67412,36 @@
   {
     "name": "Greenman mask",
     "id": 31034,
+    "version": "Default",
+    "slot": "head",
+    "image": "Greenman mask.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Greenman mask",
+    "id": 31042,
     "version": "Magic",
     "slot": "head",
     "image": "Greenman mask (magic).png",
@@ -67411,7 +67471,7 @@
   },
   {
     "name": "Greenman mask",
-    "id": 31034,
+    "id": 31040,
     "version": "Maple",
     "slot": "head",
     "image": "Greenman mask (maple).png",
@@ -67441,10 +67501,10 @@
   },
   {
     "name": "Greenman mask",
-    "id": 31034,
+    "id": 31037,
     "version": "Normal",
     "slot": "head",
-    "image": "Greenman mask.png",
+    "image": "Greenman mask (normal).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -67471,7 +67531,7 @@
   },
   {
     "name": "Greenman mask",
-    "id": 31034,
+    "id": 31038,
     "version": "Oak",
     "slot": "head",
     "image": "Greenman mask (oak).png",
@@ -67501,7 +67561,7 @@
   },
   {
     "name": "Greenman mask",
-    "id": 31034,
+    "id": 31039,
     "version": "Willow",
     "slot": "head",
     "image": "Greenman mask (willow).png",
@@ -67531,7 +67591,7 @@
   },
   {
     "name": "Greenman mask",
-    "id": 31034,
+    "id": 31041,
     "version": "Yew",
     "slot": "head",
     "image": "Greenman mask (yew).png",
@@ -72628,6 +72688,36 @@
       "ranged": 0
     },
     "isTwoHanded": false
+  },
+  {
+    "name": "Humphrey Dumphrey",
+    "id": 30970,
+    "version": "",
+    "slot": "weapon",
+    "image": "Humphrey Dumphrey.png",
+    "speed": 4,
+    "category": "blunt",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
   },
   {
     "name": "Hunter cape",

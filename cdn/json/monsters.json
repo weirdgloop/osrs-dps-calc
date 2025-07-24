@@ -4215,7 +4215,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000022-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000050-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -13212,17 +13212,19 @@
     "version": "",
     "image": "Black jaguar (Scrambled!).png",
     "level": 88,
-    "speed": 0,
-    "style": null,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
     "size": 2,
-    "max_hit": 0,
+    "max_hit": "8",
     "skills": {
-      "atk": 0,
-      "def": 0,
-      "hp": 86,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "atk": 75,
+      "def": 75,
+      "hp": 85,
+      "magic": 1,
+      "ranged": 1,
+      "str": 75
     },
     "offensive": {
       "atk": 0,
@@ -13246,7 +13248,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 30
+    }
   },
   {
     "id": 1545,
@@ -31115,7 +31120,8 @@
     "speed": 4,
     "style": [
       "Crush",
-      "Bleed"
+      "Bleed",
+      "Magic"
     ],
     "size": 1,
     "max_hit": "10",
@@ -31129,7 +31135,7 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 5,
+      "magic": 25,
       "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
@@ -35994,7 +36000,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
   },
   {
     "id": 6309,
@@ -59637,7 +59646,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 40
+    }
   },
   {
     "id": 6310,
@@ -82680,17 +82692,20 @@
     "version": "",
     "image": "Red dragon (Scrambled!).png",
     "level": 106,
-    "speed": 0,
-    "style": null,
+    "speed": 4,
+    "style": [
+      "Slash",
+      "Dragonfire"
+    ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "10",
     "skills": {
-      "atk": 0,
-      "def": 0,
-      "hp": 105,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "atk": 90,
+      "def": 90,
+      "hp": 100,
+      "magic": 1,
+      "ranged": 1,
+      "str": 90
     },
     "offensive": {
       "atk": 0,
@@ -82702,19 +82717,25 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
+      "crush": 70,
+      "magic": 60,
+      "heavy": 15,
+      "standard": 50,
+      "light": 50,
+      "slash": 70,
+      "stab": 10
     },
-    "attributes": [],
+    "attributes": [
+      "dragon",
+      "fiery"
+    ],
     "immunities": {
-      "burn": null
+      "burn": "Weak"
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
   },
   {
     "id": 247,
@@ -107726,7 +107747,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000031-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000076-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -107771,7 +107792,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000031-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000076-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
