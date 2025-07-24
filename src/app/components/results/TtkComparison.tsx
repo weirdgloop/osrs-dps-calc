@@ -19,6 +19,7 @@ import { max } from 'd3-array';
 import SectionAccordion from '@/app/components/generic/SectionAccordion';
 import hourglass from '@/public/img/Hourglass.png';
 import LazyImage from '@/app/components/generic/LazyImage';
+import { INFINITE_HEALTH_MONSTERS } from '@/lib/constants';
 
 export interface CustomTooltipProps extends TooltipProps<ValueType, NameType> {
   xAxisOption: typeof XAxisOptions[0],
@@ -129,7 +130,7 @@ const TtkComparison: React.FC = observer(() => {
     return lines;
   }, [calcResults, loadouts]);
 
-  if(store.monster.id === 14779) return null;
+  if (INFINITE_HEALTH_MONSTERS.includes(store.monster.id)) return null;
 
   return (
     <SectionAccordion
