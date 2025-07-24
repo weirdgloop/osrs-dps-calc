@@ -301,6 +301,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
       } else if (this.wearing('Barrelchest anchor')) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
+      } else if (this.wearing('Arkan blade')) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [3, 2]);
       }
     }
 
@@ -472,6 +474,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else if (this.wearing('Soulreaper axe')) {
         const stacks = Math.max(0, Math.min(5, this.player.buffs.soulreaperStacks));
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [100 + 6 * stacks, 100]);
+      } else if (this.wearing('Arkan blade')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [3, 2]);
       }
     }
 
@@ -1200,7 +1204,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   public getDoTExpected(): number {
     let ret: number = 0;
     if (this.opts.usingSpecialAttack) {
-      if (this.wearing(['Bone claws', 'Burning claws']) && !this.isImmuneToNormalBurns()) {
+      if (this.wearing(['Bone claws', 'Burning claws', 'Arkan blade']) && !this.isImmuneToNormalBurns()) {
         ret = burningClawDoT(this.getHitChance());
       } else if (this.wearing('Scorching bow') && !this.isImmuneToNormalBurns()) {
         ret = this.monster.attributes.includes(MonsterAttribute.DEMON) ? 5 : 1;
@@ -1216,7 +1220,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   public getDoTMax(): number {
     let ret: number = 0;
     if (this.opts.usingSpecialAttack) {
-      if (this.wearing(['Bone claws', 'Burning claws']) && !this.isImmuneToNormalBurns()) {
+      if (this.wearing(['Bone claws', 'Burning claws', 'Arkan blade']) && !this.isImmuneToNormalBurns()) {
         ret = 29;
       } else if (this.wearing('Scorching bow') && !this.isImmuneToNormalBurns()) {
         ret = this.monster.attributes.includes(MonsterAttribute.DEMON) ? 5 : 1;
