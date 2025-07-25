@@ -393,6 +393,7 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Dragon halberd': 30,
   'Crystal halberd': 30,
   'Burning claws': 30,
+  'Arkan blade': 30,
 
   'Magic longbow': 35,
   'Magic comp bow': 35,
@@ -420,6 +421,7 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Abyssal bludgeon': 50,
   'Abyssal whip': 50,
   'Barrelchest anchor': 50,
+  'Eye of ayak': 50,
 
   'Magic shortbow': 55,
   'Dark bow': 55,

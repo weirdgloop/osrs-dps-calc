@@ -113,6 +113,7 @@ export interface Monster {
       bgs: number;
       tonalztic: number;
       seercull: number;
+      ayak: number;
     };
 
     demonbaneVulnerability?: number;

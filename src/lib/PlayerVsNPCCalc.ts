@@ -286,7 +286,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.opts.usingSpecialAttack) {
       if (this.isWearingGodsword()) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
-      } else if (this.isWearingFang()) {
+      } else if (this.isWearingFang() || this.wearing('Arkan blade')) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [3, 2]);
       } else if (this.wearing(['Elder maul', 'Dragon mace', 'Dragon sword', 'Dragon scimitar', 'Abyssal whip'])) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [5, 4]);
@@ -450,7 +450,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [11, 10]);
       } else if (this.wearing(['Armadyl godsword', 'Dragon sword', 'Dragon longsword', "Saradomin's blessed sword"])) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [5, 4]);
-      } else if (this.wearing(['Dragon mace', 'Dragon warhammer'])) {
+      } else if (this.wearing(['Dragon mace', 'Dragon warhammer', 'Arkan blade'])) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [3, 2]);
       } else if (this.wearing('Voidwaker')) {
         minHit = this.trackFactor(DetailKey.MIN_HIT_SPEC, maxHit, [1, 2]);
@@ -841,6 +841,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [3, 2]);
       } else if (this.wearing('Volatile nightmare staff')) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [3, 2]);
+      } else if (this.wearing('Eye of ayak')) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
       }
     }
 
@@ -895,7 +897,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         return [75, 150];
       }
     } else if (this.wearing("Tumeken's shadow")) {
-      maxHit = Math.max(1, Math.trunc(magicLevel / 3 + 1));
+      maxHit = Math.max(1, Math.trunc(magicLevel / 3) + 1);
+    } else if (this.wearing('Eye of ayak')) {
+      maxHit = Math.max(1, Math.trunc(magicLevel / 3) - 6);
     } else if (this.wearing('Warped sceptre')) {
       maxHit = Math.max(1, Math.trunc((8 * magicLevel + 96) / 37));
     } else if (this.wearing('Bone staff')) {
@@ -930,6 +934,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return [0, 0];
     }
     this.track(DetailKey.MAX_HIT_BASE, maxHit);
+
+    if (this.opts.usingSpecialAttack && this.wearing('Eye of ayak')) {
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [13, 10]);
+    }
 
     if (this.wearing('Chaos gauntlets') && spell?.name.toLowerCase()
       .includes('bolt')) {
@@ -1204,6 +1212,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         ret = burningClawDoT(this.getHitChance());
       } else if (this.wearing('Scorching bow') && !this.isImmuneToNormalBurns()) {
         ret = this.monster.attributes.includes(MonsterAttribute.DEMON) ? 5 : 1;
+      } else if (this.wearing('Arkan blade') && !this.isImmuneToNormalBurns()) {
+        ret = 10;
       }
     }
 
@@ -1220,6 +1230,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         ret = 29;
       } else if (this.wearing('Scorching bow') && !this.isImmuneToNormalBurns()) {
         ret = this.monster.attributes.includes(MonsterAttribute.DEMON) ? 5 : 1;
+      } else if (this.wearing('Arkan blade') && !this.isImmuneToNormalBurns()) {
+        ret = 10;
       }
     }
 
@@ -1729,8 +1741,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         dist = dist.transform(multiplyTransformer(4, 5, 1));
       }
     }
-    if (mattrs.includes(MonsterAttribute.VAMPYRE_2) && !this.wearingVampyrebane(MonsterAttribute.VAMPYRE_2) && this.wearing("Efaritay's aid")) {
-      dist = dist.transform(divisionTransformer(2));
+    if (mattrs.includes(MonsterAttribute.VAMPYRE_2)) {
+      if (!this.wearingVampyrebane(MonsterAttribute.VAMPYRE_2) && this.wearing("Efaritay's aid")) {
+        dist = dist.transform(divisionTransformer(2));
+      } else if (this.isWearingSilverWeapon()) {
+        dist = dist.transform(flatLimitTransformer(10));
+      }
     }
     if (HUEYCOATL_TAIL_IDS.includes(this.monster.id)) {
       const crush = styleType === 'crush'
@@ -1800,7 +1816,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (mattrs.includes(MonsterAttribute.VAMPYRE_3) && !this.wearingVampyrebane(MonsterAttribute.VAMPYRE_3)) {
       return true;
     }
-    if (mattrs.includes(MonsterAttribute.VAMPYRE_2) && !this.wearingVampyrebane(MonsterAttribute.VAMPYRE_2) && !this.wearing("Efaritay's aid")) {
+    if (mattrs.includes(MonsterAttribute.VAMPYRE_2) && !this.wearingVampyrebane(MonsterAttribute.VAMPYRE_2) && !this.wearing("Efaritay's aid") && !this.isWearingSilverWeapon()) {
       return true;
     }
     if (GUARDIAN_IDS.includes(monsterId) && (!this.isUsingMeleeStyle() || this.player.equipment.weapon?.category !== EquipmentCategory.PICKAXE)) {

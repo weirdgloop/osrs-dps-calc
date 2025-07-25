@@ -11130,6 +11130,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Antler guard",
+    "id": 31081,
+    "version": "",
+    "slot": "shield",
+    "image": "Antler guard.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 5,
+      "ranged_str": 2,
+      "magic_str": 0,
+      "prayer": 4
+    },
+    "offensive": {
+      "stab": 15,
+      "slash": 15,
+      "crush": 15,
+      "magic": 9,
+      "ranged": 9
+    },
+    "defensive": {
+      "stab": -25,
+      "slash": -25,
+      "crush": -25,
+      "magic": -25,
+      "ranged": -25
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Apprentice wand",
     "id": 6910,
     "version": "",
@@ -11896,6 +11926,36 @@
     "offensive": {
       "stab": 0,
       "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Arkan blade",
+    "id": 30955,
+    "version": "",
+    "slot": "weapon",
+    "image": "Arkan blade.png",
+    "speed": 4,
+    "category": "Slash Sword",
+    "bonuses": {
+      "str": 64,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 1
+    },
+    "offensive": {
+      "stab": 55,
+      "slash": 70,
       "crush": 0,
       "magic": 0,
       "ranged": 0
@@ -13256,6 +13316,246 @@
       "crush": 28,
       "magic": -5,
       "ranged": -4
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Avernic treads",
+    "id": 31088,
+    "version": "",
+    "slot": "feet",
+    "image": "Avernic treads.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 2,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 5,
+      "slash": 5,
+      "crush": 5,
+      "magic": 11,
+      "ranged": 15
+    },
+    "defensive": {
+      "stab": 21,
+      "slash": 25,
+      "crush": 25,
+      "magic": 10,
+      "ranged": 10
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Avernic treads (et)",
+    "id": 31093,
+    "version": "",
+    "slot": "feet",
+    "image": "Avernic treads (et).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 2,
+      "magic_str": 20,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 5,
+      "slash": 5,
+      "crush": 5,
+      "magic": 11,
+      "ranged": 15
+    },
+    "defensive": {
+      "stab": 21,
+      "slash": 25,
+      "crush": 25,
+      "magic": 10,
+      "ranged": 10
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Avernic treads (max)",
+    "id": 31097,
+    "version": "",
+    "slot": "feet",
+    "image": "Avernic treads (max).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 6,
+      "ranged_str": 3,
+      "magic_str": 20,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 5,
+      "slash": 5,
+      "crush": 5,
+      "magic": 11,
+      "ranged": 15
+    },
+    "defensive": {
+      "stab": 21,
+      "slash": 25,
+      "crush": 25,
+      "magic": 10,
+      "ranged": 10
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Avernic treads (pe)",
+    "id": 31092,
+    "version": "",
+    "slot": "feet",
+    "image": "Avernic treads (pe).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 3,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 5,
+      "slash": 5,
+      "crush": 5,
+      "magic": 11,
+      "ranged": 15
+    },
+    "defensive": {
+      "stab": 21,
+      "slash": 25,
+      "crush": 25,
+      "magic": 10,
+      "ranged": 10
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Avernic treads (pe)(et)",
+    "id": 31096,
+    "version": "",
+    "slot": "feet",
+    "image": "Avernic treads (pe)(et).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 4,
+      "ranged_str": 3,
+      "magic_str": 20,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 5,
+      "slash": 5,
+      "crush": 5,
+      "magic": 11,
+      "ranged": 15
+    },
+    "defensive": {
+      "stab": 21,
+      "slash": 25,
+      "crush": 25,
+      "magic": 10,
+      "ranged": 10
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Avernic treads (pr)",
+    "id": 31091,
+    "version": "",
+    "slot": "feet",
+    "image": "Avernic treads (pr).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 6,
+      "ranged_str": 2,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 5,
+      "slash": 5,
+      "crush": 5,
+      "magic": 11,
+      "ranged": 15
+    },
+    "defensive": {
+      "stab": 21,
+      "slash": 25,
+      "crush": 25,
+      "magic": 10,
+      "ranged": 10
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Avernic treads (pr)(et)",
+    "id": 31095,
+    "version": "",
+    "slot": "feet",
+    "image": "Avernic treads (pr)(et).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 6,
+      "ranged_str": 2,
+      "magic_str": 20,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 5,
+      "slash": 5,
+      "crush": 5,
+      "magic": 11,
+      "ranged": 15
+    },
+    "defensive": {
+      "stab": 21,
+      "slash": 25,
+      "crush": 25,
+      "magic": 10,
+      "ranged": 10
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Avernic treads (pr)(pe)",
+    "id": 31094,
+    "version": "",
+    "slot": "feet",
+    "image": "Avernic treads (pr)(pe).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 6,
+      "ranged_str": 3,
+      "magic_str": 10,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 5,
+      "slash": 5,
+      "crush": 5,
+      "magic": 11,
+      "ranged": 15
+    },
+    "defensive": {
+      "stab": 21,
+      "slash": 25,
+      "crush": 25,
+      "magic": 10,
+      "ranged": 10
     },
     "isTwoHanded": false
   },
@@ -34770,6 +35070,36 @@
     "isTwoHanded": true
   },
   {
+    "name": "Confliction gauntlets",
+    "id": 31106,
+    "version": "",
+    "slot": "hands",
+    "image": "Confliction gauntlets.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 70,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 20,
+      "ranged": -4
+    },
+    "defensive": {
+      "stab": 15,
+      "slash": 18,
+      "crush": 7,
+      "magic": 5,
+      "ranged": 5
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Construct. cape",
     "id": 9790,
     "version": "Trimmed",
@@ -51660,6 +51990,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Earthbound tecpatl",
+    "id": 30957,
+    "version": "",
+    "slot": "weapon",
+    "image": "Earthbound tecpatl.png",
+    "speed": 4,
+    "category": "Stab Sword",
+    "bonuses": {
+      "str": 64,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": 72,
+      "slash": 11,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Easter basket",
     "id": 4565,
     "version": "",
@@ -55950,6 +56310,66 @@
     "isTwoHanded": false
   },
   {
+    "name": "Eye of ayak",
+    "id": 31115,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Eye of ayak.png",
+    "speed": 3,
+    "category": "Powered Staff",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 30,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 1,
+      "slash": 5,
+      "crush": 5,
+      "magic": 10,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Eye of ayak",
+    "id": 31113,
+    "version": "Uncharged",
+    "slot": "weapon",
+    "image": "Eye of ayak (uncharged).png",
+    "speed": 3,
+    "category": "Powered Staff",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 30,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 1,
+      "slash": 5,
+      "crush": 5,
+      "magic": 10,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Facemask",
     "id": 4164,
     "version": "",
@@ -57965,6 +58385,36 @@
     "version": "",
     "slot": "head",
     "image": "Fletching hood.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Fletching knife",
+    "id": 31043,
+    "version": "",
+    "slot": "shield",
+    "image": "Fletching knife.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -66960,6 +67410,216 @@
     "isTwoHanded": false
   },
   {
+    "name": "Greenman mask",
+    "id": 31034,
+    "version": "Default",
+    "slot": "head",
+    "image": "Greenman mask.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Greenman mask",
+    "id": 31042,
+    "version": "Magic",
+    "slot": "head",
+    "image": "Greenman mask (magic).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Greenman mask",
+    "id": 31040,
+    "version": "Maple",
+    "slot": "head",
+    "image": "Greenman mask (maple).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Greenman mask",
+    "id": 31037,
+    "version": "Normal",
+    "slot": "head",
+    "image": "Greenman mask (normal).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Greenman mask",
+    "id": 31038,
+    "version": "Oak",
+    "slot": "head",
+    "image": "Greenman mask (oak).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Greenman mask",
+    "id": 31039,
+    "version": "Willow",
+    "slot": "head",
+    "image": "Greenman mask (willow).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Greenman mask",
+    "id": 31041,
+    "version": "Yew",
+    "slot": "head",
+    "image": "Greenman mask (yew).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Gregg's eastdoor",
     "id": 25604,
     "version": "",
@@ -72028,6 +72688,36 @@
       "ranged": 0
     },
     "isTwoHanded": false
+  },
+  {
+    "name": "Humphrey Dumphrey",
+    "id": 30970,
+    "version": "",
+    "slot": "weapon",
+    "image": "Humphrey Dumphrey.png",
+    "speed": 4,
+    "category": "blunt",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
   },
   {
     "name": "Hunter cape",
@@ -92310,6 +93000,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Orange (hat)",
+    "id": 31117,
+    "version": "",
+    "slot": "head",
+    "image": "Orange (hat).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Orange boater",
     "id": 7321,
     "version": "",
@@ -93491,20 +94211,20 @@
       "str": 0,
       "ranged_str": 0,
       "magic_str": 0,
-      "prayer": 2
+      "prayer": 0
     },
     "offensive": {
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
+      "magic": 2,
       "ranged": 0
     },
     "defensive": {
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 3,
+      "magic": 0,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -95149,6 +95869,36 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Potato sack",
+    "id": 30947,
+    "version": "",
+    "slot": "head",
+    "image": "Potato sack.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -1,
+      "slash": -1,
+      "crush": -1,
+      "magic": -1,
+      "ranged": -1
     },
     "defensive": {
       "stab": 0,
@@ -101327,6 +102077,36 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Redwood hiking staff",
+    "id": 31049,
+    "version": "",
+    "slot": "weapon",
+    "image": "Redwood hiking staff.png",
+    "speed": 5,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -4,
+      "slash": -4,
+      "crush": 10,
       "magic": 0,
       "ranged": 0
     },
@@ -122603,7 +123383,7 @@
     "defensive": {
       "stab": 24,
       "slash": 24,
-      "crush": 2,
+      "crush": 24,
       "magic": 0,
       "ranged": 0
     },
