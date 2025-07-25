@@ -1213,7 +1213,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else if (this.wearing('Scorching bow') && !this.isImmuneToNormalBurns()) {
         ret = this.monster.attributes.includes(MonsterAttribute.DEMON) ? 5 : 1;
       } else if (this.wearing('Arkan blade') && !this.isImmuneToNormalBurns()) {
-        ret = 10;
+        ret = 10 * this.getHitChance();
       }
     }
 
