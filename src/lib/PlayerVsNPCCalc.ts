@@ -286,7 +286,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.opts.usingSpecialAttack) {
       if (this.isWearingGodsword()) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
-      } else if (this.isWearingFang()) {
+      } else if (this.isWearingFang() || this.wearing('Arkan blade')) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [3, 2]);
       } else if (this.wearing(['Elder maul', 'Dragon mace', 'Dragon sword', 'Dragon scimitar', 'Abyssal whip'])) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [5, 4]);
@@ -450,7 +450,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [11, 10]);
       } else if (this.wearing(['Armadyl godsword', 'Dragon sword', 'Dragon longsword', "Saradomin's blessed sword"])) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [5, 4]);
-      } else if (this.wearing(['Dragon mace', 'Dragon warhammer'])) {
+      } else if (this.wearing(['Dragon mace', 'Dragon warhammer', 'Arkan blade'])) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [3, 2]);
       } else if (this.wearing('Voidwaker')) {
         minHit = this.trackFactor(DetailKey.MIN_HIT_SPEC, maxHit, [1, 2]);
@@ -1212,6 +1212,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         ret = burningClawDoT(this.getHitChance());
       } else if (this.wearing('Scorching bow') && !this.isImmuneToNormalBurns()) {
         ret = this.monster.attributes.includes(MonsterAttribute.DEMON) ? 5 : 1;
+      } else if (this.wearing('Arkan blade') && !this.isImmuneToNormalBurns()) {
+        ret = 10;
       }
     }
 
@@ -1228,6 +1230,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         ret = 29;
       } else if (this.wearing('Scorching bow') && !this.isImmuneToNormalBurns()) {
         ret = this.monster.attributes.includes(MonsterAttribute.DEMON) ? 5 : 1;
+      } else if (this.wearing('Arkan blade') && !this.isImmuneToNormalBurns()) {
+        ret = 10;
       }
     }
 
