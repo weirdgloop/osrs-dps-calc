@@ -20,6 +20,7 @@ import SectionAccordion from '@/app/components/generic/SectionAccordion';
 import hourglass from '@/public/img/Hourglass.png';
 import LazyImage from '@/app/components/generic/LazyImage';
 import { INFINITE_HEALTH_MONSTERS } from '@/lib/constants';
+import { IconAlertTriangle } from '@tabler/icons-react';
 
 export interface CustomTooltipProps extends TooltipProps<ValueType, NameType> {
   xAxisOption: typeof XAxisOptions[0],
@@ -130,7 +131,7 @@ const TtkComparison: React.FC = observer(() => {
     return lines;
   }, [calcResults, loadouts]);
 
-  if (INFINITE_HEALTH_MONSTERS.includes(store.monster.id)) return null;
+  const infiniteHealth = useMemo(() => INFINITE_HEALTH_MONSTERS.includes(store.monster.id), [store.monster.id]);
 
   return (
     <SectionAccordion
@@ -145,7 +146,17 @@ const TtkComparison: React.FC = observer(() => {
         </div>
       )}
     >
-      {data && (
+      {infiniteHealth && (
+        <div
+          className="w-full bg-yellow-500 text-white px-4 py-1 text-sm border-b border-yellow-400 flex items-center gap-2"
+        >
+          <IconAlertTriangle className="text-orange-200" />
+          <div>
+            A time-to-kill distribution cannot be shown for this monster.
+          </div>
+        </div>
+      )}
+      {!infiniteHealth && data && (
         <div className="px-6 py-4">
           <ResponsiveContainer width="100%" height={250}>
             <LineChart
