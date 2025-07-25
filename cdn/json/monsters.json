@@ -4215,7 +4215,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000050-QINU`\"' Magic"
+      "'\"`UNIQ--ref-00000000-QINU`\"' Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -6401,6 +6401,50 @@
       "spectral",
       "undead"
     ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14318,
+    "name": "Augur Metzli",
+    "version": "",
+    "image": "Augur Metzli.png",
+    "level": 396,
+    "speed": 3,
+    "style": [
+      "Range & Magic"
+    ],
+    "size": 1,
+    "max_hit": "28",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 600,
+      "magic": 180,
+      "ranged": 180,
+      "str": 160
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 110,
+      "magic_str": 30,
+      "ranged": 110,
+      "ranged_str": 30,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 70,
+      "magic": 100,
+      "heavy": 10,
+      "standard": 20,
+      "light": 20,
+      "slash": 80,
+      "stab": 60
+    },
+    "attributes": [],
     "immunities": {
       "burn": null
     },
@@ -28612,58 +28656,14 @@
     "name": "Doom of Mokhaiotl",
     "version": "Delve 1",
     "image": "Doom of Mokhaiotl.png",
-    "level": 708,
+    "level": 558,
     "speed": 5,
     "style": [
-      "Aggressive"
+      "Melee",
+      "Magic",
+      "Ranged"
     ],
-    "size": 3,
-    "max_hit": "121",
-    "skills": {
-      "atk": 300,
-      "def": 90,
-      "hp": 600,
-      "magic": 275,
-      "ranged": 110,
-      "str": 190
-    },
-    "offensive": {
-      "atk": 210,
-      "magic": 125,
-      "magic_str": 30,
-      "ranged": 120,
-      "ranged_str": 50,
-      "str": 45
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 60,
-      "magic": 160,
-      "heavy": 160,
-      "standard": 160,
-      "light": 160,
-      "slash": 300,
-      "stab": 300
-    },
-    "attributes": [
-      "demon"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 14707,
-    "name": "Doom of Mokhaiotl",
-    "version": "Delve 8",
-    "image": "Doom of Mokhaiotl.png",
-    "level": 605,
-    "speed": 5,
-    "style": [
-      "Aggressive"
-    ],
-    "size": 3,
+    "size": 5,
     "max_hit": "121",
     "skills": {
       "atk": 300,
@@ -28702,14 +28702,304 @@
   {
     "id": 14707,
     "name": "Doom of Mokhaiotl",
-    "version": "Normal",
+    "version": "Delve 2",
     "image": "Doom of Mokhaiotl.png",
-    "level": 605,
+    "level": 608,
     "speed": 5,
     "style": [
-      "Aggressive"
+      "Melee",
+      "Magic",
+      "Ranged"
     ],
-    "size": 3,
+    "size": 5,
+    "max_hit": "121",
+    "skills": {
+      "atk": 300,
+      "def": 90,
+      "hp": 675,
+      "magic": 275,
+      "ranged": 110,
+      "str": 190
+    },
+    "offensive": {
+      "atk": 210,
+      "magic": 125,
+      "magic_str": 30,
+      "ranged": 120,
+      "ranged_str": 50,
+      "str": 45
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 60,
+      "magic": 160,
+      "heavy": 160,
+      "standard": 160,
+      "light": 160,
+      "slash": 300,
+      "stab": 300
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14707,
+    "name": "Doom of Mokhaiotl",
+    "version": "Delve 3",
+    "image": "Doom of Mokhaiotl.png",
+    "level": 658,
+    "speed": 5,
+    "style": [
+      "Melee",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 5,
+    "max_hit": "121",
+    "skills": {
+      "atk": 300,
+      "def": 90,
+      "hp": 525,
+      "magic": 275,
+      "ranged": 110,
+      "str": 190
+    },
+    "offensive": {
+      "atk": 210,
+      "magic": 125,
+      "magic_str": 30,
+      "ranged": 120,
+      "ranged_str": 50,
+      "str": 45
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 60,
+      "magic": 160,
+      "heavy": 160,
+      "standard": 160,
+      "light": 160,
+      "slash": 300,
+      "stab": 300
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14707,
+    "name": "Doom of Mokhaiotl",
+    "version": "Delve 4",
+    "image": "Doom of Mokhaiotl.png",
+    "level": 708,
+    "speed": 5,
+    "style": [
+      "Melee",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 5,
+    "max_hit": "121",
+    "skills": {
+      "atk": 300,
+      "def": 90,
+      "hp": 525,
+      "magic": 275,
+      "ranged": 110,
+      "str": 190
+    },
+    "offensive": {
+      "atk": 210,
+      "magic": 125,
+      "magic_str": 30,
+      "ranged": 120,
+      "ranged_str": 50,
+      "str": 45
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 60,
+      "magic": 160,
+      "heavy": 160,
+      "standard": 160,
+      "light": 160,
+      "slash": 300,
+      "stab": 300
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14707,
+    "name": "Doom of Mokhaiotl",
+    "version": "Delve 5",
+    "image": "Doom of Mokhaiotl.png",
+    "level": 758,
+    "speed": 5,
+    "style": [
+      "Melee",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 5,
+    "max_hit": "121",
+    "skills": {
+      "atk": 300,
+      "def": 90,
+      "hp": 525,
+      "magic": 275,
+      "ranged": 110,
+      "str": 190
+    },
+    "offensive": {
+      "atk": 210,
+      "magic": 125,
+      "magic_str": 30,
+      "ranged": 120,
+      "ranged_str": 50,
+      "str": 45
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 60,
+      "magic": 160,
+      "heavy": 160,
+      "standard": 160,
+      "light": 160,
+      "slash": 300,
+      "stab": 300
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14707,
+    "name": "Doom of Mokhaiotl",
+    "version": "Delve 6",
+    "image": "Doom of Mokhaiotl.png",
+    "level": 808,
+    "speed": 5,
+    "style": [
+      "Melee",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 5,
+    "max_hit": "121",
+    "skills": {
+      "atk": 300,
+      "def": 90,
+      "hp": 525,
+      "magic": 275,
+      "ranged": 110,
+      "str": 190
+    },
+    "offensive": {
+      "atk": 210,
+      "magic": 125,
+      "magic_str": 30,
+      "ranged": 120,
+      "ranged_str": 50,
+      "str": 45
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 60,
+      "magic": 160,
+      "heavy": 160,
+      "standard": 160,
+      "light": 160,
+      "slash": 300,
+      "stab": 300
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14707,
+    "name": "Doom of Mokhaiotl",
+    "version": "Delve 7",
+    "image": "Doom of Mokhaiotl.png",
+    "level": 858,
+    "speed": 5,
+    "style": [
+      "Melee",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 5,
+    "max_hit": "121",
+    "skills": {
+      "atk": 300,
+      "def": 90,
+      "hp": 525,
+      "magic": 275,
+      "ranged": 110,
+      "str": 190
+    },
+    "offensive": {
+      "atk": 210,
+      "magic": 125,
+      "magic_str": 30,
+      "ranged": 120,
+      "ranged_str": 50,
+      "str": 45
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 60,
+      "magic": 160,
+      "heavy": 160,
+      "standard": 160,
+      "light": 160,
+      "slash": 300,
+      "stab": 300
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14707,
+    "name": "Doom of Mokhaiotl",
+    "version": "Delve 8",
+    "image": "Doom of Mokhaiotl.png",
+    "level": 908,
+    "speed": 5,
+    "style": [
+      "Melee",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 5,
     "max_hit": "121",
     "skills": {
       "atk": 300,
@@ -29899,7 +30189,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-00000004-QINU`\"'"
+      "Slash '\"`UNIQ--ref-00000075-QINU`\"'"
     ],
     "size": 4,
     "max_hit": "15",
@@ -38648,6 +38938,50 @@
       "light": 50,
       "slash": 150,
       "stab": 150
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14779,
+    "name": "Gemstone Crab",
+    "version": "",
+    "image": "Gemstone Crab.png",
+    "level": 160,
+    "speed": 7,
+    "style": [
+      "Crush"
+    ],
+    "size": 5,
+    "max_hit": "1",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 50000,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
     },
     "attributes": [],
     "immunities": {
@@ -48134,7 +48468,7 @@
     "id": 13100,
     "name": "Guard (Varlamore)",
     "version": "1",
-    "image": "Guard (Varlamore).png",
+    "image": "Guard (Varlamore, 1).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -48178,7 +48512,7 @@
     "id": 13109,
     "name": "Guard (Varlamore)",
     "version": "10",
-    "image": "Guard (Varlamore) (10).png",
+    "image": "Guard (Varlamore, 10).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -48222,7 +48556,7 @@
     "id": 13101,
     "name": "Guard (Varlamore)",
     "version": "2",
-    "image": "Guard (Varlamore) (2).png",
+    "image": "Guard (Varlamore, 2).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -48266,7 +48600,7 @@
     "id": 13102,
     "name": "Guard (Varlamore)",
     "version": "3",
-    "image": "Guard (Varlamore) (3).png",
+    "image": "Guard (Varlamore, 3).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -48310,7 +48644,7 @@
     "id": 13103,
     "name": "Guard (Varlamore)",
     "version": "4",
-    "image": "Guard (Varlamore) (4).png",
+    "image": "Guard (Varlamore, 4).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -48354,7 +48688,7 @@
     "id": 13104,
     "name": "Guard (Varlamore)",
     "version": "5",
-    "image": "Guard (Varlamore) (5).png",
+    "image": "Guard (Varlamore, 5).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -48398,7 +48732,7 @@
     "id": 13105,
     "name": "Guard (Varlamore)",
     "version": "6",
-    "image": "Guard (Varlamore) (6).png",
+    "image": "Guard (Varlamore, 6).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -48442,7 +48776,7 @@
     "id": 13106,
     "name": "Guard (Varlamore)",
     "version": "7",
-    "image": "Guard (Varlamore) (7).png",
+    "image": "Guard (Varlamore, 7).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -48486,7 +48820,7 @@
     "id": 13107,
     "name": "Guard (Varlamore)",
     "version": "8",
-    "image": "Guard (Varlamore) (8).png",
+    "image": "Guard (Varlamore, 8).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -48530,7 +48864,7 @@
     "id": 13108,
     "name": "Guard (Varlamore)",
     "version": "9",
-    "image": "Guard (Varlamore) (9).png",
+    "image": "Guard (Varlamore, 9).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -73965,8 +74299,102 @@
   {
     "id": 14547,
     "name": "Ocelot",
-    "version": "",
-    "image": "Ocelot.png",
+    "version": "Brown",
+    "image": "Ocelot (brown).png",
+    "level": 35,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "3",
+    "skills": {
+      "atk": 30,
+      "def": 30,
+      "hp": 40,
+      "magic": 1,
+      "ranged": 1,
+      "str": 25
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "fire",
+      "severity": 10
+    }
+  },
+  {
+    "id": 14547,
+    "name": "Ocelot",
+    "version": "Grey",
+    "image": "Ocelot (grey).png",
+    "level": 35,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "3",
+    "skills": {
+      "atk": 30,
+      "def": 30,
+      "hp": 40,
+      "magic": 1,
+      "ranged": 1,
+      "str": 25
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "fire",
+      "severity": 10
+    }
+  },
+  {
+    "id": 14547,
+    "name": "Ocelot",
+    "version": "Light brown",
+    "image": "Ocelot (light brown).png",
     "level": 35,
     "speed": 4,
     "style": [
@@ -105029,8 +105457,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -107747,7 +108175,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000076-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000080-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -107792,7 +108220,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000076-QINU`\"'",
+    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000080-QINU`\"'",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -110085,7 +110513,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000002E-QINU`\"'",
+    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-000000C4-QINU`\"'",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -110129,7 +110557,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000030-QINU`\"'",
+    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-000000C6-QINU`\"'",
     "skills": {
       "atk": 260,
       "def": 0,

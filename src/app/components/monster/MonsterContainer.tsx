@@ -27,6 +27,7 @@ import PresetAttributeButton from '@/app/components/monster/PresetAttributeButto
 import NumberInput from '@/app/components/generic/NumberInput';
 import {
   GUARDIAN_IDS,
+  INFINITE_HEALTH_MONSTERS,
   MONSTER_PHASES_BY_ID,
   PARTY_SIZE_REQUIRED_MONSTER_IDS,
   TOMBS_OF_AMASCUT_MONSTER_IDS,
@@ -458,6 +459,7 @@ const MonsterContainer: React.FC = observer(() => {
                         disabled={!isCustomMonster}
                         image={hitpoints}
                         value={displayMonster.skills.hp}
+                        displayValue={INFINITE_HEALTH_MONSTERS.includes(displayMonster.id) ? 'Inf.' : undefined}
                         onChange={(v) => store.updateMonster({ skills: { hp: v } })}
                         required
                       />

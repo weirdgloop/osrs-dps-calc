@@ -213,6 +213,9 @@ def main():
             }
         else:
             monster['weakness'] = None
+        
+        if monster['id'] == 14779: # Gemstone crab has infinite hp which the wiki returns as 0
+            monster['skills']['hp'] = 50000
 
         # Prune...
         if (
