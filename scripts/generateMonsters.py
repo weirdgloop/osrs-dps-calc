@@ -101,6 +101,17 @@ def get_printout_value(prop, all_results=False):
 def has_category(category_array, category):
     return next((c for c in category_array if c['fulltext'] == "Category:%s" % category), None)
 
+strip_marker_regex = re.compile(r'[\'"`]*UNIQ--[a-zA-Z0-9]+-[0-9A-F]{8}-QINU[\'"`]*')
+
+def strip_parser_tags(value):
+    if isinstance(value, dict):
+        return {k: strip_parser_tags(v) for k, v in value.items()}
+    elif isinstance(value, list):
+        return [strip_parser_tags(item) for item in value]
+    elif isinstance(value, str):
+        return strip_marker_regex.sub('', value).strip()
+    else:
+        return value
 
 def main():
     # Grab the monster info using SMW, including all the relevant printouts
@@ -231,6 +242,8 @@ def main():
                 or '(deadman: apocalypse)' in str.lower(monster['name'])
         ):
             continue
+
+        monster = strip_parser_tags(monster)
 
         data.append(monster)
         if not monster['image'] == '':
