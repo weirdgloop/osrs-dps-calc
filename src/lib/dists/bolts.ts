@@ -4,7 +4,7 @@ import {
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { some } from 'd3-array';
 import { Monster } from '@/types/Monster';
-import {INFINITE_HEALTH_MONSTERS} from "@/lib/constants";
+import { INFINITE_HEALTH_MONSTERS } from '@/lib/constants';
 
 export interface BoltContext {
   rangedLvl: number;
