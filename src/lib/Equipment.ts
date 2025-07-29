@@ -371,6 +371,8 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
     totals.bonuses.ranged_str += 1;
   }
 
+  totals.bonuses.magic_str = Math.min(1000, totals.bonuses.magic_str);
+
   totals.attackSpeed = calculateAttackSpeed(player, monster);
 
   return totals;
