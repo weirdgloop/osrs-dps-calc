@@ -4,6 +4,7 @@ import {
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { some } from 'd3-array';
 import { Monster } from '@/types/Monster';
+import {INFINITE_HEALTH_MONSTERS} from "@/lib/constants";
 
 export interface BoltContext {
   rangedLvl: number;
@@ -108,9 +109,15 @@ export const onyxBolts: BoltTransformer = (ctx) => {
 
 export const rubyBolts: BoltTransformer = (ctx) => {
   const { zcb, spec, monster } = ctx;
-
   const chance = 0.06 * kandarinFactor(ctx);
-  const cap = zcb ? 110 : 100;
+  let cap;
+
+  if (INFINITE_HEALTH_MONSTERS.includes(ctx.monster.id)) {
+    cap = zcb ? 66 : 60;
+  } else {
+    cap = zcb ? 110 : 100;
+  }
+
   const effectDmg = Math.trunc(monster.inputs.monsterCurrentHp * (zcb ? 22 : 20) / 100);
   const effectHit = HitDistribution.single(1.0, [new Hitsplat(Math.min(cap, effectDmg))]);
 
