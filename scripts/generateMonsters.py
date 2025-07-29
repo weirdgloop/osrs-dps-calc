@@ -143,6 +143,14 @@ def main():
         ):
             continue
 
+        # Skip Fight Caves spawn point monsters
+        if 'Spawn point' in version:
+            continue
+
+        # Skip Duke Sucellus non-attackable monsters and Hueycoatyl defeated
+        if 'Asleep' in version or 'Defeated' in version:
+            continue
+
         monster_style = get_printout_value(po['Attack style'], True)
         if monster_style == 'None' or monster_style == 'N/A':
             monster_style = None
