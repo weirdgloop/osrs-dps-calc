@@ -141,6 +141,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         'Crystal halberd',
         'Abyssal dagger',
         'Saradomin sword',
+        'Arkan blade',
       ]) || this.isWearingGodsword()) {
         defenceStyle = 'slash';
       } else if (this.wearing(['Arclight', 'Emberlight', 'Dragon sword'])) {
