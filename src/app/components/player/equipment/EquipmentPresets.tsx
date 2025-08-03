@@ -94,7 +94,7 @@ const EquipmentPresets: React.FC = () => {
             ammo: findItemById(22947), // Rada's blessing 4
             body: findItemById(21021), // Ancestral robe top
             legs: findItemById(21024), // Ancestral robe bottom
-            hands: findItemById(19544), // Tormented bracelet
+            hands: findItemById(31106), // Confliction gauntlets
             feet: findItemById(31097), // Avernic treads (max)
             ring: findItemById(28313), // Magus ring
           },
