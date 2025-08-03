@@ -4215,7 +4215,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000014-QINU`\"' Magic"
+      "Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -15317,7 +15317,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 15
+    }
   },
   {
     "id": 12596,
@@ -28664,7 +28667,7 @@
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "121",
+    "max_hit": "58 <br/>99 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
@@ -28712,7 +28715,7 @@
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "121",
+    "max_hit": "47 <br/> 60 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
@@ -28760,7 +28763,7 @@
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "121",
+    "max_hit": "48 <br/>60 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
@@ -28808,7 +28811,7 @@
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "121",
+    "max_hit": "50 <br/>80 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
@@ -28856,7 +28859,7 @@
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "121",
+    "max_hit": "80 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
@@ -28904,7 +28907,7 @@
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "121",
+    "max_hit": "53 <br/> 80 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
@@ -28952,7 +28955,7 @@
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "121",
+    "max_hit": "99 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
@@ -29000,7 +29003,7 @@
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "121",
+    "max_hit": "57 <br/>99 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
@@ -29048,7 +29051,7 @@
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "121",
+    "max_hit": "58 <br/>99 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
@@ -29955,7 +29958,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-00000037-QINU`\"'"
+      "Slash"
     ],
     "size": 4,
     "max_hit": "15",
@@ -41253,7 +41256,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": 2,
       "crush": 0,
       "magic": 0,
       "heavy": 0,
@@ -41266,7 +41269,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 680,
@@ -41774,7 +41780,7 @@
       "crush": 130,
       "magic": 125,
       "heavy": 100,
-      "standard": 100,
+      "standard": 80,
       "light": 100,
       "slash": 110,
       "stab": 105
@@ -41783,7 +41789,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
   },
   {
     "id": 6297,
@@ -44437,7 +44446,7 @@
     "id": 7245,
     "name": "Greater demon",
     "version": "Level 100",
-    "image": "Greater demon (2).png",
+    "image": "Greater demon (4).png",
     "level": 100,
     "speed": 4,
     "style": [
@@ -44486,7 +44495,7 @@
     "id": 7244,
     "name": "Greater demon",
     "version": "Level 101",
-    "image": "Greater demon (3).png",
+    "image": "Greater demon (2).png",
     "level": 101,
     "speed": 4,
     "style": [
@@ -44534,8 +44543,8 @@
   {
     "id": 7871,
     "name": "Greater demon",
-    "version": "Level 104",
-    "image": "Greater demon (4).png",
+    "version": "Level 104 (Wilderness Slayer Cave)",
+    "image": "Greater demon.png",
     "level": 104,
     "speed": 4,
     "style": [
@@ -45812,24 +45821,24 @@
     "level": 21,
     "speed": 4,
     "style": [
-      "Stab"
+      "Ranged"
     ],
     "size": 1,
     "max_hit": "3",
     "skills": {
-      "atk": 19,
+      "atk": 1,
       "def": 14,
       "hp": 22,
       "magic": 1,
-      "ranged": 1,
-      "str": 18
+      "ranged": 19,
+      "str": 1
     },
     "offensive": {
       "atk": 4,
       "magic": 0,
       "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
+      "ranged": 4,
+      "ranged_str": 5,
       "str": 5
     },
     "defensive": {
@@ -45856,24 +45865,24 @@
     "level": 21,
     "speed": 4,
     "style": [
-      "Stab"
+      "Ranged"
     ],
     "size": 1,
     "max_hit": "3",
     "skills": {
-      "atk": 19,
+      "atk": 1,
       "def": 14,
       "hp": 22,
       "magic": 1,
-      "ranged": 1,
-      "str": 18
+      "ranged": 19,
+      "str": 1
     },
     "offensive": {
       "atk": 4,
       "magic": 0,
       "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
+      "ranged": 4,
+      "ranged_str": 5,
       "str": 5
     },
     "defensive": {
@@ -45988,24 +45997,24 @@
     "level": 21,
     "speed": 4,
     "style": [
-      "Stab"
+      "Ranged"
     ],
     "size": 1,
     "max_hit": "3",
     "skills": {
-      "atk": 19,
+      "atk": 1,
       "def": 14,
       "hp": 22,
       "magic": 1,
-      "ranged": 1,
-      "str": 18
+      "ranged": 19,
+      "str": 1
     },
     "offensive": {
       "atk": 4,
       "magic": 0,
       "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
+      "ranged": 4,
+      "ranged_str": 5,
       "str": 5
     },
     "defensive": {
@@ -46032,24 +46041,24 @@
     "level": 21,
     "speed": 4,
     "style": [
-      "Stab"
+      "Ranged"
     ],
     "size": 1,
     "max_hit": "3",
     "skills": {
-      "atk": 19,
+      "atk": 1,
       "def": 14,
       "hp": 22,
       "magic": 1,
-      "ranged": 1,
-      "str": 18
+      "ranged": 19,
+      "str": 1
     },
     "offensive": {
       "atk": 4,
       "magic": 0,
       "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
+      "ranged": 4,
+      "ranged_str": 5,
       "str": 5
     },
     "defensive": {
@@ -48672,24 +48681,24 @@
     "level": 21,
     "speed": 4,
     "style": [
-      "Stab"
+      "Ranged"
     ],
     "size": 1,
     "max_hit": "3",
     "skills": {
-      "atk": 19,
+      "atk": 1,
       "def": 14,
       "hp": 22,
       "magic": 1,
-      "ranged": 1,
-      "str": 18
+      "ranged": 19,
+      "str": 1
     },
     "offensive": {
       "atk": 4,
       "magic": 0,
       "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
+      "ranged": 4,
+      "ranged_str": 5,
       "str": 5
     },
     "defensive": {
@@ -48716,24 +48725,24 @@
     "level": 21,
     "speed": 4,
     "style": [
-      "Stab"
+      "Ranged"
     ],
     "size": 1,
     "max_hit": "3",
     "skills": {
-      "atk": 19,
+      "atk": 1,
       "def": 14,
       "hp": 22,
       "magic": 1,
-      "ranged": 1,
-      "str": 18
+      "ranged": 19,
+      "str": 1
     },
     "offensive": {
       "atk": 4,
       "magic": 0,
       "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
+      "ranged": 4,
+      "ranged_str": 5,
       "str": 5
     },
     "defensive": {
@@ -48848,24 +48857,24 @@
     "level": 21,
     "speed": 4,
     "style": [
-      "Stab"
+      "Ranged"
     ],
     "size": 1,
     "max_hit": "3",
     "skills": {
-      "atk": 19,
+      "atk": 1,
       "def": 14,
       "hp": 22,
       "magic": 1,
-      "ranged": 1,
-      "str": 18
+      "ranged": 19,
+      "str": 1
     },
     "offensive": {
       "atk": 4,
       "magic": 0,
       "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
+      "ranged": 4,
+      "ranged_str": 5,
       "str": 5
     },
     "defensive": {
@@ -48892,24 +48901,24 @@
     "level": 21,
     "speed": 4,
     "style": [
-      "Stab"
+      "Ranged"
     ],
     "size": 1,
     "max_hit": "3",
     "skills": {
-      "atk": 19,
+      "atk": 1,
       "def": 14,
       "hp": 22,
       "magic": 1,
-      "ranged": 1,
-      "str": 18
+      "ranged": 19,
+      "str": 1
     },
     "offensive": {
       "atk": 4,
       "magic": 0,
       "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
+      "ranged": 4,
+      "ranged_str": 5,
       "str": 5
     },
     "defensive": {
@@ -49943,52 +49952,8 @@
   {
     "id": 3271,
     "name": "Guard",
-    "version": "Falador (battleaxe, 1)",
-    "image": "Guard (Falador, battleaxe, 1).png",
-    "level": 19,
-    "speed": 6,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "3",
-    "skills": {
-      "atk": 15,
-      "def": 16,
-      "hp": 22,
-      "magic": 1,
-      "ranged": 1,
-      "str": 15
-    },
-    "offensive": {
-      "atk": 6,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 10
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 5,
-      "magic": -4,
-      "heavy": 5,
-      "standard": 5,
-      "light": 5,
-      "slash": 5,
-      "stab": 5
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 11946,
-    "name": "Guard",
-    "version": "Falador (battleaxe, 2)",
-    "image": "Guard (Falador, battleaxe, 2).png",
+    "version": "Falador (battleaxe)",
+    "image": "Guard (Falador, battleaxe).png",
     "level": 19,
     "speed": 6,
     "style": [
@@ -56626,7 +56591,7 @@
   {
     "id": 272,
     "name": "Iron dragon",
-    "version": "Normal",
+    "version": "Standard",
     "image": "Iron dragon.png",
     "level": 189,
     "speed": 4,
@@ -56635,7 +56600,7 @@
       "Dragonfire"
     ],
     "size": 4,
-    "max_hit": "50 (Dragonfire)",
+    "max_hit": "17 (Melee)",
     "skills": {
       "atk": 165,
       "def": 165,
@@ -61582,7 +61547,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air spells",
+      "element": "air",
       "severity": 60
     }
   },
@@ -61630,7 +61595,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air spells",
+      "element": "air",
       "severity": 60
     }
   },
@@ -80229,7 +80194,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 0,
       "heavy": 100,
@@ -80273,7 +80238,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 0,
       "heavy": 100,
@@ -80317,7 +80282,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 0,
       "heavy": 100,
@@ -80361,7 +80326,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 0,
       "heavy": 100,
@@ -80405,7 +80370,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 100,
       "heavy": 0,
@@ -80449,7 +80414,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 100,
       "heavy": 0,
@@ -80493,7 +80458,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 100,
       "heavy": 0,
@@ -80537,7 +80502,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 100,
       "heavy": 0,
@@ -80581,7 +80546,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 0,
       "magic": 100,
       "heavy": 100,
@@ -80625,7 +80590,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 0,
       "magic": 100,
       "heavy": 100,
@@ -80669,7 +80634,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 0,
       "magic": 100,
       "heavy": 100,
@@ -80713,7 +80678,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 0,
       "magic": 100,
       "heavy": 100,
@@ -80757,7 +80722,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 100,
       "heavy": 100,
@@ -80801,7 +80766,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 100,
       "heavy": 100,
@@ -80845,7 +80810,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 100,
       "heavy": 100,
@@ -80889,7 +80854,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 100,
       "heavy": 100,
@@ -81761,7 +81726,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 20
+    }
   },
   {
     "id": 1263,
@@ -81805,7 +81773,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 20
+    }
   },
   {
     "id": 1264,
@@ -81849,7 +81820,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 20
+    }
   },
   {
     "id": 1265,
@@ -81893,7 +81867,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 20
+    }
   },
   {
     "id": 1261,
@@ -81937,7 +81914,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 20
+    }
   },
   {
     "id": 3966,
@@ -84385,7 +84365,7 @@
       "flat_armour": 0,
       "crush": 68,
       "magic": 30,
-      "heavy": 50,
+      "heavy": 20,
       "standard": 50,
       "light": 50,
       "slash": 60,
@@ -85683,7 +85663,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 25
+    }
   },
   {
     "id": 422,
@@ -85727,7 +85710,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 25
+    }
   },
   {
     "id": 143,
@@ -99855,7 +99841,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000000C-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -108663,7 +108649,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000003-QINU`\"'",
+    "max_hit": "148&thinsp;",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -108708,7 +108694,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000003-QINU`\"'",
+    "max_hit": "148&thinsp;",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -111001,7 +110987,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-0000003F-QINU`\"'",
+    "max_hit": "32-43 (Melee)",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -111045,7 +111031,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-00000041-QINU`\"'",
+    "max_hit": "30-37 (Melee)",
     "skills": {
       "atk": 260,
       "def": 0,
