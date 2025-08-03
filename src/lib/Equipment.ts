@@ -334,7 +334,7 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
 
   if (playerEquipment.weapon?.name === "Tumeken's shadow" && player.style.stance !== 'Manual Cast') {
     const factor = TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id) ? 4 : 3;
-    totals.bonuses.magic_str *= factor;
+    totals.bonuses.magic_str = Math.min(1000, totals.bonuses.magic_str * factor);
     totals.offensive.magic *= factor;
   }
 
