@@ -46,7 +46,7 @@ const EquipmentPresets: React.FC = () => {
             body: findItemById(23975), // Crystal body
             legs: findItemById(23979), // Crystal legs
             hands: findItemById(26235), // Zaryte vambraces
-            feet: findItemById(13237), // Pegasian boots
+            feet: findItemById(31097), // Avernic treads (max)
             ring: findItemById(28310), // Venator ring
           },
         };
@@ -78,7 +78,7 @@ const EquipmentPresets: React.FC = () => {
             shield: null,
             legs: findItemById(4722), // Dharok's platelegs
             hands: findItemById(22981), // Ferocious gloves
-            feet: findItemById(13239), // Primordial boots
+            feet: findItemById(31097), // Avernic treads (max)
             ring: findItemById(28307), // Ultor ring
           },
         };
@@ -94,8 +94,8 @@ const EquipmentPresets: React.FC = () => {
             ammo: findItemById(22947), // Rada's blessing 4
             body: findItemById(21021), // Ancestral robe top
             legs: findItemById(21024), // Ancestral robe bottom
-            hands: findItemById(19544), // Tormented bracelet
-            feet: findItemById(13235), // Eternal boots
+            hands: findItemById(31106), // Confliction gauntlets
+            feet: findItemById(31097), // Avernic treads (max)
             ring: findItemById(28313), // Magus ring
           },
         };
@@ -113,7 +113,7 @@ const EquipmentPresets: React.FC = () => {
             shield: findItemById(22322), // Avernic defender
             legs: findItemById(26386), // Torva platelegs
             hands: findItemById(22981), // Ferocious gloves
-            feet: findItemById(13239), // Primordial boots
+            feet: findItemById(31097), // Avernic treads (max)
             ring: findItemById(28307), // Ultor ring
           },
         };
@@ -130,7 +130,7 @@ const EquipmentPresets: React.FC = () => {
             body: findItemById(27238), // Masori body (f)
             legs: findItemById(27241), // Masori chaps (f)
             hands: findItemById(26235), // Zaryte vambraces
-            feet: findItemById(13237), // Pegasian boots
+            feet: findItemById(31097), // Avernic treads (max)
             ring: findItemById(28310), // Venator ring
           },
         };
@@ -199,7 +199,7 @@ const EquipmentPresets: React.FC = () => {
             body: findItemById(13072), // Elite void top
             legs: findItemById(13073), // Elite void robe
             hands: findItemById(8842), // Void knight gloves
-            feet: findItemById(13235), // Eternal boots
+            feet: findItemById(31097), // Avernic treads (max)
             ring: findItemById(28313), // Magus ring
           },
         };
@@ -217,7 +217,7 @@ const EquipmentPresets: React.FC = () => {
             shield: findItemById(22322), // Avernic defender
             legs: findItemById(13073), // Elite void robe
             hands: findItemById(8842), // Void knight gloves
-            feet: findItemById(13239), // Primordial boots
+            feet: findItemById(31097), // Avernic treads (max)
             ring: findItemById(28307), // Ultor ring
           },
         };
@@ -234,7 +234,7 @@ const EquipmentPresets: React.FC = () => {
             body: findItemById(13072), // Elite void top
             legs: findItemById(13073), // Elite void robe
             hands: findItemById(8842), // Void knight gloves
-            feet: findItemById(13237), // Pegasian boots
+            feet: findItemById(31097), // Avernic treads (max)
             ring: findItemById(28310), // Venator ring
           },
         };
@@ -253,7 +253,7 @@ const EquipmentPresets: React.FC = () => {
             shield: null,
             legs: findItemById(4759), // Verac's plateskirt
             hands: findItemById(22981), // Ferocious gloves
-            feet: findItemById(13239), // Primordial boots
+            feet: findItemById(31097), // Avernic treads (max)
             ring: findItemById(28307), // Ultor ring
           },
         };
