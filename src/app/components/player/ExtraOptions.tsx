@@ -107,7 +107,7 @@ const ExtraOptions: React.FC = observer(() => {
               <span
                 className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
                 data-tooltip-id="tooltip"
-                data-tooltip-content="Next melee attack within 6 ticks is guaranteed to be accurate."
+                data-tooltip-content="Next melee attack within 10 ticks is guaranteed to be accurate."
               >
                 ?
               </span>
