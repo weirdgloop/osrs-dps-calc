@@ -6448,7 +6448,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 30
+    }
   },
   {
     "id": 10520,
@@ -44016,14 +44019,13 @@
   {
     "id": 7551,
     "name": "Great Olm",
-    "version": "Normal",
+    "version": "Head (Normal)",
     "image": "Great Olm.png",
     "level": 1043,
     "speed": 4,
     "style": [
       "Magic",
-      "Ranged",
-      "None"
+      "Ranged"
     ],
     "size": 5,
     "max_hit": "27 <br/> 28 <br/> 29 (phase 4)",
@@ -44050,6 +44052,106 @@
       "heavy": 50,
       "standard": 50,
       "light": 50,
+      "slash": 200,
+      "stab": 200
+    },
+    "attributes": [
+      "dragon",
+      "xerician"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
+  },
+  {
+    "id": 7552,
+    "name": "Great Olm",
+    "version": "Left claw (Normal)",
+    "image": "Great Olm.png",
+    "level": 750,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 5,
+    "max_hit": "0",
+    "skills": {
+      "atk": 250,
+      "def": 175,
+      "hp": 600,
+      "magic": 175,
+      "ranged": 250,
+      "str": 250
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 60,
+      "magic_str": 0,
+      "ranged": 60,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 50,
+      "magic": 200,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
+      "slash": 50,
+      "stab": 50
+    },
+    "attributes": [
+      "dragon",
+      "xerician"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
+  },
+  {
+    "id": 7550,
+    "name": "Great Olm",
+    "version": "Right claw (Normal)",
+    "image": "Great Olm.png",
+    "level": 549,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 5,
+    "max_hit": "0",
+    "skills": {
+      "atk": 250,
+      "def": 175,
+      "hp": 600,
+      "magic": 87,
+      "ranged": 250,
+      "str": 250
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 60,
+      "magic_str": 0,
+      "ranged": 60,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 200,
+      "magic": 50,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
       "slash": 200,
       "stab": 200
     },
@@ -95611,7 +95713,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "weakness": null
   },
