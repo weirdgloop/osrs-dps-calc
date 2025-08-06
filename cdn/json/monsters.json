@@ -16673,7 +16673,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "\"fire\"",
+      "element": "fire",
       "severity": 30
     }
   },
@@ -39929,7 +39929,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "water",
+      "element": "earth",
       "severity": 50
     }
   },
@@ -81611,6 +81611,50 @@
     "weakness": null
   },
   {
+    "id": 12851,
+    "name": "Rabbit",
+    "version": "Varlamore",
+    "image": "Rabbit (Varlamore, 1).png",
+    "level": 2,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 5,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": -47,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": -42
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -42,
+      "magic": -42,
+      "heavy": -42,
+      "standard": -42,
+      "light": -42,
+      "slash": -42,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 4759,
     "name": "Radat",
     "version": "",
@@ -89346,7 +89390,7 @@
       "crush": 100,
       "magic": 50,
       "heavy": 20,
-      "standard": 20,
+      "standard": 0,
       "light": 20,
       "slash": 100,
       "stab": 20
@@ -89396,7 +89440,7 @@
       "crush": 100,
       "magic": 50,
       "heavy": 20,
-      "standard": 20,
+      "standard": 0,
       "light": 20,
       "slash": 100,
       "stab": 20
@@ -93984,7 +94028,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -94033,7 +94077,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -94082,7 +94126,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
