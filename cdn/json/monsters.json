@@ -4215,7 +4215,7 @@
     "style": [
       "Ranged",
       "Crush",
-      "'\"`UNIQ--ref-00000000-QINU`\"' Magic"
+      "Magic"
     ],
     "size": 7,
     "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
@@ -6420,11 +6420,11 @@
     "max_hit": "28",
     "skills": {
       "atk": 1,
-      "def": 1,
+      "def": 160,
       "hp": 600,
       "magic": 180,
       "ranged": 180,
-      "str": 160
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -6448,7 +6448,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 30
+    }
   },
   {
     "id": 10520,
@@ -13720,7 +13723,7 @@
       "Typeless slash"
     ],
     "size": 5,
-    "max_hit": "20x3 (Typeless)",
+    "max_hit": "20x3",
     "skills": {
       "atk": 258,
       "def": 60,
@@ -14218,7 +14221,7 @@
       "Typeless slash"
     ],
     "size": 5,
-    "max_hit": "20x3 (Typeless)",
+    "max_hit": "20x3",
     "skills": {
       "atk": 258,
       "def": 60,
@@ -15317,7 +15320,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 15
+    }
   },
   {
     "id": 12596,
@@ -16667,7 +16673,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "\"fire\"",
+      "element": "fire",
       "severity": 30
     }
   },
@@ -28654,17 +28660,65 @@
   {
     "id": 14707,
     "name": "Doom of Mokhaiotl",
-    "version": "Delve 1",
+    "version": "Deep Delve",
     "image": "Doom of Mokhaiotl.png",
-    "level": 558,
-    "speed": 5,
+    "level": 908,
+    "speed": 6,
     "style": [
       "Melee",
       "Magic",
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "121",
+    "max_hit": "58 <br/>99 (charge)",
+    "skills": {
+      "atk": 300,
+      "def": 90,
+      "hp": 625,
+      "magic": 275,
+      "ranged": 110,
+      "str": 190
+    },
+    "offensive": {
+      "atk": 210,
+      "magic": 125,
+      "magic_str": 30,
+      "ranged": 120,
+      "ranged_str": 50,
+      "str": 45
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 60,
+      "magic": 160,
+      "heavy": 160,
+      "standard": 160,
+      "light": 160,
+      "slash": 300,
+      "stab": 300
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14707,
+    "name": "Doom of Mokhaiotl",
+    "version": "Delve 1",
+    "image": "Doom of Mokhaiotl.png",
+    "level": 558,
+    "speed": 6,
+    "style": [
+      "Melee",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 5,
+    "max_hit": "47 <br/> 60 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
@@ -28705,18 +28759,18 @@
     "version": "Delve 2",
     "image": "Doom of Mokhaiotl.png",
     "level": 608,
-    "speed": 5,
+    "speed": 6,
     "style": [
       "Melee",
       "Magic",
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "121",
+    "max_hit": "48 <br/>60 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
-      "hp": 675,
+      "hp": 550,
       "magic": 275,
       "ranged": 110,
       "str": 190
@@ -28753,18 +28807,18 @@
     "version": "Delve 3",
     "image": "Doom of Mokhaiotl.png",
     "level": 658,
-    "speed": 5,
+    "speed": 6,
     "style": [
       "Melee",
       "Magic",
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "121",
+    "max_hit": "50 <br/>80 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
-      "hp": 525,
+      "hp": 575,
       "magic": 275,
       "ranged": 110,
       "str": 190
@@ -28801,18 +28855,18 @@
     "version": "Delve 4",
     "image": "Doom of Mokhaiotl.png",
     "level": 708,
-    "speed": 5,
+    "speed": 6,
     "style": [
       "Melee",
       "Magic",
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "121",
+    "max_hit": "80 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
-      "hp": 525,
+      "hp": 600,
       "magic": 275,
       "ranged": 110,
       "str": 190
@@ -28849,18 +28903,18 @@
     "version": "Delve 5",
     "image": "Doom of Mokhaiotl.png",
     "level": 758,
-    "speed": 5,
+    "speed": 6,
     "style": [
       "Melee",
       "Magic",
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "121",
+    "max_hit": "53 <br/> 80 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
-      "hp": 525,
+      "hp": 625,
       "magic": 275,
       "ranged": 110,
       "str": 190
@@ -28897,18 +28951,18 @@
     "version": "Delve 6",
     "image": "Doom of Mokhaiotl.png",
     "level": 808,
-    "speed": 5,
+    "speed": 6,
     "style": [
       "Melee",
       "Magic",
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "121",
+    "max_hit": "99 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
-      "hp": 525,
+      "hp": 650,
       "magic": 275,
       "ranged": 110,
       "str": 190
@@ -28945,18 +28999,18 @@
     "version": "Delve 7",
     "image": "Doom of Mokhaiotl.png",
     "level": 858,
-    "speed": 5,
+    "speed": 6,
     "style": [
       "Melee",
       "Magic",
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "121",
+    "max_hit": "57 <br/>99 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
-      "hp": 525,
+      "hp": 650,
       "magic": 275,
       "ranged": 110,
       "str": 190
@@ -28993,18 +29047,18 @@
     "version": "Delve 8",
     "image": "Doom of Mokhaiotl.png",
     "level": 908,
-    "speed": 5,
+    "speed": 6,
     "style": [
       "Melee",
       "Magic",
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "121",
+    "max_hit": "58 <br/>99 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
-      "hp": 525,
+      "hp": 675,
       "magic": 275,
       "ranged": 110,
       "str": 190
@@ -29621,53 +29675,6 @@
     "weakness": null
   },
   {
-    "id": 12166,
-    "name": "Duke Sucellus",
-    "version": "Awakened, Asleep",
-    "image": "Duke Sucellus (asleep).png",
-    "level": 1099,
-    "speed": 5,
-    "style": [
-      "Magic",
-      "Crush"
-    ],
-    "size": 7,
-    "max_hit": "81 (Melee)",
-    "skills": {
-      "atk": 435,
-      "def": 316,
-      "hp": 1540,
-      "magic": 465,
-      "ranged": 0,
-      "str": 500
-    },
-    "offensive": {
-      "atk": 200,
-      "magic": 150,
-      "magic_str": 32,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 38
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 190,
-      "magic": 440,
-      "heavy": 320,
-      "standard": 320,
-      "light": 320,
-      "slash": 65,
-      "stab": 255
-    },
-    "attributes": [
-      "demon"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
     "id": 12191,
     "name": "Duke Sucellus",
     "version": "Awakened, Awake",
@@ -29704,100 +29711,6 @@
       "standard": 320,
       "light": 320,
       "slash": 65,
-      "stab": 255
-    },
-    "attributes": [
-      "demon"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 12192,
-    "name": "Duke Sucellus",
-    "version": "Awakened, Defeated",
-    "image": "Duke Sucellus (defeated).png",
-    "level": 1099,
-    "speed": 5,
-    "style": [
-      "Magic",
-      "Crush"
-    ],
-    "size": 7,
-    "max_hit": "81 (Melee)",
-    "skills": {
-      "atk": 435,
-      "def": 316,
-      "hp": 1540,
-      "magic": 465,
-      "ranged": 0,
-      "str": 500
-    },
-    "offensive": {
-      "atk": 200,
-      "magic": 150,
-      "magic_str": 32,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 38
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 190,
-      "magic": 440,
-      "heavy": 320,
-      "standard": 320,
-      "light": 320,
-      "slash": 65,
-      "stab": 255
-    },
-    "attributes": [
-      "demon"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 12166,
-    "name": "Duke Sucellus",
-    "version": "Post-quest, Asleep",
-    "image": "Duke Sucellus (asleep).png",
-    "level": 758,
-    "speed": 5,
-    "style": [
-      "Magic",
-      "Crush"
-    ],
-    "size": 7,
-    "max_hit": "56 (Melee)",
-    "skills": {
-      "atk": 300,
-      "def": 275,
-      "hp": 485,
-      "magic": 310,
-      "ranged": 0,
-      "str": 345
-    },
-    "offensive": {
-      "atk": 200,
-      "magic": 150,
-      "magic_str": 32,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 38
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 190,
-      "magic": 440,
-      "heavy": 320,
-      "standard": 320,
-      "light": 320,
-      "slash": 45,
       "stab": 255
     },
     "attributes": [
@@ -29856,151 +29769,10 @@
     "weakness": null
   },
   {
-    "id": 12192,
-    "name": "Duke Sucellus",
-    "version": "Post-quest, Defeated",
-    "image": "Duke Sucellus (defeated).png",
-    "level": 758,
-    "speed": 5,
-    "style": [
-      "Magic",
-      "Crush"
-    ],
-    "size": 7,
-    "max_hit": "56 (Melee)",
-    "skills": {
-      "atk": 300,
-      "def": 275,
-      "hp": 485,
-      "magic": 310,
-      "ranged": 0,
-      "str": 345
-    },
-    "offensive": {
-      "atk": 200,
-      "magic": 150,
-      "magic_str": 32,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 38
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 190,
-      "magic": 440,
-      "heavy": 320,
-      "standard": 320,
-      "light": 320,
-      "slash": 45,
-      "stab": 255
-    },
-    "attributes": [
-      "demon"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 12193,
-    "name": "Duke Sucellus",
-    "version": "Quest, Asleep",
-    "image": "Duke Sucellus (asleep).png",
-    "level": 538,
-    "speed": 6,
-    "style": [
-      "Magic",
-      "Crush"
-    ],
-    "size": 7,
-    "max_hit": "36 (Melee)",
-    "skills": {
-      "atk": 250,
-      "def": 215,
-      "hp": 330,
-      "magic": 230,
-      "ranged": 0,
-      "str": 280
-    },
-    "offensive": {
-      "atk": 200,
-      "magic": 150,
-      "magic_str": 10,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 16
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 160,
-      "magic": 400,
-      "heavy": 300,
-      "standard": 300,
-      "light": 300,
-      "slash": 30,
-      "stab": 210
-    },
-    "attributes": [
-      "demon"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
     "id": 12195,
     "name": "Duke Sucellus",
     "version": "Quest, Awake",
     "image": "Duke Sucellus.png",
-    "level": 538,
-    "speed": 6,
-    "style": [
-      "Magic",
-      "Crush"
-    ],
-    "size": 7,
-    "max_hit": "36 (Melee)",
-    "skills": {
-      "atk": 250,
-      "def": 215,
-      "hp": 330,
-      "magic": 230,
-      "ranged": 0,
-      "str": 280
-    },
-    "offensive": {
-      "atk": 200,
-      "magic": 150,
-      "magic_str": 10,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 16
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 160,
-      "magic": 400,
-      "heavy": 300,
-      "standard": 300,
-      "light": 300,
-      "slash": 30,
-      "stab": 210
-    },
-    "attributes": [
-      "demon"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 12196,
-    "name": "Duke Sucellus",
-    "version": "Quest, Defeated",
-    "image": "Duke Sucellus (defeated).png",
     "level": 538,
     "speed": 6,
     "style": [
@@ -30189,7 +29961,7 @@
     "level": 248,
     "speed": 6,
     "style": [
-      "Slash '\"`UNIQ--ref-00000075-QINU`\"'"
+      "Slash"
     ],
     "size": 4,
     "max_hit": "15",
@@ -31040,7 +30812,7 @@
     "weakness": null
   },
   {
-    "id": 14421,
+    "id": 14420,
     "name": "Earthen Nagua",
     "version": "Normal",
     "image": "Earthen Nagua.png",
@@ -31091,8 +30863,8 @@
   {
     "id": 14421,
     "name": "Earthen Nagua",
-    "version": "Shielded",
-    "image": "Earthen Nagua (shielded).png",
+    "version": "Reinforced",
+    "image": "Earthen Nagua (reinforced).png",
     "level": 128,
     "speed": 4,
     "style": [
@@ -31125,6 +30897,55 @@
       "light": 150,
       "slash": 70,
       "stab": 50
+    },
+    "attributes": [
+      "spectral"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 15
+    }
+  },
+  {
+    "id": 14420,
+    "name": "Earthen Nagua",
+    "version": "Weakened",
+    "image": "Earthen Nagua (weakened).png",
+    "level": 128,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "13",
+    "skills": {
+      "atk": 120,
+      "def": 40,
+      "hp": 160,
+      "magic": 40,
+      "ranged": 1,
+      "str": 120
+    },
+    "offensive": {
+      "atk": 100,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": -4,
+      "crush": 0,
+      "magic": 60,
+      "heavy": 150,
+      "standard": 150,
+      "light": 150,
+      "slash": 0,
+      "stab": 0
     },
     "attributes": [
       "spectral"
@@ -31192,7 +31013,7 @@
       "Typeless slash"
     ],
     "size": 5,
-    "max_hit": "20x3 (Typeless)",
+    "max_hit": "20x3",
     "skills": {
       "atk": 258,
       "def": 60,
@@ -31236,7 +31057,7 @@
       "Typeless slash"
     ],
     "size": 5,
-    "max_hit": "20x3 (Typeless)",
+    "max_hit": "20x3",
     "skills": {
       "atk": 258,
       "def": 60,
@@ -33818,6 +33639,50 @@
       "light": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12654,
+    "name": "Ennius Tullus",
+    "version": "",
+    "image": "Ennius Tullus.png",
+    "level": 306,
+    "speed": 3,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "22",
+    "skills": {
+      "atk": 280,
+      "def": 75,
+      "hp": 380,
+      "magic": 75,
+      "ranged": 1,
+      "str": 210
+    },
+    "offensive": {
+      "atk": 90,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 50,
+      "magic": 100,
+      "heavy": 80,
+      "standard": 80,
+      "light": 80,
+      "slash": 60,
+      "stab": 70
     },
     "attributes": [],
     "immunities": {
@@ -40064,7 +39929,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "water",
+      "element": "earth",
       "severity": 50
     }
   },
@@ -41394,7 +41259,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": 2,
       "crush": 0,
       "magic": 0,
       "heavy": 0,
@@ -41407,7 +41272,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 680,
@@ -41915,7 +41783,7 @@
       "crush": 130,
       "magic": 125,
       "heavy": 100,
-      "standard": 100,
+      "standard": 80,
       "light": 100,
       "slash": 110,
       "stab": 105
@@ -41924,7 +41792,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
   },
   {
     "id": 6297,
@@ -44148,7 +44019,7 @@
   {
     "id": 7551,
     "name": "Great Olm",
-    "version": "Head",
+    "version": "Head (Normal)",
     "image": "Great Olm.png",
     "level": 1043,
     "speed": 4,
@@ -44199,10 +44070,10 @@
   {
     "id": 7552,
     "name": "Great Olm",
-    "version": "Left claw",
+    "version": "Left claw (Normal)",
     "image": "Great Olm.png",
     "level": 750,
-    "speed": 4,
+    "speed": -1,
     "style": [
       "None"
     ],
@@ -44249,10 +44120,10 @@
   {
     "id": 7550,
     "name": "Great Olm",
-    "version": "Right claw",
+    "version": "Right claw (Normal)",
     "image": "Great Olm.png",
     "level": 549,
-    "speed": 4,
+    "speed": -1,
     "style": [
       "None"
     ],
@@ -44677,7 +44548,7 @@
     "id": 7245,
     "name": "Greater demon",
     "version": "Level 100",
-    "image": "Greater demon (2).png",
+    "image": "Greater demon (4).png",
     "level": 100,
     "speed": 4,
     "style": [
@@ -44726,7 +44597,7 @@
     "id": 7244,
     "name": "Greater demon",
     "version": "Level 101",
-    "image": "Greater demon (3).png",
+    "image": "Greater demon (2).png",
     "level": 101,
     "speed": 4,
     "style": [
@@ -44774,8 +44645,8 @@
   {
     "id": 7871,
     "name": "Greater demon",
-    "version": "Level 104",
-    "image": "Greater demon (4).png",
+    "version": "Level 104 (Wilderness Slayer Cave)",
+    "image": "Greater demon.png",
     "level": 104,
     "speed": 4,
     "style": [
@@ -45949,6 +45820,358 @@
       "light": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14663,
+    "name": "Guard (Auburnvale)",
+    "version": "1",
+    "image": "Guard (Auburnvale, 1).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14664,
+    "name": "Guard (Auburnvale)",
+    "version": "2",
+    "image": "Guard (Auburnvale, 2).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14665,
+    "name": "Guard (Auburnvale)",
+    "version": "3",
+    "image": "Guard (Auburnvale, 3).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 1,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 19,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 4,
+      "ranged_str": 5,
+      "str": 5
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14666,
+    "name": "Guard (Auburnvale)",
+    "version": "4",
+    "image": "Guard (Auburnvale, 4).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 1,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 19,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 4,
+      "ranged_str": 5,
+      "str": 5
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14667,
+    "name": "Guard (Auburnvale)",
+    "version": "5",
+    "image": "Guard (Auburnvale, 5).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14668,
+    "name": "Guard (Auburnvale)",
+    "version": "6",
+    "image": "Guard (Auburnvale, 6).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14669,
+    "name": "Guard (Auburnvale)",
+    "version": "7",
+    "image": "Guard (Auburnvale, 7).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 1,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 19,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 4,
+      "ranged_str": 5,
+      "str": 5
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14670,
+    "name": "Guard (Auburnvale)",
+    "version": "8",
+    "image": "Guard (Auburnvale, 8).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 1,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 19,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 4,
+      "ranged_str": 5,
+      "str": 5
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
     },
     "attributes": [],
     "immunities": {
@@ -48465,6 +48688,358 @@
     "weakness": null
   },
   {
+    "id": 14716,
+    "name": "Guard (Tlati Rainforest)",
+    "version": "1",
+    "image": "Guard (Tlati Rainforest, 1).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14717,
+    "name": "Guard (Tlati Rainforest)",
+    "version": "2",
+    "image": "Guard (Tlati Rainforest, 2).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14718,
+    "name": "Guard (Tlati Rainforest)",
+    "version": "3",
+    "image": "Guard (Tlati Rainforest, 3).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 1,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 19,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 4,
+      "ranged_str": 5,
+      "str": 5
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14719,
+    "name": "Guard (Tlati Rainforest)",
+    "version": "4",
+    "image": "Guard (Tlati Rainforest, 4).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 1,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 19,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 4,
+      "ranged_str": 5,
+      "str": 5
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14720,
+    "name": "Guard (Tlati Rainforest)",
+    "version": "5",
+    "image": "Guard (Tlati Rainforest, 5).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14721,
+    "name": "Guard (Tlati Rainforest)",
+    "version": "6",
+    "image": "Guard (Tlati Rainforest, 6).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 19,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14722,
+    "name": "Guard (Tlati Rainforest)",
+    "version": "7",
+    "image": "Guard (Tlati Rainforest, 7).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 1,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 19,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 4,
+      "ranged_str": 5,
+      "str": 5
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14723,
+    "name": "Guard (Tlati Rainforest)",
+    "version": "8",
+    "image": "Guard (Tlati Rainforest, 8).png",
+    "level": 21,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 1,
+      "def": 14,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 19,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 4,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 4,
+      "ranged_str": 5,
+      "str": 5
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 19,
+      "magic": -4,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 25,
+      "stab": 18
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 13100,
     "name": "Guard (Varlamore)",
     "version": "1",
@@ -49479,52 +50054,8 @@
   {
     "id": 3271,
     "name": "Guard",
-    "version": "Falador (battleaxe, 1)",
-    "image": "Guard (Falador, battleaxe, 1).png",
-    "level": 19,
-    "speed": 6,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "3",
-    "skills": {
-      "atk": 15,
-      "def": 16,
-      "hp": 22,
-      "magic": 1,
-      "ranged": 1,
-      "str": 15
-    },
-    "offensive": {
-      "atk": 6,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 10
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 5,
-      "magic": -4,
-      "heavy": 5,
-      "standard": 5,
-      "light": 5,
-      "slash": 5,
-      "stab": 5
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 11946,
-    "name": "Guard",
-    "version": "Falador (battleaxe, 2)",
-    "image": "Guard (Falador, battleaxe, 2).png",
+    "version": "Falador (battleaxe)",
+    "image": "Guard (Falador, battleaxe).png",
     "level": 19,
     "speed": 6,
     "style": [
@@ -56162,7 +56693,7 @@
   {
     "id": 272,
     "name": "Iron dragon",
-    "version": "Normal",
+    "version": "Standard",
     "image": "Iron dragon.png",
     "level": 189,
     "speed": 4,
@@ -56171,7 +56702,7 @@
       "Dragonfire"
     ],
     "size": 4,
-    "max_hit": "50 (Dragonfire)",
+    "max_hit": "17 (Melee)",
     "skills": {
       "atk": 165,
       "def": 165,
@@ -60407,54 +60938,6 @@
     }
   },
   {
-    "id": 3126,
-    "name": "Ket-Zek",
-    "version": "Spawn point",
-    "image": "Ket-Zek (2).png",
-    "level": 360,
-    "speed": 4,
-    "style": [
-      "Magic",
-      "Stab"
-    ],
-    "size": 5,
-    "max_hit": "54 (Melee)",
-    "skills": {
-      "atk": 320,
-      "def": 240,
-      "hp": 160,
-      "magic": 240,
-      "ranged": 480,
-      "str": 480
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 60,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": "Weak"
-    },
-    "weakness": {
-      "element": "water",
-      "severity": 40
-    }
-  },
-  {
     "id": 3125,
     "name": "Ket-Zek",
     "version": "Standard",
@@ -61166,7 +61649,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air spells",
+      "element": "air",
       "severity": 60
     }
   },
@@ -61214,7 +61697,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air spells",
+      "element": "air",
       "severity": 60
     }
   },
@@ -65575,7 +66058,7 @@
     "name": "Magic Mark",
     "version": "",
     "image": "Magic Mark.png",
-    "level": 467,
+    "level": 217,
     "speed": 5,
     "style": [
       "Magic"
@@ -65585,7 +66068,7 @@
     "skills": {
       "atk": 10,
       "def": 30,
-      "hp": 1500,
+      "hp": 500,
       "magic": 175,
       "ranged": 0,
       "str": 30
@@ -74297,7 +74780,7 @@
     }
   },
   {
-    "id": 14547,
+    "id": 14545,
     "name": "Ocelot",
     "version": "Brown",
     "image": "Ocelot (brown).png",
@@ -74391,7 +74874,7 @@
     }
   },
   {
-    "id": 14547,
+    "id": 14546,
     "name": "Ocelot",
     "version": "Light brown",
     "image": "Ocelot (light brown).png",
@@ -74617,7 +75100,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 4382,
@@ -75337,7 +75823,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 15
+    }
   },
   {
     "id": 13006,
@@ -78116,7 +78605,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 25
+    }
   },
   {
     "id": 12333,
@@ -79311,7 +79803,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 25
+    }
   },
   {
     "id": 11586,
@@ -79399,7 +79894,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 25
+    }
   },
   {
     "id": 11990,
@@ -79487,7 +79985,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 40
+    }
   },
   {
     "id": 3023,
@@ -79531,7 +80032,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 40
+    }
   },
   {
     "id": 4758,
@@ -79792,7 +80296,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 0,
       "heavy": 100,
@@ -79836,7 +80340,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 0,
       "heavy": 100,
@@ -79880,7 +80384,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 0,
       "heavy": 100,
@@ -79924,7 +80428,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 0,
       "heavy": 100,
@@ -79968,7 +80472,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 100,
       "heavy": 0,
@@ -80012,7 +80516,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 100,
       "heavy": 0,
@@ -80056,7 +80560,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 100,
       "heavy": 0,
@@ -80100,7 +80604,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 100,
       "heavy": 0,
@@ -80144,7 +80648,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 0,
       "magic": 100,
       "heavy": 100,
@@ -80188,7 +80692,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 0,
       "magic": 100,
       "heavy": 100,
@@ -80232,7 +80736,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 0,
       "magic": 100,
       "heavy": 100,
@@ -80276,7 +80780,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 0,
       "magic": 100,
       "heavy": 100,
@@ -80320,7 +80824,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 100,
       "heavy": 100,
@@ -80364,7 +80868,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 100,
       "heavy": 100,
@@ -80408,7 +80912,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 100,
       "heavy": 100,
@@ -80452,7 +80956,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 100,
       "magic": 100,
       "heavy": 100,
@@ -81107,6 +81611,50 @@
     "weakness": null
   },
   {
+    "id": 12851,
+    "name": "Rabbit",
+    "version": "Varlamore",
+    "image": "Rabbit (Varlamore, 1).png",
+    "level": 2,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 5,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": -47,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": -42
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -42,
+      "magic": -42,
+      "heavy": -42,
+      "standard": -42,
+      "light": -42,
+      "slash": -42,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 4759,
     "name": "Radat",
     "version": "",
@@ -81324,7 +81872,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 20
+    }
   },
   {
     "id": 1263,
@@ -81368,7 +81919,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 20
+    }
   },
   {
     "id": 1264,
@@ -81412,7 +81966,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 20
+    }
   },
   {
     "id": 1265,
@@ -81456,7 +82013,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 20
+    }
   },
   {
     "id": 1261,
@@ -81500,7 +82060,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 20
+    }
   },
   {
     "id": 3966,
@@ -81553,7 +82116,7 @@
     "name": "Ranging Ro",
     "version": "",
     "image": "Ranging Ro.png",
-    "level": 473,
+    "level": 223,
     "speed": 4,
     "style": [
       "Ranged"
@@ -81563,7 +82126,7 @@
     "skills": {
       "atk": 10,
       "def": 100,
-      "hp": 1500,
+      "hp": 500,
       "magic": 15,
       "ranged": 150,
       "str": 30
@@ -83948,7 +84511,7 @@
       "flat_armour": 0,
       "crush": 68,
       "magic": 30,
-      "heavy": 50,
+      "heavy": 20,
       "standard": 50,
       "light": 50,
       "slash": 60,
@@ -85246,7 +85809,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 25
+    }
   },
   {
     "id": 422,
@@ -85290,7 +85856,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 25
+    }
   },
   {
     "id": 143,
@@ -88821,7 +89390,7 @@
       "crush": 100,
       "magic": 50,
       "heavy": 20,
-      "standard": 20,
+      "standard": 0,
       "light": 20,
       "slash": 100,
       "stab": 20
@@ -88871,7 +89440,7 @@
       "crush": 100,
       "magic": 50,
       "heavy": 20,
-      "standard": 20,
+      "standard": 0,
       "light": 20,
       "slash": 100,
       "stab": 20
@@ -93459,7 +94028,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -93508,7 +94077,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -93557,7 +94126,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -93999,6 +94568,153 @@
     },
     "weakness": {
       "element": "earth",
+      "severity": 35
+    }
+  },
+  {
+    "id": 14426,
+    "name": "Skeleton",
+    "version": "Level 29, 1",
+    "image": "Skeleton (level 29, 1).png",
+    "level": 29,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 1,
+      "str": 24
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -5,
+      "magic": 0,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
+      "slash": 5,
+      "stab": 5
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 14427,
+    "name": "Skeleton",
+    "version": "Level 29, 2",
+    "image": "Skeleton (level 29, 2).png",
+    "level": 29,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 1,
+      "str": 24
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -5,
+      "magic": 0,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
+      "slash": 5,
+      "stab": 5
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 35
+    }
+  },
+  {
+    "id": 14428,
+    "name": "Skeleton",
+    "version": "Level 29, 3",
+    "image": "Skeleton (level 29, 3).png",
+    "level": 29,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 24,
+      "def": 24,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 1,
+      "str": 24
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -5,
+      "magic": 0,
+      "heavy": 5,
+      "standard": 5,
+      "light": 5,
+      "slash": 5,
+      "stab": 5
+    },
+    "attributes": [
+      "undead"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
       "severity": 35
     }
   },
@@ -95041,7 +95757,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -99271,7 +99987,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "115% of targeted player's max hit'\"`UNIQ--ref-0000000C-QINU`\"'",
+    "max_hit": "115% of targeted player's max hit",
     "skills": {
       "atk": 90,
       "def": 80,
@@ -102074,57 +102790,6 @@
     }
   },
   {
-    "id": 14012,
-    "name": "The Hueycoatl",
-    "version": "Defeated",
-    "image": "The Hueycoatl (defeated).png",
-    "level": 642,
-    "speed": 0,
-    "style": [
-      "Melee",
-      "Magic",
-      "Ranged"
-    ],
-    "size": 7,
-    "max_hit": "14",
-    "skills": {
-      "atk": 150,
-      "def": 125,
-      "hp": 2500,
-      "magic": 50,
-      "ranged": 50,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 100,
-      "magic": 200,
-      "magic_str": 50,
-      "ranged": 250,
-      "ranged_str": 50,
-      "str": 50
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 200,
-      "heavy": 350,
-      "standard": 350,
-      "light": 350,
-      "slash": 100,
-      "stab": 100
-    },
-    "attributes": [
-      "dragon"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": {
-      "element": "earth",
-      "severity": 60
-    }
-  },
-  {
     "id": 14009,
     "name": "The Hueycoatl",
     "version": "Normal",
@@ -104404,54 +105069,6 @@
     "weakness": null
   },
   {
-    "id": 2194,
-    "name": "Tok-Xil",
-    "version": "Spawn point",
-    "image": "Tok-Xil (2).png",
-    "level": 90,
-    "speed": 4,
-    "style": [
-      "Crush",
-      "Ranged"
-    ],
-    "size": 3,
-    "max_hit": "13 (Melee)",
-    "skills": {
-      "atk": 80,
-      "def": 60,
-      "hp": 40,
-      "magic": 60,
-      "ranged": 120,
-      "str": 120
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": "Weak"
-    },
-    "weakness": {
-      "element": "water",
-      "severity": 40
-    }
-  },
-  {
     "id": 2193,
     "name": "Tok-Xil",
     "version": "Standard",
@@ -105867,7 +106484,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 15
+    }
   },
   {
     "id": 8529,
@@ -108175,7 +108795,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000080-QINU`\"'",
+    "max_hit": "148&thinsp;",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -108220,7 +108840,7 @@
       "Typeless Ranged"
     ],
     "size": 7,
-    "max_hit": "148&thinsp;'\"`UNIQ--ref-00000080-QINU`\"'",
+    "max_hit": "148&thinsp;",
     "skills": {
       "atk": 350,
       "def": 260,
@@ -110419,7 +111039,7 @@
     "name": "Vardorvis (Deadman)",
     "version": "",
     "image": "Vardorvis (Deadman).png",
-    "level": 558,
+    "level": 296,
     "speed": 6,
     "style": [
       "Slash"
@@ -110428,8 +111048,8 @@
     "max_hit": "30",
     "skills": {
       "atk": 200,
-      "def": 150,
-      "hp": 1500,
+      "def": 100,
+      "hp": 500,
       "magic": 300,
       "ranged": 0,
       "str": 250
@@ -110513,7 +111133,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "32-43 (Melee)'\"`UNIQ--ref-000000C4-QINU`\"'",
+    "max_hit": "32-43 (Melee)",
     "skills": {
       "atk": 280,
       "def": 0,
@@ -110557,7 +111177,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "30-37 (Melee)'\"`UNIQ--ref-000000C6-QINU`\"'",
+    "max_hit": "30-37 (Melee)",
     "skills": {
       "atk": 260,
       "def": 0,
@@ -118055,53 +118675,6 @@
     "weakness": null
   },
   {
-    "id": 3124,
-    "name": "Yt-MejKot",
-    "version": "Spawn point",
-    "image": "Yt-MejKot (2).png",
-    "level": 180,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 4,
-    "max_hit": "25",
-    "skills": {
-      "atk": 160,
-      "def": 120,
-      "hp": 80,
-      "magic": 120,
-      "ranged": 240,
-      "str": 240
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": "Weak"
-    },
-    "weakness": {
-      "element": "water",
-      "severity": 40
-    }
-  },
-  {
     "id": 3123,
     "name": "Yt-MejKot",
     "version": "Standard",
@@ -124695,7 +125268,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 8062,

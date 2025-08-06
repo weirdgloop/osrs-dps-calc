@@ -37,7 +37,7 @@ import { availableEquipment, calculateEquipmentBonusesFromGear } from '@/lib/Equ
 import { CalcWorker } from '@/worker/CalcWorker';
 import { spellByName } from '@/types/Spell';
 import {
-  DEFAULT_ATTACK_SPEED,
+  DEFAULT_ATTACK_SPEED, INFINITE_HEALTH_MONSTERS,
   NUMBER_OF_LOADOUTS,
 } from '@/lib/constants';
 import { EquipmentCategory } from './enums/EquipmentCategory';
@@ -835,7 +835,7 @@ class GlobalState implements State {
       request(WorkerRequestType.COMPUTE_REVERSE),
     );
 
-    if (this.prefs.showTtkComparison) {
+    if (this.prefs.showTtkComparison && !INFINITE_HEALTH_MONSTERS.includes(this.monster.id)) {
       promises.push(
         (async () => {
           const parallel = process.env.NEXT_PUBLIC_SERIAL_TTK !== 'true';

@@ -11141,7 +11141,7 @@
       "str": 5,
       "ranged_str": 2,
       "magic_str": 0,
-      "prayer": 4
+      "prayer": 5
     },
     "offensive": {
       "stab": 15,
@@ -11151,11 +11151,11 @@
       "ranged": 9
     },
     "defensive": {
-      "stab": -25,
-      "slash": -25,
-      "crush": -25,
-      "magic": -25,
-      "ranged": -25
+      "stab": -15,
+      "slash": -15,
+      "crush": -15,
+      "magic": -15,
+      "ranged": -15
     },
     "isTwoHanded": false
   },
@@ -56311,7 +56311,7 @@
   },
   {
     "name": "Eye of ayak",
-    "id": 31115,
+    "id": 31113,
     "version": "Charged",
     "slot": "weapon",
     "image": "Eye of ayak.png",
@@ -56341,7 +56341,7 @@
   },
   {
     "name": "Eye of ayak",
-    "id": 31113,
+    "id": 31115,
     "version": "Uncharged",
     "slot": "weapon",
     "image": "Eye of ayak (uncharged).png",
@@ -72694,7 +72694,7 @@
     "id": 30970,
     "version": "",
     "slot": "weapon",
-    "image": "Humphrey Dumphrey.png",
+    "image": "Egg (Humphrey Dumphrey).png",
     "speed": 4,
     "category": "blunt",
     "bonuses": {
