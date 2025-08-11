@@ -226,10 +226,13 @@ def main():
 
         weakness = get_printout_value(po['Elemental weakness']) or None
         if weakness:
-            monster['weakness'] = {
-                'element': weakness.lower(),
-                'severity': int(get_printout_value(po['Elemental weakness percent']) or 0)
-            }
+            try:
+                monster['weakness'] = {
+                    'element': weakness.lower(),
+                    'severity': int(get_printout_value(po['Elemental weakness percent']) or 0)
+                }
+            except:
+                monster['weakness'] = None
         else:
             monster['weakness'] = None
         
