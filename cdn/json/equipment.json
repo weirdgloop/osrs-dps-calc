@@ -28656,7 +28656,7 @@
     "slot": "weapon",
     "image": "Bronze speedrun trophy.png",
     "speed": 4,
-    "category": "",
+    "category": "Blunt",
     "bonuses": {
       "str": -10,
       "ranged_str": 0,
@@ -46746,7 +46746,7 @@
     "slot": "weapon",
     "image": "Diamond speedrun trophy.png",
     "speed": 5,
-    "category": "",
+    "category": "Blunt",
     "bonuses": {
       "str": -10,
       "ranged_str": 0,
@@ -46946,6 +46946,36 @@
       "crush": 109,
       "magic": -10,
       "ranged": 148
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Dinh's blazing bulwark (rotten)",
+    "id": 31132,
+    "version": "",
+    "slot": "weapon",
+    "image": "Dinh's blazing bulwark.png",
+    "speed": 0,
+    "category": "Bow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
     },
     "isTwoHanded": true
   },
@@ -61446,7 +61476,7 @@
     "slot": "weapon",
     "image": "Giant stopwatch.png",
     "speed": 4,
-    "category": "",
+    "category": "Blunt",
     "bonuses": {
       "str": -10,
       "ranged_str": 0,
@@ -63156,7 +63186,7 @@
     "slot": "weapon",
     "image": "Gold speedrun trophy.png",
     "speed": 5,
-    "category": "",
+    "category": "Blunt",
     "bonuses": {
       "str": -10,
       "ranged_str": 0,
@@ -67626,7 +67656,7 @@
     "slot": "weapon",
     "image": "Gregg's eastdoor.png",
     "speed": 7,
-    "category": "",
+    "category": "Blunt",
     "bonuses": {
       "str": -10,
       "ranged_str": 0,
@@ -91140,6 +91170,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Nifty hat",
+    "id": 31780,
+    "version": "",
+    "slot": "head",
+    "image": "Nifty hat.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Nightmare staff",
     "id": 24422,
     "version": "",
@@ -95676,7 +95736,7 @@
     "slot": "weapon",
     "image": "Platinum speedrun trophy.png",
     "speed": 5,
-    "category": "",
+    "category": "Blunt",
     "bonuses": {
       "str": -10,
       "ranged_str": 0,
@@ -115476,7 +115536,7 @@
     "slot": "weapon",
     "image": "Silver speedrun trophy.png",
     "speed": 4,
-    "category": "",
+    "category": "Blunt",
     "bonuses": {
       "str": -10,
       "ranged_str": 0,
@@ -133920,6 +133980,36 @@
     "isTwoHanded": true
   },
   {
+    "name": "Venator bow (rotten)",
+    "id": 31133,
+    "version": "",
+    "slot": "weapon",
+    "image": "Venator bow (rotten).png",
+    "speed": 5,
+    "category": "Bow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Venator ring",
     "id": 28310,
     "version": "",
@@ -139836,7 +139926,7 @@
     "slot": "weapon",
     "image": "White sword.png",
     "speed": 4,
-    "category": "",
+    "category": "Stab Sword",
     "bonuses": {
       "str": 12,
       "ranged_str": 0,
