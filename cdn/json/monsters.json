@@ -82,8 +82,8 @@
       "stab": 20
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -132,8 +132,8 @@
       "stab": 40
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -2448,17 +2448,19 @@
     "version": "",
     "image": "Ancient Custodian.png",
     "level": 239,
-    "speed": 0,
-    "style": null,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
     "size": 2,
-    "max_hit": 0,
+    "max_hit": "19",
     "skills": {
       "atk": 240,
       "def": 80,
       "hp": 330,
       "magic": 80,
-      "ranged": 0,
-      "str": 0
+      "ranged": 1,
+      "str": 180
     },
     "offensive": {
       "atk": 0,
@@ -2472,9 +2474,9 @@
       "flat_armour": 0,
       "crush": 80,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 60,
+      "standard": 5,
+      "light": -10,
       "slash": -30,
       "stab": 50
     },
@@ -2482,7 +2484,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 30
+    }
   },
   {
     "id": 12336,
@@ -3756,8 +3761,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -3806,8 +3811,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -3856,8 +3861,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -3906,8 +3911,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -3956,8 +3961,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -6298,8 +6303,8 @@
     },
     "attributes": [
       "shade",
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -6348,8 +6353,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -6398,8 +6403,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -6409,12 +6414,59 @@
   {
     "id": 14318,
     "name": "Augur Metzli",
-    "version": "",
+    "version": "Magic",
     "image": "Augur Metzli.png",
     "level": 396,
     "speed": 3,
     "style": [
-      "Range & Magic"
+      "Ranged & Magic"
+    ],
+    "size": 1,
+    "max_hit": "28",
+    "skills": {
+      "atk": 1,
+      "def": 160,
+      "hp": 600,
+      "magic": 180,
+      "ranged": 180,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 110,
+      "magic_str": 30,
+      "ranged": 110,
+      "ranged_str": 30,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 70,
+      "magic": 100,
+      "heavy": 10,
+      "standard": 20,
+      "light": 20,
+      "slash": 80,
+      "stab": 60
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 30
+    }
+  },
+  {
+    "id": 14313,
+    "name": "Augur Metzli",
+    "version": "Ranged",
+    "image": "Augur Metzli (ranged).png",
+    "level": 396,
+    "speed": 3,
+    "style": [
+      "Ranged & Magic"
     ],
     "size": 1,
     "max_hit": "28",
@@ -7765,9 +7817,9 @@
     }
   },
   {
-    "id": 1871,
+    "id": 7955,
     "name": "Baby black dragon",
-    "version": "",
+    "version": "Myths' Guild",
     "image": "Baby black dragon.png",
     "level": 83,
     "speed": 4,
@@ -7800,7 +7852,53 @@
       "standard": 30,
       "light": 30,
       "slash": 50,
-      "stab": 5
+      "stab": 0
+    },
+    "attributes": [
+      "dragon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1871,
+    "name": "Baby black dragon",
+    "version": "Normal",
+    "image": "Baby black dragon.png",
+    "level": 83,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "11",
+    "skills": {
+      "atk": 70,
+      "def": 70,
+      "hp": 80,
+      "magic": 1,
+      "ranged": 1,
+      "str": 70
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 50,
+      "magic": 40,
+      "heavy": 5,
+      "standard": 30,
+      "light": 30,
+      "slash": 50,
+      "stab": 0
     },
     "attributes": [
       "dragon"
@@ -7849,7 +7947,7 @@
       "standard": 30,
       "light": 30,
       "slash": 50,
-      "stab": 5
+      "stab": 0
     },
     "attributes": [
       "dragon"
@@ -7898,7 +7996,7 @@
       "standard": 30,
       "light": 30,
       "slash": 50,
-      "stab": 5
+      "stab": 0
     },
     "attributes": [
       "dragon"
@@ -7947,7 +8045,7 @@
       "standard": 30,
       "light": 30,
       "slash": 50,
-      "stab": 5
+      "stab": 0
     },
     "attributes": [
       "dragon"
@@ -7996,7 +8094,7 @@
       "standard": 30,
       "light": 30,
       "slash": 50,
-      "stab": 10
+      "stab": 0
     },
     "attributes": [
       "dragon"
@@ -8045,7 +8143,7 @@
       "standard": 30,
       "light": 30,
       "slash": 50,
-      "stab": 10
+      "stab": 0
     },
     "attributes": [
       "dragon"
@@ -8094,7 +8192,7 @@
       "standard": 30,
       "light": 30,
       "slash": 50,
-      "stab": 30
+      "stab": 0
     },
     "attributes": [
       "dragon"
@@ -8143,7 +8241,7 @@
       "standard": 30,
       "light": 30,
       "slash": 50,
-      "stab": 30
+      "stab": 0
     },
     "attributes": [
       "dragon"
@@ -8192,7 +8290,7 @@
       "standard": 30,
       "light": 30,
       "slash": 50,
-      "stab": 30
+      "stab": 0
     },
     "attributes": [
       "dragon"
@@ -8378,7 +8476,7 @@
       "standard": 30,
       "light": 30,
       "slash": 50,
-      "stab": 5
+      "stab": 0
     },
     "attributes": [
       "dragon"
@@ -8427,7 +8525,7 @@
       "standard": 30,
       "light": 30,
       "slash": 50,
-      "stab": 5
+      "stab": 0
     },
     "attributes": [
       "dragon"
@@ -8476,7 +8574,7 @@
       "standard": 30,
       "light": 30,
       "slash": 50,
-      "stab": 5
+      "stab": 0
     },
     "attributes": [
       "dragon"
@@ -9243,8 +9341,8 @@
       "stab": 5
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -13095,7 +13193,7 @@
       "standard": 50,
       "light": 50,
       "slash": 70,
-      "stab": 5
+      "stab": 0
     },
     "attributes": [
       "dragon",
@@ -13146,7 +13244,7 @@
       "standard": 50,
       "light": 50,
       "slash": 70,
-      "stab": 5
+      "stab": 0
     },
     "attributes": [
       "dragon",
@@ -13723,7 +13821,7 @@
       "Typeless slash"
     ],
     "size": 5,
-    "max_hit": "20x3",
+    "max_hit": "32 total 4+8+20",
     "skills": {
       "atk": 258,
       "def": 60,
@@ -14221,7 +14319,7 @@
       "Typeless slash"
     ],
     "size": 5,
-    "max_hit": "20x3",
+    "max_hit": "32 total 4+8+20",
     "skills": {
       "atk": 258,
       "def": 60,
@@ -14291,7 +14389,7 @@
       "standard": 50,
       "light": 50,
       "slash": 70,
-      "stab": 5
+      "stab": 0
     },
     "attributes": [
       "dragon",
@@ -14342,7 +14440,7 @@
       "standard": 50,
       "light": 50,
       "slash": 70,
-      "stab": 5
+      "stab": 0
     },
     "attributes": [
       "dragon",
@@ -14393,7 +14491,7 @@
       "standard": 50,
       "light": 50,
       "slash": 70,
-      "stab": 5
+      "stab": 0
     },
     "attributes": [
       "dragon",
@@ -14444,7 +14542,7 @@
       "standard": 50,
       "light": 50,
       "slash": 70,
-      "stab": 5
+      "stab": 0
     },
     "attributes": [
       "dragon",
@@ -14495,7 +14593,7 @@
       "standard": 50,
       "light": 50,
       "slash": 70,
-      "stab": 5
+      "stab": 0
     },
     "attributes": [
       "dragon",
@@ -14546,7 +14644,7 @@
       "standard": 50,
       "light": 50,
       "slash": 70,
-      "stab": 10
+      "stab": 0
     },
     "attributes": [
       "dragon",
@@ -14597,7 +14695,7 @@
       "standard": 50,
       "light": 50,
       "slash": 70,
-      "stab": 10
+      "stab": 0
     },
     "attributes": [
       "dragon",
@@ -14648,7 +14746,7 @@
       "standard": 50,
       "light": 50,
       "slash": 70,
-      "stab": 10
+      "stab": 0
     },
     "attributes": [
       "dragon",
@@ -14699,7 +14797,7 @@
       "standard": 50,
       "light": 50,
       "slash": 70,
-      "stab": 10
+      "stab": 0
     },
     "attributes": [
       "dragon",
@@ -14750,7 +14848,7 @@
       "standard": 50,
       "light": 50,
       "slash": 70,
-      "stab": 10
+      "stab": 0
     },
     "attributes": [
       "dragon",
@@ -14801,7 +14899,7 @@
       "standard": 50,
       "light": 50,
       "slash": 70,
-      "stab": 10
+      "stab": 0
     },
     "attributes": [
       "dragon",
@@ -14852,7 +14950,7 @@
       "standard": 50,
       "light": 50,
       "slash": 70,
-      "stab": 10
+      "stab": 0
     },
     "attributes": [
       "dragon",
@@ -15228,7 +15326,9 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "demon"
+    ],
     "immunities": {
       "burn": null
     },
@@ -15272,7 +15372,9 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "demon"
+    ],
     "immunities": {
       "burn": null
     },
@@ -16992,132 +17094,6 @@
     "weakness": null
   },
   {
-    "id": 14390,
-    "name": "Captain Vibia",
-    "version": "1",
-    "image": "Captain Vibia.png",
-    "level": 128,
-    "speed": 4,
-    "style": null,
-    "size": 1,
-    "max_hit": 0,
-    "skills": {
-      "atk": 80,
-      "def": 200,
-      "hp": 150,
-      "magic": 15,
-      "ranged": 0,
-      "str": 0
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 20,
-      "magic": 5,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 30,
-      "stab": 30
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 14390,
-    "name": "Captain Vibia",
-    "version": "2",
-    "image": "Captain Vibia.png",
-    "level": 128,
-    "speed": 4,
-    "style": null,
-    "size": 1,
-    "max_hit": 0,
-    "skills": {
-      "atk": 80,
-      "def": 90,
-      "hp": 150,
-      "magic": 15,
-      "ranged": 0,
-      "str": 0
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 20,
-      "magic": 5,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 30,
-      "stab": 30
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 14390,
-    "name": "Captain Vibia",
-    "version": "3",
-    "image": "Captain Vibia.png",
-    "level": 128,
-    "speed": 4,
-    "style": null,
-    "size": 1,
-    "max_hit": 0,
-    "skills": {
-      "atk": 80,
-      "def": 70,
-      "hp": 150,
-      "magic": 15,
-      "ranged": 0,
-      "str": 0
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 20,
-      "magic": 5,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 30,
-      "stab": 30
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
     "id": 2911,
     "name": "Carnivorous chinchompa",
     "version": "",
@@ -18360,10 +18336,198 @@
     }
   },
   {
+    "id": 1051,
+    "name": "Cave horror",
+    "version": "Alpha",
+    "image": "Cave horror (5).png",
+    "level": 80,
+    "speed": 4,
+    "style": [
+      "Magical melee"
+    ],
+    "size": 2,
+    "max_hit": "9",
+    "skills": {
+      "atk": 80,
+      "def": 62,
+      "hp": 55,
+      "magic": 80,
+      "ranged": 1,
+      "str": 77
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "fire",
+      "severity": 30
+    }
+  },
+  {
+    "id": 1049,
+    "name": "Cave horror",
+    "version": "Guard",
+    "image": "Cave horror (3).png",
+    "level": 80,
+    "speed": 4,
+    "style": [
+      "Magical melee"
+    ],
+    "size": 2,
+    "max_hit": "9",
+    "skills": {
+      "atk": 80,
+      "def": 62,
+      "hp": 55,
+      "magic": 80,
+      "ranged": 1,
+      "str": 77
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "fire",
+      "severity": 30
+    }
+  },
+  {
+    "id": 1050,
+    "name": "Cave horror",
+    "version": "Small guard",
+    "image": "Cave horror (4).png",
+    "level": 80,
+    "speed": 4,
+    "style": [
+      "Magical melee"
+    ],
+    "size": 2,
+    "max_hit": "9",
+    "skills": {
+      "atk": 80,
+      "def": 62,
+      "hp": 55,
+      "magic": 80,
+      "ranged": 1,
+      "str": 77
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "fire",
+      "severity": 30
+    }
+  },
+  {
     "id": 1047,
     "name": "Cave horror",
-    "version": "",
+    "version": "Worker",
     "image": "Cave horror (1).png",
+    "level": 80,
+    "speed": 4,
+    "style": [
+      "Magical melee"
+    ],
+    "size": 2,
+    "max_hit": "9",
+    "skills": {
+      "atk": 80,
+      "def": 62,
+      "hp": 55,
+      "magic": 80,
+      "ranged": 1,
+      "str": 77
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "fire",
+      "severity": 30
+    }
+  },
+  {
+    "id": 1048,
+    "name": "Cave horror",
+    "version": "Young worker",
+    "image": "Cave horror (2).png",
     "level": 80,
     "speed": 4,
     "style": [
@@ -26250,8 +26414,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -26831,7 +26995,8 @@
       "stab": 0
     },
     "attributes": [
-      "flying"
+      "flying",
+      "golem"
     ],
     "immunities": {
       "burn": null
@@ -28190,8 +28355,8 @@
       "stab": 80
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -28670,7 +28835,7 @@
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "58 <br/>99 (charge)",
+    "max_hit": "99",
     "skills": {
       "atk": 300,
       "def": 90,
@@ -29991,7 +30156,9 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "golem"
+    ],
     "immunities": {
       "burn": null
     },
@@ -30039,7 +30206,9 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "golem"
+    ],
     "immunities": {
       "burn": null
     },
@@ -30822,7 +30991,7 @@
       "Stab"
     ],
     "size": 2,
-    "max_hit": "13",
+    "max_hit": "13 total",
     "skills": {
       "atk": 120,
       "def": 40,
@@ -30871,7 +31040,7 @@
       "Stab"
     ],
     "size": 2,
-    "max_hit": "13",
+    "max_hit": "13 total",
     "skills": {
       "atk": 120,
       "def": 40,
@@ -30920,7 +31089,7 @@
       "Stab"
     ],
     "size": 2,
-    "max_hit": "13",
+    "max_hit": "13 total",
     "skills": {
       "atk": 120,
       "def": 40,
@@ -31013,7 +31182,7 @@
       "Typeless slash"
     ],
     "size": 5,
-    "max_hit": "20x3",
+    "max_hit": "32 total 4+8+20",
     "skills": {
       "atk": 258,
       "def": 60,
@@ -31057,7 +31226,7 @@
       "Typeless slash"
     ],
     "size": 5,
-    "max_hit": "20x3",
+    "max_hit": "32 total 4+8+20",
     "skills": {
       "atk": 258,
       "def": 60,
@@ -31235,7 +31404,7 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": "10",
+    "max_hit": "10 (melee)",
     "skills": {
       "atk": 120,
       "def": 45,
@@ -32503,7 +32672,7 @@
     "weakness": null
   },
   {
-    "id": 13763,
+    "id": 13765,
     "name": "Emissary Acolyte",
     "version": "2",
     "image": "Emissary Acolyte (NPC, 2).png",
@@ -36051,8 +36220,8 @@
     },
     "attributes": [
       "shade",
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -36101,8 +36270,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -37084,8 +37253,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -37134,8 +37303,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -37844,7 +38013,7 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": "12",
+    "max_hit": "12 total",
     "skills": {
       "atk": 1,
       "def": 40,
@@ -38616,7 +38785,9 @@
       "slash": 60,
       "stab": 50
     },
-    "attributes": [],
+    "attributes": [
+      "golem"
+    ],
     "immunities": {
       "burn": null
     },
@@ -38663,7 +38834,9 @@
       "slash": 60,
       "stab": 50
     },
-    "attributes": [],
+    "attributes": [
+      "golem"
+    ],
     "immunities": {
       "burn": null
     },
@@ -38850,7 +39023,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -39313,8 +39486,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -39407,8 +39580,8 @@
       "stab": 5
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -39454,8 +39627,8 @@
       "stab": 5
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -39501,8 +39674,8 @@
       "stab": 5
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -39548,8 +39721,8 @@
       "stab": 5
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -39595,8 +39768,8 @@
       "stab": 5
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -39642,8 +39815,8 @@
       "stab": 5
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -39692,8 +39865,8 @@
       "stab": 45
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -39742,8 +39915,8 @@
       "stab": 55
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -51470,8 +51643,8 @@
       "stab": 5
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -57679,7 +57852,10 @@
     "immunities": {
       "burn": "Normal"
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 7691,
@@ -57723,7 +57899,10 @@
     "immunities": {
       "burn": "Normal"
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 7698,
@@ -57859,7 +58038,10 @@
     "immunities": {
       "burn": "Normal"
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 12817,
@@ -59051,7 +59233,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 25
+    }
   },
   {
     "id": 6321,
@@ -59091,7 +59276,9 @@
       "slash": 50,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "demon"
+    ],
     "immunities": {
       "burn": null
     },
@@ -59139,7 +59326,9 @@
       "slash": 50,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "demon"
+    ],
     "immunities": {
       "burn": null
     },
@@ -63875,7 +64064,7 @@
       "Stab"
     ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "2",
     "skills": {
       "atk": 10,
       "def": 10,
@@ -65298,9 +65487,9 @@
       "stab": 0
     },
     "attributes": [
-      "shade",
+      "undead",
       "spectral",
-      "undead"
+      "shade"
     ],
     "immunities": {
       "burn": null
@@ -65349,8 +65538,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -67198,7 +67387,9 @@
       "slash": 50,
       "stab": 50
     },
-    "attributes": [],
+    "attributes": [
+      "golem"
+    ],
     "immunities": {
       "burn": null
     },
@@ -76014,8 +76205,404 @@
   {
     "id": 4167,
     "name": "Outlaw",
-    "version": "",
-    "image": "Outlaw.png",
+    "version": "1",
+    "image": "Outlaw (1).png",
+    "level": 32,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 35,
+      "def": 25,
+      "hp": 20,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": -21
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 4176,
+    "name": "Outlaw",
+    "version": "10",
+    "image": "Outlaw (10).png",
+    "level": 32,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 35,
+      "def": 25,
+      "hp": 20,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": -21
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 4168,
+    "name": "Outlaw",
+    "version": "2",
+    "image": "Outlaw (2).png",
+    "level": 32,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 35,
+      "def": 25,
+      "hp": 20,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": -21
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 4169,
+    "name": "Outlaw",
+    "version": "3",
+    "image": "Outlaw (3).png",
+    "level": 32,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 35,
+      "def": 25,
+      "hp": 20,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": -21
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 4170,
+    "name": "Outlaw",
+    "version": "4",
+    "image": "Outlaw (4).png",
+    "level": 32,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 35,
+      "def": 25,
+      "hp": 20,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": -21
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 4171,
+    "name": "Outlaw",
+    "version": "5",
+    "image": "Outlaw (5).png",
+    "level": 32,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 35,
+      "def": 25,
+      "hp": 20,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": -21
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 4172,
+    "name": "Outlaw",
+    "version": "6",
+    "image": "Outlaw (6).png",
+    "level": 32,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 35,
+      "def": 25,
+      "hp": 20,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": -21
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 4173,
+    "name": "Outlaw",
+    "version": "7",
+    "image": "Outlaw (7).png",
+    "level": 32,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 35,
+      "def": 25,
+      "hp": 20,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": -21
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 4174,
+    "name": "Outlaw",
+    "version": "8",
+    "image": "Outlaw (8).png",
+    "level": 32,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 35,
+      "def": 25,
+      "hp": 20,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": -21
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 4175,
+    "name": "Outlaw",
+    "version": "9",
+    "image": "Outlaw (9).png",
     "level": 32,
     "speed": 4,
     "style": [
@@ -79392,8 +79979,8 @@
     },
     "attributes": [
       "shade",
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -79442,8 +80029,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -81231,8 +81818,8 @@
       "stab": 10
     },
     "attributes": [
-      "demon",
-      "fiery"
+      "fiery",
+      "demon"
     ],
     "immunities": {
       "burn": "Weak"
@@ -81281,8 +81868,8 @@
       "stab": 10
     },
     "attributes": [
-      "demon",
-      "fiery"
+      "fiery",
+      "demon"
     ],
     "immunities": {
       "burn": "Weak"
@@ -84111,8 +84698,8 @@
       "stab": 120
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -84206,8 +84793,8 @@
       "stab": 110
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -84258,8 +84845,8 @@
       "stab": 113
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -84310,8 +84897,8 @@
       "stab": 124
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -84362,8 +84949,8 @@
       "stab": 143
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -84414,8 +85001,8 @@
       "stab": 25
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -84466,8 +85053,8 @@
       "stab": 98
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -84518,8 +85105,8 @@
       "stab": 65
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -84570,8 +85157,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -84622,8 +85209,8 @@
       "stab": 145
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -84673,8 +85260,8 @@
       "stab": 201
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -84722,8 +85309,8 @@
       "stab": 118
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -84774,8 +85361,8 @@
       "stab": 45
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -84827,7 +85414,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 6732,
@@ -84871,7 +85461,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 6737,
@@ -84915,7 +85508,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 6733,
@@ -84959,7 +85555,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 6734,
@@ -85003,7 +85602,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 6735,
@@ -85047,7 +85649,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 1282,
@@ -85089,8 +85694,8 @@
     },
     "attributes": [
       "shade",
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -85139,8 +85744,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -85189,8 +85794,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -85273,7 +85878,7 @@
       "flat_armour": 0,
       "crush": 35,
       "magic": 200,
-      "heavy": 200,
+      "heavy": 180,
       "standard": 200,
       "light": 200,
       "slash": 60,
@@ -85283,7 +85888,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 100,
@@ -86502,7 +87110,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 5936,
@@ -86546,7 +87157,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 7903,
@@ -87247,7 +87861,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 12386,
@@ -87857,7 +88474,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 35
+    }
   },
   {
     "id": 6617,
@@ -88174,8 +88794,8 @@
       "stab": 13
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -88224,8 +88844,8 @@
       "stab": 25
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -88462,7 +89082,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 15
+    }
   },
   {
     "id": 4311,
@@ -88506,7 +89129,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 15
+    }
   },
   {
     "id": 4309,
@@ -88550,7 +89176,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 15
+    }
   },
   {
     "id": 4308,
@@ -88594,7 +89223,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 15
+    }
   },
   {
     "id": 4310,
@@ -88638,7 +89270,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 15
+    }
   },
   {
     "id": 9609,
@@ -88726,7 +89361,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 20
+    }
   },
   {
     "id": 1339,
@@ -88770,7 +89408,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 20
+    }
   },
   {
     "id": 11073,
@@ -89075,8 +89716,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -89122,8 +89763,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -89172,8 +89813,8 @@
       "stab": 0
     },
     "attributes": [
-      "spectral",
-      "undead"
+      "undead",
+      "spectral"
     ],
     "immunities": {
       "burn": null
@@ -89498,7 +90139,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 40
+    }
   },
   {
     "id": 2853,
@@ -90940,7 +91584,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 1688,
@@ -91183,7 +91830,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -91275,7 +91922,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 10718,
@@ -91319,7 +91969,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 10719,
@@ -91363,7 +92016,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 10720,
@@ -91407,7 +92063,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 10721,
@@ -91451,7 +92110,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 13476,
@@ -92308,7 +92970,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -92357,7 +93019,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -92406,7 +93068,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -92455,7 +93117,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -92504,7 +93166,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -92553,7 +93215,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -92602,7 +93264,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -92651,7 +93313,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -92700,7 +93362,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -93160,7 +93822,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -93257,7 +93919,10 @@
     "immunities": {
       "burn": "Weak"
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 12107,
@@ -93346,13 +94011,15 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "demon"
+    ],
     "immunities": {
       "burn": "Weak"
     },
     "weakness": {
       "element": "earth",
-      "severity": 30
+      "severity": 35
     }
   },
   {
@@ -93401,7 +94068,7 @@
     },
     "weakness": {
       "element": "earth",
-      "severity": 30
+      "severity": 35
     }
   },
   {
@@ -93591,7 +94258,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -93640,7 +94307,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -93689,7 +94356,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -93738,7 +94405,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -93835,7 +94502,7 @@
     },
     "weakness": {
       "element": "earth",
-      "severity": 40
+      "severity": 35
     }
   },
   {
@@ -93882,7 +94549,7 @@
     },
     "weakness": {
       "element": "earth",
-      "severity": 40
+      "severity": 35
     }
   },
   {
@@ -93931,7 +94598,7 @@
     },
     "weakness": {
       "element": "earth",
-      "severity": 40
+      "severity": 35
     }
   },
   {
@@ -94616,7 +95283,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -94665,7 +95332,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -94714,7 +95381,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -95893,7 +96560,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 498,
@@ -96394,7 +97064,7 @@
       "Crush"
     ],
     "size": 5,
-    "max_hit": "45",
+    "max_hit": "45 (Typeless AOE)",
     "skills": {
       "atk": 350,
       "def": 200,
@@ -97727,7 +98397,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 25
+    }
   },
   {
     "id": 10397,
@@ -100649,7 +101322,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "11",
+    "max_hit": "11 total 6+5",
     "skills": {
       "atk": 90,
       "def": 40,
@@ -100682,7 +101355,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 15
+    }
   },
   {
     "id": 12879,
@@ -100695,7 +101371,7 @@
       "Slash"
     ],
     "size": 2,
-    "max_hit": "11",
+    "max_hit": "6-5",
     "skills": {
       "atk": 90,
       "def": 40,
@@ -100808,7 +101484,7 @@
       "crush": 70,
       "magic": 90,
       "heavy": 50,
-      "standard": 50,
+      "standard": 30,
       "light": 50,
       "slash": 70,
       "stab": 50
@@ -100856,7 +101532,7 @@
       "crush": 70,
       "magic": 90,
       "heavy": 50,
-      "standard": 50,
+      "standard": 30,
       "light": 50,
       "slash": 70,
       "stab": 50
@@ -100904,7 +101580,7 @@
       "crush": 70,
       "magic": 90,
       "heavy": 50,
-      "standard": 50,
+      "standard": 30,
       "light": 50,
       "slash": 70,
       "stab": 50
@@ -100952,7 +101628,7 @@
       "crush": 70,
       "magic": 90,
       "heavy": 50,
-      "standard": 50,
+      "standard": 30,
       "light": 50,
       "slash": 70,
       "stab": 50
@@ -101000,7 +101676,7 @@
       "crush": 70,
       "magic": 90,
       "heavy": 50,
-      "standard": 50,
+      "standard": 30,
       "light": 50,
       "slash": 70,
       "stab": 50
@@ -101048,7 +101724,7 @@
       "crush": 70,
       "magic": 90,
       "heavy": 50,
-      "standard": 50,
+      "standard": 30,
       "light": 50,
       "slash": 70,
       "stab": 50
@@ -101096,7 +101772,7 @@
       "crush": 70,
       "magic": 90,
       "heavy": 50,
-      "standard": 50,
+      "standard": 30,
       "light": 50,
       "slash": 70,
       "stab": 50
@@ -101718,7 +102394,7 @@
       "Typeless Ranged"
     ],
     "size": 2,
-    "max_hit": "7",
+    "max_hit": "9",
     "skills": {
       "atk": 120,
       "def": 70,
@@ -104921,7 +105597,7 @@
       "crush": 0,
       "magic": 200,
       "heavy": 200,
-      "standard": 200,
+      "standard": 120,
       "light": 200,
       "slash": 0,
       "stab": 0
@@ -104930,7 +105606,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 4135,
@@ -105574,7 +106253,7 @@
       "All"
     ],
     "size": 3,
-    "max_hit": "31 (auto) <br/> 45 (special)",
+    "max_hit": "<div class=\"plainlist \" >\n*31 (auto)\n*45 (special)\n</div>",
     "skills": {
       "atk": 255,
       "def": 150,
@@ -105623,7 +106302,7 @@
       "All"
     ],
     "size": 3,
-    "max_hit": "31 (auto) <br/> 45 (special)",
+    "max_hit": "<div class=\"plainlist \" >\n*31 (auto)\n*45 (special)\n</div>",
     "skills": {
       "atk": 255,
       "def": 150,
@@ -105672,7 +106351,7 @@
       "All"
     ],
     "size": 3,
-    "max_hit": "31 (auto) <br/> 45 (special)",
+    "max_hit": "<div class=\"plainlist \" >\n*31 (auto)\n*45 (special)\n</div>",
     "skills": {
       "atk": 255,
       "def": 150,
@@ -105721,7 +106400,7 @@
       "All"
     ],
     "size": 3,
-    "max_hit": "31 (auto) <br/> 45 (special)",
+    "max_hit": "<div class=\"plainlist \" >\n*31 (auto)\n*45 (special)\n</div>",
     "skills": {
       "atk": 255,
       "def": 150,
@@ -106632,7 +107311,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 35
+    }
   },
   {
     "id": 6319,
@@ -107457,7 +108139,7 @@
       "crush": 35,
       "magic": 200,
       "heavy": 200,
-      "standard": 200,
+      "standard": 120,
       "light": 200,
       "slash": 60,
       "stab": 35
@@ -107466,7 +108148,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 4121,
@@ -107501,7 +108186,7 @@
       "crush": 35,
       "magic": 200,
       "heavy": 200,
-      "standard": 200,
+      "standard": 120,
       "light": 200,
       "slash": 60,
       "stab": 35
@@ -107510,7 +108195,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 4120,
@@ -107545,7 +108233,7 @@
       "crush": 35,
       "magic": 200,
       "heavy": 200,
-      "standard": 200,
+      "standard": 120,
       "light": 200,
       "slash": 60,
       "stab": 35
@@ -107554,7 +108242,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 4123,
@@ -111899,7 +112590,8 @@
       "stab": 0
     },
     "attributes": [
-      "xerician"
+      "xerician",
+      "flying"
     ],
     "immunities": {
       "burn": null
@@ -112279,7 +112971,7 @@
       "Melee"
     ],
     "size": 2,
-    "max_hit": "1",
+    "max_hit": "44 (Phase 1-2)",
     "skills": {
       "atk": 1,
       "def": 100,
@@ -112325,7 +113017,7 @@
       "Melee"
     ],
     "size": 2,
-    "max_hit": "1",
+    "max_hit": "44 (Phase 1-2)",
     "skills": {
       "atk": 1,
       "def": 100,
@@ -113644,7 +114336,7 @@
       "magic": 0,
       "heavy": 62,
       "standard": 62,
-      "light": 62,
+      "light": 20,
       "slash": 50,
       "stab": 50
     },
@@ -113689,7 +114381,7 @@
       "magic": 0,
       "heavy": 62,
       "standard": 62,
-      "light": 62,
+      "light": 20,
       "slash": 50,
       "stab": 50
     },
@@ -114348,7 +115040,7 @@
       "flat_armour": 0,
       "crush": 10,
       "magic": 100,
-      "heavy": 100,
+      "heavy": 20,
       "standard": 100,
       "light": 100,
       "slash": 100,
@@ -114398,7 +115090,7 @@
       "flat_armour": 0,
       "crush": 10,
       "magic": 100,
-      "heavy": 100,
+      "heavy": 20,
       "standard": 100,
       "light": 100,
       "slash": 100,
@@ -115644,7 +116336,7 @@
       "flat_armour": 0,
       "crush": 70,
       "magic": -11,
-      "heavy": 74,
+      "heavy": 54,
       "standard": 74,
       "light": 74,
       "slash": 76,
@@ -115688,7 +116380,7 @@
       "flat_armour": 0,
       "crush": 70,
       "magic": -11,
-      "heavy": 74,
+      "heavy": 54,
       "standard": 74,
       "light": 74,
       "slash": 76,
@@ -115732,7 +116424,7 @@
       "flat_armour": 0,
       "crush": 70,
       "magic": -11,
-      "heavy": 74,
+      "heavy": 54,
       "standard": 74,
       "light": 74,
       "slash": 76,
@@ -115776,7 +116468,7 @@
       "flat_armour": 0,
       "crush": 70,
       "magic": -11,
-      "heavy": 74,
+      "heavy": 54,
       "standard": 74,
       "light": 74,
       "slash": 76,
@@ -115820,7 +116512,7 @@
       "flat_armour": 0,
       "crush": 70,
       "magic": -11,
-      "heavy": 85,
+      "heavy": 65,
       "standard": 85,
       "light": 85,
       "slash": 76,
@@ -115864,7 +116556,7 @@
       "flat_armour": 0,
       "crush": 70,
       "magic": -11,
-      "heavy": 85,
+      "heavy": 65,
       "standard": 85,
       "light": 85,
       "slash": 76,
@@ -115908,7 +116600,7 @@
       "flat_armour": 0,
       "crush": 70,
       "magic": -11,
-      "heavy": 74,
+      "heavy": 54,
       "standard": 74,
       "light": 74,
       "slash": 76,
@@ -115952,7 +116644,7 @@
       "flat_armour": 0,
       "crush": 70,
       "magic": -11,
-      "heavy": 74,
+      "heavy": 54,
       "standard": 74,
       "light": 74,
       "slash": 76,
@@ -118495,48 +119187,6 @@
     "attributes": [
       "demon"
     ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 2847,
-    "name": "Yeti",
-    "version": "",
-    "image": "Yeti.png",
-    "level": 58,
-    "speed": 4,
-    "style": null,
-    "size": 3,
-    "max_hit": "7",
-    "skills": {
-      "atk": 48,
-      "def": 39,
-      "hp": 55,
-      "magic": 1,
-      "ranged": 1,
-      "str": 60
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
     "immunities": {
       "burn": null
     },
