@@ -1131,6 +1131,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   public getHitChance() {
+    if (this.isImmune()) {
+      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 0.0);
+    }
+
     if (this.opts.overrides?.accuracy) {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, this.opts.overrides.accuracy);
     }
@@ -1169,12 +1173,23 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, accuracy);
     }
 
-    if (this.player.style.type === 'magic' && ALWAYS_MAX_HIT_MONSTERS.magic.includes(this.monster.id)) return 1.0;
-    if (this.player.style.type === 'ranged' && ALWAYS_MAX_HIT_MONSTERS.ranged.includes(this.monster.id)) return 1.0;
-    if (this.isUsingMeleeStyle() && ALWAYS_MAX_HIT_MONSTERS.melee.includes(this.monster.id)) return 1.0;
+    // Eclipse Moon clone phase
+    if (this.monster.id === 13012 && this.monster.version === 'Clone' && this.isUsingMeleeStyle()) {
+      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
+    }
+
+    if (this.player.style.type === 'magic' && ALWAYS_MAX_HIT_MONSTERS.magic.includes(this.monster.id)) {
+      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
+    }
+    if (this.player.style.type === 'ranged' && ALWAYS_MAX_HIT_MONSTERS.ranged.includes(this.monster.id)) {
+      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
+    }
+    if (this.isUsingMeleeStyle() && ALWAYS_MAX_HIT_MONSTERS.melee.includes(this.monster.id)) {
+      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
+    }
 
     if (this.opts.usingSpecialAttack && this.wearing(['Voidwaker', 'Dawnbringer'])) {
-      return 1.0;
+      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
     if (this.opts.usingSpecialAttack && (this.wearing('Seercull') || this.isWearingMlb())) {
@@ -1838,6 +1853,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         || (styleType === 'ranged' && !this.player.equipment.ammo?.name?.includes('arrow'))) {
         return true;
       }
+    }
+    // Eclipse moon clone is immune to non-melee attacks
+    if (monsterId === 13012 && this.monster.version === 'Clone' && !this.isUsingMeleeStyle()) {
+      return true;
     }
 
     return false;
