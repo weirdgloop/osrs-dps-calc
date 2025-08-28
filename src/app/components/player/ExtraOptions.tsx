@@ -8,6 +8,7 @@ import forinthry_surge from '@/public/img/misc/forinthry_surge.webp';
 import soulreaper_axe from '@/public/img/misc/soulreaper_axe.png';
 import ba_attacker from '@/public/img/misc/ba_attacker.webp';
 import chinchompa from '@/public/img/misc/chinchompa.png';
+import soulflame from '@/public/img/misc/Soulflame_horn.png';
 import NumberInput from '@/app/components/generic/NumberInput';
 import Toggle from '../generic/Toggle';
 
@@ -93,6 +94,25 @@ const ExtraOptions: React.FC = observer(() => {
               </span>
             </>
           )}
+        />
+        <Toggle
+          checked={player.buffs.soulflameHorn}
+          setChecked={(c) => store.updatePlayer({ buffs: { soulflameHorn: c } })}
+          label={(
+            <>
+              <img src={soulflame.src} width={18} className="inline-block" alt="" />
+              {' '}
+              Soulflame horn buff
+              {' '}
+              <span
+                className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+                data-tooltip-id="tooltip"
+                data-tooltip-content="Next melee attack within 10 ticks is guaranteed to be accurate."
+              >
+                ?
+              </span>
+            </>
+              )}
         />
         <div className="w-full">
           <NumberInput
