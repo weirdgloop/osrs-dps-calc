@@ -18660,8 +18660,8 @@
       "burn": null
     },
     "weakness": {
-      "element": "earth",
-      "severity": 50
+      "element": "none",
+      "severity": 0
     }
   },
   {
@@ -33901,7 +33901,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
   },
   {
     "id": 5534,
@@ -33945,7 +33948,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "none",
+      "severity": 0
+    }
   },
   {
     "id": 11227,
@@ -63637,8 +63643,8 @@
       "burn": null
     },
     "weakness": {
-      "element": "earth",
-      "severity": 50
+      "element": "none",
+      "severity": 0
     }
   },
   {
@@ -82107,7 +82113,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 20
+    }
   },
   {
     "id": 3664,
@@ -82151,7 +82160,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 20
+    }
   },
   {
     "id": 3420,
@@ -82195,7 +82207,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 20
+    }
   },
   {
     "id": 12851,
@@ -82239,7 +82254,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 20
+    }
   },
   {
     "id": 4759,
@@ -90499,8 +90517,52 @@
   {
     "id": 5457,
     "name": "Shipyard worker",
-    "version": "",
-    "image": "Shipyard worker.png",
+    "version": "1",
+    "image": "Shipyard worker (1).png",
+    "level": 11,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 10,
+      "def": 10,
+      "hp": 10,
+      "magic": 0,
+      "ranged": 0,
+      "str": 10
+    },
+    "offensive": {
+      "atk": 6,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 6
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 5729,
+    "name": "Shipyard worker",
+    "version": "2",
+    "image": "Shipyard worker (2).png",
     "level": 11,
     "speed": 4,
     "style": [
