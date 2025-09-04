@@ -2154,14 +2154,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   private static tbowScaling = (current: number, magic: number, accuracyMode: boolean): number => {
-    const factor = accuracyMode ? 10 : 14;
-    const base = accuracyMode ? 140 : 250;
+    const factor = accuracyMode ? 10.0 : 14.0;
+    const base = accuracyMode ? 140.0 : 250.0;
+    const clamp = accuracyMode ? 1.4 : 2.5;
+    const denom = accuracyMode ? 1.0 : 10.0;
 
-    const t2 = Math.trunc((3 * magic - factor) / 100);
-    const t3 = Math.trunc((Math.trunc(3 * magic / 10) - (10 * factor)) ** 2 / 100);
-
-    const bonus = base + t2 - t3;
-    return Math.trunc(current * bonus / 100);
+    // Floating point t2 and t3, matching the Rust formula
+    const t2 = ((10.0 * 3.0 * magic) / denom - factor) / 100.0;
+    const t3 = (((3.0 * magic) / 10.0 - 10.0 * factor) ** 2) / 100.0;
+    let tbowMult = (base + t2 - t3) / 100.0;
+    tbowMult = Math.max(1.0, Math.min(clamp, tbowMult));
+    return Math.floor(current * tbowMult);
   };
 
   getSpecCost(): number | undefined {
