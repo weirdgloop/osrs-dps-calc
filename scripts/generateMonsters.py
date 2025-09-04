@@ -13,93 +13,89 @@ import requests
 import json
 import urllib.parse
 import re
-import csv
 
 FILE_NAME = '../cdn/json/monsters.json'
 WIKI_BASE = 'https://oldschool.runescape.wiki'
 API_BASE = WIKI_BASE + '/api.php'
 IMG_PATH = '../cdn/monsters/'
 
-REQUIRED_PRINTOUTS = [
-    'Attack bonus',
-    'Attack level',
-    'Attack speed',
-    'Attack style',
-    'Combat level',
-    'Crush defence bonus',
-    'Defence level',
-    'Flat armour',
-    'Hitpoints',
-    'Image',
-    'Immune to poison',
-    'Immune to venom',
-    'Magic Damage bonus',
-    'Magic attack bonus',
-    'Magic defence bonus',
-    'Magic level',
-    'Max hit',
-    'Monster attribute',
-    'Name',
-    'Range attack bonus',
-    'Ranged Strength bonus',
-    'Range defence bonus',
-    'Ranged level',
-    'Slash defence bonus',
-    'Slayer category',
-    'Slayer experience',
-    'Stab defence bonus',
-    'Strength bonus',
-    'Strength level',
-    'Size',
-    'NPC ID',
-    'Category',
-    'Elemental weakness',
-    'Elemental weakness percent',
-    'Light range defence bonus',
-    'Standard range defence bonus',
-    'Heavy range defence bonus',
-    'Immune to burn'
+BUCKET_API_FIELDS = [
+    'page_name',
+    'page_name_sub',
+    'attack_bonus',
+    'attack_level',
+    'attack_speed',
+    'attack_style',
+    'combat_level',
+    'crush_defence_bonus',
+    'defence_level',
+    'flat_armour',
+    'hitpoints',
+    'image',
+    'poison_immune',
+    'venom_immune',
+    'magic_damage_bonus',
+    'magic_attack_bonus',
+    'magic_defence_bonus',
+    'magic_level',
+    'max_hit',
+    'attribute',
+    'name',
+    'range_attack_bonus',
+    'range_strength_bonus',
+    'range_defence_bonus',
+    'ranged_level',
+    'slash_defence_bonus',
+    'slayer_category',
+    'slayer_experience',
+    'stab_defence_bonus',
+    'strength_bonus',
+    'strength_level',
+    'size',
+    'id',
+    'elemental_weakness',
+    'elemental_weakness_percent',
+    'light_range_defence_bonus',
+    'standard_range_defence_bonus',
+    'heavy_range_defence_bonus',
+    'burn_immune'
 ]
 
 def get_monster_data():
-    monsters = {}
+    monsters = []
     offset = 0
     while True:
         print('Fetching monster info: ' + str(offset))
         query = {
-            'action': 'ask',
+            'action': 'bucket',
             'format': 'json',
-            'query': '[[Uses infobox::Monster]]|?' + '|?'.join(REQUIRED_PRINTOUTS) + '|limit=500|offset=' + str(offset)
+            'query': f"bucket('infobox_monster').select('{"','".join(BUCKET_API_FIELDS)}').limit(500).offset({offset})" +
+                     f".where(bucket.Not('Category:Non-interactive scenery'))" +
+                     f".where(bucket.Not('Category:Discontinued content'))" +
+                     f".orderBy('page_name_sub', 'asc').run()"
         }
+
+        print(API_BASE + '?' + urllib.parse.urlencode(query))
         r = requests.get(API_BASE + '?' + urllib.parse.urlencode(query), headers={
             'User-Agent': 'osrs-dps-calc (https://github.com/weirdgloop/osrs-dps-calc)'
         })
         data = r.json()
 
-        if 'query' not in data or 'results' not in data['query']:
+        if 'bucket' not in data:
             # No results?
             break
 
-        monsters = monsters | data['query']['results']
+        monsters = monsters + data['bucket']
 
-        if 'query-continue-offset' not in data or int(data['query-continue-offset']) < offset:
+        # Bucket's API doesn't tell you when there are more results, so we'll just have to guess
+        if len(data['bucket']) == 500:
+            offset += 500
+        else:
             # If we are at the end of the results, break out of this loop
             break
-        else:
-            offset = data['query-continue-offset']
+
     return monsters
 
-
-def get_printout_value(prop, all_results=False):
-    # SMW printouts are all arrays, so ensure that the array is not empty
-    if not prop:
-        return None
-    else:
-        return prop if all_results else prop[0]
-
-
-def has_category(category_array, category):
-    return next((c for c in category_array if c['fulltext'] == "Category:%s" % category), None)
 
 strip_marker_regex = re.compile(r'[\'"`]*UNIQ--[a-zA-Z0-9]+-[0-9A-F]{8}-QINU[\'"`]*')
 
@@ -114,7 +110,7 @@ def strip_parser_tags(value):
         return value
 
 def main():
-    # Grab the monster info using SMW, including all the relevant printouts
+    # Grab the monster info using Bucket
     wiki_data = get_monster_data()
 
     # Convert the data into our own JSON structure
@@ -122,15 +118,8 @@ def main():
     required_imgs = []
 
     # Loop over the monsters data from the wiki
-    for k, v in wiki_data.items():
-        # print('Processing ' + k)
-
-        # Sanity check: make sure that this monster has printouts from SMW
-        if 'printouts' not in v:
-            print(k + ' is missing SMW printouts - skipping.')
-            continue
-
-        po = v['printouts']
+    for v in wiki_data:
+        k = v['page_name_sub']
 
         # We split the key instead of using the Version anchor prop here to account for monsters with custom |smwname=
         try:
@@ -147,13 +136,6 @@ def main():
         if re.match("^([A-z]*):", k):
             continue
 
-        # Skip "monsters" that are actually non-interactive scenery, or don't exist
-        if (
-            has_category(po['Category'], 'Non-interactive scenery')
-            or has_category(po['Category'], 'Discontinued content')
-        ):
-            continue
-
         # Skip Fight Caves spawn point monsters
         if 'Spawn point' in version:
             continue
@@ -162,11 +144,11 @@ def main():
         if 'Asleep' in version or 'Defeated' in version:
             continue
 
-        monster_style = get_printout_value(po['Attack style'], True)
+        monster_style = v.get('attack_style')
         if monster_style == 'None' or monster_style == 'N/A':
             monster_style = None
 
-        burn_immunity = get_printout_value(po['Immune to burn'])
+        burn_immunity = v.get('burn_immune')
         if burn_immunity:
             if 'weak' in burn_immunity.lower():
                 burn_immunity = 'Weak'
@@ -182,60 +164,69 @@ def main():
         if 'Spinolyp' in k:
             monster_style = ['Ranged']
 
+        print(f"Processing {v['page_name_sub']}")
+
+        try:
+            monster_id = int(v.get('id')[0]) if v.get('id') else None
+        except ValueError:
+            # Monster has an invalid ID, do not show it here as it's probably historical or something.
+            print("Skipping - invalid monster ID (not an int)")
+            continue
+
         monster = {
-            'id': get_printout_value(po['NPC ID']),
-            'name': k.rsplit('#', 1)[0] or '',
+            'id': monster_id,
+            'name': v.get('page_name'),
             'version': version,
-            'image': '' if not po['Image'] else po['Image'][0]['fulltext'].replace('File:', ''),
-            'level': get_printout_value(po['Combat level']) or 0,
-            'speed': get_printout_value(po['Attack speed']) or 0,
+            'image': '' if not v.get('image') else v.get('image')[-1].replace('File:', ''),
+            'level': v.get('combat_level', 0),
+            'speed': v.get('attack_speed', 0),
             'style': monster_style,
-            'size': get_printout_value(po['Size']) or 0,
-            'max_hit': get_printout_value(po['Max hit']) or 0,
+            'size': v.get('size', 0),
+            'max_hit': v.get('max_hit')[0] if v.get('max_hit') else 0,
             'skills': {
-                'atk': get_printout_value(po['Attack level']) or 0,
-                'def': get_printout_value(po['Defence level']) or 0,
-                'hp': get_printout_value(po['Hitpoints']) or 0,
-                'magic': get_printout_value(po['Magic level']) or 0,
-                'ranged': get_printout_value(po['Ranged level']) or 0,
-                'str': get_printout_value(po['Strength level']) or 0
+                'atk': v.get('attack_level', 0),
+                'def': v.get('defence_level', 0),
+                'hp': v.get('hitpoints', 0),
+                'magic': v.get('magic_level', 0),
+                'ranged': v.get('ranged_level', 0),
+                'str': v.get('strength_level', 0)
             },
             'offensive': {
-                'atk': get_printout_value(po['Attack bonus']) or 0,
-                'magic': get_printout_value(po['Magic attack bonus']) or 0,
-                'magic_str': get_printout_value(po['Magic Damage bonus']) or 0,
-                'ranged': get_printout_value(po['Range attack bonus']) or 0,
-                'ranged_str': get_printout_value(po['Ranged Strength bonus']) or 0,
-                'str': get_printout_value(po['Strength bonus']) or 0
+                'atk': v.get('attack_bonus', 0),
+                'magic': v.get('magic_attack_bonus', 0),
+                'magic_str': v.get('magic_damage_bonus', 0),
+                'ranged': v.get('range_attack_bonus', 0),
+                'ranged_str': v.get('range_strength_bonus', 0),
+                'str': v.get('strength_bonus', 0)
             },
             'defensive': {
-                'flat_armour': get_printout_value(po['Flat armour']) or 0,
-                'crush': get_printout_value(po['Crush defence bonus']) or 0,
-                'magic': get_printout_value(po['Magic defence bonus']) or 0,
-                'heavy': get_printout_value(po['Heavy range defence bonus']) or 0,
-                'standard': get_printout_value(po['Standard range defence bonus']) or 0,
-                'light': get_printout_value(po['Light range defence bonus']) or 0,
-                'slash': get_printout_value(po['Slash defence bonus']) or 0,
-                'stab': get_printout_value(po['Stab defence bonus']) or 0
+                'flat_armour': v.get('flat_armour', 0),
+                'crush': v.get('crush_defence_bonus', 0),
+                'magic': v.get('magic_defence_bonus', 0),
+                'heavy': v.get('heavy_range_defence_bonus', 0),
+                'standard': v.get('standard_range_defence_bonus', 0),
+                'light': v.get('light_range_defence_bonus', 0),
+                'slash': v.get('slash_defence_bonus', 0),
+                'stab': v.get('stab_defence_bonus', 0)
             },
-            'attributes': po['Monster attribute'] or [],
+            'attributes': v.get('attribute', []),
             'immunities': {
                 'burn': burn_immunity,
             }
         }
 
-        weakness = get_printout_value(po['Elemental weakness']) or None
+        weakness = v.get('elemental_weakness')
         if weakness:
             try:
                 monster['weakness'] = {
                     'element': weakness.lower(),
-                    'severity': int(get_printout_value(po['Elemental weakness percent']) or 0)
+                    'severity': int(v.get('elemental_weakness_percent', 0))
                 }
             except:
                 monster['weakness'] = None
         else:
             monster['weakness'] = None
-        
+
         if monster['id'] == 14779: # Gemstone crab has infinite hp which the wiki returns as 0
             monster['skills']['hp'] = 50000
 
