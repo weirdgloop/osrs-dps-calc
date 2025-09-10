@@ -17,28 +17,32 @@ WIKI_BASE = 'https://oldschool.runescape.wiki'
 API_BASE = WIKI_BASE + '/api.php'
 IMG_PATH = '../cdn/equipment/'
 
-REQUIRED_PRINTOUTS = [
-    'Crush attack bonus',
-    'Crush defence bonus',
-    'Equipment slot',
-    'Item ID',
-    'Image',
-    'Magic Damage bonus',
-    'Magic attack bonus',
-    'Magic defence bonus',
-    'Prayer bonus',
-    'Range attack bonus',
-    'Ranged Strength bonus',
-    'Range defence bonus',
-    'Slash attack bonus',
-    'Slash defence bonus',
-    'Stab attack bonus',
-    'Stab defence bonus',
-    'Strength bonus',
-    'Version anchor',
-    'Weapon attack range',
-    'Weapon attack speed',
-    'Combat style'
+BUCKET_API_FIELDS = [
+    'page_name',
+    'page_name_sub',
+    'item_name',
+    'image',
+    'item_id',
+    'version_anchor',
+    'infobox_bonuses.crush_attack_bonus',
+    'infobox_bonuses.crush_defence_bonus',
+    'infobox_bonuses.equipment_slot',
+    'infobox_bonuses.magic_damage_bonus',
+    'infobox_bonuses.magic_attack_bonus',
+    'infobox_bonuses.magic_defence_bonus',
+    'infobox_bonuses.prayer_bonus',
+    'infobox_bonuses.range_attack_bonus',
+    'infobox_bonuses.ranged_strength_bonus',
+    'infobox_bonuses.range_defence_bonus',
+    'infobox_bonuses.slash_attack_bonus',
+    'infobox_bonuses.slash_defence_bonus',
+    'infobox_bonuses.stab_attack_bonus',
+    'infobox_bonuses.stab_defence_bonus',
+    'infobox_bonuses.strength_bonus',
+    'infobox_bonuses.weapon_attack_range',
+    'infobox_bonuses.weapon_attack_speed',
+    'infobox_bonuses.combat_style',
+    'infobox_bonuses.equipment_slot',
 ]
 
 ITEMS_TO_SKIP = [
@@ -68,94 +72,91 @@ ITEMS_TO_SKIP = [
 ]
 
 def getEquipmentData():
-    equipment = {}
+    equipment = []
     offset = 0
     while True:
         print('Fetching equipment info: ' + str(offset))
         query = {
-            'action': 'ask',
+            'action': 'bucket',
             'format': 'json',
-            'query': '[[Equipment slot::+]][[Item ID::+]]|?' + '|?'.join(REQUIRED_PRINTOUTS) + '|limit=500|offset=' + str(offset)
+            'query': f"bucket('infobox_item').select('{"','".join(BUCKET_API_FIELDS)}').limit(500).offset({offset})" +
+                     f".where('infobox_bonuses.equipment_slot', '!=', bucket.Null())" +
+                     f".where('item_id', '!=', bucket.Null())" +
+                     f".join('infobox_bonuses', 'infobox_bonuses.page_name_sub', 'infobox_item.page_name_sub')" +
+                     f".orderBy('page_name_sub', 'asc').run()"
         }
+
         r = requests.get(API_BASE + '?' + urllib.parse.urlencode(query), headers={
             'User-Agent': 'osrs-dps-calc (https://github.com/weirdgloop/osrs-dps-calc)'
         })
+
         data = r.json()
 
-        if 'query' not in data or 'results' not in data['query']:
+        if 'bucket' not in data:
             # No results?
             break
 
-        equipment = equipment | data['query']['results']
+        equipment = equipment + data['bucket']
 
-        if 'query-continue-offset' not in data or int(data['query-continue-offset']) < offset:
+        # Bucket's API doesn't tell you when there are more results, so we'll just have to guess
+        if len(data['bucket']) == 500:
+            offset += 500
+        else:
             # If we are at the end of the results, break out of this loop
             break
-        else:
-            offset = data['query-continue-offset']
+
     return equipment
 
 
-def getPrintoutValue(prop):
-    # SMW printouts are all arrays, so ensure that the array is not empty
-    if not prop:
-        return None
-    else:
-        return prop[0]
-
-
-def getMagicDamageValue(prop):
-    if not prop:
-        return None
-    else:
-        return int(prop[0] * 10)
-
-
 def main():
-    # Grab the equipment info using SMW, including all the relevant printouts
+    # Grab the equipment info using Bucket
     wiki_data = getEquipmentData()
 
-    # Convert the data into our own JSON structure
-    data = []
+    # Use an object rather than an array, so that we can't have duplicate items with the same page_name_sub
+    data = {}
     required_imgs = []
 
     # Loop over the equipment data from the wiki
-    for k, v in wiki_data.items():
-        print('Processing ' + k)
-        # Sanity check: make sure that this equipment has printouts from SMW
-        if 'printouts' not in v:
-            print(k + ' is missing SMW printouts - skipping.')
+    for v in wiki_data:
+        if v['page_name_sub'] in data:
             continue
 
-        po = v['printouts']
-        item_id = getPrintoutValue(po['Item ID'])
+        print(f"Processing {v['page_name_sub']}")
+
+        try:
+            item_id = int(v.get('item_id')[0]) if v.get('item_id') else None
+        except ValueError:
+            # Item has an invalid ID, do not show it here as it's probably historical or something.
+            print("Skipping - invalid item ID (not an int)")
+            continue
+
         equipment = {
-            'name': k.rsplit('#', 1)[0],
+            'name': v['page_name'],
             'id': item_id,
-            'version': getPrintoutValue(po['Version anchor']) or '',
-            'slot': getPrintoutValue(po['Equipment slot']) or '',
-            'image': '' if not po['Image'] else po['Image'][0]['fulltext'].replace('File:', ''),
-            'speed': getPrintoutValue(po['Weapon attack speed']) or 0,
-            'category': getPrintoutValue(po['Combat style']) or '',
+            'version': v.get('version_anchor', ''),
+            'slot': v.get('infobox_bonuses.equipment_slot', ''),
+            'image': '' if not v.get('image') else v.get('image')[-1].replace('File:', ''),
+            'speed': v.get('infobox_bonuses.weapon_attack_speed', 0),
+            'category': v.get('infobox_bonuses.combat_style', ''),
             'bonuses': {
-                'str': getPrintoutValue(po['Strength bonus']),
-                'ranged_str': getPrintoutValue(po['Ranged Strength bonus']),
-                'magic_str': getMagicDamageValue(po['Magic Damage bonus']),
-                'prayer': getPrintoutValue(po['Prayer bonus']),
+                'str': v.get('infobox_bonuses.strength_bonus'),
+                'ranged_str': v.get('infobox_bonuses.ranged_strength_bonus'),
+                'magic_str': int(v.get('infobox_bonuses.magic_damage_bonus', 0) * 10),
+                'prayer': v.get('infobox_bonuses.prayer_bonus'),
             },
             'offensive': {
-                'stab': getPrintoutValue(po['Stab attack bonus']),
-                'slash': getPrintoutValue(po['Slash attack bonus']),
-                'crush': getPrintoutValue(po['Crush attack bonus']),
-                'magic': getPrintoutValue(po['Magic attack bonus']),
-                'ranged': getPrintoutValue(po['Range attack bonus']),
+                'stab': v.get('infobox_bonuses.stab_attack_bonus'),
+                'slash': v.get('infobox_bonuses.slash_attack_bonus'),
+                'crush': v.get('infobox_bonuses.crush_attack_bonus'),
+                'magic': v.get('infobox_bonuses.magic_attack_bonus'),
+                'ranged': v.get('infobox_bonuses.range_attack_bonus'),
             },
             'defensive': {
-                'stab': getPrintoutValue(po['Stab defence bonus']),
-                'slash': getPrintoutValue(po['Slash defence bonus']),
-                'crush': getPrintoutValue(po['Crush defence bonus']),
-                'magic': getPrintoutValue(po['Magic defence bonus']),
-                'ranged': getPrintoutValue(po['Range defence bonus']),
+                'stab': v.get('infobox_bonuses.stab_defence_bonus'),
+                'slash': v.get('infobox_bonuses.slash_defence_bonus'),
+                'crush': v.get('infobox_bonuses.crush_defence_bonus'),
+                'magic': v.get('infobox_bonuses.magic_defence_bonus'),
+                'ranged': v.get('infobox_bonuses.range_defence_bonus'),
             },
             'isTwoHanded': False
         }
@@ -176,27 +177,29 @@ def main():
         if equipment['name'] in ITEMS_TO_SKIP:
             continue
 
-        if "Keris partisan of amascut" in equipment['name'] and "Outside ToA" in k:
+        if "Keris partisan of amascut" in equipment['name'] and "Outside ToA" in v['page_name_sub']:
             continue
 
-        # Append the current equipment item to the calc's equipment list
-        data.append(equipment)
+        # Set the current equipment item to the calc's equipment list
+        data[v['page_name_sub']] = equipment
 
         if not equipment['image'] == '':
             required_imgs.append(equipment['image'])
+
+    new_data = list(data.values())
 
     # add manual equipment that isn't pulled from the wiki
     # this should ONLY be used for upcoming items that are not yet released
     with open('manual_equipment.json', 'r') as f:
         manual_data = json.load(f)
-        data = data + manual_data
+        new_data = new_data + manual_data
 
-    print('Total equipment: ' + str(len(data)))
-    data.sort(key=lambda d: d.get('name'))
+    print('Total equipment: ' + str(len(new_data)))
+    new_data.sort(key=lambda d: d.get('name'))
 
     with open(FILE_NAME, 'w') as f:
         print('Saving to JSON at file: ' + FILE_NAME)
-        json.dump(data, f, ensure_ascii=False, indent=2)
+        json.dump(new_data, f, ensure_ascii=False, indent=2)
 
     success_img_dls = 0
     failed_img_dls = 0
@@ -213,7 +216,7 @@ def main():
         r = requests.get(WIKI_BASE + '/w/Special:Filepath/' + img, headers={
             'User-Agent': 'osrs-dps-calc (https://github.com/weirdgloop/osrs-dps-calc)'
         })
-        if r.status_code == 200:
+        if r.ok:
             with open(IMG_PATH + img, 'wb') as f:
                 f.write(r.content)
                 print('Saved image: ' + img)

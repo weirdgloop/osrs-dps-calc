@@ -37,7 +37,7 @@ export const ZEBAK_IDS = [
 ];
 
 export const TOA_OBELISK_IDS = [
-  11750, 11751, 11752,
+  11751, 11750, 11752,
 ];
 
 export const P2_WARDEN_IDS = [

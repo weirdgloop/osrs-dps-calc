@@ -2434,7 +2434,7 @@
     "id": 891,
     "version": "Poison",
     "slot": "ammo",
-    "image": "Adamant arrow(p) 1.png",
+    "image": "Adamant arrow(p) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -2464,7 +2464,7 @@
     "id": 5620,
     "version": "Poison+",
     "slot": "ammo",
-    "image": "Adamant arrow(p+) 1.png",
+    "image": "Adamant arrow(p+) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -2494,7 +2494,7 @@
     "id": 5626,
     "version": "Poison++",
     "slot": "ammo",
-    "image": "Adamant arrow(p++) 1.png",
+    "image": "Adamant arrow(p++) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -2614,7 +2614,7 @@
     "id": 9290,
     "version": "Poison",
     "slot": "ammo",
-    "image": "Adamant bolts (p) 1.png",
+    "image": "Adamant bolts (p) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -2644,7 +2644,7 @@
     "id": 9297,
     "version": "Poison+",
     "slot": "ammo",
-    "image": "Adamant bolts (p+) 1.png",
+    "image": "Adamant bolts (p+) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -2674,7 +2674,7 @@
     "id": 9304,
     "version": "Poison++",
     "slot": "ammo",
-    "image": "Adamant bolts (p++) 1.png",
+    "image": "Adamant bolts (p++) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -2704,7 +2704,7 @@
     "id": 9143,
     "version": "Unpoisoned",
     "slot": "ammo",
-    "image": "Adamant bolts 1.png",
+    "image": "Adamant bolts 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -7684,7 +7684,7 @@
     "id": 21332,
     "version": "Poison",
     "slot": "ammo",
-    "image": "Amethyst arrow(p) 1.png",
+    "image": "Amethyst arrow(p) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -7714,7 +7714,7 @@
     "id": 21334,
     "version": "Poison+",
     "slot": "ammo",
-    "image": "Amethyst arrow(p+) 1.png",
+    "image": "Amethyst arrow(p+) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -7744,7 +7744,7 @@
     "id": 21336,
     "version": "Poison++",
     "slot": "ammo",
-    "image": "Amethyst arrow(p++) 1.png",
+    "image": "Amethyst arrow(p++) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -7774,7 +7774,7 @@
     "id": 21326,
     "version": "Unpoisoned",
     "slot": "ammo",
-    "image": "Amethyst arrow 1.png",
+    "image": "Amethyst arrow 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -7804,7 +7804,7 @@
     "id": 21316,
     "version": "",
     "slot": "ammo",
-    "image": "Amethyst broad bolts 1.png",
+    "image": "Amethyst broad bolts 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -12964,7 +12964,7 @@
     "id": 28991,
     "version": "",
     "slot": "ammo",
-    "image": "Atlatl dart 1.png",
+    "image": "Atlatl dart 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -15184,7 +15184,7 @@
     "id": 22230,
     "version": "",
     "slot": "ammo",
-    "image": "Barbed arrow 1.png",
+    "image": "Barbed arrow 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -15214,7 +15214,7 @@
     "id": 881,
     "version": "",
     "slot": "ammo",
-    "image": "Barbed bolts 1.png",
+    "image": "Barbed bolts 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -18991,7 +18991,7 @@
   },
   {
     "name": "Black mask (i)",
-    "id": 11783,
+    "id": 26780,
     "version": "(1)",
     "slot": "head",
     "image": "Black mask (i).png",
@@ -19021,7 +19021,7 @@
   },
   {
     "name": "Black mask (i)",
-    "id": 11774,
+    "id": 26771,
     "version": "(10)",
     "slot": "head",
     "image": "Black mask (i).png",
@@ -19051,7 +19051,7 @@
   },
   {
     "name": "Black mask (i)",
-    "id": 11782,
+    "id": 26779,
     "version": "(2)",
     "slot": "head",
     "image": "Black mask (i).png",
@@ -19081,7 +19081,7 @@
   },
   {
     "name": "Black mask (i)",
-    "id": 11781,
+    "id": 25273,
     "version": "(3)",
     "slot": "head",
     "image": "Black mask (i).png",
@@ -19141,7 +19141,7 @@
   },
   {
     "name": "Black mask (i)",
-    "id": 11779,
+    "id": 26776,
     "version": "(5)",
     "slot": "head",
     "image": "Black mask (i).png",
@@ -19171,7 +19171,7 @@
   },
   {
     "name": "Black mask (i)",
-    "id": 11778,
+    "id": 26775,
     "version": "(6)",
     "slot": "head",
     "image": "Black mask (i).png",
@@ -23584,7 +23584,7 @@
     "id": 22229,
     "version": "",
     "slot": "ammo",
-    "image": "Blunt arrow 1.png",
+    "image": "Blunt arrow 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -23614,7 +23614,7 @@
     "id": 9286,
     "version": "Poison",
     "slot": "ammo",
-    "image": "Blurite bolts (p) 1.png",
+    "image": "Blurite bolts (p) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -23644,7 +23644,7 @@
     "id": 9293,
     "version": "Poison+",
     "slot": "ammo",
-    "image": "Blurite bolts (p+) 1.png",
+    "image": "Blurite bolts (p+) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -23674,7 +23674,7 @@
     "id": 9300,
     "version": "Poison++",
     "slot": "ammo",
-    "image": "Blurite bolts (p++) 1.png",
+    "image": "Blurite bolts (p++) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -24064,7 +24064,7 @@
     "id": 4740,
     "version": "",
     "slot": "ammo",
-    "image": "Bolt rack 1.png",
+    "image": "Bolt rack 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -24154,7 +24154,7 @@
     "id": 8882,
     "version": "",
     "slot": "ammo",
-    "image": "Bone bolts 1.png",
+    "image": "Bone bolts 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -25864,7 +25864,7 @@
     "id": 4160,
     "version": "",
     "slot": "ammo",
-    "image": "Broad arrows 1.png",
+    "image": "Broad arrows 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -26464,7 +26464,7 @@
     "id": 883,
     "version": "Poison",
     "slot": "ammo",
-    "image": "Bronze arrow(p) 1.png",
+    "image": "Bronze arrow(p) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -26494,7 +26494,7 @@
     "id": 5616,
     "version": "Poison+",
     "slot": "ammo",
-    "image": "Bronze arrow(p+) 1.png",
+    "image": "Bronze arrow(p+) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -26524,7 +26524,7 @@
     "id": 5622,
     "version": "Poison++",
     "slot": "ammo",
-    "image": "Bronze arrow(p++) 1.png",
+    "image": "Bronze arrow(p++) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -26644,7 +26644,7 @@
     "id": 878,
     "version": "Poison",
     "slot": "ammo",
-    "image": "Bronze bolts (p) 1.png",
+    "image": "Bronze bolts (p) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -26674,7 +26674,7 @@
     "id": 6061,
     "version": "Poison+",
     "slot": "ammo",
-    "image": "Bronze bolts (p+) 1.png",
+    "image": "Bronze bolts (p+) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -26704,7 +26704,7 @@
     "id": 6062,
     "version": "Poison++",
     "slot": "ammo",
-    "image": "Bronze bolts (p++) 2.png",
+    "image": "Bronze bolts (p++) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -27364,7 +27364,7 @@
     "id": 942,
     "version": "Lit",
     "slot": "ammo",
-    "image": "Bronze fire arrow (lit) 1.png",
+    "image": "Bronze fire arrow (lit) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -28656,7 +28656,7 @@
     "slot": "weapon",
     "image": "Bronze speedrun trophy.png",
     "speed": 4,
-    "category": "",
+    "category": "Blunt",
     "bonuses": {
       "str": -10,
       "ranged_str": 0,
@@ -30334,7 +30334,7 @@
     "id": 22227,
     "version": "",
     "slot": "ammo",
-    "image": "Bullet arrow 1.png",
+    "image": "Bullet arrow 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -30781,7 +30781,7 @@
   },
   {
     "name": "Butler's uniform (top)",
-    "id": 29916,
+    "id": 29914,
     "version": "",
     "slot": "body",
     "image": "Butler's uniform (top).png",
@@ -31684,7 +31684,7 @@
     "id": 30694,
     "version": "",
     "slot": "ammo",
-    "image": "Castle wars arrow 2.png",
+    "image": "Castle wars arrow 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -31714,7 +31714,7 @@
     "id": 30696,
     "version": "",
     "slot": "ammo",
-    "image": "Castle wars bolts 1.png",
+    "image": "Castle wars bolts 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -46746,7 +46746,7 @@
     "slot": "weapon",
     "image": "Diamond speedrun trophy.png",
     "speed": 5,
-    "category": "",
+    "category": "Blunt",
     "bonuses": {
       "str": -10,
       "ranged_str": 0,
@@ -46946,6 +46946,36 @@
       "crush": 109,
       "magic": -10,
       "ranged": 148
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Dinh's blazing bulwark (rotten)",
+    "id": 31132,
+    "version": "",
+    "slot": "weapon",
+    "image": "Dinh's blazing bulwark (rotten).png",
+    "speed": 0,
+    "category": "Bow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
     },
     "isTwoHanded": true
   },
@@ -47584,7 +47614,7 @@
     "id": 11227,
     "version": "Poison",
     "slot": "ammo",
-    "image": "Dragon arrow(p) 1.png",
+    "image": "Dragon arrow(p) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -47614,7 +47644,7 @@
     "id": 11228,
     "version": "Poison+",
     "slot": "ammo",
-    "image": "Dragon arrow(p) 1.png",
+    "image": "Dragon arrow(p) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -47644,7 +47674,7 @@
     "id": 11229,
     "version": "Poison++",
     "slot": "ammo",
-    "image": "Dragon arrow(p) 1.png",
+    "image": "Dragon arrow(p) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -47884,7 +47914,7 @@
     "id": 21926,
     "version": "Poison+",
     "slot": "ammo",
-    "image": "Dragon bolts (p+) 1.png",
+    "image": "Dragon bolts (p+) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -47914,7 +47944,7 @@
     "id": 21928,
     "version": "Poison++",
     "slot": "ammo",
-    "image": "Dragon bolts (p++) 1.png",
+    "image": "Dragon bolts (p++) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -55144,7 +55174,7 @@
     "id": 9338,
     "version": "",
     "slot": "ammo",
-    "image": "Emerald bolts 1.png",
+    "image": "Emerald bolts 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -57304,7 +57334,7 @@
     "id": 22228,
     "version": "",
     "slot": "ammo",
-    "image": "Field arrow 1.png",
+    "image": "Field arrow 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -60154,7 +60184,7 @@
     "id": 3867,
     "version": "1",
     "slot": "neck",
-    "image": "Games necklace.png",
+    "image": "Games necklace(1).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -60184,7 +60214,7 @@
     "id": 3865,
     "version": "2",
     "slot": "neck",
-    "image": "Games necklace.png",
+    "image": "Games necklace(2).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -60214,7 +60244,7 @@
     "id": 3863,
     "version": "3",
     "slot": "neck",
-    "image": "Games necklace.png",
+    "image": "Games necklace(3).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -60244,7 +60274,7 @@
     "id": 3861,
     "version": "4",
     "slot": "neck",
-    "image": "Games necklace.png",
+    "image": "Games necklace(4).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -60274,7 +60304,7 @@
     "id": 3859,
     "version": "5",
     "slot": "neck",
-    "image": "Games necklace.png",
+    "image": "Games necklace(5).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -60304,7 +60334,7 @@
     "id": 3857,
     "version": "6",
     "slot": "neck",
-    "image": "Games necklace.png",
+    "image": "Games necklace(6).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -60334,7 +60364,7 @@
     "id": 3855,
     "version": "7",
     "slot": "neck",
-    "image": "Games necklace.png",
+    "image": "Games necklace(7).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -61446,7 +61476,7 @@
     "slot": "weapon",
     "image": "Giant stopwatch.png",
     "speed": 4,
-    "category": "",
+    "category": "Blunt",
     "bonuses": {
       "str": -10,
       "ranged_str": 0,
@@ -63156,7 +63186,7 @@
     "slot": "weapon",
     "image": "Gold speedrun trophy.png",
     "speed": 5,
-    "category": "",
+    "category": "Blunt",
     "bonuses": {
       "str": -10,
       "ranged_str": 0,
@@ -67626,7 +67656,7 @@
     "slot": "weapon",
     "image": "Gregg's eastdoor.png",
     "speed": 7,
-    "category": "",
+    "category": "Blunt",
     "bonuses": {
       "str": -10,
       "ranged_str": 0,
@@ -75784,7 +75814,7 @@
     "id": 885,
     "version": "Poison",
     "slot": "ammo",
-    "image": "Iron arrow(p) 1.png",
+    "image": "Iron arrow(p) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -75814,7 +75844,7 @@
     "id": 5617,
     "version": "Poison+",
     "slot": "ammo",
-    "image": "Iron arrow(p+) 1.png",
+    "image": "Iron arrow(p+) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -75844,7 +75874,7 @@
     "id": 5623,
     "version": "Poison++",
     "slot": "ammo",
-    "image": "Iron arrow(p++) 1.png",
+    "image": "Iron arrow(p++) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -75874,7 +75904,7 @@
     "id": 884,
     "version": "Unpoisoned",
     "slot": "ammo",
-    "image": "Iron arrow 1.png",
+    "image": "Iron arrow 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -75964,7 +75994,7 @@
     "id": 9287,
     "version": "Poison",
     "slot": "ammo",
-    "image": "Iron bolts (p) 1.png",
+    "image": "Iron bolts (p) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -75994,7 +76024,7 @@
     "id": 9294,
     "version": "Poison+",
     "slot": "ammo",
-    "image": "Iron bolts (p+) 1.png",
+    "image": "Iron bolts (p+) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -78334,7 +78364,7 @@
     "id": 9335,
     "version": "",
     "slot": "ammo",
-    "image": "Jade bolts 1.png",
+    "image": "Jade bolts 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -78364,7 +78394,7 @@
     "id": 9237,
     "version": "",
     "slot": "ammo",
-    "image": "Jade bolts (e) 1.png",
+    "image": "Jade bolts (e) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -85444,7 +85474,7 @@
     "id": 889,
     "version": "Poison",
     "slot": "ammo",
-    "image": "Mithril arrow(p) 1.png",
+    "image": "Mithril arrow(p) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -85474,7 +85504,7 @@
     "id": 5619,
     "version": "Poison+",
     "slot": "ammo",
-    "image": "Mithril arrow(p+) 2.png",
+    "image": "Mithril arrow(p+) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -85504,7 +85534,7 @@
     "id": 5625,
     "version": "Poison++",
     "slot": "ammo",
-    "image": "Mithril arrow(p++) 4.png",
+    "image": "Mithril arrow(p++) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -85624,7 +85654,7 @@
     "id": 9289,
     "version": "Poison",
     "slot": "ammo",
-    "image": "Mithril bolts (p) 1.png",
+    "image": "Mithril bolts (p) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -85654,7 +85684,7 @@
     "id": 9296,
     "version": "Poison+",
     "slot": "ammo",
-    "image": "Mithril bolts (p+) 2.png",
+    "image": "Mithril bolts (p+) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -85684,7 +85714,7 @@
     "id": 9303,
     "version": "Poison++",
     "slot": "ammo",
-    "image": "Mithril bolts (p++) 1.png",
+    "image": "Mithril bolts (p++) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -88414,7 +88444,7 @@
     "id": 28878,
     "version": "",
     "slot": "ammo",
-    "image": "Moonlight antler bolts 1.png",
+    "image": "Moonlight antler bolts 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -90124,7 +90154,7 @@
     "id": 21200,
     "version": "",
     "slot": "weapon",
-    "image": "Lava battlestaff (or).png",
+    "image": "Mystic lava staff (or).png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -90574,7 +90604,7 @@
     "id": 12796,
     "version": "",
     "slot": "weapon",
-    "image": "Steam battlestaff (or).png",
+    "image": "Mystic steam staff (or).png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -91115,6 +91145,36 @@
     "version": "Easter egg",
     "slot": "head",
     "image": "Nest hat (easter egg).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Nifty hat",
+    "id": 31780,
+    "version": "",
+    "slot": "head",
+    "image": "Nifty hat.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -92794,7 +92854,7 @@
     "id": 9236,
     "version": "",
     "slot": "ammo",
-    "image": "Opal bolts (e) 1.png",
+    "image": "Opal bolts (e) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -93874,7 +93934,7 @@
     "id": 9238,
     "version": "",
     "slot": "ammo",
-    "image": "Pearl bolts (e) 1.png",
+    "image": "Pearl bolts (e) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -94384,7 +94444,7 @@
     "id": 26945,
     "version": "Uncharged",
     "slot": "weapon",
-    "image": "Pharaoh's sceptre (uncharged).png",
+    "image": "Pharaoh's sceptre.png",
     "speed": 5,
     "category": "Polestaff",
     "bonuses": {
@@ -95676,7 +95736,7 @@
     "slot": "weapon",
     "image": "Platinum speedrun trophy.png",
     "speed": 5,
-    "category": "",
+    "category": "Blunt",
     "bonuses": {
       "str": -10,
       "ranged_str": 0,
@@ -102394,7 +102454,7 @@
     "id": 2566,
     "version": "(1)",
     "slot": "ring",
-    "image": "Ring of dueling.png",
+    "image": "Ring of dueling(1).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -102424,7 +102484,7 @@
     "id": 2564,
     "version": "(2)",
     "slot": "ring",
-    "image": "Ring of dueling.png",
+    "image": "Ring of dueling(2).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -102454,7 +102514,7 @@
     "id": 2562,
     "version": "(3)",
     "slot": "ring",
-    "image": "Ring of dueling.png",
+    "image": "Ring of dueling(3).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -102484,7 +102544,7 @@
     "id": 2560,
     "version": "(4)",
     "slot": "ring",
-    "image": "Ring of dueling.png",
+    "image": "Ring of dueling(4).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -102514,7 +102574,7 @@
     "id": 2558,
     "version": "(5)",
     "slot": "ring",
-    "image": "Ring of dueling.png",
+    "image": "Ring of dueling(5).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -102544,7 +102604,7 @@
     "id": 2556,
     "version": "(6)",
     "slot": "ring",
-    "image": "Ring of dueling.png",
+    "image": "Ring of dueling(6).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -102574,7 +102634,7 @@
     "id": 2554,
     "version": "(7)",
     "slot": "ring",
-    "image": "Ring of dueling.png",
+    "image": "Ring of dueling(7).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -103141,7 +103201,7 @@
   },
   {
     "name": "Ring of suffering (i)",
-    "id": 20657,
+    "id": 26762,
     "version": "Recoil",
     "slot": "ring",
     "image": "Ring of suffering (ri).png",
@@ -103171,7 +103231,7 @@
   },
   {
     "name": "Ring of suffering (i)",
-    "id": 19710,
+    "id": 25246,
     "version": "Uncharged",
     "slot": "ring",
     "image": "Ring of suffering (i).png",
@@ -105214,7 +105274,7 @@
     "id": 9242,
     "version": "",
     "slot": "ammo",
-    "image": "Ruby bolts (e) 1.png",
+    "image": "Ruby bolts (e) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -105484,7 +105544,7 @@
     "id": 893,
     "version": "Poison",
     "slot": "ammo",
-    "image": "Rune arrow(p) 1.png",
+    "image": "Rune arrow(p) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -105514,7 +105574,7 @@
     "id": 5621,
     "version": "Poison+",
     "slot": "ammo",
-    "image": "Rune arrow(p+) 2.png",
+    "image": "Rune arrow(p+) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -105544,7 +105604,7 @@
     "id": 5627,
     "version": "Poison++",
     "slot": "ammo",
-    "image": "Rune arrow(p++) 4.png",
+    "image": "Rune arrow(p++) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -106324,7 +106384,7 @@
     "id": 2541,
     "version": "Lit",
     "slot": "ammo",
-    "image": "Rune fire arrow (lit) 1.png",
+    "image": "Rune fire arrow (lit) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -109444,7 +109504,7 @@
     "id": 9291,
     "version": "Poison",
     "slot": "ammo",
-    "image": "Runite bolts (p) 1.png",
+    "image": "Runite bolts (p) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -109474,7 +109534,7 @@
     "id": 9298,
     "version": "Poison+",
     "slot": "ammo",
-    "image": "Runite bolts (p+) 3.png",
+    "image": "Runite bolts (p+) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -109504,7 +109564,7 @@
     "id": 9305,
     "version": "Poison++",
     "slot": "ammo",
-    "image": "Runite bolts (p++) 3.png",
+    "image": "Runite bolts (p++) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -115144,7 +115204,7 @@
     "id": 9292,
     "version": "Poison",
     "slot": "ammo",
-    "image": "Silver bolts (p) 1.png",
+    "image": "Silver bolts (p) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -115174,7 +115234,7 @@
     "id": 9299,
     "version": "Poison+",
     "slot": "ammo",
-    "image": "Silver bolts (p+) 1.png",
+    "image": "Silver bolts (p+) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -115204,7 +115264,7 @@
     "id": 9306,
     "version": "Poison++",
     "slot": "ammo",
-    "image": "Silver bolts (p++) 1.png",
+    "image": "Silver bolts (p++) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -115476,7 +115536,7 @@
     "slot": "weapon",
     "image": "Silver speedrun trophy.png",
     "speed": 4,
-    "category": "",
+    "category": "Blunt",
     "bonuses": {
       "str": -10,
       "ranged_str": 0,
@@ -116464,7 +116524,7 @@
     "id": 21276,
     "version": "",
     "slot": "weapon",
-    "image": "Skull sceptre.png",
+    "image": "Skull sceptre (i).png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -118234,7 +118294,7 @@
     "id": 10501,
     "version": "",
     "slot": "weapon",
-    "image": "Snowball 1.png",
+    "image": "Snowball 5.png",
     "speed": 4,
     "category": "Unarmed",
     "bonuses": {
@@ -120394,7 +120454,7 @@
     "id": 887,
     "version": "Poison",
     "slot": "ammo",
-    "image": "Steel arrow(p) 1.png",
+    "image": "Steel arrow(p) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -120454,7 +120514,7 @@
     "id": 5624,
     "version": "Poison++",
     "slot": "ammo",
-    "image": "Steel arrow(p++) 1.png",
+    "image": "Steel arrow(p++) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -120574,7 +120634,7 @@
     "id": 9288,
     "version": "Poison",
     "slot": "ammo",
-    "image": "Steel bolts (p) 1.png",
+    "image": "Steel bolts (p) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -120634,7 +120694,7 @@
     "id": 9302,
     "version": "Poison++",
     "slot": "ammo",
-    "image": "Steel bolts (p++) 4.png",
+    "image": "Steel bolts (p++) 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -124324,7 +124384,7 @@
     "id": 28872,
     "version": "",
     "slot": "ammo",
-    "image": "Sunlight antler bolts 1.png",
+    "image": "Sunlight antler bolts 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -127534,7 +127594,7 @@
     "id": 9336,
     "version": "",
     "slot": "ammo",
-    "image": "Topaz bolts 1.png",
+    "image": "Topaz bolts 5.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -133920,6 +133980,36 @@
     "isTwoHanded": true
   },
   {
+    "name": "Venator bow (rotten)",
+    "id": 31133,
+    "version": "",
+    "slot": "weapon",
+    "image": "Venator bow (rotten).png",
+    "speed": 5,
+    "category": "Bow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Venator ring",
     "id": 28310,
     "version": "",
@@ -139836,7 +139926,7 @@
     "slot": "weapon",
     "image": "White sword.png",
     "speed": 4,
-    "category": "",
+    "category": "Stab Sword",
     "bonuses": {
       "str": 12,
       "ranged_str": 0,
@@ -140230,7 +140320,7 @@
     "bonuses": {
       "str": null,
       "ranged_str": null,
-      "magic_str": null,
+      "magic_str": 0,
       "prayer": null
     },
     "offensive": {
