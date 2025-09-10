@@ -1203,6 +1203,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
+    if (this.wearing('Confliction gauntlets') && this.player.style.type === 'magic' && !this.player.equipment.weapon?.isTwoHanded) {
+      hitChance = this.track(DetailKey.PLAYER_ACCURACY_CONFLICTION_GAUNTLETS, BaseCalc.getConflictionGauntletsAccuracyRoll(atk, def));
+    }
+
     return this.track(DetailKey.PLAYER_ACCURACY_FINAL, hitChance);
   }
 

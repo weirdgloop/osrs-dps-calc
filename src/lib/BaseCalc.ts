@@ -168,6 +168,12 @@ export default class BaseCalc {
     return 0;
   }
 
+  public static getConflictionGauntletsAccuracyRoll(atk: number, def: number): number {
+    const singleRoll = this.getNormalAccuracyRoll(atk, def);
+    const doubleRoll = this.getFangAccuracyRoll(atk, def);
+    return doubleRoll / (1 + doubleRoll - singleRoll);
+  }
+
   /**
    * Simple utility function for checking if an item name is equipped. If an array of string is passed instead, this
    * function will return a boolean indicating whether ANY of the provided items are equipped.
@@ -765,9 +771,6 @@ export default class BaseCalc {
     }
     if (this.wearing('Echo boots')) {
       this.addIssue(UserIssueType.FEET_RECOIL_UNSUPPORTED, 'The calculator does not account for recoil damage.');
-    }
-    if (this.wearing('Confliction gauntlets')) {
-      this.addIssue(UserIssueType.HANDS_EFFECT_UNSUPPORTED, 'The calculator does not account for this item\'s special effect.');
     }
   }
 }
