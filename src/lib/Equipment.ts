@@ -429,6 +429,8 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Volatile nightmare staff': 55,
   'Dragon scimitar': 55,
 
+  'Granite hammer': 60,
+
   'Heavy ballista': 65,
   'Light ballista': 65,
   "Saradomin's blessed sword": 65,
