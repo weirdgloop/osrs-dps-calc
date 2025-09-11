@@ -155,7 +155,7 @@ const applyDefenceReductions = (m: Monster): Monster => {
     m = applyBgsDmg(m, 'ranged');
   }
 
-  if (reductions.ayak > 0) {
+  if (reductions.ayak > 0 && m.defensive.magic > 0) {
     const newMagicDef = Math.max(0, m.defensive.magic - reductions.ayak);
     m = {
       ...m,
