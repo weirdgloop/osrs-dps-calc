@@ -1115,6 +1115,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return hitChance;
     }
 
+    if (this.player.buffs.soulflameHorn && this.isUsingMeleeStyle()) {
+      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
+    }
+
     const atk = this.getMaxAttackRoll();
     const def = this.getNPCDefenceRoll();
 
@@ -1210,7 +1214,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     let ret: number = 0;
     if (this.opts.usingSpecialAttack) {
       if (this.wearing(['Bone claws', 'Burning claws']) && !this.isImmuneToNormalBurns()) {
-        ret = burningClawDoT(this.getHitChance());
+        ret = burningClawDoT(this.getHitChance(), this.player.buffs.soulflameHorn);
       } else if (this.wearing('Scorching bow') && !this.isImmuneToNormalBurns()) {
         ret = this.monster.attributes.includes(MonsterAttribute.DEMON) ? 5 : 1;
       } else if (this.wearing('Arkan blade') && !this.isImmuneToNormalBurns()) {
@@ -1284,6 +1288,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const acc = this.getHitChance();
     const [min, max] = this.getMinAndMax();
     const style = this.player.style.type;
+    const soulflameHornBuff = this.player.buffs.soulflameHorn;
 
     if (max === 0) {
       return new AttackDistribution([new HitDistribution([new WeightedHit(1.0, [Hitsplat.INACCURATE])])]);
@@ -1361,17 +1366,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
-    let accurateZeroApplicable: boolean = true;
-    if (this.opts.usingSpecialAttack) {
-      if (this.wearing('Dragon claws')) {
-        accurateZeroApplicable = false;
-        dist = dClawDist(acc, max);
-      } else if (this.wearing(['Bone claws', 'Burning claws'])) {
-        accurateZeroApplicable = false;
-        dist = burningClawSpec(acc, max);
-      }
-    }
-
     if (this.opts.usingSpecialAttack && this.wearing(['Dragon halberd', 'Crystal halberd']) && this.monster.size > 1) {
       const secondHitAttackRoll = Math.trunc(this.getMaxAttackRoll() * 3 / 4);
       const secondHitAcc = this.noInitSubCalc(
@@ -1395,23 +1389,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       if (hitCount !== 1) {
         dist = new AttackDistribution(Array(hitCount).fill(standardHitDist));
       }
-    }
-
-    if (this.opts.usingSpecialAttack && this.wearing('Abyssal dagger')) {
-      const secondHit = HitDistribution.linear(1.0, min, max);
-      dist = dist.transform((h) => new HitDistribution([new WeightedHit(1.0, [h])]).zip(secondHit), { transformInaccurate: false });
-    }
-
-    if (this.opts.usingSpecialAttack && this.wearing('Saradomin sword')) {
-      const magicHit = HitDistribution.linear(1.0, 1, 16);
-      dist = dist.transform(
-        (h) => {
-          if (h.accurate && !IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS.includes(this.monster.id)) {
-            return new HitDistribution([new WeightedHit(1.0, [h])]).zip(magicHit);
-          }
-          return new HitDistribution([new WeightedHit(1.0, [h, Hitsplat.INACCURATE])]);
-        },
-      );
     }
 
     if (this.opts.usingSpecialAttack && this.wearing('Purging staff')) {
@@ -1445,19 +1422,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         hits.push(HitDistribution.linear(acc, Math.min(min, splatMax), splatMax));
       }
       dist = new AttackDistribution(hits);
-    }
-
-    if (this.isUsingMeleeStyle() && this.wearing('Dual macuahuitl')) {
-      const secondHit = HitDistribution.linear(acc, 0, max - Math.trunc(max / 2));
-      const firstHit = new AttackDistribution([HitDistribution.linear(acc, 0, Math.trunc(max / 2))]);
-      dist = firstHit.transform(
-        (h) => {
-          if (h.accurate) {
-            return new HitDistribution([new WeightedHit(1.0, [h])]).zip(secondHit);
-          }
-          return new HitDistribution([new WeightedHit(1.0, [h, Hitsplat.INACCURATE])]);
-        },
-      );
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingTwoHitWeapon()) {
@@ -1586,6 +1550,60 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         dist = dist.transform(dragonstoneBolts(boltContext));
       } else if (this.wearing(['Onyx bolts (e)', 'Onyx dragon bolts (e)']) && !mattrs.includes(MonsterAttribute.UNDEAD)) {
         dist = dist.transform(onyxBolts(boltContext));
+      }
+    }
+
+    if (this.isUsingMeleeStyle() && soulflameHornBuff) {
+      // Only the first hit is affected by the buff
+      let firstHitDist = new HitDistribution(dist.dists[0].hits.filter((h) => h.anyAccurate()));
+      firstHitDist = firstHitDist.scaleProbability(1 / acc);
+      const allDists = dist.dists.length > 1 ? [firstHitDist, ...dist.dists.slice(1)] : [firstHitDist];
+      dist = new AttackDistribution(allDists);
+    }
+
+    // This comes after soulflame because the magic hit depends on the melee hit's accuracy
+    if (this.opts.usingSpecialAttack && this.wearing('Saradomin sword')) {
+      const magicHit = HitDistribution.linear(1.0, 1, 16);
+      dist = dist.transform(
+        (h) => {
+          if (h.accurate && !IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS.includes(this.monster.id)) {
+            return new HitDistribution([new WeightedHit(1.0, [h])]).zip(magicHit);
+          }
+          return new HitDistribution([new WeightedHit(1.0, [h, Hitsplat.INACCURATE])]);
+        },
+      );
+    }
+
+    // Same with the abyssal dagger spec
+    if (this.opts.usingSpecialAttack && this.wearing('Abyssal dagger')) {
+      const secondHit = HitDistribution.linear(1.0, min, max);
+      dist = dist.transform((h) => new HitDistribution([new WeightedHit(1.0, [h])]).zip(secondHit), { transformInaccurate: false });
+    }
+
+    // And same with the dual macuahuitl
+    if (this.isUsingMeleeStyle() && this.wearing('Dual macuahuitl')) {
+      const secondHit = HitDistribution.linear(acc, 0, max - Math.trunc(max / 2));
+      const firstHitAcc = soulflameHornBuff ? 1.0 : acc;
+      const firstHit = new AttackDistribution([HitDistribution.linear(firstHitAcc, 0, Math.trunc(max / 2))]);
+      dist = firstHit.transform(
+        (h) => {
+          if (h.accurate) {
+            return new HitDistribution([new WeightedHit(1.0, [h])]).zip(secondHit);
+          }
+          return new HitDistribution([new WeightedHit(1.0, [h, Hitsplat.INACCURATE])]);
+        },
+      );
+    }
+
+    // Claws are after soulflame because the second accuracy roll is affected instead of the first
+    let accurateZeroApplicable: boolean = true;
+    if (this.opts.usingSpecialAttack) {
+      if (this.wearing('Dragon claws')) {
+        accurateZeroApplicable = false;
+        dist = dClawDist(acc, max, soulflameHornBuff);
+      } else if (this.wearing(['Bone claws', 'Burning claws'])) {
+        accurateZeroApplicable = false;
+        dist = burningClawSpec(acc, max, soulflameHornBuff);
       }
     }
 
