@@ -83,6 +83,7 @@ export enum DetailKey {
   PLAYER_ACCURACY_BASE = 'Player accuracy base',
   PLAYER_ACCURACY_FANG_TOA = 'Player accuracy fang toa',
   PLAYER_ACCURACY_FANG = 'Player accuracy fang',
+  PLAYER_ACCURACY_CONFLICTION_GAUNTLETS = 'Player accuracy confliction gauntlets',
   PLAYER_ACCURACY_ROYAL_TITAN_ELEMENTAL = 'Player accuracy override titan elemental',
   PLAYER_ACCURACY_FINAL = 'Player accuracy',
   HIT_DIST_FINAL_MIN = 'Hit dist min',
