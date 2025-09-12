@@ -1778,7 +1778,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     const flatArmour = this.monster.defensive.flat_armour;
-    if (flatArmour) {
+    if (flatArmour && styleType !== 'magic') {
       dist = dist.transform(
         flatAddTransformer(-flatArmour, 1),
         { transformInaccurate: false },
