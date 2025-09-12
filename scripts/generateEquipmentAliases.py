@@ -34,7 +34,8 @@ def getEquipmentData():
         query = {
             'action': 'bucket',
             'format': 'json',
-            'query': (
+            'query': 
+            (
                 f"bucket('infobox_item')"
                 f".select({fields_csv})"
                 f".limit(500).offset({offset})"
@@ -205,6 +206,10 @@ def main():
         # Radiant oathplate variants
         elif re.match(r"^Radiant", item['name']):
             handle_base_variant(all_items, item, item['name'].replace("Radiant ", "").capitalize(), '')
+        elif re.match("^Black mask", item['name']) and item['version'] != "(10)":
+            handle_base_variant(all_items, item, item['name'], ['(10)'])
+        elif item['name'] == "Void seal" and item['version'] != "(8)":
+            handle_base_variant(all_items, item, item['name'], ['(8)'])
 
     mapping_dict = {}
     for k, v in sorted(data.items(), key=lambda item: item[1].base_name):

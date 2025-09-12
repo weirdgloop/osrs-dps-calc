@@ -64,18 +64,23 @@ BUCKET_API_FIELDS = [
 def get_monster_data():
     monsters = []
     offset = 0
+    fields_csv = ",".join(map(repr, BUCKET_API_FIELDS))
     while True:
         print('Fetching monster info: ' + str(offset))
         query = {
             'action': 'bucket',
             'format': 'json',
-            'query': f"bucket('infobox_monster').select('{"','".join(BUCKET_API_FIELDS)}').limit(500).offset({offset})" +
-                     f".where(bucket.Not('Category:Non-interactive scenery'))" +
-                     f".where(bucket.Not('Category:Discontinued content'))" +
-                     f".orderBy('page_name_sub', 'asc').run()"
+            'query': 
+            (
+                f"bucket('infobox_monster')"
+                f".select({fields_csv})"
+                f".limit(500).offset({offset})"
+                f".where(bucket.Not('Category:Non-interactive scenery'))"
+                f".where(bucket.Not('Category:Discontinued content'))"
+                f".orderBy('page_name_sub', 'asc').run()"
+            )
         }
 
-        print(API_BASE + '?' + urllib.parse.urlencode(query))
         r = requests.get(API_BASE + '?' + urllib.parse.urlencode(query), headers={
             'User-Agent': 'osrs-dps-calc (https://github.com/weirdgloop/osrs-dps-calc)'
         })
