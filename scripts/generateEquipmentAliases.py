@@ -28,16 +28,21 @@ BUCKET_API_FIELDS = [
 def getEquipmentData():
     equipment = []
     offset = 0
+    fields_csv = ",".join(map(repr, BUCKET_API_FIELDS))
     while True:
         print('Fetching equipment info: ' + str(offset))
         query = {
             'action': 'bucket',
             'format': 'json',
-            'query': f"bucket('infobox_item').select('{"','".join(BUCKET_API_FIELDS)}').limit(500).offset({offset})" +
-                     f".where('infobox_bonuses.equipment_slot', '!=', bucket.Null())" +
-                     f".where('item_id', '!=', bucket.Null())" +
-                     f".join('infobox_bonuses', 'infobox_bonuses.page_name_sub', 'infobox_item.page_name_sub')" +
-                     f".orderBy('page_name_sub', 'asc').run()"
+            'query': (
+                f"bucket('infobox_item')"
+                f".select({fields_csv})"
+                f".limit(500).offset({offset})"
+                f".where('infobox_bonuses.equipment_slot', '!=', bucket.Null())"
+                f".where('item_id', '!=', bucket.Null())"
+                f".join('infobox_bonuses', 'infobox_bonuses.page_name_sub', 'infobox_item.page_name_sub')"
+                f".orderBy('page_name_sub', 'asc').run()"
+            )
         }
         r = requests.get(API_BASE + '?' + urllib.parse.urlencode(query), headers={
             'User-Agent': 'osrs-dps-calc (https://github.com/weirdgloop/osrs-dps-calc)'
