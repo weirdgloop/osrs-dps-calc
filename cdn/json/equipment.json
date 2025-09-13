@@ -18991,7 +18991,7 @@
   },
   {
     "name": "Black mask (i)",
-    "id": 26780,
+    "id": 11783,
     "version": "(1)",
     "slot": "head",
     "image": "Black mask (i).png",
@@ -19021,7 +19021,7 @@
   },
   {
     "name": "Black mask (i)",
-    "id": 26771,
+    "id": 11774,
     "version": "(10)",
     "slot": "head",
     "image": "Black mask (i).png",
@@ -19051,7 +19051,7 @@
   },
   {
     "name": "Black mask (i)",
-    "id": 26779,
+    "id": 11782,
     "version": "(2)",
     "slot": "head",
     "image": "Black mask (i).png",
@@ -19081,7 +19081,7 @@
   },
   {
     "name": "Black mask (i)",
-    "id": 25273,
+    "id": 11781,
     "version": "(3)",
     "slot": "head",
     "image": "Black mask (i).png",
@@ -19141,7 +19141,7 @@
   },
   {
     "name": "Black mask (i)",
-    "id": 26776,
+    "id": 11779,
     "version": "(5)",
     "slot": "head",
     "image": "Black mask (i).png",
@@ -19171,7 +19171,7 @@
   },
   {
     "name": "Black mask (i)",
-    "id": 26775,
+    "id": 11778,
     "version": "(6)",
     "slot": "head",
     "image": "Black mask (i).png",
@@ -46946,36 +46946,6 @@
       "crush": 109,
       "magic": -10,
       "ranged": 148
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Dinh's blazing bulwark (rotten)",
-    "id": 31132,
-    "version": "",
-    "slot": "weapon",
-    "image": "Dinh's blazing bulwark (rotten).png",
-    "speed": 0,
-    "category": "Bow",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
     },
     "isTwoHanded": true
   },
@@ -103201,7 +103171,7 @@
   },
   {
     "name": "Ring of suffering (i)",
-    "id": 26762,
+    "id": 20657,
     "version": "Recoil",
     "slot": "ring",
     "image": "Ring of suffering (ri).png",
@@ -103231,7 +103201,7 @@
   },
   {
     "name": "Ring of suffering (i)",
-    "id": 25246,
+    "id": 19710,
     "version": "Uncharged",
     "slot": "ring",
     "image": "Ring of suffering (i).png",
@@ -105476,36 +105446,6 @@
       "crush": 1,
       "magic": 1,
       "ranged": 1
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ruinous powers (item)",
-    "id": 28775,
-    "version": "",
-    "slot": "shield",
-    "image": "Ruinous powers (item).png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": -1
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
     },
     "isTwoHanded": false
   },
@@ -133969,36 +133909,6 @@
       "crush": 0,
       "magic": 0,
       "ranged": 90
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Venator bow (rotten)",
-    "id": 31133,
-    "version": "",
-    "slot": "weapon",
-    "image": "Venator bow (rotten).png",
-    "speed": 5,
-    "category": "Bow",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
     },
     "defensive": {
       "stab": 0,
