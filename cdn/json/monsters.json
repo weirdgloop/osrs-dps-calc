@@ -5659,9 +5659,9 @@
       "atk": 10,
       "def": 130,
       "hp": 200,
-      "magic": 1,
+      "magic": 150,
       "ranged": 0,
-      "str": 1
+      "str": 100
     },
     "offensive": {
       "atk": 0,
@@ -5701,11 +5701,11 @@
     "max_hit": "13",
     "skills": {
       "atk": 10,
-      "def": 1,
+      "def": 120,
       "hp": 100,
-      "magic": 1,
+      "magic": 120,
       "ranged": 0,
-      "str": 1
+      "str": 90
     },
     "offensive": {
       "atk": 0,
@@ -5745,11 +5745,11 @@
     "max_hit": "8",
     "skills": {
       "atk": 10,
-      "def": 1,
+      "def": 75,
       "hp": 70,
-      "magic": 1,
+      "magic": 75,
       "ranged": 0,
-      "str": 1
+      "str": 50
     },
     "offensive": {
       "atk": 0,
@@ -18796,7 +18796,9 @@
       "slash": 160,
       "stab": 120
     },
-    "attributes": [],
+    "attributes": [
+      "kalphite"
+    ],
     "immunities": {
       "burn": null
     },
@@ -22362,9 +22364,53 @@
     "weakness": null
   },
   {
-    "id": 4184,
-    "name": "Crocodile",
+    "id": 11705,
+    "name": "Crocodile (Tombs of Amascut)",
     "version": "",
+    "image": "Crocodile (Tombs of Amascut).png",
+    "level": 71,
+    "speed": 7,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "18",
+    "skills": {
+      "atk": 150,
+      "def": 100,
+      "hp": 30,
+      "magic": 30,
+      "ranged": 1,
+      "str": 60
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 100
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 350,
+      "magic": 5,
+      "heavy": 150,
+      "standard": 150,
+      "light": 150,
+      "slash": 350,
+      "stab": 150
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 11582,
+    "name": "Crocodile",
+    "version": "Land",
     "image": "Crocodile.png",
     "level": 63,
     "speed": 4,
@@ -22409,24 +22455,24 @@
     }
   },
   {
-    "id": 11705,
-    "name": "Crocodile (Tombs of Amascut)",
-    "version": "",
-    "image": "Crocodile (Tombs of Amascut).png",
-    "level": 71,
-    "speed": 7,
+    "id": 11581,
+    "name": "Crocodile",
+    "version": "Water",
+    "image": "Crocodile.png",
+    "level": 63,
+    "speed": 4,
     "style": [
-      "Crush"
+      "Slash"
     ],
     "size": 2,
-    "max_hit": "18",
+    "max_hit": "6",
     "skills": {
-      "atk": 150,
-      "def": 100,
-      "hp": 30,
-      "magic": 30,
+      "atk": 53,
+      "def": 54,
+      "hp": 62,
+      "magic": 1,
       "ranged": 1,
-      "str": 60
+      "str": 54
     },
     "offensive": {
       "atk": 0,
@@ -22434,23 +22480,73 @@
       "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
-      "str": 100
+      "str": 0
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 350,
-      "magic": 5,
-      "heavy": 150,
-      "standard": 150,
-      "light": 150,
-      "slash": 350,
-      "stab": 150
+      "crush": 22,
+      "magic": 10,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 12,
+      "stab": 20
     },
     "attributes": [],
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
+  },
+  {
+    "id": 4184,
+    "name": "Crocodile",
+    "version": "Water & land",
+    "image": "Crocodile.png",
+    "level": 63,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "6",
+    "skills": {
+      "atk": 53,
+      "def": 54,
+      "hp": 62,
+      "magic": 1,
+      "ranged": 1,
+      "str": 54
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 22,
+      "magic": 10,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 12,
+      "stab": 20
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
   },
   {
     "id": 11285,
@@ -28178,54 +28274,6 @@
     "weakness": null
   },
   {
-    "id": 14709,
-    "name": "Doom of Mokhaiotl",
-    "version": "Deep Delve",
-    "image": "Doom of Mokhaiotl (Burrowed).png",
-    "level": 908,
-    "speed": 6,
-    "style": [
-      "Melee",
-      "Magic",
-      "Ranged"
-    ],
-    "size": 5,
-    "max_hit": "60 <br/>99 (charge)",
-    "skills": {
-      "atk": 300,
-      "def": 90,
-      "hp": 625,
-      "magic": 275,
-      "ranged": 110,
-      "str": 190
-    },
-    "offensive": {
-      "atk": 210,
-      "magic": 125,
-      "magic_str": 30,
-      "ranged": 120,
-      "ranged_str": 50,
-      "str": 45
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 60,
-      "magic": 160,
-      "heavy": 160,
-      "standard": 160,
-      "light": 160,
-      "slash": 300,
-      "stab": 300
-    },
-    "attributes": [
-      "demon"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
     "id": 14707,
     "name": "Doom of Mokhaiotl",
     "version": "Deep Delve",
@@ -28287,6 +28335,54 @@
     ],
     "size": 5,
     "max_hit": "99",
+    "skills": {
+      "atk": 300,
+      "def": 90,
+      "hp": 625,
+      "magic": 275,
+      "ranged": 110,
+      "str": 190
+    },
+    "offensive": {
+      "atk": 210,
+      "magic": 125,
+      "magic_str": 30,
+      "ranged": 120,
+      "ranged_str": 50,
+      "str": 45
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 60,
+      "magic": 160,
+      "heavy": 160,
+      "standard": 160,
+      "light": 160,
+      "slash": 300,
+      "stab": 300
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14709,
+    "name": "Doom of Mokhaiotl",
+    "version": "Deep Delve",
+    "image": "Doom of Mokhaiotl (Burrowed).png",
+    "level": 908,
+    "speed": 6,
+    "style": [
+      "Melee",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 5,
+    "max_hit": "60 <br/>99 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
@@ -28706,19 +28802,19 @@
     "weakness": null
   },
   {
-    "id": 14709,
+    "id": 14707,
     "name": "Doom of Mokhaiotl",
     "version": "Delve 5",
-    "image": "Doom of Mokhaiotl (Burrowed).png",
+    "image": "Doom of Mokhaiotl.png",
     "level": 758,
-    "speed": 6,
+    "speed": 5,
     "style": [
       "Melee",
       "Magic",
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "99 (charge)",
+    "max_hit": "53 <br/> 80 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
@@ -28802,59 +28898,11 @@
     "weakness": null
   },
   {
-    "id": 14707,
-    "name": "Doom of Mokhaiotl",
-    "version": "Delve 5",
-    "image": "Doom of Mokhaiotl.png",
-    "level": 758,
-    "speed": 5,
-    "style": [
-      "Melee",
-      "Magic",
-      "Ranged"
-    ],
-    "size": 5,
-    "max_hit": "53 <br/> 80 (charge)",
-    "skills": {
-      "atk": 300,
-      "def": 90,
-      "hp": 625,
-      "magic": 275,
-      "ranged": 110,
-      "str": 190
-    },
-    "offensive": {
-      "atk": 210,
-      "magic": 125,
-      "magic_str": 30,
-      "ranged": 120,
-      "ranged_str": 50,
-      "str": 45
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 60,
-      "magic": 160,
-      "heavy": 160,
-      "standard": 160,
-      "light": 160,
-      "slash": 300,
-      "stab": 300
-    },
-    "attributes": [
-      "demon"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
     "id": 14709,
     "name": "Doom of Mokhaiotl",
-    "version": "Delve 6",
+    "version": "Delve 5",
     "image": "Doom of Mokhaiotl (Burrowed).png",
-    "level": 808,
+    "level": 758,
     "speed": 6,
     "style": [
       "Melee",
@@ -28862,11 +28910,11 @@
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "55 <br/>99 (charge)",
+    "max_hit": "99 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
-      "hp": 650,
+      "hp": 625,
       "magic": 275,
       "ranged": 110,
       "str": 190
@@ -28994,6 +29042,54 @@
     "weakness": null
   },
   {
+    "id": 14709,
+    "name": "Doom of Mokhaiotl",
+    "version": "Delve 6",
+    "image": "Doom of Mokhaiotl (Burrowed).png",
+    "level": 808,
+    "speed": 6,
+    "style": [
+      "Melee",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 5,
+    "max_hit": "55 <br/>99 (charge)",
+    "skills": {
+      "atk": 300,
+      "def": 90,
+      "hp": 650,
+      "magic": 275,
+      "ranged": 110,
+      "str": 190
+    },
+    "offensive": {
+      "atk": 210,
+      "magic": 125,
+      "magic_str": 30,
+      "ranged": 120,
+      "ranged_str": 50,
+      "str": 45
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 60,
+      "magic": 160,
+      "heavy": 160,
+      "standard": 160,
+      "light": 160,
+      "slash": 300,
+      "stab": 300
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 14707,
     "name": "Doom of Mokhaiotl",
     "version": "Delve 7",
@@ -29007,6 +29103,54 @@
     ],
     "size": 5,
     "max_hit": "57 <br/>99 (charge)",
+    "skills": {
+      "atk": 300,
+      "def": 90,
+      "hp": 650,
+      "magic": 275,
+      "ranged": 110,
+      "str": 190
+    },
+    "offensive": {
+      "atk": 210,
+      "magic": 125,
+      "magic_str": 30,
+      "ranged": 120,
+      "ranged_str": 50,
+      "str": 45
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 60,
+      "magic": 160,
+      "heavy": 160,
+      "standard": 160,
+      "light": 160,
+      "slash": 300,
+      "stab": 300
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14708,
+    "name": "Doom of Mokhaiotl",
+    "version": "Delve 7",
+    "image": "Doom of Mokhaiotl (Shielded).png",
+    "level": 858,
+    "speed": 6,
+    "style": [
+      "Melee",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 5,
+    "max_hit": "99",
     "skills": {
       "atk": 300,
       "def": 90,
@@ -29090,67 +29234,19 @@
     "weakness": null
   },
   {
-    "id": 14708,
-    "name": "Doom of Mokhaiotl",
-    "version": "Delve 7",
-    "image": "Doom of Mokhaiotl (Shielded).png",
-    "level": 858,
-    "speed": 6,
-    "style": [
-      "Melee",
-      "Magic",
-      "Ranged"
-    ],
-    "size": 5,
-    "max_hit": "99",
-    "skills": {
-      "atk": 300,
-      "def": 90,
-      "hp": 650,
-      "magic": 275,
-      "ranged": 110,
-      "str": 190
-    },
-    "offensive": {
-      "atk": 210,
-      "magic": 125,
-      "magic_str": 30,
-      "ranged": 120,
-      "ranged_str": 50,
-      "str": 45
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 60,
-      "magic": 160,
-      "heavy": 160,
-      "standard": 160,
-      "light": 160,
-      "slash": 300,
-      "stab": 300
-    },
-    "attributes": [
-      "demon"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 14708,
+    "id": 14707,
     "name": "Doom of Mokhaiotl",
     "version": "Delve 8",
-    "image": "Doom of Mokhaiotl (Shielded).png",
+    "image": "Doom of Mokhaiotl.png",
     "level": 908,
-    "speed": 6,
+    "speed": 4,
     "style": [
       "Melee",
       "Magic",
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "99",
+    "max_hit": "65 <br/>99 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
@@ -29186,19 +29282,19 @@
     "weakness": null
   },
   {
-    "id": 14707,
+    "id": 14708,
     "name": "Doom of Mokhaiotl",
     "version": "Delve 8",
-    "image": "Doom of Mokhaiotl.png",
+    "image": "Doom of Mokhaiotl (Shielded).png",
     "level": 908,
-    "speed": 4,
+    "speed": 6,
     "style": [
       "Melee",
       "Magic",
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "65 <br/>99 (charge)",
+    "max_hit": "99",
     "skills": {
       "atk": 300,
       "def": 90,
@@ -37255,98 +37351,10 @@
     }
   },
   {
-    "id": 4772,
+    "id": 4773,
     "name": "Fortress Guard",
     "version": "",
-    "image": "Fortress Guard (historical v3).png",
-    "level": 20,
-    "speed": 6,
-    "style": [
-      "Stab"
-    ],
-    "size": 1,
-    "max_hit": "3",
-    "skills": {
-      "atk": 18,
-      "def": 15,
-      "hp": 22,
-      "magic": 1,
-      "ranged": 1,
-      "str": 18
-    },
-    "offensive": {
-      "atk": 5,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 6
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 14,
-      "magic": -4,
-      "heavy": 15,
-      "standard": 15,
-      "light": 15,
-      "slash": 18,
-      "stab": 14
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 4776,
-    "name": "Fortress Guard",
-    "version": "",
-    "image": "Fortress Guard (4).png",
-    "level": 20,
-    "speed": 6,
-    "style": [
-      "Stab"
-    ],
-    "size": 1,
-    "max_hit": "3",
-    "skills": {
-      "atk": 18,
-      "def": 15,
-      "hp": 22,
-      "magic": 1,
-      "ranged": 1,
-      "str": 18
-    },
-    "offensive": {
-      "atk": 5,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 6
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 14,
-      "magic": -4,
-      "heavy": 15,
-      "standard": 15,
-      "light": 15,
-      "slash": 18,
-      "stab": 14
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 4775,
-    "name": "Fortress Guard",
-    "version": "",
-    "image": "Fortress Guard.png",
+    "image": "Fortress Guard (2).png",
     "level": 20,
     "speed": 6,
     "style": [
@@ -37431,10 +37439,98 @@
     "weakness": null
   },
   {
-    "id": 4773,
+    "id": 4775,
     "name": "Fortress Guard",
     "version": "",
-    "image": "Fortress Guard (2).png",
+    "image": "Fortress Guard.png",
+    "level": 20,
+    "speed": 6,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 18,
+      "def": 15,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 6
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 14,
+      "magic": -4,
+      "heavy": 15,
+      "standard": 15,
+      "light": 15,
+      "slash": 18,
+      "stab": 14
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 4776,
+    "name": "Fortress Guard",
+    "version": "",
+    "image": "Fortress Guard (4).png",
+    "level": 20,
+    "speed": 6,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 18,
+      "def": 15,
+      "hp": 22,
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 6
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 14,
+      "magic": -4,
+      "heavy": 15,
+      "standard": 15,
+      "light": 15,
+      "slash": 18,
+      "stab": 14
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 4772,
+    "name": "Fortress Guard",
+    "version": "",
+    "image": "Fortress Guard (historical v3).png",
     "level": 20,
     "speed": 6,
     "style": [
@@ -102580,7 +102676,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
   },
   {
     "id": 1377,
@@ -105870,50 +105969,6 @@
     "weakness": null
   },
   {
-    "id": 9436,
-    "name": "Totem (Phosani's Nightmare)",
-    "version": "",
-    "image": "Totem (Phosani's Nightmare, charged).png",
-    "level": 0,
-    "speed": 0,
-    "style": [
-      "None"
-    ],
-    "size": 3,
-    "max_hit": 0,
-    "skills": {
-      "atk": 1,
-      "def": 0,
-      "hp": 200,
-      "magic": 1,
-      "ranged": 1,
-      "str": 1
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
     "id": 9435,
     "name": "Totem (Phosani's Nightmare)",
     "version": "",
@@ -105962,9 +106017,9 @@
   },
   {
     "id": 9436,
-    "name": "Totem (The Nightmare)",
+    "name": "Totem (Phosani's Nightmare)",
     "version": "",
-    "image": "Totem (The Nightmare, charged).png",
+    "image": "Totem (Phosani's Nightmare, charged).png",
     "level": 0,
     "speed": 0,
     "style": [
@@ -105975,7 +106030,7 @@
     "skills": {
       "atk": 1,
       "def": 0,
-      "hp": 300,
+      "hp": 200,
       "magic": 1,
       "ranged": 1,
       "str": 1
@@ -106050,6 +106105,50 @@
       "element": "fire",
       "severity": 70
     }
+  },
+  {
+    "id": 9436,
+    "name": "Totem (The Nightmare)",
+    "version": "",
+    "image": "Totem (The Nightmare, charged).png",
+    "level": 0,
+    "speed": 0,
+    "style": [
+      "None"
+    ],
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 1,
+      "def": 0,
+      "hp": 300,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
   },
   {
     "id": 3551,
@@ -107036,7 +107135,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 25
+    }
   },
   {
     "id": 6406,
@@ -107485,7 +107587,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 3130,
