@@ -113,8 +113,6 @@ def main():
 
     # Loop over the equipment data from the wiki
     for v in wiki_data:
-        if v['page_name_sub'] in data:
-            continue
 
         print(f"Processing {v['page_name_sub']}")
 
@@ -125,10 +123,15 @@ def main():
             print("Skipping - invalid item ID (not an int)")
             continue
 
-        all_items[v['page_name_sub']] = {
+        if item_id in all_items:
+            # Skip duplicates although the object key also prevents this
+            continue
+
+        all_items[item_id] = {
             'name': v['page_name'],
             'id': item_id,
-            'version': v.get('version_anchor', '')
+            'version': v.get('version_anchor', ''),
+            'page_name_sub': v['page_name_sub'],
         }
 
     all_items = list(all_items.values())
