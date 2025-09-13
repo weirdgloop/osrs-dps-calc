@@ -21,6 +21,7 @@ import {
   ABYSSAL_SIRE_TRANSITION_IDS,
   ALWAYS_MAX_HIT_MONSTERS,
   BA_ATTACKER_MONSTERS,
+  ECLIPSE_MOON_IDS,
   GLOWING_CRYSTAL_IDS,
   GUARANTEED_ACCURACY_MONSTERS,
   GUARDIAN_IDS,
@@ -1174,7 +1175,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     // Eclipse Moon clone phase
-    if (this.monster.id === 13012 && this.monster.version === 'Clone' && this.isUsingMeleeStyle()) {
+    if (ECLIPSE_MOON_IDS.includes(this.monster.id) && this.monster.version === 'Clone' && this.isUsingMeleeStyle()) {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
@@ -1855,7 +1856,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
     // Eclipse moon clone is immune to non-melee attacks
-    if (monsterId === 13012 && this.monster.version === 'Clone' && !this.isUsingMeleeStyle()) {
+    if (ECLIPSE_MOON_IDS.includes(this.monster.id) && this.monster.version === 'Clone' && !this.isUsingMeleeStyle()) {
       return true;
     }
 
