@@ -68,7 +68,8 @@ ITEMS_TO_SKIP = [
     'Dagon\'hai robe bottom (or)',
     'Dagon\'hai robe top (or)',
     'Dragon warhammer (or)',
-    'Centurion cuirass'
+    'Centurion cuirass',
+    'Ruinous powers (item)',
 ]
 
 def getEquipmentData():
