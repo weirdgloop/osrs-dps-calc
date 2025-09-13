@@ -97,7 +97,6 @@ const UNIMPLEMENTED_SPECS: string[] = [
   'Dragon thrownaxe',
   'Eclipse atlatl',
   'Excalibur',
-  'Granite hammer',
   'Granite maul',
   'Rune claws',
   'Staff of balance',
@@ -264,6 +263,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_EFARITAY, attackRoll, [23, 20]); // todo ordering? does this stack multiplicatively with vampyrebane?
     }
 
+    if (this.wearing('Granite hammer') && mattrs.includes(MonsterAttribute.GOLEM)) {
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_GOLEMBANE, attackRoll, [13, 10]);
+    }
+
     // Inquisitor's armour set gives bonuses when using the crush attack style
     if (style.type === 'crush') {
       let inqPieces = this.allEquippedItems.filter((v) => [
@@ -288,7 +291,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.opts.usingSpecialAttack) {
       if (this.isWearingGodsword()) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
-      } else if (this.isWearingFang() || this.wearing('Arkan blade')) {
+      } else if (this.isWearingFang() || this.wearing('Arkan blade') || this.wearing('Granite hammer')) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [3, 2]);
       } else if (this.wearing(['Elder maul', 'Dragon mace', 'Dragon sword', 'Dragon scimitar', 'Abyssal whip'])) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [5, 4]);
@@ -393,6 +396,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     if (this.wearing('Barronite mace') && mattrs.includes(MonsterAttribute.GOLEM)) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_GOLEMBANE, maxHit, [23, 20]);
+    }
+    if (this.wearing('Granite hammer') && mattrs.includes(MonsterAttribute.GOLEM)) {
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_GOLEMBANE, maxHit, [13, 10]);
     }
     if (this.isRevWeaponBuffApplicable()) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_REV_WEAPON, maxHit, [3, 2]);
@@ -1432,6 +1438,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           return new HitDistribution([new WeightedHit(1.0, [h, Hitsplat.INACCURATE])]);
         },
       );
+    }
+
+    if (this.opts.usingSpecialAttack && this.wearing('Granite hammer')) {
+      dist = dist.transform(flatAddTransformer(5), { transformInaccurate: true });
     }
 
     if (this.opts.usingSpecialAttack && this.wearing('Purging staff')) {
