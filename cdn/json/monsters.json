@@ -7330,6 +7330,52 @@
     }
   },
   {
+    "id": 7288,
+    "name": "Awakened Altar",
+    "version": "",
+    "image": "Awakened Altar.png",
+    "level": 0,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 1,
+    "max_hit": "0 (Does not attack)",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 100,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 11778,
     "name": "Ba-Ba",
     "version": "",
@@ -7389,7 +7435,7 @@
     "skills": {
       "atk": 0,
       "def": 50,
-      "hp": 35,
+      "hp": 10,
       "magic": 50,
       "ranged": 80,
       "str": 0
@@ -30663,7 +30709,7 @@
     "version": "Level 11",
     "image": "Dwarf.png",
     "level": 11,
-    "speed": 4,
+    "speed": 5,
     "style": [
       "Crush"
     ],
@@ -38394,6 +38440,218 @@
       "burn": null
     },
     "weakness": null
+  },
+  {
+    "id": 8097,
+    "name": "Galvek",
+    "version": "Air",
+    "image": "Galvek (air).png",
+    "level": 608,
+    "speed": 6,
+    "style": [
+      "Slash",
+      "Ranged",
+      "Magic",
+      "Dragonfire"
+    ],
+    "size": 7,
+    "max_hit": "28 (Ranged)",
+    "skills": {
+      "atk": 632,
+      "def": 188,
+      "hp": 1200,
+      "magic": 160,
+      "ranged": 246,
+      "str": 268
+    },
+    "offensive": {
+      "atk": 34,
+      "magic": 160,
+      "magic_str": 42,
+      "ranged": 180,
+      "ranged_str": 6,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 140,
+      "magic": 280,
+      "heavy": 86,
+      "standard": 86,
+      "light": 86,
+      "slash": 140,
+      "stab": 80
+    },
+    "attributes": [
+      "dragon",
+      "fiery"
+    ],
+    "immunities": {
+      "burn": "Normal"
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
+  },
+  {
+    "id": 8098,
+    "name": "Galvek",
+    "version": "Earth",
+    "image": "Galvek (earth).png",
+    "level": 608,
+    "speed": 6,
+    "style": [
+      "Slash",
+      "Ranged",
+      "Magic",
+      "Dragonfire"
+    ],
+    "size": 7,
+    "max_hit": "28 (Ranged)",
+    "skills": {
+      "atk": 632,
+      "def": 188,
+      "hp": 1200,
+      "magic": 160,
+      "ranged": 246,
+      "str": 268
+    },
+    "offensive": {
+      "atk": 34,
+      "magic": 160,
+      "magic_str": 42,
+      "ranged": 180,
+      "ranged_str": 6,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 140,
+      "magic": 280,
+      "heavy": 86,
+      "standard": 86,
+      "light": 86,
+      "slash": 140,
+      "stab": 80
+    },
+    "attributes": [
+      "dragon",
+      "fiery"
+    ],
+    "immunities": {
+      "burn": "Normal"
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
+  },
+  {
+    "id": 8094,
+    "name": "Galvek",
+    "version": "Fire",
+    "image": "Galvek.png",
+    "level": 608,
+    "speed": 6,
+    "style": [
+      "Slash",
+      "Ranged",
+      "Magic",
+      "Dragonfire"
+    ],
+    "size": 7,
+    "max_hit": "28 (Ranged)",
+    "skills": {
+      "atk": 632,
+      "def": 188,
+      "hp": 1200,
+      "magic": 160,
+      "ranged": 246,
+      "str": 268
+    },
+    "offensive": {
+      "atk": 34,
+      "magic": 160,
+      "magic_str": 42,
+      "ranged": 180,
+      "ranged_str": 6,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 140,
+      "magic": 280,
+      "heavy": 86,
+      "standard": 86,
+      "light": 86,
+      "slash": 140,
+      "stab": 80
+    },
+    "attributes": [
+      "dragon",
+      "fiery"
+    ],
+    "immunities": {
+      "burn": "Normal"
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
+  },
+  {
+    "id": 8096,
+    "name": "Galvek",
+    "version": "Water",
+    "image": "Galvek (water).png",
+    "level": 608,
+    "speed": 6,
+    "style": [
+      "Slash",
+      "Ranged",
+      "Magic",
+      "Dragonfire"
+    ],
+    "size": 7,
+    "max_hit": "28 (Ranged)",
+    "skills": {
+      "atk": 632,
+      "def": 188,
+      "hp": 1200,
+      "magic": 160,
+      "ranged": 246,
+      "str": 268
+    },
+    "offensive": {
+      "atk": 34,
+      "magic": 160,
+      "magic_str": 42,
+      "ranged": 180,
+      "ranged_str": 6,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 140,
+      "magic": 280,
+      "heavy": 86,
+      "standard": 86,
+      "light": 86,
+      "slash": 140,
+      "stab": 80
+    },
+    "attributes": [
+      "dragon",
+      "fiery"
+    ],
+    "immunities": {
+      "burn": "Normal"
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 6900,
@@ -98413,8 +98671,8 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
-      "severity": 30
+      "element": "fire",
+      "severity": 200
     }
   },
   {

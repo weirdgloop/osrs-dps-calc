@@ -75,7 +75,6 @@ def get_monster_data():
                 f"bucket('infobox_monster')"
                 f".select({fields_csv})"
                 f".limit(500).offset({offset})"
-                f".where(bucket.Not('Category:Non-interactive scenery'))"
                 f".where(bucket.Not('Category:Discontinued content'))"
                 f".orderBy('page_name_sub', 'asc').run()"
             )
@@ -147,6 +146,10 @@ def main():
 
         # Skip Duke Sucellus non-attackable monsters and Hueycoatyl defeated
         if 'Asleep' in version or 'Defeated' in version:
+            continue
+
+        # Skip Guardians of the Rift barriers which are not attackable
+        if re.match("^(Strong|Weak|Medium|Overcharged) Barrier$", k):
             continue
 
         monster_style = v.get('attack_style')
