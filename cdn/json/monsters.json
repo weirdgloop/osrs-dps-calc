@@ -27813,6 +27813,54 @@
     "weakness": null
   },
   {
+    "id": 3459,
+    "name": "Dessous",
+    "version": "",
+    "image": "Dessous.png",
+    "level": 139,
+    "speed": 3,
+    "style": [
+      "Crush",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "19 (Melee)",
+    "skills": {
+      "atk": 99,
+      "def": 99,
+      "hp": 200,
+      "magic": 1,
+      "ranged": 1,
+      "str": 99
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 50
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 150,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 150,
+      "stab": 10
+    },
+    "attributes": [
+      "vampyre1"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 1128,
     "name": "Dessous (Nightmare Zone)",
     "version": "Hard Mode",
@@ -41530,7 +41578,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 680,
@@ -65342,7 +65393,7 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": "24",
+    "max_hit": "24 (magic)",
     "skills": {
       "atk": 70,
       "def": 70,
@@ -67748,12 +67799,12 @@
       "str": 360
     },
     "offensive": {
-      "atk": 0,
+      "atk": 15,
       "magic": 0,
       "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
-      "str": 65
+      "str": 64
     },
     "defensive": {
       "flat_armour": 0,
@@ -67792,12 +67843,12 @@
       "str": 360
     },
     "offensive": {
-      "atk": 0,
+      "atk": 15,
       "magic": 0,
       "magic_str": 0,
       "ranged": 0,
       "ranged_str": 0,
-      "str": 65
+      "str": 64
     },
     "defensive": {
       "flat_armour": 0,
@@ -87996,7 +88047,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 1097,
@@ -88040,7 +88094,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 4315,
@@ -88806,7 +88863,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -3,
       "crush": 0,
       "magic": 0,
       "heavy": 0,
@@ -98181,8 +98238,8 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
-      "severity": 30
+      "element": "fire",
+      "severity": 200
     }
   },
   {
@@ -98426,8 +98483,8 @@
       "burn": null
     },
     "weakness": {
-      "element": "air",
-      "severity": 30
+      "element": "fire",
+      "severity": 200
     }
   },
   {
