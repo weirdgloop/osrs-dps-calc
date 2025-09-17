@@ -14,6 +14,7 @@ import { DPS_PRECISION } from '@/lib/constants';
 export enum CompareXAxis {
   MONSTER_DEF,
   MONSTER_MAGIC,
+  MONSTER_MAGIC_DEF,
   MONSTER_HP,
   PLAYER_ATTACK_LEVEL,
   PLAYER_STRENGTH_LEVEL,
@@ -101,6 +102,12 @@ export default class Comparator {
       case CompareXAxis.MONSTER_MAGIC:
         for (let newMagic = this.baseMonster.skills.magic; newMagic >= 0; newMagic--) {
           yield monsterInput(newMagic, { skills: { magic: newMagic } });
+        }
+        return;
+
+      case CompareXAxis.MONSTER_MAGIC_DEF:
+        for (let newMagicDef = Math.max(this.baseMonster.defensive.magic, 0); newMagicDef >= 0; newMagicDef--) {
+          yield monsterInput(newMagicDef, { defensive: { magic: newMagicDef } });
         }
         return;
 
