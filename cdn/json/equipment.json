@@ -56731,38 +56731,8 @@
   },
   {
     "name": "Farmer's boots",
-    "id": 13645,
-    "version": "Female",
-    "slot": "feet",
-    "image": "Farmer's boots (female).png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Farmer's boots",
     "id": 13644,
-    "version": "Male",
+    "version": "Body type A",
     "slot": "feet",
     "image": "Farmer's boots.png",
     "speed": 0,
@@ -56790,11 +56760,11 @@
     "isTwoHanded": false
   },
   {
-    "name": "Farmer's boro trousers",
-    "id": 13641,
-    "version": "Female",
-    "slot": "legs",
-    "image": "Farmer's boro trousers (female).png",
+    "name": "Farmer's boots",
+    "id": 13645,
+    "version": "Body type B",
+    "slot": "feet",
+    "image": "Farmer's boots (female).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -56822,9 +56792,39 @@
   {
     "name": "Farmer's boro trousers",
     "id": 13640,
-    "version": "Male",
+    "version": "Body type A",
     "slot": "legs",
     "image": "Farmer's boro trousers.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Farmer's boro trousers",
+    "id": 13641,
+    "version": "Body type B",
+    "slot": "legs",
+    "image": "Farmer's boro trousers (female).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -56911,10 +56911,10 @@
   },
   {
     "name": "Farmer's strawhat",
-    "id": 13647,
-    "version": "Female",
+    "id": 13646,
+    "version": "Body type A",
     "slot": "head",
-    "image": "Farmer's strawhat (female).png",
+    "image": "Farmer's strawhat.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -56941,10 +56941,10 @@
   },
   {
     "name": "Farmer's strawhat",
-    "id": 13646,
-    "version": "Male",
+    "id": 13647,
+    "version": "Body type B",
     "slot": "head",
-    "image": "Farmer's strawhat.png",
+    "image": "Farmer's strawhat (female).png",
     "speed": 0,
     "category": "",
     "bonuses": {
