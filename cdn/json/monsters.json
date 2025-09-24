@@ -10677,7 +10677,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
   },
   {
     "id": 9285,
@@ -10721,7 +10724,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
   },
   {
     "id": 9293,
@@ -13943,7 +13949,10 @@
     "immunities": {
       "burn": "Strong"
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 15
+    }
   },
   {
     "id": 11293,
@@ -14915,7 +14924,10 @@
     "immunities": {
       "burn": "Strong"
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 15
+    }
   },
   {
     "id": 11066,
@@ -19337,7 +19349,7 @@
       "crush": 23,
       "magic": 24,
       "heavy": 40,
-      "standard": 40,
+      "standard": 20,
       "light": 40,
       "slash": 43,
       "stab": 41
@@ -19384,7 +19396,7 @@
       "crush": 23,
       "magic": 24,
       "heavy": 40,
-      "standard": 40,
+      "standard": 20,
       "light": 40,
       "slash": 43,
       "stab": 41
@@ -31430,7 +31442,10 @@
     "immunities": {
       "burn": "Strong"
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 15
+    }
   },
   {
     "id": 13012,
@@ -31474,7 +31489,10 @@
     "immunities": {
       "burn": "Strong"
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 15
+    }
   },
   {
     "id": 2618,
@@ -37296,7 +37314,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 50
+    }
   },
   {
     "id": 10525,
@@ -37342,7 +37363,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 50
+    }
   },
   {
     "id": 10544,
@@ -38225,7 +38249,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": "1 (crush)",
+    "max_hit": "1",
     "skills": {
       "atk": 1,
       "def": 1,
@@ -38272,7 +38296,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": "1 (crush)",
+    "max_hit": "1",
     "skills": {
       "atk": 1,
       "def": 1,
@@ -40275,7 +40299,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 10
+    }
   },
   {
     "id": 6824,
@@ -40635,7 +40662,7 @@
       "crush": 15,
       "magic": 99,
       "heavy": 70,
-      "standard": 70,
+      "standard": 50,
       "light": 70,
       "slash": 30,
       "stab": 30
@@ -40644,7 +40671,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 25
+    }
   },
   {
     "id": 2994,
@@ -45281,7 +45311,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 20
+    }
   },
   {
     "id": 3424,
@@ -52142,6 +52175,48 @@
     "weakness": null
   },
   {
+    "id": 12825,
+    "name": "Healing totem",
+    "version": "",
+    "image": "Healing totem.png",
+    "level": 0,
+    "speed": 0,
+    "style": null,
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 1,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 135,
     "name": "Hellhound (Construction)",
     "version": "",
@@ -56311,7 +56386,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 10
+    }
   },
   {
     "id": 5007,
@@ -59553,7 +59631,7 @@
       "str": 100
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 0,
       "magic": 0,
       "heavy": 0,
@@ -61298,7 +61376,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 25
+    }
   },
   {
     "id": 4969,
@@ -66849,7 +66930,7 @@
     "speed": 4,
     "style": [
       "Crush",
-      "Bleed"
+      "Magic (Bleed)"
     ],
     "size": 1,
     "max_hit": "8",
@@ -76316,11 +76397,11 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": "~18",
+    "max_hit": "22",
     "skills": {
       "atk": 1,
       "def": 60,
-      "hp": 80,
+      "hp": 55,
       "magic": 60,
       "ranged": 60,
       "str": 1
@@ -76328,9 +76409,9 @@
     "offensive": {
       "atk": 0,
       "magic": 84,
-      "magic_str": 102,
-      "ranged": 85,
-      "ranged_str": 102,
+      "magic_str": 142,
+      "ranged": 84,
+      "ranged_str": 142,
       "str": 0
     },
     "defensive": {
@@ -76347,7 +76428,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 9469,
@@ -76361,7 +76445,7 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": "~18",
+    "max_hit": "18",
     "skills": {
       "atk": 1,
       "def": 40,
@@ -76373,9 +76457,9 @@
     "offensive": {
       "atk": 0,
       "magic": 44,
-      "magic_str": 62,
+      "magic_str": 102,
       "ranged": 44,
-      "ranged_str": 62,
+      "ranged_str": 102,
       "str": 0
     },
     "defensive": {
@@ -76392,7 +76476,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 9452,
@@ -79662,7 +79749,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 40
+    }
   },
   {
     "id": 5373,
@@ -83728,7 +83818,7 @@
     "skills": {
       "atk": 1,
       "def": 220,
-      "hp": 390,
+      "hp": 380,
       "magic": 380,
       "ranged": 1,
       "str": 1
@@ -83758,7 +83848,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 40
+    }
   },
   {
     "id": 5914,
@@ -88813,7 +88906,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -3,
       "crush": 0,
       "magic": 0,
       "heavy": 0,
@@ -111427,7 +111520,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 35
+    }
   },
   {
     "id": 12223,
@@ -111471,7 +111567,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 35
+    }
   },
   {
     "id": 12224,
@@ -111515,7 +111614,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 35
+    }
   },
   {
     "id": 7566,
