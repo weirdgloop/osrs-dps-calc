@@ -119479,19 +119479,19 @@
     "weakness": null
   },
   {
-    "id": 11730,
+    "id": 11732,
     "name": "Zebak",
-    "version": "",
+    "version": "Enraged",
     "image": "Zebak.png",
     "level": 371,
-    "speed": 7,
+    "speed": 4,
     "style": [
       "Melee",
       "Ranged",
       "Magic"
     ],
     "size": 9,
-    "max_hit": "38 (Melee)",
+    "max_hit": "38",
     "skills": {
       "atk": 250,
       "def": 70,
@@ -119525,19 +119525,19 @@
     "weakness": null
   },
   {
-    "id": 11732,
+    "id": 11730,
     "name": "Zebak",
-    "version": "",
+    "version": "Normal",
     "image": "Zebak.png",
     "level": 371,
-    "speed": 4,
+    "speed": 7,
     "style": [
       "Melee",
       "Ranged",
       "Magic"
     ],
     "size": 9,
-    "max_hit": "38",
+    "max_hit": "38 (Melee)",
     "skills": {
       "atk": 250,
       "def": 70,
