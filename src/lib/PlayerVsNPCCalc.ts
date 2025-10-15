@@ -1405,7 +1405,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     /* eslint-disable @typescript-eslint/no-shadow */
-    const generateStandardDist = (acc: number, min: number, max: number): HitDistribution => {
+    const generateStandardDist1 = (acc: number, min: number, max: number): HitDistribution => {
       // wrap this so we can nest it in echo dists
       const rollDamageTwice = (acc: number, min: number, max: number): HitDistribution => {
         // 75% chance to roll damage twice, take larger of two
@@ -1454,6 +1454,18 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
 
       return HitDistribution.linear(acc, min, max);
+    };
+
+    const generateStandardDist = (acc: number, min: number, max: number): HitDistribution => {
+      if (this.opts.usingSpecialAttack && this.player.gridmaster.exposure) {
+        const raisedMax = Math.trunc(max * 3 / 2);
+        return new HitDistribution([
+          ...generateStandardDist1(acc, min, max).scaleProbability(0.5).hits,
+          ...generateStandardDist1(acc, min, raisedMax).scaleProbability(0.5).hits,
+        ]);
+      }
+
+      return generateStandardDist1(acc, min, max);
     };
     /* eslint-enable @typescript-eslint/no-shadow */
 
@@ -1516,7 +1528,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           },
         })).getHitChance();
 
-        const loweredDefHitDist = HitDistribution.linear(loweredDefHitAccuracy, min, max);
+        const loweredDefHitDist = generateStandardDist(loweredDefHitAccuracy, min, max);
         dist = dist.transform((firstHit) => {
           const firstHitDist = HitDistribution.single(1.0, [firstHit]);
           const secondHitDist = firstHit.accurate ? loweredDefHitDist : generateStandardDist(acc, min, max);
@@ -1545,10 +1557,29 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.opts.usingSpecialAttack) {
       if (this.wearing('Dragon claws')) {
         accurateZeroApplicable = false;
-        dist = dClawDist(acc, max);
+
+        if (this.player.gridmaster.exposure) {
+          dist = new AttackDistribution([
+            new HitDistribution([
+              ...dClawDist(acc, max).dists[0].scaleProbability(0.5).hits,
+              ...dClawDist(acc, Math.trunc(max * 3 / 2)).dists[0].scaleProbability(0.5).hits,
+            ]),
+          ]);
+        } else {
+          dist = dClawDist(acc, max);
+        }
       } else if (this.wearing(['Bone claws', 'Burning claws'])) {
         accurateZeroApplicable = false;
-        dist = burningClawSpec(acc, max);
+        if (this.player.gridmaster.exposure) {
+          dist = new AttackDistribution([
+            new HitDistribution([
+              ...burningClawSpec(acc, max).dists[0].scaleProbability(0.5).hits,
+              ...burningClawSpec(acc, Math.trunc(max * 3 / 2)).dists[0].scaleProbability(0.5).hits,
+            ]),
+          ]);
+        } else {
+          dist = burningClawSpec(acc, max);
+        }
       }
     }
 
@@ -1871,6 +1902,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = new AttackDistribution(zippedDists).flatten();
     }
 
+    if (this.player.gridmaster.minimumPotential) {
+      dist = dist.transform(minimumDamageShift(5));
+    }
+
     if (process.env.NEXT_PUBLIC_HIT_DIST_SANITY_CHECK) {
       dist.dists.forEach((hitDist, ix) => {
         const sumAccuracy = sum(hitDist.hits, (wh) => wh.probability);
@@ -1879,19 +1914,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           console.warn(`Hit dist [${this.opts.loadoutName}#${ix}] failed sanity check!`, { sumAccuracy, fractionalDamage, hitDist });
         }
       });
-    }
-
-    if (this.opts.usingSpecialAttack && this.player.gridmaster.exposure) {
-      dist = new AttackDistribution([
-        new HitDistribution([
-          ...generateStandardDist(acc, min, max).scaleProbability(1.0 / 2.0).hits,
-          ...generateStandardDist(acc, min, max * 1.5).scaleProbability(1.0 / 2.0).hits,
-        ]),
-      ]);
-    }
-
-    if (this.player.gridmaster.minimumPotential) {
-      dist = dist.transform(minimumDamageShift(5));
     }
 
     return dist;
