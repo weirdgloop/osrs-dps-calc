@@ -1,5 +1,3 @@
-// noinspection FallThroughInSwitchStatementJS
-
 import {
   autorun, IReactionDisposer, IReactionPublic, makeAutoObservable, reaction, toJS,
 } from 'mobx';
@@ -40,6 +38,7 @@ import {
   DEFAULT_ATTACK_SPEED, INFINITE_HEALTH_MONSTERS,
   NUMBER_OF_LOADOUTS,
 } from '@/lib/constants';
+import { defaultGridMasterState } from '@/lib/GridMaster';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
   ARM_PRAYERS,
@@ -133,6 +132,7 @@ export const generateEmptyPlayer = (name?: string): Player => ({
     usingSunfireRunes: false,
   },
   spell: null,
+  gridmaster: defaultGridMasterState(),
 });
 
 export const parseLoadoutsFromImportedData = (data: ImportableData) => data.loadouts.map((loadout, i) => {

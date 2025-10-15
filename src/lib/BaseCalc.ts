@@ -266,7 +266,7 @@ export default class BaseCalc {
    * @see https://oldschool.runescape.wiki/w/Slayer_helmet
    */
   protected isWearingSlayerHelmet(): boolean {
-    return this.wearing(['Slayer helmet', 'Slayer helmet (i)']);
+    return this.wearing(['Slayer helmet', 'Slayer helmet (i)', 'Battlehat']);
   }
 
   /**
@@ -282,7 +282,7 @@ export default class BaseCalc {
    * @see https://oldschool.runescape.wiki/w/Black_mask_(i)
    */
   protected isWearingImbuedBlackMask(): boolean {
-    return this.wearing(['Black mask (i)', 'Slayer helmet (i)']);
+    return this.wearing(['Black mask (i)', 'Slayer helmet (i)', 'Battlehat']);
   }
 
   /**
@@ -342,7 +342,7 @@ export default class BaseCalc {
   }
 
   protected isWearingGodsword(): boolean {
-    return this.wearing(['Ancient godsword', 'Armadyl godsword', 'Bandos godsword', 'Saradomin godsword', 'Zamorak godsword']);
+    return this.wearing(['Ancient godsword', 'Armadyl godsword', 'Bandos godsword', 'Saradomin godsword', 'Zamorak godsword', 'The dogsword']);
   }
 
   /**
@@ -394,7 +394,7 @@ export default class BaseCalc {
    * @see https://oldschool.runescape.wiki/w/Karil_the_Tainted%27s_equipment
    */
   protected isWearingKarils(): boolean {
-    return this.wearingAll(["Karil's coif", "Karil's leathertop", "Karil's leatherskirt", "Karil's crossbow", 'Amulet of the damned']);
+    return this.wearingAll(["Karil's coif", "Karil's leathertop", "Karil's leatherskirt", "Karil's crossbow"]) && this.isWearingAnyDamnedItem();
   }
 
   /**
@@ -403,7 +403,7 @@ export default class BaseCalc {
    */
 
   protected isWearingAhrims(): boolean {
-    return this.wearingAll(["Ahrim's staff", "Ahrim's hood", "Ahrim's robetop", "Ahrim's robeskirt", 'Amulet of the damned']);
+    return this.wearingAll(["Ahrim's staff", "Ahrim's hood", "Ahrim's robetop", "Ahrim's robeskirt"]) && this.isWearingAnyDamnedItem();
   }
 
   /**
@@ -411,7 +411,11 @@ export default class BaseCalc {
    * @see https://oldschool.runescape.wiki/w/Torag_the_Corrupted%27s_equipment
    */
   protected isWearingTorags(): boolean {
-    return this.wearingAll(["Torag's helm", "Torag's platebody", "Torag's platelegs", "Torag's hammers", 'Amulet of the damned']);
+    return this.wearingAll(["Torag's helm", "Torag's platebody", "Torag's platelegs", "Torag's hammers"]) && this.isWearingAnyDamnedItem();
+  }
+
+  protected isWearingAnyDamnedItem(): boolean {
+    return this.wearing('Amulet of the damned') || this.wearing('Gloves of the damned');
   }
 
   protected isWearingBloodMoonSet(): boolean {
@@ -528,6 +532,10 @@ export default class BaseCalc {
     }
 
     if (this.player.style.type === 'magic') {
+      return true;
+    }
+
+    if (this.wearing('Thunder khopesh')) {
       return true;
     }
 

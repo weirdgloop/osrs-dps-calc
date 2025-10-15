@@ -18,6 +18,7 @@ export enum EquipmentCategory {
   CROSSBOW = 'Crossbow',
   DAGGER = 'Dagger',
   GUN = 'Gun',
+  MULTISTYLE = 'Multistyle',
   PARTISAN = 'Partisan',
   PICKAXE = 'Pickaxe',
   POLEARM = 'Polearm',

@@ -5449,7 +5449,9 @@
       "slash": 80,
       "stab": 80
     },
-    "attributes": [],
+    "attributes": [
+      "undead"
+    ],
     "immunities": {
       "burn": null
     },
@@ -6411,100 +6413,6 @@
       "burn": null
     },
     "weakness": null
-  },
-  {
-    "id": 14318,
-    "name": "Augur Metzli",
-    "version": "Magic",
-    "image": "Augur Metzli.png",
-    "level": 396,
-    "speed": 3,
-    "style": [
-      "Ranged & Magic"
-    ],
-    "size": 1,
-    "max_hit": "28",
-    "skills": {
-      "atk": 1,
-      "def": 160,
-      "hp": 600,
-      "magic": 180,
-      "ranged": 180,
-      "str": 1
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 110,
-      "magic_str": 30,
-      "ranged": 110,
-      "ranged_str": 30,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 70,
-      "magic": 100,
-      "heavy": 10,
-      "standard": 20,
-      "light": 20,
-      "slash": 80,
-      "stab": 60
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": {
-      "element": "earth",
-      "severity": 30
-    }
-  },
-  {
-    "id": 14313,
-    "name": "Augur Metzli",
-    "version": "Ranged",
-    "image": "Augur Metzli (ranged).png",
-    "level": 396,
-    "speed": 3,
-    "style": [
-      "Ranged & Magic"
-    ],
-    "size": 1,
-    "max_hit": "28",
-    "skills": {
-      "atk": 1,
-      "def": 160,
-      "hp": 600,
-      "magic": 180,
-      "ranged": 180,
-      "str": 1
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 110,
-      "magic_str": 30,
-      "ranged": 110,
-      "ranged_str": 30,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 70,
-      "magic": 100,
-      "heavy": 10,
-      "standard": 20,
-      "light": 20,
-      "slash": 80,
-      "stab": 60
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": {
-      "element": "earth",
-      "severity": 30
-    }
   },
   {
     "id": 10531,
@@ -38368,7 +38276,7 @@
       "standard": 200,
       "light": 200,
       "slash": 50,
-      "stab": 50
+      "stab": 0
     },
     "attributes": [
       "spectral"
@@ -43620,7 +43528,7 @@
     "id": 2487,
     "name": "Goblin (Vault of War)",
     "version": "Level 16",
-    "image": "Goblin (level 16).png",
+    "image": "Goblin (level 16, helmet).png",
     "level": 16,
     "speed": 6,
     "style": [
@@ -67757,6 +67665,100 @@
       "burn": null
     },
     "weakness": null
+  },
+  {
+    "id": 14318,
+    "name": "Metzli, Teokan of Ranul",
+    "version": "",
+    "image": "Augur Metzli.png",
+    "level": 396,
+    "speed": 3,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "28",
+    "skills": {
+      "atk": 1,
+      "def": 160,
+      "hp": 600,
+      "magic": 180,
+      "ranged": 180,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 110,
+      "magic_str": 30,
+      "ranged": 110,
+      "ranged_str": 30,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 70,
+      "magic": 100,
+      "heavy": 10,
+      "standard": 20,
+      "light": 20,
+      "slash": 80,
+      "stab": 60
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 30
+    }
+  },
+  {
+    "id": 14313,
+    "name": "Metzli, Teokan of Ranul",
+    "version": "",
+    "image": "Augur Metzli (ranged).png",
+    "level": 396,
+    "speed": 3,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "28",
+    "skills": {
+      "atk": 1,
+      "def": 160,
+      "hp": 600,
+      "magic": 180,
+      "ranged": 180,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 110,
+      "magic_str": 30,
+      "ranged": 110,
+      "ranged_str": 30,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 70,
+      "magic": 100,
+      "heavy": 10,
+      "standard": 20,
+      "light": 20,
+      "slash": 80,
+      "stab": 60
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 30
+    }
   },
   {
     "id": 2624,
@@ -119491,7 +119493,7 @@
       "Magic"
     ],
     "size": 9,
-    "max_hit": "38",
+    "max_hit": "38 (Melee)",
     "skills": {
       "atk": 250,
       "def": 70,

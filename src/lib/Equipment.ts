@@ -259,6 +259,29 @@ export const calculateAttackSpeed = (player: Player, monster: Monster): number =
     }
   }
 
+  let activeRelic: number;
+  if (player.style.type === 'ranged') {
+    activeRelic = player.gridmaster.ranged;
+  } else if (player.style.type === 'magic') {
+    activeRelic = player.gridmaster.magic;
+  } else {
+    activeRelic = player.gridmaster.melee;
+  }
+
+  if (activeRelic >= 5) {
+    if (attackSpeed >= 5) {
+      attackSpeed = Math.trunc(attackSpeed / 2);
+    } else {
+      attackSpeed = Math.ceil(attackSpeed / 2);
+    }
+  } else if (activeRelic >= 3) {
+    attackSpeed = Math.trunc(attackSpeed * 4 / 5);
+  }
+
+  if (player.style.type === 'magic' && activeRelic >= 2) {
+    attackSpeed += player.gridmaster.ticksDelayed;
+  }
+
   // Giant rat (Scurrius)
   if (monster.id === 7223 && player.style.stance !== 'Manual Cast') {
     if (['Bone mace', 'Bone shortbow', 'Bone staff'].includes(player.equipment.weapon?.name || '')) {
@@ -422,6 +445,8 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Abyssal whip': 50,
   'Barrelchest anchor': 50,
   'Eye of ayak': 50,
+  'The dogsword': 50,
+  'Thunder khopesh': 50,
 
   'Magic shortbow': 55,
   'Dark bow': 55,

@@ -28,5 +28,35 @@
 			"ranged": 0
 		},
 		"isTwoHanded": false
+	},
+	{
+		"name": "Battlehat",
+		"id": 31172,
+		"version": "",
+		"slot": "head",
+		"image": "Battlehat.png",
+		"speed": 0,
+		"category": "",
+		"bonuses": {
+			"str": 10,
+			"ranged_str": 5,
+			"magic_str": 5,
+			"prayer": 10
+		},
+		"offensive": {
+			"stab": 15,
+			"slash": 15,
+			"crush": 15,
+			"magic": 15,
+			"ranged": 15
+		},
+		"defensive": {
+			"stab": 60,
+			"slash": 60,
+			"crush": 60,
+			"magic": 60,
+			"ranged": 60
+		},
+		"isTwoHanded": false
 	}
 ]

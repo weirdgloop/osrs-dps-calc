@@ -431,3 +431,12 @@ export function flatAddTransformer(addend: number, minimum: number = 0): HitTran
     new WeightedHit(1.0, [new Hitsplat(Math.max(minimum, h.damage + addend), h.accurate)]),
   ]);
 }
+
+export function minimumDamageShift(newMin: number): HitTransformer {
+  return (h) => {
+    const dmg = (h.damage >= 1 && h.damage < newMin) ? newMin : h.damage;
+    return new HitDistribution([
+      new WeightedHit(1.0, [new Hitsplat(dmg, h.accurate)]),
+    ]);
+  };
+}
