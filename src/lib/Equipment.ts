@@ -268,6 +268,10 @@ export const calculateAttackSpeed = (player: Player, monster: Monster): number =
     activeRelic = player.gridmaster.melee;
   }
 
+  if (player.equipment.weapon?.name === 'Eye of ayak' && activeRelic >= 3 && player.style.stance !== 'Manual Cast') {
+    attackSpeed = 5;
+  }
+
   if (activeRelic >= 5) {
     if (attackSpeed >= 5) {
       attackSpeed = Math.trunc(attackSpeed / 2);
@@ -280,6 +284,11 @@ export const calculateAttackSpeed = (player: Player, monster: Monster): number =
 
   if (player.style.type === 'magic' && activeRelic >= 2) {
     attackSpeed += player.gridmaster.ticksDelayed;
+  }
+
+  // Eye of Ayak seems to calculate weapon speed based off special attack (5t) and then subtract making it 1t with T5
+  if (player.equipment.weapon?.name === 'Eye of ayak' && activeRelic >= 3 && player.style.stance !== 'Manual Cast') {
+    return Math.max(attackSpeed - 2, 1);
   }
 
   // Giant rat (Scurrius)
