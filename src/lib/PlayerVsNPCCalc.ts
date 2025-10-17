@@ -2006,9 +2006,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const crush = styleType === 'crush'
         && this.player.offensive.crush > this.player.offensive.slash
         && this.player.offensive.crush > this.player.offensive.stab;
+      const earth = this.player.spell?.element === 'earth';
 
-      dist = dist.transform(linearMinTransformer(crush ? 9 : 4));
+      // crush and earth spells have a higher limiter
+      dist = dist.transform(linearMinTransformer((crush || earth) ? 9 : 4));
 
+      // and crush also gets misses turned into 1s
       if (crush) {
         dist = dist.transform((h) => {
           if (h.damage > 0) {
