@@ -15490,7 +15490,7 @@
     "bonuses": {
       "str": 10,
       "ranged_str": 5,
-      "magic_str": 5,
+      "magic_str": 50,
       "prayer": 10
     },
     "offensive": {
