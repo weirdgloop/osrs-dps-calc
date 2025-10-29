@@ -172,6 +172,7 @@ const equipmentAliases = {
   21752: [26685, 25193], // Granite ring (i)#Nightmare Zone
   1135: [7370, 7372], // Green d'hide body
   1099: [7378, 7380], // Green d'hide chaps
+  31181: [31190], // Grid master tabard
   4730: [4926, 4922, 4925, 4924, 4923], // Guthan's chainskirt#Undamaged
   4724: [4908, 4904, 4907, 4906, 4905], // Guthan's helm#Undamaged
   4728: [4920, 4916, 4919, 4918, 4917], // Guthan's platebody#Undamaged
@@ -279,6 +280,7 @@ const equipmentAliases = {
   1097: [7366, 7368], // Studded chaps
   26757: [26758], // Superior calamity breeches#Normal
   26751: [26752], // Superior calamity chest#Normal
+  31193: [31202], // Swords and emblem
   4747: [4962, 4958, 4961, 4960, 4959], // Torag's hammers#Undamaged
   4745: [4956, 4952, 4955, 4954, 4953], // Torag's helm#Undamaged
   4749: [4968, 4964, 4967, 4966, 4965], // Torag's platebody#Undamaged
