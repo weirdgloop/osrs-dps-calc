@@ -126,7 +126,7 @@
       "crush": 40,
       "magic": 0,
       "heavy": 30,
-      "standard": 30,
+      "standard": -30,
       "light": 30,
       "slash": 40,
       "stab": 40
@@ -44437,7 +44437,7 @@
       "Stab"
     ],
     "size": 1,
-    "max_hit": "31",
+    "max_hit": "27",
     "skills": {
       "atk": 300,
       "def": 240,
@@ -57000,7 +57000,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 10
+    }
   },
   {
     "id": 7964,
@@ -61703,11 +61706,11 @@
       "Crush"
     ],
     "size": 5,
-    "max_hit": "36",
+    "max_hit": "33",
     "skills": {
       "atk": 190,
       "def": 250,
-      "hp": 420,
+      "hp": 270,
       "magic": 1,
       "ranged": 1,
       "str": 320
@@ -66734,7 +66737,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
   },
   {
     "id": 3949,
@@ -69125,10 +69131,7 @@
     "immunities": {
       "burn": null
     },
-    "weakness": {
-      "element": "earth",
-      "severity": 40
-    }
+    "weakness": null
   },
   {
     "id": 9287,
@@ -71425,7 +71428,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -2,
       "crush": 0,
       "magic": 0,
       "heavy": 62,
@@ -71469,10 +71472,10 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": 1,
       "crush": 0,
       "magic": 0,
-      "heavy": 60,
+      "heavy": 0,
       "standard": 60,
       "light": 60,
       "slash": 50,
@@ -71482,7 +71485,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 25
+    }
   },
   {
     "id": 7561,
@@ -72772,7 +72778,7 @@
       "Magic"
     ],
     "size": 3,
-    "max_hit": "18",
+    "max_hit": "18 (Melee & Magic)",
     "skills": {
       "atk": 165,
       "def": 167,
@@ -72805,7 +72811,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 10
+    }
   },
   {
     "id": 7409,
@@ -73026,7 +73035,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 20
+    }
   },
   {
     "id": 10844,
@@ -81490,7 +81502,7 @@
       "standard": -42,
       "light": -42,
       "slash": -42,
-      "stab": 0
+      "stab": -42
     },
     "attributes": [],
     "immunities": {
@@ -81956,7 +81968,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 10
+    }
   },
   {
     "id": 13664,
@@ -86329,7 +86344,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 10
+    }
   },
   {
     "id": 5935,
@@ -89366,7 +89384,7 @@
     "speed": 4,
     "style": [
       "Magic",
-      "Melee"
+      "Slash"
     ],
     "size": 5,
     "max_hit": "28",
@@ -89416,7 +89434,7 @@
     "speed": 4,
     "style": [
       "Magic",
-      "Melee"
+      "Slash"
     ],
     "size": 5,
     "max_hit": "28",
@@ -94605,7 +94623,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "earth",
+      "element": "air",
       "severity": 35
     }
   },
@@ -94654,7 +94672,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "earth",
+      "element": "air",
       "severity": 35
     }
   },
@@ -94703,7 +94721,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "earth",
+      "element": "air",
       "severity": 35
     }
   },
@@ -109592,7 +109610,7 @@
       "Stab"
     ],
     "size": 1,
-    "max_hit": "1",
+    "max_hit": "0",
     "skills": {
       "atk": 1,
       "def": 1,
@@ -112627,7 +112645,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 30
+    }
   },
   {
     "id": 7400,
@@ -112671,7 +112692,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 30
+    }
   },
   {
     "id": 3963,
