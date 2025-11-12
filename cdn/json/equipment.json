@@ -31320,6 +31320,66 @@
     "isTwoHanded": false
   },
   {
+    "name": "Camphor blowpipe",
+    "id": 31575,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Camphor blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 2,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 12
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Camphor blowpipe",
+    "id": 31577,
+    "version": "Empty",
+    "slot": "weapon",
+    "image": "Camphor blowpipe (empty).png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 2,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 12
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Camulet",
     "id": 6707,
     "version": "",
@@ -37258,6 +37318,36 @@
       "ranged": 0
     },
     "isTwoHanded": false
+  },
+  {
+    "name": "Crate of ship parts (Pandemonium)",
+    "id": 32807,
+    "version": "",
+    "slot": "weapon",
+    "image": "Crate of ship parts (Pandemonium).png",
+    "speed": 4,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
   },
   {
     "name": "Crate ring",
@@ -78630,6 +78720,66 @@
     "isTwoHanded": false
   },
   {
+    "name": "Ironwood blowpipe",
+    "id": 31579,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Ironwood blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 4,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 16
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Ironwood blowpipe",
+    "id": 31581,
+    "version": "Empty",
+    "slot": "weapon",
+    "image": "Ironwood blowpipe (empty).png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 4,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 16
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Ivandis flail",
     "id": 22398,
     "version": "",
@@ -91591,10 +91741,70 @@
   },
   {
     "name": "Nifty hat",
-    "id": 31780,
+    "id": 31748,
     "version": "",
     "slot": "head",
     "image": "Nifty hat.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Nifty jacket",
+    "id": 31750,
+    "version": "",
+    "slot": "body",
+    "image": "Nifty jacket.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Nifty trousers",
+    "id": 31752,
+    "version": "",
+    "slot": "legs",
+    "image": "Nifty trousers.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -105360,6 +105570,66 @@
     "isTwoHanded": false
   },
   {
+    "name": "Rosewood blowpipe",
+    "id": 31583,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Rosewood blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 6,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 22
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Rosewood blowpipe",
+    "id": 31585,
+    "version": "Empty",
+    "slot": "weapon",
+    "image": "Rosewood blowpipe (empty).png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 6,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 22
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Royal crown",
     "id": 12397,
     "version": "",
@@ -110576,6 +110846,66 @@
       "crush": 15,
       "magic": 0,
       "ranged": -15
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Sailing cape",
+    "id": 31290,
+    "version": "Trimmed",
+    "slot": "cape",
+    "image": "Sailing cape(t).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 4
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 9,
+      "crush": 9,
+      "magic": 9,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Sailing cape",
+    "id": 31288,
+    "version": "Untrimmed",
+    "slot": "cape",
+    "image": "Sailing cape.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 9,
+      "crush": 9,
+      "magic": 9,
+      "ranged": 9
     },
     "isTwoHanded": false
   },
@@ -117660,6 +117990,36 @@
     "isTwoHanded": true
   },
   {
+    "name": "Sleek trousers",
+    "id": 31764,
+    "version": "",
+    "slot": "legs",
+    "image": "Sleek trousers.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Sleeping cap",
     "id": 10398,
     "version": "",
@@ -124158,6 +124518,66 @@
       "slash": -4,
       "crush": 18,
       "magic": -4,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Storm cruiser's coat",
+    "id": 31738,
+    "version": "",
+    "slot": "body",
+    "image": "Storm cruiser's coat.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Storm cruiser's hat",
+    "id": 31736,
+    "version": "",
+    "slot": "head",
+    "image": "Storm cruiser's hat.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
       "ranged": 0
     },
     "defensive": {

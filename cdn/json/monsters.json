@@ -1921,7 +1921,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 60
+    }
   },
   {
     "id": 3292,
@@ -16472,6 +16475,48 @@
     "weakness": null
   },
   {
+    "id": 15194,
+    "name": "Bull shark",
+    "version": "",
+    "image": "Bull shark.png",
+    "level": 63,
+    "speed": 4,
+    "style": null,
+    "size": 0,
+    "max_hit": 0,
+    "skills": {
+      "atk": 80,
+      "def": 0,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 0,
+      "str": 45
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 15,
+      "standard": 40,
+      "light": 40,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": null
+  },
+  {
     "id": 3902,
     "name": "Bunny",
     "version": "1",
@@ -18768,7 +18813,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 35
+    }
   },
   {
     "id": 520,
@@ -19011,7 +19059,7 @@
     "skills": {
       "atk": 45,
       "def": 59,
-      "hp": 71,
+      "hp": 94,
       "magic": 1,
       "ranged": 1,
       "str": 55
@@ -19060,7 +19108,7 @@
     "skills": {
       "atk": 45,
       "def": 59,
-      "hp": 71,
+      "hp": 94,
       "magic": 1,
       "ranged": 1,
       "str": 55
@@ -24785,7 +24833,7 @@
       "hp": 120,
       "magic": 0,
       "ranged": 0,
-      "str": 0
+      "str": 120
     },
     "offensive": {
       "atk": 40,
@@ -27192,8 +27240,59 @@
   {
     "id": 7144,
     "name": "Demonic gorilla",
-    "version": "",
-    "image": "Demonic gorilla.png",
+    "version": "1",
+    "image": "Demonic gorilla (1).png",
+    "level": 275,
+    "speed": 5,
+    "style": [
+      "Crush",
+      "Ranged",
+      "Magic"
+    ],
+    "size": 2,
+    "max_hit": "31 (normal)",
+    "skills": {
+      "atk": 205,
+      "def": 200,
+      "hp": 380,
+      "magic": 195,
+      "ranged": 195,
+      "str": 195
+    },
+    "offensive": {
+      "atk": 43,
+      "magic": 40,
+      "magic_str": 29,
+      "ranged": 43,
+      "ranged_str": 29,
+      "str": 29
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 20,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 35
+    }
+  },
+  {
+    "id": 7147,
+    "name": "Demonic gorilla",
+    "version": "2",
+    "image": "Demonic gorilla (2).png",
     "level": 275,
     "speed": 5,
     "style": [
@@ -28189,6 +28288,48 @@
       "heavy": 0,
       "standard": 0,
       "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15234,
+    "name": "Dolphin",
+    "version": "",
+    "image": "Dolphin (Sailing).png",
+    "level": 25,
+    "speed": 4,
+    "style": null,
+    "size": 2,
+    "max_hit": 0,
+    "skills": {
+      "atk": 25,
+      "def": 5,
+      "hp": 50,
+      "magic": 1,
+      "ranged": 0,
+      "str": 10
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 5,
+      "standard": 15,
+      "light": 15,
       "slash": 0,
       "stab": 0
     },
@@ -33027,6 +33168,94 @@
       "light": 20,
       "slash": 20,
       "stab": 20
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14407,
+    "name": "Emissary Archer",
+    "version": "1",
+    "image": "Emissary Archer (1).png",
+    "level": 71,
+    "speed": 0,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 60,
+      "def": 70,
+      "hp": 40,
+      "magic": 15,
+      "ranged": 70,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14407,
+    "name": "Emissary Archer",
+    "version": "2",
+    "image": "Emissary Archer (2).png",
+    "level": 71,
+    "speed": 0,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 60,
+      "def": 70,
+      "hp": 40,
+      "magic": 15,
+      "ranged": 70,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
     },
     "attributes": [],
     "immunities": {
@@ -51555,6 +51784,50 @@
     "weakness": null
   },
   {
+    "id": 15196,
+    "name": "Hammerhead Shark",
+    "version": "",
+    "image": "Hammerhead Shark.png",
+    "level": 69,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "7",
+    "skills": {
+      "atk": 80,
+      "def": 0,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 0,
+      "str": 65
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 25,
+      "standard": 50,
+      "light": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": null
+  },
+  {
     "id": 464,
     "name": "Harpie Bug Swarm",
     "version": "",
@@ -57002,7 +57275,7 @@
     },
     "weakness": {
       "element": "air",
-      "severity": 10
+      "severity": 15
     }
   },
   {
@@ -68230,7 +68503,7 @@
   {
     "id": 2592,
     "name": "Mogre",
-    "version": "",
+    "version": "Land",
     "image": "Mogre.png",
     "level": 60,
     "speed": 6,
@@ -68246,6 +68519,51 @@
       "magic": 1,
       "ranged": 1,
       "str": 55
+    },
+    "offensive": {
+      "atk": 22,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 20
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
+  },
+  {
+    "id": 2592,
+    "name": "Mogre",
+    "version": "Sea",
+    "image": "Sea Mogre.png",
+    "level": 54,
+    "speed": 6,
+    "style": null,
+    "size": 2,
+    "max_hit": "8",
+    "skills": {
+      "atk": 40,
+      "def": 40,
+      "hp": 60,
+      "magic": 1,
+      "ranged": 60,
+      "str": 50
     },
     "offensive": {
       "atk": 22,
@@ -72261,7 +72579,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 20
+    }
   },
   {
     "id": 5354,
@@ -72305,7 +72626,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
   },
   {
     "id": 5353,
@@ -72349,7 +72673,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 40
+    }
   },
   {
     "id": 8,
@@ -75397,6 +75724,50 @@
       "heavy": 0,
       "standard": 0,
       "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15222,
+    "name": "Osprey",
+    "version": "",
+    "image": "Osprey.png",
+    "level": 55,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "6",
+    "skills": {
+      "atk": 60,
+      "def": 0,
+      "hp": 80,
+      "magic": 1,
+      "ranged": 0,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 30,
+      "light": 30,
       "slash": 0,
       "stab": 0
     },
@@ -81040,6 +81411,53 @@
     "weakness": null
   },
   {
+    "id": 15206,
+    "name": "Pygmy kraken",
+    "version": "",
+    "image": "Pygmy kraken.png",
+    "level": 87,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 2,
+    "max_hit": "10",
+    "skills": {
+      "atk": 1,
+      "def": 50,
+      "hp": 125,
+      "magic": 90,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": -63,
+      "heavy": 50,
+      "standard": 25,
+      "light": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
+  },
+  {
     "id": 433,
     "name": "Pyrefiend",
     "version": "Level 43",
@@ -81100,7 +81518,7 @@
       "Magical melee"
     ],
     "size": 1,
-    "max_hit": "4",
+    "max_hit": "5",
     "skills": {
       "atk": 60,
       "def": 22,
@@ -96404,7 +96822,7 @@
       "Crush"
     ],
     "size": 5,
-    "max_hit": "45 (Typeless AOE)",
+    "max_hit": "45 (Typeless AOE",
     "skills": {
       "atk": 350,
       "def": 200,
@@ -99625,6 +100043,48 @@
     }
   },
   {
+    "id": 15218,
+    "name": "Stingray",
+    "version": "",
+    "image": "Stingray.png",
+    "level": 82,
+    "speed": 4,
+    "style": null,
+    "size": 2,
+    "max_hit": 0,
+    "skills": {
+      "atk": 130,
+      "def": 0,
+      "hp": 90,
+      "magic": 1,
+      "ranged": 0,
+      "str": 55
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 1,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 20,
+      "standard": 50,
+      "light": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": null
+  },
+  {
     "id": 8066,
     "name": "Stone Guardian",
     "version": "Magic",
@@ -102302,6 +102762,50 @@
       "heavy": 0,
       "standard": 0,
       "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15228,
+    "name": "Tern",
+    "version": "",
+    "image": "Tern.png",
+    "level": 22,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "3",
+    "skills": {
+      "atk": 25,
+      "def": 0,
+      "hp": 30,
+      "magic": 1,
+      "ranged": 0,
+      "str": 20
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 30,
+      "light": 30,
       "slash": 0,
       "stab": 0
     },
@@ -105461,6 +105965,50 @@
     "weakness": null
   },
   {
+    "id": 15198,
+    "name": "Tiger Shark",
+    "version": "",
+    "image": "Tiger shark.png",
+    "level": 97,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "9",
+    "skills": {
+      "atk": 120,
+      "def": 0,
+      "hp": 125,
+      "magic": 1,
+      "ranged": 0,
+      "str": 85
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 35,
+      "standard": 60,
+      "light": 60,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": null
+  },
+  {
     "id": 141,
     "name": "Tok-Xil (Construction)",
     "version": "",
@@ -105927,7 +106475,7 @@
     "skills": {
       "atk": 0,
       "def": 89,
-      "hp": 71,
+      "hp": 70,
       "magic": 107,
       "ranged": 0,
       "str": 0
@@ -109523,11 +110071,11 @@
     "max_hit": "11",
     "skills": {
       "atk": 100,
-      "def": 100,
+      "def": 82,
       "hp": 60,
       "magic": 1,
       "ranged": 1,
-      "str": 82
+      "str": 100
     },
     "offensive": {
       "atk": 0,
@@ -112604,6 +113152,53 @@
     "weakness": null
   },
   {
+    "id": 15501,
+    "name": "Vitreous Chilled Jelly",
+    "version": "",
+    "image": "Vitreous Chilled Jelly.png",
+    "level": 241,
+    "speed": 4,
+    "style": [
+      "Magical melee"
+    ],
+    "size": 2,
+    "max_hit": "19",
+    "skills": {
+      "atk": 200,
+      "def": 250,
+      "hp": 220,
+      "magic": 180,
+      "ranged": 1,
+      "str": 180
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 30
+    }
+  },
+  {
     "id": 7399,
     "name": "Vitreous Jelly",
     "version": "",
@@ -112652,9 +113247,9 @@
   },
   {
     "id": 7400,
-    "name": "Vitreous warped Jelly",
+    "name": "Vitreous Warped Jelly",
     "version": "",
-    "image": "Vitreous warped Jelly.png",
+    "image": "Vitreous Warped Jelly.png",
     "level": 241,
     "speed": 4,
     "style": [
@@ -118742,7 +119337,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
   },
   {
     "id": 14176,
@@ -118790,7 +119388,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
   },
   {
     "id": 1636,
@@ -120791,7 +121392,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6449,
@@ -120837,7 +121441,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6450,
@@ -120883,7 +121490,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6451,
@@ -120929,7 +121539,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6452,
@@ -120975,7 +121588,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6453,
@@ -121021,7 +121637,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6454,
@@ -121067,7 +121686,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6455,
@@ -121113,7 +121735,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6456,
@@ -121159,7 +121784,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6457,
@@ -121205,7 +121833,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6458,
@@ -121251,7 +121882,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6459,
@@ -121297,7 +121931,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6466,
@@ -121343,7 +121980,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6460,
@@ -121389,7 +122029,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6461,
@@ -121435,7 +122078,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6462,
@@ -121481,7 +122127,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6463,
@@ -121527,7 +122176,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6464,
@@ -121573,7 +122225,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 5647,
