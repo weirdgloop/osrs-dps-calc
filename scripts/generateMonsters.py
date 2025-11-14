@@ -253,6 +253,9 @@ def main():
         ):
             continue
 
+        if monster['name'] == "Doom of Mokhaiotl" and ("Shielded" in v.get('name') or "Burrowed" in v.get('name')):
+            continue
+
         monster = strip_parser_tags(monster)
 
         data.append(monster)
