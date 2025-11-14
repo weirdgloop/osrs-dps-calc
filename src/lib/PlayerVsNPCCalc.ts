@@ -21,6 +21,7 @@ import {
   ABYSSAL_SIRE_TRANSITION_IDS,
   ALWAYS_MAX_HIT_MONSTERS,
   BA_ATTACKER_MONSTERS,
+  DOOM_OF_MOKHAIOTL_IDS,
   ECLIPSE_MOON_IDS,
   GLOWING_CRYSTAL_IDS,
   GUARANTEED_ACCURACY_MONSTERS,
@@ -1150,6 +1151,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
+    if (DOOM_OF_MOKHAIOTL_IDS.includes(this.monster.id) && this.monster.inputs.phase !== 'Normal') {
+      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
+    }
+
     if (VERZIK_P1_IDS.includes(this.monster.id) && this.wearing('Dawnbringer')) {
       this.track(DetailKey.PLAYER_ACCURACY_DAWNBRINGER, 1.0);
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
@@ -1857,6 +1862,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return true;
     }
     if (mattrs.includes(MonsterAttribute.LEAFY) && !this.isWearingLeafBladedWeapon()) {
+      return true;
+    }
+    if (DOOM_OF_MOKHAIOTL_IDS.includes(monsterId) && this.monster.inputs.phase === 'Shielded' && !this.isUsingDemonbane()) {
       return true;
     }
     if (!mattrs.includes(MonsterAttribute.RAT) && this.isWearingRatBoneWeapon()) {

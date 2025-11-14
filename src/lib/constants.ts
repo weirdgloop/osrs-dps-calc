@@ -495,6 +495,10 @@ HUEYCOATL_PHASE_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = HUEYCOATL_PHASE
 export const ROYAL_TITANS_PHASES = ['In Melee Range', 'Out of Melee Range'];
 TITAN_BOSS_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = ROYAL_TITANS_PHASES; });
 
+export const DOOM_OF_MOKHAIOTL_IDS = [14707];
+export const DOOM_OF_MOKHAIOTL_PHASES = ['Normal', 'Shielded', 'Burrowing'];
+DOOM_OF_MOKHAIOTL_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = DOOM_OF_MOKHAIOTL_PHASES; });
+
 export const ABYSSAL_SIRE_PHASES = ['Standard', 'Transition'];
 export const ABYSSAL_SIRE_TRANSITION_IDS = [5886, 5889, 5891];
 ABYSSAL_SIRE_TRANSITION_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = ABYSSAL_SIRE_PHASES; });
