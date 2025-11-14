@@ -36,6 +36,24 @@ const DARTS: EquipmentPiece[] = [
   findDart('Amethyst dart'),
 ].filter(isDefined);
 
+const DART_TIER: Record<string, number> = {
+  'Bronze dart': 0,
+  'Iron dart': 1,
+  'Steel dart': 2,
+  'Black dart': 3,
+  'Mithril dart': 4,
+  'Adamant dart': 5,
+  'Rune dart': 6,
+  'Amethyst dart': 7,
+  'Dragon dart': 8,
+};
+
+const MAX_DART_TIER_BY_BLOWPIPE: Record<string, number> = {
+  'Camphor blowpipe': DART_TIER['Mithril dart'],
+  'Ironwood blowpipe': DART_TIER['Adamant dart'],
+  'Rosewood blowpipe': DART_TIER['Adamant dart'],
+};
+
 const EquipmentSelect: React.FC = observer(() => {
   const store = useStore();
 
@@ -76,21 +94,37 @@ const EquipmentSelect: React.FC = observer(() => {
       }
     }
 
-    cross(blowpipeEntries, DARTS).forEach(([blowpipe, dart]) => {
-      entries.push({
-        ...blowpipe,
-        label: `${blowpipe.label} (${dart.name.replace(' dart', '')})`,
-        value: `${blowpipe.value}_${dart.id}`,
-        equipment: {
-          ...blowpipe.equipment,
-          itemVars: {
-            ...blowpipe.equipment.itemVars,
-            blowpipeDartName: dart.name,
-            blowpipeDartId: dart.id,
+    cross(blowpipeEntries, DARTS)
+      .filter(([blowpipe, dart]) => {
+        const maxTier = MAX_DART_TIER_BY_BLOWPIPE[blowpipe.label];
+
+        if (maxTier === undefined) {
+          return true;
+        }
+
+        const dartTier = DART_TIER[dart.name];
+
+        if (dartTier === undefined) {
+          return true;
+        }
+
+        return dartTier <= maxTier;
+      })
+      .forEach(([blowpipe, dart]) => {
+        entries.push({
+          ...blowpipe,
+          label: `${blowpipe.label} (${dart.name.replace(' dart', '')})`,
+          value: `${blowpipe.value}_${dart.id}`,
+          equipment: {
+            ...blowpipe.equipment,
+            itemVars: {
+              ...blowpipe.equipment.itemVars,
+              blowpipeDartName: dart.name,
+              blowpipeDartId: dart.id,
+            },
           },
-        },
+        });
       });
-    });
 
     return entries;
   }, []);
