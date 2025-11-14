@@ -46,9 +46,19 @@ BUCKET_API_FIELDS = [
 ]
 
 ITEMS_TO_SKIP = [
-    'Arcane grimoire',
-    'Crystal blessing',
+    'The dogsword',
+    'Drygore blowpipe',
+    'Amulet of the monarchs',
+    'Emperor ring',
+    'Devil\'s element',
     'Nature\'s reprisal',
+    'Gloves of the damned',
+    'Crystal blessing',
+    'Sunlight spear',
+    'Sunlit bracers',
+    'Thunder khopesh',
+    'Thousand-dragon ward',
+    'Arcane grimoire',
     'Wristbands of the arena',
     'Wristbands of the arena (i)',
     'Armadyl chainskirt (or)',
@@ -60,7 +70,6 @@ ITEMS_TO_SKIP = [
     'Dragon warhammer (or)',
     'Centurion cuirass',
     'Ruinous powers (item)',
-    'Zaryte bow',
 ]
 
 def getEquipmentData():

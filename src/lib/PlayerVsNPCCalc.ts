@@ -10,7 +10,6 @@ import {
   HitDistribution,
   Hitsplat,
   linearMinTransformer,
-  minimumDamageShift,
   multiplyTransformer,
   WeaponDelayProvider,
   WeightedHit,
@@ -74,13 +73,9 @@ import {
   rubyBolts,
 } from '@/lib/dists/bolts';
 import { burningClawDoT, burningClawSpec, dClawDist } from '@/lib/dists/claws';
-import {
-  GridMasterState, MagicMastery, MeleeMastery, RangedMastery,
-} from '@/lib/GridMaster';
 
 const PARTIALLY_IMPLEMENTED_SPECS: string[] = [
   'Ancient godsword',
-  'The dogsword',
 ];
 
 // https://oldschool.runescape.wiki/w/Category:Weapons_with_Special_attacks
@@ -461,7 +456,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
       if (this.wearing(['Bandos godsword', 'Saradomin sword'])) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [11, 10]);
-      } else if (this.wearing(['Armadyl godsword', 'Dragon sword', 'Dragon longsword', "Saradomin's blessed sword", 'The dogsword'])) {
+      } else if (this.wearing(['Armadyl godsword', 'Dragon sword', 'Dragon longsword', "Saradomin's blessed sword"])) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [5, 4]);
       } else if (this.wearing(['Dragon mace', 'Dragon warhammer', 'Arkan blade'])) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [3, 2]);
@@ -765,11 +760,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       minHit = this.trackAdd(DetailKey.REPIRATORY_SYSTEM_MIN_HIT, minHit, Math.trunc(maxHit / 2));
     }
 
-    if (this.hasGridMasterMastery('ranged', RangedMastery.RANGED_2)) {
-      const factor = Math.max(0, Math.min(4, this.player.gridmaster.attackCount));
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_REPEAT_SHOOTER, maxHit, [20 + factor, 20]);
-    }
-
     return [minHit, maxHit];
   }
 
@@ -867,10 +857,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const spellement = this.player.spell?.element;
     if (this.monster.weakness && spellement) {
       if (spellement === this.monster.weakness.element) {
-        let severity = this.monster.weakness.severity;
-        if (this.wearing("Devil's element")) {
-          severity *= 2;
-        }
+        const severity = this.monster.weakness.severity;
         const bonus = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPELLEMENT_BONUS, baseRoll, [severity, 100]);
         attackRoll = this.trackAdd(DetailKey.PLAYER_ACCURACY_SPELLEMENT, attackRoll, bonus);
       }
@@ -947,8 +934,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = Math.trunc((magicLevel * (92 + 64) + 320) / 640);
     } else if (this.wearing('Tecu salamander')) {
       maxHit = Math.trunc((magicLevel * (104 + 64) + 320) / 640);
-    } else if (this.wearing("Nature's reprisal")) {
-      maxHit = Math.max(0, Math.trunc(magicLevel / 3) - 2);
     }
 
     if (maxHit === 0) {
@@ -1023,11 +1008,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const spellement = this.player.spell?.element;
     if (this.monster.weakness && spellement) {
       if (spellement === this.monster.weakness.element) {
-        let severity = this.monster.weakness.severity;
-        if (this.wearing("Devil's element")) {
-          severity *= 2;
-        }
-        maxHit += Math.trunc(baseMax * (severity / 100));
+        maxHit += Math.trunc(baseMax * (this.monster.weakness.severity / 100));
       }
     }
 
@@ -1040,17 +1021,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       || (this.wearing('Tome of water') && this.player.equipment.shield?.version === 'Charged' && this.player.spell?.element === 'water')
        || (this.wearing('Tome of earth') && this.player.equipment.shield?.version === 'Charged' && this.player.spell?.element === 'earth')) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_TOME, maxHit, [11, 10]);
-    }
-
-    if (this.hasGridMasterMastery('magic', MagicMastery.MAGIC_2)) {
-      const delay = this.getAttackSpeed();
-      const factor = Math.max(0, Math.min(8, delay));
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_FOCUS_BLASTS, maxHit, [20 + factor, 20]);
-    }
-
-    if (this.hasGridMasterMastery('magic', MagicMastery.MAGIC_6)) {
-      const factor = Math.min(10, Math.max(0, Math.trunc(this.monster.inputs.monsterCurrentHp / 100)));
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_ADRENALINE_CHARGES, maxHit, [100 + factor, 100]);
     }
 
     if (P2_WARDEN_IDS.includes(this.monster.id)) {
@@ -1117,53 +1087,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     return minMax;
   }
 
-  public getDisplayMax(): number {
-    if (this.hasGridMasterMastery('melee', MeleeMastery.MELEE_2)) {
-      return this.noInitSubCalc(
-        {
-          ...this.player,
-          gridmaster: {
-            ...this.player.gridmaster,
-            melee: MeleeMastery.MELEE_1,
-          },
-        },
-        this.monster,
-      ).getDisplayMax();
-    }
-
-    if (this.hasGridMasterMastery('ranged', RangedMastery.RANGED_2)) {
-      return this.noInitSubCalc(
-        {
-          ...this.player,
-          gridmaster: {
-            ...this.player.gridmaster,
-            attackCount: 4,
-          },
-        },
-        this.monster,
-      ).getDistribution().getMax();
-    }
-
-    return this.getDistribution().getMax();
-  }
-
-  public getHistogram(hideMisses: boolean = false): ReturnType<AttackDistribution['asHistogram']> {
-    if (this.hasGridMasterMastery('melee', MeleeMastery.MELEE_2)) {
-      return this.noInitSubCalc(
-        {
-          ...this.player,
-          gridmaster: {
-            ...this.player.gridmaster,
-            melee: MeleeMastery.MELEE_1,
-          },
-        },
-        this.monster,
-      ).getHistogram(hideMisses);
-    }
-
-    return this.getDistribution().asHistogram(hideMisses);
-  }
-
   /**
    * Get the max attack roll for this loadout, which is based on the player's current combat style
    */
@@ -1186,12 +1109,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     if (style === 'magic') {
       atkRoll = this.getPlayerMaxMagicAttackRoll();
-    }
-
-    const gridMasterData = this.player.gridmaster;
-    const maxMastery = Math.max(gridMasterData.melee, gridMasterData.ranged, gridMasterData.magic);
-    if (maxMastery >= 3) {
-      atkRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_GRID_MASTER_PASSIVE, atkRoll, [2, 1]);
     }
 
     return this.track(DetailKey.PLAYER_ACCURACY_ROLL_FINAL, atkRoll);
@@ -1227,10 +1144,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.opts.overrides?.accuracy) {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, this.opts.overrides.accuracy);
-    }
-
-    if (this.hasGridMasterMastery('ranged', RangedMastery.RANGED_6)) {
-      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
     if (GUARANTEED_ACCURACY_MONSTERS.includes(this.monster.id)) {
@@ -1301,10 +1214,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       BaseCalc.getNormalAccuracyRoll(atk, def),
     );
 
-    const fangAccuracy = this.isWearingFang() && this.player.style.type === 'stab';
-    const drygoreAccuracy = this.wearing('Drygore blowpipe') && this.player.style.stance !== 'Manual Cast';
-    if (fangAccuracy || drygoreAccuracy) {
-      if (fangAccuracy && TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)) {
+    if (this.isWearingFang() && this.player.style.type === 'stab') {
+      if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)) {
         hitChance = this.track(DetailKey.PLAYER_ACCURACY_FANG_TOA, 1 - (1 - hitChance) ** 2);
       } else {
         hitChance = this.track(
@@ -1404,73 +1315,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return new AttackDistribution([new HitDistribution([new WeightedHit(1.0, [Hitsplat.INACCURATE])])]);
     }
 
-    /* eslint-disable @typescript-eslint/no-shadow */
-    const generateStandardDist1 = (acc: number, min: number, max: number): HitDistribution => {
-      // wrap this so we can nest it in echo dists
-      const rollDamageTwice = (acc: number, min: number, max: number): HitDistribution => {
-        // 75% chance to roll damage twice, take larger of two
-        const d = new HitDistribution([]);
-        const n = max - min + 1;
-        const hitProb = acc / n;
-        for (let i = min; i <= max; i++) {
-          d.addHit(new WeightedHit(hitProb * 0.75, [new Hitsplat(i)]));
-          for (let j = min; j <= max; j++) {
-            d.addHit(new WeightedHit((hitProb * 0.25) / n, [new Hitsplat(Math.max(i, j))]));
-          }
-        }
-        d.addHit(new WeightedHit(1 - acc, [Hitsplat.INACCURATE]));
-        return d.flatten();
-      };
-
-      if (this.hasGridMasterMastery('melee', MeleeMastery.MELEE_6)) {
-        const echoMax = Math.trunc(max / 2);
-        let echoDist = rollDamageTwice(acc * 0.2, min, echoMax);
-        for (let i = 1; i < 8; i++) {
-          echoDist = echoDist
-            .zip(rollDamageTwice(0.2 ** (i + 1), min, echoMax))
-            .cumulative();
-        }
-        return rollDamageTwice(acc, min, max)
-          .zip(echoDist)
-          .cumulative();
-      } if (this.hasGridMasterMastery('melee', MeleeMastery.MELEE_2)) {
-        const echoDistSingle = rollDamageTwice(acc * 0.1, min, Math.trunc(max / 2));
-        return rollDamageTwice(acc, min, max)
-          .zip(echoDistSingle)
-          .cumulative();
-      } if (this.hasGridMasterMastery('melee', MeleeMastery.MELEE_1)) {
-        return rollDamageTwice(acc, min, max);
-      }
-
-      if (this.hasGridMasterMastery('ranged', RangedMastery.RANGED_1)) {
-        // raise rolls below 30% to 30%, this is NOT the same as a min hit since it applies post-roll
-        const floor = Math.trunc(max * 3 / 10);
-        return HitDistribution.linear(acc, min, max).transform((h) => {
-          if (h.accurate && h.damage < floor) {
-            return HitDistribution.single(1.0, [new Hitsplat(floor, h.accurate)]);
-          }
-          return HitDistribution.single(1.0, [h]);
-        });
-      }
-
-      return HitDistribution.linear(acc, min, max);
-    };
-
-    const generateStandardDist = (acc: number, min: number, max: number): HitDistribution => {
-      if (this.opts.usingSpecialAttack && this.player.gridmaster.exposure) {
-        const raisedMax = Math.trunc(max * 3 / 2);
-        return new HitDistribution([
-          ...generateStandardDist1(acc, min, max).scaleProbability(0.5).hits,
-          ...generateStandardDist1(acc, min, raisedMax).scaleProbability(0.5).hits,
-        ]);
-      }
-
-      return generateStandardDist1(acc, min, max);
-    };
-    /* eslint-enable @typescript-eslint/no-shadow */
-
     // standard linear
-    let dist = new AttackDistribution([generateStandardDist(acc, min, max)]);
+    const standardHitDist = HitDistribution.linear(acc, min, max);
+    let dist = new AttackDistribution([standardHitDist]);
 
     // Monsters that always die in one hit no matter what
     if (ONE_HIT_MONSTERS.includes(this.monster.id)) {
@@ -1485,35 +1332,22 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       ]);
     }
 
-    const maxHitMonster = (this.player.style.type === 'magic' && ALWAYS_MAX_HIT_MONSTERS.magic.includes(this.monster.id))
-    || (this.isUsingMeleeStyle() && ALWAYS_MAX_HIT_MONSTERS.melee.includes(this.monster.id))
-    || (this.player.style.type === 'ranged' && ALWAYS_MAX_HIT_MONSTERS.ranged.includes(this.monster.id));
-
-    if (this.hasGridMasterMastery('magic', MagicMastery.MAGIC_1)) {
-      const hasMagic6 = this.hasGridMasterMastery('magic', MagicMastery.MAGIC_6);
-      const critThreshold = Math.trunc(max * 9 / 10);
-      const critMax = Math.trunc(max * 3 / 2);
-      dist = dist.transform((h) => {
-        // magic 1 & 6 have weird complications with forced max hits
-        const newDmg = h.damage >= critThreshold ? Math.trunc(h.damage * 3 / 2) : h.damage;
-        const newMax = h.damage >= critThreshold ? critMax : max;
-        if (maxHitMonster || (hasMagic6 && newMax >= this.monster.inputs.monsterCurrentHp)) {
-          return HitDistribution.single(1.0, [new Hitsplat(newMax)]);
-        }
-        return HitDistribution.single(1.0, [new Hitsplat(newDmg)]);
-      }, { transformInaccurate: maxHitMonster });
-    } else if (maxHitMonster) {
+    // monsters that are always max hit no matter what
+    if ((this.player.style.type === 'magic' && ALWAYS_MAX_HIT_MONSTERS.magic.includes(this.monster.id))
+      || (this.isUsingMeleeStyle() && ALWAYS_MAX_HIT_MONSTERS.melee.includes(this.monster.id))
+      || (this.player.style.type === 'ranged' && ALWAYS_MAX_HIT_MONSTERS.ranged.includes(this.monster.id))) {
       if (YAMA_VOID_FLARE_IDS.includes(this.monster.id) && this.player.buffs.markOfDarknessSpell && this.player.spell?.name.includes('Demonbane')) {
         const demonbaneFactor = this.wearing('Purging staff') ? 50 : 25;
         return new AttackDistribution([HitDistribution.single(1.0, [new Hitsplat(max + Math.trunc(Math.trunc(max * demonbaneFactor / 100) * this.demonbaneVulnerability() / 100))])]);
       }
+
       return new AttackDistribution([HitDistribution.single(1.0, [new Hitsplat(max)])]);
     }
 
     if (style === 'ranged' && this.wearing('Tonalztics of ralos') && this.player.equipment.weapon?.version === 'Charged') {
       // roll two independent hits
       if (!this.opts.usingSpecialAttack) {
-        dist = new AttackDistribution([generateStandardDist(acc, min, max), generateStandardDist(acc, min, max)]);
+        dist = new AttackDistribution([standardHitDist, standardHitDist]);
       } else {
         // the defence reduction from the first hit applies to the second hit,
         // so we need a full subcalc with the new defence value to determine the dist
@@ -1528,10 +1362,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           },
         })).getHitChance();
 
-        const loweredDefHitDist = generateStandardDist(loweredDefHitAccuracy, min, max);
+        const loweredDefHitDist = HitDistribution.linear(loweredDefHitAccuracy, min, max);
         dist = dist.transform((firstHit) => {
           const firstHitDist = HitDistribution.single(1.0, [firstHit]);
-          const secondHitDist = firstHit.accurate ? loweredDefHitDist : generateStandardDist(acc, min, max);
+          const secondHitDist = firstHit.accurate ? loweredDefHitDist : standardHitDist;
           return firstHitDist.zip(secondHitDist);
         });
       }
@@ -1540,14 +1374,14 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isUsingMeleeStyle() && this.wearing('Gadderhammer') && mattrs.includes(MonsterAttribute.SHADE)) {
       dist = new AttackDistribution([
         new HitDistribution([
-          ...generateStandardDist(acc, min, max).scaleProbability(0.95).scaleDamage(5, 4).hits,
-          ...generateStandardDist(acc, min, max).scaleProbability(0.05).scaleDamage(2).hits,
+          ...standardHitDist.scaleProbability(0.95).scaleDamage(5, 4).hits,
+          ...standardHitDist.scaleProbability(0.05).scaleDamage(2).hits,
         ]),
       ]);
     }
 
     if (style === 'ranged' && this.wearing('Dark bow')) {
-      dist = new AttackDistribution([generateStandardDist(acc, min, max), generateStandardDist(acc, min, max)]);
+      dist = new AttackDistribution([standardHitDist, standardHitDist]);
       if (this.opts.usingSpecialAttack) {
         dist = dist.transform(flatLimitTransformer(48, min));
       }
@@ -1557,55 +1391,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.opts.usingSpecialAttack) {
       if (this.wearing('Dragon claws')) {
         accurateZeroApplicable = false;
-
-        if (this.player.gridmaster.exposure) {
-          dist = new AttackDistribution([
-            new HitDistribution([
-              ...dClawDist(acc, max).dists[0].scaleProbability(0.5).hits,
-              ...dClawDist(acc, Math.trunc(max * 3 / 2)).dists[0].scaleProbability(0.5).hits,
-            ]),
-          ]);
-        } else {
-          dist = dClawDist(acc, max);
-        }
+        dist = dClawDist(acc, max);
       } else if (this.wearing(['Bone claws', 'Burning claws'])) {
         accurateZeroApplicable = false;
-        if (this.player.gridmaster.exposure) {
-          dist = new AttackDistribution([
-            new HitDistribution([
-              ...burningClawSpec(acc, max).dists[0].scaleProbability(0.5).hits,
-              ...burningClawSpec(acc, Math.trunc(max * 3 / 2)).dists[0].scaleProbability(0.5).hits,
-            ]),
-          ]);
-        } else {
-          dist = burningClawSpec(acc, max);
-        }
+        dist = burningClawSpec(acc, max);
       }
-    }
-
-    if (this.wearing('Thunder khopesh')) {
-      if (this.opts.usingSpecialAttack) {
-        // two melee hits and iff at least one hits, add a bolt hit
-        dist = new AttackDistribution([
-          generateStandardDist(acc, min, max),
-          generateStandardDist(acc, min, max),
-          HitDistribution.linear(1 - ((1 - acc) ** 2), min, max),
-        ]);
-      } else {
-        const boltDist = HitDistribution.linear(1.0, 0, Math.trunc(max / 2));
-        dist = dist.transform((khopeshSplat) => new HitDistribution([
-          new WeightedHit(0.8, [khopeshSplat]),
-          ...HitDistribution.single(1.0, [khopeshSplat])
-            .scaleProbability(0.2)
-            .zip(boltDist)
-            .hits,
-        ]));
-      }
-    }
-
-    if (this.wearing('Sunlight spear') && this.opts.usingSpecialAttack) {
-      const factor = this.player.bonuses.prayer * 3;
-      dist = dist.transform(multiplyTransformer(100 + factor, 100));
     }
 
     if (this.opts.usingSpecialAttack && this.wearing(['Dragon halberd', 'Crystal halberd']) && this.monster.size > 1) {
@@ -1616,7 +1406,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         { overrides: { attackRoll: secondHitAttackRoll } },
       ).getHitChance();
 
-      dist = new AttackDistribution([generateStandardDist(acc, min, max), generateStandardDist(secondHitAcc, min, max)]);
+      dist = new AttackDistribution([standardHitDist, HitDistribution.linear(secondHitAcc, min, max)]);
     }
 
     // simple multi-hit specs
@@ -1629,7 +1419,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
 
       if (hitCount !== 1) {
-        dist = new AttackDistribution(Array(hitCount).fill(generateStandardDist(acc, min, max)));
+        dist = new AttackDistribution(Array(hitCount).fill(standardHitDist));
       }
     }
 
@@ -1659,22 +1449,20 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingVeracs()) {
-      const effectChance = this.wearing('Gloves of the damned') ? 0.5 : 0.25;
       dist = new AttackDistribution([
         new HitDistribution([
-          ...generateStandardDist(acc, min, max).scaleProbability(1 - effectChance).hits,
-          ...generateStandardDist(1.0, 1, max + 1).scaleProbability(effectChance).hits,
+          ...standardHitDist.scaleProbability(0.75).hits,
+          ...HitDistribution.linear(1.0, 1, max + 1).scaleProbability(0.25).hits,
         ]),
       ]);
     }
 
     if (style === 'ranged' && this.isWearingKarils()) {
       // 25% chance to deal a second hitsplat at half the damage of the first (flat, not rolled)
-      const effectChance = this.wearing('Gloves of the damned') ? 0.5 : 0.25;
       dist = dist.transform(
         (h) => new HitDistribution([
-          new WeightedHit(1 - effectChance, [h]),
-          new WeightedHit(effectChance, [h, new Hitsplat(Math.trunc(h.damage / 2))]),
+          new WeightedHit(0.75, [h]),
+          new WeightedHit(0.25, [h, new Hitsplat(Math.trunc(h.damage / 2))]),
         ]),
         { transformInaccurate: false },
       );
@@ -1684,14 +1472,14 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const hits: HitDistribution[] = [];
       for (let i = 0; i < Math.min(Math.max(this.monster.size, 1), 3); i++) {
         const splatMax = Math.trunc(max / (2 ** i));
-        hits.push(generateStandardDist(acc, Math.min(min, splatMax), splatMax));
+        hits.push(HitDistribution.linear(acc, Math.min(min, splatMax), splatMax));
       }
       dist = new AttackDistribution(hits);
     }
 
     if (this.isUsingMeleeStyle() && this.wearing('Dual macuahuitl')) {
-      const secondHit = generateStandardDist(acc, min, max - Math.trunc(max / 2));
-      const firstHit = new AttackDistribution([generateStandardDist(acc, min, Math.trunc(max / 2))]);
+      const secondHit = HitDistribution.linear(acc, 0, max - Math.trunc(max / 2));
+      const firstHit = new AttackDistribution([HitDistribution.linear(acc, 0, Math.trunc(max / 2))]);
       dist = firstHit.transform(
         (h) => {
           if (h.accurate) {
@@ -1704,16 +1492,16 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.isUsingMeleeStyle() && this.isWearingTwoHitWeapon()) {
       dist = new AttackDistribution([
-        generateStandardDist(acc, min, Math.trunc(max / 2)),
-        generateStandardDist(acc, min, max - Math.trunc(max / 2)),
+        HitDistribution.linear(acc, 0, Math.trunc(max / 2)),
+        HitDistribution.linear(acc, 0, max - Math.trunc(max / 2)),
       ]);
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingKeris() && mattrs.includes(MonsterAttribute.KALPHITE)) {
       dist = new AttackDistribution([
         new HitDistribution([
-          ...generateStandardDist(acc, min, max).scaleProbability(50.0 / 51.0).hits,
-          ...generateStandardDist(acc, min, max).scaleProbability(1.0 / 51.0).scaleDamage(3).hits,
+          ...standardHitDist.scaleProbability(50.0 / 51.0).hits,
+          ...standardHitDist.scaleProbability(1.0 / 51.0).scaleDamage(3).hits,
         ]),
       ]);
     }
@@ -1752,11 +1540,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.style.type === 'magic' && this.isWearingAhrims()) {
-      const effectChance = this.wearing('Gloves of the damned') ? 0.5 : 0.25;
       dist = dist.transform(
         (h) => new HitDistribution([
-          new WeightedHit(1 - effectChance, [h]),
-          new WeightedHit(effectChance, [new Hitsplat(Math.trunc(h.damage * 13 / 10), h.accurate)]),
+          new WeightedHit(0.75, [h]),
+          new WeightedHit(0.25, [new Hitsplat(Math.trunc(h.damage * 13 / 10), h.accurate)]),
         ]),
       );
     }
@@ -1770,13 +1557,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingDharok()) {
-      const baseHp = this.player.skills.hp;
-      const currHp = this.player.skills.hp + this.player.boosts.hp;
-      let factor = (baseHp - currHp) * baseHp;
-      if (this.wearing('Gloves of the damned')) {
-        factor *= 2;
-      }
-      dist = dist.scaleDamage(10000 + factor, 10000);
+      const newMax = this.player.skills.hp;
+      const curr = this.player.skills.hp + this.player.boosts.hp;
+      dist = dist.scaleDamage(10000 + (newMax - curr) * newMax, 10000);
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingBerserkerNecklace() && this.isWearingTzhaarWeapon()) {
@@ -1815,14 +1598,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     // bolt effects
     const boltContext: BoltContext = {
-      minHit: min,
       maxHit: max,
       rangedLvl: this.player.skills.ranged + this.player.boosts.ranged,
       zcb: this.wearing('Zaryte crossbow'),
       spec: this.opts.usingSpecialAttack,
       kandarinDiary: this.player.buffs.kandarinDiary,
       monster: this.monster,
-      generateStandardDist,
     };
     if (this.player.style.type === 'ranged' && this.player.equipment.weapon?.name.includes('rossbow')) {
       if (this.wearing(['Opal bolts (e)', 'Opal dragon bolts (e)'])) {
@@ -1900,10 +1681,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         );
       }
       dist = new AttackDistribution(zippedDists).flatten();
-    }
-
-    if (this.player.gridmaster.minimumPotential) {
-      dist = dist.transform(minimumDamageShift(5));
     }
 
     if (process.env.NEXT_PUBLIC_HIT_DIST_SANITY_CHECK) {
@@ -2052,8 +1829,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS.includes(monsterId) && styleType === 'magic') {
       return true;
     }
-    if (IMMUNE_TO_RANGED_DAMAGE_NPC_IDS.includes(monsterId) && styleType === 'ranged'
-        && this.monster.name !== 'Dusk (Echo)') {
+    if (IMMUNE_TO_RANGED_DAMAGE_NPC_IDS.includes(monsterId) && styleType === 'ranged') {
       return true;
     }
     if (IMMUNE_TO_MELEE_DAMAGE_NPC_IDS.includes(monsterId) && this.isUsingMeleeStyle()) {
@@ -2068,8 +1844,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     if (IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS.includes(monsterId)
       && this.isUsingMeleeStyle()
-      && this.player.equipment.weapon?.category !== EquipmentCategory.SALAMANDER
-      && this.player.equipment.weapon?.category !== EquipmentCategory.MULTISTYLE) {
+      && this.player.equipment.weapon?.category !== EquipmentCategory.SALAMANDER) {
       return true;
     }
     if (mattrs.includes(MonsterAttribute.VAMPYRE_3) && !this.wearingVampyrebane(MonsterAttribute.VAMPYRE_3)) {
@@ -2133,26 +1908,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    * Returns the expected damage per tick, based on the player's attack speed.
    */
   public getDpt() {
-    if (this.hasGridMasterMastery('ranged', RangedMastery.RANGED_2)) {
-      const subCalc = (n: number) => this.noInitSubCalc(
-        {
-          ...this.player,
-          gridmaster: {
-            ...this.player.gridmaster,
-            attackCount: n,
-          },
-        },
-        this.monster,
-      );
-
-      return (
-        subCalc(0).getExpectedDamage()
-          + subCalc(1).getExpectedDamage()
-          + subCalc(2).getExpectedDamage()
-          + subCalc(3).getExpectedDamage()
-          + subCalc(4).getExpectedDamage()
-      ) / (5 * this.getExpectedAttackSpeed());
-    }
     return this.getExpectedDamage() / this.getExpectedAttackSpeed();
   }
 
@@ -2218,21 +1973,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    * Returns the average time-to-kill (in seconds) calculation.
    */
   public getTtk() {
-    if (this.hasGridMasterMastery('magic', MagicMastery.MAGIC_6) || this.hasGridMasterMastery('ranged', RangedMastery.RANGED_2)) {
-      const calc = this.noInitSubCalc(this.player, this.monster);
-      const ttkDist = calc.getTtkDistribution();
-      let accum = 0.0;
-      let probAccum = 0.0;
-      for (const [k, v] of ttkDist.entries()) {
-        probAccum += v;
-        accum += k * v;
-      }
-
-      if (probAccum < (1 - TTK_DIST_EPSILON)) {
-        return undefined;
-      }
-      return (accum + this.getExpectedAttackSpeed() - 1) * SECONDS_PER_TICK;
-    }
     return this.getHtk() * this.getExpectedAttackSpeed() * SECONDS_PER_TICK;
   }
 
@@ -2240,10 +1980,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing('Soulreaper axe')) {
       // assumes using spec every time you reach the current stack count
       const ticksPerSpec = this.getAttackSpeed() * this.player.buffs.soulreaperStacks;
-      return this.getDps() * this.getExpectedAttackSpeed() / ticksPerSpec;
-    }
-    if (this.wearing('Sunlight spear')) {
-      const ticksPerSpec = this.getAttackSpeed() * 7;
       return this.getDps() * this.getExpectedAttackSpeed() / ticksPerSpec;
     }
 
@@ -2303,28 +2039,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     // dist attack-on-specific-tick probabilities
     // todo thralls, append here
-    const dists: DelayedHit[][] = [playerDist];
-
-    const hasRepeatShooter = this.hasGridMasterMastery('ranged', RangedMastery.RANGED_2);
-    const repeatShooterDists: DelayedHit[][] = [playerDist];
-    if (hasRepeatShooter) {
-      // todo(leagues): this depends on getWeaponDelayProvider offsetting the attack timings
-      //  since the implementation does not support same-tick attacks
-      for (let i = 1; i < 5; i++) {
-        repeatShooterDists.push(
-          this.noInitSubCalc({
-            ...this.player,
-            gridmaster: {
-              ...this.player.gridmaster,
-              attackCount: (this.player.gridmaster.attackCount + i) % 5,
-            },
-          }, this.monster)
-            .getDistribution()
-            .zipped
-            .withProbabilisticDelays(this.getWeaponDelayProvider()),
-        );
-      }
-    }
+    const dists = [playerDist];
 
     const attackOnTick = dists.map(() => new Float64Array(iterMax + 1));
     attackOnTick.forEach((arr) => {
@@ -2371,17 +2086,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         // 3. for each possible hp value,
         const hps = tickHps[tick];
         for (const [hp, hpProb] of hps.entries()) {
+          // this is a bit of a hack, but idk if there's a better way
+          const currDist: DelayedHit[] = recalcDistOnHp ? hpHitDists[hp] : dist;
           if (hpProb === 0) {
             continue;
-          }
-
-          let currDist: DelayedHit[]; // todo(leagues): support dynamic hp AND repeat shooter?
-          if (recalcDistOnHp) {
-            currDist = hpHitDists[hp];
-          } else if (hasRepeatShooter) {
-            currDist = repeatShooterDists[Math.trunc(tick / speed) % 5];
-          } else {
-            currDist = dist;
           }
 
           // 4. for each damage amount possible,
@@ -2419,15 +2127,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return baseDist;
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [baseMin, baseMax] = this.getMinAndMax();
-    if (this.hasGridMasterMastery('magic', MagicMastery.MAGIC_6)) {
-      const critMax = Math.trunc(baseMax * 3 / 2);
-      if (baseMax && hp > critMax) {
-        return baseDist;
-      }
-    }
-
     // a special case for optimization, ruby bolts only change dps under 500 hp
     // so for high health targets, avoid recomputing dist until then
     if (this.player.style.type === 'ranged'
@@ -2442,10 +2141,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing('Keris partisan of the sun')
       && TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)
       && hp >= Math.trunc(this.monster.skills.hp / 4)) {
-      return baseDist;
-    }
-
-    if (this.hasGridMasterMastery('magic', MagicMastery.MAGIC_6)) {
       return baseDist;
     }
 
@@ -2529,10 +2224,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         ? FeatureStatus.NOT_APPLICABLE
         : FeatureStatus.IMPLEMENTED;
     }
-    if (this.wearing('Sunlight spear')) {
-      return FeatureStatus.UNIMPLEMENTED;
-    }
-
     if (this.wearing('Brine sabre')) {
       return UNDERWATER_MONSTERS.includes(this.monster.id)
         ? FeatureStatus.IMPLEMENTED
@@ -2590,21 +2281,5 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       this.track(DetailKey.MIN_HIT_WARDENS, Math.trunc(max * modifier / 100)),
       this.track(DetailKey.MAX_HIT_WARDENS, Math.trunc(max * (modifier + maxPctRange) / 100)),
     ];
-  }
-
-  private hasGridMasterMastery<
-    U extends keyof Pick<GridMasterState, 'melee' | 'ranged' | 'magic'>,
-  >(key: U, mastery: GridMasterState[U]) {
-    if (key === 'melee' && !this.isUsingMeleeStyle()) {
-      return false;
-    }
-    if (key === 'ranged' && this.player.style.type !== 'ranged') {
-      return false;
-    }
-    if (key === 'magic' && this.player.style.type !== 'magic') {
-      return false;
-    }
-
-    return this.player.gridmaster[key] >= mastery;
   }
 }

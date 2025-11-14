@@ -3,7 +3,6 @@ import { Prayer } from '@/enums/Prayer';
 import Potion from '@/enums/Potion';
 import { Spell } from '@/types/Spell';
 import { PlayerCombatStyle } from '@/types/PlayerCombatStyle';
-import { GridMasterState } from '@/lib/GridMaster';
 
 export interface PlayerSkills {
   atk: number;
@@ -144,5 +143,4 @@ export interface Player extends EquipmentStats {
     usingSunfireRunes: boolean;
   };
   spell: Spell | null;
-  gridmaster: GridMasterState;
 }
