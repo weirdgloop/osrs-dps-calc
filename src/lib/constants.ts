@@ -2,8 +2,7 @@ import { CombatStyleStance } from '@/types/PlayerCombatStyle';
 
 export const BLOWPIPE_IDS: number[] = [
   12926, // regular
-  28688, // blazing,
-  30374, // drygore
+  28688, // blazing
 ];
 
 // The maximum number of loadouts that users can have. Do not lower it, else it will cause share link issues.

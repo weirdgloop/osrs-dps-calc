@@ -5,15 +5,13 @@ import options from '@/public/img/tabs/options.webp';
 import prayer from '@/public/img/tabs/prayer.png';
 import React, { useState } from 'react';
 import PlayerTab from '@/app/components/player/PlayerTab';
-import GridMaster from '@/app/components/player/GridMaster';
-import gridmaster from '@/public/img/tabs/gridmaster.png';
 import Equipment from './Equipment';
 import Combat from './Combat';
 import Skills from './Skills';
 import Prayers from './Prayers';
 import ExtraOptions from './ExtraOptions';
 
-type SelectedInputType = 'combat' | 'skills' | 'equipment' | 'options' | 'prayer' | 'gridmaster';
+type SelectedInputType = 'combat' | 'skills' | 'equipment' | 'options' | 'prayer' | 'league';
 
 const PlayerInnerContainer: React.FC = () => {
   const [selected, setSelected] = useState<SelectedInputType>('equipment');
@@ -30,8 +28,6 @@ const PlayerInnerContainer: React.FC = () => {
         return <Prayers />;
       case 'options':
         return <ExtraOptions />;
-      case 'gridmaster':
-        return <GridMaster />;
       default:
         break;
     }
@@ -47,7 +43,6 @@ const PlayerInnerContainer: React.FC = () => {
         <PlayerTab name="Equipment" isActive={selected === 'equipment'} image={equipment} onClick={() => setSelected('equipment')} />
         <PlayerTab name="Prayer" isActive={selected === 'prayer'} image={prayer} onClick={() => setSelected('prayer')} />
         <PlayerTab name="Extra options" isActive={selected === 'options'} image={options} onClick={() => setSelected('options')} />
-        <PlayerTab name="Grid Master" isActive={selected === 'gridmaster'} image={gridmaster} onClick={() => setSelected('gridmaster')} />
       </div>
       {renderSelected()}
     </div>
