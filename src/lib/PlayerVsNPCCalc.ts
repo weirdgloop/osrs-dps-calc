@@ -1839,7 +1839,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (mattrs.includes(MonsterAttribute.FLYING) && this.isUsingMeleeStyle()) {
       // Vespula is immune to melee despite flying attribute.
       if (VESPULA_IDS.includes(this.monster.id)) return true;
-      if (this.player.equipment.weapon?.category === EquipmentCategory.POLEARM) return false;
+      if (this.player.equipment.weapon?.category === EquipmentCategory.POLEARM || this.player.equipment.weapon?.category === EquipmentCategory.SALAMANDER) return false;
       return true;
     }
     if (IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS.includes(monsterId)
