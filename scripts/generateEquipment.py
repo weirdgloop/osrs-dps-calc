@@ -70,6 +70,8 @@ ITEMS_TO_SKIP = [
     'Dragon warhammer (or)',
     'Centurion cuirass',
     'Ruinous powers (item)',
+    'Battlehat',
+    'Zaryte bow'
 ]
 
 def getEquipmentData():
