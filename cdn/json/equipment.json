@@ -31230,6 +31230,66 @@
     "isTwoHanded": false
   },
   {
+    "name": "Camphor blowpipe",
+    "id": 31575,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Camphor blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 2,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 12
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Camphor blowpipe",
+    "id": 31577,
+    "version": "Empty",
+    "slot": "weapon",
+    "image": "Camphor blowpipe (empty).png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 2,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 12
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Camulet",
     "id": 6707,
     "version": "",
@@ -37168,6 +37228,36 @@
       "ranged": 0
     },
     "isTwoHanded": false
+  },
+  {
+    "name": "Crate of ship parts (Pandemonium)",
+    "id": 32807,
+    "version": "",
+    "slot": "weapon",
+    "image": "Crate of ship parts (Pandemonium).png",
+    "speed": 4,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
   },
   {
     "name": "Crate ring",
@@ -67890,11 +67980,221 @@
     "isTwoHanded": false
   },
   {
+    "name": "Grid master tabard",
+    "id": 31181,
+    "version": "",
+    "slot": "body",
+    "image": "Grid master tabard.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Grid master tabard (b)",
+    "id": 31184,
+    "version": "",
+    "slot": "body",
+    "image": "Grid master tabard (b).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Grid master tabard (g)",
+    "id": 31190,
+    "version": "",
+    "slot": "body",
+    "image": "Grid master tabard (g).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Grid master tabard (p)",
+    "id": 31187,
+    "version": "",
+    "slot": "body",
+    "image": "Grid master tabard (p).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Grim reaper bottoms",
+    "id": 31231,
+    "version": "",
+    "slot": "legs",
+    "image": "Grim reaper bottoms.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Grim reaper gloves",
+    "id": 31233,
+    "version": "",
+    "slot": "hands",
+    "image": "Grim reaper gloves.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Grim reaper hood",
     "id": 12845,
     "version": "",
     "slot": "head",
     "image": "Grim reaper hood.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Grim reaper top",
+    "id": 31229,
+    "version": "",
+    "slot": "body",
+    "image": "Grim reaper top.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -78178,6 +78478,66 @@
       "ranged": 10
     },
     "isTwoHanded": false
+  },
+  {
+    "name": "Ironwood blowpipe",
+    "id": 31579,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Ironwood blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 4,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 16
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Ironwood blowpipe",
+    "id": 31581,
+    "version": "Empty",
+    "slot": "weapon",
+    "image": "Ironwood blowpipe (empty).png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 4,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 16
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
   },
   {
     "name": "Ivandis flail",
@@ -91141,10 +91501,70 @@
   },
   {
     "name": "Nifty hat",
-    "id": 31780,
+    "id": 31748,
     "version": "",
     "slot": "head",
     "image": "Nifty hat.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Nifty jacket",
+    "id": 31750,
+    "version": "",
+    "slot": "body",
+    "image": "Nifty jacket.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Nifty trousers",
+    "id": 31752,
+    "version": "",
+    "slot": "legs",
+    "image": "Nifty trousers.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -104910,6 +105330,66 @@
     "isTwoHanded": false
   },
   {
+    "name": "Rosewood blowpipe",
+    "id": 31583,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Rosewood blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 6,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 22
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Rosewood blowpipe",
+    "id": 31585,
+    "version": "Empty",
+    "slot": "weapon",
+    "image": "Rosewood blowpipe (empty).png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 6,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 22
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Royal crown",
     "id": 12397,
     "version": "",
@@ -109860,36 +110340,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Sage's greaves (Trailblazer Reloaded League)",
-    "id": 28771,
-    "version": "",
-    "slot": "feet",
-    "image": "Sage's greaves (Trailblazer Reloaded League).png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
     "name": "Saika's hood",
     "id": 26701,
     "version": "Broken",
@@ -110156,6 +110606,66 @@
       "crush": 15,
       "magic": 0,
       "ranged": -15
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Sailing cape",
+    "id": 31290,
+    "version": "Trimmed",
+    "slot": "cape",
+    "image": "Sailing cape(t).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 4
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 9,
+      "crush": 9,
+      "magic": 9,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Sailing cape",
+    "id": 31288,
+    "version": "Untrimmed",
+    "slot": "cape",
+    "image": "Sailing cape.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 9,
+      "crush": 9,
+      "magic": 9,
+      "ranged": 9
     },
     "isTwoHanded": false
   },
@@ -117240,6 +117750,36 @@
     "isTwoHanded": true
   },
   {
+    "name": "Sleek trousers",
+    "id": 31764,
+    "version": "",
+    "slot": "legs",
+    "image": "Sleek trousers.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Sleeping cap",
     "id": 10398,
     "version": "",
@@ -119488,6 +120028,36 @@
       "ranged": 0
     },
     "isTwoHanded": false
+  },
+  {
+    "name": "Spooky pumpkin lantern",
+    "id": 31227,
+    "version": "",
+    "slot": "weapon",
+    "image": "Spooky pumpkin lantern.png",
+    "speed": 0,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
   },
   {
     "name": "Spooky robe",
@@ -123720,6 +124290,66 @@
     "isTwoHanded": false
   },
   {
+    "name": "Storm cruiser's coat",
+    "id": 31738,
+    "version": "",
+    "slot": "body",
+    "image": "Storm cruiser's coat.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Storm cruiser's hat",
+    "id": 31736,
+    "version": "",
+    "slot": "head",
+    "image": "Storm cruiser's hat.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Stray dog plush",
     "id": 27816,
     "version": "",
@@ -124747,6 +125377,126 @@
     "image": "Swift blade.png",
     "speed": 3,
     "category": "Stab Sword",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Swords and emblem",
+    "id": 31193,
+    "version": "",
+    "slot": "cape",
+    "image": "Swords and emblem.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Swords and emblem (b)",
+    "id": 31196,
+    "version": "",
+    "slot": "cape",
+    "image": "Swords and emblem (b).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Swords and emblem (g)",
+    "id": 31202,
+    "version": "",
+    "slot": "cape",
+    "image": "Swords and emblem (g).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Swords and emblem (p)",
+    "id": 31199,
+    "version": "",
+    "slot": "cape",
+    "image": "Swords and emblem (p).png",
+    "speed": 0,
+    "category": "",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -128850,36 +129600,6 @@
     "isTwoHanded": true
   },
   {
-    "name": "Trailblazer axe",
-    "id": 25110,
-    "version": "",
-    "slot": "weapon",
-    "image": "Trailblazer axe.png",
-    "speed": 5,
-    "category": "Axe",
-    "bonuses": {
-      "str": 42,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": -2,
-      "slash": 38,
-      "crush": 32,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 1,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
     "name": "Trailblazer banner",
     "id": 25056,
     "version": "",
@@ -129090,36 +129810,6 @@
     "isTwoHanded": true
   },
   {
-    "name": "Trailblazer harpoon",
-    "id": 25114,
-    "version": "",
-    "slot": "weapon",
-    "image": "Trailblazer harpoon (Trailblazer League 2020).png",
-    "speed": 5,
-    "category": "Stab Sword",
-    "bonuses": {
-      "str": 42,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 38,
-      "slash": 32,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 1,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
     "name": "Trailblazer hood (t1)",
     "id": 25028,
     "version": "",
@@ -129263,36 +129953,6 @@
     "defensive": {
       "stab": 0,
       "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Trailblazer pickaxe",
-    "id": 25112,
-    "version": "",
-    "slot": "weapon",
-    "image": "Trailblazer pickaxe.png",
-    "speed": 5,
-    "category": "Pickaxe",
-    "bonuses": {
-      "str": 42,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 38,
-      "slash": -2,
-      "crush": 32,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 1,
       "crush": 0,
       "magic": 0,
       "ranged": 0
