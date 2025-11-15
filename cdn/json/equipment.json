@@ -16260,6 +16260,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Belle's folly",
+    "id": 31248,
+    "version": "",
+    "slot": "weapon",
+    "image": "Belle's folly.png",
+    "speed": 5,
+    "category": "Stab Sword",
+    "bonuses": {
+      "str": 102,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 100,
+      "slash": 78,
+      "crush": -3,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 20,
+      "slash": 15,
+      "crush": -9,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Beret mask",
     "id": 11282,
     "version": "",
