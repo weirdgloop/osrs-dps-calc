@@ -71902,6 +71902,7 @@
       "stab": 0
     },
     "attributes": [
+      "undead",
       "spectral"
     ],
     "immunities": {
@@ -71950,7 +71951,9 @@
       "slash": 5,
       "stab": 5
     },
-    "attributes": [],
+    "attributes": [
+      "undead"
+    ],
     "immunities": {
       "burn": null
     },
@@ -71997,7 +72000,9 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "undead"
+    ],
     "immunities": {
       "burn": null
     },
