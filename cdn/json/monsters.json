@@ -4125,54 +4125,7 @@
   {
     "id": 13668,
     "name": "Araxxor",
-    "version": "Enraged",
-    "image": "Araxxor (enraged).png",
-    "level": 890,
-    "speed": 4,
-    "style": [
-      "All"
-    ],
-    "size": 7,
-    "max_hit": "38 (melee) <br/> 21 (magic) <br/> 34 (ranged)",
-    "skills": {
-      "atk": 320,
-      "def": 170,
-      "hp": 1020,
-      "magic": 218,
-      "ranged": 241,
-      "str": 320
-    },
-    "offensive": {
-      "atk": 218,
-      "magic": 260,
-      "magic_str": 5,
-      "ranged": 283,
-      "ranged_str": 35,
-      "str": 10
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 15,
-      "magic": 237,
-      "heavy": 218,
-      "standard": 218,
-      "light": 218,
-      "slash": 75,
-      "stab": 160
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": {
-      "element": "fire",
-      "severity": 50
-    }
-  },
-  {
-    "id": 13668,
-    "name": "Araxxor",
-    "version": "In combat",
+    "version": "",
     "image": "Araxxor.png",
     "level": 890,
     "speed": 6,
