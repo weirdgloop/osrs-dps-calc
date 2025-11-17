@@ -12,6 +12,8 @@ const applyMonsterPhases = (m: Monster): Monster => {
       skills: {
         ...m.skills,
         def: m.skills.def + 35,
+        magic: m.skills.magic + 28,
+        ranged: m.skills.ranged + 31,
       },
     };
   }

@@ -256,6 +256,12 @@ def main():
         if monster['name'] == "Doom of Mokhaiotl" and ("Shielded" in v.get('name') or "Burrowed" in v.get('name')):
             continue
 
+        if monster['name'] == "Araxxor":
+            if "In combat" in version:
+                monster['version'] = ""
+            else:
+                continue
+
         monster = strip_parser_tags(monster)
 
         data.append(monster)
