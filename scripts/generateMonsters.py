@@ -121,6 +121,10 @@ def main():
     data = []
     required_imgs = []
 
+    monsters_to_skip = ["Albatross", "Armoured kraken", "Bull shark", "Butterfly ray", "Eagle ray", 
+    "Frigatebird", "Great white shark", "Hammerhead shark", "Manta ray (Sailing)", "Mogre (Sailing)", "Narwhal", 
+    "Orca", "Osprey", "Pygmy kraken", "Spined kraken", "Stingray", "Tern", "Tiger shark", "Vampyre kraken"]
+
     # Loop over the monsters data from the wiki
     for v in wiki_data:
         k = v['page_name_sub']
@@ -138,6 +142,9 @@ def main():
 
         # Skip monsters that aren't in the main namespace on the wiki
         if re.match("^([A-z]*):", k):
+            continue
+
+        if v.get('page_name') in monsters_to_skip:
             continue
 
         # Skip Fight Caves spawn point monsters
