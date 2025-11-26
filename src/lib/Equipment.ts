@@ -388,6 +388,7 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Scorching bow': 25,
   'Dragon knife': 25,
   'Purging staff': 25,
+  'Rosewood blowpipe': 25,
 
   'Dawnbringer': 30,
   'Dragon halberd': 30,
