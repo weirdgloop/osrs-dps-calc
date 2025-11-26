@@ -388,6 +388,7 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Scorching bow': 25,
   'Dragon knife': 25,
   'Purging staff': 25,
+  'Rosewood blowpipe': 25,
 
   'Dawnbringer': 30,
   'Dragon halberd': 30,
@@ -442,3 +443,53 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Seercull': 100,
 };
 /* eslint-enable quote-props */
+
+export const GAUNTLET_EQUIPMENT_IDS = [
+  23861, // Crystal sceptre
+  23862, // Crystal axe (The Gauntlet)
+  23863, // Crystal pickaxe (The Gauntlet)
+  23864, // Crystal harpoon (The Gauntlet)
+  23886, // Crystal helm (basic)
+  23887, // Crystal helm (attuned)
+  23888, // Crystal helm (perfected)
+  23889, // Crystal body (basic)
+  23890, // Crystal body (attuned)
+  23891, // Crystal body (perfected)
+  23892, // Crystal legs (basic)
+  23893, // Crystal legs (attuned)
+  23894, // Crystal legs (perfected)
+  23895, // Crystal halberd (basic)
+  23896, // Crystal halberd (attuned)
+  23897, // Crystal halberd (perfected)
+  23898, // Crystal staff (basic)
+  23899, // Crystal staff (attuned)
+  23900, // Crystal staff (perfected)
+  23901, // Crystal bow (basic)
+  23902, // Crystal bow (attuned)
+  23903, // Crystal bow (perfected)
+];
+
+export const CORRUPTED_GAUNTLET_EQUIPMENT_IDS = [
+  23820, // Corrupted sceptre
+  23821, // Corrupted axe
+  23822, // Corrupted pickaxe
+  23823, // Corrupted harpoon
+  23840, // Corrupted helm (basic)
+  23841, // Corrupted helm (attuned)
+  23842, // Corrupted helm (perfected)
+  23843, // Corrupted body (basic)
+  23844, // Corrupted body (attuned)
+  23845, // Corrupted body (perfected)
+  23846, // Corrupted legs (basic)
+  23847, // Corrupted legs (attuned)
+  23848, // Corrupted legs (perfected)
+  23849, // Corrupted halberd (basic)
+  23850, // Corrupted halberd (attuned)
+  23851, // Corrupted halberd (perfected)
+  23852, // Corrupted staff (basic)
+  23853, // Corrupted staff (attuned)
+  23854, // Corrupted staff (perfected)
+  23855, // Corrupted bow (basic)
+  23856, // Corrupted bow (attuned)
+  23857, // Corrupted bow (perfected)
+];
