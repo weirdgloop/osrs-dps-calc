@@ -140,6 +140,38 @@ export const TOB_EM_MONSTER_IDS = [
   10837, 10841, 10842, 10843, 10844, 10845, // verzik web + nylos
 ];
 
+/** IDs of monsters that are present in The Gauntlet.
+ * Used to sort equipment
+ */
+export const GAUNTLET_MONSTER_IDS = [
+  9021, // Crystalline Hunllef
+  9026, // Crystalline Rat
+  9027, // Crystalline Spider
+  9028, // Crystalline Bat
+  9029, // Crystalline Unicorn
+  9030, // Crystalline Scorpion
+  9031, // Crystalline Wolf
+  9032, // Crystalline Bear
+  9033, // Crystalline Dragon
+  9034, // Crystalline Dark Beast
+];
+
+/** IDs of monsters that are present in The Corrupted Gauntlet.
+ * Used to sort equipment
+ */
+export const CORRUPTED_GAUNTLET_MONSTER_IDS = [
+  9035, // Corrupted Hunllef
+  9040, // Corrupted Rat
+  9041, // Corrupted Spider
+  9042, // Corrupted Bat
+  9043, // Corrupted Unicorn
+  9044, // Corrupted Scorpion
+  9045, // Corrupted Wolf
+  9046, // Corrupted Bear
+  9047, // Corrupted Dragon
+  9048, // Corrupted Dark Beast
+];
+
 /**
  * IDs of Tekton from the Chambers of Xeric.
  * Separated due to different defence scaling rules.
