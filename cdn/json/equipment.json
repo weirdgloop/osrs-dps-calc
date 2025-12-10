@@ -15960,6 +15960,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Beer belly sweater",
+    "id": 32930,
+    "version": "",
+    "slot": "body",
+    "image": "Beer belly sweater.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Beginner wand",
     "id": 6908,
     "version": "",
@@ -33300,6 +33330,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Christmas dinner",
+    "id": 32934,
+    "version": "",
+    "slot": "weapon",
+    "image": "Christmas dinner.png",
+    "speed": 0,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Christmas jumper",
     "id": 27566,
     "version": "",
@@ -37711,6 +37771,36 @@
   },
   {
     "name": "Crate of arrowtips",
+    "id": 32924,
+    "version": "Rellekka",
+    "slot": "weapon",
+    "image": "Crate of arrowtips (Rellekka).png",
+    "speed": 0,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Crate of arrowtips",
     "id": 32764,
     "version": "The Pandemonium",
     "slot": "weapon",
@@ -39032,9 +39122,39 @@
   {
     "name": "Crate of clothes",
     "id": 32711,
-    "version": "",
+    "version": "Prifddinas",
     "slot": "weapon",
-    "image": "Crate of clothes.png",
+    "image": "Crate of clothes (Prifddinas).png",
+    "speed": 0,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Crate of clothes",
+    "id": 32925,
+    "version": "Void Knights' Outpost",
+    "slot": "weapon",
+    "image": "Crate of clothes (Void Knights' Outpost).png",
     "speed": 0,
     "category": "Blunt",
     "bonuses": {
@@ -43531,10 +43651,10 @@
   },
   {
     "name": "Crate of mahogany logs",
-    "id": 32572,
-    "version": "Land's End",
+    "id": 32541,
+    "version": "Deepfin Point",
     "slot": "weapon",
-    "image": "Crate of meat (Land's End).png",
+    "image": "Crate of mahogany logs (Deepfin Point).png",
     "speed": 0,
     "category": "Blunt",
     "bonuses": {
@@ -43561,10 +43681,10 @@
   },
   {
     "name": "Crate of mahogany logs",
-    "id": 32598,
+    "id": 32597,
     "version": "Musa Point",
     "slot": "weapon",
-    "image": "Crate of meat (Musa Point).png",
+    "image": "Crate of mahogany logs (Musa Point).png",
     "speed": 0,
     "category": "Blunt",
     "bonuses": {
@@ -43591,10 +43711,10 @@
   },
   {
     "name": "Crate of mahogany logs",
-    "id": 32662,
-    "version": "Port Roberts",
+    "id": 32604,
+    "version": "neitiznot",
     "slot": "weapon",
-    "image": "Crate of meat (Port Roberts).png",
+    "image": "Crate of mahogany logs (neitiznot).png",
     "speed": 0,
     "category": "Blunt",
     "bonuses": {
@@ -43621,40 +43741,10 @@
   },
   {
     "name": "Crate of mahogany logs",
-    "id": 32771,
-    "version": "The Pandemonium",
+    "id": 32644,
+    "version": "port piscarilius",
     "slot": "weapon",
-    "image": "Crate of meat (The Pandemonium).png",
-    "speed": 0,
-    "category": "Blunt",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Crate of mahogany logs",
-    "id": 32786,
-    "version": "The Summer Shore",
-    "slot": "weapon",
-    "image": "Crate of meat (The Summer Shore).png",
+    "image": "Crate of mahogany logs (port piscarilius).png",
     "speed": 0,
     "category": "Blunt",
     "bonuses": {
@@ -45721,10 +45811,10 @@
   },
   {
     "name": "Crate of rum",
-    "id": 32459,
-    "version": "Ardougne",
+    "id": 32474,
+    "version": "Brimhaven",
     "slot": "weapon",
-    "image": "Crate of runes (Ardougne).png",
+    "image": "Crate of rum (Brimhaven).png",
     "speed": 0,
     "category": "Blunt",
     "bonuses": {
@@ -45751,10 +45841,10 @@
   },
   {
     "name": "Crate of rum",
-    "id": 32512,
-    "version": "Civitas illa Fortis",
+    "id": 32528,
+    "version": "Corsair Cove",
     "slot": "weapon",
-    "image": "Crate of runes (Civitas illa Fortis).png",
+    "image": "Crate of rum (Corsair Cove).png",
     "speed": 0,
     "category": "Blunt",
     "bonuses": {
@@ -45781,130 +45871,10 @@
   },
   {
     "name": "Crate of rum",
-    "id": 32666,
-    "version": "Port Roberts",
+    "id": 32774,
+    "version": "Pandemonium",
     "slot": "weapon",
-    "image": "Crate of runes (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Crate of rum",
-    "id": 32688,
-    "version": "Port Sarim",
-    "slot": "weapon",
-    "image": "Crate of runes (Port Sarim).png",
-    "speed": 0,
-    "category": "Blunt",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Crate of rum",
-    "id": 32731,
-    "version": "Red Rock",
-    "slot": "weapon",
-    "image": "Crate of runes (Red Rock).png",
-    "speed": 0,
-    "category": "Blunt",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Crate of rum",
-    "id": 32756,
-    "version": "Ruins of Unkah",
-    "slot": "weapon",
-    "image": "Crate of runes (Ruins of Unkah).png",
-    "speed": 0,
-    "category": "Blunt",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Crate of rum",
-    "id": 32803,
-    "version": "Void Knights' Outpost",
-    "slot": "weapon",
-    "image": "Crate of runes (Void Knights' Outpost).png",
+    "image": "Crate of rum (The Pandemonium).png",
     "speed": 0,
     "category": "Blunt",
     "bonuses": {
@@ -50908,6 +50878,126 @@
       "ranged": 0
     },
     "isTwoHanded": true
+  },
+  {
+    "name": "Crystal glider's hat",
+    "id": 31760,
+    "version": "",
+    "slot": "head",
+    "image": "Crystal glider's hat.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Crystal glider's jacket",
+    "id": 31762,
+    "version": "",
+    "slot": "body",
+    "image": "Crystal glider's jacket.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Crystal glider's shoes",
+    "id": 31766,
+    "version": "",
+    "slot": "feet",
+    "image": "Crystal glider's shoes.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Crystal glider's trousers",
+    "id": 31764,
+    "version": "",
+    "slot": "legs",
+    "image": "Crystal glider's trousers.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
   },
   {
     "name": "Crystal grail",
@@ -74741,7 +74831,7 @@
       "str": 0,
       "ranged_str": 0,
       "magic_str": 0,
-      "prayer": 0
+      "prayer": -1
     },
     "offensive": {
       "stab": 0,
@@ -84300,6 +84390,66 @@
     "isTwoHanded": false
   },
   {
+    "name": "Horn of plenty",
+    "id": 31241,
+    "version": "Charged",
+    "slot": "shield",
+    "image": "Horn of plenty.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Horn of plenty",
+    "id": 31243,
+    "version": "Empty",
+    "slot": "shield",
+    "image": "Horn of plenty (empty).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Hornwood helm",
     "id": 19699,
     "version": "",
@@ -90150,6 +90300,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Jad jumper",
+    "id": 32932,
+    "version": "",
+    "slot": "body",
+    "image": "Jad jumper.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Jad plush",
     "id": 27814,
     "version": "",
@@ -94198,6 +94378,36 @@
       "ranged": 0
     },
     "isTwoHanded": true
+  },
+  {
+    "name": "Lovley jubbly bib",
+    "id": 32928,
+    "version": "",
+    "slot": "neck",
+    "image": "Lovley jubbly bib.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
   },
   {
     "name": "Lucky cutlass",
@@ -103055,126 +103265,6 @@
     "version": "Easter egg",
     "slot": "head",
     "image": "Nest hat (easter egg).png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Nifty hat",
-    "id": 31748,
-    "version": "",
-    "slot": "head",
-    "image": "Nifty hat.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Nifty jacket",
-    "id": 31750,
-    "version": "",
-    "slot": "body",
-    "image": "Nifty jacket.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Nifty shoes",
-    "id": 31754,
-    "version": "",
-    "slot": "feet",
-    "image": "Nifty shoes.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Nifty trousers",
-    "id": 31752,
-    "version": "",
-    "slot": "legs",
-    "image": "Nifty trousers.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -129450,126 +129540,6 @@
     "isTwoHanded": true
   },
   {
-    "name": "Sleek hat",
-    "id": 31760,
-    "version": "",
-    "slot": "head",
-    "image": "Sleek hat.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Sleek jacket",
-    "id": 31762,
-    "version": "",
-    "slot": "body",
-    "image": "Sleek jacket.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Sleek shoes",
-    "id": 31766,
-    "version": "",
-    "slot": "feet",
-    "image": "Sleek shoes.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Sleek trousers",
-    "id": 31764,
-    "version": "",
-    "slot": "legs",
-    "image": "Sleek trousers.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
     "name": "Sleeping cap",
     "id": 10398,
     "version": "",
@@ -137015,6 +136985,126 @@
     "version": "",
     "slot": "hands",
     "image": "Superior mining gloves.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Swamp cruiser's hat",
+    "id": 31748,
+    "version": "",
+    "slot": "head",
+    "image": "Swamp cruiser's hat.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Swamp cruiser's jacket",
+    "id": 31750,
+    "version": "",
+    "slot": "body",
+    "image": "Swamp cruiser's jacket.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Swamp cruiser's shoes",
+    "id": 31754,
+    "version": "",
+    "slot": "feet",
+    "image": "Swamp cruiser's shoes.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Swamp cruiser's trousers",
+    "id": 31752,
+    "version": "",
+    "slot": "legs",
+    "image": "Swamp cruiser's trousers.png",
     "speed": 0,
     "category": "",
     "bonuses": {

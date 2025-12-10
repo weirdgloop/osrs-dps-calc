@@ -5,17 +5,19 @@
     "version": "",
     "image": "A corpse.png",
     "level": 103,
-    "speed": 0,
-    "style": null,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "10",
     "skills": {
       "atk": 90,
       "def": 90,
       "hp": 90,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 90
     },
     "offensive": {
       "atk": 0,
@@ -39,7 +41,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 3477,
@@ -3175,19 +3180,21 @@
     "image": "Angry tortugan.png",
     "level": 81,
     "speed": 5,
-    "style": null,
+    "style": [
+      "Stab"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "7",
     "skills": {
       "atk": 90,
       "def": 50,
       "hp": 75,
       "magic": 40,
-      "ranged": 0,
-      "str": 0
+      "ranged": 1,
+      "str": 65
     },
     "offensive": {
-      "atk": 0,
+      "atk": 20,
       "magic": 0,
       "magic_str": 0,
       "ranged": 0,
@@ -3198,9 +3205,9 @@
       "flat_armour": 0,
       "crush": 50,
       "magic": 30,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 80,
+      "standard": 80,
+      "light": 80,
       "slash": 80,
       "stab": 80
     },
@@ -14354,15 +14361,17 @@
     "version": "",
     "image": "Blue dagannoth.png",
     "level": 100,
-    "speed": 0,
-    "style": null,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "9",
     "skills": {
       "atk": 78,
       "def": 81,
       "hp": 120,
-      "magic": 0,
+      "magic": 1,
       "ranged": 50,
       "str": 78
     },
@@ -14378,9 +14387,9 @@
       "flat_armour": 0,
       "crush": 150,
       "magic": 50,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
       "slash": 150,
       "stab": 150
     },
@@ -14388,7 +14397,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 265,
@@ -20170,16 +20182,18 @@
     "image": "Chuck up.png",
     "level": 98,
     "speed": 7,
-    "style": null,
+    "style": [
+      "Ranged"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "9",
     "skills": {
       "atk": 30,
       "def": 90,
       "hp": 110,
       "magic": 0,
       "ranged": 99,
-      "str": 0
+      "str": 80
     },
     "offensive": {
       "atk": 0,
@@ -20193,9 +20207,9 @@
       "flat_armour": 0,
       "crush": 0,
       "magic": 200,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 200,
+      "standard": 120,
+      "light": 200,
       "slash": 0,
       "stab": 0
     },
@@ -20203,7 +20217,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
   },
   {
     "id": 4373,
@@ -25256,19 +25273,21 @@
     "image": "Daddy's special water.png",
     "level": 125,
     "speed": 8,
-    "style": null,
+    "style": [
+      "Crush"
+    ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "27",
     "skills": {
       "atk": 99,
       "def": 99,
       "hp": 120,
       "magic": 0,
       "ranged": 0,
-      "str": 0
+      "str": 120
     },
     "offensive": {
-      "atk": 0,
+      "atk": 40,
       "magic": 0,
       "magic_str": 0,
       "ranged": 0,
@@ -25279,9 +25298,9 @@
       "flat_armour": 0,
       "crush": 40,
       "magic": 200,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
       "slash": 25,
       "stab": 25
     },
@@ -25289,7 +25308,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
   },
   {
     "id": 140,
@@ -28416,7 +28438,9 @@
     "image": "Dinky the drink troll.png",
     "level": 0,
     "speed": 4,
-    "style": null,
+    "style": [
+      "Melee"
+    ],
     "size": 0,
     "max_hit": "51+",
     "skills": {
@@ -28449,7 +28473,57 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 0
+    }
+  },
+  {
+    "id": 14859,
+    "name": "Dire gryphon",
+    "version": "",
+    "image": "Dire gryphon.png",
+    "level": 209,
+    "speed": 0,
+    "style": [
+      "Melee"
+    ],
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 160,
+      "def": 100,
+      "hp": 280,
+      "magic": 60,
+      "ranged": 0,
+      "str": 190
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 40,
+      "magic": 150,
+      "heavy": 60,
+      "standard": 60,
+      "light": 60,
+      "slash": 20,
+      "stab": 10
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 50
+    }
   },
   {
     "id": 13812,
@@ -28761,7 +28835,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 40
+    }
   },
   {
     "id": 302,
@@ -29610,16 +29687,18 @@
     "image": "Drink troll queen.png",
     "level": 194,
     "speed": 5,
-    "style": null,
+    "style": [
+      "Magic"
+    ],
     "size": 5,
-    "max_hit": 0,
+    "max_hit": "21",
     "skills": {
-      "atk": 0,
+      "atk": 1,
       "def": 155,
       "hp": 225,
       "magic": 205,
-      "ranged": 0,
-      "str": 0
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -29643,7 +29722,10 @@
     "immunities": {
       "burn": "Strong"
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
   },
   {
     "id": 3258,
@@ -29926,7 +30008,7 @@
     "skills": {
       "atk": 435,
       "def": 316,
-      "hp": 1540,
+      "hp": 1697,
       "magic": 465,
       "ranged": 0,
       "str": 500
@@ -31417,6 +31499,94 @@
       "light": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15502,
+    "name": "Elder aquanite",
+    "version": "Lure",
+    "image": "Elder aquanite (lure).png",
+    "level": 305,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "34 (normal)",
+    "skills": {
+      "atk": 1,
+      "def": 180,
+      "hp": 400,
+      "magic": 330,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 50,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 80,
+      "magic": 140,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 80,
+      "stab": 60
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15503,
+    "name": "Elder aquanite",
+    "version": "No lure",
+    "image": "Elder aquanite (no lure).png",
+    "level": 305,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "34 (normal)",
+    "skills": {
+      "atk": 1,
+      "def": 180,
+      "hp": 400,
+      "magic": 330,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 10,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 80,
+      "magic": 140,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 80,
+      "stab": 10
     },
     "attributes": [],
     "immunities": {
@@ -38316,7 +38486,7 @@
       "Dragonfire"
     ],
     "size": 4,
-    "max_hit": "16 (Stab)",
+    "max_hit": "16 (Stab)<br/>50 (Dragonfire)",
     "skills": {
       "atk": 180,
       "def": 150,
@@ -39803,7 +39973,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 50
+    }
   },
   {
     "id": 3975,
@@ -40300,17 +40473,19 @@
     "version": "Soldier",
     "image": "Giant ant (2).png",
     "level": 29,
-    "speed": 0,
-    "style": null,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "4",
     "skills": {
       "atk": 23,
       "def": 24,
       "hp": 30,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 26
     },
     "offensive": {
       "atk": 0,
@@ -40342,17 +40517,19 @@
     "version": "Worker",
     "image": "Giant ant.png",
     "level": 21,
-    "speed": 0,
-    "style": null,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "3",
     "skills": {
       "atk": 16,
       "def": 22,
       "hp": 20,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
     },
     "offensive": {
       "atk": 0,
@@ -42211,17 +42388,19 @@
     "version": "1",
     "image": "Giant wasp.png",
     "level": 28,
-    "speed": 0,
-    "style": null,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "3",
     "skills": {
       "atk": 20,
       "def": 28,
       "hp": 30,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 22
     },
     "offensive": {
       "atk": 0,
@@ -42253,17 +42432,19 @@
     "version": "2",
     "image": "Giant wasp (2).png",
     "level": 28,
-    "speed": 0,
-    "style": null,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "3",
     "skills": {
       "atk": 20,
       "def": 28,
       "hp": 30,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 22
     },
     "offensive": {
       "atk": 0,
@@ -45892,14 +46073,16 @@
     "version": "",
     "image": "Gryphon (Troubled Tortugans).png",
     "level": 95,
-    "speed": 0,
-    "style": null,
-    "size": 3,
-    "max_hit": 0,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "8 (standard attacks)",
     "skills": {
       "atk": 65,
       "def": 50,
-      "hp": 150,
+      "hp": 110,
       "magic": 50,
       "ranged": 0,
       "str": 75
@@ -52960,7 +53143,7 @@
   },
   {
     "id": 14852,
-    "name": "Hermit Crab",
+    "name": "Hermit crab",
     "version": "",
     "image": "Hermit crab.png",
     "level": 19,
@@ -59327,9 +59510,53 @@
       "flat_armour": 0,
       "crush": 200,
       "magic": 300,
-      "heavy": 200,
-      "standard": 200,
-      "light": 200,
+      "heavy": 150,
+      "standard": 150,
+      "light": 150,
+      "slash": 200,
+      "stab": 200
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12353,
+    "name": "Jhallan",
+    "version": "",
+    "image": "Jhallan.png",
+    "level": 491,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 2,
+    "max_hit": "26",
+    "skills": {
+      "atk": 250,
+      "def": 83,
+      "hp": 1,
+      "magic": 83,
+      "ranged": 0,
+      "str": 250
+    },
+    "offensive": {
+      "atk": 30,
+      "magic": 30,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 200,
+      "magic": 300,
+      "heavy": 150,
+      "standard": 150,
+      "light": 150,
       "slash": 200,
       "stab": 200
     },
@@ -59896,10 +60123,10 @@
     }
   },
   {
-    "id": 1045,
+    "id": 1046,
     "name": "Jungle horror",
-    "version": "Blue eyes",
-    "image": "Jungle horror (blue eyes).png",
+    "version": "Guard",
+    "image": "Jungle horror (pink eyes).png",
     "level": 70,
     "speed": 4,
     "style": [
@@ -59945,55 +60172,8 @@
   {
     "id": 1044,
     "name": "Jungle horror",
-    "version": "Green eyes",
+    "version": "Warrior",
     "image": "Jungle horror (green eyes).png",
-    "level": 70,
-    "speed": 4,
-    "style": [
-      "Stab"
-    ],
-    "size": 2,
-    "max_hit": "8",
-    "skills": {
-      "atk": 70,
-      "def": 55,
-      "hp": 45,
-      "magic": 1,
-      "ranged": 1,
-      "str": 70
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": {
-      "element": "fire",
-      "severity": 25
-    }
-  },
-  {
-    "id": 1046,
-    "name": "Jungle horror",
-    "version": "Pink eyes",
-    "image": "Jungle horror (pink eyes).png",
     "level": 70,
     "speed": 4,
     "style": [
@@ -60039,8 +60219,55 @@
   {
     "id": 1042,
     "name": "Jungle horror",
-    "version": "Red eyes",
+    "version": "Worker",
     "image": "Jungle horror.png",
+    "level": 70,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "8",
+    "skills": {
+      "atk": 70,
+      "def": 55,
+      "hp": 45,
+      "magic": 1,
+      "ranged": 1,
+      "str": 70
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "fire",
+      "severity": 25
+    }
+  },
+  {
+    "id": 1045,
+    "name": "Jungle horror",
+    "version": "Young warrior",
+    "image": "Jungle horror (blue eyes).png",
     "level": 70,
     "speed": 4,
     "style": [
@@ -60086,7 +60313,7 @@
   {
     "id": 1043,
     "name": "Jungle horror",
-    "version": "Yellow eyes",
+    "version": "Young worker",
     "image": "Jungle horror (yellow eyes).png",
     "level": 70,
     "speed": 4,
@@ -60941,7 +61168,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 10
+    }
   },
   {
     "id": 1129,
@@ -61046,7 +61276,10 @@
     "image": "Karamel.png",
     "level": 136,
     "speed": 3,
-    "style": null,
+    "style": [
+      "Magic",
+      "Ranged"
+    ],
     "size": 1,
     "max_hit": "7x2 (Magic)",
     "skills": {
@@ -61061,8 +61294,8 @@
       "atk": 0,
       "magic": 0,
       "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
+      "ranged": 134,
+      "ranged_str": 55,
       "str": 0
     },
     "defensive": {
@@ -61092,7 +61325,8 @@
     "level": 186,
     "speed": 3,
     "style": [
-      "Magic"
+      "Magic",
+      "Ranged"
     ],
     "size": 1,
     "max_hit": "7x2 (Magic)",
@@ -61139,7 +61373,8 @@
     "level": 136,
     "speed": 3,
     "style": [
-      "Magic"
+      "Magic",
+      "Ranged"
     ],
     "size": 1,
     "max_hit": "7x2 (Magic)",
@@ -63407,7 +63642,7 @@
       "atk": 85,
       "def": 105,
       "hp": 107,
-      "magic": 80,
+      "magic": 400,
       "ranged": 1,
       "str": 98
     },
@@ -64415,8 +64650,8 @@
       "atk": 30,
       "magic": 0,
       "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 40,
+      "ranged": 40,
+      "ranged_str": 0,
       "str": 0
     },
     "defensive": {
@@ -66526,7 +66761,9 @@
       "slash": 30,
       "stab": 60
     },
-    "attributes": [],
+    "attributes": [
+      "dragon"
+    ],
     "immunities": {
       "burn": "Normal"
     },
@@ -67456,6 +67693,50 @@
     "attributes": [],
     "immunities": {
       "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15220,
+    "name": "Manta ray (monster)",
+    "version": "In combat",
+    "image": "Manta ray (Sailing).png",
+    "level": 114,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "8",
+    "skills": {
+      "atk": 155,
+      "def": 0,
+      "hp": 160,
+      "magic": 1,
+      "ranged": 0,
+      "str": 75
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 20,
+      "standard": 50,
+      "light": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -80218,226 +80499,6 @@
     }
   },
   {
-    "id": 14933,
-    "name": "Pirate (pickpocket)",
-    "version": "1",
-    "image": "Pirate (pickpocket, 1).png",
-    "level": 52,
-    "speed": 4,
-    "style": [
-      "Slash"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 54,
-      "def": 35,
-      "hp": 38,
-      "magic": 10,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 10,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 20,
-      "stab": 10
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 14934,
-    "name": "Pirate (pickpocket)",
-    "version": "2",
-    "image": "Pirate (pickpocket, 2).png",
-    "level": 52,
-    "speed": 4,
-    "style": [
-      "Slash"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 54,
-      "def": 35,
-      "hp": 38,
-      "magic": 10,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 10,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 20,
-      "stab": 10
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 14935,
-    "name": "Pirate (pickpocket)",
-    "version": "3",
-    "image": "Pirate (pickpocket, 3).png",
-    "level": 52,
-    "speed": 4,
-    "style": [
-      "Slash"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 54,
-      "def": 35,
-      "hp": 38,
-      "magic": 10,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 10,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 20,
-      "stab": 10
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 14936,
-    "name": "Pirate (pickpocket)",
-    "version": "4",
-    "image": "Pirate (pickpocket, 4).png",
-    "level": 52,
-    "speed": 4,
-    "style": [
-      "Slash"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 54,
-      "def": 35,
-      "hp": 38,
-      "magic": 10,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 10,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 20,
-      "stab": 10
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 14937,
-    "name": "Pirate (pickpocket)",
-    "version": "5",
-    "image": "Pirate (pickpocket, 5).png",
-    "level": 52,
-    "speed": 4,
-    "style": [
-      "Slash"
-    ],
-    "size": 1,
-    "max_hit": "6",
-    "skills": {
-      "atk": 54,
-      "def": 35,
-      "hp": 38,
-      "magic": 10,
-      "ranged": 1,
-      "str": 50
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 10,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 20,
-      "stab": 10
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
     "id": 15021,
     "name": "Pirate (The Red Reef)",
     "version": "1",
@@ -80598,6 +80659,226 @@
       "light": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14933,
+    "name": "Pirate (Thieving)",
+    "version": "1",
+    "image": "Pirate (Thieving).png",
+    "level": 52,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 54,
+      "def": 35,
+      "hp": 38,
+      "magic": 10,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 20,
+      "stab": 10
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14934,
+    "name": "Pirate (Thieving)",
+    "version": "2",
+    "image": "Pirate (Thieving) (2).png",
+    "level": 52,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 54,
+      "def": 35,
+      "hp": 38,
+      "magic": 10,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 20,
+      "stab": 10
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14935,
+    "name": "Pirate (Thieving)",
+    "version": "3",
+    "image": "Pirate (Thieving) (3).png",
+    "level": 52,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 54,
+      "def": 35,
+      "hp": 38,
+      "magic": 10,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 20,
+      "stab": 10
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14936,
+    "name": "Pirate (Thieving)",
+    "version": "4",
+    "image": "Pirate (Thieving) (4).png",
+    "level": 52,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 54,
+      "def": 35,
+      "hp": 38,
+      "magic": 10,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 20,
+      "stab": 10
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14937,
+    "name": "Pirate (Thieving)",
+    "version": "5",
+    "image": "Pirate (Thieving) (5).png",
+    "level": 52,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 54,
+      "def": 35,
+      "hp": 38,
+      "magic": 10,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 20,
+      "stab": 10
     },
     "attributes": [],
     "immunities": {
@@ -88777,7 +89058,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 10
+    }
   },
   {
     "id": 12360,
@@ -88823,7 +89107,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 12362,
@@ -88869,7 +89156,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 12364,
@@ -88915,7 +89205,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 12378,
@@ -88961,7 +89254,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 12390,
@@ -89231,6 +89527,50 @@
       "light": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14940,
+    "name": "Scorpion (Sailing)",
+    "version": "",
+    "image": "Scorpion (Sailing).png",
+    "level": 1,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "0",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 2,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": -35,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": -58
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -53,
+      "magic": -53,
+      "heavy": -53,
+      "standard": -53,
+      "light": -53,
+      "slash": -53,
+      "stab": -53
     },
     "attributes": [],
     "immunities": {
@@ -90955,7 +91295,7 @@
   },
   {
     "id": 14860,
-    "name": "Shellbane Gryphon",
+    "name": "Shellbane gryphon",
     "version": "",
     "image": "Shellbane gryphon.png",
     "level": 235,
@@ -90965,22 +91305,22 @@
       "Ranged"
     ],
     "size": 4,
-    "max_hit": "22",
+    "max_hit": "22 <br/> 64 (whirlwinds) <br/> 30 (knockback)",
     "skills": {
       "atk": 160,
       "def": 120,
       "hp": 400,
       "magic": 100,
       "ranged": 150,
-      "str": 0
+      "str": 210
     },
     "offensive": {
       "atk": 0,
-      "magic": 100,
+      "magic": 0,
       "magic_str": 0,
       "ranged": 20,
       "ranged_str": 0,
-      "str": 210
+      "str": 0
     },
     "defensive": {
       "flat_armour": 0,
@@ -97707,6 +98047,50 @@
     "weakness": null
   },
   {
+    "id": 15163,
+    "name": "Snakeling (Sea charting)",
+    "version": "",
+    "image": "Snakeling (Sea charting).png",
+    "level": 90,
+    "speed": 3,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "13",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 1,
+      "magic": 185,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 80,
+      "magic_str": -20,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -40,
+      "magic": -40,
+      "heavy": -40,
+      "standard": -40,
+      "light": -40,
+      "slash": -40,
+      "stab": -40
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 2046,
     "name": "Snakeling",
     "version": "Magic",
@@ -97727,7 +98111,7 @@
       "str": 1
     },
     "offensive": {
-      "atk": 120,
+      "atk": 0,
       "magic": 80,
       "magic_str": -20,
       "ranged": 0,
@@ -103119,6 +103503,50 @@
     }
   },
   {
+    "id": 5848,
+    "name": "Tanglefoot",
+    "version": "",
+    "image": "Tanglefoot.png",
+    "level": 111,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "12",
+    "skills": {
+      "atk": 97,
+      "def": 91,
+      "hp": 102,
+      "magic": 1,
+      "ranged": 1,
+      "str": 97
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 6291,
     "name": "Tanglefoot (Nightmare Zone)",
     "version": "Hard Mode",
@@ -104213,11 +104641,11 @@
     "max_hit": "20",
     "skills": {
       "atk": 160,
-      "def": 160,
+      "def": 140,
       "hp": 200,
       "magic": 140,
       "ranged": 160,
-      "str": 140
+      "str": 160
     },
     "offensive": {
       "atk": 66,
@@ -104243,7 +104671,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 0
+    }
   },
   {
     "id": 14017,
@@ -105352,20 +105783,23 @@
     "version": "",
     "image": "The rocks.png",
     "level": 154,
-    "speed": 0,
-    "style": null,
+    "speed": 4,
+    "style": [
+      "Magic",
+      "Melee"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "? (Magic)\n23 (Melee)",
     "skills": {
       "atk": 190,
       "def": 135,
       "hp": 130,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 80
     },
     "offensive": {
-      "atk": 0,
+      "atk": 60,
       "magic": 0,
       "magic_str": 0,
       "ranged": 0,
@@ -105386,7 +105820,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 100
+    }
   },
   {
     "id": 4708,
