@@ -610,6 +610,10 @@ export default class BaseCalc {
       && this.wearing(['Abyssal bludgeon', 'Abyssal dagger', 'Abyssal whip', 'Abyssal tentacle']);
   }
 
+  protected isWearingOgreBow(): boolean {
+    return this.wearing(['Ogre bow', 'Comp ogre bow']);
+  }
+
   protected tdUnshieldedBonusApplies(): boolean {
     if (this.monster.name !== 'Tormented Demon' || this.monster.inputs.phase !== 'Unshielded') {
       return false;

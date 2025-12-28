@@ -631,7 +631,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return [0, maxHit];
     }
 
-    if (this.opts.usingSpecialAttack && (this.isWearingMsb() || this.isWearingMlb() || this.wearing('Seercull'))) {
+    if ((this.opts.usingSpecialAttack && (this.isWearingMsb() || this.isWearingMlb() || this.wearing('Seercull'))) || this.isWearingOgreBow()) {
       // why +10 when that's not used anywhere else? who knows
       effectiveLevel += 10;
 
