@@ -63,11 +63,8 @@ describe('Zogre damage resistances', () => {
         type: 'ranged',
         stance: 'Rapid',
       },
-      bonuses: {
-        ranged_str: 125, // gives 32 max hit
-      },
     }));
-    expect(maxHit).toBe(32);
+    expect(maxHit).toBe(19); // comp ogre bow only uses arrow str bonus
   });
 
   test('Brutal arrows do not skip damage reduction when not used', () => {
