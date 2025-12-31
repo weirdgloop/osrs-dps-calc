@@ -1054,7 +1054,7 @@
     "id": 9573,
     "name": "Acidic Bloodveld",
     "version": "",
-    "image": "Acidic Bloodveld.png",
+    "image": "Acidic Bloodveld (Christmas).png",
     "level": 56,
     "speed": 4,
     "style": [
@@ -4030,8 +4030,7 @@
     "level": 75,
     "speed": 4,
     "style": [
-      "Magic",
-      "Slash"
+      "Magic"
     ],
     "size": 1,
     "max_hit": "6",
@@ -4078,8 +4077,7 @@
     "level": 75,
     "speed": 4,
     "style": [
-      "Magic",
-      "Slash"
+      "Magic"
     ],
     "size": 1,
     "max_hit": "6",
@@ -4126,7 +4124,6 @@
     "level": 81,
     "speed": 4,
     "style": [
-      "Magic",
       "Slash"
     ],
     "size": 1,
@@ -4253,7 +4250,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -4297,7 +4294,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -14223,7 +14220,7 @@
     "id": 3138,
     "name": "Bloodveld",
     "version": "GWD",
-    "image": "Bloodveld (God Wars Dungeon).png",
+    "image": "Bloodveld (God Wars Dungeon, Christmas).png",
     "level": 81,
     "speed": 4,
     "style": [
@@ -14269,7 +14266,7 @@
     "id": 484,
     "name": "Bloodveld",
     "version": "Normal",
-    "image": "Bloodveld.png",
+    "image": "Bloodveld (Christmas).png",
     "level": 76,
     "speed": 4,
     "style": [
@@ -18984,7 +18981,7 @@
     "id": 5862,
     "name": "Cerberus",
     "version": "",
-    "image": "Cerberus.png",
+    "image": "Cerberus (Christmas).png",
     "level": 318,
     "speed": 6,
     "style": [
@@ -20758,7 +20755,7 @@
     "id": 319,
     "name": "Corporeal Beast",
     "version": "",
-    "image": "Corporeal Beast.png",
+    "image": "Corporeal Beast (Christmas).png",
     "level": 785,
     "speed": 4,
     "style": [
@@ -22735,7 +22732,7 @@
     "id": 11582,
     "name": "Crocodile",
     "version": "Land",
-    "image": "Crocodile.png",
+    "image": "Crocodile (Christmas).png",
     "level": 63,
     "speed": 4,
     "style": [
@@ -22782,7 +22779,7 @@
     "id": 11581,
     "name": "Crocodile",
     "version": "Water",
-    "image": "Crocodile.png",
+    "image": "Crocodile (Christmas).png",
     "level": 63,
     "speed": 4,
     "style": [
@@ -22829,7 +22826,7 @@
     "id": 4184,
     "name": "Crocodile",
     "version": "Water & land",
-    "image": "Crocodile.png",
+    "image": "Crocodile (Christmas).png",
     "level": 63,
     "speed": 4,
     "style": [
@@ -24906,10 +24903,10 @@
     "weakness": null
   },
   {
-    "id": 2236,
+    "id": 2235,
     "name": "Cyclops (God Wars Dungeon)",
-    "version": "Grey",
-    "image": "Cyclops (GWD, 2).png",
+    "version": "Green",
+    "image": "Cyclops (GWD).png",
     "level": 81,
     "speed": 6,
     "style": [
@@ -24950,10 +24947,10 @@
     "weakness": null
   },
   {
-    "id": 2235,
+    "id": 2236,
     "name": "Cyclops (God Wars Dungeon)",
-    "version": "Teal",
-    "image": "Cyclops (GWD).png",
+    "version": "Grey",
+    "image": "Cyclops (GWD, 2).png",
     "level": 81,
     "speed": 6,
     "style": [
@@ -26478,7 +26475,7 @@
     "id": 320,
     "name": "Dark energy core",
     "version": "",
-    "image": "Dark energy core.png",
+    "image": "Dark energy core (Christmas), and [[2025 Christmas event/Gallery|2025]].png",
     "level": 75,
     "speed": 2,
     "style": [
@@ -28888,7 +28885,7 @@
     "id": 14707,
     "name": "Doom of Mokhaiotl",
     "version": "Deep Delve",
-    "image": "Doom of Mokhaiotl.png",
+    "image": "Doom of Mokhaiotl (Christmas).png",
     "level": 908,
     "speed": 4,
     "style": [
@@ -28936,7 +28933,7 @@
     "id": 14707,
     "name": "Doom of Mokhaiotl",
     "version": "Delve 1",
-    "image": "Doom of Mokhaiotl.png",
+    "image": "Doom of Mokhaiotl (Christmas).png",
     "level": 558,
     "speed": 6,
     "style": [
@@ -28984,7 +28981,7 @@
     "id": 14707,
     "name": "Doom of Mokhaiotl",
     "version": "Delve 2",
-    "image": "Doom of Mokhaiotl.png",
+    "image": "Doom of Mokhaiotl (Christmas).png",
     "level": 608,
     "speed": 6,
     "style": [
@@ -29032,7 +29029,7 @@
     "id": 14707,
     "name": "Doom of Mokhaiotl",
     "version": "Delve 3",
-    "image": "Doom of Mokhaiotl.png",
+    "image": "Doom of Mokhaiotl (Christmas).png",
     "level": 658,
     "speed": 5,
     "style": [
@@ -29080,7 +29077,7 @@
     "id": 14707,
     "name": "Doom of Mokhaiotl",
     "version": "Delve 4",
-    "image": "Doom of Mokhaiotl.png",
+    "image": "Doom of Mokhaiotl (Christmas).png",
     "level": 708,
     "speed": 5,
     "style": [
@@ -29128,7 +29125,7 @@
     "id": 14707,
     "name": "Doom of Mokhaiotl",
     "version": "Delve 5",
-    "image": "Doom of Mokhaiotl.png",
+    "image": "Doom of Mokhaiotl (Christmas).png",
     "level": 758,
     "speed": 5,
     "style": [
@@ -29176,7 +29173,7 @@
     "id": 14707,
     "name": "Doom of Mokhaiotl",
     "version": "Delve 6",
-    "image": "Doom of Mokhaiotl.png",
+    "image": "Doom of Mokhaiotl (Christmas).png",
     "level": 808,
     "speed": 5,
     "style": [
@@ -29224,7 +29221,7 @@
     "id": 14707,
     "name": "Doom of Mokhaiotl",
     "version": "Delve 7",
-    "image": "Doom of Mokhaiotl.png",
+    "image": "Doom of Mokhaiotl (Christmas).png",
     "level": 858,
     "speed": 4,
     "style": [
@@ -29272,7 +29269,7 @@
     "id": 14707,
     "name": "Doom of Mokhaiotl",
     "version": "Delve 8",
-    "image": "Doom of Mokhaiotl.png",
+    "image": "Doom of Mokhaiotl (Christmas).png",
     "level": 908,
     "speed": 4,
     "style": [
@@ -30644,14 +30641,146 @@
     "weakness": null
   },
   {
+    "id": 294,
+    "name": "Dwarf",
+    "version": "Mining Guild (1)",
+    "image": "Dwarf (Falador, 1).png",
+    "level": 11,
+    "speed": 5,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 12,
+      "def": 8,
+      "hp": 16,
+      "magic": 1,
+      "ranged": 1,
+      "str": 5
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 295,
+    "name": "Dwarf",
+    "version": "Mining Guild (2)",
+    "image": "Dwarf (Falador, 2).png",
+    "level": 11,
+    "speed": 5,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 8,
+      "hp": 16,
+      "magic": 1,
+      "ranged": 1,
+      "str": 5
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 10,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 296,
+    "name": "Dwarf",
+    "version": "Mining Guild (3)",
+    "image": "Dwarf (Falador, 3).png",
+    "level": 10,
+    "speed": 5,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 12,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 290,
     "name": "Dwarf",
-    "version": "Level 10",
+    "version": "Standard",
     "image": "Dwarf.png",
     "level": 10,
     "speed": 5,
     "style": [
-      "Crush"
+      "Stab"
     ],
     "size": 1,
     "max_hit": "2",
@@ -30688,54 +30817,10 @@
     "weakness": null
   },
   {
-    "id": 294,
-    "name": "Dwarf",
-    "version": "Level 11",
-    "image": "Dwarf.png",
-    "level": 11,
-    "speed": 5,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "2",
-    "skills": {
-      "atk": 8,
-      "def": 8,
-      "hp": 18,
-      "magic": 1,
-      "ranged": 1,
-      "str": 8
-    },
-    "offensive": {
-      "atk": 5,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 7
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 5,
-      "heavy": 10,
-      "standard": 10,
-      "light": 10,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
     "id": 292,
     "name": "Dwarf",
-    "version": "Level 20",
-    "image": "Dwarf.png",
+    "version": "Standard (Level 20)",
+    "image": "Dwarf (Level 20).png",
     "level": 20,
     "speed": 6,
     "style": [
@@ -30776,14 +30861,322 @@
     "weakness": null
   },
   {
+    "id": 1401,
+    "name": "Dwarf",
+    "version": "Worker (1)",
+    "image": "Dwarf (Worker, 1).png",
+    "level": 11,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 8,
+      "hp": 16,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1402,
+    "name": "Dwarf",
+    "version": "Worker (2)",
+    "image": "Dwarf (Worker, 2).png",
+    "level": 11,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 8,
+      "hp": 16,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1403,
+    "name": "Dwarf",
+    "version": "Worker (3)",
+    "image": "Dwarf (Worker, 3).png",
+    "level": 11,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 8,
+      "hp": 16,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 10,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 10,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1404,
+    "name": "Dwarf",
+    "version": "Worker (4)",
+    "image": "Dwarf (Worker, 4).png",
+    "level": 11,
+    "speed": 6,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 8,
+      "hp": 16,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1405,
+    "name": "Dwarf",
+    "version": "Worker (5)",
+    "image": "Dwarf (Worker, 5).png",
+    "level": 10,
+    "speed": 6,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 8,
+      "hp": 12,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1406,
+    "name": "Dwarf",
+    "version": "Worker (6)",
+    "image": "Dwarf (Worker, 6).png",
+    "level": 11,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 18,
+      "magic": 1,
+      "ranged": 1,
+      "str": 6
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1407,
+    "name": "Dwarf",
+    "version": "Worker (7)",
+    "image": "Dwarf (Worker, 7).png",
+    "level": 11,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 10,
+      "def": 8,
+      "hp": 13,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 1408,
     "name": "Dwarf",
-    "version": "Level 7",
-    "image": "Dwarf.png",
+    "version": "Worker (8)",
+    "image": "Dwarf (Worker, 8).png",
     "level": 7,
     "speed": 4,
     "style": [
-      "Crush"
+      "Stab"
     ],
     "size": 1,
     "max_hit": "2",
@@ -30791,6 +31184,50 @@
       "atk": 6,
       "def": 6,
       "hp": 10,
+      "magic": 1,
+      "ranged": 1,
+      "str": 6
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 8496,
+    "name": "Dwarf",
+    "version": "Worker (9)",
+    "image": "Dwarf (Worker, 9).png",
+    "level": 11,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 18,
       "magic": 1,
       "ranged": 1,
       "str": 6
@@ -39509,7 +39946,7 @@
     "id": 14779,
     "name": "Gemstone Crab",
     "version": "",
-    "image": "Gemstone Crab.png",
+    "image": "Gemstone Crab (Christmas).png",
     "level": 160,
     "speed": 7,
     "style": [
@@ -41064,7 +41501,7 @@
     "id": 5779,
     "name": "Giant Mole",
     "version": "",
-    "image": "Giant Mole.png",
+    "image": "Giant Mole (Christmas).png",
     "level": 230,
     "speed": 4,
     "style": [
@@ -44602,11 +45039,11 @@
     "weakness": null
   },
   {
-    "id": 1834,
+    "id": 3141,
     "name": "Gorak",
-    "version": "Level 145",
-    "image": "Gorak.png",
-    "level": 145,
+    "version": "GWD",
+    "image": "Gorak (GWD).png",
+    "level": 149,
     "speed": 4,
     "style": [
       "Typeless Crush"
@@ -44614,12 +45051,12 @@
     "size": 2,
     "max_hit": "14",
     "skills": {
-      "atk": 130,
-      "def": 131,
-      "hp": 112,
+      "atk": 133,
+      "def": 135,
+      "hp": 128,
       "magic": 1,
       "ranged": 1,
-      "str": 130
+      "str": 126
     },
     "offensive": {
       "atk": 0,
@@ -44646,11 +45083,11 @@
     "weakness": null
   },
   {
-    "id": 3141,
+    "id": 1834,
     "name": "Gorak",
-    "version": "Level 149",
-    "image": "Gorak (GWD).png",
-    "level": 149,
+    "version": "Level 145",
+    "image": "Gorak.png",
+    "level": 145,
     "speed": 4,
     "style": [
       "Typeless Crush"
@@ -44658,12 +45095,12 @@
     "size": 2,
     "max_hit": "14",
     "skills": {
-      "atk": 133,
-      "def": 135,
-      "hp": 128,
+      "atk": 130,
+      "def": 131,
+      "hp": 112,
       "magic": 1,
       "ranged": 1,
-      "str": 126
+      "str": 130
     },
     "offensive": {
       "atk": 0,
@@ -50816,7 +51253,7 @@
     "id": 3254,
     "name": "Guard",
     "version": "Edgeville 1",
-    "image": "Guard (Edgeville, 1).png",
+    "image": "Guard (Edgeville, 1, Christmas).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -50860,7 +51297,7 @@
     "id": 11922,
     "name": "Guard",
     "version": "Edgeville 2",
-    "image": "Guard (Edgeville, 2).png",
+    "image": "Guard (Edgeville, 2, Christmas).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -50904,7 +51341,7 @@
     "id": 11923,
     "name": "Guard",
     "version": "Edgeville 3",
-    "image": "Guard (Edgeville, 3).png",
+    "image": "Guard (Edgeville, 3, Christmas).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -50948,7 +51385,7 @@
     "id": 11924,
     "name": "Guard",
     "version": "Edgeville 4",
-    "image": "Guard (Edgeville, 4).png",
+    "image": "Guard (Edgeville, 4, Christmas).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -50992,7 +51429,7 @@
     "id": 3271,
     "name": "Guard",
     "version": "Falador (battleaxe)",
-    "image": "Guard (Falador, battleaxe).png",
+    "image": "Guard (Falador, battleaxe, Christmas).png",
     "level": 19,
     "speed": 6,
     "style": [
@@ -51036,7 +51473,7 @@
     "id": 3270,
     "name": "Guard",
     "version": "Falador (crossbow, 1)",
-    "image": "Guard (Falador, crossbow, 1).png",
+    "image": "Guard (Falador, crossbow, 1, Christmas).png",
     "level": 22,
     "speed": 6,
     "style": [
@@ -51080,7 +51517,7 @@
     "id": 11945,
     "name": "Guard",
     "version": "Falador (crossbow, 2)",
-    "image": "Guard (Falador, crossbow, 2).png",
+    "image": "Guard (Falador, crossbow, 2, Christmas).png",
     "level": 22,
     "speed": 6,
     "style": [
@@ -51124,7 +51561,7 @@
     "id": 11947,
     "name": "Guard",
     "version": "Falador (longbow, 1)",
-    "image": "Guard (Falador, longbow, 1).png",
+    "image": "Guard (Falador, longbow, 1, Christmas).png",
     "level": 22,
     "speed": 6,
     "style": [
@@ -51168,7 +51605,7 @@
     "id": 3273,
     "name": "Guard",
     "version": "Falador (longbow, 2)",
-    "image": "Guard (Falador, longbow, 2).png",
+    "image": "Guard (Falador, longbow, 2, Christmas).png",
     "level": 22,
     "speed": 6,
     "style": [
@@ -51212,7 +51649,7 @@
     "id": 3274,
     "name": "Guard",
     "version": "Falador (longbow, 3)",
-    "image": "Guard (Falador, longbow, 3).png",
+    "image": "Guard (Falador, longbow, 3, Christmas).png",
     "level": 22,
     "speed": 6,
     "style": [
@@ -51256,7 +51693,7 @@
     "id": 3269,
     "name": "Guard",
     "version": "Falador (sword, 1)",
-    "image": "Guard (Falador, sword, 1).png",
+    "image": "Guard (Falador, sword, 1, Christmas).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -51300,7 +51737,7 @@
     "id": 11942,
     "name": "Guard",
     "version": "Falador (sword, 2)",
-    "image": "Guard (Falador, sword, 2).png",
+    "image": "Guard (Falador, sword, 2, Christmas).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -51344,7 +51781,7 @@
     "id": 11943,
     "name": "Guard",
     "version": "Falador (sword, 3)",
-    "image": "Guard (Falador, sword, 3).png",
+    "image": "Guard (Falador, sword, 3, Christmas).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -51388,7 +51825,7 @@
     "id": 11944,
     "name": "Guard",
     "version": "Falador (sword, 4)",
-    "image": "Guard (Falador, sword, 4).png",
+    "image": "Guard (Falador, sword, 4, Christmas).png",
     "level": 21,
     "speed": 4,
     "style": [
@@ -51432,7 +51869,7 @@
     "id": 11946,
     "name": "Guard",
     "version": "Falador (unarmed)",
-    "image": "Guard (Falador, unarmed).png",
+    "image": "Guard (Falador, unarmed, Christmas).png",
     "level": 19,
     "speed": 6,
     "style": [
@@ -55894,7 +56331,7 @@
     },
     "weakness": {
       "element": "fire",
-      "severity": 100
+      "severity": 50
     }
   },
   {
@@ -56178,7 +56615,7 @@
     },
     "weakness": {
       "element": "fire",
-      "severity": 100
+      "severity": 50
     }
   },
   {
@@ -57129,7 +57566,7 @@
     "id": 5007,
     "name": "Imp",
     "version": "Normal",
-    "image": "Imp.png",
+    "image": "Imp (Christmas).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -58641,7 +59078,7 @@
     "id": 7691,
     "name": "Jal-Nib",
     "version": "",
-    "image": "Jal-Nib.png",
+    "image": "Jal-Nib (Christmas).png",
     "level": 32,
     "speed": 4,
     "style": [
@@ -60273,7 +60710,7 @@
     "style": [
       "Stab"
     ],
-    "size": 2,
+    "size": 1,
     "max_hit": "8",
     "skills": {
       "atk": 70,
@@ -60320,7 +60757,7 @@
     "style": [
       "Stab"
     ],
-    "size": 2,
+    "size": 1,
     "max_hit": "8",
     "skills": {
       "atk": 70,
@@ -62511,7 +62948,7 @@
     "id": 239,
     "name": "King Black Dragon",
     "version": "",
-    "image": "King Black Dragon.png",
+    "image": "King Black Dragon (Christmas).png",
     "level": 276,
     "speed": 4,
     "style": [
@@ -64073,7 +64510,7 @@
     "id": 494,
     "name": "Kraken",
     "version": "Kraken",
-    "image": "Kraken.png",
+    "image": "Kraken (Christmas).png",
     "level": 291,
     "speed": 4,
     "style": [
@@ -66864,7 +67301,7 @@
     "id": 6604,
     "name": "Mammoth",
     "version": "Normal",
-    "image": "Mammoth.png",
+    "image": "Mammoth (Christmas).png",
     "level": 80,
     "speed": 4,
     "style": [
@@ -67040,7 +67477,7 @@
     "id": 3106,
     "name": "Man",
     "version": "1",
-    "image": "Man (blue).png",
+    "image": "Man (blue, Christmas).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -67084,7 +67521,7 @@
     "id": 3107,
     "name": "Man",
     "version": "2",
-    "image": "Man (red).png",
+    "image": "Man (red, Christmas).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -67128,7 +67565,7 @@
     "id": 3108,
     "name": "Man",
     "version": "3",
-    "image": "Man.png",
+    "image": "Man (green, Christmas).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -67172,7 +67609,7 @@
     "id": 3109,
     "name": "Man",
     "version": "4",
-    "image": "Man (backpack).png",
+    "image": "Man (backpack, Christmas).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -67216,7 +67653,7 @@
     "id": 3110,
     "name": "Man",
     "version": "4, Musa Point",
-    "image": "Man (backpack).png",
+    "image": "Man (backpack, Christmas).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -67348,7 +67785,7 @@
     "id": 3264,
     "name": "Man",
     "version": "Falador",
-    "image": "Man (light blue).png",
+    "image": "Man (light blue, Christmas).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -72451,7 +72888,7 @@
     "id": 7276,
     "name": "Mutated Bloodveld",
     "version": "",
-    "image": "Mutated Bloodveld.png",
+    "image": "Mutated Bloodveld (Christmas).png",
     "level": 123,
     "speed": 4,
     "style": [
@@ -76055,6 +76492,53 @@
     "weakness": null
   },
   {
+    "id": 2233,
+    "name": "Ogre",
+    "version": "GWD",
+    "image": "Ogre (GWD).png",
+    "level": 58,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "8",
+    "skills": {
+      "atk": 46,
+      "def": 43,
+      "hp": 70,
+      "magic": 1,
+      "ranged": 1,
+      "str": 48
+    },
+    "offensive": {
+      "atk": 22,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 21
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
+  },
+  {
     "id": 136,
     "name": "Ogre",
     "version": "Level 53",
@@ -76081,53 +76565,6 @@
       "ranged": 0,
       "ranged_str": 0,
       "str": 20
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": {
-      "element": "earth",
-      "severity": 20
-    }
-  },
-  {
-    "id": 2233,
-    "name": "Ogre",
-    "version": "Level 58",
-    "image": "Ogre (GWD).png",
-    "level": 58,
-    "speed": 6,
-    "style": [
-      "Crush"
-    ],
-    "size": 2,
-    "max_hit": "8",
-    "skills": {
-      "atk": 46,
-      "def": 43,
-      "hp": 70,
-      "magic": 1,
-      "ranged": 1,
-      "str": 48
-    },
-    "offensive": {
-      "atk": 22,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 21
     },
     "defensive": {
       "flat_armour": 0,
@@ -79705,7 +80142,7 @@
     "id": 10812,
     "name": "Pestilent Bloat",
     "version": "Entry",
-    "image": "Pestilent Bloat.png",
+    "image": "Pestilent Bloat (Christmas, Santa hat).png",
     "level": 312,
     "speed": 1,
     "style": [
@@ -79751,7 +80188,7 @@
     "id": 10813,
     "name": "Pestilent Bloat",
     "version": "Hard",
-    "image": "Pestilent Bloat.png",
+    "image": "Pestilent Bloat (Christmas, Santa hat).png",
     "level": 1044,
     "speed": 1,
     "style": [
@@ -79797,7 +80234,7 @@
     "id": 8359,
     "name": "Pestilent Bloat",
     "version": "Normal",
-    "image": "Pestilent Bloat.png",
+    "image": "Pestilent Bloat (Christmas, Santa hat).png",
     "level": 870,
     "speed": 1,
     "style": [
@@ -80355,7 +80792,7 @@
     "id": 9416,
     "name": "Phosani's Nightmare",
     "version": "",
-    "image": "The Nightmare.png",
+    "image": "The Nightmare (Christmas).png",
     "level": 1024,
     "speed": 6,
     "style": [
@@ -89018,7 +89455,7 @@
     "id": 12377,
     "name": "Scarred imp",
     "version": "",
-    "image": "Scarred imp.png",
+    "image": "Scarred imp (Christmas).png",
     "level": 19,
     "speed": 4,
     "style": [
@@ -91297,7 +91734,7 @@
     "id": 14860,
     "name": "Shellbane gryphon",
     "version": "",
-    "image": "Shellbane gryphon.png",
+    "image": "Shellbane gryphon (Christmas).png",
     "level": 235,
     "speed": 5,
     "style": [
@@ -103513,7 +103950,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "12",
+    "max_hit": "11",
     "skills": {
       "atk": 97,
       "def": 91,
@@ -105735,7 +106172,7 @@
     "id": 9425,
     "name": "The Nightmare",
     "version": "",
-    "image": "The Nightmare.png",
+    "image": "The Nightmare (Christmas).png",
     "level": 814,
     "speed": 6,
     "style": [
@@ -111298,7 +111735,7 @@
     "id": 7706,
     "name": "TzKal-Zuk",
     "version": "Enraged",
-    "image": "TzKal-Zuk.png",
+    "image": "TzKal-Zuk (Christmas).png",
     "level": 1400,
     "speed": 7,
     "style": [
@@ -111343,7 +111780,7 @@
     "id": 7706,
     "name": "TzKal-Zuk",
     "version": "Normal",
-    "image": "TzKal-Zuk.png",
+    "image": "TzKal-Zuk (Christmas).png",
     "level": 1400,
     "speed": 10,
     "style": [
@@ -111388,7 +111825,7 @@
     "id": 3127,
     "name": "TzTok-Jad",
     "version": "",
-    "image": "TzTok-Jad.png",
+    "image": "TzTok-Jad (Christmas).png",
     "level": 702,
     "speed": 8,
     "style": [
@@ -112201,7 +112638,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "fire",
+      "element": "earth",
       "severity": 50
     }
   },
@@ -112250,7 +112687,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "fire",
+      "element": "earth",
       "severity": 50
     }
   },
@@ -115072,7 +115509,7 @@
     "id": 8058,
     "name": "Vorkath",
     "version": "Dragon Slayer II",
-    "image": "Vorkath.png",
+    "image": "Vorkath (Christmas).png",
     "level": 392,
     "speed": 5,
     "style": [
@@ -115126,7 +115563,7 @@
     "id": 8059,
     "name": "Vorkath",
     "version": "Post-quest",
-    "image": "Vorkath.png",
+    "image": "Vorkath (Christmas).png",
     "level": 732,
     "speed": 5,
     "style": [
@@ -119933,7 +120370,7 @@
     "id": 3111,
     "name": "Woman",
     "version": "1",
-    "image": "Woman.png",
+    "image": "Woman (purple, Christmas).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -119977,7 +120414,7 @@
     "id": 3112,
     "name": "Woman",
     "version": "2",
-    "image": "Woman (brown).png",
+    "image": "Woman (brown, Christmas).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -120021,7 +120458,7 @@
     "id": 3113,
     "name": "Woman",
     "version": "3",
-    "image": "Woman (red).png",
+    "image": "Woman (red, Christmas).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -120803,7 +121240,7 @@
     "id": 14176,
     "name": "Yama",
     "version": "Normal",
-    "image": "Yama.png",
+    "image": "Yama (Christmas).png",
     "level": 1238,
     "speed": 8,
     "style": [
@@ -120854,7 +121291,7 @@
     "id": 14176,
     "name": "Yama",
     "version": "Phase 3",
-    "image": "Yama.png",
+    "image": "Yama (Christmas).png",
     "level": 1238,
     "speed": 7,
     "style": [
@@ -127879,7 +128316,7 @@
     "id": 2043,
     "name": "Zulrah",
     "version": "Magma",
-    "image": "Zulrah (magma).png",
+    "image": "Zulrah (magma, Christmas).png",
     "level": 725,
     "speed": 3,
     "style": [
@@ -127926,7 +128363,7 @@
     "id": 2042,
     "name": "Zulrah",
     "version": "Serpentine",
-    "image": "Zulrah (serpentine).png",
+    "image": "Zulrah (serpentine, Christmas).png",
     "level": 725,
     "speed": 3,
     "style": [
@@ -127973,7 +128410,7 @@
     "id": 2044,
     "name": "Zulrah",
     "version": "Tanzanite",
-    "image": "Zulrah (tanzanite).png",
+    "image": "Zulrah (tanzanite, Christmas).png",
     "level": 725,
     "speed": 3,
     "style": [

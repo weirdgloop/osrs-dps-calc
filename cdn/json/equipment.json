@@ -2310,6 +2310,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Accursed sceptre (a) (beta)",
+    "id": 27679,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Accursed sceptre (a) (beta).png",
+    "speed": 4,
+    "category": "Powered Staff",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 22,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 20,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Achievement diary cape",
     "id": 13069,
     "version": "Trimmed",
@@ -11193,7 +11223,7 @@
     "name": "Aquanite hopper",
     "id": 32879,
     "version": "",
-    "slot": "Shield",
+    "slot": "shield",
     "image": "Aquanite hopper.png",
     "speed": 0,
     "category": "",
@@ -74831,7 +74861,7 @@
       "str": 0,
       "ranged_str": 0,
       "magic_str": 0,
-      "prayer": -1
+      "prayer": 0
     },
     "offensive": {
       "stab": 0,
@@ -130727,7 +130757,7 @@
       "stab": 2,
       "slash": 0,
       "crush": 21,
-      "magic": 7,
+      "magic": 0,
       "ranged": 0
     },
     "defensive": {
