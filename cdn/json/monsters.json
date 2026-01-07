@@ -4030,8 +4030,7 @@
     "level": 75,
     "speed": 4,
     "style": [
-      "Magic",
-      "Slash"
+      "Magic"
     ],
     "size": 1,
     "max_hit": "6",
@@ -4078,8 +4077,7 @@
     "level": 75,
     "speed": 4,
     "style": [
-      "Magic",
-      "Slash"
+      "Magic"
     ],
     "size": 1,
     "max_hit": "6",
@@ -4126,7 +4124,6 @@
     "level": 81,
     "speed": 4,
     "style": [
-      "Magic",
       "Slash"
     ],
     "size": 1,
@@ -24906,10 +24903,10 @@
     "weakness": null
   },
   {
-    "id": 2236,
+    "id": 2235,
     "name": "Cyclops (God Wars Dungeon)",
-    "version": "Grey",
-    "image": "Cyclops (GWD, 2).png",
+    "version": "Green",
+    "image": "Cyclops (GWD).png",
     "level": 81,
     "speed": 6,
     "style": [
@@ -24950,10 +24947,10 @@
     "weakness": null
   },
   {
-    "id": 2235,
+    "id": 2236,
     "name": "Cyclops (God Wars Dungeon)",
-    "version": "Teal",
-    "image": "Cyclops (GWD).png",
+    "version": "Grey",
+    "image": "Cyclops (GWD, 2).png",
     "level": 81,
     "speed": 6,
     "style": [
@@ -30644,14 +30641,146 @@
     "weakness": null
   },
   {
+    "id": 294,
+    "name": "Dwarf",
+    "version": "Mining Guild (1)",
+    "image": "Dwarf (Falador, 1).png",
+    "level": 11,
+    "speed": 5,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 12,
+      "def": 8,
+      "hp": 16,
+      "magic": 1,
+      "ranged": 1,
+      "str": 5
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 295,
+    "name": "Dwarf",
+    "version": "Mining Guild (2)",
+    "image": "Dwarf (Falador, 2).png",
+    "level": 11,
+    "speed": 5,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 8,
+      "hp": 16,
+      "magic": 1,
+      "ranged": 1,
+      "str": 5
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 10,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 296,
+    "name": "Dwarf",
+    "version": "Mining Guild (3)",
+    "image": "Dwarf (Falador, 3).png",
+    "level": 10,
+    "speed": 5,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 12,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 290,
     "name": "Dwarf",
-    "version": "Level 10",
+    "version": "Standard",
     "image": "Dwarf.png",
     "level": 10,
     "speed": 5,
     "style": [
-      "Crush"
+      "Stab"
     ],
     "size": 1,
     "max_hit": "2",
@@ -30688,54 +30817,10 @@
     "weakness": null
   },
   {
-    "id": 294,
-    "name": "Dwarf",
-    "version": "Level 11",
-    "image": "Dwarf.png",
-    "level": 11,
-    "speed": 5,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "2",
-    "skills": {
-      "atk": 8,
-      "def": 8,
-      "hp": 18,
-      "magic": 1,
-      "ranged": 1,
-      "str": 8
-    },
-    "offensive": {
-      "atk": 5,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 7
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 5,
-      "heavy": 10,
-      "standard": 10,
-      "light": 10,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
     "id": 292,
     "name": "Dwarf",
-    "version": "Level 20",
-    "image": "Dwarf.png",
+    "version": "Standard (Level 20)",
+    "image": "Dwarf (Level 20).png",
     "level": 20,
     "speed": 6,
     "style": [
@@ -30776,14 +30861,322 @@
     "weakness": null
   },
   {
+    "id": 1401,
+    "name": "Dwarf",
+    "version": "Worker (1)",
+    "image": "Dwarf (Worker, 1).png",
+    "level": 11,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 8,
+      "hp": 16,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1402,
+    "name": "Dwarf",
+    "version": "Worker (2)",
+    "image": "Dwarf (Worker, 2).png",
+    "level": 11,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 8,
+      "hp": 16,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1403,
+    "name": "Dwarf",
+    "version": "Worker (3)",
+    "image": "Dwarf (Worker, 3).png",
+    "level": 11,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 8,
+      "hp": 16,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 10,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 10,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1404,
+    "name": "Dwarf",
+    "version": "Worker (4)",
+    "image": "Dwarf (Worker, 4).png",
+    "level": 11,
+    "speed": 6,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 8,
+      "hp": 16,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1405,
+    "name": "Dwarf",
+    "version": "Worker (5)",
+    "image": "Dwarf (Worker, 5).png",
+    "level": 10,
+    "speed": 6,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 8,
+      "hp": 12,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1406,
+    "name": "Dwarf",
+    "version": "Worker (6)",
+    "image": "Dwarf (Worker, 6).png",
+    "level": 11,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 18,
+      "magic": 1,
+      "ranged": 1,
+      "str": 6
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1407,
+    "name": "Dwarf",
+    "version": "Worker (7)",
+    "image": "Dwarf (Worker, 7).png",
+    "level": 11,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 10,
+      "def": 8,
+      "hp": 13,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 1408,
     "name": "Dwarf",
-    "version": "Level 7",
-    "image": "Dwarf.png",
+    "version": "Worker (8)",
+    "image": "Dwarf (Worker, 8).png",
     "level": 7,
     "speed": 4,
     "style": [
-      "Crush"
+      "Stab"
     ],
     "size": 1,
     "max_hit": "2",
@@ -30791,6 +31184,50 @@
       "atk": 6,
       "def": 6,
       "hp": 10,
+      "magic": 1,
+      "ranged": 1,
+      "str": 6
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 8496,
+    "name": "Dwarf",
+    "version": "Worker (9)",
+    "image": "Dwarf (Worker, 9).png",
+    "level": 11,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 18,
       "magic": 1,
       "ranged": 1,
       "str": 6
@@ -44602,11 +45039,11 @@
     "weakness": null
   },
   {
-    "id": 1834,
+    "id": 3141,
     "name": "Gorak",
-    "version": "Level 145",
-    "image": "Gorak.png",
-    "level": 145,
+    "version": "GWD",
+    "image": "Gorak (GWD).png",
+    "level": 149,
     "speed": 4,
     "style": [
       "Typeless Crush"
@@ -44614,12 +45051,12 @@
     "size": 2,
     "max_hit": "14",
     "skills": {
-      "atk": 130,
-      "def": 131,
-      "hp": 112,
+      "atk": 133,
+      "def": 135,
+      "hp": 128,
       "magic": 1,
       "ranged": 1,
-      "str": 130
+      "str": 126
     },
     "offensive": {
       "atk": 0,
@@ -44646,11 +45083,11 @@
     "weakness": null
   },
   {
-    "id": 3141,
+    "id": 1834,
     "name": "Gorak",
-    "version": "Level 149",
-    "image": "Gorak (GWD).png",
-    "level": 149,
+    "version": "Level 145",
+    "image": "Gorak.png",
+    "level": 145,
     "speed": 4,
     "style": [
       "Typeless Crush"
@@ -44658,12 +45095,12 @@
     "size": 2,
     "max_hit": "14",
     "skills": {
-      "atk": 133,
-      "def": 135,
-      "hp": 128,
+      "atk": 130,
+      "def": 131,
+      "hp": 112,
       "magic": 1,
       "ranged": 1,
-      "str": 126
+      "str": 130
     },
     "offensive": {
       "atk": 0,
@@ -55894,7 +56331,7 @@
     },
     "weakness": {
       "element": "fire",
-      "severity": 100
+      "severity": 50
     }
   },
   {
@@ -56178,7 +56615,7 @@
     },
     "weakness": {
       "element": "fire",
-      "severity": 100
+      "severity": 50
     }
   },
   {
@@ -60273,7 +60710,7 @@
     "style": [
       "Stab"
     ],
-    "size": 2,
+    "size": 1,
     "max_hit": "8",
     "skills": {
       "atk": 70,
@@ -60320,7 +60757,7 @@
     "style": [
       "Stab"
     ],
-    "size": 2,
+    "size": 1,
     "max_hit": "8",
     "skills": {
       "atk": 70,
@@ -67128,7 +67565,7 @@
     "id": 3108,
     "name": "Man",
     "version": "3",
-    "image": "Man.png",
+    "image": "Man (green).png",
     "level": 2,
     "speed": 4,
     "style": [
@@ -76055,6 +76492,53 @@
     "weakness": null
   },
   {
+    "id": 2233,
+    "name": "Ogre",
+    "version": "GWD",
+    "image": "Ogre (GWD).png",
+    "level": 58,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "8",
+    "skills": {
+      "atk": 46,
+      "def": 43,
+      "hp": 70,
+      "magic": 1,
+      "ranged": 1,
+      "str": 48
+    },
+    "offensive": {
+      "atk": 22,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 21
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
+  },
+  {
     "id": 136,
     "name": "Ogre",
     "version": "Level 53",
@@ -76081,53 +76565,6 @@
       "ranged": 0,
       "ranged_str": 0,
       "str": 20
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": {
-      "element": "earth",
-      "severity": 20
-    }
-  },
-  {
-    "id": 2233,
-    "name": "Ogre",
-    "version": "Level 58",
-    "image": "Ogre (GWD).png",
-    "level": 58,
-    "speed": 6,
-    "style": [
-      "Crush"
-    ],
-    "size": 2,
-    "max_hit": "8",
-    "skills": {
-      "atk": 46,
-      "def": 43,
-      "hp": 70,
-      "magic": 1,
-      "ranged": 1,
-      "str": 48
-    },
-    "offensive": {
-      "atk": 22,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 21
     },
     "defensive": {
       "flat_armour": 0,
@@ -103513,7 +103950,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "12",
+    "max_hit": "11",
     "skills": {
       "atk": 97,
       "def": 91,
@@ -112201,7 +112638,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "fire",
+      "element": "earth",
       "severity": 50
     }
   },
@@ -112250,7 +112687,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "fire",
+      "element": "earth",
       "severity": 50
     }
   },
@@ -121881,7 +122318,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 65,
@@ -121927,7 +122367,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 66,
@@ -121973,7 +122416,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 67,
@@ -122019,7 +122465,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 68,
@@ -122065,7 +122514,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 7486,
