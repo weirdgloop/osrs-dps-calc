@@ -34466,7 +34466,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "18",
+    "max_hit": "18 (Standard)",
     "skills": {
       "atk": 220,
       "def": 100,
@@ -55084,10 +55084,11 @@
     "level": 40,
     "speed": 4,
     "style": [
-      "Stab"
+      "Stab",
+      "Ranged"
     ],
     "size": 2,
-    "max_hit": "5",
+    "max_hit": "5 (Melee)",
     "skills": {
       "atk": 38,
       "def": 39,
