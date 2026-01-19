@@ -109112,7 +109112,7 @@
   {
     "name": "Prospector boots",
     "id": 12016,
-    "version": "",
+    "version": "Motherlode Mine",
     "slot": "feet",
     "image": "Prospector boots.png",
     "speed": 0,
@@ -109142,7 +109142,7 @@
   {
     "name": "Prospector helmet",
     "id": 12013,
-    "version": "",
+    "version": "Motherlode Mine",
     "slot": "head",
     "image": "Prospector helmet.png",
     "speed": 0,
@@ -109172,7 +109172,7 @@
   {
     "name": "Prospector jacket",
     "id": 12014,
-    "version": "",
+    "version": "Motherlode Mine",
     "slot": "body",
     "image": "Prospector jacket.png",
     "speed": 0,
@@ -109202,7 +109202,7 @@
   {
     "name": "Prospector legs",
     "id": 12015,
-    "version": "",
+    "version": "Motherlode Mine",
     "slot": "legs",
     "image": "Prospector legs.png",
     "speed": 0,
