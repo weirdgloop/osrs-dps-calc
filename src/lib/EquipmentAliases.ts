@@ -182,6 +182,7 @@ const equipmentAliases = {
   19481: [26712], // Heavy ballista
   10828: [28070], // Helm of neitiznot
   3840: [26496], // Holy book
+  33068: [33072, 33070], // Hooded slayer helmet (i)#Nightmare Zone
   28262: [28474], // Ice ancient sceptre#Normal
   21793: [24249], // Imbued guthix cape#Normal
   21784: [24234], // Imbued guthix max cape#Normal
