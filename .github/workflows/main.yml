@@ -78,7 +78,7 @@ jobs:
             -H 'Content-Type: application/json' \
             -H 'Authorization: Bearer ${{ secrets.CLOUDFLARE_TOKEN }}' \
             --data '{
-              "files": [
-                "https://tools.runescape.wiki/${{ env.DIRECTORY_NAME }}"
+              "hosts": [
+                "dps.osrs.wiki"
               ]
             }'
