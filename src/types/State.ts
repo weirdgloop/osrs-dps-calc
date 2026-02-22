@@ -34,6 +34,13 @@ export interface Preferences {
   hitDistsHideZeros: boolean; // legacy name
   hitDistShowSpec: boolean;
   resultsExpanded: boolean;
+
+  debug?: {
+    itemIdsExpanded?: boolean;
+    calcDetailsExpanded?: boolean;
+    specDetailsExpanded?: boolean;
+    npcDetailsExpanded?: boolean;
+  }
 }
 
 export interface ChartEntry {

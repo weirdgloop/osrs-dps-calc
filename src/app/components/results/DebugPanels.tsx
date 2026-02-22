@@ -11,7 +11,9 @@ const DebugPanels: React.FC = observer(() => {
   const store = useStore();
   if (!store.debug) return null;
 
-  const { calc, player, selectedLoadout } = store;
+  const {
+    calc, player, selectedLoadout, prefs,
+  } = store;
   const details: DetailEntry[] = calc.loadouts[selectedLoadout]?.details || [];
   const specDetails: DetailEntry[] = calc.loadouts[selectedLoadout]?.specDetails || [];
   const npcDetails: DetailEntry[] = calc.loadouts[selectedLoadout]?.npcDetails || [];
@@ -19,6 +21,8 @@ const DebugPanels: React.FC = observer(() => {
   return (
     <>
       <SectionAccordion
+        defaultIsOpen={prefs.debug?.itemIdsExpanded || false}
+        onIsOpenChanged={(v) => store.updatePreferences({ debug: { itemIdsExpanded: v } })}
         title={(
           <div className="flex items-center gap-2">
             <div className="w-6 flex justify-center"><LazyImage src={debug.src} /></div>
@@ -28,7 +32,7 @@ const DebugPanels: React.FC = observer(() => {
           </div>
         )}
       >
-        <table className="w-full my-5">
+        <table className="w-full">
           <thead>
             <tr>
               <th className="text-center w-1/4 border-x border-y font-bold font-serif bg-btns-400 dark:bg-dark-500 text-white">Slot</th>
@@ -50,6 +54,8 @@ const DebugPanels: React.FC = observer(() => {
         </table>
       </SectionAccordion>
       <SectionAccordion
+        defaultIsOpen={prefs.debug?.calcDetailsExpanded || false}
+        onIsOpenChanged={(v) => store.updatePreferences({ debug: { calcDetailsExpanded: v } })}
         title={(
           <div className="flex items-center gap-2">
             <div className="w-6 flex justify-center"><LazyImage src={debug.src} /></div>
@@ -58,7 +64,6 @@ const DebugPanels: React.FC = observer(() => {
             </h3>
           </div>
         )}
-        defaultIsOpen
       >
         <table className="w-full">
           <thead>
@@ -78,6 +83,8 @@ const DebugPanels: React.FC = observer(() => {
         </table>
       </SectionAccordion>
       <SectionAccordion
+        defaultIsOpen={prefs.debug?.specDetailsExpanded || false}
+        onIsOpenChanged={(v) => store.updatePreferences({ debug: { specDetailsExpanded: v } })}
         title={(
           <div className="flex items-center gap-2">
             <div className="w-6 flex justify-center"><LazyImage src={debug.src} /></div>
@@ -86,7 +93,6 @@ const DebugPanels: React.FC = observer(() => {
             </h3>
           </div>
         )}
-        defaultIsOpen={false}
       >
         <table className="w-full">
           <thead>
@@ -106,6 +112,8 @@ const DebugPanels: React.FC = observer(() => {
         </table>
       </SectionAccordion>
       <SectionAccordion
+        defaultIsOpen={prefs.debug?.npcDetailsExpanded || false}
+        onIsOpenChanged={(v) => store.updatePreferences({ debug: { npcDetailsExpanded: v } })}
         title={(
           <div className="flex items-center gap-2">
             <div className="w-6 flex justify-center"><LazyImage src={debug.src} /></div>
@@ -114,7 +122,6 @@ const DebugPanels: React.FC = observer(() => {
             </h3>
           </div>
         )}
-        defaultIsOpen={false}
       >
         <table className="w-full">
           <thead>
