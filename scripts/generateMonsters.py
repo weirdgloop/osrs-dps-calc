@@ -122,7 +122,7 @@ def main():
     required_imgs = []
 
     monsters_to_skip = ["Albatross", "Armoured kraken", "Bull shark", "Butterfly ray", "Eagle ray", 
-    "Frigatebird", "Great white shark", "Hammerhead shark", "Manta ray (Sailing)", "Mogre (Sailing)", "Narwhal", 
+    "Frigatebird", "Great white shark", "Hammerhead shark", "Manta ray (monster)", "Mogre (Sailing)", "Narwhal", 
     "Orca", "Osprey", "Pygmy kraken", "Spined kraken", "Stingray", "Tern", "Tiger shark", "Vampyre kraken"]
 
     # Loop over the monsters data from the wiki
