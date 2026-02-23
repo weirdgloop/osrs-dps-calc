@@ -1913,10 +1913,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return this.getAttackSpeed() - 1;
     }
 
-    if (this.opts.usingSpecialAttack && this.wearing('Eye of ayak')) {
-      return 5;
-    }
-
     return this.getAttackSpeed();
   }
 
