@@ -71,17 +71,7 @@ ITEMS_TO_SKIP = [
     'Centurion cuirass',
     'Ruinous powers (item)',
     'Battlehat',
-    'Zaryte bow',
-    'Corrupted armadyl godsword',
-    'Corrupted dark bow',
-    'Corrupted dragon claws',
-    'Corrupted scythe of vitur',
-    'Corrupted tumeken\'s shadow',
-    'Corrupted twisted bow',
-    'Corrupted voidwaker',
-    'Corrupted volatile nightmare staff',
-    'The dogsword (Deadman Mode)',
-    'Thunder khopesh (Deadman Mode)'
+    'Zaryte bow'
 ]
 
 def getEquipmentData():
