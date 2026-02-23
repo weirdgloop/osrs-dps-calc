@@ -72,7 +72,7 @@ const equipmentAliases = {
   12612: [26490], // Book of darkness
   12610: [26492], // Book of law
   12608: [26494], // Book of war
-  25867: [25896, 25890, 25892, 25886, 25884, 25894, 25888], // Bow of faerdhinen (c)
+  25867: [25896, 25890, 25892, 25886, 25884, 25894, 25888, 33021], // Bow of faerdhinen (c)
   24204: [24206], // Brassica halo#Normal
   8844: [24136], // Bronze defender#Normal
   1155: [12211, 12221], // Bronze full helm
@@ -86,16 +86,16 @@ const equipmentAliases = {
   26721: [26722], // Centurion cuirass#Normal
   3105: [23413], // Climbing boots
   22711: [30593], // Collection log
-  23975: [27769, 27745, 27757, 27697, 27721, 27709, 27733], // Crystal body#Active
-  23977: [27771, 27747, 27759, 27699, 27723, 27711, 27735], // Crystal body#Inactive
-  23971: [27777, 27753, 27765, 27705, 27729, 27717, 27741], // Crystal helm#Active
-  23973: [27779, 27755, 27767, 27707, 27731, 27719, 27743], // Crystal helm#Inactive
-  23979: [27773, 27749, 27761, 27701, 27725, 27713, 27737], // Crystal legs#Active
-  23981: [27775, 27751, 27763, 27703, 27727, 27715, 27739], // Crystal legs#Inactive
+  23975: [27769, 27745, 27757, 27697, 27721, 27709, 27733, 33023], // Crystal body#Active
+  23977: [27771, 27747, 27759, 27699, 27723, 27711, 27735, 33025], // Crystal body#Inactive
+  23971: [27777, 27753, 27765, 27705, 27729, 27717, 27741, 33031], // Crystal helm#Active
+  23973: [27779, 27755, 27767, 27707, 27731, 27719, 27743, 33033], // Crystal helm#Inactive
+  23979: [27773, 27749, 27761, 27701, 27725, 27713, 27737, 33027], // Crystal legs#Active
+  23981: [27775, 27751, 27763, 27703, 27727, 27715, 27739, 33029], // Crystal legs#Inactive
   24288: [27123], // Dagon'hai hat
   24294: [27127], // Dagon'hai robe bottom
   24291: [27125], // Dagon'hai robe top
-  11235: [12766, 12765, 12768, 12767, 29611], // Dark bow#Regular
+  11235: [12766, 12765, 12768, 12767], // Dark bow#Regular
   4509: [24158], // Decorative armour (gold platebody)#Normal
   4510: [24159], // Decorative armour (gold platelegs)#Normal
   11895: [24162], // Decorative armour (gold plateskirt)#Normal
@@ -183,11 +183,11 @@ const equipmentAliases = {
   10828: [28070], // Helm of neitiznot
   3840: [26496], // Holy book
   28262: [28474], // Ice ancient sceptre#Normal
-  21793: [24249], // Imbued guthix cape#Normal
+  21793: [24249, 29615], // Imbued guthix cape#Normal
   21784: [24234], // Imbued guthix max cape#Normal
-  21791: [24248], // Imbued saradomin cape#Normal
+  21791: [24248, 29617], // Imbued saradomin cape#Normal
   21776: [24232], // Imbued saradomin max cape#Normal
-  21795: [24250], // Imbued zamorak cape#Normal
+  21795: [24250, 29613], // Imbued zamorak cape#Normal
   21780: [24233], // Imbued zamorak max cape#Normal
   21295: [24224], // Infernal cape#Normal
   21285: [24133], // Infernal max cape#Normal
@@ -266,8 +266,8 @@ const equipmentAliases = {
   11770: [26767, 25258], // Seers ring (i)#Nightmare Zone
   24198: [24200], // Seren halo#Normal
   28266: [28476], // Shadow ancient sceptre#Normal
-  11864: [29816, 19639, 19643, 23073, 21264, 19647, 21888, 24370, 25910, 25898, 25904], // Slayer helmet
-  11865: [29822, 29818, 29820, 26675, 19641, 25179, 26676, 19645, 25181, 26680, 23075, 25189, 26678, 21266, 25185, 26677, 19649, 25183, 26674, 25177, 26679, 21890, 25187, 26681, 24444, 25191, 26684, 25912, 25914, 26682, 25900, 25902, 26683, 25906, 25908], // Slayer helmet (i)#Nightmare Zone
+  11864: [29816, 19639, 19643, 33066, 23073, 21264, 19647, 21888, 24370, 25910, 25898, 25904], // Slayer helmet
+  11865: [29822, 29818, 29820, 26675, 19641, 25179, 26676, 19645, 25181, 33072, 33068, 33070, 26680, 23075, 25189, 26678, 21266, 25185, 26677, 19649, 25183, 26674, 25177, 26679, 21890, 25187, 26681, 24444, 25191, 26684, 25912, 25914, 26682, 25900, 25902, 26683, 25906, 25908], // Slayer helmet (i)#Nightmare Zone
   28264: [28475], // Smoke ancient sceptre#Normal
   11787: [12795], // Steam battlestaff
   8846: [24138], // Steel defender#Normal
