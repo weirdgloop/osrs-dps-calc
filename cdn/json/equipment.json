@@ -390,6 +390,126 @@
     "isTwoHanded": false
   },
   {
+    "name": "25th anniversary 5x5 hat",
+    "id": 33086,
+    "version": "",
+    "slot": "head",
+    "image": "25th anniversary 5x5 hat.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "25th anniversary helmet",
+    "id": 33080,
+    "version": "",
+    "slot": "head",
+    "image": "25th anniversary helmet.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "25th anniversary skeleton tabard",
+    "id": 33084,
+    "version": "",
+    "slot": "body",
+    "image": "25th anniversary skeleton tabard.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "25th anniversary warrior tabard",
+    "id": 33082,
+    "version": "",
+    "slot": "body",
+    "image": "25th anniversary warrior tabard.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "3rd age amulet",
     "id": 10344,
     "version": "",
@@ -22374,7 +22494,7 @@
       "stab": 23,
       "slash": 30,
       "crush": 30,
-      "magic": 26,
+      "magic": 28,
       "ranged": 40
     },
     "isTwoHanded": false
@@ -22404,7 +22524,7 @@
       "stab": 23,
       "slash": 30,
       "crush": 30,
-      "magic": 26,
+      "magic": 28,
       "ranged": 40
     },
     "isTwoHanded": false
@@ -22434,7 +22554,7 @@
       "stab": 23,
       "slash": 30,
       "crush": 30,
-      "magic": 26,
+      "magic": 28,
       "ranged": 40
     },
     "isTwoHanded": false
@@ -25535,6 +25655,36 @@
     "version": "",
     "slot": "weapon",
     "image": "Bow of faerdhinen (c) (Trahaearn).png",
+    "speed": 5,
+    "category": "Bow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 106,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 128
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Bow of faerdhinen (c) (deadman)",
+    "id": 33021,
+    "version": "",
+    "slot": "weapon",
+    "image": "Bow of faerdhinen (c) (deadman).png",
     "speed": 5,
     "category": "Bow",
     "bonuses": {
@@ -35580,36 +35730,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Corrupted armadyl godsword",
-    "id": 28537,
-    "version": "",
-    "slot": "weapon",
-    "image": "Corrupted armadyl godsword.png",
-    "speed": 6,
-    "category": "2h Sword",
-    "bonuses": {
-      "str": 106,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 7
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 106,
-      "crush": 64,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
     "name": "Corrupted axe",
     "id": 23821,
     "version": "",
@@ -35814,66 +35934,6 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Corrupted dark bow",
-    "id": 29599,
-    "version": "",
-    "slot": "weapon",
-    "image": "Corrupted dark bow.png",
-    "speed": 6,
-    "category": "Bow",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 95
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Corrupted dragon claws",
-    "id": 28534,
-    "version": "",
-    "slot": "weapon",
-    "image": "Corrupted dragon claws.png",
-    "speed": 4,
-    "category": "Claw",
-    "bonuses": {
-      "str": 45,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 33,
-      "slash": 46,
-      "crush": -4,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 11,
-      "slash": 21,
-      "crush": 6,
       "magic": 0,
       "ranged": 0
     },
@@ -36480,66 +36540,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Corrupted scythe of vitur",
-    "id": 28543,
-    "version": "Charged",
-    "slot": "weapon",
-    "image": "Corrupted scythe of vitur.png",
-    "speed": 5,
-    "category": "Scythe",
-    "bonuses": {
-      "str": 60,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 56,
-      "slash": 88,
-      "crush": 24,
-      "magic": -6,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": -2,
-      "slash": 7,
-      "crush": 8,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Corrupted scythe of vitur",
-    "id": 28545,
-    "version": "Uncharged",
-    "slot": "weapon",
-    "image": "Corrupted scythe of vitur (uncharged).png",
-    "speed": 5,
-    "category": "Scythe",
-    "bonuses": {
-      "str": 40,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 40,
-      "slash": 60,
-      "crush": 8,
-      "magic": -6,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": -2,
-      "slash": 5,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
     "name": "Corrupted staff (attuned)",
     "id": 23853,
     "version": "",
@@ -36720,96 +36720,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Corrupted tumeken's shadow",
-    "id": 28547,
-    "version": "Charged",
-    "slot": "weapon",
-    "image": "Corrupted tumeken's shadow.png",
-    "speed": 5,
-    "category": "Powered Staff",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 1
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 35,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 20,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Corrupted tumeken's shadow",
-    "id": 28549,
-    "version": "Uncharged",
-    "slot": "weapon",
-    "image": "Corrupted tumeken's shadow (uncharged).png",
-    "speed": 5,
-    "category": "Powered Staff",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 1
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 35,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 20,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Corrupted twisted bow",
-    "id": 28540,
-    "version": "",
-    "slot": "weapon",
-    "image": "Corrupted twisted bow.png",
-    "speed": 6,
-    "category": "Bow",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 2,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 56
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
     "name": "Corrupted vesta's chainbody (bh)",
     "id": 27842,
     "version": "Activated",
@@ -36866,66 +36776,6 @@
       "crush": 16,
       "magic": -9,
       "ranged": 15
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Corrupted voidwaker",
-    "id": 28531,
-    "version": "",
-    "slot": "weapon",
-    "image": "Corrupted voidwaker.png",
-    "speed": 4,
-    "category": "Slash Sword",
-    "bonuses": {
-      "str": 64,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 56,
-      "slash": 64,
-      "crush": -2,
-      "magic": 4,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 1,
-      "crush": 0,
-      "magic": 2,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Corrupted volatile nightmare staff",
-    "id": 29602,
-    "version": "",
-    "slot": "weapon",
-    "image": "Corrupted volatile nightmare staff.png",
-    "speed": 5,
-    "category": "Staff",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 150,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 16,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 14,
-      "ranged": 0
     },
     "isTwoHanded": false
   },
@@ -37385,8 +37235,8 @@
     "version": "Aldarin",
     "slot": "weapon",
     "image": "Crate of adamantite ore (Aldarin).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -37415,8 +37265,8 @@
     "version": "Etceteria",
     "slot": "weapon",
     "image": "Crate of adamantite ore (Etceteria).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -37445,8 +37295,8 @@
     "version": "Rellekka",
     "slot": "weapon",
     "image": "Crate of adamantite ore (Rellekka).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -37475,8 +37325,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of alpaca wool.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -37505,8 +37355,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of amulets.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -37535,8 +37385,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of angler outfit pieces.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -37565,8 +37415,8 @@
     "version": "Lunar Isle",
     "slot": "weapon",
     "image": "Crate of antelope fur (Lunar Isle).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -37595,8 +37445,8 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of antelope fur (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -37625,8 +37475,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of antelope meat.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -37655,8 +37505,8 @@
     "version": "Ardougne",
     "slot": "weapon",
     "image": "Crate of arrowtips (Ardougne).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -37685,8 +37535,8 @@
     "version": "Catherby",
     "slot": "weapon",
     "image": "Crate of arrowtips (Catherby).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -37715,8 +37565,8 @@
     "version": "Corsair Cove",
     "slot": "weapon",
     "image": "Crate of arrowtips (Corsair Cove).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -37745,8 +37595,8 @@
     "version": "Port Khazard",
     "slot": "weapon",
     "image": "Crate of arrowtips (Port Khazard).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -37775,8 +37625,8 @@
     "version": "Port Tyras",
     "slot": "weapon",
     "image": "Crate of arrowtips (Port Tyras).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -37805,8 +37655,8 @@
     "version": "Rellekka",
     "slot": "weapon",
     "image": "Crate of arrowtips (Rellekka).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -37835,8 +37685,8 @@
     "version": "The Pandemonium",
     "slot": "weapon",
     "image": "Crate of arrowtips (The Pandemonium).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -37865,8 +37715,8 @@
     "version": "Civitas illa Fortis",
     "slot": "weapon",
     "image": "Crate of astral runes (Civitas illa Fortis).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -37895,8 +37745,8 @@
     "version": "Port Piscarilius",
     "slot": "weapon",
     "image": "Crate of astral runes (Port Piscarilius).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -37925,8 +37775,8 @@
     "version": "Prifddinas",
     "slot": "weapon",
     "image": "Crate of astral runes (Prifddinas).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -37955,8 +37805,8 @@
     "version": "Red Rock",
     "slot": "weapon",
     "image": "Crate of astral runes (Red Rock).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -37985,8 +37835,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of bait.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38015,8 +37865,8 @@
     "version": "Ardougne",
     "slot": "weapon",
     "image": "Crate of bananas (Ardougne).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38045,8 +37895,8 @@
     "version": "Catherby",
     "slot": "weapon",
     "image": "Crate of bananas (Catherby).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38075,8 +37925,8 @@
     "version": "Entrana",
     "slot": "weapon",
     "image": "Crate of bananas (Entrana).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38105,8 +37955,8 @@
     "version": "Musa Point",
     "slot": "weapon",
     "image": "Crate of bananas (Musa Point).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38135,8 +37985,8 @@
     "version": "The Pandemonium",
     "slot": "weapon",
     "image": "Crate of bananas (The Pandemonium).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38165,8 +38015,8 @@
     "version": "The Summer Shore",
     "slot": "weapon",
     "image": "Crate of bananas (The Summer Shore).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38195,8 +38045,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of barley.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38225,8 +38075,8 @@
     "version": "Red Rock",
     "slot": "weapon",
     "image": "Crate of battleaxes (Red Rock).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38255,8 +38105,8 @@
     "version": "The Pandemonium",
     "slot": "weapon",
     "image": "Crate of battleaxes (The Pandemonium).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38285,8 +38135,8 @@
     "version": "Brimhaven",
     "slot": "weapon",
     "image": "Crate of bear meat (Brimhaven).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38315,8 +38165,8 @@
     "version": "Corsair Cove",
     "slot": "weapon",
     "image": "Crate of bear meat (Corsair Cove).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38345,8 +38195,8 @@
     "version": "Land's End",
     "slot": "weapon",
     "image": "Crate of bear meat (Land's End).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38375,8 +38225,8 @@
     "version": "Brimhaven",
     "slot": "weapon",
     "image": "Crate of beer (Brimhaven).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38405,8 +38255,8 @@
     "version": "Corsair Cove",
     "slot": "weapon",
     "image": "Crate of beer (Corsair Cove).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38435,8 +38285,8 @@
     "version": "Port Sarim",
     "slot": "weapon",
     "image": "Crate of beer (Port Sarim).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38465,8 +38315,8 @@
     "version": "Rellekka",
     "slot": "weapon",
     "image": "Crate of beer (Rellekka).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38495,8 +38345,8 @@
     "version": "Sunset Coast",
     "slot": "weapon",
     "image": "Crate of beer (Sunset Coast).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38525,8 +38375,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of beer glasses.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38555,8 +38405,8 @@
     "version": "Lunar Isle",
     "slot": "weapon",
     "image": "Crate of berries (Lunar Isle).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38585,8 +38435,8 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of berries (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38735,8 +38585,8 @@
     "version": "Port Khazard",
     "slot": "weapon",
     "image": "Crate of bows (Port Khazard).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38765,8 +38615,8 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of bows (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38795,8 +38645,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of bread.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38825,8 +38675,8 @@
     "version": "Brimhaven",
     "slot": "weapon",
     "image": "Crate of cacti (Brimhaven).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38855,8 +38705,8 @@
     "version": "Port Sarim",
     "slot": "weapon",
     "image": "Crate of cacti (Port Sarim).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38885,8 +38735,8 @@
     "version": "The Pandemonium",
     "slot": "weapon",
     "image": "Crate of cacti (The Pandemonium).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38915,8 +38765,8 @@
     "version": "The Summer Shore",
     "slot": "weapon",
     "image": "Crate of cacti (The Summer Shore).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38945,8 +38795,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of calquat.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38975,8 +38825,8 @@
     "version": "Brimhaven",
     "slot": "weapon",
     "image": "Crate of camphor logs (Brimhaven).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39005,8 +38855,8 @@
     "version": "Deepfin Point",
     "slot": "weapon",
     "image": "Crate of camphor logs (Deepfin Point).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39035,8 +38885,8 @@
     "version": "Port Sarim",
     "slot": "weapon",
     "image": "Crate of camphor logs (Port Sarim).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39065,8 +38915,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of cannonballs.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39095,8 +38945,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of chainbodies.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39125,8 +38975,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of chinchompas.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39155,8 +39005,8 @@
     "version": "Prifddinas",
     "slot": "weapon",
     "image": "Crate of clothes (Prifddinas).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39185,8 +39035,8 @@
     "version": "Void Knights' Outpost",
     "slot": "weapon",
     "image": "Crate of clothes (Void Knights' Outpost).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39215,8 +39065,8 @@
     "version": "Lunar Isle",
     "slot": "weapon",
     "image": "Crate of coal (Lunar Isle).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39245,8 +39095,8 @@
     "version": "Neitiznot",
     "slot": "weapon",
     "image": "Crate of coal (Neitiznot).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39275,8 +39125,8 @@
     "version": "Port Khazard",
     "slot": "weapon",
     "image": "Crate of coal (Port Khazard).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39305,8 +39155,8 @@
     "version": "Port Piscarilius",
     "slot": "weapon",
     "image": "Crate of coal (Port Piscarilius).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39335,8 +39185,8 @@
     "version": "Port Tyras",
     "slot": "weapon",
     "image": "Crate of coal (Port Tyras).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39365,8 +39215,8 @@
     "version": "Red Rock",
     "slot": "weapon",
     "image": "Crate of coal (Red Rock).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39395,8 +39245,8 @@
     "version": "Musa Point",
     "slot": "weapon",
     "image": "Crate of cocktails (Musa Point).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39425,8 +39275,8 @@
     "version": "Ruins of Unkah",
     "slot": "weapon",
     "image": "Crate of cocktails (Ruins of Unkah).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39455,8 +39305,8 @@
     "version": "Catherby",
     "slot": "weapon",
     "image": "Crate of coconuts (Catherby).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39485,8 +39335,8 @@
     "version": "Port Sarim",
     "slot": "weapon",
     "image": "Crate of coconuts (Port Sarim).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39515,8 +39365,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of compost.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39545,8 +39395,8 @@
     "version": "Civitas illa Fortis",
     "slot": "weapon",
     "image": "Crate of coral (Civitas illa Fortis).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39575,8 +39425,8 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of coral (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39605,8 +39455,8 @@
     "version": "Ruins of Unkah",
     "slot": "weapon",
     "image": "Crate of coral (Ruins of Unkah).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39635,8 +39485,8 @@
     "version": "The Pandemonium",
     "slot": "weapon",
     "image": "Crate of coral (The Pandemonium).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39665,8 +39515,8 @@
     "version": "Void Knights' Outpost",
     "slot": "weapon",
     "image": "Crate of coral (Void Knights' Outpost).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39695,8 +39545,8 @@
     "version": "Aldarin",
     "slot": "weapon",
     "image": "Crate of crab paste (Aldarin).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39725,8 +39575,8 @@
     "version": "Port Khazard",
     "slot": "weapon",
     "image": "Crate of crab paste (Port Khazard).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39755,8 +39605,8 @@
     "version": "Aldarin",
     "slot": "weapon",
     "image": "Crate of crystal seeds (Aldarin).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39785,8 +39635,8 @@
     "version": "Ardougne",
     "slot": "weapon",
     "image": "Crate of crystal seeds (Ardougne).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39815,8 +39665,8 @@
     "version": "Lunar Isle",
     "slot": "weapon",
     "image": "Crate of crystal seeds (Lunar Isle).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39845,8 +39695,8 @@
     "version": "Aldarin",
     "slot": "weapon",
     "image": "Crate of daggers (Aldarin).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39875,8 +39725,8 @@
     "version": "Corsair Cove",
     "slot": "weapon",
     "image": "Crate of daggers (Corsair Cove).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39905,8 +39755,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of dragon bitter.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39935,8 +39785,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of dragonhide.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39965,8 +39815,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of dyes.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -39995,8 +39845,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of eye patches.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40025,8 +39875,8 @@
     "version": "Deepfin Point",
     "slot": "weapon",
     "image": "Crate of fabrics (Deepfin Point).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40055,8 +39905,8 @@
     "version": "Piscatoris",
     "slot": "weapon",
     "image": "Crate of fabrics (Piscatoris).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40085,8 +39935,8 @@
     "version": "Port Piscarilius",
     "slot": "weapon",
     "image": "Crate of fabrics (Port Piscarilius).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40115,8 +39965,8 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of fabrics (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40145,8 +39995,8 @@
     "version": "Port Tyras",
     "slot": "weapon",
     "image": "Crate of fabrics (Port Tyras).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40175,8 +40025,8 @@
     "version": "Rellekka",
     "slot": "weapon",
     "image": "Crate of fabrics (Rellekka).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40205,8 +40055,8 @@
     "version": "Sunset Coast",
     "slot": "weapon",
     "image": "Crate of fabrics (Sunset Coast).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40235,8 +40085,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of feathers.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40835,8 +40685,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of fishing supplies.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40985,8 +40835,8 @@
     "version": "Civitas illa Fortis",
     "slot": "weapon",
     "image": "Crate of fruit (Civitas illa Fortis).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41015,8 +40865,8 @@
     "version": "Deepfin Point",
     "slot": "weapon",
     "image": "Crate of fruit (Deepfin Point).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41045,8 +40895,8 @@
     "version": "Etceteria",
     "slot": "weapon",
     "image": "Crate of fruit (Etceteria).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41075,8 +40925,8 @@
     "version": "Port Khazard",
     "slot": "weapon",
     "image": "Crate of fruit (Port Khazard).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41105,8 +40955,8 @@
     "version": "Port Tyras",
     "slot": "weapon",
     "image": "Crate of fruit (Port Tyras).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41135,8 +40985,8 @@
     "version": "Aldarin",
     "slot": "weapon",
     "image": "Crate of furs (Aldarin).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41165,8 +41015,8 @@
     "version": "Ardougne",
     "slot": "weapon",
     "image": "Crate of furs (Ardougne).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41195,8 +41045,8 @@
     "version": "Catherby",
     "slot": "weapon",
     "image": "Crate of furs (Catherby).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41225,8 +41075,8 @@
     "version": "Deepfin Point",
     "slot": "weapon",
     "image": "Crate of furs (Deepfin Point).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41255,8 +41105,8 @@
     "version": "Land's End",
     "slot": "weapon",
     "image": "Crate of furs (Land's End).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41285,8 +41135,8 @@
     "version": "Lunar Isle",
     "slot": "weapon",
     "image": "Crate of furs (Lunar Isle).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41315,8 +41165,8 @@
     "version": "Piscatoris",
     "slot": "weapon",
     "image": "Crate of furs (Piscatoris).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41345,8 +41195,8 @@
     "version": "Port Piscarilius",
     "slot": "weapon",
     "image": "Crate of furs (Port Piscarilius).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41375,8 +41225,8 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of furs (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41405,8 +41255,8 @@
     "version": "Port Tyras",
     "slot": "weapon",
     "image": "Crate of furs (Port Tyras).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41435,8 +41285,8 @@
     "version": "Red Rock",
     "slot": "weapon",
     "image": "Crate of furs (Red Rock).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41465,8 +41315,8 @@
     "version": "Brimhaven",
     "slot": "weapon",
     "image": "Crate of gems (Brimhaven).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41495,8 +41345,8 @@
     "version": "Civitas illa Fortis",
     "slot": "weapon",
     "image": "Crate of gems (Civitas illa Fortis).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41525,8 +41375,8 @@
     "version": "Corsair Cove",
     "slot": "weapon",
     "image": "Crate of gems (Corsair Cove).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41555,8 +41405,8 @@
     "version": "Land's End",
     "slot": "weapon",
     "image": "Crate of gems (Land's End).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41585,8 +41435,8 @@
     "version": "Port Piscarilius",
     "slot": "weapon",
     "image": "Crate of gems (Port Piscarilius).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41615,8 +41465,8 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of gems (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41645,8 +41495,8 @@
     "version": "The Summer Shore",
     "slot": "weapon",
     "image": "Crate of gems (The Summer Shore).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41675,8 +41525,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of gin.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41701,12 +41551,12 @@
   },
   {
     "name": "Crate of glassmaking supplies",
-    "id": 32488,
+    "id": 32640,
     "version": "",
     "slot": "weapon",
     "image": "Crate of glassmaking supplies.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41735,8 +41585,8 @@
     "version": "Cairn Isle",
     "slot": "weapon",
     "image": "Crate of gold bars (Cairn Isle).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41765,8 +41615,8 @@
     "version": "The Pandemonium",
     "slot": "weapon",
     "image": "Crate of gold bars (The Pandemonium).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41795,8 +41645,8 @@
     "version": "Ardougne",
     "slot": "weapon",
     "image": "Crate of gold ore (Ardougne).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41825,8 +41675,8 @@
     "version": "Catherby",
     "slot": "weapon",
     "image": "Crate of gold ore (Catherby).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41855,8 +41705,8 @@
     "version": "Deepfin Point",
     "slot": "weapon",
     "image": "Crate of granite (Deepfin Point).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41885,8 +41735,8 @@
     "version": "Red Rock",
     "slot": "weapon",
     "image": "Crate of granite (Red Rock).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41915,8 +41765,8 @@
     "version": "The Pandemonium",
     "slot": "weapon",
     "image": "Crate of granite (The Pandemonium).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41945,8 +41795,8 @@
     "version": "Void Knights' Outpost",
     "slot": "weapon",
     "image": "Crate of granite (Void Knights' Outpost).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41975,8 +41825,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of grog.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42005,8 +41855,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of gunpowder.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42035,8 +41885,8 @@
     "version": "Ardougne",
     "slot": "weapon",
     "image": "Crate of halberds (Ardougne).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42065,8 +41915,8 @@
     "version": "Prifddinas",
     "slot": "weapon",
     "image": "Crate of halberds (Prifddinas).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42095,8 +41945,8 @@
     "version": "Rellekka",
     "slot": "weapon",
     "image": "Crate of halberds (Rellekka).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42125,8 +41975,8 @@
     "version": "Port Khazard",
     "slot": "weapon",
     "image": "Crate of herbs (Port Khazard).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42155,8 +42005,8 @@
     "version": "Port Tyras",
     "slot": "weapon",
     "image": "Crate of herbs (Port Tyras).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42185,8 +42035,8 @@
     "version": "Prifddinas",
     "slot": "weapon",
     "image": "Crate of herbs (Prifddinas).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42215,8 +42065,8 @@
     "version": "Red Rock",
     "slot": "weapon",
     "image": "Crate of herbs (Red Rock).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42245,8 +42095,8 @@
     "version": "Void Knights' Outpost",
     "slot": "weapon",
     "image": "Crate of herbs (Void Knights' Outpost).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42275,8 +42125,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of high importance.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42305,8 +42155,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of historical artefacts.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42335,8 +42185,8 @@
     "version": "Musa Point",
     "slot": "weapon",
     "image": "Crate of honey (Musa Point).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42365,8 +42215,8 @@
     "version": "Port Piscarilius",
     "slot": "weapon",
     "image": "Crate of honey (Port Piscarilius).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42395,8 +42245,8 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of honey (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42425,8 +42275,8 @@
     "version": "Port Sarim",
     "slot": "weapon",
     "image": "Crate of honey (Port Sarim).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42455,8 +42305,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of huasca.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42485,8 +42335,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of iron bars.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42515,8 +42365,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of iron ore.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42545,8 +42395,8 @@
     "version": "Catherby",
     "slot": "weapon",
     "image": "Crate of javelins (Catherby).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42575,8 +42425,8 @@
     "version": "Deepfin Point",
     "slot": "weapon",
     "image": "Crate of javelins (Deepfin Point).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42605,8 +42455,8 @@
     "version": "Ruins of Unkah",
     "slot": "weapon",
     "image": "Crate of javelins (Ruins of Unkah).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42635,8 +42485,8 @@
     "version": "The Summer Shore",
     "slot": "weapon",
     "image": "Crate of javelins (The Summer Shore).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42665,8 +42515,8 @@
     "version": "Aldarin",
     "slot": "weapon",
     "image": "Crate of jewellery (Aldarin).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42695,8 +42545,8 @@
     "version": "Ardougne",
     "slot": "weapon",
     "image": "Crate of jewellery (Ardougne).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42725,8 +42575,8 @@
     "version": "Brimhaven",
     "slot": "weapon",
     "image": "Crate of jewellery (Brimhaven).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42755,8 +42605,8 @@
     "version": "Catherby",
     "slot": "weapon",
     "image": "Crate of jewellery (Catherby).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42785,8 +42635,8 @@
     "version": "Port Piscarilius",
     "slot": "weapon",
     "image": "Crate of jewellery (Port Piscarilius).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42815,8 +42665,8 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of jewellery (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42845,8 +42695,8 @@
     "version": "Port Sarim",
     "slot": "weapon",
     "image": "Crate of jewellery (Port Sarim).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42875,8 +42725,8 @@
     "version": "The Summer Shore",
     "slot": "weapon",
     "image": "Crate of jewellery (The Summer Shore).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42905,8 +42755,8 @@
     "version": "Catherby",
     "slot": "weapon",
     "image": "Crate of karambwans (Catherby).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42935,8 +42785,8 @@
     "version": "Red Rock",
     "slot": "weapon",
     "image": "Crate of karambwans (Red Rock).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42965,8 +42815,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of kebabs.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -42995,8 +42845,8 @@
     "version": "Land's End",
     "slot": "weapon",
     "image": "Crate of kebbit fur (Land's End).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43025,8 +42875,8 @@
     "version": "Lunar Isle",
     "slot": "weapon",
     "image": "Crate of kebbit fur (Lunar Isle).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43055,8 +42905,8 @@
     "version": "Port Piscarilius",
     "slot": "weapon",
     "image": "Crate of kebbit fur (Port Piscarilius).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43085,8 +42935,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of khali brews.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43115,8 +42965,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of kyatt teeth.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43145,8 +42995,8 @@
     "version": "Aldarin",
     "slot": "weapon",
     "image": "Crate of lead ore (Aldarin).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43175,8 +43025,8 @@
     "version": "Hosidius",
     "slot": "weapon",
     "image": "Crate of lead ore (Hosidius).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43205,8 +43055,8 @@
     "version": "Rellekka",
     "slot": "weapon",
     "image": "Crate of lead ore (Rellekka).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43235,8 +43085,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of leather.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43265,8 +43115,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of lobsters.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43295,8 +43145,8 @@
     "version": "Deepfin Point",
     "slot": "weapon",
     "image": "Crate of logs (Deepfin Point).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43325,8 +43175,8 @@
     "version": "Jatizso",
     "slot": "weapon",
     "image": "Crate of logs (Jatizso).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43355,8 +43205,8 @@
     "version": "Lunar Isle",
     "slot": "weapon",
     "image": "Crate of logs (Lunar Isle).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43385,8 +43235,8 @@
     "version": "Musa Point",
     "slot": "weapon",
     "image": "Crate of logs (Musa Point).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43415,8 +43265,8 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of logs (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43445,8 +43295,8 @@
     "version": "Port Sarim",
     "slot": "weapon",
     "image": "Crate of logs (Port Sarim).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43475,8 +43325,8 @@
     "version": "Prifddinas",
     "slot": "weapon",
     "image": "Crate of logs (Prifddinas).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43505,8 +43355,8 @@
     "version": "Void Knights' Outpost",
     "slot": "weapon",
     "image": "Crate of logs (Void Knights' Outpost).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43535,8 +43385,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of looty.png",
-    "speed": 0,
-    "category": "",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43565,8 +43415,8 @@
     "version": "Sunset Coast",
     "slot": "weapon",
     "image": "Crate of maces (Sunset Coast).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43595,8 +43445,8 @@
     "version": "Void Knights' Outpost",
     "slot": "weapon",
     "image": "Crate of maces (Void Knights' Outpost).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43625,8 +43475,8 @@
     "version": "Brimhaven",
     "slot": "weapon",
     "image": "Crate of machinery parts (Brimhaven).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43655,8 +43505,8 @@
     "version": "Deepfin Point",
     "slot": "weapon",
     "image": "Crate of machinery parts (Deepfin Point).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43685,8 +43535,8 @@
     "version": "Deepfin Point",
     "slot": "weapon",
     "image": "Crate of mahogany logs (Deepfin Point).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43715,8 +43565,8 @@
     "version": "Musa Point",
     "slot": "weapon",
     "image": "Crate of mahogany logs (Musa Point).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43742,11 +43592,11 @@
   {
     "name": "Crate of mahogany logs",
     "id": 32604,
-    "version": "neitiznot",
+    "version": "Neitiznot",
     "slot": "weapon",
-    "image": "Crate of mahogany logs (neitiznot).png",
-    "speed": 0,
-    "category": "Blunt",
+    "image": "Crate of mahogany logs (Neitiznot).png",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43772,11 +43622,11 @@
   {
     "name": "Crate of mahogany logs",
     "id": 32644,
-    "version": "port piscarilius",
+    "version": "Port Piscarilius",
     "slot": "weapon",
-    "image": "Crate of mahogany logs (port piscarilius).png",
-    "speed": 0,
-    "category": "Blunt",
+    "image": "Crate of mahogany logs (Port Piscarilius).png",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43955,8 +43805,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of mithril ore.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -43985,8 +43835,8 @@
     "version": "Aldarin",
     "slot": "weapon",
     "image": "Crate of monkfish (Aldarin).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44015,8 +43865,8 @@
     "version": "Etceteria",
     "slot": "weapon",
     "image": "Crate of monkfish (Etceteria).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44045,8 +43895,8 @@
     "version": "Rellekka",
     "slot": "weapon",
     "image": "Crate of monkfish (Rellekka).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44075,8 +43925,8 @@
     "version": "Aldarin",
     "slot": "weapon",
     "image": "Crate of nickel ore (Aldarin).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44105,8 +43955,8 @@
     "version": "Civitas illa Fortis",
     "slot": "weapon",
     "image": "Crate of nickel ore (Civitas illa Fortis).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44135,8 +43985,8 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of nickel ore (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44165,8 +44015,8 @@
     "version": "The Summer Shore",
     "slot": "weapon",
     "image": "Crate of nickel ore (The Summer Shore).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44195,8 +44045,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of nothing sinister.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44225,8 +44075,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of onions.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44255,8 +44105,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of oranges.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44285,8 +44135,8 @@
     "version": "Civitas illa Fortis",
     "slot": "weapon",
     "image": "Crate of ores (Civitas illa Fortis).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44315,8 +44165,8 @@
     "version": "Land's End",
     "slot": "weapon",
     "image": "Crate of ores (Land's End).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44345,8 +44195,8 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of ores (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44375,8 +44225,8 @@
     "version": "Port Tyras",
     "slot": "weapon",
     "image": "Crate of ores (Port Tyras).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44405,8 +44255,8 @@
     "version": "Prifddinas",
     "slot": "weapon",
     "image": "Crate of ores (Prifddinas).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44435,8 +44285,8 @@
     "version": "Red Rock",
     "slot": "weapon",
     "image": "Crate of ores (Red Rock).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44465,8 +44315,8 @@
     "version": "Void Knights' Outpost",
     "slot": "weapon",
     "image": "Crate of ores (Void Knights' Outpost).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44495,8 +44345,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of peg legs.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44525,8 +44375,8 @@
     "version": "Aldarin",
     "slot": "weapon",
     "image": "Crate of pest remains (Aldarin).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44555,8 +44405,8 @@
     "version": "Deepfin Point",
     "slot": "weapon",
     "image": "Crate of pest remains (Deepfin Point).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44585,8 +44435,8 @@
     "version": "Port Sarim",
     "slot": "weapon",
     "image": "Crate of pest remains (Port Sarim).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44615,8 +44465,8 @@
     "version": "The Summer Shore",
     "slot": "weapon",
     "image": "Crate of pest remains (The Summer Shore).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44645,8 +44495,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of pickaxes.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44675,8 +44525,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of pies.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44705,8 +44555,8 @@
     "version": "Catherby",
     "slot": "weapon",
     "image": "Crate of pineapples (Catherby).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44735,8 +44585,8 @@
     "version": "Civitas illa Fortis",
     "slot": "weapon",
     "image": "Crate of pineapples (Civitas illa Fortis).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44765,8 +44615,8 @@
     "version": "The Pandemonium",
     "slot": "weapon",
     "image": "Crate of pineapples (The Pandemonium).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44795,8 +44645,8 @@
     "version": "The Summer Shore",
     "slot": "weapon",
     "image": "Crate of pineapples (The Summer Shore).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44825,8 +44675,8 @@
     "version": "Deepfin Point",
     "slot": "weapon",
     "image": "Crate of planks (Deepfin Point).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44855,8 +44705,8 @@
     "version": "Etceteria",
     "slot": "weapon",
     "image": "Crate of planks (Etceteria).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44885,8 +44735,8 @@
     "version": "Port Khazard",
     "slot": "weapon",
     "image": "Crate of planks (Port Khazard).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44915,8 +44765,8 @@
     "version": "Port Piscarilius",
     "slot": "weapon",
     "image": "Crate of planks (Port Piscarilius).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44945,8 +44795,8 @@
     "version": "Rellekka",
     "slot": "weapon",
     "image": "Crate of planks (Rellekka).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44975,8 +44825,8 @@
     "version": "Ruins of Unkah",
     "slot": "weapon",
     "image": "Crate of planks (Ruins of Unkah).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45005,8 +44855,8 @@
     "version": "Aldarin",
     "slot": "weapon",
     "image": "Crate of platebodies (Aldarin).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45035,8 +44885,8 @@
     "version": "Corsair Cove",
     "slot": "weapon",
     "image": "Crate of platebodies (Corsair Cove).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45065,8 +44915,8 @@
     "version": "Port Khazard",
     "slot": "weapon",
     "image": "Crate of platebodies (Port Khazard).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45095,8 +44945,8 @@
     "version": "Port Piscarilius",
     "slot": "weapon",
     "image": "Crate of platebodies (Port Piscarilius).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45125,8 +44975,8 @@
     "version": "Port Tyras",
     "slot": "weapon",
     "image": "Crate of platebodies (Port Tyras).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45155,8 +45005,8 @@
     "version": "The Pandemonium",
     "slot": "weapon",
     "image": "Crate of platebodies (The Pandemonium).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45185,8 +45035,8 @@
     "version": "Void Knights' Outpost",
     "slot": "weapon",
     "image": "Crate of platebodies (Void Knights' Outpost).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45215,8 +45065,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of poison.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45245,8 +45095,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of potatoes.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45275,8 +45125,8 @@
     "version": "Lunar Isle",
     "slot": "weapon",
     "image": "Crate of potions (Lunar Isle).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45305,8 +45155,8 @@
     "version": "Piscatoris",
     "slot": "weapon",
     "image": "Crate of potions (Piscatoris).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45335,8 +45185,8 @@
     "version": "Prifddinas",
     "slot": "weapon",
     "image": "Crate of potions (Prifddinas).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45365,8 +45215,8 @@
     "version": "The Summer Shore",
     "slot": "weapon",
     "image": "Crate of potions (The Summer Shore).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45395,8 +45245,8 @@
     "version": "Void Knights' Outpost",
     "slot": "weapon",
     "image": "Crate of potions (Void Knights' Outpost).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45425,8 +45275,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of protective clothing.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45455,8 +45305,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of rabbit meat.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45485,8 +45335,8 @@
     "version": "Ardougne",
     "slot": "weapon",
     "image": "Crate of red coral (Ardougne).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45515,8 +45365,8 @@
     "version": "Civitas illa Fortis",
     "slot": "weapon",
     "image": "Crate of red coral (Civitas illa Fortis).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45545,8 +45395,8 @@
     "version": "Lunar Isle",
     "slot": "weapon",
     "image": "Crate of red coral (Lunar Isle).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45575,8 +45425,8 @@
     "version": "Port Khazard",
     "slot": "weapon",
     "image": "Crate of red coral (Port Khazard).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45605,8 +45455,8 @@
     "version": "Port Piscarilius",
     "slot": "weapon",
     "image": "Crate of red coral (Port Piscarilius).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45635,8 +45485,8 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of red coral (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45665,8 +45515,8 @@
     "version": "Port Sarim",
     "slot": "weapon",
     "image": "Crate of red coral (Port Sarim).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45695,8 +45545,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of redwood logs.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45725,8 +45575,8 @@
     "version": "Hosidius",
     "slot": "weapon",
     "image": "Crate of rope (Hosidius).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45755,8 +45605,8 @@
     "version": "Rellekka",
     "slot": "weapon",
     "image": "Crate of rope (Rellekka).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45785,8 +45635,8 @@
     "version": "The Summer Shore",
     "slot": "weapon",
     "image": "Crate of rope (The Summer Shore).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45815,8 +45665,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of rotten bananas.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45845,8 +45695,8 @@
     "version": "Brimhaven",
     "slot": "weapon",
     "image": "Crate of rum (Brimhaven).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45875,8 +45725,8 @@
     "version": "Corsair Cove",
     "slot": "weapon",
     "image": "Crate of rum (Corsair Cove).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45902,11 +45752,11 @@
   {
     "name": "Crate of rum",
     "id": 32774,
-    "version": "Pandemonium",
+    "version": "The Pandemonium",
     "slot": "weapon",
     "image": "Crate of rum (The Pandemonium).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45935,8 +45785,8 @@
     "version": "Ardougne",
     "slot": "weapon",
     "image": "Crate of runes (Ardougne).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45965,8 +45815,8 @@
     "version": "Civitas illa Fortis",
     "slot": "weapon",
     "image": "Crate of runes (Civitas illa Fortis).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -45995,8 +45845,8 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of runes (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46025,8 +45875,8 @@
     "version": "Port Sarim",
     "slot": "weapon",
     "image": "Crate of runes (Port Sarim).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46055,8 +45905,8 @@
     "version": "Red Rock",
     "slot": "weapon",
     "image": "Crate of runes (Red Rock).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46085,8 +45935,8 @@
     "version": "Ruins of Unkah",
     "slot": "weapon",
     "image": "Crate of runes (Ruins of Unkah).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46115,8 +45965,8 @@
     "version": "Void Knights' Outpost",
     "slot": "weapon",
     "image": "Crate of runes (Void Knights' Outpost).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46145,8 +45995,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of salamanders.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46175,8 +46025,8 @@
     "version": "Ardougne",
     "slot": "weapon",
     "image": "Crate of sand (Ardougne).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46205,8 +46055,8 @@
     "version": "Entrana",
     "slot": "weapon",
     "image": "Crate of sand (Entrana).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46235,8 +46085,8 @@
     "version": "Neitiznot",
     "slot": "weapon",
     "image": "Crate of sand (Neitiznot).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46265,8 +46115,8 @@
     "version": "Brimhaven",
     "slot": "weapon",
     "image": "Crate of sandstone (Brimhaven).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46295,8 +46145,8 @@
     "version": "The Summer Shore",
     "slot": "weapon",
     "image": "Crate of sandstone (The Summer Shore).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46325,8 +46175,8 @@
     "version": "Corsair Cove",
     "slot": "weapon",
     "image": "Crate of scimitars (Corsair Cove).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46355,8 +46205,8 @@
     "version": "Port Khazard",
     "slot": "weapon",
     "image": "Crate of scimitars (Port Khazard).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46385,8 +46235,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of sea shells.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46415,8 +46265,8 @@
     "version": "Cairn Isle",
     "slot": "weapon",
     "image": "Crate of secret stuff (Cairn Isle).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46445,8 +46295,8 @@
     "version": "Musa Point",
     "slot": "weapon",
     "image": "Crate of secret stuff (Musa Point).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46475,8 +46325,8 @@
     "version": "Port Khazard",
     "slot": "weapon",
     "image": "Crate of secret stuff (Port Khazard).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46505,8 +46355,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of secret things.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46535,8 +46385,8 @@
     "version": "Catherby",
     "slot": "weapon",
     "image": "Crate of seeds (Catherby).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46565,8 +46415,8 @@
     "version": "Civitas illa Fortis",
     "slot": "weapon",
     "image": "Crate of seeds (Civitas illa Fortis).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46595,8 +46445,8 @@
     "version": "Port Piscarilius",
     "slot": "weapon",
     "image": "Crate of seeds (Port Piscarilius).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46625,8 +46475,8 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of seeds (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46655,8 +46505,8 @@
     "version": "Port Sarim",
     "slot": "weapon",
     "image": "Crate of seeds (Port Sarim).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46685,8 +46535,8 @@
     "version": "Port Tyras",
     "slot": "weapon",
     "image": "Crate of seeds (Port Tyras).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46715,8 +46565,8 @@
     "version": "Void Knights' Outpost",
     "slot": "weapon",
     "image": "Crate of seeds (Void Knights' Outpost).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46745,8 +46595,8 @@
     "version": "Port Tyras",
     "slot": "weapon",
     "image": "Crate of shields (Port Tyras).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46775,8 +46625,8 @@
     "version": "The Summer Shore",
     "slot": "weapon",
     "image": "Crate of shields (The Summer Shore).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46805,8 +46655,8 @@
     "version": "Civitas illa Fortis",
     "slot": "weapon",
     "image": "Crate of ship parts (Civitas illa Fortis).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46835,8 +46685,8 @@
     "version": "Corsair Cove",
     "slot": "weapon",
     "image": "Crate of ship parts (Corsair Cove).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46865,8 +46715,8 @@
     "version": "Musa Point",
     "slot": "weapon",
     "image": "Crate of ship parts (Musa Point).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46895,8 +46745,8 @@
     "version": "Red Rock",
     "slot": "weapon",
     "image": "Crate of ship parts (Red Rock).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46925,8 +46775,8 @@
     "version": "Rellekka",
     "slot": "weapon",
     "image": "Crate of ship parts (Rellekka).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -46955,38 +46805,8 @@
     "version": "Ruins of Unkah",
     "slot": "weapon",
     "image": "Crate of ship parts (Ruins of Unkah).png",
-    "speed": 0,
-    "category": "Blunt",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Crate of ship parts",
-    "id": 32807,
-    "version": "The Pandemonium",
-    "slot": "weapon",
-    "image": "Crate of ship parts (The Pandemonium).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47045,8 +46865,8 @@
     "version": "Ardougne",
     "slot": "weapon",
     "image": "Crate of silk (Ardougne).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47075,8 +46895,8 @@
     "version": "Catherby",
     "slot": "weapon",
     "image": "Crate of silk (Catherby).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47105,8 +46925,8 @@
     "version": "Musa Point",
     "slot": "weapon",
     "image": "Crate of silk (Musa Point).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47135,8 +46955,8 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of silk (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47165,8 +46985,8 @@
     "version": "Prifddinas",
     "slot": "weapon",
     "image": "Crate of silk (Prifddinas).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47195,8 +47015,8 @@
     "version": "Brimhaven",
     "slot": "weapon",
     "image": "Crate of silver ore (Brimhaven).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47225,8 +47045,8 @@
     "version": "Catherby",
     "slot": "weapon",
     "image": "Crate of silver ore (Catherby).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47255,8 +47075,8 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of silver ore (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47285,8 +47105,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of snakeskin.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47315,8 +47135,8 @@
     "version": "Aldarin",
     "slot": "weapon",
     "image": "Crate of spears (Aldarin).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47345,8 +47165,8 @@
     "version": "Port Khazard",
     "slot": "weapon",
     "image": "Crate of spears (Port Khazard).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47375,8 +47195,8 @@
     "version": "Void Knights' Outpost",
     "slot": "weapon",
     "image": "Crate of spears (Void Knights' Outpost).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47405,8 +47225,8 @@
     "version": "Ardougne",
     "slot": "weapon",
     "image": "Crate of spices (Ardougne).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47435,8 +47255,8 @@
     "version": "Brimhaven",
     "slot": "weapon",
     "image": "Crate of spices (Brimhaven).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47465,8 +47285,8 @@
     "version": "Civitas illa Fortis",
     "slot": "weapon",
     "image": "Crate of spices (Civitas illa Fortis).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47495,8 +47315,8 @@
     "version": "Port Sarim",
     "slot": "weapon",
     "image": "Crate of spices (Port Sarim).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47525,8 +47345,8 @@
     "version": "Prifddinas",
     "slot": "weapon",
     "image": "Crate of spices (Prifddinas).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47555,8 +47375,8 @@
     "version": "Red Rock",
     "slot": "weapon",
     "image": "Crate of spices (Red Rock).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47585,8 +47405,8 @@
     "version": "The Pandemonium",
     "slot": "weapon",
     "image": "Crate of spices (The Pandemonium).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47615,8 +47435,8 @@
     "version": "Civitas illa Fortis",
     "slot": "weapon",
     "image": "Crate of staffs (Civitas illa Fortis).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47645,8 +47465,8 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of staffs (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47675,8 +47495,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of steel bars.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47705,8 +47525,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of sunbeam ale.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47735,8 +47555,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of suqah hides.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47765,8 +47585,8 @@
     "version": "Port Khazard",
     "slot": "weapon",
     "image": "Crate of swamp paste (Port Khazard).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47795,8 +47615,8 @@
     "version": "The Pandemonium",
     "slot": "weapon",
     "image": "Crate of swamp paste (The Pandemonium).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47825,8 +47645,8 @@
     "version": "Corsair Cove",
     "slot": "weapon",
     "image": "Crate of swords (Corsair Cove).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47855,8 +47675,8 @@
     "version": "Etceteria",
     "slot": "weapon",
     "image": "Crate of swords (Etceteria).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47885,8 +47705,8 @@
     "version": "Land's End",
     "slot": "weapon",
     "image": "Crate of swords (Land's End).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47915,8 +47735,8 @@
     "version": "Port Sarim",
     "slot": "weapon",
     "image": "Crate of swords (Port Sarim).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47945,8 +47765,8 @@
     "version": "Port Tyras",
     "slot": "weapon",
     "image": "Crate of swords (Port Tyras).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -47975,8 +47795,8 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of teak logs (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48005,8 +47825,8 @@
     "version": "Rellekka",
     "slot": "weapon",
     "image": "Crate of teak logs (Rellekka).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48035,8 +47855,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of tokens.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48065,8 +47885,8 @@
     "version": "Civitas illa Fortis",
     "slot": "weapon",
     "image": "Crate of vegetables (Civitas illa Fortis).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48095,8 +47915,8 @@
     "version": "Land's End",
     "slot": "weapon",
     "image": "Crate of vegetables (Land's End).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48125,8 +47945,8 @@
     "version": "Port Tyras",
     "slot": "weapon",
     "image": "Crate of vegetables (Port Tyras).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48155,8 +47975,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of vials.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48185,8 +48005,8 @@
     "version": "Brimhaven",
     "slot": "weapon",
     "image": "Crate of vodka (Brimhaven).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48215,8 +48035,8 @@
     "version": "Piscatoris",
     "slot": "weapon",
     "image": "Crate of vodka (Piscatoris).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48245,8 +48065,8 @@
     "version": "Port Khazard",
     "slot": "weapon",
     "image": "Crate of vodka (Port Khazard).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48275,8 +48095,8 @@
     "version": "Deepfin Point",
     "slot": "weapon",
     "image": "Crate of warhammers (Deepfin Point).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48305,8 +48125,8 @@
     "version": "Etceteria",
     "slot": "weapon",
     "image": "Crate of warhammers (Etceteria).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48335,8 +48155,8 @@
     "version": "Sunset Coast",
     "slot": "weapon",
     "image": "Crate of warhammers (Sunset Coast).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48365,8 +48185,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of wax.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48395,8 +48215,8 @@
     "version": "Brimhaven",
     "slot": "weapon",
     "image": "Crate of wine (Brimhaven).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48425,8 +48245,8 @@
     "version": "Land's End",
     "slot": "weapon",
     "image": "Crate of wine (Land's End).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48455,8 +48275,8 @@
     "version": "Port Piscarilius",
     "slot": "weapon",
     "image": "Crate of wine (Port Piscarilius).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48485,8 +48305,8 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of wine (Port Roberts).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48515,8 +48335,8 @@
     "version": "Rellekka",
     "slot": "weapon",
     "image": "Crate of wine (Rellekka).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48545,8 +48365,8 @@
     "version": "Sunset Coast",
     "slot": "weapon",
     "image": "Crate of wine (Sunset Coast).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48575,8 +48395,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of wrath runes.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48605,8 +48425,8 @@
     "version": "Hosidius",
     "slot": "weapon",
     "image": "Crate of xerician fabrics (Hosidius).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48635,8 +48455,8 @@
     "version": "Prifddinas",
     "slot": "weapon",
     "image": "Crate of xerician fabrics (Prifddinas).png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -48665,8 +48485,8 @@
     "version": "",
     "slot": "weapon",
     "image": "Crate of yak hair.png",
-    "speed": 0,
-    "category": "Blunt",
+    "speed": 4,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -49766,6 +49586,66 @@
       "crush": 32,
       "magic": 44,
       "ranged": 53
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Crystal body (deadman)",
+    "id": 33023,
+    "version": "Active",
+    "slot": "body",
+    "image": "Crystal body (deadman).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 3
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -18,
+      "ranged": 31
+    },
+    "defensive": {
+      "stab": 46,
+      "slash": 38,
+      "crush": 48,
+      "magic": 44,
+      "ranged": 68
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Crystal body (deadman)",
+    "id": 33025,
+    "version": "Inactive",
+    "slot": "body",
+    "image": "Crystal body (inactive, deadman).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
     },
     "isTwoHanded": false
   },
@@ -51840,6 +51720,66 @@
     "isTwoHanded": false
   },
   {
+    "name": "Crystal helm (deadman)",
+    "id": 33031,
+    "version": "Active",
+    "slot": "head",
+    "image": "Crystal helm (deadman).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -10,
+      "ranged": 9
+    },
+    "defensive": {
+      "stab": 12,
+      "slash": 8,
+      "crush": 14,
+      "magic": 10,
+      "ranged": 18
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Crystal helm (deadman)",
+    "id": 33033,
+    "version": "Inactive",
+    "slot": "head",
+    "image": "Crystal helm (inactive, deadman).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Crystal helm (perfected)",
     "id": 23888,
     "version": "",
@@ -52436,6 +52376,66 @@
       "crush": 24,
       "magic": 34,
       "ranged": 29
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Crystal legs (deadman)",
+    "id": 33027,
+    "version": "Active",
+    "slot": "legs",
+    "image": "Crystal legs (deadman).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 2
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -12,
+      "ranged": 18
+    },
+    "defensive": {
+      "stab": 26,
+      "slash": 21,
+      "crush": 30,
+      "magic": 34,
+      "ranged": 38
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Crystal legs (deadman)",
+    "id": 33029,
+    "version": "Inactive",
+    "slot": "legs",
+    "image": "Crystal legs (inactive, deadman).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
     },
     "isTwoHanded": false
   },
@@ -55007,14 +55007,14 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": -30,
-      "ranged": -10
+      "magic": 0,
+      "ranged": 0
     },
     "defensive": {
       "stab": 21,
       "slash": 20,
       "crush": 12,
-      "magic": -6,
+      "magic": 3,
       "ranged": 20
     },
     "isTwoHanded": false
@@ -55067,14 +55067,14 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": -21,
-      "ranged": -7
+      "magic": 0,
+      "ranged": 0
     },
     "defensive": {
       "stab": 11,
       "slash": 10,
       "crush": 10,
-      "magic": -4,
+      "magic": -2,
       "ranged": 10
     },
     "isTwoHanded": false
@@ -84090,6 +84090,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Holy moleys",
+    "id": 33002,
+    "version": "",
+    "slot": "feet",
+    "image": "Holy moleys.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 3
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Holy sandals",
     "id": 12598,
     "version": "",
@@ -84416,6 +84446,126 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Hooded slayer helmet",
+    "id": 33066,
+    "version": "",
+    "slot": "head",
+    "image": "Hooded slayer helmet.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": -1,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Hooded slayer helmet (i)",
+    "id": 33072,
+    "version": "Emir's Arena",
+    "slot": "head",
+    "image": "Hooded slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Hooded slayer helmet (i)",
+    "id": 33068,
+    "version": "",
+    "slot": "head",
+    "image": "Hooded slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Hooded slayer helmet (i)",
+    "id": 33070,
+    "version": "Soul Wars",
+    "slot": "head",
+    "image": "Hooded slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
     },
     "isTwoHanded": false
   },
@@ -100629,7 +100779,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 0,
+      "ranged_str": 1,
       "magic_str": 0,
       "prayer": 0
     },
@@ -100638,14 +100788,14 @@
       "slash": 0,
       "crush": 0,
       "magic": -5,
-      "ranged": 13
+      "ranged": 10
     },
     "defensive": {
-      "stab": 8,
-      "slash": 11,
-      "crush": 14,
-      "magic": 8,
-      "ranged": 12
+      "stab": 3,
+      "slash": 6,
+      "crush": 8,
+      "magic": 20,
+      "ranged": 7
     },
     "isTwoHanded": false
   },
@@ -100749,7 +100899,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 0,
+      "ranged_str": 2,
       "magic_str": 0,
       "prayer": 0
     },
@@ -100758,14 +100908,14 @@
       "slash": 0,
       "crush": 0,
       "magic": -15,
-      "ranged": 36
+      "ranged": 40
     },
     "defensive": {
-      "stab": 61,
-      "slash": 53,
-      "crush": 66,
-      "magic": 75,
-      "ranged": 62
+      "stab": 11,
+      "slash": 13,
+      "crush": 16,
+      "magic": 50,
+      "ranged": 20
     },
     "isTwoHanded": false
   },
@@ -100809,7 +100959,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 0,
+      "ranged_str": 1,
       "magic_str": 0,
       "prayer": 0
     },
@@ -100818,14 +100968,14 @@
       "slash": 0,
       "crush": 0,
       "magic": -10,
-      "ranged": 23
+      "ranged": 24
     },
     "defensive": {
-      "stab": 35,
-      "slash": 29,
-      "crush": 37,
-      "magic": 46,
-      "ranged": 35
+      "stab": 7,
+      "slash": 9,
+      "crush": 11,
+      "magic": 30,
+      "ranged": 13
     },
     "isTwoHanded": false
   },
@@ -122431,36 +122581,6 @@
   },
   {
     "name": "Sailors' amulet",
-    "id": 32399,
-    "version": "Active",
-    "slot": "neck",
-    "image": "Sailors' amulet.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Sailors' amulet",
     "id": 32398,
     "version": "Inert",
     "slot": "neck",
@@ -132360,6 +132480,36 @@
     "isTwoHanded": true
   },
   {
+    "name": "Starter cape",
+    "id": 33063,
+    "version": "",
+    "slot": "cape",
+    "image": "Starter cape.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 5,
+      "slash": 5,
+      "crush": 5,
+      "magic": 5,
+      "ranged": 5
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Starter staff",
     "id": 22335,
     "version": "",
@@ -132428,24 +132578,24 @@
     "speed": 0,
     "category": "",
     "bonuses": {
-      "str": 3,
+      "str": 5,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": 3,
-      "slash": 3,
-      "crush": 4,
+      "stab": 15,
+      "slash": 15,
+      "crush": 15,
       "magic": -6,
       "ranged": -2
     },
     "defensive": {
-      "stab": 65,
-      "slash": 70,
-      "crush": 63,
+      "stab": 20,
+      "slash": 25,
+      "crush": 23,
       "magic": -1,
-      "ranged": 71
+      "ranged": 28
     },
     "isTwoHanded": false
   },
@@ -132494,18 +132644,18 @@
       "prayer": 0
     },
     "offensive": {
-      "stab": 5,
-      "slash": 5,
-      "crush": 7,
-      "magic": -30,
-      "ranged": -10
+      "stab": 6,
+      "slash": 6,
+      "crush": 35,
+      "magic": -6,
+      "ranged": -2
     },
     "defensive": {
-      "stab": 154,
-      "slash": 145,
-      "crush": 121,
-      "magic": -6,
-      "ranged": 157
+      "stab": 35,
+      "slash": 38,
+      "crush": 36,
+      "magic": -10,
+      "ranged": 40
     },
     "isTwoHanded": false
   },
@@ -132554,18 +132704,18 @@
       "prayer": 0
     },
     "offensive": {
-      "stab": 3,
-      "slash": 3,
-      "crush": 5,
-      "magic": -21,
-      "ranged": -7
+      "stab": 6,
+      "slash": 6,
+      "crush": 30,
+      "magic": -6,
+      "ranged": -2
     },
     "defensive": {
-      "stab": 110,
-      "slash": 106,
-      "crush": 97,
-      "magic": -4,
-      "ranged": 121
+      "stab": 27,
+      "slash": 30,
+      "crush": 28,
+      "magic": -7,
+      "ranged": 34
     },
     "isTwoHanded": false
   },
@@ -141510,6 +141660,66 @@
     "isTwoHanded": true
   },
   {
+    "name": "Toxic staff (deadman)",
+    "id": 33036,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Toxic staff (deadman).png",
+    "speed": 4,
+    "category": "Bladed Staff",
+    "bonuses": {
+      "str": 72,
+      "ranged_str": 0,
+      "magic_str": 150,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 55,
+      "slash": 70,
+      "crush": 0,
+      "magic": 25,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 3,
+      "crush": 3,
+      "magic": 17,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Toxic staff (deadman)",
+    "id": 33035,
+    "version": "Uncharged",
+    "slot": "weapon",
+    "image": "Toxic staff (uncharged, deadman).png",
+    "speed": 4,
+    "category": "Bladed Staff",
+    "bonuses": {
+      "str": 72,
+      "ranged_str": 0,
+      "magic_str": 150,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 55,
+      "slash": 70,
+      "crush": 0,
+      "magic": 17,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 3,
+      "crush": 3,
+      "magic": 17,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Toxic staff of the dead",
     "id": 12904,
     "version": "Charged",
@@ -147398,24 +147608,24 @@
     "speed": 0,
     "category": "",
     "bonuses": {
-      "str": 6,
+      "str": 5,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": 5,
-      "slash": 7,
-      "crush": 7,
-      "magic": -15,
-      "ranged": 0
+      "stab": 35,
+      "slash": 35,
+      "crush": 6,
+      "magic": -6,
+      "ranged": -2
     },
     "defensive": {
-      "stab": 120,
-      "slash": 131,
-      "crush": 145,
-      "magic": -3,
-      "ranged": 140
+      "stab": 35,
+      "slash": 38,
+      "crush": 36,
+      "magic": -10,
+      "ranged": 40
     },
     "isTwoHanded": false
   },
@@ -147524,18 +147734,18 @@
       "prayer": 0
     },
     "offensive": {
-      "stab": 3,
-      "slash": 5,
-      "crush": 5,
-      "magic": -17,
-      "ranged": -4
+      "stab": 30,
+      "slash": 30,
+      "crush": 6,
+      "magic": -6,
+      "ranged": -2
     },
     "defensive": {
-      "stab": 86,
-      "slash": 100,
-      "crush": 112,
-      "magic": -4,
-      "ranged": 118
+      "stab": 27,
+      "slash": 30,
+      "crush": 28,
+      "magic": -7,
+      "ranged": 34
     },
     "isTwoHanded": false
   },
@@ -156760,21 +156970,21 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 0,
+      "magic_str": 30,
       "prayer": 0
     },
     "offensive": {
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 8,
+      "magic": 7,
       "ranged": -2
     },
     "defensive": {
-      "stab": 20,
-      "slash": 16,
-      "crush": 22,
-      "magic": 8,
+      "stab": 3,
+      "slash": 2,
+      "crush": 6,
+      "magic": 4,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -156820,21 +157030,21 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 0,
+      "magic_str": 30,
       "prayer": 0
     },
     "offensive": {
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 25,
+      "magic": 24,
       "ranged": -7
     },
     "defensive": {
-      "stab": 38,
-      "slash": 35,
-      "crush": 44,
-      "magic": 25,
+      "stab": 7,
+      "slash": 5,
+      "crush": 11,
+      "magic": 8,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -156880,21 +157090,21 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 0,
+      "magic_str": 30,
       "prayer": 0
     },
     "offensive": {
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 35,
+      "magic": 33,
       "ranged": -10
     },
     "defensive": {
-      "stab": 63,
-      "slash": 45,
-      "crush": 74,
-      "magic": 35,
+      "stab": 11,
+      "slash": 7,
+      "crush": 13,
+      "magic": 12,
       "ranged": 0
     },
     "isTwoHanded": false
