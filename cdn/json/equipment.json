@@ -30330,6 +30330,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Brutus slippers",
+    "id": 33099,
+    "version": "",
+    "slot": "feet",
+    "image": "Brutus slippers.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Bryophyta's staff",
     "id": 22370,
     "version": "Charged",
@@ -36967,6 +36997,126 @@
     "image": "Cow shoes.png",
     "speed": 0,
     "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Cow slippers",
+    "id": 33093,
+    "version": "1",
+    "slot": "feet",
+    "image": "Cow slippers (1).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Cow slippers",
+    "id": 33096,
+    "version": "2",
+    "slot": "feet",
+    "image": "Cow slippers (2).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Cow slippers",
+    "id": 33097,
+    "version": "3",
+    "slot": "feet",
+    "image": "Cow slippers (3).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Cow slippers",
+    "id": 33098,
+    "version": "4",
+    "slot": "feet",
+    "image": "Cow slippers (4).png",
+    "speed": 0,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -100526,6 +100676,36 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Mooleta",
+    "id": 33101,
+    "version": "",
+    "slot": "shield",
+    "image": "Mooleta.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 1,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 5,
+      "slash": 7,
+      "crush": 7,
+      "magic": -1,
+      "ranged": -1
+    },
+    "defensive": {
+      "stab": 4,
+      "slash": 8,
+      "crush": 8,
+      "magic": -2,
+      "ranged": -1
     },
     "isTwoHanded": false
   },

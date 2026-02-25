@@ -16830,6 +16830,53 @@
     }
   },
   {
+    "id": 15626,
+    "name": "Brutus",
+    "version": "",
+    "image": "Brutus.png",
+    "level": 30,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "3 (Melee)\n19 (Special)",
+    "skills": {
+      "atk": 12,
+      "def": 10,
+      "hp": 58,
+      "magic": 8,
+      "ranged": 1,
+      "str": 25
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -7,
+      "magic": -3,
+      "heavy": -7,
+      "standard": -7,
+      "light": -7,
+      "slash": -7,
+      "stab": -7
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 25
+    }
+  },
+  {
     "id": 8195,
     "name": "Bryophyta",
     "version": "",
@@ -16914,6 +16961,48 @@
       "light": -21,
       "slash": -21,
       "stab": -21
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15625,
+    "name": "Bull",
+    "version": "",
+    "image": "Bull.png",
+    "level": 30,
+    "speed": 5,
+    "style": null,
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 12,
+      "def": 10,
+      "hp": 58,
+      "magic": 8,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -7,
+      "magic": -3,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": -7,
+      "stab": -7
     },
     "attributes": [],
     "immunities": {
@@ -28597,6 +28686,96 @@
     "weakness": null
   },
   {
+    "id": 15628,
+    "name": "Demonic Brutus",
+    "version": "Brutus",
+    "image": "Demonic Brutus.png",
+    "level": 1224,
+    "speed": 5,
+    "style": null,
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 380,
+      "def": 200,
+      "hp": 750,
+      "magic": 272,
+      "ranged": 0,
+      "str": 418
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 216,
+      "magic": 520,
+      "heavy": 110,
+      "standard": 418,
+      "light": 460,
+      "slash": 65,
+      "stab": 182
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 25
+    }
+  },
+  {
+    "id": 15629,
+    "name": "Demonic Brutus",
+    "version": "Summons",
+    "image": "Demonic Brutus (summons).png",
+    "level": 1224,
+    "speed": 5,
+    "style": null,
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 380,
+      "def": 200,
+      "hp": 750,
+      "magic": 272,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 216,
+      "magic": 520,
+      "heavy": 110,
+      "standard": 418,
+      "light": 460,
+      "slash": 65,
+      "stab": 182
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 25
+    }
+  },
+  {
     "id": 7144,
     "name": "Demonic gorilla",
     "version": "1",
@@ -38526,7 +38705,7 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": "6",
+    "max_hit": "4",
     "skills": {
       "atk": 5,
       "def": 10,
