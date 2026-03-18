@@ -16,7 +16,7 @@ test('Loadout comparison graph reflects strength boosts', () => {
   );
 
   const [entries] = comparator.getEntries();
-  
+
   // Find the entry for strength level 70
   const atLevel70 = entries.find((e) => e.name === 70);
   expect(atLevel70).toBeDefined();
