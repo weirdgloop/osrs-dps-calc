@@ -2018,6 +2018,50 @@
     "weakness": null
   },
   {
+    "id": 15224,
+    "name": "Albatross",
+    "version": "",
+    "image": "Albatross.png",
+    "level": 121,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "10",
+    "skills": {
+      "atk": 100,
+      "def": 60,
+      "hp": 179,
+      "magic": 1,
+      "ranged": 0,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 30,
+      "light": 30,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 1039,
     "name": "Albino bat",
     "version": "",
@@ -4757,6 +4801,53 @@
     "weakness": {
       "element": "air",
       "severity": 30
+    }
+  },
+  {
+    "id": 15210,
+    "name": "Armoured kraken",
+    "version": "",
+    "image": "Armoured kraken.png",
+    "level": 180,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 4,
+    "max_hit": "18",
+    "skills": {
+      "atk": 1,
+      "def": 150,
+      "hp": 231,
+      "magic": 175,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": -63,
+      "heavy": 100,
+      "standard": 50,
+      "light": 100,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 50
     }
   },
   {
@@ -10676,6 +10767,53 @@
     "weakness": null
   },
   {
+    "id": 417,
+    "name": "Basilisk",
+    "version": "",
+    "image": "Basilisk.png",
+    "level": 61,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 30,
+      "def": 75,
+      "hp": 75,
+      "magic": 1,
+      "ranged": 1,
+      "str": 45
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 20,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
+  },
+  {
     "id": 9283,
     "name": "Basilisk (The Fremennik Exiles)",
     "version": "1",
@@ -10726,6 +10864,53 @@
     "id": 9285,
     "name": "Basilisk (The Fremennik Exiles)",
     "version": "2",
+    "image": "Basilisk (unused).png",
+    "level": 61,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 30,
+      "def": 75,
+      "hp": 75,
+      "magic": 1,
+      "ranged": 1,
+      "str": 45
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 20,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
+  },
+  {
+    "id": 418,
+    "name": "Basilisk (unused)",
+    "version": "",
     "image": "Basilisk (unused).png",
     "level": 61,
     "speed": 4,
@@ -10884,100 +11069,6 @@
       "magic": 1,
       "ranged": 1,
       "str": 40
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 20,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 20,
-      "stab": 20
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": {
-      "element": "earth",
-      "severity": 40
-    }
-  },
-  {
-    "id": 417,
-    "name": "Basilisk",
-    "version": "Normal",
-    "image": "Basilisk.png",
-    "level": 61,
-    "speed": 4,
-    "style": [
-      "Slash"
-    ],
-    "size": 2,
-    "max_hit": "5",
-    "skills": {
-      "atk": 30,
-      "def": 75,
-      "hp": 75,
-      "magic": 1,
-      "ranged": 1,
-      "str": 45
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 20,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 20,
-      "stab": 20
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": {
-      "element": "earth",
-      "severity": 40
-    }
-  },
-  {
-    "id": 418,
-    "name": "Basilisk",
-    "version": "Unused",
-    "image": "Basilisk (unused).png",
-    "level": 61,
-    "speed": 4,
-    "style": [
-      "Slash"
-    ],
-    "size": 2,
-    "max_hit": "5",
-    "skills": {
-      "atk": 30,
-      "def": 75,
-      "hp": 75,
-      "magic": 1,
-      "ranged": 1,
-      "str": 45
     },
     "offensive": {
       "atk": 0,
@@ -12716,7 +12807,7 @@
       "hp": 180,
       "magic": 80,
       "ranged": 0,
-      "str": 0
+      "str": 210
     },
     "offensive": {
       "atk": 0,
@@ -16840,7 +16931,7 @@
       "Crush"
     ],
     "size": 3,
-    "max_hit": "3 (Melee)\n19 (Special)",
+    "max_hit": "3 (melee)",
     "skills": {
       "atk": 12,
       "def": 10,
@@ -16969,22 +17060,24 @@
     "weakness": null
   },
   {
-    "id": 15625,
-    "name": "Bull",
+    "id": 15194,
+    "name": "Bull shark",
     "version": "",
-    "image": "Bull.png",
-    "level": 30,
-    "speed": 5,
-    "style": null,
+    "image": "Bull shark.png",
+    "level": 77,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "5",
     "skills": {
-      "atk": 12,
-      "def": 10,
-      "hp": 58,
-      "magic": 8,
+      "atk": 80,
+      "def": 20,
+      "hp": 128,
+      "magic": 1,
       "ranged": 0,
-      "str": 0
+      "str": 45
     },
     "offensive": {
       "atk": 0,
@@ -16996,17 +17089,17 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": -7,
-      "magic": -3,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": -7,
-      "stab": -7
+      "crush": 0,
+      "magic": 0,
+      "heavy": 15,
+      "standard": 40,
+      "light": 40,
+      "slash": 0,
+      "stab": 0
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -17139,6 +17232,50 @@
     "attributes": [],
     "immunities": {
       "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15216,
+    "name": "Butterfly ray",
+    "version": "",
+    "image": "Butterfly ray.png",
+    "level": 72,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "4",
+    "skills": {
+      "atk": 100,
+      "def": 15,
+      "hp": 101,
+      "magic": 1,
+      "ranged": 0,
+      "str": 35
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 20,
+      "standard": 50,
+      "light": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -20902,7 +21039,7 @@
   {
     "id": 419,
     "name": "Cockatrice",
-    "version": "Normal",
+    "version": "",
     "image": "Cockatrice.png",
     "level": 37,
     "speed": 4,
@@ -20945,8 +21082,8 @@
   },
   {
     "id": 420,
-    "name": "Cockatrice",
-    "version": "Unused",
+    "name": "Cockatrice (unused)",
+    "version": "",
     "image": "Cockatrice (unused).png",
     "level": 37,
     "speed": 4,
@@ -28692,15 +28829,17 @@
     "image": "Demonic Brutus.png",
     "level": 1224,
     "speed": 5,
-    "style": null,
+    "style": [
+      "Crush"
+    ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "43 (Melee)",
     "skills": {
       "atk": 380,
       "def": 200,
       "hp": 750,
       "magic": 272,
-      "ranged": 0,
+      "ranged": 1,
       "str": 418
     },
     "offensive": {
@@ -28733,20 +28872,22 @@
   {
     "id": 15629,
     "name": "Demonic Brutus",
-    "version": "Summons",
-    "image": "Demonic Brutus (summons).png",
+    "version": "Ghost",
+    "image": "Demonic Brutus (ghost).png",
     "level": 1224,
     "speed": 5,
-    "style": null,
+    "style": [
+      "Crush"
+    ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "43 (Melee)",
     "skills": {
       "atk": 380,
       "def": 200,
       "hp": 750,
       "magic": 272,
-      "ranged": 0,
-      "str": 0
+      "ranged": 1,
+      "str": 418
     },
     "offensive": {
       "atk": 0,
@@ -30213,7 +30354,7 @@
     "name": "Dolphin",
     "version": "",
     "image": "Dolphin (Sailing).png",
-    "level": 25,
+    "level": 29,
     "speed": 4,
     "style": [
       "Slash"
@@ -30222,8 +30363,8 @@
     "max_hit": "2",
     "skills": {
       "atk": 25,
-      "def": 5,
-      "hp": 50,
+      "def": 0,
+      "hp": 74,
       "magic": 1,
       "ranged": 0,
       "str": 10
@@ -30453,7 +30594,7 @@
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "48 <br/>60 (charge)",
+    "max_hit": "50 <br/>60 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
@@ -31143,9 +31284,9 @@
   {
     "id": 15175,
     "name": "Drink troll queen",
-    "version": "In combat",
+    "version": "",
     "image": "Drink troll queen.png",
-    "level": 194,
+    "level": 217,
     "speed": 5,
     "style": [
       "Magic"
@@ -31155,7 +31296,7 @@
     "skills": {
       "atk": 1,
       "def": 155,
-      "hp": 225,
+      "hp": 315,
       "magic": 205,
       "ranged": 1,
       "str": 1
@@ -32895,6 +33036,50 @@
     "attributes": [],
     "immunities": {
       "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15214,
+    "name": "Eagle ray",
+    "version": "",
+    "image": "Eagle ray.png",
+    "level": 49,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "3",
+    "skills": {
+      "atk": 70,
+      "def": 0,
+      "hp": 74,
+      "magic": 1,
+      "ranged": 0,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 20,
+      "standard": 50,
+      "light": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -37992,7 +38177,7 @@
   {
     "id": 5641,
     "name": "Feral Vampyre",
-    "version": "Level 100",
+    "version": "Level 100 (Temple Trekking)",
     "image": "Feral Vampyre (Temple Trekking).png",
     "level": 100,
     "speed": 4,
@@ -38038,7 +38223,7 @@
   {
     "id": 5642,
     "name": "Feral Vampyre",
-    "version": "Level 130",
+    "version": "Level 130 (Temple Trekking)",
     "image": "Feral Vampyre (Temple Trekking).png",
     "level": 130,
     "speed": 4,
@@ -38130,7 +38315,7 @@
   {
     "id": 3707,
     "name": "Feral Vampyre",
-    "version": "Level 64",
+    "version": "Level 64 (Juvenile/Juvinate)",
     "image": "Angry vampyre.png",
     "level": 64,
     "speed": 4,
@@ -38176,7 +38361,7 @@
   {
     "id": 5640,
     "name": "Feral Vampyre",
-    "version": "Level 70",
+    "version": "Level 70 (Temple Trekking)",
     "image": "Feral Vampyre (Temple Trekking).png",
     "level": 70,
     "speed": 4,
@@ -38222,7 +38407,7 @@
   {
     "id": 3234,
     "name": "Feral Vampyre",
-    "version": "Level 72",
+    "version": "Level 72 (Spider)",
     "image": "Feral Vampyre (lv 72).png",
     "level": 72,
     "speed": 4,
@@ -38268,7 +38453,7 @@
   {
     "id": 3137,
     "name": "Feral Vampyre",
-    "version": "Level 77",
+    "version": "Level 77 (God Wars Dungeon)",
     "image": "Feral Vampyre (GWD).png",
     "level": 77,
     "speed": 4,
@@ -40646,6 +40831,50 @@
       "element": "fire",
       "severity": 50
     }
+  },
+  {
+    "id": 15226,
+    "name": "Frigatebird",
+    "version": "",
+    "image": "Frigatebird.png",
+    "level": 89,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "8",
+    "skills": {
+      "atk": 80,
+      "def": 40,
+      "hp": 121,
+      "magic": 1,
+      "ranged": 0,
+      "str": 70
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 30,
+      "light": 30,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
   },
   {
     "id": 8702,
@@ -43666,7 +43895,7 @@
       "hp": 100,
       "magic": 20,
       "ranged": 0,
-      "str": 0
+      "str": 90
     },
     "offensive": {
       "atk": 0,
@@ -47606,6 +47835,50 @@
       "element": "earth",
       "severity": 50
     }
+  },
+  {
+    "id": 15200,
+    "name": "Great white shark",
+    "version": "",
+    "image": "Great white shark.png",
+    "level": 175,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 4,
+    "max_hit": "15",
+    "skills": {
+      "atk": 155,
+      "def": 70,
+      "hp": 243,
+      "magic": 0,
+      "ranged": 1,
+      "str": 145
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 15,
+      "heavy": 40,
+      "standard": 70,
+      "light": 70,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": null
   },
   {
     "id": 7410,
@@ -55264,6 +55537,50 @@
     "attributes": [],
     "immunities": {
       "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15196,
+    "name": "Hammerhead shark",
+    "version": "",
+    "image": "Hammerhead shark.png",
+    "level": 91,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "7",
+    "skills": {
+      "atk": 80,
+      "def": 50,
+      "hp": 128,
+      "magic": 1,
+      "ranged": 0,
+      "str": 65
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 25,
+      "standard": 50,
+      "light": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -68452,11 +68769,11 @@
     "level": 116,
     "speed": 5,
     "style": [
-      "Melee",
+      "Crush",
       "Ranged"
     ],
     "size": 2,
-    "max_hit": "12",
+    "max_hit": "10 (Melee)",
     "skills": {
       "atk": 90,
       "def": 50,
@@ -71742,6 +72059,50 @@
     "weakness": null
   },
   {
+    "id": 15220,
+    "name": "Manta ray (monster)",
+    "version": "",
+    "image": "Manta ray (Sailing).png",
+    "level": 140,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "8",
+    "skills": {
+      "atk": 155,
+      "def": 40,
+      "hp": 225,
+      "magic": 1,
+      "ranged": 0,
+      "str": 75
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 20,
+      "standard": 50,
+      "light": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": null
+  },
+  {
     "id": 12818,
     "name": "Manticore",
     "version": "",
@@ -72250,7 +72611,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "80 (lightning)",
+    "max_hit": "? (melee)",
     "skills": {
       "atk": 150,
       "def": 140,
@@ -73224,6 +73585,50 @@
     "weakness": null
   },
   {
+    "id": 2482,
+    "name": "Minotaur",
+    "version": "Unused",
+    "image": "Minotaur.png",
+    "level": 19,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 22,
+      "def": 15,
+      "hp": 13,
+      "magic": 1,
+      "ranged": 1,
+      "str": 15
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 1,
+      "magic": 1,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 1,
+      "stab": 1
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 13671,
     "name": "Mirrorback Araxyte",
     "version": "",
@@ -73342,6 +73747,53 @@
       "magic": 1,
       "ranged": 1,
       "str": 55
+    },
+    "offensive": {
+      "atk": 22,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 20
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
+  },
+  {
+    "id": 15230,
+    "name": "Mogre (Sailing)",
+    "version": "",
+    "image": "Mogre (Sailing).png",
+    "level": 61,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "6",
+    "skills": {
+      "atk": 40,
+      "def": 40,
+      "hp": 87,
+      "magic": 1,
+      "ranged": 60,
+      "str": 50
     },
     "offensive": {
       "atk": 22,
@@ -73519,7 +73971,7 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": "2",
+    "max_hit": "2 (Melee)",
     "skills": {
       "atk": 15,
       "def": 18,
@@ -76632,7 +77084,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
   },
   {
     "id": 7562,
@@ -76679,7 +77134,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
   },
   {
     "id": 2649,
@@ -76992,6 +77450,50 @@
     "attributes": [],
     "immunities": {
       "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15202,
+    "name": "Narwhal",
+    "version": "",
+    "image": "Narwhal.png",
+    "level": 119,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 5,
+    "max_hit": "7",
+    "skills": {
+      "atk": 95,
+      "def": 50,
+      "hp": 220,
+      "magic": 1,
+      "ranged": 0,
+      "str": 65
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 20,
+      "heavy": 40,
+      "standard": 65,
+      "light": 65,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -80561,6 +81063,50 @@
     "weakness": null
   },
   {
+    "id": 15204,
+    "name": "Orca",
+    "version": "",
+    "image": "Orca.png",
+    "level": 205,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 4,
+    "max_hit": "13",
+    "skills": {
+      "atk": 165,
+      "def": 75,
+      "hp": 370,
+      "magic": 1,
+      "ranged": 0,
+      "str": 125
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 60,
+      "standard": 85,
+      "light": 85,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": null
+  },
+  {
     "id": 2237,
     "name": "Ork",
     "version": "",
@@ -80642,6 +81188,50 @@
       "heavy": 0,
       "standard": 0,
       "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15222,
+    "name": "Osprey",
+    "version": "",
+    "image": "Osprey.png",
+    "level": 74,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "6",
+    "skills": {
+      "atk": 60,
+      "def": 40,
+      "hp": 114,
+      "magic": 1,
+      "ranged": 0,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 30,
+      "light": 30,
       "slash": 0,
       "stab": 0
     },
@@ -84788,7 +85378,7 @@
       "hp": 38,
       "magic": 10,
       "ranged": 0,
-      "str": 0
+      "str": 50
     },
     "offensive": {
       "atk": 0,
@@ -84830,7 +85420,7 @@
       "hp": 38,
       "magic": 10,
       "ranged": 0,
-      "str": 0
+      "str": 50
     },
     "offensive": {
       "atk": 0,
@@ -84872,7 +85462,7 @@
       "hp": 38,
       "magic": 10,
       "ranged": 0,
-      "str": 0
+      "str": 50
     },
     "offensive": {
       "atk": 0,
@@ -84914,7 +85504,7 @@
       "hp": 38,
       "magic": 10,
       "ranged": 0,
-      "str": 0
+      "str": 50
     },
     "offensive": {
       "atk": 0,
@@ -87082,6 +87672,53 @@
       "burn": null
     },
     "weakness": null
+  },
+  {
+    "id": 15206,
+    "name": "Pygmy kraken",
+    "version": "",
+    "image": "Pygmy kraken.png",
+    "level": 100,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 2,
+    "max_hit": "10",
+    "skills": {
+      "atk": 1,
+      "def": 50,
+      "hp": 177,
+      "magic": 90,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": -63,
+      "heavy": 50,
+      "standard": 25,
+      "light": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
   },
   {
     "id": 433,
@@ -94039,8 +94676,8 @@
   },
   {
     "id": 14940,
-    "name": "Scorpion (Sailing)",
-    "version": "",
+    "name": "Scorpion",
+    "version": "Level 1",
     "image": "Scorpion (Sailing).png",
     "level": 1,
     "speed": 4,
@@ -94079,7 +94716,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 25
+    }
   },
   {
     "id": 3024,
@@ -97630,7 +98270,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 10717,
@@ -104394,6 +105037,53 @@
     "weakness": null
   },
   {
+    "id": 15208,
+    "name": "Spined kraken",
+    "version": "",
+    "image": "Spined kraken.png",
+    "level": 128,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "14",
+    "skills": {
+      "atk": 1,
+      "def": 75,
+      "hp": 177,
+      "magic": 135,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": -63,
+      "heavy": 50,
+      "standard": 25,
+      "light": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
+  },
+  {
     "id": 1709,
     "name": "Spinner",
     "version": "Level 36",
@@ -106135,6 +106825,50 @@
       "element": "earth",
       "severity": 20
     }
+  },
+  {
+    "id": 15218,
+    "name": "Stingray",
+    "version": "",
+    "image": "Stingray.png",
+    "level": 98,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "6",
+    "skills": {
+      "atk": 130,
+      "def": 25,
+      "hp": 128,
+      "magic": 1,
+      "ranged": 0,
+      "str": 55
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 20,
+      "standard": 50,
+      "light": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": null
   },
   {
     "id": 8066,
@@ -108946,6 +109680,50 @@
       "heavy": 0,
       "standard": 0,
       "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15268,
+    "name": "Tern",
+    "version": "",
+    "image": "Tern.png",
+    "level": 26,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "3",
+    "skills": {
+      "atk": 25,
+      "def": 0,
+      "hp": 46,
+      "magic": 1,
+      "ranged": 0,
+      "str": 20
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 30,
+      "light": 30,
       "slash": 0,
       "stab": 0
     },
@@ -112206,6 +112984,50 @@
     "weakness": null
   },
   {
+    "id": 15198,
+    "name": "Tiger shark",
+    "version": "",
+    "image": "Tiger shark.png",
+    "level": 125,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "9",
+    "skills": {
+      "atk": 120,
+      "def": 60,
+      "hp": 174,
+      "magic": 1,
+      "ranged": 0,
+      "str": 85
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 35,
+      "standard": 60,
+      "light": 60,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": null
+  },
+  {
     "id": 141,
     "name": "Tok-Xil (Construction)",
     "version": "",
@@ -115279,7 +116101,7 @@
   {
     "id": 430,
     "name": "Turoth",
-    "version": "Level 83",
+    "version": "Baby",
     "image": "Turoth (lv 83).png",
     "level": 83,
     "speed": 4,
@@ -115325,7 +116147,7 @@
   {
     "id": 429,
     "name": "Turoth",
-    "version": "Level 85",
+    "version": "Child",
     "image": "Turoth (lv 85).png",
     "level": 85,
     "speed": 4,
@@ -115369,11 +116191,11 @@
     "weakness": null
   },
   {
-    "id": 428,
+    "id": 427,
     "name": "Turoth",
-    "version": "Level 87",
-    "image": "Turoth (lv 87).png",
-    "level": 87,
+    "version": "Dad",
+    "image": "Turoth (lv 89).png",
+    "level": 89,
     "speed": 4,
     "style": [
       "Stab"
@@ -115381,12 +116203,12 @@
     "size": 2,
     "max_hit": "10",
     "skills": {
-      "atk": 56,
-      "def": 86,
-      "hp": 79,
+      "atk": 58,
+      "def": 88,
+      "hp": 81,
       "magic": 1,
       "ranged": 1,
-      "str": 86
+      "str": 88
     },
     "offensive": {
       "atk": 0,
@@ -115415,11 +116237,11 @@
     "weakness": null
   },
   {
-    "id": 427,
+    "id": 428,
     "name": "Turoth",
-    "version": "Level 89",
-    "image": "Turoth (lv 89).png",
-    "level": 89,
+    "version": "Mum",
+    "image": "Turoth (lv 87).png",
+    "level": 87,
     "speed": 4,
     "style": [
       "Stab"
@@ -115427,12 +116249,12 @@
     "size": 2,
     "max_hit": "10",
     "skills": {
-      "atk": 58,
-      "def": 88,
-      "hp": 81,
+      "atk": 56,
+      "def": 86,
+      "hp": 79,
       "magic": 1,
       "ranged": 1,
-      "str": 88
+      "str": 86
     },
     "offensive": {
       "atk": 0,
@@ -117971,8 +118793,54 @@
   {
     "id": 4436,
     "name": "Vampyre Juvenile",
-    "version": "Burgh de Rott/Crombwick Manor",
+    "version": "Burgh de Rott and Crombwick Manor",
     "image": "Vampyre Juvenile.png",
+    "level": 45,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 40,
+      "def": 30,
+      "hp": 60,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "vampyre1"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 9731,
+    "name": "Vampyre Juvenile",
+    "version": "Darkmeyer",
+    "image": "Vampyre Juvenile (Darkmeyer, male).png",
     "level": 45,
     "speed": 4,
     "style": [
@@ -118017,7 +118885,7 @@
   {
     "id": 3692,
     "name": "Vampyre Juvenile",
-    "version": "Meiyerditch/Darkmeyer",
+    "version": "Meiyerditch",
     "image": "Vampyre Juvenile (Meiyerditch, male).png",
     "level": 45,
     "speed": 4,
@@ -118061,10 +118929,56 @@
     "weakness": null
   },
   {
+    "id": 9614,
+    "name": "Vampyre Juvinate",
+    "version": "Level 119 (Sins of the Father)",
+    "image": "Vampyre Juvinate (Sins of the Father).png",
+    "level": 119,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "9",
+    "skills": {
+      "atk": 127,
+      "def": 65,
+      "hp": 150,
+      "magic": 50,
+      "ranged": 50,
+      "str": 76
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "vampyre2"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 5636,
     "name": "Vampyre Juvinate",
-    "version": "Level 119",
-    "image": "Juvinate.png",
+    "version": "Level 119 (Temple Trekking)",
+    "image": "Vampyre Juvinate (Temple Trekking, level 119).png",
     "level": 119,
     "speed": 4,
     "style": [
@@ -118109,8 +119023,8 @@
   {
     "id": 4443,
     "name": "Vampyre Juvinate",
-    "version": "Level 50",
-    "image": "Vampyre Juvinate.png",
+    "version": "Level 50 (In Aid of the Myreque)",
+    "image": "Vampyre Juvinate (In Aid of the Myreque, level 50).png",
     "level": 50,
     "speed": 4,
     "style": [
@@ -118155,7 +119069,7 @@
   {
     "id": 4427,
     "name": "Vampyre Juvinate",
-    "version": "Level 54",
+    "version": "Level 54 (Burgh de Rott)",
     "image": "Vampyre Juvinate.png",
     "level": 54,
     "speed": 4,
@@ -118199,9 +119113,55 @@
     "weakness": null
   },
   {
-    "id": 3690,
+    "id": 9727,
     "name": "Vampyre Juvinate",
-    "version": "Level 54 (Meiyerditch/Darkmeyer)",
+    "version": "Level 54 (Darkmeyer)",
+    "image": "Vampyre Juvinate (Darkmeyer, male).png",
+    "level": 54,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "5",
+    "skills": {
+      "atk": 40,
+      "def": 30,
+      "hp": 85,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "vampyre2"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 3694,
+    "name": "Vampyre Juvinate",
+    "version": "Level 54 (Meiyerditch)",
     "image": "Vampyre Juvinate (Meiyerditch, male).png",
     "level": 54,
     "speed": 4,
@@ -118247,8 +119207,8 @@
   {
     "id": 5634,
     "name": "Vampyre Juvinate",
-    "version": "Level 59",
-    "image": "Juvinate.png",
+    "version": "Level 59 (Temple Trekking)",
+    "image": "Vampyre Juvinate (Temple Trekking, level 59).png",
     "level": 59,
     "speed": 4,
     "style": [
@@ -118293,8 +119253,8 @@
   {
     "id": 4442,
     "name": "Vampyre Juvinate",
-    "version": "Level 75",
-    "image": "Vampyre Juvinate.png",
+    "version": "Level 75 (In Aid of the Myreque)",
+    "image": "Vampyre Juvinate (In Aid of the Myreque, level 75).png",
     "level": 75,
     "speed": 4,
     "style": [
@@ -118339,8 +119299,8 @@
   {
     "id": 5635,
     "name": "Vampyre Juvinate",
-    "version": "Level 90",
-    "image": "Juvinate.png",
+    "version": "Level 90 (Temple Trekking)",
+    "image": "Vampyre Juvinate (Temple Trekking, level 90).png",
     "level": 90,
     "speed": 4,
     "style": [
@@ -118381,6 +119341,53 @@
       "burn": null
     },
     "weakness": null
+  },
+  {
+    "id": 15212,
+    "name": "Vampyre kraken",
+    "version": "",
+    "image": "Vampyre kraken.png",
+    "level": 211,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 5,
+    "max_hit": "22",
+    "skills": {
+      "atk": 1,
+      "def": 115,
+      "hp": 311,
+      "magic": 215,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": -63,
+      "heavy": 50,
+      "standard": 25,
+      "light": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
   },
   {
     "id": 7529,
@@ -118932,6 +119939,50 @@
     ],
     "immunities": {
       "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15576,
+    "name": "Veiled kraken",
+    "version": "",
+    "image": "Veiled kraken.png",
+    "level": 210,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 5,
+    "max_hit": "19",
+    "skills": {
+      "atk": 200,
+      "def": 115,
+      "hp": 225,
+      "magic": 100,
+      "ranged": 1,
+      "str": 185
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 15,
+      "crush": 0,
+      "magic": 325,
+      "heavy": 0,
+      "standard": 325,
+      "light": 325,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
     },
     "weakness": null
   },
