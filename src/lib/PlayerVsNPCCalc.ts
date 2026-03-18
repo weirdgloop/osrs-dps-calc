@@ -2083,9 +2083,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const isSoulreaperStacking = this.wearing('Soulreaper axe')
         && !this.opts.usingSpecialAttack
         && this.player.buffs.soulreaperStacks < 5;
-    const initialStacks = isSoulreaperStacking
-      ? Math.max(0, this.player.buffs.soulreaperStacks)
-      : 0;
+    const initialStacks = this.player.buffs.soulreaperStacks;
 
     // Pre-compute hit distributions at different soulreaper axe stacks (and hps, if applicable)
     const stackDists = new Array<DelayedHit[]>(6);
