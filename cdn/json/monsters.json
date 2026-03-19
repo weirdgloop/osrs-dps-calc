@@ -2018,6 +2018,50 @@
     "weakness": null
   },
   {
+    "id": 15224,
+    "name": "Albatross",
+    "version": "",
+    "image": "Albatross.png",
+    "level": 121,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "10",
+    "skills": {
+      "atk": 100,
+      "def": 60,
+      "hp": 179,
+      "magic": 1,
+      "ranged": 0,
+      "str": 90
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 30,
+      "light": 30,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 1039,
     "name": "Albino bat",
     "version": "",
@@ -3392,7 +3436,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Weak"
     },
     "weakness": {
       "element": "earth",
@@ -4030,8 +4074,7 @@
     "level": 75,
     "speed": 4,
     "style": [
-      "Magic",
-      "Slash"
+      "Magic"
     ],
     "size": 1,
     "max_hit": "6",
@@ -4078,8 +4121,7 @@
     "level": 75,
     "speed": 4,
     "style": [
-      "Magic",
-      "Slash"
+      "Magic"
     ],
     "size": 1,
     "max_hit": "6",
@@ -4126,7 +4168,6 @@
     "level": 81,
     "speed": 4,
     "style": [
-      "Magic",
       "Slash"
     ],
     "size": 1,
@@ -4760,6 +4801,53 @@
     "weakness": {
       "element": "air",
       "severity": 30
+    }
+  },
+  {
+    "id": 15210,
+    "name": "Armoured kraken",
+    "version": "",
+    "image": "Armoured kraken.png",
+    "level": 180,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 4,
+    "max_hit": "18",
+    "skills": {
+      "atk": 1,
+      "def": 150,
+      "hp": 231,
+      "magic": 175,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": -63,
+      "heavy": 100,
+      "standard": 50,
+      "light": 100,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 50
     }
   },
   {
@@ -10679,6 +10767,53 @@
     "weakness": null
   },
   {
+    "id": 417,
+    "name": "Basilisk",
+    "version": "",
+    "image": "Basilisk.png",
+    "level": 61,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 30,
+      "def": 75,
+      "hp": 75,
+      "magic": 1,
+      "ranged": 1,
+      "str": 45
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 20,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
+  },
+  {
     "id": 9283,
     "name": "Basilisk (The Fremennik Exiles)",
     "version": "1",
@@ -10729,6 +10864,53 @@
     "id": 9285,
     "name": "Basilisk (The Fremennik Exiles)",
     "version": "2",
+    "image": "Basilisk (unused).png",
+    "level": 61,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 30,
+      "def": 75,
+      "hp": 75,
+      "magic": 1,
+      "ranged": 1,
+      "str": 45
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 20,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
+  },
+  {
+    "id": 418,
+    "name": "Basilisk (unused)",
+    "version": "",
     "image": "Basilisk (unused).png",
     "level": 61,
     "speed": 4,
@@ -10887,100 +11069,6 @@
       "magic": 1,
       "ranged": 1,
       "str": 40
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 20,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 20,
-      "stab": 20
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": {
-      "element": "earth",
-      "severity": 40
-    }
-  },
-  {
-    "id": 417,
-    "name": "Basilisk",
-    "version": "Normal",
-    "image": "Basilisk.png",
-    "level": 61,
-    "speed": 4,
-    "style": [
-      "Slash"
-    ],
-    "size": 2,
-    "max_hit": "5",
-    "skills": {
-      "atk": 30,
-      "def": 75,
-      "hp": 75,
-      "magic": 1,
-      "ranged": 1,
-      "str": 45
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 20,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 20,
-      "stab": 20
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": {
-      "element": "earth",
-      "severity": 40
-    }
-  },
-  {
-    "id": 418,
-    "name": "Basilisk",
-    "version": "Unused",
-    "image": "Basilisk (unused).png",
-    "level": 61,
-    "speed": 4,
-    "style": [
-      "Slash"
-    ],
-    "size": 2,
-    "max_hit": "5",
-    "skills": {
-      "atk": 30,
-      "def": 75,
-      "hp": 75,
-      "magic": 1,
-      "ranged": 1,
-      "str": 45
     },
     "offensive": {
       "atk": 0,
@@ -11327,6 +11415,147 @@
     "weakness": null
   },
   {
+    "id": 13658,
+    "name": "Bee Swarm (Deadman)",
+    "version": "All-Stars",
+    "image": "Bee Swarm (Deadman).png",
+    "level": 357,
+    "speed": 1,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "11",
+    "skills": {
+      "atk": 400,
+      "def": 30,
+      "hp": 750,
+      "magic": 1,
+      "ranged": 1,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 200,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 10,
+      "stab": 10
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
+  },
+  {
+    "id": 13658,
+    "name": "Bee Swarm (Deadman)",
+    "version": "Annihilation",
+    "image": "Bee Swarm (Deadman).png",
+    "level": 1420,
+    "speed": 1,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "11",
+    "skills": {
+      "atk": 400,
+      "def": 30,
+      "hp": 5000,
+      "magic": 1,
+      "ranged": 1,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 200,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 10,
+      "stab": 10
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
+  },
+  {
+    "id": 13658,
+    "name": "Bee Swarm (Deadman)",
+    "version": "Armageddon",
+    "image": "Bee Swarm (Deadman).png",
+    "level": 670,
+    "speed": 1,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "11",
+    "skills": {
+      "atk": 400,
+      "def": 30,
+      "hp": 2000,
+      "magic": 1,
+      "ranged": 1,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 200,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 10,
+      "stab": 10
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
+  },
+  {
     "id": 4132,
     "name": "Berry",
     "version": "Awake",
@@ -11468,6 +11697,94 @@
       "element": "air",
       "severity": 25
     }
+  },
+  {
+    "id": 15547,
+    "name": "Big Evil Chicken",
+    "version": "Annihilation",
+    "image": "Big Evil Chicken.png",
+    "level": 1047,
+    "speed": 3,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "26",
+    "skills": {
+      "atk": 255,
+      "def": 25,
+      "hp": 3500,
+      "magic": 300,
+      "ranged": 0,
+      "str": 255
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 25,
+      "magic": 255,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 25,
+      "stab": 25
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15547,
+    "name": "Big Evil Chicken",
+    "version": "Factions",
+    "image": "Big Evil Chicken.png",
+    "level": 422,
+    "speed": 3,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "26",
+    "skills": {
+      "atk": 255,
+      "def": 25,
+      "hp": 1000,
+      "magic": 300,
+      "ranged": 0,
+      "str": 255
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 25,
+      "magic": 255,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 25,
+      "stab": 25
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
   },
   {
     "id": 8701,
@@ -12490,7 +12807,7 @@
       "hp": 180,
       "magic": 80,
       "ranged": 0,
-      "str": 0
+      "str": 210
     },
     "offensive": {
       "atk": 0,
@@ -16604,6 +16921,53 @@
     }
   },
   {
+    "id": 15626,
+    "name": "Brutus",
+    "version": "",
+    "image": "Brutus.png",
+    "level": 30,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "3 (melee)",
+    "skills": {
+      "atk": 12,
+      "def": 10,
+      "hp": 58,
+      "magic": 8,
+      "ranged": 1,
+      "str": 25
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -7,
+      "magic": -3,
+      "heavy": -7,
+      "standard": -7,
+      "light": -7,
+      "slash": -7,
+      "stab": -7
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 25
+    }
+  },
+  {
     "id": 8195,
     "name": "Bryophyta",
     "version": "",
@@ -16692,6 +17056,50 @@
     "attributes": [],
     "immunities": {
       "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15194,
+    "name": "Bull shark",
+    "version": "",
+    "image": "Bull shark.png",
+    "level": 77,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "5",
+    "skills": {
+      "atk": 80,
+      "def": 20,
+      "hp": 128,
+      "magic": 1,
+      "ranged": 0,
+      "str": 45
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 15,
+      "standard": 40,
+      "light": 40,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -16824,6 +17232,50 @@
     "attributes": [],
     "immunities": {
       "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15216,
+    "name": "Butterfly ray",
+    "version": "",
+    "image": "Butterfly ray.png",
+    "level": 72,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "4",
+    "skills": {
+      "atk": 100,
+      "def": 15,
+      "hp": 101,
+      "magic": 1,
+      "ranged": 0,
+      "str": 35
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 20,
+      "standard": 50,
+      "light": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -17469,6 +17921,94 @@
       "atk": 230,
       "def": 142,
       "hp": 130,
+      "magic": 230,
+      "ranged": 1,
+      "str": 195
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12454,
+    "name": "Cave abomination (Deadman)",
+    "version": "Annihilation",
+    "image": "Cave abomination (Deadman Apocalypse).png",
+    "level": 957,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "26",
+    "skills": {
+      "atk": 280,
+      "def": 142,
+      "hp": 3000,
+      "magic": 230,
+      "ranged": 1,
+      "str": 250
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12454,
+    "name": "Cave abomination (Deadman)",
+    "version": "Apocalypse, Armageddon",
+    "image": "Cave abomination (Deadman Apocalypse).png",
+    "level": 361,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "20",
+    "skills": {
+      "atk": 230,
+      "def": 142,
+      "hp": 750,
       "magic": 230,
       "ranged": 1,
       "str": 195
@@ -19032,6 +19572,104 @@
     }
   },
   {
+    "id": 13657,
+    "name": "Cerberus (Deadman)",
+    "version": "Annihilation",
+    "image": "Cerberus (Deadman).png",
+    "level": 726,
+    "speed": 3,
+    "style": [
+      "Stab"
+    ],
+    "size": 5,
+    "max_hit": "29",
+    "skills": {
+      "atk": 300,
+      "def": 150,
+      "hp": 2000,
+      "magic": 220,
+      "ranged": 220,
+      "str": 280
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 50,
+      "magic_str": 0,
+      "ranged": 50,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 25,
+      "magic": 100,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 100,
+      "stab": 50
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": "Normal"
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
+  },
+  {
+    "id": 13657,
+    "name": "Cerberus (Deadman)",
+    "version": "Apocalypse, Armageddon",
+    "image": "Cerberus (Deadman).png",
+    "level": 430,
+    "speed": 3,
+    "style": [
+      "Stab"
+    ],
+    "size": 5,
+    "max_hit": "23",
+    "skills": {
+      "atk": 220,
+      "def": 150,
+      "hp": 1000,
+      "magic": 220,
+      "ranged": 220,
+      "str": 220
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 50,
+      "magic_str": 0,
+      "ranged": 50,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 25,
+      "magic": 100,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 100,
+      "stab": 50
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": "Normal"
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
+  },
+  {
     "id": 11482,
     "name": "Champion of Scabaras",
     "version": "",
@@ -19715,6 +20353,50 @@
     "weakness": null
   },
   {
+    "id": 10495,
+    "name": "Chicken",
+    "version": "Gordon and Mary's Farm",
+    "image": "Chicken (3).png",
+    "level": 1,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "0",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 3,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": -47,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": -42
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -42,
+      "magic": -42,
+      "heavy": -42,
+      "standard": -42,
+      "light": -42,
+      "slash": -42,
+      "stab": -42
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 3661,
     "name": "Chicken",
     "version": "Miscellania",
@@ -20357,7 +21039,7 @@
   {
     "id": 419,
     "name": "Cockatrice",
-    "version": "Normal",
+    "version": "",
     "image": "Cockatrice.png",
     "level": 37,
     "speed": 4,
@@ -20400,8 +21082,8 @@
   },
   {
     "id": 420,
-    "name": "Cockatrice",
-    "version": "Unused",
+    "name": "Cockatrice (unused)",
+    "version": "",
     "image": "Cockatrice (unused).png",
     "level": 37,
     "speed": 4,
@@ -20567,6 +21249,138 @@
       "crush": 100,
       "magic": 100,
       "heavy": 75,
+      "standard": 100,
+      "light": 100,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12445,
+    "name": "Commander Zilyana (Deadman)",
+    "version": "Annihilation",
+    "image": "Commander Zilyana (Deadman Apocalypse).png",
+    "level": 596,
+    "speed": 2,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "27",
+    "skills": {
+      "atk": 280,
+      "def": 150,
+      "hp": 1500,
+      "magic": 300,
+      "ranged": 250,
+      "str": 196
+    },
+    "offensive": {
+      "atk": 195,
+      "magic": 200,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 20
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 100,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12445,
+    "name": "Commander Zilyana (Deadman)",
+    "version": "Apocalypse",
+    "image": "Commander Zilyana (Deadman Apocalypse).png",
+    "level": 596,
+    "speed": 2,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "27",
+    "skills": {
+      "atk": 280,
+      "def": 300,
+      "hp": 500,
+      "magic": 300,
+      "ranged": 250,
+      "str": 196
+    },
+    "offensive": {
+      "atk": 195,
+      "magic": 200,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 20
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 100,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12445,
+    "name": "Commander Zilyana (Deadman)",
+    "version": "Armageddon",
+    "image": "Commander Zilyana (Deadman Apocalypse).png",
+    "level": 596,
+    "speed": 2,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "27",
+    "skills": {
+      "atk": 280,
+      "def": 150,
+      "hp": 500,
+      "magic": 300,
+      "ranged": 250,
+      "str": 196
+    },
+    "offensive": {
+      "atk": 195,
+      "magic": 200,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 20
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 100,
+      "heavy": 100,
       "standard": 100,
       "light": 100,
       "slash": 100,
@@ -24906,10 +25720,10 @@
     "weakness": null
   },
   {
-    "id": 2236,
+    "id": 2235,
     "name": "Cyclops (God Wars Dungeon)",
-    "version": "Grey",
-    "image": "Cyclops (GWD, 2).png",
+    "version": "Green",
+    "image": "Cyclops (GWD).png",
     "level": 81,
     "speed": 6,
     "style": [
@@ -24950,10 +25764,10 @@
     "weakness": null
   },
   {
-    "id": 2235,
+    "id": 2236,
     "name": "Cyclops (God Wars Dungeon)",
-    "version": "Teal",
-    "image": "Cyclops (GWD).png",
+    "version": "Grey",
+    "image": "Cyclops (GWD, 2).png",
     "level": 81,
     "speed": 6,
     "style": [
@@ -25740,6 +26554,144 @@
     }
   },
   {
+    "id": 12442,
+    "name": "Dagannoth Prime (Deadman)",
+    "version": "Annihilation",
+    "image": "Dagannoth Prime (Deadman Apocalypse).png",
+    "level": 947,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "26",
+    "skills": {
+      "atk": 255,
+      "def": 125,
+      "hp": 3000,
+      "magic": 255,
+      "ranged": 0,
+      "str": 255
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 255,
+      "magic": 255,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 255,
+      "stab": 255
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
+  },
+  {
+    "id": 12442,
+    "name": "Dagannoth Prime (Deadman)",
+    "version": "Apocalypse",
+    "image": "Dagannoth Prime (Deadman Apocalypse).png",
+    "level": 417,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "26",
+    "skills": {
+      "atk": 255,
+      "def": 255,
+      "hp": 750,
+      "magic": 255,
+      "ranged": 0,
+      "str": 255
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 255,
+      "magic": 255,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 255,
+      "stab": 255
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12442,
+    "name": "Dagannoth Prime (Deadman)",
+    "version": "Armageddon",
+    "image": "Dagannoth Prime (Deadman Apocalypse).png",
+    "level": 447,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "26",
+    "skills": {
+      "atk": 255,
+      "def": 125,
+      "hp": 1000,
+      "magic": 255,
+      "ranged": 0,
+      "str": 255
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 255,
+      "magic": 255,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 255,
+      "stab": 255
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
+  },
+  {
     "id": 2267,
     "name": "Dagannoth Rex",
     "version": "",
@@ -25755,6 +26707,144 @@
       "atk": 255,
       "def": 255,
       "hp": 255,
+      "magic": 0,
+      "ranged": 255,
+      "str": 255
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 255,
+      "magic": 10,
+      "heavy": 255,
+      "standard": 255,
+      "light": 255,
+      "slash": 255,
+      "stab": 255
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
+  },
+  {
+    "id": 12439,
+    "name": "Dagannoth Rex (Deadman)",
+    "version": "Annihilation",
+    "image": "Dagannoth Rex (Deadman Apocalypse).png",
+    "level": 1104,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "26",
+    "skills": {
+      "atk": 255,
+      "def": 255,
+      "hp": 3500,
+      "magic": 0,
+      "ranged": 255,
+      "str": 255
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 255,
+      "magic": 10,
+      "heavy": 255,
+      "standard": 255,
+      "light": 255,
+      "slash": 255,
+      "stab": 255
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
+  },
+  {
+    "id": 12439,
+    "name": "Dagannoth Rex (Deadman)",
+    "version": "Apocalypse",
+    "image": "Dagannoth Rex (Deadman Apocalypse).png",
+    "level": 417,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "26",
+    "skills": {
+      "atk": 255,
+      "def": 255,
+      "hp": 750,
+      "magic": 0,
+      "ranged": 255,
+      "str": 255
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 255,
+      "magic": 10,
+      "heavy": 255,
+      "standard": 255,
+      "light": 255,
+      "slash": 255,
+      "stab": 255
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12439,
+    "name": "Dagannoth Rex (Deadman)",
+    "version": "Armageddon",
+    "image": "Dagannoth Rex (Deadman Apocalypse).png",
+    "level": 479,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "26",
+    "skills": {
+      "atk": 255,
+      "def": 255,
+      "hp": 1000,
       "magic": 0,
       "ranged": 255,
       "str": 255
@@ -25849,6 +26939,144 @@
       "atk": 255,
       "def": 128,
       "hp": 255,
+      "magic": 255,
+      "ranged": 255,
+      "str": 255
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 255,
+      "heavy": 550,
+      "standard": 550,
+      "light": 550,
+      "slash": 10,
+      "stab": 10
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
+  },
+  {
+    "id": 12441,
+    "name": "Dagannoth Supreme (Deadman)",
+    "version": "Annihilation",
+    "image": "Dagannoth Supreme (Deadman Apocalypse).png",
+    "level": 936,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 255,
+      "def": 84,
+      "hp": 3000,
+      "magic": 255,
+      "ranged": 255,
+      "str": 255
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 255,
+      "heavy": 550,
+      "standard": 550,
+      "light": 550,
+      "slash": 10,
+      "stab": 10
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
+  },
+  {
+    "id": 12441,
+    "name": "Dagannoth Supreme (Deadman)",
+    "version": "Apocalypse",
+    "image": "Dagannoth Supreme (Deadman Apocalypse).png",
+    "level": 385,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 255,
+      "def": 128,
+      "hp": 750,
+      "magic": 255,
+      "ranged": 255,
+      "str": 255
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 255,
+      "heavy": 550,
+      "standard": 550,
+      "light": 550,
+      "slash": 10,
+      "stab": 10
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12441,
+    "name": "Dagannoth Supreme (Deadman)",
+    "version": "Armageddon",
+    "image": "Dagannoth Supreme (Deadman Apocalypse).png",
+    "level": 436,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 255,
+      "def": 84,
+      "hp": 1000,
       "magic": 255,
       "ranged": 255,
       "str": 255
@@ -27595,6 +28823,100 @@
     "weakness": null
   },
   {
+    "id": 15628,
+    "name": "Demonic Brutus",
+    "version": "Brutus",
+    "image": "Demonic Brutus.png",
+    "level": 1224,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "43 (Melee)",
+    "skills": {
+      "atk": 380,
+      "def": 200,
+      "hp": 750,
+      "magic": 272,
+      "ranged": 1,
+      "str": 418
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 216,
+      "magic": 520,
+      "heavy": 110,
+      "standard": 418,
+      "light": 460,
+      "slash": 65,
+      "stab": 182
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 25
+    }
+  },
+  {
+    "id": 15629,
+    "name": "Demonic Brutus",
+    "version": "Ghost",
+    "image": "Demonic Brutus (ghost).png",
+    "level": 1224,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "43 (Melee)",
+    "skills": {
+      "atk": 380,
+      "def": 200,
+      "hp": 750,
+      "magic": 272,
+      "ranged": 1,
+      "str": 418
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 216,
+      "magic": 520,
+      "heavy": 110,
+      "standard": 418,
+      "light": 460,
+      "slash": 65,
+      "stab": 182
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 25
+    }
+  },
+  {
     "id": 7144,
     "name": "Demonic gorilla",
     "version": "1",
@@ -27753,7 +29075,7 @@
       "Crush"
     ],
     "size": 3,
-    "max_hit": "43 (magic)",
+    "max_hit": "43 (Magic)",
     "skills": {
       "atk": 250,
       "def": 100,
@@ -27765,6 +29087,141 @@
     "offensive": {
       "atk": 0,
       "magic": 180,
+      "magic_str": 80,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 200,
+      "magic": -60,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
+      "slash": 200,
+      "stab": 200
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12450,
+    "name": "Derwen (Deadman)",
+    "version": "Annihilation",
+    "image": "Derwen (Deadman Apocalypse).png",
+    "level": 655,
+    "speed": 6,
+    "style": [
+      "Magic",
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "43 (Magic)",
+    "skills": {
+      "atk": 250,
+      "def": 100,
+      "hp": 2000,
+      "magic": 180,
+      "ranged": 1,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 80,
+      "magic_str": 80,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 200,
+      "magic": -60,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
+      "slash": 200,
+      "stab": 200
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12450,
+    "name": "Derwen (Deadman)",
+    "version": "Apocalypse",
+    "image": "Derwen (Deadman Apocalypse).png",
+    "level": 235,
+    "speed": 6,
+    "style": [
+      "Magic",
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "43 (Magic)",
+    "skills": {
+      "atk": 250,
+      "def": 100,
+      "hp": 320,
+      "magic": 180,
+      "ranged": 1,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 80,
+      "magic_str": 80,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 200,
+      "magic": -60,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
+      "slash": 200,
+      "stab": 200
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12450,
+    "name": "Derwen (Deadman)",
+    "version": "Armageddon",
+    "image": "Derwen (Deadman Apocalypse).png",
+    "level": 280,
+    "speed": 6,
+    "style": [
+      "Magic",
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "43 (Magic)",
+    "skills": {
+      "atk": 250,
+      "def": 100,
+      "hp": 500,
+      "magic": 180,
+      "ranged": 1,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 80,
       "magic_str": 80,
       "ranged": 0,
       "ranged_str": 0,
@@ -28432,6 +29889,150 @@
     }
   },
   {
+    "id": 12447,
+    "name": "Dharok the Wretched (Deadman)",
+    "version": "Annihilation",
+    "image": "Dharok the Wretched (Deadman Apocalypse).png",
+    "level": 666,
+    "speed": 7,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "29",
+    "skills": {
+      "atk": 100,
+      "def": 200,
+      "hp": 300,
+      "magic": 1,
+      "ranged": 1,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": -58,
+      "magic_str": 0,
+      "ranged": -18,
+      "ranged_str": 0,
+      "str": 105
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 244,
+      "magic": -11,
+      "heavy": 249,
+      "standard": 249,
+      "light": 249,
+      "slash": 250,
+      "stab": 252
+    },
+    "attributes": [
+      "spectral"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 50
+    }
+  },
+  {
+    "id": 12447,
+    "name": "Dharok the Wretched (Deadman)",
+    "version": "Apocalypse",
+    "image": "Dharok the Wretched (Deadman Apocalypse).png",
+    "level": 666,
+    "speed": 7,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "29",
+    "skills": {
+      "atk": 100,
+      "def": 100,
+      "hp": 200,
+      "magic": 1,
+      "ranged": 1,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": -58,
+      "magic_str": 0,
+      "ranged": -18,
+      "ranged_str": 0,
+      "str": 105
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 244,
+      "magic": -11,
+      "heavy": 249,
+      "standard": 249,
+      "light": 249,
+      "slash": 250,
+      "stab": 252
+    },
+    "attributes": [
+      "spectral"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12447,
+    "name": "Dharok the Wretched (Deadman)",
+    "version": "Armageddon",
+    "image": "Dharok the Wretched (Deadman Apocalypse).png",
+    "level": 666,
+    "speed": 7,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "29",
+    "skills": {
+      "atk": 100,
+      "def": 200,
+      "hp": 200,
+      "magic": 1,
+      "ranged": 1,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": -58,
+      "magic_str": 0,
+      "ranged": -18,
+      "ranged_str": 0,
+      "str": 105
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 244,
+      "magic": -11,
+      "heavy": 249,
+      "standard": 249,
+      "light": 249,
+      "slash": 250,
+      "stab": 252
+    },
+    "attributes": [
+      "spectral"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 50
+    }
+  },
+  {
     "id": 15171,
     "name": "Dinky the drink troll",
     "version": "",
@@ -28753,7 +30354,7 @@
     "name": "Dolphin",
     "version": "",
     "image": "Dolphin (Sailing).png",
-    "level": 25,
+    "level": 29,
     "speed": 4,
     "style": [
       "Slash"
@@ -28762,8 +30363,8 @@
     "max_hit": "2",
     "skills": {
       "atk": 25,
-      "def": 5,
-      "hp": 50,
+      "def": 0,
+      "hp": 74,
       "magic": 1,
       "ranged": 0,
       "str": 10
@@ -28993,7 +30594,7 @@
       "Ranged"
     ],
     "size": 5,
-    "max_hit": "48 <br/>60 (charge)",
+    "max_hit": "50 <br/>60 (charge)",
     "skills": {
       "atk": 300,
       "def": 90,
@@ -29683,9 +31284,9 @@
   {
     "id": 15175,
     "name": "Drink troll queen",
-    "version": "In combat",
+    "version": "",
     "image": "Drink troll queen.png",
-    "level": 194,
+    "level": 217,
     "speed": 5,
     "style": [
       "Magic"
@@ -29695,7 +31296,7 @@
     "skills": {
       "atk": 1,
       "def": 155,
-      "hp": 225,
+      "hp": 315,
       "magic": 205,
       "ranged": 1,
       "str": 1
@@ -30272,6 +31873,141 @@
     "weakness": null
   },
   {
+    "id": 13662,
+    "name": "Durial321 (Deadman)",
+    "version": "All-Stars",
+    "image": "Durial321 (Deadman).png",
+    "level": 209,
+    "speed": 4,
+    "style": [
+      "Slash",
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "28 (Melee)",
+    "skills": {
+      "atk": 95,
+      "def": 88,
+      "hp": 500,
+      "magic": 94,
+      "ranged": 80,
+      "str": 98
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 47,
+      "magic_str": 0,
+      "ranged": -12,
+      "ranged_str": 0,
+      "str": 105
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 162,
+      "magic": 69,
+      "heavy": 88,
+      "standard": 88,
+      "light": 88,
+      "slash": 134,
+      "stab": 148
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 13662,
+    "name": "Durial321 (Deadman)",
+    "version": "Annihilation",
+    "image": "Durial321 (Deadman).png",
+    "level": 709,
+    "speed": 4,
+    "style": [
+      "Slash",
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "28 (Melee)",
+    "skills": {
+      "atk": 95,
+      "def": 88,
+      "hp": 2500,
+      "magic": 94,
+      "ranged": 80,
+      "str": 98
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 150,
+      "magic_str": 0,
+      "ranged": -12,
+      "ranged_str": 0,
+      "str": 105
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 162,
+      "magic": 69,
+      "heavy": 88,
+      "standard": 88,
+      "light": 88,
+      "slash": 134,
+      "stab": 148
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 13662,
+    "name": "Durial321 (Deadman)",
+    "version": "Armageddon",
+    "image": "Durial321 (Deadman).png",
+    "level": 334,
+    "speed": 4,
+    "style": [
+      "Slash",
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "28 (Melee)",
+    "skills": {
+      "atk": 95,
+      "def": 88,
+      "hp": 1000,
+      "magic": 94,
+      "ranged": 80,
+      "str": 98
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 47,
+      "magic_str": 0,
+      "ranged": -12,
+      "ranged_str": 0,
+      "str": 105
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 162,
+      "magic": 69,
+      "heavy": 88,
+      "standard": 88,
+      "light": 88,
+      "slash": 134,
+      "stab": 148
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 7851,
     "name": "Dusk",
     "version": "First form",
@@ -30282,7 +32018,7 @@
       "Slash "
     ],
     "size": 4,
-    "max_hit": "15",
+    "max_hit": "15 (melee) 33 (special attack)",
     "skills": {
       "atk": 200,
       "def": 100,
@@ -30332,7 +32068,7 @@
       "Ranged"
     ],
     "size": 6,
-    "max_hit": "26",
+    "max_hit": "26 (melee)<br/> 15x2 (ranged)<br/> 65 (special attack)",
     "skills": {
       "atk": 300,
       "def": 150,
@@ -30644,14 +32380,146 @@
     "weakness": null
   },
   {
+    "id": 294,
+    "name": "Dwarf",
+    "version": "Mining Guild (1)",
+    "image": "Dwarf (Falador, 1).png",
+    "level": 11,
+    "speed": 5,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 12,
+      "def": 8,
+      "hp": 16,
+      "magic": 1,
+      "ranged": 1,
+      "str": 5
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 295,
+    "name": "Dwarf",
+    "version": "Mining Guild (2)",
+    "image": "Dwarf (Falador, 2).png",
+    "level": 11,
+    "speed": 5,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 8,
+      "hp": 16,
+      "magic": 1,
+      "ranged": 1,
+      "str": 5
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 10,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 296,
+    "name": "Dwarf",
+    "version": "Mining Guild (3)",
+    "image": "Dwarf (Falador, 3).png",
+    "level": 10,
+    "speed": 5,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 12,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 290,
     "name": "Dwarf",
-    "version": "Level 10",
+    "version": "Standard",
     "image": "Dwarf.png",
     "level": 10,
     "speed": 5,
     "style": [
-      "Crush"
+      "Stab"
     ],
     "size": 1,
     "max_hit": "2",
@@ -30688,54 +32556,10 @@
     "weakness": null
   },
   {
-    "id": 294,
-    "name": "Dwarf",
-    "version": "Level 11",
-    "image": "Dwarf.png",
-    "level": 11,
-    "speed": 5,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "2",
-    "skills": {
-      "atk": 8,
-      "def": 8,
-      "hp": 18,
-      "magic": 1,
-      "ranged": 1,
-      "str": 8
-    },
-    "offensive": {
-      "atk": 5,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 7
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 5,
-      "heavy": 10,
-      "standard": 10,
-      "light": 10,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
     "id": 292,
     "name": "Dwarf",
-    "version": "Level 20",
-    "image": "Dwarf.png",
+    "version": "Standard (Level 20)",
+    "image": "Dwarf (Level 20).png",
     "level": 20,
     "speed": 6,
     "style": [
@@ -30776,14 +32600,322 @@
     "weakness": null
   },
   {
+    "id": 1401,
+    "name": "Dwarf",
+    "version": "Worker (1)",
+    "image": "Dwarf (Worker, 1).png",
+    "level": 11,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 8,
+      "hp": 16,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1402,
+    "name": "Dwarf",
+    "version": "Worker (2)",
+    "image": "Dwarf (Worker, 2).png",
+    "level": 11,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 8,
+      "hp": 16,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1403,
+    "name": "Dwarf",
+    "version": "Worker (3)",
+    "image": "Dwarf (Worker, 3).png",
+    "level": 11,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 8,
+      "hp": 16,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 10,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 10,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1404,
+    "name": "Dwarf",
+    "version": "Worker (4)",
+    "image": "Dwarf (Worker, 4).png",
+    "level": 11,
+    "speed": 6,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 8,
+      "hp": 16,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1405,
+    "name": "Dwarf",
+    "version": "Worker (5)",
+    "image": "Dwarf (Worker, 5).png",
+    "level": 10,
+    "speed": 6,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 8,
+      "hp": 12,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1406,
+    "name": "Dwarf",
+    "version": "Worker (6)",
+    "image": "Dwarf (Worker, 6).png",
+    "level": 11,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 18,
+      "magic": 1,
+      "ranged": 1,
+      "str": 6
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 1407,
+    "name": "Dwarf",
+    "version": "Worker (7)",
+    "image": "Dwarf (Worker, 7).png",
+    "level": 11,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 10,
+      "def": 8,
+      "hp": 13,
+      "magic": 1,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 1408,
     "name": "Dwarf",
-    "version": "Level 7",
-    "image": "Dwarf.png",
+    "version": "Worker (8)",
+    "image": "Dwarf (Worker, 8).png",
     "level": 7,
     "speed": 4,
     "style": [
-      "Crush"
+      "Stab"
     ],
     "size": 1,
     "max_hit": "2",
@@ -30791,6 +32923,50 @@
       "atk": 6,
       "def": 6,
       "hp": 10,
+      "magic": 1,
+      "ranged": 1,
+      "str": 6
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 8496,
+    "name": "Dwarf",
+    "version": "Worker (9)",
+    "image": "Dwarf (Worker, 9).png",
+    "level": 11,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 10,
+      "hp": 18,
       "magic": 1,
       "ranged": 1,
       "str": 6
@@ -30860,6 +33036,50 @@
     "attributes": [],
     "immunities": {
       "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15214,
+    "name": "Eagle ray",
+    "version": "",
+    "image": "Eagle ray.png",
+    "level": 49,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "3",
+    "skills": {
+      "atk": 70,
+      "def": 0,
+      "hp": 74,
+      "magic": 1,
+      "ranged": 0,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 20,
+      "standard": 50,
+      "light": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -31463,6 +33683,94 @@
     "weakness": null
   },
   {
+    "id": 11728,
+    "name": "Egg (Tombs of Amascut)",
+    "version": "Explode",
+    "image": "Egg (Tombs of Amascut, explode).png",
+    "level": 0,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 1,
+    "max_hit": "0",
+    "skills": {
+      "atk": 1,
+      "def": 0,
+      "hp": 35,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -100,
+      "magic": -100,
+      "heavy": -100,
+      "standard": -100,
+      "light": -100,
+      "slash": -100,
+      "stab": -100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 11729,
+    "name": "Egg (Tombs of Amascut)",
+    "version": "Hatch",
+    "image": "Egg (Tombs of Amascut, hatch).png",
+    "level": 0,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 1,
+    "max_hit": "0",
+    "skills": {
+      "atk": 1,
+      "def": 0,
+      "hp": 35,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -100,
+      "magic": -100,
+      "heavy": -100,
+      "standard": -100,
+      "light": -100,
+      "slash": -100,
+      "stab": -100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 3675,
     "name": "Einar",
     "version": "",
@@ -31909,6 +34217,100 @@
       "burn": null
     },
     "weakness": null
+  },
+  {
+    "id": 15552,
+    "name": "Elidinis' Warden (Deadman)",
+    "version": "Annihilation",
+    "image": "Elidinis' Warden (Deadman).png",
+    "level": 970,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 5,
+    "max_hit": "41",
+    "skills": {
+      "atk": 300,
+      "def": 100,
+      "hp": 3000,
+      "magic": 400,
+      "ranged": 190,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 225,
+      "magic_str": 0,
+      "ranged": 225,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 70,
+      "magic": -30,
+      "heavy": 70,
+      "standard": 70,
+      "light": 70,
+      "slash": 70,
+      "stab": 70
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
+  },
+  {
+    "id": 15552,
+    "name": "Elidinis' Warden (Deadman)",
+    "version": "Factions",
+    "image": "Elidinis' Warden (Deadman).png",
+    "level": 255,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 5,
+    "max_hit": "41",
+    "skills": {
+      "atk": 300,
+      "def": 100,
+      "hp": 140,
+      "magic": 400,
+      "ranged": 190,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 225,
+      "magic_str": 0,
+      "ranged": 225,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 70,
+      "magic": -30,
+      "heavy": 70,
+      "standard": 70,
+      "light": 70,
+      "slash": 70,
+      "stab": 70
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
   },
   {
     "id": 11753,
@@ -34029,7 +36431,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "18",
+    "max_hit": "18 (Standard)",
     "skills": {
       "atk": 220,
       "def": 100,
@@ -35775,7 +38177,7 @@
   {
     "id": 5641,
     "name": "Feral Vampyre",
-    "version": "Level 100",
+    "version": "Level 100 (Temple Trekking)",
     "image": "Feral Vampyre (Temple Trekking).png",
     "level": 100,
     "speed": 4,
@@ -35821,7 +38223,7 @@
   {
     "id": 5642,
     "name": "Feral Vampyre",
-    "version": "Level 130",
+    "version": "Level 130 (Temple Trekking)",
     "image": "Feral Vampyre (Temple Trekking).png",
     "level": 130,
     "speed": 4,
@@ -35913,7 +38315,7 @@
   {
     "id": 3707,
     "name": "Feral Vampyre",
-    "version": "Level 64",
+    "version": "Level 64 (Juvenile/Juvinate)",
     "image": "Angry vampyre.png",
     "level": 64,
     "speed": 4,
@@ -35959,7 +38361,7 @@
   {
     "id": 5640,
     "name": "Feral Vampyre",
-    "version": "Level 70",
+    "version": "Level 70 (Temple Trekking)",
     "image": "Feral Vampyre (Temple Trekking).png",
     "level": 70,
     "speed": 4,
@@ -36005,7 +38407,7 @@
   {
     "id": 3234,
     "name": "Feral Vampyre",
-    "version": "Level 72",
+    "version": "Level 72 (Spider)",
     "image": "Feral Vampyre (lv 72).png",
     "level": 72,
     "speed": 4,
@@ -36051,7 +38453,7 @@
   {
     "id": 3137,
     "name": "Feral Vampyre",
-    "version": "Level 77",
+    "version": "Level 77 (God Wars Dungeon)",
     "image": "Feral Vampyre (GWD).png",
     "level": 77,
     "speed": 4,
@@ -36488,7 +38890,7 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": "6",
+    "max_hit": "4",
     "skills": {
       "atk": 5,
       "def": 10,
@@ -36809,6 +39211,150 @@
     ],
     "immunities": {
       "burn": null
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 100
+    }
+  },
+  {
+    "id": 12453,
+    "name": "Flaming pyrelord (Deadman)",
+    "version": "Annihilation",
+    "image": "Flaming pyrelord (Deadman Apocalypse).png",
+    "level": 1026,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "1 (11 with burn)",
+    "skills": {
+      "atk": 150,
+      "def": 150,
+      "hp": 3500,
+      "magic": 1,
+      "ranged": 1,
+      "str": 200
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 18,
+      "magic": 150,
+      "heavy": 18,
+      "standard": 18,
+      "light": 18,
+      "slash": 18,
+      "stab": 18
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": "Normal"
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 100
+    }
+  },
+  {
+    "id": 12453,
+    "name": "Flaming pyrelord (Deadman)",
+    "version": "Apocalypse",
+    "image": "Flaming pyrelord (Deadman Apocalypse).png",
+    "level": 363,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "1",
+    "skills": {
+      "atk": 150,
+      "def": 250,
+      "hp": 750,
+      "magic": 1,
+      "ranged": 1,
+      "str": 200
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 18,
+      "magic": 150,
+      "heavy": 18,
+      "standard": 18,
+      "light": 18,
+      "slash": 18,
+      "stab": 18
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12453,
+    "name": "Flaming pyrelord (Deadman)",
+    "version": "Armageddon",
+    "image": "Flaming pyrelord (Deadman Apocalypse).png",
+    "level": 338,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "21",
+    "skills": {
+      "atk": 150,
+      "def": 150,
+      "hp": 750,
+      "magic": 1,
+      "ranged": 1,
+      "str": 200
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 18,
+      "magic": 150,
+      "heavy": 18,
+      "standard": 18,
+      "light": 18,
+      "slash": 18,
+      "stab": 18
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": "Normal"
     },
     "weakness": {
       "element": "water",
@@ -38287,6 +40833,50 @@
     }
   },
   {
+    "id": 15226,
+    "name": "Frigatebird",
+    "version": "",
+    "image": "Frigatebird.png",
+    "level": 89,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "8",
+    "skills": {
+      "atk": 80,
+      "def": 40,
+      "hp": 121,
+      "magic": 1,
+      "ranged": 0,
+      "str": 70
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 30,
+      "light": 30,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 8702,
     "name": "Frog",
     "version": "",
@@ -38514,7 +41104,8 @@
       "stab": 25
     },
     "attributes": [
-      "dragon"
+      "dragon",
+      "fiery"
     ],
     "immunities": {
       "burn": null
@@ -39582,6 +42173,144 @@
       "flat_armour": 0,
       "crush": 90,
       "magic": 298,
+      "heavy": 90,
+      "standard": 90,
+      "light": 90,
+      "slash": 90,
+      "stab": 90
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
+  },
+  {
+    "id": 12444,
+    "name": "General Graardor (Deadman)",
+    "version": "Annihilation",
+    "image": "General Graardor (Deadman Apocalypse).png",
+    "level": 624,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 4,
+    "max_hit": "60 (Melee)",
+    "skills": {
+      "atk": 280,
+      "def": 250,
+      "hp": 2000,
+      "magic": 80,
+      "ranged": 350,
+      "str": 350
+    },
+    "offensive": {
+      "atk": 120,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 100,
+      "ranged_str": 40,
+      "str": 43
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 201,
+      "heavy": 90,
+      "standard": 90,
+      "light": 90,
+      "slash": 90,
+      "stab": 90
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
+  },
+  {
+    "id": 12444,
+    "name": "General Graardor (Deadman)",
+    "version": "Apocalypse",
+    "image": "General Graardor (Deadman Apocalypse).png",
+    "level": 624,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 4,
+    "max_hit": "60 (Melee)",
+    "skills": {
+      "atk": 280,
+      "def": 250,
+      "hp": 1000,
+      "magic": 80,
+      "ranged": 350,
+      "str": 350
+    },
+    "offensive": {
+      "atk": 120,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 100,
+      "ranged_str": 40,
+      "str": 43
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 201,
+      "heavy": 90,
+      "standard": 90,
+      "light": 90,
+      "slash": 90,
+      "stab": 90
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12444,
+    "name": "General Graardor (Deadman)",
+    "version": "Armageddon",
+    "image": "General Graardor (Deadman Apocalypse).png",
+    "level": 624,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 4,
+    "max_hit": "60 (Melee)",
+    "skills": {
+      "atk": 280,
+      "def": 250,
+      "hp": 1500,
+      "magic": 80,
+      "ranged": 350,
+      "str": 350
+    },
+    "offensive": {
+      "atk": 120,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 100,
+      "ranged_str": 40,
+      "str": 43
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 201,
       "heavy": 90,
       "standard": 90,
       "light": 90,
@@ -40928,6 +43657,138 @@
     }
   },
   {
+    "id": 12452,
+    "name": "Giant goblin",
+    "version": "Annihilation",
+    "image": "Giant goblin.png",
+    "level": 1022,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "27",
+    "skills": {
+      "atk": 150,
+      "def": 200,
+      "hp": 3500,
+      "magic": 1,
+      "ranged": 1,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 120,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 43
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -15,
+      "magic": -15,
+      "heavy": -15,
+      "standard": -15,
+      "light": -15,
+      "slash": -15,
+      "stab": -15
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12452,
+    "name": "Giant goblin",
+    "version": "Apocalypse",
+    "image": "Giant goblin.png",
+    "level": 347,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "27",
+    "skills": {
+      "atk": 150,
+      "def": 250,
+      "hp": 750,
+      "magic": 1,
+      "ranged": 1,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 120,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 43
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -15,
+      "magic": -15,
+      "heavy": -15,
+      "standard": -15,
+      "light": -15,
+      "slash": -15,
+      "stab": -15
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12452,
+    "name": "Giant goblin",
+    "version": "Armageddon",
+    "image": "Giant goblin.png",
+    "level": 397,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "27",
+    "skills": {
+      "atk": 150,
+      "def": 200,
+      "hp": 1000,
+      "magic": 1,
+      "ranged": 1,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 120,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 43
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -15,
+      "magic": -15,
+      "heavy": -15,
+      "standard": -15,
+      "light": -15,
+      "slash": -15,
+      "stab": -15
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 4799,
     "name": "Giant lobster",
     "version": "",
@@ -41034,7 +43895,7 @@
       "hp": 100,
       "magic": 20,
       "ranged": 0,
-      "str": 0
+      "str": 90
     },
     "offensive": {
       "atk": 0,
@@ -41195,6 +44056,50 @@
     "attributes": [
       "rat"
     ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 9483,
+    "name": "Giant rat (Tutorial Island)",
+    "version": "2020",
+    "image": "Giant rat (Tutorial Island, 1).png",
+    "level": 3,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "2",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 3,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -100,
+      "magic": 0,
+      "heavy": -100,
+      "standard": -100,
+      "light": -100,
+      "slash": -100,
+      "stab": -100
+    },
+    "attributes": [],
     "immunities": {
       "burn": null
     },
@@ -44602,11 +47507,11 @@
     "weakness": null
   },
   {
-    "id": 1834,
+    "id": 3141,
     "name": "Gorak",
-    "version": "Level 145",
-    "image": "Gorak.png",
-    "level": 145,
+    "version": "GWD",
+    "image": "Gorak (GWD).png",
+    "level": 149,
     "speed": 4,
     "style": [
       "Typeless Crush"
@@ -44614,12 +47519,12 @@
     "size": 2,
     "max_hit": "14",
     "skills": {
-      "atk": 130,
-      "def": 131,
-      "hp": 112,
+      "atk": 133,
+      "def": 135,
+      "hp": 128,
       "magic": 1,
       "ranged": 1,
-      "str": 130
+      "str": 126
     },
     "offensive": {
       "atk": 0,
@@ -44646,11 +47551,11 @@
     "weakness": null
   },
   {
-    "id": 3141,
+    "id": 1834,
     "name": "Gorak",
-    "version": "Level 149",
-    "image": "Gorak (GWD).png",
-    "level": 149,
+    "version": "Level 145",
+    "image": "Gorak.png",
+    "level": 145,
     "speed": 4,
     "style": [
       "Typeless Crush"
@@ -44658,12 +47563,12 @@
     "size": 2,
     "max_hit": "14",
     "skills": {
-      "atk": 133,
-      "def": 135,
-      "hp": 128,
+      "atk": 130,
+      "def": 131,
+      "hp": 112,
       "magic": 1,
       "ranged": 1,
-      "str": 126
+      "str": 130
     },
     "offensive": {
       "atk": 0,
@@ -44932,6 +47837,50 @@
     }
   },
   {
+    "id": 15200,
+    "name": "Great white shark",
+    "version": "",
+    "image": "Great white shark.png",
+    "level": 175,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 4,
+    "max_hit": "15",
+    "skills": {
+      "atk": 155,
+      "def": 70,
+      "hp": 243,
+      "magic": 0,
+      "ranged": 1,
+      "str": 145
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 15,
+      "heavy": 40,
+      "standard": 70,
+      "light": 70,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": null
+  },
+  {
     "id": 7410,
     "name": "Greater abyssal demon",
     "version": "",
@@ -44947,6 +47896,144 @@
       "atk": 300,
       "def": 240,
       "hp": 400,
+      "magic": 1,
+      "ranged": 1,
+      "str": 260
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 50,
+      "magic": 0,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
+      "slash": 50,
+      "stab": 50
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12451,
+    "name": "Greater abyssal demon (Deadman)",
+    "version": "Annihilation",
+    "image": "Greater abyssal demon (Deadman Apocalypse).png",
+    "level": 719,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 3,
+    "max_hit": "27",
+    "skills": {
+      "atk": 300,
+      "def": 150,
+      "hp": 2000,
+      "magic": 1,
+      "ranged": 1,
+      "str": 260
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 50,
+      "magic": 0,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
+      "slash": 50,
+      "stab": 50
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12451,
+    "name": "Greater abyssal demon (Deadman)",
+    "version": "Apocalypse",
+    "image": "Greater abyssal demon (Deadman Apocalypse).png",
+    "level": 429,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 3,
+    "max_hit": "27",
+    "skills": {
+      "atk": 300,
+      "def": 240,
+      "hp": 750,
+      "magic": 1,
+      "ranged": 1,
+      "str": 260
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 50,
+      "magic": 0,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
+      "slash": 50,
+      "stab": 50
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12451,
+    "name": "Greater abyssal demon (Deadman)",
+    "version": "Armageddon",
+    "image": "Greater abyssal demon (Deadman Apocalypse).png",
+    "level": 407,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 3,
+    "max_hit": "27",
+    "skills": {
+      "atk": 300,
+      "def": 150,
+      "hp": 750,
       "magic": 1,
       "ranged": 1,
       "str": 260
@@ -47961,6 +51048,50 @@
     "weakness": null
   },
   {
+    "id": 15566,
+    "name": "Guard (Deadman Mode)",
+    "version": "Ruins of Unkah",
+    "image": "Guard (Deadman Mode, Ruins of Unkah).png",
+    "level": 1337,
+    "speed": 2,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "Varies",
+    "skills": {
+      "atk": 800,
+      "def": 300,
+      "hp": 800,
+      "magic": 1,
+      "ranged": 1,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 7,
+      "magic": 0,
+      "heavy": 8,
+      "standard": 8,
+      "light": 8,
+      "slash": 9,
+      "stab": 8
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 6575,
     "name": "Guard (Deadman Mode)",
     "version": "Seers' Village (ranged)",
@@ -48273,6 +51404,94 @@
     "name": "Guard (Deadman Mode)",
     "version": "Warriors' Guild",
     "image": "Guard (Deadman Mode, Warriors' Guild).png",
+    "level": 1337,
+    "speed": 2,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "Varies",
+    "skills": {
+      "atk": 800,
+      "def": 300,
+      "hp": 800,
+      "magic": 1,
+      "ranged": 1,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 7,
+      "magic": 0,
+      "heavy": 8,
+      "standard": 8,
+      "light": 8,
+      "slash": 9,
+      "stab": 8
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12461,
+    "name": "Guard (Deadman Mode)",
+    "version": "Warriors' Guild (ranged)",
+    "image": "Guard (Deadman Mode, Warriors' Guild, ranged).png",
+    "level": 1337,
+    "speed": 2,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "Varies",
+    "skills": {
+      "atk": 800,
+      "def": 300,
+      "hp": 800,
+      "magic": 1,
+      "ranged": 1,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 7,
+      "magic": 0,
+      "heavy": 8,
+      "standard": 8,
+      "light": 8,
+      "slash": 9,
+      "stab": 8
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15568,
+    "name": "Guard (Deadman Mode)",
+    "version": "Wintertodt",
+    "image": "Guard (Deadman Mode, Wintertodt).png",
     "level": 1337,
     "speed": 2,
     "style": [
@@ -52322,6 +55541,50 @@
     "weakness": null
   },
   {
+    "id": 15196,
+    "name": "Hammerhead shark",
+    "version": "",
+    "image": "Hammerhead shark.png",
+    "level": 91,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "7",
+    "skills": {
+      "atk": 80,
+      "def": 50,
+      "hp": 128,
+      "magic": 1,
+      "ranged": 0,
+      "str": 65
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 25,
+      "standard": 50,
+      "light": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": null
+  },
+  {
     "id": 464,
     "name": "Harpie Bug Swarm",
     "version": "",
@@ -53144,8 +56407,52 @@
   {
     "id": 14852,
     "name": "Hermit crab",
-    "version": "",
+    "version": "Active",
     "image": "Hermit crab.png",
+    "level": 19,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 1,
+      "def": 1,
+      "hp": 75,
+      "magic": 1,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -50,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14853,
+    "name": "Hermit crab",
+    "version": "Hidden",
+    "image": "Suspicious shell.png",
     "level": 19,
     "speed": 4,
     "style": [
@@ -54647,10 +57954,11 @@
     "level": 40,
     "speed": 4,
     "style": [
-      "Stab"
+      "Stab",
+      "Ranged"
     ],
     "size": 2,
-    "max_hit": "5",
+    "max_hit": "5 (Melee)",
     "skills": {
       "atk": 38,
       "def": 39,
@@ -55046,6 +58354,53 @@
       "burn": null
     },
     "weakness": null
+  },
+  {
+    "id": 15553,
+    "name": "I DSCIM YOU",
+    "version": "",
+    "image": "I DSCIM YOU.png",
+    "level": 495,
+    "speed": 3,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "21",
+    "skills": {
+      "atk": 150,
+      "def": 25,
+      "hp": 1500,
+      "magic": 100,
+      "ranged": 25,
+      "str": 200
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 25,
+      "magic": 50,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 25,
+      "stab": 25
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 7584,
@@ -55894,7 +59249,7 @@
     },
     "weakness": {
       "element": "fire",
-      "severity": 100
+      "severity": 50
     }
   },
   {
@@ -56178,7 +59533,7 @@
     },
     "weakness": {
       "element": "fire",
-      "severity": 100
+      "severity": 50
     }
   },
   {
@@ -58046,6 +61401,138 @@
     "weakness": null
   },
   {
+    "id": 13660,
+    "name": "Jaguar warrior (Deadman)",
+    "version": "All-Stars",
+    "image": "Jaguar warrior (deadman).png",
+    "level": 331,
+    "speed": 6,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "21 (x4)",
+    "skills": {
+      "atk": 200,
+      "def": 100,
+      "hp": 750,
+      "magic": 100,
+      "ranged": 160,
+      "str": 165
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 15
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 50,
+      "magic": 100,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
+      "slash": 50,
+      "stab": 50
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 13660,
+    "name": "Jaguar warrior (Deadman)",
+    "version": "Annihilation",
+    "image": "Jaguar warrior (deadman).png",
+    "level": 893,
+    "speed": 6,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "21 (x4)",
+    "skills": {
+      "atk": 200,
+      "def": 100,
+      "hp": 3000,
+      "magic": 100,
+      "ranged": 160,
+      "str": 165
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 15
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 50,
+      "magic": 100,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
+      "slash": 50,
+      "stab": 50
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 13660,
+    "name": "Jaguar warrior (Deadman)",
+    "version": "Armageddon",
+    "image": "Jaguar warrior (deadman).png",
+    "level": 518,
+    "speed": 6,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "21 (x4)",
+    "skills": {
+      "atk": 200,
+      "def": 100,
+      "hp": 1500,
+      "magic": 100,
+      "ranged": 160,
+      "str": 165
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 15
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 50,
+      "magic": 100,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
+      "slash": 50,
+      "stab": 50
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 4276,
     "name": "Jail guard",
     "version": "1",
@@ -58544,6 +62031,144 @@
     "weakness": {
       "element": "water",
       "severity": 40
+    }
+  },
+  {
+    "id": 12455,
+    "name": "Jal-ImKot (Deadman)",
+    "version": "Annihilation",
+    "image": "Jal-ImKot (Deadman Apocalypse).png",
+    "level": 240,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 4,
+    "max_hit": "49",
+    "skills": {
+      "atk": 210,
+      "def": 120,
+      "hp": 3000,
+      "magic": 120,
+      "ranged": 220,
+      "str": 290
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 40
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 65,
+      "magic": 30,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
+      "slash": 65,
+      "stab": 65
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 30
+    }
+  },
+  {
+    "id": 12455,
+    "name": "Jal-ImKot (Deadman)",
+    "version": "Apocalypse",
+    "image": "Jal-ImKot (Deadman Apocalypse).png",
+    "level": 240,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 4,
+    "max_hit": "49",
+    "skills": {
+      "atk": 210,
+      "def": 120,
+      "hp": 750,
+      "magic": 120,
+      "ranged": 220,
+      "str": 290
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 40
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 65,
+      "magic": 30,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
+      "slash": 65,
+      "stab": 65
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12455,
+    "name": "Jal-ImKot (Deadman)",
+    "version": "Armageddon",
+    "image": "Jal-ImKot (Deadman Apocalypse).png",
+    "level": 240,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 4,
+    "max_hit": "49",
+    "skills": {
+      "atk": 210,
+      "def": 120,
+      "hp": 1000,
+      "magic": 120,
+      "ranged": 220,
+      "str": 290
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 40
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 65,
+      "magic": 30,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
+      "slash": 65,
+      "stab": 65
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 30
     }
   },
   {
@@ -60273,7 +63898,7 @@
     "style": [
       "Stab"
     ],
-    "size": 2,
+    "size": 1,
     "max_hit": "8",
     "skills": {
       "atk": 70,
@@ -60320,7 +63945,7 @@
     "style": [
       "Stab"
     ],
-    "size": 2,
+    "size": 1,
     "max_hit": "8",
     "skills": {
       "atk": 70,
@@ -60544,6 +64169,141 @@
     "weakness": null
   },
   {
+    "id": 12449,
+    "name": "Justiciar Zachariah (Deadman)",
+    "version": "Annihilation",
+    "image": "Justiciar Zachariah (Deadman Apocalypse).png",
+    "level": 768,
+    "speed": 6,
+    "style": [
+      "Slash",
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "43 (Melee)",
+    "skills": {
+      "atk": 500,
+      "def": 100,
+      "hp": 2000,
+      "magic": 180,
+      "ranged": 1,
+      "str": 250
+    },
+    "offensive": {
+      "atk": 200,
+      "magic": 80,
+      "magic_str": 80,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 200,
+      "magic": -60,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
+      "slash": 200,
+      "stab": 200
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12449,
+    "name": "Justiciar Zachariah (Deadman)",
+    "version": "Apocalypse",
+    "image": "Justiciar Zachariah (Deadman Apocalypse).png",
+    "level": 348,
+    "speed": 6,
+    "style": [
+      "Slash",
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "43 (Melee)",
+    "skills": {
+      "atk": 500,
+      "def": 100,
+      "hp": 320,
+      "magic": 180,
+      "ranged": 1,
+      "str": 250
+    },
+    "offensive": {
+      "atk": 200,
+      "magic": 80,
+      "magic_str": 80,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 200,
+      "magic": -60,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
+      "slash": 200,
+      "stab": 200
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12449,
+    "name": "Justiciar Zachariah (Deadman)",
+    "version": "Armageddon",
+    "image": "Justiciar Zachariah (Deadman Apocalypse).png",
+    "level": 393,
+    "speed": 6,
+    "style": [
+      "Slash",
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "43 (Melee)",
+    "skills": {
+      "atk": 500,
+      "def": 100,
+      "hp": 500,
+      "magic": 180,
+      "ranged": 1,
+      "str": 250
+    },
+    "offensive": {
+      "atk": 200,
+      "magic": 80,
+      "magic_str": 80,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 200,
+      "magic": -60,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
+      "slash": 200,
+      "stab": 200
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 14702,
     "name": "Juvenile custodian stalker",
     "version": "",
@@ -60633,6 +64393,144 @@
     "attributes": [
       "demon"
     ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 30
+    }
+  },
+  {
+    "id": 12446,
+    "name": "K'ril Tsutsaroth (Deadman)",
+    "version": "Annihilation",
+    "image": "K'ril Tsutsaroth (Deadman Apocalypse).png",
+    "level": 650,
+    "speed": 6,
+    "style": [
+      "Slash"
+    ],
+    "size": 5,
+    "max_hit": "46 (Melee)",
+    "skills": {
+      "atk": 340,
+      "def": 270,
+      "hp": 1500,
+      "magic": 200,
+      "ranged": 1,
+      "str": 300
+    },
+    "offensive": {
+      "atk": 160,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 31
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 80,
+      "magic": 130,
+      "heavy": 80,
+      "standard": 80,
+      "light": 80,
+      "slash": 80,
+      "stab": 80
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 30
+    }
+  },
+  {
+    "id": 12446,
+    "name": "K'ril Tsutsaroth (Deadman)",
+    "version": "Apocalypse",
+    "image": "K'ril Tsutsaroth (Deadman Apocalypse).png",
+    "level": 650,
+    "speed": 6,
+    "style": [
+      "Slash"
+    ],
+    "size": 5,
+    "max_hit": "46 (Melee)",
+    "skills": {
+      "atk": 340,
+      "def": 270,
+      "hp": 1000,
+      "magic": 200,
+      "ranged": 1,
+      "str": 300
+    },
+    "offensive": {
+      "atk": 160,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 31
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 80,
+      "magic": 130,
+      "heavy": 80,
+      "standard": 80,
+      "light": 80,
+      "slash": 80,
+      "stab": 80
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12446,
+    "name": "K'ril Tsutsaroth (Deadman)",
+    "version": "Armageddon",
+    "image": "K'ril Tsutsaroth (Deadman Apocalypse).png",
+    "level": 650,
+    "speed": 6,
+    "style": [
+      "Slash"
+    ],
+    "size": 5,
+    "max_hit": "46 (Melee)",
+    "skills": {
+      "atk": 340,
+      "def": 270,
+      "hp": 1000,
+      "magic": 200,
+      "ranged": 1,
+      "str": 300
+    },
+    "offensive": {
+      "atk": 160,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 31
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 80,
+      "magic": 130,
+      "heavy": 80,
+      "standard": 80,
+      "light": 80,
+      "slash": 80,
+      "stab": 80
+    },
+    "attributes": [],
     "immunities": {
       "burn": null
     },
@@ -62559,6 +66457,153 @@
     }
   },
   {
+    "id": 12440,
+    "name": "King Black Dragon (Deadman)",
+    "version": "Annihilation",
+    "image": "King Black Dragon (Deadman Apocalypse).png",
+    "level": 318,
+    "speed": 4,
+    "style": [
+      "Stab",
+      "Dragonfire"
+    ],
+    "size": 5,
+    "max_hit": "25 (Melee)",
+    "skills": {
+      "atk": 240,
+      "def": 0,
+      "hp": 500,
+      "magic": 240,
+      "ranged": 1,
+      "str": 240
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 80,
+      "heavy": 70,
+      "standard": 40,
+      "light": 70,
+      "slash": 90,
+      "stab": 70
+    },
+    "attributes": [
+      "dragon"
+    ],
+    "immunities": {
+      "burn": "Normal"
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
+  },
+  {
+    "id": 12440,
+    "name": "King Black Dragon (Deadman)",
+    "version": "Apocalypse",
+    "image": "King Black Dragon (Deadman Apocalypse).png",
+    "level": 278,
+    "speed": 4,
+    "style": [
+      "Stab",
+      "Dragonfire"
+    ],
+    "size": 5,
+    "max_hit": "25 (Melee)",
+    "skills": {
+      "atk": 240,
+      "def": 240,
+      "hp": 250,
+      "magic": 240,
+      "ranged": 1,
+      "str": 240
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 80,
+      "heavy": 70,
+      "standard": 40,
+      "light": 70,
+      "slash": 90,
+      "stab": 70
+    },
+    "attributes": [
+      "dragon"
+    ],
+    "immunities": {
+      "burn": "Normal"
+    },
+    "weakness": null
+  },
+  {
+    "id": 12440,
+    "name": "King Black Dragon (Deadman)",
+    "version": "Armageddon",
+    "image": "King Black Dragon (Deadman Apocalypse).png",
+    "level": 256,
+    "speed": 4,
+    "style": [
+      "Stab",
+      "Dragonfire"
+    ],
+    "size": 5,
+    "max_hit": "25 (Melee)",
+    "skills": {
+      "atk": 240,
+      "def": 150,
+      "hp": 250,
+      "magic": 240,
+      "ranged": 1,
+      "str": 240
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 80,
+      "heavy": 70,
+      "standard": 40,
+      "light": 70,
+      "slash": 90,
+      "stab": 70
+    },
+    "attributes": [
+      "dragon"
+    ],
+    "immunities": {
+      "burn": "Normal"
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
+  },
+  {
     "id": 7405,
     "name": "King kurask",
     "version": "",
@@ -64215,6 +68260,97 @@
     }
   },
   {
+    "id": 12443,
+    "name": "Kree'arra (Deadman)",
+    "version": "Apocalypse",
+    "image": "Kree'arra (Deadman Apocalypse).png",
+    "level": 580,
+    "speed": 6,
+    "style": [
+      "Magic"
+    ],
+    "size": 5,
+    "max_hit": "21",
+    "skills": {
+      "atk": 300,
+      "def": 260,
+      "hp": 350,
+      "magic": 200,
+      "ranged": 380,
+      "str": 200
+    },
+    "offensive": {
+      "atk": 136,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 120,
+      "ranged_str": 50,
+      "str": 12
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 180,
+      "magic": 200,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
+      "slash": 180,
+      "stab": 180
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12443,
+    "name": "Kree'arra (Deadman)",
+    "version": "Armageddon",
+    "image": "Kree'arra (Deadman Apocalypse).png",
+    "level": 580,
+    "speed": 6,
+    "style": [
+      "Magic"
+    ],
+    "size": 5,
+    "max_hit": "25",
+    "skills": {
+      "atk": 300,
+      "def": 150,
+      "hp": 350,
+      "magic": 200,
+      "ranged": 380,
+      "str": 200
+    },
+    "offensive": {
+      "atk": 136,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 120,
+      "ranged_str": 50,
+      "str": 12
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 180,
+      "magic": 200,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
+      "slash": 180,
+      "stab": 180
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 30
+    }
+  },
+  {
     "id": 9560,
     "name": "Kroy",
     "version": "",
@@ -64633,11 +68769,11 @@
     "level": 116,
     "speed": 5,
     "style": [
-      "Melee",
+      "Crush",
       "Ranged"
     ],
     "size": 2,
-    "max_hit": "12",
+    "max_hit": "10 (Melee)",
     "skills": {
       "atk": 90,
       "def": 50,
@@ -66681,7 +70817,7 @@
   {
     "id": 13663,
     "name": "Magic Mark",
-    "version": "",
+    "version": "All-Stars",
     "image": "Magic Mark.png",
     "level": 217,
     "speed": 5,
@@ -66689,11 +70825,99 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "18",
     "skills": {
       "atk": 10,
       "def": 30,
       "hp": 500,
+      "magic": 175,
+      "ranged": 0,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 100,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 25,
+      "magic": 150,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 25,
+      "stab": 25
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 13663,
+    "name": "Magic Mark",
+    "version": "Annihilation",
+    "image": "Magic Mark.png",
+    "level": 967,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "18",
+    "skills": {
+      "atk": 10,
+      "def": 30,
+      "hp": 3500,
+      "magic": 175,
+      "ranged": 0,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 100,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 25,
+      "magic": 150,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 25,
+      "stab": 25
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 13663,
+    "name": "Magic Mark",
+    "version": "Armageddon",
+    "image": "Magic Mark.png",
+    "level": 467,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "18",
+    "skills": {
+      "atk": 10,
+      "def": 30,
+      "hp": 1500,
       "magic": 175,
       "ranged": 0,
       "str": 30
@@ -66859,6 +71083,144 @@
       "burn": "Weak"
     },
     "weakness": null
+  },
+  {
+    "id": 12456,
+    "name": "Malevolent Mage (Deadman)",
+    "version": "Annihilation",
+    "image": "Malevolent Mage (Deadman Apocalypse).png",
+    "level": 661,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 1,
+      "def": 150,
+      "hp": 2000,
+      "magic": 255,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 300,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Weak"
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
+  },
+  {
+    "id": 12456,
+    "name": "Malevolent Mage (Deadman)",
+    "version": "Apocalypse",
+    "image": "Malevolent Mage (Deadman Apocalypse).png",
+    "level": 286,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 1,
+      "def": 150,
+      "hp": 500,
+      "magic": 255,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 300,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12456,
+    "name": "Malevolent Mage (Deadman)",
+    "version": "Armageddon",
+    "image": "Malevolent Mage (Deadman Apocalypse).png",
+    "level": 286,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 1,
+      "def": 150,
+      "hp": 500,
+      "magic": 255,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 300,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Weak"
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
   },
   {
     "id": 6604,
@@ -67699,9 +72061,9 @@
   {
     "id": 15220,
     "name": "Manta ray (monster)",
-    "version": "In combat",
+    "version": "",
     "image": "Manta ray (Sailing).png",
-    "level": 114,
+    "level": 140,
     "speed": 4,
     "style": [
       "Slash"
@@ -67710,8 +72072,8 @@
     "max_hit": "8",
     "skills": {
       "atk": 155,
-      "def": 0,
-      "hp": 160,
+      "def": 40,
+      "hp": 225,
       "magic": 1,
       "ranged": 0,
       "str": 75
@@ -67799,7 +72161,7 @@
       "Magic (special)"
     ],
     "size": 3,
-    "max_hit": "38",
+    "max_hit": "26 (melee)\n30 (ranged)\n38 (special)",
     "skills": {
       "atk": 230,
       "def": 190,
@@ -68249,7 +72611,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "80 (lightning)",
+    "max_hit": "? (melee)",
     "skills": {
       "atk": 150,
       "def": 140,
@@ -69223,6 +73585,50 @@
     "weakness": null
   },
   {
+    "id": 2482,
+    "name": "Minotaur",
+    "version": "Unused",
+    "image": "Minotaur.png",
+    "level": 19,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 22,
+      "def": 15,
+      "hp": 13,
+      "magic": 1,
+      "ranged": 1,
+      "str": 15
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 1,
+      "magic": 1,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 1,
+      "stab": 1
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 13671,
     "name": "Mirrorback Araxyte",
     "version": "",
@@ -69279,7 +73685,7 @@
     "style": [
       "Stab",
       "Magic",
-      "Ranged",
+      "Magical ranged",
       "Dragonfire"
     ],
     "size": 4,
@@ -69341,6 +73747,53 @@
       "magic": 1,
       "ranged": 1,
       "str": 55
+    },
+    "offensive": {
+      "atk": 22,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 20
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
+  },
+  {
+    "id": 15230,
+    "name": "Mogre (Sailing)",
+    "version": "",
+    "image": "Mogre (Sailing).png",
+    "level": 61,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "6",
+    "skills": {
+      "atk": 40,
+      "def": 40,
+      "hp": 87,
+      "magic": 1,
+      "ranged": 60,
+      "str": 50
     },
     "offensive": {
       "atk": 22,
@@ -69518,7 +73971,7 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": "2",
+    "max_hit": "2 (Melee)",
     "skills": {
       "atk": 15,
       "def": 18,
@@ -72631,7 +77084,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
   },
   {
     "id": 7562,
@@ -72678,7 +77134,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
   },
   {
     "id": 2649,
@@ -72991,6 +77450,50 @@
     "attributes": [],
     "immunities": {
       "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15202,
+    "name": "Narwhal",
+    "version": "",
+    "image": "Narwhal.png",
+    "level": 119,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 5,
+    "max_hit": "7",
+    "skills": {
+      "atk": 95,
+      "def": 50,
+      "hp": 220,
+      "magic": 1,
+      "ranged": 0,
+      "str": 65
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 20,
+      "heavy": 40,
+      "standard": 65,
+      "light": 65,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -73961,6 +78464,141 @@
       "heavy": 200,
       "standard": 200,
       "light": 200,
+      "slash": 80,
+      "stab": 75
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12459,
+    "name": "Night beast (Deadman)",
+    "version": "Annihilation",
+    "image": "Night beast (Deadman Apocalypse).png",
+    "level": 457,
+    "speed": 4,
+    "style": [
+      "Crush",
+      "Magic"
+    ],
+    "size": 4,
+    "max_hit": "30 (Melee)",
+    "skills": {
+      "atk": 270,
+      "def": 100,
+      "hp": 1000,
+      "magic": 300,
+      "ranged": 1,
+      "str": 290
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 120,
+      "magic": 100,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 80,
+      "stab": 75
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12459,
+    "name": "Night beast (Deadman)",
+    "version": "Apocalypse",
+    "image": "Night beast (Deadman Apocalypse).png",
+    "level": 362,
+    "speed": 4,
+    "style": [
+      "Crush",
+      "Magic"
+    ],
+    "size": 4,
+    "max_hit": "30 (Melee)",
+    "skills": {
+      "atk": 270,
+      "def": 220,
+      "hp": 500,
+      "magic": 300,
+      "ranged": 1,
+      "str": 290
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 200,
+      "magic": 190,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 80,
+      "stab": 75
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12459,
+    "name": "Night beast (Deadman)",
+    "version": "Armageddon",
+    "image": "Night beast (Deadman Apocalypse).png",
+    "level": 332,
+    "speed": 4,
+    "style": [
+      "Crush",
+      "Magic"
+    ],
+    "size": 4,
+    "max_hit": "30 (Melee)",
+    "skills": {
+      "atk": 270,
+      "def": 100,
+      "hp": 500,
+      "magic": 300,
+      "ranged": 1,
+      "str": 290
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 120,
+      "magic": 100,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
       "slash": 80,
       "stab": 75
     },
@@ -76055,6 +80693,53 @@
     "weakness": null
   },
   {
+    "id": 2233,
+    "name": "Ogre",
+    "version": "GWD",
+    "image": "Ogre (GWD).png",
+    "level": 58,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "8",
+    "skills": {
+      "atk": 46,
+      "def": 43,
+      "hp": 70,
+      "magic": 1,
+      "ranged": 1,
+      "str": 48
+    },
+    "offensive": {
+      "atk": 22,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 21
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 20
+    }
+  },
+  {
     "id": 136,
     "name": "Ogre",
     "version": "Level 53",
@@ -76081,53 +80766,6 @@
       "ranged": 0,
       "ranged_str": 0,
       "str": 20
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": {
-      "element": "earth",
-      "severity": 20
-    }
-  },
-  {
-    "id": 2233,
-    "name": "Ogre",
-    "version": "Level 58",
-    "image": "Ogre (GWD).png",
-    "level": 58,
-    "speed": 6,
-    "style": [
-      "Crush"
-    ],
-    "size": 2,
-    "max_hit": "8",
-    "skills": {
-      "atk": 46,
-      "def": 43,
-      "hp": 70,
-      "magic": 1,
-      "ranged": 1,
-      "str": 48
-    },
-    "offensive": {
-      "atk": 22,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 21
     },
     "defensive": {
       "flat_armour": 0,
@@ -76425,6 +81063,50 @@
     "weakness": null
   },
   {
+    "id": 15204,
+    "name": "Orca",
+    "version": "",
+    "image": "Orca.png",
+    "level": 205,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 4,
+    "max_hit": "13",
+    "skills": {
+      "atk": 165,
+      "def": 75,
+      "hp": 370,
+      "magic": 1,
+      "ranged": 0,
+      "str": 125
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 60,
+      "standard": 85,
+      "light": 85,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": null
+  },
+  {
     "id": 2237,
     "name": "Ork",
     "version": "",
@@ -76506,6 +81188,50 @@
       "heavy": 0,
       "standard": 0,
       "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15222,
+    "name": "Osprey",
+    "version": "",
+    "image": "Osprey.png",
+    "level": 74,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "6",
+    "skills": {
+      "atk": 60,
+      "def": 40,
+      "hp": 114,
+      "magic": 1,
+      "ranged": 0,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 30,
+      "light": 30,
       "slash": 0,
       "stab": 0
     },
@@ -79702,6 +84428,50 @@
     "weakness": null
   },
   {
+    "id": 15556,
+    "name": "Pestilent Bloat (Deadman)",
+    "version": "",
+    "image": "Pestilent Bloat (Deadman).png",
+    "level": 716,
+    "speed": 5,
+    "style": [
+      "Ranged"
+    ],
+    "size": 5,
+    "max_hit": "20",
+    "skills": {
+      "atk": 250,
+      "def": 100,
+      "hp": 2000,
+      "magic": 150,
+      "ranged": 180,
+      "str": 340
+    },
+    "offensive": {
+      "atk": 150,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 180,
+      "ranged_str": 4,
+      "str": 82
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 40,
+      "magic": 600,
+      "heavy": 800,
+      "standard": 800,
+      "light": 800,
+      "slash": 20,
+      "stab": 40
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 10812,
     "name": "Pestilent Bloat",
     "version": "Entry",
@@ -79926,6 +84696,100 @@
       "burn": null
     },
     "weakness": null
+  },
+  {
+    "id": 15549,
+    "name": "Phantom Muspah (Deadman)",
+    "version": "Annihilation",
+    "image": "Phantom Muspah (Deadman).png",
+    "level": 732,
+    "speed": 5,
+    "style": [
+      "Stab"
+    ],
+    "size": 5,
+    "max_hit": "34",
+    "skills": {
+      "atk": 280,
+      "def": 200,
+      "hp": 2000,
+      "magic": 100,
+      "ranged": 280,
+      "str": 280
+    },
+    "offensive": {
+      "atk": 393,
+      "magic": 280,
+      "magic_str": 180,
+      "ranged": 64,
+      "ranged_str": 6,
+      "str": 11
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 120,
+      "magic": 34,
+      "heavy": 261,
+      "standard": 261,
+      "light": 261,
+      "slash": 134,
+      "stab": 185
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 65
+    }
+  },
+  {
+    "id": 15549,
+    "name": "Phantom Muspah (Deadman)",
+    "version": "Factions",
+    "image": "Phantom Muspah (Deadman).png",
+    "level": 444,
+    "speed": 5,
+    "style": [
+      "Stab"
+    ],
+    "size": 5,
+    "max_hit": "34",
+    "skills": {
+      "atk": 280,
+      "def": 200,
+      "hp": 850,
+      "magic": 100,
+      "ranged": 280,
+      "str": 280
+    },
+    "offensive": {
+      "atk": 393,
+      "magic": 280,
+      "magic_str": 180,
+      "ranged": 64,
+      "ranged_str": 6,
+      "str": 11
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 120,
+      "magic": 34,
+      "heavy": 261,
+      "standard": 261,
+      "light": 261,
+      "slash": 134,
+      "stab": 185
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 65
+    }
   },
   {
     "id": 12078,
@@ -80514,7 +85378,7 @@
       "hp": 38,
       "magic": 10,
       "ranged": 0,
-      "str": 0
+      "str": 50
     },
     "offensive": {
       "atk": 0,
@@ -80556,7 +85420,7 @@
       "hp": 38,
       "magic": 10,
       "ranged": 0,
-      "str": 0
+      "str": 50
     },
     "offensive": {
       "atk": 0,
@@ -80598,7 +85462,7 @@
       "hp": 38,
       "magic": 10,
       "ranged": 0,
-      "str": 0
+      "str": 50
     },
     "offensive": {
       "atk": 0,
@@ -80640,7 +85504,7 @@
       "hp": 38,
       "magic": 10,
       "ranged": 0,
-      "str": 0
+      "str": 50
     },
     "offensive": {
       "atk": 0,
@@ -81529,11 +86393,152 @@
       "Slash"
     ],
     "size": 3,
-    "max_hit": "43 (magic)",
+    "max_hit": "43 (Magic)",
     "skills": {
       "atk": 250,
       "def": 100,
       "hp": 320,
+      "magic": 180,
+      "ranged": 1,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 80,
+      "magic_str": 80,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 200,
+      "magic": -60,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
+      "slash": 200,
+      "stab": 200
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12448,
+    "name": "Porazdir (Deadman)",
+    "version": "Annihilation",
+    "image": "Porazdir (Deadman Apocalypse).png",
+    "level": 655,
+    "speed": 6,
+    "style": [
+      "Magic",
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "43 (Magic)",
+    "skills": {
+      "atk": 250,
+      "def": 100,
+      "hp": 2000,
+      "magic": 180,
+      "ranged": 1,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 80,
+      "magic_str": 80,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 200,
+      "magic": -60,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
+      "slash": 200,
+      "stab": 200
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12448,
+    "name": "Porazdir (Deadman)",
+    "version": "Apocalypse",
+    "image": "Porazdir (Deadman Apocalypse).png",
+    "level": 235,
+    "speed": 6,
+    "style": [
+      "Magic",
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "43 (Magic)",
+    "skills": {
+      "atk": 250,
+      "def": 100,
+      "hp": 320,
+      "magic": 180,
+      "ranged": 1,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 80,
+      "magic_str": 80,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 200,
+      "magic": -60,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
+      "slash": 200,
+      "stab": 200
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12448,
+    "name": "Porazdir (Deadman)",
+    "version": "Armageddon",
+    "image": "Porazdir (Deadman Apocalypse).png",
+    "level": 280,
+    "speed": 6,
+    "style": [
+      "Magic",
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "43 (Magic)",
+    "skills": {
+      "atk": 250,
+      "def": 100,
+      "hp": 500,
       "magic": 180,
       "ranged": 1,
       "str": 150
@@ -82669,6 +87674,53 @@
     "weakness": null
   },
   {
+    "id": 15206,
+    "name": "Pygmy kraken",
+    "version": "",
+    "image": "Pygmy kraken.png",
+    "level": 100,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 2,
+    "max_hit": "10",
+    "skills": {
+      "atk": 1,
+      "def": 50,
+      "hp": 177,
+      "magic": 90,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": -63,
+      "heavy": 50,
+      "standard": 25,
+      "light": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
+  },
+  {
     "id": 433,
     "name": "Pyrefiend",
     "version": "Level 43",
@@ -83605,7 +88657,7 @@
   {
     "id": 13664,
     "name": "Ranging Ro",
-    "version": "",
+    "version": "All-Stars",
     "image": "Ranging Ro.png",
     "level": 223,
     "speed": 4,
@@ -83618,6 +88670,94 @@
       "atk": 10,
       "def": 100,
       "hp": 500,
+      "magic": 15,
+      "ranged": 150,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 100,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 200,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 13664,
+    "name": "Ranging Ro",
+    "version": "Annihilation",
+    "image": "Ranging Ro (Annihilation).png",
+    "level": 973,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "16",
+    "skills": {
+      "atk": 10,
+      "def": 100,
+      "hp": 3500,
+      "magic": 15,
+      "ranged": 150,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 100,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 200,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 13664,
+    "name": "Ranging Ro",
+    "version": "Armageddon",
+    "image": "Ranging Ro.png",
+    "level": 473,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "16",
+    "skills": {
+      "atk": 10,
+      "def": 100,
+      "hp": 1500,
       "magic": 15,
       "ranged": 150,
       "str": 30
@@ -87749,7 +92889,7 @@
       "Dragonfire"
     ],
     "size": 4,
-    "max_hit": "38",
+    "max_hit": "29 (Melee)",
     "skills": {
       "atk": 284,
       "def": 276,
@@ -87770,11 +92910,11 @@
       "flat_armour": 0,
       "crush": 90,
       "magic": 30,
-      "heavy": 95,
+      "heavy": 50,
       "standard": 95,
       "light": 95,
       "slash": 115,
-      "stab": 30
+      "stab": 20
     },
     "attributes": [
       "dragon"
@@ -89536,8 +94676,8 @@
   },
   {
     "id": 14940,
-    "name": "Scorpion (Sailing)",
-    "version": "",
+    "name": "Scorpion",
+    "version": "Level 1",
     "image": "Scorpion (Sailing).png",
     "level": 1,
     "speed": 4,
@@ -89576,7 +94716,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 25
+    }
   },
   {
     "id": 3024,
@@ -89865,6 +95008,98 @@
       "element": "air",
       "severity": 40
     }
+  },
+  {
+    "id": 15548,
+    "name": "Scurrius (Deadman)",
+    "version": "Annihilation",
+    "image": "Scurrius (Deadman).png",
+    "level": 1470,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "36",
+    "skills": {
+      "atk": 300,
+      "def": 100,
+      "hp": 5000,
+      "magic": 100,
+      "ranged": 100,
+      "str": 300
+    },
+    "offensive": {
+      "atk": 150,
+      "magic": 150,
+      "magic_str": 20,
+      "ranged": 150,
+      "ranged_str": 10,
+      "str": 10
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 20,
+      "magic": 10,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "rat"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15548,
+    "name": "Scurrius (Deadman)",
+    "version": "Factions",
+    "image": "Scurrius (Deadman).png",
+    "level": 470,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "36",
+    "skills": {
+      "atk": 300,
+      "def": 100,
+      "hp": 1000,
+      "magic": 100,
+      "ranged": 100,
+      "str": 300
+    },
+    "offensive": {
+      "atk": 150,
+      "magic": 150,
+      "magic_str": 20,
+      "ranged": 150,
+      "ranged_str": 10,
+      "str": 10
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 20,
+      "magic": 10,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 20,
+      "stab": 20
+    },
+    "attributes": [
+      "rat"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
   },
   {
     "id": 7221,
@@ -91366,8 +96601,8 @@
       "atk": 0,
       "magic": 0,
       "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 20,
+      "ranged": 20,
+      "ranged_str": 0,
       "str": 0
     },
     "defensive": {
@@ -93035,7 +98270,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 10717,
@@ -98274,10 +103512,54 @@
     "level": 1563,
     "speed": 0,
     "style": [
-      "Crush"
+      "Various"
     ],
     "size": 5,
-    "max_hit": "45 (Typeless AOE",
+    "max_hit": "45 (Typeless AOE)",
+    "skills": {
+      "atk": 350,
+      "def": 200,
+      "hp": 1500,
+      "magic": 300,
+      "ranged": 350,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 250,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 150,
+      "ranged_str": 5,
+      "str": 5
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 30,
+      "magic": 750,
+      "heavy": 825,
+      "standard": 825,
+      "light": 825,
+      "slash": 5,
+      "stab": 65
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15554,
+    "name": "Sol Heredit (Deadman)",
+    "version": "",
+    "image": "Sol Heredit (Deadman).png",
+    "level": 668,
+    "speed": 7,
+    "style": [
+      "Melee"
+    ],
+    "size": 5,
+    "max_hit": "44",
     "skills": {
       "atk": 350,
       "def": 200,
@@ -99755,6 +105037,53 @@
     "weakness": null
   },
   {
+    "id": 15208,
+    "name": "Spined kraken",
+    "version": "",
+    "image": "Spined kraken.png",
+    "level": 128,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "14",
+    "skills": {
+      "atk": 1,
+      "def": 75,
+      "hp": 177,
+      "magic": 135,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": -63,
+      "heavy": 50,
+      "standard": 25,
+      "light": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
+  },
+  {
     "id": 1709,
     "name": "Spinner",
     "version": "Level 36",
@@ -99977,51 +105306,7 @@
   {
     "id": 5947,
     "name": "Spinolyp",
-    "version": "Spinolyp (1)",
-    "image": "Spinolyp.png",
-    "level": 76,
-    "speed": 4,
-    "style": [
-      "Ranged"
-    ],
-    "size": 1,
-    "max_hit": "10",
-    "skills": {
-      "atk": 10,
-      "def": 10,
-      "hp": 100,
-      "magic": 1,
-      "ranged": 100,
-      "str": 10
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 100,
-      "magic": 50,
-      "heavy": 50,
-      "standard": 50,
-      "light": 50,
-      "slash": 100,
-      "stab": 100
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 5961,
-    "name": "Spinolyp",
-    "version": "Spinolyp (2)",
+    "version": "Spinolyp",
     "image": "Spinolyp.png",
     "level": 76,
     "speed": 4,
@@ -100942,6 +106227,50 @@
     }
   },
   {
+    "id": 15550,
+    "name": "Splatter (Deadman)",
+    "version": "",
+    "image": "Splatter (Deadman).png",
+    "level": 648,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "26 (Melee)",
+    "skills": {
+      "atk": 200,
+      "def": 10,
+      "hp": 2000,
+      "magic": 300,
+      "ranged": 1,
+      "str": 250
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 1689,
     "name": "Splatter",
     "version": "Level 22",
@@ -101496,6 +106825,50 @@
       "element": "earth",
       "severity": 20
     }
+  },
+  {
+    "id": 15218,
+    "name": "Stingray",
+    "version": "",
+    "image": "Stingray.png",
+    "level": 98,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "6",
+    "skills": {
+      "atk": 130,
+      "def": 25,
+      "hp": 128,
+      "magic": 1,
+      "ranged": 0,
+      "str": 55
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 20,
+      "standard": 50,
+      "light": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": null
   },
   {
     "id": 8066,
@@ -102525,6 +107898,94 @@
     "weakness": null
   },
   {
+    "id": 12458,
+    "name": "Sulphur Lizard (Deadman)",
+    "version": "Annihilation",
+    "image": "Sulphur Lizard (Deadman Apocalypse).png",
+    "level": 757,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "21",
+    "skills": {
+      "atk": 150,
+      "def": 75,
+      "hp": 2500,
+      "magic": 1,
+      "ranged": 1,
+      "str": 200
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": -1,
+      "crush": 25,
+      "magic": 0,
+      "heavy": 15,
+      "standard": 15,
+      "light": 15,
+      "slash": 25,
+      "stab": 15
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12458,
+    "name": "Sulphur Lizard (Deadman)",
+    "version": "Apocalypse, Armageddon",
+    "image": "Sulphur Lizard (Deadman Apocalypse).png",
+    "level": 257,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "21",
+    "skills": {
+      "atk": 150,
+      "def": 75,
+      "hp": 500,
+      "magic": 1,
+      "ranged": 1,
+      "str": 200
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 25,
+      "magic": 0,
+      "heavy": 15,
+      "standard": 15,
+      "light": 15,
+      "slash": 25,
+      "stab": 15
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 13033,
     "name": "Sulphur Nagua",
     "version": "",
@@ -103513,7 +108974,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "12",
+    "max_hit": "11",
     "skills": {
       "atk": 97,
       "def": 91,
@@ -104229,6 +109690,50 @@
     "weakness": null
   },
   {
+    "id": 15268,
+    "name": "Tern",
+    "version": "",
+    "image": "Tern.png",
+    "level": 26,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "3",
+    "skills": {
+      "atk": 25,
+      "def": 0,
+      "hp": 46,
+      "magic": 1,
+      "ranged": 0,
+      "str": 20
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 10,
+      "standard": 30,
+      "light": 30,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 6474,
     "name": "Terror dog",
     "version": "Level 100",
@@ -104492,7 +109997,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 50
+    }
   },
   {
     "id": 3474,
@@ -105297,7 +110805,7 @@
       "Magic"
     ],
     "size": 7,
-    "max_hit": "86",
+    "max_hit": "86 (Melee orb & Bite)",
     "skills": {
       "atk": 525,
       "def": 287,
@@ -105389,7 +110897,7 @@
       "Magic"
     ],
     "size": 7,
-    "max_hit": "34",
+    "max_hit": "34 (Melee orb & Bite)",
     "skills": {
       "atk": 250,
       "def": 200,
@@ -106012,7 +111520,7 @@
       "All"
     ],
     "size": 3,
-    "max_hit": "70+ (Melee)",
+    "max_hit": "70+ (x2) (Melee)",
     "skills": {
       "atk": 378,
       "def": 300,
@@ -106059,7 +111567,7 @@
       "All"
     ],
     "size": 3,
-    "max_hit": "42 (Melee)",
+    "max_hit": "42 (x2) (Melee)",
     "skills": {
       "atk": 280,
       "def": 250,
@@ -106106,7 +111614,7 @@
       "All"
     ],
     "size": 3,
-    "max_hit": "30 (Melee)",
+    "max_hit": "30 (x2) (Melee)",
     "skills": {
       "atk": 240,
       "def": 200,
@@ -106192,7 +111700,54 @@
   {
     "id": 13659,
     "name": "Thermonuclear smoke devil (Deadman)",
-    "version": "",
+    "version": "Annihilation",
+    "image": "Thermonuclear smoke devil (deadman).png",
+    "level": 563,
+    "speed": 2,
+    "style": [
+      "Ranged"
+    ],
+    "size": 4,
+    "max_hit": "32",
+    "skills": {
+      "atk": 230,
+      "def": 150,
+      "hp": 1500,
+      "magic": 1,
+      "ranged": 310,
+      "str": 220
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 20,
+      "magic": 200,
+      "heavy": 300,
+      "standard": 300,
+      "light": 300,
+      "slash": 12,
+      "stab": 30
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 20
+    }
+  },
+  {
+    "id": 13659,
+    "name": "Thermonuclear smoke devil (Deadman)",
+    "version": "Armageddon",
     "image": "Thermonuclear smoke devil (deadman).png",
     "level": 313,
     "speed": 2,
@@ -107425,6 +112980,50 @@
     "attributes": [],
     "immunities": {
       "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15198,
+    "name": "Tiger shark",
+    "version": "",
+    "image": "Tiger shark.png",
+    "level": 125,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "9",
+    "skills": {
+      "atk": 120,
+      "def": 60,
+      "hp": 174,
+      "magic": 1,
+      "ranged": 0,
+      "str": 85
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 35,
+      "standard": 60,
+      "light": 60,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -110161,6 +115760,100 @@
     }
   },
   {
+    "id": 15551,
+    "name": "Tumeken's Warden (Deadman)",
+    "version": "Annihilation",
+    "image": "Tumeken's Warden (Deadman).png",
+    "level": 945,
+    "speed": 5,
+    "style": [
+      "Ranged"
+    ],
+    "size": 5,
+    "max_hit": "22",
+    "skills": {
+      "atk": 300,
+      "def": 100,
+      "hp": 3000,
+      "magic": 190,
+      "ranged": 350,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 225,
+      "magic_str": 12,
+      "ranged": 225,
+      "ranged_str": 12,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 70,
+      "magic": -30,
+      "heavy": 70,
+      "standard": 70,
+      "light": 70,
+      "slash": 70,
+      "stab": 70
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
+  },
+  {
+    "id": 15551,
+    "name": "Tumeken's Warden (Deadman)",
+    "version": "Factions",
+    "image": "Tumeken's Warden (Deadman).png",
+    "level": 445,
+    "speed": 5,
+    "style": [
+      "Ranged"
+    ],
+    "size": 5,
+    "max_hit": "22",
+    "skills": {
+      "atk": 300,
+      "def": 100,
+      "hp": 1000,
+      "magic": 190,
+      "ranged": 350,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 225,
+      "magic_str": 12,
+      "ranged": 225,
+      "ranged_str": 12,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 70,
+      "magic": -30,
+      "heavy": 70,
+      "standard": 70,
+      "light": 70,
+      "slash": 70,
+      "stab": 70
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
+  },
+  {
     "id": 11756,
     "name": "Tumeken's Warden",
     "version": "Active",
@@ -110408,7 +116101,7 @@
   {
     "id": 430,
     "name": "Turoth",
-    "version": "Level 83",
+    "version": "Baby",
     "image": "Turoth (lv 83).png",
     "level": 83,
     "speed": 4,
@@ -110454,7 +116147,7 @@
   {
     "id": 429,
     "name": "Turoth",
-    "version": "Level 85",
+    "version": "Child",
     "image": "Turoth (lv 85).png",
     "level": 85,
     "speed": 4,
@@ -110498,11 +116191,11 @@
     "weakness": null
   },
   {
-    "id": 428,
+    "id": 427,
     "name": "Turoth",
-    "version": "Level 87",
-    "image": "Turoth (lv 87).png",
-    "level": 87,
+    "version": "Dad",
+    "image": "Turoth (lv 89).png",
+    "level": 89,
     "speed": 4,
     "style": [
       "Stab"
@@ -110510,12 +116203,12 @@
     "size": 2,
     "max_hit": "10",
     "skills": {
-      "atk": 56,
-      "def": 86,
-      "hp": 79,
+      "atk": 58,
+      "def": 88,
+      "hp": 81,
       "magic": 1,
       "ranged": 1,
-      "str": 86
+      "str": 88
     },
     "offensive": {
       "atk": 0,
@@ -110544,11 +116237,11 @@
     "weakness": null
   },
   {
-    "id": 427,
+    "id": 428,
     "name": "Turoth",
-    "version": "Level 89",
-    "image": "Turoth (lv 89).png",
-    "level": 89,
+    "version": "Mum",
+    "image": "Turoth (lv 87).png",
+    "level": 87,
     "speed": 4,
     "style": [
       "Stab"
@@ -110556,12 +116249,12 @@
     "size": 2,
     "max_hit": "10",
     "skills": {
-      "atk": 58,
-      "def": 88,
-      "hp": 81,
+      "atk": 56,
+      "def": 86,
+      "hp": 79,
       "magic": 1,
       "ranged": 1,
-      "str": 88
+      "str": 86
     },
     "offensive": {
       "atk": 0,
@@ -111434,6 +117127,202 @@
     }
   },
   {
+    "id": 13661,
+    "name": "TzTok-Jad (Deadman)",
+    "version": "All-Stars",
+    "image": "TzTok-Jad (Deadman).png",
+    "level": 527,
+    "speed": 8,
+    "style": [
+      "Stab",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 5,
+    "max_hit": "78 (Melee)",
+    "skills": {
+      "atk": 350,
+      "def": 200,
+      "hp": 1000,
+      "magic": 450,
+      "ranged": 450,
+      "str": 350
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
+  },
+  {
+    "id": 13661,
+    "name": "TzTok-Jad (Deadman)",
+    "version": "Annihilation",
+    "image": "TzTok-Jad (Deadman).png",
+    "level": 1758,
+    "speed": 8,
+    "style": [
+      "Stab",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 5,
+    "max_hit": "78 (Melee)",
+    "skills": {
+      "atk": 640,
+      "def": 200,
+      "hp": 5000,
+      "magic": 750,
+      "ranged": 750,
+      "str": 770
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
+  },
+  {
+    "id": 13661,
+    "name": "TzTok-Jad (Deadman)",
+    "version": "Armageddon",
+    "image": "TzTok-Jad (Deadman).png",
+    "level": 1527,
+    "speed": 8,
+    "style": [
+      "Stab",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 5,
+    "max_hit": "78 (Melee)",
+    "skills": {
+      "atk": 350,
+      "def": 200,
+      "hp": 5000,
+      "magic": 450,
+      "ranged": 450,
+      "str": 350
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
+  },
+  {
+    "id": 15557,
+    "name": "TzTok-Jad-Rek",
+    "version": "",
+    "image": "TzTok-Jad-Rek.png",
+    "level": 186,
+    "speed": 8,
+    "style": [
+      "Stab",
+      "Magic",
+      "Ranged"
+    ],
+    "size": 3,
+    "max_hit": "25 (Melee)",
+    "skills": {
+      "atk": 160,
+      "def": 25,
+      "hp": 200,
+      "magic": 250,
+      "ranged": 250,
+      "str": 240
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
+  },
+  {
     "id": 4652,
     "name": "Ugthanki",
     "version": "",
@@ -112201,7 +118090,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "fire",
+      "element": "earth",
       "severity": 50
     }
   },
@@ -112250,7 +118139,7 @@
       "burn": null
     },
     "weakness": {
-      "element": "fire",
+      "element": "earth",
       "severity": 50
     }
   },
@@ -112904,8 +118793,54 @@
   {
     "id": 4436,
     "name": "Vampyre Juvenile",
-    "version": "Burgh de Rott/Crombwick Manor",
+    "version": "Burgh de Rott and Crombwick Manor",
     "image": "Vampyre Juvenile.png",
+    "level": 45,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "4",
+    "skills": {
+      "atk": 40,
+      "def": 30,
+      "hp": 60,
+      "magic": 1,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "vampyre1"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 9731,
+    "name": "Vampyre Juvenile",
+    "version": "Darkmeyer",
+    "image": "Vampyre Juvenile (Darkmeyer, male).png",
     "level": 45,
     "speed": 4,
     "style": [
@@ -112950,7 +118885,7 @@
   {
     "id": 3692,
     "name": "Vampyre Juvenile",
-    "version": "Meiyerditch/Darkmeyer",
+    "version": "Meiyerditch",
     "image": "Vampyre Juvenile (Meiyerditch, male).png",
     "level": 45,
     "speed": 4,
@@ -112994,10 +118929,56 @@
     "weakness": null
   },
   {
+    "id": 9614,
+    "name": "Vampyre Juvinate",
+    "version": "Level 119 (Sins of the Father)",
+    "image": "Vampyre Juvinate (Sins of the Father).png",
+    "level": 119,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "9",
+    "skills": {
+      "atk": 127,
+      "def": 65,
+      "hp": 150,
+      "magic": 50,
+      "ranged": 50,
+      "str": 76
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "vampyre2"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 5636,
     "name": "Vampyre Juvinate",
-    "version": "Level 119",
-    "image": "Juvinate.png",
+    "version": "Level 119 (Temple Trekking)",
+    "image": "Vampyre Juvinate (Temple Trekking, level 119).png",
     "level": 119,
     "speed": 4,
     "style": [
@@ -113042,8 +119023,8 @@
   {
     "id": 4443,
     "name": "Vampyre Juvinate",
-    "version": "Level 50",
-    "image": "Vampyre Juvinate.png",
+    "version": "Level 50 (In Aid of the Myreque)",
+    "image": "Vampyre Juvinate (In Aid of the Myreque, level 50).png",
     "level": 50,
     "speed": 4,
     "style": [
@@ -113088,7 +119069,7 @@
   {
     "id": 4427,
     "name": "Vampyre Juvinate",
-    "version": "Level 54",
+    "version": "Level 54 (Burgh de Rott)",
     "image": "Vampyre Juvinate.png",
     "level": 54,
     "speed": 4,
@@ -113132,9 +119113,55 @@
     "weakness": null
   },
   {
-    "id": 3690,
+    "id": 9727,
     "name": "Vampyre Juvinate",
-    "version": "Level 54 (Meiyerditch/Darkmeyer)",
+    "version": "Level 54 (Darkmeyer)",
+    "image": "Vampyre Juvinate (Darkmeyer, male).png",
+    "level": 54,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "5",
+    "skills": {
+      "atk": 40,
+      "def": 30,
+      "hp": 85,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "vampyre2"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 3694,
+    "name": "Vampyre Juvinate",
+    "version": "Level 54 (Meiyerditch)",
     "image": "Vampyre Juvinate (Meiyerditch, male).png",
     "level": 54,
     "speed": 4,
@@ -113180,8 +119207,8 @@
   {
     "id": 5634,
     "name": "Vampyre Juvinate",
-    "version": "Level 59",
-    "image": "Juvinate.png",
+    "version": "Level 59 (Temple Trekking)",
+    "image": "Vampyre Juvinate (Temple Trekking, level 59).png",
     "level": 59,
     "speed": 4,
     "style": [
@@ -113226,8 +119253,8 @@
   {
     "id": 4442,
     "name": "Vampyre Juvinate",
-    "version": "Level 75",
-    "image": "Vampyre Juvinate.png",
+    "version": "Level 75 (In Aid of the Myreque)",
+    "image": "Vampyre Juvinate (In Aid of the Myreque, level 75).png",
     "level": 75,
     "speed": 4,
     "style": [
@@ -113272,8 +119299,8 @@
   {
     "id": 5635,
     "name": "Vampyre Juvinate",
-    "version": "Level 90",
-    "image": "Juvinate.png",
+    "version": "Level 90 (Temple Trekking)",
+    "image": "Vampyre Juvinate (Temple Trekking, level 90).png",
     "level": 90,
     "speed": 4,
     "style": [
@@ -113314,6 +119341,53 @@
       "burn": null
     },
     "weakness": null
+  },
+  {
+    "id": 15212,
+    "name": "Vampyre kraken",
+    "version": "",
+    "image": "Vampyre kraken.png",
+    "level": 211,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 5,
+    "max_hit": "22",
+    "skills": {
+      "atk": 1,
+      "def": 115,
+      "hp": 311,
+      "magic": 215,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": -63,
+      "heavy": 50,
+      "standard": 25,
+      "light": 50,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
   },
   {
     "id": 7529,
@@ -113548,7 +119622,7 @@
   {
     "id": 13656,
     "name": "Vardorvis (Deadman)",
-    "version": "",
+    "version": "All-Stars",
     "image": "Vardorvis (Deadman).png",
     "level": 296,
     "speed": 6,
@@ -113561,6 +119635,97 @@
       "atk": 200,
       "def": 100,
       "hp": 500,
+      "magic": 300,
+      "ranged": 0,
+      "str": 250
+    },
+    "offensive": {
+      "atk": 200,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 85,
+      "magic": 400,
+      "heavy": 300,
+      "standard": 300,
+      "light": 300,
+      "slash": 65,
+      "stab": 200
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 13656,
+    "name": "Vardorvis (Deadman)",
+    "version": "Annihilation",
+    "image": "Vardorvis (Deadman).png",
+    "level": 777,
+    "speed": 6,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "30",
+    "skills": {
+      "atk": 200,
+      "def": 25,
+      "hp": 2500,
+      "magic": 300,
+      "ranged": 0,
+      "str": 250
+    },
+    "offensive": {
+      "atk": 200,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 85,
+      "magic": 400,
+      "heavy": 300,
+      "standard": 300,
+      "light": 300,
+      "slash": 65,
+      "stab": 200
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "fire",
+      "severity": 35
+    }
+  },
+  {
+    "id": 13656,
+    "name": "Vardorvis (Deadman)",
+    "version": "Armageddon",
+    "image": "Vardorvis (Deadman).png",
+    "level": 558,
+    "speed": 6,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "30",
+    "skills": {
+      "atk": 200,
+      "def": 150,
+      "hp": 1500,
       "magic": 300,
       "ranged": 0,
       "str": 250
@@ -113774,6 +119939,50 @@
     ],
     "immunities": {
       "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15576,
+    "name": "Veiled kraken",
+    "version": "",
+    "image": "Veiled kraken.png",
+    "level": 210,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 5,
+    "max_hit": "19",
+    "skills": {
+      "atk": 200,
+      "def": 115,
+      "hp": 225,
+      "magic": 100,
+      "ranged": 1,
+      "str": 185
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 15,
+      "crush": 0,
+      "magic": 325,
+      "heavy": 0,
+      "standard": 325,
+      "light": 325,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": "Strong"
     },
     "weakness": null
   },
@@ -114684,6 +120893,144 @@
       "magic": 180,
       "ranged": 1,
       "str": 180
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 30
+    }
+  },
+  {
+    "id": 12457,
+    "name": "Vitreous warped Jelly (Deadman)",
+    "version": "Annihilation",
+    "image": "Vitreous warped Jelly (Deadman Apocalypse).png",
+    "level": 908,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "19",
+    "skills": {
+      "atk": 200,
+      "def": 50,
+      "hp": 3000,
+      "magic": 180,
+      "ranged": 1,
+      "str": 250
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "earth",
+      "severity": 30
+    }
+  },
+  {
+    "id": 12457,
+    "name": "Vitreous warped Jelly (Deadman)",
+    "version": "Apocalypse",
+    "image": "Vitreous warped Jelly (Deadman Apocalypse).png",
+    "level": 333,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "19",
+    "skills": {
+      "atk": 200,
+      "def": 250,
+      "hp": 500,
+      "magic": 180,
+      "ranged": 1,
+      "str": 250
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 12457,
+    "name": "Vitreous warped Jelly (Deadman)",
+    "version": "Armageddon",
+    "image": "Vitreous warped Jelly (Deadman Apocalypse).png",
+    "level": 408,
+    "speed": 4,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "26",
+    "skills": {
+      "atk": 200,
+      "def": 50,
+      "hp": 1000,
+      "magic": 180,
+      "ranged": 1,
+      "str": 250
     },
     "offensive": {
       "atk": 0,
@@ -116369,7 +122716,7 @@
   {
     "id": 3260,
     "name": "Warrior (Thieving)",
-    "version": "Blond",
+    "version": "Blonde",
     "image": "Warrior (Thieving, blond).png",
     "level": 24,
     "speed": 4,
@@ -120800,6 +127147,104 @@
     "weakness": null
   },
   {
+    "id": 15555,
+    "name": "Yama (Deadman)",
+    "version": "Annihilation",
+    "image": "Yama (Deadman).png",
+    "level": 1024,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 5,
+    "max_hit": "44 (Melee)",
+    "skills": {
+      "atk": 320,
+      "def": 225,
+      "hp": 3000,
+      "magic": 250,
+      "ranged": 210,
+      "str": 350
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 100,
+      "magic_str": 65,
+      "ranged": 100,
+      "ranged_str": 80,
+      "str": 15
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 333,
+      "magic": 60,
+      "heavy": 333,
+      "standard": 200,
+      "light": 333,
+      "slash": 80,
+      "stab": 100
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
+  },
+  {
+    "id": 15555,
+    "name": "Yama (Deadman)",
+    "version": "Factions",
+    "image": "Yama (Deadman).png",
+    "level": 899,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 5,
+    "max_hit": "44 (Melee)",
+    "skills": {
+      "atk": 320,
+      "def": 225,
+      "hp": 2500,
+      "magic": 250,
+      "ranged": 210,
+      "str": 350
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 100,
+      "magic_str": 65,
+      "ranged": 100,
+      "ranged_str": 80,
+      "str": 15
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 333,
+      "magic": 60,
+      "heavy": 333,
+      "standard": 200,
+      "light": 333,
+      "slash": 80,
+      "stab": 100
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
+  },
+  {
     "id": 14176,
     "name": "Yama",
     "version": "Normal",
@@ -121748,6 +128193,372 @@
     "weakness": null
   },
   {
+    "id": 15237,
+    "name": "Zemouregal (Deadman)",
+    "version": "Breach",
+    "image": "Zemouregal (Deadman).png",
+    "level": 984,
+    "speed": 7,
+    "style": [
+      "Magic"
+    ],
+    "size": 2,
+    "max_hit": "23+",
+    "skills": {
+      "atk": 1,
+      "def": 125,
+      "hp": 2500,
+      "magic": 255,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 30,
+      "magic": 255,
+      "heavy": 15,
+      "standard": 15,
+      "light": 15,
+      "slash": 30,
+      "stab": 30
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15564,
+    "name": "Zemouregal (Deadman)",
+    "version": "Deadman's chest",
+    "image": "Zemouregal (Deadman's chest).png",
+    "level": 322,
+    "speed": 7,
+    "style": [
+      "Magic"
+    ],
+    "size": 2,
+    "max_hit": "23+",
+    "skills": {
+      "atk": 1,
+      "def": 125,
+      "hp": 500,
+      "magic": 255,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 30,
+      "magic": 255,
+      "heavy": 15,
+      "standard": 15,
+      "light": 15,
+      "slash": 30,
+      "stab": 30
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15562,
+    "name": "Zemouregal Summon",
+    "version": "Fremennik",
+    "image": "Zemouregal Summon (Ulfric).png",
+    "level": 151,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "16",
+    "skills": {
+      "atk": 250,
+      "def": 50,
+      "hp": 35,
+      "magic": 1,
+      "ranged": 1,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15563,
+    "name": "Zemouregal Summon",
+    "version": "Khazard",
+    "image": "Zemouregal Summon (Khazard).png",
+    "level": 163,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "16",
+    "skills": {
+      "atk": 250,
+      "def": 100,
+      "hp": 35,
+      "magic": 1,
+      "ranged": 1,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15558,
+    "name": "Zemouregal Summon",
+    "version": "Mummy",
+    "image": "Zemouregal Summon (Mummy).png",
+    "level": 163,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "16",
+    "skills": {
+      "atk": 250,
+      "def": 150,
+      "hp": 35,
+      "magic": 1,
+      "ranged": 1,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
+  },
+  {
+    "id": 15561,
+    "name": "Zemouregal Summon",
+    "version": "Pirate",
+    "image": "Zemouregal Summon (Pirate).png",
+    "level": 90,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "11",
+    "skills": {
+      "atk": 75,
+      "def": 100,
+      "hp": 35,
+      "magic": 1,
+      "ranged": 1,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
+  },
+  {
+    "id": 15559,
+    "name": "Zemouregal Summon",
+    "version": "Shade",
+    "image": "Zemouregal Summon (Shade).png",
+    "level": 141,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "16",
+    "skills": {
+      "atk": 250,
+      "def": 10,
+      "hp": 35,
+      "magic": 50,
+      "ranged": 1,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": -3,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "spectral"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "air",
+      "severity": 40
+    }
+  },
+  {
+    "id": 15560,
+    "name": "Zemouregal Summon",
+    "version": "Undead One",
+    "image": "Zemouregal Summon (Undead One).png",
+    "level": 147,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "16",
+    "skills": {
+      "atk": 200,
+      "def": 100,
+      "hp": 35,
+      "magic": 1,
+      "ranged": 1,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
+  },
+  {
     "id": 866,
     "name": "Zogre",
     "version": "",
@@ -121881,7 +128692,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 65,
@@ -121927,7 +128741,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 66,
@@ -121973,7 +128790,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 67,
@@ -122019,7 +128839,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 68,
@@ -122065,7 +128888,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 7486,
