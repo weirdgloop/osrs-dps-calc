@@ -37200,6 +37200,66 @@
     "isTwoHanded": false
   },
   {
+    "name": "Cowbell amulet",
+    "id": 33104,
+    "version": "Charged",
+    "slot": "neck",
+    "image": "Cowbell amulet (charged).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Cowbell amulet",
+    "id": 33103,
+    "version": "Empty",
+    "slot": "neck",
+    "image": "Cowbell amulet (empty).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Crab claw",
     "id": 7537,
     "version": "",
@@ -74136,7 +74196,7 @@
     "slot": "weapon",
     "image": "Glacial temotli.png",
     "speed": 4,
-    "category": "Spiked",
+    "category": "Blunt",
     "bonuses": {
       "str": 64,
       "ranged_str": 0,
