@@ -103,7 +103,7 @@ const ammoForRangedWeapons: { [weapon: number]: number[] } = {
   10280: commonAmmoCategories().bow_t20, // Willow comp bow
   853: commonAmmoCategories().bow_t30, // Maple shortbow
   851: commonAmmoCategories().bow_t30, // Maple longbow
-  2883: [2866], // Ogre bow
+  2883: [2866, 4773, 4778, 4783, 4788, 4793], // Ogre bow
   4827: [2866, 4773, 4778, 4783, 4788, 4793, 4798, 4803], // Comp ogre bow
   857: commonAmmoCategories().bow_t40, // Yew shortbow
   855: commonAmmoCategories().bow_t40, // Yew longbow
