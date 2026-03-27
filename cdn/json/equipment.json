@@ -11790,6 +11790,216 @@
     "isTwoHanded": false
   },
   {
+    "name": "Archibald",
+    "id": 33151,
+    "version": "Archibald",
+    "slot": "weapon",
+    "image": "Archibald.png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": -10,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -100,
+      "slash": -100,
+      "crush": -50,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Archibald",
+    "id": 33155,
+    "version": "Bunny",
+    "slot": "weapon",
+    "image": "Archibald (Bunny).png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": -10,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -100,
+      "slash": -100,
+      "crush": -50,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Archibald",
+    "id": 33159,
+    "version": "Chick",
+    "slot": "weapon",
+    "image": "Archibald (Chick).png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": -10,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -100,
+      "slash": -100,
+      "crush": -50,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Archibald",
+    "id": 33157,
+    "version": "Diamonds",
+    "slot": "weapon",
+    "image": "Archibald (Diamonds).png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": -10,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -100,
+      "slash": -100,
+      "crush": -50,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Archibald",
+    "id": 33163,
+    "version": "Dragon",
+    "slot": "weapon",
+    "image": "Archibald (Dragon).png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": -10,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -100,
+      "slash": -100,
+      "crush": -50,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Archibald",
+    "id": 33153,
+    "version": "Grid",
+    "slot": "weapon",
+    "image": "Archibald (Grid).png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": -10,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -100,
+      "slash": -100,
+      "crush": -50,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Archibald",
+    "id": 33161,
+    "version": "Melted",
+    "slot": "weapon",
+    "image": "Archibald (Melted).png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": -10,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -100,
+      "slash": -100,
+      "crush": -50,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Arclight",
     "id": 19675,
     "version": "Charged",
@@ -70170,6 +70380,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Fishy prison uniform top",
+    "id": 31357,
+    "version": "",
+    "slot": "body",
+    "image": "Fishy prison uniform top.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Five barrels",
     "id": 8864,
     "version": "",
@@ -109175,6 +109415,66 @@
     "version": "",
     "slot": "cape",
     "image": "Princely monkey.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Prison uniform top",
+    "id": 31353,
+    "version": "",
+    "slot": "body",
+    "image": "Prison uniform top.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Prison uniform trousers",
+    "id": 31355,
+    "version": "",
+    "slot": "legs",
+    "image": "Prison uniform trousers.png",
     "speed": 0,
     "category": "",
     "bonuses": {
