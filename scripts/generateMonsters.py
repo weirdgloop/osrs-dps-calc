@@ -285,6 +285,21 @@ def main():
     skipped_img_dls = 0
     required_imgs = set(required_imgs)
 
+    removed_count = 0
+    # Delete any images that are no longer required while enumerating existing files
+    if os.path.isdir(IMG_PATH):
+        for root, _, files in os.walk(IMG_PATH):
+            for file in files:
+                rel_path = os.path.relpath(os.path.join(root, file), IMG_PATH).replace(os.sep, '/')
+                if rel_path not in required_imgs:
+                    to_remove = os.path.join(root, file)
+                    try:
+                        os.remove(to_remove)
+                        print(f'Removed obsolete image: {rel_path}')
+                        removed_count += 1
+                    except OSError as e:
+                        print(f'Failed to remove obsolete image: {rel_path} ({e})')
+
     # Fetch all the images from the wiki and store them for local serving
     saved_image_paths = set()
     for idx, img in enumerate(required_imgs):
@@ -314,6 +329,7 @@ def main():
     print('Total images saved: ' + str(success_img_dls))
     print('Total images skipped (already exists): ' + str(skipped_img_dls))
     print('Total images failed to save: ' + str(failed_img_dls))
+    print('Total obsolete images removed: ' + str(removed_count))
 
 
 main()
