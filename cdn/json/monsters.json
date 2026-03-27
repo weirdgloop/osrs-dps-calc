@@ -2050,8 +2050,8 @@
       "crush": 0,
       "magic": 0,
       "heavy": 10,
-      "standard": 30,
-      "light": 30,
+      "standard": 25,
+      "light": 20,
       "slash": 0,
       "stab": 0
     },
@@ -4835,9 +4835,9 @@
       "flat_armour": 0,
       "crush": 0,
       "magic": -63,
-      "heavy": 100,
-      "standard": 50,
-      "light": 100,
+      "heavy": 125,
+      "standard": 125,
+      "light": 175,
       "slash": 0,
       "stab": 0
     },
@@ -17091,9 +17091,9 @@
       "flat_armour": 0,
       "crush": 0,
       "magic": 0,
-      "heavy": 15,
-      "standard": 40,
-      "light": 40,
+      "heavy": 40,
+      "standard": 20,
+      "light": 100,
       "slash": 0,
       "stab": 0
     },
@@ -28920,7 +28920,7 @@
     "id": 7144,
     "name": "Demonic gorilla",
     "version": "1",
-    "image": "Demonic gorilla (1).png",
+    "image": "Demonic gorilla.png",
     "level": 275,
     "speed": 5,
     "style": [
@@ -30042,7 +30042,7 @@
     "style": [
       "Melee"
     ],
-    "size": 0,
+    "size": 1,
     "max_hit": "51+",
     "skills": {
       "atk": 70,
@@ -30381,7 +30381,7 @@
       "flat_armour": 0,
       "crush": 0,
       "magic": 0,
-      "heavy": 5,
+      "heavy": 0,
       "standard": 15,
       "light": 15,
       "slash": 0,
@@ -47869,8 +47869,8 @@
       "crush": 0,
       "magic": 15,
       "heavy": 40,
-      "standard": 70,
-      "light": 70,
+      "standard": 20,
+      "light": 100,
       "slash": 0,
       "stab": 0
     },
@@ -55572,9 +55572,9 @@
       "flat_armour": 0,
       "crush": 0,
       "magic": 0,
-      "heavy": 25,
-      "standard": 50,
-      "light": 50,
+      "heavy": 40,
+      "standard": 20,
+      "light": 100,
       "slash": 0,
       "stab": 0
     },
@@ -72063,7 +72063,7 @@
     "name": "Manta ray (monster)",
     "version": "",
     "image": "Manta ray (Sailing).png",
-    "level": 140,
+    "level": 141,
     "speed": 4,
     "style": [
       "Slash"
@@ -81094,9 +81094,9 @@
       "flat_armour": 0,
       "crush": 0,
       "magic": 0,
-      "heavy": 60,
-      "standard": 85,
-      "light": 85,
+      "heavy": 40,
+      "standard": 60,
+      "light": 150,
       "slash": 0,
       "stab": 0
     },
@@ -85363,6 +85363,48 @@
     }
   },
   {
+    "id": 15456,
+    "name": "Pirate (Feldip Gulf)",
+    "version": "",
+    "image": "Pirate (Feldip Gulf).png",
+    "level": 32,
+    "speed": 4,
+    "style": null,
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 20,
+      "def": 10,
+      "hp": 35,
+      "magic": 0,
+      "ranged": 0,
+      "str": 45
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 30
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 17,
+      "stab": 5
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 15021,
     "name": "Pirate (The Red Reef)",
     "version": "1",
@@ -85743,6 +85785,48 @@
       "light": 0,
       "slash": 20,
       "stab": 10
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 15455,
+    "name": "Pirate captain (Feldip Gulf)",
+    "version": "",
+    "image": "Pirate captain (Feldip Gulf).png",
+    "level": 67,
+    "speed": 4,
+    "style": null,
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 60,
+      "def": 50,
+      "hp": 50,
+      "magic": 0,
+      "ranged": 0,
+      "str": 70
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 30
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 17,
+      "stab": 5
     },
     "attributes": [],
     "immunities": {
@@ -87498,10 +87582,10 @@
     "weakness": null
   },
   {
-    "id": 15430,
+    "id": 15431,
     "name": "Praying mantis",
-    "version": "1",
-    "image": "Praying mantis.png",
+    "version": "Brown",
+    "image": "Praying mantis (brown).png",
     "level": 14,
     "speed": 4,
     "style": [
@@ -87542,10 +87626,10 @@
     "weakness": null
   },
   {
-    "id": 15431,
+    "id": 15430,
     "name": "Praying mantis",
-    "version": "2",
-    "image": "Praying mantis (brown).png",
+    "version": "Green",
+    "image": "Praying mantis.png",
     "level": 14,
     "speed": 4,
     "style": [
@@ -87588,7 +87672,7 @@
   {
     "id": 15432,
     "name": "Praying mantis",
-    "version": "3",
+    "version": "Orchid",
     "image": "Praying mantis (orchid).png",
     "level": 14,
     "speed": 4,
@@ -87705,9 +87789,9 @@
       "flat_armour": 0,
       "crush": 0,
       "magic": -63,
-      "heavy": 50,
-      "standard": 25,
-      "light": 50,
+      "heavy": 60,
+      "standard": 75,
+      "light": 120,
       "slash": 0,
       "stab": 0
     },
@@ -93579,7 +93663,7 @@
   {
     "id": 11508,
     "name": "Scarab Mage",
-    "version": "Level 119 (Quest)",
+    "version": "Level 119 (Beneath Cursed Sands)",
     "image": "Scarab Mage.png",
     "level": 119,
     "speed": 5,
@@ -93628,7 +93712,7 @@
   {
     "id": 799,
     "name": "Scarab Mage",
-    "version": "Level 66 (Quest)",
+    "version": "Level 66 (Contact!)",
     "image": "Scarab Mage.png",
     "level": 66,
     "speed": 15,
@@ -103065,50 +103149,6 @@
     "weakness": null
   },
   {
-    "id": 2845,
-    "name": "Snake",
-    "version": "",
-    "image": "Snake.png",
-    "level": 5,
-    "speed": 4,
-    "style": [
-      "Stab"
-    ],
-    "size": 1,
-    "max_hit": "1",
-    "skills": {
-      "atk": 4,
-      "def": 3,
-      "hp": 6,
-      "magic": 1,
-      "ranged": 1,
-      "str": 5
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
     "id": 5244,
     "name": "Snake (Ape Atoll)",
     "version": "",
@@ -103241,10 +103281,98 @@
     "weakness": null
   },
   {
+    "id": 2845,
+    "name": "Snake",
+    "version": "1",
+    "image": "Snake.png",
+    "level": 5,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 4,
+      "def": 3,
+      "hp": 6,
+      "magic": 1,
+      "ranged": 1,
+      "str": 5
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
     "id": 13002,
-    "name": "Snake (Varlamore)",
-    "version": "",
+    "name": "Snake",
+    "version": "2",
     "image": "Snake (Varlamore).png",
+    "level": 5,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "1",
+    "skills": {
+      "atk": 4,
+      "def": 3,
+      "hp": 6,
+      "magic": 1,
+      "ranged": 1,
+      "str": 5
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "weakness": null
+  },
+  {
+    "id": 14916,
+    "name": "Snake",
+    "version": "3",
+    "image": "Snake (Sailing).png",
     "level": 5,
     "speed": 4,
     "style": [
@@ -105068,9 +105196,9 @@
       "flat_armour": 0,
       "crush": 0,
       "magic": -63,
-      "heavy": 50,
-      "standard": 25,
-      "light": 50,
+      "heavy": 60,
+      "standard": 75,
+      "light": 120,
       "slash": 0,
       "stab": 0
     },
@@ -109690,7 +109818,7 @@
     "weakness": null
   },
   {
-    "id": 15268,
+    "id": 15228,
     "name": "Tern",
     "version": "",
     "image": "Tern.png",
@@ -113015,9 +113143,9 @@
       "flat_armour": 0,
       "crush": 0,
       "magic": 0,
-      "heavy": 35,
-      "standard": 60,
-      "light": 60,
+      "heavy": 40,
+      "standard": 20,
+      "light": 100,
       "slash": 0,
       "stab": 0
     },
@@ -119374,9 +119502,9 @@
       "flat_armour": 0,
       "crush": 0,
       "magic": -63,
-      "heavy": 50,
-      "standard": 25,
-      "light": 50,
+      "heavy": 60,
+      "standard": 75,
+      "light": 120,
       "slash": 0,
       "stab": 0
     },
