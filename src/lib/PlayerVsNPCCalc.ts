@@ -920,9 +920,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       // and shows this max hit against the combat dummy as well
       maxHit = Math.max(1, Math.trunc(magicLevel / 3) - 5) + 10;
     } else if (this.wearing('Eldritch nightmare staff') && this.opts.usingSpecialAttack) {
-      maxHit = Math.max(1, Math.min(44, 44 * Math.trunc(magicLevel / 99) + 1));
+      maxHit = Math.max(1, Math.min(44, Math.trunc((99 + 44 * magicLevel) / 99)));
     } else if (this.wearing('Volatile nightmare staff') && this.opts.usingSpecialAttack) {
-      maxHit = Math.max(1, Math.min(58, 58 * Math.trunc(magicLevel / 99) + 1));
+      maxHit = Math.max(1, Math.min(58, Math.trunc((99 + 58 * magicLevel) / 99)));
     } else if (this.wearing(['Crystal staff (basic)', 'Corrupted staff (basic)'])) {
       maxHit = 23;
     } else if (this.wearing(['Crystal staff (attuned)', 'Corrupted staff (attuned)'])) {
