@@ -1962,19 +1962,70 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    * Returns the average hits-to-kill calculation.
    */
   public getHtk() {
-    const dist = this.getDistribution();
-    const hist = dist.asHistogram();
     const startHp = this.monster.inputs.monsterCurrentHp;
-    const max = Math.min(startHp, dist.getMax());
-    if (max === 0) {
-      return 0;
+    const isHpDependent = this.distIsCurrentHpDependent(this.player, this.monster);
+
+    if (!isHpDependent || this.opts.disableMonsterScaling) {
+      const dist = this.getDistribution();
+      const hist = dist.asHistogram();
+      const max = Math.min(startHp, dist.getMax());
+      if (max === 0) {
+        return 0;
+      }
+
+      const htk = new Float64Array(startHp + 1); // 0 hits left to do if hp = 0
+
+      for (let hp = 1; hp <= startHp; hp++) {
+        let val = 1.0; // takes at least one hit
+        for (let hit = 1; hit <= Math.min(hp, max); hit++) {
+          const p = hist[hit];
+          val += p.value * htk[hp - hit];
+        }
+
+        htk[hp] = val / (1 - hist[0].value);
+      }
+
+      return htk[startHp];
     }
 
-    const htk = new Float64Array(startHp + 1); // 0 hits left to do if hp = 0
+    // for hp-dependent cases, cache the hit dists and max hits for each hp
+    const hpHists = new Array<ReturnType<AttackDistribution['asHistogram']>>(startHp + 1);
+    const hpMaxHits = new Uint16Array(startHp + 1);
+
+    for (let hp = 0; hp <= startHp; hp++) {
+      if (hp === this.monster.inputs.monsterCurrentHp) {
+        const dist = this.getDistribution();
+        hpHists[hp] = dist.asHistogram();
+        hpMaxHits[hp] = dist.getMax();
+      } else {
+        const subCalc = this.noInitSubCalc(
+          this.player,
+          scaleMonsterHpOnly({
+            ...this.baseMonster,
+            inputs: {
+              ...this.baseMonster.inputs,
+              monsterCurrentHp: hp,
+            },
+          }),
+        );
+        const dist = subCalc.getDistribution();
+        hpHists[hp] = dist.asHistogram();
+        hpMaxHits[hp] = dist.getMax();
+      }
+    }
+
+    const htk = new Float64Array(startHp + 1);
 
     for (let hp = 1; hp <= startHp; hp++) {
-      let val = 1.0; // takes at least one hit
-      for (let hit = 1; hit <= Math.min(hp, max); hit++) {
+      const hist = hpHists[hp];
+      const max = Math.min(hp, hpMaxHits[hp]);
+
+      if (max === 0) {
+        continue;
+      }
+
+      let val = 1.0;
+      for (let hit = 1; hit <= max; hit++) {
         const p = hist[hit];
         val += p.value * htk[hp - hit];
       }
