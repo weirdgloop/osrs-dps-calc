@@ -2022,7 +2022,7 @@
     "name": "Albatross",
     "version": "",
     "image": "Albatross.png",
-    "level": 121,
+    "level": 110,
     "speed": 4,
     "style": [
       "Stab"
@@ -2032,7 +2032,7 @@
     "skills": {
       "atk": 100,
       "def": 60,
-      "hp": 179,
+      "hp": 135,
       "magic": 1,
       "ranged": 0,
       "str": 90
@@ -17064,7 +17064,7 @@
     "name": "Bull shark",
     "version": "",
     "image": "Bull shark.png",
-    "level": 77,
+    "level": 65,
     "speed": 4,
     "style": [
       "Slash"
@@ -17074,7 +17074,7 @@
     "skills": {
       "atk": 80,
       "def": 20,
-      "hp": 128,
+      "hp": 81,
       "magic": 1,
       "ranged": 0,
       "str": 45
@@ -17240,7 +17240,7 @@
     "name": "Butterfly ray",
     "version": "",
     "image": "Butterfly ray.png",
-    "level": 72,
+    "level": 68,
     "speed": 4,
     "style": [
       "Slash"
@@ -17250,7 +17250,7 @@
     "skills": {
       "atk": 100,
       "def": 15,
-      "hp": 101,
+      "hp": 83,
       "magic": 1,
       "ranged": 0,
       "str": 35
@@ -30354,7 +30354,7 @@
     "name": "Dolphin",
     "version": "",
     "image": "Dolphin (Sailing).png",
-    "level": 29,
+    "level": 22,
     "speed": 4,
     "style": [
       "Slash"
@@ -30364,7 +30364,7 @@
     "skills": {
       "atk": 25,
       "def": 0,
-      "hp": 74,
+      "hp": 45,
       "magic": 1,
       "ranged": 0,
       "str": 10
@@ -33044,7 +33044,7 @@
     "name": "Eagle ray",
     "version": "",
     "image": "Eagle ray.png",
-    "level": 49,
+    "level": 44,
     "speed": 4,
     "style": [
       "Slash"
@@ -33054,7 +33054,7 @@
     "skills": {
       "atk": 70,
       "def": 0,
-      "hp": 74,
+      "hp": 55,
       "magic": 1,
       "ranged": 0,
       "str": 1
@@ -40837,7 +40837,7 @@
     "name": "Frigatebird",
     "version": "",
     "image": "Frigatebird.png",
-    "level": 89,
+    "level": 78,
     "speed": 4,
     "style": [
       "Stab"
@@ -40847,7 +40847,7 @@
     "skills": {
       "atk": 80,
       "def": 40,
-      "hp": 121,
+      "hp": 79,
       "magic": 1,
       "ranged": 0,
       "str": 70
@@ -55545,7 +55545,7 @@
     "name": "Hammerhead shark",
     "version": "",
     "image": "Hammerhead shark.png",
-    "level": 91,
+    "level": 90,
     "speed": 4,
     "style": [
       "Slash"
@@ -55555,7 +55555,7 @@
     "skills": {
       "atk": 80,
       "def": 50,
-      "hp": 128,
+      "hp": 125,
       "magic": 1,
       "ranged": 0,
       "str": 65
@@ -55680,94 +55680,6 @@
       "element": "air",
       "severity": 50
     }
-  },
-  {
-    "id": 12096,
-    "name": "Hazeel Cultist",
-    "version": "Female",
-    "image": "Hazeel Cultist (female).png",
-    "level": 13,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "2",
-    "skills": {
-      "atk": 10,
-      "def": 4,
-      "hp": 25,
-      "magic": 1,
-      "ranged": 1,
-      "str": 10
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 8,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 6,
-      "stab": 5
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
-  },
-  {
-    "id": 1207,
-    "name": "Hazeel Cultist",
-    "version": "Male",
-    "image": "Hazeel Cultist (male).png",
-    "level": 13,
-    "speed": 4,
-    "style": [
-      "Crush"
-    ],
-    "size": 1,
-    "max_hit": "2",
-    "skills": {
-      "atk": 10,
-      "def": 4,
-      "hp": 25,
-      "magic": 1,
-      "ranged": 1,
-      "str": 10
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 8,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 6,
-      "stab": 5
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "weakness": null
   },
   {
     "id": 5645,
@@ -72063,7 +71975,7 @@
     "name": "Manta ray (monster)",
     "version": "",
     "image": "Manta ray (Sailing).png",
-    "level": 141,
+    "level": 133,
     "speed": 4,
     "style": [
       "Slash"
@@ -72073,7 +71985,7 @@
     "skills": {
       "atk": 155,
       "def": 40,
-      "hp": 225,
+      "hp": 194,
       "magic": 1,
       "ranged": 0,
       "str": 75
@@ -73780,7 +73692,7 @@
     "name": "Mogre (Sailing)",
     "version": "",
     "image": "Mogre (Sailing).png",
-    "level": 61,
+    "level": 54,
     "speed": 6,
     "style": [
       "Crush"
@@ -73790,7 +73702,7 @@
     "skills": {
       "atk": 40,
       "def": 40,
-      "hp": 87,
+      "hp": 59,
       "magic": 1,
       "ranged": 60,
       "str": 50
@@ -77458,7 +77370,7 @@
     "name": "Narwhal",
     "version": "",
     "image": "Narwhal.png",
-    "level": 119,
+    "level": 111,
     "speed": 4,
     "style": [
       "Slash"
@@ -77468,7 +77380,7 @@
     "skills": {
       "atk": 95,
       "def": 50,
-      "hp": 220,
+      "hp": 187,
       "magic": 1,
       "ranged": 0,
       "str": 65
@@ -81202,7 +81114,7 @@
     "name": "Osprey",
     "version": "",
     "image": "Osprey.png",
-    "level": 74,
+    "level": 63,
     "speed": 4,
     "style": [
       "Stab"
@@ -81212,7 +81124,7 @@
     "skills": {
       "atk": 60,
       "def": 40,
-      "hp": 114,
+      "hp": 72,
       "magic": 1,
       "ranged": 0,
       "str": 50
@@ -87762,7 +87674,7 @@
     "name": "Pygmy kraken",
     "version": "",
     "image": "Pygmy kraken.png",
-    "level": 100,
+    "level": 93,
     "speed": 5,
     "style": [
       "Magic"
@@ -87772,7 +87684,7 @@
     "skills": {
       "atk": 1,
       "def": 50,
-      "hp": 177,
+      "hp": 150,
       "magic": 90,
       "ranged": 1,
       "str": 1
@@ -106959,7 +106871,7 @@
     "name": "Stingray",
     "version": "",
     "image": "Stingray.png",
-    "level": 98,
+    "level": 92,
     "speed": 4,
     "style": [
       "Slash"
@@ -106969,7 +106881,7 @@
     "skills": {
       "atk": 130,
       "def": 25,
-      "hp": 128,
+      "hp": 106,
       "magic": 1,
       "ranged": 0,
       "str": 55
@@ -109822,7 +109734,7 @@
     "name": "Tern",
     "version": "",
     "image": "Tern.png",
-    "level": 26,
+    "level": 20,
     "speed": 4,
     "style": [
       "Stab"
@@ -109832,7 +109744,7 @@
     "skills": {
       "atk": 25,
       "def": 0,
-      "hp": 46,
+      "hp": 22,
       "magic": 1,
       "ranged": 0,
       "str": 20
@@ -121242,7 +121154,7 @@
       "Melee"
     ],
     "size": 2,
-    "max_hit": "44 (Phase 1-2)",
+    "max_hit": "45 (Phase 1-2)",
     "skills": {
       "atk": 1,
       "def": 100,
@@ -121288,7 +121200,7 @@
       "Melee"
     ],
     "size": 2,
-    "max_hit": "44 (Phase 1-2)",
+    "max_hit": "45 (Phase 1-2)",
     "skills": {
       "atk": 1,
       "def": 100,

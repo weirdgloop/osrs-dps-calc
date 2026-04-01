@@ -2430,36 +2430,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Accursed sceptre (a) (beta)",
-    "id": 27679,
-    "version": "Charged",
-    "slot": "weapon",
-    "image": "Accursed sceptre (a) (beta).png",
-    "speed": 4,
-    "category": "Powered Staff",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 22,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 20,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
     "name": "Achievement diary cape",
     "id": 13069,
     "version": "Trimmed",
@@ -38886,7 +38856,7 @@
     "slot": "weapon",
     "image": "Crate of books (Civitas illa Fortis).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38916,7 +38886,7 @@
     "slot": "weapon",
     "image": "Crate of books (Port Piscarilius).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38946,7 +38916,7 @@
     "slot": "weapon",
     "image": "Crate of books (Port Sarim).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -38976,7 +38946,7 @@
     "slot": "weapon",
     "image": "Crate of books (Prifddinas).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40536,7 +40506,7 @@
     "slot": "weapon",
     "image": "Crate of fish (Ardougne).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40566,7 +40536,7 @@
     "slot": "weapon",
     "image": "Crate of fish (Brimhaven).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40596,7 +40566,7 @@
     "slot": "weapon",
     "image": "Crate of fish (Civitas illa Fortis).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40626,7 +40596,7 @@
     "slot": "weapon",
     "image": "Crate of fish (Corsair Cove).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40656,7 +40626,7 @@
     "slot": "weapon",
     "image": "Crate of fish (Etceteria).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40686,7 +40656,7 @@
     "slot": "weapon",
     "image": "Crate of fish (Hosidius).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40716,7 +40686,7 @@
     "slot": "weapon",
     "image": "Crate of fish (Jatizso).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40746,7 +40716,7 @@
     "slot": "weapon",
     "image": "Crate of fish (Land's End).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40776,7 +40746,7 @@
     "slot": "weapon",
     "image": "Crate of fish (Lunar Isle).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40806,7 +40776,7 @@
     "slot": "weapon",
     "image": "Crate of fish (Musa Point).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40836,7 +40806,7 @@
     "slot": "weapon",
     "image": "Crate of fish (Piscatoris).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40866,7 +40836,7 @@
     "slot": "weapon",
     "image": "Crate of fish (Port Roberts).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40896,7 +40866,7 @@
     "slot": "weapon",
     "image": "Crate of fish (Port Sarim).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40926,7 +40896,7 @@
     "slot": "weapon",
     "image": "Crate of fish (Port Tyras).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40956,7 +40926,7 @@
     "slot": "weapon",
     "image": "Crate of fish (Prifddinas).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -40986,7 +40956,7 @@
     "slot": "weapon",
     "image": "Crate of fish (Red Rock).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41016,7 +40986,7 @@
     "slot": "weapon",
     "image": "Crate of fish (Rellekka).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41046,7 +41016,7 @@
     "slot": "weapon",
     "image": "Crate of fish (Ruins of Unkah).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41076,7 +41046,7 @@
     "slot": "weapon",
     "image": "Crate of fish (Sunset Coast).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41136,7 +41106,7 @@
     "slot": "weapon",
     "image": "Crate of flax (Jatizso).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41166,7 +41136,7 @@
     "slot": "weapon",
     "image": "Crate of flax (Piscatoris).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41196,7 +41166,7 @@
     "slot": "weapon",
     "image": "Crate of flax (Port Roberts).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -41226,7 +41196,7 @@
     "slot": "weapon",
     "image": "Crate of flax (Port Sarim).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44076,7 +44046,7 @@
     "slot": "weapon",
     "image": "Crate of meat (Land's End).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44106,7 +44076,7 @@
     "slot": "weapon",
     "image": "Crate of meat (Musa Point).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44136,7 +44106,7 @@
     "slot": "weapon",
     "image": "Crate of meat (Port Roberts).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44166,7 +44136,7 @@
     "slot": "weapon",
     "image": "Crate of meat (The Pandemonium).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -44196,7 +44166,7 @@
     "slot": "weapon",
     "image": "Crate of meat (The Summer Shore).png",
     "speed": 0,
-    "category": "Blunt",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
