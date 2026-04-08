@@ -16296,7 +16296,7 @@
     "slot": "body",
     "image": "Beer belly sweater.png",
     "speed": 0,
-    "category": "Unarmed",
+    "category": "",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -21998,7 +21998,7 @@
     "speed": 0,
     "category": "",
     "bonuses": {
-      "str": 4,
+      "str": 0,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
@@ -22007,15 +22007,15 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": -15,
-      "ranged": -10
+      "magic": 0,
+      "ranged": 0
     },
     "defensive": {
-      "stab": 60,
-      "slash": 80,
-      "crush": 80,
-      "magic": 40,
-      "ranged": 79
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
     },
     "isTwoHanded": false
   },
@@ -22088,7 +22088,7 @@
     "speed": 0,
     "category": "",
     "bonuses": {
-      "str": 4,
+      "str": 0,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
@@ -22097,15 +22097,15 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": -6,
-      "ranged": -2
+      "magic": 0,
+      "ranged": 0
     },
     "defensive": {
-      "stab": 20,
-      "slash": 31,
-      "crush": 34,
-      "magic": 7,
-      "ranged": 29
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
     },
     "isTwoHanded": false
   },
@@ -22178,7 +22178,7 @@
     "speed": 0,
     "category": "",
     "bonuses": {
-      "str": 2,
+      "str": 0,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
@@ -22187,15 +22187,15 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": -21,
-      "ranged": -7
+      "magic": 0,
+      "ranged": 0
     },
     "defensive": {
-      "stab": 30,
-      "slash": 50,
-      "crush": 49,
-      "magic": 32,
-      "ranged": 46
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
     },
     "isTwoHanded": false
   },
@@ -23228,23 +23228,23 @@
     "speed": 0,
     "category": "",
     "bonuses": {
-      "str": 2,
+      "str": 0,
       "ranged_str": 0,
-      "magic_str": 10,
+      "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 30,
+      "magic": 0,
       "ranged": 0
     },
     "defensive": {
       "stab": 0,
       "slash": 0,
-      "crush": 51,
-      "magic": 28,
+      "crush": 0,
+      "magic": 0,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -23318,23 +23318,23 @@
     "speed": 0,
     "category": "",
     "bonuses": {
-      "str": 3,
+      "str": 0,
       "ranged_str": 0,
-      "magic_str": 10,
+      "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 6,
+      "magic": 0,
       "ranged": 0
     },
     "defensive": {
       "stab": 0,
       "slash": 0,
-      "crush": 10,
-      "magic": 6,
+      "crush": 0,
+      "magic": 0,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -23438,23 +23438,23 @@
     "speed": 0,
     "category": "",
     "bonuses": {
-      "str": 1,
+      "str": 0,
       "ranged_str": 0,
-      "magic_str": 10,
+      "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 22,
+      "magic": 0,
       "ranged": 0
     },
     "defensive": {
       "stab": 0,
       "slash": 0,
-      "crush": 23,
-      "magic": 32,
+      "crush": 0,
+      "magic": 0,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -65348,7 +65348,7 @@
     "speed": 0,
     "category": "",
     "bonuses": {
-      "str": 3,
+      "str": 0,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
@@ -65357,15 +65357,15 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": -15,
-      "ranged": 31
+      "magic": 0,
+      "ranged": 0
     },
     "defensive": {
-      "stab": 15,
-      "slash": 18,
-      "crush": 57,
-      "magic": 55,
-      "ranged": 32
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
     },
     "isTwoHanded": false
   },
@@ -65438,7 +65438,7 @@
     "speed": 0,
     "category": "",
     "bonuses": {
-      "str": 3,
+      "str": 0,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
@@ -65447,15 +65447,15 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": -6,
-      "ranged": 8
+      "magic": 0,
+      "ranged": 0
     },
     "defensive": {
-      "stab": 2,
-      "slash": 3,
-      "crush": 14,
-      "magic": 10,
-      "ranged": 4
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
     },
     "isTwoHanded": false
   },
@@ -65528,7 +65528,7 @@
     "speed": 0,
     "category": "",
     "bonuses": {
-      "str": 1,
+      "str": 0,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
@@ -65537,15 +65537,15 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": -15,
-      "ranged": 17
+      "magic": 0,
+      "ranged": 0
     },
     "defensive": {
-      "stab": 9,
-      "slash": 13,
-      "crush": 37,
-      "magic": 31,
-      "ranged": 17
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
     },
     "isTwoHanded": false
   },
