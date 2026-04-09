@@ -78,7 +78,7 @@ const DemonicPactsLeague: React.FC = observer(() => {
   const store = useStore();
   const { cullingSpree } = store.player.leagues.six;
 
-  const unimplementedPacts = computed(() => store.userIssues.filter((issue) => issue.type === UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED)).get();
+  const unimplementedPacts = computed(() => store.calc.loadouts[store.selectedLoadout].userIssues?.filter((issue) => issue.type === UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED) ?? []).get();
 
   return (
     <>
