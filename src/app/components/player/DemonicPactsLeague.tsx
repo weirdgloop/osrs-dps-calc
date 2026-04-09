@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { IconAlertTriangleFilled, IconEdit } from '@tabler/icons-react';
 import Modal from '@/app/components/generic/Modal';
@@ -14,6 +14,7 @@ import { getCdnImage } from '@/utils';
 import { MELEE_WEAPONS } from '@/enums/EquipmentCategory';
 import { computed } from 'mobx';
 import UserIssueType from '@/enums/UserIssueType';
+import localforage from 'localforage';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const BlindbagSelector = observer(() => {
@@ -78,6 +79,9 @@ const DemonicPactsLeague: React.FC = observer(() => {
   const [showCombatMasteriesUI, setShowCombatMasteriesUI] = useState(false);
   const store = useStore();
   const { cullingSpree } = store.player.leagues.six;
+
+  const fromUrlInput = useRef<HTMLInputElement>(null);
+  const fromUrlBtn = useRef<HTMLButtonElement>(null);
 
   const unimplementedPacts = computed(() => store.calc.loadouts[store.selectedLoadout].userIssues?.filter((issue) => issue.type === UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED) ?? []).get();
 
@@ -187,10 +191,77 @@ const DemonicPactsLeague: React.FC = observer(() => {
           )}
           maxWidth="max-w-[90vh]"
         >
+          <div className="text-sm mb-4 flex items-center justify-end gap-2">
+            <p>Import from Pacts Planner</p>
+            <div>
+              <button
+                type="button"
+                className="transition-all hover:scale-105 hover:text-white border border-body-500 bg-[#3e2816] py-1.5 px-2.5 rounded-md dark:bg-dark-300 dark:border-dark-200 w-fit"
+                onClick={async () => {
+                  const data: string[] | null = await localforage.getItem('demonicpacts-nodes');
+                  if (data) {
+                    store.updatePlayer({
+                      leagues: {
+                        six: {
+                          selectedNodeIds: new Set(data as string[]),
+                        },
+                      },
+                    });
+                  }
+                }}
+              >
+                Current tree
+              </button>
+            </div>
+            <p>or</p>
+            <div className="flex gap-1 items-center">
+              <input
+                ref={fromUrlInput}
+                type="text"
+                className="form-control rounded w-full"
+                placeholder="Planner URL"
+                onKeyUp={(e) => {
+                  if (e.key === 'Enter') {
+                    fromUrlBtn.current?.click();
+                  }
+                }}
+              />
+              <button
+                ref={fromUrlBtn}
+                type="button"
+                className="transition-all hover:scale-105 hover:text-white border border-body-500 bg-[#3e2816] py-1.5 px-2.5 rounded-md dark:bg-dark-300 dark:border-dark-200 w-32"
+                onClick={() => {
+                  const input = fromUrlInput.current?.value;
+                  if (!input) return;
+
+                  try {
+                    const url = new URL(input);
+                    if (url.hostname !== 'tools.runescape.wiki' || !url.searchParams.has('n')) {
+                      return;
+                    }
+                    console.log(url);
+                    const nodes = url.searchParams.get('n')?.split('-').map((n) => `node${parseInt(n.replace('"', ''))}`);
+                    if (!nodes) return;
+                    store.updatePlayer({
+                      leagues: {
+                        six: {
+                          selectedNodeIds: new Set(nodes),
+                        },
+                      },
+                    });
+                  } catch (e) {
+                    // Do nothing
+                  }
+                }}
+              >
+                From URL
+              </button>
+            </div>
+          </div>
           <div className="flex flex-col h-[80vh]">
             <div className="flex-grow outline outline-gray-500"><SkillTreeDisplay interactive /></div>
             <div
-              className="max-h-64 flex mt-2 h-auto rounded bg-[#1b1612] text-white outline outline-[#736559] shadow-xl"
+              className="max-h-64 flex mt-4 h-auto rounded bg-[#1b1612] text-white outline outline-[#736559] shadow-xl"
             >
               <CurrentEffects />
             </div>
