@@ -9,12 +9,13 @@ import { useStore } from '@/state';
 import CullingSpree from '@/public/img/combat_masteries/culling_spree.png';
 import Toggle from '@/app/components/generic/Toggle';
 import EquipmentSelect from '@/app/components/player/equipment/EquipmentSelect';
-import ShowIfLeagueEffectEnabled from '@/app/components/player/demonicPactsLeague/ShowIfLeagueEffectEnabled';
+// import ShowIfLeagueEffectEnabled from '@/app/components/player/demonicPactsLeague/ShowIfLeagueEffectEnabled';
 import { getCdnImage } from '@/utils';
 import { MELEE_WEAPONS } from '@/enums/EquipmentCategory';
 import { computed } from 'mobx';
 import UserIssueType from '@/enums/UserIssueType';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const BlindbagSelector = observer(() => {
   const store = useStore();
   const { blindbagWeapons } = store.player.leagues.six;
@@ -142,9 +143,11 @@ const DemonicPactsLeague: React.FC = observer(() => {
           )}
         />
 
-        <ShowIfLeagueEffectEnabled leaguesEffect="talent_free_random_weapon_attack_chance">
-          <BlindbagSelector />
-        </ShowIfLeagueEffectEnabled>
+        {/* @eslint-disable */}
+        {/* <ShowIfLeagueEffectEnabled leaguesEffect="talent_free_random_weapon_attack_chance"> */}
+        {/*  <BlindbagSelector /> */}
+        {/* </ShowIfLeagueEffectEnabled> */}
+        {/* @eslint-enable */}
 
         <Modal
           isOpen={showCombatMasteriesUI}
