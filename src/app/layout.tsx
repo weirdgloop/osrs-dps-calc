@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
+import '@xyflow/react/dist/style.css';
 import '../globals.css';
 import { Metadata } from 'next';
 import { ibm, pts } from '@/fonts';

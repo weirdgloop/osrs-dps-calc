@@ -10,6 +10,7 @@ enum UserIssueType {
   RING_RECOIL_UNSUPPORTED = 'equipment_slot_ring_recoil',
   FEET_RECOIL_UNSUPPORTED = 'equipment_slot_feet_recoil',
   HANDS_EFFECT_UNSUPPORTED = 'equipment_slot_hands_effect',
+  LEAGUES_SIX_TALENT_UNSUPPORTED = 'leagues_six_talent_unsupported',
 }
 
 export default UserIssueType;

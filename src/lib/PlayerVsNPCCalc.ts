@@ -14,7 +14,12 @@ import {
   WeaponDelayProvider,
   WeightedHit,
 } from '@/lib/HitDist';
-import { canUseSunfireRunes, getSpellMaxHit, isBindSpell } from '@/types/Spell';
+import {
+  canUseSunfireRunes,
+  getSpellMaxHit,
+  isBindSpell,
+  Spellement,
+} from '@/types/Spell';
 import { PrayerData, PrayerMap } from '@/enums/Prayer';
 import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
@@ -488,6 +493,18 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       minHit = this.trackAdd(DetailKey.REPIRATORY_SYSTEM_MIN_HIT, minHit, Math.trunc(maxHit / 2));
     }
 
+    const percentMeleeDamage = this.player.leagues.six.effects?.talent_percentage_melee_damage ?? 0;
+    if (percentMeleeDamage > 0) {
+      maxHit = this.trackFactor(DetailKey.LEAGUES_MELEE_DAMAGE_TALENT, maxHit, [100 + percentMeleeDamage, 100]);
+    }
+
+    const weaponWeight = this.player.equipment.weapon?.weight ?? Infinity;
+    const isOneHanded = this.player.equipment.weapon?.isTwoHanded ?? false;
+    if (this.player.leagues.six.effects.talent_multi_hit_str_increase && (weaponWeight < 1 || isOneHanded)) {
+      const strengthBonus = Math.trunc(this.player.skills.str * 0.20);
+      maxHit = this.trackFactor(DetailKey.LEAGUES_MULTI_HIT_STR_INCREASE, maxHit, [100 + strengthBonus, 100]);
+    }
+
     return [minHit, maxHit];
   }
 
@@ -765,6 +782,21 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       minHit = this.trackAdd(DetailKey.REPIRATORY_SYSTEM_MIN_HIT, minHit, Math.trunc(maxHit / 2));
     }
 
+    if (this.player.leagues.six.effects.talent_crossbow_slow_big_hits
+      && this.player.equipment.weapon?.category === 'Crossbow') {
+      maxHit = this.trackFactor(DetailKey.LEAGUES_CROSSBOW_SLOW_BIG_HITS, maxHit, [170, 100]);
+    }
+
+    const rangeDamage = this.player.leagues.six.effects?.talent_percentage_ranged_damage || 0;
+    if (rangeDamage > 0) {
+      maxHit = this.trackFactor(DetailKey.LEAGUES_RANGED_DAMAGE_TALENT, maxHit, [100 + rangeDamage, 100]);
+    }
+
+    if (this.player.leagues.six.effects.talent_crossbow_max_hit
+      && this.player.equipment.weapon?.category === 'Crossbow') {
+      return [maxHit, maxHit];
+    }
+
     return [minHit, maxHit];
   }
 
@@ -845,7 +877,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isRevWeaponBuffApplicable()) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_REV_WEAPON, attackRoll, [3, 2]);
     }
-    if (this.wearing('Tome of water') && (this.player.spell?.element === 'water' || isBindSpell(this.player.spell))) { // todo does this go here?
+    if (this.wearing('Tome of water') && (this.getSpellement() === 'water' || isBindSpell(this.player.spell))) { // todo does this go here?
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_TOME, attackRoll, [6, 5]);
     }
 
@@ -859,7 +891,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
-    const spellement = this.player.spell?.element;
+    const spellement = this.getSpellement();
     if (this.monster.weakness && spellement) {
       if (spellement === this.monster.weakness.element) {
         const severity = this.monster.weakness.severity;
@@ -1010,10 +1042,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
-    const spellement = this.player.spell?.element;
+    const spellement = this.getSpellement();
     if (this.monster.weakness && spellement) {
       if (spellement === this.monster.weakness.element) {
-        maxHit += Math.trunc(baseMax * (this.monster.weakness.severity / 100));
+        const severity = this.monster.weakness.severity;
+        const bonus = this.trackFactor(DetailKey.MAX_HIT_SPELLEMENT_BONUS, baseMax, [severity, 100]);
+        maxHit = this.trackAdd(DetailKey.MAX_HIT_SPELLEMENT, maxHit, bonus);
       }
     }
 
@@ -1022,9 +1056,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       minHit = this.trackFactor(DetailKey.MIN_HIT_SUNFIRE, maxHit, [1, 10]);
     }
 
-    if ((this.wearing('Tome of fire') && this.player.equipment.shield?.version === 'Charged' && this.player.spell?.element === 'fire')
-      || (this.wearing('Tome of water') && this.player.equipment.shield?.version === 'Charged' && this.player.spell?.element === 'water')
-       || (this.wearing('Tome of earth') && this.player.equipment.shield?.version === 'Charged' && this.player.spell?.element === 'earth')) {
+    if ((this.wearing('Tome of fire') && this.player.equipment.shield?.version === 'Charged' && this.getSpellement() === 'fire')
+      || (this.wearing('Tome of water') && this.player.equipment.shield?.version === 'Charged' && this.getSpellement() === 'water')
+       || (this.wearing('Tome of earth') && this.player.equipment.shield?.version === 'Charged' && this.getSpellement() === 'earth')) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_TOME, maxHit, [11, 10]);
     }
 
@@ -1034,6 +1068,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.monster.name === 'Respiratory system') {
       minHit = this.trackAdd(DetailKey.REPIRATORY_SYSTEM_MIN_HIT, minHit, Math.trunc(maxHit / 2));
+    }
+
+    if (this.player.leagues.six.effects.talent_magic_attack_speed_powered
+      && this.player.equipment.weapon?.category === EquipmentCategory.POWERED_STAFF
+      && this.player.style.stance !== 'Manual Cast'
+      && this.player.equipment.weapon?.isTwoHanded === false) {
+      maxHit = this.trackAdd(DetailKey.LEAGUES_MAGIC_ATTACK_SPEED_POWERED, maxHit, -8);
     }
 
     return [minHit, maxHit];
@@ -1114,6 +1155,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     if (style === 'magic') {
       atkRoll = this.getPlayerMaxMagicAttackRoll();
+    }
+
+    if (this.player.leagues.six.effects.talent_all_style_accuracy) {
+      const factor = this.player.leagues.six.effects.talent_all_style_accuracy;
+      atkRoll = this.trackFactor(DetailKey.LEAGUES_ALL_STYLE_ACCURACY, atkRoll, [100 + factor, 100]);
     }
 
     return this.track(DetailKey.PLAYER_ACCURACY_ROLL_FINAL, atkRoll);
@@ -1223,6 +1269,14 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       BaseCalc.getNormalAccuracyRoll(atk, def),
     );
 
+    if (this.player.leagues.six.effects.talent_crossbow_double_accuracy_roll
+      && this.player.equipment.weapon?.category === 'Crossbow') {
+      hitChance = this.track(
+        DetailKey.LEAGUES_CROSSBOW_DOUBLE_ACCURACY,
+        BaseCalc.getFangAccuracyRoll(atk, def),
+      );
+    }
+
     if (this.isWearingFang() && this.player.style.type === 'stab') {
       if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)) {
         hitChance = this.track(DetailKey.PLAYER_ACCURACY_FANG_TOA, 1 - (1 - hitChance) ** 2);
@@ -1288,9 +1342,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   public getDistribution(): AttackDistribution {
     if (this.memoizedDist === undefined) {
       this.memoizedDist = this.getDistributionImpl();
-      this.track(DetailKey.HIT_DIST_FINAL_MIN, this.memoizedDist.getMin());
-      this.track(DetailKey.HIT_DIST_FINAL_MAX, this.memoizedDist.getMax());
-      this.track(DetailKey.HIT_DIST_FINAL_EXPECTED, this.memoizedDist.getExpectedDamage());
+      this.trackDist(DetailKey.DIST_FINAL, this.memoizedDist);
     }
 
     return this.memoizedDist;
@@ -1327,6 +1379,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     // standard linear
     const standardHitDist = HitDistribution.linear(acc, min, max);
     let dist = new AttackDistribution([standardHitDist]);
+    this.trackDist(DetailKey.DIST_BASE, dist);
 
     // Monsters that always die in one hit no matter what
     if (ONE_HIT_MONSTERS.includes(this.monster.id)) {
@@ -1339,6 +1392,16 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return new AttackDistribution([
         HitDistribution.single(acc, [new Hitsplat(this.monster.skills.hp)]),
       ]);
+    }
+
+    const leagues = this.player.leagues.six;
+    const spellement = this.getSpellement();
+    if (leagues.effects.talent_air_spell_damage_active_prayers && spellement === 'air') {
+      // todo(leagues): this needs the other non-combat prayers accessible via ui but that shouldn't require updating here
+      const prayersActive = this.player.prayers.length;
+      const bonusDamagePerPrayer = leagues.effects.talent_air_spell_damage_active_prayers;
+      dist = dist.transform(multiplyTransformer(100 + (prayersActive * bonusDamagePerPrayer), 100));
+      this.trackDist(DetailKey.DIST_LEAGUES_AIR_SPELL_PRAYER_COUNT, dist);
     }
 
     if (style === 'ranged' && this.wearing('Tonalztics of ralos') && this.player.equipment.weapon?.version === 'Charged') {
@@ -1692,6 +1755,53 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return new AttackDistribution([HitDistribution.single(1.0, [new Hitsplat(dist.getMax())])]);
     }
 
+    const rangedEcho = this.player.style.type === 'ranged' && leagues.effects.talent_ranged_regen_echo_chance;
+    const meleeEcho = this.isUsingMeleeStyle() && leagues.effects.talent_2h_melee_echos && this.player.equipment.weapon?.isTwoHanded;
+    if (rangedEcho || meleeEcho) {
+      const isWearingBow = meleeEcho || (this.player.equipment.weapon?.category === EquipmentCategory.BOW && !this.wearing('Eclipse atlatl'));
+      const isWearingCrossbow = meleeEcho || this.player.equipment.weapon?.category === EquipmentCategory.CROSSBOW;
+      const isWearingThrown = meleeEcho || (this.player.equipment.weapon?.category === EquipmentCategory.THROWN || this.wearing('Eclipse atlatl'));
+
+      let triggerChance = (meleeEcho ? 5 : leagues.effects.talent_ranged_regen_echo_chance!) / 100;
+      if (leagues.effects.talent_crossbow_echo_reproc_chance && isWearingCrossbow) {
+        triggerChance += leagues.effects.talent_crossbow_echo_reproc_chance / 100;
+      }
+      this.track(DetailKey.LEAGUES_ECHO_CHANCE_TRIGGER, triggerChance);
+
+      let echoChance = triggerChance;
+      if (rangedEcho) {
+        const regenChance = (leagues.effects.talent_regen_ammo ?? 0) / 100;
+        echoChance *= regenChance;
+        this.track(DetailKey.LEAGUES_ECHO_CHANCE_REGEN, echoChance);
+      }
+
+      if (!leagues.effects.talent_bow_always_pass_accuracy || !isWearingBow) {
+        echoChance *= acc;
+        this.track(DetailKey.LEAGUES_ECHO_CHANCE_ACCURACY, echoChance);
+      }
+
+      let echoDist = HitDistribution.linear(echoChance, min, max);
+      if (leagues.effects.talent_thrown_maxhit_echoes && isWearingThrown) {
+        const effectChance = 0.2;
+        echoDist = echoDist.scaleProbability(1 - effectChance);
+        echoDist.addHit(new WeightedHit(effectChance * acc, [new Hitsplat(max)]));
+        echoDist.addHit(new WeightedHit(effectChance * (1 - acc), [Hitsplat.INACCURATE]));
+        echoDist = echoDist.flatten();
+      }
+      this.trackDist(DetailKey.DIST_LEAGUES_ECHO, echoDist);
+      dist.addDist(echoDist);
+
+      if (leagues.effects.talent_ranged_echo_cyclical) {
+        const echoDistCyclical = echoDist.scaleProbability(0.5);
+        echoDistCyclical.addHit(new WeightedHit(0.5, [Hitsplat.INACCURATE]));
+        this.trackDist(DetailKey.DIST_LEAGUES_ECHO_CYCLICAL, echoDistCyclical);
+
+        dist.addDist(echoDistCyclical);
+        dist.addDist(echoDistCyclical);
+        dist.addDist(echoDistCyclical);
+      }
+    }
+
     if (process.env.NEXT_PUBLIC_HIT_DIST_SANITY_CHECK) {
       dist.dists.forEach((hitDist, ix) => {
         const sumAccuracy = sum(hitDist.hits, (wh) => wh.probability);
@@ -1747,7 +1857,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if ((OLM_MAGE_HAND_IDS.includes(this.monster.id) || OLM_MELEE_HAND_IDS.includes(this.monster.id)) && styleType === 'ranged') {
       dist = dist.transform(divisionTransformer(3));
     }
-    if (ICE_DEMON_IDS.includes(this.monster.id) && this.player.spell?.element !== 'fire' && !this.isUsingDemonbane()) {
+    if (ICE_DEMON_IDS.includes(this.monster.id) && this.getSpellement() !== 'fire' && !this.isUsingDemonbane()) {
       // https://twitter.com/JagexAsh/status/1133350436554121216
       dist = dist.transform(divisionTransformer(3));
     }
@@ -1792,7 +1902,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const crush = styleType === 'crush'
         && this.player.offensive.crush > this.player.offensive.slash
         && this.player.offensive.crush > this.player.offensive.stab;
-      const earth = this.player.spell?.element === 'earth';
+      const earth = this.getSpellement() === 'earth';
 
       // crush and earth spells have a higher limiter
       dist = dist.transform(linearMinTransformer((crush || earth) ? 9 : 4));
@@ -1879,7 +1989,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return true;
     }
     if (this.monster.name === 'Fareed') {
-      if (styleType === 'magic' && this.player.spell?.element !== 'water'
+      if (styleType === 'magic' && this.getSpellement() !== 'water'
         || (styleType === 'ranged' && !this.player.equipment.ammo?.name?.includes('arrow'))) {
         return true;
       }
@@ -1976,7 +2086,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       let val = 1.0; // takes at least one hit
       for (let hit = 1; hit <= Math.min(hp, max); hit++) {
         const p = hist[hit];
-        val += p.value * htk[hp - hit];
+        if (p) {
+          val += p.value * htk[hp - hit];
+        }
       }
 
       htk[hp] = val / (1 - hist[0].value);
@@ -2050,7 +2162,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const iterMax = TTK_DIST_MAX_ITER_ROUNDS * speed;
 
     const playerDist = this.getDistribution()
-      .zipped
+      .singleHitsplat
       .withProbabilisticDelays(this.getWeaponDelayProvider());
 
     // dist attack-on-specific-tick probabilities
@@ -2297,5 +2409,26 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       this.track(DetailKey.MIN_HIT_WARDENS, Math.trunc(max * modifier / 100)),
       this.track(DetailKey.MAX_HIT_WARDENS, Math.trunc(max * (modifier + maxPctRange) / 100)),
     ];
+  }
+
+  private getSpellement(): Spellement | null {
+    const spell = this.player.spell;
+    if (!spell) return null;
+
+    const { effects } = this.player.leagues.six;
+    if (spell.name.includes('Smoke') && effects.talent_smoke_counts_as_air) {
+      return 'air';
+    }
+    if (spell.name.includes('Ice') && effects.talent_ice_counts_as_water) {
+      return 'water';
+    }
+    if (spell.name.includes('Shadow') && effects.talent_shadow_counts_as_earth) {
+      return 'earth';
+    }
+    if (spell.name.includes('Blood') && effects.talent_blood_counts_as_fire) {
+      return 'fire';
+    }
+
+    return spell?.element;
   }
 }

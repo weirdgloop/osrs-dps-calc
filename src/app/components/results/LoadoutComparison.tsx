@@ -23,8 +23,8 @@ import LazyImage from '@/app/components/generic/LazyImage';
 import { CompareResult, CompareXAxis, CompareYAxis } from '@/lib/Comparator';
 import { CompareRequest, WorkerRequestType } from '@/worker/CalcWorkerTypes';
 import { keys } from '@/utils';
-import { ChartAnnotation } from '@/types/State';
 import { useCalc } from '@/worker/CalcWorker';
+import { ChartAnnotation } from '@/types/Charts';
 
 const XAxisOptions = [
   { label: 'Monster defence level', axisLabel: 'Level', value: CompareXAxis.MONSTER_DEF },

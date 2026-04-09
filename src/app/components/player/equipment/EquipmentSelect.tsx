@@ -93,7 +93,13 @@ const gauntletSort = (items: EquipmentOption[], monsterId: number) => {
   });
 };
 
-const EquipmentSelect: React.FC = observer(() => {
+interface IEquipmentSelectProps {
+  customAvailableEquipmentFilter?: (eq: EquipmentPiece) => boolean;
+  onSelectedItemChange?: (item: EquipmentOption | null | undefined) => void;
+}
+
+const EquipmentSelect: React.FC<IEquipmentSelectProps> = observer((props) => {
+  const { customAvailableEquipmentFilter, onSelectedItemChange } = props;
   const store = useStore();
 
   const options: EquipmentOption[] = useMemo(() => {
@@ -101,22 +107,23 @@ const EquipmentSelect: React.FC = observer(() => {
 
     const entries: EquipmentOption[] = [];
     for (const v of availableEquipment.filter((eq) => {
-      if (
-        (
-          (Object.values(eq.bonuses).every((val) => val === 0))
-          && (Object.values(eq.offensive).every((val) => val === 0))
-          && (Object.values(eq.defensive).every((val) => val === 0))
-          && (eq.speed === 4 || eq.speed <= 0)
-          && !noStatExceptions.includes(eq.name)
-        )
-        || eq.version.match(/^(Broken|Inactive|Locked)$/)
-        || eq.name.match(/\((Last Man Standing|historical|beta)\)$/)
-        || eq.name.match(/(Fine mesh net|Wilderness champion amulet|\(Wilderness Wars)/)
-        || eq.name.match(/^Crystal .* \(i\)$/)
-      ) {
-        return false;
+      if (customAvailableEquipmentFilter) {
+        return customAvailableEquipmentFilter(eq);
       }
-      return true;
+      return !((
+        (Object.values(eq.bonuses)
+          .every((val) => val === 0))
+            && (Object.values(eq.offensive)
+              .every((val) => val === 0))
+            && (Object.values(eq.defensive)
+              .every((val) => val === 0))
+            && (eq.speed === 4 || eq.speed <= 0)
+            && !noStatExceptions.includes(eq.name)
+      )
+          || eq.version.match(/^(Broken|Inactive|Locked)$/)
+          || eq.name.match(/\((Last Man Standing|historical|beta)\)$/)
+          || eq.name.match(/(Fine mesh net|Wilderness champion amulet|\(Wilderness Wars)/)
+          || eq.name.match(/^Crystal .* \(i\)$/));
     })) {
       const e: EquipmentOption = {
         label: `${v.name}`,
@@ -166,7 +173,7 @@ const EquipmentSelect: React.FC = observer(() => {
       });
 
     return gauntletSort(entries, store.monster.id);
-  }, [store.monster.id]);
+  }, [store.monster.id, customAvailableEquipmentFilter]);
 
   return (
     <Combobox<EquipmentOption>
@@ -177,7 +184,9 @@ const EquipmentSelect: React.FC = observer(() => {
       keepPositionAfterSelect
       placeholder="Search for equipment..."
       onSelectedItemChange={(item) => {
-        if (item) {
+        if (onSelectedItemChange) {
+          onSelectedItemChange(item);
+        } else if (item) {
           store.updatePlayer({
             equipment: {
               [item.equipment.slot]: item.equipment,

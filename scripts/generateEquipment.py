@@ -23,6 +23,7 @@ BUCKET_API_FIELDS = [
     'item_name',
     'image',
     'item_id',
+    'weight',
     'version_anchor',
     'infobox_bonuses.crush_attack_bonus',
     'infobox_bonuses.crush_defence_bonus',
@@ -152,6 +153,7 @@ def main():
         equipment = {
             'name': v['page_name'],
             'id': item_id,
+            'weight': v.get('weight', 0),
             'version': v.get('version_anchor', ''),
             'slot': v.get('infobox_bonuses.equipment_slot', ''),
             'image': '' if not v.get('image') else v.get('image')[-1].replace('File:', ''),

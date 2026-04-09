@@ -8,8 +8,8 @@ import { PartialDeep } from 'type-fest';
 import merge from 'lodash.mergewith';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
-import { ChartAnnotation, ChartEntry } from '@/types/State';
 import { DPS_PRECISION } from '@/lib/constants';
+import { ChartAnnotation, ChartEntry } from '@/types/Charts';
 
 export enum CompareXAxis {
   MONSTER_DEF,

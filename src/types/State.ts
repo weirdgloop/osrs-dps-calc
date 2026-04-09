@@ -3,6 +3,7 @@ import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import UserIssueType from '@/enums/UserIssueType';
 import { DetailEntry } from '@/lib/CalcDetails';
+import { ChartEntry } from '@/types/Charts';
 
 export interface UserIssue {
   type: UserIssueType;
@@ -34,16 +35,6 @@ export interface Preferences {
   hitDistsHideZeros: boolean; // legacy name
   hitDistShowSpec: boolean;
   resultsExpanded: boolean;
-}
-
-export interface ChartEntry {
-  name: string | number,
-  [k: string]: string | number,
-}
-
-export interface ChartAnnotation {
-  value: number,
-  label: string
 }
 
 /**
@@ -128,4 +119,10 @@ export interface State extends ImportableData {
    * All monsters that a player can fight.
    */
   availableMonsters: Omit<Monster, 'inputs'>[];
+
+  leagues: {
+    six: {
+      hoveredNodeId: string | null;
+    }
+  }
 }

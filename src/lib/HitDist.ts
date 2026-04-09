@@ -7,7 +7,7 @@ import {
   some,
   sum,
 } from 'd3-array';
-import { ChartEntry } from '@/types/State';
+import { ChartEntry } from '@/types/Charts';
 
 export type HitTransformer = (hitsplat: Hitsplat) => HitDistribution;
 
@@ -152,6 +152,9 @@ export class HitDistribution {
       )));
   }
 
+  /**
+   * Merges the probabilities of hits with identical damage values
+   */
   public flatten(): HitDistribution {
     const acc = new Map<number, number>();
     const hitLists = new Map<number, Hitsplat[]>();
@@ -295,7 +298,7 @@ export class AttackDistribution {
 
   get singleHitsplat(): HitDistribution {
     if (!this._singleHitsplat) {
-      this._singleHitsplat = this.zipped.cumulative();
+      this._singleHitsplat = this.dists.reduce((prev, curr) => prev.zip(curr).cumulative());
     }
     return this._singleHitsplat;
   }

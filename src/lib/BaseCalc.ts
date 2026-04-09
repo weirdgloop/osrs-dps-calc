@@ -16,6 +16,7 @@ import { scaleMonster } from '@/lib/MonsterScaling';
 import { getCombatStylesForCategory, isDefined } from '@/utils';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { getRangedDamageType } from '@/types/PlayerCombatStyle';
+import { AttackDistribution, HitDistribution } from '@/lib/HitDist';
 
 export interface CalcOpts {
   loadoutName?: string,
@@ -122,6 +123,11 @@ export default class BaseCalc {
     const divStr = factor[1] !== 1 ? ` / ${factor[1]}` : '';
     this.track(label, result, `${base} + (${base}${multStr}${divStr} = ${addend}) = ${result}`);
     return result;
+  }
+
+  protected trackDist(label: Parameters<CalcDetails['track']>[0], dist: AttackDistribution | HitDistribution, textOverride?: Parameters<CalcDetails['track']>[2]): AttackDistribution | HitDistribution {
+    this.track(label, dist, textOverride);
+    return dist;
   }
 
   get details(): DetailEntry[] {
@@ -266,7 +272,7 @@ export default class BaseCalc {
    * @see https://oldschool.runescape.wiki/w/Slayer_helmet
    */
   protected isWearingSlayerHelmet(): boolean {
-    return this.wearing(['Slayer helmet', 'Slayer helmet (i)']);
+    return this.wearing(['Slayer helmet', 'Slayer helmet (i)']) || this.player.leagues.six.cullingSpree;
   }
 
   /**
@@ -274,7 +280,7 @@ export default class BaseCalc {
    * @see https://oldschool.runescape.wiki/w/Black_mask
    */
   protected isWearingBlackMask(): boolean {
-    return this.isWearingImbuedBlackMask() || this.wearing(['Black mask', 'Slayer helmet']);
+    return this.isWearingImbuedBlackMask() || this.wearing(['Black mask', 'Slayer helmet']) || this.player.leagues.six.cullingSpree;
   }
 
   /**
@@ -282,7 +288,7 @@ export default class BaseCalc {
    * @see https://oldschool.runescape.wiki/w/Black_mask_(i)
    */
   protected isWearingImbuedBlackMask(): boolean {
-    return this.wearing(['Black mask (i)', 'Slayer helmet (i)']);
+    return this.wearing(['Black mask (i)', 'Slayer helmet (i)']) || this.player.leagues.six.cullingSpree;
   }
 
   /**
@@ -775,6 +781,53 @@ export default class BaseCalc {
     }
     if (this.wearing('Echo boots')) {
       this.addIssue(UserIssueType.FEET_RECOIL_UNSUPPORTED, 'The calculator does not account for recoil damage.');
+    }
+
+    const leaguesEffects = this.player.leagues.six.effects;
+    if (leaguesEffects.talent_free_random_weapon_attack_chance) {
+      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Blindbag (coming soon)');
+    }
+    if (leaguesEffects.talent_light_weapon_doublehit) {
+      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Light Weapon Double Hit (coming soon)');
+    }
+    if (leaguesEffects.talent_percentage_melee_maxhit_distance || leaguesEffects.talent_distance_melee_minhit) {
+      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Melee Distance Bonuses (coming soon)');
+    }
+    if (leaguesEffects.talent_bow_max_hit_stacking_increase || leaguesEffects.talent_bow_min_hit_stacking_increase) {
+      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Repeat Bow Hit Damage (coming soon)');
+    }
+    if (leaguesEffects.talent_buffed_ranged_prayers) {
+      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Stronger Ranged Prayers (coming soon)');
+    }
+    if (leaguesEffects.talent_fire_spell_burn_bounce) {
+      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Fire Spell Burn (coming soon)');
+    }
+    if (leaguesEffects.talent_fire_spell_burn_bounce) {
+      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Water Spell Health Bonus (coming soon)');
+    }
+    if (leaguesEffects.talent_fire_spell_burn_bounce) {
+      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Air Spell Prayer Max Hits (coming soon)');
+    }
+    if (leaguesEffects.talent_regen_magic_level_boost) {
+      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Regenerate Magic Level Boost (coming soon)');
+    }
+    if (leaguesEffects.talent_prayer_pen_all) {
+      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Prayer Penetration (coming soon)');
+    }
+    if (leaguesEffects.talent_all_style_accuracy) {
+      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Max Accuracy Roll Chance (coming soon)');
+    }
+    if (leaguesEffects.talent_all_style_accuracy) {
+      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Prayer Bonus Melee Strength (coming soon)');
+    }
+    if (leaguesEffects.talent_prayer_pen_all) {
+      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Style Swap Damage Bonus');
+    }
+    if (leaguesEffects.talent_thorns_damage || leaguesEffects.talent_shield_reflect) {
+      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Thorns');
+    }
+    if (leaguesEffects.talent_overheal_consumption_boost || leaguesEffects.talent_fire_hp_consume_for_damage) {
+      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Overheal Consumption Effects');
     }
   }
 }

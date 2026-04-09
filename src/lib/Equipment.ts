@@ -8,6 +8,7 @@ import {
   TOMBS_OF_AMASCUT_MONSTER_IDS,
 } from '@/lib/constants';
 import { sum } from 'd3-array';
+import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import equipment from '../../cdn/json/equipment.json';
 import generatedEquipmentAliases from './EquipmentAliases';
 
@@ -244,6 +245,15 @@ export const getCanonicalEquipment = (inputEq: PlayerEquipment) => {
  */
 export const calculateAttackSpeed = (player: Player, monster: Monster): number => {
   let attackSpeed = player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;
+  const effects = player.leagues.six.effects;
+
+  if (effects.talent_melee_range_conditional_boost
+      && player.equipment.weapon?.category === EquipmentCategory.POLEARM
+      && attackSpeed > 5
+      && player.style.stance !== 'Manual Cast') {
+    // Todo: Does this stack with other attack speed reductions?
+    return 5;
+  }
 
   if (player.style.type === 'ranged' && player.style.stance === 'Rapid') {
     attackSpeed -= 1;
@@ -259,11 +269,41 @@ export const calculateAttackSpeed = (player: Player, monster: Monster): number =
     }
   }
 
+  if (player.equipment.weapon?.category === 'Crossbow'
+      && player.leagues.six.effects.talent_crossbow_slow_big_hits) {
+    attackSpeed += 2;
+  }
+
   // Giant rat (Scurrius)
   if (monster.id === 7223 && player.style.stance !== 'Manual Cast') {
     if (['Bone mace', 'Bone shortbow', 'Bone staff'].includes(player.equipment.weapon?.name || '')) {
       attackSpeed = 1;
     }
+  }
+
+  if (effects.talent_light_weapon_faster
+    && ['slash', 'crush', 'stab'].includes(player.style?.type || '')
+    && (player.equipment.weapon?.weight || Infinity) < 1) {
+    attackSpeed -= 1;
+  }
+
+  if (effects.talent_magic_attack_speed_traditional
+    && CAST_STANCES.includes(player.style.stance)
+  ) {
+    attackSpeed -= 2;
+    return Math.max(attackSpeed, 2);
+  }
+
+  if (effects.talent_magic_attack_speed_powered
+    && player.equipment.weapon?.category === EquipmentCategory.POWERED_STAFF
+    && player.style.stance !== 'Manual Cast') {
+    attackSpeed -= 3;
+  }
+
+  if (effects.talent_bow_fast_hits
+    && player.equipment.weapon?.category === EquipmentCategory.BOW
+    && player.equipment.weapon?.name !== 'Eclipse atlatl') {
+    attackSpeed -= 1;
   }
 
   return Math.max(attackSpeed, 1);
@@ -332,6 +372,15 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
     }
   }
 
+  const leagues = player.leagues.six.effects;
+  if (leagues.talent_percentage_magic_damage) {
+    totals.bonuses.magic_str += leagues.talent_percentage_magic_damage * 10;
+  }
+
+  if (leagues.talent_thrown_weapon_accuracy && player.equipment.weapon?.category === 'Thrown') {
+    totals.offensive.ranged += 60;
+  }
+
   if (playerEquipment.weapon?.name === "Tumeken's shadow" && player.style.stance !== 'Manual Cast') {
     const factor = TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id) ? 4 : 3;
     totals.bonuses.magic_str = Math.min(1000, totals.bonuses.magic_str * factor);
@@ -369,6 +418,22 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
   if (dizanasQuiverCharged && ammoApplicability(player.equipment.weapon?.id, player.equipment.ammo?.id) === AmmoApplicability.INCLUDED) {
     totals.offensive.ranged += 10;
     totals.bonuses.ranged_str += 1;
+  }
+
+  if (leagues.talent_thrown_weapon_melee_str_scale && player.equipment.weapon?.category === 'Thrown') {
+    totals.bonuses.ranged_str += Math.trunc(totals.bonuses.str * 0.80);
+  }
+
+  if (leagues.talent_offhand_stat_boost && playerEquipment.shield) {
+    totals.bonuses.str += 5;
+    totals.bonuses.ranged_str += 5;
+    totals.bonuses.magic_str += 20;
+  }
+
+  if (leagues.talent_ranged_strength_hp_difference) {
+    const hpMissing = Math.min(0, player.boosts.hp);
+    const boost = -Math.trunc(hpMissing / 10);
+    totals.bonuses.ranged_str += boost;
   }
 
   totals.attackSpeed = calculateAttackSpeed(player, monster);

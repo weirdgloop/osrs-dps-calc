@@ -36,6 +36,12 @@ export enum EquipmentCategory {
   WHIP = 'Whip',
 }
 
+export const MELEE_WEAPONS = [
+  EquipmentCategory.TWO_HANDED_SWORD,
+  EquipmentCategory.SLASH_SWORD,
+  EquipmentCategory.STAB_SWORD,
+];
+
 export const MAGIC_WEAPONS = [
   EquipmentCategory.STAFF,
   EquipmentCategory.POWERED_WAND,

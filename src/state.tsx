@@ -1,11 +1,18 @@
 // noinspection FallThroughInSwitchStatementJS
 
 import {
-  autorun, IReactionDisposer, IReactionPublic, makeAutoObservable, reaction, toJS,
+  autorun,
+  IReactionDisposer,
+  IReactionPublic,
+  makeAutoObservable,
+  reaction,
+  toJS,
 } from 'mobx';
 import React, { createContext, useContext } from 'react';
 import { PartialDeep } from 'type-fest';
 import * as localforage from 'localforage';
+import merge from 'lodash.mergewith';
+import { toast } from 'react-toastify';
 import {
   CalculatedLoadout,
   Calculator,
@@ -17,13 +24,11 @@ import {
   UI,
   UserIssue,
 } from '@/types/State';
-import merge from 'lodash.mergewith';
 import {
   EquipmentPiece, Player, PlayerEquipment, PlayerSkills,
 } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
-import { toast } from 'react-toastify';
 import {
   fetchPlayerSkills,
   fetchShortlinkData,
@@ -40,6 +45,7 @@ import {
   DEFAULT_ATTACK_SPEED, INFINITE_HEALTH_MONSTERS,
   NUMBER_OF_LOADOUTS,
 } from '@/lib/constants';
+import { dbrowDefinitions, rootNode } from '@/app/components/player/demonicPactsLeague/parse_skill_tree_elements';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
   ARM_PRAYERS,
@@ -133,6 +139,21 @@ export const generateEmptyPlayer = (name?: string): Player => ({
     usingSunfireRunes: false,
   },
   spell: null,
+  leagues: {
+    six: {
+      selectedNodeIds: new Set<string>(['node1']),
+      effects: {},
+      distanceToEnemy: 0,
+      enemyPrayers: {
+        melee: false,
+        ranged: false,
+        magic: false,
+      },
+      blindbagWeapons: [],
+      regenerateMagicBonus: 0,
+      cullingSpree: false,
+    },
+  },
 });
 
 export const parseLoadoutsFromImportedData = (data: ImportableData) => data.loadouts.map((loadout, i) => {
@@ -270,6 +291,16 @@ class GlobalState implements State {
 
   private storageUpdater?: IReactionDisposer;
 
+  leagues: {
+    six: {
+      hoveredNodeId: string | null;
+    }
+  } = {
+      six: {
+        hoveredNodeId: null,
+      },
+    };
+
   constructor() {
     makeAutoObservable(this, {}, { autoBind: true });
 
@@ -290,12 +321,19 @@ class GlobalState implements State {
         }
       }
 
+      const leagueEffects = this.player.leagues.six.effects;
+      const leagueDef = leagueEffects.talent_defence_boost ?? 0;
+      if (leagueDef > 0 && leagueDef > (boosts.def ?? 0)) {
+        boosts.def = leagueDef;
+      }
+
       this.updatePlayer({ boosts });
     };
 
     const potionTriggers: ((r: IReactionPublic) => unknown)[] = [
       () => toJS(this.player.skills),
       () => toJS(this.player.buffs.potions),
+      () => toJS(this.player.leagues.six),
     ];
     potionTriggers.map((t) => reaction(t, recomputeBoosts, { fireImmediately: false }));
 
@@ -399,7 +437,8 @@ class GlobalState implements State {
     }
     this.storageUpdater = autorun(() => {
       // Save their application state to browser storage
-      localforage.setItem('dps-calc-state', toJS(this.asImportableData)).catch(() => {});
+      localforage.setItem('dps-calc-state', toJS(this.asImportableData)).catch(() => {
+      });
     });
   }
 
@@ -671,9 +710,22 @@ class GlobalState implements State {
   updatePlayer(player: PartialDeep<Player>, loadoutIx?: number) {
     loadoutIx = loadoutIx !== undefined ? loadoutIx : this.selectedLoadout;
 
+    const currentShield = this.loadouts[loadoutIx].equipment.shield;
+    const newShield = player.equipment?.shield;
+
+    const currentWeapon = this.loadouts[loadoutIx].equipment.weapon;
+
+    // Special handling for if a shield is equipped, and we're using a two-handed weapon
+    if (player.equipment?.shield && newShield !== undefined && currentWeapon?.isTwoHanded) {
+      player = { ...player, equipment: { ...player.equipment, weapon: null } };
+    }
+    // ...and vice-versa
+    if (player.equipment?.weapon && player.equipment?.weapon.isTwoHanded && currentShield?.name !== '') {
+      player = { ...player, equipment: { ...player.equipment, shield: null } };
+    }
+
     const eq = player.equipment;
     if (eq && (Object.hasOwn(eq, 'weapon') || Object.hasOwn(eq, 'shield'))) {
-      const currentWeapon = this.loadouts[loadoutIx].equipment.weapon;
       const newWeapon = player.equipment?.weapon;
 
       if (newWeapon !== undefined) {
@@ -691,18 +743,6 @@ class GlobalState implements State {
             player.style = styles[0];
           }
         }
-      }
-
-      const currentShield = this.loadouts[loadoutIx].equipment.shield;
-      const newShield = player.equipment?.shield;
-
-      // Special handling for if a shield is equipped, and we're using a two-handed weapon
-      if (player.equipment?.shield && newShield !== undefined && currentWeapon?.isTwoHanded) {
-        player = { ...player, equipment: { ...player.equipment, weapon: null } };
-      }
-      // ...and vice-versa
-      if (player.equipment?.weapon && newWeapon?.isTwoHanded && currentShield?.name !== '') {
-        player = { ...player, equipment: { ...player.equipment, shield: null } };
       }
     }
 
@@ -852,6 +892,198 @@ class GlobalState implements State {
     }
 
     await Promise.all(promises);
+  }
+
+  get reachableNodeIds() {
+    const reachable = new Set<string>();
+    for (const selectedId of this.player.leagues.six.selectedNodeIds) {
+      const node = dbrowDefinitions[selectedId];
+      if (node) {
+        for (const linkedId of node.linked_nodes) {
+          if (!this.player.leagues.six.selectedNodeIds.has(linkedId)) {
+            reachable.add(linkedId);
+          }
+        }
+      }
+    }
+    return reachable;
+  }
+
+  toggleLeagues6BlindbagWeapon(eq: EquipmentPiece) {
+    if (this.player.leagues.six.blindbagWeapons.find((w) => w.id === eq.id)) {
+      this.player.leagues.six.blindbagWeapons = this.player.leagues.six.blindbagWeapons.filter((w) => w.id !== eq.id);
+    } else {
+      this.player.leagues.six.blindbagWeapons.push(eq);
+    }
+  }
+
+  setHoveredNode(id: string | null) {
+    this.leagues.six.hoveredNodeId = id;
+  }
+
+  pruneStrandedNodes() {
+    if (this.player.leagues.six.selectedNodeIds.size === 1) {
+      return;
+    }
+
+    const visited = new Set<string>([rootNode.id]);
+    const queue: string[] = [rootNode.id];
+
+    let head = 0;
+    while (head < queue.length) {
+      const currentId = queue[head];
+      head += 1;
+      const node = dbrowDefinitions[currentId];
+      if (node) {
+        for (const linkedId of node.linked_nodes) {
+          if (this.player.leagues.six.selectedNodeIds.has(linkedId) && !visited.has(linkedId)) {
+            visited.add(linkedId);
+            queue.push(linkedId);
+          }
+        }
+      }
+    }
+
+    this.player.leagues.six.selectedNodeIds = visited;
+  }
+
+  toggleNodeSelection(id: string) {
+    if (id === rootNode.id) {
+      this.player.leagues.six.selectedNodeIds.clear();
+      this.player.leagues.six.selectedNodeIds.add(rootNode.id);
+      this.recalculateLeaguesEffects();
+      return;
+    }
+
+    if (this.player.leagues.six.selectedNodeIds.has(id)) {
+      this.player.leagues.six.selectedNodeIds.delete(id);
+      this.pruneStrandedNodes();
+    } else if (this.reachableNodeIds.has(id)) {
+      this.player.leagues.six.selectedNodeIds.add(id);
+    } else {
+      this.pathToSelection(id);
+    }
+
+    this.recalculateLeaguesEffects();
+  }
+
+  isNodeSelected(id: string) {
+    return this.player.leagues.six.selectedNodeIds.has(id);
+  }
+
+  pathToSelection(id: string) {
+    const nodesToSelect = this.getNodesToSelect(id);
+    for (const nodeId of nodesToSelect) {
+      this.player.leagues.six.selectedNodeIds.add(nodeId);
+    }
+  }
+
+  getNodesToSelect(id: string): Set<string> {
+    const nodesToSelect = new Set<string>();
+    if (this.player.leagues.six.selectedNodeIds.has(id)) {
+      return nodesToSelect;
+    }
+
+    const queue: string[] = [id];
+    const parent = new Map<string, string | null>();
+    parent.set(id, null);
+
+    let foundTarget: string | null = null;
+    let head = 0;
+
+    const isTarget = (nodeId: string): boolean => this.player.leagues.six.selectedNodeIds.has(nodeId);
+
+    while (head < queue.length) {
+      const currentId = queue[head];
+      head += 1;
+      if (isTarget(currentId)) {
+        foundTarget = currentId;
+        break;
+      }
+
+      const node = dbrowDefinitions[currentId];
+      if (node) {
+        for (const linkedId of node.linked_nodes) {
+          if (!parent.has(linkedId)) {
+            parent.set(linkedId, currentId);
+            queue.push(linkedId);
+          }
+        }
+      }
+    }
+
+    if (foundTarget) {
+      let curr: string | null = foundTarget;
+      while (curr !== null) {
+        if (!this.player.leagues.six.selectedNodeIds.has(curr)) {
+          nodesToSelect.add(curr);
+        }
+        curr = parent.get(curr) || null;
+      }
+    }
+
+    return nodesToSelect;
+  }
+
+  get nodesToSelectIfHoveredSelected(): Set<string> {
+    if (!this.leagues.six.hoveredNodeId) {
+      return new Set();
+    }
+    return this.getNodesToSelect(this.leagues.six.hoveredNodeId);
+  }
+
+  recalculateLeaguesEffects() {
+    const state = this.player.leagues.six;
+    state.effects = {};
+
+    const selectedNodeIds = state.selectedNodeIds;
+    selectedNodeIds.forEach((id) => {
+      const def = dbrowDefinitions[id];
+      const prior = state.effects[def.effect.name] ?? 0;
+      const addend = def.effect.value === '[Constant: true]' ? 1 : def.effect.value;
+      state.effects[def.effect.name] = prior + addend;
+    });
+
+    console.debug('[GlobalState] recalculateLeaguesEffects', toJS(state.effects));
+
+    if (!this.prefs.manualMode) {
+      this.recalculateEquipmentBonusesFromGearAll();
+    }
+  }
+
+  get currentEffects(): Map<
+  string,
+  {
+    skillTreeNodeId: string;
+    values: (number | '[Constant: true]')[];
+  }
+  > {
+    const state = this.player.leagues.six;
+    const effects = new Map<
+    string,
+    {
+      skillTreeNodeId: string;
+      values:(number | '[Constant: true]')[];
+    }
+    >();
+    for (const id of state.selectedNodeIds) {
+      const node = dbrowDefinitions[id];
+      if (node) {
+        const existingEffect = effects.get(node.effect.name);
+        if (existingEffect) {
+          if (dbrowDefinitions[existingEffect.skillTreeNodeId]?.name.length < node.name.length) {
+            existingEffect.skillTreeNodeId = id;
+          }
+          existingEffect.values.push(node.effect.value);
+        } else {
+          effects.set(node.effect.name, {
+            skillTreeNodeId: id,
+            values: [node.effect.value],
+          });
+        }
+      }
+    }
+    return effects;
   }
 }
 

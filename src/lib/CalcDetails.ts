@@ -1,4 +1,5 @@
 import { Factor } from '@/lib/Math';
+import { AttackDistribution, HitDistribution } from '@/lib/HitDist';
 
 export enum DetailKey {
   NPC_DEFENCE_ROLL_LEVEL = 'NPC defence level',
@@ -72,6 +73,8 @@ export enum DetailKey {
   MAX_HIT_MAGIC_DMG = 'Max hit magic damage bonus',
   MAX_HIT_NEZIKCHENED = 'Max hit Nezikchened',
   MAX_HIT_WARDENS = 'Max hit wardens',
+  MAX_HIT_SPELLEMENT_BONUS = 'Max hit spellement weakness bonus',
+  MAX_HIT_SPELLEMENT = 'Max hit spellement weakness',
   MAX_HIT_FINAL = 'Max hit',
   MIN_HIT_SUNFIRE = 'Min hit sunfire runes',
   MIN_HIT_FANG = 'Min hit fang',
@@ -87,9 +90,11 @@ export enum DetailKey {
   PLAYER_ACCURACY_CONFLICTION_GAUNTLETS = 'Player accuracy confliction gauntlets',
   PLAYER_ACCURACY_ROYAL_TITAN_ELEMENTAL = 'Player accuracy override titan elemental',
   PLAYER_ACCURACY_FINAL = 'Player accuracy',
-  HIT_DIST_FINAL_MIN = 'Hit dist min',
-  HIT_DIST_FINAL_MAX = 'Hit dist max',
-  HIT_DIST_FINAL_EXPECTED = 'Hit dist expected',
+  DIST_BASE = 'Dist base',
+  DIST_LEAGUES_AIR_SPELL_PRAYER_COUNT = 'Dist leagues talent_air_spell_damage_active_prayers',
+  DIST_LEAGUES_ECHO = 'Dist leagues echo',
+  DIST_LEAGUES_ECHO_CYCLICAL = 'Dist leagues echo cyclical',
+  DIST_FINAL = 'Dist final',
   DOT_EXPECTED = 'Damage over time expected',
   DOT_MAX = 'Damage over time max',
   GUARDIANS_DMG_BONUS = 'Guardians hit multiplier',
@@ -107,6 +112,16 @@ export enum DetailKey {
   NPC_ACCURACY_ROLL_BONUS = 'NPC accuracy bonus',
   NPC_ACCURACY_ROLL_FINAL = 'NPC accuracy roll',
   REPIRATORY_SYSTEM_MIN_HIT = 'Respiratory system minimum hit',
+  LEAGUES_ALL_STYLE_ACCURACY = 'Player accuracy leagues talent_all_style_accuracy',
+  LEAGUES_MELEE_DAMAGE_TALENT = 'Player melee damage leagues talent_percentage_melee_damage',
+  LEAGUES_MULTI_HIT_STR_INCREASE = 'Player strength increase leagues talent_multi_hit_str_increase',
+  LEAGUES_MAGIC_ATTACK_SPEED_POWERED = 'Player magic attack speed leagues talent_percentage_magic_attack_speed_powered',
+  LEAGUES_CROSSBOW_DOUBLE_ACCURACY = 'Player crossbow double accuracy leagues talent_crossbow_double_accuracy_roll',
+  LEAGUES_CROSSBOW_SLOW_BIG_HITS = 'Player crossbow slow big hits leagues talent_crossbow_slow_big_hits',
+  LEAGUES_RANGED_DAMAGE_TALENT = 'Player ranged damage leagues talent_percentage_ranged_damage',
+  LEAGUES_ECHO_CHANCE_TRIGGER = 'Player echo chance trigger',
+  LEAGUES_ECHO_CHANCE_REGEN = 'Player echo chance regen',
+  LEAGUES_ECHO_CHANCE_ACCURACY = 'Player echo chance accuracy',
 }
 
 export interface DetailEntry {
@@ -123,9 +138,7 @@ const HIGHLIGHTS: string[] = [
   DetailKey.MAX_HIT_FINAL,
   DetailKey.PLAYER_ACCURACY_FINAL,
   DetailKey.NPC_ACCURACY_ROLL_FINAL,
-  DetailKey.HIT_DIST_FINAL_MIN,
-  DetailKey.HIT_DIST_FINAL_MAX,
-  DetailKey.HIT_DIST_FINAL_EXPECTED,
+  DetailKey.DIST_FINAL,
 ];
 
 export class CalcDetails {
@@ -135,7 +148,7 @@ export class CalcDetails {
 
   private dirty: boolean = true;
 
-  public track(label: DetailKey | string, value: number | string | Factor, textOverride?: string) {
+  public track(label: DetailKey | string, value: number | string | Factor | AttackDistribution | HitDistribution, textOverride?: string) {
     // preserve the order of insertion, in case we run over something multiple times
     if (this.entries.get(label) !== undefined) {
       return;
@@ -152,7 +165,13 @@ export class CalcDetails {
       }
     } else if (typeof value === 'string') {
       stringValue = value;
-    } else {
+    } else if (typeof value === 'object' && 'dists' in value) { // AttackDistribution
+      stringValue = `m = ${value.getMin()}, M = ${value.getMax()}, E = ${value.getExpectedDamage().toFixed(2)}`;
+      value = stringValue; // prevent dumping the entire jsonified dist into the calc response
+    } else if (typeof value === 'object' && 'hits' in value) { // HitDistribution
+      stringValue = `m = ${value.getMin()}, M = ${value.getMax()}, E = ${value.expectedHit().toFixed(2)}`;
+      value = stringValue;
+    } else { // Factor
       stringValue = `${value[0]} / ${value[1]}`;
     }
 
