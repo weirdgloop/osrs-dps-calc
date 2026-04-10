@@ -1236,6 +1236,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
+    if (this.opts.isEcho && this.player.leagues.six.effects.talent_bow_always_pass_accuracy) {
+      const isWearingBow = this.player.equipment.weapon?.category === EquipmentCategory.BOW && !this.wearing('Eclipse atlatl');
+      if (this.isUsingMeleeStyle() || isWearingBow) {
+        return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
+      }
+    }
+
     // Giant rat (Scurrius)
     if (this.monster.id === 7223 && this.player.style.stance !== 'Manual Cast') {
       this.track(DetailKey.PLAYER_ACCURACY_SCURRIUS_RAT, 1.0);
@@ -1292,7 +1299,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     );
 
     if (this.player.leagues.six.effects.talent_crossbow_double_accuracy_roll
-      && this.player.equipment.weapon?.category === 'Crossbow') {
+      && this.player.equipment.weapon?.category === 'Crossbow'
+      && !this.opts.isEcho) {
       hitChance = this.track(
         DetailKey.LEAGUES_CROSSBOW_DOUBLE_ACCURACY,
         BaseCalc.getFangAccuracyRoll(atk, def),
@@ -1841,7 +1849,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const rangedEcho = this.player.style.type === 'ranged' && leagues.effects.talent_ranged_regen_echo_chance;
     const meleeEcho = this.isUsingMeleeStyle() && leagues.effects.talent_2h_melee_echos && this.player.equipment.weapon?.isTwoHanded;
     if (rangedEcho || meleeEcho) {
-      const isWearingBow = meleeEcho || (this.player.equipment.weapon?.category === EquipmentCategory.BOW && !this.wearing('Eclipse atlatl'));
       const isWearingCrossbow = meleeEcho || this.player.equipment.weapon?.category === EquipmentCategory.CROSSBOW;
       const isWearingThrown = meleeEcho || (this.player.equipment.weapon?.category === EquipmentCategory.THROWN || this.wearing('Eclipse atlatl'));
 
@@ -1858,12 +1865,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         this.track(DetailKey.LEAGUES_ECHO_CHANCE_REGEN, echoChance);
       }
 
-      let echoAcc = acc;
-      if (leagues.effects.talent_bow_always_pass_accuracy && isWearingBow) {
-        echoAcc = 1;
-        this.track(DetailKey.LEAGUES_ECHO_CHANCE_ACCURACY, echoChance);
-      }
-
+      const echoSubCalc = this.noInitSubCalc(this.player, this.monster, { isEcho: true });
+      const echoAcc = echoSubCalc.getHitChance();
       let echoDist = HitDistribution.linear(echoChance * echoAcc, min, max);
       if (leagues.effects.talent_thrown_maxhit_echoes && isWearingThrown) {
         const effectChance = 0.2 * echoChance;
@@ -1875,7 +1878,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist.addDist(echoDist);
 
       if (leagues.effects.talent_ranged_echo_cyclical) {
-        const cyclicalChance = echoChance * 0.5;
+        const cyclicalChance = triggerChance * 0.5;
         const echoDistCyclical = echoDist.scaleProbability(cyclicalChance);
         echoDistCyclical.addHit(new WeightedHit(1 - cyclicalChance, [Hitsplat.INACCURATE]));
         this.trackDist(DetailKey.DIST_LEAGUES_ECHO_CYCLICAL, echoDistCyclical);

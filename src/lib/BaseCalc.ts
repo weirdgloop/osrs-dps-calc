@@ -26,6 +26,7 @@ export interface CalcOpts {
   disableMonsterScaling?: boolean,
   usingSpecialAttack?: boolean,
   isBlindBag?: boolean,
+  isEcho?: boolean,
   overrides?: {
     accuracy?: number,
     attackRoll?: number,
@@ -47,6 +48,7 @@ const DEFAULT_OPTS: Required<InternalOpts> = {
   disableMonsterScaling: false,
   usingSpecialAttack: false,
   isBlindBag: false,
+  isEcho: false,
   noInit: false,
   overrides: {},
 };
