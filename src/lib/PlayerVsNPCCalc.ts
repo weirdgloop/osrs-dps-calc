@@ -792,11 +792,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = this.trackFactor(DetailKey.LEAGUES_RANGED_DAMAGE_TALENT, maxHit, [100 + rangeDamage, 100]);
     }
 
-    if (this.player.leagues.six.effects.talent_crossbow_max_hit
-      && this.player.equipment.weapon?.category === 'Crossbow') {
-      return [maxHit, maxHit];
-    }
-
     return [minHit, maxHit];
   }
 
@@ -1394,6 +1389,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       ]);
     }
 
+    if (this.player.leagues.six.effects.talent_crossbow_max_hit
+        && this.player.equipment.weapon?.category === 'Crossbow') {
+      dist = new AttackDistribution([HitDistribution.single(acc, [new Hitsplat(max)])]);
+    }
+
     const leagues = this.player.leagues.six;
     const spellement = this.getSpellement();
     if (leagues.effects.talent_air_spell_damage_active_prayers && spellement === 'air') {
@@ -1775,18 +1775,19 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         this.track(DetailKey.LEAGUES_ECHO_CHANCE_REGEN, echoChance);
       }
 
-      if (!leagues.effects.talent_bow_always_pass_accuracy || !isWearingBow) {
-        echoChance *= acc;
+      let echoAcc = acc;
+      if (leagues.effects.talent_bow_always_pass_accuracy && isWearingBow) {
+        echoAcc = 1;
         this.track(DetailKey.LEAGUES_ECHO_CHANCE_ACCURACY, echoChance);
       }
+      echoChance *= echoAcc;
 
       let echoDist = HitDistribution.linear(echoChance, min, max);
       if (leagues.effects.talent_thrown_maxhit_echoes && isWearingThrown) {
         const effectChance = 0.2;
         echoDist = echoDist.scaleProbability(1 - effectChance);
-        echoDist.addHit(new WeightedHit(effectChance * acc, [new Hitsplat(max)]));
-        echoDist.addHit(new WeightedHit(effectChance * (1 - acc), [Hitsplat.INACCURATE]));
-        echoDist = echoDist.flatten();
+        echoDist.addHit(new WeightedHit(effectChance * echoChance, [new Hitsplat(max)]));
+        echoDist.addHit(new WeightedHit(effectChance * (1 - echoChance), [Hitsplat.INACCURATE]));
       }
       this.trackDist(DetailKey.DIST_LEAGUES_ECHO, echoDist);
       dist.addDist(echoDist);
