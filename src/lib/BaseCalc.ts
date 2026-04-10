@@ -381,6 +381,7 @@ export default class BaseCalc {
       'Sulphur blades',
       'Glacial temotli',
       'Earthbound tecpatl',
+      'Infernal tecpatl',
     ]);
   }
 

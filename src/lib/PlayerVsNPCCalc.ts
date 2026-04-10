@@ -248,6 +248,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing(['Bone claws', 'Burning claws']) && mattrs.includes(MonsterAttribute.DEMON)) {
       attackRoll = this.trackAddFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor(5));
     }
+    if (this.wearing('Infernal tecpatl') && mattrs.includes(MonsterAttribute.DEMON)) {
+      attackRoll = this.trackAddFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor(10));
+    }
     if (mattrs.includes(MonsterAttribute.DRAGON)) {
       if (this.wearing('Dragon hunter lance')) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DRAGONHUNTER, attackRoll, [6, 5]);
@@ -388,6 +391,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     if (this.wearing(['Bone claws', 'Burning claws']) && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = this.trackAddFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor(5));
+    }
+    if (this.wearing('Infernal tecpatl') && mattrs.includes(MonsterAttribute.DEMON)) {
+      maxHit = this.trackAddFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor(10));
     }
     if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {
       const obsidianBonus = this.trackFactor(DetailKey.MAX_HIT_OBSIDIAN, baseMax, [1, 10]);
@@ -925,9 +931,19 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     const spellement = this.getSpellement();
-    if (this.monster.weakness && spellement) {
-      if (spellement === this.monster.weakness.element) {
-        const severity = this.monster.weakness.severity;
+    if (spellement) {
+      let severity = 0;
+      if (this.monster.weakness) {
+        // Shadowflame quadrant: always use the target's weakness regardless of spell element
+        if (this.wearing('Shadowflame quadrant') || spellement === this.monster.weakness.element) {
+          severity = this.monster.weakness.severity;
+        }
+      }
+      // Devil's element adds 30% elemental weakness to all elements
+      if (this.wearing("Devil's element")) {
+        severity += 30;
+      }
+      if (severity > 0) {
         const bonus = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPELLEMENT_BONUS, baseRoll, [severity, 100]);
         attackRoll = this.trackAdd(DetailKey.PLAYER_ACCURACY_SPELLEMENT, attackRoll, bonus);
       }
@@ -989,6 +1005,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       // although the +10 is technically a ratbane bonus, the weapon can't be used against non-rats
       // and shows this max hit against the combat dummy as well
       maxHit = Math.max(1, Math.trunc(magicLevel / 3) - 5) + 10;
+    } else if (this.wearing('Lithic sceptre')) {
+      maxHit = Math.max(10, Math.trunc(magicLevel / 3) - 10);
     } else if (this.wearing('Eldritch nightmare staff') && this.opts.usingSpecialAttack) {
       maxHit = Math.max(1, Math.min(44, Math.trunc((99 + 44 * magicLevel) / 99)));
     } else if (this.wearing('Volatile nightmare staff') && this.opts.usingSpecialAttack) {
@@ -1081,9 +1099,19 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     const spellement = this.getSpellement();
-    if (this.monster.weakness && spellement) {
-      if (spellement === this.monster.weakness.element) {
-        const severity = this.monster.weakness.severity;
+    if (spellement) {
+      let severity = 0;
+      if (this.monster.weakness) {
+        // Shadowflame quadrant: always use the target's weakness regardless of spell element
+        if (this.wearing('Shadowflame quadrant') || spellement === this.monster.weakness.element) {
+          severity = this.monster.weakness.severity;
+        }
+      }
+      // Devil's element adds 30% elemental weakness to all elements
+      if (this.wearing("Devil's element")) {
+        severity += 30;
+      }
+      if (severity > 0) {
         const bonus = this.trackFactor(DetailKey.MAX_HIT_SPELLEMENT_BONUS, baseMax, [severity, 100]);
         maxHit = this.trackAdd(DetailKey.MAX_HIT_SPELLEMENT, maxHit, bonus);
       }
@@ -1777,7 +1805,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       kandarinDiary: this.player.buffs.kandarinDiary,
       monster: this.monster,
     };
-    if (this.player.style.type === 'ranged' && this.player.equipment.weapon?.name.includes('rossbow')) {
+    const isCrossbow = this.player.equipment.weapon?.name.includes('rossbow') || this.player.equipment.weapon?.category === 'Crossbow';
+    if (this.player.style.type === 'ranged' && isCrossbow) {
       if (this.wearing(['Opal bolts (e)', 'Opal dragon bolts (e)'])) {
         dist = dist.transform(opalBolts(boltContext));
       } else if (this.wearing(['Pearl bolts (e)', 'Pearl dragon bolts (e)'])) {
@@ -1789,6 +1818,34 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else if (this.wearing(['Onyx bolts (e)', 'Onyx dragon bolts (e)']) && !mattrs.includes(MonsterAttribute.UNDEAD)) {
         dist = dist.transform(onyxBolts(boltContext));
       }
+    }
+
+    // Fang of the hound: 5% chance per hit to cast Flames of Cerberus
+    // Fire elemental spell, base max hit 10, scales with magic strength and fire weakness, no accuracy check
+    if (this.isUsingMeleeStyle() && this.wearing('Fang of the hound')) {
+      let flamesMax = 10;
+      // Scale with magic strength bonus
+      flamesMax = Math.trunc(flamesMax * (1000 + this.player.bonuses.magic_str) / 1000);
+      // Scale with fire elemental weakness
+      if (this.monster.weakness && this.monster.weakness.element === 'fire') {
+        flamesMax = flamesMax + Math.trunc(10 * this.monster.weakness.severity / 100);
+      }
+      // Devil's element adds 30% fire weakness
+      if (this.wearing("Devil's element")) {
+        flamesMax = flamesMax + Math.trunc(10 * 30 / 100);
+      }
+      dist = dist.transform(
+        (h) => new HitDistribution([
+          new WeightedHit(0.95, [h]),
+          new WeightedHit(0.05, [h, new Hitsplat(flamesMax)]),
+        ]),
+        { transformInaccurate: false },
+      );
+    }
+
+    // King's barrage always fires 2 bolts per attack
+    if (this.player.style.type === 'ranged' && this.wearing("King's barrage")) {
+      dist.addDist(HitDistribution.linear(acc, min, max));
     }
 
     if (this.player.spell && this.player.spell.max_hit === 0) {
@@ -1807,6 +1864,19 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.player.style.type === 'magic'
       && this.wearing('Twinflame staff')
       && ['Bolt', 'Blast', 'Wave'].some((spellClass) => this.player.spell?.name.includes(spellClass) ?? false)) {
+      dist = dist.transform(
+        (h) => HitDistribution.single(1.0, [
+          new Hitsplat(h.damage),
+          new Hitsplat(Math.trunc(h.damage * 4 / 10)),
+        ]),
+      );
+    }
+
+    // Shadowflame quadrant: fires additional spell at 40% damage when using standard spellbook elemental spells
+    if (this.player.style.type === 'magic'
+      && this.wearing('Shadowflame quadrant')
+      && this.player.spell
+      && ['Strike', 'Bolt', 'Blast', 'Wave', 'Surge'].some((spellClass) => this.player.spell?.name.includes(spellClass) ?? false)) {
       dist = dist.transform(
         (h) => HitDistribution.single(1.0, [
           new Hitsplat(h.damage),
