@@ -926,23 +926,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     const spellement = this.getSpellement();
-    const isWearingDevilsElement = this.wearing('Devil\'s element');
-    if (spellement) {
-      let severity: number | null = null;
-
-      if (this.monster.weakness) {
-        if (this.monster.weakness.element === spellement || this.wearing('Shadowflame quadrant')) {
-          severity = this.monster.weakness.severity + (isWearingDevilsElement ? 30 : 0);
-        } else if (isWearingDevilsElement) {
-          severity = 30;
-        }
-      } else if (isWearingDevilsElement) {
-        severity = 30;
-      }
-      if (severity !== null) {
-        const bonus = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPELLEMENT_BONUS, baseRoll, [severity, 100]);
-        attackRoll = this.trackAdd(DetailKey.PLAYER_ACCURACY_SPELLEMENT, attackRoll, bonus);
-      }
+    const weakness = this.getMonsterWeakness();
+    if (spellement && spellement === weakness?.element) {
+      const bonus = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPELLEMENT_BONUS, baseRoll, [weakness.severity, 100]);
+      attackRoll = this.trackAdd(DetailKey.PLAYER_ACCURACY_SPELLEMENT, attackRoll, bonus);
     }
 
     return attackRoll;
@@ -1095,23 +1082,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     const spellement = this.getSpellement();
-    const isWearingDevilsElement = this.wearing('Devil\'s element');
-    if (spellement) {
-      let severity: number | null = null;
-
-      if (this.monster.weakness) {
-        if (spellement === this.monster.weakness.element || this.wearing('Shadowflame quadrant')) {
-          severity = this.monster.weakness.severity + (isWearingDevilsElement ? 30 : 0);
-        } else if (isWearingDevilsElement) {
-          severity = 30;
-        }
-      } else if (isWearingDevilsElement) {
-        severity = 30;
-      }
-      if (severity !== null) {
-        const bonus = this.trackFactor(DetailKey.MAX_HIT_SPELLEMENT_BONUS, baseMax, [severity, 100]);
-        maxHit = this.trackAdd(DetailKey.MAX_HIT_SPELLEMENT, maxHit, bonus);
-      }
+    const weakness = this.getMonsterWeakness();
+    if (spellement && spellement === weakness?.element) {
+      const bonus = this.trackFactor(DetailKey.MAX_HIT_SPELLEMENT_BONUS, baseMax, [weakness.severity, 100]);
+      maxHit = this.trackAdd(DetailKey.MAX_HIT_SPELLEMENT, maxHit, bonus);
     }
 
     if (this.player.buffs.usingSunfireRunes && canUseSunfireRunes(this.player.spell)) {
@@ -2603,5 +2577,28 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   private getBlindbagUniques(): number {
     const uniqueIds = new Set(this.player.leagues.six.blindbagWeapons.map((eq) => eq.id)).size;
     return Math.min(uniqueIds, 5);
+  }
+
+  private getMonsterWeakness(): Monster['weakness'] {
+    // shadowflame quadrant effectively switches an existing weakness to be whatever we're casting
+    // devil's element gives 30% whether we're converting or not
+    // we can get the same result by always forcing the element to be the current spell if we have either
+    // and then if we have shadowflame, add in the existing weakness
+    const spellement = this.getSpellement();
+    const baseWeakness = this.monster.weakness;
+    if (!spellement) {
+      return null;
+    }
+
+    const shadowflame = this.wearing('Shadowflame quadrant');
+    const devils = this.wearing("Devil's element");
+    if (!shadowflame && !devils) {
+      return baseWeakness;
+    }
+
+    const usingRightSpell = shadowflame || baseWeakness?.element === spellement;
+    const baseSeverity = (baseWeakness && usingRightSpell) ? baseWeakness.severity : 0;
+    const devilsBonus = devils ? 30 : 0;
+    return { element: spellement, severity: baseSeverity + devilsBonus };
   }
 }
