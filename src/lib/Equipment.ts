@@ -374,7 +374,8 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
   }
 
   const leagues = player.leagues.six.effects;
-  if (leagues.talent_thrown_weapon_accuracy && player.equipment.weapon?.category === 'Thrown') {
+  if (leagues.talent_thrown_weapon_accuracy
+    && (player.equipment.weapon?.category === EquipmentCategory.THROWN || player.equipment.weapon?.category === EquipmentCategory.CHINCHOMPA)) {
     totals.offensive.ranged += 60;
   }
 
@@ -435,7 +436,8 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
     totals.bonuses.ranged_str += 1;
   }
 
-  if (leagues.talent_thrown_weapon_melee_str_scale && player.equipment.weapon?.category === 'Thrown') {
+  if (leagues.talent_thrown_weapon_melee_str_scale
+    && (player.equipment.weapon?.category === EquipmentCategory.THROWN || player.equipment.weapon?.category === EquipmentCategory.CHINCHOMPA)) {
     totals.bonuses.ranged_str += Math.trunc(totals.bonuses.str * 0.80);
   }
 
