@@ -1497,7 +1497,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const maxHp = this.player.skills.hp;
       const currentHp = this.player.skills.hp + this.player.boosts.hp;
 
-      const damageBonusPct = currentHp / maxHp * 20;
+      // intentionally not capping to maxHp here as it functions on overheal
+      const damageBonusPct = Math.trunc(20 * currentHp / maxHp);
       dist = dist.transform(multiplyTransformer(100 + damageBonusPct, 100));
       this.trackDist(DetailKey.DIST_LEAGUES_WATER_SPELL_DAMAGE_HIGH_HP, dist);
     }

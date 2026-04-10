@@ -803,6 +803,9 @@ export default class BaseCalc {
     if (leaguesEffects.talent_fire_spell_burn_bounce) {
       this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Fire Spell Burn (coming soon)');
     }
+    if (leaguesEffects.talent_fire_spell_burn_bounce) {
+      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Air Spell Prayer Max Hits (coming soon)');
+    }
     if (leaguesEffects.talent_earth_scale_defence_stat) {
       this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Earth Spell Flat Damage (coming soon)');
     }
