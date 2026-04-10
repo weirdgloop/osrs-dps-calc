@@ -1540,6 +1540,26 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     const leagues = this.player.leagues.six;
     const spellement = this.getSpellement();
+    if (leagues.effects.talent_air_spell_max_hit_prayer_bonus
+      && spellement === 'air'
+      && this.player.bonuses.prayer > 0) {
+      let maxHitChance = this.player.bonuses.prayer / 100;
+      if (this.monster.weakness?.element === 'air') {
+        maxHitChance *= 2;
+      }
+
+      if (maxHitChance >= 1) {
+        dist = new AttackDistribution([HitDistribution.single(acc, [new Hitsplat(max)])]);
+      } else {
+        // Scale down dist such that probabilities adds up to 1 - maxHitChance.
+        const scaledHitDist = dist.singleHitsplat.scaleProbability(1 - maxHitChance);
+        // Even with guaranteed max hit we can still miss.
+        scaledHitDist.addHit(new WeightedHit(acc * maxHitChance, [new Hitsplat(max)]));
+        scaledHitDist.addHit(new WeightedHit((1 - acc) * maxHitChance, [Hitsplat.INACCURATE]));
+        dist = new AttackDistribution([scaledHitDist]);
+      }
+    }
+
     if (leagues.effects.talent_air_spell_damage_active_prayers && spellement === 'air') {
       // todo(leagues): this needs the other non-combat prayers accessible via ui but that shouldn't require updating here
       const prayersActive = this.player.prayers.length;
