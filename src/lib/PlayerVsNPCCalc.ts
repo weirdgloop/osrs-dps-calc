@@ -508,7 +508,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     const weaponWeight = this.player.equipment.weapon?.weight ?? Infinity;
-    const isOneHanded = this.player.equipment.weapon?.isTwoHanded ?? false;
+    const isOneHanded = !this.player.equipment.weapon?.isTwoHanded ?? false;
     if (this.player.leagues.six.effects.talent_multi_hit_str_increase && (weaponWeight < 1 || isOneHanded)) {
       const strengthBonus = Math.trunc(this.player.skills.str * 0.20);
       maxHit = this.trackFactor(DetailKey.LEAGUES_MULTI_HIT_STR_INCREASE, maxHit, [100 + strengthBonus, 100]);
