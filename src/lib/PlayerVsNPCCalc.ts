@@ -1941,9 +1941,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const lightDist = HitDistribution.linear(acc, min, lightMax);
       dist.addDist(lightDist);
     }
-    
-    if (this.wearing('Shadowflame quadrant') && 
-      this.player.spell?.spellbook === 'standard') {
+
+    const castingStdSpell = this.player.style.type === 'magic' && this.player.spell?.spellbook === 'standard';
+    if (this.wearing('Shadowflame quadrant') && castingStdSpell) {
       const extraMax = Math.max(1, Math.trunc(max * 0.4));
       const extraDist = HitDistribution.linear(acc, min, extraMax);
       dist.addDist(extraDist);
