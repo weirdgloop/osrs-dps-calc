@@ -92,6 +92,7 @@ export enum DetailKey {
   PLAYER_ACCURACY_FINAL = 'Player accuracy',
   DIST_BASE = 'Dist base',
   DIST_LEAGUES_AIR_SPELL_PRAYER_COUNT = 'Dist leagues talent_air_spell_damage_active_prayers',
+  DIST_LEAGUES_WATER_SPELL_DAMAGE_HIGH_HP = 'Dist leagues talent_water_spell_damage_high_hp',
   DIST_LEAGUES_ECHO = 'Dist leagues echo',
   DIST_LEAGUES_ECHO_CYCLICAL = 'Dist leagues echo cyclical',
   DIST_FINAL = 'Dist final',
