@@ -248,6 +248,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing(['Bone claws', 'Burning claws']) && mattrs.includes(MonsterAttribute.DEMON)) {
       attackRoll = this.trackAddFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor(5));
     }
+    if (this.wearing('Infernal tecpatl') && mattrs.includes(MonsterAttribute.DEMON)) {
+      attackRoll = this.trackAddFactor(DetailKey.PLAYER_ACCURACY_DEMONBANE, attackRoll, this.demonbaneFactor(10));
+    }
     if (mattrs.includes(MonsterAttribute.DRAGON)) {
       if (this.wearing('Dragon hunter lance')) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_DRAGONHUNTER, attackRoll, [6, 5]);
@@ -388,6 +391,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     if (this.wearing(['Bone claws', 'Burning claws']) && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = this.trackAddFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor(5));
+    }
+    if (this.wearing('Infernal tecpatl') && mattrs.includes(MonsterAttribute.DEMON)) {
+      maxHit = this.trackAddFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor(10));
     }
     if (this.isWearingTzhaarWeapon() && this.isWearingObsidian()) {
       const obsidianBonus = this.trackFactor(DetailKey.MAX_HIT_OBSIDIAN, baseMax, [1, 10]);
@@ -997,6 +1003,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       // although the +10 is technically a ratbane bonus, the weapon can't be used against non-rats
       // and shows this max hit against the combat dummy as well
       maxHit = Math.max(1, Math.trunc(magicLevel / 3) - 5) + 10;
+    } else if (this.wearing('Lithic sceptre')) {
+      maxHit = Math.max(10, Math.trunc(magicLevel / 3) - 10);
     } else if (this.wearing('Eldritch nightmare staff') && this.opts.usingSpecialAttack) {
       maxHit = Math.max(1, Math.min(44, Math.trunc((99 + 44 * magicLevel) / 99)));
     } else if (this.wearing('Volatile nightmare staff') && this.opts.usingSpecialAttack) {
@@ -1830,6 +1838,30 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       );
     }
 
+    // Fang of the hound: 5% chance per melee hit to cast Flames of Cerberus
+    // Fire elemental spell, base max hit 10, scales with magic strength and fire weakness
+    if (this.isUsingMeleeStyle() && this.wearing('Fang of the hound')) {
+      let flamesMax = 10;
+      flamesMax = Math.trunc(flamesMax * (1000 + this.player.bonuses.magic_str) / 1000);
+      let flameSeverity = 0;
+      if (this.monster.weakness && this.monster.weakness.element === 'fire') {
+        flameSeverity = this.monster.weakness.severity;
+      }
+      if (this.wearing('Devil\'s element')) {
+        flameSeverity += 30;
+      }
+      if (flameSeverity > 0) {
+        flamesMax += Math.trunc(10 * flameSeverity / 100);
+      }
+      dist = dist.transform(
+        (h) => new HitDistribution([
+          new WeightedHit(0.95, [h]),
+          new WeightedHit(0.05, [h, new Hitsplat(flamesMax)]),
+        ]),
+        { transformInaccurate: false },
+      );
+    }
+
     if (this.player.style.type === 'magic'
       && this.wearing('Twinflame staff')
       && ['Bolt', 'Blast', 'Wave'].some((spellClass) => this.player.spell?.name.includes(spellClass) ?? false)) {
@@ -1841,6 +1873,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       );
     }
 
+    // King's barrage: always fires 2 bolts per attack
+    if (this.player.style.type === 'ranged' && this.wearing("King's barrage")) {
+      dist.addDist(HitDistribution.linear(acc, min, max));
+    }
+
     // we apply corp earlier than other limiters,
     // and rubies later than other bolts,
     // since corp takes full ruby bolt effect damage but reduced damage from bolts otherwise
@@ -1848,7 +1885,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.transform(divisionTransformer(2));
     }
 
-    if (this.player.style.type === 'ranged' && this.player.equipment.weapon?.name.includes('rossbow')) {
+    const isCrossbow = this.player.equipment.weapon?.name.includes('rossbow') || this.player.equipment.weapon?.category === 'Crossbow';
+    if (this.player.style.type === 'ranged' && isCrossbow) {
       const currentHp = this.player.skills.hp + this.player.boosts.hp;
       if (this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)']) && currentHp >= 10) {
         dist = dist.transform(rubyBolts(boltContext));

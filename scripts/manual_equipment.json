@@ -119,5 +119,129 @@
       "ranged": 0
     },
     "isTwoHanded": false
+  },
+  {
+    "name": "Infernal tecpatl",
+    "id": 1000103,
+    "weight": 3.628,
+    "version": "",
+    "slot": "weapon",
+    "image": "Infernal tecpatl.png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 70,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": -1
+    },
+    "offensive": {
+      "stab": 72,
+      "slash": 72,
+      "crush": 72,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Fang of the hound",
+    "id": 1000104,
+    "weight": 0.666,
+    "version": "",
+    "slot": "weapon",
+    "image": "Fang of the hound.png",
+    "speed": 3,
+    "category": "Stab Sword",
+    "bonuses": {
+      "str": 20,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 60,
+      "slash": 60,
+      "crush": 10,
+      "magic": 3,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "King's barrage",
+    "id": 1000105,
+    "weight": 3.0,
+    "version": "",
+    "slot": "weapon",
+    "image": "King's barrage.png",
+    "speed": 5,
+    "category": "Crossbow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 14,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 130
+    },
+    "defensive": {
+      "stab": 20,
+      "slash": 20,
+      "crush": 20,
+      "magic": 25,
+      "ranged": 60
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Lithic sceptre",
+    "id": 1000106,
+    "weight": 2.0,
+    "version": "",
+    "slot": "weapon",
+    "image": "Lithic sceptre.png",
+    "speed": 4,
+    "category": "Powered Staff",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 25,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 10,
+      "slash": 10,
+      "crush": 10,
+      "magic": 20,
+      "ranged": 0
+    },
+    "isTwoHanded": false
   }
 ]
