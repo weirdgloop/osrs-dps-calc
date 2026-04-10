@@ -24,6 +24,7 @@ export function getMonsters(): Omit<Monster, 'inputs'>[] {
       immunities: {
         burn: m.immunities.burn as BurnImmunity,
       },
+      is_slayer_monster: m.is_slayer_monster || false,
     };
   });
 }
@@ -90,6 +91,7 @@ export const CUSTOM_MONSTER_BASE: Monster = {
   immunities: {
     burn: null,
   },
+  is_slayer_monster: false,
   inputs: {
     ...INITIAL_MONSTER_INPUTS,
     monsterCurrentHp: 150,

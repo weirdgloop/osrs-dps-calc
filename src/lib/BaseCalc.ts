@@ -688,6 +688,10 @@ export default class BaseCalc {
       || IMMUNE_TO_BURN_DAMAGE_NPC_IDS.includes(this.monster.id);
   }
 
+  protected isSlayerMonster(): boolean {
+    return this.monster.is_slayer_monster;
+  }
+
   protected addIssue(type: UserIssueType, message: string) {
     this.userIssues.push({ type, message, loadout: this.opts.loadoutName });
   }
