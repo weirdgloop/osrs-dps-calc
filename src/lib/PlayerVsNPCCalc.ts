@@ -1823,7 +1823,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.player.style.type === 'magic' && this.player.spell?.spellbook === 'standard') {
       const twinflameCompat = ['Bolt', 'Blast', 'Wave'].some((spellClass) => this.player.spell?.name.includes(spellClass) ?? false);
-      if (this.wearing('Twinflame staff') && twinflameCompat || this.wearing('Shadowflame quadrant')) {
+      const shadowflameCompat = this.player.spell.element;
+      if (this.wearing('Twinflame staff') && twinflameCompat || this.wearing('Shadowflame quadrant') && shadowflameCompat) {
         dist = dist.transform(
           (h) => HitDistribution.single(1.0, [
             new Hitsplat(h.damage),
