@@ -1514,7 +1514,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     const spellement = this.getSpellement();
-    if (style === 'magic' && leagues.effects.talent_air_spell_max_hit_prayer_bonus && spellement === 'air') {
+    if (leagues.effects.talent_air_spell_max_hit_prayer_bonus && spellement === 'air') {
       const weakToAir = this.getMonsterWeakness()?.element === 'air';
       const effectChance = Math.max(0, this.player.bonuses.prayer) * (weakToAir ? 2 : 1) / 100;
       if (effectChance >= 1) {
