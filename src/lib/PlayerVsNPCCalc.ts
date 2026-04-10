@@ -1428,7 +1428,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const npcDist = this.applyNpcTransforms(attackerDist);
 
     const leagues = this.player.leagues.six;
-    const blindbagUniques = Math.min(5, this.getBlindbagUniques());
+    const blindbagUniques = this.getBlindbagUniques();
     if (leagues.effects.talent_free_random_weapon_attack_chance
         && this.isUsingMeleeStyle()
         && !this.opts.isBlindBag
@@ -2580,6 +2580,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   private getBlindbagUniques(): number {
-    return new Set(this.player.leagues.six.blindbagWeapons.map((eq) => eq.id)).size;
+    const uniqueIds = new Set(this.player.leagues.six.blindbagWeapons.map((eq) => eq.id)).size;
+    return Math.min(uniqueIds, 5);
   }
 }
