@@ -543,7 +543,7 @@ class GlobalState implements State {
           /* eslint-disable @typescript-eslint/no-explicit-any */
           const six = (l as any)?.leagues?.six;
           if (six) {
-            six.distanceToEnemy += 1;
+            six.distanceToEnemy = Math.min(10, six.distanceToEnemy + 1);
           }
           /* eslint-enable @typescript-eslint/no-explicit-any */
         });
