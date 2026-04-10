@@ -6,6 +6,7 @@ export const BLOWPIPE_IDS: number[] = [
   31575, // camphor
   31579, // ironwood
   31583, // rosewood
+  30374, // drygore
 ];
 
 // The maximum number of loadouts that users can have. Do not lower it, else it will cause share link issues.
