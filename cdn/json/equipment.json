@@ -90117,6 +90117,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Infernal Tecpatl",
+    "id": 1000104,
+    "weight": 3.628,
+    "version": "",
+    "slot": "weapon",
+    "image": "Infernal Tecpatl.png",
+    "speed": 4,
+    "category": "Banner",
+    "bonuses": {
+      "str": 70,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": -1
+    },
+    "offensive": {
+      "stab": 72,
+      "slash": 72,
+      "crush": 72,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Infernal axe",
     "id": 13241,
     "weight": 1.814,
