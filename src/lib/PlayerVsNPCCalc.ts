@@ -64,7 +64,7 @@ import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonster, scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { CombatStyleType, getRangedDamageType } from '@/types/PlayerCombatStyle';
 import { range, some, sum } from 'd3-array';
-import { FeatureStatus } from '@/utils';
+import { FeatureStatus, getCombatStylesForCategory } from '@/utils';
 import UserIssueType from '@/enums/UserIssueType';
 import {
   BoltContext,
@@ -1382,9 +1382,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         && !this.opts.isBlindBag
         && blindbagUniques >= 1
         && (this.player.equipment.weapon?.weight ?? 0) >= 1) {
-      const chanceBlindbagProc = leagues.effects.talent_free_random_weapon_attack_chance / 100;
+      let chanceBlindbagProc = leagues.effects.talent_free_random_weapon_attack_chance / 100;
       if (leagues.effects.talent_unique_blindbag_chance) {
-        this.trackFactor(DetailKey.LEAGUES_BLINDBAG_CHANCE_UNIQUE, chanceBlindbagProc, [100 + (2 * blindbagUniques), 100]);
+        chanceBlindbagProc += (0.02 * blindbagUniques);
       }
 
       let blindbagDist = new HitDistribution([new WeightedHit(1 - chanceBlindbagProc, [Hitsplat.INACCURATE])]);
@@ -1396,17 +1396,22 @@ export default class PlayerVsNPCCalc extends BaseCalc {
             ...this.player.equipment,
             weapon,
           },
+          style: getCombatStylesForCategory(weapon.category)[0], // todo use same slot as equipped?
         };
         playerWithWeapon = {
           ...playerWithWeapon,
           ...calculateEquipmentBonusesFromGear(playerWithWeapon, this.monster),
         };
+        console.log({ chanceBlindbagProc, chanceThisWeapon });
 
         const subCalc = this.noInitSubCalc(playerWithWeapon, this.monster, {
           loadoutName: `${this.opts.loadoutName}/Blindbag ${weapon.id} (${weapon.name})`,
           isBlindBag: true,
         });
 
+        console.log({
+          d: subCalc.getDistribution(), s: subCalc.getDistribution().singleHitsplat, p: subCalc.getDistribution().scaleProbability(chanceBlindbagProc * chanceThisWeapon), e: subCalc.getDistribution().scaleProbability(chanceBlindbagProc * chanceThisWeapon).getExpectedDamage(),
+        });
         return subCalc.getDistribution()
           .singleHitsplat
           .scaleProbability(chanceBlindbagProc * chanceThisWeapon)
@@ -1418,13 +1423,15 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
       let recursiveBlindBag = blindbagDist;
       for (let i = 1; i <= 3; i++) {
-        recursiveBlindBag = recursiveBlindBag.zip(blindbagDist.scaleProbability(chanceBlindbagProc ** i));
-        recursiveBlindBag.addHit(new WeightedHit(1 - (chanceBlindbagProc ** i), [Hitsplat.INACCURATE]));
+        const thisRecurse = blindbagDist.scaleProbability(chanceBlindbagProc ** i);
+        thisRecurse.addHit(new WeightedHit(1 - (chanceBlindbagProc ** i), [Hitsplat.INACCURATE]));
+        recursiveBlindBag = recursiveBlindBag.zip(thisRecurse);
         recursiveBlindBag = recursiveBlindBag.cumulative();
       }
       this.trackDist(DetailKey.DIST_LEAGUES_BLINDBAG_RECURSIVE, recursiveBlindBag);
 
       npcDist.addDist(recursiveBlindBag);
+      console.log({ npcDist, e: npcDist.getExpectedDamage() });
     }
 
     if (process.env.NEXT_PUBLIC_HIT_DIST_SANITY_CHECK) {
