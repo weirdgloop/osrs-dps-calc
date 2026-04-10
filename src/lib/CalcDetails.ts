@@ -122,6 +122,8 @@ export enum DetailKey {
   LEAGUES_ECHO_CHANCE_TRIGGER = 'Player echo chance trigger',
   LEAGUES_ECHO_CHANCE_REGEN = 'Player echo chance regen',
   LEAGUES_ECHO_CHANCE_ACCURACY = 'Player echo chance accuracy',
+  LEAGUES_MIN_HIT_DISTANCE_MELEE = 'Player distance melee min hit',
+  LEAGUES_MAX_HIT_DISTANCE_MELEE = 'Player distance melee max hit',
 }
 
 export interface DetailEntry {

@@ -790,9 +790,6 @@ export default class BaseCalc {
     if (leaguesEffects.talent_light_weapon_doublehit) {
       this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Light Weapon Double Hit (coming soon)');
     }
-    if (leaguesEffects.talent_percentage_melee_maxhit_distance || leaguesEffects.talent_distance_melee_minhit) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Melee Distance Bonuses (coming soon)');
-    }
     if (leaguesEffects.talent_bow_max_hit_stacking_increase || leaguesEffects.talent_bow_min_hit_stacking_increase) {
       this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Repeat Bow Hit Damage (coming soon)');
     }
