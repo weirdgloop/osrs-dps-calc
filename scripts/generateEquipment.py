@@ -53,7 +53,6 @@ ITEMS_TO_SKIP = [
     'Devil\'s element',
     'Nature\'s reprisal',
     'Gloves of the damned',
-    'Crystal blessing',
     'Sunlight spear',
     'Sunlit bracers',
     'Thunder khopesh',

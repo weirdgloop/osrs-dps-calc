@@ -217,6 +217,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const mattrs = this.monster.attributes;
     const { buffs } = this.player;
 
+    if (this.wearing('Crystal blessing')) {
+      const crystalPieces = (this.wearing('Crystal helm') ? 1 : 0) + (this.wearing('Crystal legs') ? 2 : 0) + (this.wearing('Crystal body') ? 3 : 0);
+      attackRoll = Math.trunc(attackRoll * (20 + crystalPieces) / 20);
+    }
+
     // These bonuses do not stack with each other
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
       const factor = <Factor>[buffs.forinthrySurge ? 27 : 24, 20];
@@ -357,6 +362,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const gearBonus = this.trackAdd(DetailKey.DAMAGE_GEAR_BONUS, this.player.bonuses.str, 64);
     const baseMax = this.trackMaxHitFromEffective(DetailKey.MAX_HIT_BASE, effectiveLevel, gearBonus);
     let [minHit, maxHit]: MinMax = [0, baseMax];
+
+    if (this.wearing('Crystal blessing')) {
+      const crystalPieces = (this.wearing('Crystal helm') ? 1 : 0) + (this.wearing('Crystal legs') ? 2 : 0) + (this.wearing('Crystal body') ? 3 : 0);
+      maxHit = Math.trunc(maxHit * (40 + crystalPieces) / 40);
+    }
 
     // Specific bonuses that are applied from equipment
     const mattrs = this.monster.attributes;
@@ -844,6 +854,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const baseRoll = effectiveLevel * (magicBonus + 64);
     let attackRoll = baseRoll;
 
+    if (this.wearing('Crystal blessing')) {
+      const crystalPieces = (this.wearing('Crystal helm') ? 1 : 0) + (this.wearing('Crystal legs') ? 2 : 0) + (this.wearing('Crystal body') ? 3 : 0);
+      attackRoll = Math.trunc(attackRoll * (20 + crystalPieces) / 20);
+    }
+
     let additiveBonus = 0;
     let blackMaskBonus = false;
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
@@ -932,6 +947,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     // Specific bonuses that are applied from equipment
     const mattrs = this.monster.attributes;
     const { buffs } = this.player;
+
+    if (this.wearing('Crystal blessing')) {
+      const crystalPieces = (this.wearing('Crystal helm') ? 1 : 0) + (this.wearing('Crystal legs') ? 2 : 0) + (this.wearing('Crystal body') ? 3 : 0);
+      maxHit = Math.trunc(maxHit * (40 + crystalPieces) / 40);
+    }
 
     if (spell) {
       maxHit = getSpellMaxHit(spell, magicLevel);

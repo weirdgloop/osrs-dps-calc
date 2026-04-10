@@ -393,6 +393,20 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
     totals.offensive.stab -= 50;
   }
 
+  if (playerEquipment.ammo?.name === 'Crystal blessing') {
+    const crystalPieces = [
+      playerEquipment.head,
+      playerEquipment.body,
+      playerEquipment.legs,
+    ];
+    const matchingPieces = crystalPieces.filter(
+      (item) => item?.name?.startsWith('Crystal '),
+    ).length;
+
+    totals.bonuses.magic_str += matchingPieces * 20;
+    totals.offensive.magic += matchingPieces * 20;
+  }
+
   if (playerEquipment.weapon?.name === "Dinh's bulwark" || playerEquipment.weapon?.name === "Dinh's blazing bulwark") {
     const defensives = totals.defensive;
     const defenceSum = defensives.stab + defensives.slash + defensives.crush + defensives.ranged;
