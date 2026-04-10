@@ -854,7 +854,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const baseRoll = effectiveLevel * (magicBonus + 64);
     let attackRoll = baseRoll;
 
-    if (this.wearing('Crystal blessing')) {
+    if (this.wearing('Crystal blessing') && this.player.spell === null) {
       const crystalPieces = (this.wearing('Crystal helm') ? 1 : 0) + (this.wearing('Crystal legs') ? 2 : 0) + (this.wearing('Crystal body') ? 3 : 0);
       attackRoll = Math.trunc(attackRoll * (20 + crystalPieces) / 20);
     }
@@ -959,7 +959,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const mattrs = this.monster.attributes;
     const { buffs } = this.player;
 
-    if (this.wearing('Crystal blessing')) {
+    if (this.wearing('Crystal blessing') && spell === null) {
       const crystalPieces = (this.wearing('Crystal helm') ? 1 : 0) + (this.wearing('Crystal legs') ? 2 : 0) + (this.wearing('Crystal body') ? 3 : 0);
       maxHit = Math.trunc(maxHit * (40 + crystalPieces) / 40);
     }
