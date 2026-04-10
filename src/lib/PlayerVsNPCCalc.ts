@@ -1409,6 +1409,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       let recursiveBlindBag = blindbagDist;
       for (let i = 1; i <= 3; i++) {
         recursiveBlindBag = recursiveBlindBag.zip(blindbagDist.scaleProbability(chanceBlindbagProc ** i));
+        recursiveBlindBag.addHit(new WeightedHit(1 - (chanceBlindbagProc ** i), [Hitsplat.INACCURATE]));
         recursiveBlindBag = recursiveBlindBag.cumulative();
       }
       this.trackDist(DetailKey.DIST_LEAGUES_BLINDBAG_RECURSIVE, recursiveBlindBag);
