@@ -1821,15 +1821,16 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       );
     }
 
-    if (this.player.style.type === 'magic'
-      && this.wearing('Twinflame staff')
-      && ['Bolt', 'Blast', 'Wave'].some((spellClass) => this.player.spell?.name.includes(spellClass) ?? false)) {
-      dist = dist.transform(
-        (h) => HitDistribution.single(1.0, [
-          new Hitsplat(h.damage),
-          new Hitsplat(Math.trunc(h.damage * 4 / 10)),
-        ]),
-      );
+    if (this.player.style.type === 'magic' && this.player.spell?.spellbook === 'standard') {
+      const twinflameCompat = ['Bolt', 'Blast', 'Wave'].some((spellClass) => this.player.spell?.name.includes(spellClass) ?? false);
+      if (this.wearing('Twinflame staff') && twinflameCompat || this.wearing('Shadowflame quadrant')) {
+        dist = dist.transform(
+          (h) => HitDistribution.single(1.0, [
+            new Hitsplat(h.damage),
+            new Hitsplat(Math.trunc(h.damage * 4 / 10)),
+          ]),
+        );
+      }
     }
 
     // we apply corp earlier than other limiters,
@@ -1935,13 +1936,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const lightMax = Math.max(1, Math.trunc(max * 0.4));
       const lightDist = HitDistribution.linear(acc, min, lightMax);
       dist.addDist(lightDist);
-    }
-
-    const castingStdSpell = this.player.style.type === 'magic' && this.player.spell?.spellbook === 'standard';
-    if (this.wearing('Shadowflame quadrant') && castingStdSpell) {
-      const extraMax = Math.max(1, Math.trunc(max * 0.4));
-      const extraDist = HitDistribution.linear(acc, min, extraMax);
-      dist.addDist(extraDist);
     }
 
     if (process.env.NEXT_PUBLIC_HIT_DIST_SANITY_CHECK) {
