@@ -37,6 +37,9 @@ const XAxisOptions = [
   { label: 'Player ranged level', axisLabel: 'Level', value: CompareXAxis.PLAYER_RANGED_LEVEL },
   { label: 'Player magic level', axisLabel: 'Level', value: CompareXAxis.PLAYER_MAGIC_LEVEL },
   { label: 'Player stat decay', axisLabel: 'Minutes after boost', value: CompareXAxis.STAT_DECAY_RESTORE },
+  { label: 'Player melee strength bonus', axisLabel: 'Bonus', value: CompareXAxis.PLAYER_MELEE_STRENGTH_BONUS },
+  { label: 'Player ranged strength bonus', axisLabel: 'Bonus', value: CompareXAxis.PLAYER_RANGED_STRENGTH_BONUS },
+  { label: 'Player magic strength bonus', axisLabel: 'Bonus', value: CompareXAxis.PLAYER_MAGIC_STRENGTH_BONUS },
 ];
 
 const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, payload, label }) => {
