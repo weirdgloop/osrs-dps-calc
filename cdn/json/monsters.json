@@ -62125,7 +62125,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 7692,
@@ -89315,7 +89318,9 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "flying"
+    ],
     "immunities": {
       "burn": null
     },
@@ -92075,9 +92080,9 @@
   {
     "id": 6729,
     "name": "Rock Golem (monster)",
-    "version": "Level 120",
+    "version": "Level 115",
     "image": "Rock Golem (monster).png",
-    "level": 120,
+    "level": 115,
     "speed": 4,
     "style": [
       "Ranged"
@@ -92087,7 +92092,7 @@
     "skills": {
       "atk": 100,
       "def": 100,
-      "hp": 120,
+      "hp": 100,
       "magic": 1,
       "ranged": 75,
       "str": 100
@@ -92124,9 +92129,9 @@
   {
     "id": 6725,
     "name": "Rock Golem (monster)",
-    "version": "Level 14",
+    "version": "Level 13",
     "image": "Rock Golem (monster).png",
-    "level": 14,
+    "level": 13,
     "speed": 4,
     "style": [
       "Ranged"
@@ -92136,7 +92141,7 @@
     "skills": {
       "atk": 9,
       "def": 9,
-      "hp": 25,
+      "hp": 20,
       "magic": 1,
       "ranged": 8,
       "str": 9
@@ -92150,7 +92155,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 2,
+      "flat_armour": 1,
       "crush": 0,
       "magic": 0,
       "heavy": 0,
@@ -92222,9 +92227,9 @@
   {
     "id": 6726,
     "name": "Rock Golem (monster)",
-    "version": "Level 29",
+    "version": "Level 27",
     "image": "Rock Golem (monster).png",
-    "level": 29,
+    "level": 27,
     "speed": 4,
     "style": [
       "Ranged"
@@ -92234,7 +92239,7 @@
     "skills": {
       "atk": 22,
       "def": 22,
-      "hp": 40,
+      "hp": 30,
       "magic": 1,
       "ranged": 20,
       "str": 22
@@ -92248,7 +92253,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 2,
+      "flat_armour": 1,
       "crush": 0,
       "magic": 0,
       "heavy": 0,
@@ -92271,9 +92276,9 @@
   {
     "id": 6727,
     "name": "Rock Golem (monster)",
-    "version": "Level 49",
+    "version": "Level 46",
     "image": "Rock Golem (monster).png",
-    "level": 49,
+    "level": 46,
     "speed": 4,
     "style": [
       "Ranged"
@@ -92283,7 +92288,7 @@
     "skills": {
       "atk": 38,
       "def": 38,
-      "hp": 60,
+      "hp": 50,
       "magic": 1,
       "ranged": 35,
       "str": 38
@@ -92297,7 +92302,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 2,
+      "flat_armour": 1,
       "crush": 0,
       "magic": 0,
       "heavy": 0,
@@ -92320,9 +92325,9 @@
   {
     "id": 6728,
     "name": "Rock Golem (monster)",
-    "version": "Level 79",
+    "version": "Level 76",
     "image": "Rock Golem (monster).png",
-    "level": 79,
+    "level": 76,
     "speed": 4,
     "style": [
       "Ranged"
@@ -92332,7 +92337,7 @@
     "skills": {
       "atk": 65,
       "def": 65,
-      "hp": 85,
+      "hp": 70,
       "magic": 1,
       "ranged": 70,
       "str": 65
@@ -92346,7 +92351,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 2,
+      "flat_armour": 1,
       "crush": 0,
       "magic": 0,
       "heavy": 0,
@@ -95565,7 +95570,10 @@
     "immunities": {
       "burn": null
     },
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 20
+    }
   },
   {
     "id": 1338,
@@ -102074,7 +102082,7 @@
     "version": "",
     "image": "Skotizo.png",
     "level": 321,
-    "speed": 6,
+    "speed": 0,
     "style": [
       "Stab",
       "Magic"
@@ -117070,7 +117078,10 @@
     "immunities": {
       "burn": "Strong"
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 7706,
@@ -117115,7 +117126,10 @@
     "immunities": {
       "burn": "Strong"
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 3127,
@@ -127514,7 +127528,10 @@
     "immunities": {
       "burn": "Weak"
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 7701,
@@ -127558,7 +127575,10 @@
     "immunities": {
       "burn": "Weak"
     },
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
   },
   {
     "id": 3123,
