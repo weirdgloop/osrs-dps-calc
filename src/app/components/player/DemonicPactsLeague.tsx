@@ -15,6 +15,7 @@ import { MELEE_WEAPONS } from '@/enums/EquipmentCategory';
 import { computed } from 'mobx';
 import UserIssueType from '@/enums/UserIssueType';
 import localforage from 'localforage';
+import NumberInput from '../generic/NumberInput';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const BlindbagSelector = observer(() => {
@@ -146,6 +147,22 @@ const DemonicPactsLeague: React.FC = observer(() => {
             </>
           )}
         />
+
+        <div className="flex items-center gap-2 mt-2">
+          <NumberInput
+            aria-labelledby="distanceToEnemyLabel"
+            className="form-control w-12 text-centerl"
+            id="distanceToEnemy"
+            min={0}
+            max={99}
+            title="Distance to enemy"
+            value={store.player.leagues.six.distanceToEnemy ?? 0}
+            onChange={(v) => {
+              store.updatePlayer({ leagues: { six: { distanceToEnemy: v } } });
+            }}
+          />
+          <span>Distance to Enemy</span>
+        </div>
 
         {/* @eslint-disable */}
         {/* <ShowIfLeagueEffectEnabled leaguesEffect="talent_free_random_weapon_attack_chance"> */}
