@@ -1509,13 +1509,26 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       ]);
     }
 
-    if (this.player.leagues.six.effects.talent_crossbow_max_hit
+    const leagues = this.player.leagues.six;
+    if (leagues.effects.talent_crossbow_max_hit
         && this.player.equipment.weapon?.category === 'Crossbow') {
       dist = new AttackDistribution([HitDistribution.single(acc, [new Hitsplat(max)])]);
     }
 
-    const leagues = this.player.leagues.six;
     const spellement = this.getSpellement();
+    if (leagues.effects.talent_air_spell_max_hit_prayer_bonus && this.player.bonuses.prayer > 0 && spellement === 'air') {
+      const weakToAir = this.getMonsterWeakness()?.element === 'air';
+      const effectChance = this.player.bonuses.prayer * (weakToAir ? 2 : 1) / 100;
+      if (effectChance >= 1) {
+        dist = new AttackDistribution([HitDistribution.single(acc, [new Hitsplat(max)])]);
+      } else {
+        const tmp = standardHitDist.scaleProbability(1 - effectChance);
+        tmp.addHit(new WeightedHit(acc * effectChance, [new Hitsplat(max)]));
+        tmp.addHit(new WeightedHit((1 - acc) * effectChance, [Hitsplat.INACCURATE]));
+        dist = new AttackDistribution([tmp]);
+      }
+    }
+
     if (leagues.effects.talent_air_spell_damage_active_prayers && spellement === 'air') {
       // todo(leagues): this needs the other non-combat prayers accessible via ui but that shouldn't require updating here
       const prayersActive = this.player.prayers.length;
