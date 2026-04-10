@@ -97898,6 +97898,36 @@
     "isTwoHanded": false
   },
   {
+    "name": "Lithic sceptre",
+    "id": 1000103,
+    "version": "",
+    "slot": "weapon",
+    "image": "Lithic sceptre.png",
+    "speed": 4,
+    "category": "Powered Staff",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 25,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 10,
+      "slash": 10,
+      "crush": 10,
+      "magic": 20,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Log basket",
     "id": 28140,
     "weight": 1.39,
