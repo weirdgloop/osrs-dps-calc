@@ -122,6 +122,10 @@ export class HitDistribution {
     this.hits.push(w);
   }
 
+  public addHits(w: WeightedHit[]): void {
+    this.hits.push(...w);
+  }
+
   public zip(other: HitDistribution): HitDistribution {
     return new HitDistribution(
       cross(this.hits, other.hits)

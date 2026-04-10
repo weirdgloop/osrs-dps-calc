@@ -23,6 +23,7 @@ export interface CalcOpts {
   detailedOutput?: boolean,
   disableMonsterScaling?: boolean,
   usingSpecialAttack?: boolean,
+  isBlindBag?: boolean,
   overrides?: {
     accuracy?: number,
     attackRoll?: number,
@@ -43,6 +44,7 @@ const DEFAULT_OPTS: Required<InternalOpts> = {
   detailedOutput: false,
   disableMonsterScaling: false,
   usingSpecialAttack: false,
+  isBlindBag: false,
   noInit: false,
   overrides: {},
 };
@@ -784,9 +786,6 @@ export default class BaseCalc {
     }
 
     const leaguesEffects = this.player.leagues.six.effects;
-    if (leaguesEffects.talent_free_random_weapon_attack_chance) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Blindbag (coming soon)');
-    }
     if (leaguesEffects.talent_light_weapon_doublehit) {
       this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Light Weapon Double Hit (coming soon)');
     }

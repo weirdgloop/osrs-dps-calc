@@ -9,15 +9,52 @@ import { useStore } from '@/state';
 import CullingSpree from '@/public/img/combat_masteries/culling_spree.png';
 import Toggle from '@/app/components/generic/Toggle';
 import EquipmentSelect from '@/app/components/player/equipment/EquipmentSelect';
-// import ShowIfLeagueEffectEnabled from '@/app/components/player/demonicPactsLeague/ShowIfLeagueEffectEnabled';
+import ShowIfLeagueEffectEnabled from '@/app/components/player/demonicPactsLeague/ShowIfLeagueEffectEnabled';
 import { getCdnImage } from '@/utils';
-import { MELEE_WEAPONS } from '@/enums/EquipmentCategory';
+import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { computed } from 'mobx';
 import UserIssueType from '@/enums/UserIssueType';
 import localforage from 'localforage';
+import { EquipmentPiece } from '@/types/Player';
 import NumberInput from '../generic/NumberInput';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const weaponCanBeUsedInBlindbag = (eq: EquipmentPiece): boolean => {
+  if (eq.slot !== 'weapon' || eq.weight < 1) {
+    return false;
+  }
+
+  switch (eq.category) {
+    case EquipmentCategory.NONE:
+    case EquipmentCategory.TWO_HANDED_SWORD:
+    case EquipmentCategory.AXE:
+    case EquipmentCategory.BANNER:
+    case EquipmentCategory.BLASTER:
+    case EquipmentCategory.BLUDGEON:
+    case EquipmentCategory.BLUNT:
+    case EquipmentCategory.BULWARK:
+    case EquipmentCategory.CLAW:
+    case EquipmentCategory.DAGGER:
+    case EquipmentCategory.PARTISAN:
+    case EquipmentCategory.PICKAXE:
+    case EquipmentCategory.POLEARM:
+    case EquipmentCategory.POLESTAFF:
+    case EquipmentCategory.SCYTHE:
+    case EquipmentCategory.SLASH_SWORD:
+    case EquipmentCategory.SPEAR:
+    case EquipmentCategory.SPIKED:
+    case EquipmentCategory.STAB_SWORD:
+    case EquipmentCategory.UNARMED:
+    case EquipmentCategory.WHIP:
+      // case EquipmentCategory.BLADED_STAFF: // todo is this included?
+      // case EquipmentCategory.SALAMANDER: // todo
+      return true;
+
+    default:
+      // these are staves
+      return eq.name === 'Ivandis flail' || eq.name === 'Blisterwood flail';
+  }
+};
+
 const BlindbagSelector = observer(() => {
   const store = useStore();
   const { blindbagWeapons } = store.player.leagues.six;
@@ -53,9 +90,7 @@ const BlindbagSelector = observer(() => {
           )}
       </div>
       <EquipmentSelect
-        customAvailableEquipmentFilter={(equipment) => equipment.slot === 'weapon'
-                    && equipment.weight > 1
-                    && MELEE_WEAPONS.includes(equipment.category)}
+        customAvailableEquipmentFilter={weaponCanBeUsedInBlindbag}
         onSelectedItemChange={(item) => {
           const current = blindbagWeapons;
           if (item
@@ -164,11 +199,9 @@ const DemonicPactsLeague: React.FC = observer(() => {
           <span id="distanceToEnemyLabel">Distance to Enemy</span>
         </div>
 
-        {/* @eslint-disable */}
-        {/* <ShowIfLeagueEffectEnabled leaguesEffect="talent_free_random_weapon_attack_chance"> */}
-        {/*  <BlindbagSelector /> */}
-        {/* </ShowIfLeagueEffectEnabled> */}
-        {/* @eslint-enable */}
+        <ShowIfLeagueEffectEnabled leaguesEffect="talent_free_random_weapon_attack_chance">
+          <BlindbagSelector />
+        </ShowIfLeagueEffectEnabled>
 
         <Modal
           isOpen={showCombatMasteriesUI}

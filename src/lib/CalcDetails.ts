@@ -95,6 +95,8 @@ export enum DetailKey {
   DIST_LEAGUES_ECHO = 'Dist leagues echo',
   DIST_LEAGUES_ECHO_CYCLICAL = 'Dist leagues echo cyclical',
   DIST_FINAL = 'Dist final',
+  DIST_LEAGUES_BLINDBAG = 'Dist leagues blindbag',
+  DIST_LEAGUES_BLINDBAG_RECURSIVE = 'Dist leagues blindbag recursive',
   DOT_EXPECTED = 'Damage over time expected',
   DOT_MAX = 'Damage over time max',
   GUARDIANS_DMG_BONUS = 'Guardians hit multiplier',
@@ -124,6 +126,8 @@ export enum DetailKey {
   LEAGUES_ECHO_CHANCE_ACCURACY = 'Player echo chance accuracy',
   LEAGUES_MIN_HIT_DISTANCE_MELEE = 'Player distance melee min hit',
   LEAGUES_MAX_HIT_DISTANCE_MELEE = 'Player distance melee max hit',
+  LEAGUES_BLINDBAG_DAMAGE_BONUS = 'Player blindbag uniques max hit',
+  LEAGUES_BLINDBAG_CHANCE_UNIQUE = 'Player blindbag uniques chance',
 }
 
 export interface DetailEntry {

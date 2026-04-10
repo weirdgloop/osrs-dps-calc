@@ -15,10 +15,7 @@ import {
   WeightedHit,
 } from '@/lib/HitDist';
 import {
-  canUseSunfireRunes,
-  getSpellMaxHit,
-  isBindSpell,
-  Spellement,
+  canUseSunfireRunes, getSpellMaxHit, isBindSpell, Spellement,
 } from '@/types/Spell';
 import { PrayerData, PrayerMap } from '@/enums/Prayer';
 import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
@@ -62,7 +59,7 @@ import {
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { DetailKey } from '@/lib/CalcDetails';
 import { Factor, iLerp, MinMax } from '@/lib/Math';
-import { calculateAttackSpeed, WEAPON_SPEC_COSTS } from '@/lib/Equipment';
+import { calculateAttackSpeed, calculateEquipmentBonusesFromGear, WEAPON_SPEC_COSTS } from '@/lib/Equipment';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonster, scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { CombatStyleType, getRangedDamageType } from '@/types/PlayerCombatStyle';
@@ -515,6 +512,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.player.leagues.six.effects.talent_multi_hit_str_increase && (weaponWeight < 1 || isOneHanded)) {
       const strengthBonus = Math.trunc(this.player.skills.str * 0.20);
       maxHit = this.trackFactor(DetailKey.LEAGUES_MULTI_HIT_STR_INCREASE, maxHit, [100 + strengthBonus, 100]);
+    }
+
+    if (this.player.leagues.six.effects.talent_unique_blindbag_damage && this.opts.isBlindBag) {
+      const damageBonus = 0.2 * this.getBlindbagUniques();
+      maxHit = this.trackFactor(DetailKey.LEAGUES_BLINDBAG_DAMAGE_BONUS, maxHit, [100 + damageBonus, 100]);
     }
 
     return [minHit, maxHit];
@@ -1364,6 +1366,56 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     const npcDist = this.applyNpcTransforms(attackerDist);
 
+    const leagues = this.player.leagues.six;
+    const blindbagUniques = Math.min(5, this.getBlindbagUniques());
+    if (leagues.effects.talent_free_random_weapon_attack_chance
+        && !this.opts.isBlindBag
+        && blindbagUniques >= 1
+        && (this.player.equipment.weapon?.weight ?? 0) >= 1) {
+      const chanceBlindbagProc = leagues.effects.talent_free_random_weapon_attack_chance / 100;
+      if (leagues.effects.talent_unique_blindbag_chance) {
+        this.trackFactor(DetailKey.LEAGUES_BLINDBAG_CHANCE_UNIQUE, chanceBlindbagProc, [100 + (2 * blindbagUniques), 100]);
+      }
+
+      let blindbagDist = new HitDistribution([new WeightedHit(1 - chanceBlindbagProc, [Hitsplat.INACCURATE])]);
+      const partialDists = leagues.blindbagWeapons.map((weapon) => {
+        const chanceThisWeapon = 1 / blindbagUniques;
+        let playerWithWeapon = <Player>{
+          ...this.player,
+          equipment: {
+            ...this.player.equipment,
+            weapon,
+          },
+        };
+        playerWithWeapon = {
+          ...playerWithWeapon,
+          ...calculateEquipmentBonusesFromGear(playerWithWeapon, this.monster),
+        };
+
+        const subCalc = this.noInitSubCalc(playerWithWeapon, this.monster, {
+          loadoutName: `${this.opts.loadoutName}/Blindbag ${weapon.id} (${weapon.name})`,
+          isBlindBag: true,
+        });
+
+        return subCalc.getDistribution()
+          .singleHitsplat
+          .scaleProbability(chanceBlindbagProc * chanceThisWeapon)
+          .hits;
+      });
+      partialDists.forEach((partial) => blindbagDist.addHits(partial));
+      blindbagDist = blindbagDist.cumulative();
+      this.trackDist(DetailKey.DIST_LEAGUES_BLINDBAG, blindbagDist);
+
+      let recursiveBlindBag = blindbagDist;
+      for (let i = 1; i <= 3; i++) {
+        recursiveBlindBag = recursiveBlindBag.zip(blindbagDist.scaleProbability(chanceBlindbagProc ** i));
+        recursiveBlindBag = recursiveBlindBag.cumulative();
+      }
+      this.trackDist(DetailKey.DIST_LEAGUES_BLINDBAG_RECURSIVE, recursiveBlindBag);
+
+      npcDist.addDist(recursiveBlindBag);
+    }
+
     if (process.env.NEXT_PUBLIC_HIT_DIST_SANITY_CHECK) {
       npcDist.dists.forEach((hitDist, ix) => {
         const sumAccuracy = sum(hitDist.hits, (wh) => wh.probability);
@@ -1760,9 +1812,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     // monsters that are always max hit no matter what
-    if ((this.player.style.type === 'magic' && ALWAYS_MAX_HIT_MONSTERS.magic.includes(this.monster.id))
-        || (this.isUsingMeleeStyle() && ALWAYS_MAX_HIT_MONSTERS.melee.includes(this.monster.id))
-        || (this.player.style.type === 'ranged' && ALWAYS_MAX_HIT_MONSTERS.ranged.includes(this.monster.id))) {
+    if (!this.opts.isBlindBag
+        && ((this.player.style.type === 'magic' && ALWAYS_MAX_HIT_MONSTERS.magic.includes(this.monster.id))
+          || (this.isUsingMeleeStyle() && ALWAYS_MAX_HIT_MONSTERS.melee.includes(this.monster.id))
+          || (this.player.style.type === 'ranged' && ALWAYS_MAX_HIT_MONSTERS.ranged.includes(this.monster.id)))) {
       if (YAMA_VOID_FLARE_IDS.includes(this.monster.id) && this.player.buffs.markOfDarknessSpell && this.player.spell?.name.includes('Demonbane')) {
         const demonbaneFactor = this.wearing('Purging staff') ? 50 : 25;
         return new AttackDistribution([HitDistribution.single(1.0, [new Hitsplat(max + Math.trunc(Math.trunc(max * demonbaneFactor / 100) * this.demonbaneVulnerability() / 100))])]);
@@ -2447,5 +2500,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     return spell?.element;
+  }
+
+  private getBlindbagUniques(): number {
+    return new Set(this.player.leagues.six.blindbagWeapons.map((eq) => eq.id)).size;
   }
 }
