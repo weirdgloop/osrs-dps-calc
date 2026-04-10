@@ -156,12 +156,12 @@ const DemonicPactsLeague: React.FC = observer(() => {
             min={0}
             max={99}
             title="Distance to enemy"
-            value={store.player.leagues.six.distanceToEnemy ?? 0}
+            value={store.player.leagues.six.distanceToEnemy}
             onChange={(v) => {
               store.updatePlayer({ leagues: { six: { distanceToEnemy: v } } });
             }}
           />
-          <span>Distance to Enemy</span>
+          <span id="distanceToEnemyLabel">Distance to Enemy</span>
         </div>
 
         {/* @eslint-disable */}

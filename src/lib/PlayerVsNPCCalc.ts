@@ -445,13 +445,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.leagues.six.effects.talent_distance_melee_minhit) {
-      const distance = this.player.leagues.six.distanceToEnemy ?? 0;
+      const distance = this.player.leagues.six.distanceToEnemy;
       const minhitBonus = 3 * (distance + 1);
       minHit = this.trackAdd(DetailKey.LEAGUES_MIN_HIT_DISTANCE_MELEE, minHit, minhitBonus);
     }
 
     if (this.player.leagues.six.effects.talent_percentage_melee_maxhit_distance) {
-      const distance = this.player.leagues.six.distanceToEnemy ?? 0;
+      const distance = this.player.leagues.six.distanceToEnemy;
       const maxhitFactor = 100 + 4 * (Math.floor(distance / 3) + 1);
       maxHit = this.trackFactor(DetailKey.LEAGUES_MAX_HIT_DISTANCE_MELEE, maxHit, [maxhitFactor, 100]);
     }
@@ -515,10 +515,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.player.leagues.six.effects.talent_multi_hit_str_increase && (weaponWeight < 1 || isOneHanded)) {
       const strengthBonus = Math.trunc(this.player.skills.str * 0.20);
       maxHit = this.trackFactor(DetailKey.LEAGUES_MULTI_HIT_STR_INCREASE, maxHit, [100 + strengthBonus, 100]);
-    }
-
-    if (minHit > maxHit) {
-      minHit = maxHit;
     }
 
     return [minHit, maxHit];
@@ -1131,6 +1127,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       minMax = this.getPlayerMaxMagicHit();
     }
 
+    if (minMax[0] > minMax[1]) {
+      minMax[0] = minMax[1];
+    }
+
     // some cursed (literally, cursed amulet of magic) stuff throws this off
     if (minMax[0] <= 0) {
       minMax[0] = 0;
@@ -1554,8 +1554,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.isUsingMeleeStyle() && this.wearing('Dual macuahuitl')) {
-      const secondHit = HitDistribution.linear(acc, min / 2, max - Math.trunc(max / 2));
-      const firstHit = new AttackDistribution([HitDistribution.linear(acc, min / 2, Math.trunc(max / 2))]);
+      const secondHit = HitDistribution.linear(acc, Math.trunc(min / 2), max - Math.trunc(max / 2));
+      const firstHit = new AttackDistribution([HitDistribution.linear(acc, Math.trunc(min / 2), Math.trunc(max / 2))]);
       dist = firstHit.transform(
         (h) => {
           if (h.accurate) {
@@ -1568,8 +1568,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.isUsingMeleeStyle() && this.isWearingTwoHitWeapon()) {
       dist = new AttackDistribution([
-        HitDistribution.linear(acc, min / 2, Math.trunc(max / 2)),
-        HitDistribution.linear(acc, min / 2, max - Math.trunc(max / 2)),
+        HitDistribution.linear(acc, Math.trunc(min / 2), Math.trunc(max / 2)),
+        HitDistribution.linear(acc, Math.trunc(min / 2), max - Math.trunc(max / 2)),
       ]);
     }
 
