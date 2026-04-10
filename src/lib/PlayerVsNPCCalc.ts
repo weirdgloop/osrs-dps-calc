@@ -792,11 +792,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = this.trackFactor(DetailKey.LEAGUES_RANGED_DAMAGE_TALENT, maxHit, [100 + rangeDamage, 100]);
     }
 
-    if (this.player.leagues.six.effects.talent_crossbow_max_hit
-      && this.player.equipment.weapon?.category === 'Crossbow') {
-      return [maxHit, maxHit];
-    }
-
     return [minHit, maxHit];
   }
 
@@ -1392,6 +1387,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return new AttackDistribution([
         HitDistribution.single(acc, [new Hitsplat(this.monster.skills.hp)]),
       ]);
+    }
+
+    if (this.player.leagues.six.effects.talent_crossbow_max_hit
+        && this.player.equipment.weapon?.category === 'Crossbow') {
+      dist = new AttackDistribution([HitDistribution.single(acc, [new Hitsplat(max)])]);
     }
 
     const leagues = this.player.leagues.six;
