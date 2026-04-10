@@ -457,7 +457,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.leagues.six.effects.talent_percentage_melee_maxhit_distance) {
-      const tilesBetween = this.player.leagues.six.distanceToEnemy - 1;
+      const tilesBetween = this.player.leagues.six.distanceToEnemy;
       const maxhitFactor = 100 + 4 * (Math.floor(tilesBetween / 3) + 1);
       maxHit = this.trackFactor(DetailKey.LEAGUES_MAX_HIT_DISTANCE_MELEE, maxHit, [maxhitFactor, 100]);
     }
