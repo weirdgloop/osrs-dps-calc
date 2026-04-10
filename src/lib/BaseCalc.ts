@@ -801,9 +801,6 @@ export default class BaseCalc {
     if (leaguesEffects.talent_bow_max_hit_stacking_increase || leaguesEffects.talent_bow_min_hit_stacking_increase) {
       this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Repeat Bow Hit Damage (coming soon)');
     }
-    if (leaguesEffects.talent_buffed_ranged_prayers) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Stronger Ranged Prayers (coming soon)');
-    }
     if (leaguesEffects.talent_fire_spell_burn_bounce) {
       this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Fire Spell Burn (coming soon)');
     }

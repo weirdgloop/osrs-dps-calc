@@ -527,7 +527,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     let effectiveLevel: number = this.track(DetailKey.PLAYER_ACCURACY_LEVEL, this.player.skills.ranged + this.player.boosts.ranged);
     for (const p of this.getCombatPrayers('factorAccuracy')) {
-      effectiveLevel = this.trackFactor(DetailKey.PLAYER_ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
+      let factor = p.factorAccuracy!;
+      if (this.player.leagues.six.effects.talent_buffed_ranged_prayers) {
+        factor = [Math.trunc((factor[0] - factor[1]) * 13 / 10) + factor[1], factor[1]];
+      }
+      effectiveLevel = this.trackFactor(DetailKey.PLAYER_ACCURACY_LEVEL_PRAYER, effectiveLevel, factor);
     }
 
     if (style.stance === 'Accurate') {
@@ -675,10 +679,15 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     for (const p of this.getCombatPrayers()) {
-      if (p.name === 'Sharp Eye' && effectiveLevel <= 20) {
+      let factor = p.factorStrength!;
+      if (this.player.leagues.six.effects.talent_buffed_ranged_prayers) {
+        factor = [Math.trunc((factor[0] - factor[1]) * 13 / 10) + factor[1], factor[1]];
+      }
+      if (p.name === 'Sharp Eye' && Math.trunc(effectiveLevel * factor[0] / factor[1]) === effectiveLevel) {
+        // force 1 level gain
         effectiveLevel = this.trackAdd(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, 1);
       } else {
-        effectiveLevel = this.trackFactor(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, p.factorStrength!);
+        effectiveLevel = this.trackFactor(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, factor);
       }
     }
 
