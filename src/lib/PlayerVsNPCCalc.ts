@@ -977,6 +977,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = Math.max(1, Math.trunc(magicLevel / 3) + 1);
     } else if (this.wearing('Eye of ayak')) {
       maxHit = Math.max(1, Math.trunc(magicLevel / 3) - 6);
+    } else if (this.wearing('Lithic sceptre')) {
+      maxHit = Math.max(10, Math.trunc(magicLevel / 3) - 10);
     } else if (this.wearing('Warped sceptre')) {
       maxHit = Math.max(1, Math.trunc((8 * magicLevel + 96) / 37));
     } else if (this.wearing('Bone staff')) {
