@@ -374,23 +374,12 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
   }
 
   const leagues = player.leagues.six.effects;
-  if (leagues.talent_percentage_magic_damage) {
-    totals.bonuses.magic_str += leagues.talent_percentage_magic_damage * 10;
-  }
-
   if (leagues.talent_thrown_weapon_accuracy && player.equipment.weapon?.category === 'Thrown') {
     totals.offensive.ranged += 60;
   }
 
-  if (playerEquipment.weapon?.name === "Tumeken's shadow" && player.style.stance !== 'Manual Cast') {
-    const factor = TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id) ? 4 : 3;
-    totals.bonuses.magic_str = Math.min(1000, totals.bonuses.magic_str * factor);
-    totals.offensive.magic *= factor;
-  }
-
-  if (playerEquipment.weapon?.name === 'Keris partisan of amascut' && !TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id)) {
-    totals.bonuses.str -= 22;
-    totals.offensive.stab -= 50;
+  if (leagues.talent_percentage_magic_damage) {
+    totals.bonuses.magic_str += leagues.talent_percentage_magic_damage * 10;
   }
 
   if (playerEquipment.ammo?.name === 'Crystal blessing') {
@@ -405,6 +394,17 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
 
     totals.bonuses.magic_str += matchingPieces * 20;
     totals.offensive.magic += matchingPieces * 20;
+  }
+
+  if (playerEquipment.weapon?.name === "Tumeken's shadow" && player.style.stance !== 'Manual Cast') {
+    const factor = TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id) ? 4 : 3;
+    totals.bonuses.magic_str = Math.min(1000, totals.bonuses.magic_str * factor);
+    totals.offensive.magic *= factor;
+  }
+
+  if (playerEquipment.weapon?.name === 'Keris partisan of amascut' && !TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id)) {
+    totals.bonuses.str -= 22;
+    totals.offensive.stab -= 50;
   }
 
   if (playerEquipment.weapon?.name === "Dinh's bulwark" || playerEquipment.weapon?.name === "Dinh's blazing bulwark") {
