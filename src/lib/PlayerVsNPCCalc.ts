@@ -910,9 +910,20 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     const spellement = this.getSpellement();
-    if (this.monster.weakness && spellement) {
-      if (spellement === this.monster.weakness.element) {
-        const severity = this.monster.weakness.severity;
+    const isWearingDevilsElement = this.wearing('Devil\'s element');
+    if (spellement) {
+      let severity: number | null = null;
+
+      if (this.monster.weakness) {
+        if (this.monster.weakness.element === spellement) {
+          severity = this.monster.weakness.severity + (isWearingDevilsElement ? 30 : 0);
+        } else if (isWearingDevilsElement) {
+          severity = 30;
+        }
+      } else if (isWearingDevilsElement) {
+        severity = 30;
+      }
+      if (severity !== null) {
         const bonus = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPELLEMENT_BONUS, baseRoll, [severity, 100]);
         attackRoll = this.trackAdd(DetailKey.PLAYER_ACCURACY_SPELLEMENT, attackRoll, bonus);
       }
@@ -1061,9 +1072,20 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     const spellement = this.getSpellement();
-    if (this.monster.weakness && spellement) {
-      if (spellement === this.monster.weakness.element) {
-        const severity = this.monster.weakness.severity;
+    const isWearingDevilsElement = this.wearing('Devil\'s element');
+    if (spellement) {
+      let severity: number | null = null;
+
+      if (this.monster.weakness) {
+        if (spellement === this.monster.weakness.element) {
+          severity = this.monster.weakness.severity + (isWearingDevilsElement ? 30 : 0);
+        } else if (isWearingDevilsElement) {
+          severity = 30;
+        }
+      } else if (isWearingDevilsElement) {
+        severity = 30;
+      }
+      if (severity !== null) {
         const bonus = this.trackFactor(DetailKey.MAX_HIT_SPELLEMENT_BONUS, baseMax, [severity, 100]);
         maxHit = this.trackAdd(DetailKey.MAX_HIT_SPELLEMENT, maxHit, bonus);
       }

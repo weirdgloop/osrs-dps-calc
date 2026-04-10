@@ -50,7 +50,6 @@ ITEMS_TO_SKIP = [
     'The dogsword',
     'Amulet of the monarchs',
     'Emperor ring',
-    'Devil\'s element',
     'Nature\'s reprisal',
     'Gloves of the damned',
     'Crystal blessing',
