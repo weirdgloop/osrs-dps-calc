@@ -1372,7 +1372,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.player.leagues.six.effects.talent_max_accuracy_roll_from_range) {
       const distance = this.player.leagues.six.distanceToEnemy;
       // Proc chance capped to 20 tiles (guaranteed success) - technically there is a 10 tile range cap for all weapons which is not respected here.
-      const procChance = Math.min(1, (5 * (distance + 1)) / 100);
+      const procChance = Math.min(1, 0.05 * distance);
       const maxAccuracyHitChance = BaseCalc.getMaxAccuracyHitChance(atk, def);
       hitChance = hitChance * (1 - procChance) + maxAccuracyHitChance * procChance;
     }
