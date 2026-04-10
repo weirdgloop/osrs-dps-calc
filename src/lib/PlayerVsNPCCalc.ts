@@ -854,11 +854,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const baseRoll = effectiveLevel * (magicBonus + 64);
     let attackRoll = baseRoll;
 
-    if (this.wearing('Crystal blessing') && this.player.spell === null) {
-      const crystalPieces = (this.wearing('Crystal helm') ? 1 : 0) + (this.wearing('Crystal legs') ? 2 : 0) + (this.wearing('Crystal body') ? 3 : 0);
-      attackRoll = Math.trunc(attackRoll * (20 + crystalPieces) / 20);
-    }
-
     let additiveBonus = 0;
     let blackMaskBonus = false;
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
@@ -894,6 +889,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else if (this.wearing('Dragon hunter wand')) {
         attackRoll = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER, attackRoll, [7, 4]);
       }
+    }
+
+    const usingPoweredStaff = this.player.equipment.weapon?.category === EquipmentCategory.POWERED_STAFF
+      && this.player.style.stance !== 'Manual Cast';
+    if (usingPoweredStaff && this.wearing('Crystal blessing')) {
+      const crystalPieces = (this.wearing('Crystal helm') ? 1 : 0) + (this.wearing('Crystal legs') ? 2 : 0) + (this.wearing('Crystal body') ? 3 : 0);
+      attackRoll = Math.trunc(attackRoll * (20 + crystalPieces) / 20);
     }
 
     if (blackMaskBonus) {
@@ -958,11 +960,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     // Specific bonuses that are applied from equipment
     const mattrs = this.monster.attributes;
     const { buffs } = this.player;
-
-    if (this.wearing('Crystal blessing') && spell === null) {
-      const crystalPieces = (this.wearing('Crystal helm') ? 1 : 0) + (this.wearing('Crystal legs') ? 2 : 0) + (this.wearing('Crystal body') ? 3 : 0);
-      maxHit = Math.trunc(maxHit * (40 + crystalPieces) / 40);
-    }
 
     if (spell) {
       maxHit = getSpellMaxHit(spell, magicLevel);
@@ -1065,6 +1062,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     maxHit = this.trackAddFactor(DetailKey.MAX_HIT_MAGIC_DMG, maxHit, [magicDmgBonus, 1000]);
+
+    const usingPoweredStaff = this.player.equipment.weapon?.category === EquipmentCategory.POWERED_STAFF
+      && this.player.style.stance !== 'Manual Cast';
+    if (usingPoweredStaff && this.wearing('Crystal blessing')) {
+      const crystalPieces = (this.wearing('Crystal helm') ? 1 : 0) + (this.wearing('Crystal legs') ? 2 : 0) + (this.wearing('Crystal body') ? 3 : 0);
+      maxHit = Math.trunc(maxHit * (40 + crystalPieces) / 40);
+    }
 
     if (blackMaskBonus) {
       maxHit = Math.trunc(maxHit * 23 / 20);
