@@ -1369,6 +1369,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const leagues = this.player.leagues.six;
     const blindbagUniques = Math.min(5, this.getBlindbagUniques());
     if (leagues.effects.talent_free_random_weapon_attack_chance
+        && this.isUsingMeleeStyle()
         && !this.opts.isBlindBag
         && blindbagUniques >= 1
         && (this.player.equipment.weapon?.weight ?? 0) >= 1) {
