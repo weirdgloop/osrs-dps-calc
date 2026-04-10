@@ -452,14 +452,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.leagues.six.effects.talent_distance_melee_minhit) {
-      const distance = this.player.leagues.six.distanceToEnemy;
-      const minhitBonus = 3 * (distance + 1);
+      const minhitBonus = 3 * this.player.leagues.six.distanceToEnemy;
       minHit = this.trackAdd(DetailKey.LEAGUES_MIN_HIT_DISTANCE_MELEE, minHit, minhitBonus);
     }
 
     if (this.player.leagues.six.effects.talent_percentage_melee_maxhit_distance) {
-      const distance = this.player.leagues.six.distanceToEnemy;
-      const maxhitFactor = 100 + 4 * (Math.floor(distance / 3) + 1);
+      const tilesBetween = this.player.leagues.six.distanceToEnemy - 1;
+      const maxhitFactor = 100 + 4 * (Math.floor(tilesBetween / 3) + 1);
       maxHit = this.trackFactor(DetailKey.LEAGUES_MAX_HIT_DISTANCE_MELEE, maxHit, [maxhitFactor, 100]);
     }
 

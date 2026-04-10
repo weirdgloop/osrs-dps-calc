@@ -188,7 +188,7 @@ const DemonicPactsLeague: React.FC = observer(() => {
             aria-labelledby="distanceToEnemyLabel"
             className="form-control w-12 text-centerl"
             id="distanceToEnemy"
-            min={0}
+            min={1}
             max={99}
             title="Distance to enemy"
             value={store.player.leagues.six.distanceToEnemy}
@@ -196,7 +196,18 @@ const DemonicPactsLeague: React.FC = observer(() => {
               store.updatePlayer({ leagues: { six: { distanceToEnemy: v } } });
             }}
           />
-          <span id="distanceToEnemyLabel">Distance to Enemy</span>
+
+          <span id="distanceToEnemyLabel" className="ml-1 text-sm select-none">
+            Distance to enemy (tiles)
+            {' '}
+            <span
+              className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+              data-tooltip-id="tooltip"
+              data-tooltip-content="This affects some pacts. When you stand on the tile adjacent to an enemy your distance is 1."
+            >
+              ?
+            </span>
+          </span>
         </div>
 
         <ShowIfLeagueEffectEnabled leaguesEffect="talent_free_random_weapon_attack_chance">
