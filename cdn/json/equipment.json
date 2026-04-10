@@ -130541,6 +130541,36 @@
     "isTwoHanded": true
   },
   {
+    "name": "Shadowflame quadrant",
+    "id": 1000102,
+    "version": "",
+    "slot": "weapon",
+    "image": "Shadowflame quadrant.png",
+    "speed": 5,
+    "category": "Staff",
+    "bonuses": {
+      "str": 50,
+      "ranged_str": 0,
+      "magic_str": 150,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 60,
+      "magic": 25,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 5,
+      "crush": 5,
+      "magic": 17,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Shaman mask",
     "id": 21838,
     "weight": 2.721,

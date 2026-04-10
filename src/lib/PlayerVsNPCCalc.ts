@@ -930,7 +930,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       let severity: number | null = null;
 
       if (this.monster.weakness) {
-        if (this.monster.weakness.element === spellement) {
+        if (this.monster.weakness.element === spellement || this.wearing('Shadowflame quadrant')) {
           severity = this.monster.weakness.severity + (isWearingDevilsElement ? 30 : 0);
         } else if (isWearingDevilsElement) {
           severity = 30;
@@ -1097,7 +1097,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       let severity: number | null = null;
 
       if (this.monster.weakness) {
-        if (spellement === this.monster.weakness.element) {
+        if (spellement === this.monster.weakness.element || this.wearing('Shadowflame quadrant')) {
           severity = this.monster.weakness.severity + (isWearingDevilsElement ? 30 : 0);
         } else if (isWearingDevilsElement) {
           severity = 30;
@@ -1940,6 +1940,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const lightMax = Math.max(1, Math.trunc(max * 0.4));
       const lightDist = HitDistribution.linear(acc, min, lightMax);
       dist.addDist(lightDist);
+    }
+
+    const castingStdSpell = this.player.style.type === 'magic' && this.player.spell?.spellbook === 'standard';
+    if (this.wearing('Shadowflame quadrant') && castingStdSpell) {
+      const extraMax = Math.max(1, Math.trunc(max * 0.4));
+      const extraDist = HitDistribution.linear(acc, min, extraMax);
+      dist.addDist(extraDist);
     }
 
     if (process.env.NEXT_PUBLIC_HIT_DIST_SANITY_CHECK) {
