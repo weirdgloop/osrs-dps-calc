@@ -402,6 +402,7 @@ export default class BaseCalc {
       'Sulphur blades',
       'Glacial temotli',
       'Earthbound tecpatl',
+      'Infernal tecpatl',
     ]);
   }
 
@@ -641,7 +642,7 @@ export default class BaseCalc {
         return this.wearing(['Scorching bow']);
 
       default:
-        return this.wearing(['Silverlight', 'Darklight', 'Arclight', 'Emberlight', 'Bone claws', 'Burning claws']);
+        return this.wearing(['Silverlight', 'Darklight', 'Arclight', 'Emberlight', 'Bone claws', 'Burning claws', 'Infernal tecpatl']);
     }
   }
 
