@@ -1548,6 +1548,16 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       this.trackDist(DetailKey.DIST_LEAGUES_AIR_SPELL_PRAYER_COUNT, dist);
     }
 
+    if (this.player.leagues.six.effects.talent_water_spell_damage_high_hp && spellement === 'water') {
+      const maxHp = this.player.skills.hp;
+      const currentHp = this.player.skills.hp + this.player.boosts.hp;
+
+      // intentionally not capping to maxHp here as it functions on overheal
+      const damageBonusPct = Math.trunc(20 * currentHp / maxHp);
+      dist = dist.transform(multiplyTransformer(100 + damageBonusPct, 100));
+      this.trackDist(DetailKey.DIST_LEAGUES_WATER_SPELL_DAMAGE_HIGH_HP, dist);
+    }
+
     if (style === 'ranged' && this.wearing('Tonalztics of ralos') && this.player.equipment.weapon?.version === 'Charged') {
       // roll two independent hits
       if (!this.opts.usingSpecialAttack) {
