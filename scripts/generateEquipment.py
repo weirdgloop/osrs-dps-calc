@@ -48,7 +48,6 @@ BUCKET_API_FIELDS = [
 
 ITEMS_TO_SKIP = [
     'The dogsword',
-    'Drygore blowpipe',
     'Amulet of the monarchs',
     'Emperor ring',
     'Devil\'s element',
