@@ -66,18 +66,15 @@ const HitDistribution: React.FC = observer(() => {
 
   const dataSliced = computed(() => {
     if (data.length < 50) {
-      console.log('under threshold');
       return data;
     }
 
     const aboveThreshold = data.filter((d) => (d.value as number) > 0.0001);
     if (aboveThreshold.length === 0) {
-      console.log('no above threshold data');
       return data;
     }
 
     const xMax = parseInt(aboveThreshold[aboveThreshold.length - 1].name as string);
-    console.log({ data, aboveThreshold });
     return data.slice(0, xMax + 1);
   }).get();
 
