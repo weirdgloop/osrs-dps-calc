@@ -1,9 +1,10 @@
 /* eslint-disable no-restricted-globals */
 import {
-  CalcRequestsUnion, CalcResponse, Handler, WORKER_JSON_REPLACER, WORKER_JSON_REVIVER, WorkerRequestType,
+  CalcRequestsUnion, CalcResponse, Handler, WorkerRequestType,
 } from '@/worker/CalcWorkerTypes';
 import { PlayerVsNPCCalculatedLoadout } from '@/types/State';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
+import { WORKER_JSON_REPLACER, WORKER_JSON_REVIVER } from '@/utils';
 
 // eslint-disable-next-line import/prefer-default-export
 export const ttkDist: Handler<WorkerRequestType.COMPUTE_TTK> = async (data) => {

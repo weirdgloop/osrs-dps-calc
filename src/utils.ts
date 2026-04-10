@@ -62,6 +62,33 @@ export const classNames = (...classes: string[]) => classes.filter(Boolean).join
 const SHORTLINK_API = 'https://tools.runescape.wiki/osrs-dps/shortlink';
 const API_PROXY = 'https://oldschool.runescape.wiki/cors';
 
+export const WORKER_JSON_REPLACER = (k: string, v: Map<unknown, unknown> | Set<unknown> | never) => {
+  if (v instanceof Map) {
+    return {
+      _dataType: 'Map',
+      m: Array.from(v),
+    };
+  }
+  if (v instanceof Set) {
+    return {
+      _dataType: 'Set',
+      s: Array.from(v),
+    };
+  }
+  return v;
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const WORKER_JSON_REVIVER = (k: string, v: any) => {
+  if (typeof v === 'object' && v?._dataType === 'Map') {
+    return new Map(v.m);
+  }
+  if (typeof v === 'object' && v?._dataType === 'Set') {
+    return new Set(v.s);
+  }
+  return v;
+};
+
 /**
  * Fetch a player's skills (using the Hiscores API)
  * @param username
@@ -90,12 +117,14 @@ export const fetchPlayerSkills = async (username: string) => {
 };
 
 export const fetchShortlinkData = async (linkId: string): Promise<ImportableData> => {
-  const res = await axios.get<{ data: ImportableData }>(`${SHORTLINK_API}?id=${linkId}`);
-  return res.data.data;
+  const res = await axios.get<string>(`${SHORTLINK_API}?id=${linkId}`);
+  // dumb and inefficient but axios already converts valid JSON to a JS object
+  return (JSON.parse(JSON.stringify(res.data), WORKER_JSON_REVIVER)).data as ImportableData;
 };
 
 export const generateShortlink = async (data: ImportableData): Promise<string> => {
-  const res = await axios.post(SHORTLINK_API, data, {
+  const payload = JSON.stringify(data, WORKER_JSON_REPLACER);
+  const res = await axios.post(SHORTLINK_API, payload, {
     headers: {
       'Content-Type': 'application/json',
     },

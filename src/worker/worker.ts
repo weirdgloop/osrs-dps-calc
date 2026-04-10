@@ -5,8 +5,6 @@ import {
   Handler,
   TtkRequest,
   TtkResponse,
-  WORKER_JSON_REPLACER,
-  WORKER_JSON_REVIVER,
   WorkerRequestType,
 } from '@/worker/CalcWorkerTypes';
 import { NPCVsPlayerCalculatedLoadout, PlayerVsNPCCalculatedLoadout } from '@/types/State';
@@ -15,7 +13,7 @@ import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import Comparator from '@/lib/Comparator';
 import { ttkDist } from '@/worker/ttkWorker';
 import { range } from 'd3-array';
-import { DeferredPromise } from '@/utils';
+import { DeferredPromise, WORKER_JSON_REPLACER, WORKER_JSON_REVIVER } from '@/utils';
 import { NUMBER_OF_LOADOUTS } from '@/lib/constants';
 
 const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) => {

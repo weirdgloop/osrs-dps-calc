@@ -115,21 +115,3 @@ export type CalcResponsesUnion =
 export type CalcResponse<T extends WorkerRequestType> = CalcResponsesUnion & { type: T };
 
 export type Handler<T extends WorkerRequestType> = (data: Extract<CalcRequestsUnion, { type: T }>['data'], rawRequest: CalcRequestsUnion) => Promise<CalcResponse<T>['payload']>;
-
-export const WORKER_JSON_REPLACER = (k: string, v: Map<unknown, unknown> | never) => {
-  if (v instanceof Map) {
-    return {
-      _dataType: 'Map',
-      m: Array.from(v),
-    };
-  }
-  return v;
-};
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const WORKER_JSON_REVIVER = (k: string, v: any) => {
-  if (typeof v === 'object' && v?._dataType === 'Map') {
-    return new Map(v.m);
-  }
-  return v;
-};
