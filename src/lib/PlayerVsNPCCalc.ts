@@ -1307,8 +1307,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       );
     }
 
-    if (this.isWearingFang() && this.player.style.type === 'stab') {
-      if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)) {
+    const fangAccuracy = this.isWearingFang() && this.player.style.type === 'stab';
+    const drygoreAccuracy = this.wearing('Drygore blowpipe') && this.player.style.stance !== 'Manual Cast';
+    if (fangAccuracy || drygoreAccuracy) {
+      if (fangAccuracy && TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)) {
         hitChance = this.track(DetailKey.PLAYER_ACCURACY_FANG_TOA, 1 - (1 - hitChance) ** 2);
       } else {
         hitChance = this.track(
