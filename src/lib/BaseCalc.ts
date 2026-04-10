@@ -847,8 +847,5 @@ export default class BaseCalc {
     if (leaguesEffects.talent_thorns_damage || leaguesEffects.talent_shield_reflect) {
       this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Thorns');
     }
-    if (leaguesEffects.talent_overheal_consumption_boost || leaguesEffects.talent_fire_hp_consume_for_damage) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Overheal Consumption Effects');
-    }
   }
 }

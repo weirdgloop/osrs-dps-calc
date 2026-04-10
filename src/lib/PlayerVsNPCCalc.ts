@@ -459,6 +459,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       minHit = this.trackAdd(DetailKey.LEAGUES_MIN_HIT_DISTANCE_MELEE, minHit, minhitBonus);
     }
 
+    if (this.player.leagues.six.effects.talent_overheal_consumption_boost && this.player.boosts.hp >= 5) {
+      minHit = this.trackAdd(DetailKey.LEAGUES_MIN_HIT_OVERHEAL_CONSUMPTION, minHit, 5);
+    }
+
     if (this.player.leagues.six.effects.talent_percentage_melee_maxhit_distance) {
       const tilesBetween = this.player.leagues.six.distanceToEnemy;
       const maxhitFactor = 100 + 4 * (Math.floor(tilesBetween / 3) + 1);
@@ -1538,6 +1542,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const bonusDamagePerPrayer = leagues.effects.talent_air_spell_damage_active_prayers;
       dist = dist.transform(multiplyTransformer(100 + (prayersActive * bonusDamagePerPrayer), 100));
       this.trackDist(DetailKey.DIST_LEAGUES_AIR_SPELL_PRAYER_COUNT, dist);
+    }
+
+    if (leagues.effects.talent_fire_hp_consume_for_damage && spellement === 'fire') {
+      const currentHp = this.player.skills.hp + this.player.boosts.hp;
+
+      // 6% of max hp.
+      const maxConsume = Math.trunc(this.player.skills.hp * 0.06);
+      // Effect cannot kill player.
+      const actualConsume = Math.min(maxConsume, currentHp - 1);
+      dist = dist.transform(flatAddTransformer(actualConsume * 2));
+      this.trackDist(DetailKey.DIST_LEAGUES_FIRE_SPELL_HP_CONSUME, dist);
     }
 
     if (this.player.leagues.six.effects.talent_water_spell_damage_high_hp && spellement === 'water') {

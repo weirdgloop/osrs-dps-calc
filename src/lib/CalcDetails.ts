@@ -93,6 +93,7 @@ export enum DetailKey {
   DIST_BASE = 'Dist base',
   DIST_LEAGUES_AIR_SPELL_PRAYER_COUNT = 'Dist leagues talent_air_spell_damage_active_prayers',
   DIST_LEAGUES_WATER_SPELL_DAMAGE_HIGH_HP = 'Dist leagues talent_water_spell_damage_high_hp',
+  DIST_LEAGUES_FIRE_SPELL_HP_CONSUME = 'Dist leagues talent_fire_hp_consume_for_damage',
   DIST_LEAGUES_ECHO = 'Dist leagues echo',
   DIST_LEAGUES_ECHO_CYCLICAL = 'Dist leagues echo cyclical',
   DIST_FINAL = 'Dist final',
@@ -127,6 +128,7 @@ export enum DetailKey {
   LEAGUES_ECHO_CHANCE_ACCURACY = 'Player echo chance accuracy',
   LEAGUES_MIN_HIT_DISTANCE_MELEE = 'Player distance melee min hit',
   LEAGUES_MAX_HIT_DISTANCE_MELEE = 'Player distance melee max hit',
+  LEAGUES_MIN_HIT_OVERHEAL_CONSUMPTION = 'Player overheal consumption min hit',
   LEAGUES_BLINDBAG_DAMAGE_BONUS = 'Player blindbag uniques max hit',
   LEAGUES_BLINDBAG_CHANCE_UNIQUE = 'Player blindbag uniques chance',
 }
