@@ -804,7 +804,7 @@ export default class BaseCalc {
       this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Fire Spell Burn (coming soon)');
     }
     if (leaguesEffects.talent_earth_scale_defence_stat) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Earth Spell Flat Damage (coming soon)')
+      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Earth Spell Flat Damage (coming soon)');
     }
     if (leaguesEffects.talent_regen_magic_level_boost) {
       this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Regenerate Magic Level Boost (coming soon)');
