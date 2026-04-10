@@ -1886,6 +1886,15 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
+    if (leagues.effects.talent_light_weapon_doublehit
+        && this.isUsingMeleeStyle()
+        && !this.opts.usingSpecialAttack
+        && (this.player.equipment.weapon?.weight ?? Infinity) < 1) {
+      const lightMax = Math.max(1, Math.trunc(max * 0.4));
+      const lightDist = HitDistribution.linear(acc, min, lightMax);
+      dist.addDist(lightDist);
+    }
+
     if (process.env.NEXT_PUBLIC_HIT_DIST_SANITY_CHECK) {
       dist.dists.forEach((hitDist, ix) => {
         const sumAccuracy = sum(hitDist.hits, (wh) => wh.probability);
