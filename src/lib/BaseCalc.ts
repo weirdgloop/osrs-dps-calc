@@ -301,7 +301,7 @@ export default class BaseCalc {
    * @see https://oldschool.runescape.wiki/w/Black_mask_(i)
    */
   protected isWearingImbuedBlackMask(): boolean {
-    return this.wearing(['Black mask (i)', 'Slayer helmet (i)']) || this.player.leagues.six.cullingSpree;
+    return this.wearing(['Black mask (i)', 'Slayer helmet (i)', 'V\'s helm']) || this.player.leagues.six.cullingSpree;
   }
 
   /**
