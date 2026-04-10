@@ -64,7 +64,7 @@ import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonster, scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { CombatStyleType, getRangedDamageType } from '@/types/PlayerCombatStyle';
 import { range, some, sum } from 'd3-array';
-import { FeatureStatus, getCombatStylesForCategory } from '@/utils';
+import { FeatureStatus, getCombatStylesForCategory, isDefined } from '@/utils';
 import UserIssueType from '@/enums/UserIssueType';
 import {
   BoltContext,
@@ -1788,6 +1788,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     // bolt effects
     const boltContext: BoltContext = {
       maxHit: max,
+      alwaysMaxHit: isDefined(this.player.leagues.six.effects.talent_crossbow_max_hit),
       rangedLvl: this.player.skills.ranged + this.player.boosts.ranged,
       zcb: this.wearing('Zaryte crossbow'),
       spec: this.opts.usingSpecialAttack,
