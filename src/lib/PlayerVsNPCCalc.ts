@@ -1521,10 +1521,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       if (effectChance >= 1) {
         dist = new AttackDistribution([HitDistribution.single(acc, [new Hitsplat(max)])]);
       } else if (effectChance > 0) {
-        dist = new AttackDistribution([
-          standardHitDist.scaleProbability(1 - effectChance),
-          HitDistribution.single(acc * effectChance, [new Hitsplat(max)]),
-        ]);
+        const tmp = standardHitDist.scaleProbability(1 - effectChance);
+        tmp.addHit(new WeightedHit(acc * effectChance, [new Hitsplat(max)]));
+        dist = new AttackDistribution([tmp]);
       }
     }
 
