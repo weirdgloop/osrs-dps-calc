@@ -11,7 +11,7 @@ import SectionAccordion from '@/app/components/generic/SectionAccordion';
 import Toggle from '@/app/components/generic/Toggle';
 import { observer } from 'mobx-react-lite';
 import { max } from 'd3-array';
-import { toJS } from 'mobx';
+import { computed, toJS } from 'mobx';
 import { isDefined } from '@/utils';
 
 const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, payload, label }) => {
@@ -64,6 +64,23 @@ const HitDistribution: React.FC = observer(() => {
     return [count, ceilHighest];
   }, [data]);
 
+  const dataSliced = computed(() => {
+    if (data.length < 50) {
+      console.log('under threshold');
+      return data;
+    }
+
+    const aboveThreshold = data.filter((d) => (d.value as number) > 0.0001);
+    if (aboveThreshold.length === 0) {
+      console.log('no above threshold data');
+      return data;
+    }
+
+    const xMax = parseInt(aboveThreshold[aboveThreshold.length - 1].name as string);
+    console.log({ data, aboveThreshold });
+    return data.slice(0, xMax + 1);
+  }).get();
+
   return (
     <SectionAccordion
       defaultIsOpen={prefs.showHitDistribution}
@@ -103,7 +120,7 @@ const HitDistribution: React.FC = observer(() => {
         </div>
         <ResponsiveContainer width="100%" height={225}>
           <BarChart
-            data={data}
+            data={dataSliced}
             margin={{ top: 11, left: 25, bottom: 20 }}
           >
             <XAxis
