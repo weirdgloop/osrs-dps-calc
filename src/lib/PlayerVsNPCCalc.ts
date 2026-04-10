@@ -1568,8 +1568,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.isUsingMeleeStyle() && this.isWearingTwoHitWeapon()) {
       dist = new AttackDistribution([
-        HitDistribution.linear(acc, min, Math.trunc(max / 2)),
-        HitDistribution.linear(acc, min, max - Math.trunc(max / 2)),
+        HitDistribution.linear(acc, min / 2, Math.trunc(max / 2)),
+        HitDistribution.linear(acc, min / 2, max - Math.trunc(max / 2)),
       ]);
     }
 
