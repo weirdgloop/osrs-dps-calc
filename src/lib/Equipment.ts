@@ -434,7 +434,6 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
     const hpDifference = Math.abs(player.boosts.hp);
     const boost = Math.trunc(hpDifference / 10);
     totals.bonuses.ranged_str += boost;
-    console.log(player, hpDifference, boost);
   }
 
   if (leagues.talent_melee_strength_prayer_bonus) {
