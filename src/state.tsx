@@ -228,6 +228,7 @@ class GlobalState implements State {
     immunities: {
       burn: null,
     },
+    is_slayer_monster: true,
     inputs: { ...INITIAL_MONSTER_INPUTS },
   };
 
