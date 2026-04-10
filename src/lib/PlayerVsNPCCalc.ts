@@ -419,6 +419,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing(['Silverlight', 'Darklight', 'Silverlight (dyed)']) && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = this.trackAddFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor(60));
     }
+    if (this.wearing('Infernal tecpatl') && mattrs.includes(MonsterAttribute.DEMON)) {
+      maxHit = this.trackAddFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor(10));
+    }
 
     if (this.wearing('Leaf-bladed battleaxe') && mattrs.includes(MonsterAttribute.LEAFY)) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_LEAFY, maxHit, [47, 40]);
