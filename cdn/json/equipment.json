@@ -59861,6 +59861,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Devil's element",
+    "id": 30371,
+    "weight": 0.2,
+    "version": "",
+    "slot": "shield",
+    "image": "Devil's element.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 60,
+      "prayer": 3
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 20,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Devout boots",
     "id": 22954,
     "weight": 0.5,
