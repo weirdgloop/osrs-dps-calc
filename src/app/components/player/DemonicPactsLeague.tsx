@@ -189,7 +189,7 @@ const DemonicPactsLeague: React.FC = observer(() => {
             className="form-control w-12 text-centerl"
             id="distanceToEnemy"
             min={1}
-            max={99}
+            max={10}
             title="Distance to enemy"
             value={store.player.leagues.six.distanceToEnemy}
             onChange={(v) => {
