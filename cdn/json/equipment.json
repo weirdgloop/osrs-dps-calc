@@ -38003,7 +38003,7 @@
       "magic": 0,
       "ranged": 0
     },
-    "isTwoHanded": true
+    "isTwoHanded": false
   },
   {
     "name": "Corrupted staff (basic)",
@@ -38034,7 +38034,7 @@
       "magic": 0,
       "ranged": 0
     },
-    "isTwoHanded": true
+    "isTwoHanded": false
   },
   {
     "name": "Corrupted staff (perfected)",
@@ -38065,7 +38065,7 @@
       "magic": 0,
       "ranged": 0
     },
-    "isTwoHanded": true
+    "isTwoHanded": false
   },
   {
     "name": "Corrupted statius's full helm (bh)",
@@ -55580,7 +55580,7 @@
       "magic": 0,
       "ranged": 0
     },
-    "isTwoHanded": true
+    "isTwoHanded": false
   },
   {
     "name": "Crystal staff (basic)",
@@ -55611,7 +55611,7 @@
       "magic": 0,
       "ranged": 0
     },
-    "isTwoHanded": true
+    "isTwoHanded": false
   },
   {
     "name": "Crystal staff (perfected)",
@@ -55642,7 +55642,7 @@
       "magic": 0,
       "ranged": 0
     },
-    "isTwoHanded": true
+    "isTwoHanded": false
   },
   {
     "name": "Cursed amulet of magic",
@@ -107041,6 +107041,37 @@
       "ranged": 0
     },
     "isTwoHanded": false
+  },
+  {
+    "name": "Nature's recurve",
+    "id": 1000101,
+    "weight": 0.1,
+    "version": "",
+    "slot": "weapon",
+    "image": "Natures's recurve.png",
+    "speed": 4,
+    "category": "Bow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 4,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 8,
+      "ranged": 95
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
   },
   {
     "name": "Navy cavalier",

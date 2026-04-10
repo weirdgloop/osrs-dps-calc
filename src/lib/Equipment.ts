@@ -158,6 +158,7 @@ const ammoForRangedWeapons: { [weapon: number]: number[] } = {
   28834: [28837], // Tecu salamander, Irit tar
   28869: [28872, 28878], // Hunters' sunlight crossbow
   29000: [28991], // Eclipse atlatl
+  1000101: commonAmmoCategories().bow_t60, // Nature's recurve
 };
 
 export enum AmmoApplicability {
