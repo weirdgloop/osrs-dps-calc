@@ -1775,18 +1775,19 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         this.track(DetailKey.LEAGUES_ECHO_CHANCE_REGEN, echoChance);
       }
 
-      if (!leagues.effects.talent_bow_always_pass_accuracy || !isWearingBow) {
-        echoChance *= acc;
+      let echoAcc = acc;
+      if (leagues.effects.talent_bow_always_pass_accuracy && isWearingBow) {
+        echoAcc = 1;
         this.track(DetailKey.LEAGUES_ECHO_CHANCE_ACCURACY, echoChance);
       }
+      echoChance *= echoAcc;
 
       let echoDist = HitDistribution.linear(echoChance, min, max);
       if (leagues.effects.talent_thrown_maxhit_echoes && isWearingThrown) {
         const effectChance = 0.2;
         echoDist = echoDist.scaleProbability(1 - effectChance);
-        echoDist.addHit(new WeightedHit(effectChance * acc, [new Hitsplat(max)]));
-        echoDist.addHit(new WeightedHit(effectChance * (1 - acc), [Hitsplat.INACCURATE]));
-        echoDist = echoDist.flatten();
+        echoDist.addHit(new WeightedHit(effectChance * echoChance, [new Hitsplat(max)]));
+        echoDist.addHit(new WeightedHit(effectChance * (1 - echoChance), [Hitsplat.INACCURATE]));
       }
       this.trackDist(DetailKey.DIST_LEAGUES_ECHO, echoDist);
       dist.addDist(echoDist);
