@@ -1402,16 +1402,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           ...playerWithWeapon,
           ...calculateEquipmentBonusesFromGear(playerWithWeapon, this.monster),
         };
-        console.log({ chanceBlindbagProc, chanceThisWeapon });
 
         const subCalc = this.noInitSubCalc(playerWithWeapon, this.monster, {
           loadoutName: `${this.opts.loadoutName}/Blindbag ${weapon.id} (${weapon.name})`,
           isBlindBag: true,
         });
 
-        console.log({
-          d: subCalc.getDistribution(), s: subCalc.getDistribution().singleHitsplat, p: subCalc.getDistribution().scaleProbability(chanceBlindbagProc * chanceThisWeapon), e: subCalc.getDistribution().scaleProbability(chanceBlindbagProc * chanceThisWeapon).getExpectedDamage(),
-        });
         return subCalc.getDistribution()
           .singleHitsplat
           .scaleProbability(chanceBlindbagProc * chanceThisWeapon)
@@ -1431,7 +1427,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       this.trackDist(DetailKey.DIST_LEAGUES_BLINDBAG_RECURSIVE, recursiveBlindBag);
 
       npcDist.addDist(recursiveBlindBag);
-      console.log({ npcDist, e: npcDist.getExpectedDamage() });
     }
 
     if (process.env.NEXT_PUBLIC_HIT_DIST_SANITY_CHECK) {
