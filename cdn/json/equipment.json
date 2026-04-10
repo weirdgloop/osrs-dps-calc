@@ -66030,6 +66030,68 @@
     "isTwoHanded": false
   },
   {
+    "name": "Drygore blowpipe",
+    "id": 30374,
+    "weight": 0.5,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Drygore blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 10,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 50
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Drygore blowpipe",
+    "id": 30373,
+    "weight": 0.5,
+    "version": "Empty",
+    "slot": "weapon",
+    "image": "Drygore blowpipe (empty).png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 50
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Dual macuahuitl",
     "id": 28997,
     "weight": 3.628,
