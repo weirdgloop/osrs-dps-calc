@@ -1788,6 +1788,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     // bolt effects
     const boltContext: BoltContext = {
       maxHit: max,
+      alwaysMaxHit: !!this.player.leagues.six.effects.talent_crossbow_max_hit,
       rangedLvl: this.player.skills.ranged + this.player.boosts.ranged,
       zcb: this.wearing('Zaryte crossbow'),
       spec: this.opts.usingSpecialAttack,
