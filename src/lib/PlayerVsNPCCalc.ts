@@ -1523,6 +1523,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else if (effectChance > 0) {
         const tmp = standardHitDist.scaleProbability(1 - effectChance);
         tmp.addHit(new WeightedHit(acc * effectChance, [new Hitsplat(max)]));
+        tmp.addHit(new WeightedHit((1 - acc) * effectChance, [Hitsplat.INACCURATE]));
         dist = new AttackDistribution([tmp]);
       }
     }
