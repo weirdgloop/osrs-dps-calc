@@ -207,6 +207,7 @@ const DemonicPactsLeague: React.FC = observer(() => {
                         },
                       },
                     });
+                    store.recalculateLeaguesEffects();
                   }
                 }}
               >
@@ -249,6 +250,7 @@ const DemonicPactsLeague: React.FC = observer(() => {
                         },
                       },
                     });
+                    store.recalculateLeaguesEffects();
                   } catch (e) {
                     // Do nothing
                   }

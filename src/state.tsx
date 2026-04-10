@@ -588,6 +588,7 @@ class GlobalState implements State {
       this.updatePlayer(p, ix);
     });
     this.recalculateEquipmentBonusesFromGearAll();
+    this.recalculateLeaguesEffects();
 
     this.selectedLoadout = data.selectedLoadout || 0;
   }
