@@ -436,6 +436,10 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
     totals.bonuses.ranged_str += boost;
   }
 
+  if (leagues.talent_melee_strength_prayer_bonus) {
+    totals.bonuses.str += Math.trunc(totals.bonuses.prayer / 2);
+  }
+
   totals.attackSpeed = calculateAttackSpeed(player, monster);
 
   return totals;
