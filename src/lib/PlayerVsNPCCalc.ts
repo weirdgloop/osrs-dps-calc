@@ -1515,8 +1515,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     const spellement = this.getSpellement();
     if (style === 'magic' && leagues.effects.talent_air_spell_max_hit_prayer_bonus && spellement === 'air') {
-      const weakToAir = this.wearing('Devil\'s element')
-        || this.monster.weakness && (this.monster.weakness.element === 'air' || this.wearing('Shadowflame quadrant'));
+      const weakToAir = this.getMonsterWeakness()?.element === 'air';
       const effectChance = this.player.bonuses.prayer / 100 * (weakToAir ? 2 : 1);
       if (effectChance >= 1) {
         dist = new AttackDistribution([HitDistribution.single(acc, [new Hitsplat(max)])]);
