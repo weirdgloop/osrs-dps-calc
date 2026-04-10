@@ -55,6 +55,7 @@ export interface Monster {
   immunities: {
     burn: BurnImmunity | null;
   }
+  is_slayer_monster: boolean;
 
   /**
    * Fields that users have control over in the UI, which may affect buff applicability, monster scaling, etc.

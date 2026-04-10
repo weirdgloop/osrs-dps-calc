@@ -230,7 +230,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SALVE, attackRoll, [6, 5]);
     } else if (this.wearing(['Salve amulet', 'Salve amulet(i)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SALVE, attackRoll, [7, 6]);
-    } else if (this.isWearingBlackMask() && buffs.onSlayerTask) {
+    } else if (this.isWearingBlackMask() && this.isSlayerMonster() && buffs.onSlayerTask) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_BLACK_MASK, attackRoll, [7, 6]);
     }
 
@@ -379,7 +379,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_SALVE, maxHit, [6, 5]);
     } else if (this.wearing(['Salve amulet', 'Salve amulet(i)']) && mattrs.includes(MonsterAttribute.UNDEAD)) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_SALVE, maxHit, [7, 6]);
-    } else if (this.isWearingBlackMask() && buffs.onSlayerTask) {
+    } else if (this.isWearingBlackMask() && this.isSlayerMonster() && buffs.onSlayerTask) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_BLACK_MASK, maxHit, [7, 6]);
     }
 
@@ -571,7 +571,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       attackRoll = Math.trunc(attackRoll * 6 / 5);
     } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       attackRoll = Math.trunc(attackRoll * 7 / 6);
-    } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
+    } else if (this.isWearingImbuedBlackMask() && this.isSlayerMonster() && buffs.onSlayerTask) {
       attackRoll = Math.trunc(attackRoll * 23 / 20);
     }
 
@@ -737,9 +737,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = Math.trunc(maxHit * 6 / 5);
     } else if ((this.wearing('Salve amulet(i)') || (scalesWithStr && this.wearing('Salve amulet'))) && mattrs.includes(MonsterAttribute.UNDEAD)) {
       maxHit = Math.trunc(maxHit * 7 / 6);
-    } else if (scalesWithStr && this.isWearingBlackMask() && buffs.onSlayerTask) {
+    } else if (scalesWithStr && this.isWearingBlackMask() && this.isSlayerMonster() && buffs.onSlayerTask) {
       maxHit = Math.trunc(maxHit * 7 / 6);
-    } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
+    } else if (this.isWearingImbuedBlackMask() && this.isSlayerMonster() && buffs.onSlayerTask) {
       let numerator = 23;
       // these are additive with slayer only
       if (needRevWeaponBonus) {
@@ -868,7 +868,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_SALVE, additiveBonus, 20);
     } else if (this.wearing('Salve amulet(i)') && mattrs.includes(MonsterAttribute.UNDEAD)) {
       additiveBonus = this.trackAdd(DetailKey.PLAYER_ACCURACY_SALVE, additiveBonus, 15);
-    } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
+    } else if (this.isWearingImbuedBlackMask() && this.isSlayerMonster() && buffs.onSlayerTask) {
       blackMaskBonus = true;
     }
 
@@ -963,7 +963,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (spell) {
       maxHit = getSpellMaxHit(spell, magicLevel);
       if (spell?.name === 'Magic Dart') {
-        if (this.wearing("Slayer's staff (e)") && buffs.onSlayerTask) {
+        if (this.wearing("Slayer's staff (e)") && this.isSlayerMonster() && buffs.onSlayerTask) {
           maxHit = Math.trunc(13 + magicLevel / 6);
         } else {
           maxHit = Math.trunc(10 + magicLevel / 10);
@@ -1052,7 +1052,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       magicDmgBonus += 150;
     } else if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
       magicDmgBonus += buffs.forinthrySurge ? 350 : 200;
-    } else if (this.isWearingImbuedBlackMask() && buffs.onSlayerTask) {
+    } else if (this.isWearingImbuedBlackMask() && this.isSlayerMonster() && buffs.onSlayerTask) {
       blackMaskBonus = true;
     }
 
