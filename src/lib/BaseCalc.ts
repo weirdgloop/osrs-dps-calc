@@ -816,9 +816,6 @@ export default class BaseCalc {
     if (leaguesEffects.talent_prayer_pen_all) {
       this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Prayer Penetration (coming soon)');
     }
-    if (leaguesEffects.talent_all_style_accuracy) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Max Accuracy Roll Chance (coming soon)');
-    }
     if (leaguesEffects.talent_max_hit_style_swap) {
       this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Style Swap Damage Bonus');
     }
