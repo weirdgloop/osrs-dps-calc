@@ -143,7 +143,7 @@ export const generateEmptyPlayer = (name?: string): Player => ({
     six: {
       selectedNodeIds: new Set<string>(['node1']),
       effects: {},
-      distanceToEnemy: 0,
+      distanceToEnemy: 1,
       enemyPrayers: {
         melee: false,
         ranged: false,
@@ -228,6 +228,7 @@ class GlobalState implements State {
     immunities: {
       burn: null,
     },
+    is_slayer_monster: true,
     inputs: { ...INITIAL_MONSTER_INPUTS },
   };
 
@@ -535,6 +536,18 @@ class GlobalState implements State {
             burn: null,
           };
         }
+
+      case 8:
+        // Definition of distanceToEnemy changed from 'tiles between' to
+        // 'distance' to match weapon range.
+        data.loadouts.forEach((l) => {
+          /* eslint-disable @typescript-eslint/no-explicit-any */
+          const six = (l as any)?.leagues?.six;
+          if (six) {
+            six.distanceToEnemy = Math.min(10, six.distanceToEnemy + 1);
+          }
+          /* eslint-enable @typescript-eslint/no-explicit-any */
+        });
 
       default:
     }

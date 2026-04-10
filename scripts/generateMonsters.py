@@ -225,7 +225,8 @@ def main():
             'attributes': v.get('attribute', []),
             'immunities': {
                 'burn': burn_immunity,
-            }
+            },
+            'is_slayer_monster': v.get('slayer_experience') is not None,
         }
 
         weakness = v.get('elemental_weakness')

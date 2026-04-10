@@ -38003,7 +38003,7 @@
       "magic": 0,
       "ranged": 0
     },
-    "isTwoHanded": true
+    "isTwoHanded": false
   },
   {
     "name": "Corrupted staff (basic)",
@@ -38034,7 +38034,7 @@
       "magic": 0,
       "ranged": 0
     },
-    "isTwoHanded": true
+    "isTwoHanded": false
   },
   {
     "name": "Corrupted staff (perfected)",
@@ -38065,7 +38065,7 @@
       "magic": 0,
       "ranged": 0
     },
-    "isTwoHanded": true
+    "isTwoHanded": false
   },
   {
     "name": "Corrupted statius's full helm (bh)",
@@ -51057,6 +51057,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Crystal blessing",
+    "id": 30384,
+    "weight": 0.453,
+    "version": "",
+    "slot": "ammo",
+    "image": "Crystal blessing.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 5
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Crystal body",
     "id": 23975,
     "weight": 2,
@@ -55580,7 +55611,7 @@
       "magic": 0,
       "ranged": 0
     },
-    "isTwoHanded": true
+    "isTwoHanded": false
   },
   {
     "name": "Crystal staff (basic)",
@@ -55611,7 +55642,7 @@
       "magic": 0,
       "ranged": 0
     },
-    "isTwoHanded": true
+    "isTwoHanded": false
   },
   {
     "name": "Crystal staff (perfected)",
@@ -55642,7 +55673,7 @@
       "magic": 0,
       "ranged": 0
     },
-    "isTwoHanded": true
+    "isTwoHanded": false
   },
   {
     "name": "Cursed amulet of magic",
@@ -59818,6 +59849,37 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Devil's element",
+    "id": 30371,
+    "weight": 0.2,
+    "version": "",
+    "slot": "shield",
+    "image": "Devil's element.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 60,
+      "prayer": 3
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 20,
       "ranged": 0
     },
     "defensive": {
@@ -66028,6 +66090,68 @@
       "ranged": 0
     },
     "isTwoHanded": false
+  },
+  {
+    "name": "Drygore blowpipe",
+    "id": 30374,
+    "weight": 0.5,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Drygore blowpipe.png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 10,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 50
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Drygore blowpipe",
+    "id": 30373,
+    "weight": 0.5,
+    "version": "Empty",
+    "slot": "weapon",
+    "image": "Drygore blowpipe (empty).png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 50
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
   },
   {
     "name": "Dual macuahuitl",
@@ -106981,6 +107105,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Nature's recurve",
+    "id": 1000101,
+    "weight": 0.1,
+    "version": "",
+    "slot": "weapon",
+    "image": "Nature's recurve.png",
+    "speed": 4,
+    "category": "Bow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 4,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 8,
+      "ranged": 95
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Navy cavalier",
     "id": 12325,
     "weight": 0.08,
@@ -130386,6 +130541,36 @@
     "isTwoHanded": true
   },
   {
+    "name": "Shadowflame quadrant",
+    "id": 1000102,
+    "version": "",
+    "slot": "weapon",
+    "image": "Shadowflame quadrant.png",
+    "speed": 5,
+    "category": "Staff",
+    "bonuses": {
+      "str": 50,
+      "ranged_str": 0,
+      "magic_str": 150,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 60,
+      "magic": 25,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 5,
+      "crush": 5,
+      "magic": 17,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Shaman mask",
     "id": 21838,
     "weight": 2.721,
@@ -151833,6 +152018,36 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "V's helm",
+    "id": 1000100,
+    "version": "",
+    "slot": "head",
+    "image": "V's helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 8,
+      "ranged_str": 2,
+      "magic_str": 30,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 8,
+      "ranged": 12
+    },
+    "defensive": {
+      "stab": 40,
+      "slash": 40,
+      "crush": 40,
+      "magic": 10,
+      "ranged": 40
     },
     "isTwoHanded": false
   },

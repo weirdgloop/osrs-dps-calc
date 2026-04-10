@@ -158,6 +158,7 @@ const ammoForRangedWeapons: { [weapon: number]: number[] } = {
   28834: [28837], // Tecu salamander, Irit tar
   28869: [28872, 28878], // Hunters' sunlight crossbow
   29000: [28991], // Eclipse atlatl
+  1000101: commonAmmoCategories().bow_t60, // Nature's recurve
 };
 
 export enum AmmoApplicability {
@@ -373,12 +374,26 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
   }
 
   const leagues = player.leagues.six.effects;
+  if (leagues.talent_thrown_weapon_accuracy && player.equipment.weapon?.category === 'Thrown') {
+    totals.offensive.ranged += 60;
+  }
+
   if (leagues.talent_percentage_magic_damage) {
     totals.bonuses.magic_str += leagues.talent_percentage_magic_damage * 10;
   }
 
-  if (leagues.talent_thrown_weapon_accuracy && player.equipment.weapon?.category === 'Thrown') {
-    totals.offensive.ranged += 60;
+  if (playerEquipment.ammo?.name === 'Crystal blessing') {
+    const crystalPieces = [
+      playerEquipment.head,
+      playerEquipment.body,
+      playerEquipment.legs,
+    ];
+    const matchingPieces = crystalPieces.filter(
+      (item) => item?.name?.startsWith('Crystal '),
+    ).length;
+
+    totals.bonuses.magic_str += matchingPieces * 20;
+    totals.offensive.magic += matchingPieces * 20;
   }
 
   if (playerEquipment.weapon?.name === "Tumeken's shadow" && player.style.stance !== 'Manual Cast') {

@@ -48,13 +48,10 @@ BUCKET_API_FIELDS = [
 
 ITEMS_TO_SKIP = [
     'The dogsword',
-    'Drygore blowpipe',
     'Amulet of the monarchs',
     'Emperor ring',
-    'Devil\'s element',
     'Nature\'s reprisal',
     'Gloves of the damned',
-    'Crystal blessing',
     'Sunlight spear',
     'Sunlit bracers',
     'Thunder khopesh',

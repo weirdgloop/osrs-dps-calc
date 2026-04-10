@@ -194,6 +194,27 @@ export default class BaseCalc {
   }
 
   /**
+   * Helper function that calculates the hit chance for mechanics that force a maximum accuracy roll.
+   * @param atk Attack roll of the player
+   * @param def Defence roll of the NPC
+   * @returns Hit chance of the attack
+   */
+  public static getMaxAccuracyHitChance(atk: number, def: number): number {
+    const stdRoll = (attack: number, defence: number) => ((attack > defence)
+      ? 1
+      : attack / (defence + 1));
+
+    if (atk < 0) atk = Math.min(0, atk + 2);
+    if (def < 0) def = Math.min(0, def + 2);
+
+    if (atk >= 0 && def >= 0) return stdRoll(atk, def);
+    if (atk >= 0 && def < 0) return 1;
+    if (atk < 0 && def >= 0) return 0;
+    if (atk < 0 && def < 0) return stdRoll(-def, -atk);
+    return 0;
+  }
+
+  /**
    * Simple utility function for checking if an item name is equipped. If an array of string is passed instead, this
    * function will return a boolean indicating whether ANY of the provided items are equipped.
    * @param item - item name
@@ -301,7 +322,7 @@ export default class BaseCalc {
    * @see https://oldschool.runescape.wiki/w/Black_mask_(i)
    */
   protected isWearingImbuedBlackMask(): boolean {
-    return this.wearing(['Black mask (i)', 'Slayer helmet (i)']) || this.player.leagues.six.cullingSpree;
+    return this.wearing(['Black mask (i)', 'Slayer helmet (i)', 'V\'s helm']) || this.player.leagues.six.cullingSpree;
   }
 
   /**
@@ -665,6 +686,10 @@ export default class BaseCalc {
   protected isImmuneToStrongBurns(): boolean {
     return this.monster.immunities.burn === BurnImmunity.STRONG
       || IMMUNE_TO_BURN_DAMAGE_NPC_IDS.includes(this.monster.id);
+  }
+
+  protected isSlayerMonster(): boolean {
+    return this.monster.is_slayer_monster;
   }
 
   protected addIssue(type: UserIssueType, message: string) {
