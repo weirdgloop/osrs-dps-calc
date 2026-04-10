@@ -1875,8 +1875,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist.addDist(echoDist);
 
       if (leagues.effects.talent_ranged_echo_cyclical) {
-        const echoDistCyclical = echoDist.scaleProbability(0.5);
-        echoDistCyclical.addHit(new WeightedHit(0.5, [Hitsplat.INACCURATE]));
+        const cyclicalChance = echoChance * 0.5;
+        const echoDistCyclical = echoDist.scaleProbability(cyclicalChance);
+        echoDistCyclical.addHit(new WeightedHit(1 - cyclicalChance, [Hitsplat.INACCURATE]));
         this.trackDist(DetailKey.DIST_LEAGUES_ECHO_CYCLICAL, echoDistCyclical);
 
         dist.addDist(echoDistCyclical);
