@@ -854,6 +854,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const baseRoll = effectiveLevel * (magicBonus + 64);
     let attackRoll = baseRoll;
 
+    const usingPoweredStaff = this.player.equipment.weapon?.category === EquipmentCategory.POWERED_STAFF
+      && this.player.style.stance !== 'Manual Cast';
+    if (usingPoweredStaff && this.wearing('Crystal blessing')) {
+      const crystalPieces = (this.wearing('Crystal helm') ? 1 : 0) + (this.wearing('Crystal legs') ? 2 : 0) + (this.wearing('Crystal body') ? 3 : 0);
+      attackRoll = Math.trunc(attackRoll * (20 + crystalPieces) / 20);
+    }
+
     let additiveBonus = 0;
     let blackMaskBonus = false;
     if (this.wearing('Amulet of avarice') && this.monster.name.startsWith('Revenant')) {
@@ -889,13 +896,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else if (this.wearing('Dragon hunter wand')) {
         attackRoll = this.trackFactor(DetailKey.MAX_HIT_DRAGONHUNTER, attackRoll, [7, 4]);
       }
-    }
-
-    const usingPoweredStaff = this.player.equipment.weapon?.category === EquipmentCategory.POWERED_STAFF
-      && this.player.style.stance !== 'Manual Cast';
-    if (usingPoweredStaff && this.wearing('Crystal blessing')) {
-      const crystalPieces = (this.wearing('Crystal helm') ? 1 : 0) + (this.wearing('Crystal legs') ? 2 : 0) + (this.wearing('Crystal body') ? 3 : 0);
-      attackRoll = Math.trunc(attackRoll * (20 + crystalPieces) / 20);
     }
 
     if (blackMaskBonus) {
