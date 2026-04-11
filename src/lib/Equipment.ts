@@ -452,8 +452,8 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
   }
 
   if (leagues.talent_ranged_strength_hp_difference) {
-    const hpMissing = Math.min(0, player.boosts.hp);
-    const boost = -Math.trunc(hpMissing / 10);
+    const hpDifference = Math.abs(player.boosts.hp);
+    const boost = Math.trunc(hpDifference / 10);
     totals.bonuses.ranged_str += boost;
   }
 
