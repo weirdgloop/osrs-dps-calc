@@ -961,7 +961,7 @@ class GlobalState implements State {
     this.player.leagues.six.selectedNodeIds = visited;
   }
 
-  toggleNodeSelection(id: string) {
+  toggleNodeSelection(id: string, allowMissingDependencies: boolean) {
     if (id === rootNode.id) {
       this.player.leagues.six.selectedNodeIds.clear();
       this.player.leagues.six.selectedNodeIds.add(rootNode.id);
@@ -971,8 +971,10 @@ class GlobalState implements State {
 
     if (this.player.leagues.six.selectedNodeIds.has(id)) {
       this.player.leagues.six.selectedNodeIds.delete(id);
-      this.pruneStrandedNodes();
-    } else if (this.reachableNodeIds.has(id)) {
+      if (!allowMissingDependencies) {
+        this.pruneStrandedNodes();
+      }
+    } else if (this.reachableNodeIds.has(id) || allowMissingDependencies) {
       this.player.leagues.six.selectedNodeIds.add(id);
     } else {
       this.pathToSelection(id);

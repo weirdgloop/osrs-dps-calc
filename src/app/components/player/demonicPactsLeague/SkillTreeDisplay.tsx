@@ -45,11 +45,7 @@ const SkillTreeDisplay = observer(({ interactive }: { interactive: boolean }) =>
 
   const onNodeClick = useCallback((_event: unknown, node: { id: string; }) => {
     if (node) {
-      if (isShiftPressed) {
-        store.pathToSelection(node.id);
-      } else {
-        store.toggleNodeSelection(node.id);
-      }
+      store.toggleNodeSelection(node.id, isShiftPressed && store.debug);
     }
   }, [isShiftPressed, store]);
   const onNodeMouseEnter = useCallback(
