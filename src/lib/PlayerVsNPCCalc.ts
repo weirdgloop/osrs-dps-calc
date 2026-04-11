@@ -25,6 +25,7 @@ import {
   BA_ATTACKER_MONSTERS,
   DOOM_OF_MOKHAIOTL_IDS,
   ECLIPSE_MOON_IDS,
+  COMBAT_SPELL_FIRE_RUNE_COST,
   GLOWING_CRYSTAL_IDS,
   GUARANTEED_ACCURACY_MONSTERS,
   GUARDIAN_IDS,
@@ -1956,6 +1957,22 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const lightMax = Math.max(1, Math.trunc(max * 0.4));
       const lightDist = HitDistribution.linear(acc, min, lightMax);
       dist.addDist(lightDist);
+    }
+
+    if (leagues.effects.talent_firerune_regen_damage_boost && this.player.spell) {
+      const fireRunesUsed = COMBAT_SPELL_FIRE_RUNE_COST[this.player.spell.name] ?? 0;
+      let regenChance = (leagues.effects.talent_regen_ammo ?? 0) / 100;
+      if (fireRunesUsed > 0 && regenChance > 0) {
+        let alwaysRegenerated = 0;
+        while (regenChance > 1) {
+          alwaysRegenerated += fireRunesUsed;
+          regenChance -= 1;
+        }
+        dist = dist.transform((h) => new HitDistribution([
+          new WeightedHit(regenChance, [new Hitsplat(h.damage + alwaysRegenerated + fireRunesUsed, h.accurate)]),
+          new WeightedHit(1.0 - regenChance, [new Hitsplat(h.damage + alwaysRegenerated, h.accurate)]),
+        ]));
+      }
     }
 
     if (process.env.NEXT_PUBLIC_HIT_DIST_SANITY_CHECK) {
