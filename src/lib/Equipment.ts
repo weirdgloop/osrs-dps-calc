@@ -374,9 +374,12 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
   }
 
   const leagues = player.leagues.six.effects;
-  if (leagues.talent_thrown_weapon_accuracy
-    && (player.equipment.weapon?.category === EquipmentCategory.THROWN || player.equipment.weapon?.category === EquipmentCategory.CHINCHOMPA)) {
-    totals.offensive.ranged += 60;
+
+  if (leagues.talent_thrown_weapon_accuracy) {
+    const isWearingThrown = player.equipment.weapon?.category === EquipmentCategory.THROWN
+      || player.equipment.weapon?.category === EquipmentCategory.CHINCHOMPA
+      || player.equipment.weapon?.name === 'Eclipse atlatl';
+    totals.offensive.ranged += isWearingThrown ? 60 : 0;
   }
 
   if (leagues.talent_percentage_magic_damage) {
