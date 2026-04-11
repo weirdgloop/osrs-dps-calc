@@ -1501,7 +1501,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (leagues.effects.talent_air_spell_damage_active_prayers && spellement === 'air') {
-      // todo(leagues): this needs the other non-combat prayers accessible via ui but that shouldn't require updating here
       const prayersActive = this.player.prayers.length;
       const bonusDamagePerPrayer = leagues.effects.talent_air_spell_damage_active_prayers;
       dist = dist.transform(multiplyTransformer(100 + (prayersActive * bonusDamagePerPrayer), 100));
@@ -2234,6 +2233,16 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         { transformInaccurate: false },
       );
     }
+
+    // if (this.wearing("King's barrage")) {
+    //   const iceBoltDist = this.noInitSubCalc(
+    //     {
+    //       ...this.player,
+    //       spell: spellByName("King's Ice Barrage"),
+    //       style: { name: 'Spell', type: 'magic', stance: 'Autocast' },
+    //     }
+    //   )
+    // }
 
     return npcDist;
   }
