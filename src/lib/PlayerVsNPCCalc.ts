@@ -1834,8 +1834,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist.addDist(lightDist);
     }
 
-    if (leagues.effects.talent_firerune_regen_damage_boost && this.player.spell) {
-      const fireRunesUsed = COMBAT_SPELL_FIRE_RUNE_COST[this.player.spell.name] ?? 0;
+    if (leagues.effects.talent_firerune_regen_damage_boost) {
+      const regeneratingWithStaff = this.player.equipment.weapon?.category === EquipmentCategory.POWERED_STAFF
+        && this.player.style.stance !== 'Manual Cast'
+        && leagues.effects.talent_regen_stave_charges_fire;
+      let fireRunesUsed = 0;
+      if (this.player.spell) {
+        fireRunesUsed = COMBAT_SPELL_FIRE_RUNE_COST[this.player.spell.name] ?? 0;
+      } else if (regeneratingWithStaff) {
+        fireRunesUsed = 1;
+      }
+
       let regenChance = (leagues.effects.talent_regen_ammo ?? 0) / 100;
       if (fireRunesUsed > 0 && regenChance > 0) {
         let alwaysRegenerated = 0;
