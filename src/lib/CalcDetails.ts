@@ -95,6 +95,7 @@ export enum DetailKey {
   DIST_LEAGUES_WATER_SPELL_DAMAGE_HIGH_HP = 'Dist leagues talent_water_spell_damage_high_hp',
   DIST_LEAGUES_ECHO = 'Dist leagues echo',
   DIST_LEAGUES_ECHO_CYCLICAL = 'Dist leagues echo cyclical',
+  DIST_LEAGUES_FLAMES_OF_CERBERUS = 'Dist leagues flames of cerberus',
   DIST_FINAL = 'Dist final',
   DIST_LEAGUES_BLINDBAG = 'Dist leagues blindbag',
   DIST_LEAGUES_BLINDBAG_RECURSIVE = 'Dist leagues blindbag recursive',
@@ -130,6 +131,7 @@ export enum DetailKey {
   LEAGUES_BLINDBAG_DAMAGE_BONUS = 'Player blindbag uniques max hit',
   LEAGUES_BLINDBAG_CHANCE_UNIQUE = 'Player blindbag uniques chance',
   LEAGUES_EARTH_SPELL_DEFENCE_BONUS = 'Player talent_earth_scale_defence_stat bonus damage',
+  LEAGUES_LIGHT_WEAPON_DOUBLEHIT_MAX = 'Player light weapon double hit max',
 }
 
 export interface DetailEntry {

@@ -16,17 +16,19 @@ interface SpellOption {
 const SpellSelect: React.FC = observer(() => {
   const store = useStore();
 
-  const options: SpellOption[] = spell.map((e, i) => ({
-    label: `${e.name}`,
-    value: i.toString(),
-    spell: {
-      name: e.name,
-      image: e.image,
-      max_hit: e.max_hit,
-      spellbook: e.spellbook as Spellbook,
-      element: e.element as Spellement,
-    },
-  }));
+  const options: SpellOption[] = spell
+    .filter((s) => s.unselectable !== true)
+    .map((e, i) => ({
+      label: `${e.name}`,
+      value: i.toString(),
+      spell: {
+        name: e.name,
+        image: e.image,
+        max_hit: e.max_hit,
+        spellbook: e.spellbook as Spellbook,
+        element: e.element as Spellement,
+      },
+    }));
 
   return (
     <Combobox<SpellOption>

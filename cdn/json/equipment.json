@@ -71300,6 +71300,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Fang of the hound",
+    "id": 1000105,
+    "weight": 0.666,
+    "version": "",
+    "slot": "weapon",
+    "image": "Fang of the hound.png",
+    "speed": 3,
+    "category": "Stab Sword",
+    "bonuses": {
+      "str": 20,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 60,
+      "slash": 60,
+      "crush": 10,
+      "magic": 3,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 3,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Farmer's boots",
     "id": 13644,
     "weight": 0.907,
@@ -90117,37 +90148,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Infernal Tecpatl",
-    "id": 1000104,
-    "weight": 3.628,
-    "version": "",
-    "slot": "weapon",
-    "image": "Infernal tecpatl.png",
-    "speed": 4,
-    "category": "Banner",
-    "bonuses": {
-      "str": 70,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": -1
-    },
-    "offensive": {
-      "stab": 72,
-      "slash": 72,
-      "crush": 72,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
     "name": "Infernal axe",
     "id": 13241,
     "weight": 1.814,
@@ -90921,6 +90921,37 @@
       "ranged": 0
     },
     "isTwoHanded": false
+  },
+  {
+    "name": "Infernal tecpatl",
+    "id": 1000104,
+    "weight": 3.628,
+    "version": "",
+    "slot": "weapon",
+    "image": "Infernal tecpatl.png",
+    "speed": 4,
+    "category": "Banner",
+    "bonuses": {
+      "str": 70,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": -1
+    },
+    "offensive": {
+      "stab": 72,
+      "slash": 72,
+      "crush": 72,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
   },
   {
     "name": "Infinite money bag",

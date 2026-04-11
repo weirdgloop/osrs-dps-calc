@@ -15,7 +15,11 @@ import {
   WeightedHit,
 } from '@/lib/HitDist';
 import {
-  canUseSunfireRunes, getSpellMaxHit, isBindSpell, Spellement,
+  canUseSunfireRunes,
+  getSpellMaxHit,
+  isBindSpell,
+  spellByName,
+  Spellement,
 } from '@/types/Spell';
 import { PrayerData, PrayerMap } from '@/enums/Prayer';
 import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
@@ -1844,8 +1848,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       && this.isUsingMeleeStyle()
       && !this.opts.usingSpecialAttack
       && (this.player.equipment.weapon?.weight ?? Infinity) < 1) {
-      const lightMax = Math.max(1, Math.trunc(max * 0.4));
-      const lightDist = HitDistribution.linear(acc, min, lightMax);
+      const lightMax = this.trackFactor(DetailKey.LEAGUES_LIGHT_WEAPON_DOUBLEHIT_MAX, max, [4, 10]);
+      const lightDist = HitDistribution.linear(acc, Math.min(min, lightMax), lightMax);
       dist.addDist(lightDist);
     }
 
@@ -1863,6 +1867,27 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           new WeightedHit(1.0 - regenChance, [new Hitsplat(h.damage + alwaysRegenerated)]),
         ]), { transformInaccurate: false });
       }
+    }
+
+    if (this.wearing('Fang of the hound') && this.isUsingMeleeStyle()) {
+      const flamesOfCerberusDist = this.noInitSubCalc(
+        {
+          ...this.player,
+          spell: spellByName('Flames of Cerberus'),
+          style: { name: 'Spell', type: 'magic', stance: 'Autocast' },
+        },
+        this.monster,
+        {
+          loadoutName: `${this.opts.loadoutName}/Flames of Cerberus`,
+          overrides: { accuracy: 1.0 },
+        },
+      ).getAttackerDist().dists[0];
+      this.trackDist(DetailKey.DIST_LEAGUES_FLAMES_OF_CERBERUS, flamesOfCerberusDist);
+
+      dist = dist.transform(
+        (h) => HitDistribution.single(1.0, [h]).zip(flamesOfCerberusDist),
+        { transformInaccurate: false },
+      );
     }
 
     // raise accurate 0s to 1
