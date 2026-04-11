@@ -16,7 +16,7 @@ import { isDefined } from '@/utils';
 
 const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
-    const isZeroDmg = payload[0].payload.name === 0;
+    const isZeroDmg = parseInt(payload[0].payload.name) === 0;
 
     return (
       <div className="bg-white shadow rounded p-2 text-sm text-black flex items-center gap-2">
