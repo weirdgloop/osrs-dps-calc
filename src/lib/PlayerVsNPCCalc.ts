@@ -1800,7 +1800,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       kandarinDiary: this.player.buffs.kandarinDiary,
       monster: this.monster,
     };
-    if (this.player.style.type === 'ranged' && this.player.equipment.weapon?.name.includes('rossbow')) {
+    if (this.player.style.type === 'ranged' && this.player.equipment.weapon?.category === 'Crossbow') {
       if (this.wearing(['Opal bolts (e)', 'Opal dragon bolts (e)'])) {
         dist = dist.transform(opalBolts(boltContext));
       } else if (this.wearing(['Pearl bolts (e)', 'Pearl dragon bolts (e)'])) {
@@ -1878,8 +1878,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.transform(divisionTransformer(2));
     }
 
-    if (this.player.style.type === 'ranged'
-      && (this.player.equipment.weapon?.name.includes('rossbow') || this.wearing("King's barrage"))) {
+    if (this.player.style.type === 'ranged' && this.player.equipment.weapon?.category === 'Crossbow') {
       const currentHp = this.player.skills.hp + this.player.boosts.hp;
       if (this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)']) && currentHp >= 10) {
         dist = dist.transform(rubyBolts(boltContext));
@@ -2510,7 +2509,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     // a special case for optimization, ruby bolts only change dps under 500 hp
     // so for high health targets, avoid recomputing dist until then
     if (this.player.style.type === 'ranged'
-      && this.player.equipment.weapon?.name.includes('rossbow')
+      && this.player.equipment.weapon?.category === 'Crossbow'
       && ['Ruby bolts (e)', 'Ruby dragon bolts (e)'].includes(this.player.equipment.ammo?.name || '')
       && this.monster.inputs.monsterCurrentHp >= 500
       && hp >= 500) {
@@ -2560,7 +2559,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (monster.name === 'Vardorvis') {
       return true;
     }
-    if (loadout.equipment.weapon?.name.includes('rossbow') && this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)'])) {
+    if (this.player.style.type === 'ranged'
+      && loadout.equipment.weapon?.category === 'Crossbow'
+      && this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)'])) {
       return true;
     }
     if (this.wearing('Keris partisan of the sun') && TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id)) {
