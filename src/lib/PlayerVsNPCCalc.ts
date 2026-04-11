@@ -1154,6 +1154,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return [0, 0];
     }
 
+    if (this.opts.overrides.maxHit) {
+      return this.opts.overrides.maxHit;
+    }
+
     const style = this.player.style.type;
 
     let minMax: MinMax = [0, 0];
@@ -1263,13 +1267,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (P2_WARDEN_IDS.includes(this.monster.id)) {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
-    }
-
-    if (this.opts.isEcho && this.player.leagues.six.effects.talent_bow_always_pass_accuracy) {
-      const isWearingBow = this.player.equipment.weapon?.category === EquipmentCategory.BOW && !this.wearing('Eclipse atlatl');
-      if (this.isUsingMeleeStyle() || isWearingBow) {
-        return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
-      }
     }
 
     // Giant rat (Scurrius)
@@ -1420,61 +1417,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   private getDistributionImpl(): AttackDistribution {
     const attackerDist = this.getAttackerDist();
 
-    const npcDist = this.applyNpcTransforms(attackerDist);
-
-    const leagues = this.player.leagues.six;
-    const blindbagUniques = this.getBlindbagUniques();
-    if (leagues.effects.talent_free_random_weapon_attack_chance
-        && this.isUsingMeleeStyle()
-        && !this.opts.isBlindBag
-        && !this.opts.usingSpecialAttack
-        && blindbagUniques >= 1
-        && (this.player.equipment.weapon?.weight ?? 0) >= 1) {
-      let chanceBlindbagProc = leagues.effects.talent_free_random_weapon_attack_chance / 100;
-      if (leagues.effects.talent_unique_blindbag_chance) {
-        chanceBlindbagProc += (0.02 * blindbagUniques);
-      }
-
-      let blindbagDist = new HitDistribution([new WeightedHit(1 - chanceBlindbagProc, [Hitsplat.INACCURATE])]);
-      const partialDists = leagues.blindbagWeapons.map((weapon) => {
-        const chanceThisWeapon = 1 / leagues.blindbagWeapons.length;
-        let playerWithWeapon = <Player>{
-          ...this.player,
-          equipment: {
-            ...this.player.equipment,
-            weapon,
-          },
-          style: getCombatStylesForCategory(weapon.category)[0], // todo use same slot as equipped?
-        };
-        playerWithWeapon = {
-          ...playerWithWeapon,
-          ...calculateEquipmentBonusesFromGear(playerWithWeapon, this.monster),
-        };
-
-        const subCalc = this.noInitSubCalc(playerWithWeapon, this.monster, {
-          loadoutName: `${this.opts.loadoutName}/Blindbag ${weapon.id} (${weapon.name})`,
-          isBlindBag: true,
-        });
-
-        return subCalc.getDistribution()
-          .singleHitsplat
-          .scaleProbability(chanceBlindbagProc * chanceThisWeapon)
-          .hits;
-      });
-      partialDists.forEach((partial) => blindbagDist.addHits(partial));
-      blindbagDist = blindbagDist.cumulative();
-      this.trackDist(DetailKey.DIST_LEAGUES_BLINDBAG, blindbagDist);
-
-      let recursiveBlindBag = blindbagDist;
-      for (let i = 1; i <= 3; i++) {
-        const thisRecurse = blindbagDist.scaleProbability(chanceBlindbagProc ** i);
-        thisRecurse.addHit(new WeightedHit(1 - (chanceBlindbagProc ** i), [Hitsplat.INACCURATE]));
-        recursiveBlindBag = recursiveBlindBag.zip(thisRecurse);
-        recursiveBlindBag = recursiveBlindBag.cumulative();
-      }
-      this.trackDist(DetailKey.DIST_LEAGUES_BLINDBAG_RECURSIVE, recursiveBlindBag);
-
-      npcDist.addDist(recursiveBlindBag);
+    let npcDist = this.applyNpcTransforms(attackerDist);
+    if (!this.opts.isLeaguesSubCalc) {
+      npcDist = this.applyLeaguesPostProcessing(npcDist);
     }
 
     if (process.env.NEXT_PUBLIC_HIT_DIST_SANITY_CHECK) {
@@ -1500,6 +1445,24 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return new AttackDistribution([new HitDistribution([new WeightedHit(1.0, [Hitsplat.INACCURATE])])]);
     }
 
+    const leagues = this.player.leagues.six;
+    if (this.opts.isEcho) {
+      const meleeEcho = this.isUsingMeleeStyle() && leagues.effects.talent_2h_melee_echos && this.player.equipment.weapon?.isTwoHanded;
+      const isWearingThrown = meleeEcho || (this.player.equipment.weapon?.category === EquipmentCategory.THROWN || this.wearing('Eclipse atlatl'));
+      let echoDist = HitDistribution.linear(acc, min, max);
+
+      if (leagues.effects.talent_thrown_maxhit_echoes && isWearingThrown) {
+        const effectChance = 0.2;
+        echoDist = echoDist.scaleProbability(1 - effectChance);
+        echoDist.addHit(new WeightedHit(effectChance * acc, [new Hitsplat(max)]));
+        echoDist.addHit(new WeightedHit(effectChance * (1 - acc), [Hitsplat.INACCURATE]));
+      }
+      this.trackDist(DetailKey.DIST_LEAGUES_ECHO, echoDist);
+
+      // echoes don't trigger any other effects, break early
+      return new AttackDistribution([echoDist]);
+    }
+
     // standard linear
     const standardHitDist = HitDistribution.linear(acc, min, max);
     let dist = new AttackDistribution([standardHitDist]);
@@ -1518,7 +1481,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       ]);
     }
 
-    const leagues = this.player.leagues.six;
     if (leagues.effects.talent_crossbow_max_hit
         && this.player.equipment.weapon?.category === 'Crossbow') {
       dist = new AttackDistribution([HitDistribution.single(acc, [new Hitsplat(max)])]);
@@ -1869,27 +1831,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
-    if (this.wearing('Fang of the hound') && this.isUsingMeleeStyle()) {
-      const flamesOfCerberusDist = this.noInitSubCalc(
-        {
-          ...this.player,
-          spell: spellByName('Flames of Cerberus'),
-          style: { name: 'Spell', type: 'magic', stance: 'Autocast' },
-        },
-        this.monster,
-        {
-          loadoutName: `${this.opts.loadoutName}/Flames of Cerberus`,
-          overrides: { accuracy: 1.0 },
-        },
-      ).getAttackerDist().dists[0];
-      this.trackDist(DetailKey.DIST_LEAGUES_FLAMES_OF_CERBERUS, flamesOfCerberusDist);
-
-      dist = dist.transform(
-        (h) => HitDistribution.single(1.0, [h]).zip(flamesOfCerberusDist),
-        { transformInaccurate: false },
-      );
-    }
-
     // raise accurate 0s to 1
     if (accurateZeroApplicable) {
       dist = dist.transform(
@@ -1952,59 +1893,15 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     // monsters that are always max hit no matter what
-    if (!this.opts.isBlindBag
-        && ((this.player.style.type === 'magic' && ALWAYS_MAX_HIT_MONSTERS.magic.includes(this.monster.id))
+    if ((this.player.style.type === 'magic' && ALWAYS_MAX_HIT_MONSTERS.magic.includes(this.monster.id))
           || (this.isUsingMeleeStyle() && ALWAYS_MAX_HIT_MONSTERS.melee.includes(this.monster.id))
-          || (this.player.style.type === 'ranged' && ALWAYS_MAX_HIT_MONSTERS.ranged.includes(this.monster.id)))) {
+          || (this.player.style.type === 'ranged' && ALWAYS_MAX_HIT_MONSTERS.ranged.includes(this.monster.id))) {
       if (YAMA_VOID_FLARE_IDS.includes(this.monster.id) && this.player.buffs.markOfDarknessSpell && this.player.spell?.name.includes('Demonbane')) {
         const demonbaneFactor = this.wearing('Purging staff') ? 50 : 25;
         return new AttackDistribution([HitDistribution.single(1.0, [new Hitsplat(max + Math.trunc(Math.trunc(max * demonbaneFactor / 100) * this.demonbaneVulnerability() / 100))])]);
       }
 
       return new AttackDistribution([HitDistribution.single(1.0, [new Hitsplat(dist.getMax())])]);
-    }
-
-    const rangedEcho = this.player.style.type === 'ranged' && leagues.effects.talent_ranged_regen_echo_chance;
-    const meleeEcho = this.isUsingMeleeStyle() && leagues.effects.talent_2h_melee_echos && this.player.equipment.weapon?.isTwoHanded;
-    if (rangedEcho || meleeEcho) {
-      const isWearingCrossbow = meleeEcho || this.player.equipment.weapon?.category === EquipmentCategory.CROSSBOW;
-      const isWearingThrown = meleeEcho || (this.player.equipment.weapon?.category === EquipmentCategory.THROWN || this.wearing('Eclipse atlatl'));
-
-      let triggerChance = (meleeEcho ? 5 : leagues.effects.talent_ranged_regen_echo_chance!) / 100;
-      if (leagues.effects.talent_crossbow_echo_reproc_chance && isWearingCrossbow) {
-        triggerChance += leagues.effects.talent_crossbow_echo_reproc_chance / 100;
-      }
-      this.track(DetailKey.LEAGUES_ECHO_CHANCE_TRIGGER, triggerChance);
-
-      let echoChance = triggerChance;
-      if (rangedEcho) {
-        const regenChance = (leagues.effects.talent_regen_ammo ?? 0) / 100;
-        echoChance *= regenChance;
-        this.track(DetailKey.LEAGUES_ECHO_CHANCE_REGEN, echoChance);
-      }
-
-      const echoSubCalc = this.noInitSubCalc(this.player, this.monster, { isEcho: true });
-      const echoAcc = echoSubCalc.getHitChance();
-      let echoDist = HitDistribution.linear(echoChance * echoAcc, min, max);
-      if (leagues.effects.talent_thrown_maxhit_echoes && isWearingThrown) {
-        const effectChance = 0.2 * echoChance;
-        echoDist = echoDist.scaleProbability(1 - effectChance);
-        echoDist.addHit(new WeightedHit(effectChance * echoAcc, [new Hitsplat(max)]));
-        echoDist.addHit(new WeightedHit(effectChance * (1 - echoAcc), [Hitsplat.INACCURATE]));
-      }
-      this.trackDist(DetailKey.DIST_LEAGUES_ECHO, echoDist);
-      dist.addDist(echoDist);
-
-      if (leagues.effects.talent_ranged_echo_cyclical) {
-        const cyclicalChance = triggerChance * 0.5;
-        const echoDistCyclical = echoDist.scaleProbability(cyclicalChance);
-        echoDistCyclical.addHit(new WeightedHit(1 - cyclicalChance, [Hitsplat.INACCURATE]));
-        this.trackDist(DetailKey.DIST_LEAGUES_ECHO_CYCLICAL, echoDistCyclical);
-
-        dist.addDist(echoDistCyclical);
-        dist.addDist(echoDistCyclical);
-        dist.addDist(echoDistCyclical);
-      }
     }
 
     if (process.env.NEXT_PUBLIC_HIT_DIST_SANITY_CHECK) {
@@ -2030,7 +1927,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     // todo this comes up in a few places now, it may be good to abstract it into a "getDamageStyle"
     let styleType = this.player.style.type;
-    if (this.opts.usingSpecialAttack && this.wearing('Voidwaker')) {
+    if (this.opts.isEcho) {
+      styleType = 'ranged';
+    } else if (this.opts.usingSpecialAttack && this.wearing('Voidwaker')) {
       styleType = 'magic';
     }
 
@@ -2146,7 +2045,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const mattrs = this.monster.attributes;
     let styleType = this.player.style.type;
 
-    if (this.opts.usingSpecialAttack && this.wearing('Voidwaker')) {
+    if (this.opts.isEcho) {
+      styleType = 'ranged';
+    } else if (this.opts.usingSpecialAttack && this.wearing('Voidwaker')) {
       styleType = 'magic';
     }
 
@@ -2205,6 +2106,136 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     return false;
+  }
+
+  private applyLeaguesPostProcessing(npcDist: AttackDistribution): AttackDistribution {
+    const acc = this.getHitChance();
+    const [min, max] = this.getMinAndMax();
+
+    const leagues = this.player.leagues.six;
+    const blindbagUniques = this.getBlindbagUniques();
+    if (leagues.effects.talent_free_random_weapon_attack_chance
+      && this.isUsingMeleeStyle()
+      && !this.opts.usingSpecialAttack
+      && blindbagUniques >= 1
+      && (this.player.equipment.weapon?.weight ?? 0) >= 1) {
+      let chanceBlindbagProc = leagues.effects.talent_free_random_weapon_attack_chance / 100;
+      if (leagues.effects.talent_unique_blindbag_chance) {
+        chanceBlindbagProc += (0.02 * blindbagUniques);
+      }
+
+      let blindbagDist = new HitDistribution([new WeightedHit(1 - chanceBlindbagProc, [Hitsplat.INACCURATE])]);
+      const partialDists = leagues.blindbagWeapons.map((weapon) => {
+        const chanceThisWeapon = 1 / leagues.blindbagWeapons.length;
+        let playerWithWeapon = <Player>{
+          ...this.player,
+          equipment: {
+            ...this.player.equipment,
+            weapon,
+          },
+          style: getCombatStylesForCategory(weapon.category)[0], // todo use same slot as equipped?
+        };
+        playerWithWeapon = {
+          ...playerWithWeapon,
+          ...calculateEquipmentBonusesFromGear(playerWithWeapon, this.monster),
+        };
+
+        const subCalc = this.noInitSubCalc(playerWithWeapon, this.monster, {
+          loadoutName: `${this.opts.loadoutName}/Blindbag ${weapon.id} (${weapon.name})`,
+          isLeaguesSubCalc: true,
+        });
+
+        return subCalc.getDistribution()
+          .singleHitsplat
+          .scaleProbability(chanceBlindbagProc * chanceThisWeapon)
+          .hits;
+      });
+      partialDists.forEach((partial) => blindbagDist.addHits(partial));
+      blindbagDist = blindbagDist.cumulative();
+      this.trackDist(DetailKey.DIST_LEAGUES_BLINDBAG, blindbagDist);
+
+      const recursiveBlindBag = blindbagDist;
+      for (let i = 1; i <= 3; i++) { // todo
+        // const thisRecurse = blindbagDist.scaleProbability(chanceBlindbagProc ** i);
+        // thisRecurse.addHit(new WeightedHit(1 - (chanceBlindbagProc ** i), [Hitsplat.INACCURATE]));
+        // recursiveBlindBag = recursiveBlindBag.zip(thisRecurse);
+        // recursiveBlindBag = recursiveBlindBag.cumulative();
+      }
+      this.trackDist(DetailKey.DIST_LEAGUES_BLINDBAG_RECURSIVE, recursiveBlindBag);
+
+      npcDist.addDist(recursiveBlindBag);
+    }
+
+    const rangedEcho = this.player.style.type === 'ranged' && leagues.effects.talent_ranged_regen_echo_chance;
+    const meleeEcho = this.isUsingMeleeStyle() && leagues.effects.talent_2h_melee_echos && this.player.equipment.weapon?.isTwoHanded;
+    if (rangedEcho || meleeEcho) {
+      const isWearingBow = meleeEcho || (this.player.equipment.weapon?.category === EquipmentCategory.BOW && !this.wearing('Eclipse atlatl'));
+      const isWearingCrossbow = meleeEcho || this.player.equipment.weapon?.category === EquipmentCategory.CROSSBOW;
+
+      const regenChance = this.track(DetailKey.LEAGUES_ECHO_CHANCE_REGEN, meleeEcho ? 1 : (leagues.effects.talent_regen_ammo ?? 0) / 100);
+      let echoChance = (meleeEcho ? 5 : leagues.effects.talent_ranged_regen_echo_chance!) / 100;
+      if (leagues.effects.talent_crossbow_echo_reproc_chance && isWearingCrossbow) {
+        echoChance += leagues.effects.talent_crossbow_echo_reproc_chance / 100;
+      }
+      this.track(DetailKey.LEAGUES_ECHO_CHANCE_TRIGGER, echoChance);
+
+      const alwaysAccurate = leagues.effects.talent_bow_always_pass_accuracy && isWearingBow;
+      const echoAcc = this.track(DetailKey.LEAGUES_ECHO_ACCURACY, alwaysAccurate ? 1 : acc);
+
+      const echoSubCalc = this.noInitSubCalc(
+        {
+          ...this.player,
+        },
+        this.monster,
+        {
+          loadoutName: `${this.opts.loadoutName}/Echo`,
+          isLeaguesSubCalc: true,
+          isEcho: true,
+          overrides: { accuracy: echoAcc, maxHit: [min, max] },
+        },
+      );
+      let echoDist = this.trackDist(DetailKey.DIST_LEAGUES_ECHO, echoSubCalc.getDistribution().dists[0]);
+
+      const combinedEchoHappeningChance = echoChance * regenChance;
+      echoDist = echoDist.scaleProbability(combinedEchoHappeningChance);
+      echoDist.addHit(new WeightedHit(1 - combinedEchoHappeningChance, [Hitsplat.INACCURATE]));
+      npcDist.addDist(echoDist);
+
+      if (leagues.effects.talent_ranged_echo_cyclical) {
+        const cyclicChance = this.track(DetailKey.LEAGUES_ECHO_CHANCE_CYCLICAL, echoChance / 2);
+        const echoDistCyclical = echoDist.scaleProbability(cyclicChance);
+        echoDistCyclical.addHit(new WeightedHit(1 - cyclicChance, [Hitsplat.INACCURATE]));
+        this.trackDist(DetailKey.DIST_LEAGUES_ECHO_CYCLICAL, echoDistCyclical);
+
+        npcDist.addDist(echoDistCyclical);
+        npcDist.addDist(echoDistCyclical);
+        npcDist.addDist(echoDistCyclical);
+      }
+    }
+
+    if (this.wearing('Fang of the hound') && this.isUsingMeleeStyle()) {
+      const flamesOfCerberusDist = this.noInitSubCalc(
+        {
+          ...this.player,
+          spell: spellByName('Flames of Cerberus'),
+          style: { name: 'Spell', type: 'magic', stance: 'Autocast' },
+        },
+        this.monster,
+        {
+          loadoutName: `${this.opts.loadoutName}/Flames of Cerberus`,
+          isLeaguesSubCalc: true,
+          overrides: { accuracy: 1.0 },
+        },
+      ).getDistribution().dists[0];
+      this.trackDist(DetailKey.DIST_LEAGUES_FLAMES_OF_CERBERUS, flamesOfCerberusDist);
+
+      npcDist = npcDist.transform(
+        (h) => HitDistribution.single(1.0, [h]).zip(flamesOfCerberusDist),
+        { transformInaccurate: false },
+      );
+    }
+
+    return npcDist;
   }
 
   /**

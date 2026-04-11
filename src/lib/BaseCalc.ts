@@ -13,7 +13,7 @@ import {
 } from '@/lib/constants';
 import { UserIssue } from '@/types/State';
 import { CalcDetails, DetailEntry } from '@/lib/CalcDetails';
-import { Factor } from '@/lib/Math';
+import { Factor, MinMax } from '@/lib/Math';
 import { scaleMonster } from '@/lib/MonsterScaling';
 import { getCombatStylesForCategory, isDefined } from '@/utils';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
@@ -25,12 +25,14 @@ export interface CalcOpts {
   detailedOutput?: boolean,
   disableMonsterScaling?: boolean,
   usingSpecialAttack?: boolean,
+  isLeaguesSubCalc?: boolean,
   isBlindBag?: boolean,
   isEcho?: boolean,
   overrides?: {
     accuracy?: number,
     attackRoll?: number,
     defenceRoll?: number,
+    maxHit?: MinMax,
   },
 }
 
@@ -47,6 +49,7 @@ const DEFAULT_OPTS: Required<InternalOpts> = {
   detailedOutput: false,
   disableMonsterScaling: false,
   usingSpecialAttack: false,
+  isLeaguesSubCalc: false,
   isBlindBag: false,
   isEcho: false,
   noInit: false,
@@ -131,7 +134,7 @@ export default class BaseCalc {
     return result;
   }
 
-  protected trackDist(label: Parameters<CalcDetails['track']>[0], dist: AttackDistribution | HitDistribution, textOverride?: Parameters<CalcDetails['track']>[2]): AttackDistribution | HitDistribution {
+  protected trackDist<T extends AttackDistribution | HitDistribution>(label: Parameters<CalcDetails['track']>[0], dist: T, textOverride?: Parameters<CalcDetails['track']>[2]): T {
     this.track(label, dist, textOverride);
     return dist;
   }

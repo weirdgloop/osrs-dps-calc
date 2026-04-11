@@ -433,5 +433,12 @@
     "spellbook": "standard",
     "element": "fire",
     "unselectable": true
+  },
+  {
+    "name": "King's Ice Barrage",
+    "image": "Wind Wave.png",
+    "max_hit": 1,
+    "spellbook": "ancient",
+    "unselectable": true
   }
 ]
