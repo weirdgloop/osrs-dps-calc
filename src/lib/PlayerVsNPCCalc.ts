@@ -1447,9 +1447,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       npcDist = attackerDist.transform(this.applyNpcTransforms(styleType));
     }
 
-    if (!this.opts.isLeaguesSubCalc) {
-      npcDist = this.applyLeaguesPostProcessing(npcDist);
-    }
+    npcDist = this.applyLeaguesPostProcessing(npcDist);
 
     if (process.env.NEXT_PUBLIC_HIT_DIST_SANITY_CHECK) {
       npcDist.dists.forEach((hitDist, ix) => {
@@ -2149,7 +2147,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       && this.isUsingMeleeStyle()
       && !this.opts.usingSpecialAttack
       && blindbagUniques >= 1
-      && (this.player.equipment.weapon?.weight ?? 0) >= 1) {
+      && (this.player.equipment.weapon?.weight ?? 0) >= 1
+      && !this.opts.isBlindBag
+      && !this.opts.isEcho) {
       let chanceBlindbagProc = leagues.effects.talent_free_random_weapon_attack_chance / 100;
       if (leagues.effects.talent_unique_blindbag_chance) {
         chanceBlindbagProc += (0.02 * blindbagUniques);
@@ -2176,7 +2176,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           isBlindBag: true,
           blindBagDistance: this.getDistanceToEnemy(),
           blindBagUniques: blindbagUniques,
-          isLeaguesSubCalc: true,
         });
 
         return subCalc.getDistribution()
@@ -2202,7 +2201,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     const rangedEcho = this.player.style.type === 'ranged' && leagues.effects.talent_ranged_regen_echo_chance;
     const meleeEcho = this.isUsingMeleeStyle() && leagues.effects.talent_2h_melee_echos && this.player.equipment.weapon?.isTwoHanded;
-    if (rangedEcho || meleeEcho) {
+    if ((rangedEcho || meleeEcho) && !this.opts.isEcho) {
       const isWearingBow = meleeEcho || (this.player.equipment.weapon?.category === EquipmentCategory.BOW && !this.wearing('Eclipse atlatl'));
       const isWearingCrossbow = meleeEcho || this.player.equipment.weapon?.category === EquipmentCategory.CROSSBOW;
 
@@ -2223,7 +2222,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         this.monster,
         {
           loadoutName: `${this.opts.loadoutName}/Echo`,
-          isLeaguesSubCalc: true,
           isEcho: true,
           overrides: { accuracy: echoAcc, maxHit: [min, max] },
         },
@@ -2257,7 +2255,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         this.monster,
         {
           loadoutName: `${this.opts.loadoutName}/Flames of Cerberus`,
-          isLeaguesSubCalc: true,
           overrides: { accuracy: 1.0 },
         },
       ).getDistribution().dists[0];
