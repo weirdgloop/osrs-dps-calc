@@ -1839,6 +1839,31 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.transform(flatAddTransformer(bonusDamage), { transformInaccurate: false });
     }
 
+    if (leagues.effects.talent_light_weapon_doublehit
+      && this.isUsingMeleeStyle()
+      && !this.opts.usingSpecialAttack
+      && (this.player.equipment.weapon?.weight ?? Infinity) < 1) {
+      const lightMax = Math.max(1, Math.trunc(max * 0.4));
+      const lightDist = HitDistribution.linear(acc, min, lightMax);
+      dist.addDist(lightDist);
+    }
+
+    if (leagues.effects.talent_firerune_regen_damage_boost && this.player.spell) {
+      const fireRunesUsed = COMBAT_SPELL_FIRE_RUNE_COST[this.player.spell.name] ?? 0;
+      let regenChance = (leagues.effects.talent_regen_ammo ?? 0) / 100;
+      if (fireRunesUsed > 0 && regenChance > 0) {
+        let alwaysRegenerated = 0;
+        while (regenChance > 1) {
+          alwaysRegenerated += fireRunesUsed;
+          regenChance -= 1;
+        }
+        dist = dist.transform((h) => new HitDistribution([
+          new WeightedHit(regenChance, [new Hitsplat(h.damage + alwaysRegenerated + fireRunesUsed)]),
+          new WeightedHit(1.0 - regenChance, [new Hitsplat(h.damage + alwaysRegenerated)]),
+        ]), { transformInaccurate: false });
+      }
+    }
+
     // raise accurate 0s to 1
     if (accurateZeroApplicable) {
       dist = dist.transform(
@@ -1953,31 +1978,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         dist.addDist(echoDistCyclical);
         dist.addDist(echoDistCyclical);
         dist.addDist(echoDistCyclical);
-      }
-    }
-
-    if (leagues.effects.talent_light_weapon_doublehit
-        && this.isUsingMeleeStyle()
-        && !this.opts.usingSpecialAttack
-        && (this.player.equipment.weapon?.weight ?? Infinity) < 1) {
-      const lightMax = Math.max(1, Math.trunc(max * 0.4));
-      const lightDist = HitDistribution.linear(acc, min, lightMax);
-      dist.addDist(lightDist);
-    }
-
-    if (leagues.effects.talent_firerune_regen_damage_boost && this.player.spell) {
-      const fireRunesUsed = COMBAT_SPELL_FIRE_RUNE_COST[this.player.spell.name] ?? 0;
-      let regenChance = (leagues.effects.talent_regen_ammo ?? 0) / 100;
-      if (fireRunesUsed > 0 && regenChance > 0) {
-        let alwaysRegenerated = 0;
-        while (regenChance > 1) {
-          alwaysRegenerated += fireRunesUsed;
-          regenChance -= 1;
-        }
-        dist = dist.transform((h) => new HitDistribution([
-          new WeightedHit(regenChance, [new Hitsplat(h.damage + alwaysRegenerated + fireRunesUsed)]),
-          new WeightedHit(1.0 - regenChance, [new Hitsplat(h.damage + alwaysRegenerated)]),
-        ]), { transformInaccurate: false });
       }
     }
 
