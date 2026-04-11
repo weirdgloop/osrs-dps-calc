@@ -437,11 +437,6 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
     totals.bonuses.ranged_str += 1;
   }
 
-  if (leagues.talent_thrown_weapon_melee_str_scale
-    && (player.equipment.weapon?.category === EquipmentCategory.THROWN || player.equipment.weapon?.category === EquipmentCategory.CHINCHOMPA)) {
-    totals.bonuses.ranged_str += Math.trunc(totals.bonuses.str * 0.80);
-  }
-
   if (leagues.talent_offhand_stat_boost && playerEquipment.shield) {
     totals.bonuses.str += 5;
     totals.bonuses.ranged_str += 5;
@@ -456,6 +451,11 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
 
   if (leagues.talent_melee_strength_prayer_bonus) {
     totals.bonuses.str += Math.trunc(totals.bonuses.prayer / 2);
+  }
+
+  if (leagues.talent_thrown_weapon_melee_str_scale
+    && (player.equipment.weapon?.category === EquipmentCategory.THROWN || player.equipment.weapon?.category === EquipmentCategory.CHINCHOMPA)) {
+    totals.bonuses.ranged_str += Math.trunc(totals.bonuses.str * 0.80);
   }
 
   totals.attackSpeed = calculateAttackSpeed(player, monster);
