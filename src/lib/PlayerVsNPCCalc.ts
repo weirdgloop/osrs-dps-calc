@@ -1423,6 +1423,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (leagues.effects.talent_free_random_weapon_attack_chance
         && this.isUsingMeleeStyle()
         && !this.opts.isBlindBag
+        && !this.opts.usingSpecialAttack
         && blindbagUniques >= 1
         && (this.player.equipment.weapon?.weight ?? 0) >= 1) {
       let chanceBlindbagProc = leagues.effects.talent_free_random_weapon_attack_chance / 100;
@@ -1432,7 +1433,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
       let blindbagDist = new HitDistribution([new WeightedHit(1 - chanceBlindbagProc, [Hitsplat.INACCURATE])]);
       const partialDists = leagues.blindbagWeapons.map((weapon) => {
-        const chanceThisWeapon = 1 / blindbagUniques;
+        const chanceThisWeapon = 1 / leagues.blindbagWeapons.length;
         let playerWithWeapon = <Player>{
           ...this.player,
           equipment: {
