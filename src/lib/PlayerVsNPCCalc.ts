@@ -1969,9 +1969,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           regenChance -= 1;
         }
         dist = dist.transform((h) => new HitDistribution([
-          new WeightedHit(regenChance, [new Hitsplat(h.damage + alwaysRegenerated + fireRunesUsed, h.accurate)]),
-          new WeightedHit(1.0 - regenChance, [new Hitsplat(h.damage + alwaysRegenerated, h.accurate)]),
-        ]));
+          new WeightedHit(regenChance, [new Hitsplat(h.damage + alwaysRegenerated + fireRunesUsed)]),
+          new WeightedHit(1.0 - regenChance, [new Hitsplat(h.damage + alwaysRegenerated)]),
+        ]), { transformInaccurate: false });
       }
     }
 
