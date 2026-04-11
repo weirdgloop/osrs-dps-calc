@@ -1547,8 +1547,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (leagues.effects.talent_fire_hp_consume_for_damage && spellement === 'fire') {
       const currentHp = this.player.skills.hp + this.player.boosts.hp;
 
-      // 6% of max hp.
-      const maxConsume = Math.trunc(this.player.skills.hp * 0.06);
+      // 6% of current hp.
+      const maxConsume = Math.trunc(currentHp * 0.06);
       // Effect cannot kill player.
       const actualConsume = Math.min(maxConsume, currentHp - 1);
       dist = dist.transform(flatAddTransformer(actualConsume * 2));
