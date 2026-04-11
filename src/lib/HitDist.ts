@@ -133,14 +133,18 @@ export class HitDistribution {
     );
   }
 
-  public transform(t: HitTransformer, opts: TransformOpts = DEFAULT_TRANSFORM_OPTS): HitDistribution {
+  public wideTransform(t: HitTransformer, opts: TransformOpts = DEFAULT_TRANSFORM_OPTS): HitDistribution {
     const d = new HitDistribution([]);
     for (const h of this.hits) {
       for (const transformed of h.transform(t, opts).hits) {
         d.addHit(transformed);
       }
     }
-    return d.flatten();
+    return d;
+  }
+
+  public transform(t: HitTransformer, opts: TransformOpts = DEFAULT_TRANSFORM_OPTS): HitDistribution {
+    return this.wideTransform(t, opts).flatten();
   }
 
   public scaleProbability(factor: number): HitDistribution {

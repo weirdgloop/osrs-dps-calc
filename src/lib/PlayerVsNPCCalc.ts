@@ -3,14 +3,17 @@ import { Monster } from '@/types/Monster';
 import {
   AttackDistribution,
   cappedRerollTransformer,
+  DEFAULT_TRANSFORM_OPTS,
   DelayedHit,
   divisionTransformer,
   flatAddTransformer,
   flatLimitTransformer,
   HitDistribution,
   Hitsplat,
+  HitTransformer,
   linearMinTransformer,
   multiplyTransformer,
+  TransformOpts,
   WeaponDelayProvider,
   WeightedHit,
 } from '@/lib/HitDist';
@@ -1244,10 +1247,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   public getHitChance() {
-    if (this.isImmune()) {
-      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 0.0);
-    }
-
     if (this.opts.overrides?.accuracy) {
       return this.track(DetailKey.PLAYER_ACCURACY_FINAL, this.opts.overrides.accuracy);
     }
@@ -1417,7 +1416,33 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   private getDistributionImpl(): AttackDistribution {
     const attackerDist = this.getAttackerDist();
 
-    let npcDist = this.applyNpcTransforms(attackerDist);
+    let styleType = this.player.style.type;
+    if (this.opts.isEcho) {
+      styleType = 'ranged';
+    } else if (this.opts.usingSpecialAttack && this.wearing('Voidwaker')) {
+      styleType = 'magic';
+    }
+
+    let npcDist: AttackDistribution;
+    if (this.wearing("King's barrage")) {
+      npcDist = attackerDist.transform((h) => {
+        const iceSplat = new Hitsplat(Math.trunc(h.damage / 2), h.accurate);
+        const rangedSplat = new Hitsplat(h.damage - iceSplat.damage, h.accurate);
+
+        const rangedDist = new HitDistribution([new WeightedHit(1.0, [rangedSplat])])
+          .transform(this.applyNpcTransforms('ranged'));
+        let iceDist = new HitDistribution([new WeightedHit(1.0, [iceSplat])])
+          .transform(this.applyNpcTransforms('magic'));
+        if (this.player.leagues.six.effects.talent_water_spell_damage_high_hp
+            && this.player.leagues.six.effects.talent_ice_counts_as_water) {
+          iceDist = iceDist.transform(this.leaguesWaterHpBonus());
+        }
+        return rangedDist.zip(iceDist);
+      }, { transformInaccurate: true });
+    } else {
+      npcDist = attackerDist.transform(this.applyNpcTransforms(styleType));
+    }
+
     if (!this.opts.isLeaguesSubCalc) {
       npcDist = this.applyLeaguesPostProcessing(npcDist);
     }
@@ -1508,12 +1533,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.leagues.six.effects.talent_water_spell_damage_high_hp && spellement === 'water') {
-      const maxHp = this.player.skills.hp;
-      const currentHp = this.player.skills.hp + this.player.boosts.hp;
-
-      // intentionally not capping to maxHp here as it functions on overheal
-      const damageBonusPct = Math.trunc(20 * currentHp / maxHp);
-      dist = dist.transform(multiplyTransformer(100 + damageBonusPct, 100));
+      dist = dist.transform(this.leaguesWaterHpBonus());
       this.trackDist(DetailKey.DIST_LEAGUES_WATER_SPELL_DAMAGE_HIGH_HP, dist);
     }
 
@@ -1858,7 +1878,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.transform(divisionTransformer(2));
     }
 
-    if (this.player.style.type === 'ranged' && this.player.equipment.weapon?.name.includes('rossbow')) {
+    if (this.player.style.type === 'ranged'
+      && (this.player.equipment.weapon?.name.includes('rossbow') || this.wearing("King's barrage"))) {
       const currentHp = this.player.skills.hp + this.player.boosts.hp;
       if (this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)']) && currentHp >= 10) {
         dist = dist.transform(rubyBolts(boltContext));
@@ -1916,89 +1937,86 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     return dist;
   }
 
-  applyNpcTransforms(dist: AttackDistribution): AttackDistribution {
-    // we apply this here instead of at the top of getDistributionImpl just in case of multi-hits
-    if (this.isImmune()) {
-      return new AttackDistribution([new HitDistribution([new WeightedHit(1.0, [Hitsplat.INACCURATE])])]);
+  private npcTransformCache: { [k in Exclude<CombatStyleType, null>]?: HitTransformer } = {};
+
+  applyNpcTransforms(styleType: CombatStyleType): HitTransformer {
+    const cached = this.npcTransformCache[styleType!];
+    if (cached) {
+      return cached;
+    }
+
+    if (this.isImmune(styleType)) {
+      this.npcTransformCache[styleType!] = () => HitDistribution.single(1.0, [Hitsplat.INACCURATE]);
+      return this.npcTransformCache[styleType!]!;
     }
 
     const mattrs = this.monster.attributes;
-
-    // todo this comes up in a few places now, it may be good to abstract it into a "getDamageStyle"
-    let styleType = this.player.style.type;
-    if (this.opts.isEcho) {
-      styleType = 'ranged';
-    } else if (this.opts.usingSpecialAttack && this.wearing('Voidwaker')) {
-      styleType = 'magic';
-    }
+    const relevantEffects: ([HitTransformer] | [HitTransformer, TransformOpts])[] = [];
 
     if (this.monster.name === 'Zulrah') {
       // https://twitter.com/JagexAsh/status/1745852774607183888
-      dist = dist.transform(cappedRerollTransformer(50, 5, 45));
+      relevantEffects.push([cappedRerollTransformer(50, 5, 45)]);
     }
     if (this.monster.name === 'Fragment of Seren') {
       // https://twitter.com/JagexAsh/status/1375037874559721474
-      dist = dist.transform(linearMinTransformer(2, 22));
+      relevantEffects.push([linearMinTransformer(2, 22)]);
     }
     if (['Kraken', 'Cave kraken'].includes(this.monster.name) && styleType === 'ranged') {
       // https://twitter.com/JagexAsh/status/1699360516488011950
-      dist = dist.transform(divisionTransformer(7, 1));
+      relevantEffects.push([divisionTransformer(7, 1)]);
     }
     if (VERZIK_P1_IDS.includes(this.monster.id) && !this.wearing('Dawnbringer')) {
       const limit = this.isUsingMeleeStyle() ? 10 : 3;
-      dist = dist.transform(linearMinTransformer(limit));
+      relevantEffects.push([linearMinTransformer(limit)]);
     }
     if (TEKTON_IDS.includes(this.monster.id) && styleType === 'magic') {
-      dist = dist.transform(divisionTransformer(5, 1));
+      relevantEffects.push([divisionTransformer(5, 1)]);
     }
     if (GLOWING_CRYSTAL_IDS.includes(this.monster.id) && styleType === 'magic') {
-      dist = dist.transform(divisionTransformer(3));
+      relevantEffects.push([divisionTransformer(3)]);
     }
     if ((OLM_MELEE_HAND_IDS.includes(this.monster.id) || OLM_HEAD_IDS.includes(this.monster.id)) && styleType === 'magic') {
-      dist = dist.transform(divisionTransformer(3));
+      relevantEffects.push([divisionTransformer(3)]);
     }
     if ((OLM_MAGE_HAND_IDS.includes(this.monster.id) || OLM_MELEE_HAND_IDS.includes(this.monster.id)) && styleType === 'ranged') {
-      dist = dist.transform(divisionTransformer(3));
+      relevantEffects.push([divisionTransformer(3)]);
     }
     if (ICE_DEMON_IDS.includes(this.monster.id) && this.getSpellement() !== 'fire' && !this.isUsingDemonbane()) {
       // https://twitter.com/JagexAsh/status/1133350436554121216
-      dist = dist.transform(divisionTransformer(3));
+      relevantEffects.push([divisionTransformer(3)]);
     }
     if (this.monster.name === 'Slagilith' && this.player.equipment.weapon?.category !== EquipmentCategory.PICKAXE) {
       // https://twitter.com/JagexAsh/status/1219652159148646401
-      dist = dist.transform(divisionTransformer(3));
+      relevantEffects.push([divisionTransformer(3)]);
     }
     if (NIGHTMARE_TOTEM_IDS.includes(this.monster.id) && styleType === 'magic') {
-      dist = dist.transform(multiplyTransformer(2));
+      relevantEffects.push([multiplyTransformer(2)]);
     }
     if (['Slash Bash', 'Zogre', 'Skogre'].includes(this.monster.name)) {
       if (this.player.spell?.name === 'Crumble Undead') {
-        dist = dist.transform(divisionTransformer(2));
+        relevantEffects.push([divisionTransformer(2)]);
       } else if (this.player.style.type !== 'ranged'
         || !this.player.equipment.ammo?.name.includes(' brutal')
         || this.player.equipment.weapon?.name !== 'Comp ogre bow') {
-        dist = dist.transform(divisionTransformer(4));
+        relevantEffects.push([divisionTransformer(4)]);
       }
     }
     if (BA_ATTACKER_MONSTERS.includes(this.monster.id) && this.player.buffs.baAttackerLevel !== 0) {
       // todo is this pre- or post-roll?
-      dist = dist.transform(
-        flatAddTransformer(this.player.buffs.baAttackerLevel),
-        { transformInaccurate: true },
-      );
+      relevantEffects.push([flatAddTransformer(this.player.buffs.baAttackerLevel), { transformInaccurate: true }]);
     }
     if (this.monster.name === 'Tormented Demon') {
       if (this.monster.inputs.phase !== 'Unshielded' && !this.isUsingDemonbane() && !this.isUsingAbyssal()) {
         // 20% damage reduction when not using demonbane or abyssal
         // todo floor of 1?
-        dist = dist.transform(multiplyTransformer(4, 5, 1));
+        relevantEffects.push([multiplyTransformer(4, 5, 1)]);
       }
     }
     if (mattrs.includes(MonsterAttribute.VAMPYRE_2)) {
       if (!this.wearingVampyrebane(MonsterAttribute.VAMPYRE_2) && this.wearing("Efaritay's aid")) {
-        dist = dist.transform(divisionTransformer(2));
+        relevantEffects.push([divisionTransformer(2)]);
       } else if (this.isWearingSilverWeapon()) {
-        dist = dist.transform(flatLimitTransformer(10));
+        relevantEffects.push([flatLimitTransformer(10)]);
       }
     }
     if (HUEYCOATL_TAIL_IDS.includes(this.monster.id)) {
@@ -2008,47 +2026,46 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const earth = this.getSpellement() === 'earth';
 
       // crush and earth spells have a higher limiter
-      dist = dist.transform(linearMinTransformer((crush || earth) ? 9 : 4));
+      relevantEffects.push([linearMinTransformer((crush || earth) ? 9 : 4)]);
 
       // and crush also gets misses turned into 1s
       if (crush) {
-        dist = dist.transform((h) => {
+        relevantEffects.push([(h) => {
           if (h.damage > 0) {
             return HitDistribution.single(1.0, [h]);
           }
           return HitDistribution.single(1.0, [new Hitsplat(1)]);
-        });
+        }]);
       }
     }
     if (HUEYCOATL_PHASE_IDS.includes(this.monster.id) && this.monster.inputs.phase === 'With Pillar') {
-      dist = dist.transform(multiplyTransformer(13, 10));
+      relevantEffects.push([multiplyTransformer(13, 10)]);
     }
 
     if (ABYSSAL_SIRE_TRANSITION_IDS.includes(this.monster.id) && this.monster.inputs.phase === 'Transition') {
-      dist = dist.transform(divisionTransformer(2));
+      relevantEffects.push([divisionTransformer(2)]);
     }
 
     const flatArmour = this.monster.defensive.flat_armour;
     if (flatArmour && styleType !== 'magic') {
-      dist = dist.transform(
-        flatAddTransformer(-flatArmour),
-        { transformInaccurate: false },
-      );
+      relevantEffects.push([flatAddTransformer(-flatArmour), { transformInaccurate: false }]);
     }
 
-    return dist;
+    const transformer: HitTransformer = (hitsplat) => {
+      let dist = HitDistribution.single(1.0, [hitsplat]);
+      for (const t of relevantEffects) {
+        dist = dist.wideTransform(t[0], t.length > 1 ? t[1] : DEFAULT_TRANSFORM_OPTS);
+      }
+
+      return dist.flatten();
+    };
+    this.npcTransformCache[styleType!] = transformer;
+    return transformer;
   }
 
-  isImmune(): boolean {
+  isImmune(styleType: CombatStyleType): boolean {
     const monsterId = this.monster.id;
     const mattrs = this.monster.attributes;
-    let styleType = this.player.style.type;
-
-    if (this.opts.isEcho) {
-      styleType = 'ranged';
-    } else if (this.opts.usingSpecialAttack && this.wearing('Voidwaker')) {
-      styleType = 'magic';
-    }
 
     if (IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS.includes(monsterId) && styleType === 'magic') {
       return true;
@@ -2233,16 +2250,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         { transformInaccurate: false },
       );
     }
-
-    // if (this.wearing("King's barrage")) {
-    //   const iceBoltDist = this.noInitSubCalc(
-    //     {
-    //       ...this.player,
-    //       spell: spellByName("King's Ice Barrage"),
-    //       style: { name: 'Spell', type: 'magic', stance: 'Autocast' },
-    //     }
-    //   )
-    // }
 
     return npcDist;
   }
@@ -2703,5 +2710,14 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const baseSeverity = (baseWeakness && usingRightSpell) ? baseWeakness.severity : 0;
     const devilsBonus = devils ? 30 : 0;
     return { element: spellement, severity: baseSeverity + devilsBonus };
+  }
+
+  private leaguesWaterHpBonus(): HitTransformer {
+    const maxHp = this.player.skills.hp;
+    const currentHp = this.player.skills.hp + this.player.boosts.hp;
+
+    // intentionally not capping to maxHp here as it functions on overheal
+    const damageBonusPct = Math.trunc(20 * currentHp / maxHp);
+    return multiplyTransformer(100 + damageBonusPct, 100);
   }
 }
