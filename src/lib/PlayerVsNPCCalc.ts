@@ -463,13 +463,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.leagues.six.effects.talent_distance_melee_minhit) {
-      const minhitBonus = 3 * this.player.leagues.six.distanceToEnemy;
+      const minhitBonus = 3 * this.getDistanceToEnemy();
       minHit = this.trackAdd(DetailKey.LEAGUES_MIN_HIT_DISTANCE_MELEE, minHit, minhitBonus);
     }
 
     if (this.player.leagues.six.effects.talent_percentage_melee_maxhit_distance) {
-      const tilesBetween = this.player.leagues.six.distanceToEnemy;
-      const maxhitFactor = 100 + 4 * (Math.floor(tilesBetween / 3) + 1);
+      const maxhitFactor = 100 + 4 * (Math.floor(this.getDistanceToEnemy() / 3) + 1);
       maxHit = this.trackFactor(DetailKey.LEAGUES_MAX_HIT_DISTANCE_MELEE, maxHit, [maxhitFactor, 100]);
     }
 
@@ -1350,9 +1349,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.leagues.six.effects.talent_max_accuracy_roll_from_range) {
-      const distance = this.player.leagues.six.distanceToEnemy;
       // Proc chance capped to 20 tiles (guaranteed success) - technically there is a 10 tile range cap for all weapons which is not respected here.
-      const procChance = Math.min(1, 0.05 * distance);
+      const procChance = Math.min(1, 0.05 * this.getDistanceToEnemy());
       const maxAccuracyHitChance = BaseCalc.getMaxAccuracyHitChance(atk, def);
       hitChance = hitChance * (1 - procChance) + maxAccuracyHitChance * procChance;
     }
@@ -2703,6 +2701,26 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   private getBlindbagUniques(): number {
     const uniqueIds = new Set(this.player.leagues.six.blindbagWeapons.map((eq) => eq.id)).size;
     return Math.min(uniqueIds, 5);
+  }
+
+  private getMaxMeleeRange(): number {
+    const halberd = this.player.equipment.weapon?.category === EquipmentCategory.POLEARM;
+    let attackRange = halberd ? 2 : 1;
+    if (this.player.equipment.weapon?.isTwoHanded) {
+      attackRange *= this.player.leagues.six.effects.talent_melee_range_multiplier ?? 1;
+    }
+    if (this.player.leagues.six.effects.talent_melee_range_conditional_boost && attackRange >= 4) {
+      attackRange = 7;
+    }
+    return attackRange;
+  }
+
+  private getDistanceToEnemy(): number {
+    let distance = this.player.leagues.six.distanceToEnemy;
+    if (this.isUsingMeleeStyle()) {
+      distance = Math.min(distance, this.getMaxMeleeRange());
+    }
+    return distance;
   }
 
   private getMonsterWeakness(): Monster['weakness'] {
