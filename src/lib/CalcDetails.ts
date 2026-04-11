@@ -129,6 +129,7 @@ export enum DetailKey {
   LEAGUES_MAX_HIT_DISTANCE_MELEE = 'Player distance melee max hit',
   LEAGUES_BLINDBAG_DAMAGE_BONUS = 'Player blindbag uniques max hit',
   LEAGUES_BLINDBAG_CHANCE_UNIQUE = 'Player blindbag uniques chance',
+  LEAGUES_EARTH_SPELL_DEFENCE_BONUS = 'Player talent_earth_scale_defence_stat bonus damage',
 }
 
 export interface DetailEntry {
