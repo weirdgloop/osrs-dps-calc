@@ -1443,9 +1443,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       npcDist = attackerDist.transform(this.applyNpcTransforms(styleType));
     }
 
-    if (!this.opts.isLeaguesSubCalc) {
-      npcDist = this.applyLeaguesPostProcessing(npcDist);
-    }
+    npcDist = this.applyLeaguesPostProcessing(npcDist);
 
     if (process.env.NEXT_PUBLIC_HIT_DIST_SANITY_CHECK) {
       npcDist.dists.forEach((hitDist, ix) => {
@@ -2134,13 +2132,20 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       && this.isUsingMeleeStyle()
       && !this.opts.usingSpecialAttack
       && blindbagUniques >= 1
-      && (this.player.equipment.weapon?.weight ?? 0) >= 1) {
+      && (this.player.equipment.weapon?.weight ?? 0) >= 1
+      && !this.opts.isBlindBag
+      && !this.opts.isEcho) {
       let chanceBlindbagProc = leagues.effects.talent_free_random_weapon_attack_chance / 100;
       if (leagues.effects.talent_unique_blindbag_chance) {
         chanceBlindbagProc += (0.02 * blindbagUniques);
       }
 
-      let blindbagDist = new HitDistribution([new WeightedHit(1 - chanceBlindbagProc, [Hitsplat.INACCURATE])]);
+      // Let p be probability to proc, and b be the expected number of blindbag procs on an attack.
+      // When a blindbag procs we get 1 guaranteed proc, plus we recursively get b more procs:
+      //   b = p * (1 + b)    -->    b = p / (1 - p)
+      // We do this calculation up-front to avoid infinite recursion in the calculator.
+      const recBlindbagChance = chanceBlindbagProc / (1 - chanceBlindbagProc);
+      let blindbagDist = new HitDistribution([new WeightedHit(1 - recBlindbagChance, [Hitsplat.INACCURATE])]);
       const partialDists = leagues.blindbagWeapons.map((weapon) => {
         const chanceThisWeapon = 1 / leagues.blindbagWeapons.length;
         let playerWithWeapon = <Player>{
@@ -2158,33 +2163,23 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
         const subCalc = this.noInitSubCalc(playerWithWeapon, this.monster, {
           loadoutName: `${this.opts.loadoutName}/Blindbag ${weapon.id} (${weapon.name})`,
-          isLeaguesSubCalc: true,
+          isBlindBag: true,
         });
 
         return subCalc.getDistribution()
           .singleHitsplat
-          .scaleProbability(chanceBlindbagProc * chanceThisWeapon)
+          .scaleProbability(recBlindbagChance * chanceThisWeapon)
           .hits;
       });
       partialDists.forEach((partial) => blindbagDist.addHits(partial));
       blindbagDist = blindbagDist.cumulative();
       this.trackDist(DetailKey.DIST_LEAGUES_BLINDBAG, blindbagDist);
-
-      const recursiveBlindBag = blindbagDist;
-      for (let i = 1; i <= 3; i++) { // todo
-        // const thisRecurse = blindbagDist.scaleProbability(chanceBlindbagProc ** i);
-        // thisRecurse.addHit(new WeightedHit(1 - (chanceBlindbagProc ** i), [Hitsplat.INACCURATE]));
-        // recursiveBlindBag = recursiveBlindBag.zip(thisRecurse);
-        // recursiveBlindBag = recursiveBlindBag.cumulative();
-      }
-      this.trackDist(DetailKey.DIST_LEAGUES_BLINDBAG_RECURSIVE, recursiveBlindBag);
-
-      npcDist.addDist(recursiveBlindBag);
+      npcDist.addDist(blindbagDist);
     }
 
     const rangedEcho = this.player.style.type === 'ranged' && leagues.effects.talent_ranged_regen_echo_chance;
     const meleeEcho = this.isUsingMeleeStyle() && leagues.effects.talent_2h_melee_echos && this.player.equipment.weapon?.isTwoHanded;
-    if (rangedEcho || meleeEcho) {
+    if ((rangedEcho || meleeEcho) && !this.opts.isEcho) {
       const isWearingBow = meleeEcho || (this.player.equipment.weapon?.category === EquipmentCategory.BOW && !this.wearing('Eclipse atlatl'));
       const isWearingCrossbow = meleeEcho || this.player.equipment.weapon?.category === EquipmentCategory.CROSSBOW;
 
@@ -2205,7 +2200,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         this.monster,
         {
           loadoutName: `${this.opts.loadoutName}/Echo`,
-          isLeaguesSubCalc: true,
           isEcho: true,
           overrides: { accuracy: echoAcc, maxHit: [min, max] },
         },
@@ -2239,7 +2233,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         this.monster,
         {
           loadoutName: `${this.opts.loadoutName}/Flames of Cerberus`,
-          isLeaguesSubCalc: true,
           overrides: { accuracy: 1.0 },
         },
       ).getDistribution().dists[0];

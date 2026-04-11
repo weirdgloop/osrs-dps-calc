@@ -25,7 +25,6 @@ export interface CalcOpts {
   detailedOutput?: boolean,
   disableMonsterScaling?: boolean,
   usingSpecialAttack?: boolean,
-  isLeaguesSubCalc?: boolean,
   isBlindBag?: boolean,
   isEcho?: boolean,
   overrides?: {
@@ -49,7 +48,6 @@ const DEFAULT_OPTS: Required<InternalOpts> = {
   detailedOutput: false,
   disableMonsterScaling: false,
   usingSpecialAttack: false,
-  isLeaguesSubCalc: false,
   isBlindBag: false,
   isEcho: false,
   noInit: false,
