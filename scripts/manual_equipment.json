@@ -241,6 +241,6 @@
       "magic": 25,
       "ranged": 60
     },
-    "isTwoHanded": false
+    "isTwoHanded": true
   }
 ]
