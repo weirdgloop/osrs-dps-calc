@@ -2686,17 +2686,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const uniqueIds = new Set(this.player.leagues.six.blindbagWeapons.map((eq) => eq.id)).size;
     return Math.min(uniqueIds, 5);
   }
-  
+
   private getMaxMeleeRange(): number {
     const halberd = this.player.equipment.weapon?.category === EquipmentCategory.POLEARM;
-    let range = halberd ? 2 : 1;
-    range *= this.player.leagues.six.effects.talent_melee_range_multiplier ?? 1;
-    if (this.player.leagues.six.effects.talent_melee_range_conditional_boost && range >= 4) {
-      range = 7
+    let attackRange = halberd ? 2 : 1;
+    attackRange *= this.player.leagues.six.effects.talent_melee_range_multiplier ?? 1;
+    if (this.player.leagues.six.effects.talent_melee_range_conditional_boost && attackRange >= 4) {
+      attackRange = 7;
     }
-    return range;
+    return attackRange;
   }
-  
+
   private getDistanceToEnemy(): number {
     let distance = this.player.leagues.six.distanceToEnemy;
     if (this.isUsingMeleeStyle()) {
