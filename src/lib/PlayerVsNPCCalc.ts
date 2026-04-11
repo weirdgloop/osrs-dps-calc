@@ -1975,6 +1975,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
+    if (leagues.effects.talent_earth_scale_defence_stat && spellement === 'earth') {
+      const defenceLevel = this.player.skills.def + this.player.boosts.def;
+      const bonusDamage = Math.trunc(defenceLevel / 12);
+      dist.transform(flatAddTransformer(bonusDamage));
+    }
+
     if (process.env.NEXT_PUBLIC_HIT_DIST_SANITY_CHECK) {
       dist.dists.forEach((hitDist, ix) => {
         const sumAccuracy = sum(hitDist.hits, (wh) => wh.probability);
