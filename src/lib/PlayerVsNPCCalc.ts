@@ -1833,6 +1833,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       accurateZeroApplicable = false;
     }
 
+    if (leagues.effects.talent_earth_scale_defence_stat && spellement === 'earth') {
+      const defenceLevel = this.player.skills.def + this.player.boosts.def;
+      const bonusDamage = this.trackFactor(DetailKey.LEAGUES_EARTH_SPELL_DEFENCE_BONUS, defenceLevel, [1, 12]);
+      dist = dist.transform(flatAddTransformer(bonusDamage), { transformInaccurate: false });
+    }
+
     // raise accurate 0s to 1
     if (accurateZeroApplicable) {
       dist = dist.transform(
@@ -1973,12 +1979,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           new WeightedHit(1.0 - regenChance, [new Hitsplat(h.damage + alwaysRegenerated)]),
         ]), { transformInaccurate: false });
       }
-    }
-
-    if (leagues.effects.talent_earth_scale_defence_stat && spellement === 'earth') {
-      const defenceLevel = this.player.skills.def + this.player.boosts.def;
-      const bonusDamage = this.trackFactor(DetailKey.LEAGUES_EARTH_SPELL_DEFENCE_BONUS, defenceLevel, [1, 12]);
-      dist = dist.transform(flatAddTransformer(bonusDamage), { transformInaccurate: false });
     }
 
     if (process.env.NEXT_PUBLIC_HIT_DIST_SANITY_CHECK) {
