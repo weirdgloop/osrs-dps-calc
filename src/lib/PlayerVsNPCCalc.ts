@@ -2257,7 +2257,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       let procDist = flamesOfCerberusDist;
       if (!this.opts.usingSpecialAttack) {
         procDist = flamesOfCerberusDist.scaleProbability(0.05);
-        procDist.addHit(new WeightedHit(1 - 0.95, [Hitsplat.INACCURATE]));
+        procDist.addHit(new WeightedHit(0.95, [Hitsplat.INACCURATE]));
       }
       npcDist = npcDist.transform(
         (h) => HitDistribution.single(1.0, [h]).zip(procDist),
