@@ -2247,8 +2247,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       ).getDistribution().dists[0];
       this.trackDist(DetailKey.DIST_LEAGUES_FLAMES_OF_CERBERUS, flamesOfCerberusDist);
 
+      let procDist = flamesOfCerberusDist;
+      if (!this.opts.usingSpecialAttack) {
+        procDist = flamesOfCerberusDist.scaleProbability(0.05);
+        procDist.addHit(new WeightedHit(1 - 0.95, [Hitsplat.INACCURATE]));
+      }
       npcDist = npcDist.transform(
-        (h) => HitDistribution.single(1.0, [h]).zip(flamesOfCerberusDist),
+        (h) => HitDistribution.single(1.0, [h]).zip(procDist),
         { transformInaccurate: false },
       );
     }
