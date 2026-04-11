@@ -575,6 +575,10 @@ export default class BaseCalc {
       return true;
     }
 
+    if (weapon.name === "King's barrage") {
+      return true;
+    }
+
     return false;
   }
 
