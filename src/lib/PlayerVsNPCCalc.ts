@@ -1381,6 +1381,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     const burnTicks = 40;
     const burnDamage = 10;
+    const maxBurnStacks = 5;
     let burnChance = 0;
     if (eclipseBurn) {
       burnChance = 0.2;
@@ -1394,8 +1395,15 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (burnChance > 0) {
       const ticksPerAttack = this.getExpectedAttackSpeed();
       const burnsPerTick = burnChance * this.getHitChance() / ticksPerAttack;
-      const maxBurnStacks = Math.min(burnTicks * burnsPerTick, 5);
-      const dpt = maxBurnStacks * burnDamage / burnTicks;
+      const unboundedBurnStacks = burnTicks * burnsPerTick;
+      
+      // We account for losing burns to the stacks cap using the Erlang B loss formula.
+      let inv_b = 1.0;
+      for (let i = 1; i <= 1 + maxBurnStacks; i++) {
+        inv_b = 1.0 + inv_b * i / unboundedBurnStacks;
+      }
+      const expectBurnStacks = Math.min(maxBurnStacks, unboundedBurnStacks * (1 - 1/inv_b));
+      const dpt = expectBurnStacks * burnDamage / burnTicks;
       ret = dpt * ticksPerAttack;
     }
 
