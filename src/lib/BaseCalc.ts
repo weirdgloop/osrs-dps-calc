@@ -27,6 +27,7 @@ export interface CalcOpts {
   usingSpecialAttack?: boolean,
   isLeaguesSubCalc?: boolean,
   isBlindBag?: boolean,
+  blindBagDistance?: number,
   isEcho?: boolean,
   overrides?: {
     accuracy?: number,
@@ -51,6 +52,7 @@ const DEFAULT_OPTS: Required<InternalOpts> = {
   usingSpecialAttack: false,
   isLeaguesSubCalc: false,
   isBlindBag: false,
+  blindBagDistance: 0,
   isEcho: false,
   noInit: false,
   overrides: {},
