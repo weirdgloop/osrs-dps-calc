@@ -817,6 +817,11 @@ export default class BaseCalc {
     ) {
       this.addIssue(UserIssueType.EQUIPMENT_SET_EFFECT_UNSUPPORTED, 'The calculator currently does not account for your equipment set effect.');
     }
+    if (
+      this.wearingAll(['Eclipse moon helm', 'Eclipse moon chestplate', 'Eclipse moon tassets', 'Eclipse atlatl'])
+    ) {
+      this.addIssue(UserIssueType.EQUIPMENT_SET_EFFECT_UNSUPPORTED, 'The calculator only incorporates burn damage in DPS, not TTK.');
+    }
     if (this.wearing('Ring of recoil') || this.wearing('Ring of suffering (i)') || this.wearing('Ring of suffering')) {
       this.addIssue(UserIssueType.RING_RECOIL_UNSUPPORTED, 'The calculator does not account for recoil damage.');
     }
