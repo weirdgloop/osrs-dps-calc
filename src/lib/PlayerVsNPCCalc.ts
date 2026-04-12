@@ -2167,6 +2167,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
         const subCalc = this.noInitSubCalc(playerWithWeapon, this.monster, {
           loadoutName: `${this.opts.loadoutName}/Blindbag ${weapon.id} (${weapon.name})`,
+          isBlindBag: true,
           isLeaguesSubCalc: true,
         });
 
@@ -2179,12 +2180,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       blindbagDist = blindbagDist.cumulative();
       this.trackDist(DetailKey.DIST_LEAGUES_BLINDBAG, blindbagDist);
 
-      const recursiveBlindBag = blindbagDist;
-      for (let i = 1; i <= 3; i++) { // todo
-        // const thisRecurse = blindbagDist.scaleProbability(chanceBlindbagProc ** i);
-        // thisRecurse.addHit(new WeightedHit(1 - (chanceBlindbagProc ** i), [Hitsplat.INACCURATE]));
-        // recursiveBlindBag = recursiveBlindBag.zip(thisRecurse);
-        // recursiveBlindBag = recursiveBlindBag.cumulative();
+      let recursiveBlindBag = blindbagDist;
+      for (let i = 1; i <= 3; i++) {
+        const thisRecurse = blindbagDist.scaleProbability(chanceBlindbagProc ** i);
+        thisRecurse.addHit(new WeightedHit(1 - (chanceBlindbagProc ** i), [Hitsplat.INACCURATE]));
+        recursiveBlindBag = recursiveBlindBag.zip(thisRecurse);
+        recursiveBlindBag = recursiveBlindBag.cumulative();
       }
       this.trackDist(DetailKey.DIST_LEAGUES_BLINDBAG_RECURSIVE, recursiveBlindBag);
 
