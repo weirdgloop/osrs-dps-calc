@@ -84,6 +84,7 @@ import {
   rubyBolts,
 } from '@/lib/dists/bolts';
 import { burningClawDoT, burningClawSpec, dClawDist } from '@/lib/dists/claws';
+import { getExpectedBurn } from '@/lib/Burn';
 
 const PARTIALLY_IMPLEMENTED_SPECS: string[] = [
   'Ancient godsword',
@@ -1368,6 +1369,16 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else if (this.wearing('Arkan blade') && !this.isImmuneToNormalBurns()) {
         ret = 10 * this.getHitChance();
       }
+    }
+
+    const hitChance = this.getHitChance();
+    const attackSpeed = this.getExpectedAttackSpeed();
+    if (this.isWearingEclipseMoonSet() && !this.isImmuneToStrongBurns()) {
+      ret = getExpectedBurn(hitChance, attackSpeed, 0.2);
+    }
+
+    if (this.player.leagues.six.effects.talent_fire_spell_burn_bounce && this.getSpellement() === 'fire' && !this.isImmuneToNormalBurns()) {
+      ret = getExpectedBurn(hitChance, attackSpeed, 1);
     }
 
     if (ret !== 0) {
