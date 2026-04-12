@@ -820,10 +820,11 @@ export default class BaseCalc {
     }
 
     // Some set effects are currently not accounted for
-    if (
-      this.wearingAll(['Blue moon helm', 'Blue moon chestplate', 'Blue moon tassets', 'Blue moon spear'])
-    ) {
+    if (this.wearingAll(['Blue moon helm', 'Blue moon chestplate', 'Blue moon tassets', 'Blue moon spear'])) {
       this.addIssue(UserIssueType.EQUIPMENT_SET_EFFECT_UNSUPPORTED, 'The calculator currently does not account for your equipment set effect.');
+    }
+    if (this.isWearingEclipseMoonSet()) {
+      this.addIssue(UserIssueType.EQUIPMENT_SET_EFFECT_PARTIALLY_SUPPORTED, 'The eclipse moon set effect is included in DPS but not TTK.');
     }
     if (this.wearing('Ring of recoil') || this.wearing('Ring of suffering (i)') || this.wearing('Ring of suffering')) {
       this.addIssue(UserIssueType.RING_RECOIL_UNSUPPORTED, 'The calculator does not account for recoil damage.');
