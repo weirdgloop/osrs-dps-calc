@@ -32326,7 +32326,7 @@
     "immunities": {
       "burn": null
     },
-    "is_slayer_monster": true,
+    "is_slayer_monster": false,
     "weakness": null
   },
   {

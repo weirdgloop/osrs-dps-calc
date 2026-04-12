@@ -18947,7 +18947,7 @@
     "version": "",
     "slot": "weapon",
     "image": "Black felling axe.png",
-    "speed": 5,
+    "speed": 7,
     "category": "Axe",
     "bonuses": {
       "str": 12,
@@ -45514,7 +45514,7 @@
     "version": "Land's End",
     "slot": "weapon",
     "image": "Crate of meat (Land's End).png",
-    "speed": 0,
+    "speed": 4,
     "category": "Unarmed",
     "bonuses": {
       "str": 0,
@@ -45545,7 +45545,7 @@
     "version": "Musa Point",
     "slot": "weapon",
     "image": "Crate of meat (Musa Point).png",
-    "speed": 0,
+    "speed": 4,
     "category": "Unarmed",
     "bonuses": {
       "str": 0,
@@ -45576,7 +45576,7 @@
     "version": "Port Roberts",
     "slot": "weapon",
     "image": "Crate of meat (Port Roberts).png",
-    "speed": 0,
+    "speed": 4,
     "category": "Unarmed",
     "bonuses": {
       "str": 0,
@@ -45607,7 +45607,7 @@
     "version": "The Pandemonium",
     "slot": "weapon",
     "image": "Crate of meat (The Pandemonium).png",
-    "speed": 0,
+    "speed": 4,
     "category": "Unarmed",
     "bonuses": {
       "str": 0,
@@ -45638,7 +45638,7 @@
     "version": "The Summer Shore",
     "slot": "weapon",
     "image": "Crate of meat (The Summer Shore).png",
-    "speed": 0,
+    "speed": 4,
     "category": "Unarmed",
     "bonuses": {
       "str": 0,
@@ -137178,7 +137178,7 @@
     "version": "",
     "slot": "weapon",
     "image": "Spooky pumpkin lantern.png",
-    "speed": 0,
+    "speed": 4,
     "category": "Blunt",
     "bonuses": {
       "str": 0,
