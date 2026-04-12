@@ -226,7 +226,7 @@ def main():
             'immunities': {
                 'burn': burn_immunity,
             },
-            'is_slayer_monster': v.get('slayer_experience') is not None,
+            'is_slayer_monster': v.get('slayer_experience') is not None and version != 'Awakened',
         }
 
         weakness = v.get('elemental_weakness')
