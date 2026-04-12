@@ -38,8 +38,9 @@ const applyBurnTick = (counts: number[]): number[] => [...counts.slice(1), 0];
 const inactiveState = (): BurnState => ({ phase: INACTIVE, counts: EMPTY_COUNTS });
 
 // Encode the burn state as a base-6 integer to use as a Map key
-// e.g., (phase = 1, counts = 0, 0, 0, 0, 0, 0, 0, 0, 0, 1) => 10000000001 in base 6 (60466177 in decimal)
-// This works because phase is in [-1, 3] and counts are in [0, 5]
+// e.g., (phase = 1, counts = 0, 0, 0, 0, 0, 0, 0, 0, 0, 1) => 20000000001 in base 6 (60466177 in decimal)
+// This works because phase is in [-1, 3] (mapped to [0, 4]) and counts are in [0, 5]
+// Note that this scheme would need to be changed if the stack cap were ever changed
 const stateToInt = (phase: number, counts: number[]): number => {
   let key = phase + 1;
   for (let i = 0; i < HITS_PER_STACK; i++) {
@@ -142,6 +143,7 @@ const steadyStateBurnDist = (stateSpace: BurnStateSpace, procChance: number, tol
 
     let diff = 0;
     for (let i = 0; i < next.length; i++) {
+      // Lazy markov chain because the non-lazy version wasn't converging when procChance was very high
       next[i] = 0.5 * next[i] + 0.5 * dist[i];
       diff += Math.abs(next[i] - dist[i]);
     }
@@ -160,6 +162,7 @@ export const getExpectedBurn = (hitChance: number, attackSpeed: number, burnChan
   const stateSpace = buildStateSpace(attackSpeed);
   const steadyStateDist = steadyStateBurnDist(stateSpace, procChance, tol, maxIter);
 
+  // Determine the probability of being at the burn cap when attacking
   let capProb = 0;
   for (let i = 0; i < stateSpace.states.length; i++) {
     if (totalStacks(stateSpace.states[i].counts) === MAX_BURN_STACKS) {
@@ -167,5 +170,6 @@ export const getExpectedBurn = (hitChance: number, attackSpeed: number, burnChan
     }
   }
 
+  // Scale the proc chance to account for cases where burns can't proc because of the cap
   return HITS_PER_STACK * procChance * (1 - capProb);
 };
