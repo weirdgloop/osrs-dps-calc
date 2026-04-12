@@ -1396,13 +1396,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const ticksPerAttack = this.getExpectedAttackSpeed();
       const burnsPerTick = burnChance * this.getHitChance() / ticksPerAttack;
       const unboundedBurnStacks = burnTicks * burnsPerTick;
-      
+
       // We account for losing burns to the stacks cap using the Erlang B loss formula.
-      let inv_b = 1.0;
+      let invB = 1.0;
       for (let i = 1; i <= 1 + maxBurnStacks; i++) {
-        inv_b = 1.0 + inv_b * i / unboundedBurnStacks;
+        invB = 1.0 + invB * i / unboundedBurnStacks;
       }
-      const expectBurnStacks = Math.min(maxBurnStacks, unboundedBurnStacks * (1 - 1/inv_b));
+      const expectBurnStacks = Math.min(maxBurnStacks, unboundedBurnStacks * (1 - 1 / invB));
       const dpt = expectBurnStacks * burnDamage / burnTicks;
       ret = dpt * ticksPerAttack;
     }
