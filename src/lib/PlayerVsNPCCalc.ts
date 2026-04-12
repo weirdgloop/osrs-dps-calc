@@ -2708,7 +2708,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const effects = this.player.leagues.six.effects;
     const halberd = this.player.equipment.weapon?.category === EquipmentCategory.POLEARM;
     let attackRange = halberd ? 2 : 1;
-    if (effects.talent_distance_melee_minhit && this.player.equipment.weapon?.isTwoHanded) {
+    if (effects.talent_melee_range_multiplier && this.player.equipment.weapon?.isTwoHanded) {
       attackRange *= 2;
     }
     if (effects.talent_melee_range_conditional_boost && attackRange >= 4) {
