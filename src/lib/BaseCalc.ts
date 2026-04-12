@@ -92,7 +92,7 @@ export default class BaseCalc {
     this.baseMonster = monster;
     this.monster = (this.opts.disableMonsterScaling || this.opts.noInit) ? monster : scaleMonster(monster);
 
-    if (!this.opts.noInit) {
+    if (!this.opts.noInit || this.opts.isBlindBag) {
       this.canonicalizeEquipment();
       this.allEquippedItems = Object.values(this.player.equipment).filter((v) => v !== null).flat(1).map((eq: EquipmentPiece | null) => eq?.name || '');
       this.sanitizeInputs();
