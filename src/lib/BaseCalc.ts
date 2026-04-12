@@ -818,7 +818,6 @@ export default class BaseCalc {
     // Some set effects are currently not accounted for
     if (
       this.wearingAll(['Blue moon helm', 'Blue moon chestplate', 'Blue moon tassets', 'Blue moon spear'])
-      || this.wearingAll(['Eclipse moon helm', 'Eclipse moon chestplate', 'Eclipse moon tassets', 'Eclipse atlatl'])
     ) {
       this.addIssue(UserIssueType.EQUIPMENT_SET_EFFECT_UNSUPPORTED, 'The calculator currently does not account for your equipment set effect.');
     }
@@ -832,9 +831,6 @@ export default class BaseCalc {
     const leaguesEffects = this.player.leagues.six.effects;
     if (leaguesEffects.talent_bow_max_hit_stacking_increase || leaguesEffects.talent_bow_min_hit_stacking_increase) {
       this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Repeat Bow Hit Damage (coming soon)');
-    }
-    if (leaguesEffects.talent_fire_spell_burn_bounce) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Fire Spell Burn (coming soon)');
     }
     if (leaguesEffects.talent_regen_magic_level_boost) {
       this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Regenerate Magic Level Boost (coming soon)');
