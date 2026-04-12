@@ -2705,12 +2705,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   private getMaxMeleeRange(): number {
+    const effects = this.player.leagues.six.effects;
     const halberd = this.player.equipment.weapon?.category === EquipmentCategory.POLEARM;
     let attackRange = halberd ? 2 : 1;
-    if (this.player.equipment.weapon?.isTwoHanded) {
-      attackRange *= this.player.leagues.six.effects.talent_melee_range_multiplier ?? 1;
+    if (effects.talent_distance_melee_minhit && this.player.equipment.weapon?.isTwoHanded) {
+      attackRange *= 2;
     }
-    if (this.player.leagues.six.effects.talent_melee_range_conditional_boost && attackRange >= 4) {
+    if (effects.talent_melee_range_conditional_boost && attackRange >= 4) {
       attackRange = 7;
     }
     return attackRange;
