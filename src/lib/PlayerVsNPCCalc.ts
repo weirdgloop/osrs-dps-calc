@@ -2168,6 +2168,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         const subCalc = this.noInitSubCalc(playerWithWeapon, this.monster, {
           loadoutName: `${this.opts.loadoutName}/Blindbag ${weapon.id} (${weapon.name})`,
           isBlindBag: true,
+          blindBagDistance: this.getDistanceToEnemy(),
           isLeaguesSubCalc: true,
         });
 
@@ -2720,6 +2721,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   private getDistanceToEnemy(): number {
+    if (this.opts.isBlindBag) {
+      // Blindbag hits copy the distance from the main hit.
+      return this.opts.blindBagDistance;
+    }
+
     let distance = this.player.leagues.six.distanceToEnemy;
     if (this.isUsingMeleeStyle()) {
       distance = Math.min(distance, this.getMaxMeleeRange());
