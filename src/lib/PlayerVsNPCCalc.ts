@@ -124,6 +124,13 @@ const UNIMPLEMENTED_SPECS: string[] = [
   'Zamorakian spear',
 ];
 
+const MINION_ATTACK_ROLL = 45_000;
+const MINION_ATTACK_SPEED = 3;
+const MINION_MIN_HIT = 3;
+const MINION_BASE_MAX_HIT = 10;
+const MINION_MAX_HIT_PER_ZAMORAK_ITEM = 2;
+const MINION_MAX_ZAMORAK_ITEMS = 5;
+
 /**
  * Class for computing various player-vs-NPC metrics.
  */
@@ -170,34 +177,175 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
-    const level = this.track(
-      DetailKey.NPC_DEFENCE_ROLL_LEVEL,
-      defenceStyle === 'magic' && !USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS.includes(this.monster.id)
-        ? this.monster.skills.magic
-        : this.monster.skills.def,
-    );
+    const defenceData = this.getNpcDefenceRollData(defenceStyle);
+    const level = this.track(DetailKey.NPC_DEFENCE_ROLL_LEVEL, defenceData.level);
     const effectiveLevel = this.trackAdd(DetailKey.NPC_DEFENCE_ROLL_EFFECTIVE_LEVEL, level, 9);
+    const statBonus = this.trackAdd(DetailKey.NPC_DEFENCE_STAT_BONUS, defenceStyle ? defenceData.bonus : 0, 64);
+    let defenceRoll = this.trackFactor(DetailKey.NPC_DEFENCE_ROLL_BASE, effectiveLevel, [statBonus, 1]);
+    if (defenceData.toaMultiplier) {
+      defenceRoll = this.trackFactor(DetailKey.NPC_DEFENCE_ROLL_TOA, defenceRoll, [defenceData.toaMultiplier, 250]);
+    }
+
+    return this.track(DetailKey.NPC_DEFENCE_ROLL_FINAL, defenceRoll);
+  }
+
+  private getNpcDefenceRollForStyle(defenceStyle: CombatStyleType, rangedBonusOverride?: number): number {
+    return this.getNpcDefenceRollData(defenceStyle, rangedBonusOverride).defenceRoll;
+  }
+
+  private getNpcDefenceRollData(defenceStyle: CombatStyleType, rangedBonusOverride?: number): {
+    level: number,
+    bonus: number,
+    defenceRoll: number,
+    toaMultiplier: number | null,
+  } {
+    const level = defenceStyle === 'magic' && !USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS.includes(this.monster.id)
+      ? this.monster.skills.magic
+      : this.monster.skills.def;
+    const effectiveLevel = level + 9;
 
     let bonus: number;
     if (defenceStyle === 'ranged') {
-      const rangedType = getRangedDamageType(this.player.equipment.weapon!.category);
-      bonus = rangedType === 'mixed'
-        ? Math.trunc((this.monster.defensive.light + this.monster.defensive.standard + this.monster.defensive.heavy) / 3)
-        : this.monster.defensive[rangedType];
+      if (rangedBonusOverride !== undefined) {
+        bonus = rangedBonusOverride;
+      } else {
+        const rangedType = getRangedDamageType(this.player.equipment.weapon!.category);
+        bonus = rangedType === 'mixed'
+          ? Math.trunc((this.monster.defensive.light + this.monster.defensive.standard + this.monster.defensive.heavy) / 3)
+          : this.monster.defensive[rangedType];
+      }
     } else {
       bonus = this.monster.defensive[defenceStyle || 'crush'];
     }
 
-    const statBonus = this.trackAdd(DetailKey.NPC_DEFENCE_STAT_BONUS, defenceStyle ? bonus : 0, 64);
-    let defenceRoll = this.trackFactor(DetailKey.NPC_DEFENCE_ROLL_BASE, effectiveLevel, [statBonus, 1]);
-
     const isCustomMonster = this.monster.id === -1;
+    const toaMultiplier = (((TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) && !KEPHRI_OVERLORD_IDS.includes(this.monster.id)) || isCustomMonster) && this.monster.inputs.toaInvocationLevel)
+      ? 250 + this.monster.inputs.toaInvocationLevel
+      : null;
 
-    if (((TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) && !KEPHRI_OVERLORD_IDS.includes(this.monster.id)) || isCustomMonster) && this.monster.inputs.toaInvocationLevel) {
-      defenceRoll = this.trackFactor(DetailKey.NPC_DEFENCE_ROLL_TOA, defenceRoll, [250 + this.monster.inputs.toaInvocationLevel, 250]);
+    let defenceRoll = effectiveLevel * (bonus + 64);
+    if (toaMultiplier) {
+      defenceRoll = Math.trunc(defenceRoll * toaMultiplier / 250);
     }
 
-    return this.track(DetailKey.NPC_DEFENCE_ROLL_FINAL, defenceRoll);
+    return {
+      level,
+      bonus,
+      defenceRoll,
+      toaMultiplier,
+    };
+  }
+
+  private getMinionHitDistribution(): HitDistribution | null {
+    if (!this.player.leagues.six.minionEnabled) {
+      return null;
+    }
+
+    const zamorakItemCount = Math.max(
+      0,
+      Math.min(this.player.leagues.six.minionZamorakItemCount, MINION_MAX_ZAMORAK_ITEMS),
+    );
+    const maxHit = this.track(
+      DetailKey.LEAGUES_MINION_MAX_HIT,
+      MINION_BASE_MAX_HIT + (zamorakItemCount * MINION_MAX_HIT_PER_ZAMORAK_ITEM),
+    );
+    this.track(DetailKey.LEAGUES_MINION_ZAMORAK_ITEMS, zamorakItemCount);
+
+    const rangedDefenceBonus = Math.min(
+      this.monster.defensive.light,
+      this.monster.defensive.standard,
+      this.monster.defensive.heavy,
+    );
+
+    const candidateDists = (['ranged', 'magic'] as const).map((style) => {
+      const minionCalc = this.getMinionTransformCalc(style);
+      const defenceRoll = style === 'ranged'
+        ? this.getNpcDefenceRollForStyle('ranged', rangedDefenceBonus)
+        : this.getNpcDefenceRollForStyle('magic');
+      const accuracy = BaseCalc.getNormalAccuracyRoll(MINION_ATTACK_ROLL, defenceRoll);
+      const baseDist = HitDistribution.linear(accuracy, MINION_MIN_HIT, maxHit);
+      const finalDist = new AttackDistribution([baseDist])
+        .transform(minionCalc.applyNpcTransforms(style))
+        .singleHitsplat;
+
+      return {
+        style,
+        defenceRoll,
+        accuracy,
+        dist: finalDist,
+      };
+    });
+
+    const bestCandidate = candidateDists.reduce((best, current) => (
+      current.dist.expectedHit() > best.dist.expectedHit() ? current : best
+    ));
+
+    this.track(DetailKey.LEAGUES_MINION_STYLE, bestCandidate.style);
+    this.track(DetailKey.LEAGUES_MINION_DEFENCE_ROLL, bestCandidate.defenceRoll);
+    this.track(DetailKey.LEAGUES_MINION_ACCURACY, bestCandidate.accuracy);
+    this.trackDist(DetailKey.DIST_LEAGUES_MINION, bestCandidate.dist);
+    return bestCandidate.dist;
+  }
+
+  private getMinionTransformCalc(styleType: 'ranged' | 'magic'): PlayerVsNPCCalc {
+    const minionPlayer = <Player>{
+      ...this.player,
+      style: {
+        name: styleType === 'magic' ? 'Minion Magic' : 'Minion Ranged',
+        type: styleType,
+        stance: styleType === 'magic' ? 'Autocast' : 'Accurate',
+      },
+      prayers: [],
+      spell: null,
+      equipment: {
+        head: null,
+        cape: null,
+        neck: null,
+        ammo: null,
+        weapon: null,
+        body: null,
+        shield: null,
+        legs: null,
+        hands: null,
+        feet: null,
+        ring: null,
+      },
+      buffs: {
+        ...this.player.buffs,
+        baAttackerLevel: 0,
+        kandarinDiary: false,
+        markOfDarknessSpell: false,
+        soulreaperStacks: 0,
+        usingSunfireRunes: false,
+      },
+    };
+
+    const minionCalc = new PlayerVsNPCCalc(minionPlayer, this.monster, <InternalOpts>{
+      ...this.opts,
+      isLeaguesSubCalc: true,
+      loadoutName: `${this.opts.loadoutName}/Minion/${styleType}`,
+      noInit: true,
+    });
+    minionCalc.allEquippedItems = [];
+    minionCalc.baseMonster = this.baseMonster;
+    return minionCalc;
+  }
+
+  private getMinionExpectedDamage(): number {
+    return this.getMinionHitDistribution()?.expectedHit() ?? 0;
+  }
+
+  private getMinionDpt(): number {
+    return this.getMinionExpectedDamage() / MINION_ATTACK_SPEED;
+  }
+
+  protected getMinionDelayedHits(): DelayedHit[] {
+    const minionDist = this.getMinionHitDistribution();
+    if (!minionDist) {
+      return [];
+    }
+
+    return minionDist.withProbabilisticDelays(() => [[1.0, MINION_ATTACK_SPEED]]);
   }
 
   private getPlayerMaxMeleeAttackRoll(): number {
@@ -2309,7 +2457,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    * Returns the expected damage per tick, based on the player's attack speed.
    */
   public getDpt() {
-    return this.getExpectedDamage() / this.getExpectedAttackSpeed();
+    return (this.getExpectedDamage() / this.getExpectedAttackSpeed()) + this.getMinionDpt();
   }
 
   /**
@@ -2376,6 +2524,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    * Returns the average time-to-kill (in seconds) calculation.
    */
   public getTtk() {
+    if (this.player.leagues.six.minionEnabled) {
+      return sum(Array.from(this.getTtkDistribution().entries()), ([ticks, probability]) => ticks * probability) * SECONDS_PER_TICK;
+    }
+
     return this.getHtk() * this.getExpectedAttackSpeed() * SECONDS_PER_TICK;
   }
 
@@ -2472,6 +2624,76 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       for (let hp = 0; hp <= this.monster.skills.hp; hp++) {
         hpHitDists[hp] = this.distAtHp(playerDist, hp);
       }
+    }
+
+    const minionHits = this.getMinionDelayedHits();
+    if (minionHits.length > 0) {
+      const h = iterMax + 20;
+      const w = this.monster.skills.hp + 1;
+      const tickHpsRoot = new Float64Array(h * w);
+      const tickHps = range(0, h)
+        .map((i) => tickHpsRoot.subarray(w * i, w * (i + 1)));
+      tickHps[1][this.monster.inputs.monsterCurrentHp || this.monster.skills.hp] = 1.0;
+
+      const ttks = new Map<number, number>();
+      let epsilon = 1.0;
+
+      for (let tick = 1; tick <= iterMax && epsilon >= TTK_DIST_EPSILON; tick++) {
+        const playerDue = ((tick - 1) % this.getAttackSpeed()) === 0;
+        const minionDue = ((tick - 1) % MINION_ATTACK_SPEED) === 0;
+        const hps = tickHps[tick];
+
+        if (!playerDue && !minionDue) {
+          for (const [hp, hpProb] of hps.entries()) {
+            if (hpProb !== 0) {
+              tickHps[tick + 1][hp] += hpProb;
+            }
+          }
+          continue;
+        }
+
+        for (const [hp, hpProb] of hps.entries()) {
+          if (hpProb === 0) {
+            continue;
+          }
+
+          let combinedDist: HitDistribution | null = null;
+          if (playerDue) {
+            combinedDist = (recalcDistOnHp ? hpHitDists[hp] : playerDist)
+              .map(([wh]) => wh)
+              .reduce((dist, wh) => {
+                dist.addHit(wh);
+                return dist;
+              }, new HitDistribution([]));
+          }
+          if (minionDue) {
+            const minionHitDist = minionHits
+              .map(([wh]) => wh)
+              .reduce((dist, wh) => {
+                dist.addHit(wh);
+                return dist;
+              }, new HitDistribution([]));
+            combinedDist = combinedDist ? combinedDist.zip(minionHitDist).cumulative() : minionHitDist;
+          }
+
+          combinedDist?.hits.forEach((wh) => {
+            const chanceOfAction = wh.probability * hpProb;
+            if (chanceOfAction === 0) {
+              return;
+            }
+
+            const newHp = hp - wh.getSum();
+            if (newHp <= 0) {
+              ttks.set(tick, (ttks.get(tick) || 0) + chanceOfAction);
+              epsilon -= chanceOfAction;
+            } else {
+              tickHps[tick + 1][newHp] += chanceOfAction;
+            }
+          });
+        }
+      }
+
+      return ttks;
     }
 
     // todo dp backwards from 0 hp?

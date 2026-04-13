@@ -116,7 +116,11 @@ const BlindbagSelector = observer(() => {
 const DemonicPactsLeague: React.FC = observer(() => {
   const [showCombatMasteriesUI, setShowCombatMasteriesUI] = useState(false);
   const store = useStore();
-  const { cullingSpree } = store.player.leagues.six;
+  const {
+    cullingSpree,
+    minionEnabled,
+    minionZamorakItemCount,
+  } = store.player.leagues.six;
 
   const fromUrlInput = useRef<HTMLInputElement>(null);
   const fromUrlBtn = useRef<HTMLButtonElement>(null);
@@ -184,6 +188,31 @@ const DemonicPactsLeague: React.FC = observer(() => {
             </>
           )}
         />
+
+        <Toggle
+          checked={minionEnabled}
+          setChecked={(checked) => store.updatePlayer({ leagues: { six: { minionEnabled: checked } } })}
+          label="Minion"
+        />
+
+        <div className="flex items-center gap-2 mt-2">
+          <NumberInput
+            aria-labelledby="minionZamorakItemsLabel"
+            className="form-control w-12 text-centerl"
+            id="minionZamorakItems"
+            min={0}
+            max={5}
+            title="Unique Zamorak items fed to the whistle"
+            value={minionZamorakItemCount}
+            onChange={(value) => {
+              store.updatePlayer({ leagues: { six: { minionZamorakItemCount: value } } });
+            }}
+          />
+
+          <span id="minionZamorakItemsLabel" className="ml-1 text-sm select-none">
+            Unique equippable Zamorak items consumed
+          </span>
+        </div>
 
         <div className="flex items-center gap-2 mt-2">
           <NumberInput

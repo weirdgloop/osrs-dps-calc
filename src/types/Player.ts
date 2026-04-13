@@ -85,6 +85,10 @@ export interface LeaguesState {
 
   effects: { [k in LeaguesEffect]?: number };
 
+  minionEnabled: boolean;
+
+  minionZamorakItemCount: number;
+
   distanceToEnemy: number;
 
   enemyPrayers: {

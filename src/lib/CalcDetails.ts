@@ -99,6 +99,7 @@ export enum DetailKey {
   DIST_FINAL = 'Dist final',
   DIST_LEAGUES_BLINDBAG = 'Dist leagues blindbag',
   DIST_LEAGUES_BLINDBAG_RECURSIVE = 'Dist leagues blindbag recursive',
+  DIST_LEAGUES_MINION = 'Dist leagues minion',
   DOT_EXPECTED = 'Damage over time expected',
   DOT_MAX = 'Damage over time max',
   GUARDIANS_DMG_BONUS = 'Guardians hit multiplier',
@@ -133,6 +134,11 @@ export enum DetailKey {
   LEAGUES_BLINDBAG_CHANCE_UNIQUE = 'Player blindbag uniques chance',
   LEAGUES_EARTH_SPELL_DEFENCE_BONUS = 'Player talent_earth_scale_defence_stat bonus damage',
   LEAGUES_LIGHT_WEAPON_DOUBLEHIT_MAX = 'Player light weapon double hit max',
+  LEAGUES_MINION_ACCURACY = 'Player minion accuracy',
+  LEAGUES_MINION_DEFENCE_ROLL = 'Player minion defence roll',
+  LEAGUES_MINION_MAX_HIT = 'Player minion max hit',
+  LEAGUES_MINION_STYLE = 'Player minion style',
+  LEAGUES_MINION_ZAMORAK_ITEMS = 'Player minion Zamorak items',
 }
 
 export interface DetailEntry {
