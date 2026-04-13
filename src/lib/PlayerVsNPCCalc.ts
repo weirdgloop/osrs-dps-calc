@@ -1179,7 +1179,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (minMax[0] > minMax[1]) {
-      minMax[0] = minMax[1];
+      minMax[1] = minMax[0];
     }
 
     // some cursed (literally, cursed amulet of magic) stuff throws this off
@@ -1667,16 +1667,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isUsingMeleeStyle() && this.isWearingScythe()) {
       const hits: HitDistribution[] = [];
       for (let i = 0; i < Math.min(Math.max(this.monster.size, 1), 3); i++) {
-        const splatMin = Math.trunc(min / (2 ** i));
         const splatMax = Math.trunc(max / (2 ** i));
-        hits.push(HitDistribution.linear(acc, splatMin, splatMax));
+        hits.push(HitDistribution.linear(acc, min, Math.max(min, splatMax)));
       }
       dist = new AttackDistribution(hits);
     }
 
     if (this.isUsingMeleeStyle() && this.wearing('Dual macuahuitl')) {
-      const secondHit = HitDistribution.linear(acc, min - Math.trunc(min / 2), max - Math.trunc(max / 2));
-      const firstHit = new AttackDistribution([HitDistribution.linear(acc, Math.trunc(min / 2), Math.trunc(max / 2))]);
+      const firstMax = Math.trunc(max / 2);
+      const secondMax = max - firstMax;
+      const firstHit = new AttackDistribution([HitDistribution.linear(acc, min, Math.max(min, firstMax))]);
+      const secondHit = HitDistribution.linear(acc, min, Math.max(min, secondMax));
       dist = firstHit.transform(
         (h) => {
           if (h.accurate) {
@@ -1688,9 +1689,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingTwoHitWeapon()) {
+      const firstMax = Math.trunc(max / 2);
+      const secondMax = max - firstMax;
       dist = new AttackDistribution([
-        HitDistribution.linear(acc, Math.trunc(min / 2), Math.trunc(max / 2)),
-        HitDistribution.linear(acc, min - Math.trunc(min / 2), max - Math.trunc(max / 2)),
+        HitDistribution.linear(acc, min, Math.max(min, firstMax)),
+        HitDistribution.linear(acc, min, Math.max(min, secondMax)),
       ]);
     }
 
