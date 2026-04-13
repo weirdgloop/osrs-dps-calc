@@ -43,6 +43,10 @@ const calcKeyToString = (value: number, calcKey: keyof PlayerVsNPCCalculatedLoad
 };
 
 const calcDpsString = (value: number, executionerValue?: number): React.ReactNode => {
+  if (!isDefined(value)) {
+    return (<p className="text-sm">---</p>);
+  }
+
   if (!isDefined(executionerValue)) {
     return value.toFixed(DPS_PRECISION);
   }
