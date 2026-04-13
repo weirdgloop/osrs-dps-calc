@@ -465,7 +465,7 @@ const MonsterContainer: React.FC = observer(() => {
                       />
                       <AttributeInput
                         name="Attack"
-                        max={1000}
+                        max={10000}
                         disabled={!isCustomMonster}
                         image={attack}
                         value={displayMonster.skills.atk}
@@ -474,7 +474,7 @@ const MonsterContainer: React.FC = observer(() => {
                       />
                       <AttributeInput
                         name="Strength"
-                        max={1000}
+                        max={10000}
                         disabled={!isCustomMonster}
                         image={strength}
                         value={displayMonster.skills.str}
@@ -492,7 +492,7 @@ const MonsterContainer: React.FC = observer(() => {
                       />
                       <AttributeInput
                         name="Magic"
-                        max={1000}
+                        max={10000}
                         disabled={!isCustomMonster}
                         image={magic}
                         value={displayMonster.skills.magic}
@@ -501,7 +501,7 @@ const MonsterContainer: React.FC = observer(() => {
                       />
                       <AttributeInput
                         name="Ranged"
-                        max={1000}
+                        max={10000}
                         disabled={!isCustomMonster}
                         image={ranged}
                         value={displayMonster.skills.ranged}
@@ -524,7 +524,7 @@ const MonsterContainer: React.FC = observer(() => {
                     <div className="flex flex-col gap-2 mt-3 text-center">
                       <AttributeInput
                         name="Attack"
-                        max={1000}
+                        max={10000}
                         disabled={!isCustomMonster}
                         image={attack}
                         value={displayMonster.offensive.atk}
@@ -533,7 +533,7 @@ const MonsterContainer: React.FC = observer(() => {
                       />
                       <AttributeInput
                         name="Strength"
-                        max={1000}
+                        max={10000}
                         disabled={!isCustomMonster}
                         image={strength}
                         value={displayMonster.offensive.str}
@@ -542,7 +542,7 @@ const MonsterContainer: React.FC = observer(() => {
                       />
                       <AttributeInput
                         name="Magic"
-                        max={1000}
+                        max={10000}
                         disabled={!isCustomMonster}
                         image={magic}
                         value={displayMonster.offensive.magic}
@@ -551,7 +551,7 @@ const MonsterContainer: React.FC = observer(() => {
                       />
                       <AttributeInput
                         name="Magic Strength"
-                        max={1000}
+                        max={10000}
                         disabled={!isCustomMonster}
                         image={magicStrength}
                         value={displayMonster.offensive.magic_str}
@@ -560,7 +560,7 @@ const MonsterContainer: React.FC = observer(() => {
                       />
                       <AttributeInput
                         name="Ranged"
-                        max={1000}
+                        max={10000}
                         disabled={!isCustomMonster}
                         image={ranged}
                         value={displayMonster.offensive.ranged}
@@ -569,7 +569,7 @@ const MonsterContainer: React.FC = observer(() => {
                       />
                       <AttributeInput
                         name="Ranged Strength"
-                        max={1000}
+                        max={10000}
                         disabled={!isCustomMonster}
                         image={rangedStrength}
                         value={displayMonster.offensive.ranged_str}
@@ -583,7 +583,7 @@ const MonsterContainer: React.FC = observer(() => {
                     <div className="flex flex-col gap-2 mt-3 text-center">
                       <AttributeInput
                         name="Stab"
-                        max={1000}
+                        max={10000}
                         disabled={!isCustomMonster}
                         image={dagger}
                         value={displayMonster.defensive.stab}
@@ -592,7 +592,7 @@ const MonsterContainer: React.FC = observer(() => {
                       />
                       <AttributeInput
                         name="Slash"
-                        max={1000}
+                        max={10000}
                         disabled={!isCustomMonster}
                         image={scimitar}
                         value={displayMonster.defensive.slash}
@@ -601,7 +601,7 @@ const MonsterContainer: React.FC = observer(() => {
                       />
                       <AttributeInput
                         name="Crush"
-                        max={1000}
+                        max={10000}
                         disabled={!isCustomMonster}
                         image={warhammer}
                         value={displayMonster.defensive.crush}
@@ -610,7 +610,7 @@ const MonsterContainer: React.FC = observer(() => {
                       />
                       <AttributeInput
                         name="Magic"
-                        max={1000}
+                        max={10000}
                         disabled={!isCustomMonster}
                         image={magic}
                         value={displayMonster.defensive.magic}
@@ -619,7 +619,7 @@ const MonsterContainer: React.FC = observer(() => {
                       />
                       <AttributeInput
                         name="Ranged Light"
-                        max={1000}
+                        max={10000}
                         disabled={!isCustomMonster}
                         image={ranged_light}
                         value={displayMonster.defensive.light}
@@ -628,7 +628,7 @@ const MonsterContainer: React.FC = observer(() => {
                       />
                       <AttributeInput
                         name="Ranged Standard"
-                        max={1000}
+                        max={10000}
                         disabled={!isCustomMonster}
                         image={ranged_standard}
                         value={displayMonster.defensive.standard}
@@ -637,7 +637,7 @@ const MonsterContainer: React.FC = observer(() => {
                       />
                       <AttributeInput
                         name="Ranged Heavy"
-                        max={1000}
+                        max={10000}
                         disabled={!isCustomMonster}
                         image={ranged_heavy}
                         value={displayMonster.defensive.heavy}
