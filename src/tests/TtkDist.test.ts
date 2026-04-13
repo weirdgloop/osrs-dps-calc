@@ -1,9 +1,10 @@
 import { expect, test, describe } from '@jest/globals';
 import {
-  AttackDistribution, HitDistribution, Hitsplat, WeightedHit,
+  AttackDistribution, divisionTransformer, HitDistribution, Hitsplat, WeightedHit,
 } from '@/lib/HitDist';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import { getTestMonster, getTestPlayer } from '@/tests/utils/TestUtils';
+import { YAMA_IDS } from '@/lib/constants';
 
 describe('variable attack speeds should not merge states from different timelines', () => {
   test('2hp, 50% accuracy, 3:4 guarantee, 1 max', () => {
@@ -100,5 +101,53 @@ describe('variable attack speeds should not merge states from different timeline
       .toBeCloseTo(4.99e-05);
     expect(result.get(83))
       .toBeCloseTo(2.64e-05);
+  });
+
+  test('executioner does not instantly kill through ranged damage reduction', () => {
+    const monster = getTestMonster('Abyssal demon', 'Standard', {
+      skills: {
+        hp: 10,
+      },
+      inputs: {
+        monsterCurrentHp: 2,
+      },
+    });
+    const player = getTestPlayer(monster, {
+      leagues: {
+        six: {
+          executionerEnabled: true,
+        },
+      },
+    });
+
+    const calc = new PlayerVsNPCCalc(player, monster);
+    calc.getDistribution = () => new AttackDistribution([new HitDistribution([
+      new WeightedHit(1.0, [Hitsplat.INACCURATE]),
+    ])]);
+    calc.applyNpcTransforms = () => divisionTransformer(2, 1);
+    const result = calc.getTtkDistribution();
+
+    expect(result.get(calc.getAttackSpeed())).toBeUndefined();
+    expect(result.size).toBeGreaterThan(0);
+  });
+
+  test('executioner has no effect against yama', () => {
+    const monster = getTestMonster('Yama', '', {
+      id: YAMA_IDS[0],
+    });
+    const basePlayer = getTestPlayer(monster);
+    const executionerPlayer = getTestPlayer(monster, {
+      leagues: {
+        six: {
+          executionerEnabled: true,
+        },
+      },
+    });
+
+    const baseCalc = new PlayerVsNPCCalc(basePlayer, monster);
+    const executionerCalc = new PlayerVsNPCCalc(executionerPlayer, monster);
+
+    expect(executionerCalc.getTtk()).toBeCloseTo(baseCalc.getTtk());
+    expect(executionerCalc.getExecutionerDps()).toBeUndefined();
   });
 });

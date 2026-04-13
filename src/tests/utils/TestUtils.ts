@@ -125,6 +125,8 @@ export function calculatePlayerVsNpc(monster: Monster, player: Player, opts?: Ca
     maxAttackRoll: calc.getMaxAttackRoll(),
     accuracy: calc.getHitChance(),
     dps: calc.getDps(),
+    executionerDps: calc.getExecutionerDps(),
+    ttk: calc.getTtk(),
     details: calc.details,
     dist: calc.getDistribution(),
   };
