@@ -1,19 +1,18 @@
-import { describe, expect, test } from "@jest/globals";
-import PlayerVsNPCCalc from "@/lib/PlayerVsNPCCalc";
-import { DetailKey } from "@/lib/CalcDetails";
+import { describe, expect, test } from '@jest/globals';
+import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
+import { DetailKey } from '@/lib/CalcDetails';
 import {
   findEquipment,
   findResult,
   getTestMonster,
   getTestPlayer,
-} from "@/tests/utils/TestUtils";
+} from '@/tests/utils/TestUtils';
 
-const getMinionDpt = (calc: PlayerVsNPCCalc): number =>
-  calc.getDpt() - calc.getExpectedDamage() / calc.getExpectedAttackSpeed();
+const getMinionDpt = (calc: PlayerVsNPCCalc): number => calc.getDpt() - calc.getExpectedDamage() / calc.getExpectedAttackSpeed();
 
-describe("Minion", () => {
-  test("chooses the weaker of ranged or magic defences", () => {
-    const m = getTestMonster("Abyssal demon", "Standard", {
+describe('Minion', () => {
+  test('chooses the weaker of ranged or magic defences', () => {
+    const m = getTestMonster('Abyssal demon', 'Standard', {
       defensive: {
         light: 220,
         standard: 220,
@@ -23,7 +22,7 @@ describe("Minion", () => {
     });
     const p = getTestPlayer(m, {
       equipment: {
-        weapon: findEquipment("Bronze dagger"),
+        weapon: findEquipment('Bronze dagger'),
       },
       leagues: {
         six: {
@@ -36,16 +35,14 @@ describe("Minion", () => {
     const calc = new PlayerVsNPCCalc(p, m, { detailedOutput: true });
     calc.getDps();
 
-    expect(findResult(calc.details, DetailKey.LEAGUES_MINION_STYLE)).toBe(
-      "magic",
-    );
+    expect(findResult(calc.details, DetailKey.LEAGUES_MINION_STYLE)).toBe('magic');
   });
 
-  test("gains max hit from consumed Zamorak items", () => {
-    const m = getTestMonster("Abyssal demon", "Standard");
+  test('gains max hit from consumed Zamorak items', () => {
+    const m = getTestMonster('Abyssal demon', 'Standard');
     const playerOverrides = {
       equipment: {
-        weapon: findEquipment("Bronze dagger"),
+        weapon: findEquipment('Bronze dagger'),
       },
       leagues: {
         six: {
@@ -93,12 +90,12 @@ describe("Minion", () => {
     expect(upgradedCalc.getDps()).toBeGreaterThan(baseCalc.getDps());
   });
 
-  test("does not inherit player bolt effects", () => {
-    const m = getTestMonster("Abyssal demon", "Standard");
+  test('does not inherit player bolt effects', () => {
+    const m = getTestMonster('Abyssal demon', 'Standard');
     const neutralCalc = new PlayerVsNPCCalc(
       getTestPlayer(m, {
         equipment: {
-          weapon: findEquipment("Bronze dagger"),
+          weapon: findEquipment('Bronze dagger'),
         },
         leagues: {
           six: {
@@ -113,8 +110,8 @@ describe("Minion", () => {
     const boltCalc = new PlayerVsNPCCalc(
       getTestPlayer(m, {
         equipment: {
-          weapon: findEquipment("Rune crossbow"),
-          ammo: findEquipment("Ruby bolts (e)"),
+          weapon: findEquipment('Rune crossbow'),
+          ammo: findEquipment('Ruby bolts (e)'),
         },
         leagues: {
           six: {
