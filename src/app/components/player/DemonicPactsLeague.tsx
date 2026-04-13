@@ -118,7 +118,7 @@ const BlindbagSelector = observer(() => {
 const DemonicPactsLeague: React.FC = observer(() => {
   const [showCombatMasteriesUI, setShowCombatMasteriesUI] = useState(false);
   const store = useStore();
-  const { cullingSpree } = store.player.leagues.six;
+  const { cullingSpree, executionerEnabled } = store.player.leagues.six;
 
   const fromUrlInput = useRef<HTMLInputElement>(null);
   const fromUrlBtn = useRef<HTMLButtonElement>(null);
@@ -183,6 +183,24 @@ const DemonicPactsLeague: React.FC = observer(() => {
               />
               {' '}
               Culling Spree
+            </>
+          )}
+        />
+
+        <Toggle
+          checked={executionerEnabled}
+          setChecked={(checked) => store.updatePlayer({ leagues: { six: { executionerEnabled: checked } } })}
+          label={(
+            <>
+              Executioner
+              {' '}
+              <span
+                className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+                data-tooltip-id="tooltip"
+                data-tooltip-content="Uses Sage's axe execution logic for TTK and the parenthetical DPS value."
+              >
+                ?
+              </span>
             </>
           )}
         />

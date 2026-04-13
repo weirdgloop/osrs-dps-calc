@@ -85,6 +85,8 @@ export interface LeaguesState {
 
   effects: { [k in LeaguesEffect]?: number };
 
+  executionerEnabled: boolean;
+
   distanceToEnemy: number;
 
   enemyPrayers: {

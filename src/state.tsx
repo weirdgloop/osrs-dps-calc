@@ -143,6 +143,7 @@ export const generateEmptyPlayer = (name?: string): Player => ({
     six: {
       selectedNodeIds: new Set<string>(['node1']),
       effects: {},
+      executionerEnabled: false,
       distanceToEnemy: 1,
       enemyPrayers: {
         melee: false,

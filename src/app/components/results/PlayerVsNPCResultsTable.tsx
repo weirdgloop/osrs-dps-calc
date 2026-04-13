@@ -42,6 +42,28 @@ const calcKeyToString = (value: number, calcKey: keyof PlayerVsNPCCalculatedLoad
   }
 };
 
+const calcDpsString = (value: number, executionerValue?: number): React.ReactNode => {
+  if (!isDefined(value)) {
+    return (<p className="text-sm">---</p>);
+  }
+
+  if (!isDefined(executionerValue)) {
+    return value.toFixed(DPS_PRECISION);
+  }
+
+  return (
+    <>
+      {value.toFixed(DPS_PRECISION)}
+      {' '}
+      <span className="text-xs text-gray-500 dark:text-gray-300">
+        (
+        {executionerValue.toFixed(DPS_PRECISION)}
+        )
+      </span>
+    </>
+  );
+};
+
 const ResultRowHeader: React.FC<PropsWithChildren> = (props) => {
   const { children } = props;
 
@@ -87,10 +109,19 @@ const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props)
           ) : undefined;
       }
 
+      let displayValue: string | React.ReactNode;
+      if (hasResults) {
+        displayValue = calcKey === 'dps'
+          ? calcDpsString(value, l.executionerDps)
+          : calcKeyToString(value, calcKey);
+      } else {
+        displayValue = <Spinner className="w-3" />;
+      }
+
       return (
         // eslint-disable-next-line react/no-array-index-key
         <th className={`text-center w-28 border-r ${((Object.values(loadouts).length > 1) && bestValue === value) ? 'dark:text-green-200 text-green-800' : 'dark:text-body-200 text-black'}`} key={i}>
-          {hasResults ? calcKeyToString(value, calcKey) : (<Spinner className="w-3" />)}
+          {displayValue}
         </th>
       );
     });
