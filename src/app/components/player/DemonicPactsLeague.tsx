@@ -90,6 +90,7 @@ const BlindbagSelector = observer(() => {
           )}
       </div>
       <EquipmentSelect
+        canonicalize={false}
         customAvailableEquipmentFilter={weaponCanBeUsedInBlindbag}
         onSelectedItemChange={(item) => {
           const current = blindbagWeapons;

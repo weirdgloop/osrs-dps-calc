@@ -96,10 +96,11 @@ const gauntletSort = (items: EquipmentOption[], monsterId: number) => {
 interface IEquipmentSelectProps {
   customAvailableEquipmentFilter?: (eq: EquipmentPiece) => boolean;
   onSelectedItemChange?: (item: EquipmentOption | null | undefined) => void;
+  canonicalize?: boolean;
 }
 
 const EquipmentSelect: React.FC<IEquipmentSelectProps> = observer((props) => {
-  const { customAvailableEquipmentFilter, onSelectedItemChange } = props;
+  const { customAvailableEquipmentFilter, onSelectedItemChange, canonicalize } = props;
   const store = useStore();
 
   const options: EquipmentOption[] = useMemo(() => {
@@ -211,6 +212,10 @@ const EquipmentSelect: React.FC<IEquipmentSelectProps> = observer((props) => {
         </div>
       )}
       customFilter={(v) => {
+        if (canonicalize === false) {
+          return v;
+        }
+
         const remainingVariantGroups: { [k: number]: number[] } = {};
         const remainingVariantMemberships: { [k: number]: number } = {}; // reverse map
 
