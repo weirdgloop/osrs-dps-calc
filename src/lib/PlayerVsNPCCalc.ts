@@ -540,7 +540,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.player.leagues.six.effects.talent_unique_blindbag_damage && this.opts.isBlindBag) {
       const damageBonus = 2 * this.getBlindbagUniques();
-      console.log({ damageBonus });
       maxHit = this.trackFactor(DetailKey.LEAGUES_BLINDBAG_DAMAGE_BONUS, maxHit, [100 + damageBonus, 100]);
     }
 
