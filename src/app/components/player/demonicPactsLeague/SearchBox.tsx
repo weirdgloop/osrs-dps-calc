@@ -6,7 +6,7 @@ const SearchBox = observer(() => {
 
   return (
     <>
-      <div className="px-4 py-2 bg-[#28221d] rounded-t border-b border-[#806f61] shadow-lg flex flex-row gap-4 w-full items-center justify-between hidden md:flex">
+      <div className="px-4 py-2 bg-[#28221d] shadow-lg flex flex-row gap-4 w-full items-center justify-between hidden md:flex">
         <h2 className="text-shadow-md">
           Search Demonic Pacts:
         </h2>
@@ -21,15 +21,15 @@ const SearchBox = observer(() => {
         />
         <div className="w-28 text-right text-sm">
           {store.ui.leagues.six.pactsSearchQuery
-                      && (store.nodesMatchingSearch.size > 0
-                        ? `${store.nodesMatchingSearch.size} highlighted`
-                        : 'No matches')}
+              && (store.nodesMatchingSearch.size > 0
+                ? `${store.nodesMatchingSearch.size} highlighted`
+                : 'No matches')}
         </div>
       </div>
-      <div className="px-4 py-2 bg-[#28221d] rounded-t border-b border-[#806f61] shadow-lg flex flex-col gap-2 w-full md:hidden items-center">
+      <div className="px-4 py-2 bg-[#28221d] shadow-lg flex flex-col gap-2 w-full md:hidden items-center">
         <div className="flex items-center gap-2 w-full">
           <h2 className="text-shadow-md">
-            Search :
+            Search:
           </h2>
           <input
             type="text"

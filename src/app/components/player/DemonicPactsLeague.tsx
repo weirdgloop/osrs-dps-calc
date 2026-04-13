@@ -326,7 +326,7 @@ const DemonicPactsLeague: React.FC = observer(() => {
           <div className="flex flex-col h-[80vh]">
             <div className="flex-grow outline outline-gray-500"><SkillTreeDisplay interactive /></div>
             <div
-              className="max-h-64 flex mt-4 h-auto rounded bg-[#1b1612] text-white border border-[#736559] shadow-xl"
+              className="max-h-64 flex mt-4 h-auto rounded bg-[#1b1612] text-white outline outline-[#736559] shadow-xl"
             >
               <SearchBox />
             </div>
