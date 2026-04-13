@@ -6,7 +6,7 @@ import { DetailEntry, DetailKey } from '@/lib/CalcDetails';
 import merge from 'lodash.mergewith';
 import { generateEmptyPlayer } from '@/state';
 import { PartialDeep } from 'type-fest';
-import { calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
+import { calculateAttackSpeed, calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { Spell, spells } from '@/types/Spell';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
 import { getCombatStylesForCategory } from '@/utils';
@@ -57,6 +57,9 @@ export function getTestPlayer(monster: Monster, overrides: PartialDeep<Player> =
 
   if (!overrides.style && overrides?.equipment?.weapon) {
     player.style = getCombatStylesForCategory(overrides.equipment.weapon.category || EquipmentCategory.NONE)[0];
+  }
+  if (!overrides.attackSpeed) {
+    player.attackSpeed = calculateAttackSpeed(player, monster);
   }
 
   return player;
