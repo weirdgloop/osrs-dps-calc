@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { IconAlertTriangleFilled, IconEdit } from '@tabler/icons-react';
+import { computed } from 'mobx';
+import localforage from 'localforage';
 import Modal from '@/app/components/generic/Modal';
 import SkillTreeDisplay from '@/app/components/player/demonicPactsLeague/SkillTreeDisplay';
 import CurrentEffects from '@/app/components/player/demonicPactsLeague/CurrentEffects';
@@ -12,10 +14,9 @@ import EquipmentSelect from '@/app/components/player/equipment/EquipmentSelect';
 import ShowIfLeagueEffectEnabled from '@/app/components/player/demonicPactsLeague/ShowIfLeagueEffectEnabled';
 import { getCdnImage } from '@/utils';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
-import { computed } from 'mobx';
 import UserIssueType from '@/enums/UserIssueType';
-import localforage from 'localforage';
 import { EquipmentPiece } from '@/types/Player';
+import SearchBox from '@/app/components/player/demonicPactsLeague/SearchBox';
 import NumberInput from '../generic/NumberInput';
 
 const weaponCanBeUsedInBlindbag = (eq: EquipmentPiece): boolean => {
@@ -324,6 +325,11 @@ const DemonicPactsLeague: React.FC = observer(() => {
           </div>
           <div className="flex flex-col h-[80vh]">
             <div className="flex-grow outline outline-gray-500"><SkillTreeDisplay interactive /></div>
+            <div
+              className="max-h-64 flex mt-4 h-auto rounded bg-[#1b1612] text-white border border-[#736559] shadow-xl"
+            >
+              <SearchBox />
+            </div>
             <div
               className="max-h-64 flex mt-4 h-auto rounded bg-[#1b1612] text-white outline outline-[#736559] shadow-xl"
             >

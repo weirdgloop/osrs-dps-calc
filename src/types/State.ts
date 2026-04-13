@@ -19,6 +19,11 @@ export interface UI {
   showShareModal: boolean;
   username: string;
   isDefensiveReductionsExpanded: boolean;
+  leagues: {
+    six: {
+      pactsSearchQuery: string;
+    };
+  };
 }
 
 /**
