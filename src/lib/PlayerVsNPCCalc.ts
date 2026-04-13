@@ -67,7 +67,12 @@ import {
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { DetailKey } from '@/lib/CalcDetails';
 import { Factor, iLerp, MinMax } from '@/lib/Math';
-import { calculateAttackSpeed, calculateEquipmentBonusesFromGear, WEAPON_SPEC_COSTS } from '@/lib/Equipment';
+import {
+  calculateAttackSpeed,
+  calculateEquipmentBonusesFromGear,
+  getCanonicalItem,
+  WEAPON_SPEC_COSTS,
+} from '@/lib/Equipment';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonster, scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { CombatStyleType, getRangedDamageType } from '@/types/PlayerCombatStyle';
@@ -535,6 +540,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.player.leagues.six.effects.talent_unique_blindbag_damage && this.opts.isBlindBag) {
       const damageBonus = 2 * this.getBlindbagUniques();
+      console.log({ damageBonus });
       maxHit = this.trackFactor(DetailKey.LEAGUES_BLINDBAG_DAMAGE_BONUS, maxHit, [100 + damageBonus, 100]);
     }
 
@@ -2156,7 +2162,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           ...this.player,
           equipment: {
             ...this.player.equipment,
-            weapon,
+            weapon: getCanonicalItem(weapon),
           },
           style: getCombatStylesForCategory(weapon.category)[0], // todo use same slot as equipped?
         };
@@ -2169,6 +2175,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           loadoutName: `${this.opts.loadoutName}/Blindbag ${weapon.id} (${weapon.name})`,
           isBlindBag: true,
           blindBagDistance: this.getDistanceToEnemy(),
+          blindBagUniques: blindbagUniques,
           isLeaguesSubCalc: true,
         });
 
@@ -2703,6 +2710,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   private getBlindbagUniques(): number {
+    if (this.opts.isBlindBag) {
+      return this.opts.blindBagUniques;
+    }
+
     const uniqueIds = new Set(this.player.leagues.six.blindbagWeapons.map((eq) => eq.id)).size;
     return Math.min(uniqueIds, 5);
   }

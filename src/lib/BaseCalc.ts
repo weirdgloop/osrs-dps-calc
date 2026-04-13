@@ -28,6 +28,7 @@ export interface CalcOpts {
   isLeaguesSubCalc?: boolean,
   isBlindBag?: boolean,
   blindBagDistance?: number,
+  blindBagUniques?: number,
   isEcho?: boolean,
   overrides?: {
     accuracy?: number,
@@ -53,6 +54,7 @@ const DEFAULT_OPTS: Required<InternalOpts> = {
   isLeaguesSubCalc: false,
   isBlindBag: false,
   blindBagDistance: 1,
+  blindBagUniques: 1,
   isEcho: false,
   noInit: false,
   overrides: {},
