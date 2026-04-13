@@ -1376,6 +1376,40 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
+    const eclipseSet = this.wearingAll(['Eclipse moon helm', 'Eclipse moon chestplate', 'Eclipse moon tassets', 'Eclipse atlatl']);
+    const eclipseBurn = eclipseSet && this.player.style.type === 'ranged' && !this.isImmuneToStrongBurns();
+    const fireSpellBurn = this.player.leagues.six.effects.talent_fire_spell_burn_bounce
+      && this.getSpellement() === 'fire'
+      && !this.isImmuneToNormalBurns();
+
+    const burnTicks = 40;
+    const burnDamage = 10;
+    const maxBurnStacks = 5;
+    let burnChance = 0;
+    if (eclipseBurn) {
+      burnChance = 0.2;
+    } else if (fireSpellBurn) {
+      burnChance = 1;
+    }
+
+    // The expected damage is per attack, but to simplify we first calculate the expected number
+    // of stacks (and thus DPS) in a steady-state attacking rhythm, and convert back to damage per
+    // attack afterwards.
+    if (burnChance > 0) {
+      const ticksPerAttack = this.getExpectedAttackSpeed();
+      const burnsPerTick = burnChance * this.getHitChance() / ticksPerAttack;
+      const unboundedBurnStacks = burnTicks * burnsPerTick;
+
+      // We account for losing burns to the stacks cap using the Erlang B loss formula.
+      let invB = 1.0;
+      for (let i = 1; i <= 1 + maxBurnStacks; i++) {
+        invB = 1.0 + invB * i / unboundedBurnStacks;
+      }
+      const expectBurnStacks = Math.min(maxBurnStacks, unboundedBurnStacks * (1 - 1 / invB));
+      const dpt = expectBurnStacks * burnDamage / burnTicks;
+      ret = dpt * ticksPerAttack;
+    }
+
     if (ret !== 0) {
       this.track(DetailKey.DOT_EXPECTED, ret);
     }
@@ -1389,9 +1423,18 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         ret = 29;
       } else if (this.wearing('Scorching bow') && !this.isImmuneToNormalBurns()) {
         ret = this.monster.attributes.includes(MonsterAttribute.DEMON) ? 5 : 1;
-      } else if (this.wearing('Arkan blade') && !this.isImmuneToNormalBurns()) {
+      } else if (this.wearing('Arkan blade') && !this.isImmuneToStrongBurns()) {
         ret = 10;
       }
+    }
+
+    const eclipseSet = this.wearingAll(['Eclipse moon helm', 'Eclipse moon chestplate', 'Eclipse moon tassets', 'Eclipse atlatl']);
+    const eclipseBurn = eclipseSet && this.player.style.type === 'ranged' && !this.isImmuneToStrongBurns();
+    const fireSpellBurn = this.player.leagues.six.effects.talent_fire_spell_burn_bounce
+      && this.getSpellement() === 'fire'
+      && !this.isImmuneToNormalBurns();
+    if (eclipseBurn || fireSpellBurn) {
+      ret = 5;
     }
 
     if (ret !== 0) {
