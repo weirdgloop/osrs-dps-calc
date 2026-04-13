@@ -1966,7 +1966,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const mattrs = this.monster.attributes;
     const relevantEffects: ([HitTransformer] | [HitTransformer, TransformOpts])[] = [];
 
-    if (this.monster.name === 'Zulrah') {
+    if (this.monster.name === 'Zulrah' && this.player.leagues.six.selectedNodeIds.size <= 1) {
       // https://twitter.com/JagexAsh/status/1745852774607183888
       relevantEffects.push([cappedRerollTransformer(50, 5, 45)]);
     }
