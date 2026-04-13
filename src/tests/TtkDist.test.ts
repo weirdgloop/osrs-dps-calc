@@ -6,8 +6,10 @@ import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import { getTestMonster, getTestPlayer } from '@/tests/utils/TestUtils';
 
 class TestMinionTtkCalc extends PlayerVsNPCCalc {
+  private readonly delayedHits = HitDistribution.single(1.0, [new Hitsplat(1)]).withProbabilisticDelays(() => [[1.0, 3]]);
+
   protected override getMinionDelayedHits() {
-    return HitDistribution.single(1.0, [new Hitsplat(1)]).withProbabilisticDelays(() => [[1.0, 3]]);
+    return this.delayedHits;
   }
 }
 

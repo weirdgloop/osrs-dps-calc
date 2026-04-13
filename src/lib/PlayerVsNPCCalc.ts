@@ -2628,25 +2628,25 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     const minionHits = this.getMinionDelayedHits();
     if (minionHits.length > 0) {
-      const h = iterMax + 20;
-      const w = this.monster.skills.hp + 1;
-      const tickHpsRoot = new Float64Array(h * w);
-      const tickHps = range(0, h)
-        .map((i) => tickHpsRoot.subarray(w * i, w * (i + 1)));
-      tickHps[1][this.monster.inputs.monsterCurrentHp || this.monster.skills.hp] = 1.0;
+      const minionStateHeight = iterMax + 20;
+      const minionStateWidth = this.monster.skills.hp + 1;
+      const minionTickHpsRoot = new Float64Array(minionStateHeight * minionStateWidth);
+      const minionTickHps = range(0, minionStateHeight)
+        .map((i) => minionTickHpsRoot.subarray(minionStateWidth * i, minionStateWidth * (i + 1)));
+      minionTickHps[1][this.monster.inputs.monsterCurrentHp || this.monster.skills.hp] = 1.0;
 
-      const ttks = new Map<number, number>();
-      let epsilon = 1.0;
+      const minionTtks = new Map<number, number>();
+      let minionEpsilon = 1.0;
 
-      for (let tick = 1; tick <= iterMax && epsilon >= TTK_DIST_EPSILON; tick++) {
+      for (let tick = 1; tick <= iterMax && minionEpsilon >= TTK_DIST_EPSILON; tick++) {
         const playerDue = ((tick - 1) % this.getAttackSpeed()) === 0;
         const minionDue = ((tick - 1) % MINION_ATTACK_SPEED) === 0;
-        const hps = tickHps[tick];
+        const hps = minionTickHps[tick];
 
         if (!playerDue && !minionDue) {
           for (const [hp, hpProb] of hps.entries()) {
             if (hpProb !== 0) {
-              tickHps[tick + 1][hp] += hpProb;
+              minionTickHps[tick + 1][hp] += hpProb;
             }
           }
           continue;
@@ -2676,24 +2676,28 @@ export default class PlayerVsNPCCalc extends BaseCalc {
             combinedDist = combinedDist ? combinedDist.zip(minionHitDist).cumulative() : minionHitDist;
           }
 
-          combinedDist?.hits.forEach((wh) => {
+          if (!combinedDist) {
+            continue;
+          }
+
+          for (const wh of combinedDist.hits) {
             const chanceOfAction = wh.probability * hpProb;
             if (chanceOfAction === 0) {
-              return;
+              continue;
             }
 
             const newHp = hp - wh.getSum();
             if (newHp <= 0) {
-              ttks.set(tick, (ttks.get(tick) || 0) + chanceOfAction);
-              epsilon -= chanceOfAction;
+              minionTtks.set(tick, (minionTtks.get(tick) || 0) + chanceOfAction);
+              minionEpsilon -= chanceOfAction;
             } else {
-              tickHps[tick + 1][newHp] += chanceOfAction;
+              minionTickHps[tick + 1][newHp] += chanceOfAction;
             }
-          });
+          }
         }
       }
 
-      return ttks;
+      return minionTtks;
     }
 
     // todo dp backwards from 0 hp?
