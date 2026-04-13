@@ -61,6 +61,7 @@ import {
   USES_DEFENCE_LEVEL_FOR_MAGIC_DEFENCE_NPC_IDS,
   VERZIK_P1_IDS,
   VESPULA_IDS,
+  YAMA_IDS,
   YAMA_VOID_FLARE_IDS,
   ZULRAH_IDS,
 } from '@/lib/constants';
@@ -2319,6 +2320,46 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     return this.getDpt() / SECONDS_PER_TICK;
   }
 
+  private isExecutionerEnabled() {
+    return this.player.leagues.six.executionerEnabled && !YAMA_IDS.includes(this.monster.id);
+  }
+
+  private getExecutionerThresholdHp() {
+    return Math.trunc(this.monster.skills.hp / 5);
+  }
+
+  private canUseExecutionerAtHp(hp: number) {
+    return this.isExecutionerEnabled()
+      && this.getExecutionerThresholdHp() > 0
+      && hp > 0
+      && hp <= this.getExecutionerThresholdHp();
+  }
+
+  private getExecutionerDistAtHp(hp: number): DelayedHit[] {
+    return new HitDistribution([new WeightedHit(1.0, [new Hitsplat(hp)])])
+      .transform(this.applyNpcTransforms('ranged'))
+      .cumulative()
+      .withProbabilisticDelays(this.getWeaponDelayProvider());
+  }
+
+  private static getDistributionTtk(ttkDist: Map<number, number>) {
+    return sum(Array.from(ttkDist.entries()), ([ticks, probability]) => ticks * probability) * SECONDS_PER_TICK;
+  }
+
+  private distHasNonExecutionerCurrentHpDependency(loadout: Player, monster: Monster): boolean {
+    if (monster.name === 'Vardorvis') {
+      return true;
+    }
+    if (loadout.equipment.weapon?.name.includes('rossbow') && this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)'])) {
+      return true;
+    }
+    if (this.wearing('Keris partisan of the sun') && TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id)) {
+      return true;
+    }
+
+    return false;
+  }
+
   /**
    * Returns the amount of time (in ticks) that the user can maintain their prayers before running out of prayer points.
    * Does not account for flicking or toggling prayers.
@@ -2376,7 +2417,25 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    * Returns the average time-to-kill (in seconds) calculation.
    */
   public getTtk() {
+    if (this.isExecutionerEnabled()) {
+      return PlayerVsNPCCalc.getDistributionTtk(this.getTtkDistribution());
+    }
+
     return this.getHtk() * this.getExpectedAttackSpeed() * SECONDS_PER_TICK;
+  }
+
+  public getExecutionerDps(): number | undefined {
+    if (!this.isExecutionerEnabled()) {
+      return undefined;
+    }
+
+    const ttk = this.getTtk();
+    if (!ttk) {
+      return undefined;
+    }
+
+    const startHp = this.monster.inputs.monsterCurrentHp || this.monster.skills.hp;
+    return startHp / ttk;
   }
 
   public getSpecDps(): number {
@@ -2427,8 +2486,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    * it is an object where keys are tick counts and values are probabilities.
    */
   public getTtkDistribution(): Map<number, number> {
-    if (this.getDistribution()
-      .getExpectedDamage() === 0) { // todo thralls, allow thrall-only compute?
+    const startHp = this.monster.inputs.monsterCurrentHp || this.monster.skills.hp;
+    if (this.getDistribution().getExpectedDamage() === 0
+      && !this.canUseExecutionerAtHp(startHp)) { // todo thralls, allow thrall-only compute?
       return new Map<number, number>();
     }
 
@@ -2456,7 +2516,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const tickHpsRoot = new Float64Array(h * w);
     const tickHps = range(0, h)
       .map((i) => tickHpsRoot.subarray(w * i, w * (i + 1)));
-    tickHps[1][this.monster.inputs.monsterCurrentHp || this.monster.skills.hp] = 1.0;
+    tickHps[1][startHp] = 1.0;
 
     // output map, will be converted at the end
     const ttks = new Map<number, number>();
@@ -2522,11 +2582,16 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   distAtHp(baseDist: DelayedHit[], hp: number): DelayedHit[] {
+    if (this.canUseExecutionerAtHp(hp)) {
+      return this.getExecutionerDistAtHp(hp);
+    }
+
     if (this.opts.disableMonsterScaling) {
       return baseDist;
     }
 
-    if (!this.distIsCurrentHpDependent(this.player, this.monster) || hp === this.monster.inputs.monsterCurrentHp) {
+    if (!this.distHasNonExecutionerCurrentHpDependency(this.player, this.monster)
+      || hp === this.monster.inputs.monsterCurrentHp) {
       return baseDist;
     }
 
@@ -2582,17 +2647,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   public distIsCurrentHpDependent(loadout: Player, monster: Monster): boolean {
-    if (monster.name === 'Vardorvis') {
-      return true;
-    }
-    if (loadout.equipment.weapon?.name.includes('rossbow') && this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)'])) {
-      return true;
-    }
-    if (this.wearing('Keris partisan of the sun') && TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id)) {
-      return true;
-    }
-
-    return false;
+    return this.canUseExecutionerAtHp(monster.inputs.monsterCurrentHp || monster.skills.hp)
+      || this.isExecutionerEnabled()
+      || this.distHasNonExecutionerCurrentHpDependency(loadout, monster);
   }
 
   private static tbowScaling = (current: number, magic: number, accuracyMode: boolean): number => {

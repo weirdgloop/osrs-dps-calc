@@ -39,6 +39,7 @@ const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) 
       maxAttackRoll: calc.getMaxAttackRoll(),
       accuracy: calc.getDisplayHitChance(),
       dps: calc.getDps(),
+      executionerDps: calc.getExecutionerDps(),
       ttk: calc.getTtk(),
       hitDist: calc.getDistribution().asHistogram(calcOpts.hitDistHideMisses),
       details: calc.details,
