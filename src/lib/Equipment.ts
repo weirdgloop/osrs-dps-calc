@@ -35,6 +35,7 @@ export const noStatExceptions = [
   'Inoculation bracelet',
   'Bracelet of ethereum',
   'Atlatl dart',
+  "Butler's tray",
 ];
 
 /**
