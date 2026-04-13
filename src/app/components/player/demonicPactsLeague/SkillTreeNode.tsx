@@ -1,6 +1,4 @@
 import { observer } from 'mobx-react-lite';
-import { useStore } from '@/state';
-import { NodeSize, SkillTreeNodeInfo } from '@/app/components/player/demonicPactsLeague/parse_skill_tree_elements';
 import {
   Handle,
   Node,
@@ -8,10 +6,12 @@ import {
   NodeToolbar,
   Position,
 } from '@xyflow/react';
-import { JSONify } from '@/app/components/player/demonicPactsLeague/JSONify';
 import clsx from 'clsx';
-import useKeyPressed from '@/app/components/player/demonicPactsLeague/useKeyPressed';
 import Image from 'next/image';
+import { useStore } from '@/state';
+import { NodeSize, SkillTreeNodeInfo } from '@/app/components/player/demonicPactsLeague/parse_skill_tree_elements';
+import { JSONify } from '@/app/components/player/demonicPactsLeague/JSONify';
+import useKeyPressed from '@/app/components/player/demonicPactsLeague/useKeyPressed';
 import { getBackingIcon, rowIdToTileInfo } from '@/app/components/player/demonicPactsLeague/icons';
 import spriteTiles from '@/app/components/player/demonicPactsLeague/spriteTiles';
 
@@ -84,6 +84,9 @@ export const SkillTreeNode = observer(
     const isHovered = store.leagues.six.hoveredNodeId === id;
 
     const size = nodeSizeToPx[data.skillTreeNodeInfo.node_size];
+    const isMatchingSearch = store.nodesMatchingSearch.has(
+      data.skillTreeNodeInfo.row_id,
+    );
 
     return (
       <div>
@@ -120,6 +123,12 @@ export const SkillTreeNode = observer(
             ).src})`,
           }}
         >
+          {!data.isPreview && isMatchingSearch && (
+            <div
+              className="absolute inset-0 bg-[oklch(72.3%_0.219_149.579)] opacity-50 -z-10 scale-90 rotate-45"
+              aria-hidden="true"
+            />
+          )}
           <Image
             src={getSpriteTile(data.skillTreeNodeInfo.row_id, store.isNodeSelected(id))}
             alt="Pact icon"
