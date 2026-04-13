@@ -73,8 +73,10 @@ const BlindbagSelector = observer(() => {
           <button
             key={weapon.id}
             type="button"
-            aria-label={weapon.name}
+            aria-label={`${weapon.name}${weapon.version ? ` (${weapon.version})` : ''}`}
             className="w-8 h-8 bg-dark-200 border border-dark-400 group rounded flex justify-center p-0.5 cursor-pointer"
+            data-tooltip-id="tooltip"
+            data-tooltip-content={`${weapon.name}${weapon.version ? ` (${weapon.version})` : ''}`}
             onClick={() => store.toggleLeagues6BlindbagWeapon(weapon)}
           >
             <img
