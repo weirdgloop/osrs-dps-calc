@@ -52,7 +52,7 @@ const DEFAULT_OPTS: Required<InternalOpts> = {
   usingSpecialAttack: false,
   isLeaguesSubCalc: false,
   isBlindBag: false,
-  blindBagDistance: 0,
+  blindBagDistance: 1,
   isEcho: false,
   noInit: false,
   overrides: {},
