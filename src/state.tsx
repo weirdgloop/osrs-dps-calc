@@ -243,6 +243,11 @@ class GlobalState implements State {
     showShareModal: false,
     username: '',
     isDefensiveReductionsExpanded: false,
+    leagues: {
+      six: {
+        pactsSearchQuery: '',
+      },
+    },
   };
 
   prefs: Preferences = {
@@ -1100,6 +1105,17 @@ class GlobalState implements State {
       }
     }
     return effects;
+  }
+
+  get nodesMatchingSearch(): Set<string> {
+    if (!this.ui.leagues.six.pactsSearchQuery) {
+      return new Set();
+    }
+    return new Set(
+      Object.keys(dbrowDefinitions).filter((id) => dbrowDefinitions[id].name
+        ?.toLowerCase()
+        .includes(this.ui.leagues.six.pactsSearchQuery.toLowerCase())),
+    );
   }
 }
 
