@@ -274,7 +274,7 @@ const DemonicPactsLeague: React.FC = observer(() => {
               <NumberInput
                 aria-labelledby="expectedNpcHitLabel"
                 className="form-control w-12 text-centerl"
-                id="regenerateMagicLevelBoost"
+                id="expectedNpcHit"
                 min={0}
                 title="Expected npc damage"
                 value={store.player.leagues.six.expectedNpcHit}
