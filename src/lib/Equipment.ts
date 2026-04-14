@@ -596,6 +596,8 @@ const otherShields = [
   'Toktz-ket-xil',
   'Twisted buckler',
   'Dragonfire ward',
+  "Elidinis' ward",
+  "Elidinis' ward (f)",
 ];
 
 export const isHoldingShield = (inputEq: PlayerEquipment) => {
@@ -609,7 +611,7 @@ export const isHoldingShield = (inputEq: PlayerEquipment) => {
     if (otherShields.indexOf(name) > 0) {
       return true;
     }
-  } else if (inputEq.weapon?.name === "Dinh's bulwark") {
+  } else if (inputEq.weapon?.category === EquipmentCategory.BULWARK) {
     return true;
   }
   return false;
