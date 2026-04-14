@@ -112,7 +112,7 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
 
   const loadouts = toJS(calc.loadouts);
   const hasResults = useMemo(() => some(loadouts, (l) => some(Object.entries(l), ([, v]) => isDefined(v))), [loadouts]);
-  const showLeaguesRows = useMemo(() => some(loadouts, (l) => l.thornsDamage !== undefined), [loadouts]);
+  const showLeaguesRows = useMemo(() => some(loadouts, (l) => l.recoilDamage !== undefined), [loadouts]);
 
   return (
     <table>
@@ -190,11 +190,8 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
                 <ResultRowHeader>
                   Leagues
                 </ResultRowHeader>
-                <ResultRow calcKey="thornsDamage" title="The expected melee damage dealt to mob on hit" hasResults={hasResults}>
-                  Thorns
-                </ResultRow>
-                <ResultRow calcKey="reflectChance" title="The expected chance to reflect all damage taken back to mob" hasResults={hasResults}>
-                  Reflect chance
+                <ResultRow calcKey="recoilDamage" title="The expected recoil damage dealt back to mob" hasResults={hasResults}>
+                  Recoil damage
                 </ResultRow>
               </>
             )}

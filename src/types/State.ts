@@ -71,7 +71,7 @@ export interface PlayerVsNPCCalculatedLoadout extends CalculatedLoadout {
   specFullDps?: number,
   specHitDist?: ChartEntry[],
 
-  thornsDamage?: number;
+  recoilDamage?: number;
   reflectChance?: number;
 }
 

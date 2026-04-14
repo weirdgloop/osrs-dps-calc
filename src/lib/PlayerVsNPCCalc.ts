@@ -2524,37 +2524,57 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     return ttks;
   }
 
-  public getThornsDamage(): number | undefined {
-    const leaguesEffects = this.player.leagues.six.effects;
-    let damage = leaguesEffects.talent_thorns_damage;
-    if (!damage || !isHoldingShield(this.player.equipment)) {
-      return undefined;
-    }
+  public getRecoilDamage(): number | undefined {
+    const dist = new AttackDistribution([]);
 
-    if (leaguesEffects.talent_defence_recoil_scaling) {
+    // This applies to all forms of recoil.
+    let recoilDamageBonus = 0;
+    if (this.player.leagues.six.effects.talent_defence_recoil_scaling) {
       const defensiveBonuses = this.player.defensive.crush
-        + this.player.defensive.slash
-        + this.player.defensive.stab
-        + this.player.defensive.ranged
-        + this.player.defensive.magic;
-      damage += Math.trunc(defensiveBonuses / 100);
+          + this.player.defensive.slash
+          + this.player.defensive.stab
+          + this.player.defensive.ranged
+          + this.player.defensive.magic;
+      recoilDamageBonus = Math.trunc(defensiveBonuses / 100);
+      this.track('Recoil damage bonus', recoilDamageBonus);
     }
 
-    if (leaguesEffects.talent_thorns_double_hit) {
-      damage += Math.trunc(damage / 2);
-    }
-
-    return damage;
-  }
-
-  public getReflectChance(): number | undefined {
     const leaguesEffects = this.player.leagues.six.effects;
-    if (!leaguesEffects.talent_shield_reflect || !isHoldingShield(this.player.equipment)) {
-      return undefined;
+    const hasShield = isHoldingShield(this.player.equipment);
+    if (leaguesEffects.talent_thorns_damage && hasShield) {
+      const thornsDamage = leaguesEffects.talent_thorns_damage + recoilDamageBonus;
+      const hitSplats = [new Hitsplat(thornsDamage)];
+      if (leaguesEffects.talent_thorns_double_hit) {
+        hitSplats.push(new Hitsplat(Math.trunc(thornsDamage / 2)));
+      }
+      dist.addDist(HitDistribution.single(1, hitSplats));
+      this.trackDist('Thorns dist', dist);
     }
 
-    const defenceLevel = this.player.skills.def + this.player.boosts.def;
-    return defenceLevel * 0.001;
+    // All other recoil requires atleast some damage be dealt.
+    const incomingDamage = this.player.leagues.six.expectedNpcHit;
+    if (incomingDamage > 0) {
+      if (leaguesEffects.talent_shield_reflect && hasShield) {
+        const defenceLevel = this.player.skills.def + this.player.boosts.def;
+        const reflectChance = defenceLevel * 0.001;
+        const reflectDamage = incomingDamage + recoilDamageBonus;
+
+        dist.addDist(HitDistribution.single(reflectChance, [new Hitsplat(reflectDamage)]));
+      }
+
+      if (this.wearing('Ring of recoil') || this.wearing('Ring of suffering (i)') || this.wearing('Ring of suffering')) {
+        const recoilDamage = 1 + Math.trunc(incomingDamage / 10) + recoilDamageBonus;
+        dist.addDist(HitDistribution.single(1, [new Hitsplat(recoilDamage)]));
+      }
+
+      if (this.wearing('Echo boots') && this.player.leagues.six.distanceToEnemy === 1) {
+        dist.addDist(HitDistribution.single(1, [new Hitsplat(1 + recoilDamageBonus)]));
+      }
+    }
+
+    this.trackDist(DetailKey.DIST_RECOIL, dist);
+
+    return dist.getExpectedDamage();
   }
 
   distAtHp(baseDist: DelayedHit[], hp: number): DelayedHit[] {

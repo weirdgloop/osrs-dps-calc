@@ -99,6 +99,7 @@ export enum DetailKey {
   DIST_FINAL = 'Dist final',
   DIST_LEAGUES_BLINDBAG = 'Dist leagues blindbag',
   DIST_LEAGUES_BLINDBAG_RECURSIVE = 'Dist leagues blindbag recursive',
+  DIST_RECOIL = 'Dist recoil',
   DOT_EXPECTED = 'Damage over time expected',
   DOT_MAX = 'Damage over time max',
   GUARDIANS_DMG_BONUS = 'Guardians hit multiplier',

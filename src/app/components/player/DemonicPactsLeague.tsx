@@ -146,6 +146,13 @@ const DemonicPactsLeague: React.FC = observer(() => {
     return unimplemented;
   }).get();
 
+  const hasAnyRecoilTalents = computed(() => {
+    const leaguesEffects = store.player.leagues.six.effects;
+    return leaguesEffects.talent_defence_recoil_scaling
+      || leaguesEffects.talent_shield_reflect
+      || leaguesEffects.talent_thorns_damage;
+  });
+
   return (
     <>
       {(unimplementedPacts.length > 0) && (
@@ -263,6 +270,36 @@ const DemonicPactsLeague: React.FC = observer(() => {
             </span>
           </div>
         </ShowIfLeagueEffectEnabled>
+
+        {
+          hasAnyRecoilTalents && (
+            <div className="flex items-center gap-2 mt-2">
+              <NumberInput
+                aria-labelledby="expectedNpcHitLabel"
+                className="form-control w-12 text-centerl"
+                id="regenerateMagicLevelBoost"
+                min={0}
+                title="Expected npc damage"
+                value={store.player.leagues.six.expectedNpcHit}
+                onChange={(v) => {
+                  store.updatePlayer({ leagues: { six: { expectedNpcHit: v } } });
+                }}
+              />
+
+              <span id="expectedNpcHitLabel" className="ml-1 text-sm select-none">
+                Expected NPC damage
+                {' '}
+                <span
+                  className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+                  data-tooltip-id="tooltip"
+                  data-tooltip-content="Expected incoming damage from npc, used to calculate recoil damage."
+                >
+                  ?
+                </span>
+              </span>
+            </div>
+          )
+        }
 
         <ShowIfLeagueEffectEnabled leaguesEffect="talent_free_random_weapon_attack_chance">
           <BlindbagSelector />

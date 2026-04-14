@@ -41,6 +41,9 @@ const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) 
       dps: calc.getDps(),
       ttk: calc.getTtk(),
       hitDist: calc.getDistribution().asHistogram(calcOpts.hitDistHideMisses),
+
+      recoilDamage: calc.getRecoilDamage(),
+
       details: calc.details,
       userIssues: calc.userIssues,
 
@@ -51,9 +54,6 @@ const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) 
       specFullDps: specCalc?.getSpecDps(),
       specHitDist: specCalc?.getDistribution().asHistogram(calcOpts.hitDistHideMisses),
       specDetails: specCalc?.details,
-
-      thornsDamage: calc.getThornsDamage(),
-      reflectChance: calc.getReflectChance(),
     });
 
     const end = self.performance.now();
