@@ -2527,7 +2527,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   public getRecoilDamage(): number | undefined {
     const dist = new AttackDistribution([]);
 
-    // This applies to all forms of recoil.
+    // Description says this applies to all forms of thorns / recoil.
     let recoilDamageBonus = 0;
     if (this.player.leagues.six.effects.talent_defence_recoil_scaling) {
       const defensiveBonuses = this.player.defensive.crush
@@ -2536,7 +2536,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           + this.player.defensive.ranged
           + this.player.defensive.magic;
       recoilDamageBonus = Math.trunc(defensiveBonuses / 100);
-      this.track('Recoil damage bonus', recoilDamageBonus);
     }
 
     const leaguesEffects = this.player.leagues.six.effects;
@@ -2548,7 +2547,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         hitSplats.push(new Hitsplat(Math.trunc(thornsDamage / 2)));
       }
       dist.addDist(HitDistribution.single(1, hitSplats));
-      this.trackDist('Thorns dist', dist);
     }
 
     // All other recoil requires atleast some damage be dealt.
@@ -2573,7 +2571,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     this.trackDist(DetailKey.DIST_RECOIL, dist);
-
     return dist.getExpectedDamage();
   }
 
