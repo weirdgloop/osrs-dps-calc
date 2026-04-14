@@ -2209,7 +2209,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const isWearingCrossbow = meleeEcho || this.player.equipment.weapon?.category === EquipmentCategory.CROSSBOW;
 
       const regenChance = this.track(DetailKey.LEAGUES_ECHO_CHANCE_REGEN, meleeEcho ? 1 : (leagues.effects.talent_regen_ammo ?? 0) / 100);
-      let echoChance = (meleeEcho ? 5 : leagues.effects.talent_ranged_regen_echo_chance!) / 100;
+      let echoChance = meleeEcho ? (0.05 * acc) : (leagues.effects.talent_ranged_regen_echo_chance! / 100);
       if (leagues.effects.talent_crossbow_echo_reproc_chance && isWearingCrossbow) {
         echoChance += leagues.effects.talent_crossbow_echo_reproc_chance / 100;
       }
