@@ -131,9 +131,6 @@ const DemonicPactsLeague: React.FC = observer(() => {
     if (leaguesEffects.talent_fire_spell_burn_bounce) {
       unimplemented.push('Fire Spell Burn (coming soon)');
     }
-    if (leaguesEffects.talent_regen_magic_level_boost) {
-      unimplemented.push('Regenerate Magic Level Boost (coming soon)');
-    }
     if (leaguesEffects.talent_prayer_pen_all) {
       unimplemented.push('Prayer Penetration (coming soon)');
     }
@@ -237,6 +234,35 @@ const DemonicPactsLeague: React.FC = observer(() => {
             </span>
           </span>
         </div>
+
+        <ShowIfLeagueEffectEnabled leaguesEffect="talent_regen_magic_level_boost">
+          <div className="flex items-center gap-2 mt-2">
+            <NumberInput
+              aria-labelledby="regenerateMagicLevelBoostLabel"
+              className="form-control w-12 text-centerl"
+              id="regenerateMagicLevelBoost"
+              min={0}
+              max={10}
+              title="Regenerate Magic Level Boost"
+              value={store.player.leagues.six.regenerateMagicBonus}
+              onChange={(v) => {
+                store.updatePlayer({ leagues: { six: { regenerateMagicBonus: v } } });
+              }}
+            />
+
+            <span id="regenerateMagicLevelBoostLabel" className="ml-1 text-sm select-none">
+              Regenerate Magic Level Boost
+              {' '}
+              <span
+                className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+                data-tooltip-id="tooltip"
+                data-tooltip-content="Number of Magic levels boosted by Regenerate."
+              >
+                ?
+              </span>
+            </span>
+          </div>
+        </ShowIfLeagueEffectEnabled>
 
         <ShowIfLeagueEffectEnabled leaguesEffect="talent_free_random_weapon_attack_chance">
           <BlindbagSelector />
