@@ -1477,7 +1477,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const leagues = this.player.leagues.six;
     if (this.opts.isEcho) {
       const meleeEcho = this.isUsingMeleeStyle() && leagues.effects.talent_2h_melee_echos && this.player.equipment.weapon?.isTwoHanded;
-      const isWearingThrown = meleeEcho || (this.player.equipment.weapon?.category === EquipmentCategory.THROWN || this.wearing('Eclipse atlatl'));
+      const isWearingThrown = meleeEcho || (this.player.equipment.weapon?.category === EquipmentCategory.THROWN || this.player.equipment.weapon?.category === EquipmentCategory.CHINCHOMPA || this.wearing('Eclipse atlatl'));
       let echoDist = HitDistribution.linear(acc, min, max);
 
       if (leagues.effects.talent_thrown_maxhit_echoes && isWearingThrown) {
