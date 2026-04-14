@@ -243,6 +243,11 @@ class GlobalState implements State {
     showShareModal: false,
     username: '',
     isDefensiveReductionsExpanded: false,
+    leagues: {
+      six: {
+        pactsSearchQuery: '',
+      },
+    },
   };
 
   prefs: Preferences = {
@@ -327,6 +332,9 @@ class GlobalState implements State {
       if (leagueDef > 0 && leagueDef > (boosts.def ?? 0)) {
         boosts.def = leagueDef;
       }
+
+      const leagueMagicBoost = Math.min(this.player.leagues.six.regenerateMagicBonus ?? 0, 10);
+      boosts.magic = (boosts.magic ?? 0) + leagueMagicBoost;
 
       this.updatePlayer({ boosts });
     };
@@ -1100,6 +1108,17 @@ class GlobalState implements State {
       }
     }
     return effects;
+  }
+
+  get nodesMatchingSearch(): Set<string> {
+    if (!this.ui.leagues.six.pactsSearchQuery) {
+      return new Set();
+    }
+    return new Set(
+      Object.keys(dbrowDefinitions).filter((id) => dbrowDefinitions[id].name
+        ?.toLowerCase()
+        .includes(this.ui.leagues.six.pactsSearchQuery.toLowerCase())),
+    );
   }
 }
 

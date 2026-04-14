@@ -32326,7 +32326,7 @@
     "immunities": {
       "burn": null
     },
-    "is_slayer_monster": true,
+    "is_slayer_monster": false,
     "weakness": null
   },
   {
@@ -113301,7 +113301,7 @@
     "immunities": {
       "burn": null
     },
-    "is_slayer_monster": true,
+    "is_slayer_monster": false,
     "weakness": null
   },
   {
@@ -114032,7 +114032,7 @@
     "immunities": {
       "burn": null
     },
-    "is_slayer_monster": true,
+    "is_slayer_monster": false,
     "weakness": {
       "element": "earth",
       "severity": 60
@@ -122461,7 +122461,7 @@
     "immunities": {
       "burn": null
     },
-    "is_slayer_monster": true,
+    "is_slayer_monster": false,
     "weakness": {
       "element": "fire",
       "severity": 35

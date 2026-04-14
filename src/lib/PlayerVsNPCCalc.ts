@@ -67,7 +67,12 @@ import {
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { DetailKey } from '@/lib/CalcDetails';
 import { Factor, iLerp, MinMax } from '@/lib/Math';
-import { calculateAttackSpeed, calculateEquipmentBonusesFromGear, WEAPON_SPEC_COSTS } from '@/lib/Equipment';
+import {
+  calculateAttackSpeed,
+  calculateEquipmentBonusesFromGear,
+  getCanonicalItem,
+  WEAPON_SPEC_COSTS,
+} from '@/lib/Equipment';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonster, scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { CombatStyleType, getRangedDamageType } from '@/types/PlayerCombatStyle';
@@ -463,13 +468,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.leagues.six.effects.talent_distance_melee_minhit) {
-      const minhitBonus = 3 * this.player.leagues.six.distanceToEnemy;
+      const minhitBonus = 3 * this.getDistanceToEnemy();
       minHit = this.trackAdd(DetailKey.LEAGUES_MIN_HIT_DISTANCE_MELEE, minHit, minhitBonus);
     }
 
     if (this.player.leagues.six.effects.talent_percentage_melee_maxhit_distance) {
-      const tilesBetween = this.player.leagues.six.distanceToEnemy;
-      const maxhitFactor = 100 + 4 * (Math.floor(tilesBetween / 3) + 1);
+      const maxhitFactor = 100 + 4 * (Math.floor(this.getDistanceToEnemy() / 3) + 1);
       maxHit = this.trackFactor(DetailKey.LEAGUES_MAX_HIT_DISTANCE_MELEE, maxHit, [maxhitFactor, 100]);
     }
 
@@ -1175,7 +1179,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (minMax[0] > minMax[1]) {
-      minMax[0] = minMax[1];
+      minMax[1] = minMax[0];
     }
 
     // some cursed (literally, cursed amulet of magic) stuff throws this off
@@ -1350,9 +1354,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.leagues.six.effects.talent_max_accuracy_roll_from_range) {
-      const distance = this.player.leagues.six.distanceToEnemy;
       // Proc chance capped to 20 tiles (guaranteed success) - technically there is a 10 tile range cap for all weapons which is not respected here.
-      const procChance = Math.min(1, 0.05 * distance);
+      const procChance = Math.min(1, 0.05 * this.getDistanceToEnemy());
       const maxAccuracyHitChance = BaseCalc.getMaxAccuracyHitChance(atk, def);
       hitChance = hitChance * (1 - procChance) + maxAccuracyHitChance * procChance;
     }
@@ -1664,16 +1667,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isUsingMeleeStyle() && this.isWearingScythe()) {
       const hits: HitDistribution[] = [];
       for (let i = 0; i < Math.min(Math.max(this.monster.size, 1), 3); i++) {
-        const splatMin = Math.trunc(min / (2 ** i));
         const splatMax = Math.trunc(max / (2 ** i));
-        hits.push(HitDistribution.linear(acc, splatMin, splatMax));
+        hits.push(HitDistribution.linear(acc, min, Math.max(min, splatMax)));
       }
       dist = new AttackDistribution(hits);
     }
 
     if (this.isUsingMeleeStyle() && this.wearing('Dual macuahuitl')) {
-      const secondHit = HitDistribution.linear(acc, min - Math.trunc(min / 2), max - Math.trunc(max / 2));
-      const firstHit = new AttackDistribution([HitDistribution.linear(acc, Math.trunc(min / 2), Math.trunc(max / 2))]);
+      const firstMax = Math.trunc(max / 2);
+      const secondMax = max - firstMax;
+      const firstHit = new AttackDistribution([HitDistribution.linear(acc, min, Math.max(min, firstMax))]);
+      const secondHit = HitDistribution.linear(acc, min, Math.max(min, secondMax));
       dist = firstHit.transform(
         (h) => {
           if (h.accurate) {
@@ -1685,9 +1689,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingTwoHitWeapon()) {
+      const firstMax = Math.trunc(max / 2);
+      const secondMax = max - firstMax;
       dist = new AttackDistribution([
-        HitDistribution.linear(acc, Math.trunc(min / 2), Math.trunc(max / 2)),
-        HitDistribution.linear(acc, min - Math.trunc(min / 2), max - Math.trunc(max / 2)),
+        HitDistribution.linear(acc, min, Math.max(min, firstMax)),
+        HitDistribution.linear(acc, min, Math.max(min, secondMax)),
       ]);
     }
 
@@ -1834,8 +1840,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist.addDist(lightDist);
     }
 
-    if (leagues.effects.talent_firerune_regen_damage_boost && this.player.spell) {
-      const fireRunesUsed = COMBAT_SPELL_FIRE_RUNE_COST[this.player.spell.name] ?? 0;
+    if (leagues.effects.talent_firerune_regen_damage_boost) {
+      const regeneratingWithStaff = this.player.equipment.weapon?.category === EquipmentCategory.POWERED_STAFF
+        && this.player.style.stance !== 'Manual Cast'
+        && leagues.effects.talent_regen_stave_charges_fire;
+      let fireRunesUsed = 0;
+      if (this.player.spell) {
+        fireRunesUsed = COMBAT_SPELL_FIRE_RUNE_COST[this.player.spell.name] ?? 0;
+      } else if (regeneratingWithStaff) {
+        fireRunesUsed = 1;
+      }
+
       let regenChance = (leagues.effects.talent_regen_ammo ?? 0) / 100;
       if (fireRunesUsed > 0 && regenChance > 0) {
         let alwaysRegenerated = 0;
@@ -1952,7 +1967,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const mattrs = this.monster.attributes;
     const relevantEffects: ([HitTransformer] | [HitTransformer, TransformOpts])[] = [];
 
-    if (this.monster.name === 'Zulrah') {
+    if (this.monster.name === 'Zulrah' && this.player.leagues.six.selectedNodeIds.size <= 1) {
       // https://twitter.com/JagexAsh/status/1745852774607183888
       relevantEffects.push([cappedRerollTransformer(50, 5, 45)]);
     }
@@ -2074,9 +2089,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     if (IMMUNE_TO_MELEE_DAMAGE_NPC_IDS.includes(monsterId) && this.isUsingMeleeStyle()) {
       if (ZULRAH_IDS.includes(monsterId) && this.player.equipment.weapon?.category === EquipmentCategory.POLEARM) return false;
+      if (this.player.leagues.six.effects.talent_melee_range_multiplier && this.player.equipment.weapon?.isTwoHanded === true) return false;
       return true;
     }
     if (mattrs.includes(MonsterAttribute.FLYING) && this.isUsingMeleeStyle()) {
+      if (this.player.leagues.six.effects.talent_melee_range_multiplier && this.player.equipment.weapon?.isTwoHanded === true) return false;
       // Vespula is immune to melee despite flying attribute.
       if (VESPULA_IDS.includes(this.monster.id)) return true;
       if (this.player.equipment.weapon?.category === EquipmentCategory.POLEARM || this.player.equipment.weapon?.category === EquipmentCategory.SALAMANDER) return false;
@@ -2146,7 +2163,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           ...this.player,
           equipment: {
             ...this.player.equipment,
-            weapon,
+            weapon: getCanonicalItem(weapon),
           },
           style: getCombatStylesForCategory(weapon.category)[0], // todo use same slot as equipped?
         };
@@ -2157,6 +2174,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
         const subCalc = this.noInitSubCalc(playerWithWeapon, this.monster, {
           loadoutName: `${this.opts.loadoutName}/Blindbag ${weapon.id} (${weapon.name})`,
+          isBlindBag: true,
+          blindBagDistance: this.getDistanceToEnemy(),
+          blindBagUniques: blindbagUniques,
           isLeaguesSubCalc: true,
         });
 
@@ -2169,12 +2189,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       blindbagDist = blindbagDist.cumulative();
       this.trackDist(DetailKey.DIST_LEAGUES_BLINDBAG, blindbagDist);
 
-      const recursiveBlindBag = blindbagDist;
-      for (let i = 1; i <= 3; i++) { // todo
-        // const thisRecurse = blindbagDist.scaleProbability(chanceBlindbagProc ** i);
-        // thisRecurse.addHit(new WeightedHit(1 - (chanceBlindbagProc ** i), [Hitsplat.INACCURATE]));
-        // recursiveBlindBag = recursiveBlindBag.zip(thisRecurse);
-        // recursiveBlindBag = recursiveBlindBag.cumulative();
+      let recursiveBlindBag = blindbagDist;
+      for (let i = 1; i <= 3; i++) {
+        const thisRecurse = blindbagDist.scaleProbability(chanceBlindbagProc ** i);
+        thisRecurse.addHit(new WeightedHit(1 - (chanceBlindbagProc ** i), [Hitsplat.INACCURATE]));
+        recursiveBlindBag = recursiveBlindBag.zip(thisRecurse);
+        recursiveBlindBag = recursiveBlindBag.cumulative();
       }
       this.trackDist(DetailKey.DIST_LEAGUES_BLINDBAG_RECURSIVE, recursiveBlindBag);
 
@@ -2187,8 +2207,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const isWearingBow = meleeEcho || (this.player.equipment.weapon?.category === EquipmentCategory.BOW && !this.wearing('Eclipse atlatl'));
       const isWearingCrossbow = meleeEcho || this.player.equipment.weapon?.category === EquipmentCategory.CROSSBOW;
 
-      const regenChance = this.track(DetailKey.LEAGUES_ECHO_CHANCE_REGEN, meleeEcho ? 1 : (leagues.effects.talent_regen_ammo ?? 0) / 100);
-      let echoChance = (meleeEcho ? 5 : leagues.effects.talent_ranged_regen_echo_chance!) / 100;
+      const regenChance = this.track(DetailKey.LEAGUES_ECHO_CHANCE_REGEN, meleeEcho ? acc : (leagues.effects.talent_regen_ammo ?? 0) / 100);
+      let echoChance = meleeEcho ? 0.05 : (leagues.effects.talent_ranged_regen_echo_chance! / 100);
       if (leagues.effects.talent_crossbow_echo_reproc_chance && isWearingCrossbow) {
         echoChance += leagues.effects.talent_crossbow_echo_reproc_chance / 100;
       }
@@ -2244,8 +2264,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       ).getDistribution().dists[0];
       this.trackDist(DetailKey.DIST_LEAGUES_FLAMES_OF_CERBERUS, flamesOfCerberusDist);
 
+      let procDist = flamesOfCerberusDist;
+      if (!this.opts.usingSpecialAttack) {
+        procDist = flamesOfCerberusDist.scaleProbability(0.05);
+        procDist.addHit(new WeightedHit(0.95, [Hitsplat.INACCURATE]));
+      }
       npcDist = npcDist.transform(
-        (h) => HitDistribution.single(1.0, [h]).zip(flamesOfCerberusDist),
+        (h) => HitDistribution.single(1.0, [h]).zip(procDist),
         { transformInaccurate: false },
       );
     }
@@ -2540,7 +2565,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   // a computational shortcut for internal class use only
   private noInitSubCalc(p: Player, m: Monster, opts: Partial<InternalOpts> = {}): PlayerVsNPCCalc {
     const subCalc = new PlayerVsNPCCalc(p, m, <InternalOpts>{ ...this.opts, ...opts, noInit: true });
-    subCalc.allEquippedItems = this.allEquippedItems;
+    if (!opts.isBlindBag) {
+      subCalc.allEquippedItems = this.allEquippedItems;
+    }
     subCalc.baseMonster = this.baseMonster;
 
     return subCalc;
@@ -2686,8 +2713,38 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   private getBlindbagUniques(): number {
+    if (this.opts.isBlindBag) {
+      return this.opts.blindBagUniques;
+    }
+
     const uniqueIds = new Set(this.player.leagues.six.blindbagWeapons.map((eq) => eq.id)).size;
     return Math.min(uniqueIds, 5);
+  }
+
+  private getMaxMeleeRange(): number {
+    const effects = this.player.leagues.six.effects;
+    const halberd = this.player.equipment.weapon?.category === EquipmentCategory.POLEARM;
+    let attackRange = halberd ? 2 : 1;
+    if (effects.talent_melee_range_multiplier && this.player.equipment.weapon?.isTwoHanded) {
+      attackRange *= 2;
+    }
+    if (effects.talent_melee_range_conditional_boost && attackRange >= 4) {
+      attackRange = 7;
+    }
+    return attackRange;
+  }
+
+  private getDistanceToEnemy(): number {
+    if (this.opts.isBlindBag) {
+      // Blindbag hits copy the distance from the main hit.
+      return this.opts.blindBagDistance;
+    }
+
+    let distance = this.player.leagues.six.distanceToEnemy;
+    if (this.isUsingMeleeStyle()) {
+      distance = Math.min(distance, this.getMaxMeleeRange());
+    }
+    return distance;
   }
 
   private getMonsterWeakness(): Monster['weakness'] {

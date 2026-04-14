@@ -1,7 +1,7 @@
 import { EquipmentPiece, Player } from '@/types/Player';
 import { BurnImmunity, Monster } from '@/types/Monster';
 import {
-  AmmoApplicability, ammoApplicability, getCanonicalEquipment, getCanonicalItem,
+  AmmoApplicability, ammoApplicability, getCanonicalEquipment,
 } from '@/lib/Equipment';
 import UserIssueType from '@/enums/UserIssueType';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
@@ -27,6 +27,8 @@ export interface CalcOpts {
   usingSpecialAttack?: boolean,
   isLeaguesSubCalc?: boolean,
   isBlindBag?: boolean,
+  blindBagDistance?: number,
+  blindBagUniques?: number,
   isEcho?: boolean,
   overrides?: {
     accuracy?: number,
@@ -51,6 +53,8 @@ const DEFAULT_OPTS: Required<InternalOpts> = {
   usingSpecialAttack: false,
   isLeaguesSubCalc: false,
   isBlindBag: false,
+  blindBagDistance: 1,
+  blindBagUniques: 1,
   isEcho: false,
   noInit: false,
   overrides: {},
@@ -92,7 +96,7 @@ export default class BaseCalc {
     this.baseMonster = monster;
     this.monster = (this.opts.disableMonsterScaling || this.opts.noInit) ? monster : scaleMonster(monster);
 
-    if (!this.opts.noInit) {
+    if (!this.opts.noInit || this.opts.isBlindBag) {
       this.canonicalizeEquipment();
       this.allEquippedItems = Object.values(this.player.equipment).filter((v) => v !== null).flat(1).map((eq: EquipmentPiece | null) => eq?.name || '');
       this.sanitizeInputs();
@@ -147,13 +151,6 @@ export default class BaseCalc {
     this.player = {
       ...this.player,
       equipment: getCanonicalEquipment(this.player.equipment),
-      leagues: {
-        ...this.player.leagues,
-        six: {
-          ...this.player.leagues.six,
-          blindbagWeapons: this.player.leagues.six.blindbagWeapons.map((eq) => getCanonicalItem(eq)),
-        },
-      },
     };
   }
 
@@ -575,6 +572,10 @@ export default class BaseCalc {
       return true;
     }
 
+    if (weapon.name === "King's barrage") {
+      return true;
+    }
+
     return false;
   }
 
@@ -823,29 +824,6 @@ export default class BaseCalc {
     }
     if (this.wearing('Echo boots')) {
       this.addIssue(UserIssueType.FEET_RECOIL_UNSUPPORTED, 'The calculator does not account for recoil damage.');
-    }
-
-    const leaguesEffects = this.player.leagues.six.effects;
-    if (leaguesEffects.talent_bow_max_hit_stacking_increase || leaguesEffects.talent_bow_min_hit_stacking_increase) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Repeat Bow Hit Damage (coming soon)');
-    }
-    if (leaguesEffects.talent_fire_spell_burn_bounce) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Fire Spell Burn (coming soon)');
-    }
-    if (leaguesEffects.talent_regen_magic_level_boost) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Regenerate Magic Level Boost (coming soon)');
-    }
-    if (leaguesEffects.talent_prayer_pen_all) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Prayer Penetration (coming soon)');
-    }
-    if (leaguesEffects.talent_max_hit_style_swap) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Style Swap Damage Bonus');
-    }
-    if (leaguesEffects.talent_thorns_damage || leaguesEffects.talent_shield_reflect) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Thorns');
-    }
-    if (leaguesEffects.talent_overheal_consumption_boost || leaguesEffects.talent_fire_hp_consume_for_damage) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Overheal Consumption Effects');
     }
   }
 }

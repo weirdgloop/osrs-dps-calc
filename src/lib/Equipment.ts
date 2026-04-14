@@ -35,6 +35,7 @@ export const noStatExceptions = [
   'Inoculation bracelet',
   'Bracelet of ethereum',
   'Atlatl dart',
+  "Butler's tray",
 ];
 
 /**
@@ -375,9 +376,12 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
   }
 
   const leagues = player.leagues.six.effects;
-  if (leagues.talent_thrown_weapon_accuracy
-    && (player.equipment.weapon?.category === EquipmentCategory.THROWN || player.equipment.weapon?.category === EquipmentCategory.CHINCHOMPA)) {
-    totals.offensive.ranged += 60;
+
+  if (leagues.talent_thrown_weapon_accuracy) {
+    const isWearingThrown = player.equipment.weapon?.category === EquipmentCategory.THROWN
+      || player.equipment.weapon?.category === EquipmentCategory.CHINCHOMPA
+      || player.equipment.weapon?.name === 'Eclipse atlatl';
+    totals.offensive.ranged += isWearingThrown ? 60 : 0;
   }
 
   if (leagues.talent_percentage_magic_damage) {
@@ -437,11 +441,6 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
     totals.bonuses.ranged_str += 1;
   }
 
-  if (leagues.talent_thrown_weapon_melee_str_scale
-    && (player.equipment.weapon?.category === EquipmentCategory.THROWN || player.equipment.weapon?.category === EquipmentCategory.CHINCHOMPA)) {
-    totals.bonuses.ranged_str += Math.trunc(totals.bonuses.str * 0.80);
-  }
-
   if (leagues.talent_offhand_stat_boost && playerEquipment.shield) {
     totals.bonuses.str += 5;
     totals.bonuses.ranged_str += 5;
@@ -449,13 +448,21 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
   }
 
   if (leagues.talent_ranged_strength_hp_difference) {
-    const hpMissing = Math.min(0, player.boosts.hp);
-    const boost = -Math.trunc(hpMissing / 10);
+    const hpDifference = Math.abs(player.boosts.hp);
+    const boost = Math.trunc(hpDifference / 10);
     totals.bonuses.ranged_str += boost;
   }
 
   if (leagues.talent_melee_strength_prayer_bonus) {
     totals.bonuses.str += Math.trunc(totals.bonuses.prayer / 2);
+  }
+
+  const weapon = playerEquipment.weapon;
+  const isWearingThrown = weapon?.category === EquipmentCategory.THROWN
+    || weapon?.category === EquipmentCategory.CHINCHOMPA
+    || weapon?.name === 'Eclipse atlatl';
+  if (leagues.talent_thrown_weapon_melee_str_scale && isWearingThrown) {
+    totals.bonuses.ranged_str += Math.trunc(totals.bonuses.str * 0.80);
   }
 
   totals.attackSpeed = calculateAttackSpeed(player, monster);

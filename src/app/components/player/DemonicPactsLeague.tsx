@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { IconAlertTriangleFilled, IconEdit } from '@tabler/icons-react';
+import { computed } from 'mobx';
+import localforage from 'localforage';
 import Modal from '@/app/components/generic/Modal';
 import SkillTreeDisplay from '@/app/components/player/demonicPactsLeague/SkillTreeDisplay';
 import CurrentEffects from '@/app/components/player/demonicPactsLeague/CurrentEffects';
@@ -12,10 +14,8 @@ import EquipmentSelect from '@/app/components/player/equipment/EquipmentSelect';
 import ShowIfLeagueEffectEnabled from '@/app/components/player/demonicPactsLeague/ShowIfLeagueEffectEnabled';
 import { getCdnImage } from '@/utils';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
-import { computed } from 'mobx';
-import UserIssueType from '@/enums/UserIssueType';
-import localforage from 'localforage';
 import { EquipmentPiece } from '@/types/Player';
+import SearchBox from '@/app/components/player/demonicPactsLeague/SearchBox';
 import NumberInput from '../generic/NumberInput';
 
 const weaponCanBeUsedInBlindbag = (eq: EquipmentPiece): boolean => {
@@ -72,8 +72,10 @@ const BlindbagSelector = observer(() => {
           <button
             key={weapon.id}
             type="button"
-            aria-label={weapon.name}
+            aria-label={`${weapon.name}${weapon.version ? ` (${weapon.version})` : ''}`}
             className="w-8 h-8 bg-dark-200 border border-dark-400 group rounded flex justify-center p-0.5 cursor-pointer"
+            data-tooltip-id="tooltip"
+            data-tooltip-content={`${weapon.name}${weapon.version ? ` (${weapon.version})` : ''}`}
             onClick={() => store.toggleLeagues6BlindbagWeapon(weapon)}
           >
             <img
@@ -90,6 +92,7 @@ const BlindbagSelector = observer(() => {
           )}
       </div>
       <EquipmentSelect
+        canonicalize={false}
         customAvailableEquipmentFilter={weaponCanBeUsedInBlindbag}
         onSelectedItemChange={(item) => {
           const current = blindbagWeapons;
@@ -119,7 +122,29 @@ const DemonicPactsLeague: React.FC = observer(() => {
   const fromUrlInput = useRef<HTMLInputElement>(null);
   const fromUrlBtn = useRef<HTMLButtonElement>(null);
 
-  const unimplementedPacts = computed(() => store.calc.loadouts[store.selectedLoadout].userIssues?.filter((issue) => issue.type === UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED) ?? []).get();
+  const unimplementedPacts = computed(() => {
+    const leaguesEffects = store.player.leagues.six.effects;
+    const unimplemented: string[] = [];
+    if (leaguesEffects.talent_bow_max_hit_stacking_increase || leaguesEffects.talent_bow_min_hit_stacking_increase) {
+      unimplemented.push('Repeat Bow Hit Damage (coming soon)');
+    }
+    if (leaguesEffects.talent_fire_spell_burn_bounce) {
+      unimplemented.push('Fire Spell Burn (coming soon)');
+    }
+    if (leaguesEffects.talent_prayer_pen_all) {
+      unimplemented.push('Prayer Penetration (coming soon)');
+    }
+    if (leaguesEffects.talent_max_hit_style_swap) {
+      unimplemented.push('Style Swap Damage Bonus');
+    }
+    if (leaguesEffects.talent_thorns_damage || leaguesEffects.talent_shield_reflect) {
+      unimplemented.push('Thorns');
+    }
+    if (leaguesEffects.talent_overheal_consumption_boost || leaguesEffects.talent_fire_hp_consume_for_damage) {
+      unimplemented.push('Overheal Consumption Effects');
+    }
+    return unimplemented;
+  }).get();
 
   return (
     <>
@@ -134,7 +159,7 @@ const DemonicPactsLeague: React.FC = observer(() => {
                 {'The following Demonic Pacts are not supported: '}
                 <ul>
                   {unimplementedPacts.map((issue) => (
-                    <li className="list-inside list-disc" key={issue.message}>{issue.message}</li>
+                    <li className="list-inside list-disc" key={issue}>{issue}</li>
                   ))}
                 </ul>
               </div>
@@ -209,6 +234,35 @@ const DemonicPactsLeague: React.FC = observer(() => {
             </span>
           </span>
         </div>
+
+        <ShowIfLeagueEffectEnabled leaguesEffect="talent_regen_magic_level_boost">
+          <div className="flex items-center gap-2 mt-2">
+            <NumberInput
+              aria-labelledby="regenerateMagicLevelBoostLabel"
+              className="form-control w-12 text-centerl"
+              id="regenerateMagicLevelBoost"
+              min={0}
+              max={10}
+              title="Regenerate Magic Level Boost"
+              value={store.player.leagues.six.regenerateMagicBonus}
+              onChange={(v) => {
+                store.updatePlayer({ leagues: { six: { regenerateMagicBonus: v } } });
+              }}
+            />
+
+            <span id="regenerateMagicLevelBoostLabel" className="ml-1 text-sm select-none">
+              Regenerate Magic Level Boost
+              {' '}
+              <span
+                className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+                data-tooltip-id="tooltip"
+                data-tooltip-content="Number of Magic levels boosted by Regenerate."
+              >
+                ?
+              </span>
+            </span>
+          </div>
+        </ShowIfLeagueEffectEnabled>
 
         <ShowIfLeagueEffectEnabled leaguesEffect="talent_free_random_weapon_attack_chance">
           <BlindbagSelector />
@@ -323,6 +377,11 @@ const DemonicPactsLeague: React.FC = observer(() => {
           </div>
           <div className="flex flex-col h-[80vh]">
             <div className="flex-grow outline outline-gray-500"><SkillTreeDisplay interactive /></div>
+            <div
+              className="max-h-64 flex mt-4 h-auto rounded bg-[#1b1612] text-white outline outline-[#736559] shadow-xl"
+            >
+              <SearchBox />
+            </div>
             <div
               className="max-h-64 flex mt-4 h-auto rounded bg-[#1b1612] text-white outline outline-[#736559] shadow-xl"
             >
