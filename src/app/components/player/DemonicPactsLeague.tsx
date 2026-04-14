@@ -123,7 +123,32 @@ const DemonicPactsLeague: React.FC = observer(() => {
   const fromUrlInput = useRef<HTMLInputElement>(null);
   const fromUrlBtn = useRef<HTMLButtonElement>(null);
 
-  const unimplementedPacts = computed(() => store.calc.loadouts[store.selectedLoadout].userIssues?.filter((issue) => issue.type === UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED) ?? []).get();
+  const unimplementedPacts = computed(() => {
+    const leaguesEffects = store.player.leagues.six.effects;
+    const unimplemented: string[] = [];
+    if (leaguesEffects.talent_bow_max_hit_stacking_increase || leaguesEffects.talent_bow_min_hit_stacking_increase) {
+      unimplemented.push('Repeat Bow Hit Damage (coming soon)');
+    }
+    if (leaguesEffects.talent_fire_spell_burn_bounce) {
+      unimplemented.push('Fire Spell Burn (coming soon)');
+    }
+    if (leaguesEffects.talent_regen_magic_level_boost) {
+      unimplemented.push('Regenerate Magic Level Boost (coming soon)');
+    }
+    if (leaguesEffects.talent_prayer_pen_all) {
+      unimplemented.push('Prayer Penetration (coming soon)');
+    }
+    if (leaguesEffects.talent_max_hit_style_swap) {
+      unimplemented.push('Style Swap Damage Bonus');
+    }
+    if (leaguesEffects.talent_thorns_damage || leaguesEffects.talent_shield_reflect) {
+      unimplemented.push('Thorns');
+    }
+    if (leaguesEffects.talent_overheal_consumption_boost || leaguesEffects.talent_fire_hp_consume_for_damage) {
+      unimplemented.push('Overheal Consumption Effects');
+    }
+    return unimplemented;
+  }).get();
 
   return (
     <>
@@ -138,7 +163,7 @@ const DemonicPactsLeague: React.FC = observer(() => {
                 {'The following Demonic Pacts are not supported: '}
                 <ul>
                   {unimplementedPacts.map((issue) => (
-                    <li className="list-inside list-disc" key={issue.message}>{issue.message}</li>
+                    <li className="list-inside list-disc" key={issue}>{issue}</li>
                   ))}
                 </ul>
               </div>

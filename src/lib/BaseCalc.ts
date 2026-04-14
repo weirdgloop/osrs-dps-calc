@@ -825,28 +825,5 @@ export default class BaseCalc {
     if (this.wearing('Echo boots')) {
       this.addIssue(UserIssueType.FEET_RECOIL_UNSUPPORTED, 'The calculator does not account for recoil damage.');
     }
-
-    const leaguesEffects = this.player.leagues.six.effects;
-    if (leaguesEffects.talent_bow_max_hit_stacking_increase || leaguesEffects.talent_bow_min_hit_stacking_increase) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Repeat Bow Hit Damage (coming soon)');
-    }
-    if (leaguesEffects.talent_fire_spell_burn_bounce) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Fire Spell Burn (coming soon)');
-    }
-    if (leaguesEffects.talent_regen_magic_level_boost) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Regenerate Magic Level Boost (coming soon)');
-    }
-    if (leaguesEffects.talent_prayer_pen_all) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Prayer Penetration (coming soon)');
-    }
-    if (leaguesEffects.talent_max_hit_style_swap) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Style Swap Damage Bonus');
-    }
-    if (leaguesEffects.talent_thorns_damage || leaguesEffects.talent_shield_reflect) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Thorns');
-    }
-    if (leaguesEffects.talent_overheal_consumption_boost || leaguesEffects.talent_fire_hp_consume_for_damage) {
-      this.addIssue(UserIssueType.LEAGUES_SIX_TALENT_UNSUPPORTED, 'Overheal Consumption Effects');
-    }
   }
 }
