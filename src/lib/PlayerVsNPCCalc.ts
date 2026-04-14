@@ -2221,11 +2221,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         const isWearingCrossbow = meleeEcho || this.player.equipment.weapon?.category === EquipmentCategory.CROSSBOW;
 
         const regenChance = this.track(DetailKey.LEAGUES_ECHO_CHANCE_REGEN, meleeEcho ? acc : (leagues.effects.talent_regen_ammo ?? 0) / 100);
-        let echoChance = meleeEcho ? 5 : leagues.effects.talent_ranged_regen_echo_chance!;
+        let procChance = meleeEcho ? 5 : leagues.effects.talent_ranged_regen_echo_chance!;
         if (leagues.effects.talent_crossbow_echo_reproc_chance && isWearingCrossbow) {
-          echoChance += leagues.effects.talent_crossbow_echo_reproc_chance;
+          procChance += leagues.effects.talent_crossbow_echo_reproc_chance;
         }
-        this.track(DetailKey.LEAGUES_ECHO_CHANCE_TRIGGER, echoChance);
+        this.track(DetailKey.LEAGUES_ECHO_CHANCE_TRIGGER, procChance);
 
         const alwaysAccurate = leagues.effects.talent_bow_always_pass_accuracy && isWearingBow;
         const echoAcc = this.track(DetailKey.LEAGUES_ECHO_ACCURACY, alwaysAccurate ? 1 : acc);
@@ -2236,23 +2236,23 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           {
             loadoutName: `${this.opts.loadoutName}/Echo`,
             isEcho: true,
-            overrides: { accuracy: 1.0, maxHit: [min, max] },
+            overrides: { accuracy: echoAcc, maxHit: [min, max] },
           },
         );
-        let echoDistSingle = this.trackDist(DetailKey.DIST_LEAGUES_ECHO, echoSubCalc.getDistribution().dists[0]);
+        const echoDistBase = this.trackDist(DetailKey.DIST_LEAGUES_ECHO, echoSubCalc.getDistribution().dists[0]);
 
-        const combinedEchoDamageChance = regenChance * (echoChance / 100) * echoAcc;
-        echoDistSingle = echoDistSingle.scaleProbability(combinedEchoDamageChance);
+        const combinedEchoDamageChance = regenChance * (procChance / 100);
+        const echoDistSingle = echoDistBase.scaleProbability(combinedEchoDamageChance);
         echoDistSingle.addHit(new WeightedHit(1 - combinedEchoDamageChance, [Hitsplat.INACCURATE]));
 
         const echoDist = new AttackDistribution([echoDistSingle]);
         if (leagues.effects.talent_ranged_echo_cyclical) {
-          let cyclicChance = this.track(DetailKey.LEAGUES_ECHO_CHANCE_CYCLICAL, echoAcc * (Math.trunc(echoChance / 2) / 100));
+          const cyclicProc = this.track(DetailKey.LEAGUES_ECHO_CHANCE_CYCLICAL, Math.trunc(procChance / 2));
           for (let i = 1; i <= 3; i++) {
-            const echoDistCyclical = echoDistSingle.scaleProbability(cyclicChance);
+            const cyclicChance = regenChance * (procChance / 100) * ((cyclicProc / 100) ** i);
+            const echoDistCyclical = echoDistBase.scaleProbability(cyclicChance);
             echoDistCyclical.addHit(new WeightedHit(1 - cyclicChance, [Hitsplat.INACCURATE]));
             echoDist.addDist(echoDistCyclical);
-            cyclicChance *= Math.trunc(echoChance / 2) / 100;
           }
         }
 
@@ -2362,6 +2362,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   public getHtk() {
     const dist = this.getDistribution();
     const hist = dist.asHistogram();
+    if (hist === undefined || hist[0] === undefined || hist[0].value === undefined) {
+      throw Error('empty hist1');
+    }
     const startHp = this.monster.inputs.monsterCurrentHp;
     const max = Math.min(startHp, dist.getMax());
     if (max === 0) {

@@ -1,8 +1,6 @@
-/* @eslint-disable */
-
 import {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  describe, expect, test, xdescribe, xtest,
+  describe, expect, test, xdescribe as xdescribeOrig, xtest as xtestOrig,
 } from '@jest/globals';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import { findEquipment, getTestMonster, getTestPlayer } from '@/tests/utils/TestUtils';
@@ -10,7 +8,16 @@ import { getCombatStylesForCategory } from '@/utils';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { Prayer } from '@/enums/Prayer';
 
-xdescribe('leagues tests', () => {
+/* eslint-disable @typescript-eslint/no-unused-vars */
+let xdescribe = xdescribeOrig;
+let xtest = xtestOrig;
+if (process.env.CI !== 'true') {
+  xdescribe = describe;
+  xtest = test;
+}
+/* eslint-enable @typescript-eslint/no-unused-vars */
+
+describe('leagues tests', () => {
 // http://localhost:3000/osrs-dps?id=RupertsPulleyChaos
   describe('melee', () => {
     test('scy echoes', () => {
@@ -178,7 +185,7 @@ xdescribe('leagues tests', () => {
     });
 
     // known broken
-    test('nally blindbag echoes', () => {
+    xtest('nally blindbag echoes', () => {
       const m = getTestMonster('Gemstone Crab', '', { skills: { def: 0 } });
       const p = getTestPlayer(m, {
         equipment: {
@@ -244,7 +251,7 @@ xdescribe('leagues tests', () => {
     });
 
     // known broken
-    test('scythe blindbag echoes', () => {
+    xtest('scythe blindbag echoes', () => {
       const m = getTestMonster('Gemstone Crab', '', { skills: { def: 0 } });
       const p = getTestPlayer(m, {
         equipment: {
@@ -388,6 +395,7 @@ xdescribe('leagues tests', () => {
   });
 
   // this section was calculated by on a google sheet
+  // http://localhost:3000/osrs-dps?id=BluebellsGreenmansBrush
   describe('gpc w scy bb', () => {
     test('gpc mainhand', () => {
       const m = getTestMonster('Gemstone Crab', '', { skills: { def: 0 } });
@@ -475,7 +483,7 @@ xdescribe('leagues tests', () => {
       });
 
       const calc = new PlayerVsNPCCalc(p, m);
-      expect(calc.getDps()).toBeCloseTo(11.408, 2);
+      expect(calc.getDps()).toBeCloseTo(11.388, 2);
       console.log({ dps: calc.getDps() });
     });
 
@@ -527,7 +535,7 @@ xdescribe('leagues tests', () => {
       });
 
       const calc = new PlayerVsNPCCalc(p, m);
-      expect(calc.getDps()).toBeCloseTo(5.137, 2);
+      expect(calc.getDps()).toBeCloseTo(5.129, 2);
       console.log({ dps: calc.getDps() });
     });
   });
