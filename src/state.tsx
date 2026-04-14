@@ -560,6 +560,22 @@ class GlobalState implements State {
           /* eslint-enable @typescript-eslint/no-explicit-any */
         });
 
+      case 9:
+        data.loadouts.forEach((l) => {
+          const replacements = {
+            1000100: 33247,
+            1000101: 33245,
+            1000102: 33253,
+            1000103: 33255,
+            1000104: 33243,
+            1000105: 33249,
+            1000106: 33251,
+          };
+          if (l.equipment?.weapon?.id && `${l.equipment.weapon.id}` in replacements) {
+            l.equipment.weapon.id = replacements[l.equipment.weapon.id as keyof typeof replacements];
+          }
+        });
+
       default:
     }
     /* eslint-enable no-fallthrough */

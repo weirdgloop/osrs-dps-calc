@@ -31,7 +31,7 @@
 	},
   {
     "name": "V's helm",
-    "id": 1000100,
+    "id": 33247,
     "version": "",
     "slot": "head",
     "image": "V's helm.png",
@@ -61,7 +61,7 @@
   },
   {
     "name": "Nature's recurve",
-    "id": 1000101,
+    "id": 33245,
     "weight": 0.1,
     "version": "",
     "slot": "weapon",
@@ -92,7 +92,7 @@
   },
   {
     "name": "Shadowflame quadrant",
-    "id": 1000102,
+    "id": 33253,
     "version": "",
     "slot": "weapon",
     "image": "Shadowflame quadrant.png",
@@ -122,7 +122,7 @@
   },
   {
     "name": "Lithic sceptre",
-    "id": 1000103,
+    "id": 33255,
     "version": "",
     "slot": "weapon",
     "image": "Lithic sceptre.png",
@@ -152,7 +152,7 @@
   },
   {
     "name": "Infernal tecpatl",
-    "id": 1000104,
+    "id": 33243,
     "weight": 3.628,
     "version": "",
     "slot": "weapon",
@@ -183,7 +183,7 @@
   },
   {
     "name": "Fang of the hound",
-    "id": 1000105,
+    "id": 33249,
     "weight": 0.666,
     "version": "",
     "slot": "weapon",
@@ -214,7 +214,7 @@
   },
   {
     "name": "King's barrage",
-    "id": 1000106,
+    "id": 33251,
     "weight": 0,
     "version": "",
     "slot": "weapon",

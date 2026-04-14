@@ -141,7 +141,7 @@ const ammoForRangedWeapons: { [weapon: number]: number[] } = {
   21012: commonAmmoCategories().cb_t64, // Dragon hunter crossbow
   11785: commonAmmoCategories().cb_t64, // Armadyl crossbow
   26374: commonAmmoCategories().cb_t64, // Zaryte crossbow
-  1000106: commonAmmoCategories().cb_t64, // King's barrage todo(leagues): replace id from cache
+  33251: commonAmmoCategories().cb_t64, // King's barrage todo(leagues): replace id from cache
   12924: [], // Toxic blowpipe (empty)
   12926: [], // Toxic blowpipe (charged)
   22547: [], // Craw's bow (empty)
