@@ -72,6 +72,7 @@ export interface PlayerVsNPCCalculatedLoadout extends CalculatedLoadout {
   specHitDist?: ChartEntry[],
 
   thornsDamage?: number;
+  reflectChance?: number;
 }
 
 // NPC vs Player metrics

@@ -24,6 +24,7 @@ const calcKeyToString = (value: number, calcKey: keyof PlayerVsNPCCalculatedLoad
   switch (calcKey) {
     case 'accuracy':
     case 'specAccuracy':
+    case 'reflectChance':
       return `${(value * 100).toFixed(ACCURACY_PRECISION)}%`;
     case 'dps':
     case 'specMomentDps':
@@ -189,8 +190,11 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
                 <ResultRowHeader>
                   Leagues
                 </ResultRowHeader>
-                <ResultRow calcKey="thornsDamage" title="" hasResults={hasResults}>
+                <ResultRow calcKey="thornsDamage" title="The expected melee damage dealt to mob on hit" hasResults={hasResults}>
                   Thorns
+                </ResultRow>
+                <ResultRow calcKey="reflectChance" title="The expected chance to reflect all damage taken back to mob" hasResults={hasResults}>
+                  Reflect chance
                 </ResultRow>
               </>
             )}

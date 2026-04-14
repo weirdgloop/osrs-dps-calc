@@ -2547,6 +2547,16 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     return damage;
   }
 
+  public getReflectChance(): number | undefined {
+    const leaguesEffects = this.player.leagues.six.effects;
+    if (!leaguesEffects.talent_shield_reflect || !isHoldingShield(this.player.equipment)) {
+      return undefined;
+    }
+
+    const defenceLevel = this.player.skills.def + this.player.boosts.def;
+    return defenceLevel * 0.001;
+  }
+
   distAtHp(baseDist: DelayedHit[], hp: number): DelayedHit[] {
     if (this.opts.disableMonsterScaling) {
       return baseDist;

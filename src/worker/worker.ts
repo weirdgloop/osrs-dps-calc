@@ -53,6 +53,7 @@ const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) 
       specDetails: specCalc?.details,
 
       thornsDamage: calc.getThornsDamage(),
+      reflectChance: calc.getReflectChance(),
     });
 
     const end = self.performance.now();
