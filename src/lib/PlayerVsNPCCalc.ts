@@ -92,6 +92,7 @@ import { burningClawDoT, burningClawSpec, dClawDist } from '@/lib/dists/claws';
 
 const PARTIALLY_IMPLEMENTED_SPECS: string[] = [
   'Ancient godsword',
+  'Fang of the hound', // Instant reset not supported, proc is.
 ];
 
 // https://oldschool.runescape.wiki/w/Category:Weapons_with_Special_attacks
