@@ -112,7 +112,7 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
 
   const loadouts = toJS(calc.loadouts);
   const hasResults = useMemo(() => some(loadouts, (l) => some(Object.entries(l), ([, v]) => isDefined(v))), [loadouts]);
-  const showLeaguesRows = useMemo(() => some(loadouts, (l) => l.recoilDamage !== undefined), [loadouts]);
+  const showRecoilRow = useMemo(() => some(loadouts, (l) => l.recoilDamage !== undefined), [loadouts]);
 
   return (
     <table>
@@ -151,15 +151,10 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
         <ResultRow calcKey="accuracy" title="How accurate you are against the monster" hasResults={hasResults}>
           Accuracy
         </ResultRow>
-        {showLeaguesRows && (
-          <>
-            <ResultRowHeader>
-              Leagues
-            </ResultRowHeader>
-            <ResultRow calcKey="recoilDamage" title="The expected recoil damage dealt back to mob" hasResults={hasResults}>
-              Recoil damage
-            </ResultRow>
-          </>
+        {showRecoilRow && (
+          <ResultRow calcKey="recoilDamage" title="The expected recoil damage dealt back to mob" hasResults={hasResults}>
+            Recoil damage
+          </ResultRow>
         )}
         {!resultsExpanded && (
           <ResultRow calcKey="specExpected" title="The expected hit that the special attack will deal to the monster per use, including misses" hasResults={hasResults} collapseSpecs={resultsExpanded}>
