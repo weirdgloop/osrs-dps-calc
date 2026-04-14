@@ -334,7 +334,7 @@ class GlobalState implements State {
       }
 
       const leagueMagicBoost = Math.min(this.player.leagues.six.regenerateMagicBonus ?? 0, 10);
-      if ((boosts.magic ?? 0) !== 0) {
+      if ((boosts.magic ?? 0) !== 0 && leagueMagicBoost > 0) {
         // Regenerate magic boost does not stack with any other boosts
         boosts.magic = leagueMagicBoost;
       }
