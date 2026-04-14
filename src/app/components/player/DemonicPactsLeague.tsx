@@ -14,7 +14,6 @@ import EquipmentSelect from '@/app/components/player/equipment/EquipmentSelect';
 import ShowIfLeagueEffectEnabled from '@/app/components/player/demonicPactsLeague/ShowIfLeagueEffectEnabled';
 import { getCdnImage } from '@/utils';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
-import UserIssueType from '@/enums/UserIssueType';
 import { EquipmentPiece } from '@/types/Player';
 import SearchBox from '@/app/components/player/demonicPactsLeague/SearchBox';
 import NumberInput from '../generic/NumberInput';
