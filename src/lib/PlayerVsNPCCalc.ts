@@ -2571,6 +2571,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     this.trackDist(DetailKey.DIST_RECOIL, dist);
+    if (dist.dists.length === 0) {
+      return undefined;
+    }
     return dist.getExpectedDamage();
   }
 

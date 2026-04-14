@@ -137,9 +137,6 @@ const DemonicPactsLeague: React.FC = observer(() => {
     if (leaguesEffects.talent_max_hit_style_swap) {
       unimplemented.push('Style Swap Damage Bonus');
     }
-    if (leaguesEffects.talent_thorns_damage || leaguesEffects.talent_shield_reflect) {
-      unimplemented.push('Thorns');
-    }
     if (leaguesEffects.talent_overheal_consumption_boost || leaguesEffects.talent_fire_hp_consume_for_damage) {
       unimplemented.push('Overheal Consumption Effects');
     }

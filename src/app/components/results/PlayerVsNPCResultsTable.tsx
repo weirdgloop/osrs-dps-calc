@@ -24,7 +24,6 @@ const calcKeyToString = (value: number, calcKey: keyof PlayerVsNPCCalculatedLoad
   switch (calcKey) {
     case 'accuracy':
     case 'specAccuracy':
-    case 'reflectChance':
       return `${(value * 100).toFixed(ACCURACY_PRECISION)}%`;
     case 'dps':
     case 'specMomentDps':
@@ -33,6 +32,7 @@ const calcKeyToString = (value: number, calcKey: keyof PlayerVsNPCCalculatedLoad
       return value.toPrecision(DPS_PRECISION);
     case 'expectedHit':
     case 'specExpected':
+    case 'recoilDamage':
       return value.toFixed(EXPECTED_HIT_PRECISION);
     case 'ttk':
       return value === 0
