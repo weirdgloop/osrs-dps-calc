@@ -151,6 +151,16 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
         <ResultRow calcKey="accuracy" title="How accurate you are against the monster" hasResults={hasResults}>
           Accuracy
         </ResultRow>
+        {showLeaguesRows && (
+          <>
+            <ResultRowHeader>
+              Leagues
+            </ResultRowHeader>
+            <ResultRow calcKey="recoilDamage" title="The expected recoil damage dealt back to mob" hasResults={hasResults}>
+              Recoil damage
+            </ResultRow>
+          </>
+        )}
         {!resultsExpanded && (
           <ResultRow calcKey="specExpected" title="The expected hit that the special attack will deal to the monster per use, including misses" hasResults={hasResults} collapseSpecs={resultsExpanded}>
             Spec expected hit
@@ -185,16 +195,6 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
             <ResultRow calcKey="specExpected" title="The expected hit that the special attack will deal to the monster per use, including misses" hasResults={hasResults} collapseSpecs={resultsExpanded}>
               Expected hit
             </ResultRow>
-            {showLeaguesRows && (
-              <>
-                <ResultRowHeader>
-                  Leagues
-                </ResultRowHeader>
-                <ResultRow calcKey="recoilDamage" title="The expected recoil damage dealt back to mob" hasResults={hasResults}>
-                  Recoil damage
-                </ResultRow>
-              </>
-            )}
           </>
         )}
       </tbody>
