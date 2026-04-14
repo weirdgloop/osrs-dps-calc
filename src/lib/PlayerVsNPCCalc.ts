@@ -830,7 +830,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.leagues.six.effects.talent_crossbow_slow_big_hits
-      && this.player.equipment.weapon?.category === 'Crossbow') {
+      && this.player.equipment.weapon?.category === EquipmentCategory.CROSSBOW) {
       maxHit = this.trackFactor(DetailKey.LEAGUES_CROSSBOW_SLOW_BIG_HITS, maxHit, [170, 100]);
     }
 
@@ -1328,7 +1328,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     );
 
     if (this.player.leagues.six.effects.talent_crossbow_double_accuracy_roll
-      && this.player.equipment.weapon?.category === 'Crossbow'
+      && this.player.equipment.weapon?.category === EquipmentCategory.CROSSBOW
       && !this.opts.isEcho) {
       hitChance = this.track(
         DetailKey.LEAGUES_CROSSBOW_DOUBLE_ACCURACY,
@@ -1510,7 +1510,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (leagues.effects.talent_crossbow_max_hit
-        && this.player.equipment.weapon?.category === 'Crossbow') {
+        && this.player.equipment.weapon?.category === EquipmentCategory.CROSSBOW) {
       dist = new AttackDistribution([HitDistribution.single(acc, [new Hitsplat(max)])]);
     }
 
@@ -1806,7 +1806,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       kandarinDiary: this.player.buffs.kandarinDiary,
       monster: this.monster,
     };
-    if (this.player.style.type === 'ranged' && this.player.equipment.weapon?.name.includes('rossbow')) {
+    if (this.player.style.type === 'ranged' && this.player.equipment.weapon?.category === EquipmentCategory.CROSSBOW) {
       if (this.wearing(['Opal bolts (e)', 'Opal dragon bolts (e)'])) {
         dist = dist.transform(opalBolts(boltContext));
       } else if (this.wearing(['Pearl bolts (e)', 'Pearl dragon bolts (e)'])) {
@@ -1893,8 +1893,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       dist = dist.transform(divisionTransformer(2));
     }
 
-    if (this.player.style.type === 'ranged'
-      && (this.player.equipment.weapon?.name.includes('rossbow') || this.wearing("King's barrage"))) {
+    if (this.player.style.type === 'ranged' && this.player.equipment.weapon?.category === EquipmentCategory.CROSSBOW) {
       const currentHp = this.player.skills.hp + this.player.boosts.hp;
       if (this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)']) && currentHp >= 10) {
         dist = dist.transform(rubyBolts(boltContext));
@@ -2535,7 +2534,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     // a special case for optimization, ruby bolts only change dps under 500 hp
     // so for high health targets, avoid recomputing dist until then
     if (this.player.style.type === 'ranged'
-      && this.player.equipment.weapon?.name.includes('rossbow')
+      && this.player.equipment.weapon?.category === EquipmentCategory.CROSSBOW
       && ['Ruby bolts (e)', 'Ruby dragon bolts (e)'].includes(this.player.equipment.ammo?.name || '')
       && this.monster.inputs.monsterCurrentHp >= 500
       && hp >= 500) {
@@ -2587,7 +2586,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (monster.name === 'Vardorvis') {
       return true;
     }
-    if (loadout.equipment.weapon?.name.includes('rossbow') && this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)'])) {
+    if (this.player.style.type === 'ranged'
+      && loadout.equipment.weapon?.category === EquipmentCategory.CROSSBOW
+      && this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)'])) {
       return true;
     }
     if (this.wearing('Keris partisan of the sun') && TOMBS_OF_AMASCUT_MONSTER_IDS.includes(monster.id)) {

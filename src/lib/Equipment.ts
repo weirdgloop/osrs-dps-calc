@@ -272,7 +272,7 @@ export const calculateAttackSpeed = (player: Player, monster: Monster): number =
     }
   }
 
-  if (player.equipment.weapon?.category === 'Crossbow'
+  if (player.equipment.weapon?.category === EquipmentCategory.CROSSBOW
       && player.leagues.six.effects.talent_crossbow_slow_big_hits) {
     attackSpeed += 2;
   }
