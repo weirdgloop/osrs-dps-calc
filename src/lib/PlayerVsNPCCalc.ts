@@ -71,6 +71,7 @@ import {
   calculateAttackSpeed,
   calculateEquipmentBonusesFromGear,
   getCanonicalItem,
+  isHoldingShield,
   WEAPON_SPEC_COSTS,
 } from '@/lib/Equipment';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
@@ -2526,12 +2527,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   public getThornsDamage(): number | undefined {
     const leaguesEffects = this.player.leagues.six.effects;
     let damage = leaguesEffects.talent_thorns_damage;
-    if (!damage) {
-      // If primary Thorns talent isn't chosen do the other ones work?
+    if (!damage || !isHoldingShield(this.player.equipment)) {
       return undefined;
     }
-
-    const hasShield = isShield();
 
     if (leaguesEffects.talent_defence_recoil_scaling) {
       const defensiveBonuses = this.player.defensive.crush

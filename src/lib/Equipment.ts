@@ -587,3 +587,30 @@ export const CORRUPTED_GAUNTLET_EQUIPMENT_IDS = [
   23856, // Corrupted bow (attuned)
   23857, // Corrupted bow (perfected)
 ];
+
+// List of shields that don't contain the word "shield".
+// https://oldschool.runescape.wiki/w/Shields#Other
+const otherShields = [
+  'Malediction ward',
+  'Odium ward',
+  'Toktz-ket-xil',
+  'Twisted buckler',
+  'Dragonfire ward',
+];
+
+export const isHoldingShield = (inputEq: PlayerEquipment) => {
+  if (inputEq.shield) {
+    // Canonical item name less likely to have weird exceptions.
+    const name = getCanonicalItem(inputEq.shield).name;
+    if (name.toLowerCase().indexOf('shield') > 0) {
+      return true;
+    }
+
+    if (otherShields.indexOf(name) > 0) {
+      return true;
+    }
+  } else if (inputEq.weapon?.name === "Dinh's bulwark") {
+    return true;
+  }
+  return false;
+};
