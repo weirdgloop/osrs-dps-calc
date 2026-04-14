@@ -111,6 +111,7 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
 
   const loadouts = toJS(calc.loadouts);
   const hasResults = useMemo(() => some(loadouts, (l) => some(Object.entries(l), ([, v]) => isDefined(v))), [loadouts]);
+  const showLeaguesRows = useMemo(() => some(loadouts, (l) => l.thornsDamage !== undefined), [loadouts]);
 
   return (
     <table>
@@ -183,6 +184,16 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
             <ResultRow calcKey="specExpected" title="The expected hit that the special attack will deal to the monster per use, including misses" hasResults={hasResults} collapseSpecs={resultsExpanded}>
               Expected hit
             </ResultRow>
+            {showLeaguesRows && (
+              <>
+                <ResultRowHeader>
+                  Leagues
+                </ResultRowHeader>
+                <ResultRow calcKey="thornsDamage" title="" hasResults={hasResults}>
+                  Thorns
+                </ResultRow>
+              </>
+            )}
           </>
         )}
       </tbody>

@@ -2523,6 +2523,32 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     return ttks;
   }
 
+  public getThornsDamage(): number | undefined {
+    const leaguesEffects = this.player.leagues.six.effects;
+    let damage = leaguesEffects.talent_thorns_damage;
+    if (!damage) {
+      // If primary Thorns talent isn't chosen do the other ones work?
+      return undefined;
+    }
+
+    const hasShield = isShield();
+
+    if (leaguesEffects.talent_defence_recoil_scaling) {
+      const defensiveBonuses = this.player.defensive.crush
+        + this.player.defensive.slash
+        + this.player.defensive.stab
+        + this.player.defensive.ranged
+        + this.player.defensive.magic;
+      damage += Math.trunc(defensiveBonuses / 100);
+    }
+
+    if (leaguesEffects.talent_thorns_double_hit) {
+      damage += Math.trunc(damage / 2);
+    }
+
+    return damage;
+  }
+
   distAtHp(baseDist: DelayedHit[], hp: number): DelayedHit[] {
     if (this.opts.disableMonsterScaling) {
       return baseDist;
