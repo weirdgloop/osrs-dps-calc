@@ -59489,6 +59489,285 @@
     "isTwoHanded": false
   },
   {
+    "name": "Demonic pacts adamant trophy",
+    "id": 33349,
+    "weight": 1.5,
+    "version": "",
+    "slot": "weapon",
+    "image": "Demonic pacts adamant trophy.png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": -10,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -100,
+      "slash": -100,
+      "crush": -50,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Demonic pacts banner",
+    "id": 33299,
+    "weight": 2.267,
+    "version": "",
+    "slot": "weapon",
+    "image": "Demonic pacts banner.png",
+    "speed": 0,
+    "category": "Banner",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic pacts bronze trophy",
+    "id": 33357,
+    "weight": 1,
+    "version": "",
+    "slot": "shield",
+    "image": "Demonic pacts bronze trophy.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic pacts dragon trophy",
+    "id": 33345,
+    "weight": 1.5,
+    "version": "",
+    "slot": "weapon",
+    "image": "Demonic pacts dragon trophy.png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": -10,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -100,
+      "slash": -100,
+      "crush": -50,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Demonic pacts iron trophy",
+    "id": 33355,
+    "weight": 1,
+    "version": "",
+    "slot": "shield",
+    "image": "Demonic pacts iron trophy.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic pacts mithril trophy",
+    "id": 33351,
+    "weight": 1,
+    "version": "",
+    "slot": "shield",
+    "image": "Demonic pacts mithril trophy.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic pacts rune trophy",
+    "id": 33347,
+    "weight": 1.5,
+    "version": "",
+    "slot": "weapon",
+    "image": "Demonic pacts rune trophy.png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": -10,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -100,
+      "slash": -100,
+      "crush": -50,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Demonic pacts steel trophy",
+    "id": 33353,
+    "weight": 1,
+    "version": "",
+    "slot": "shield",
+    "image": "Demonic pacts steel trophy.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic sceptre",
+    "id": 33296,
+    "weight": 1.814,
+    "version": "",
+    "slot": "shield",
+    "image": "Demonic sceptre.png",
+    "speed": 0,
+    "category": "Spiked",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Desert amulet 1",
     "id": 13133,
     "weight": 0.01,
@@ -70618,6 +70897,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Evil eye (item)",
+    "id": 33227,
+    "weight": 0.25,
+    "version": "",
+    "slot": "neck",
+    "image": "Evil eye.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Excalibur",
     "id": 35,
     "weight": 2.267,
@@ -71288,6 +71598,37 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Fang of the hound",
+    "id": 33249,
+    "weight": 0.666,
+    "version": "",
+    "slot": "weapon",
+    "image": "Fang of the hound.png",
+    "speed": 3,
+    "category": "",
+    "bonuses": {
+      "str": 20,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 60,
+      "slash": 60,
+      "crush": 10,
+      "magic": 3,
       "ranged": 0
     },
     "defensive": {
@@ -96350,6 +96691,37 @@
   {
     "name": "King's barrage",
     "id": 33251,
+    "weight": 6,
+    "version": "",
+    "slot": "weapon",
+    "image": "King's barrage.png",
+    "speed": 6,
+    "category": "Crossbow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 14,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 130
+    },
+    "defensive": {
+      "stab": 20,
+      "slash": 20,
+      "crush": 20,
+      "magic": 25,
+      "ranged": 60
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "King's barrage",
+    "id": 33251,
     "weight": 0,
     "version": "",
     "slot": "weapon",
@@ -107226,6 +107598,37 @@
       "ranged": 0
     },
     "isTwoHanded": false
+  },
+  {
+    "name": "Nature's recurve",
+    "id": 33245,
+    "weight": 1.36,
+    "version": "",
+    "slot": "weapon",
+    "image": "Nature's recurve.png",
+    "speed": 4,
+    "category": "bow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 4,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 95
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
   },
   {
     "name": "Nature's recurve",
@@ -130662,6 +131065,37 @@
       "ranged": -1
     },
     "isTwoHanded": true
+  },
+  {
+    "name": "Shadowflame quadrant",
+    "id": 33253,
+    "weight": 2.267,
+    "version": "",
+    "slot": "weapon",
+    "image": "Shadowflame quadrant.png",
+    "speed": 5,
+    "category": "",
+    "bonuses": {
+      "str": 50,
+      "ranged_str": 0,
+      "magic_str": 150,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 60,
+      "magic": 25,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 5,
+      "magic": 17,
+      "ranged": 0
+    },
+    "isTwoHanded": false
   },
   {
     "name": "Shadowflame quadrant",
