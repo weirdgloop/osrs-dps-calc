@@ -70,6 +70,8 @@ export interface PlayerVsNPCCalculatedLoadout extends CalculatedLoadout {
   specMomentDps?: number,
   specFullDps?: number,
   specHitDist?: ChartEntry[],
+
+  recoilDamage?: number;
 }
 
 // NPC vs Player metrics

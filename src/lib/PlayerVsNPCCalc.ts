@@ -71,6 +71,7 @@ import {
   calculateAttackSpeed,
   calculateEquipmentBonusesFromGear,
   getCanonicalItem,
+  isHoldingShield,
   WEAPON_SPEC_COSTS,
 } from '@/lib/Equipment';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
@@ -2535,6 +2536,59 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     return ttks;
+  }
+
+  public getRecoilDamage(): number | undefined {
+    const dist = new AttackDistribution([]);
+
+    // Description says this applies to all forms of thorns / recoil.
+    let recoilDamageBonus = 0;
+    if (this.player.leagues.six.effects.talent_defence_recoil_scaling) {
+      const defensiveBonuses = this.player.defensive.crush
+          + this.player.defensive.slash
+          + this.player.defensive.stab
+          + this.player.defensive.ranged
+          + this.player.defensive.magic;
+      recoilDamageBonus = Math.trunc(defensiveBonuses / 100);
+    }
+
+    const leaguesEffects = this.player.leagues.six.effects;
+    const hasShield = isHoldingShield(this.player.equipment);
+    if (leaguesEffects.talent_thorns_damage && hasShield) {
+      const thornsDamage = leaguesEffects.talent_thorns_damage + recoilDamageBonus;
+      const hitSplats = [new Hitsplat(thornsDamage)];
+      if (leaguesEffects.talent_thorns_double_hit) {
+        hitSplats.push(new Hitsplat(Math.trunc(thornsDamage / 2)));
+      }
+      dist.addDist(HitDistribution.single(1, hitSplats));
+    }
+
+    // All other recoil requires atleast some damage be dealt.
+    const incomingDamage = this.player.leagues.six.expectedNpcHit;
+    if (incomingDamage > 0) {
+      if (leaguesEffects.talent_shield_reflect && hasShield) {
+        const defenceLevel = this.player.skills.def + this.player.boosts.def;
+        const reflectChance = defenceLevel * 0.001;
+        const reflectDamage = incomingDamage + recoilDamageBonus;
+
+        dist.addDist(HitDistribution.single(reflectChance, [new Hitsplat(reflectDamage)]));
+      }
+
+      if (this.wearing('Ring of recoil') || this.wearing('Ring of suffering (i)') || this.wearing('Ring of suffering')) {
+        const recoilDamage = 1 + Math.trunc(incomingDamage / 10) + recoilDamageBonus;
+        dist.addDist(HitDistribution.single(1, [new Hitsplat(recoilDamage)]));
+      }
+
+      if (this.wearing('Echo boots') && this.player.leagues.six.distanceToEnemy === 1) {
+        dist.addDist(HitDistribution.single(1, [new Hitsplat(1 + recoilDamageBonus)]));
+      }
+    }
+
+    this.trackDist(DetailKey.DIST_RECOIL, dist);
+    if (dist.dists.length === 0) {
+      return undefined;
+    }
+    return dist.getExpectedDamage();
   }
 
   distAtHp(baseDist: DelayedHit[], hp: number): DelayedHit[] {

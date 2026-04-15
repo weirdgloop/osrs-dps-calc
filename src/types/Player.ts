@@ -98,6 +98,8 @@ export interface LeaguesState {
   regenerateMagicBonus: number;
 
   cullingSpree: boolean;
+
+  expectedNpcHit: number;
 }
 
 export interface Player extends EquipmentStats {

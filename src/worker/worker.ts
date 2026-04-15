@@ -41,6 +41,9 @@ const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) 
       dps: calc.getDps(),
       ttk: calc.getTtk(),
       hitDist: calc.getDistribution().asHistogram(calcOpts.hitDistHideMisses),
+
+      recoilDamage: calc.getRecoilDamage(),
+
       details: calc.details,
       userIssues: calc.userIssues,
 

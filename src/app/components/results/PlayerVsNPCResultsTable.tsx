@@ -32,6 +32,7 @@ const calcKeyToString = (value: number, calcKey: keyof PlayerVsNPCCalculatedLoad
       return value.toPrecision(DPS_PRECISION);
     case 'expectedHit':
     case 'specExpected':
+    case 'recoilDamage':
       return value.toFixed(EXPECTED_HIT_PRECISION);
     case 'ttk':
       return value === 0
@@ -111,6 +112,7 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
 
   const loadouts = toJS(calc.loadouts);
   const hasResults = useMemo(() => some(loadouts, (l) => some(Object.entries(l), ([, v]) => isDefined(v))), [loadouts]);
+  const showRecoilRow = useMemo(() => some(loadouts, (l) => l.recoilDamage !== undefined), [loadouts]);
 
   return (
     <table>
@@ -149,6 +151,11 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
         <ResultRow calcKey="accuracy" title="How accurate you are against the monster" hasResults={hasResults}>
           Accuracy
         </ResultRow>
+        {showRecoilRow && (
+          <ResultRow calcKey="recoilDamage" title="The expected recoil damage dealt back to mob" hasResults={hasResults}>
+            Recoil damage
+          </ResultRow>
+        )}
         {!resultsExpanded && (
           <ResultRow calcKey="specExpected" title="The expected hit that the special attack will deal to the monster per use, including misses" hasResults={hasResults} collapseSpecs={resultsExpanded}>
             Spec expected hit
