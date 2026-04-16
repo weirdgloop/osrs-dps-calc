@@ -5,6 +5,14 @@ import {
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import { getTestMonster, getTestPlayer } from '@/tests/utils/TestUtils';
 
+class TestMinionTtkCalc extends PlayerVsNPCCalc {
+  private readonly delayedHits = HitDistribution.single(1.0, [new Hitsplat(1)]).withProbabilisticDelays(() => [[1.0, 3]]);
+
+  protected override getMinionDelayedHits() {
+    return this.delayedHits;
+  }
+}
+
 describe('variable attack speeds should not merge states from different timelines', () => {
   test('2hp, 50% accuracy, 3:4 guarantee, 1 max', () => {
     const dist = new AttackDistribution([new HitDistribution([
@@ -100,5 +108,30 @@ describe('variable attack speeds should not merge states from different timeline
       .toBeCloseTo(4.99e-05);
     expect(result.get(83))
       .toBeCloseTo(2.64e-05);
+  });
+
+  test('minion and player hits can combine on the same tick', () => {
+    const m = getTestMonster('Abyssal demon', 'Standard', {
+      skills: {
+        hp: 2,
+      },
+    });
+    const p = getTestPlayer(m, {
+      attackSpeed: 4,
+      leagues: {
+        six: {
+          minionEnabled: true,
+          minionZamorakItemCount: 0,
+        },
+      },
+    });
+    const calc = new TestMinionTtkCalc(p, m);
+    calc.getDistribution = () => new AttackDistribution([
+      HitDistribution.single(1.0, [new Hitsplat(1)]),
+    ]);
+
+    const result = calc.getTtkDistribution();
+    expect(result.get(1))
+      .toBeCloseTo(1.0);
   });
 });
