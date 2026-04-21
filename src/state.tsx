@@ -1,12 +1,7 @@
 // noinspection FallThroughInSwitchStatementJS
 
 import {
-  autorun,
-  IReactionDisposer,
-  IReactionPublic,
-  makeAutoObservable,
-  reaction,
-  toJS,
+  autorun, IReactionDisposer, IReactionPublic, makeAutoObservable, reaction, toJS,
 } from 'mobx';
 import React, { createContext, useContext } from 'react';
 import { PartialDeep } from 'type-fest';
@@ -30,21 +25,14 @@ import {
 import { Monster } from '@/types/Monster';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
-  fetchPlayerSkills,
-  fetchShortlinkData,
-  getCombatStylesForCategory,
-  isDefined,
-  PotionMap,
+  fetchPlayerSkills, fetchShortlinkData, getCombatStylesForCategory, isDefined, PotionMap,
 } from '@/utils';
 import { ComputeBasicRequest, ComputeReverseRequest, WorkerRequestType } from '@/worker/CalcWorkerTypes';
 import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
 import { availableEquipment, calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { CalcWorker } from '@/worker/CalcWorker';
 import { spellByName } from '@/types/Spell';
-import {
-  DEFAULT_ATTACK_SPEED, INFINITE_HEALTH_MONSTERS,
-  NUMBER_OF_LOADOUTS,
-} from '@/lib/constants';
+import { DEFAULT_ATTACK_SPEED, INFINITE_HEALTH_MONSTERS, NUMBER_OF_LOADOUTS } from '@/lib/constants';
 import { dbrowDefinitions, rootNode } from '@/app/components/player/demonicPactsLeague/parse_skill_tree_elements';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
@@ -1083,8 +1071,7 @@ class GlobalState implements State {
     selectedNodeIds.forEach((id) => {
       const def = dbrowDefinitions[id];
       const prior = state.effects[def.effect.name] ?? 0;
-      const addend = def.effect.value === '[Constant: true]' ? 1 : def.effect.value;
-      state.effects[def.effect.name] = prior + addend;
+      state.effects[def.effect.name] = prior + def.effect.value;
     });
 
     console.debug('[GlobalState] recalculateLeaguesEffects', toJS(state.effects));
@@ -1098,7 +1085,7 @@ class GlobalState implements State {
   string,
   {
     skillTreeNodeId: string;
-    values: (number | '[Constant: true]')[];
+    values: number[];
   }
   > {
     const state = this.player.leagues.six;
@@ -1106,7 +1093,7 @@ class GlobalState implements State {
     string,
     {
       skillTreeNodeId: string;
-      values:(number | '[Constant: true]')[];
+      values: number[];
     }
     >();
     for (const id of state.selectedNodeIds) {
