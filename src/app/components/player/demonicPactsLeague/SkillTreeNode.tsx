@@ -31,7 +31,7 @@ const nodeSizeToPx: { [key in NodeSize]: number } = {
 
 interface DisplayEffectProps {
   name: string;
-  effectValue: number | '[Constant: true]';
+  effectValue: number;
 }
 
 export const DisplayEffect = (props: DisplayEffectProps) => {

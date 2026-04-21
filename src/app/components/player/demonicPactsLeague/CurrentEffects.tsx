@@ -5,12 +5,7 @@ import { dbrowDefinitions } from '@/app/components/player/demonicPactsLeague/par
 import Image from 'next/image';
 import { getBackingIcon } from '@/app/components/player/demonicPactsLeague/icons';
 
-const combineEffectValues = (values: (number | '[Constant: true]')[]) => values.reduce((acc, value) => {
-  if (value === '[Constant: true]' || acc === '[Constant: true]') {
-    return '[Constant: true]';
-  }
-  return acc + value;
-}, 0);
+const combineEffectValues = (values: number[]) => values.reduce((acc, value) => acc + value, 0);
 
 const CurrentEffects = observer(() => {
   const store = useStore();
