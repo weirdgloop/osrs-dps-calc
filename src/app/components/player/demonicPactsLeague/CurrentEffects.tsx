@@ -5,10 +5,18 @@ import { dbrowDefinitions } from '@/app/components/player/demonicPactsLeague/par
 import Image from 'next/image';
 import { getBackingIcon } from '@/app/components/player/demonicPactsLeague/icons';
 
-const combineEffectValues = (values: number[]) => values.reduce((acc, value) => acc + value, 0);
+const combineEffectValues = (values: number[]) => values.reduce<number>((acc, value) => acc + value, 0);
 
 const CurrentEffects = observer(() => {
   const store = useStore();
+
+  const numericEffectTotals = new Map<string, number>(
+    Array.from(store.currentEffects.values()).map(({ skillTreeNodeId, values }) => [
+      dbrowDefinitions[skillTreeNodeId].effect.name,
+      combineEffectValues(values) as number,
+    ]),
+  );
+
   return (
     <div className="flex flex-col w-full">
       <h2 className="text-shadow-md font-serif font-bold px-4 py-2 bg-[#28221d] border-[#806f61]">
@@ -20,34 +28,49 @@ const CurrentEffects = observer(() => {
         ) : (
           <ul>
             {Array.from(store.currentEffects.values()).map(
-              ({ skillTreeNodeId, values }, ix) => (
-                <li
+              ({ skillTreeNodeId, values }, ix) => {
+                const def = dbrowDefinitions[skillTreeNodeId];
+                const effectName = def.effect.name;
+
+                let effectValue = combineEffectValues(values);
+
+                if (effectName === 'talent_all_style_accuracy') {
+                  const magic = numericEffectTotals.get('talent_percentage_magic_damage') ?? 0;
+                  const ranged = numericEffectTotals.get('talent_percentage_ranged_damage') ?? 0;
+                  const melee = numericEffectTotals.get('talent_percentage_melee_damage') ?? 0;
+
+                  effectValue = (effectValue as number) + 10 * (magic + ranged + melee);
+                }
+
+                return (
+                  <li
                     // eslint-disable-next-line react/no-array-index-key
-                  key={ix}
-                  className="effect-container p-2 bg-dark-300 border-b border-[#806f61] flex gap-2 items-center"
-                >
-                  <div
-                    className="bg-cover size-8 square min-size-12 aspect-square flex items-center justify-center"
-                    style={{
-                      backgroundImage: `url(${getBackingIcon(
-                        true,
-                        true,
-                        dbrowDefinitions[skillTreeNodeId].node_size,
-                      ).src})`,
-                    }}
+                    key={ix}
+                    className="effect-container p-2 bg-dark-300 border-b border-[#806f61] flex gap-2 items-center"
                   >
-                    <Image
-                      className="size-4/6 object-center object-contain aspect-square"
-                      src={getSpriteTile(skillTreeNodeId, true)}
-                      alt="Pact icon"
+                    <div
+                      className="bg-cover size-8 square min-size-12 aspect-square flex items-center justify-center"
+                      style={{
+                        backgroundImage: `url(${getBackingIcon(
+                          true,
+                          true,
+                          def.node_size,
+                        ).src})`,
+                      }}
+                    >
+                      <Image
+                        className="size-4/6 object-center object-contain aspect-square"
+                        src={getSpriteTile(skillTreeNodeId, true)}
+                        alt="Pact icon"
+                      />
+                    </div>
+                    <DisplayEffect
+                      name={def.name}
+                      effectValue={effectValue}
                     />
-                  </div>
-                  <DisplayEffect
-                    name={dbrowDefinitions[skillTreeNodeId].name}
-                    effectValue={combineEffectValues(values)}
-                  />
-                </li>
-              ),
+                  </li>
+                );
+              },
             )}
           </ul>
         )}
