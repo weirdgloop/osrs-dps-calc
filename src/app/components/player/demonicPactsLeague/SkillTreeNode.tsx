@@ -32,12 +32,14 @@ const nodeSizeToPx: { [key in NodeSize]: number } = {
 interface DisplayEffectProps {
   name: string;
   effectValue: number;
+  extraNote: string | null;
 }
 
 export const DisplayEffect = (props: DisplayEffectProps) => {
   const {
     name,
     effectValue,
+    extraNote,
   } = props;
   const text = name.replaceAll('#', String(effectValue));
 
@@ -57,6 +59,12 @@ export const DisplayEffect = (props: DisplayEffectProps) => {
         }
         return part;
       })}
+      {extraNote && (
+      <div className="text-xs italic text-gray-500 dark:text-gray-300">
+        <br />
+        {extraNote}
+      </div>
+      )}
     </div>
   );
 };
@@ -99,6 +107,7 @@ export const SkillTreeNode = observer(
           <DisplayEffect
             name={data.skillTreeNodeInfo.name}
             effectValue={data.skillTreeNodeInfo.effect.value}
+            extraNote={null}
           />
 
           {store.debug && (
