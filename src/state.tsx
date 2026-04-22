@@ -139,6 +139,7 @@ export const generateEmptyPlayer = (name?: string): Player => ({
       },
       blindbagWeapons: [],
       regenerateMagicBonus: 0,
+      expectedNpcHit: 0,
       cullingSpree: false,
     },
   },
