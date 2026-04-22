@@ -131,6 +131,8 @@ export const generateEmptyPlayer = (name?: string): Player => ({
     six: {
       selectedNodeIds: new Set<string>(['node1']),
       effects: {},
+      minionEnabled: false,
+      minionZamorakItemCount: 0,
       distanceToEnemy: 1,
       enemyPrayers: {
         melee: false,
