@@ -3,6 +3,7 @@
 import { makeAutoObservable } from 'mobx';
 import { ImportableData } from '@/types/State';
 import { GetPlayerRequest, WikiSyncerRequestType, WikiSyncerResponsesUnion } from './WikiSyncerTypes';
+import parseWikiSyncImportableData from './ParseWikiSync';
 
 const minimumPort = 37767;
 const maximumPort = 37776;
@@ -66,7 +67,7 @@ export class WikiSyncer {
         if (response.error) {
           this.inFlightRequests.getPlayer.get(response.sequenceId)?.reject(new Error(response.error));
         } else {
-          this.inFlightRequests.getPlayer.get(response.sequenceId)?.resolve(response.payload);
+          this.inFlightRequests.getPlayer.get(response.sequenceId)?.resolve(parseWikiSyncImportableData(response.payload));
         }
         break;
 
