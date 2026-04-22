@@ -106,7 +106,7 @@ const WikiSyncButton: React.FC<IWikiSyncButtonProps> = observer((props) => {
 const WikiSyncButtonWrapper: React.FC = observer(() => {
   const store = useStore();
   const {
-    validWikiSyncInstances, updatePlayer,
+    validWikiSyncInstances, updatePlayer, recalculateLeaguesEffects,
   } = store;
   const items: WikiSyncSelectItem[] = [...validWikiSyncInstances].map(([port, ins]) => ({ label: ins.username!, value: port }));
 
@@ -116,10 +116,11 @@ const WikiSyncButtonWrapper: React.FC = observer(() => {
       if (data) {
         parseLoadoutsFromImportedData(data).forEach((player) => {
           updatePlayer(player);
+          recalculateLeaguesEffects();
         });
       }
     }
-  }, [validWikiSyncInstances, updatePlayer]);
+  }, [validWikiSyncInstances, updatePlayer, recalculateLeaguesEffects]);
 
   return (
     <Select

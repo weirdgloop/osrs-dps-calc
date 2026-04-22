@@ -12,13 +12,6 @@ type League6Payload = {
 
 type LoadoutWithLeague6 = ImportableData['loadouts'][number] & {
   league6?: League6Payload;
-  leagues?: {
-    six?: {
-      selectedNodeIds?: Set<string> | string[];
-      [key: string]: unknown;
-    };
-    [key: string]: unknown;
-  };
 };
 
 const NODE_NAMES = Object.keys(dbrowDefinitions);
