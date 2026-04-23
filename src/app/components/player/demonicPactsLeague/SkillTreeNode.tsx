@@ -41,7 +41,11 @@ export const DisplayEffect = (props: DisplayEffectProps) => {
     effectValue,
     extraNote,
   } = props;
-  const text = name.replaceAll('#', String(effectValue));
+  let text = name.replaceAll('#', String(effectValue));
+
+  if (name.includes('+10% accuracy in all combat styles')) {
+    text = text.replaceAll('+10% accuracy in all combat styles', `+${effectValue * 10}% accuracy in all combat styles`);
+  }
 
   const parts = text.split(/(<col=[^>]+>.*?<\/col>)/g);
 
