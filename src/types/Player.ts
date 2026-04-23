@@ -87,6 +87,12 @@ export interface LeaguesState {
 
   distanceToEnemy: number;
 
+  enemyPrayers: {
+    melee: boolean;
+    ranged: boolean;
+    magic: boolean;
+  }
+
   blindbagWeapons: EquipmentPiece[];
 
   regenerateMagicBonus: number;
