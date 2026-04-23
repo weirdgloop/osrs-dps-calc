@@ -34,6 +34,7 @@ const weaponCanBeUsedInBlindbag = (eq: EquipmentPiece): boolean => {
     case EquipmentCategory.BULWARK:
     case EquipmentCategory.CLAW:
     case EquipmentCategory.DAGGER:
+    case EquipmentCategory.MULTI_MELEE:
     case EquipmentCategory.PARTISAN:
     case EquipmentCategory.PICKAXE:
     case EquipmentCategory.POLEARM:
