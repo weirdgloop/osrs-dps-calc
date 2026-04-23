@@ -51,7 +51,8 @@ const weaponCanBeUsedInBlindbag = (eq: EquipmentPiece): boolean => {
 
     default:
       // these are staves
-      return eq.name === 'Ivandis flail' || eq.name === 'Blisterwood flail';
+      // return eq.name === 'Ivandis flail' || eq.name === 'Blisterwood flail';
+      return false;
   }
 };
 
