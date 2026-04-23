@@ -50,6 +50,11 @@ export const INITIAL_MONSTER_INPUTS: Monster['inputs'] = {
     seercull: 0,
     ayak: 0,
   },
+  prayers: {
+    melee: false,
+    ranged: false,
+    magic: false,
+  },
 };
 
 export const CUSTOM_MONSTER_BASE: Monster = {

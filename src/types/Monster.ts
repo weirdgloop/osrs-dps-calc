@@ -123,5 +123,11 @@ export interface Monster {
     tormentedDemonPhase?: typeof TD_PHASES[number];
 
     phase?: string;
+
+    prayers: {
+      melee: boolean;
+      ranged: boolean;
+      magic: boolean;
+    };
   }
 }

@@ -1988,6 +1988,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const mattrs = this.monster.attributes;
     const relevantEffects: ([HitTransformer] | [HitTransformer, TransformOpts])[] = [];
 
+    if ((this.monster.inputs.prayers.magic && styleType === 'magic')
+      || (this.monster.inputs.prayers.ranged && styleType === 'ranged')
+      || (this.monster.inputs.prayers.melee && ['stab', 'slash', 'crush'].includes(styleType!))) {
+      const reduction = Math.min(100, this.player.leagues.six.effects.talent_prayer_pen_all ?? 0);
+      relevantEffects.push([multiplyTransformer(reduction, 100)]);
+    }
+
     if (this.monster.name === 'Zulrah' && this.player.leagues.six.selectedNodeIds.size <= 1) {
       // https://twitter.com/JagexAsh/status/1745852774607183888
       relevantEffects.push([cappedRerollTransformer(50, 5, 45)]);
@@ -2101,6 +2108,14 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   isImmune(styleType: CombatStyleType): boolean {
     const monsterId = this.monster.id;
     const mattrs = this.monster.attributes;
+
+    if ((this.monster.inputs.prayers.magic && styleType === 'magic')
+      || (this.monster.inputs.prayers.ranged && styleType === 'ranged')
+      || (this.monster.inputs.prayers.melee && ['stab', 'slash', 'crush'].includes(styleType!))) {
+      if (!this.player.leagues.six.effects.talent_prayer_pen_all) {
+        return true;
+      }
+    }
 
     if (IMMUNE_TO_MAGIC_DAMAGE_NPC_IDS.includes(monsterId) && styleType === 'magic') {
       return true;

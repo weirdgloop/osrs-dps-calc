@@ -129,9 +129,6 @@ const DemonicPactsLeague: React.FC = observer(() => {
     if (leaguesEffects.talent_fire_spell_burn_bounce) {
       unimplemented.push('Fire Spell Burn (coming soon)');
     }
-    if (leaguesEffects.talent_prayer_pen_all) {
-      unimplemented.push('Prayer Penetration (coming soon)');
-    }
     if (leaguesEffects.talent_max_hit_style_swap) {
       unimplemented.push('Style Swap Damage Bonus');
     }

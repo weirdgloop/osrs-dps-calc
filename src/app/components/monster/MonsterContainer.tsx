@@ -19,6 +19,9 @@ import rangedStrength from '@/public/img/bonuses/ranged_strength.png';
 import toaRaidLevel from '@/public/img/toa_raidlevel.webp';
 import raidsIcon from '@/public/img/raids_icon.webp';
 import coxCmIcon from '@/public/img/cox_challenge_mode.png';
+import ProtectMagic from '@/public/img/prayers/Protect_from_Magic.png';
+import ProtectMelee from '@/public/img/prayers/Protect_from_Melee.png';
+import ProtectRanged from '@/public/img/prayers/Protect_from_Missiles.png';
 import { useStore } from '@/state';
 import { observer } from 'mobx-react-lite';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
@@ -44,6 +47,7 @@ import { toJS } from 'mobx';
 import DefensiveReductions from '@/app/components/monster/DefensiveReductions';
 import WeaknessBadge from '@/app/components/monster/WeaknessBadge';
 import Select from '@/app/components/generic/Select';
+import GridItem from '@/app/components/generic/GridItem';
 import MonsterSelect from './MonsterSelect';
 import HelpLink from '../HelpLink';
 import AttributeInput from '../generic/AttributeInput';
@@ -112,6 +116,7 @@ const MonsterContainer: React.FC = observer(() => {
   const { loadouts, monster, prefs } = store;
   const [attributesExpanded, setAttributesExpanded] = useState(false);
   const [optionsExpanded, setOptionsExpanded] = useState(true);
+  const [prayersExpanded, setPrayersExpanded] = useState(true);
 
   // Determine whether there's any issues with this element
   const issues = store.userIssues.filter((i) => i.type.startsWith('monster_overall') && (!i.loadout || i.loadout === `${store.selectedLoadout + 1}`));
@@ -702,6 +707,49 @@ const MonsterContainer: React.FC = observer(() => {
                     </div>
                   </div>
                 )}
+                <div className="mt-1 text-sm">
+                  <div className="rounded bg-body-100 dark:bg-dark-500">
+                    <button
+                      type="button"
+                      className={`w-full pt-1 border-b-body-400 dark:border-b-dark-300 px-2 flex text-gray-500 dark:text-gray-300 font-semibold justify-between gap-2 ${prayersExpanded ? 'border-b' : ''}`}
+                      onClick={() => setPrayersExpanded(!prayersExpanded)}
+                    >
+                      <div>
+                        Monster Prayers
+                      </div>
+                      <div className="relative top-[-2px]">
+                        {prayersExpanded ? <IconChevronUp width={20} />
+                          : <IconChevronDown width={20} />}
+                      </div>
+                    </button>
+
+                    {prayersExpanded && (
+                      <div className="grid grid-cols-3 gap-y-2 py-4 px-4 w-full m-auto justify-items-center items-center">
+                        <GridItem
+                          item={0}
+                          name="Magic"
+                          image={ProtectMagic}
+                          active={store.monster.inputs.prayers.magic}
+                          onClick={() => store.updateMonster({ inputs: { prayers: { magic: !store.monster.inputs.prayers.magic } } })}
+                        />
+                        <GridItem
+                          item={1}
+                          name="Ranged"
+                          image={ProtectRanged}
+                          active={store.monster.inputs.prayers.ranged}
+                          onClick={() => store.updateMonster({ inputs: { prayers: { ranged: !store.monster.inputs.prayers.ranged } } })}
+                        />
+                        <GridItem
+                          item={2}
+                          name="Melee"
+                          image={ProtectMelee}
+                          active={store.monster.inputs.prayers.melee}
+                          onClick={() => store.updateMonster({ inputs: { prayers: { melee: !store.monster.inputs.prayers.melee } } })}
+                        />
+                      </div>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
