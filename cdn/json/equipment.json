@@ -59489,6 +59489,657 @@
     "isTwoHanded": false
   },
   {
+    "name": "Demonic boots (t1)",
+    "id": 33269,
+    "weight": 0.34,
+    "version": "",
+    "slot": "feet",
+    "image": "Demonic boots (t1).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic boots (t2)",
+    "id": 33281,
+    "weight": 0.34,
+    "version": "",
+    "slot": "feet",
+    "image": "Demonic boots (t2).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic boots (t3)",
+    "id": 33293,
+    "weight": 0.34,
+    "version": "",
+    "slot": "feet",
+    "image": "Demonic boots (t3).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic hood (t1)",
+    "id": 33260,
+    "weight": 0.453,
+    "version": "",
+    "slot": "head",
+    "image": "Demonic hood (t1).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic hood (t2)",
+    "id": 33272,
+    "weight": 0.453,
+    "version": "",
+    "slot": "head",
+    "image": "Demonic hood (t2).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic hood (t3)",
+    "id": 33284,
+    "weight": 0.453,
+    "version": "",
+    "slot": "head",
+    "image": "Demonic hood (t3).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic pacts adamant trophy",
+    "id": 33349,
+    "weight": 1.5,
+    "version": "",
+    "slot": "weapon",
+    "image": "Demonic pacts adamant trophy.png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": -10,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -100,
+      "slash": -100,
+      "crush": -50,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Demonic pacts banner",
+    "id": 33299,
+    "weight": 2.267,
+    "version": "",
+    "slot": "weapon",
+    "image": "Demonic pacts banner.png",
+    "speed": 4,
+    "category": "Banner",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic pacts bronze trophy",
+    "id": 33357,
+    "weight": 1,
+    "version": "",
+    "slot": "shield",
+    "image": "Demonic pacts bronze trophy.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic pacts dragon trophy",
+    "id": 33345,
+    "weight": 1.5,
+    "version": "",
+    "slot": "weapon",
+    "image": "Demonic pacts dragon trophy.png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": -10,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -100,
+      "slash": -100,
+      "crush": -50,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Demonic pacts iron trophy",
+    "id": 33355,
+    "weight": 1,
+    "version": "",
+    "slot": "shield",
+    "image": "Demonic pacts iron trophy.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic pacts mithril trophy",
+    "id": 33351,
+    "weight": 1,
+    "version": "",
+    "slot": "shield",
+    "image": "Demonic pacts mithril trophy.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic pacts rune trophy",
+    "id": 33347,
+    "weight": 1.5,
+    "version": "",
+    "slot": "weapon",
+    "image": "Demonic pacts rune trophy.png",
+    "speed": 4,
+    "category": "Blunt",
+    "bonuses": {
+      "str": -10,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": -100,
+      "slash": -100,
+      "crush": -50,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Demonic pacts steel trophy",
+    "id": 33353,
+    "weight": 1,
+    "version": "",
+    "slot": "shield",
+    "image": "Demonic pacts steel trophy.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic robe bottom (t1)",
+    "id": 33266,
+    "weight": 0.907,
+    "version": "",
+    "slot": "legs",
+    "image": "Demonic robe bottom (t1).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic robe bottom (t2)",
+    "id": 33278,
+    "weight": 0.907,
+    "version": "",
+    "slot": "legs",
+    "image": "Demonic robe bottom (t2).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic robe bottom (t3)",
+    "id": 33290,
+    "weight": 0.907,
+    "version": "",
+    "slot": "legs",
+    "image": "Demonic robe bottom (t3).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic robe top (t1)",
+    "id": 33263,
+    "weight": 0.907,
+    "version": "",
+    "slot": "body",
+    "image": "Demonic robe top (t1).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic robe top (t2)",
+    "id": 33275,
+    "weight": 0.907,
+    "version": "",
+    "slot": "body",
+    "image": "Demonic robe top (t2).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic robe top (t3)",
+    "id": 33287,
+    "weight": 0.907,
+    "version": "",
+    "slot": "body",
+    "image": "Demonic robe top (t3).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic sceptre",
+    "id": 33296,
+    "weight": 1.814,
+    "version": "",
+    "slot": "weapon",
+    "image": "Demonic sceptre.png",
+    "speed": 4,
+    "category": "Spiked",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Desert amulet 1",
     "id": 13133,
     "weight": 0.01,
@@ -70618,6 +71269,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Evil eye (item)",
+    "id": 33227,
+    "weight": 0.25,
+    "version": "",
+    "slot": "neck",
+    "image": "Evil eye.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Excalibur",
     "id": 35,
     "weight": 2.267,
@@ -71288,6 +71970,37 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Fang of the hound",
+    "id": 33249,
+    "weight": 0.666,
+    "version": "",
+    "slot": "weapon",
+    "image": "Fang of the hound.png",
+    "speed": 3,
+    "category": "",
+    "bonuses": {
+      "str": 20,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 60,
+      "slash": 60,
+      "crush": 10,
+      "magic": 3,
       "ranged": 0
     },
     "defensive": {
@@ -90930,6 +91643,37 @@
     "slot": "weapon",
     "image": "Infernal tecpatl.png",
     "speed": 4,
+    "category": "Multi-Melee",
+    "bonuses": {
+      "str": 70,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": -1
+    },
+    "offensive": {
+      "stab": 72,
+      "slash": 72,
+      "crush": 72,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Infernal tecpatl",
+    "id": 33243,
+    "weight": 3.628,
+    "version": "",
+    "slot": "weapon",
+    "image": "Infernal tecpatl.png",
+    "speed": 4,
     "category": "Banner",
     "bonuses": {
       "str": 70,
@@ -96346,6 +97090,37 @@
       "ranged": 0
     },
     "isTwoHanded": false
+  },
+  {
+    "name": "King's barrage",
+    "id": 33251,
+    "weight": 6,
+    "version": "",
+    "slot": "weapon",
+    "image": "King's barrage.png",
+    "speed": 6,
+    "category": "Crossbow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 14,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 130
+    },
+    "defensive": {
+      "stab": 20,
+      "slash": 20,
+      "crush": 20,
+      "magic": 25,
+      "ranged": 60
+    },
+    "isTwoHanded": true
   },
   {
     "name": "King's barrage",
@@ -107226,6 +108001,37 @@
       "ranged": 0
     },
     "isTwoHanded": false
+  },
+  {
+    "name": "Nature's recurve",
+    "id": 33245,
+    "weight": 1.36,
+    "version": "",
+    "slot": "weapon",
+    "image": "Nature's recurve.png",
+    "speed": 4,
+    "category": "bow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 4,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 95
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
   },
   {
     "name": "Nature's recurve",
@@ -127068,37 +127874,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Sage's greaves",
-    "id": 28771,
-    "weight": 0,
-    "version": "",
-    "slot": "feet",
-    "image": "Sage's greaves.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
     "name": "Saika's hood",
     "id": 26701,
     "weight": 0.453,
@@ -127489,14 +128264,14 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
+      "magic": -3,
       "ranged": 0
     },
     "defensive": {
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
+      "magic": -1,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -129982,6 +130757,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Searing boots",
+    "id": 28771,
+    "weight": 0,
+    "version": "",
+    "slot": "feet",
+    "image": "Searing boots.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Secret santa present",
     "id": 26322,
     "weight": 0.001,
@@ -130662,6 +131468,37 @@
       "ranged": -1
     },
     "isTwoHanded": true
+  },
+  {
+    "name": "Shadowflame quadrant",
+    "id": 33253,
+    "weight": 2.267,
+    "version": "",
+    "slot": "weapon",
+    "image": "Shadowflame quadrant.png",
+    "speed": 5,
+    "category": "",
+    "bonuses": {
+      "str": 50,
+      "ranged_str": 0,
+      "magic_str": 150,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 60,
+      "magic": 25,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 5,
+      "magic": 17,
+      "ranged": 0
+    },
+    "isTwoHanded": false
   },
   {
     "name": "Shadowflame quadrant",
@@ -148766,6 +149603,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Transmutation ledger",
+    "id": 33229,
+    "weight": 0.014,
+    "version": "",
+    "slot": "shield",
+    "image": "Transmutation ledger.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Treasonous ring",
     "id": 12605,
     "weight": 0.4,
@@ -152141,6 +153009,37 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "V's helm",
+    "id": 33247,
+    "weight": 2.721,
+    "version": "",
+    "slot": "head",
+    "image": "V's helm.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 8,
+      "ranged_str": 2,
+      "magic_str": 30,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 8,
+      "ranged": 12
+    },
+    "defensive": {
+      "stab": 40,
+      "slash": 40,
+      "crush": 40,
+      "magic": 10,
+      "ranged": 40
     },
     "isTwoHanded": false
   },
