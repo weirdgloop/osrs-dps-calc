@@ -1230,8 +1230,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       atkRoll = this.getPlayerMaxMagicAttackRoll();
     }
 
-    if (this.player.leagues.six.effects.talent_all_style_accuracy) {
-      const factor = this.player.leagues.six.effects.talent_all_style_accuracy;
+    if (this.player.leagues.six.effects) {
+      const effect = this.player.leagues.six.effects;
+      const allAccuracy = effect.talent_all_style_accuracy ?? 0;
+      const magicDamage = effect.talent_percentage_magic_damage ?? 0;
+      const rangedDamage = effect.talent_percentage_ranged_damage ?? 0;
+      const meleeDamage = effect.talent_percentage_melee_damage ?? 0;
+      const factor = allAccuracy + 10 * (magicDamage + rangedDamage + meleeDamage);
       atkRoll = this.trackFactor(DetailKey.LEAGUES_ALL_STYLE_ACCURACY, atkRoll, [100 + factor, 100]);
     }
 
