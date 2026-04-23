@@ -1,0 +1,613 @@
+[
+  {
+    "id": 100001,
+    "name": "Amoxliatl (Echo)",
+    "version": "",
+    "image": "Amoxliatl (Echo).png",
+    "level": "328",
+    "speed": 8,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "",
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 650,
+      "magic": 240,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 160,
+      "magic_str": 15,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": -2,
+      "crush": 40,
+      "magic": 20,
+      "heavy": 40,
+      "standard": 40,
+      "light": 40,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "fire",
+      "severity": 30
+    }
+  },
+  {
+    "id": 100002,
+    "name": "Cerberus (Echo)",
+    "version": "",
+    "image": "Cerberus (Echo).png",
+    "level": "477",
+    "speed": 6,
+    "style": [
+      "Stab",
+      "Ranged",
+      "Magic"
+    ],
+    "size": 5,
+    "max_hit": "",
+    "skills": {
+      "atk": 275,
+      "def": 115,
+      "hp": 1620,
+      "magic": 275,
+      "ranged": 275,
+      "str": 275
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 50,
+      "magic_str": 0,
+      "ranged": 50,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 25,
+      "magic": 70,
+      "heavy": 70,
+      "standard": 70,
+      "light": 70,
+      "slash": 100,
+      "stab": 50
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
+  },
+  {
+    "id": 100003,
+    "name": "Thermonuclear smoke devil (Echo)",
+    "version": "",
+    "image": "Thermonuclear smoke devil (Echo).png",
+    "level": "602",
+    "speed": 2,
+    "style": [
+      "Ranged",
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "",
+    "skills": {
+      "atk": 230,
+      "def":324,
+      "hp": 1200,
+      "magic": 15,
+      "ranged": 387,
+      "str": 220
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 9,
+      "magic": 800,
+      "heavy": 90,
+      "standard": 90,
+      "light": 90,
+      "slash": 4,
+      "stab": 11
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "air",
+      "severity": 20
+    }
+  },
+  {
+    "id": 100004,
+    "name": "Hespori (Echo)",
+    "version": "",
+    "image": "Hespori (Echo).png",
+    "level": "426",
+    "speed": 6,
+    "style": [
+      "Ranged",
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "",
+    "skills": {
+      "atk": 1,
+      "def": 120,
+      "hp": 900,
+      "magic": 250,
+      "ranged": 200,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 150,
+      "magic_str": 0,
+      "ranged": 150,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 60,
+      "magic": 80,
+      "heavy": 80,
+      "standard": 80,
+      "light": 80,
+      "slash": 20,
+      "stab": 60
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "fire",
+      "severity": 100
+    }
+  },
+  {
+    "id": 100005,
+    "name": "Dagannoth Prime (Echo)",
+    "version": "",
+    "image": "Dagannoth Prime (Echo).png",
+    "level": "454",
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "",
+    "skills": {
+      "atk": 0,
+      "def": 255,
+      "hp": 1800,
+      "magic": 400,
+      "ranged": 0,
+      "str": 255
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 100,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 100006,
+    "name": "Dagannoth Rex (Echo)",
+    "version": "",
+    "image": "Dagannoth Rex (Echo).png",
+    "level": "454",
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "",
+    "skills": {
+      "atk": 400,
+      "def": 255,
+      "hp": 1800,
+      "magic": 0,
+      "ranged": 555,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 10,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 100007,
+    "name": "Dagannoth Supreme (Echo)",
+    "version": "",
+    "image": "Dagannoth Supreme (Echo).png",
+    "level": "681",
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "",
+    "skills": {
+      "atk": 255,
+      "def": 255,
+      "hp": 1800,
+      "magic": 255,
+      "ranged": 550,
+      "str": 128
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 100,
+      "heavy": 150,
+      "standard": 150,
+      "light": 150,
+      "slash": 10,
+      "stab": 10
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 100008,
+    "name": "King Black Dragon (Echo)",
+    "version": "",
+    "image": "King Black Dragon (Echo).png",
+    "level": "414",
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 5,
+    "max_hit": "",
+    "skills": {
+      "atk": 300,
+      "def": 300,
+      "hp": 840,
+      "magic": 252,
+      "ranged": 1,
+      "str": 300
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 80,
+      "heavy": 50,
+      "standard": 70,
+      "light": 70,
+      "slash": 90,
+      "stab": 60
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
+  },
+  {
+    "id": 100009,
+    "name": "Dusk (Echo)",
+    "version": "",
+    "image": "Dusk (Echo).png",
+    "level": "656",
+    "speed": 6,
+    "style": [
+      "Slash"
+    ],
+    "size": 6,
+    "max_hit": "",
+    "skills": {
+      "atk": 345,
+      "def": 187,
+      "hp": 1080,
+      "magic": 262,
+      "ranged": 387,
+      "str": 287
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 100010,
+    "name": "Dawn (Echo)",
+    "version": "",
+    "image": "Dawn (Echo).png",
+    "level": "228",
+    "speed": 6,
+    "style": [
+      "Slash"
+    ],
+    "size": 6,
+    "max_hit": "",
+    "skills": {
+      "atk": 140,
+      "def": 140,
+      "hp": 450,
+      "magic": 100,
+      "ranged": 140,
+      "str": 140
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 80,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 100011,
+    "name": "Definitely Not Dusk (Echo)",
+    "version": "",
+    "image": "Definitely Not Dusk.png",
+    "level": "248",
+    "speed": 6,
+    "style": [
+      "Slash"
+    ],
+    "size": 4,
+    "max_hit": "",
+    "skills": {
+      "atk": 200,
+      "def": 100,
+      "hp": 450,
+      "magic": 100,
+      "ranged": 140,
+      "str": 140
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 100012,
+    "name": "Kalphite Queen (Echo)",
+    "version": "Crawling",
+    "image": "Kalphite Queen (Echo).png",
+    "level": "499",
+    "speed": 5,
+    "style": [
+      "All"
+    ],
+    "size": 5,
+    "max_hit": "",
+    "skills": {
+      "atk": 375,
+      "def": 300,
+      "hp": 561,
+      "magic": 165,
+      "ranged": 1,
+      "str": 375
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 65,
+      "heavy": 65,
+      "standard": 65,
+      "light": 65,
+      "slash": 50,
+      "stab": 50
+    },
+    "attributes": [
+      "kalphite"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 100012,
+    "name": "Kalphite Queen (Echo)",
+    "version": "Airborne",
+    "image": "Kalphite Queen (Echo) 2nd form.png",
+    "level": "748",
+    "speed": 5,
+    "style": [
+      "Magic",
+      "Ranged"
+    ],
+    "size": 5,
+    "max_hit": "",
+    "skills": {
+      "atk": 375,
+      "def": 300,
+      "hp": 561,
+      "magic": 165,
+      "ranged": 1,
+      "str": 375
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 50,
+      "magic": 10,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
+      "slash": 50,
+      "stab": 50
+    },
+    "attributes": [
+      "kalphite"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  }
+]
