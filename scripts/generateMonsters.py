@@ -138,6 +138,9 @@ def main():
             print(k + ' is a CoX CM variant - skipping.')
             continue
 
+        if 'Deadman' in k:
+            continue
+
         # Skip monsters that aren't in the main namespace on the wiki
         if re.match("^([A-z]*):", k):
             continue
@@ -273,6 +276,14 @@ def main():
         data.append(monster)
         if not monster['image'] == '':
             required_imgs.append(monster['image'])
+
+    with open('manual_monster.json', 'r') as f:
+        manual_monsters = json.load(f)
+        for m in manual_monsters:
+            img = m.get('image')
+            if img: 
+                required_imgs.append(img)
+        data = data + manual_monsters
 
     print('Total monsters: ' + str(len(data)))
 
