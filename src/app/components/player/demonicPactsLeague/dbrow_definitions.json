@@ -149,7 +149,7 @@
     },
     "effect": {
       "name": "talent_all_style_accuracy",
-      "value": 35
+      "value": 50
     },
     "linked_nodes": ["node7", "node8", "node17"],
     "name": "+#% accuracy in all combat styles.",
@@ -1328,7 +1328,7 @@
     },
     "effect": {
       "name": "talent_all_style_accuracy",
-      "value": 15
+      "value": 25
     },
     "linked_nodes": ["node45", "node58", "node59"],
     "name": "+#% accuracy in all combat styles.",
@@ -1342,7 +1342,7 @@
     },
     "effect": {
       "name": "talent_all_style_accuracy",
-      "value": 15
+      "value": 25
     },
     "linked_nodes": ["node46", "node47", "node59", "node60"],
     "name": "+#% accuracy in all combat styles.",
@@ -1356,7 +1356,7 @@
     },
     "effect": {
       "name": "talent_all_style_accuracy",
-      "value": 15
+      "value": 25
     },
     "linked_nodes": ["node48", "node60", "node61"],
     "name": "+#% accuracy in all combat styles.",
@@ -1370,7 +1370,7 @@
     },
     "effect": {
       "name": "talent_all_style_accuracy",
-      "value": 35
+      "value": 50
     },
     "linked_nodes": ["node55", "node63", "node67"],
     "name": "+#% accuracy in all combat styles.",
@@ -1555,7 +1555,7 @@
     },
     "effect": {
       "name": "talent_all_style_accuracy",
-      "value": 15
+      "value": 25
     },
     "linked_nodes": ["node4", "node10", "node11"],
     "name": "+#% accuracy in all combat styles.",
@@ -1702,7 +1702,7 @@
     },
     "effect": {
       "name": "talent_all_style_accuracy",
-      "value": 15
+      "value": 25
     },
     "linked_nodes": ["node72", "node73", "node85", "node86"],
     "name": "+#% accuracy in all combat styles.",
@@ -1716,7 +1716,7 @@
     },
     "effect": {
       "name": "talent_all_style_accuracy",
-      "value": 15
+      "value": 25
     },
     "linked_nodes": ["node43", "node86", "node88"],
     "name": "+#% accuracy in all combat styles.",
@@ -1758,7 +1758,7 @@
     },
     "effect": {
       "name": "talent_all_style_accuracy",
-      "value": 35
+      "value": 50
     },
     "linked_nodes": ["node82", "node83", "node161"],
     "name": "+#% accuracy in all combat styles.",
