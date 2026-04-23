@@ -438,6 +438,12 @@ export const CombatStyleMap: { [k in EquipmentCategory]: { [k: string]: { image:
   [EquipmentCategory.GUN]: {
     'Aim and Fire': { image: '128' },
   },
+  [EquipmentCategory.MULTI_MELEE]: {
+    Poke: { image: '254' },
+    Slash: { image: '256' },
+    Pound: { image: '255' },
+    Block: { image: '253' },
+  },
   [EquipmentCategory.AXE]: {
     Block: { image: '233' },
     Chop: { image: '234' },
@@ -643,6 +649,14 @@ export const getCombatStylesForCategory = (style: EquipmentCategory): PlayerComb
       ret = [
         { name: 'Pummel', type: 'crush', stance: 'Accurate' },
         { name: 'Block', type: null, stance: null },
+      ];
+      break;
+    case EquipmentCategory.MULTI_MELEE:
+      ret = [
+        { name: 'Poke', type: 'stab', stance: 'Accurate' },
+        { name: 'Slash', type: 'slash', stance: 'Aggressive' },
+        { name: 'Pound', type: 'crush', stance: 'Aggressive' },
+        { name: 'Block', type: 'slash', stance: 'Defensive' },
       ];
       break;
     case EquipmentCategory.PARTISAN:

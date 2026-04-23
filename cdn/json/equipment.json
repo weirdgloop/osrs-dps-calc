@@ -59744,7 +59744,7 @@
     "slot": "shield",
     "image": "Demonic pacts bronze trophy.png",
     "speed": 0,
-    "category": "Unarmed",
+    "category": "",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -59806,7 +59806,7 @@
     "slot": "shield",
     "image": "Demonic pacts iron trophy.png",
     "speed": 0,
-    "category": "Unarmed",
+    "category": "",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -59837,7 +59837,7 @@
     "slot": "shield",
     "image": "Demonic pacts mithril trophy.png",
     "speed": 0,
-    "category": "Unarmed",
+    "category": "",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -59899,7 +59899,7 @@
     "slot": "shield",
     "image": "Demonic pacts steel trophy.png",
     "speed": 0,
-    "category": "Unarmed",
+    "category": "",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -71989,7 +71989,7 @@
     "slot": "weapon",
     "image": "Fang of the hound.png",
     "speed": 3,
-    "category": "",
+    "category": "Stab Sword",
     "bonuses": {
       "str": 20,
       "ranged_str": 0,
@@ -107887,7 +107887,7 @@
     "slot": "weapon",
     "image": "Nature's recurve.png",
     "speed": 4,
-    "category": "bow",
+    "category": "Bow",
     "bonuses": {
       "str": 0,
       "ranged_str": 4,
@@ -136746,6 +136746,37 @@
     "version": "",
     "slot": "weapon",
     "image": "Soulreaper axe.png",
+    "speed": 5,
+    "category": "Axe",
+    "bonuses": {
+      "str": 121,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 28,
+      "slash": 134,
+      "crush": 66,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Soulreaper axe (o)",
+    "id": 33335,
+    "weight": 2.825,
+    "version": "",
+    "slot": "weapon",
+    "image": "Soulreaper axe (o).png",
     "speed": 5,
     "category": "Axe",
     "bonuses": {
