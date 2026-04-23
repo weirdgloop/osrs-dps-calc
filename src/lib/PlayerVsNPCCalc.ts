@@ -842,6 +842,14 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = this.trackFactor(DetailKey.LEAGUES_RANGED_DAMAGE_TALENT, maxHit, [100 + rangeDamage, 100]);
     }
 
+    const raise = Math.min(this.player.leagues.six.bowHitsWithoutDamage, Math.trunc(maxHit * 15 / 100));
+    if (this.player.leagues.six.effects.talent_bow_max_hit_stacking_increase) {
+      maxHit = this.trackAdd(DetailKey.LEAGUES_BOW_STACKING_MAX, maxHit, raise);
+    }
+    if (this.player.leagues.six.effects.talent_bow_min_hit_stacking_increase) {
+      minHit = this.trackAdd(DetailKey.LEAGUES_BOW_STACKING_MIN, minHit, raise);
+    }
+
     return [minHit, maxHit];
   }
 

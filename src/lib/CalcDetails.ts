@@ -133,6 +133,8 @@ export enum DetailKey {
   LEAGUES_BLINDBAG_CHANCE_UNIQUE = 'Player blindbag uniques chance',
   LEAGUES_EARTH_SPELL_DEFENCE_BONUS = 'Player talent_earth_scale_defence_stat bonus damage',
   LEAGUES_LIGHT_WEAPON_DOUBLEHIT_MAX = 'Player light weapon double hit max',
+  LEAGUES_BOW_STACKING_MAX = 'Player stacking bow hits max',
+  LEAGUES_BOW_STACKING_MIN = 'Player stacking bow hits min',
 }
 
 export interface DetailEntry {

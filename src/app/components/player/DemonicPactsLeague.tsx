@@ -126,9 +126,6 @@ const DemonicPactsLeague: React.FC = observer(() => {
   const unimplementedPacts = computed(() => {
     const leaguesEffects = store.player.leagues.six.effects;
     const unimplemented: string[] = [];
-    if (leaguesEffects.talent_bow_max_hit_stacking_increase || leaguesEffects.talent_bow_min_hit_stacking_increase) {
-      unimplemented.push('Repeat Bow Hit Damage (coming soon)');
-    }
     if (leaguesEffects.talent_fire_spell_burn_bounce) {
       unimplemented.push('Fire Spell Burn (coming soon)');
     }
@@ -258,6 +255,40 @@ const DemonicPactsLeague: React.FC = observer(() => {
                 className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
                 data-tooltip-id="tooltip"
                 data-tooltip-content="Number of Magic levels boosted by Regenerate."
+              >
+                ?
+              </span>
+            </span>
+          </div>
+        </ShowIfLeagueEffectEnabled>
+
+        <ShowIfLeagueEffectEnabled
+          leaguesEffects={[
+            'talent_bow_min_hit_stacking_increase',
+            'talent_bow_max_hit_stacking_increase',
+          ]}
+        >
+          <div className="flex items-center gap-2 mt-2">
+            <NumberInput
+              aria-labelledby="consecutiveBowHitsLabel"
+              className="form-control w-12 text-centerl"
+              id="consecutiveBowHits"
+              min={0}
+              max={50}
+              title="Bow Hits Without Taking Damage"
+              value={store.player.leagues.six.bowHitsWithoutDamage}
+              onChange={(v) => {
+                store.updatePlayer({ leagues: { six: { bowHitsWithoutDamage: v } } });
+              }}
+            />
+
+            <span id="consecutiveBowHitsLabel" className="ml-1 text-sm select-none">
+              Consecutive bow hits
+              {' '}
+              <span
+                className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+                data-tooltip-id="tooltip"
+                data-tooltip-content="Number of consecutive bow hits without taking damage. Taking damage halves this number."
               >
                 ?
               </span>
