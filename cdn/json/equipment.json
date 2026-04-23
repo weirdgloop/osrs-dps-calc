@@ -72013,37 +72013,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Fang of the hound",
-    "id": 33249,
-    "weight": 0.666,
-    "version": "",
-    "slot": "weapon",
-    "image": "Fang of the hound.png",
-    "speed": 3,
-    "category": "Stab Sword",
-    "bonuses": {
-      "str": 20,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 60,
-      "slash": 60,
-      "crush": 10,
-      "magic": 3,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 3,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
     "name": "Farmer's boots",
     "id": 13644,
     "weight": 0.907,
@@ -91667,37 +91636,6 @@
     "isTwoHanded": true
   },
   {
-    "name": "Infernal tecpatl",
-    "id": 33243,
-    "weight": 3.628,
-    "version": "",
-    "slot": "weapon",
-    "image": "Infernal tecpatl.png",
-    "speed": 4,
-    "category": "Banner",
-    "bonuses": {
-      "str": 70,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": -1
-    },
-    "offensive": {
-      "stab": 72,
-      "slash": 72,
-      "crush": 72,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
     "name": "Infinite money bag",
     "id": 27440,
     "weight": 0.907,
@@ -97123,37 +97061,6 @@
     "isTwoHanded": true
   },
   {
-    "name": "King's barrage",
-    "id": 33251,
-    "weight": 0,
-    "version": "",
-    "slot": "weapon",
-    "image": "King's barrage.png",
-    "speed": 6,
-    "category": "Crossbow",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 14,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 130
-    },
-    "defensive": {
-      "stab": 20,
-      "slash": 20,
-      "crush": 20,
-      "magic": 25,
-      "ranged": 60
-    },
-    "isTwoHanded": true
-  },
-  {
     "name": "Kitchen knife",
     "id": 7447,
     "weight": 0.453,
@@ -98761,36 +98668,6 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Lithic sceptre",
-    "id": 33255,
-    "version": "",
-    "slot": "weapon",
-    "image": "Lithic sceptre.png",
-    "speed": 4,
-    "category": "Powered Staff",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 25,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 10,
-      "slash": 10,
-      "crush": 10,
-      "magic": 20,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -108022,37 +107899,6 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
-      "ranged": 95
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Nature's recurve",
-    "id": 33245,
-    "weight": 0.1,
-    "version": "",
-    "slot": "weapon",
-    "image": "Nature's recurve.png",
-    "speed": 4,
-    "category": "Bow",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 4,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 8,
       "ranged": 95
     },
     "defensive": {
@@ -131477,7 +131323,7 @@
     "slot": "weapon",
     "image": "Shadowflame quadrant.png",
     "speed": 5,
-    "category": "",
+    "category": "staff",
     "bonuses": {
       "str": 50,
       "ranged_str": 0,
@@ -131494,36 +131340,6 @@
     "defensive": {
       "stab": 0,
       "slash": 0,
-      "crush": 5,
-      "magic": 17,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Shadowflame quadrant",
-    "id": 33253,
-    "version": "",
-    "slot": "weapon",
-    "image": "Shadowflame quadrant.png",
-    "speed": 5,
-    "category": "Staff",
-    "bonuses": {
-      "str": 50,
-      "ranged_str": 0,
-      "magic_str": 150,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 60,
-      "magic": 25,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 5,
       "crush": 5,
       "magic": 17,
       "ranged": 0
@@ -153016,36 +152832,6 @@
     "name": "V's helm",
     "id": 33247,
     "weight": 2.721,
-    "version": "",
-    "slot": "head",
-    "image": "V's helm.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 8,
-      "ranged_str": 2,
-      "magic_str": 30,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 8,
-      "ranged": 12
-    },
-    "defensive": {
-      "stab": 40,
-      "slash": 40,
-      "crush": 40,
-      "magic": 10,
-      "ranged": 40
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "V's helm",
-    "id": 33247,
     "version": "",
     "slot": "head",
     "image": "V's helm.png",
