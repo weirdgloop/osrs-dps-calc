@@ -48,7 +48,7 @@
     },
     "effect": {
       "name": "talent_prayer_pen_all",
-      "value": 15
+      "value": 25
     },
     "linked_nodes": ["node100", "node87"],
     "name": "All attacks have +#% Prayer penetration (up to 100%).",
@@ -76,7 +76,7 @@
     },
     "effect": {
       "name": "talent_prayer_pen_all",
-      "value": 15
+      "value": 25
     },
     "linked_nodes": ["node20", "node106"],
     "name": "All attacks have +#% Prayer penetration (up to 100%).",
@@ -90,7 +90,7 @@
     },
     "effect": {
       "name": "talent_prayer_pen_all",
-      "value": 15
+      "value": 25
     },
     "linked_nodes": ["node102", "node103", "node107"],
     "name": "All attacks have +#% Prayer penetration (up to 100%).",
@@ -122,7 +122,7 @@
       "value": 1
     },
     "linked_nodes": ["node107", "node109", "node111"],
-    "name": "+#% Magic damage\n\nThis bonus is multiplied by the Tumeken's Shadow special effect.",
+    "name": "+#% Magic damage\n\nThis bonus is multiplied by the Tumeken's Shadow special effect.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "magic",
     "row_id": "node108"
@@ -196,7 +196,7 @@
       "value": 1
     },
     "linked_nodes": ["node112", "node114", "node123"],
-    "name": "+#% Magic damage\n\nThis bonus is multiplied by the Tumeken's Shadow special effect.",
+    "name": "+#% Magic damage\n\nThis bonus is multiplied by the Tumeken's Shadow special effect.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "magic",
     "row_id": "node113"
@@ -241,7 +241,7 @@
       "value": 1
     },
     "linked_nodes": ["node117", "node119", "node124"],
-    "name": "+#% Magic damage\n\nThis bonus is multiplied by the Tumeken's Shadow special effect.",
+    "name": "+#% Magic damage\n\nThis bonus is multiplied by the Tumeken's Shadow special effect.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "magic",
     "row_id": "node118"
@@ -345,7 +345,7 @@
       "value": 1
     },
     "linked_nodes": ["node127", "node129", "node131"],
-    "name": "+#% Magic damage\n\nThis bonus is multiplied by the Tumeken's Shadow special effect.",
+    "name": "+#% Magic damage\n\nThis bonus is multiplied by the Tumeken's Shadow special effect.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "magic",
     "row_id": "node128"
@@ -375,7 +375,7 @@
       "value": 1
     },
     "linked_nodes": ["node9", "node14", "node20"],
-    "name": "+#% Ranged damage.",
+    "name": "+#% Ranged damage.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "ranged",
     "row_id": "node13"
@@ -417,7 +417,7 @@
     },
     "effect": {
       "name": "talent_prayer_pen_all",
-      "value": 15
+      "value": 25
     },
     "linked_nodes": ["node127", "node136"],
     "name": "All attacks have +#% Prayer penetration (up to 100%).",
@@ -445,7 +445,7 @@
     },
     "effect": {
       "name": "talent_prayer_pen_all",
-      "value": 15
+      "value": 25
     },
     "linked_nodes": ["node134", "node135", "node139"],
     "name": "All attacks have +#% Prayer penetration (up to 100%).",
@@ -492,7 +492,7 @@
       "value": 1
     },
     "linked_nodes": ["node139", "node141"],
-    "name": "+#% Melee damage.",
+    "name": "+#% Melee damage.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "melee",
     "row_id": "node140"
@@ -537,7 +537,7 @@
       "value": 1
     },
     "linked_nodes": ["node142", "node144"],
-    "name": "+#% Melee damage.",
+    "name": "+#% Melee damage.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "melee",
     "row_id": "node143"
@@ -567,7 +567,7 @@
       "value": 1
     },
     "linked_nodes": ["node84", "node139", "node146"],
-    "name": "+#% Melee damage.",
+    "name": "+#% Melee damage.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "melee",
     "row_id": "node145"
@@ -597,7 +597,7 @@
       "value": 1
     },
     "linked_nodes": ["node10", "node14", "node16", "node21"],
-    "name": "+#% Ranged damage.",
+    "name": "+#% Ranged damage.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "ranged",
     "row_id": "node15"
@@ -627,7 +627,7 @@
       "value": 1
     },
     "linked_nodes": ["node150", "node152"],
-    "name": "+#% Melee damage.",
+    "name": "+#% Melee damage.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "melee",
     "row_id": "node151"
@@ -672,7 +672,7 @@
       "value": 1
     },
     "linked_nodes": ["node153", "node155"],
-    "name": "+#% Melee damage.",
+    "name": "+#% Melee damage.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "melee",
     "row_id": "node154"
@@ -702,7 +702,7 @@
       "value": 1
     },
     "linked_nodes": ["node80", "node88", "node153"],
-    "name": "+#% Melee damage.",
+    "name": "+#% Melee damage.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "melee",
     "row_id": "node156"
@@ -747,7 +747,7 @@
       "value": 1
     },
     "linked_nodes": ["node86", "node150", "node157", "node165"],
-    "name": "+#% Melee damage.",
+    "name": "+#% Melee damage.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "melee",
     "row_id": "node161"
@@ -777,7 +777,7 @@
       "value": 1
     },
     "linked_nodes": ["node79", "node85", "node142", "node162"],
-    "name": "+#% Melee damage.",
+    "name": "+#% Melee damage.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "melee",
     "row_id": "node163"
@@ -789,7 +789,7 @@
     },
     "effect": {
       "name": "talent_prayer_pen_all",
-      "value": 15
+      "value": 25
     },
     "linked_nodes": ["node87", "node91", "node153"],
     "name": "All attacks have +#% Prayer penetration (up to 100%).",
@@ -851,7 +851,7 @@
       "value": 1
     },
     "linked_nodes": ["node11", "node16", "node18", "node21"],
-    "name": "+#% Ranged damage.",
+    "name": "+#% Ranged damage.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "ranged",
     "row_id": "node17"
@@ -881,7 +881,7 @@
       "value": 1
     },
     "linked_nodes": ["node12", "node18", "node22"],
-    "name": "+#% Ranged damage.",
+    "name": "+#% Ranged damage.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "ranged",
     "row_id": "node19"
@@ -956,7 +956,7 @@
       "value": 1
     },
     "linked_nodes": ["node20", "node27", "node38"],
-    "name": "+#% Ranged damage.",
+    "name": "+#% Ranged damage.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "ranged",
     "row_id": "node23"
@@ -971,7 +971,7 @@
       "value": 1
     },
     "linked_nodes": ["node21", "node30", "node38", "node39"],
-    "name": "+#% Ranged damage.",
+    "name": "+#% Ranged damage.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "ranged",
     "row_id": "node24"
@@ -986,7 +986,7 @@
       "value": 1
     },
     "linked_nodes": ["node22", "node33", "node39"],
-    "name": "+#% Ranged damage.",
+    "name": "+#% Ranged damage.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "ranged",
     "row_id": "node25"
@@ -1016,7 +1016,7 @@
       "value": 1
     },
     "linked_nodes": ["node23", "node26", "node28"],
-    "name": "+#% Ranged damage.",
+    "name": "+#% Ranged damage.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "ranged",
     "row_id": "node27"
@@ -1076,7 +1076,7 @@
       "value": 1
     },
     "linked_nodes": ["node24", "node29", "node31"],
-    "name": "+#% Ranged damage.",
+    "name": "+#% Ranged damage.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "ranged",
     "row_id": "node30"
@@ -1121,7 +1121,7 @@
       "value": 1
     },
     "linked_nodes": ["node25", "node32", "node34"],
-    "name": "+#% Ranged damage.",
+    "name": "+#% Ranged damage.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "ranged",
     "row_id": "node33"
@@ -1496,7 +1496,7 @@
     },
     "effect": {
       "name": "talent_prayer_pen_all",
-      "value": 15
+      "value": 25
     },
     "linked_nodes": ["node65", "node102"],
     "name": "All attacks have +#% Prayer penetration (up to 100%).",
@@ -1513,7 +1513,7 @@
       "value": 1
     },
     "linked_nodes": ["node58", "node107", "node166"],
-    "name": "+#% Magic damage\n\nThis bonus is multiplied by the Tumeken's Shadow special effect.",
+    "name": "+#% Magic damage\n\nThis bonus is multiplied by the Tumeken's Shadow special effect.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "magic",
     "row_id": "node67"
@@ -1528,7 +1528,7 @@
       "value": 1
     },
     "linked_nodes": ["node53", "node59", "node112", "node122", "node133"],
-    "name": "+#% Magic damage\n\nThis bonus is multiplied by the Tumeken's Shadow special effect.",
+    "name": "+#% Magic damage\n\nThis bonus is multiplied by the Tumeken's Shadow special effect.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "magic",
     "row_id": "node68"
@@ -1543,7 +1543,7 @@
       "value": 1
     },
     "linked_nodes": ["node54", "node60", "node117", "node133", "node122"],
-    "name": "+#% Magic damage\n\nThis bonus is multiplied by the Tumeken's Shadow special effect.",
+    "name": "+#% Magic damage\n\nThis bonus is multiplied by the Tumeken's Shadow special effect.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "magic",
     "row_id": "node69"
@@ -1572,7 +1572,7 @@
       "value": 1
     },
     "linked_nodes": ["node61", "node127", "node167"],
-    "name": "+#% Magic damage\n\nThis bonus is multiplied by the Tumeken's Shadow special effect.",
+    "name": "+#% Magic damage\n\nThis bonus is multiplied by the Tumeken's Shadow special effect.\n\n+10% accuracy in all combat styles.",
     "node_size": "node_minor",
     "node_type": "magic",
     "row_id": "node70"
@@ -1814,7 +1814,7 @@
     },
     "effect": {
       "name": "talent_prayer_pen_all",
-      "value": 15
+      "value": 25
     },
     "linked_nodes": ["node22", "node164"],
     "name": "All attacks have +#% Prayer penetration (up to 100%).",
@@ -1898,7 +1898,7 @@
     },
     "effect": {
       "name": "talent_prayer_pen_all",
-      "value": 15
+      "value": 25
     },
     "linked_nodes": ["node96", "node135"],
     "name": "All attacks have +#% Prayer penetration (up to 100%).",
