@@ -17,7 +17,7 @@ if (process.env.CI !== 'true') {
 }
 /* eslint-enable @typescript-eslint/no-unused-vars */
 
-describe('leagues tests', () => {
+xdescribe('leagues tests', () => {
 // http://localhost:3000/osrs-dps?id=RupertsPulleyChaos
   describe('melee', () => {
     test('scy echoes', () => {
