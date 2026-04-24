@@ -131323,7 +131323,7 @@
     "slot": "weapon",
     "image": "Shadowflame quadrant.png",
     "speed": 5,
-    "category": "staff",
+    "category": "Staff",
     "bonuses": {
       "str": 50,
       "ranged_str": 0,
