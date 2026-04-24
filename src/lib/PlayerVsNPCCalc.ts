@@ -1692,7 +1692,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       for (let i = 0; i < Math.min(Math.max(this.monster.size, 1), 3); i++) {
         const splatMax = Math.trunc(max / (2 ** i));
         hits.push(HitDistribution.linear(acc, min, Math.max(min, splatMax)));
-        this.neededEchoes.push([acc, min, Math.max(min, splatMax)]);
+        // probably bug: these don't use the reduced max?
+        this.neededEchoes.push([acc, min, Math.max(min, max)]);
       }
       dist = new AttackDistribution(hits);
     }
@@ -1710,7 +1711,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           return new HitDistribution([new WeightedHit(1.0, [h, Hitsplat.INACCURATE])]);
         },
       );
-      this.neededEchoes = [[acc, min, Math.max(min, firstMax)], [acc, min, Math.max(min, secondMax)]];
+      // probably bug: these don't use the reduced max?
+      this.neededEchoes = [[acc, min, Math.max(min, max)], [acc, min, Math.max(min, max)]];
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingTwoHitWeapon()) {
