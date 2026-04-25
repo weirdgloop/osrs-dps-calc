@@ -23,6 +23,10 @@ const weaponCanBeUsedInBlindbag = (eq: EquipmentPiece): boolean => {
     return false;
   }
 
+  if (eq.name === 'Barrelchest anchor' && eq.version === 'Broken') {
+    return false;
+  }
+
   switch (eq.category) {
     case EquipmentCategory.NONE:
     case EquipmentCategory.TWO_HANDED_SWORD:
