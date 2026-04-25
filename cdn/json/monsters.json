@@ -107717,7 +107717,7 @@
     "is_slayer_monster": false,
     "weakness": {
       "element": "air",
-      "severity": 0
+      "severity": 15
     }
   },
   {
