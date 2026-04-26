@@ -132228,7 +132228,7 @@
     "max_hit": "",
     "skills": {
       "atk": 0,
-      "def": 0,
+      "def": 80,
       "hp": 650,
       "magic": 240,
       "ranged": 0,
