@@ -1,0 +1,8 @@
+[project]
+name = "osrs-dps-calc-scripts"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.11"
+dependencies = [
+    "requests==2.32.0",
+]
