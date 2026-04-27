@@ -2,6 +2,7 @@
 
 import { makeAutoObservable } from 'mobx';
 import { ImportableData } from '@/types/State';
+import delay from 'delay';
 import { GetPlayerRequest, WikiSyncerRequestType, WikiSyncerResponsesUnion } from './WikiSyncerTypes';
 
 const minimumPort = 37767;
@@ -42,8 +43,6 @@ export class WikiSyncer {
   }
 
   private ws?: WebSocket;
-
-  private reconnectionJobId?: ReturnType<typeof setTimeout>;
 
   private nextSequenceID = 0;
 
@@ -89,14 +88,6 @@ export class WikiSyncer {
       this.ws = undefined;
       this.username = undefined;
       this.connectionState = ConnectionState.Disconnected;
-      if (this.reconnectionJobId) {
-        return;
-      }
-      this.reconnectionJobId = setTimeout(() => {
-        this.reconnectionJobId = undefined;
-        console.debug('Reconnecting', this.port);
-        this.connect();
-      }, 10000);
     };
   }
 
@@ -118,18 +109,23 @@ export class WikiSyncer {
 
     return p;
   }
+
+  close() {
+    this.ws?.close();
+  }
 }
 
-const syncers = new Map();
-
-export const startPollingForRuneLite = () => {
-  if (typeof window === 'undefined' || syncers.size > 0) {
-    return syncers;
-  }
-
+export const findRuneLiteInstances = async () => {
+  const instances = [];
   for (let port = minimumPort; port <= maximumPort; port++) {
-    syncers.set(port, new WikiSyncer(port));
+    instances.push(new WikiSyncer(port));
   }
-
-  return syncers;
+  await delay(500);
+  return instances.filter((syncer) => {
+    const activeInstance = !!syncer.username;
+    if (!activeInstance) {
+      syncer.close();
+    }
+    return activeInstance;
+  });
 };

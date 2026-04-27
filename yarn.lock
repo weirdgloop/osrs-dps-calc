@@ -2879,6 +2879,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"delay@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "delay@npm:7.0.0"
+  dependencies:
+    random-int: "npm:^3.1.0"
+    unlimited-timeout: "npm:^0.1.0"
+  checksum: 10c0/714811a891e76ad402355899d264867034231492b4606a5a4c137dca6015c766370d9fe082bfaa2c8fc992b1072ec9e32522f9ac1e98121995f303b86a4d9a02
+  languageName: node
+  linkType: hard
+
 "delayed-stream@npm:~1.0.0":
   version: 1.0.0
   resolution: "delayed-stream@npm:1.0.0"
@@ -6030,6 +6040,7 @@ __metadata:
     axios: "npm:^1.7.4"
     clsx: "npm:^2.1.1"
     d3-array: "npm:^3.2.4"
+    delay: "npm:^7.0.0"
     downshift: "npm:^8.3.2"
     env-cmd: "npm:^10.1.0"
     eslint: "npm:^8.56.0"
@@ -6431,6 +6442,13 @@ __metadata:
   version: 1.2.3
   resolution: "queue-microtask@npm:1.2.3"
   checksum: 10c0/900a93d3cdae3acd7d16f642c29a642aea32c2026446151f0778c62ac089d4b8e6c986811076e1ae180a694cedf077d453a11b58ff0a865629a4f82ab558e102
+  languageName: node
+  linkType: hard
+
+"random-int@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "random-int@npm:3.1.0"
+  checksum: 10c0/c8a8cd324bc6aeefdf4f6e1f88cf373da1acf63c3ee3992b1d4b267e13425a3d2aced531c7bb684a53670d139b4a710f7ac5cb3bf8d47b91e73bc777c3c86129
   languageName: node
   linkType: hard
 
@@ -7639,6 +7657,13 @@ __metadata:
   version: 0.2.0
   resolution: "universalify@npm:0.2.0"
   checksum: 10c0/cedbe4d4ca3967edf24c0800cfc161c5a15e240dac28e3ce575c689abc11f2c81ccc6532c8752af3b40f9120fb5e454abecd359e164f4f6aa44c29cd37e194fe
+  languageName: node
+  linkType: hard
+
+"unlimited-timeout@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "unlimited-timeout@npm:0.1.0"
+  checksum: 10c0/07b61f3ab7771254f3b742edde177b7d22439ac193025d6fa36d7f4b2064809886f37a9bcef4859d302d1bf3a18e17ca07d16032dc463e959e70cde18f288eb8
   languageName: node
   linkType: hard
 
