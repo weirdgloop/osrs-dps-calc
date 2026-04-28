@@ -1,4 +1,6 @@
-import React, { Fragment, PropsWithChildren, ReactNode } from 'react';
+import React, {
+  Fragment, PropsWithChildren, ReactNode, useEffect,
+} from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { classNames } from '@/utils';
 import { IconX } from '@tabler/icons-react';
@@ -10,12 +12,24 @@ interface IModalProps {
   hideCloseButton?: boolean;
   footerChildren?: ReactNode;
   maxWidth?: string;
+  onOpen?: () => void;
 }
 
 const Modal: React.FC<PropsWithChildren<IModalProps>> = (props) => {
   const {
-    isOpen, setIsOpen, title, children, hideCloseButton, footerChildren, maxWidth,
+    isOpen,
+    setIsOpen,
+    title,
+    children,
+    hideCloseButton,
+    footerChildren,
+    maxWidth,
+    onOpen,
   } = props;
+
+  useEffect(() => {
+    if (isOpen && onOpen) onOpen();
+  }, [isOpen, onOpen]);
 
   return (
     <Transition
