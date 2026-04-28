@@ -1,18 +1,17 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { observer } from 'mobx-react-lite';
+import { GetPropsCommonOptions, UseSelectGetToggleButtonPropsOptions } from 'downshift';
+import Image from 'next/image';
 import { parseLoadoutsFromImportedData, useStore } from '@/state';
 import RuneLiteLogo from '@/public/img/RuneLite.webp';
 import Modal from '@/app/components/generic/Modal';
 import LazyImage from '@/app/components/generic/LazyImage';
-import {
-  GetPropsCommonOptions,
-  UseSelectGetToggleButtonPropsOptions,
-} from 'downshift';
-import Select from '@/app/components/generic/Select';
+import Select, { OnIsOpenChangeParams } from '@/app/components/generic/Select';
+import { findRuneLiteInstances, WikiSyncer } from '@/wikisync/WikiSyncer';
 
 type WikiSyncSelectItem = {
   label: string;
-  value: number;
+  syncer?: WikiSyncer;
 };
 
 interface IWikiSyncButtonProps {
@@ -21,25 +20,11 @@ interface IWikiSyncButtonProps {
 
 const WikiSyncButton: React.FC<IWikiSyncButtonProps> = observer((props) => {
   const { getToggleButtonProps } = props;
-  const store = useStore();
-  const { validWikiSyncInstances } = store;
-  const [helpIsOpen, setHelpIsOpen] = useState(false);
 
-  const onButtonClick = useCallback(() => {
+  const onButtonClick = useCallback(async () => {
     // simple logging of button press for usage stats
     fetch('https://chisel.weirdgloop.org/t/dps/rl');
-
-    if (validWikiSyncInstances.size === 0) {
-      setHelpIsOpen(true);
-    }
-  }, [validWikiSyncInstances]);
-
-  useEffect(() => {
-    // If we get a valid WikiSync instance at any point, then we should close the help UI.
-    if (validWikiSyncInstances.size > 0 && helpIsOpen) {
-      setHelpIsOpen(false);
-    }
-  }, [helpIsOpen, validWikiSyncInstances]);
+  }, []);
 
   return (
     <>
@@ -53,8 +38,62 @@ const WikiSyncButton: React.FC<IWikiSyncButtonProps> = observer((props) => {
         data-tooltip-id="tooltip"
         data-tooltip-content="Load data from RuneLite"
       >
-        <img alt="RuneLite" src={RuneLiteLogo.src} className={validWikiSyncInstances.size === 0 ? 'grayscale' : ''} />
+        <Image alt="RuneLite" src={RuneLiteLogo} />
       </button>
+    </>
+  );
+});
+
+const WikiSyncButtonWrapper: React.FC = observer(() => {
+  const { updatePlayer } = useStore();
+  const [helpIsOpen, setHelpIsOpen] = useState(false);
+  const [validWikiSyncInstances, setValidWikiSyncInstances] = useState<WikiSyncSelectItem[]>([{ label: 'Loading...' }]);
+
+  const onSelect = useCallback(async (item: WikiSyncSelectItem | null | undefined) => {
+    if (item) {
+      const data = await item.syncer?.getPlayer();
+      if (data) {
+        parseLoadoutsFromImportedData(data).forEach((player) => {
+          updatePlayer(player);
+        });
+      }
+    }
+  }, [updatePlayer]);
+
+  const onIsOpenChange = useCallback(async ({ isOpen, closeMenu }: OnIsOpenChangeParams) => {
+    if (!isOpen) {
+      // We should close the connections to WikiSync, but we need to wait a bit for the current player loadout to be fetched.
+      setTimeout(() => {
+        for (const validWikiSyncInstance of validWikiSyncInstances) {
+          validWikiSyncInstance.syncer?.close();
+        }
+      }, 2000);
+    } else {
+      setValidWikiSyncInstances([{ label: 'Loading...' }]);
+      const syncers = (await findRuneLiteInstances()).map((syncer) => ({
+        label: syncer.username!,
+        syncer,
+      }));
+
+      if (syncers.length === 0) {
+        setHelpIsOpen(true);
+        closeMenu();
+      } else {
+        setValidWikiSyncInstances(syncers);
+      }
+    }
+  }, [validWikiSyncInstances]);
+
+  return (
+    <>
+      <Select
+        id="wikisync-wss"
+        items={validWikiSyncInstances}
+        CustomSelectComponent={WikiSyncButton}
+        onSelectedItemChange={onSelect}
+        onIsOpenChange={onIsOpenChange}
+        resetAfterSelect
+      />
       <Modal
         isOpen={helpIsOpen}
         setIsOpen={setHelpIsOpen}
@@ -64,7 +103,7 @@ const WikiSyncButton: React.FC<IWikiSyncButtonProps> = observer((props) => {
             You can also open this page from RuneLite without WikiSync. Ensure the default Wiki plugin is enabled,
             then right-click the Wiki icon under the minimap and click DPS Wiki.
           </p>
-        )}
+            )}
       >
         <div className="flex gap-4">
           <div>
@@ -100,35 +139,6 @@ const WikiSyncButton: React.FC<IWikiSyncButtonProps> = observer((props) => {
         </div>
       </Modal>
     </>
-  );
-});
-
-const WikiSyncButtonWrapper: React.FC = observer(() => {
-  const store = useStore();
-  const {
-    validWikiSyncInstances, updatePlayer,
-  } = store;
-  const items: WikiSyncSelectItem[] = [...validWikiSyncInstances].map(([port, ins]) => ({ label: ins.username!, value: port }));
-
-  const onSelect = useCallback(async (item: WikiSyncSelectItem | null | undefined) => {
-    if (item) {
-      const data = await validWikiSyncInstances.get(item.value)?.getPlayer();
-      if (data) {
-        parseLoadoutsFromImportedData(data).forEach((player) => {
-          updatePlayer(player);
-        });
-      }
-    }
-  }, [validWikiSyncInstances, updatePlayer]);
-
-  return (
-    <Select
-      id="wikisync-wss"
-      items={items}
-      CustomSelectComponent={WikiSyncButton}
-      onSelectedItemChange={onSelect}
-      resetAfterSelect
-    />
   );
 });
 

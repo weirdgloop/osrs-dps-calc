@@ -44,7 +44,6 @@ import {
   Prayer,
 } from './enums/Prayer';
 import Potion from './enums/Potion';
-import { startPollingForRuneLite, WikiSyncer } from './wikisync/WikiSyncer';
 
 const EMPTY_CALC_LOADOUT = {} as CalculatedLoadout;
 
@@ -277,13 +276,6 @@ class GlobalState implements State {
 
   private _debug: boolean = false;
 
-  /**
-   * Map of WikiSync instances (PORT -> WIKISYNCER) that we attempt to persistently connect to.
-   * The WikiSync RuneLite plugin includes a websocket server which exposes player information from the local
-   * RuneLite client to the DPS calculator.
-   */
-  wikisync: Map<number, WikiSyncer> = new Map();
-
   private storageUpdater?: IReactionDisposer;
 
   leagues: {
@@ -347,10 +339,6 @@ class GlobalState implements State {
         this.recalculateEquipmentBonusesFromGearAll();
       }
     }));
-
-    if ((process.env.NEXT_PUBLIC_DISABLE_WS || 'false') !== 'true') {
-      this.wikisync = startPollingForRuneLite();
-    }
   }
 
   set debug(debug: boolean) {
@@ -417,14 +405,6 @@ class GlobalState implements State {
    */
   get isNonStandardMonster() {
     return !['slash', 'crush', 'stab', 'magic', 'ranged'].includes(this.monster.style || '');
-  }
-
-  /**
-   * Returns the WikiSyncer instances that have user information attached (AKA the user is logged in),
-   * rather than all of the instances that have an attempted connection.
-   */
-  get validWikiSyncInstances() {
-    return new Map([...this.wikisync].filter(([, v]) => v.username));
   }
 
   /**
