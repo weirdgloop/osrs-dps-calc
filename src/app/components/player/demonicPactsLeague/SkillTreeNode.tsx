@@ -29,6 +29,12 @@ const nodeSizeToPx: { [key in NodeSize]: number } = {
   node_capstone: 60,
 };
 
+const nodeSizeToIconScaleClass: { [key in NodeSize]: string } = {
+  node_minor: 'size-1/2',
+  node_major: 'size-4/6',
+  node_capstone: 'size-4/6',
+};
+
 interface DisplayEffectProps {
   name: string;
   effectValue: number;
@@ -73,16 +79,12 @@ export const DisplayEffect = (props: DisplayEffectProps) => {
   );
 };
 
-export const getSpriteTile = (rowId: string, selected: boolean) => {
+export const getSpriteTile = (row_id: string, selected: boolean) => {
   const activeInactive = selected ? 'active' : 'inactive';
-  if (rowId in rowIdToTileInfo) {
-    const {
-      tileset,
-      index,
-    } = rowIdToTileInfo[rowId];
-    return spriteTiles[`league_6_combat_mastery_${tileset}_${activeInactive}_large,${index}`];
-  }
-  return spriteTiles[`league_6_combat_mastery_generic_${activeInactive}_large,9`];
+  const { tileset, index, size } = rowIdToTileInfo[row_id];
+  return spriteTiles[
+    `league_6_combat_mastery_${tileset}_${activeInactive}_${size},${index}`
+  ];
 };
 
 export const SkillTreeNode = observer(
@@ -96,6 +98,7 @@ export const SkillTreeNode = observer(
     const isHovered = store.leagues.six.hoveredNodeId === id;
 
     const size = nodeSizeToPx[data.skillTreeNodeInfo.node_size];
+    const iconScaleClass = nodeSizeToIconScaleClass[data.skillTreeNodeInfo.node_size];
     const isMatchingSearch = store.nodesMatchingSearch.has(
       data.skillTreeNodeInfo.row_id,
     );
@@ -147,7 +150,7 @@ export const SkillTreeNode = observer(
             alt="Pact icon"
             width={size * 4 / 6}
             height={size * 4 / 6}
-            className="object-center object-contain"
+            className={clsx('object-center object-contain', iconScaleClass)}
           />
           <Handle
             className="invisible"
