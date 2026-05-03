@@ -1,4 +1,4 @@
-import { Monster } from '@/types/Monster';
+import { Monster, MonsterInputs } from '@/types/Monster';
 import { TOB_EM_MONSTER_IDS, TOB_MONSTER_IDS } from '@/lib/constants';
 import { Factor } from '@/lib/Math';
 
@@ -10,9 +10,7 @@ const ENTRY_MODE_SCALING: { [partySize: number]: Factor } = {
   5: [40, 40],
 };
 
-const applyTobScaling = (m: Monster): Monster => {
-  const { inputs } = m;
-
+const applyTobScaling = (m: Monster, inputs: MonsterInputs): Monster => {
   // tob only scales hp and nothing else
   if (TOB_MONSTER_IDS.includes(m.id)) {
     const partySize = Math.min(5, Math.max(3, inputs.partySize));

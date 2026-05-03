@@ -2,8 +2,9 @@ import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { Prayer } from '@/enums/Prayer';
 import Potion from '@/enums/Potion';
 import { Spell } from '@/types/Spell';
-import { PlayerCombatStyle } from '@/types/PlayerCombatStyle';
+import { getCombatStylesForCategory, PlayerCombatStyle } from '@/types/PlayerCombatStyle';
 import { LeaguesEffect } from '@/app/components/player/demonicPactsLeague/parse_skill_tree_elements';
+import { DEFAULT_ATTACK_SPEED } from '@/lib/constants';
 
 export interface PlayerSkills {
   atk: number;
@@ -172,3 +173,95 @@ export interface Player extends EquipmentStats {
     six: LeaguesState
   }
 }
+
+export const createDefaultPlayer = (name?: string): Player => ({
+  name: name ?? 'Loadout 1',
+  style: getCombatStylesForCategory(EquipmentCategory.UNARMED)[0],
+  skills: {
+    atk: 99,
+    def: 99,
+    hp: 99,
+    magic: 99,
+    prayer: 99,
+    ranged: 99,
+    str: 99,
+    mining: 99,
+    herblore: 99,
+  },
+  boosts: {
+    atk: 0,
+    def: 0,
+    hp: 0,
+    magic: 0,
+    prayer: 0,
+    ranged: 0,
+    str: 0,
+    mining: 0,
+    herblore: 0,
+  },
+  equipment: {
+    ammo: null,
+    body: null,
+    cape: null,
+    feet: null,
+    hands: null,
+    head: null,
+    legs: null,
+    neck: null,
+    ring: null,
+    shield: null,
+    weapon: null,
+  },
+  attackSpeed: DEFAULT_ATTACK_SPEED,
+  prayers: [],
+  bonuses: {
+    str: 0,
+    ranged_str: 0,
+    magic_str: 0,
+    prayer: 0,
+  },
+  defensive: {
+    stab: 0,
+    slash: 0,
+    crush: 0,
+    magic: 0,
+    ranged: 0,
+  },
+  offensive: {
+    stab: 0,
+    slash: 0,
+    crush: 0,
+    magic: 0,
+    ranged: 0,
+  },
+  buffs: {
+    potions: [],
+    onSlayerTask: true,
+    inWilderness: false,
+    kandarinDiary: true,
+    chargeSpell: false,
+    markOfDarknessSpell: false,
+    forinthrySurge: false,
+    soulreaperStacks: 0,
+    baAttackerLevel: 0,
+    chinchompaDistance: 4, // 4 tiles is the optimal range for "medium fuse" (rapid), which is the default selected stance
+    usingSunfireRunes: false,
+  },
+  spell: null,
+  leagues: {
+    six: {
+      selectedNodeIds: new Set<string>(['node1']),
+      effects: {},
+      distanceToEnemy: 1,
+      enemyPrayers: {
+        melee: false,
+        ranged: false,
+        magic: false,
+      },
+      blindbagWeapons: [],
+      regenerateMagicBonus: 0,
+      cullingSpree: false,
+      bowHitsWithoutDamage: 0,
+    },
+  },
+});

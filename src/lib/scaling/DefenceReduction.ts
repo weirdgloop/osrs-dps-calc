@@ -1,4 +1,4 @@
-import { Monster } from '@/types/Monster';
+import { Monster, MonsterInputs } from '@/types/Monster';
 import {
   AKKHA_IDS,
   ARAXXOR_IDS,
@@ -12,7 +12,8 @@ import {
   SOTETSEG_IDS,
   TOA_OBELISK_IDS,
   VARDORVIS_IDS,
-  VERZIK_IDS, YAMA_IDS,
+  VERZIK_IDS,
+  YAMA_IDS,
   ZEBAK_IDS,
 } from '@/lib/constants';
 import { keys } from '@/utils';
@@ -64,11 +65,11 @@ export const getDefenceFloor = (m: Monster): number => {
   return 0;
 };
 
-const applyDefenceReductions = (m: Monster): Monster => {
+const applyDefenceReductions = (m: Monster, inputs: MonsterInputs): Monster => {
   const baseSkills = m.skills;
   const defenceFloor = getDefenceFloor(m);
 
-  const reductions = m.inputs.defenceReductions;
+  const reductions = inputs.defenceReductions;
   const newSkills = (current: Monster, skills: Partial<Monster['skills']>): Monster => {
     keys(skills).forEach((k) => {
       const floor = k === 'def' ? defenceFloor : 0;

@@ -1,9 +1,11 @@
-import { TOA_WARDEN_CORE_EJECTED_IDS, TOMBS_OF_AMASCUT_MONSTER_IDS, TOMBS_OF_AMASCUT_PATH_MONSTER_IDS } from '@/lib/constants';
-import { Monster } from '@/types/Monster';
+import {
+  TOA_WARDEN_CORE_EJECTED_IDS,
+  TOMBS_OF_AMASCUT_MONSTER_IDS,
+  TOMBS_OF_AMASCUT_PATH_MONSTER_IDS,
+} from '@/lib/constants';
+import { Monster, MonsterInputs } from '@/types/Monster';
 
-const applyToaScaling = (m: Monster): Monster => {
-  const { inputs } = m;
-
+const applyToaScaling = (m: Monster, inputs: MonsterInputs): Monster => {
   // toa multiplies rolled values, not stats, except for hp
   if (!TOMBS_OF_AMASCUT_MONSTER_IDS.includes(m.id)) {
     return m;

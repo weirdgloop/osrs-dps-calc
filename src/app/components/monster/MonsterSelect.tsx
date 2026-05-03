@@ -1,39 +1,33 @@
-import React, { useMemo } from 'react';
-import { useStore } from '@/state';
+import React from 'react';
 import { observer } from 'mobx-react-lite';
-
-import { Monster } from '@/types/Monster';
-import { CUSTOM_MONSTER_BASE } from '@/lib/Monsters';
 import { IconPencilPlus } from '@tabler/icons-react';
+import { CUSTOM_MONSTER_ID } from '@/lib/constants';
+import { useMonsterDb } from '@/db/MonsterDb';
+import { useMonster } from '@/state/MonsterStore';
 import Combobox from '../generic/Combobox';
 
 interface MonsterOption {
   label: string;
   value: number;
   version: string;
-  monster: Partial<Monster>;
 }
 
 const MonsterSelect: React.FC = observer(() => {
-  const store = useStore();
-  const { availableMonsters } = store;
+  const { monsterEntries } = useMonsterDb();
+  const { loadMonster } = useMonster();
 
-  const options: MonsterOption[] = useMemo(() => [
+  const options: MonsterOption[] = [
     {
       label: 'Create custom monster',
-      value: -1,
+      value: CUSTOM_MONSTER_ID,
       version: '',
-      monster: { ...CUSTOM_MONSTER_BASE },
     },
-    ...availableMonsters.map((m, i) => ({
-      label: `${m.name}`,
-      value: i,
-      version: m.version || '',
-      monster: {
-        ...m,
-      },
+    ...monsterEntries.map(({ name, id }): MonsterOption => ({
+      label: `${name}`,
+      value: id,
+      version: '',
     })),
-  ], [availableMonsters]);
+  ];
 
   return (
     <Combobox<MonsterOption>
@@ -50,14 +44,14 @@ const MonsterSelect: React.FC = observer(() => {
       }}
       onSelectedItemChange={(item) => {
         if (item) {
-          store.updateMonster(item.monster);
+          loadMonster(item.value);
         }
       }}
       CustomItemComponent={({ item }) => {
         const i = item;
 
         // Handle custom monster option
-        if (i.value === -1) {
+        if (i.value === CUSTOM_MONSTER_ID) {
           return (
             <div className="text-gray-300 flex gap-1 items-center italic">
               <IconPencilPlus size={14} />

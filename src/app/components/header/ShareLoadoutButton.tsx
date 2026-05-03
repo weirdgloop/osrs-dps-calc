@@ -1,14 +1,20 @@
+import { IconClipboardCopy, IconExternalLink, IconShare2 } from '@tabler/icons-react';
 import React, { createRef, useEffect, useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
-import Modal from '@/app/components/generic/Modal';
 import { generateShortlink } from '@/utils';
+import Modal from '@/app/components/generic/Modal';
 import { toast } from 'react-toastify';
-import { IconClipboardCopy, IconExternalLink } from '@tabler/icons-react';
+import { useDebugState } from '@/state/DebugStore';
 
-const ShareModal: React.FC = observer(() => {
+interface ShareModalProps {
+  isOpen: boolean;
+  setIsOpen: (b: boolean) => void;
+}
+
+const ShareModal: React.FC<ShareModalProps> = observer(({ isOpen, setIsOpen }) => {
+  const { isDebug } = useDebugState();
   const store = useStore();
-  const { ui, debug } = store;
   const inputRef = createRef<HTMLInputElement>();
 
   const domain = process.env.NEXT_PUBLIC_SHORTLINK_URL;
@@ -26,16 +32,16 @@ const ShareModal: React.FC = observer(() => {
       }
     }
 
-    if (ui.showShareModal) {
+    if (isOpen) {
       generate();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ui.showShareModal]);
+  }, [isOpen]);
 
   return (
     <Modal
-      isOpen={ui.showShareModal}
-      setIsOpen={(b) => store.updateUIState({ showShareModal: b })}
+      isOpen={isOpen}
+      setIsOpen={setIsOpen}
       title="Share"
     >
       <div className="text-sm">
@@ -54,7 +60,7 @@ const ShareModal: React.FC = observer(() => {
             <IconClipboardCopy className="w-5" />
             Copy
           </button>
-          {debug && (
+          {isDebug && (
             <a
               className="form-control flex items-center gap-1 hover:scale-105 no-underline"
               type="button"
@@ -76,4 +82,23 @@ const ShareModal: React.FC = observer(() => {
   );
 });
 
-export default ShareModal;
+const ShareLoadoutButton: React.FC = observer(() => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      <button
+        type="button"
+        className="transition-all hover:scale-105 hover:text-white border border-body-500 bg-[#3e2816] py-1.5 px-2.5 rounded-md dark:bg-dark-300 dark:border-dark-200 flex items-center gap-1"
+        onClick={() => {
+          setIsOpen(true);
+        }}
+      >
+        <IconShare2 size={20} aria-label="Share loadout" />
+        <div className="hidden md:block">Share loadout</div>
+      </button>
+      <ShareModal isOpen={isOpen} setIsOpen={setIsOpen} />
+    </>
+  );
+});
+export default ShareLoadoutButton;

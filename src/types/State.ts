@@ -12,21 +12,6 @@ export interface UserIssue {
 }
 
 /**
- * UI-specific toggled behaviour and state.
- */
-export interface UI {
-  showPreferencesModal: boolean;
-  showShareModal: boolean;
-  username: string;
-  isDefensiveReductionsExpanded: boolean;
-  leagues: {
-    six: {
-      pactsSearchQuery: string;
-    };
-  };
-}
-
-/**
  * User preferences that we store in the user's localStorage. You should not add any keys here that shouldn't be
  * saved locally and persist between sessions.
  */

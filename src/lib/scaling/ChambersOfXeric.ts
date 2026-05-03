@@ -9,7 +9,7 @@ import {
   OLM_MELEE_HAND_IDS,
   TEKTON_IDS,
 } from '@/lib/constants';
-import { Monster } from '@/types/Monster';
+import { Monster, MonsterInputs } from '@/types/Monster';
 import { addPercent, iSqrt } from '@/lib/Math';
 import { max } from 'd3-array';
 
@@ -29,7 +29,7 @@ interface SkillMeta {
 const CM_SCALE_PERCENT = 50;
 
 // determine which skills should be scaled by which factor
-const getSkillMeta = (m: Monster): SkillMeta => {
+const getSkillMeta = (m: Monster, inputs: MonsterInputs): SkillMeta => {
   const magicIsDefensive = COX_MAGIC_IS_DEFENSIVE_IDS.includes(m.id);
 
   const offensivesAll: MonsterSkill[] = ['atk', 'str', 'ranged'];
@@ -49,7 +49,7 @@ const getSkillMeta = (m: Monster): SkillMeta => {
   const baseDefensive = max(defensives, (k) => m.skills[k]) ?? 1;
 
   const baseHp = GUARDIAN_IDS.includes(m.id)
-    ? 151 + Math.trunc(m.inputs.partySumMiningLevel / m.inputs.partySize)
+    ? 151 + Math.trunc(inputs.partySumMiningLevel / inputs.partySize)
     : m.skills.hp;
 
   return {
@@ -65,11 +65,11 @@ const getSkillMeta = (m: Monster): SkillMeta => {
 
 // things intended to be fought solo (even though everything is technically multi)
 // like scavenger beasts and vespine soldiers
-const applySinglesCoxScaling = (m: Monster): Monster => {
-  const { inputs, skills } = m;
+const applySinglesCoxScaling = (m: Monster, inputs: MonsterInputs): Monster => {
+  const { skills } = m;
   const {
     offensives, baseOffensive, defensives, baseDefensive, baseHp,
-  } = getSkillMeta(m);
+  } = getSkillMeta(m, inputs);
 
   // scaling factors based on clamped inputs
   let hpScaler = Math.max(Math.min(inputs.partyMaxCombatLevel, 126), 60);
@@ -101,11 +101,11 @@ const applySinglesCoxScaling = (m: Monster): Monster => {
 };
 
 // everything intended to be fought in a group (most things overall) uses this
-const applyMultiCoxScaling = (m: Monster): Monster => {
-  const { inputs, skills, id } = m;
+const applyMultiCoxScaling = (m: Monster, inputs: MonsterInputs): Monster => {
+  const { skills, id } = m;
   const {
     offensives, baseOffensive, defensives, baseDefensive, baseHp,
-  } = getSkillMeta(m);
+  } = getSkillMeta(m, inputs);
 
   // clamp a bunch of input values
   const partySize = Math.min(Math.max(inputs.partySize, 1), 100);
@@ -167,14 +167,14 @@ const applyMultiCoxScaling = (m: Monster): Monster => {
   };
 };
 
-export const applyOlmScaling = (m: Monster): Monster => {
+export const applyOlmScaling = (m: Monster, inputs: MonsterInputs): Monster => {
   const lhand = OLM_MELEE_HAND_IDS.includes(m.id);
   const rhand = OLM_MAGE_HAND_IDS.includes(m.id);
 
   // partySize - 3 * extraPhases, basically
-  const partySizeScaleFactor = Math.min(m.inputs.partySize - 1, 50) - 3 * Math.trunc(Math.min(m.inputs.partySize, 50) / 8);
+  const partySizeScaleFactor = Math.min(inputs.partySize - 1, 50) - 3 * Math.trunc(Math.min(inputs.partySize, 50) / 8);
 
-  const base = applyMultiCoxScaling(m);
+  const base = applyMultiCoxScaling(m, inputs);
   const magic: number = rhand ? Math.trunc(base.skills.magic / 2) : base.skills.magic;
   const hp = (lhand || rhand)
     ? 600 + 300 * partySizeScaleFactor
@@ -190,20 +190,20 @@ export const applyOlmScaling = (m: Monster): Monster => {
   };
 };
 
-const applyCoxScaling = (m: Monster): Monster => {
+const applyCoxScaling = (m: Monster, inputs: MonsterInputs): Monster => {
   if (!m.attributes.includes(MonsterAttribute.XERICIAN)) {
     return m;
   }
 
   if (COX_USE_SINGLES_SCALING_IDS.includes(m.id)) {
-    return applySinglesCoxScaling(m);
+    return applySinglesCoxScaling(m, inputs);
   }
 
   if (OLM_IDS.includes(m.id)) {
-    return applyOlmScaling(m);
+    return applyOlmScaling(m, inputs);
   }
 
-  return applyMultiCoxScaling(m);
+  return applyMultiCoxScaling(m, inputs);
 };
 
 export default applyCoxScaling;

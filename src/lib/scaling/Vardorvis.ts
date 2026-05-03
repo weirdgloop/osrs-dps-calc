@@ -1,5 +1,5 @@
 import { lerp } from '@/lib/Math';
-import { Monster } from '@/types/Monster';
+import { Monster, MonsterInputs } from '@/types/Monster';
 
 interface VardNumbers {
   maxHp: number,
@@ -32,9 +32,7 @@ const getVardNumbers = (m: Monster): VardNumbers => {
   }
 };
 
-const applyVardScaling = (m: Monster): Monster => {
-  const { inputs } = m;
-
+const applyVardScaling = (m: Monster, inputs: MonsterInputs): Monster => {
   if (m.name !== 'Vardorvis') {
     return m;
   }

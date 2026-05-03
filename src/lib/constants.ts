@@ -9,6 +9,8 @@ export const BLOWPIPE_IDS: number[] = [
   30374, // drygore
 ];
 
+export const CUSTOM_MONSTER_ID = -1;
+
 // The maximum number of loadouts that users can have. Do not lower it, else it will cause share link issues.
 export const NUMBER_OF_LOADOUTS = 6;
 

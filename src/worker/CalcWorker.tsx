@@ -12,12 +12,13 @@ import {
 import React, {
   createContext, useContext, useEffect, useState,
 } from 'react';
+import { makeObservable, observable, runInAction } from 'mobx';
 
 export class CalcWorker {
   private static SELF_ID: number = 0;
 
   // for some log tracking
-  private id: number;
+  private readonly id: number;
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private pendingPromises: { [k in WorkerRequestType]?: DeferredPromise<any> } = {};
@@ -28,9 +29,13 @@ export class CalcWorker {
 
   private sequenceIds: { [k in WorkerRequestType ]?: number } = {};
 
+  loaded: boolean = false;
+
   constructor() {
     this.id = CalcWorker.SELF_ID;
     CalcWorker.SELF_ID += 1;
+
+    makeObservable(this, { loaded: observable }, { autoBind: true });
 
     for (const t of Object.values(WorkerRequestType)) {
       this.debouncers[t as WorkerRequestType] = new Debouncer(250);
@@ -42,6 +47,7 @@ export class CalcWorker {
       console.debug(`[CalcWorker ${this.id}] Init`);
       this.worker = new Worker(new URL('./worker.ts', import.meta.url));
       this.worker.onmessage = (ev: MessageEvent<string>) => this.onResponse(ev);
+      runInAction(() => { this.loaded = true; });
     }
   }
 
@@ -51,10 +57,6 @@ export class CalcWorker {
       this.worker = undefined;
       w.terminate();
     }
-  }
-
-  public isReady(): boolean {
-    return this.worker !== undefined;
   }
 
   public async do<
@@ -113,17 +115,14 @@ export class CalcWorker {
   }
 }
 
-const CalcContext = createContext<CalcWorker>(
-  // no default context is available, since we can't register a teardown method without useEffect
-  undefined as unknown as CalcWorker,
-);
+const CalcContext = createContext<CalcWorker>({} as CalcWorker);
 
 export const CalcProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [worker] = useState<CalcWorker>(new CalcWorker());
   useEffect(() => {
     worker.initWorker();
     return () => worker.shutdown();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  });
 
   return (
     <CalcContext.Provider value={worker}>{children}</CalcContext.Provider>

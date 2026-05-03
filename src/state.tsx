@@ -28,12 +28,12 @@ import {
   fetchPlayerSkills, fetchShortlinkData, getCombatStylesForCategory, isDefined, PotionMap,
 } from '@/utils';
 import { ComputeBasicRequest, ComputeReverseRequest, WorkerRequestType } from '@/worker/CalcWorkerTypes';
-import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
 import { availableEquipment, calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { CalcWorker } from '@/worker/CalcWorker';
 import { spellByName } from '@/types/Spell';
 import { DEFAULT_ATTACK_SPEED, INFINITE_HEALTH_MONSTERS, NUMBER_OF_LOADOUTS } from '@/lib/constants';
 import { dbrowDefinitions, rootNode } from '@/app/components/player/demonicPactsLeague/parse_skill_tree_elements';
+import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
   ARM_PRAYERS,
@@ -47,103 +47,6 @@ import Potion from './enums/Potion';
 import { startPollingForRuneLite, WikiSyncer } from './wikisync/WikiSyncer';
 
 const EMPTY_CALC_LOADOUT = {} as CalculatedLoadout;
-
-const generateInitialEquipment = () => {
-  const initialEquipment: PlayerEquipment = {
-    ammo: null,
-    body: null,
-    cape: null,
-    feet: null,
-    hands: null,
-    head: null,
-    legs: null,
-    neck: null,
-    ring: null,
-    shield: null,
-    weapon: null,
-  };
-  return initialEquipment;
-};
-
-export const generateEmptyPlayer = (name?: string): Player => ({
-  name: name ?? 'Loadout 1',
-  style: getCombatStylesForCategory(EquipmentCategory.NONE)[0],
-  skills: {
-    atk: 99,
-    def: 99,
-    hp: 99,
-    magic: 99,
-    prayer: 99,
-    ranged: 99,
-    str: 99,
-    mining: 99,
-    herblore: 99,
-  },
-  boosts: {
-    atk: 0,
-    def: 0,
-    hp: 0,
-    magic: 0,
-    prayer: 0,
-    ranged: 0,
-    str: 0,
-    mining: 0,
-    herblore: 0,
-  },
-  equipment: generateInitialEquipment(),
-  attackSpeed: DEFAULT_ATTACK_SPEED,
-  prayers: [],
-  bonuses: {
-    str: 0,
-    ranged_str: 0,
-    magic_str: 0,
-    prayer: 0,
-  },
-  defensive: {
-    stab: 0,
-    slash: 0,
-    crush: 0,
-    magic: 0,
-    ranged: 0,
-  },
-  offensive: {
-    stab: 0,
-    slash: 0,
-    crush: 0,
-    magic: 0,
-    ranged: 0,
-  },
-  buffs: {
-    potions: [],
-    onSlayerTask: true,
-    inWilderness: false,
-    kandarinDiary: true,
-    chargeSpell: false,
-    markOfDarknessSpell: false,
-    forinthrySurge: false,
-    soulreaperStacks: 0,
-    baAttackerLevel: 0,
-    chinchompaDistance: 4, // 4 tiles is the optimal range for "medium fuse" (rapid), which is the default selected stance
-    usingSunfireRunes: false,
-  },
-  spell: null,
-  leagues: {
-    six: {
-      selectedNodeIds: new Set<string>(['node1']),
-      effects: {},
-      distanceToEnemy: 1,
-      enemyPrayers: {
-        melee: false,
-        ranged: false,
-        magic: false,
-      },
-      blindbagWeapons: [],
-      regenerateMagicBonus: 0,
-      cullingSpree: false,
-      bowHitsWithoutDamage: 0,
-    },
-  },
-});
 
 export const parseLoadoutsFromImportedData = (data: ImportableData) => data.loadouts.map((loadout, i) => {
   // For each item, reload the most current data using the item ID to ensure we're not using stale data.
