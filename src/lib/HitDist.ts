@@ -95,13 +95,13 @@ export class WeightedHit {
     return this.probability * this.getSum();
   }
 
-  public getHash(): number {
-    let acc = 0;
+  public getHash(): bigint {
+    let acc = 0n;
     for (const hitsplat of this.hitsplats) {
-      acc <<= 8;
-      acc |= hitsplat.damage;
-      acc <<= 1;
-      acc |= (hitsplat.accurate ? 1 : 0);
+      acc <<= 8n;
+      acc |= BigInt(hitsplat.damage);
+      acc <<= 1n;
+      acc |= (hitsplat.accurate ? 1n : 0n);
     }
     return acc;
   }
@@ -164,8 +164,8 @@ export class HitDistribution {
    * Merges the probabilities of hits with identical damage values
    */
   public flatten(): HitDistribution {
-    const acc = new Map<number, number>();
-    const hitLists = new Map<number, Hitsplat[]>();
+    const acc = new Map<bigint, number>();
+    const hitLists = new Map<bigint, Hitsplat[]>();
     for (const hit of this.hits) {
       const hash = hit.getHash();
       const prev = acc.get(hash);
