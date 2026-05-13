@@ -60140,6 +60140,68 @@
     "isTwoHanded": false
   },
   {
+    "name": "Demonic slayer helmet",
+    "id": 33340,
+    "weight": 2.267,
+    "version": "Radiant",
+    "slot": "head",
+    "image": "Demonic slayer helmet (radiant).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": -1,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Demonic slayer helmet",
+    "id": 33338,
+    "weight": 2.267,
+    "version": "Regular",
+    "slot": "head",
+    "image": "Demonic slayer helmet.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": -1,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Desert amulet 1",
     "id": 13133,
     "weight": 0.01,
@@ -89435,8 +89497,101 @@
     "isTwoHanded": false
   },
   {
+    "name": "Iban's staff (o)",
+    "id": 33333,
+    "weight": 1.814,
+    "version": "Broken",
+    "slot": "weapon",
+    "image": "Iban's staff (o) (broken).png",
+    "speed": 5,
+    "category": "Staff",
+    "bonuses": {
+      "str": 50,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 10,
+      "slash": -1,
+      "crush": 40,
+      "magic": 10,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 3,
+      "crush": 1,
+      "magic": 10,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Iban's staff (o)",
+    "id": 33330,
+    "weight": 2.267,
+    "version": "Regular",
+    "slot": "weapon",
+    "image": "Iban's staff (orn).png",
+    "speed": 5,
+    "category": "Staff",
+    "bonuses": {
+      "str": 50,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 10,
+      "slash": -1,
+      "crush": 40,
+      "magic": 10,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 3,
+      "crush": 1,
+      "magic": 10,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Iban's staff (u)",
     "id": 12658,
+    "weight": 2.267,
+    "version": "",
+    "slot": "weapon",
+    "image": "Iban's staff (u).png",
+    "speed": 5,
+    "category": "Staff",
+    "bonuses": {
+      "str": 50,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 10,
+      "slash": -1,
+      "crush": 40,
+      "magic": 10,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 3,
+      "crush": 1,
+      "magic": 10,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Iban's staff (u) (o)",
+    "id": 33332,
     "weight": 2.267,
     "version": "",
     "slot": "weapon",
@@ -131401,7 +131556,7 @@
     },
     "defensive": {
       "stab": 0,
-      "slash": 0,
+      "slash": 5,
       "crush": 5,
       "magic": 17,
       "ranged": 0
@@ -150349,6 +150504,130 @@
     "isTwoHanded": false
   },
   {
+    "name": "Trident of the seas (e) (o)",
+    "id": 33326,
+    "weight": 1.814,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Trident of the seas (e) (o).png",
+    "speed": 4,
+    "category": "Powered Staff",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 25,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 3,
+      "crush": 1,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Trident of the seas (e) (o)",
+    "id": 33328,
+    "weight": 1.814,
+    "version": "Uncharged",
+    "slot": "weapon",
+    "image": "Uncharged trident (e) (o).png",
+    "speed": 4,
+    "category": "Powered Staff",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 25,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 3,
+      "crush": 1,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Trident of the seas (o)",
+    "id": 33323,
+    "weight": 1.814,
+    "version": "Fully charged",
+    "slot": "weapon",
+    "image": "Trident of the seas (full) (o).png",
+    "speed": 4,
+    "category": "Powered Staff",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 25,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 3,
+      "crush": 1,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Trident of the seas (o)",
+    "id": 33322,
+    "weight": 1.814,
+    "version": "Partially charged",
+    "slot": "weapon",
+    "image": "Trident of the seas (o).png",
+    "speed": 4,
+    "category": "Powered Staff",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 25,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 3,
+      "crush": 1,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Trident of the swamp",
     "id": 12899,
     "weight": 1.814,
@@ -150448,6 +150727,130 @@
     "version": "Uncharged",
     "slot": "weapon",
     "image": "Uncharged toxic trident (e).png",
+    "speed": 4,
+    "category": "Powered Staff",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 25,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 3,
+      "crush": 1,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Trident of the swamp (e) (o)",
+    "id": 33318,
+    "weight": 1.814,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Trident of the swamp (e) (o).png",
+    "speed": 4,
+    "category": "Powered Staff",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 25,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 3,
+      "crush": 1,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Trident of the swamp (e) (o)",
+    "id": 33320,
+    "weight": 1.814,
+    "version": "Uncharged",
+    "slot": "weapon",
+    "image": "Uncharged toxic trident (e) (o).png",
+    "speed": 4,
+    "category": "Powered Staff",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 25,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 3,
+      "crush": 1,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Trident of the swamp (o)",
+    "id": 33314,
+    "weight": 1.814,
+    "version": "Charged",
+    "slot": "weapon",
+    "image": "Trident of the swamp (o).png",
+    "speed": 4,
+    "category": "Powered Staff",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 25,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 3,
+      "crush": 1,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Trident of the swamp (o)",
+    "id": 33316,
+    "weight": 1.814,
+    "version": "Uncharged",
+    "slot": "weapon",
+    "image": "Uncharged toxic trident (o).png",
     "speed": 4,
     "category": "Powered Staff",
     "bonuses": {

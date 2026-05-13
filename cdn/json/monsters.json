@@ -11523,56 +11523,8 @@
   {
     "id": 3908,
     "name": "Bear Cub",
-    "version": "1",
+    "version": "",
     "image": "Bear Cub (1).png",
-    "level": 15,
-    "speed": 4,
-    "style": [
-      "Slash"
-    ],
-    "size": 2,
-    "max_hit": "2",
-    "skills": {
-      "atk": 10,
-      "def": 10,
-      "hp": 20,
-      "magic": 1,
-      "ranged": 1,
-      "str": 15
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": true,
-    "weakness": {
-      "element": "fire",
-      "severity": 25
-    }
-  },
-  {
-    "id": 3909,
-    "name": "Bear Cub",
-    "version": "2",
-    "image": "Bear Cub (2).png",
     "level": 15,
     "speed": 4,
     "style": [
@@ -12818,6 +12770,49 @@
       "element": "water",
       "severity": 40
     }
+  },
+  {
+    "id": 14146,
+    "name": "Black dragon (Echo)",
+    "version": "",
+    "image": "Black dragon (Echo).png",
+    "level": 227,
+    "speed": 0,
+    "style": null,
+    "size": 4,
+    "max_hit": 0,
+    "skills": {
+      "atk": 200,
+      "def": 200,
+      "hp": 190,
+      "magic": 100,
+      "ranged": 1,
+      "str": 200
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
   },
   {
     "id": 252,
@@ -61296,7 +61291,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 15
+    }
   },
   {
     "id": 10936,
@@ -63981,6 +63979,57 @@
       "burn": "Weak"
     },
     "is_slayer_monster": true,
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
+  },
+  {
+    "id": 239,
+    "name": "King Black Dragon (Echo)",
+    "version": "",
+    "image": "King Black Dragon (Echo).png",
+    "level": 414,
+    "speed": 4,
+    "style": [
+      "Dragonfire"
+    ],
+    "size": 5,
+    "max_hit": 0,
+    "skills": {
+      "atk": 300,
+      "def": 300,
+      "hp": 840,
+      "magic": 252,
+      "ranged": 1,
+      "str": 300
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 80,
+      "heavy": 50,
+      "standard": 70,
+      "light": 70,
+      "slash": 90,
+      "stab": 60
+    },
+    "attributes": [
+      "dragon",
+      "fiery"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
     "weakness": {
       "element": "water",
       "severity": 50
@@ -69976,7 +70025,7 @@
     "id": 3550,
     "name": "Menaphite Thug",
     "version": "After Quest",
-    "image": "Tough Guy.png",
+    "image": "Menaphite Thug.png",
     "level": 55,
     "speed": 4,
     "style": [
@@ -70021,7 +70070,7 @@
     "id": 3549,
     "name": "Menaphite Thug",
     "version": "Before Quest",
-    "image": "Tough Guy.png",
+    "image": "Menaphite Thug.png",
     "level": 55,
     "speed": 4,
     "style": [
@@ -96489,7 +96538,7 @@
     "speed": 4,
     "style": null,
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "10?",
     "skills": {
       "atk": 50,
       "def": 40,
@@ -96537,7 +96586,7 @@
     "speed": 4,
     "style": null,
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "10?",
     "skills": {
       "atk": 50,
       "def": 40,
@@ -96585,7 +96634,7 @@
     "speed": 4,
     "style": null,
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "10?",
     "skills": {
       "atk": 50,
       "def": 40,
@@ -96633,7 +96682,7 @@
     "speed": 4,
     "style": null,
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "10?",
     "skills": {
       "atk": 60,
       "def": 60,
@@ -96681,7 +96730,7 @@
     "speed": 4,
     "style": null,
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "10?",
     "skills": {
       "atk": 74,
       "def": 74,
@@ -96729,7 +96778,7 @@
     "speed": 4,
     "style": null,
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "10?",
     "skills": {
       "atk": 74,
       "def": 74,
@@ -96777,7 +96826,7 @@
     "speed": 4,
     "style": null,
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "10?",
     "skills": {
       "atk": 74,
       "def": 74,
@@ -97367,7 +97416,7 @@
     "id": 13496,
     "name": "Skeleton (Wilderness Agility Course)",
     "version": "2",
-    "image": "Skeleton_Lvl18_(1).png",
+    "image": "Skeleton Lvl18 (1).png",
     "level": 18,
     "speed": 4,
     "style": [
@@ -97414,7 +97463,7 @@
     "id": 13497,
     "name": "Skeleton (Wilderness Agility Course)",
     "version": "3",
-    "image": "Skeleton_Lvl18_(2).png",
+    "image": "Skeleton Lvl18 (2).png",
     "level": 18,
     "speed": 4,
     "style": [
@@ -97461,7 +97510,7 @@
     "id": 13498,
     "name": "Skeleton (Wilderness Agility Course)",
     "version": "4",
-    "image": "Skeleton_Lvl18_(3).png",
+    "image": "Skeleton Lvl18 (3).png",
     "level": 18,
     "speed": 4,
     "style": [
@@ -97508,7 +97557,7 @@
     "id": 13499,
     "name": "Skeleton (Wilderness Agility Course)",
     "version": "5",
-    "image": "Skeleton_Lvl18_(4).png",
+    "image": "Skeleton Lvl18 (4).png",
     "level": 18,
     "speed": 4,
     "style": [
@@ -97555,7 +97604,7 @@
     "id": 13500,
     "name": "Skeleton (Wilderness Agility Course)",
     "version": "6",
-    "image": "Skeleton_Lvl18.png",
+    "image": "Skeleton Lvl18.png",
     "level": 18,
     "speed": 4,
     "style": [
@@ -97602,7 +97651,7 @@
     "id": 13501,
     "name": "Skeleton (Wilderness Agility Course)",
     "version": "7",
-    "image": "Skeleton_Lvl18_(1).png",
+    "image": "Skeleton Lvl18 (1).png",
     "level": 18,
     "speed": 4,
     "style": [
@@ -101085,7 +101134,7 @@
       "Various"
     ],
     "size": 5,
-    "max_hit": "45 (Typeless AOE)",
+    "max_hit": "44 (Typeless AOE)",
     "skills": {
       "atk": 350,
       "def": 200,
@@ -121543,7 +121592,7 @@
     "id": 12979,
     "name": "White jaguar",
     "version": "",
-    "image": "White_jaguar.png",
+    "image": "White jaguar.png",
     "level": 67,
     "speed": 4,
     "style": [
@@ -128446,7 +128495,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 613,
