@@ -456,6 +456,10 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
   if (leagues.talent_melee_strength_prayer_bonus) {
     totals.bonuses.str += Math.trunc(totals.bonuses.prayer / 2);
   }
+  
+  if (leagues.talent_multi_hit_str_increase && (weaponWeight < 1 || isOneHanded))) {
+    totals.bonuses.str += Math.trunc(player.skills.str * 0.20);
+  }
 
   const weapon = playerEquipment.weapon;
   const isWearingThrown = weapon?.category === EquipmentCategory.THROWN
