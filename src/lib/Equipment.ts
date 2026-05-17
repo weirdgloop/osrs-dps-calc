@@ -459,7 +459,7 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
   
   const weaponWeight = player.equipment.weapon?.weight ?? Infinity;
   const isOneHanded = player.equipment.weapon?.isTwoHanded === false;
-  if (leagues.talent_multi_hit_str_increase && (weaponWeight < 1 || isOneHanded))) {
+  if (leagues.talent_multi_hit_str_increase && (weaponWeight < 1 || isOneHanded)) {
     totals.bonuses.str += Math.trunc(player.skills.str * 0.20);
   }
 
