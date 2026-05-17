@@ -229,8 +229,13 @@ def main():
             'immunities': {
                 'burn': burn_immunity,
             },
-            'is_slayer_monster': v.get('slayer_experience') is not None and 'Awakened' not in version,
+            'is_slayer_monster': v.get('slayer_experience') is not None,
         }
+
+        if 'Awakened' in version:
+            monster['is_slayer_monster'] = False
+        if monster['name'] == 'Lizardman shaman (Chambers of Xeric)':
+            monster['is_slayer_monster'] = True
 
         weakness = v.get('elemental_weakness')
         if weakness:
