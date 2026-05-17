@@ -456,7 +456,7 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
   if (leagues.talent_melee_strength_prayer_bonus) {
     totals.bonuses.str += Math.trunc(totals.bonuses.prayer / 2);
   }
-  
+
   const weaponWeight = player.equipment.weapon?.weight ?? Infinity;
   const isOneHanded = player.equipment.weapon?.isTwoHanded === false;
   if (leagues.talent_multi_hit_str_increase && (weaponWeight < 1 || isOneHanded)) {
