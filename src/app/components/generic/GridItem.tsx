@@ -3,20 +3,19 @@ import React from 'react';
 import { observer } from 'mobx-react-lite';
 import { IconCircleCheckFilled } from '@tabler/icons-react';
 
-interface IGridItemProps<T> {
-  item: T;
+interface IGridItemProps {
   name: string;
   image: string | StaticImageData;
-  onClick: (item: T) => void;
+  onClick: () => void;
   active: boolean;
 }
 
 /**
  * Reusable component for clickable cells of certain grids, such as the Prayer grid.
  */
-const GridItem: React.FC<IGridItemProps<number>> = observer(<T extends number>(props: IGridItemProps<T>) => {
+const GridItem: React.FC<IGridItemProps> = observer((props: IGridItemProps) => {
   const {
-    item, name, image, active, onClick,
+    name, image, active, onClick,
   } = props;
 
   return (
@@ -24,7 +23,7 @@ const GridItem: React.FC<IGridItemProps<number>> = observer(<T extends number>(p
       type="button"
       data-tooltip-id="tooltip"
       data-tooltip-content={name}
-      onClick={() => onClick(item)}
+      onClick={() => onClick()}
       className="cursor-pointer w-[28px] h-[23px] flex justify-center items-center"
     >
       <div className="relative">

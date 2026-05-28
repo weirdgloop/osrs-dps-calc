@@ -1,6 +1,5 @@
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { Player } from '@/types/Player';
-import { Monster } from '@/types/Monster';
 // import { OVERHEAD_PRAYERS, Prayer } from '@/enums/Prayer';
 import {
   AttackDistribution, HitDistribution, Hitsplat, WeightedHit,
@@ -10,6 +9,7 @@ import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import { DetailKey } from '@/lib/CalcDetails';
 import { PrayerMap } from '@/enums/Prayer';
 import { sum } from 'd3-array';
+import { Monster } from '../types/Monster';
 
 /**
  * Class for computing various NPC-vs-player metrics.
@@ -35,7 +35,6 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     if (this.memoizedPlayerVsNPCCalc === undefined) {
       this.memoizedPlayerVsNPCCalc = new PlayerVsNPCCalc(this.player, this.monster, <InternalOpts>{
         loadoutName: `${this.opts.loadoutName}/forward`,
-        disableMonsterScaling: true,
       });
     }
 
@@ -127,8 +126,9 @@ export default class NPCVsPlayerCalc extends BaseCalc {
   public getPlayerDefenceRoll(): number {
     const stance = this.player.style.stance;
     const style = this.monster.style || '';
-    const skills = this.player.skills;
-    const boosts = this.player.boosts;
+    const baseSkills = this.player.skills;
+    const skills = this.player.boostedSkills;
+    const currentHp = this.player.currentHp;
     const prayers = this.player.prayers.map((p) => PrayerMap[p]);
 
     let stanceBonus = 0;
@@ -138,7 +138,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
 
     const bonus = this.getPlayerDefensiveBonus();
 
-    let effectiveLevel = this.trackAdd(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL, skills.def, boosts.def);
+    let effectiveLevel = this.track(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL, skills.def);
     const numerator = sum(
       prayers.filter((pr) => pr.factorDefence),
       (p) => p.factorDefence![0] - 100,
@@ -146,13 +146,12 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     effectiveLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL_PRAYER, effectiveLevel, [numerator + 100, 100]);
 
     if (this.isWearingTorags()) {
-      const currentHealth = skills.hp + boosts.hp;
-      const missingHealth = ((Math.round((skills.hp - currentHealth) / skills.hp * 100) / 100) * 100);
+      const missingHealth = ((Math.round((baseSkills.hp - currentHp) / baseSkills.hp * 100) / 100) * 100);
       effectiveLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL_TORAGS, effectiveLevel, [1 + missingHealth, 100]);
     }
 
     if (style === 'magic') {
-      let effectiveMagicLevel = this.trackAdd(DetailKey.PLAYER_DEFENCE_ROLL_MAGIC_LEVEL, skills.magic, boosts.magic);
+      let effectiveMagicLevel = this.track(DetailKey.PLAYER_DEFENCE_ROLL_MAGIC_LEVEL, skills.magic);
       for (const p of prayers.filter((pr) => pr.factorDefenceMagic && pr.combatStyle === 'magic')) {
         effectiveMagicLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_MAGIC_LEVEL_PRAYER, effectiveMagicLevel, p.factorDefenceMagic!);
       }
@@ -269,6 +268,6 @@ export default class NPCVsPlayerCalc extends BaseCalc {
    */
   public getAverageDamageTaken() {
     const ttk = this.getPlayerVsNPCCalc().getTtk();
-    return ttk ? ttk * this.getDps() : undefined;
+    return ttk * this.getDps();
   }
 }

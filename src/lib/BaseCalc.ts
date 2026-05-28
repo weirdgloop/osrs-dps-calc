@@ -1,29 +1,20 @@
 import { EquipmentPiece, Player } from '@/types/Player';
-import { BurnImmunity, Monster } from '@/types/Monster';
-import {
-  AmmoApplicability, ammoApplicability, getCanonicalEquipment,
-} from '@/lib/Equipment';
-import UserIssueType from '@/enums/UserIssueType';
+import { AmmoApplicability, ammoApplicability, getCanonicalEquipment } from '@/lib/Equipment';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
-  CAST_STANCES,
-  IMMUNE_TO_BURN_DAMAGE_NPC_IDS,
-  YAMA_IDS,
-  YAMA_VOID_FLARE_IDS,
+  CAST_STANCES, IMMUNE_TO_BURN_DAMAGE_NPC_IDS, YAMA_IDS, YAMA_VOID_FLARE_IDS,
 } from '@/lib/constants';
-import { UserIssue } from '@/types/State';
 import { CalcDetails, DetailEntry } from '@/lib/CalcDetails';
 import { Factor, MinMax } from '@/lib/Math';
-import { scaleMonster } from '@/lib/MonsterScaling';
-import { getCombatStylesForCategory, isDefined } from '@/utils';
+import { isDefined } from '@/utils';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
-import { getRangedDamageType } from '@/types/PlayerCombatStyle';
+import { getCombatStylesForCategory, getRangedDamageType } from '@/types/PlayerCombatStyle';
 import { AttackDistribution, HitDistribution } from '@/lib/HitDist';
+import { BurnImmunity, Monster } from '@/types/Monster';
 
 export interface CalcOpts {
   loadoutName?: string,
   detailedOutput?: boolean,
-  disableMonsterScaling?: boolean,
   usingSpecialAttack?: boolean,
   isBlindBag?: boolean,
   blindBagDistance?: number,
@@ -48,7 +39,6 @@ export interface InternalOpts extends CalcOpts {
 const DEFAULT_OPTS: Required<InternalOpts> = {
   loadoutName: 'unknown',
   detailedOutput: false,
-  disableMonsterScaling: false,
   usingSpecialAttack: false,
   isBlindBag: false,
   blindBagDistance: 1,
@@ -72,13 +62,8 @@ export default class BaseCalc {
   // The monster that we're using for this calculation
   protected monster: Monster;
 
-  // The original monster passed in to the calculator before scaling was applied
-  protected baseMonster: Monster;
-
   // Array of the names of all equipped items (for quick checks)
   protected allEquippedItems: string[] = [];
-
-  userIssues: UserIssue[] = [];
 
   constructor(player: Player, monster: Monster, opts: CalcOpts = {}) {
     this.opts = {
@@ -91,8 +76,7 @@ export default class BaseCalc {
     }
 
     this.player = player;
-    this.baseMonster = monster;
-    this.monster = (this.opts.disableMonsterScaling || this.opts.noInit) ? monster : scaleMonster(monster);
+    this.monster = monster;
 
     if (!this.opts.noInit || this.opts.isBlindBag) {
       this.canonicalizeEquipment();
@@ -692,11 +676,7 @@ export default class BaseCalc {
   }
 
   protected isSlayerMonster(): boolean {
-    return this.monster.is_slayer_monster;
-  }
-
-  protected addIssue(type: UserIssueType, message: string) {
-    this.userIssues.push({ type, message, loadout: this.opts.loadoutName });
+    return this.monster.isSlayerMonster;
   }
 
   protected demonbaneVulnerability(): number {
@@ -743,12 +723,14 @@ export default class BaseCalc {
       if (this.player.style.stance === 'Manual Cast') {
         this.player = {
           ...this.player,
-          style: getCombatStylesForCategory(eq.weapon?.category || EquipmentCategory.UNARMED)[0],
+          style: getCombatStylesForCategory(eq.weapon?.category)[0],
           spell: null,
         };
       }
+    }
 
-      // these staves use a built-in spell for their spec
+    // these staves use a built-in spell for their spec
+    if (this.opts.usingSpecialAttack) {
       if (['Accursed sceptre (a)', 'Eldritch nightmare staff', 'Volatile nightmare staff'].includes(eq.weapon?.name || '')) {
         this.player = {
           ...this.player,
@@ -768,9 +750,9 @@ export default class BaseCalc {
 
     if (this.player.style.stance !== 'Manual Cast' && this.isAmmoInvalid()) {
       if (eq.ammo?.name) {
-        this.addIssue(UserIssueType.EQUIPMENT_WRONG_AMMO, 'This ammo does not work with your current weapon.');
+        throw new Error('This ammo does not work with your current weapon.');
       } else {
-        this.addIssue(UserIssueType.EQUIPMENT_MISSING_AMMO, 'Your weapon requires ammo to use.');
+        throw new Error('Your weapon requires ammo to use.');
       }
     }
 
@@ -787,7 +769,7 @@ export default class BaseCalc {
         ...this.player,
         spell: null,
       };
-      this.addIssue(UserIssueType.SPELL_WRONG_WEAPON, 'This spell needs a specific weapon equipped to cast.');
+      throw new Error('This spell needs a specific weapon equipped to cast.');
     }
 
     // Certain spells can only be cast on specific monsters
@@ -799,7 +781,7 @@ export default class BaseCalc {
         ...this.player,
         spell: null,
       };
-      this.addIssue(UserIssueType.SPELL_WRONG_MONSTER, 'This spell cannot be cast on the selected monster.');
+      throw new Error('This spell cannot be cast on the selected monster.');
     }
 
     // some weapons are only available to use against certain monsters
@@ -807,21 +789,22 @@ export default class BaseCalc {
       (this.wearing('Dawnbringer') && (this.monster.name !== 'Verzik Vitur' || !this.monster.version?.includes('Phase 1'))
       || (this.wearing('Holy water') && !this.monster.attributes.includes(MonsterAttribute.DEMON)))
     ) {
-      this.addIssue(UserIssueType.WEAPON_WRONG_MONSTER, 'This weapon cannot be used against the select monster.');
+      throw new Error('This weapon cannot be used against the select monster.');
     }
 
     // Some set effects are currently not accounted for
+    // todo(mobx): these aren't errors they're warnings
     if (
       this.wearingAll(['Blue moon helm', 'Blue moon chestplate', 'Blue moon tassets', 'Blue moon spear'])
       || this.wearingAll(['Eclipse moon helm', 'Eclipse moon chestplate', 'Eclipse moon tassets', 'Eclipse atlatl'])
     ) {
-      this.addIssue(UserIssueType.EQUIPMENT_SET_EFFECT_UNSUPPORTED, 'The calculator currently does not account for your equipment set effect.');
+      throw new Error('The calculator currently does not account for your equipment set effect.');
     }
     if (this.wearing('Ring of recoil') || this.wearing('Ring of suffering (i)') || this.wearing('Ring of suffering')) {
-      this.addIssue(UserIssueType.RING_RECOIL_UNSUPPORTED, 'The calculator does not account for recoil damage.');
+      throw new Error('The calculator does not account for recoil damage.');
     }
     if (this.wearing('Echo boots')) {
-      this.addIssue(UserIssueType.FEET_RECOIL_UNSUPPORTED, 'The calculator does not account for recoil damage.');
+      throw new Error('The calculator does not account for recoil damage.');
     }
   }
 }

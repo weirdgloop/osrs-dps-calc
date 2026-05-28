@@ -2,38 +2,35 @@
 import {
   CalcRequestsUnion, CalcResponse, Handler, WorkerRequestType,
 } from '@/worker/CalcWorkerTypes';
-import { PlayerVsNPCCalculatedLoadout } from '@/types/State';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
-import { WORKER_JSON_REPLACER, WORKER_JSON_REVIVER } from '@/utils';
+import { CalcState, TtkResult } from '@/types/Results';
+import { JSON_REPLACER, JSON_REVIVER } from '@/utils/serde';
 
 // eslint-disable-next-line import/prefer-default-export
 export const ttkDist: Handler<WorkerRequestType.COMPUTE_TTK> = async (data) => {
-  const { loadouts, monster, calcOpts } = data;
+  const { player, monster, calcOpts } = data;
 
-  const res: Pick<PlayerVsNPCCalculatedLoadout, 'ttkDist'>[] = [];
-  for (const [i, p] of loadouts.entries()) {
-    const loadoutName = p.name || (i + 1).toString();
-    const start = self.performance.now();
-    const calc = new PlayerVsNPCCalc(p, monster, {
-      loadoutName,
-      detailedOutput: calcOpts.detailedOutput,
-      disableMonsterScaling: calcOpts.disableMonsterScaling,
-    });
+  const loadoutName = player.name;
+  const start = self.performance.now();
+  const calc = new PlayerVsNPCCalc(player, monster, {
+    loadoutName,
+    detailedOutput: calcOpts.detailedOutput,
+  });
 
-    res.push({
-      ttkDist: calc.getTtkDistribution(),
-    });
+  const res: TtkResult = {
+    state: CalcState.COMPLETE,
+    ttkDist: calc.getTtkDistribution(),
+  };
 
-    const end = self.performance.now();
-    console.debug(`TTK Dist ${loadoutName} took ${end - start}ms to calculate`);
-  }
+  const end = self.performance.now();
+  console.debug(`TTK Dist ${loadoutName} took ${end - start}ms to calculate`);
 
   return res;
 };
 
 self.onmessage = async (evt: MessageEvent<string>) => {
   console.log(`TTK IN ${new Date().toISOString()}`, evt);
-  const req = JSON.parse(evt.data, WORKER_JSON_REVIVER) as CalcRequestsUnion;
+  const req = JSON.parse(evt.data, JSON_REVIVER) as CalcRequestsUnion;
   const { type, sequenceId, data } = req;
 
   const res = {
@@ -61,5 +58,5 @@ self.onmessage = async (evt: MessageEvent<string>) => {
   }
 
   // Send message back to the master
-  self.postMessage(JSON.stringify(res, WORKER_JSON_REPLACER));
+  self.postMessage(JSON.stringify(res, JSON_REPLACER));
 };

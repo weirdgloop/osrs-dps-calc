@@ -4,11 +4,10 @@ import Modal from '@/app/components/generic/Modal';
 import LazyImage from '@/app/components/generic/LazyImage';
 import power from '@/public/img/misc/power.webp';
 import { observer } from 'mobx-react-lite';
-import { useStore } from '@/state';
+import { usePreferences } from '@/state/Preferences';
 
 const Footer: React.FC = observer(() => {
-  const store = useStore();
-  const { manualMode } = store.prefs;
+  const { manualMode, updatePreferences } = usePreferences();
   const [manualIsOpen, setManualIsOpen] = useState(false);
   return (
     <div
@@ -43,7 +42,7 @@ const Footer: React.FC = observer(() => {
             className="underline"
             onClick={() => {
               if (manualMode) {
-                store.updatePreferences({ manualMode: false });
+                updatePreferences({ manualMode: false });
               } else {
                 setManualIsOpen(true);
               }
@@ -85,7 +84,7 @@ const Footer: React.FC = observer(() => {
               type="button"
               className="btn text-sm"
               onClick={() => {
-                store.updatePreferences({ manualMode: true });
+                updatePreferences({ manualMode: true });
                 setManualIsOpen(false);
               }}
             >

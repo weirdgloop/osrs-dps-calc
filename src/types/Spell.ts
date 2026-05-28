@@ -1,5 +1,8 @@
 import spellsRaw from '../../cdn/json/spells.json';
 
+// The available spellbooks
+export type Spellbook = 'standard' | 'ancient' | 'lunar' | 'arceuus';
+
 export interface Spell {
   name: string;
   image: string;
@@ -9,7 +12,14 @@ export interface Spell {
   unselectable?: boolean;
 }
 
-export type Spellement = 'air' | 'water' | 'earth' | 'fire';
+export enum Spellement {
+  AIR = 'air',
+  WATER = 'water',
+  EARTH = 'earth',
+  FIRE = 'fire',
+}
+
+export const isSpellement = (s: string | undefined | null): s is Spellement => Object.values(Spellement).includes(s as Spellement);
 
 export const spells = spellsRaw as Spell[];
 
@@ -69,5 +79,10 @@ export function canUseSunfireRunes(spell: Spell | null): boolean {
   return spell?.element === 'fire';
 }
 
-// The available spellbooks
-export type Spellbook = 'standard' | 'ancient' | 'lunar' | 'arceuus';
+export function canUseCharge(spell: Spell | null): boolean {
+  return ['Saradomin Strike', 'Claws of Guthix', 'Flames of Zamorak'].includes(spell?.name ?? '');
+}
+
+export function canUseMarkOfDarkness(spell: Spell | null): boolean {
+  return spell?.name.includes('Demonbane') ?? false;
+}

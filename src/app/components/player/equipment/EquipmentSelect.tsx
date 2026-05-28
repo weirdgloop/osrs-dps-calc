@@ -1,8 +1,6 @@
-import React, { useMemo } from 'react';
-import { useStore } from '@/state';
+import React, { useCallback, useMemo } from 'react';
 import { observer } from 'mobx-react-lite';
 import { getCdnImage, isDefined } from '@/utils';
-import { EquipmentPiece } from '@/types/Player';
 import LazyImage from '@/app/components/generic/LazyImage';
 import { cross } from 'd3-array';
 import {
@@ -13,6 +11,8 @@ import {
   noStatExceptions,
 } from '@/lib/Equipment';
 import { BLOWPIPE_IDS, GAUNTLET_MONSTER_IDS, CORRUPTED_GAUNTLET_MONSTER_IDS } from '@/lib/constants';
+import { EquipmentPiece } from '@/types/Player';
+import { useMonster } from '@/state/MonsterStore';
 import Combobox from '../../generic/Combobox';
 
 interface EquipmentOption {
@@ -30,6 +30,7 @@ const findDart = (name: string): EquipmentPiece | undefined => {
   }
   return eq;
 };
+
 const DARTS: EquipmentPiece[] = [
   findDart('Bronze dart'),
   findDart('Iron dart'),
@@ -94,22 +95,22 @@ const gauntletSort = (items: EquipmentOption[], monsterId: number) => {
 };
 
 interface IEquipmentSelectProps {
-  customAvailableEquipmentFilter?: (eq: EquipmentPiece) => boolean;
-  onSelectedItemChange?: (item: EquipmentOption | null | undefined) => void;
+  onSelect: (item: EquipmentPiece | null | undefined) => void;
+  equipmentFilter?: (eq: EquipmentPiece) => boolean;
   canonicalize?: boolean;
 }
 
 const EquipmentSelect: React.FC<IEquipmentSelectProps> = observer((props) => {
-  const { customAvailableEquipmentFilter, onSelectedItemChange, canonicalize } = props;
-  const store = useStore();
+  const { monsterBase } = useMonster();
+  const { equipmentFilter, onSelect, canonicalize } = props;
 
   const options: EquipmentOption[] = useMemo(() => {
     const blowpipeEntries: EquipmentOption[] = [];
 
     const entries: EquipmentOption[] = [];
     for (const v of availableEquipment.filter((eq) => {
-      if (customAvailableEquipmentFilter) {
-        return customAvailableEquipmentFilter(eq);
+      if (equipmentFilter) {
+        return equipmentFilter(eq);
       }
       return !((
         (Object.values(eq.bonuses)
@@ -173,28 +174,22 @@ const EquipmentSelect: React.FC<IEquipmentSelectProps> = observer((props) => {
         });
       });
 
-    return gauntletSort(entries, store.monster.id);
-  }, [store.monster.id, customAvailableEquipmentFilter]);
+    return gauntletSort(entries, monsterBase.id);
+  }, [monsterBase.id, equipmentFilter]);
+
+  const selectProxy = useCallback((item: EquipmentOption | null | undefined) => {
+    onSelect(item?.equipment);
+  }, [onSelect]);
 
   return (
-    <Combobox<EquipmentOption>
+    <Combobox
       id="equipment-select"
       className="w-full"
       items={options}
       keepOpenAfterSelect
       keepPositionAfterSelect
       placeholder="Search for equipment..."
-      onSelectedItemChange={(item) => {
-        if (onSelectedItemChange) {
-          onSelectedItemChange(item);
-        } else if (item) {
-          store.updatePlayer({
-            equipment: {
-              [item.equipment.slot]: item.equipment,
-            },
-          });
-        }
-      }}
+      onSelectedItemChange={selectProxy}
       CustomItemComponent={({ item, itemString }) => (
         <div className="flex items-center gap-2">
           <div className="basis-4 flex justify-center h-[20px] w-auto">
@@ -203,7 +198,7 @@ const EquipmentSelect: React.FC<IEquipmentSelectProps> = observer((props) => {
           <div>
             {itemString}
             {item.version && (
-              <span className="monster-version text-xs text-gray-400 dark:text-gray-300">
+              <span className="monster-version text-xs text-gray-300">
                 #
                 {item.version}
               </span>
@@ -251,7 +246,7 @@ const EquipmentSelect: React.FC<IEquipmentSelectProps> = observer((props) => {
           return true;
         });
       }}
-      customSort={(v) => gauntletSort(v, store.monster.id)}
+      customSort={(v) => gauntletSort(v, monsterBase.id)}
     />
   );
 });

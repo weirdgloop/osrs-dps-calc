@@ -1,14 +1,13 @@
 import React from 'react';
 import HitDistribution from '@/app/components/results/HitDistribution';
 import PlayerVsNPCResultsTable from '@/app/components/results/PlayerVsNPCResultsTable';
-import { useStore } from '@/state';
 import { observer } from 'mobx-react-lite';
 import { IconArrowDown, IconArrowUp } from '@tabler/icons-react';
 import AutoHeight from '@/app/components/generic/AutoHeight';
+import { usePreferences } from '@/state/Preferences';
 
 const ResultsContainer = observer(() => {
-  const store = useStore();
-  const { prefs } = store;
+  const { resultsExpanded, updatePreferences } = usePreferences();
 
   return (
     <div className="grow basis-1/4 md:mt-9 flex flex-col">
@@ -39,10 +38,10 @@ const ResultsContainer = observer(() => {
         <button
           type="button"
           className="text-sm px-4 py-1 bg-dark-500 text-gray-300 w-full shadow border-t border-dark-200 flex justify-between items-center rounded-b"
-          onClick={() => store.updatePreferences({ resultsExpanded: !prefs.resultsExpanded })}
+          onClick={() => updatePreferences({ resultsExpanded: !resultsExpanded })}
         >
           {
-            prefs.resultsExpanded ? (
+            resultsExpanded ? (
               <>
                 <IconArrowUp size={15} />
                 <div>Show less</div>

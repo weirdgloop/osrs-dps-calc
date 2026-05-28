@@ -1,42 +1,35 @@
-import React, { useMemo } from 'react';
-import { useStore } from '@/state';
+import React from 'react';
 import { observer } from 'mobx-react-lite';
-
-import { Monster } from '@/types/Monster';
-import { CUSTOM_MONSTER_BASE } from '@/lib/Monsters';
 import { IconPencilPlus } from '@tabler/icons-react';
+import { CUSTOM_MONSTER_ID } from '@/lib/constants';
+import { getMonsters } from '@/types/Monster';
+import { useMonster } from '@/state/MonsterStore';
 import Combobox from '../generic/Combobox';
 
 interface MonsterOption {
   label: string;
   value: number;
   version: string;
-  monster: Partial<Monster>;
 }
 
-const MonsterSelect: React.FC = observer(() => {
-  const store = useStore();
-  const { availableMonsters } = store;
+const options: MonsterOption[] = [
+  {
+    label: 'Create custom monster',
+    value: CUSTOM_MONSTER_ID,
+    version: '',
+  },
+  ...getMonsters().map(({ id, name, version }): MonsterOption => ({
+    label: name,
+    value: id,
+    version,
+  })),
+];
 
-  const options: MonsterOption[] = useMemo(() => [
-    {
-      label: 'Create custom monster',
-      value: -1,
-      version: '',
-      monster: { ...CUSTOM_MONSTER_BASE },
-    },
-    ...availableMonsters.map((m, i) => ({
-      label: `${m.name}`,
-      value: i,
-      version: m.version || '',
-      monster: {
-        ...m,
-      },
-    })),
-  ], [availableMonsters]);
+const MonsterSelect: React.FC = observer(() => {
+  const { loadMonster } = useMonster();
 
   return (
-    <Combobox<MonsterOption>
+    <Combobox
       id="monster-select"
       className="w-full"
       items={options}
@@ -46,18 +39,18 @@ const MonsterSelect: React.FC = observer(() => {
       customFilter={(items, iv) => {
         if (!iv) return items;
         // When searching, don't show the custom monster option in the results
-        return items.filter((i) => i.value !== -1);
+        return items.filter((i) => i.value !== CUSTOM_MONSTER_ID);
       }}
       onSelectedItemChange={(item) => {
         if (item) {
-          store.updateMonster(item.monster);
+          loadMonster(item.value);
         }
       }}
       CustomItemComponent={({ item }) => {
         const i = item;
 
         // Handle custom monster option
-        if (i.value === -1) {
+        if (i.value === CUSTOM_MONSTER_ID) {
           return (
             <div className="text-gray-300 flex gap-1 items-center italic">
               <IconPencilPlus size={14} />

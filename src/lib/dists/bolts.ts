@@ -3,8 +3,8 @@ import {
 } from '@/lib/HitDist';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { some } from 'd3-array';
-import { Monster } from '@/types/Monster';
 import { INFINITE_HEALTH_MONSTERS } from '@/lib/constants';
+import { Monster } from '../../types/Monster';
 
 export interface BoltContext {
   rangedLvl: number;

@@ -1,11 +1,11 @@
 import {
   describe, expect, test,
 } from '@jest/globals';
-import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import applyCoxScaling from '@/lib/scaling/ChambersOfXeric';
-import { Monster } from '@/types/Monster';
 import { getTestMonster } from '@/tests/utils/TestUtils';
+import { Monster } from '../../../types/Monster';
+import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
 
 describe('stats should not be scaled with size=1 hp=99 cmb=126', () => {
   getMonsters()

@@ -1,5 +1,4 @@
 import { Player } from '@/types/Player';
-import { Monster } from '@/types/Monster';
 import {
   AttackDistribution,
   cappedRerollTransformer,
@@ -18,21 +17,17 @@ import {
   WeightedHit,
 } from '@/lib/HitDist';
 import {
-  canUseSunfireRunes,
-  getSpellMaxHit,
-  isBindSpell,
-  spellByName,
-  Spellement,
+  canUseSunfireRunes, getSpellMaxHit, isBindSpell, spellByName, Spellement,
 } from '@/types/Spell';
-import { PrayerData, PrayerMap } from '@/enums/Prayer';
+import { Prayer, PrayerData, PrayerMap } from '@/enums/Prayer';
 import { isVampyre, MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
   ABYSSAL_SIRE_TRANSITION_IDS,
   ALWAYS_MAX_HIT_MONSTERS,
   BA_ATTACKER_MONSTERS,
+  COMBAT_SPELL_FIRE_RUNE_COST,
   DOOM_OF_MOKHAIOTL_IDS,
   ECLIPSE_MOON_IDS,
-  COMBAT_SPELL_FIRE_RUNE_COST,
   GLOWING_CRYSTAL_IDS,
   GUARANTEED_ACCURACY_MONSTERS,
   GUARDIAN_IDS,
@@ -75,10 +70,9 @@ import {
 } from '@/lib/Equipment';
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { scaleMonster, scaleMonsterHpOnly } from '@/lib/MonsterScaling';
-import { CombatStyleType, getRangedDamageType } from '@/types/PlayerCombatStyle';
+import { CombatStyleType, getCombatStylesForCategory, getRangedDamageType } from '@/types/PlayerCombatStyle';
 import { range, some, sum } from 'd3-array';
-import { FeatureStatus, getCombatStylesForCategory, isDefined } from '@/utils';
-import UserIssueType from '@/enums/UserIssueType';
+import { FeatureStatus, isDefined } from '@/utils';
 import {
   BoltContext,
   diamondBolts,
@@ -89,6 +83,7 @@ import {
   rubyBolts,
 } from '@/lib/dists/bolts';
 import { burningClawDoT, burningClawSpec, dClawDist } from '@/lib/dists/claws';
+import { createDefaultMonsterInputs, Monster } from '@/types/Monster';
 
 const PARTIALLY_IMPLEMENTED_SPECS: string[] = [
   'Ancient godsword',
@@ -135,10 +130,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
   constructor(player: Player, monster: Monster, opts: Partial<CalcOpts> = {}) {
     super(player, monster, opts);
-
-    if (!this.opts.noInit && this.isSpecSupported() === FeatureStatus.UNIMPLEMENTED) {
-      this.addIssue(UserIssueType.EQUIPMENT_SPEC_UNSUPPORTED, 'This loadout\'s weapon special attack is not yet supported in the calculator.');
-    }
   }
 
   /**
@@ -206,9 +197,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   private getPlayerMaxMeleeAttackRoll(): number {
     const { style } = this.player;
 
-    let effectiveLevel: number = this.trackAdd(DetailKey.DAMAGE_LEVEL, this.player.skills.atk, this.player.boosts.atk);
+    let effectiveLevel: number = this.track(DetailKey.DAMAGE_LEVEL, this.player.boostedSkills.atk);
 
-    for (const p of this.getCombatPrayers('factorAccuracy')) {
+    for (const [, p] of this.getCombatPrayers('factorAccuracy')) {
       effectiveLevel = this.trackFactor(DetailKey.PLAYER_ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
     }
 
@@ -343,11 +334,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const { style } = this.player;
     const { buffs } = this.player;
 
-    const baseLevel: number = this.trackAdd(DetailKey.DAMAGE_LEVEL, this.player.skills.str, this.player.boosts.str);
+    const baseLevel: number = this.track(DetailKey.DAMAGE_LEVEL, this.player.boostedSkills.str);
     let effectiveLevel: number = baseLevel;
 
-    for (const p of this.getCombatPrayers()) {
-      if (p.name === 'Burst of Strength' && effectiveLevel <= 20) {
+    for (const [prayer, p] of this.getCombatPrayers('factorStrength')) {
+      if (prayer === Prayer.BURST_OF_STRENGTH && effectiveLevel <= 20) {
         effectiveLevel = this.trackAdd(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, 1);
       } else {
         effectiveLevel = this.trackFactor(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, p.factorStrength!);
@@ -512,7 +503,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else if (this.wearing('Abyssal dagger')) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [17, 20]);
       } else if (this.wearing('Abyssal bludgeon')) {
-        const prayerMissing = Math.max(-this.player.boosts.prayer, 0);
+        const prayerMissing = Math.max(this.player.skills.prayer - this.player.boostedSkills.prayer, 0);
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [100 + (prayerMissing / 2), 100]);
       } else if (this.wearing('Barrelchest anchor')) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [110, 100]);
@@ -552,8 +543,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   private getPlayerMaxRangedAttackRoll() {
     const { style } = this.player;
 
-    let effectiveLevel: number = this.track(DetailKey.PLAYER_ACCURACY_LEVEL, this.player.skills.ranged + this.player.boosts.ranged);
-    for (const p of this.getCombatPrayers('factorAccuracy')) {
+    let effectiveLevel: number = this.track(DetailKey.PLAYER_ACCURACY_LEVEL, this.player.boostedSkills.ranged);
+    for (const [, p] of this.getCombatPrayers('factorAccuracy')) {
       let factor = p.factorAccuracy!;
       if (this.player.leagues.six.effects.talent_buffed_ranged_prayers) {
         factor = [Math.trunc((factor[0] - factor[1]) * 13 / 10) + factor[1], factor[1]];
@@ -663,11 +654,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   private getPlayerMaxRangedHit(): MinMax {
     const { style } = this.player;
 
-    let effectiveLevel: number = this.player.skills.ranged + this.player.boosts.ranged;
+    let effectiveLevel: number = this.player.boostedSkills.ranged;
     const scalesWithStr: boolean = this.wearing(['Eclipse atlatl', "Hunter's spear"]);
     if (scalesWithStr) {
       // atlatl uses strength instead of ranged skill, melee strength bonus, and melee buff from slayer helmet/salve, but works with ranged void
-      effectiveLevel = this.player.skills.str + this.player.boosts.str;
+      effectiveLevel = this.player.boostedSkills.str;
     }
     this.track(DetailKey.DAMAGE_LEVEL, effectiveLevel);
 
@@ -705,12 +696,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return [0, maxHit];
     }
 
-    for (const p of this.getCombatPrayers()) {
+    for (const [prayer, p] of this.getCombatPrayers('factorStrength')) {
       let factor = p.factorStrength!;
       if (this.player.leagues.six.effects.talent_buffed_ranged_prayers) {
         factor = [Math.trunc((factor[0] - factor[1]) * 13 / 10) + factor[1], factor[1]];
       }
-      if (p.name === 'Sharp Eye' && Math.trunc(effectiveLevel * factor[0] / factor[1]) === effectiveLevel) {
+      if (prayer === Prayer.SHARP_EYE && Math.trunc(effectiveLevel * factor[0] / factor[1]) === effectiveLevel) {
         // force 1 level gain
         effectiveLevel = this.trackAdd(DetailKey.DAMAGE_LEVEL_PRAYER, effectiveLevel, 1);
       } else {
@@ -856,8 +847,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   private getPlayerMaxMagicAttackRoll() {
     const { style } = this.player;
 
-    let effectiveLevel: number = this.track(DetailKey.PLAYER_ACCURACY_LEVEL, this.player.skills.magic + this.player.boosts.magic);
-    for (const p of this.getCombatPrayers('factorAccuracy')) {
+    let effectiveLevel: number = this.track(DetailKey.PLAYER_ACCURACY_LEVEL, this.player.boostedSkills.magic);
+    for (const [,p] of this.getCombatPrayers('factorAccuracy')) {
       effectiveLevel = this.trackFactor(DetailKey.PLAYER_ACCURACY_LEVEL_PRAYER, effectiveLevel, p.factorAccuracy!);
     }
 
@@ -966,7 +957,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
    */
   private getPlayerMaxMagicHit(): MinMax {
     let [minHit, maxHit]: MinMax = [0, 0];
-    const magicLevel = this.player.skills.magic + this.player.boosts.magic;
+    const magicLevel = this.player.boostedSkills.magic;
     const { spell } = this.player;
 
     // Specific bonuses that are applied from equipment
@@ -1071,7 +1062,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       blackMaskBonus = true;
     }
 
-    for (const p of this.getCombatPrayers('magicDamageBonus')) {
+    for (const [, p] of this.getCombatPrayers('magicDamageBonus')) {
       magicDmgBonus += p.magicDamageBonus!;
     }
 
@@ -1148,19 +1139,19 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   /**
    * Get the "combat" prayers for the current combat style. These are prayers that aren't overheads.
    */
-  private getCombatPrayers(filter: keyof PrayerData = 'factorStrength'): PrayerData[] {
+  private getCombatPrayers(hasKey: keyof PrayerData): [Prayer, PrayerData][] {
     const style = this.player.style.type;
 
-    let prayers = this.player.prayers.map((p) => PrayerMap[p]);
+    let prayers: [Prayer, PrayerData][] = this.player.prayers.map((p) => [p, PrayerMap[p]]);
     if (this.isUsingMeleeStyle()) {
-      prayers = prayers.filter((p) => p.combatStyle === 'melee');
+      prayers = prayers.filter(([, p]) => p.combatStyle === 'melee');
     } else if (style === 'ranged') {
-      prayers = prayers.filter((p) => p.combatStyle === 'ranged');
+      prayers = prayers.filter(([, p]) => p.combatStyle === 'ranged');
     } else {
-      prayers = prayers.filter((p) => p.combatStyle === 'magic');
+      prayers = prayers.filter(([, p]) => p.combatStyle === 'magic');
     }
 
-    return prayers.filter((p) => p[filter]);
+    return prayers.filter(([, p]) => p[hasKey]);
   }
 
   /**
@@ -1569,15 +1560,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else {
         // the defence reduction from the first hit applies to the second hit,
         // so we need a full subcalc with the new defence value to determine the dist
+        const newInputs = createDefaultMonsterInputs();
+        newInputs.defenceReductions.tonalztic = 1;
         const loweredDefHitAccuracy = this.noInitSubCalc(this.player, scaleMonster({
-          ...this.baseMonster,
-          inputs: {
-            ...this.baseMonster.inputs,
-            defenceReductions: {
-              ...this.baseMonster.inputs.defenceReductions,
-              tonalztic: this.baseMonster.inputs.defenceReductions.tonalztic + 1,
-            },
-          },
+          ...this.monster,
+          inputs: newInputs,
         })).getHitChance();
 
         const loweredDefHitDist = HitDistribution.linear(loweredDefHitAccuracy, min, max);
@@ -1786,7 +1773,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.isUsingMeleeStyle() && this.isWearingDharok()) {
       const newMax = this.player.skills.hp;
-      const curr = this.player.skills.hp + this.player.boosts.hp;
+      const curr = this.player.currentHp;
       dist = dist.scaleDamage(10000 + (newMax - curr) * newMax, 10000);
     }
 
@@ -1828,7 +1815,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const boltContext: BoltContext = {
       maxHit: max,
       alwaysMaxHit: isDefined(this.player.leagues.six.effects.talent_crossbow_max_hit),
-      rangedLvl: this.player.skills.ranged + this.player.boosts.ranged,
+      rangedLvl: this.player.boostedSkills.ranged,
       zcb: this.wearing('Zaryte crossbow'),
       spec: this.opts.usingSpecialAttack,
       kandarinDiary: this.player.buffs.kandarinDiary,
@@ -1854,7 +1841,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (leagues.effects.talent_earth_scale_defence_stat && spellement === 'earth') {
-      const defenceLevel = this.player.skills.def + this.player.boosts.def;
+      const defenceLevel = this.player.boostedSkills.def;
       const bonusDamage = this.trackFactor(DetailKey.LEAGUES_EARTH_SPELL_DEFENCE_BONUS, defenceLevel, [1, 12]);
       dist = dist.transform(flatAddTransformer(bonusDamage), { transformInaccurate: false });
     }
@@ -1922,7 +1909,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.player.style.type === 'ranged' && this.player.equipment.weapon?.category === EquipmentCategory.CROSSBOW) {
-      const currentHp = this.player.skills.hp + this.player.boosts.hp;
+      const currentHp = this.player.currentHp;
       if (this.wearing(['Ruby bolts (e)', 'Ruby dragon bolts (e)']) && currentHp >= 10) {
         dist = dist.transform(rubyBolts(boltContext));
       }
@@ -2392,7 +2379,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   public getHtk() {
     const dist = this.getDistribution();
     const hist = dist.asHistogram();
-    if (hist === undefined || hist[0] === undefined || hist[0].value === undefined) {
+    if (hist === undefined || hist[0] === undefined) {
       throw Error('empty hist1');
     }
     const startHp = this.monster.inputs.monsterCurrentHp;
@@ -2408,11 +2395,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       for (let hit = 1; hit <= Math.min(hp, max); hit++) {
         const p = hist[hit];
         if (p) {
-          val += p.value * htk[hp - hit];
+          val += p.probability * htk[hp - hit];
         }
       }
 
-      htk[hp] = val / (1 - hist[0].value);
+      htk[hp] = val / (1 - hist[0].probability);
     }
 
     return htk[startHp];
@@ -2568,10 +2555,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   distAtHp(baseDist: DelayedHit[], hp: number): DelayedHit[] {
-    if (this.opts.disableMonsterScaling) {
-      return baseDist;
-    }
-
     if (!this.distIsCurrentHpDependent(this.player, this.monster) || hp === this.monster.inputs.monsterCurrentHp) {
       return baseDist;
     }
@@ -2596,9 +2579,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const subCalc = this.noInitSubCalc(
       this.player,
       scaleMonsterHpOnly({
-        ...this.baseMonster,
+        ...this.monster,
         inputs: {
-          ...this.baseMonster.inputs,
+          ...this.monster.inputs,
           monsterCurrentHp: hp,
         },
       }),
@@ -2613,7 +2596,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (!opts.isBlindBag) {
       subCalc.allEquippedItems = this.allEquippedItems;
     }
-    subCalc.baseMonster = this.baseMonster;
 
     return subCalc;
   }
@@ -2698,21 +2680,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     return FeatureStatus.NOT_APPLICABLE;
   }
 
-  getSpecCalc(): PlayerVsNPCCalc | null {
-    switch (this.isSpecSupported()) {
-      case FeatureStatus.IMPLEMENTED:
-      case FeatureStatus.PARTIALLY_IMPLEMENTED:
-        return new PlayerVsNPCCalc(this.player, this.baseMonster, {
-          ...this.opts,
-          loadoutName: `${this.opts.loadoutName}/spec`,
-          usingSpecialAttack: true,
-        });
-
-      default:
-        return null;
-    }
-  }
-
   private applyP2WardensDamageModifier([, max]: MinMax): MinMax {
     // 1/3 of enemy defence is removed from accuracy
     const reducedNpcDefence = Math.trunc(this.getNPCDefenceRoll() / 3);
@@ -2742,16 +2709,16 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     const { effects } = this.player.leagues.six;
     if (spell.name.includes('Smoke') && effects.talent_smoke_counts_as_air) {
-      return 'air';
+      return Spellement.AIR;
     }
     if (spell.name.includes('Ice') && effects.talent_ice_counts_as_water) {
-      return 'water';
+      return Spellement.WATER;
     }
     if (spell.name.includes('Shadow') && effects.talent_shadow_counts_as_earth) {
-      return 'earth';
+      return Spellement.EARTH;
     }
     if (spell.name.includes('Blood') && effects.talent_blood_counts_as_fire) {
-      return 'fire';
+      return Spellement.FIRE;
     }
 
     return spell?.element;
@@ -2817,7 +2784,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
   private leaguesWaterHpBonus(): HitTransformer {
     const maxHp = this.player.skills.hp;
-    const currentHp = this.player.skills.hp + this.player.boosts.hp;
+    const currentHp = this.player.currentHp;
 
     // intentionally not capping to maxHp here as it functions on overheal
     const damageBonusPct = Math.trunc(20 * currentHp / maxHp);

@@ -7,86 +7,92 @@ import {
   TtkResponse,
   WorkerRequestType,
 } from '@/worker/CalcWorkerTypes';
-import { NPCVsPlayerCalculatedLoadout, PlayerVsNPCCalculatedLoadout } from '@/types/State';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import Comparator from '@/lib/Comparator';
-import { ttkDist } from '@/worker/ttkWorker';
-import { range } from 'd3-array';
-import { DeferredPromise, WORKER_JSON_REPLACER, WORKER_JSON_REVIVER } from '@/utils';
-import { NUMBER_OF_LOADOUTS } from '@/lib/constants';
+import { BasicResult, CalcState, ReverseResult } from '@/types/Results';
+import { JSON_REPLACER, JSON_REVIVER } from '@/utils/serde';
+import { FeatureStatus } from '@/utils';
+import DeferredPromise from '../utils/DeferredPromise';
 
-const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) => {
-  const { loadouts, monster, calcOpts } = data;
-  const res: PlayerVsNPCCalculatedLoadout[] = [];
+const computeBasic: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) => {
+  const { player, monster, calcOpts } = data;
 
-  // eslint-disable-next-line no-restricted-syntax
-  for (const [i, p] of loadouts.entries()) {
-    const loadoutName = (i + 1).toString();
-    const start = self.performance.now();
+  const loadoutName = player.name;
+  const start = self.performance.now();
 
-    const calc = new PlayerVsNPCCalc(p, monster, {
+  const calc = new PlayerVsNPCCalc(player, monster, {
+    loadoutName,
+    detailedOutput: calcOpts.detailedOutput,
+  });
+
+  const specStatus = calc.isSpecSupported();
+  let specCalc: PlayerVsNPCCalc | undefined;
+  if (specStatus === FeatureStatus.IMPLEMENTED || specStatus === FeatureStatus.PARTIALLY_IMPLEMENTED) {
+    specCalc = new PlayerVsNPCCalc(player, monster, {
       loadoutName,
       detailedOutput: calcOpts.detailedOutput,
-      disableMonsterScaling: calcOpts.disableMonsterScaling,
+      usingSpecialAttack: true,
     });
-    const specCalc = calc.getSpecCalc();
-
-    res.push({
-      npcDefRoll: calc.getNPCDefenceRoll(),
-      maxHit: calc.getDistribution().getMax(),
-      expectedHit: calc.getDistribution().getExpectedDamage(),
-      maxAttackRoll: calc.getMaxAttackRoll(),
-      accuracy: calc.getDisplayHitChance(),
-      dps: calc.getDps(),
-      ttk: calc.getTtk(),
-      hitDist: calc.getDistribution().asHistogram(calcOpts.hitDistHideMisses),
-      details: calc.details,
-      userIssues: calc.userIssues,
-
-      specAccuracy: specCalc?.getDisplayHitChance(),
-      specMaxHit: specCalc?.getMax(),
-      specExpected: specCalc?.getExpectedDamage(),
-      specMomentDps: specCalc?.getDps(),
-      specFullDps: specCalc?.getSpecDps(),
-      specHitDist: specCalc?.getDistribution().asHistogram(calcOpts.hitDistHideMisses),
-      specDetails: specCalc?.details,
-    });
-
-    const end = self.performance.now();
-    console.debug(`Loadout ${i + 1} took ${end - start}ms to calculate`);
   }
+
+  const res: BasicResult = {
+    state: CalcState.COMPLETE,
+
+    details: calc.details,
+    maxAttackRoll: calc.getMaxAttackRoll(),
+    npcDefRoll: calc.getNPCDefenceRoll(),
+    accuracy: calc.getDisplayHitChance(),
+    maxHit: calc.getDistribution().getMax(),
+    expectedHit: calc.getDistribution().getExpectedDamage(),
+    dps: calc.getDps(),
+    ttk: calc.getTtk(),
+    hitDist: calc.getDistribution().asHistogram(),
+
+    specStatus,
+    specDetails: specCalc?.details,
+    specMaxAttackRoll: specCalc?.getMaxAttackRoll(),
+    specNpcDefRoll: specCalc?.getNPCDefenceRoll(),
+    specAccuracy: specCalc?.getDisplayHitChance(),
+    specMaxHit: specCalc?.getDistribution().getMax(),
+    specExpectedHit: specCalc?.getDistribution().getExpectedDamage(),
+    specMomentDps: specCalc?.getDps(),
+    specFullDps: specCalc?.getSpecDps(),
+    specHitDist: specCalc?.getDistribution().asHistogram(),
+  };
+
+  const end = self.performance.now();
+  console.debug(`Loadout ${loadoutName} took ${end - start}ms to calculate`);
 
   return res;
 };
 
-const computeMvPValues: Handler<WorkerRequestType.COMPUTE_REVERSE> = async (data) => {
-  const { loadouts, monster, calcOpts } = data;
-  const res: NPCVsPlayerCalculatedLoadout[] = [];
+const computeReverse: Handler<WorkerRequestType.COMPUTE_REVERSE> = async (data) => {
+  const { player, monster, calcOpts } = data;
 
-  for (const [i, p] of loadouts.entries()) {
-    const loadoutName = (i + 1).toString();
-    const start = self.performance.now();
-    const calc = new NPCVsPlayerCalc(p, monster, {
-      loadoutName: `${loadoutName}/reverse`,
-      detailedOutput: calcOpts.detailedOutput,
-      disableMonsterScaling: calcOpts.disableMonsterScaling,
-    });
-    res.push({
-      npcMaxAttackRoll: calc.getNPCMaxAttackRoll(),
-      npcMaxHit: calc.getDistribution().getMax(),
-      npcDps: calc.getDps(),
-      npcAccuracy: calc.getHitChance(),
-      playerDefRoll: calc.getPlayerDefenceRoll(),
-      avgDmgTaken: calc.getAverageDamageTaken(),
-      npcDetails: calc.details,
-    });
+  const loadoutName = `${player.name}/reverse`;
+  const start = self.performance.now();
+  const calc = new NPCVsPlayerCalc(player, monster, {
+    loadoutName: `${loadoutName}/reverse`,
+    detailedOutput: calcOpts.detailedOutput,
+  });
 
-    const end = self.performance.now();
-    console.debug(`Reverse loadout ${i + 1} took ${end - start}ms to calculate`);
-  }
+  const ret: ReverseResult = {
+    state: CalcState.COMPLETE,
 
-  return res;
+    details: calc.details,
+    npcMaxAttackRoll: calc.getNPCMaxAttackRoll(),
+    playerDefRoll: calc.getPlayerDefenceRoll(),
+    npcAccuracy: calc.getHitChance(),
+    npcMaxHit: calc.getDistribution().getMax(),
+    npcDps: calc.getDps(),
+    avgDmgTaken: calc.getAverageDamageTaken(),
+  };
+
+  const end = self.performance.now();
+  console.debug(`Reverse loadout ${loadoutName} took ${end - start}ms to calculate`);
+
+  return ret;
 };
 
 const compare: Handler<WorkerRequestType.COMPARE> = async (data) => {
@@ -111,7 +117,7 @@ const createTtkWorker = (): OneShotWorker<TtkResponse> => {
   const promise = new DeferredPromise<TtkResponse>();
   const worker = new Worker(new URL('./ttkWorker.ts', import.meta.url));
   worker.onmessage = (evt: MessageEvent) => {
-    const result = JSON.parse(evt.data, WORKER_JSON_REVIVER);
+    const result = JSON.parse(evt.data, JSON_REVIVER);
     worker.terminate();
     promise.resolve(result);
   };
@@ -119,11 +125,11 @@ const createTtkWorker = (): OneShotWorker<TtkResponse> => {
   return { promise, worker };
 };
 
-const ttkWorkers: (OneShotWorker<TtkResponse> | undefined)[] = range(0, 10).map(
-  // only seed first half, otherwise we waste the other half immediately
-  (i) => (i < NUMBER_OF_LOADOUTS ? createTtkWorker() : undefined),
-);
-let ttkModulus: number = 1; // whether we use first set or second set
+const ttkWorkers: [OneShotWorker<TtkResponse> | undefined, OneShotWorker<TtkResponse> | undefined] = [
+  undefined,
+  createTtkWorker(),
+];
+let currentJob: number = 0; // whether we use first set or second set
 let lastSequenceId: number = -1;
 
 /**
@@ -134,79 +140,55 @@ let lastSequenceId: number = -1;
  * the `i % {NUMBER_OF_LOADOUTS}`th ttkWorker corresponds to the `i`th loadout index
  * unfortunately we can't reuse CalcWorker due to cyclic imports
  */
-const ttkDistParallel: Handler<WorkerRequestType.COMPUTE_TTK_PARALLEL> = async (data, rawRequest) => {
+const ttkDistParallel: Handler<WorkerRequestType.COMPUTE_TTK> = async (data, rawRequest) => {
   const { sequenceId } = rawRequest;
-  const { loadouts, monster, calcOpts } = data;
+  const { player, monster, calcOpts } = data;
   lastSequenceId = sequenceId!;
 
-  const prevBase = ttkModulus * NUMBER_OF_LOADOUTS;
-  ttkModulus += 1;
-  ttkModulus %= 2;
-  const currBase = ttkModulus * NUMBER_OF_LOADOUTS;
-
-  // kill in progress computes immediately
-  for (let i = 0; i < NUMBER_OF_LOADOUTS; i++) {
-    ttkWorkers[prevBase + i]?.worker?.terminate();
-  }
+  // kill the opposite in-progress worker immediately
+  ttkWorkers[currentJob % 2]?.worker?.terminate();
+  currentJob += 1;
 
   // fire off a ttk compute for each loadout
   const start = self.performance.now();
-  const requests: Promise<TtkResponse>[] = [];
-  for (let i = 0; i < loadouts.length; i++) {
-    const loadout = loadouts[i];
-    if (!loadout) {
-      continue;
-    }
 
-    // ideally this never creates inline, but it's fine if it does
-    const { promise, worker } = ttkWorkers[currBase + i] || (ttkWorkers[currBase + i] = createTtkWorker());
-    worker.postMessage(JSON.stringify(<TtkRequest>{
-      type: WorkerRequestType.COMPUTE_TTK,
-      sequenceId: sequenceId!,
-      data: {
-        loadouts: [loadout], // we're just splitting up the payloads into one per worker
-        monster,
-        calcOpts,
-      },
-    }));
-    requests.push(promise.promise);
-  }
+  // ideally this never creates inline, but it's fine if it does
+  const { promise, worker } = ttkWorkers[currentJob] ?? (ttkWorkers[currentJob] = createTtkWorker());
+  worker.postMessage(JSON.stringify(<TtkRequest>{
+    type: WorkerRequestType.COMPUTE_TTK,
+    sequenceId: sequenceId!,
+    data: {
+      player, // we're just splitting up the payloads into one per worker
+      monster,
+      calcOpts,
+    },
+  }));
 
-  // while we wait for the jobs to finish we can spin up the workers for the next request
-  for (let i = 0; i < NUMBER_OF_LOADOUTS; i++) {
-    ttkWorkers[prevBase + i] = createTtkWorker();
-  }
+  // while we wait for the jobs to finish we can spin up the worker for the next request
+  ttkWorkers[(currentJob + 1) % 2] = createTtkWorker();
 
   // this is where the "parallel" magic happens,
   // since await clears the call stack allowing other requests to come in and cancel the previous
   // todo it would be pretty nice if we could stream these back instead of batching
-  const results = await Promise.all(requests);
+  const result = await promise.promise;
   const end = self.performance.now();
-  console.debug(`Aggregating ${requests.length} TTK dists took ${end - start}`);
+  console.debug(`TTK dist ${player.name}/seq${sequenceId} took ${end - start}`);
 
   // only need to check first elt, since all reqs in requests array are guaranteed to match
-  if (results[0].sequenceId !== lastSequenceId) {
+  if (result.sequenceId !== lastSequenceId) {
     // this shouldn't really happen except in rare race conditions,
     // but it'll get dropped by CalcWorker on return so we can return empty
-    console.debug(`Dropping ttk parallel ${results[0].sequenceId} as stale`);
-    return [];
+    console.debug(`Dropping ttk parallel ${result.sequenceId} as stale`);
+    return {
+      state: CalcState.NOT_APPLICABLE,
+    };
   }
 
-  // unwrap
-  const ret: TtkResponse['payload'] = [];
-  for (const [ix, { payload, error }] of results.entries()) {
-    if (error) {
-      throw new Error(error);
-    }
-
-    ret[ix] = payload[0];
-  }
-
-  return ret;
+  return result.payload;
 };
 
 self.onmessage = async (evt: MessageEvent<string>) => {
-  const req = JSON.parse(evt.data, WORKER_JSON_REVIVER) as CalcRequestsUnion;
+  const req = JSON.parse(evt.data, JSON_REVIVER) as CalcRequestsUnion;
   const { type, sequenceId, data } = req;
 
   const res = {
@@ -217,31 +199,21 @@ self.onmessage = async (evt: MessageEvent<string>) => {
   // Interpret the incoming request, and action it accordingly
   try {
     switch (type) {
-      case WorkerRequestType.COMPUTE_BASIC: {
-        res.payload = await computePvMValues(data, req);
+      case WorkerRequestType.COMPUTE_BASIC:
+        res.payload = await computeBasic(data, req);
         break;
-      }
 
-      case WorkerRequestType.COMPUTE_REVERSE: {
-        res.payload = await computeMvPValues(data, req);
+      case WorkerRequestType.COMPUTE_REVERSE:
+        res.payload = await computeReverse(data, req);
         break;
-      }
 
-      case WorkerRequestType.COMPARE: {
+      case WorkerRequestType.COMPARE:
         res.payload = await compare(data, req);
         break;
-      }
 
-      // keep direct access here even though we normally proxy, for debugging if needed
-      case WorkerRequestType.COMPUTE_TTK: {
-        res.payload = await ttkDist(data, req);
-        break;
-      }
-
-      case WorkerRequestType.COMPUTE_TTK_PARALLEL: {
+      case WorkerRequestType.COMPUTE_TTK:
         res.payload = await ttkDistParallel(data, req);
         break;
-      }
 
       default:
         res.error = `Unsupported request type ${type}`;
@@ -251,12 +223,12 @@ self.onmessage = async (evt: MessageEvent<string>) => {
       console.error(e);
       res.error = e.message;
     } else {
-      res.error = `Unknown error type: ${e}`;
+      res.error = `Unknown error type ${typeof e}: ${e}`;
     }
   }
 
   // Send message back to the master
-  self.postMessage(JSON.stringify(res, WORKER_JSON_REPLACER));
+  self.postMessage(JSON.stringify(res, JSON_REPLACER));
 };
 
 export {};

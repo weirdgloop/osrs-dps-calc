@@ -1,5 +1,4 @@
 import { Player, PlayerSkills } from '@/types/Player';
-import { Monster } from '@/types/Monster';
 import { scaleMonster, scaleMonsterHpOnly } from '@/lib/MonsterScaling';
 import { max } from 'd3-array';
 import { keys, typedMerge } from '@/utils';
@@ -10,6 +9,7 @@ import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
 import { DPS_PRECISION } from '@/lib/constants';
 import { ChartAnnotation, ChartEntry } from '@/types/Charts';
+import { Monster } from '../types/Monster';
 
 export enum CompareXAxis {
   MONSTER_DEF,
@@ -70,7 +70,6 @@ export default class Comparator {
 
     this.commonOpts = {
       loadoutName: 'comparator',
-      disableMonsterScaling: true,
     };
   }
 

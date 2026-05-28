@@ -1,5 +1,3 @@
-import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
-import { Monster } from '@/types/Monster';
 import { EquipmentPiece, Player } from '@/types/Player';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import { DetailEntry, DetailKey } from '@/lib/CalcDetails';
@@ -12,6 +10,8 @@ import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
 import { getCombatStylesForCategory } from '@/utils';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { CalcOpts } from '@/lib/BaseCalc';
+import { Monster } from '../../types/Monster';
+import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
 import eq from '../../../cdn/json/equipment.json';
 
 const monsters = getMonsters().map((m) => ({

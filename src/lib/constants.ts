@@ -9,6 +9,50 @@ export const BLOWPIPE_IDS: number[] = [
   30374, // drygore
 ];
 
+export enum DartId {
+  BRONZE = 806,
+  IRON = 807,
+  STEEL = 808,
+  BLACK = 3093,
+  MITHRIL = 809,
+  ADAMANT = 810,
+  RUNE = 811,
+  AMETHYST = 25849,
+  DRAGON = 11230,
+}
+
+export const DART_IDS: DartId[] = [
+  DartId.BRONZE, // bronze
+  DartId.IRON, // iron
+  DartId.STEEL, // steel
+  DartId.BLACK, // black
+  DartId.MITHRIL, // mithril
+  DartId.ADAMANT, // adamant
+  DartId.RUNE, // rune
+  DartId.AMETHYST, // amethyst
+  DartId.DRAGON, // dragon
+];
+
+export const DART_TIERS: Record<DartId, number> = {
+  [DartId.BRONZE]: 0, // bronze
+  [DartId.IRON]: 1, // iron
+  [DartId.STEEL]: 2, // steel
+  [DartId.BLACK]: 3, // black
+  [DartId.MITHRIL]: 4, // mithril
+  [DartId.ADAMANT]: 5, // adamant
+  [DartId.RUNE]: 6, // rune
+  [DartId.AMETHYST]: 7, // amethyst
+  [DartId.DRAGON]: 8, // dragon
+};
+
+export const MAX_DART_TIER_BY_BLOWPIPE: Record<number, number> = {
+  31575: DART_TIERS[DartId.MITHRIL],
+  31579: DART_TIERS[DartId.ADAMANT],
+  31583: DART_TIERS[DartId.ADAMANT],
+};
+
+export const CUSTOM_MONSTER_ID = -1;
+
 // The maximum number of loadouts that users can have. Do not lower it, else it will cause share link issues.
 export const NUMBER_OF_LOADOUTS = 6;
 

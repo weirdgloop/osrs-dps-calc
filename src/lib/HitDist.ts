@@ -7,7 +7,12 @@ import {
   some,
   sum,
 } from 'd3-array';
-import { ChartEntry } from '@/types/Charts';
+
+export interface HitDistEntry {
+  damage: number;
+  probability: number;
+  accurate: boolean;
+}
 
 export type HitTransformer = (hitsplat: Hitsplat) => HitDistribution;
 
@@ -347,24 +352,23 @@ export class AttackDistribution {
     return sum(this.dists.map((d) => d.expectedHit())) || 0;
   }
 
-  public asHistogram(hideMisses: boolean = false): (ChartEntry & { name: string, value: number })[] {
+  public asHistogram(): HitDistEntry[] {
     const dist = this.singleHitsplat;
 
     const hitMap = new Map<number, number>();
     dist.hits.forEach((h) => {
-      if (!hideMisses || h.anyAccurate()) {
-        hitMap.set(h.getSum(), (hitMap.get(h.getSum()) || 0) + h.probability);
-      }
+      const k = h.anyAccurate() ? h.getSum() : ~h.getSum();
+      hitMap.set(k, (hitMap.get(k) ?? 0) + h.probability);
     });
 
-    const ret: { name: string, value: number }[] = [];
-    for (let i = 0; i <= dist.getMax(); i++) {
-      const prob = hitMap.get(i);
-      if (prob === undefined) {
-        ret.push({ name: i.toString(), value: 0 });
-      } else {
-        ret.push({ name: i.toString(), value: prob });
-      }
+    const ret: HitDistEntry[] = [];
+    for (const [k, prob] of hitMap.entries()) {
+      const accurate = k >= 0;
+      ret.push({
+        accurate,
+        damage: accurate ? k : ~k,
+        probability: prob,
+      });
     }
 
     return ret;

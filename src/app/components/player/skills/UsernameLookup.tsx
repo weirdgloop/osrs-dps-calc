@@ -1,14 +1,16 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { observer } from 'mobx-react-lite';
-import { useStore } from '@/state';
-import localforage from 'localforage';
+import { useUIState } from '@/state/UIStateStore';
+import { usePlayer } from '../../../../state/LoadoutStore';
 
 const UsernameLookup: React.FC = observer(() => {
-  const store = useStore();
-  const username = store.ui.username || '';
-  const shouldRemember = store.prefs.rememberUsername;
-  const [btnDisabled, setBtnDisabled] = useState(false);
-  const btn = useRef<HTMLButtonElement>(null);
+  const { username, updateUIState } = useUIState();
+  const { isLoadingPlayerSkills, loadPlayerSkills } = usePlayer();
+
+  const onSubmit = () => {
+    // noinspection JSIgnoredPromiseFromCall resolution is handled in loadPlayerSkills via toast
+    loadPlayerSkills(username);
+  };
 
   return (
     <>
@@ -17,29 +19,18 @@ const UsernameLookup: React.FC = observer(() => {
         className="form-control rounded w-full mt-auto"
         placeholder="OSRS username"
         value={username}
-        onChange={(e) => {
-          store.updateUIState({ username: e.currentTarget.value });
-          if (shouldRemember) {
-            localforage.setItem('dps-calc-username', e.currentTarget.value).catch(() => {
-            });
-          }
-        }}
+        onChange={(e) => { updateUIState({ username: e.target.value }); }}
         onKeyUp={(e) => {
           if (e.key === 'Enter') {
-            btn.current?.click();
+            onSubmit();
           }
         }}
       />
       <button
-        ref={btn}
-        disabled={!username || btnDisabled}
+        disabled={!username || isLoadingPlayerSkills}
         type="button"
         className="ml-1 text-sm btn"
-        onClick={async () => {
-          setBtnDisabled(true);
-          await store.fetchCurrentPlayerSkills();
-          setBtnDisabled(false);
-        }}
+        onClick={() => onSubmit()}
       >
         Lookup
       </button>

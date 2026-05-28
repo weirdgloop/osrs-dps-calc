@@ -1,26 +1,38 @@
-import React, { PropsWithChildren, useMemo } from 'react';
+import React, { PropsWithChildren } from 'react';
 import { observer } from 'mobx-react-lite';
-import { useStore } from '@/state';
-import { PlayerVsNPCCalculatedLoadout } from '@/types/State';
 import Spinner from '@/app/components/Spinner';
 import { ACCURACY_PRECISION, DPS_PRECISION, EXPECTED_HIT_PRECISION } from '@/lib/constants';
-import { max, min, some } from 'd3-array';
-import { toJS } from 'mobx';
-import { isDefined } from '@/utils';
-import UserIssueType from '@/enums/UserIssueType';
+import { max, min } from 'd3-array';
+import { computed } from 'mobx';
+import { FeatureStatus, isDefined } from '@/utils';
+import { BasicResult, CalcState } from '@/types/Results';
+import { ConditionalKeys } from 'type-fest';
+import { useLoadouts } from '@/state/LoadoutStore';
+import { LoadoutId } from '@/types/Player';
+import { usePreferences } from '@/state/Preferences';
+import { IconAlertTriangle } from '@tabler/icons-react';
+import { clsx } from 'clsx';
 
-interface IResultRowProps {
-  calcKey: keyof Omit<PlayerVsNPCCalculatedLoadout, 'ttkDist'>;
-  hasResults: boolean;
-  collapseSpecs?: boolean;
-  title?: string;
-}
+type ResultKey = ConditionalKeys<BasicResult, number | undefined>;
 
-const calcKeyToString = (value: number, calcKey: keyof PlayerVsNPCCalculatedLoadout): string | React.ReactNode => {
-  if (value === undefined || value === null) {
-    return (<p className="text-sm">---</p>);
-  }
+const RowHints: { [k in ResultKey]: string } = {
+  maxHit: 'The maximum damage the player can deal in a single attack.',
+  expectedHit: 'The average damage per attack, including misses.',
+  dps: 'The average damage the player can expect to deal per second.',
+  ttk: 'The average time it takes for the player to kill the NPC.',
+  accuracy: 'The chance for any given attack to hit the target.',
+  maxAttackRoll: 'The maximum attack roll the player can achieve.',
+  npcDefRoll: 'The defense roll of the NPC.',
+  specMaxHit: 'The maximum damage the player can deal with a special attack.',
+  specAccuracy: 'The chance for any given special attack to hit the target.',
+  specExpectedHit: 'The amount of damage the player can expect to deal with a special attack.',
+  specMaxAttackRoll: 'The maximum attack roll the player can achieve with a special attack.',
+  specFullDps: 'The average damage the player can expect to deal per second with a special attack.',
+  specMomentDps: 'The average damage the player can expect to deal per second with a special attack, considering momentary effects.',
+  specNpcDefRoll: 'The defense roll of the NPC when the player uses a special attack.',
+};
 
+const calcKeyToString = (value: number, calcKey: keyof BasicResult): string | React.ReactNode => {
   switch (calcKey) {
     case 'accuracy':
     case 'specAccuracy':
@@ -31,24 +43,24 @@ const calcKeyToString = (value: number, calcKey: keyof PlayerVsNPCCalculatedLoad
     case 'specFullDps':
       return value.toPrecision(DPS_PRECISION);
     case 'expectedHit':
-    case 'specExpected':
+    case 'specExpectedHit':
       return value.toFixed(EXPECTED_HIT_PRECISION);
     case 'ttk':
       return value === 0
         ? '-----'
         : `${value.toFixed(1)}s`;
     default:
-      return `${value}`;
+      return value.toString();
   }
 };
 
-const ResultRowHeader: React.FC<PropsWithChildren> = (props) => {
+const ResultSectionHeader: React.FC<PropsWithChildren> = (props) => {
   const { children } = props;
 
   return (
     <tr>
       <th
-        className="t-group-header"
+        className="px-4 italic pl-6 border-r bg-dark-600 select-none text-body-300"
         colSpan={999}
       >
         {children}
@@ -57,134 +69,213 @@ const ResultRowHeader: React.FC<PropsWithChildren> = (props) => {
   );
 };
 
-const ResultRow: React.FC<PropsWithChildren<IResultRowProps>> = observer((props) => {
-  const store = useStore();
+interface ResultCellProps {
+  className?: string;
+  rowSpan?: number;
+  isBest?: boolean;
+}
+
+const Cell: React.FC<React.PropsWithChildren<ResultCellProps>> = observer((props) => {
   const {
-    children,
-    calcKey,
-    title,
-    hasResults,
-    collapseSpecs,
+    className, rowSpan, isBest, children,
   } = props;
-  const { calc, userIssues } = store;
-  const loadouts = toJS(calc.loadouts);
 
-  const cells = useMemo(() => {
-    const aggregator = ['ttk', 'npcDefRoll'].includes(calcKey) ? min : max;
-    const bestValue = aggregator(Object.values(loadouts).filter((l) => (calcKey === 'ttk' ? l[calcKey] !== 0 : true)), (l) => l[calcKey] as number);
+  return (
+    <td
+      rowSpan={rowSpan ?? 1}
+      className={clsx(
+        'w-28 border-r text-center',
+        isBest ? 'text-green-200' : 'text-body-200',
+        className,
+      )}
+    >
+      {children}
+    </td>
+  );
+});
 
-    return Object.values(loadouts).map((l, i) => {
-      const value = l[calcKey] as number;
-      if (hasResults && calcKey.startsWith('spec') && (value === undefined || value === null)) {
-        // results are in, but the weapon has no implemented special attack
-        // we colspan on the first entry (specAccuracy) if extended, and just return nothing for the rest
-        return (calcKey === 'specAccuracy' || !collapseSpecs)
-          ? (
-            // eslint-disable-next-line react/no-array-index-key
-            <th key={i} rowSpan={5} className="w-28 border-r bg-dark-400 text-dark-200 text-center text-xs">
-              {userIssues.find((is) => is.loadout === `${i + 1}` && is.type === UserIssueType.EQUIPMENT_SPEC_UNSUPPORTED) ? 'Not implemented' : 'N/A'}
-            </th>
-          ) : undefined;
-      }
+interface BasicResultCellProps {
+  selector: ResultKey;
+  loadingRowSpan: number;
+  noSpecRowSpan?: number;
+  loadoutId: LoadoutId;
+  bestValue?: number;
+}
 
-      return (
-        // eslint-disable-next-line react/no-array-index-key
-        <th className={`text-center w-28 border-r ${((Object.values(loadouts).length > 1) && bestValue === value) ? 'dark:text-green-200 text-green-800' : 'dark:text-body-200 text-black'}`} key={i}>
-          {hasResults ? calcKeyToString(value, calcKey) : (<Spinner className="w-3" />)}
-        </th>
-      );
+const ResultCell: React.FC<BasicResultCellProps> = observer((props) => {
+  const { loadouts } = useLoadouts();
+  const {
+    selector, loadingRowSpan, noSpecRowSpan, loadoutId, bestValue,
+  } = props;
+
+  const loadout = loadouts.get(loadoutId);
+  if (!loadout) {
+    return null;
+  }
+
+  const result = loadout.results.basic;
+  if (result.state !== CalcState.COMPLETE && loadingRowSpan === 0) {
+    // already covered by a previous row's rowSpan
+    return null;
+  }
+
+  const hasSpecData = result.state === CalcState.COMPLETE && result.specStatus === FeatureStatus.IMPLEMENTED;
+  if (noSpecRowSpan !== undefined && !hasSpecData) {
+    if (noSpecRowSpan === 0) {
+      return null;
+    }
+  }
+
+  if (result.state === CalcState.PENDING) {
+    return (
+      <Cell rowSpan={loadingRowSpan}>
+        <Spinner className="w-3" />
+      </Cell>
+    );
+  }
+
+  if (result.state === CalcState.FAILED) {
+    return (
+      <Cell rowSpan={loadingRowSpan}>
+        <IconAlertTriangle className="w-3 text-red-500" />
+      </Cell>
+    );
+  }
+
+  const value = result.state === CalcState.COMPLETE ? result[selector] : undefined;
+  if (value === undefined) {
+    return (
+      <Cell rowSpan={loadingRowSpan} className="text-dark-200 bg-dark-400 text-xs">
+        N/A
+      </Cell>
+    );
+  }
+
+  return (
+    <Cell isBest={value === bestValue}>
+      {calcKeyToString(value, selector)}
+    </Cell>
+  );
+});
+
+interface ResultRowProps {
+  title: string;
+  selector: ResultKey;
+  aggregator: 'min' | 'max';
+  loadingRowSpan: number;
+  noSpecRowSpan?: number;
+}
+
+const ResultRow: React.FC<ResultRowProps> = observer((props) => {
+  const { loadouts, allLoadouts } = useLoadouts();
+  const {
+    title,
+    selector,
+    aggregator,
+    loadingRowSpan,
+    noSpecRowSpan,
+  } = props;
+
+  const cellValues = computed(() => allLoadouts.map((loadoutId) => {
+    const result = loadouts.get(loadoutId)!.results.basic;
+    return ({
+      loadoutId,
+      value: result.state === CalcState.COMPLETE ? result[selector] : undefined,
     });
-  }, [loadouts, calcKey, collapseSpecs, hasResults, userIssues]);
+  })).get();
+
+  const bestValue = computed(() => {
+    if (allLoadouts.length < 2 || !aggregator) {
+      return undefined;
+    }
+
+    const values = cellValues.map((v) => v.value).filter(isDefined);
+    return aggregator === 'min' ? min(values) : max(values);
+  }).get();
 
   return (
     <tr>
-      <th className="w-40 px-4 border-r bg-btns-400 dark:bg-dark-500 select-none cursor-help underline decoration-dotted decoration-gray-300" title={title}>{children}</th>
-      {cells}
+      <th
+        scope="row"
+        className="w-40 px-4 border-r bg-dark-500 select-none cursor-help underline decoration-dotted decoration-gray-300"
+        title={title}
+        data-tooltip-id="tooltip"
+        data-tooltip-content={RowHints[selector]}
+      >
+        {title}
+      </th>
+      {allLoadouts.map((loadoutId) => (
+        <ResultCell
+          key={loadoutId}
+          selector={selector}
+          loadingRowSpan={loadingRowSpan}
+          noSpecRowSpan={noSpecRowSpan}
+          loadoutId={loadoutId}
+          bestValue={bestValue}
+        />
+      ))}
     </tr>
   );
 });
 
-const PlayerVsNPCResultsTable: React.FC = observer(() => {
-  const store = useStore();
-  const { selectedLoadout, calc } = store;
-  const { resultsExpanded } = store.prefs;
+const CondensedResults: React.FC = () => (
+  <>
+    <ResultRow title="Max hit" selector="maxHit" aggregator="max" loadingRowSpan={5} />
+    <ResultRow title="DPS" selector="dps" aggregator="max" loadingRowSpan={0} />
+    <ResultRow title="Avg. TTK" selector="ttk" aggregator="min" loadingRowSpan={0} />
+    <ResultRow title="Accuracy" selector="accuracy" aggregator="max" loadingRowSpan={0} />
+    <ResultRow title="Spec expected hit" selector="specExpectedHit" aggregator="max" noSpecRowSpan={1} loadingRowSpan={0} />
+  </>
+);
 
-  const loadouts = toJS(calc.loadouts);
-  const hasResults = useMemo(() => some(loadouts, (l) => some(Object.entries(l), ([, v]) => isDefined(v))), [loadouts]);
+const ExpandedResults: React.FC = () => (
+  <>
+    <ResultSectionHeader>Basic Attacks</ResultSectionHeader>
+    <ResultRow title="Max hit" selector="maxHit" aggregator="max" loadingRowSpan={5} />
+    <ResultRow title="Expected hit" selector="expectedHit" aggregator="max" loadingRowSpan={0} />
+    <ResultRow title="DPS" selector="dps" aggregator="max" loadingRowSpan={0} />
+    <ResultRow title="Avg. TTK" selector="ttk" aggregator="min" loadingRowSpan={0} />
+    <ResultRow title="Accuracy" selector="accuracy" aggregator="max" loadingRowSpan={0} />
+    <ResultSectionHeader>Rolls</ResultSectionHeader>
+    <ResultRow title="Attack roll" selector="maxAttackRoll" aggregator="max" loadingRowSpan={2} />
+    <ResultRow title="NPC Defence roll" selector="npcDefRoll" aggregator="min" loadingRowSpan={0} />
+    <ResultSectionHeader>Special Attacks</ResultSectionHeader>
+    <ResultRow title="Max hit" selector="specMaxHit" aggregator="max" loadingRowSpan={5} noSpecRowSpan={5} />
+    <ResultRow title="Expected hit" selector="specExpectedHit" aggregator="max" loadingRowSpan={0} noSpecRowSpan={0} />
+    <ResultRow title="DPS" selector="specMomentDps" aggregator="max" loadingRowSpan={0} noSpecRowSpan={0} />
+    <ResultRow title="Spec-only DPS" selector="specFullDps" aggregator="max" loadingRowSpan={0} noSpecRowSpan={0} />
+    <ResultRow title="Accuracy" selector="specAccuracy" aggregator="max" loadingRowSpan={0} noSpecRowSpan={0} />
+  </>
+);
+
+const PlayerVsNPCResultsTable: React.FC = observer(() => {
+  const { loadouts, selectedLoadout, selectLoadout } = useLoadouts();
+  const { resultsExpanded } = usePreferences();
 
   return (
     <table>
       <thead>
         <tr>
-          <th aria-label="blank" className="bg-btns-400 border-r dark:bg-dark-500 select-none" />
-          {store.loadouts.map(({ name }, i) => (
+          <th aria-label="blank" className="border-r bg-dark-500 select-none" />
+          {[...loadouts.entries()].map(([loadoutId, loadout]) => (
             <th
+              scope="col"
               role="button"
               tabIndex={0}
-            // eslint-disable-next-line react/no-array-index-key
-              key={i}
-              className={`text-center w-28 border-r py-1.5 font-bold font-serif leading-tight text-xs cursor-pointer transition-colors ${selectedLoadout === i ? 'bg-orange-400 dark:bg-orange-700' : 'bg-btns-400 dark:bg-dark-500'}`}
-              onClick={() => store.setSelectedLoadout(i)}
+              key={loadoutId}
+              className={clsx(
+                'text-center w-28 border-r py-1.5 font-bold font-serif leading-tight text-xs cursor-pointer transition-colors',
+                selectedLoadout === loadoutId ? 'bg-orange-700' : 'bg-dark-500',
+              )}
+              onClick={() => selectLoadout(loadoutId)}
             >
-              {name}
+              {loadout.basePlayer.name}
             </th>
           ))}
         </tr>
       </thead>
       <tbody>
-        <ResultRow calcKey="maxHit" title="The maximum hit that you will deal to the monster" hasResults={hasResults}>
-          Max hit
-        </ResultRow>
-        {resultsExpanded && (
-          <ResultRow calcKey="expectedHit" title="The average damage per attack, including misses." hasResults={hasResults}>
-            Expected hit
-          </ResultRow>
-        )}
-        <ResultRow calcKey="dps" title="The average damage you will deal per-second" hasResults={hasResults}>
-          DPS
-        </ResultRow>
-        <ResultRow calcKey="ttk" title="The average time (in seconds) it will take to defeat the monster" hasResults={hasResults}>
-          Avg. TTK
-        </ResultRow>
-        <ResultRow calcKey="accuracy" title="How accurate you are against the monster" hasResults={hasResults}>
-          Accuracy
-        </ResultRow>
-        {!resultsExpanded && (
-          <ResultRow calcKey="specExpected" title="The expected hit that the special attack will deal to the monster per use, including misses" hasResults={hasResults} collapseSpecs={resultsExpanded}>
-            Spec expected hit
-          </ResultRow>
-        )}
-        {resultsExpanded && (
-          <>
-            <ResultRowHeader>
-              Rolls
-            </ResultRowHeader>
-            <ResultRow calcKey="maxAttackRoll" title="The maximum attack roll based on your current gear (higher is better!)" hasResults={hasResults}>
-              Attack roll
-            </ResultRow>
-            <ResultRow calcKey="npcDefRoll" title="The NPC's defense roll (lower is better!)" hasResults={hasResults}>
-              NPC def roll
-            </ResultRow>
-            <ResultRowHeader>
-              Special attack
-            </ResultRowHeader>
-            <ResultRow calcKey="specAccuracy" title="How accurate your special attack is against the monster" hasResults={hasResults} collapseSpecs={resultsExpanded}>
-              Accuracy
-            </ResultRow>
-            <ResultRow calcKey="specMomentDps" title="The average damage you would deal per-second, given infinite special attack energy" hasResults={hasResults} collapseSpecs={resultsExpanded}>
-              DPS
-            </ResultRow>
-            <ResultRow calcKey="specFullDps" title="The damage per-second of the special attack, accounting for special attack regeneration" hasResults={hasResults} collapseSpecs={resultsExpanded}>
-              Spec-only DPS
-            </ResultRow>
-            <ResultRow calcKey="specMaxHit" title="The maximum hit that the special attack can deal to the monster" hasResults={hasResults} collapseSpecs={resultsExpanded}>
-              Max hit
-            </ResultRow>
-            <ResultRow calcKey="specExpected" title="The expected hit that the special attack will deal to the monster per use, including misses" hasResults={hasResults} collapseSpecs={resultsExpanded}>
-              Expected hit
-            </ResultRow>
-          </>
-        )}
+        {resultsExpanded ? <ExpandedResults /> : <CondensedResults />}
       </tbody>
     </table>
   );

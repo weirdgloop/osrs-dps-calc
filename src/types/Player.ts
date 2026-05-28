@@ -2,27 +2,49 @@ import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { Prayer } from '@/enums/Prayer';
 import Potion from '@/enums/Potion';
 import { Spell } from '@/types/Spell';
-import { PlayerCombatStyle } from '@/types/PlayerCombatStyle';
-import { LeaguesEffect } from '@/app/components/player/demonicPactsLeague/parse_skill_tree_elements';
+import { getCombatStylesForCategory, PlayerCombatStyle } from '@/types/PlayerCombatStyle';
+import { DEFAULT_ATTACK_SPEED } from '@/lib/constants';
+import { LeaguesEffect } from '@/app/components/player/demonicPactsLeague/pactSelector/parse_skill_tree_elements';
+import { MergeDeep } from 'type-fest';
 
-export interface PlayerSkills {
-  atk: number;
-  def: number;
-  hp: number;
-  magic: number;
-  prayer: number;
-  ranged: number;
-  str: number;
-  mining: number;
-  herblore: number;
+export enum PlayerSkill {
+  ATTACK = 'atk',
+  DEFENCE = 'def',
+  HITPOINTS = 'hp',
+  MAGIC = 'magic',
+  PRAYER = 'prayer',
+  RANGED = 'ranged',
+  STRENGTH = 'str',
+  MINING = 'mining',
+  HERBLORE = 'herblore',
 }
+
+export type PlayerSkills = Record<PlayerSkill, number>;
+
+export enum EquipmentSlot {
+  HEAD = 'head',
+  CAPE = 'cape',
+  NECK = 'neck',
+  AMMO = 'ammo',
+  WEAPON = 'weapon',
+  BODY = 'body',
+  SHIELD = 'shield',
+  LEGS = 'legs',
+  HANDS = 'hands',
+  FEET = 'feet',
+  RING = 'ring',
+}
+
+export const isEquipmentSlot = (s: string): s is EquipmentSlot => Object.values(EquipmentSlot).includes(s as EquipmentSlot);
+
+export type PlayerEquipment = Record<EquipmentSlot, EquipmentPiece | null>;
 
 export interface EquipmentPiece extends EquipmentStats {
   name: string;
   id: number;
   weight: number;
   version: string;
-  slot: keyof PlayerEquipment;
+  slot: EquipmentSlot;
   image: string;
   speed: number;
   category: EquipmentCategory;
@@ -31,24 +53,6 @@ export interface EquipmentPiece extends EquipmentStats {
     blowpipeDartName?: string;
     blowpipeDartId?: number;
   };
-}
-
-/**
- * Each slot is represented by an item ID. We've used a string rather than a number here to represent the IDs in case
- * we have to use strings in the future (for arbitrary, non-ID values).
- */
-export interface PlayerEquipment {
-  head: EquipmentPiece | null;
-  cape: EquipmentPiece | null;
-  neck: EquipmentPiece | null;
-  ammo: EquipmentPiece | null;
-  weapon: EquipmentPiece | null;
-  body: EquipmentPiece | null;
-  shield: EquipmentPiece | null;
-  legs: EquipmentPiece | null;
-  hands: EquipmentPiece | null;
-  feet: EquipmentPiece | null;
-  ring: EquipmentPiece | null;
 }
 
 export interface PlayerBonuses {
@@ -87,12 +91,6 @@ export interface LeaguesState {
 
   distanceToEnemy: number;
 
-  enemyPrayers: {
-    melee: boolean;
-    ranged: boolean;
-    magic: boolean;
-  }
-
   blindbagWeapons: EquipmentPiece[];
 
   regenerateMagicBonus: number;
@@ -102,21 +100,14 @@ export interface LeaguesState {
   bowHitsWithoutDamage: number;
 }
 
-export interface Player extends EquipmentStats {
+export type LoadoutId = number;
+
+export interface PlayerBase {
   name: string;
   style: PlayerCombatStyle;
-  /**
-   * The player's base skill levels. These are their skill levels before any boosts (for example, from potions)
-   * are applied.
-   */
   skills: PlayerSkills;
-  /**
-   * These are the values for each skill that should be added to each of the "skills" property's values to compute
-   * the player's "current" skill levels.
-   */
-  boosts: PlayerSkills;
+  currentHp: number;
   equipment: PlayerEquipment;
-  attackSpeed: number;
   prayers: Prayer[];
   buffs: {
     /**
@@ -167,8 +158,123 @@ export interface Player extends EquipmentStats {
     usingSunfireRunes: boolean;
   };
   spell: Spell | null;
-
   leagues: {
-    six: LeaguesState
+    six: Omit<LeaguesState, 'effects'>;
   }
 }
+
+export const createDefaultPlayer = (name?: string): PlayerBase => ({
+  name: name ?? 'New Loadout',
+  style: getCombatStylesForCategory(EquipmentCategory.UNARMED)[0],
+  skills: {
+    atk: 99,
+    def: 99,
+    hp: 99,
+    magic: 99,
+    prayer: 99,
+    ranged: 99,
+    str: 99,
+    mining: 99,
+    herblore: 99,
+  },
+  currentHp: 99,
+  equipment: {
+    ammo: null,
+    body: null,
+    cape: null,
+    feet: null,
+    hands: null,
+    head: null,
+    legs: null,
+    neck: null,
+    ring: null,
+    shield: null,
+    weapon: null,
+  },
+  prayers: [],
+  buffs: {
+    potions: [],
+    onSlayerTask: true,
+    inWilderness: false,
+    kandarinDiary: true,
+    chargeSpell: false,
+    markOfDarknessSpell: false,
+    forinthrySurge: false,
+    soulreaperStacks: 0,
+    baAttackerLevel: 0,
+    chinchompaDistance: 4, // 4 tiles is the optimal range for "medium fuse" (rapid), which is the default selected stance
+    usingSunfireRunes: false,
+  },
+  spell: null,
+  leagues: {
+    six: {
+      selectedNodeIds: new Set<string>(['node1']),
+      distanceToEnemy: 1,
+      blindbagWeapons: [],
+      regenerateMagicBonus: 0,
+      cullingSpree: false,
+      bowHitsWithoutDamage: 0,
+    },
+  },
+});
+
+export interface PlayerDerived extends EquipmentStats {
+  boostedSkills: Omit<PlayerSkills, 'hp'>;
+  attackSpeed: number;
+  leagues: {
+    six: Pick<LeaguesState, 'effects'>;
+  }
+  spellMaxHit: number | null;
+}
+
+export type ManualModeDerivedOverrides =
+  Pick<PlayerDerived,
+  'offensive' |
+  'defensive' |
+  'bonuses' |
+  'attackSpeed' |
+  'spellMaxHit' |
+  'boostedSkills'
+  >;
+
+export const createDefaultPlayerDerived = (): PlayerDerived => ({
+  offensive: {
+    stab: 0,
+    slash: 0,
+    crush: 0,
+    magic: 0,
+    ranged: 0,
+  },
+  defensive: {
+    stab: 0,
+    slash: 0,
+    crush: 0,
+    magic: 0,
+    ranged: 0,
+  },
+  bonuses: {
+    str: 0,
+    ranged_str: 0,
+    magic_str: 0,
+    prayer: 0,
+  },
+  boostedSkills: {
+    atk: 99,
+    def: 99,
+    magic: 99,
+    prayer: 99,
+    ranged: 99,
+    str: 99,
+    mining: 99,
+    herblore: 99,
+  },
+  attackSpeed: DEFAULT_ATTACK_SPEED,
+  leagues: {
+    six: {
+      effects: {},
+    },
+  },
+  spellMaxHit: null,
+});
+
+export type Player = MergeDeep<PlayerBase, PlayerDerived>;

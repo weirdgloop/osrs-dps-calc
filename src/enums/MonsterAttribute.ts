@@ -17,6 +17,9 @@ export enum MonsterAttribute {
   XERICIAN = 'xerician',
 }
 
+export const isMonsterAttribute = (attr: string): attr is MonsterAttribute => Object.values(MonsterAttribute).includes(attr as MonsterAttribute);
+export const extractMonsterAttributes = (attr: string[]): MonsterAttribute[] => attr.filter(isMonsterAttribute);
+
 export const isVampyre = (attr: string | string[]): boolean => {
   if (Array.isArray(attr)) {
     return attr.some((a) => isVampyre(a));

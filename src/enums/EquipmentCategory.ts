@@ -37,6 +37,8 @@ export enum EquipmentCategory {
   WHIP = 'Whip',
 }
 
+export const isEquipmentCategory = (s: string): s is EquipmentCategory => Object.values(EquipmentCategory).includes(s as EquipmentCategory);
+
 export const MAGIC_WEAPONS = [
   EquipmentCategory.STAFF,
   EquipmentCategory.POWERED_WAND,

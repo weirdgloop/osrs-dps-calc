@@ -1,0 +1,25 @@
+diff --git a/es6/cartesian/getEquidistantTicks.js b/es6/cartesian/getEquidistantTicks.js
+index 3759d0f2b5f2b31652d9119cf6fa63cf9d036dc7..4482eee6887b9d918bb0f7a1b40a739bc901d700 100644
+--- a/es6/cartesian/getEquidistantTicks.js
++++ b/es6/cartesian/getEquidistantTicks.js
+@@ -10,7 +10,9 @@ export function getEquidistantTicks(sign, boundaries, getTickSize, ticks, minTic
+   var index = 0;
+   // Premature optimisation idea 1: Estimate a lower bound, and start from there.
+   // For now, start from every tick
+-  var stepsize = 1;
++  var stepsizes = [1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000];
++  var stepsize_index = 0;
++  var stepsize = stepsizes[stepsize_index];
+   var start = initialStart;
+   var _loop = function _loop() {
+       // Given stepsize, evaluate whether every stepsize-th tick can be shown.
+@@ -41,7 +43,8 @@ export function getEquidistantTicks(sign, boundaries, getTickSize, ticks, minTic
+         // Start all over with a larger stepsize
+         index = 0;
+         start = initialStart;
+-        stepsize += 1;
++        stepsize_index += 1;
++        stepsize = stepsizes[stepsize_index]
+       }
+       if (isShow) {
+         // If it can be shown, update the start

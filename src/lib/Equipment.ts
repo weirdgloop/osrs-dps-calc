@@ -18,6 +18,7 @@ export type EquipmentBonuses = Pick<Player, 'bonuses' | 'offensive' | 'defensive
  * All available equipment that a player can equip.
  */
 export const availableEquipment = equipment as EquipmentPiece[];
+export const findItemById = (id: number) => availableEquipment.find((eq) => eq.id === id);
 
 export const noStatExceptions = [
   'Castle wars bracelet',
@@ -448,7 +449,7 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
   }
 
   if (leagues.talent_ranged_strength_hp_difference) {
-    const hpDifference = Math.abs(player.boosts.hp);
+    const hpDifference = Math.abs(player.skills.hp - player.currentHp);
     const boost = Math.trunc(hpDifference / 10);
     totals.bonuses.ranged_str += boost;
   }
