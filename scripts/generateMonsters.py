@@ -32,7 +32,7 @@ BUCKET_API_FIELDS = [
     'flat_armour',
     'hitpoints',
     'image',
-    'poison_immune',
+    'poison_resistance',
     'venom_immune',
     'magic_damage_bonus',
     'magic_attack_bonus',
