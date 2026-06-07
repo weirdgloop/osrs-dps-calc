@@ -432,7 +432,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isRevWeaponBuffApplicable()) {
       maxHit = this.trackFactor(DetailKey.MAX_HIT_REV_WEAPON, maxHit, [3, 2]);
     }
-    if (this.wearing(['Silverlight', 'Darklight', 'Silverlight (dyed)']) && mattrs.includes(MonsterAttribute.DEMON)) {
+    if (this.wearing(['Silverlight', 'Darklight']) && mattrs.includes(MonsterAttribute.DEMON)) {
       maxHit = this.trackAddFactor(DetailKey.MAX_HIT_DEMONBANE, maxHit, this.demonbaneFactor(60));
     }
     if (this.wearing('Infernal tecpatl') && mattrs.includes(MonsterAttribute.DEMON)) {
@@ -2039,7 +2039,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         relevantEffects.push([divisionTransformer(2)]);
       } else if (this.player.style.type !== 'ranged'
         || !this.player.equipment.ammo?.name.includes(' brutal')
-        || this.player.equipment.weapon?.name !== 'Comp ogre bow') {
+        || !this.isWearingOgreBow()) {
         relevantEffects.push([divisionTransformer(4)]);
       }
     }
@@ -2813,7 +2813,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const currentHp = this.player.skills.hp + this.player.boosts.hp;
 
     // intentionally not capping to maxHp here as it functions on overheal
-    const damageBonusPct = Math.trunc(20 * currentHp / maxHp);
+    const damageBonusPct = maxHp > 0 ? Math.trunc(20 * currentHp / maxHp) : 0;
     return multiplyTransformer(100 + damageBonusPct, 100);
   }
 }

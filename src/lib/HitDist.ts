@@ -261,7 +261,7 @@ export class HitDistribution {
     }
 
     for (const [key, prob] of acc.entries()) {
-      const delay = (key & 0x8F000000) >> 24;
+      const delay = (key & 0xFF000000) >>> 24;
       const dmg = key & 0xFFFFFF;
       d.push([new WeightedHit(prob, [new Hitsplat(dmg, true)]), delay]);
     }
