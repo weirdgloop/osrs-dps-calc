@@ -195,16 +195,25 @@ export const ammoApplicability = (weaponId?: number, ammoId?: number): AmmoAppli
   return AmmoApplicability.INVALID;
 };
 
+// Prebuilt reverse lookup (variant item id -> canonical/base item id), built once at module load.
+const variantToCanonicalId: { [variantId: number]: number } = (() => {
+  const map: { [variantId: number]: number } = {};
+  for (const [k, v] of Object.entries(equipmentAliases)) {
+    const canonicalId = parseInt(k);
+    for (const variant of v) {
+      if (!(variant in map)) {
+        map[variant] = canonicalId;
+      }
+    }
+  }
+  return map;
+})();
+
 /**
  * Returns the canonical (base) item ID for a given item ID. This is useful if there are variants of each item.
  * @param itemId
  */
-export const getCanonicalItemId = (itemId: number): number => {
-  for (const [k, v] of Object.entries(equipmentAliases)) {
-    if (v.includes(itemId)) return parseInt(k);
-  }
-  return itemId;
-};
+export const getCanonicalItemId = (itemId: number): number => variantToCanonicalId[itemId] ?? itemId;
 
 export const getCanonicalItem = (equipmentPiece: EquipmentPiece): EquipmentPiece => {
   const canonicalId = getCanonicalItemId(equipmentPiece.id);
@@ -436,7 +445,7 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
   const dizanasQuiverCharged = cape?.name === "Dizana's max cape"
     || cape?.name === "Blessed dizana's quiver"
     || (cape?.name === "Dizana's quiver" && cape?.version === 'Charged');
-  if (dizanasQuiverCharged && ammoApplicability(player.equipment.weapon?.id, player.equipment.ammo?.id) === AmmoApplicability.INCLUDED) {
+  if (dizanasQuiverCharged && ammoApplicability(playerEquipment.weapon?.id, playerEquipment.ammo?.id) === AmmoApplicability.INCLUDED) {
     totals.offensive.ranged += 10;
     totals.bonuses.ranged_str += 1;
   }
