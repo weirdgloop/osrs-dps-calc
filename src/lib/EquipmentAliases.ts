@@ -234,11 +234,13 @@ const equipmentAliases = {
   30753: [30779], // Oathplate chest
   30750: [30777], // Oathplate helm
   30756: [30781], // Oathplate legs
+  33439: [33443, 33441], // Oathplate slayer helmet (i)#Nightmare Zone
   6568: [20050], // Obsidian cape
   12002: [19720], // Occult necklace
   11926: [12807], // Odium ward
   26219: [27246], // Osmumten's fang
   10555: [24176], // Penance skirt#Normal
+  33445: [33449, 33447], // Radiant slayer helmet (i)#Nightmare Zone
   10550: [24174], // Ranger hat#Normal
   2501: [12327, 12331], // Red d'hide body
   2495: [12329, 12333], // Red d'hide chaps
@@ -266,7 +268,7 @@ const equipmentAliases = {
   11770: [26767, 25258], // Seers ring (i)#Nightmare Zone
   24198: [24200], // Seren halo#Normal
   28266: [28476], // Shadow ancient sceptre#Normal
-  11864: [29816, 19639, 19643, 33066, 23073, 21264, 19647, 21888, 24370, 25910, 25898, 25904], // Slayer helmet
+  11864: [29816, 19639, 19643, 33066, 23073, 21264, 33340, 19647, 21888, 24370, 25910, 25898, 25904], // Slayer helmet
   11865: [29822, 29818, 29820, 26675, 19641, 25179, 26676, 19645, 25181, 33072, 33068, 33070, 26680, 23075, 25189, 26678, 21266, 25185, 26677, 19649, 25183, 26674, 25177, 26679, 21890, 25187, 26681, 24444, 25191, 26684, 25912, 25914, 26682, 25900, 25902, 26683, 25906, 25908], // Slayer helmet (i)#Nightmare Zone
   28264: [28475], // Smoke ancient sceptre#Normal
   11787: [12795], // Steam battlestaff
