@@ -60140,68 +60140,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Demonic slayer helmet",
-    "id": 33340,
-    "weight": 2.267,
-    "version": "Radiant",
-    "slot": "head",
-    "image": "Demonic slayer helmet (radiant).png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": -6,
-      "ranged": -2
-    },
-    "defensive": {
-      "stab": 30,
-      "slash": 32,
-      "crush": 27,
-      "magic": -1,
-      "ranged": 30
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Demonic slayer helmet",
-    "id": 33338,
-    "weight": 2.267,
-    "version": "Regular",
-    "slot": "head",
-    "image": "Demonic slayer helmet.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": -6,
-      "ranged": -2
-    },
-    "defensive": {
-      "stab": 30,
-      "slash": 32,
-      "crush": 27,
-      "magic": -1,
-      "ranged": 30
-    },
-    "isTwoHanded": false
-  },
-  {
     "name": "Desert amulet 1",
     "id": 13133,
     "weight": 0.01,
@@ -89502,7 +89440,7 @@
     "weight": 1.814,
     "version": "Broken",
     "slot": "weapon",
-    "image": "Iban's staff (o) (broken).png",
+    "image": "Iban's staff (b)(o).png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -89533,7 +89471,7 @@
     "weight": 2.267,
     "version": "Regular",
     "slot": "weapon",
-    "image": "Iban's staff (orn).png",
+    "image": "Iban's staff (o).png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -89595,7 +89533,7 @@
     "weight": 2.267,
     "version": "",
     "slot": "weapon",
-    "image": "Iban's staff (u).png",
+    "image": "Iban's staff (u) (o).png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -109368,6 +109306,130 @@
     "isTwoHanded": false
   },
   {
+    "name": "Oathplate slayer helmet",
+    "id": 33338,
+    "weight": 2.267,
+    "version": "",
+    "slot": "head",
+    "image": "Oathplate slayer helmet.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": -1,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Oathplate slayer helmet (i)",
+    "id": 33443,
+    "weight": 2.267,
+    "version": "Emir's Arena",
+    "slot": "head",
+    "image": "Oathplate slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Oathplate slayer helmet (i)",
+    "id": 33439,
+    "weight": 2.267,
+    "version": "",
+    "slot": "head",
+    "image": "Oathplate slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Oathplate slayer helmet (i)",
+    "id": 33441,
+    "weight": 2.267,
+    "version": "Soul Wars",
+    "slot": "head",
+    "image": "Oathplate slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Obsidian cape",
     "id": 6568,
     "weight": 1.814,
@@ -115905,6 +115967,130 @@
       "crush": 73,
       "magic": -3,
       "ranged": 81
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Radiant slayer helmet",
+    "id": 33340,
+    "weight": 2.267,
+    "version": "",
+    "slot": "head",
+    "image": "Radiant slayer helmet.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -6,
+      "ranged": -2
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": -1,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Radiant slayer helmet (i)",
+    "id": 33449,
+    "weight": 2.267,
+    "version": "Emir's Arena",
+    "slot": "head",
+    "image": "Radiant slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Radiant slayer helmet (i)",
+    "id": 33445,
+    "weight": 2.267,
+    "version": "",
+    "slot": "head",
+    "image": "Radiant slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Radiant slayer helmet (i)",
+    "id": 33447,
+    "weight": 2.267,
+    "version": "Soul Wars",
+    "slot": "head",
+    "image": "Radiant slayer helmet (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 3,
+      "ranged": 3
+    },
+    "defensive": {
+      "stab": 30,
+      "slash": 32,
+      "crush": 27,
+      "magic": 10,
+      "ranged": 30
     },
     "isTwoHanded": false
   },
