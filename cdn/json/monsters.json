@@ -2499,7 +2499,7 @@
   {
     "id": 13685,
     "name": "Amoxliatl",
-    "version": "",
+    "version": "Post-quest",
     "image": "Amoxliatl.png",
     "level": 263,
     "speed": 8,
@@ -2507,7 +2507,7 @@
       "Magic"
     ],
     "size": 3,
-    "max_hit": "22 (standard)<br>34 (Icicle Crash)",
+    "max_hit": "22 (standard)<br/>34 (Icicle Crash)",
     "skills": {
       "atk": 0,
       "def": 80,
@@ -2520,6 +2520,56 @@
       "atk": 0,
       "magic": 160,
       "magic_str": 15,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": -2,
+      "crush": 40,
+      "magic": 100,
+      "heavy": 200,
+      "standard": 200,
+      "light": 200,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [
+      "spectral"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": true,
+    "weakness": {
+      "element": "fire",
+      "severity": 30
+    }
+  },
+  {
+    "id": 13686,
+    "name": "Amoxliatl",
+    "version": "Quest",
+    "image": "Amoxliatl.png",
+    "level": 226,
+    "speed": 8,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "16 (standard)<br/>? (Icicle Crash)",
+    "skills": {
+      "atk": 0,
+      "def": 60,
+      "hp": 400,
+      "magic": 140,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 140,
+      "magic_str": 5,
       "ranged": 0,
       "ranged_str": 0,
       "str": 0
@@ -6778,7 +6828,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 40
+    }
   },
   {
     "id": 10531,
@@ -11807,7 +11860,7 @@
   {
     "id": 15547,
     "name": "Big Evil Chicken",
-    "version": "Factions",
+    "version": "Permanent",
     "image": "Big Evil Chicken.png",
     "level": 422,
     "speed": 3,
@@ -12921,19 +12974,117 @@
   {
     "id": 15025,
     "name": "Black Eye Bethel",
-    "version": "",
+    "version": "Dragon scimitar",
+    "image": "Black Eye Bethel (dragon scimitar).png",
+    "level": 191,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "28",
+    "skills": {
+      "atk": 95,
+      "def": 56,
+      "hp": 180,
+      "magic": 45,
+      "ranged": 1,
+      "str": 273
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 20,
+      "magic": 10,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 40,
+      "stab": 20
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
+  },
+  {
+    "id": 15025,
+    "name": "Black Eye Bethel",
+    "version": "Rune scimitar",
+    "image": "Black Eye Bethel (rune scimitar).png",
+    "level": 191,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "25",
+    "skills": {
+      "atk": 145,
+      "def": 85,
+      "hp": 180,
+      "magic": 68,
+      "ranged": 1,
+      "str": 241
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 20,
+      "magic": 10,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 40,
+      "stab": 20
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
+  },
+  {
+    "id": 15025,
+    "name": "Black Eye Bethel",
+    "version": "Steel scimitar",
     "image": "Black Eye Bethel.png",
     "level": 191,
-    "speed": 0,
-    "style": null,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "22",
     "skills": {
       "atk": 170,
-      "def": 180,
+      "def": 100,
       "hp": 180,
       "magic": 80,
-      "ranged": 0,
+      "ranged": 1,
       "str": 210
     },
     "offensive": {
@@ -12946,20 +13097,23 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
+      "crush": 20,
+      "magic": 10,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 40,
+      "stab": 20
     },
     "attributes": [],
     "immunities": {
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 4742,
@@ -14468,7 +14622,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 15
+    }
   },
   {
     "id": 13011,
@@ -14655,7 +14812,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
   },
   {
     "id": 8367,
@@ -14700,7 +14860,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
   },
   {
     "id": 3138,
@@ -14833,6 +14996,51 @@
       "light": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 15682,
+    "name": "Bloody Jack",
+    "version": "",
+    "image": "Bloody Jack.png",
+    "level": 77,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "11",
+    "skills": {
+      "atk": 55,
+      "def": 65,
+      "hp": 100,
+      "magic": 60,
+      "ranged": 70,
+      "str": 55
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 13,
+      "magic_str": 0,
+      "ranged": 100,
+      "ranged_str": 70,
+      "str": 43
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 40,
+      "magic": 70,
+      "heavy": 40,
+      "standard": 33,
+      "light": 21,
+      "slash": 11,
+      "stab": 35
     },
     "attributes": [],
     "immunities": {
@@ -15656,6 +15864,51 @@
       "element": "fire",
       "severity": 20
     }
+  },
+  {
+    "id": 15678,
+    "name": "Boatswain Bill Teak",
+    "version": "",
+    "image": "Boatswain Bill Teak.png",
+    "level": 77,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "11",
+    "skills": {
+      "atk": 55,
+      "def": 65,
+      "hp": 100,
+      "magic": 60,
+      "ranged": 70,
+      "str": 55
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 13,
+      "magic_str": 0,
+      "ranged": 100,
+      "ranged_str": 70,
+      "str": 43
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 40,
+      "magic": 70,
+      "heavy": 40,
+      "standard": 33,
+      "light": 21,
+      "slash": 11,
+      "stab": 35
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
   },
   {
     "id": 10691,
@@ -16680,7 +16933,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "is_slayer_monster": false,
     "weakness": null
@@ -16725,7 +16978,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "is_slayer_monster": false,
     "weakness": null
@@ -16770,7 +17023,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "is_slayer_monster": false,
     "weakness": null
@@ -17196,7 +17449,7 @@
       "Magic"
     ],
     "size": 3,
-    "max_hit": "16",
+    "max_hit": "16 (Melee)",
     "skills": {
       "atk": 130,
       "def": 100,
@@ -17952,6 +18205,96 @@
       "light": 0,
       "slash": 140,
       "stab": 120
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 15684,
+    "name": "Captain Jack",
+    "version": "",
+    "image": "Captain Jack.png",
+    "level": 95,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "11",
+    "skills": {
+      "atk": 55,
+      "def": 75,
+      "hp": 150,
+      "magic": 65,
+      "ranged": 80,
+      "str": 55
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 13,
+      "magic_str": 0,
+      "ranged": 120,
+      "ranged_str": 75,
+      "str": 43
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 40,
+      "magic": 70,
+      "heavy": 40,
+      "standard": 33,
+      "light": 21,
+      "slash": 11,
+      "stab": 35
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 15683,
+    "name": "Captain Ruban Acer",
+    "version": "",
+    "image": "Captain Ruban Acer.png",
+    "level": 95,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "11",
+    "skills": {
+      "atk": 55,
+      "def": 75,
+      "hp": 150,
+      "magic": 65,
+      "ranged": 80,
+      "str": 55
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 13,
+      "magic_str": 0,
+      "ranged": 120,
+      "ranged_str": 75,
+      "str": 43
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 40,
+      "magic": 70,
+      "heavy": 40,
+      "standard": 33,
+      "light": 21,
+      "slash": 11,
+      "stab": 35
     },
     "attributes": [],
     "immunities": {
@@ -23580,7 +23923,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
   },
   {
     "id": 11582,
@@ -28474,14 +28820,14 @@
       "Crush"
     ],
     "size": 2,
-    "max_hit": "9",
+    "max_hit": "3",
     "skills": {
-      "atk": 11,
-      "def": 5,
+      "atk": 32,
+      "def": 27,
       "hp": 7,
       "magic": 1,
       "ranged": 1,
-      "str": 10
+      "str": 25
     },
     "offensive": {
       "atk": 0,
@@ -29558,12 +29904,12 @@
     "version": "",
     "image": "Dire gryphon.png",
     "level": 209,
-    "speed": 0,
+    "speed": 5,
     "style": [
-      "Melee"
+      "Crush"
     ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "20",
     "skills": {
       "atk": 160,
       "def": 100,
@@ -39927,7 +40273,7 @@
   },
   {
     "id": 15458,
-    "name": "Fremennik warrior (Sailing)",
+    "name": "Fremennik warrior",
     "version": "",
     "image": "Fremennik warrior (Sailing).png",
     "level": 61,
@@ -43039,6 +43385,51 @@
     "weakness": null
   },
   {
+    "id": 12452,
+    "name": "Giant goblin",
+    "version": "Permanent",
+    "image": "Giant goblin.png",
+    "level": 397,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 2,
+    "max_hit": "27",
+    "skills": {
+      "atk": 150,
+      "def": 200,
+      "hp": 1000,
+      "magic": 1,
+      "ranged": 1,
+      "str": 150
+    },
+    "offensive": {
+      "atk": 120,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 43
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -15,
+      "magic": -15,
+      "heavy": -15,
+      "standard": -15,
+      "light": -15,
+      "slash": -15,
+      "stab": -15
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
     "id": 4799,
     "name": "Giant lobster",
     "version": "",
@@ -43137,16 +43528,18 @@
     "version": "",
     "image": "Giant lobster (The Red Reef).png",
     "level": 112,
-    "speed": 0,
-    "style": null,
+    "speed": 5,
+    "style": [
+      "Stab"
+    ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "10",
     "skills": {
       "atk": 80,
       "def": 60,
       "hp": 100,
       "magic": 20,
-      "ranged": 0,
+      "ranged": 1,
       "str": 90
     },
     "offensive": {
@@ -43159,13 +43552,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
+      "crush": 30,
+      "magic": 10,
+      "heavy": 60,
+      "standard": 60,
+      "light": 60,
+      "slash": 50,
+      "stab": 20
     },
     "attributes": [],
     "immunities": {
@@ -56261,7 +56654,7 @@
   {
     "id": 15553,
     "name": "I DSCIM YOU",
-    "version": "",
+    "version": "Annihilation",
     "image": "I DSCIM YOU.png",
     "level": 495,
     "speed": 3,
@@ -56274,6 +56667,54 @@
       "atk": 150,
       "def": 25,
       "hp": 1500,
+      "magic": 100,
+      "ranged": 25,
+      "str": 200
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 25,
+      "magic": 50,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 25,
+      "stab": 25
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
+  },
+  {
+    "id": 15553,
+    "name": "I DSCIM YOU",
+    "version": "Permanent",
+    "image": "I DSCIM YOU.png",
+    "level": 307,
+    "speed": 3,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "21",
+    "skills": {
+      "atk": 150,
+      "def": 25,
+      "hp": 750,
       "magic": 100,
       "ranged": 25,
       "str": 200
@@ -63985,57 +64426,6 @@
     }
   },
   {
-    "id": 239,
-    "name": "King Black Dragon (Echo)",
-    "version": "",
-    "image": "King Black Dragon (Echo).png",
-    "level": 414,
-    "speed": 4,
-    "style": [
-      "Dragonfire"
-    ],
-    "size": 5,
-    "max_hit": 0,
-    "skills": {
-      "atk": 300,
-      "def": 300,
-      "hp": 840,
-      "magic": 252,
-      "ranged": 1,
-      "str": 300
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 90,
-      "magic": 80,
-      "heavy": 50,
-      "standard": 70,
-      "light": 70,
-      "slash": 90,
-      "stab": 60
-    },
-    "attributes": [
-      "dragon",
-      "fiery"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": false,
-    "weakness": {
-      "element": "water",
-      "severity": 50
-    }
-  },
-  {
     "id": 7405,
     "name": "King kurask",
     "version": "",
@@ -66094,7 +66484,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 40
+    }
   },
   {
     "id": 6593,
@@ -68248,51 +68641,6 @@
   {
     "id": 13663,
     "name": "Magic Mark",
-    "version": "All-Stars",
-    "image": "Magic Mark.png",
-    "level": 217,
-    "speed": 5,
-    "style": [
-      "Magic"
-    ],
-    "size": 1,
-    "max_hit": "18",
-    "skills": {
-      "atk": 10,
-      "def": 30,
-      "hp": 500,
-      "magic": 175,
-      "ranged": 0,
-      "str": 30
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 100,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 25,
-      "magic": 150,
-      "heavy": 10,
-      "standard": 10,
-      "light": 10,
-      "slash": 25,
-      "stab": 25
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": false,
-    "weakness": null
-  },
-  {
-    "id": 13663,
-    "name": "Magic Mark",
     "version": "Annihilation",
     "image": "Magic Mark.png",
     "level": 967,
@@ -68339,6 +68687,51 @@
     "id": 13663,
     "name": "Magic Mark",
     "version": "Armageddon",
+    "image": "Magic Mark.png",
+    "level": 467,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "18",
+    "skills": {
+      "atk": 10,
+      "def": 30,
+      "hp": 1500,
+      "magic": 175,
+      "ranged": 0,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 100,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 25,
+      "magic": 150,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 25,
+      "stab": 25
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 13663,
+    "name": "Magic Mark",
+    "version": "Permanent",
     "image": "Magic Mark.png",
     "level": 467,
     "speed": 5,
@@ -71030,6 +71423,51 @@
     }
   },
   {
+    "id": 15679,
+    "name": "Mister U.",
+    "version": "",
+    "image": "Mister U..png",
+    "level": 77,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "11",
+    "skills": {
+      "atk": 55,
+      "def": 65,
+      "hp": 100,
+      "magic": 60,
+      "ranged": 70,
+      "str": 55
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 13,
+      "magic_str": 0,
+      "ranged": 100,
+      "ranged_str": 70,
+      "str": 43
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 40,
+      "magic": 70,
+      "heavy": 40,
+      "standard": 33,
+      "light": 21,
+      "slash": 11,
+      "stab": 35
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
     "id": 2919,
     "name": "Mithril dragon",
     "version": "",
@@ -71133,7 +71571,7 @@
   },
   {
     "id": 15230,
-    "name": "Mogre (Sailing)",
+    "name": "Mogre (sea)",
     "version": "",
     "image": "Mogre (Sailing).png",
     "level": 54,
@@ -71174,10 +71612,7 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": {
-      "element": "earth",
-      "severity": 20
-    }
+    "weakness": null
   },
   {
     "id": 1,
@@ -72193,7 +72628,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 45
+    }
   },
   {
     "id": 6402,
@@ -72238,7 +72676,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 45
+    }
   },
   {
     "id": 8736,
@@ -73444,7 +73885,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 724,
@@ -73489,7 +73933,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 720,
@@ -74465,6 +74912,51 @@
       "element": "earth",
       "severity": 25
     }
+  },
+  {
+    "id": 15681,
+    "name": "Mute Jack",
+    "version": "",
+    "image": "Mute Jack.png",
+    "level": 77,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "11",
+    "skills": {
+      "atk": 55,
+      "def": 65,
+      "hp": 100,
+      "magic": 60,
+      "ranged": 70,
+      "str": 55
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 13,
+      "magic_str": 0,
+      "ranged": 100,
+      "ranged_str": 70,
+      "str": 43
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 40,
+      "magic": 70,
+      "heavy": 40,
+      "standard": 33,
+      "light": 21,
+      "slash": 11,
+      "stab": 35
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
   },
   {
     "id": 7561,
@@ -77322,6 +77814,51 @@
     }
   },
   {
+    "id": 15677,
+    "name": "Oaky Doak",
+    "version": "",
+    "image": "Oaky Doak.png",
+    "level": 77,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "11",
+    "skills": {
+      "atk": 55,
+      "def": 65,
+      "hp": 100,
+      "magic": 60,
+      "ranged": 70,
+      "str": 55
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 13,
+      "magic_str": 0,
+      "ranged": 100,
+      "ranged_str": 70,
+      "str": 43
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 40,
+      "magic": 70,
+      "heavy": 40,
+      "standard": 33,
+      "light": 21,
+      "slash": 11,
+      "stab": 35
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
     "id": 11751,
     "name": "Obelisk (Tombs of Amascut)",
     "version": "",
@@ -78392,6 +78929,51 @@
       "burn": null
     },
     "is_slayer_monster": true,
+    "weakness": null
+  },
+  {
+    "id": 15680,
+    "name": "Old Jack",
+    "version": "",
+    "image": "Old Jack.png",
+    "level": 77,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "11",
+    "skills": {
+      "atk": 55,
+      "def": 65,
+      "hp": 100,
+      "magic": 60,
+      "ranged": 70,
+      "str": 55
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 13,
+      "magic_str": 0,
+      "ranged": 100,
+      "ranged_str": 70,
+      "str": 43
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 40,
+      "magic": 70,
+      "heavy": 40,
+      "standard": 33,
+      "light": 21,
+      "slash": 11,
+      "stab": 35
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
     "weakness": null
   },
   {
@@ -82742,16 +83324,18 @@
     "version": "1",
     "image": "Pirate (The Red Reef, 1).png",
     "level": 52,
-    "speed": 0,
-    "style": null,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "6",
     "skills": {
       "atk": 54,
       "def": 35,
       "hp": 38,
       "magic": 10,
-      "ranged": 0,
+      "ranged": 1,
       "str": 50
     },
     "offensive": {
@@ -82764,13 +83348,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
+      "crush": 10,
       "magic": 0,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": 20,
+      "stab": 10
     },
     "attributes": [],
     "immunities": {
@@ -82785,16 +83369,18 @@
     "version": "2",
     "image": "Pirate (The Red Reef, 2).png",
     "level": 52,
-    "speed": 0,
-    "style": null,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "6",
     "skills": {
       "atk": 54,
       "def": 35,
       "hp": 38,
       "magic": 10,
-      "ranged": 0,
+      "ranged": 1,
       "str": 50
     },
     "offensive": {
@@ -82807,13 +83393,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
+      "crush": 10,
       "magic": 0,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": 20,
+      "stab": 10
     },
     "attributes": [],
     "immunities": {
@@ -82828,16 +83414,18 @@
     "version": "3",
     "image": "Pirate (The Red Reef, 3).png",
     "level": 52,
-    "speed": 0,
-    "style": null,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "6",
     "skills": {
       "atk": 54,
       "def": 35,
       "hp": 38,
       "magic": 10,
-      "ranged": 0,
+      "ranged": 1,
       "str": 50
     },
     "offensive": {
@@ -82850,13 +83438,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
+      "crush": 10,
       "magic": 0,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": 20,
+      "stab": 10
     },
     "attributes": [],
     "immunities": {
@@ -82871,16 +83459,18 @@
     "version": "4",
     "image": "Pirate (The Red Reef, 4).png",
     "level": 52,
-    "speed": 0,
-    "style": null,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "6",
     "skills": {
       "atk": 54,
       "def": 35,
       "hp": 38,
       "magic": 10,
-      "ranged": 0,
+      "ranged": 1,
       "str": 50
     },
     "offensive": {
@@ -82893,13 +83483,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
+      "crush": 10,
       "magic": 0,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": 20,
+      "stab": 10
     },
     "attributes": [],
     "immunities": {
@@ -86003,53 +86593,8 @@
   {
     "id": 13664,
     "name": "Ranging Ro",
-    "version": "All-Stars",
-    "image": "Ranging Ro.png",
-    "level": 223,
-    "speed": 4,
-    "style": [
-      "Ranged"
-    ],
-    "size": 1,
-    "max_hit": "16",
-    "skills": {
-      "atk": 10,
-      "def": 100,
-      "hp": 500,
-      "magic": 15,
-      "ranged": 150,
-      "str": 30
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 100,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 100,
-      "magic": 200,
-      "heavy": 100,
-      "standard": 100,
-      "light": 100,
-      "slash": 100,
-      "stab": 100
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": false,
-    "weakness": null
-  },
-  {
-    "id": 13664,
-    "name": "Ranging Ro",
     "version": "Annihilation",
-    "image": "Ranging Ro (Annihilation).png",
+    "image": "Ranging Ro.png",
     "level": 973,
     "speed": 4,
     "style": [
@@ -86095,6 +86640,51 @@
     "name": "Ranging Ro",
     "version": "Armageddon",
     "image": "Ranging Ro.png",
+    "level": 473,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "16",
+    "skills": {
+      "atk": 10,
+      "def": 100,
+      "hp": 1500,
+      "magic": 15,
+      "ranged": 150,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 100,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 200,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 13664,
+    "name": "Ranging Ro",
+    "version": "Permanent",
+    "image": "Ranging Ro (Annihilation).png",
     "level": 473,
     "speed": 4,
     "style": [
@@ -89306,7 +89896,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 40
+    }
   },
   {
     "id": 8057,
@@ -91027,7 +91620,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 40
+    }
   },
   {
     "id": 11508,
@@ -91267,7 +91863,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 40
+    }
   },
   {
     "id": 4192,
@@ -93370,7 +93969,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -3,
       "crush": 0,
       "magic": 0,
       "heavy": 0,
@@ -93387,7 +93986,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 40
+    }
   },
   {
     "id": 7258,
@@ -93531,7 +94133,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "air",
+      "severity": 40
+    }
   },
   {
     "id": 3449,
@@ -96024,7 +96629,7 @@
     },
     "is_slayer_monster": true,
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -96074,7 +96679,7 @@
     },
     "is_slayer_monster": true,
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -96124,7 +96729,7 @@
     },
     "is_slayer_monster": true,
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -96174,7 +96779,7 @@
     },
     "is_slayer_monster": true,
     "weakness": {
-      "element": "air",
+      "element": "earth",
       "severity": 35
     }
   },
@@ -97410,7 +98015,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 13496,
@@ -97457,7 +98065,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 13497,
@@ -97504,7 +98115,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 13498,
@@ -97551,7 +98165,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 13499,
@@ -97598,7 +98215,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 13500,
@@ -97645,7 +98265,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 13501,
@@ -97692,7 +98315,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 8139,
@@ -98429,7 +99055,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 4319,
@@ -98476,7 +99105,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 35
+    }
   },
   {
     "id": 1541,
@@ -101661,7 +102293,9 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "undead"
+    ],
     "immunities": {
       "burn": null
     },
@@ -101706,7 +102340,9 @@
       "slash": 0,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "undead"
+    ],
     "immunities": {
       "burn": null
     },
@@ -104517,7 +105153,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
   },
   {
     "id": 8064,
@@ -104564,7 +105203,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
   },
   {
     "id": 8065,
@@ -104611,7 +105253,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
   },
   {
     "id": 14706,
@@ -105068,7 +105713,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 12269,
@@ -105113,7 +105761,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 12270,
@@ -105158,7 +105809,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 12271,
@@ -105203,7 +105857,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 12272,
@@ -105248,7 +105905,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 12273,
@@ -105293,7 +105953,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 12274,
@@ -105338,7 +106001,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 13484,
@@ -105601,7 +106267,7 @@
       "str": 0
     },
     "defensive": {
-      "flat_armour": 0,
+      "flat_armour": -4,
       "crush": 10,
       "magic": 200,
       "heavy": 200,
@@ -105662,7 +106328,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 787,
@@ -106982,7 +107651,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 20
+    }
   },
   {
     "id": 7540,
@@ -107031,7 +107703,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 20
+    }
   },
   {
     "id": 7620,
@@ -120416,7 +121091,7 @@
       "Magical ranged"
     ],
     "size": 1,
-    "max_hit": "16",
+    "max_hit": "11",
     "skills": {
       "atk": 0,
       "def": 128,
@@ -120467,7 +121142,7 @@
       "Magical ranged"
     ],
     "size": 1,
-    "max_hit": "16",
+    "max_hit": "11",
     "skills": {
       "atk": 0,
       "def": 128,
@@ -121668,7 +122343,7 @@
       "flat_armour": 0,
       "crush": 70,
       "magic": -11,
-      "heavy": 74,
+      "heavy": 54,
       "standard": 74,
       "light": 74,
       "slash": 76,
@@ -126135,7 +126810,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 7485,
@@ -126182,7 +126860,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 7488,
@@ -126229,7 +126910,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 7487,
@@ -126276,7 +126960,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 3980,
@@ -126420,7 +127107,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 8067,
@@ -126467,7 +127157,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 8068,
@@ -126514,7 +127207,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 2501,
@@ -126561,7 +127257,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 2502,
@@ -126608,7 +127307,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 2503,
@@ -126655,7 +127357,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 2504,
@@ -126702,7 +127407,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 2505,
@@ -126749,7 +127457,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 2506,
@@ -126796,7 +127507,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 2507,
@@ -126843,7 +127557,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 2508,
@@ -126890,7 +127607,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 2509,
@@ -126937,7 +127657,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6465,
@@ -127931,7 +128654,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 46,
@@ -127978,7 +128704,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 47,
@@ -128025,7 +128754,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 48,
@@ -128072,7 +128804,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6596,
@@ -128119,7 +128854,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6597,
@@ -128166,7 +128904,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 6598,
@@ -128213,7 +128954,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 59,
@@ -128260,7 +129004,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 60,
@@ -128307,7 +129054,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 61,
@@ -128354,7 +129104,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 62,
@@ -128401,7 +129154,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 63,
@@ -128448,7 +129204,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 880,
@@ -128845,7 +129604,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 575,
@@ -128892,7 +129654,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 576,
@@ -128939,7 +129704,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 577,
@@ -128986,7 +129754,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 578,
@@ -129033,7 +129804,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 579,
@@ -129080,7 +129854,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 580,
@@ -129127,7 +129904,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 581,
@@ -129174,7 +129954,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 582,
@@ -129221,7 +130004,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 584,
@@ -129268,7 +130054,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 586,
@@ -129315,7 +130104,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 565,
@@ -129362,7 +130154,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 588,
@@ -129409,7 +130204,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 590,
@@ -129456,7 +130254,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 592,
@@ -129503,7 +130304,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 593,
@@ -129550,7 +130354,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 595,
@@ -129597,7 +130404,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 597,
@@ -129644,7 +130454,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 599,
@@ -129691,7 +130504,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 567,
@@ -129738,7 +130554,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 568,
@@ -129785,7 +130604,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 569,
@@ -129832,7 +130654,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 571,
@@ -129879,7 +130704,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 572,
@@ -129926,7 +130754,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 573,
@@ -129973,7 +130804,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 574,
@@ -130020,7 +130854,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 13489,
