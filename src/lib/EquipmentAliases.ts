@@ -182,6 +182,9 @@ const equipmentAliases = {
   19481: [26712], // Heavy ballista
   10828: [28070], // Helm of neitiznot
   3840: [26496], // Holy book
+  1410: [33333], // Iban's staff#Broken
+  1409: [33330], // Iban's staff#Regular
+  12658: [33332], // Iban's staff (u)
   28262: [28474], // Ice ancient sceptre#Normal
   21793: [24249, 29615], // Imbued guthix cape#Normal
   21784: [24234], // Imbued guthix max cape#Normal
@@ -266,9 +269,10 @@ const equipmentAliases = {
   11770: [26767, 25258], // Seers ring (i)#Nightmare Zone
   24198: [24200], // Seren halo#Normal
   28266: [28476], // Shadow ancient sceptre#Normal
-  11864: [29816, 19639, 19643, 33066, 23073, 21264, 19647, 21888, 24370, 25910, 25898, 25904], // Slayer helmet
-  11865: [29822, 29818, 29820, 26675, 19641, 25179, 26676, 19645, 25181, 33072, 33068, 33070, 26680, 23075, 25189, 26678, 21266, 25185, 26677, 19649, 25183, 26674, 25177, 26679, 21890, 25187, 26681, 24444, 25191, 26684, 25912, 25914, 26682, 25900, 25902, 26683, 25906, 25908], // Slayer helmet (i)#Nightmare Zone
+  11864: [29816, 19639, 19643, 33066, 23073, 33338, 21264, 33340, 19647, 21888, 24370, 25910, 25898, 25904], // Slayer helmet
+  11865: [29822, 29818, 29820, 26675, 19641, 25179, 26676, 19645, 25181, 33072, 33068, 33070, 26680, 23075, 25189, 33443, 33439, 33441, 26678, 21266, 25185, 33449, 33445, 33447, 26677, 19649, 25183, 26674, 25177, 26679, 21890, 25187, 26681, 24444, 25191, 26684, 25912, 25914, 26682, 25900, 25902, 26683, 25906, 25908], // Slayer helmet (i)#Nightmare Zone
   28264: [28475], // Smoke ancient sceptre#Normal
+  28338: [33335], // Soulreaper axe
   11787: [12795], // Steam battlestaff
   8846: [24138], // Steel defender#Normal
   1157: [20178, 20193], // Steel full helm
@@ -292,6 +296,13 @@ const equipmentAliases = {
   12926: [28688], // Toxic blowpipe#Charged
   12924: [28687], // Toxic blowpipe#Empty
   12692: [26766, 25256], // Treasonous ring (i)#Nightmare Zone
+  11907: [33322], // Trident of the seas#Partially charged
+  22288: [33326], // Trident of the seas (e)#Charged
+  22290: [33328], // Trident of the seas (e)#Uncharged
+  12899: [33314], // Trident of the swamp#Charged
+  12900: [33316], // Trident of the swamp#Uncharged
+  22292: [33318], // Trident of the swamp (e)#Charged
+  22294: [33320], // Trident of the swamp (e)#Uncharged
   12691: [26765, 25254], // Tyrannical ring (i)#Nightmare Zone
   6528: [23235], // Tzhaar-ket-om
   3842: [26498], // Unholy book
