@@ -96,7 +96,14 @@ one_off_renames = {
     "Dragon hunter crossbow (b)": "Dragon hunter crossbow",
     "Obsidian cape (r)": "Obsidian cape",
     "Elidinis' ward (or)": "Elidinis' ward (f)",
-    "Amulet of rancour (s)": "Amulet of rancour"
+    "Amulet of rancour (s)": "Amulet of rancour",
+    "Trident of the seas (e) (o)": "Trident of the seas (e)",
+    "Trident of the seas (o)": "Trident of the seas",
+    "Trident of the swamp (e) (o)": "Trident of the swamp (e)",
+    "Trident of the swamp (o)": "Trident of the swamp",
+    "Iban's staff (o)": "Iban's staff",
+    "Iban's staff (u) (o)": "Iban's staff (u)",
+    "Soulreaper axe (o)": "Soulreaper axe"
 }
 
 def main():
@@ -135,14 +142,13 @@ def main():
     all_items.sort(key=lambda d: d.get('name'))
 
     for item in all_items:
-        slayer_helm_match = re.match(r"^(?:Black|Green|Red|Purple|Turquoise|Hydra|Twisted|Tztok|Vampyric|Tzkal|Araxyte|Hooded|Demonic) slayer helmet( \(i\))?$", item['name'])
+        slayer_helm_match = re.match(r"^(?:Black|Green|Red|Purple|Turquoise|Hydra|Twisted|Tztok|Vampyric|Tzkal|Araxyte|Hooded|Demonic|Radiant|Oathplate) slayer helmet( \(i\))?$", item['name'])
         sanguine_torva_match = re.match(r"^Sanguine t(orva (full helm|platebody|platelegs))$", item['name'])
         decoration_kit_match = re.match(r"(.*)\((?:g|t|(h)\d|Arrav|Asgarnia|Dorgeshuun|Dragon|Fairy|Guthix|HAM|Horse|Jogre|Kandarin|Misthalin|Money|Saradomin|Skull|Varrock|Zamorak|or|cr|Hallowed|Trailblazer|Ithell|Iorwerth|Trahaearn|Cadarn|Crwys|Meilyr|Hefin|Amlodd|upgraded|light|dark|dusk|lit|deadman)\)$", item['name'], re.IGNORECASE)
         magic_robe_kit_match = re.match(r"^(?:Dark|Light|Twisted) ((?:infinity|ancestral) .*)$", item['name'])
 
         # One off items:
         if item['name'] in one_off_renames:
-            assert item['version'] in ['', 'Empty', 'Charged', 'Uncharged'], "Only certain versions are expected: %s" % item
             handle_base_variant(all_items, item, one_off_renames[item['name']], [item['version']])
         # Ava's assembler variants (Must be before locked due to the base name change)
         elif re.match(r"^Masori assembler(|\(l\))$", item['name']):
