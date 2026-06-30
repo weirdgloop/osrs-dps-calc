@@ -4,7 +4,6 @@ import skills from '@/public/img/tabs/skills.png';
 import equipment from '@/public/img/tabs/equipment.png';
 import options from '@/public/img/tabs/options.webp';
 import prayer from '@/public/img/tabs/prayer.png';
-import league from '@/public/img/tabs/league.png';
 import PlayerTab from '@/app/components/player/PlayerTab';
 import Equipment from './Equipment';
 import Combat from './Combat';
@@ -12,7 +11,7 @@ import Skills from './Skills';
 import Prayers from './Prayers';
 import ExtraOptions from './ExtraOptions';
 
-type SelectedInputType = 'combat' | 'skills' | 'equipment' | 'options' | 'prayer' | 'league';
+type SelectedInputType = 'combat' | 'skills' | 'equipment' | 'options' | 'prayer';
 
 const PlayerInnerContainer: React.FC = () => {
   const [selected, setSelected] = useState<SelectedInputType>('equipment');
