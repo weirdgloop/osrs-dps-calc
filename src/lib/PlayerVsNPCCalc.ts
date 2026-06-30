@@ -1241,7 +1241,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.isNewSpecWeaponFinisher()) {
       return this.track(
-        DetailKey.PLAYER_ACCURACY_NEW_SPEC_WEAPON,
+        DetailKey.PLAYER_ACCURACY_SUNSPEAR,
         BaseCalc.getFixedAttackHitChance(atk, def),
       );
     }
@@ -1362,7 +1362,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       ]);
     }
 
-    if (this.wearing('New Spec Weapon') && this.opts.usingSpecialAttack) { // todo(blood moon): weapon name
+    if (this.wearing('Sunspear') && this.opts.usingSpecialAttack) {
       const effectDmg = this.trackFactor(DetailKey.MAX_HIT_SPEC, max, [7, 10]);
       return new AttackDistribution([
         HitDistribution.single(acc, [new Hitsplat(effectDmg)]),
@@ -2381,7 +2381,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
   private isNewSpecWeaponFinisher(): boolean {
     const [, max] = this.getMinAndMax();
-    return this.wearing('New Spec Weapon')
+    return this.wearing('Sunspear')
       && this.opts.usingSpecialAttack
       && this.monster.inputs.monsterCurrentHp <= Math.trunc(max * 7 / 10);
   }

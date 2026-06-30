@@ -490,7 +490,7 @@ export default class BaseCalc {
         'Ivandis flail',
         'Blisterwood sickle',
         'Blisterwood flail',
-        'New Spec Weapon', // todo(blood moon): weapon name
+        'Sunspear',
       ]);
   }
 
