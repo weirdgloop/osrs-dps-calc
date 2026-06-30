@@ -1886,6 +1886,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
+    if (this.player.style.type === 'ranged' && this.player.equipment.ammo?.name.includes('Seeking')) {
+      dist = dist.transform(
+        (h) => HitDistribution.single(1.0, [new Hitsplat(Math.max(h.damage, 3), h.accurate)]),
+        { transformInaccurate: false },
+      );
+    }
+
     // raise accurate 0s to 1
     if (accurateZeroApplicable) {
       dist = dist.transform(
