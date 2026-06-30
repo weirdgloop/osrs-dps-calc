@@ -9,7 +9,6 @@ import { INFINITE_HEALTH_MONSTERS } from '@/lib/constants';
 export interface BoltContext {
   rangedLvl: number;
   maxHit: number;
-  alwaysMaxHit: boolean;
   zcb: boolean;
   spec: boolean;
   kandarinDiary: boolean;
@@ -54,9 +53,7 @@ export const diamondBolts: BoltTransformer = (ctx) => {
   const chance = 0.1 * kandarinFactor(ctx);
   const effectMax = Math.trunc(maxHit * (zcb ? 126 : 115) / 100);
 
-  const effectDist = ctx.alwaysMaxHit
-    ? HitDistribution.single(1.0, [new Hitsplat(effectMax)])
-    : HitDistribution.linear(1.0, 0, effectMax);
+  const effectDist = HitDistribution.linear(1.0, 0, effectMax);
   return (h) => {
     if (h.accurate && zcb && spec) {
       return effectDist;
@@ -95,9 +92,7 @@ export const onyxBolts: BoltTransformer = (ctx) => {
   const chance = 0.11 * kandarinFactor(ctx);
   const effectMax = Math.trunc(maxHit * (zcb ? 132 : 120) / 100);
 
-  const effectDist = ctx.alwaysMaxHit
-    ? HitDistribution.single(1.0, [new Hitsplat(effectMax)])
-    : HitDistribution.linear(1.0, 0, effectMax);
+  const effectDist = HitDistribution.linear(1.0, 0, effectMax);
   return (h) => {
     if (!h.accurate) {
       return new HitDistribution([new WeightedHit(1.0, [h])]);

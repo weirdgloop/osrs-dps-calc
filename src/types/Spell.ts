@@ -6,7 +6,6 @@ export interface Spell {
   max_hit: number;
   spellbook: Spellbook;
   element: Spellement;
-  unselectable?: boolean;
 }
 
 export type Spellement = 'air' | 'water' | 'earth' | 'fire';
@@ -24,7 +23,7 @@ export function isBindSpell(spell: Spell | null): boolean {
 }
 
 export function getSpellMaxHit(spell: Spell, magicLevel: number): number {
-  if (!spell.element || spell.name === 'Flames of Cerberus') {
+  if (!spell.element) {
     return spell?.max_hit;
   }
 

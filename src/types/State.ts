@@ -19,11 +19,6 @@ export interface UI {
   showShareModal: boolean;
   username: string;
   isDefensiveReductionsExpanded: boolean;
-  leagues: {
-    six: {
-      pactsSearchQuery: string;
-    };
-  };
 }
 
 /**
@@ -125,9 +120,4 @@ export interface State extends ImportableData {
    */
   availableMonsters: Omit<Monster, 'inputs'>[];
 
-  leagues: {
-    six: {
-      hoveredNodeId: string | null;
-    }
-  }
 }

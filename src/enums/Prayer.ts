@@ -19,16 +19,6 @@ import Augury from '@/public/img/prayers/Augury.png';
 import ThickSkin from '@/public/img/prayers/Thick Skin.png';
 import RockSkin from '@/public/img/prayers/Rock Skin.png';
 import SteelSkin from '@/public/img/prayers/Steel Skin.png';
-import ProtectMagic from '@/public/img/prayers/Protect_from_Magic.png';
-import ProtectMelee from '@/public/img/prayers/Protect_from_Melee.png';
-import ProtectRanged from '@/public/img/prayers/Protect_from_Missiles.png';
-import Redemption from '@/public/img/prayers/Redemption.png';
-import Retribution from '@/public/img/prayers/Retribution.png';
-import Smite from '@/public/img/prayers/Smite.png';
-import RapidRestore from '@/public/img/prayers/Rapid_Restore.png';
-import RapidHeal from '@/public/img/prayers/Rapid_Heal.png';
-import ProtectItem from '@/public/img/prayers/Protect_Item.png';
-import Preserve from '@/public/img/prayers/Preserve.png';
 import { StaticImageData } from 'next/image';
 import { Factor } from '@/lib/Math';
 
@@ -54,16 +44,6 @@ export enum Prayer {
   STEEL_SKIN = 18,
   DEADEYE = 19,
   MYSTIC_VIGOUR = 20,
-  PROTECT_MAGIC,
-  PROTECT_RANGED,
-  PROTECT_MELEE,
-  RETRIBUTION,
-  REDEMPTION,
-  SMITE,
-  RAPID_RESTORE,
-  RAPID_HEAL,
-  PROTECT_ITEM,
-  PRESERVE,
 }
 
 export const DEFENSIVE_PRAYERS: Prayer[] = [
@@ -86,8 +66,8 @@ export const ARM_PRAYERS: Prayer[] = [
 ];
 
 export const OVERHEAD_PRAYERS: Prayer[] = [
-  Prayer.PROTECT_MAGIC, Prayer.PROTECT_RANGED, Prayer.PROTECT_MELEE,
-  Prayer.RETRIBUTION, Prayer.REDEMPTION, Prayer.SMITE,
+  // Prayer.PROTECT_MAGIC, Prayer.PROTECT_RANGED, Prayer.PROTECT_MELEE,
+  // Prayer.RETRIBUTION, Prayer.REDEMPTION, Prayer.SMITE,
 ];
 
 export type PrayerCombatStyle = 'magic' | 'ranged' | 'melee';
@@ -296,76 +276,6 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     factorAccuracy: [118, 100],
     factorDefenceMagic: [118, 100],
     factorDefence: [105, 100],
-  },
-  [Prayer.PROTECT_MAGIC]: {
-    renderOrder: 4,
-    name: 'Protect from Magic',
-    image: ProtectMagic,
-    drainRate: 12,
-    renderInOther: true,
-  },
-  [Prayer.PROTECT_MELEE]: {
-    renderOrder: 5,
-    name: 'Protect from Melee',
-    image: ProtectMelee,
-    drainRate: 12,
-    renderInOther: true,
-  },
-  [Prayer.PROTECT_RANGED]: {
-    renderOrder: 6,
-    name: 'Protect from Missiles',
-    image: ProtectRanged,
-    drainRate: 12,
-    renderInOther: true,
-  },
-  [Prayer.RETRIBUTION]: {
-    renderOrder: 7,
-    name: 'Retribution',
-    image: Retribution,
-    drainRate: 3,
-    renderInOther: true,
-  },
-  [Prayer.REDEMPTION]: {
-    renderOrder: 8,
-    name: 'Redemption',
-    image: Redemption,
-    drainRate: 6,
-    renderInOther: true,
-  },
-  [Prayer.SMITE]: {
-    renderOrder: 9,
-    name: 'Smite',
-    image: Smite,
-    drainRate: 18,
-    renderInOther: true,
-  },
-  [Prayer.RAPID_RESTORE]: {
-    renderOrder: 1,
-    name: 'Rapid Restore',
-    image: RapidRestore,
-    drainRate: 1,
-    renderInOther: true,
-  },
-  [Prayer.RAPID_HEAL]: {
-    renderOrder: 2,
-    name: 'Rapid Heal',
-    image: RapidHeal,
-    drainRate: 2,
-    renderInOther: true,
-  },
-  [Prayer.PROTECT_ITEM]: {
-    renderOrder: 3,
-    name: 'Protect Item',
-    image: ProtectItem,
-    drainRate: 2,
-    renderInOther: true,
-  },
-  [Prayer.PRESERVE]: {
-    renderOrder: 10,
-    name: 'Preserve',
-    image: Preserve,
-    drainRate: 2,
-    renderInOther: true,
   },
 };
 
