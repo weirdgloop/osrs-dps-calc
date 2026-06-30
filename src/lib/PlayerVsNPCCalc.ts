@@ -1386,6 +1386,34 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
+    if (this.isUsingMeleeStyle() && this.wearing('Crimson kisten') && this.opts.usingSpecialAttack) {
+      const effectDist = new HitDistribution([]);
+      effectDist.addHit(new WeightedHit(1 - acc, [Hitsplat.INACCURATE]));
+
+      for (let i = 0; i < 4; i++) {
+        // all previous rolls hit
+        let chanceThisProc = (acc ** (i + 1));
+        if (i < 3) {
+          // chance that we don't make further successful rolls
+          chanceThisProc *= (1 - acc);
+        }
+
+        // todo(blood moon): verify that the -1 on i == 3 is applied here, not to the base max hit
+        const effectMin = Math.trunc(max * (70 + (i * 20)) / 100);
+        const effectMax = Math.trunc(max * (110 + (i * 20)) / 100) - (i === 3 ? 1 : 0);
+        if (i === 0) { this.track(DetailKey.MIN_HIT_SPEC, effectMin, `${max} * 70 / 100 = ${effectMin}`); }
+        if (i === 3) { this.track(DetailKey.MAX_HIT_SPEC, effectMax, `${max} * 170 / 100 - 1 = ${effectMax}`); }
+
+        effectDist.addHits(
+          HitDistribution.linear(1.0, effectMin, effectMax)
+            .scaleProbability(chanceThisProc)
+            .hits,
+        );
+      }
+
+      dist = new AttackDistribution([effectDist]);
+    }
+
     if (this.isUsingMeleeStyle() && this.wearing('Gadderhammer') && mattrs.includes(MonsterAttribute.SHADE)) {
       dist = new AttackDistribution([
         new HitDistribution([
