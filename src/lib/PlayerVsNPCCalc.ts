@@ -318,6 +318,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
       } else if (this.wearing('Barrelchest anchor')) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
+      } else if (this.isNewSpecWeaponFinisher()) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [7, 10]);
       }
     }
 
@@ -1237,6 +1239,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       BaseCalc.getNormalAccuracyRoll(atk, def),
     );
 
+    if (this.isNewSpecWeaponFinisher()) {
+      return this.track(
+        DetailKey.PLAYER_ACCURACY_NEW_SPEC_WEAPON,
+        BaseCalc.getFixedAttackHitChance(atk, def),
+      );
+    }
+
     const fangAccuracy = this.isWearingFang() && this.player.style.type === 'stab';
     if (fangAccuracy) {
       if (TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id)) {
@@ -1350,6 +1359,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (ONE_HIT_MONSTERS.includes(this.monster.id)) {
       return new AttackDistribution([
         HitDistribution.single(1.0, [new Hitsplat(this.monster.skills.hp)]),
+      ]);
+    }
+
+    if (this.wearing('New Spec Weapon') && this.opts.usingSpecialAttack) { // todo(blood moon): weapon name
+      const effectDmg = this.trackFactor(DetailKey.MAX_HIT_SPEC, max, [7, 10]);
+      return new AttackDistribution([
+        HitDistribution.single(acc, [new Hitsplat(effectDmg)]),
       ]);
     }
 
@@ -2361,6 +2377,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       this.track(DetailKey.MIN_HIT_WARDENS, Math.trunc(max * modifier / 100)),
       this.track(DetailKey.MAX_HIT_WARDENS, Math.trunc(max * (modifier + maxPctRange) / 100)),
     ];
+  }
+
+  private isNewSpecWeaponFinisher(): boolean {
+    const [, max] = this.getMinAndMax();
+    return this.wearing('New Spec Weapon')
+      && this.opts.usingSpecialAttack
+      && this.monster.inputs.monsterCurrentHp <= Math.trunc(max * 7 / 10);
   }
 
   private getSpellement(): Spellement | null {

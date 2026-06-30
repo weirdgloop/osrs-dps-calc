@@ -183,12 +183,12 @@ export default class BaseCalc {
   }
 
   /**
-   * Helper function that calculates the hit chance for mechanics that force a maximum accuracy roll.
+   * Helper function that calculates the hit chance for mechanics that force a specific attack roll, but still use a random defence roll.
    * @param atk Attack roll of the player
-   * @param def Defence roll of the NPC
+   * @param def Max defence roll of the NPC
    * @returns Hit chance of the attack
    */
-  public static getMaxAccuracyHitChance(atk: number, def: number): number {
+  public static getFixedAttackHitChance(atk: number, def: number): number {
     const stdRoll = (attack: number, defence: number) => ((attack > defence)
       ? 1
       : attack / (defence + 1));
@@ -490,6 +490,7 @@ export default class BaseCalc {
         'Ivandis flail',
         'Blisterwood sickle',
         'Blisterwood flail',
+        'New Spec Weapon', // todo(blood moon): weapon name
       ]);
   }
 
