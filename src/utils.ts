@@ -593,6 +593,11 @@ export const CombatStyleMap: { [k in EquipmentCategory]: { [k: string]: { image:
     Kick: { image: '248' },
     Block: { image: '249' },
   },
+  [EquipmentCategory.FLAIL]: {
+    Chop: { image: '239' },
+    Block: { image: '237' },
+    Slash: { image: '238' },
+  },
 };
 
 /**
@@ -803,6 +808,13 @@ export const getCombatStylesForCategory = (style: EquipmentCategory): PlayerComb
         { name: 'Flick', type: 'slash', stance: 'Accurate' },
         { name: 'Lash', type: 'slash', stance: 'Controlled' },
         { name: 'Deflect', type: 'slash', stance: 'Defensive' },
+      ];
+      break;
+    case EquipmentCategory.FLAIL:
+      ret = [
+        { name: 'Chop', type: 'slash', stance: 'Accurate' },
+        { name: 'Slash', type: 'slash', stance: 'Aggressive' },
+        { name: 'Block', type: 'slash', stance: 'Defensive' },
       ];
       break;
     default:
