@@ -68549,6 +68549,56 @@
     "weakness": null
   },
   {
+    "id": 15742,
+    "name": "Maggot King",
+    "version": "",
+    "image": "Maggot King.png",
+    "level": 741,
+    "speed": 6,
+    "style": [
+      "Ranged",
+      "Magic",
+      "Melee"
+    ],
+    "size": 5,
+    "max_hit": "46 (Magic / Ranged)",
+    "skills": {
+      "atk": 200,
+      "def": 200,
+      "hp": 1500,
+      "magic": 200,
+      "ranged": 300,
+      "str": 250
+    },
+    "offensive": {
+      "atk": 400,
+      "magic": 200,
+      "magic_str": 57,
+      "ranged": 200,
+      "ranged_str": 10,
+      "str": 50
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 45,
+      "magic": 150,
+      "heavy": 43,
+      "standard": 158,
+      "light": 232,
+      "slash": 100,
+      "stab": 172
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "fire",
+      "severity": 80
+    }
+  },
+  {
     "id": 7269,
     "name": "Magic axe",
     "version": "Catacombs of Kourend",

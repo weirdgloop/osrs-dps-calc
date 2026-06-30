@@ -22630,6 +22630,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Blisterwood sickle (e)",
+    "id": 33713,
+    "weight": 1.587,
+    "version": "",
+    "slot": "weapon",
+    "image": "Blisterwood sickle.png",
+    "speed": 5,
+    "category": "Slash Sword",
+    "bonuses": {
+      "str": 56,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 5
+    },
+    "offensive": {
+      "stab": 44,
+      "slash": 56,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 1,
+      "slash": 2,
+      "crush": 2,
+      "magic": 2,
+      "ranged": 2
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Blisterwood stake",
     "id": 33716,
     "weight": 0.34,
@@ -86063,7 +86094,7 @@
     "slot": "weapon",
     "image": "Hallowed flail.png",
     "speed": 4,
-    "category": "Unarmed",
+    "category": "Flail",
     "bonuses": {
       "str": 46,
       "ranged_str": 0,
@@ -108427,6 +108458,37 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Necklace of rupture",
+    "id": 33639,
+    "weight": 0.01,
+    "version": "",
+    "slot": "neck",
+    "image": "Necklace of rupture.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 8,
+      "magic_str": 0,
+      "prayer": 3
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 20
     },
     "defensive": {
       "stab": 0,
