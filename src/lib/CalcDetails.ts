@@ -87,7 +87,7 @@ export enum DetailKey {
   PLAYER_ACCURACY_FANG = 'Player accuracy fang',
   PLAYER_ACCURACY_CONFLICTION_GAUNTLETS = 'Player accuracy confliction gauntlets',
   PLAYER_ACCURACY_ROYAL_TITAN_ELEMENTAL = 'Player accuracy override titan elemental',
-  PLAYER_ACCURACY_NEW_SPEC_WEAPON = 'Player accuracy new spec weapon', // todo(blood moon): weapon name
+  PLAYER_ACCURACY_SUNSPEAR = 'Player accuracy Sunspear',
   PLAYER_ACCURACY_FINAL = 'Player accuracy',
   DIST_FINAL = 'Dist final',
   DOT_EXPECTED = 'Damage over time expected',
