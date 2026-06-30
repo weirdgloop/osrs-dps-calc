@@ -22630,6 +22630,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Blisterwood stake",
+    "id": 33716,
+    "weight": 0.34,
+    "version": "",
+    "slot": "weapon",
+    "image": "Blisterwood stake.png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 14,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 16
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Blood ancient sceptre",
     "id": 28238,
     "weight": 2.267,
@@ -61566,6 +61597,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Diamond sickle (b)",
+    "id": 33709,
+    "weight": 1.587,
+    "version": "",
+    "slot": "weapon",
+    "image": "Diamond sickle.png",
+    "speed": 5,
+    "category": "Slash Sword",
+    "bonuses": {
+      "str": 8,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 5
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 1,
+      "crush": 1,
+      "magic": 1,
+      "ranged": 1
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Diamond speedrun trophy",
     "id": 27783,
     "weight": 1.5,
@@ -66774,6 +66836,37 @@
     "isTwoHanded": true
   },
   {
+    "name": "Dummy stymphike feather",
+    "id": 33644,
+    "weight": 2,
+    "version": "",
+    "slot": "weapon",
+    "image": "Dummy stymphike feather.png",
+    "speed": 3,
+    "category": "Blunt",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Dust battlestaff",
     "id": 20736,
     "weight": 2.267,
@@ -70614,6 +70707,37 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Enchanted diamond sickle (b)",
+    "id": 33711,
+    "weight": 1.587,
+    "version": "",
+    "slot": "weapon",
+    "image": "Enchanted diamond sickle.png",
+    "speed": 5,
+    "category": "Slash Sword",
+    "bonuses": {
+      "str": 12,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 5
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 1,
+      "crush": 1,
+      "magic": 1,
+      "ranged": 1
     },
     "isTwoHanded": false
   },
@@ -85901,6 +86025,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Hallowed flail",
+    "id": 33718,
+    "weight": 0.001,
+    "version": "",
+    "slot": "weapon",
+    "image": "Hallowed flail.png",
+    "speed": 4,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 46,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 6
+    },
+    "offensive": {
+      "stab": 32,
+      "slash": 68,
+      "crush": 0,
+      "magic": 10,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 2,
+      "crush": 0,
+      "magic": 10,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Hallowed focus",
     "id": 24723,
     "weight": 0.001,
@@ -100273,6 +100428,37 @@
       "slash": 0,
       "crush": 0,
       "magic": 15,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Makeshift spear",
+    "id": 33655,
+    "weight": 0,
+    "version": "",
+    "slot": "weapon",
+    "image": "Makeshift spear.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
       "ranged": 0
     },
     "defensive": {
@@ -131070,12 +131256,12 @@
   {
     "name": "Seeking adamant arrow",
     "id": 33577,
-    "weight": 0,
+    "weight": 0.018,
     "version": "",
     "slot": "ammo",
-    "image": "Adamant arrow 5.png",
+    "image": "Seeking adamant arrow 5.png",
     "speed": 0,
-    "category": "",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 31,
@@ -131101,12 +131287,12 @@
   {
     "name": "Seeking amethyst arrow",
     "id": 33589,
-    "weight": 0,
+    "weight": 0.016,
     "version": "",
     "slot": "ammo",
-    "image": "Amethyst arrow 5.png",
+    "image": "Seeking amethyst arrow 5.png",
     "speed": 0,
-    "category": "",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 55,
@@ -131132,12 +131318,12 @@
   {
     "name": "Seeking broad arrows",
     "id": 33601,
-    "weight": 0,
+    "weight": 0.016,
     "version": "",
     "slot": "ammo",
-    "image": "Broad arrows 5.png",
+    "image": "Seeking broad arrows 5.png",
     "speed": 0,
-    "category": "",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 28,
@@ -131163,12 +131349,12 @@
   {
     "name": "Seeking bronze arrow",
     "id": 33553,
-    "weight": 0,
+    "weight": 0.016,
     "version": "",
     "slot": "ammo",
-    "image": "Bronze arrow 5.png",
+    "image": "Seeking bronze arrow 5.png",
     "speed": 0,
-    "category": "",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 7,
@@ -131194,12 +131380,12 @@
   {
     "name": "Seeking dragon arrow",
     "id": 33595,
-    "weight": 0,
+    "weight": 0.016,
     "version": "",
     "slot": "ammo",
-    "image": "Dragon arrow 5.png",
+    "image": "Seeking dragon arrow 5.png",
     "speed": 0,
-    "category": "",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 60,
@@ -131225,12 +131411,12 @@
   {
     "name": "Seeking iron arrow",
     "id": 33559,
-    "weight": 0,
+    "weight": 0.016,
     "version": "",
     "slot": "ammo",
-    "image": "Iron arrow 5.png",
+    "image": "Seeking iron arrow 5.png",
     "speed": 0,
-    "category": "",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 10,
@@ -131256,12 +131442,12 @@
   {
     "name": "Seeking mithril arrow",
     "id": 33571,
-    "weight": 0,
+    "weight": 0.014,
     "version": "",
     "slot": "ammo",
-    "image": "Mithril arrow 5.png",
+    "image": "Seeking mithril arrow 5.png",
     "speed": 0,
-    "category": "",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 22,
@@ -131287,12 +131473,12 @@
   {
     "name": "Seeking rune arrow",
     "id": 33583,
-    "weight": 0,
+    "weight": 0.016,
     "version": "",
     "slot": "ammo",
-    "image": "Rune arrow 5.png",
+    "image": "Seeking rune arrow 5.png",
     "speed": 0,
-    "category": "",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 49,
@@ -131318,12 +131504,12 @@
   {
     "name": "Seeking steel arrow",
     "id": 33565,
-    "weight": 0,
+    "weight": 0.016,
     "version": "",
     "slot": "ammo",
-    "image": "Steel arrow 5.png",
+    "image": "Seeking steel arrow 5.png",
     "speed": 0,
-    "category": "",
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 16,
