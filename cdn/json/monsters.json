@@ -68549,6 +68549,56 @@
     "weakness": null
   },
   {
+    "id": 15742,
+    "name": "Maggot King",
+    "version": "",
+    "image": "Maggot King.png",
+    "level": 741,
+    "speed": 6,
+    "style": [
+      "Ranged",
+      "Magic",
+      "Melee"
+    ],
+    "size": 5,
+    "max_hit": "46 (Magic / Ranged)",
+    "skills": {
+      "atk": 200,
+      "def": 200,
+      "hp": 1500,
+      "magic": 200,
+      "ranged": 300,
+      "str": 250
+    },
+    "offensive": {
+      "atk": 400,
+      "magic": 200,
+      "magic_str": 57,
+      "ranged": 200,
+      "ranged_str": 10,
+      "str": 50
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 45,
+      "magic": 150,
+      "heavy": 43,
+      "standard": 158,
+      "light": 232,
+      "slash": 100,
+      "stab": 172
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "fire",
+      "severity": 80
+    }
+  },
+  {
     "id": 7269,
     "name": "Magic axe",
     "version": "Catacombs of Kourend",
@@ -106334,6 +106384,49 @@
     }
   },
   {
+    "id": 15770,
+    "name": "Superior venator",
+    "version": "",
+    "image": "Superior venator.png",
+    "level": 246,
+    "speed": 5,
+    "style": null,
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 200,
+      "def": 120,
+      "hp": 345,
+      "magic": 100,
+      "ranged": 75,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 130,
+      "magic": 110,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 60,
+      "stab": -5
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
     "id": 787,
     "name": "Suqah",
     "version": "1",
@@ -116711,6 +116804,51 @@
     "weakness": null
   },
   {
+    "id": 15743,
+    "name": "Ur-maggot larvae",
+    "version": "",
+    "image": "Ur-maggot larvae.png",
+    "level": 65,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 80,
+      "def": 35,
+      "hp": 30,
+      "magic": 100,
+      "ranged": 1,
+      "str": 20
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
     "id": 10589,
     "name": "Urium Shade",
     "version": "Shade",
@@ -117983,6 +118121,241 @@
     "attributes": [],
     "immunities": {
       "burn": "Strong"
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 15765,
+    "name": "Venator (monster)",
+    "version": "1",
+    "image": "Venator (1).png",
+    "level": 246,
+    "speed": 5,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "21",
+    "skills": {
+      "atk": 200,
+      "def": 120,
+      "hp": 345,
+      "magic": 100,
+      "ranged": 75,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 150,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 150,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 100,
+      "heavy": -5,
+      "standard": -5,
+      "light": -5,
+      "slash": 20,
+      "stab": -5
+    },
+    "attributes": [
+      "vampyre3"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 15766,
+    "name": "Venator (monster)",
+    "version": "2",
+    "image": "Venator (2).png",
+    "level": 246,
+    "speed": 5,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "21",
+    "skills": {
+      "atk": 200,
+      "def": 120,
+      "hp": 345,
+      "magic": 100,
+      "ranged": 75,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 150,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 150,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 100,
+      "heavy": -5,
+      "standard": -5,
+      "light": -5,
+      "slash": 20,
+      "stab": -5
+    },
+    "attributes": [
+      "vampyre3"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 15767,
+    "name": "Venator (monster)",
+    "version": "3",
+    "image": "Venator (3).png",
+    "level": 246,
+    "speed": 5,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "21",
+    "skills": {
+      "atk": 200,
+      "def": 120,
+      "hp": 345,
+      "magic": 100,
+      "ranged": 75,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 150,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 150,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 100,
+      "heavy": -5,
+      "standard": -5,
+      "light": -5,
+      "slash": 20,
+      "stab": -5
+    },
+    "attributes": [
+      "vampyre3"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 15768,
+    "name": "Venator (monster)",
+    "version": "4",
+    "image": "Venator (4).png",
+    "level": 246,
+    "speed": 5,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "21",
+    "skills": {
+      "atk": 200,
+      "def": 120,
+      "hp": 345,
+      "magic": 100,
+      "ranged": 75,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 150,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 150,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 100,
+      "heavy": -5,
+      "standard": -5,
+      "light": -5,
+      "slash": 20,
+      "stab": -5
+    },
+    "attributes": [
+      "vampyre3"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 15769,
+    "name": "Venator (monster)",
+    "version": "5",
+    "image": "Venator (5).png",
+    "level": 246,
+    "speed": 5,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": "21",
+    "skills": {
+      "atk": 200,
+      "def": 120,
+      "hp": 345,
+      "magic": 100,
+      "ranged": 75,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 150,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 150,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 90,
+      "magic": 100,
+      "heavy": -5,
+      "standard": -5,
+      "light": -5,
+      "slash": 20,
+      "stab": -5
+    },
+    "attributes": [
+      "vampyre3"
+    ],
+    "immunities": {
+      "burn": null
     },
     "is_slayer_monster": false,
     "weakness": null
@@ -121225,6 +121598,54 @@
     },
     "is_slayer_monster": false,
     "weakness": null
+  },
+  {
+    "id": 16226,
+    "name": "Webbed-winged crow",
+    "version": "",
+    "image": "Webbed-winged crow.png",
+    "level": 98,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "8",
+    "skills": {
+      "atk": 160,
+      "def": 50,
+      "hp": 50,
+      "magic": 50,
+      "ranged": 1,
+      "str": 70
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "air",
+      "severity": 25
+    }
   },
   {
     "id": 2603,
@@ -124633,6 +125054,53 @@
       "burn": null
     },
     "is_slayer_monster": true,
+    "weakness": null
+  },
+  {
+    "id": 16212,
+    "name": "Wyrd",
+    "version": "",
+    "image": "Wyrd.png",
+    "level": 564,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "30",
+    "skills": {
+      "atk": 250,
+      "def": 180,
+      "hp": 1100,
+      "magic": 250,
+      "ranged": 250,
+      "str": 250
+    },
+    "offensive": {
+      "atk": 80,
+      "magic": 80,
+      "magic_str": 10,
+      "ranged": 20,
+      "ranged_str": 10,
+      "str": 80
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 30,
+      "magic": 30,
+      "heavy": 30,
+      "standard": 30,
+      "light": 30,
+      "slash": 30,
+      "stab": 30
+    },
+    "attributes": [
+      "vampyre3"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
     "weakness": null
   },
   {
