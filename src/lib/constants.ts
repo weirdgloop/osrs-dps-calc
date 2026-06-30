@@ -6,7 +6,6 @@ export const BLOWPIPE_IDS: number[] = [
   31575, // camphor
   31579, // ironwood
   31583, // rosewood
-  30374, // drygore
 ];
 
 // The maximum number of loadouts that users can have. Do not lower it, else it will cause share link issues.
@@ -545,22 +544,3 @@ export const INFINITE_HEALTH_MONSTERS: number[] = [
 ];
 
 export const ECLIPSE_MOON_IDS = [13012];
-
-export const COMBAT_SPELL_FIRE_RUNE_COST: { [spell: string]: number } = {
-  'Fire Strike': 3,
-  'Fire Bolt': 4,
-  'Fire Blast': 5,
-  'Fire Wave': 7,
-  'Fire Surge': 10,
-  'Iban Blast': 5,
-  'Flames of Zamorak': 4,
-  'Claws of Guthix': 1,
-  'Inferior Demonbane': 3,
-  'Superior Demonbane': 5,
-  'Undead Grasp': 12,
-  'Dark Demonbane': 7,
-  'Smoke Rush': 1,
-  'Smoke Burst': 2,
-  'Smoke Blitz': 2,
-  'Smoke Barrage': 4,
-};

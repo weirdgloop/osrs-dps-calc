@@ -13,7 +13,7 @@ import {
 } from '@/lib/constants';
 import { UserIssue } from '@/types/State';
 import { CalcDetails, DetailEntry } from '@/lib/CalcDetails';
-import { Factor, MinMax } from '@/lib/Math';
+import { Factor } from '@/lib/Math';
 import { scaleMonster } from '@/lib/MonsterScaling';
 import { getCombatStylesForCategory, isDefined } from '@/utils';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
@@ -25,15 +25,10 @@ export interface CalcOpts {
   detailedOutput?: boolean,
   disableMonsterScaling?: boolean,
   usingSpecialAttack?: boolean,
-  isBlindBag?: boolean,
-  blindBagDistance?: number,
-  blindBagUniques?: number,
-  isEcho?: boolean,
   overrides?: {
     accuracy?: number,
     attackRoll?: number,
     defenceRoll?: number,
-    maxHit?: MinMax,
   },
 }
 
@@ -50,10 +45,6 @@ const DEFAULT_OPTS: Required<InternalOpts> = {
   detailedOutput: false,
   disableMonsterScaling: false,
   usingSpecialAttack: false,
-  isBlindBag: false,
-  blindBagDistance: 1,
-  blindBagUniques: 1,
-  isEcho: false,
   noInit: false,
   overrides: {},
 };
@@ -94,7 +85,7 @@ export default class BaseCalc {
     this.baseMonster = monster;
     this.monster = (this.opts.disableMonsterScaling || this.opts.noInit) ? monster : scaleMonster(monster);
 
-    if (!this.opts.noInit || this.opts.isBlindBag) {
+    if (!this.opts.noInit) {
       this.canonicalizeEquipment();
       this.allEquippedItems = Object.values(this.player.equipment).filter((v) => v !== null).flat(1).map((eq: EquipmentPiece | null) => eq?.name || '');
       this.sanitizeInputs();
@@ -304,7 +295,7 @@ export default class BaseCalc {
    * @see https://oldschool.runescape.wiki/w/Slayer_helmet
    */
   protected isWearingSlayerHelmet(): boolean {
-    return this.wearing(['Slayer helmet', 'Slayer helmet (i)']) || this.player.leagues.six.cullingSpree;
+    return this.wearing(['Slayer helmet', 'Slayer helmet (i)']);
   }
 
   /**
@@ -312,7 +303,7 @@ export default class BaseCalc {
    * @see https://oldschool.runescape.wiki/w/Black_mask
    */
   protected isWearingBlackMask(): boolean {
-    return this.isWearingImbuedBlackMask() || this.wearing(['Black mask', 'Slayer helmet']) || this.player.leagues.six.cullingSpree;
+    return this.isWearingImbuedBlackMask() || this.wearing(['Black mask', 'Slayer helmet']);
   }
 
   /**
@@ -320,7 +311,7 @@ export default class BaseCalc {
    * @see https://oldschool.runescape.wiki/w/Black_mask_(i)
    */
   protected isWearingImbuedBlackMask(): boolean {
-    return this.wearing(['Black mask (i)', 'Slayer helmet (i)', 'V\'s helm']) || this.player.leagues.six.cullingSpree;
+    return this.wearing(['Black mask (i)', 'Slayer helmet (i)', 'V\'s helm']);
   }
 
   /**
@@ -400,7 +391,6 @@ export default class BaseCalc {
       'Sulphur blades',
       'Glacial temotli',
       'Earthbound tecpatl',
-      'Infernal tecpatl',
     ]);
   }
 
@@ -570,10 +560,6 @@ export default class BaseCalc {
       return true;
     }
 
-    if (weapon.name === "King's barrage") {
-      return true;
-    }
-
     return false;
   }
 
@@ -644,7 +630,7 @@ export default class BaseCalc {
         return this.wearing(['Scorching bow']);
 
       default:
-        return this.wearing(['Silverlight', 'Darklight', 'Arclight', 'Emberlight', 'Bone claws', 'Burning claws', 'Infernal tecpatl']);
+        return this.wearing(['Silverlight', 'Darklight', 'Arclight', 'Emberlight', 'Bone claws', 'Burning claws']);
     }
   }
 

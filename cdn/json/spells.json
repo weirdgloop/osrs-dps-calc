@@ -425,20 +425,5 @@
     "max_hit": 17,
     "spellbook": "standard",
     "element": "air"
-  },
-  {
-    "name": "Flames of Cerberus",
-    "image": "Wind Wave.png",
-    "max_hit": 10,
-    "spellbook": "standard",
-    "element": "fire",
-    "unselectable": true
-  },
-  {
-    "name": "King's Ice Barrage",
-    "image": "Wind Wave.png",
-    "max_hit": 1,
-    "spellbook": "ancient",
-    "unselectable": true
   }
 ]

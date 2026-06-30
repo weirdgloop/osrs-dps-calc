@@ -33,7 +33,6 @@ import { availableEquipment, calculateEquipmentBonusesFromGear } from '@/lib/Equ
 import { CalcWorker } from '@/worker/CalcWorker';
 import { spellByName } from '@/types/Spell';
 import { DEFAULT_ATTACK_SPEED, INFINITE_HEALTH_MONSTERS, NUMBER_OF_LOADOUTS } from '@/lib/constants';
-import { dbrowDefinitions, rootNode } from '@/app/components/player/demonicPactsLeague/parse_skill_tree_elements';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
   ARM_PRAYERS,
@@ -126,22 +125,6 @@ export const generateEmptyPlayer = (name?: string): Player => ({
     usingSunfireRunes: false,
   },
   spell: null,
-  leagues: {
-    six: {
-      selectedNodeIds: new Set<string>(['node1']),
-      effects: {},
-      distanceToEnemy: 1,
-      enemyPrayers: {
-        melee: false,
-        ranged: false,
-        magic: false,
-      },
-      blindbagWeapons: [],
-      regenerateMagicBonus: 0,
-      cullingSpree: false,
-      bowHitsWithoutDamage: 0,
-    },
-  },
 });
 
 export const parseLoadoutsFromImportedData = (data: ImportableData) => data.loadouts.map((loadout, i) => {
@@ -231,11 +214,6 @@ class GlobalState implements State {
     showShareModal: false,
     username: '',
     isDefensiveReductionsExpanded: false,
-    leagues: {
-      six: {
-        pactsSearchQuery: '',
-      },
-    },
   };
 
   prefs: Preferences = {
@@ -278,16 +256,6 @@ class GlobalState implements State {
 
   private storageUpdater?: IReactionDisposer;
 
-  leagues: {
-    six: {
-      hoveredNodeId: string | null;
-    }
-  } = {
-      six: {
-        hoveredNodeId: null,
-      },
-    };
-
   constructor() {
     makeAutoObservable(this, {}, { autoBind: true });
 
@@ -308,25 +276,12 @@ class GlobalState implements State {
         }
       }
 
-      const leagueEffects = this.player.leagues.six.effects;
-      const leagueDef = leagueEffects.talent_defence_boost ?? 0;
-      if (leagueDef > 0 && leagueDef > (boosts.def ?? 0)) {
-        boosts.def = leagueDef;
-      }
-
-      const leagueMagicBoost = Math.min(this.player.leagues.six.regenerateMagicBonus ?? 0, 10);
-      if ((boosts.magic ?? 0) !== 0 && leagueMagicBoost > 0) {
-        // Regenerate magic boost does not stack with any other boosts
-        boosts.magic = leagueMagicBoost;
-      }
-
       this.updatePlayer({ boosts });
     };
 
     const potionTriggers: ((r: IReactionPublic) => unknown)[] = [
       () => toJS(this.player.skills),
       () => toJS(this.player.buffs.potions),
-      () => toJS(this.player.leagues.six),
     ];
     potionTriggers.map((t) => reaction(t, recomputeBoosts, { fireImmediately: false }));
 
@@ -517,33 +472,9 @@ class GlobalState implements State {
           };
         }
 
-      case 8:
-        // Definition of distanceToEnemy changed from 'tiles between' to
-        // 'distance' to match weapon range.
-        data.loadouts.forEach((l) => {
-          /* eslint-disable @typescript-eslint/no-explicit-any */
-          const six = (l as any)?.leagues?.six;
-          if (six) {
-            six.distanceToEnemy = Math.min(10, six.distanceToEnemy + 1);
-          }
-          /* eslint-enable @typescript-eslint/no-explicit-any */
-        });
+      case 8: // reserved: used during leagues 6
 
-      case 9:
-        data.loadouts.forEach((l) => {
-          const replacements = {
-            1000100: 33247,
-            1000101: 33245,
-            1000102: 33253,
-            1000103: 33255,
-            1000104: 33243,
-            1000105: 33249,
-            1000106: 33251,
-          };
-          if (l.equipment?.weapon?.id && `${l.equipment.weapon.id}` in replacements) {
-            l.equipment.weapon.id = replacements[l.equipment.weapon.id as keyof typeof replacements];
-          }
-        });
+      case 9: // reserved: used during leagues 6
 
       default:
     }
@@ -597,7 +528,6 @@ class GlobalState implements State {
       this.updatePlayer(p, ix);
     });
     this.recalculateEquipmentBonusesFromGearAll();
-    this.recalculateLeaguesEffects();
 
     this.selectedLoadout = data.selectedLoadout || 0;
   }
@@ -902,210 +832,6 @@ class GlobalState implements State {
     }
 
     await Promise.all(promises);
-  }
-
-  get reachableNodeIds() {
-    const reachable = new Set<string>();
-    for (const selectedId of this.player.leagues.six.selectedNodeIds) {
-      const node = dbrowDefinitions[selectedId];
-      if (node) {
-        for (const linkedId of node.linked_nodes) {
-          if (!this.player.leagues.six.selectedNodeIds.has(linkedId)) {
-            reachable.add(linkedId);
-          }
-        }
-      }
-    }
-    return reachable;
-  }
-
-  toggleLeagues6BlindbagWeapon(eq: EquipmentPiece) {
-    if (this.player.leagues.six.blindbagWeapons.find((w) => w.id === eq.id)) {
-      this.player.leagues.six.blindbagWeapons = this.player.leagues.six.blindbagWeapons.filter((w) => w.id !== eq.id);
-    } else {
-      this.player.leagues.six.blindbagWeapons.push(eq);
-    }
-  }
-
-  setHoveredNode(id: string | null) {
-    this.leagues.six.hoveredNodeId = id;
-  }
-
-  pruneStrandedNodes() {
-    if (this.player.leagues.six.selectedNodeIds.size === 1) {
-      return;
-    }
-
-    const visited = new Set<string>([rootNode.id]);
-    const queue: string[] = [rootNode.id];
-
-    let head = 0;
-    while (head < queue.length) {
-      const currentId = queue[head];
-      head += 1;
-      const node = dbrowDefinitions[currentId];
-      if (node) {
-        for (const linkedId of node.linked_nodes) {
-          if (this.player.leagues.six.selectedNodeIds.has(linkedId) && !visited.has(linkedId)) {
-            visited.add(linkedId);
-            queue.push(linkedId);
-          }
-        }
-      }
-    }
-
-    this.player.leagues.six.selectedNodeIds = visited;
-  }
-
-  toggleNodeSelection(id: string, allowMissingDependencies: boolean) {
-    if (id === rootNode.id) {
-      this.player.leagues.six.selectedNodeIds.clear();
-      this.player.leagues.six.selectedNodeIds.add(rootNode.id);
-      this.recalculateLeaguesEffects();
-      return;
-    }
-
-    if (this.player.leagues.six.selectedNodeIds.has(id)) {
-      this.player.leagues.six.selectedNodeIds.delete(id);
-      if (!allowMissingDependencies) {
-        this.pruneStrandedNodes();
-      }
-    } else if (this.reachableNodeIds.has(id) || allowMissingDependencies) {
-      this.player.leagues.six.selectedNodeIds.add(id);
-    } else {
-      this.pathToSelection(id);
-    }
-
-    this.recalculateLeaguesEffects();
-  }
-
-  isNodeSelected(id: string) {
-    return this.player.leagues.six.selectedNodeIds.has(id);
-  }
-
-  pathToSelection(id: string) {
-    const nodesToSelect = this.getNodesToSelect(id);
-    for (const nodeId of nodesToSelect) {
-      this.player.leagues.six.selectedNodeIds.add(nodeId);
-    }
-  }
-
-  getNodesToSelect(id: string): Set<string> {
-    const nodesToSelect = new Set<string>();
-    if (this.player.leagues.six.selectedNodeIds.has(id)) {
-      return nodesToSelect;
-    }
-
-    const queue: string[] = [id];
-    const parent = new Map<string, string | null>();
-    parent.set(id, null);
-
-    let foundTarget: string | null = null;
-    let head = 0;
-
-    const isTarget = (nodeId: string): boolean => this.player.leagues.six.selectedNodeIds.has(nodeId);
-
-    while (head < queue.length) {
-      const currentId = queue[head];
-      head += 1;
-      if (isTarget(currentId)) {
-        foundTarget = currentId;
-        break;
-      }
-
-      const node = dbrowDefinitions[currentId];
-      if (node) {
-        for (const linkedId of node.linked_nodes) {
-          if (!parent.has(linkedId)) {
-            parent.set(linkedId, currentId);
-            queue.push(linkedId);
-          }
-        }
-      }
-    }
-
-    if (foundTarget) {
-      let curr: string | null = foundTarget;
-      while (curr !== null) {
-        if (!this.player.leagues.six.selectedNodeIds.has(curr)) {
-          nodesToSelect.add(curr);
-        }
-        curr = parent.get(curr) || null;
-      }
-    }
-
-    return nodesToSelect;
-  }
-
-  get nodesToSelectIfHoveredSelected(): Set<string> {
-    if (!this.leagues.six.hoveredNodeId) {
-      return new Set();
-    }
-    return this.getNodesToSelect(this.leagues.six.hoveredNodeId);
-  }
-
-  recalculateLeaguesEffects() {
-    const state = this.player.leagues.six;
-    state.effects = {};
-
-    const selectedNodeIds = state.selectedNodeIds;
-    selectedNodeIds.forEach((id) => {
-      const def = dbrowDefinitions[id];
-      const prior = state.effects[def.effect.name] ?? 0;
-      state.effects[def.effect.name] = prior + def.effect.value;
-    });
-
-    console.debug('[GlobalState] recalculateLeaguesEffects', toJS(state.effects));
-
-    if (!this.prefs.manualMode) {
-      this.recalculateEquipmentBonusesFromGearAll();
-    }
-  }
-
-  get currentEffects(): Map<
-  string,
-  {
-    skillTreeNodeId: string;
-    values: number[];
-  }
-  > {
-    const state = this.player.leagues.six;
-    const effects = new Map<
-    string,
-    {
-      skillTreeNodeId: string;
-      values: number[];
-    }
-    >();
-    for (const id of state.selectedNodeIds) {
-      const node = dbrowDefinitions[id];
-      if (node) {
-        const existingEffect = effects.get(node.effect.name);
-        if (existingEffect) {
-          if (dbrowDefinitions[existingEffect.skillTreeNodeId]?.name.length < node.name.length) {
-            existingEffect.skillTreeNodeId = id;
-          }
-          existingEffect.values.push(node.effect.value);
-        } else {
-          effects.set(node.effect.name, {
-            skillTreeNodeId: id,
-            values: [node.effect.value],
-          });
-        }
-      }
-    }
-    return effects;
-  }
-
-  get nodesMatchingSearch(): Set<string> {
-    if (!this.ui.leagues.six.pactsSearchQuery) {
-      return new Set();
-    }
-    return new Set(
-      Object.keys(dbrowDefinitions).filter((id) => dbrowDefinitions[id].name
-        ?.toLowerCase()
-        .includes(this.ui.leagues.six.pactsSearchQuery.toLowerCase())),
-    );
   }
 }
 

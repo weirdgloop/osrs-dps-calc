@@ -3,7 +3,6 @@ import { Prayer } from '@/enums/Prayer';
 import Potion from '@/enums/Potion';
 import { Spell } from '@/types/Spell';
 import { PlayerCombatStyle } from '@/types/PlayerCombatStyle';
-import { LeaguesEffect } from '@/app/components/player/demonicPactsLeague/parse_skill_tree_elements';
 
 export interface PlayerSkills {
   atk: number;
@@ -80,28 +79,6 @@ export interface EquipmentStats {
   defensive: PlayerDefensive,
 }
 
-export interface LeaguesState {
-  selectedNodeIds: Set<string>;
-
-  effects: { [k in LeaguesEffect]?: number };
-
-  distanceToEnemy: number;
-
-  enemyPrayers: {
-    melee: boolean;
-    ranged: boolean;
-    magic: boolean;
-  }
-
-  blindbagWeapons: EquipmentPiece[];
-
-  regenerateMagicBonus: number;
-
-  cullingSpree: boolean;
-
-  bowHitsWithoutDamage: number;
-}
-
 export interface Player extends EquipmentStats {
   name: string;
   style: PlayerCombatStyle;
@@ -167,8 +144,4 @@ export interface Player extends EquipmentStats {
     usingSunfireRunes: boolean;
   };
   spell: Spell | null;
-
-  leagues: {
-    six: LeaguesState
-  }
 }
