@@ -318,7 +318,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
       } else if (this.wearing('Barrelchest anchor')) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
-      } else if (this.isNewSpecWeaponFinisher()) {
+      } else if (this.isSunspearFinisher()) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [7, 10]);
       }
     }
@@ -1239,7 +1239,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       BaseCalc.getNormalAccuracyRoll(atk, def),
     );
 
-    if (this.isNewSpecWeaponFinisher()) {
+    if (this.isSunspearFinisher()) {
       return this.track(
         DetailKey.PLAYER_ACCURACY_SUNSPEAR,
         BaseCalc.getFixedAttackHitChance(atk, def),
@@ -2379,7 +2379,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     ];
   }
 
-  private isNewSpecWeaponFinisher(): boolean {
+  private isSunspearFinisher(): boolean {
     const [, max] = this.getMinAndMax();
     return this.wearing('Sunspear')
       && this.opts.usingSpecialAttack
