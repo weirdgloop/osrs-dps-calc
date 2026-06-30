@@ -64,7 +64,9 @@ import {
 } from '@/lib/constants';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { DetailKey } from '@/lib/CalcDetails';
-import { Factor, iLerp, MinMax } from '@/lib/Math';
+import {
+  binomal, Factor, iLerp, MinMax,
+} from '@/lib/Math';
 import {
   calculateAttackSpeed,
   WEAPON_SPEC_COSTS,
@@ -1407,12 +1409,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       effectDist.addHit(new WeightedHit(1 - acc, [Hitsplat.INACCURATE]));
 
       for (let i = 0; i < 4; i++) {
-        // all previous rolls hit
-        let chanceThisProc = (acc ** (i + 1));
-        if (i < 3) {
-          // chance that we don't make further successful rolls
-          chanceThisProc *= (1 - acc);
-        }
+        // chance that exactly (i+1) accuracy rolls passed
+        const chanceThisProc = binomal(acc, i + 1, 4);
 
         // todo(blood moon): verify that the -1 on i == 3 is applied here, not to the base max hit
         const effectMin = Math.trunc(max * (70 + (i * 20)) / 100);
