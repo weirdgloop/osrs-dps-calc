@@ -22635,7 +22635,7 @@
     "weight": 1.587,
     "version": "",
     "slot": "weapon",
-    "image": "Blisterwood sickle.png",
+    "image": "Blisterwood sickle (e).png",
     "speed": 5,
     "category": "Slash Sword",
     "bonuses": {
@@ -61664,7 +61664,7 @@
     "weight": 1.587,
     "version": "",
     "slot": "weapon",
-    "image": "Diamond sickle.png",
+    "image": "Diamond sickle (b).png",
     "speed": 5,
     "category": "Slash Sword",
     "bonuses": {
@@ -134597,6 +134597,68 @@
       "slash": 3,
       "crush": 2,
       "magic": 1,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Silvthrill ballista",
+    "id": 33800,
+    "weight": 2,
+    "version": "",
+    "slot": "weapon",
+    "image": "Silvthrill ballista.png",
+    "speed": 6,
+    "category": "Crossbow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 15,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 125
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Silvthrill javelin",
+    "id": 33801,
+    "weight": 0,
+    "version": "",
+    "slot": "ammo",
+    "image": "Silvthrill javelin.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 124,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
       "ranged": 0
     },
     "isTwoHanded": false
