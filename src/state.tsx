@@ -241,6 +241,7 @@ class GlobalState implements State {
         playerDefRoll: 0,
         accuracy: 0,
         dps: 0,
+        xpPerHour: 0,
         ttk: 0,
         hitDist: [],
         ttkDist: undefined,

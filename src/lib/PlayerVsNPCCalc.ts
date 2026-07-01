@@ -2007,6 +2007,15 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   /**
+   * Returns the expected combat XP gained per hour, based on damage dealt.
+   * Magic grants 2xp per point of damage; all other combat styles grant 4xp per point of damage.
+   */
+  public getXpPerHour() {
+    const xpPerDamage = this.player.style.type === 'magic' ? 2 : 4;
+    return this.getDps() * xpPerDamage * 3600;
+  }
+
+  /**
    * Returns the amount of time (in ticks) that the user can maintain their prayers before running out of prayer points.
    * Does not account for flicking or toggling prayers.
    */

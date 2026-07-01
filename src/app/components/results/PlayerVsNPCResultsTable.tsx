@@ -28,6 +28,8 @@ const calcKeyToString = (value: number, calcKey: keyof PlayerVsNPCCalculatedLoad
     case 'dps':
     case 'specMomentDps':
       return value.toFixed(DPS_PRECISION);
+    case 'xpPerHour':
+      return value.toLocaleString(undefined, { maximumFractionDigits: 0 });
     case 'specFullDps':
       return value.toPrecision(DPS_PRECISION);
     case 'expectedHit':
@@ -142,6 +144,9 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
         )}
         <ResultRow calcKey="dps" title="The average damage you will deal per-second" hasResults={hasResults}>
           DPS
+        </ResultRow>
+        <ResultRow calcKey="xpPerHour" title="The estimated combat XP per hour, based on damage dealt (4xp/damage for melee and ranged, 2xp/damage for magic, not including base spell cast xp)" hasResults={hasResults}>
+          XP/H
         </ResultRow>
         <ResultRow calcKey="ttk" title="The average time (in seconds) it will take to defeat the monster" hasResults={hasResults}>
           Avg. TTK
