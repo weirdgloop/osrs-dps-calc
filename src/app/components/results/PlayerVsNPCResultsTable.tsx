@@ -145,7 +145,7 @@ const PlayerVsNPCResultsTable: React.FC = observer(() => {
         <ResultRow calcKey="dps" title="The average damage you will deal per-second" hasResults={hasResults}>
           DPS
         </ResultRow>
-        <ResultRow calcKey="xpPerHour" title="The estimated combat XP per hour, based on damage dealt (4xp/damage for melee and ranged, 2xp/damage for magic, not including base spell cast xp)" hasResults={hasResults}>
+        <ResultRow calcKey="xpPerHour" title="The estimated combat XP per hour (4xp/damage for melee and ranged, 2xp/damage for magic, plus base spell cast xp where applicable)" hasResults={hasResults}>
           XP/H
         </ResultRow>
         <ResultRow calcKey="ttk" title="The average time (in seconds) it will take to defeat the monster" hasResults={hasResults}>

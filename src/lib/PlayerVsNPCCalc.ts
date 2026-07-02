@@ -2007,12 +2007,21 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   }
 
   /**
-   * Returns the expected combat XP gained per hour, based on damage dealt.
-   * Magic grants 2xp per point of damage; all other combat styles grant 4xp per point of damage.
+   * Returns the expected combat XP gained per hour.
+   * Magic grants 2xp per point of damage, plus a fixed base XP per cast (awarded on hit or miss) for spells
+   * cast from the spellbook. All other combat styles grant 4xp per point of damage.
    */
   public getXpPerHour() {
-    const xpPerDamage = this.player.style.type === 'magic' ? 2 : 4;
-    return this.getDps() * xpPerDamage * 3600;
+    const isMagic = this.player.style.type === 'magic';
+    const xpPerDamage = isMagic ? 2 : 4;
+    const damageXpPerHour = this.getDps() * xpPerDamage * 3600;
+
+    if (isMagic && this.player.spell?.base_xp) {
+      const castsPerHour = 3600 / (this.getExpectedAttackSpeed() * SECONDS_PER_TICK);
+      return damageXpPerHour + (this.player.spell.base_xp * castsPerHour);
+    }
+
+    return damageXpPerHour;
   }
 
   /**
