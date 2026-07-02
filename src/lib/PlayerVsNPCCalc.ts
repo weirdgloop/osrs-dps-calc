@@ -2255,6 +2255,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
   private noInitSubCalc(p: Player, m: Monster, opts: Partial<InternalOpts> = {}): PlayerVsNPCCalc {
     const subCalc = new PlayerVsNPCCalc(p, m, <InternalOpts>{ ...this.opts, ...opts, noInit: true });
     subCalc.baseMonster = this.baseMonster;
+    subCalc.allEquippedItems = this.allEquippedItems;
 
     return subCalc;
   }
