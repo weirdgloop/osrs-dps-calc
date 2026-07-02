@@ -490,6 +490,7 @@ export default class BaseCalc {
         'Ivandis flail',
         'Blisterwood sickle',
         'Blisterwood flail',
+        'Hallowed flail',
         'Sunspear',
       ]);
   }
