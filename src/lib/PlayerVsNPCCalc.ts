@@ -1406,7 +1406,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.isUsingMeleeStyle() && this.wearing('Crimson kisten') && this.opts.usingSpecialAttack) {
       const effectDist = new HitDistribution([]);
-      effectDist.addHit(new WeightedHit(1 - acc, [Hitsplat.INACCURATE]));
+      effectDist.addHit(new WeightedHit((1 - acc) ** 4, [Hitsplat.INACCURATE]));
 
       for (let i = 0; i < 4; i++) {
         // chance that exactly (i+1) accuracy rolls passed
