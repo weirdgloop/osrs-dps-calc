@@ -22635,7 +22635,7 @@
     "weight": 1.587,
     "version": "",
     "slot": "weapon",
-    "image": "Blisterwood sickle.png",
+    "image": "Blisterwood sickle (e).png",
     "speed": 5,
     "category": "Slash Sword",
     "bonuses": {
@@ -61664,7 +61664,7 @@
     "weight": 1.587,
     "version": "",
     "slot": "weapon",
-    "image": "Diamond sickle.png",
+    "image": "Diamond sickle (b).png",
     "speed": 5,
     "category": "Slash Sword",
     "bonuses": {
@@ -70778,7 +70778,7 @@
     "weight": 1.587,
     "version": "",
     "slot": "weapon",
-    "image": "Enchanted diamond sickle.png",
+    "image": "Enchanted diamond sickle (b).png",
     "speed": 5,
     "category": "Slash Sword",
     "bonuses": {
@@ -100490,37 +100490,6 @@
       "slash": 0,
       "crush": 0,
       "magic": 15,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Makeshift spear",
-    "id": 33655,
-    "weight": 0,
-    "version": "",
-    "slot": "weapon",
-    "image": "Makeshift spear.png",
-    "speed": 0,
-    "category": "Unarmed",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
       "ranged": 0
     },
     "defensive": {
@@ -134602,6 +134571,68 @@
     "isTwoHanded": false
   },
   {
+    "name": "Silvthrill ballista",
+    "id": 33800,
+    "weight": 2,
+    "version": "",
+    "slot": "weapon",
+    "image": "Silvthrill ballista.png",
+    "speed": 6,
+    "category": "Crossbow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 15,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 125
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Silvthrill javelin",
+    "id": 33801,
+    "weight": 0,
+    "version": "",
+    "slot": "ammo",
+    "image": "Silvthrill javelin.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 124,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Sinhaza shroud tier 1",
     "id": 22494,
     "weight": 0.453,
@@ -137943,6 +137974,37 @@
       "stab": 2,
       "slash": 2,
       "crush": 1,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Spine",
+    "id": 33790,
+    "weight": 0.34,
+    "version": "",
+    "slot": "weapon",
+    "image": "Spine.png",
+    "speed": 3,
+    "category": "Thrown",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 26,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 16
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
       "magic": 0,
       "ranged": 0
     },
