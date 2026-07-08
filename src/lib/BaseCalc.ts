@@ -688,7 +688,7 @@ export default class BaseCalc {
   }
 
   protected isSlayerMonster(): boolean {
-    return this.monster.is_slayer_monster;
+    return this.monster.is_slayer_monster || this.monster.id === -1;
   }
 
   protected addIssue(type: UserIssueType, message: string) {
