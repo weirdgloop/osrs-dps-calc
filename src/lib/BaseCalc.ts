@@ -453,8 +453,13 @@ export default class BaseCalc {
    */
 
   protected isWearingSilverWeapon(): boolean {
-    if (this.player.equipment.ammo?.name.startsWith('Silver bolts')
-      && this.player.style.type === 'ranged') {
+    if (this.player.style.type === 'ranged' && this.wearing([
+      'Silver bolts#Unpoisoned',
+      'Silver bolts#Poison',
+      'Silver bolts#Poison+',
+      'Silver bolts#Poison++',
+      'Blisterwood stake',
+    ])) {
       return true;
     }
 
@@ -484,6 +489,9 @@ export default class BaseCalc {
    */
   protected wearingVampyrebane(tier: MonsterAttribute.VAMPYRE_2 | MonsterAttribute.VAMPYRE_3): boolean {
     const t2 = tier === MonsterAttribute.VAMPYRE_2;
+    if (this.player.style.type === 'ranged' && this.player.equipment.weapon?.name === 'Blisterwood stake') {
+      return true;
+    }
     return (t2 || this.isUsingMeleeStyle())
       && this.wearing([
         ...(t2 ? ['Rod of ivandis'] : []),

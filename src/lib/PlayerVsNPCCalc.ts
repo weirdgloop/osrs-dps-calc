@@ -271,7 +271,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_KERIS, attackRoll, [5, 4]);
     }
     if (this.wearing(['Blisterwood flail', 'Blisterwood sickle']) && isVampyre(mattrs)) {
-      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_VAMPYREBANE, attackRoll, [21, 20]);
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_VAMPYREBANE, attackRoll, [105, 100]);
+    }
+    if (this.wearing(['Hallowed flail']) && isVampyre(mattrs)) {
+      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_VAMPYREBANE, attackRoll, [125, 100]);
     }
     if (this.isWearingSilverWeapon() && this.wearing("Efaritay's aid") && isVampyre(mattrs)) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_EFARITAY, attackRoll, [23, 20]); // todo ordering? does this stack multiplicatively with vampyrebane?
@@ -1635,9 +1638,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const efaritay = this.wearing("Efaritay's aid");
       const doEfaritay = (d: AttackDistribution) => (efaritay ? d.scaleDamage(11, 10) : d);
 
-      if (this.wearing('Blisterwood flail')) {
+      if (this.wearing(['Blisterwood flail', 'Hallowed flail', 'Blisterwood stake'])) {
         dist = doEfaritay(dist);
-        dist = dist.scaleDamage(5, 4);
+        dist = dist.scaleDamage(125, 100);
       } else if (this.wearing('Blisterwood sickle')) {
         dist = doEfaritay(dist);
         dist = dist.scaleDamage(23, 20);
