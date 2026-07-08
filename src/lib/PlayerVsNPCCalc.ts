@@ -1579,10 +1579,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       ]);
     }
 
-    if (!(this.isWearingScythe() || this.isWearingTwoHitWeapon() || this.wearing('Dual macuahuitl')) && isMaggotKingMeleePunish) {
-      dist = dist.scaleDamage(150, 100);
-    }
-
     if (this.isUsingMeleeStyle() && this.isWearingKeris() && mattrs.includes(MonsterAttribute.KALPHITE)) {
       dist = new AttackDistribution([
         new HitDistribution([
@@ -1650,6 +1646,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.isUsingMeleeStyle() && this.isWearingBerserkerNecklace() && this.isWearingTzhaarWeapon()) {
       dist = dist.scaleDamage(6, 5);
+    }
+
+    if (!(this.isWearingScythe() || this.isWearingTwoHitWeapon() || this.wearing('Dual macuahuitl')) && isMaggotKingMeleePunish) {
+      dist = dist.scaleDamage(150, 100);
     }
 
     // all this vampyre stuff was tested methodically by @jmyaeger, many thanks!
