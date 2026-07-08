@@ -22728,7 +22728,7 @@
     "weight": 2.267,
     "version": "Locked",
     "slot": "weapon",
-    "image": "Blood ancient sceptre.png",
+    "image": "Blood ancient sceptre (l).png",
     "speed": 4,
     "category": "Staff",
     "bonuses": {
@@ -69693,7 +69693,7 @@
     "weight": 8.164,
     "version": "Locked",
     "slot": "legs",
-    "image": "Elite void robe.png",
+    "image": "Elite void robe (l).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -69848,7 +69848,7 @@
     "weight": 6.803,
     "version": "Locked",
     "slot": "body",
-    "image": "Elite void top.png",
+    "image": "Elite void top (l).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -72855,7 +72855,7 @@
     "weight": 4,
     "version": "Locked",
     "slot": "body",
-    "image": "Fighter torso.png",
+    "image": "Fighter torso (l).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -89719,7 +89719,7 @@
     "weight": 2.267,
     "version": "Locked",
     "slot": "weapon",
-    "image": "Ice ancient sceptre.png",
+    "image": "Ice ancient sceptre (l).png",
     "speed": 4,
     "category": "Staff",
     "bonuses": {
@@ -91517,7 +91517,7 @@
     "weight": 0.453,
     "version": "Locked",
     "slot": "cape",
-    "image": "Infernal max cape.png",
+    "image": "Infernal max cape (l).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -132034,7 +132034,7 @@
     "weight": 2.267,
     "version": "Locked",
     "slot": "weapon",
-    "image": "Shadow ancient sceptre.png",
+    "image": "Shadow ancient sceptre (l).png",
     "speed": 4,
     "category": "Staff",
     "bonuses": {
@@ -136684,7 +136684,7 @@
     "weight": 2.267,
     "version": "Locked",
     "slot": "weapon",
-    "image": "Smoke ancient sceptre.png",
+    "image": "Smoke ancient sceptre (l).png",
     "speed": 4,
     "category": "Staff",
     "bonuses": {
@@ -156399,7 +156399,7 @@
     "weight": 0.453,
     "version": "Locked",
     "slot": "hands",
-    "image": "Void knight gloves.png",
+    "image": "Void knight gloves (l).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -156647,7 +156647,7 @@
     "weight": 8.164,
     "version": "Locked",
     "slot": "legs",
-    "image": "Void knight robe.png",
+    "image": "Void knight robe (l).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -156802,7 +156802,7 @@
     "weight": 6.803,
     "version": "Locked",
     "slot": "body",
-    "image": "Void knight top.png",
+    "image": "Void knight top (l).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -156957,7 +156957,7 @@
     "weight": 0.453,
     "version": "Locked",
     "slot": "head",
-    "image": "Void mage helm.png",
+    "image": "Void mage helm (l).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -157112,7 +157112,7 @@
     "weight": 0.453,
     "version": "Locked",
     "slot": "head",
-    "image": "Void melee helm.png",
+    "image": "Void melee helm (l).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -157267,7 +157267,7 @@
     "weight": 0.453,
     "version": "Locked",
     "slot": "head",
-    "image": "Void ranger helm.png",
+    "image": "Void ranger helm (l).png",
     "speed": 0,
     "category": "",
     "bonuses": {
