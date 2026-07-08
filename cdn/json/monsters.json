@@ -11291,7 +11291,7 @@
   {
     "id": 9283,
     "name": "Basilisk (The Fremennik Exiles)",
-    "version": "1",
+    "version": "Adult",
     "image": "Basilisk.png",
     "level": 61,
     "speed": 4,
@@ -11339,7 +11339,7 @@
   {
     "id": 9285,
     "name": "Basilisk (The Fremennik Exiles)",
-    "version": "2",
+    "version": "Baby",
     "image": "Basilisk (unused).png",
     "level": 61,
     "speed": 4,
@@ -15052,6 +15052,53 @@
       "element": "earth",
       "severity": 50
     }
+  },
+  {
+    "id": 15770,
+    "name": "Blood-starved venator",
+    "version": "",
+    "image": "Blood-starved venator.png",
+    "level": 246,
+    "speed": 5,
+    "style": [
+      "Stab"
+    ],
+    "size": 3,
+    "max_hit": "21 (Melee/ranged)",
+    "skills": {
+      "atk": 200,
+      "def": 120,
+      "hp": 345,
+      "magic": 100,
+      "ranged": 75,
+      "str": 200
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 130,
+      "magic": 110,
+      "heavy": -5,
+      "standard": -5,
+      "light": -5,
+      "slash": 60,
+      "stab": -5
+    },
+    "attributes": [
+      "vampyre3"
+    ],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "is_slayer_monster": true,
+    "weakness": null
   },
   {
     "id": 3138,
@@ -21738,7 +21785,7 @@
     "style": [
       "Stab"
     ],
-    "size": 2,
+    "size": 3,
     "max_hit": "5",
     "skills": {
       "atk": 22,
@@ -68882,7 +68929,7 @@
     "version": "Far",
     "image": "Maggot King.png",
     "level": 741,
-    "speed": 6,
+    "speed": 0,
     "style": [
       "Ranged",
       "Magic",
@@ -68932,7 +68979,7 @@
     "version": "Nearby",
     "image": "Maggot King.png",
     "level": 741,
-    "speed": 6,
+    "speed": 0,
     "style": [
       "Ranged",
       "Magic",
@@ -68982,7 +69029,7 @@
     "version": "Roaring",
     "image": "Maggot King.png",
     "level": 741,
-    "speed": 6,
+    "speed": 0,
     "style": [
       "Ranged",
       "Magic",
@@ -90967,7 +91014,7 @@
   {
     "id": 421,
     "name": "Rockslug",
-    "version": "Cave",
+    "version": "Adult",
     "image": "Rockslug.png",
     "level": 29,
     "speed": 4,
@@ -91015,8 +91062,8 @@
   {
     "id": 422,
     "name": "Rockslug",
-    "version": "Swamp",
-    "image": "Rockslug (Swamp).png",
+    "version": "Baby",
+    "image": "Rockslug (baby).png",
     "level": 29,
     "speed": 4,
     "style": [
@@ -106956,53 +107003,6 @@
     }
   },
   {
-    "id": 15770,
-    "name": "Superior venator",
-    "version": "",
-    "image": "Superior venator.png",
-    "level": 246,
-    "speed": 5,
-    "style": [
-      "Stab"
-    ],
-    "size": 3,
-    "max_hit": "21 (Melee/ranged)",
-    "skills": {
-      "atk": 200,
-      "def": 120,
-      "hp": 345,
-      "magic": 100,
-      "ranged": 75,
-      "str": 200
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 130,
-      "magic": 110,
-      "heavy": -5,
-      "standard": -5,
-      "light": -5,
-      "slash": 60,
-      "stab": -5
-    },
-    "attributes": [
-      "vampyre3"
-    ],
-    "immunities": {
-      "burn": "Strong"
-    },
-    "is_slayer_monster": true,
-    "weakness": null
-  },
-  {
     "id": 787,
     "name": "Suqah",
     "version": "1",
@@ -118733,9 +118733,9 @@
       "flat_armour": 0,
       "crush": 90,
       "magic": 100,
-      "heavy": -5,
-      "standard": -5,
-      "light": -5,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
       "slash": 20,
       "stab": -5
     },
@@ -118780,9 +118780,9 @@
       "flat_armour": 0,
       "crush": 90,
       "magic": 100,
-      "heavy": -5,
-      "standard": -5,
-      "light": -5,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
       "slash": 20,
       "stab": -5
     },
@@ -118827,9 +118827,9 @@
       "flat_armour": 0,
       "crush": 90,
       "magic": 100,
-      "heavy": -5,
-      "standard": -5,
-      "light": -5,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
       "slash": 20,
       "stab": -5
     },
@@ -118874,9 +118874,9 @@
       "flat_armour": 0,
       "crush": 90,
       "magic": 100,
-      "heavy": -5,
-      "standard": -5,
-      "light": -5,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
       "slash": 20,
       "stab": -5
     },
@@ -118921,9 +118921,9 @@
       "flat_armour": 0,
       "crush": 90,
       "magic": 100,
-      "heavy": -5,
-      "standard": -5,
-      "light": -5,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
       "slash": 20,
       "stab": -5
     },
@@ -120493,9 +120493,9 @@
       "flat_armour": 0,
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
       "slash": 0,
       "stab": 0
     },
@@ -120540,9 +120540,9 @@
       "flat_armour": 0,
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
       "slash": 0,
       "stab": 0
     },
@@ -120587,9 +120587,9 @@
       "flat_armour": 0,
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
       "slash": 0,
       "stab": 0
     },
@@ -120634,9 +120634,9 @@
       "flat_armour": 0,
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
       "slash": 0,
       "stab": 0
     },
@@ -120681,9 +120681,9 @@
       "flat_armour": 0,
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
       "slash": 0,
       "stab": 0
     },
@@ -120728,9 +120728,9 @@
       "flat_armour": 0,
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
       "slash": 0,
       "stab": 0
     },
@@ -120775,9 +120775,9 @@
       "flat_armour": 0,
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
       "slash": 0,
       "stab": 0
     },
@@ -120822,9 +120822,9 @@
       "flat_armour": 0,
       "crush": 0,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
       "slash": 0,
       "stab": 0
     },
@@ -125664,9 +125664,9 @@
       "flat_armour": 0,
       "crush": 30,
       "magic": 30,
-      "heavy": 30,
-      "standard": 30,
-      "light": 30,
+      "heavy": 150,
+      "standard": 150,
+      "light": 150,
       "slash": 30,
       "stab": 30
     },
