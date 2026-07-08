@@ -42,6 +42,7 @@ import {
   IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS,
   IMMUNE_TO_RANGED_DAMAGE_NPC_IDS,
   KEPHRI_OVERLORD_IDS,
+  MAGGOT_KING_ID,
   NIGHTMARE_TOTEM_IDS,
   OLM_HEAD_IDS,
   OLM_MAGE_HAND_IDS,
@@ -193,6 +194,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (((TOMBS_OF_AMASCUT_MONSTER_IDS.includes(this.monster.id) && !KEPHRI_OVERLORD_IDS.includes(this.monster.id)) || isCustomMonster) && this.monster.inputs.toaInvocationLevel) {
       defenceRoll = this.trackFactor(DetailKey.NPC_DEFENCE_ROLL_TOA, defenceRoll, [250 + this.monster.inputs.toaInvocationLevel, 250]);
+    }
+
+    if (MAGGOT_KING_ID.includes(this.monster.id) && this.monster.inputs.phase === 'Melee Punish' && defenceStyle === 'crush') {
+      defenceRoll = this.trackFactor(DetailKey.NPC_DEFENCE_ROLL_MAGGOT_PUNISH, defenceRoll, [15, 100]);
     }
 
     return this.track(DetailKey.NPC_DEFENCE_ROLL_FINAL, defenceRoll);
@@ -1528,18 +1533,28 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       );
     }
 
+    const isMaggotKingMeleePunish = this.isUsingMeleeStyle() && MAGGOT_KING_ID.includes(this.monster.id) && this.monster.inputs.phase === 'Melee Punish';
+
     if (this.isUsingMeleeStyle() && this.isWearingScythe()) {
       const hits: HitDistribution[] = [];
       for (let i = 0; i < Math.min(Math.max(this.monster.size, 1), 3); i++) {
-        const splatMax = Math.trunc(max / (2 ** i));
+        let splatMax = Math.trunc(max / (2 ** i));
+
+        if (isMaggotKingMeleePunish && i === 0) {
+          splatMax = this.trackFactor(DetailKey.MAX_HIT_MAGGOT_MELEE_PUNISH, splatMax, [150, 100]);
+        }
+
         hits.push(HitDistribution.linear(acc, min, Math.max(min, splatMax)));
       }
       dist = new AttackDistribution(hits);
     }
 
     if (this.isUsingMeleeStyle() && this.wearing('Dual macuahuitl')) {
-      const firstMax = Math.trunc(max / 2);
+      let firstMax = Math.trunc(max / 2);
       const secondMax = max - firstMax;
+      if (isMaggotKingMeleePunish) {
+        firstMax = this.trackFactor(DetailKey.MAX_HIT_MAGGOT_MELEE_PUNISH, firstMax, [150, 100]);
+      }
       const firstHit = new AttackDistribution([HitDistribution.linear(acc, min, Math.max(min, firstMax))]);
       const secondHit = HitDistribution.linear(acc, min, Math.max(min, secondMax));
       dist = firstHit.transform(
@@ -1553,12 +1568,19 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingTwoHitWeapon()) {
-      const firstMax = Math.trunc(max / 2);
+      let firstMax = Math.trunc(max / 2);
       const secondMax = max - firstMax;
+      if (isMaggotKingMeleePunish) {
+        firstMax = this.trackFactor(DetailKey.MAX_HIT_MAGGOT_MELEE_PUNISH, firstMax, [150, 100]);
+      }
       dist = new AttackDistribution([
         HitDistribution.linear(acc, min, Math.max(min, firstMax)),
         HitDistribution.linear(acc, min, Math.max(min, secondMax)),
       ]);
+    }
+
+    if (!(this.isWearingScythe() || this.isWearingTwoHitWeapon() || this.wearing('Dual macuahuitl')) && isMaggotKingMeleePunish) {
+      dist = dist.scaleDamage(150, 100);
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingKeris() && mattrs.includes(MonsterAttribute.KALPHITE)) {
