@@ -539,6 +539,10 @@ export const YAMA_IDS = [14176];
 export const YAMA_PHASES = ['Tank using magic', 'Tank not using magic'];
 YAMA_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = YAMA_PHASES; });
 
+export const MAGGOT_KING_ID = [15742];
+export const MAGGOT_KING_PHASES = ['Standard', 'Melee Punish'];
+MAGGOT_KING_ID.forEach((id) => { MONSTER_PHASES_BY_ID[id] = MAGGOT_KING_PHASES; });
+
 export const INFINITE_HEALTH_MONSTERS: number[] = [
   14779, // gemstone crab
 ];

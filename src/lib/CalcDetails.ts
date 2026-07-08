@@ -8,6 +8,7 @@ export enum DetailKey {
   NPC_DEFENCE_ROLL_BASE = 'NPC defence base roll',
   NPC_DEFENCE_ROLL_TOA = 'NPC defence ToA roll',
   NPC_DEFENCE_BRIMSTONE = 'NPC defence brimstone ring',
+  NPC_DEFENCE_ROLL_MAGGOT_PUNISH = 'NPC defence maggot king punish',
   NPC_DEFENCE_ROLL_FINAL = 'NPC defence roll',
   PLAYER_ACCURACY_LEVEL = 'Player accuracy level',
   PLAYER_ACCURACY_LEVEL_PRAYER = 'Player accuracy level prayer',
@@ -107,6 +108,7 @@ export enum DetailKey {
   NPC_ACCURACY_ROLL_BONUS = 'NPC accuracy bonus',
   NPC_ACCURACY_ROLL_FINAL = 'NPC accuracy roll',
   REPIRATORY_SYSTEM_MIN_HIT = 'Respiratory system minimum hit',
+  MAX_HIT_MAGGOT_MELEE_PUNISH = 'Max hit maggot king melee punish',
 }
 
 export interface DetailEntry {
