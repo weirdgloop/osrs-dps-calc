@@ -40,7 +40,7 @@ const EquipmentPresets: React.FC = () => {
           equipment: {
             head: findItemById(23971), // Crystal helm
             cape: findItemById(28955), // Blessed dizana's quiver
-            neck: findItemById(19547), // Necklace of anguish
+            neck: findItemById(33639), // Necklace of rupture
             ammo: findItemById(22947), // Rada's blessing 4
             weapon: findItemById(25865), // Bow of faerdhinen
             body: findItemById(23975), // Crystal body
@@ -125,7 +125,7 @@ const EquipmentPresets: React.FC = () => {
           equipment: {
             head: findItemById(27235), // Masori mask (f)
             cape: findItemById(28955), // Blessed dizana's quiver
-            neck: findItemById(19547), // Necklace of anguish
+            neck: findItemById(33639), // Necklace of rupture
             ammo: findItemById(11212), // Dragon arrow
             body: findItemById(27238), // Masori body (f)
             legs: findItemById(27241), // Masori chaps (f)
@@ -229,7 +229,7 @@ const EquipmentPresets: React.FC = () => {
           equipment: {
             head: findItemById(11664), // Void ranger helm
             cape: findItemById(28955), // Blessed dizana's quiver
-            neck: findItemById(19547), // Necklace of anguish
+            neck: findItemById(33639), // Necklace of rupture
             ammo: findItemById(11212), // Dragon arrow
             body: findItemById(13072), // Elite void top
             legs: findItemById(13073), // Elite void robe
