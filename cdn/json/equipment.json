@@ -86000,7 +86000,7 @@
     "version": "",
     "slot": "weapon",
     "image": "Guthix staff.png",
-    "speed": 5,
+    "speed": 4,
     "category": "Staff",
     "bonuses": {
       "str": 2,
@@ -130733,7 +130733,7 @@
     "version": "",
     "slot": "weapon",
     "image": "Saradomin staff.png",
-    "speed": 5,
+    "speed": 4,
     "category": "Staff",
     "bonuses": {
       "str": 2,
@@ -164181,7 +164181,7 @@
     "version": "",
     "slot": "weapon",
     "image": "Zamorak staff.png",
-    "speed": 5,
+    "speed": 4,
     "category": "Staff",
     "bonuses": {
       "str": 2,
