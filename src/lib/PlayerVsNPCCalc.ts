@@ -273,7 +273,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing(['Blisterwood flail', 'Blisterwood sickle']) && isVampyre(mattrs)) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_VAMPYREBANE, attackRoll, [105, 100]);
     }
-    if (this.wearing(['Hallowed flail']) && isVampyre(mattrs)) {
+    if (this.wearing(['Hallowed flail', 'Sunspear']) && isVampyre(mattrs)) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_VAMPYREBANE, attackRoll, [125, 100]);
     }
     if (this.isWearingSilverWeapon() && this.wearing("Efaritay's aid") && isVampyre(mattrs)) {
@@ -1641,6 +1641,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       if (this.wearing(['Blisterwood flail', 'Hallowed flail', 'Blisterwood stake'])) {
         dist = doEfaritay(dist);
         dist = dist.scaleDamage(125, 100);
+      } else if (this.wearing('Sunspear')) {
+        dist = doEfaritay(dist);
+        dist = dist.scaleDamage(150, 100);
       } else if (this.wearing('Blisterwood sickle')) {
         dist = doEfaritay(dist);
         dist = dist.scaleDamage(23, 20);
