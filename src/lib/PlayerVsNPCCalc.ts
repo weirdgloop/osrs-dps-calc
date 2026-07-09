@@ -2417,19 +2417,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const spell = this.player.spell;
     if (!spell) return null;
 
-    if (spell.name.includes('Smoke')) {
-      return 'air';
-    }
-    if (spell.name.includes('Ice')) {
-      return 'water';
-    }
-    if (spell.name.includes('Shadow')) {
-      return 'earth';
-    }
-    if (spell.name.includes('Blood')) {
-      return 'fire';
-    }
-
     return spell?.element;
   }
 
