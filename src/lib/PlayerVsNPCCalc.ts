@@ -199,10 +199,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       defenceRoll = this.trackFactor(DetailKey.NPC_DEFENCE_ROLL_TOA, defenceRoll, [250 + this.monster.inputs.toaInvocationLevel, 250]);
     }
 
-    if (MAGGOT_KING_ID.includes(this.monster.id) && this.monster.inputs.phase === 'Melee Punish' && defenceStyle === 'crush') {
-      defenceRoll = this.trackFactor(DetailKey.NPC_DEFENCE_ROLL_MAGGOT_PUNISH, defenceRoll, [15, 100]);
-    }
-
     return this.track(DetailKey.NPC_DEFENCE_ROLL_FINAL, defenceRoll);
   }
 
@@ -1163,6 +1159,24 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const atk = this.getMaxAttackRoll();
     const def = this.getNPCDefenceRoll();
 
+    const isMaggotKingMeleePunish = this.isUsingMeleeStyle()
+      && MAGGOT_KING_ID.includes(this.monster.id)
+      && this.monster.inputs.phase === 'Melee Punish'
+      && this.player.style.type === 'crush';
+
+    if (isMaggotKingMeleePunish) {
+      const reducedDefRoll = this.trackFactor(DetailKey.NPC_DEFENCE_ROLL_MAGGOT_PUNISH, def, [15, 100]);
+      hitChance = this.noInitSubCalc(
+        this.player,
+        this.monster,
+        {
+          overrides: {
+            defenceRoll: reducedDefRoll,
+          },
+        },
+      ).getHitChance();
+    }
+
     if (this.player.style.type === 'magic' && this.wearing('Brimstone ring')) {
       const effectHitChance = this.track(
         DetailKey.PLAYER_ACCURACY_BRIMSTONE,
@@ -1538,6 +1552,16 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     const isMaggotKingMeleePunish = this.isUsingMeleeStyle() && MAGGOT_KING_ID.includes(this.monster.id) && this.monster.inputs.phase === 'Melee Punish';
+    let firstHitAcc = acc;
+    if (isMaggotKingMeleePunish) {
+      const normalDefRoll = this.getNPCDefenceRoll();
+      const reducedDefRoll = this.player.style.type === 'crush' ? Math.trunc(normalDefRoll * 15 / 100) : normalDefRoll;
+      firstHitAcc = this.noInitSubCalc(
+        this.player,
+        this.monster,
+        { overrides: { defenceRoll: reducedDefRoll } },
+      ).getHitChance();
+    }
 
     if (this.isUsingMeleeStyle() && this.isWearingScythe()) {
       const hits: HitDistribution[] = [];
@@ -1548,7 +1572,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           splatMax = this.trackFactor(DetailKey.MAX_HIT_MAGGOT_MELEE_PUNISH, splatMax, [150, 100]);
         }
 
-        hits.push(HitDistribution.linear(acc, min, Math.max(min, splatMax)));
+        const splatAcc = i === 0 ? firstHitAcc : acc;
+
+        hits.push(HitDistribution.linear(splatAcc, min, Math.max(min, splatMax)));
       }
       dist = new AttackDistribution(hits);
     }
@@ -1559,7 +1585,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       if (isMaggotKingMeleePunish) {
         firstMax = this.trackFactor(DetailKey.MAX_HIT_MAGGOT_MELEE_PUNISH, firstMax, [150, 100]);
       }
-      const firstHit = new AttackDistribution([HitDistribution.linear(acc, min, Math.max(min, firstMax))]);
+      const firstHit = new AttackDistribution([HitDistribution.linear(firstHitAcc, min, Math.max(min, firstMax))]);
       const secondHit = HitDistribution.linear(acc, min, Math.max(min, secondMax));
       dist = firstHit.transform(
         (h) => {
@@ -1578,8 +1604,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         firstMax = this.trackFactor(DetailKey.MAX_HIT_MAGGOT_MELEE_PUNISH, firstMax, [150, 100]);
       }
       dist = new AttackDistribution([
-        HitDistribution.linear(acc, min, Math.max(min, firstMax)),
-        HitDistribution.linear(acc, min, Math.max(min, secondMax)),
+        HitDistribution.linear(firstHitAcc, min, Math.max(min, firstMax)),
+        HitDistribution.linear(firstHitAcc, min, Math.max(min, secondMax)),
       ]);
     }
 
@@ -1653,6 +1679,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (!(this.isWearingScythe() || this.isWearingTwoHitWeapon() || this.wearing('Dual macuahuitl')) && isMaggotKingMeleePunish) {
+      dist = new AttackDistribution([
+        HitDistribution.linear(firstHitAcc, min, Math.max(min, max)),
+      ]);
       dist = dist.scaleDamage(150, 100);
     }
 
