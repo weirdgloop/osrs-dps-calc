@@ -164,7 +164,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else if (this.wearing(['Voidwaker', "Saradomin's blessed sword"])) {
         // doesn't really matter for voidwaker since it's 100% accuracy but eh
         defenceStyle = 'magic';
-      } else if (this.wearing('Dragon mace')) {
+      } else if (this.wearing([
+        'Dragon mace',
+        'Crimson kisten',
+      ])) {
         defenceStyle = 'crush';
       }
     }
@@ -1420,11 +1423,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         // chance that exactly (i+1) accuracy rolls passed
         const chanceThisProc = binomal(acc, i + 1, 4);
 
-        // todo(blood moon): verify that the -1 on i == 3 is applied here, not to the base max hit
+        // Jagex stated the max hit would be reduced by 1 if all four accuracy rolls passed
+        // This is not implemented in the game. Unknown if this is a bug or the implementation changed
         const effectMin = Math.trunc(max * (70 + (i * 20)) / 100);
-        const effectMax = Math.trunc(max * (110 + (i * 20)) / 100) - (i === 3 ? 1 : 0);
+        const effectMax = Math.trunc(max * (110 + (i * 20)) / 100);
         if (i === 0) { this.track(DetailKey.MIN_HIT_SPEC, effectMin, `${max} * 70 / 100 = ${effectMin}`); }
-        if (i === 3) { this.track(DetailKey.MAX_HIT_SPEC, effectMax, `${max} * 170 / 100 - 1 = ${effectMax}`); }
+        if (i === 3) { this.track(DetailKey.MAX_HIT_SPEC, effectMax, `${max} * 170 / 100 = ${effectMax}`); }
 
         effectDist.addHits(
           HitDistribution.linear(1.0, effectMin, effectMax)
