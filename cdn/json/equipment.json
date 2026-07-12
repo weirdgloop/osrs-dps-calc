@@ -10793,7 +10793,7 @@
     "weight": 2.267,
     "version": "Locked",
     "slot": "weapon",
-    "image": "Ancient sceptre.png",
+    "image": "Ancient sceptre (l).png",
     "speed": 4,
     "category": "Staff",
     "bonuses": {
@@ -50940,7 +50940,7 @@
     "slot": "weapon",
     "image": "Crimson kisten.png",
     "speed": 4,
-    "category": "Axe",
+    "category": "Spiked",
     "bonuses": {
       "str": 56,
       "ranged_str": 0,
