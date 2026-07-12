@@ -467,6 +467,7 @@ export default class BaseCalc {
       'Blessed axe',
       'Ivandis flail',
       'Blisterwood flail',
+      'Hallowed flail',
       'Silver sickle',
       'Silver sickle (b)',
       'Emerald sickle',
