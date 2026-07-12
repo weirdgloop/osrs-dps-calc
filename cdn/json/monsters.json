@@ -20578,10 +20578,10 @@
     "level": 202,
     "speed": 2,
     "style": [
-      "Magic"
+      "Ranged magic"
     ],
     "size": 1,
-    "max_hit": "31",
+    "max_hit": "21 (Magic attack)<br>\n31 (Special attack)",
     "skills": {
       "atk": 1,
       "def": 220,
@@ -70623,6 +70623,49 @@
     }
   },
   {
+    "id": 16233,
+    "name": "Maxilla beast",
+    "version": "",
+    "image": "Maxilla beast.png",
+    "level": 194,
+    "speed": 0,
+    "style": null,
+    "size": 2,
+    "max_hit": "53",
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 200,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
     "id": 6320,
     "name": "Me (Nightmare Zone)",
     "version": "Hard Mode",
@@ -101189,7 +101232,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "earth",
+      "severity": 40
+    }
   },
   {
     "id": 6324,
@@ -122177,7 +122223,7 @@
   },
   {
     "id": 16226,
-    "name": "Webbed-winged crow",
+    "name": "Webbed-winged Crow",
     "version": "",
     "image": "Webbed-winged crow.png",
     "level": 98,
@@ -125643,7 +125689,7 @@
       "Crush"
     ],
     "size": 3,
-    "max_hit": "30",
+    "max_hit": "30 (melee)",
     "skills": {
       "atk": 250,
       "def": 180,
