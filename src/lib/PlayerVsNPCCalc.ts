@@ -1672,13 +1672,16 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const newMax = this.player.skills.hp;
       const curr = this.player.skills.hp + this.player.boosts.hp;
       dist = dist.scaleDamage(10000 + (newMax - curr) * newMax, 10000);
+      if (isMaggotKingMeleePunish) {
+        dist = dist.scaleDamage(150, 100);
+      }
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingBerserkerNecklace() && this.isWearingTzhaarWeapon()) {
       dist = dist.scaleDamage(6, 5);
     }
 
-    if (!(this.isWearingScythe() || this.isWearingTwoHitWeapon() || this.wearing('Dual macuahuitl')) && isMaggotKingMeleePunish) {
+    if (!(this.isWearingScythe() || this.isWearingTwoHitWeapon() || this.wearing('Dual macuahuitl') || this.isWearingDharok()) && isMaggotKingMeleePunish) {
       dist = new AttackDistribution([
         HitDistribution.linear(firstHitAcc, min, Math.max(min, max)),
       ]);
