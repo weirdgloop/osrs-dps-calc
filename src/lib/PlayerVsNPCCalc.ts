@@ -1671,9 +1671,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isUsingMeleeStyle() && this.isWearingDharok()) {
       const newMax = this.player.skills.hp;
       const curr = this.player.skills.hp + this.player.boosts.hp;
-      dist = dist.scaleDamage(10000 + (newMax - curr) * newMax, 10000);
+
       if (isMaggotKingMeleePunish) {
+        dist = new AttackDistribution([HitDistribution.linear(firstHitAcc, min, max)]);
+        dist = dist.scaleDamage(10000 + (newMax - curr) * newMax, 10000);
         dist = dist.scaleDamage(150, 100);
+      } else {
+        dist = dist.scaleDamage(10000 + (newMax - curr) * newMax, 10000);
       }
     }
 
