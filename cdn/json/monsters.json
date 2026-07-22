@@ -3113,11 +3113,11 @@
     "speed": 5,
     "style": [
       "Slash",
-      "Typeless Magic",
+      "Typeless Ranged",
       "Icy breath"
     ],
     "size": 5,
-    "max_hit": "10 (Magic)",
+    "max_hit": "10 (Ranged)",
     "skills": {
       "atk": 150,
       "def": 150,
@@ -50455,8 +50455,53 @@
   {
     "id": 5185,
     "name": "Guard (dwarf)",
-    "version": "",
+    "version": "1",
     "image": "Guard (dwarf).png",
+    "level": 10,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 8,
+      "def": 9,
+      "hp": 16,
+      "magic": 1,
+      "ranged": 1,
+      "str": 6
+    },
+    "offensive": {
+      "atk": 5,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 7
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 4,
+      "magic": 2,
+      "heavy": 3,
+      "standard": 3,
+      "light": 3,
+      "slash": 4,
+      "stab": 3
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": true,
+    "weakness": null
+  },
+  {
+    "id": 5187,
+    "name": "Guard (dwarf)",
+    "version": "2",
+    "image": "Guard (dwarf, 2).png",
     "level": 10,
     "speed": 4,
     "style": [
@@ -68473,7 +68518,7 @@
     "speed": 6,
     "style": [
       "Slash",
-      "Typeless Magic",
+      "Typeless Ranged",
       "Icy breath"
     ],
     "size": 3,
@@ -86456,7 +86501,7 @@
     "name": "Rabbit (Prifddinas)",
     "version": "",
     "image": "Rabbit (Prifddinas).png",
-    "level": 2,
+    "level": 0,
     "speed": 3,
     "style": [
       "Typeless Crush"
@@ -93414,7 +93459,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 35
+    }
   },
   {
     "id": 6616,
@@ -107862,11 +107910,11 @@
     "speed": 6,
     "style": [
       "Slash",
-      "Typeless Magic",
+      "Typeless Ranged",
       "Icy breath"
     ],
     "size": 3,
-    "max_hit": "10 (Magic)",
+    "max_hit": "10 (Ranged)",
     "skills": {
       "atk": 120,
       "def": 90,
@@ -132563,7 +132611,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": "3",
+    "max_hit": "2",
     "skills": {
       "atk": 8,
       "def": 10,
@@ -132613,7 +132661,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": "3",
+    "max_hit": "2",
     "skills": {
       "atk": 8,
       "def": 10,
@@ -132663,7 +132711,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": "3",
+    "max_hit": "2",
     "skills": {
       "atk": 8,
       "def": 10,
@@ -132713,7 +132761,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": "3",
+    "max_hit": "2",
     "skills": {
       "atk": 8,
       "def": 10,
@@ -132763,7 +132811,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": "3",
+    "max_hit": "2",
     "skills": {
       "atk": 8,
       "def": 10,
@@ -132813,7 +132861,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": "3",
+    "max_hit": "2",
     "skills": {
       "atk": 8,
       "def": 10,
@@ -132863,7 +132911,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": "3",
+    "max_hit": "2",
     "skills": {
       "atk": 8,
       "def": 10,
@@ -132913,7 +132961,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": "3",
+    "max_hit": "2",
     "skills": {
       "atk": 8,
       "def": 10,
@@ -132963,7 +133011,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": "3",
+    "max_hit": "2",
     "skills": {
       "atk": 8,
       "def": 10,
@@ -133013,7 +133061,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": "3",
+    "max_hit": "2",
     "skills": {
       "atk": 8,
       "def": 10,
@@ -133063,7 +133111,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": "3",
+    "max_hit": "2",
     "skills": {
       "atk": 8,
       "def": 10,
@@ -133113,7 +133161,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": "3",
+    "max_hit": "2",
     "skills": {
       "atk": 8,
       "def": 10,
@@ -133163,7 +133211,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": "3",
+    "max_hit": "2",
     "skills": {
       "atk": 8,
       "def": 10,

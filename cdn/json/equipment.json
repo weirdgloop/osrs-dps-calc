@@ -131318,12 +131318,12 @@
   {
     "name": "Seeking adamant arrow",
     "id": 33577,
-    "weight": 0.018,
+    "weight": 0,
     "version": "",
     "slot": "ammo",
     "image": "Seeking adamant arrow 5.png",
     "speed": 0,
-    "category": "Unarmed",
+    "category": "",
     "bonuses": {
       "str": 0,
       "ranged_str": 31,
@@ -131349,12 +131349,12 @@
   {
     "name": "Seeking amethyst arrow",
     "id": 33589,
-    "weight": 0.016,
+    "weight": 0,
     "version": "",
     "slot": "ammo",
     "image": "Seeking amethyst arrow 5.png",
     "speed": 0,
-    "category": "Unarmed",
+    "category": "",
     "bonuses": {
       "str": 0,
       "ranged_str": 55,
@@ -131380,12 +131380,12 @@
   {
     "name": "Seeking broad arrows",
     "id": 33601,
-    "weight": 0.016,
+    "weight": 0,
     "version": "",
     "slot": "ammo",
     "image": "Seeking broad arrows 5.png",
     "speed": 0,
-    "category": "Unarmed",
+    "category": "",
     "bonuses": {
       "str": 0,
       "ranged_str": 28,
@@ -131411,12 +131411,12 @@
   {
     "name": "Seeking bronze arrow",
     "id": 33553,
-    "weight": 0.016,
+    "weight": 0,
     "version": "",
     "slot": "ammo",
     "image": "Seeking bronze arrow 5.png",
     "speed": 0,
-    "category": "Unarmed",
+    "category": "",
     "bonuses": {
       "str": 0,
       "ranged_str": 7,
@@ -131442,12 +131442,12 @@
   {
     "name": "Seeking dragon arrow",
     "id": 33595,
-    "weight": 0.016,
+    "weight": 0,
     "version": "",
     "slot": "ammo",
     "image": "Seeking dragon arrow 5.png",
     "speed": 0,
-    "category": "Unarmed",
+    "category": "",
     "bonuses": {
       "str": 0,
       "ranged_str": 60,
@@ -131473,12 +131473,12 @@
   {
     "name": "Seeking iron arrow",
     "id": 33559,
-    "weight": 0.016,
+    "weight": 0,
     "version": "",
     "slot": "ammo",
     "image": "Seeking iron arrow 5.png",
     "speed": 0,
-    "category": "Unarmed",
+    "category": "",
     "bonuses": {
       "str": 0,
       "ranged_str": 10,
@@ -131504,12 +131504,12 @@
   {
     "name": "Seeking mithril arrow",
     "id": 33571,
-    "weight": 0.014,
+    "weight": 0,
     "version": "",
     "slot": "ammo",
     "image": "Seeking mithril arrow 5.png",
     "speed": 0,
-    "category": "Unarmed",
+    "category": "",
     "bonuses": {
       "str": 0,
       "ranged_str": 22,
@@ -131535,12 +131535,12 @@
   {
     "name": "Seeking rune arrow",
     "id": 33583,
-    "weight": 0.016,
+    "weight": 0,
     "version": "",
     "slot": "ammo",
     "image": "Seeking rune arrow 5.png",
     "speed": 0,
-    "category": "Unarmed",
+    "category": "",
     "bonuses": {
       "str": 0,
       "ranged_str": 49,
@@ -131566,12 +131566,12 @@
   {
     "name": "Seeking steel arrow",
     "id": 33565,
-    "weight": 0.016,
+    "weight": 0,
     "version": "",
     "slot": "ammo",
     "image": "Seeking steel arrow 5.png",
     "speed": 0,
-    "category": "Unarmed",
+    "category": "",
     "bonuses": {
       "str": 0,
       "ranged_str": 16,
