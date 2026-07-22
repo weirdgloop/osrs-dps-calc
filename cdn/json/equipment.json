@@ -10799,7 +10799,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 50,
+      "magic_str": 100,
       "prayer": -1
     },
     "offensive": {
@@ -10830,7 +10830,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 50,
+      "magic_str": 100,
       "prayer": -1
     },
     "offensive": {
@@ -22050,14 +22050,14 @@
     "speed": 4,
     "category": "Slash Sword",
     "bonuses": {
-      "str": 89,
+      "str": 93,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
       "stab": 55,
-      "slash": 94,
+      "slash": 100,
       "crush": 0,
       "magic": 0,
       "ranged": 0
@@ -22112,14 +22112,14 @@
     "speed": 4,
     "category": "Slash Sword",
     "bonuses": {
-      "str": 89,
+      "str": 93,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
       "stab": 55,
-      "slash": 94,
+      "slash": 100,
       "crush": 0,
       "magic": 0,
       "ranged": 0
@@ -22329,14 +22329,14 @@
     "speed": 4,
     "category": "Slash Sword",
     "bonuses": {
-      "str": 89,
+      "str": 93,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
       "stab": 55,
-      "slash": 94,
+      "slash": 100,
       "crush": 0,
       "magic": 0,
       "ranged": 0
@@ -22703,7 +22703,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 50,
+      "magic_str": 100,
       "prayer": -1
     },
     "offensive": {
@@ -22734,7 +22734,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 50,
+      "magic_str": 100,
       "prayer": -1
     },
     "offensive": {
@@ -22765,7 +22765,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 50,
+      "magic_str": 100,
       "prayer": -1
     },
     "offensive": {
@@ -76827,13 +76827,13 @@
     "speed": 4,
     "category": "Stab Sword",
     "bonuses": {
-      "str": 89,
+      "str": 93,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": 94,
+      "stab": 100,
       "slash": 55,
       "crush": 0,
       "magic": 0,
@@ -88235,13 +88235,13 @@
     "speed": 4,
     "category": "Stab Sword",
     "bonuses": {
-      "str": 89,
+      "str": 93,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": 94,
+      "stab": 100,
       "slash": 55,
       "crush": 0,
       "magic": 0,
@@ -89694,7 +89694,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 50,
+      "magic_str": 100,
       "prayer": -1
     },
     "offensive": {
@@ -89725,7 +89725,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 50,
+      "magic_str": 100,
       "prayer": -1
     },
     "offensive": {
@@ -89756,7 +89756,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 50,
+      "magic_str": 100,
       "prayer": -1
     },
     "offensive": {
@@ -92141,15 +92141,15 @@
     "speed": 0,
     "category": "",
     "bonuses": {
-      "str": 4,
+      "str": 6,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 1
     },
     "offensive": {
-      "stab": -2,
-      "slash": -2,
-      "crush": 8,
+      "stab": 0,
+      "slash": 0,
+      "crush": 10,
       "magic": -5,
       "ranged": -5
     },
@@ -92178,9 +92178,9 @@
       "prayer": 2
     },
     "offensive": {
-      "stab": -3,
-      "slash": -3,
-      "crush": 12,
+      "stab": 0,
+      "slash": 0,
+      "crush": 16,
       "magic": -11,
       "ranged": -10
     },
@@ -92203,7 +92203,7 @@
     "speed": 4,
     "category": "Spiked",
     "bonuses": {
-      "str": 89,
+      "str": 96,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 2
@@ -92211,7 +92211,7 @@
     "offensive": {
       "stab": 52,
       "slash": -4,
-      "crush": 95,
+      "crush": 102,
       "magic": 0,
       "ranged": 0
     },
@@ -92240,8 +92240,8 @@
       "prayer": 2
     },
     "offensive": {
-      "stab": -3,
-      "slash": -3,
+      "stab": 0,
+      "slash": 0,
       "crush": 12,
       "magic": -9,
       "ranged": -5
@@ -101598,7 +101598,7 @@
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
-      "magic_str": 0,
+      "magic_str": 100,
       "prayer": 0
     },
     "offensive": {
@@ -111703,7 +111703,7 @@
     "category": "",
     "bonuses": {
       "str": 0,
-      "ranged_str": 0,
+      "ranged_str": 1,
       "magic_str": 0,
       "prayer": 0
     },
@@ -132009,7 +132009,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 50,
+      "magic_str": 100,
       "prayer": -1
     },
     "offensive": {
@@ -132040,7 +132040,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 50,
+      "magic_str": 100,
       "prayer": -1
     },
     "offensive": {
@@ -132071,7 +132071,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 50,
+      "magic_str": 100,
       "prayer": -1
     },
     "offensive": {
@@ -132171,7 +132171,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": -6,
+      "magic": 2,
       "ranged": -2
     },
     "defensive": {
@@ -136659,7 +136659,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 50,
+      "magic_str": 100,
       "prayer": -1
     },
     "offensive": {
@@ -136690,7 +136690,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 50,
+      "magic_str": 100,
       "prayer": -1
     },
     "offensive": {
@@ -136721,7 +136721,7 @@
     "bonuses": {
       "str": 60,
       "ranged_str": 0,
-      "magic_str": 50,
+      "magic_str": 100,
       "prayer": -1
     },
     "offensive": {
@@ -137617,7 +137617,7 @@
     "speed": 5,
     "category": "Axe",
     "bonuses": {
-      "str": 121,
+      "str": 125,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0

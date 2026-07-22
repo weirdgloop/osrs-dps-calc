@@ -22340,8 +22340,8 @@
     "max_hit": "11",
     "skills": {
       "atk": 36,
-      "def": 2,
-      "hp": 14,
+      "def": 4,
+      "hp": 12,
       "magic": 2,
       "ranged": 0,
       "str": 102
@@ -22557,7 +22557,7 @@
     "name": "Corrupted Rat",
     "version": "",
     "image": "Corrupted Rat.png",
-    "level": 34,
+    "level": 33,
     "speed": 4,
     "style": [
       "Crush"
@@ -22566,8 +22566,8 @@
     "max_hit": "14",
     "skills": {
       "atk": 42,
-      "def": 6,
-      "hp": 14,
+      "def": 4,
+      "hp": 12,
       "magic": 6,
       "ranged": 0,
       "str": 48
@@ -22692,7 +22692,7 @@
     "name": "Corrupted Unicorn",
     "version": "",
     "image": "Corrupted Unicorn.png",
-    "level": 64,
+    "level": 61,
     "speed": 4,
     "style": [
       "Stab"
@@ -22701,8 +22701,8 @@
     "max_hit": "17",
     "skills": {
       "atk": 75,
-      "def": 24,
-      "hp": 44,
+      "def": 18,
+      "hp": 38,
       "magic": 24,
       "ranged": 0,
       "str": 72
@@ -22737,7 +22737,7 @@
     "name": "Corrupted Wolf",
     "version": "",
     "image": "Corrupted Wolf.png",
-    "level": 102,
+    "level": 97,
     "speed": 4,
     "style": [
       "Crush"
@@ -22746,8 +22746,8 @@
     "max_hit": "19",
     "skills": {
       "atk": 159,
-      "def": 22,
-      "hp": 52,
+      "def": 18,
+      "hp": 38,
       "magic": 22,
       "ranged": 0,
       "str": 99
@@ -25273,8 +25273,8 @@
     "max_hit": "8",
     "skills": {
       "atk": 24,
-      "def": 2,
-      "hp": 14,
+      "def": 4,
+      "hp": 12,
       "magic": 2,
       "ranged": 0,
       "str": 68
@@ -25490,7 +25490,7 @@
     "name": "Crystalline Rat",
     "version": "",
     "image": "Crystalline Rat.png",
-    "level": 24,
+    "level": 23,
     "speed": 4,
     "style": [
       "Crush"
@@ -25499,8 +25499,8 @@
     "max_hit": "4",
     "skills": {
       "atk": 28,
-      "def": 6,
-      "hp": 14,
+      "def": 4,
+      "hp": 12,
       "magic": 6,
       "ranged": 0,
       "str": 32
@@ -25625,7 +25625,7 @@
     "name": "Crystalline Unicorn",
     "version": "",
     "image": "Crystalline Unicorn.png",
-    "level": 48,
+    "level": 45,
     "speed": 4,
     "style": [
       "Stab"
@@ -25634,8 +25634,8 @@
     "max_hit": "6",
     "skills": {
       "atk": 50,
-      "def": 24,
-      "hp": 44,
+      "def": 18,
+      "hp": 38,
       "magic": 24,
       "ranged": 0,
       "str": 48
@@ -25670,7 +25670,7 @@
     "name": "Crystalline Wolf",
     "version": "",
     "image": "Crystalline Wolf.png",
-    "level": 74,
+    "level": 69,
     "speed": 4,
     "style": [
       "Crush"
@@ -25679,8 +25679,8 @@
     "max_hit": "8",
     "skills": {
       "atk": 106,
-      "def": 22,
-      "hp": 52,
+      "def": 18,
+      "hp": 38,
       "magic": 22,
       "ranged": 0,
       "str": 66
