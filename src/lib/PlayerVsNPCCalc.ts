@@ -69,6 +69,8 @@ import {
   binomal, Factor, iLerp, MinMax,
 } from '@/lib/Math';
 import {
+  AmmoApplicability,
+  ammoApplicability,
   calculateAttackSpeed,
   WEAPON_SPEC_COSTS,
 } from '@/lib/Equipment';
@@ -1749,7 +1751,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       accurateZeroApplicable = false;
     }
 
-    if (this.player.style.type === 'ranged' && this.player.equipment.ammo?.name.includes('Seeking')) {
+    if (
+      this.player.style.type === 'ranged'
+      && this.player.equipment.ammo?.name.includes('Seeking')
+      && ammoApplicability(this.player.equipment.weapon?.id, this.player.equipment.ammo?.id) === AmmoApplicability.INCLUDED
+    ) {
       dist = dist.transform(
         (h) => HitDistribution.single(1.0, [new Hitsplat(Math.max(h.damage, 3), h.accurate)]),
         { transformInaccurate: false },
