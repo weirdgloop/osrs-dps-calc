@@ -7,6 +7,7 @@ import UserIssueType from '@/enums/UserIssueType';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
   CAST_STANCES,
+  ICE_DEMON_IDS,
   IMMUNE_TO_BURN_DAMAGE_NPC_IDS,
   YAMA_IDS,
   YAMA_VOID_FLARE_IDS,
@@ -705,6 +706,8 @@ export default class BaseCalc {
       return 120;
     } if (YAMA_VOID_FLARE_IDS.includes(this.monster.id)) {
       return 200;
+    } if (ICE_DEMON_IDS.includes(this.monster.id)) {
+      return 115;
     }
 
     return 100;

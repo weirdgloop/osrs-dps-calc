@@ -57,7 +57,7 @@ const DART_TIER: Record<string, number> = {
 const MAX_DART_TIER_BY_BLOWPIPE: Record<string, number> = {
   'Camphor blowpipe': DART_TIER['Mithril dart'],
   'Ironwood blowpipe': DART_TIER['Adamant dart'],
-  'Rosewood blowpipe': DART_TIER['Adamant dart'],
+  'Rosewood blowpipe': DART_TIER['Rune dart'],
 };
 
 const gauntletSort = (items: EquipmentOption[], monsterId: number) => {

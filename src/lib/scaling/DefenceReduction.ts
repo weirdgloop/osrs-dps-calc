@@ -123,7 +123,7 @@ const applyDefenceReductions = (m: Monster): Monster => {
 
   for (let i = 0; i < reductions.tonalztic; i++) {
     m = newSkills(m, {
-      def: m.skills.def - Math.trunc(m.skills.magic / 10),
+      def: m.skills.def - Math.trunc(m.skills.magic / 8),
     });
   }
 
