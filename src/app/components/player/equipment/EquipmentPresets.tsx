@@ -126,7 +126,7 @@ const EquipmentPresets: React.FC = () => {
             head: findItemById(27235), // Masori mask (f)
             cape: findItemById(28955), // Blessed dizana's quiver
             neck: findItemById(33639), // Necklace of rupture
-            ammo: findItemById(11212), // Dragon arrow
+            ammo: findItemById(33595), // Seeking dragon arrow
             body: findItemById(27238), // Masori body (f)
             legs: findItemById(27241), // Masori chaps (f)
             hands: findItemById(26235), // Zaryte vambraces
@@ -230,7 +230,7 @@ const EquipmentPresets: React.FC = () => {
             head: findItemById(11664), // Void ranger helm
             cape: findItemById(28955), // Blessed dizana's quiver
             neck: findItemById(33639), // Necklace of rupture
-            ammo: findItemById(11212), // Dragon arrow
+            ammo: findItemById(33595), // Seeking dragon arrow
             body: findItemById(13072), // Elite void top
             legs: findItemById(13073), // Elite void robe
             hands: findItemById(8842), // Void knight gloves
