@@ -13,6 +13,8 @@ export interface WeaponSwapPoint {
   loadoutName: string;
   expectedTicks: number;
   expectedSeconds: number;
+  weaponOnlyExpectedTicks: number;
+  weaponOnlyExpectedSeconds: number;
 }
 
 export interface WeaponSwapRange {
@@ -99,11 +101,13 @@ const optimize = (
   continuous: boolean,
 ): WeaponSwapMode => {
   const memory = new Float64Array(cappedHp + 1);
+  const loadoutOnlyMemories = swapLoadouts.map(() => new Float64Array(cappedHp + 1));
   const points: WeaponSwapPoint[] = [];
   const chart: ChartEntry[] = [{ name: '0', hitpoints: 0 }];
 
   for (let hp = 1; hp <= cappedHp; hp++) {
     let bestTicks = Infinity;
+    let bestWeaponOnlyTicks = Infinity;
     let bestIx = 0;
 
     for (const [ix, swapLoadout] of swapLoadouts.entries()) {
@@ -117,6 +121,7 @@ const optimize = (
       }
 
       let weightedRemainingTicks = 0;
+      let weightedWeaponOnlyRemainingTicks = 0;
       for (const [damage, probability] of hist.entries()) {
         if (damage <= 0 || probability === 0) {
           continue;
@@ -126,12 +131,20 @@ const optimize = (
         const remainingTicks = remainingHp <= 0
           ? (continuous ? 0 : -swapLoadout.speed)
           : memory[remainingHp];
+        const weaponOnlyRemainingTicks = remainingHp <= 0
+          ? (continuous ? 0 : -swapLoadout.speed)
+          : loadoutOnlyMemories[ix][remainingHp];
         weightedRemainingTicks += probability * remainingTicks;
+        weightedWeaponOnlyRemainingTicks += probability * weaponOnlyRemainingTicks;
       }
 
       const expectedTicks = (weightedRemainingTicks + swapLoadout.speed) / (1 - missChance);
+      const weaponOnlyExpectedTicks = (weightedWeaponOnlyRemainingTicks + swapLoadout.speed) / (1 - missChance);
+      loadoutOnlyMemories[ix][hp] = weaponOnlyExpectedTicks;
+
       if (expectedTicks < bestTicks) {
         bestTicks = expectedTicks;
+        bestWeaponOnlyTicks = weaponOnlyExpectedTicks;
         bestIx = ix;
       }
     }
@@ -143,6 +156,8 @@ const optimize = (
       loadoutName: swapLoadouts[bestIx].name,
       expectedTicks: bestTicks,
       expectedSeconds: bestTicks * SECONDS_PER_TICK,
+      weaponOnlyExpectedTicks: bestWeaponOnlyTicks,
+      weaponOnlyExpectedSeconds: bestWeaponOnlyTicks * SECONDS_PER_TICK,
     };
     points.push(point);
     chart.push({

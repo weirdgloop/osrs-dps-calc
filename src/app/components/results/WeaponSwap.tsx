@@ -52,13 +52,19 @@ const formatRange = (range: WeaponSwapRange): string => (
 type WeaponSwapChartEntry = {
   name: string,
   hitpoints: number,
+  weaponOnlySeconds: number,
   [loadoutName: string]: string | number | null,
 };
 
-const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, payload, label }) => {
+const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({
+  active,
+  payload,
+  label,
+}) => {
   const visiblePayload = payload?.filter((p) => p.value !== null && p.value !== undefined);
 
   if (active && visiblePayload && visiblePayload.length) {
+    const point = visiblePayload[0].payload as WeaponSwapChartEntry;
     return (
       <div className="bg-white shadow rounded p-2 text-sm text-black flex items-center gap-2">
         <div>
@@ -85,6 +91,13 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, pa
               </span>
             </div>
           ))}
+          <div className="mt-1 flex justify-between w-44 gap-2 text-xs">
+            <span className="text-gray-500">Camp this weapon only</span>
+            <span className="text-gray-400 font-bold">
+              {point.weaponOnlySeconds.toFixed(2)}
+              s
+            </span>
+          </div>
         </div>
       </div>
     );
@@ -138,6 +151,7 @@ const WeaponSwap: React.FC = observer(() => {
       const entry: WeaponSwapChartEntry = {
         name: point.hitpoints.toString(),
         hitpoints: point.hitpoints,
+        weaponOnlySeconds: point.weaponOnlyExpectedSeconds,
       };
       loadouts.forEach((loadout) => {
         entry[loadout.name] = null;
