@@ -27,7 +27,15 @@ import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
   fetchPlayerSkills, fetchShortlinkData, getCombatStylesForCategory, isDefined, PotionMap,
 } from '@/utils';
-import { ComputeBasicRequest, ComputeReverseRequest, WorkerRequestType } from '@/worker/CalcWorkerTypes';
+import {
+  ComputeBasicRequest,
+  ComputeReverseRequest,
+  WorkerRequestType,
+} from '@/worker/CalcWorkerTypes';
+import type {
+  ComputeBasicResponse,
+  ComputeReverseResponse,
+} from '@/worker/CalcWorkerTypes';
 import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
 import { availableEquipment, calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { CalcWorker } from '@/worker/CalcWorker';
@@ -221,6 +229,7 @@ class GlobalState implements State {
     rememberUsername: true,
     showHitDistribution: false,
     showLoadoutComparison: false,
+    showWeaponSwap: false,
     showTtkComparison: false,
     showNPCVersusPlayerResults: false,
     hitDistsHideZeros: false,
@@ -700,15 +709,26 @@ class GlobalState implements State {
     // If monster attributes were passed to this function, clear the existing ones
     if (monster.attributes !== undefined) this.monster.attributes = [];
 
+    const monsterChanged = monster.id !== undefined && monster.id !== this.monster.id;
+
     // If the monster ID was changed, reset all the inputs.
     if (
-      monster.id !== undefined
-      && monster.id !== this.monster.id
+      monsterChanged
       && !Object.hasOwn(monster, 'inputs')
     ) {
       monster = {
         ...monster,
         inputs: INITIAL_MONSTER_INPUTS,
+      };
+    }
+
+    if (monsterChanged && monster.skills?.hp !== undefined) {
+      monster = {
+        ...monster,
+        inputs: {
+          ...(monster.inputs || {}),
+          monsterCurrentHp: monster.skills.hp,
+        },
       };
     }
 
@@ -789,6 +809,7 @@ class GlobalState implements State {
     const calculatedLoadouts: CalculatedLoadout[] = [];
     this.loadouts.forEach(() => calculatedLoadouts.push(EMPTY_CALC_LOADOUT));
     this.calc.loadouts = calculatedLoadouts;
+    this.calc.weaponSwap = null;
 
     const data: Extract<ComputeBasicRequest['data'], ComputeReverseRequest['data']> = {
       loadouts: toJS(this.loadouts),
@@ -797,6 +818,7 @@ class GlobalState implements State {
         hitDistHideMisses: this.prefs.hitDistsHideZeros,
         detailedOutput: this.debug,
         disableMonsterScaling: this.monster.id === -1,
+        computeWeaponSwap: this.prefs.showWeaponSwap,
       },
     };
     const request = async (type: WorkerRequestType.COMPUTE_BASIC | WorkerRequestType.COMPUTE_REVERSE) => {
@@ -806,7 +828,11 @@ class GlobalState implements State {
       });
 
       console.log(`[GlobalState] Calc response ${WorkerRequestType[type]}`, resp.payload);
-      this.updateCalcResults({ loadouts: resp.payload });
+      if (type === WorkerRequestType.COMPUTE_BASIC) {
+        this.updateCalcResults((resp as ComputeBasicResponse).payload);
+      } else {
+        this.updateCalcResults({ loadouts: (resp as ComputeReverseResponse).payload });
+      }
     };
 
     const promises: Promise<void>[] = [];
