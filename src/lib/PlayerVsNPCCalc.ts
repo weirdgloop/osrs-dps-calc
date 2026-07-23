@@ -927,7 +927,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     } else if (this.wearing(['Trident of the swamp', 'Trident of the swamp (e)'])) {
       maxHit = Math.max(1, Math.trunc(magicLevel / 3 - 2));
     } else if (this.wearing(['Sanguinesti staff', 'Holy sanguinesti staff'])) {
-      maxHit = Math.max(1, Math.trunc(magicLevel / 3 - 1));
+      maxHit = Math.max(1, Math.trunc(magicLevel / 3));
     } else if (this.wearing('Dawnbringer')) {
       maxHit = Math.max(1, Math.trunc(magicLevel / 6 - 1));
       if (this.opts.usingSpecialAttack) { // guaranteed hit between 75-150, ignores bonuses
@@ -1637,6 +1637,16 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
       this.track(DetailKey.GUARDIANS_DMG_BONUS, factor / divisor);
       dist = dist.transform(multiplyTransformer(factor, divisor));
+    }
+
+    if (this.wearing(['Sanguinesti staff', 'Holy sanguinesti staff'])) {
+      dist = dist.transform(
+        (h) => new HitDistribution([
+          new WeightedHit(0.8, [h]),
+          new WeightedHit(0.2, [new Hitsplat(h.damage + 8, h.accurate)]),
+        ]),
+        { transformInaccurate: false },
+      );
     }
 
     if (this.player.buffs.markOfDarknessSpell && this.player.spell?.name.includes('Demonbane') && mattrs.includes(MonsterAttribute.DEMON)) {
