@@ -93,6 +93,21 @@ const buildRanges = (points: WeaponSwapPoint[]): WeaponSwapRange[] => {
   return ranges;
 };
 
+const getRemainingTicks = (
+  remainingHp: number,
+  continuous: boolean,
+  speed: number,
+  memory: Float64Array,
+): number => {
+  if (remainingHp > 0) {
+    return memory[remainingHp];
+  }
+  if (continuous) {
+    return 0;
+  }
+  return -speed;
+};
+
 const optimize = (
   loadouts: Player[],
   monster: Monster,
@@ -128,12 +143,13 @@ const optimize = (
         }
 
         const remainingHp = hp - damage;
-        const remainingTicks = remainingHp <= 0
-          ? (continuous ? 0 : -swapLoadout.speed)
-          : memory[remainingHp];
-        const weaponOnlyRemainingTicks = remainingHp <= 0
-          ? (continuous ? 0 : -swapLoadout.speed)
-          : loadoutOnlyMemories[ix][remainingHp];
+        const remainingTicks = getRemainingTicks(remainingHp, continuous, swapLoadout.speed, memory);
+        const weaponOnlyRemainingTicks = getRemainingTicks(
+          remainingHp,
+          continuous,
+          swapLoadout.speed,
+          loadoutOnlyMemories[ix],
+        );
         weightedRemainingTicks += probability * remainingTicks;
         weightedWeaponOnlyRemainingTicks += probability * weaponOnlyRemainingTicks;
       }
