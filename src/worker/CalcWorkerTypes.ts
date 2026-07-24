@@ -5,6 +5,7 @@ import { CalcOpts } from '@/lib/BaseCalc';
 import {
   CompareResult, CompareXAxis, CompareYAxis,
 } from '@/lib/Comparator';
+import type { WeaponSwapResult } from '@/lib/WeaponSwap';
 
 /**
  * Requests
@@ -27,6 +28,7 @@ export interface WorkerCalcOpts {
   hitDistHideMisses?: boolean,
   detailedOutput?: CalcOpts['detailedOutput'],
   disableMonsterScaling?: CalcOpts['disableMonsterScaling'],
+  computeWeaponSwap?: boolean,
 }
 
 export interface ComputeBasicRequest extends WorkerRequest<WorkerRequestType.COMPUTE_BASIC> {
@@ -87,7 +89,10 @@ export interface WorkerResponse<T extends WorkerRequestType> {
 }
 
 export interface ComputeBasicResponse extends WorkerResponse<WorkerRequestType.COMPUTE_BASIC> {
-  payload: Omit<PlayerVsNPCCalculatedLoadout, 'ttkDist'>[],
+  payload: {
+    loadouts: Omit<PlayerVsNPCCalculatedLoadout, 'ttkDist'>[],
+    weaponSwap: WeaponSwapResult | null,
+  },
 }
 
 export interface ComputeReverseResponse extends WorkerResponse<WorkerRequestType.COMPUTE_REVERSE> {
