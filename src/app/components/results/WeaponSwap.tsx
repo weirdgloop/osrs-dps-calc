@@ -33,7 +33,7 @@ const modeOptions = [
   {
     label: 'Discontinuous',
     value: SwapMode.DISCONTINUOUS,
-    description: 'Shows swap breakpoints with the final attack cycle removed, matching fruitdeeps discontinuous mode.',
+    description: 'Shows swap breakpoints with the final attack cycle removed.',
   },
 ];
 
