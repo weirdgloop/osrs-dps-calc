@@ -6945,8 +6945,70 @@
   },
   {
     "name": "Agility cape",
+    "id": 13341,
+    "weight": -4,
+    "version": "Trimmed",
+    "slot": "cape",
+    "image": "Agility cape(t).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 4
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 9,
+      "crush": 9,
+      "magic": 9,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Agility cape",
     "id": 9771,
     "weight": 0.453,
+    "version": "Untrimmed",
+    "slot": "cape",
+    "image": "Agility cape.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 9,
+      "crush": 9,
+      "magic": 9,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Agility cape",
+    "id": 13340,
+    "weight": -4,
     "version": "Untrimmed",
     "slot": "cape",
     "image": "Agility cape.png",
@@ -20089,7 +20151,131 @@
   },
   {
     "name": "Black mask (i)",
+    "id": 25275,
+    "weight": 10,
+    "version": "(1)",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
+    "id": 26780,
+    "weight": 10,
+    "version": "(1)",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
     "id": 11774,
+    "weight": 10,
+    "version": "(10)",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
+    "id": 25266,
+    "weight": 10,
+    "version": "(10)",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
+    "id": 26771,
     "weight": 10,
     "version": "(10)",
     "slot": "head",
@@ -20151,7 +20337,131 @@
   },
   {
     "name": "Black mask (i)",
+    "id": 25274,
+    "weight": 10,
+    "version": "(2)",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
+    "id": 26779,
+    "weight": 10,
+    "version": "(2)",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
     "id": 11781,
+    "weight": 10,
+    "version": "(3)",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
+    "id": 25273,
+    "weight": 10,
+    "version": "(3)",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
+    "id": 26778,
     "weight": 10,
     "version": "(3)",
     "slot": "head",
@@ -20213,7 +20523,131 @@
   },
   {
     "name": "Black mask (i)",
+    "id": 25272,
+    "weight": 10,
+    "version": "(4)",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
+    "id": 26777,
+    "weight": 10,
+    "version": "(4)",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
     "id": 11779,
+    "weight": 10,
+    "version": "(5)",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
+    "id": 25271,
+    "weight": 10,
+    "version": "(5)",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
+    "id": 26776,
     "weight": 10,
     "version": "(5)",
     "slot": "head",
@@ -20275,7 +20709,131 @@
   },
   {
     "name": "Black mask (i)",
+    "id": 25270,
+    "weight": 10,
+    "version": "(6)",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
+    "id": 26775,
+    "weight": 10,
+    "version": "(6)",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
     "id": 11777,
+    "weight": 10,
+    "version": "(7)",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
+    "id": 25269,
+    "weight": 10,
+    "version": "(7)",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
+    "id": 26774,
     "weight": 10,
     "version": "(7)",
     "slot": "head",
@@ -20337,6 +20895,68 @@
   },
   {
     "name": "Black mask (i)",
+    "id": 25268,
+    "weight": 10,
+    "version": "(8)",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
+    "id": 26773,
+    "weight": 10,
+    "version": "(8)",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
     "id": 11775,
     "weight": 10,
     "version": "(9)",
@@ -20368,7 +20988,131 @@
   },
   {
     "name": "Black mask (i)",
+    "id": 25267,
+    "weight": 10,
+    "version": "(9)",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
+    "id": 26772,
+    "weight": 10,
+    "version": "(9)",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
     "id": 11784,
+    "weight": 10,
+    "version": "Uncharged",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
+    "id": 25276,
+    "weight": 10,
+    "version": "Uncharged",
+    "slot": "head",
+    "image": "Black mask (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 9,
+      "slash": 10,
+      "crush": 8,
+      "magic": -1,
+      "ranged": 9
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Black mask (i)",
+    "id": 26781,
     "weight": 10,
     "version": "Uncharged",
     "slot": "head",
@@ -22143,14 +22887,14 @@
     "speed": 4,
     "category": "Slash Sword",
     "bonuses": {
-      "str": 89,
+      "str": 93,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
       "stab": 55,
-      "slash": 94,
+      "slash": 100,
       "crush": 0,
       "magic": 0,
       "ranged": 0
@@ -22174,14 +22918,14 @@
     "speed": 4,
     "category": "Slash Sword",
     "bonuses": {
-      "str": 89,
+      "str": 93,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
       "stab": 55,
-      "slash": 94,
+      "slash": 100,
       "crush": 0,
       "magic": 0,
       "ranged": 0
@@ -22205,14 +22949,14 @@
     "speed": 4,
     "category": "Slash Sword",
     "bonuses": {
-      "str": 89,
+      "str": 93,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
       "stab": 55,
-      "slash": 94,
+      "slash": 100,
       "crush": 0,
       "magic": 0,
       "ranged": 0
@@ -22236,14 +22980,14 @@
     "speed": 4,
     "category": "Slash Sword",
     "bonuses": {
-      "str": 89,
+      "str": 93,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
       "stab": 55,
-      "slash": 94,
+      "slash": 100,
       "crush": 0,
       "magic": 0,
       "ranged": 0
@@ -22267,14 +23011,14 @@
     "speed": 4,
     "category": "Slash Sword",
     "bonuses": {
-      "str": 89,
+      "str": 93,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
       "stab": 55,
-      "slash": 94,
+      "slash": 100,
       "crush": 0,
       "magic": 0,
       "ranged": 0
@@ -22298,14 +23042,14 @@
     "speed": 4,
     "category": "Slash Sword",
     "bonuses": {
-      "str": 89,
+      "str": 93,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
       "stab": 55,
-      "slash": 94,
+      "slash": 100,
       "crush": 0,
       "magic": 0,
       "ranged": 0
@@ -86459,6 +87203,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Hallowfell",
+    "id": 34027,
+    "weight": 10,
+    "version": "",
+    "slot": "weapon",
+    "image": "Hallowfell.png",
+    "speed": 6,
+    "category": "2h Sword",
+    "bonuses": {
+      "str": 110,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 4
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 117,
+      "crush": 25,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Ham boots",
     "id": 4310,
     "weight": 0.34,
@@ -108686,6 +109461,223 @@
     "isTwoHanded": false
   },
   {
+    "name": "Noble robe top",
+    "id": 33851,
+    "weight": 0.907,
+    "version": "Black",
+    "slot": "body",
+    "image": "Noble robe top (black).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Noble robe top",
+    "id": 33839,
+    "weight": 0.907,
+    "version": "Blue",
+    "slot": "body",
+    "image": "Noble robe top (blue).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Noble robe top",
+    "id": 33836,
+    "weight": 0.907,
+    "version": "Green",
+    "slot": "body",
+    "image": "Noble robe top (green).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Noble robe top",
+    "id": 33854,
+    "weight": 0.907,
+    "version": "Pink",
+    "slot": "body",
+    "image": "Noble robe top (pink).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Noble robe top",
+    "id": 33842,
+    "weight": 0.907,
+    "version": "Red",
+    "slot": "body",
+    "image": "Noble robe top (red).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Noble robe top",
+    "id": 33848,
+    "weight": 0.907,
+    "version": "White",
+    "slot": "body",
+    "image": "Noble robe top (white).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Noble robe top",
+    "id": 33845,
+    "weight": 0.907,
+    "version": "Yellow",
+    "slot": "body",
+    "image": "Noble robe top (yellow).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Noose wand",
     "id": 10150,
     "weight": 1.814,
@@ -121335,7 +122327,131 @@
   },
   {
     "name": "Ring of suffering (i)",
+    "id": 25248,
+    "weight": 0.006,
+    "version": "Recoil",
+    "slot": "ring",
+    "image": "Ring of suffering (ri).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 4
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 20,
+      "slash": 20,
+      "crush": 20,
+      "magic": 20,
+      "ranged": 20
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ring of suffering (i)",
+    "id": 26762,
+    "weight": 0.006,
+    "version": "Recoil",
+    "slot": "ring",
+    "image": "Ring of suffering (ri).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 4
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 20,
+      "slash": 20,
+      "crush": 20,
+      "magic": 20,
+      "ranged": 20
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ring of suffering (i)",
     "id": 19710,
+    "weight": 0.006,
+    "version": "Uncharged",
+    "slot": "ring",
+    "image": "Ring of suffering (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 4
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 20,
+      "slash": 20,
+      "crush": 20,
+      "magic": 20,
+      "ranged": 20
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ring of suffering (i)",
+    "id": 25246,
+    "weight": 0.006,
+    "version": "Uncharged",
+    "slot": "ring",
+    "image": "Ring of suffering (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 4
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 20,
+      "slash": 20,
+      "crush": 20,
+      "magic": 20,
+      "ranged": 20
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Ring of suffering (i)",
+    "id": 26761,
     "weight": 0.006,
     "version": "Uncharged",
     "slot": "ring",
@@ -137648,7 +138764,7 @@
     "speed": 5,
     "category": "Axe",
     "bonuses": {
-      "str": 121,
+      "str": 125,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
@@ -143166,7 +144282,7 @@
     "speed": 6,
     "category": "Blunt",
     "bonuses": {
-      "str": 16,
+      "str": 18,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
@@ -151235,7 +152351,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 25,
+      "magic": 15,
       "ranged": 0
     },
     "defensive": {
@@ -151266,7 +152382,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 25,
+      "magic": 15,
       "ranged": 0
     },
     "defensive": {
@@ -151297,7 +152413,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 25,
+      "magic": 15,
       "ranged": 0
     },
     "defensive": {
@@ -151328,7 +152444,7 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 25,
+      "magic": 15,
       "ranged": 0
     },
     "defensive": {
@@ -160960,24 +162076,24 @@
     "speed": 0,
     "category": "",
     "bonuses": {
-      "str": null,
-      "ranged_str": null,
+      "str": 50,
+      "ranged_str": 0,
       "magic_str": 0,
-      "prayer": null
+      "prayer": 50
     },
     "offensive": {
-      "stab": null,
-      "slash": null,
-      "crush": null,
-      "magic": null,
-      "ranged": null
+      "stab": 100,
+      "slash": 100,
+      "crush": 100,
+      "magic": 100,
+      "ranged": 100
     },
     "defensive": {
-      "stab": null,
-      "slash": null,
-      "crush": null,
-      "magic": null,
-      "ranged": null
+      "stab": 100,
+      "slash": 100,
+      "crush": 100,
+      "magic": 100,
+      "ranged": 100
     },
     "isTwoHanded": false
   },
@@ -162137,6 +163253,37 @@
     "image": "Wrath tiara.png",
     "speed": 0,
     "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig shoes",
+    "id": 33878,
+    "weight": 0.34,
+    "version": "",
+    "slot": "feet",
+    "image": "Wyrmscraig shoes.png",
+    "speed": 0,
+    "category": "Unarmed",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
