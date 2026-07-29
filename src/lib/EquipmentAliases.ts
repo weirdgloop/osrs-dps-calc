@@ -12,6 +12,8 @@ const equipmentAliases = {
   1123: [2607, 23392, 23395, 23398, 23401, 23404, 2599], // Adamant platebody
   1073: [2609, 2601], // Adamant platelegs
   1091: [3475, 3474], // Adamant plateskirt
+  9772: [13341], // Agility cape#Trimmed
+  9771: [13340], // Agility cape#Untrimmed
   4708: [4860, 4856, 4859, 4858, 4857, 30543, 30519, 30537, 30531, 30525, 30445], // Ahrim's hood#Undamaged
   4714: [4878, 4874, 4877, 4876, 4875, 30547, 30523, 30541, 30535, 30529, 30449], // Ahrim's robeskirt#Undamaged
   4712: [4872, 4868, 4871, 4870, 4869, 30545, 30521, 30539, 30533, 30527, 30447], // Ahrim's robetop#Undamaged
@@ -49,7 +51,7 @@ const equipmentAliases = {
   1165: [2595, 2587, 10306, 10308, 10310, 10312, 10314], // Black full helm
   1195: [2597, 2589, 7332, 7338, 7344, 7350, 7356], // Black kiteshield
   8901: [8919, 8917, 8915, 8913, 8911, 8909, 8907, 8905, 8903, 8921], // Black mask#(10)
-  11774: [11783, 25275, 26780, 11782, 25274, 26779, 11781, 25273, 26778, 11780, 25272, 26777, 11779, 25271, 26776, 11778, 25270, 26775, 11777, 25269, 26774, 11776, 25268, 26773, 11775, 25267, 26772, 11784, 25276, 26781], // Black mask (i)#(10)
+  11774: [11783, 25275, 26780, 25266, 26771, 11782, 25274, 26779, 11781, 25273, 26778, 11780, 25272, 26777, 11779, 25271, 26776, 11778, 25270, 26775, 11777, 25269, 26774, 11776, 25268, 26773, 11775, 25267, 26772, 11784, 25276, 26781], // Black mask (i)#(10)
   1125: [2591, 23366, 23369, 23372, 23375, 23378, 2583], // Black platebody
   1077: [2593, 2585], // Black platelegs
   1089: [3473, 3472], // Black plateskirt
@@ -57,14 +59,14 @@ const equipmentAliases = {
   24551: [25882, 25876, 25878, 25872, 25870, 25880, 25874], // Blade of saeldor (c)
   28955: [28957], // Blessed dizana's quiver#Normal
   28260: [28473], // Blood ancient sceptre#Normal
-  29022: [29022, 29043], // Blood moon chestplate#New
-  29028: [29028, 29047], // Blood moon helm#New
-  29025: [29025, 29045], // Blood moon tassets#New
+  29022: [29043], // Blood moon chestplate#New
+  29028: [29047], // Blood moon helm#New
+  29025: [29045], // Blood moon tassets#New
   2499: [7374, 7376], // Blue d'hide body
   2493: [7382, 7384], // Blue d'hide chaps
-  29013: [29013, 29037], // Blue moon chestplate#New
-  29019: [29019, 29041], // Blue moon helm#New
-  29016: [29016, 29039], // Blue moon tassets#New
+  29013: [29037], // Blue moon chestplate#New
+  29019: [29041], // Blue moon helm#New
+  29016: [29039], // Blue moon tassets#New
   1011: [7386, 7388], // Blue skirt
   579: [7394, 7396], // Blue wizard hat
   577: [7390, 7392], // Blue wizard robe
@@ -149,9 +151,9 @@ const equipmentAliases = {
   1187: [28059, 12418], // Dragon sq shield
   21009: [28029], // Dragon sword
   13576: [28035, 26710], // Dragon warhammer
-  29004: [29004, 29031], // Eclipse moon chestplate#New
-  29010: [29010, 29035], // Eclipse moon helm#New
-  29007: [29007, 29033], // Eclipse moon tassets#New
+  29004: [29031], // Eclipse moon chestplate#New
+  29010: [29035], // Eclipse moon helm#New
+  29007: [29033], // Eclipse moon tassets#New
   20595: [27119], // Elder chaos hood
   20520: [27117], // Elder chaos robe
   20517: [27115], // Elder chaos top
@@ -245,6 +247,8 @@ const equipmentAliases = {
   10550: [24174], // Ranger hat#Normal
   2501: [12327, 12331], // Red d'hide body
   2495: [12329, 12333], // Red d'hide chaps
+  20657: [25248, 26762], // Ring of suffering (i)#Recoil
+  19710: [25246, 26761], // Ring of suffering (i)#Uncharged
   13202: [26764, 25252], // Ring of the gods (i)#Nightmare Zone
   9185: [26486], // Rune crossbow
   8850: [24142, 27009, 23230], // Rune defender#Normal

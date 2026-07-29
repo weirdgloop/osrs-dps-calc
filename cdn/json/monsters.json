@@ -20334,6 +20334,58 @@
     }
   },
   {
+    "id": 15612,
+    "name": "Cerberus (Echo)",
+    "version": "",
+    "image": "Cerberus (Echo).png",
+    "level": 477,
+    "speed": 6,
+    "style": [
+      "Stab",
+      "Ranged",
+      "Magic"
+    ],
+    "size": 5,
+    "max_hit": "79",
+    "skills": {
+      "atk": 275,
+      "def": 115,
+      "hp": 1620,
+      "magic": 275,
+      "ranged": 275,
+      "str": 275
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 50,
+      "magic_str": 0,
+      "ranged": 50,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 25,
+      "magic": 70,
+      "heavy": 70,
+      "standard": 70,
+      "light": 70,
+      "slash": 100,
+      "stab": 50
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": true,
+    "weakness": {
+      "element": "water",
+      "severity": 40
+    }
+  },
+  {
     "id": 11482,
     "name": "Champion of Scabaras",
     "version": "",
@@ -28593,7 +28645,7 @@
     "level": 46,
     "speed": 4,
     "style": [
-      "Typeless Slash"
+      "Slash (100% prayer penetration)"
     ],
     "size": 1,
     "max_hit": "2",
@@ -30141,7 +30193,7 @@
     "level": 142,
     "speed": 4,
     "style": [
-      "Stab"
+      "Typeless Stab"
     ],
     "size": 2,
     "max_hit": "6",
@@ -36616,7 +36668,7 @@
     "level": 112,
     "speed": 4,
     "style": [
-      "Typeless Magical ranged"
+      "Magical ranged (100% prayer penetration)"
     ],
     "size": 2,
     "max_hit": "2",
@@ -36664,7 +36716,7 @@
     "level": 0,
     "speed": 4,
     "style": [
-      "Typeless Magical ranged"
+      "Magical ranged (100% prayer penetration)"
     ],
     "size": 2,
     "max_hit": "2",
@@ -47522,7 +47574,7 @@
     "level": 149,
     "speed": 4,
     "style": [
-      "Typeless Crush"
+      "Crush (100% prayer penetration)"
     ],
     "size": 2,
     "max_hit": "14",
@@ -47567,7 +47619,7 @@
     "level": 145,
     "speed": 4,
     "style": [
-      "Typeless Crush"
+      "Crush (100% prayer penetration)"
     ],
     "size": 2,
     "max_hit": "14",
@@ -57858,7 +57910,7 @@
       "Ranged"
     ],
     "size": 1,
-    "max_hit": "17",
+    "max_hit": "6",
     "skills": {
       "atk": 80,
       "def": 40,
@@ -57906,7 +57958,7 @@
       "Ranged"
     ],
     "size": 1,
-    "max_hit": "17",
+    "max_hit": "6",
     "skills": {
       "atk": 80,
       "def": 40,
@@ -62991,6 +63043,101 @@
     }
   },
   {
+    "id": 15617,
+    "name": "Kalphite Queen (Echo)",
+    "version": "Airborne",
+    "image": "Kalphite Queen (Echo) 2nd form.png",
+    "level": 748,
+    "speed": 4,
+    "style": [
+      "Magic",
+      "Ranged"
+    ],
+    "size": 5,
+    "max_hit": "38 (melee) 35 (ranged)",
+    "skills": {
+      "atk": 375,
+      "def": 300,
+      "hp": 561,
+      "magic": 165,
+      "ranged": 1,
+      "str": 375
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 50,
+      "magic": 10,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 50,
+      "stab": 50
+    },
+    "attributes": [
+      "kalphite"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": true,
+    "weakness": null
+  },
+  {
+    "id": 15616,
+    "name": "Kalphite Queen (Echo)",
+    "version": "Crawling",
+    "image": "Kalphite Queen (Echo).png",
+    "level": 499,
+    "speed": 4,
+    "style": [
+      "All"
+    ],
+    "size": 5,
+    "max_hit": "38 (melee) 35 (ranged)",
+    "skills": {
+      "atk": 375,
+      "def": 300,
+      "hp": 561,
+      "magic": 165,
+      "ranged": 1,
+      "str": 375
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 65,
+      "heavy": 65,
+      "standard": 65,
+      "light": 65,
+      "slash": 50,
+      "stab": 50
+    },
+    "attributes": [
+      "kalphite"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": true,
+    "weakness": null
+  },
+  {
     "id": 965,
     "name": "Kalphite Queen",
     "version": "Airborne",
@@ -66351,7 +66498,7 @@
     "level": 291,
     "speed": 4,
     "style": [
-      "Typeless Magic"
+      "Magic (100% prayer penetration)"
     ],
     "size": 4,
     "max_hit": "28",
@@ -66399,7 +66546,7 @@
     "level": 0,
     "speed": 4,
     "style": [
-      "Typeless Magic"
+      "Magic (100% prayer penetration)"
     ],
     "size": 5,
     "max_hit": "28",
@@ -68967,6 +69114,108 @@
     },
     "is_slayer_monster": false,
     "weakness": null
+  },
+  {
+    "id": 16305,
+    "name": "Mad Angel",
+    "version": "Post-quest",
+    "image": "Mad Angel.png",
+    "level": 588,
+    "speed": 6,
+    "style": [
+      "Melee",
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "31",
+    "skills": {
+      "atk": 150,
+      "def": 175,
+      "hp": 755,
+      "magic": 150,
+      "ranged": 250,
+      "str": 230
+    },
+    "offensive": {
+      "atk": 200,
+      "magic": 280,
+      "magic_str": 180,
+      "ranged": 64,
+      "ranged_str": 6,
+      "str": 11
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 40,
+      "magic": 185,
+      "heavy": 165,
+      "standard": 185,
+      "light": 205,
+      "slash": 80,
+      "stab": 60
+    },
+    "attributes": [
+      "golem"
+    ],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "earth",
+      "severity": 15
+    }
+  },
+  {
+    "id": 16309,
+    "name": "Mad Angel",
+    "version": "Quest",
+    "image": "Mad Angel.png",
+    "level": 270,
+    "speed": 6,
+    "style": [
+      "Melee",
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "31",
+    "skills": {
+      "atk": 100,
+      "def": 125,
+      "hp": 565,
+      "magic": 100,
+      "ranged": 170,
+      "str": 160
+    },
+    "offensive": {
+      "atk": 120,
+      "magic": 180,
+      "magic_str": 140,
+      "ranged": 30,
+      "ranged_str": 0,
+      "str": 4
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 20,
+      "magic": 165,
+      "heavy": 135,
+      "standard": 155,
+      "light": 175,
+      "slash": 60,
+      "stab": 40
+    },
+    "attributes": [
+      "golem"
+    ],
+    "immunities": {
+      "burn": "Strong"
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "earth",
+      "severity": 15
+    }
   },
   {
     "id": 15742,
@@ -110713,7 +110962,7 @@
     "level": 301,
     "speed": 2,
     "style": [
-      "Typeless Magical ranged"
+      "Magical ranged (100% prayer penetration)"
     ],
     "size": 4,
     "max_hit": "8",
@@ -111841,11 +112090,10 @@
     "level": 67,
     "speed": 7,
     "style": [
-      "Ranged",
-      "Crush(?)"
+      "Ranged"
     ],
     "size": 1,
-    "max_hit": "10 Ranged",
+    "max_hit": "6",
     "skills": {
       "atk": 30,
       "def": 30,
@@ -130753,7 +131001,7 @@
     "version": "10",
     "image": "Zombie pirate (Harmony Island) (10).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -130803,7 +131051,7 @@
     "version": "11",
     "image": "Zombie pirate (Harmony Island) (11).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -130853,7 +131101,7 @@
     "version": "12",
     "image": "Zombie pirate (Harmony Island) (12).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -130903,7 +131151,7 @@
     "version": "13",
     "image": "Zombie pirate (Harmony Island) (13).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -130953,7 +131201,7 @@
     "version": "14",
     "image": "Zombie pirate (Harmony Island) (14).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -131003,7 +131251,7 @@
     "version": "15",
     "image": "Zombie pirate (Harmony Island) (15).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -131053,7 +131301,7 @@
     "version": "16",
     "image": "Zombie pirate (Harmony Island) (16).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -131103,7 +131351,7 @@
     "version": "17",
     "image": "Zombie pirate (Harmony Island) (17).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -131153,7 +131401,7 @@
     "version": "18",
     "image": "Zombie pirate (Harmony Island) (18).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -131203,7 +131451,7 @@
     "version": "19",
     "image": "Zombie pirate (Harmony Island) (19).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -131253,7 +131501,7 @@
     "version": "2",
     "image": "Zombie pirate (Harmony Island) (2).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -131303,7 +131551,7 @@
     "version": "20",
     "image": "Zombie pirate (Harmony Island) (20).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -131353,7 +131601,7 @@
     "version": "21",
     "image": "Zombie pirate (Harmony Island) (21).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -131403,7 +131651,7 @@
     "version": "22",
     "image": "Zombie pirate (Harmony Island) (22).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -131453,7 +131701,7 @@
     "version": "23",
     "image": "Zombie pirate (Harmony Island) (23).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -131503,7 +131751,7 @@
     "version": "24",
     "image": "Zombie pirate (Harmony Island) (24).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -131553,7 +131801,7 @@
     "version": "25",
     "image": "Zombie pirate (Harmony Island) (25).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -131603,7 +131851,7 @@
     "version": "26",
     "image": "Zombie pirate (Harmony Island) (26).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -131653,7 +131901,7 @@
     "version": "3",
     "image": "Zombie pirate (Harmony Island) (3).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -131703,7 +131951,7 @@
     "version": "4",
     "image": "Zombie pirate (Harmony Island) (4).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -131753,7 +132001,7 @@
     "version": "5",
     "image": "Zombie pirate (Harmony Island) (5).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -131803,7 +132051,7 @@
     "version": "6",
     "image": "Zombie pirate (Harmony Island) (6).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -131853,7 +132101,7 @@
     "version": "7",
     "image": "Zombie pirate (Harmony Island) (7).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -131903,7 +132151,7 @@
     "version": "8",
     "image": "Zombie pirate (Harmony Island) (8).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
@@ -131953,7 +132201,7 @@
     "version": "9",
     "image": "Zombie pirate (Harmony Island) (9).png",
     "level": 57,
-    "speed": 4,
+    "speed": 3,
     "style": [
       "Crush"
     ],
