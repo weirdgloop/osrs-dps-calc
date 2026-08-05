@@ -163307,6 +163307,223 @@
     "isTwoHanded": false
   },
   {
+    "name": "Wyrmscraig noble skirt",
+    "id": 33872,
+    "weight": 0.907,
+    "version": "Black",
+    "slot": "legs",
+    "image": "Wyrmscraig noble skirt (black).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig noble skirt",
+    "id": 33860,
+    "weight": 0.907,
+    "version": "Blue",
+    "slot": "legs",
+    "image": "Wyrmscraig noble skirt (blue).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig noble skirt",
+    "id": 33857,
+    "weight": 0.907,
+    "version": "Green",
+    "slot": "legs",
+    "image": "Wyrmscraig noble skirt (green).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig noble skirt",
+    "id": 33875,
+    "weight": 0.907,
+    "version": "Pink",
+    "slot": "legs",
+    "image": "Wyrmscraig noble skirt (pink).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig noble skirt",
+    "id": 33863,
+    "weight": 0.907,
+    "version": "Red",
+    "slot": "legs",
+    "image": "Wyrmscraig noble skirt (red).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig noble skirt",
+    "id": 33869,
+    "weight": 0.907,
+    "version": "White",
+    "slot": "legs",
+    "image": "Wyrmscraig noble skirt (white).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig noble skirt",
+    "id": 33866,
+    "weight": 0.907,
+    "version": "Yellow",
+    "slot": "legs",
+    "image": "Wyrmscraig noble skirt (yellow).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Wyrmscraig shoes",
     "id": 33878,
     "weight": 0.34,
@@ -163773,6 +163990,37 @@
   },
   {
     "name": "Wyrmscraig villager robe top (A)",
+    "id": 33905,
+    "weight": 0.907,
+    "version": "Beige",
+    "slot": "body",
+    "image": "Wyrmscraig villager robe top (A, beige).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig villager robe top (A)",
     "id": 33899,
     "weight": 0.907,
     "version": "Black",
@@ -164181,6 +164429,471 @@
     "version": "Yellow",
     "slot": "body",
     "image": "Wyrmscraig villager robe top (B, yellow).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig villager skirt",
+    "id": 33986,
+    "weight": 0.907,
+    "version": "Black",
+    "slot": "legs",
+    "image": "Wyrmscraig villager skirt (black).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig villager skirt",
+    "id": 33974,
+    "weight": 0.907,
+    "version": "Blue",
+    "slot": "legs",
+    "image": "Wyrmscraig villager skirt (blue).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig villager skirt",
+    "id": 33971,
+    "weight": 0.907,
+    "version": "Green",
+    "slot": "legs",
+    "image": "Wyrmscraig villager skirt (green).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig villager skirt",
+    "id": 33989,
+    "weight": 0.907,
+    "version": "Pink",
+    "slot": "legs",
+    "image": "Wyrmscraig villager skirt (pink).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig villager skirt",
+    "id": 33977,
+    "weight": 0.907,
+    "version": "Red",
+    "slot": "legs",
+    "image": "Wyrmscraig villager skirt (red).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig villager skirt",
+    "id": 33983,
+    "weight": 0.907,
+    "version": "White",
+    "slot": "legs",
+    "image": "Wyrmscraig villager skirt (white).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig villager skirt",
+    "id": 33980,
+    "weight": 0.907,
+    "version": "Yellow",
+    "slot": "legs",
+    "image": "Wyrmscraig villager skirt (yellow).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig villager work skirt",
+    "id": 34013,
+    "weight": 0.907,
+    "version": "Beige",
+    "slot": "legs",
+    "image": "Wyrmscraig villager work skirt (beige).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig villager work skirt",
+    "id": 34007,
+    "weight": 0.907,
+    "version": "Black",
+    "slot": "legs",
+    "image": "Wyrmscraig villager work skirt (black).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig villager work skirt",
+    "id": 33995,
+    "weight": 0.907,
+    "version": "Blue",
+    "slot": "legs",
+    "image": "Wyrmscraig villager work skirt (blue).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig villager work skirt",
+    "id": 33992,
+    "weight": 0.907,
+    "version": "Green",
+    "slot": "legs",
+    "image": "Wyrmscraig villager work skirt (green).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig villager work skirt",
+    "id": 34010,
+    "weight": 0.907,
+    "version": "Pink",
+    "slot": "legs",
+    "image": "Wyrmscraig villager work skirt (pink).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig villager work skirt",
+    "id": 33998,
+    "weight": 0.907,
+    "version": "Red",
+    "slot": "legs",
+    "image": "Wyrmscraig villager work skirt (red).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig villager work skirt",
+    "id": 34004,
+    "weight": 0.907,
+    "version": "White",
+    "slot": "legs",
+    "image": "Wyrmscraig villager work skirt (white).png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wyrmscraig villager work skirt",
+    "id": 34001,
+    "weight": 0.907,
+    "version": "Yellow",
+    "slot": "legs",
+    "image": "Wyrmscraig villager work skirt (yellow).png",
     "speed": 0,
     "category": "Unarmed",
     "bonuses": {

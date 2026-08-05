@@ -3700,7 +3700,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "is_slayer_monster": false,
     "weakness": {
@@ -3748,7 +3748,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": "Weak"
+      "burn": "Strong"
     },
     "is_slayer_monster": false,
     "weakness": {
@@ -3796,7 +3796,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "is_slayer_monster": false,
     "weakness": {
@@ -3844,7 +3844,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "is_slayer_monster": false,
     "weakness": {
@@ -3892,7 +3892,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "is_slayer_monster": false,
     "weakness": {
@@ -3940,7 +3940,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "is_slayer_monster": false,
     "weakness": {
@@ -4036,7 +4036,7 @@
     },
     "attributes": [],
     "immunities": {
-      "burn": null
+      "burn": "Strong"
     },
     "is_slayer_monster": false,
     "weakness": {
@@ -13111,7 +13111,7 @@
     "id": 7861,
     "name": "Black dragon",
     "version": "Level 247",
-    "image": "Black dragon (3).png",
+    "image": "Black dragon.png",
     "level": 247,
     "speed": 4,
     "style": [
@@ -27291,6 +27291,51 @@
     }
   },
   {
+    "id": 15619,
+    "name": "Dagannoth Prime (Echo)",
+    "version": "",
+    "image": "Dagannoth Prime (Echo).png",
+    "level": 454,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "49+",
+    "skills": {
+      "atk": 255,
+      "def": 255,
+      "hp": 1800,
+      "magic": 400,
+      "ranged": 0,
+      "str": 255
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 100,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": true,
+    "weakness": null
+  },
+  {
     "id": 2267,
     "name": "Dagannoth Rex",
     "version": "",
@@ -27337,6 +27382,51 @@
       "element": "earth",
       "severity": 35
     }
+  },
+  {
+    "id": 15620,
+    "name": "Dagannoth Rex (Echo)",
+    "version": "",
+    "image": "Dagannoth Rex (Echo).png",
+    "level": 454,
+    "speed": 5,
+    "style": [
+      "Slash"
+    ],
+    "size": 3,
+    "max_hit": "48+",
+    "skills": {
+      "atk": 400,
+      "def": 255,
+      "hp": 1800,
+      "magic": 0,
+      "ranged": 255,
+      "str": 400
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 10,
+      "heavy": 100,
+      "standard": 100,
+      "light": 100,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": true,
+    "weakness": null
   },
   {
     "id": 3184,
@@ -27433,6 +27523,51 @@
       "element": "earth",
       "severity": 35
     }
+  },
+  {
+    "id": 15618,
+    "name": "Dagannoth Supreme (Echo)",
+    "version": "",
+    "image": "Dagannoth Supreme (Echo).png",
+    "level": 681,
+    "speed": 5,
+    "style": [
+      "Ranged"
+    ],
+    "size": 3,
+    "max_hit": "26",
+    "skills": {
+      "atk": 255,
+      "def": 255,
+      "hp": 1800,
+      "magic": 255,
+      "ranged": 550,
+      "str": 128
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 100,
+      "heavy": 150,
+      "standard": 150,
+      "light": 150,
+      "slash": 10,
+      "stab": 10
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": true,
+    "weakness": null
   },
   {
     "id": 970,
@@ -48545,7 +48680,7 @@
     "id": 7868,
     "name": "Green dragon",
     "version": "Level 88",
-    "image": "Green dragon (3).png",
+    "image": "Green dragon.png",
     "level": 88,
     "speed": 4,
     "style": [
@@ -119051,7 +119186,8 @@
     "level": 246,
     "speed": 5,
     "style": [
-      "Stab"
+      "Stab",
+      "Ranged"
     ],
     "size": 2,
     "max_hit": "21",
@@ -119098,7 +119234,8 @@
     "level": 246,
     "speed": 5,
     "style": [
-      "Stab"
+      "Stab",
+      "Ranged"
     ],
     "size": 2,
     "max_hit": "21",
@@ -119145,7 +119282,8 @@
     "level": 246,
     "speed": 5,
     "style": [
-      "Stab"
+      "Stab",
+      "Ranged"
     ],
     "size": 2,
     "max_hit": "21",
@@ -119192,7 +119330,8 @@
     "level": 246,
     "speed": 5,
     "style": [
-      "Stab"
+      "Stab",
+      "Ranged"
     ],
     "size": 2,
     "max_hit": "21",
@@ -119239,7 +119378,8 @@
     "level": 246,
     "speed": 5,
     "style": [
-      "Stab"
+      "Stab",
+      "Ranged"
     ],
     "size": 2,
     "max_hit": "21",
@@ -126126,8 +126266,58 @@
   {
     "id": 13032,
     "name": "Wyrmling",
-    "version": "Attacking",
+    "version": "Attacking (Neypotzli)",
     "image": "Wyrmling (attacking).png",
+    "level": 55,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 20,
+      "def": 40,
+      "hp": 65,
+      "magic": 60,
+      "ranged": 15,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 10,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 50,
+      "magic": 50,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 50,
+      "stab": 20
+    },
+    "attributes": [
+      "dragon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": true,
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
+  },
+  {
+    "id": 16296,
+    "name": "Wyrmling",
+    "version": "Attacking (Wyrmscraig)",
+    "image": "Wyrmling (Wyrmscraig, attacking).png",
     "level": 55,
     "speed": 4,
     "style": [
@@ -126176,8 +126366,58 @@
   {
     "id": 13031,
     "name": "Wyrmling",
-    "version": "Idle",
+    "version": "Idle (Neypotzli)",
     "image": "Wyrmling.png",
+    "level": 55,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 2,
+    "max_hit": "5",
+    "skills": {
+      "atk": 20,
+      "def": 40,
+      "hp": 65,
+      "magic": 60,
+      "ranged": 15,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 10,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 10
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 50,
+      "magic": 50,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
+      "slash": 50,
+      "stab": 20
+    },
+    "attributes": [
+      "dragon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": true,
+    "weakness": {
+      "element": "earth",
+      "severity": 50
+    }
+  },
+  {
+    "id": 16297,
+    "name": "Wyrmling",
+    "version": "Idle (Wyrmscraig)",
+    "image": "Wyrmling (Wyrmscraig).png",
     "level": 55,
     "speed": 4,
     "style": [
