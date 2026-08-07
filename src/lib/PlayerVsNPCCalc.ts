@@ -1030,7 +1030,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.wearing('Dawnbringer')) {
-      maxHit = Math.max(2, Math.trunc(maxHit / 2))
+      maxHit = Math.max(2, Math.trunc(maxHit / 2));
     }
 
     if (mattrs.includes(MonsterAttribute.DRAGON)) {
