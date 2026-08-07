@@ -945,7 +945,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     } else if (this.wearing(['Sanguinesti staff', 'Holy sanguinesti staff'])) {
       maxHit = Math.max(1, Math.trunc(magicLevel / 3));
     } else if (this.wearing('Dawnbringer')) {
-      maxHit = Math.max(1, Math.trunc(magicLevel / 6 - 1));
+      maxHit = Math.max(1, Math.trunc(magicLevel / 3 - 2));
       if (this.opts.usingSpecialAttack) { // guaranteed hit between 75-150, ignores bonuses
         return [75, 150];
       }
@@ -1027,6 +1027,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (blackMaskBonus) {
       maxHit = Math.trunc(maxHit * 23 / 20);
+    }
+
+    if (this.wearing('Dawnbringer')) {
+      maxHit = Math.max(2, Math.trunc(maxHit / 2))
     }
 
     if (mattrs.includes(MonsterAttribute.DRAGON)) {
