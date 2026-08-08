@@ -65168,7 +65168,7 @@
     "version": "",
     "slot": "weapon",
     "image": "Dragon hunter wand.png",
-    "speed": 5,
+    "speed": 4,
     "category": "Staff",
     "bonuses": {
       "str": 0,

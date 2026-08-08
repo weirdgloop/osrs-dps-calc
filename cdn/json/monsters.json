@@ -13013,49 +13013,6 @@
     }
   },
   {
-    "id": 14146,
-    "name": "Black dragon (Echo)",
-    "version": "",
-    "image": "Black dragon (Echo).png",
-    "level": 227,
-    "speed": 0,
-    "style": null,
-    "size": 4,
-    "max_hit": 0,
-    "skills": {
-      "atk": 200,
-      "def": 200,
-      "hp": 190,
-      "magic": 100,
-      "ranged": 1,
-      "str": 200
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": false,
-    "weakness": null
-  },
-  {
     "id": 252,
     "name": "Black dragon",
     "version": "Level 227",
@@ -20334,58 +20291,6 @@
     }
   },
   {
-    "id": 15612,
-    "name": "Cerberus (Echo)",
-    "version": "",
-    "image": "Cerberus (Echo).png",
-    "level": 477,
-    "speed": 6,
-    "style": [
-      "Stab",
-      "Ranged",
-      "Magic"
-    ],
-    "size": 5,
-    "max_hit": "79",
-    "skills": {
-      "atk": 275,
-      "def": 115,
-      "hp": 1620,
-      "magic": 275,
-      "ranged": 275,
-      "str": 275
-    },
-    "offensive": {
-      "atk": 50,
-      "magic": 50,
-      "magic_str": 0,
-      "ranged": 50,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 25,
-      "magic": 70,
-      "heavy": 70,
-      "standard": 70,
-      "light": 70,
-      "slash": 100,
-      "stab": 50
-    },
-    "attributes": [
-      "demon"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": true,
-    "weakness": {
-      "element": "water",
-      "severity": 40
-    }
-  },
-  {
     "id": 11482,
     "name": "Champion of Scabaras",
     "version": "",
@@ -27291,51 +27196,6 @@
     }
   },
   {
-    "id": 15619,
-    "name": "Dagannoth Prime (Echo)",
-    "version": "",
-    "image": "Dagannoth Prime (Echo).png",
-    "level": 454,
-    "speed": 5,
-    "style": [
-      "Magic"
-    ],
-    "size": 3,
-    "max_hit": "49+",
-    "skills": {
-      "atk": 255,
-      "def": 255,
-      "hp": 1800,
-      "magic": 400,
-      "ranged": 0,
-      "str": 255
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 100,
-      "magic": 100,
-      "heavy": 10,
-      "standard": 10,
-      "light": 10,
-      "slash": 100,
-      "stab": 100
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": true,
-    "weakness": null
-  },
-  {
     "id": 2267,
     "name": "Dagannoth Rex",
     "version": "",
@@ -27382,51 +27242,6 @@
       "element": "earth",
       "severity": 35
     }
-  },
-  {
-    "id": 15620,
-    "name": "Dagannoth Rex (Echo)",
-    "version": "",
-    "image": "Dagannoth Rex (Echo).png",
-    "level": 454,
-    "speed": 5,
-    "style": [
-      "Slash"
-    ],
-    "size": 3,
-    "max_hit": "48+",
-    "skills": {
-      "atk": 400,
-      "def": 255,
-      "hp": 1800,
-      "magic": 0,
-      "ranged": 255,
-      "str": 400
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 100,
-      "magic": 10,
-      "heavy": 100,
-      "standard": 100,
-      "light": 100,
-      "slash": 100,
-      "stab": 100
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": true,
-    "weakness": null
   },
   {
     "id": 3184,
@@ -27523,51 +27338,6 @@
       "element": "earth",
       "severity": 35
     }
-  },
-  {
-    "id": 15618,
-    "name": "Dagannoth Supreme (Echo)",
-    "version": "",
-    "image": "Dagannoth Supreme (Echo).png",
-    "level": 681,
-    "speed": 5,
-    "style": [
-      "Ranged"
-    ],
-    "size": 3,
-    "max_hit": "26",
-    "skills": {
-      "atk": 255,
-      "def": 255,
-      "hp": 1800,
-      "magic": 255,
-      "ranged": 550,
-      "str": 128
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 10,
-      "magic": 100,
-      "heavy": 150,
-      "standard": 150,
-      "light": 150,
-      "slash": 10,
-      "stab": 10
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": true,
-    "weakness": null
   },
   {
     "id": 970,
@@ -63178,101 +62948,6 @@
     }
   },
   {
-    "id": 15617,
-    "name": "Kalphite Queen (Echo)",
-    "version": "Airborne",
-    "image": "Kalphite Queen (Echo) 2nd form.png",
-    "level": 748,
-    "speed": 4,
-    "style": [
-      "Magic",
-      "Ranged"
-    ],
-    "size": 5,
-    "max_hit": "38 (melee) 35 (ranged)",
-    "skills": {
-      "atk": 375,
-      "def": 300,
-      "hp": 561,
-      "magic": 165,
-      "ranged": 1,
-      "str": 375
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 50,
-      "magic": 10,
-      "heavy": 10,
-      "standard": 10,
-      "light": 10,
-      "slash": 50,
-      "stab": 50
-    },
-    "attributes": [
-      "kalphite"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": true,
-    "weakness": null
-  },
-  {
-    "id": 15616,
-    "name": "Kalphite Queen (Echo)",
-    "version": "Crawling",
-    "image": "Kalphite Queen (Echo).png",
-    "level": 499,
-    "speed": 4,
-    "style": [
-      "All"
-    ],
-    "size": 5,
-    "max_hit": "38 (melee) 35 (ranged)",
-    "skills": {
-      "atk": 375,
-      "def": 300,
-      "hp": 561,
-      "magic": 165,
-      "ranged": 1,
-      "str": 375
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 10,
-      "magic": 65,
-      "heavy": 65,
-      "standard": 65,
-      "light": 65,
-      "slash": 50,
-      "stab": 50
-    },
-    "attributes": [
-      "kalphite"
-    ],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": true,
-    "weakness": null
-  },
-  {
     "id": 965,
     "name": "Kalphite Queen",
     "version": "Airborne",
@@ -72660,6 +72335,144 @@
     }
   },
   {
+    "id": 3485,
+    "name": "Monk of Zamorak (Paterdomus)",
+    "version": "Level 17",
+    "image": "Monk of Zamorak (level 17).png",
+    "level": 17,
+    "speed": 4,
+    "style": [
+      "Crush",
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "5",
+    "skills": {
+      "atk": 8,
+      "def": 12,
+      "hp": 10,
+      "magic": 25,
+      "ranged": 1,
+      "str": 8
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 3484,
+    "name": "Monk of Zamorak (Paterdomus)",
+    "version": "Level 22",
+    "image": "Monk of Zamorak (level 22).png",
+    "level": 22,
+    "speed": 4,
+    "style": [
+      "Crush",
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "3 (Melee)",
+    "skills": {
+      "atk": 18,
+      "def": 22,
+      "hp": 20,
+      "magic": 25,
+      "ranged": 1,
+      "str": 18
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 3486,
+    "name": "Monk of Zamorak (Paterdomus)",
+    "version": "Level 30",
+    "image": "Monk of Zamorak (level 30 and 45).png",
+    "level": 30,
+    "speed": 4,
+    "style": [
+      "Crush",
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "3 (Melee)",
+    "skills": {
+      "atk": 25,
+      "def": 25,
+      "hp": 25,
+      "magic": 40,
+      "ranged": 1,
+      "str": 25
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
     "id": 528,
     "name": "Monk of Zamorak",
     "version": "Level 17",
@@ -72771,52 +72584,6 @@
       "magic": 30,
       "ranged": 1,
       "str": 13
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": false,
-    "weakness": null
-  },
-  {
-    "id": 3486,
-    "name": "Monk of Zamorak",
-    "version": "Level 30",
-    "image": "Monk of Zamorak (level 30 and 45).png",
-    "level": 30,
-    "speed": 4,
-    "style": [
-      "Crush",
-      "Magic"
-    ],
-    "size": 1,
-    "max_hit": "3 (Melee)",
-    "skills": {
-      "atk": 25,
-      "def": 25,
-      "hp": 25,
-      "magic": 40,
-      "ranged": 1,
-      "str": 25
     },
     "offensive": {
       "atk": 0,
