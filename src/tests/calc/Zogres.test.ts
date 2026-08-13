@@ -67,6 +67,29 @@ describe('Zogre damage resistances', () => {
     expect(maxHit).toBe(19); // comp ogre bow only uses arrow str bonus
   });
 
+  test('Brutal arrows apply full damage with the regular Ogre bow', () => {
+    // Adamant/Rune brutal are Comp-ogre-bow-only; the regular Ogre bow fires up to Mithril brutal.
+    const withBow = (weaponName: string): Player => getTestPlayer(m, {
+      equipment: {
+        weapon: findEquipment(weaponName),
+        ammo: findEquipment('Mithril brutal'),
+      },
+      style: {
+        type: 'ranged',
+        stance: 'Rapid',
+      },
+    });
+
+    // The Comp ogre bow is the known-exempt baseline (full, unreduced damage).
+    const compMaxHit = calculatePlayerVsNpc(m, withBow('Comp ogre bow')).maxHit;
+    const ogreMaxHit = calculatePlayerVsNpc(m, withBow('Ogre bow')).maxHit;
+
+    // The regular Ogre bow firing brutal arrows must also bypass the 1/4 reduction
+    // (max hit does not depend on which ogre bow is used).
+    expect(ogreMaxHit).toBeGreaterThan(0);
+    expect(ogreMaxHit).toBe(compMaxHit);
+  });
+
   test('Brutal arrows do not skip damage reduction when not used', () => {
     const { maxHit } = calculatePlayerVsNpc(m, getTestPlayer(m, {
       equipment: {

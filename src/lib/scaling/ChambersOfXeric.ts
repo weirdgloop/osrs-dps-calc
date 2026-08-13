@@ -49,7 +49,7 @@ const getSkillMeta = (m: Monster): SkillMeta => {
   const baseDefensive = max(defensives, (k) => m.skills[k]) ?? 1;
 
   const baseHp = GUARDIAN_IDS.includes(m.id)
-    ? 151 + Math.trunc(m.inputs.partySumMiningLevel / m.inputs.partySize)
+    ? 151 + Math.trunc(m.inputs.partySumMiningLevel / Math.max(1, m.inputs.partySize))
     : m.skills.hp;
 
   return {

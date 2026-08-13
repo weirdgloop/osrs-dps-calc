@@ -226,7 +226,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
 
     // Some monsters have a reduced max hit under specific conditions
     if (name === 'Aberrant spectre' && (this.wearing('Nose peg') || this.isWearingSlayerHelmet())) maxHit = 8;
-    if (name === 'Dust devil' && (this.wearing('Face mask') || this.isWearingSlayerHelmet())) maxHit = 8;
+    if (name === 'Dust devil' && (this.wearing('Facemask') || this.isWearingSlayerHelmet())) maxHit = 8;
     if (name === 'Banshee' && (this.wearing('Earmuffs') || this.isWearingSlayerHelmet())) maxHit = 2;
     if (name === 'Wall beast' && (this.wearing('Spiny helmet') || this.isWearingSlayerHelmet())) maxHit = 4;
     if (name === 'Sourhog' && (this.wearing('Reinforced goggles') || this.isWearingSlayerHelmet())) maxHit = 6;
@@ -254,6 +254,9 @@ export default class NPCVsPlayerCalc extends BaseCalc {
    * Returns the expected damage per tick, based on the NPC's attack speed.
    */
   public getDpt() {
+    if (this.monster.speed <= 0) {
+      return 0;
+    }
     return this.getDistribution().getExpectedDamage() / this.monster.speed;
   }
 

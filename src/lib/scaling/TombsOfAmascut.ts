@@ -19,7 +19,7 @@ const applyToaScaling = (m: Monster): Monster => {
 
   const pathLevel = Math.min(6, Math.max(0, inputs.toaPathLevel));
   if (TOMBS_OF_AMASCUT_PATH_MONSTER_IDS.includes(m.id) && pathLevel >= 1) {
-    const pathLevelFactor = 3 + 5 * inputs.toaPathLevel;
+    const pathLevelFactor = 3 + 5 * pathLevel;
     newHp = Math.trunc(newHp * (100 + pathLevelFactor) / 100);
   }
 
