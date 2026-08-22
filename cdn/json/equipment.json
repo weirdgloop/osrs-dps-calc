@@ -527,12 +527,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age amulet",
+    "name": "3rd Age amulet",
     "id": 10344,
     "weight": 0.003,
     "version": "",
     "slot": "neck",
-    "image": "3rd age amulet.png",
+    "image": "3rd Age amulet.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -558,12 +558,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age axe",
+    "name": "3rd Age axe",
     "id": 20011,
     "weight": 1.36,
     "version": "",
     "slot": "weapon",
-    "image": "3rd age axe.png",
+    "image": "3rd Age axe.png",
     "speed": 5,
     "category": "Axe",
     "bonuses": {
@@ -589,12 +589,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age bow",
+    "name": "3rd Age bow",
     "id": 12424,
     "weight": 3.175,
     "version": "",
     "slot": "weapon",
-    "image": "3rd age bow.png",
+    "image": "3rd Age bow.png",
     "speed": 4,
     "category": "Bow",
     "bonuses": {
@@ -620,12 +620,12 @@
     "isTwoHanded": true
   },
   {
-    "name": "3rd age cloak",
+    "name": "3rd Age cloak",
     "id": 12437,
     "weight": 0.005,
     "version": "",
     "slot": "cape",
-    "image": "3rd age cloak.png",
+    "image": "3rd Age cloak.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -651,12 +651,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age druidic cloak",
+    "name": "3rd Age druidic cloak",
     "id": 23345,
     "weight": 0.4,
     "version": "",
     "slot": "cape",
-    "image": "3rd age druidic cloak.png",
+    "image": "3rd Age druidic cloak.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -682,12 +682,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age druidic robe bottoms",
+    "name": "3rd Age druidic robe bottoms",
     "id": 23339,
     "weight": 1.5,
     "version": "",
     "slot": "legs",
-    "image": "3rd age druidic robe bottoms.png",
+    "image": "3rd Age druidic robe bottoms.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -713,12 +713,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age druidic robe top",
+    "name": "3rd Age druidic robe top",
     "id": 23336,
     "weight": 1.5,
     "version": "",
     "slot": "body",
-    "image": "3rd age druidic robe top.png",
+    "image": "3rd Age druidic robe top.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -744,12 +744,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age druidic staff",
+    "name": "3rd Age druidic staff",
     "id": 23342,
     "weight": 2,
     "version": "",
     "slot": "weapon",
-    "image": "3rd age druidic staff.png",
+    "image": "3rd Age druidic staff.png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -775,12 +775,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age felling axe",
+    "name": "3rd Age felling axe",
     "id": 28226,
     "weight": 1.814,
     "version": "",
     "slot": "weapon",
-    "image": "3rd age felling axe.png",
+    "image": "3rd Age felling axe.png",
     "speed": 7,
     "category": "Axe",
     "bonuses": {
@@ -806,12 +806,12 @@
     "isTwoHanded": true
   },
   {
-    "name": "3rd age full helmet",
+    "name": "3rd Age full helmet",
     "id": 10350,
     "weight": 0.907,
     "version": "",
     "slot": "head",
-    "image": "3rd age full helmet.png",
+    "image": "3rd Age full helmet.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -837,12 +837,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age kiteshield",
+    "name": "3rd Age kiteshield",
     "id": 10352,
     "weight": 2.721,
     "version": "",
     "slot": "shield",
-    "image": "3rd age kiteshield.png",
+    "image": "3rd Age kiteshield.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -868,12 +868,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age longsword",
+    "name": "3rd Age longsword",
     "id": 12426,
     "weight": 1,
     "version": "",
     "slot": "weapon",
-    "image": "3rd age longsword.png",
+    "image": "3rd Age longsword.png",
     "speed": 5,
     "category": "2h Sword",
     "bonuses": {
@@ -899,12 +899,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age mage hat",
+    "name": "3rd Age mage hat",
     "id": 10342,
     "weight": 0.4,
     "version": "",
     "slot": "head",
-    "image": "3rd age mage hat.png",
+    "image": "3rd Age mage hat.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -930,12 +930,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age pickaxe",
+    "name": "3rd Age pickaxe",
     "id": 20014,
     "weight": 2.4,
     "version": "",
     "slot": "weapon",
-    "image": "3rd age pickaxe.png",
+    "image": "3rd Age pickaxe.png",
     "speed": 5,
     "category": "Pickaxe",
     "bonuses": {
@@ -961,12 +961,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age platebody",
+    "name": "3rd Age platebody",
     "id": 10348,
     "weight": 9.979,
     "version": "",
     "slot": "body",
-    "image": "3rd age platebody.png",
+    "image": "3rd Age platebody.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -992,12 +992,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age platelegs",
+    "name": "3rd Age platelegs",
     "id": 10346,
     "weight": 2.721,
     "version": "",
     "slot": "legs",
-    "image": "3rd age platelegs.png",
+    "image": "3rd Age platelegs.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -1023,12 +1023,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age plateskirt",
+    "name": "3rd Age plateskirt",
     "id": 23242,
     "weight": 2.721,
     "version": "",
     "slot": "legs",
-    "image": "3rd age plateskirt.png",
+    "image": "3rd Age plateskirt.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -1054,12 +1054,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age range coif",
+    "name": "3rd Age range coif",
     "id": 10334,
     "weight": 1,
     "version": "",
     "slot": "head",
-    "image": "3rd age range coif.png",
+    "image": "3rd Age range coif.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -1085,12 +1085,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age range legs",
+    "name": "3rd Age range legs",
     "id": 10332,
     "weight": 3,
     "version": "",
     "slot": "legs",
-    "image": "3rd age range legs.png",
+    "image": "3rd Age range legs.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -1116,12 +1116,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age range top",
+    "name": "3rd Age range top",
     "id": 10330,
     "weight": 4,
     "version": "",
     "slot": "body",
-    "image": "3rd age range top.png",
+    "image": "3rd Age range top.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -1147,12 +1147,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age robe",
+    "name": "3rd Age robe",
     "id": 10340,
     "weight": 1.8,
     "version": "",
     "slot": "legs",
-    "image": "3rd age robe.png",
+    "image": "3rd Age robe.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -1178,12 +1178,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age robe top",
+    "name": "3rd Age robe top",
     "id": 10338,
     "weight": 2.7,
     "version": "",
     "slot": "body",
-    "image": "3rd age robe top.png",
+    "image": "3rd Age robe top.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -1209,12 +1209,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age vambraces",
+    "name": "3rd Age vambraces",
     "id": 10336,
     "weight": 1,
     "version": "",
     "slot": "hands",
-    "image": "3rd age vambraces.png",
+    "image": "3rd Age vambraces.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -1240,12 +1240,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "3rd age wand",
+    "name": "3rd Age wand",
     "id": 12422,
     "weight": 3.175,
     "version": "",
     "slot": "weapon",
-    "image": "3rd age wand.png",
+    "image": "3rd Age wand.png",
     "speed": 4,
     "category": "Staff",
     "bonuses": {
@@ -8587,6 +8587,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Amulet of Nature",
+    "id": 6040,
+    "weight": 0.007,
+    "version": "",
+    "slot": "neck",
+    "image": "Amulet of Nature.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Amulet of accuracy",
     "id": 1478,
     "weight": 0.01,
@@ -9393,37 +9424,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Amulet of nature",
-    "id": 6040,
-    "weight": 0.007,
-    "version": "",
-    "slot": "neck",
-    "image": "Amulet of nature.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
     "name": "Amulet of power",
     "id": 1731,
     "weight": 0.01,
@@ -9579,12 +9579,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Amulet of the damned",
+    "name": "Amulet of the Damned",
     "id": 12851,
     "weight": 0.1,
     "version": "Full",
     "slot": "neck",
-    "image": "Amulet of the damned (full).png",
+    "image": "Amulet of the Damned (full).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -9610,12 +9610,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Amulet of the damned",
+    "name": "Amulet of the Damned",
     "id": 12853,
     "weight": 0.1,
     "version": "Used",
     "slot": "neck",
-    "image": "Amulet of the damned.png",
+    "image": "Amulet of the Damned.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -9641,12 +9641,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Amulet of the eye",
+    "name": "Amulet of the Eye",
     "id": 26994,
     "weight": 0.25,
     "version": "Blue",
     "slot": "neck",
-    "image": "Amulet of the eye (blue).png",
+    "image": "Amulet of the Eye (blue).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -9672,12 +9672,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Amulet of the eye",
+    "name": "Amulet of the Eye",
     "id": 26992,
     "weight": 0.25,
     "version": "Green",
     "slot": "neck",
-    "image": "Amulet of the eye (green).png",
+    "image": "Amulet of the Eye (green).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -9703,12 +9703,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Amulet of the eye",
+    "name": "Amulet of the Eye",
     "id": 26990,
     "weight": 0.25,
     "version": "Red",
     "slot": "neck",
-    "image": "Amulet of the eye (red).png",
+    "image": "Amulet of the Eye (red).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -9734,12 +9734,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Amulet of the eye",
+    "name": "Amulet of the Eye",
     "id": 26914,
     "weight": 0.25,
     "version": "Regular",
     "slot": "neck",
-    "image": "Amulet of the eye.png",
+    "image": "Amulet of the Eye.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -13206,12 +13206,12 @@
     "isTwoHanded": true
   },
   {
-    "name": "Armadyl godsword (deadman)",
+    "name": "Armadyl godsword (Deadman)",
     "id": 29605,
     "weight": 10,
     "version": "",
     "slot": "weapon",
-    "image": "Armadyl godsword (deadman).png",
+    "image": "Armadyl godsword (Deadman).png",
     "speed": 6,
     "category": "2h Sword",
     "bonuses": {
@@ -16523,12 +16523,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Beads of the dead",
+    "name": "Beads of the Dead",
     "id": 616,
     "weight": 0.01,
     "version": "",
     "slot": "neck",
-    "image": "Beads of the dead.png",
+    "image": "Beads of the Dead.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -22785,12 +22785,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Blade of saeldor",
+    "name": "Blade of Saeldor",
     "id": 23995,
     "weight": 1.814,
     "version": "Charged",
     "slot": "weapon",
-    "image": "Blade of saeldor.png",
+    "image": "Blade of Saeldor.png",
     "speed": 4,
     "category": "Slash Sword",
     "bonuses": {
@@ -22816,12 +22816,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Blade of saeldor",
+    "name": "Blade of Saeldor",
     "id": 23997,
     "weight": 1.814,
     "version": "Inactive",
     "slot": "weapon",
-    "image": "Blade of saeldor (inactive).png",
+    "image": "Blade of Saeldor (inactive).png",
     "speed": 4,
     "category": "Slash Sword",
     "bonuses": {
@@ -22847,12 +22847,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Blade of saeldor (c)",
+    "name": "Blade of Saeldor (c)",
     "id": 24551,
     "weight": 1.814,
     "version": "",
     "slot": "weapon",
-    "image": "Blade of saeldor (c).png",
+    "image": "Blade of Saeldor (c).png",
     "speed": 4,
     "category": "Slash Sword",
     "bonuses": {
@@ -22878,12 +22878,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Blade of saeldor (c) (Amlodd)",
+    "name": "Blade of Saeldor (c) (Amlodd)",
     "id": 25882,
     "weight": 1.814,
     "version": "",
     "slot": "weapon",
-    "image": "Blade of saeldor (c) (Amlodd).png",
+    "image": "Blade of Saeldor (c) (Amlodd).png",
     "speed": 4,
     "category": "Slash Sword",
     "bonuses": {
@@ -22909,12 +22909,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Blade of saeldor (c) (Cadarn)",
+    "name": "Blade of Saeldor (c) (Cadarn)",
     "id": 25876,
     "weight": 1.814,
     "version": "",
     "slot": "weapon",
-    "image": "Blade of saeldor (c) (Cadarn).png",
+    "image": "Blade of Saeldor (c) (Cadarn).png",
     "speed": 4,
     "category": "Slash Sword",
     "bonuses": {
@@ -22940,12 +22940,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Blade of saeldor (c) (Crwys)",
+    "name": "Blade of Saeldor (c) (Crwys)",
     "id": 25878,
     "weight": 1.814,
     "version": "",
     "slot": "weapon",
-    "image": "Blade of saeldor (c) (Crwys).png",
+    "image": "Blade of Saeldor (c) (Crwys).png",
     "speed": 4,
     "category": "Slash Sword",
     "bonuses": {
@@ -22971,12 +22971,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Blade of saeldor (c) (Iorwerth)",
+    "name": "Blade of Saeldor (c) (Iorwerth)",
     "id": 25872,
     "weight": 1.814,
     "version": "",
     "slot": "weapon",
-    "image": "Blade of saeldor (c) (Iorwerth).png",
+    "image": "Blade of Saeldor (c) (Iorwerth).png",
     "speed": 4,
     "category": "Slash Sword",
     "bonuses": {
@@ -23002,12 +23002,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Blade of saeldor (c) (Ithell)",
+    "name": "Blade of Saeldor (c) (Ithell)",
     "id": 25870,
     "weight": 1.814,
     "version": "",
     "slot": "weapon",
-    "image": "Blade of saeldor (c) (Ithell).png",
+    "image": "Blade of Saeldor (c) (Ithell).png",
     "speed": 4,
     "category": "Slash Sword",
     "bonuses": {
@@ -23033,12 +23033,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Blade of saeldor (c) (Meilyr)",
+    "name": "Blade of Saeldor (c) (Meilyr)",
     "id": 25880,
     "weight": 1.814,
     "version": "",
     "slot": "weapon",
-    "image": "Blade of saeldor (c) (Meilyr).png",
+    "image": "Blade of Saeldor (c) (Meilyr).png",
     "speed": 4,
     "category": "Slash Sword",
     "bonuses": {
@@ -23064,12 +23064,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Blade of saeldor (c) (Trahaearn)",
+    "name": "Blade of Saeldor (c) (Trahaearn)",
     "id": 25874,
     "weight": 1.814,
     "version": "",
     "slot": "weapon",
-    "image": "Blade of saeldor (c) (Trahaearn).png",
+    "image": "Blade of Saeldor (c) (Trahaearn).png",
     "speed": 4,
     "category": "Slash Sword",
     "bonuses": {
@@ -23157,6 +23157,99 @@
     "isTwoHanded": true
   },
   {
+    "name": "Blessed Dizana's quiver",
+    "id": 28828,
+    "weight": 0.453,
+    "version": "Broken",
+    "slot": "cape",
+    "image": "Blessed Dizana's quiver (broken).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 3,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 18
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blessed Dizana's quiver",
+    "id": 28957,
+    "weight": 0.453,
+    "version": "Locked",
+    "slot": "cape",
+    "image": "Blessed Dizana's quiver (l).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 3,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 18
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Blessed Dizana's quiver",
+    "id": 28955,
+    "weight": 0.453,
+    "version": "Normal",
+    "slot": "cape",
+    "image": "Blessed Dizana's quiver.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 3,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 18
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Blessed axe",
     "id": 10491,
     "weight": 1.162,
@@ -23181,99 +23274,6 @@
     "defensive": {
       "stab": 0,
       "slash": 1,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Blessed dizana's quiver",
-    "id": 28828,
-    "weight": 0.453,
-    "version": "Broken",
-    "slot": "cape",
-    "image": "Blessed dizana's quiver (broken).png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 3,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 18
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Blessed dizana's quiver",
-    "id": 28957,
-    "weight": 0.453,
-    "version": "Locked",
-    "slot": "cape",
-    "image": "Blessed dizana's quiver (l).png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 3,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 18
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Blessed dizana's quiver",
-    "id": 28955,
-    "weight": 0.453,
-    "version": "Normal",
-    "slot": "cape",
-    "image": "Blessed dizana's quiver.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 3,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 18
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
       "crush": 0,
       "magic": 0,
       "ranged": 0
@@ -26567,12 +26567,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Book of balance",
+    "name": "Book of Balance",
     "id": 3844,
     "weight": 1,
     "version": "",
     "slot": "shield",
-    "image": "Book of balance.png",
+    "image": "Book of Balance.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -26598,12 +26598,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Book of balance (or)",
+    "name": "Book of Balance (or)",
     "id": 26488,
     "weight": 1,
     "version": "",
     "slot": "shield",
-    "image": "Book of balance (or).png",
+    "image": "Book of Balance (or).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -26629,12 +26629,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Book of darkness",
+    "name": "Book of Darkness",
     "id": 12612,
     "weight": 1,
     "version": "",
     "slot": "shield",
-    "image": "Book of darkness.png",
+    "image": "Book of Darkness.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -26660,12 +26660,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Book of darkness (or)",
+    "name": "Book of Darkness (or)",
     "id": 26490,
     "weight": 1,
     "version": "",
     "slot": "shield",
-    "image": "Book of darkness (or).png",
+    "image": "Book of Darkness (or).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -26691,12 +26691,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Book of egg",
+    "name": "Book of Egg",
     "id": 29433,
     "weight": 1,
     "version": "",
     "slot": "shield",
-    "image": "Book of egg.png",
+    "image": "Book of Egg.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -26722,12 +26722,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Book of law",
+    "name": "Book of Law",
     "id": 12610,
     "weight": 1,
     "version": "",
     "slot": "shield",
-    "image": "Book of law.png",
+    "image": "Book of Law.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -26753,12 +26753,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Book of law (or)",
+    "name": "Book of Law (or)",
     "id": 26492,
     "weight": 1,
     "version": "",
     "slot": "shield",
-    "image": "Book of law (or).png",
+    "image": "Book of Law (or).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -26784,12 +26784,74 @@
     "isTwoHanded": false
   },
   {
-    "name": "Book of the dead",
+    "name": "Book of War",
+    "id": 12608,
+    "weight": 1,
+    "version": "",
+    "slot": "shield",
+    "image": "Book of War.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 2,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 5
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Book of War (or)",
+    "id": 26494,
+    "weight": 1,
+    "version": "",
+    "slot": "shield",
+    "image": "Book of War (or).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 2,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 5
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Book of the Dead",
     "id": 25818,
     "weight": 0.2,
     "version": "",
     "slot": "shield",
-    "image": "Book of the dead.png",
+    "image": "Book of the Dead.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -26815,74 +26877,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Book of war",
-    "id": 12608,
-    "weight": 1,
-    "version": "",
-    "slot": "shield",
-    "image": "Book of war.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 2,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 5
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Book of war (or)",
-    "id": 26494,
-    "weight": 1,
-    "version": "",
-    "slot": "shield",
-    "image": "Book of war (or).png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 2,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 5
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Boots of brimstone",
+    "name": "Boots of Brimstone",
     "id": 22951,
     "weight": 3.175,
     "version": "",
     "slot": "feet",
-    "image": "Boots of brimstone.png",
+    "image": "Boots of Brimstone.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -27001,12 +27001,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Boots of the eye",
+    "name": "Boots of the Eye",
     "id": 26856,
     "weight": 0.6,
     "version": "",
     "slot": "feet",
-    "image": "Boots of the eye.png",
+    "image": "Boots of the Eye.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -27218,12 +27218,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Bow of faerdhinen",
+    "name": "Bow of Faerdhinen",
     "id": 25865,
     "weight": 1.5,
     "version": "Charged",
     "slot": "weapon",
-    "image": "Bow of faerdhinen.png",
+    "image": "Bow of Faerdhinen.png",
     "speed": 5,
     "category": "Bow",
     "bonuses": {
@@ -27249,12 +27249,12 @@
     "isTwoHanded": true
   },
   {
-    "name": "Bow of faerdhinen",
+    "name": "Bow of Faerdhinen",
     "id": 25862,
     "weight": 1.5,
     "version": "Inactive",
     "slot": "weapon",
-    "image": "Bow of faerdhinen (inactive).png",
+    "image": "Bow of Faerdhinen (inactive).png",
     "speed": 5,
     "category": "Bow",
     "bonuses": {
@@ -27280,12 +27280,12 @@
     "isTwoHanded": true
   },
   {
-    "name": "Bow of faerdhinen (c)",
+    "name": "Bow of Faerdhinen (c)",
     "id": 25867,
     "weight": 1.5,
     "version": "",
     "slot": "weapon",
-    "image": "Bow of faerdhinen (c).png",
+    "image": "Bow of Faerdhinen (c).png",
     "speed": 5,
     "category": "Bow",
     "bonuses": {
@@ -27311,12 +27311,12 @@
     "isTwoHanded": true
   },
   {
-    "name": "Bow of faerdhinen (c) (Amlodd)",
+    "name": "Bow of Faerdhinen (c) (Amlodd)",
     "id": 25896,
     "weight": 1.5,
     "version": "",
     "slot": "weapon",
-    "image": "Bow of faerdhinen (c) (Amlodd).png",
+    "image": "Bow of Faerdhinen (c) (Amlodd).png",
     "speed": 5,
     "category": "Bow",
     "bonuses": {
@@ -27342,12 +27342,12 @@
     "isTwoHanded": true
   },
   {
-    "name": "Bow of faerdhinen (c) (Cadarn)",
+    "name": "Bow of Faerdhinen (c) (Cadarn)",
     "id": 25890,
     "weight": 1.5,
     "version": "",
     "slot": "weapon",
-    "image": "Bow of faerdhinen (c) (Cadarn).png",
+    "image": "Bow of Faerdhinen (c) (Cadarn).png",
     "speed": 5,
     "category": "Bow",
     "bonuses": {
@@ -27373,12 +27373,12 @@
     "isTwoHanded": true
   },
   {
-    "name": "Bow of faerdhinen (c) (Crwys)",
+    "name": "Bow of Faerdhinen (c) (Crwys)",
     "id": 25892,
     "weight": 1.5,
     "version": "",
     "slot": "weapon",
-    "image": "Bow of faerdhinen (c) (Crwys).png",
+    "image": "Bow of Faerdhinen (c) (Crwys).png",
     "speed": 5,
     "category": "Bow",
     "bonuses": {
@@ -27404,12 +27404,12 @@
     "isTwoHanded": true
   },
   {
-    "name": "Bow of faerdhinen (c) (Iorwerth)",
+    "name": "Bow of Faerdhinen (c) (Iorwerth)",
     "id": 25886,
     "weight": 1.5,
     "version": "",
     "slot": "weapon",
-    "image": "Bow of faerdhinen (c) (Iorwerth).png",
+    "image": "Bow of Faerdhinen (c) (Iorwerth).png",
     "speed": 5,
     "category": "Bow",
     "bonuses": {
@@ -27435,12 +27435,12 @@
     "isTwoHanded": true
   },
   {
-    "name": "Bow of faerdhinen (c) (Ithell)",
+    "name": "Bow of Faerdhinen (c) (Ithell)",
     "id": 25884,
     "weight": 1.5,
     "version": "",
     "slot": "weapon",
-    "image": "Bow of faerdhinen (c) (Ithell).png",
+    "image": "Bow of Faerdhinen (c) (Ithell).png",
     "speed": 5,
     "category": "Bow",
     "bonuses": {
@@ -27466,12 +27466,12 @@
     "isTwoHanded": true
   },
   {
-    "name": "Bow of faerdhinen (c) (Meilyr)",
+    "name": "Bow of Faerdhinen (c) (Meilyr)",
     "id": 25894,
     "weight": 1.5,
     "version": "",
     "slot": "weapon",
-    "image": "Bow of faerdhinen (c) (Meilyr).png",
+    "image": "Bow of Faerdhinen (c) (Meilyr).png",
     "speed": 5,
     "category": "Bow",
     "bonuses": {
@@ -27497,12 +27497,12 @@
     "isTwoHanded": true
   },
   {
-    "name": "Bow of faerdhinen (c) (Trahaearn)",
+    "name": "Bow of Faerdhinen (c) (Trahaearn)",
     "id": 25888,
     "weight": 1.5,
     "version": "",
     "slot": "weapon",
-    "image": "Bow of faerdhinen (c) (Trahaearn).png",
+    "image": "Bow of Faerdhinen (c) (Trahaearn).png",
     "speed": 5,
     "category": "Bow",
     "bonuses": {
@@ -27528,12 +27528,12 @@
     "isTwoHanded": true
   },
   {
-    "name": "Bow of faerdhinen (c) (deadman)",
+    "name": "Bow of Faerdhinen (c) (deadman)",
     "id": 33021,
     "weight": 1.5,
     "version": "",
     "slot": "weapon",
-    "image": "Bow of faerdhinen (c) (deadman).png",
+    "image": "Bow of Faerdhinen (c) (deadman).png",
     "speed": 5,
     "category": "Bow",
     "bonuses": {
@@ -37939,6 +37939,37 @@
       "slash": 1,
       "crush": 1,
       "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Corrupted Volatile Nightmare staff",
+    "id": 29602,
+    "weight": 1.6,
+    "version": "",
+    "slot": "weapon",
+    "image": "Corrupted Volatile Nightmare staff.png",
+    "speed": 5,
+    "category": "Staff",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 150,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 16,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 14,
       "ranged": 0
     },
     "isTwoHanded": false
@@ -57164,6 +57195,37 @@
     "isTwoHanded": true
   },
   {
+    "name": "Dark bow (Deadman)",
+    "id": 29611,
+    "weight": 1.814,
+    "version": "",
+    "slot": "weapon",
+    "image": "Dark bow (Deadman).png",
+    "speed": 9,
+    "category": "Bow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 95
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
     "name": "Dark bow (bh)",
     "id": 27853,
     "weight": 1.814,
@@ -57184,37 +57246,6 @@
       "crush": 0,
       "magic": 0,
       "ranged": 105
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Dark bow (deadman)",
-    "id": 29611,
-    "weight": 1.814,
-    "version": "",
-    "slot": "weapon",
-    "image": "Dark bow (deadman).png",
-    "speed": 9,
-    "category": "Bow",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 95
     },
     "defensive": {
       "stab": 0,
@@ -69905,12 +69936,12 @@
     "isTwoHanded": true
   },
   {
-    "name": "Eldritch nightmare staff",
+    "name": "Eldritch Nightmare staff",
     "id": 24425,
     "weight": 1.6,
     "version": "",
     "slot": "weapon",
-    "image": "Eldritch nightmare staff.png",
+    "image": "Eldritch Nightmare staff.png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -72385,12 +72416,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Eye of ayak",
+    "name": "Eye of Ayak",
     "id": 31113,
     "weight": 2,
     "version": "Charged",
     "slot": "weapon",
-    "image": "Eye of ayak.png",
+    "image": "Eye of Ayak.png",
     "speed": 3,
     "category": "Powered Staff",
     "bonuses": {
@@ -72416,12 +72447,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Eye of ayak",
+    "name": "Eye of Ayak",
     "id": 31115,
     "weight": 2,
     "version": "Uncharged",
     "slot": "weapon",
-    "image": "Eye of ayak (uncharged).png",
+    "image": "Eye of Ayak (uncharged).png",
     "speed": 3,
     "category": "Powered Staff",
     "bonuses": {
@@ -78740,6 +78771,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Gloves of the Damned",
+    "id": 30380,
+    "weight": 0.226,
+    "version": "",
+    "slot": "hands",
+    "image": "Gloves of the Damned.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 12,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 12,
+      "slash": 12,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 12
+    },
+    "defensive": {
+      "stab": 12,
+      "slash": 12,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 12
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Glowing dagger",
     "id": 747,
     "weight": 0.453,
@@ -83920,7 +83982,7 @@
     "name": "Greenman mask",
     "id": 31034,
     "weight": 0.1,
-    "version": "Default",
+    "version": "Base",
     "slot": "head",
     "image": "Greenman mask.png",
     "speed": 0,
@@ -87947,12 +88009,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Harmonised nightmare staff",
+    "name": "Harmonised Nightmare staff",
     "id": 24423,
     "weight": 1.6,
     "version": "",
     "slot": "weapon",
-    "image": "Harmonised nightmare staff.png",
+    "image": "Harmonised Nightmare staff.png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -88071,12 +88133,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Hat of the eye",
+    "name": "Hat of the Eye",
     "id": 26870,
     "weight": 0.4,
     "version": "Blue",
     "slot": "head",
-    "image": "Hat of the eye (blue).png",
+    "image": "Hat of the Eye (blue).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -88102,12 +88164,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Hat of the eye",
+    "name": "Hat of the Eye",
     "id": 26864,
     "weight": 0.4,
     "version": "Green",
     "slot": "head",
-    "image": "Hat of the eye (green).png",
+    "image": "Hat of the Eye (green).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -88133,12 +88195,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Hat of the eye",
+    "name": "Hat of the Eye",
     "id": 26858,
     "weight": 0.4,
     "version": "Red",
     "slot": "head",
-    "image": "Hat of the eye (red).png",
+    "image": "Hat of the Eye (red).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -88164,12 +88226,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Hat of the eye",
+    "name": "Hat of the Eye",
     "id": 26850,
     "weight": 0.4,
     "version": "Regular",
     "slot": "head",
-    "image": "Hat of the eye.png",
+    "image": "Hat of the Eye.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -88536,12 +88598,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Helm of neitiznot",
+    "name": "Helm of Neitiznot",
     "id": 10828,
     "weight": 2.267,
     "version": "",
     "slot": "head",
-    "image": "Helm of neitiznot.png",
+    "image": "Helm of Neitiznot.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -88567,12 +88629,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Helm of neitiznot (or)",
+    "name": "Helm of Neitiznot (or)",
     "id": 28070,
     "weight": 2.267,
     "version": "",
     "slot": "head",
-    "image": "Helm of neitiznot (or).png",
+    "image": "Helm of Neitiznot (or).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -88598,12 +88660,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Helm of raedwald",
+    "name": "Helm of Raedwald",
     "id": 19687,
     "weight": 1,
     "version": "",
     "slot": "head",
-    "image": "Helm of raedwald.png",
+    "image": "Helm of Raedwald.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -89559,12 +89621,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Horn of plenty",
+    "name": "Horn of Plenty",
     "id": 31241,
     "weight": 1,
     "version": "Charged",
     "slot": "shield",
-    "image": "Horn of plenty.png",
+    "image": "Horn of Plenty.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -89590,12 +89652,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Horn of plenty",
+    "name": "Horn of Plenty",
     "id": 31243,
     "weight": 1,
     "version": "Empty",
     "slot": "shield",
-    "image": "Horn of plenty (empty).png",
+    "image": "Horn of Plenty (empty).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -90923,12 +90985,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Imbued guthix cape",
+    "name": "Imbued Guthix cape",
     "id": 24240,
     "weight": 0.453,
     "version": "Broken",
     "slot": "cape",
-    "image": "Imbued guthix cape (broken).png",
+    "image": "Imbued Guthix cape (broken).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -90954,12 +91016,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Imbued guthix cape",
+    "name": "Imbued Guthix cape",
     "id": 24249,
     "weight": 0.453,
     "version": "Locked",
     "slot": "cape",
-    "image": "Imbued guthix cape.png",
+    "image": "Imbued Guthix cape.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -90985,12 +91047,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Imbued guthix cape",
+    "name": "Imbued Guthix cape",
     "id": 21793,
     "weight": 0.453,
     "version": "Normal",
     "slot": "cape",
-    "image": "Imbued guthix cape.png",
+    "image": "Imbued Guthix cape.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -91016,12 +91078,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Imbued guthix cape (deadman)",
+    "name": "Imbued Guthix cape (Deadman)",
     "id": 29615,
     "weight": 0.453,
     "version": "",
     "slot": "cape",
-    "image": "Imbued guthix cape (deadman).png",
+    "image": "Imbued Guthix cape (Deadman).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -91047,12 +91109,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Imbued guthix max cape",
+    "name": "Imbued Guthix max cape",
     "id": 24242,
     "weight": 0.453,
     "version": "Broken",
     "slot": "cape",
-    "image": "Imbued guthix max cape (broken).png",
+    "image": "Imbued Guthix max cape (broken).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -91078,12 +91140,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Imbued guthix max cape",
+    "name": "Imbued Guthix max cape",
     "id": 24234,
     "weight": 0.453,
     "version": "Locked",
     "slot": "cape",
-    "image": "Imbued guthix max cape.png",
+    "image": "Imbued Guthix max cape.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -91109,12 +91171,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Imbued guthix max cape",
+    "name": "Imbued Guthix max cape",
     "id": 21784,
     "weight": 0.453,
     "version": "Normal",
     "slot": "cape",
-    "image": "Imbued guthix max cape.png",
+    "image": "Imbued Guthix max cape.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -91140,12 +91202,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Imbued guthix max hood",
+    "name": "Imbued Guthix max hood",
     "id": 21786,
     "weight": 0.453,
     "version": "",
     "slot": "head",
-    "image": "Imbued guthix max hood.png",
+    "image": "Imbued Guthix max hood.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -91171,12 +91233,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Imbued saradomin cape",
+    "name": "Imbued Saradomin cape",
     "id": 24236,
     "weight": 0.453,
     "version": "Broken",
     "slot": "cape",
-    "image": "Imbued saradomin cape (broken).png",
+    "image": "Imbued Saradomin cape (broken).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -91202,12 +91264,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Imbued saradomin cape",
+    "name": "Imbued Saradomin cape",
     "id": 24248,
     "weight": 0.453,
     "version": "Locked",
     "slot": "cape",
-    "image": "Imbued saradomin cape.png",
+    "image": "Imbued Saradomin cape.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -91233,12 +91295,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Imbued saradomin cape",
+    "name": "Imbued Saradomin cape",
     "id": 21791,
     "weight": 0.453,
     "version": "Normal",
     "slot": "cape",
-    "image": "Imbued saradomin cape.png",
+    "image": "Imbued Saradomin cape.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -91264,12 +91326,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Imbued saradomin cape (deadman)",
+    "name": "Imbued Saradomin cape (Deadman)",
     "id": 29617,
     "weight": 0.453,
     "version": "",
     "slot": "cape",
-    "image": "Imbued saradomin cape (deadman).png",
+    "image": "Imbued Saradomin cape (Deadman).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -91295,12 +91357,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Imbued saradomin max cape",
+    "name": "Imbued Saradomin max cape",
     "id": 24238,
     "weight": 0.453,
     "version": "Broken",
     "slot": "cape",
-    "image": "Imbued saradomin max cape (broken).png",
+    "image": "Imbued Saradomin max cape (broken).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -91326,12 +91388,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Imbued saradomin max cape",
+    "name": "Imbued Saradomin max cape",
     "id": 24232,
     "weight": 0.453,
     "version": "Locked",
     "slot": "cape",
-    "image": "Imbued saradomin max cape.png",
+    "image": "Imbued Saradomin max cape.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -91357,12 +91419,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Imbued saradomin max cape",
+    "name": "Imbued Saradomin max cape",
     "id": 21776,
     "weight": 0.453,
     "version": "Normal",
     "slot": "cape",
-    "image": "Imbued saradomin max cape.png",
+    "image": "Imbued Saradomin max cape.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -91388,12 +91450,260 @@
     "isTwoHanded": false
   },
   {
-    "name": "Imbued saradomin max hood",
+    "name": "Imbued Saradomin max hood",
     "id": 21778,
     "weight": 0.453,
     "version": "",
     "slot": "head",
-    "image": "Imbued saradomin max hood.png",
+    "image": "Imbued Saradomin max hood.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Imbued Zamorak cape",
+    "id": 24244,
+    "weight": 0.453,
+    "version": "Broken",
+    "slot": "cape",
+    "image": "Imbued Zamorak cape (broken).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 20,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 15,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 3,
+      "slash": 3,
+      "crush": 3,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Imbued Zamorak cape",
+    "id": 24250,
+    "weight": 0.453,
+    "version": "Locked",
+    "slot": "cape",
+    "image": "Imbued Zamorak cape.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 20,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 15,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 3,
+      "slash": 3,
+      "crush": 3,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Imbued Zamorak cape",
+    "id": 21795,
+    "weight": 0.453,
+    "version": "Normal",
+    "slot": "cape",
+    "image": "Imbued Zamorak cape.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 20,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 15,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 3,
+      "slash": 3,
+      "crush": 3,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Imbued Zamorak cape (Deadman)",
+    "id": 29613,
+    "weight": 0.453,
+    "version": "",
+    "slot": "cape",
+    "image": "Imbued Zamorak cape (Deadman).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 20,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 15,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 3,
+      "slash": 3,
+      "crush": 3,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Imbued Zamorak max cape",
+    "id": 24246,
+    "weight": 0.453,
+    "version": "Broken",
+    "slot": "cape",
+    "image": "Imbued Zamorak max cape (broken).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 20,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 15,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 3,
+      "slash": 3,
+      "crush": 3,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Imbued Zamorak max cape",
+    "id": 24233,
+    "weight": 0.453,
+    "version": "Locked",
+    "slot": "cape",
+    "image": "Imbued Zamorak max cape.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 20,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 15,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 3,
+      "slash": 3,
+      "crush": 3,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Imbued Zamorak max cape",
+    "id": 21780,
+    "weight": 0.453,
+    "version": "Normal",
+    "slot": "cape",
+    "image": "Imbued Zamorak max cape.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 20,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 15,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 3,
+      "slash": 3,
+      "crush": 3,
+      "magic": 15,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Imbued Zamorak max hood",
+    "id": 21782,
+    "weight": 0.453,
+    "version": "",
+    "slot": "head",
+    "image": "Imbued Zamorak max hood.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -91427,254 +91737,6 @@
     "image": "Imbued tephra.png",
     "speed": 3,
     "category": "Unarmed",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued zamorak cape",
-    "id": 24244,
-    "weight": 0.453,
-    "version": "Broken",
-    "slot": "cape",
-    "image": "Imbued zamorak cape (broken).png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 20,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 15,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 3,
-      "slash": 3,
-      "crush": 3,
-      "magic": 15,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued zamorak cape",
-    "id": 24250,
-    "weight": 0.453,
-    "version": "Locked",
-    "slot": "cape",
-    "image": "Imbued zamorak cape.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 20,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 15,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 3,
-      "slash": 3,
-      "crush": 3,
-      "magic": 15,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued zamorak cape",
-    "id": 21795,
-    "weight": 0.453,
-    "version": "Normal",
-    "slot": "cape",
-    "image": "Imbued zamorak cape.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 20,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 15,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 3,
-      "slash": 3,
-      "crush": 3,
-      "magic": 15,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued zamorak cape (deadman)",
-    "id": 29613,
-    "weight": 0.453,
-    "version": "",
-    "slot": "cape",
-    "image": "Imbued zamorak cape (deadman).png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 20,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 15,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 3,
-      "slash": 3,
-      "crush": 3,
-      "magic": 15,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued zamorak max cape",
-    "id": 24246,
-    "weight": 0.453,
-    "version": "Broken",
-    "slot": "cape",
-    "image": "Imbued zamorak max cape (broken).png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 20,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 15,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 3,
-      "slash": 3,
-      "crush": 3,
-      "magic": 15,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued zamorak max cape",
-    "id": 24233,
-    "weight": 0.453,
-    "version": "Locked",
-    "slot": "cape",
-    "image": "Imbued zamorak max cape.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 20,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 15,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 3,
-      "slash": 3,
-      "crush": 3,
-      "magic": 15,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued zamorak max cape",
-    "id": 21780,
-    "weight": 0.453,
-    "version": "Normal",
-    "slot": "cape",
-    "image": "Imbued zamorak max cape.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 20,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 15,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 3,
-      "slash": 3,
-      "crush": 3,
-      "magic": 15,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Imbued zamorak max hood",
-    "id": 21782,
-    "weight": 0.453,
-    "version": "",
-    "slot": "head",
-    "image": "Imbued zamorak max hood.png",
-    "speed": 0,
-    "category": "",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -101866,12 +101928,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Mask of balance",
+    "name": "Mask of Balance",
     "id": 13203,
     "weight": 1,
     "version": "",
     "slot": "head",
-    "image": "Mask of balance.png",
+    "image": "Mask of Balance.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -101897,12 +101959,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Mask of ranul",
+    "name": "Mask of Ranul",
     "id": 23522,
     "weight": 0.35,
     "version": "",
     "slot": "head",
-    "image": "Mask of ranul.png",
+    "image": "Mask of Ranul.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -101928,12 +101990,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Mask of rebirth",
+    "name": "Mask of Rebirth",
     "id": 27370,
     "weight": 0.35,
     "version": "",
     "slot": "head",
-    "image": "Mask of rebirth.png",
+    "image": "Mask of Rebirth.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -102486,12 +102548,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Medallion of the deep",
+    "name": "Medallion of the Deep",
     "id": 32386,
     "weight": 1,
     "version": "",
     "slot": "neck",
-    "image": "Medallion of the deep.png",
+    "image": "Medallion of the Deep.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -112840,12 +112902,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Pendant of ates",
+    "name": "Pendant of Ates",
     "id": 29893,
     "weight": 0.06,
     "version": "Charged",
     "slot": "neck",
-    "image": "Pendant of ates.png",
+    "image": "Pendant of Ates.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -112871,12 +112933,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Pendant of ates",
+    "name": "Pendant of Ates",
     "id": 29892,
     "weight": 0.06,
     "version": "Inert",
     "slot": "neck",
-    "image": "Pendant of ates (inert).png",
+    "image": "Pendant of Ates (inert).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -112902,12 +112964,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Pendant of lucien",
+    "name": "Pendant of Lucien",
     "id": 86,
     "weight": 0.01,
     "version": "",
     "slot": "neck",
-    "image": "Pendant of lucien.png",
+    "image": "Pendant of Lucien.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -121396,12 +121458,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Ring of 3rd age",
+    "name": "Ring of 3rd Age",
     "id": 23185,
     "weight": 0.005,
     "version": "",
     "slot": "ring",
-    "image": "Ring of 3rd age.png",
+    "image": "Ring of 3rd Age.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -121427,12 +121489,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Ring of charos",
+    "name": "Ring of Charos",
     "id": 6465,
     "weight": 0.005,
     "version": "Activated",
     "slot": "ring",
-    "image": "Ring of charos(a).png",
+    "image": "Ring of Charos(a).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -121458,12 +121520,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Ring of charos",
+    "name": "Ring of Charos",
     "id": 4202,
     "weight": 0.005,
     "version": "Normal",
     "slot": "ring",
-    "image": "Ring of charos.png",
+    "image": "Ring of Charos.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -123132,12 +123194,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Robe bottoms of the eye",
+    "name": "Robe bottoms of the Eye",
     "id": 26874,
     "weight": 0.6,
     "version": "Blue",
     "slot": "legs",
-    "image": "Robe bottoms of the eye (blue).png",
+    "image": "Robe bottoms of the Eye (blue).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -123163,12 +123225,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Robe bottoms of the eye",
+    "name": "Robe bottoms of the Eye",
     "id": 26868,
     "weight": 0.6,
     "version": "Green",
     "slot": "legs",
-    "image": "Robe bottoms of the eye (green).png",
+    "image": "Robe bottoms of the Eye (green).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -123194,12 +123256,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Robe bottoms of the eye",
+    "name": "Robe bottoms of the Eye",
     "id": 26862,
     "weight": 0.6,
     "version": "Red",
     "slot": "legs",
-    "image": "Robe bottoms of the eye (red).png",
+    "image": "Robe bottoms of the Eye (red).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -123225,12 +123287,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Robe bottoms of the eye",
+    "name": "Robe bottoms of the Eye",
     "id": 26854,
     "weight": 0.6,
     "version": "Regular",
     "slot": "legs",
-    "image": "Robe bottoms of the eye.png",
+    "image": "Robe bottoms of the Eye.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -123256,12 +123318,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Robe of elidinis (bottom)",
+    "name": "Robe of Elidinis (bottom)",
     "id": 6787,
     "weight": 0.005,
     "version": "",
     "slot": "legs",
-    "image": "Robe of elidinis (bottom).png",
+    "image": "Robe of Elidinis (bottom).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -123287,12 +123349,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Robe of elidinis (top)",
+    "name": "Robe of Elidinis (top)",
     "id": 6786,
     "weight": 0.005,
     "version": "",
     "slot": "body",
-    "image": "Robe of elidinis (top).png",
+    "image": "Robe of Elidinis (top).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -123380,12 +123442,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Robe top of the eye",
+    "name": "Robe top of the Eye",
     "id": 26872,
     "weight": 0.6,
     "version": "Blue",
     "slot": "body",
-    "image": "Robe top of the eye (blue).png",
+    "image": "Robe top of the Eye (blue).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -123411,12 +123473,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Robe top of the eye",
+    "name": "Robe top of the Eye",
     "id": 26866,
     "weight": 0.6,
     "version": "Green",
     "slot": "body",
-    "image": "Robe top of the eye (green).png",
+    "image": "Robe top of the Eye (green).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -123442,12 +123504,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Robe top of the eye",
+    "name": "Robe top of the Eye",
     "id": 26860,
     "weight": 0.6,
     "version": "Red",
     "slot": "body",
-    "image": "Robe top of the eye (red).png",
+    "image": "Robe top of the Eye (red).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -123473,12 +123535,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Robe top of the eye",
+    "name": "Robe top of the Eye",
     "id": 26852,
     "weight": 0.6,
     "version": "Regular",
     "slot": "body",
-    "image": "Robe top of the eye.png",
+    "image": "Robe top of the Eye.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -123690,12 +123752,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Rod of ivandis",
+    "name": "Rod of Ivandis",
     "id": 7648,
     "weight": 0.001,
     "version": "(1)",
     "slot": "weapon",
-    "image": "Rod of ivandis.png",
+    "image": "Rod of Ivandis.png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -123721,12 +123783,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Rod of ivandis",
+    "name": "Rod of Ivandis",
     "id": 7639,
     "weight": 0.001,
     "version": "(10)",
     "slot": "weapon",
-    "image": "Rod of ivandis.png",
+    "image": "Rod of Ivandis.png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -123752,12 +123814,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Rod of ivandis",
+    "name": "Rod of Ivandis",
     "id": 7647,
     "weight": 0.001,
     "version": "(2)",
     "slot": "weapon",
-    "image": "Rod of ivandis.png",
+    "image": "Rod of Ivandis.png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -123783,12 +123845,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Rod of ivandis",
+    "name": "Rod of Ivandis",
     "id": 7646,
     "weight": 0.001,
     "version": "(3)",
     "slot": "weapon",
-    "image": "Rod of ivandis.png",
+    "image": "Rod of Ivandis.png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -123814,12 +123876,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Rod of ivandis",
+    "name": "Rod of Ivandis",
     "id": 7645,
     "weight": 0.001,
     "version": "(4)",
     "slot": "weapon",
-    "image": "Rod of ivandis.png",
+    "image": "Rod of Ivandis.png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -123845,12 +123907,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Rod of ivandis",
+    "name": "Rod of Ivandis",
     "id": 7644,
     "weight": 0.001,
     "version": "(5)",
     "slot": "weapon",
-    "image": "Rod of ivandis.png",
+    "image": "Rod of Ivandis.png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -123876,12 +123938,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Rod of ivandis",
+    "name": "Rod of Ivandis",
     "id": 7643,
     "weight": 0.001,
     "version": "(6)",
     "slot": "weapon",
-    "image": "Rod of ivandis.png",
+    "image": "Rod of Ivandis.png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -123907,12 +123969,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Rod of ivandis",
+    "name": "Rod of Ivandis",
     "id": 7642,
     "weight": 0.001,
     "version": "(7)",
     "slot": "weapon",
-    "image": "Rod of ivandis.png",
+    "image": "Rod of Ivandis.png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -123938,12 +124000,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Rod of ivandis",
+    "name": "Rod of Ivandis",
     "id": 7641,
     "weight": 0.001,
     "version": "(8)",
     "slot": "weapon",
-    "image": "Rod of ivandis.png",
+    "image": "Rod of Ivandis.png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -123969,12 +124031,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Rod of ivandis",
+    "name": "Rod of Ivandis",
     "id": 7640,
     "weight": 0.001,
     "version": "(9)",
     "slot": "weapon",
-    "image": "Rod of ivandis.png",
+    "image": "Rod of Ivandis.png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -132153,12 +132215,12 @@
     "isTwoHanded": true
   },
   {
-    "name": "Scythe of vitur",
+    "name": "Scythe of Vitur",
     "id": 22325,
     "weight": 3.175,
     "version": "Charged",
     "slot": "weapon",
-    "image": "Scythe of vitur.png",
+    "image": "Scythe of Vitur.png",
     "speed": 5,
     "category": "Scythe",
     "bonuses": {
@@ -132184,12 +132246,12 @@
     "isTwoHanded": true
   },
   {
-    "name": "Scythe of vitur",
+    "name": "Scythe of Vitur",
     "id": 22486,
     "weight": 3.175,
     "version": "Uncharged",
     "slot": "weapon",
-    "image": "Scythe of vitur (uncharged).png",
+    "image": "Scythe of Vitur (uncharged).png",
     "speed": 5,
     "category": "Scythe",
     "bonuses": {
@@ -140088,43 +140150,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Staff of air",
-    "id": 1381,
-    "weight": 2.267,
-    "version": "",
-    "slot": "weapon",
-    "image": "Staff of air.png",
-    "speed": 5,
-    "category": "Staff",
-    "bonuses": {
-      "str": 3,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": -1,
-      "crush": 7,
-      "magic": 10,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 2,
-      "slash": 3,
-      "crush": 1,
-      "magic": 10,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Staff of balance",
+    "name": "Staff of Balance",
     "id": 24144,
     "weight": 1.5,
     "version": "",
     "slot": "weapon",
-    "image": "Staff of balance.png",
+    "image": "Staff of Balance.png",
     "speed": 4,
     "category": "Bladed Staff",
     "bonuses": {
@@ -140150,12 +140181,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Staff of bob the cat",
+    "name": "Staff of Bob the Cat",
     "id": 23363,
     "weight": 2,
     "version": "",
     "slot": "weapon",
-    "image": "Staff of bob the cat.png",
+    "image": "Staff of Bob the Cat.png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -140168,6 +140199,68 @@
       "stab": 2,
       "slash": -1,
       "crush": 10,
+      "magic": 10,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 3,
+      "crush": 1,
+      "magic": 10,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Staff of Light",
+    "id": 22296,
+    "weight": 1.5,
+    "version": "",
+    "slot": "weapon",
+    "image": "Staff of Light.png",
+    "speed": 4,
+    "category": "Bladed Staff",
+    "bonuses": {
+      "str": 72,
+      "ranged_str": 0,
+      "magic_str": 150,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 55,
+      "slash": 70,
+      "crush": 0,
+      "magic": 17,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 3,
+      "crush": 3,
+      "magic": 17,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Staff of air",
+    "id": 1381,
+    "weight": 2.267,
+    "version": "",
+    "slot": "weapon",
+    "image": "Staff of air.png",
+    "speed": 5,
+    "category": "Staff",
+    "bonuses": {
+      "str": 3,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": -1,
+      "crush": 7,
       "magic": 10,
       "ranged": 0
     },
@@ -140243,43 +140336,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Staff of light",
-    "id": 22296,
-    "weight": 1.5,
-    "version": "",
-    "slot": "weapon",
-    "image": "Staff of light.png",
-    "speed": 4,
-    "category": "Bladed Staff",
-    "bonuses": {
-      "str": 72,
-      "ranged_str": 0,
-      "magic_str": 150,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 55,
-      "slash": 70,
-      "crush": 0,
-      "magic": 17,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 3,
-      "crush": 3,
-      "magic": 17,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Staff of the dead",
+    "name": "Staff of the Dead",
     "id": 11791,
     "weight": 1.5,
     "version": "",
     "slot": "weapon",
-    "image": "Staff of the dead.png",
+    "image": "Staff of the Dead.png",
     "speed": 4,
     "category": "Bladed Staff",
     "bonuses": {
@@ -148303,12 +148365,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Tome of earth",
+    "name": "Tome of Earth",
     "id": 30064,
     "weight": 1,
     "version": "Charged",
     "slot": "shield",
-    "image": "Tome of earth.png",
+    "image": "Tome of Earth.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -148334,12 +148396,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Tome of earth",
+    "name": "Tome of Earth",
     "id": 30066,
     "weight": 1,
     "version": "Empty",
     "slot": "shield",
-    "image": "Tome of earth (empty).png",
+    "image": "Tome of Earth (empty).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -148365,12 +148427,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Tome of fire",
+    "name": "Tome of Fire",
     "id": 20714,
     "weight": 1,
     "version": "Charged",
     "slot": "shield",
-    "image": "Tome of fire.png",
+    "image": "Tome of Fire.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -148396,12 +148458,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Tome of fire",
+    "name": "Tome of Fire",
     "id": 20716,
     "weight": 1,
     "version": "Empty",
     "slot": "shield",
-    "image": "Tome of fire (empty).png",
+    "image": "Tome of Fire (empty).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -148427,12 +148489,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Tome of water",
+    "name": "Tome of Water",
     "id": 25574,
     "weight": 1,
     "version": "Charged",
     "slot": "shield",
-    "image": "Tome of water.png",
+    "image": "Tome of Water.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -148458,12 +148520,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Tome of water",
+    "name": "Tome of Water",
     "id": 25576,
     "weight": 1,
     "version": "Empty",
     "slot": "shield",
-    "image": "Tome of water (empty).png",
+    "image": "Tome of Water (empty).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -148489,12 +148551,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Tonalztics of ralos",
+    "name": "Tonalztics of Ralos",
     "id": 28922,
     "weight": 3,
     "version": "Charged",
     "slot": "weapon",
-    "image": "Tonalztics of ralos.png",
+    "image": "Tonalztics of Ralos.png",
     "speed": 7,
     "category": "Thrown",
     "bonuses": {
@@ -148520,12 +148582,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Tonalztics of ralos",
+    "name": "Tonalztics of Ralos",
     "id": 28919,
     "weight": 3,
     "version": "Uncharged",
     "slot": "weapon",
-    "image": "Tonalztics of ralos (uncharged).png",
+    "image": "Tonalztics of Ralos (uncharged).png",
     "speed": 7,
     "category": "Thrown",
     "bonuses": {
@@ -149946,12 +150008,12 @@
     "isTwoHanded": true
   },
   {
-    "name": "Toxic staff (deadman)",
+    "name": "Toxic staff (Deadman)",
     "id": 33036,
     "weight": 1.5,
     "version": "Charged",
     "slot": "weapon",
-    "image": "Toxic staff (deadman).png",
+    "image": "Toxic staff (Deadman).png",
     "speed": 4,
     "category": "Bladed Staff",
     "bonuses": {
@@ -149977,7 +150039,7 @@
     "isTwoHanded": false
   },
   {
-    "name": "Toxic staff (deadman)",
+    "name": "Toxic staff (Deadman)",
     "id": 33035,
     "weight": 1.5,
     "version": "Uncharged",
@@ -152178,12 +152240,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Trident of the seas",
+    "name": "Trident of the Seas",
     "id": 11905,
     "weight": 1.814,
     "version": "Charged",
     "slot": "weapon",
-    "image": "Trident of the seas (full).png",
+    "image": "Trident of the Seas (full).png",
     "speed": 4,
     "category": "Powered Staff",
     "bonuses": {
@@ -152209,12 +152271,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Trident of the seas",
+    "name": "Trident of the Seas",
     "id": 11907,
     "weight": 1.814,
     "version": "Partially charged",
     "slot": "weapon",
-    "image": "Trident of the seas.png",
+    "image": "Trident of the Seas.png",
     "speed": 4,
     "category": "Powered Staff",
     "bonuses": {
@@ -152240,7 +152302,7 @@
     "isTwoHanded": false
   },
   {
-    "name": "Trident of the seas",
+    "name": "Trident of the Seas",
     "id": 11908,
     "weight": 1.814,
     "version": "Uncharged",
@@ -152271,12 +152333,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Trident of the seas (e)",
+    "name": "Trident of the Seas (e)",
     "id": 22288,
     "weight": 1.814,
     "version": "Charged",
     "slot": "weapon",
-    "image": "Trident of the seas (e).png",
+    "image": "Trident of the Seas (e).png",
     "speed": 4,
     "category": "Powered Staff",
     "bonuses": {
@@ -152302,7 +152364,7 @@
     "isTwoHanded": false
   },
   {
-    "name": "Trident of the seas (e)",
+    "name": "Trident of the Seas (e)",
     "id": 22290,
     "weight": 1.814,
     "version": "Uncharged",
@@ -152333,12 +152395,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Trident of the seas (e) (o)",
+    "name": "Trident of the Seas (e) (o)",
     "id": 33326,
     "weight": 1.814,
     "version": "Charged",
     "slot": "weapon",
-    "image": "Trident of the seas (e) (o).png",
+    "image": "Trident of the Seas (e) (o).png",
     "speed": 4,
     "category": "Powered Staff",
     "bonuses": {
@@ -152364,7 +152426,7 @@
     "isTwoHanded": false
   },
   {
-    "name": "Trident of the seas (e) (o)",
+    "name": "Trident of the Seas (e) (o)",
     "id": 33328,
     "weight": 1.814,
     "version": "Uncharged",
@@ -152395,12 +152457,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Trident of the seas (o)",
+    "name": "Trident of the Seas (o)",
     "id": 33323,
     "weight": 1.814,
     "version": "Fully charged",
     "slot": "weapon",
-    "image": "Trident of the seas (full) (o).png",
+    "image": "Trident of the Seas (full) (o).png",
     "speed": 4,
     "category": "Powered Staff",
     "bonuses": {
@@ -152426,12 +152488,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Trident of the seas (o)",
+    "name": "Trident of the Seas (o)",
     "id": 33322,
     "weight": 1.814,
     "version": "Partially charged",
     "slot": "weapon",
-    "image": "Trident of the seas (o).png",
+    "image": "Trident of the Seas (o).png",
     "speed": 4,
     "category": "Powered Staff",
     "bonuses": {
@@ -152457,12 +152519,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Trident of the swamp",
+    "name": "Trident of the Swamp",
     "id": 12899,
     "weight": 1.814,
     "version": "Charged",
     "slot": "weapon",
-    "image": "Trident of the swamp.png",
+    "image": "Trident of the Swamp.png",
     "speed": 4,
     "category": "Powered Staff",
     "bonuses": {
@@ -152488,7 +152550,7 @@
     "isTwoHanded": false
   },
   {
-    "name": "Trident of the swamp",
+    "name": "Trident of the Swamp",
     "id": 12900,
     "weight": 1.814,
     "version": "Uncharged",
@@ -152519,12 +152581,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Trident of the swamp (e)",
+    "name": "Trident of the Swamp (e)",
     "id": 22292,
     "weight": 1.814,
     "version": "Charged",
     "slot": "weapon",
-    "image": "Trident of the swamp (e).png",
+    "image": "Trident of the Swamp (e).png",
     "speed": 4,
     "category": "Powered Staff",
     "bonuses": {
@@ -152550,7 +152612,7 @@
     "isTwoHanded": false
   },
   {
-    "name": "Trident of the swamp (e)",
+    "name": "Trident of the Swamp (e)",
     "id": 22294,
     "weight": 1.814,
     "version": "Uncharged",
@@ -152581,12 +152643,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Trident of the swamp (e) (o)",
+    "name": "Trident of the Swamp (e) (o)",
     "id": 33318,
     "weight": 1.814,
     "version": "Charged",
     "slot": "weapon",
-    "image": "Trident of the swamp (e) (o).png",
+    "image": "Trident of the Swamp (e) (o).png",
     "speed": 4,
     "category": "Powered Staff",
     "bonuses": {
@@ -152612,7 +152674,7 @@
     "isTwoHanded": false
   },
   {
-    "name": "Trident of the swamp (e) (o)",
+    "name": "Trident of the Swamp (e) (o)",
     "id": 33320,
     "weight": 1.814,
     "version": "Uncharged",
@@ -152643,12 +152705,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Trident of the swamp (o)",
+    "name": "Trident of the Swamp (o)",
     "id": 33314,
     "weight": 1.814,
     "version": "Charged",
     "slot": "weapon",
-    "image": "Trident of the swamp (o).png",
+    "image": "Trident of the Swamp (o).png",
     "speed": 4,
     "category": "Powered Staff",
     "bonuses": {
@@ -152674,7 +152736,7 @@
     "isTwoHanded": false
   },
   {
-    "name": "Trident of the swamp (o)",
+    "name": "Trident of the Swamp (o)",
     "id": 33316,
     "weight": 1.814,
     "version": "Uncharged",
@@ -155243,6 +155305,37 @@
       "crush": 29,
       "magic": 5,
       "ranged": 29
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Vampyre snelm",
+    "id": 34063,
+    "weight": 0.777,
+    "version": "",
+    "slot": "head",
+    "image": "Vampyre snelm.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -3,
+      "ranged": -1
+    },
+    "defensive": {
+      "stab": 7,
+      "slash": 8,
+      "crush": 6,
+      "magic": -1,
+      "ranged": 7
     },
     "isTwoHanded": false
   },
@@ -158781,12 +158874,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Voidwaker (deadman)",
+    "name": "Voidwaker (Deadman)",
     "id": 29607,
     "weight": 1.814,
     "version": "",
     "slot": "weapon",
-    "image": "Voidwaker (deadman).png",
+    "image": "Voidwaker (Deadman).png",
     "speed": 4,
     "category": "Slash Sword",
     "bonuses": {
@@ -158812,12 +158905,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Volatile nightmare staff",
+    "name": "Volatile Nightmare staff",
     "id": 24424,
     "weight": 1.6,
     "version": "",
     "slot": "weapon",
-    "image": "Volatile nightmare staff.png",
+    "image": "Volatile Nightmare staff.png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -158843,12 +158936,12 @@
     "isTwoHanded": false
   },
   {
-    "name": "Volatile nightmare staff (deadman)",
+    "name": "Volatile Nightmare staff (Deadman)",
     "id": 29609,
     "weight": 1.6,
     "version": "",
     "slot": "weapon",
-    "image": "Volatile nightmare staff (deadman).png",
+    "image": "Volatile Nightmare staff (Deadman).png",
     "speed": 5,
     "category": "Staff",
     "bonuses": {
@@ -163276,6 +163369,316 @@
     "isTwoHanded": false
   },
   {
+    "name": "Wristbands of the Arena",
+    "id": 26696,
+    "weight": 0.25,
+    "version": "Broken",
+    "slot": "hands",
+    "image": "Wristbands of the arena (broken).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 12,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 12,
+      "slash": 12,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 12
+    },
+    "defensive": {
+      "stab": 12,
+      "slash": 12,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 12
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wristbands of the Arena",
+    "id": 26725,
+    "weight": 0.25,
+    "version": "Charged",
+    "slot": "hands",
+    "image": "Wristbands of the Arena (c).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 12,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 12,
+      "slash": 12,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 12
+    },
+    "defensive": {
+      "stab": 12,
+      "slash": 12,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 12
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wristbands of the Arena",
+    "id": 26726,
+    "weight": 0.25,
+    "version": "Charged and Locked",
+    "slot": "hands",
+    "image": "Wristbands of the Arena (cl).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 12,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 12,
+      "slash": 12,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 12
+    },
+    "defensive": {
+      "stab": 12,
+      "slash": 12,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 12
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wristbands of the Arena",
+    "id": 26724,
+    "weight": 0.25,
+    "version": "Locked",
+    "slot": "hands",
+    "image": "Wristbands of the Arena (l).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 12,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 12,
+      "slash": 12,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 12
+    },
+    "defensive": {
+      "stab": 12,
+      "slash": 12,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 12
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wristbands of the Arena",
+    "id": 26723,
+    "weight": 0.25,
+    "version": "Normal",
+    "slot": "hands",
+    "image": "Wristbands of the Arena.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 12,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 12,
+      "slash": 12,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 12
+    },
+    "defensive": {
+      "stab": 12,
+      "slash": 12,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 12
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wristbands of the Arena (i)",
+    "id": 26697,
+    "weight": 0.25,
+    "version": "Broken",
+    "slot": "hands",
+    "image": "Hardened wristbands of the arena (broken).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 12,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 14,
+      "slash": 13,
+      "crush": 15,
+      "magic": 7,
+      "ranged": 13
+    },
+    "defensive": {
+      "stab": 12,
+      "slash": 12,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 12
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wristbands of the Arena (i)",
+    "id": 26729,
+    "weight": 0.25,
+    "version": "Charged",
+    "slot": "hands",
+    "image": "Wristbands of the Arena (ic).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 12,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 14,
+      "slash": 13,
+      "crush": 15,
+      "magic": 7,
+      "ranged": 13
+    },
+    "defensive": {
+      "stab": 12,
+      "slash": 12,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 12
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wristbands of the Arena (i)",
+    "id": 26730,
+    "weight": 0.25,
+    "version": "Charged and Locked",
+    "slot": "hands",
+    "image": "Wristbands of the Arena (ilc).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 12,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 14,
+      "slash": 13,
+      "crush": 15,
+      "magic": 7,
+      "ranged": 13
+    },
+    "defensive": {
+      "stab": 12,
+      "slash": 12,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 12
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wristbands of the Arena (i)",
+    "id": 26728,
+    "weight": 0.25,
+    "version": "Locked",
+    "slot": "hands",
+    "image": "Wristbands of the Arena (il).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 12,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 14,
+      "slash": 13,
+      "crush": 15,
+      "magic": 7,
+      "ranged": 13
+    },
+    "defensive": {
+      "stab": 12,
+      "slash": 12,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 12
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Wristbands of the Arena (i)",
+    "id": 26727,
+    "weight": 0.25,
+    "version": "Normal",
+    "slot": "hands",
+    "image": "Wristbands of the Arena (i).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 12,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 14,
+      "slash": 13,
+      "crush": 15,
+      "magic": 7,
+      "ranged": 13
+    },
+    "defensive": {
+      "stab": 12,
+      "slash": 12,
+      "crush": 12,
+      "magic": 6,
+      "ranged": 12
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Wyrmscraig boots",
     "id": 33881,
     "weight": 0.34,
@@ -163559,7 +163962,7 @@
     "id": 33923,
     "weight": 0.907,
     "version": "Black",
-    "slot": "body",
+    "slot": "legs",
     "image": "Wyrmscraig villager robe bottom (A, black).png",
     "speed": 0,
     "category": "Unarmed",
@@ -163590,7 +163993,7 @@
     "id": 33911,
     "weight": 0.907,
     "version": "Blue",
-    "slot": "body",
+    "slot": "legs",
     "image": "Wyrmscraig villager robe bottom (A, blue).png",
     "speed": 0,
     "category": "Unarmed",
@@ -163621,7 +164024,7 @@
     "id": 33908,
     "weight": 0.907,
     "version": "Green",
-    "slot": "body",
+    "slot": "legs",
     "image": "Wyrmscraig villager robe bottom (A, green).png",
     "speed": 0,
     "category": "Unarmed",
@@ -163652,7 +164055,7 @@
     "id": 33926,
     "weight": 0.907,
     "version": "Pink",
-    "slot": "body",
+    "slot": "legs",
     "image": "Wyrmscraig villager robe bottom (A, pink).png",
     "speed": 0,
     "category": "Unarmed",
@@ -163683,7 +164086,7 @@
     "id": 33914,
     "weight": 0.907,
     "version": "Red",
-    "slot": "body",
+    "slot": "legs",
     "image": "Wyrmscraig villager robe bottom (A, red).png",
     "speed": 0,
     "category": "Unarmed",
@@ -163714,7 +164117,7 @@
     "id": 33920,
     "weight": 0.907,
     "version": "White",
-    "slot": "body",
+    "slot": "legs",
     "image": "Wyrmscraig villager robe bottom (A, white).png",
     "speed": 0,
     "category": "Unarmed",
@@ -163745,7 +164148,7 @@
     "id": 33917,
     "weight": 0.907,
     "version": "Yellow",
-    "slot": "body",
+    "slot": "legs",
     "image": "Wyrmscraig villager robe bottom (A, yellow).png",
     "speed": 0,
     "category": "Unarmed",
@@ -163776,7 +164179,7 @@
     "id": 33944,
     "weight": 0.907,
     "version": "Black",
-    "slot": "body",
+    "slot": "legs",
     "image": "Wyrmscraig villager robe bottom (B, black).png",
     "speed": 0,
     "category": "Unarmed",
@@ -163807,7 +164210,7 @@
     "id": 33932,
     "weight": 0.907,
     "version": "Blue",
-    "slot": "body",
+    "slot": "legs",
     "image": "Wyrmscraig villager robe bottom (B, blue).png",
     "speed": 0,
     "category": "Unarmed",
@@ -163838,7 +164241,7 @@
     "id": 33929,
     "weight": 0.907,
     "version": "Green",
-    "slot": "body",
+    "slot": "legs",
     "image": "Wyrmscraig villager robe bottom (B, green).png",
     "speed": 0,
     "category": "Unarmed",
@@ -163869,7 +164272,7 @@
     "id": 33947,
     "weight": 0.907,
     "version": "Pink",
-    "slot": "body",
+    "slot": "legs",
     "image": "Wyrmscraig villager robe bottom (B, pink).png",
     "speed": 0,
     "category": "Unarmed",
@@ -163900,7 +164303,7 @@
     "id": 33935,
     "weight": 0.907,
     "version": "Red",
-    "slot": "body",
+    "slot": "legs",
     "image": "Wyrmscraig villager robe bottom (B, red).png",
     "speed": 0,
     "category": "Unarmed",
@@ -163931,7 +164334,7 @@
     "id": 33941,
     "weight": 0.907,
     "version": "White",
-    "slot": "body",
+    "slot": "legs",
     "image": "Wyrmscraig villager robe bottom (B, white).png",
     "speed": 0,
     "category": "Unarmed",
@@ -163962,7 +164365,7 @@
     "id": 33938,
     "weight": 0.907,
     "version": "Yellow",
-    "slot": "body",
+    "slot": "legs",
     "image": "Wyrmscraig villager robe bottom (B, yellow).png",
     "speed": 0,
     "category": "Unarmed",
