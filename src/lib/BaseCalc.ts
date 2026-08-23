@@ -380,7 +380,7 @@ export default class BaseCalc {
    * @see https://oldschool.runescape.wiki/w/Scythe_of_vitur
    */
   protected isWearingScythe(): boolean {
-    return this.wearing('Scythe of Vitur') || this.allEquippedItems.some((ei) => ei.includes('of vitur'));
+    return this.wearing('Scythe of Vitur') || this.allEquippedItems.some((ei) => (ei.includes('of vitur') || ei.includes('of Vitur')));
   }
 
   /**
@@ -433,7 +433,7 @@ export default class BaseCalc {
    */
 
   protected isWearingAhrims(): boolean {
-    return this.wearingAll(["Ahrim's staff", "Ahrim's hood", "Ahrim's robetop", "Ahrim's robeskirt", 'Amulet of the damned']);
+    return this.wearingAll(["Ahrim's staff", "Ahrim's hood", "Ahrim's robetop", "Ahrim's robeskirt", 'Amulet of the Damned']);
   }
 
   /**
@@ -441,7 +441,7 @@ export default class BaseCalc {
    * @see https://oldschool.runescape.wiki/w/Torag_the_Corrupted%27s_equipment
    */
   protected isWearingTorags(): boolean {
-    return this.wearingAll(["Torag's helm", "Torag's platebody", "Torag's platelegs", "Torag's hammers", 'Amulet of the damned']);
+    return this.wearingAll(["Torag's helm", "Torag's platebody", "Torag's platelegs", "Torag's hammers", 'Amulet of the Damned']);
   }
 
   protected isWearingBloodMoonSet(): boolean {
@@ -480,7 +480,7 @@ export default class BaseCalc {
       'Silverlight',
       'Darklight',
       'Arclight',
-      'Rod of ivandis',
+      'Rod of Ivandis',
       'Wolfbane',
     ]);
   }
@@ -496,7 +496,7 @@ export default class BaseCalc {
     }
     return (t2 || this.isUsingMeleeStyle())
       && this.wearing([
-        ...(t2 ? ['Rod of ivandis'] : []),
+        ...(t2 ? ['Rod of Ivandis'] : []),
         'Ivandis flail',
         'Blisterwood sickle',
         'Blisterwood flail',
@@ -611,11 +611,11 @@ export default class BaseCalc {
 
     switch (this.player.spell?.name) {
       case 'Saradomin Strike':
-        return this.wearing(['Saradomin cape', 'Imbued saradomin cape', 'Saradomin max cape', 'Imbued saradomin max cape']);
+        return this.wearing(['Saradomin cape', 'Imbued Saradomin cape', 'Saradomin max cape', 'Imbued Saradomin max cape']);
       case 'Claws of Guthix':
-        return this.wearing(['Guthix cape', 'Imbued guthix cape', 'Guthix max cape', 'Imbued guthix max cape']);
+        return this.wearing(['Guthix cape', 'Imbued Guthix cape', 'Guthix max cape', 'Imbued Guthix max cape']);
       case 'Flames of Zamorak':
-        return this.wearing(['Zamorak cape', 'Imbued zamorak cape', 'Zamorak max cape', 'Imbued zamorak max cape']);
+        return this.wearing(['Zamorak cape', 'Imbued Zamorak cape', 'Zamorak max cape', 'Imbued Zamorak max cape']);
       default:
         return false;
     }
@@ -778,10 +778,10 @@ export default class BaseCalc {
     const spellName = this.player.spell?.name;
     if (
       (spellName === 'Iban Blast' && !this.wearing(['Iban\'s staff', 'Iban\'s staff (u)']))
-      || (spellName === 'Saradomin Strike' && !this.wearing(['Saradomin staff', 'Staff of light']))
+      || (spellName === 'Saradomin Strike' && !this.wearing(['Saradomin staff', 'Staff of Light']))
       || (spellName === 'Claws of Guthix' && !this.wearing(['Guthix staff', 'Void knight mace', 'Staff of balance']))
       || (spellName === 'Flames of Zamarok' && !this.wearing(['Zamorak staff', 'Staff of the dead', 'Toxic staff of the dead', 'Thammaron\'s sceptre (a)', 'Accursed sceptre (a)']))
-      || (spellName === 'Magic Dart' && !this.wearing(['Slayer\'s staff', 'Slayer\'s staff (e)', 'Staff of the dead', 'Toxic staff of the dead', 'Staff of light', 'Staff of balance']))
+      || (spellName === 'Magic Dart' && !this.wearing(['Slayer\'s staff', 'Slayer\'s staff (e)', 'Staff of the Dead', 'Toxic staff of the Dead', 'Staff of Light', 'Staff of Balance']))
     ) {
       this.player = {
         ...this.player,
