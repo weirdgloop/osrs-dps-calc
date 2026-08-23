@@ -56,7 +56,7 @@ const equipmentAliases = {
   1077: [2593, 2585], // Black platelegs
   1089: [3473, 3472], // Black plateskirt
   1015: [12445, 12447], // Black skirt
-  24551: [25882, 25876, 25878, 25872, 25870, 25880, 25874], // Blade of saeldor (c)
+  24551: [25882, 25876, 25878, 25872, 25870, 25880, 25874], // Blade of Saeldor (c)
   28955: [28957], // Blessed Dizana's quiver#Normal
   28260: [28473], // Blood ancient sceptre#Normal
   29022: [29043], // Blood moon chestplate#New
@@ -70,10 +70,10 @@ const equipmentAliases = {
   1011: [7386, 7388], // Blue skirt
   579: [7394, 7396], // Blue wizard hat
   577: [7390, 7392], // Blue wizard robe
-  3844: [26488], // Book of balance
-  12612: [26490], // Book of darkness
-  12610: [26492], // Book of law
-  12608: [26494], // Book of war
+  3844: [26488], // Book of Balance
+  12612: [26490], // Book of Darkness
+  12610: [26492], // Book of Law
+  12608: [26494], // Book of War
   25867: [25896, 25890, 25892, 25886, 25884, 25894, 25888, 33021], // Bow of Faerdhinen (c)
   24204: [24206], // Brassica halo#Normal
   8844: [24136], // Bronze defender#Normal
@@ -182,18 +182,18 @@ const equipmentAliases = {
   12639: [24171], // Guthix halo#Normal
   10547: [24172], // Healer hat#Normal
   19481: [26712], // Heavy ballista
-  10828: [28070], // Helm of neitiznot
+  10828: [28070], // Helm of Neitiznot
   3840: [26496], // Holy book
   1410: [33333], // Iban's staff#Broken
   1409: [33330], // Iban's staff#Regular
   12658: [33332], // Iban's staff (u)
   28262: [28474], // Ice ancient sceptre#Normal
-  21793: [24249, 29615], // Imbued guthix cape#Normal
-  21784: [24234], // Imbued guthix max cape#Normal
-  21791: [24248, 29617], // Imbued saradomin cape#Normal
-  21776: [24232], // Imbued saradomin max cape#Normal
-  21795: [24250, 29613], // Imbued zamorak cape#Normal
-  21780: [24233], // Imbued zamorak max cape#Normal
+  21793: [24249, 29615], // Imbued Guthix cape#Normal
+  21784: [24234], // Imbued Guthix max cape#Normal
+  21791: [24248, 29617], // Imbued Saradomin cape#Normal
+  21776: [24232], // Imbued Saradomin max cape#Normal
+  21795: [24250, 29613], // Imbued Zamorak cape#Normal
+  21780: [24233], // Imbued Zamorak max cape#Normal
   21295: [24224], // Infernal cape#Normal
   21285: [24133], // Infernal max cape#Normal
   6924: [12459, 12421], // Infinity bottoms
@@ -268,8 +268,8 @@ const equipmentAliases = {
   22481: [25733], // Sanguinesti staff#Uncharged
   11806: [20372], // Saradomin godsword
   12637: [24169], // Saradomin halo#Normal
-  22325: [25736, 25739], // Scythe of vitur#Charged
-  22486: [25738, 25741], // Scythe of vitur#Uncharged
+  22325: [25736, 25739], // Scythe of Vitur#Charged
+  22486: [25738, 25741], // Scythe of Vitur#Uncharged
   11770: [26767, 25258], // Seers ring (i)#Nightmare Zone
   24198: [24200], // Seren halo#Normal
   28266: [28476], // Shadow ancient sceptre#Normal
@@ -300,13 +300,13 @@ const equipmentAliases = {
   12926: [28688], // Toxic blowpipe#Charged
   12924: [28687], // Toxic blowpipe#Empty
   12692: [26766, 25256], // Treasonous ring (i)#Nightmare Zone
-  11907: [33322], // Trident of the seas#Partially charged
-  22288: [33326], // Trident of the seas (e)#Charged
-  22290: [33328], // Trident of the seas (e)#Uncharged
-  12899: [33314], // Trident of the swamp#Charged
-  12900: [33316], // Trident of the swamp#Uncharged
-  22292: [33318], // Trident of the swamp (e)#Charged
-  22294: [33320], // Trident of the swamp (e)#Uncharged
+  11907: [33322], // Trident of the Seas#Partially charged
+  22288: [33326], // Trident of the Seas (e)#Charged
+  22290: [33328], // Trident of the Seas (e)#Uncharged
+  12899: [33314], // Trident of the Swamp#Charged
+  12900: [33316], // Trident of the Swamp#Uncharged
+  22292: [33318], // Trident of the Swamp (e)#Charged
+  22294: [33320], // Trident of the Swamp (e)#Uncharged
   12691: [26765, 25254], // Tyrannical ring (i)#Nightmare Zone
   6528: [23235], // Tzhaar-ket-om
   3842: [26498], // Unholy book
@@ -328,11 +328,11 @@ const equipmentAliases = {
   11664: [24184, 27006, 26475], // Void ranger helm#Normal
   11666: [11673, 11672, 11671, 11670, 11669, 11668, 11667], // Void seal#(8)
   27690: [29607], // Voidwaker
-  24424: [29609], // Volatile nightmare staff
+  24424: [29609], // Volatile Nightmare staff
   11772: [26769, 25262], // Warrior ring (i)#Nightmare Zone
   1171: [20166], // Wooden shield
-  26723: [26724], // Wristbands of the arena#Normal
-  26727: [26728], // Wristbands of the arena (i)#Normal
+  26723: [26724], // Wristbands of the Arena#Normal
+  26727: [26728], // Wristbands of the Arena (i)#Normal
   11808: [20374], // Zamorak godsword
   12638: [24170], // Zamorak halo#Normal
 };

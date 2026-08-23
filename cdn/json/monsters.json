@@ -435,7 +435,7 @@
     "speed": 4,
     "style": [
       "Stab",
-      "Magic"
+      "Ranged"
     ],
     "size": 1,
     "max_hit": "11",
@@ -457,11 +457,11 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 70,
+      "crush": 0,
       "magic": 150,
-      "heavy": 70,
+      "heavy": 0,
       "standard": 70,
-      "light": 70,
+      "light": 0,
       "slash": 70,
       "stab": 70
     },
@@ -502,11 +502,11 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 100,
+      "crush": 0,
       "magic": 50,
-      "heavy": 10,
+      "heavy": 0,
       "standard": 10,
-      "light": 10,
+      "light": 0,
       "slash": 50,
       "stab": 50
     },
@@ -920,11 +920,11 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 10,
+      "crush": 0,
       "magic": 75,
-      "heavy": 75,
+      "heavy": 0,
       "standard": 75,
-      "light": 75,
+      "light": 0,
       "slash": 75,
       "stab": 75
     },
@@ -33961,8 +33961,7 @@
     "speed": 4,
     "style": [
       "Crush",
-      "Magic",
-      "Bleed"
+      "Magic (Bleed)"
     ],
     "size": 1,
     "max_hit": "10 (melee)",
@@ -34581,7 +34580,7 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": "16",
+    "max_hit": "16 (Fire Blast)<br>20 (Fire Wave)<br>2 (Wind Strike)",
     "skills": {
       "atk": 25,
       "def": 80,
@@ -34626,7 +34625,7 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": "16",
+    "max_hit": "16 (Fire Blast)<br>20 (Fire Wave)<br>2 (Wind Strike)",
     "skills": {
       "atk": 25,
       "def": 80,
@@ -71776,96 +71775,6 @@
     }
   },
   {
-    "id": 12812,
-    "name": "Minotaur (Fortis Colosseum)",
-    "version": "Normal",
-    "image": "Minotaur (Fortis Colosseum).png",
-    "level": 318,
-    "speed": 5,
-    "style": [
-      "Crush"
-    ],
-    "size": 3,
-    "max_hit": "74",
-    "skills": {
-      "atk": 300,
-      "def": 190,
-      "hp": 225,
-      "magic": 250,
-      "ranged": 120,
-      "str": 360
-    },
-    "offensive": {
-      "atk": 15,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 64
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 12,
-      "standard": 12,
-      "light": 12,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": false,
-    "weakness": null
-  },
-  {
-    "id": 12813,
-    "name": "Minotaur (Fortis Colosseum)",
-    "version": "Red Flag",
-    "image": "Minotaur (Fortis Colosseum) (2).png",
-    "level": 318,
-    "speed": 5,
-    "style": [
-      "Crush"
-    ],
-    "size": 3,
-    "max_hit": "74",
-    "skills": {
-      "atk": 300,
-      "def": 190,
-      "hp": 225,
-      "magic": 250,
-      "ranged": 120,
-      "str": 360
-    },
-    "offensive": {
-      "atk": 15,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 64
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 12,
-      "standard": 12,
-      "light": 12,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": false,
-    "weakness": null
-  },
-  {
     "id": 13814,
     "name": "Minotaur (Meat and Greet)",
     "version": "",
@@ -73926,7 +73835,7 @@
     "id": 4143,
     "name": "Mountain troll",
     "version": "Level 71",
-    "image": "Mountain troll.png",
+    "image": "Mountain troll (level 71).png",
     "level": 71,
     "speed": 6,
     "style": [
@@ -81242,7 +81151,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 9453,
@@ -81288,7 +81200,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 50
+    }
   },
   {
     "id": 12833,
@@ -86652,7 +86567,7 @@
     "name": "Rabbit (Prifddinas)",
     "version": "",
     "image": "Rabbit (Prifddinas).png",
-    "level": 0,
+    "level": 2,
     "speed": 3,
     "style": [
       "Typeless Crush"
@@ -93658,7 +93573,10 @@
       "burn": null
     },
     "is_slayer_monster": true,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 35
+    }
   },
   {
     "id": 14940,
@@ -108208,7 +108126,7 @@
       "Slash"
     ],
     "size": 1,
-    "max_hit": "10",
+    "max_hit": "11",
     "skills": {
       "atk": 97,
       "def": 91,
@@ -118471,6 +118389,55 @@
     "weakness": {
       "element": "earth",
       "severity": 50
+    }
+  },
+  {
+    "id": 16344,
+    "name": "Vampyre Snail",
+    "version": "",
+    "image": "Vampyre Snail.png",
+    "level": 346,
+    "speed": 6,
+    "style": [
+      "Ranged",
+      "Melee"
+    ],
+    "size": 1,
+    "max_hit": "87+",
+    "skills": {
+      "atk": 1,
+      "def": 300,
+      "hp": 500,
+      "magic": 100,
+      "ranged": 300,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 50,
+      "magic": 600,
+      "heavy": 50,
+      "standard": 50,
+      "light": 50,
+      "slash": 600,
+      "stab": 600
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "earth",
+      "severity": 5
     }
   },
   {
