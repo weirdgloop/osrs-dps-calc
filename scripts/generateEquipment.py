@@ -77,7 +77,7 @@ ITEMS_TO_SKIP = [
     'Corrupted tumeken\'s shadow',
     'Corrupted twisted bow',
     'Corrupted voidwaker',
-    'Corrupted volatile nightmare staff',
+    'Corrupted Volatile Nightmare staff',
     'The dogsword (Deadman Mode)',
     'Thunder khopesh (Deadman Mode)'
 ]
