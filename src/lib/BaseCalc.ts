@@ -749,7 +749,7 @@ export default class BaseCalc {
       }
 
       // these staves use a built-in spell for their spec
-      if (['Accursed sceptre (a)', 'Eldritch nightmare staff', 'Volatile nightmare staff'].includes(eq.weapon?.name || '')) {
+      if (['Accursed sceptre (a)', 'Eldritch Nightmare staff', 'Volatile Nightmare staff'].includes(eq.weapon?.name || '')) {
         this.player = {
           ...this.player,
           style: getCombatStylesForCategory(EquipmentCategory.POWERED_STAFF)[0],

@@ -255,7 +255,7 @@ export const calculateAttackSpeed = (player: Player, monster: Monster): number =
   if (player.style.type === 'ranged' && player.style.stance === 'Rapid') {
     attackSpeed -= 1;
   } else if (CAST_STANCES.includes(player.style.stance)) {
-    if (player.equipment.weapon?.name === 'Harmonised nightmare staff'
+    if (player.equipment.weapon?.name === 'Harmonised Nightmare staff'
       && player.spell?.spellbook === 'standard'
       && player.style.stance !== 'Manual Cast') {
       attackSpeed = 4;
@@ -445,8 +445,8 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
 
   'Magic shortbow': 55,
   'Dark bow': 55,
-  'Eldritch nightmare staff': 55,
-  'Volatile nightmare staff': 55,
+  'Eldritch Nightmare staff': 55,
+  'Volatile Nightmare staff': 55,
   'Dragon scimitar': 55,
 
   'Granite hammer': 60,
