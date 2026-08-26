@@ -110756,13 +110756,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 220,
-      "magic": 10,
-      "heavy": 300,
-      "standard": 300,
-      "light": 300,
-      "slash": 300,
-      "stab": 180
+      "crush": 180,
+      "magic": -10,
+      "heavy": 250,
+      "standard": 250,
+      "light": 250,
+      "slash": 250,
+      "stab": 150
     },
     "attributes": [],
     "immunities": {

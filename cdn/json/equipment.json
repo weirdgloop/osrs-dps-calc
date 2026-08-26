@@ -37944,37 +37944,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Corrupted Volatile Nightmare staff",
-    "id": 29602,
-    "weight": 1.6,
-    "version": "",
-    "slot": "weapon",
-    "image": "Corrupted Volatile Nightmare staff.png",
-    "speed": 5,
-    "category": "Staff",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 150,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 16,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 14,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
     "name": "Corrupted axe",
     "id": 23821,
     "weight": 0.907,
