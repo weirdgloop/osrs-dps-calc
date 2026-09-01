@@ -32488,7 +32488,7 @@
   {
     "id": 290,
     "name": "Dwarf",
-    "version": "Standard",
+    "version": "Standard (Level 10)",
     "image": "Dwarf.png",
     "level": 10,
     "speed": 5,
@@ -43960,7 +43960,7 @@
       "Stab"
     ],
     "size": 2,
-    "max_hit": "2",
+    "max_hit": "1",
     "skills": {
       "atk": 1,
       "def": 1,
@@ -44005,7 +44005,7 @@
       "Stab"
     ],
     "size": 2,
-    "max_hit": "2",
+    "max_hit": "1",
     "skills": {
       "atk": 1,
       "def": 1,
@@ -44050,7 +44050,7 @@
       "Stab"
     ],
     "size": 2,
-    "max_hit": "2",
+    "max_hit": "1",
     "skills": {
       "atk": 1,
       "def": 1,
@@ -44095,7 +44095,7 @@
       "Stab"
     ],
     "size": 2,
-    "max_hit": "2",
+    "max_hit": "1",
     "skills": {
       "atk": 1,
       "def": 1,
@@ -67869,7 +67869,7 @@
       "magic": 160,
       "heavy": 0,
       "standard": 0,
-      "light": 0,
+      "light": -10,
       "slash": 160,
       "stab": 102
     },
@@ -71773,6 +71773,51 @@
       "element": "earth",
       "severity": 35
     }
+  },
+  {
+    "id": 12812,
+    "name": "Minotaur (Fortis Colosseum)",
+    "version": "",
+    "image": "Minotaur (Fortis Colosseum).png",
+    "level": 318,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "74",
+    "skills": {
+      "atk": 300,
+      "def": 190,
+      "hp": 225,
+      "magic": 250,
+      "ranged": 120,
+      "str": 360
+    },
+    "offensive": {
+      "atk": 15,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 64
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 12,
+      "standard": 12,
+      "light": 12,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
   },
   {
     "id": 13814,
@@ -99828,7 +99873,9 @@
       "slash": 3,
       "stab": 0
     },
-    "attributes": [],
+    "attributes": [
+      "undead"
+    ],
     "immunities": {
       "burn": null
     },
@@ -110756,13 +110803,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 220,
-      "magic": 10,
-      "heavy": 300,
-      "standard": 300,
-      "light": 300,
-      "slash": 300,
-      "stab": 180
+      "crush": 180,
+      "magic": -10,
+      "heavy": 250,
+      "standard": 250,
+      "light": 250,
+      "slash": 250,
+      "stab": 150
     },
     "attributes": [],
     "immunities": {
@@ -118403,7 +118450,7 @@
       "Melee"
     ],
     "size": 1,
-    "max_hit": "87+",
+    "max_hit": "87+ (standard)",
     "skills": {
       "atk": 1,
       "def": 300,
