@@ -18552,7 +18552,7 @@
       "Magic"
     ],
     "size": 2,
-    "max_hit": "6",
+    "max_hit": "5",
     "skills": {
       "atk": 45,
       "def": 40,

@@ -8649,6 +8649,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Amulet of air",
+    "id": 34407,
+    "weight": 0.101,
+    "version": "",
+    "slot": "neck",
+    "image": "Amulet of air.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 10,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Amulet of avarice",
     "id": 22557,
     "weight": 0.01,
@@ -8835,6 +8866,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Amulet of earth",
+    "id": 34419,
+    "weight": 2,
+    "version": "",
+    "slot": "neck",
+    "image": "Amulet of earth.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 10,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Amulet of eternal glory",
     "id": 19707,
     "weight": 0.01,
@@ -8862,6 +8924,37 @@
       "crush": 3,
       "magic": 3,
       "ranged": 3
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Amulet of fire",
+    "id": 34425,
+    "weight": 0.107,
+    "version": "",
+    "slot": "neck",
+    "image": "Amulet of fire.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 10,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
     },
     "isTwoHanded": false
   },
@@ -9815,6 +9908,37 @@
       "slash": 15,
       "crush": 15,
       "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Amulet of water",
+    "id": 34413,
+    "weight": 0.107,
+    "version": "",
+    "slot": "neck",
+    "image": "Amulet of water.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 10,
       "ranged": 0
     },
     "defensive": {
@@ -69967,6 +70091,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Elemental amulet",
+    "id": 34428,
+    "weight": 0.007,
+    "version": "",
+    "slot": "neck",
+    "image": "Elemental amulet.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 10,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Elemental helmet",
     "id": 9729,
     "weight": 0.113,
@@ -77072,37 +77227,6 @@
     "version": "",
     "slot": "shield",
     "image": "Ghommal's hilt 6.png",
-    "speed": 0,
-    "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Ghommal's lucky penny",
-    "id": 27544,
-    "weight": 0.05,
-    "version": "",
-    "slot": "ammo",
-    "image": "Ghommal's lucky penny.png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -109109,6 +109233,37 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Necklace of fangs",
+    "id": 34401,
+    "weight": 0.01,
+    "version": "",
+    "slot": "neck",
+    "image": "Necklace of fangs.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 1,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 12
     },
     "defensive": {
       "stab": 0,
