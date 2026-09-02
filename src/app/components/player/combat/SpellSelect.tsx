@@ -23,6 +23,7 @@ const SpellSelect: React.FC = observer(() => {
       name: e.name,
       image: e.image,
       max_hit: e.max_hit,
+      base_xp: e.base_xp,
       spellbook: e.spellbook as Spellbook,
       element: e.element as Spellement,
     },
