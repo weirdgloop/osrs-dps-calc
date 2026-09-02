@@ -4,6 +4,7 @@ import { Monster } from '@/types/Monster';
 import UserIssueType from '@/enums/UserIssueType';
 import { DetailEntry } from '@/lib/CalcDetails';
 import { ChartEntry } from '@/types/Charts';
+import type { WeaponSwapResult } from '@/lib/WeaponSwap';
 
 export interface UserIssue {
   type: UserIssueType;
@@ -30,6 +31,7 @@ export interface Preferences {
   rememberUsername: boolean;
   showHitDistribution: boolean;
   showLoadoutComparison: boolean;
+  showWeaponSwap: boolean;
   showTtkComparison: boolean;
   showNPCVersusPlayerResults: boolean;
   hitDistsHideZeros: boolean; // legacy name
@@ -81,6 +83,7 @@ export interface NPCVsPlayerCalculatedLoadout extends CalculatedLoadout {
 
 export interface Calculator {
   loadouts: (PlayerVsNPCCalculatedLoadout & NPCVsPlayerCalculatedLoadout)[]
+  weaponSwap?: WeaponSwapResult | null,
 }
 
 /**

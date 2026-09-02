@@ -13,6 +13,7 @@ import { IReactionPublic, reaction, toJS } from 'mobx';
 import InitialLoad from '@/app/components/InitialLoad';
 import LoadoutComparison from '@/app/components/results/LoadoutComparison';
 import TtkComparison from '@/app/components/results/TtkComparison';
+import WeaponSwap from '@/app/components/results/WeaponSwap';
 import ShareModal from '@/app/components/ShareModal';
 import DebugPanels from '@/app/components/results/DebugPanels';
 import { IconAlertTriangle } from '@tabler/icons-react';
@@ -81,6 +82,7 @@ const Home: NextPage = observer(() => {
     const triggers: ((r: IReactionPublic) => unknown)[] = [
       () => toJS(store.loadouts),
       () => toJS(store.monster),
+      () => store.prefs.showWeaponSwap,
       () => store.prefs.showTtkComparison,
       () => store.prefs.showNPCVersusPlayerResults,
       () => store.prefs.hitDistsHideZeros,
@@ -124,6 +126,7 @@ const Home: NextPage = observer(() => {
         <CalcProvider>
           <LoadoutComparison />
         </CalcProvider>
+        <WeaponSwap />
         <TtkComparison />
         <NPCVersusPlayerResultsContainer />
         <DebugPanels />
