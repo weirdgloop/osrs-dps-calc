@@ -33,6 +33,15 @@ const EquipmentPresets: React.FC = () => {
 
     const findItemById = (id: number) => availableEquipment.find((eq) => eq.id === id);
 
+    // if the player already has a crossbow equipped, don't put arrows in their ammo slot.
+    const usingCrossbow = store.player.equipment.weapon?.category === EquipmentCategory.CROSSBOW
+                          && !store.player.equipment.weapon?.isTwoHanded; // in case a 2h crossbow ever gets added
+    const rangedAmmo = (arrowId: number) => findItemById(usingCrossbow ? 21944 : arrowId); // Ruby dragon bolts (e)
+    // check if the user has no shield for their crossbow and give them one if needed.
+    const crossbowShield = (shieldId: number) => (usingCrossbow && !store.player.equipment.shield
+      ? findItemById(shieldId)
+      : store.player.equipment.shield);
+
     switch (v?.value) {
       case EquipmentPreset.BOWFA: {
         newPlayer = {
@@ -126,7 +135,8 @@ const EquipmentPresets: React.FC = () => {
             head: findItemById(27235), // Masori mask (f)
             cape: findItemById(28955), // Blessed Dizana's quiver
             neck: findItemById(33639), // Necklace of rupture
-            ammo: findItemById(33595), // Seeking dragon arrow
+            ammo: rangedAmmo(33595), // Seeking dragon arrow
+            shield: crossbowShield(21000), // Twisted buckler
             body: findItemById(27238), // Masori body (f)
             legs: findItemById(27241), // Masori chaps (f)
             hands: findItemById(26235), // Zaryte vambraces
@@ -178,7 +188,8 @@ const EquipmentPresets: React.FC = () => {
             head: findItemById(12496), // Ancient coif
             cape: findItemById(22109), // Ava's assembler
             neck: findItemById(6585), // Amulet of fury
-            ammo: findItemById(11212), // Dragon arrow
+            ammo: rangedAmmo(11212), // Dragon arrow
+            shield: crossbowShield(12610), // Book of law
             body: findItemById(12492), // Ancient d'hide body
             legs: findItemById(12494), // Ancient chaps
             hands: findItemById(7462), // Barrows gloves
@@ -230,7 +241,8 @@ const EquipmentPresets: React.FC = () => {
             head: findItemById(11664), // Void ranger helm
             cape: findItemById(28955), // Blessed Dizana's quiver
             neck: findItemById(33639), // Necklace of rupture
-            ammo: findItemById(33595), // Seeking dragon arrow
+            ammo: rangedAmmo(33595), // Seeking dragon arrow
+            shield: crossbowShield(21000), // Twisted buckler
             body: findItemById(13072), // Elite void top
             legs: findItemById(13073), // Elite void robe
             hands: findItemById(8842), // Void knight gloves
