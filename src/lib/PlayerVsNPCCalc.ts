@@ -765,7 +765,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.wearing('Tonalztics of Ralos')) {
       // rolls 75% of max hit, but can hit twice
       // double hit is implemented in hit distribution
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_TONALZTICS, maxHit, [3, 4]);
+      const maxReduction = Math.trunc(maxHit * 1 / 4);
+      maxHit = this.trackAdd(DetailKey.MAX_HIT_TONALZTICS, maxHit, -maxReduction);
     }
 
     if (this.opts.usingSpecialAttack) {
