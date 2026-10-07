@@ -9658,8 +9658,98 @@
   {
     "id": 11063,
     "name": "Bandit (Shayzien)",
-    "version": "",
-    "image": "Bandit (Shayzien).png",
+    "version": "1",
+    "image": "Bandit (Shayzien, 1).png",
+    "level": 22,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 17,
+      "def": 17,
+      "hp": 27,
+      "magic": 1,
+      "ranged": 1,
+      "str": 17
+    },
+    "offensive": {
+      "atk": 11,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 12
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 5,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 8,
+      "stab": 4
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 11064,
+    "name": "Bandit (Shayzien)",
+    "version": "2",
+    "image": "Bandit (Shayzien, 2).png",
+    "level": 22,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 17,
+      "def": 17,
+      "hp": 27,
+      "magic": 1,
+      "ranged": 1,
+      "str": 17
+    },
+    "offensive": {
+      "atk": 11,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 12
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 5,
+      "magic": 1,
+      "heavy": 4,
+      "standard": 4,
+      "light": 4,
+      "slash": 8,
+      "stab": 4
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 11065,
+    "name": "Bandit (Shayzien)",
+    "version": "3",
+    "image": "Bandit (Shayzien, 3).png",
     "level": 22,
     "speed": 4,
     "style": [
@@ -16675,7 +16765,7 @@
       "Crush"
     ],
     "size": 2,
-    "max_hit": 0,
+    "max_hit": "17",
     "skills": {
       "atk": 87,
       "def": 143,
@@ -29662,8 +29752,7 @@
     "speed": 3,
     "style": [
       "Crush",
-      "Magic",
-      ""
+      "Magic"
     ],
     "size": 1,
     "max_hit": "19",
@@ -38319,10 +38408,10 @@
     "weakness": null
   },
   {
-    "id": 3707,
+    "id": 4431,
     "name": "Feral Vampyre",
-    "version": "Level 64 (Juvenile/Juvinate)",
-    "image": "Angry vampyre.png",
+    "version": "Level 64 (Burgh de Rott/Crombwick Manor)",
+    "image": "Feral Vampyre (Juvenile).png",
     "level": 64,
     "speed": 4,
     "style": [
@@ -38332,11 +38421,58 @@
     "max_hit": "7",
     "skills": {
       "atk": 55,
-      "def": 60,
+      "def": 30,
       "hp": 80,
       "magic": 1,
       "ranged": 1,
-      "str": 30
+      "str": 60
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "vampyre1"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": true,
+    "weakness": null
+  },
+  {
+    "id": 3707,
+    "name": "Feral Vampyre",
+    "version": "Level 64 (Meiyerditch)",
+    "image": "Feral Vampyre (Meiyerditch Juvenile).png",
+    "level": 64,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "7",
+    "skills": {
+      "atk": 55,
+      "def": 30,
+      "hp": 80,
+      "magic": 1,
+      "ranged": 0,
+      "str": 60
     },
     "offensive": {
       "atk": 0,
@@ -38382,7 +38518,7 @@
       "def": 30,
       "hp": 75,
       "magic": 0,
-      "ranged": 0,
+      "ranged": 1,
       "str": 46
     },
     "offensive": {
@@ -38476,7 +38612,7 @@
       "def": 81,
       "hp": 60,
       "magic": 1,
-      "ranged": 1,
+      "ranged": 0,
       "str": 66
     },
     "offensive": {
@@ -43855,6 +43991,178 @@
     }
   },
   {
+    "id": 16357,
+    "name": "Giant Mole (LANScape)",
+    "version": "Bandos",
+    "image": "Giant Mole (LANScape, Bandos).png",
+    "level": 495,
+    "speed": 0,
+    "style": null,
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 300,
+      "def": 200,
+      "hp": 1000,
+      "magic": 200,
+      "ranged": 1,
+      "str": 300
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 80,
+      "heavy": 60,
+      "standard": 60,
+      "light": 60,
+      "slash": 80,
+      "stab": 60
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16356,
+    "name": "Giant Mole (LANScape)",
+    "version": "Guthix",
+    "image": "Giant Mole (LANScape, Guthix).png",
+    "level": 495,
+    "speed": 0,
+    "style": null,
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 300,
+      "def": 200,
+      "hp": 1000,
+      "magic": 200,
+      "ranged": 1,
+      "str": 300
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 80,
+      "heavy": 60,
+      "standard": 60,
+      "light": 60,
+      "slash": 80,
+      "stab": 60
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16355,
+    "name": "Giant Mole (LANScape)",
+    "version": "Saradomin",
+    "image": "Giant Mole (LANScape, Saradomin).png",
+    "level": 495,
+    "speed": 0,
+    "style": null,
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 300,
+      "def": 200,
+      "hp": 1000,
+      "magic": 200,
+      "ranged": 1,
+      "str": 300
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 80,
+      "heavy": 60,
+      "standard": 60,
+      "light": 60,
+      "slash": 80,
+      "stab": 60
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16354,
+    "name": "Giant Mole (LANScape)",
+    "version": "Zamorak",
+    "image": "Giant Mole (LANScape, Zamorak).png",
+    "level": 495,
+    "speed": 0,
+    "style": null,
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 300,
+      "def": 200,
+      "hp": 1000,
+      "magic": 200,
+      "ranged": 1,
+      "str": 300
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 80,
+      "heavy": 60,
+      "standard": 60,
+      "light": 60,
+      "slash": 80,
+      "stab": 60
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
     "id": 1041,
     "name": "Giant mosquito",
     "version": "",
@@ -48303,7 +48611,7 @@
     "style": [
       "Crush"
     ],
-    "size": 0,
+    "size": 2,
     "max_hit": "18",
     "skills": {
       "atk": 150,
@@ -73647,7 +73955,7 @@
     "speed": 6,
     "style": [
       "Crush",
-      "Magic melee"
+      "Magical melee"
     ],
     "size": 2,
     "max_hit": "34",
@@ -73696,7 +74004,7 @@
     "speed": 6,
     "style": [
       "Crush",
-      "Magic melee"
+      "Magical melee"
     ],
     "size": 2,
     "max_hit": "14",
@@ -77472,7 +77780,7 @@
   {
     "id": 10779,
     "name": "Nylocas Hagios",
-    "version": "Big (Entry mode)",
+    "version": "Big (Entry Mode)",
     "image": "Nylocas Hagios.png",
     "level": 82,
     "speed": 3,
@@ -77568,7 +77876,7 @@
   {
     "id": 10776,
     "name": "Nylocas Hagios",
-    "version": "Small (Entry mode)",
+    "version": "Small (Entry Mode)",
     "image": "Nylocas Hagios.png",
     "level": 46,
     "speed": 3,
@@ -77591,6 +77899,54 @@
       "magic_str": 280,
       "ranged": 0,
       "ranged_str": -30,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "fire",
+      "severity": 15
+    }
+  },
+  {
+    "id": 10843,
+    "name": "Nylocas Hagios",
+    "version": "Verzik",
+    "image": "Nylocas Hagios.png",
+    "level": 46,
+    "speed": 3,
+    "style": [
+      "Magic"
+    ],
+    "size": 2,
+    "max_hit": 0,
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 3,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
       "str": 0
     },
     "defensive": {
@@ -77664,7 +78020,7 @@
   {
     "id": 10777,
     "name": "Nylocas Ischyros",
-    "version": "Big (Entry mode)",
+    "version": "Big (Entry Mode)",
     "image": "Nylocas Ischyros.png",
     "level": 82,
     "speed": 3,
@@ -77760,7 +78116,7 @@
   {
     "id": 10774,
     "name": "Nylocas Ischyros",
-    "version": "Small (Entry mode)",
+    "version": "Small (Entry Mode)",
     "image": "Nylocas Ischyros.png",
     "level": 46,
     "speed": 3,
@@ -77783,6 +78139,102 @@
       "magic_str": 280,
       "ranged": 0,
       "ranged_str": -30,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "fire",
+      "severity": 15
+    }
+  },
+  {
+    "id": 8381,
+    "name": "Nylocas Ischyros",
+    "version": "Verzik",
+    "image": "Nylocas Ischyros.png",
+    "level": 162,
+    "speed": 3,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": 0,
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 25,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "fire",
+      "severity": 15
+    }
+  },
+  {
+    "id": 10841,
+    "name": "Nylocas Ischyros",
+    "version": "Verzik (Entry Mode)",
+    "image": "Nylocas Ischyros.png",
+    "level": 46,
+    "speed": 3,
+    "style": [
+      "Stab"
+    ],
+    "size": 2,
+    "max_hit": 0,
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 3,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
       "str": 0
     },
     "defensive": {
@@ -78240,7 +78692,7 @@
   {
     "id": 10778,
     "name": "Nylocas Toxobolos",
-    "version": "Big (Entry mode)",
+    "version": "Big (Entry Mode)",
     "image": "Nylocas Toxobolos.png",
     "level": 82,
     "speed": 3,
@@ -78336,7 +78788,7 @@
   {
     "id": 10775,
     "name": "Nylocas Toxobolos",
-    "version": "Small (Entry mode)",
+    "version": "Small (Entry Mode)",
     "image": "Nylocas Toxobolos.png",
     "level": 46,
     "speed": 3,
@@ -78359,6 +78811,102 @@
       "magic_str": 280,
       "ranged": 0,
       "ranged_str": -30,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "fire",
+      "severity": 15
+    }
+  },
+  {
+    "id": 8382,
+    "name": "Nylocas Toxobolos",
+    "version": "Verzik",
+    "image": "Nylocas Toxobolos.png",
+    "level": 162,
+    "speed": 3,
+    "style": [
+      "Ranged"
+    ],
+    "size": 2,
+    "max_hit": 0,
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 25,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "fire",
+      "severity": 15
+    }
+  },
+  {
+    "id": 10842,
+    "name": "Nylocas Toxobolos",
+    "version": "Verzik (Entry Mode)",
+    "image": "Nylocas Toxobolos.png",
+    "level": 46,
+    "speed": 3,
+    "style": [
+      "Ranged"
+    ],
+    "size": 2,
+    "max_hit": 0,
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 3,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
       "str": 0
     },
     "defensive": {
@@ -80062,6 +80610,96 @@
       "burn": null
     },
     "is_slayer_monster": true,
+    "weakness": null
+  },
+  {
+    "id": 16528,
+    "name": "Outlaw (A Ruff Situation)",
+    "version": "Level 22",
+    "image": "Outlaw (A Ruff Situation, level 22).png",
+    "level": 22,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 14,
+      "def": 20,
+      "hp": 13,
+      "magic": 0,
+      "ranged": 0,
+      "str": 25
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16527,
+    "name": "Outlaw (A Ruff Situation)",
+    "version": "Level 23",
+    "image": "Outlaw (A Ruff Situation, level 23).png",
+    "level": 23,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 18,
+      "def": 20,
+      "hp": 20,
+      "magic": 0,
+      "ranged": 0,
+      "str": 25
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
     "weakness": null
   },
   {
@@ -99645,7 +100283,7 @@
     "style": [
       "Crush"
     ],
-    "size": 0,
+    "size": 2,
     "max_hit": "16",
     "skills": {
       "atk": 110,
@@ -103515,7 +104153,7 @@
       "Crush"
     ],
     "size": 1,
-    "max_hit": "9 Ranged",
+    "max_hit": "9 (Ranged)",
     "skills": {
       "atk": 120,
       "def": 10,
@@ -118960,6 +119598,246 @@
     "weakness": null
   },
   {
+    "id": 16213,
+    "name": "Venator (The Blood Moon Rises)",
+    "version": "1",
+    "image": "Venator (1).png",
+    "level": 195,
+    "speed": 0,
+    "style": [
+      "Stab",
+      "Ranged"
+    ],
+    "size": 2,
+    "max_hit": 0,
+    "skills": {
+      "atk": 200,
+      "def": 100,
+      "hp": 160,
+      "magic": 100,
+      "ranged": 75,
+      "str": 200
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "vampyre3"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16214,
+    "name": "Venator (The Blood Moon Rises)",
+    "version": "2",
+    "image": "Venator (2).png",
+    "level": 195,
+    "speed": 0,
+    "style": [
+      "Stab",
+      "Ranged"
+    ],
+    "size": 2,
+    "max_hit": 0,
+    "skills": {
+      "atk": 200,
+      "def": 100,
+      "hp": 160,
+      "magic": 100,
+      "ranged": 75,
+      "str": 200
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "vampyre3"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16215,
+    "name": "Venator (The Blood Moon Rises)",
+    "version": "3",
+    "image": "Venator (3).png",
+    "level": 195,
+    "speed": 0,
+    "style": [
+      "Stab",
+      "Ranged"
+    ],
+    "size": 2,
+    "max_hit": 0,
+    "skills": {
+      "atk": 200,
+      "def": 100,
+      "hp": 160,
+      "magic": 100,
+      "ranged": 75,
+      "str": 200
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "vampyre3"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16216,
+    "name": "Venator (The Blood Moon Rises)",
+    "version": "4",
+    "image": "Venator (4).png",
+    "level": 195,
+    "speed": 0,
+    "style": [
+      "Stab",
+      "Ranged"
+    ],
+    "size": 2,
+    "max_hit": 0,
+    "skills": {
+      "atk": 200,
+      "def": 100,
+      "hp": 160,
+      "magic": 100,
+      "ranged": 75,
+      "str": 200
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "vampyre3"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16217,
+    "name": "Venator (The Blood Moon Rises)",
+    "version": "5",
+    "image": "Venator (5).png",
+    "level": 195,
+    "speed": 0,
+    "style": [
+      "Stab",
+      "Ranged"
+    ],
+    "size": 2,
+    "max_hit": 0,
+    "skills": {
+      "atk": 200,
+      "def": 100,
+      "hp": 160,
+      "magic": 100,
+      "ranged": 75,
+      "str": 200
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [
+      "vampyre3"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
     "id": 15765,
     "name": "Venator",
     "version": "1",
@@ -120544,7 +121422,7 @@
     "offensive": {
       "atk": 14,
       "magic": 148,
-      "magic_str": 0,
+      "magic_str": 42,
       "ranged": 96,
       "ranged_str": 0,
       "str": 0
