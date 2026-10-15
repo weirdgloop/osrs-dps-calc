@@ -115,7 +115,7 @@ export default class Comparator {
         return;
 
       case CompareXAxis.MONSTER_HP: {
-        for (let newHp = this.baseMonster.skills.hp; newHp >= 0; newHp--) {
+        for (let newHp = this.baseMonster.skills.hp; newHp >= 1; newHp--) {
           yield {
             xValue: newHp,
             loadouts: this.baseLoadouts,
