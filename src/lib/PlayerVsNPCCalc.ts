@@ -1902,6 +1902,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         return new AttackDistribution([HitDistribution.single(1.0, [new Hitsplat(max + Math.trunc(Math.trunc(max * demonbaneFactor / 100) * this.demonbaneVulnerability() / 100))])]);
       }
 
+      if (this.wearing(['Sanguinesti staff', 'Holy sanguinesti staff'])) {
+        return new AttackDistribution([new HitDistribution([
+          new WeightedHit(0.8, [new Hitsplat(dist.getMax() - 8)]),
+          new WeightedHit(0.2, [new Hitsplat(dist.getMax())]),
+        ])]);
+      }
+
       return new AttackDistribution([HitDistribution.single(1.0, [new Hitsplat(dist.getMax())])]);
     }
 
