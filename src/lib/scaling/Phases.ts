@@ -19,7 +19,7 @@ const applyMonsterPhases = (m: Monster): Monster => {
   }
 
   // yama goes to 60 magic defence if the tank is using magic
-  if (YAMA_IDS.includes(m.id) && m.version !== 'Enraged') {
+  if (YAMA_IDS.includes(m.id) && m.version !== 'Phase 3') {
     const mdef = m.inputs.phase === 'Tank using magic' ? 60 : -30;
     return {
       ...m,
