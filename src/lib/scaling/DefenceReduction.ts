@@ -83,16 +83,31 @@ const applyDefenceReductions = (m: Monster): Monster => {
     });
   };
 
-  if (reductions.accursed) {
-    m = newSkills(m, {
-      def: Math.trunc(m.skills.def * 17 / 20),
-      magic: Math.trunc(m.skills.magic * 17 / 20),
-    });
-  } else if (reductions.vulnerability) {
+  if (reductions.vulnerability) {
     // todo tome of water increases this to 15% reduction,
     // but how do we handle that?
     m = newSkills(m, {
-      def: Math.trunc(m.skills.def * 9 / 10),
+      def: m.skills.def - Math.trunc(m.skills.def * 1 / 10),
+    });
+  }
+  if (reductions.shadowBarrage) {
+    m = newSkills(m, {
+      atk: m.skills.atk - Math.trunc(m.skills.atk * 33 / 200),
+      str: m.skills.str - Math.trunc(m.skills.str * 33 / 200),
+      def: m.skills.def === baseSkills.def ? m.skills.def - Math.trunc(m.skills.def * 33 / 200) : m.skills.def,
+    });
+  }
+
+  if (reductions.seercull > 0 && m.skills.magic === baseSkills.magic) {
+    m = newSkills(m, {
+      magic: m.skills.magic - reductions.seercull,
+    });
+  }
+
+  if (reductions.accursed) {
+    m = newSkills(m, {
+      def: Math.min(baseSkills.def - Math.trunc(baseSkills.def * 3 / 20), m.skills.def),
+      magic: Math.min(baseSkills.magic - Math.trunc(baseSkills.magic * 3 / 20), m.skills.magic),
     });
   }
 
@@ -124,12 +139,6 @@ const applyDefenceReductions = (m: Monster): Monster => {
   for (let i = 0; i < reductions.tonalztic; i++) {
     m = newSkills(m, {
       def: m.skills.def - Math.trunc(m.skills.magic / 8),
-    });
-  }
-
-  if (reductions.seercull > 0) {
-    m = newSkills(m, {
-      magic: m.skills.magic - reductions.seercull,
     });
   }
 

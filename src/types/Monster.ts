@@ -105,6 +105,7 @@ export interface Monster {
      */
     monsterCurrentHp: number;
     defenceReductions: {
+      shadowBarrage: boolean;
       vulnerability: boolean;
       accursed: boolean;
       elderMaul: number;

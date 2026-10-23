@@ -39,6 +39,7 @@ export const INITIAL_MONSTER_INPUTS: Monster['inputs'] = {
   partySize: 1,
   monsterCurrentHp: 150,
   defenceReductions: {
+    shadowBarrage: false,
     vulnerability: false,
     accursed: false,
     elderMaul: 0,
