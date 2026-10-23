@@ -94,6 +94,7 @@ import { burningClawDoT, burningClawSpec, dClawDist } from '@/lib/dists/claws';
 
 const PARTIALLY_IMPLEMENTED_SPECS: string[] = [
   'Ancient godsword',
+  "Zorya's tome", // missing the follow-up attack buffs
 ];
 
 // https://oldschool.runescape.wiki/w/Category:Weapons_with_Special_attacks
@@ -898,6 +899,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [3, 2]);
       } else if (this.wearing('Eye of Ayak')) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
+      } else if (this.wearing("Zorya's tome")) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [250, 100]);
       }
     }
 
@@ -953,6 +956,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = Math.max(1, Math.trunc(magicLevel / 3) + 1);
     } else if (this.wearing('Eye of Ayak')) {
       maxHit = Math.max(1, Math.trunc(magicLevel / 3) - 6);
+    } else if (this.wearing("Zorya's tome")) {
+      maxHit = Math.max(1, Math.trunc(magicLevel / 3) - 10);
     } else if (this.wearing('Warped sceptre')) {
       maxHit = Math.max(1, Math.trunc((8 * magicLevel + 96) / 37));
     } else if (this.wearing('Bone staff')) {
@@ -1054,6 +1059,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.opts.usingSpecialAttack) {
       if (this.isWearingAccursedSceptre()) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [3, 2]);
+      } else if (this.wearing("Zorya's tome")) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [160, 100]);
       }
     }
 

@@ -741,6 +741,13 @@ export default class BaseCalc {
   private sanitizeInputs() {
     const eq = this.player.equipment;
 
+    if (this.player.equipment.shield?.name === 'Rondache') {
+      this.addIssue(UserIssueType.EQUIPMENT_SHIELD_EFFECT_UNSUPPORTED, "The Rondache's special attack is not yet implemented.");
+    }
+    if (this.player.equipment.weapon?.name === "Zorya's tome") {
+      this.addIssue(UserIssueType.EQUIPMENT_WEAPON_EFFECT_UNSUPPORTED, "The bonus follow up attacks from Zorya's tome's special attack are not implemented.");
+    }
+
     if (this.monster.attributes.includes(MonsterAttribute.DEMON)) {
       // make sure demonbane effectiveness is set and uses the right value
       this.monster = {

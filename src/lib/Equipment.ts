@@ -445,6 +445,7 @@ export const WEAPON_SPEC_COSTS: { [canonicalName: string]: number } = {
   'Eye of Ayak': 50,
   'Crimson kisten': 50,
   'Sunspear': 50,
+  "Zorya's tome": 50,
 
   'Magic shortbow': 55,
   'Dark bow': 55,
