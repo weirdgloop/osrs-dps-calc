@@ -5,8 +5,6 @@ import {
   Handler,
   TtkRequest,
   TtkResponse,
-  WORKER_JSON_REPLACER,
-  WORKER_JSON_REVIVER,
   WorkerRequestType,
 } from '@/worker/CalcWorkerTypes';
 import { NPCVsPlayerCalculatedLoadout, PlayerVsNPCCalculatedLoadout } from '@/types/State';
@@ -15,7 +13,7 @@ import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import Comparator from '@/lib/Comparator';
 import { ttkDist } from '@/worker/ttkWorker';
 import { range } from 'd3-array';
-import { DeferredPromise } from '@/utils';
+import { DeferredPromise, WORKER_JSON_REPLACER, WORKER_JSON_REVIVER } from '@/utils';
 import { NUMBER_OF_LOADOUTS } from '@/lib/constants';
 
 const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) => {
@@ -36,22 +34,22 @@ const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) 
 
     res.push({
       npcDefRoll: calc.getNPCDefenceRoll(),
-      maxHit: calc.getDisplayMax(),
+      maxHit: calc.getDistribution().getMax(),
       expectedHit: calc.getDistribution().getExpectedDamage(),
       maxAttackRoll: calc.getMaxAttackRoll(),
-      accuracy: calc.getHitChance(),
+      accuracy: calc.getDisplayHitChance(),
       dps: calc.getDps(),
       ttk: calc.getTtk(),
-      hitDist: calc.getHistogram(calcOpts.hitDistHideMisses),
+      hitDist: calc.getDistribution().asHistogram(calcOpts.hitDistHideMisses),
       details: calc.details,
       userIssues: calc.userIssues,
 
-      specAccuracy: specCalc?.getHitChance(),
-      specMaxHit: specCalc?.getDisplayMax(),
+      specAccuracy: specCalc?.getDisplayHitChance(),
+      specMaxHit: specCalc?.getMax(),
       specExpected: specCalc?.getExpectedDamage(),
       specMomentDps: specCalc?.getDps(),
       specFullDps: specCalc?.getSpecDps(),
-      specHitDist: specCalc?.getHistogram(calcOpts.hitDistHideMisses),
+      specHitDist: specCalc?.getDistribution().asHistogram(calcOpts.hitDistHideMisses),
       specDetails: specCalc?.details,
     });
 
@@ -70,13 +68,13 @@ const computeMvPValues: Handler<WorkerRequestType.COMPUTE_REVERSE> = async (data
     const loadoutName = (i + 1).toString();
     const start = self.performance.now();
     const calc = new NPCVsPlayerCalc(p, monster, {
-      loadoutName,
+      loadoutName: `${loadoutName}/reverse`,
       detailedOutput: calcOpts.detailedOutput,
       disableMonsterScaling: calcOpts.disableMonsterScaling,
     });
     res.push({
       npcMaxAttackRoll: calc.getNPCMaxAttackRoll(),
-      npcMaxHit: calc.getNPCMaxHit(),
+      npcMaxHit: calc.getDistribution().getMax(),
       npcDps: calc.getDps(),
       npcAccuracy: calc.getHitChance(),
       playerDefRoll: calc.getPlayerDefenceRoll(),

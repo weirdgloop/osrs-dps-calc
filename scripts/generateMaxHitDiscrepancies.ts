@@ -1,4 +1,4 @@
-import { getMonsters } from '@/lib/Monsters';
+import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
 import { generateEmptyPlayer } from '@/state';
 
@@ -25,26 +25,7 @@ const generateMaxHitDiscrepancies = () => {
 
     const calc = new NPCVsPlayerCalc(generateEmptyPlayer(), {
       ...m,
-      inputs: {
-        isFromCoxCm: false,
-        toaInvocationLevel: 0,
-        toaPathLevel: 0,
-        partyMaxCombatLevel: 126,
-        partyAvgMiningLevel: 99,
-        partyMaxHpLevel: 99,
-        partySize: 1,
-        monsterCurrentHp: 150,
-        defenceReductions: {
-          vulnerability: false,
-          accursed: false,
-          elderMaul: 0,
-          dwh: 0,
-          emberlight: 0,
-          arclight: 0,
-          bgs: 0,
-          tonalztic: 0,
-        },
-      },
+      inputs: INITIAL_MONSTER_INPUTS,
     });
     const computedMaxHit = calc.getNPCMaxHit();
     if (wikiMaxHit !== computedMaxHit) {

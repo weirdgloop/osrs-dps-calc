@@ -22,6 +22,7 @@ interface IComboboxProps<T> {
   className?: string;
   CustomItemComponent?: React.FC<{ item: T, itemString: string }>;
   customFilter?: (v: T[], inputValue: string) => T[];
+  customSort?: (v: T[]) => T[];
 }
 
 /**
@@ -48,6 +49,7 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
     className,
     CustomItemComponent,
     customFilter,
+    customSort,
   } = props;
   const [inputValue, setInputValue] = useState<string>(value || '');
   const inputRef = useRef<HTMLInputElement>(null);
@@ -74,8 +76,12 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
       newFilteredItems = customFilter(newFilteredItems, inputValue);
     }
 
+    if (customSort) {
+      newFilteredItems = customSort(newFilteredItems);
+    }
+
     return newFilteredItems;
-  }, [inputValue, items, customFilter, preprocessedItems]);
+  }, [inputValue, items, customFilter, customSort, preprocessedItems]);
 
   const {
     getInputProps,

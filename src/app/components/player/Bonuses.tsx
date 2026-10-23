@@ -13,14 +13,14 @@ const Bonuses: React.FC = observer(() => {
 
   const player = toJS(store.player);
   const monster = toJS(store.monster);
-  const computedStats = useMemo(() => calculateEquipmentBonusesFromGear(player, monster), [monster, player]);
+  const computedStats = useMemo(() => calculateEquipmentBonusesFromGear(player, monster), [player, monster]);
 
   return (
     <div className="px-4 my-4">
       <div className="flex justify-between items-center gap-2">
         <h4 className="font-serif font-bold">Bonuses</h4>
         {manualMode && (
-          <button type="button" className="text-xs underline" onClick={() => store.recalculateEquipmentBonusesFromGear()}>
+          <button type="button" className="text-xs underline" onClick={() => store.updateEquipmentBonuses()}>
             Calculate from equipment
           </button>
         )}

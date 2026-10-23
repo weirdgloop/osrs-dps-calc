@@ -20,7 +20,7 @@ export const PlayerTab: React.FC<PlayerTabProps> = (props) => {
       data-tooltip-id="tooltip"
       data-tooltip-content={name}
     >
-      <Image src={image} alt={name} className="" />
+      <Image src={image} alt={name} className="max-w-8" />
     </button>
   );
 };

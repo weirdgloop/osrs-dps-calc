@@ -11,12 +11,18 @@ type SelectItem = { label: string };
 
 const itemToString = <T extends SelectItem>(i: T | null) => (i ? i.label : '');
 
+export interface OnIsOpenChangeParams {
+  isOpen: boolean;
+  closeMenu: () => void;
+}
+
 interface ISelectProps<T> {
   id: string;
   value?: T;
   items: T[];
   placeholder?: string;
   onSelectedItemChange?: (item: T | null | undefined) => void;
+  onIsOpenChange?: (args: OnIsOpenChangeParams) => void;
   resetAfterSelect?: boolean;
   className?: string;
   menuClassName?: string;
@@ -36,6 +42,7 @@ const Select = <T extends SelectItem>(props: ISelectProps<T>) => {
     value,
     items,
     onSelectedItemChange,
+    onIsOpenChange,
     resetAfterSelect,
     placeholder,
     className,
@@ -56,11 +63,18 @@ const Select = <T extends SelectItem>(props: ISelectProps<T>) => {
     selectedItem,
     isOpen,
     selectItem,
+    closeMenu,
   } = useSelect({
     id,
     items,
     itemToString,
     onIsOpenChange: (changes) => {
+      if (onIsOpenChange) {
+        onIsOpenChange({
+          isOpen: changes.isOpen ?? false,
+          closeMenu,
+        });
+      }
       if (changes.isOpen) {
         // When the menu opens, detect where it is on the page
         const pos = menuRef.current?.getBoundingClientRect();

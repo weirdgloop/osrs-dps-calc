@@ -9,9 +9,6 @@ interface IGridItemProps<T> {
   image: string | StaticImageData;
   onClick: (item: T) => void;
   active: boolean;
-  width?: number;
-  height?: number;
-  className?: string;
 }
 
 /**
@@ -19,7 +16,7 @@ interface IGridItemProps<T> {
  */
 const GridItem: React.FC<IGridItemProps<number>> = observer(<T extends number>(props: IGridItemProps<T>) => {
   const {
-    item, name, image, active, onClick, width, height, className,
+    item, name, image, active, onClick,
   } = props;
 
   return (
@@ -28,7 +25,7 @@ const GridItem: React.FC<IGridItemProps<number>> = observer(<T extends number>(p
       data-tooltip-id="tooltip"
       data-tooltip-content={name}
       onClick={() => onClick(item)}
-      className={`cursor-pointer flex justify-center items-center ${className}`}
+      className="cursor-pointer w-[28px] h-[23px] flex justify-center items-center"
     >
       <div className="relative">
         {active && (
@@ -36,7 +33,7 @@ const GridItem: React.FC<IGridItemProps<number>> = observer(<T extends number>(p
           className="filter drop-shadow absolute top-[-10px] left-[-12px] text-green-400 dark:text-green-200 w-5"
         />
         )}
-        <Image src={image} alt={name} width={width ?? 28} height={height ?? 23} />
+        <Image src={image} alt={name} />
       </div>
     </button>
   );

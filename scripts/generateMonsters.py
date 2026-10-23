@@ -13,112 +13,119 @@ import requests
 import json
 import urllib.parse
 import re
-import csv
 
 FILE_NAME = '../cdn/json/monsters.json'
 WIKI_BASE = 'https://oldschool.runescape.wiki'
 API_BASE = WIKI_BASE + '/api.php'
 IMG_PATH = '../cdn/monsters/'
 
-REQUIRED_PRINTOUTS = [
-    'Attack bonus',
-    'Attack level',
-    'Attack speed',
-    'Attack style',
-    'Combat level',
-    'Crush defence bonus',
-    'Defence level',
-    'Flat armour',
-    'Hitpoints',
-    'Image',
-    'Immune to poison',
-    'Immune to venom',
-    'Magic Damage bonus',
-    'Magic attack bonus',
-    'Magic defence bonus',
-    'Magic level',
-    'Max hit',
-    'Monster attribute',
-    'Name',
-    'Range attack bonus',
-    'Ranged Strength bonus',
-    'Range defence bonus',
-    'Ranged level',
-    'Slash defence bonus',
-    'Slayer category',
-    'Slayer experience',
-    'Stab defence bonus',
-    'Strength bonus',
-    'Strength level',
-    'Size',
-    'NPC ID',
-    'Category',
-    'Elemental weakness',
-    'Elemental weakness percent',
-    'Light range defence bonus',
-    'Standard range defence bonus',
-    'Heavy range defence bonus'
+BUCKET_API_FIELDS = [
+    'page_name',
+    'page_name_sub',
+    'attack_bonus',
+    'attack_level',
+    'attack_speed',
+    'attack_style',
+    'combat_level',
+    'crush_defence_bonus',
+    'defence_level',
+    'flat_armour',
+    'hitpoints',
+    'image',
+    'poison_resistance',
+    'venom_resistance',
+    'magic_damage_bonus',
+    'magic_attack_bonus',
+    'magic_defence_bonus',
+    'magic_level',
+    'max_hit',
+    'attribute',
+    'name',
+    'range_attack_bonus',
+    'range_strength_bonus',
+    'range_defence_bonus',
+    'ranged_level',
+    'slash_defence_bonus',
+    'slayer_category',
+    'slayer_experience',
+    'stab_defence_bonus',
+    'strength_bonus',
+    'strength_level',
+    'size',
+    'id',
+    'elemental_weakness',
+    'elemental_weakness_percent',
+    'light_range_defence_bonus',
+    'standard_range_defence_bonus',
+    'heavy_range_defence_bonus',
+    'burn_immune'
 ]
 
 def get_monster_data():
-    monsters = {}
+    monsters = []
     offset = 0
+    fields_csv = ",".join(map(repr, BUCKET_API_FIELDS))
     while True:
         print('Fetching monster info: ' + str(offset))
         query = {
-            'action': 'ask',
+            'action': 'bucket',
             'format': 'json',
-            'query': '[[Uses infobox::Monster]]|?' + '|?'.join(REQUIRED_PRINTOUTS) + '|limit=500|offset=' + str(offset)
+            'query': 
+            (
+                f"bucket('infobox_monster')"
+                f".select({fields_csv})"
+                f".limit(500).offset({offset})"
+                f".where(bucket.Not('Category:Discontinued content'))"
+                f".orderBy('page_name_sub', 'asc').run()"
+            )
         }
+
         r = requests.get(API_BASE + '?' + urllib.parse.urlencode(query), headers={
             'User-Agent': 'osrs-dps-calc (https://github.com/weirdgloop/osrs-dps-calc)'
         })
         data = r.json()
 
-        if 'query' not in data or 'results' not in data['query']:
+        if 'bucket' not in data:
             # No results?
             break
 
-        monsters = monsters | data['query']['results']
+        monsters = monsters + data['bucket']
 
-        if 'query-continue-offset' not in data or int(data['query-continue-offset']) < offset:
+        # Bucket's API doesn't tell you when there are more results, so we'll just have to guess
+        if len(data['bucket']) == 500:
+            offset += 500
+        else:
             # If we are at the end of the results, break out of this loop
             break
-        else:
-            offset = data['query-continue-offset']
+
     return monsters
 
 
-def get_printout_value(prop, all_results=False):
-    # SMW printouts are all arrays, so ensure that the array is not empty
-    if not prop:
-        return None
+strip_marker_regex = re.compile(r'[\'"`]*UNIQ--[a-zA-Z0-9]+-[0-9A-F]{8}-QINU[\'"`]*')
+
+def strip_parser_tags(value):
+    if isinstance(value, dict):
+        return {k: strip_parser_tags(v) for k, v in value.items()}
+    elif isinstance(value, list):
+        return [strip_parser_tags(item) for item in value]
+    elif isinstance(value, str):
+        return strip_marker_regex.sub('', value).strip()
     else:
-        return prop if all_results else prop[0]
-
-
-def has_category(category_array, category):
-    return next((c for c in category_array if c['fulltext'] == "Category:%s" % category), None)
-
+        return value
 
 def main():
-    # Grab the monster info using SMW, including all the relevant printouts
+    # Grab the monster info using Bucket
     wiki_data = get_monster_data()
 
     # Convert the data into our own JSON structure
     data = []
     required_imgs = []
 
+    monsters_to_skip = []
+
     # Loop over the monsters data from the wiki
-    for k, v in wiki_data.items():
-        # print('Processing ' + k)
-
-        # Sanity check: make sure that this monster has printouts from SMW
-        if 'printouts' not in v:
-            print(k + ' is missing SMW printouts - skipping.')
-            continue
-
-        po = v['printouts']
+    for v in wiki_data:
+        k = v['page_name_sub']
 
         # We split the key instead of using the Version anchor prop here to account for monsters with custom |smwname=
         try:
@@ -131,73 +138,119 @@ def main():
             print(k + ' is a CoX CM variant - skipping.')
             continue
 
+        if 'Deadman' in k:
+            continue
+
         # Skip monsters that aren't in the main namespace on the wiki
         if re.match("^([A-z]*):", k):
             continue
 
-        # Skip "monsters" that are actually non-interactive scenery, or don't exist
-        if (
-            has_category(po['Category'], 'Non-interactive scenery')
-            or has_category(po['Category'], 'Discontinued content')
-        ):
+        if v.get('page_name') in monsters_to_skip:
             continue
 
-        monster_style = get_printout_value(po['Attack style'], True)
+        # Skip Fight Caves spawn point monsters
+        if 'Spawn point' in version:
+            continue
+
+        # Skip Duke Sucellus non-attackable monsters and Hueycoatyl defeated
+        if 'Asleep' in version or 'Defeated' in version:
+            continue
+
+        # Skip Guardians of the Rift barriers which are not attackable
+        if re.match("^(Strong|Weak|Medium|Overcharged) Barrier$", k):
+            continue
+
+        monster_style = v.get('attack_style')
         if monster_style == 'None' or monster_style == 'N/A':
             monster_style = None
+
+        burn_immunity = v.get('burn_immune')
+        if burn_immunity:
+            if 'weak' in burn_immunity.lower():
+                burn_immunity = 'Weak'
+            elif 'normal' in burn_immunity.lower():
+                burn_immunity = 'Normal'
+            elif 'strong' in burn_immunity.lower():
+                burn_immunity = 'Strong'
+            else:
+                burn_immunity = None
 
         # Override style specifically for Spinolyps. Both attacks roll ranged vs ranged.
         # This "patch" will have to be revisited if/when we add protection prayers.
         if 'Spinolyp' in k:
             monster_style = ['Ranged']
 
+        print(f"Processing {v['page_name_sub']}")
+
+        try:
+            monster_id = int(v.get('id')[0]) if v.get('id') else None
+        except ValueError:
+            # Monster has an invalid ID, do not show it here as it's probably historical or something.
+            print("Skipping - invalid monster ID (not an int)")
+            continue
+
         monster = {
-            'id': get_printout_value(po['NPC ID']),
-            'name': k.rsplit('#', 1)[0] or '',
+            'id': monster_id,
+            'name': v.get('page_name'),
             'version': version,
-            'image': '' if not po['Image'] else po['Image'][0]['fulltext'].replace('File:', ''),
-            'level': get_printout_value(po['Combat level']) or 0,
-            'speed': get_printout_value(po['Attack speed']) or 0,
+            'image': '' if not v.get('image') else v.get('image')[-1].replace('File:', ''),
+            'level': v.get('combat_level', 0),
+            'speed': v.get('attack_speed', 0),
             'style': monster_style,
-            'size': get_printout_value(po['Size']) or 0,
-            'max_hit': get_printout_value(po['Max hit']) or 0,
+            'size': v.get('size', 0),
+            'max_hit': v.get('max_hit')[0] if v.get('max_hit') else 0,
             'skills': {
-                'atk': get_printout_value(po['Attack level']) or 0,
-                'def': get_printout_value(po['Defence level']) or 0,
-                'hp': get_printout_value(po['Hitpoints']) or 0,
-                'magic': get_printout_value(po['Magic level']) or 0,
-                'ranged': get_printout_value(po['Ranged level']) or 0,
-                'str': get_printout_value(po['Strength level']) or 0
+                'atk': v.get('attack_level', 0),
+                'def': v.get('defence_level', 0),
+                'hp': v.get('hitpoints', 0),
+                'magic': v.get('magic_level', 0),
+                'ranged': v.get('ranged_level', 0),
+                'str': v.get('strength_level', 0)
             },
             'offensive': {
-                'atk': get_printout_value(po['Attack bonus']) or 0,
-                'magic': get_printout_value(po['Magic attack bonus']) or 0,
-                'magic_str': get_printout_value(po['Magic Damage bonus']) or 0,
-                'ranged': get_printout_value(po['Range attack bonus']) or 0,
-                'ranged_str': get_printout_value(po['Ranged Strength bonus']) or 0,
-                'str': get_printout_value(po['Strength bonus']) or 0
+                'atk': v.get('attack_bonus', 0),
+                'magic': v.get('magic_attack_bonus', 0),
+                'magic_str': v.get('magic_damage_bonus', 0),
+                'ranged': v.get('range_attack_bonus', 0),
+                'ranged_str': v.get('range_strength_bonus', 0),
+                'str': v.get('strength_bonus', 0)
             },
             'defensive': {
-                'flat_armour': get_printout_value(po['Flat armour']) or 0,
-                'crush': get_printout_value(po['Crush defence bonus']) or 0,
-                'magic': get_printout_value(po['Magic defence bonus']) or 0,
-                'heavy': get_printout_value(po['Heavy range defence bonus']) or 0,
-                'standard': get_printout_value(po['Standard range defence bonus']) or 0,
-                'light': get_printout_value(po['Light range defence bonus']) or 0,
-                'slash': get_printout_value(po['Slash defence bonus']) or 0,
-                'stab': get_printout_value(po['Stab defence bonus']) or 0
+                'flat_armour': v.get('flat_armour', 0),
+                'crush': v.get('crush_defence_bonus', 0),
+                'magic': v.get('magic_defence_bonus', 0),
+                'heavy': v.get('heavy_range_defence_bonus', 0),
+                'standard': v.get('standard_range_defence_bonus', 0),
+                'light': v.get('light_range_defence_bonus', 0),
+                'slash': v.get('slash_defence_bonus', 0),
+                'stab': v.get('stab_defence_bonus', 0)
             },
-            'attributes': po['Monster attribute'] or [],
+            'attributes': v.get('attribute', []),
+            'immunities': {
+                'burn': burn_immunity,
+            },
+            'is_slayer_monster': v.get('slayer_experience') is not None,
         }
 
-        weakness = get_printout_value(po['Elemental weakness']) or None
+        if 'Awakened' in version:
+            monster['is_slayer_monster'] = False
+        if monster['name'] == 'Lizardman shaman (Chambers of Xeric)':
+            monster['is_slayer_monster'] = True
+
+        weakness = v.get('elemental_weakness')
         if weakness:
-            monster['weakness'] = {
-                'element': weakness.lower(),
-                'severity': int(get_printout_value(po['Elemental weakness percent']) or 0)
-            }
+            try:
+                monster['weakness'] = {
+                    'element': weakness.lower(),
+                    'severity': int(v.get('elemental_weakness_percent', 0))
+                }
+            except:
+                monster['weakness'] = None
         else:
             monster['weakness'] = None
+
+        if monster['id'] == 14779: # Gemstone crab has infinite hp which the wiki returns as 0
+            monster['skills']['hp'] = 50000
 
         # Prune...
         if (
@@ -211,12 +264,33 @@ def main():
                 or '(pvm arena)' in str.lower(monster['name'])
                 # ...monsters from DMM Apocalypse
                 or '(deadman: apocalypse)' in str.lower(monster['name'])
+                # ...leagues monsters
+                or '(echo)' in str.lower(monster['name'])
         ):
             continue
 
+        if monster['name'] == "Doom of Mokhaiotl" and ("Shielded" in v.get('name') or "Burrowed" in v.get('name')):
+            continue
+
+        if monster['name'] == "Araxxor":
+            if "In combat" in version:
+                monster['version'] = ""
+            else:
+                continue
+
+        monster = strip_parser_tags(monster)
+
         data.append(monster)
-        if not monster['image'] == '':
+        if monster['image'] != '':
             required_imgs.append(monster['image'])
+
+    with open('manual_monster.json', 'r') as f:
+        manual_monsters = json.load(f)
+        for m in manual_monsters:
+            img = m.get('image')
+            if img: 
+                required_imgs.append(img)
+        data = data + manual_monsters
 
     print('Total monsters: ' + str(len(data)))
 
@@ -229,6 +303,21 @@ def main():
     failed_img_dls = 0
     skipped_img_dls = 0
     required_imgs = set(required_imgs)
+
+    removed_count = 0
+    # Delete any images that are no longer required while enumerating existing files
+    if os.path.isdir(IMG_PATH):
+        for root, _, files in os.walk(IMG_PATH):
+            for file in files:
+                rel_path = os.path.relpath(os.path.join(root, file), IMG_PATH).replace(os.sep, '/')
+                if rel_path not in required_imgs:
+                    to_remove = os.path.join(root, file)
+                    try:
+                        os.remove(to_remove)
+                        print(f'Removed obsolete image: {rel_path}')
+                        removed_count += 1
+                    except OSError as e:
+                        print(f'Failed to remove obsolete image: {rel_path} ({e})')
 
     # Fetch all the images from the wiki and store them for local serving
     saved_image_paths = set()
@@ -259,6 +348,7 @@ def main():
     print('Total images saved: ' + str(success_img_dls))
     print('Total images skipped (already exists): ' + str(skipped_img_dls))
     print('Total images failed to save: ' + str(failed_img_dls))
+    print('Total obsolete images removed: ' + str(removed_count))
 
 
 main()

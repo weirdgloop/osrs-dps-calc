@@ -27,15 +27,15 @@ describe('melee', () => {
 });
 
 describe('ranged', () => {
-  test('L1 accuracy', () => testScenario('ranged', 1, findEquipment('Bow of faerdhinen'), 'maxAttackRoll', 2304));
-  test('L1 max hit', () => testScenario('ranged', 1, findEquipment('Bow of faerdhinen'), 'maxHit', 3));
-  test('L99 accuracy', () => testScenario('ranged', 99, findEquipment('Bow of faerdhinen'), 'maxAttackRoll', 21120));
-  test('L99 max hit', () => testScenario('ranged', 99, findEquipment('Bow of faerdhinen'), 'maxHit', 29));
+  test('L1 accuracy', () => testScenario('ranged', 1, findEquipment('Bow of Faerdhinen'), 'maxAttackRoll', 2304));
+  test('L1 max hit', () => testScenario('ranged', 1, findEquipment('Bow of Faerdhinen'), 'maxHit', 3));
+  test('L99 accuracy', () => testScenario('ranged', 99, findEquipment('Bow of Faerdhinen'), 'maxAttackRoll', 21120));
+  test('L99 max hit', () => testScenario('ranged', 99, findEquipment('Bow of Faerdhinen'), 'maxHit', 29));
 });
 
 describe('magic', () => {
-  test('L1 accuracy', () => testScenario('magic', 1, findEquipment('Trident of the seas'), 'maxAttackRoll', 948));
-  test('L1 max hit', () => testScenario('magic', 1, findEquipment('Trident of the seas'), 'maxHit', 1));
-  test('L99 accuracy', () => testScenario('magic', 99, findEquipment('Trident of the seas'), 'maxAttackRoll', 8690));
-  test('L99 max hit', () => testScenario('magic', 99, findEquipment('Trident of the seas'), 'maxHit', 28));
+  test('L1 accuracy', () => testScenario('magic', 1, findEquipment('Trident of the Seas'), 'maxAttackRoll', 948));
+  test('L1 max hit', () => testScenario('magic', 1, findEquipment('Trident of the Seas'), 'maxHit', 1));
+  test('L99 accuracy', () => testScenario('magic', 99, findEquipment('Trident of the Seas'), 'maxAttackRoll', 8690));
+  test('L99 max hit', () => testScenario('magic', 99, findEquipment('Trident of the Seas'), 'maxHit', 28));
 });

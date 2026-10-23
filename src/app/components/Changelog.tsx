@@ -28,7 +28,7 @@ const Changelog: React.FC = () => {
     <>
       <button
         type="button"
-        className="transition-all hover:scale-105 hover:text-white border border-body-500 bg-[#3e2816] py-1.5 px-2.5 rounded-md dark:bg-dark-300 dark:border-dark-200 md:flex items-center gap-1 hidden"
+        className="transition-all hover:scale-105 hover:text-white border border-body-500 bg-[#3e2816] py-1.5 px-2.5 rounded-md dark:bg-dark-300 dark:border-dark-200 md:flex items-center gap-1"
         onClick={() => setIsOpen(true)}
       >
         <IconNews size={20} aria-label="Changelog" />

@@ -4,16 +4,15 @@ import {
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { some } from 'd3-array';
 import { Monster } from '@/types/Monster';
+import { INFINITE_HEALTH_MONSTERS } from '@/lib/constants';
 
 export interface BoltContext {
   rangedLvl: number;
-  minHit: number;
   maxHit: number;
   zcb: boolean;
   spec: boolean;
   kandarinDiary: boolean;
   monster: Monster;
-  generateStandardDist: (acc: number, min: number, max: number) => HitDistribution;
 }
 export type BoltTransformer = (ctx: BoltContext) => HitTransformer;
 
@@ -54,7 +53,7 @@ export const diamondBolts: BoltTransformer = (ctx) => {
   const chance = 0.1 * kandarinFactor(ctx);
   const effectMax = Math.trunc(maxHit * (zcb ? 126 : 115) / 100);
 
-  const effectDist = ctx.generateStandardDist(1.0, ctx.minHit, effectMax);
+  const effectDist = HitDistribution.linear(1.0, 0, effectMax);
   return (h) => {
     if (h.accurate && zcb && spec) {
       return effectDist;
@@ -93,7 +92,7 @@ export const onyxBolts: BoltTransformer = (ctx) => {
   const chance = 0.11 * kandarinFactor(ctx);
   const effectMax = Math.trunc(maxHit * (zcb ? 132 : 120) / 100);
 
-  const effectDist = ctx.generateStandardDist(1.0, ctx.minHit, effectMax);
+  const effectDist = HitDistribution.linear(1.0, 0, effectMax);
   return (h) => {
     if (!h.accurate) {
       return new HitDistribution([new WeightedHit(1.0, [h])]);
@@ -110,9 +109,15 @@ export const onyxBolts: BoltTransformer = (ctx) => {
 
 export const rubyBolts: BoltTransformer = (ctx) => {
   const { zcb, spec, monster } = ctx;
-
   const chance = 0.06 * kandarinFactor(ctx);
-  const cap = zcb ? 110 : 100;
+  let cap;
+
+  if (INFINITE_HEALTH_MONSTERS.includes(ctx.monster.id)) {
+    cap = zcb ? 66 : 60;
+  } else {
+    cap = zcb ? 110 : 100;
+  }
+
   const effectDmg = Math.trunc(monster.inputs.monsterCurrentHp * (zcb ? 22 : 20) / 100);
   const effectHit = HitDistribution.single(1.0, [new Hitsplat(Math.min(cap, effectDmg))]);
 

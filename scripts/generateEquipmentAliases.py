@@ -9,53 +9,62 @@ from collections import namedtuple
 import requests
 import urllib.parse
 import re
+import json
 
 FILE_NAME = '../src/lib/EquipmentAliases.ts'
+MAPPING_DICT_FILE_NAME = '../cdn/json/equipment_aliases.json'
 WIKI_BASE = 'https://oldschool.runescape.wiki'
 API_BASE = WIKI_BASE + '/api.php'
 
-REQUIRED_PRINTOUTS = [
-    'Equipment slot',
-    'Item ID',
-    'Version anchor'
+BUCKET_API_FIELDS = [
+    'page_name',
+    'page_name_sub',
+    'infobox_bonuses.equipment_slot',
+    'item_id',
+    'version_anchor'
 ]
 
 
 def getEquipmentData():
-    equipment = {}
+    equipment = []
     offset = 0
+    fields_csv = ",".join(map(repr, BUCKET_API_FIELDS))
     while True:
         print('Fetching equipment info: ' + str(offset))
         query = {
-            'action': 'ask',
+            'action': 'bucket',
             'format': 'json',
-            'query': '[[Equipment slot::+]][[Item ID::+]]|?' + '|?'.join(REQUIRED_PRINTOUTS) + '|limit=500|offset=' + str(offset)
+            'query':
+            (
+                f"bucket('infobox_item')"
+                f".select({fields_csv})"
+                f".limit(500).offset({offset})"
+                f".where('infobox_bonuses.equipment_slot', '!=', bucket.Null())"
+                f".where('item_id', '!=', bucket.Null())"
+                f".join('infobox_bonuses', 'infobox_bonuses.page_name_sub', 'infobox_item.page_name_sub')"
+                f".orderBy('page_name_sub', 'asc').run()"
+            )
         }
         r = requests.get(API_BASE + '?' + urllib.parse.urlencode(query), headers={
             'User-Agent': 'osrs-dps-calc (https://github.com/weirdgloop/osrs-dps-calc)'
         })
         data = r.json()
 
-        if 'query' not in data or 'results' not in data['query']:
+        if 'bucket' not in data:
             # No results?
             break
 
-        equipment = equipment | data['query']['results']
+        equipment = equipment + data['bucket']
 
-        if 'query-continue-offset' not in data or int(data['query-continue-offset']) < offset:
+        # Bucket's API doesn't tell you when there are more results, so we'll just have to guess
+        if len(data['bucket']) == 500:
+            offset += 500
+        else:
             # If we are at the end of the results, break out of this loop
             break
-        else:
-            offset = data['query-continue-offset']
+
+
     return equipment
-
-
-def getPrintoutValue(prop):
-    # SMW printouts are all arrays, so ensure that the array is not empty
-    if not prop:
-        return None
-    else:
-        return prop[0]
 
 
 data = {}
@@ -72,7 +81,7 @@ EquipmentAliases = namedtuple('EquipmentAliases', ['base_name', 'base_version', 
 def handle_base_variant(all_items, variant_item, base_name, base_versions):
     global data
     base_variant = next((x for x in all_items if x['name'] == base_name and x['version'] in base_versions), None)
-    if base_variant:
+    if base_variant and base_variant['id'] != variant_item['id']:
         data.setdefault(base_variant['id'], EquipmentAliases(base_name, base_variant['version'], [])).alias_ids.append(variant_item['id'])
 
 one_off_renames = {
@@ -82,52 +91,64 @@ one_off_renames = {
     "Frozen abyssal whip": "Abyssal whip",
     "Holy ghrazi rapier": "Ghrazi rapier",
     "Holy sanguinesti staff": "Sanguinesti staff",
-    "Holy scythe of vitur": "Scythe of vitur",
-    "Sanguine scythe of vitur": "Scythe of vitur",
+    "Holy scythe of vitur": "Scythe of Vitur",
+    "Sanguine scythe of vitur": "Scythe of Vitur",
     "Dragon hunter crossbow (b)": "Dragon hunter crossbow",
     "Obsidian cape (r)": "Obsidian cape",
     "Elidinis' ward (or)": "Elidinis' ward (f)",
-    "Armadyl godsword (deadman)": "Armadyl godsword",
-    "Voidwaker (deadman)": "Voidwaker",
-    "Volatile nightmare staff (deadman)": "Volatile nightmare staff",
-    "Amulet of rancour (s)": "Amulet of rancour"
+    "Amulet of rancour (s)": "Amulet of rancour",
+    "Trident of the Seas (e) (o)": "Trident of the Seas (e)",
+    "Trident of the Seas (o)": "Trident of the Seas",
+    "Trident of the Swamp (e) (o)": "Trident of the Swamp (e)",
+    "Trident of the Swamp (o)": "Trident of the Swamp",
+    "Iban's staff (o)": "Iban's staff",
+    "Iban's staff (u) (o)": "Iban's staff (u)",
+    "Soulreaper axe (o)": "Soulreaper axe"
 }
 
 def main():
     global dataJs
 
-    # Grab the equipment info using SMW, including all the relevant printouts
+    # Grab the equipment info using Bucket
     wiki_data = getEquipmentData()
 
-    all_items = []
+    # Use an object rather than an array, so that we can't have duplicate items with the same page_name_sub
+    all_items = {}
 
     # Loop over the equipment data from the wiki
-    for k, v in wiki_data.items():
-        print('Processing ' + k)
-        # Sanity check: make sure that this equipment has printouts from SMW
-        if 'printouts' not in v:
-            print(k + ' is missing SMW printouts - skipping.')
+    for v in wiki_data:
+
+        print(f"Processing {v['page_name_sub']}")
+
+        try:
+            item_id = int(v.get('item_id')[0]) if v.get('item_id') else None
+        except ValueError:
+            # Item has an invalid ID, do not show it here as it's probably historical or something.
+            print("Skipping - invalid item ID (not an int)")
             continue
 
-        po = v['printouts']
+        if item_id in all_items:
+            # Skip duplicates although the object key also prevents this
+            continue
 
-        all_items.append({
-            'name': k.rsplit('#', 1)[0],
-            'id': getPrintoutValue(po['Item ID']),
-            'version': getPrintoutValue(po['Version anchor']) or ''
-        })
+        all_items[item_id] = {
+            'name': v['page_name'],
+            'id': item_id,
+            'version': v.get('version_anchor', ''),
+            'page_name_sub': v['page_name_sub'],
+        }
 
+    all_items = list(all_items.values())
     all_items.sort(key=lambda d: d.get('name'))
 
     for item in all_items:
-        slayer_helm_match = re.match(r"^(?:Black|Green|Red|Purple|Turquoise|Hydra|Twisted|Tztok|Vampyric|Tzkal|Araxyte) slayer helmet( \(i\))?$", item['name'])
+        slayer_helm_match = re.match(r"^(?:Black|Green|Red|Purple|Turquoise|Hydra|Twisted|Tztok|Vampyric|Tzkal|Araxyte|Hooded|Demonic|Radiant|Oathplate) slayer helmet( \(i\))?$", item['name'])
         sanguine_torva_match = re.match(r"^Sanguine t(orva (full helm|platebody|platelegs))$", item['name'])
-        decoration_kit_match = re.match(r"(.*)\((?:g|t|(h)\d|Arrav|Asgarnia|Dorgeshuun|Dragon|Fairy|Guthix|HAM|Horse|Jogre|Kandarin|Misthalin|Money|Saradomin|Skull|Varrock|Zamorak|or|cr|Hallowed|Trailblazer|Ithell|Iorwerth|Trahaearn|Cadarn|Crwys|Meilyr|Hefin|Amlodd|upgraded|light|dark|dusk|lit)\)$", item['name'], re.IGNORECASE)
+        decoration_kit_match = re.match(r"(.*)\((?:g|t|(h)\d|Arrav|Asgarnia|Dorgeshuun|Dragon|Fairy|Guthix|HAM|Horse|Jogre|Kandarin|Misthalin|Money|Saradomin|Skull|Varrock|Zamorak|or|cr|Hallowed|Trailblazer|Ithell|Iorwerth|Trahaearn|Cadarn|Crwys|Meilyr|Hefin|Amlodd|upgraded|light|dark|dusk|lit|deadman)\)$", item['name'], re.IGNORECASE)
         magic_robe_kit_match = re.match(r"^(?:Dark|Light|Twisted) ((?:infinity|ancestral) .*)$", item['name'])
 
         # One off items:
         if item['name'] in one_off_renames:
-            assert item['version'] in ['', 'Empty', 'Charged', 'Uncharged'], "Only certain versions are expected: %s" % item
             handle_base_variant(all_items, item, one_off_renames[item['name']], [item['version']])
         # Ava's assembler variants (Must be before locked due to the base name change)
         elif re.match(r"^Masori assembler(|\(l\))$", item['name']):
@@ -153,7 +174,8 @@ def main():
         elif decoration_kit_match:
             base_item_name = decoration_kit_match.group(1).strip()
             # Crystal armor should not be aliases across Active and Inactive
-            if item['version'] in ['Active', 'Inactive']:
+            # Nor should items with weapon poison
+            if item['version'] in ['Active', 'Inactive', 'Unpoisoned', 'Poison', 'Poison+', 'Poison++']:
                 handle_base_variant(all_items, item, base_item_name, [item['version']])
             elif base_item_name.endswith(" helm") and decoration_kit_match.group(2) == "h":
                 handle_base_variant(all_items, item, base_item_name.replace(" helm", " full helm"), [item['version']])
@@ -167,6 +189,14 @@ def main():
         # Merge Soul Wars/Emir's Arena versions -> Nightmare Zone
         elif re.match(r"^(Soul Wars|Emir's Arena)$", item['version']):
             handle_base_variant(all_items, item, item['name'], ['Nightmare Zone'])
+        # Raging Echo League variants
+        elif re.match(r"^Echo (ahrim|venator|virtus)", item['name']):
+            name = item['name'].removeprefix("Echo ")
+            name = name[0].upper() + name[1:]
+            if ("Ahrim's" in name):
+                handle_base_variant(all_items, item, name, "Undamaged")
+            else:
+                handle_base_variant(all_items, item, name, item['version'])
         # Degraded variants
         elif re.match(r"^(Broken|0|25|50|75|100)$", item['version']):
             handle_base_variant(all_items, item, item['name'], ['Undamaged'])
@@ -179,14 +209,36 @@ def main():
         # Granite maul variants
         elif (item['name'] == "Granite maul" and item['version'] != "Normal") or item['name'] == "Granite maul (or)":
             handle_base_variant(all_items, item, 'Granite maul', ['Normal'])
+        # Radiant oathplate variants
+        elif re.match(r"^Radiant", item['name']):
+            handle_base_variant(all_items, item, item['name'].replace("Radiant ", "").capitalize(), '')
+        elif re.match("^Black mask", item['name']):
+            handle_base_variant(all_items, item, item['name'], ['(10)'])
+        elif item['name'] == "Void seal" and item['version'] != "(8)":
+            handle_base_variant(all_items, item, item['name'], ['(8)'])
+        # Ring of suffering (i) and (ri) (NMZ/EA/SW)
+        elif re.match(r"Ring of suffering \(r?i\)", item["name"]):
+            handle_base_variant(all_items, item, item['name'], [item['version']])
+        # Agility cape equipped and unequipped variants
+        # NOTE: It's not really possible to ever have the unequipped variants come through in a sync
+        #       but this'll stop duplicate entries appearing in the equipment search
+        elif re.match(r"^Agility cape", item["name"]):
+            handle_base_variant(all_items, item, item['name'], [item['version']])
 
+    mapping_dict = {}
     for k, v in sorted(data.items(), key=lambda item: item[1].base_name):
         dataJs += '\n  %s: %s, // %s%s' % (k, v.alias_ids, v.base_name, f"#{v.base_version}" if v.base_version else "")
+        for id in v.alias_ids:
+            mapping_dict[id] = k
 
     dataJs += '\n};\n\nexport default equipmentAliases;\n'
 
     with open(FILE_NAME, 'w') as f:
         print('Saving to Typescript at file: ' + FILE_NAME)
         f.write(dataJs)
+
+    with open(MAPPING_DICT_FILE_NAME, 'w') as f:
+        print('Saving direct mapping at file: ' + MAPPING_DICT_FILE_NAME)
+        json.dump(mapping_dict, f, ensure_ascii=False, indent=2)
 
 main()

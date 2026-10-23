@@ -1,5 +1,5 @@
 import { Monster } from '@/types/Monster';
-import { ARAXXOR_IDS } from '@/lib/constants';
+import { ARAXXOR_IDS, YAMA_IDS } from '@/lib/constants';
 
 const applyMonsterPhases = (m: Monster): Monster => {
   if (!m.inputs.phase) {
@@ -12,6 +12,20 @@ const applyMonsterPhases = (m: Monster): Monster => {
       skills: {
         ...m.skills,
         def: m.skills.def + 35,
+        magic: m.skills.magic + 28,
+        ranged: m.skills.ranged + 31,
+      },
+    };
+  }
+
+  // yama goes to 60 magic defence if the tank is using magic
+  if (YAMA_IDS.includes(m.id) && m.version !== 'Phase 3') {
+    const mdef = m.inputs.phase === 'Tank using magic' ? 60 : -30;
+    return {
+      ...m,
+      defensive: {
+        ...m.defensive,
+        magic: mdef,
       },
     };
   }

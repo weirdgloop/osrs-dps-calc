@@ -1,4 +1,6 @@
-import React, { Fragment, PropsWithChildren, ReactNode } from 'react';
+import React, {
+  Fragment, PropsWithChildren, ReactNode, useEffect,
+} from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { classNames } from '@/utils';
 import { IconX } from '@tabler/icons-react';
@@ -9,12 +11,25 @@ interface IModalProps {
   title: string | ReactNode;
   hideCloseButton?: boolean;
   footerChildren?: ReactNode;
+  maxWidth?: string;
+  onOpen?: () => void;
 }
 
 const Modal: React.FC<PropsWithChildren<IModalProps>> = (props) => {
   const {
-    isOpen, setIsOpen, title, children, hideCloseButton, footerChildren,
+    isOpen,
+    setIsOpen,
+    title,
+    children,
+    hideCloseButton,
+    footerChildren,
+    maxWidth,
+    onOpen,
   } = props;
+
+  useEffect(() => {
+    if (isOpen && onOpen) onOpen();
+  }, [isOpen, onOpen]);
 
   return (
     <Transition
@@ -30,7 +45,7 @@ const Modal: React.FC<PropsWithChildren<IModalProps>> = (props) => {
       <Dialog onClose={() => setIsOpen(false)}>
         <div className="fixed inset-0 bg-black/60" aria-hidden="true" />
         <div className="fixed inset-0 flex items-center justify-center p-4">
-          <Dialog.Panel className="w-full max-w-lg rounded-xl bg-white dark:bg-dark-300 dark:text-white text-black shadow-xl">
+          <Dialog.Panel className={`w-full ${maxWidth ?? 'max-w-lg'} rounded-xl bg-white dark:bg-dark-300 dark:text-white text-black shadow-xl`}>
             <Dialog.Title className="py-3 text-md bg-btns-300 dark:bg-dark-500 font-bold rounded-t-lg text-center text-white font-serif select-none relative flex justify-center items-center">
               {title}
               {!hideCloseButton && (
@@ -50,7 +65,7 @@ const Modal: React.FC<PropsWithChildren<IModalProps>> = (props) => {
                 </button>
               )}
             </Dialog.Title>
-            <div className="px-4 py-2 max-w-xl my-2 mx-auto">
+            <div className={`px-4 py-2 ${maxWidth ?? 'max-w-xl'} my-2 mx-auto`}>
               {children}
             </div>
             {footerChildren && (

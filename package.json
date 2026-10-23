@@ -22,9 +22,12 @@
     "@headlessui/react": "^1.7.18",
     "@headlessui/tailwindcss": "^0.2.0",
     "@tabler/icons-react": "^2.47.0",
+    "@xyflow/react": "^12.10.2",
     "axios": "^1.7.4",
+    "clsx": "^2.1.1",
     "d3-array": "^3.2.4",
-    "downshift": "^8.3.1",
+    "delay": "^7.0.0",
+    "downshift": "^8.3.2",
     "fuzzbunny": "^1.0.1",
     "localforage": "^1.10.0",
     "lodash.isequal": "^4.5.0",
@@ -36,6 +39,7 @@
     "react": "^18.2.0",
     "react-animate-height": "^3.2.3",
     "react-dom": "^18.2.0",
+    "react-hotkeys-hook": "^5.2.4",
     "react-toastify": "^10.0.4",
     "react-tooltip": "^5.26.0",
     "react-virtuoso": "^4.6.3",
@@ -76,5 +80,5 @@
   "resolutions": {
     "@types/react": "18.2.7"
   },
-  "packageManager": "yarn@4.1.0"
+  "packageManager": "yarn@4.9.2"
 }

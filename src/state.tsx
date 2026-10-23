@@ -1,35 +1,52 @@
+// noinspection FallThroughInSwitchStatementJS
+
 import {
   autorun, IReactionDisposer, IReactionPublic, makeAutoObservable, reaction, toJS,
 } from 'mobx';
 import React, { createContext, useContext } from 'react';
 import { PartialDeep } from 'type-fest';
 import * as localforage from 'localforage';
-import {
-  CalculatedLoadout, Calculator, IMPORT_VERSION, ImportableData, PlayerVsNPCCalculatedLoadout, Preferences, State, UI, UserIssue,
-} from '@/types/State';
 import merge from 'lodash.mergewith';
+import { toast } from 'react-toastify';
+import {
+  CalculatedLoadout,
+  Calculator,
+  IMPORT_VERSION,
+  ImportableData,
+  PlayerVsNPCCalculatedLoadout,
+  Preferences,
+  State,
+  UI,
+  UserIssue,
+} from '@/types/State';
 import {
   EquipmentPiece, Player, PlayerEquipment, PlayerSkills,
 } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
-import { toast } from 'react-toastify';
 import {
-  fetchPlayerSkills, fetchShortlinkData, getCombatStylesForCategory, PotionMap,
+  fetchPlayerSkills, fetchShortlinkData, getCombatStylesForCategory, getDefaultCombatStyle, isDefined, PotionMap,
 } from '@/utils';
 import { ComputeBasicRequest, ComputeReverseRequest, WorkerRequestType } from '@/worker/CalcWorkerTypes';
 import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
 import { availableEquipment, calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { CalcWorker } from '@/worker/CalcWorker';
 import { spellByName } from '@/types/Spell';
-import { NATURES_REPRISAL_MOCK_ID, NUMBER_OF_LOADOUTS } from '@/lib/constants';
-import { defaultLeaguesState } from '@/lib/LeaguesV';
+import {
+  DEFAULT_ATTACK_SPEED,
+  INFINITE_HEALTH_MONSTERS,
+  NUMBER_OF_LOADOUTS,
+} from '@/lib/constants';
 import { EquipmentCategory } from './enums/EquipmentCategory';
 import {
-  ARM_PRAYERS, BRAIN_PRAYERS, DEFENSIVE_PRAYERS, OFFENSIVE_PRAYERS, OVERHEAD_PRAYERS, Prayer,
+  ARM_PRAYERS,
+  BRAIN_PRAYERS,
+  DEFENSIVE_PRAYERS,
+  OFFENSIVE_PRAYERS,
+  OVERHEAD_PRAYERS,
+  Prayer,
 } from './enums/Prayer';
 import Potion from './enums/Potion';
-import { startPollingForRuneLite, WikiSyncer } from './wikisync/WikiSyncer';
 
 const EMPTY_CALC_LOADOUT = {} as CalculatedLoadout;
 
@@ -52,7 +69,7 @@ const generateInitialEquipment = () => {
 
 export const generateEmptyPlayer = (name?: string): Player => ({
   name: name ?? 'Loadout 1',
-  style: getCombatStylesForCategory(EquipmentCategory.NONE)[0],
+  style: getDefaultCombatStyle(EquipmentCategory.NONE),
   skills: {
     atk: 99,
     def: 99,
@@ -76,6 +93,7 @@ export const generateEmptyPlayer = (name?: string): Player => ({
     herblore: 0,
   },
   equipment: generateInitialEquipment(),
+  attackSpeed: DEFAULT_ATTACK_SPEED,
   prayers: [],
   bonuses: {
     str: 0,
@@ -101,7 +119,7 @@ export const generateEmptyPlayer = (name?: string): Player => ({
     potions: [],
     onSlayerTask: true,
     inWilderness: false,
-    kandarinDiary: false,
+    kandarinDiary: true,
     chargeSpell: false,
     markOfDarknessSpell: false,
     forinthrySurge: false,
@@ -111,9 +129,6 @@ export const generateEmptyPlayer = (name?: string): Player => ({
     usingSunfireRunes: false,
   },
   spell: null,
-  leagues: {
-    five: defaultLeaguesState(),
-  },
 });
 
 export const parseLoadoutsFromImportedData = (data: ImportableData) => data.loadouts.map((loadout, i) => {
@@ -185,6 +200,10 @@ class GlobalState implements State {
     },
     attributes: [MonsterAttribute.DEMON],
     weakness: null,
+    immunities: {
+      burn: null,
+    },
+    is_slayer_monster: true,
     inputs: { ...INITIAL_MONSTER_INPUTS },
   };
 
@@ -239,13 +258,6 @@ class GlobalState implements State {
 
   private _debug: boolean = false;
 
-  /**
-   * Map of WikiSync instances (PORT -> WIKISYNCER) that we attempt to persistently connect to.
-   * The WikiSync RuneLite plugin includes a websocket server which exposes player information from the local
-   * RuneLite client to the DPS calculator.
-   */
-  wikisync: Map<number, WikiSyncer> = new Map();
-
   private storageUpdater?: IReactionDisposer;
 
   constructor() {
@@ -286,10 +298,6 @@ class GlobalState implements State {
         this.recalculateEquipmentBonusesFromGearAll();
       }
     }));
-
-    if ((process.env.NEXT_PUBLIC_DISABLE_WS || 'false') !== 'true') {
-      this.wikisync = startPollingForRuneLite();
-    }
   }
 
   set debug(debug: boolean) {
@@ -334,7 +342,6 @@ class GlobalState implements State {
 
     // Determine the current global/UI-related issues
     // ex. is.push({ type: UserIssueType.MONSTER_UNIQUE_EFFECTS, message: 'This monster has unique effects that are not yet accounted for. Results may be inaccurate.' });
-
     // Add in the issues returned from the calculator
     for (const l of Object.values(this.calc.loadouts)) {
       if (l.userIssues) is = [...is, ...l.userIssues];
@@ -360,14 +367,6 @@ class GlobalState implements State {
   }
 
   /**
-   * Returns the WikiSyncer instances that have user information attached (AKA the user is logged in),
-   * rather than all of the instances that have an attempted connection.
-   */
-  get validWikiSyncInstances() {
-    return new Map([...this.wikisync].filter(([, v]) => v.username));
-  }
-
-  /**
    * Initialises the autorun function for updating dps-calc-state when something changes.
    * This should only ever be called once.
    */
@@ -378,7 +377,8 @@ class GlobalState implements State {
     }
     this.storageUpdater = autorun(() => {
       // Save their application state to browser storage
-      localforage.setItem('dps-calc-state', toJS(this.asImportableData)).catch(() => {});
+      localforage.setItem('dps-calc-state', toJS(this.asImportableData)).catch(() => {
+      });
     });
   }
 
@@ -391,19 +391,17 @@ class GlobalState implements State {
     this.calcWorker = worker;
   }
 
-  recalculateEquipmentBonusesFromGear(loadoutIx?: number) {
+  updateEquipmentBonuses(loadoutIx?: number) {
     loadoutIx = loadoutIx !== undefined ? loadoutIx : this.selectedLoadout;
 
-    const totals = calculateEquipmentBonusesFromGear(this.loadouts[loadoutIx], this.monster);
-    this.updatePlayer({
-      bonuses: totals.bonuses,
-      offensive: totals.offensive,
-      defensive: totals.defensive,
-    }, loadoutIx);
+    this.loadouts[loadoutIx] = merge(
+      this.loadouts[loadoutIx],
+      calculateEquipmentBonusesFromGear(this.loadouts[loadoutIx], this.monster),
+    );
   }
 
   recalculateEquipmentBonusesFromGearAll() {
-    this.loadouts.forEach((_, i) => this.recalculateEquipmentBonusesFromGear(i));
+    this.loadouts.forEach((_, i) => this.updateEquipmentBonuses(i));
   }
 
   updateUIState(ui: PartialDeep<UI>) {
@@ -450,23 +448,42 @@ class GlobalState implements State {
       case 1:
         data.monster.inputs.phase = data.monster.inputs.tormentedDemonPhase;
 
-      case 2:
+      case 2: // reserved: used during leagues 5
+      case 3: // reserved: used during leagues 5
+      case 4: // reserved: used during leagues 5
+      case 5:
         data.loadouts.forEach((l) => {
-          if (l.equipment?.weapon?.id === NATURES_REPRISAL_MOCK_ID) {
-            l.equipment.weapon.category = EquipmentCategory.MULTISTYLE;
+          /* eslint-disable @typescript-eslint/dot-notation */
+          /* eslint-disable @typescript-eslint/no-explicit-any */
+          if ((l as any)['leagues']) {
+            delete (l as any)['leagues'];
           }
+          /* eslint-enable @typescript-eslint/dot-notation */
+          /* eslint-enable @typescript-eslint/no-explicit-any */
         });
 
-      case 3:
-        data.loadouts.forEach((l) => {
-          if (!l.leagues?.five) {
-            l.leagues = { five: defaultLeaguesState() };
-          }
-        });
+      case 6:
+        // partyAvgMiningLevel becomes partySumMiningLevel
+        if (isDefined(data.monster.inputs.partyAvgMiningLevel)) {
+          data.monster.inputs.partySumMiningLevel = data.monster.inputs.partyAvgMiningLevel * data.monster.inputs.partySize;
+          delete data.monster.inputs.partyAvgMiningLevel;
+        }
+
+      case 7:
+        if (!isDefined(data.monster.immunities)) {
+          data.monster.immunities = {
+            burn: null,
+          };
+        }
+
+      case 8: // reserved: used during leagues 6
+
+      case 9: // reserved: used during leagues 6
 
       default:
     }
     /* eslint-enable no-fallthrough */
+    console.debug('IMPORT | ', data);
 
     if (data.monster) {
       let newMonster: PartialDeep<Monster> = {};
@@ -637,46 +654,36 @@ class GlobalState implements State {
   updatePlayer(player: PartialDeep<Player>, loadoutIx?: number) {
     loadoutIx = loadoutIx !== undefined ? loadoutIx : this.selectedLoadout;
 
+    const currentShield = this.loadouts[loadoutIx].equipment.shield;
+    const newShield = player.equipment?.shield;
+
+    const currentWeapon = this.loadouts[loadoutIx].equipment.weapon;
+
+    // Special handling for if a shield is equipped, and we're using a two-handed weapon
+    if (player.equipment?.shield && newShield !== undefined && currentWeapon?.isTwoHanded) {
+      player = { ...player, equipment: { ...player.equipment, weapon: null } };
+    }
+    // ...and vice-versa
+    if (player.equipment?.weapon && player.equipment?.weapon.isTwoHanded && currentShield?.name !== '') {
+      player = { ...player, equipment: { ...player.equipment, shield: null } };
+    }
+
     const eq = player.equipment;
     if (eq && (Object.hasOwn(eq, 'weapon') || Object.hasOwn(eq, 'shield'))) {
-      const currentWeapon = this.loadouts[loadoutIx].equipment.weapon;
       const newWeapon = player.equipment?.weapon;
 
       if (newWeapon !== undefined) {
         const oldWeaponCat = currentWeapon?.category || EquipmentCategory.NONE;
         const newWeaponCat = newWeapon?.category || EquipmentCategory.NONE;
         if ((newWeaponCat !== undefined) && (newWeaponCat !== oldWeaponCat) && !player.style) {
-          // If the weapon slot category was changed, we should reset the player's selected combat style to the first one that exists.
-          const styles = getCombatStylesForCategory(newWeaponCat);
-          const rapid = styles.find((e) => e.stance === 'Rapid');
-          if (rapid !== undefined) {
-            player.style = rapid;
-          } else {
-            // Would perhaps be worth it to make a similar thing for looking up
-            // aggressive?
-            player.style = styles[0];
-          }
+          player.style = getDefaultCombatStyle(newWeaponCat);
         }
-      }
-
-      const currentShield = this.loadouts[loadoutIx].equipment.shield;
-      const newShield = player.equipment?.shield;
-
-      // Special handling for if a shield is equipped, and we're using a two-handed weapon
-      if (player.equipment?.shield && newShield !== undefined && currentWeapon?.isTwoHanded) {
-        player = { ...player, equipment: { ...player.equipment, weapon: null } };
-      }
-      // ...and vice-versa
-      if (player.equipment?.weapon && newWeapon?.isTwoHanded && currentShield?.name !== '') {
-        player = { ...player, equipment: { ...player.equipment, shield: null } };
       }
     }
 
     this.loadouts[loadoutIx] = merge(this.loadouts[loadoutIx], player);
     if (!this.prefs.manualMode) {
-      if (eq || Object.hasOwn(player, 'spell') || Object.hasOwn(player, 'style')) {
-        this.recalculateEquipmentBonusesFromGear(loadoutIx);
-      }
+      this.updateEquipmentBonuses(loadoutIx);
     }
   }
 
@@ -803,7 +810,7 @@ class GlobalState implements State {
       request(WorkerRequestType.COMPUTE_REVERSE),
     );
 
-    if (this.prefs.showTtkComparison) {
+    if (this.prefs.showTtkComparison && !INFINITE_HEALTH_MONSTERS.includes(this.monster.id)) {
       promises.push(
         (async () => {
           const parallel = process.env.NEXT_PUBLIC_SERIAL_TTK !== 'true';

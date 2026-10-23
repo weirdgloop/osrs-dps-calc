@@ -1,5 +1,5 @@
 ### Common between dev scraper and release scraper
-FROM python:3-alpine AS scraper-base
+FROM ghcr.io/astral-sh/uv:alpine AS scraper-base
 
 # Copy in the python scripts
 RUN mkdir -p /srv/scripts
@@ -10,12 +10,12 @@ WORKDIR /srv/scripts
 RUN mkdir -p /srv/src/lib/
 
 # Install dependencies
-RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.txt
+RUN --mount=type=cache,target=/root/.cache/pip uv sync
 
 
 ### Util for regenerating /cdn on dev machines via docker
 FROM scraper-base AS scraper-dev
-CMD ["sh", "-c", "python generateEquipment.py && python generateMonsters.py && python generateEquipmentAliases.py"]
+CMD ["sh", "-c", "uv run generateEquipment.py && uv run generateMonsters.py && uv run generateEquipmentAliases.py"]
 
 ### Used below in release docker image
 FROM scraper-base AS scraper-image
@@ -24,9 +24,9 @@ FROM scraper-base AS scraper-image
 ADD ./cdn /srv/cdn
 
 # Regenerate the cdn dir
-RUN python generateEquipment.py
-RUN python generateEquipmentAliases.py
-RUN python generateMonsters.py
+RUN uv run generateEquipment.py
+RUN uv run generateEquipmentAliases.py
+RUN uv run generateMonsters.py
 
 
 

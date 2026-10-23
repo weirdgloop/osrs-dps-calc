@@ -1,4 +1,4 @@
-import { Monster } from '@/types/Monster';
+import { BurnImmunity, Monster } from '@/types/Monster';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { isCombatStyleType } from '@/types/PlayerCombatStyle';
 import monsters from '../../cdn/json/monsters.json';
@@ -21,6 +21,10 @@ export function getMonsters(): Omit<Monster, 'inputs'>[] {
       defensive: m.defensive,
       attributes: m.attributes as MonsterAttribute[],
       weakness: <Monster['weakness']>m.weakness || null,
+      immunities: {
+        burn: m.immunities.burn as BurnImmunity | null,
+      },
+      is_slayer_monster: m.is_slayer_monster || false,
     };
   });
 }
@@ -30,7 +34,7 @@ export const INITIAL_MONSTER_INPUTS: Monster['inputs'] = {
   toaInvocationLevel: 0,
   toaPathLevel: 0,
   partyMaxCombatLevel: 126,
-  partyAvgMiningLevel: 99,
+  partySumMiningLevel: 99,
   partyMaxHpLevel: 99,
   partySize: 1,
   monsterCurrentHp: 150,
@@ -43,6 +47,8 @@ export const INITIAL_MONSTER_INPUTS: Monster['inputs'] = {
     emberlight: 0,
     bgs: 0,
     tonalztic: 0,
+    seercull: 0,
+    ayak: 0,
   },
 };
 
@@ -82,6 +88,10 @@ export const CUSTOM_MONSTER_BASE: Monster = {
   },
   attributes: [],
   weakness: null,
+  immunities: {
+    burn: null,
+  },
+  is_slayer_monster: false,
   inputs: {
     ...INITIAL_MONSTER_INPUTS,
     monsterCurrentHp: 150,

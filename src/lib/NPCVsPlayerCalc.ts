@@ -9,6 +9,7 @@ import { ALWAYS_ACCURATE_MONSTERS, NPC_HARDCODED_MAX_HIT, SECONDS_PER_TICK } fro
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import { DetailKey } from '@/lib/CalcDetails';
 import { PrayerMap } from '@/enums/Prayer';
+import { sum } from 'd3-array';
 
 /**
  * Class for computing various NPC-vs-player metrics.
@@ -33,6 +34,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
   public getPlayerVsNPCCalc(): PlayerVsNPCCalc {
     if (this.memoizedPlayerVsNPCCalc === undefined) {
       this.memoizedPlayerVsNPCCalc = new PlayerVsNPCCalc(this.player, this.monster, <InternalOpts>{
+        loadoutName: `${this.opts.loadoutName}/forward`,
         disableMonsterScaling: true,
       });
     }
@@ -137,15 +139,16 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     const bonus = this.getPlayerDefensiveBonus();
 
     let effectiveLevel = this.trackAdd(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL, skills.def, boosts.def);
-    for (const p of prayers.filter((pr) => pr.factorDefence)) {
-      effectiveLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL_PRAYER, effectiveLevel, p.factorDefence!);
-    }
+    const numerator = sum(
+      prayers.filter((pr) => pr.factorDefence),
+      (p) => p.factorDefence![0] - 100,
+    );
+    effectiveLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL_PRAYER, effectiveLevel, [numerator + 100, 100]);
 
     if (this.isWearingTorags()) {
       const currentHealth = skills.hp + boosts.hp;
       const missingHealth = ((Math.round((skills.hp - currentHealth) / skills.hp * 100) / 100) * 100);
-      const factor = this.wearing('Gloves of the damned') ? 50 : 100;
-      effectiveLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL_TORAGS, effectiveLevel, [factor + missingHealth, factor]);
+      effectiveLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL_TORAGS, effectiveLevel, [1 + missingHealth, 100]);
     }
 
     if (style === 'magic') {
@@ -198,6 +201,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     const skills = this.monster.skills;
     const bonuses = this.monster.offensive;
     const name = this.monster.name;
+    const isCustomMonster = this.monster.id === -1;
 
     let maxHit = 0;
     if (['slash', 'crush', 'stab'].includes(style)) {
@@ -213,7 +217,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     // Some monsters have a hardcoded max hit. Let's overwrite the max hit with the real value here.
     if (Object.prototype.hasOwnProperty.call(NPC_HARDCODED_MAX_HIT, this.monster.id)) {
       maxHit = NPC_HARDCODED_MAX_HIT[this.monster.id];
-    } else if (style === 'magic' && this.monster.maxHit !== undefined && maxHit !== this.monster.maxHit) {
+    } else if (style === 'magic' && this.monster.maxHit !== undefined && maxHit !== this.monster.maxHit && !isCustomMonster) {
       // For now, if the monster is using the magic attack style and the max hit on the wiki is different to the max hit
       // returned by the standard calculation we're using above, then let's just use the wiki value. A lot of magic
       // monsters have a hardcoded max hit (see https://twitter.com/JagexAsh/status/1754447323222929712).

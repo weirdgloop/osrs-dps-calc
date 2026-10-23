@@ -1,0 +1,106 @@
+[
+  {
+    "id": 100001,
+    "name": "Yama",
+    "version": "Glyphic Attenuation",
+    "image": "Yama.png",
+    "level": 1238,
+    "speed": 8,
+    "style": [
+      "Melee (Slash)",
+      "Ranged",
+      "Magic"
+    ],
+    "size": 5,
+    "max_hit": "46 (auto-attacks)",
+    "skills": {
+      "atk": 400,
+      "def": 247,
+      "hp": 2875,
+      "magic": 275,
+      "ranged": 241,
+      "str": 402
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 100,
+      "magic_str": 65,
+      "ranged": 100,
+      "ranged_str": 80,
+      "str": 15
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 80,
+      "magic": 666,
+      "heavy": 666,
+      "standard": 666,
+      "light": 666,
+      "slash": 666,
+      "stab": 666
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
+  },
+  {
+    "id": 100001,
+    "name": "Yama",
+    "version": "Glyphic Attenuation, Phase 3",
+    "image": "Yama.png",
+    "level": 1238,
+    "speed": 8,
+    "style": [
+      "Melee (Slash)",
+      "Ranged",
+      "Magic"
+    ],
+    "size": 5,
+    "max_hit": "46 (auto-attacks)",
+    "skills": {
+      "atk": 400,
+      "def": 247,
+      "hp": 2875,
+      "magic": 275,
+      "ranged": 241,
+      "str": 402
+    },
+    "offensive": {
+      "atk": 50,
+      "magic": 100,
+      "magic_str": 65,
+      "ranged": 100,
+      "ranged_str": 80,
+      "str": 15
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 108,
+      "magic": 666,
+      "heavy": 666,
+      "standard": 666,
+      "light": 666,
+      "slash": 666,
+      "stab": 666
+    },
+    "attributes": [
+      "demon"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
+  }
+]

@@ -4,11 +4,11 @@ import {
   CalcRequestsUnion,
   CalcResponse,
   CalcResponsesUnion,
-  WORKER_JSON_REPLACER,
-  WORKER_JSON_REVIVER,
   WorkerRequestType,
 } from '@/worker/CalcWorkerTypes';
-import { Debouncer, DeferredPromise } from '@/utils';
+import {
+  Debouncer, DeferredPromise, WORKER_JSON_REPLACER, WORKER_JSON_REVIVER,
+} from '@/utils';
 import React, {
   createContext, useContext, useEffect, useState,
 } from 'react';

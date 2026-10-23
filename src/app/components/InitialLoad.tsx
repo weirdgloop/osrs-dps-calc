@@ -24,6 +24,10 @@ const InitialLoad: React.FC = observer(() => {
         // If there was a share ID provided, load the data for it into the calculator
         await store.loadShortlink(id);
         window.history.replaceState({}, '', process.env.NEXT_PUBLIC_BASE_PATH);
+
+        if (process.env.NEXT_PUBLIC_LOCAL_STORE_SHORTLINKS) {
+          store.startStorageUpdater();
+        }
       } else {
         // Else, try to load any previously saved session from localStorage
         try {

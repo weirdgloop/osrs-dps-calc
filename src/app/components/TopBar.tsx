@@ -6,7 +6,6 @@ import {
 import wiki from '@/public/img/Wiki@2x.webp';
 import React from 'react';
 import { observer } from 'mobx-react-lite';
-import Changelog from '@/app/components/Changelog';
 
 const TopBar: React.FC = observer(() => {
   const store = useStore();
@@ -26,7 +25,6 @@ const TopBar: React.FC = observer(() => {
           </div>
           <div className="block ml-6">
             <div className="flex text-body-200 text-xs font-medium space-x-2">
-              <Changelog />
               <a
                 href="https://discord.gg/JXeUnR9stP"
                 target="_blank"

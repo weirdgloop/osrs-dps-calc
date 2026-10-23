@@ -15,11 +15,12 @@ import { useStore } from '@/state';
 import Select from '@/app/components/generic/Select';
 import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent';
 import { toJS } from 'mobx';
-import { useTheme } from 'next-themes';
 import { max } from 'd3-array';
 import SectionAccordion from '@/app/components/generic/SectionAccordion';
 import hourglass from '@/public/img/Hourglass.png';
 import LazyImage from '@/app/components/generic/LazyImage';
+import { INFINITE_HEALTH_MONSTERS } from '@/lib/constants';
+import { IconAlertTriangle } from '@tabler/icons-react';
 
 export interface CustomTooltipProps extends TooltipProps<ValueType, NameType> {
   xAxisOption: typeof XAxisOptions[0],
@@ -84,9 +85,6 @@ const TtkComparison: React.FC = observer(() => {
   const calcResults = toJS(store.calc.loadouts);
   const loadouts = toJS(store.loadouts);
 
-  const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme === 'dark';
-
   const [xAxisType, setXAxisType] = useState<{ label: string, value: XAxisType } | null | undefined>(XAxisOptions[0]);
 
   // worth noting that if the worker is behind,
@@ -121,9 +119,7 @@ const TtkComparison: React.FC = observer(() => {
   const generateLines = useCallback(() => {
     const lines: React.ReactNode[] = [];
 
-    const strokeColours = isDark
-      ? ['cyan', 'yellow', 'lime', 'orange', 'pink']
-      : ['blue', 'chocolate', 'green', 'sienna', 'purple'];
+    const strokeColours = ['cyan', 'yellow', 'lime', 'orange', 'pink', '#8B9BE8'];
     for (let i = 0; i < Object.values(calcResults).length; i++) {
       // Make sure that the loadout we're plotting actually exists
       if (!loadouts[i]) continue;
@@ -133,7 +129,9 @@ const TtkComparison: React.FC = observer(() => {
       strokeColours.push(colour);
     }
     return lines;
-  }, [isDark, calcResults, loadouts]);
+  }, [calcResults, loadouts]);
+
+  const infiniteHealth = useMemo(() => INFINITE_HEALTH_MONSTERS.includes(store.monster.id), [store.monster.id]);
 
   return (
     <SectionAccordion
@@ -148,7 +146,17 @@ const TtkComparison: React.FC = observer(() => {
         </div>
       )}
     >
-      {data && (
+      {infiniteHealth && (
+        <div
+          className="w-full bg-yellow-500 text-white px-4 py-1 text-sm border-b border-yellow-400 flex items-center gap-2"
+        >
+          <IconAlertTriangle className="text-orange-200" />
+          <div>
+            A time-to-kill distribution cannot be shown for this monster.
+          </div>
+        </div>
+      )}
+      {!infiniteHealth && data && (
         <div className="px-6 py-4">
           <ResponsiveContainer width="100%" height={250}>
             <LineChart

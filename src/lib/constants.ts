@@ -1,12 +1,11 @@
 import { CombatStyleStance } from '@/types/PlayerCombatStyle';
 
-export const NATURES_REPRISAL_MOCK_ID = 1000012;
-
-export const DRYGORE_BLOWPIPE_MOCK_ID = 1000004;
 export const BLOWPIPE_IDS: number[] = [
   12926, // regular
   28688, // blazing
-  DRYGORE_BLOWPIPE_MOCK_ID,
+  31575, // camphor
+  31579, // ironwood
+  31583, // rosewood
 ];
 
 // The maximum number of loadouts that users can have. Do not lower it, else it will cause share link issues.
@@ -41,7 +40,7 @@ export const ZEBAK_IDS = [
 ];
 
 export const TOA_OBELISK_IDS = [
-  11750, 11751, 11752,
+  11751, 11750, 11752,
 ];
 
 export const P2_WARDEN_IDS = [
@@ -141,6 +140,38 @@ export const TOB_EM_MONSTER_IDS = [
   10837, 10841, 10842, 10843, 10844, 10845, // verzik web + nylos
 ];
 
+/** IDs of monsters that are present in The Gauntlet.
+ * Used to sort equipment
+ */
+export const GAUNTLET_MONSTER_IDS = [
+  9021, // Crystalline Hunllef
+  9026, // Crystalline Rat
+  9027, // Crystalline Spider
+  9028, // Crystalline Bat
+  9029, // Crystalline Unicorn
+  9030, // Crystalline Scorpion
+  9031, // Crystalline Wolf
+  9032, // Crystalline Bear
+  9033, // Crystalline Dragon
+  9034, // Crystalline Dark Beast
+];
+
+/** IDs of monsters that are present in The Corrupted Gauntlet.
+ * Used to sort equipment
+ */
+export const CORRUPTED_GAUNTLET_MONSTER_IDS = [
+  9035, // Corrupted Hunllef
+  9040, // Corrupted Rat
+  9041, // Corrupted Spider
+  9042, // Corrupted Bat
+  9043, // Corrupted Unicorn
+  9044, // Corrupted Scorpion
+  9045, // Corrupted Wolf
+  9046, // Corrupted Bear
+  9047, // Corrupted Dragon
+  9048, // Corrupted Dark Beast
+];
+
 /**
  * IDs of Tekton from the Chambers of Xeric.
  * Separated due to different defence scaling rules.
@@ -226,6 +257,33 @@ export const ICE_DEMON_IDS = [
   7585, // cm
 ];
 
+export const VESPINE_SOLDIER_IDS = [
+  7538, 7539,
+];
+
+export const DEATHLY_RANGER_IDS = [ // cox tightrope rangers
+  7559,
+];
+
+export const VESPULA_IDS = [
+  7530, 7531, 7532,
+];
+
+export const COX_MAGIC_IS_DEFENSIVE_IDS = [
+  ...DEATHLY_RANGER_IDS,
+  ...TEKTON_IDS,
+  ...ABYSSAL_PORTAL_IDS,
+  ...VESPULA_IDS,
+  ...VESPINE_SOLDIER_IDS,
+  ...OLM_MELEE_HAND_IDS,
+  ...OLM_MAGE_HAND_IDS,
+];
+
+export const COX_USE_SINGLES_SCALING_IDS = [
+  ...SCAVENGER_BEAST_IDS,
+  ...VESPINE_SOLDIER_IDS,
+];
+
 /**
  * IDs of the Fragment of Seren.
  */
@@ -292,9 +350,6 @@ export const IMMUNE_TO_MELEE_DAMAGE_NPC_IDS = [
   7706, // zuk
   7708, // Jal-MejJak
   12214, 12215, 12219, // leviathan
-  7852, 7853, 7884, 7885, // dawn
-  ...OLM_MAGE_HAND_IDS,
-  ...OLM_HEAD_IDS,
   ...ZULRAH_IDS,
 ];
 
@@ -307,6 +362,14 @@ export const IMMUNE_TO_NON_SALAMANDER_MELEE_DAMAGE_NPC_IDS = [
  * Monsters immune to ranged damage.
  */
 export const IMMUNE_TO_RANGED_DAMAGE_NPC_IDS = [
+  ...TEKTON_IDS,
+  ...DUSK_IDS,
+  ...GLOWING_CRYSTAL_IDS,
+  ...WARRIORS_GUILD_CYCLOPES,
+];
+
+// as of now this is the same as the ranged immune npcs, but not sure if that will change later
+export const IMMUNE_TO_BURN_DAMAGE_NPC_IDS = [
   ...TEKTON_IDS,
   ...DUSK_IDS,
   ...GLOWING_CRYSTAL_IDS,
@@ -355,6 +418,22 @@ export const BA_ATTACKER_MONSTERS = [
 
 export const VARDORVIS_IDS = [12223, 12224, 12228, 12425, 12426, 13656];
 
+export const TITAN_BOSS_IDS = [
+  12596, // Fire elemental (Royal Titans)
+  14147, // Ice elemental (Royal Titans)
+];
+
+export const TITAN_ELEMENTAL_IDS = [
+  14150, // Fire elemental (Royal Titans)
+  14151, // Ice elemental (Royal Titans)
+];
+
+export const UNDERWATER_MONSTERS = [
+  7796, // lobstrosity
+];
+
+export const YAMA_VOID_FLARE_IDS = [14179];
+
 export const ACCURACY_PRECISION = 2;
 export const DPS_PRECISION = 3;
 export const EXPECTED_HIT_PRECISION = 1;
@@ -371,21 +450,41 @@ export const ONE_HIT_MONSTERS: number[] = [
   11193, // Flower (A Night at the Theatre)
 ];
 
+/**
+ * NPCs that will the player always max hits with using the correct combat style
+ */
 export const ALWAYS_MAX_HIT_MONSTERS = {
   melee: [
     11710, 11713, // baboon thrower
     12814, // frem warband archer
     ...TOA_WARDEN_CORE_EJECTED_IDS,
+    ...YAMA_VOID_FLARE_IDS,
+    14180, // Judge of Yama
   ],
   ranged: [
     11711, 11714, // baboon mage
     12815, // frem warband seer
+    11717, // cursed baboon
+    11715, // baboon shaman
+    ...YAMA_VOID_FLARE_IDS,
+    14180, // Judge of Yama
   ],
   magic: [
     11709, 11712, // baboon brawler
     12816, // frem warband berserker
+    14151, 14150, // Royal titans elementals
+    ...YAMA_VOID_FLARE_IDS,
+    14180, // Judge of Yama
   ],
 };
+
+/**
+ * NPCs that the player has 100% accuracy against
+ */
+export const GUARANTEED_ACCURACY_MONSTERS: number[] = [
+  5916, // Spawn (abyssal sire)
+  14180, // Judge of Yama
+];
 
 /**
  * NPCs that will always hit the player with their attacks, no matter what gear they are wearing
@@ -428,3 +527,32 @@ export const HUEYCOATL_IDS = [
 export const HUEYCOATL_PHASES = ['Without Pillar', 'With Pillar'];
 export const HUEYCOATL_PHASE_IDS = [...HUEYCOATL_HEAD_IDS, ...HUEYCOATL_TAIL_IDS]; // body can't receive pillar buff
 HUEYCOATL_PHASE_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = HUEYCOATL_PHASES; });
+
+export const ROYAL_TITANS_PHASES = ['In Melee Range', 'Out of Melee Range'];
+TITAN_BOSS_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = ROYAL_TITANS_PHASES; });
+
+export const DOOM_OF_MOKHAIOTL_IDS = [14707];
+export const DOOM_OF_MOKHAIOTL_PHASES = ['Normal', 'Shielded', 'Burrowing'];
+DOOM_OF_MOKHAIOTL_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = DOOM_OF_MOKHAIOTL_PHASES; });
+
+export const ABYSSAL_SIRE_PHASES = ['Standard', 'Transition'];
+export const ABYSSAL_SIRE_TRANSITION_IDS = [5886, 5889, 5891];
+ABYSSAL_SIRE_TRANSITION_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = ABYSSAL_SIRE_PHASES; });
+
+export const YAMA_IDS = [14176];
+export const YAMA_PHASES = ['Tank using magic', 'Tank not using magic'];
+YAMA_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = YAMA_PHASES; });
+
+export const MAGGOT_KING_ID = [15742];
+export const MAGGOT_KING_PHASES = ['Standard', 'Melee Punish'];
+MAGGOT_KING_ID.forEach((id) => { MONSTER_PHASES_BY_ID[id] = MAGGOT_KING_PHASES; });
+
+export const MAD_ANGEL_IDS = [16309, 16315, 16305, 16314];
+export const MAD_ANGEL_PHASES = ['Standard', 'Sword Cleave', 'Perfect Lightning'];
+MAD_ANGEL_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = MAD_ANGEL_PHASES; });
+
+export const INFINITE_HEALTH_MONSTERS: number[] = [
+  14779, // gemstone crab
+];
+
+export const ECLIPSE_MOON_IDS = [13012];

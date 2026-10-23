@@ -231,3 +231,32 @@ tbody th.t-group-header {
 .changelog-list li:first-child {
   margin-top: 0;
 }
+
+/* React Flow Controls */
+.react-flow__controls-button {
+  background-color: #fff !important;
+  border-bottom: 1px solid #eee !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 26px !important;
+  height: 26px !important;
+}
+
+.react-flow__controls {
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.08) !important;
+  border-radius: 2px !important;
+  overflow: hidden !important;
+}
+
+.react-flow__controls-button:last-child {
+  border-bottom: none !important;
+}
+
+.react-flow__controls-button svg {
+  fill: #222 !important;
+}
+
+.react-flow__controls-button:hover {
+  background-color: #f4f4f4 !important;
+}

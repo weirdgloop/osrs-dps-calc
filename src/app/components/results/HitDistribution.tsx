@@ -5,20 +5,18 @@ import {
 import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent';
 import hitsplat from '@/public/img/hitsplat.webp';
 import zero_hitsplat from '@/public/img/zero_hitsplat.png';
-import { useTheme } from 'next-themes';
 import { useStore } from '@/state';
 import LazyImage from '@/app/components/generic/LazyImage';
 import SectionAccordion from '@/app/components/generic/SectionAccordion';
 import Toggle from '@/app/components/generic/Toggle';
 import { observer } from 'mobx-react-lite';
 import { max } from 'd3-array';
-import { toJS } from 'mobx';
+import { computed, toJS } from 'mobx';
 import { isDefined } from '@/utils';
-import { MeleeMastery } from '@/lib/LeaguesV';
 
 const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
-    const isZeroDmg = payload[0].payload.name === 0;
+    const isZeroDmg = parseInt(payload[0].payload.name) === 0;
 
     return (
       <div className="bg-white shadow rounded p-2 text-sm text-black flex items-center gap-2">
@@ -58,9 +56,6 @@ const HitDistribution: React.FC = observer(() => {
 
   const data = useMemo(() => ((prefs.hitDistShowSpec && specAvailable) ? thisLoadoutResult?.specHitDist : thisLoadoutResult?.hitDist) || [], [thisLoadoutResult, prefs.hitDistShowSpec, specAvailable]);
 
-  const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme === 'dark';
-
   const [tickCount, domainMax] = useMemo(() => {
     const highest = max(data, (d) => d.value as number)!;
     const stepsize = 10 ** Math.floor(Math.log10(highest) - 1);
@@ -68,6 +63,20 @@ const HitDistribution: React.FC = observer(() => {
     const count = 1 + Math.ceil(1 / stepsize * highest);
     return [count, ceilHighest];
   }, [data]);
+
+  const dataSliced = computed(() => {
+    if (data.length < 50) {
+      return data;
+    }
+
+    const aboveThreshold = data.filter((d) => (d.value as number) > 0.0001);
+    if (aboveThreshold.length === 0) {
+      return data;
+    }
+
+    const xMax = parseInt(aboveThreshold[aboveThreshold.length - 1].name as string);
+    return data.slice(0, xMax + 1);
+  }).get();
 
   return (
     <SectionAccordion
@@ -108,7 +117,7 @@ const HitDistribution: React.FC = observer(() => {
         </div>
         <ResponsiveContainer width="100%" height={225}>
           <BarChart
-            data={data}
+            data={dataSliced}
             margin={{ top: 11, left: 25, bottom: 20 }}
           >
             <XAxis
@@ -133,19 +142,11 @@ const HitDistribution: React.FC = observer(() => {
             <CartesianGrid stroke="gray" strokeDasharray="5 5" />
             <Tooltip
               content={(props) => <CustomTooltip {...props} />}
-              cursor={{ fill: isDark ? '#3c3226' : '#b0aa9a' }}
+              cursor={{ fill: '#3c3226' }}
             />
             <Bar dataKey="value" fill="tan" isAnimationActive={false} />
           </BarChart>
         </ResponsiveContainer>
-        {store.loadouts[selectedLoadout].leagues.five.melee >= MeleeMastery.MELEE_2 && (
-          <p className="text-sm text-gray-400 pt-2">
-            <em>
-              Echoes are intentionally omitted from the above graph for clarity,
-              but are included in all other calculations.
-            </em>
-          </p>
-        )}
       </div>
     </SectionAccordion>
   );

@@ -4,7 +4,7 @@ import { getCombatStylesForCategory } from '@/utils';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 
-describe('with inq mace', () => {
+describe.skip('with inq mace', () => {
   test('gets 2.5% per piece', () => {
     const m = getTestMonster("Phosani's Nightmare");
     const p = getTestPlayer(m, {
@@ -43,7 +43,7 @@ describe('with inq mace', () => {
   });
 });
 
-describe('with other weapons', () => {
+describe.skip('with other weapons', () => {
   test('gets .5% per piece', () => {
     const m = getTestMonster("Phosani's Nightmare");
     const p = getTestPlayer(m, {

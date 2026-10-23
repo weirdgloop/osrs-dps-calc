@@ -8,12 +8,13 @@ import { PartialDeep } from 'type-fest';
 import merge from 'lodash.mergewith';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
-import { ChartAnnotation, ChartEntry } from '@/types/State';
 import { DPS_PRECISION } from '@/lib/constants';
+import { ChartAnnotation, ChartEntry } from '@/types/Charts';
 
 export enum CompareXAxis {
   MONSTER_DEF,
   MONSTER_MAGIC,
+  MONSTER_MAGIC_DEF,
   MONSTER_HP,
   PLAYER_ATTACK_LEVEL,
   PLAYER_STRENGTH_LEVEL,
@@ -21,6 +22,9 @@ export enum CompareXAxis {
   PLAYER_MAGIC_LEVEL,
   STAT_DECAY_RESTORE,
   PLAYER_DEFENCE_LEVEL,
+  PLAYER_MELEE_STRENGTH_BONUS,
+  PLAYER_RANGED_STRENGTH_BONUS,
+  PLAYER_MAGIC_STRENGTH_BONUS,
 }
 
 export enum CompareYAxis {
@@ -65,6 +69,7 @@ export default class Comparator {
     this.yAxis = yAxis;
 
     this.commonOpts = {
+      loadoutName: 'comparator',
       disableMonsterScaling: true,
     };
   }
@@ -99,12 +104,18 @@ export default class Comparator {
 
       case CompareXAxis.MONSTER_MAGIC:
         for (let newMagic = this.baseMonster.skills.magic; newMagic >= 0; newMagic--) {
-          yield monsterInput(newMagic, { skills: { def: newMagic } });
+          yield monsterInput(newMagic, { skills: { magic: newMagic } });
+        }
+        return;
+
+      case CompareXAxis.MONSTER_MAGIC_DEF:
+        for (let newMagicDef = Math.max(this.baseMonster.defensive.magic, 0); newMagicDef >= 0; newMagicDef--) {
+          yield monsterInput(newMagicDef, { defensive: { magic: newMagicDef } });
         }
         return;
 
       case CompareXAxis.MONSTER_HP: {
-        for (let newHp = this.baseMonster.skills.hp; newHp >= 0; newHp--) {
+        for (let newHp = this.baseMonster.skills.hp; newHp >= 1; newHp--) {
           yield {
             xValue: newHp,
             loadouts: this.baseLoadouts,
@@ -171,6 +182,27 @@ export default class Comparator {
             loadouts: restoredLoadouts,
             monster: this.baseMonster,
           };
+        }
+        return;
+      }
+
+      case CompareXAxis.PLAYER_MELEE_STRENGTH_BONUS: {
+        for (let newStrBonus = 0; newStrBonus <= 225; newStrBonus++) {
+          yield playerInput(newStrBonus, { bonuses: { str: newStrBonus } });
+        }
+        return;
+      }
+
+      case CompareXAxis.PLAYER_RANGED_STRENGTH_BONUS: {
+        for (let newStrBonus = 0; newStrBonus <= 200; newStrBonus++) {
+          yield playerInput(newStrBonus, { bonuses: { ranged_str: newStrBonus } });
+        }
+        return;
+      }
+
+      case CompareXAxis.PLAYER_MAGIC_STRENGTH_BONUS: {
+        for (let newStrBonus = 0; newStrBonus <= 100; newStrBonus += 0.5) {
+          yield playerInput(newStrBonus, { bonuses: { magic_str: newStrBonus * 10 } });
         }
         return;
       }

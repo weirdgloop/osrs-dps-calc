@@ -62,6 +62,33 @@ export const classNames = (...classes: string[]) => classes.filter(Boolean).join
 const SHORTLINK_API = 'https://tools.runescape.wiki/osrs-dps/shortlink';
 const API_PROXY = 'https://oldschool.runescape.wiki/cors';
 
+export const WORKER_JSON_REPLACER = (k: string, v: Map<unknown, unknown> | Set<unknown> | never) => {
+  if (v instanceof Map) {
+    return {
+      _dataType: 'Map',
+      m: Array.from(v),
+    };
+  }
+  if (v instanceof Set) {
+    return {
+      _dataType: 'Set',
+      s: Array.from(v),
+    };
+  }
+  return v;
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const WORKER_JSON_REVIVER = (k: string, v: any) => {
+  if (typeof v === 'object' && v?._dataType === 'Map') {
+    return new Map(v.m);
+  }
+  if (typeof v === 'object' && v?._dataType === 'Set') {
+    return new Set(v.s);
+  }
+  return v;
+};
+
 /**
  * Fetch a player's skills (using the Hiscores API)
  * @param username
@@ -90,12 +117,14 @@ export const fetchPlayerSkills = async (username: string) => {
 };
 
 export const fetchShortlinkData = async (linkId: string): Promise<ImportableData> => {
-  const res = await axios.get<{ data: ImportableData }>(`${SHORTLINK_API}?id=${linkId}`);
-  return res.data.data;
+  const res = await axios.get<string>(`${SHORTLINK_API}?id=${linkId}`);
+  // dumb and inefficient but axios already converts valid JSON to a JS object
+  return (JSON.parse(JSON.stringify(res.data), WORKER_JSON_REVIVER)).data as ImportableData;
 };
 
 export const generateShortlink = async (data: ImportableData): Promise<string> => {
-  const res = await axios.post(SHORTLINK_API, data, {
+  const payload = JSON.stringify(data, WORKER_JSON_REPLACER);
+  const res = await axios.post(SHORTLINK_API, payload, {
     headers: {
       'Content-Type': 'application/json',
     },
@@ -409,6 +438,12 @@ export const CombatStyleMap: { [k in EquipmentCategory]: { [k: string]: { image:
   [EquipmentCategory.GUN]: {
     'Aim and Fire': { image: '128' },
   },
+  [EquipmentCategory.MULTI_MELEE]: {
+    Poke: { image: '254' },
+    Slash: { image: '256' },
+    Pound: { image: '255' },
+    Block: { image: '253' },
+  },
   [EquipmentCategory.AXE]: {
     Block: { image: '233' },
     Chop: { image: '234' },
@@ -552,16 +587,16 @@ export const CombatStyleMap: { [k in EquipmentCategory]: { [k: string]: { image:
     Flare: { image: '290' },
     Blaze: { image: '291' },
   },
-  [EquipmentCategory.MULTISTYLE]: {
-    Melee: { image: '289' },
-    Ranged: { image: '290' },
-    Magic: { image: '291' },
-  },
   [EquipmentCategory.DAGGER]: {},
   [EquipmentCategory.NONE]: {
     Punch: { image: '247' },
     Kick: { image: '248' },
     Block: { image: '249' },
+  },
+  [EquipmentCategory.FLAIL]: {
+    Chop: { image: '239' },
+    Block: { image: '237' },
+    Slash: { image: '238' },
   },
 };
 
@@ -621,11 +656,12 @@ export const getCombatStylesForCategory = (style: EquipmentCategory): PlayerComb
         { name: 'Block', type: null, stance: null },
       ];
       break;
-    case EquipmentCategory.MULTISTYLE:
+    case EquipmentCategory.MULTI_MELEE:
       ret = [
-        { name: 'Melee', type: 'stab', stance: 'Aggressive' },
-        { name: 'Ranged', type: 'ranged', stance: 'Rapid' },
-        { name: 'Magic', type: 'magic', stance: 'Defensive' },
+        { name: 'Poke', type: 'stab', stance: 'Accurate' },
+        { name: 'Slash', type: 'slash', stance: 'Aggressive' },
+        { name: 'Pound', type: 'crush', stance: 'Aggressive' },
+        { name: 'Block', type: 'slash', stance: 'Defensive' },
       ];
       break;
     case EquipmentCategory.PARTISAN:
@@ -774,6 +810,13 @@ export const getCombatStylesForCategory = (style: EquipmentCategory): PlayerComb
         { name: 'Deflect', type: 'slash', stance: 'Defensive' },
       ];
       break;
+    case EquipmentCategory.FLAIL:
+      ret = [
+        { name: 'Chop', type: 'slash', stance: 'Accurate' },
+        { name: 'Slash', type: 'slash', stance: 'Aggressive' },
+        { name: 'Block', type: 'slash', stance: 'Defensive' },
+      ];
+      break;
     default:
       ret = [];
       break;
@@ -790,3 +833,12 @@ export const getCombatStylesForCategory = (style: EquipmentCategory): PlayerComb
  * Returns true if the user is on macOS.
  */
 export const isMac = typeof window !== 'undefined' && /Mac OS X/i.test(navigator.userAgent);
+
+export const getDefaultCombatStyle = (category: EquipmentCategory): PlayerCombatStyle => {
+  const styles = getCombatStylesForCategory(category);
+
+  // Default to rapid or aggressive if available, or the first available style if not
+  return styles.find((s) => s.stance === 'Rapid')
+    ?? styles.find((s) => s.stance === 'Aggressive')
+    ?? styles[0];
+};

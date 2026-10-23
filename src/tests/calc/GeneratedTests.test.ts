@@ -882,7 +882,7 @@ describe('Generated tests', () => {
     });
 
     const { maxHit } = calculatePlayerVsNpc(monster, player);
-    expect(maxHit).toBe(22);
+    expect(maxHit).toBe(28);
   });
 
   test('Fire bolt with chaos gauntlets and tome of fire', () => {
@@ -950,6 +950,6 @@ describe('Generated tests', () => {
     });
 
     const { maxHit } = calculatePlayerVsNpc(monster, player);
-    expect(maxHit).toBe(24);
+    expect(maxHit).toBe(30);
   });
 });

@@ -7,7 +7,7 @@ import {
   some,
   sum,
 } from 'd3-array';
-import { ChartEntry } from '@/types/State';
+import { ChartEntry } from '@/types/Charts';
 
 export type HitTransformer = (hitsplat: Hitsplat) => HitDistribution;
 
@@ -95,13 +95,13 @@ export class WeightedHit {
     return this.probability * this.getSum();
   }
 
-  public getHash(): number {
-    let acc = 0;
+  public getHash(): bigint {
+    let acc = 0n;
     for (const hitsplat of this.hitsplats) {
-      acc <<= 8;
-      acc |= hitsplat.damage;
-      acc <<= 1;
-      acc |= (hitsplat.accurate ? 1 : 0);
+      acc <<= 8n;
+      acc |= BigInt(hitsplat.damage);
+      acc <<= 1n;
+      acc |= (hitsplat.accurate ? 1n : 0n);
     }
     return acc;
   }
@@ -122,6 +122,10 @@ export class HitDistribution {
     this.hits.push(w);
   }
 
+  public addHits(w: WeightedHit[]): void {
+    this.hits.push(...w);
+  }
+
   public zip(other: HitDistribution): HitDistribution {
     return new HitDistribution(
       cross(this.hits, other.hits)
@@ -129,14 +133,18 @@ export class HitDistribution {
     );
   }
 
-  public transform(t: HitTransformer, opts: TransformOpts = DEFAULT_TRANSFORM_OPTS): HitDistribution {
+  public wideTransform(t: HitTransformer, opts: TransformOpts = DEFAULT_TRANSFORM_OPTS): HitDistribution {
     const d = new HitDistribution([]);
     for (const h of this.hits) {
       for (const transformed of h.transform(t, opts).hits) {
         d.addHit(transformed);
       }
     }
-    return d.flatten();
+    return d;
+  }
+
+  public transform(t: HitTransformer, opts: TransformOpts = DEFAULT_TRANSFORM_OPTS): HitDistribution {
+    return this.wideTransform(t, opts).flatten();
   }
 
   public scaleProbability(factor: number): HitDistribution {
@@ -152,9 +160,12 @@ export class HitDistribution {
       )));
   }
 
+  /**
+   * Merges the probabilities of hits with identical damage values
+   */
   public flatten(): HitDistribution {
-    const acc = new Map<number, number>();
-    const hitLists = new Map<number, Hitsplat[]>();
+    const acc = new Map<bigint, number>();
+    const hitLists = new Map<bigint, Hitsplat[]>();
     for (const hit of this.hits) {
       const hash = hit.getHash();
       const prev = acc.get(hash);
@@ -295,7 +306,7 @@ export class AttackDistribution {
 
   get singleHitsplat(): HitDistribution {
     if (!this._singleHitsplat) {
-      this._singleHitsplat = this.zipped.cumulative();
+      this._singleHitsplat = this.dists.reduce((prev, curr) => prev.zip(curr).cumulative());
     }
     return this._singleHitsplat;
   }
@@ -357,6 +368,87 @@ export class AttackDistribution {
     }
 
     return ret;
+  }
+
+  public firstHitMax(): AttackDistribution {
+    if (this.dists.length === 0) {
+      return this;
+    }
+
+    const firstDist = this.dists[0];
+
+    const firstMax = max(
+      firstDist.hits
+        .filter((h) => h.hitsplats[0]?.accurate)
+        .map((h) => h.hitsplats[0].damage),
+    ) ?? 0;
+
+    const maxedFirstDist = new HitDistribution(
+      firstDist.hits.map((h) => {
+        if (!h.hitsplats[0]?.accurate) {
+          return h;
+        }
+
+        return new WeightedHit(
+          h.probability,
+          [
+            new Hitsplat(firstMax, true),
+            ...h.hitsplats.slice(1),
+          ],
+        );
+      }),
+    ).flatten();
+
+    return new AttackDistribution([
+      maxedFirstDist,
+      ...this.dists.slice(1),
+    ]);
+  }
+
+  public firstHitAccurate(): AttackDistribution {
+    if (this.dists.length === 0) {
+      return this;
+    }
+
+    const firstDist = this.dists[0];
+
+    const accurateFirstDist = new HitDistribution(
+      firstDist.hits
+        .filter((h) => h.hitsplats[0]?.accurate)
+        .map((h) => new WeightedHit(
+          h.probability,
+          [...h.hitsplats],
+        )),
+    );
+
+    const totalProbability = sum(
+      accurateFirstDist.hits,
+      (h) => h.probability,
+    );
+
+    return new AttackDistribution([
+      accurateFirstDist.scaleProbability(1 / totalProbability),
+      ...this.dists.slice(1),
+    ]);
+  }
+
+  public firstHitMinimum(minimum: number): AttackDistribution {
+    if (this.dists.length === 0) {
+      return this;
+    }
+
+    const newFirstDist = this.dists[0].transform(
+      (h) => HitDistribution.single(
+        1.0,
+        [new Hitsplat(Math.max(h.damage, minimum), h.accurate)],
+      ),
+      { transformInaccurate: false },
+    );
+
+    return new AttackDistribution([
+      newFirstDist,
+      ...this.dists.slice(1),
+    ]).flatten();
   }
 
   private map(m: (d: HitDistribution) => HitDistribution) {
