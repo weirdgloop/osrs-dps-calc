@@ -15,6 +15,7 @@ import { ttkDist } from '@/worker/ttkWorker';
 import { range } from 'd3-array';
 import { DeferredPromise, WORKER_JSON_REPLACER, WORKER_JSON_REVIVER } from '@/utils';
 import { NUMBER_OF_LOADOUTS } from '@/lib/constants';
+import { computeWeaponSwap } from '@/lib/WeaponSwap';
 
 const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) => {
   const { loadouts, monster, calcOpts } = data;
@@ -57,7 +58,12 @@ const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) 
     console.debug(`Loadout ${i + 1} took ${end - start}ms to calculate`);
   }
 
-  return res;
+  return {
+    loadouts: res,
+    weaponSwap: calcOpts.computeWeaponSwap
+      ? computeWeaponSwap(loadouts, monster, calcOpts) || null
+      : null,
+  };
 };
 
 const computeMvPValues: Handler<WorkerRequestType.COMPUTE_REVERSE> = async (data) => {
