@@ -785,3 +785,8 @@ export const getCombatStylesForCategory = (style: EquipmentCategory): PlayerComb
   );
   return ret;
 };
+
+/**
+ * Returns true if the user is on macOS.
+ */
+export const isMac = typeof window !== 'undefined' && /Mac OS X/i.test(navigator.userAgent);

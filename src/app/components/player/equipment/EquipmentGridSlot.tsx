@@ -2,7 +2,7 @@ import { PlayerEquipment } from '@/types/Player';
 import React from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
-import { getCdnImage } from '@/utils';
+import { getCdnImage, isMac } from '@/utils';
 import UserIssueWarning from '@/app/components/generic/UserIssueWarning';
 import { BLOWPIPE_IDS } from '@/lib/constants';
 
@@ -39,9 +39,9 @@ const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => 
   const mouseDown = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (isEmpty) return;
 
-    if (e.ctrlKey) {
-      const item = store.getSelectedLoadout(slot)!;
-      window.open(`https://oldschool.runescape.wiki/w/${encodeURIComponent(item.name)}`, '_blank');
+    if (currentSlot && (isMac ? e.metaKey : e.ctrlKey)) {
+      e.preventDefault();
+      window.open(`https://oldschool.runescape.wiki/w/Special:Lookup?type=item&id=${currentSlot.id}`, '_blank');
     } else {
       store.clearEquipmentSlot(slot);
     }
