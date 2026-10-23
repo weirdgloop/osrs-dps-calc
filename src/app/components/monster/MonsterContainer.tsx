@@ -181,6 +181,13 @@ const MonsterContainer: React.FC = observer(() => {
         <div key="max-hit">
           <h4 className="font-bold font-serif">
             Max hit
+            <span
+              className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+              data-tooltip-id="tooltip"
+              data-tooltip-content="Overrides the calculated max hit based on the combat stats. Set to 0 to use the calculated value."
+            >
+              ?
+            </span>
           </h4>
           <div className="mt-2">
             <NumberInput

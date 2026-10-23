@@ -222,6 +222,8 @@ export default class NPCVsPlayerCalc extends BaseCalc {
       // returned by the standard calculation we're using above, then let's just use the wiki value. A lot of magic
       // monsters have a hardcoded max hit (see https://twitter.com/JagexAsh/status/1754447323222929712).
       maxHit = this.monster.maxHit;
+    } else if (isCustomMonster && this.monster.maxHit) {
+      maxHit = this.monster.maxHit;
     }
 
     // Some monsters have a reduced max hit under specific conditions
