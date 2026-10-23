@@ -598,6 +598,11 @@ export const CombatStyleMap: { [k in EquipmentCategory]: { [k: string]: { image:
     Block: { image: '237' },
     Slash: { image: '238' },
   },
+  [EquipmentCategory.CHAIN_MACE]: {
+    'Thrust-Acc': { image: '266' },
+    'Thrust-Agg': { image: '267' },
+    Smash: { image: '256' },
+  },
 };
 
 /**
@@ -815,6 +820,17 @@ export const getCombatStylesForCategory = (style: EquipmentCategory): PlayerComb
         { name: 'Chop', type: 'slash', stance: 'Accurate' },
         { name: 'Slash', type: 'slash', stance: 'Aggressive' },
         { name: 'Block', type: 'slash', stance: 'Defensive' },
+      ];
+      break;
+    case EquipmentCategory.CHAIN_MACE:
+      ret = [
+        {
+          name: 'Thrust-Acc', displayNameOverride: 'Thrust', type: 'crush', stance: 'Accurate',
+        },
+        {
+          name: 'Thrust-Agg', displayNameOverride: 'Thrust', type: 'crush', stance: 'Aggressive',
+        },
+        { name: 'Smash', type: 'crush', stance: 'Aggressive' },
       ];
       break;
     default:
