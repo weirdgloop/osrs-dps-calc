@@ -216,6 +216,16 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     factorStrength: [123, 100],
     factorDefence: [125, 100],
   },
+  [Prayer.ZEAL]: {
+    renderOrder: 22,
+    name: 'Zeal',
+    image: Zeal,
+    drainRate: 24,
+    combatStyle: 'melee',
+    factorAccuracy: [125, 100],
+    factorStrength: [128, 100],
+    factorDefence: [125, 100],
+  },
   [Prayer.RIGOUR]: {
     renderOrder: 19,
     name: 'Rigour',
@@ -257,16 +267,6 @@ export const PrayerMap: { [k in Prayer]: PrayerData } = {
     image: SteelSkin,
     drainRate: 12,
     factorDefence: [115, 100],
-  },
-  [Prayer.ZEAL]: {
-    renderOrder: 22,
-    name: 'Zeal',
-    image: Zeal,
-    drainRate: 24,
-    combatStyle: 'melee',
-    factorAccuracy: [125, 100],
-    factorStrength: [128, 100],
-    factorDefence: [125, 100],
   },
   [Prayer.DEADEYE]: {
     renderOrder: 15,

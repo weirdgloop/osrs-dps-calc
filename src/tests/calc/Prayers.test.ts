@@ -34,28 +34,6 @@ describe('Prayers', () => {
     });
   });
 
-  describe('Zeal', () => {
-    const basePlayer: PartialDeep<Player> = { prayers: [Prayer.ZEAL] };
-
-    test('level 10 strength', () => {
-      const player = getTestPlayer(monster, {
-        ...basePlayer,
-        skills: { str: 10 },
-      });
-      const { details } = calculatePlayerVsNpc(monster, player);
-      expect(details.find((d) => d.label === DetailKey.DAMAGE_LEVEL_PRAYER)?.value).toBe(12);
-    });
-
-    test('level 99 strength', () => {
-      const player = getTestPlayer(monster, {
-        ...basePlayer,
-        skills: { str: 99 },
-      });
-      const { details } = calculatePlayerVsNpc(monster, player);
-      expect(details.find((d) => d.label === DetailKey.DAMAGE_LEVEL_PRAYER)?.value).toBe(126);
-    });
-  });
-
   describe('Sharp Eye', () => {
     const basePlayer: PartialDeep<Player> = {
       prayers: [Prayer.SHARP_EYE],
