@@ -1431,9 +1431,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.wearing('Sunspear') && this.opts.usingSpecialAttack) {
-      let effectDmg = this.trackFactor(DetailKey.MAX_HIT_SPEC, max, [7, 10]);
       // In-game testing shows that the spec hits are consistent with adding 1 after the 70% factor
-      effectDmg = this.trackAdd(DetailKey.MAX_HIT_SPEC, effectDmg, 1);
+      const effectDmg = Math.trunc(max * 7 / 10) + 1;
+      this.track(DetailKey.MAX_HIT_SPEC, effectDmg, `(${max} * 7 / 10) + 1 = ${effectDmg}`);
 
       // In-game testing also shows that vampyrebane bonuses are applied on top of this, so we don't
       // want to return the dist early
