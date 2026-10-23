@@ -478,6 +478,20 @@ export function linearMinTransformer(maximum: number, offset: number = 0): HitTr
   };
 }
 
+export function linearMaxTransformer(maximum: number, offset: number = 0): HitTransformer {
+  return (h) => {
+    const d = new HitDistribution([]);
+    const prob = 1.0 / (maximum + 1);
+    for (let i = 0; i <= maximum; i++) {
+      d.addHit(new WeightedHit(
+        prob,
+        [new Hitsplat(Math.max(h.damage, i + offset), h.accurate)],
+      ));
+    }
+    return d.flatten();
+  };
+}
+
 export function cappedRerollTransformer(limit: number, rollMax: number, offset: number = 0): HitTransformer {
   return (h) => {
     if (h.damage <= limit) {

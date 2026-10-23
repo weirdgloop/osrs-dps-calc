@@ -254,6 +254,8 @@ export const calculateAttackSpeed = (player: Player, monster: Monster): number =
 
   if (player.style.type === 'ranged' && player.style.stance === 'Rapid') {
     attackSpeed -= 1;
+  } else if (player.equipment.weapon?.name === 'Obligator' && player.style.name === 'Smash') {
+    attackSpeed = 3;
   } else if (CAST_STANCES.includes(player.style.stance)) {
     if (player.equipment.weapon?.name === 'Harmonised Nightmare staff'
       && player.spell?.spellbook === 'standard'

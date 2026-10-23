@@ -10,7 +10,7 @@ import {
   flatLimitTransformer,
   HitDistribution,
   Hitsplat,
-  HitTransformer,
+  HitTransformer, linearMaxTransformer,
   linearMinTransformer,
   multiplyTransformer,
   TransformOpts,
@@ -474,6 +474,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else {
         maxHit = this.trackAdd(DetailKey.MAX_HIT_FANG, maxHit, -shrink);
       }
+    }
+
+    if (this.wearing('Obligator') && this.monster.size >= 2 && this.player.style.name !== 'Smash') {
+      // todo placement? mostly relative to inq bonus / is it post-roll?
+      const bonus = this.monster.size === 2 ? 20 : 40;
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_OBLIGATOR, maxHit, [100 + bonus, 100]);
     }
 
     if (this.opts.usingSpecialAttack) {
@@ -1472,6 +1478,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
           const secondHitDist = firstHit.accurate ? loweredDefHitDist : standardHitDist;
           return firstHitDist.zip(secondHitDist);
         });
+      }
+    }
+
+    if (this.isUsingMeleeStyle() && this.wearing('Obligator') && this.player.style.name !== 'Smash') {
+      // todo can't wait to learn how this interacts with min hits next leagues
+      const rerolls = 2
+        + (this.monster.defensive.stab > this.monster.defensive.crush ? 1 : 0)
+        + (this.monster.defensive.slash > this.monster.defensive.crush ? 1 : 0);
+
+      for (let i = 1; i < rerolls; i++) {
+        dist = dist.transform(linearMaxTransformer(max), { transformInaccurate: false });
       }
     }
 
