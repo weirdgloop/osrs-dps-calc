@@ -828,3 +828,12 @@ export const getCombatStylesForCategory = (style: EquipmentCategory): PlayerComb
   );
   return ret;
 };
+
+export const getDefaultCombatStyle = (category: EquipmentCategory): PlayerCombatStyle => {
+  const styles = getCombatStylesForCategory(category);
+
+  // Default to rapid or aggressive if available, or the first available style if not
+  return styles.find((s) => s.stance === 'Rapid')
+    ?? styles.find((s) => s.stance === 'Aggressive')
+    ?? styles[0];
+};

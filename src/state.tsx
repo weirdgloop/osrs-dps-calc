@@ -25,7 +25,7 @@ import {
 import { Monster } from '@/types/Monster';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
-  fetchPlayerSkills, fetchShortlinkData, getCombatStylesForCategory, isDefined, PotionMap,
+  fetchPlayerSkills, fetchShortlinkData, getCombatStylesForCategory, getDefaultCombatStyle, isDefined, PotionMap,
 } from '@/utils';
 import { ComputeBasicRequest, ComputeReverseRequest, WorkerRequestType } from '@/worker/CalcWorkerTypes';
 import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
@@ -69,7 +69,7 @@ const generateInitialEquipment = () => {
 
 export const generateEmptyPlayer = (name?: string): Player => ({
   name: name ?? 'Loadout 1',
-  style: getCombatStylesForCategory(EquipmentCategory.NONE)[0],
+  style: getDefaultCombatStyle(EquipmentCategory.NONE),
   skills: {
     atk: 99,
     def: 99,
@@ -676,16 +676,7 @@ class GlobalState implements State {
         const oldWeaponCat = currentWeapon?.category || EquipmentCategory.NONE;
         const newWeaponCat = newWeapon?.category || EquipmentCategory.NONE;
         if ((newWeaponCat !== undefined) && (newWeaponCat !== oldWeaponCat) && !player.style) {
-          // If the weapon slot category was changed, we should reset the player's selected combat style to the first one that exists.
-          const styles = getCombatStylesForCategory(newWeaponCat);
-          const rapid = styles.find((e) => e.stance === 'Rapid');
-          if (rapid !== undefined) {
-            player.style = rapid;
-          } else {
-            // Would perhaps be worth it to make a similar thing for looking up
-            // aggressive?
-            player.style = styles[0];
-          }
+          player.style = getDefaultCombatStyle(newWeaponCat);
         }
       }
     }
