@@ -2,7 +2,7 @@ import { PlayerEquipment } from '@/types/Player';
 import React from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
-import { getCdnImage } from '@/utils';
+import { getCdnImage, isMac } from '@/utils';
 import UserIssueWarning from '@/app/components/generic/UserIssueWarning';
 import { BLOWPIPE_IDS } from '@/lib/constants';
 
@@ -31,6 +31,22 @@ const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => 
     return currentSlot?.name;
   };
 
+  /**
+   * Handle mouse down event
+   * If ctrl key is pressed, open the wiki page for the item, otherwise clear the equipment slot
+   * @param e The mouse event
+   */
+  const mouseDown = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if (isEmpty) return;
+
+    if (currentSlot && (isMac ? e.metaKey : e.ctrlKey)) {
+      e.preventDefault();
+      window.open(`https://oldschool.runescape.wiki/w/Special:Lookup?type=item&id=${currentSlot.id}`, '_blank');
+    } else {
+      store.clearEquipmentSlot(slot);
+    }
+  };
+
   return (
     <div className="h-[40px] w-[40px] relative">
       {
@@ -44,9 +60,7 @@ const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => 
         data-slot={slot}
         data-tooltip-id="tooltip"
         data-tooltip-content={getTooltipContent()}
-        onMouseDown={() => {
-          if (!isEmpty) store.clearEquipmentSlot(slot);
-        }}
+        onMouseDown={(e) => mouseDown(e)}
       >
         {currentSlot?.image ? (
           <img src={getCdnImage(`equipment/${currentSlot.image}`)} alt={currentSlot.name} />
