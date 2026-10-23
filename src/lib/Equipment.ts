@@ -164,6 +164,7 @@ const ammoForRangedWeapons: { [weapon: number]: number[] } = {
   28869: [28872, 28878], // Hunters' sunlight crossbow
   29000: [28991], // Eclipse atlatl
   33245: commonAmmoCategories().bow_t60, // Nature's recurve
+  34681: [34684, 34690, 34696, 34702, 34708], // Ascension crossbows
 };
 
 export enum AmmoApplicability {

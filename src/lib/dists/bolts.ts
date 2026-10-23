@@ -12,6 +12,7 @@ export interface BoltContext {
   zcb: boolean;
   spec: boolean;
   kandarinDiary: boolean;
+  ascensions: boolean;
   monster: Monster;
 }
 export type BoltTransformer = (ctx: BoltContext) => HitTransformer;

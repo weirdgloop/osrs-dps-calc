@@ -1824,6 +1824,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       zcb: this.wearing('Zaryte crossbow'),
       spec: this.opts.usingSpecialAttack,
       kandarinDiary: this.player.buffs.kandarinDiary,
+      ascensions: this.wearing('Ascension crossbows'),
       monster: this.monster,
     };
     if (this.player.style.type === 'ranged' && this.player.equipment.weapon?.category === EquipmentCategory.CROSSBOW) {
@@ -1831,9 +1832,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         dist = dist.transform(opalBolts(boltContext));
       } else if (this.wearing(['Pearl bolts (e)', 'Pearl dragon bolts (e)'])) {
         dist = dist.transform(pearlBolts(boltContext));
-      } else if (this.wearing(['Diamond bolts (e)', 'Diamond dragon bolts (e)'])) {
+      } else if (this.wearing(['Diamond bolts (e)', 'Diamond dragon bolts (e)', 'Diamond ascension bolts (e)'])) {
         dist = dist.transform(diamondBolts(boltContext));
-      } else if (this.wearing(['Dragonstone bolts (e)', 'Dragonstone dragon bolts (e)'])) {
+      } else if (this.wearing(['Dragonstone bolts (e)', 'Dragonstone dragon bolts (e)', 'Onyx ascension bolts (e)'])) {
         dist = dist.transform(dragonstoneBolts(boltContext));
       } else if (this.wearing(['Onyx bolts (e)', 'Onyx dragon bolts (e)']) && !mattrs.includes(MonsterAttribute.UNDEAD)) {
         dist = dist.transform(onyxBolts(boltContext));
