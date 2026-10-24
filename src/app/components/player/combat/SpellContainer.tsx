@@ -1,22 +1,17 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import LazyImage from '@/app/components/generic/LazyImage';
 import { getWikiImage } from '@/utils';
 import { IconTrash } from '@tabler/icons-react';
 import { useStore } from '@/state';
-import { getSpellMaxHit } from '@/types/Spell';
-import { toJS } from 'mobx';
+import { computed } from 'mobx';
+import { observer } from 'mobx-react-lite';
+import getSpellMaxHit from '@/types/SpellMax';
 
-const SpellContainer: React.FC = () => {
+const SpellContainer: React.FC = observer(() => {
   const store = useStore();
   const { spell } = store.player;
-  const jsPlayer = toJS(store.player);
 
-  const spellMaxHit: number = useMemo(() => {
-    if (!jsPlayer.spell) {
-      return 0;
-    }
-    return getSpellMaxHit(jsPlayer.spell, jsPlayer.skills.magic);
-  }, [jsPlayer.spell, jsPlayer.skills]);
+  const spellMaxHit = computed(() => getSpellMaxHit(store.player)).get();
 
   return (
     <div className="my-2 p-2 rounded bg-body-100 dark:bg-dark-500 text-sm flex justify-between items-center">
@@ -56,6 +51,6 @@ const SpellContainer: React.FC = () => {
       )}
     </div>
   );
-};
+});
 
 export default SpellContainer;

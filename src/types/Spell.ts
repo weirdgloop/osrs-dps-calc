@@ -22,48 +22,6 @@ export function isBindSpell(spell: Spell | null): boolean {
       .includes(spell.name);
 }
 
-export function getSpellMaxHit(spell: Spell, magicLevel: number): number {
-  if (!spell.element) {
-    return spell?.max_hit;
-  }
-
-  const spellClass = spell.name.split(/ /)[1];
-  switch (spellClass) {
-    case 'Strike':
-      if (magicLevel >= 13) return spellByName(`Fire ${spellClass}`)!.max_hit;
-      if (magicLevel >= 9) return spellByName(`Earth ${spellClass}`)!.max_hit;
-      if (magicLevel >= 5) return spellByName(`Water ${spellClass}`)!.max_hit;
-      return spellByName(`Wind ${spellClass}`)!.max_hit;
-
-    case 'Bolt':
-      if (magicLevel >= 35) return spellByName(`Fire ${spellClass}`)!.max_hit;
-      if (magicLevel >= 29) return spellByName(`Earth ${spellClass}`)!.max_hit;
-      if (magicLevel >= 23) return spellByName(`Water ${spellClass}`)!.max_hit;
-      return spellByName(`Wind ${spellClass}`)!.max_hit;
-
-    case 'Blast':
-      if (magicLevel >= 59) return spellByName(`Fire ${spellClass}`)!.max_hit;
-      if (magicLevel >= 53) return spellByName(`Earth ${spellClass}`)!.max_hit;
-      if (magicLevel >= 47) return spellByName(`Water ${spellClass}`)!.max_hit;
-      return spellByName(`Wind ${spellClass}`)!.max_hit;
-
-    case 'Wave':
-      if (magicLevel >= 75) return spellByName(`Fire ${spellClass}`)!.max_hit;
-      if (magicLevel >= 70) return spellByName(`Earth ${spellClass}`)!.max_hit;
-      if (magicLevel >= 65) return spellByName(`Water ${spellClass}`)!.max_hit;
-      return spellByName(`Wind ${spellClass}`)!.max_hit;
-
-    case 'Surge':
-      if (magicLevel >= 95) return spellByName(`Fire ${spellClass}`)!.max_hit;
-      if (magicLevel >= 90) return spellByName(`Earth ${spellClass}`)!.max_hit;
-      if (magicLevel >= 85) return spellByName(`Water ${spellClass}`)!.max_hit;
-      return spellByName(`Wind ${spellClass}`)!.max_hit;
-
-    default:
-      throw new Error(`No dynamic max hit available for ${spell}`);
-  }
-}
-
 export function canUseSunfireRunes(spell: Spell | null): boolean {
   return spell?.element === 'fire';
 }

@@ -1,5 +1,7 @@
 import { Monster } from '@/types/Monster';
-import { ARAXXOR_IDS, YAMA_IDS } from '@/lib/constants';
+import {
+  ARAXXOR_IDS, BORK_IDS, BORK_PHASES, YAMA_IDS,
+} from '@/lib/constants';
 
 const applyMonsterPhases = (m: Monster): Monster => {
   if (!m.inputs.phase) {
@@ -26,6 +28,24 @@ const applyMonsterPhases = (m: Monster): Monster => {
       defensive: {
         ...m.defensive,
         magic: mdef,
+      },
+    };
+  }
+
+  if (BORK_IDS.includes(m.id)) {
+    const phase = m.inputs.phase ?? BORK_PHASES[0];
+    if (phase === 'Stunned') {
+      return m; // full-accuracy not handled here
+    }
+
+    const magicResist = 2 * BORK_PHASES.indexOf(phase);
+    const flatArmour = magicResist + 8;
+    return {
+      ...m,
+      defensive: {
+        ...m.defensive,
+        flat_armour: flatArmour,
+        magic_resistance: magicResist,
       },
     };
   }

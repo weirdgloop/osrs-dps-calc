@@ -59,6 +59,7 @@ export type CombatStyleStance =
 
 export interface PlayerCombatStyle {
   name: string,
+  displayNameOverride?: string, // to handle duplicate entries like obligator's two thrust
   type: CombatStyleType,
   stance: CombatStyleStance,
 }

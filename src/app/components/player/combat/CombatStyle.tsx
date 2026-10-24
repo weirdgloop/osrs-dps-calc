@@ -67,7 +67,7 @@ const CombatStyle: React.FC<CombatStyleProps> = observer((props) => {
       </div>
       <div>
         <div className="font-bold font-serif">
-          {style.name}
+          {style.displayNameOverride ?? style.name}
         </div>
         <div className="text-xs capitalize">
           {style.type || 'None'}

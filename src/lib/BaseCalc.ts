@@ -7,6 +7,7 @@ import UserIssueType from '@/enums/UserIssueType';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
   CAST_STANCES,
+  DREADNOTH_JELLY_ID,
   ICE_DEMON_IDS,
   IMMUNE_TO_BURN_DAMAGE_NPC_IDS,
   YAMA_IDS,
@@ -725,13 +726,23 @@ export default class BaseCalc {
   protected demonbaneVulnerability(): number {
     if (this.monster.id === -1 && this.monster.inputs.demonbaneVulnerability !== undefined) {
       return this.monster.inputs.demonbaneVulnerability;
-    } if (this.monster.name === 'Duke Sucellus') {
+    }
+    if (this.monster.name === 'Duke Sucellus') {
       return 70;
-    } if (YAMA_IDS.includes(this.monster.id)) {
+    }
+    if (['Ocellus', 'Xarth'].includes(this.monster.name)) {
+      return 80;
+    }
+    if (this.monster.name === 'Dreadnoth the Jellied' || this.monster.id === DREADNOTH_JELLY_ID) {
+      return 25;
+    }
+    if (YAMA_IDS.includes(this.monster.id)) {
       return 120;
-    } if (YAMA_VOID_FLARE_IDS.includes(this.monster.id)) {
+    }
+    if (YAMA_VOID_FLARE_IDS.includes(this.monster.id)) {
       return 200;
-    } if (ICE_DEMON_IDS.includes(this.monster.id)) {
+    }
+    if (ICE_DEMON_IDS.includes(this.monster.id)) {
       return 115;
     }
 
@@ -740,6 +751,13 @@ export default class BaseCalc {
 
   private sanitizeInputs() {
     const eq = this.player.equipment;
+
+    if (this.player.equipment.shield?.name === 'Rondache') {
+      this.addIssue(UserIssueType.EQUIPMENT_SHIELD_EFFECT_UNSUPPORTED, "The Rondache's special attack is not yet implemented.");
+    }
+    if (this.player.equipment.weapon?.name === "Zorya's tome") {
+      this.addIssue(UserIssueType.EQUIPMENT_WEAPON_EFFECT_UNSUPPORTED, "The bonus follow up attacks from Zorya's tome's special attack are not implemented.");
+    }
 
     if (this.monster.attributes.includes(MonsterAttribute.DEMON)) {
       // make sure demonbane effectiveness is set and uses the right value

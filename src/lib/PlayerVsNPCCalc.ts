@@ -10,7 +10,7 @@ import {
   flatLimitTransformer,
   HitDistribution,
   Hitsplat,
-  HitTransformer,
+  HitTransformer, linearMaxTransformer,
   linearMinTransformer,
   multiplyTransformer,
   TransformOpts,
@@ -19,7 +19,6 @@ import {
 } from '@/lib/HitDist';
 import {
   canUseSunfireRunes,
-  getSpellMaxHit,
   isBindSpell,
 } from '@/types/Spell';
 import { PrayerData, PrayerMap } from '@/enums/Prayer';
@@ -91,9 +90,11 @@ import {
   rubyBolts,
 } from '@/lib/dists/bolts';
 import { burningClawDoT, burningClawSpec, dClawDist } from '@/lib/dists/claws';
+import getSpellMaxHit from '@/types/SpellMax';
 
 const PARTIALLY_IMPLEMENTED_SPECS: string[] = [
   'Ancient godsword',
+  "Zorya's tome", // missing the follow-up attack buffs
 ];
 
 // https://oldschool.runescape.wiki/w/Category:Weapons_with_Special_attacks
@@ -474,6 +475,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else {
         maxHit = this.trackAdd(DetailKey.MAX_HIT_FANG, maxHit, -shrink);
       }
+    }
+
+    if (this.wearing('Obligator') && this.monster.size >= 2 && this.player.style.name !== 'Smash') {
+      // todo placement? mostly relative to inq bonus / is it post-roll?
+      const bonus = this.monster.size === 2 ? 20 : 40;
+      maxHit = this.trackFactor(DetailKey.MAX_HIT_OBLIGATOR, maxHit, [100 + bonus, 100]);
     }
 
     if (this.opts.usingSpecialAttack) {
@@ -892,6 +899,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [3, 2]);
       } else if (this.wearing('Eye of Ayak')) {
         attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [2, 1]);
+      } else if (this.wearing("Zorya's tome")) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_SPEC, attackRoll, [250, 100]);
       }
     }
 
@@ -918,7 +927,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const { buffs } = this.player;
 
     if (spell) {
-      maxHit = getSpellMaxHit(spell, magicLevel);
+      maxHit = getSpellMaxHit(this.player);
       if (spell?.name === 'Magic Dart') {
         if (this.wearing("Slayer's staff (e)") && this.isSlayerMonster() && buffs.onSlayerTask) {
           maxHit = Math.trunc(13 + magicLevel / 6);
@@ -947,6 +956,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       maxHit = Math.max(1, Math.trunc(magicLevel / 3) + 1);
     } else if (this.wearing('Eye of Ayak')) {
       maxHit = Math.max(1, Math.trunc(magicLevel / 3) - 6);
+    } else if (this.wearing("Zorya's tome")) {
+      maxHit = Math.max(1, Math.trunc(magicLevel / 3) - 10);
     } else if (this.wearing('Warped sceptre')) {
       maxHit = Math.max(1, Math.trunc((8 * magicLevel + 96) / 37));
     } else if (this.wearing('Bone staff')) {
@@ -1048,6 +1059,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.opts.usingSpecialAttack) {
       if (this.isWearingAccursedSceptre()) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [3, 2]);
+      } else if (this.wearing("Zorya's tome")) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [160, 100]);
       }
     }
 
@@ -1475,6 +1488,17 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
+    if (this.isUsingMeleeStyle() && this.wearing('Obligator') && this.player.style.name !== 'Smash') {
+      // todo can't wait to learn how this interacts with min hits next leagues
+      const rerolls = 2
+        + (this.monster.defensive.stab > this.monster.defensive.crush ? 1 : 0)
+        + (this.monster.defensive.slash > this.monster.defensive.crush ? 1 : 0);
+
+      for (let i = 1; i < rerolls; i++) {
+        dist = dist.transform(linearMaxTransformer(max), { transformInaccurate: false });
+      }
+    }
+
     if (this.isUsingMeleeStyle() && this.wearing('Crimson kisten') && this.opts.usingSpecialAttack) {
       const effectDist = new HitDistribution([]);
       effectDist.addHit(new WeightedHit((1 - acc) ** 4, [Hitsplat.INACCURATE]));
@@ -1807,6 +1831,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       zcb: this.wearing('Zaryte crossbow'),
       spec: this.opts.usingSpecialAttack,
       kandarinDiary: this.player.buffs.kandarinDiary,
+      ascensions: this.wearing('Ascension crossbows'),
       monster: this.monster,
     };
     if (this.player.style.type === 'ranged' && this.player.equipment.weapon?.category === EquipmentCategory.CROSSBOW) {
@@ -1814,9 +1839,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         dist = dist.transform(opalBolts(boltContext));
       } else if (this.wearing(['Pearl bolts (e)', 'Pearl dragon bolts (e)'])) {
         dist = dist.transform(pearlBolts(boltContext));
-      } else if (this.wearing(['Diamond bolts (e)', 'Diamond dragon bolts (e)'])) {
+      } else if (this.wearing(['Diamond bolts (e)', 'Diamond dragon bolts (e)', 'Diamond ascension bolts (e)'])) {
         dist = dist.transform(diamondBolts(boltContext));
-      } else if (this.wearing(['Dragonstone bolts (e)', 'Dragonstone dragon bolts (e)'])) {
+      } else if (this.wearing(['Dragonstone bolts (e)', 'Dragonstone dragon bolts (e)', 'Onyx ascension bolts (e)'])) {
         dist = dist.transform(dragonstoneBolts(boltContext));
       } else if (this.wearing(['Onyx bolts (e)', 'Onyx dragon bolts (e)']) && !mattrs.includes(MonsterAttribute.UNDEAD)) {
         dist = dist.transform(onyxBolts(boltContext));

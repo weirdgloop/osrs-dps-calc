@@ -142,6 +142,11 @@ export interface Player extends EquipmentStats {
      * @see https://oldschool.runescape.wiki/w/Sunfire_rune
      */
     usingSunfireRunes: boolean;
+
+    fragmentOfWind: boolean;
+    fragmentOfWater: boolean;
+    fragmentOfEarth: boolean;
+    fragmentOfFire: boolean;
   };
   spell: Spell | null;
 }
