@@ -14,6 +14,7 @@ import strength from '@/public/img/bonuses/strength.png';
 import defence from '@/public/img/bonuses/defence.png';
 import mining from '@/public/img/bonuses/mining.png';
 import flat_armour from '@/public/img/bonuses/flat_armour.png';
+import magic_resistance from '@/public/img/bonuses/magic_resistance.png';
 import magicStrength from '@/public/img/bonuses/magic_strength.png';
 import rangedStrength from '@/public/img/bonuses/ranged_strength.png';
 import toaRaidLevel from '@/public/img/toa_raidlevel.webp';
@@ -340,7 +341,7 @@ const MonsterContainer: React.FC = observer(() => {
 
     if (phaseOptions) {
       comps.push(
-        <div key="td-phase">
+        <div key="td-phase" className="w-full">
           <h4 className="font-bold font-serif">
             Phase
           </h4>
@@ -595,6 +596,15 @@ const MonsterContainer: React.FC = observer(() => {
                         image={rangedStrength}
                         value={displayMonster.offensive.ranged_str}
                         onChange={(v) => store.updateMonster({ offensive: { ranged_str: v } })}
+                        required
+                      />
+                      <AttributeInput
+                        name="Magic Resistance"
+                        max={1000}
+                        disabled={!(isCustomMonster || prefs.manualMode)}
+                        image={magic_resistance}
+                        value={displayMonster.defensive.magic_resistance ?? 0}
+                        onChange={(v) => store.updateMonster({ defensive: { magic_resistance: v } })}
                         required
                       />
                     </div>

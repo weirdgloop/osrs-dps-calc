@@ -557,9 +557,13 @@ export const INFINITE_HEALTH_MONSTERS: number[] = [
 
 export const ECLIPSE_MOON_IDS = [13012];
 
+export const BORK_IDS = [16640];
+export const BORK_PHASES = ['Smork HP 100% - 75%', 'Smork HP 75% - 50%', 'Smork HP 50% - 25%', 'Smork HP 25% - 0%', 'Stunned'];
+BORK_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = BORK_PHASES; });
+
 export const TFA_DEF_FLOOR_NPCS = [
   16659, 16660, // Archive Guardian
-  16640, // Bork
+  ...BORK_IDS, // Bork
   16652, // Ezekiel
   16667, // Moia
   16684, // Xarth
