@@ -73,7 +73,7 @@ ITEMS_TO_SKIP = [
     'Corrupted armadyl godsword',
     'Corrupted dark bow',
     'Corrupted dragon claws',
-    'Corrupted scythe of vitur',
+    'Corrupted Scythe of Vitur',
     'Corrupted tumeken\'s shadow',
     'Corrupted twisted bow',
     'Corrupted voidwaker',

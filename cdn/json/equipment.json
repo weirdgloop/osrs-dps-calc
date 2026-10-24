@@ -38161,68 +38161,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Corrupted Scythe of Vitur",
-    "id": 28543,
-    "weight": 3.175,
-    "version": "Charged",
-    "slot": "weapon",
-    "image": "Corrupted Scythe of Vitur.png",
-    "speed": 5,
-    "category": "Scythe",
-    "bonuses": {
-      "str": 60,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 56,
-      "slash": 88,
-      "crush": 24,
-      "magic": -6,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": -2,
-      "slash": 7,
-      "crush": 8,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
-    "name": "Corrupted Scythe of Vitur",
-    "id": 28545,
-    "weight": 3.175,
-    "version": "Uncharged",
-    "slot": "weapon",
-    "image": "Corrupted Scythe of Vitur (uncharged).png",
-    "speed": 5,
-    "category": "Scythe",
-    "bonuses": {
-      "str": 40,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 40,
-      "slash": 60,
-      "crush": 8,
-      "magic": -6,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": -2,
-      "slash": 5,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
     "name": "Corrupted axe",
     "id": 23821,
     "weight": 0.907,

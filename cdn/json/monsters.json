@@ -59974,6 +59974,49 @@
     }
   },
   {
+    "id": 16650,
+    "name": "Imp (Dagon'hai Trio)",
+    "version": "",
+    "image": "Imp (Dagon'hai Trio).png",
+    "level": 168,
+    "speed": 0,
+    "style": null,
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 0,
+      "def": 0,
+      "hp": 44,
+      "magic": 0,
+      "ranged": 0,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
     "id": 3355,
     "name": "Imp Champion",
     "version": "",
@@ -129101,7 +129144,7 @@
     "level": 912,
     "speed": 4,
     "style": [
-      "Mage",
+      "Magic",
       "Ranged",
       "Melee"
     ],
