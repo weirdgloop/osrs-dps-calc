@@ -19,7 +19,6 @@ import {
 } from '@/lib/HitDist';
 import {
   canUseSunfireRunes,
-  getSpellMaxHit,
   isBindSpell,
 } from '@/types/Spell';
 import { PrayerData, PrayerMap } from '@/enums/Prayer';
@@ -91,6 +90,7 @@ import {
   rubyBolts,
 } from '@/lib/dists/bolts';
 import { burningClawDoT, burningClawSpec, dClawDist } from '@/lib/dists/claws';
+import getSpellMaxHit from '@/types/SpellMax';
 
 const PARTIALLY_IMPLEMENTED_SPECS: string[] = [
   'Ancient godsword',
@@ -927,7 +927,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const { buffs } = this.player;
 
     if (spell) {
-      maxHit = getSpellMaxHit(spell, magicLevel);
+      maxHit = getSpellMaxHit(this.player);
       if (spell?.name === 'Magic Dart') {
         if (this.wearing("Slayer's staff (e)") && this.isSlayerMonster() && buffs.onSlayerTask) {
           maxHit = Math.trunc(13 + magicLevel / 6);

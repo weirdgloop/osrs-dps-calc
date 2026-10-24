@@ -3,7 +3,7 @@ import {
   findEquipment, findSpell, getTestMonster, getTestPlayer,
 } from '@/tests/utils/TestUtils';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
-import { getSpellMaxHit } from '@/types/Spell';
+import getSpellMaxHit from '@/types/SpellMax';
 
 const m = getTestMonster();
 const expectedSpecMax99 = 40;
@@ -26,7 +26,7 @@ describe('Accursed sceptre (a)', () => {
     });
 
     const calc = new PlayerVsNPCCalc(p, m);
-    expect(calc.getMax()).toBe(getSpellMaxHit(findSpell('Water Strike'), 99));
+    expect(calc.getMax()).toBe(getSpellMaxHit(p));
   });
 
   test('should not use the built-in spell when manual casting', () => {
@@ -46,7 +46,7 @@ describe('Accursed sceptre (a)', () => {
     });
 
     const calc = new PlayerVsNPCCalc(p, m);
-    expect(calc.getMax()).toBe(getSpellMaxHit(findSpell('Water Strike'), 99));
+    expect(calc.getMax()).toBe(getSpellMaxHit(p));
   });
 
   test('should not use the built-in spell when using melee style', () => {
