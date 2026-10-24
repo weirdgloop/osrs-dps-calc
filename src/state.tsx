@@ -127,6 +127,10 @@ export const generateEmptyPlayer = (name?: string): Player => ({
     baAttackerLevel: 0,
     chinchompaDistance: 4, // 4 tiles is the optimal range for "medium fuse" (rapid), which is the default selected stance
     usingSunfireRunes: false,
+    fragmentOfWind: false,
+    fragmentOfWater: false,
+    fragmentOfEarth: false,
+    fragmentOfFire: false,
   },
   spell: null,
 });
@@ -444,6 +448,8 @@ class GlobalState implements State {
 
   updateImportedData(data: ImportableData) {
     /* eslint-disable no-fallthrough */
+    /* eslint-disable @typescript-eslint/dot-notation */
+    /* eslint-disable @typescript-eslint/no-explicit-any */
     switch (data.serializationVersion) {
       case 1:
         data.monster.inputs.phase = data.monster.inputs.tormentedDemonPhase;
@@ -453,13 +459,9 @@ class GlobalState implements State {
       case 4: // reserved: used during leagues 5
       case 5:
         data.loadouts.forEach((l) => {
-          /* eslint-disable @typescript-eslint/dot-notation */
-          /* eslint-disable @typescript-eslint/no-explicit-any */
           if ((l as any)['leagues']) {
             delete (l as any)['leagues'];
           }
-          /* eslint-enable @typescript-eslint/dot-notation */
-          /* eslint-enable @typescript-eslint/no-explicit-any */
         });
 
       case 6:
@@ -480,9 +482,15 @@ class GlobalState implements State {
 
       case 9: // reserved: used during leagues 6
 
+      case 10:
+        data.loadouts.forEach((l) => {
+          // leagues had prayers beyond 20, and now we need to reuse the ids
+          l.prayers = l.prayers?.filter((p) => p <= 20);
+        });
+
       default:
     }
-    /* eslint-enable no-fallthrough */
+    /* eslint-enable */
     console.debug('IMPORT | ', data);
 
     if (data.monster) {
@@ -812,7 +820,7 @@ class GlobalState implements State {
 
     if (this.prefs.showTtkComparison && !INFINITE_HEALTH_MONSTERS.includes(this.monster.id)) {
       promises.push(
-        (async () => {
+        (async (): Promise<void> => {
           const parallel = process.env.NEXT_PUBLIC_SERIAL_TTK !== 'true';
           const resp = await this.calcWorker.do({
             type: parallel ? WorkerRequestType.COMPUTE_TTK_PARALLEL : WorkerRequestType.COMPUTE_TTK,
