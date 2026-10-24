@@ -556,3 +556,5 @@ export const INFINITE_HEALTH_MONSTERS: number[] = [
 ];
 
 export const ECLIPSE_MOON_IDS = [13012];
+
+export const DREADNOTH_JELLY_ID = 16666;
