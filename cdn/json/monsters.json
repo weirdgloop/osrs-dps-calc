@@ -27955,9 +27955,10 @@
     "version": "",
     "image": "Dagon'hai Elder.png",
     "level": 427,
-    "speed": 0,
+    "speed": 6,
     "style": [
-      "6"
+      "Magic",
+      "Ranged"
     ],
     "size": 2,
     "max_hit": 0,
@@ -31876,7 +31877,10 @@
     "image": "Dreadnoth the Jellied.png",
     "level": 888,
     "speed": 4,
-    "style": null,
+    "style": [
+      "Melee",
+      "Ranged"
+    ],
     "size": 5,
     "max_hit": 0,
     "skills": {
@@ -38232,7 +38236,8 @@
     "level": 984,
     "speed": 5,
     "style": [
-      "melee"
+      "Magic",
+      "Melee"
     ],
     "size": 3,
     "max_hit": 0,
@@ -79975,7 +79980,10 @@
     "image": "Ocellus.png",
     "level": 1121,
     "speed": 5,
-    "style": null,
+    "style": [
+      "Magic",
+      "Ranged"
+    ],
     "size": 3,
     "max_hit": 0,
     "skills": {
@@ -80014,13 +80022,62 @@
     "weakness": null
   },
   {
+    "id": 16675,
+    "name": "Ocellus",
+    "version": "Phase 2",
+    "image": "Ocellus_(phase_2).png",
+    "level": 0,
+    "speed": 0,
+    "style": [
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": 0,
+    "skills": {
+      "atk": 1,
+      "def": 250,
+      "hp": 1000,
+      "magic": 220,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 100,
+      "heavy": 80,
+      "standard": 110,
+      "light": 100,
+      "slash": 120,
+      "stab": 150
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
     "id": 16677,
     "name": "Ocellus",
     "version": "Phase 3",
     "image": "Ocellus_(phase_3).png",
     "level": 1601,
     "speed": 6,
-    "style": null,
+    "style": [
+      "Magic",
+      "Melee",
+      "Ranged"
+    ],
     "size": 3,
     "max_hit": 0,
     "skills": {
