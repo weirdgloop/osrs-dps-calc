@@ -557,4 +557,13 @@ export const INFINITE_HEALTH_MONSTERS: number[] = [
 
 export const ECLIPSE_MOON_IDS = [13012];
 
+export const TFA_DEF_FLOOR_NPCS = [
+  16659, 16660, // Archive Guardian
+  16640, // Bork
+  16652, // Ezekiel
+  16667, // Moia
+  16684, // Xarth
+  16673, 16674, 16677, // Ocellus
+];
+
 export const DREADNOTH_JELLY_ID = 16666;
