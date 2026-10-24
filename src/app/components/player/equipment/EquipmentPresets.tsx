@@ -13,7 +13,7 @@ const EquipmentPresets: React.FC = () => {
 
   const presets = [
     { label: 'Bowfa + Crystal', value: EquipmentPreset.BOWFA },
-    { label: 'Blood moon set', value: EquipmentPreset.BLOOD_MOON },
+    { label: 'Blood Moon set', value: EquipmentPreset.BLOOD_MOON },
     { label: 'Dharok\'s equipment', value: EquipmentPreset.DHAROKS },
     { label: 'Max Mage', value: EquipmentPreset.MAX_MAGE },
     { label: 'Max Melee', value: EquipmentPreset.MAX_MELEE },
@@ -65,11 +65,11 @@ const EquipmentPresets: React.FC = () => {
         newPlayer = {
           name: v.label,
           equipment: {
-            head: findItemById(29028), // Blood moon helm
-            body: findItemById(29022), // Blood moon chestplate
+            head: findItemById(29028), // Blood Moon helm
+            body: findItemById(29022), // Blood Moon chestplate
             weapon: findItemById(28997), // Dual macuahuitl
             shield: null,
-            legs: findItemById(29025), // Blood moon tassets
+            legs: findItemById(29025), // Blood Moon tassets
           },
         };
         break;

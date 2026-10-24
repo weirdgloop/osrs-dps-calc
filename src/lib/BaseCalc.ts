@@ -447,7 +447,7 @@ export default class BaseCalc {
   }
 
   protected isWearingBloodMoonSet(): boolean {
-    return this.wearingAll(['Dual macuahuitl', 'Blood moon helm', 'Blood moon chestplate', 'Blood moon tassets']);
+    return this.wearingAll(['Dual macuahuitl', 'Blood Moon helm', 'Blood Moon chestplate', 'Blood Moon tassets']);
   }
 
   /**
@@ -567,7 +567,7 @@ export default class BaseCalc {
     }
 
     // https://twitter.com/JagexAsh/status/1777673598099968104
-    if (weapon.name.includes('spear') && weapon.name !== 'Blue moon spear') {
+    if (weapon.name.includes('spear') && weapon.name !== 'Blue Moon spear') {
       return isStab;
     }
 
@@ -822,9 +822,9 @@ export default class BaseCalc {
     if (
       (spellName === 'Iban Blast' && !this.wearing(['Iban\'s staff', 'Iban\'s staff (u)']))
       || (spellName === 'Saradomin Strike' && !this.wearing(['Saradomin staff', 'Staff of Light']))
-      || (spellName === 'Claws of Guthix' && !this.wearing(['Guthix staff', 'Void knight mace', 'Staff of balance']))
-      || (spellName === 'Flames of Zamarok' && !this.wearing(['Zamorak staff', 'Staff of the dead', 'Toxic staff of the dead', 'Thammaron\'s sceptre (a)', 'Accursed sceptre (a)']))
-      || (spellName === 'Magic Dart' && !this.wearing(['Slayer\'s staff', 'Slayer\'s staff (e)', 'Staff of the Dead', 'Toxic staff of the Dead', 'Staff of Light', 'Staff of Balance']))
+      || (spellName === 'Claws of Guthix' && !this.wearing(['Guthix staff', 'Void knight mace', 'Staff of Balance']))
+      || (spellName === 'Flames of Zamarok' && !this.wearing(['Zamorak staff', 'Staff of the Dead', 'Toxic Staff of the Dead', 'Thammaron\'s sceptre (a)', 'Accursed sceptre (a)']))
+      || (spellName === 'Magic Dart' && !this.wearing(['Slayer\'s staff', 'Slayer\'s staff (e)', 'Staff of the Dead', 'Toxic Staff of the Dead', 'Staff of Light', 'Staff of Balance']))
     ) {
       this.player = {
         ...this.player,
@@ -855,8 +855,8 @@ export default class BaseCalc {
 
     // Some set effects are currently not accounted for
     if (
-      this.wearingAll(['Blue moon helm', 'Blue moon chestplate', 'Blue moon tassets', 'Blue moon spear'])
-      || this.wearingAll(['Eclipse moon helm', 'Eclipse moon chestplate', 'Eclipse moon tassets', 'Eclipse atlatl'])
+      this.wearingAll(['Blue Moon helm', 'Blue Moon chestplate', 'Blue Moon tassets', 'Blue Moon spear'])
+      || this.wearingAll(['Eclipse Moon helm', 'Eclipse Moon chestplate', 'Eclipse Moon tassets', 'Eclipse atlatl'])
     ) {
       this.addIssue(UserIssueType.EQUIPMENT_SET_EFFECT_UNSUPPORTED, 'The calculator currently does not account for your equipment set effect.');
     }

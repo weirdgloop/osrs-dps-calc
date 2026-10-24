@@ -269,6 +269,8 @@ const equipmentAliases = {
   22481: [25733], // Sanguinesti staff#Uncharged
   11806: [20372], // Saradomin godsword
   12637: [24169], // Saradomin halo#Normal
+  22325: [25736, 25739], // Scythe of Vitur#Charged
+  22486: [25738, 25741], // Scythe of Vitur#Uncharged
   11770: [26767, 25258], // Seers ring (i)#Nightmare Zone
   24198: [24200], // Seren halo#Normal
   28266: [28476], // Shadow ancient sceptre#Normal

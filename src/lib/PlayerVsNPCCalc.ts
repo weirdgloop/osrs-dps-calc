@@ -103,7 +103,7 @@ const UNIMPLEMENTED_SPECS: string[] = [
   'Abyssal tentacle',
   'Ancient mace',
   'Armadyl crossbow',
-  'Blue moon spear',
+  'Blue Moon spear',
   'Bone dagger',
   'Brine sabre',
   'Darklight',
@@ -118,10 +118,10 @@ const UNIMPLEMENTED_SPECS: string[] = [
   'Excalibur',
   'Granite maul',
   'Rune claws',
-  'Staff of balance',
-  'Staff of light',
-  'Staff of the dead',
-  'Toxic staff of the dead',
+  'Staff of Balance',
+  'Staff of Light',
+  'Staff of the Dead',
+  'Toxic Staff of the Dead',
   'Ursine chainmace',
   'Zamorakian hasta',
   'Zamorakian spear',
@@ -2135,7 +2135,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         return true;
       }
     }
-    // Eclipse moon clone is immune to non-melee attacks
+    // Eclipse Moon clone is immune to non-melee attacks
     if (ECLIPSE_MOON_IDS.includes(this.monster.id) && this.monster.version === 'Clone' && !this.isUsingMeleeStyle()) {
       return true;
     }
