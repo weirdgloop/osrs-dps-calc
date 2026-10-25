@@ -9,6 +9,7 @@ import hitpoints from '@/public/img/bonuses/hitpoints.png';
 import prayer from '@/public/img/tabs/prayer.png';
 import mining from '@/public/img/bonuses/mining.png';
 import herblore from '@/public/img/bonuses/herblore.png';
+import farming from '@/public/img/bonuses/farming.png';
 import { observer } from 'mobx-react-lite';
 import UsernameLookup from '@/app/components/player/skills/UsernameLookup';
 import SkillInput from '@/app/components/player/skills/SkillInput';
@@ -37,6 +38,7 @@ const Skills: React.FC = observer(() => {
           <SkillInput name="Prayer" field="prayer" image={prayer} />
           <SkillInput name="Mining" field="mining" image={mining} />
           <SkillInput name="Herblore" field="herblore" image={herblore} />
+          <SkillInput name="Farming" field="farming" image={farming} />
         </div>
       </div>
       <h4 className="mt-4 font-bold font-serif">

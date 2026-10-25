@@ -571,3 +571,5 @@ export const TFA_DEF_FLOOR_NPCS = [
 ];
 
 export const DREADNOTH_JELLY_ID = 16666;
+
+export const TANGLEFOOT_IDS = [5848, 5853, 5854, 6291, 6353];

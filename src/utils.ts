@@ -113,6 +113,7 @@ export const fetchPlayerSkills = async (username: string) => {
     magic: skillData[7].level,
     mining: skillData[15].level,
     herblore: skillData[16].level,
+    farming: skillData[20].level,
   };
 };
 
