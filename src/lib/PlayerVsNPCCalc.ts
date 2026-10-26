@@ -1841,9 +1841,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         dist = dist.transform(pearlBolts(boltContext));
       } else if (this.wearing(['Diamond bolts (e)', 'Diamond dragon bolts (e)', 'Diamond ascension bolts (e)'])) {
         dist = dist.transform(diamondBolts(boltContext));
-      } else if (this.wearing(['Dragonstone bolts (e)', 'Dragonstone dragon bolts (e)', 'Onyx ascension bolts (e)'])) {
+      } else if (this.wearing(['Dragonstone bolts (e)', 'Dragonstone dragon bolts (e)'])) {
         dist = dist.transform(dragonstoneBolts(boltContext));
-      } else if (this.wearing(['Onyx bolts (e)', 'Onyx dragon bolts (e)']) && !mattrs.includes(MonsterAttribute.UNDEAD)) {
+      } else if (this.wearing(['Onyx bolts (e)', 'Onyx dragon bolts (e)', 'Onyx ascension bolts (e)']) && !mattrs.includes(MonsterAttribute.UNDEAD)) {
         dist = dist.transform(onyxBolts(boltContext));
       }
     }
