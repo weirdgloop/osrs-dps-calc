@@ -14,6 +14,7 @@ export interface PlayerSkills {
   str: number;
   mining: number;
   herblore: number;
+  farming: number;
 }
 
 export interface EquipmentPiece extends EquipmentStats {

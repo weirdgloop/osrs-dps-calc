@@ -49,6 +49,7 @@ import {
   ONE_HIT_MONSTERS,
   P2_WARDEN_IDS,
   SECONDS_PER_TICK,
+  TANGLEFOOT_IDS,
   TEKTON_IDS,
   TITAN_BOSS_IDS,
   TITAN_ELEMENTAL_IDS,
@@ -346,6 +347,27 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     const { buffs } = this.player;
 
     const baseLevel: number = this.trackAdd(DetailKey.DAMAGE_LEVEL, this.player.skills.str, this.player.boosts.str);
+    const gearBonus = this.trackAdd(DetailKey.DAMAGE_GEAR_BONUS, this.player.bonuses.str, 64);
+
+    if (TANGLEFOOT_IDS.includes(this.monster.id) && this.wearing(['Magic secateurs', 'Magic secateurs (nz)'])) {
+      // Farming level / 5 is added to strength bonus when using magic secateurs against tanglefooti
+      const farmingLevel = this.player.skills.farming + this.player.boosts.farming;
+      const farmingBonus = Math.trunc(farmingLevel / 5);
+      const farmingGearBonus = this.track(
+        DetailKey.DAMAGE_GEAR_BONUS_FARMING,
+        gearBonus + farmingBonus,
+        `${gearBonus} + (${farmingLevel} / 5) = ${gearBonus + farmingBonus}`,
+      );
+
+      // Prayers and stance bonus aren't included in calculating the max hit here
+      const baseMax = this.trackMaxHitFromEffective(DetailKey.MAX_HIT_BASE, baseLevel, farmingGearBonus);
+
+      // For some reason, 1 is subtracted at the end
+      const maxHit = this.track(DetailKey.MAX_HIT_TANGLEFOOT, Math.max(0, baseMax - 1), `max(0, ${baseMax} - 1) = ${Math.max(0, baseMax - 1)}`);
+
+      return [0, maxHit];
+    }
+
     let effectiveLevel: number = baseLevel;
 
     for (const p of this.getCombatPrayers()) {
@@ -377,7 +399,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       effectiveLevel = this.trackFactor(DetailKey.DAMAGE_EFFECTIVE_LEVEL_VOID, effectiveLevel, [11, 10]);
     }
 
-    const gearBonus = this.trackAdd(DetailKey.DAMAGE_GEAR_BONUS, this.player.bonuses.str, 64);
     const baseMax = this.trackMaxHitFromEffective(DetailKey.MAX_HIT_BASE, effectiveLevel, gearBonus);
     let [minHit, maxHit]: MinMax = [0, baseMax];
 
@@ -2137,6 +2158,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     // Eclipse Moon clone is immune to non-melee attacks
     if (ECLIPSE_MOON_IDS.includes(this.monster.id) && this.monster.version === 'Clone' && !this.isUsingMeleeStyle()) {
+      return true;
+    }
+    if (TANGLEFOOT_IDS.includes(this.monster.id) && !(this.wearing(['Magic secateurs', 'Magic secateurs (nz)']) && this.isUsingMeleeStyle())) {
       return true;
     }
 
