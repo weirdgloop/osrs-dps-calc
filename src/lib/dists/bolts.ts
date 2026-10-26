@@ -19,6 +19,8 @@ export type BoltTransformer = (ctx: BoltContext) => HitTransformer;
 
 const kandarinFactor = ({ kandarinDiary }: BoltContext): number => (kandarinDiary ? 1.1 : 1.0);
 
+const ascensionsFactor = ({ ascensions }: BoltContext): number => (ascensions ? 0.5 : 1.0);
+
 const bonusDamageTransform = ({ zcb, spec }: BoltContext, chance: number, bonusDmg: number, accurateOnly: boolean): HitTransformer => (h) => {
   if (h.accurate && zcb && spec) {
     return HitDistribution.single(1.0, [new Hitsplat(h.damage + bonusDmg)]);
@@ -51,7 +53,7 @@ export const pearlBolts: BoltTransformer = (ctx) => {
 
 export const diamondBolts: BoltTransformer = (ctx) => {
   const { maxHit, zcb, spec } = ctx;
-  const chance = 0.1 * kandarinFactor(ctx);
+  const chance = 0.1 * kandarinFactor(ctx) * ascensionsFactor(ctx);
   const effectMax = Math.trunc(maxHit * (zcb ? 126 : 115) / 100);
 
   const effectDist = HitDistribution.linear(1.0, 0, effectMax);
@@ -90,7 +92,7 @@ export const onyxBolts: BoltTransformer = (ctx) => {
     return (h) => new HitDistribution([new WeightedHit(1.0, [h])]);
   }
 
-  const chance = 0.11 * kandarinFactor(ctx);
+  const chance = 0.11 * kandarinFactor(ctx) * ascensionsFactor(ctx);
   const effectMax = Math.trunc(maxHit * (zcb ? 132 : 120) / 100);
 
   const effectDist = HitDistribution.linear(1.0, 0, effectMax);
