@@ -6,8 +6,6 @@ import { IconCircleCheck, IconCircleCheckFilled } from '@tabler/icons-react';
 import LazyImage from '@/app/components/generic/LazyImage';
 import { PlayerCombatStyle } from '@/types/PlayerCombatStyle';
 import { StaticImageData } from 'next/image';
-import { toJS } from 'mobx';
-import isEqual from 'lodash.isequal';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { CombatStyleMap } from '@/utils';
 
@@ -23,7 +21,7 @@ const CombatStyle: React.FC<CombatStyleProps> = observer((props) => {
   const [hovering, setHovering] = useState(false);
   const [styleImage, setStyleImage] = useState<string | null>(null);
 
-  const active = isEqual(toJS(player.style), style);
+  const active = player.style.name === style.name;
 
   useEffect(() => {
     // Import the combat style image dynamically using the path, because there are a lot of them
