@@ -2091,6 +2091,11 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       relevantEffects.push([flatAddTransformer(-flatArmour), { transformInaccurate: false }]);
     }
 
+    const magicResistance = this.monster.defensive.magic_resistance;
+    if (magicResistance && styleType === 'magic') {
+      relevantEffects.push([flatAddTransformer(-magicResistance), { transformInaccurate: false }]);
+    }
+
     const transformer: HitTransformer = (hitsplat) => {
       let dist = HitDistribution.single(1.0, [hitsplat]);
       for (const t of relevantEffects) {
