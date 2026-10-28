@@ -12,6 +12,7 @@ import arc from '@/public/img/def_reductions/Arclight.png';
 import emberlight from '@/public/img/def_reductions/Emberlight.png';
 import seercull from '@/public/img/def_reductions/Seercull.png';
 import ayak from '@/public/img/def_reductions/Eye_of_ayak.png';
+import shadowBarrage from '@/public/img/def_reductions/Shadow_barrage.png';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '@/state';
 import { getDefenceFloor } from '@/lib/scaling/DefenceReduction';
@@ -183,6 +184,25 @@ const DefensiveReductions: React.FC = observer(() => {
                 <img src={vuln.src} width={18} className="inline-block" alt="" />
                 {' '}
                 Vulnerability
+              </>
+            )}
+          />
+          <Toggle
+            checked={defenceReductions.shadowBarrage}
+            setChecked={(c) => store.updateMonster({ inputs: { defenceReductions: { shadowBarrage: c } } })}
+            label={(
+              <>
+                <img src={shadowBarrage.src} width={18} className="inline-block" alt="" />
+                {' '}
+                Shadow Barrage
+                {' '}
+                <span
+                  className="align-super underline decoration-dotted cursor-help text-xs text-gray-300"
+                  data-tooltip-id="tooltip"
+                  data-tooltip-content="Lowers the target's Attack, Strength and Defence levels by 16.5% if cast using the Shadow ancient sceptre"
+                >
+                  ?
+                </span>
               </>
             )}
           />
