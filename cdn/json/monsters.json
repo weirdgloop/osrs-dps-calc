@@ -22474,9 +22474,11 @@
     "image": "Corpse (Xarth).png",
     "level": 89,
     "speed": 0,
-    "style": null,
+    "style": [
+      "n/a"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "0",
     "skills": {
       "atk": 50,
       "def": 100,
@@ -22522,9 +22524,11 @@
     "image": "Corpse (Xarth).png",
     "level": 89,
     "speed": 0,
-    "style": null,
+    "style": [
+      "n/a"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "0",
     "skills": {
       "atk": 50,
       "def": 100,
@@ -31882,7 +31886,7 @@
       "Ranged"
     ],
     "size": 5,
-    "max_hit": 0,
+    "max_hit": "45",
     "skills": {
       "atk": 280,
       "def": 125,
@@ -38240,7 +38244,7 @@
       "Melee"
     ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "77",
     "skills": {
       "atk": 250,
       "def": 130,
@@ -51556,22 +51560,24 @@
     "image": "Guard (Port Roberts, 1).png",
     "level": 21,
     "speed": 4,
-    "style": null,
+    "style": [
+      "Stab"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "3",
     "skills": {
       "atk": 19,
       "def": 14,
       "hp": 22,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
     },
     "offensive": {
-      "atk": 0,
+      "atk": 4,
       "magic": 0,
       "magic_str": 0,
-      "ranged": 0,
+      "ranged": 1,
       "ranged_str": 0,
       "str": 5
     },
@@ -51579,9 +51585,9 @@
       "flat_armour": 0,
       "crush": 19,
       "magic": -4,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 25,
       "stab": 18
     },
@@ -51599,22 +51605,24 @@
     "image": "Guard (Port Roberts, 2).png",
     "level": 21,
     "speed": 4,
-    "style": null,
+    "style": [
+      "Stab"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "3",
     "skills": {
       "atk": 19,
       "def": 14,
       "hp": 22,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
     },
     "offensive": {
-      "atk": 0,
+      "atk": 4,
       "magic": 0,
       "magic_str": 0,
-      "ranged": 0,
+      "ranged": 1,
       "ranged_str": 0,
       "str": 5
     },
@@ -51622,9 +51630,9 @@
       "flat_armour": 0,
       "crush": 19,
       "magic": -4,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 25,
       "stab": 18
     },
@@ -51642,22 +51650,24 @@
     "image": "Guard (Port Roberts, 3).png",
     "level": 21,
     "speed": 4,
-    "style": null,
+    "style": [
+      "Stab"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "3",
     "skills": {
       "atk": 19,
       "def": 14,
       "hp": 22,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
     },
     "offensive": {
-      "atk": 0,
+      "atk": 4,
       "magic": 0,
       "magic_str": 0,
-      "ranged": 0,
+      "ranged": 1,
       "ranged_str": 0,
       "str": 5
     },
@@ -51665,9 +51675,9 @@
       "flat_armour": 0,
       "crush": 19,
       "magic": -4,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 25,
       "stab": 18
     },
@@ -51685,22 +51695,24 @@
     "image": "Guard (Port Roberts, 4).png",
     "level": 21,
     "speed": 4,
-    "style": null,
+    "style": [
+      "Stab"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "3",
     "skills": {
       "atk": 19,
       "def": 14,
       "hp": 22,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
     },
     "offensive": {
-      "atk": 0,
+      "atk": 4,
       "magic": 0,
       "magic_str": 0,
-      "ranged": 0,
+      "ranged": 1,
       "ranged_str": 0,
       "str": 5
     },
@@ -51708,9 +51720,9 @@
       "flat_armour": 0,
       "crush": 19,
       "magic": -4,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 25,
       "stab": 18
     },
@@ -59980,7 +59992,9 @@
     "image": "Imp (Dagon'hai Trio).png",
     "level": 168,
     "speed": 0,
-    "style": null,
+    "style": [
+      "Melee"
+    ],
     "size": 1,
     "max_hit": 0,
     "skills": {
@@ -80028,7 +80042,7 @@
       "Ranged"
     ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "24",
     "skills": {
       "atk": 1,
       "def": 215,
@@ -80075,7 +80089,7 @@
       "Magic"
     ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "24",
     "skills": {
       "atk": 1,
       "def": 250,
@@ -80122,7 +80136,7 @@
       "Ranged"
     ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "24",
     "skills": {
       "atk": 325,
       "def": 250,
@@ -105176,105 +105190,19 @@
     "weakness": null
   },
   {
-    "id": 16607,
+    "id": 16610,
     "name": "Sparring partner",
-    "version": "1",
-    "image": "Sparring partner.png",
+    "version": "Gear Switching (magic)",
+    "image": "Sparring partner (4).png",
     "level": 126,
-    "speed": 4,
+    "speed": 5,
     "style": null,
     "size": 1,
     "max_hit": 0,
     "skills": {
       "atk": 99,
-      "def": 70,
+      "def": 99,
       "hp": 1000,
-      "magic": 99,
-      "ranged": 99,
-      "str": 0
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": false,
-    "weakness": null
-  },
-  {
-    "id": 16616,
-    "name": "Sparring partner",
-    "version": "10",
-    "image": "Sparring partner (10).png",
-    "level": 92,
-    "speed": 2,
-    "style": null,
-    "size": 1,
-    "max_hit": 0,
-    "skills": {
-      "atk": 99,
-      "def": 99,
-      "hp": 99,
-      "magic": 99,
-      "ranged": 99,
-      "str": 0
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": false,
-    "weakness": null
-  },
-  {
-    "id": 16617,
-    "name": "Sparring partner",
-    "version": "11",
-    "image": "Sparring partner (11).png",
-    "level": 122,
-    "speed": 2,
-    "style": null,
-    "size": 1,
-    "max_hit": 0,
-    "skills": {
-      "atk": 99,
-      "def": 99,
-      "hp": 99,
       "magic": 99,
       "ranged": 99,
       "str": 0
@@ -105307,7 +105235,7 @@
   {
     "id": 16608,
     "name": "Sparring partner",
-    "version": "2",
+    "version": "Gear Switching (melee)",
     "image": "Sparring partner (2).png",
     "level": 126,
     "speed": 4,
@@ -105350,7 +105278,7 @@
   {
     "id": 16609,
     "name": "Sparring partner",
-    "version": "3",
+    "version": "Gear Switching (ranged)",
     "image": "Sparring partner (3).png",
     "level": 126,
     "speed": 5,
@@ -105391,18 +105319,18 @@
     "weakness": null
   },
   {
-    "id": 16610,
+    "id": 16607,
     "name": "Sparring partner",
-    "version": "4",
-    "image": "Sparring partner (4).png",
+    "version": "Power of Freezes",
+    "image": "Sparring partner.png",
     "level": 126,
-    "speed": 5,
+    "speed": 4,
     "style": null,
     "size": 1,
     "max_hit": 0,
     "skills": {
       "atk": 99,
-      "def": 99,
+      "def": 70,
       "hp": 1000,
       "magic": 99,
       "ranged": 99,
@@ -105436,7 +105364,7 @@
   {
     "id": 16611,
     "name": "Sparring partner",
-    "version": "5",
+    "version": "Prayer Protection (Armadyl godsword)",
     "image": "Sparring partner (5).png",
     "level": 97,
     "speed": 2,
@@ -105477,54 +105405,11 @@
     "weakness": null
   },
   {
-    "id": 16612,
+    "id": 16616,
     "name": "Sparring partner",
-    "version": "6",
-    "image": "Sparring partner (6).png",
-    "level": 101,
-    "speed": 2,
-    "style": null,
-    "size": 1,
-    "max_hit": 0,
-    "skills": {
-      "atk": 99,
-      "def": 99,
-      "hp": 99,
-      "magic": 99,
-      "ranged": 99,
-      "str": 0
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": false,
-    "weakness": null
-  },
-  {
-    "id": 16613,
-    "name": "Sparring partner",
-    "version": "7",
-    "image": "Sparring partner (7).png",
-    "level": 67,
+    "version": "Prayer Protection (dark bow)",
+    "image": "Sparring partner (10).png",
+    "level": 92,
     "speed": 2,
     "style": null,
     "size": 1,
@@ -105565,7 +105450,7 @@
   {
     "id": 16614,
     "name": "Sparring partner",
-    "version": "8",
+    "version": "Prayer Protection (dragon claws)",
     "image": "Sparring partner (8).png",
     "level": 111,
     "speed": 2,
@@ -105606,11 +105491,140 @@
     "weakness": null
   },
   {
+    "id": 16613,
+    "name": "Sparring partner",
+    "version": "Prayer Protection (granite maul)",
+    "image": "Sparring partner (7).png",
+    "level": 67,
+    "speed": 2,
+    "style": null,
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 99,
+      "def": 99,
+      "hp": 99,
+      "magic": 99,
+      "ranged": 99,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16617,
+    "name": "Sparring partner",
+    "version": "Prayer Protection (Ice Barrage)",
+    "image": "Sparring partner (11).png",
+    "level": 122,
+    "speed": 2,
+    "style": null,
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 99,
+      "def": 99,
+      "hp": 99,
+      "magic": 99,
+      "ranged": 99,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
     "id": 16615,
     "name": "Sparring partner",
-    "version": "9",
+    "version": "Prayer Protection (rune crossbow)",
     "image": "Sparring partner (9).png",
     "level": 83,
+    "speed": 2,
+    "style": null,
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 99,
+      "def": 99,
+      "hp": 99,
+      "magic": 99,
+      "ranged": 99,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16612,
+    "name": "Sparring partner",
+    "version": "Prayer Protection (Voidwaker)",
+    "image": "Sparring partner (6).png",
+    "level": 101,
     "speed": 2,
     "style": null,
     "size": 1,
@@ -115534,13 +115548,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
+      "crush": -100,
+      "magic": -100,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": -100,
+      "stab": -100
     },
     "attributes": [],
     "immunities": {
@@ -115582,13 +115596,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
+      "crush": -100,
+      "magic": -100,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": -100,
+      "stab": -100
     },
     "attributes": [],
     "immunities": {
@@ -122683,16 +122697,18 @@
     "image": "Void Augmenter.png",
     "level": 138,
     "speed": 0,
-    "style": null,
+    "style": [
+      "Crush"
+    ],
     "size": 0,
-    "max_hit": 0,
+    "max_hit": "1",
     "skills": {
-      "atk": 0,
+      "atk": 1,
       "def": 175,
       "hp": 44,
       "magic": 300,
-      "ranged": 0,
-      "str": 0
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -122704,13 +122720,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
+      "crush": 50,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
+      "heavy": 50,
+      "standard": 50,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": 50,
+      "stab": 50
     },
     "attributes": [],
     "immunities": {
