@@ -250,7 +250,7 @@ export const getCanonicalEquipment = (inputEq: PlayerEquipment) => {
 /**
  * Calculates the player's attack speed using current stance and equipment.
  */
-export const calculateAttackSpeed = (player: Player, monster: Monster): number => {
+export const calculateAttackSpeed = (player: Player, monster: Pick<Monster, 'id'>): number => {
   let attackSpeed = player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;
 
   if (player.style.type === 'ranged' && player.style.stance === 'Rapid') {
@@ -279,7 +279,7 @@ export const calculateAttackSpeed = (player: Player, monster: Monster): number =
   return Math.max(attackSpeed, 1);
 };
 
-export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monster): EquipmentBonuses => {
+export const calculateEquipmentBonusesFromGear = (player: Player, monster: Pick<Monster, 'id'>): EquipmentBonuses => {
   const totals: EquipmentBonuses = {
     bonuses: {
       str: 0,

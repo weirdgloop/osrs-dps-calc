@@ -1,4 +1,4 @@
-import { ImportableData } from '@/types/State';
+import type { ImportableData } from '@/state/RootStore';
 
 /**
  * Requests
