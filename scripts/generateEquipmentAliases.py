@@ -224,6 +224,14 @@ def main():
         #       but this'll stop duplicate entries appearing in the equipment search
         elif re.match(r"^Agility cape", item["name"]):
             handle_base_variant(all_items, item, item['name'], [item['version']])
+        # Pete Kayer's Challenges variants
+        elif item['name'].endswith(" (Pete Kayer's Challenges)"):
+            handle_base_variant(
+                all_items,
+                item,
+                item["name"].removesuffix(" (Pete Kayer's Challenges)"),
+                ["", "Normal", "Undamaged", "Restored"],
+            )
 
     mapping_dict = {}
     for k, v in sorted(data.items(), key=lambda item: item[1].base_name):

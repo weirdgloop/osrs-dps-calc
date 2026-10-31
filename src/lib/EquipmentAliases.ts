@@ -4,7 +4,7 @@
  * @see https://oldschool.runescape.wiki/w/Trouver_parchment
  */
 const equipmentAliases = {
-  12006: [26484], // Abyssal tentacle
+  12006: [34619, 26484], // Abyssal tentacle
   4151: [26482, 12774, 12773], // Abyssal whip
   8849: [24141], // Adamant defender#Normal
   1161: [2613, 2605, 10296, 10298, 10300, 10302, 10304], // Adamant full helm
@@ -39,6 +39,7 @@ const equipmentAliases = {
   22109: [24222, 27359, 27376, 27374], // Ava's assembler#Normal
   22322: [24186], // Avernic defender#Normal
   11836: [26720], // Bandos boots
+  11832: [34611], // Bandos chestplate
   11804: [20370], // Bandos godsword
   24195: [24197], // Bandos halo#Normal
   11834: [26719], // Bandos tassets
@@ -47,6 +48,7 @@ const equipmentAliases = {
   11773: [26770, 25264], // Berserker ring (i)#Nightmare Zone
   2503: [12381, 12385], // Black d'hide body
   2497: [12383, 12387], // Black d'hide chaps
+  22284: [34615], // Black d'hide shield
   8847: [24139], // Black defender#Normal
   1165: [2595, 2587, 10306, 10308, 10310, 10312, 10314], // Black full helm
   1195: [2597, 2589, 7332, 7338, 7344, 7350, 7356], // Black kiteshield
@@ -121,7 +123,7 @@ const equipmentAliases = {
   7158: [28051], // Dragon 2h sword
   6739: [25378, 30352], // Dragon axe
   1377: [28037], // Dragon battleaxe
-  11840: [28055, 22234], // Dragon boots
+  11840: [34621, 28055, 22234], // Dragon boots
   3140: [28065, 12414], // Dragon chainbody
   13652: [28039, 26708], // Dragon claws
   21902: [28053], // Dragon crossbow
@@ -164,7 +166,7 @@ const equipmentAliases = {
   13073: [24180, 27004, 26471], // Elite void robe#Normal
   13072: [24178, 27003, 26469], // Elite void top#Normal
   10548: [24173], // Fighter hat#Normal
-  10551: [24175, 28069, 28067], // Fighter torso#Normal
+  10551: [24175, 34613, 28069, 28067], // Fighter torso#Normal
   6570: [24223], // Fire cape#Normal
   13329: [24134], // Fire max cape#Normal
   27550: [27551], // Ghommal's avernic defender 5#Normal
@@ -208,7 +210,7 @@ const equipmentAliases = {
   1081: [12239, 12229], // Iron plateskirt
   4732: [4932, 4928, 4931, 4930, 4929], // Karil's coif#Undamaged
   4734: [4938, 4934, 4937, 4936, 4935], // Karil's crossbow#Undamaged
-  4738: [4950, 4946, 4949, 4948, 4947], // Karil's leatherskirt#Undamaged
+  4738: [4950, 4946, 4949, 4948, 4947, 34609], // Karil's leatherskirt#Undamaged
   4736: [4944, 4940, 4943, 4942, 4941], // Karil's leathertop#Undamaged
   26741: [26742], // Koriff's coif#Normal
   26739: [26740], // Koriff's cowl#Normal
@@ -295,7 +297,7 @@ const equipmentAliases = {
   4749: [4968, 4964, 4967, 4966, 4965], // Torag's platebody#Undamaged
   4751: [4974, 4970, 4973, 4972, 4971], // Torag's platelegs#Undamaged
   19544: [23444], // Tormented bracelet
-  26382: [28254], // Torva full helm#Restored
+  26382: [28254, 34617], // Torva full helm#Restored
   26384: [28256], // Torva platebody#Restored
   26386: [28258], // Torva platelegs#Restored
   12926: [28688], // Toxic blowpipe#Charged
