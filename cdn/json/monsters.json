@@ -115544,13 +115544,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
+      "crush": -100,
+      "magic": -100,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": -100,
+      "stab": -100
     },
     "attributes": [],
     "immunities": {
@@ -115592,13 +115592,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
+      "crush": -100,
+      "magic": -100,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": -100,
+      "stab": -100
     },
     "attributes": [],
     "immunities": {
