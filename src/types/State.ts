@@ -55,6 +55,7 @@ export interface PlayerVsNPCCalculatedLoadout extends CalculatedLoadout {
   maxAttackRoll?: number,
   accuracy?: number,
   dps?: number,
+  xpPerHour?: number,
   ttk?: number,
   hitDist?: ChartEntry[],
   ttkDist?: Map<number, number>,

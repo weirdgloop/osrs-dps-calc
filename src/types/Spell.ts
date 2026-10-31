@@ -4,6 +4,7 @@ export interface Spell {
   name: string;
   image: string;
   max_hit: number;
+  base_xp: number;
   spellbook: Spellbook;
   element: Spellement;
 }
