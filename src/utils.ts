@@ -604,6 +604,10 @@ export const CombatStyleMap: { [k in EquipmentCategory]: { [k: string]: { image:
     'Thrust-Agg': { image: '267' },
     Smash: { image: '256' },
   },
+  [EquipmentCategory.POWERED_BOOK]: {
+    Accurate: { image: '263' },
+    Longrange: { image: '265' },
+  },
 };
 
 /**
@@ -693,6 +697,7 @@ export const getCombatStylesForCategory = (style: EquipmentCategory): PlayerComb
         { name: 'Fend', type: 'stab', stance: 'Defensive' },
       ];
       break;
+    case EquipmentCategory.POWERED_BOOK:
     case EquipmentCategory.POWERED_STAFF:
     case EquipmentCategory.POWERED_WAND:
       ret = [

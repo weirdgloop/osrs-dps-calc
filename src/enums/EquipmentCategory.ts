@@ -25,6 +25,7 @@ export enum EquipmentCategory {
   PICKAXE = 'Pickaxe',
   POLEARM = 'Polearm',
   POLESTAFF = 'Polestaff',
+  POWERED_BOOK = 'Powered Book',
   POWERED_STAFF = 'Powered Staff',
   POWERED_WAND = 'Powered Wand',
   SALAMANDER = 'Salamander',
@@ -42,6 +43,7 @@ export enum EquipmentCategory {
 export const MAGIC_WEAPONS = [
   EquipmentCategory.STAFF,
   EquipmentCategory.POWERED_WAND,
+  EquipmentCategory.POWERED_BOOK,
   EquipmentCategory.POWERED_STAFF,
   EquipmentCategory.BLADED_STAFF,
   EquipmentCategory.POLESTAFF,

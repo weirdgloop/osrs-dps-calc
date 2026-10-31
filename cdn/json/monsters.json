@@ -5025,7 +5025,7 @@
     "skills": {
       "atk": 250,
       "def": 260,
-      "hp": 550,
+      "hp": 1100,
       "magic": 250,
       "ranged": 280,
       "str": 240
@@ -17904,9 +17904,105 @@
     }
   },
   {
+    "id": 15627,
+    "name": "Brutus",
+    "version": "Charging",
+    "image": "Brutus.png",
+    "level": 30,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "3 (melee)",
+    "skills": {
+      "atk": 15,
+      "def": 10,
+      "hp": 60,
+      "magic": 0,
+      "ranged": 1,
+      "str": 30
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -7,
+      "magic": -3,
+      "heavy": -7,
+      "standard": -7,
+      "light": -7,
+      "slash": -7,
+      "stab": -7
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": true,
+    "weakness": {
+      "element": "earth",
+      "severity": 25
+    }
+  },
+  {
     "id": 15626,
     "name": "Brutus",
-    "version": "",
+    "version": "Post-quest",
+    "image": "Brutus.png",
+    "level": 30,
+    "speed": 5,
+    "style": [
+      "Crush"
+    ],
+    "size": 3,
+    "max_hit": "3 (melee)",
+    "skills": {
+      "atk": 12,
+      "def": 10,
+      "hp": 58,
+      "magic": 8,
+      "ranged": 1,
+      "str": 25
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -7,
+      "magic": -3,
+      "heavy": -7,
+      "standard": -7,
+      "light": -7,
+      "slash": -7,
+      "stab": -7
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": true,
+    "weakness": {
+      "element": "earth",
+      "severity": 25
+    }
+  },
+  {
+    "id": 15625,
+    "name": "Brutus",
+    "version": "Quest",
     "image": "Brutus.png",
     "level": 30,
     "speed": 5,
@@ -22474,9 +22570,11 @@
     "image": "Corpse (Xarth).png",
     "level": 89,
     "speed": 0,
-    "style": null,
+    "style": [
+      "n/a"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "0",
     "skills": {
       "atk": 50,
       "def": 100,
@@ -22503,9 +22601,7 @@
       "slash": -20,
       "stab": -20
     },
-    "attributes": [
-      "undead"
-    ],
+    "attributes": [],
     "immunities": {
       "burn": null
     },
@@ -22522,9 +22618,11 @@
     "image": "Corpse (Xarth).png",
     "level": 89,
     "speed": 0,
-    "style": null,
+    "style": [
+      "n/a"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "0",
     "skills": {
       "atk": 50,
       "def": 100,
@@ -22551,9 +22649,7 @@
       "slash": 100,
       "stab": 100
     },
-    "attributes": [
-      "undead"
-    ],
+    "attributes": [],
     "immunities": {
       "burn": null
     },
@@ -27972,10 +28068,10 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 1,
+      "magic": 250,
       "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 180,
+      "ranged": 180,
+      "ranged_str": 0,
       "str": 1
     },
     "defensive": {
@@ -28015,10 +28111,10 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 1,
+      "magic": 250,
       "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 180,
+      "ranged": 180,
+      "ranged_str": 0,
       "str": 1
     },
     "defensive": {
@@ -28058,10 +28154,10 @@
     },
     "offensive": {
       "atk": 0,
-      "magic": 1,
+      "magic": 250,
       "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 180,
+      "ranged": 180,
+      "ranged_str": 0,
       "str": 1
     },
     "defensive": {
@@ -31882,7 +31978,7 @@
       "Ranged"
     ],
     "size": 5,
-    "max_hit": 0,
+    "max_hit": "45",
     "skills": {
       "atk": 280,
       "def": 125,
@@ -38240,10 +38336,10 @@
       "Melee"
     ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "77",
     "skills": {
       "atk": 250,
-      "def": 130,
+      "def": 200,
       "hp": 3000,
       "magic": 200,
       "ranged": 80,
@@ -49929,54 +50025,6 @@
     }
   },
   {
-    "id": 15009,
-    "name": "Gryphon (Troubled Tortugans)",
-    "version": "",
-    "image": "Gryphon (Troubled Tortugans).png",
-    "level": 95,
-    "speed": 5,
-    "style": [
-      "Crush"
-    ],
-    "size": 2,
-    "max_hit": "8 (standard attacks)",
-    "skills": {
-      "atk": 65,
-      "def": 50,
-      "hp": 110,
-      "magic": 50,
-      "ranged": 0,
-      "str": 75
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 40,
-      "magic": 100,
-      "heavy": 60,
-      "standard": 60,
-      "light": 60,
-      "slash": 20,
-      "stab": 10
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": true,
-    "weakness": {
-      "element": "air",
-      "severity": 50
-    }
-  },
-  {
     "id": 13986,
     "name": "Guard (Aldarin)",
     "version": "1",
@@ -51556,22 +51604,24 @@
     "image": "Guard (Port Roberts, 1).png",
     "level": 21,
     "speed": 4,
-    "style": null,
+    "style": [
+      "Stab"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "3",
     "skills": {
       "atk": 19,
       "def": 14,
       "hp": 22,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
     },
     "offensive": {
-      "atk": 0,
+      "atk": 4,
       "magic": 0,
       "magic_str": 0,
-      "ranged": 0,
+      "ranged": 1,
       "ranged_str": 0,
       "str": 5
     },
@@ -51579,9 +51629,9 @@
       "flat_armour": 0,
       "crush": 19,
       "magic": -4,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 25,
       "stab": 18
     },
@@ -51599,22 +51649,24 @@
     "image": "Guard (Port Roberts, 2).png",
     "level": 21,
     "speed": 4,
-    "style": null,
+    "style": [
+      "Stab"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "3",
     "skills": {
       "atk": 19,
       "def": 14,
       "hp": 22,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
     },
     "offensive": {
-      "atk": 0,
+      "atk": 4,
       "magic": 0,
       "magic_str": 0,
-      "ranged": 0,
+      "ranged": 1,
       "ranged_str": 0,
       "str": 5
     },
@@ -51622,9 +51674,9 @@
       "flat_armour": 0,
       "crush": 19,
       "magic": -4,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 25,
       "stab": 18
     },
@@ -51642,22 +51694,24 @@
     "image": "Guard (Port Roberts, 3).png",
     "level": 21,
     "speed": 4,
-    "style": null,
+    "style": [
+      "Stab"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "3",
     "skills": {
       "atk": 19,
       "def": 14,
       "hp": 22,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
     },
     "offensive": {
-      "atk": 0,
+      "atk": 4,
       "magic": 0,
       "magic_str": 0,
-      "ranged": 0,
+      "ranged": 1,
       "ranged_str": 0,
       "str": 5
     },
@@ -51665,9 +51719,9 @@
       "flat_armour": 0,
       "crush": 19,
       "magic": -4,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 25,
       "stab": 18
     },
@@ -51685,22 +51739,24 @@
     "image": "Guard (Port Roberts, 4).png",
     "level": 21,
     "speed": 4,
-    "style": null,
+    "style": [
+      "Stab"
+    ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "3",
     "skills": {
       "atk": 19,
       "def": 14,
       "hp": 22,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 1,
+      "ranged": 1,
+      "str": 18
     },
     "offensive": {
-      "atk": 0,
+      "atk": 4,
       "magic": 0,
       "magic_str": 0,
-      "ranged": 0,
+      "ranged": 1,
       "ranged_str": 0,
       "str": 5
     },
@@ -51708,9 +51764,9 @@
       "flat_armour": 0,
       "crush": 19,
       "magic": -4,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 20,
+      "light": 20,
       "slash": 25,
       "stab": 18
     },
@@ -59980,7 +60036,9 @@
     "image": "Imp (Dagon'hai Trio).png",
     "level": 168,
     "speed": 0,
-    "style": null,
+    "style": [
+      "Melee"
+    ],
     "size": 1,
     "max_hit": 0,
     "skills": {
@@ -73265,7 +73323,7 @@
     "skills": {
       "atk": 1,
       "def": 195,
-      "hp": 785,
+      "hp": 1900,
       "magic": 350,
       "ranged": 200,
       "str": 1
@@ -73273,7 +73331,7 @@
     "offensive": {
       "atk": 0,
       "magic": 300,
-      "magic_str": 0,
+      "magic_str": 15,
       "ranged": 350,
       "ranged_str": 35,
       "str": 0
@@ -77729,7 +77787,7 @@
   {
     "id": 11,
     "name": "Nechryael",
-    "version": "Slayer task",
+    "version": "Slayer Tower basement",
     "image": "Nechryael.png",
     "level": 115,
     "speed": 4,
@@ -80028,7 +80086,7 @@
       "Ranged"
     ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "24",
     "skills": {
       "atk": 1,
       "def": 215,
@@ -80075,7 +80133,7 @@
       "Magic"
     ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "24",
     "skills": {
       "atk": 1,
       "def": 250,
@@ -80122,7 +80180,7 @@
       "Ranged"
     ],
     "size": 3,
-    "max_hit": 0,
+    "max_hit": "24",
     "skills": {
       "atk": 325,
       "def": 250,
@@ -85139,6 +85197,51 @@
     }
   },
   {
+    "id": 12074,
+    "name": "Phantom Muspah",
+    "version": "Melee (Quest)",
+    "image": "Strange Creature (melee).png",
+    "level": 368,
+    "speed": 5,
+    "style": [
+      "Stab"
+    ],
+    "size": 5,
+    "max_hit": "24",
+    "skills": {
+      "atk": 280,
+      "def": 200,
+      "hp": 550,
+      "magic": 150,
+      "ranged": 280,
+      "str": 280
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 90,
+      "magic_str": 66,
+      "ranged": 0,
+      "ranged_str": -10,
+      "str": -10
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 80,
+      "magic": -10,
+      "heavy": 160,
+      "standard": 160,
+      "light": 160,
+      "slash": 90,
+      "stab": 110
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
     "id": 12080,
     "name": "Phantom Muspah",
     "version": "Post-shield",
@@ -85188,6 +85291,52 @@
       "element": "air",
       "severity": 65
     }
+  },
+  {
+    "id": 12076,
+    "name": "Phantom Muspah",
+    "version": "Post-shield (Quest)",
+    "image": "Strange Creature (ranged).png",
+    "level": 368,
+    "speed": 6,
+    "style": [
+      "Ranged",
+      "Magic"
+    ],
+    "size": 5,
+    "max_hit": "38 (Ranged)",
+    "skills": {
+      "atk": 280,
+      "def": 200,
+      "hp": 550,
+      "magic": 179,
+      "ranged": 335,
+      "str": 280
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 90,
+      "magic_str": 66,
+      "ranged": 0,
+      "ranged_str": -10,
+      "str": -10
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 80,
+      "magic": 280,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 110
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
   },
   {
     "id": 12077,
@@ -85241,6 +85390,52 @@
     }
   },
   {
+    "id": 12073,
+    "name": "Phantom Muspah",
+    "version": "Ranged (Quest)",
+    "image": "Strange Creature (ranged).png",
+    "level": 368,
+    "speed": 6,
+    "style": [
+      "Ranged",
+      "Magic"
+    ],
+    "size": 5,
+    "max_hit": "32 (Ranged)",
+    "skills": {
+      "atk": 280,
+      "def": 200,
+      "hp": 550,
+      "magic": 150,
+      "ranged": 280,
+      "str": 280
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 90,
+      "magic_str": 66,
+      "ranged": 0,
+      "ranged_str": -10,
+      "str": -10
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 80,
+      "magic": 280,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 110
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
     "id": 12079,
     "name": "Phantom Muspah",
     "version": "Shielded",
@@ -85292,6 +85487,52 @@
     }
   },
   {
+    "id": 12075,
+    "name": "Phantom Muspah",
+    "version": "Shielded (Quest)",
+    "image": "Strange Creature (shielded).png",
+    "level": 368,
+    "speed": 6,
+    "style": [
+      "Ranged",
+      "Magic"
+    ],
+    "size": 5,
+    "max_hit": "38 (Ranged)",
+    "skills": {
+      "atk": 280,
+      "def": 200,
+      "hp": 75,
+      "magic": 180,
+      "ranged": 336,
+      "str": 280
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 90,
+      "magic_str": 66,
+      "ranged": 0,
+      "ranged_str": -10,
+      "str": -10
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 80,
+      "magic": 280,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 110
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
     "id": 12082,
     "name": "Phantom Muspah",
     "version": "Teleporting",
@@ -85340,6 +85581,51 @@
       "element": "air",
       "severity": 65
     }
+  },
+  {
+    "id": 12081,
+    "name": "Phantom Muspah",
+    "version": "Teleporting (Quest)",
+    "image": "Phantom Muspah (teleporting).png",
+    "level": 368,
+    "speed": 6,
+    "style": [
+      "Typeless"
+    ],
+    "size": 5,
+    "max_hit": 0,
+    "skills": {
+      "atk": 280,
+      "def": 200,
+      "hp": 550,
+      "magic": 150,
+      "ranged": 280,
+      "str": 280
+    },
+    "offensive": {
+      "atk": 60,
+      "magic": 90,
+      "magic_str": 66,
+      "ranged": 0,
+      "ranged_str": -10,
+      "str": -10
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 80,
+      "magic": 280,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 90,
+      "stab": 110
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
   },
   {
     "id": 373,
@@ -97107,7 +97393,7 @@
   {
     "id": 14860,
     "name": "Shellbane gryphon",
-    "version": "",
+    "version": "Post-quest",
     "image": "Shellbane gryphon.png",
     "level": 235,
     "speed": 5,
@@ -97155,9 +97441,9 @@
   },
   {
     "id": 15010,
-    "name": "Shellbane gryphon (Troubled Tortugans)",
-    "version": "",
-    "image": "Shellbane gryphon (Troubled Tortugans).png",
+    "name": "Shellbane gryphon",
+    "version": "Quest",
+    "image": "Shellbane gryphon.png",
     "level": 235,
     "speed": 5,
     "style": [
@@ -97165,7 +97451,7 @@
       "Ranged"
     ],
     "size": 4,
-    "max_hit": "22",
+    "max_hit": "22 <br/> 64 (whirlwinds) <br/> 30 (knockback)",
     "skills": {
       "atk": 160,
       "def": 120,
@@ -105176,105 +105462,19 @@
     "weakness": null
   },
   {
-    "id": 16607,
+    "id": 16610,
     "name": "Sparring partner",
-    "version": "1",
-    "image": "Sparring partner.png",
+    "version": "Gear Switching (magic)",
+    "image": "Sparring partner (4).png",
     "level": 126,
-    "speed": 4,
+    "speed": 5,
     "style": null,
     "size": 1,
     "max_hit": 0,
     "skills": {
       "atk": 99,
-      "def": 70,
+      "def": 99,
       "hp": 1000,
-      "magic": 99,
-      "ranged": 99,
-      "str": 0
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": false,
-    "weakness": null
-  },
-  {
-    "id": 16616,
-    "name": "Sparring partner",
-    "version": "10",
-    "image": "Sparring partner (10).png",
-    "level": 92,
-    "speed": 2,
-    "style": null,
-    "size": 1,
-    "max_hit": 0,
-    "skills": {
-      "atk": 99,
-      "def": 99,
-      "hp": 99,
-      "magic": 99,
-      "ranged": 99,
-      "str": 0
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": false,
-    "weakness": null
-  },
-  {
-    "id": 16617,
-    "name": "Sparring partner",
-    "version": "11",
-    "image": "Sparring partner (11).png",
-    "level": 122,
-    "speed": 2,
-    "style": null,
-    "size": 1,
-    "max_hit": 0,
-    "skills": {
-      "atk": 99,
-      "def": 99,
-      "hp": 99,
       "magic": 99,
       "ranged": 99,
       "str": 0
@@ -105307,7 +105507,7 @@
   {
     "id": 16608,
     "name": "Sparring partner",
-    "version": "2",
+    "version": "Gear Switching (melee)",
     "image": "Sparring partner (2).png",
     "level": 126,
     "speed": 4,
@@ -105350,7 +105550,7 @@
   {
     "id": 16609,
     "name": "Sparring partner",
-    "version": "3",
+    "version": "Gear Switching (ranged)",
     "image": "Sparring partner (3).png",
     "level": 126,
     "speed": 5,
@@ -105391,18 +105591,18 @@
     "weakness": null
   },
   {
-    "id": 16610,
+    "id": 16607,
     "name": "Sparring partner",
-    "version": "4",
-    "image": "Sparring partner (4).png",
+    "version": "Power of Freezes",
+    "image": "Sparring partner.png",
     "level": 126,
-    "speed": 5,
+    "speed": 4,
     "style": null,
     "size": 1,
     "max_hit": 0,
     "skills": {
       "atk": 99,
-      "def": 99,
+      "def": 70,
       "hp": 1000,
       "magic": 99,
       "ranged": 99,
@@ -105436,7 +105636,7 @@
   {
     "id": 16611,
     "name": "Sparring partner",
-    "version": "5",
+    "version": "Prayer Protection (Armadyl godsword)",
     "image": "Sparring partner (5).png",
     "level": 97,
     "speed": 2,
@@ -105477,54 +105677,11 @@
     "weakness": null
   },
   {
-    "id": 16612,
+    "id": 16616,
     "name": "Sparring partner",
-    "version": "6",
-    "image": "Sparring partner (6).png",
-    "level": 101,
-    "speed": 2,
-    "style": null,
-    "size": 1,
-    "max_hit": 0,
-    "skills": {
-      "atk": 99,
-      "def": 99,
-      "hp": 99,
-      "magic": 99,
-      "ranged": 99,
-      "str": 0
-    },
-    "offensive": {
-      "atk": 0,
-      "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
-      "str": 0
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 0,
-      "stab": 0
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": false,
-    "weakness": null
-  },
-  {
-    "id": 16613,
-    "name": "Sparring partner",
-    "version": "7",
-    "image": "Sparring partner (7).png",
-    "level": 67,
+    "version": "Prayer Protection (dark bow)",
+    "image": "Sparring partner (10).png",
+    "level": 92,
     "speed": 2,
     "style": null,
     "size": 1,
@@ -105565,7 +105722,7 @@
   {
     "id": 16614,
     "name": "Sparring partner",
-    "version": "8",
+    "version": "Prayer Protection (dragon claws)",
     "image": "Sparring partner (8).png",
     "level": 111,
     "speed": 2,
@@ -105606,11 +105763,140 @@
     "weakness": null
   },
   {
+    "id": 16613,
+    "name": "Sparring partner",
+    "version": "Prayer Protection (granite maul)",
+    "image": "Sparring partner (7).png",
+    "level": 67,
+    "speed": 2,
+    "style": null,
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 99,
+      "def": 99,
+      "hp": 99,
+      "magic": 99,
+      "ranged": 99,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16617,
+    "name": "Sparring partner",
+    "version": "Prayer Protection (Ice Barrage)",
+    "image": "Sparring partner (11).png",
+    "level": 122,
+    "speed": 2,
+    "style": null,
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 99,
+      "def": 99,
+      "hp": 99,
+      "magic": 99,
+      "ranged": 99,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
     "id": 16615,
     "name": "Sparring partner",
-    "version": "9",
+    "version": "Prayer Protection (rune crossbow)",
     "image": "Sparring partner (9).png",
     "level": 83,
+    "speed": 2,
+    "style": null,
+    "size": 1,
+    "max_hit": 0,
+    "skills": {
+      "atk": 99,
+      "def": 99,
+      "hp": 99,
+      "magic": 99,
+      "ranged": 99,
+      "str": 0
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16612,
+    "name": "Sparring partner",
+    "version": "Prayer Protection (Voidwaker)",
+    "image": "Sparring partner (6).png",
+    "level": 101,
     "speed": 2,
     "style": null,
     "size": 1,
@@ -108330,189 +108616,6 @@
       "element": "fire",
       "severity": 30
     }
-  },
-  {
-    "id": 12063,
-    "name": "Strange Creature",
-    "version": "Melee",
-    "image": "Strange Creature (melee).png",
-    "level": 368,
-    "speed": 5,
-    "style": [
-      "Stab"
-    ],
-    "size": 5,
-    "max_hit": "24",
-    "skills": {
-      "atk": 280,
-      "def": 200,
-      "hp": 550,
-      "magic": 150,
-      "ranged": 280,
-      "str": 280
-    },
-    "offensive": {
-      "atk": 60,
-      "magic": 90,
-      "magic_str": 66,
-      "ranged": 0,
-      "ranged_str": -10,
-      "str": -10
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 80,
-      "magic": -10,
-      "heavy": 160,
-      "standard": 160,
-      "light": 160,
-      "slash": 90,
-      "stab": 110
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": false,
-    "weakness": null
-  },
-  {
-    "id": 12076,
-    "name": "Strange Creature",
-    "version": "Post-shield",
-    "image": "Strange Creature (ranged).png",
-    "level": 368,
-    "speed": 6,
-    "style": [
-      "Ranged",
-      "Magic"
-    ],
-    "size": 5,
-    "max_hit": "38 (Ranged)",
-    "skills": {
-      "atk": 280,
-      "def": 200,
-      "hp": 550,
-      "magic": 179,
-      "ranged": 335,
-      "str": 280
-    },
-    "offensive": {
-      "atk": 60,
-      "magic": 90,
-      "magic_str": 66,
-      "ranged": 0,
-      "ranged_str": -10,
-      "str": -10
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 80,
-      "magic": 280,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 90,
-      "stab": 110
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": false,
-    "weakness": null
-  },
-  {
-    "id": 12073,
-    "name": "Strange Creature",
-    "version": "Ranged",
-    "image": "Strange Creature (ranged).png",
-    "level": 368,
-    "speed": 6,
-    "style": [
-      "Ranged",
-      "Magic"
-    ],
-    "size": 5,
-    "max_hit": "32 (Ranged)",
-    "skills": {
-      "atk": 280,
-      "def": 200,
-      "hp": 550,
-      "magic": 150,
-      "ranged": 280,
-      "str": 280
-    },
-    "offensive": {
-      "atk": 60,
-      "magic": 90,
-      "magic_str": 66,
-      "ranged": 0,
-      "ranged_str": -10,
-      "str": -10
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 80,
-      "magic": 280,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 90,
-      "stab": 110
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": false,
-    "weakness": null
-  },
-  {
-    "id": 12075,
-    "name": "Strange Creature",
-    "version": "Shielded",
-    "image": "Strange Creature (shielded).png",
-    "level": 368,
-    "speed": 6,
-    "style": [
-      "Ranged",
-      "Magic"
-    ],
-    "size": 5,
-    "max_hit": "38 (Ranged)",
-    "skills": {
-      "atk": 280,
-      "def": 200,
-      "hp": 75,
-      "magic": 180,
-      "ranged": 336,
-      "str": 280
-    },
-    "offensive": {
-      "atk": 60,
-      "magic": 90,
-      "magic_str": 66,
-      "ranged": 0,
-      "ranged_str": -10,
-      "str": -10
-    },
-    "defensive": {
-      "flat_armour": 0,
-      "crush": 80,
-      "magic": 280,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
-      "slash": 90,
-      "stab": 110
-    },
-    "attributes": [],
-    "immunities": {
-      "burn": null
-    },
-    "is_slayer_monster": false,
-    "weakness": null
   },
   {
     "id": 685,
@@ -115534,13 +115637,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
+      "crush": -100,
+      "magic": -100,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": -100,
+      "stab": -100
     },
     "attributes": [],
     "immunities": {
@@ -115582,13 +115685,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
-      "magic": 0,
+      "crush": -100,
+      "magic": -100,
       "heavy": 0,
       "standard": 0,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": -100,
+      "stab": -100
     },
     "attributes": [],
     "immunities": {
@@ -118629,7 +118732,7 @@
       "hp": 95,
       "magic": 50,
       "ranged": 0,
-      "str": 0
+      "str": 170
     },
     "offensive": {
       "atk": 0,
@@ -122682,17 +122785,19 @@
     "version": "",
     "image": "Void Augmenter.png",
     "level": 138,
-    "speed": 0,
-    "style": null,
-    "size": 0,
-    "max_hit": 0,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "1",
     "skills": {
-      "atk": 0,
+      "atk": 1,
       "def": 175,
       "hp": 44,
       "magic": 300,
-      "ranged": 0,
-      "str": 0
+      "ranged": 1,
+      "str": 1
     },
     "offensive": {
       "atk": 0,
@@ -122704,13 +122809,13 @@
     },
     "defensive": {
       "flat_armour": 0,
-      "crush": 0,
+      "crush": 50,
       "magic": 0,
-      "heavy": 0,
-      "standard": 0,
+      "heavy": 50,
+      "standard": 50,
       "light": 0,
-      "slash": 0,
-      "stab": 0
+      "slash": 50,
+      "stab": 50
     },
     "attributes": [],
     "immunities": {
@@ -125000,7 +125105,7 @@
   {
     "id": 2917,
     "name": "Waterfiend",
-    "version": "Slayer task",
+    "version": "Slayer task area",
     "image": "Waterfiend.png",
     "level": 115,
     "speed": 4,
@@ -129161,10 +129266,10 @@
     "offensive": {
       "atk": 150,
       "magic": 250,
-      "magic_str": 350,
+      "magic_str": 0,
       "ranged": 250,
-      "ranged_str": 0,
-      "str": 225
+      "ranged_str": 30,
+      "str": 30
     },
     "defensive": {
       "flat_armour": 0,

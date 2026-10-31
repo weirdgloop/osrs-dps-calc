@@ -277,7 +277,12 @@ def main():
                 monster['version'] = ""
             else:
                 continue
-
+        
+        # Strange Creature got merged into the Muspah page as a Multi Infobox, so we need to add the Quest label here
+        if monster['name'] == "Phantom Muspah" and monster['id'] in [12073, 12074, 12075, 12076, 12081]:
+                version_name = monster['version']
+                monster['version'] = f"{version_name} (Quest)"
+            
         monster = strip_parser_tags(monster)
 
         data.append(monster)
