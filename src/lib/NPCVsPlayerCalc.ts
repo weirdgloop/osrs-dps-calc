@@ -3,7 +3,7 @@ import { Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
 // import { OVERHEAD_PRAYERS, Prayer } from '@/enums/Prayer';
 import {
-  AttackDistribution, HitDistribution, Hitsplat, WeightedHit,
+  AttackDistribution, flatAddTransformer, HitDistribution, Hitsplat, WeightedHit,
 } from '@/lib/HitDist';
 import { ALWAYS_ACCURATE_MONSTERS, NPC_HARDCODED_MAX_HIT, SECONDS_PER_TICK } from '@/lib/constants';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
@@ -99,6 +99,10 @@ export default class NPCVsPlayerCalc extends BaseCalc {
           ...dist.dists[0].hits.map((h) => new WeightedHit(h.probability, h.hitsplats.map((s) => new Hitsplat(Math.trunc(s.damage * reduction), s.accurate)))),
         ]),
       ]);
+    }
+
+    if (this.wearing('Rondache')) {
+      dist = dist.transform(flatAddTransformer(-2), { transformInaccurate: false });
     }
 
     // There's some monsters that can hit through prayers, but let's worry about that later
