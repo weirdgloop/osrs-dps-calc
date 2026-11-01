@@ -426,7 +426,7 @@ export default class BaseCalc {
    * @see https://oldschool.runescape.wiki/w/Karil_the_Tainted%27s_equipment
    */
   protected isWearingKarils(): boolean {
-    return this.wearingAll(["Karil's coif", "Karil's leathertop", "Karil's leatherskirt", "Karil's crossbow", 'Amulet of the damned']);
+    return this.wearingAll(["Karil's coif", "Karil's leathertop", "Karil's leatherskirt", "Karil's crossbow", 'Amulet of the Damned']);
   }
 
   /**
@@ -823,7 +823,7 @@ export default class BaseCalc {
       (spellName === 'Iban Blast' && !this.wearing(['Iban\'s staff', 'Iban\'s staff (u)']))
       || (spellName === 'Saradomin Strike' && !this.wearing(['Saradomin staff', 'Staff of Light']))
       || (spellName === 'Claws of Guthix' && !this.wearing(['Guthix staff', 'Void knight mace', 'Staff of Balance']))
-      || (spellName === 'Flames of Zamarok' && !this.wearing(['Zamorak staff', 'Staff of the Dead', 'Toxic Staff of the Dead', 'Thammaron\'s sceptre (a)', 'Accursed sceptre (a)']))
+      || (spellName === 'Flames of Zamorak' && !this.wearing(['Zamorak staff', 'Staff of the Dead', 'Toxic Staff of the Dead', 'Thammaron\'s sceptre (a)', 'Accursed sceptre (a)']))
       || (spellName === 'Magic Dart' && !this.wearing(['Slayer\'s staff', 'Slayer\'s staff (e)', 'Staff of the Dead', 'Toxic Staff of the Dead', 'Staff of Light', 'Staff of Balance']))
     ) {
       this.player = {
