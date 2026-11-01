@@ -120,6 +120,8 @@ const equipmentAliases = {
   4722: [4902, 4898, 4901, 4900, 4899], // Dharok's platelegs#Undamaged
   21015: [28682], // Dinh's bulwark
   28902: [28906], // Dizana's max cape#Normal
+  28951: [28953], // Dizana's quiver#Charged
+  28947: [28949], // Dizana's quiver#Uncharged
   7158: [28051], // Dragon 2h sword
   6739: [25378, 30352], // Dragon axe
   1377: [28037], // Dragon battleaxe
@@ -334,7 +336,9 @@ const equipmentAliases = {
   24424: [29609], // Volatile Nightmare staff
   11772: [26769, 25262], // Warrior ring (i)#Nightmare Zone
   1171: [20166], // Wooden shield
+  26725: [26726], // Wristbands of the Arena#Charged
   26723: [26724], // Wristbands of the Arena#Normal
+  26729: [26730], // Wristbands of the Arena (i)#Charged
   26727: [26728], // Wristbands of the Arena (i)#Normal
   11808: [20374], // Zamorak godsword
   12638: [24170], // Zamorak halo#Normal
