@@ -909,8 +909,12 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isRevWeaponBuffApplicable()) {
       attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_REV_WEAPON, attackRoll, [3, 2]);
     }
-    if (this.wearing('Tome of Water') && (this.getSpellement() === 'water' || isBindSpell(this.player.spell))) { // todo does this go here?
-      attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_TOME, attackRoll, [6, 5]);
+    if (this.wearing('Tome of Water') && this.player.equipment.shield?.version === 'Charged') { // todo does this go here?
+      if (this.getSpellement() === 'water') {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_TOME, attackRoll, [11, 10]);
+      } else if (isBindSpell(this.player.spell)) {
+        attackRoll = this.trackFactor(DetailKey.PLAYER_ACCURACY_TOME, attackRoll, [6, 5]);
+      }
     }
 
     if (this.opts.usingSpecialAttack) {
