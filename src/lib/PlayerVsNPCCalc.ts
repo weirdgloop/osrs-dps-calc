@@ -498,7 +498,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
-    if (this.wearing('Obligator') && this.monster.size >= 2 && this.player.style.name !== 'Smash') {
+    if (this.wearing('Obligator') && this.player.equipment.weapon?.version === 'Charged' && this.monster.size >= 2 && this.player.style.name !== 'Smash') {
       // todo placement? mostly relative to inq bonus / is it post-roll?
       const bonus = this.monster.size === 2 ? 20 : 40;
       maxHit = this.trackFactor(DetailKey.MAX_HIT_OBLIGATOR, maxHit, [100 + bonus, 100]);
@@ -1509,7 +1509,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
-    if (this.isUsingMeleeStyle() && this.wearing('Obligator') && this.player.style.name !== 'Smash') {
+    if (this.isUsingMeleeStyle() && this.wearing('Obligator') && this.player.equipment.weapon?.version === 'Charged' && this.player.style.name !== 'Smash') {
       // todo can't wait to learn how this interacts with min hits next leagues
       const rerolls = 2
         + (this.monster.defensive.stab > this.monster.defensive.crush ? 1 : 0)
