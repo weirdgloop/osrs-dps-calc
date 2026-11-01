@@ -146,6 +146,7 @@ def main():
         sanguine_torva_match = re.match(r"^Sanguine t(orva (full helm|platebody|platelegs))$", item['name'])
         decoration_kit_match = re.match(r"(.*)\((?:g|t|(h)\d|Arrav|Asgarnia|Dorgeshuun|Dragon|Fairy|Guthix|HAM|Horse|Jogre|Kandarin|Misthalin|Money|Saradomin|Skull|Varrock|Zamorak|or|cr|Hallowed|Trailblazer|Ithell|Iorwerth|Trahaearn|Cadarn|Crwys|Meilyr|Hefin|Amlodd|upgraded|light|dark|dusk|lit|deadman)\)$", item['name'], re.IGNORECASE)
         magic_robe_kit_match = re.match(r"^(?:Dark|Light|Twisted) ((?:infinity|ancestral) .*)$", item['name'])
+        locked_charge_match = re.match(r"^(?:Locked \+ (Charged|Uncharged)|(Charged|Uncharged) and Locked)$", item['version'])
 
         # One off items:
         if item['name'] in one_off_renames:
@@ -161,6 +162,9 @@ def main():
             # Only locked
             else:
                 handle_base_variant(all_items, item, item['name'], ['Normal'])
+        # Locked variants of charged items (e.g. "Locked + Charged" or "Charged and Locked")
+        elif locked_charge_match:
+            handle_base_variant(all_items, item, item['name'], [locked_charge_match.group(1) or locked_charge_match.group(2)])
         # Cosmetic Slayer helmets
         elif slayer_helm_match:
             handle_base_variant(all_items, item, 'Slayer helmet%s' % (slayer_helm_match.group(1) or ''), ['', 'Nightmare Zone'])
