@@ -152,7 +152,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
     if (this.isWearingTorags()) {
       const currentHealth = skills.hp + boosts.hp;
       const missingHealth = ((Math.round((skills.hp - currentHealth) / skills.hp * 100) / 100) * 100);
-      effectiveLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL_TORAGS, effectiveLevel, [1 + missingHealth, 100]);
+      effectiveLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL_TORAGS, effectiveLevel, [100 + missingHealth, 100]);
     }
 
     if (style === 'magic') {
