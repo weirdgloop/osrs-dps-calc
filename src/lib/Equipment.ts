@@ -13,6 +13,7 @@ import {
   TOMBS_OF_AMASCUT_MONSTER_IDS,
 } from '@/lib/constants';
 import { sum } from 'd3-array';
+import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import equipment from '../../cdn/json/equipment.json';
 import generatedEquipmentAliases from './EquipmentAliases';
 
@@ -376,7 +377,12 @@ export const calculateEquipmentBonusesFromGear = (player: Player, monster: Monst
   const dizanasQuiverCharged = cape?.name === "Dizana's max cape"
     || cape?.name === "Blessed Dizana's quiver"
     || (cape?.name === "Dizana's quiver" && cape?.version === 'Charged');
-  if (dizanasQuiverCharged && ammoApplicability(player.equipment.weapon?.id, player.equipment.ammo?.id) === AmmoApplicability.INCLUDED) {
+  // the quiver only holds arrows and bolts, so only bows and crossbows that fire them get its bonus
+  const weapon = playerEquipment.weapon;
+  const firesQuiverAmmo = !!weapon
+    && [EquipmentCategory.BOW, EquipmentCategory.CROSSBOW].includes(weapon.category)
+    && !['Heavy ballista', 'Light ballista', 'Eclipse atlatl'].includes(weapon.name);
+  if (dizanasQuiverCharged && firesQuiverAmmo && ammoApplicability(player.equipment.weapon?.id, player.equipment.ammo?.id) === AmmoApplicability.INCLUDED) {
     totals.offensive.ranged += 10;
     totals.bonuses.ranged_str += 1;
   }
