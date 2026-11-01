@@ -1832,7 +1832,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       } else if (this.wearing('Ivandis flail')) {
         dist = doEfaritay(dist);
         dist = dist.scaleDamage(6, 5);
-      } else if (this.wearing('Rod of ivandis') && !mattrs.includes(MonsterAttribute.VAMPYRE_3)) {
+      } else if (this.wearing('Rod of Ivandis') && !mattrs.includes(MonsterAttribute.VAMPYRE_3)) {
         dist = doEfaritay(dist);
         dist = dist.scaleDamage(11, 10);
       } else if (this.isWearingSilverWeapon() && mattrs.includes(MonsterAttribute.VAMPYRE_1)) {

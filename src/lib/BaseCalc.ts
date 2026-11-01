@@ -426,7 +426,7 @@ export default class BaseCalc {
    * @see https://oldschool.runescape.wiki/w/Karil_the_Tainted%27s_equipment
    */
   protected isWearingKarils(): boolean {
-    return this.wearingAll(["Karil's coif", "Karil's leathertop", "Karil's leatherskirt", "Karil's crossbow", 'Amulet of the damned']);
+    return this.wearingAll(["Karil's coif", "Karil's leathertop", "Karil's leatherskirt", "Karil's crossbow", 'Amulet of the Damned']);
   }
 
   /**
