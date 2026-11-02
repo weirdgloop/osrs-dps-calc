@@ -1,32 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react-lite';
-import { useStore } from '@/state';
 import { IconCircleCheck, IconCircleCheckFilled } from '@tabler/icons-react';
-
 import LazyImage from '@/app/components/generic/LazyImage';
-import { PlayerCombatStyle } from '@/types/PlayerCombatStyle';
-import { StaticImageData } from 'next/image';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
+import { usePlayer } from '@/state/PlayerStore';
+import { PlayerCombatStyle } from '@/types/PlayerCombatStyle';
 import { CombatStyleMap } from '@/utils';
+import { StaticImageData } from 'next/image';
 
-interface CombatStyleProps {
-  style: PlayerCombatStyle;
-}
-
-const CombatStyle: React.FC<CombatStyleProps> = observer((props) => {
-  const store = useStore();
-  const { player } = store;
-  const { style } = props;
-
-  const [hovering, setHovering] = useState(false);
+function useCombatStyleImage(style: PlayerCombatStyle, weaponCategory: EquipmentCategory): string | null {
   const [styleImage, setStyleImage] = useState<string | null>(null);
 
-  const active = player.style.name === style.name;
-
   useEffect(() => {
-    // Import the combat style image dynamically using the path, because there are a lot of them
     const getStyleImage = async () => {
-      let path = CombatStyleMap[store.equipmentData.weapon?.category || EquipmentCategory.NONE][style.name];
+      let path = CombatStyleMap[weaponCategory][style.name];
 
       if (style.type === 'magic' && style.stance === 'Defensive Autocast') {
         path = { image: 'styles/760' };
@@ -50,13 +37,27 @@ const CombatStyle: React.FC<CombatStyleProps> = observer((props) => {
     };
 
     getStyleImage();
-  }, [style, store.equipmentData.weapon?.category]);
+  }, [style, weaponCategory]);
+
+  return styleImage;
+}
+
+interface CombatStyleProps {
+  style: PlayerCombatStyle;
+}
+
+const CombatStyle: React.FC<CombatStyleProps> = observer(({ style }) => {
+  const player = usePlayer();
+  const [hovering, setHovering] = useState(false);
+  const styleImage = useCombatStyleImage(style, player.equipment.weapon?.category || EquipmentCategory.NONE);
+
+  const active = player.style.name === style.name;
 
   return (
     <button
       type="button"
       className="flex gap-4 items-center text-sm p-2 px-6 text-left transition-[background] first:border-t border-b text-black border-body-200 dark:border-dark-400 bg-gray-100 dark:bg-dark-500 dark:text-white hover:bg-gray-200 dark:hover:bg-dark-400"
-      onClick={() => store.updatePlayer({ style })}
+      onClick={() => player.setStyle(style)}
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
     >

@@ -3,6 +3,10 @@ import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { isCombatStyleType } from '@/types/PlayerCombatStyle';
 import monsters from '../../cdn/json/monsters.json';
 
+export const CUSTOM_MONSTER_ID = -1;
+
+export const DEFAULT_MONSTER_ID = 415; // Abyssal demon
+
 export function getMonsters(): Omit<Monster, 'inputs'>[] {
   return monsters.map((m): Omit<Monster, 'inputs'> => {
     const maxHit = parseInt(m.max_hit.toString());
@@ -53,7 +57,7 @@ export const INITIAL_MONSTER_INPUTS: Monster['inputs'] = {
 };
 
 export const CUSTOM_MONSTER_BASE: Monster = {
-  id: -1,
+  id: CUSTOM_MONSTER_ID,
   name: 'Custom monster',
   version: '',
   image: '',

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { PlayerSkills } from '@/types/Player';
-import { ImportableData } from '@/types/State';
+import type { ImportableData } from '@/state/RootStore';
 import { StaticImageData } from 'next/image';
 import Ancient from '@/public/img/potions/Ancient brew.png';
 import Attack from '@/public/img/potions/Attack.png';
