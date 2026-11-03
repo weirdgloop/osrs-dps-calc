@@ -4,7 +4,7 @@ import { PartialDeep } from 'type-fest';
 import { v7 as uuidv7 } from 'uuid';
 import type { ImportableData } from '@/state/RootStore';
 import { EquipmentPiece, Player, PlayerEquipment } from '@/types/Player';
-import { Monster } from '@/types/Monster';
+import { Monster, MonsterDefinition } from '@/types/Monster';
 import { PlayerCombatStyle } from '@/types/PlayerCombatStyle';
 import { spellByName } from '@/types/Spell';
 import { Prayer } from '@/enums/Prayer';
@@ -12,7 +12,7 @@ import { availableEquipment } from '@/lib/Equipment';
 import { CUSTOM_MONSTER_ID, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
 import { isDefined, keys } from '@/utils';
 import { PlayerBuffs, PlayerPatch } from '@/state/PlayerStore';
-import { availableMonsters, MonsterDefinition } from '@/state/MonsterStore';
+import { availableMonsters } from '@/state/MonsterStore';
 
 /**
  * Bring data written by an older version of the calculator up to the current schema. Mutates and returns `data`.

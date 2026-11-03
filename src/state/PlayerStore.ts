@@ -22,6 +22,7 @@ import { PreferencesStore } from '@/state/PreferencesStore';
 import {
   fetchPlayerSkills, getCombatStylesForCategory, getDefaultCombatStyle, keys, PotionMap,
 } from '@/utils';
+import { createMonsterInputs } from '@/lib/Monsters';
 
 export type PlayerBuffs = Player['buffs'];
 
@@ -111,12 +112,12 @@ export class PlayerStore implements Player {
    */
   manualBonuses: EquipmentBonuses | null = null;
 
-  readonly #monster: Pick<Monster, 'id'>;
+  readonly #monster: Pick<Monster, 'id' | 'inputs'>;
 
   readonly #preferences: Pick<PreferencesStore, 'manualMode'>;
 
   constructor(
-    monster: Pick<Monster, 'id'>,
+    monster: Pick<Monster, 'id' | 'inputs'>,
     preferences: Pick<PreferencesStore, 'manualMode'>,
     name: string,
     uuid: LoadoutId = uuidv7(),
@@ -327,7 +328,7 @@ export class PlayerStore implements Player {
   }
 }
 
-export const createEmptyPlayer = (name = 'Loadout 1'): Player => new PlayerStore({ id: -1 }, { manualMode: false }, name).snapshot;
+export const createEmptyPlayer = (name = 'Loadout 1'): Player => new PlayerStore({ id: -1, inputs: createMonsterInputs(-1) }, { manualMode: false }, name).snapshot;
 
 export const PlayerContext = createContext<PlayerStore | null>(null);
 
