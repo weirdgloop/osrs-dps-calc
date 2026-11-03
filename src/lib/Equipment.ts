@@ -10,7 +10,6 @@ import {
   BLOWPIPE_IDS,
   CAST_STANCES,
   DEFAULT_ATTACK_SPEED,
-  OCELLUS_P3_IDS,
   TOMBS_OF_AMASCUT_MONSTER_IDS,
 } from '@/lib/constants';
 import { sum } from 'd3-array';
@@ -251,7 +250,7 @@ export const getCanonicalEquipment = (inputEq: PlayerEquipment) => {
 /**
  * Calculates the player's attack speed using current stance and equipment.
  */
-export const calculateAttackSpeed = (player: Player, monster: Pick<Monster, 'id' | 'inputs'>): number => {
+export const calculateAttackSpeed = (player: Player, monster: Pick<Monster, 'id'>): number => {
   let attackSpeed = player.equipment.weapon?.speed || DEFAULT_ATTACK_SPEED;
 
   if (player.style.type === 'ranged' && player.style.stance === 'Rapid') {
@@ -277,14 +276,10 @@ export const calculateAttackSpeed = (player: Player, monster: Pick<Monster, 'id'
     }
   }
 
-  if (OCELLUS_P3_IDS.includes(monster.id) && monster.inputs.phase === 'Phase 4 Explosions - With Speed-Up') {
-    attackSpeed = 2;
-  }
-
   return Math.max(attackSpeed, 1);
 };
 
-export const calculateEquipmentBonusesFromGear = (player: Player, monster: Pick<Monster, 'id' | 'inputs'>): EquipmentBonuses => {
+export const calculateEquipmentBonusesFromGear = (player: Player, monster: Pick<Monster, 'id'>): EquipmentBonuses => {
   const totals: EquipmentBonuses = {
     bonuses: {
       str: 0,

@@ -12,7 +12,7 @@ export default class LoadoutStore {
 
   selectedUuid: LoadoutId;
 
-  readonly #monster: Pick<Monster, 'id' | 'inputs'>;
+  readonly #monster: Pick<Monster, 'id'>;
 
   readonly #preferences: Pick<PreferencesStore, 'manualMode'>;
 
@@ -21,7 +21,7 @@ export default class LoadoutStore {
 
   #started = false;
 
-  constructor(monster: Pick<Monster, 'id' | 'inputs'>, preferences: Pick<PreferencesStore, 'manualMode'>) {
+  constructor(monster: Pick<Monster, 'id'>, preferences: Pick<PreferencesStore, 'manualMode'>) {
     this.#monster = monster;
     this.#preferences = preferences;
 
