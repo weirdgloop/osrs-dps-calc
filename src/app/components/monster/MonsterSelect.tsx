@@ -1,7 +1,8 @@
 import React from 'react';
 import { IconPencilPlus } from '@tabler/icons-react';
-import { availableMonsters, MonsterDefinition, useMonster } from '@/state/MonsterStore';
+import { availableMonsters, useMonster } from '@/state/MonsterStore';
 import Combobox from '@/app/components/generic/Combobox';
+import { MonsterDefinition } from '@/types/Monster';
 
 interface MonsterOption {
   label: string;
