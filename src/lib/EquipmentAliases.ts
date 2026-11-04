@@ -146,12 +146,12 @@ const equipmentAliases = {
   4087: [28061, 12415], // Dragon platelegs
   4585: [28063, 12416], // Dragon plateskirt
   4587: [28031, 20000], // Dragon scimitar
+  21009: [28029], // Dragon shortsword
   1263: [28043], // Dragon spear#Poison
   5716: [28045], // Dragon spear#Poison+
   5730: [28047], // Dragon spear#Poison++
   1249: [28041], // Dragon spear#Unpoisoned
   1187: [28059, 12418], // Dragon sq shield
-  21009: [28029], // Dragon sword
   13576: [28035, 26710], // Dragon warhammer
   29004: [29031], // Eclipse Moon chestplate#New
   29010: [29035], // Eclipse Moon helm#New

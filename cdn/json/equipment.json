@@ -6169,6 +6169,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Adamant shortsword",
+    "id": 1287,
+    "weight": 2.041,
+    "version": "",
+    "slot": "weapon",
+    "image": "Adamant shortsword.png",
+    "speed": 4,
+    "category": "Stab Sword",
+    "bonuses": {
+      "str": 24,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 23,
+      "slash": 18,
+      "crush": -2,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 2,
+      "crush": 1,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Adamant spear",
     "id": 3174,
     "weight": 2.721,
@@ -6380,37 +6411,6 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Adamant sword",
-    "id": 1287,
-    "weight": 2.041,
-    "version": "",
-    "slot": "weapon",
-    "image": "Adamant sword.png",
-    "speed": 4,
-    "category": "Stab Sword",
-    "bonuses": {
-      "str": 24,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 23,
-      "slash": 18,
-      "crush": -2,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 2,
-      "crush": 1,
       "magic": 0,
       "ranged": 0
     },
@@ -9661,6 +9661,37 @@
       "crush": 25,
       "magic": -6,
       "ranged": -8
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Amulet of sight",
+    "id": 34762,
+    "weight": 0.01,
+    "version": "",
+    "slot": "neck",
+    "image": "Amulet of sight.png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 10
     },
     "defensive": {
       "stab": 0,
@@ -22320,6 +22351,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Black shortsword",
+    "id": 1283,
+    "weight": 1.814,
+    "version": "",
+    "slot": "weapon",
+    "image": "Black shortsword.png",
+    "speed": 4,
+    "category": "Stab Sword",
+    "bonuses": {
+      "str": 12,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 14,
+      "slash": 10,
+      "crush": -2,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 2,
+      "crush": 1,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Black skirt",
     "id": 1015,
     "weight": 0.907,
@@ -22779,37 +22841,6 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Black sword",
-    "id": 1283,
-    "weight": 1.814,
-    "version": "",
-    "slot": "weapon",
-    "image": "Black sword.png",
-    "speed": 4,
-    "category": "Stab Sword",
-    "bonuses": {
-      "str": 12,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 14,
-      "slash": 10,
-      "crush": -2,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 2,
-      "crush": 1,
       "magic": 0,
       "ranged": 0
     },
@@ -31031,6 +31062,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Bronze shortsword",
+    "id": 1277,
+    "weight": 1.814,
+    "version": "",
+    "slot": "weapon",
+    "image": "Bronze shortsword.png",
+    "speed": 4,
+    "category": "Stab Sword",
+    "bonuses": {
+      "str": 5,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 4,
+      "slash": 3,
+      "crush": -2,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 2,
+      "crush": 1,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Bronze spear",
     "id": 3170,
     "weight": 2.267,
@@ -31273,37 +31335,6 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Bronze sword",
-    "id": 1277,
-    "weight": 1.814,
-    "version": "",
-    "slot": "weapon",
-    "image": "Bronze sword.png",
-    "speed": 4,
-    "category": "Stab Sword",
-    "bonuses": {
-      "str": 5,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 4,
-      "slash": 3,
-      "crush": -2,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 2,
-      "crush": 1,
       "magic": 0,
       "ranged": 0
     },
@@ -55087,6 +55118,68 @@
     "isTwoHanded": false
   },
   {
+    "name": "Dragon shortsword",
+    "id": 21009,
+    "weight": 1.814,
+    "version": "",
+    "slot": "weapon",
+    "image": "Dragon shortsword.png",
+    "speed": 4,
+    "category": "Stab Sword",
+    "bonuses": {
+      "str": 63,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 65,
+      "slash": 55,
+      "crush": -2,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 2,
+      "crush": 1,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Dragon shortsword (cr)",
+    "id": 28029,
+    "weight": 1.814,
+    "version": "",
+    "slot": "weapon",
+    "image": "Dragon shortsword (cr).png",
+    "speed": 4,
+    "category": "Stab Sword",
+    "bonuses": {
+      "str": 63,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 65,
+      "slash": 55,
+      "crush": -2,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 2,
+      "crush": 1,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Dragon spear",
     "id": 3176,
     "weight": 2.267,
@@ -55484,68 +55577,6 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dragon sword",
-    "id": 21009,
-    "weight": 1.814,
-    "version": "",
-    "slot": "weapon",
-    "image": "Dragon sword.png",
-    "speed": 4,
-    "category": "Stab Sword",
-    "bonuses": {
-      "str": 63,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 65,
-      "slash": 55,
-      "crush": -2,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 2,
-      "crush": 1,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Dragon sword (cr)",
-    "id": 28029,
-    "weight": 1.814,
-    "version": "",
-    "slot": "weapon",
-    "image": "Dragon sword (cr).png",
-    "speed": 4,
-    "category": "Stab Sword",
-    "bonuses": {
-      "str": 63,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 65,
-      "slash": 55,
-      "crush": -2,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 2,
-      "crush": 1,
       "magic": 0,
       "ranged": 0
     },
@@ -84289,6 +84320,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Iron shortsword",
+    "id": 1279,
+    "weight": 1.814,
+    "version": "",
+    "slot": "weapon",
+    "image": "Iron shortsword.png",
+    "speed": 4,
+    "category": "Stab Sword",
+    "bonuses": {
+      "str": 7,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 6,
+      "slash": 4,
+      "crush": -2,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 2,
+      "crush": 1,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Iron sickle",
     "id": 3899,
     "weight": 1.587,
@@ -84531,37 +84593,6 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Iron sword",
-    "id": 1279,
-    "weight": 1.814,
-    "version": "",
-    "slot": "weapon",
-    "image": "Iron sword.png",
-    "speed": 4,
-    "category": "Stab Sword",
-    "bonuses": {
-      "str": 7,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 6,
-      "slash": 4,
-      "crush": -2,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 2,
-      "crush": 1,
       "magic": 0,
       "ranged": 0
     },
@@ -94736,6 +94767,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Mithril shortsword",
+    "id": 1285,
+    "weight": 1.587,
+    "version": "",
+    "slot": "weapon",
+    "image": "Mithril shortsword.png",
+    "speed": 4,
+    "category": "Stab Sword",
+    "bonuses": {
+      "str": 17,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 16,
+      "slash": 11,
+      "crush": -2,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 2,
+      "crush": 1,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Mithril spear",
     "id": 3173,
     "weight": 1.814,
@@ -94947,37 +95009,6 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Mithril sword",
-    "id": 1285,
-    "weight": 1.587,
-    "version": "",
-    "slot": "weapon",
-    "image": "Mithril sword.png",
-    "speed": 4,
-    "category": "Stab Sword",
-    "bonuses": {
-      "str": 17,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 16,
-      "slash": 11,
-      "crush": -2,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 2,
-      "crush": 1,
       "magic": 0,
       "ranged": 0
     },
@@ -117986,6 +118017,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Rune shortsword",
+    "id": 1289,
+    "weight": 1.814,
+    "version": "",
+    "slot": "weapon",
+    "image": "Rune shortsword.png",
+    "speed": 4,
+    "category": "Stab Sword",
+    "bonuses": {
+      "str": 39,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 38,
+      "slash": 26,
+      "crush": -2,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 2,
+      "crush": 1,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Rune spear",
     "id": 3175,
     "weight": 2.267,
@@ -118197,37 +118259,6 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Rune sword",
-    "id": 1289,
-    "weight": 1.814,
-    "version": "",
-    "slot": "weapon",
-    "image": "Rune sword.png",
-    "speed": 4,
-    "category": "Stab Sword",
-    "bonuses": {
-      "str": 39,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 38,
-      "slash": 26,
-      "crush": -2,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 2,
-      "crush": 1,
       "magic": 0,
       "ranged": 0
     },
@@ -133454,6 +133485,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Steel shortsword",
+    "id": 1281,
+    "weight": 1.814,
+    "version": "",
+    "slot": "weapon",
+    "image": "Steel shortsword.png",
+    "speed": 4,
+    "category": "Stab Sword",
+    "bonuses": {
+      "str": 12,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 11,
+      "slash": 8,
+      "crush": -2,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 2,
+      "crush": 1,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Steel spear",
     "id": 3172,
     "weight": 2.267,
@@ -133665,37 +133727,6 @@
       "stab": 0,
       "slash": 0,
       "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Steel sword",
-    "id": 1281,
-    "weight": 1.814,
-    "version": "",
-    "slot": "weapon",
-    "image": "Steel sword.png",
-    "speed": 4,
-    "category": "Stab Sword",
-    "bonuses": {
-      "str": 12,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 11,
-      "slash": 8,
-      "crush": -2,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 2,
-      "crush": 1,
       "magic": 0,
       "ranged": 0
     },
@@ -140894,37 +140925,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Training bow",
-    "id": 9705,
-    "weight": 1.36,
-    "version": "",
-    "slot": "weapon",
-    "image": "Training bow.png",
-    "speed": 4,
-    "category": "Bow",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 8
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": true
-  },
-  {
     "name": "Training shield",
     "id": 9704,
     "weight": 5.443,
@@ -140956,12 +140956,43 @@
     "isTwoHanded": false
   },
   {
-    "name": "Training sword",
+    "name": "Training shortbow",
+    "id": 9705,
+    "weight": 1.36,
+    "version": "",
+    "slot": "weapon",
+    "image": "Training shortbow.png",
+    "speed": 4,
+    "category": "Bow",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 8
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": true
+  },
+  {
+    "name": "Training shortsword",
     "id": 9703,
     "weight": 1.814,
     "version": "",
     "slot": "weapon",
-    "image": "Training sword.png",
+    "image": "Training shortsword.png",
     "speed": 4,
     "category": "Stab Sword",
     "bonuses": {
@@ -151279,6 +151310,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "White shortsword",
+    "id": 6605,
+    "weight": 1.814,
+    "version": "",
+    "slot": "weapon",
+    "image": "White shortsword.png",
+    "speed": 4,
+    "category": "Stab Sword",
+    "bonuses": {
+      "str": 12,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 1
+    },
+    "offensive": {
+      "stab": 14,
+      "slash": 10,
+      "crush": -2,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 2,
+      "crush": 1,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "White sq shield",
     "id": 6631,
     "weight": 3.628,
@@ -151306,37 +151368,6 @@
       "crush": 14,
       "magic": 0,
       "ranged": 15
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "White sword",
-    "id": 6605,
-    "weight": 1.814,
-    "version": "",
-    "slot": "weapon",
-    "image": "White sword.png",
-    "speed": 4,
-    "category": "Stab Sword",
-    "bonuses": {
-      "str": 12,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 1
-    },
-    "offensive": {
-      "stab": 14,
-      "slash": 10,
-      "crush": -2,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 2,
-      "crush": 1,
-      "magic": 0,
-      "ranged": 0
     },
     "isTwoHanded": false
   },
@@ -152674,6 +152705,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Wooden shortsword",
+    "id": 7675,
+    "weight": 1.814,
+    "version": "",
+    "slot": "weapon",
+    "image": "Wooden shortsword.png",
+    "speed": 4,
+    "category": "Stab Sword",
+    "bonuses": {
+      "str": 5,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 4,
+      "slash": 3,
+      "crush": -2,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 2,
+      "crush": 1,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Wooden spoon",
     "id": 7433,
     "weight": 0.453,
@@ -152699,37 +152761,6 @@
       "stab": 0,
       "slash": 3,
       "crush": 2,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Wooden sword",
-    "id": 7675,
-    "weight": 1.814,
-    "version": "",
-    "slot": "weapon",
-    "image": "Wooden sword.png",
-    "speed": 4,
-    "category": "Stab Sword",
-    "bonuses": {
-      "str": 5,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 4,
-      "slash": 3,
-      "crush": -2,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 2,
-      "crush": 1,
       "magic": 0,
       "ranged": 0
     },
