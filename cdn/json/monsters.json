@@ -80173,7 +80173,7 @@
     "version": "Phase 3",
     "image": "Ocellus_(phase_3).png",
     "level": 1601,
-    "speed": 6,
+    "speed": 3,
     "style": [
       "Magic",
       "Melee",
@@ -81692,6 +81692,276 @@
       "light": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16835,
+    "name": "Outlaw (Mudfoot's Big Adventure)",
+    "version": "Before confrontation",
+    "image": "Outlaw (Mudfoot's Big Adventure, ranger).png",
+    "level": 6,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 1,
+      "def": 3,
+      "hp": 9,
+      "magic": 2,
+      "ranged": 6,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 6,
+      "magic": 10,
+      "heavy": 8,
+      "standard": 8,
+      "light": 8,
+      "slash": 6,
+      "stab": 2
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16839,
+    "name": "Outlaw (Mudfoot's Big Adventure)",
+    "version": "Before confrontation",
+    "image": "Outlaw (Mudfoot's Big Adventure, mage).png",
+    "level": 6,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 1,
+      "def": 3,
+      "hp": 9,
+      "magic": 6,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 12,
+      "heavy": 2,
+      "standard": 2,
+      "light": 2,
+      "slash": 10,
+      "stab": 10
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16842,
+    "name": "Outlaw (Mudfoot's Big Adventure)",
+    "version": "Before confrontation",
+    "image": "Outlaw (Mudfoot's Big Adventure, warrior).png",
+    "level": 8,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 6,
+      "def": 3,
+      "hp": 15,
+      "magic": 2,
+      "ranged": 1,
+      "str": 6
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 6,
+      "magic": -5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 8,
+      "stab": 8
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16837,
+    "name": "Outlaw (Mudfoot's Big Adventure)",
+    "version": "During confrontation",
+    "image": "Outlaw (Mudfoot's Big Adventure, ranger).png",
+    "level": 6,
+    "speed": 4,
+    "style": [
+      "Ranged"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 1,
+      "def": 3,
+      "hp": 9,
+      "magic": 2,
+      "ranged": 6,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 6,
+      "magic": 10,
+      "heavy": 8,
+      "standard": 8,
+      "light": 8,
+      "slash": 6,
+      "stab": 2
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16840,
+    "name": "Outlaw (Mudfoot's Big Adventure)",
+    "version": "During confrontation",
+    "image": "Outlaw (Mudfoot's Big Adventure, mage).png",
+    "level": 6,
+    "speed": 5,
+    "style": [
+      "Magic"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 1,
+      "def": 3,
+      "hp": 9,
+      "magic": 6,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 12,
+      "heavy": 2,
+      "standard": 2,
+      "light": 2,
+      "slash": 10,
+      "stab": 10
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16843,
+    "name": "Outlaw (Mudfoot's Big Adventure)",
+    "version": "During confrontation",
+    "image": "Outlaw (Mudfoot's Big Adventure, warrior).png",
+    "level": 8,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "2",
+    "skills": {
+      "atk": 6,
+      "def": 3,
+      "hp": 15,
+      "magic": 2,
+      "ranged": 1,
+      "str": 6
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 6,
+      "magic": -5,
+      "heavy": 10,
+      "standard": 10,
+      "light": 10,
+      "slash": 8,
+      "stab": 8
     },
     "attributes": [],
     "immunities": {
@@ -86631,7 +86901,7 @@
   {
     "id": 521,
     "name": "Pirate",
-    "version": "Pirate's Cove",
+    "version": "Pirates' Cove",
     "image": "Pirate (Pirates' Cove).png",
     "level": 23,
     "speed": 4,
@@ -118727,11 +118997,11 @@
     "size": 1,
     "max_hit": 0,
     "skills": {
-      "atk": 0,
+      "atk": 1,
       "def": 225,
       "hp": 95,
       "magic": 50,
-      "ranged": 0,
+      "ranged": 1,
       "str": 170
     },
     "offensive": {
@@ -118746,9 +119016,9 @@
       "flat_armour": 0,
       "crush": 10,
       "magic": -20,
-      "heavy": 0,
-      "standard": 0,
-      "light": 0,
+      "heavy": 20,
+      "standard": 90,
+      "light": 30,
       "slash": 15,
       "stab": 12
     },
@@ -118757,7 +119027,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "fire",
+      "severity": 80
+    }
   },
   {
     "id": 2993,
