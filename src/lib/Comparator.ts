@@ -93,7 +93,7 @@ export default class Comparator {
       monster: this.baseMonster,
     });
 
-    const skillInput = (x: number, stat: keyof PlayerSkills): InputSet => playerInput(x, { skills: { [stat]: x }, boosts: { [stat]: 0 } });
+    const skillInput = (x: number, stat: keyof PlayerSkills): InputSet => playerInput(x, { skills: { [stat]: x } });
 
     switch (this.xAxis) {
       case CompareXAxis.MONSTER_DEF:
