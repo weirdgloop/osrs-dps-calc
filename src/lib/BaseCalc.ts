@@ -719,6 +719,13 @@ export default class BaseCalc {
     return this.monster.is_slayer_monster || this.monster.id === -1;
   }
 
+  protected getsObligatorPassive(): boolean {
+    return this.wearing('Obligator')
+      && this.player.equipment.weapon?.version === 'Charged'
+      && this.player.style.name !== 'Smash'
+      && this.isUsingMeleeStyle();
+  }
+
   protected addIssue(type: UserIssueType, message: string) {
     this.userIssues.push({ type, message });
   }
