@@ -1454,10 +1454,13 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return new AttackDistribution([new HitDistribution([new WeightedHit(1.0, [Hitsplat.INACCURATE])])]);
     }
 
-    const isMaggotKingMeleePunish = this.isUsingMeleeStyle() && MAGGOT_KING_ID.includes(this.monster.id) && this.monster.inputs.phase === 'Melee Punish';
+    const isMaggotKingMeleePunish = this.isUsingMeleeStyle()
+      && MAGGOT_KING_ID.includes(this.monster.id)
+      && this.monster.inputs.phase === 'Melee Punish'
+      && this.player.style.type === 'crush';
     const isMultiHitMeleeWeapon = this.isWearingScythe() || this.isWearingTwoHitWeapon() || this.wearing('Dual macuahuitl');
     let firstHitAcc = acc;
-    if (isMaggotKingMeleePunish && style === 'crush') {
+    if (isMaggotKingMeleePunish) {
       const normalDefRoll = this.getNPCDefenceRoll();
       const reducedDefRoll = Math.trunc(normalDefRoll * 15 / 100);
       firstHitAcc = this.noInitSubCalc(
