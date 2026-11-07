@@ -1446,12 +1446,30 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
   private getAttackerDist(): AttackDistribution {
     const mattrs = this.monster.attributes;
-    const acc = this.getHitChance();
+    let acc = this.getHitChance();
     const [min, max] = this.getMinAndMax();
     const style = this.player.style.type;
 
     if (max === 0) {
       return new AttackDistribution([new HitDistribution([new WeightedHit(1.0, [Hitsplat.INACCURATE])])]);
+    }
+
+    const isMaggotKingMeleePunish = this.isUsingMeleeStyle() && MAGGOT_KING_ID.includes(this.monster.id) && this.monster.inputs.phase === 'Melee Punish';
+    const isMultiHitMeleeWeapon = this.isWearingScythe() || this.isWearingTwoHitWeapon() || this.wearing('Dual macuahuitl');
+    let firstHitAcc = acc;
+    if (isMaggotKingMeleePunish && style === 'crush') {
+      const normalDefRoll = this.getNPCDefenceRoll();
+      const reducedDefRoll = Math.trunc(normalDefRoll * 15 / 100);
+      firstHitAcc = this.noInitSubCalc(
+        this.player,
+        this.monster,
+        { overrides: { defenceRoll: reducedDefRoll } },
+      ).getHitChance();
+    }
+
+    // multi-hit weapons handle the maggot king accuracy buff separately
+    if (isMaggotKingMeleePunish && !isMultiHitMeleeWeapon) {
+      acc = firstHitAcc;
     }
 
     // standard linear
@@ -1655,42 +1673,29 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       }
     }
 
-    const isMaggotKingMeleePunish = this.isUsingMeleeStyle() && MAGGOT_KING_ID.includes(this.monster.id) && this.monster.inputs.phase === 'Melee Punish';
-    let firstHitAcc = acc;
-    if (isMaggotKingMeleePunish) {
-      const normalDefRoll = this.getNPCDefenceRoll();
-      const reducedDefRoll = this.player.style.type === 'crush' ? Math.trunc(normalDefRoll * 15 / 100) : normalDefRoll;
-      firstHitAcc = this.noInitSubCalc(
-        this.player,
-        this.monster,
-        { overrides: { defenceRoll: reducedDefRoll } },
-      ).getHitChance();
-    }
-
     if (this.isUsingMeleeStyle() && this.isWearingScythe()) {
       const hits: HitDistribution[] = [];
       for (let i = 0; i < Math.min(Math.max(this.monster.size, 1), 3); i++) {
-        let splatMax = Math.trunc(max / (2 ** i));
-
+        const splatMax = Math.trunc(max / (2 ** i));
+        const splatAcc = i === 0 ? firstHitAcc : acc;
+        let splatDist = HitDistribution.linear(splatAcc, min, Math.max(min, splatMax));
         if (isMaggotKingMeleePunish && i === 0) {
-          splatMax = this.trackFactor(DetailKey.MAX_HIT_MAGGOT_MELEE_PUNISH, splatMax, [150, 100]);
+          splatDist = splatDist.scaleDamage(150, 100);
         }
 
-        const splatAcc = i === 0 ? firstHitAcc : acc;
-
-        hits.push(HitDistribution.linear(splatAcc, min, Math.max(min, splatMax)));
+        hits.push(splatDist);
       }
       dist = new AttackDistribution(hits);
     }
 
     if (this.isUsingMeleeStyle() && this.wearing('Dual macuahuitl')) {
-      let firstMax = Math.trunc(max / 2);
+      const firstMax = Math.trunc(max / 2);
       const secondMax = max - firstMax;
-      if (isMaggotKingMeleePunish) {
-        firstMax = this.trackFactor(DetailKey.MAX_HIT_MAGGOT_MELEE_PUNISH, firstMax, [150, 100]);
-      }
-
       let firstHit = new AttackDistribution([HitDistribution.linear(firstHitAcc, min, Math.max(min, firstMax))]);
+
+      if (isMaggotKingMeleePunish) {
+        firstHit = firstHit.scaleDamage(150, 100);
+      }
 
       if (MAD_ANGEL_IDS.includes(this.monster.id) && this.monster.inputs.phase === 'Sword Cleave') {
         const minimum = this.trackFactor(DetailKey.MIN_HIT_MAD_ANGEL, firstMax, [1, 2]);
@@ -1709,13 +1714,16 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingTwoHitWeapon()) {
-      let firstMax = Math.trunc(max / 2);
+      const firstMax = Math.trunc(max / 2);
       const secondMax = max - firstMax;
+      let firstDist = HitDistribution.linear(firstHitAcc, min, Math.max(min, firstMax));
+
       if (isMaggotKingMeleePunish) {
-        firstMax = this.trackFactor(DetailKey.MAX_HIT_MAGGOT_MELEE_PUNISH, firstMax, [150, 100]);
+        firstDist = firstDist.scaleDamage(150, 100);
       }
+
       dist = new AttackDistribution([
-        HitDistribution.linear(firstHitAcc, min, Math.max(min, firstMax)),
+        firstDist,
         HitDistribution.linear(firstHitAcc, min, Math.max(min, secondMax)),
       ]);
     }
@@ -1792,24 +1800,14 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isUsingMeleeStyle() && this.isWearingDharok()) {
       const newMax = this.player.skills.hp;
       const curr = this.player.skills.hp + this.player.boosts.hp;
-
-      if (isMaggotKingMeleePunish) {
-        dist = new AttackDistribution([HitDistribution.linear(firstHitAcc, min, max)]);
-        dist = dist.scaleDamage(10000 + (newMax - curr) * newMax, 10000);
-        dist = dist.scaleDamage(150, 100);
-      } else {
-        dist = dist.scaleDamage(10000 + (newMax - curr) * newMax, 10000);
-      }
+      dist = dist.scaleDamage(10000 + (newMax - curr) * newMax, 10000);
     }
 
     if (this.isUsingMeleeStyle() && this.isWearingBerserkerNecklace() && this.isWearingTzhaarWeapon()) {
       dist = dist.scaleDamage(6, 5);
     }
 
-    if (!(this.isWearingScythe() || this.isWearingTwoHitWeapon() || this.wearing('Dual macuahuitl') || this.isWearingDharok()) && isMaggotKingMeleePunish) {
-      dist = new AttackDistribution([
-        HitDistribution.linear(firstHitAcc, min, Math.max(min, max)),
-      ]);
+    if (isMaggotKingMeleePunish && !isMultiHitMeleeWeapon) {
       dist = dist.scaleDamage(150, 100);
     }
 
