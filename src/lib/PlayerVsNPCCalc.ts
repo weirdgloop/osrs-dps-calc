@@ -1454,25 +1454,22 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       return new AttackDistribution([new HitDistribution([new WeightedHit(1.0, [Hitsplat.INACCURATE])])]);
     }
 
-    const isMaggotKingMeleePunish = this.isUsingMeleeStyle()
-      && MAGGOT_KING_ID.includes(this.monster.id)
+    const isMaggotKingMeleePunish = MAGGOT_KING_ID.includes(this.monster.id)
       && this.monster.inputs.phase === 'Melee Punish'
-      && this.player.style.type === 'crush';
+      && style === 'crush';
     const isMultiHitMeleeWeapon = this.isWearingScythe() || this.isWearingTwoHitWeapon() || this.wearing('Dual macuahuitl');
-    let firstHitAcc = acc;
+
+    // the maggot king punish only grants bonus accuracy to the first hit of multi-hit weapons,
+    // so we need to preserve the original accuracy value for those weapons to apply to the other hits
+    const baseAccuracy = acc;
     if (isMaggotKingMeleePunish) {
       const normalDefRoll = this.getNPCDefenceRoll();
       const reducedDefRoll = Math.trunc(normalDefRoll * 15 / 100);
-      firstHitAcc = this.noInitSubCalc(
+      acc = this.noInitSubCalc(
         this.player,
         this.monster,
         { overrides: { defenceRoll: reducedDefRoll } },
       ).getHitChance();
-    }
-
-    // multi-hit weapons handle the maggot king accuracy buff separately
-    if (isMaggotKingMeleePunish && !isMultiHitMeleeWeapon) {
-      acc = firstHitAcc;
     }
 
     // standard linear
@@ -1680,7 +1677,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       const hits: HitDistribution[] = [];
       for (let i = 0; i < Math.min(Math.max(this.monster.size, 1), 3); i++) {
         const splatMax = Math.trunc(max / (2 ** i));
-        const splatAcc = i === 0 ? firstHitAcc : acc;
+        const splatAcc = i === 0 ? acc : baseAccuracy;
         let splatDist = HitDistribution.linear(splatAcc, min, Math.max(min, splatMax));
         if (isMaggotKingMeleePunish && i === 0) {
           splatDist = splatDist.scaleDamage(150, 100);
@@ -1694,7 +1691,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isUsingMeleeStyle() && this.wearing('Dual macuahuitl')) {
       const firstMax = Math.trunc(max / 2);
       const secondMax = max - firstMax;
-      let firstHit = new AttackDistribution([HitDistribution.linear(firstHitAcc, min, Math.max(min, firstMax))]);
+      let firstHit = new AttackDistribution([HitDistribution.linear(acc, min, Math.max(min, firstMax))]);
 
       if (isMaggotKingMeleePunish) {
         firstHit = firstHit.scaleDamage(150, 100);
@@ -1705,7 +1702,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         firstHit = firstHit.firstHitMinimum(minimum);
       }
 
-      const secondHit = HitDistribution.linear(acc, min, Math.max(min, secondMax));
+      const secondHit = HitDistribution.linear(baseAccuracy, min, Math.max(min, secondMax));
       dist = firstHit.transform(
         (h) => {
           if (h.accurate) {
@@ -1719,7 +1716,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.isUsingMeleeStyle() && this.isWearingTwoHitWeapon()) {
       const firstMax = Math.trunc(max / 2);
       const secondMax = max - firstMax;
-      let firstDist = HitDistribution.linear(firstHitAcc, min, Math.max(min, firstMax));
+      let firstDist = HitDistribution.linear(acc, min, Math.max(min, firstMax));
 
       if (isMaggotKingMeleePunish) {
         firstDist = firstDist.scaleDamage(150, 100);
@@ -1727,7 +1724,7 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
       dist = new AttackDistribution([
         firstDist,
-        HitDistribution.linear(firstHitAcc, min, Math.max(min, secondMax)),
+        HitDistribution.linear(baseAccuracy, min, Math.max(min, secondMax)),
       ]);
     }
 
