@@ -7,6 +7,7 @@ import { usePlayer } from '@/state/PlayerStore';
 import { PlayerCombatStyle } from '@/types/PlayerCombatStyle';
 import { CombatStyleMap } from '@/utils';
 import { StaticImageData } from 'next/image';
+import isEqual from 'lodash.isequal';
 
 function useCombatStyleImage(style: PlayerCombatStyle, weaponCategory: EquipmentCategory): string | null {
   const [styleImage, setStyleImage] = useState<string | null>(null);
@@ -51,7 +52,7 @@ const CombatStyle: React.FC<CombatStyleProps> = observer(({ style }) => {
   const [hovering, setHovering] = useState(false);
   const styleImage = useCombatStyleImage(style, player.equipment.weapon?.category || EquipmentCategory.NONE);
 
-  const active = player.style.name === style.name;
+  const active = isEqual(player.style, style);
 
   return (
     <button
