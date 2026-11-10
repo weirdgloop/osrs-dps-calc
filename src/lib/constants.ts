@@ -23,6 +23,10 @@ export const BABA_IDS = [
   11778, 11779, 11780,
 ];
 
+export const BABA_MONKEY_ROOM_IDS = [
+  11781, 11709, 11712, 11711, 11714, 11715, 11718, 11710, 11713, 11717, 11716,
+];
+
 export const KEPHRI_SHIELDED_IDS = [
   11719,
 ];
@@ -74,6 +78,7 @@ export const TOMBS_OF_AMASCUT_PATH_MONSTER_IDS = [
 /** IDs of monsters that are present in Tombs of Amascut * */
 export const TOMBS_OF_AMASCUT_MONSTER_IDS = [
   ...TOMBS_OF_AMASCUT_PATH_MONSTER_IDS,
+  ...BABA_MONKEY_ROOM_IDS,
   ...TOA_OBELISK_IDS,
   ...P2_WARDEN_IDS,
   ...TOA_WARDEN_CORE_EJECTED_IDS,
