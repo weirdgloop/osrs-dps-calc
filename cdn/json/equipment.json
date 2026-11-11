@@ -17019,6 +17019,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Bee hunter's hat",
+    "id": 34777,
+    "weight": 0.001,
+    "version": "",
+    "slot": "head",
+    "image": "Bee hunter's hat.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Beekeeper's boots",
     "id": 25137,
     "weight": 0.001,
@@ -33457,37 +33488,6 @@
     "image": "Butler's uniform (top).png",
     "speed": 0,
     "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Butterfly net",
-    "id": 10010,
-    "weight": 0.226,
-    "version": "",
-    "slot": "weapon",
-    "image": "Butterfly net.png",
-    "speed": 4,
-    "category": "Spear",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -82150,6 +82150,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Insect net",
+    "id": 10010,
+    "weight": 0.226,
+    "version": "",
+    "slot": "weapon",
+    "image": "Insect net.png",
+    "speed": 4,
+    "category": "Spear",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Insulated boots",
     "id": 7159,
     "weight": 1.36,
@@ -90086,37 +90117,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Magic butterfly net",
-    "id": 11259,
-    "weight": 0.226,
-    "version": "",
-    "slot": "weapon",
-    "image": "Magic butterfly net.png",
-    "speed": 4,
-    "category": "Spear",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
     "name": "Magic cape",
     "id": 9763,
     "weight": 0.453,
@@ -90218,6 +90218,37 @@
     "image": "Magic hood.png",
     "speed": 0,
     "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Magic insect net",
+    "id": 11259,
+    "weight": 0.226,
+    "version": "",
+    "slot": "weapon",
+    "image": "Magic insect net.png",
+    "speed": 4,
+    "category": "Spear",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -103288,6 +103319,37 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Pink snelm",
+    "id": 34801,
+    "weight": 2,
+    "version": "",
+    "slot": "head",
+    "image": "Pink snelm.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -3,
+      "ranged": -1
+    },
+    "defensive": {
+      "stab": 7,
+      "slash": 8,
+      "crush": 6,
+      "magic": -1,
+      "ranged": 7
     },
     "isTwoHanded": false
   },
