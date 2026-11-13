@@ -456,13 +456,7 @@ export default class BaseCalc {
    */
 
   protected isWearingSilverWeapon(): boolean {
-    if (this.player.style.type === 'ranged' && this.wearing([
-      'Silver bolts#Unpoisoned',
-      'Silver bolts#Poison',
-      'Silver bolts#Poison+',
-      'Silver bolts#Poison++',
-      'Blisterwood stake',
-    ])) {
+    if (this.player.style.type === 'ranged' && this.wearing(['Silver bolts', 'Blisterwood stake'])) {
       return true;
     }
 
