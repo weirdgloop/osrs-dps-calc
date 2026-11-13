@@ -2051,8 +2051,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
         relevantEffects.push([multiplyTransformer(4, 5, 1)]);
       }
     }
-    if (mattrs.includes(MonsterAttribute.VAMPYRE_2)) {
-      if (!this.wearingVampyrebane(MonsterAttribute.VAMPYRE_2) && this.wearing("Efaritay's aid")) {
+    if (mattrs.includes(MonsterAttribute.VAMPYRE_2) && !this.wearingVampyrebane(MonsterAttribute.VAMPYRE_2)) {
+      if (this.wearing("Efaritay's aid")) {
         relevantEffects.push([divisionTransformer(2)]);
       } else if (this.isWearingSilverWeapon()) {
         relevantEffects.push([flatLimitTransformer(10)]);
