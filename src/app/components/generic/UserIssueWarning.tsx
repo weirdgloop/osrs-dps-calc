@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconAlertTriangleFilled } from '@tabler/icons-react';
-import { UserIssue } from '@/types/State';
+import { UserIssue } from '@/state/CalcStore';
 import { classNames } from '@/utils';
 
 interface IUserIssueProps {

@@ -1,7 +1,6 @@
 import Potion from '@/enums/Potion';
 import { StaticImageData } from 'next/image';
 import React, { useState } from 'react';
-import { observer } from 'mobx-react-lite';
 import LazyImage from '@/app/components/generic/LazyImage';
 import { IconCircleCheck, IconCircleCheckFilled } from '@tabler/icons-react';
 
@@ -13,7 +12,7 @@ interface IBuffItemProps {
   setActive: (p: Potion) => void;
 }
 
-const BuffItem: React.FC<IBuffItemProps> = observer((props) => {
+const BuffItem: React.FC<IBuffItemProps> = (props) => {
   const {
     potion, name, image, active, setActive,
   } = props;
@@ -41,6 +40,6 @@ const BuffItem: React.FC<IBuffItemProps> = observer((props) => {
       </div>
     </button>
   );
-});
+};
 
 export default BuffItem;
