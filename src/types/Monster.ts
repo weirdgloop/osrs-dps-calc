@@ -126,3 +126,9 @@ export interface Monster {
     phase?: string;
   }
 }
+
+// The "base" monster, i.e. an NPC without scaling, or a custom user-provided monster
+export type MonsterDefinition = Omit<Monster, 'inputs'>;
+
+// omit deprecated fields
+export type MonsterInputs = Omit<Monster['inputs'], 'partyAvgMiningLevel' | 'tormentedDemonPhase'>;

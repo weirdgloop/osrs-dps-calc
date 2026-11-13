@@ -1,7 +1,7 @@
 'use client';
 
 import { makeAutoObservable } from 'mobx';
-import { ImportableData } from '@/types/State';
+import type { ImportableData } from '@/state/RootStore';
 import delay from 'delay';
 import { GetPlayerRequest, WikiSyncerRequestType, WikiSyncerResponsesUnion } from './WikiSyncerTypes';
 
