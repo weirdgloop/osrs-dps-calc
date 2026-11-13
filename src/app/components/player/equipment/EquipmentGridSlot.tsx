@@ -1,69 +1,59 @@
-import { PlayerEquipment } from '@/types/Player';
 import React from 'react';
 import { observer } from 'mobx-react-lite';
-import { useStore } from '@/state';
-import { getCdnImage, isMac } from '@/utils';
 import UserIssueWarning from '@/app/components/generic/UserIssueWarning';
 import { BLOWPIPE_IDS } from '@/lib/constants';
+import { useCalc } from '@/state/CalcStore';
+import { usePlayer } from '@/state/PlayerStore';
+import { PlayerEquipment } from '@/types/Player';
+import { getCdnImage, isMac } from '@/utils';
 
 interface EquipmentGridSlotProps {
   slot: keyof PlayerEquipment;
   placeholder?: string;
 }
 
-const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer((props) => {
-  const store = useStore();
-  const { slot, placeholder } = props;
-  const currentSlot = store.equipmentData[slot];
-  const isEmpty = !currentSlot;
+const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer(({ slot, placeholder }) => {
+  const calc = useCalc();
+  const player = usePlayer();
+  const piece = player.equipment[slot];
+  const isEmpty = !piece;
 
   // Determine whether there's any issues with this element
-  const issues = store.userIssues.filter((i) => i.type.startsWith(`equipment_slot_${slot}`) && i.loadout === `${store.selectedLoadout + 1}`);
+  const issue = calc.userIssues.get(player.uuid)?.find((i) => i.type.startsWith(`equipment_slot_${slot}`));
 
-  const getTooltipContent = () => {
-    if (currentSlot !== null) {
-      // Special handling for blowpipes
-      if (BLOWPIPE_IDS.includes(currentSlot.id)) {
-        return `${currentSlot.name} (${currentSlot.itemVars?.blowpipeDartName?.replace(' dart', '') || 'Unknown dart'})`;
-      }
-    }
-
-    return currentSlot?.name;
-  };
+  const tooltip = piece && BLOWPIPE_IDS.includes(piece.id)
+    ? `${piece.name} (${piece.itemVars?.blowpipeDartName?.replace(' dart', '') || 'Unknown dart'})`
+    : piece?.name;
 
   /**
-   * Handle mouse down event
    * If ctrl key is pressed, open the wiki page for the item, otherwise clear the equipment slot
-   * @param e The mouse event
    */
   const mouseDown = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    if (isEmpty) return;
+    if (!piece) return;
 
-    if (currentSlot && (isMac ? e.metaKey : e.ctrlKey)) {
+    if (isMac ? e.metaKey : e.ctrlKey) {
       e.preventDefault();
-      window.open(`https://oldschool.runescape.wiki/w/Special:Lookup?type=item&id=${currentSlot.id}`, '_blank');
+      window.open(`https://oldschool.runescape.wiki/w/Special:Lookup?type=item&id=${piece.id}`, '_blank');
     } else {
-      store.clearEquipmentSlot(slot);
+      player.setEquipment({ [slot]: null });
     }
   };
 
   return (
     <div className="h-[40px] w-[40px] relative">
-      {
-        issues.length > 0 && (
-          <UserIssueWarning className="absolute top-[-10px] right-[-10px]" issue={issues[0]} />
-        )
-      }
+      {issue && (
+        <UserIssueWarning className="absolute top-[-10px] right-[-10px]" issue={issue} />
+      )}
       <button
         type="button"
         className={`flex justify-center items-center h-[40px] w-[40px] bg-body-100 dark:bg-dark-400 dark:border-dark-400 border border-body-300 transition-colors rounded ${!isEmpty ? 'cursor-pointer hover:border-red' : ''}`}
         data-slot={slot}
         data-tooltip-id="tooltip"
-        data-tooltip-content={getTooltipContent()}
-        onMouseDown={(e) => mouseDown(e)}
+        data-tooltip-content={tooltip}
+        onMouseDown={mouseDown}
       >
-        {currentSlot?.image ? (
-          <img src={getCdnImage(`equipment/${currentSlot.image}`)} alt={currentSlot.name} />
+        {piece?.image ? (
+          <img src={getCdnImage(`equipment/${piece.image}`)} alt={piece.name} />
         ) : (
           placeholder && (
             <img className="opacity-30 dark:filter dark:invert" src={placeholder} alt={slot} draggable={false} />

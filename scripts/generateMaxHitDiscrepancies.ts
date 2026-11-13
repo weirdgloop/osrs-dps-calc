@@ -1,6 +1,6 @@
 import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
-import { generateEmptyPlayer } from '@/state';
+import { createEmptyPlayer } from '@/state/PlayerStore';
 
 const monsters = getMonsters();
 
@@ -23,7 +23,7 @@ const generateMaxHitDiscrepancies = () => {
     if (wikiMaxHit === undefined) continue;
     if (!['slash', 'crush', 'stab', 'magic', 'ranged'].includes(m.style || '')) continue;
 
-    const calc = new NPCVsPlayerCalc(generateEmptyPlayer(), {
+    const calc = new NPCVsPlayerCalc(createEmptyPlayer(), {
       ...m,
       inputs: INITIAL_MONSTER_INPUTS,
     });

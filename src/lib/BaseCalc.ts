@@ -13,7 +13,7 @@ import {
   YAMA_IDS,
   YAMA_VOID_FLARE_IDS,
 } from '@/lib/constants';
-import { UserIssue } from '@/types/State';
+import type { UserIssue } from '@/state/CalcStore';
 import { CalcDetails, DetailEntry } from '@/lib/CalcDetails';
 import { Factor } from '@/lib/Math';
 import { scaleMonster } from '@/lib/MonsterScaling';
@@ -719,8 +719,15 @@ export default class BaseCalc {
     return this.monster.is_slayer_monster || this.monster.id === -1;
   }
 
+  protected getsObligatorPassive(): boolean {
+    return this.wearing('Obligator')
+      && this.player.equipment.weapon?.version === 'Charged'
+      && this.player.style.name !== 'Smash'
+      && this.isUsingMeleeStyle();
+  }
+
   protected addIssue(type: UserIssueType, message: string) {
-    this.userIssues.push({ type, message, loadout: this.opts.loadoutName });
+    this.userIssues.push({ type, message });
   }
 
   protected demonbaneVulnerability(): number {

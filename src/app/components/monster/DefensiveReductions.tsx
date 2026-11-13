@@ -1,7 +1,9 @@
-import React, { useMemo } from 'react';
-import { IconChevronDown, IconChevronUp } from '@tabler/icons-react';
-import NumberInput from '@/app/components/generic/NumberInput';
+import React from 'react';
+import { observer } from 'mobx-react-lite';
 import Toggle from '@/app/components/generic/Toggle';
+import MonsterAccordion from '@/app/components/monster/MonsterAccordion';
+import DefenceFloor from '@/app/components/monster/reductions/DefenceFloor';
+import DefenceReductionInput, { CountedReduction } from '@/app/components/monster/reductions/DefenceReductionInput';
 import vuln from '@/public/img/def_reductions/Vulnerability.png';
 import bgs from '@/public/img/def_reductions/Bandos_godsword.webp';
 import sceptre from '@/public/img/def_reductions/Accursed sceptre.png';
@@ -12,183 +14,61 @@ import arc from '@/public/img/def_reductions/Arclight.png';
 import emberlight from '@/public/img/def_reductions/Emberlight.png';
 import seercull from '@/public/img/def_reductions/Seercull.png';
 import ayak from '@/public/img/def_reductions/Eye_of_ayak.png';
-import { observer } from 'mobx-react-lite';
-import { useStore } from '@/state';
-import { getDefenceFloor } from '@/lib/scaling/DefenceReduction';
-import { toJS } from 'mobx';
+import { useMonster } from '@/state/MonsterStore';
+import { useUI } from '@/state/UIStore';
+
+const COUNTED_REDUCTIONS: { reduction: CountedReduction, icon: typeof dwh, label: string }[] = [
+  { reduction: 'elderMaul', icon: elderMaul, label: 'Elder maul hits' },
+  { reduction: 'dwh', icon: dwh, label: 'Dragon warhammer hits' },
+  { reduction: 'arclight', icon: arc, label: 'Arclight hits' },
+  { reduction: 'emberlight', icon: emberlight, label: 'Emberlight hits' },
+  { reduction: 'tonalztic', icon: tonalztic, label: 'Tonalztics of Ralos\' hits' },
+  { reduction: 'bgs', icon: bgs, label: 'Bandos godsword damage' },
+  { reduction: 'seercull', icon: seercull, label: 'Seercull damage' },
+  { reduction: 'ayak', icon: ayak, label: 'Eye of ayak damage' },
+];
 
 const DefensiveReductions: React.FC = observer(() => {
-  const store = useStore();
-  const { isDefensiveReductionsExpanded } = store.ui;
-  const { monster } = store;
+  const monster = useMonster();
+  const ui = useUI();
   const { defenceReductions } = monster.inputs;
 
-  const monsterJs = toJS(monster);
-  const defenceFloor = useMemo(() => getDefenceFloor(monsterJs), [monsterJs]);
-
   return (
-    <div className="rounded bg-body-100 dark:bg-dark-500">
-      <button
-        type="button"
-        className={`w-full pt-1 border-b-body-400 dark:border-b-dark-300 px-2 flex text-gray-500 dark:text-gray-300 font-semibold justify-between gap-2 ${isDefensiveReductionsExpanded ? 'border-b' : ''}`}
-        onClick={() => store.updateUIState({ isDefensiveReductionsExpanded: !isDefensiveReductionsExpanded })}
-      >
-        <div>
-          Defensive Reductions
-        </div>
-        <div className="relative top-[-2px]">
-          {isDefensiveReductionsExpanded ? <IconChevronUp width={20} />
-            : <IconChevronDown width={20} />}
-        </div>
-      </button>
-
-      {isDefensiveReductionsExpanded && (
-        <div className="p-2">
-          {defenceFloor !== 0 && (
-            <p className="text-xs mb-2 text-gray-300">
-              Defence floor:
+    <MonsterAccordion
+      title="Defensive Reductions"
+      isOpen={ui.isDefensiveReductionsExpanded}
+      onToggle={() => ui.update({ isDefensiveReductionsExpanded: !ui.isDefensiveReductionsExpanded })}
+    >
+      <div className="p-2">
+        <DefenceFloor />
+        {COUNTED_REDUCTIONS.map(({ reduction, icon, label }) => (
+          <DefenceReductionInput key={reduction} reduction={reduction} icon={icon} label={label} />
+        ))}
+        <Toggle
+          className="mt-1"
+          checked={defenceReductions.accursed}
+          setChecked={(accursed) => monster.updateInputs({ defenceReductions: { accursed } })}
+          label={(
+            <>
+              <img src={sceptre.src} width={18} className="inline-block" alt="" />
               {' '}
-              {defenceFloor}
-            </p>
+              Accursed sceptre
+            </>
           )}
-          <div className="w-full">
-            <NumberInput
-              className="form-control w-1/6"
-              required
-              min={0}
-              value={defenceReductions.elderMaul}
-              onChange={(v) => store.updateMonster({ inputs: { defenceReductions: { elderMaul: v } } })}
-            />
-            <span className="pl-2">
-              <img src={elderMaul.src} width={18} className="inline-block" alt="" />
+        />
+        <Toggle
+          checked={defenceReductions.vulnerability}
+          setChecked={(vulnerability) => monster.updateInputs({ defenceReductions: { vulnerability } })}
+          label={(
+            <>
+              <img src={vuln.src} width={18} className="inline-block" alt="" />
               {' '}
-              Elder maul hits
-            </span>
-          </div>
-          <div className="w-full">
-            <NumberInput
-              className="form-control w-1/6"
-              required
-              min={0}
-              value={defenceReductions.dwh}
-              onChange={(v) => store.updateMonster({ inputs: { defenceReductions: { dwh: v } } })}
-            />
-            <span className="pl-2">
-              <img src={dwh.src} width={18} className="inline-block" alt="" />
-              {' '}
-              Dragon warhammer hits
-            </span>
-          </div>
-          <div className="w-full">
-            <NumberInput
-              className="form-control w-1/6"
-              required
-              min={0}
-              value={defenceReductions.arclight}
-              onChange={(v) => store.updateMonster({ inputs: { defenceReductions: { arclight: v } } })}
-            />
-            <span className="pl-2">
-              <img src={arc.src} width={18} className="inline-block" alt="" />
-              {' '}
-              Arclight hits
-            </span>
-          </div>
-          <div className="w-full">
-            <NumberInput
-              className="form-control w-1/6"
-              required
-              min={0}
-              value={defenceReductions.emberlight}
-              onChange={(v) => store.updateMonster({ inputs: { defenceReductions: { emberlight: v } } })}
-            />
-            <span className="pl-2">
-              <img src={emberlight.src} width={18} className="inline-block" alt="" />
-              {' '}
-              Emberlight hits
-            </span>
-          </div>
-          <div className="w-full">
-            <NumberInput
-              className="form-control w-1/6"
-              required
-              min={0}
-              value={defenceReductions.tonalztic}
-              onChange={(v) => store.updateMonster({ inputs: { defenceReductions: { tonalztic: v } } })}
-            />
-            <span className="pl-2">
-              <img src={tonalztic.src} width={18} className="inline-block" alt="" />
-              {' '}
-              Tonalztics of Ralos&apos; hits
-            </span>
-          </div>
-          <div className="w-full">
-            <NumberInput
-              className="form-control w-1/6"
-              required
-              min={0}
-              value={defenceReductions.bgs}
-              onChange={(v) => store.updateMonster({ inputs: { defenceReductions: { bgs: v } } })}
-            />
-            <span className="pl-2">
-              <img src={bgs.src} width={18} className="inline-block" alt="" />
-              {' '}
-              Bandos godsword damage
-            </span>
-          </div>
-          <div className="w-full">
-            <NumberInput
-              className="form-control w-1/6"
-              required
-              min={0}
-              value={defenceReductions.seercull}
-              onChange={(v) => store.updateMonster({ inputs: { defenceReductions: { seercull: v } } })}
-            />
-            <span className="pl-2">
-              <img src={seercull.src} width={18} className="inline-block" alt="" />
-              {' '}
-              Seercull damage
-            </span>
-          </div>
-          <div className="w-full">
-            <NumberInput
-              className="form-control w-1/6"
-              required
-              min={0}
-              value={defenceReductions.ayak}
-              onChange={(v) => store.updateMonster({ inputs: { defenceReductions: { ayak: v } } })}
-            />
-            <span className="pl-2">
-              <img src={ayak.src} width={18} className="inline-block" alt="" />
-              {' '}
-              Eye of ayak damage
-            </span>
-          </div>
-          <Toggle
-            className="mt-1"
-            checked={defenceReductions.accursed}
-            setChecked={(c) => store.updateMonster({ inputs: { defenceReductions: { accursed: c } } })}
-            label={(
-              <>
-                <img src={sceptre.src} width={18} className="inline-block" alt="" />
-                {' '}
-                Accursed sceptre
-              </>
-            )}
-          />
-          <Toggle
-            checked={defenceReductions.vulnerability}
-            setChecked={(c) => store.updateMonster({ inputs: { defenceReductions: { vulnerability: c } } })}
-            label={(
-              <>
-                <img src={vuln.src} width={18} className="inline-block" alt="" />
-                {' '}
-                Vulnerability
-              </>
-            )}
-          />
-        </div>
-      )}
-    </div>
+              Vulnerability
+            </>
+          )}
+        />
+      </div>
+    </MonsterAccordion>
   );
 });
 

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { PlayerSkills } from '@/types/Player';
-import { ImportableData } from '@/types/State';
+import type { ImportableData } from '@/state/RootStore';
 import { StaticImageData } from 'next/image';
 import Ancient from '@/public/img/potions/Ancient brew.png';
 import Attack from '@/public/img/potions/Attack.png';
@@ -540,10 +540,12 @@ export const CombatStyleMap: { [k in EquipmentCategory]: { [k: string]: { image:
   },
   [EquipmentCategory.POWERED_STAFF]: {
     Accurate: { image: '263' },
+    Accurate2: { image: '263' },
     Longrange: { image: '265' },
   },
   [EquipmentCategory.POWERED_WAND]: {
     Accurate: { image: '263' },
+    Accurate2: { image: '263' },
     Longrange: { image: '265' },
   },
   [EquipmentCategory.THROWN]: {
@@ -606,6 +608,7 @@ export const CombatStyleMap: { [k in EquipmentCategory]: { [k: string]: { image:
   },
   [EquipmentCategory.POWERED_BOOK]: {
     Accurate: { image: '263' },
+    Accurate2: { image: '263' },
     Longrange: { image: '265' },
   },
 };
@@ -702,7 +705,9 @@ export const getCombatStylesForCategory = (style: EquipmentCategory): PlayerComb
     case EquipmentCategory.POWERED_WAND:
       ret = [
         { name: 'Accurate', type: 'magic', stance: 'Accurate' },
-        { name: 'Accurate', type: 'magic', stance: 'Accurate' },
+        {
+          name: 'Accurate2', displayNameOverride: 'Accurate', type: 'magic', stance: 'Accurate',
+        },
         { name: 'Longrange', type: 'magic', stance: 'Longrange' },
       ];
       break;
