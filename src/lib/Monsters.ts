@@ -1,7 +1,12 @@
-import { BurnImmunity, Monster } from '@/types/Monster';
+import { BurnImmunity, Monster, MonsterInputs } from '@/types/Monster';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { isCombatStyleType } from '@/types/PlayerCombatStyle';
+import { MONSTER_PHASES_BY_ID } from '@/lib/constants';
 import monsters from '../../cdn/json/monsters.json';
+
+export const CUSTOM_MONSTER_ID = -1;
+
+export const DEFAULT_MONSTER_ID = 415; // Abyssal demon
 
 export function getMonsters(): Omit<Monster, 'inputs'>[] {
   return monsters.map((m): Omit<Monster, 'inputs'> => {
@@ -52,8 +57,14 @@ export const INITIAL_MONSTER_INPUTS: Monster['inputs'] = {
   },
 };
 
+export const createMonsterInputs = (monsterId: number): MonsterInputs => ({
+  ...INITIAL_MONSTER_INPUTS,
+  defenceReductions: { ...INITIAL_MONSTER_INPUTS.defenceReductions },
+  phase: MONSTER_PHASES_BY_ID[monsterId]?.[0],
+});
+
 export const CUSTOM_MONSTER_BASE: Monster = {
-  id: -1,
+  id: CUSTOM_MONSTER_ID,
   name: 'Custom monster',
   version: '',
   image: '',

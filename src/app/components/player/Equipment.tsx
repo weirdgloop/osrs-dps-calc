@@ -1,8 +1,8 @@
 import React from 'react';
 import EquipmentGrid from '@/app/components/player/equipment/EquipmentGrid';
-import Bonuses from '@/app/components/player/Bonuses';
+import EquipmentSelect from '@/app/components/player/equipment/EquipmentSelect';
 import EquipmentPresets from '@/app/components/player/equipment/EquipmentPresets';
-import EquipmentSelect from './equipment/EquipmentSelect';
+import Bonuses from '@/app/components/player/Bonuses';
 
 const Equipment: React.FC = () => (
   <div className="px-4">
@@ -21,7 +21,6 @@ const Equipment: React.FC = () => (
       <Bonuses />
     </div>
   </div>
-
 );
 
 export default Equipment;

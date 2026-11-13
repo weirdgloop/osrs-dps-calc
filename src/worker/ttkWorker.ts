@@ -2,7 +2,8 @@
 import {
   CalcRequestsUnion, CalcResponse, Handler, WorkerRequestType,
 } from '@/worker/CalcWorkerTypes';
-import { PlayerVsNPCCalculatedLoadout } from '@/types/State';
+import type { CalcStatus, TtkResult } from '@/state/CalcStore';
+import { LoadoutId } from '@/types/Player';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import { WORKER_JSON_REPLACER, WORKER_JSON_REVIVER } from '@/utils';
 
@@ -10,19 +11,22 @@ import { WORKER_JSON_REPLACER, WORKER_JSON_REVIVER } from '@/utils';
 export const ttkDist: Handler<WorkerRequestType.COMPUTE_TTK> = async (data) => {
   const { loadouts, monster, calcOpts } = data;
 
-  const res: Pick<PlayerVsNPCCalculatedLoadout, 'ttkDist'>[] = [];
-  for (const [i, p] of loadouts.entries()) {
+  const res = new Map<LoadoutId, CalcStatus<TtkResult>>();
+  for (const [i, [id, p]] of [...loadouts].entries()) {
     const loadoutName = p.name || (i + 1).toString();
     const start = self.performance.now();
-    const calc = new PlayerVsNPCCalc(p, monster, {
-      loadoutName,
-      detailedOutput: calcOpts.detailedOutput,
-      disableMonsterScaling: calcOpts.disableMonsterScaling,
-    });
+    try {
+      const calc = new PlayerVsNPCCalc(p, monster, {
+        loadoutName,
+        detailedOutput: calcOpts.detailedOutput,
+        disableMonsterScaling: calcOpts.disableMonsterScaling,
+      });
 
-    res.push({
-      ttkDist: calc.getTtkDistribution(),
-    });
+      res.set(id, { status: 'success', value: { ttkDist: calc.getTtkDistribution() } });
+    } catch (e) {
+      console.error(e);
+      res.set(id, { status: 'failed', error: e instanceof Error ? e.message : String(e) });
+    }
 
     const end = self.performance.now();
     console.debug(`TTK Dist ${loadoutName} took ${end - start}ms to calculate`);

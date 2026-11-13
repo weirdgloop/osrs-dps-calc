@@ -1,9 +1,8 @@
-import { PlayerSkills } from '@/types/Player';
-import Image, { StaticImageData } from 'next/image';
 import React, { useId } from 'react';
-import { observer } from 'mobx-react-lite';
-import { useStore } from '@/state';
-import NumberInput from '@/app/components/generic/NumberInput';
+import Image, { StaticImageData } from 'next/image';
+import { PlayerSkills } from '@/types/Player';
+import BoostedLevel from '@/app/components/player/skills/BoostedLevel';
+import BaseLevelInput from '@/app/components/player/skills/BaseLevelInput';
 
 interface SkillInputProps {
   name: string;
@@ -11,10 +10,7 @@ interface SkillInputProps {
   image: string | StaticImageData;
 }
 
-const SkillInput: React.FC<SkillInputProps> = observer((props) => {
-  const store = useStore();
-  const { player } = store;
-  const { name, field, image } = props;
+const SkillInput: React.FC<SkillInputProps> = ({ name, field, image }) => {
   const id = useId();
 
   return (
@@ -24,54 +20,14 @@ const SkillInput: React.FC<SkillInputProps> = observer((props) => {
       </div>
       <div className="flex items-center w-32">
         <div className="text-sm font-mono w-14 text-right">
-          {field === 'hp' ? (
-            <div className="flex items-center">
-              <NumberInput
-                className="form-control w-full"
-                id={id}
-                required
-                min={1}
-                max={255}
-                title={`Your current ${name} level`}
-                value={player.skills[field] + player.boosts[field]}
-                onChange={(v) => {
-                  store.updatePlayer({
-                    boosts: {
-                      [field]: v - player.skills[field],
-                    },
-                  });
-                }}
-              />
-              /
-            </div>
-          ) : (
-            <span title={`Your current ${name} level`}>
-              {player.skills[field] + player.boosts[field]}
-              /
-            </span>
-          )}
+          <BoostedLevel id={id} name={name} field={field} />
         </div>
         <div className="w-12">
-          <NumberInput
-            className="form-control w-full"
-            id={id}
-            required
-            min={1}
-            max={255}
-            title={`Your base ${name} level`}
-            value={player.skills[field]}
-            onChange={(v) => {
-              store.updatePlayer({
-                skills: {
-                  [field]: v,
-                },
-              });
-            }}
-          />
+          <BaseLevelInput id={id} name={name} field={field} />
         </div>
       </div>
     </>
   );
-});
+};
 
 export default SkillInput;
