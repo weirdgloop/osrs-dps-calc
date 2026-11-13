@@ -1,6 +1,6 @@
-import { Player } from '@/types/Player';
+import { LoadoutId, Player } from '@/types/Player';
 import { Monster } from '@/types/Monster';
-import { NPCVsPlayerCalculatedLoadout, PlayerVsNPCCalculatedLoadout } from '@/types/State';
+import type { LoadoutResults } from '@/state/CalcStore';
 import { CalcOpts } from '@/lib/BaseCalc';
 import {
   CompareResult, CompareXAxis, CompareYAxis,
@@ -29,20 +29,18 @@ export interface WorkerCalcOpts {
   disableMonsterScaling?: CalcOpts['disableMonsterScaling'],
 }
 
+export interface LoadoutCalcData {
+  loadouts: Map<LoadoutId, Player>,
+  monster: Monster,
+  calcOpts: WorkerCalcOpts,
+}
+
 export interface ComputeBasicRequest extends WorkerRequest<WorkerRequestType.COMPUTE_BASIC> {
-  data: {
-    loadouts: Player[],
-    monster: Monster,
-    calcOpts: WorkerCalcOpts,
-  }
+  data: LoadoutCalcData,
 }
 
 export interface ComputeReverseRequest extends WorkerRequest<WorkerRequestType.COMPUTE_REVERSE> {
-  data: {
-    loadouts: Player[],
-    monster: Monster,
-    calcOpts: WorkerCalcOpts,
-  }
+  data: LoadoutCalcData,
 }
 
 export interface CompareRequest extends WorkerRequest<WorkerRequestType.COMPARE> {
@@ -51,17 +49,13 @@ export interface CompareRequest extends WorkerRequest<WorkerRequestType.COMPARE>
       x: CompareXAxis,
       y: CompareYAxis,
     },
-    loadouts: Player[],
+    loadouts: Map<LoadoutId, Player>,
     monster: Monster,
   },
 }
 
 export interface TtkRequest extends WorkerRequest<WorkerRequestType.COMPUTE_TTK> {
-  data: {
-    loadouts: Player[],
-    monster: Monster,
-    calcOpts: WorkerCalcOpts,
-  },
+  data: LoadoutCalcData,
 }
 
 export interface TtkRequestParallel extends WorkerRequest<WorkerRequestType.COMPUTE_TTK_PARALLEL> {
@@ -87,11 +81,11 @@ export interface WorkerResponse<T extends WorkerRequestType> {
 }
 
 export interface ComputeBasicResponse extends WorkerResponse<WorkerRequestType.COMPUTE_BASIC> {
-  payload: Omit<PlayerVsNPCCalculatedLoadout, 'ttkDist'>[],
+  payload: Map<LoadoutId, LoadoutResults['basic']>,
 }
 
 export interface ComputeReverseResponse extends WorkerResponse<WorkerRequestType.COMPUTE_REVERSE> {
-  payload: NPCVsPlayerCalculatedLoadout[],
+  payload: Map<LoadoutId, LoadoutResults['reverse']>,
 }
 
 export interface CompareResponse extends WorkerResponse<WorkerRequestType.COMPARE> {
@@ -99,7 +93,7 @@ export interface CompareResponse extends WorkerResponse<WorkerRequestType.COMPAR
 }
 
 export interface TtkResponse extends WorkerResponse<WorkerRequestType.COMPUTE_TTK> {
-  payload: Pick<PlayerVsNPCCalculatedLoadout, 'ttkDist'>[],
+  payload: Map<LoadoutId, LoadoutResults['ttk']>,
 }
 
 export interface TtkResponseParallel extends WorkerResponse<WorkerRequestType.COMPUTE_TTK_PARALLEL> {

@@ -35,7 +35,15 @@ const applyMonsterPhases = (m: Monster): Monster => {
   if (BORK_IDS.includes(m.id)) {
     const phase = m.inputs.phase ?? BORK_PHASES[0];
     if (phase === 'Stunned') {
-      return m; // full-accuracy not handled here
+      return {
+        ...m,
+        defensive: {
+          ...m.defensive,
+          stab: m.defensive.stab - 100,
+          slash: m.defensive.slash - 100,
+          crush: m.defensive.crush - 100,
+        },
+      };
     }
 
     const magicResist = 2 * BORK_PHASES.indexOf(phase);

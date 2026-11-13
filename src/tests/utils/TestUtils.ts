@@ -4,7 +4,7 @@ import { EquipmentPiece, Player } from '@/types/Player';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import { DetailEntry, DetailKey } from '@/lib/CalcDetails';
 import merge from 'lodash.mergewith';
-import { generateEmptyPlayer } from '@/state';
+import { createEmptyPlayer } from '@/state/PlayerStore';
 import { PartialDeep } from 'type-fest';
 import { calculateAttackSpeed, calculateEquipmentBonusesFromGear } from '@/lib/Equipment';
 import { Spell, spells } from '@/types/Spell';
@@ -48,7 +48,7 @@ function find<T>(arr: T[], pred: (_: T) => boolean, failMsg?: string): T {
 }
 
 export function getTestPlayer(monster: Monster, overrides: PartialDeep<Player> = {}): Player {
-  const player = merge(generateEmptyPlayer(), overrides);
+  const player = merge(createEmptyPlayer(), overrides);
 
   const calculated = calculateEquipmentBonusesFromGear(player, monster);
   player.bonuses = overrides.bonuses || calculated.bonuses;

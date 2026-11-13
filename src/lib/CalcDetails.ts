@@ -113,7 +113,6 @@ export enum DetailKey {
   NPC_ACCURACY_ROLL_BONUS = 'NPC accuracy bonus',
   NPC_ACCURACY_ROLL_FINAL = 'NPC accuracy roll',
   REPIRATORY_SYSTEM_MIN_HIT = 'Respiratory system minimum hit',
-  MAX_HIT_MAGGOT_MELEE_PUNISH = 'Max hit maggot king melee punish',
 }
 
 export interface DetailEntry {
