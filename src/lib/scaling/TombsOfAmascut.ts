@@ -1,4 +1,9 @@
-import { TOA_WARDEN_CORE_EJECTED_IDS, TOMBS_OF_AMASCUT_MONSTER_IDS, TOMBS_OF_AMASCUT_PATH_MONSTER_IDS } from '@/lib/constants';
+import {
+  TOA_WARDEN_CORE_EJECTED_IDS,
+  TOMBS_OF_AMASCUT_MONSTER_IDS,
+  TOMBS_OF_AMASCUT_PATH_MONSTER_IDS,
+  BABA_MONKEY_ROOM_IDS,
+} from '@/lib/constants';
 import { Monster } from '@/types/Monster';
 
 const applyToaScaling = (m: Monster): Monster => {
@@ -6,6 +11,11 @@ const applyToaScaling = (m: Monster): Monster => {
 
   // toa multiplies rolled values, not stats, except for hp
   if (!TOMBS_OF_AMASCUT_MONSTER_IDS.includes(m.id)) {
+    return m;
+  }
+
+  // Ba-ba's challenge room NPC's health do not scale with raid invo / group size
+  if (BABA_MONKEY_ROOM_IDS.includes(m.id)) {
     return m;
   }
 
