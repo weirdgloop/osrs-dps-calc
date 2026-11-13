@@ -7,7 +7,8 @@ import {
   TtkResponse,
   WorkerRequestType,
 } from '@/worker/CalcWorkerTypes';
-import { NPCVsPlayerCalculatedLoadout, PlayerVsNPCCalculatedLoadout } from '@/types/State';
+import type { BasicResult, CalcStatus, ReverseResult } from '@/state/CalcStore';
+import { LoadoutId } from '@/types/Player';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
 import PlayerVsNPCCalc from '@/lib/PlayerVsNPCCalc';
 import Comparator from '@/lib/Comparator';
@@ -18,40 +19,48 @@ import { NUMBER_OF_LOADOUTS } from '@/lib/constants';
 
 const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) => {
   const { loadouts, monster, calcOpts } = data;
-  const res: PlayerVsNPCCalculatedLoadout[] = [];
+  const res = new Map<LoadoutId, CalcStatus<BasicResult>>();
 
   // eslint-disable-next-line no-restricted-syntax
-  for (const [i, p] of loadouts.entries()) {
+  for (const [i, [id, p]] of [...loadouts].entries()) {
     const loadoutName = (i + 1).toString();
     const start = self.performance.now();
 
-    const calc = new PlayerVsNPCCalc(p, monster, {
-      loadoutName,
-      detailedOutput: calcOpts.detailedOutput,
-      disableMonsterScaling: calcOpts.disableMonsterScaling,
-    });
-    const specCalc = calc.getSpecCalc();
+    try {
+      const calc = new PlayerVsNPCCalc(p, monster, {
+        loadoutName,
+        detailedOutput: calcOpts.detailedOutput,
+        disableMonsterScaling: calcOpts.disableMonsterScaling,
+      });
+      const specCalc = calc.getSpecCalc();
 
-    res.push({
-      npcDefRoll: calc.getNPCDefenceRoll(),
-      maxHit: calc.getDistribution().getMax(),
-      expectedHit: calc.getDistribution().getExpectedDamage(),
-      maxAttackRoll: calc.getMaxAttackRoll(),
-      accuracy: calc.getDisplayHitChance(),
-      dps: calc.getDps(),
-      ttk: calc.getTtk(),
-      hitDist: calc.getDistribution().asHistogram(calcOpts.hitDistHideMisses),
-      details: calc.details,
-      userIssues: calc.userIssues,
+      res.set(id, {
+        status: 'success',
+        value: {
+          npcDefRoll: calc.getNPCDefenceRoll(),
+          maxHit: calc.getDistribution().getMax(),
+          expectedHit: calc.getDistribution().getExpectedDamage(),
+          maxAttackRoll: calc.getMaxAttackRoll(),
+          accuracy: calc.getDisplayHitChance(),
+          dps: calc.getDps(),
+          ttk: calc.getTtk(),
+          hitDist: calc.getDistribution().asHistogram(calcOpts.hitDistHideMisses),
+          details: calc.details,
+          userIssues: calc.userIssues,
 
-      specAccuracy: specCalc?.getDisplayHitChance(),
-      specMaxHit: specCalc?.getMax(),
-      specExpected: specCalc?.getExpectedDamage(),
-      specMomentDps: specCalc?.getDps(),
-      specFullDps: specCalc?.getSpecDps(),
-      specHitDist: specCalc?.getDistribution().asHistogram(calcOpts.hitDistHideMisses),
-      specDetails: specCalc?.details,
-    });
+          specAccuracy: specCalc?.getDisplayHitChance(),
+          specMaxHit: specCalc?.getMax(),
+          specExpected: specCalc?.getExpectedDamage(),
+          specMomentDps: specCalc?.getDps(),
+          specFullDps: specCalc?.getSpecDps(),
+          specHitDist: specCalc?.getDistribution().asHistogram(calcOpts.hitDistHideMisses),
+          specDetails: specCalc?.details,
+        },
+      });
+    } catch (e) {
+      console.error(e);
+      res.set(id, { status: 'failed', error: e instanceof Error ? e.message : String(e) });
+    }
 
     const end = self.performance.now();
     console.debug(`Loadout ${i + 1} took ${end - start}ms to calculate`);
@@ -62,25 +71,35 @@ const computePvMValues: Handler<WorkerRequestType.COMPUTE_BASIC> = async (data) 
 
 const computeMvPValues: Handler<WorkerRequestType.COMPUTE_REVERSE> = async (data) => {
   const { loadouts, monster, calcOpts } = data;
-  const res: NPCVsPlayerCalculatedLoadout[] = [];
+  const res = new Map<LoadoutId, CalcStatus<ReverseResult>>();
 
-  for (const [i, p] of loadouts.entries()) {
+  for (const [i, [id, p]] of [...loadouts].entries()) {
     const loadoutName = (i + 1).toString();
     const start = self.performance.now();
-    const calc = new NPCVsPlayerCalc(p, monster, {
-      loadoutName: `${loadoutName}/reverse`,
-      detailedOutput: calcOpts.detailedOutput,
-      disableMonsterScaling: calcOpts.disableMonsterScaling,
-    });
-    res.push({
-      npcMaxAttackRoll: calc.getNPCMaxAttackRoll(),
-      npcMaxHit: calc.getDistribution().getMax(),
-      npcDps: calc.getDps(),
-      npcAccuracy: calc.getHitChance(),
-      playerDefRoll: calc.getPlayerDefenceRoll(),
-      avgDmgTaken: calc.getAverageDamageTaken(),
-      npcDetails: calc.details,
-    });
+
+    try {
+      const calc = new NPCVsPlayerCalc(p, monster, {
+        loadoutName: `${loadoutName}/reverse`,
+        detailedOutput: calcOpts.detailedOutput,
+        disableMonsterScaling: calcOpts.disableMonsterScaling,
+      });
+
+      res.set(id, {
+        status: 'success',
+        value: {
+          npcMaxAttackRoll: calc.getNPCMaxAttackRoll(),
+          npcMaxHit: calc.getDistribution().getMax(),
+          npcDps: calc.getDps(),
+          npcAccuracy: calc.getHitChance(),
+          playerDefRoll: calc.getPlayerDefenceRoll(),
+          avgDmgTaken: calc.getAverageDamageTaken(),
+          npcDetails: calc.details,
+        },
+      });
+    } catch (e) {
+      console.error(e);
+      res.set(id, { status: 'failed', error: e instanceof Error ? e.message : String(e) });
+    }
 
     const end = self.performance.now();
     console.debug(`Reverse loadout ${i + 1} took ${end - start}ms to calculate`);
@@ -91,7 +110,7 @@ const computeMvPValues: Handler<WorkerRequestType.COMPUTE_REVERSE> = async (data
 
 const compare: Handler<WorkerRequestType.COMPARE> = async (data) => {
   const { axes, loadouts, monster } = data;
-  const comparator = new Comparator(loadouts, monster, axes.x, axes.y);
+  const comparator = new Comparator([...loadouts.values()], monster, axes.x, axes.y);
 
   const [entries, domainMax] = comparator.getEntries();
 
@@ -151,25 +170,20 @@ const ttkDistParallel: Handler<WorkerRequestType.COMPUTE_TTK_PARALLEL> = async (
 
   // fire off a ttk compute for each loadout
   const start = self.performance.now();
-  const requests: Promise<TtkResponse>[] = [];
-  for (let i = 0; i < loadouts.length; i++) {
-    const loadout = loadouts[i];
-    if (!loadout) {
-      continue;
-    }
-
+  const requests: { id: LoadoutId, response: Promise<TtkResponse> }[] = [];
+  for (const [i, [id, loadout]] of [...loadouts].entries()) {
     // ideally this never creates inline, but it's fine if it does
     const { promise, worker } = ttkWorkers[currBase + i] || (ttkWorkers[currBase + i] = createTtkWorker());
     worker.postMessage(JSON.stringify(<TtkRequest>{
       type: WorkerRequestType.COMPUTE_TTK,
       sequenceId: sequenceId!,
       data: {
-        loadouts: [loadout], // we're just splitting up the payloads into one per worker
+        loadouts: new Map([[id, loadout]]), // we're just splitting up the payloads into one per worker
         monster,
         calcOpts,
       },
-    }));
-    requests.push(promise.promise);
+    }, WORKER_JSON_REPLACER));
+    requests.push({ id, response: promise.promise });
   }
 
   // while we wait for the jobs to finish we can spin up the workers for the next request
@@ -180,7 +194,7 @@ const ttkDistParallel: Handler<WorkerRequestType.COMPUTE_TTK_PARALLEL> = async (
   // this is where the "parallel" magic happens,
   // since await clears the call stack allowing other requests to come in and cancel the previous
   // todo it would be pretty nice if we could stream these back instead of batching
-  const results = await Promise.all(requests);
+  const results = await Promise.all(requests.map((r) => r.response));
   const end = self.performance.now();
   console.debug(`Aggregating ${requests.length} TTK dists took ${end - start}`);
 
@@ -189,17 +203,14 @@ const ttkDistParallel: Handler<WorkerRequestType.COMPUTE_TTK_PARALLEL> = async (
     // this shouldn't really happen except in rare race conditions,
     // but it'll get dropped by CalcWorker on return so we can return empty
     console.debug(`Dropping ttk parallel ${results[0].sequenceId} as stale`);
-    return [];
+    return new Map();
   }
 
   // unwrap
-  const ret: TtkResponse['payload'] = [];
+  const ret: TtkResponse['payload'] = new Map();
   for (const [ix, { payload, error }] of results.entries()) {
-    if (error) {
-      throw new Error(error);
-    }
-
-    ret[ix] = payload[0];
+    const { id } = requests[ix];
+    ret.set(id, error ? { status: 'failed', error } : payload.get(id)!);
   }
 
   return ret;

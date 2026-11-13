@@ -1,0 +1,53 @@
+import React from 'react';
+import { observer } from 'mobx-react-lite';
+import { IconTrash } from '@tabler/icons-react';
+import LazyImage from '@/app/components/generic/LazyImage';
+import { usePlayer } from '@/state/PlayerStore';
+import getSpellMaxHit from '@/types/SpellMax';
+import { getWikiImage } from '@/utils';
+
+const SpellContainer: React.FC = observer(() => {
+  const player = usePlayer();
+  const { spell } = player;
+
+  return (
+    <div className="my-2 p-2 rounded bg-body-100 dark:bg-dark-500 text-sm flex justify-between items-center">
+      <div className="flex gap-2 items-center">
+        {spell?.image && (
+          <div>
+            <LazyImage responsive src={getWikiImage(spell.image)} alt="Spell" />
+          </div>
+        )}
+        <div>
+          <div className="font-semibold">
+            {spell?.name || 'No spell selected'}
+          </div>
+          <div className="text-xs text-gray-400 dark:text-gray-300">
+            {spell ? (
+              <span>
+                Max hit:
+                {' '}
+                {getSpellMaxHit(player)}
+              </span>
+            ) : <span>If you are casting spells, select one below</span>}
+          </div>
+        </div>
+      </div>
+      {spell && (
+        <div>
+          <button
+            type="button"
+            className="disabled:cursor-not-allowed text-body-500 dark:text-dark-100 disabled:text-btns-100 dark:disabled:text-dark-500 hover:text-red transition-colors"
+            data-tooltip-id="tooltip"
+            data-tooltip-content="Remove spell"
+            onClick={() => player.setSpell(null)}
+          >
+            <IconTrash aria-label="Remove spell" />
+          </button>
+        </div>
+      )}
+    </div>
+  );
+});
+
+export default SpellContainer;

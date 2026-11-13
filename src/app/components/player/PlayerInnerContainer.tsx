@@ -5,46 +5,50 @@ import equipment from '@/public/img/tabs/equipment.png';
 import options from '@/public/img/tabs/options.webp';
 import prayer from '@/public/img/tabs/prayer.png';
 import PlayerTab from '@/app/components/player/PlayerTab';
-import Equipment from './Equipment';
-import Combat from './Combat';
-import Skills from './Skills';
-import Prayers from './Prayers';
-import ExtraOptions from './ExtraOptions';
+import Equipment from '@/app/components/player/Equipment';
+import Combat from '@/app/components/player/Combat';
+import Skills from '@/app/components/player/Skills';
+import Prayers from '@/app/components/player/Prayers';
+import ExtraOptions from '@/app/components/player/ExtraOptions';
 
-type SelectedInputType = 'combat' | 'skills' | 'equipment' | 'options' | 'prayer';
+const TABS = [
+  {
+    id: 'combat', name: 'Combat', image: combat, Content: Combat,
+  },
+  {
+    id: 'skills', name: 'Skills', image: skills, Content: Skills,
+  },
+  {
+    id: 'equipment', name: 'Equipment', image: equipment, Content: Equipment,
+  },
+  {
+    id: 'prayer', name: 'Prayer', image: prayer, Content: Prayers,
+  },
+  {
+    id: 'options', name: 'Extra options', image: options, Content: ExtraOptions,
+  },
+] as const;
+
+type TabId = typeof TABS[number]['id'];
 
 const PlayerInnerContainer: React.FC = () => {
-  const [selected, setSelected] = useState<SelectedInputType>('equipment');
-
-  const renderSelected = () => {
-    switch (selected) {
-      case 'combat':
-        return <Combat />;
-      case 'skills':
-        return <Skills />;
-      case 'equipment':
-        return <Equipment />;
-      case 'prayer':
-        return <Prayers />;
-      case 'options':
-        return <ExtraOptions />;
-      default:
-        break;
-    }
-
-    return null;
-  };
+  const [selected, setSelected] = useState<TabId>('equipment');
+  const { Content } = TABS.find((tab) => tab.id === selected)!;
 
   return (
     <div className="grow flex flex-col">
       <div className="flex justify-center text-center items-center bg-body-100 dark:bg-dark-400 dark:border-dark-200 px-4 py-[1.25em] gap-1 border-b border-body-400">
-        <PlayerTab name="Combat" isActive={selected === 'combat'} image={combat} onClick={() => setSelected('combat')} />
-        <PlayerTab name="Skills" isActive={selected === 'skills'} image={skills} onClick={() => setSelected('skills')} />
-        <PlayerTab name="Equipment" isActive={selected === 'equipment'} image={equipment} onClick={() => setSelected('equipment')} />
-        <PlayerTab name="Prayer" isActive={selected === 'prayer'} image={prayer} onClick={() => setSelected('prayer')} />
-        <PlayerTab name="Extra options" isActive={selected === 'options'} image={options} onClick={() => setSelected('options')} />
+        {TABS.map((tab) => (
+          <PlayerTab
+            key={tab.id}
+            name={tab.name}
+            isActive={selected === tab.id}
+            image={tab.image}
+            onClick={() => setSelected(tab.id)}
+          />
+        ))}
       </div>
-      {renderSelected()}
+      <Content />
     </div>
   );
 };
