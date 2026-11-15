@@ -59,7 +59,7 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
 
   // When the passed value prop changes, also change the input value
   useEffect(() => {
-    if (value) setInputValue(value);
+    if (value !== undefined) setInputValue(value);
   }, [value]);
 
   const preprocessedItems = useMemo(() => items.map((item) => ({ item, valueToFilter: `${item.label} ${item.version ? item.version : ''}` })), [items]);
@@ -119,6 +119,13 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
       let { changes } = actionAndChanges;
       const { type } = actionAndChanges;
 
+      if (value !== undefined && changes.selectedItem
+        && (type === useCombobox.stateChangeTypes.ItemClick || type === useCombobox.stateChangeTypes.InputKeyDownEnter)) {
+        if (onSelectedItemChange) onSelectedItemChange(changes.selectedItem);
+        if (blurAfterSelect) setTimeout(() => inputRef.current?.blur());
+        changes = { ...changes, selectedItem: null, inputValue: itemToString(changes.selectedItem) };
+      }
+
       if (keepPositionAfterSelect) {
         switch (type) {
           case useCombobox.stateChangeTypes.InputKeyDownEnter:
@@ -160,7 +167,11 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
         className={`form-control cursor-pointer ${className}`}
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...getInputProps({
-          ref: inputRef, open: isOpen, type: 'text', placeholder: (placeholder || 'Search...'),
+          ref: inputRef,
+          open: isOpen,
+          type: 'text',
+          placeholder: (placeholder || 'Search...'),
+          onBlur: () => { if (value !== undefined) setInputValue(value); },
         })}
       />
       <div

@@ -2,6 +2,7 @@ import React from 'react';
 import MonsterHeader from '@/app/components/monster/MonsterHeader';
 import MonsterNotices from '@/app/components/monster/MonsterNotices';
 import MonsterSelect from '@/app/components/monster/MonsterSelect';
+import MonsterFormSelect from '@/app/components/monster/MonsterFormSelect';
 import MonsterStatInputs from '@/app/components/monster/stats/MonsterStatInputs';
 import WeaknessBadge from '@/app/components/monster/WeaknessBadge';
 import MonsterAttributes from '@/app/components/monster/MonsterAttributes';
@@ -18,6 +19,7 @@ const MonsterContainer: React.FC = () => (
       <div className="py-4 px-4">
         <div className="mb-4">
           <MonsterSelect />
+          <MonsterFormSelect />
         </div>
         <div>
           <div className="flex gap-8 flex-wrap justify-center">
