@@ -53,6 +53,7 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
   } = props;
   const [inputValue, setInputValue] = useState<string>(value || '');
   const inputRef = useRef<HTMLInputElement>(null);
+  const selectedOnFocus = useRef(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const virtuosoRef = useRef<VirtuosoHandle>(null);
   const [listHeight, setListHeight] = useState(200);
@@ -172,6 +173,16 @@ const Combobox = <T extends ComboboxItem>(props: IComboboxProps<T>) => {
           type: 'text',
           placeholder: (placeholder || 'Search...'),
           onBlur: () => { if (value !== undefined) setInputValue(value); },
+          onFocus: () => {
+            if (value === undefined) return;
+            inputRef.current?.select();
+            selectedOnFocus.current = true;
+          },
+          onMouseUp: (e: React.MouseEvent) => {
+            // stop the click's mouseup from collapsing the selection made on focus
+            if (selectedOnFocus.current) e.preventDefault();
+            selectedOnFocus.current = false;
+          },
         })}
       />
       <div
