@@ -14,7 +14,7 @@ const MonsterFormSelect: React.FC = observer(() => {
       className="form-control w-full mt-2"
       aria-label="Monster form"
       value={findFormIndex(group, monster.definition)}
-      onChange={(e) => monster.select(group.forms[Number(e.target.value)].monster)}
+      onChange={(e) => monster.selectForm(group.forms[Number(e.target.value)].monster)}
     >
       {group.forms.map((form, i) => (
         // eslint-disable-next-line react/no-array-index-key
