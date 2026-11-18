@@ -1019,10 +1019,6 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     }
     this.track(DetailKey.MAX_HIT_BASE, maxHit);
 
-    if (this.opts.usingSpecialAttack && this.wearing('Eye of Ayak')) {
-      maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [13, 10]);
-    }
-
     if (this.wearing('Chaos gauntlets') && spell?.name.toLowerCase()
       .includes('bolt')) {
       maxHit += 3;
@@ -1085,6 +1081,8 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     if (this.opts.usingSpecialAttack) {
       if (this.isWearingAccursedSceptre()) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [3, 2]);
+      } else if (this.wearing('Eye of Ayak')) {
+        maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [13, 10]);
       } else if (this.wearing("Zorya's tome")) {
         maxHit = this.trackFactor(DetailKey.MAX_HIT_SPEC, maxHit, [160, 100]);
       }
