@@ -27,6 +27,7 @@ import {
   ABYSSAL_SIRE_TRANSITION_IDS,
   ALWAYS_MAX_HIT_MONSTERS,
   BA_ATTACKER_MONSTERS,
+  BORK_IDS,
   DOOM_OF_MOKHAIOTL_IDS,
   ECLIPSE_MOON_IDS,
   GLOWING_CRYSTAL_IDS,
@@ -1326,6 +1327,10 @@ export default class PlayerVsNPCCalc extends BaseCalc {
       if (this.player.style.type === 'crush' && getHighestOffensiveStyle(this.player.offensive) === 'crush') {
         return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
       }
+    }
+
+    if (BORK_IDS.includes(this.monster.id) && this.monster.inputs.phase === 'Stunned' && this.isUsingMeleeStyle()) {
+      return this.track(DetailKey.PLAYER_ACCURACY_FINAL, 1.0);
     }
 
     const atk = this.getMaxAttackRoll();

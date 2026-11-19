@@ -41,7 +41,7 @@ const applyMonsterPhases = (m: Monster): Monster => {
           ...m.defensive,
           stab: m.defensive.stab - 100,
           slash: m.defensive.slash - 100,
-          crush: m.defensive.crush - 100,
+          crush: m.defensive.crush - 50, // verified via monster examine
         },
       };
     }
