@@ -4093,6 +4093,56 @@
     }
   },
   {
+    "id": 16653,
+    "name": "Animated Sword",
+    "version": "",
+    "image": "Animated_Sword.png",
+    "level": 0,
+    "speed": -1,
+    "style": [
+      "None"
+    ],
+    "size": 3,
+    "max_hit": "70",
+    "skills": {
+      "atk": 1,
+      "def": 115,
+      "hp": 120,
+      "magic": 90,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": 100,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [
+      "flying"
+    ],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "air",
+      "severity": 125
+    }
+  },
+  {
     "id": 3285,
     "name": "Anja",
     "version": "",
@@ -5011,7 +5061,7 @@
     }
   },
   {
-    "id": 16659,
+    "id": 16660,
     "name": "Archive Guardian",
     "version": "Grounded",
     "image": "Archive Guardian.png",
@@ -9925,6 +9975,51 @@
       "light": 4,
       "slash": 8,
       "stab": 4
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16893,
+    "name": "Bandit cactus cultivator",
+    "version": "",
+    "image": "Bandit cactus cultivator.png",
+    "level": 57,
+    "speed": 4,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 50,
+      "def": 50,
+      "hp": 50,
+      "magic": 1,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
     },
     "attributes": [],
     "immunities": {
@@ -16534,7 +16629,7 @@
     "skills": {
       "atk": 200,
       "def": 300,
-      "hp": 1500,
+      "hp": 1650,
       "magic": 90,
       "ranged": 200,
       "str": 200
@@ -38350,12 +38445,12 @@
       "str": 150
     },
     "offensive": {
-      "atk": 0,
+      "atk": 280,
       "magic": 250,
-      "magic_str": 0,
+      "magic_str": 30,
       "ranged": 0,
       "ranged_str": 0,
-      "str": 0
+      "str": 80
     },
     "defensive": {
       "flat_armour": 0,
@@ -39300,6 +39395,51 @@
       "burn": null
     },
     "is_slayer_monster": true,
+    "weakness": null
+  },
+  {
+    "id": 16890,
+    "name": "Fermenter of chaos",
+    "version": "",
+    "image": "Fermenter of chaos.png",
+    "level": 53,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 45,
+      "def": 30,
+      "hp": 60,
+      "magic": 50,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
     "weakness": null
   },
   {
@@ -41841,7 +41981,7 @@
       "Magic"
     ],
     "size": 1,
-    "max_hit": "12 total",
+    "max_hit": "12",
     "skills": {
       "atk": 1,
       "def": 40,
@@ -42493,6 +42633,51 @@
       "light": 0,
       "slash": 0,
       "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16892,
+    "name": "Gardener of Armadyl",
+    "version": "",
+    "image": "Gardener of Armadyl.png",
+    "level": 64,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "5",
+    "skills": {
+      "atk": 45,
+      "def": 50,
+      "hp": 90,
+      "magic": 50,
+      "ranged": 1,
+      "str": 45
+    },
+    "offensive": {
+      "atk": 30,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 55,
+      "magic": 55,
+      "heavy": 55,
+      "standard": 55,
+      "light": 55,
+      "slash": 55,
+      "stab": 55
     },
     "attributes": [],
     "immunities": {
@@ -48124,6 +48309,51 @@
       "burn": null
     },
     "is_slayer_monster": true,
+    "weakness": null
+  },
+  {
+    "id": 16891,
+    "name": "Goblin meat tenderiser",
+    "version": "",
+    "image": "Goblin meat tenderiser.png",
+    "level": 50,
+    "speed": 6,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "19",
+    "skills": {
+      "atk": 30,
+      "def": 30,
+      "hp": 50,
+      "magic": 1,
+      "ranged": 1,
+      "str": 65
+    },
+    "offensive": {
+      "atk": 40,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 100
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
     "weakness": null
   },
   {
@@ -60039,26 +60269,26 @@
     "version": "",
     "image": "Imp (Dagon'hai Trio).png",
     "level": 168,
-    "speed": 0,
+    "speed": 4,
     "style": [
       "Melee"
     ],
     "size": 1,
-    "max_hit": 0,
+    "max_hit": "20",
     "skills": {
-      "atk": 0,
-      "def": 0,
+      "atk": 250,
+      "def": 50,
       "hp": 44,
-      "magic": 0,
-      "ranged": 0,
-      "str": 0
+      "magic": 125,
+      "ranged": 66,
+      "str": 195
     },
     "offensive": {
-      "atk": 0,
+      "atk": 150,
       "magic": 0,
-      "magic_str": 0,
-      "ranged": 0,
-      "ranged_str": 0,
+      "magic_str": 1,
+      "ranged": 1,
+      "ranged_str": 6,
       "str": 0
     },
     "defensive": {
@@ -60076,7 +60306,10 @@
       "burn": null
     },
     "is_slayer_monster": false,
-    "weakness": null
+    "weakness": {
+      "element": "water",
+      "severity": 50
+    }
   },
   {
     "id": 3355,
@@ -60306,6 +60539,51 @@
       "light": -21,
       "slash": -21,
       "stab": -21
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16661,
+    "name": "Inert Guardian (Wall)",
+    "version": "",
+    "image": "Inert Guardian (wall, active).png",
+    "level": 0,
+    "speed": 0,
+    "style": [
+      "N/A"
+    ],
+    "size": 2,
+    "max_hit": "N/A",
+    "skills": {
+      "atk": 1,
+      "def": 50,
+      "hp": 150,
+      "magic": 50,
+      "ranged": 1,
+      "str": 1
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": -20,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 20,
+      "stab": 0
     },
     "attributes": [],
     "immunities": {
@@ -65001,7 +65279,7 @@
       "Stab"
     ],
     "size": 5,
-    "max_hit": "52 (Magic)",
+    "max_hit": "49 (Magic)",
     "skills": {
       "atk": 320,
       "def": 240,
@@ -68008,6 +68286,51 @@
       "atk": 80,
       "def": 35,
       "hp": 45,
+      "magic": 1,
+      "ranged": 1,
+      "str": 20
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 0,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 0,
+      "stab": 0
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16883,
+    "name": "Leech (A Shell of a Friend)",
+    "version": "",
+    "image": "Leech (A Shell of a Friend).png",
+    "level": 39,
+    "speed": 4,
+    "style": [
+      "Stab"
+    ],
+    "size": 1,
+    "max_hit": "3",
+    "skills": {
+      "atk": 80,
+      "def": 1,
+      "hp": 25,
       "magic": 1,
       "ranged": 1,
       "str": 20
@@ -98573,6 +98896,51 @@
     "weakness": null
   },
   {
+    "id": 16889,
+    "name": "Sir Loin",
+    "version": "",
+    "image": "Sir Loin.png",
+    "level": 52,
+    "speed": 7,
+    "style": [
+      "Crush"
+    ],
+    "size": 1,
+    "max_hit": "9",
+    "skills": {
+      "atk": 40,
+      "def": 40,
+      "hp": 65,
+      "magic": 1,
+      "ranged": 1,
+      "str": 40
+    },
+    "offensive": {
+      "atk": 55,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 50
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 100,
+      "magic": -11,
+      "heavy": 75,
+      "standard": 85,
+      "light": 75,
+      "slash": 100,
+      "stab": 100
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
     "id": 4342,
     "name": "Sir Lucan",
     "version": "",
@@ -98796,6 +99164,55 @@
     },
     "is_slayer_monster": false,
     "weakness": null
+  },
+  {
+    "id": 16912,
+    "name": "Skeletal Horror",
+    "version": "",
+    "image": "Skeletal Horror.png",
+    "level": 220,
+    "speed": 6,
+    "style": [
+      "Melee",
+      "Magic"
+    ],
+    "size": 3,
+    "max_hit": "12",
+    "skills": {
+      "atk": 120,
+      "def": 50,
+      "hp": 300,
+      "magic": 150,
+      "ranged": 0,
+      "str": 100
+    },
+    "offensive": {
+      "atk": 40,
+      "magic": 120,
+      "magic_str": 15,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 5
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 140,
+      "heavy": 120,
+      "standard": 120,
+      "light": 120,
+      "slash": 80,
+      "stab": 120
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": {
+      "element": "earth",
+      "severity": 30
+    }
   },
   {
     "id": 3615,
@@ -104768,6 +105185,51 @@
       "light": -40,
       "slash": -40,
       "stab": -40
+    },
+    "attributes": [],
+    "immunities": {
+      "burn": null
+    },
+    "is_slayer_monster": false,
+    "weakness": null
+  },
+  {
+    "id": 16885,
+    "name": "SnelmLover500",
+    "version": "",
+    "image": "SnelmLover500.png",
+    "level": 50,
+    "speed": 4,
+    "style": [
+      "Slash"
+    ],
+    "size": 1,
+    "max_hit": "6",
+    "skills": {
+      "atk": 50,
+      "def": 35,
+      "hp": 35,
+      "magic": 10,
+      "ranged": 1,
+      "str": 50
+    },
+    "offensive": {
+      "atk": 0,
+      "magic": 0,
+      "magic_str": 0,
+      "ranged": 0,
+      "ranged_str": 0,
+      "str": 0
+    },
+    "defensive": {
+      "flat_armour": 0,
+      "crush": 10,
+      "magic": 0,
+      "heavy": 0,
+      "standard": 0,
+      "light": 0,
+      "slash": 20,
+      "stab": 20
     },
     "attributes": [],
     "immunities": {
@@ -113080,7 +113542,7 @@
     "skills": {
       "atk": 1,
       "def": 220,
-      "hp": 600,
+      "hp": 650,
       "magic": 185,
       "ranged": 185,
       "str": 1
@@ -114818,7 +115280,7 @@
       "def": 40,
       "hp": 37,
       "magic": 1,
-      "ranged": 1,
+      "ranged": 20,
       "str": 41
     },
     "offensive": {
@@ -114864,7 +115326,7 @@
       "def": 40,
       "hp": 37,
       "magic": 1,
-      "ranged": 1,
+      "ranged": 20,
       "str": 41
     },
     "offensive": {
@@ -114910,7 +115372,7 @@
       "def": 40,
       "hp": 37,
       "magic": 1,
-      "ranged": 1,
+      "ranged": 20,
       "str": 41
     },
     "offensive": {
@@ -129539,7 +130001,7 @@
     "skills": {
       "atk": 250,
       "def": 170,
-      "hp": 2600,
+      "hp": 2450,
       "magic": 350,
       "ranged": 220,
       "str": 225
