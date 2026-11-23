@@ -1,6 +1,6 @@
 import { Monster } from '@/types/Monster';
 import {
-  ARAXXOR_IDS, BORK_IDS, BORK_PHASES, YAMA_IDS,
+  ARAXXOR_IDS, BORK_IDS, BORK_PHASES, OCELLUS_P3_IDS, YAMA_IDS,
 } from '@/lib/constants';
 
 const applyMonsterPhases = (m: Monster): Monster => {
@@ -54,6 +54,27 @@ const applyMonsterPhases = (m: Monster): Monster => {
         ...m.defensive,
         flat_armour: flatArmour,
         magic_resistance: magicResist,
+      },
+    };
+  }
+
+  if (OCELLUS_P3_IDS.includes(m.id)) {
+    if (m.inputs.phase === 'Phase 3') {
+      return m;
+    }
+
+    return {
+      ...m,
+      skills: {
+        ...m.skills,
+        def: m.inputs.phase.startsWith('Phase 4') ? 166 : m.skills.def,
+      },
+      defensive: {
+        ...m.defensive,
+        light: 100,
+        standard: 100,
+        heavy: 100,
+        magic: 100,
       },
     };
   }

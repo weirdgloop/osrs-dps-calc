@@ -567,7 +567,7 @@ export const BORK_PHASES = ['Smork HP 100% - 75%', 'Smork HP 75% - 50%', 'Smork 
 BORK_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = BORK_PHASES; });
 
 export const OCELLUS_P3_IDS: readonly number[] = [16677];
-export const OCELLUS_P3_PHASES: readonly string[] = ['Phase 3', 'Phase 4 Standard', 'Phase 4 Explosions - With Speed-Up', 'Phase 4 Explosions - No Speed-Up'];
+export const OCELLUS_P3_PHASES: readonly string[] = ['Phase 3', 'Phase 3 Untethered', 'Phase 4 Standard', 'Phase 4 Explosions - With Speed-Up', 'Phase 4 Explosions - No Speed-Up'];
 OCELLUS_P3_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = OCELLUS_P3_PHASES; });
 
 export const TFA_DEF_FLOOR_NPCS = [
