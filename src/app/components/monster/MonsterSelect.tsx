@@ -1,15 +1,16 @@
 import React from 'react';
 import { IconPencilPlus } from '@tabler/icons-react';
-import { availableMonsters, useMonster } from '@/state/MonsterStore';
+import { observer } from 'mobx-react-lite';
+import { useMonster } from '@/state/MonsterStore';
 import Combobox from '@/app/components/generic/Combobox';
-import { MonsterDefinition } from '@/types/Monster';
+import { MONSTER_GROUPS, monsterGroupFor, MonsterGroup } from '@/lib/MonsterForms';
 
 interface MonsterOption {
   label: string;
+  version?: string;
   value: number;
-  version: string;
   // null for custom monster
-  monster: MonsterDefinition | null;
+  group: MonsterGroup | null;
 }
 
 const CUSTOM_OPTION_VALUE = -1;
@@ -18,14 +19,13 @@ const MONSTER_OPTIONS: MonsterOption[] = [
   {
     label: 'Create custom monster',
     value: CUSTOM_OPTION_VALUE,
-    version: '',
-    monster: null,
+    group: null,
   },
-  ...availableMonsters.map((m, i) => ({
-    label: `${m.name}`,
+  ...MONSTER_GROUPS.map((group, i) => ({
+    label: group.name,
+    version: group.searchText,
     value: i,
-    version: m.version || '',
-    monster: m,
+    group,
   })),
 ];
 
@@ -39,20 +39,10 @@ const MonsterOptionLabel: React.FC<{ item: MonsterOption }> = ({ item }) => {
     );
   }
 
-  return (
-    <div>
-      {item.label}
-      {item.version && (
-        <span className="monster-version text-xs text-gray-400 dark:text-gray-300">
-          #
-          {item.version}
-        </span>
-      )}
-    </div>
-  );
+  return <div>{item.label}</div>;
 };
 
-const MonsterSelect: React.FC = () => {
+const MonsterSelect: React.FC = observer(() => {
   const monster = useMonster();
 
   return (
@@ -60,8 +50,8 @@ const MonsterSelect: React.FC = () => {
       id="monster-select"
       className="w-full"
       items={MONSTER_OPTIONS}
+      value={monster.isCustom ? '' : monsterGroupFor(monster.definition.name)?.name ?? ''}
       placeholder="Search for monster..."
-      resetAfterSelect
       blurAfterSelect
       customFilter={(items, iv) => {
         if (!iv) return items;
@@ -70,8 +60,8 @@ const MonsterSelect: React.FC = () => {
       }}
       onSelectedItemChange={(item) => {
         if (!item) return;
-        if (item.monster) {
-          monster.select(item.monster);
+        if (item.group) {
+          monster.select(item.group.forms[0].monster);
         } else {
           monster.selectCustom();
         }
@@ -79,6 +69,6 @@ const MonsterSelect: React.FC = () => {
       CustomItemComponent={MonsterOptionLabel}
     />
   );
-};
+});
 
 export default MonsterSelect;

@@ -13,7 +13,7 @@ import {
   getMonsters,
 } from '@/lib/Monsters';
 import { MONSTER_PHASES_BY_ID } from '@/lib/constants';
-import { scaleMonster } from '@/lib/MonsterScaling';
+import { applicableDefenceReductions, scaleMonster } from '@/lib/MonsterScaling';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
 import { createEmptyPlayer } from '@/state/PlayerStore';
 
@@ -101,6 +101,19 @@ export class MonsterStore {
     this.definition = definition;
     this.inputs = createMonsterInputs(definition.id);
     this.inputs.monsterCurrentHp = this.maxHp;
+  }
+
+  /**
+   * Switch to another form of the current monster. Keeps ToA levels and applicable defence reductions.
+   */
+  selectForm(definition: MonsterDefinition) {
+    const { defenceReductions, toaInvocationLevel, toaPathLevel } = this.inputs;
+    this.select(definition);
+    this.inputs.toaInvocationLevel = toaInvocationLevel;
+    this.inputs.toaPathLevel = toaPathLevel;
+    this.inputs.monsterCurrentHp = this.maxHp;
+    const { snapshot } = this;
+    this.inputs.defenceReductions = applicableDefenceReductions({ ...snapshot, inputs: { ...snapshot.inputs, defenceReductions } });
   }
 
   selectCustom() {

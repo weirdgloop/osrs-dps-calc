@@ -16,6 +16,7 @@ export function getMonsters(): Omit<Monster, 'inputs'>[] {
       id: m.id,
       name: m.name,
       version: m.version,
+      level: m.level,
       image: m.image,
       size: m.size,
       speed: m.speed,

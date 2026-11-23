@@ -17,6 +17,7 @@ export interface Monster {
   name: string;
   image?: string;
   version?: string;
+  level?: number;
   size: number;
   speed: number;
   style: MonsterCombatStyle;
