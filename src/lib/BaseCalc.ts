@@ -10,6 +10,7 @@ import {
   DREADNOTH_JELLY_ID,
   ICE_DEMON_IDS,
   IMMUNE_TO_BURN_DAMAGE_NPC_IDS,
+  XARTH_CORPSE_ID,
   YAMA_IDS,
   YAMA_VOID_FLARE_IDS,
 } from '@/lib/constants';
@@ -21,7 +22,7 @@ import { getCombatStylesForCategory, isDefined } from '@/utils';
 import { EquipmentCategory } from '@/enums/EquipmentCategory';
 import { getRangedDamageType } from '@/types/PlayerCombatStyle';
 import { AttackDistribution, HitDistribution } from '@/lib/HitDist';
-import { Spellement } from '@/types/Spell';
+import { isFreezeSpell, Spellement } from '@/types/Spell';
 
 export interface CalcOpts {
   loadoutName?: string,
@@ -718,6 +719,12 @@ export default class BaseCalc {
       && this.player.equipment.weapon?.version === 'Charged'
       && this.player.style.name !== 'Smash'
       && this.isUsingMeleeStyle();
+  }
+
+  protected isUsingFreeze(): boolean {
+    return this.player.style.type === 'magic'
+      && (isFreezeSpell(this.player.spell)
+      || (this.monster.id === XARTH_CORPSE_ID && this.getSpellement() === 'water'));
   }
 
   protected addIssue(type: UserIssueType, message: string) {

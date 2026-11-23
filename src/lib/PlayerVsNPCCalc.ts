@@ -30,6 +30,7 @@ import {
   BORK_IDS,
   DOOM_OF_MOKHAIOTL_IDS,
   ECLIPSE_MOON_IDS,
+  FREEZE_THRESHOLD_NPCS,
   GLOWING_CRYSTAL_IDS,
   GUARANTEED_ACCURACY_MONSTERS,
   GUARDIAN_IDS,
@@ -1362,6 +1363,25 @@ export default class PlayerVsNPCCalc extends BaseCalc {
 
     if (this.wearing('Confliction gauntlets') && this.player.style.type === 'magic' && !this.player.equipment.weapon?.isTwoHanded) {
       hitChance = this.track(DetailKey.PLAYER_ACCURACY_CONFLICTION_GAUNTLETS, BaseCalc.getConflictionGauntletsAccuracyRoll(atk, def));
+    }
+
+    // According to Mod Ash on the OSRS Discord, monsters with a magic accuracy threshold for freezes work like this:
+    //   - min accuracy roll (m) = (base_magic + 9) * (0 + 64)
+    //   - max accuracy roll (M) = (base_magic + 9) * (threshold + 64)
+    //   - player's max accuracy roll (a) = this.getMaxAttackRoll() (i.e., normal max accuracy roll with everything included)
+    //   a >= M -> 100% hit chance
+    //   a < m -> 0% hit chance
+    //   m <= a < M -> hit chance scales linearly as (a - m + 1) / (M - m)
+    if (Object.prototype.hasOwnProperty.call(FREEZE_THRESHOLD_NPCS, this.monster.id) && this.isUsingFreeze()) {
+      const level = this.player.skills.magic + 9;
+      const threshold = FREEZE_THRESHOLD_NPCS[this.monster.id];
+      const minRoll = level * 64;
+      const maxRoll = level * (threshold + 64);
+
+      hitChance = this.track(
+        DetailKey.PLAYER_ACCURACY_FREEZE_THRESHOLD,
+        Math.max(0, Math.min(1, (atk - minRoll + 1) / (maxRoll - minRoll))),
+      );
     }
 
     return this.track(DetailKey.PLAYER_ACCURACY_FINAL, hitChance);

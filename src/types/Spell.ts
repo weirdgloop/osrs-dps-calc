@@ -22,6 +22,13 @@ export function isBindSpell(spell: Spell | null): boolean {
       .includes(spell.name);
 }
 
+export function isFreezeSpell(spell: Spell | null): boolean {
+  return spell !== null
+    && (isBindSpell(spell)
+      || ['Ice Rush', 'Ice Burst', 'Ice Blitz', 'Ice Barrage', 'Ghostly Grasp', 'Skeletal Grasp', 'Undead Grasp']
+        .includes(spell.name));
+}
+
 export function canUseSunfireRunes(spell: Spell | null): boolean {
   return spell?.element === 'fire';
 }
