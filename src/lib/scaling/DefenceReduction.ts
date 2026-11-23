@@ -8,6 +8,7 @@ import {
   KEPHRI_UNSHIELDED_IDS,
   NEX_IDS,
   NIGHTMARE_IDS,
+  OCELLUS_P3_IDS,
   P3_WARDEN_IDS,
   SOTETSEG_IDS, TFA_DEF_FLOOR_NPCS,
   TOA_OBELISK_IDS,
@@ -58,6 +59,10 @@ export const getDefenceFloor = (m: Monster): number => {
   }
   if (YAMA_IDS.includes(m.id)) {
     return 145;
+  }
+  // need to handle this separately because P4 has its defence set to 166, but the floor is still 150
+  if (OCELLUS_P3_IDS.includes(m.id)) {
+    return 150;
   }
   if (TFA_DEF_FLOOR_NPCS.includes(m.id)) {
     return Math.trunc(m.skills.def * 6 / 10);
