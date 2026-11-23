@@ -39,6 +39,7 @@ export enum DetailKey {
   PLAYER_ACCURACY_INQ = 'Player accuracy inquisitor\'s',
   PLAYER_ACCURACY_BRIMSTONE = 'Player accuracy brimstone ring',
   PLAYER_ACCURACY_SPEC = 'Player accuracy spec',
+  PLAYER_ACCURACY_FREEZE_THRESHOLD = 'Player accuracy freeze threshold',
   PLAYER_ACCURACY_ROLL_FINAL = 'Player accuracy roll',
   DAMAGE_LEVEL = 'Damage level',
   DAMAGE_LEVEL_PRAYER = 'Damage level prayer',
