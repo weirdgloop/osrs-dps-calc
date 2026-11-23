@@ -1372,9 +1372,9 @@ export default class PlayerVsNPCCalc extends BaseCalc {
     //   a >= M -> 100% hit chance
     //   a < m -> 0% hit chance
     //   m <= a < M -> hit chance scales linearly as (a - m + 1) / (M - m)
-    if (Object.prototype.hasOwnProperty.call(FREEZE_THRESHOLD_NPCS, this.monster.id) && this.isUsingFreeze()) {
+    const threshold = FREEZE_THRESHOLD_NPCS[this.monster.id];
+    if (threshold !== undefined && this.isUsingFreeze()) {
       const level = this.player.skills.magic + 9;
-      const threshold = FREEZE_THRESHOLD_NPCS[this.monster.id];
       const minRoll = level * 64;
       const maxRoll = level * (threshold + 64);
 
