@@ -1,6 +1,7 @@
 import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
 import { createEmptyPlayer } from '@/state/PlayerStore';
+import { MonsterCombatStyles } from '@/types/Monster';
 
 const monsters = getMonsters();
 
@@ -11,17 +12,13 @@ const monsters = getMonsters();
 const generateMaxHitDiscrepancies = () => {
   const mismatch: { [s: string]: string[] } = {
     '': [],
-    slash: [],
-    crush: [],
-    stab: [],
-    magic: [],
-    ranged: [],
+    ...Object.fromEntries(MonsterCombatStyles.map((s) => [s, []])),
   };
   for (const m of monsters) {
     // if (m.style !== 'magic') continue;
     const wikiMaxHit = m.maxHit;
     if (wikiMaxHit === undefined) continue;
-    if (!['slash', 'crush', 'stab', 'magic', 'ranged'].includes(m.style || '')) continue;
+    if (!m.style || !MonsterCombatStyles.includes(m.style)) continue;
 
     const calc = new NPCVsPlayerCalc(createEmptyPlayer(), {
       ...m,

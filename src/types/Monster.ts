@@ -1,10 +1,57 @@
-import { CombatStyleType, RangedDamageType } from '@/types/PlayerCombatStyle';
+import { CombatStyleType, CombatStyleTypes, RangedDamageType } from '@/types/PlayerCombatStyle';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import { Spellement } from '@/types/Spell';
 import { TD_PHASES } from '@/lib/constants';
 
 // For now this is the same as player combat styles, but it may support other stuff in future like "typeless"
-export type MonsterCombatStyle = CombatStyleType;
+export const MonsterCombatStyles = [...CombatStyleTypes, 'magical melee', 'magical ranged', 'ranged melee', 'ranged magic'] as const;
+
+export type MonsterCombatStyle = typeof MonsterCombatStyles[number] | null;
+
+export function isMonsterCombatStyle(s: string | null | undefined): s is MonsterCombatStyle {
+  if (s === undefined) return false;
+  return s === null || MonsterCombatStyles.includes(s as typeof MonsterCombatStyles[number]);
+}
+
+export type MonsterOffensiveStyle = 'melee' | 'ranged' | 'magic' | null;
+
+export function getMonsterOffensiveStyle(style: MonsterCombatStyle): MonsterOffensiveStyle {
+  switch (style) {
+    case 'stab':
+    case 'slash':
+    case 'crush':
+    case 'magical melee':
+    case 'ranged melee':
+      return 'melee';
+    case 'ranged':
+    case 'magical ranged':
+      return 'ranged';
+    case 'magic':
+    case 'ranged magic':
+      return 'magic';
+    default:
+      return null;
+  }
+}
+
+export function getMonsterDefensiveStyle(style: MonsterCombatStyle): Exclude<CombatStyleType, null> | null {
+  switch (style) {
+    case 'stab':
+    case 'slash':
+    case 'crush':
+      return style;
+    case 'magic':
+    case 'magical melee':
+    case 'magical ranged':
+      return 'magic';
+    case 'ranged':
+    case 'ranged melee':
+    case 'ranged magic':
+      return 'ranged';
+    default:
+      return null;
+  }
+}
 
 export enum BurnImmunity {
   WEAK = 'Weak',

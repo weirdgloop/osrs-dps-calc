@@ -1,17 +1,29 @@
-import { BurnImmunity, Monster, MonsterInputs } from '@/types/Monster';
+import {
+  BurnImmunity, isMonsterCombatStyle, Monster, MonsterCombatStyle, MonsterInputs,
+} from '@/types/Monster';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
-import { isCombatStyleType } from '@/types/PlayerCombatStyle';
-import { MONSTER_PHASES_BY_ID } from '@/lib/constants';
+import { MONSTER_PHASES_BY_ID, NON_STANDARD_MONSTER_IDS } from '@/lib/constants';
 import monsters from '../../cdn/json/monsters.json';
 
 export const CUSTOM_MONSTER_ID = -1;
 
 export const DEFAULT_MONSTER_ID = 415; // Abyssal demon
 
+export function parseMonsterStyle(styles?: (string | null)[] | null): MonsterCombatStyle {
+  if (!styles || styles.length !== 1 || !styles[0]) {
+    return null;
+  }
+  const normalized = styles[0]
+    .replace(/[^\x20-\x7e]/g, '')
+    .trim()
+    .toLowerCase()
+    .replace(/\s*\(100% prayer penetration\)$/, '');
+  return isMonsterCombatStyle(normalized) ? normalized : null;
+}
+
 export function getMonsters(): Omit<Monster, 'inputs'>[] {
   return monsters.map((m): Omit<Monster, 'inputs'> => {
     const maxHit = parseInt(m.max_hit.toString());
-    const styleStr = m.style?.join(',').toLowerCase() || null;
     return {
       id: m.id,
       name: m.name,
@@ -19,7 +31,7 @@ export function getMonsters(): Omit<Monster, 'inputs'>[] {
       image: m.image,
       size: m.size,
       speed: m.speed,
-      style: isCombatStyleType(styleStr) ? styleStr : null,
+      style: NON_STANDARD_MONSTER_IDS.includes(m.id) ? null : parseMonsterStyle(m.style),
       maxHit: Number.isNaN(maxHit) ? 0 : maxHit,
       skills: m.skills,
       offensive: m.offensive,

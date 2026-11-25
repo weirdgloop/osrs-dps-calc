@@ -4,18 +4,22 @@ import attack from '@/public/img/bonuses/attack.png';
 import ranged from '@/public/img/bonuses/ranged.png';
 import magic from '@/public/img/bonuses/magic.png';
 import { useMonster } from '@/state/MonsterStore';
-
-const MELEE_STYLES = ['slash', 'stab', 'crush'];
-const RANGED_STYLES = ['light', 'standard', 'heavy'];
+import { getMonsterOffensiveStyle } from '@/types/Monster';
 
 const MonsterStyle: React.FC = observer(() => {
   const { style } = useMonster().definition;
 
   const icon = (() => {
-    if (MELEE_STYLES.includes(style || '')) return { src: attack.src, alt: 'Melee' };
-    if (RANGED_STYLES.includes(style || '')) return { src: ranged.src, alt: 'Ranged' };
-    if (style === 'magic') return { src: magic.src, alt: 'Magic' };
-    return null;
+    switch (getMonsterOffensiveStyle(style)) {
+      case 'melee':
+        return { src: attack.src, alt: 'Melee' };
+      case 'ranged':
+        return { src: ranged.src, alt: 'Ranged' };
+      case 'magic':
+        return { src: magic.src, alt: 'Magic' };
+      default:
+        return null;
+    }
   })();
 
   if (!icon) {
