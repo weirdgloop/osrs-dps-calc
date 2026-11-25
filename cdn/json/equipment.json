@@ -17019,6 +17019,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Bee hunter's hat",
+    "id": 34777,
+    "weight": 0.001,
+    "version": "",
+    "slot": "head",
+    "image": "Bee hunter's hat.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Beekeeper's boots",
     "id": 25137,
     "weight": 0.001,
@@ -28405,21 +28436,21 @@
     "speed": 5,
     "category": "",
     "bonuses": {
-      "str": 0,
+      "str": 11,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
+      "stab": -2,
+      "slash": 8,
+      "crush": 4,
       "magic": 0,
       "ranged": 0
     },
     "defensive": {
       "stab": 0,
-      "slash": 0,
+      "slash": 1,
       "crush": 0,
       "magic": 0,
       "ranged": 0
@@ -28436,21 +28467,21 @@
     "speed": 5,
     "category": "",
     "bonuses": {
-      "str": 0,
+      "str": 7,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
+      "stab": -2,
+      "slash": 5,
+      "crush": 2,
       "magic": 0,
       "ranged": 0
     },
     "defensive": {
       "stab": 0,
-      "slash": 0,
+      "slash": 1,
       "crush": 0,
       "magic": 0,
       "ranged": 0
@@ -28467,21 +28498,21 @@
     "speed": 5,
     "category": "",
     "bonuses": {
-      "str": 0,
+      "str": 2,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
+      "stab": -2,
+      "slash": 2,
+      "crush": 1,
       "magic": 0,
       "ranged": 0
     },
     "defensive": {
       "stab": 0,
-      "slash": 0,
+      "slash": 1,
       "crush": 0,
       "magic": 0,
       "ranged": 0
@@ -28498,21 +28529,21 @@
     "speed": 5,
     "category": "",
     "bonuses": {
-      "str": 0,
+      "str": 18,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
+      "stab": -2,
+      "slash": 13,
+      "crush": 6,
       "magic": 0,
       "ranged": 0
     },
     "defensive": {
       "stab": 0,
-      "slash": 0,
+      "slash": 1,
       "crush": 0,
       "magic": 0,
       "ranged": 0
@@ -28529,21 +28560,21 @@
     "speed": 5,
     "category": "",
     "bonuses": {
-      "str": 0,
+      "str": 3,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
+      "stab": -2,
+      "slash": 2,
+      "crush": 1,
       "magic": 0,
       "ranged": 0
     },
     "defensive": {
       "stab": 0,
-      "slash": 0,
+      "slash": 1,
       "crush": 0,
       "magic": 0,
       "ranged": 0
@@ -28560,21 +28591,21 @@
     "speed": 5,
     "category": "",
     "bonuses": {
-      "str": 0,
+      "str": 8,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
+      "stab": -2,
+      "slash": 6,
+      "crush": 3,
       "magic": 0,
       "ranged": 0
     },
     "defensive": {
       "stab": 0,
-      "slash": 0,
+      "slash": 1,
       "crush": 0,
       "magic": 0,
       "ranged": 0
@@ -28591,21 +28622,21 @@
     "speed": 5,
     "category": "",
     "bonuses": {
-      "str": 0,
+      "str": 18,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
+      "stab": -2,
+      "slash": 13,
+      "crush": 6,
       "magic": 0,
       "ranged": 0
     },
     "defensive": {
       "stab": 0,
-      "slash": 0,
+      "slash": 1,
       "crush": 0,
       "magic": 0,
       "ranged": 0
@@ -28622,21 +28653,21 @@
     "speed": 5,
     "category": "",
     "bonuses": {
-      "str": 0,
+      "str": 5,
       "ranged_str": 0,
       "magic_str": 0,
       "prayer": 0
     },
     "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
+      "stab": -2,
+      "slash": 4,
+      "crush": 2,
       "magic": 0,
       "ranged": 0
     },
     "defensive": {
       "stab": 0,
-      "slash": 0,
+      "slash": 1,
       "crush": 0,
       "magic": 0,
       "ranged": 0
@@ -33457,37 +33488,6 @@
     "image": "Butler's uniform (top).png",
     "speed": 0,
     "category": "",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
-    "name": "Butterfly net",
-    "id": 10010,
-    "weight": 0.226,
-    "version": "",
-    "slot": "weapon",
-    "image": "Butterfly net.png",
-    "speed": 4,
-    "category": "Spear",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -68975,6 +68975,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Graceful boots (Fremennik)",
+    "id": 35056,
+    "weight": -4,
+    "version": "Worn",
+    "slot": "feet",
+    "image": "Graceful boots (Fremennik).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Graceful boots (Hallowed)",
     "id": 24760,
     "weight": -4,
@@ -69322,6 +69353,37 @@
     "version": "Worn",
     "slot": "cape",
     "image": "Graceful cape (Arceuus).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Graceful cape (Fremennik)",
+    "id": 35044,
+    "weight": -4,
+    "version": "Worn",
+    "slot": "cape",
+    "image": "Graceful cape (Fremennik).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -69719,6 +69781,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Graceful gloves (Fremennik)",
+    "id": 35053,
+    "weight": -3,
+    "version": "Worn",
+    "slot": "hands",
+    "image": "Graceful gloves (Fremennik).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Graceful gloves (Hallowed)",
     "id": 24757,
     "weight": -3,
@@ -70066,6 +70159,37 @@
     "version": "Worn",
     "slot": "head",
     "image": "Graceful hood (Arceuus).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Graceful hood (Fremennik)",
+    "id": 35041,
+    "weight": -3,
+    "version": "Worn",
+    "slot": "head",
+    "image": "Graceful hood (Fremennik).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -70463,6 +70587,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Graceful legs (Fremennik)",
+    "id": 35050,
+    "weight": -6,
+    "version": "Worn",
+    "slot": "legs",
+    "image": "Graceful legs (Fremennik).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Graceful legs (Hallowed)",
     "id": 24754,
     "weight": -6,
@@ -70810,6 +70965,37 @@
     "version": "Worn",
     "slot": "body",
     "image": "Graceful top (Arceuus).png",
+    "speed": 0,
+    "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Graceful top (Fremennik)",
+    "id": 35047,
+    "weight": -5,
+    "version": "Worn",
+    "slot": "body",
+    "image": "Graceful top (Fremennik).png",
     "speed": 0,
     "category": "",
     "bonuses": {
@@ -82150,6 +82336,37 @@
     "isTwoHanded": false
   },
   {
+    "name": "Insect net",
+    "id": 10010,
+    "weight": 0.226,
+    "version": "",
+    "slot": "weapon",
+    "image": "Insect net.png",
+    "speed": 4,
+    "category": "Spear",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
     "name": "Insulated boots",
     "id": 7159,
     "weight": 1.36,
@@ -90086,37 +90303,6 @@
     "isTwoHanded": false
   },
   {
-    "name": "Magic butterfly net",
-    "id": 11259,
-    "weight": 0.226,
-    "version": "",
-    "slot": "weapon",
-    "image": "Magic butterfly net.png",
-    "speed": 4,
-    "category": "Spear",
-    "bonuses": {
-      "str": 0,
-      "ranged_str": 0,
-      "magic_str": 0,
-      "prayer": 0
-    },
-    "offensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "defensive": {
-      "stab": 0,
-      "slash": 0,
-      "crush": 0,
-      "magic": 0,
-      "ranged": 0
-    },
-    "isTwoHanded": false
-  },
-  {
     "name": "Magic cape",
     "id": 9763,
     "weight": 0.453,
@@ -90218,6 +90404,37 @@
     "image": "Magic hood.png",
     "speed": 0,
     "category": "",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Magic insect net",
+    "id": 11259,
+    "weight": 0.226,
+    "version": "",
+    "slot": "weapon",
+    "image": "Magic insect net.png",
+    "speed": 4,
+    "category": "Spear",
     "bonuses": {
       "str": 0,
       "ranged_str": 0,
@@ -103288,6 +103505,37 @@
       "crush": 0,
       "magic": 0,
       "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Pink snelm",
+    "id": 34801,
+    "weight": 2,
+    "version": "",
+    "slot": "head",
+    "image": "Pink snelm.png",
+    "speed": 0,
+    "category": "Unarmed",
+    "bonuses": {
+      "str": 0,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": 0,
+      "crush": 0,
+      "magic": -3,
+      "ranged": -1
+    },
+    "defensive": {
+      "stab": 7,
+      "slash": 8,
+      "crush": 6,
+      "magic": -1,
+      "ranged": 7
     },
     "isTwoHanded": false
   },
@@ -122011,6 +122259,37 @@
       "slash": 0,
       "crush": 0,
       "magic": 0,
+      "ranged": 0
+    },
+    "isTwoHanded": false
+  },
+  {
+    "name": "Sedridor's staff",
+    "id": 34835,
+    "weight": 1.814,
+    "version": "",
+    "slot": "weapon",
+    "image": "Sedridor's staff.png",
+    "speed": 5,
+    "category": "Staff",
+    "bonuses": {
+      "str": 3,
+      "ranged_str": 0,
+      "magic_str": 0,
+      "prayer": 0
+    },
+    "offensive": {
+      "stab": 0,
+      "slash": -1,
+      "crush": 7,
+      "magic": 4,
+      "ranged": 0
+    },
+    "defensive": {
+      "stab": 2,
+      "slash": 3,
+      "crush": 1,
+      "magic": 4,
       "ranged": 0
     },
     "isTwoHanded": false
