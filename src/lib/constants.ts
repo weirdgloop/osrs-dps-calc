@@ -567,7 +567,7 @@ export const BORK_PHASES = ['Smork HP 100% - 75%', 'Smork HP 75% - 50%', 'Smork 
 BORK_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = BORK_PHASES; });
 
 export const OCELLUS_P3_IDS: readonly number[] = [16677];
-export const OCELLUS_P3_PHASES: readonly string[] = ['Phase 3', 'Phase 4 Standard', 'Phase 4 Explosions - With Speed-Up', 'Phase 4 Explosions - No Speed-Up'];
+export const OCELLUS_P3_PHASES: readonly string[] = ['Phase 3', 'Phase 3 Untethered', 'Phase 4 Standard', 'Phase 4 Explosions - With Speed-Up', 'Phase 4 Explosions - No Speed-Up'];
 OCELLUS_P3_IDS.forEach((id) => { MONSTER_PHASES_BY_ID[id] = OCELLUS_P3_PHASES; });
 
 export const TFA_DEF_FLOOR_NPCS = [
@@ -582,3 +582,15 @@ export const TFA_DEF_FLOOR_NPCS = [
 export const DREADNOTH_JELLY_ID = 16666;
 
 export const TANGLEFOOT_IDS = [5848, 5853, 5854, 6291, 6353];
+
+export const XARTH_CORPSE_ID = 16687;
+
+export const FREEZE_THRESHOLD_NPCS: { [npcId: number]: number } = {
+  10820: 140, // Nylocas Matomenos (maiden, entry)
+  8366: 140, // Nylocas Matomenos (maiden, normal)
+  10828: 140, // Nylocas Matomenos (maiden, hard)
+  12814: 140, // Fremennik warband archer
+  12815: 140, // Fremennik warband seer
+  12816: 140, // Fremennik warband berserker
+  [XARTH_CORPSE_ID]: 75, // Xarth corpse
+};
