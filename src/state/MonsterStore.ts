@@ -3,7 +3,9 @@ import useRequiredContext from '@/state/useRequiredContext';
 import { makeAutoObservable, reaction, toJS } from 'mobx';
 import { PartialDeep } from 'type-fest';
 import merge from 'lodash.mergewith';
-import { Monster, MonsterDefinition, MonsterInputs } from '@/types/Monster';
+import {
+  Monster, MonsterCombatStyles, MonsterDefinition, MonsterInputs,
+} from '@/types/Monster';
 import { MonsterAttribute } from '@/enums/MonsterAttribute';
 import {
   createMonsterInputs,
@@ -16,8 +18,6 @@ import { MONSTER_PHASES_BY_ID } from '@/lib/constants';
 import { scaleMonster } from '@/lib/MonsterScaling';
 import NPCVsPlayerCalc from '@/lib/NPCVsPlayerCalc';
 import { createEmptyPlayer } from '@/state/PlayerStore';
-
-const NON_STANDARD_STYLES = ['slash', 'crush', 'stab', 'magic', 'ranged'];
 
 export const availableMonsters: readonly MonsterDefinition[] = getMonsters();
 
@@ -60,7 +60,7 @@ export class MonsterStore {
   }
 
   get isNonStandard(): boolean {
-    return !NON_STANDARD_STYLES.includes(this.definition.style || '');
+    return !this.definition.style || !MonsterCombatStyles.includes(this.definition.style);
   }
 
   get phases(): readonly string[] | undefined {

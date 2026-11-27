@@ -508,9 +508,18 @@ export const TTK_DIST_MAX_ITER_ROUNDS = 1000;
 export const TTK_DIST_EPSILON = 0.0001;
 
 export const NPC_HARDCODED_MAX_HIT: { [npcId: number]: number } = {
+  499: 8, // Thermonuclear smoke devil
+  5534: 2, // Enormous Tentacle (1)
+  5535: 2, // Enormous Tentacle (2)
   5947: 10, // Spinolyp (1)
   5961: 10, // Spinolyp (2)
 };
+
+export const NON_STANDARD_MONSTER_IDS: number[] = [
+  494, // Kraken
+  496, // Kraken (Whirlpool)
+  6619, // Chaos Fanatic
+];
 
 export const MONSTER_PHASES_BY_ID: { [k: number]: readonly string[] } = {};
 export const TD_IDS = [13599, 13600, 13601, 13602, 13603, 13604, 13605, 13606];

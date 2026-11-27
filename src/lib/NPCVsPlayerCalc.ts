@@ -1,6 +1,6 @@
 import BaseCalc, { CalcOpts, InternalOpts } from '@/lib/BaseCalc';
 import { Player } from '@/types/Player';
-import { Monster } from '@/types/Monster';
+import { getMonsterDefensiveStyle, getMonsterOffensiveStyle, Monster } from '@/types/Monster';
 // import { OVERHEAD_PRAYERS, Prayer } from '@/enums/Prayer';
 import {
   AttackDistribution, flatAddTransformer, HitDistribution, Hitsplat, WeightedHit,
@@ -44,7 +44,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
 
   private getPlayerDefensiveBonus() {
     let styleBonus = 0;
-    switch (this.monster.style) {
+    switch (getMonsterDefensiveStyle(this.monster.style)) {
       case 'crush':
         styleBonus = this.player.defensive.crush;
         break;
@@ -130,7 +130,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
    */
   public getPlayerDefenceRoll(): number {
     const stance = this.player.style.stance;
-    const style = this.monster.style || '';
+    const defensiveStyle = getMonsterDefensiveStyle(this.monster.style);
     const skills = this.player.skills;
     const boosts = this.player.boosts;
     const prayers = this.player.prayers.map((p) => PrayerMap[p]);
@@ -155,7 +155,7 @@ export default class NPCVsPlayerCalc extends BaseCalc {
       effectiveLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_LEVEL_TORAGS, effectiveLevel, [100 + missingHealth, 100]);
     }
 
-    if (style === 'magic') {
+    if (defensiveStyle === 'magic') {
       let effectiveMagicLevel = this.trackAdd(DetailKey.PLAYER_DEFENCE_ROLL_MAGIC_LEVEL, skills.magic, boosts.magic);
       for (const p of prayers.filter((pr) => pr.factorDefenceMagic && pr.combatStyle === 'magic')) {
         effectiveMagicLevel = this.trackFactor(DetailKey.PLAYER_DEFENCE_ROLL_MAGIC_LEVEL_PRAYER, effectiveMagicLevel, p.factorDefenceMagic!);
@@ -174,22 +174,22 @@ export default class NPCVsPlayerCalc extends BaseCalc {
    * Get the NPC's attack roll, based on their combat style
    */
   public getNPCMaxAttackRoll(): number {
-    const style = this.monster.style || '';
+    const offensiveStyle = getMonsterOffensiveStyle(this.monster.style);
     const skills = this.monster.skills;
     const bonuses = this.monster.offensive;
 
     let roll = 0;
     let bonus = 0;
 
-    if (['slash', 'crush', 'stab'].includes(style)) {
+    if (offensiveStyle === 'melee') {
       roll = this.trackAdd(DetailKey.NPC_ACCURACY_ROLL_BASE, 9, skills.atk);
       bonus = this.trackAdd(DetailKey.NPC_ACCURACY_ROLL_BONUS, bonuses.atk, 64);
     }
-    if (style === 'ranged') {
+    if (offensiveStyle === 'ranged') {
       roll = this.trackAdd(DetailKey.NPC_ACCURACY_ROLL_BASE, 9, skills.ranged);
       bonus = this.trackAdd(DetailKey.NPC_ACCURACY_ROLL_BONUS, bonuses.ranged, 64);
     }
-    if (style === 'magic') {
+    if (offensiveStyle === 'magic') {
       roll = this.trackAdd(DetailKey.NPC_ACCURACY_ROLL_BASE, 9, skills.magic);
       bonus = this.trackAdd(DetailKey.NPC_ACCURACY_ROLL_BONUS, bonuses.magic, 64);
     }
@@ -201,27 +201,27 @@ export default class NPCVsPlayerCalc extends BaseCalc {
    * Get the NPC's max hit, based on their combat style
    */
   public getNPCMaxHit(): number {
-    const style = this.monster.style || '';
+    const offensiveStyle = getMonsterOffensiveStyle(this.monster.style);
     const skills = this.monster.skills;
     const bonuses = this.monster.offensive;
     const name = this.monster.name;
     const isCustomMonster = this.monster.id === -1;
 
     let maxHit = 0;
-    if (['slash', 'crush', 'stab'].includes(style)) {
+    if (offensiveStyle === 'melee') {
       maxHit = Math.trunc(((9 + skills.str) * (bonuses.str + 64) + 320) / 640);
     }
-    if (style === 'ranged') {
+    if (offensiveStyle === 'ranged') {
       maxHit = Math.trunc(((9 + skills.ranged) * (bonuses.ranged_str + 64) + 320) / 640);
     }
-    if (style === 'magic') {
+    if (offensiveStyle === 'magic') {
       maxHit = Math.trunc(((9 + skills.magic) * (bonuses.magic_str + 64) + 320) / 640);
     }
 
     // Some monsters have a hardcoded max hit. Let's overwrite the max hit with the real value here.
     if (Object.prototype.hasOwnProperty.call(NPC_HARDCODED_MAX_HIT, this.monster.id)) {
       maxHit = NPC_HARDCODED_MAX_HIT[this.monster.id];
-    } else if (style === 'magic' && this.monster.maxHit !== undefined && maxHit !== this.monster.maxHit && !isCustomMonster) {
+    } else if (offensiveStyle === 'magic' && this.monster.maxHit !== undefined && maxHit !== this.monster.maxHit && !isCustomMonster) {
       // For now, if the monster is using the magic attack style and the max hit on the wiki is different to the max hit
       // returned by the standard calculation we're using above, then let's just use the wiki value. A lot of magic
       // monsters have a hardcoded max hit (see https://twitter.com/JagexAsh/status/1754447323222929712).

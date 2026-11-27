@@ -13,6 +13,10 @@ const COMBAT_STYLE_OPTIONS: { label: string, value: MonsterCombatStyle }[] = [
   { label: 'Slash', value: 'slash' },
   { label: 'Magic', value: 'magic' },
   { label: 'Ranged', value: 'ranged' },
+  { label: 'Magical melee', value: 'magical melee' },
+  { label: 'Magical ranged', value: 'magical ranged' },
+  { label: 'Ranged melee', value: 'ranged melee' },
+  { label: 'Ranged magic', value: 'ranged magic' },
 ];
 
 const CustomMonsterSettings: React.FC = observer(() => {
